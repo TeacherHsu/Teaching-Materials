@@ -10,13 +10,12 @@
         
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: #f0fdf4; /* 淺綠底，護眼 */
+            background-color: #f0fdf4;
             overflow-x: hidden;
             touch-action: manipulation;
             user-select: none;
         }
 
-        /* 遊戲容器 */
         .game-container {
             position: relative;
             width: 95%;
@@ -32,7 +31,6 @@
             transition: all 0.3s;
         }
 
-        /* 頂部資訊列 */
         .top-bar {
             display: flex;
             justify-content: space-between;
@@ -56,7 +54,6 @@
             box-shadow: 0 4px 0 #fcd34d;
         }
 
-        /* 按鈕樣式 */
         .btn-voice {
             background-color: #e0f2fe;
             color: #0369a1;
@@ -72,7 +69,6 @@
         }
         .btn-voice:active { transform: translateY(4px); box-shadow: none; }
 
-        /* 偵探模式互動方塊 */
         .interactive-box {
             background: #fff;
             border: 3px solid #cbd5e1;
@@ -100,7 +96,6 @@
             75% { transform: translateX(5px); }
         }
 
-        /* 逐行算式樣式 */
         .equation-row {
             display: flex;
             align-items: center;
@@ -125,7 +120,6 @@
         
         .calc-result-text { color: #ef4444; }
 
-        /* 輸入框 */
         .step-input {
             width: 130px;
             height: 65px;
@@ -144,8 +138,12 @@
             border-color: #2563eb;
             background: #fff;
         }
+        .step-input.error-shake {
+            border-color: #ef4444;
+            background-color: #fef2f2;
+            animation: shake 0.5s;
+        }
 
-        /* 應用題卡片優化 */
         .item-card {
             display: flex;
             flex-direction: column;
@@ -186,7 +184,6 @@
             font-size: 0.9rem;
         }
 
-        /* Emoji 排列 */
         .emoji-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -197,7 +194,6 @@
         }
         .emoji-single { font-size: 3.5rem; margin-bottom: 8px; }
 
-        /* 規則與結算覆蓋層 */
         .overlay {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -210,7 +206,6 @@
             border-radius: 24px;
         }
 
-        /* 分數跳動動畫 */
         .score-popup {
             position: absolute;
             font-size: 3rem;
@@ -227,7 +222,6 @@
             100% { transform: translateY(-100px) scale(1); opacity: 0; }
         }
         
-        /* 隱藏數字輸入框的上下箭頭 */
         input::-webkit-outer-spin-button,
         input::-webkit-inner-spin-button {
             -webkit-appearance: none;
@@ -239,7 +233,6 @@
 
 <div class="game-container" id="app">
     
-    <!-- 頂部資訊列 -->
     <div class="top-bar">
         <div class="flex items-center gap-4">
             <div class="score-board" id="scoreDisplay">
@@ -259,46 +252,49 @@
         </button>
     </div>
 
-    <!-- 遊戲主舞台 -->
     <div id="stageArea" class="flex-1 flex flex-col items-center justify-center relative z-20 min-h-[400px]">
         <div class="text-center">
             <p class="text-xl text-gray-500 mb-4 animate-pulse">正在準備數學冒險...</p>
         </div>
     </div>
 
-    <!-- 底部控制區 (回饋訊息) -->
     <div id="controlArea" class="mt-4 h-24 flex items-center justify-center z-20 relative"></div>
 </div>
 
 <script>
     // --- 遊戲設定 ---
-    const TOTAL_LEVELS = 10;
+    const TOTAL_LEVELS_INIT = 10; // 初始關卡數
     let levels = [];
     let currentLevelIdx = 0;
     let currentStep = 0;
     let isSoundOn = true;
     let score = 0;
     let levelStartTime = 0;
-    let correctCount = 0; // 答對題數統計
+    let correctCount = 0; 
+    let failedInCurrentLevel = false; // 標記本題是否答錯過
+    let retryMode = false; // 是否為補題模式
 
     // --- 初始化 ---
     window.onload = () => {
         levels = generateLevels();
-        document.getElementById('totalLevelText').innerText = levels.length;
+        updateLevelDisplay();
         loadLevel(0);
     };
+
+    function updateLevelDisplay() {
+        document.getElementById('totalLevelText').innerText = levels.length;
+    }
 
     // --- 亂數與題庫生成 ---
     function getRandomInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
 
     function generateLevels() {
         const lvls = [];
-        
         // 1-4: 偵探模式 (觀念)
-        lvls.push(createDetectiveLevel("括號先算", "算式裡有括號，要先算哪裡？", (a,b,c)=>[{val:a+b+c+10,type:"num"},{val:"-",type:"op"},{val:`( ${b} + ${c} )`,type:"group",isAnswer:true}]));
-        lvls.push(createDetectiveLevel("括號先算", "括號在前面，還是要先算括號喔！", (a,b,c)=>[{val:`( ${a+b} - ${b} )`,type:"group",isAnswer:true},{val:"×",type:"op"},{val:c,type:"num"}]));
-        lvls.push(createDetectiveLevel("先乘除後加減", "沒有括號，要先算乘法！", (a,b,c)=>[{val:a*5+10,type:"num"},{val:"+",type:"op"},{val:`${b} × ${c}`,type:"group",isAnswer:true}]));
-        lvls.push(createDetectiveLevel("先乘除後加減", "這次有除法，要先算哪裡？", (a,b,c)=>{const d=c*b; return[{val:d+20,type:"num"},{val:"-",type:"op"},{val:`${d} ÷ ${c}`,type:"group",isAnswer:true}]}));
+        lvls.push(createDetectiveLevel("括號先算", "算式裡有括號，要先算哪裡？", (a,b,c)=>[{val:a+b+c+10,type:"num"},{val:"-",type:"op"},{val:`( ${b} + ${c} )`,type:"group",isAnswer:true}], 'bracket'));
+        lvls.push(createDetectiveLevel("括號先算", "括號在前面，還是要先算括號喔！", (a,b,c)=>[{val:`( ${a+b} - ${b} )`,type:"group",isAnswer:true},{val:"×",type:"op"},{val:c,type:"num"}], 'bracket'));
+        lvls.push(createDetectiveLevel("先乘除後加減", "沒有括號，要先算乘法！", (a,b,c)=>[{val:a*5+10,type:"num"},{val:"+",type:"op"},{val:`${b} × ${c}`,type:"group",isAnswer:true}], 'mul_div'));
+        lvls.push(createDetectiveLevel("先乘除後加減", "這次有除法，要先算哪裡？", (a,b,c)=>{const d=c*b; return[{val:d+20,type:"num"},{val:"-",type:"op"},{val:`${d} ÷ ${c}`,type:"group",isAnswer:true}]}, 'mul_div'));
 
         // 5-8: 逐步計算 (Scaffold)
         lvls.push(createScaffoldLevel('mul_last'));
@@ -313,17 +309,25 @@
         return lvls;
     }
 
-    function createDetectiveLevel(concept, hint, partsGen) {
+    function createDetectiveLevel(concept, hint, partsGen, category) {
         const b = getRandomInt(3, 9), c = getRandomInt(2, 5), a = getRandomInt(10, 50);
-        return { type: 'detective', title: `觀念題：${concept}`, instruction: "請點選算式中，應該要「最先計算」的部分。", expression: partsGen(a, b, c), hint, voiceIntro: `觀念題，${concept}。${hint} 請點選應該要最先計算的部分。` };
+        return { 
+            type: 'detective', 
+            title: `觀念題：${concept}`, 
+            instruction: "請點選算式中，應該要「最先計算」的部分。", 
+            expression: partsGen(a, b, c), 
+            hint, 
+            voiceIntro: `觀念題，${concept}。${hint} 請點選應該要最先計算的部分。`,
+            category: category // 用於判斷題型以進行補題
+        };
     }
 
     function createScaffoldLevel(subType) {
-        // 簡化重複代碼，保留核心邏輯 (同上一版，略作壓縮)
-        let steps=[], title="計算題：一步一步算", ruleVoice="";
+        let steps=[], title="計算題：一步一步算", ruleVoice="", category="";
         if(subType==='mul_last'){
             const b=getRandomInt(2,8), c=getRandomInt(3,9), prod=b*c, a=prod+getRandomInt(10,50);
             ruleVoice="算式裡有乘法，記得要先算乘法喔！";
+            category = "mul_div";
             steps=[
                 {row1:{pre:`${a} - `,highlight:`${b} × ${c}`,post:""}, row2:{pre:`${a} - `,inputAnswer:prod,post:""}, voice:`先算乘法。${b} 乘 ${c} 等於多少？`},
                 {row1:{pre:`${a} - `,highlight:`${b} × ${c}`,post:""}, row2:{pre:`${a} - `,staticVal:prod,post:""}, row3:{pre:"",inputAnswer:a-prod,post:""}, voice:`算式變成 ${a} 減 ${prod}。答案是多少？`}
@@ -331,6 +335,7 @@
         } else if(subType==='div_last'){
             const c=getRandomInt(2,5), ans=getRandomInt(3,9), b=c*ans, a=getRandomInt(10,50);
             ruleVoice="算式裡有除法，要先算除法！";
+            category = "mul_div";
             steps=[
                 {row1:{pre:`${a} + `,highlight:`${b} ÷ ${c}`,post:""}, row2:{pre:`${a} + `,inputAnswer:ans,post:""}, voice:`先算除法。${b} 除以 ${c} 等於多少？`},
                 {row1:{pre:`${a} + `,highlight:`${b} ÷ ${c}`,post:""}, row2:{pre:`${a} + `,staticVal:ans,post:""}, row3:{pre:"",inputAnswer:a+ans,post:""}, voice:`算式變成 ${a} 加 ${ans}。答案是多少？`}
@@ -338,6 +343,7 @@
         } else if(subType==='bracket_last'){
             const b=getRandomInt(5,15), c=getRandomInt(5,10), sum=b+c, a=sum+getRandomInt(10,30);
             ruleVoice="有括號，括號裡面先算！";
+            category = "bracket";
             steps=[
                 {row1:{pre:`${a} - `,highlight:`( ${b} + ${c} )`,post:""}, row2:{pre:`${a} - `,inputAnswer:sum,post:""}, voice:`先算括號。${b} 加 ${c} 是多少？`},
                 {row1:{pre:`${a} - `,highlight:`( ${b} + ${c} )`,post:""}, row2:{pre:`${a} - `,staticVal:sum,post:""}, row3:{pre:"",inputAnswer:a-sum,post:""}, voice:`最後算 ${a} 減 ${sum}。答案是多少？`}
@@ -345,25 +351,23 @@
         } else {
             const a=getRandomInt(10,20), b=getRandomInt(5,10), sum=a+b, c=getRandomInt(2,4);
             ruleVoice="括號在前面，一樣先算括號！";
+            category = "bracket";
             steps=[
                 {row1:{pre:"",highlight:`( ${a} + ${b} )`,post:` × ${c}`}, row2:{pre:"",inputAnswer:sum,post:` × ${c}`}, voice:`先算括號裡的加法。${a} 加 ${b} 是多少？`},
                 {row1:{pre:"",highlight:`( ${a} + ${b} )`,post:` × ${c}`}, row2:{pre:"",staticVal:sum,post:` × ${c}`}, row3:{pre:"",inputAnswer:sum*c,post:""}, voice:`現在算 ${sum} 乘 ${c}。`}
             ];
         }
-        return { type: 'scaffold_vertical', title, ruleVoice, steps };
+        return { type: 'scaffold_vertical', title, ruleVoice, steps, category, subType };
     }
 
     function createApplicationLevel(theme) {
-        let p1, p2, multiplier, items, story, voice, teaEmoji="", teaLabel="";
+        let p1, p2, multiplier, items, story, voice, teaEmoji="";
         
         if (theme === 'breakfast') {
             p1 = getRandomInt(25, 40); p2 = getRandomInt(10, 15); multiplier = getRandomInt(3, 5);
             story = `媽媽買了 1 份蔥抓餅 ($${p1}) 和 ${multiplier} 杯紅茶 ($${p2})。共要付多少元？`;
             voice = `應用題。媽媽買了1份蔥抓餅 ${p1}元，和 ${multiplier} 杯紅茶，每杯 ${p2}元。共要付多少錢？`;
-            
-            // 生成 emoji 陣列
             teaEmoji = Array(multiplier).fill("🥤").join("");
-            
             items = [
                 { name: "蔥抓餅", price: p1, img: "🥞", unit: "單價" },
                 { name: "紅茶", price: p2, img: teaEmoji, count: multiplier, unit: "每杯" } 
@@ -372,7 +376,6 @@
             p1 = getRandomInt(100, 200); p2 = getRandomInt(10, 20); multiplier = getRandomInt(4, 6);
             story = `小明買了 1 本書 ($${p1}) 和 ${multiplier} 枝原子筆 ($${p2})。共要付多少元？`;
             voice = `應用題。買1本書 ${p1}元，和 ${multiplier} 枝原子筆，每枝 ${p2}元。總共要多少錢？`;
-            
             items = [
                 { name: "故事書", price: p1, img: "📚", unit: "一本" },
                 { name: "原子筆", price: p2, img: Array(multiplier).fill("🖊️").join(""), count: multiplier, unit: "每枝" }
@@ -396,7 +399,8 @@
                     row1:{pre:`${p1} + `,highlight:`${p2} × ${multiplier}`,post:""}, row2:{pre:`${p1} + `,staticVal:p2*multiplier,post:""}, row3:{pre:"",inputAnswer:p1+(p2*multiplier),post:""}
                 }
             ],
-            finalAnswer: p1 + p2 * multiplier
+            finalAnswer: p1 + p2 * multiplier,
+            category: 'application'
         };
     }
 
@@ -404,22 +408,27 @@
     function loadLevel(idx) {
         currentLevelIdx = idx;
         currentStep = 0;
-        levelStartTime = Date.now(); // 開始計時
+        levelStartTime = Date.now(); 
+        failedInCurrentLevel = false; // 重置錯誤標記
 
         document.getElementById('currentLevelText').innerText = idx + 1;
         document.getElementById('controlArea').innerHTML = ''; 
         
         if (idx >= levels.length) {
-            renderSummary(); // 遊戲結束
+            renderSummary(); 
             return;
         }
 
         const levelData = levels[idx];
+        // 如果是補題，顯示提示
+        if (levelData.isRetry) {
+            speak("別擔心，我們再練習一題類似的！");
+        }
+
         if (levelData.type === 'detective') {
             renderDetective(levelData);
             setTimeout(() => speak(levelData.voiceIntro), 500);
         } else if (levelData.type === 'scaffold_vertical') {
-            // 顯示規則提示，點擊後開始
             showRuleOverlay(levelData.ruleVoice, () => {
                  renderScaffoldVertical(levelData);
                  speak(levelData.steps[0].voice);
@@ -448,7 +457,39 @@
         document.getElementById('startBtn').onclick = callback;
     }
 
-    // --- 渲染邏輯 ---
+    // --- 補題機制 (Remediation Logic) ---
+    function insertRetryLevel(currentLevel) {
+        // 根據當前題型，生成一個新的類似題
+        let newLevel = null;
+        if (currentLevel.type === 'scaffold_vertical') {
+            newLevel = createScaffoldLevel(currentLevel.subType);
+        } else if (currentLevel.type === 'detective') {
+            // 隨機生成一個同類型的觀念題
+            const a = getRandomInt(10, 50), b = getRandomInt(3, 9), c = getRandomInt(2, 5);
+            if (currentLevel.category === 'bracket') {
+                newLevel = createDetectiveLevel("括號先算", "記得括號要先算喔！", (a,b,c)=>[{val:a+b+c,type:"num"},{val:"-",type:"op"},{val:`( ${b} + ${c} )`,type:"group",isAnswer:true}], 'bracket');
+            } else {
+                newLevel = createDetectiveLevel("先乘除後加減", "先乘除後加減喔！", (a,b,c)=>[{val:a,type:"num"},{val:"+",type:"op"},{val:`${b} × ${c}`,type:"group",isAnswer:true}], 'mul_div');
+            }
+        }
+
+        if (newLevel) {
+            newLevel.isRetry = true; // 標記為補題
+            newLevel.title += " (加強練習)";
+            // 插入到下一關之前
+            levels.splice(currentLevelIdx + 1, 0, newLevel);
+            updateLevelDisplay();
+        }
+    }
+
+    // --- 錯誤處理與引導 (Error Handling) ---
+    function handleMistake(feedbackMsg) {
+        failedInCurrentLevel = true;
+        // 震動效果在 CSS 處理
+        speak(`哎呀，${feedbackMsg} 再試一次看看！`);
+    }
+
+    // --- 渲染邏輯 (保持原樣，僅微調 ID) ---
     function renderDetective(data) {
         let html = `
             <div class="text-center mb-8">
@@ -465,7 +506,7 @@
     }
 
     function renderScaffoldVertical(data) {
-        const stepData = data.steps[currentStep]; // currentStep 0-indexed for logic
+        const stepData = data.steps[currentStep];
         let html = `
             <div class="w-full max-w-lg mx-auto">
                 <div class="text-center mb-4">
@@ -540,43 +581,8 @@
         setTimeout(()=>{const i=document.getElementById('appInput1')||document.getElementById('scaffoldInput');if(i)i.focus()},200);
     }
 
-    // --- 判斷與計分邏輯 ---
+    // --- 檢查邏輯 ---
 
-    function addScore(points) {
-        score += points;
-        // 分數跳動特效
-        const popup = document.createElement('div');
-        popup.className = 'score-popup';
-        popup.innerText = `+${points}`;
-        popup.style.left = '50%';
-        popup.style.top = '20%';
-        document.body.appendChild(popup);
-        setTimeout(() => popup.remove(), 1000);
-        
-        // 更新 UI
-        const scoreEl = document.getElementById('scoreValue');
-        // 簡單的數字滾動效果
-        let current = parseInt(scoreEl.innerText);
-        const step = Math.ceil((score - current) / 10);
-        const timer = setInterval(() => {
-            current += step;
-            if (current >= score) {
-                current = score;
-                clearInterval(timer);
-            }
-            scoreEl.innerText = current;
-        }, 30);
-    }
-
-    function calculatePoints() {
-        const timeTaken = (Date.now() - levelStartTime) / 1000;
-        let points = 100; // 基礎分
-        if (timeTaken < 10) points += 50; // 速度獎勵
-        else if (timeTaken < 20) points += 20;
-        return points;
-    }
-
-    // 偵探模式檢查
     function checkDetective(index) {
         const levelData = levels[currentLevelIdx];
         const box = document.getElementById(`box-${index}`);
@@ -584,26 +590,25 @@
             box.classList.add('correct');
             const pts = calculatePoints();
             addScore(pts);
-            showFeedback(true, `答對了！(+${pts}分)`, null, true);
+            processLevelComplete();
         } else {
             box.classList.add('wrong');
             setTimeout(()=>box.classList.remove('wrong'), 500);
-            showFeedback(false, levelData.hint);
+            handleMistake(levelData.hint); // 使用具體提示
         }
     }
 
-    // 逐步計算檢查
     function checkScaffold() {
         const input = document.getElementById('scaffoldInput');
         if(!input) return;
         const userVal = parseInt(input.value);
         const levelData = levels[currentLevelIdx];
-        const stepData = levelData.steps[currentStep]; // logic correction: data.steps is 0-based
+        const stepData = levelData.steps[currentStep];
         const targetAns = stepData.row3 ? stepData.row3.inputAnswer : stepData.row2.inputAnswer;
 
         if(userVal === targetAns) {
             const pts = calculatePoints();
-            addScore(Math.floor(pts/2)); // 步驟分
+            addScore(Math.floor(pts/2));
             if(currentStep < levelData.steps.length - 1) {
                 showFeedback(true, "算對了！接著下一步！", () => {
                     currentStep++;
@@ -611,16 +616,16 @@
                     speak(levelData.steps[currentStep].voice);
                 });
             } else {
-                showFeedback(true, "太厲害了！挑戰成功！", null, true);
+                processLevelComplete();
             }
         } else {
-            input.classList.add('border-red-500');
-            setTimeout(()=>input.classList.remove('border-red-500'),500);
-            showFeedback(false, "再算算看喔！");
+            input.classList.add('error-shake');
+            setTimeout(()=>input.classList.remove('error-shake'), 500);
+            input.value = ""; // 清空輸入
+            handleMistake("數字算錯囉，請再仔細算一次！"); // 引導修正
         }
     }
 
-    // 應用題檢查
     function checkApplication() {
         const levelData = levels[currentLevelIdx];
         const stepData = levelData.steps[currentStep - 1];
@@ -637,7 +642,7 @@
                     speak(levelData.steps[currentStep-1].voice);
                 });
             } else {
-                showFeedback(false, "數字好像填錯囉，看上面的價格。");
+                handleMistake("價格填錯囉，請看清楚上面商品的單價！");
             }
         } else {
             const input = document.getElementById('scaffoldInput');
@@ -653,17 +658,49 @@
                         speak(levelData.steps[currentStep-1].voice);
                     });
                 } else {
-                    showFeedback(true, "太棒了！全部完成！", null, true);
+                    processLevelComplete();
                 }
             } else {
-                input.classList.add('border-red-500');
-                setTimeout(()=>input.classList.remove('border-red-500'),500);
-                showFeedback(false, "再算算看喔！");
+                input.classList.add('error-shake');
+                setTimeout(()=>input.classList.remove('error-shake'),500);
+                input.value = "";
+                handleMistake("計算有誤喔，再試一次！");
             }
         }
     }
 
-    // --- 回饋與結算系統 ---
+    // --- 完成關卡後的處理 (含補題判定) ---
+    function processLevelComplete() {
+        if (failedInCurrentLevel && !levels[currentLevelIdx].isRetry) {
+            // 如果這題有錯過，且這題不是本身就是補題 -> 插入補題
+            insertRetryLevel(levels[currentLevelIdx]);
+            showFeedback(true, "不錯喔！但剛剛有點小失誤，我們再來練習一題！", null, true);
+        } else {
+            correctCount++; // 只有一次過才算答對題數 (或是補題過關也算，這裡邏輯可調整，目前設為過關都算)
+            showFeedback(true, "太厲害了！挑戰成功！", null, true);
+        }
+    }
+
+    // --- 其他輔助函式 ---
+    function addScore(points) {
+        score += points;
+        const popup = document.createElement('div');
+        popup.className = 'score-popup';
+        popup.innerText = `+${points}`;
+        popup.style.left = '50%';
+        popup.style.top = '20%';
+        document.body.appendChild(popup);
+        setTimeout(() => popup.remove(), 1000);
+        document.getElementById('scoreValue').innerText = score;
+    }
+
+    function calculatePoints() {
+        const timeTaken = (Date.now() - levelStartTime) / 1000;
+        let points = 100; 
+        if (timeTaken < 10) points += 50;
+        else if (timeTaken < 20) points += 20;
+        return points;
+    }
 
     function showFeedback(isCorrect, msg, callback, isLevelComplete = false) {
         const controlArea = document.getElementById('controlArea');
@@ -676,13 +713,14 @@
             if (callback) {
                 btnHtml = `<button onclick="handleNext(true)" class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-2 rounded-full font-bold shadow-lg transition">下一步</button>`;
             } else if (isLevelComplete) {
-                correctCount++; // 統計答對
                 const isLastLevel = currentLevelIdx >= levels.length - 1;
                 const btnText = isLastLevel ? "看成績單" : "下一關";
                 btnHtml = `<button onclick="handleNext(false)" class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-2 rounded-full font-bold shadow-lg transition">${btnText}</button>`;
             }
         } else {
-            btnHtml = `<button onclick="document.getElementById('controlArea').innerHTML=''" class="text-gray-500 font-bold underline hover:text-gray-700">再試一次</button>`;
+            // 答錯時顯示提示但不給按鈕（強制留在原題）
+             controlArea.innerHTML = `<div class="text-red-500 font-bold text-xl animate-pulse">${msg}</div>`;
+             return;
         }
 
         controlArea.innerHTML = `
@@ -698,16 +736,15 @@
         };
     }
 
-    // 最終結算畫面
     function renderSummary() {
         const stage = document.getElementById('stageArea');
         document.getElementById('controlArea').innerHTML = '';
-        document.querySelector('.top-bar').style.display = 'none'; // 隱藏上方資訊
+        document.querySelector('.top-bar').style.display = 'none';
 
-        // 根據分數給評價
         let title = "", comment = "", medal = "";
-        if (correctCount === TOTAL_LEVELS) { title = "滿分！太神了！"; comment = "你是數學小天才！"; medal = "🏆 金牌"; }
-        else if (correctCount >= 7) { title = "很棒喔！"; comment = "繼續保持，下次挑戰滿分！"; medal = "🥈 銀牌"; }
+        // 簡單評分標準
+        if (score >= 2000) { title = "滿分！太神了！"; comment = "你是數學小天才！"; medal = "🏆 金牌"; }
+        else if (score >= 1500) { title = "很棒喔！"; comment = "繼續保持！"; medal = "🥈 銀牌"; }
         else { title = "完成了！"; comment = "多練習會更厲害喔！"; medal = "🥉 銅牌"; }
 
         stage.innerHTML = `
@@ -722,8 +759,8 @@
                         <span class="text-4xl font-black text-orange-500">${score}</span>
                     </div>
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-gray-500 font-bold text-xl">答對題數</span>
-                        <span class="text-2xl font-bold text-blue-600">${correctCount} / ${TOTAL_LEVELS}</span>
+                        <span class="text-gray-500 font-bold text-xl">挑戰關卡</span>
+                        <span class="text-2xl font-bold text-blue-600">${levels.length} 關</span>
                     </div>
                 </div>
 
@@ -735,7 +772,6 @@
         speak(`恭喜完成！你獲得了${score}分！${comment}`);
     }
 
-    // --- 工具函式 ---
     function toggleSound() {
         isSoundOn = !isSoundOn;
         document.getElementById('soundText').innerText = isSoundOn ? "語音：開" : "語音：關";
