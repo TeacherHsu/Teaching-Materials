@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>星際小數大冒險：V24 終極穩定版</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans+TC:wght@700&display=swap');
+
+        :root {
+            --bg-space: #1e272e;
+            --grid-border: #576574;
+            --grid-bg: rgba(0,0,0,0.4);
+            --tile-bg: #f5f6fa;
+            --tile-shadow: #7f8c8d;
+            --decimal-col: rgba(255, 107, 107, 0.15);
+            --answer-bg: rgba(46, 204, 113, 0.2);
+            --ui-text: #fff;
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        body {
+            margin: 0;
+            background: #000;
+            color: var(--ui-text);
+            font-family: 'Noto Sans TC', sans-serif;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+            user-select: none;
+            touch-action: none;
+        }
+
+        .game-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            max-width: 1024px;
+            background: linear-gradient(180deg, #130f40 0%, #000000 100%);
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 210, 211, 0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- Top Bar --- */
+        .top-bar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 5px 15px; z-index: 20; height: 40px;
+            background: rgba(0,0,0,0.2);
+            flex-shrink: 0;
+        }
+        .stage-badge {
+            background: #f0932b; color: #fff; padding: 3px 10px;
+            border-radius: 15px; font-weight: bold; font-size: 1rem;
+            border: 2px solid #fff; text-shadow: 1px 1px 0 #000;
+        }
+        .score-board {
+            font-family: 'Press Start 2P'; color: #f1c40f; font-size: 0.8rem;
+        }
+
+        /* --- Visual Scene --- */
+        .scene-area {
+            position: relative;
+            flex-grow: 0;
+            height: 120px;
+            min-height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.3)"/></svg>');
+            display: flex; justify-content: center; align-items: center;
+            flex-direction: column;
+            flex-shrink: 0; /* Don't shrink */
+        }
+        
+        .problem-display {
+            background: rgba(0, 0, 0, 0.85);
+            border: 3px solid #00d2d3;
+            border-radius: 15px;
+            padding: 5px 15px;
+            font-family: 'Press Start 2P', 'Noto Sans TC', monospace;
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            color: #fff;
+            text-shadow: 2px 2px 0 #000;
+            z-index: 10;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+            margin-bottom: 5px;
+            text-align: center;
+            line-height: 1.2;
+            max-width: 95%;
+        }
+
+        .sprite {
+            position: absolute;
+            width: 80px; height: 80px;
+            background-size: contain; background-repeat: no-repeat; background-position: center;
+            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.5));
+            transition: transform 0.2s;
+        }
+        .enemy { top: 10px; right: 10px; }
+        .player { bottom: 5px; left: 10px; }
+
+        /* --- Tactical Panel --- */
+        .tactical-panel {
+            background: #2f3640;
+            border-top: 3px solid #576574;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-grow: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Instruction */
+        .instruction-container {
+            display: flex; align-items: center; justify-content: center;
+            width: 98%; margin-bottom: 5px; flex-shrink: 0;
+            background: rgba(0,0,0,0.3); border-radius: 50px; padding: 3px 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            z-index: 50;
+        }
+        .instruction-text {
+            color: #00d2d3; font-weight: bold; font-size: clamp(0.9rem, 3vw, 1.2rem);
+            text-shadow: 0 1px 0 #000; text-align: center; flex-grow: 1;
+        }
+        .tts-btn {
+            background: #0984e3; color: white; border: none; width: 30px; height: 30px;
+            border-radius: 50%; font-size: 1rem; cursor: pointer; flex-shrink: 0; margin-left: 10px;
+            box-shadow: 0 2px 0 #074b83; display: flex; align-items: center; justify-content: center;
+        }
+
+        /* Grid Area */
+        .grid-wrapper {
+            flex-grow: 1;
+            display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+            width: 100%; overflow-y: auto;
+            padding-top: 5px;
+            /* Massive padding to clear fixed bottom bar */
+            padding-bottom: 200px; 
+        }
+
+        /* Question Block */
+        .question-block {
+            padding-bottom: 0; margin-bottom: 0;
+            display: flex; flex-direction: column; gap: 2px;
+            width: 100%; align-items: center;
+            flex-shrink: 0;
+        }
+        
+        .answer-area {
+            background: var(--answer-bg);
+            padding: 8px;
+            border-radius: 10px;
+            border: 2px dashed #2ecc71;
+            margin-top: 2px;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        .grid-row { display: flex; justify-content: center; gap: 3px; margin-bottom: 3px; }
+        
+        .grid-cell {
+            width: clamp(38px, 10vw, 55px); height: clamp(38px, 10vw, 55px);
+            background: var(--grid-bg); border: 2px solid var(--grid-border); border-radius: 6px;
+            display: flex; justify-content: center; align-items: center; position: relative;
+            transition: border-color 0.2s;
+        }
+        
+        .grid-cell.decimal-pos { background: var(--decimal-col); border-color: rgba(255, 107, 107, 0.5); }
+        .grid-cell.decimal-pos::after { 
+            content: '.'; position: absolute; color: rgba(255,255,255,0.2); 
+            font-size: 2rem; padding-bottom: 8px; pointer-events: none; 
+        }
+        .grid-cell.op-pos { background: transparent; border: none; pointer-events: none; }
+        .grid-cell.op-pos.active { pointer-events: auto; background: rgba(255,255,255,0.1); border: 2px dashed #777; }
+        
+        .grid-cell.correct { border-color: #2ecc71; background: rgba(46, 204, 113, 0.3); }
+        .grid-cell.wrong { border-color: #e74c3c; background: rgba(231, 76, 60, 0.3); animation: shake 0.3s; }
+
+        .labels-row {
+            display: flex; justify-content: center; gap: 3px; width: 100%; margin-bottom: 2px;
+        }
+        .labels-row div {
+            width: clamp(38px, 10vw, 55px); text-align: center; font-size: 0.7rem; color: #aaa; font-weight: bold;
+        }
+
+        /* Bottom Bar (Fixed) */
+        .bottom-bar-fixed {
+            position: absolute; bottom: 0; left: 0; width: 100%;
+            background: rgba(30, 39, 46, 0.98); border-top: 2px solid #576574;
+            padding: 8px; display: flex; flex-direction: column; align-items: center;
+            z-index: 100; /* Highest layer */
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.5);
+        }
+
+        /* Explicit Divider Line */
+        .divider-line {
+            width: 90%;
+            height: 4px;
+            background-color: #fff;
+            margin: 2px 0 4px 0;
+            border-radius: 2px;
+            flex-shrink: 0; 
+        }
+
+        /* Inventory */
+        .inventory-area {
+            width: 100%; height: 65px;
+            display: flex; justify-content: center; align-items: center;
+            flex-wrap: nowrap; overflow-x: auto; gap: 8px; padding: 5px;
+            margin-bottom: 5px; flex-shrink: 0;
+        }
+
+        .tile {
+            width: clamp(35px, 9vw, 50px); height: clamp(35px, 9vw, 50px);
+            background: var(--tile-bg); border-bottom: 4px solid var(--tile-shadow);
+            border-radius: 8px; color: #2f3640; font-family: 'Press Start 2P';
+            font-size: clamp(16px, 4vw, 22px);
+            display: flex; justify-content: center; align-items: center;
+            cursor: grab; touch-action: none; user-select: none;
+            box-sizing: border-box; z-index: 10; flex-shrink: 0;
+        }
+        
+        .tile.ghost { opacity: 0.3; }
+        
+        #dragProxy {
+            position: fixed; top: -1000px; left: -1000px;
+            width: 50px; height: 50px;
+            background: var(--tile-bg); border-bottom: 5px solid var(--tile-shadow);
+            border-radius: 8px; color: #2f3640; font-family: 'Press Start 2P';
+            font-size: 24px; display: flex; justify-content: center; align-items: center;
+            z-index: 9999; pointer-events: none;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+            transform: scale(1.1);
+        }
+        
+        .tile.placed { 
+            position: absolute; top:0; left:0; width:100%; height:100%; 
+            border:none; border-radius:6px; background:#fff; margin:0; 
+            z-index: 5; /* Ensure it's above cell background */
+        }
+        .tile[data-val="."] { color: #ff6b6b; font-weight: 900; }
+        .tile[data-val="+"], .tile[data-val="-"] { background: #ff9f43; color: white; border-bottom-color: #e67e22; }
+
+        /* Feedback & Controls */
+        .feedback-text {
+            position: absolute; bottom: 130px; left: 50%; transform: translateX(-50%);
+            color: #e74c3c; font-weight: bold; font-size: 1.1rem; text-align: center;
+            background: rgba(0,0,0,0.9); padding: 8px 15px; border-radius: 15px;
+            opacity: 0; transition: opacity 0.3s; z-index: 80; width: 85%;
+            pointer-events: none; border: 2px solid #555;
+        }
+        .feedback-text.show { opacity: 1; }
+        
+        .check-btn {
+            background: #2ecc71; color: white; border: none; padding: 10px 30px;
+            font-family: 'Noto Sans TC', sans-serif; font-weight: bold; font-size: 1.2rem;
+            border-radius: 50px; cursor: pointer; flex-grow: 1; width: 90%; max-width: 350px;
+            box-shadow: 0 4px 0 #27ae60; transition: transform 0.1s;
+        }
+        .check-btn:active { transform: translateY(4px); box-shadow: none; }
+        .check-btn:disabled { background: #95a5a6; box-shadow: none; cursor: not-allowed; opacity: 0.7; }
+
+        /* Overlays */
+        .overlay {
+            position: absolute; top:0; left:0; width:100%; height:100%;
+            background: rgba(0,0,0,0.95); z-index: 2000;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+        }
+        .start-title { color:#f1c40f; font-family:'Press Start 2P'; font-size: clamp(2rem, 6vw, 3rem); margin-bottom: 20px; line-height: 1.4;}
+        .start-desc { color:#ccc; font-size: 1.2rem; margin-bottom: 30px; padding: 0 20px;}
+        .btn-main {
+            background: #00d2d3; color: #fff; border: none; padding: 15px 40px;
+            font-family: 'Press Start 2P'; font-size: 1.5rem; cursor: pointer;
+            border-bottom: 6px solid #01a3a4; border-radius: 15px;
+        }
+        .btn-main:active { transform: translateY(4px); border-bottom-width: 3px; }
+
+        /* Animations */
+        .shake { animation: shake 0.4s; }
+        @keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-10px)} 75%{transform:translateX(10px)} }
+        
+        .float-score { 
+            position: absolute; color: #f1c40f; font-family: 'Press Start 2P'; font-size: 2rem; 
+            z-index: 100; animation: floatUp 1s forwards; text-shadow: 2px 2px 0 #000; 
+        }
+        @keyframes floatUp { 0%{opacity:1; transform:translateY(0)} 100%{opacity:0; transform:translateY(-50px)} }
+        
+        .layout-compare { display: flex; align-items: center; gap: 15px; font-family: 'Press Start 2P'; font-size: 1.5rem; color: #fff; }
+        .compare-box { padding: 15px 20px; background: #333; border-radius: 15px; border: 3px solid #777; }
+
+    </style>
+</head>
+<body>
+
+<div id="dragProxy"></div>
+
+<div class="game-wrapper">
+    <div class="top-bar">
+        <div class="stage-badge" id="stageBadge">關卡 1</div>
+        <div class="score-board">分數: <span id="scoreVal">0</span></div>
+    </div>
+
+    <div class="scene-area">
+        <div class="problem-display" id="problemText">題目載入中...</div>
+        
+        <div class="sprite enemy" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><path d=%22M20,20 L80,20 L90,50 L80,80 L20,80 L10,50 Z%22 fill=%22%237f8c8d%22 stroke=%22black%22 stroke-width=%223%22/><circle cx=%2235%22 cy=%2245%22 r=%228%22 fill=%22red%22/><circle cx=%2265%22 cy=%2245%22 r=%228%22 fill=%22red%22/><path d=%22M30,65 L70,65%22 stroke=%22black%22 stroke-width=%223%22/></svg>');"></div>
+        <div class="sprite player" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23f1c40f%22 stroke=%22black%22 stroke-width=%223%22/><circle cx=%2235%22 cy=%2240%22 r=%225%22 fill=%22black%22/><circle cx=%2265%22 cy=%2240%22 r=%225%22 fill=%22black%22/><path d=%22M40,60 Q50,70 60,60%22 stroke=%22black%22 stroke-width=%223%22 fill=%22none%22/></svg>');"></div>
+    </div>
+
+    <div class="tactical-panel">
+        <div class="instruction-container">
+            <div class="instruction-text" id="msg">準備開始...</div>
+            <button class="tts-btn" onclick="speakPrompt()">🔊</button>
+        </div>
+
+        <div class="grid-wrapper" id="gridArea">
+            <!-- Grids go here -->
+        </div>
+
+        <div class="feedback-text" id="feedbackMsg"></div>
+
+        <div class="bottom-bar-fixed">
+            <div class="inventory-area" id="inventory"></div>
+            <button class="check-btn" id="checkBtn" onclick="checkAnswer()">✅ 檢查答案</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="startScreen">
+        <h1 class="start-title">星際小數<br>極簡封面版</h1>
+        <button class="btn-main" onclick="initGame()">開始挑戰</button>
+    </div>
+
+    <div class="overlay" id="endScreen" style="display:none">
+        <h1 class="start-title">特訓完成！</h1>
+        <p class="start-desc" id="finalStats"></p>
+        <button class="btn-main" onclick="location.reload()">再次挑戰</button>
+    </div>
+</div>
+
+<script>
+// --- Config ---
+const STAGES = [
+    { name: "位值星系", type: "linear", gen: genPlaceValue },
+    { name: "長度轉換", type: "linear", gen: genLength },
+    { name: "大小比較", type: "compare", gen: genCompare },
+    { name: "加法直式", type: "vertical", gen: genAdd },
+    { name: "減法直式", type: "vertical", gen: genSub }
+];
+
+// --- State ---
+let currentStage = 0;
+let currentScore = 0;
+let placedTiles = {}; 
+let levelData = null;
+let startTime = 0;
+let hasMadeMistake = false;
+let isProcessing = false;
+
+// --- Audio & TTS ---
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+const synth = window.speechSynthesis;
+let voices = [];
+window.speechSynthesis.onvoiceschanged = () => { voices = synth.getVoices(); };
+
+function playTone(f, type='sine') {
+    if(audioCtx.state==='suspended') audioCtx.resume();
+    const o = audioCtx.createOscillator(); const g = audioCtx.createGain();
+    o.type = type; o.frequency.value = f; o.connect(g); g.connect(audioCtx.destination);
+    g.gain.setValueAtTime(0.1, audioCtx.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime+0.1);
+    o.start(); o.stop(audioCtx.currentTime+0.1);
+}
+
+function speak(text) {
+    synth.cancel();
+    let t = text.replace(/\+/g, '加').replace(/-/g, '減').replace(/=/g, '等於').replace(/>/g, '大於').replace(/</g, '小於');
+    t = t.replace(/(\d+)\.(\d+)/g, (match, intPart, decPart) => {
+        const numMap = {'0':'零','1':'一','2':'二','3':'三','4':'四','5':'五','6':'六','7':'七','8':'八','9':'九'};
+        let decText = decPart.split('').map(d => numMap[d]).join('');
+        return `${intPart}點${decText}`;
+    });
+    const u = new SpeechSynthesisUtterance(t);
+    const zh = voices.find(v => v.lang.includes('TW')) || voices.find(v => v.lang.includes('HK')) || voices.find(v => v.lang.includes('zh'));
+    if(zh) u.voice = zh;
+    u.rate = 0.9; synth.speak(u);
+}
+function speakPrompt() { 
+    const txt = document.getElementById('problemText').innerText;
+    speak("題目是：" + txt);
+}
+function showMsg(msg, color='#e74c3c') {
+    const el = document.getElementById('feedbackMsg');
+    el.innerText = msg;
+    el.style.color = color;
+    el.classList.add('show');
+    setTimeout(() => el.classList.remove('show'), 3000);
+}
+
+// --- Generators ---
+function getRandomInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+
+function genPlaceValue() {
+    const ones = getRandomInt(1, 9);
+    const hundredths = getRandomInt(1, 9);
+    const prompt = `${ones} 個 1 和 ${hundredths} 個 0.01`;
+    const map = { '0-1': ones.toString(), '0-2': '.', '0-3': '0', '0-4': hundredths.toString() };
+    return { prompt, map, tiles: [ones.toString(), hundredths.toString(), '0', '.', '1', '0', '5'] };
+}
+
+function genLength() {
+    const cm = getRandomInt(5, 95);
+    const prompt = `${cm} cm = ? m`;
+    const t = Math.floor(cm/10);
+    const h = cm%10;
+    const map = { '0-1':'0', '0-2':'.', '0-3':t.toString(), '0-4':h.toString() };
+    return { prompt, map, tiles: ['0', '.', t.toString(), h.toString(), '0', '1', '5'] };
+}
+
+function genCompare() {
+    const a = (Math.random()*5+1).toFixed(2);
+    let b = (Math.random()*5+1).toFixed(2);
+    while(b == a) b = (Math.random()*5+1).toFixed(2);
+    const op = parseFloat(a) > parseFloat(b) ? '>' : '<';
+    return { prompt: `${a}  ?  ${b}`, nums: [a, b], map: { '0-0': op }, tiles: ['>', '<', '='] };
+}
+
+function genAdd() {
+    const n1 = (Math.random()*8+1).toFixed(2);
+    const n2 = (Math.random()*5+0.5).toFixed(2);
+    const sum = (parseFloat(n1)+parseFloat(n2)).toFixed(2);
+    const map = parseToMap(n1, 0);
+    Object.assign(map, parseToMap(n2, 1));
+    map['1--1'] = '+';
+    Object.assign(map, parseToMap(sum, 2));
+    return { prompt: `${n1} + ${n2}`, map, tiles: extractTiles(map) };
+}
+
+function genSub() {
+    const intVal = getRandomInt(3, 9);
+    const decVal = (Math.random() * (intVal-1)).toFixed(2);
+    const diff = (intVal - parseFloat(decVal)).toFixed(2);
+    const map = parseToMap(intVal.toString(), 0);
+    Object.assign(map, parseToMap(decVal, 1));
+    map['1--1'] = '-';
+    Object.assign(map, parseToMap(diff, 2));
+    return { prompt: `${intVal} - ${decVal}`, map, tiles: extractTiles(map) };
+}
+
+function parseToMap(numStr, row) {
+    const m = {};
+    const p = numStr.split('.');
+    const i = p[0]; const d = p[1] || "";
+    if(i.length >= 1) m[`${row}-1`] = i[i.length-1];
+    if(i.length >= 2) m[`${row}-0`] = i[i.length-2];
+    if(numStr.includes('.') || d.length > 0) m[`${row}-2`] = '.';
+    if(d.length >= 1) m[`${row}-3`] = d[0];
+    if(d.length >= 2) m[`${row}-4`] = d[1];
+    return m;
+}
+
+function extractTiles(map) {
+    const t = Object.values(map);
+    for(let i=0;i<4;i++) t.push(Math.floor(Math.random()*10).toString());
+    if(!t.includes('.')) t.push('.');
+    return t.sort(()=>Math.random()-0.5);
+}
+
+// --- Core Logic ---
+function initGame() {
+    document.getElementById('startScreen').style.display = 'none';
+    currentStage = 0; currentScore = 0;
+    hasMadeMistake = false;
+    isProcessing = false;
+    loadStage();
+}
+
+function loadStage() {
+    if(currentStage >= STAGES.length) {
+        showEndScreen();
+        return;
+    }
+    const stage = STAGES[currentStage];
+    levelData = stage.gen();
+    placedTiles = {};
+    startTime = Date.now();
+    
+    isProcessing = false;
+    document.getElementById('checkBtn').disabled = false;
+
+    document.getElementById('stageBadge').innerText = stage.name;
+    document.getElementById('scoreVal').innerText = currentScore;
+    document.getElementById('problemText').innerText = levelData.prompt;
+    
+    speak(levelData.prompt);
+    renderGrid(stage.type, levelData);
+    renderInventory(levelData.tiles);
+}
+
+function renderGrid(type, data) {
+    const area = document.getElementById('gridArea');
+    area.innerHTML = '';
+    
+    if(type === 'linear') {
+        area.innerHTML += `<div class="labels-row"><div>十位</div><div>個位</div><div>.</div><div>十分</div><div>百分</div></div>`;
+        const row = document.createElement('div');
+        row.className = 'grid-row';
+        for(let c=0; c<5; c++) row.innerHTML += createCell(0, c, c===2);
+        area.appendChild(row);
+    } else if (type === 'compare') {
+        area.innerHTML = `
+            <div class="layout-compare">
+                <div class="compare-box">${data.nums[0]}</div>
+                <div class="grid-cell" data-row="0" data-col="0" style="width:80px; height:80px;"></div>
+                <div class="compare-box">${data.nums[1]}</div>
+            </div>`;
+    } else if (type === 'vertical') {
+        const qBlock = document.createElement('div');
+        qBlock.className = 'question-block';
+        for(let r=0; r<2; r++) {
+            const row = document.createElement('div');
+            row.className = 'grid-row';
+            for(let c=-1; c<5; c++) row.innerHTML += createCell(r, c, c===2, c===-1);
+            qBlock.appendChild(row);
+        }
+        
+        const line = document.createElement('div');
+        line.className = 'divider-line';
+        
+        const ansRow = document.createElement('div');
+        ansRow.className = 'grid-row answer-area';
+        for(let c=-1; c<5; c++) ansRow.innerHTML += createCell(2, c, c===2, c===-1);
+        
+        area.appendChild(qBlock);
+        area.appendChild(line); 
+        area.appendChild(ansRow);
+    }
+}
+
+function createCell(r, c, isDot, isOp) {
+    let cls = 'grid-cell';
+    if(isDot) cls += ' decimal-pos';
+    if(isOp) cls += ' op-pos';
+    if(isOp && r === 1) cls += ' active'; 
+    
+    return `<div class="${cls}" data-row="${r}" data-col="${c}" ${isOp && r !== 1 ? 'style="visibility:hidden"' : ''}></div>`;
+}
+
+function renderInventory(tiles) {
+    const inv = document.getElementById('inventory');
+    inv.innerHTML = '';
+    tiles.forEach(val => {
+        const t = document.createElement('div');
+        t.className = 'tile'; t.innerText = val; t.dataset.val = val;
+        addDragEvents(t);
+        inv.appendChild(t);
+    });
+}
+
+// --- Check Logic ---
+function checkAnswer() {
+    if (isProcessing) return; 
+    isProcessing = true;
+    const btn = document.getElementById('checkBtn');
+    btn.disabled = true;
+
+    const correctMap = levelData.map;
+    let wrongCells = [];
+    let errorType = null;
+    let missingZero = false;
+
+    for(let key in correctMap) {
+        const val = placedTiles[key];
+        if(val !== correctMap[key]) {
+            const [r, c] = key.split('-');
+            if(c === '2' && val !== '.') errorType = "小數點位置錯誤";
+            else if(r === '2') errorType = "答案算錯了";
+            else errorType = "排列位置有誤";
+            
+            const cell = document.querySelector(`.grid-cell[data-row="${r}"][data-col="${c}"]`);
+            if(cell) wrongCells.push(cell);
+        } else {
+            const cell = document.querySelector(`.grid-cell[data-row="${key.split('-')[0]}"][data-col="${key.split('-')[1]}"]`);
+            if(cell) cell.classList.add('correct');
+        }
+    }
+
+    for(let key in placedTiles) {
+        if(!correctMap[key]) {
+             const [r, c] = key.split('-');
+             const cell = document.querySelector(`.grid-cell[data-row="${r}"][data-col="${c}"]`);
+             if(cell) { wrongCells.push(cell); errorType = errorType || "有多餘積木"; }
+        }
+    }
+
+    if(wrongCells.length === 0) {
+        playTone(800, 'sine');
+        if(hasMadeMistake) {
+            showMsg("答對了！再出一題考考你！", "#f1c40f");
+            speak("答對了！再試一題！");
+            hasMadeMistake = false; 
+            setTimeout(loadStage, 2500);
+        } else {
+            const points = 100 + Math.max(0, 50 - Math.floor((Date.now()-startTime)/1000));
+            currentScore += points;
+            showFloatingScore(points);
+            showMsg("完美！發動攻擊！", "#2ecc71");
+            speak("太棒了！完全正確！");
+            const p = document.querySelector('.player');
+            p.style.transform = "translateX(-50%) translateY(-50px) scale(1.2)";
+            setTimeout(() => {
+                p.style.transform = "translateX(-50%)";
+                currentStage++;
+                loadStage();
+            }, 2000);
+        }
+    } else {
+        playTone(150, 'sawtooth');
+        hasMadeMistake = true;
+        wrongCells.forEach(c => c.classList.add('wrong'));
+        setTimeout(() => wrongCells.forEach(c => c.classList.remove('wrong')), 1000);
+        
+        let msg = errorType || "有錯誤，請檢查！";
+        if(missingZero) msg = "⚠️ 是不是忘了補 0 ？";
+        
+        showMsg(msg, "#e74c3c");
+        speak(msg);
+        
+        isProcessing = false;
+        btn.disabled = false;
+    }
+}
+
+function showFloatingScore(pts) {
+    const fs = document.createElement('div');
+    fs.className = 'float-score'; fs.innerText = `+${pts}`;
+    fs.style.left = '50%'; fs.style.top = '40%';
+    document.body.appendChild(fs);
+    setTimeout(()=>fs.remove(), 1000);
+}
+
+function showEndScreen() {
+    document.getElementById('endScreen').style.display = 'flex';
+    document.getElementById('finalStats').innerHTML = `總分: <span style="color:#f1c40f">${currentScore}</span>`;
+    speak(`特訓結束，總分${currentScore}分`);
+}
+
+// --- Ghost Drag Logic ---
+let dragSrc = null;
+let dragProxy = document.getElementById('dragProxy');
+let dragOff = {x:0, y:0};
+
+function addDragEvents(el) {
+    el.addEventListener('touchstart', dragStart, {passive:false});
+    el.addEventListener('mousedown', dragStart);
+}
+
+function dragStart(e) {
+    if(e.cancelable) e.preventDefault();
+    let t = e.target;
+    if(!t.classList.contains('tile')) return;
+    
+    dragSrc = t;
+    const parent = dragSrc.parentElement;
+    if(parent.classList.contains('grid-cell')) {
+        delete placedTiles[`${parent.dataset.row}-${parent.dataset.col}`];
+        parent.classList.remove('correct', 'wrong');
+        dragSrc.classList.remove('placed');
+    }
+
+    dragProxy.innerText = dragSrc.innerText;
+    dragProxy.style.backgroundColor = getComputedStyle(dragSrc).backgroundColor;
+    dragProxy.style.color = getComputedStyle(dragSrc).color;
+    dragProxy.style.borderBottomColor = getComputedStyle(dragSrc).borderBottomColor;
+    
+    dragSrc.classList.add('ghost');
+    
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    dragOff = { x: 25, y: 25 }; 
+    
+    moveProxy(clientX, clientY);
+    
+    document.addEventListener('touchmove', dragMove, {passive:false});
+    document.addEventListener('touchend', dragEnd);
+    document.addEventListener('mousemove', dragMove);
+    document.addEventListener('mouseup', dragEnd);
+}
+
+function dragMove(e) {
+    if(e.cancelable) e.preventDefault();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    moveProxy(clientX, clientY);
+}
+
+function moveProxy(x, y) {
+    dragProxy.style.top = (y - dragOff.y) + 'px';
+    dragProxy.style.left = (x - dragOff.x) + 'px';
+}
+
+function dragEnd(e) {
+    document.removeEventListener('touchmove', dragMove); document.removeEventListener('touchend', dragEnd);
+    document.removeEventListener('mousemove', dragMove); document.removeEventListener('mouseup', dragEnd);
+    
+    dragProxy.style.top = '-1000px';
+    dragSrc.classList.remove('ghost');
+    
+    const clientX = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
+    const clientY = e.changedTouches ? e.changedTouches[0].clientY : e.clientY;
+    
+    const cells = document.querySelectorAll('.grid-cell');
+    let dropped = false;
+    
+    for(let cell of cells) {
+        const r = cell.getBoundingClientRect();
+        if(clientX > r.left-10 && clientX < r.right+10 && clientY > r.top-10 && clientY < r.bottom+10) {
+            if(cell.classList.contains('op-pos') && !cell.classList.contains('active')) continue;
+            
+            if(cell.children.length > 0) {
+                document.getElementById('inventory').appendChild(cell.firstElementChild);
+            }
+            
+            cell.appendChild(dragSrc);
+            dragSrc.classList.add('placed');
+            placedTiles[`${cell.dataset.row}-${cell.dataset.col}`] = dragSrc.dataset.val;
+            cell.classList.remove('correct', 'wrong');
+            playTone(600, 'square');
+            dropped = true;
+            break;
+        }
+    }
+    
+    if(!dropped) {
+        document.getElementById('inventory').appendChild(dragSrc);
+        playTone(200, 'sawtooth');
+    }
+    
+    dragSrc = null;
+}
+</script>
+</body>
+</html>
