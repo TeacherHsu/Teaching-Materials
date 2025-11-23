@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #FF9F43; /* 烘焙橘 */
-            --secondary: #54a0ff; /* 康軒藍 */
+            --primary: #FF9F43;
+            --secondary: #54a0ff;
             --success: #1dd1a1;
             --error: #ff6b6b;
             --text: #2c3e50;
@@ -64,6 +64,16 @@
         .step-row { display: flex; align-items: center; justify-content: center; margin: 10px 0; font-size: 1.4rem; flex-wrap: wrap; }
         .step-hint { color: #e74c3c; font-size: 1rem; margin-bottom: 5px; width: 100%; }
         .operator { margin: 0 10px; font-weight: bold; }
+
+        /* 重點標示 */
+        .highlight-step {
+            color: #d35400;
+            font-weight: bold;
+            background-color: #fff3cd;
+            padding: 5px 10px;
+            border-radius: 10px;
+            animation: fadeIn 0.5s;
+        }
 
         .feedback-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; justify-content: center; align-items: center; z-index: 200; }
         .feedback-box { background: white; padding: 30px; border-radius: 20px; text-align: center; width: 80%; max-height: 80%; overflow-y: auto; animation: popIn 0.3s; position: relative; }
@@ -215,23 +225,47 @@ function startGame() {
 
 function nextLevel() {
     document.querySelectorAll('.screen').forEach(el => el.classList.remove('active'));
+    
+    // Check Level Completion
     if(gameState.problemCount >= gameState.maxProblemsPerLevel) {
         gameState.level++;
         gameState.problemCount = 0;
         gameState.consecutiveMistakes = 0;
     }
+
+    // Check End Game
     if(gameState.level > 6) { 
         document.getElementById('end-screen').classList.add('active');
         document.getElementById('check-btn').style.display = 'none';
+        
+        // Stop any ongoing TTS before ending
+        window.speechSynthesis.cancel();
+        
         showEndScreen();
         return;
     }
-    let screenId = (gameState.level === 5 || gameState.level === 6) ? 'level-common-screen' : `level-${gameState.level}-screen`;
-    document.getElementById(screenId).classList.add('active');
-    generateProblem(gameState.level);
+
+    // Router
+    let screenId = '';
+    if (gameState.level === 5 || gameState.level === 6) {
+        screenId = 'level-common-screen';
+    } else {
+        screenId = `level-${gameState.level}-screen`;
+    }
+
+    const screenEl = document.getElementById(screenId);
+    if(screenEl) {
+        screenEl.classList.add('active');
+        generateProblem(gameState.level);
+    } else {
+        console.error("Screen not found: " + screenId);
+    }
 }
 
 function generateProblem(level) {
+    // Ensure TTS stops before new problem
+    window.speechSynthesis.cancel();
+    
     gameState.mistakes = 0;
     document.getElementById('check-btn').style.display = 'block';
     switch(level) {
@@ -307,27 +341,45 @@ function generateLevel5() {
 function generateLevel6() {
     document.getElementById('common-level-title').innerText = "第 6 關：剩多少材料 (減法)";
     const den = [5, 6, 8, 10][Math.floor(Math.random() * 4)];
-    const type = Math.random() > 0.5 ? 'int_mixed' : 'mixed_mixed';
+    
+    // --- Teaching Sequence Logic ---
+    // Q1: Easy (Mixed - Mixed, no borrowing)
+    // Q2: Hard (Integer - Mixed, requires conversion)
+    // Q3: Random consolidation
+    let type;
+    if (gameState.problemCount === 0) type = 'mixed_mixed';
+    else if (gameState.problemCount === 1) type = 'int_mixed';
+    else type = Math.random() > 0.5 ? 'int_mixed' : 'mixed_mixed';
+
     let intA, numA, intB, numB, qText, html;
     
     if (type === 'int_mixed') {
-        intA = Math.floor(Math.random() * 3) + 3; intB = Math.floor(Math.random() * (intA - 2)) + 1; numB = Math.floor(Math.random() * (den - 1)) + 1;
+        // Integer - Mixed (Hard)
+        intA = Math.floor(Math.random() * 3) + 3; 
+        intB = Math.floor(Math.random() * (intA - 2)) + 1; 
+        numB = Math.floor(Math.random() * (den - 1)) + 1;
+        
         currentProblem = { type: 'calc_sub', ansInt: intA - 1 - intB, ansNum: den - numB, ansDen: den, questionTTS: `有一條繩子長${intA}公尺，用掉了${intB}又${den}分之${numB}公尺，還剩下多少公尺？` };
         qText = `有一條繩子長 <span class="integer">${intA}</span> 公尺，用掉了 ${renderMixedFraction(intB, numB, den)} 公尺，還剩下多少公尺？`;
         
-        // Show intermediate step visually: 4 - 1 6/10 -> 3 10/10 - 1 6/10
+        // Scaffolding: Show the expansion step clearly in red
         html = `
             <div class="step-row">
                 <span class="integer">${intA}</span> <span class="operator">-</span> ${renderMixedFraction(intB, numB, den)}
             </div>
             <div class="step-hint">把整數換成假分數再減 (${intA} 換成 ${intA-1} 和 ${den}/${den})</div>
-            <div class="step-row" style="color:var(--primary); font-weight:bold; animation: fadeIn 0.5s;">
+            <div class="step-row highlight-step">
                 <span class="operator">=</span>
                 ${renderMixedFraction(intA-1, den, den)} <span class="operator">-</span> ${renderMixedFraction(intB, numB, den)}
             </div>
         `;
     } else {
-        intA = Math.floor(Math.random() * 3) + 2; intB = Math.floor(Math.random() * (intA - 1)) + 1; numA = Math.floor(Math.random() * (den - 2)) + 2; numB = Math.floor(Math.random() * (numA - 1)) + 1;
+        // Mixed - Mixed (Easy, no borrowing)
+        intA = Math.floor(Math.random() * 3) + 2; 
+        intB = Math.floor(Math.random() * (intA - 1)) + 1;
+        numA = Math.floor(Math.random() * (den - 2)) + 2; 
+        numB = Math.floor(Math.random() * (numA - 1)) + 1;
+        
         currentProblem = { type: 'calc_sub', ansInt: intA - intB, ansNum: numA - numB, ansDen: den, questionTTS: `有一包麵粉重${intA}又${den}分之${numA}公斤，做蛋糕用了${intB}又${den}分之${numB}公斤，還剩下多少公斤？` };
         qText = `有一包麵粉重 ${renderMixedFraction(intA, numA, den)} 公斤，做蛋糕用了 ${renderMixedFraction(intB, numB, den)} 公斤，還剩下多少公斤？`;
         
@@ -394,19 +446,19 @@ function handleMistake(title, msg) {
 
 function showFeedback(success, title, msg) {
     const overlay = document.getElementById('feedback-overlay');
-    const box = document.getElementById('feedback-box');
-    
     document.getElementById('fb-title').innerText = title;
     document.getElementById('fb-title').style.color = success ? varCss('--success') : varCss('--error');
     document.getElementById('fb-msg').innerHTML = msg;
-    
     overlay.style.display = 'flex';
     overlay.onclick = function() {
         overlay.style.display = 'none';
         if (success) {
             gameState.problemCount++;
-            if (gameState.problemCount >= gameState.maxProblemsPerLevel) nextLevel();
-            else generateProblem(gameState.level);
+            // Delay to ensure logic processes before screen change
+            setTimeout(() => {
+                if (gameState.problemCount >= gameState.maxProblemsPerLevel) nextLevel();
+                else generateProblem(gameState.level);
+            }, 100);
             gameState.consecutiveMistakes = 0;
         } else if (gameState.consecutiveMistakes >= 2) {
             generateProblem(gameState.level); gameState.consecutiveMistakes = 0;
