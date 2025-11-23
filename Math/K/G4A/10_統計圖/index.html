@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國小數學：統計圖大挑戰</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Chosen Palette: "Energetic Learning" -->
+    
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #fff7ed; /* orange-50 */
+            color: #1e3a8a; /* blue-900 */
+            user-select: none;
+            overflow-x: hidden;
+        }
+
+        /* 語音按鈕樣式 */
+        .tts-btn {
+            @apply flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 text-blue-600 border-2 border-blue-200 flex items-center justify-center cursor-pointer transition-transform hover:scale-110 hover:bg-blue-600 hover:text-white active:scale-95 shadow-sm;
+        }
+        .tts-active {
+            @apply bg-yellow-400 text-yellow-900 border-yellow-500 animate-pulse;
+        }
+
+        /* --- 選項按鈕設計 (美觀直覺版) --- */
+        .option-card {
+            @apply w-full p-4 mb-3 bg-white rounded-2xl border-2 border-stone-200 shadow-sm cursor-pointer transition-all duration-200 flex items-center hover:border-blue-400 hover:bg-blue-50 hover:shadow-md active:scale-[0.99];
+            min-height: 72px; 
+        }
+        
+        .option-indicator {
+            @apply w-8 h-8 rounded-full border-2 border-stone-300 mr-4 flex items-center justify-center flex-shrink-0 bg-white transition-colors;
+        }
+        
+        .option-indicator::after {
+            content: '';
+            @apply w-4 h-4 rounded-full bg-blue-500 opacity-0 transform scale-0 transition-all duration-200;
+        }
+
+        .option-card:hover .option-indicator {
+            @apply border-blue-500;
+        }
+
+        .option-card.correct {
+            @apply border-green-500 bg-green-50 text-green-800 ring-2 ring-green-300 pointer-events-none;
+        }
+        .option-card.correct .option-indicator {
+            @apply border-green-500 bg-green-500;
+        }
+        .option-card.correct .option-indicator::after {
+            @apply bg-white opacity-100 scale-100;
+            content: '✓'; 
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent; 
+        }
+
+        .option-card.wrong {
+            @apply border-red-500 bg-red-50 text-red-800 opacity-80 pointer-events-none;
+        }
+        .option-card.wrong .option-indicator {
+            @apply border-red-500 bg-red-100;
+        }
+        .option-card.wrong .option-indicator::after {
+            @apply opacity-100 scale-100;
+            content: '✕';
+            color: #ef4444;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+        }
+
+        .option-card.disabled {
+            @apply opacity-50 cursor-not-allowed pointer-events-none;
+        }
+
+        /* 圖表容器 */
+        .chart-wrapper {
+            @apply relative w-full max-w-4xl h-[45vh] max-h-[400px] mx-auto bg-white rounded-2xl p-4 shadow-md border border-stone-100;
+        }
+
+        /* 動畫 */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: slideIn 0.5s ease-out forwards;
+        }
+
+        @keyframes popScore {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.5); color: #ea580c; }
+            100% { transform: scale(1); }
+        }
+        .score-update {
+            animation: popScore 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen pb-10">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-30 px-4 py-3">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center text-white text-2xl shadow-inner">📊</div>
+                <div>
+                    <h1 class="font-black text-xl text-stone-800 tracking-wide">統計圖大挑戰</h1>
+                    <div class="text-xs text-stone-500 font-medium">第 <span id="level-indicator">1</span> 關</div>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <div class="hidden md:block w-32 h-3 bg-stone-200 rounded-full overflow-hidden border border-stone-300">
+                    <div id="timer-bar" class="h-full bg-green-500 w-full transition-all duration-1000 linear"></div>
+                </div>
+                
+                <div class="bg-yellow-100 px-4 py-2 rounded-xl border-2 border-yellow-300 flex items-center gap-2 shadow-sm">
+                    <span class="text-xl">⭐</span>
+                    <span id="score-display" class="font-black text-2xl text-yellow-800 tabular-nums">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-6 flex flex-col items-center justify-center">
+        
+        <!-- 遊戲區域 -->
+        <div id="game-area" class="w-full max-w-5xl fade-in hidden">
+            
+            <div class="flex flex-col lg:flex-row gap-6 w-full">
+                
+                <!-- 左側：圖表與情境 -->
+                <div class="w-full lg:w-2/3 space-y-4">
+                    <div class="bg-white px-5 py-3 rounded-xl shadow-sm border border-blue-100 flex items-center justify-between">
+                        <h2 id="chart-title" class="text-xl font-bold text-stone-800">圖表標題</h2>
+                        <button class="tts-btn" id="tts-chart-intro">🔊</button>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="mainChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- 右側：互動問答 -->
+                <div class="w-full lg:w-1/3 flex flex-col">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-blue-100 flex-grow flex flex-col justify-center relative overflow-hidden">
+                        
+                        <div class="mb-6">
+                            <div class="flex items-start gap-3">
+                                <span class="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded shadow-sm mt-1 flex-shrink-0">問答</span>
+                                <p id="question-text" class="text-xl font-bold text-stone-800 leading-relaxed">
+                                    題目載入中...
+                                </p>
+                                <button class="tts-btn" id="tts-question">🔊</button>
+                            </div>
+                        </div>
+
+                        <div id="options-container" class="w-full flex flex-col gap-2">
+                            <!-- JS動態生成 -->
+                        </div>
+
+                        <div id="feedback-area" class="hidden mt-4 pt-4 border-t-2 border-stone-100 text-center">
+                            <p id="feedback-msg" class="text-lg font-bold mb-4"></p>
+                            <button id="action-btn" class="w-full py-3 px-6 rounded-xl font-bold text-lg shadow-md transition-transform active:scale-95 flex items-center justify-center gap-2">
+                                下一關 ➡
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 結算畫面 -->
+        <div id="end-screen" class="hidden w-full max-w-2xl text-center bg-white p-10 rounded-3xl shadow-xl border-4 border-yellow-300 fade-in">
+            <div class="text-8xl mb-4">🏆</div>
+            <h2 class="text-4xl font-black text-blue-800 mb-2">挑戰完成！</h2>
+            <p class="text-stone-600 text-xl mb-8">你的統計圖能力等級是...</p>
+            
+            <div class="bg-yellow-50 p-6 rounded-2xl border-2 border-yellow-200 mb-8">
+                <div class="text-6xl font-black text-yellow-600 mb-2" id="final-score">0</div>
+                <div class="text-2xl font-bold text-yellow-800" id="final-rank">統計圖大師</div>
+            </div>
+
+            <button onclick="location.reload()" class="bg-blue-600 hover:bg-blue-700 text-white text-xl font-bold py-4 px-12 rounded-full shadow-lg transition-all hover:shadow-xl hover:-translate-y-1">
+                再次挑戰 (題目會不一樣喔！)
+            </button>
+        </div>
+
+        <!-- 觀念教學卡 -->
+        <div id="concept-card" class="hidden max-w-3xl w-full bg-white p-8 rounded-3xl shadow-2xl border-4 border-blue-100 fade-in text-center">
+            <h2 id="concept-title" class="text-3xl font-black text-blue-800 mb-6">觀念標題</h2>
+            <div id="concept-content" class="text-xl text-stone-700 leading-loose mb-8 bg-blue-50 p-6 rounded-xl text-left">
+                觀念內容...
+            </div>
+            <button id="concept-btn" class="bg-green-500 hover:bg-green-600 text-white text-xl font-bold py-3 px-10 rounded-full shadow-md transition-transform active:scale-95">
+                我懂了，開始挑戰！
+            </button>
+        </div>
+
+    </main>
+
+    <script>
+        // --- 核心變數 ---
+        let currentLevel = 0;
+        let score = 0;
+        let chartInstance = null;
+        let currentQuestionData = null; 
+        let questionStartTime = 0;
+        let isRetryMode = false; 
+
+        const synth = window.speechSynthesis;
+
+        // --- 關卡設定 (Level Configuration) ---
+        const levels = [
+            {
+                type: 'concept',
+                title: '認識長條圖',
+                content: '長條圖是用<span class="text-blue-600 font-bold">長條的高度</span>來表示數量的多少。<br>長條越高，代表數量越多；長條越矮，代表數量越少。<br>讓我們來練習看看誰最多、誰最少！'
+            },
+            {
+                type: 'game',
+                mode: 'bar_basic', 
+                title: '各班資源回收量', // 來自習作 P.134
+                questionType: 'max', 
+                genFn: generateBarData 
+            },
+            {
+                type: 'game',
+                mode: 'bar_basic',
+                title: '最喜歡的季節', // 來自習作 P.144
+                questionType: 'min', 
+                genFn: generateBarData
+            },
+            {
+                type: 'concept',
+                title: '認識刻度與單位',
+                content: '看統計圖時，要注意縱軸(旁邊的線)的刻度。<br>有時候一格不是代表 1 喔！<br>如果 0 到 10 分成 5 格，那麼<span class="text-red-500 font-bold">一格就是 2</span>。'
+            },
+            {
+                type: 'game',
+                mode: 'bar_scale', 
+                title: '動物園入園人數', // 來自課本 P.48 (壽山動物園)
+                questionType: 'value', 
+                scaleStep: 10, 
+                genFn: generateBarData
+            },
+            {
+                type: 'concept',
+                title: '認識折線圖',
+                content: '折線圖是用<span class="text-blue-600 font-bold">線的起伏</span>來表示變化。<br>📈 線往上爬表示增加。<br>📉 線往下滑表示減少。<br>適合用來看氣溫、身高這種會變化的資料。'
+            },
+            {
+                type: 'game',
+                mode: 'line_trend', 
+                title: '一週氣溫變化紀錄', // 修正：使用氣溫，符合忽高忽低邏輯 (習作 P.34 氣溫變化)
+                questionType: 'trend_up', 
+                genFn: generateLineData
+            },
+            {
+                type: 'game',
+                mode: 'line_growth', 
+                title: '承恩的身高紀錄', // 修正：使用身高，符合單調遞增 (課本 P.40 承恩身高)
+                questionType: 'diff', 
+                genFn: generateGrowthData // 新增生成器：只增不減
+            },
+            {
+                type: 'concept',
+                title: '複雜統計圖',
+                content: '有時候圖表裡會有兩種顏色的長條或線。<br>這時候要先看上面的<span class="bg-yellow-200 px-2 rounded">圖例</span>。<br>例如藍色代表男生，紅色代表女生。<br>分清楚顏色才不會看錯喔！'
+            },
+            {
+                type: 'game',
+                mode: 'complex_bar',
+                title: '圖書館借書人次', // 來自習作 P.34
+                questionType: 'compare_group', 
+                genFn: generateComplexBarData
+            }
+        ];
+
+        // --- 亂數生成器 (Random Generators) ---
+        function randomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // 生成長條圖數據
+        function generateBarData(config) {
+            let items = [];
+            if (config.title.includes('資源回收')) {
+                items = ['甲班', '乙班', '丙班', '丁班', '戊班'];
+            } else if (config.title.includes('季節')) {
+                items = ['春天', '夏天', '秋天', '冬天'];
+            } else if (config.title.includes('動物園')) {
+                items = ['1月', '2月', '3月', '4月', '5月'];
+            } else {
+                items = ['蘋果', '香蕉', '西瓜', '葡萄', '橘子'];
+            }
+            
+            const labels = items.slice(0, 4); // 取前4個
+            const step = config.scaleStep || 1;
+            let data = [];
+
+            // 策略：高對比落差
+            if (config.questionType === 'max' || config.questionType === 'min') {
+                data = labels.map(() => randomInt(3, 7) * step);
+                
+                if (config.questionType === 'max') {
+                    const uniqueIdx = randomInt(0, labels.length - 1);
+                    data = data.map((val, idx) => {
+                        if (idx === uniqueIdx) return randomInt(12, 15) * step; // 顯著最高
+                        return randomInt(2, 5) * step; // 其他壓低
+                    });
+                } 
+                else if (config.questionType === 'min') {
+                    const uniqueIdx = randomInt(0, labels.length - 1);
+                    data = data.map((val, idx) => {
+                        if (idx === uniqueIdx) return randomInt(1, 2) * step; // 顯著最低
+                        return randomInt(8, 12) * step; // 其他拉高
+                    });
+                }
+            } else {
+                data = labels.map(() => randomInt(2, 10) * step);
+            }
+            
+            return {
+                labels: labels,
+                datasets: [{
+                    label: '數量',
+                    data: data,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',
+                        'rgba(54, 162, 235, 0.7)',
+                        'rgba(255, 206, 86, 0.7)',
+                        'rgba(75, 192, 192, 0.7)'
+                    ],
+                    borderColor: 'white',
+                    borderWidth: 2,
+                    borderRadius: 8
+                }],
+                stepSize: step
+            };
+        }
+
+        // 生成折線圖數據 (氣溫 - 忽高忽低)
+        function generateLineData(config) {
+            let labels = ['週一', '週二', '週三', '週四', '週五']; 
+            let data = [];
+            // 策略：加大波動幅度
+            let current = randomInt(18, 22);
+            data.push(current);
+            
+            for (let i = 1; i < labels.length; i++) {
+                const change = randomInt(3, 6) * (Math.random() > 0.5 ? 1 : -1);
+                let nextVal = current + change;
+                if (nextVal < 10) nextVal = current + Math.abs(change);
+                if (nextVal > 30) nextVal = current - Math.abs(change);
+                data.push(nextVal);
+                current = nextVal;
+            }
+
+            if (config.questionType === 'trend_up') {
+                const peakIdx = randomInt(0, labels.length - 1);
+                data[peakIdx] = 35; // 突出的高點
+                data = data.map((v, i) => i === peakIdx ? v : Math.min(v, 28));
+            }
+
+            return {
+                labels: labels,
+                datasets: [{
+                    label: '氣溫 (°C)', 
+                    data: data,
+                    borderColor: '#2563eb',
+                    backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                    borderWidth: 4,
+                    pointRadius: 8,
+                    pointBackgroundColor: 'white',
+                    pointBorderWidth: 3,
+                    tension: 0.1,
+                    fill: true
+                }],
+                stepSize: 2
+            };
+        }
+
+        // 新增：生成成長型數據 (身高 - 只增不減)
+        function generateGrowthData(config) {
+            let labels = ['7歲', '8歲', '9歲', '10歲'];
+            let data = [];
+            
+            // 起始身高
+            let current = randomInt(120, 125);
+            data.push(current);
+            
+            // 每年長高
+            for (let i = 1; i < labels.length; i++) {
+                // 每年長 3~6 公分 (單調遞增)
+                let growth = randomInt(3, 6);
+                let nextVal = current + growth;
+                data.push(nextVal);
+                current = nextVal;
+            }
+
+            return {
+                labels: labels,
+                datasets: [{
+                    label: '身高 (公分)', 
+                    data: data,
+                    borderColor: '#16a34a', // green
+                    backgroundColor: 'rgba(22, 163, 74, 0.1)',
+                    borderWidth: 4,
+                    pointRadius: 8,
+                    pointBackgroundColor: 'white',
+                    pointBorderWidth: 3,
+                    tension: 0.1,
+                    fill: true
+                }],
+                stepSize: 2
+            };
+        }
+
+        // 生成複雜圖數據
+        function generateComplexBarData(config) {
+            const labels = ['1月', '2月', '3月', '4月'];
+            let dataA, dataB;
+            let maxDiff = -1;
+
+            // 策略：高對比差距
+            let safeGuard = 0;
+            do {
+                safeGuard++;
+                const targetIdx = randomInt(0, 3);
+                dataA = [];
+                dataB = [];
+                
+                for(let i=0; i<4; i++) {
+                    if (i === targetIdx) {
+                        const base = randomInt(20, 30);
+                        dataA.push(base);
+                        dataB.push(base + randomInt(100, 120)); // 差距 > 100
+                    } else {
+                        const base = randomInt(50, 70);
+                        dataA.push(base);
+                        dataB.push(base + randomInt(-10, 10)); // 差距 < 10
+                    }
+                }
+                
+                let diffs = labels.map((_, i) => Math.abs(dataA[i] - dataB[i]));
+                maxDiff = Math.max(...diffs);
+                
+                let count = diffs.filter(d => d === maxDiff).length;
+                if (count === 1) break; 
+                if (safeGuard > 10) break;
+            } while (true);
+
+            return {
+                labels: labels,
+                datasets: [
+                    { label: '男生', data: dataA, backgroundColor: '#3b82f6' },
+                    { label: '女生', data: dataB, backgroundColor: '#ec4899' }
+                ],
+                stepSize: 20
+            };
+        }
+
+        // --- 題目生成邏輯 ---
+        function createQuestion(levelConfig, chartData) {
+            const type = levelConfig.questionType;
+            let text = "";
+            let correctAnswer = "";
+            let options = [];
+            let dataset = chartData.datasets[0].data;
+            let labels = chartData.labels;
+
+            if (type === 'max') {
+                const maxVal = Math.max(...dataset);
+                const idx = dataset.indexOf(maxVal);
+                correctAnswer = labels[idx];
+                text = `請問哪一個項目的數量<span class="text-red-600 mx-1">最多</span>？`;
+                options = labels; 
+            } 
+            else if (type === 'min') {
+                const minVal = Math.min(...dataset);
+                const idx = dataset.indexOf(minVal);
+                correctAnswer = labels[idx];
+                text = `請問哪一個項目的數量<span class="text-blue-600 mx-1">最少</span>？`;
+                options = labels;
+            }
+            else if (type === 'value') {
+                const idx = randomInt(0, labels.length - 1);
+                const label = labels[idx];
+                correctAnswer = dataset[idx].toString();
+                text = `請問 <span class="text-blue-600 mx-1 text-2xl">${label}</span> 的數量是多少？`;
+                
+                const step = chartData.stepSize || 1;
+                const val = dataset[idx];
+                options = [
+                    val.toString(), 
+                    (val + step * 5).toString(),
+                    (Math.max(0, val - step * 3)).toString(),
+                    (val + step * 2).toString()
+                ].sort(() => Math.random() - 0.5);
+            }
+            else if (type === 'trend_up') { 
+                const maxVal = Math.max(...dataset);
+                const idx = dataset.indexOf(maxVal);
+                correctAnswer = labels[idx];
+                text = `請問哪一天的氣溫<span class="text-red-600 mx-1">最高</span>？`;
+                options = labels;
+            }
+            else if (type === 'diff') { 
+                // 問成長量 (頭尾相減)
+                const idx1 = 0;
+                const idx2 = labels.length - 1;
+                const val1 = dataset[idx1];
+                const val2 = dataset[idx2];
+                const diff = val2 - val1; // 身高一定是長高 (正數)
+                correctAnswer = diff.toString();
+                text = `從 ${labels[idx1]} 到 ${labels[idx2]}，身高長高了幾公分？`;
+                options = [
+                    diff.toString(), 
+                    (diff + 5).toString(), 
+                    (Math.max(1, diff - 2)).toString(), 
+                    (diff + 2).toString()
+                ].map(String).sort(() => Math.random() - 0.5);
+            }
+            else if (type === 'compare_group') {
+                const dataA = chartData.datasets[0].data;
+                const dataB = chartData.datasets[1].data;
+                let maxDiff = -1;
+                let maxDiffLabel = "";
+                
+                labels.forEach((label, i) => {
+                    const diff = Math.abs(dataA[i] - dataB[i]);
+                    if (diff > maxDiff) {
+                        maxDiff = diff;
+                        maxDiffLabel = label;
+                    }
+                });
+                
+                correctAnswer = maxDiffLabel;
+                text = `哪一個月，男生和女生的數量<span class="text-red-600 mx-1">差距最大</span>？`;
+                options = labels;
+            }
+
+            return {
+                text: text,
+                correct: correctAnswer,
+                options: options
+            };
+        }
+
+        // --- 遊戲流程控制 ---
+
+        function init() {
+            const conceptBtn = document.getElementById('concept-btn');
+            if(conceptBtn) conceptBtn.onclick = nextLevel;
+            
+            const ttsChart = document.getElementById('tts-chart-intro');
+            if(ttsChart) ttsChart.onclick = () => speak(document.getElementById('chart-title').innerText);
+            
+            const ttsQuestion = document.getElementById('tts-question');
+            if(ttsQuestion) ttsQuestion.onclick = () => speak(document.getElementById('question-text').innerText);
+            
+            loadLevel();
+        }
+
+        function loadLevel() {
+            if (currentLevel >= levels.length) {
+                showEndScreen();
+                return;
+            }
+
+            const config = levels[currentLevel];
+            const indicator = document.getElementById('level-indicator');
+            if(indicator) indicator.innerText = currentLevel + 1;
+
+            document.getElementById('game-area').classList.add('hidden');
+            document.getElementById('concept-card').classList.add('hidden');
+            document.getElementById('end-screen').classList.add('hidden');
+
+            if (config.type === 'concept') {
+                const card = document.getElementById('concept-card');
+                card.classList.remove('hidden');
+                document.getElementById('concept-title').innerText = config.title;
+                document.getElementById('concept-content').innerHTML = config.content;
+                speak(config.title + "。" + config.content.replace(/<[^>]*>/g, ""));
+            } else {
+                document.getElementById('game-area').classList.remove('hidden');
+                setupGameRound(config);
+            }
+        }
+
+        function setupGameRound(config) {
+            isRetryMode = false;
+            resetUI();
+            
+            const chartData = config.genFn(config);
+            
+            renderChart(chartData, config.mode);
+            document.getElementById('chart-title').innerText = config.title;
+
+            currentQuestionData = createQuestion(config, chartData);
+            
+            document.getElementById('question-text').innerHTML = currentQuestionData.text;
+            renderOptions(currentQuestionData.options);
+
+            startTimer();
+            
+            const plainText = currentQuestionData.text.replace(/<[^>]*>/g, "");
+            speak(config.title + "。" + plainText);
+        }
+
+        function renderChart(data, mode) {
+            const ctx = document.getElementById('mainChart').getContext('2d');
+            if (chartInstance) chartInstance.destroy();
+
+            const chartType = (mode.includes('line')) ? 'line' : 'bar';
+            
+            chartInstance = new Chart(ctx, {
+                type: chartType,
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: { duration: 1000, easing: 'easeOutQuart' },
+                    plugins: {
+                        legend: { display: mode === 'complex_bar', labels: { font: { size: 16 } } },
+                        tooltip: { bodyFont: { size: 16 }, titleFont: { size: 16 } }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: mode !== 'line_basic' && mode !== 'line_trend' && mode !== 'line_growth',
+                            // 如果是身高或氣溫，不需要從0開始，可以讓變化更明顯
+                            ticks: { 
+                                font: { size: 14 },
+                                stepSize: data.stepSize || undefined 
+                            }
+                        },
+                        x: { ticks: { font: { size: 14 } } }
+                    }
+                }
+            });
+        }
+
+        function renderOptions(options) {
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+            
+            options.forEach(opt => {
+                const btn = document.createElement('div');
+                btn.className = 'option-card group';
+                btn.innerHTML = `
+                    <div class="option-indicator"></div>
+                    <span class="text-xl font-bold text-stone-700 flex-grow text-left">${opt}</span>
+                `;
+                btn.onclick = () => checkAnswer(opt, btn);
+                container.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selected, btnElement) {
+            stopTimer();
+            const isCorrect = (selected === currentQuestionData.correct);
+            const feedbackArea = document.getElementById('feedback-area');
+            const feedbackMsg = document.getElementById('feedback-msg');
+            const actionBtn = document.getElementById('action-btn');
+            
+            document.querySelectorAll('.option-card').forEach(b => b.classList.add('disabled'));
+
+            feedbackArea.classList.remove('hidden');
+
+            if (isCorrect) {
+                btnElement.classList.add('correct');
+                
+                const timeBonus = Math.floor(timeLeft * 2);
+                const points = isRetryMode ? 20 : (50 + timeBonus);
+                
+                addScore(points);
+                
+                feedbackMsg.innerHTML = `🎉 <span class="text-green-600">答對了！</span> 加 ${points} 分！`;
+                feedbackMsg.className = "text-xl font-bold mb-4 text-green-600";
+                
+                actionBtn.innerText = "下一關 ➡";
+                actionBtn.className = "w-full py-3 px-6 rounded-xl font-bold text-lg shadow-md bg-green-500 hover:bg-green-600 text-white";
+                actionBtn.onclick = nextLevel;
+                
+                speak("答對了！太棒了！");
+            } else {
+                btnElement.classList.add('wrong');
+                
+                feedbackMsg.innerHTML = `❌ <span class="text-red-500">哎呀，不對喔！</span><br><span class="text-sm font-normal text-stone-500">正確答案是 ${currentQuestionData.correct}</span>`;
+                feedbackMsg.className = "text-xl font-bold mb-4 text-red-600";
+                
+                isRetryMode = true;
+                
+                actionBtn.innerText = "🔄 再試一題 (題目會變喔)";
+                actionBtn.className = "w-full py-3 px-6 rounded-xl font-bold text-lg shadow-md bg-orange-500 hover:bg-orange-600 text-white";
+                actionBtn.onclick = retryLevel;
+                
+                speak("哎呀，不對喔。我們再練習一題試試看。");
+            }
+        }
+
+        function retryLevel() {
+            const config = levels[currentLevel];
+            setupGameRound(config);
+        }
+
+        function nextLevel() {
+            currentLevel++;
+            loadLevel();
+        }
+
+        function addScore(points) {
+            score += points;
+            const el = document.getElementById('score-display');
+            el.innerText = score;
+            el.classList.remove('score-update');
+            void el.offsetWidth;
+            el.classList.add('score-update');
+        }
+
+        function resetUI() {
+            document.getElementById('feedback-area').classList.add('hidden');
+            document.getElementById('timer-bar').style.width = '100%';
+            document.getElementById('timer-bar').classList.remove('bg-red-500');
+            document.getElementById('timer-bar').classList.add('bg-green-500');
+        }
+
+        let timerInterval;
+        let timeLeft;
+        function startTimer() {
+            timeLeft = 15;
+            const bar = document.getElementById('timer-bar');
+            clearInterval(timerInterval);
+            
+            timerInterval = setInterval(() => {
+                timeLeft -= 0.1;
+                const percent = (timeLeft / 15) * 100;
+                bar.style.width = `${percent}%`;
+                
+                if (percent < 30) {
+                    bar.classList.remove('bg-green-500');
+                    bar.classList.add('bg-red-500');
+                }
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                }
+            }, 100);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+        }
+
+        function speak(text) {
+            if (synth.speaking) synth.cancel();
+            const u = new SpeechSynthesisUtterance(text);
+            u.lang = 'zh-TW';
+            u.rate = 0.9;
+            synth.speak(u);
+        }
+
+        function showEndScreen() {
+            document.getElementById('game-area').classList.add('hidden');
+            document.getElementById('concept-card').classList.add('hidden');
+            const endScreen = document.getElementById('end-screen');
+            endScreen.classList.remove('hidden');
+            
+            document.getElementById('final-score').innerText = score;
+            
+            let rank = "統計小學徒";
+            if (score > 300) rank = "數據探險家";
+            if (score > 500) rank = "統計圖大師";
+            document.getElementById('final-rank').innerText = rank;
+            
+            speak(`恭喜完成挑戰！你的總分是${score}分。獲得稱號：${rank}`);
+        }
+
+        window.onload = init;
+
+    </script>
+</body>
+</html>
