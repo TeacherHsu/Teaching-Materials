@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>分數烘焙坊 - 第9單元互動學習 (AI版)</title>
+    <!-- 引入 Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 引入 Marked.js 用於解析 Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        :root {
+            --primary: #FF9F43; /* 烘焙橘 */
+            --secondary: #54a0ff; /* 康軒藍 */
+            --success: #1dd1a1;
+            --error: #ff6b6b;
+            --text: #2c3e50;
+            --bg: #feca57;
+            --white: #ffffff;
+            --ai-color: #a29bfe; /* AI 功能專用色 */
+        }
+
+        * {
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', 'Gen Jyuu Gothic', 'Microsoft JhengHei', sans-serif;
+            background-color: var(--bg);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* 介面極簡化與頂部區域 */
+        #game-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .score-board {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        /* 內容顯示區 */
+        #content-area {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* 視覺鷹架 - 分數顯示 */
+        .fraction {
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            margin: 0 5px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .fraction .top {
+            display: block;
+            border-bottom: 3px solid currentColor;
+            padding: 0 5px;
+        }
+        .fraction .bottom {
+            display: block;
+            padding: 0 5px;
+        }
+        .mixed-fraction {
+            display: inline-flex;
+            align-items: center;
+        }
+        .integer {
+            font-size: 2rem;
+            margin-right: 5px;
+            font-weight: bold;
+        }
+
+        /* 按鈕與互動元素 */
+        .btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.1s;
+            margin: 10px;
+            box-shadow: 0 4px 0 #2e86de;
+        }
+        .btn:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+        
+        .ai-btn {
+            background: var(--ai-color);
+            box-shadow: 0 4px 0 #6c5ce7;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .tts-btn {
+            background: #ff9ff3;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: 10px;
+            box-shadow: 0 3px 0 #f368e0;
+        }
+
+        /* 底部固定操作區 */
+        footer {
+            padding: 15px;
+            background: #f1f2f6;
+            border-top: 2px solid #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            gap: 10px;
+        }
+
+        #check-btn {
+            flex: 2;
+            background: var(--success);
+            box-shadow: 0 4px 0 #10ac84;
+        }
+        
+        #ai-hint-btn {
+            flex: 1;
+            font-size: 1.2rem;
+            padding: 15px;
+            display: none; /* 預設隱藏，特定關卡開啟 */
+        }
+
+        /* 遊戲畫面切換 */
+        .screen {
+            display: none;
+            width: 100%;
+        }
+        .screen.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 關卡 1: 分類 */
+        .bucket-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 30px;
+        }
+        .bucket {
+            width: 30%;
+            height: 150px;
+            border: 3px dashed #bdc3c7;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .bucket:hover, .bucket.selected {
+            background: #dfe6e9;
+            border-color: var(--secondary);
+        }
+        .current-card {
+            background: white;
+            border: 3px solid var(--primary);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            transform: scale(1.5);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* 關卡 2 & 3: 圖形與填空 */
+        .pizza-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .pizza {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #ddd;
+            position: relative;
+            border: 2px solid #555;
+        }
+        /* 使用 conic-gradient 繪製扇形 */
+        .pizza-fill {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+        .scaffold-input {
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            text-align: center;
+            border: 3px solid #bdc3c7;
+            border-radius: 10px;
+            margin: 0 5px;
+        }
+        .scaffold-input:focus {
+            border-color: var(--secondary);
+            outline: none;
+            background: #f0f8ff;
+        }
+        
+        /* 關卡 4: 直式除法 CSS Grid */
+        .division-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto auto auto;
+            gap: 5px;
+            font-size: 2rem;
+            margin: 20px auto;
+            width: fit-content;
+            align-items: center;
+            justify-items: center;
+        }
+        
+        .div-quotient {
+            grid-column: 3;
+            grid-row: 1;
+            border-bottom: 2px solid #2c3e50;
+            width: 100%;
+            text-align: center;
+            padding-bottom: 5px;
+        }
+        
+        .div-divisor {
+            grid-column: 1;
+            grid-row: 2;
+            padding-right: 10px;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        .div-bracket {
+            grid-column: 2;
+            grid-row: 2;
+            font-size: 2.5rem;
+            font-weight: lighter;
+            transform: scaleY(1.2) translateX(5px);
+        }
+        
+        .div-dividend {
+            grid-column: 3;
+            grid-row: 2;
+            letter-spacing: 5px;
+            padding-left: 10px;
+        }
+        
+        .div-product {
+            grid-column: 3;
+            grid-row: 3;
+            border-bottom: 2px solid #2c3e50;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .div-remainder {
+            grid-column: 3;
+            grid-row: 4;
+            text-align: center;
+            color: var(--error);
+            font-weight: bold;
+        }
+        
+        /* 運算鷹架 */
+        .step-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            font-size: 1.4rem;
+            flex-wrap: wrap;
+        }
+        .step-hint {
+            color: #e74c3c;
+            font-size: 1rem;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+        .operator {
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        /* 回饋彈窗 */
+        .feedback-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+            display: none;
+        }
+        .feedback-box {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+            animation: popIn 0.3s;
+            position: relative;
+        }
+        .feedback-box.ai-mode {
+            border: 4px solid var(--ai-color);
+            background: #f3e5f5;
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.5); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Loading Spinner */
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: var(--primary);
+            animation: spin 1s ease infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="game-container">
+    <header>
+        <div>分數烘焙坊</div>
+        <div class="score-board">⭐ <span id="score">0</span></div>
+    </header>
+
+    <div id="content-area">
+        
+        <!-- 首頁 -->
+        <div id="start-screen" class="screen active">
+            <h1>歡迎來到分數烘焙坊！</h1>
+            <p>我們一起來做披薩、調飲料，<br>還有學習分數的魔法吧！</p>
+            <div style="font-size: 5rem;">🍕</div>
+            <p>你需要打開聲音喔 🔊</p>
+            <button class="btn" onclick="startGame()">開始挑戰</button>
+            <br>
+            <button class="btn ai-btn" onclick="callAIStory()">✨ 聽個烘焙故事</button>
+        </div>
+
+        <!-- 關卡 1: 分類帽 -->
+        <div id="level-1-screen" class="screen">
+            <h2>第 1 關：分類帽</h2>
+            <p>請將出現的分數放到正確的籃子裡！<button class="tts-btn" onclick="speak('請將出現的分數，放到正確的籃子裡')">🔊</button></p>
+            
+            <div id="fraction-display" class="current-card">
+                <!-- 動態生成分數 -->
+            </div>
+
+            <div class="bucket-container">
+                <div class="bucket" onclick="checkLevel1('true')">
+                    <h3>真分數</h3>
+                    <small>分子 < 分母</small>
+                </div>
+                <div class="bucket" onclick="checkLevel1('improper')">
+                    <h3>假分數</h3>
+                    <small>分子 ≧ 分母</small>
+                </div>
+                <div class="bucket" onclick="checkLevel1('mixed')">
+                    <h3>帶分數</h3>
+                    <small>整數 + 真分數</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- 關卡 2: 披薩大師 -->
+        <div id="level-2-screen" class="screen">
+            <h2>第 2 關：披薩大師</h2>
+            <p>看看桌上有多少披薩？請用<b>假分數</b>表示。<button class="tts-btn" onclick="speak('看看桌上有多少披薩？請用假分數表示')">🔊</button></p>
+            
+            <div id="pizza-display" class="pizza-container">
+                <!-- 動態生成披薩 -->
+            </div>
+
+            <div class="input-group">
+                <div class="fraction">
+                    <span class="top"><input type="tel" id="l2-num" class="scaffold-input" placeholder="?"></span>
+                    <span class="bottom" id="l2-den-display">4</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 關卡 3: 變身魔法 I -->
+        <div id="level-3-screen" class="screen">
+            <h2>第 3 關：變身魔法 I</h2>
+            <p>把帶分數變成假分數！<button class="tts-btn" onclick="speak('把帶分數變成假分數')">🔊</button></p>
+            
+            <div class="step-row" style="font-size: 2rem;">
+                <div id="l3-problem"></div>
+                <div class="operator">=</div>
+                <div class="fraction">
+                    <span class="top">
+                        <span id="l3-den-hint" style="font-size: 1rem; color: #7f8c8d;"></span>
+                        <span class="operator">×</span>
+                        <span id="l3-int-hint" style="font-size: 1rem; color: #7f8c8d;"></span>
+                        <span class="operator">+</span>
+                        <span id="l3-num-hint" style="font-size: 1rem; color: #7f8c8d;"></span>
+                    </span>
+                    <span class="bottom" id="l3-den-bottom"></span>
+                </div>
+            </div>
+             <div class="step-hint">⬇️ 先乘再加，分母不變 ⬇️</div>
+            <div class="step-row">
+                 <div class="operator">=</div>
+                 <div class="fraction">
+                    <span class="top"><input type="tel" id="l3-ans" class="scaffold-input"></span>
+                    <span class="bottom" id="l3-ans-den"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 關卡 4: 除法工廠 -->
+        <div id="level-4-screen" class="screen">
+            <h2>第 4 關：除法工廠</h2>
+            <p>用直式除法，把假分數換成帶分數。<button class="tts-btn" onclick="speak('用直式除法，把假分數換成帶分數')">🔊</button></p>
+            
+            <div class="step-row" style="margin-bottom:0;">
+                <div class="fraction" style="margin-right:20px;">
+                    <span class="top" id="l4-prob-num">11</span>
+                    <span class="bottom" id="l4-prob-den">4</span>
+                </div>
+                <span>➡ 分子 <span style="font-size:1.5rem">÷</span> 分母</span>
+            </div>
+
+            <div class="division-container">
+                <div class="div-quotient"><input type="tel" id="l4-quotient" class="scaffold-input" style="border-color:var(--success); color:var(--success)" placeholder="商"></div>
+                <div class="div-divisor" id="l4-divisor-display">4</div>
+                <div class="div-bracket">)</div>
+                <div class="div-dividend" id="l4-dividend-display">11</div>
+                <div class="div-product"><input type="tel" id="l4-product" class="scaffold-input" placeholder="積"></div>
+                <div class="div-remainder"><input type="tel" id="l4-remainder" class="scaffold-input" style="border-color:var(--error); color:var(--error)" placeholder="餘"></div>
+            </div>
+
+            <hr style="width:80%; border:1px dashed #ccc;">
+            
+            <div class="input-group">
+                <span>答案：</span>
+                <div class="mixed-fraction">
+                    <input type="tel" id="l4-final-int" class="scaffold-input" style="border: 3px solid var(--success);" placeholder="整">
+                    <div class="fraction">
+                        <span class="top"><input type="tel" id="l4-final-num" class="scaffold-input" style="border: 3px solid var(--error);" placeholder="分"></span>
+                        <span class="bottom" id="l4-final-den">4</span>
+                    </div>
+                </div>
+            </div>
+            <div class="step-hint" style="margin-top:5px;">💡 提示：商是整數，餘數是分子</div>
+        </div>
+
+        <!-- 關卡 5 & 6: 通用應用題畫面 -->
+        <div id="level-common-screen" class="screen">
+            <h2 id="common-level-title">第 ? 關</h2>
+            <div id="common-question-text" style="text-align: left; margin-bottom: 15px; font-size: 1.1rem;"></div>
+            <button class="tts-btn" style="float:right" onclick="speak(currentProblem.questionTTS)">🔊</button>
+            <hr style="width:100%; border: 1px dashed #ccc;">
+            <div id="common-calculation-area"></div>
+        </div>
+
+        <!-- 結算畫面 -->
+        <div id="end-screen" class="screen">
+            <h1>🎉 挑戰完成！</h1>
+            <h2 id="final-score-text"></h2>
+            <div id="stars" style="font-size: 3rem;">⭐⭐⭐</div>
+            <p id="feedback-text">你是超級分數大師！</p>
+            <button class="btn" onclick="location.reload()">再玩一次</button>
+            <br>
+            <button class="btn ai-btn" onclick="callAIStory()">✨ 聽個畢業故事</button>
+        </div>
+
+    </div>
+
+    <!-- 底部固定按鈕區 -->
+    <footer id="footer-controls">
+        <button id="check-btn" class="btn" onclick="checkAnswer()">檢查答案</button>
+        <button id="ai-hint-btn" class="btn ai-btn" onclick="callAIHint()">✨ 小精靈</button>
+    </footer>
+
+    <!-- 回饋彈窗 -->
+    <div id="feedback-overlay" class="feedback-overlay">
+        <div class="feedback-box" id="feedback-box">
+            <h2 id="fb-title"></h2>
+            <div id="fb-msg" style="font-size:1.2rem; margin:10px 0;"></div>
+            <div id="ai-loading" style="display:none;">
+                <div class="spinner"></div>
+                <p>✨ 小精靈正在思考中...</p>
+            </div>
+            <button class="btn" onclick="closeFeedback()">知道了</button>
+        </div>
+    </div>
+</div>
+
+<script>
+/* --- Gemini API Configuration --- */
+const apiKey = ""; // System will inject key
+
+/* --- State Management --- */
+let gameState = {
+    level: 1,
+    score: 0,
+    mistakes: 0,
+    consecutiveMistakes: 0,
+    problemCount: 0,
+    maxProblemsPerLevel: 3
+};
+
+let currentProblem = {};
+
+function startGame() {
+    gameState.score = 0;
+    gameState.level = 1;
+    gameState.problemCount = 0;
+    document.getElementById('score').innerText = 0;
+    nextLevel();
+}
+
+function nextLevel() {
+    document.querySelectorAll('.screen').forEach(el => el.classList.remove('active'));
+    
+    // Check Progression
+    if(gameState.problemCount >= gameState.maxProblemsPerLevel) {
+        gameState.level++;
+        gameState.problemCount = 0;
+        gameState.consecutiveMistakes = 0;
+    }
+
+    if(gameState.level > 6) { 
+        document.getElementById('end-screen').classList.add('active');
+        document.getElementById('check-btn').style.display = 'none';
+        document.getElementById('ai-hint-btn').style.display = 'none';
+        showEndScreen();
+        return;
+    }
+
+    // Router
+    let screenId = '';
+    if (gameState.level === 5 || gameState.level === 6) {
+        screenId = 'level-common-screen';
+        document.getElementById('ai-hint-btn').style.display = 'inline-flex'; // Enable AI in word problems
+    } else {
+        screenId = `level-${gameState.level}-screen`;
+        document.getElementById('ai-hint-btn').style.display = 'none';
+    }
+
+    const screenEl = document.getElementById(screenId);
+    if(screenEl) {
+        screenEl.classList.add('active');
+        generateProblem(gameState.level);
+    } else {
+        console.error("Screen not found: " + screenId);
+    }
+}
+
+function generateProblem(level) {
+    gameState.mistakes = 0;
+    document.getElementById('check-btn').style.display = 'block';
+    
+    switch(level) {
+        case 1: generateLevel1(); break;
+        case 2: generateLevel2(); break;
+        case 3: generateLevel3(); break;
+        case 4: generateLevel4(); break;
+        case 5: generateLevel5(); break;
+        case 6: generateLevel6(); break;
+    }
+}
+
+/* --- AI Feature: Smart Helper --- */
+async function callAIHint() {
+    const box = document.getElementById('feedback-box');
+    const overlay = document.getElementById('feedback-overlay');
+    const title = document.getElementById('fb-title');
+    const msg = document.getElementById('fb-msg');
+    const loading = document.getElementById('ai-loading');
+    
+    overlay.style.display = 'flex';
+    box.classList.add('ai-mode');
+    title.innerText = "✨ 智慧小精靈";
+    title.style.color = "#6c5ce7";
+    msg.innerHTML = "";
+    loading.style.display = 'block';
+
+    // Gather context
+    const userInt = document.getElementById('common-int') ? document.getElementById('common-int').value : "未填寫";
+    const userNum = document.getElementById('common-num') ? document.getElementById('common-num').value : "未填寫";
+    
+    const prompt = `
+        你現在是一位國小數學老師的智慧助手「烘焙小精靈」。
+        
+        目前的題目是：${currentProblem.questionTTS || "分數計算題"}
+        正確答案的整數部分是：${currentProblem.ansInt}
+        正確答案的分子部分是：${currentProblem.ansNum}
+        
+        學生填寫的整數是：${userInt}
+        學生填寫的分子是：${userNum}
+        
+        請根據學生的輸入，給出一個溫柔、鼓勵性且具體的引導提示。
+        不要直接給出答案！
+        如果是加法，提醒整數加整數、分數加分數的概念。
+        如果是減法，提醒是否需要先處理整數減帶分數。
+        請用繁體中文回答，語氣要像是在教導小學生。
+        長度請控制在 50 字以內。
+    `;
+
+    try {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+        });
+        
+        const data = await response.json();
+        const aiText = data.candidates[0].content.parts[0].text;
+        
+        loading.style.display = 'none';
+        msg.innerHTML = marked.parse(aiText);
+        
+    } catch (error) {
+        loading.style.display = 'none';
+        msg.innerText = "小精靈睡著了... 請檢查網路連線。";
+    }
+}
+
+/* --- AI Feature: Story Mode --- */
+async function callAIStory() {
+    const box = document.getElementById('feedback-box');
+    const overlay = document.getElementById('feedback-overlay');
+    const title = document.getElementById('fb-title');
+    const msg = document.getElementById('fb-msg');
+    const loading = document.getElementById('ai-loading');
+    
+    overlay.style.display = 'flex';
+    box.classList.add('ai-mode');
+    title.innerText = "✨ 烘焙坊故事時間";
+    title.style.color = "#6c5ce7";
+    msg.innerHTML = "";
+    loading.style.display = 'block';
+
+    const prompt = `
+        請講一個關於「分數王國」或「神奇烘焙坊」的短故事，長度約 100 字。
+        故事要生動有趣，適合國小四年級學生。
+        內容可以提到「把披薩切成幾分之幾」或「混合果汁」的情節，讓學生覺得數學很有用。
+        請用繁體中文創作。
+    `;
+
+    try {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+        });
+        
+        const data = await response.json();
+        const aiText = data.candidates[0].content.parts[0].text;
+        
+        loading.style.display = 'none';
+        msg.innerHTML = marked.parse(aiText);
+        
+    } catch (error) {
+        loading.style.display = 'none';
+        msg.innerText = "故事書這頁破掉了... 請稍後再試。";
+    }
+}
+
+/* --- Level Generators --- */
+function generateLevel1() {
+    document.getElementById('check-btn').style.display = 'none';
+    const types = ['true', 'improper', 'mixed'];
+    const type = types[Math.floor(Math.random() * types.length)];
+    
+    let num, den, int;
+    
+    if (type === 'true') {
+        den = Math.floor(Math.random() * 8) + 3;
+        num = Math.floor(Math.random() * (den - 1)) + 1;
+        document.getElementById('fraction-display').innerHTML = renderFraction(num, den);
+        currentProblem = { type: 'true', answer: 'true', tts: `${den}分之${num}` };
+    } else if (type === 'improper') {
+        den = Math.floor(Math.random() * 8) + 2;
+        num = Math.floor(Math.random() * 10) + den;
+        document.getElementById('fraction-display').innerHTML = renderFraction(num, den);
+        currentProblem = { type: 'improper', answer: 'improper', tts: `${den}分之${num}` };
+    } else {
+        den = Math.floor(Math.random() * 8) + 3;
+        num = Math.floor(Math.random() * (den - 1)) + 1;
+        int = Math.floor(Math.random() * 5) + 1;
+        document.getElementById('fraction-display').innerHTML = renderMixedFraction(int, num, den);
+        currentProblem = { type: 'mixed', answer: 'mixed', tts: `${int}又${den}分之${num}` };
+    }
+    speak(currentProblem.tts);
+}
+
+function generateLevel2() {
+    const den = 4;
+    const whole = Math.floor(Math.random() * 2) + 1;
+    const extra = Math.floor(Math.random() * 3) + 1;
+    const totalSlices = (whole * den) + extra;
+    
+    currentProblem = {
+        num: totalSlices,
+        den: den,
+        answer: totalSlices,
+        tts: `有${whole}個完整的披薩，還有${extra}片，合起來是多少個四分之一？`
+    };
+
+    let html = '';
+    for(let i=0; i<whole; i++) {
+        html += `<div class="pizza" style="background: conic-gradient(#ff7675 0% 100%);"><div style="position:absolute; width:100%; height:100%; background: repeating-conic-gradient(from 0deg, transparent 0deg 88deg, #fff 88deg 90deg); border-radius:50%;"></div></div>`;
+    }
+    let degree = (extra / den) * 360;
+    html += `<div class="pizza" style="background: conic-gradient(#ff7675 0% ${degree}deg, #dfe6e9 ${degree}deg 100%);"><div style="position:absolute; width:100%; height:100%; background: repeating-conic-gradient(from 0deg, transparent 0deg 88deg, #fff 88deg 90deg); border-radius:50%;"></div></div>`;
+
+    document.getElementById('pizza-display').innerHTML = html;
+    document.getElementById('l2-den-display').innerText = den;
+    document.getElementById('l2-num').value = '';
+    speak(currentProblem.tts);
+}
+
+function generateLevel3() {
+    const int = Math.floor(Math.random() * 3) + 1;
+    const den = Math.floor(Math.random() * 7) + 3;
+    const num = Math.floor(Math.random() * (den - 1)) + 1;
+    const ansNum = (int * den) + num;
+
+    currentProblem = {
+        int: int, num: num, den: den, answer: ansNum,
+        tts: `把${int}又${den}分之${num}換成假分數`
+    };
+
+    document.getElementById('l3-problem').innerHTML = renderMixedFraction(int, num, den);
+    document.getElementById('l3-den-hint').innerText = den;
+    document.getElementById('l3-int-hint').innerText = int;
+    document.getElementById('l3-num-hint').innerText = num;
+    document.getElementById('l3-den-bottom').innerText = den;
+    document.getElementById('l3-ans-den').innerText = den;
+    document.getElementById('l3-ans').value = '';
+    speak(currentProblem.tts);
+}
+
+function generateLevel4() {
+    const den = Math.floor(Math.random() * 6) + 3;
+    const int = Math.floor(Math.random() * 3) + 1;
+    const rem = Math.floor(Math.random() * (den - 1)) + 1;
+    const num = (int * den) + rem;
+
+    currentProblem = {
+        num: num, den: den, quotient: int, remainder: rem, product: int * den,
+        tts: `請用直式除法計算，${den}分之${num}等於幾又幾分之幾？`
+    };
+
+    document.getElementById('l4-prob-num').innerText = num;
+    document.getElementById('l4-prob-den').innerText = den;
+    document.getElementById('l4-divisor-display').innerText = den;
+    document.getElementById('l4-dividend-display').innerText = num;
+    document.getElementById('l4-final-den').innerText = den;
+
+    ['l4-quotient', 'l4-product', 'l4-remainder', 'l4-final-int', 'l4-final-num'].forEach(id => {
+        document.getElementById(id).value = '';
+    });
+    speak(currentProblem.tts);
+}
+
+function generateLevel5() {
+    document.getElementById('common-level-title').innerText = "第 5 關：小小店長 (加法)";
+    const den = [5, 6, 8, 10][Math.floor(Math.random() * 4)];
+    const num1 = Math.floor(Math.random() * (den - 2)) + 1;
+    const num2 = Math.floor(Math.random() * (den - num1)) + 1 + Math.floor(Math.random()*2); 
+    const int1 = Math.floor(Math.random() * 2) + 1;
+    const int2 = Math.floor(Math.random() * 2) + 1;
+    
+    currentProblem = {
+        type: 'calc_add',
+        ansInt: int1 + int2,
+        ansNum: num1 + num2,
+        ansDen: den,
+        questionTTS: `爸爸買了${int1}又${den}分之${num1}公升的紅茶，和${int2}又${den}分之${num2}公升的牛奶，合起來是多少公升？`
+    };
+
+    const qText = `爸爸買了 ${renderMixedFraction(int1, num1, den)} 公升紅茶和 ${renderMixedFraction(int2, num2, den)} 公升牛奶，合起來是多少公升？`;
+    document.getElementById('common-question-text').innerHTML = qText;
+
+    let html = `
+        <div class="step-row">
+            ${renderMixedFraction(int1, num1, den)} <span class="operator">+</span> ${renderMixedFraction(int2, num2, den)}
+        </div>
+        <div class="step-hint">整數加整數，分數加分數</div>
+        <div class="step-row">
+            <span class="operator">=</span>
+            <div class="mixed-fraction">
+                <input type="tel" id="common-int" class="scaffold-input" placeholder="整">
+                <div class="fraction">
+                    <span class="top"><input type="tel" id="common-num" class="scaffold-input" placeholder="分"></span>
+                    <span class="bottom">${den}</span>
+                </div>
+            </div>
+        </div>
+    `;
+    document.getElementById('common-calculation-area').innerHTML = html;
+    speak(currentProblem.questionTTS);
+}
+
+function generateLevel6() {
+    document.getElementById('common-level-title').innerText = "第 6 關：剩多少材料 (減法)";
+    const den = [5, 6, 8, 10][Math.floor(Math.random() * 4)];
+    
+    const type = Math.random() > 0.5 ? 'int_mixed' : 'mixed_mixed';
+    let intA, numA, intB, numB, qText;
+    
+    if (type === 'int_mixed') {
+        intA = Math.floor(Math.random() * 3) + 3; 
+        intB = Math.floor(Math.random() * (intA - 2)) + 1; 
+        numB = Math.floor(Math.random() * (den - 1)) + 1;
+        
+        currentProblem = {
+            type: 'calc_sub',
+            ansInt: intA - 1 - intB,
+            ansNum: den - numB,
+            ansDen: den,
+            questionTTS: `有一條繩子長${intA}公尺，用掉了${intB}又${den}分之${numB}公尺，還剩下多少公尺？`
+        };
+        qText = `有一條繩子長 <span class="integer">${intA}</span> 公尺，用掉了 ${renderMixedFraction(intB, numB, den)} 公尺，還剩下多少公尺？`;
+    } else {
+        intA = Math.floor(Math.random() * 3) + 2;
+        intB = Math.floor(Math.random() * (intA - 1)) + 1;
+        numA = Math.floor(Math.random() * (den - 2)) + 2; 
+        numB = Math.floor(Math.random() * (numA - 1)) + 1;
+        
+        currentProblem = {
+            type: 'calc_sub',
+            ansInt: intA - intB,
+            ansNum: numA - numB,
+            ansDen: den,
+            questionTTS: `有一包麵粉重${intA}又${den}分之${numA}公斤，做蛋糕用了${intB}又${den}分之${numB}公斤，還剩下多少公斤？`
+        };
+        qText = `有一包麵粉重 ${renderMixedFraction(intA, numA, den)} 公斤，做蛋糕用了 ${renderMixedFraction(intB, numB, den)} 公斤，還剩下多少公斤？`;
+    }
+
+    document.getElementById('common-question-text').innerHTML = qText;
+
+    let displayA = type === 'int_mixed' ? `<span class="integer">${intA}</span>` : renderMixedFraction(intA, numA, den);
+    let displayB = renderMixedFraction(intB, numB, den);
+
+    let html = `
+        <div class="step-row">
+            ${displayA} <span class="operator">-</span> ${displayB}
+        </div>
+        <div class="step-hint">${type === 'int_mixed' ? '把整數換成假分數再減' : '整數減整數，分數減分數'}</div>
+        <div class="step-row">
+            <span class="operator">=</span>
+            <div class="mixed-fraction">
+                <input type="tel" id="common-int" class="scaffold-input" placeholder="整">
+                <div class="fraction">
+                    <span class="top"><input type="tel" id="common-num" class="scaffold-input" placeholder="分"></span>
+                    <span class="bottom">${den}</span>
+                </div>
+            </div>
+        </div>
+    `;
+    document.getElementById('common-calculation-area').innerHTML = html;
+    speak(currentProblem.questionTTS);
+}
+
+/* --- Common Logic --- */
+function checkLevel1(userChoice) {
+    if (userChoice === currentProblem.answer) {
+        playSound('correct');
+        addScore(10);
+        showFeedback(true, "答對了！", "分類得很棒喔！");
+    } else {
+        let hint = "";
+        if (currentProblem.type === 'true') hint = "真分數的分子比分母小喔！";
+        else if (currentProblem.type === 'improper') hint = "假分數的分子比分母大，或一樣大！";
+        else hint = "帶分數旁邊有一個整數大人帶著分數小孩！";
+        handleMistake("哎呀！再看清楚一點", hint);
+    }
+}
+
+function checkAnswer() {
+    let isCorrect = false;
+    let feedbackMsg = "請再仔細檢查一下答案喔！"; 
+
+    if (gameState.level === 2) {
+        const val = parseInt(document.getElementById('l2-num').value);
+        if (val === currentProblem.answer) isCorrect = true;
+        else feedbackMsg = `數數看，全部有幾個 ${renderFraction(1, currentProblem.den)} ？`;
+    } 
+    else if (gameState.level === 3) {
+        const val = parseInt(document.getElementById('l3-ans').value);
+        if (val === currentProblem.answer) isCorrect = true;
+        else feedbackMsg = `公式：分母 × 整數 + 分子`;
+    }
+    else if (gameState.level === 4) {
+        const q = parseInt(document.getElementById('l4-quotient').value);
+        const p = parseInt(document.getElementById('l4-product').value);
+        const r = parseInt(document.getElementById('l4-remainder').value);
+        const fi = parseInt(document.getElementById('l4-final-int').value);
+        const fn = parseInt(document.getElementById('l4-final-num').value);
+
+        if (q === currentProblem.quotient && p === currentProblem.product && 
+            r === currentProblem.remainder && fi === currentProblem.quotient && 
+            fn === currentProblem.remainder) {
+            isCorrect = true;
+        } else {
+            feedbackMsg = "除法或填空位置有錯喔，請檢查！";
+        }
+    }
+    else if (gameState.level === 5 || gameState.level === 6) {
+        const userInt = parseInt(document.getElementById('common-int').value);
+        const userNum = parseInt(document.getElementById('common-num').value);
+        
+        if (userInt === currentProblem.ansInt && userNum === currentProblem.ansNum) {
+            isCorrect = true;
+        } else {
+            if (userInt !== currentProblem.ansInt) feedbackMsg = "整數的部分算錯囉！";
+            else feedbackMsg = "分數的分子算錯囉！";
+        }
+    }
+
+    if (isCorrect) {
+        playSound('correct');
+        addScore(20);
+        showFeedback(true, "太棒了！", "你算得非常正確！");
+    } else {
+        handleMistake("加油！", feedbackMsg);
+    }
+}
+
+function handleMistake(title, msg) {
+    playSound('wrong');
+    gameState.mistakes++;
+    gameState.consecutiveMistakes++;
+    
+    document.querySelectorAll('input').forEach(el => {
+        el.style.backgroundColor = '#ffecec';
+        setTimeout(() => el.style.backgroundColor = 'white', 500);
+    });
+    
+    showFeedback(false, title, msg);
+}
+
+function showFeedback(success, title, msg) {
+    const overlay = document.getElementById('feedback-overlay');
+    const box = document.getElementById('feedback-box');
+    
+    box.classList.remove('ai-mode'); // Reset AI styling
+    document.getElementById('fb-title').innerText = title;
+    document.getElementById('fb-title').style.color = success ? varCss('--success') : varCss('--error');
+    document.getElementById('fb-msg').innerHTML = msg;
+    document.getElementById('ai-loading').style.display = 'none';
+    
+    overlay.style.display = 'flex';
+}
+
+function closeFeedback() {
+    const overlay = document.getElementById('feedback-overlay');
+    const title = document.getElementById('fb-title').innerText;
+    
+    overlay.style.display = 'none';
+    
+    // Logic: Check if we should advance level ONLY if the previous modal was a SUCCESS modal
+    // We identify success by the title color or text content. Simple text check here:
+    if (title === "太棒了！" || title === "答對了！") {
+        gameState.problemCount++;
+        if (gameState.problemCount >= gameState.maxProblemsPerLevel) {
+            nextLevel();
+        } else {
+            generateProblem(gameState.level);
+        }
+        gameState.consecutiveMistakes = 0;
+    } else {
+        // It was an error or AI hint modal, do nothing or regenerate if stuck
+        if (gameState.consecutiveMistakes >= 2) {
+            generateProblem(gameState.level);
+            gameState.consecutiveMistakes = 0;
+        }
+    }
+}
+
+function addScore(points) {
+    gameState.score += points;
+    document.getElementById('score').innerText = gameState.score;
+}
+
+function showEndScreen() {
+    document.getElementById('final-score-text').innerText = `你的總分：${gameState.score}`;
+    let stars = '⭐';
+    if(gameState.score > 50) stars += '⭐';
+    if(gameState.score > 100) stars += '⭐';
+    document.getElementById('stars').innerText = stars;
+}
+
+/* Helpers */
+function renderFraction(num, den) {
+    return `<div class="fraction"><span class="top">${num}</span><span class="bottom">${den}</span></div>`;
+}
+function renderMixedFraction(int, num, den) {
+    return `<div class="mixed-fraction"><span class="integer">${int}</span>${renderFraction(num, den)}</div>`;
+}
+function varCss(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+function playSound(type) {} 
+function speak(text) {
+    let safeText = text.replace(/\//g, '分之').replace(/-/g, '減').replace(/\+/g, '加').replace(/=/g, '等於').replace(/×/g, '乘');
+    const u = new SpeechSynthesisUtterance(safeText);
+    u.lang = 'zh-TW'; u.rate = 0.9;
+    window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+}
+</script>
+</body>
+</html>
