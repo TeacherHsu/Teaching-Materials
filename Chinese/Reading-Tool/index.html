@@ -326,6 +326,23 @@
                 window.speechSynthesis.speak(utterance);
             };
 
+            // 新增：建構要朗讀的文字（套用 overrides）
+            const buildSpeakText = (range) => {
+                if (!range) return text.split('|').join('');
+
+                const chars = text.split('');
+                const out = [];
+
+                for (let i = range.s; i <= range.e; i++) {
+                    const c = chars[i];
+                    if (c === '|') continue; // 朗讀不念分隔符
+                    const ov = overrides[i];
+                    // 有校正就用校正的發音借代，沒有就用原字
+                    out.push(ov?.phoneChar || c);
+                }
+                return out.join('');
+            };
+
             const saveLesson = () => {
                 try {
                     const payload = { text, overrides };
@@ -425,21 +442,24 @@
 
                     if (readUnit === 'sent') {
                         const range = getSentenceRange(index);
-                        const speak = text.slice(range.s, range.e + 1).split('|').join('');
+                        // 修改：改用 buildSpeakText
+                        const speak = buildSpeakText(range);
                         playSound(speak, range);
                         return;
                     }
 
                     if (readUnit === 'word') {
                         const range = getWordRange(index);
-                        const speak = text.slice(range.s, range.e + 1).split('|').join('');
+                        // 修改：改用 buildSpeakText
+                        const speak = buildSpeakText(range);
                         playSound(speak, range);
                         return;
                     }
 
                     if (e.shiftKey) {
                         const { s, e: end } = getSentenceRange(index);
-                        const sentence = text.slice(s, end + 1).split('|').join('');
+                        // 修改：改用 buildSpeakText
+                        const sentence = buildSpeakText({ s, e: end });
                         playSound(sentence, { s, e: end });
                     } else {
                         playSound(phoneChar || char, { s: index, e: index });
