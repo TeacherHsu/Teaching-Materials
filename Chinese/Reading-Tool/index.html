@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國小課文點讀小幫手</title>
+    
+    <!-- 1. 引入 Tailwind CSS (美化介面) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. 引入 React 和 Babel (讓瀏覽器看懂程式碼) -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- 3. 引入 Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- 4. 設定中文字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- 5. 注入自定義 CSS (直式注音核心) -->
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #F7F9F9; color: #5D6D7E; }
+        
+        /* 隱藏卷軸但可滾動 */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* 注音字體：標楷體 */
+        .zhuyin-font {
+            font-family: 'BiauKai', 'DFKai-SB', 'Kaiti TC', 'Songti TC', serif;
+            line-height: 1;
+            color: #6B7280;
+        }
+
+        /* 動畫 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in { animation: fadeIn 0.5s ease-in; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <!-- 6. 應用程式主邏輯 -->
+    <script type="text/babel">
+        // 為了在單一 HTML 運作，我們使用 React 全域變數
+        const { useState, useEffect } = React;
+
+        // 模擬 Firebase (若您需要完整分享功能，請在此處填入您的 Firebase Config 並取消註解相關程式碼)
+        // 由於單一 HTML 檔案由 file:// 開啟時無法正常使用 Firebase Auth，
+        // 這裡為了讓您「立刻能用」，我們先把儲存功能做成「本地模擬」，
+        // 產生的連結會是「示範用」，若需真實雲端功能，請將此檔案上傳至網站伺服器。
+        
+        const MOCK_MODE = true; 
+
+        // --- 注音字典 ---
+        const ZHUYIN_MAP = {
+            '一': 'ㄧ', '二': 'ㄦˋ', '三': 'ㄙㄢ', '四': 'ㄙˋ', '五': 'ㄨˇ',
+            '你': 'ㄋㄧˇ', '我': 'ㄨㄛˇ', '他': 'ㄊㄚ',
+            '在': 'ㄗㄞˋ', '左': 'ㄗㄨㄛˇ', '右': 'ㄧㄡˋ',
+            '起': 'ㄑㄧˇ', '走': 'ㄗㄡˇ',
+            '和': 'ㄏㄢˋ', '跟': 'ㄍㄣ',
+            '向': 'ㄒㄧㄤˋ', '前': 'ㄑㄧㄢˊ', '後': 'ㄏㄡˋ',
+            '手': 'ㄕㄡˇ', '的': '˙ㄉㄜ',
+            '天': 'ㄊㄧㄢ', '氣': 'ㄑㄧˋ', '真': 'ㄓㄣ', '好': 'ㄏㄠˇ',
+            '大': 'ㄉㄚˋ', '家': 'ㄐㄧㄚ', '來': 'ㄌㄞˊ', 
+            '上': 'ㄕㄤˋ', '學': 'ㄒㄩㄝˊ', '校': 'ㄒㄧㄠˋ',
+            '老': 'ㄌㄠˇ', '師': 'ㄕ', '早': 'ㄗㄠˇ', '安': 'ㄢ',
+            '小': 'ㄒㄧㄠˇ', '朋': 'ㄆㄥˊ', '友': 'ㄧㄡˇ', '們': '˙ㄇㄣ',
+            '讀': 'ㄉㄨˊ', '書': 'ㄕㄨ', '寫': 'ㄒㄧㄝˇ', '字': 'ㄗˋ',
+            '快': 'ㄎㄨㄞˋ', '樂': 'ㄌㄜˋ', '習': 'ㄒㄧˊ',
+            '樹': 'ㄕㄨˋ', '花': 'ㄏㄨㄚ', '草': 'ㄘㄠˇ', '紅': 'ㄏㄨㄥˊ',
+            '這': 'ㄓㄜˋ', '是': 'ㄕˋ', '個': '˙ㄍㄜ',
+            '測': 'ㄘㄜˋ', '試': 'ㄕˋ', '課': 'ㄎㄜˋ', '文': 'ㄨㄣˊ',
+            '風': 'ㄈㄥ', '爸': 'ㄅㄚˋ', '媽': 'ㄇㄚ', '捕': 'ㄅㄨˇ',
+            '魚': 'ㄩˊ', '去': 'ㄑㄩˋ', '為': 'ㄨㄟˋ', '什': 'ㄕㄣˊ',
+            '麼': '˙ㄇㄜ', '還': 'ㄏㄞˊ', '不': 'ㄅㄨˋ', '回': 'ㄏㄨㄟˊ'
+        };
+
+        const getZhuyin = (char) => ZHUYIN_MAP[char] || '';
+
+        // --- 核心組件 ---
+        function App() {
+            const [text, setText] = useState("一二一，你在左。\n一二一，我在右。\n一二一二，一起走。\n你和我，一起向前走。");
+            const [parsedData, setParsedData] = useState([]);
+            const [showZhuyin, setShowZhuyin] = useState(true);
+            const [mode, setMode] = useState('edit'); // edit | read
+            const [correctionMode, setCorrectionMode] = useState(false);
+            
+            // Modal 相關
+            const [editingIndex, setEditingIndex] = useState(null);
+            const [tempZhuyin, setTempZhuyin] = useState("");
+            const [tempPhoneChar, setTempPhoneChar] = useState("");
+
+            const [shareUrl, setShareUrl] = useState(null);
+            const [copySuccess, setCopySuccess] = useState(false);
+
+            // 初始化與 URL 參數讀取
+            useEffect(() => {
+                const params = new URLSearchParams(window.location.search);
+                const lessonContent = params.get('content'); // 簡單版：直接把內容編碼在網址
+                
+                if (lessonContent) {
+                    try {
+                        const decoded = decodeURIComponent(atob(lessonContent));
+                        setText(decoded);
+                        setMode('read');
+                    } catch(e) { console.error(e); }
+                }
+                
+                // 讓 Lucide Icons 渲染
+                if (window.lucide) window.lucide.createIcons();
+            }, []);
+
+            // 文字變動時重新解析
+            useEffect(() => {
+                parseText(text);
+                // 每次渲染後更新 icon
+                setTimeout(() => { if (window.lucide) window.lucide.createIcons(); }, 100);
+            }, [text]);
+
+            // 監聽模式改變以更新 Icon
+            useEffect(() => {
+                setTimeout(() => { if (window.lucide) window.lucide.createIcons(); }, 100);
+            }, [mode, showZhuyin, correctionMode, shareUrl, editingIndex]);
+
+            const parseText = (inputText) => {
+                const chars = inputText.split('');
+                const data = chars.map(char => ({
+                    char,
+                    zhuyin: getZhuyin(char),
+                    phoneChar: ''
+                }));
+                setParsedData(data);
+            };
+
+            const handleTextChange = (e) => {
+                setText(e.target.value);
+                setShareUrl(null);
+            };
+
+            // TTS 發音
+            const playSound = (textToSpeak) => {
+                if (!window.speechSynthesis) return;
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(textToSpeak);
+                utterance.lang = 'zh-TW';
+                utterance.rate = 0.75;
+                window.speechSynthesis.speak(utterance);
+            };
+
+            // 儲存/分享 (簡易版：將內容轉 Base64 放在網址)
+            const saveLesson = () => {
+                // 在單機 HTML 版，我們使用 URL Hash 或 Query 來分享
+                // 優點：不需要後端，任何地方貼上都能用
+                // 缺點：網址會很長
+                const encoded = btoa(encodeURIComponent(text));
+                const url = `${window.location.origin}${window.location.pathname}?content=${encoded}`;
+                setShareUrl(url);
+                setMode('read');
+            };
+
+            const copyToClipboard = () => {
+                if (!shareUrl) return;
+                const textarea = document.createElement('textarea');
+                textarea.value = shareUrl;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                setCopySuccess(true);
+                setTimeout(() => setCopySuccess(false), 2000);
+            };
+
+            // 開啟校正視窗
+            const openEditModal = (index, item) => {
+                setEditingIndex(index);
+                setTempZhuyin(item.zhuyin);
+                setTempPhoneChar(item.phoneChar || "");
+            };
+
+            const saveSingleZhuyin = () => {
+                if (editingIndex !== null) {
+                    const newData = [...parsedData];
+                    newData[editingIndex] = {
+                        ...newData[editingIndex],
+                        zhuyin: tempZhuyin,
+                        phoneChar: tempPhoneChar
+                    };
+                    setParsedData(newData);
+                    setEditingIndex(null);
+                }
+            };
+
+            // 渲染單個字塊
+            const CharBlock = ({ item, index }) => {
+                const { char, zhuyin, phoneChar } = item;
+                
+                if (char === '\n') return <div className="w-full h-8 basis-full"></div>;
+                
+                const isPunctuation = /[，。、；：？！「」『』\(\)（）\s]/.test(char);
+
+                const handleClick = () => {
+                    if (correctionMode && !isPunctuation) {
+                        openEditModal(index, item);
+                    } else if (!isPunctuation) {
+                        playSound(phoneChar || char);
+                    }
+                };
+
+                return (
+                    <div 
+                        className={`inline-flex items-center justify-center m-1 p-1 rounded-lg transition-all duration-200 relative
+                        ${isPunctuation ? 'pointer-events-none' : 'cursor-pointer hover:bg-teal-50 hover:-translate-y-0.5'}
+                        ${correctionMode && !isPunctuation ? 'ring-2 ring-dashed ring-amber-300 bg-amber-50' : ''}`}
+                        onClick={handleClick}
+                    >
+                        <span className="hanzi text-[2.5rem] leading-none text-slate-700">{char}</span>
+                        {showZhuyin && !isPunctuation && zhuyin && (
+                            <ZhuyinDisplay zhuyin={zhuyin} />
+                        )}
+                    </div>
+                );
+            };
+
+            // 注音渲染 (聲調置右)
+            const ZhuyinDisplay = ({ zhuyin }) => {
+                if (!zhuyin) return null;
+                const tones = ['ˊ', 'ˇ', 'ˋ', '˙'];
+                let symbols = zhuyin;
+                let toneChar = '';
+                let isNeutral = false;
+
+                if (zhuyin.startsWith('˙')) {
+                    isNeutral = true;
+                    symbols = zhuyin.substring(1);
+                    toneChar = '˙';
+                } else {
+                    const last = zhuyin.slice(-1);
+                    if (tones.includes(last) && last !== '˙') {
+                        toneChar = last;
+                        symbols = zhuyin.slice(0, -1);
+                    }
+                }
+
+                return (
+                    <div className="flex flex-col items-center justify-center h-full ml-2 select-none">
+                        {isNeutral && <span className="zhuyin-font text-[0.6rem] mb-[-0.2rem]">{toneChar}</span>}
+                        <div className="flex items-center">
+                            <div className="flex flex-col items-center leading-none">
+                                {symbols.split('').map((c, i) => (
+                                    <span key={i} className="zhuyin-font text-[0.8rem] my-[1px]">{c}</span>
+                                ))}
+                            </div>
+                            {!isNeutral && toneChar && (
+                                <span className="zhuyin-font text-[0.8rem] ml-1 self-center">{toneChar}</span>
+                            )}
+                        </div>
+                    </div>
+                );
+            };
+
+            return (
+                <div className="min-h-screen pb-20">
+                    {/* Navbar */}
+                    <nav className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-10">
+                        <div className="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+                            <div className="flex items-center gap-2 cursor-pointer" onClick={() => {
+                                window.history.pushState({}, '', window.location.pathname);
+                                setMode('edit');
+                                setShareUrl(null);
+                            }}>
+                                <div className="bg-teal-200 p-2 rounded-lg text-white">
+                                    <i data-lucide="book-open" width="20"></i>
+                                </div>
+                                <h1 className="font-bold text-lg text-slate-700 tracking-wide">
+                                    國語課文<span className="text-teal-400">點讀小幫手</span>
+                                </h1>
+                            </div>
+
+                            <div className="flex items-center gap-3">
+                                {mode === 'read' && (
+                                    <button 
+                                        onClick={() => setCorrectionMode(!correctionMode)}
+                                        className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-colors text-sm font-medium border ${correctionMode ? 'bg-amber-100 text-amber-700 border-amber-300' : 'bg-white text-slate-500 border-slate-200 hover:bg-slate-50'}`}
+                                    >
+                                        <i data-lucide="settings" width="14"></i>
+                                        <span>{correctionMode ? '完成校正' : '校正'}</span>
+                                    </button>
+                                )}
+                                
+                                <button 
+                                    onClick={() => setShowZhuyin(!showZhuyin)}
+                                    className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 transition-colors text-sm font-medium"
+                                >
+                                    <span className="text-xs text-slate-500">注音</span>
+                                    {showZhuyin ? 
+                                        <i data-lucide="toggle-right" className="text-teal-400" width="28"></i> : 
+                                        <i data-lucide="toggle-left" className="text-slate-400" width="28"></i>
+                                    }
+                                </button>
+                                
+                                {mode === 'read' && !correctionMode && (
+                                    <button onClick={() => setMode('edit')} className="p-2 rounded-full hover:bg-slate-100 text-slate-500">
+                                        <i data-lucide="edit-3" width="20"></i>
+                                    </button>
+                                )}
+                            </div>
+                        </div>
+                    </nav>
+
+                    {/* Main Content */}
+                    <main className="max-w-4xl mx-auto px-4 py-8">
+                        {mode === 'edit' && (
+                            <div className="mb-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-100 fade-in">
+                                <h2 className="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2">
+                                    <i data-lucide="edit-3" width="18" className="text-teal-400"></i> 輸入課文
+                                </h2>
+                                <textarea
+                                    value={text}
+                                    onChange={handleTextChange}
+                                    className="w-full h-40 p-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-200 text-lg text-slate-700"
+                                    placeholder="請在此貼上課文..."
+                                ></textarea>
+                                <div className="mt-4 flex justify-end gap-3">
+                                    <button onClick={() => setMode('read')} className="px-5 py-2 rounded-xl text-slate-500 hover:bg-slate-100 font-medium text-sm">預覽</button>
+                                    <button onClick={saveLesson} className="flex items-center gap-2 px-6 py-2 rounded-xl bg-teal-400 hover:bg-teal-500 text-white font-medium shadow-sm">
+                                        <i data-lucide="share-2" width="16"></i> 產生連結
+                                    </button>
+                                </div>
+
+                                {shareUrl && (
+                                    <div className="mt-6 p-4 bg-teal-50 border border-teal-100 rounded-xl flex flex-col sm:flex-row items-center gap-3 animate-pulse-once">
+                                        <div className="flex-1 w-full overflow-hidden">
+                                            <p className="text-sm font-bold text-teal-600 mb-1">連結已產生！</p>
+                                            <div className="bg-white/50 border border-teal-200 rounded px-2 py-1 text-xs text-slate-500 truncate">{shareUrl}</div>
+                                        </div>
+                                        <div className="flex gap-2">
+                                            <button onClick={copyToClipboard} className="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-sm flex items-center gap-1">
+                                                {copySuccess ? '已複製' : '複製'}
+                                            </button>
+                                            <a href={shareUrl} target="_self" className="px-3 py-1.5 rounded-lg bg-teal-500 text-white text-sm flex items-center gap-1">
+                                                開啟
+                                            </a>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
+                        <div className={`relative bg-white min-h-[50vh] rounded-[2rem] shadow-sm p-8 sm:p-12 border border-slate-100 flex flex-wrap content-start items-center justify-center gap-y-6 ${mode === 'edit' ? 'hidden' : 'block fade-in'} ${correctionMode ? 'ring-4 ring-amber-100' : ''}`}>
+                             {correctionMode && (
+                                <div className="absolute -top-12 left-0 right-0 flex justify-center">
+                                    <div className="bg-amber-100 text-amber-800 text-sm px-4 py-1.5 rounded-full shadow-sm font-medium animate-bounce z-20">
+                                        校正模式：點擊文字修改注音或發音
+                                    </div>
+                                </div>
+                            )}
+                            
+                            {parsedData.map((item, index) => (
+                                <CharBlock key={index} item={item} index={index} />
+                            ))}
+                        </div>
+
+                         {mode === 'read' && !correctionMode && (
+                            <div className="mt-8 text-center text-sm text-slate-400">
+                                <p>點擊文字即可聽發音</p>
+                            </div>
+                        )}
+                    </main>
+
+                    {/* Edit Modal */}
+                    {editingIndex !== null && (
+                        <div className="fixed inset-0 bg-black/20 flex items-center justify-center z-50 backdrop-blur-sm p-4">
+                            <div className="bg-white rounded-2xl shadow-xl w-full max-w-sm p-6 fade-in">
+                                <div className="flex justify-between items-center mb-4">
+                                    <h3 className="text-lg font-bold text-slate-700">修改注音與發音</h3>
+                                    <button onClick={() => setEditingIndex(null)} className="text-slate-400 hover:text-slate-600">
+                                        <i data-lucide="x" width="20"></i>
+                                    </button>
+                                </div>
+                                <div className="flex justify-center mb-6">
+                                    <span className="text-5xl font-serif text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                        {parsedData[editingIndex].char}
+                                    </span>
+                                </div>
+                                <div className="space-y-4 mb-6">
+                                    <div>
+                                        <label className="block text-xs font-bold text-slate-400 mb-1">注音符號</label>
+                                        <input type="text" value={tempZhuyin} onChange={e => setTempZhuyin(e.target.value)} className="w-full text-center text-xl p-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-200 outline-none" />
+                                    </div>
+                                    <div>
+                                        <label className="block text-xs font-bold text-slate-400 mb-1">發音借代 (選填)</label>
+                                        <input type="text" value={tempPhoneChar} onChange={e => setTempPhoneChar(e.target.value)} className="w-full text-center text-lg p-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-200 outline-none" placeholder="輸入同音字 (如:義)" />
+                                    </div>
+                                </div>
+                                <div className="flex gap-2">
+                                    <button onClick={() => setEditingIndex(null)} className="flex-1 py-2.5 rounded-xl border border-slate-200 text-slate-600">取消</button>
+                                    <button onClick={saveSingleZhuyin} className="flex-1 py-2.5 rounded-xl bg-teal-400 text-white shadow-sm">確認修改</button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
