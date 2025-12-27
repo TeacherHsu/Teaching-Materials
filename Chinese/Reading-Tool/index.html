@@ -154,6 +154,8 @@
             const [mode, setMode] = useState('edit'); 
             const [correctionMode, setCorrectionMode] = useState(false);
             const [speechRate, setSpeechRate] = useState(0.75); 
+            // 新增: 字型縮放比例 (預設 1.0)
+            const [zoom, setZoom] = useState(1.0); 
 
             const [readUnit, setReadUnit] = useState('char'); 
             const [activeRange, setActiveRange] = useState(null); 
@@ -226,7 +228,7 @@
             // 4. 更新 Icons
             useEffect(() => {
                 setTimeout(() => { if (window.lucide) window.lucide.createIcons(); }, 100);
-            }, [mode, showZhuyin, correctionMode, shareUrl, editingIndex, speechRate, voices, readUnit]);
+            }, [mode, showZhuyin, correctionMode, shareUrl, editingIndex, speechRate, voices, readUnit, zoom]);
 
             const getZhuyin = (char) => {
                 if (ZHUYIN_MAP[char]) return ZHUYIN_MAP[char];
@@ -240,7 +242,6 @@
             };
 
             const parseText = (inputText) => {
-                // 批次計算拼音
                 let pinyinArr = [];
                 if (window.pinyinPro) {
                     try {
@@ -261,7 +262,7 @@
                         autoZhuyin = ov.zhuyin;
                     } else if (ZHUYIN_MAP[char]) {
                         autoZhuyin = ZHUYIN_MAP[char];
-                    } else if (/[\u4e00-\u9fff]/.test(char)) { // 僅對漢字計算
+                    } else if (/[\u4e00-\u9fff]/.test(char)) { 
                         const py = (pinyinArr && pinyinArr[idx]) ? pinyinArr[idx] : '';
                         autoZhuyin = pinyinSyllableToZhuyin(py);
                     }
@@ -297,15 +298,27 @@
 
             const handleTextChange = (e) => {
                 setText(e.target.value);
-                setOverrides({}); // 安全起見，清空校正
+                setOverrides({}); 
                 setShareUrl(null);
             };
 
             const cycleSpeed = () => {
                 setSpeechRate(prev => {
+                    if (prev === 0.25) return 0.5; // 極慢 -> 慢
                     if (prev === 0.5) return 0.75;
                     if (prev === 0.75) return 1.0;
-                    return 0.5;
+                    if (prev === 1.0) return 1.2; 
+                    return 0.25; // 循環回 0.25
+                });
+            };
+
+            // 新增: 調整字體大小
+            const adjustZoom = (delta) => {
+                setZoom(prev => {
+                    const newZoom = parseFloat((prev + delta).toFixed(1));
+                    if (newZoom < 0.8) return 0.8;
+                    if (newZoom > 1.6) return 1.6;
+                    return newZoom;
                 });
             };
 
@@ -326,7 +339,6 @@
                 window.speechSynthesis.speak(utterance);
             };
 
-            // 新增：建構要朗讀的文字（套用 overrides）
             const buildSpeakText = (range) => {
                 if (!range) return text.split('|').join('');
 
@@ -335,9 +347,8 @@
 
                 for (let i = range.s; i <= range.e; i++) {
                     const c = chars[i];
-                    if (c === '|') continue; // 朗讀不念分隔符
+                    if (c === '|') continue; 
                     const ov = overrides[i];
-                    // 有校正就用校正的發音借代，沒有就用原字
                     out.push(ov?.phoneChar || c);
                 }
                 return out.join('');
@@ -349,13 +360,9 @@
                     const jsonString = JSON.stringify(payload);
                     const base64 = btoa(unescape(encodeURIComponent(jsonString)));
                     const encodedParam = encodeURIComponent(base64);
-                    
                     const baseUrl = window.location.href.split('?')[0].split('#')[0];
-                    // 移除時間戳記，確保連結簡潔
                     const url = `${baseUrl}?content=${encodedParam}`;
-                    
                     setShareUrl(url);
-                    // 不切換 mode，讓使用者可以看到連結
                 } catch (e) {
                     console.error("Link Gen Error:", e);
                     alert("連結產生失敗（內容可能過長）。");
@@ -442,7 +449,6 @@
 
                     if (readUnit === 'sent') {
                         const range = getSentenceRange(index);
-                        // 修改：改用 buildSpeakText
                         const speak = buildSpeakText(range);
                         playSound(speak, range);
                         return;
@@ -450,7 +456,6 @@
 
                     if (readUnit === 'word') {
                         const range = getWordRange(index);
-                        // 修改：改用 buildSpeakText
                         const speak = buildSpeakText(range);
                         playSound(speak, range);
                         return;
@@ -458,7 +463,6 @@
 
                     if (e.shiftKey) {
                         const { s, e: end } = getSentenceRange(index);
-                        // 修改：改用 buildSpeakText
                         const sentence = buildSpeakText({ s, e: end });
                         playSound(sentence, { s, e: end });
                     } else {
@@ -475,15 +479,16 @@
                         onClick={handleClick}
                         title={!isPunctuation ? "點擊朗讀" : ""}
                     >
-                        <span className="hanzi text-[2.5rem] leading-none text-slate-700">{char}</span>
+                        {/* 修正：字型大小改為動態 style */}
+                        <span className="hanzi leading-none text-slate-700" style={{fontSize: `${2.5 * zoom}rem`}}>{char}</span>
                         {showZhuyin && !isPunctuation && zhuyin && (
-                            <ZhuyinDisplay zhuyin={zhuyin} />
+                            <ZhuyinDisplay zhuyin={zhuyin} zoom={zoom} />
                         )}
                     </div>
                 );
             };
 
-            const ZhuyinDisplay = ({ zhuyin }) => {
+            const ZhuyinDisplay = ({ zhuyin, zoom }) => {
                 if (!zhuyin) return null;
                 const tones = ['ˊ', 'ˇ', 'ˋ', '˙'];
                 let symbols = zhuyin;
@@ -502,17 +507,22 @@
                     }
                 }
 
+                // 修正：注音大小改為動態 style
+                const symbolSize = `${0.8 * zoom}rem`;
+                const neutralSize = `${0.6 * zoom}rem`;
+                const neutralMargin = `${-0.2 * zoom}rem`;
+
                 return (
                     <div className="flex flex-col items-center justify-center h-full ml-2 select-none">
-                        {isNeutral && <span className="zhuyin-font text-[0.6rem] mb-[-0.2rem]">{toneChar}</span>}
+                        {isNeutral && <span className="zhuyin-font" style={{fontSize: neutralSize, marginBottom: neutralMargin}}>{toneChar}</span>}
                         <div className="flex items-center">
                             <div className="flex flex-col items-center leading-none">
                                 {symbols.split('').map((c, i) => (
-                                    <span key={i} className="zhuyin-font text-[0.8rem] my-[1px]">{c}</span>
+                                    <span key={i} className="zhuyin-font my-[1px]" style={{fontSize: symbolSize}}>{c}</span>
                                 ))}
                             </div>
                             {!isNeutral && toneChar && (
-                                <span className="zhuyin-font text-[0.8rem] ml-1 self-center">{toneChar}</span>
+                                <span className="zhuyin-font ml-1 self-center" style={{fontSize: symbolSize}}>{toneChar}</span>
                             )}
                         </div>
                     </div>
@@ -539,7 +549,7 @@
                             </div>
 
                             <div className="flex items-center gap-2 sm:gap-3">
-                                <div className="hidden sm:flex items-center gap-1 bg-slate-100 rounded-full p-1 mr-2">
+                                <div className="hidden md:flex items-center gap-1 bg-slate-100 rounded-full p-1 mr-2">
                                     {[
                                         ['char','字'],
                                         ['word','詞'],
@@ -557,7 +567,7 @@
                                 </div>
                                 
                                 <select 
-                                    className="sm:hidden bg-slate-100 text-xs rounded-lg px-2 py-1.5 border-none outline-none text-slate-600"
+                                    className="md:hidden bg-slate-100 text-xs rounded-lg px-2 py-1.5 border-none outline-none text-slate-600"
                                     value={readUnit}
                                     onChange={(e) => setReadUnit(e.target.value)}
                                 >
@@ -566,6 +576,25 @@
                                     <option value="sent">讀句</option>
                                 </select>
 
+                                {/* 1.2x 語速已加入 cycleSpeed */}
+                                <button 
+                                    onClick={cycleSpeed}
+                                    className="flex items-center gap-1 px-2 py-1.5 sm:px-3 rounded-full bg-slate-100 hover:bg-slate-200 transition-colors"
+                                >
+                                    <span className="text-xs text-slate-500 font-mono w-6 text-center">{speechRate}x</span>
+                                </button>
+
+                                {/* 新增：字體縮放按鈕 */}
+                                <div className="flex items-center bg-slate-100 rounded-full px-2 py-1 gap-2">
+                                    <button onClick={() => adjustZoom(-0.1)} className="text-slate-500 hover:text-teal-600" title="縮小">
+                                        <span className="text-xs font-bold">A-</span>
+                                    </button>
+                                    <button onClick={() => adjustZoom(0.1)} className="text-slate-500 hover:text-teal-600" title="放大">
+                                        <span className="text-sm font-bold">A+</span>
+                                    </button>
+                                </div>
+
+                                {/* 語音選單移到右側或隱藏，避免擁擠 */}
                                 {voices.length > 0 && (
                                     <select
                                         value={selectedVoice?.name || ""}
@@ -573,7 +602,7 @@
                                             const v = voices.find(voice => voice.name === e.target.value);
                                             setSelectedVoice(v);
                                         }}
-                                        className="max-w-[80px] sm:max-w-[120px] px-2 py-1.5 rounded-lg bg-slate-100 text-xs text-slate-600 border-none outline-none truncate"
+                                        className="hidden lg:block max-w-[100px] px-2 py-1.5 rounded-lg bg-slate-100 text-xs text-slate-600 border-none outline-none truncate"
                                     >
                                         {voices.map(v => (
                                             <option key={v.name} value={v.name}>
@@ -582,22 +611,6 @@
                                         ))}
                                     </select>
                                 )}
-                                
-                                <button
-                                    onClick={() => playSound("這是發音測試")}
-                                    className="px-2 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-xs text-slate-600 flex items-center gap-1"
-                                    title="測試發音"
-                                >
-                                    <i data-lucide="volume-2" width="14"></i>
-                                    <span className="hidden sm:inline">測試</span>
-                                </button>
-
-                                <button 
-                                    onClick={cycleSpeed}
-                                    className="flex items-center gap-1 px-2 py-1.5 sm:px-3 rounded-full bg-slate-100 hover:bg-slate-200 transition-colors"
-                                >
-                                    <span className="text-xs text-slate-500 font-mono w-6 text-center">{speechRate}x</span>
-                                </button>
 
                                 <button 
                                     onClick={() => setShowZhuyin(!showZhuyin)}
