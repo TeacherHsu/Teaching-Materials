@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>教室考試倒數計時器</title>
+
+<style>
+/* ================= 基本配色 ================= */
+:root{
+  --bg:#000;
+  --panel:#111827;
+  --border:#1f2937;
+  --muted:rgba(255,255,255,.35);
+  --muted2:rgba(255,255,255,.55);
+  --yellow:#fbbf24;
+  --yellow2:#f59e0b;
+  --green:#16a34a;
+  --gray:#374151;
+}
+
+/* ================= 全域 ================= */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  background:var(--bg);
+  color:#fff;
+  overflow:hidden;
+  font-family: system-ui, -apple-system, "Segoe UI",
+                 "Noto Sans TC","PingFang TC","Microsoft JhengHei", sans-serif;
+}
+
+/* ================= 結束閃爍 ================= */
+@keyframes flash{
+  0%,100%{ background:#000; color:#ff0000; }
+  50%{ background:#ff0000; color:#000; }
+}
+.time-up{ animation:flash 1s infinite; }
+
+/* ================= 版面 ================= */
+.app{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.top{
+  flex:2;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* === 今天要考（方案 A：純文字）=== */
+.examText{
+  position:absolute;
+  top:10px;
+  left:14px;
+  font-weight:800;
+  letter-spacing:.12em;
+  font-size:clamp(14px,1.8vw,20px);
+  color:var(--muted);
+  user-select:none;
+  pointer-events:none;
+}
+
+/* === 上方狀態 === */
+.header{
+  position:absolute;
+  top:10%;
+  left:0; right:0;
+  text-align:center;
+  user-select:none;
+}
+.status{
+  font-weight:900;
+  letter-spacing:.2em;
+  font-size:clamp(22px,3.6vw,46px);
+  color:var(--muted2);
+  min-height: 1.2em; /* 防止文字切換時高度跳動 */
+  transition: opacity 0.5s;
+}
+
+/* === 全螢幕 === */
+.fullscreen{
+  position:absolute;
+  top:10px;
+  right:10px;
+  background:none;
+  border:none;
+  color:var(--muted);
+  font-size:24px;
+  cursor:pointer;
+  padding: 10px;
+  z-index: 10;
+}
+.fullscreen:hover { color: #fff; }
+
+/* === 倒數字 === */
+.timer{
+  font-variant-numeric:tabular-nums;
+  font-weight:900;
+  line-height:.95;
+  letter-spacing:2px;
+  color:var(--yellow);
+  font-size:clamp(96px,26vw,360px);
+  user-select:none;
+  cursor: pointer; /* 暗示可點擊 */
+}
+.timer:hover {
+    filter: brightness(1.1);
+}
+
+/* === 進度條 === */
+.progress{
+  position:absolute;
+  bottom:0; left:0;
+  width:100%;
+  height:10px;
+  background:var(--border);
+}
+.progress-bar{
+  height:100%;
+  background:var(--yellow2);
+  width:100%;
+  transition: width 1s linear;
+}
+
+/* ================= 下半部 ================= */
+.bottom{
+  flex:1;
+  background:var(--panel);
+  border-top:4px solid var(--border);
+  display:flex;
+  flex-direction:column;
+}
+
+/* === 控制列 === */
+.controls{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  padding:16px;
+  border-bottom:1px solid var(--border);
+}
+
+.btn{
+  font-weight:900;
+  font-size:clamp(18px,2.2vw,28px);
+  padding:14px 22px;
+  border-radius:14px;
+  border:none;
+  cursor:pointer;
+  user-select:none;
+  transition: transform 0.1s, filter 0.1s;
+}
+.btn:active { transform: scale(0.95); }
+.btn:hover { filter: brightness(1.1); }
+
+.start{ background:var(--green); color:#fff; }
+.pause{ background:#b45309; color:#fff; }
+.gray{ background:var(--gray); color:#fff; }
+
+/* === 科目 === */
+.subjects{
+  flex:1;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  padding:14px;
+}
+@media(min-width:800px){
+  .subjects{ grid-template-columns:repeat(4,1fr); }
+}
+.sub{
+  font-weight:900;
+  font-size:clamp(28px,4vw,60px);
+  border-radius:18px;
+  border:2px solid var(--border);
+  background:none;
+  color:var(--muted2);
+  cursor:pointer;
+  transition: all 0.2s;
+}
+.sub.active{
+  background:#d1d5db;
+  color:#000;
+  border-color:#d1d5db;
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+.sub:hover:not(.active) {
+    border-color: var(--gray);
+    color: #fff;
+}
+</style>
+</head>
+
+<body>
+<div id="app" class="app">
+
+  <!-- 上半部 -->
+  <div class="top">
+
+    <div class="header">
+      <div id="status" class="status">準備開始</div>
+    </div>
+
+    <button class="fullscreen" onclick="toggleFullscreen()" title="全螢幕">⛶</button>
+
+    <!-- 點擊此處可設定時間 -->
+    <div id="timer" class="timer" title="點擊修改時間">40:00</div>
+
+    <div class="progress">
+      <div id="progressBar" class="progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- 下半部 -->
+  <div class="bottom">
+    <div class="controls">
+      <button id="startBtn" class="btn start">開始</button>
+      <button id="pauseBtn" class="btn pause" style="display:none">暫停</button>
+      <button id="resetBtn" class="btn gray">重置</button>
+    </div>
+
+    <div class="subjects" id="subjects"></div>
+  </div>
+
+</div>
+
+<script>
+/* ================= 資料 ================= */
+const SUBJECTS=["國語","數學","社會","自然"];
+const PHRASES=["靜心作答","細心檢查","沉著冷靜","堅持到底","相信自己","看清題目"];
+
+/* ================= 狀態 ================= */
+let subject="國語";
+let initial=40*60;
+let remain=initial;
+let endAt=null;
+let running=false;
+let phraseIndex=0;
+let phraseInterval=null;
+
+/* ================= DOM ================= */
+const timerEl=document.getElementById("timer");
+const statusEl=document.getElementById("status");
+const bar=document.getElementById("progressBar");
+const startBtn=document.getElementById("startBtn");
+const pauseBtn=document.getElementById("pauseBtn");
+const resetBtn=document.getElementById("resetBtn");
+
+/* ================= 初始化 ================= */
+const subjectsBox=document.getElementById("subjects");
+SUBJECTS.forEach(s=>{
+  const b=document.createElement("button");
+  b.textContent=s;
+  b.className="sub"+(s===subject?" active":"");
+  b.onclick=()=>{subject=s;renderSubjects();};
+  subjectsBox.appendChild(b);
+});
+update(); // 修正：將原本錯誤的 render() 改為 update()
+
+/* ================= 功能 ================= */
+function renderSubjects(){
+  [...subjectsBox.children].forEach(b=>{
+    b.classList.toggle("active",b.textContent===subject);
+  });
+}
+function format(t){
+  const m=Math.floor(t/60);
+  const s=t%60;
+  return String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
+}
+function tick(){
+  if(!running)return;
+  remain=Math.max(0,Math.ceil((endAt-Date.now())/1000));
+  if(remain<=0){ finish(); return; }
+  update();
+}
+function start(){
+  if(remain <= 0) return;
+  running=true;
+  endAt=Date.now()+remain*1000;
+  startBtn.style.display="none";
+  pauseBtn.style.display="inline-block";
+  
+  // 啟動鼓勵語輪播
+  statusEl.textContent = PHRASES[phraseIndex];
+  if (phraseInterval) clearInterval(phraseInterval);
+  phraseInterval = setInterval(() => {
+      phraseIndex = (phraseIndex + 1) % PHRASES.length;
+      statusEl.style.opacity = 0;
+      setTimeout(() => {
+          statusEl.textContent = PHRASES[phraseIndex];
+          statusEl.style.opacity = 1;
+      }, 500);
+  }, 20000); // 每20秒換一句
+}
+function pause(){
+  running=false;
+  startBtn.style.display="inline-block";
+  pauseBtn.style.display="none";
+  if (phraseInterval) clearInterval(phraseInterval);
+}
+function reset(){
+  pause();
+  remain=initial;
+  document.getElementById("app").classList.remove("time-up");
+  statusEl.textContent="準備開始";
+  update();
+}
+function finish(){
+  running=false;
+  remain=0;
+  document.getElementById("app").classList.add("time-up");
+  statusEl.textContent="考試結束";
+  if (phraseInterval) clearInterval(phraseInterval);
+  update();
+  startBtn.style.display="none";
+  pauseBtn.style.display="none";
+}
+function update(){
+  timerEl.textContent=format(remain);
+  bar.style.width=(remain/initial*100)+"%";
+}
+function toggleFullscreen(){
+  if(!document.fullscreenElement)
+    document.documentElement.requestFullscreen();
+  else if (document.exitFullscreen) 
+    document.exitFullscreen();
+}
+
+// 點擊時間修改分鐘數 (隱藏功能)
+timerEl.onclick = () => {
+    if (running) return; // 計時中不能改
+    const currentMin = Math.floor(initial / 60);
+    const newMin = prompt("請輸入考試時間(分鐘)：", currentMin);
+    if (newMin !== null) {
+        const parsed = parseInt(newMin);
+        if (!isNaN(parsed) && parsed > 0) {
+            initial = parsed * 60;
+            reset();
+        }
+    }
+};
+
+/* ================= 綁定 ================= */
+startBtn.onclick=start;
+pauseBtn.onclick=pause;
+resetBtn.onclick=reset;
+setInterval(tick,250);
+</script>
+</body>
+</html>
