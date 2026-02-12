@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>小數乘法互動解題工具（穩定升級版）</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* 數學式呈現規則（沿用） */
+    .math { font-size: 28px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
+    .fraction { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.1; }
+    .fraction span:first-child { border-bottom: 2px solid #000; padding: 0 4px; }
+    .power { font-size: 18px; vertical-align: super; margin-left: 2px; color: #e63946; }
+    .sqrt::before { content: "√"; font-size: 28px; margin-right: 2px; }
+    .abs::before { content: "|"; } .abs::after { content: "|"; }
+    .mixed { display: inline-flex; align-items: center; gap: 2px; }
+
+    /* 動畫效果 */
+    @keyframes tada {
+      0% { transform: scale3d(1, 1, 1); }
+      10%, 20% { transform: scale3d(.95, .95, .95) rotate3d(0, 0, 1, -3deg); }
+      30%, 50%, 70%, 90% { transform: scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, 3deg); }
+      40%, 60%, 80% { transform: scale3d(1.05, 1.05, 1.05) rotate3d(0, 0, 1, -3deg); }
+      100% { transform: scale3d(1, 1, 1); }
+    }
+    .animate-tada { animation: tada 0.8s ease-in-out; }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+      20%, 40%, 60%, 80% { transform: translateX(5px); }
+    }
+    .animate-shake { animation: shake 0.5s; }
+
+    mark {
+      background-color: #fef08a;
+      padding: 0.125rem 0.375rem;
+      border-radius: 0.25rem;
+      font-weight: bold;
+      color: #1f2937;
+    }
+
+    /* 隱藏捲軸但保持可捲動 */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+
+<body class="bg-sky-50 min-h-screen text-gray-800 pb-20">
+  <div id="app"></div>
+  <div id="modal" class="fixed inset-0 bg-gray-900/60 hidden flex items-center justify-center z-50 px-4 backdrop-blur-sm"></div>
+
+<script>
+/* ===============================
+   工具：安全洗字串（避免塞到 HTML attribute）
+================================ */
+const escHtml = (s) => String(s)
+  .replaceAll('&','&amp;')
+  .replaceAll('<','&lt;')
+  .replaceAll('>','&gt;')
+  .replaceAll('"','&quot;')
+  .replaceAll("'",'&#39;');
+
+const shuf = (arr) => {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+};
+
+/* ===============================
+   語音模組（TTS）
+================================ */
+const synth = window.speechSynthesis;
+function speak(text) {
+  try {
+    synth.cancel();
+    const utterance = new SpeechSynthesisUtterance(String(text));
+    utterance.lang = 'zh-TW';
+    utterance.rate = 0.9;
+    synth.speak(utterance);
+  } catch (_) {}
+}
+
+/* ===============================
+   音效模組（WebAudio）
+   - 行動裝置必須在「使用者互動後」resume
+================================ */
+let audioCtx = null;
+function ensureAudio() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+}
+function playSound(type) {
+  if (!audioCtx) return; // 會在首次互動自動初始化
+  try {
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    const osc = audioCtx.createOscillator();
+    const gainNode = audioCtx.createGain();
+    osc.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+
+    if (type === 'success') {
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(523.25, audioCtx.currentTime);
+      osc.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.1);
+      osc.frequency.setValueAtTime(783.99, audioCtx.currentTime + 0.2);
+      gainNode.gain.setValueAtTime(0.10, audioCtx.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + 0.6);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.6);
+    } else if (type === 'error') {
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(300, audioCtx.currentTime);
+      osc.frequency.setValueAtTime(200, audioCtx.currentTime + 0.2);
+      gainNode.gain.setValueAtTime(0.10, audioCtx.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + 0.4);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.4);
+    } else if (type === 'pop') {
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+      gainNode.gain.setValueAtTime(0.08, audioCtx.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + 0.1);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.1);
+    }
+  } catch (_) {}
+}
+
+/* ===============================
+   題庫：以「生成後固定」為準（避免刷新答案變動）
+================================ */
+const QuestionBanks = [
+  {
+    id: "q1",
+    generate: () => {
+      const a = (Math.floor(Math.random() * 8) + 2) / 10; // 0.2~0.9
+      const b = Math.floor(Math.random() * 6) + 3;        // 3~8
+      const ans1 = Math.round(a * 10);
+      const ans2 = ans1 * b;
+      const finalAns = (ans2 / 10).toFixed(1);
+
+      return {
+        title: "挑戰一：一位小數",
+        text: `做一個彩球需要 <mark>${a}</mark> 公尺的彩帶，做 <mark>${b}</mark> 個彩球需要多長的彩帶？`,
+        speechText: `做一個彩球需要 ${a} 公尺的彩帶，做 ${b} 個彩球需要多長的彩帶？`,
+        svg: `<svg viewBox="0 0 100 100" class="w-full max-w-[160px] mx-auto drop-shadow-md my-4"><circle cx="50" cy="50" r="35" fill="#fecaca" stroke="#ef4444" stroke-width="4"/><path d="M 50 15 Q 70 50 50 85 M 15 50 Q 50 70 85 50" stroke="#ef4444" stroke-width="4" fill="none"/></svg>`,
+        steps: [
+          {
+            instruction: "Step 1：請列出乘法算式",
+            speech: "第一步：請列出乘法算式",
+            slots: [
+              { type: 'slot', answer: a.toString() },
+              { type: 'slot', answer: '×' },
+              { type: 'slot', answer: b.toString() },
+              { type: 'text', text: ' = ?' }
+            ],
+            options: shuf([a.toString(), b.toString(), '×', '+', (a + 1).toString()]),
+            hint: "要求全部的長度，要把「做一個需要的長度」乘上「彩球的數量」。",
+            remedial: [
+              { q: `做1個需要 0.5 公尺，做 2 個怎麼列式？`, options: shuf([`0.5 × 2`, `0.5 + 2`]), ans: `0.5 × 2` },
+              { q: `做1個需要 0.8 公尺，做 3 個怎麼列式？`, options: shuf([`0.8 × 3`, `0.8 + 3`]), ans: `0.8 × 3` }
+            ]
+          },
+          {
+            instruction: `Step 2：想想看，${a} 是幾個 0.1？`,
+            speech: `第二步：想想看，${a} 是幾個 0.1？`,
+            slots: [
+              { type: 'text', text: `${a} 是 ` },
+              { type: 'slot', answer: ans1.toString() },
+              { type: 'text', text: ` 個 0.1` }
+            ],
+            options: shuf([ans1.toString(), a.toString(), (ans1 * 10).toString(), '1']),
+            hint: `0.1 就是 1 個 0.1，0.2 就是 2 個 0.1，所以把小數點拿掉就可以知道了喔！`,
+            remedial: [
+              { q: `0.3 是幾個 0.1？`, options: shuf(['3', '30']), ans: '3' },
+              { q: `0.7 是幾個 0.1？`, options: shuf(['7', '70']), ans: '7' }
+            ]
+          },
+          {
+            instruction: `Step 3：那麼，做 ${b} 個彩球是幾個 0.1 呢？`,
+            speech: `第三步：那麼，做 ${b} 個彩球是幾個 0.1 呢？`,
+            slots: [
+              { type: 'text', text: `${ans1} 個 0.1 的 ${b} 倍是 ` },
+              { type: 'slot', answer: ans2.toString() },
+              { type: 'text', text: ` 個 0.1` }
+            ],
+            options: shuf([ans2.toString(), (ans1 + b).toString(), (ans2 / 10).toString(), '10']),
+            hint: `直接用整數乘法算算看：${ans1} × ${b} 等於多少。`,
+            remedial: [
+              { q: `2 個 0.1 的 3 倍是幾個 0.1？`, options: shuf(['6', '5']), ans: '6' },
+              { q: `4 個 0.1 的 5 倍是幾個 0.1？`, options: shuf(['20', '9']), ans: '20' }
+            ]
+          },
+          {
+            instruction: `Step 4：最後，換算成小數是多少公尺？`,
+            speech: `第四步：最後，換算成小數是多少公尺？`,
+            slots: [
+              { type: 'text', text: `${ans2} 個 0.1 合起來是 ` },
+              { type: 'slot', answer: finalAns.toString() },
+              { type: 'text', text: ` 公尺` }
+            ],
+            options: shuf([finalAns.toString(), ans2.toString(), (ans2 * 10).toString(), '0.' + ans2.toString()]),
+            hint: `10 個 0.1 是 1.0，所以 ${ans2} 個 0.1 就是在數字中間點上小數點（除以10）。`,
+            remedial: [
+              { q: `15 個 0.1 合起來是多少？`, options: shuf(['1.5', '15']), ans: '1.5' },
+              { q: `32 個 0.1 合起來是多少？`, options: shuf(['3.2', '32']), ans: '3.2' }
+            ]
+          }
+        ]
+      };
+    }
+  },
+  {
+    id: "q2",
+    generate: () => {
+      const a_int = Math.floor(Math.random() * 9) + 1; // 1~9
+      const a = a_int / 100;                            // 0.01~0.09
+      const b = Math.floor(Math.random() * 5) + 4;      // 4~8
+      const ans1 = a_int;
+      const ans2 = ans1 * b;
+      const finalAns = (ans2 / 100).toFixed(2);
+
+      return {
+        title: "挑戰二：二位小數",
+        text: `一罐貓咪罐頭重 <mark>${a}</mark> 公斤，買了 <mark>${b}</mark> 罐，共重多少公斤？`,
+        speechText: `一罐貓咪罐頭重 ${a} 公斤，買了 ${b} 罐，共重多少公斤？`,
+        svg: `<svg viewBox="0 0 100 100" class="w-full max-w-[160px] mx-auto drop-shadow-md my-4"><rect x="20" y="30" width="60" height="50" rx="5" fill="#d1d5db" stroke="#6b7280" stroke-width="4"/><path d="M 20 45 L 80 45 M 20 60 L 80 60" stroke="#9ca3af" stroke-width="2"/><ellipse cx="50" cy="30" rx="30" ry="10" fill="#e5e7eb" stroke="#6b7280" stroke-width="4"/><path d="M 40 25 Q 50 15 60 25" stroke="#6b7280" stroke-width="3" fill="none" stroke-linecap="round"/></svg>`,
+        steps: [
+          {
+            instruction: "Step 1：請列出乘法算式",
+            speech: "第一步：請列出乘法算式",
+            slots: [
+              { type: 'slot', answer: a.toString() },
+              { type: 'slot', answer: '×' },
+              { type: 'slot', answer: b.toString() },
+              { type: 'text', text: ' = ?' }
+            ],
+            options: shuf([a.toString(), b.toString(), '×', '+', (a + 0.01).toString()]),
+            hint: "同樣是求總重量，要把單一重量乘上數量。",
+            remedial: [
+              { q: `1罐重 0.05 公斤，買 3 罐怎麼列式？`, options: shuf([`0.05 × 3`, `0.05 + 3`]), ans: `0.05 × 3` },
+              { q: `1罐重 0.02 公斤，買 6 罐怎麼列式？`, options: shuf([`0.02 × 6`, `0.02 + 6`]), ans: `0.02 × 6` }
+            ]
+          },
+          {
+            instruction: `Step 2：想想看，${a} 是幾個 0.01？`,
+            speech: `第二步：想想看，${a} 是幾個 0.01？`,
+            slots: [
+              { type: 'text', text: `${a} 是 ` },
+              { type: 'slot', answer: ans1.toString() },
+              { type: 'text', text: ` 個 0.01` }
+            ],
+            options: shuf([ans1.toString(), a.toString(), (ans1 * 10).toString(), '10']),
+            hint: `0.01 就是 1 個 0.01，0.05 就是 5 個 0.01。`,
+            remedial: [
+              { q: `0.04 是幾個 0.01？`, options: shuf(['4', '40']), ans: '4' },
+              { q: `0.09 是幾個 0.01？`, options: shuf(['9', '90']), ans: '9' }
+            ]
+          },
+          {
+            instruction: `Step 3：買 ${b} 罐，是幾個 0.01 呢？`,
+            speech: `第三步：買 ${b} 罐，是幾個 0.01 呢？`,
+            slots: [
+              { type: 'text', text: `${ans1} 個 0.01 的 ${b} 倍是 ` },
+              { type: 'slot', answer: ans2.toString() },
+              { type: 'text', text: ` 個 0.01` }
+            ],
+            options: shuf([ans2.toString(), (ans1 + b).toString(), (ans2 * 10).toString(), '100']),
+            hint: `用整數乘法算算看：${ans1} × ${b} 等於多少。`,
+            remedial: [
+              { q: `3 個 0.01 的 4 倍是幾個 0.01？`, options: shuf(['12', '7']), ans: '12' },
+              { q: `6 個 0.01 的 5 倍是幾個 0.01？`, options: shuf(['30', '11']), ans: '30' }
+            ]
+          },
+          {
+            instruction: `Step 4：最後，換算成小數是多少公斤？`,
+            speech: `第四步：最後，換算成小數是多少公斤？`,
+            slots: [
+              { type: 'text', text: `${ans2} 個 0.01 合起來是 ` },
+              { type: 'slot', answer: finalAns.toString() },
+              { type: 'text', text: ` 公斤` }
+            ],
+            options: shuf([finalAns.toString(), ans2.toString(), (ans2 / 10).toString(), '0.0' + ans2.toString()]),
+            hint: `100 個 0.01 才是 1.00，所以 ${ans2} 個 0.01 要把小數點往左移兩位喔。`,
+            remedial: [
+              { q: `25 個 0.01 合起來是多少？`, options: shuf(['0.25', '2.5']), ans: '0.25' },
+              { q: `48 個 0.01 合起來是多少？`, options: shuf(['0.48', '4.8']), ans: '0.48' }
+            ]
+          }
+        ]
+      };
+    }
+  },
+  {
+    id: "q3",
+    generate: () => {
+      const a_int = Math.floor(Math.random() * 50) + 150; // 15.0~19.9
+      const b_int = Math.floor(Math.random() * 50) + 50;  // 5.0~9.9
+      const a = a_int / 10;
+      const b = b_int / 10;
+      const diff = Math.round((a - b) * 10) / 10;
+      const c = Math.floor(Math.random() * 4) + 2; // 2~5
+      const finalAns = Math.round(diff * c * 10) / 10;
+
+      return {
+        title: "挑戰三：兩步驟綜合",
+        text: `大水管每分鐘注水 <mark>${a}</mark> 公升，小水管每分鐘注水 <mark>${b}</mark> 公升。同時注水 <mark>${c}</mark> 分鐘後，大水管比小水管<b>多</b>注入幾公升的水？`,
+        speechText: `大水管每分鐘注水 ${a} 公升，小水管每分鐘注水 ${b} 公升。同時注水 ${c} 分鐘後，大水管比小水管多注入幾公升的水？`,
+        svg: `<svg viewBox="0 0 100 100" class="w-full max-w-[160px] mx-auto drop-shadow-md my-4"><path d="M 10 40 Q 50 40 50 80 M 90 60 Q 50 60 50 80" stroke="#3b82f6" stroke-width="8" fill="none" stroke-linecap="round"/><ellipse cx="50" cy="85" rx="30" ry="10" fill="#93c5fd"/><ellipse cx="50" cy="90" rx="40" ry="10" fill="none" stroke="#60a5fa" stroke-width="4"/></svg>`,
+        steps: [
+          {
+            instruction: "Step 1：先算大水管 1 分鐘比小水管多注水幾公升？",
+            speech: "第一步：先算大水管一分鐘比小水管多注水幾公升？",
+            slots: [
+              { type: 'slot', answer: a.toString() },
+              { type: 'slot', answer: '-' },
+              { type: 'slot', answer: b.toString() },
+              { type: 'text', text: ' = ' },
+              { type: 'slot', answer: diff.toString() },
+              { type: 'text', text: ' 公升' }
+            ],
+            options: shuf([a.toString(), b.toString(), '-', '+', diff.toString(), (diff + 1).toString()]),
+            hint: "要算「多」多少，要用大水管的量減去小水管的量喔。",
+            remedial: [
+              { q: `哥哥有 15.5 元，弟弟有 5.2 元，哥哥比弟弟多幾元？`, options: shuf([`15.5 - 5.2`, `15.5 + 5.2`]), ans: `15.5 - 5.2` },
+              { q: `紅繩長 8.8 公尺，藍繩長 3.4 公尺，紅繩比藍繩多幾公尺？`, options: shuf([`8.8 - 3.4`, `8.8 + 3.4`]), ans: `8.8 - 3.4` }
+            ]
+          },
+          {
+            instruction: `Step 2：再算 ${c} 分鐘共相差幾公升？`,
+            speech: `第二步：再算 ${c} 分鐘共相差幾公升？`,
+            slots: [
+              { type: 'text', text: '相差 ' },
+              { type: 'slot', answer: diff.toString() },
+              { type: 'slot', answer: '×' },
+              { type: 'slot', answer: c.toString() },
+              { type: 'text', text: ' = ' },
+              { type: 'slot', answer: finalAns.toString()
