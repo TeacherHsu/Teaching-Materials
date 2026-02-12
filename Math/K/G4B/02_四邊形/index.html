@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>互動式數學解題工具：四邊形與垂直平行（完整版）</title>
+  <title>互動式數學解題工具：四邊形與垂直平行（動態出題版）</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* ====== 數學與特殊版型 CSS ====== */
@@ -21,11 +21,11 @@
       min-width: 60px;
       height: 40px;
       margin: 0 6px;
-      border-bottom: 3px solid #cbd5e1; /* slate-300 */
+      border-bottom: 3px solid #cbd5e1;
       text-align: center;
       line-height: 38px;
       font-weight: bold;
-      color: #2563eb; /* blue-600 */
+      color: #2563eb;
       cursor: pointer;
       transition: all 0.2s ease;
       vertical-align: middle;
@@ -36,16 +36,16 @@
     }
     .slot.filled {
       border-bottom-color: #2563eb;
-      background-color: #dbeafe; /* blue-100 */
+      background-color: #dbeafe;
     }
     .slot.done {
-      border-bottom-color: #16a34a; /* green-600 */
+      border-bottom-color: #16a34a;
       color: #16a34a;
-      background-color: #dcfce7; /* green-100 */
+      background-color: #dcfce7;
       cursor: default;
     }
     .slot.error {
-      border-bottom-color: #ef4444; /* red-500 */
+      border-bottom-color: #ef4444;
       background-color: #fee2e2;
       animation: shake 0.4s ease-in-out;
     }
@@ -77,8 +77,8 @@
 
     /* ====== 重點標記樣式 ====== */
     mark {
-      background-color: #fef08a; /* yellow-200 */
-      color: #1e3a8a; /* blue-900 */
+      background-color: #fef08a;
+      color: #1e3a8a;
       padding: 2px 6px;
       border-radius: 4px;
       font-weight: bold;
@@ -116,6 +116,10 @@
     /* ====== Toast ====== */
     .toast-hidden { opacity: 0; transform: translate(-50%, 24px); pointer-events: none; }
     .toast-show { opacity: 1; transform: translate(-50%, 0); pointer-events: none; }
+
+    /* ====== no-scrollbar（nav tabs） ====== */
+    .no-scrollbar::-webkit-scrollbar{ display:none; }
+    .no-scrollbar{ -ms-overflow-style:none; scrollbar-width:none; }
   </style>
 </head>
 
@@ -131,19 +135,16 @@
 
         <!-- 右側：積分 + 進度 + 教師模式 -->
         <div class="flex items-center gap-3">
-          <!-- 教師模式 -->
           <button id="teacher-toggle"
             class="px-3 py-2 rounded-xl border border-slate-200 bg-white text-slate-600 font-bold hover:bg-slate-50 transition-colors"
             title="教師模式：可快速解鎖/重置">
             🧑‍🏫 教師：OFF
           </button>
 
-          <!-- 得分 -->
           <div class="flex items-center gap-2 bg-yellow-100 px-4 py-2 rounded-full border border-yellow-300 font-bold text-yellow-800 shadow-sm">
             ⭐ 積分: <span id="total-score" class="text-xl">0</span>
           </div>
 
-          <!-- 總進度（圓環 + 文字） -->
           <div class="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-full border border-slate-200">
             <svg width="34" height="34" viewBox="0 0 36 36" class="flex-none">
               <path
@@ -174,7 +175,6 @@
         </div>
       </div>
 
-      <!-- 多題目標籤區 (可左右滑動) -->
       <div class="flex overflow-x-auto py-2 space-x-2 border-t no-scrollbar" id="nav-tabs"></div>
     </div>
   </header>
@@ -182,7 +182,7 @@
   <!-- 內容區：左右分欄 -->
   <main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-6">
 
-    <!-- 左側：題幹與圖形 (固定) -->
+    <!-- 左側：題幹與圖形 -->
     <section class="md:w-5/12 lg:w-1/3 flex-shrink-0">
       <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:sticky md:top-24">
         <div class="flex items-start justify-between mb-2 gap-2">
@@ -210,12 +210,10 @@
         <div class="text-lg leading-relaxed mb-6" id="q-text"></div>
         <div class="bg-slate-50 rounded-xl p-4 flex justify-center border border-slate-100" id="q-svg"></div>
 
-        <!-- 教師模式工具列（僅教師模式顯示） -->
+        <!-- 教師模式工具列 -->
         <div id="teacher-tools" class="mt-5 hidden">
           <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4">
-            <div class="text-slate-700 font-extrabold mb-3 flex items-center gap-2">
-              🧑‍🏫 教師工具
-            </div>
+            <div class="text-slate-700 font-extrabold mb-3 flex items-center gap-2">🧑‍🏫 教師工具</div>
             <div class="flex flex-col gap-3">
               <button id="unlock-all-btn" class="w-full px-4 py-3 rounded-xl bg-blue-600 text-white font-extrabold hover:bg-blue-700 transition-colors">
                 一鍵解鎖本關卡所有步驟
@@ -225,6 +223,12 @@
               </button>
               <div class="text-xs text-slate-500 font-bold leading-relaxed">
                 * 教師工具會同步寫入瀏覽器存檔（localStorage）
+              </div>
+              <button id="new-set-btn" class="w-full px-4 py-3 rounded-xl bg-emerald-600 text-white font-extrabold hover:bg-emerald-700 transition-colors">
+                🔁 產生一套新題目（本次分頁）
+              </button>
+              <div class="text-xs text-slate-500 font-bold leading-relaxed">
+                * 產生新題目會重置全部進度（避免題庫/存檔對不上）
               </div>
             </div>
           </div>
@@ -268,236 +272,306 @@
     </div>
   </div>
 
-  <!-- JavaScript 應用邏輯 -->
   <script>
     /* ===========================
-      升級項目
-      1) localStorage 進度存檔/讀檔 (更新為 v3)
-      2) 教師模式與 Toast 提示
-      3) 完整收錄教材活動1~3重點，新增「分割四邊形」關卡
+      動態出題核心（seed + 可重建）
+      - 同一分頁 refresh：維持同一套題目（sessionStorage seed）
+      - 新開分頁 / 關掉重開：新的 seed → 新題目版本
     =========================== */
 
-    // 更新存檔版本號，確保新增題庫不會與舊存檔衝突
-    const STORAGE_KEY = 'quad_parallel_tool_v3';
+    const STORAGE_KEY = 'quad_parallel_tool_v4';   // v4：含 seed
+    const SESSION_SEED_KEY = 'quad_parallel_seed_v1';
 
-    // --- 資料結構設計 (完整涵蓋教材重點) ---
-    const quizData = [
-      {
-        id: 'q1',
-        title: '關卡 1：垂直',
-        text: '觀察下圖，甲線和乙線相交，形成了一個特別的夾角。<br><br>當兩條直線相交成「<mark>直角</mark>」時，我們說這兩條直線互相「<mark>垂直</mark>」。',
-        textVoice: '觀察下圖，甲線和乙線相交，形成了一個特別的夾角。當兩條直線相交成直角時，我們說這兩條直線互相垂直。',
-        svg: `
-          <svg viewBox="0 0 100 100" class="w-full max-w-[200px] h-auto">
-            <line x1="20" y1="50" x2="80" y2="50" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
-            <line x1="50" y1="20" x2="50" y2="80" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
-            <rect x="50" y="30" width="20" height="20" fill="none" stroke="#ef4444" stroke-width="2"/>
-            <text x="85" y="55" font-size="10" font-weight="bold" fill="#3b82f6">甲線</text>
-            <text x="45" y="15" font-size="10" font-weight="bold" fill="#22c55e">乙線</text>
-          </svg>
-        `,
-        steps: [
-          {
-            subQs: [
-              { type: 'main', instruction: '兩條直線相交形成的夾角是 __ 度，我們稱這個角為 __ 角。', options: ['90','180','直','平'], answers: ['90','直'] },
-              { type: 'remedial', hintMsg: '提示：看到正方形的紅色記號，代表這是90度的直角喔！', instruction: '一個直角的度數是 __ 度。', options: ['90','45','180'], answers: ['90'] },
-              { type: 'remedial', hintMsg: '提示：90度就叫做「直」角。', instruction: '看到圖上有方形的紅線符號「□」，代表這個角是 __ 角。', options: ['直','銳','鈍'], answers: ['直'] }
-            ]
-          },
-          {
-            subQs: [
-              { type: 'main', instruction: '因為甲線和乙線相交成直角，所以甲線和乙線互相 __ 。', options: ['垂直','平行','交叉'], answers: ['垂直'] },
-              { type: 'remedial', hintMsg: '提示：相交成直角就是互相垂直！', instruction: '直角相交的兩條線，稱為互相 __ 。', options: ['垂直','平行','分開'], answers: ['垂直'] },
-              { type: 'remedial', hintMsg: '提示：要確認垂直，夾角必須是90度。', instruction: '如果兩條線互相垂直，它們的夾角一定是 __ 度。', options: ['90','180','360'], answers: ['90'] }
-            ]
-          }
-        ]
-      },
-      {
-        id: 'q2',
-        title: '關卡 2：平行與距離',
-        text: '觀察下圖，藍線和綠線同時和紅線互相<mark>垂直</mark>。<br><br>在同一平面上，當兩條直線同時垂直於另一條直線時，我們說這兩條直線互相「<mark>平行</mark>」。和兩條平行線垂直的線段，稱為平行線間的「<mark>距離</mark>」。',
-        textVoice: '觀察下圖，藍線和綠線同時和紅線互相垂直。在同一平面上，當兩條直線同時垂直於另一條直線時，我們說這兩條直線互相平行。和兩條平行線垂直的線段，稱為平行線間的距離。',
-        svg: `
-          <svg viewBox="0 0 100 100" class="w-full max-w-[200px] h-auto">
-            <line x1="10" y1="30" x2="90" y2="30" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
-            <line x1="10" y1="70" x2="90" y2="70" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
-            <line x1="30" y1="30" x2="30" y2="70" stroke="#ef4444" stroke-width="4" stroke-linecap="round" stroke-dasharray="2,2"/>
-            <line x1="70" y1="30" x2="70" y2="70" stroke="#ef4444" stroke-width="4" stroke-linecap="round" stroke-dasharray="2,2"/>
-            <polyline points="30,40 40,40 40,30" fill="none" stroke="#ef4444" stroke-width="2"/>
-            <polyline points="30,60 40,60 40,70" fill="none" stroke="#ef4444" stroke-width="2"/>
-            <text x="95" y="35" font-size="10" font-weight="bold" fill="#3b82f6">藍線</text>
-            <text x="95" y="75" font-size="10" font-weight="bold" fill="#22c55e">綠線</text>
-          </svg>
-        `,
-        steps: [
-          {
-            subQs: [
-              { type: 'main', instruction: '當藍線和綠線都和同一條紅線互相垂直時，藍線和綠線會互相 __ 。', options: ['垂直','平行','交叉'], answers: ['平行'] },
-              { type: 'remedial', hintMsg: '提示：兩條直線永遠不相交，像火車鐵軌一樣，稱為平行。', instruction: '兩條直線永遠不相交，方向一致，稱為互相 __ 。', options: ['平行','垂直'], answers: ['平行'] },
-              { type: 'remedial', hintMsg: '提示：藍線和綠線都有碰到紅線並形成直角，所以它們平行。', instruction: '同時和第三條線垂直的兩條線，彼此之間互相 __ 。', options: ['平行','彎曲'], answers: ['平行'] }
-            ]
-          },
-          {
-            subQs: [
-              { type: 'main', instruction: '和兩條平行線互相垂直的線段，稱為平行線間的 __ ，且平行線間的距離處處 __ 。', options: ['距離','長度','相等','不相等'], answers: ['距離','相等'] },
-              { type: 'remedial', hintMsg: '提示：平行線就像火車鐵軌，軌道中間的寬度到處都一樣長。', instruction: '兩條平行線之間的距離處處 __ 。', options: ['相等','不相等'], answers: ['相等'] },
-              { type: 'remedial', hintMsg: '提示：兩線之間的垂直長度就叫做距離。', instruction: '兩條平行線之間，垂直連起來的這段長度叫做 __ 。', options: ['距離','重量','面積'], answers: ['距離'] }
-            ]
-          }
-        ]
-      },
-      {
-        id: 'q3',
-        title: '關卡 3：長方形與正方形',
-        text: '觀察下圖。<br><br>四邊形有 4 個角都是直角，兩雙對邊一樣長，叫做「<mark>長方形</mark>」。<br>如果 <mark>4 條邊都一樣長</mark>，就叫做「<mark>正方形</mark>」。',
-        textVoice: '觀察下圖。四邊形有四個角都是直角，兩雙對邊一樣長，叫做長方形。如果四條邊都一樣長，就叫做正方形。',
-        svg: `
-          <svg viewBox="0 0 200 100" class="w-full max-w-[300px] h-auto">
-            <rect x="10" y="30" width="70" height="40" fill="#e0f2fe" stroke="#3b82f6" stroke-width="3"/>
-            <polyline points="10,30 20,30 20,40 10,40" fill="none" stroke="#ef4444" stroke-width="2"/>
-            <rect x="110" y="20" width="60" height="60" fill="#fef08a" stroke="#eab308" stroke-width="3"/>
-            <polyline points="110,20 120,20 120,30 110,30" fill="none" stroke="#ef4444" stroke-width="2"/>
-            <text x="35" y="85" font-size="12" font-weight="bold" fill="#3b82f6">長方形</text>
-            <text x="125" y="95" font-size="12" font-weight="bold" fill="#eab308">正方形</text>
-          </svg>
-        `,
-        steps: [
-          {
-            subQs: [
-              { type: 'main', instruction: '長方形有 4 個角都是 __ 角，而且它的兩雙對邊分別 __ 長。', options: ['直','平','一樣','不一樣'], answers: ['直','一樣'] },
-              { type: 'remedial', hintMsg: '提示：長方形的角都有紅色的方形記號喔。', instruction: '長方形的 4 個角都是 __ 角。', options: ['直','銳','鈍'], answers: ['直'] },
-              { type: 'remedial', hintMsg: '提示：上面的邊和下面的邊長度一樣，左邊和右邊的長度也一樣。', instruction: '長方形的上下兩條對邊 __ 長。', options: ['一樣','不一樣'], answers: ['一樣'] }
-            ]
-          },
-          {
-            subQs: [
-              { type: 'main', instruction: '如果一個四邊形 4 個角都是直角，而且 4 條邊都 __ 長，叫做 __ 。', options: ['一樣','不一樣','長方形','正方形'], answers: ['一樣','正方形'] },
-              { type: 'remedial', hintMsg: '提示：正方形的每一條邊長度都相同，像骰子的面一樣。', instruction: '正方形的 4 條邊都 __ 長。', options: ['一樣','不一樣'], answers: ['一樣'] },
-              { type: 'remedial', hintMsg: '提示：四邊等長且都是直角的四邊形，形狀正正方方的。', instruction: '四條邊都等長且都是直角的圖形叫做 __ 。', options: ['正方形','長方形'], answers: ['正方形'] }
-            ]
-          }
-        ]
-      },
-      {
-        id: 'q4',
-        title: '關卡 4：菱形與平行四邊形',
-        text: '觀察下圖。<br><br><mark>4 條邊都一樣長</mark>的四邊形，叫做「<mark>菱形</mark>」。<br><mark>兩雙對邊分別互相平行</mark>的四邊形，叫做「<mark>平行四邊形</mark>」。',
-        textVoice: '觀察下圖。四條邊都一樣長的四邊形，叫做菱形。兩雙對邊分別互相平行的四邊形，叫做平行四邊形。',
-        svg: `
-          <svg viewBox="0 0 200 100" class="w-full max-w-[300px] h-auto">
-            <polygon points="50,10 80,50 50,90 20,50" fill="#d8b4fe" stroke="#0ea5e9" stroke-width="3" stroke-linejoin="round"/>
-            <text x="35" y="95" font-size="12" font-weight="bold" fill="#0ea5e9">菱形</text>
-            <polygon points="120,20 180,20 160,70 100,70" fill="#bbf7d0" stroke="#16a34a" stroke-width="3" stroke-linejoin="round"/>
-            <text x="110" y="90" font-size="12" font-weight="bold" fill="#16a34a">平行四邊形</text>
-          </svg>
-        `,
-        steps: [
-          {
-            subQs: [
-              { type: 'main', instruction: '4 條邊都一樣長的圖形叫做 __ ，它的兩雙對角分別 __ 。', options: ['菱形','正方形','一樣大','不一樣大'], answers: ['菱形','一樣大'] },
-              { type: 'remedial', hintMsg: '提示：像撲克牌中的方塊，4條邊等長，這叫做菱形。', instruction: '4 條邊都 __ 長的四邊形，叫做菱形。', options: ['一樣','不一樣'], answers: ['一樣'] },
-              { type: 'remedial', hintMsg: '提示：菱形除了4邊等長，它的對面角大小也相同。', instruction: '菱形的兩雙對角會分別 __ 。', options: ['一樣大','不一樣大'], answers: ['一樣大'] }
-            ]
-          },
-          {
-            subQs: [
-              { type: 'main', instruction: '兩雙對邊分別互相平行的圖形叫 __ ，它的兩雙對角分別 __ 。', options: ['平行四邊形','梯形','一樣大','不一樣大'], answers: ['平行四邊形','一樣大'] },
-              { type: 'remedial', hintMsg: '提示：上下互相平行，左右也互相平行的圖形。', instruction: '兩雙對邊分別互相平行的圖形叫 __ 。', options: ['平行四邊形','菱形'], answers: ['平行四邊形'] },
-              { type: 'remedial', hintMsg: '提示：平行四邊形中，相對的角(對角)會一樣大。', instruction: '平行四邊形中，相對的兩個角會 __ 。', options: ['一樣大','不一樣大'], answers: ['一樣大'] }
-            ]
-          }
-        ]
-      },
-      {
-        id: 'q5',
-        title: '關卡 5：梯形與四邊形要素',
-        text: '<mark>只有一雙</mark>對邊互相平行的四邊形叫做「<mark>梯形</mark>」。<br><br>四邊形中，相對的邊稱為「<mark>對邊</mark>」，相對的角稱為「<mark>對角</mark>」，相對頂點的連線稱為「<mark>對角線</mark>」。',
-        textVoice: '只有一雙對邊互相平行的四邊形叫做梯形。四邊形中，相對的邊稱為對邊，相對的角稱為對角，相對頂點的連線稱為對角線。',
-        svg: `
-          <svg viewBox="0 0 200 100" class="w-full max-w-[300px] h-auto">
-            <polygon points="60,20 140,20 160,80 40,80" fill="#fed7aa" stroke="#ea580c" stroke-width="3" stroke-linejoin="round"/>
-            <line x1="60" y1="20" x2="160" y2="80" stroke="#ea580c" stroke-width="2" stroke-dasharray="4"/>
-            <line x1="140" y1="20" x2="40" y2="80" stroke="#ea580c" stroke-width="2" stroke-dasharray="4"/>
-            <text x="80" y="95" font-size="12" font-weight="bold" fill="#ea580c">梯形與對角線</text>
-          </svg>
-        `,
-        steps: [
-          {
-            subQs: [
-              { type: 'main', instruction: '__ 對邊互相平行的四邊形，叫做 __ 。', options: ['只有一雙','兩雙','梯形','菱形'], answers: ['只有一雙','梯形'] },
-              { type: 'remedial', hintMsg: '提示：梯形的上下邊平行，但左右邊不平行，所以只有一雙平行。', instruction: '梯形是 __ 對邊互相平行的四邊形。', options: ['只有一雙','兩雙'], answers: ['只有一雙'] },
-              { type: 'remedial', hintMsg: '提示：形狀像溜滑梯或梯子的四邊形。', instruction: '只有一雙對邊互相平行的叫做 __ 。', options: ['梯形','正方形'], answers: ['梯形'] }
-            ]
-          },
-          {
-            subQs: [
-              { type: 'main', instruction: '四邊形中，相對頂點的連線稱為 __ 。每一個四邊形最多都能畫出 __ 條對角線。', options: ['對角線','對邊','2','4'], answers: ['對角線','2'] },
-              { type: 'remedial', hintMsg: '提示：將不相鄰的兩個角(對角)連起來的虛線。', instruction: '圖中連接對角的虛線叫做 __ 。', options: ['對角線','鄰邊'], answers: ['對角線'] },
-              { type: 'remedial', hintMsg: '提示：左上連到右下是一條，右上連到左下是第二條。', instruction: '一個四邊形最多可以畫出 __ 條對角線。', options: ['2','4','8'], answers: ['2'] }
-            ]
-          }
-        ]
-      },
-      // ====== 新增：活動3 分割四邊形 ======
-      {
-        id: 'q6',
-        title: '關卡 6：分割四邊形',
-        text: '觀察下圖，如果我們沿著四邊形的「<mark>對角線</mark>」剪開，會發生什麼事呢？<br><br>有些四邊形沿著對角線剪開後，可以分成兩個「<mark>全等</mark>」（形狀、大小完全一樣）的三角形喔！',
-        textVoice: '觀察下圖，如果我們沿著四邊形的對角線剪開，會發生什麼事呢？有些四邊形沿著對角線剪開後，可以分成兩個全等（形狀、大小完全一樣）的三角形喔！',
-        svg: `
-          <svg viewBox="0 0 200 100" class="w-full max-w-[300px] h-auto">
-            <!-- 平行四邊形 -->
-            <polygon points="40,20 140,20 110,80 10,80" fill="#e0f2fe" stroke="#3b82f6" stroke-width="3" stroke-linejoin="round"/>
-            <!-- 對角線 -->
-            <line x1="140" y1="20" x2="10" y2="80" stroke="#ef4444" stroke-width="3" stroke-dasharray="5,5"/>
-            <!-- 標示文字 -->
-            <text x="65" y="45" font-size="14" font-weight="bold" fill="#3b82f6">甲</text>
-            <text x="85" y="70" font-size="14" font-weight="bold" fill="#3b82f6">乙</text>
-            <text x="100" y="48" font-size="12" font-weight="bold" fill="#ef4444" transform="rotate(24 100,48)">對角線</text>
-          </svg>
-        `,
-        steps: [
-          {
-            subQs: [
-              { type: 'main', instruction: '沿著平行四邊形的對角線剪開，可以剪成 __ 個三角形。這兩個三角形的形狀和大小完全一樣，稱為 __ 圖形。', options: ['2', '3', '全等', '不全等'], answers: ['2', '全等'] },
-              { type: 'remedial', hintMsg: '提示：對角線會把四邊形切成兩半。', instruction: '一條對角線可以把平行四邊形切成 __ 個三角形。', options: ['2', '3', '4'], answers: ['2'] },
-              { type: 'remedial', hintMsg: '提示：形狀和大小都完全一樣的圖形叫做「全等圖形」。', instruction: '切開的兩個三角形形狀和大小都一樣，稱為 __ 圖形。', options: ['全等', '不全等'], answers: ['全等'] }
-            ]
-          },
-          {
-            subQs: [
-              { type: 'main', instruction: '除了平行四邊形，長方形、正方形和菱形 __ 剪成兩個全等三角形；但是梯形 __ 剪成兩個全等三角形。', options: ['可以', '不可以'], answers: ['可以', '不可以'] },
-              { type: 'remedial', hintMsg: '提示：長方形、正方形、菱形的對邊都一樣長，對角線切開後兩邊會一樣大。', instruction: '正方形或長方形沿著對角線剪開，__ 剪成兩個全等三角形。', options: ['可以', '不可以'], answers: ['可以'] },
-              { type: 'remedial', hintMsg: '提示：梯形只有一雙對邊平行，而且上下邊不一樣長，切開後的兩個三角形不會一樣大。', instruction: '梯形沿著對角線剪開，__ 剪成兩個全等的三角形。', options: ['可以', '不可以'], answers: ['不可以'] }
-            ]
-          }
-        ]
+    // --- PRNG：mulberry32 ---
+    function mulberry32(seed) {
+      let t = seed >>> 0;
+      return function() {
+        t += 0x6D2B79F5;
+        let r = Math.imul(t ^ (t >>> 15), 1 | t);
+        r ^= r + Math.imul(r ^ (r >>> 7), 61 | r);
+        return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+
+    function randInt(rng, min, max) {
+      return Math.floor(rng() * (max - min + 1)) + min;
+    }
+
+    function shuffleWithRng(arr, rng) {
+      const a = arr.slice();
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(rng() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
       }
-    ];
+      return a;
+    }
 
-    // --- 全域狀態 ---
+    function pick(rng, arr) {
+      return arr[Math.floor(rng() * arr.length)];
+    }
+
+    function escapeForJS(str) {
+      return (str || '')
+        .replaceAll('\\', '\\\\')
+        .replaceAll("'", "\\'")
+        .replaceAll('\n', ' ')
+        .replaceAll('\r', ' ');
+    }
+
+    function stripHtml(html) {
+      return (html || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+    }
+
+    // === 產生本次 seed（同一分頁固定；新開分頁不同） ===
+    function getOrCreateSessionSeed() {
+      const raw = sessionStorage.getItem(SESSION_SEED_KEY);
+      if (raw && /^\d+$/.test(raw)) return Number(raw);
+      // 使用 crypto 隨機 + time 混合
+      let x = Date.now() ^ (Math.floor(Math.random() * 1e9));
+      try {
+        const u = new Uint32Array(1);
+        crypto.getRandomValues(u);
+        x ^= u[0];
+      } catch (_) {}
+      const seed = (x >>> 0);
+      sessionStorage.setItem(SESSION_SEED_KEY, String(seed));
+      return seed;
+    }
+
+    // === 生成題庫（同一 seed 可重建：保持存檔一致） ===
+    function buildQuizData(seed) {
+      const rng = mulberry32(seed);
+
+      // 讓「題幹」有小變化（不影響概念，但讓學生不易背整句）
+      const lineLabelSets = [
+        { a: '甲線', b: '乙線' },
+        { a: 'A 線', b: 'B 線' },
+        { a: '藍線', b: '綠線' }
+      ];
+      const L = pick(rng, lineLabelSets);
+
+      // options 洗牌（每次不同「按鈕位置」）
+      const sh = (opts) => shuffleWithRng(opts, rng);
+
+      // 注意：本工具是概念題，正確答案本質固定
+      return [
+        {
+          id: 'q1',
+          title: '關卡 1：垂直',
+          text: `觀察下圖，${L.a}和${L.b}相交，形成了一個特別的夾角。<br><br>當兩條直線相交成「<mark>直角</mark>」時，我們說這兩條直線互相「<mark>垂直</mark>」。`,
+          textVoice: `觀察下圖，${L.a}和${L.b}相交。當兩條直線相交成直角時，我們說這兩條直線互相垂直。`,
+          svg: `
+            <svg viewBox="0 0 100 100" class="w-full max-w-[200px] h-auto">
+              <line x1="20" y1="50" x2="80" y2="50" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
+              <line x1="50" y1="20" x2="50" y2="80" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
+              <rect x="50" y="30" width="20" height="20" fill="none" stroke="#ef4444" stroke-width="2"/>
+              <text x="85" y="55" font-size="10" font-weight="bold" fill="#3b82f6">${L.a}</text>
+              <text x="45" y="15" font-size="10" font-weight="bold" fill="#22c55e">${L.b}</text>
+            </svg>
+          `,
+          steps: [
+            {
+              subQs: [
+                { type: 'main', instruction: `兩條直線相交形成的夾角是 __ 度，我們稱這個角為 __ 角。`, options: sh(['90','180','直','平']), answers: ['90','直'] },
+                { type: 'remedial', hintMsg: '提示：看到正方形的紅色記號，代表這是90度的直角喔！', instruction: '一個直角的度數是 __ 度。', options: sh(['90','45','180']), answers: ['90'] },
+                { type: 'remedial', hintMsg: '提示：90度就叫做「直」角。', instruction: '看到圖上有方形的紅線符號「□」，代表這個角是 __ 角。', options: sh(['直','銳','鈍']), answers: ['直'] }
+              ]
+            },
+            {
+              subQs: [
+                { type: 'main', instruction: `因為${L.a}和${L.b}相交成直角，所以${L.a}和${L.b}互相 __ 。`, options: sh(['垂直','平行','交叉']), answers: ['垂直'] },
+                { type: 'remedial', hintMsg: '提示：相交成直角就是互相垂直！', instruction: '直角相交的兩條線，稱為互相 __ 。', options: sh(['垂直','平行','分開']), answers: ['垂直'] },
+                { type: 'remedial', hintMsg: '提示：要確認垂直，夾角必須是90度。', instruction: '如果兩條線互相垂直，它們的夾角一定是 __ 度。', options: sh(['90','180','360']), answers: ['90'] }
+              ]
+            }
+          ]
+        },
+        {
+          id: 'q2',
+          title: '關卡 2：平行與距離',
+          text: '觀察下圖，藍線和綠線同時和紅線互相<mark>垂直</mark>。<br><br>在同一平面上，當兩條直線同時垂直於另一條直線時，我們說這兩條直線互相「<mark>平行</mark>」。和兩條平行線垂直的線段，稱為平行線間的「<mark>距離</mark>」。',
+          textVoice: '觀察下圖，藍線和綠線同時和紅線互相垂直。在同一平面上，當兩條直線同時垂直於另一條直線時，我們說這兩條直線互相平行。和兩條平行線垂直的線段，稱為平行線間的距離。',
+          svg: `
+            <svg viewBox="0 0 100 100" class="w-full max-w-[200px] h-auto">
+              <line x1="10" y1="30" x2="90" y2="30" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
+              <line x1="10" y1="70" x2="90" y2="70" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
+              <line x1="30" y1="30" x2="30" y2="70" stroke="#ef4444" stroke-width="4" stroke-linecap="round" stroke-dasharray="2,2"/>
+              <line x1="70" y1="30" x2="70" y2="70" stroke="#ef4444" stroke-width="4" stroke-linecap="round" stroke-dasharray="2,2"/>
+              <polyline points="30,40 40,40 40,30" fill="none" stroke="#ef4444" stroke-width="2"/>
+              <polyline points="30,60 40,60 40,70" fill="none" stroke="#ef4444" stroke-width="2"/>
+              <text x="95" y="35" font-size="10" font-weight="bold" fill="#3b82f6">藍線</text>
+              <text x="95" y="75" font-size="10" font-weight="bold" fill="#22c55e">綠線</text>
+            </svg>
+          `,
+          steps: [
+            {
+              subQs: [
+                { type: 'main', instruction: '當藍線和綠線都和同一條紅線互相垂直時，藍線和綠線會互相 __ 。', options: sh(['垂直','平行','交叉']), answers: ['平行'] },
+                { type: 'remedial', hintMsg: '提示：兩條直線永遠不相交，像火車鐵軌一樣，稱為平行。', instruction: '兩條直線永遠不相交，方向一致，稱為互相 __ 。', options: sh(['平行','垂直']), answers: ['平行'] },
+                { type: 'remedial', hintMsg: '提示：藍線和綠線都有碰到紅線並形成直角，所以它們平行。', instruction: '同時和第三條線垂直的兩條線，彼此之間互相 __ 。', options: sh(['平行','彎曲']), answers: ['平行'] }
+              ]
+            },
+            {
+              subQs: [
+                { type: 'main', instruction: '和兩條平行線互相垂直的線段，稱為平行線間的 __ ，且平行線間的距離處處 __ 。', options: sh(['距離','長度','相等','不相等']), answers: ['距離','相等'] },
+                { type: 'remedial', hintMsg: '提示：平行線就像火車鐵軌，軌道中間的寬度到處都一樣長。', instruction: '兩條平行線之間的距離處處 __ 。', options: sh(['相等','不相等']), answers: ['相等'] },
+                { type: 'remedial', hintMsg: '提示：兩線之間的垂直長度就叫做距離。', instruction: '兩條平行線之間，垂直連起來的這段長度叫做 __ 。', options: sh(['距離','重量','面積']), answers: ['距離'] }
+              ]
+            }
+          ]
+        },
+        {
+          id: 'q3',
+          title: '關卡 3：長方形與正方形',
+          text: '觀察下圖。<br><br>四邊形有 4 個角都是直角，兩雙對邊一樣長，叫做「<mark>長方形</mark>」。<br>如果 <mark>4 條邊都一樣長</mark>，就叫做「<mark>正方形</mark>」。',
+          textVoice: '觀察下圖。四邊形有四個角都是直角，兩雙對邊一樣長，叫做長方形。如果四條邊都一樣長，就叫做正方形。',
+          svg: `
+            <svg viewBox="0 0 200 100" class="w-full max-w-[300px] h-auto">
+              <rect x="10" y="30" width="70" height="40" fill="#e0f2fe" stroke="#3b82f6" stroke-width="3"/>
+              <polyline points="10,30 20,30 20,40 10,40" fill="none" stroke="#ef4444" stroke-width="2"/>
+              <rect x="110" y="20" width="60" height="60" fill="#fef08a" stroke="#eab308" stroke-width="3"/>
+              <polyline points="110,20 120,20 120,30 110,30" fill="none" stroke="#ef4444" stroke-width="2"/>
+              <text x="35" y="85" font-size="12" font-weight="bold" fill="#3b82f6">長方形</text>
+              <text x="125" y="95" font-size="12" font-weight="bold" fill="#eab308">正方形</text>
+            </svg>
+          `,
+          steps: [
+            {
+              subQs: [
+                { type: 'main', instruction: '長方形有 4 個角都是 __ 角，而且它的兩雙對邊分別 __ 長。', options: sh(['直','平','一樣','不一樣']), answers: ['直','一樣'] },
+                { type: 'remedial', hintMsg: '提示：長方形的角都有紅色的方形記號喔。', instruction: '長方形的 4 個角都是 __ 角。', options: sh(['直','銳','鈍']), answers: ['直'] },
+                { type: 'remedial', hintMsg: '提示：上邊=下邊，左邊=右邊。', instruction: '長方形的上下兩條對邊 __ 長。', options: sh(['一樣','不一樣']), answers: ['一樣'] }
+              ]
+            },
+            {
+              subQs: [
+                { type: 'main', instruction: '如果一個四邊形 4 個角都是直角，而且 4 條邊都 __ 長，叫做 __ 。', options: sh(['一樣','不一樣','長方形','正方形']), answers: ['一樣','正方形'] },
+                { type: 'remedial', hintMsg: '提示：正方形每一條邊長度都相同。', instruction: '正方形的 4 條邊都 __ 長。', options: sh(['一樣','不一樣']), answers: ['一樣'] },
+                { type: 'remedial', hintMsg: '提示：四邊等長且都是直角。', instruction: '四條邊都等長且都是直角的圖形叫做 __ 。', options: sh(['正方形','長方形']), answers: ['正方形'] }
+              ]
+            }
+          ]
+        },
+        {
+          id: 'q4',
+          title: '關卡 4：菱形與平行四邊形',
+          text: '觀察下圖。<br><br><mark>4 條邊都一樣長</mark>的四邊形，叫做「<mark>菱形</mark>」。<br><mark>兩雙對邊分別互相平行</mark>的四邊形，叫做「<mark>平行四邊形</mark>」。',
+          textVoice: '觀察下圖。四條邊都一樣長的四邊形，叫做菱形。兩雙對邊分別互相平行的四邊形，叫做平行四邊形。',
+          svg: `
+            <svg viewBox="0 0 200 100" class="w-full max-w-[300px] h-auto">
+              <polygon points="50,10 80,50 50,90 20,50" fill="#d8b4fe" stroke="#0ea5e9" stroke-width="3" stroke-linejoin="round"/>
+              <text x="35" y="95" font-size="12" font-weight="bold" fill="#0ea5e9">菱形</text>
+              <polygon points="120,20 180,20 160,70 100,70" fill="#bbf7d0" stroke="#16a34a" stroke-width="3" stroke-linejoin="round"/>
+              <text x="110" y="90" font-size="12" font-weight="bold" fill="#16a34a">平行四邊形</text>
+            </svg>
+          `,
+          steps: [
+            {
+              subQs: [
+                { type: 'main', instruction: '4 條邊都一樣長的圖形叫做 __ ，它的兩雙對角分別 __ 。', options: sh(['菱形','正方形','一樣大','不一樣大']), answers: ['菱形','一樣大'] },
+                { type: 'remedial', hintMsg: '提示：菱形=四邊等長。', instruction: '4 條邊都 __ 長的四邊形，叫做菱形。', options: sh(['一樣','不一樣']), answers: ['一樣'] },
+                { type: 'remedial', hintMsg: '提示：菱形的對角相等。', instruction: '菱形的兩雙對角會分別 __ 。', options: sh(['一樣大','不一樣大']), answers: ['一樣大'] }
+              ]
+            },
+            {
+              subQs: [
+                { type: 'main', instruction: '兩雙對邊分別互相平行的圖形叫 __ ，它的兩雙對角分別 __ 。', options: sh(['平行四邊形','梯形','一樣大','不一樣大']), answers: ['平行四邊形','一樣大'] },
+                { type: 'remedial', hintMsg: '提示：上下互相平行，左右也互相平行。', instruction: '兩雙對邊分別互相平行的圖形叫 __ 。', options: sh(['平行四邊形','菱形']), answers: ['平行四邊形'] },
+                { type: 'remedial', hintMsg: '提示：平行四邊形的對角相等。', instruction: '平行四邊形中，相對的兩個角會 __ 。', options: sh(['一樣大','不一樣大']), answers: ['一樣大'] }
+              ]
+            }
+          ]
+        },
+        {
+          id: 'q5',
+          title: '關卡 5：梯形與四邊形要素',
+          text: '<mark>只有一雙</mark>對邊互相平行的四邊形叫做「<mark>梯形</mark>」。<br><br>四邊形中，相對的邊稱為「<mark>對邊</mark>」，相對的角稱為「<mark>對角</mark>」，相對頂點的連線稱為「<mark>對角線</mark>」。',
+          textVoice: '只有一雙對邊互相平行的四邊形叫做梯形。四邊形中，相對的邊稱為對邊，相對的角稱為對角，相對頂點的連線稱為對角線。',
+          svg: `
+            <svg viewBox="0 0 200 100" class="w-full max-w-[300px] h-auto">
+              <polygon points="60,20 140,20 160,80 40,80" fill="#fed7aa" stroke="#ea580c" stroke-width="3" stroke-linejoin="round"/>
+              <line x1="60" y1="20" x2="160" y2="80" stroke="#ea580c" stroke-width="2" stroke-dasharray="4"/>
+              <line x1="140" y1="20" x2="40" y2="80" stroke="#ea580c" stroke-width="2" stroke-dasharray="4"/>
+              <text x="80" y="95" font-size="12" font-weight="bold" fill="#ea580c">梯形與對角線</text>
+            </svg>
+          `,
+          steps: [
+            {
+              subQs: [
+                { type: 'main', instruction: '__ 對邊互相平行的四邊形，叫做 __ 。', options: sh(['只有一雙','兩雙','梯形','菱形']), answers: ['只有一雙','梯形'] },
+                { type: 'remedial', hintMsg: '提示：梯形只有一雙平行。', instruction: '梯形是 __ 對邊互相平行的四邊形。', options: sh(['只有一雙','兩雙']), answers: ['只有一雙'] },
+                { type: 'remedial', hintMsg: '提示：只有一雙平行的四邊形。', instruction: '只有一雙對邊互相平行的叫做 __ 。', options: sh(['梯形','正方形']), answers: ['梯形'] }
+              ]
+            },
+            {
+              subQs: [
+                { type: 'main', instruction: '四邊形中，相對頂點的連線稱為 __ 。每一個四邊形最多都能畫出 __ 條對角線。', options: sh(['對角線','對邊','2','4']), answers: ['對角線','2'] },
+                { type: 'remedial', hintMsg: '提示：把對角連起來就是對角線。', instruction: '圖中連接對角的虛線叫做 __ 。', options: sh(['對角線','鄰邊']), answers: ['對角線'] },
+                { type: 'remedial', hintMsg: '提示：四邊形最多兩條對角線。', instruction: '一個四邊形最多可以畫出 __ 條對角線。', options: sh(['2','4','8']), answers: ['2'] }
+              ]
+            }
+          ]
+        },
+        {
+          id: 'q6',
+          title: '關卡 6：分割四邊形',
+          text: '觀察下圖，如果我們沿著四邊形的「<mark>對角線</mark>」剪開，會發生什麼事呢？<br><br>有些四邊形沿著對角線剪開後，可以分成兩個「<mark>全等</mark>」（形狀、大小完全一樣）的三角形喔！',
+          textVoice: '觀察下圖，如果我們沿著四邊形的對角線剪開，會發生什麼事呢？有些四邊形沿著對角線剪開後，可以分成兩個全等的三角形。',
+          svg: `
+            <svg viewBox="0 0 200 100" class="w-full max-w-[300px] h-auto">
+              <polygon points="40,20 140,20 110,80 10,80" fill="#e0f2fe" stroke="#3b82f6" stroke-width="3" stroke-linejoin="round"/>
+              <line x1="140" y1="20" x2="10" y2="80" stroke="#ef4444" stroke-width="3" stroke-dasharray="5,5"/>
+              <text x="65" y="45" font-size="14" font-weight="bold" fill="#3b82f6">甲</text>
+              <text x="85" y="70" font-size="14" font-weight="bold" fill="#3b82f6">乙</text>
+              <text x="100" y="48" font-size="12" font-weight="bold" fill="#ef4444" transform="rotate(24 100,48)">對角線</text>
+            </svg>
+          `,
+          steps: [
+            {
+              subQs: [
+                { type: 'main', instruction: '沿著平行四邊形的對角線剪開，可以剪成 __ 個三角形。這兩個三角形的形狀和大小完全一樣，稱為 __ 圖形。', options: sh(['2','3','全等','不全等']), answers: ['2','全等'] },
+                { type: 'remedial', hintMsg: '提示：對角線把四邊形切成兩半。', instruction: '一條對角線可以把平行四邊形切成 __ 個三角形。', options: sh(['2','3','4']), answers: ['2'] },
+                { type: 'remedial', hintMsg: '提示：形狀和大小都完全一樣叫「全等」。', instruction: '切開的兩個三角形形狀和大小都一樣，稱為 __ 圖形。', options: sh(['全等','不全等']), answers: ['全等'] }
+              ]
+            },
+            {
+              subQs: [
+                { type: 'main', instruction: '除了平行四邊形，長方形、正方形和菱形 __ 剪成兩個全等三角形；但是梯形 __ 剪成兩個全等三角形。', options: sh(['可以','不可以']), answers: ['可以','不可以'] },
+                { type: 'remedial', hintMsg: '提示：正方形/長方形沿對角線可分成兩個全等三角形。', instruction: '正方形或長方形沿著對角線剪開，__ 剪成兩個全等三角形。', options: sh(['可以','不可以']), answers: ['可以'] },
+                { type: 'remedial', hintMsg: '提示：梯形上下底不等長，切開不會全等。', instruction: '梯形沿著對角線剪開，__ 剪成兩個全等的三角形。', options: sh(['可以','不可以']), answers: ['不可以'] }
+              ]
+            }
+          ]
+        }
+      ];
+    }
+
+    /* ===========================
+      全域狀態
+    =========================== */
+    let sessionSeed = getOrCreateSessionSeed();
+    let quizData = buildQuizData(sessionSeed);
+
     let currentQ = 0;
     let totalScore = 0;
     let gameState = [];
     let teacherMode = false;
 
     /* ===========================
-      localStorage：存取
+      localStorage：存取（含 seed）
     =========================== */
     function saveState() {
       try {
         const payload = {
-          v: 3, // 版本升級，防止舊版沒包含 q6 導致報錯
+          v: 4,
+          seed: sessionSeed,
           currentQ,
           totalScore,
           teacherMode,
           gameState
         };
         localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
-      } catch (e) {
-        // 可能是無痕或容量問題
-      }
+      } catch (e) {}
     }
 
     function loadState() {
@@ -505,9 +579,14 @@
         const raw = localStorage.getItem(STORAGE_KEY);
         if (!raw) return false;
         const parsed = JSON.parse(raw);
-        if (!parsed || parsed.v !== 3) return false;
+        if (!parsed || parsed.v !== 4) return false;
 
-        // 基本防呆：題庫數若改了就重置
+        // 用存檔 seed 重建題庫，避免選項洗牌造成 optIdx/optionsUsed 錯位
+        if (typeof parsed.seed !== 'number') return false;
+        sessionSeed = parsed.seed >>> 0;
+        sessionStorage.setItem(SESSION_SEED_KEY, String(sessionSeed));
+        quizData = buildQuizData(sessionSeed);
+
         if (!Array.isArray(parsed.gameState) || parsed.gameState.length !== quizData.length) return false;
 
         currentQ = Number.isInteger(parsed.currentQ) ? parsed.currentQ : 0;
@@ -521,9 +600,6 @@
       }
     }
 
-    /* ===========================
-      初始化狀態
-    =========================== */
     function initGameState() {
       gameState = quizData.map(q => ({
         id: q.id,
@@ -535,12 +611,11 @@
           subQs: step.subQs.map(sq => ({
             slots: new Array(sq.answers.length).fill(null),
             optionsUsed: new Array(sq.options.length).fill(false),
-            status: 'locked' // active, done, locked
+            status: 'locked'
           }))
         }))
       }));
 
-      // 每題第一步的主題設為 active
       gameState.forEach(q => {
         q.steps[0].subQs[0].status = 'active';
       });
@@ -591,26 +666,20 @@
     }
 
     function renderHeaderStats() {
-      const scoreEl = document.getElementById('total-score');
-      scoreEl.innerText = totalScore;
+      document.getElementById('total-score').innerText = totalScore;
 
       const doneCount = gameState.filter(q => q.completed).length;
       const totalCount = quizData.length;
-
       document.getElementById('progress-text').innerText = `${doneCount}/${totalCount}`;
 
-      // 圓環：stroke-dasharray="x, 100"
       const pct = totalCount === 0 ? 0 : Math.round((doneCount / totalCount) * 100);
-      const ring = document.getElementById('progress-ring');
-      ring.setAttribute('stroke-dasharray', `${pct}, 100`);
+      document.getElementById('progress-ring').setAttribute('stroke-dasharray', `${pct}, 100`);
 
-      // 本關卡步驟進度
       const qState = gameState[currentQ];
       const stepTotal = qState.steps.length;
       const stepDone = qState.steps.filter(s => s.status === 'done').length;
       document.getElementById('step-progress').innerText = `${stepDone}/${stepTotal}`;
 
-      // 教師模式按鈕
       const teacherBtn = document.getElementById('teacher-toggle');
       teacherBtn.textContent = `🧑‍🏫 教師：${teacherMode ? 'ON' : 'OFF'}`;
       teacherBtn.classList.toggle('bg-blue-600', teacherMode);
@@ -648,6 +717,7 @@
       document.getElementById('q-svg').innerHTML = q.svg;
     }
 
+    // ✅ 修正：render 不在渲染階段「偷偷改狀態」
     function renderRightPanel() {
       const container = document.getElementById('steps-container');
       const qState = gameState[currentQ];
@@ -685,22 +755,16 @@
               請先完成上一個步驟解鎖
             </div>`;
         } else {
-          // Render active/done subQuestions
           stepState.subQs.forEach((subQState, subIdx) => {
-            if (teacherMode && subQState.status === 'locked') {
-              // 教師模式：全部可見（但不會自動 active）
-              subQState.status = (subIdx === 0 && stepState.status !== 'done') ? 'active' : subQState.status;
-            }
-            if (subQState.status !== 'locked') {
+            const visible = teacherMode ? (subIdx === 0 ? true : (subQState.status !== 'locked')) : (subQState.status !== 'locked');
+            if (visible) {
               stepHTML += renderSubQuestion(sIdx, subIdx, subQState);
             }
           });
 
-          // 教師模式：若沒有任何 subQ 顯示（例如都 locked），給快速顯示主題
           if (teacherMode) {
-            const anyVisible = stepState.subQs.some(sq => sq.status !== 'locked');
-            if (!anyVisible) {
-              stepState.subQs[0].status = 'active';
+            // 若教師模式但主題被鎖（極端狀況），仍顯示主題
+            if (stepState.subQs.length && stepState.subQs[0].status === 'locked') {
               stepHTML += renderSubQuestion(sIdx, 0, stepState.subQs[0]);
             }
           }
@@ -716,7 +780,6 @@
       const isMain = data.type === 'main';
       const isDone = subQState.status === 'done';
 
-      // Build instruction string replacing __ with slots
       let instHTML = data.instruction;
 
       data.answers.forEach((_, slotIdx) => {
@@ -733,7 +796,6 @@
         const slotHTML =
           `<span class="${slotClass}" ${!isDone ? `onclick="clearSlot(${sIdx}, ${subIdx}, ${slotIdx})"` : ''} id="slot-${currentQ}-${sIdx}-${subIdx}-${slotIdx}">${slotContent}</span>`;
 
-        // 用 regex replace，避免未來題目有更複雜狀況
         instHTML = instHTML.replace(/__/, slotHTML);
       });
 
@@ -763,7 +825,6 @@
           </div>
       `;
 
-      // Error Message Area
       html += `
         <div id="err-${currentQ}-${sIdx}-${subIdx}"
              class="text-red-500 font-bold text-lg mb-3 hidden flex items-center gap-2">
@@ -801,14 +862,6 @@
 
       html += `</div>`;
       return html;
-    }
-
-    function escapeForJS(str) {
-      return (str || '')
-        .replaceAll('\\', '\\\\')
-        .replaceAll("'", "\\'")
-        .replaceAll('\n', ' ')
-        .replaceAll('\r', ' ');
     }
 
     /* ===========================
@@ -852,7 +905,6 @@
       const subQState = stepState.subQs[subIdx];
       const data = quizData[currentQ].steps[sIdx].subQs[subIdx];
 
-      // 檢查是否填滿
       if (subQState.slots.includes(null)) {
         playTTS("請填滿所有空格再檢查");
         showToast({ title: '還沒填完', msg: '請先把所有空格都填滿再檢查喔！', type: 'error' });
@@ -878,11 +930,9 @@
         playSuccessSound();
         subQState.status = 'done';
 
-        // 動畫
         const subQEl = document.getElementById(`subq-${currentQ}-${sIdx}-${subIdx}`);
         if (subQEl) subQEl.classList.add('animate-tada');
 
-        // 計分
         if (subIdx === 0) {
           totalScore += stepState.failedMain ? 50 : 100;
         } else {
@@ -891,22 +941,21 @@
 
         showToast({ title: '答對了！', msg: '做得很好，繼續下一步～', type: 'success' });
 
-        // 解鎖邏輯
-        if (subIdx === 0) { // Main
+        if (subIdx === 0) {
           if (stepState.failedMain && stepState.subQs.length > 1) {
             stepState.activeSubQIndex = 1;
             stepState.subQs[1].status = 'active';
           } else {
             unlockNextStep(sIdx);
           }
-        } else if (subIdx === 1) { // Rem 1
+        } else if (subIdx === 1) {
           if (stepState.subQs.length > 2) {
             stepState.activeSubQIndex = 2;
             stepState.subQs[2].status = 'active';
           } else {
             unlockNextStep(sIdx);
           }
-        } else if (subIdx === 2) { // Rem 2
+        } else if (subIdx === 2) {
           unlockNextStep(sIdx);
         }
 
@@ -949,15 +998,13 @@
       const qState = gameState[currentQ];
       const stepState = qState.steps[sIdx];
 
-      // 將本步驟所有 subQ 設 done，並填上正確值（不計分）
       stepState.subQs.forEach((subQState, subIdx) => {
         const data = quizData[currentQ].steps[sIdx].subQs[subIdx];
-        subQState.slots = data.answers.map((a, idx) => ({ optIdx: 0, val: a }));
+        subQState.slots = data.answers.map(a => ({ optIdx: 0, val: a }));
         subQState.optionsUsed = new Array(data.options.length).fill(false);
         subQState.status = 'done';
       });
 
-      // 標記 step done 並解鎖下一步
       unlockNextStep(sIdx);
       showToast({ title: '教師操作完成', msg: `已標記「步驟 ${sIdx + 1}」完成並解鎖下一步。`, type: 'info' });
       renderApp();
@@ -993,8 +1040,27 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    // 🔁 產生新題目（本分頁）
+    function newQuestionSetThisTab() {
+      // 產生新 seed，重建題庫，並清空進度（避免題庫/存檔錯位）
+      sessionStorage.removeItem(SESSION_SEED_KEY);
+      sessionSeed = getOrCreateSessionSeed();
+      quizData = buildQuizData(sessionSeed);
+
+      // 清空舊存檔
+      localStorage.removeItem(STORAGE_KEY);
+
+      totalScore = 0;
+      currentQ = 0;
+      teacherMode = true; // 教師按得到這顆鈕，通常是老師操作，順便保持 ON
+      initGameState();
+      showToast({ title: '已產生新題目', msg: '本次分頁已換成新題目版本（選項/標籤會不同）。', type: 'success' });
+      renderApp();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     /* ===========================
-      TTS & 音效（懶建立 AudioContext）
+      TTS & 音效
     =========================== */
     let synth = window.speechSynthesis;
     function playTTS(text) {
@@ -1011,7 +1077,6 @@
       }
     }
 
-    // Web Audio API：懶建立（避免 Safari / iPad 首次載入被擋）
     let audioCtx;
     function getAudioCtx() {
       if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -1102,7 +1167,7 @@
     function bindUIEvents() {
       document.getElementById('tts-main-btn').addEventListener('click', () => {
         const q = quizData[currentQ];
-        playTTS(q.textVoice || q.text.replace(/<[^>]*>/g, ' '));
+        playTTS(q.textVoice || stripHtml(q.text));
       });
 
       document.getElementById('reset-question-btn').addEventListener('click', () => {
@@ -1128,22 +1193,33 @@
         if (!teacherMode) return;
         resetAllProgress();
       });
+
+      document.getElementById('new-set-btn').addEventListener('click', () => {
+        if (!teacherMode) return;
+        newQuestionSetThisTab();
+      });
     }
 
     /* ===========================
       啟動
     =========================== */
     window.addEventListener('load', () => {
-      // 先讀檔，讀不到就初始化
+      // 嘗試讀檔（含 seed），讀不到就用本分頁 seed 建新題庫
       const ok = loadState();
-      if (!ok) initGameState();
+      if (!ok) {
+        // 使用 sessionSeed 生成題庫 + 初始化進度
+        quizData = buildQuizData(sessionSeed);
+        initGameState();
+      }
 
       bindUIEvents();
       renderApp();
 
       showToast({
         title: '已載入',
-        msg: ok ? '已從上次進度繼續。' : '已建立新的學習進度。祝你玩得開心！',
+        msg: ok
+          ? '已從上次進度繼續（題目版本一致）。'
+          : '已建立新的一套題目（同分頁刷新不變，新開分頁會不同）。',
         type: 'info'
       });
     });
