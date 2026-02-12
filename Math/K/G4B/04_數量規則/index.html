@@ -194,362 +194,300 @@
     </div>
 
     <script>
-        // --- Data Structure ---
-        const quizData = [
-            {
-                id: 1,
-                title: "第 1 關：圖形的規律",
-                concept: "有規律的圖形通常會以「幾組」為一個循環。請仔細觀察重複出現的部分在哪個位置！",
-                content: `
-                    <p class="mb-4 text-gray-800">我們常將磁磚有規律的鋪排在牆壁上。請觀察下列 <mark>紫色方塊</mark> 移動的順序：</p>
-                    
-                    <!-- 特教視覺優化：分離磁磚、加上序號、明確的田字格與箭頭 -->
-                    <div class="bg-blue-50 p-4 md:p-6 rounded-2xl flex flex-col items-center mb-6 border-2 border-blue-100 shadow-inner">
-                        <div class="flex items-center justify-between w-full max-w-lg overflow-x-auto pb-2 gap-2">
-                            
-                            <!-- 第1塊 -->
-                            <div class="flex flex-col items-center gap-2">
-                                <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-blue-200 text-blue-800 font-black flex items-center justify-center shadow-sm text-sm md:text-base">1</div>
-                                <svg width="60" height="60" viewBox="0 0 100 100" class="bg-white border-4 border-gray-400 rounded-xl shadow-md flex-shrink-0 md:w-20 md:h-20">
-                                    <line x1="50" y1="0" x2="50" y2="100" stroke="#d1d5db" stroke-width="4" />
-                                    <line x1="0" y1="50" x2="100" y2="50" stroke="#d1d5db" stroke-width="4" />
-                                    <rect x="52" y="52" width="46" height="46" fill="#a855f7" rx="4" />
-                                </svg>
-                                <div class="text-xs md:text-sm font-bold text-gray-600 bg-white px-2 py-1 rounded shadow-sm border border-gray-200">右下</div>
+        // --- Data Structure & Generators ---
+        function shuffle(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        const levelGenerators = [
+            // 第 1 關：圖形的規律（隨機抽取圖形方向與順序）
+            function() {
+                const corners = [
+                    { name: '右下', x: 52, y: 52 },
+                    { name: '左下', x: 2, y: 52 },
+                    { name: '右上', x: 52, y: 2 },
+                    { name: '左上', x: 2, y: 2 }
+                ];
+                const shuffled = shuffle([...corners]);
+                const A = shuffled[0];
+                const B = shuffled[1];
+                
+                const makeSvg = (x, y) => `
+                    <svg width="60" height="60" viewBox="0 0 100 100" class="bg-white border-4 border-gray-400 rounded-xl shadow-md flex-shrink-0 md:w-20 md:h-20">
+                        <line x1="50" y1="0" x2="50" y2="100" stroke="#d1d5db" stroke-width="4" />
+                        <line x1="0" y1="50" x2="100" y2="50" stroke="#d1d5db" stroke-width="4" />
+                        <rect x="${x}" y="${y}" width="46" height="46" fill="#a855f7" rx="4" />
+                    </svg>`;
+
+                const restOptions = corners.filter(c => c.name !== A.name && c.name !== B.name).map(c => c.name);
+                const options = shuffle([B.name, B.name, restOptions[0], restOptions[1]]);
+
+                return {
+                    id: 1, title: "第 1 關：圖形的規律",
+                    concept: "有規律的圖形通常會以「幾組」為一個循環。請仔細觀察重複出現的部分在哪個位置！",
+                    content: `
+                        <p class="mb-4 text-gray-800">我們常將磁磚有規律的鋪排在牆壁上。請觀察下列 <mark>紫色方塊</mark> 移動的順序：</p>
+                        <div class="bg-blue-50 p-4 md:p-6 rounded-2xl flex flex-col items-center mb-6 border-2 border-blue-100 shadow-inner">
+                            <div class="flex items-center justify-between w-full max-w-lg overflow-x-auto pb-2 gap-2">
+                                <div class="flex flex-col items-center gap-2">
+                                    <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-blue-200 text-blue-800 font-black flex items-center justify-center shadow-sm text-sm md:text-base">1</div>
+                                    ${makeSvg(A.x, A.y)}
+                                    <div class="text-xs md:text-sm font-bold text-gray-600 bg-white px-2 py-1 rounded shadow-sm border border-gray-200">${A.name}</div>
+                                </div>
+                                <span class="text-2xl md:text-3xl text-gray-400 font-black mb-6">➡</span>
+                                <div class="flex flex-col items-center gap-2">
+                                    <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-blue-200 text-blue-800 font-black flex items-center justify-center shadow-sm text-sm md:text-base">2</div>
+                                    ${makeSvg(B.x, B.y)}
+                                    <div class="text-xs md:text-sm font-bold text-gray-400 bg-gray-50 px-2 py-1 rounded border border-gray-200 border-dashed">?</div>
+                                </div>
+                                <span class="text-2xl md:text-3xl text-gray-400 font-black mb-6">➡</span>
+                                <div class="flex flex-col items-center gap-2">
+                                    <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-blue-200 text-blue-800 font-black flex items-center justify-center shadow-sm text-sm md:text-base">3</div>
+                                    ${makeSvg(A.x, A.y)}
+                                    <div class="text-xs md:text-sm font-bold text-gray-600 bg-white px-2 py-1 rounded shadow-sm border border-gray-200">${A.name}</div>
+                                </div>
+                                <span class="text-2xl md:text-3xl text-blue-400 font-black mb-6 animate-pulse">➡</span>
+                                <div class="flex flex-col items-center gap-2">
+                                    <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-yellow-300 text-yellow-800 font-black flex items-center justify-center shadow-sm text-sm md:text-base">4</div>
+                                    <svg width="60" height="60" viewBox="0 0 100 100" class="bg-yellow-50 border-4 border-yellow-500 border-dashed rounded-xl shadow-md flex-shrink-0 md:w-20 md:h-20">
+                                        <line x1="50" y1="0" x2="50" y2="100" stroke="#fde047" stroke-width="4" />
+                                        <line x1="0" y1="50" x2="100" y2="50" stroke="#fde047" stroke-width="4" />
+                                        <text x="50" y="75" font-size="50" font-weight="900" fill="#eab308" text-anchor="middle">?</text>
+                                    </svg>
+                                    <div class="text-xs md:text-sm font-bold text-yellow-600 bg-yellow-100 px-2 py-1 rounded border border-yellow-300">?</div>
+                                </div>
                             </div>
-
-                            <span class="text-2xl md:text-3xl text-gray-400 font-black mb-6">➡</span>
-
-                            <!-- 第2塊 -->
-                            <div class="flex flex-col items-center gap-2">
-                                <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-blue-200 text-blue-800 font-black flex items-center justify-center shadow-sm text-sm md:text-base">2</div>
-                                <svg width="60" height="60" viewBox="0 0 100 100" class="bg-white border-4 border-gray-400 rounded-xl shadow-md flex-shrink-0 md:w-20 md:h-20">
-                                    <line x1="50" y1="0" x2="50" y2="100" stroke="#d1d5db" stroke-width="4" />
-                                    <line x1="0" y1="50" x2="100" y2="50" stroke="#d1d5db" stroke-width="4" />
-                                    <rect x="2" y="52" width="46" height="46" fill="#a855f7" rx="4" />
-                                </svg>
-                                <div class="text-xs md:text-sm font-bold text-gray-400 bg-gray-50 px-2 py-1 rounded border border-gray-200 border-dashed">?</div>
+                            <div class="mt-4 text-blue-800 font-bold bg-white px-4 py-2 rounded-lg shadow-sm border border-blue-100 text-sm md:text-base text-center">
+                                💡 請觀察 1號 到 2號，再從 3號 猜猜看 4號 的位置！
                             </div>
-
-                            <span class="text-2xl md:text-3xl text-gray-400 font-black mb-6">➡</span>
-
-                            <!-- 第3塊 -->
-                            <div class="flex flex-col items-center gap-2">
-                                <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-blue-200 text-blue-800 font-black flex items-center justify-center shadow-sm text-sm md:text-base">3</div>
-                                <svg width="60" height="60" viewBox="0 0 100 100" class="bg-white border-4 border-gray-400 rounded-xl shadow-md flex-shrink-0 md:w-20 md:h-20">
-                                    <line x1="50" y1="0" x2="50" y2="100" stroke="#d1d5db" stroke-width="4" />
-                                    <line x1="0" y1="50" x2="100" y2="50" stroke="#d1d5db" stroke-width="4" />
-                                    <rect x="52" y="52" width="46" height="46" fill="#a855f7" rx="4" />
-                                </svg>
-                                <div class="text-xs md:text-sm font-bold text-gray-600 bg-white px-2 py-1 rounded shadow-sm border border-gray-200">右下</div>
-                            </div>
-
-                            <span class="text-2xl md:text-3xl text-blue-400 font-black mb-6 animate-pulse">➡</span>
-
-                            <!-- 第4塊 -->
-                            <div class="flex flex-col items-center gap-2">
-                                <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-yellow-300 text-yellow-800 font-black flex items-center justify-center shadow-sm text-sm md:text-base">4</div>
-                                <svg width="60" height="60" viewBox="0 0 100 100" class="bg-yellow-50 border-4 border-yellow-500 border-dashed rounded-xl shadow-md flex-shrink-0 md:w-20 md:h-20">
-                                    <line x1="50" y1="0" x2="50" y2="100" stroke="#fde047" stroke-width="4" />
-                                    <line x1="0" y1="50" x2="100" y2="50" stroke="#fde047" stroke-width="4" />
-                                    <text x="50" y="75" font-size="50" font-weight="900" fill="#eab308" text-anchor="middle">?</text>
-                                </svg>
-                                <div class="text-xs md:text-sm font-bold text-yellow-600 bg-yellow-100 px-2 py-1 rounded border border-yellow-300">?</div>
-                            </div>
-
-                        </div>
-                        
-                        <div class="mt-4 text-blue-800 font-bold bg-white px-4 py-2 rounded-lg shadow-sm border border-blue-100 text-sm md:text-base text-center">
-                            💡 請觀察 1號 到 2號，再從 3號 猜猜看 4號 的位置！
-                        </div>
-                    </div>
-                `,
-                steps: [
-                    {
-                        instruction: "第一步：觀察上面這排磁磚，紫色方塊的位置規律是什麼？",
-                        template: "規律是：右下、[slot]、右下、[slot]。",
-                        options: ["左下", "左下", "右上", "左上"],
-                        answers: ["左下", "左下"],
-                        remediation: {
-                            errorMsg: "哎呀！方向好像看錯囉。",
-                            hint: "請仔細看第 2 塊磁磚的紫色方塊，它位在格子的「左邊」還是「右邊」？「上面」還是「下面」呢？",
-                            practice: [
-                                { q: "如果圖案規律是「上、下、上、下」，下一個是什麼方向？", opts: ["上", "下", "左", "右"], a: "上" },
-                                { q: "如果顏色規律是「紅、藍、紅、藍」，下一個是什麼顏色？", opts: ["紅", "藍", "黃", "綠"], a: "紅" }
-                            ]
+                        </div>`,
+                    steps: [
+                        {
+                            instruction: "第一步：觀察上面這排磁磚，紫色方塊的位置規律是什麼？",
+                            template: `規律是：${A.name}、[slot]、${A.name}、[slot]。`,
+                            options: options, answers: [B.name, B.name],
+                            remediation: {
+                                errorMsg: "哎呀！方向好像看錯囉。", hint: "請仔細看第 2 塊磁磚的紫色方塊，它位在格子的「左邊」還是「右邊」？「上面」還是「下面」呢？",
+                                practice: [{ q: "如果圖案規律是「上、下、上、下」，下一個是什麼方向？", opts: ["上", "下", "左", "右"], a: "上" }, { q: "如果顏色規律是「紅、藍、紅、藍」，下一個是什麼顏色？", opts: ["紅", "藍", "黃", "綠"], a: "紅" }]
+                            }
                         }
-                    }
-                ]
+                    ]
+                };
             },
-            {
-                id: 2,
-                title: "第 2 關：數字表格的規律",
-                concept: "在連續數字的表格中，每一列的數量固定時，最右邊那行通常會是該數量的「倍數」。",
-                content: `
-                    <p class="mb-4">將 1 到 20 按照順序填入表格中，觀察有什麼規律：</p>
-                    <table class="w-full text-center border-collapse border border-gray-300 bg-white mb-4">
-                        <tr class="bg-gray-100"><td class="border p-2">1</td><td class="border p-2">2</td><td class="border p-2">3</td><td class="border p-2">4</td><td class="border p-2 font-bold text-blue-600">5</td></tr>
-                        <tr><td class="border p-2">6</td><td class="border p-2">7</td><td class="border p-2">8</td><td class="border p-2">9</td><td class="border p-2 font-bold text-blue-600">10</td></tr>
-                        <tr class="bg-gray-100"><td class="border p-2">11</td><td class="border p-2">12</td><td class="border p-2">13</td><td class="border p-2">14</td><td class="border p-2 font-bold text-blue-600">15</td></tr>
-                    </table>
-                `,
-                steps: [
-                    {
-                        instruction: "第一步：算算看，表格中「每一橫列」共有幾個數字？",
-                        template: "每一列都有 [slot] 個數字。",
-                        options: ["4", "5", "6", "10"],
-                        answers: ["5"],
-                        remediation: {
-                            errorMsg: "數量的觀察不對喔！",
-                            hint: "請從最左邊的 1 開始往右數到 5，總共經過了幾個格子呢？",
-                            practice: [
-                                { q: "從 1 數到 5，總共有幾個數字？", opts: ["4個", "5個", "6個"], a: "5個" },
-                                { q: "如果一列排 3 個蘋果，這列總共有幾個蘋果？", opts: ["2個", "3個", "4個"], a: "3個" }
-                            ]
-                        }
-                    },
-                    {
-                        instruction: "第二步：觀察最右邊直行（5, 10, 15），它們是什麼數字的倍數？",
-                        template: "最後一行的數字都是 [slot] 的倍數。",
-                        options: ["2", "3", "4", "5"],
-                        answers: ["5"],
-                        remediation: {
-                            errorMsg: "倍數找錯囉！",
-                            hint: "5的倍數有 5, 10, 15, 20...，仔細看看最後一行的數字是不是都符合呢？",
-                            practice: [
-                                { q: "請問 10 是誰的倍數？", opts: ["3", "4", "5"], a: "5" },
-                                { q: "請問 15 是誰的倍數？", opts: ["2", "5", "10"], a: "5" }
-                            ]
-                        }
+            // 第 2 關：數字表格的規律（隨機行數 4~6）
+            function() {
+                const cols = Math.floor(Math.random() * 3) + 4; // 4 to 6
+                let tableHTML = `<table class="w-full text-center border-collapse border border-gray-300 bg-white mb-4">`;
+                for(let r=0; r<3; r++) {
+                    tableHTML += `<tr class="${r%2===0?'bg-gray-100':''} ">`;
+                    for(let c=1; c<=cols; c++) {
+                        const val = r*cols + c;
+                        tableHTML += `<td class="border p-2 ${c === cols ? 'font-bold text-blue-600' : ''}">${val}</td>`;
                     }
-                ]
+                    tableHTML += `</tr>`;
+                }
+                tableHTML += `</table>`;
+                
+                const opts1 = shuffle([cols.toString(), (cols-1).toString(), (cols+1).toString(), (cols+2).toString()]);
+                const opts2 = shuffle([cols.toString(), (cols-1).toString(), (cols+1).toString(), (cols+2).toString()]);
+
+                return {
+                    id: 2, title: "第 2 關：數字表格的規律",
+                    concept: "在連續數字的表格中，每一列的數量固定時，最右邊那行通常會是該數量的「倍數」。",
+                    content: `<p class="mb-4">將 1 到 ${cols*3} 按照順序填入表格中，觀察有什麼規律：</p>${tableHTML}`,
+                    steps: [
+                        {
+                            instruction: "第一步：算算看，表格中「每一橫列」共有幾個數字？",
+                            template: "每一列都有 [slot] 個數字。", options: opts1, answers: [cols.toString()],
+                            remediation: {
+                                errorMsg: "數量的觀察不對喔！", hint: `請從最左邊的 1 開始往右數到 ${cols}，總共經過了幾個格子呢？`,
+                                practice: [{ q: `從 1 數到 ${cols}，總共有幾個數字？`, opts: [`${cols-1}個`, `${cols}個`, `${cols+1}個`], a: `${cols}個` }, { q: "如果一列排 3 個蘋果，這列總共有幾個蘋果？", opts: ["2個", "3個", "4個"], a: "3個" }]
+                            }
+                        },
+                        {
+                            instruction: `第二步：觀察最右邊直行（${cols}, ${cols*2}, ${cols*3}），它們是什麼數字的倍數？`,
+                            template: "最後一行的數字都是 [slot] 的倍數。", options: opts2, answers: [cols.toString()],
+                            remediation: {
+                                errorMsg: "倍數找錯囉！", hint: `${cols}的倍數有 ${cols}, ${cols*2}, ${cols*3}...，仔細看看最後一行的數字是不是都符合呢？`,
+                                practice: [{ q: `請問 ${cols*2} 是誰的倍數？`, opts: [(cols-1).toString(), cols.toString(), (cols+1).toString()], a: cols.toString() }, { q: `請問 ${cols*3} 是誰的倍數？`, opts: [(cols-2).toString(), cols.toString(), (cols+2).toString()], a: cols.toString() }]
+                            }
+                        }
+                    ]
+                };
             },
-            {
-                id: 3,
-                title: "第 3 關：月曆的規律",
-                concept: "月曆中「左右」相鄰的日子相差 1 天，「上下」相鄰的日子相差 7 天（一星期）。",
-                content: `
-                    <p class="mb-4 text-gray-800">月曆中藏著好玩的數字規律！請先觀察這塊 <mark>乾淨的月曆</mark> 碎片：</p>
-                    
-                    <div class="bg-blue-50 p-6 rounded-2xl flex justify-center items-center mb-8 border-2 border-blue-200 shadow-inner mt-8">
-                        <div class="relative w-48 h-48 md:w-56 md:h-56">
-                            <!-- 數字方塊 -->
-                            <div class="absolute top-0 left-0 w-16 h-16 md:w-20 md:h-20 bg-white border-4 border-gray-400 rounded-xl flex items-center justify-center text-2xl md:text-3xl font-black shadow-md z-10 text-gray-700">8</div>
-                            <div class="absolute top-0 right-0 w-16 h-16 md:w-20 md:h-20 bg-white border-4 border-gray-400 rounded-xl flex items-center justify-center text-2xl md:text-3xl font-black shadow-md z-10 text-gray-700">9</div>
-                            <div class="absolute bottom-0 left-0 w-16 h-16 md:w-20 md:h-20 bg-white border-4 border-gray-400 rounded-xl flex items-center justify-center text-2xl md:text-3xl font-black shadow-md z-10 text-gray-700">15</div>
-                            <div class="absolute bottom-0 right-0 w-16 h-16 md:w-20 md:h-20 bg-white border-4 border-gray-400 rounded-xl flex items-center justify-center text-2xl md:text-3xl font-black shadow-md z-10 text-gray-700">16</div>
+            // 第 3 關：月曆的規律（隨機月份、日期與推算方向）
+            function() {
+                const dayNames = ['日', '一', '二', '三', '四', '五', '六'];
+                const startIdx = Math.floor(Math.random() * 5) + 1; // 1 to 5
+                const dir = Math.random() > 0.5 ? 1 : -1;
+                const targetIdx = startIdx + dir;
+                const date = Math.floor(Math.random() * 15) + 10;
+                const targetDate = date + dir;
+                const month = Math.floor(Math.random() * 12) + 1;
+                const dirText = dir === 1 ? '隔天' : '昨天';
 
-                            <!-- 左右箭頭 (+1) -->
-                            <svg class="absolute top-6 left-16 md:top-8 md:left-20 w-16 md:w-16 h-4 text-blue-500 z-0" fill="none" stroke="currentColor" viewBox="0 0 100 20" preserveAspectRatio="none">
-                                <line x1="0" y1="10" x2="80" y2="10" stroke-width="8" stroke-dasharray="8,8" />
-                                <polygon points="80,0 100,10 80,20" fill="currentColor" stroke="none" />
-                            </svg>
-                            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-100 text-blue-800 text-sm font-bold px-3 py-1 rounded-full border border-blue-200 shadow-sm z-20 whitespace-nowrap">左右差 1 天</div>
+                let tableHTML = `<table class="w-full text-center border-collapse border border-gray-300 bg-white mb-4 shadow-sm"><tr class="bg-yellow-100">`;
+                for(let i=0; i<7; i++) tableHTML += `<th class="border p-2 ${i===0||i===6?'text-red-500':''} ${i===startIdx||i===targetIdx?'font-bold text-blue-800':''}">${dayNames[i]}</th>`;
+                tableHTML += `</tr><tr>`;
+                for(let i=0; i<7; i++) tableHTML += `<td class="border p-2 text-gray-300 bg-gray-50">...</td>`;
+                tableHTML += `</tr><tr>`;
+                for(let i=0; i<7; i++) {
+                    if (i === startIdx) tableHTML += `<td class="border p-3 text-xl font-black text-gray-800 bg-blue-50 border-2 border-blue-200">${date}</td>`;
+                    else if (i === targetIdx) tableHTML += `<td class="border p-3 text-xl font-black text-blue-600 border-2 border-blue-400 border-dashed animate-pulse">${targetDate}</td>`;
+                    else tableHTML += `<td class="border p-2 text-gray-300 bg-gray-50">...</td>`;
+                }
+                tableHTML += `</tr></table>`;
 
-                            <!-- 上下箭頭 (+7) -->
-                            <svg class="absolute top-16 left-6 md:top-20 md:left-8 w-4 h-16 md:h-16 text-green-500 z-0" fill="none" stroke="currentColor" viewBox="0 0 20 100" preserveAspectRatio="none">
-                                <line x1="10" y1="0" x2="10" y2="80" stroke-width="8" stroke-dasharray="8,8" />
-                                <polygon points="0,80 10,100 20,80" fill="currentColor" stroke="none" />
-                            </svg>
-                            <div class="absolute top-1/2 -left-4 transform -translate-y-1/2 -translate-x-full bg-green-100 text-green-800 text-sm font-bold px-3 py-1 rounded-full border border-green-200 shadow-sm z-20 whitespace-nowrap">上下差 7 天</div>
-                        </div>
-                    </div>
+                const opts3 = shuffle([dayNames[targetIdx], dayNames[(targetIdx+1)%7], dayNames[(targetIdx+2)%7], dayNames[(targetIdx+6)%7]]);
 
-                    <p class="mb-4 text-gray-800">接著，這是一張被弄髒的 <mark>4月</mark> 月曆。如果 4月29日 是星期三，請運用規律找出隔天的星期！</p>
-                    <table class="w-full text-center border-collapse border border-gray-300 bg-white mb-4 shadow-sm">
-                        <tr class="bg-yellow-100"><th class="border p-2 text-red-500">日</th><th class="border p-2">一</th><th class="border p-2">二</th><th class="border p-2 font-bold text-blue-800">三</th><th class="border p-2 font-bold text-blue-800">四</th><th class="border p-2">五</th><th class="border p-2 text-red-500">六</th></tr>
-                        <tr><td class="border p-2 text-gray-300 bg-gray-50">...</td><td class="border p-2 text-gray-300 bg-gray-50">...</td><td class="border p-2 text-gray-300 bg-gray-50">...</td><td class="border p-2 text-gray-300 bg-gray-50">...</td><td class="border p-2 text-gray-300 bg-gray-50">...</td><td class="border p-2 text-gray-300 bg-gray-50">...</td><td class="border p-2 text-gray-300 bg-gray-50">...</td></tr>
-                        <tr><td class="border p-2 text-gray-300 bg-gray-50">...</td><td class="border p-2 text-gray-300 bg-gray-50">...</td><td class="border p-2 text-gray-300 bg-gray-50">...</td><td class="border p-3 text-xl font-black text-gray-800 bg-blue-50 border-2 border-blue-200">29</td><td class="border p-3 text-xl font-black text-blue-600 border-2 border-blue-400 border-dashed animate-pulse">30</td><td class="border p-2 text-gray-300 bg-gray-50">...</td><td class="border p-2 text-gray-300 bg-gray-50">...</td></tr>
-                    </table>
-                `,
-                steps: [
-                    {
-                        instruction: "第一步：在月曆上，左右相鄰（昨天與今天）的日子，相差幾天？",
-                        template: "左右兩邊的數字相差 [slot] 天。",
-                        options: ["1", "5", "7", "30"],
-                        answers: ["1"],
-                        remediation: {
-                            errorMsg: "天數相差算錯囉！",
-                            hint: "星期三的隔天就是星期四，日期只會前進「1」天喔！",
-                            practice: [
-                                { q: "3號的明天是幾號？", opts: ["2號", "4號", "10號"], a: "4號" },
-                                { q: "15號的昨天是幾號？", opts: ["14號", "16號", "20號"], a: "14號" }
-                            ]
-                        }
-                    },
-                    {
-                        instruction: "第二步：在月曆上，上下相鄰（上週與這週）的日子，相差幾天？",
-                        template: "上下兩排的數字相差 [slot] 天。",
-                        options: ["1", "5", "7", "30"],
-                        answers: ["7"],
-                        remediation: {
-                            errorMsg: "天數相差算錯囉！",
-                            hint: "一個星期有 7 天，所以同一個星期幾的日期，上下會剛好相差 7 喔！",
-                            practice: [
-                                { q: "8號的下個星期同一天是幾號？", opts: ["9號", "15號", "20號"], a: "15號" },
-                                { q: "20號的上個星期同一天是幾號？", opts: ["13號", "19號", "27號"], a: "13號" }
-                            ]
-                        }
-                    },
-                    {
-                        instruction: "第三步：如果 4月29日是星期三，那相差一天的 4月30日 是星期幾？",
-                        template: "4月30日是在 星期[slot]。",
-                        options: ["二", "三", "四", "五"],
-                        answers: ["四"],
-                        remediation: {
-                            errorMsg: "星期推算錯誤囉！",
-                            hint: "星期三的下一天，就是星期四喔！",
-                            practice: [
-                                { q: "星期一的隔天是星期幾？", opts: ["星期二", "星期三"], a: "星期二" },
-                                { q: "星期五的昨天是星期幾？", opts: ["星期四", "星期六"], a: "星期四" }
-                            ]
-                        }
-                    }
-                ]
-            },
-            {
-                id: 4,
-                title: "第 4 關：火車座位的規律",
-                concept: "座位規律經常與「除法與餘數」有關。若每 4 個座位一排，可以利用「除以 4 的餘數」來判斷位置！",
-                content: `
-                    <p class="mb-4 text-gray-800">火車座位號碼每 <mark>4個數字一列</mark>。請觀察「雙號」的座位排列：</p>
-                    
-                    <!-- 特教視覺優化：極簡直觀的火車座位表 -->
-                    <div class="bg-gray-100 p-6 rounded-2xl flex flex-col items-center mb-6">
-                        
-                        <div class="flex items-stretch w-full max-w-sm justify-center bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-200">
-                            
-                            <!-- 左邊：單號區 (淡化) -->
-                            <div class="flex flex-col gap-3 py-2 pr-4 md:pr-6 border-r-2 border-gray-100">
-                                <div class="text-xs font-bold text-gray-400 text-center mb-2">單號區</div>
-                                <div class="flex gap-2">
-                                    <div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">1</div>
-                                    <div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">3</div>
-                                </div>
-                                <div class="flex gap-2">
-                                    <div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">5</div>
-                                    <div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">7</div>
-                                </div>
-                                <div class="flex gap-2">
-                                    <div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">9</div>
-                                    <div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">11</div>
-                                </div>
-                            </div>
-
-                            <!-- 走道 (純文字標示) -->
-                            <div class="flex items-center justify-center px-2 md:px-4">
-                                <span class="text-gray-400 font-bold tracking-widest" style="writing-mode: vertical-rl;">走道</span>
-                            </div>
-
-                            <!-- 右邊：雙號區 (聚焦高亮) -->
-                            <div class="flex flex-col gap-3 py-2 pl-4 md:pl-6 border-l-2 border-gray-100">
-                                <div class="text-xs font-bold text-blue-600 text-center mb-2">雙號區</div>
-                                <div class="flex gap-2">
-                                    <!-- 高亮 -->
-                                    <div class="w-12 h-12 bg-blue-100 border-2 border-blue-500 rounded-md flex items-center justify-center text-blue-700 font-black text-xl shadow-sm">4</div>
-                                    <!-- 淡化靠窗雙號 -->
-                                    <div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">2</div>
-                                </div>
-                                <div class="flex gap-2">
-                                    <div class="w-12 h-12 bg-blue-100 border-2 border-blue-500 rounded-md flex items-center justify-center text-blue-700 font-black text-xl shadow-sm">8</div>
-                                    <div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">6</div>
-                                </div>
-                                <div class="flex gap-2">
-                                    <div class="w-12 h-12 bg-blue-100 border-2 border-blue-500 rounded-md flex items-center justify-center text-blue-700 font-black text-xl shadow-sm">12</div>
-                                    <div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">10</div>
-                                </div>
+                return {
+                    id: 3, title: "第 3 關：月曆的規律",
+                    concept: "月曆中「左右」相鄰的日子相差 1 天，「上下」相鄰的日子相差 7 天（一星期）。",
+                    content: `
+                        <p class="mb-4 text-gray-800">月曆中藏著好玩的數字規律！請先觀察這塊 <mark>乾淨的月曆</mark> 碎片：</p>
+                        <div class="bg-blue-50 p-6 rounded-2xl flex justify-center items-center mb-8 border-2 border-blue-200 shadow-inner mt-8">
+                            <div class="relative w-48 h-48 md:w-56 md:h-56">
+                                <div class="absolute top-0 left-0 w-16 h-16 md:w-20 md:h-20 bg-white border-4 border-gray-400 rounded-xl flex items-center justify-center text-2xl md:text-3xl font-black shadow-md z-10 text-gray-700">8</div>
+                                <div class="absolute top-0 right-0 w-16 h-16 md:w-20 md:h-20 bg-white border-4 border-gray-400 rounded-xl flex items-center justify-center text-2xl md:text-3xl font-black shadow-md z-10 text-gray-700">9</div>
+                                <div class="absolute bottom-0 left-0 w-16 h-16 md:w-20 md:h-20 bg-white border-4 border-gray-400 rounded-xl flex items-center justify-center text-2xl md:text-3xl font-black shadow-md z-10 text-gray-700">15</div>
+                                <div class="absolute bottom-0 right-0 w-16 h-16 md:w-20 md:h-20 bg-white border-4 border-gray-400 rounded-xl flex items-center justify-center text-2xl md:text-3xl font-black shadow-md z-10 text-gray-700">16</div>
+                                <svg class="absolute top-6 left-16 md:top-8 md:left-20 w-16 md:w-16 h-4 text-blue-500 z-0" fill="none" stroke="currentColor" viewBox="0 0 100 20" preserveAspectRatio="none"><line x1="0" y1="10" x2="80" y2="10" stroke-width="8" stroke-dasharray="8,8" /><polygon points="80,0 100,10 80,20" fill="currentColor" stroke="none" /></svg>
+                                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-100 text-blue-800 text-sm font-bold px-3 py-1 rounded-full border border-blue-200 shadow-sm z-20 whitespace-nowrap">左右差 1 天</div>
+                                <svg class="absolute top-16 left-6 md:top-20 md:left-8 w-4 h-16 md:h-16 text-green-500 z-0" fill="none" stroke="currentColor" viewBox="0 0 20 100" preserveAspectRatio="none"><line x1="10" y1="0" x2="10" y2="80" stroke-width="8" stroke-dasharray="8,8" /><polygon points="0,80 10,100 20,80" fill="currentColor" stroke="none" /></svg>
+                                <div class="absolute top-1/2 -left-4 transform -translate-y-1/2 -translate-x-full bg-green-100 text-green-800 text-sm font-bold px-3 py-1 rounded-full border border-green-200 shadow-sm z-20 whitespace-nowrap">上下差 7 天</div>
                             </div>
                         </div>
-                        
-                        <div class="mt-5 text-gray-700 font-bold text-center">
-                            注意看 <mark class="bg-blue-100 text-blue-800">4, 8, 12...</mark> 都在靠走道的位置喔！
-                        </div>
-                    </div>
-                `,
-                steps: [
-                    {
-                        instruction: "第一步：觀察 4, 8, 12 這些號碼，它們都是誰的倍數？",
-                        template: "雙號靠走道的座位號碼都是 [slot] 的倍數。",
-                        options: ["2", "3", "4", "5"],
-                        answers: ["4"],
-                        remediation: {
-                            errorMsg: "倍數觀察有誤喔！",
-                            hint: "4, 8, 12 都能被 4 整除（除以 4 沒有餘數），所以它們都是 4 的倍數。",
-                            practice: [
-                                { q: "請問 8 是誰的倍數？", opts: ["3", "4", "5"], a: "4" },
-                                { q: "請問 16 是誰的倍數？", opts: ["4", "5", "6"], a: "4" }
-                            ]
+                        <p class="mb-4 text-gray-800">接著，這是一張被弄髒的 <mark>${month}月</mark> 月曆。如果 ${month}月${date}日 是星期${dayNames[startIdx]}，請運用規律找出<mark>${dirText}</mark>的星期！</p>
+                        ${tableHTML}
+                    `,
+                    steps: [
+                        {
+                            instruction: "第一步：在月曆上，左右相鄰（昨天與今天）的日子，相差幾天？",
+                            template: "左右兩邊的數字相差 [slot] 天。", options: ["1", "5", "7", "30"], answers: ["1"],
+                            remediation: { errorMsg: "天數相差算錯囉！", hint: "左右相鄰的日子，日期只會相差「1」天喔！", practice: [{ q: "3號的明天是幾號？", opts: ["2號", "4號", "10號"], a: "4號" }, { q: "15號的昨天是幾號？", opts: ["14號", "16號", "20號"], a: "14號" }] }
+                        },
+                        {
+                            instruction: "第二步：在月曆上，上下相鄰（上週與這週）的日子，相差幾天？",
+                            template: "上下兩排的數字相差 [slot] 天。", options: ["1", "5", "7", "30"], answers: ["7"],
+                            remediation: { errorMsg: "天數相差算錯囉！", hint: "一個星期有 7 天，所以同一個星期幾的日期，上下會剛好相差 7 喔！", practice: [{ q: "8號的下個星期同一天是幾號？", opts: ["9號", "15號", "20號"], a: "15號" }, { q: "20號的上個星期同一天是幾號？", opts: ["13號", "19號", "27號"], a: "13號" }] }
+                        },
+                        {
+                            instruction: `第三步：如果 ${month}月${date}日是星期${dayNames[startIdx]}，那相差一天的 ${month}月${targetDate}日 是星期幾？`,
+                            template: `${month}月${targetDate}日是在 星期[slot]。`, options: opts3, answers: [dayNames[targetIdx]],
+                            remediation: { errorMsg: "星期推算錯誤囉！", hint: `星期${dayNames[startIdx]}的${dirText}，就是星期${dayNames[targetIdx]}喔！`, practice: [{ q: "星期一的隔天是星期幾？", opts: ["星期二", "星期三"], a: "星期二" }, { q: "星期五的昨天是星期幾？", opts: ["星期四", "星期六"], a: "星期四" }] }
                         }
-                    },
-                    {
-                        instruction: "第二步：詠安的座位是 28 號，判斷她是靠窗戶還是靠走道？",
-                        template: "28 除以 4 沒有餘數，所以是靠 [slot] 。",
-                        options: ["窗戶", "走道", "車門", "廁所"],
-                        answers: ["走道"],
-                        remediation: {
-                            errorMsg: "座位位置判斷錯囉！",
-                            hint: "我們前面發現「沒有餘數（4的倍數）」的都是「靠走道」的雙號座位喔！",
-                            practice: [
-                                { q: "20 除以 4 沒有餘數，請問 20 號靠哪裡？", opts: ["窗戶", "走道"], a: "走道" },
-                                { q: "32 除以 4 沒有餘數，請問 32 號靠哪裡？", opts: ["窗戶", "走道"], a: "走道" }
-                            ]
-                        }
-                    }
-                ]
+                    ]
+                };
             },
-            {
-                id: 5,
-                title: "第 5 關：奇偶數的運算規律",
-                concept: "判斷加減乘除的結果是奇數或偶數時，只要看數字的「個位數」，並舉簡單的例子（例如：3+2=5）就能快速判斷！",
-                content: `
-                    <p class="mb-4">請觀察算式：<mark>82997 + 68114</mark> 及 <mark>487 × 369</mark>，判斷結果是奇數還是偶數。</p>
-                `,
-                steps: [
-                    {
-                        instruction: "第一步：判斷 82997 和 68114 分別是奇數還是偶數？",
-                        template: "82997 的個位數是 7，它是 [slot]；68114 的個位數是 4，它是 [slot]。",
-                        options: ["奇數", "偶數", "奇數", "偶數"],
-                        answers: ["奇數", "偶數"],
-                        remediation: {
-                            errorMsg: "奇偶數判斷錯囉！",
-                            hint: "看數字的「個位數」。1,3,5,7,9 是奇數；0,2,4,6,8 是偶數。",
-                            practice: [
-                                { q: "請問 135 是奇數還是偶數？", opts: ["奇數", "偶數"], a: "奇數" },
-                                { q: "請問 42 是奇數還是偶數？", opts: ["奇數", "偶數"], a: "偶數" }
-                            ]
+            // 第 4 關：火車座位的規律（隨機指定靠窗或靠走道的雙號座位）
+            function() {
+                const isWindow = Math.random() > 0.5;
+                const base = Math.floor(Math.random() * 6) + 4; // 4 to 9
+                const seat = isWindow ? (base * 4 + 2) : (base * 4);
+                const ansLoc = isWindow ? '窗戶' : '走道';
+                const tmpl = isWindow ? `${seat} 除以 4 餘數是 2，所以是靠 [slot] 。` : `${seat} 除以 4 沒有餘數，所以是靠 [slot] 。`;
+                
+                return {
+                    id: 4, title: "第 4 關：火車座位的規律",
+                    concept: "座位規律經常與「除法與餘數」有關。若每 4 個座位一排，可以利用「除以 4 的餘數」來判斷位置！",
+                    content: `
+                        <p class="mb-4 text-gray-800">火車座位號碼每 <mark>4個數字一列</mark>。請觀察「雙號」的座位排列：</p>
+                        <div class="bg-gray-100 p-6 rounded-2xl flex flex-col items-center mb-6">
+                            <div class="flex items-stretch w-full max-w-sm justify-center bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-200">
+                                <div class="flex flex-col gap-3 py-2 pr-4 md:pr-6 border-r-2 border-gray-100">
+                                    <div class="text-xs font-bold text-gray-400 text-center mb-2">單號區</div>
+                                    <div class="flex gap-2"><div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">1</div><div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">3</div></div>
+                                    <div class="flex gap-2"><div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">5</div><div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">7</div></div>
+                                    <div class="flex gap-2"><div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">9</div><div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">11</div></div>
+                                </div>
+                                <div class="flex items-center justify-center px-2 md:px-4"><span class="text-gray-400 font-bold tracking-widest" style="writing-mode: vertical-rl;">走道</span></div>
+                                <div class="flex flex-col gap-3 py-2 pl-4 md:pl-6 border-l-2 border-gray-100">
+                                    <div class="text-xs font-bold text-blue-600 text-center mb-2">雙號區</div>
+                                    <div class="flex gap-2"><div class="w-12 h-12 bg-blue-100 border-2 border-blue-500 rounded-md flex items-center justify-center text-blue-700 font-black text-xl shadow-sm">4</div><div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">2</div></div>
+                                    <div class="flex gap-2"><div class="w-12 h-12 bg-blue-100 border-2 border-blue-500 rounded-md flex items-center justify-center text-blue-700 font-black text-xl shadow-sm">8</div><div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">6</div></div>
+                                    <div class="flex gap-2"><div class="w-12 h-12 bg-blue-100 border-2 border-blue-500 rounded-md flex items-center justify-center text-blue-700 font-black text-xl shadow-sm">12</div><div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">10</div></div>
+                                </div>
+                            </div>
+                            <div class="mt-5 text-gray-700 font-bold text-center">
+                                注意看 <mark class="bg-blue-100 text-blue-800">4, 8, 12...</mark> 都在靠走道的位置喔！
+                            </div>
+                        </div>
+                    `,
+                    steps: [
+                        {
+                            instruction: "第一步：觀察 4, 8, 12 這些號碼，它們都是誰的倍數？",
+                            template: "雙號靠走道的座位號碼都是 [slot] 的倍數。", options: ["2", "3", "4", "5"], answers: ["4"],
+                            remediation: { errorMsg: "倍數觀察有誤喔！", hint: "4, 8, 12 都能被 4 整除（除以 4 沒有餘數），所以它們都是 4 的倍數。", practice: [{ q: "請問 8 是誰的倍數？", opts: ["3", "4", "5"], a: "4" }, { q: "請問 16 是誰的倍數？", opts: ["4", "5", "6"], a: "4" }] }
+                        },
+                        {
+                            instruction: `第二步：詠安的座位是 ${seat} 號，判斷她是靠窗戶還是靠走道？`,
+                            template: tmpl, options: ["窗戶", "走道", "車門", "廁所"], answers: [ansLoc],
+                            remediation: { errorMsg: "座位位置判斷錯囉！", hint: "我們發現「沒有餘數(4的倍數)」的是「走道」，而「餘數是2」的是「靠窗戶」喔！", practice: [{ q: "20 除以 4 沒有餘數，請問 20 號靠哪裡？", opts: ["窗戶", "走道"], a: "走道" }, { q: "30 除以 4 餘數是 2，請問 30 號靠哪裡？", opts: ["窗戶", "走道"], a: "窗戶" }] }
                         }
-                    },
-                    {
-                        instruction: "第二步：根據加法規律，奇數 + 偶數 的結果是什麼？",
-                        template: "奇數 + 偶數 = [slot]。（想一想 3 + 2 = 5）",
-                        options: ["奇數", "偶數"],
-                        answers: ["奇數"],
-                        remediation: {
-                            errorMsg: "加法規律記錯囉！",
-                            hint: "奇數加上偶數，結果會是奇數！可以自己舉個例子：3(奇) + 2(偶) = 5(奇)。",
-                            practice: [
-                                { q: "5(奇數) + 4(偶數) 的結果是奇數還是偶數？", opts: ["奇數", "偶數"], a: "奇數" },
-                                { q: "7(奇數) + 2(偶數) 的結果是奇數還是偶數？", opts: ["奇數", "偶數"], a: "奇數" }
-                            ]
+                    ]
+                };
+            },
+            // 第 5 關：奇偶數的運算規律（隨機產生大數字運算）
+            function() {
+                const op1IsAdd = Math.random() > 0.5;
+                const t1_odd1 = Math.random() > 0.5;
+                const t1_odd2 = Math.random() > 0.5;
+                const num1 = Math.floor(Math.random()*80000)+10000;
+                const num2 = Math.floor(Math.random()*80000)+10000;
+                const finalNum1 = (num1 % 2 === (t1_odd1 ? 1 : 0)) ? num1 : num1 + 1;
+                const finalNum2 = (num2 % 2 === (t1_odd2 ? 1 : 0)) ? num2 : num2 + 1;
+                
+                const n1Type = t1_odd1 ? "奇數" : "偶數";
+                const n2Type = t1_odd2 ? "奇數" : "偶數";
+                const res1Odd = op1IsAdd ? (t1_odd1 !== t1_odd2) : (t1_odd1 !== t1_odd2);
+                const res1Type = res1Odd ? "奇數" : "偶數";
+                
+                const t2_odd1 = Math.random() > 0.5;
+                const t2_odd2 = Math.random() > 0.5;
+                const num3 = Math.floor(Math.random()*800)+100;
+                const num4 = Math.floor(Math.random()*800)+100;
+                const finalNum3 = (num3 % 2 === (t2_odd1 ? 1 : 0)) ? num3 : num3 + 1;
+                const finalNum4 = (num4 % 2 === (t2_odd2 ? 1 : 0)) ? num4 : num4 + 1;
+                
+                const n3Type = t2_odd1 ? "奇數" : "偶數";
+                const n4Type = t2_odd2 ? "奇數" : "偶數";
+                const res2Odd = t2_odd1 && t2_odd2;
+                const res2Type = res2Odd ? "奇數" : "偶數";
+                
+                const op1Sign = op1IsAdd ? '+' : '-';
+                const op1Name = op1IsAdd ? '加法' : '減法';
+                const ex1 = op1IsAdd ? (t1_odd1&&t1_odd2?"3 + 5 = 8":(!t1_odd1&&!t1_odd2?"2 + 4 = 6":t1_odd1?"3 + 2 = 5":"2 + 3 = 5")) : (t1_odd1&&t1_odd2?"5 - 3 = 2":(!t1_odd1&&!t1_odd2?"6 - 2 = 4":t1_odd1?"5 - 2 = 3":"6 - 3 = 3"));
+                const ex2 = (t2_odd1&&t2_odd2)?"3 × 3 = 9":((!t2_odd1&&!t2_odd2)?"2 × 2 = 4":(t2_odd1?"3 × 2 = 6":"2 × 3 = 6"));
+
+                return {
+                    id: 5, title: "第 5 關：奇偶數的運算規律",
+                    concept: "判斷加減乘除的結果是奇數或偶數時，只要看數字的「個位數」，並舉簡單的例子（例如：3+2=5）就能快速判斷！",
+                    content: `<p class="mb-4">請觀察算式：<mark>${finalNum1} ${op1Sign} ${finalNum2}</mark> 及 <mark>${finalNum3} × ${finalNum4}</mark>，判斷結果是奇數還是偶數。</p>`,
+                    steps: [
+                        {
+                            instruction: `第一步：判斷 ${finalNum1} 和 ${finalNum2} 分別是奇數還是偶數？`,
+                            template: `${finalNum1} 的個位數是 ${finalNum1%10}，它是 [slot]；${finalNum2} 的個位數是 ${finalNum2%10}，它是 [slot]。`,
+                            options: ["奇數", "偶數", "奇數", "偶數"], answers: [n1Type, n2Type],
+                            remediation: { errorMsg: "奇偶數判斷錯囉！", hint: "看數字的「個位數」。1,3,5,7,9 是奇數；0,2,4,6,8 是偶數。", practice: [{ q: "請問 135 是奇數還是偶數？", opts: ["奇數", "偶數"], a: "奇數" }, { q: "請問 42 是奇數還是偶數？", opts: ["奇數", "偶數"], a: "偶數" }] }
+                        },
+                        {
+                            instruction: `第二步：根據${op1Name}規律，${n1Type} ${op1Sign} ${n2Type} 的結果是什麼？`,
+                            template: `${n1Type} ${op1Sign} ${n2Type} = [slot]。（想一想 ${ex1}）`,
+                            options: ["奇數", "偶數"], answers: [res1Type],
+                            remediation: { errorMsg: `${op1Name}規律記錯囉！`, hint: `${n1Type}${op1Name}${n2Type}，結果會是${res1Type}！可以自己舉個例子：${ex1}。`, practice: [{ q: `5(奇數) ${op1Sign} 4(偶數) 的結果是奇數還是偶數？`, opts: ["奇數", "偶數"], a: "奇數" }, { q: `6(偶數) ${op1Sign} 2(偶數) 的結果是奇數還是偶數？`, opts: ["奇數", "偶數"], a: "偶數" }] }
+                        },
+                        {
+                            instruction: `第三步：根據乘法規律，${finalNum3}(${n3Type[0]}) × ${finalNum4}(${n4Type[0]}) 的結果是什麼？`,
+                            template: `${n3Type} × ${n4Type} = [slot]。（想一想 ${ex2}）`,
+                            options: ["奇數", "偶數"], answers: [res2Type],
+                            remediation: { errorMsg: "乘法規律記錯囉！", hint: `${n3Type}乘以${n4Type}，結果會是${res2Type}！可以舉個例子：${ex2}。`, practice: [{ q: "5(奇數) × 5(奇數) 的結果是奇數還是偶數？", opts: ["奇數", "偶數"], a: "奇數" }, { q: "7(奇數) × 4(偶數) 的結果是奇數還是偶數？", opts: ["奇數", "偶數"], a: "偶數" }] }
                         }
-                    },
-                    {
-                        instruction: "第三步：根據乘法規律，487(奇) × 369(奇) 的結果是什麼？",
-                        template: "奇數 × 奇數 = [slot]。（想一想 3 × 3 = 9）",
-                        options: ["奇數", "偶數"],
-                        answers: ["奇數"],
-                        remediation: {
-                            errorMsg: "乘法規律記錯囉！",
-                            hint: "奇數乘以奇數，結果會是奇數！可以舉個例子：3(奇) × 3(奇) = 9(奇)。",
-                            practice: [
-                                { q: "5(奇數) × 5(奇數) 的結果是奇數還是偶數？", opts: ["奇數", "偶數"], a: "奇數" },
-                                { q: "7(奇數) × 3(奇數) 的結果是奇數還是偶數？", opts: ["奇數", "偶數"], a: "奇數" }
-                            ]
-                        }
-                    }
-                ]
+                    ]
+                };
             }
         ];
+
+        let quizData = [];
 
         // --- Global State ---
         let currentQuestionIndex = 0;
@@ -563,6 +501,8 @@
 
         // --- Initialization ---
         window.onload = () => {
+            // 初始時生成所有關卡的亂數題目
+            quizData = levelGenerators.map(gen => gen());
             renderNavbar();
             loadQuestion(0);
         };
@@ -605,6 +545,9 @@
             currentQuestionScore = 0;
             remediationState = {};
             stepStartTime = Date.now();
+            
+            // 每次載入關卡時，自動重新抽取參數產生新題目
+            quizData[currentQuestionIndex] = levelGenerators[currentQuestionIndex]();
             
             renderNavbar();
             
@@ -922,6 +865,8 @@
             // Subtract the score earned in this session
             globalScore -= currentQuestionScore;
             document.getElementById('global-score').innerText = globalScore;
+            
+            // 重新挑戰時，亂數抽新題再載入
             loadQuestion(currentQuestionIndex);
         }
 
