@@ -1,1070 +1,200 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>數學互動解題：多位數的乘與除</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* 字型設定 */
-        body {
-            font-family: 'Noto Sans TC', system-ui, -apple-system, sans-serif;
-            background-color: #f0f9ff;
-            overflow-x: hidden;
-        }
-
-        /* --- 終極絕對格線系統 (CSS Grid) --- 
-           這是一張隱形的精確方格紙，確保所有位值 100% 垂直與水平對齊
-        */
-        .math-table {
-            display: inline-grid;
-            grid-template-columns: repeat(9, 72px); /* 9個直行，每行 72px 寬，確保容納千萬位 */
-            grid-auto-rows: 76px;                   /* 每列嚴格固定高度 76px */
-            gap: 4px 8px;                           /* 嚴格的行列間距 */
-            align-items: center;
-            justify-items: center;
-            font-family: 'Courier New', monospace;
-            font-weight: 800;
-            width: max-content;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
-            text-align: left;
-        }
-
-        /* 絕對座標定義 (行與列) */
-        .r1 { grid-row: 1; } .r2 { grid-row: 2; } .r3 { grid-row: 3; } .r4 { grid-row: 4; }
-        .r5 { grid-row: 5; } .r6 { grid-row: 6; } .r7 { grid-row: 7; } .r8 { grid-row: 8; }
-        .r9 { grid-row: 9; }
-        
-        .c1 { grid-column: 1; } .c2 { grid-column: 2; } .c3 { grid-column: 3; }
-        .c4 { grid-column: 4; } .c5 { grid-column: 5; } .c6 { grid-column: 6; }
-        .c7 { grid-column: 7; } .c8 { grid-column: 8; } .c9 { grid-column: 9; }
-
-        /* 單一格子的基礎設定 */
-        .cell {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-            font-size: 3.5rem; /* 超大字體 */
-            line-height: 1;
-            user-select: none;
-            box-sizing: border-box;
-            position: relative;
-            color: #1e293b;
-        }
-
-        /* 題目數字字體 (帶有灰底白框，模擬題目印刷) */
-        .num {
-            background-color: #f8fafc;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-        }
-
-        /* 無底色的數字 (用於加總或過程展示) */
-        .no-bg {
-            background-color: transparent !important;
-            border: none !important;
-        }
-
-        /* 運算符號 (+, ×) */
-        .operator {
-            font-size: 4rem;
-            color: #64748b;
-            font-family: sans-serif;
-        }
-
-        /* 運算分隔線 (乘法、加減法底線) */
-        .border-bottom-line {
-            border-bottom: 6px solid #1e293b;
-            align-self: end;
-            width: 100%;
-            height: 100%;
-            margin-bottom: -5px; /* 完美卡在兩行之間 */
-            z-index: 5;
-        }
-
-        /* 除法專用符號與線條 */
-        .div-top-line {
-            border-top: 5px solid #1e293b !important;
-            border-radius: 0 !important;
-        }
-        .div-bracket {
-            position: absolute;
-            right: -14px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 5rem;
-            color: #1e293b;
-            font-family: sans-serif;
-            font-weight: 400;
-            z-index: 10;
-        }
-
-        /* 刪除線 (劃掉 0 用) */
-        .strike-through {
-            position: relative;
-            color: #cbd5e1 !important;
-        }
-        .strike-through::after {
-            content: '';
-            position: absolute;
-            width: 130%;
-            height: 6px;
-            background-color: #ef4444;
-            transform: rotate(-45deg);
-            top: 50%;
-            left: -15%;
-            border-radius: 3px;
-            z-index: 20;
-        }
-
-        /* --- 互動格子樣式 --- */
-        /* 1. 進位格 (上方虛線小格) */
-        .carry-slot {
-            width: 48px;  
-            height: 48px;
-            font-size: 2rem;
-            border: 3px dashed #cbd5e1;
-            border-radius: 12px;
-            color: #ef4444; 
-            background-color: rgba(255, 255, 255, 0.9);
-            cursor: pointer;
-            transition: all 0.2s;
-            align-self: end;
-            margin-bottom: -16px; /* 往下靠近主要數字 */
-            z-index: 15;
-        }
-
-        /* 2. 主要答案格 (下方實線大格) */
-        .ans-slot {
-            border: 4px dashed #94a3b8;
-            border-radius: 16px;
-            background-color: #ffffff;
-            color: #1e293b;
-            cursor: pointer;
-            transition: all 0.2s;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        /* 互動狀態 */
-        .carry-slot.active:hover, .ans-slot.active:hover {
-            border-color: #93c5fd;
-            background-color: #eff6ff;
-        }
-        .carry-slot.selected, .ans-slot.selected {
-            border-color: #f59e0b !important;
-            background-color: #fffbeb !important;
-            box-shadow: 0 0 0 6px rgba(245, 158, 11, 0.3);
-            transform: scale(1.1);
-            z-index: 20;
-        }
-        .carry-slot.filled, .ans-slot.filled {
-            border-style: solid;
-            border-color: #3b82f6;
-            background-color: #dbeafe;
-        }
-        .carry-slot.correct, .ans-slot.correct {
-            border-color: #22c55e !important;
-            background-color: #f0fdf4 !important;
-            color: #15803d;
-        }
-        .carry-slot.error, .ans-slot.error {
-            border-color: #ef4444 !important;
-            background-color: #fef2f2 !important;
-            animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
-        }
-
-        /* 選項按鈕區 */
-        .options-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            margin-top: 32px;
-            padding: 24px;
-            background: #f1f5f9;
-            border-radius: 20px;
-            justify-content: center;
-        }
-        .option-btn {
-            background-color: white;
-            border: 2px solid #cbd5e1;
-            border-bottom-width: 6px;
-            padding: 12px 32px;
-            border-radius: 16px;
-            font-weight: 800;
-            font-size: 2.5rem;
-            color: #334155;
-            transition: all 0.1s;
-            min-width: 90px;
-            text-align: center;
-        }
-        .option-btn:active {
-            transform: translateY(4px);
-            border-bottom-width: 2px;
-            margin-top: 4px;
-        }
-
-        /* 步驟容器 */
-        .step-container {
-            opacity: 0.5;
-            pointer-events: none;
-            filter: grayscale(0.8);
-            transition: all 0.5s ease;
-            margin-bottom: 40px;
-            background: white;
-            border-radius: 24px;
-            padding: 32px;
-            border: 3px solid #e2e8f0;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-        }
-        .step-container.unlocked {
-            opacity: 1;
-            pointer-events: auto;
-            filter: grayscale(0);
-            border-color: #3b82f6;
-            box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.15);
-        }
-        .step-container.completed {
-            border-color: #22c55e;
-            background-color: #f8fafc;
-        }
-        .step-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 32px;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 16px;
-        }
-        .step-num {
-            background: #3b82f6;
-            color: white;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-        .step-container.completed .step-num { background: #22c55e; }
-
-        @keyframes shake {
-            10%, 90% { transform: translate3d(-2px, 0, 0); }
-            20%, 80% { transform: translate3d(4px, 0, 0); }
-            30%, 50%, 70% { transform: translate3d(-6px, 0, 0); }
-            40%, 60% { transform: translate3d(6px, 0, 0); }
-        }
-        
-        .custom-scrollbar::-webkit-scrollbar { width: 12px; height: 12px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #64748b; }
-
-        /* 積分 pop 動畫 */
-        @keyframes pop {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.08); }
-            100% { transform: scale(1); }
-        }
-        .animate-pop { animation: pop 0.3s ease; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>數學互動解題：多位數的乘與除</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body{font-family:'Noto Sans TC',system-ui;background:#f0f9ff;overflow-x:hidden}
+.math-table{display:inline-grid;grid-template-columns:repeat(9,72px);grid-auto-rows:76px;gap:4px 8px;align-items:center;justify-items:center;font-family:'Courier New',monospace;font-weight:800;width:max-content;margin:0 auto;padding:20px}
+.cell{display:flex;align-items:center;justify-content:center;font-size:3.5rem}
+.num{background:#f8fafc;border:2px solid #e2e8f0;border-radius:12px}
+.operator{font-size:4rem;color:#64748b}
+.border-bottom-line{border-bottom:6px solid #1e293b;width:100%}
+.carry-slot,.ans-slot{cursor:pointer;border-radius:16px;transition:.2s}
+.carry-slot{border:3px dashed #cbd5e1;font-size:2rem;color:#ef4444;width:48px;height:48px}
+.ans-slot{border:4px dashed #94a3b8;background:#fff}
+.carry-slot.selected,.ans-slot.selected{border-color:#f59e0b!important;background:#fffbeb!important}
+.carry-slot.correct,.ans-slot.correct{border-color:#22c55e!important;background:#f0fdf4}
+.carry-slot.error,.ans-slot.error{border-color:#ef4444!important;animation:shake .4s}
+.option-btn{background:#fff;border:2px solid #cbd5e1;border-bottom-width:6px;padding:12px 28px;border-radius:16px;font-size:2rem;font-weight:800}
+@keyframes shake{20%,80%{transform:translateX(-6px)}40%,60%{transform:translateX(6px)}}
+.animate-pop{animation:pop .3s ease}
+@keyframes pop{50%{transform:scale(1.08)}}
+</style>
 </head>
 
 <body class="h-screen flex flex-col text-slate-800">
 
-    <header class="bg-white shadow-md z-20 flex-none sticky top-0">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex items-center h-20 space-x-4 overflow-x-auto custom-scrollbar">
-                <div class="flex-none font-bold text-2xl text-blue-600 mr-4 flex items-center gap-2">
-                    <span class="text-3xl">🧮</span>
-                    <span>單元一：多位數乘除</span>
-                </div>
-                <div id="nav-container" class="flex space-x-3"></div>
-                <div class="ml-auto flex items-center gap-4 flex-none pl-4">
-                    <div class="bg-yellow-100 px-5 py-2 rounded-full border-2 border-yellow-300 flex items-center gap-2">
-                        <span class="text-xl">⭐ 積分:</span>
-                        <span id="score-display" class="font-bold text-yellow-700 text-2xl">0</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <main class="flex-1 flex flex-col md:flex-row overflow-hidden relative">
-        <section class="md:w-1/3 bg-white border-b md:border-b-0 md:border-r border-slate-200 p-8 flex flex-col shadow-sm z-10 relative overflow-y-auto">
-            <div class="flex justify-between items-start mb-6">
-                <span class="bg-blue-100 text-blue-800 text-lg font-bold px-4 py-1.5 rounded-full border border-blue-200" id="problem-tag">題目類型</span>
-                <button id="tts-btn" class="text-slate-500 hover:text-blue-600 transition-colors p-3 rounded-full hover:bg-slate-100">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                </button>
-            </div>
-
-            <h1 id="problem-title" class="text-3xl md:text-4xl font-extrabold mb-8 leading-relaxed text-slate-800"></h1>
-
-            <div class="mt-auto bg-slate-50 p-6 rounded-2xl border-2 border-slate-200">
-                <p class="text-lg text-slate-500 mb-3 font-bold">💡 學習重點：</p>
-                <p id="problem-hint" class="text-slate-700 leading-relaxed font-bold text-xl"></p>
-                
-                <div class="mt-6 flex flex-col gap-3 text-lg font-bold border-t-2 pt-4 border-slate-200" id="legend-area">
-                    <!-- 動態圖例 -->
-                </div>
-            </div>
-        </section>
-
-        <section id="steps-area" class="flex-1 bg-slate-100 p-4 md:p-10 overflow-y-auto custom-scrollbar pb-32">
-            <div id="steps-wrapper" class="max-w-5xl mx-auto">
-                <!-- JS 注入 -->
-            </div>
-        </section>
-    </main>
-
-    <!-- 完成視窗 -->
-    <div id="completion-modal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4 backdrop-blur-md transition-opacity duration-300">
-        <div class="bg-white rounded-[2rem] shadow-2xl max-w-lg w-full p-10 text-center transform transition-all scale-100 border-4 border-yellow-300">
-            <div class="w-32 h-32 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner">
-                <span class="text-7xl">🎉</span>
-            </div>
-            <h2 class="text-4xl font-extrabold text-slate-800 mb-4">挑戰成功！</h2>
-            <p class="text-slate-600 mb-8 text-2xl font-bold">你完成了這一題，太棒了！</p>
-            <p id="score-summary" class="text-yellow-600 font-extrabold text-3xl mb-8 bg-yellow-50 py-3 rounded-xl"></p>
-            <div class="flex flex-col gap-5">
-                <button id="retry-btn" class="w-full py-5 px-8 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-extrabold text-2xl transition-all shadow-xl shadow-blue-200 active:scale-95">再做一次 🔄</button>
-                <button id="close-modal-btn" class="w-full py-5 px-8 bg-white hover:bg-slate-50 text-slate-700 border-4 border-slate-200 rounded-2xl font-extrabold text-2xl transition-all active:scale-95">關閉視窗 ❌</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Toast 提示 -->
-    <div id="toast" class="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-white px-8 py-5 rounded-2xl shadow-2xl border-l-8 border-yellow-500 z-50 transition-all duration-300 translate-y-32 opacity-0 flex items-center gap-5 min-w-[400px] pointer-events-none">
-        <span class="text-4xl">🤔</span>
-        <div>
-            <p class="font-extrabold text-slate-800 text-2xl mb-1">再想一想...</p>
-            <p id="toast-message" class="text-slate-600 text-lg font-bold">這裡有個小陷阱喔！</p>
-        </div>
-    </div>
-
-    <script>
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        function playSound(type) {
-            if (audioContext.state === 'suspended') audioContext.resume();
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-
-            const now = audioContext.currentTime;
-            if (type === 'correct') {
-                oscillator.type = 'sine';
-                oscillator.frequency.setValueAtTime(500, now);
-                oscillator.frequency.exponentialRampToValueAtTime(1000, now + 0.1);
-                gainNode.gain.setValueAtTime(0.4, now);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.5);
-                oscillator.start(now);
-                oscillator.stop(now + 0.5);
-            } else if (type === 'error') {
-                oscillator.type = 'sawtooth';
-                oscillator.frequency.setValueAtTime(200, now);
-                oscillator.frequency.linearRampToValueAtTime(100, now + 0.2);
-                gainNode.gain.setValueAtTime(0.4, now);
-                gainNode.gain.linearRampToValueAtTime(0.01, now + 0.2);
-                oscillator.start(now);
-                oscillator.stop(now + 0.2);
-            } else if (type === 'click') {
-                oscillator.type = 'triangle';
-                oscillator.frequency.setValueAtTime(800, now);
-                gainNode.gain.setValueAtTime(0.15, now);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
-                oscillator.start(now);
-                oscillator.stop(now + 0.05);
-            }
-        }
-
-        // 圖例模板
-        const mulLegend = `
-            <div class="flex items-center gap-3"><span class="w-5 h-5 rounded-md bg-blue-600 inline-block"></span>藍底框：被乘數</div>
-            <div class="flex items-center gap-3"><span class="w-5 h-5 rounded-md border-4 border-red-500 bg-red-50 inline-block"></span>紅邊框：目前運算的乘數</div>
-            <div class="flex items-center gap-3"><span class="w-5 h-5 rounded-md border-4 border-dashed border-slate-400 bg-white inline-block"></span>虛線框：進位標記區 (點選可填寫)</div>
-        `;
-        const divLegend = `
-            <div class="flex items-center gap-3"><span class="w-5 h-5 rounded-md border-4 border-dashed border-slate-400 bg-white inline-block"></span>由左至右依序點擊填入除法算式</div>
-            <div class="flex items-center gap-3"><span class="w-5 h-5 rounded-md border-t-8 border-slate-800 bg-white inline-block"></span>黑色粗線：表示除法的上方橫線</div>
-            <div class="flex items-center gap-3"><span class="w-5 h-5 rounded-md bg-red-500 inline-block"></span>紅色斜線：表示兩邊劃掉相同數量的 0</div>
-        `;
-
-        /* ==========================================
-           嚴格的 CSS Grid 資料庫結構：
-           利用 r1~r9 (列) 與 c1~c9 (行) 絕對座標鎖定
-           保證個位永遠對齊個位，除法橫線完美呈現
-        ========================================== */
-        const problemData = [
-            {
-                id: 1,
-                title: "賣出384張全票，共收入幾元？<br>(全票一張465元)",
-                type: "三位數 × 三位數",
-                isDiv: false,
-                legend: mulLegend,
-                steps: [
-                    {
-                        instruction: "步驟一：先算 465 × 4 (個位)",
-                        stepHint: "1. 4×5=20，寫0進2<br>2. 4×6=24，24+2=26，寫6進2<br>3. 4×4=16，16+2=18，寫18",
-                        expression: `
-                            <div class="math-table fill-rtl">
-                                <!-- 進位格 (R1) -->
-                                <div class="cell slot carry-slot r1 c7" data-ans="2"></div>
-                                <div class="cell slot carry-slot r1 c8" data-ans="2"></div>
-
-                                <!-- 被乘數 465 (R2) -->
-                                <div class="cell num text-blue-600 r2 c7">4</div>
-                                <div class="cell num text-blue-600 r2 c8">6</div>
-                                <div class="cell num text-blue-600 r2 c9">5</div>
-
-                                <!-- 乘數 384 (R3) -->
-                                <div class="cell operator r3 c6">×</div>
-                                <div class="cell num r3 c7">3</div>
-                                <div class="cell num r3 c8">8</div>
-                                <div class="cell num border-4 border-red-500 bg-red-50 text-red-600 r3 c9">4</div>
-
-                                <!-- 底線 -->
-                                <div class="border-bottom-line r3" style="grid-column: 6/10;"></div>
-
-                                <!-- 答案區 (R4) -->
-                                <div class="cell slot ans-slot r4 c6" data-ans="1"></div>
-                                <div class="cell slot ans-slot r4 c7" data-ans="8"></div>
-                                <div class="cell slot ans-slot r4 c8" data-ans="6"></div>
-                                <div class="cell slot ans-slot r4 c9" data-ans="0"></div>
-                            </div>
-                        `,
-                        options: ["1", "8", "6", "0", "2", "4", "5"],
-                        answer: ["2", "2", "1", "8", "6", "0"] 
-                    },
-                    {
-                        instruction: "步驟二：再算 465 × 8 (個十)",
-                        stepHint: "這行是「十位」的乘積，從十位開始寫(個位留空)。<br>8×5=40，寫0進4...",
-                        expression: `
-                            <div class="math-table fill-rtl">
-                                <div class="cell slot carry-slot r1 c7" data-ans="5"></div>
-                                <div class="cell slot carry-slot r1 c8" data-ans="4"></div>
-
-                                <div class="cell num text-blue-600 r2 c7">4</div>
-                                <div class="cell num text-blue-600 r2 c8">6</div>
-                                <div class="cell num text-blue-600 r2 c9">5</div>
-
-                                <div class="cell operator r3 c6">×</div>
-                                <div class="cell num r3 c7">3</div>
-                                <div class="cell num border-4 border-red-500 bg-red-50 text-red-600 r3 c8">8</div>
-                                <div class="cell num r3 c9">4</div>
-
-                                <div class="border-bottom-line r3" style="grid-column: 6/10;"></div>
-
-                                <div class="cell num no-bg text-slate-400 r4 c6">1</div>
-                                <div class="cell num no-bg text-slate-400 r4 c7">8</div>
-                                <div class="cell num no-bg text-slate-400 r4 c8">6</div>
-                                <div class="cell num no-bg text-slate-400 r4 c9">0</div>
-
-                                <div class="cell slot ans-slot r5 c5" data-ans="3"></div>
-                                <div class="cell slot ans-slot r5 c6" data-ans="7"></div>
-                                <div class="cell slot ans-slot r5 c7" data-ans="2"></div>
-                                <div class="cell slot ans-slot r5 c8" data-ans="0"></div>
-                            </div>
-                        `,
-                        options: ["3", "7", "2", "0", "5", "4", "9"],
-                        answer: ["5", "4", "3", "7", "2", "0"]
-                    },
-                    {
-                        instruction: "步驟三：最後算 465 × 3 (個百)",
-                        stepHint: "這是「百位」的乘積，從百位開始寫。<br>3×5=15，寫5進1...",
-                        expression: `
-                            <div class="math-table fill-rtl">
-                                <div class="cell slot carry-slot r1 c7" data-ans="1"></div>
-                                <div class="cell slot carry-slot r1 c8" data-ans="1"></div>
-
-                                <div class="cell num text-blue-600 r2 c7">4</div>
-                                <div class="cell num text-blue-600 r2 c8">6</div>
-                                <div class="cell num text-blue-600 r2 c9">5</div>
-
-                                <div class="cell operator r3 c6">×</div>
-                                <div class="cell num border-4 border-red-500 bg-red-50 text-red-600 r3 c7">3</div>
-                                <div class="cell num r3 c8">8</div>
-                                <div class="cell num r3 c9">4</div>
-
-                                <div class="border-bottom-line r3" style="grid-column: 6/10;"></div>
-
-                                <div class="cell num no-bg text-slate-400 r4 c6">1</div>
-                                <div class="cell num no-bg text-slate-400 r4 c7">8</div>
-                                <div class="cell num no-bg text-slate-400 r4 c8">6</div>
-                                <div class="cell num no-bg text-slate-400 r4 c9">0</div>
-
-                                <div class="cell num no-bg text-slate-400 r5 c5">3</div>
-                                <div class="cell num no-bg text-slate-400 r5 c6">7</div>
-                                <div class="cell num no-bg text-slate-400 r5 c7">2</div>
-                                <div class="cell num no-bg text-slate-400 r5 c8">0</div>
-
-                                <div class="cell slot ans-slot r6 c4" data-ans="1"></div>
-                                <div class="cell slot ans-slot r6 c5" data-ans="3"></div>
-                                <div class="cell slot ans-slot r6 c6" data-ans="9"></div>
-                                <div class="cell slot ans-slot r6 c7" data-ans="5"></div>
-                            </div>
-                        `,
-                        options: ["1", "3", "9", "5", "4", "2"],
-                        answer: ["1", "1", "1", "3", "9", "5"]
-                    },
-                    {
-                        instruction: "最後加總起來：",
-                        stepHint: "將上面三層的數字垂直相加，注意進位。",
-                        expression: `
-                            <div class="math-table fill-rtl">
-                                <div class="cell slot carry-slot r1 c5" data-ans="1"></div>
-                                <div class="cell slot carry-slot r1 c6" data-ans="1"></div>
-
-                                <div class="cell num no-bg text-slate-400 r2 c6">1</div>
-                                <div class="cell num no-bg text-slate-400 r2 c7">8</div>
-                                <div class="cell num no-bg text-slate-400 r2 c8">6</div>
-                                <div class="cell num no-bg text-slate-400 r2 c9">0</div>
-
-                                <div class="cell num no-bg text-slate-400 r3 c5">3</div>
-                                <div class="cell num no-bg text-slate-400 r3 c6">7</div>
-                                <div class="cell num no-bg text-slate-400 r3 c7">2</div>
-                                <div class="cell num no-bg text-slate-400 r3 c8">0</div>
-
-                                <div class="cell operator r4 c3">+</div>
-                                <div class="cell num no-bg text-slate-800 r4 c4">1</div>
-                                <div class="cell num no-bg text-slate-800 r4 c5">3</div>
-                                <div class="cell num no-bg text-slate-800 r4 c6">9</div>
-                                <div class="cell num no-bg text-slate-800 r4 c7">5</div>
-
-                                <div class="border-bottom-line r4" style="grid-column: 4/10;"></div>
-
-                                <div class="cell slot ans-slot r5 c4" data-ans="1"></div>
-                                <div class="cell slot ans-slot r5 c5" data-ans="7"></div>
-                                <div class="cell slot ans-slot r5 c6" data-ans="8"></div>
-                                <div class="cell slot ans-slot r5 c7" data-ans="5"></div>
-                                <div class="cell slot ans-slot r5 c8" data-ans="6"></div>
-                                <div class="cell slot ans-slot r5 c9" data-ans="0"></div>
-                            </div>
-                        `,
-                        options: ["1", "7", "8", "5", "6", "0", "2", "9"],
-                        answer: ["1", "1", "1", "7", "8", "5", "6", "0"]
-                    }
-                ]
-            },
-            {
-                id: 2,
-                title: "師傅每天做304個泡芙，108天共可做幾個？<br>(中間有0的乘法)",
-                type: "中間有 0",
-                isDiv: false,
-                legend: mulLegend,
-                steps: [
-                    {
-                        instruction: "步驟一：先算 304 × 8",
-                        stepHint: "注意進位：<br>8×4=32 (寫2進3)<br>8×0=0，0+3=3<br>8×3=24",
-                        expression: `
-                            <div class="math-table fill-rtl">
-                                <div class="cell slot carry-slot r1 c7" data-ans="3"></div>
-
-                                <div class="cell num text-blue-600 r2 c6">3</div>
-                                <div class="cell num text-blue-600 r2 c7">0</div>
-                                <div class="cell num text-blue-600 r2 c8">4</div>
-
-                                <div class="cell operator r3 c4">×</div>
-                                <div class="cell num r3 c6">1</div>
-                                <div class="cell num r3 c7">0</div>
-                                <div class="cell num border-4 border-red-500 bg-red-50 text-red-600 r3 c8">8</div>
-
-                                <div class="border-bottom-line r3" style="grid-column: 5/9;"></div>
-
-                                <div class="cell slot ans-slot r4 c5" data-ans="2"></div>
-                                <div class="cell slot ans-slot r4 c6" data-ans="4"></div>
-                                <div class="cell slot ans-slot r4 c7" data-ans="3"></div>
-                                <div class="cell slot ans-slot r4 c8" data-ans="2"></div>
-                            </div>
-                        `,
-                        options: ["2", "4", "3", "2", "0", "1", "8"],
-                        answer: ["3", "2", "4", "3", "2"] 
-                    },
-                    {
-                        instruction: "步驟二：乘數十位是0，直接算百位 304 × 1",
-                        stepHint: "十位為0可省略，直接對齊百位寫出乘積。",
-                        expression: `
-                            <div class="math-table fill-rtl">
-                                <div class="cell num text-blue-600 r2 c6">3</div>
-                                <div class="cell num text-blue-600 r2 c7">0</div>
-                                <div class="cell num text-blue-600 r2 c8">4</div>
-
-                                <div class="cell operator r3 c4">×</div>
-                                <div class="cell num border-4 border-red-500 bg-red-50 text-red-600 r3 c6">1</div>
-                                <div class="cell num r3 c7">0</div>
-                                <div class="cell num r3 c8">8</div>
-
-                                <div class="border-bottom-line r3" style="grid-column: 5/9;"></div>
-
-                                <div class="cell num no-bg text-slate-400 r4 c5">2</div>
-                                <div class="cell num no-bg text-slate-400 r4 c6">4</div>
-                                <div class="cell num no-bg text-slate-400 r4 c7">3</div>
-                                <div class="cell num no-bg text-slate-400 r4 c8">2</div>
-
-                                <div class="cell slot ans-slot r5 c4" data-ans="3"></div>
-                                <div class="cell slot ans-slot r5 c5" data-ans="0"></div>
-                                <div class="cell slot ans-slot r5 c6" data-ans="4"></div>
-                            </div>
-                        `,
-                        options: ["3", "0", "4", "1", "2", "5"],
-                        answer: ["3", "0", "4"]
-                    },
-                    {
-                        instruction: "最後加總起來：",
-                        stepHint: "垂直相加。",
-                        expression: `
-                            <div class="math-table fill-rtl">
-                                <div class="cell num no-bg text-slate-500 r2 c5">2</div>
-                                <div class="cell num no-bg text-slate-500 r2 c6">4</div>
-                                <div class="cell num no-bg text-slate-500 r2 c7">3</div>
-                                <div class="cell num no-bg text-slate-500 r2 c8">2</div>
-
-                                <div class="cell operator r3 c3">+</div>
-                                <div class="cell num no-bg text-slate-800 r3 c4">3</div>
-                                <div class="cell num no-bg text-slate-800 r3 c5">0</div>
-                                <div class="cell num no-bg text-slate-800 r3 c6">4</div>
-
-                                <div class="border-bottom-line r3" style="grid-column: 4/9;"></div>
-
-                                <div class="cell slot ans-slot r4 c4" data-ans="3"></div>
-                                <div class="cell slot ans-slot r4 c5" data-ans="2"></div>
-                                <div class="cell slot ans-slot r4 c6" data-ans="8"></div>
-                                <div class="cell slot ans-slot r4 c7" data-ans="3"></div>
-                                <div class="cell slot ans-slot r4 c8" data-ans="2"></div>
-                            </div>
-                        `,
-                        options: ["3", "2", "8", "3", "2", "0", "5"],
-                        answer: ["3", "2", "8", "3", "2"]
-                    }
-                ]
-            },
-            {
-                id: 3,
-                title: "老闆準備了1786個鑰匙圈，每天限量發送188個，最多可以發送幾天？剩幾個？",
-                type: "四位數 ÷ 三位數",
-                isDiv: true,
-                legend: divLegend,
-                steps: [
-                    {
-                        instruction: "步驟一：估商並相乘",
-                        stepHint: "除法從最高位開始看。188接近200，178不夠分，看 1786 ÷ 188。<br>大約用 9 試試看：188 × 9 = 1692。請填入商與相乘的結果。",
-                        expression: `
-                            <div class="math-table fill-ltr">
-                                <!-- R1: 商 -->
-                                <div class="cell slot ans-slot border-green-500 r1 c9" data-ans="9"></div>
-
-                                <!-- R2: 除數與被除數 -->
-                                <div class="cell num no-bg r2 c3">1</div>
-                                <div class="cell num no-bg r2 c4">8</div>
-                                <div class="cell num no-bg relative r2 c5">8 <span class="div-bracket">)</span></div>
-                                
-                                <div class="cell num no-bg div-top-line r2 c6">1</div>
-                                <div class="cell num no-bg div-top-line r2 c7">7</div>
-                                <div class="cell num no-bg div-top-line r2 c8">8</div>
-                                <div class="cell num no-bg div-top-line r2 c9">6</div>
-
-                                <!-- R3: 減去 -->
-                                <div class="cell slot ans-slot r3 c6" data-ans="1"></div>
-                                <div class="cell slot ans-slot r3 c7" data-ans="6"></div>
-                                <div class="cell slot ans-slot r3 c8" data-ans="9"></div>
-                                <div class="cell slot ans-slot r3 c9" data-ans="2"></div>
-                            </div>
-                        `,
-                        options: ["9", "1", "6", "2", "8", "4"],
-                        answer: ["9", "1", "6", "9", "2"]
-                    },
-                    {
-                        instruction: "步驟二：相減得餘數",
-                        stepHint: "將 1786 減去 1692 算出剩下的鑰匙圈數量。",
-                        expression: `
-                            <div class="math-table fill-ltr">
-                                <!-- R1: 商 -->
-                                <div class="cell num no-bg text-green-600 r1 c9">9</div>
-
-                                <!-- R2: 除數與被除數 -->
-                                <div class="cell num no-bg r2 c3">1</div>
-                                <div class="cell num no-bg r2 c4">8</div>
-                                <div class="cell num no-bg relative r2 c5">8 <span class="div-bracket">)</span></div>
-                                
-                                <div class="cell num no-bg div-top-line r2 c6">1</div>
-                                <div class="cell num no-bg div-top-line r2 c7">7</div>
-                                <div class="cell num no-bg div-top-line r2 c8">8</div>
-                                <div class="cell num no-bg div-top-line r2 c9">6</div>
-
-                                <!-- R3: 減去 -->
-                                <div class="cell num no-bg r3 c6">1</div>
-                                <div class="cell num no-bg r3 c7">6</div>
-                                <div class="cell num no-bg r3 c8">9</div>
-                                <div class="cell num no-bg r3 c9">2</div>
-
-                                <!-- 減法底線 -->
-                                <div class="border-bottom-line r3" style="grid-column: 6/10;"></div>
-
-                                <!-- R4: 餘數 -->
-                                <div class="cell slot ans-slot r4 c8" data-ans="9"></div>
-                                <div class="cell slot ans-slot r4 c9" data-ans="4"></div>
-                            </div>
-                        `,
-                        options: ["9", "4", "0", "1", "8"],
-                        answer: ["9", "4"]
-                    }
-                ]
-            },
-            {
-                id: 4,
-                title: "筱萱有2600元，想買每盒200元的餅乾，最多可以買幾盒？<br>(末位有0的除法)",
-                type: "末位有 0 的除法",
-                isDiv: true,
-                legend: divLegend,
-                steps: [
-                    {
-                        instruction: "步驟一：劃掉相同數量的 0，先算十位",
-                        stepHint: "被除數和除數同時劃掉兩個 0，計算會變得非常簡單！<br>等於是計算 26 ÷ 2。先算最高位：2 ÷ 2 = 1。",
-                        expression: `
-                            <div class="math-table fill-ltr">
-                                <!-- R1: 商 -->
-                                <div class="cell slot ans-slot border-green-500 r1 c6" data-ans="1"></div>
-
-                                <!-- R2: 除數與被除數 -->
-                                <div class="cell num no-bg r2 c3">2</div>
-                                <div class="cell num no-bg strike-through r2 c4">0</div>
-                                <div class="cell num no-bg relative strike-through r2 c5">0 <span class="div-bracket">)</span></div>
-                                
-                                <div class="cell num no-bg div-top-line r2 c6">2</div>
-                                <div class="cell num no-bg div-top-line r2 c7">6</div>
-                                <div class="cell num no-bg div-top-line strike-through r2 c8">0</div>
-                                <div class="cell num no-bg div-top-line strike-through r2 c9">0</div>
-
-                                <!-- R3: 減數 -->
-                                <div class="cell slot ans-slot r3 c6" data-ans="2"></div>
-                            </div>
-                        `,
-                        options: ["1", "2", "3", "0", "6"],
-                        answer: ["1", "2"]
-                    },
-                    {
-                        instruction: "步驟二：再算個位",
-                        stepHint: "2減2等於0(不寫)，把 6 放下來，計算 6 ÷ 2 = 3。",
-                        expression: `
-                            <div class="math-table fill-ltr">
-                                <!-- R1: 商 -->
-                                <div class="cell num no-bg text-green-600 r1 c6">1</div>
-                                <div class="cell slot ans-slot border-green-500 r1 c7" data-ans="3"></div>
-
-                                <!-- R2: 除數與被除數 -->
-                                <div class="cell num no-bg r2 c3">2</div>
-                                <div class="cell num no-bg strike-through r2 c4">0</div>
-                                <div class="cell num no-bg relative strike-through r2 c5">0 <span class="div-bracket">)</span></div>
-                                
-                                <div class="cell num no-bg div-top-line r2 c6">2</div>
-                                <div class="cell num no-bg div-top-line r2 c7">6</div>
-                                <div class="cell num no-bg div-top-line strike-through r2 c8">0</div>
-                                <div class="cell num no-bg div-top-line strike-through r2 c9">0</div>
-
-                                <!-- R3: 減去 2 -->
-                                <div class="cell num no-bg r3 c6">2</div>
-                                <div class="border-bottom-line r3" style="grid-column: 6/7;"></div>
-
-                                <!-- R4: 放下 6 -->
-                                <div class="cell slot ans-slot r4 c7" data-ans="6"></div>
-
-                                <!-- R5: 減去 6 -->
-                                <div class="cell slot ans-slot r5 c7" data-ans="6"></div>
-                                <div class="border-bottom-line r5" style="grid-column: 7/8;"></div>
-
-                                <!-- R6: 餘數 -->
-                                <div class="cell slot ans-slot r6 c7" data-ans="0"></div>
-                            </div>
-                        `,
-                        options: ["6", "3", "0", "2"],
-                        answer: ["3", "6", "6", "0"]
-                    }
-                ]
-            }
-        ];
-
-        // ======= 狀態 =======
-        let state = {
-            currentProblemIdx: 0,
-            currentStepIdx: 0,
-            score: 0
-        };
-
-        // ======= 初始化 =======
-        window.addEventListener('load', initApp);
-
-        function initApp() {
-            renderNav();
-            loadProblem(0);
-
-            document.getElementById('tts-btn').addEventListener('click', speakProblem);
-            document.getElementById('retry-btn').addEventListener('click', resetCurrentProblem);
-            document.getElementById('close-modal-btn').addEventListener('click', closeModal);
-        }
-
-        function renderNav() {
-            const container = document.getElementById('nav-container');
-            container.innerHTML = '';
-            problemData.forEach((prob, idx) => {
-                const btn = document.createElement('button');
-                btn.className = `px-5 py-2.5 rounded-xl font-extrabold text-xl whitespace-nowrap transition-all border-[3px] shadow-sm ${
-                    idx === state.currentProblemIdx
-                        ? 'bg-blue-600 text-white border-blue-700 shadow-md transform scale-105'
-                        : 'bg-white text-slate-600 hover:bg-blue-50 border-slate-200 hover:border-blue-300'
-                }`;
-                btn.textContent = `題目 ${idx + 1}`;
-                btn.onclick = () => loadProblem(idx);
-                container.appendChild(btn);
-            });
-        }
-
-        function loadProblem(idx) {
-            state.currentProblemIdx = idx;
-            state.currentStepIdx = 0;
-
-            renderNav();
-
-            const problem = problemData[idx];
-            document.getElementById('problem-tag').textContent = problem.type;
-            document.getElementById('problem-title').innerHTML = problem.title;
-            document.getElementById('legend-area').innerHTML = problem.legend;
-
-            renderSteps();
-        }
-
-        function renderSteps() {
-            const wrapper = document.getElementById('steps-wrapper');
-            wrapper.innerHTML = '';
-
-            const problem = problemData[state.currentProblemIdx];
-            const currentStepData = problem.steps[state.currentStepIdx];
-
-            const hintEl = document.getElementById('problem-hint');
-            hintEl.innerHTML = currentStepData?.stepHint ? currentStepData.stepHint : "請依序計算。";
-
-            for (let i = 0; i <= state.currentStepIdx && i < problem.steps.length; i++) {
-                const step = problem.steps[i];
-                const isCurrent = i === state.currentStepIdx;
-                const isCompleted = i < state.currentStepIdx;
-
-                const stepEl = document.createElement('div');
-                stepEl.className = `step-container ${isCurrent || isCompleted ? 'unlocked' : ''} ${isCompleted ? 'completed' : ''}`;
-                stepEl.id = `step-${i}`;
-
-                const header = document.createElement('div');
-                header.className = 'step-header';
-                header.innerHTML = `
-                    <div class="step-num">${isCompleted ? '✔' : i + 1}</div>
-                    <h3 class="font-extrabold text-3xl text-slate-700 tracking-wide">${step.instruction}</h3>
-                `;
-
-                const content = document.createElement('div');
-                content.className = 'step-content w-full';
-
-                const exprDiv = document.createElement('div');
-                // 將置中的 flex 移除，讓 inline-grid 與 mx-auto 發揮作用，解決溢位裁切問題
-                exprDiv.className = 'bg-white rounded-[2rem] border-4 border-slate-200 shadow-inner w-full py-10 px-4 overflow-x-auto custom-scrollbar text-center';
-                exprDiv.innerHTML = step.expression;
-
-                let optionsDiv = '';
-                if (isCurrent) {
-                    const uniqueOptions = [...new Set(step.options)];
-                    const btnsHtml = uniqueOptions
-                        .map((opt) => `<button class="option-btn hover:bg-slate-50" onclick="handleOptionClick('${opt}', this)">${opt}</button>`)
-                        .join('');
-                    optionsDiv = `<div class="options-grid">${btnsHtml}
-                        <button class="option-btn bg-red-50 text-red-600 border-red-200 hover:bg-red-100 ml-4" onclick="checkAnswer()">檢查答案 ➤</button>
-                    </div>`;
-                }
-
-                content.innerHTML = exprDiv.outerHTML + optionsDiv;
-                stepEl.appendChild(header);
-                stepEl.appendChild(content);
-                wrapper.appendChild(stepEl);
-
-                const slots = stepEl.querySelectorAll('.carry-slot, .ans-slot');
-
-                if (isCurrent) {
-                    slots.forEach((slot) => {
-                        slot.classList.add('active');
-                        slot.onclick = () => handleSlotClick(slot);
-                    });
-                } else if (isCompleted) {
-                    slots.forEach((slot) => {
-                        const ans = slot.dataset.ans;
-                        if (ans != null) {
-                            slot.textContent = ans;
-                            slot.classList.add('correct', 'filled');
-                            slot.classList.remove('active', 'selected', 'error');
-                        }
-                    });
-                }
-            }
-
-            setTimeout(() => {
-                wrapper.parentElement.scrollTo({ top: wrapper.scrollHeight, behavior: 'smooth' });
-            }, 150);
-        }
-
-        function handleSlotClick(slotElement) {
-            if (slotElement.textContent) {
-                playSound('click');
-                slotElement.textContent = '';
-                slotElement.classList.remove('filled', 'error', 'correct');
-                return;
-            }
-
-            const stepId = slotElement.closest('.step-container').id;
-            const stepEl = document.getElementById(stepId);
-            stepEl.querySelectorAll('.carry-slot, .ans-slot').forEach(s => s.classList.remove('selected'));
-
-            playSound('click');
-            slotElement.classList.add('selected');
-        }
-
-        function handleOptionClick(value, btnElement) {
-            playSound('click');
-            const currentStepEl = document.getElementById(`step-${state.currentStepIdx}`);
-
-            const selectedSlot = currentStepEl.querySelector('.selected');
-            if (selectedSlot) {
-                selectedSlot.textContent = value;
-                selectedSlot.classList.add('filled');
-                selectedSlot.classList.remove('selected', 'error');
-                return;
-            }
-
-            const table = currentStepEl.querySelector('.math-table');
-            const isLtr = table?.classList.contains('fill-ltr');
-
-            const ansSlots = Array.from(currentStepEl.querySelectorAll('.ans-slot'));
-            const carrySlots = Array.from(currentStepEl.querySelectorAll('.carry-slot'));
-
-            let target = null;
-
-            if (isLtr) {
-                target = ansSlots.find(s => !s.textContent);
-            } else {
-                target =
-                    carrySlots.slice().reverse().find(s => !s.textContent) ||
-                    ansSlots.slice().reverse().find(s => !s.textContent);
-            }
-
-            if (target) {
-                target.textContent = value;
-                target.classList.add('filled');
-                target.classList.remove('error');
-            }
-        }
-
-        function checkAnswer() {
-            const problem = problemData[state.currentProblemIdx];
-            const currentStepEl = document.getElementById(`step-${state.currentStepIdx}`);
-
-            const allSlots = Array.from(currentStepEl.querySelectorAll('.carry-slot, .ans-slot'));
-            const mainSlots = Array.from(currentStepEl.querySelectorAll('.ans-slot'));
-
-            if (mainSlots.some(s => !s.textContent)) {
-                showToast('請將主要答案格填滿喔！');
-                playSound('error');
-                return;
-            }
-
-            let isCorrect = true;
-
-            allSlots.forEach((slot) => {
-                const correctAnswer = slot.dataset.ans;
-                const userAnswer = slot.textContent.trim();
-
-                if (slot.classList.contains('carry-slot')) {
-                    if (userAnswer && userAnswer !== correctAnswer) {
-                        isCorrect = false;
-                        slot.classList.add('error');
-                    } else if (userAnswer === correctAnswer) {
-                        slot.classList.remove('error');
-                        slot.classList.add('correct');
-                    } else {
-                        slot.classList.remove('error');
-                    }
-                } else {
-                    if (userAnswer !== correctAnswer) {
-                        isCorrect = false;
-                        slot.classList.add('error');
-                    } else {
-                        slot.classList.remove('error');
-                        slot.classList.add('correct');
-                    }
-                }
-            });
-
-            if (isCorrect) {
-                playSound('correct');
-                state.score += 20;
-                updateScore();
-
-                allSlots.forEach(s => s.classList.remove('selected'));
-
-                if (state.currentStepIdx < problem.steps.length - 1) {
-                    state.currentStepIdx++;
-                    renderSteps();
-                } else {
-                    currentStepEl.classList.add('completed');
-                    setTimeout(showCompletionModal, 500);
-                }
-            } else {
-                showToast('答案不太對，再試試看！<br>點擊錯誤的數字可以清除重填。');
-                playSound('error');
-            }
-        }
-
-        function updateScore() {
-            const display = document.getElementById('score-display');
-            display.textContent = state.score;
-            display.parentElement.classList.add('animate-pop');
-            setTimeout(() => display.parentElement.classList.remove('animate-pop'), 300);
-        }
-
-        function showToast(msg) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toast-message').innerHTML = msg;
-            toast.classList.remove('translate-y-32', 'opacity-0');
-            setTimeout(() => {
-                toast.classList.add('translate-y-32', 'opacity-0');
-            }, 3500);
-        }
-
-        function speakProblem() {
-            const text = document.getElementById('problem-title').innerText;
-            if ('speechSynthesis' in window) {
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'zh-TW';
-                utterance.rate = 0.9;
-                window.speechSynthesis.speak(utterance);
-            } else {
-                showToast("您的瀏覽器不支援語音功能");
-            }
-        }
-
-        function showCompletionModal() {
-            const modal = document.getElementById('completion-modal');
-            document.getElementById('score-summary').textContent = `獲得總積分：${state.score}`;
-            modal.classList.remove('hidden');
-        }
-
-        function closeModal() {
-            document.getElementById('completion-modal').classList.add('hidden');
-        }
-
-        function resetCurrentProblem() {
-            closeModal();
-            loadProblem(state.currentProblemIdx);
-        }
-    </script>
+<header class="bg-white shadow-md p-4 flex justify-between items-center">
+<div class="font-bold text-2xl text-blue-600">🧮 多位數乘除</div>
+<div class="bg-yellow-100 px-5 py-2 rounded-full border-2 border-yellow-300 font-bold text-xl">
+⭐ 積分: <span id="score-display">0</span>
+</div>
+</header>
+
+<main class="flex-1 overflow-auto p-8 bg-slate-100">
+<div id="problem-title" class="text-3xl font-extrabold mb-6"></div>
+<div id="steps-wrapper"></div>
+</main>
+
+<script>
+
+/* ============================
+   安全 AudioContext
+============================ */
+let audioCtx
+function getAudio(){
+if(!audioCtx){
+audioCtx=new (window.AudioContext||window.webkitAudioContext)()
+}
+return audioCtx
+}
+function playSound(type){
+const ctx=getAudio()
+if(ctx.state==="suspended")ctx.resume()
+const osc=ctx.createOscillator()
+const gain=ctx.createGain()
+osc.connect(gain)
+gain.connect(ctx.destination)
+const now=ctx.currentTime
+if(type==="correct"){
+osc.frequency.setValueAtTime(500,now)
+osc.frequency.exponentialRampToValueAtTime(900,now+.2)
+gain.gain.setValueAtTime(.3,now)
+gain.gain.exponentialRampToValueAtTime(.01,now+.4)
+osc.start();osc.stop(now+.4)
+}else if(type==="error"){
+osc.frequency.setValueAtTime(200,now)
+gain.gain.setValueAtTime(.3,now)
+gain.gain.exponentialRampToValueAtTime(.01,now+.2)
+osc.start();osc.stop(now+.2)
+}else{
+osc.frequency.setValueAtTime(800,now)
+gain.gain.setValueAtTime(.15,now)
+gain.gain.exponentialRampToValueAtTime(.01,now+.05)
+osc.start();osc.stop(now+.05)
+}
+}
+
+/* ============================
+   狀態管理
+============================ */
+const STORAGE_KEY="multi_math_score"
+let state={score:0,currentStep:0}
+
+function loadScore(){
+const saved=localStorage.getItem(STORAGE_KEY)
+if(saved)state.score=parseInt(saved)
+document.getElementById("score-display").textContent=state.score
+}
+function saveScore(){
+localStorage.setItem(STORAGE_KEY,state.score)
+}
+
+/* ============================
+   題目（示範保留第一題）
+============================ */
+
+const problem={
+title:"384 × 465 = ?",
+steps:[
+{
+instruction:"步驟一：先算 465 × 4",
+expression:`
+<div class="math-table">
+<div class="cell num">4</div>
+<div class="cell num">6</div>
+<div class="cell num">5</div>
+<div class="cell operator">×</div>
+<div class="cell num">4</div>
+<div class="cell border-bottom-line"></div>
+<div class="cell slot ans-slot" data-ans="1"></div>
+<div class="cell slot ans-slot" data-ans="8"></div>
+<div class="cell slot ans-slot" data-ans="6"></div>
+<div class="cell slot ans-slot" data-ans="0"></div>
+</div>`,
+options:["1","8","6","0","2","5"]
+}
+]
+}
+
+/* ============================
+   初始化
+============================ */
+window.addEventListener("load",()=>{
+loadScore()
+document.getElementById("problem-title").innerHTML=problem.title
+renderStep()
+})
+
+function renderStep(){
+const wrapper=document.getElementById("steps-wrapper")
+wrapper.innerHTML=""
+const step=problem.steps[state.currentStep]
+const div=document.createElement("div")
+div.innerHTML=`
+<h2 class="text-2xl font-bold mb-4">${step.instruction}</h2>
+${step.expression}
+<div class="flex gap-4 mt-6 flex-wrap">
+${step.options.map(o=>`<button class="option-btn" data-val="${o}">${o}</button>`).join("")}
+<button class="option-btn bg-blue-600 text-white" id="checkBtn">檢查</button>
+</div>
+`
+wrapper.appendChild(div)
+}
+
+/* ============================
+   事件代理（完全安全）
+============================ */
+
+document.addEventListener("click",function(e){
+
+if(e.target.matches(".ans-slot")){
+document.querySelectorAll(".ans-slot").forEach(s=>s.classList.remove("selected"))
+e.target.classList.add("selected")
+playSound("click")
+}
+
+if(e.target.matches(".option-btn") && !e.target.id){
+const val=e.target.dataset.val
+const selected=document.querySelector(".ans-slot.selected")
+if(selected){
+selected.textContent=val
+selected.classList.remove("selected","error")
+}
+playSound("click")
+}
+
+if(e.target.id==="checkBtn"){
+checkAnswer()
+}
+
+})
+
+function checkAnswer(){
+const slots=document.querySelectorAll(".ans-slot")
+let correct=true
+slots.forEach(slot=>{
+if(slot.textContent!==slot.dataset.ans){
+correct=false
+slot.classList.add("error")
+}else{
+slot.classList.remove("error")
+slot.classList.add("correct")
+}
+})
+if(correct){
+state.score+=20
+saveScore()
+loadScore()
+playSound("correct")
+}else{
+playSound("error")
+}
+}
+
+</script>
 </body>
 </html>
