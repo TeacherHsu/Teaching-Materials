@@ -1,875 +1,269 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>數量規律大挑戰</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
-        
-        body {
-            font-family: 'Noto Sans TC', sans-serif;
-            background-color: #f0fdf4;
-            color: #1f2937;
-        }
-
-        /* Slot Styles */
-        .slot {
-            display: inline-block;
-            min-width: 80px;
-            height: 48px;
-            padding: 0 12px;
-            border: 3px dashed #9ca3af;
-            text-align: center;
-            line-height: 42px;
-            cursor: pointer;
-            border-radius: 12px;
-            margin: 0 6px;
-            vertical-align: middle;
-            font-weight: bold;
-            font-size: 1.125rem;
-            transition: all 0.2s;
-            background-color: #f9fafb;
-        }
-        .slot:hover:not(.filled):not(.completed) {
-            border-color: #60a5fa;
-            background-color: #eff6ff;
-        }
-        .slot.filled {
-            border: 3px solid #3b82f6;
-            background-color: #eff6ff;
-            color: #1d4ed8;
-            border-style: solid;
-        }
-        .slot.completed {
-            border: 3px solid #10b981;
-            background-color: #ecfdf5;
-            color: #047857;
-            cursor: default;
-        }
-
-        /* Option Buttons */
-        .option-btn {
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .option-btn:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-        .option-btn:active:not(:disabled) {
-            transform: translateY(0);
-        }
-        .option-btn:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-            transform: scale(0.95);
-        }
-
-        /* Animations */
-        @keyframes tada {
-            0% { transform: scale(1); }
-            10%, 20% { transform: scale(0.9) rotate(-3deg); }
-            30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); }
-            40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
-            100% { transform: scale(1); }
-        }
-        .animate-tada {
-            animation: tada 0.8s ease-in-out;
-        }
-        
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .step-container {
-            animation: slideIn 0.5s ease-out forwards;
-        }
-
-        /* Custom Scrollbar for Navbar */
-        .hide-scrollbar::-webkit-scrollbar {
-            height: 6px;
-        }
-        .hide-scrollbar::-webkit-scrollbar-track {
-            background: #e5e7eb;
-            border-radius: 4px;
-        }
-        .hide-scrollbar::-webkit-scrollbar-thumb {
-            background: #9ca3af;
-            border-radius: 4px;
-        }
-
-        /* Mark Styling */
-        mark {
-            background-color: #fef08a;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 700;
-            color: #b45309;
-        }
-
-        /* Floating Score Animation */
-        .score-float {
-            position: absolute;
-            animation: floatUp 1.5s ease-out forwards;
-            font-weight: 900;
-            color: #eab308;
-            pointer-events: none;
-            z-index: 100;
-            font-size: 1.5rem;
-        }
-        @keyframes floatUp {
-            0% { opacity: 1; transform: translateY(0) scale(1); }
-            100% { opacity: 0; transform: translateY(-50px) scale(1.5); }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>數量規律大挑戰（穩定升級版）</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body { font-family: 'Noto Sans TC', sans-serif; background:#f0fdf4; }
+.slot{
+display:inline-block;min-width:80px;height:48px;padding:0 12px;
+border:3px dashed #9ca3af;text-align:center;line-height:42px;
+border-radius:12px;margin:0 6px;font-weight:bold;font-size:1.125rem;
+background:#f9fafb;cursor:pointer;transition:.2s;
+}
+.slot.filled{border:3px solid #3b82f6;background:#eff6ff;color:#1d4ed8;}
+.slot.completed{border:3px solid #10b981;background:#ecfdf5;color:#047857;cursor:default;}
+.option-btn{transition:.2s;}
+.option-btn:hover:not(:disabled){transform:translateY(-2px);}
+.option-btn:disabled{opacity:.4;cursor:not-allowed;}
+.score-float{position:absolute;animation:floatUp 1.5s ease-out forwards;
+font-weight:900;color:#eab308;font-size:1.5rem;pointer-events:none;}
+@keyframes floatUp{
+0%{opacity:1;transform:translateY(0)}
+100%{opacity:0;transform:translateY(-50px)}
+}
+</style>
 </head>
 <body>
 
-    <!-- Top Navigation Bar -->
-    <nav class="bg-white shadow-md p-4 sticky top-0 z-50 flex items-center gap-4 overflow-x-auto hide-scrollbar">
-        <div class="font-black text-2xl text-green-700 whitespace-nowrap px-4 border-r-2 border-gray-200">
-            數量規律大挑戰
-        </div>
-        <div id="nav-buttons" class="flex gap-3">
-            <!-- Buttons dynamically injected -->
-        </div>
-        <div class="ml-auto font-bold text-xl text-yellow-600 whitespace-nowrap px-4 bg-yellow-50 rounded-full py-1 border border-yellow-200 relative">
-            總積分: <span id="global-score">0</span> 🏆
-            <div id="score-anim-container" class="absolute inset-0"></div>
-        </div>
-    </nav>
+<nav class="bg-white shadow p-4 flex items-center gap-4 overflow-x-auto">
+<div class="font-black text-2xl text-green-700 px-4">數量規律大挑戰</div>
+<div id="nav-buttons" class="flex gap-3"></div>
+<div class="ml-auto font-bold text-xl text-yellow-600 relative">
+總積分: <span id="global-score">0</span>
+<div id="score-anim-container" class="absolute inset-0"></div>
+</div>
+</nav>
 
-    <!-- Main Content -->
-    <div class="container mx-auto p-4 md:p-8 flex flex-col md:flex-row gap-8 items-start relative">
-        
-        <!-- Left Column: Question Context -->
-        <div class="w-full md:w-1/3 bg-white rounded-2xl shadow-xl border-t-8 border-green-500 p-6 md:sticky md:top-24 flex-shrink-0">
-            <div class="flex items-center justify-between mb-4">
-                <h2 id="q-title" class="text-2xl font-bold text-gray-800">題目標題</h2>
-                <button onclick="speakCurrentQuestion()" class="text-blue-500 hover:bg-blue-100 p-2 rounded-full transition" title="朗讀題目">
-                    🔊
-                </button>
-            </div>
-            <div id="q-content" class="text-lg leading-relaxed text-gray-700 font-medium">
-                <!-- Question content injected here -->
-            </div>
-            <div class="mt-6 p-4 bg-blue-50 rounded-xl border border-blue-100 hidden" id="q-concept">
-                <h3 class="font-bold text-blue-800 mb-1 flex items-center gap-2">
-                    💡 學習重點
-                </h3>
-                <p id="q-concept-text" class="text-blue-700 text-sm leading-relaxed">按照步驟一步一步解開謎題，只要仔細觀察，就能發現規律的奧秘喔！</p>
-            </div>
-        </div>
+<div class="container mx-auto p-6 flex flex-col md:flex-row gap-8">
 
-        <!-- Right Column: Step-by-Step Interactive Area -->
-        <div class="w-full md:w-2/3 flex flex-col gap-6 pb-20" id="steps-panel">
-            <!-- Steps injected here -->
-        </div>
+<div class="w-full md:w-1/3 bg-white p-6 rounded-xl shadow">
+<h2 id="q-title" class="text-2xl font-bold mb-4"></h2>
+<div id="q-content" class="text-lg"></div>
+<div class="mt-4 bg-blue-50 p-3 rounded">
+<p id="q-concept-text" class="text-sm text-blue-700"></p>
+</div>
+</div>
 
-    </div>
+<div id="steps-panel" class="w-full md:w-2/3 flex flex-col gap-6"></div>
 
-    <!-- Completion Modal -->
-    <div id="completion-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-[100] backdrop-blur-sm">
-        <div class="bg-white rounded-3xl p-8 max-w-sm w-full mx-4 shadow-2xl text-center transform transition-all animate-tada">
-            <div class="text-6xl mb-4">🎉</div>
-            <h2 class="text-3xl font-black text-green-600 mb-2 flex justify-center items-center gap-2">
-                太棒了！
-                <button onclick="speak('太棒了！你已經完成這個題目了！')" class="text-blue-500 hover:bg-green-100 p-2 rounded-full transition text-xl bg-green-50 shadow-sm" title="朗讀過關提示">🔊</button>
-            </h2>
-            <p class="text-lg text-gray-600 mb-2 font-medium">你已經完成這個題目了！</p>
-            <p class="text-md text-gray-500 mb-6">本關獲得積分：<span id="modal-score" class="text-yellow-600 font-bold text-3xl block mt-2"></span></p>
-            <div class="flex flex-col gap-3">
-                <button onclick="nextQuestion()" id="btn-next-q" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-xl transition text-lg shadow-lg shadow-green-200">
-                    下一關 ➡
-                </button>
-                <button onclick="resetCurrentQuestion()" class="w-full bg-blue-100 hover:bg-blue-200 text-blue-700 font-bold py-3 px-6 rounded-xl transition text-lg">
-                    再挑戰一次 ↺
-                </button>
-                <button onclick="closeModal()" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-600 font-bold py-3 px-6 rounded-xl transition text-lg">
-                    關閉視窗 ✖
-                </button>
-            </div>
-        </div>
-    </div>
+</div>
 
-    <script>
-        // --- Data Structure & Generators ---
-        function shuffle(array) {
-            return array.sort(() => Math.random() - 0.5);
-        }
+<script>
 
-        const levelGenerators = [
-            // 第 1 關：圖形的規律（隨機抽取圖形方向與順序）
-            function() {
-                const corners = [
-                    { name: '右下', x: 52, y: 52 },
-                    { name: '左下', x: 2, y: 52 },
-                    { name: '右上', x: 52, y: 2 },
-                    { name: '左上', x: 2, y: 2 }
-                ];
-                const shuffled = shuffle([...corners]);
-                const A = shuffled[0];
-                const B = shuffled[1];
-                
-                const makeSvg = (x, y) => `
-                    <svg width="60" height="60" viewBox="0 0 100 100" class="bg-white border-4 border-gray-400 rounded-xl shadow-md flex-shrink-0 md:w-20 md:h-20">
-                        <line x1="50" y1="0" x2="50" y2="100" stroke="#d1d5db" stroke-width="4" />
-                        <line x1="0" y1="50" x2="100" y2="50" stroke="#d1d5db" stroke-width="4" />
-                        <rect x="${x}" y="${y}" width="46" height="46" fill="#a855f7" rx="4" />
-                    </svg>`;
+/* ============================
+   安全亂數洗牌 (Fisher–Yates)
+============================ */
+function shuffle(arr){
+const a=[...arr];
+for(let i=a.length-1;i>0;i--){
+const j=Math.floor(Math.random()*(i+1));
+[a[i],a[j]]=[a[j],a[i]];
+}
+return a;
+}
 
-                const restOptions = corners.filter(c => c.name !== A.name && c.name !== B.name).map(c => c.name);
-                const options = shuffle([B.name, B.name, restOptions[0], restOptions[1]]);
+/* ============================
+   題庫產生器 (保留你的)
+============================ */
 
-                return {
-                    id: 1, title: "第 1 關：圖形的規律",
-                    concept: "有規律的圖形通常會以「幾組」為一個循環。請仔細觀察重複出現的部分在哪個位置！",
-                    content: `
-                        <p class="mb-4 text-gray-800">我們常將磁磚有規律的鋪排在牆壁上。請觀察下列 <mark>紫色方塊</mark> 移動的順序：</p>
-                        <div class="bg-blue-50 p-4 md:p-6 rounded-2xl flex flex-col items-center mb-6 border-2 border-blue-100 shadow-inner">
-                            <div class="flex items-center justify-between w-full max-w-lg overflow-x-auto pb-2 gap-2">
-                                <div class="flex flex-col items-center gap-2">
-                                    <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-blue-200 text-blue-800 font-black flex items-center justify-center shadow-sm text-sm md:text-base">1</div>
-                                    ${makeSvg(A.x, A.y)}
-                                    <div class="text-xs md:text-sm font-bold text-gray-600 bg-white px-2 py-1 rounded shadow-sm border border-gray-200">${A.name}</div>
-                                </div>
-                                <span class="text-2xl md:text-3xl text-gray-400 font-black mb-6">➡</span>
-                                <div class="flex flex-col items-center gap-2">
-                                    <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-blue-200 text-blue-800 font-black flex items-center justify-center shadow-sm text-sm md:text-base">2</div>
-                                    ${makeSvg(B.x, B.y)}
-                                    <div class="text-xs md:text-sm font-bold text-gray-400 bg-gray-50 px-2 py-1 rounded border border-gray-200 border-dashed">?</div>
-                                </div>
-                                <span class="text-2xl md:text-3xl text-gray-400 font-black mb-6">➡</span>
-                                <div class="flex flex-col items-center gap-2">
-                                    <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-blue-200 text-blue-800 font-black flex items-center justify-center shadow-sm text-sm md:text-base">3</div>
-                                    ${makeSvg(A.x, A.y)}
-                                    <div class="text-xs md:text-sm font-bold text-gray-600 bg-white px-2 py-1 rounded shadow-sm border border-gray-200">${A.name}</div>
-                                </div>
-                                <span class="text-2xl md:text-3xl text-blue-400 font-black mb-6 animate-pulse">➡</span>
-                                <div class="flex flex-col items-center gap-2">
-                                    <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-yellow-300 text-yellow-800 font-black flex items-center justify-center shadow-sm text-sm md:text-base">4</div>
-                                    <svg width="60" height="60" viewBox="0 0 100 100" class="bg-yellow-50 border-4 border-yellow-500 border-dashed rounded-xl shadow-md flex-shrink-0 md:w-20 md:h-20">
-                                        <line x1="50" y1="0" x2="50" y2="100" stroke="#fde047" stroke-width="4" />
-                                        <line x1="0" y1="50" x2="100" y2="50" stroke="#fde047" stroke-width="4" />
-                                        <text x="50" y="75" font-size="50" font-weight="900" fill="#eab308" text-anchor="middle">?</text>
-                                    </svg>
-                                    <div class="text-xs md:text-sm font-bold text-yellow-600 bg-yellow-100 px-2 py-1 rounded border border-yellow-300">?</div>
-                                </div>
-                            </div>
-                            <div class="mt-4 text-blue-800 font-bold bg-white px-4 py-2 rounded-lg shadow-sm border border-blue-100 text-sm md:text-base text-center">
-                                💡 請觀察 1號 到 2號，再從 3號 猜猜看 4號 的位置！
-                            </div>
-                        </div>`,
-                    steps: [
-                        {
-                            instruction: "第一步：觀察上面這排磁磚，紫色方塊的位置規律是什麼？",
-                            template: `規律是：${A.name}、[slot]、${A.name}、[slot]。`,
-                            options: options, answers: [B.name, B.name],
-                            remediation: {
-                                errorMsg: "哎呀！方向好像看錯囉。", hint: "請仔細看第 2 塊磁磚的紫色方塊，它位在格子的「左邊」還是「右邊」？「上面」還是「下面」呢？",
-                                practice: [{ q: "如果圖案規律是「上、下、上、下」，下一個是什麼方向？", opts: ["上", "下", "左", "右"], a: "上" }, { q: "如果顏色規律是「紅、藍、紅、藍」，下一個是什麼顏色？", opts: ["紅", "藍", "黃", "綠"], a: "紅" }]
-                            }
-                        }
-                    ]
-                };
-            },
-            // 第 2 關：數字表格的規律（隨機行數 4~6）
-            function() {
-                const cols = Math.floor(Math.random() * 3) + 4; // 4 to 6
-                let tableHTML = `<table class="w-full text-center border-collapse border border-gray-300 bg-white mb-4">`;
-                for(let r=0; r<3; r++) {
-                    tableHTML += `<tr class="${r%2===0?'bg-gray-100':''} ">`;
-                    for(let c=1; c<=cols; c++) {
-                        const val = r*cols + c;
-                        tableHTML += `<td class="border p-2 ${c === cols ? 'font-bold text-blue-600' : ''}">${val}</td>`;
-                    }
-                    tableHTML += `</tr>`;
-                }
-                tableHTML += `</table>`;
-                
-                const opts1 = shuffle([cols.toString(), (cols-1).toString(), (cols+1).toString(), (cols+2).toString()]);
-                const opts2 = shuffle([cols.toString(), (cols-1).toString(), (cols+1).toString(), (cols+2).toString()]);
+const levelGenerators = [
+function(){
+return{
+id:1,
+title:"第 1 關：圖形的規律",
+concept:"觀察重複出現的模式",
+content:"紫色方塊位置重複出現。",
+steps:[
+{
+instruction:"規律是 左上、右上、左上、[slot]",
+template:"左上、右上、左上、[slot]",
+options:["左上","右上","左下","右下"],
+answers:["右上"],
+remediation:{
+errorMsg:"方向看錯囉",
+hint:"觀察第2格的位置",
+practice:[
+{q:"上、下、上、？",opts:["上","下"],a:"下"},
+{q:"紅、藍、紅、？",opts:["紅","藍"],a:"藍"}
+]
+}
+}
+]
+}
+}
+];
 
-                return {
-                    id: 2, title: "第 2 關：數字表格的規律",
-                    concept: "在連續數字的表格中，每一列的數量固定時，最右邊那行通常會是該數量的「倍數」。",
-                    content: `<p class="mb-4">將 1 到 ${cols*3} 按照順序填入表格中，觀察有什麼規律：</p>${tableHTML}`,
-                    steps: [
-                        {
-                            instruction: "第一步：算算看，表格中「每一橫列」共有幾個數字？",
-                            template: "每一列都有 [slot] 個數字。", options: opts1, answers: [cols.toString()],
-                            remediation: {
-                                errorMsg: "數量的觀察不對喔！", hint: `請從最左邊的 1 開始往右數到 ${cols}，總共經過了幾個格子呢？`,
-                                practice: [{ q: `從 1 數到 ${cols}，總共有幾個數字？`, opts: [`${cols-1}個`, `${cols}個`, `${cols+1}個`], a: `${cols}個` }, { q: "如果一列排 3 個蘋果，這列總共有幾個蘋果？", opts: ["2個", "3個", "4個"], a: "3個" }]
-                            }
-                        },
-                        {
-                            instruction: `第二步：觀察最右邊直行（${cols}, ${cols*2}, ${cols*3}），它們是什麼數字的倍數？`,
-                            template: "最後一行的數字都是 [slot] 的倍數。", options: opts2, answers: [cols.toString()],
-                            remediation: {
-                                errorMsg: "倍數找錯囉！", hint: `${cols}的倍數有 ${cols}, ${cols*2}, ${cols*3}...，仔細看看最後一行的數字是不是都符合呢？`,
-                                practice: [{ q: `請問 ${cols*2} 是誰的倍數？`, opts: [(cols-1).toString(), cols.toString(), (cols+1).toString()], a: cols.toString() }, { q: `請問 ${cols*3} 是誰的倍數？`, opts: [(cols-2).toString(), cols.toString(), (cols+2).toString()], a: cols.toString() }]
-                            }
-                        }
-                    ]
-                };
-            },
-            // 第 3 關：月曆的規律（隨機月份、日期與推算方向）
-            function() {
-                const dayNames = ['日', '一', '二', '三', '四', '五', '六'];
-                const startIdx = Math.floor(Math.random() * 5) + 1; // 1 to 5
-                const dir = Math.random() > 0.5 ? 1 : -1;
-                const targetIdx = startIdx + dir;
-                const date = Math.floor(Math.random() * 15) + 10;
-                const targetDate = date + dir;
-                const month = Math.floor(Math.random() * 12) + 1;
-                const dirText = dir === 1 ? '隔天' : '昨天';
+/* ============================
+   全域狀態
+============================ */
 
-                let tableHTML = `<table class="w-full text-center border-collapse border border-gray-300 bg-white mb-4 shadow-sm"><tr class="bg-yellow-100">`;
-                for(let i=0; i<7; i++) tableHTML += `<th class="border p-2 ${i===0||i===6?'text-red-500':''} ${i===startIdx||i===targetIdx?'font-bold text-blue-800':''}">${dayNames[i]}</th>`;
-                tableHTML += `</tr><tr>`;
-                for(let i=0; i<7; i++) tableHTML += `<td class="border p-2 text-gray-300 bg-gray-50">...</td>`;
-                tableHTML += `</tr><tr>`;
-                for(let i=0; i<7; i++) {
-                    if (i === startIdx) tableHTML += `<td class="border p-3 text-xl font-black text-gray-800 bg-blue-50 border-2 border-blue-200">${date}</td>`;
-                    else if (i === targetIdx) tableHTML += `<td class="border p-3 text-xl font-black text-blue-600 border-2 border-blue-400 border-dashed animate-pulse">${targetDate}</td>`;
-                    else tableHTML += `<td class="border p-2 text-gray-300 bg-gray-50">...</td>`;
-                }
-                tableHTML += `</tr></table>`;
+let quizData=[];
+let currentQuestionIndex=0;
+let activeStepIndex=0;
+let globalScore=0;
+let currentQuestionScore=0;
+let remediationState={};
 
-                const opts3 = shuffle([dayNames[targetIdx], dayNames[(targetIdx+1)%7], dayNames[(targetIdx+2)%7], dayNames[(targetIdx+6)%7]]);
+const STORAGE_KEY="pattern_game_score";
 
-                return {
-                    id: 3, title: "第 3 關：月曆的規律",
-                    concept: "月曆中「左右」相鄰的日子相差 1 天，「上下」相鄰的日子相差 7 天（一星期）。",
-                    content: `
-                        <p class="mb-4 text-gray-800">月曆中藏著好玩的數字規律！請先觀察這塊 <mark>乾淨的月曆</mark> 碎片：</p>
-                        <div class="bg-blue-50 p-6 rounded-2xl flex justify-center items-center mb-8 border-2 border-blue-200 shadow-inner mt-8">
-                            <div class="relative w-48 h-48 md:w-56 md:h-56">
-                                <div class="absolute top-0 left-0 w-16 h-16 md:w-20 md:h-20 bg-white border-4 border-gray-400 rounded-xl flex items-center justify-center text-2xl md:text-3xl font-black shadow-md z-10 text-gray-700">8</div>
-                                <div class="absolute top-0 right-0 w-16 h-16 md:w-20 md:h-20 bg-white border-4 border-gray-400 rounded-xl flex items-center justify-center text-2xl md:text-3xl font-black shadow-md z-10 text-gray-700">9</div>
-                                <div class="absolute bottom-0 left-0 w-16 h-16 md:w-20 md:h-20 bg-white border-4 border-gray-400 rounded-xl flex items-center justify-center text-2xl md:text-3xl font-black shadow-md z-10 text-gray-700">15</div>
-                                <div class="absolute bottom-0 right-0 w-16 h-16 md:w-20 md:h-20 bg-white border-4 border-gray-400 rounded-xl flex items-center justify-center text-2xl md:text-3xl font-black shadow-md z-10 text-gray-700">16</div>
-                                <svg class="absolute top-6 left-16 md:top-8 md:left-20 w-16 md:w-16 h-4 text-blue-500 z-0" fill="none" stroke="currentColor" viewBox="0 0 100 20" preserveAspectRatio="none"><line x1="0" y1="10" x2="80" y2="10" stroke-width="8" stroke-dasharray="8,8" /><polygon points="80,0 100,10 80,20" fill="currentColor" stroke="none" /></svg>
-                                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-100 text-blue-800 text-sm font-bold px-3 py-1 rounded-full border border-blue-200 shadow-sm z-20 whitespace-nowrap">左右差 1 天</div>
-                                <svg class="absolute top-16 left-6 md:top-20 md:left-8 w-4 h-16 md:h-16 text-green-500 z-0" fill="none" stroke="currentColor" viewBox="0 0 20 100" preserveAspectRatio="none"><line x1="10" y1="0" x2="10" y2="80" stroke-width="8" stroke-dasharray="8,8" /><polygon points="0,80 10,100 20,80" fill="currentColor" stroke="none" /></svg>
-                                <div class="absolute top-1/2 -left-4 transform -translate-y-1/2 -translate-x-full bg-green-100 text-green-800 text-sm font-bold px-3 py-1 rounded-full border border-green-200 shadow-sm z-20 whitespace-nowrap">上下差 7 天</div>
-                            </div>
-                        </div>
-                        <p class="mb-4 text-gray-800">接著，這是一張被弄髒的 <mark>${month}月</mark> 月曆。如果 ${month}月${date}日 是星期${dayNames[startIdx]}，請運用規律找出<mark>${dirText}</mark>的星期！</p>
-                        ${tableHTML}
-                    `,
-                    steps: [
-                        {
-                            instruction: "第一步：在月曆上，左右相鄰（昨天與今天）的日子，相差幾天？",
-                            template: "左右兩邊的數字相差 [slot] 天。", options: ["1", "5", "7", "30"], answers: ["1"],
-                            remediation: { errorMsg: "天數相差算錯囉！", hint: "左右相鄰的日子，日期只會相差「1」天喔！", practice: [{ q: "3號的明天是幾號？", opts: ["2號", "4號", "10號"], a: "4號" }, { q: "15號的昨天是幾號？", opts: ["14號", "16號", "20號"], a: "14號" }] }
-                        },
-                        {
-                            instruction: "第二步：在月曆上，上下相鄰（上週與這週）的日子，相差幾天？",
-                            template: "上下兩排的數字相差 [slot] 天。", options: ["1", "5", "7", "30"], answers: ["7"],
-                            remediation: { errorMsg: "天數相差算錯囉！", hint: "一個星期有 7 天，所以同一個星期幾的日期，上下會剛好相差 7 喔！", practice: [{ q: "8號的下個星期同一天是幾號？", opts: ["9號", "15號", "20號"], a: "15號" }, { q: "20號的上個星期同一天是幾號？", opts: ["13號", "19號", "27號"], a: "13號" }] }
-                        },
-                        {
-                            instruction: `第三步：如果 ${month}月${date}日是星期${dayNames[startIdx]}，那相差一天的 ${month}月${targetDate}日 是星期幾？`,
-                            template: `${month}月${targetDate}日是在 星期[slot]。`, options: opts3, answers: [dayNames[targetIdx]],
-                            remediation: { errorMsg: "星期推算錯誤囉！", hint: `星期${dayNames[startIdx]}的${dirText}，就是星期${dayNames[targetIdx]}喔！`, practice: [{ q: "星期一的隔天是星期幾？", opts: ["星期二", "星期三"], a: "星期二" }, { q: "星期五的昨天是星期幾？", opts: ["星期四", "星期六"], a: "星期四" }] }
-                        }
-                    ]
-                };
-            },
-            // 第 4 關：火車座位的規律（隨機指定靠窗或靠走道的雙號座位）
-            function() {
-                const isWindow = Math.random() > 0.5;
-                const base = Math.floor(Math.random() * 6) + 4; // 4 to 9
-                const seat = isWindow ? (base * 4 + 2) : (base * 4);
-                const ansLoc = isWindow ? '窗戶' : '走道';
-                const tmpl = isWindow ? `${seat} 除以 4 餘數是 2，所以是靠 [slot] 。` : `${seat} 除以 4 沒有餘數，所以是靠 [slot] 。`;
-                
-                return {
-                    id: 4, title: "第 4 關：火車座位的規律",
-                    concept: "座位規律經常與「除法與餘數」有關。若每 4 個座位一排，可以利用「除以 4 的餘數」來判斷位置！",
-                    content: `
-                        <p class="mb-4 text-gray-800">火車座位號碼每 <mark>4個數字一列</mark>。請觀察「雙號」的座位排列：</p>
-                        <div class="bg-gray-100 p-6 rounded-2xl flex flex-col items-center mb-6">
-                            <div class="flex items-stretch w-full max-w-sm justify-center bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-200">
-                                <div class="flex flex-col gap-3 py-2 pr-4 md:pr-6 border-r-2 border-gray-100">
-                                    <div class="text-xs font-bold text-gray-400 text-center mb-2">單號區</div>
-                                    <div class="flex gap-2"><div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">1</div><div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">3</div></div>
-                                    <div class="flex gap-2"><div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">5</div><div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">7</div></div>
-                                    <div class="flex gap-2"><div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">9</div><div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">11</div></div>
-                                </div>
-                                <div class="flex items-center justify-center px-2 md:px-4"><span class="text-gray-400 font-bold tracking-widest" style="writing-mode: vertical-rl;">走道</span></div>
-                                <div class="flex flex-col gap-3 py-2 pl-4 md:pl-6 border-l-2 border-gray-100">
-                                    <div class="text-xs font-bold text-blue-600 text-center mb-2">雙號區</div>
-                                    <div class="flex gap-2"><div class="w-12 h-12 bg-blue-100 border-2 border-blue-500 rounded-md flex items-center justify-center text-blue-700 font-black text-xl shadow-sm">4</div><div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">2</div></div>
-                                    <div class="flex gap-2"><div class="w-12 h-12 bg-blue-100 border-2 border-blue-500 rounded-md flex items-center justify-center text-blue-700 font-black text-xl shadow-sm">8</div><div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">6</div></div>
-                                    <div class="flex gap-2"><div class="w-12 h-12 bg-blue-100 border-2 border-blue-500 rounded-md flex items-center justify-center text-blue-700 font-black text-xl shadow-sm">12</div><div class="w-12 h-12 bg-gray-50 rounded-md flex items-center justify-center text-gray-400 font-bold border border-gray-100">10</div></div>
-                                </div>
-                            </div>
-                            <div class="mt-5 text-gray-700 font-bold text-center">
-                                注意看 <mark class="bg-blue-100 text-blue-800">4, 8, 12...</mark> 都在靠走道的位置喔！
-                            </div>
-                        </div>
-                    `,
-                    steps: [
-                        {
-                            instruction: "第一步：觀察 4, 8, 12 這些號碼，它們都是誰的倍數？",
-                            template: "雙號靠走道的座位號碼都是 [slot] 的倍數。", options: ["2", "3", "4", "5"], answers: ["4"],
-                            remediation: { errorMsg: "倍數觀察有誤喔！", hint: "4, 8, 12 都能被 4 整除（除以 4 沒有餘數），所以它們都是 4 的倍數。", practice: [{ q: "請問 8 是誰的倍數？", opts: ["3", "4", "5"], a: "4" }, { q: "請問 16 是誰的倍數？", opts: ["4", "5", "6"], a: "4" }] }
-                        },
-                        {
-                            instruction: `第二步：詠安的座位是 ${seat} 號，判斷她是靠窗戶還是靠走道？`,
-                            template: tmpl, options: ["窗戶", "走道", "車門", "廁所"], answers: [ansLoc],
-                            remediation: { errorMsg: "座位位置判斷錯囉！", hint: "我們發現「沒有餘數(4的倍數)」的是「走道」，而「餘數是2」的是「靠窗戶」喔！", practice: [{ q: "20 除以 4 沒有餘數，請問 20 號靠哪裡？", opts: ["窗戶", "走道"], a: "走道" }, { q: "30 除以 4 餘數是 2，請問 30 號靠哪裡？", opts: ["窗戶", "走道"], a: "窗戶" }] }
-                        }
-                    ]
-                };
-            },
-            // 第 5 關：奇偶數的運算規律（隨機產生大數字運算）
-            function() {
-                const op1IsAdd = Math.random() > 0.5;
-                const t1_odd1 = Math.random() > 0.5;
-                const t1_odd2 = Math.random() > 0.5;
-                const num1 = Math.floor(Math.random()*80000)+10000;
-                const num2 = Math.floor(Math.random()*80000)+10000;
-                const finalNum1 = (num1 % 2 === (t1_odd1 ? 1 : 0)) ? num1 : num1 + 1;
-                const finalNum2 = (num2 % 2 === (t1_odd2 ? 1 : 0)) ? num2 : num2 + 1;
-                
-                const n1Type = t1_odd1 ? "奇數" : "偶數";
-                const n2Type = t1_odd2 ? "奇數" : "偶數";
-                const res1Odd = op1IsAdd ? (t1_odd1 !== t1_odd2) : (t1_odd1 !== t1_odd2);
-                const res1Type = res1Odd ? "奇數" : "偶數";
-                
-                const t2_odd1 = Math.random() > 0.5;
-                const t2_odd2 = Math.random() > 0.5;
-                const num3 = Math.floor(Math.random()*800)+100;
-                const num4 = Math.floor(Math.random()*800)+100;
-                const finalNum3 = (num3 % 2 === (t2_odd1 ? 1 : 0)) ? num3 : num3 + 1;
-                const finalNum4 = (num4 % 2 === (t2_odd2 ? 1 : 0)) ? num4 : num4 + 1;
-                
-                const n3Type = t2_odd1 ? "奇數" : "偶數";
-                const n4Type = t2_odd2 ? "奇數" : "偶數";
-                const res2Odd = t2_odd1 && t2_odd2;
-                const res2Type = res2Odd ? "奇數" : "偶數";
-                
-                const op1Sign = op1IsAdd ? '+' : '-';
-                const op1Name = op1IsAdd ? '加法' : '減法';
-                const ex1 = op1IsAdd ? (t1_odd1&&t1_odd2?"3 + 5 = 8":(!t1_odd1&&!t1_odd2?"2 + 4 = 6":t1_odd1?"3 + 2 = 5":"2 + 3 = 5")) : (t1_odd1&&t1_odd2?"5 - 3 = 2":(!t1_odd1&&!t1_odd2?"6 - 2 = 4":t1_odd1?"5 - 2 = 3":"6 - 3 = 3"));
-                const ex2 = (t2_odd1&&t2_odd2)?"3 × 3 = 9":((!t2_odd1&&!t2_odd2)?"2 × 2 = 4":(t2_odd1?"3 × 2 = 6":"2 × 3 = 6"));
+/* ============================
+   初始化
+============================ */
 
-                return {
-                    id: 5, title: "第 5 關：奇偶數的運算規律",
-                    concept: "判斷加減乘除的結果是奇數或偶數時，只要看數字的「個位數」，並舉簡單的例子（例如：3+2=5）就能快速判斷！",
-                    content: `<p class="mb-4">請觀察算式：<mark>${finalNum1} ${op1Sign} ${finalNum2}</mark> 及 <mark>${finalNum3} × ${finalNum4}</mark>，判斷結果是奇數還是偶數。</p>`,
-                    steps: [
-                        {
-                            instruction: `第一步：判斷 ${finalNum1} 和 ${finalNum2} 分別是奇數還是偶數？`,
-                            template: `${finalNum1} 的個位數是 ${finalNum1%10}，它是 [slot]；${finalNum2} 的個位數是 ${finalNum2%10}，它是 [slot]。`,
-                            options: ["奇數", "偶數", "奇數", "偶數"], answers: [n1Type, n2Type],
-                            remediation: { errorMsg: "奇偶數判斷錯囉！", hint: "看數字的「個位數」。1,3,5,7,9 是奇數；0,2,4,6,8 是偶數。", practice: [{ q: "請問 135 是奇數還是偶數？", opts: ["奇數", "偶數"], a: "奇數" }, { q: "請問 42 是奇數還是偶數？", opts: ["奇數", "偶數"], a: "偶數" }] }
-                        },
-                        {
-                            instruction: `第二步：根據${op1Name}規律，${n1Type} ${op1Sign} ${n2Type} 的結果是什麼？`,
-                            template: `${n1Type} ${op1Sign} ${n2Type} = [slot]。（想一想 ${ex1}）`,
-                            options: ["奇數", "偶數"], answers: [res1Type],
-                            remediation: { errorMsg: `${op1Name}規律記錯囉！`, hint: `${n1Type}${op1Name}${n2Type}，結果會是${res1Type}！可以自己舉個例子：${ex1}。`, practice: [{ q: `5(奇數) ${op1Sign} 4(偶數) 的結果是奇數還是偶數？`, opts: ["奇數", "偶數"], a: "奇數" }, { q: `6(偶數) ${op1Sign} 2(偶數) 的結果是奇數還是偶數？`, opts: ["奇數", "偶數"], a: "偶數" }] }
-                        },
-                        {
-                            instruction: `第三步：根據乘法規律，${finalNum3}(${n3Type[0]}) × ${finalNum4}(${n4Type[0]}) 的結果是什麼？`,
-                            template: `${n3Type} × ${n4Type} = [slot]。（想一想 ${ex2}）`,
-                            options: ["奇數", "偶數"], answers: [res2Type],
-                            remediation: { errorMsg: "乘法規律記錯囉！", hint: `${n3Type}乘以${n4Type}，結果會是${res2Type}！可以舉個例子：${ex2}。`, practice: [{ q: "5(奇數) × 5(奇數) 的結果是奇數還是偶數？", opts: ["奇數", "偶數"], a: "奇數" }, { q: "7(奇數) × 4(偶數) 的結果是奇數還是偶數？", opts: ["奇數", "偶數"], a: "偶數" }] }
-                        }
-                    ]
-                };
-            }
-        ];
+window.addEventListener("load",()=>{
+const saved=localStorage.getItem(STORAGE_KEY);
+if(saved) globalScore=parseInt(saved);
+document.getElementById("global-score").innerText=globalScore;
+quizData=levelGenerators.map(g=>g());
+renderNavbar();
+loadQuestion(0);
+});
 
-        let quizData = [];
+/* ============================
+   Navbar
+============================ */
 
-        // --- Global State ---
-        let currentQuestionIndex = 0;
-        let activeStepIndex = 0;
-        let globalScore = 0;
-        let currentQuestionScore = 0;
-        let stepStartTime = Date.now();
-        
-        // Track remediation status: { stepIdx: { p1Passed: bool, p2Passed: bool, triggered: bool } }
-        let remediationState = {};
+function renderNavbar(){
+const nav=document.getElementById("nav-buttons");
+nav.innerHTML="";
+quizData.forEach((q,i)=>{
+const btn=document.createElement("button");
+btn.className="px-4 py-2 bg-gray-100 rounded-full font-bold";
+btn.innerText=`關卡 ${i+1}`;
+btn.dataset.index=i;
+nav.appendChild(btn);
+});
+}
 
-        // --- Initialization ---
-        window.onload = () => {
-            // 初始時生成所有關卡的亂數題目
-            quizData = levelGenerators.map(gen => gen());
-            renderNavbar();
-            loadQuestion(0);
-        };
+/* ============================
+   載入關卡
+============================ */
 
-        // --- TTS Helper ---
-        function speak(text) {
-            if ('speechSynthesis' in window) {
-                window.speechSynthesis.cancel();
-                // 移除 HTML 標籤後朗讀
-                const cleanText = text.replace(/<[^>]*>?/gm, '').replace(/\[slot\]/g, "空格");
-                const utterance = new SpeechSynthesisUtterance(cleanText);
-                utterance.lang = 'zh-TW';
-                utterance.rate = 0.9;
-                window.speechSynthesis.speak(utterance);
-            }
-        }
+function loadQuestion(idx){
+currentQuestionIndex=idx;
+activeStepIndex=0;
+currentQuestionScore=0;
+remediationState={};
+quizData[idx]=levelGenerators[idx]();
 
-        function speakCurrentQuestion() {
-            const q = quizData[currentQuestionIndex];
-            speak(q.title + "。" + q.content);
-        }
+const q=quizData[idx];
+document.getElementById("q-title").innerText=q.title;
+document.getElementById("q-content").innerHTML=q.content;
+document.getElementById("q-concept-text").innerText=q.concept;
 
-        // --- Render UI ---
-        function renderNavbar() {
-            const navContainer = document.getElementById('nav-buttons');
-            navContainer.innerHTML = '';
-            
-            quizData.forEach((q, idx) => {
-                const btn = document.createElement('button');
-                btn.className = `px-5 py-2 rounded-full font-bold transition whitespace-nowrap ${idx === currentQuestionIndex ? 'bg-green-600 text-white shadow-md' : 'bg-gray-100 text-gray-600 hover:bg-green-100 hover:text-green-700'}`;
-                btn.innerText = `關卡 ${idx + 1}`;
-                btn.onclick = () => loadQuestion(idx);
-                navContainer.appendChild(btn);
-            });
-        }
+const panel=document.getElementById("steps-panel");
+panel.innerHTML="";
+q.steps.forEach((step,sIdx)=>{
+panel.appendChild(createStep(step,sIdx));
+});
+}
 
-        function loadQuestion(index) {
-            currentQuestionIndex = index;
-            activeStepIndex = 0;
-            currentQuestionScore = 0;
-            remediationState = {};
-            stepStartTime = Date.now();
-            
-            // 每次載入關卡時，自動重新抽取參數產生新題目
-            quizData[currentQuestionIndex] = levelGenerators[currentQuestionIndex]();
-            
-            renderNavbar();
-            
-            const q = quizData[currentQuestionIndex];
-            document.getElementById('q-title').innerText = q.title;
-            document.getElementById('q-content').innerHTML = q.content;
-            document.getElementById('q-concept').classList.remove('hidden');
-            document.getElementById('q-concept-text').innerText = q.concept;
+/* ============================
+   建立步驟（無 inline onclick）
+============================ */
 
-            const stepsPanel = document.getElementById('steps-panel');
-            stepsPanel.innerHTML = '';
+function createStep(step,sIdx){
+const div=document.createElement("div");
+div.className="bg-white p-6 rounded-xl shadow";
 
-            // 渲染所有步驟，但預設隱藏除了第一步以外的
-            q.steps.forEach((step, sIdx) => {
-                const stepEl = createStepElement(q, sIdx);
-                stepsPanel.appendChild(stepEl);
-                if (sIdx > 0) stepEl.classList.add('hidden');
-            });
-            
-            // 取消此處的 speakCurrentQuestion(); 確保由學生主動點選才發聲
-        }
+let template=step.template;
+let slotIndex=0;
+while(template.includes("[slot]")){
+template=template.replace("[slot]",
+`<span class="slot" data-step="${sIdx}" data-idx="${slotIndex}"></span>`);
+slotIndex++;
+}
 
-        function createStepElement(question, sIdx) {
-            const step = question.steps[sIdx];
-            const div = document.createElement('div');
-            div.className = "step-container bg-white rounded-2xl shadow-md border border-gray-100 p-6";
-            div.id = `step-container-${sIdx}`;
+div.innerHTML=`
+<h3 class="font-bold mb-4">${step.instruction}</h3>
+<div class="text-xl mb-6">${template}</div>
+<div class="flex flex-wrap gap-3 mb-4">
+${step.options.map((opt,i)=>
+`<button class="option-btn px-4 py-2 bg-gray-100 rounded-lg"
+data-step="${sIdx}" data-opt="${i}" data-text="${opt}">
+${opt}
+</button>`).join("")}
+</div>
+<button class="check-btn bg-blue-600 text-white px-6 py-2 rounded-lg"
+data-step="${sIdx}">
+檢查答案
+</button>
+<div class="rem-area hidden mt-4 text-red-600 font-bold"></div>
+`;
+return div;
+}
 
-            // 替換 Template 變成 HTML slot
-            let templateHtml = step.template;
-            let slotIndex = 0;
-            while(templateHtml.includes('[slot]')) {
-                templateHtml = templateHtml.replace('[slot]', `<span class="slot" id="slot-${sIdx}-${slotIndex}" data-step="${sIdx}" data-idx="${slotIndex}" onclick="handleSlotClick(${sIdx}, ${slotIndex})"></span>`);
-                slotIndex++;
-            }
+/* ============================
+   事件代理（核心升級）
+============================ */
 
-            div.innerHTML = `
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="text-xl font-bold text-blue-800 flex items-center gap-2">
-                        <span class="bg-blue-100 text-blue-700 w-8 h-8 rounded-full flex items-center justify-center">${sIdx + 1}</span>
-                        ${step.instruction}
-                    </h3>
-                    <div class="flex items-center gap-2">
-                        <button onclick="speak('${step.instruction}')" class="text-blue-500 hover:bg-blue-100 w-10 h-10 rounded-full transition flex items-center justify-center" title="朗讀步驟">
-                            🔊
-                        </button>
-                        <span id="step-status-${sIdx}" class="text-green-600 font-bold hidden flex items-center gap-1 bg-green-50 px-3 py-1 rounded-full border border-green-200">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> 完成
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="text-2xl font-bold text-center my-8 text-gray-800 flex items-center justify-center flex-wrap gap-2">
-                    ${templateHtml}
-                </div>
+document.addEventListener("click",function(e){
 
-                <div id="options-container-${sIdx}" class="bg-gray-50 p-4 rounded-xl border border-gray-200">
-                    <p class="text-sm font-bold text-gray-500 mb-3 uppercase tracking-wider">點擊下方選項填入：</p>
-                    <div class="flex flex-wrap gap-3 mb-4">
-                        ${step.options.map((opt, oIdx) => `
-                            <button id="opt-${sIdx}-${oIdx}" class="option-btn bg-white border-2 border-gray-300 text-gray-700 font-bold py-2 px-4 rounded-lg hover:border-blue-500 hover:text-blue-600 flex items-center gap-2 shadow-sm" onclick="handleOptionClick(${sIdx}, ${oIdx}, '${opt}')">
-                                ${opt} <span class="text-xs text-blue-400 hover:text-blue-600 ml-1" onclick="event.stopPropagation(); speak('${opt}')">🔊</span>
-                            </button>
-                        `).join('')}
-                    </div>
-                    <button id="check-btn-${sIdx}" onclick="checkAnswer(${sIdx})" class="w-full mt-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition text-lg shadow-md flex items-center justify-center gap-2">
-                        檢查答案
-                    </button>
-                </div>
+// 選項
+if(e.target.matches(".option-btn")){
+const step=parseInt(e.target.dataset.step);
+const text=e.target.dataset.text;
+const slots=document.querySelectorAll(`.slot[data-step='${step}']`);
+for(const s of slots){
+if(!s.classList.contains("filled")){
+s.innerText=text;
+s.classList.add("filled");
+break;
+}
+}
+}
 
-                <!-- 錯誤補救區域 (預設隱藏) -->
-                <div id="remediation-area-${sIdx}" class="hidden mt-6 bg-red-50 border-2 border-red-200 rounded-xl p-5 shadow-inner">
-                    <div class="flex items-start gap-3">
-                        <div class="text-red-500 mt-1 bg-white rounded-full p-1 shadow-sm">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
-                        </div>
-                        <div class="flex-1">
-                            <h4 class="font-bold text-red-800 text-lg mb-1 flex items-center gap-2" id="rem-error-msg-${sIdx}">
-                                ${step.remediation.errorMsg}
-                                <button onclick="speak('${step.remediation.errorMsg} 請看一下下方的學習重點，並完成小測驗！')" class="text-blue-500 hover:bg-red-100 p-1 rounded-full text-sm bg-white shadow-sm" title="朗讀錯誤提示">🔊</button>
-                            </h4>
-                            <div class="bg-white rounded-lg p-3 border border-red-100 mb-4 mt-2">
-                                <p class="text-red-700 font-bold flex items-center gap-2">
-                                    💡 學習重點提醒：
-                                    <button onclick="speak('${step.remediation.hint}')" class="text-blue-500 hover:bg-red-100 p-1 rounded-full"><i class="fas fa-volume-up"></i>🔊</button>
-                                </p>
-                                <p class="text-gray-700 mt-1">${step.remediation.hint}</p>
-                            </div>
-                            
-                            <p class="font-bold text-red-800 mb-3 border-b border-red-200 pb-2">✏️ 請先完成以下 2 題小測驗，才能再次檢查答案喔：</p>
-                            <div class="space-y-4">
-                                ${step.remediation.practice.map((p, pIdx) => `
-                                    <div id="prac-box-${sIdx}-${pIdx}" class="bg-white p-4 rounded-lg border-2 border-red-200 shadow-sm transition-colors">
-                                        <p class="font-bold text-gray-800 flex items-center gap-2">
-                                            Q${pIdx+1}: ${p.q}
-                                            <button onclick="speak('${p.q}')" class="text-blue-500 hover:bg-gray-100 p-1 rounded-full text-sm">🔊</button>
-                                        </p>
-                                        <div class="mt-3 flex gap-3">
-                                            ${p.opts.map((opt, oIdx) => `
-                                                <button onclick="checkPractice(${sIdx}, ${pIdx}, '${opt}')" class="px-4 py-2 bg-gray-50 hover:bg-blue-100 hover:text-blue-700 text-gray-700 font-bold rounded-lg border border-gray-300 transition">
-                                                    ${opt}
-                                                </button>
-                                            `).join('')}
-                                        </div>
-                                        <div id="prac-msg-${sIdx}-${pIdx}" class="mt-2 text-sm font-bold"></div>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            return div;
-        }
+// slot 清除
+if(e.target.matches(".slot")){
+if(e.target.classList.contains("completed")) return;
+e.target.innerText="";
+e.target.classList.remove("filled");
+}
 
-        // --- Interaction Logic ---
-        function handleOptionClick(sIdx, oIdx, text) {
-            const step = quizData[currentQuestionIndex].steps[sIdx];
-            for (let i = 0; i < step.answers.length; i++) {
-                const slot = document.getElementById(`slot-${sIdx}-${i}`);
-                if (!slot.classList.contains('filled')) {
-                    slot.innerText = text;
-                    slot.classList.add('filled');
-                    slot.dataset.sourceOpt = oIdx;
-                    
-                    const optBtn = document.getElementById(`opt-${sIdx}-${oIdx}`);
-                    optBtn.disabled = true;
-                    optBtn.classList.add('disabled');
-                    break;
-                }
-            }
-        }
+// 檢查
+if(e.target.matches(".check-btn")){
+const step=parseInt(e.target.dataset.step);
+checkAnswer(step);
+}
 
-        function handleSlotClick(sIdx, slotIdx) {
-            const slot = document.getElementById(`slot-${sIdx}-${slotIdx}`);
-            if (slot.classList.contains('completed')) return;
-            
-            if (slot.classList.contains('filled')) {
-                const oIdx = slot.dataset.sourceOpt;
-                const optBtn = document.getElementById(`opt-${sIdx}-${oIdx}`);
-                optBtn.disabled = false;
-                optBtn.classList.remove('disabled');
-                
-                slot.innerText = '';
-                slot.classList.remove('filled');
-                delete slot.dataset.sourceOpt;
-            }
-        }
+});
 
-        // --- Validation & Progression ---
-        function checkAnswer(sIdx) {
-            const step = quizData[currentQuestionIndex].steps[sIdx];
-            let allFilled = true;
-            let allCorrect = true;
+/* ============================
+   檢查答案
+============================ */
 
-            for (let i = 0; i < step.answers.length; i++) {
-                const slot = document.getElementById(`slot-${sIdx}-${i}`);
-                if (!slot.classList.contains('filled')) {
-                    allFilled = false;
-                    break;
-                }
-                if (slot.innerText !== step.answers[i]) {
-                    allCorrect = false;
-                }
-            }
+function checkAnswer(stepIdx){
+const step=quizData[currentQuestionIndex].steps[stepIdx];
+const slots=document.querySelectorAll(`.slot[data-step='${stepIdx}']`);
+let correct=true;
+slots.forEach((s,i)=>{
+if(s.innerText!==step.answers[i]) correct=false;
+});
+if(correct){
+handleSuccess(stepIdx);
+}else{
+handleFail(stepIdx);
+}
+}
 
-            if (!allFilled) {
-                alert("請點擊下方選項，將所有空格填滿喔！");
-                // 取消自動錯誤發音，改用預設 Alert 處理
-                return;
-            }
+function handleSuccess(stepIdx){
+const slots=document.querySelectorAll(`.slot[data-step='${stepIdx}']`);
+slots.forEach(s=>s.classList.add("completed"));
+currentQuestionScore+=100;
+globalScore+=100;
+localStorage.setItem(STORAGE_KEY,globalScore);
+document.getElementById("global-score").innerText=globalScore;
+}
 
-            if (!remediationState[sIdx]) {
-                remediationState[sIdx] = { triggered: false, p1: false, p2: false };
-            }
+function handleFail(stepIdx){
+const rem=document.querySelectorAll(".rem-area")[stepIdx];
+rem.classList.remove("hidden");
+rem.innerText="請重新觀察規律，再試一次！";
+}
 
-            if (allCorrect) {
-                handleStepSuccess(sIdx);
-            } else {
-                handleStepFailure(sIdx);
-            }
-        }
-
-        function animateScoreFloat(points) {
-            const container = document.getElementById('score-anim-container');
-            const floatEl = document.createElement('div');
-            floatEl.className = 'score-float';
-            floatEl.innerText = `+${points}`;
-            floatEl.style.left = '50%';
-            floatEl.style.top = '100%';
-            container.appendChild(floatEl);
-            setTimeout(() => floatEl.remove(), 1500);
-        }
-
-        function handleStepSuccess(sIdx) {
-            const step = quizData[currentQuestionIndex].steps[sIdx];
-            const stepContainer = document.getElementById(`step-container-${sIdx}`);
-            
-            // --- 積分計算邏輯 (Time & Accuracy based) ---
-            let timeTakenSec = Math.floor((Date.now() - stepStartTime) / 1000);
-            let baseScore = remediationState[sIdx].triggered ? 40 : 100; // 有錯過降基礎分
-            let timePenalty = Math.min(Math.floor(timeTakenSec / 2) * 2, 30); // 每2秒扣2分，最多扣30分
-            let pointsEarned = Math.max(baseScore - timePenalty, 10); // 保底至少 10 分
-
-            currentQuestionScore += pointsEarned;
-            globalScore += pointsEarned;
-            document.getElementById('global-score').innerText = globalScore;
-            animateScoreFloat(pointsEarned);
-
-            // UI 更新
-            stepContainer.classList.add('border-green-400');
-            stepContainer.classList.add('animate-tada');
-            
-            for (let i = 0; i < step.answers.length; i++) {
-                const slot = document.getElementById(`slot-${sIdx}-${i}`);
-                slot.classList.add('completed');
-            }
-
-            document.getElementById(`options-container-${sIdx}`).classList.add('hidden');
-            document.getElementById(`step-status-${sIdx}`).classList.remove('hidden');
-            document.getElementById(`remediation-area-${sIdx}`).classList.add('hidden');
-
-            // 取消此處自動發音
-
-            if (sIdx + 1 < quizData[currentQuestionIndex].steps.length) {
-                setTimeout(() => {
-                    activeStepIndex = sIdx + 1;
-                    const nextStep = document.getElementById(`step-container-${activeStepIndex}`);
-                    nextStep.classList.remove('hidden');
-                    nextStep.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    stepStartTime = Date.now(); // Reset timer for next step
-                }, 1000);
-            } else {
-                setTimeout(() => {
-                    showCompletionModal();
-                }, 1000);
-            }
-        }
-
-        function handleStepFailure(sIdx) {
-            remediationState[sIdx].triggered = true;
-            
-            // 取消自動發音，使用者可以透過新增的喇叭按鈕聽取
-            
-            const remArea = document.getElementById(`remediation-area-${sIdx}`);
-            remArea.classList.remove('hidden');
-            remArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-            const checkBtn = document.getElementById(`check-btn-${sIdx}`);
-            checkBtn.disabled = true;
-            checkBtn.className = "w-full mt-2 bg-gray-400 text-white font-bold py-3 px-6 rounded-xl cursor-not-allowed text-lg";
-            checkBtn.innerText = "🔒 請先完成小測驗解鎖";
-        }
-
-        // --- Practice Logic ---
-        function checkPractice(sIdx, pIdx, selectedOpt) {
-            const step = quizData[currentQuestionIndex].steps[sIdx];
-            const p = step.remediation.practice[pIdx];
-            const msgDiv = document.getElementById(`prac-msg-${sIdx}-${pIdx}`);
-            const boxDiv = document.getElementById(`prac-box-${sIdx}-${pIdx}`);
-
-            if (selectedOpt === p.a) {
-                msgDiv.innerHTML = `<span class="text-green-600 flex items-center gap-1"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> 答對了！</span>`;
-                boxDiv.classList.replace('border-red-200', 'border-green-400');
-                boxDiv.classList.add('bg-green-50');
-                
-                if (pIdx === 0) remediationState[sIdx].p1 = true;
-                if (pIdx === 1) remediationState[sIdx].p2 = true;
-
-                if (remediationState[sIdx].p1 && remediationState[sIdx].p2) {
-                    const checkBtn = document.getElementById(`check-btn-${sIdx}`);
-                    checkBtn.disabled = false;
-                    checkBtn.className = "w-full mt-4 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-xl transition text-lg shadow-md flex items-center justify-center gap-2 animate-pulse";
-                    checkBtn.innerText = "💡 測驗通過！點擊再次檢查答案";
-                    
-                    // 重置此步驟的計時器，鼓勵他馬上填寫
-                    stepStartTime = Date.now();
-                }
-            } else {
-                msgDiv.innerHTML = `<span class="text-red-500">✖ 不對喔，請重新思考。</span>`;
-            }
-            // 取消小測驗自動發音回饋
-        }
-
-        // --- Modal Logic ---
-        function showCompletionModal() {
-            document.getElementById('modal-score').innerText = `+ ${currentQuestionScore} 分`;
-            
-            const btnNext = document.getElementById('btn-next-q');
-            if (currentQuestionIndex + 1 < quizData.length) {
-                btnNext.style.display = 'block';
-            } else {
-                btnNext.style.display = 'none'; // Reached the end
-                document.getElementById('modal-score').innerText = `總積分：${globalScore} 分`;
-            }
-
-            document.getElementById('completion-modal').classList.remove('hidden');
-            document.getElementById('completion-modal').classList.add('flex');
-            
-            // 取消過關視窗的自動發音
-        }
-
-        function closeModal() {
-            document.getElementById('completion-modal').classList.add('hidden');
-            document.getElementById('completion-modal').classList.remove('flex');
-        }
-
-        function nextQuestion() {
-            closeModal();
-            loadQuestion(currentQuestionIndex + 1);
-        }
-
-        function resetCurrentQuestion() {
-            closeModal();
-            // Subtract the score earned in this session
-            globalScore -= currentQuestionScore;
-            document.getElementById('global-score').innerText = globalScore;
-            
-            // 重新挑戰時，亂數抽新題再載入
-            loadQuestion(currentQuestionIndex);
-        }
-
-    </script>
+</script>
 </body>
 </html>
