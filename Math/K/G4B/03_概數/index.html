@@ -3,229 +3,188 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>概數魔法｜無限練習版</title>
+<title>概數學習系統（UDL版）</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-.slot{
-display:inline-flex;
-min-width:64px;height:52px;
-border:3px dashed #cbd5e1;border-radius:10px;
-align-items:center;justify-content:center;
-font-size:24px;font-weight:bold;
-cursor:pointer;background:#f8fafc;
-margin:4px;
+body{font-size:22px;}
+.big{font-size:28px;font-weight:700;}
+.btn{
+padding:14px 22px;
+margin:8px;
+border-radius:12px;
+border:3px solid #1e40af;
+background:white;
 }
-.slot.filled{border-style:solid;border-color:#2563eb;background:#eff6ff;}
-.toast{
-position:fixed;bottom:30px;left:50%;
-transform:translateX(-50%);
-background:#111827;color:white;
-padding:12px 22px;border-radius:12px;
-opacity:0;transition:.25s;
-}
-.toast.show{opacity:1;}
+.btn:hover{background:#dbeafe;}
+.panel{border-radius:16px;padding:20px;}
 </style>
 </head>
 
-<body class="bg-slate-100 h-screen flex flex-col">
+<body class="bg-slate-100 min-h-screen flex flex-col">
 
-<header class="bg-white shadow p-4 flex justify-between">
-<b class="text-blue-600 text-xl">概數魔法｜無限挑戰</b>
-<div>⭐ <span id="score">0</span></div>
+<header class="bg-white shadow p-4 text-2xl font-bold text-blue-700">
+概數學習練習（一步一步來）
 </header>
 
-<main class="flex-1 p-6">
-<div id="question" class="text-2xl font-bold mb-6"></div>
-<div id="workspace"></div>
-<button id="next" class="mt-6 bg-green-600 text-white px-6 py-3 rounded-xl">下一題（重新生成）</button>
+<main class="flex flex-col md:flex-row flex-1">
+
+<!-- 左側：學習狀態 -->
+<div class="w-full md:w-1/3 bg-blue-50 p-6">
+<h2 class="text-xl font-bold mb-4">我正在學會：</h2>
+<div id="skillStatus"></div>
+</div>
+
+<!-- 右側：題目 -->
+<div class="flex-1 p-8">
+
+<div id="question" class="big mb-8"></div>
+
+<div id="answers"></div>
+
+<div class="mt-6">
+<button onclick="check()" class="btn bg-green-100">檢查答案</button>
+<button onclick="newQuestion()" class="btn bg-yellow-100">換一題</button>
+</div>
+
+<div id="feedback" class="mt-6 text-2xl font-bold"></div>
+
+</div>
 </main>
 
-<div id="toast" class="toast"></div>
-
 <script>
-/* ===============================
-   工具
-================================*/
-const rand=(min,max)=>Math.floor(Math.random()*(max-min+1))+min
-
-function shuffle(arr){
-for(let i=arr.length-1;i>0;i--){
-const j=Math.floor(Math.random()*(i+1))
-;[arr[i],arr[j]]=[arr[j],arr[i]]
-}
-return arr
-}
-
-/* ===============================
-   題型生成器（真正無限題）
-================================*/
-
-function genRoundUpWithdrawal(){
-const price=rand(2000,9800)
-const need=Math.ceil(price/1000)*1000
-return{
-text:`商品價格 ${price} 元，提款機只能領千元，最少要領多少元？`,
-answer:[need],
-options:shuffle([
-need,
-need+1000,
-need-1000<0?need:need-1000
-])
-}
+/* ===========================
+   技能紀錄
+===========================*/
+const skills={
+roundUp:{name:"無條件進入",right:0,wrong:0},
+roundDown:{name:"無條件捨去",right:0,wrong:0},
+round:{name:"四捨五入",right:0,wrong:0},
+add:{name:"加法估算",right:0,wrong:0},
+mul:{name:"乘法估算",right:0,wrong:0},
+div:{name:"除法估算",right:0,wrong:0},
 }
 
-function genBoxPacking(){
-const total=rand(2000,9000)
-const per=100
-const box=Math.floor(total/per)
-return{
-text:`共有 ${total} 個物品，每 ${per} 個裝一盒，最多可裝幾盒？`,
-answer:[box],
-options:shuffle([box,box+1,box-1])
-}
+if(localStorage.skillData){
+Object.assign(skills,JSON.parse(localStorage.skillData))
 }
 
-function genRoundToThousand(){
-const num=rand(1000,9999)
-const rounded=Math.round(num/1000)*1000
-return{
-text:`將 ${num} 用四捨五入取到千位是多少？`,
-answer:[rounded],
-options:shuffle([
-rounded,
-rounded+1000,
-rounded-1000<0?rounded:rounded-1000
-])
-}
+function save(){
+localStorage.skillData=JSON.stringify(skills)
+renderSkills()
 }
 
-function genAdditionEstimate(){
-const a=rand(20000,90000)
-const b=rand(20000,90000)
-const ra=Math.round(a/10000)*10000
-const rb=Math.round(b/10000)*10000
-return{
-text:`${a} + ${b} 先取概數到萬位，再估算總和是多少？`,
-answer:[ra+rb],
-options:shuffle([ra+rb,ra+rb+10000,ra+rb-10000])
-}
-}
+/* ===========================
+   出題（真正隨機）
+===========================*/
 
-function genMultiplyEstimate(){
-const price=rand(20000,50000)
-const people=rand(3,7)
-const rp=Math.round(price/1000)*1000
-return{
-text:`每人 ${price} 元，共 ${people} 人，先取千位概數後估算總價？`,
-answer:[rp*people],
-options:shuffle([
-rp*people,
-rp*(people+1),
-rp*(people-1)
-])
-}
-}
-
-function genDivisionEstimate(){
-const big=rand(4000,9000)
-const small=rand(20,80)
-const rb=Math.round(big/1000)*1000
-const rs=Math.round(small/10)*10
-const ans=Math.round(rb/rs)
-return{
-text:`${big} ÷ ${small} 先取最高位概數後估算約幾倍？`,
-answer:[ans],
-options:shuffle([ans,ans+5,ans-5])
-}
-}
-
-const generators=[
-genRoundUpWithdrawal,
-genBoxPacking,
-genRoundToThousand,
-genAdditionEstimate,
-genMultiplyEstimate,
-genDivisionEstimate
-]
-
-/* ===============================
-   狀態
-================================*/
-let current=null
-let slots=[]
-let score=0
+let currentSkill=null
+let correctAnswer=0
 
 function newQuestion(){
-const g=generators[rand(0,generators.length-1)]
-current=g()
-slots=[null]
-render()
+
+const types=Object.keys(skills)
+currentSkill=types[Math.floor(Math.random()*types.length)]
+
+if(currentSkill==="roundUp"){
+const n=Math.floor(Math.random()*8000)+2000
+correctAnswer=Math.ceil(n/1000)*1000
+setQ(`價格 ${n} 元，只能領千元，要領多少？`)
 }
 
-/* ===============================
-   UI
-================================*/
-function render(){
-document.getElementById("question").innerText=current.text
-
-const area=document.getElementById("workspace")
-area.innerHTML=`
-<div>
-<span class="slot">${slots[0]??"?"}</span>
-</div>
-<div class="mt-4">
-${current.options.map(o=>`<button class="opt border px-5 py-3 m-2">${o}</button>`).join("")}
-</div>
-<button id="check" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg">檢查答案</button>
-`
+if(currentSkill==="roundDown"){
+const n=Math.floor(Math.random()*5000)+2000
+correctAnswer=Math.floor(n/100)*100
+setQ(`${n} 個物品，每100一組，可裝多少？`)
 }
 
-/* ===============================
-   事件代理
-================================*/
-document.addEventListener("click",e=>{
-
-if(e.target.classList.contains("opt")){
-slots[0]=Number(e.target.innerText)
-render()
+if(currentSkill==="round"){
+const n=Math.floor(Math.random()*9000)+1000
+correctAnswer=Math.round(n/1000)*1000
+setQ(`${n} 四捨五入到千位是多少？`)
 }
 
-if(e.target.id==="check"){
-check()
+if(currentSkill==="add"){
+const a=Math.floor(Math.random()*40000)+20000
+const b=Math.floor(Math.random()*40000)+20000
+correctAnswer=Math.round(a/10000)*10000+Math.round(b/10000)*10000
+setQ(`${a}+${b} 先取萬位概數再相加`)
 }
 
-if(e.target.id==="next"){
-newQuestion()
+if(currentSkill==="mul"){
+const p=Math.floor(Math.random()*20000)+20000
+const n=Math.floor(Math.random()*4)+3
+correctAnswer=Math.round(p/1000)*1000*n
+setQ(`每人${p}元 共${n}人 約多少？`)
 }
 
-})
+if(currentSkill==="div"){
+const a=Math.floor(Math.random()*4000)+4000
+const b=Math.floor(Math.random()*60)+20
+correctAnswer=Math.round(a/1000)*1000/Math.round(b/10)*10
+correctAnswer=Math.round(correctAnswer)
+setQ(`${a}÷${b} 約幾倍？`)
+}
+
+}
+
+/* ===========================
+   顯示題目
+===========================*/
+
+function setQ(text){
+document.getElementById("question").innerText=text
+
+const opts=[]
+opts.push(correctAnswer)
+opts.push(correctAnswer*1.1|0)
+opts.push(correctAnswer*0.9|0)
+
+opts.sort(()=>Math.random()-0.5)
+
+document.getElementById("answers").innerHTML=opts.map(v=>
+`<button class="btn" onclick="select(${v})">${v}</button>`
+).join("")
+}
+
+let selected=null
+function select(v){selected=v}
+
+/* ===========================
+   作答判定
+===========================*/
 
 function check(){
-if(slots[0]===null){
-toast("請先作答")
-return
-}
+if(selected===null)return
 
-if(slots[0]===current.answer[0]){
-score+=10
-document.getElementById("score").innerText=score
-toast("答對！已產生新題")
-setTimeout(newQuestion,600)
+if(selected===correctAnswer){
+skills[currentSkill].right++
+document.getElementById("feedback").innerText="答對了 👍"
 }else{
-toast("再試一次")
-}
-}
-
-function toast(msg){
-const t=document.getElementById("toast")
-t.innerText=msg
-t.classList.add("show")
-setTimeout(()=>t.classList.remove("show"),1500)
+skills[currentSkill].wrong++
+document.getElementById("feedback").innerText="再試試看"
 }
 
-/* ===============================
-   啟動
-================================*/
+save()
+selected=null
+}
+
+/* ===========================
+   學習狀態顯示
+===========================*/
+
+function renderSkills(){
+const el=document.getElementById("skillStatus")
+el.innerHTML=Object.entries(skills).map(([k,s])=>{
+const total=s.right+s.wrong
+const rate=total?Math.round(s.right/total*100):0
+return `<div class="mb-4">
+<b>${s.name}</b><br>
+正確率：${rate}%（${s.right}/${total}）
+</div>`
+}).join("")
+}
+
+renderSkills()
 newQuestion()
 </script>
 </body>
