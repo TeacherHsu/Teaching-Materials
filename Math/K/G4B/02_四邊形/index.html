@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>互動式數學解題工具：四邊形與垂直平行（完整版）</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* ====== 數學與特殊版型 CSS ====== */
+    .math { font-size: 24px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
+    .fraction { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.1; }
+    .fraction span:first-child { border-bottom: 2px solid #000; padding: 0 4px; }
+    .power { font-size: 16px; vertical-align: super; margin-left: 2px; color: #e63946; }
+    .sqrt::before { content: "√"; font-size: 24px; margin-right: 2px; }
+    .abs::before { content: "|"; } .abs::after { content: "|"; }
+    .mixed { display: inline-flex; align-items: center; gap: 2px; }
+
+    /* ====== 互動元件樣式 ====== */
+    .slot {
+      display: inline-block;
+      min-width: 60px;
+      height: 40px;
+      margin: 0 6px;
+      border-bottom: 3px solid #cbd5e1; /* slate-300 */
+      text-align: center;
+      line-height: 38px;
+      font-weight: bold;
+      color: #2563eb; /* blue-600 */
+      cursor: pointer;
+      transition: all 0.2s ease;
+      vertical-align: middle;
+      background-color: #f8fafc;
+      border-radius: 4px 4px 0 0;
+      padding: 0 10px;
+      user-select: none;
+    }
+    .slot.filled {
+      border-bottom-color: #2563eb;
+      background-color: #dbeafe; /* blue-100 */
+    }
+    .slot.done {
+      border-bottom-color: #16a34a; /* green-600 */
+      color: #16a34a;
+      background-color: #dcfce7; /* green-100 */
+      cursor: default;
+    }
+    .slot.error {
+      border-bottom-color: #ef4444; /* red-500 */
+      background-color: #fee2e2;
+      animation: shake 0.4s ease-in-out;
+    }
+
+    .option-btn {
+      padding: 8px 16px;
+      background-color: #f1f5f9;
+      border: 2px solid #cbd5e1;
+      border-radius: 9999px;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      user-select: none;
+    }
+    .option-btn:hover:not(:disabled) {
+      background-color: #e2e8f0;
+      border-color: #94a3b8;
+      transform: translateY(-1px);
+    }
+    .option-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* ====== 重點標記樣式 ====== */
+    mark {
+      background-color: #fef08a; /* yellow-200 */
+      color: #1e3a8a; /* blue-900 */
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    /* ====== 動畫 ====== */
+    @keyframes tada {
+      0% { transform: scale(1); }
+      10%, 20% { transform: scale(0.95) rotate(-2deg); }
+      30%, 50%, 70%, 90% { transform: scale(1.05) rotate(2deg); }
+      40%, 60%, 80% { transform: scale(1.05) rotate(-2deg); }
+      100% { transform: scale(1) rotate(0); }
+    }
+    .animate-tada { animation: tada 0.8s; }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-4px); }
+      75% { transform: translateX(4px); }
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.98); }
+      40% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+    .animate-pop { animation: pop 220ms ease-out; }
+
+    /* ====== 滾動條美化 ====== */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+    /* ====== Toast ====== */
+    .toast-hidden { opacity: 0; transform: translate(-50%, 24px); pointer-events: none; }
+    .toast-show { opacity: 1; transform: translate(-50%, 0); pointer-events: none; }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col">
+
+  <!-- 導覽列 -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-3">
+        <div class="flex-shrink-0 flex items-center gap-2">
+          <span class="text-xl font-bold text-blue-700 bg-blue-100 px-3 py-1 rounded-lg">單元：垂直、平行與四邊形</span>
+        </div>
+
+        <!-- 右側：積分 + 進度 + 教師模式 -->
+        <div class="flex items-center gap-3">
+          <!-- 教師模式 -->
+          <button id="teacher-toggle"
+            class="px-3 py-2 rounded-xl border border-slate-200 bg-white text-slate-600 font-bold hover:bg-slate-50 transition-colors"
+            title="教師模式：可快速解鎖/重置">
+            🧑‍🏫 教師：OFF
+          </button>
+
+          <!-- 得分 -->
+          <div class="flex items-center gap-2 bg-yellow-100 px-4 py-2 rounded-full border border-yellow-300 font-bold text-yellow-800 shadow-sm">
+            ⭐ 積分: <span id="total-score" class="text-xl">0</span>
+          </div>
+
+          <!-- 總進度（圓環 + 文字） -->
+          <div class="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-full border border-slate-200">
+            <svg width="34" height="34" viewBox="0 0 36 36" class="flex-none">
+              <path
+                d="M18 2.0845
+                   a 15.9155 15.9155 0 0 1 0 31.831
+                   a 15.9155 15.9155 0 0 1 0 -31.831"
+                fill="none"
+                stroke="#e2e8f0"
+                stroke-width="3"
+              />
+              <path
+                id="progress-ring"
+                d="M18 2.0845
+                   a 15.9155 15.9155 0 0 1 0 31.831
+                   a 15.9155 15.9155 0 0 1 0 -31.831"
+                fill="none"
+                stroke="#3b82f6"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-dasharray="0, 100"
+              />
+            </svg>
+            <div class="text-sm font-extrabold text-slate-700 leading-tight">
+              <div>進度 <span id="progress-text">0/0</span></div>
+              <div class="text-[11px] text-slate-500 font-bold">已完成關卡</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 多題目標籤區 (可左右滑動) -->
+      <div class="flex overflow-x-auto py-2 space-x-2 border-t no-scrollbar" id="nav-tabs"></div>
+    </div>
+  </header>
+
+  <!-- 內容區：左右分欄 -->
+  <main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row gap-6">
+
+    <!-- 左側：題幹與圖形 (固定) -->
+    <section class="md:w-5/12 lg:w-1/3 flex-shrink-0">
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:sticky md:top-24">
+        <div class="flex items-start justify-between mb-2 gap-2">
+          <h2 class="text-2xl font-bold text-slate-800 flex items-center gap-2" id="q-title"></h2>
+          <button id="tts-main-btn"
+            class="p-2 bg-blue-50 text-blue-600 rounded-full hover:bg-blue-100 transition-colors"
+            title="朗讀題目">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M11 5L6 9H2v6h4l5 4V5z" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between mb-4">
+          <div class="text-sm font-extrabold text-slate-600 bg-slate-50 border border-slate-200 px-3 py-2 rounded-xl">
+            本關卡步驟：<span id="step-progress">0/0</span>
+          </div>
+
+          <button id="reset-question-btn"
+            class="text-sm font-extrabold text-red-600 bg-red-50 border border-red-200 px-3 py-2 rounded-xl hover:bg-red-100 transition-colors">
+            重做本關卡
+          </button>
+        </div>
+
+        <div class="text-lg leading-relaxed mb-6" id="q-text"></div>
+        <div class="bg-slate-50 rounded-xl p-4 flex justify-center border border-slate-100" id="q-svg"></div>
+
+        <!-- 教師模式工具列（僅教師模式顯示） -->
+        <div id="teacher-tools" class="mt-5 hidden">
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4">
+            <div class="text-slate-700 font-extrabold mb-3 flex items-center gap-2">
+              🧑‍🏫 教師工具
+            </div>
+            <div class="flex flex-col gap-3">
+              <button id="unlock-all-btn" class="w-full px-4 py-3 rounded-xl bg-blue-600 text-white font-extrabold hover:bg-blue-700 transition-colors">
+                一鍵解鎖本關卡所有步驟
+              </button>
+              <button id="reset-all-btn" class="w-full px-4 py-3 rounded-xl bg-slate-700 text-white font-extrabold hover:bg-slate-800 transition-colors">
+                重置全部關卡進度（含分數）
+              </button>
+              <div class="text-xs text-slate-500 font-bold leading-relaxed">
+                * 教師工具會同步寫入瀏覽器存檔（localStorage）
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 右側：步驟解鎖區 -->
+    <section class="md:w-7/12 lg:w-2/3 flex flex-col gap-6" id="steps-container"></section>
+  </main>
+
+  <!-- 完成視窗 Modal -->
+  <div id="completion-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center">
+    <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" onclick="closeModal()"></div>
+    <div class="bg-white rounded-3xl shadow-2xl p-8 max-w-md w-full relative z-10 text-center transform scale-95 opacity-0 transition-all duration-300" id="modal-content">
+      <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+      <h3 class="text-3xl font-bold text-slate-800 mb-2">太棒了！過關！</h3>
+      <p class="text-slate-500 text-lg mb-2">你已經完美學會了這個概念喔！</p>
+      <p class="text-slate-700 font-extrabold text-xl mb-6">目前總積分：<span id="modal-score">0</span></p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <button onclick="resetCurrentQuestion()" class="px-6 py-3 bg-blue-100 text-blue-700 font-bold rounded-xl hover:bg-blue-200 transition-colors">再做一次</button>
+        <button onclick="closeModal()" class="px-6 py-3 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 transition-colors shadow-lg shadow-green-200">繼續挑戰</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast"
+       class="fixed left-1/2 bottom-8 z-[200] bg-white border border-slate-200 shadow-2xl rounded-2xl px-5 py-4 w-[min(520px,calc(100vw-32px))] transition-all duration-300 toast-hidden">
+    <div class="flex items-start gap-3">
+      <div id="toast-emoji" class="text-2xl flex-none">💡</div>
+      <div class="min-w-0">
+        <div id="toast-title" class="font-extrabold text-slate-800 text-lg mb-0.5">提示</div>
+        <div id="toast-msg" class="text-slate-600 font-bold leading-relaxed break-words">內容</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript 應用邏輯 -->
+  <script>
+    /* ===========================
+      升級項目
+      1) localStorage 進度存檔/讀檔 (更新為 v3)
+      2) 教師模式與 Toast 提示
+      3) 完整收錄教材活動1~3重點，新增「分割四邊形」關卡
+    =========================== */
+
+    // 更新存檔版本號，確保新增題庫不會與舊存檔衝突
+    const STORAGE_KEY = 'quad_parallel_tool_v3';
+
+    // --- 資料結構設計 (完整涵蓋教材重點) ---
+    const quizData = [
+      {
+        id: 'q1',
+        title: '關卡 1：垂直',
+        text: '觀察下圖，甲線和乙線相交，形成了一個特別的夾角。<br><br>當兩條直線相交成「<mark>直角</mark>」時，我們說這兩條直線互相「<mark>垂直</mark>」。',
+        textVoice: '觀察下圖，甲線和乙線相交，形成了一個特別的夾角。當兩條直線相交成直角時，我們說這兩條直線互相垂直。',
+        svg: `
+          <svg viewBox="0 0 100 100" class="w-full max-w-[200px] h-auto">
+            <line x1="20" y1="50" x2="80" y2="50" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
+            <line x1="50" y1="20" x2="50" y2="80" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
+            <rect x="50" y="30" width="20" height="20" fill="none" stroke="#ef4444" stroke-width="2"/>
+            <text x="85" y="55" font-size="10" font-weight="bold" fill="#3b82f6">甲線</text>
+            <text x="45" y="15" font-size="10" font-weight="bold" fill="#22c55e">乙線</text>
+          </svg>
+        `,
+        steps: [
+          {
+            subQs: [
+              { type: 'main', instruction: '兩條直線相交形成的夾角是 __ 度，我們稱這個角為 __ 角。', options: ['90','180','直','平'], answers: ['90','直'] },
+              { type: 'remedial', hintMsg: '提示：看到正方形的紅色記號，代表這是90度的直角喔！', instruction: '一個直角的度數是 __ 度。', options: ['90','45','180'], answers: ['90'] },
+              { type: 'remedial', hintMsg: '提示：90度就叫做「直」角。', instruction: '看到圖上有方形的紅線符號「□」，代表這個角是 __ 角。', options: ['直','銳','鈍'], answers: ['直'] }
+            ]
+          },
+          {
+            subQs: [
+              { type: 'main', instruction: '因為甲線和乙線相交成直角，所以甲線和乙線互相 __ 。', options: ['垂直','平行','交叉'], answers: ['垂直'] },
+              { type: 'remedial', hintMsg: '提示：相交成直角就是互相垂直！', instruction: '直角相交的兩條線，稱為互相 __ 。', options: ['垂直','平行','分開'], answers: ['垂直'] },
+              { type: 'remedial', hintMsg: '提示：要確認垂直，夾角必須是90度。', instruction: '如果兩條線互相垂直，它們的夾角一定是 __ 度。', options: ['90','180','360'], answers: ['90'] }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'q2',
+        title: '關卡 2：平行與距離',
+        text: '觀察下圖，藍線和綠線同時和紅線互相<mark>垂直</mark>。<br><br>在同一平面上，當兩條直線同時垂直於另一條直線時，我們說這兩條直線互相「<mark>平行</mark>」。和兩條平行線垂直的線段，稱為平行線間的「<mark>距離</mark>」。',
+        textVoice: '觀察下圖，藍線和綠線同時和紅線互相垂直。在同一平面上，當兩條直線同時垂直於另一條直線時，我們說這兩條直線互相平行。和兩條平行線垂直的線段，稱為平行線間的距離。',
+        svg: `
+          <svg viewBox="0 0 100 100" class="w-full max-w-[200px] h-auto">
+            <line x1="10" y1="30" x2="90" y2="30" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
+            <line x1="10" y1="70" x2="90" y2="70" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
+            <line x1="30" y1="30" x2="30" y2="70" stroke="#ef4444" stroke-width="4" stroke-linecap="round" stroke-dasharray="2,2"/>
+            <line x1="70" y1="30" x2="70" y2="70" stroke="#ef4444" stroke-width="4" stroke-linecap="round" stroke-dasharray="2,2"/>
+            <polyline points="30,40 40,40 40,30" fill="none" stroke="#ef4444" stroke-width="2"/>
+            <polyline points="30,60 40,60 40,70" fill="none" stroke="#ef4444" stroke-width="2"/>
+            <text x="95" y="35" font-size="10" font-weight="bold" fill="#3b82f6">藍線</text>
+            <text x="95" y="75" font-size="10" font-weight="bold" fill="#22c55e">綠線</text>
+          </svg>
+        `,
+        steps: [
+          {
+            subQs: [
+              { type: 'main', instruction: '當藍線和綠線都和同一條紅線互相垂直時，藍線和綠線會互相 __ 。', options: ['垂直','平行','交叉'], answers: ['平行'] },
+              { type: 'remedial', hintMsg: '提示：兩條直線永遠不相交，像火車鐵軌一樣，稱為平行。', instruction: '兩條直線永遠不相交，方向一致，稱為互相 __ 。', options: ['平行','垂直'], answers: ['平行'] },
+              { type: 'remedial', hintMsg: '提示：藍線和綠線都有碰到紅線並形成直角，所以它們平行。', instruction: '同時和第三條線垂直的兩條線，彼此之間互相 __ 。', options: ['平行','彎曲'], answers: ['平行'] }
+            ]
+          },
+          {
+            subQs: [
+              { type: 'main', instruction: '和兩條平行線互相垂直的線段，稱為平行線間的 __ ，且平行線間的距離處處 __ 。', options: ['距離','長度','相等','不相等'], answers: ['距離','相等'] },
+              { type: 'remedial', hintMsg: '提示：平行線就像火車鐵軌，軌道中間的寬度到處都一樣長。', instruction: '兩條平行線之間的距離處處 __ 。', options: ['相等','不相等'], answers: ['相等'] },
+              { type: 'remedial', hintMsg: '提示：兩線之間的垂直長度就叫做距離。', instruction: '兩條平行線之間，垂直連起來的這段長度叫做 __ 。', options: ['距離','重量','面積'], answers: ['距離'] }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'q3',
+        title: '關卡 3：長方形與正方形',
+        text: '觀察下圖。<br><br>四邊形有 4 個角都是直角，兩雙對邊一樣長，叫做「<mark>長方形</mark>」。<br>如果 <mark>4 條邊都一樣長</mark>，就叫做「<mark>正方形</mark>」。',
+        textVoice: '觀察下圖。四邊形有四個角都是直角，兩雙對邊一樣長，叫做長方形。如果四條邊都一樣長，就叫做正方形。',
+        svg: `
+          <svg viewBox="0 0 200 100" class="w-full max-w-[300px] h-auto">
+            <rect x="10" y="30" width="70" height="40" fill="#e0f2fe" stroke="#3b82f6" stroke-width="3"/>
+            <polyline points="10,30 20,30 20,40 10,40" fill="none" stroke="#ef4444" stroke-width="2"/>
+            <rect x="110" y="20" width="60" height="60" fill="#fef08a" stroke="#eab308" stroke-width="3"/>
+            <polyline points="110,20 120,20 120,30 110,30" fill="none" stroke="#ef4444" stroke-width="2"/>
+            <text x="35" y="85" font-size="12" font-weight="bold" fill="#3b82f6">長方形</text>
+            <text x="125" y="95" font-size="12" font-weight="bold" fill="#eab308">正方形</text>
+          </svg>
+        `,
+        steps: [
+          {
+            subQs: [
+              { type: 'main', instruction: '長方形有 4 個角都是 __ 角，而且它的兩雙對邊分別 __ 長。', options: ['直','平','一樣','不一樣'], answers: ['直','一樣'] },
+              { type: 'remedial', hintMsg: '提示：長方形的角都有紅色的方形記號喔。', instruction: '長方形的 4 個角都是 __ 角。', options: ['直','銳','鈍'], answers: ['直'] },
+              { type: 'remedial', hintMsg: '提示：上面的邊和下面的邊長度一樣，左邊和右邊的長度也一樣。', instruction: '長方形的上下兩條對邊 __ 長。', options: ['一樣','不一樣'], answers: ['一樣'] }
+            ]
+          },
+          {
+            subQs: [
+              { type: 'main', instruction: '如果一個四邊形 4 個角都是直角，而且 4 條邊都 __ 長，叫做 __ 。', options: ['一樣','不一樣','長方形','正方形'], answers: ['一樣','正方形'] },
+              { type: 'remedial', hintMsg: '提示：正方形的每一條邊長度都相同，像骰子的面一樣。', instruction: '正方形的 4 條邊都 __ 長。', options: ['一樣','不一樣'], answers: ['一樣'] },
+              { type: 'remedial', hintMsg: '提示：四邊等長且都是直角的四邊形，形狀正正方方的。', instruction: '四條邊都等長且都是直角的圖形叫做 __ 。', options: ['正方形','長方形'], answers: ['正方形'] }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'q4',
+        title: '關卡 4：菱形與平行四邊形',
+        text: '觀察下圖。<br><br><mark>4 條邊都一樣長</mark>的四邊形，叫做「<mark>菱形</mark>」。<br><mark>兩雙對邊分別互相平行</mark>的四邊形，叫做「<mark>平行四邊形</mark>」。',
+        textVoice: '觀察下圖。四條邊都一樣長的四邊形，叫做菱形。兩雙對邊分別互相平行的四邊形，叫做平行四邊形。',
+        svg: `
+          <svg viewBox="0 0 200 100" class="w-full max-w-[300px] h-auto">
+            <polygon points="50,10 80,50 50,90 20,50" fill="#d8b4fe" stroke="#0ea5e9" stroke-width="3" stroke-linejoin="round"/>
+            <text x="35" y="95" font-size="12" font-weight="bold" fill="#0ea5e9">菱形</text>
+            <polygon points="120,20 180,20 160,70 100,70" fill="#bbf7d0" stroke="#16a34a" stroke-width="3" stroke-linejoin="round"/>
+            <text x="110" y="90" font-size="12" font-weight="bold" fill="#16a34a">平行四邊形</text>
+          </svg>
+        `,
+        steps: [
+          {
+            subQs: [
+              { type: 'main', instruction: '4 條邊都一樣長的圖形叫做 __ ，它的兩雙對角分別 __ 。', options: ['菱形','正方形','一樣大','不一樣大'], answers: ['菱形','一樣大'] },
+              { type: 'remedial', hintMsg: '提示：像撲克牌中的方塊，4條邊等長，這叫做菱形。', instruction: '4 條邊都 __ 長的四邊形，叫做菱形。', options: ['一樣','不一樣'], answers: ['一樣'] },
+              { type: 'remedial', hintMsg: '提示：菱形除了4邊等長，它的對面角大小也相同。', instruction: '菱形的兩雙對角會分別 __ 。', options: ['一樣大','不一樣大'], answers: ['一樣大'] }
+            ]
+          },
+          {
+            subQs: [
+              { type: 'main', instruction: '兩雙對邊分別互相平行的圖形叫 __ ，它的兩雙對角分別 __ 。', options: ['平行四邊形','梯形','一樣大','不一樣大'], answers: ['平行四邊形','一樣大'] },
+              { type: 'remedial', hintMsg: '提示：上下互相平行，左右也互相平行的圖形。', instruction: '兩雙對邊分別互相平行的圖形叫 __ 。', options: ['平行四邊形','菱形'], answers: ['平行四邊形'] },
+              { type: 'remedial', hintMsg: '提示：平行四邊形中，相對的角(對角)會一樣大。', instruction: '平行四邊形中，相對的兩個角會 __ 。', options: ['一樣大','不一樣大'], answers: ['一樣大'] }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'q5',
+        title: '關卡 5：梯形與四邊形要素',
+        text: '<mark>只有一雙</mark>對邊互相平行的四邊形叫做「<mark>梯形</mark>」。<br><br>四邊形中，相對的邊稱為「<mark>對邊</mark>」，相對的角稱為「<mark>對角</mark>」，相對頂點的連線稱為「<mark>對角線</mark>」。',
+        textVoice: '只有一雙對邊互相平行的四邊形叫做梯形。四邊形中，相對的邊稱為對邊，相對的角稱為對角，相對頂點的連線稱為對角線。',
+        svg: `
+          <svg viewBox="0 0 200 100" class="w-full max-w-[300px] h-auto">
+            <polygon points="60,20 140,20 160,80 40,80" fill="#fed7aa" stroke="#ea580c" stroke-width="3" stroke-linejoin="round"/>
+            <line x1="60" y1="20" x2="160" y2="80" stroke="#ea580c" stroke-width="2" stroke-dasharray="4"/>
+            <line x1="140" y1="20" x2="40" y2="80" stroke="#ea580c" stroke-width="2" stroke-dasharray="4"/>
+            <text x="80" y="95" font-size="12" font-weight="bold" fill="#ea580c">梯形與對角線</text>
+          </svg>
+        `,
+        steps: [
+          {
+            subQs: [
+              { type: 'main', instruction: '__ 對邊互相平行的四邊形，叫做 __ 。', options: ['只有一雙','兩雙','梯形','菱形'], answers: ['只有一雙','梯形'] },
+              { type: 'remedial', hintMsg: '提示：梯形的上下邊平行，但左右邊不平行，所以只有一雙平行。', instruction: '梯形是 __ 對邊互相平行的四邊形。', options: ['只有一雙','兩雙'], answers: ['只有一雙'] },
+              { type: 'remedial', hintMsg: '提示：形狀像溜滑梯或梯子的四邊形。', instruction: '只有一雙對邊互相平行的叫做 __ 。', options: ['梯形','正方形'], answers: ['梯形'] }
+            ]
+          },
+          {
+            subQs: [
+              { type: 'main', instruction: '四邊形中，相對頂點的連線稱為 __ 。每一個四邊形最多都能畫出 __ 條對角線。', options: ['對角線','對邊','2','4'], answers: ['對角線','2'] },
+              { type: 'remedial', hintMsg: '提示：將不相鄰的兩個角(對角)連起來的虛線。', instruction: '圖中連接對角的虛線叫做 __ 。', options: ['對角線','鄰邊'], answers: ['對角線'] },
+              { type: 'remedial', hintMsg: '提示：左上連到右下是一條，右上連到左下是第二條。', instruction: '一個四邊形最多可以畫出 __ 條對角線。', options: ['2','4','8'], answers: ['2'] }
+            ]
+          }
+        ]
+      },
+      // ====== 新增：活動3 分割四邊形 ======
+      {
+        id: 'q6',
+        title: '關卡 6：分割四邊形',
+        text: '觀察下圖，如果我們沿著四邊形的「<mark>對角線</mark>」剪開，會發生什麼事呢？<br><br>有些四邊形沿著對角線剪開後，可以分成兩個「<mark>全等</mark>」（形狀、大小完全一樣）的三角形喔！',
+        textVoice: '觀察下圖，如果我們沿著四邊形的對角線剪開，會發生什麼事呢？有些四邊形沿著對角線剪開後，可以分成兩個全等（形狀、大小完全一樣）的三角形喔！',
+        svg: `
+          <svg viewBox="0 0 200 100" class="w-full max-w-[300px] h-auto">
+            <!-- 平行四邊形 -->
+            <polygon points="40,20 140,20 110,80 10,80" fill="#e0f2fe" stroke="#3b82f6" stroke-width="3" stroke-linejoin="round"/>
+            <!-- 對角線 -->
+            <line x1="140" y1="20" x2="10" y2="80" stroke="#ef4444" stroke-width="3" stroke-dasharray="5,5"/>
+            <!-- 標示文字 -->
+            <text x="65" y="45" font-size="14" font-weight="bold" fill="#3b82f6">甲</text>
+            <text x="85" y="70" font-size="14" font-weight="bold" fill="#3b82f6">乙</text>
+            <text x="100" y="48" font-size="12" font-weight="bold" fill="#ef4444" transform="rotate(24 100,48)">對角線</text>
+          </svg>
+        `,
+        steps: [
+          {
+            subQs: [
+              { type: 'main', instruction: '沿著平行四邊形的對角線剪開，可以剪成 __ 個三角形。這兩個三角形的形狀和大小完全一樣，稱為 __ 圖形。', options: ['2', '3', '全等', '不全等'], answers: ['2', '全等'] },
+              { type: 'remedial', hintMsg: '提示：對角線會把四邊形切成兩半。', instruction: '一條對角線可以把平行四邊形切成 __ 個三角形。', options: ['2', '3', '4'], answers: ['2'] },
+              { type: 'remedial', hintMsg: '提示：形狀和大小都完全一樣的圖形叫做「全等圖形」。', instruction: '切開的兩個三角形形狀和大小都一樣，稱為 __ 圖形。', options: ['全等', '不全等'], answers: ['全等'] }
+            ]
+          },
+          {
+            subQs: [
+              { type: 'main', instruction: '除了平行四邊形，長方形、正方形和菱形 __ 剪成兩個全等三角形；但是梯形 __ 剪成兩個全等三角形。', options: ['可以', '不可以'], answers: ['可以', '不可以'] },
+              { type: 'remedial', hintMsg: '提示：長方形、正方形、菱形的對邊都一樣長，對角線切開後兩邊會一樣大。', instruction: '正方形或長方形沿著對角線剪開，__ 剪成兩個全等三角形。', options: ['可以', '不可以'], answers: ['可以'] },
+              { type: 'remedial', hintMsg: '提示：梯形只有一雙對邊平行，而且上下邊不一樣長，切開後的兩個三角形不會一樣大。', instruction: '梯形沿著對角線剪開，__ 剪成兩個全等的三角形。', options: ['可以', '不可以'], answers: ['不可以'] }
+            ]
+          }
+        ]
+      }
+    ];
+
+    // --- 全域狀態 ---
+    let currentQ = 0;
+    let totalScore = 0;
+    let gameState = [];
+    let teacherMode = false;
+
+    /* ===========================
+      localStorage：存取
+    =========================== */
+    function saveState() {
+      try {
+        const payload = {
+          v: 3, // 版本升級，防止舊版沒包含 q6 導致報錯
+          currentQ,
+          totalScore,
+          teacherMode,
+          gameState
+        };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+      } catch (e) {
+        // 可能是無痕或容量問題
+      }
+    }
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return false;
+        const parsed = JSON.parse(raw);
+        if (!parsed || parsed.v !== 3) return false;
+
+        // 基本防呆：題庫數若改了就重置
+        if (!Array.isArray(parsed.gameState) || parsed.gameState.length !== quizData.length) return false;
+
+        currentQ = Number.isInteger(parsed.currentQ) ? parsed.currentQ : 0;
+        totalScore = Number.isFinite(parsed.totalScore) ? parsed.totalScore : 0;
+        teacherMode = !!parsed.teacherMode;
+        gameState = parsed.gameState;
+
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    /* ===========================
+      初始化狀態
+    =========================== */
+    function initGameState() {
+      gameState = quizData.map(q => ({
+        id: q.id,
+        completed: false,
+        steps: q.steps.map((step, sIdx) => ({
+          status: sIdx === 0 ? 'active' : 'locked',
+          failedMain: false,
+          activeSubQIndex: 0,
+          subQs: step.subQs.map(sq => ({
+            slots: new Array(sq.answers.length).fill(null),
+            optionsUsed: new Array(sq.options.length).fill(false),
+            status: 'locked' // active, done, locked
+          }))
+        }))
+      }));
+
+      // 每題第一步的主題設為 active
+      gameState.forEach(q => {
+        q.steps[0].subQs[0].status = 'active';
+      });
+
+      saveState();
+    }
+
+    /* ===========================
+      Toast
+    =========================== */
+    let toastTimer = null;
+    function showToast({ title='提示', msg='', type='info' } = {}) {
+      const toast = document.getElementById('toast');
+      const emoji = document.getElementById('toast-emoji');
+      const t = document.getElementById('toast-title');
+      const m = document.getElementById('toast-msg');
+
+      const map = {
+        info: { e: '💡', title },
+        success: { e: '✅', title },
+        error: { e: '⚠️', title },
+      };
+      const preset = map[type] || map.info;
+
+      emoji.textContent = preset.e;
+      t.textContent = preset.title || '提示';
+      m.innerHTML = msg;
+
+      toast.classList.remove('toast-hidden');
+      toast.classList.add('toast-show');
+
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('toast-show');
+        toast.classList.add('toast-hidden');
+      }, 2600);
+    }
+
+    /* ===========================
+      渲染
+    =========================== */
+    function renderApp() {
+      renderNav();
+      renderLeftPanel();
+      renderRightPanel();
+      renderHeaderStats();
+      saveState();
+    }
+
+    function renderHeaderStats() {
+      const scoreEl = document.getElementById('total-score');
+      scoreEl.innerText = totalScore;
+
+      const doneCount = gameState.filter(q => q.completed).length;
+      const totalCount = quizData.length;
+
+      document.getElementById('progress-text').innerText = `${doneCount}/${totalCount}`;
+
+      // 圓環：stroke-dasharray="x, 100"
+      const pct = totalCount === 0 ? 0 : Math.round((doneCount / totalCount) * 100);
+      const ring = document.getElementById('progress-ring');
+      ring.setAttribute('stroke-dasharray', `${pct}, 100`);
+
+      // 本關卡步驟進度
+      const qState = gameState[currentQ];
+      const stepTotal = qState.steps.length;
+      const stepDone = qState.steps.filter(s => s.status === 'done').length;
+      document.getElementById('step-progress').innerText = `${stepDone}/${stepTotal}`;
+
+      // 教師模式按鈕
+      const teacherBtn = document.getElementById('teacher-toggle');
+      teacherBtn.textContent = `🧑‍🏫 教師：${teacherMode ? 'ON' : 'OFF'}`;
+      teacherBtn.classList.toggle('bg-blue-600', teacherMode);
+      teacherBtn.classList.toggle('text-white', teacherMode);
+      teacherBtn.classList.toggle('border-blue-700', teacherMode);
+
+      document.getElementById('teacher-tools').classList.toggle('hidden', !teacherMode);
+    }
+
+    function renderNav() {
+      const nav = document.getElementById('nav-tabs');
+      nav.innerHTML = quizData.map((q, idx) => {
+        const isCurrent = idx === currentQ;
+        const isDone = gameState[idx].completed;
+        return `
+          <button onclick="switchTab(${idx})"
+            class="px-5 py-2 whitespace-nowrap rounded-t-xl font-bold transition-colors border-b-4
+            ${isCurrent ? 'bg-blue-50 text-blue-700 border-blue-600' : 'bg-white text-slate-500 hover:bg-slate-50 border-transparent'}">
+            ${q.title} ${isDone ? '✔' : ''}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function switchTab(idx) {
+      currentQ = idx;
+      renderApp();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderLeftPanel() {
+      const q = quizData[currentQ];
+      document.getElementById('q-title').innerText = q.title;
+      document.getElementById('q-text').innerHTML = q.text;
+      document.getElementById('q-svg').innerHTML = q.svg;
+    }
+
+    function renderRightPanel() {
+      const container = document.getElementById('steps-container');
+      const qState = gameState[currentQ];
+
+      container.innerHTML = qState.steps.map((stepState, sIdx) => {
+        const isLocked = !teacherMode && stepState.status === 'locked';
+        const isDone = stepState.status === 'done';
+
+        let stepHTML = `
+          <div class="bg-white rounded-2xl shadow-sm border-2 ${isLocked ? 'border-slate-100 opacity-60' : isDone ? 'border-green-200 bg-green-50/30' : 'border-blue-200 shadow-md'} p-5 transition-all"
+               id="step-${currentQ}-${sIdx}">
+            <div class="flex items-center justify-between mb-4 border-b pb-2 gap-3">
+              <div class="flex items-center">
+                <h3 class="text-xl font-bold ${isDone ? 'text-green-700' : 'text-blue-800'}">步驟 ${sIdx + 1}</h3>
+                ${isDone ? '<span class="text-green-600 font-bold ml-3 text-lg flex items-center gap-1"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>完成</span>' : ''}
+              </div>
+              ${teacherMode ? `
+                <button class="px-4 py-2 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 font-extrabold hover:bg-slate-200 transition-colors"
+                        onclick="teacherMarkStepDone(${sIdx})">
+                  ✅ 教師：標記本步完成
+                </button>
+              ` : ''}
+            </div>
+
+            <div class="space-y-6">
+        `;
+
+        if (isLocked) {
+          stepHTML += `
+            <div class="flex items-center gap-3 text-slate-400 font-bold text-lg p-4 bg-slate-50 rounded-xl">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+              </svg>
+              請先完成上一個步驟解鎖
+            </div>`;
+        } else {
+          // Render active/done subQuestions
+          stepState.subQs.forEach((subQState, subIdx) => {
+            if (teacherMode && subQState.status === 'locked') {
+              // 教師模式：全部可見（但不會自動 active）
+              subQState.status = (subIdx === 0 && stepState.status !== 'done') ? 'active' : subQState.status;
+            }
+            if (subQState.status !== 'locked') {
+              stepHTML += renderSubQuestion(sIdx, subIdx, subQState);
+            }
+          });
+
+          // 教師模式：若沒有任何 subQ 顯示（例如都 locked），給快速顯示主題
+          if (teacherMode) {
+            const anyVisible = stepState.subQs.some(sq => sq.status !== 'locked');
+            if (!anyVisible) {
+              stepState.subQs[0].status = 'active';
+              stepHTML += renderSubQuestion(sIdx, 0, stepState.subQs[0]);
+            }
+          }
+        }
+
+        stepHTML += `</div></div>`;
+        return stepHTML;
+      }).join('');
+    }
+
+    function renderSubQuestion(sIdx, subIdx, subQState) {
+      const data = quizData[currentQ].steps[sIdx].subQs[subIdx];
+      const isMain = data.type === 'main';
+      const isDone = subQState.status === 'done';
+
+      // Build instruction string replacing __ with slots
+      let instHTML = data.instruction;
+
+      data.answers.forEach((_, slotIdx) => {
+        const slotData = subQState.slots[slotIdx];
+        let slotContent = '';
+        let slotClass = 'slot';
+
+        if (slotData) {
+          slotContent = slotData.val;
+          slotClass += ' filled';
+        }
+        if (isDone) slotClass += ' done';
+
+        const slotHTML =
+          `<span class="${slotClass}" ${!isDone ? `onclick="clearSlot(${sIdx}, ${subIdx}, ${slotIdx})"` : ''} id="slot-${currentQ}-${sIdx}-${subIdx}-${slotIdx}">${slotContent}</span>`;
+
+        // 用 regex replace，避免未來題目有更複雜狀況
+        instHTML = instHTML.replace(/__/, slotHTML);
+      });
+
+      let html = `
+        <div class="sub-q relative p-4 rounded-xl ${!isMain ? 'bg-orange-50/50 border border-orange-100' : ''}"
+             id="subq-${currentQ}-${sIdx}-${subIdx}">
+          ${!isMain ? `
+            <div class="text-orange-600 font-bold text-sm mb-2 flex items-center gap-1">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              老師的小提示：${data.hintMsg || ''}
+            </div>
+          ` : ''}
+
+          <div class="flex items-start gap-2 mb-4">
+            <button onclick="playTTS('${escapeForJS(data.instruction.replace(/__/g, '空格'))}')"
+                    class="mt-1 flex-shrink-0 p-1.5 bg-slate-100 text-slate-500 rounded-full hover:bg-blue-100 hover:text-blue-600 transition-colors"
+                    title="朗讀題目">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M11 5L6 9H2v6h4l5 4V5z"></path>
+              </svg>
+            </button>
+            <div class="text-xl leading-loose font-medium">${instHTML}</div>
+          </div>
+      `;
+
+      // Error Message Area
+      html += `
+        <div id="err-${currentQ}-${sIdx}-${subIdx}"
+             class="text-red-500 font-bold text-lg mb-3 hidden flex items-center gap-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          再想想看！請修改錯誤的空格。
+        </div>
+      `;
+
+      if (!isDone) {
+        html += `
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 mb-4">
+            <div class="text-sm font-bold text-slate-400 mb-2">點擊按鈕填入空格：</div>
+            <div class="flex flex-wrap gap-3">
+              ${data.options.map((opt, optIdx) => `
+                <button class="option-btn"
+                        ${subQState.optionsUsed[optIdx] ? 'disabled' : ''}
+                        onclick="selectOption(${sIdx}, ${subIdx}, ${optIdx})">${opt}</button>
+              `).join('')}
+            </div>
+          </div>
+
+          <button onclick="checkAnswer(${sIdx}, ${subIdx})"
+                  class="w-full md:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white text-xl font-bold rounded-xl transition-all shadow-md shadow-blue-200 hover:shadow-lg flex items-center justify-center gap-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            檢查答案
+          </button>
+        `;
+      }
+
+      html += `</div>`;
+      return html;
+    }
+
+    function escapeForJS(str) {
+      return (str || '')
+        .replaceAll('\\', '\\\\')
+        .replaceAll("'", "\\'")
+        .replaceAll('\n', ' ')
+        .replaceAll('\r', ' ');
+    }
+
+    /* ===========================
+      互動邏輯
+    =========================== */
+    function selectOption(sIdx, subIdx, optIdx) {
+      const qState = gameState[currentQ];
+      const subQState = qState.steps[sIdx].subQs[subIdx];
+      const data = quizData[currentQ].steps[sIdx].subQs[subIdx];
+
+      const emptySlotIdx = subQState.slots.findIndex(s => s === null);
+      if (emptySlotIdx !== -1) {
+        subQState.slots[emptySlotIdx] = { optIdx, val: data.options[optIdx] };
+        subQState.optionsUsed[optIdx] = true;
+        playPopSound();
+        renderApp();
+      } else {
+        showToast({ title: '已填滿', msg: '空格都已經填好了喔～可以按「檢查答案」', type: 'info' });
+      }
+    }
+
+    function clearSlot(sIdx, subIdx, slotIdx) {
+      const qState = gameState[currentQ];
+      const subQState = qState.steps[sIdx].subQs[subIdx];
+
+      const slotData = subQState.slots[slotIdx];
+      if (slotData) {
+        subQState.optionsUsed[slotData.optIdx] = false;
+        subQState.slots[slotIdx] = null;
+
+        const err = document.getElementById(`err-${currentQ}-${sIdx}-${subIdx}`);
+        if (err) err.classList.add('hidden');
+
+        renderApp();
+      }
+    }
+
+    function checkAnswer(sIdx, subIdx) {
+      const qState = gameState[currentQ];
+      const stepState = qState.steps[sIdx];
+      const subQState = stepState.subQs[subIdx];
+      const data = quizData[currentQ].steps[sIdx].subQs[subIdx];
+
+      // 檢查是否填滿
+      if (subQState.slots.includes(null)) {
+        playTTS("請填滿所有空格再檢查");
+        showToast({ title: '還沒填完', msg: '請先把所有空格都填滿再檢查喔！', type: 'error' });
+        return;
+      }
+
+      let isCorrect = true;
+      subQState.slots.forEach((sData, idx) => {
+        const el = document.getElementById(`slot-${currentQ}-${sIdx}-${subIdx}-${idx}`);
+        if (sData.val !== data.answers[idx]) {
+          isCorrect = false;
+          if (el) {
+            el.classList.add('error');
+            setTimeout(() => el.classList.remove('error'), 400);
+          }
+        }
+      });
+
+      const errEl = document.getElementById(`err-${currentQ}-${sIdx}-${subIdx}`);
+
+      if (isCorrect) {
+        if (errEl) errEl.classList.add('hidden');
+        playSuccessSound();
+        subQState.status = 'done';
+
+        // 動畫
+        const subQEl = document.getElementById(`subq-${currentQ}-${sIdx}-${subIdx}`);
+        if (subQEl) subQEl.classList.add('animate-tada');
+
+        // 計分
+        if (subIdx === 0) {
+          totalScore += stepState.failedMain ? 50 : 100;
+        } else {
+          totalScore += 50;
+        }
+
+        showToast({ title: '答對了！', msg: '做得很好，繼續下一步～', type: 'success' });
+
+        // 解鎖邏輯
+        if (subIdx === 0) { // Main
+          if (stepState.failedMain && stepState.subQs.length > 1) {
+            stepState.activeSubQIndex = 1;
+            stepState.subQs[1].status = 'active';
+          } else {
+            unlockNextStep(sIdx);
+          }
+        } else if (subIdx === 1) { // Rem 1
+          if (stepState.subQs.length > 2) {
+            stepState.activeSubQIndex = 2;
+            stepState.subQs[2].status = 'active';
+          } else {
+            unlockNextStep(sIdx);
+          }
+        } else if (subIdx === 2) { // Rem 2
+          unlockNextStep(sIdx);
+        }
+
+        setTimeout(renderApp, 520);
+      } else {
+        playErrorSound();
+        if (errEl) errEl.classList.remove('hidden');
+        playTTS("再想想看");
+        showToast({ title: '再想想看', msg: '有一兩格不太對～點選空格可清除重填。', type: 'error' });
+
+        if (subIdx === 0) {
+          stepState.failedMain = true;
+        }
+        saveState();
+      }
+    }
+
+    function unlockNextStep(currentSIdx) {
+      const qState = gameState[currentQ];
+      qState.steps[currentSIdx].status = 'done';
+
+      if (currentSIdx + 1 < qState.steps.length) {
+        qState.steps[currentSIdx + 1].status = 'active';
+        qState.steps[currentSIdx + 1].subQs[0].status = 'active';
+
+        setTimeout(() => {
+          const nextStepEl = document.getElementById(`step-${currentQ}-${currentSIdx + 1}`);
+          if (nextStepEl) nextStepEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 120);
+      } else {
+        qState.completed = true;
+        setTimeout(() => showCompletionModal(), 520);
+      }
+    }
+
+    /* ===========================
+      教師模式
+    =========================== */
+    function teacherMarkStepDone(sIdx) {
+      const qState = gameState[currentQ];
+      const stepState = qState.steps[sIdx];
+
+      // 將本步驟所有 subQ 設 done，並填上正確值（不計分）
+      stepState.subQs.forEach((subQState, subIdx) => {
+        const data = quizData[currentQ].steps[sIdx].subQs[subIdx];
+        subQState.slots = data.answers.map((a, idx) => ({ optIdx: 0, val: a }));
+        subQState.optionsUsed = new Array(data.options.length).fill(false);
+        subQState.status = 'done';
+      });
+
+      // 標記 step done 並解鎖下一步
+      unlockNextStep(sIdx);
+      showToast({ title: '教師操作完成', msg: `已標記「步驟 ${sIdx + 1}」完成並解鎖下一步。`, type: 'info' });
+      renderApp();
+    }
+
+    function unlockAllStepsInCurrentQuestion() {
+      const qState = gameState[currentQ];
+
+      qState.steps.forEach((stepState, sIdx) => {
+        stepState.status = 'done';
+        stepState.failedMain = false;
+        stepState.activeSubQIndex = 0;
+
+        stepState.subQs.forEach((subQState, subIdx) => {
+          const data = quizData[currentQ].steps[sIdx].subQs[subIdx];
+          subQState.slots = data.answers.map(a => ({ optIdx: 0, val: a }));
+          subQState.optionsUsed = new Array(data.options.length).fill(false);
+          subQState.status = 'done';
+        });
+      });
+
+      qState.completed = true;
+      showToast({ title: '已解鎖完成', msg: '本關卡所有步驟已設為完成（不加分）。', type: 'success' });
+      renderApp();
+    }
+
+    function resetAllProgress() {
+      totalScore = 0;
+      currentQ = 0;
+      initGameState();
+      showToast({ title: '已重置', msg: '全部關卡進度與分數已清空。', type: 'info' });
+      renderApp();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ===========================
+      TTS & 音效（懶建立 AudioContext）
+    =========================== */
+    let synth = window.speechSynthesis;
+    function playTTS(text) {
+      if (!('speechSynthesis' in window)) {
+        showToast({ title: '不支援語音', msg: '此瀏覽器不支援語音朗讀功能。', type: 'error' });
+        return;
+      }
+      if (synth) {
+        synth.cancel();
+        const utterThis = new SpeechSynthesisUtterance(text);
+        utterThis.lang = 'zh-TW';
+        utterThis.rate = 0.9;
+        synth.speak(utterThis);
+      }
+    }
+
+    // Web Audio API：懶建立（避免 Safari / iPad 首次載入被擋）
+    let audioCtx;
+    function getAudioCtx() {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      return audioCtx;
+    }
+
+    function playTone(freq, type, duration, vol = 0.1) {
+      const ctx = getAudioCtx();
+      if (ctx.state === 'suspended') ctx.resume();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, ctx.currentTime);
+      gain.gain.setValueAtTime(vol, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + duration);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + duration);
+    }
+
+    function playPopSound() { playTone(420, 'sine', 0.09, 0.18); }
+    function playSuccessSound() {
+      playTone(650, 'sine', 0.10, 0.20);
+      setTimeout(() => playTone(900, 'sine', 0.14, 0.20), 90);
+      setTimeout(() => playTone(1250, 'sine', 0.26, 0.20), 220);
+    }
+    function playErrorSound() {
+      playTone(320, 'square', 0.14, 0.10);
+      setTimeout(() => playTone(260, 'square', 0.24, 0.10), 140);
+    }
+
+    /* ===========================
+      Modal
+    =========================== */
+    function showCompletionModal() {
+      const modal = document.getElementById('completion-modal');
+      const content = document.getElementById('modal-content');
+      document.getElementById('modal-score').innerText = totalScore;
+
+      modal.classList.remove('hidden');
+      void modal.offsetWidth;
+      content.classList.remove('scale-95', 'opacity-0');
+      content.classList.add('scale-100', 'opacity-100');
+
+      playSuccessSound();
+      playTTS("太棒了！過關！");
+      saveState();
+      renderHeaderStats();
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('completion-modal');
+      const content = document.getElementById('modal-content');
+      content.classList.remove('scale-100', 'opacity-100');
+      content.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => modal.classList.add('hidden'), 300);
+      renderNav();
+      saveState();
+    }
+
+    function resetCurrentQuestion() {
+      const q = quizData[currentQ];
+      gameState[currentQ] = {
+        id: q.id,
+        completed: false,
+        steps: q.steps.map((step, sIdx) => ({
+          status: sIdx === 0 ? 'active' : 'locked',
+          failedMain: false,
+          activeSubQIndex: 0,
+          subQs: step.subQs.map(sq => ({
+            slots: new Array(sq.answers.length).fill(null),
+            optionsUsed: new Array(sq.options.length).fill(false),
+            status: 'locked'
+          }))
+        }))
+      };
+      gameState[currentQ].steps[0].subQs[0].status = 'active';
+      closeModal();
+      showToast({ title: '已重置', msg: '本關卡已回到第一步，重新挑戰吧！', type: 'info' });
+      renderApp();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ===========================
+      綁定按鈕事件
+    =========================== */
+    function bindUIEvents() {
+      document.getElementById('tts-main-btn').addEventListener('click', () => {
+        const q = quizData[currentQ];
+        playTTS(q.textVoice || q.text.replace(/<[^>]*>/g, ' '));
+      });
+
+      document.getElementById('reset-question-btn').addEventListener('click', () => {
+        resetCurrentQuestion();
+      });
+
+      document.getElementById('teacher-toggle').addEventListener('click', () => {
+        teacherMode = !teacherMode;
+        showToast({
+          title: '教師模式',
+          msg: teacherMode ? '已開啟：可解鎖/重置/快速標記完成。' : '已關閉：回到一般學生模式。',
+          type: teacherMode ? 'success' : 'info'
+        });
+        renderApp();
+      });
+
+      document.getElementById('unlock-all-btn').addEventListener('click', () => {
+        if (!teacherMode) return;
+        unlockAllStepsInCurrentQuestion();
+      });
+
+      document.getElementById('reset-all-btn').addEventListener('click', () => {
+        if (!teacherMode) return;
+        resetAllProgress();
+      });
+    }
+
+    /* ===========================
+      啟動
+    =========================== */
+    window.addEventListener('load', () => {
+      // 先讀檔，讀不到就初始化
+      const ok = loadState();
+      if (!ok) initGameState();
+
+      bindUIEvents();
+      renderApp();
+
+      showToast({
+        title: '已載入',
+        msg: ok ? '已從上次進度繼續。' : '已建立新的學習進度。祝你玩得開心！',
+        type: 'info'
+      });
+    });
+  </script>
+</body>
+</html>
