@@ -3,430 +3,230 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>特教數學互動工具：概數的魔法</title>
+<title>概數魔法｜無限練習版</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 .slot{
-    display:inline-flex;
-    min-width:60px;
-    height:48px;
-    padding:0 12px;
-    border:3px dashed #cbd5e1;
-    border-radius:8px;
-    align-items:center;
-    justify-content:center;
-    font-size:24px;
-    font-weight:bold;
-    cursor:pointer;
-    background:#f8fafc;
+display:inline-flex;
+min-width:64px;height:52px;
+border:3px dashed #cbd5e1;border-radius:10px;
+align-items:center;justify-content:center;
+font-size:24px;font-weight:bold;
+cursor:pointer;background:#f8fafc;
+margin:4px;
 }
-.slot.filled{border-style:solid;border-color:#3b82f6;background:#eff6ff;}
-.slot.completed{border-color:#22c55e;background:#f0fdf4;color:#166534;cursor:default;}
-
-mark {
-    background-color: #fef08a;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-weight: bold;
-    color: #1e293b;
-}
-.mark-blue {
-    background-color: #bae6fd;
-}
-
-@keyframes tada{
-0%{transform:scale(1)}
-10%,20%{transform:scale(.9) rotate(-3deg)}
-30%,50%,70%,90%{transform:scale(1.1) rotate(3deg)}
-40%,60%,80%{transform:scale(1.1) rotate(-3deg)}
-100%{transform:scale(1)}
-}
-.animate-tada{animation:tada 1s ease;}
-
+.slot.filled{border-style:solid;border-color:#2563eb;background:#eff6ff;}
 .toast{
-position:fixed;
-bottom:30px;
-left:50%;
+position:fixed;bottom:30px;left:50%;
 transform:translateX(-50%);
-background:#111827;
-color:white;
-padding:12px 24px;
-border-radius:12px;
-opacity:0;
-transition:.3s;
-z-index:999;
+background:#111827;color:white;
+padding:12px 22px;border-radius:12px;
+opacity:0;transition:.25s;
 }
 .toast.show{opacity:1;}
-
-/* 隱藏滾動條 */
-.no-scrollbar::-webkit-scrollbar {
-    display: none;
-}
-.no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
 </style>
 </head>
 
-<body class="bg-slate-100 text-slate-800 font-sans h-screen flex flex-col">
+<body class="bg-slate-100 h-screen flex flex-col">
 
-<header class="bg-white shadow p-4 flex flex-col md:flex-row justify-between items-center gap-4 shrink-0 z-10 relative">
-    <div class="font-bold text-blue-600 flex items-center gap-2 text-xl whitespace-nowrap">
-        <i class="fa-solid fa-puzzle-piece"></i> 概數魔法
-    </div>
-    
-    <!-- 導覽按鈕區 -->
-    <div class="flex-1 overflow-x-auto no-scrollbar flex gap-2 w-full md:w-auto" id="nav-container">
-        <!-- 由 JS 生成 -->
-    </div>
-
-    <div class="flex items-center gap-4 shrink-0">
-        <div class="hidden md:block w-32 bg-slate-200 rounded-full h-3 overflow-hidden">
-            <div id="progress-bar" class="bg-blue-500 h-3 transition-all"></div>
-        </div>
-        <div class="bg-yellow-100 px-4 py-1.5 rounded-full font-bold shadow-inner whitespace-nowrap">
-            ⭐ 積分: <span id="score-display">0</span>
-        </div>
-    </div>
+<header class="bg-white shadow p-4 flex justify-between">
+<b class="text-blue-600 text-xl">概數魔法｜無限挑戰</b>
+<div>⭐ <span id="score">0</span></div>
 </header>
 
-<main class="flex-1 overflow-hidden flex flex-col md:flex-row relative">
-    <!-- 左側：題目區 -->
-    <div class="w-full md:w-5/12 bg-indigo-50 p-6 overflow-y-auto border-b-2 md:border-b-0 md:border-r-2 border-slate-200 shrink-0">
-        <div id="question-container" class="max-w-xl mx-auto"></div>
-    </div>
-
-    <!-- 右側：作答區 -->
-    <div class="w-full md:w-7/12 bg-slate-100 p-6 overflow-y-auto">
-        <div id="steps-container" class="max-w-2xl mx-auto space-y-6 pb-24"></div>
-    </div>
+<main class="flex-1 p-6">
+<div id="question" class="text-2xl font-bold mb-6"></div>
+<div id="workspace"></div>
+<button id="next" class="mt-6 bg-green-600 text-white px-6 py-3 rounded-xl">下一題（重新生成）</button>
 </main>
 
-<div id="toast" class="toast font-bold shadow-lg"></div>
+<div id="toast" class="toast"></div>
 
 <script>
+/* ===============================
+   工具
+================================*/
+const rand=(min,max)=>Math.floor(Math.random()*(max-min+1))+min
 
-/* ==============================
-   狀態
-============================== */
+function shuffle(arr){
+for(let i=arr.length-1;i>0;i--){
+const j=Math.floor(Math.random()*(i+1))
+;[arr[i],arr[j]]=[arr[j],arr[i]]
+}
+return arr
+}
 
-let score = 0
-let currentQuestionIndex = 0
-let progressData = {}
-let audioCtx
+/* ===============================
+   題型生成器（真正無限題）
+================================*/
 
-/* ==============================
-   題庫 (加入應用概數估算內容)
-============================== */
+function genRoundUpWithdrawal(){
+const price=rand(2000,9800)
+const need=Math.ceil(price/1000)*1000
+return{
+text:`商品價格 ${price} 元，提款機只能領千元，最少要領多少元？`,
+answer:[need],
+options:shuffle([
+need,
+need+1000,
+need-1000<0?need:need-1000
+])
+}
+}
 
-const questionsData = [
-    {
-        id: 'q1', title: '無條件進入法', 
-        content: '媽媽要購買 <mark>8240元</mark> 的掃地機器人，她到 <mark class="mark-blue">限提千元鈔票</mark> 的提款機提款，最少要提領多少元？',
-        steps: [
-            { instruction: '8240元中的 8000元，需要幾張千元鈔票？', template: '需要 [slot] 張千元鈔票。', options: ['7', '8', '9'], answer: ['8'] },
-            { instruction: '剩下的 240元，因為提款機只能領千元，所以也要領幾張？', template: '240元也需要 [slot] 張千元鈔票。', options: ['0', '1', '2'], answer: ['1'] },
-            { instruction: '算算看，總共需要幾張千元鈔票？也就是提領了多少元？', template: '共要 [slot] 張，所以最少要提領 [slot] 元。', options: ['8', '9', '8000', '9000'], answer: ['9', '9000'] }
-        ]
-    },
-    {
-        id: 'q2', title: '無條件捨去法', 
-        content: '食品工廠昨天生產了 <mark>5237個</mark> 果凍。每 <mark class="mark-blue">100個</mark> 果凍裝成1盒，最多可裝滿幾盒？',
-        steps: [
-            { instruction: '先看百位以上的數字。5200個果凍，可以裝滿幾盒(每盒100個)？', template: '5200個可裝滿 [slot] 盒。', options: ['5', '52', '520'], answer: ['52'] },
-            { instruction: '剩下的 37個 果凍，夠不夠裝成 1 盒 (100個)？', template: '37個 [slot] 裝成1盒，所以捨去。', options: ['夠', '不夠'], answer: ['不夠'] },
-            { instruction: '所以最多可以裝滿幾盒？這些裝滿的果凍總共是幾個？', template: '最多裝滿 [slot] 盒，共裝了 [slot] 個。', options: ['52', '53', '5200', '5300'], answer: ['52', '5200'] }
-        ]
-    },
-    {
-        id: 'q3', title: '四捨五入法', 
-        content: '忠孝國小有 <mark>2167人</mark>，仁愛國小有 <mark>2875人</mark>。請用「四捨五入法」取概數到 <mark class="mark-blue">千位</mark>。',
-        steps: [
-            { instruction: '先看忠孝國小。2167的百位數字是 1，比 5 小，所以捨去。', template: '忠孝國小大約是 [slot] 人。', options: ['2000', '3000'], answer: ['2000'] },
-            { instruction: '換看仁愛國小。2875的百位數字是 8，大於等於 5，所以要進位。', template: '仁愛國小大約是 [slot] 人。', options: ['2000', '3000'], answer: ['3000'] }
-        ]
-    },
-    {
-        id: 'q4', title: '加法估算', 
-        content: '臺北捷運的載客量是 <mark>67308154人次</mark>，高雄捷運的載客量是 <mark>5918648人次</mark>。請先用四捨五入法取概數到 <mark class="mark-blue">萬位</mark>，再算算看大約共有幾萬人次？',
-        steps: [
-            { instruction: '臺北捷運載客量「67308154」取概數到萬位。千位數字是 8，要進位。', template: '大約是 [slot] 萬。', options: ['6730', '6731', '6732'], answer: ['6731'] },
-            { instruction: '高雄捷運載客量「5918648」取概數到萬位。千位數字也是 8，要進位。', template: '大約是 [slot] 萬。', options: ['591', '592', '593'], answer: ['592'] },
-            { instruction: '把兩個取好概數的數量相加，就是大約的總人次了！', template: '[slot] 萬 + [slot] 萬 = [slot] 萬。', options: ['6731', '591', '592', '7323', '7223'], answer: ['6731', '592', '7323'] }
-        ]
-    },
-    {
-        id: 'q5', title: '乘法估算', 
-        content: '妮妮全家參加旅遊，團費每人 <mark>24888元</mark>，全家共有 <mark class="mark-blue">4人</mark>。大約共要多少元？請先用四捨五入法取概數到 <mark class="mark-blue">千位</mark>，再算算看。',
-        steps: [
-            { instruction: '先將每人的團費「24888」用四捨五入法取概數到「千位」。百位數字是 8，要進位。', template: '大約是 [slot] 元。', options: ['24000', '24800', '25000'], answer: ['25000'] },
-            { instruction: '每人團費大約是 25000 元，全家有 4 人，把它們乘起來算總花費。', template: '[slot] × 4 = [slot] 元。', options: ['24888', '25000', '100000', '90000'], answer: ['25000', '100000'] }
-        ]
-    },
-    {
-        id: 'q6', title: '除法估算', 
-        content: '非洲象重 <mark>5063公斤</mark>，奇奇重 <mark class="mark-blue">38公斤</mark>。非洲象的體重大約是奇奇的幾倍？請先用四捨五入法取概數到 <mark class="mark-blue">最高位</mark>，再算算看。',
-        steps: [
-            { instruction: '5063最高位是千位，百位是0所以捨去；38最高位是十位，個位是8所以進位。', template: '非洲象約 [slot] 公斤，奇奇約 [slot] 公斤。', options: ['5000', '5100', '30', '40'], answer: ['5000', '40'] },
-            { instruction: '用估算後的體重相除，求出倍數。', template: '[slot] ÷ [slot] = [slot] 倍。', options: ['5000', '40', '125', '120'], answer: ['5000', '40', '125'] }
-        ]
-    }
+function genBoxPacking(){
+const total=rand(2000,9000)
+const per=100
+const box=Math.floor(total/per)
+return{
+text:`共有 ${total} 個物品，每 ${per} 個裝一盒，最多可裝幾盒？`,
+answer:[box],
+options:shuffle([box,box+1,box-1])
+}
+}
+
+function genRoundToThousand(){
+const num=rand(1000,9999)
+const rounded=Math.round(num/1000)*1000
+return{
+text:`將 ${num} 用四捨五入取到千位是多少？`,
+answer:[rounded],
+options:shuffle([
+rounded,
+rounded+1000,
+rounded-1000<0?rounded:rounded-1000
+])
+}
+}
+
+function genAdditionEstimate(){
+const a=rand(20000,90000)
+const b=rand(20000,90000)
+const ra=Math.round(a/10000)*10000
+const rb=Math.round(b/10000)*10000
+return{
+text:`${a} + ${b} 先取概數到萬位，再估算總和是多少？`,
+answer:[ra+rb],
+options:shuffle([ra+rb,ra+rb+10000,ra+rb-10000])
+}
+}
+
+function genMultiplyEstimate(){
+const price=rand(20000,50000)
+const people=rand(3,7)
+const rp=Math.round(price/1000)*1000
+return{
+text:`每人 ${price} 元，共 ${people} 人，先取千位概數後估算總價？`,
+answer:[rp*people],
+options:shuffle([
+rp*people,
+rp*(people+1),
+rp*(people-1)
+])
+}
+}
+
+function genDivisionEstimate(){
+const big=rand(4000,9000)
+const small=rand(20,80)
+const rb=Math.round(big/1000)*1000
+const rs=Math.round(small/10)*10
+const ans=Math.round(rb/rs)
+return{
+text:`${big} ÷ ${small} 先取最高位概數後估算約幾倍？`,
+answer:[ans],
+options:shuffle([ans,ans+5,ans-5])
+}
+}
+
+const generators=[
+genRoundUpWithdrawal,
+genBoxPacking,
+genRoundToThousand,
+genAdditionEstimate,
+genMultiplyEstimate,
+genDivisionEstimate
 ]
 
-/* ==============================
-   音效
-============================== */
+/* ===============================
+   狀態
+================================*/
+let current=null
+let slots=[]
+let score=0
 
-function getAudio(){
-    if(!audioCtx){
-        audioCtx = new (window.AudioContext||window.webkitAudioContext)()
-    }
-    return audioCtx
+function newQuestion(){
+const g=generators[rand(0,generators.length-1)]
+current=g()
+slots=[null]
+render()
 }
 
-function playTone(freq){
-    const ctx = getAudio()
-    if(ctx.state === "suspended") ctx.resume()
-    const osc = ctx.createOscillator()
-    const gain = ctx.createGain()
-    osc.frequency.value = freq
-    osc.type = "sine"
-    osc.connect(gain)
-    gain.connect(ctx.destination)
-    gain.gain.value = 0.1
-    osc.start()
-    osc.stop(ctx.currentTime + 0.15)
+/* ===============================
+   UI
+================================*/
+function render(){
+document.getElementById("question").innerText=current.text
+
+const area=document.getElementById("workspace")
+area.innerHTML=`
+<div>
+<span class="slot">${slots[0]??"?"}</span>
+</div>
+<div class="mt-4">
+${current.options.map(o=>`<button class="opt border px-5 py-3 m-2">${o}</button>`).join("")}
+</div>
+<button id="check" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg">檢查答案</button>
+`
 }
 
-/* ==============================
-   Toast
-============================== */
+/* ===============================
+   事件代理
+================================*/
+document.addEventListener("click",e=>{
 
-function showToast(msg){
-    const t = document.getElementById("toast")
-    t.innerText = msg
-    t.classList.add("show")
-    setTimeout(() => t.classList.remove("show"), 2000)
+if(e.target.classList.contains("opt")){
+slots[0]=Number(e.target.innerText)
+render()
 }
 
-/* ==============================
-   初始化
-============================== */
-
-function initData(){
-    score = 0
-    questionsData.forEach(q => {
-        progressData[q.id] = {
-            currentStep: 0,
-            slots: q.steps.map(s => new Array(s.answer.length).fill(null)),
-            completed: false
-        }
-    })
-    saveData()
+if(e.target.id==="check"){
+check()
 }
 
-function saveData(){
-    localStorage.setItem("approxGameData", JSON.stringify({
-        score, progressData, currentQuestionIndex
-    }))
+if(e.target.id==="next"){
+newQuestion()
 }
 
-function loadData(){
-    const d = localStorage.getItem("approxGameData")
-    if(d){
-        const parsed = JSON.parse(d)
-        score = parsed.score
-        progressData = parsed.progressData
-        currentQuestionIndex = parsed.currentQuestionIndex
-    }
-}
-
-function updateScore(){
-    document.getElementById("score-display").innerText = score
-    updateProgressBar()
-    saveData()
-}
-
-function updateProgressBar(){
-    const total = questionsData.length
-    const done = questionsData.filter(q => progressData[q.id]?.completed).length
-    const pbar = document.getElementById("progress-bar");
-    if(pbar) pbar.style.width = (done / total * 100) + "%"
-}
-
-/* ==============================
-   UI Render
-============================== */
-
-function renderNavbar(){
-    const nav = document.getElementById("nav-container")
-    nav.innerHTML = ""
-    questionsData.forEach((q, idx) => {
-        const btn = document.createElement("button")
-        btn.className = `px-5 py-2.5 rounded-full font-bold whitespace-nowrap transition-all flex items-center gap-2 ${
-            idx === currentQuestionIndex 
-            ? 'bg-blue-600 text-white shadow-md' 
-            : 'bg-white text-slate-500 hover:bg-slate-100 border border-slate-200'
-        }`
-        const isCompleted = progressData[q.id]?.completed
-        const icon = isCompleted ? '✅' : `<span class="bg-blue-200 text-blue-800 text-xs w-5 h-5 flex items-center justify-center rounded-full">${idx+1}</span>`
-        btn.innerHTML = `${icon} ${q.title}`
-        
-        btn.onclick = () => {
-            currentQuestionIndex = idx
-            renderNavbar()
-            renderQuestion()
-        }
-        nav.appendChild(btn)
-    })
-}
-
-function renderQuestion(){
-    const q = questionsData[currentQuestionIndex]
-    const p = progressData[q.id]
-    
-    document.getElementById("question-container").innerHTML = `
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-            <h2 class="text-2xl font-bold text-slate-800 mb-4 pr-12">第 ${currentQuestionIndex + 1} 關：${q.title}</h2>
-            <div class="text-2xl leading-relaxed text-slate-700">${q.content}</div>
-        </div>
-    `
-    
-    const stepsContainer = document.getElementById("steps-container")
-    stepsContainer.innerHTML = ""
-
-    q.steps.forEach((step, i) => {
-        if(i > p.currentStep && !p.completed) return
-
-        const card = document.createElement("div")
-        const isCompleted = (i < p.currentStep || p.completed)
-        card.className = `bg-white p-6 rounded-2xl shadow border-l-8 transition-all duration-500 ${isCompleted ? 'border-green-500 opacity-80' : 'border-blue-500 ring-2 ring-blue-200'}`
-        card.id = `step-card-${i}`
-
-        let template = step.template
-        step.answer.forEach((ans, idx) => {
-            const val = p.slots[i][idx]
-            template = template.replace("[slot]",
-            `<span class="slot ${val ? 'filled' : ''} ${isCompleted ? 'completed' : ''}" 
-            onclick="clearSlot(${i},${idx})">${val ?? "?"}</span>`)
-        })
-
-        let options = ""
-        if(i === p.currentStep && !p.completed){
-            options = step.options.map(o => {
-                const isUsed = p.slots[i].includes(o);
-                return `
-                <button onclick="fillSlot(${i},'${o}')" 
-                class="px-5 py-3 border-2 border-slate-300 font-bold text-slate-700 rounded-xl m-1 hover:border-blue-400 hover:bg-blue-50 shadow-sm transition-transform active:scale-95 ${isUsed ? 'opacity-0 pointer-events-none' : ''}">
-                ${o}</button>
-                `
-            }).join("")
-            options = `<div class="mt-6 p-4 bg-slate-50 rounded-xl border border-slate-200"><div class="text-sm font-bold text-slate-500 mb-3">點擊選項填入：</div>${options}</div>`
-        }
-
-        card.innerHTML = `
-            <div class="flex items-center gap-3 mb-4">
-                <div class="w-8 h-8 rounded-full flex items-center justify-center font-bold text-white ${isCompleted ? 'bg-green-500' : 'bg-blue-500'}">${i + 1}</div>
-                <h3 class="text-xl font-bold text-slate-700">步驟 ${i + 1}</h3>
-            </div>
-            <div class="text-xl text-slate-600 mb-4 leading-relaxed">${step.instruction}</div>
-            <div class="text-2xl font-medium bg-blue-50/50 p-4 rounded-xl border border-blue-100 leading-loose flex flex-wrap items-center">${template}</div>
-            ${options}
-            ${i === p.currentStep && !p.completed ? 
-            `<div class="mt-4 flex justify-end"><button onclick="checkAnswer(${i})"
-            class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold shadow-lg shadow-blue-200 active:scale-95 transition-all">檢查答案</button></div>` : ""}
-        `
-        stepsContainer.appendChild(card)
-    })
-
-    updateScore()
-}
-
-/* ==============================
-   互動邏輯
-============================== */
-
-function fillSlot(step, val){
-    const q = questionsData[currentQuestionIndex]
-    const p = progressData[q.id]
-    const idx = p.slots[step].findIndex(v => v === null)
-    if(idx !== -1){
-        p.slots[step][idx] = val
-        playTone(500)
-        renderQuestion()
-    }
-}
-
-function clearSlot(step, idx){
-    const q = questionsData[currentQuestionIndex]
-    const p = progressData[q.id]
-    if(step < p.currentStep || p.completed) return
-    p.slots[step][idx] = null
-    renderQuestion()
-}
-
-function checkAnswer(step){
-    const q = questionsData[currentQuestionIndex]
-    const p = progressData[q.id]
-    const correct = q.steps[step].answer
-    const user = p.slots[step]
-
-    if(user.includes(null)){
-        showToast("請填滿所有的空格喔！")
-        playTone(200)
-        return
-    }
-
-    let ok = true
-    for(let i = 0; i < correct.length; i++){
-        if(user[i] !== correct[i]) ok = false
-    }
-
-    if(ok){
-        score += 10
-        playTone(800)
-        
-        const card = document.getElementById(`step-card-${step}`)
-        if(card) card.classList.add('animate-tada')
-
-        setTimeout(() => {
-            p.currentStep++
-            if(p.currentStep >= q.steps.length){
-                p.completed = true
-                showToast("🎉 恭喜！本題完成！")
-                renderNavbar() // 更新上方打勾圖示
-            }
-            renderQuestion()
-            
-            // 滾動到新的步驟
-            if (!p.completed) {
-                setTimeout(() => {
-                    const newCard = document.getElementById(`step-card-${p.currentStep}`);
-                    if(newCard) newCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 100);
-            }
-        }, 800)
-    } else {
-        playTone(150)
-        showToast("答錯了，再想想看！")
-    }
-}
-
-/* ==============================
-   啟動
-============================== */
-
-window.addEventListener("load", () => {
-    loadData()
-    if(!progressData || Object.keys(progressData).length === 0){
-        initData()
-    }
-    renderNavbar()
-    renderQuestion()
 })
 
+function check(){
+if(slots[0]===null){
+toast("請先作答")
+return
+}
+
+if(slots[0]===current.answer[0]){
+score+=10
+document.getElementById("score").innerText=score
+toast("答對！已產生新題")
+setTimeout(newQuestion,600)
+}else{
+toast("再試一次")
+}
+}
+
+function toast(msg){
+const t=document.getElementById("toast")
+t.innerText=msg
+t.classList.add("show")
+setTimeout(()=>t.classList.remove("show"),1500)
+}
+
+/* ===============================
+   啟動
+================================*/
+newQuestion()
 </script>
 </body>
 </html>
