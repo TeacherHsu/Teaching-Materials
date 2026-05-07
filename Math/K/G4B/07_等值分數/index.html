@@ -10,23 +10,19 @@
         /* 基礎字體與無障礙設定 */
         body { font-family: 'Helvetica Neue', Helvetica, Arial, '微軟正黑體', sans-serif; background-color: #f8fafc; }
         
-        /* 數學排版專用 CSS (嚴格遵守規範) */
-        .math { font-size: 28px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; vertical-align: middle; margin: 0 4px;}
+        /* 數學排版專用 CSS (嚴格遵守規範，禁用 LaTeX) */
+        .math { font-size: 32px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; vertical-align: middle; margin: 0 6px;}
         .fraction { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.1; }
-        .fraction span:first-child { border-bottom: 2px solid #000; padding: 0 4px; }
-        .fraction span:last-child { padding: 0 4px; }
-        .power { font-size: 18px; vertical-align: super; margin-left: 2px; color: #e63946; }
-        .sqrt::before { content: "√"; font-size: 28px; margin-right: 2px; }
-        .abs::before { content: "|"; } .abs::after { content: "|"; }
-        .mixed { display: inline-flex; align-items: center; gap: 2px; }
-
+        .fraction span:first-child { border-bottom: 3px solid #1e293b; padding: 0 6px; }
+        .fraction span:last-child { padding: 0 6px; }
+        
         /* 互動輸入框樣式 */
         .slot-input {
-            width: 56px; height: 40px; text-align: center; font-size: 24px; font-weight: bold;
-            border: 2px solid #94a3b8; border-radius: 8px; color: #1e40af; background-color: #fff;
-            transition: all 0.2s; outline: none; appearance: textfield;
+            width: 60px; height: 48px; text-align: center; font-size: 28px; font-weight: bold;
+            border: 3px solid #94a3b8; border-radius: 8px; color: #1e40af; background-color: #fff;
+            transition: all 0.2s; outline: none; appearance: textfield; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
         }
-        .slot-input:focus { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3); background-color: #eff6ff; }
+        .slot-input:focus { border-color: #3b82f6; box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3); background-color: #eff6ff; }
         .slot-input.correct { border-color: #22c55e; background-color: #f0fdf4; color: #166534; pointer-events: none; }
         .slot-input.wrong { border-color: #ef4444; background-color: #fef2f2; color: #991b1b; animation: shake 0.4s; }
 
@@ -36,8 +32,8 @@
         /* 語音按鈕 */
         .tts-btn {
             background-color: #e0f2fe; border: 2px solid #bae6fd; border-radius: 50%;
-            width: 40px; height: 40px; font-size: 20px; display: inline-flex; align-items: center; justify-content: center;
-            cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.1); flex-shrink: 0;
+            width: 44px; height: 44px; font-size: 22px; display: inline-flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: all 0.2s; box-shadow: 0 3px 6px rgba(0,0,0,0.15); flex-shrink: 0;
         }
         .tts-btn:hover { background-color: #bae6fd; transform: scale(1.1); }
         .tts-btn:active { transform: scale(0.95); }
@@ -45,281 +41,298 @@
         /* 動畫 */
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            50% { transform: translateX(5px); }
-            75% { transform: translateX(-5px); }
+            25% { transform: translateX(-6px); }
+            50% { transform: translateX(6px); }
+            75% { transform: translateX(-6px); }
         }
-        .fade-in { animation: fadeIn 0.5s ease-in; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 0.5s ease-in forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* 重點標記 */
-        mark { background-color: #fef08a; padding: 2px 4px; border-radius: 4px; font-weight: bold; }
+        /* 重點標記與按鈕 */
+        mark { background-color: #fef08a; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #b45309; }
+        .scaffold-box { border: 2px dashed #cbd5e1; background-color: #f8fafc; border-radius: 12px; padding: 16px; position: relative; }
         
-        .check-btn { background-color: #3b82f6; color: white; padding: 10px 24px; border-radius: 999px; font-size: 20px; font-weight: bold; cursor: pointer; transition: background-color 0.2s, transform 0.1s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .check-btn:hover { background-color: #2563eb; transform: translateY(-2px); }
-        .check-btn:active { transform: translateY(0); }
-        .check-btn:disabled { background-color: #cbd5e1; cursor: not-allowed; transform: none; box-shadow: none; }
+        .check-btn { background-color: #3b82f6; color: white; padding: 12px 32px; border-radius: 999px; font-size: 22px; font-weight: bold; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.15); }
+        .check-btn:hover { background-color: #2563eb; transform: translateY(-2px); box-shadow: 0 6px 8px rgba(0,0,0,0.2); }
+        .check-btn:active { transform: translateY(0); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .check-btn:disabled { background-color: #cbd5e1; cursor: not-allowed; transform: none; box-shadow: none; color: #94a3b8; }
+        
+        /* 箭頭樣式 */
+        .arrow-curve { fill: none; stroke: #ef4444; stroke-width: 3; }
+        .arrow-head { fill: #ef4444; }
     </style>
 </head>
-<body class="pb-20">
+<body class="pb-24 pt-20">
 
     <!-- 頂部資訊列 -->
-    <header class="fixed top-0 w-full bg-white shadow-md z-50 px-4 py-3 flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-blue-800">🚀 數學闖關：等值分數</h1>
-        <div class="flex gap-4 text-lg font-bold">
-            <div class="bg-yellow-100 px-4 py-1 rounded-full text-yellow-700 border-2 border-yellow-300">
-                積分: <span id="score-display">0</span>
+    <header class="fixed top-0 w-full bg-white shadow-md z-50 px-6 py-4 flex justify-between items-center border-b-4 border-blue-500">
+        <h1 class="text-3xl font-extrabold text-blue-800 flex items-center gap-2">
+            <span>🚀</span> 數學闖關：等值分數
+        </h1>
+        <div class="flex gap-4 text-xl font-bold">
+            <div class="bg-yellow-100 px-5 py-2 rounded-full text-yellow-700 border-2 border-yellow-400 shadow-sm">
+                ⭐ 積分: <span id="score-display">0</span>
             </div>
-            <div class="bg-green-100 px-4 py-1 rounded-full text-green-700 border-2 border-green-300">
-                時間: <span id="timer-display">00:00</span>
+            <div class="bg-green-100 px-5 py-2 rounded-full text-green-700 border-2 border-green-400 shadow-sm">
+                ⏱️ <span id="timer-display">00:00</span>
             </div>
         </div>
     </header>
 
     <!-- 主內容區 -->
-    <main class="max-w-4xl mx-auto mt-24 px-4">
+    <main class="max-w-4xl mx-auto px-4">
         
         <!-- 開始畫面 -->
-        <div id="intro-screen" class="text-center bg-white p-10 rounded-2xl shadow-lg border-t-8 border-blue-500">
-            <h2 class="text-4xl font-bold mb-6">歡迎來到等值分數挑戰！</h2>
-            <p class="text-2xl mb-8 text-gray-700">準備好你的大腦，我們要一步一步破關囉！</p>
-            <button onclick="startGame()" class="text-3xl bg-blue-500 text-white px-8 py-4 rounded-full font-bold hover:bg-blue-600 shadow-xl transition-transform hover:scale-105">開始闖關</button>
+        <div id="intro-screen" class="text-center bg-white p-12 rounded-3xl shadow-xl border-t-8 border-blue-500 mt-10">
+            <h2 class="text-4xl font-bold mb-6 text-gray-800">歡迎來到等值分數闖關！</h2>
+            <div class="text-2xl mb-8 text-gray-600 space-y-4">
+                <p>我們準備了像學習單一樣簡單的挑戰喔！</p>
+                <p>跟著老師的提示，一步一步解鎖吧！</p>
+            </div>
+            <button onclick="startGame()" class="text-3xl bg-blue-500 text-white px-10 py-5 rounded-full font-bold hover:bg-blue-600 shadow-xl transition-transform hover:scale-105">開始闖關</button>
         </div>
 
-        <!-- ==================== 關卡 1：認識等值分數 ==================== -->
+        <!-- ==================== 關卡 1：看圖填分數 (視覺鷹架) ==================== -->
         <section id="level-1" class="hidden mb-12 fade-in">
-            <div class="bg-blue-600 text-white p-4 rounded-t-2xl flex items-center justify-between">
-                <h2 class="text-2xl font-bold">第一關：看圖認識等值分數</h2>
-                <button onclick="speak('第一關：看圖認識等值分數。請看題目。')" class="tts-btn bg-blue-500 border-blue-400">🔊</button>
+            <div class="bg-blue-600 text-white p-5 rounded-t-2xl flex items-center justify-between shadow-md">
+                <h2 class="text-3xl font-bold flex items-center gap-2"><span class="bg-white text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-xl">1</span> 看圖填分數</h2>
+                <button onclick="speak('第一關：看圖填分數。塗色一樣多，就是等值分數。')" class="tts-btn bg-blue-500 border-blue-400 text-white">🔊</button>
             </div>
             
-            <div class="bg-white p-6 rounded-b-2xl shadow-lg border-2 border-t-0 border-blue-600">
+            <div class="bg-white p-8 rounded-b-2xl shadow-xl border-2 border-t-0 border-blue-600">
+                <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-8 rounded-r-lg flex items-center gap-4 text-xl text-blue-900 font-bold">
+                    💡 學習單提示：分法不一樣，塗色一樣多，就是等值分數！
+                </div>
+
                 <!-- 步驟 1-1 -->
                 <div id="step-1-1" class="step-container" data-mistakes="0">
-                    <div class="flex gap-4 mb-4">
-                        <button onclick="speak('我們有一個披薩，切成 2 片，拿了 1 片，是二分之一塊。如果切成 4 片，要拿幾片才會和二分之一塊一樣多呢？')" class="tts-btn">🔊</button>
-                        <div class="text-xl text-gray-800 leading-relaxed">
-                            <p>我們有一個披薩，切成 2 片，拿了 1 片，是 <div class="math"><span class="fraction"><span>1</span><span>2</span></span></div> 塊。</p>
-                            <p>如果<mark>切成 4 片</mark>，要拿幾片才會和 <div class="math"><span class="fraction"><span>1</span><span>2</span></span></div> 塊一樣多呢？</p>
-                        </div>
+                    <div class="flex gap-4 mb-6 items-center">
+                        <button onclick="speak('請看圖。左邊是四分之二，右邊塗色的部分一樣大，請填出正確的分數。')" class="tts-btn">🔊</button>
+                        <p class="text-2xl text-gray-800 font-semibold">先看塗色一樣多，再填分數。</p>
                     </div>
 
-                    <!-- 圖形輔助 SVG -->
-                    <div class="flex items-center justify-center gap-6 my-8">
+                    <!-- 視覺長條圖 SVG -->
+                    <div class="flex items-center justify-center gap-10 my-8 bg-gray-50 py-8 rounded-xl border border-gray-200">
+                        <!-- 2/4 -->
                         <div class="text-center">
-                            <svg width="120" height="120" viewBox="0 0 100 100">
-                                <circle cx="50" cy="50" r="45" fill="#fef08a" stroke="#000" stroke-width="2"/>
-                                <path d="M 50 5 L 50 95 A 45 45 0 0 0 50 5" fill="#fb923c" stroke="#000" stroke-width="2"/>
+                            <svg viewBox="0 0 200 60" width="240" height="72" class="mx-auto mb-4 drop-shadow-md">
+                                <rect x="0" y="0" width="50" height="60" fill="#60a5fa" stroke="#1e293b" stroke-width="3"/>
+                                <rect x="50" y="0" width="50" height="60" fill="#60a5fa" stroke="#1e293b" stroke-width="3"/>
+                                <rect x="100" y="0" width="50" height="60" fill="#ffffff" stroke="#1e293b" stroke-width="3"/>
+                                <rect x="150" y="0" width="50" height="60" fill="#ffffff" stroke="#1e293b" stroke-width="3"/>
                             </svg>
-                            <div class="mt-2 text-xl font-bold"><div class="math"><span class="fraction"><span>1</span><span>2</span></span></div></div>
+                            <div class="math"><span class="fraction"><span>2</span><span>4</span></span></div>
                         </div>
-                        <span class="text-4xl font-bold text-gray-400">=</span>
+                        
+                        <span class="text-5xl font-bold text-gray-400">=</span>
+                        
+                        <!-- 1/2 -->
                         <div class="text-center">
-                            <svg width="120" height="120" viewBox="0 0 100 100">
-                                <circle cx="50" cy="50" r="45" fill="#fef08a" stroke="#000" stroke-width="2"/>
-                                <line x1="5" y1="50" x2="95" y2="50" stroke="#000" stroke-width="2"/>
-                                <line x1="50" y1="5" x2="50" y2="95" stroke="#000" stroke-width="2"/>
-                                <path d="M 50 50 L 50 5 A 45 45 0 0 1 95 50 Z" fill="#fb923c"/>
-                                <path d="M 50 50 L 95 50 A 45 45 0 0 1 50 95 Z" fill="#fb923c"/>
+                            <svg viewBox="0 0 200 60" width="240" height="72" class="mx-auto mb-4 drop-shadow-md">
+                                <rect x="0" y="0" width="100" height="60" fill="#60a5fa" stroke="#1e293b" stroke-width="3"/>
+                                <rect x="100" y="0" width="100" height="60" fill="#ffffff" stroke="#1e293b" stroke-width="3"/>
                             </svg>
-                            <div class="mt-2 text-xl font-bold">填填看</div>
+                            <div class="math">
+                                <span class="fraction">
+                                    <span><input type="number" class="slot-input main-input" data-answer="1"></span>
+                                    <span>2</span>
+                                </span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- 填答區 -->
-                    <div class="bg-blue-50 p-6 rounded-xl flex items-center justify-center gap-4 text-2xl mb-4">
-                        <div class="math"><span class="fraction"><span>1</span><span>2</span></span></div>
-                        <span class="font-bold">=</span>
-                        <div class="math">
-                            <span class="fraction">
-                                <span><input type="number" class="slot-input main-input" data-answer="2" placeholder="?"></span>
-                                <span>4</span>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col items-center gap-2">
+                    <div class="flex flex-col items-center gap-3">
                         <button onclick="checkStep('step-1-1', 'level-2')" class="check-btn">檢查答案</button>
-                        <div id="feedback-step-1-1" class="text-xl font-bold min-h-[30px]"></div>
+                        <div id="feedback-step-1-1" class="text-2xl font-bold min-h-[36px]"></div>
                     </div>
 
-                    <!-- 補救教學區 (預設隱藏) -->
-                    <div id="remedial-step-1-1" class="hidden mt-6 bg-orange-50 border-2 border-orange-300 p-5 rounded-xl fade-in">
-                        <div class="flex items-center gap-3 mb-3">
-                            <button onclick="speak('錯誤兩次了沒關係，我們來複習一下。請看圖，右邊的披薩橘色的部分有幾塊呢？')" class="tts-btn bg-orange-200">🔊</button>
-                            <h3 class="text-xl font-bold text-orange-700">💡 教練提示時間</h3>
+                    <!-- 補救 1-1 -->
+                    <div id="remedial-step-1-1" class="hidden mt-6 bg-orange-50 border-2 border-orange-300 p-6 rounded-2xl fade-in shadow-inner">
+                        <div class="flex items-center gap-3 mb-4">
+                            <button onclick="speak('右邊的圖形，被平分成2大塊。塗上藍色的有幾塊呢？')" class="tts-btn bg-orange-200">🔊</button>
+                            <h3 class="text-2xl font-bold text-orange-700">🧑‍🏫 教練提示</h3>
                         </div>
-                        <p class="text-lg text-gray-800 mb-3">仔細數一數右邊的圖形，<mark>橘色的部分共有幾小塊？</mark></p>
-                        <div class="flex justify-center items-center gap-3">
-                            <input type="number" id="rem-input-1-1" class="slot-input" data-answer="2"> 
-                            <span class="text-xl font-bold text-gray-700">塊</span>
-                            <button onclick="checkRemedial('step-1-1', 'rem-input-1-1')" class="bg-orange-500 text-white px-4 py-2 rounded-lg font-bold text-lg hover:bg-orange-600">確認觀念</button>
-                        </div>
-                        <div id="rem-feedback-step-1-1" class="text-center font-bold text-lg mt-2"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== 關卡 2：找等值分數 (擴分) ==================== -->
-        <section id="level-2" class="hidden mb-12 fade-in">
-            <div class="bg-green-600 text-white p-4 rounded-t-2xl flex items-center justify-between">
-                <h2 class="text-2xl font-bold">第二關：計算找等值分數</h2>
-                <button onclick="speak('第二關：計算找等值分數。我們可以把分子和分母乘以一樣的數字。')" class="tts-btn bg-green-500 border-green-400">🔊</button>
-            </div>
-            
-            <div class="bg-white p-6 rounded-b-2xl shadow-lg border-2 border-t-0 border-green-600">
-                <!-- 步驟 2-1 -->
-                <div id="step-2-1" class="step-container" data-mistakes="0">
-                    <div class="flex gap-4 mb-4">
-                        <button onclick="speak('要把三分之二的分子和分母，同時乘以 2。請在空格裡填入正確的數字。')" class="tts-btn">🔊</button>
-                        <div class="text-xl text-gray-800 leading-relaxed">
-                            <p>找等值分數時，<mark>分子和分母要乘以相同的數字</mark>。</p>
-                            <p>請將 <div class="math"><span class="fraction"><span>2</span><span>3</span></span></div> 的分子和分母<strong>同乘以 2</strong>。</p>
-                        </div>
-                    </div>
-
-                    <!-- 填答區 -->
-                    <div class="bg-green-50 p-6 rounded-xl flex items-center justify-center flex-wrap gap-4 text-2xl mb-4">
-                        <div class="math"><span class="fraction"><span>2</span><span>3</span></span></div>
-                        <span class="font-bold">=</span>
-                        <div class="math">
-                            <span class="fraction">
-                                <span>2 × <input type="number" class="slot-input main-input" data-answer="2"></span>
-                                <span>3 × <input type="number" class="slot-input main-input" data-answer="2"></span>
-                            </span>
-                        </div>
-                        <span class="font-bold">=</span>
-                        <div class="math">
-                            <span class="fraction">
-                                <span><input type="number" class="slot-input main-input" data-answer="4"></span>
-                                <span><input type="number" class="slot-input main-input" data-answer="6"></span>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col items-center gap-2">
-                        <button onclick="checkStep('step-2-1', 'level-3')" class="check-btn bg-green-500 hover:bg-green-600">檢查答案</button>
-                        <div id="feedback-step-2-1" class="text-xl font-bold min-h-[30px]"></div>
-                    </div>
-
-                    <!-- 補救教學區 -->
-                    <div id="remedial-step-2-1" class="hidden mt-6 bg-orange-50 border-2 border-orange-300 p-5 rounded-xl fade-in">
-                        <div class="flex items-center gap-3 mb-3">
-                            <button onclick="speak('注意看，題目說要同乘以2。所以上面的框框要填2，下面的框框也要填2喔。再來算算看 2乘2等於多少？ 3乘2等於多少？')" class="tts-btn bg-orange-200">🔊</button>
-                            <h3 class="text-xl font-bold text-orange-700">💡 教練提示時間</h3>
-                        </div>
-                        <p class="text-lg text-gray-800 mb-3">
-                            上下的乘數必須一樣，都是 <mark>2</mark>。<br>
-                            請先回答： 2 × 2 = <input type="number" id="rem-input-2-1-1" class="slot-input border-orange-400" data-answer="4">，
-                            3 × 2 = <input type="number" id="rem-input-2-1-2" class="slot-input border-orange-400" data-answer="6">
+                        <p class="text-xl text-gray-800 mb-4">
+                            右邊的圖形，全部平分成 2 份 (分母)。<br>
+                            塗上藍色的有 <mark>1</mark> 份，所以分子要填 <input type="number" id="rem-input-1-1" class="slot-input border-orange-400" data-answer="1">。
                         </p>
-                        <div class="flex justify-center mt-4">
-                            <button onclick="checkMultipleRemedial('step-2-1', ['rem-input-2-1-1', 'rem-input-2-1-2'])" class="bg-orange-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-orange-600">確認觀念</button>
+                        <div class="flex justify-center items-center gap-4">
+                            <button onclick="checkRemedial('step-1-1', ['rem-input-1-1'])" class="bg-orange-500 text-white px-6 py-3 rounded-xl font-bold text-xl hover:bg-orange-600 shadow">我懂了</button>
                         </div>
-                        <div id="rem-feedback-step-2-1" class="text-center font-bold text-lg mt-2"></div>
+                        <div id="rem-feedback-step-1-1" class="text-center font-bold text-xl mt-3"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== 關卡 3：異分母加法 ==================== -->
-        <section id="level-3" class="hidden mb-12 fade-in">
-            <div class="bg-purple-600 text-white p-4 rounded-t-2xl flex items-center justify-between">
-                <h2 class="text-2xl font-bold">第三關：分母不同怎麼加？</h2>
-                <button onclick="speak('第三關：分母不同怎麼加？我們先把分母變一樣。')" class="tts-btn bg-purple-500 border-purple-400">🔊</button>
+        <!-- ==================== 關卡 2：擴分算算看 (箭頭鷹架) ==================== -->
+        <section id="level-2" class="hidden mb-12 fade-in">
+            <div class="bg-green-600 text-white p-5 rounded-t-2xl flex items-center justify-between shadow-md">
+                <h2 class="text-3xl font-bold flex items-center gap-2"><span class="bg-white text-green-600 rounded-full w-8 h-8 flex items-center justify-center text-xl">2</span> 算算看找等值分數</h2>
+                <button onclick="speak('第二關：找等值分數。分子和分母要同時乘以相同的數字。')" class="tts-btn bg-green-500 border-green-400 text-white">🔊</button>
             </div>
             
-            <div class="bg-white p-6 rounded-b-2xl shadow-lg border-2 border-t-0 border-purple-600">
-                <div class="text-xl text-gray-800 mb-6 bg-purple-50 p-4 rounded-lg flex gap-4">
-                    <button onclick="speak('題目是：十分之三 加上 五分之二。分母不同不能直接加，要先把它們的分母變得一樣大。')" class="tts-btn mt-2">🔊</button>
+            <div class="bg-white p-8 rounded-b-2xl shadow-xl border-2 border-t-0 border-green-600">
+                <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-8 rounded-r-lg flex items-center gap-4 text-xl text-green-900 font-bold">
+                    💡 學習單口訣：分子、分母同時乘同一個數，分數大小不變！
+                </div>
+
+                <div id="step-2-1" class="step-container" data-mistakes="0">
+                    <div class="flex gap-4 mb-6 items-center">
+                        <button onclick="speak('請把四分之三的分子和分母，同時乘以 2。')" class="tts-btn">🔊</button>
+                        <p class="text-2xl text-gray-800 font-semibold">請把 <div class="math"><span class="fraction"><span>3</span><span>4</span></span></div> 的分子和分母<strong>同時 x 2</strong>。</p>
+                    </div>
+
+                    <!-- 箭頭鷹架視覺區 -->
+                    <div class="scaffold-box flex flex-col items-center my-8">
+                        <!-- 上方箭頭 (分子) -->
+                        <div class="flex justify-center w-full relative h-12">
+                            <svg width="120" height="40" class="absolute left-1/2 transform -translate-x-1/2 -top-2">
+                                <path d="M 10 30 Q 60 -10 110 30" class="arrow-curve" />
+                                <polygon points="105,25 112,32 102,35" class="arrow-head" />
+                            </svg>
+                            <span class="absolute left-1/2 transform -translate-x-1/2 -top-6 text-red-500 font-bold text-xl bg-white px-1"><span class="text-gray-700">x</span> <input type="number" class="slot-input main-input !h-8 !w-12 !text-lg !border-red-300" data-answer="2" placeholder="?"></span>
+                        </div>
+                        
+                        <!-- 分數計算 -->
+                        <div class="flex items-center gap-6 text-3xl">
+                            <div class="math"><span class="fraction"><span>3</span><span>4</span></span></div>
+                            <span class="font-bold text-gray-500">=</span>
+                            <div class="math">
+                                <span class="fraction">
+                                    <span><input type="number" class="slot-input main-input" data-answer="6"></span>
+                                    <span><input type="number" class="slot-input main-input" data-answer="8"></span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- 下方箭頭 (分母) -->
+                        <div class="flex justify-center w-full relative h-12 mt-2">
+                            <svg width="120" height="40" class="absolute left-1/2 transform -translate-x-1/2 top-0">
+                                <path d="M 10 10 Q 60 50 110 10" class="arrow-curve" />
+                                <polygon points="105,15 112,8 102,5" class="arrow-head" />
+                            </svg>
+                            <span class="absolute left-1/2 transform -translate-x-1/2 top-8 text-red-500 font-bold text-xl bg-white px-1"><span class="text-gray-700">x</span> <input type="number" class="slot-input main-input !h-8 !w-12 !text-lg !border-red-300" data-answer="2" placeholder="?"></span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center gap-3">
+                        <button onclick="checkStep('step-2-1', 'level-3')" class="check-btn bg-green-500 hover:bg-green-600">檢查答案</button>
+                        <div id="feedback-step-2-1" class="text-2xl font-bold min-h-[36px]"></div>
+                    </div>
+
+                    <!-- 補救 2-1 -->
+                    <div id="remedial-step-2-1" class="hidden mt-6 bg-orange-50 border-2 border-orange-300 p-6 rounded-2xl fade-in shadow-inner">
+                        <div class="flex items-center gap-3 mb-4">
+                            <button onclick="speak('題目說要乘以2，所以紅色框框都填2。算算看，3乘2等於多少？4乘2等於多少？')" class="tts-btn bg-orange-200">🔊</button>
+                            <h3 class="text-2xl font-bold text-orange-700">🧑‍🏫 教練提示</h3>
+                        </div>
+                        <p class="text-xl text-gray-800 mb-4 leading-relaxed">
+                            上下箭頭的數字要一樣，都是 <mark>2</mark> 喔！<br>
+                            接著算乘法：<br>
+                            分子： 3 x 2 = <input type="number" id="rem-input-2-1" class="slot-input border-orange-400" data-answer="6"><br>
+                            分母： 4 x 2 = <input type="number" id="rem-input-2-2" class="slot-input border-orange-400" data-answer="8">
+                        </p>
+                        <div class="flex justify-center">
+                            <button onclick="checkRemedial('step-2-1', ['rem-input-2-1', 'rem-input-2-2'])" class="bg-orange-500 text-white px-6 py-3 rounded-xl font-bold text-xl hover:bg-orange-600 shadow">我懂了</button>
+                        </div>
+                        <div id="rem-feedback-step-2-1" class="text-center font-bold text-xl mt-3"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 關卡 3：分數加法 (拆解分母與分子) ==================== -->
+        <section id="level-3" class="hidden mb-12 fade-in">
+            <div class="bg-purple-600 text-white p-5 rounded-t-2xl flex items-center justify-between shadow-md">
+                <h2 class="text-3xl font-bold flex items-center gap-2"><span class="bg-white text-purple-600 rounded-full w-8 h-8 flex items-center justify-center text-xl">3</span> 異分母加法</h2>
+                <button onclick="speak('第三關：加法。先通分變一樣，再把分子相加。')" class="tts-btn bg-purple-500 border-purple-400 text-white">🔊</button>
+            </div>
+            
+            <div class="bg-white p-8 rounded-b-2xl shadow-xl border-2 border-t-0 border-purple-600">
+                <div class="bg-purple-50 border-l-4 border-purple-500 p-5 mb-8 rounded-r-lg flex gap-4 text-xl text-purple-900 font-bold">
+                    <button onclick="speak('題目：八分之五 加上 四分之一。先看分母，8和4不一樣，不能直接加。')" class="tts-btn bg-white">🔊</button>
                     <div>
-                        <p class="mb-2">題目：計算 <div class="math"><span class="fraction"><span>3</span><span>10</span></span></div> + <div class="math"><span class="fraction"><span>2</span><span>5</span></span></div></p>
-                        <p class="text-lg text-purple-800 font-bold">💡 秘訣：分母不同不能加，要先把它們變一樣！</p>
+                        <p class="mb-2">題目計算： <div class="math"><span class="fraction"><span>5</span><span>8</span></span></div> + <div class="math"><span class="fraction"><span>1</span><span>4</span></span></div></p>
+                        <p class="text-lg text-purple-700">⭐ 小提醒：分母不一樣（8 和 4），要<mark>先把分母變一樣</mark>，再相加。</p>
                     </div>
                 </div>
 
-                <!-- 步驟 3-1 -->
+                <!-- 步驟 3-1: 變分母 -->
                 <div id="step-3-1" class="step-container" data-mistakes="0">
-                    <div class="flex gap-4 mb-4 items-center">
-                        <button onclick="speak('步驟一：把五分之二的分母變成10。請問五乘以多少會變成10呢？')" class="tts-btn">🔊</button>
-                        <h3 class="text-xl font-bold text-purple-700">【步驟一】轉換分母</h3>
-                    </div>
-                    <p class="text-xl ml-14 mb-4">把 <div class="math"><span class="fraction"><span>2</span><span>5</span></span></div> 變成「分母是 10」的分數。(提示：5要乘以2)</p>
+                    <h3 class="text-2xl font-bold text-purple-700 mb-4 border-b-2 border-purple-100 pb-2 flex items-center gap-2">
+                        <button onclick="speak('步驟一：把四分之一的分母變成8。4乘以多少會變8呢？')" class="tts-btn !w-10 !h-10 !text-lg">🔊</button> 步驟 1：改變分母
+                    </h3>
+                    <p class="text-xl mb-4 text-gray-800">想一想：把 <div class="math"><span class="fraction"><span>1</span><span>4</span></span></div> 的分母變成 8。</p>
                     
-                    <div class="bg-gray-50 p-6 rounded-xl flex items-center justify-center flex-wrap gap-4 text-2xl mb-4 border border-gray-200">
-                        <div class="math"><span class="fraction"><span>2</span><span>5</span></span></div>
-                        <span class="font-bold">=</span>
-                        <div class="math">
-                            <span class="fraction">
-                                <span>2 × <input type="number" class="slot-input main-input" data-answer="2"></span>
-                                <span>5 × <input type="number" class="slot-input main-input" data-answer="2"></span>
-                            </span>
+                    <div class="scaffold-box flex items-center justify-center gap-6 text-3xl mb-6">
+                        <div class="math"><span class="fraction"><span>1</span><span>4</span></span></div>
+                        <div class="flex flex-col text-xl text-red-500 font-bold justify-center items-center">
+                            <span>x <input type="number" class="slot-input main-input !h-8 !w-12 !text-lg !border-red-300" data-answer="2" placeholder="?"></span>
+                            <span class="text-4xl text-gray-400 font-normal">→</span>
+                            <span>x <input type="number" class="slot-input main-input !h-8 !w-12 !text-lg !border-red-300" data-answer="2" placeholder="?"></span>
                         </div>
-                        <span class="font-bold">=</span>
                         <div class="math">
                             <span class="fraction">
-                                <span><input type="number" class="slot-input main-input" data-answer="4"></span>
-                                <span>10</span>
+                                <span><input type="number" class="slot-input main-input" data-answer="2"></span>
+                                <span>8</span>
                             </span>
                         </div>
                     </div>
 
-                    <div class="flex flex-col items-center gap-2 border-b-2 border-dashed border-gray-300 pb-6 mb-6">
-                        <button onclick="checkStep('step-3-1', null, 'step-3-2')" class="check-btn bg-purple-500 hover:bg-purple-600">完成步驟一</button>
-                        <div id="feedback-step-3-1" class="text-xl font-bold min-h-[30px]"></div>
+                    <div class="flex justify-center mb-8">
+                        <button onclick="checkStep('step-3-1', null, 'step-3-2')" class="check-btn bg-purple-500 hover:bg-purple-600">完成步驟 1</button>
                     </div>
+                    <div id="feedback-step-3-1" class="text-center text-xl font-bold min-h-[30px] mb-4"></div>
 
                     <!-- 補救 3-1 -->
-                    <div id="remedial-step-3-1" class="hidden mb-6 bg-orange-50 border-2 border-orange-300 p-5 rounded-xl fade-in">
-                        <div class="flex items-center gap-3 mb-3">
-                            <button onclick="speak('因為5乘以2等於10，所以分母的框框填2，分子的框框也要填2。2乘2等於多少呢？')" class="tts-btn bg-orange-200">🔊</button>
-                            <h3 class="text-xl font-bold text-orange-700">💡 教練提示時間</h3>
-                        </div>
-                        <p class="text-lg text-gray-800 mb-3">
-                            目標是分母 10。因為 5 × <mark>2</mark> = 10，所以分子分母都要同乘以 <mark>2</mark>。<br>
-                            算算看分子： 2 × 2 = <input type="number" id="rem-input-3-1" class="slot-input border-orange-400" data-answer="4">
+                    <div id="remedial-step-3-1" class="hidden mb-8 bg-orange-50 border-2 border-orange-300 p-5 rounded-xl fade-in">
+                        <p class="text-xl text-gray-800 mb-3 flex items-center gap-3">
+                            <button onclick="speak('因為4乘以2等於8，所以上下都要填2。1乘2等於多少？')" class="tts-btn bg-orange-200">🔊</button>
+                            分母 4 變成 8，是因為 4 x <mark>2</mark> = 8。<br>
+                            所以分子也要乘以 <mark>2</mark>！請算： 1 x 2 = <input type="number" id="rem-input-3-1" class="slot-input border-orange-400" data-answer="2">
                         </p>
-                        <div class="flex justify-center mt-2">
-                            <button onclick="checkRemedial('step-3-1', 'rem-input-3-1')" class="bg-orange-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-orange-600">確認觀念</button>
+                        <div class="flex justify-center mt-3">
+                            <button onclick="checkRemedial('step-3-1', ['rem-input-3-1'])" class="bg-orange-500 text-white px-5 py-2 rounded-lg font-bold hover:bg-orange-600">我懂了</button>
                         </div>
                         <div id="rem-feedback-step-3-1" class="text-center font-bold text-lg mt-2"></div>
                     </div>
                 </div>
 
-                <!-- 步驟 3-2 (預設隱藏，解鎖後顯示) -->
-                <div id="step-3-2" class="step-container hidden opacity-50 transition-opacity duration-500" data-mistakes="0">
-                    <div class="flex gap-4 mb-4 items-center">
-                        <button onclick="speak('步驟二：現在分母都是10了，把分子加起來就好囉。')" class="tts-btn">🔊</button>
-                        <h3 class="text-xl font-bold text-purple-700">【步驟二】分母相同，分子相加</h3>
-                    </div>
+                <!-- 步驟 3-2: 加法 (預設隱藏) -->
+                <div id="step-3-2" class="step-container hidden opacity-20 transition-all duration-700 pt-6 border-t-2 border-dashed border-gray-300" data-mistakes="0">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-4 flex items-center gap-2">
+                        <button onclick="speak('步驟二：現在分母都是8了，可以直接把分子加起來囉。')" class="tts-btn !w-10 !h-10 !text-lg">🔊</button> 步驟 2：分母一樣，分子相加
+                    </h3>
                     
-                    <div class="bg-purple-50 p-6 rounded-xl flex items-center justify-center gap-4 text-2xl mb-4 border border-purple-200">
-                        <div class="math"><span class="fraction"><span>3</span><span>10</span></span></div>
-                        <span class="font-bold">+</span>
-                        <div class="math"><span class="fraction"><span><input type="number" class="slot-input main-input" data-answer="4" readonly class="bg-gray-100"></span><span>10</span></span></div>
-                        <span class="font-bold">=</span>
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 flex items-center justify-center gap-4 text-3xl mb-6">
+                        <div class="math"><span class="fraction"><span>5</span><span>8</span></span></div>
+                        <span class="font-bold text-gray-500">+</span>
+                        <!-- 唯讀框，帶入上一步答案 -->
+                        <div class="math"><span class="fraction"><span><input type="number" class="slot-input main-input bg-gray-200 text-gray-600" data-answer="2" readonly id="step-3-2-carry"></span><span>8</span></span></div>
+                        <span class="font-bold text-gray-500">=</span>
                         <div class="math">
                             <span class="fraction">
                                 <span><input type="number" class="slot-input main-input" data-answer="7"></span>
-                                <span>10</span>
+                                <span>8</span>
                             </span>
                         </div>
                     </div>
 
-                    <div class="flex flex-col items-center gap-2">
-                        <button onclick="checkStep('step-3-2', 'level-4')" class="check-btn bg-purple-500 hover:bg-purple-600">檢查答案</button>
-                        <div id="feedback-step-3-2" class="text-xl font-bold min-h-[30px]"></div>
+                    <div class="flex justify-center gap-3">
+                        <button onclick="checkStep('step-3-2', 'level-4')" class="check-btn bg-purple-500 hover:bg-purple-600">檢查最終答案</button>
                     </div>
+                    <div id="feedback-step-3-2" class="text-center text-xl font-bold min-h-[30px] mt-4"></div>
                     
                     <!-- 補救 3-2 -->
                     <div id="remedial-step-3-2" class="hidden mt-6 bg-orange-50 border-2 border-orange-300 p-5 rounded-xl fade-in">
-                        <p class="text-lg text-gray-800 mb-3 flex items-center gap-2">
-                            <button onclick="speak('分母一樣的時候，只要把上面的數字相加。3加4等於多少？')" class="tts-btn bg-orange-200">🔊</button>
-                            分母相同時，只要把上面的<mark>分子相加</mark>。<br>請算：3 + 4 = <input type="number" id="rem-input-3-2" class="slot-input border-orange-400" data-answer="7">
+                        <p class="text-xl text-gray-800 mb-3 flex items-center gap-3">
+                            <button onclick="speak('分母一樣的時候，只要把上面的數字相加。5加2等於多少？')" class="tts-btn bg-orange-200">🔊</button>
+                            分母相同時，把上面的<mark>分子相加</mark>。<br>
+                            請算： 5 + 2 = <input type="number" id="rem-input-3-2" class="slot-input border-orange-400" data-answer="7">
                         </p>
-                        <div class="flex justify-center">
-                            <button onclick="checkRemedial('step-3-2', 'rem-input-3-2')" class="bg-orange-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-orange-600">確認觀念</button>
+                        <div class="flex justify-center mt-3">
+                            <button onclick="checkRemedial('step-3-2', ['rem-input-3-2'])" class="bg-orange-500 text-white px-5 py-2 rounded-lg font-bold hover:bg-orange-600">我懂了</button>
                         </div>
                         <div id="rem-feedback-step-3-2" class="text-center font-bold text-lg mt-2"></div>
                     </div>
@@ -327,107 +340,80 @@
             </div>
         </section>
 
-        <!-- ==================== 關卡 4：分數與小數換算 ==================== -->
+        <!-- ==================== 關卡 4：分數變小數 ==================== -->
         <section id="level-4" class="hidden mb-12 fade-in">
-            <div class="bg-pink-600 text-white p-4 rounded-t-2xl flex items-center justify-between">
-                <h2 class="text-2xl font-bold">第四關：分數變小數</h2>
-                <button onclick="speak('第四關：分數變小數。把分母變成十，就可以輕鬆換成小數了。')" class="tts-btn bg-pink-500 border-pink-400">🔊</button>
+            <div class="bg-pink-600 text-white p-5 rounded-t-2xl flex items-center justify-between shadow-md">
+                <h2 class="text-3xl font-bold flex items-center gap-2"><span class="bg-white text-pink-600 rounded-full w-8 h-8 flex items-center justify-center text-xl">4</span> 分數換小數</h2>
+                <button onclick="speak('第四關：分數換小數。分母是10，換成小數最容易！')" class="tts-btn bg-pink-500 border-pink-400 text-white">🔊</button>
             </div>
             
-            <div class="bg-white p-6 rounded-b-2xl shadow-lg border-2 border-t-0 border-pink-600">
-                <div class="text-xl text-gray-800 mb-6 bg-pink-50 p-4 rounded-lg flex gap-4">
-                    <button onclick="speak('題目：把二分之一換成小數。秘訣是先把它變成十分之幾。')" class="tts-btn mt-2">🔊</button>
+            <div class="bg-white p-8 rounded-b-2xl shadow-xl border-2 border-t-0 border-pink-600">
+                <div class="bg-pink-50 border-l-4 border-pink-500 p-5 mb-8 rounded-r-lg flex gap-4 text-xl text-pink-900 font-bold">
+                    <button onclick="speak('學習單範例：十分之七，是7個十分之一。十分之一就是0.1，所以十分之七是0.7。')" class="tts-btn bg-white">🔊</button>
                     <div>
-                        <p class="mb-2">題目：請將 <div class="math"><span class="fraction"><span>1</span><span>2</span></span></div> 換成小數。</p>
-                        <p class="text-lg text-pink-800 font-bold">💡 秘訣：分母是 10 的時候，最容易寫成一位小數！</p>
+                        <p class="mb-2">💡 學習單重點回顧：</p>
+                        <p class="text-lg text-gray-700">
+                            <div class="math"><span class="fraction"><span>7</span><span>10</span></span></div> 是 7 個 <div class="math"><span class="fraction"><span>1</span><span>10</span></span></div><br>
+                            因為 <div class="math"><span class="fraction"><span>1</span><span>10</span></span></div> = 0.1<br>
+                            所以 <div class="math"><span class="fraction"><span>7</span><span>10</span></span></div> = <mark>0.7</mark>
+                        </p>
                     </div>
                 </div>
 
                 <!-- 步驟 4-1 -->
                 <div id="step-4-1" class="step-container" data-mistakes="0">
-                    <div class="flex gap-4 mb-4 items-center">
-                        <h3 class="text-xl font-bold text-pink-700">【步驟一】把分母變成 10</h3>
+                    <div class="flex gap-4 mb-6 items-center">
+                        <button onclick="speak('請跟著做做看，把十分之三換成小數。十分之三是幾個十分之一呢？')" class="tts-btn">🔊</button>
+                        <p class="text-2xl text-gray-800 font-semibold">請換算： <div class="math"><span class="fraction"><span>3</span><span>10</span></span></div> = ( )</p>
                     </div>
                     
-                    <div class="bg-gray-50 p-6 rounded-xl flex items-center justify-center flex-wrap gap-4 text-2xl mb-4 border border-gray-200">
-                        <div class="math"><span class="fraction"><span>1</span><span>2</span></span></div>
-                        <span class="font-bold">=</span>
-                        <div class="math">
-                            <span class="fraction">
-                                <span>1 × <input type="number" class="slot-input main-input" data-answer="5"></span>
-                                <span>2 × <input type="number" class="slot-input main-input" data-answer="5"></span>
-                            </span>
-                        </div>
-                        <span class="font-bold">=</span>
-                        <div class="math">
-                            <span class="fraction">
-                                <span><input type="number" class="slot-input main-input" data-answer="5"></span>
-                                <span>10</span>
-                            </span>
-                        </div>
+                    <div class="scaffold-box text-2xl text-gray-800 leading-loose mb-8">
+                        <p class="mb-4">
+                            <div class="math"><span class="fraction"><span>3</span><span>10</span></span></div> 是 <input type="number" class="slot-input main-input mx-2" data-answer="3"> 個 <div class="math"><span class="fraction"><span>1</span><span>10</span></span></div>。
+                        </p>
+                        <p class="mb-4">
+                            因為 <div class="math"><span class="fraction"><span>1</span><span>10</span></span></div> = 0.1，
+                        </p>
+                        <p class="bg-pink-100 p-4 rounded-lg inline-block font-bold">
+                            所以 <div class="math"><span class="fraction"><span>3</span><span>10</span></span></div> = <span class="mx-2">0 .</span> <input type="number" class="slot-input main-input" data-answer="3">
+                        </p>
                     </div>
 
-                    <div class="flex flex-col items-center gap-2 border-b-2 border-dashed border-gray-300 pb-6 mb-6">
-                        <button onclick="checkStep('step-4-1', null, 'step-4-2')" class="check-btn bg-pink-500 hover:bg-pink-600">完成步驟一</button>
-                        <div id="feedback-step-4-1" class="text-xl font-bold min-h-[30px]"></div>
+                    <div class="flex flex-col items-center gap-3">
+                        <button onclick="checkStep('step-4-1', 'finish')" class="check-btn bg-pink-500 hover:bg-pink-600">完成所有關卡</button>
+                        <div id="feedback-step-4-1" class="text-2xl font-bold min-h-[36px]"></div>
                     </div>
                     
                     <!-- 補救 4-1 -->
-                    <div id="remedial-step-4-1" class="hidden mb-6 bg-orange-50 border-2 border-orange-300 p-5 rounded-xl fade-in">
-                        <p class="text-lg text-gray-800 mb-3 flex items-center gap-2">
-                            <button onclick="speak('想一想，2乘以多少等於10呢？所以上下都要填5喔。')" class="tts-btn bg-orange-200">🔊</button>
-                            2 乘以 <mark>5</mark> 等於 10。請填寫：2 × <input type="number" id="rem-input-4-1" class="slot-input border-orange-400" data-answer="5"> = 10
+                    <div id="remedial-step-4-1" class="hidden mt-6 bg-orange-50 border-2 border-orange-300 p-6 rounded-2xl fade-in shadow-inner">
+                        <p class="text-xl text-gray-800 mb-4 flex items-center gap-3 leading-relaxed">
+                            <button onclick="speak('十分之幾，就是幾個十分之一。十分之三，就是3個十分之一喔。填填看3。')" class="tts-btn bg-orange-200">🔊</button>
+                            <span>
+                                分子是幾，就是幾個 <div class="math"><span class="fraction"><span>1</span><span>10</span></span></div>。<br>
+                                分子是 3，所以是 <input type="number" id="rem-input-4-1" class="slot-input border-orange-400" data-answer="3"> 個。也就是 0.3。
+                            </span>
                         </p>
-                        <div class="flex justify-center">
-                            <button onclick="checkRemedial('step-4-1', 'rem-input-4-1')" class="bg-orange-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-orange-600">確認觀念</button>
+                        <div class="flex justify-center mt-3">
+                            <button onclick="checkRemedial('step-4-1', ['rem-input-4-1'])" class="bg-orange-500 text-white px-5 py-2 rounded-lg font-bold hover:bg-orange-600">我懂了</button>
                         </div>
                         <div id="rem-feedback-step-4-1" class="text-center font-bold text-lg mt-2"></div>
-                    </div>
-                </div>
-
-                <!-- 步驟 4-2 -->
-                <div id="step-4-2" class="step-container hidden opacity-50 transition-opacity duration-500" data-mistakes="0">
-                    <div class="flex gap-4 mb-4 items-center">
-                        <button onclick="speak('步驟二：寫成小數。十分之五，寫成小數是零點幾呢？')" class="tts-btn">🔊</button>
-                        <h3 class="text-xl font-bold text-pink-700">【步驟二】換成小數</h3>
-                    </div>
-                    
-                    <div class="bg-pink-50 p-6 rounded-xl flex items-center justify-center gap-4 text-3xl mb-4 border border-pink-200 font-bold">
-                        <div class="math"><span class="fraction"><span>5</span><span>10</span></span></div>
-                        <span>=</span>
-                        <span>0 . </span>
-                        <input type="number" class="slot-input main-input" data-answer="5" style="width:60px; height:50px; font-size:30px;">
-                    </div>
-
-                    <div class="flex flex-col items-center gap-2">
-                        <button onclick="checkStep('step-4-2', 'finish')" class="check-btn bg-pink-500 hover:bg-pink-600">完成關卡</button>
-                        <div id="feedback-step-4-2" class="text-xl font-bold min-h-[30px]"></div>
-                    </div>
-                    
-                    <!-- 補救 4-2 -->
-                    <div id="remedial-step-4-2" class="hidden mt-6 bg-orange-50 border-2 border-orange-300 p-5 rounded-xl fade-in">
-                        <p class="text-lg text-gray-800 mb-3 flex items-center gap-2">
-                            <button onclick="speak('十分之幾就是零點幾。所以十分之五就是 0.5。')" class="tts-btn bg-orange-200">🔊</button>
-                            <div class="math"><span class="fraction"><span>1</span><span>10</span></span></div> 是 0.1。那麼 <div class="math"><span class="fraction"><span>5</span><span>10</span></span></div> 就是 0 . <input type="number" id="rem-input-4-2" class="slot-input border-orange-400" data-answer="5">
-                        </p>
-                        <div class="flex justify-center mt-2">
-                            <button onclick="checkRemedial('step-4-2', 'rem-input-4-2')" class="bg-orange-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-orange-600">確認觀念</button>
-                        </div>
-                        <div id="rem-feedback-step-4-2" class="text-center font-bold text-lg mt-2"></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 完成畫面 -->
-        <div id="finish-screen" class="hidden text-center bg-yellow-50 p-10 rounded-2xl shadow-lg border-4 border-yellow-400 fade-in">
-            <h2 class="text-4xl font-bold text-yellow-600 mb-6 flex items-center justify-center gap-4">
-                🎉 恭喜通關！
-                <button onclick="speak('恭喜你完成所有挑戰！你是數學小天才！')" class="tts-btn bg-yellow-200">🔊</button>
+        <div id="finish-screen" class="hidden text-center bg-yellow-50 p-12 rounded-3xl shadow-2xl border-4 border-yellow-400 fade-in mt-10">
+            <h2 class="text-5xl font-extrabold text-yellow-600 mb-8 flex items-center justify-center gap-4">
+                🎉 大通關！
+                <button onclick="speak('太棒了！你完成了所有的挑戰，你是數學小精靈！')" class="tts-btn bg-yellow-200 !w-14 !h-14 !text-3xl">🔊</button>
             </h2>
-            <p class="text-2xl mb-4">你總共獲得了 <span id="final-score" class="font-bold text-red-500 text-4xl">0</span> 分！</p>
-            <p class="text-xl text-gray-700 mb-8">花費時間： <span id="final-time" class="font-bold">00:00</span></p>
-            <button onclick="location.reload()" class="text-2xl bg-yellow-500 text-white px-8 py-3 rounded-full font-bold hover:bg-yellow-600 shadow-md">再玩一次</button>
+            <div class="bg-white p-6 rounded-2xl inline-block mb-8 shadow-sm">
+                <p class="text-3xl mb-4 text-gray-700">獲得積分： <span id="final-score" class="font-bold text-red-500 text-5xl">0</span> 分</p>
+                <p class="text-2xl text-gray-600">闖關時間： <span id="final-time" class="font-bold text-blue-600">00:00</span></p>
+            </div>
+            <br>
+            <button onclick="location.reload()" class="text-2xl bg-yellow-500 text-white px-10 py-4 rounded-full font-bold hover:bg-yellow-600 shadow-lg transition-transform hover:scale-105">再玩一次</button>
         </div>
 
     </main>
@@ -443,14 +429,14 @@
         let timerInterval;
         let secondsElapsed = 0;
 
-        // 語音報讀設定
+        // 語音報讀設定 (降低語速適合特教生)
         function speak(text) {
             if ('speechSynthesis' in window) {
                 window.speechSynthesis.cancel(); 
                 const msg = new SpeechSynthesisUtterance(text);
                 msg.lang = 'zh-TW';
-                msg.rate = 0.85; // 稍微放慢語速適合特教學生
-                msg.pitch = 1.1; 
+                msg.rate = 0.85; 
+                msg.pitch = 1.0; 
                 window.speechSynthesis.speak(msg);
             } else {
                 alert('您的瀏覽器不支援語音播放功能');
@@ -462,7 +448,7 @@
             const snd = document.getElementById('snd-' + type);
             if(snd) {
                 snd.currentTime = 0;
-                snd.play().catch(e => console.log('音效被阻擋'));
+                snd.play().catch(e => console.log('音效無法自動播放'));
             }
         }
 
@@ -471,8 +457,8 @@
             score += points;
             document.getElementById('score-display').innerText = score;
             const display = document.getElementById('score-display').parentElement;
-            display.classList.add('bg-yellow-300');
-            setTimeout(() => display.classList.remove('bg-yellow-300'), 300);
+            display.classList.add('bg-yellow-300', 'scale-110');
+            setTimeout(() => display.classList.remove('bg-yellow-300', 'scale-110'), 300);
         }
 
         // 計時器
@@ -488,7 +474,7 @@
             document.getElementById('intro-screen').classList.add('hidden');
             document.getElementById('level-1').classList.remove('hidden');
             timerInterval = setInterval(updateTimer, 1000);
-            speak('遊戲開始！第一關。');
+            speak('第一關開始！');
             playSound('unlock');
         }
 
@@ -505,8 +491,8 @@
             });
 
             if(!allFilled) {
-                feedbackBox.innerHTML = '<span class="text-orange-600">⚠️ 請先把所有空格填完喔！</span>';
-                speak('請先把所有空格填完喔');
+                feedbackBox.innerHTML = '<span class="text-orange-600 bg-orange-100 px-4 py-1 rounded-full">⚠️ 還有空格沒填完喔！</span>';
+                speak('還有空格沒填完喔');
                 return;
             }
 
@@ -520,8 +506,7 @@
                     input.classList.add('wrong');
                     input.classList.remove('correct');
                     allCorrect = false;
-                    // 移除震動動畫 class 以便下次觸發
-                    setTimeout(() => input.classList.remove('wrong'), 400);
+                    setTimeout(() => input.classList.remove('wrong'), 400); // 移除動畫class
                 }
             });
 
@@ -529,21 +514,21 @@
                 playSound('correct');
                 let mistakes = parseInt(stepDiv.getAttribute('data-mistakes') || '0');
                 if (mistakes === 0) addScore(100);
-                else addScore(50); // 有錯誤過，分數減半
+                else addScore(50); // 扣分機制：錯過分數減半
 
-                feedbackBox.innerHTML = '<span class="text-green-600">✔️ 很棒！答對了！</span>';
+                feedbackBox.innerHTML = '<span class="text-green-600 bg-green-100 px-6 py-2 rounded-full inline-block">✔️ 太棒了！完全正確！</span>';
                 stepDiv.querySelector('.check-btn').disabled = true;
                 
-                // 處理值複製 (如果在 3-1 答對，要帶入 3-2 的框格)
+                // 動態帶入數值 (3-1 算完的分母帶入 3-2)
                 if(stepId === 'step-3-1') {
-                    const ans = stepDiv.querySelectorAll('.main-input')[2].value; // 取得 4/10 的 4
-                    document.querySelector('#step-3-2 .main-input[readonly]').value = ans;
+                    const ans = stepDiv.querySelectorAll('.main-input')[2].value; 
+                    document.getElementById('step-3-2-carry').value = ans;
                 }
 
                 setTimeout(() => {
                     if (nextStepId) unlockStep(nextStepId);
                     else if (nextLevelId) unlockLevel(nextLevelId);
-                }, 1000);
+                }, 1200);
 
             } else {
                 playSound('wrong');
@@ -551,22 +536,21 @@
                 stepDiv.setAttribute('data-mistakes', mistakes);
                 
                 if (mistakes >= 2) {
-                    feedbackBox.innerHTML = '<span class="text-red-500">❌ 再想想看... 我們來複習一下重點！</span>';
+                    feedbackBox.innerHTML = '<span class="text-red-500 bg-red-100 px-4 py-1 rounded-full">❌ 遇到困難了嗎？請看下方的提示！</span>';
                     showRemedial(stepId);
                 } else {
-                    feedbackBox.innerHTML = '<span class="text-red-500">❌ 哎呀，有錯誤。再想想看！</span>';
-                    speak('有錯誤，再想想看！');
+                    feedbackBox.innerHTML = '<span class="text-red-500 bg-red-100 px-4 py-1 rounded-full">❌ 哎呀，有錯誤。再檢查看看！</span>';
+                    speak('有錯誤，再檢查看看！');
                 }
             }
         }
 
-        // 解鎖同關卡的下一步
+        // 解鎖同關卡中的下一步
         function unlockStep(nextStepId) {
             const nextStep = document.getElementById(nextStepId);
             nextStep.classList.remove('hidden');
-            // 動畫與半透明解除
             setTimeout(() => {
-                nextStep.classList.remove('opacity-50');
+                nextStep.classList.remove('opacity-20');
                 nextStep.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 playSound('unlock');
             }, 100);
@@ -583,23 +567,18 @@
             playSound('unlock');
         }
 
-        // 顯示補救教學
+        // 顯示補救教學 (錯2次觸發)
         function showRemedial(stepId) {
             const remDiv = document.getElementById('remedial-' + stepId);
-            if(remDiv) {
+            if(remDiv && remDiv.classList.contains('hidden')) {
                 remDiv.classList.remove('hidden');
-                speak('沒關係，我們來進入教練提示時間。');
+                speak('沒關係，我們來看看教練提示。');
+                remDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         }
 
-        // 檢查單一補救教學輸入
-        function checkRemedial(stepId, inputId) {
-            const input = document.getElementById(inputId);
-            checkMultipleRemedial(stepId, [inputId]);
-        }
-
         // 檢查多個補救教學輸入
-        function checkMultipleRemedial(stepId, inputIds) {
+        function checkRemedial(stepId, inputIds) {
             let allCorrect = true;
             inputIds.forEach(id => {
                 const input = document.getElementById(id);
@@ -616,19 +595,18 @@
             const feedback = document.getElementById('rem-feedback-' + stepId);
             if(allCorrect) {
                 playSound('correct');
-                feedback.innerHTML = '<span class="text-green-600">✔️ 觀念正確！現在試著完成上面的題目吧！</span>';
-                speak('觀念正確！現在試著完成上面的題目吧。');
+                feedback.innerHTML = '<span class="text-green-600">✔️ 觀念正確！現在回去完成上面的題目吧！</span>';
+                speak('觀念正確！現在回去完成上面的題目吧。');
                 
-                // 高亮上面的主要輸入框給予提示
+                // 動態 Highlight 上方未正確的題目框
                 const mainInputs = document.getElementById(stepId).querySelectorAll('.main-input:not(.correct)');
                 mainInputs.forEach(inp => {
-                    inp.style.backgroundColor = '#fef08a'; // yellow highlight
-                    setTimeout(() => { inp.style.backgroundColor = ''; }, 2000);
+                    inp.style.backgroundColor = '#fef08a'; // 強調色
+                    setTimeout(() => { inp.style.backgroundColor = ''; }, 3000);
                 });
-
             } else {
                 playSound('wrong');
-                feedback.innerHTML = '<span class="text-red-500">❌ 不對喔，請看黃色的提示字。</span>';
+                feedback.innerHTML = '<span class="text-red-500">❌ 不對喔，請仔細看黃色底色的提示。</span>';
             }
         }
 
@@ -638,12 +616,14 @@
             document.getElementById('finish-screen').classList.remove('hidden');
             document.getElementById('finish-screen').scrollIntoView({ behavior: 'smooth', block: 'center' });
             
-            // 時間加分：120秒內完成加分
-            if(secondsElapsed < 120) addScore( (120 - secondsElapsed) * 2 );
+            // 時間加分：每少於 180 秒就加分
+            if(secondsElapsed < 180) {
+                addScore( (180 - secondsElapsed) * 2 );
+            }
             
             document.getElementById('final-score').innerText = score;
             document.getElementById('final-time').innerText = document.getElementById('timer-display').innerText;
-            playSound('correct'); // Placeholder for victory sound
+            
             setTimeout(() => playSound('unlock'), 500);
         }
 
