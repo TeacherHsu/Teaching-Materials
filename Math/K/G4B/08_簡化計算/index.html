@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數學簡化計算挑戰 (4下)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 基礎字體與排版設定 (適合特教生閱讀) */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang TC', 'Heiti TC', 'Microsoft JhengHei', sans-serif;
+            background-color: #f0fdf4; /* 柔和淺綠底色，降低視覺壓力 */
+            color: #1f2937;
+            line-height: 1.8;
+            padding-bottom: 100px;
+        }
+
+        /* 數學式呈現規則（教科書排版格式） */
+        .math { 
+            font-size: 28px; 
+            font-weight: 600; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 4px; 
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: 1px;
+            color: #1e3a8a; /* 深藍色強調數學式 */
+            margin: 0 4px;
+        }
+        .fraction { 
+            display: inline-flex; 
+            flex-direction: column; 
+            align-items: center; 
+            line-height: 1.1; 
+        }
+        .fraction span:first-child { 
+            border-bottom: 2px solid #1e3a8a; 
+            padding: 0 4px; 
+        }
+        .power { 
+            font-size: 18px; 
+            vertical-align: super; 
+            margin-left: 2px; 
+            color: #e63946; 
+        }
+        .sqrt::before { 
+            content: "√"; 
+            font-size: 28px; 
+            margin-right: 2px; 
+        }
+        .abs::before { content: "|"; } 
+        .abs::after { content: "|"; }
+        .mixed { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 2px; 
+        }
+
+        /* 互動元件樣式 */
+        .slot-input {
+            width: 80px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            border: 3px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 4px 8px;
+            margin: 0 6px;
+            transition: all 0.3s;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+            color: #0f172a;
+        }
+        .slot-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+            background-color: #eff6ff;
+        }
+        .slot-input.correct {
+            border-color: #22c55e;
+            background-color: #f0fdf4;
+            color: #166534;
+        }
+
+        /* 螢光筆畫重點 */
+        mark {
+            background-color: #fef08a;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #854d0e;
+        }
+
+        /* 步驟與動畫 */
+        .step-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-left: 6px solid #3b82f6;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 0.5s forwards ease-out;
+            display: none; /* 預設隱藏，由 JS 控制顯示 */
+        }
+        .step-card.active {
+            display: block;
+        }
+        
+        .remedial-card {
+            border-left-color: #f59e0b; /* 橘色代表類似題/補救 */
+            background-color: #fffbeb;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 按鈕樣式 */
+        .btn-check {
+            background-color: #3b82f6;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 24px;
+            border-radius: 999px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+        }
+        .btn-check:hover {
+            background-color: #2563eb;
+            transform: translateY(-2px);
+        }
+        .btn-check:active {
+            transform: translateY(0);
+        }
+
+        /* 語音按鈕 */
+        .btn-tts {
+            background: #e2e8f0;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .btn-tts:hover {
+            background: #cbd5e1;
+            transform: scale(1.1);
+        }
+        .btn-tts svg {
+            width: 20px;
+            height: 20px;
+            fill: #475569;
+        }
+
+        /* 回饋區塊 */
+        .feedback {
+            margin-top: 16px;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px;
+            border-radius: 8px;
+            display: none;
+            align-items: center;
+            gap: 8px;
+        }
+        .feedback.success {
+            background-color: #dcfce7;
+            color: #166534;
+            display: flex;
+        }
+        .feedback.error {
+            background-color: #fee2e2;
+            color: #991b1b;
+            display: flex;
+        }
+
+        /* 頂部固定資訊列 */
+        .header-bar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid #e2e8f0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頂部資訊列 -->
+    <header class="header-bar px-6 py-4 flex justify-between items-center mb-8">
+        <h1 class="text-2xl font-black text-slate-800 flex items-center gap-2">
+            <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+            簡化計算魔法師
+        </h1>
+        <div class="flex items-center gap-4">
+            <div class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full font-bold text-lg flex items-center gap-2">
+                🏆 積分：<span id="score-display">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4" id="game-container">
+        <!-- 關卡內容將由結構化 HTML 呈現，透過 JS 控制顯示隱藏 -->
+        
+        <!-- ================= 關卡一 ================= -->
+        <div class="level-section" id="level-1">
+            <div class="mb-6 flex items-center">
+                <h2 class="text-2xl font-bold text-blue-800">第一關：連加的簡化計算</h2>
+                <button class="btn-tts" onclick="speak('第一關：連加的簡化計算。三個數字連加時，先加哪兩個結果都一樣。可以把好算的數字先加起來！')" title="朗讀題目">
+                    <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                </button>
+            </div>
+            <p class="text-lg text-slate-700 mb-4 bg-blue-50 p-4 rounded-lg font-medium">
+                想想看，怎麼算會比較快算出答案？ <span class="math">296 + 688 + 504</span>
+            </p>
+
+            <!-- 主題步驟 -->
+            <div class="step-card active main-step" data-level="1" data-step="1">
+                <p class="text-xl mb-4 font-bold">
+                    步驟 1：找好朋友湊成 10！想一想，<span class="text-red-500 text-3xl mx-1">6</span> 和誰加起來會變成 10 呢？
+                    <button class="btn-tts" onclick="speak('步驟一：找好朋友湊成10！想一想，6和誰加起來會變成10呢？請在空格中輸入答案。')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                </p>
+                <div class="flex items-center flex-wrap gap-2 mb-4 bg-slate-50 p-4 rounded-lg border-2 border-slate-100 inline-block">
+                    <span class="math text-red-500">6 + </span> 
+                    <input type="number" class="slot-input" data-ans="4" placeholder="數字" />
+                    <span class="math"> = 10</span>
+                </div>
+                <button class="btn-check" onclick="checkStep(this)">檢查答案</button>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="step-card main-step" data-level="1" data-step="2">
+                <p class="text-xl mb-4 font-bold leading-relaxed">
+                    步驟 2：觀察個位數！<br>
+                    <span class="text-2xl font-bold bg-yellow-100 px-2 rounded">29<span class="text-red-500 underline underline-offset-4">6</span></span> 的個位數是 <span class="text-red-500 text-2xl">6</span>，<br>
+                    找找看上面題目的數字中，哪一個數字的個位數是 <span class="text-blue-600 text-2xl font-black">4</span> 呢？把他們湊成<mark>整百</mark>！
+                    <button class="btn-tts" onclick="speak('步驟二：觀察個位數！296 的個位數是 6，找找看上面題目的數字中，哪一個數字的個位數是 4 呢？把它們湊成整百！')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                </p>
+                <div class="flex items-center flex-wrap gap-2 mb-4">
+                    <span class="math">296 +</span> 
+                    <input type="number" class="slot-input" data-ans="504" placeholder="數字" />
+                </div>
+                <button class="btn-check" onclick="checkStep(this)">檢查答案</button>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="step-card main-step" data-level="1" data-step="3">
+                <p class="text-xl mb-4 font-bold">
+                    步驟 3：把它們先加起來吧！
+                    <button class="btn-tts" onclick="speak('步驟三：把它們先加起來吧！296加504等於多少？')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                </p>
+                <div class="flex items-center flex-wrap gap-2 mb-4">
+                    <span class="math">296 + 504 = </span>
+                    <input type="number" class="slot-input" data-ans="800" placeholder="答案" />
+                </div>
+                <button class="btn-check" onclick="checkStep(this)">檢查答案</button>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="step-card main-step" data-level="1" data-step="4">
+                <p class="text-xl mb-4 font-bold">
+                    步驟 4：最後，再加上中間剩下的數字！
+                    <button class="btn-tts" onclick="speak('步驟四：最後，再加上中間剩下的數字！800加688等於多少？')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                </p>
+                <div class="flex items-center flex-wrap gap-2 mb-4">
+                    <span class="math">800 + 688 = </span>
+                    <input type="number" class="slot-input" data-ans="1488" placeholder="總和" />
+                </div>
+                <button class="btn-check" onclick="checkStep(this, true)">檢查答案並完成關卡</button>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- 類似題 (補救教學)，預設隱藏，當 main-step 答錯時標記，於完成 main 後顯示 -->
+            <div class="remedial-container" style="display: none;">
+                <div class="my-6 border-t-2 border-dashed border-orange-300 pt-6">
+                    <h3 class="text-xl font-bold text-orange-600 mb-2">💡 學習小提示：確認你學會了！</h3>
+                    <p class="text-lg bg-orange-50 p-4 rounded-lg mb-4">
+                        我們再來挑戰一題類似的：<span class="math">357 + 199 + 201</span><br>
+                        <span class="text-orange-600 font-bold mt-2 inline-block">小提示：觀察個位數，9 和 1 可以湊成 10 喔！</span>
+                        <button class="btn-tts" onclick="speak('我們再來挑戰一題類似的：357加199加201。小提示：觀察個位數，9 和 1 可以湊成 10 喔！哪兩個數字可以先湊成整百？')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                    </p>
+                </div>
+
+                <div class="step-card remedial-card" data-level="1" data-step="r1">
+                    <p class="text-xl mb-4 font-bold">步驟 1：哪兩個數字相加可以湊成<mark>整百</mark>？</p>
+                    <div class="flex items-center flex-wrap gap-2 mb-4">
+                        <span class="math">199 + </span>
+                        <input type="number" class="slot-input" data-ans="201" placeholder="數字" />
+                        <span class="math"> = </span>
+                        <input type="number" class="slot-input" data-ans="400" placeholder="答案" />
+                    </div>
+                    <button class="btn-check" onclick="checkStep(this)">檢查答案</button>
+                    <div class="feedback"></div>
+                </div>
+                
+                <div class="step-card remedial-card" data-level="1" data-step="r2">
+                    <p class="text-xl mb-4 font-bold">步驟 2：再加上剩下的數字，算出總和！</p>
+                    <div class="flex items-center flex-wrap gap-2 mb-4">
+                        <span class="math">357 + 400 = </span>
+                        <input type="number" class="slot-input" data-ans="757" placeholder="總和" />
+                    </div>
+                    <button class="btn-check" onclick="checkStep(this, true)">完成類似題</button>
+                    <div class="feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= 關卡二 ================= -->
+        <div class="level-section hidden" id="level-2">
+            <div class="mb-6 flex items-center">
+                <h2 class="text-2xl font-bold text-blue-800">第二關：連減的簡化計算</h2>
+                <button class="btn-tts" onclick="speak('第二關：連減的簡化計算。連減的算式中，先減哪一個數結果都一樣！')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+            </div>
+            <p class="text-lg text-slate-700 mb-4 bg-blue-50 p-4 rounded-lg font-medium">
+                想想看，怎麼算會比較快？ <span class="math">1249 - 675 - 249</span>
+            </p>
+
+            <div class="step-card active main-step" data-level="2" data-step="1">
+                <p class="text-xl mb-4 font-bold">
+                    步驟 1：<mark>連減</mark>時，可以調換順序。<span class="math">1249</span> 先減誰可以變成<mark>整千</mark>？
+                    <button class="btn-tts" onclick="speak('步驟一：1249 先減誰可以變成整千？')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                </p>
+                <div class="flex items-center flex-wrap gap-2 mb-4">
+                    <span class="math">1249 - </span>
+                    <input type="number" class="slot-input" data-ans="249" placeholder="數字" />
+                    <span class="math"> = </span>
+                    <input type="number" class="slot-input" data-ans="1000" placeholder="答案" />
+                </div>
+                <button class="btn-check" onclick="checkStep(this)">檢查答案</button>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="step-card main-step" data-level="2" data-step="2">
+                <p class="text-xl mb-4 font-bold">
+                    步驟 2：再把剛剛沒減到的數字減掉！
+                    <button class="btn-tts" onclick="speak('步驟二：再把剛剛沒減到的數字減掉！1000減675等於多少？')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                </p>
+                <div class="flex items-center flex-wrap gap-2 mb-4">
+                    <span class="math">1000 - 675 = </span>
+                    <input type="number" class="slot-input" data-ans="325" placeholder="答案" />
+                </div>
+                <button class="btn-check" onclick="checkStep(this, true)">檢查答案並完成關卡</button>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="remedial-container" style="display: none;">
+                <div class="my-6 border-t-2 border-dashed border-orange-300 pt-6">
+                    <h3 class="text-xl font-bold text-orange-600 mb-2">💡 學習小提示</h3>
+                    <p class="text-lg bg-orange-50 p-4 rounded-lg mb-4">
+                        換個順序，先減掉尾數相同的數字會很好算！試試這題：<span class="math">1357 - 449 - 357</span>
+                    </p>
+                </div>
+                <div class="step-card remedial-card" data-level="2" data-step="r1">
+                    <p class="text-xl mb-4 font-bold">步驟 1：先算好算的組合！</p>
+                    <div class="flex items-center flex-wrap gap-2 mb-4">
+                        <span class="math">1357 - </span>
+                        <input type="number" class="slot-input" data-ans="357" />
+                        <span class="math"> = </span>
+                        <input type="number" class="slot-input" data-ans="1000" />
+                    </div>
+                    <button class="btn-check" onclick="checkStep(this)">檢查答案</button>
+                    <div class="feedback"></div>
+                </div>
+                <div class="step-card remedial-card" data-level="2" data-step="r2">
+                    <p class="text-xl mb-4 font-bold">步驟 2：最後減去剩下的。</p>
+                    <div class="flex items-center flex-wrap gap-2 mb-4">
+                        <span class="math">1000 - 449 = </span>
+                        <input type="number" class="slot-input" data-ans="551" />
+                    </div>
+                    <button class="btn-check" onclick="checkStep(this, true)">完成類似題</button>
+                    <div class="feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= 關卡三 ================= -->
+        <div class="level-section hidden" id="level-3">
+            <div class="mb-6 flex items-center">
+                <h2 class="text-2xl font-bold text-blue-800">第三關：先加再減與先減再加</h2>
+                <button class="btn-tts" onclick="speak('第三關：先加再減與先減再加。加減混合時，把好算的數字先算會比較快喔！')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+            </div>
+            <p class="text-lg text-slate-700 mb-4 bg-blue-50 p-4 rounded-lg font-medium">
+                挑戰題：<span class="math">554 + 199 - 54</span>
+            </p>
+
+            <div class="step-card active main-step" data-level="3" data-step="1">
+                <p class="text-xl mb-4 font-bold">
+                    步驟 1：<span class="math">554</span> 先去減誰，會剛好變成<mark>整百</mark>呢？
+                    <button class="btn-tts" onclick="speak('步驟一：554先去減誰，會剛好變成整百呢？')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                </p>
+                <div class="flex items-center flex-wrap gap-2 mb-4">
+                    <span class="math">554 - </span>
+                    <input type="number" class="slot-input" data-ans="54" />
+                    <span class="math"> = </span>
+                    <input type="number" class="slot-input" data-ans="500" />
+                </div>
+                <button class="btn-check" onclick="checkStep(this)">檢查答案</button>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="step-card main-step" data-level="3" data-step="2">
+                <p class="text-xl mb-4 font-bold">
+                    步驟 2：再把剩下的數字加回來！
+                </p>
+                <div class="flex items-center flex-wrap gap-2 mb-4">
+                    <span class="math">500 + 199 = </span>
+                    <input type="number" class="slot-input" data-ans="699" />
+                </div>
+                <button class="btn-check" onclick="checkStep(this, true)">檢查答案並完成關卡</button>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="remedial-container" style="display: none;">
+                <div class="my-6 border-t-2 border-dashed border-orange-300 pt-6">
+                    <h3 class="text-xl font-bold text-orange-600 mb-2">💡 學習小提示</h3>
+                    <p class="text-lg bg-orange-50 p-4 rounded-lg mb-4">
+                        只要符號看清楚 (前面的加減號要跟著數字走)，先算哪組都可以！試試這題：<span class="math">725 + 398 - 125</span>
+                    </p>
+                </div>
+                <div class="step-card remedial-card" data-level="3" data-step="r1">
+                    <p class="text-xl mb-4 font-bold">步驟 1：先算好算的組合！</p>
+                    <div class="flex items-center flex-wrap gap-2 mb-4">
+                        <span class="math">725 - </span>
+                        <input type="number" class="slot-input" data-ans="125" />
+                        <span class="math"> = </span>
+                        <input type="number" class="slot-input" data-ans="600" />
+                    </div>
+                    <button class="btn-check" onclick="checkStep(this)">檢查答案</button>
+                    <div class="feedback"></div>
+                </div>
+                <div class="step-card remedial-card" data-level="3" data-step="r2">
+                    <p class="text-xl mb-4 font-bold">步驟 2：加上剩下的數字。</p>
+                    <div class="flex items-center flex-wrap gap-2 mb-4">
+                        <span class="math">600 + 398 = </span>
+                        <input type="number" class="slot-input" data-ans="998" />
+                    </div>
+                    <button class="btn-check" onclick="checkStep(this, true)">完成類似題</button>
+                    <div class="feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= 關卡四 ================= -->
+        <div class="level-section hidden" id="level-4">
+            <div class="mb-6 flex items-center">
+                <h2 class="text-2xl font-bold text-blue-800">第四關：連乘的神奇密碼</h2>
+                <button class="btn-tts" onclick="speak('第四關：連乘的神奇密碼。連乘的算式中，哪兩個數先相乘結果都一樣。要記得 25乘4等於100 這個好朋友喔！')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+            </div>
+            <p class="text-lg text-slate-700 mb-4 bg-blue-50 p-4 rounded-lg font-medium">
+                挑戰題：<span class="math">25 \times 28 \times 4</span>
+            </p>
+
+            <div class="step-card active main-step" data-level="4" data-step="1">
+                <p class="text-xl mb-4 font-bold">
+                    步驟 1：<span class="math">25</span> 和誰相乘會剛好等於 <mark>100</mark> 呢？把它們找出來！
+                </p>
+                <div class="flex items-center flex-wrap gap-2 mb-4">
+                    <span class="math">25 \times </span>
+                    <input type="number" class="slot-input" data-ans="4" />
+                    <span class="math"> = </span>
+                    <input type="number" class="slot-input" data-ans="100" />
+                </div>
+                <button class="btn-check" onclick="checkStep(this)">檢查答案</button>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="step-card main-step" data-level="4" data-step="2">
+                <p class="text-xl mb-4 font-bold">
+                    步驟 2：再把剛剛乘出來的 100 乘上剩下的數字！
+                </p>
+                <div class="flex items-center flex-wrap gap-2 mb-4">
+                    <span class="math">100 \times 28 = </span>
+                    <input type="number" class="slot-input" data-ans="2800" />
+                </div>
+                <button class="btn-check" onclick="checkStep(this, true)">檢查答案並完成關卡</button>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="remedial-container" style="display: none;">
+                <div class="my-6 border-t-2 border-dashed border-orange-300 pt-6">
+                    <h3 class="text-xl font-bold text-orange-600 mb-2">💡 學習小提示</h3>
+                    <p class="text-lg bg-orange-50 p-4 rounded-lg mb-4">
+                        乘法好朋友：<span class="math">25 \times 4 = 100</span>，還有 <span class="math">125 \times 8 = 1000</span>。試試這題：<span class="math">125 \times 654 \times 8</span>
+                    </p>
+                </div>
+                <div class="step-card remedial-card" data-level="4" data-step="r1">
+                    <p class="text-xl mb-4 font-bold">步驟 1：找出好朋友先相乘！</p>
+                    <div class="flex items-center flex-wrap gap-2 mb-4">
+                        <span class="math">125 \times </span>
+                        <input type="number" class="slot-input" data-ans="8" />
+                        <span class="math"> = </span>
+                        <input type="number" class="slot-input" data-ans="1000" />
+                    </div>
+                    <button class="btn-check" onclick="checkStep(this)">檢查答案</button>
+                    <div class="feedback"></div>
+                </div>
+                <div class="step-card remedial-card" data-level="4" data-step="r2">
+                    <p class="text-xl mb-4 font-bold">步驟 2：乘上剩下的數字。</p>
+                    <div class="flex items-center flex-wrap gap-2 mb-4">
+                        <span class="math">1000 \times 654 = </span>
+                        <input type="number" class="slot-input" data-ans="654000" />
+                    </div>
+                    <button class="btn-check" onclick="checkStep(this, true)">完成類似題</button>
+                    <div class="feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= 關卡五 ================= -->
+        <div class="level-section hidden" id="level-5">
+            <div class="mb-6 flex items-center">
+                <h2 class="text-2xl font-bold text-blue-800">第五關：乘與除的簡化計算</h2>
+                <button class="btn-tts" onclick="speak('第五關：乘與除的簡化計算。先乘再除與先除再乘的結果相同！先除以好算的數字會比較快喔。')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+            </div>
+            <p class="text-lg text-slate-700 mb-4 bg-blue-50 p-4 rounded-lg font-medium">
+                挑戰題：<span class="math">24 \times 13 \div 8</span>
+            </p>
+
+            <div class="step-card active main-step" data-level="5" data-step="1">
+                <p class="text-xl mb-4 font-bold">
+                    步驟 1：<span class="math">24</span> 如果先去乘以 13 會變得很大。我們先讓它去<mark>除以</mark>後面的數字吧！
+                </p>
+                <div class="flex items-center flex-wrap gap-2 mb-4">
+                    <span class="math">24 \div </span>
+                    <input type="number" class="slot-input" data-ans="8" />
+                    <span class="math"> = </span>
+                    <input type="number" class="slot-input" data-ans="3" />
+                </div>
+                <button class="btn-check" onclick="checkStep(this)">檢查答案</button>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="step-card main-step" data-level="5" data-step="2">
+                <p class="text-xl mb-4 font-bold">
+                    步驟 2：數字變小了！現在再把它乘上剩下的數字。
+                </p>
+                <div class="flex items-center flex-wrap gap-2 mb-4">
+                    <span class="math">3 \times 13 = </span>
+                    <input type="number" class="slot-input" data-ans="39" />
+                </div>
+                <button class="btn-check" onclick="checkStep(this, true)">檢查答案並完成關卡</button>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="remedial-container" style="display: none;">
+                <div class="my-6 border-t-2 border-dashed border-orange-300 pt-6">
+                    <h3 class="text-xl font-bold text-orange-600 mb-2">💡 學習小提示</h3>
+                    <p class="text-lg bg-orange-50 p-4 rounded-lg mb-4">
+                        只要是連續的乘除法，先除以能整除的數字會比較好算喔！試試這題：<span class="math">56 \times 4 \div 7</span>
+                    </p>
+                </div>
+                <div class="step-card remedial-card" data-level="5" data-step="r1">
+                    <p class="text-xl mb-4 font-bold">步驟 1：先除以能整除的數字！</p>
+                    <div class="flex items-center flex-wrap gap-2 mb-4">
+                        <span class="math">56 \div </span>
+                        <input type="number" class="slot-input" data-ans="7" />
+                        <span class="math"> = </span>
+                        <input type="number" class="slot-input" data-ans="8" />
+                    </div>
+                    <button class="btn-check" onclick="checkStep(this)">檢查答案</button>
+                    <div class="feedback"></div>
+                </div>
+                <div class="step-card remedial-card" data-level="5" data-step="r2">
+                    <p class="text-xl mb-4 font-bold">步驟 2：再乘上剩下的數字。</p>
+                    <div class="flex items-center flex-wrap gap-2 mb-4">
+                        <span class="math">8 \times 4 = </span>
+                        <input type="number" class="slot-input" data-ans="32" />
+                    </div>
+                    <button class="btn-check" onclick="checkStep(this, true)">完成類似題</button>
+                    <div class="feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= 結算畫面 ================= -->
+        <div class="level-section hidden text-center py-10" id="final-screen">
+            <h2 class="text-4xl font-black text-blue-600 mb-6">🎉 恭喜完成所有挑戰！</h2>
+            <div class="text-[80px] mb-6">🏆</div>
+            <p class="text-2xl font-bold mb-4">你是運算小天才！</p>
+            <p class="text-xl text-slate-600 bg-yellow-100 inline-block px-8 py-4 rounded-full shadow-md font-bold">
+                最終總積分：<span id="final-score-display" class="text-red-500 text-3xl mx-2">0</span> 分
+            </p>
+        </div>
+
+    </main>
+
+    <!-- 音效元素 -->
+    <audio id="snd-correct" src="https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3" preload="auto"></audio>
+    <audio id="snd-wrong" src="https://assets.mixkit.co/active_storage/sfx/2955/2955-preview.mp3" preload="auto"></audio>
+    <audio id="snd-level-up" src="https://assets.mixkit.co/active_storage/sfx/2019/2019-preview.mp3" preload="auto"></audio>
+
+    <script>
+        // 狀態管理
+        let score = 0;
+        let stepStartTime = Date.now();
+        // 記錄每個關卡是否曾在主幹道(main-step)答錯，若有，則需開啟補救(remedial)
+        let levelErrors = { 1: false, 2: false, 3: false, 4: false, 5: false }; 
+
+        const scoreDisplay = document.getElementById('score-display');
+        const finalScoreDisplay = document.getElementById('final-score-display');
+        
+        // 播放音效
+        function playSound(type) {
+            const snd = document.getElementById(`snd-${type}`);
+            if (snd) {
+                snd.currentTime = 0;
+                snd.play().catch(e => console.log('Audio play error:', e));
+            }
+        }
+
+        // 語音報讀 (TTS)
+        function speak(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel(); // 停止目前的語音
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'zh-TW';
+                utterance.rate = 0.9; // 稍微放慢速度，適合特教生
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("您的瀏覽器不支援語音功能。");
+            }
+        }
+
+        // 更新分數
+        function addScore(points) {
+            score += points;
+            // 基礎動畫效果
+            scoreDisplay.textContent = score;
+            scoreDisplay.parentElement.classList.add('scale-110', 'bg-yellow-200');
+            setTimeout(() => {
+                scoreDisplay.parentElement.classList.remove('scale-110', 'bg-yellow-200');
+            }, 300);
+        }
+
+        // 檢查單一步驟
+        function checkStep(btn, isLastStepInBlock = false) {
+            const stepCard = btn.closest('.step-card');
+            const inputs = stepCard.querySelectorAll('.slot-input');
+            const feedback = stepCard.querySelector('.feedback');
+            const levelId = stepCard.dataset.level;
+            const isRemedial = stepCard.classList.contains('remedial-card');
+            
+            // 1. 檢查是否都有填寫
+            let allFilled = true;
+            inputs.forEach(input => {
+                if (input.value.trim() === '') allFilled = false;
+            });
+
+            if (!allFilled) {
+                alert("請先把所有空格填完喔！");
+                return;
+            }
+
+            // 2. 核對答案
+            let allCorrect = true;
+            inputs.forEach(input => {
+                // 轉成數字比較避免前後空白或字串型態問題
+                if (Number(input.value) === Number(input.dataset.ans)) {
+                    input.classList.add('correct');
+                    input.classList.remove('border-red-400', 'bg-red-50');
+                } else {
+                    allCorrect = false;
+                    input.classList.remove('correct');
+                    input.classList.add('border-red-400', 'bg-red-50');
+                }
+            });
+
+            // 3. 根據結果回饋
+            if (allCorrect) {
+                playSound('correct');
+                feedback.className = 'feedback success mt-4';
+                feedback.innerHTML = '<span>✔️ 很棒！完全正確！</span>';
+                feedback.style.display = 'flex';
+                
+                // 鎖定當前輸入與按鈕
+                inputs.forEach(input => input.readOnly = true);
+                btn.style.display = 'none';
+
+                // 計算得分 (時間越快分數越高，底線 10 分)
+                const timeTaken = (Date.now() - stepStartTime) / 1000;
+                const points = Math.max(10, 50 - Math.floor(timeTaken));
+                addScore(points);
+
+                // 處理下一步
+                handleNextStep(stepCard, levelId, isLastStepInBlock, isRemedial);
+
+            } else {
+                playSound('wrong');
+                feedback.className = 'feedback error mt-4';
+                feedback.innerHTML = '<span>🤔 再想想看！有地方算錯囉。</span>';
+                feedback.style.display = 'flex';
+                
+                // 扣一點點分，並標記該關卡發生錯誤需補救
+                if (score > 5) addScore(-5); 
+                if (!isRemedial) {
+                    levelErrors[levelId] = true;
+                }
+            }
+        }
+
+        // 處理解鎖下一步或下一關的邏輯
+        function handleNextStep(currentCard, levelId, isLastStepInBlock, isRemedial) {
+            const levelSection = document.getElementById(`level-${levelId}`);
+            
+            if (!isLastStepInBlock) {
+                // 還沒到該區塊最後一步，解鎖下一個相鄰的 step-card
+                const nextCard = currentCard.nextElementSibling;
+                if (nextCard && nextCard.classList.contains('step-card')) {
+                    nextCard.classList.add('active');
+                    nextCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    stepStartTime = Date.now(); // 重設計時
+                }
+            } else {
+                // 該區塊的最後一步
+                if (!isRemedial && levelErrors[levelId]) {
+                    // 主幹道結束，且曾經答錯 -> 顯示補救教學
+                    const remedialContainer = levelSection.querySelector('.remedial-container');
+                    remedialContainer.style.display = 'block';
+                    const firstRemedial = remedialContainer.querySelector('.remedial-card');
+                    firstRemedial.classList.add('active');
+                    firstRemedial.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    stepStartTime = Date.now();
+                } else {
+                    // 主幹道結束(無錯) 或 補救道結束 -> 前往下一關
+                    goToNextLevel(levelId);
+                }
+            }
+        }
+
+        function goToNextLevel(currentLevelId) {
+            playSound('level-up');
+            const currentSection = document.getElementById(`level-${currentLevelId}`);
+            const nextLevelId = parseInt(currentLevelId) + 1;
+            const nextSection = document.getElementById(`level-${nextLevelId}`);
+            
+            setTimeout(() => {
+                currentSection.classList.add('hidden');
+                
+                if (nextSection) {
+                    nextSection.classList.remove('hidden');
+                    // 啟用下一關的第一步
+                    nextSection.querySelector('.step-card').classList.add('active');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    stepStartTime = Date.now();
+                } else {
+                    // 沒下一關了，顯示結算畫面
+                    document.getElementById('final-screen').classList.remove('hidden');
+                    finalScoreDisplay.textContent = score;
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    speak(`恭喜你完成所有挑戰！你的總積分是 ${score} 分，你是運算小天才！`);
+                }
+            }, 800); // 給一點延遲讓綠色勾勾顯示
+        }
+
+        // 初始化
+        window.onload = () => {
+            stepStartTime = Date.now();
+        };
+    </script>
+</body>
+</html>
