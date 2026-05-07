@@ -82,13 +82,19 @@
             color: #166534;
         }
 
-        /* 螢光筆畫重點 */
+        /* 螢光筆畫重點與視覺提示 */
         mark {
             background-color: #fef08a;
             padding: 2px 6px;
             border-radius: 4px;
             font-weight: bold;
             color: #854d0e;
+        }
+        .highlight-box {
+            border: 2px solid #ef4444;
+            border-radius: 4px;
+            padding: 0 4px;
+            display: inline-block;
         }
 
         /* 步驟與動畫 */
@@ -111,6 +117,10 @@
         .remedial-card {
             border-left-color: #f59e0b; /* 橘色代表類似題/補救 */
             background-color: #fffbeb;
+        }
+        .warmup-card {
+            border-left-color: #10b981; /* 綠色代表先備知識暖身 */
+            background-color: #f0fdf4;
         }
 
         @keyframes slideIn {
@@ -213,28 +223,27 @@
     </header>
 
     <main class="max-w-3xl mx-auto px-4" id="game-container">
-        <!-- 關卡內容將由結構化 HTML 呈現，透過 JS 控制顯示隱藏 -->
         
         <!-- ================= 關卡一 ================= -->
         <div class="level-section" id="level-1">
             <div class="mb-6 flex items-center">
                 <h2 class="text-2xl font-bold text-blue-800">第一關：連加的簡化計算</h2>
-                <button class="btn-tts" onclick="speak('第一關：連加的簡化計算。三個數字連加時，先加哪兩個結果都一樣。可以把好算的數字先加起來！')" title="朗讀題目">
+                <button class="btn-tts" onclick="speak('第一關：連加的簡化計算。三個數字連加時，先加哪兩個結果都一樣。我們可以把好算的數字先加起來！')" title="朗讀題目">
                     <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
                 </button>
             </div>
             <p class="text-lg text-slate-700 mb-4 bg-blue-50 p-4 rounded-lg font-medium">
-                想想看，怎麼算會比較快算出答案？ <span class="math">296 + 688 + 504</span>
+                想想看，怎麼算會比較快算出答案？ <span class="math">29<span class="text-orange-500 highlight-box">6</span> + 688 + 50<span class="text-orange-500 highlight-box">4</span></span>
             </p>
 
-            <!-- 主題步驟 -->
-            <div class="step-card active main-step" data-level="1" data-step="1">
-                <p class="text-xl mb-4 font-bold">
-                    步驟 1：找好朋友湊成 10！想一想，<span class="text-red-500 text-3xl mx-1">6</span> 和誰加起來會變成 10 呢？
-                    <button class="btn-tts" onclick="speak('步驟一：找好朋友湊成10！想一想，6和誰加起來會變成10呢？請在空格中輸入答案。')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+            <!-- 暖身步驟 -->
+            <div class="step-card active warmup-card main-step" data-level="1" data-step="1">
+                <p class="text-xl mb-4 font-bold text-emerald-700">
+                    💡 步驟 1 (先備暖身)：找好朋友湊成 10！想一想，<span class="text-orange-500 text-3xl mx-1">6</span> 和誰加起來會變成 10 呢？
+                    <button class="btn-tts" onclick="speak('暖身步驟：找好朋友湊成10！想一想，6和誰加起來會變成10呢？請在空格中輸入答案。')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
                 </p>
-                <div class="flex items-center flex-wrap gap-2 mb-4 bg-slate-50 p-4 rounded-lg border-2 border-slate-100 inline-block">
-                    <span class="math text-red-500">6 + </span> 
+                <div class="flex items-center flex-wrap gap-2 mb-4 bg-white p-4 rounded-lg border-2 border-emerald-100 inline-block shadow-sm">
+                    <span class="math text-orange-500">6 + </span> 
                     <input type="number" class="slot-input" data-ans="4" placeholder="數字" />
                     <span class="math"> = 10</span>
                 </div>
@@ -242,16 +251,19 @@
                 <div class="feedback"></div>
             </div>
 
+            <!-- 主題步驟 -->
             <div class="step-card main-step" data-level="1" data-step="2">
                 <p class="text-xl mb-4 font-bold leading-relaxed">
                     步驟 2：觀察個位數！<br>
-                    <span class="text-2xl font-bold bg-yellow-100 px-2 rounded">29<span class="text-red-500 underline underline-offset-4">6</span></span> 的個位數是 <span class="text-red-500 text-2xl">6</span>，<br>
-                    找找看上面題目的數字中，哪一個數字的個位數是 <span class="text-blue-600 text-2xl font-black">4</span> 呢？把他們湊成<mark>整百</mark>！
+                    <span class="text-2xl font-bold bg-yellow-100 px-2 rounded">29<span class="text-orange-500 highlight-box">6</span></span> 的個位數是 <span class="text-orange-500 text-2xl">6</span>，<br>
+                    找找看上面題目的數字中，哪一個數字的個位數是 <span class="text-orange-500 text-2xl font-black">4</span> 呢？把他們湊成<mark>整百</mark>！
                     <button class="btn-tts" onclick="speak('步驟二：觀察個位數！296 的個位數是 6，找找看上面題目的數字中，哪一個數字的個位數是 4 呢？把它們湊成整百！')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
                 </p>
                 <div class="flex items-center flex-wrap gap-2 mb-4">
                     <span class="math">296 +</span> 
                     <input type="number" class="slot-input" data-ans="504" placeholder="數字" />
+                    <span class="math"> = </span>
+                    <input type="number" class="slot-input" data-ans="800" placeholder="答案" />
                 </div>
                 <button class="btn-check" onclick="checkStep(this)">檢查答案</button>
                 <div class="feedback"></div>
@@ -259,21 +271,8 @@
 
             <div class="step-card main-step" data-level="1" data-step="3">
                 <p class="text-xl mb-4 font-bold">
-                    步驟 3：把它們先加起來吧！
-                    <button class="btn-tts" onclick="speak('步驟三：把它們先加起來吧！296加504等於多少？')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
-                </p>
-                <div class="flex items-center flex-wrap gap-2 mb-4">
-                    <span class="math">296 + 504 = </span>
-                    <input type="number" class="slot-input" data-ans="800" placeholder="答案" />
-                </div>
-                <button class="btn-check" onclick="checkStep(this)">檢查答案</button>
-                <div class="feedback"></div>
-            </div>
-
-            <div class="step-card main-step" data-level="1" data-step="4">
-                <p class="text-xl mb-4 font-bold">
-                    步驟 4：最後，再加上中間剩下的數字！
-                    <button class="btn-tts" onclick="speak('步驟四：最後，再加上中間剩下的數字！800加688等於多少？')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                    步驟 3：最後，再加上中間剩下的數字！
+                    <button class="btn-tts" onclick="speak('步驟三：最後，再加上中間剩下的數字！800加688等於多少？')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
                 </p>
                 <div class="flex items-center flex-wrap gap-2 mb-4">
                     <span class="math">800 + 688 = </span>
@@ -283,34 +282,31 @@
                 <div class="feedback"></div>
             </div>
 
-            <!-- 類似題 (補救教學)，預設隱藏，當 main-step 答錯時標記，於完成 main 後顯示 -->
+            <!-- 類似題 (補救教學) -->
             <div class="remedial-container" style="display: none;">
                 <div class="my-6 border-t-2 border-dashed border-orange-300 pt-6">
                     <h3 class="text-xl font-bold text-orange-600 mb-2">💡 學習小提示：確認你學會了！</h3>
                     <p class="text-lg bg-orange-50 p-4 rounded-lg mb-4">
-                        我們再來挑戰一題類似的：<span class="math">357 + 199 + 201</span><br>
-                        <span class="text-orange-600 font-bold mt-2 inline-block">小提示：觀察個位數，9 和 1 可以湊成 10 喔！</span>
-                        <button class="btn-tts" onclick="speak('我們再來挑戰一題類似的：357加199加201。小提示：觀察個位數，9 和 1 可以湊成 10 喔！哪兩個數字可以先湊成整百？')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                        我們再來挑戰一題類似的：<span class="math">35<span class="text-blue-600 highlight-box">7</span> + 199 + 20<span class="text-blue-600 highlight-box">3</span></span><br>
+                        <span class="text-orange-600 font-bold mt-2 inline-block">小提示：觀察個位數，哪兩個加起來是 10 呢？</span>
                     </p>
                 </div>
-
                 <div class="step-card remedial-card" data-level="1" data-step="r1">
-                    <p class="text-xl mb-4 font-bold">步驟 1：哪兩個數字相加可以湊成<mark>整百</mark>？</p>
+                    <p class="text-xl mb-4 font-bold">步驟 1：找個位數能合十的，湊成<mark>整百</mark>！</p>
                     <div class="flex items-center flex-wrap gap-2 mb-4">
-                        <span class="math">199 + </span>
-                        <input type="number" class="slot-input" data-ans="201" placeholder="數字" />
+                        <span class="math">357 + </span>
+                        <input type="number" class="slot-input" data-ans="203" placeholder="數字" />
                         <span class="math"> = </span>
-                        <input type="number" class="slot-input" data-ans="400" placeholder="答案" />
+                        <input type="number" class="slot-input" data-ans="560" placeholder="答案" />
                     </div>
                     <button class="btn-check" onclick="checkStep(this)">檢查答案</button>
                     <div class="feedback"></div>
                 </div>
-                
                 <div class="step-card remedial-card" data-level="1" data-step="r2">
                     <p class="text-xl mb-4 font-bold">步驟 2：再加上剩下的數字，算出總和！</p>
                     <div class="flex items-center flex-wrap gap-2 mb-4">
-                        <span class="math">357 + 400 = </span>
-                        <input type="number" class="slot-input" data-ans="757" placeholder="總和" />
+                        <span class="math">560 + 199 = </span>
+                        <input type="number" class="slot-input" data-ans="759" placeholder="總和" />
                     </div>
                     <button class="btn-check" onclick="checkStep(this, true)">完成類似題</button>
                     <div class="feedback"></div>
@@ -322,16 +318,29 @@
         <div class="level-section hidden" id="level-2">
             <div class="mb-6 flex items-center">
                 <h2 class="text-2xl font-bold text-blue-800">第二關：連減的簡化計算</h2>
-                <button class="btn-tts" onclick="speak('第二關：連減的簡化計算。連減的算式中，先減哪一個數結果都一樣！')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                <button class="btn-tts" onclick="speak('第二關：連減的簡化計算。連減的算式中，先減哪一個數結果都一樣！我們先找一樣的部分減掉。')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
             </div>
             <p class="text-lg text-slate-700 mb-4 bg-blue-50 p-4 rounded-lg font-medium">
-                想想看，怎麼算會比較快？ <span class="math">1249 - 675 - 249</span>
+                想想看，怎麼算會比較快？ <span class="math">1<span class="text-pink-600 highlight-box">249</span> - 675 - <span class="text-pink-600 highlight-box">249</span></span>
             </p>
 
-            <div class="step-card active main-step" data-level="2" data-step="1">
+            <div class="step-card active warmup-card main-step" data-level="2" data-step="1">
+                <p class="text-xl mb-4 font-bold text-emerald-700">
+                    💡 步驟 1 (先備暖身)：一樣的數減掉一樣的數，會變成多少？
+                    <button class="btn-tts" onclick="speak('暖身步驟：一樣的數減掉一樣的數，會變成多少？請在空格輸入。')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                </p>
+                <div class="flex items-center flex-wrap gap-2 mb-4 bg-white p-4 rounded-lg border-2 border-emerald-100 inline-block shadow-sm">
+                    <span class="math text-pink-600">249 - 249 = </span>
+                    <input type="number" class="slot-input" data-ans="0" placeholder="答案" />
+                </div>
+                <button class="btn-check" onclick="checkStep(this)">檢查答案</button>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="step-card main-step" data-level="2" data-step="2">
                 <p class="text-xl mb-4 font-bold">
-                    步驟 1：<mark>連減</mark>時，可以調換順序。<span class="math">1249</span> 先減誰可以變成<mark>整千</mark>？
-                    <button class="btn-tts" onclick="speak('步驟一：1249 先減誰可以變成整千？')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                    步驟 2：找找看，題目裡有沒有長得<mark>一樣的部分</mark>？<br>
+                    <span class="math">1<span class="text-pink-600 highlight-box">249</span></span> 裡面有 <span class="text-pink-600 font-bold">249</span>，先把後面一樣的數字減掉！
                 </p>
                 <div class="flex items-center flex-wrap gap-2 mb-4">
                     <span class="math">1249 - </span>
@@ -343,10 +352,9 @@
                 <div class="feedback"></div>
             </div>
 
-            <div class="step-card main-step" data-level="2" data-step="2">
+            <div class="step-card main-step" data-level="2" data-step="3">
                 <p class="text-xl mb-4 font-bold">
-                    步驟 2：再把剛剛沒減到的數字減掉！
-                    <button class="btn-tts" onclick="speak('步驟二：再把剛剛沒減到的數字減掉！1000減675等於多少？')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                    步驟 3：變整千了！再把剛剛剩下的數字減掉！
                 </p>
                 <div class="flex items-center flex-wrap gap-2 mb-4">
                     <span class="math">1000 - 675 = </span>
@@ -360,11 +368,11 @@
                 <div class="my-6 border-t-2 border-dashed border-orange-300 pt-6">
                     <h3 class="text-xl font-bold text-orange-600 mb-2">💡 學習小提示</h3>
                     <p class="text-lg bg-orange-50 p-4 rounded-lg mb-4">
-                        換個順序，先減掉尾數相同的數字會很好算！試試這題：<span class="math">1357 - 449 - 357</span>
+                        換個順序，先找「長得一樣」的數字減掉會很好算！試試這題：<span class="math">1<span class="text-pink-600 highlight-box">357</span> - 449 - <span class="text-pink-600 highlight-box">357</span></span>
                     </p>
                 </div>
                 <div class="step-card remedial-card" data-level="2" data-step="r1">
-                    <p class="text-xl mb-4 font-bold">步驟 1：先算好算的組合！</p>
+                    <p class="text-xl mb-4 font-bold">步驟 1：先減掉一樣的部分！</p>
                     <div class="flex items-center flex-wrap gap-2 mb-4">
                         <span class="math">1357 - </span>
                         <input type="number" class="slot-input" data-ans="357" />
@@ -390,16 +398,16 @@
         <div class="level-section hidden" id="level-3">
             <div class="mb-6 flex items-center">
                 <h2 class="text-2xl font-bold text-blue-800">第三關：先加再減與先減再加</h2>
-                <button class="btn-tts" onclick="speak('第三關：先加再減與先減再加。加減混合時，把好算的數字先算會比較快喔！')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                <button class="btn-tts" onclick="speak('第三關：先加再減與先減再加。加減混合時，一樣先找長得像的數字先算！')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
             </div>
             <p class="text-lg text-slate-700 mb-4 bg-blue-50 p-4 rounded-lg font-medium">
-                挑戰題：<span class="math">554 + 199 - 54</span>
+                挑戰題：<span class="math">5<span class="text-purple-600 highlight-box">54</span> + 199 - <span class="text-purple-600 highlight-box">54</span></span>
             </p>
 
             <div class="step-card active main-step" data-level="3" data-step="1">
                 <p class="text-xl mb-4 font-bold">
-                    步驟 1：<span class="math">554</span> 先去減誰，會剛好變成<mark>整百</mark>呢？
-                    <button class="btn-tts" onclick="speak('步驟一：554先去減誰，會剛好變成整百呢？')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                    步驟 1：找找看，有沒有長得<mark>一樣的部分</mark>？<br>
+                    <span class="math">5<span class="text-purple-600 font-bold">54</span></span> 裡面有 <span class="text-purple-600 font-bold">54</span>！我們先把它跟後面的減掉，變成<mark>整百</mark>！
                 </p>
                 <div class="flex items-center flex-wrap gap-2 mb-4">
                     <span class="math">554 - </span>
@@ -427,11 +435,11 @@
                 <div class="my-6 border-t-2 border-dashed border-orange-300 pt-6">
                     <h3 class="text-xl font-bold text-orange-600 mb-2">💡 學習小提示</h3>
                     <p class="text-lg bg-orange-50 p-4 rounded-lg mb-4">
-                        只要符號看清楚 (前面的加減號要跟著數字走)，先算哪組都可以！試試這題：<span class="math">725 + 398 - 125</span>
+                        前面的加減號要跟著數字走喔！試試這題：<span class="math">7<span class="text-purple-600 highlight-box">25</span> + 398 - 1<span class="text-purple-600 highlight-box">25</span></span>
                     </p>
                 </div>
                 <div class="step-card remedial-card" data-level="3" data-step="r1">
-                    <p class="text-xl mb-4 font-bold">步驟 1：先算好算的組合！</p>
+                    <p class="text-xl mb-4 font-bold">步驟 1：看到一樣的尾數，先減掉！</p>
                     <div class="flex items-center flex-wrap gap-2 mb-4">
                         <span class="math">725 - </span>
                         <input type="number" class="slot-input" data-ans="125" />
@@ -457,18 +465,32 @@
         <div class="level-section hidden" id="level-4">
             <div class="mb-6 flex items-center">
                 <h2 class="text-2xl font-bold text-blue-800">第四關：連乘的神奇密碼</h2>
-                <button class="btn-tts" onclick="speak('第四關：連乘的神奇密碼。連乘的算式中，哪兩個數先相乘結果都一樣。要記得 25乘4等於100 這個好朋友喔！')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                <button class="btn-tts" onclick="speak('第四關：連乘的神奇密碼。連乘的算式中，找好朋友先乘會比較快！')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
             </div>
             <p class="text-lg text-slate-700 mb-4 bg-blue-50 p-4 rounded-lg font-medium">
-                挑戰題：<span class="math">25 \times 28 \times 4</span>
+                挑戰題：<span class="math"><span class="text-red-600 highlight-box">25</span> \times 28 \times <span class="text-blue-600 highlight-box">4</span></span>
             </p>
 
-            <div class="step-card active main-step" data-level="4" data-step="1">
+            <div class="step-card active warmup-card main-step" data-level="4" data-step="1">
+                <p class="text-xl mb-4 font-bold text-emerald-700">
+                    💡 步驟 1 (先備暖身)：乘法好朋友！看到 <span class="text-red-600 font-bold">25</span>，就要想到誰？
+                    <button class="btn-tts" onclick="speak('暖身步驟：乘法好朋友！看到 25，就要想到誰？它們乘起來會等於 100 喔！')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                </p>
+                <div class="flex items-center flex-wrap gap-2 mb-4 bg-white p-4 rounded-lg border-2 border-emerald-100 inline-block shadow-sm">
+                    <span class="math"><span class="text-red-600">25</span> \times </span>
+                    <input type="number" class="slot-input" data-ans="4" placeholder="數字" />
+                    <span class="math"> = 100</span>
+                </div>
+                <button class="btn-check" onclick="checkStep(this)">檢查答案</button>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="step-card main-step" data-level="4" data-step="2">
                 <p class="text-xl mb-4 font-bold">
-                    步驟 1：<span class="math">25</span> 和誰相乘會剛好等於 <mark>100</mark> 呢？把它們找出來！
+                    步驟 2：回到題目，找出題目裡的好朋友，先乘這一組！
                 </p>
                 <div class="flex items-center flex-wrap gap-2 mb-4">
-                    <span class="math">25 \times </span>
+                    <span class="math"><span class="text-red-600">25</span> \times </span>
                     <input type="number" class="slot-input" data-ans="4" />
                     <span class="math"> = </span>
                     <input type="number" class="slot-input" data-ans="100" />
@@ -477,9 +499,9 @@
                 <div class="feedback"></div>
             </div>
 
-            <div class="step-card main-step" data-level="4" data-step="2">
+            <div class="step-card main-step" data-level="4" data-step="3">
                 <p class="text-xl mb-4 font-bold">
-                    步驟 2：再把剛剛乘出來的 100 乘上剩下的數字！
+                    步驟 3：再把剛剛乘出來的 100 乘上剩下的數字！
                 </p>
                 <div class="flex items-center flex-wrap gap-2 mb-4">
                     <span class="math">100 \times 28 = </span>
@@ -493,7 +515,8 @@
                 <div class="my-6 border-t-2 border-dashed border-orange-300 pt-6">
                     <h3 class="text-xl font-bold text-orange-600 mb-2">💡 學習小提示</h3>
                     <p class="text-lg bg-orange-50 p-4 rounded-lg mb-4">
-                        乘法好朋友：<span class="math">25 \times 4 = 100</span>，還有 <span class="math">125 \times 8 = 1000</span>。試試這題：<span class="math">125 \times 654 \times 8</span>
+                        除了 25 找 4，別忘了 <span class="text-red-600 font-bold">125</span> 的好朋友是 <span class="text-blue-600 font-bold">8</span> 喔！<br>
+                        試試這題：<span class="math"><span class="text-red-600 highlight-box">125</span> \times 654 \times <span class="text-blue-600 highlight-box">8</span></span>
                     </p>
                 </div>
                 <div class="step-card remedial-card" data-level="4" data-step="r1">
@@ -522,16 +545,16 @@
         <!-- ================= 關卡五 ================= -->
         <div class="level-section hidden" id="level-5">
             <div class="mb-6 flex items-center">
-                <h2 class="text-2xl font-bold text-blue-800">第五關：乘與除的簡化計算</h2>
-                <button class="btn-tts" onclick="speak('第五關：乘與除的簡化計算。先乘再除與先除再乘的結果相同！先除以好算的數字會比較快喔。')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
+                <h2 class="text-2xl font-bold text-blue-800">第五關：乘除混合的簡化計算</h2>
+                <button class="btn-tts" onclick="speak('第五關：乘除混合的簡化計算。看到可以整除的數字，我們可以先除，數字變小會更好算喔！')"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></button>
             </div>
             <p class="text-lg text-slate-700 mb-4 bg-blue-50 p-4 rounded-lg font-medium">
-                挑戰題：<span class="math">24 \times 13 \div 8</span>
+                挑戰題：<span class="math"><span class="text-teal-600 highlight-box">24</span> \times 13 \div <span class="text-teal-600 highlight-box">8</span></span>
             </p>
 
             <div class="step-card active main-step" data-level="5" data-step="1">
                 <p class="text-xl mb-4 font-bold">
-                    步驟 1：<span class="math">24</span> 如果先去乘以 13 會變得很大。我們先讓它去<mark>除以</mark>後面的數字吧！
+                    步驟 1：先找能<mark>整除</mark>的！<span class="math">24</span> 可以先去除以誰呢？我們先讓它去<mark>除以</mark>後面的數字吧！
                 </p>
                 <div class="flex items-center flex-wrap gap-2 mb-4">
                     <span class="math">24 \div </span>
@@ -559,7 +582,7 @@
                 <div class="my-6 border-t-2 border-dashed border-orange-300 pt-6">
                     <h3 class="text-xl font-bold text-orange-600 mb-2">💡 學習小提示</h3>
                     <p class="text-lg bg-orange-50 p-4 rounded-lg mb-4">
-                        只要是連續的乘除法，先除以能整除的數字會比較好算喔！試試這題：<span class="math">56 \times 4 \div 7</span>
+                        只要是連續的乘除法，先除以能整除的數字會比較好算喔！試試這題：<span class="math"><span class="text-teal-600 highlight-box">56</span> \times 4 \div <span class="text-teal-600 highlight-box">7</span></span>
                     </p>
                 </div>
                 <div class="step-card remedial-card" data-level="5" data-step="r1">
