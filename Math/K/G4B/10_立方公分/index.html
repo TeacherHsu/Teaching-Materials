@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>立體堆疊與體積學習</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 教科書數學排版格式規範 (禁用 LaTeX) */
+        .math { font-size: 28px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; font-family: 'Times New Roman', serif; }
+        .fraction { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.1; }
+        .fraction span:first-child { border-bottom: 2px solid #000; padding: 0 4px; }
+        .power { font-size: 18px; vertical-align: super; margin-left: 2px; color: #e63946; }
+        .sqrt::before { content: "√"; font-size: 28px; margin-right: 2px; }
+        .abs::before { content: "|"; } .abs::after { content: "|"; }
+        .mixed { display: inline-flex; align-items: center; gap: 2px; }
+
+        /* 特教互動介面優化 */
+        body { font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; background-color: #f0fdf4; color: #1f2937; }
+        mark { background-color: #fde047; padding: 2px 8px; border-radius: 6px; font-weight: bold; color: #1e3a8a; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+        
+        .slot-input {
+            width: 80px;
+            height: 48px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            border: 3px solid #cbd5e1;
+            border-radius: 8px;
+            outline: none;
+            transition: all 0.2s;
+            margin: 0 8px;
+            color: #1d4ed8;
+            background-color: #fff;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .slot-input:focus { border-color: #3b82f6; box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3); }
+        .slot-input.correct { border-color: #22c55e; background-color: #dcfce7; color: #166534; }
+        .slot-input.wrong { border-color: #ef4444; background-color: #fee2e2; animation: shake 0.4s; }
+
+        .step-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border-left: 8px solid #e2e8f0;
+            opacity: 0.4;
+            pointer-events: none;
+            transition: all 0.5s ease;
+            transform: translateY(10px);
+        }
+        .step-card.active {
+            opacity: 1;
+            pointer-events: auto;
+            border-left-color: #3b82f6;
+            transform: translateY(0);
+            box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.2);
+        }
+        .step-card.completed {
+            opacity: 1;
+            border-left-color: #22c55e;
+            transform: translateY(0);
+            background-color: #f8fafc;
+        }
+
+        .btn-check {
+            background: #3b82f6; color: white; padding: 12px 28px; font-size: 20px; font-weight: bold;
+            border-radius: 50px; cursor: pointer; transition: all 0.2s; border: none;
+            box-shadow: 0 5px 0 #2563eb; margin-top: 10px; display: inline-flex; align-items: center; gap: 8px;
+        }
+        .btn-check:hover { background: #2563eb; transform: translateY(2px); box-shadow: 0 3px 0 #1d4ed8; }
+        .btn-check:active { transform: translateY(5px); box-shadow: 0 0 0 #1d4ed8; }
+
+        .btn-speak {
+            background: #fef3c7; color: #d97706; border: 2px solid #fde68a; border-radius: 50%; width: 48px; height: 48px;
+            display: flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer;
+            transition: transform 0.1s; flex-shrink: 0; box-shadow: 0 3px 0 #fcd34d;
+        }
+        .btn-speak:hover { transform: scale(1.05); }
+        .btn-speak:active { transform: translateY(3px); box-shadow: 0 0 0; }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-6px); }
+            50% { transform: translateX(6px); }
+            75% { transform: translateX(-6px); }
+        }
+        @keyframes pop {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .celebration { animation: pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+    </style>
+</head>
+<body>
+
+<!-- 初始畫面 -->
+<div id="start-screen" class="fixed inset-0 bg-green-50 z-50 flex flex-col items-center justify-center p-4">
+    <div class="text-7xl mb-4 animate-bounce">🐢</div>
+    <h1 class="text-4xl md:text-5xl font-black text-green-800 mb-6 text-center leading-tight">數學解題挑戰<br><span class="text-3xl text-green-600">立體堆疊與體積</span></h1>
+    <div class="bg-white p-6 rounded-3xl shadow-lg max-w-lg text-center mb-10 text-2xl text-gray-700 space-y-4 border-4 border-green-100">
+        <p>🎯 學習目標：<br>學會看一看、數一數，<br>算出小積木有幾個、體積是多少。</p>
+        <p class="text-xl text-orange-600 font-bold bg-orange-50 p-3 rounded-xl mt-4">💡 提示：按部就班慢慢數，如果答錯了，我會教你怎麼修正喔！</p>
+    </div>
+    <button onclick="startGame()" class="bg-orange-400 hover:bg-orange-500 text-white text-3xl font-black py-4 px-12 rounded-full shadow-[0_8px_0_#c2410c] transition-all hover:-translate-y-1 active:translate-y-2 active:shadow-none">
+        🚀 開始挑戰
+    </button>
+</div>
+
+<!-- 遊戲主要畫面 -->
+<div id="game-ui" class="hidden max-w-5xl mx-auto p-4 md:p-6 pb-24">
+    
+    <!-- 頂部資訊列 -->
+    <div class="flex flex-col sm:flex-row justify-between items-center bg-white p-4 md:p-5 rounded-2xl shadow-sm mb-6 border-b-4 border-green-300 gap-4">
+        <h2 id="level-title" class="text-2xl md:text-3xl font-black text-green-800 flex items-center gap-2">
+            <span id="level-icon">📌</span> 關卡載入中...
+        </h2>
+        <div class="flex items-center gap-4">
+            <div class="text-xl font-bold text-orange-600 bg-orange-100 px-5 py-2 rounded-full border-2 border-orange-200">
+                🏆 積分: <span id="score-display" class="text-2xl">0</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- 左側：圖文觀念區 -->
+        <div class="lg:col-span-5 flex flex-col gap-5">
+            <div class="bg-white rounded-3xl shadow-sm p-6 border-2 border-blue-100 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-2 bg-blue-400"></div>
+                <div class="flex items-start gap-4">
+                    <button onclick="speakConcept()" class="btn-speak" title="聽觀念">🔊</button>
+                    <div id="concept-text" class="text-xl leading-relaxed text-gray-800 font-bold pt-1">
+                        <!-- 觀念說明注入處 -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-3xl shadow-sm p-6 border-2 border-indigo-100 flex flex-col items-center justify-center min-h-[300px] relative">
+                <div class="absolute top-4 right-4 bg-indigo-50 text-indigo-600 font-bold px-3 py-1 rounded-full text-sm">觀察區</div>
+                <!-- 完全使用自製完美等角SVG引擎，不再需要任何圖片檔案 -->
+                <div id="svg-container" class="w-full h-full flex items-center justify-center pt-8 overflow-visible">
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- 右側：步驟填答區 -->
+        <div class="lg:col-span-7">
+            <div id="steps-container" class="flex flex-col">
+                <!-- 步驟卡片注入處 -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 結束結算畫面 -->
+<div id="end-screen" class="hidden fixed inset-0 bg-yellow-50 z-50 flex flex-col items-center justify-center p-4 text-center">
+    <div class="text-8xl mb-6">🎉</div>
+    <h1 class="text-5xl font-black text-yellow-700 mb-6">太厲害了，全部完成！</h1>
+    <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl mb-8 border-4 border-yellow-200">
+        <p class="text-2xl text-gray-600 mb-2 font-bold">你的最後總積分是</p>
+        <p class="text-7xl font-black text-orange-500 mb-6" id="final-score">0</p>
+        <p class="text-2xl text-green-700 font-bold bg-green-50 p-4 rounded-xl">你學會了用「分層點數」的方法找體積！🌟</p>
+    </div>
+    <button onclick="location.reload()" class="bg-blue-500 hover:bg-blue-600 text-white text-2xl font-bold py-4 px-10 rounded-full shadow-[0_6px_0_#1d4ed8] transition-all hover:translate-y-1 active:translate-y-3 active:shadow-none">
+        🔄 再玩一次
+    </button>
+</div>
+
+<script>
+/* ==========================================================================
+   系統資料與關卡設定 (特教鷹架邏輯：步驟拆解、答錯提供相似題防呆)
+   老師只需定義 cubes 的座標即可，網頁會自動生成完美等角 3D 圖！
+   ========================================================================== */
+const gameData = [
+    {
+        id: 1,
+        title: "第一關：數一數有幾個",
+        concept: "我們用一樣大的小積木來數量。<mark>數量越多，體積越大</mark>。請你數數看下面用了幾個小積木？",
+        // 完全重現 image_08eef9.png 的 1排4個 造型
+        cubes: [{x:0,y:0,z:0}, {x:1,y:0,z:0}, {x:2,y:0,z:0}, {x:3,y:0,z:0}], 
+        steps: [
+            { text: "請先一排一排數，這個圖形用了 [slot] 個小積木？", answer: [4], hint: "用手指從左邊數到右邊，總共有幾個方塊呢？" }
+        ],
+        remedial: {
+            title: "第一關(再試一次)：確實點數",
+            concept: "不小心漏數了嗎？沒關係！我們再來一次，這次記得 <mark>每一個積木都要點到喔</mark>！",
+            cubes: [{x:0,y:0,z:0}, {x:1,y:0,z:0}, {x:2,y:0,z:0}], // 1排3個
+            steps: [
+                { text: "請重新數數看，這次用了 [slot] 個小積木？", answer: [3], hint: "慢慢數：1、2、..." }
+            ]
+        }
+    },
+    {
+        id: 2,
+        title: "第二關：認識立方公分",
+        concept: "1 個小積木是 1 立方公分，記作 <div class='math'>1 cm<span class='power'>3</span></div>。<br><mark>數出幾個小積木，體積就是幾立方公分。</mark>",
+        // L型: 下面3個，上面疊1個
+        cubes: [{x:0,y:0,z:0}, {x:1,y:0,z:0}, {x:2,y:0,z:0}, {x:0,y:0,z:1}], 
+        steps: [
+            { text: "我們先數下面那層，下面有 [slot] 個小積木？", answer: [3], hint: "底下那一排，平平的放在地上的有幾個？" },
+            { text: "再數上面那層，上面有 [slot] 個小積木？", answer: [1], hint: "疊在別人頭上的積木有幾個？" },
+            { text: "全部合起來，一共有 [slot] 個小積木。", answer: [4], hint: "把下面的數量加上上面的數量。" },
+            { text: "因為 1 個小積木就是 1 立方公分，所以它的體積是 [slot] 立方公分。", answer: [4], hint: "積木有幾個，體積就是幾立方公分喔！數字是一樣的。" }
+        ],
+        remedial: {
+            title: "第二關(再試一次)：上下分開數",
+            concept: "積木高高低低的時候，<mark>先數下面，再數上面</mark>，比較不會亂掉！",
+            // 下面2個，上面2個
+            cubes: [{x:0,y:0,z:0}, {x:1,y:0,z:0}, {x:0,y:0,z:1}, {x:1,y:0,z:1}], 
+            steps: [
+                { text: "這一次，下面有 [slot] 個小積木？", answer: [2], hint: "看最底層有幾個方塊。" },
+                { text: "上面有 [slot] 個小積木？", answer: [2], hint: "看第二層有幾個方塊。" },
+                { text: "所以全部一共有 [slot] 個小積木。", answer: [4], hint: "上下層加起來。" },
+                { text: "體積是 [slot] 立方公分。", answer: [4], hint: "把小積木的總數填進來就可以了。" }
+            ]
+        }
+    },
+    {
+        id: 3,
+        title: "第三關：每層一樣多的算式",
+        concept: "遇到方方正正的長方體，我們可以用<mark>「每層一樣多」</mark>的方法來算！先數一層有幾個，再看有幾層。",
+        // 3x2, 共兩層 (12個)
+        cubes: [
+            {x:0,y:0,z:0},{x:1,y:0,z:0},{x:2,y:0,z:0}, {x:0,y:1,z:0},{x:1,y:1,z:0},{x:2,y:1,z:0}, // 第一層
+            {x:0,y:0,z:1},{x:1,y:0,z:1},{x:2,y:0,z:1}, {x:0,y:1,z:1},{x:1,y:1,z:1},{x:2,y:1,z:1}  // 第二層
+        ],
+        steps: [
+            { text: "第一步：先數上層。最上層有 [slot] 個小積木？", answer: [6], hint: "上面那一層是長方形，長邊3個，寬邊2個，可以用數的或乘法。" },
+            { text: "第二步：看一共有幾層。從上往下看，共有 [slot] 層？", answer: [2], hint: "這個積木疊了多高？有幾層樓？" },
+            { text: "第三步：寫出加法算式。第一層加第二層：<br> [slot] + [slot] = [slot] ", answer: [6, 6, 12], hint: "把每層的數量加起來，第一格和第二格填每層的數量，最後一格填總和。" },
+            { text: "所以，這個形體的體積是 [slot] 立方公分。", answer: [12], hint: "總和就是體積喔！" }
+        ],
+        remedial: {
+            title: "第三關(再試一次)：分層疊加",
+            concept: "被壓在下面的積木很容易忘記算！所以用<mark>每層一樣多</mark>的概念，只要算出一層，就知道下一層了！",
+            // 2x2, 共兩層 (8個)
+            cubes: [
+                {x:0,y:0,z:0},{x:1,y:0,z:0}, {x:0,y:1,z:0},{x:1,y:1,z:0}, 
+                {x:0,y:0,z:1},{x:1,y:0,z:1}, {x:0,y:1,z:1},{x:1,y:1,z:1}  
+            ],
+            steps: [
+                { text: "最上層有 [slot] 個小積木？", answer: [4], hint: "看最上面的正方形，有幾個小方塊？" },
+                { text: "共有 [slot] 層？", answer: [2], hint: "總共有兩樓。" },
+                { text: "寫出算式：[slot] + [slot] = [slot] ", answer: [4, 4, 8], hint: "上層數量 + 下層數量 = 全部數量。" },
+                { text: "它的體積是 [slot] 立方公分。", answer: [8], hint: "填入最後算出來的總和。" }
+            ]
+        }
+    }
+];
+
+/* ==========================================================================
+   全域變數與遊戲狀態
+   ========================================================================== */
+let score = 0;
+let currentLevelIdx = 0;
+let isPlayingRemedial = false;
+let currentLevelData = null;
+let currentStepIdx = 0;
+let levelMistakes = 0;
+let stepStartTime = 0;
+
+/* ==========================================================================
+   語音報讀功能 (Web Speech API)
+   ========================================================================== */
+function speakText(htmlString) {
+    if(!window.speechSynthesis) return;
+    window.speechSynthesis.cancel(); 
+    
+    // 清除 HTML 標籤，並將特殊數學符號轉換為中文發音
+    let cleanText = htmlString
+        .replace(/<[^>]+>/g, '') // 移除標籤
+        .replace(/cm3/g, '立方公分')
+        .replace(/\[slot\]/g, ' 空格 ')
+        .replace(/\+/g, '加上')
+        .replace(/=/g, '等於'); 
+    
+    const utterance = new SpeechSynthesisUtterance(cleanText);
+    utterance.lang = 'zh-TW';
+    utterance.rate = 0.85; 
+    utterance.pitch = 1.1; 
+    window.speechSynthesis.speak(utterance);
+}
+
+function speakConcept() {
+    if (currentLevelData) speakText(currentLevelData.concept);
+}
+
+function speakStep(stepIdx) {
+    if (currentLevelData && currentLevelData.steps[stepIdx]) {
+        speakText(currentLevelData.steps[stepIdx].text);
+    }
+}
+
+/* ==========================================================================
+   零透視變形！等角投影(Isometric) SVG 繪圖引擎
+   ========================================================================== */
+function renderIsometricCubes(cubes) {
+    // 畫家演算法排序：先畫底層(Z)、再畫右後(X)、再畫左後(Y) 確保不會互相遮擋錯亂
+    let sorted = [...cubes].sort((a, b) => {
+        if (a.z !== b.z) return a.z - b.z;
+        if (a.x !== b.x) return a.x - b.x;
+        return a.y - b.y;
+    });
+
+    // 完美等角比例參數
+    const tw = 26; // 六邊形半寬
+    const th = 15; // 六邊形 1/4 高
+    const zth = 30; // 方塊垂直高度 (精確等於 2*th)
+
+    let svgContent = '';
+    let minX = 0, maxX = 0, minY = 0, maxY = 0;
+
+    sorted.forEach(c => {
+        // 算出該方塊在畫面上的基準原點座標 (cx, cy)
+        let cx = (c.x - c.y) * tw;
+        let cy = (c.x + c.y) * th - (c.z * zth);
+
+        // 追蹤圖片邊界以置中
+        minX = Math.min(minX, cx - tw);
+        maxX = Math.max(maxX, cx + tw);
+        minY = Math.min(minY, cy);
+        maxY = Math.max(maxY, cy + zth + 2*th);
+
+        // 配色：精準模仿教材風格 (image_08eef9.png)
+        const colorTop = '#c1e8ff';   // 頂面(亮藍)
+        const colorLeft = '#7ad1ff';  // 左面(中藍)
+        const colorRight = '#3bb8ff'; // 右面(深藍)
+        const strokeColor = '#026aa7';// 框線(海軍藍)
+
+        // 頂面 (Top)
+        svgContent += `<path d="M ${cx} ${cy} L ${cx+tw} ${cy+th} L ${cx} ${cy+2*th} L ${cx-tw} ${cy+th} Z" fill="${colorTop}" stroke="${strokeColor}" stroke-width="2" stroke-linejoin="round"/>`;
+        // 左面 (Left)
+        svgContent += `<path d="M ${cx-tw} ${cy+th} L ${cx} ${cy+2*th} L ${cx} ${cy+2*th+zth} L ${cx-tw} ${cy+th+zth} Z" fill="${colorLeft}" stroke="${strokeColor}" stroke-width="2" stroke-linejoin="round"/>`;
+        // 右面 (Right)
+        svgContent += `<path d="M ${cx} ${cy+2*th} L ${cx+tw} ${cy+th} L ${cx+tw} ${cy+th+zth} L ${cx} ${cy+2*th+zth} Z" fill="${colorRight}" stroke="${strokeColor}" stroke-width="2" stroke-linejoin="round"/>`;
+    });
+
+    // 動態計算 ViewBox 確保完美置中且留白
+    let vbWidth = maxX - minX + 60;
+    let vbHeight = maxY - minY + 60;
+    let vbX = minX - 30;
+    let vbY = minY - 30;
+
+    return `<svg viewBox="${vbX} ${vbY} ${vbWidth} ${vbHeight}" class="w-full h-full max-h-[250px] drop-shadow-md overflow-visible">${svgContent}</svg>`;
+}
+
+/* ==========================================================================
+   遊戲流程與 UI 控制
+   ========================================================================== */
+function startGame() {
+    let u = new SpeechSynthesisUtterance('');
+    u.volume = 0; window.speechSynthesis.speak(u); 
+
+    document.getElementById('start-screen').classList.add('hidden');
+    document.getElementById('game-ui').classList.remove('hidden');
+    
+    score = 0;
+    updateScoreUI();
+    loadLevel(0, false);
+}
+
+function updateScoreUI() {
+    const sd = document.getElementById('score-display');
+    sd.innerText = score;
+    sd.classList.remove('celebration');
+    void sd.offsetWidth; 
+    sd.classList.add('celebration');
+}
+
+function loadLevel(idx, asRemedial) {
+    currentLevelIdx = idx;
+    isPlayingRemedial = asRemedial;
+    levelMistakes = 0;
+    
+    let baseData = gameData[idx];
+    currentLevelData = asRemedial ? baseData.remedial : baseData;
+    
+    document.getElementById('level-icon').innerText = asRemedial ? "🔧" : "📌";
+    document.getElementById('level-title').innerHTML = `<span id="level-icon">${asRemedial ? "🔧" : "📌"}</span> ${currentLevelData.title}`;
+    document.getElementById('concept-text').innerHTML = currentLevelData.concept;
+    
+    // 直接呼叫 SVG 繪圖引擎渲染方塊
+    const svgContainer = document.getElementById('svg-container');
+    svgContainer.innerHTML = renderIsometricCubes(currentLevelData.cubes);
+    
+    const stepsContainer = document.getElementById('steps-container');
+    stepsContainer.innerHTML = '';
+    
+    currentLevelData.steps.forEach((step, index) => {
+        let displayText = step.text;
+        if(!displayText.includes('[slot]')) {
+            displayText += ` <input type="number" class="slot-input" data-index="${index}" placeholder="?" />`;
+        } else {
+            displayText = displayText.replace(/\[slot\]/g, `<input type="number" class="slot-input" data-index="${index}" placeholder="?" />`);
+        }
+
+        const stepHTML = `
+            <div id="step-card-${index}" class="step-card">
+                <div class="flex items-start gap-4 mb-4">
+                    <button onclick="speakStep(${index})" class="btn-speak mt-1" title="聽題目">🔊</button>
+                    <div class="text-2xl font-bold text-gray-800 leading-relaxed flex-1 mt-1">
+                        <span class="text-blue-600 mr-2 bg-blue-100 px-3 py-1 rounded-full text-xl">步驟 ${index + 1}</span>
+                        <div class="mt-3 leading-loose">${displayText}</div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 flex flex-col sm:flex-row items-center gap-4">
+                    <button id="btn-check-${index}" onclick="checkAnswer(${index})" class="btn-check w-full sm:w-auto">
+                        📝 檢查答案
+                    </button>
+                </div>
+                
+                <div id="feedback-${index}" class="mt-4 text-xl transition-all"></div>
+            </div>
+        `;
+        stepsContainer.insertAdjacentHTML('beforeend', stepHTML);
+        
+        const inputs = document.querySelectorAll(`#step-card-${index} .slot-input`);
+        inputs.forEach(input => {
+            input.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') checkAnswer(index);
+            });
+        });
+    });
+
+    unlockStep(0);
+}
+
+function unlockStep(stepIdx) {
+    currentStepIdx = stepIdx;
+    stepStartTime = Date.now();
+    
+    const cards = document.querySelectorAll('.step-card');
+    cards.forEach((card, index) => {
+        if (index === stepIdx) {
+            card.classList.add('active');
+            card.classList.remove('completed');
+            setTimeout(() => {
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                const firstInput = card.querySelector('.slot-input');
+                if(firstInput) firstInput.focus();
+            }, 300);
+        } else if (index < stepIdx) {
+            card.classList.remove('active');
+            card.classList.add('completed');
+        }
+    });
+}
+
+function checkAnswer(stepIdx) {
+    const stepData = currentLevelData.steps[stepIdx];
+    const cardEl = document.getElementById(`step-card-${stepIdx}`);
+    const inputs = cardEl.querySelectorAll('.slot-input');
+    const feedbackEl = document.getElementById(`feedback-${stepIdx}`);
+    
+    let allFilled = true;
+    let allCorrect = true;
+
+    inputs.forEach((input, idx) => {
+        input.classList.remove('wrong', 'correct');
+        const val = input.value.trim();
+        if (val === '') {
+            allFilled = false;
+        } else {
+            if (parseInt(val) !== stepData.answer[idx]) {
+                allCorrect = false;
+                input.classList.add('wrong');
+            } else {
+                input.classList.add('correct');
+            }
+        }
+    });
+
+    if (!allFilled) {
+        speakText("請先把所有空格填完喔");
+        feedbackEl.innerHTML = `<div class="bg-yellow-100 text-yellow-800 p-4 rounded-xl font-bold flex items-center gap-3 border-2 border-yellow-300"><span class="text-3xl">⚠️</span> 請先把所有空格填完喔！</div>`;
+        return;
+    }
+
+    if (allCorrect) {
+        speakText("很棒！答對了");
+        feedbackEl.innerHTML = `<div class="bg-green-100 text-green-700 p-4 rounded-xl font-bold flex items-center gap-3 text-2xl celebration border-2 border-green-300"><span class="text-3xl">✔️</span> 很棒！完全正確！</div>`;
+        
+        inputs.forEach(input => {
+            input.disabled = true;
+            input.classList.add('bg-green-50');
+        });
+        document.getElementById(`btn-check-${stepIdx}`).style.display = 'none';
+
+        let timeBonus = Math.max(0, 30 - Math.floor((Date.now() - stepStartTime) / 1000));
+        score += (100 + timeBonus);
+        updateScoreUI();
+
+        setTimeout(() => {
+            if (stepIdx + 1 < currentLevelData.steps.length) {
+                unlockStep(stepIdx + 1);
+            } else {
+                handleLevelComplete();
+            }
+        }, 1500);
+
+    } else {
+        speakText("再想想看，" + stepData.hint);
+        levelMistakes++;
+        score = Math.max(0, score - 10);
+        updateScoreUI();
+        
+        feedbackEl.innerHTML = `
+            <div class="bg-red-50 text-red-700 p-5 rounded-xl font-bold flex flex-col gap-3 border-2 border-red-300 celebration">
+                <div class="flex items-center gap-3 text-2xl"><span class="text-3xl">❌</span> 再想想看。</div>
+                <div class="text-lg text-blue-800 bg-blue-50 p-3 rounded-lg border border-blue-200 flex items-start gap-2">
+                    <span class="text-xl">💡</span> 
+                    <span>老師提示：${stepData.hint}</span>
+                </div>
+            </div>
+        `;
+        
+        setTimeout(() => inputs.forEach(input => input.classList.remove('wrong')), 500);
+    }
+}
+
+function handleLevelComplete() {
+    if (!isPlayingRemedial && levelMistakes > 0 && gameData[currentLevelIdx].remedial) {
+        speakText("這關有點挑戰對不對？我們來做一題很像的題目，練習一下！");
+        setTimeout(() => loadLevel(currentLevelIdx, true), 2500);
+    } else {
+        if (currentLevelIdx + 1 < gameData.length) {
+            speakText("恭喜過關！準備進入下一關！");
+            setTimeout(() => loadLevel(currentLevelIdx + 1, false), 2000);
+        } else {
+            showEndScreen();
+        }
+    }
+}
+
+function showEndScreen() {
+    speakText(`挑戰結束！你總共獲得了 ${score} 分，非常棒！`);
+    document.getElementById('game-ui').classList.add('hidden');
+    document.getElementById('end-screen').classList.remove('hidden');
+    
+    const finalScore = document.getElementById('final-score');
+    finalScore.innerText = score;
+    finalScore.classList.add('celebration');
+}
+
+</script>
+</body>
+</html>
