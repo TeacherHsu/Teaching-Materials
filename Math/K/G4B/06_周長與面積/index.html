@@ -3,123 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小四數學：周長與面積探員任務</title>
+    <title>周長與面積：漸進式鷹架挑戰</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
         
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: #f0fdf4;
+            background-color: #f8fafc;
+            color: #334155;
             padding-bottom: 100px;
         }
 
+        /* 教科書數學格式 */
         .math {
             font-size: 28px;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 6px;
         }
-
-        .fraction {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            line-height: 1.1;
-        }
-
-        .fraction span:first-child {
-            border-bottom: 2px solid #000;
-            padding: 0 4px;
-        }
-
         .power {
             font-size: 18px;
             vertical-align: super;
             margin-left: 2px;
-            color: #e63946;
+            color: #ef4444;
         }
 
-        .slot-input {
-            width: 90px;
-            height: 60px;
-            border: 4px solid #cbd5e1;
-            border-radius: 12px;
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            color: #1e293b;
-            transition: all 0.3s;
-        }
-
-        .slot-input:focus {
-            border-color: #3b82f6;
-            outline: none;
-            box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.2);
-        }
-
-        .slot-input.correct {
-            border-color: #22c55e;
-            background-color: #f0fdf4;
-        }
-
-        .slot-input.wrong {
-            border-color: #ef4444;
-            background-color: #fef2f2;
-        }
-
-        .step-card {
-            display: none;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease-out;
-        }
-
-        .step-card.active {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        /* 語音按鈕樣式 */
         .tts-btn {
             background-color: #6366f1;
             color: white;
             border-radius: 50%;
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            margin-left: 8px;
-            flex-shrink: 0;
+            transition: transform 0.2s;
         }
+        .tts-btn:active { transform: scale(0.9); }
 
-        .tts-btn:hover { background-color: #4f46e5; }
+        /* 輸入框樣式 */
+        .slot-input {
+            width: 90px;
+            height: 55px;
+            border: 3px solid #cbd5e1;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .slot-input:focus {
+            border-color: #6366f1;
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+        }
+        .slot-input.correct { border-color: #22c55e; background-color: #f0fdf4; }
+        .slot-input.wrong { border-color: #ef4444; background-color: #fef2f2; }
+
+        /* 關卡動畫 */
+        .step-section {
+            display: none;
+            animation: slideIn 0.5s ease-out forwards;
+        }
+        .step-section.active { display: block; }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
         mark {
             background-color: #fef08a;
             padding: 2px 6px;
             border-radius: 6px;
-            font-weight: bold;
+            font-weight: 700;
         }
 
         .hint-box {
-            border-left: 8px solid #f59e0b;
+            border-left: 8px solid #fbbf24;
             background-color: #fffbeb;
-            padding: 16px;
-            margin: 16px 0;
-            border-radius: 8px;
             display: none;
         }
 
         .remedial-box {
             border: 4px dashed #ec4899;
             background-color: #fdf2f8;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 16px;
             display: none;
         }
 
@@ -128,239 +99,226 @@
             top: 20px;
             right: 20px;
             background: white;
-            padding: 15px 25px;
+            padding: 10px 20px;
             border-radius: 20px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             z-index: 100;
-            border: 3px solid #3b82f6;
+            border: 2px solid #6366f1;
         }
-
-        .check-btn {
-            background-color: #10b981;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 20px;
-            transition: all 0.2s;
-            margin-top: 15px;
-        }
-
-        .check-btn:hover { transform: scale(1.05); background-color: #059669; }
     </style>
 </head>
 <body class="p-4 md:p-8">
 
-    <!-- 積分榜 -->
+    <!-- 積分與計時器 -->
     <div class="scoreboard">
-        <div class="text-blue-600 font-bold text-lg flex items-center gap-2">
-            ⭐ 積分：<span id="total-score">0</span>
-        </div>
-        <div class="text-gray-500 text-sm flex items-center gap-2">
-            ⏱️ 時間：<span id="timer">00:00</span>
-        </div>
+        <div class="font-bold text-indigo-600">⭐ 積分：<span id="score">0</span></div>
+        <div class="text-sm text-gray-500">⏱️ 時間：<span id="timer">00:00</span></div>
     </div>
 
     <div class="max-w-4xl mx-auto">
-        <!-- 標題 -->
-        <div class="text-center mb-10 bg-white p-8 rounded-3xl shadow-xl">
-            <h1 class="text-4xl font-extrabold text-green-700 mb-2 flex justify-center items-center">
-                周長與面積：探員積分任務
-                <div class="tts-btn" onclick="speak('周長與面積：探員積分任務。小探員，請完成所有挑戰，賺取高分吧！')">🔊</div>
+        <!-- 頂部導引 -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-black text-indigo-700 mb-4 flex justify-center items-center gap-2">
+                探員解題任務
+                <div class="tts-btn" onclick="speak('探員解題任務。完成挑戰，獲得積分吧！')">🔊</div>
             </h1>
-            <p class="text-gray-600 text-xl mt-4">完成關卡賺取積分，答錯會扣分並觸發類似題喔！</p>
-            <button id="start-btn" class="mt-6 bg-blue-600 text-white px-10 py-4 rounded-full text-2xl font-bold shadow-lg" onclick="startApp()">開始挑戰！</button>
-        </div>
+            <button id="start-btn" onclick="startGame()" class="bg-indigo-600 text-white px-10 py-4 rounded-full text-2xl font-bold shadow-lg hover:bg-indigo-700">開始挑戰</button>
+        </header>
 
-        <div id="game-content" class="hidden">
-            
-            <!-- 關卡一：長方形周長 -->
-            <div id="section-1" class="mb-12 bg-white p-8 rounded-3xl shadow-lg border-t-8 border-blue-500">
-                <div class="flex items-start justify-between">
-                    <h2 class="text-2xl font-bold mb-6 flex items-center">
-                        <span class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center mr-3">1</span>
-                        第一關：長方形彩繩裝飾
-                        <div class="tts-btn" onclick="speak('第一關：長方形彩繩裝飾。奇奇有一張籃球紀念卡，長18公分，寬12公分。繞一圈彩繩，需要多長呢？')">🔊</div>
-                    </h2>
-                </div>
+        <main id="game-main" class="hidden">
+            <!-- 關卡一：周長的定義 -->
+            <section id="section-1" class="step-section active bg-white p-8 rounded-3xl shadow-xl mb-8">
+                <h2 class="text-2xl font-bold text-indigo-600 mb-6 flex items-center gap-2">
+                    <span class="bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center">1</span>
+                    什麼是周長？
+                    <div class="tts-btn" onclick="speak('第一關，什麼是周長。周長就是繞著圖形外面走一圈的長度。請問下面圖形有四條邊，長度分別是6、3、6、3公分，把它們加起來是多少呢？')">🔊</div>
+                </h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div class="bg-blue-50 p-4 rounded-xl flex justify-center">
-                        <svg width="260" height="180" viewBox="0 0 260 180">
-                            <rect x="20" y="20" width="220" height="140" fill="#fff" stroke="#3b82f6" stroke-width="5" rx="10"/>
-                            <text x="110" y="15" font-size="18" font-weight="bold" fill="#3b82f6">18 cm (長)</text>
-                            <text x="-100" y="15" transform="rotate(-90)" font-size="18" font-weight="bold" fill="#3b82f6">12 cm (寬)</text>
-                        </svg>
+                <div class="flex flex-col md:flex-row gap-8 items-center mb-8">
+                    <svg width="240" height="140" viewBox="0 0 240 140">
+                        <rect x="20" y="20" width="200" height="100" fill="#fef3c7" stroke="#d97706" stroke-width="4"/>
+                        <text x="110" y="15" font-size="16" font-weight="bold">6 cm</text>
+                        <text x="-80" y="15" transform="rotate(-90)" font-size="16" font-weight="bold">3 cm</text>
+                    </svg>
+                    <div class="text-xl leading-relaxed text-gray-700">
+                        周長是<mark>「繞一圈」</mark>的長度。<br>
+                        請把四條邊加起來：
                     </div>
-                    <div>
-                        <p class="text-xl leading-relaxed mb-4">
-                            籃球紀念卡：<mark>長 18 公分</mark>，<mark>寬 12 公分</mark>。<br>
-                            繞一圈的長度就是「周長」。
-                        </p>
-                    </div>
-                </div>
-
-                <!-- 互動區 -->
-                <div id="step-1-q" class="mt-8 p-6 bg-slate-50 rounded-2xl border-2 border-slate-200">
-                    <p class="text-xl font-bold mb-4">請列式計算：</p>
-                    <div class="math">
-                        ( <input type="number" class="slot-input" id="s1-l" placeholder="長"> + 
-                        <input type="number" class="slot-input" id="s1-w" placeholder="寬"> ) × 2
-                    </div>
-                    <div class="mt-4 math">
-                        = <input type="number" class="slot-input" id="s1-ans" placeholder="結果"> 公分
-                    </div>
-                    <button class="check-btn" onclick="validateStep1()">提交答案</button>
-                    <div id="s1-feedback" class="mt-4 font-bold text-lg"></div>
-                    
-                    <!-- 錯誤引導 (Hidden) -->
-                    <div id="s1-hint" class="hint-box">
-                        <p class="text-amber-700 font-bold">💡 學習重點提示：</p>
-                        <p>長方形周長 = (長 + 寬) × 2。請記得要把「長」和「寬」加起來後，再乘以 2 喔！</p>
-                    </div>
-
-                    <!-- 類似題 (Hidden) -->
-                    <div id="s1-remedial" class="remedial-box">
-                        <p class="text-pink-600 font-bold mb-4">📚 補救學習：試試這題類似題</p>
-                        <p class="text-lg mb-4">如果一張卡片的 <mark>長是 15 公分</mark>，<mark>寬是 10 公分</mark>，周長是多少？</p>
-                        <div class="math">
-                            ( 15 + 10 ) × 2 = <input type="number" class="slot-input" id="s1-rem-ans"> 公分
-                        </div>
-                        <button class="check-btn bg-pink-500" onclick="validateRemedial1()">檢查類似題</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 關卡二：正方形面積 -->
-            <div id="section-2" class="mb-12 step-card bg-white p-8 rounded-3xl shadow-lg border-t-8 border-yellow-500">
-                <h2 class="text-2xl font-bold mb-6 flex items-center">
-                    <span class="bg-yellow-500 text-white w-10 h-10 rounded-full flex items-center justify-center mr-3">2</span>
-                    第二關：正方形便利貼面積
-                    <div class="tts-btn" onclick="speak('第二關：正方形便利貼面積。正方形便利貼，邊長是5公分。它的面積是多少平方公分？')">🔊</div>
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div class="bg-yellow-50 p-4 rounded-xl flex justify-center">
-                        <svg width="200" height="200" viewBox="0 0 200 200">
-                            <rect x="25" y="25" width="150" height="150" fill="#fef08a" stroke="#ca8a04" stroke-width="5"/>
-                            <text x="85" y="20" font-size="18" font-weight="bold" fill="#ca8a04">5 cm</text>
-                            <text x="-110" y="20" transform="rotate(-90)" font-size="18" font-weight="bold" fill="#ca8a04">5 cm</text>
-                        </svg>
-                    </div>
-                    <p class="text-xl">
-                        正方形的四條邊都一樣長。<br>
-                        面積公式是：<mark>邊長 × 邊長</mark>。
-                    </p>
-                </div>
-
-                <div class="mt-8 p-6 bg-slate-50 rounded-2xl">
-                    <div class="math">
-                        <input type="number" class="slot-input" id="s2-s1"> × <input type="number" class="slot-input" id="s2-s2">
-                    </div>
-                    <div class="mt-4 math">
-                        = <input type="number" class="slot-input" id="s2-ans"> 公分<span class="power">2</span>
-                    </div>
-                    <button class="check-btn" onclick="validateStep2()">提交答案</button>
-                    <div id="s2-feedback" class="mt-4 font-bold text-lg"></div>
-
-                    <div id="s2-hint" class="hint-box">
-                        <p class="text-amber-700 font-bold">💡 學習重點提示：</p>
-                        <p>正方形面積公式是「邊長乘以邊長」。這題的邊長是 5，所以算式應該是 5 乘以 5 喔！</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 關卡三：單位換算 -->
-            <div id="section-3" class="mb-12 step-card bg-white p-8 rounded-3xl shadow-lg border-t-8 border-purple-500">
-                <h2 class="text-2xl font-bold mb-6 flex items-center">
-                    <span class="bg-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center mr-3">3</span>
-                    第三關：魔法單位換算
-                    <div class="tts-btn" onclick="speak('第三關：魔法單位換算。我們知道1公尺等於100公分。那麼邊長1公尺的正方形，面積就是一萬平方公分。請問，5平方公尺等於多少平方公分？')">🔊</div>
-                </h2>
-                <div class="bg-purple-50 p-6 rounded-2xl mb-6">
-                    <p class="text-xl mb-2 font-bold">🔑 換算小祕笈：</p>
-                    <div class="math">1 公尺<span class="power">2</span> = 10000 公分<span class="power">2</span></div>
-                    <p class="text-gray-600 mt-2">(一平方公尺有四個零喔！)</p>
                 </div>
 
                 <div class="p-6 bg-slate-50 rounded-2xl">
-                    <p class="text-xl mb-4">挑戰題：<mark>5</mark> 公尺<span class="power">2</span> 等於多少 公分<span class="power">2</span>？</p>
                     <div class="math">
-                        5 公尺<span class="power">2</span> = <input type="number" class="slot-input" style="width:160px" id="s3-ans"> 公分<span class="power">2</span>
+                        <input type="number" class="slot-input" id="q1-1" data-ans="6"> + 
+                        <input type="number" class="slot-input" id="q1-2" data-ans="3"> + 
+                        <input type="number" class="slot-input" id="q1-3" data-ans="6"> + 
+                        <input type="number" class="slot-input" id="q1-4" data-ans="3">
                     </div>
-                    <button class="check-btn" onclick="validateStep3()">提交答案</button>
-                    <div id="s3-feedback" class="mt-4 font-bold text-lg"></div>
+                    <div class="mt-4 math">
+                        = <input type="number" class="slot-input" id="q1-ans" data-ans="18"> 公分
+                    </div>
+                    <button onclick="checkSection1()" class="mt-6 bg-green-500 text-white px-8 py-3 rounded-full font-bold text-xl w-full">檢查答案</button>
+                    <div id="q1-feedback" class="mt-4 font-bold text-lg text-center"></div>
                 </div>
-            </div>
 
-            <!-- 關卡四：複合圖形 -->
-            <div id="section-4" class="mb-12 step-card bg-white p-8 rounded-3xl shadow-lg border-t-8 border-pink-500">
-                <h2 class="text-2xl font-bold mb-6 flex items-center">
-                    <span class="bg-pink-600 text-white w-10 h-10 rounded-full flex items-center justify-center mr-3">4</span>
-                    第四關：消失的圖形（減法篇）
-                    <div class="tts-btn" onclick="speak('第四關：消失的圖形。下圖是一個大正方形，邊長12公分。中間被剪掉一個長方形，長8公分、寬4公分。剩下的鋪色面積是多少？')">🔊</div>
+                <!-- 提示與補救 -->
+                <div id="q1-hint" class="hint-box p-4 mt-6 rounded-xl">
+                    <p class="font-bold text-amber-700">💡 小探員提醒：</p>
+                    <p>長方形的對邊一樣長，所以會有兩條 6 公分和兩條 3 公分喔！</p>
+                </div>
+                <div id="q1-remedial" class="remedial-box p-6 mt-6 rounded-2xl">
+                    <p class="font-bold text-pink-700 mb-4 flex items-center gap-2">補救練習：
+                        <div class="tts-btn" onclick="speak('補救練習。如果長度是5、2、5、2，周長是多少呢？')">🔊</div>
+                    </p>
+                    <div class="math">5 + 2 + 5 + 2 = <input type="number" class="slot-input" id="q1-rem-ans" data-ans="14"></div>
+                    <button onclick="checkRemedial1()" class="mt-4 bg-pink-500 text-white px-6 py-2 rounded-full font-bold">檢查類似題</button>
+                </div>
+            </section>
+
+            <!-- 關卡二：長方形周長公式 -->
+            <section id="section-2" class="step-section bg-white p-8 rounded-3xl shadow-xl mb-8">
+                <h2 class="text-2xl font-bold text-indigo-600 mb-6 flex items-center gap-2">
+                    <span class="bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center">2</span>
+                    長方形周長公式
+                    <div class="tts-btn" onclick="speak('第二關，長方形周長公式。公式是括號長加寬，乘以2。下圖長15公分，寬7公分，請用公式計算。')">🔊</div>
                 </h2>
-                <div class="flex flex-col md:flex-row gap-8 items-center">
-                    <svg width="220" height="220" viewBox="0 0 220 220">
-                        <!-- 大正方形 -->
-                        <rect x="20" y="20" width="180" height="180" fill="#fdf2f8" stroke="#ec4899" stroke-width="4"/>
-                        <!-- 剪掉的長方形 -->
-                        <rect x="60" y="60" width="100" height="60" fill="#fff" stroke="#ec4899" stroke-width="2" stroke-dasharray="4"/>
-                        <text x="100" y="15" font-size="14" font-weight="bold">12 cm</text>
-                        <text x="-120" y="15" transform="rotate(-90)" font-size="14" font-weight="bold">12 cm</text>
-                        <text x="100" y="95" font-size="12" fill="#ec4899">8x4 剪掉</text>
+                <div class="mb-6 bg-blue-50 p-4 rounded-xl text-xl font-bold text-center">
+                    ( 長 + 寬 ) × 2 = 周長
+                </div>
+                <div class="flex justify-center mb-8">
+                    <svg width="220" height="120" viewBox="0 0 220 120">
+                        <rect x="10" y="10" width="200" height="100" fill="#dcfce7" stroke="#16a34a" stroke-width="4"/>
+                        <text x="80" y="60" font-size="18" font-weight="bold">長 15 / 寬 7</text>
                     </svg>
-                    <div class="text-lg">
-                        策略：<br>
-                        1. 先算 <mark>大正方形</mark> 面積<br>
-                        2. 扣掉 <mark>中空長方形</mark> 面積
+                </div>
+                <div class="math">
+                    ( <input type="number" class="slot-input" id="q2-l" data-ans="15"> + 
+                    <input type="number" class="slot-input" id="q2-w" data-ans="7"> ) × 2
+                </div>
+                <div class="mt-4 math">
+                    = <input type="number" class="slot-input" id="q2-step" data-ans="22"> × 2
+                </div>
+                <div class="mt-4 math">
+                    = <input type="number" class="slot-input" id="q2-ans" data-ans="44"> 公分
+                </div>
+                <button onclick="checkSection2()" class="mt-6 bg-green-500 text-white px-8 py-3 rounded-full font-bold text-xl w-full">檢查答案</button>
+                <div id="q2-feedback" class="mt-4 font-bold text-lg text-center"></div>
+                <div id="q2-hint" class="hint-box p-4 mt-6 rounded-xl text-amber-700 font-bold">先算括號裡的 (15+7)，再把結果乘以 2。</div>
+            </section>
+
+            <!-- 關卡三：面積的意義（數格子） -->
+            <section id="section-3" class="step-section bg-white p-8 rounded-3xl shadow-xl mb-8">
+                <h2 class="text-2xl font-bold text-indigo-600 mb-6 flex items-center gap-2">
+                    <span class="bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center">3</span>
+                    面積：數一數有幾格
+                    <div class="tts-btn" onclick="speak('第三關，數格子看面積。每一格是1平方公分，一排有6格，一共有4排。面積是多少呢？')">🔊</div>
+                </h2>
+                <div class="flex flex-col items-center gap-6 mb-8">
+                    <!-- 格子圖示 -->
+                    <div class="grid grid-cols-6 grid-rows-4 gap-1 border-2 border-indigo-200 p-1">
+                        <script>
+                            for(let i=0; i<24; i++) document.write('<div class="w-8 h-8 bg-indigo-100 border border-indigo-300"></div>');
+                        </script>
+                    </div>
+                    <div class="text-xl">
+                        一排有 <input type="number" class="slot-input" id="q3-w" data-ans="6"> 格。<br>
+                        共有 <input type="number" class="slot-input" id="q3-h" data-ans="4"> 排。
                     </div>
                 </div>
+                <div class="math">
+                    面積 = <input type="number" class="slot-input" id="q3-1" data-ans="6"> × 
+                    <input type="number" class="slot-input" id="q3-2" data-ans="4">
+                </div>
+                <div class="mt-4 math">
+                    = <input type="number" class="slot-input" id="q3-ans" data-ans="24"> 公分<span class="power">2</span>
+                </div>
+                <button onclick="checkSection3()" class="mt-6 bg-green-500 text-white px-8 py-3 rounded-full font-bold text-xl w-full">檢查答案</button>
+                <div id="q3-feedback" class="mt-4 font-bold text-lg text-center"></div>
+            </section>
 
-                <div class="mt-8 p-6 bg-slate-50 rounded-2xl">
-                    <div class="mb-4">
-                        大正方形 (12x12) = <input type="number" class="slot-input" id="s4-big"> 公分<span class="power">2</span>
+            <!-- 關卡四：面積換算 (平方公尺) -->
+            <section id="section-4" class="step-section bg-white p-8 rounded-3xl shadow-xl mb-8">
+                <h2 class="text-2xl font-bold text-indigo-600 mb-6 flex items-center gap-2">
+                    <span class="bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center">4</span>
+                    魔法換算：平方公尺
+                    <div class="tts-btn" onclick="speak('第四關，面積換算。一平方公尺等於一萬平方公分。請問，7平方公尺等於多少平方公分呢？')">🔊</div>
+                </h2>
+                <div class="bg-indigo-50 p-6 rounded-2xl mb-8">
+                    <p class="text-xl font-bold text-indigo-800 mb-4 italic text-center">🔑 換算關鍵：</p>
+                    <div class="flex justify-center items-center gap-4 text-2xl font-black">
+                        1 m<span class="power">2</span> = 10000 cm<span class="power">2</span>
                     </div>
-                    <div class="mb-4">
-                        中空長方形 (8x4) = <input type="number" class="slot-input" id="s4-small"> 公分<span class="power">2</span>
-                    </div>
+                </div>
+                <div class="math">
+                    7 m<span class="power">2</span> = 7 × 10000
+                </div>
+                <div class="mt-4 math">
+                    = <input type="number" class="slot-input" style="width:150px" id="q4-ans" data-ans="70000"> cm<span class="power">2</span>
+                </div>
+                <button onclick="checkSection4()" class="mt-6 bg-green-500 text-white px-8 py-3 rounded-full font-bold text-xl w-full">檢查答案</button>
+                <div id="q4-feedback" class="mt-4 font-bold text-lg text-center"></div>
+            </section>
+
+            <!-- 關卡五：複合圖形 (大減小) -->
+            <section id="section-5" class="step-section bg-white p-8 rounded-3xl shadow-xl mb-8">
+                <h2 class="text-2xl font-bold text-indigo-600 mb-6 flex items-center gap-2">
+                    <span class="bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center">5</span>
+                    複合圖形：大減小
+                    <div class="tts-btn" onclick="speak('第五關，複合圖形。大的正方形邊長10公分，小的長方形長4公分、寬3公分。請問鋪色部分的面積是多少？')">🔊</div>
+                </h2>
+                <div class="flex justify-center mb-8">
+                    <svg width="200" height="200" viewBox="0 0 200 200">
+                        <rect x="10" y="10" width="180" height="180" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="4"/>
+                        <rect x="60" y="70" width="80" height="60" fill="white" stroke="#0ea5e9" stroke-width="2" stroke-dasharray="4"/>
+                        <text x="80" y="105" font-size="14" fill="#0ea5e9">4x3 剪掉</text>
+                        <text x="85" y="5" font-size="14" font-weight="bold">10 cm</text>
+                    </svg>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-xl">1. 大正方形：10 × 10 = <input type="number" class="slot-input" id="q5-big" data-ans="100"> </p>
+                    <p class="text-xl">2. 小長方形：4 × 3 = <input type="number" class="slot-input" id="q5-small" data-ans="12"> </p>
                     <div class="math">
-                        總共剩下： <input type="number" class="slot-input" id="s4-ans"> 公分<span class="power">2</span>
+                        總面積： <input type="number" class="slot-input" id="q5-b" data-ans="100"> - 
+                        <input type="number" class="slot-input" id="q5-s" data-ans="12">
                     </div>
-                    <button class="check-btn" onclick="validateStep4()">提交答案</button>
-                    <div id="s4-feedback" class="mt-4 font-bold text-lg"></div>
+                    <div class="mt-4 math">
+                        = <input type="number" class="slot-input" id="q5-ans" data-ans="88"> cm<span class="power">2</span>
+                    </div>
                 </div>
-            </div>
+                <button onclick="checkSection5()" class="mt-6 bg-green-500 text-white px-8 py-3 rounded-full font-bold text-xl w-full">檢查答案</button>
+                <div id="q5-feedback" class="mt-4 font-bold text-lg text-center"></div>
+            </section>
 
-            <!-- 總結畫面 -->
-            <div id="summary" class="hidden text-center p-12 bg-white rounded-3xl shadow-2xl border-4 border-blue-500">
-                <h2 class="text-6xl mb-6">🏆</h2>
-                <h3 class="text-4xl font-bold text-blue-700 mb-4">任務完成！</h3>
-                <div class="text-2xl space-y-4 mb-8">
-                    <p>你的總積分：<span id="final-score" class="text-5xl text-orange-500 font-black">0</span> 分</p>
-                    <p>所花時間：<span id="final-time" class="text-blue-500 font-bold">0</span></p>
-                </div>
-                <div id="comment" class="text-xl text-gray-600 italic"></div>
-                <button class="mt-10 bg-green-600 text-white px-10 py-4 rounded-full text-2xl font-bold" onclick="location.reload()">重新挑戰</button>
-            </div>
-
-        </div>
+            <!-- 結算畫面 -->
+            <section id="results" class="step-section text-center bg-white p-12 rounded-3xl shadow-2xl">
+                <h2 class="text-5xl font-black text-indigo-700 mb-6">🎉 任務圓滿達成！</h2>
+                <p class="text-3xl mb-4">你的總得分：<span id="final-score" class="text-orange-500 font-bold">0</span> 分</p>
+                <p class="text-2xl text-gray-500 mb-8">花費時間：<span id="final-time">00:00</span></p>
+                <div id="final-comment" class="text-xl italic text-gray-600 mb-8"></div>
+                <button onclick="location.reload()" class="bg-indigo-600 text-white px-10 py-4 rounded-full text-2xl font-bold shadow-lg">重新挑戰</button>
+            </section>
+        </main>
     </div>
 
     <script>
         let score = 0;
         let startTime;
         let timerInterval;
-        let s1Errors = 0;
-        let s2Errors = 0;
-        let s3Errors = 0;
-        let s4Errors = 0;
+        let errors = { s1: 0, s2: 0, s3: 0, s4: 0, s5: 0 };
 
-        function startApp() {
-            document.getElementById('start-btn').classList.add('hidden');
-            document.getElementById('game-content').classList.remove('hidden');
+        function speak(text) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'zh-TW';
+            utterance.rate = 0.9;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function startGame() {
+            document.getElementById('start-btn').style.display = 'none';
+            document.getElementById('game-main').classList.remove('hidden');
             startTime = new Date();
             timerInterval = setInterval(updateTimer, 1000);
-            speak("挑戰開始！加油小探員！");
+            speak("任務開始，加油！");
         }
 
         function updateTimer() {
@@ -371,129 +329,119 @@
             document.getElementById('timer').innerText = `${mins}:${secs}`;
         }
 
-        function speak(text) {
-            window.speechSynthesis.cancel();
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'zh-TW';
-            utterance.rate = 0.9;
-            window.speechSynthesis.speak(utterance);
+        function checkInputs(inputs) {
+            let allCorrect = true;
+            let allFilled = true;
+            inputs.forEach(id => {
+                const el = document.getElementById(id);
+                const val = parseInt(el.value);
+                const ans = parseInt(el.dataset.ans);
+                if (isNaN(val)) {
+                    allFilled = false;
+                    el.classList.remove('correct', 'wrong');
+                } else if (val === ans) {
+                    el.classList.add('correct');
+                    el.classList.remove('wrong');
+                } else {
+                    el.classList.add('wrong');
+                    el.classList.remove('correct');
+                    allCorrect = false;
+                }
+            });
+            if (!allFilled) return "empty";
+            return allCorrect;
         }
 
-        function updateScore(points) {
-            score += points;
-            document.getElementById('total-score').innerText = score;
-        }
+        function handleResult(sectionKey, isCorrect, feedbackId, nextSectionId) {
+            const fb = document.getElementById(feedbackId);
+            if (isCorrect === "empty") {
+                fb.innerText = "⚠️ 請把格子填完喔！";
+                fb.className = "mt-4 font-bold text-lg text-orange-500 text-center";
+                speak("請先把格子填完喔。");
+                return;
+            }
 
-        function showFeedback(id, text, type) {
-            const el = document.getElementById(id);
-            el.innerText = text;
-            el.className = `mt-4 font-bold text-lg ${type === 'correct' ? 'text-green-600' : 'text-red-600'}`;
-            speak(text);
-        }
-
-        // --- 第一關邏輯 ---
-        function validateStep1() {
-            const l = parseInt(document.getElementById('s1-l').value);
-            const w = parseInt(document.getElementById('s1-w').value);
-            const ans = parseInt(document.getElementById('s1-ans').value);
-            
-            if (l === 18 && w === 12 && ans === 60) {
-                showFeedback('s1-feedback', '答對了！加 100 分。你掌握了周長的算法！', 'correct');
-                updateScore(100);
-                nextSection('section-1', 'section-2');
+            if (isCorrect) {
+                const bonus = Math.max(20, 100 - errors[sectionKey] * 30);
+                score += bonus;
+                document.getElementById('score').innerText = score;
+                fb.innerText = "✅ 太棒了！加 " + bonus + " 分！";
+                fb.className = "mt-4 font-bold text-lg text-green-600 text-center";
+                speak("正確！你真棒！");
+                
+                setTimeout(() => {
+                    document.getElementById('section-' + sectionKey.substring(1)).classList.remove('active');
+                    if (nextSectionId === 'results') {
+                        showResults();
+                    } else {
+                        document.getElementById(nextSectionId).classList.add('active');
+                        document.getElementById(nextSectionId).scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }, 1500);
             } else {
-                s1Errors++;
-                updateScore(-10);
-                document.getElementById('s1-hint').style.display = 'block';
-                showFeedback('s1-feedback', '喔喔！數值不太對。請看提示後再試一次。', 'wrong');
-                if (s1Errors >= 2) {
-                    document.getElementById('s1-remedial').style.display = 'block';
+                errors[sectionKey]++;
+                score -= 5;
+                document.getElementById('score').innerText = score;
+                fb.innerText = "❌ 數值不太對，再想想看喔。";
+                fb.className = "mt-4 font-bold text-lg text-red-600 text-center";
+                speak("數值不太對，再想想看喔。");
+                document.getElementById(sectionKey + '-hint').style.display = 'block';
+                
+                if (errors[sectionKey] >= 2 && document.getElementById(sectionKey + '-remedial')) {
+                    document.getElementById(sectionKey + '-remedial').style.display = 'block';
                 }
             }
         }
 
-        function validateRemedial1() {
-            const ans = parseInt(document.getElementById('s1-rem-ans').value);
-            if (ans === 50) {
-                showFeedback('s1-feedback', '類似題過關！加 30 分。繼續挑戰下一關吧！', 'correct');
-                updateScore(30);
-                nextSection('section-1', 'section-2');
-            } else {
-                showFeedback('s1-feedback', '還是不對喔，周長是 (15+10)乘以2，等於50。', 'wrong');
+        // 具體關卡檢查
+        function checkSection1() {
+            const res = checkInputs(['q1-1', 'q1-2', 'q1-3', 'q1-4', 'q1-ans']);
+            handleResult('s1', res, 'q1-feedback', 'section-2');
+        }
+
+        function checkRemedial1() {
+            const res = checkInputs(['q1-rem-ans']);
+            if (res === true) {
+                speak("補救題正確！我們可以進下一關了。");
+                setTimeout(() => {
+                    document.getElementById('section-1').classList.remove('active');
+                    document.getElementById('section-2').classList.add('active');
+                }, 1000);
             }
         }
 
-        // --- 第二關邏輯 ---
-        function validateStep2() {
-            const s1 = parseInt(document.getElementById('s2-s1').value);
-            const s2 = parseInt(document.getElementById('s2-s2').value);
-            const ans = parseInt(document.getElementById('s2-ans').value);
-
-            if (s1 === 5 && s2 === 5 && ans === 25) {
-                showFeedback('s2-feedback', '好厲害！正方形面積答對了，加 100 分！', 'correct');
-                updateScore(100);
-                nextSection('section-2', 'section-3');
-            } else {
-                updateScore(-10);
-                document.getElementById('s2-hint').style.display = 'block';
-                showFeedback('s2-feedback', '記得正方形面積是 邊長 乘以 邊長 喔。', 'wrong');
-            }
+        function checkSection2() {
+            const res = checkInputs(['q2-l', 'q2-w', 'q2-step', 'q2-ans']);
+            handleResult('s2', res, 'q2-feedback', 'section-3');
         }
 
-        // --- 第三關邏輯 ---
-        function validateStep3() {
-            const ans = parseInt(document.getElementById('s3-ans').value);
-            if (ans === 50000) {
-                showFeedback('s3-feedback', '單位換算完全正確！加 100 分。', 'correct');
-                updateScore(100);
-                nextSection('section-3', 'section-4');
-            } else {
-                updateScore(-10);
-                showFeedback('s3-feedback', '數數看零的個數對嗎？5後面應該有4個零喔。', 'wrong');
-            }
+        function checkSection3() {
+            const res = checkInputs(['q3-w', 'q3-h', 'q3-1', 'q3-2', 'q3-ans']);
+            handleResult('s3', res, 'q3-feedback', 'section-4');
         }
 
-        // --- 第四關邏輯 ---
-        function validateStep4() {
-            const big = parseInt(document.getElementById('s4-big').value);
-            const small = parseInt(document.getElementById('s4-small').value);
-            const ans = parseInt(document.getElementById('s4-ans').value);
-
-            if (big === 144 && small === 32 && ans === 112) {
-                showFeedback('s4-feedback', '太神了！複合圖形也難不倒你，加 200 分！', 'correct');
-                updateScore(200);
-                finishGame();
-            } else {
-                updateScore(-10);
-                showFeedback('s4-feedback', '檢查看看計算過程。大的是 12x12，小的是 8x4。', 'wrong');
-            }
+        function checkSection4() {
+            const res = checkInputs(['q4-ans']);
+            handleResult('s4', res, 'q4-feedback', 'section-5');
         }
 
-        function nextSection(currId, nextId) {
-            setTimeout(() => {
-                const nextSection = document.getElementById(nextId);
-                nextSection.classList.add('active');
-                nextSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 2000);
+        function checkSection5() {
+            const res = checkInputs(['q5-big', 'q5-small', 'q5-b', 'q5-s', 'q5-ans']);
+            handleResult('s5', res, 'q5-feedback', 'results');
         }
 
-        function finishGame() {
+        function showResults() {
             clearInterval(timerInterval);
-            setTimeout(() => {
-                document.querySelectorAll('.bg-white').forEach(el => el.classList.add('hidden'));
-                const summary = document.getElementById('summary');
-                summary.classList.remove('hidden');
-                document.getElementById('final-score').innerText = score;
-                document.getElementById('final-time').innerText = document.getElementById('timer').innerText;
-                
-                let comment = "";
-                if (score > 400) comment = "你是頂尖特級探員！這單元你完全精通了！";
-                else if (score > 300) comment = "優秀的表現！只要多練習幾次，你會更完美！";
-                else comment = "不錯的努力，建議可以再重新挑戰一次，賺取更高分！";
-                
-                document.getElementById('comment').innerText = comment;
-                speak("挑戰結束！你的總積分是" + score + "分。" + comment);
-            }, 3000);
+            document.getElementById('results').classList.add('active');
+            document.getElementById('final-score').innerText = score;
+            document.getElementById('final-time').innerText = document.getElementById('timer').innerText;
+            
+            let comment = "";
+            if (score > 400) comment = "你是頂尖特級探員！這單元你完全精通了！";
+            else if (score > 300) comment = "表現優異，繼續保持這份學習的心！";
+            else comment = "不錯的努力，再多練習幾次，你會更強大！";
+            document.getElementById('final-comment').innerText = comment;
+            speak("恭喜完成任務！你的總得分是" + score + "分。" + comment);
         }
     </script>
 </body>
