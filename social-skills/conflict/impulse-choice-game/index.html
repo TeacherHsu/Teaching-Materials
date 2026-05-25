@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>衝動暫停冒險：停一下，換個選擇</title>
+  <style>
+    :root{
+      --bg:#f3faf5; --card:#ffffff; --ink:#1f2937; --muted:#64748b;
+      --green:#16a34a; --green2:#dcfce7; --blue:#0284c7; --blue2:#e0f2fe;
+      --amber:#d97706; --amber2:#fef3c7; --red:#dc2626; --red2:#fee2e2;
+      --purple:#7c3aed; --purple2:#ede9fe; --line:#bbf7d0;
+      --shadow:0 12px 30px rgba(15,23,42,.10); --radius:28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:20px;line-height:1.55}
+    button{font:inherit;cursor:pointer}
+    .screen{min-height:100vh;padding:24px}
+    .center{max-width:1040px;margin:0 auto}
+    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 20% 20%,#fde68a 0 18%,transparent 34%),radial-gradient(circle at 80% 70%,#bae6fd 0 20%,transparent 38%),#fff7ed}
+    .hero-card{width:min(960px,100%);background:rgba(255,255,255,.94);border:6px solid #fed7aa;border-radius:40px;padding:42px;box-shadow:var(--shadow);text-align:center}
+    h1{font-size:clamp(2.2rem,5vw,4.2rem);margin:.2em 0 .15em;font-weight:1000;letter-spacing:.04em}
+    h2{font-size:clamp(1.35rem,3vw,2.2rem);margin:0;font-weight:1000}
+    h3{font-size:clamp(1.25rem,2.4vw,1.8rem);margin:0;font-weight:1000}
+    .subtitle{font-weight:900;color:var(--blue);background:var(--blue2);display:inline-block;padding:8px 18px;border-radius:999px;margin:8px 0 24px}
+    .intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0;text-align:left}
+    .intro-box{background:#f8fafc;border:3px solid #e2e8f0;border-radius:24px;padding:18px;font-weight:800}
+    .intro-box b{color:var(--green)}
+    .big-emoji{font-size:4.5rem;display:block;margin-bottom:12px}
+    .primary{border:0;background:#38bdf8;color:#fff;font-weight:1000;border-radius:24px;padding:18px 32px;box-shadow:0 8px 0 #0284c7;min-width:280px;font-size:1.3rem}
+    .primary:active{transform:translateY(8px);box-shadow:none}
+    .secondary{border:4px solid #cbd5e1;background:#fff;color:#334155;font-weight:1000;border-radius:22px;padding:14px 22px}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:4px solid #dcfce7;box-shadow:0 3px 16px rgba(15,23,42,.06)}
+    .bar{max-width:1040px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .badge{display:flex;align-items:center;gap:10px;background:#f8fafc;border:3px solid #e2e8f0;border-radius:22px;padding:8px 14px;font-weight:1000}
+    .badge small{display:block;font-size:.7rem;color:var(--muted);line-height:1.1}
+    .gems{background:var(--amber2);border-color:#fde68a;color:#92400e}
+    main{max-width:1040px;margin:0 auto;padding:32px 18px 120px;position:relative}
+    .timeline{position:absolute;left:48px;top:40px;bottom:0;width:10px;border-radius:999px;background:var(--line);z-index:0}
+    .node{position:relative;z-index:1;margin:0 0 36px;padding-left:92px;animation:fade .38s ease both}
+    @keyframes fade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+    .dot{position:absolute;left:18px;top:22px;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#fff;border:6px solid #bbf7d0;box-shadow:0 4px 12px rgba(15,23,42,.1);font-size:2rem}
+    .card{background:var(--card);border:5px solid #e7f8ed;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .card-head{background:#ecfdf5;border-bottom:3px solid #d1fae5;padding:18px 22px;display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+    .card-body{padding:22px}
+    .scene{font-size:1.18rem;font-weight:760;color:#334155;margin:0 0 18px}
+    .think-panel{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 24px}
+    .think{border-radius:22px;padding:14px;border:3px solid #e2e8f0;background:#f8fafc;font-weight:850}
+    .think span{display:block;font-size:.8rem;color:var(--muted);font-weight:1000;margin-bottom:4px}
+    .choices{display:grid;gap:14px}
+    .choice{width:100%;text-align:left;border:5px solid #e2e8f0;background:white;border-radius:24px;padding:18px;display:grid;grid-template-columns:58px 1fr auto;gap:14px;align-items:center;transition:.16s ease;box-shadow:0 5px 0 #cbd5e1}
+    .choice:hover{transform:translateY(-3px);border-color:#7dd3fc;background:#f0f9ff}
+    .choice:active{transform:translateY(5px);box-shadow:none}
+    .choice[disabled]{cursor:not-allowed;opacity:.45;transform:none;box-shadow:none}
+    .choice.selected{opacity:1;border-color:var(--blue);background:#eff6ff}
+    .choice.bad.selected{border-color:#fb7185;background:#fff1f2}
+    .choice.good.selected{border-color:#34d399;background:#ecfdf5}
+    .num{width:50px;height:50px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:#f1f5f9;font-weight:1000;color:#475569;border:3px solid #cbd5e1}
+    .choice-title{font-weight:1000;font-size:1.1rem}.choice-desc{font-size:.92rem;color:#64748b;font-weight:760;margin-top:3px}
+    .tag{font-size:.82rem;font-weight:1000;border-radius:999px;padding:6px 12px;white-space:nowrap}.tag.stop{background:var(--red2);color:#991b1b}.tag.think{background:var(--amber2);color:#92400e}.tag.help{background:var(--blue2);color:#075985}.tag.safe{background:var(--green2);color:#166534}
+    .result{border:5px solid #e2e8f0;border-radius:var(--radius);padding:22px;background:#fff;box-shadow:var(--shadow)}
+    .result.bad{border-color:#fecdd3}.result.good{border-color:#bbf7d0}.result.neutral{border-color:#bfdbfe}
+    .result h3{margin-bottom:10px}.result p{margin:.4em 0;font-weight:780}.result ul{margin:.4em 0 0;padding-left:1.25em;font-weight:760}.result li{margin:.2em 0}
+    .reflect-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}.reflect{border-radius:22px;padding:16px;border:3px solid #e2e8f0;background:#f8fafc}.reflect b{display:block;color:#334155;margin-bottom:4px}
+    .cool-card{background:#f0f9ff;border:5px solid #bae6fd;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .cool-main{text-align:center;background:#fff;border:3px solid #dbeafe;border-radius:26px;padding:24px;margin-top:14px}.cool-emoji{font-size:5rem;display:block;transition:.3s}.cool-text{font-size:1.45rem;font-weight:1000;min-height:58px;display:flex;align-items:center;justify-content:center;color:#334155}.dots{display:flex;gap:10px;justify-content:center;margin-top:18px}.dots i{width:16px;height:16px;border-radius:999px;background:#cbd5e1}.dots i.on{background:#f59e0b;width:40px}.dots i.done{background:#22c55e}
+    .action-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:18px}
+    .teacher{position:fixed;right:18px;bottom:18px;z-index:20;background:#111827;color:#fff;border-radius:24px;padding:14px 18px;font-weight:1000;border:0;box-shadow:var(--shadow)}
+    dialog{border:0;border-radius:28px;max-width:820px;width:calc(100% - 28px);box-shadow:0 30px 80px rgba(0,0,0,.35);padding:0}dialog::backdrop{background:rgba(15,23,42,.45)}.modal{padding:26px}.modal h2{margin-bottom:10px}.modal li{margin:.55em 0;font-weight:760}
+    .ending{background:linear-gradient(135deg,#fff 0%,#fef3c7 100%);border-color:#fde68a;text-align:center}.summary{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;text-align:left;margin:20px 0}.summary div{background:#fff;border:3px solid #fde68a;border-radius:22px;padding:16px;font-weight:850}
+    .hidden{display:none}
+    @media (max-width:800px){body{font-size:18px}.screen{padding:14px}.hero-card{padding:24px;border-radius:30px}.intro-grid,.think-panel,.reflect-grid,.summary{grid-template-columns:1fr}.node{padding-left:72px}.timeline{left:34px}.dot{left:3px;width:58px;height:58px}.choice{grid-template-columns:46px 1fr}.tag{grid-column:2}.bar{align-items:stretch;flex-direction:column}.badge{justify-content:center}.primary{width:100%}}
+  </style>
+</head>
+<body>
+  <section id="start" class="hero screen">
+    <div class="hero-card">
+      <span class="big-emoji">🧠⚔️</span>
+      <h1>衝動暫停冒險</h1>
+      <div class="subtitle">停一下，換個選擇，我還是可以保護自己</div>
+      <div class="intro-grid">
+        <div class="intro-box">🛑 <b>先停手</b><br>手、腳、物品先停住，不讓身體先做決定。</div>
+        <div class="intro-box">🔍 <b>分清楚</b><br>我看到的事實，和我腦中猜的故事，不一定一樣。</div>
+        <div class="intro-box">🗣️ <b>用策略</b><br>有道理時，更要用安全方法讓大人聽見。</div>
+      </div>
+      <p style="font-weight:850;color:#475569;max-width:760px;margin:0 auto 26px;text-align:left">
+        這不是比誰比較兇的遊戲。任務是練習：當我覺得委屈、生氣、被擋住、被誤會時，怎麼保護自己，也不傷害別人。選錯也沒關係，先完成冷卻任務，再重新選一次。
+      </p>
+      <button class="primary" onclick="startGame()">開始教室挑戰</button>
+    </div>
+  </section>
+
+  <section id="game" class="hidden">
+    <header>
+      <div class="bar">
+        <div class="badge"><span style="font-size:2rem">🛡️</span><div><small>今日核心句</small>有道理，也不能動手。</div></div>
+        <div class="badge gems"><span style="font-size:2rem">💎</span><div><small>安全選擇寶石</small><span id="gemCount">0</span> / <span id="totalCount">0</span></div></div>
+        <button class="secondary" onclick="resetGame()">重新開始</button>
+      </div>
+    </header>
+    <main>
+      <div class="timeline"></div>
+      <div id="feed"></div>
+      <div id="bottom"></div>
+    </main>
+  </section>
+
+  <button class="teacher" onclick="openTeacherNotes()">教師提示</button>
+  <dialog id="teacherDialog">
+    <div class="modal">
+      <h2>教師操作提示</h2>
+      <ul>
+        <li>建議一題約 3–6 分鐘。先讓學生投票，再請學生說：「這個選擇保護了誰？傷害了誰？後果誰要承擔？」</li>
+        <li>學生若合理化攻擊，可固定回到四句話：<b>感覺可以被理解；猜測需要查證；動手需要負責；可以換一個安全選擇。</b></li>
+        <li>避免公開指名真實個案。可說「有些人遇到這種情境會……」，讓學生保留面子，比較能進入反思。</li>
+        <li>若學生出現高張情緒，先停止討論對錯，改用冷卻任務，情緒下降後再回到責任與策略。</li>
+      </ul>
+      <div class="action-row"><button class="primary" onclick="closeTeacherNotes()">知道了</button></div>
+    </div>
+  </dialog>
+
+<script>
+const scenarios = [
+  {
+    icon:'🪟', title:'第一關：窗戶前的拉扯',
+    scene:'下課後你覺得很熱，想打開窗戶吹風。可是同學站在窗邊說：「老師說現在不能開。」你覺得他故意擋你，身體開始很想往前衝。',
+    fact:'同學擋在窗邊，窗戶還沒有打開。', guess:'他可能是故意不讓我舒服，甚至想害我。', need:'我需要降溫，也希望有人公平處理。',
+    choices:[
+      {type:'bad',label:'危險選擇',title:'硬拉窗戶，推擠或踢人',desc:'我覺得自己有理由，所以用身體搶回控制權。',result:'情況立刻變成肢體衝突。就算你原本只是想吹風，動手後，大家會先處理「有人受傷」這件事。',responsibility:['動手的人要為身體攻擊負責。','對方可能受傷、反擊，事情可能升級到家長、學務或法律責任。','「我以為他要害我」不能自動變成動手的理由。'],note:'感覺熱、覺得委屈可以說；但手腳不能先出去。'},
+      {type:'medium',label:'還不夠安全',title:'大聲吼他：「你是不是想害我？」',desc:'沒有動手，但先把自己的猜測當成事實。',result:'同學可能也被激怒，兩個人越吵越大聲。老師到場時，會很難聽清楚真正需求。',responsibility:['大聲指控會讓衝突升高。','你仍然需要說清楚：我看到什麼、我需要什麼。'],note:'猜測要查證，不要直接判定別人有惡意。'},
+      {type:'good',label:'安全策略',title:'退一步，找老師主持公道',desc:'「老師，我真的很熱，但他說不能開窗。可以請你幫我們決定嗎？」',result:'你沒有讓手腳惹禍，也讓大人聽見你的需求。老師可以決定開風扇、換位置、喝水或短暫休息。',responsibility:['你保護了自己的需求，也保護了同學安全。','有道理時，用規則和大人幫忙，成功率更高。'],note:'真正聰明的選擇，是讓自己有台階，也讓事情被公平處理。'}
+    ]
+  },
+  {
+    icon:'🧩', title:'第二關：我明明有道理',
+    scene:'分組活動時，你提出的方法被同學否決。你覺得：「他們都不懂，明明我比較會。」心裡很不服氣。',
+    fact:'同學沒有採用你的方法。', guess:'他們看不起我，故意不聽我的。', need:'我希望自己的想法被聽見，也想要有參與感。',
+    choices:[
+      {type:'bad',label:'危險選擇',title:'拍桌、搶材料或弄亂東西',desc:'用破壞讓大家知道我很生氣。',result:'同學會害怕你，不一定會理解你的想法。任務可能暫停，你也可能失去參與機會。',responsibility:['破壞物品或威嚇別人，需要承擔後果。','生氣不等於可以讓別人害怕。'],note:'聲音變大，別人聽見的是危險，不是道理。'},
+      {type:'medium',label:'普通選擇',title:'坐旁邊生悶氣，什麼都不做',desc:'我不攻擊，但我也不合作。',result:'你暫時沒有惹出大事，但也失去練習、表現和被理解的機會。',responsibility:['冷處理不會幫你把想法說清楚。','團隊任務中，拒絕參與也會有後果。'],note:'不爆炸是第一步，但還需要下一個好策略。'},
+      {type:'good',label:'安全策略',title:'提出一個可選方案',desc:'「可以先用你們的方法，但加上我這一小段嗎？如果不行，我想負責另一個部分。」',result:'你把「一定要照我的」改成「我也想被放進來」。同學比較容易接受，老師也看見你會協商。',responsibility:['你照顧自己的想法，也尊重大家的決定。','願意折衷的人，比較容易再次被邀請合作。'],note:'不是輸了，是把控制權換成參與權。'}
+    ]
+  },
+  {
+    icon:'👀', title:'第三關：他是不是在笑我？',
+    scene:'你考不好，心情很低落。旁邊同學一直看你，你的大腦立刻冒出一句話：「他一定在笑我。」',
+    fact:'同學看了你幾眼。', guess:'他在嘲笑我、看不起我。', need:'我需要保護面子，也希望不要被嘲笑。',
+    choices:[
+      {type:'bad',label:'危險選擇',title:'丟東西或罵他',desc:'先攻擊，讓他知道不要惹我。',result:'如果他其實只是關心你，這就變成你主動攻擊別人。老師會先處理你的行為。',responsibility:['丟東西可能造成受傷。','「我以為」不是證據。'],note:'大腦的猜測很快，但不一定是真的。'},
+      {type:'medium',label:'查證選擇',title:'用硬口氣問：「你看什麼？」',desc:'有查證，但語氣容易讓對方防衛。',result:'對方可能回嗆，你們可能吵起來；也可能說他只是想問你還好嗎。',responsibility:['提問是進步，但語氣會影響結果。','越想保護面子，越要讓語氣安全。'],note:'查證很好，若能更平穩會更有效。'},
+      {type:'good',label:'安全策略',title:'先吸氣，再問：「你剛剛看我，是有事嗎？」',desc:'把攻擊改成確認。',result:'你有機會發現真相：也許他是關心、也許只是發呆。就算他真的不禮貌，你也保留了找老師處理的優勢。',responsibility:['你沒有把猜測直接變成攻擊。','你讓自己站在比較有理的位置。'],note:'先確認，再決定下一步。這叫做「證據腦」。'}
+    ]
+  },
+  {
+    icon:'🎒', title:'第四關：老師誤會我',
+    scene:'上課鐘響後，你突然發現課本在櫃子裡。你站起來要去拿，老師大聲說：「上課了還亂跑，回座位！」你覺得很委屈。',
+    fact:'老師看到你上課後離開座位。', guess:'老師故意兇我、不聽我解釋。', need:'我需要拿課本，也希望老師知道我不是故意搗亂。',
+    choices:[
+      {type:'bad',label:'危險選擇',title:'頂嘴、甩門或摔東西',desc:'用力證明我很委屈。',result:'老師會先看到頂嘴和摔東西，而不是你的委屈。事情從「拿課本」變成「情緒失控」。',responsibility:['破壞物品或威嚇行為需要負責。','委屈不能抵消後面的不安全行為。'],note:'越覺得委屈，越要保留自己的有理位置。'},
+      {type:'medium',label:'退縮選擇',title:'回座位，整節課都不聽',desc:'我不吵，但我用不學習抗議。',result:'你沒有繼續衝突，但損失的是自己的學習和作業。老師也不一定知道你真正原因。',responsibility:['沉默抗議常常讓自己吃虧。','你的需求沒有被說出來。'],note:'不爆炸是好的，但還可以更聰明。'},
+      {type:'good',label:'安全策略',title:'舉手用短句說明',desc:'「老師對不起，我忘記拿課本。可以讓我去拿嗎？下次我先舉手。」',result:'老師比較容易理解你不是故意亂跑，也可能允許你拿書。你保住面子，也解決問題。',responsibility:['先道歉不是認輸，是降低大人的防衛。','說明原因加下一次做法，會讓人更願意相信你。'],note:'短句、低音量、說需求，是解除誤會的工具。'}
+    ]
+  },
+  {
+    icon:'📝', title:'第五關：任務太難，我想逃',
+    scene:'老師發下習作，要你現在完成。你一看到題目就煩，覺得很難、很想逃走。',
+    fact:'老師要求現在寫習作。', guess:'老師故意找我麻煩，反正我一定寫不好。', need:'我需要降低難度，也需要有人幫我開始。',
+    choices:[
+      {type:'bad',label:'危險選擇',title:'把習作揉掉或大喊不寫',desc:'用爆炸讓任務停止。',result:'任務不會消失，反而可能變成補寫、留下來、通知家長。自由時間更少。',responsibility:['破壞學用品和拒絕任務會有後果。','發脾氣不能讓困難變簡單。'],note:'真正目標不是贏過老師，是讓任務變得做得到。'},
+      {type:'medium',label:'逃避選擇',title:'趴著不動，假裝沒聽見',desc:'不吵，但也不開始。',result:'短時間比較舒服，但等一下任務還是在，還可能變成更多補救。',responsibility:['逃避會讓壓力變久。','你需要一個「開始的小步驟」。'],note:'先做一點點，通常比完全不動容易。'},
+      {type:'good',label:'安全策略',title:'請老師拆小步驟',desc:'「老師，我卡住了。可以先教我第一題，或讓我先做三題嗎？」',result:'你把「我不想寫」換成「我需要幫忙開始」。老師比較容易提供提示、減量或分段完成。',responsibility:['你仍然面對任務，但用比較可行的方法。','會求助，是成熟的問題解決能力。'],note:'困難可以拆小，不需要用爆炸處理。'}
+    ]
+  },
+  {
+    icon:'⚖️', title:'第六關：責任天平',
+    scene:'衝突結束後，你很想一直說：「都是他先害我的！他想夾我的手！」可是老師問：「實際發生了什麼？你做了什麼？」',
+    fact:'你感覺自己可能被傷害，但需要確認實際證據。', guess:'只要我說他想害我，我就不用負責。', need:'我需要被理解，也需要學會承擔自己的行為。',
+    choices:[
+      {type:'bad',label:'危險選擇',title:'只強調別人差點害我，拒絕談自己做了什麼',desc:'把焦點全部推到別人身上。',result:'大人會覺得你在逃避責任。即使別人也有需要釐清的地方，你自己的攻擊行為仍然要被處理。',responsibility:['可能發生的事，不等於已經發生的傷害。','別人的錯，要查；自己的行為，也要負責。'],note:'責任不是誰比較大聲就消失。'},
+      {type:'medium',label:'部分負責',title:'說：「我有踢人，可是是因為他擋我。」',desc:'承認一部分，但還是把原因全部放在對方身上。',result:'這比完全否認好，但還少了一句關鍵話：下次我可以怎麼做，才不讓手腳出去。',responsibility:['原因可以說明，但不能當成免責。','還需要提出修正行動。'],note:'承認事實是第一步，修正策略是第二步。'},
+      {type:'good',label:'安全策略',title:'用三句話負責',desc:'「我以為他會夾到我，但我沒有先確認。我踢人是不對的。下次我會退後找老師。」',result:'你同時說出感覺、事實和責任。大人比較看得到你正在學習控制自己，也比較能幫你處理真正的需求。',responsibility:['你沒有否定自己的害怕，也沒有逃避自己的行為。','這是修復關係和降低後果的重要能力。'],note:'成熟不是從不生氣，而是願意把責任拿回來。'}
+    ]
+  }
+];
+
+const coolings = [
+  {icon:'✋',title:'手腳暫停術',steps:['雙腳踩地，手放桌上','心裡說：停一下','肩膀用力 3 秒','慢慢放鬆','手腳回到我控制中']},
+  {icon:'🎈',title:'氣球呼吸',steps:['吸氣，肚子像氣球變大','停 1 秒','慢慢吐氣','再吐更慢一點','大腦降溫完成']},
+  {icon:'🔎',title:'事實偵探',steps:['我看到什麼？','我聽到什麼？','我猜了什麼？','我需要查證什麼？','我可以先問，不先攻擊']},
+  {icon:'🗣️',title:'短句求助',steps:['老師，我需要幫忙','我現在很生氣','我先退後一下','請你幫我判斷','我用說的，不用手腳']},
+  {icon:'🐢',title:'烏龜縮殼',steps:['肩膀縮起來','拳頭握緊但不伸出去','數 3、2、1','肩膀放下','我可以換選擇']}
+];
+
+let stageIndex = 0, gems = 0, coolingIndex = 0, locked = false;
+const feed = document.getElementById('feed');
+const gemCount = document.getElementById('gemCount');
+document.getElementById('totalCount').textContent = scenarios.length;
+
+function startGame(){
+  document.getElementById('start').classList.add('hidden');
+  document.getElementById('game').classList.remove('hidden');
+  resetGame(false);
+}
+function resetGame(scrollTop=true){
+  stageIndex=0; gems=0; coolingIndex=0; locked=false; feed.innerHTML=''; updateGems(); renderStage(); if(scrollTop) window.scrollTo({top:0,behavior:'smooth'});
+}
+function updateGems(){gemCount.textContent=gems}
+function scrollBottom(){setTimeout(()=>document.getElementById('bottom').scrollIntoView({behavior:'smooth',block:'end'}),60)}
+function node(html){const d=document.createElement('section');d.className='node';d.innerHTML=html;feed.appendChild(d);scrollBottom();return d}
+function escapeHtml(str){return String(str).replace(/[&<>"]/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[s]))}
+
+function renderStage(){
+  locked=false;
+  const s=scenarios[stageIndex];
+  node(`
+    <div class="dot">${s.icon}</div>
+    <article class="card">
+      <div class="card-head"><h2>${s.title}</h2><span class="tag safe">第 ${stageIndex+1} / ${scenarios.length} 關</span></div>
+      <div class="card-body">
+        <p class="scene">${s.scene}</p>
+        <div class="think-panel">
+          <div class="think"><span>我看到的事實</span>${s.fact}</div>
+          <div class="think"><span>我腦中的猜測</span>${s.guess}</div>
+          <div class="think"><span>我真正的需要</span>${s.need}</div>
+        </div>
+        <div class="choices">
+          ${s.choices.map((c,i)=>`
+            <button class="choice ${c.type}" onclick="choose(${i}, this)">
+              <div class="num">${i+1}</div>
+              <div><div class="choice-title">${c.title}</div><div class="choice-desc">${c.desc}</div></div>
+              <span class="tag ${c.type==='good'?'safe':c.type==='medium'?'think':'stop'}">${c.label}</span>
+            </button>`).join('')}
+        </div>
+      </div>
+    </article>`);
+}
+
+function choose(choiceIndex, btn){
+  if(locked) return; locked=true;
+  const s=scenarios[stageIndex], c=s.choices[choiceIndex];
+  [...btn.parentElement.children].forEach(b=>b.disabled=true);
+  btn.classList.add('selected');
+  node(`<div class="dot">👉</div><div class="result neutral"><h3>你選擇了</h3><p>${escapeHtml(c.title)}</p></div>`);
+  setTimeout(()=>renderResult(c),450);
+}
+function renderResult(c){
+  const good = c.type==='good', medium=c.type==='medium';
+  node(`<div class="dot">${good?'✅':medium?'🟡':'⚠️'}</div>
+    <article class="result ${good?'good':medium?'neutral':'bad'}">
+      <h3>${good?'安全選擇成功':'先停一下，看見後果'}</h3>
+      <p>${c.result}</p>
+      <div class="reflect-grid">
+        <div class="reflect"><b>責任天平</b><ul>${c.responsibility.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+        <div class="reflect"><b>勇者筆記</b><p>${c.note}</p></div>
+      </div>
+    </article>`);
+  setTimeout(()=>{
+    if(good){gems++; updateGems(); renderNextButton();}
+    else renderCoolingButton();
+  },700);
+}
+function renderCoolingButton(){
+  node(`<div class="dot">⏳</div><div class="result bad" style="text-align:center"><h3>時光暫停</h3><p>這個選擇可能讓事情變嚴重。先完成一個冷卻任務，再回到同一關重新選。</p><button class="primary" onclick="renderCooling()">開始冷卻任務</button></div>`);
+}
+function renderCooling(){
+  const cool=coolings[coolingIndex++ % coolings.length];
+  const id='cool_'+Date.now();
+  node(`<div class="dot">${cool.icon}</div><article class="cool-card" id="${id}" data-step="0">
+    <h2>${cool.title}</h2><p style="font-weight:800;color:#475569;margin:.4em 0 0">跟著大螢幕做完 5 步，讓大腦重新上線。</p>
+    <div class="cool-main"><span class="cool-emoji">${cool.icon}</span><div class="cool-text">${cool.steps[0]}</div><button class="primary" onclick="coolNext('${id}')">我做到了，下一步</button><div class="dots">${cool.steps.map((_,i)=>`<i class="${i===0?'on':''}"></i>`).join('')}</div></div>
+  </article>`);
+}
+function coolNext(id){
+  const el=document.getElementById(id); const coolTitle=el.querySelector('h2').textContent;
+  const cool=coolings.find(x=>x.title===coolTitle); let step=Number(el.dataset.step)+1;
+  if(step>=cool.steps.length){
+    el.querySelector('.cool-text').textContent='冷卻完成，回到同一關重新選擇。';
+    el.querySelector('button').disabled=true; el.querySelector('button').textContent='準備回到情境';
+    setTimeout(()=>{node(`<div class="dot">🔁</div><div class="result neutral"><h3>重新選擇</h3><p>剛才的情緒可以被理解，但我們要換一個更安全、更有用的行動。</p></div>`); renderStage();},800);
+    return;
+  }
+  el.dataset.step=step; el.querySelector('.cool-text').textContent=cool.steps[step];
+  [...el.querySelectorAll('.dots i')].forEach((d,i)=>{d.className=i<step?'done':i===step?'on':''});
+}
+function renderNextButton(){
+  if(stageIndex < scenarios.length-1){
+    node(`<div class="dot">💎</div><div class="result good" style="text-align:center"><h3>獲得安全選擇寶石</h3><p>你用安全方法保護自己，也保護別人。準備進入下一關。</p><button class="primary" onclick="nextStage()">前進下一關</button></div>`);
+  }else renderEnding();
+}
+function nextStage(){stageIndex++; renderStage()}
+function renderEnding(){
+  node(`<div class="dot">🏆</div><article class="card ending"><div class="card-body"><div style="font-size:5rem">💎</div><h1>任務完成</h1><p style="font-weight:900;color:#475569">你收集了 ${gems} 顆安全選擇寶石。請記住，真正厲害不是永遠不生氣，而是生氣時還能讓手腳停住。</p><div class="summary"><div>🛑 <b>停手</b><br>手、腳、物品先停住。</div><div>🔍 <b>查證</b><br>我以為的，不一定是真的。</div><div>🗣️ <b>說需求</b><br>我很熱、我委屈、我需要幫忙。</div><div>⚖️ <b>負責任</b><br>別人的錯要查，自己的行為也要負責。</div></div><button class="primary" onclick="resetGame()">再玩一次</button></div></article>`);
+}
+function openTeacherNotes(){document.getElementById('teacherDialog').showModal()}
+function closeTeacherNotes(){document.getElementById('teacherDialog').close()}
+</script>
+</body>
+</html>
