@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>聲音探索任務：我的專屬聽力工具箱</title>
+  <style>
+    :root{
+      --bg:#f7fbff;--card:#ffffff;--text:#1f2937;--muted:#667085;--line:#dbe7f3;
+      --primary:#6366f1;--primary2:#8b5cf6;--safe:#10b981;--warn:#f59e0b;--soft:#eef2ff;
+      --rose:#fff1f2;--teal:#ecfdf5;--shadow:0 20px 50px rgba(31,41,55,.12);--radius:26px;
+    }
+    *{box-sizing:border-box} body{margin:0;font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;background:radial-gradient(circle at top left,#e0f2fe 0,#f7fbff 38%,#fff 100%);color:var(--text);min-height:100vh}
+    button,input{font:inherit}.page{min-height:100vh;display:flex;justify-content:center;align-items:center;padding:22px}.app{width:min(980px,100%);background:rgba(255,255,255,.93);border:1px solid rgba(219,231,243,.85);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.topbar{padding:18px 22px 14px;border-bottom:1px solid var(--line);display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:rgba(255,255,255,.7)}.brand{display:flex;gap:12px;align-items:center}.logo{width:44px;height:44px;border-radius:16px;background:linear-gradient(135deg,var(--primary),var(--primary2));display:grid;place-items:center;color:white;font-size:23px}.brand h1{font-size:20px;margin:0}.brand p{font-size:13px;margin:3px 0 0;color:var(--muted)}.privacy{font-size:13px;color:#475467;background:#f8fafc;border:1px solid var(--line);border-radius:999px;padding:8px 12px}.progress{height:8px;background:#edf2f7}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--primary),var(--primary2));transition:.35s}.content{padding:26px;min-height:570px;display:flex;flex-direction:column;justify-content:center}.screen{display:none;animation:fade .35s ease both}.screen.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.center{text-align:center}.kicker{font-weight:800;color:var(--primary);letter-spacing:.08em;font-size:14px}.title{font-size:clamp(28px,5vw,44px);line-height:1.18;margin:10px 0 14px}.subtitle{font-size:18px;line-height:1.8;color:#475467;max-width:720px;margin:0 auto 22px}.btn{border:0;border-radius:999px;padding:13px 20px;font-weight:800;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:8px}.btn.primary{background:linear-gradient(135deg,var(--primary),var(--primary2));color:white;box-shadow:0 12px 24px rgba(99,102,241,.25)}.btn.primary:hover{transform:translateY(-1px)}.btn.ghost{background:#fff;color:#475467;border:1px solid var(--line)}.btn.soft{background:var(--soft);color:#3730a3}.nav{display:flex;justify-content:space-between;gap:12px;padding:16px 22px;border-top:1px solid var(--line);background:#f8fafc}.grid{display:grid;gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:0 8px 22px rgba(31,41,55,.06)}.card h3{margin:0 0 8px;font-size:19px}.card p,.card li{color:#475467;line-height:1.65}.note{background:#f8fafc;border:1px dashed #cbd5e1;border-radius:18px;padding:14px 16px;color:#475467;line-height:1.65}.student-guide{margin-top:18px;background:linear-gradient(135deg,#f0fdfa,#eff6ff);border:1px solid #bae6fd;border-radius:20px;padding:15px 17px;color:#31556a;line-height:1.75;text-align:left;box-shadow:0 8px 18px rgba(14,165,233,.08)}.student-guide strong{color:#2563eb}.student-guide .guide-title{display:flex;align-items:center;gap:8px;font-weight:900;margin-bottom:5px;color:#2563eb}.student-guide .guide-title span{font-size:20px}.choice{width:100%;text-align:left;background:#fff;border:2px solid var(--line);border-radius:20px;padding:16px;cursor:pointer}.choice:hover{border-color:#a5b4fc;background:#f8faff}.choice.selected{border-color:var(--primary);background:var(--soft);box-shadow:0 0 0 4px rgba(99,102,241,.12)}.bigicon{font-size:46px;margin-bottom:10px}.pill{display:inline-flex;align-items:center;gap:6px;background:#f8fafc;border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-size:13px;color:#475467}.ear-map{display:flex;align-items:center;justify-content:center;gap:min(4vw,36px);margin:24px 0;flex-wrap:wrap}.circle{width:130px;height:130px;border-radius:44px;background:#f8fafc;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center}.circle strong{margin-top:8px}.arrow{font-size:34px;color:#c4b5fd}.brain{background:#fdf2f8;font-size:58px}.audio-area{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:660px;margin:22px auto}.audio-btn{height:128px;border-radius:24px;border:2px solid var(--line);background:#fff;cursor:pointer;font-weight:900;font-size:18px}.audio-btn:hover{border-color:var(--primary);background:#f8faff}.meter{height:18px;background:#eef2ff;border-radius:999px;overflow:hidden;margin:12px 0}.meter span{display:block;height:100%;background:linear-gradient(90deg,#93c5fd,#8b5cf6);width:50%;transition:.25s}.timeline-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:18px 0}.path{transition:.25s}.path.dim{opacity:.45;filter:saturate(.3)}.slider{width:min(560px,100%);accent-color:var(--primary)}.small{font-size:13px;color:var(--muted)}.avatar{width:150px;height:150px;border-radius:46px;background:linear-gradient(135deg,#fef3c7,#fce7f3);margin:0 auto 14px;display:grid;place-items:center;font-size:68px}.plan-list{display:grid;gap:10px;max-width:700px;margin:18px auto}.plan-item{display:flex;align-items:flex-start;gap:10px;padding:13px 14px;border-radius:18px;border:1px solid var(--line);background:#fff}.check{margin-top:2px;width:24px;height:24px;border-radius:8px;background:#ecfdf5;display:grid;place-items:center;color:#059669;flex:0 0 auto}.footerline{margin-top:18px;font-size:13px;color:#667085;line-height:1.6}.teacher{margin-top:18px;text-align:left}.teacher summary{cursor:pointer;color:#475467;font-weight:800}.teacher div{margin-top:10px;background:#fffbeb;border:1px solid #fde68a;border-radius:16px;padding:14px;color:#854d0e;line-height:1.7}.hidden{display:none}.tagrow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:12px 0}.reflection{width:100%;min-height:88px;border:1px solid var(--line);border-radius:18px;padding:14px;resize:vertical;line-height:1.6}.printbox{white-space:pre-wrap;text-align:left;background:#f8fafc;border:1px solid var(--line);border-radius:18px;padding:16px;line-height:1.7;max-width:760px;margin:16px auto 0}.sr-only{position:absolute;left:-9999px}.complete-panel{margin-top:18px;padding:22px;border-radius:24px;background:linear-gradient(135deg,#eef2ff,#fdf2f8);border:1px solid #c7d2fe;text-align:center;box-shadow:0 12px 26px rgba(99,102,241,.12)}.complete-badge{width:92px;height:92px;border-radius:32px;margin:0 auto 12px;background:linear-gradient(135deg,var(--safe),#22c55e);color:#fff;display:grid;place-items:center;font-size:46px;box-shadow:0 14px 28px rgba(16,185,129,.22);animation:pop .35s ease both}.complete-panel h3{font-size:26px;margin:8px 0}.complete-panel p{color:#475467;line-height:1.7;margin:8px auto;max-width:640px}.finish-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}.finish-card{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:18px;padding:13px 14px;text-align:left}.finish-card strong{display:block;margin-bottom:3px}.finish-card span{color:#667085;font-size:14px;line-height:1.5}@keyframes pop{0%{transform:scale(.7);opacity:0}70%{transform:scale(1.06);opacity:1}100%{transform:scale(1)}}
+@media print{
+  body{background:#fff!important;color:#111827!important;min-height:auto!important}
+  .page{display:none!important}
+  #printArea{display:block!important;padding:28px;font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;color:#111827}
+  #printArea h1{font-size:24px;margin:0 0 8px;color:#3730a3}
+  #printArea .print-subtitle{font-size:14px;color:#475467;margin-bottom:20px;line-height:1.7}
+  #printArea .print-section{border:1px solid #dbe7f3;border-radius:16px;padding:14px 16px;margin:12px 0;page-break-inside:avoid}
+  #printArea .print-section h2{font-size:17px;margin:0 0 8px;color:#2563eb}
+  #printArea .print-section p{font-size:14px;line-height:1.75;margin:0;white-space:pre-wrap}
+  #printArea .print-footer{font-size:12px;color:#667085;margin-top:18px;line-height:1.6}
+}
+#printArea{display:none}
+@media(max-width:720px){.content{padding:20px;min-height:620px}.grid.two,.grid.three,.timeline-wrap,.audio-area{grid-template-columns:1fr}.nav{position:sticky;bottom:0}.privacy{border-radius:14px}.circle{width:112px;height:112px}.arrow{transform:rotate(90deg)}}
+  </style>
+</head>
+<body>
+  <div class="page">
+    <main class="app" aria-live="polite">
+      <header class="topbar">
+        <div class="brand"><div class="logo" aria-hidden="true">✦</div><div><h1>聲音探索任務</h1><p>我的專屬聽力工具箱</p></div></div>
+        <div class="privacy">不會記錄姓名，也不會把答案傳出去</div>
+      </header>
+      <div class="progress"><div id="bar" class="bar"></div></div>
+      <section class="content">
+        <article class="screen active" data-screen="0">
+          <div class="center">
+            <div class="avatar" aria-hidden="true">🎧</div>
+            <div class="kicker">PRIVATE QUEST</div>
+            <h2 class="title">不是要妳變得跟別人一樣，<br>是幫妳找到更輕鬆的方式。</h2>
+            <p class="subtitle">今天不是考試，也不是要逼妳做決定。這是一個小任務：一起看看大腦怎麼聽聲音、在教室裡怎麼省力，以及妳可以選擇哪些讓自己更自在的工具。</p>
+            <button class="btn primary" onclick="go(1)">開始探索</button>
+            <p class="footerline">小提醒：妳可以只看、不回答；也可以只選妳想說的部分。這裡不是考試。</p>
+          </div>
+        </article>
+
+        <article class="screen" data-screen="1">
+          <div class="center"><div class="kicker">STEP 1</div><h2 class="title">大腦才是真正的聲音偵探</h2><p class="subtitle">耳朵像接收器，大腦像偵探。兩邊收到的線索越完整，大腦越容易判斷「誰在說話、聲音從哪裡來、哪一句才是重點」。</p></div>
+          <div class="ear-map" aria-hidden="true"><div class="circle">👂<strong>左邊線索</strong></div><div class="arrow">→</div><div class="circle brain">🧠<strong style="font-size:14px">大腦整理</strong></div><div class="arrow">←</div><div class="circle">👂<strong>右邊線索</strong></div></div>
+          <div class="note">重點不是「妳聽不到」，而是：有些聲音大腦其實要花更多力氣才整理得出來。坐前面有幫助，但它不一定能解決「吵雜、多人同時說話、聲音方向」這些情境。</div>
+          <div class="student-guide"><div class="guide-title"><span>🌿</span>給妳的小提醒</div><div>妳不需要回答「為什麼」。妳可以只想想：哪些時候聽聲音比較累？哪些時候妳最希望大人低調一點陪妳？妳的感覺很重要，我們會慢慢找方法。</div></div>
+        </article>
+
+        <article class="screen" data-screen="2">
+          <div class="center"><div class="kicker">STEP 2</div><h2 class="title">聲音方向小任務</h2><p class="subtitle">建議戴耳機操作。這只是體驗「左右聲音線索」的概念，不是正式聽力測驗。</p></div>
+          <div class="audio-area">
+            <button class="audio-btn" onclick="playSound(-1,'左邊')">← 播放左邊聲音</button>
+            <button class="audio-btn" onclick="playSound(1,'右邊')">播放右邊聲音 →</button>
+          </div>
+          <div id="audioFeedback" class="note center">點一個按鈕，感覺看看大腦怎麼抓方向。</div>
+          <div class="grid two" style="margin-top:18px">
+            <button class="choice" onclick="selectChoice(this,'最想聽清楚朋友說話')"><strong>我最在意：</strong><br>朋友小聲說話時，我想更快聽清楚。</button>
+            <button class="choice" onclick="selectChoice(this,'上課比較省力')"><strong>我最在意：</strong><br>上課不用一直猜老師剛剛說什麼。</button>
+            <button class="choice" onclick="selectChoice(this,'更知道聲音方向')"><strong>我最在意：</strong><br>有人叫我或有車靠近時，我比較知道方向。</button>
+            <button class="choice" onclick="selectChoice(this,'不想被注意')"><strong>我最在意：</strong><br>就算用工具，也希望低調、不被一直問。</button>
+          </div>
+          <div class="student-guide"><div class="guide-title"><span>🫧</span>給妳的小提醒</div><div>這不是要證明妳哪裡不好，而是幫妳找出「哪一種情境比較費力」。如果妳最在意的是不要被注意，那也很合理，我們可以先從低調、不尷尬的方式開始。</div></div>
+        </article>
+
+        <article class="screen" data-screen="3">
+          <div class="center"><div class="kicker">STEP 3</div><h2 class="title">每個人都有自己的工具箱</h2><p class="subtitle">工具不是缺點證明，而是讓生活比較省力的選擇。有人用眼鏡、有人用牙套、有人用運動護具，也有人用聽力工具。</p></div>
+          <div class="grid three">
+            <div class="card center"><div class="bigicon">👓</div><h3>看清楚工具</h3><p>眼鏡讓黑板、書本、表情更清楚。</p></div>
+            <div class="card center"><div class="bigicon">🦷</div><h3>微笑調整工具</h3><p>牙套不是笨，是讓牙齒咬合與笑容更舒服。</p></div>
+            <div class="card center"><div class="bigicon">🎧</div><h3>聽力支援工具</h3><p>助聽器或其他聽覺輔具，是讓大腦收到更多聲音線索。</p></div>
+          </div>
+          <div class="tagrow"><span class="pill">低調</span><span class="pill">可選顏色</span><span class="pill">可練習回應同學</span><span class="pill">可以先試戴</span></div>
+          <div class="note">如果有人問：「那是什麼？」妳可以準備一句很短的答案，例如：「聽聲音比較清楚的小工具啦。」說完就換話題，不需要解釋全部。</div>
+          <div class="student-guide"><div class="guide-title"><span>💛</span>給妳的小提醒</div><div>有時候我們會很怕被別人用很快的方式判斷，所以也會忍不住先判斷別人。這不代表妳不好，只代表妳很在意自己被怎麼看見。妳可以慢慢練習：我和別人都不需要被一個標籤決定。</div></div>
+        </article>
+
+        <article class="screen" data-screen="4">
+          <div class="center"><div class="kicker">STEP 4</div><h2 class="title">兩條路都可以看清楚</h2><p class="subtitle">拉動滑桿，看一看：不同選擇會讓妳在哪些情境比較吃力、哪些情境比較省力。</p></div>
+          <div class="timeline-wrap">
+            <div id="pathA" class="card path"><h3>只靠座位與習慣</h3><ul><li>坐前面時可能還可以。</li><li>教室吵、同學同時說話、戶外活動時，可能更費力。</li><li>身體可能會習慣偏向比較好聽的一邊，需要自己覺察姿勢。</li></ul></div>
+            <div id="pathB" class="card path dim"><h3>加入一個支援工具</h3><ul><li>大腦得到更多聲音線索，聽課與社交可能比較省力。</li><li>需要一段適應期，也需要和聽力師調整。</li><li>可以討論低調戴法與被同學問到時的回應。</li></ul></div>
+          </div>
+          <div class="center"><input id="futureRange" class="slider" type="range" min="0" max="100" value="25" oninput="updateTimeline(this.value)"><div class="small">左邊：維持原本方式　｜　右邊：嘗試支援工具</div></div>
+          <div class="note" style="margin-top:18px">比較準確的說法是：長期少用某一側的聽覺線索，可能讓聽覺處理、聲音定位或噪音中聽話更吃力；是否適合助聽器、CROS、FM/遠端麥克風或其他方案，需要由聽力師依檢查結果評估。</div>
+          <div class="student-guide"><div class="guide-title"><span>🍀</span>給妳的小提醒</div><div>妳不用被嚇到，也不用一次做很大的改變。比較重要的是：哪一種方式讓妳比較省力、比較舒服、比較有安全感。工具可以先試、可以調整，也可以和大人一起討論。</div></div>
+        </article>
+
+        <article class="screen" data-screen="5">
+          <div class="center"><div class="kicker">STEP 5</div><h2 class="title">我的低調升級計畫</h2><p class="subtitle">妳不用今天就決定一切。可以先選一個最小、最安全、最不尷尬的第一步。</p></div>
+          <div class="plan-list">
+            <button class="choice" onclick="pickPlan(this,'先在沒人的地方試戴 5 分鐘')"><span class="pill">第一步</span><br><strong>先在沒人的地方試戴 5 分鐘</strong><br><span class="small">例如：資源教室、家裡、老師辦公室。</span></button>
+            <button class="choice" onclick="pickPlan(this,'先準備一句同學問到時的回答')"><span class="pill">第一步</span><br><strong>先準備一句同學問到時的回答</strong><br><span class="small">例如：「讓我聽得比較清楚的小工具。」</span></button>
+            <button class="choice" onclick="pickPlan(this,'先請媽媽或老師陪我問聽力師有哪些低調戴法')"><span class="pill">第一步</span><br><strong>先問有哪些低調戴法</strong><br><span class="small">確認髮型、顏色、款式、配戴時間怎麼安排。</span></button>
+          </div>
+          <label for="reflection" class="small"><strong>我希望大人幫我注意的是：</strong></label>
+          <textarea id="reflection" class="reflection" placeholder="可以寫：不要當著同學面講、不要一直提醒我、我想先自己試試看……"></textarea>
+          <div class="center" style="margin-top:14px"><button class="btn soft" onclick="makeSummary()">產生我的小計畫</button></div>
+          <div id="summary" class="printbox hidden"></div>
+          <div id="completePanel" class="complete-panel hidden" role="status" aria-live="polite">
+            <div class="complete-badge" aria-hidden="true">✓</div>
+            <h3>探索任務完成！</h3>
+            <p>妳已經完成今天的聲音探索。今天不需要立刻做完美決定，只要留下「一個比較安全、比較低調、比較省力的下一步」就可以。</p>
+            <div class="grid two" style="margin-top:14px">
+              <div class="finish-card"><div>🌱</div><div><strong>今天有完成的事</strong><span>妳看懂了：工具不是標籤，而是讓大腦更省力的方法。</span></div></div>
+              <div class="finish-card"><div>🛡️</div><div><strong>妳可以保留的界線</strong><span>妳可以要求大人低調陪妳練習，不要在同學面前公開討論。</span></div></div>
+            </div>
+            <div class="finish-actions">
+              <button class="btn primary" onclick="restartQuest()">再看一次</button>
+              <button type="button" class="btn ghost" onclick="printPDF()">列印／存成 PDF</button>
+            </div>
+          </div>
+          <div class="student-guide"><div class="guide-title"><span>🌷</span>給妳的小提醒</div><div>今天不用立刻答應每天都戴，也不用一次做到完美。願意想一想、試一小步、說出自己希望怎麼被陪伴，就已經是很棒的開始。</div></div>
+        </article>
+      </section>
+      <nav class="nav"><button id="prevBtn" class="btn ghost" onclick="prev()">← 上一步</button><button id="nextBtn" class="btn primary" onclick="next()">下一步 →</button></nav>
+    </main>
+  </div>
+  <section id="printArea" aria-hidden="true"></section>
+<script>
+  let current=0; let selectedNeed=''; let selectedPlan=''; const max=5;
+  function screens(){return [...document.querySelectorAll('.screen')]}
+  function render(){screens().forEach(s=>s.classList.toggle('active',Number(s.dataset.screen)===current));document.getElementById('bar').style.width=(current/max*100)+'%';document.getElementById('prevBtn').disabled=current===0;document.getElementById('prevBtn').style.opacity=current===0?.45:1;const nb=document.getElementById('nextBtn');nb.textContent=current===max?'完成探索':'下一步 →'; if(current<max){nb.classList.remove('soft');nb.classList.add('primary')}}
+  function go(n){current=Math.max(0,Math.min(max,n));render();window.scrollTo({top:0,behavior:'smooth'})}
+  function next(){ if(current<max){ go(current+1); } else { finishQuest(); } }
+  function prev(){ if(current>0) go(current-1); }
+  function playSound(pan,label){try{const C=window.AudioContext||window.webkitAudioContext;const ctx=new C();const osc=ctx.createOscillator();const panner=ctx.createStereoPanner();const gain=ctx.createGain();osc.type='sine';osc.frequency.value=label==='左邊'?392:523.25;panner.pan.value=pan;gain.gain.setValueAtTime(0,ctx.currentTime);gain.gain.linearRampToValueAtTime(.25,ctx.currentTime+.05);gain.gain.linearRampToValueAtTime(0,ctx.currentTime+.8);osc.connect(panner);panner.connect(gain);gain.connect(ctx.destination);osc.start();osc.stop(ctx.currentTime+.85);document.getElementById('audioFeedback').textContent='剛剛播放的是「'+label+'」聲音。真正的教室更複雜，因為還有同學講話、椅子聲、走廊聲，大腦要同時整理很多線索。'}catch(e){document.getElementById('audioFeedback').textContent='這個瀏覽器暫時不能播放音效，也沒關係，可以直接討論：在吵的地方聽話是不是比較累？'}}
+  function selectChoice(el,value){document.querySelectorAll('[data-screen="2"] .choice').forEach(b=>b.classList.remove('selected'));el.classList.add('selected');selectedNeed=value}
+  function updateTimeline(v){const a=document.getElementById('pathA'),b=document.getElementById('pathB');if(Number(v)<50){a.classList.remove('dim');b.classList.add('dim')}else{a.classList.add('dim');b.classList.remove('dim')}}
+  function pickPlan(el,value){document.querySelectorAll('[data-screen="5"] .choice').forEach(b=>b.classList.remove('selected'));el.classList.add('selected');selectedPlan=value}
+  function makeSummary(){const text=document.getElementById('reflection').value.trim();const summary=`我的聲音探索小計畫\n\n我目前最在意的是：${selectedNeed||'還沒選，可以再想想'}\n我願意先嘗試的第一步：${selectedPlan||'還沒選，可以先從最不尷尬的一步開始'}\n我希望大人幫我注意：${text||'請用低調、不公開、不催促的方式陪我練習。'}\n\n提醒：這不是考試，也不是一次就要成功。可以先試一小步，再一起調整。`;const box=document.getElementById('summary');box.textContent=summary;box.classList.remove('hidden');finishQuest()}
+  function finishQuest(){
+    if(current!==max) go(max);
+    const panel=document.getElementById('completePanel');
+    panel.classList.remove('hidden');
+    document.getElementById('nextBtn').textContent='已完成 ✓';
+    document.getElementById('nextBtn').classList.remove('primary');
+    document.getElementById('nextBtn').classList.add('soft');
+    setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'center'}),80);
+  }
+  function restartQuest(){
+    selectedNeed=''; selectedPlan='';
+    document.querySelectorAll('.choice').forEach(b=>b.classList.remove('selected'));
+    document.getElementById('reflection').value='';
+    document.getElementById('summary').classList.add('hidden');
+    document.getElementById('completePanel').classList.add('hidden');
+    const nextBtn=document.getElementById('nextBtn');
+    nextBtn.classList.remove('soft'); nextBtn.classList.add('primary');
+    go(0);
+  }
+  function escapeHTML(str){
+    return String(str).replace(/[&<>'"]/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]});
+  }
+  function buildPrintArea(){
+    const reflection=document.getElementById('reflection').value.trim()||'請用低調、不公開、不催促的方式陪我練習。';
+    const need=selectedNeed||'還沒選，可以再想想。';
+    const plan=selectedPlan||'還沒選，可以先從最不尷尬的一步開始。';
+    const today=new Date().toLocaleDateString('zh-TW',{year:'numeric',month:'2-digit',day:'2-digit'});
+    const html=`
+      <h1>聲音探索任務：我的小計畫</h1>
+      <div class="print-subtitle">日期：${escapeHTML(today)}<br>這不是考試，也不是一次就要成功。這是一張幫我和大人一起討論的溫柔提醒。</div>
+      <div class="print-section"><h2>我目前最在意的是</h2><p>${escapeHTML(need)}</p></div>
+      <div class="print-section"><h2>我願意先嘗試的第一步</h2><p>${escapeHTML(plan)}</p></div>
+      <div class="print-section"><h2>我希望大人幫我注意</h2><p>${escapeHTML(reflection)}</p></div>
+      <div class="print-section"><h2>給自己的提醒</h2><p>工具不是標籤，而是讓大腦更省力的方法。
+我可以慢慢試、慢慢調整，也可以請大人用低調的方式陪我。</p></div>
+      <div class="print-footer">建議：列印時可選擇「另存成 PDF」。若瀏覽器沒有反應，請使用鍵盤 Ctrl+P（Windows/Chromebook）或 Command+P（Mac）。</div>`;
+    const area=document.getElementById('printArea');
+    area.innerHTML=html;
+    return area;
+  }
+  function printPDF(){
+    buildPrintArea();
+    const oldTitle=document.title;
+    document.title='聲音探索任務-我的小計畫';
+    try{
+      window.print();
+    }finally{
+      setTimeout(()=>{document.title=oldTitle;},500);
+    }
+  }
+  render();
+</script>
+</body>
+</html>
