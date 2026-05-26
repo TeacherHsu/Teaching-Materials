@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>聲音探索任務：我的專屬聽力工具箱</title>
+  <title>聲音探索筆記：我的低調支持工具箱</title>
   <style>
     :root{
       --bg:#f7fbff;--card:#ffffff;--text:#1f2937;--muted:#667085;--line:#dbe7f3;
@@ -31,7 +31,7 @@
   <div class="page">
     <main class="app" aria-live="polite">
       <header class="topbar">
-        <div class="brand"><div class="logo" aria-hidden="true">✦</div><div><h1>聲音探索任務</h1><p>我的專屬聽力工具箱</p></div></div>
+        <div class="brand"><div class="logo" aria-hidden="true">✦</div><div><h1>聲音探索筆記</h1><p>我的低調支持工具箱</p></div></div>
         <div class="privacy">不會記錄姓名，也不會把答案傳出去</div>
       </header>
       <div class="progress"><div id="bar" class="bar"></div></div>
@@ -39,85 +39,85 @@
         <article class="screen active" data-screen="0">
           <div class="center">
             <div class="avatar" aria-hidden="true">🎧</div>
-            <div class="kicker">PRIVATE QUEST</div>
-            <h2 class="title">不是要妳變得跟別人一樣，<br>是幫妳找到更輕鬆的方式。</h2>
-            <p class="subtitle">今天不是考試，也不是要逼妳做決定。這是一個小任務：一起看看大腦怎麼聽聲音、在教室裡怎麼省力，以及妳可以選擇哪些讓自己更自在的工具。</p>
-            <button class="btn primary" onclick="go(1)">開始探索</button>
-            <p class="footerline">小提醒：妳可以只看、不回答；也可以只選妳想說的部分。這裡不是考試。</p>
+            <div class="kicker">PRIVATE NOTE</div>
+            <h2 class="title">不用變得跟別人一樣，<br>也可以讓自己過得更輕鬆。</h2>
+            <p class="subtitle">今天不是測驗，也不是要妳立刻改變。這是一份只屬於妳的聲音探索筆記：看看在不同情境裡，什麼會讓妳比較省力、比較安心，也保留妳想低調的選擇。</p>
+            <button class="btn primary" onclick="go(1)">開始看看</button>
+            <p class="footerline">妳可以只看、不回答；也可以只選妳想說的部分。這裡沒有標準答案。</p>
           </div>
         </article>
 
         <article class="screen" data-screen="1">
-          <div class="center"><div class="kicker">STEP 1</div><h2 class="title">大腦才是真正的聲音偵探</h2><p class="subtitle">耳朵像接收器，大腦像偵探。兩邊收到的線索越完整，大腦越容易判斷「誰在說話、聲音從哪裡來、哪一句才是重點」。</p></div>
+          <div class="center"><div class="kicker">STEP 1</div><h2 class="title">大腦會幫妳整理聲音線索</h2><p class="subtitle">耳朵像接收器，大腦負責整理線索。兩邊收到的線索越完整，大腦通常越容易判斷「誰在說話、聲音從哪裡來、哪一句才是重點」。</p></div>
           <div class="ear-map" aria-hidden="true"><div class="circle">👂<strong>左邊線索</strong></div><div class="arrow">→</div><div class="circle brain">🧠<strong style="font-size:14px">大腦整理</strong></div><div class="arrow">←</div><div class="circle">👂<strong>右邊線索</strong></div></div>
-          <div class="note">重點不是「妳聽不到」，而是：有些聲音大腦其實要花更多力氣才整理得出來。坐前面有幫助，但它不一定能解決「吵雜、多人同時說話、聲音方向」這些情境。</div>
-          <div class="student-guide"><div class="guide-title"><span>🌿</span>給妳的小提醒</div><div>妳不需要回答「為什麼」。妳可以只想想：哪些時候聽聲音比較累？哪些時候妳最希望大人低調一點陪妳？妳的感覺很重要，我們會慢慢找方法。</div></div>
+          <div class="note">重點不是「妳不行」，而是：有些聲音情境本來就比較複雜，大腦可能要花更多力氣整理。坐前面有幫助，但在吵雜、多人同時說話、或需要判斷方向時，可能還是會比較累。</div>
+          <div class="student-guide"><div class="guide-title"><span>🌿</span>給妳的小提醒</div><div>妳不需要立刻說出原因。可以先在心裡想想：哪些時候聽聲音比較累？哪些時候希望大人用低調一點的方式陪妳？妳的感覺可以被放在很重要的位置。</div></div>
         </article>
 
         <article class="screen" data-screen="2">
-          <div class="center"><div class="kicker">STEP 2</div><h2 class="title">聲音方向小任務</h2><p class="subtitle">建議戴耳機操作。這只是體驗「左右聲音線索」的概念，不是正式聽力測驗。</p></div>
+          <div class="center"><div class="kicker">STEP 2</div><h2 class="title">聲音方向小體驗</h2><p class="subtitle">建議戴耳機操作。這只是體驗「左右聲音線索」的概念，不是正式聽力測驗，也不代表妳做得好不好。</p></div>
           <div class="audio-area">
             <button class="audio-btn" onclick="playSound(-1,'左邊')">← 播放左邊聲音</button>
             <button class="audio-btn" onclick="playSound(1,'右邊')">播放右邊聲音 →</button>
           </div>
-          <div id="audioFeedback" class="note center">點一個按鈕，感覺看看大腦怎麼抓方向。</div>
+          <div id="audioFeedback" class="note center">點一個按鈕，感覺看看大腦怎麼利用方向線索。</div>
           <div class="grid two" style="margin-top:18px">
-            <button class="choice" onclick="selectChoice(this,'最想聽清楚朋友說話')"><strong>我最在意：</strong><br>朋友小聲說話時，我想更快聽清楚。</button>
-            <button class="choice" onclick="selectChoice(this,'上課比較省力')"><strong>我最在意：</strong><br>上課不用一直猜老師剛剛說什麼。</button>
-            <button class="choice" onclick="selectChoice(this,'更知道聲音方向')"><strong>我最在意：</strong><br>有人叫我或有車靠近時，我比較知道方向。</button>
-            <button class="choice" onclick="selectChoice(this,'不想被注意')"><strong>我最在意：</strong><br>就算用工具，也希望低調、不被一直問。</button>
+            <button class="choice" onclick="selectChoice(this,'最想聽清楚朋友說話')"><strong>我最在意：</strong><br>朋友小聲說話時，我希望自己不用猜太久。</button>
+            <button class="choice" onclick="selectChoice(this,'上課比較省力')"><strong>我最在意：</strong><br>上課時，我希望自己不用一直猜剛剛漏掉什麼。</button>
+            <button class="choice" onclick="selectChoice(this,'更知道聲音方向')"><strong>我最在意：</strong><br>有人叫我或有聲音靠近時，我比較知道方向。</button>
+            <button class="choice" onclick="selectChoice(this,'不想被注意')"><strong>我最在意：</strong><br>就算使用工具，也希望低調一點，不被一直注意。</button>
           </div>
-          <div class="student-guide"><div class="guide-title"><span>🫧</span>給妳的小提醒</div><div>這不是要證明妳哪裡不好，而是幫妳找出「哪一種情境比較費力」。如果妳最在意的是不要被注意，那也很合理，我們可以先從低調、不尷尬的方式開始。</div></div>
+          <div class="student-guide"><div class="guide-title"><span>🫧</span>給妳的小提醒</div><div>這不是要證明妳哪裡不好，而是幫妳找出「哪一種情境比較費力」。如果妳最在意的是低調、不被注意，這也很合理。我們可以先從妳覺得安全的方式開始。</div></div>
         </article>
 
         <article class="screen" data-screen="3">
-          <div class="center"><div class="kicker">STEP 3</div><h2 class="title">每個人都有自己的工具箱</h2><p class="subtitle">工具不是缺點證明，而是讓生活比較省力的選擇。有人用眼鏡、有人用牙套、有人用運動護具，也有人用聽力工具。</p></div>
+          <div class="center"><div class="kicker">STEP 3</div><h2 class="title">每個人都可以選擇適合自己的工具</h2><p class="subtitle">工具不是缺點證明，而是讓生活比較省力的選擇。有人用眼鏡、有人用牙套、有人用運動護具，也有人用聽力工具。重點不是別人怎麼看，而是它能不能幫妳過得更輕鬆。</p></div>
           <div class="grid three">
             <div class="card center"><div class="bigicon">👓</div><h3>看清楚工具</h3><p>眼鏡讓黑板、書本、表情更清楚。</p></div>
-            <div class="card center"><div class="bigicon">🦷</div><h3>微笑調整工具</h3><p>牙套不是笨，是讓牙齒咬合與笑容更舒服。</p></div>
-            <div class="card center"><div class="bigicon">🎧</div><h3>聽力支援工具</h3><p>助聽器或其他聽覺輔具，是讓大腦收到更多聲音線索。</p></div>
+            <div class="card center"><div class="bigicon">🦷</div><h3>微笑調整工具</h3><p>牙套可以讓咬合更舒服，也讓笑容更自在。</p></div>
+            <div class="card center"><div class="bigicon">🎧</div><h3>聽力支援工具</h3><p>助聽器或其他聽覺輔具，可以讓大腦收到更多聲音線索。</p></div>
           </div>
           <div class="tagrow"><span class="pill">低調</span><span class="pill">可選顏色</span><span class="pill">可練習回應同學</span><span class="pill">可以先試戴</span></div>
-          <div class="note">如果有人問：「那是什麼？」妳可以準備一句很短的答案，例如：「聽聲音比較清楚的小工具啦。」說完就換話題，不需要解釋全部。</div>
-          <div class="student-guide"><div class="guide-title"><span>💛</span>給妳的小提醒</div><div>有時候我們會很怕被別人用很快的方式判斷，所以也會忍不住先判斷別人。這不代表妳不好，只代表妳很在意自己被怎麼看見。妳可以慢慢練習：我和別人都不需要被一個標籤決定。</div></div>
+          <div class="note">如果有人問：「那是什麼？」妳可以準備一句很短、很自然的回答，例如：「讓我聽聲音比較清楚的小工具。」說完就可以換話題，妳不需要解釋全部。</div>
+          <div class="student-guide"><div class="guide-title"><span>💛</span>給妳的小提醒</div><div>有時候我們會很在意別人怎麼看，也可能因此更快判斷別人。這是保護自己的反應，不代表妳不好。可以慢慢練習：一個人不會被一個工具、一個狀況或一句話決定。</div></div>
         </article>
 
         <article class="screen" data-screen="4">
-          <div class="center"><div class="kicker">STEP 4</div><h2 class="title">兩條路都可以看清楚</h2><p class="subtitle">拉動滑桿，看一看：不同選擇會讓妳在哪些情境比較吃力、哪些情境比較省力。</p></div>
+          <div class="center"><div class="kicker">STEP 4</div><h2 class="title">把不同選擇看清楚</h2><p class="subtitle">拉動滑桿，看一看：不同選擇可能會讓哪些情境比較吃力、哪些情境比較省力。妳可以先理解，不用立刻決定。</p></div>
           <div class="timeline-wrap">
-            <div id="pathA" class="card path"><h3>只靠座位與習慣</h3><ul><li>坐前面時可能還可以。</li><li>教室吵、同學同時說話、戶外活動時，可能更費力。</li><li>身體可能會習慣偏向比較好聽的一邊，需要自己覺察姿勢。</li></ul></div>
-            <div id="pathB" class="card path dim"><h3>加入一個支援工具</h3><ul><li>大腦得到更多聲音線索，聽課與社交可能比較省力。</li><li>需要一段適應期，也需要和聽力師調整。</li><li>可以討論低調戴法與被同學問到時的回應。</li></ul></div>
+            <div id="pathA" class="card path"><h3>目前的方式：座位與習慣</h3><ul><li>坐前面、老師面向妳說話時，可能已經有幫助。</li><li>教室吵、同學同時說話、戶外活動時，可能需要多花力氣。</li><li>為了聽清楚，身體有時會不自覺偏向比較好聽的一邊，可以慢慢學著覺察。</li></ul></div>
+            <div id="pathB" class="card path dim"><h3>多一個支援：嘗試工具</h3><ul><li>大腦得到更多聲音線索，聽課、聊天或活動時可能比較省力。</li><li>一開始可能需要適應，也可以和聽力師慢慢調整。</li><li>可以討論低調戴法，也可以先練習被同學問到時怎麼回答。</li></ul></div>
           </div>
-          <div class="center"><input id="futureRange" class="slider" type="range" min="0" max="100" value="25" oninput="updateTimeline(this.value)"><div class="small">左邊：維持原本方式　｜　右邊：嘗試支援工具</div></div>
-          <div class="note" style="margin-top:18px">比較準確的說法是：長期少用某一側的聽覺線索，可能讓聽覺處理、聲音定位或噪音中聽話更吃力；是否適合助聽器、CROS、FM/遠端麥克風或其他方案，需要由聽力師依檢查結果評估。</div>
-          <div class="student-guide"><div class="guide-title"><span>🍀</span>給妳的小提醒</div><div>妳不用被嚇到，也不用一次做很大的改變。比較重要的是：哪一種方式讓妳比較省力、比較舒服、比較有安全感。工具可以先試、可以調整，也可以和大人一起討論。</div></div>
+          <div class="center"><input id="futureRange" class="slider" type="range" min="0" max="100" value="25" oninput="updateTimeline(this.value)"><div class="small">左邊：目前的方式　｜　右邊：多一個支援</div></div>
+          <div class="note" style="margin-top:18px">比較準確的說法是：有些人在長期少用某一側聲音線索時，可能在聲音定位、吵雜環境聽話或聽覺疲勞上更吃力。適合哪一種支持方式，需要由聽力師依檢查結果評估，不需要自己一個人決定。</div>
+          <div class="student-guide"><div class="guide-title"><span>🍀</span>給妳的小提醒</div><div>妳不用被嚇到，也不用一次做很大的改變。比較重要的是：哪一種方式讓妳比較省力、比較舒服、比較有安全感。工具可以先試、可以調整，也可以和信任的大人一起討論。</div></div>
         </article>
 
         <article class="screen" data-screen="5">
-          <div class="center"><div class="kicker">STEP 5</div><h2 class="title">我的低調升級計畫</h2><p class="subtitle">妳不用今天就決定一切。可以先選一個最小、最安全、最不尷尬的第一步。</p></div>
+          <div class="center"><div class="kicker">STEP 5</div><h2 class="title">我的第一步選擇</h2><p class="subtitle">妳不用今天就決定一切。可以先選一個最小、最安全、最不尷尬的第一步，讓自己慢慢有掌控感。</p></div>
           <div class="plan-list">
-            <button class="choice" onclick="pickPlan(this,'先在沒人的地方試戴 5 分鐘')"><span class="pill">第一步</span><br><strong>先在沒人的地方試戴 5 分鐘</strong><br><span class="small">例如：資源教室、家裡、老師辦公室。</span></button>
-            <button class="choice" onclick="pickPlan(this,'先準備一句同學問到時的回答')"><span class="pill">第一步</span><br><strong>先準備一句同學問到時的回答</strong><br><span class="small">例如：「讓我聽得比較清楚的小工具。」</span></button>
-            <button class="choice" onclick="pickPlan(this,'先請媽媽或老師陪我問聽力師有哪些低調戴法')"><span class="pill">第一步</span><br><strong>先問有哪些低調戴法</strong><br><span class="small">確認髮型、顏色、款式、配戴時間怎麼安排。</span></button>
+            <button class="choice" onclick="pickPlan(this,'先在安全的地方試用 5 分鐘')"><span class="pill">第一步</span><br><strong>先在安全的地方試用 5 分鐘</strong><br><span class="small">例如：資源教室、家裡，或只有信任大人在旁邊的地方。</span></button>
+            <button class="choice" onclick="pickPlan(this,'先準備一句被問到時的回答')"><span class="pill">第一步</span><br><strong>先準備一句被問到時的回答</strong><br><span class="small">例如：「讓我聽聲音比較清楚的小工具。」</span></button>
+            <button class="choice" onclick="pickPlan(this,'先請大人陪我問有哪些低調選擇')"><span class="pill">第一步</span><br><strong>先問有哪些低調選擇</strong><br><span class="small">確認髮型、顏色、款式、使用時間，還有上課時能不能用其他支持方式。</span></button>
           </div>
           <label for="reflection" class="small"><strong>我希望大人幫我注意的是：</strong></label>
-          <textarea id="reflection" class="reflection" placeholder="可以寫：不要當著同學面講、不要一直提醒我、我想先自己試試看……"></textarea>
-          <div class="center" style="margin-top:14px"><button class="btn soft" onclick="makeSummary()">產生我的小計畫</button></div>
+          <textarea id="reflection" class="reflection" placeholder="可以寫：請不要當著同學面講、不要一直提醒我、我想先自己試試看……"></textarea>
+          <div class="center" style="margin-top:14px"><button class="btn soft" onclick="makeSummary()">完成我的小計畫</button></div>
           <div id="summary" class="printbox hidden"></div>
           <div id="completePanel" class="complete-panel hidden" role="status" aria-live="polite">
             <div class="complete-badge" aria-hidden="true">✓</div>
-            <h3>探索任務完成！</h3>
-            <p>妳已經完成今天的聲音探索。今天不需要立刻做完美決定，只要留下「一個比較安全、比較低調、比較省力的下一步」就可以。</p>
+            <h3>今天的探索完成！</h3>
+            <p>妳已經完成今天的聲音探索。這不代表妳答應了任何事，只代表妳更了解自己，也留下了一個比較安全、比較低調、比較省力的下一步。</p>
             <div class="grid two" style="margin-top:14px">
-              <div class="finish-card"><div>🌱</div><div><strong>今天有完成的事</strong><span>妳看懂了：工具不是標籤，而是讓大腦更省力的方法。</span></div></div>
-              <div class="finish-card"><div>🛡️</div><div><strong>妳可以保留的界線</strong><span>妳可以要求大人低調陪妳練習，不要在同學面前公開討論。</span></div></div>
+              <div class="finish-card"><div>🌱</div><div><strong>今天完成的事</strong><span>妳看懂了：工具不是標籤，而是讓自己在某些情境更省力的方法。</span></div></div>
+              <div class="finish-card"><div>🛡️</div><div><strong>妳可以保留的界線</strong><span>妳可以請大人低調陪妳練習，不在同學面前公開討論。</span></div></div>
             </div>
             <div class="finish-actions">
               <button class="btn primary" onclick="restartQuest()">再看一次</button>
               <button type="button" class="btn ghost" onclick="printPDF()">列印／存成 PDF</button>
             </div>
           </div>
-          <div class="student-guide"><div class="guide-title"><span>🌷</span>給妳的小提醒</div><div>今天不用立刻答應每天都戴，也不用一次做到完美。願意想一想、試一小步、說出自己希望怎麼被陪伴，就已經是很棒的開始。</div></div>
+          <div class="student-guide"><div class="guide-title"><span>🌷</span>給妳的小提醒</div><div>今天不用立刻答應每天都使用，也不用一次做到完美。願意想一想、試一小步、說出自己希望怎麼被陪伴，就是一個有力量的開始。</div></div>
         </article>
       </section>
       <nav class="nav"><button id="prevBtn" class="btn ghost" onclick="prev()">← 上一步</button><button id="nextBtn" class="btn primary" onclick="next()">下一步 →</button></nav>
@@ -135,7 +135,7 @@
   function selectChoice(el,value){document.querySelectorAll('[data-screen="2"] .choice').forEach(b=>b.classList.remove('selected'));el.classList.add('selected');selectedNeed=value}
   function updateTimeline(v){const a=document.getElementById('pathA'),b=document.getElementById('pathB');if(Number(v)<50){a.classList.remove('dim');b.classList.add('dim')}else{a.classList.add('dim');b.classList.remove('dim')}}
   function pickPlan(el,value){document.querySelectorAll('[data-screen="5"] .choice').forEach(b=>b.classList.remove('selected'));el.classList.add('selected');selectedPlan=value}
-  function makeSummary(){const text=document.getElementById('reflection').value.trim();const summary=`我的聲音探索小計畫\n\n我目前最在意的是：${selectedNeed||'還沒選，可以再想想'}\n我願意先嘗試的第一步：${selectedPlan||'還沒選，可以先從最不尷尬的一步開始'}\n我希望大人幫我注意：${text||'請用低調、不公開、不催促的方式陪我練習。'}\n\n提醒：這不是考試，也不是一次就要成功。可以先試一小步，再一起調整。`;const box=document.getElementById('summary');box.textContent=summary;box.classList.remove('hidden');finishQuest()}
+  function makeSummary(){const text=document.getElementById('reflection').value.trim();const summary=`我的聲音探索小計畫\n\n我目前最在意的是：${selectedNeed||'還沒選，可以再想想'}\n我願意先嘗試的第一步：${selectedPlan||'還沒選，可以先從最安全、最不尷尬的一步開始'}\n我希望大人幫我注意：${text||'請用低調、不公開、不催促的方式陪我練習。'}\n\n提醒：這不是考試，也不是一次就要成功。可以先試一小步，再慢慢調整。`;const box=document.getElementById('summary');box.textContent=summary;box.classList.remove('hidden');finishQuest()}
   function finishQuest(){
     if(current!==max) go(max);
     const panel=document.getElementById('completePanel');
@@ -161,15 +161,15 @@
   function buildPrintArea(){
     const reflection=document.getElementById('reflection').value.trim()||'請用低調、不公開、不催促的方式陪我練習。';
     const need=selectedNeed||'還沒選，可以再想想。';
-    const plan=selectedPlan||'還沒選，可以先從最不尷尬的一步開始。';
+    const plan=selectedPlan||'還沒選，可以先從最安全、最不尷尬的一步開始。';
     const today=new Date().toLocaleDateString('zh-TW',{year:'numeric',month:'2-digit',day:'2-digit'});
     const html=`
-      <h1>聲音探索任務：我的小計畫</h1>
-      <div class="print-subtitle">日期：${escapeHTML(today)}<br>這不是考試，也不是一次就要成功。這是一張幫我和大人一起討論的溫柔提醒。</div>
+      <h1>聲音探索筆記：我的小計畫</h1>
+      <div class="print-subtitle">日期：${escapeHTML(today)}<br>這不是考試，也不是一次就要成功。這是一張幫我和信任的大人一起討論的溫柔提醒。</div>
       <div class="print-section"><h2>我目前最在意的是</h2><p>${escapeHTML(need)}</p></div>
       <div class="print-section"><h2>我願意先嘗試的第一步</h2><p>${escapeHTML(plan)}</p></div>
       <div class="print-section"><h2>我希望大人幫我注意</h2><p>${escapeHTML(reflection)}</p></div>
-      <div class="print-section"><h2>給自己的提醒</h2><p>工具不是標籤，而是讓大腦更省力的方法。
+      <div class="print-section"><h2>給自己的提醒</h2><p>工具不是標籤，而是讓自己在某些情境更省力的方法。
 我可以慢慢試、慢慢調整，也可以請大人用低調的方式陪我。</p></div>
       <div class="print-footer">建議：列印時可選擇「另存成 PDF」。若瀏覽器沒有反應，請使用鍵盤 Ctrl+P（Windows/Chromebook）或 Command+P（Mac）。</div>`;
     const area=document.getElementById('printArea');
@@ -179,7 +179,7 @@
   function printPDF(){
     buildPrintArea();
     const oldTitle=document.title;
-    document.title='聲音探索任務-我的小計畫';
+    document.title='聲音探索筆記-我的小計畫';
     try{
       window.print();
     }finally{
