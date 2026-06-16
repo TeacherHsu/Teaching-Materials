@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>性平小學堂｜互動式教材</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif; }
+    .fade-in { animation: fadeIn .22s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useEffect, useMemo, useState } = React;
+
+    const CONFIG = {
+      appTitle: '性平小學堂',
+      appSubtitle: '身體界線・適切言語・同意與求助',
+      emergencyLine: '113',
+      allowSpeech: true,
+    };
+
+    const lightQuestions = [
+      {
+        part: '手掌、肩膀',
+        correct: 'green',
+        msg: '綠燈區比較適合一般互動，例如擊掌或輕拍肩膀，但還是要看對方願不願意。',
+        teacherTip: '可以提醒：綠燈不是「任何時候都可以碰」，而是比較常見、仍需尊重對方感受。',
+      },
+      {
+        part: '手臂、背部、頭髮',
+        correct: 'yellow',
+        msg: '黃燈區要先問一問，對方說可以，才可以碰。',
+        teacherTip: '可以示範：「我可以拍拍你的手臂嗎？」、「不可以也沒關係。」',
+      },
+      {
+        part: '胸部、屁股、尿尿的地方\n也就是泳衣會蓋住的地方',
+        correct: 'red',
+        msg: '紅燈區是身體隱私部位，不可以被隨便看、隨便碰，也不可以隨便碰別人。',
+        teacherTip: '補充例外：洗澡、看醫生、照顧身體時，也需要安全大人陪同與清楚說明。',
+      },
+    ];
+
+    const wordQuestions = [
+      { text: '「請你不要靠我這麼近，我會不舒服。」', isKindAndSafe: true, msg: '這是清楚又有禮貌的保護句。' },
+      { text: '「你的屁股好大，好好笑！」', isKindAndSafe: false, msg: '這是在評論別人的身體，可能會讓人很難過。' },
+      { text: '「男生哭羞羞臉！」', isKindAndSafe: false, msg: '每個人都有情緒，男生、女生都可以難過或哭。' },
+      { text: '「我可以跟你牽手嗎？不想也沒關係。」', isKindAndSafe: true, msg: '先詢問，也接受對方拒絕，這就是尊重。' },
+    ];
+
+    const boundaryQuestions = [
+      {
+        situation: '同學覺得你的頭髮很好看，沒有先問就一直摸你的頭髮。',
+        prompt: '你可以怎麼說，最能保護自己的界線？',
+        options: [
+          '算了，忍一下就好，反正他是在稱讚我。',
+          '「請不要摸我的頭髮，我不喜歡這樣，請你停下來。」',
+          '直接罵他很噁心，讓他以後不敢靠近。',
+        ],
+        correctIndex: 1,
+        msg: '清楚說出「請停止、我不喜歡」，比忍耐或攻擊更能保護界線。',
+      },
+      {
+        situation: '你已經說不要了，但對方說：「又沒怎樣，開玩笑而已。」',
+        prompt: '下一步比較適合怎麼做？',
+        options: [
+          '「我已經說不要，請你停止。如果還繼續，我會告訴老師。」',
+          '他都說是開玩笑了，我就當作沒事。',
+          '我也去碰他，讓他知道我的感覺。',
+        ],
+        correctIndex: 0,
+        msg: '說明界線、要求停止，必要時找安全大人協助，是成熟的處理方式。',
+      },
+    ];
+
+    const languageQuestions = [
+      {
+        situation: '有人說：「你長得好胖，腿好粗喔！」',
+        prompt: '哪一句回應比較適切？',
+        options: [
+          '「你才胖！你全家都胖！」',
+          '「請不要評論我的身體，這會讓人不舒服。」',
+          '「對不起，我會努力變瘦。」',
+        ],
+        correctIndex: 1,
+        msg: '身體不是拿來取笑或評分的。可以堅定表達：不要評論我的身體。',
+      },
+      {
+        situation: '有人說：「女生就是要溫柔，你那麼兇很奇怪。」',
+        prompt: '哪一句回應比較能尊重自己，也尊重別人？',
+        options: [
+          '「每個人都有自己的個性，請你不要用性別規定別人。」',
+          '「對不起，我以後都不講話。」',
+          '「男生才更奇怪吧。」',
+        ],
+        correctIndex: 0,
+        msg: '這題重點是看見性別刻板印象：男生、女生都可以溫柔，也都可以勇敢表達。',
+      },
+    ];
+
+    const consentQuestions = [
+      { text: '我想抱抱好朋友，我先問：「我可以抱你一下嗎？」他說好，我才抱。', correct: true, msg: '取得同意，是尊重別人身體界線的重要步驟。' },
+      { text: '同學不想跟我牽手，但他沒有大聲拒絕，所以我可以直接牽。', correct: false, msg: '沒有清楚答應，就不算同意。安靜、猶豫、轉開，都可能是不願意。' },
+      { text: '同學說「不要鬧了啦」，就算他在笑，我也應該先停止。', correct: true, msg: '只要對方說不要，就要先停下來。笑不一定代表願意。' },
+      { text: '如果有人要求我保守讓我不舒服的秘密，我可以告訴安全大人。', correct: true, msg: '讓人害怕、不舒服、被威脅的秘密，不需要自己一個人承擔。' },
+    ];
+
+    function speak(text) {
+      if (!CONFIG.allowSpeech || !('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text.replace(/\n/g, ' '));
+      utterance.lang = 'zh-TW';
+      utterance.rate = 0.88;
+      utterance.pitch = 1.02;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function classNames(...items) {
+      return items.filter(Boolean).join(' ');
+    }
+
+    function PageShell({ children, bg = 'bg-slate-50' }) {
+      return <main className={classNames('min-h-screen p-4 md:p-8', bg)}>{children}</main>;
+    }
+
+    function BackButton({ onBack, label = '回首頁' }) {
+      return (
+        <button onClick={onBack} className="inline-flex items-center gap-2 mb-4 bg-white text-slate-700 font-bold px-4 py-2 rounded-full shadow-sm hover:bg-slate-100 focus:outline-none focus:ring-4 focus:ring-slate-200">
+          <span aria-hidden="true">←</span>{label}
+        </button>
+      );
+    }
+
+    function SpeechButton({ text, label = '朗讀題目' }) {
+      return (
+        <button onClick={() => speak(text)} className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold text-slate-600 shadow-sm border hover:bg-slate-50 focus:outline-none focus:ring-4 focus:ring-slate-200">
+          <span aria-hidden="true">🔊</span>{label}
+        </button>
+      );
+    }
+
+    function ProgressBar({ current, total, color = 'bg-blue-500' }) {
+      const percent = Math.max(0, Math.min(100, Math.round((current / total) * 100)));
+      return (
+        <div className="mb-6" aria-label={`進度 ${current} / ${total}`}>
+          <div className="flex justify-between text-sm font-bold text-slate-500 mb-2">
+            <span>學習進度</span><span>{current} / {total}</span>
+          </div>
+          <div className="h-3 bg-slate-100 rounded-full overflow-hidden">
+            <div className={classNames('h-full rounded-full transition-all', color)} style={{ width: `${percent}%` }} />
+          </div>
+        </div>
+      );
+    }
+
+    function TeacherTip({ children }) {
+      const [open, setOpen] = useState(false);
+      return (
+        <div className="mt-6 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4 text-left">
+          <button onClick={() => setOpen(!open)} className="font-bold text-slate-600 hover:text-slate-900 focus:outline-none focus:underline">
+            {open ? '收合教師提示 ▲' : '打開教師提示 ▼'}
+          </button>
+          {open && <p className="mt-3 text-slate-600 leading-relaxed">{children}</p>}
+        </div>
+      );
+    }
+
+
+    function BodyRegionVisual({ region }) {
+      const colorMap = {
+        green: {
+          box: 'bg-green-50 border-green-200',
+          tag: 'bg-green-500 text-white',
+          fill: '#22c55e',
+          fillSoft: '#bbf7d0',
+          title: '圖例：手掌、肩膀',
+          helper: '把亮起來的部位和文字一起看，會更清楚。',
+        },
+        yellow: {
+          box: 'bg-yellow-50 border-yellow-200',
+          tag: 'bg-yellow-400 text-yellow-950',
+          fill: '#f59e0b',
+          fillSoft: '#fde68a',
+          title: '圖例：手臂、背部、頭髮',
+          helper: '黃燈區要先問一問，對方說可以才可以碰。',
+        },
+        red: {
+          box: 'bg-red-50 border-red-200',
+          tag: 'bg-red-500 text-white',
+          fill: '#ef4444',
+          fillSoft: '#fecaca',
+          title: '圖例：泳衣會蓋住的地方',
+          helper: '紅燈區是隱私部位，不可以隨便看、隨便碰。',
+        },
+      };
+      const cfg = colorMap[region] || colorMap.green;
+
+      function ChildFigure({ mode = 'front' }) {
+        const isBack = mode === 'back';
+        return (
+          <svg viewBox="0 0 220 320" className="mx-auto w-full max-w-[220px]" role="img" aria-label={isBack ? '背面人體圖' : '正面人體圖'}>
+            <text x="110" y="24" textAnchor="middle" fontSize="16" fontWeight="700" fill="#475569">{isBack ? '背面' : '正面'}</text>
+
+            {/* hair */}
+            <path d="M72 58 Q82 24 110 22 Q138 24 148 58 L148 86 Q137 74 126 72 Q118 83 110 83 Q102 83 94 72 Q83 74 72 86 Z"
+              fill={region === 'yellow' && !isBack ? cfg.fill : '#5b4636'} opacity={region === 'yellow' && !isBack ? '0.92' : '1'} />
+
+            {/* head */}
+            <circle cx="110" cy="82" r="30" fill="#fde2c5" stroke="#94a3b8" strokeWidth="3" />
+
+            {/* neck */}
+            <rect x="100" y="108" width="20" height="16" rx="8" fill="#fde2c5" />
+
+            {/* torso */}
+            <rect x="76" y="122" width="68" height="82" rx="28" fill="#f8fafc" stroke="#94a3b8" strokeWidth="3" />
+
+            {/* shoulders highlight */}
+            {region === 'green' && (
+              <>
+                <ellipse cx="83" cy="132" rx="16" ry="10" fill={cfg.fill} opacity="0.95" />
+                <ellipse cx="137" cy="132" rx="16" ry="10" fill={cfg.fill} opacity="0.95" />
+              </>
+            )}
+
+            {/* red chest/swimsuit area */}
+            {region === 'red' && !isBack && (
+              <path d="M82 138 H138 L132 182 H88 Z" fill={cfg.fillSoft} stroke={cfg.fill} strokeWidth="3" />
+            )}
+
+            {/* arms */}
+            <rect x="48" y="132" width="22" height="76" rx="11" fill={region === 'yellow' ? cfg.fillSoft : '#fde2c5'} stroke={region === 'yellow' ? cfg.fill : '#94a3b8'} strokeWidth="3" />
+            <rect x="150" y="132" width="22" height="76" rx="11" fill={region === 'yellow' ? cfg.fillSoft : '#fde2c5'} stroke={region === 'yellow' ? cfg.fill : '#94a3b8'} strokeWidth="3" />
+
+            {/* palms highlight */}
+            <circle cx="59" cy="214" r="10" fill={region === 'green' ? cfg.fill : '#fde2c5'} stroke={region === 'green' ? cfg.fill : '#94a3b8'} strokeWidth="3" />
+            <circle cx="161" cy="214" r="10" fill={region === 'green' ? cfg.fill : '#fde2c5'} stroke={region === 'green' ? cfg.fill : '#94a3b8'} strokeWidth="3" />
+
+            {/* hips / swimsuit */}
+            <path d="M82 204 H138 L130 234 H90 Z" fill={region === 'red' ? cfg.fill : '#cbd5e1'} stroke={region === 'red' ? cfg.fill : '#94a3b8'} strokeWidth="3" />
+
+            {/* legs */}
+            <rect x="90" y="232" width="18" height="66" rx="9" fill="#fde2c5" stroke="#94a3b8" strokeWidth="3" />
+            <rect x="112" y="232" width="18" height="66" rx="9" fill="#fde2c5" stroke="#94a3b8" strokeWidth="3" />
+
+            {/* back highlight panel */}
+            {region === 'yellow' && isBack && (
+              <rect x="84" y="126" width="52" height="78" rx="20" fill={cfg.fillSoft} stroke={cfg.fill} strokeWidth="3" />
+            )}
+
+            {/* back hair overlay */}
+            {isBack && (
+              <path d="M72 58 Q82 24 110 22 Q138 24 148 58 L148 112 Q129 102 110 102 Q91 102 72 112 Z" fill="#5b4636" opacity="0.95" />
+            )}
+
+            {/* labels and arrows */}
+            {region === 'green' && !isBack && (
+              <>
+                <text x="20" y="122" fontSize="13" fontWeight="700" fill={cfg.fill}>肩膀</text>
+                <line x1="48" y1="118" x2="72" y2="129" stroke={cfg.fill} strokeWidth="3" />
+                <text x="170" y="245" fontSize="13" fontWeight="700" fill={cfg.fill}>手掌</text>
+                <line x1="164" y1="236" x2="161" y2="224" stroke={cfg.fill} strokeWidth="3" />
+              </>
+            )}
+
+            {region === 'yellow' && !isBack && (
+              <>
+                <text x="18" y="52" fontSize="13" fontWeight="700" fill={cfg.fill}>頭髮</text>
+                <line x1="50" y1="56" x2="80" y2="60" stroke={cfg.fill} strokeWidth="3" />
+                <text x="12" y="154" fontSize="13" fontWeight="700" fill={cfg.fill}>手臂</text>
+                <line x1="40" y1="158" x2="48" y2="158" stroke={cfg.fill} strokeWidth="3" />
+              </>
+            )}
+
+            {region === 'red' && !isBack && (
+              <>
+                <text x="156" y="154" fontSize="13" fontWeight="700" fill={cfg.fill}>胸部</text>
+                <line x1="150" y1="158" x2="136" y2="160" stroke={cfg.fill} strokeWidth="3" />
+                <text x="150" y="224" fontSize="13" fontWeight="700" fill={cfg.fill}>屁股</text>
+                <line x1="145" y1="228" x2="132" y2="220" stroke={cfg.fill} strokeWidth="3" />
+                <text x="10" y="224" fontSize="13" fontWeight="700" fill={cfg.fill}>尿尿的地方</text>
+                <line x1="88" y1="228" x2="98" y2="220" stroke={cfg.fill} strokeWidth="3" />
+              </>
+            )}
+
+            {region === 'yellow' && isBack && (
+              <>
+                <text x="151" y="160" fontSize="13" fontWeight="700" fill={cfg.fill}>背部</text>
+                <line x1="145" y1="164" x2="136" y2="164" stroke={cfg.fill} strokeWidth="3" />
+              </>
+            )}
+          </svg>
+        );
+      }
+
+      return (
+        <div className={classNames('mb-6 rounded-3xl border-2 p-4 md:p-5 shadow-sm', cfg.box)}>
+          <div className="mb-3 flex flex-wrap items-center gap-3">
+            <span className={classNames('rounded-full px-4 py-2 text-sm font-black', cfg.tag)}>{cfg.title}</span>
+            <span className="text-sm font-bold text-slate-600">{cfg.helper}</span>
+          </div>
+
+          <div className={classNames('grid gap-4', region === 'yellow' ? 'md:grid-cols-3' : 'md:grid-cols-[1.05fr_0.95fr]')}>
+            {region === 'yellow' ? (
+              <>
+                <div className="rounded-2xl bg-white p-3 shadow-inner"><ChildFigure mode="front" /></div>
+                <div className="rounded-2xl bg-white p-3 shadow-inner"><ChildFigure mode="back" /></div>
+              </>
+            ) : (
+              <div className="rounded-2xl bg-white p-3 shadow-inner"><ChildFigure mode="front" /></div>
+            )}
+
+            <div className="rounded-2xl bg-white p-4 text-left shadow-inner">
+              <p className="mb-3 text-lg font-black text-slate-800">看圖小提醒</p>
+              {region === 'green' && (
+                <ul className="space-y-2 text-base leading-relaxed text-slate-700">
+                  <li>• 綠色亮起來的是手掌和肩膀。</li>
+                  <li>• 這些是比較常見的互動部位，例如擊掌、輕拍肩膀。</li>
+                  <li>• 還是要看對方願不願意，不可以自己決定就去碰。</li>
+                </ul>
+              )}
+              {region === 'yellow' && (
+                <ul className="space-y-2 text-base leading-relaxed text-slate-700">
+                  <li>• 黃色亮起來的是手臂、背部、頭髮。</li>
+                  <li>• 這些部位要先問對方，對方說可以才可以碰。</li>
+                  <li>• 對方說不要、躲開、沒有回答，都要停下來。</li>
+                </ul>
+              )}
+              {region === 'red' && (
+                <ul className="space-y-2 text-base leading-relaxed text-slate-700">
+                  <li>• 紅色亮起來的是泳衣會蓋住的地方。</li>
+                  <li>• 也就是胸部、屁股、尿尿的地方，屬於隱私部位。</li>
+                  <li>• 如果有人碰這些地方，要記得離開、說停、告訴安全大人。</li>
+                </ul>
+              )}
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    function FeedbackModal({ feedback }) {
+      useEffect(() => {
+        const onKeyDown = (event) => {
+          if (event.key === 'Enter' || event.key === ' ') feedback.onNext();
+        };
+        window.addEventListener('keydown', onKeyDown);
+        return () => window.removeEventListener('keydown', onKeyDown);
+      }, [feedback]);
+
+      return (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4" role="dialog" aria-modal="true">
+          <div className="w-full max-w-sm rounded-3xl bg-white p-7 text-center shadow-2xl fade-in">
+            <div className={classNames('mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full text-5xl', feedback.isCorrect ? 'bg-green-100' : 'bg-amber-100')}>
+              {feedback.isCorrect ? '✅' : '💭'}
+            </div>
+            <h2 className={classNames('mb-3 text-2xl font-black', feedback.isCorrect ? 'text-green-700' : 'text-amber-700')}>
+              {feedback.title || (feedback.isCorrect ? '做得很好！' : '再想一想')}
+            </h2>
+            <p className="mb-7 text-xl leading-relaxed text-slate-700">{feedback.message}</p>
+            <button onClick={feedback.onNext} className={classNames('w-full rounded-full px-8 py-4 text-xl font-black shadow-lg focus:outline-none focus:ring-4 focus:ring-offset-2', feedback.isCorrect ? 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-200' : 'bg-slate-200 text-slate-800 hover:bg-slate-300 focus:ring-slate-200')}>
+              {feedback.isCorrect ? '繼續下一題' : '回去再試一次'}
+            </button>
+          </div>
+        </div>
+      );
+    }
+
+    function GradeTwoGame({ onBack }) {
+      const [stage, setStage] = useState(0);
+      const [feedback, setFeedback] = useState(null);
+      const [lightIndex, setLightIndex] = useState(0);
+      const [wordIndex, setWordIndex] = useState(0);
+      const [safeAdult1, setSafeAdult1] = useState('');
+      const [safeAdult2, setSafeAdult2] = useState('');
+      const safeAdultsDone = safeAdult1.trim().length > 0 && safeAdult2.trim().length > 0;
+      const total = lightQuestions.length + wordQuestions.length + 1;
+      const current = stage === 1 ? lightIndex + 1 : stage === 2 ? lightQuestions.length + wordIndex + 1 : stage >= 3 ? total : 0;
+
+      function answerLight(color) {
+        const q = lightQuestions[lightIndex];
+        const ok = color === q.correct;
+        setFeedback({
+          isCorrect: ok,
+          message: ok ? q.msg : '這個部位的燈號好像不是這個。請再看一次題目。',
+          onNext: ok
+            ? () => { setFeedback(null); lightIndex < lightQuestions.length - 1 ? setLightIndex(lightIndex + 1) : setStage(2); }
+            : () => setFeedback(null),
+        });
+      }
+
+      function answerWord(ans) {
+        const q = wordQuestions[wordIndex];
+        const ok = ans === q.isKindAndSafe;
+        setFeedback({
+          isCorrect: ok,
+          message: ok ? q.msg : '想一想：這句話會讓人安心，還是會讓人受傷呢？',
+          onNext: ok
+            ? () => { setFeedback(null); wordIndex < wordQuestions.length - 1 ? setWordIndex(wordIndex + 1) : setStage(3); }
+            : () => setFeedback(null),
+        });
+      }
+
+      return (
+        <PageShell bg="bg-yellow-50">
+          <BackButton onBack={onBack} />
+          {feedback && <FeedbackModal feedback={feedback} />}
+          <section className="mx-auto max-w-3xl overflow-hidden rounded-3xl border-4 border-yellow-200 bg-white shadow-xl">
+            <header className="bg-yellow-300 p-6 text-center">
+              <h1 className="text-3xl md:text-4xl font-black text-yellow-950">🛡️ 我的身體小堡壘</h1>
+            </header>
+            <div className="p-6 md:p-10">
+              {stage > 0 && stage < 4 && <ProgressBar current={current} total={total} color="bg-yellow-500" />}
+
+              {stage === 0 && (
+                <div className="text-center fade-in">
+                  <div className="mb-8 rounded-3xl bg-yellow-100 p-8">
+                    <div className="mb-4 text-7xl" aria-hidden="true">🏰</div>
+                    <h2 className="mb-4 text-2xl font-black text-slate-800">嗨！勇敢的小騎士！</h2>
+                    <p className="text-xl leading-relaxed text-slate-700">你的身體就像一座珍貴的小堡壘。你是堡壘的主人，可以學會保護自己，也尊重別人的身體。</p>
+                  </div>
+                  <SpeechButton text="你的身體就像一座珍貴的小堡壘。你是堡壘的主人，可以學會保護自己，也尊重別人的身體。" />
+                  <div className="mt-6">
+                    <button onClick={() => setStage(1)} className="rounded-full bg-yellow-500 px-12 py-4 text-2xl font-black text-white shadow-lg hover:bg-yellow-600 focus:outline-none focus:ring-4 focus:ring-yellow-200">開始闖關</button>
+                  </div>
+                </div>
+              )}
+
+              {stage === 1 && (
+                <div className="text-center fade-in">
+                  <h2 className="mb-4 inline-block rounded-2xl bg-yellow-100 p-4 text-2xl font-black text-slate-800">第一關：身體紅綠燈 🚦</h2>
+                  <div className="mb-4"><SpeechButton text={`請問這個部位屬於什麼燈區？${lightQuestions[lightIndex].part}`} /></div>
+                  <p className="mb-4 text-xl text-slate-600">請問這個部位屬於什麼燈區？</p>
+                  <div className="mb-4 whitespace-pre-line rounded-3xl border-4 border-slate-200 bg-slate-100 px-4 py-8 text-2xl md:text-3xl font-black text-slate-800 shadow-inner">{lightQuestions[lightIndex].part}</div>
+                  <BodyRegionVisual region={lightQuestions[lightIndex].correct} />
+                  <div className="grid gap-4 md:grid-cols-3">
+                    <button onClick={() => answerLight('green')} className="rounded-3xl bg-green-500 p-6 text-xl font-black text-white shadow-md hover:bg-green-600 focus:outline-none focus:ring-4 focus:ring-green-200">🟢 綠燈區<br /><span className="text-sm font-bold">比較常見的互動</span></button>
+                    <button onClick={() => answerLight('yellow')} className="rounded-3xl bg-yellow-400 p-6 text-xl font-black text-yellow-950 shadow-md hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-200">🟡 黃燈區<br /><span className="text-sm font-bold">先問，同意才行</span></button>
+                    <button onClick={() => answerLight('red')} className="rounded-3xl bg-red-500 p-6 text-xl font-black text-white shadow-md hover:bg-red-600 focus:outline-none focus:ring-4 focus:ring-red-200">🔴 紅燈區<br /><span className="text-sm font-bold">隱私部位</span></button>
+                  </div>
+                  <TeacherTip>{lightQuestions[lightIndex].teacherTip}</TeacherTip>
+                </div>
+              )}
+
+              {stage === 2 && (
+                <div className="text-center fade-in">
+                  <h2 className="mb-4 inline-block rounded-2xl bg-blue-100 p-4 text-2xl font-black text-slate-800">第二關：安心保護句 🪄</h2>
+                  <div className="mb-4"><SpeechButton text={`這句話是安心保護句，還是會讓人受傷的話？${wordQuestions[wordIndex].text}`} /></div>
+                  <p className="mb-6 text-xl text-slate-600">這句話是「安心保護句」，還是「會讓人受傷的話」？</p>
+                  <div className="mb-8 flex min-h-[150px] items-center justify-center rounded-3xl border-4 border-blue-200 bg-blue-50 px-6 py-10 text-2xl md:text-3xl font-black text-blue-950 shadow-inner">{wordQuestions[wordIndex].text}</div>
+                  <div className="flex flex-col justify-center gap-4 md:flex-row">
+                    <button onClick={() => answerWord(true)} className="rounded-3xl border-4 border-green-400 bg-white p-7 text-2xl font-black text-green-600 shadow-lg hover:bg-green-50 focus:outline-none focus:ring-4 focus:ring-green-200">⭕ 安心保護句</button>
+                    <button onClick={() => answerWord(false)} className="rounded-3xl border-4 border-red-400 bg-white p-7 text-2xl font-black text-red-600 shadow-lg hover:bg-red-50 focus:outline-none focus:ring-4 focus:ring-red-200">❌ 受傷的話</button>
+                  </div>
+                  <TeacherTip>可以讓學生補一句更好的說法，例如：「請不要這樣說。」、「我不喜歡你評論我的身體。」</TeacherTip>
+                </div>
+              )}
+
+              {stage === 3 && (
+                <div className="text-center fade-in">
+                  <h2 className="mb-4 inline-block rounded-2xl bg-red-100 p-4 text-2xl font-black text-slate-800">第三關：安全求助三步驟 🧑‍🏫</h2>
+                  <div className="mb-4"><SpeechButton text="如果有人讓你不舒服，可以記住三個動作：離開、大聲說停止、告訴安全大人。請寫下兩位你可以求助的安全大人。" /></div>
+                  <p className="mb-6 text-xl leading-relaxed text-slate-700">如果有人讓你不舒服，記住三個動作：</p>
+                  <div className="mb-8 grid gap-4 text-left">
+                    <div className="rounded-2xl bg-orange-100 p-5 text-2xl font-black text-orange-800">🏃 1. 離開：先讓自己到安全的地方</div>
+                    <div className="rounded-2xl bg-red-100 p-5 text-2xl font-black text-red-800">🗣️ 2. 說停：大聲說「不要、停止」</div>
+                    <div className="rounded-2xl bg-green-100 p-5 text-2xl font-black text-green-800">👩‍🏫 3. 告訴：找安全大人幫忙</div>
+                  </div>
+                  <div className="rounded-3xl border-2 border-dashed border-slate-300 bg-slate-50 p-6">
+                    <h3 className="mb-4 text-xl font-black text-slate-700">請寫下 2 位安全大人</h3>
+                    <input value={safeAdult1} onChange={e => setSafeAdult1(e.target.value)} type="text" placeholder="例如：媽媽" className="mb-4 w-full rounded-xl border-2 border-slate-300 p-4 text-center text-2xl outline-none focus:border-blue-500" />
+                    <input value={safeAdult2} onChange={e => setSafeAdult2(e.target.value)} type="text" placeholder="例如：王老師" className="mb-6 w-full rounded-xl border-2 border-slate-300 p-4 text-center text-2xl outline-none focus:border-blue-500" />
+                    {!safeAdultsDone && <p className="mb-4 font-bold text-amber-700">請先寫下兩位安全大人，再完成任務。</p>}
+                    <button disabled={!safeAdultsDone} onClick={() => setStage(4)} className={classNames('rounded-full px-12 py-4 text-2xl font-black text-white shadow-lg focus:outline-none focus:ring-4 focus:ring-green-200', safeAdultsDone ? 'bg-green-500 hover:bg-green-600' : 'cursor-not-allowed bg-slate-300')}>我記住了！完成任務</button>
+                  </div>
+                </div>
+              )}
+
+              {stage === 4 && (
+                <div className="text-center fade-in">
+                  <div className="mb-6 text-8xl" aria-hidden="true">🏅</div>
+                  <h2 className="mb-4 text-4xl font-black text-yellow-600">恭喜過關！</h2>
+                  <div className="mx-auto mb-8 max-w-xl rounded-3xl bg-yellow-50 p-6 text-left text-xl leading-relaxed text-slate-700">
+                    <p className="font-black text-slate-800">我學會：</p>
+                    <p>✅ 身體是自己的。</p>
+                    <p>✅ 先問，同意才可以。</p>
+                    <p>✅ 不舒服時，可以告訴安全大人。</p>
+                    <p className="mt-4 text-base text-slate-500">我的安全大人：{safeAdult1}、{safeAdult2}</p>
+                  </div>
+                  <button onClick={onBack} className="rounded-full bg-blue-600 px-12 py-4 text-xl font-black text-white shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200">回首頁</button>
+                </div>
+              )}
+            </div>
+          </section>
+        </PageShell>
+      );
+    }
+
+    function MultipleChoiceMission({ title, subtitle, question, index, total, onAnswer, color = 'indigo' }) {
+      const text = `${title}。${question.situation} ${question.prompt}`;
+      return (
+        <div className="fade-in">
+          <ProgressBar current={index + 1} total={total} color="bg-indigo-600" />
+          <div className="mb-6 border-b-2 border-indigo-100 pb-4 md:flex md:items-center md:justify-between">
+            <div>
+              <span className="mb-3 inline-block rounded-full bg-indigo-100 px-4 py-2 text-lg font-black text-indigo-800">{subtitle}</span>
+              <h2 className="text-2xl font-black text-slate-800">{title}</h2>
+            </div>
+            <div className="mt-3 md:mt-0"><SpeechButton text={text} /></div>
+          </div>
+          <div className="mb-6 rounded-2xl border border-blue-200 bg-blue-50 p-6 shadow-sm">
+            <p className="mb-2 text-lg font-black text-blue-900">狀況題</p>
+            <p className="text-xl leading-relaxed text-slate-800">{question.situation}</p>
+          </div>
+          <h3 className="mb-4 text-xl font-black text-slate-700">{question.prompt}</h3>
+          <div className="grid gap-4">
+            {question.options.map((opt, idx) => (
+              <button key={idx} onClick={() => onAnswer(idx)} className="rounded-2xl border-2 border-slate-200 bg-white p-5 text-left text-lg md:text-xl leading-relaxed shadow-sm transition-all hover:border-indigo-400 hover:bg-indigo-50 focus:outline-none focus:ring-4 focus:ring-indigo-200">
+                <span className="mr-2 font-black text-indigo-600">{String.fromCharCode(65 + idx)}.</span>{opt}
+              </button>
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    function GradeFourGame({ onBack }) {
+      const [stage, setStage] = useState(0);
+      const [feedback, setFeedback] = useState(null);
+      const [boundaryIndex, setBoundaryIndex] = useState(0);
+      const [languageIndex, setLanguageIndex] = useState(0);
+      const [consentIndex, setConsentIndex] = useState(0);
+      const total = boundaryQuestions.length + languageQuestions.length + consentQuestions.length;
+
+      function handleChoice(question, idx, next) {
+        const ok = idx === question.correctIndex;
+        setFeedback({
+          isCorrect: ok,
+          message: ok ? question.msg : '這個選項可能讓自己委屈、讓衝突變大，或沒有清楚表達界線。再試一次。',
+          onNext: ok ? next : () => setFeedback(null),
+        });
+      }
+
+      function handleConsent(ans) {
+        const q = consentQuestions[consentIndex];
+        const ok = ans === q.correct;
+        setFeedback({
+          isCorrect: ok,
+          message: ok ? q.msg : '再想想：有沒有清楚同意？對方說不要時，有沒有停止？',
+          onNext: ok
+            ? () => { setFeedback(null); consentIndex < consentQuestions.length - 1 ? setConsentIndex(consentIndex + 1) : setStage(4); }
+            : () => setFeedback(null),
+        });
+      }
+
+      return (
+        <PageShell bg="bg-indigo-50">
+          <BackButton onBack={onBack} label="回總部" />
+          {feedback && <FeedbackModal feedback={feedback} />}
+          <section className="mx-auto max-w-4xl overflow-hidden rounded-3xl border-4 border-indigo-200 bg-white shadow-xl">
+            <header className="bg-indigo-600 p-6 text-center">
+              <h1 className="text-3xl md:text-4xl font-black tracking-wide text-white">🕵️ 人際特務訓練營</h1>
+            </header>
+            <div className="p-6 md:p-10">
+              {stage === 0 && (
+                <div className="text-center fade-in">
+                  <div className="mb-8 rounded-3xl bg-indigo-100 p-8">
+                    <div className="mb-4 text-7xl" aria-hidden="true">🫧</div>
+                    <h2 className="mb-4 text-3xl font-black text-indigo-950">歡迎來到特務訓練營！</h2>
+                    <p className="text-xl leading-relaxed text-indigo-900">優秀的特務懂得保護自己的隱形泡泡，也能尊重別人的泡泡。今天要練習三個任務：界線、言語、同意。</p>
+                  </div>
+                  <SpeechButton text="優秀的特務懂得保護自己的隱形泡泡，也能尊重別人的泡泡。今天要練習三個任務：界線、言語、同意。" />
+                  <div className="mt-6"><button onClick={() => setStage(1)} className="rounded-full bg-indigo-600 px-12 py-4 text-2xl font-black text-white shadow-lg hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-200">接受任務</button></div>
+                </div>
+              )}
+
+              {stage === 1 && (
+                <>
+                  <MultipleChoiceMission
+                    title="保衛隱形泡泡 🫧"
+                    subtitle="任務一"
+                    question={boundaryQuestions[boundaryIndex]}
+                    index={boundaryIndex}
+                    total={total}
+                    onAnswer={(idx) => handleChoice(boundaryQuestions[boundaryIndex], idx, () => { setFeedback(null); boundaryIndex < boundaryQuestions.length - 1 ? setBoundaryIndex(boundaryIndex + 1) : setStage(2); })}
+                  />
+                  <TeacherTip>可以帶學生練習句型：「請停止＋我不喜歡／我不舒服＋如果繼續我會找老師。」</TeacherTip>
+                </>
+              )}
+
+              {stage === 2 && (
+                <>
+                  <MultipleChoiceMission
+                    title="言語過濾器 🗣️"
+                    subtitle="任務二"
+                    question={languageQuestions[languageIndex]}
+                    index={boundaryQuestions.length + languageIndex}
+                    total={total}
+                    onAnswer={(idx) => handleChoice(languageQuestions[languageIndex], idx, () => { setFeedback(null); languageIndex < languageQuestions.length - 1 ? setLanguageIndex(languageIndex + 1) : setStage(3); })}
+                  />
+                  <TeacherTip>提醒學生：適切言語不是不能表達不滿，而是不用身體、性別、能力或家庭攻擊別人。</TeacherTip>
+                </>
+              )}
+
+              {stage === 3 && (
+                <div className="fade-in text-center">
+                  <ProgressBar current={boundaryQuestions.length + languageQuestions.length + consentIndex + 1} total={total} color="bg-indigo-600" />
+                  <div className="mb-6 border-b-2 border-indigo-100 pb-4 md:flex md:items-center md:justify-between">
+                    <div className="text-left">
+                      <span className="mb-3 inline-block rounded-full bg-indigo-100 px-4 py-2 text-lg font-black text-indigo-800">任務三</span>
+                      <h2 className="text-2xl font-black text-slate-800">特務的同意法則 🤝</h2>
+                    </div>
+                    <div className="mt-3 md:mt-0"><SpeechButton text={`請判斷這個做法是對還是錯。${consentQuestions[consentIndex].text}`} /></div>
+                  </div>
+                  <p className="mb-6 text-xl leading-relaxed text-slate-600">請判斷這個做法是對，還是錯。</p>
+                  <div className="mb-8 flex min-h-[170px] items-center justify-center rounded-3xl border-2 border-indigo-200 bg-indigo-50 px-8 py-10 text-2xl font-black leading-relaxed text-indigo-950 shadow-inner">{consentQuestions[consentIndex].text}</div>
+                  <div className="flex justify-center gap-6">
+                    <button onClick={() => handleConsent(true)} className="flex h-32 w-32 items-center justify-center rounded-full bg-blue-500 text-5xl font-black text-white shadow-xl hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-200">O</button>
+                    <button onClick={() => handleConsent(false)} className="flex h-32 w-32 items-center justify-center rounded-full bg-red-500 text-5xl font-black text-white shadow-xl hover:bg-red-600 focus:outline-none focus:ring-4 focus:ring-red-200">X</button>
+                  </div>
+                  <TeacherTip>同意權三句話：清楚答應才是同意；沒有回答不算同意；說不要就要停止。</TeacherTip>
+                </div>
+              )}
+
+              {stage === 4 && (
+                <div className="text-center fade-in">
+                  <div className="mb-6 text-8xl" aria-hidden="true">💳</div>
+                  <h2 className="mb-4 text-4xl font-black text-indigo-800">訓練完成！高階特務！</h2>
+                  <div className="mx-auto mb-8 max-w-2xl rounded-3xl bg-indigo-50 p-6 text-left text-xl leading-relaxed text-slate-700">
+                    <p className="font-black text-slate-800">特務任務總結：</p>
+                    <p>✅ 我的身體界線，可以清楚說出來。</p>
+                    <p>✅ 我可以表達想法，但不攻擊別人的身體、性別或外表。</p>
+                    <p>✅ 沒有清楚答應，就不算同意。</p>
+                    <p>✅ 讓我害怕、不舒服的秘密，可以告訴安全大人。</p>
+                    <p className="mt-4 rounded-2xl bg-white p-4 font-black text-indigo-700">求助提醒：遇到危險或不知道怎麼辦，可以找老師、家人、輔導室，也可以撥打 {CONFIG.emergencyLine}。</p>
+                  </div>
+                  <button onClick={onBack} className="rounded-full bg-indigo-600 px-12 py-4 text-xl font-black text-white shadow-lg hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-200">回總部</button>
+                </div>
+              )}
+            </div>
+          </section>
+        </PageShell>
+      );
+    }
+
+    function Home({ setLevel }) {
+      return (
+        <PageShell bg="bg-slate-50">
+          <section className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-3xl items-center justify-center">
+            <div className="w-full rounded-3xl border border-slate-100 bg-white p-8 text-center shadow-2xl md:p-12">
+              <div className="mb-4 text-7xl" aria-hidden="true">🌈</div>
+              <h1 className="mb-4 text-4xl md:text-5xl font-black tracking-tight text-slate-800">{CONFIG.appTitle}</h1>
+              <p className="mb-10 text-xl font-bold text-slate-500">{CONFIG.appSubtitle}</p>
+              <div className="grid gap-6 md:grid-cols-2">
+                <button onClick={() => setLevel(2)} className="group relative overflow-hidden rounded-3xl border-2 border-transparent bg-yellow-100 p-8 text-left transition-all hover:-translate-y-1 hover:border-yellow-400 hover:bg-yellow-200 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-yellow-200">
+                  <div className="mb-4 text-5xl" aria-hidden="true">🏰</div>
+                  <h2 className="mb-2 text-2xl font-black text-yellow-950">初心者挑戰</h2>
+                  <p className="font-bold text-yellow-800">我的身體小堡壘</p>
+                  <p className="mt-3 text-sm font-bold text-yellow-700">適合：具象圖像、簡短句型、紅綠燈判斷</p>
+                </button>
+                <button onClick={() => setLevel(4)} className="group relative overflow-hidden rounded-3xl border-2 border-transparent bg-indigo-100 p-8 text-left transition-all hover:-translate-y-1 hover:border-indigo-400 hover:bg-indigo-200 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-indigo-200">
+                  <div className="mb-4 text-5xl" aria-hidden="true">🕵️</div>
+                  <h2 className="mb-2 text-2xl font-black text-indigo-950">智者挑戰</h2>
+                  <p className="font-bold text-indigo-800">人際特務訓練營</p>
+                  <p className="mt-3 text-sm font-bold text-indigo-700">適合：情境判斷、界線句型、同意權練習</p>
+                </button>
+              </div>
+              <div className="mt-10 rounded-2xl bg-slate-50 p-4 text-left text-sm leading-relaxed text-slate-500">
+                <p className="font-black text-slate-600">給老師的話</p>
+                <p>建議每題作答後追問：「你怎麼知道？」、「如果對方還是不停，可以找誰？」避免學生只記答案，未形成可遷移的社會情境判斷。</p>
+              </div>
+            </div>
+          </section>
+        </PageShell>
+      );
+    }
+
+    function App() {
+      const [level, setLevel] = useState(0);
+      useEffect(() => () => { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); }, []);
+      if (level === 2) return <GradeTwoGame onBack={() => setLevel(0)} />;
+      if (level === 4) return <GradeFourGame onBack={() => setLevel(0)} />;
+      return <Home setLevel={setLevel} />;
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
