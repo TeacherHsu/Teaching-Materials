@@ -1,0 +1,112 @@
+{
+  "contract_version": 1,
+  "lesson_id": "115HG0A04",
+  "title": "115G1A 翰版首冊 L04：找一找",
+  "text": "|歡歡喜喜上課去|\n|找一找|\n|什麼彎彎在海裡|\n|什麼彎彎掛雨衣|",
+  "overrides": {
+    "1": {
+      "char": "歡",
+      "zhuyin": "ㄏㄨㄢ"
+    },
+    "2": {
+      "char": "歡",
+      "zhuyin": "ㄏㄨㄢ"
+    },
+    "3": {
+      "char": "喜",
+      "zhuyin": "ㄒㄧˇ"
+    },
+    "4": {
+      "char": "喜",
+      "zhuyin": "ㄒㄧˇ"
+    },
+    "5": {
+      "char": "上",
+      "zhuyin": "ㄕㄤˋ"
+    },
+    "6": {
+      "char": "課",
+      "zhuyin": "ㄎㄜˋ"
+    },
+    "7": {
+      "char": "去",
+      "zhuyin": "ㄑㄩˋ"
+    },
+    "11": {
+      "char": "找",
+      "zhuyin": "ㄓㄠˇ"
+    },
+    "12": {
+      "char": "一",
+      "zhuyin": "ㄧ"
+    },
+    "13": {
+      "char": "找",
+      "zhuyin": "ㄓㄠˇ"
+    },
+    "17": {
+      "char": "什",
+      "zhuyin": "ㄕㄣˊ"
+    },
+    "18": {
+      "char": "麼",
+      "zhuyin": "ㄇㄜ˙"
+    },
+    "19": {
+      "char": "彎",
+      "zhuyin": "ㄨㄢ"
+    },
+    "20": {
+      "char": "彎",
+      "zhuyin": "ㄨㄢ"
+    },
+    "21": {
+      "char": "在",
+      "zhuyin": "ㄗㄞˋ"
+    },
+    "22": {
+      "char": "海",
+      "zhuyin": "ㄏㄞˇ"
+    },
+    "23": {
+      "char": "裡",
+      "zhuyin": "ㄌㄧˇ"
+    },
+    "27": {
+      "char": "什",
+      "zhuyin": "ㄕㄣˊ"
+    },
+    "28": {
+      "char": "麼",
+      "zhuyin": "ㄇㄜ˙"
+    },
+    "29": {
+      "char": "彎",
+      "zhuyin": "ㄨㄢ"
+    },
+    "30": {
+      "char": "彎",
+      "zhuyin": "ㄨㄢ"
+    },
+    "31": {
+      "char": "掛",
+      "zhuyin": "ㄍㄨㄚˋ"
+    },
+    "32": {
+      "char": "雨",
+      "zhuyin": "ㄩˇ"
+    },
+    "33": {
+      "char": "衣",
+      "zhuyin": "ㄧ"
+    }
+  },
+  "sources": [
+    {
+      "id": "teacher-provided-transcript",
+      "path": "worksheet-batches\\115\\115G1A_國語 翰\\04_內容資料與草案\\reading-tool\\115G1A首冊_教師提供課文_20260811.md",
+      "sha256": "91105055a8df2bdaf4d7228693a10ea09acf942a7049a8d2301920951e5acd3f",
+      "locator": "CF 於 2026-08-11 提供並確認"
+    }
+  ]
+}
