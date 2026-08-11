@@ -1,0 +1,92 @@
+{
+  "contract_version": 1,
+  "lesson_id": "115HG0A02",
+  "title": "115G1A 翰版首冊 L02：排一排",
+  "text": "|排蠟筆|\n|慢慢來|\n|排好收在籃子裡|\n|收好啦|　|拍拍手|",
+  "overrides": {
+    "1": {
+      "char": "排",
+      "zhuyin": "ㄆㄞˊ"
+    },
+    "2": {
+      "char": "蠟",
+      "zhuyin": "ㄌㄚˋ"
+    },
+    "3": {
+      "char": "筆",
+      "zhuyin": "ㄅㄧˇ"
+    },
+    "7": {
+      "char": "慢",
+      "zhuyin": "ㄇㄢˋ"
+    },
+    "8": {
+      "char": "慢",
+      "zhuyin": "ㄇㄢˋ"
+    },
+    "9": {
+      "char": "來",
+      "zhuyin": "ㄌㄞˊ"
+    },
+    "13": {
+      "char": "排",
+      "zhuyin": "ㄆㄞˊ"
+    },
+    "14": {
+      "char": "好",
+      "zhuyin": "ㄏㄠˇ"
+    },
+    "15": {
+      "char": "收",
+      "zhuyin": "ㄕㄡ"
+    },
+    "16": {
+      "char": "在",
+      "zhuyin": "ㄗㄞˋ"
+    },
+    "17": {
+      "char": "籃",
+      "zhuyin": "ㄌㄢˊ"
+    },
+    "18": {
+      "char": "子",
+      "zhuyin": "ㄗ˙"
+    },
+    "19": {
+      "char": "裡",
+      "zhuyin": "ㄌㄧˇ"
+    },
+    "23": {
+      "char": "收",
+      "zhuyin": "ㄕㄡ"
+    },
+    "24": {
+      "char": "好",
+      "zhuyin": "ㄏㄠˇ"
+    },
+    "25": {
+      "char": "啦",
+      "zhuyin": "ㄌㄚ˙"
+    },
+    "29": {
+      "char": "拍",
+      "zhuyin": "ㄆㄞ"
+    },
+    "30": {
+      "char": "拍",
+      "zhuyin": "ㄆㄞ"
+    },
+    "31": {
+      "char": "手",
+      "zhuyin": "ㄕㄡˇ"
+    }
+  },
+  "sources": [
+    {
+      "id": "teacher-provided-transcript",
+      "path": "worksheet-batches\\115\\115G1A_國語 翰\\04_內容資料與草案\\reading-tool\\115G1A首冊_教師提供課文_20260811.md",
+      "sha256": "91105055a8df2bdaf4d7228693a10ea09acf942a7049a8d2301920951e5acd3f",
+      "locator": "CF 於 2026-08-11 提供並確認"
+    }
+  ]
+}
