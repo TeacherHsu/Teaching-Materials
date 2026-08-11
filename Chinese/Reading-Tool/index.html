@@ -144,6 +144,17 @@
             return `${zInitial}${zFinal}${toneMark}`;
         }
 
+        const CORRECTION_STORAGE_PREFIX = 'reading-tool:teacher-corrections:v1:';
+
+        const normalizeTeacherOverride = (text, rawIndex, value) => {
+            const index = Number(rawIndex);
+            if (!Number.isInteger(index) || index < 0 || index >= text.length) return null;
+            if (!value || typeof value.zhuyin !== 'string' || !value.zhuyin.trim()) return null;
+            const normalized = { char: text[index], zhuyin: value.zhuyin.trim() };
+            if (typeof value.phoneChar === 'string' && value.phoneChar.trim()) normalized.phoneChar = value.phoneChar.trim();
+            return normalized;
+        };
+
         // --- 核心組件 ---
         function App() {
             const [text, setText] = useState("一二一，你在左。\n一二一，我在右。\n一二一二，|一起走|。\n你和我，|一起向前走|。");
@@ -171,6 +182,35 @@
             const [shareUrl, setShareUrl] = useState(null);
             const [copySuccess, setCopySuccess] = useState(false);
             const [lessonLoadError, setLessonLoadError] = useState('');
+            const [officialLessonId, setOfficialLessonId] = useState(null);
+            const [baselineOverrides, setBaselineOverrides] = useState({});
+            const [correctionNotice, setCorrectionNotice] = useState('');
+
+            const getTeacherCorrections = () => {
+                const result = {};
+                Object.entries(overrides).forEach(([rawIndex, value]) => {
+                    const normalized = normalizeTeacherOverride(text, rawIndex, value);
+                    if (!normalized) return;
+                    const baseline = normalizeTeacherOverride(text, rawIndex, baselineOverrides[rawIndex]);
+                    if (JSON.stringify(normalized) !== JSON.stringify(baseline)) result[rawIndex] = normalized;
+                });
+                return result;
+            };
+
+            const loadLocalCorrections = (lessonId, lessonText) => {
+                try {
+                    const raw = window.localStorage.getItem(`${CORRECTION_STORAGE_PREFIX}${lessonId}`);
+                    if (!raw) return {};
+                    const saved = JSON.parse(raw);
+                    if (saved?.version !== 1 || saved.text !== lessonText || typeof saved.overrides !== 'object') return {};
+                    return Object.fromEntries(Object.entries(saved.overrides)
+                        .map(([index, value]) => [index, normalizeTeacherOverride(lessonText, index, value)])
+                        .filter(([, value]) => value));
+                } catch (error) {
+                    console.warn('Unable to load local teacher corrections.', error);
+                    return {};
+                }
+            };
 
             // 1. 載入語音
             useEffect(() => {
@@ -215,8 +255,12 @@
                                 if (!payload || typeof payload.text !== 'string' || typeof payload.overrides !== 'object') {
                                     throw new Error('invalid lesson data');
                                 }
+                                const officialOverrides = payload.overrides ?? {};
+                                const localCorrections = loadLocalCorrections(lessonId, payload.text);
                                 setText(payload.text);
-                                setOverrides(payload.overrides ?? {});
+                                setBaselineOverrides(officialOverrides);
+                                setOverrides({ ...officialOverrides, ...localCorrections });
+                                setOfficialLessonId(lessonId);
                                 if (payload.title) document.title = `${payload.title}｜國小課文點讀小幫手`;
                                 setMode('read');
                             })
@@ -234,17 +278,38 @@
                             if (typeof payload === 'object' && payload !== null) {
                                 setText(payload.text ?? "");
                                 setOverrides(payload.overrides ?? {});
+                                setBaselineOverrides({});
+                                setOfficialLessonId(null);
                             } else {
                                 setText(decoded); 
+                                setBaselineOverrides({});
+                                setOfficialLessonId(null);
                             }
                         } catch (e) {
                             setText(decoded); 
+                            setBaselineOverrides({});
+                            setOfficialLessonId(null);
                         }
                         setMode('read');
                     } catch(e) { console.error(e); }
                 }
                 if (window.lucide) window.lucide.createIcons();
             }, []);
+
+            useEffect(() => {
+                if (!officialLessonId || !text) return;
+                try {
+                    const teacherCorrections = getTeacherCorrections();
+                    const storageKey = `${CORRECTION_STORAGE_PREFIX}${officialLessonId}`;
+                    if (Object.keys(teacherCorrections).length) {
+                        window.localStorage.setItem(storageKey, JSON.stringify({ version: 1, text, overrides: teacherCorrections }));
+                    } else {
+                        window.localStorage.removeItem(storageKey);
+                    }
+                } catch (error) {
+                    console.warn('Unable to save local teacher corrections.', error);
+                }
+            }, [officialLessonId, text, overrides, baselineOverrides]);
 
             // 3. 解析文本 (效能優化版)
             useEffect(() => {
@@ -433,10 +498,52 @@
                 if (editingIndex !== null) {
                     setOverrides(prev => ({
                         ...prev,
-                        [editingIndex]: { zhuyin: tempZhuyin, phoneChar: tempPhoneChar }
+                        [editingIndex]: { char: text[editingIndex], zhuyin: tempZhuyin, phoneChar: tempPhoneChar }
                     }));
+                    setCorrectionNotice('已在本機保存；請匯出校正檔，才能納入全體使用的正式教材。');
                     setEditingIndex(null);
                 }
+            };
+
+            const exportTeacherCorrections = async () => {
+                if (!officialLessonId) return;
+                const corrections = getTeacherCorrections();
+                const entries = Object.entries(corrections).map(([index, value]) => ({ index: Number(index), ...value }));
+                if (!entries.length) {
+                    alert('目前沒有需要匯出的教師校正。');
+                    return;
+                }
+                try {
+                    const bytes = new TextEncoder().encode(text);
+                    const digest = await window.crypto.subtle.digest('SHA-256', bytes);
+                    const textSha256 = Array.from(new Uint8Array(digest)).map(byte => byte.toString(16).padStart(2, '0')).join('');
+                    const payload = {
+                        schema_version: 1,
+                        kind: 'reading_tool_teacher_corrections',
+                        lesson_id: officialLessonId,
+                        text_sha256: textSha256,
+                        corrections: entries,
+                    };
+                    const blob = new Blob([JSON.stringify(payload, null, 2) + '\n'], { type: 'application/json;charset=utf-8' });
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = `${officialLessonId}-teacher-corrections.json`;
+                    document.body.appendChild(link);
+                    link.click();
+                    link.remove();
+                    URL.revokeObjectURL(link.href);
+                    setCorrectionNotice(`已匯出 ${entries.length} 筆校正；交給 sped-os 匯入後即可成為正式版本。`);
+                } catch (error) {
+                    console.error('Correction export failed.', error);
+                    alert('校正檔匯出失敗，請確認瀏覽器允許下載。');
+                }
+            };
+
+            const clearLocalCorrections = () => {
+                if (!officialLessonId) return;
+                window.localStorage.removeItem(`${CORRECTION_STORAGE_PREFIX}${officialLessonId}`);
+                setOverrides(baselineOverrides);
+                setCorrectionNotice('已清除本機校正，並恢復正式教材讀音。');
             };
 
             const isSentenceBreak = (c) => /[。！？\n]/.test(c);
@@ -660,6 +767,17 @@
                                         <span className="hidden sm:inline">{correctionMode ? '完成' : '校正'}</span>
                                     </button>
                                 )}
+
+                                {mode === 'read' && officialLessonId && (
+                                    <button
+                                        onClick={exportTeacherCorrections}
+                                        className="flex items-center gap-2 px-2 py-1.5 sm:px-3 rounded-full bg-teal-50 text-teal-700 border border-teal-200 hover:bg-teal-100 transition-colors text-sm font-medium"
+                                        title="匯出教師校正檔，供 sped-os 納入正式教材"
+                                    >
+                                        <i data-lucide="download" width="14"></i>
+                                        <span className="hidden sm:inline">匯出校正</span>
+                                    </button>
+                                )}
                                 
                                 {mode === 'read' && !correctionMode && (
                                     <button onClick={() => { setMode('edit'); setShareUrl(null); }} className="p-2 rounded-full hover:bg-slate-100 text-slate-500">
@@ -674,6 +792,19 @@
                         {lessonLoadError && (
                             <div className="mb-6 p-4 bg-rose-50 border border-rose-200 rounded-xl text-sm text-rose-700">
                                 {lessonLoadError}
+                            </div>
+                        )}
+                        {mode === 'read' && officialLessonId && (
+                            <div className="mb-6 p-4 bg-teal-50 border border-teal-100 rounded-xl text-sm text-teal-800 flex flex-col sm:flex-row sm:items-center gap-3">
+                                <div className="flex-1">
+                                    <p className="font-bold">教師校正：本機已保存 {Object.keys(getTeacherCorrections()).length} 筆</p>
+                                    <p className="mt-1 text-xs text-teal-700">同一瀏覽器下次開啟本課仍會保留；按「匯出校正」交由 sped-os 驗證後，才能成為所有裝置共用的正式讀音。</p>
+                                    {correctionNotice && <p className="mt-2 text-xs font-medium text-teal-800">{correctionNotice}</p>}
+                                </div>
+                                <div className="flex gap-2 shrink-0">
+                                    <button onClick={exportTeacherCorrections} className="px-3 py-1.5 rounded-lg bg-teal-500 hover:bg-teal-600 text-white text-sm">匯出校正</button>
+                                    <button onClick={clearLocalCorrections} className="px-3 py-1.5 rounded-lg bg-white border border-teal-200 text-teal-700 text-sm">清除本機</button>
+                                </div>
                             </div>
                         )}
                         {mode === 'read' && voices.length === 0 && (
