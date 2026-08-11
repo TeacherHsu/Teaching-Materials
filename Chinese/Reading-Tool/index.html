@@ -170,6 +170,7 @@
 
             const [shareUrl, setShareUrl] = useState(null);
             const [copySuccess, setCopySuccess] = useState(false);
+            const [lessonLoadError, setLessonLoadError] = useState('');
 
             // 1. 載入語音
             useEffect(() => {
@@ -195,10 +196,37 @@
             }, []);
 
             // 2. 初始化與讀取網址參數
+            // 2026-08-11: 正式課次以 ?lesson=<lesson_id> 從靜態 JSON 載入；保留 ?content= 作臨時分享。
             useEffect(() => {
                 const params = new URLSearchParams(window.location.search);
+                const lessonId = params.get('lesson');
                 const lessonContent = params.get('content'); 
-                if (lessonContent) {
+                if (lessonId) {
+                    if (!/^[A-Za-z0-9_-]+$/.test(lessonId)) {
+                        setLessonLoadError('課次代碼格式錯誤。');
+                        setMode('read');
+                    } else {
+                        fetch(`lessons/${encodeURIComponent(lessonId)}.json`, { cache: 'no-store' })
+                            .then(response => {
+                                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                                return response.json();
+                            })
+                            .then(payload => {
+                                if (!payload || typeof payload.text !== 'string' || typeof payload.overrides !== 'object') {
+                                    throw new Error('invalid lesson data');
+                                }
+                                setText(payload.text);
+                                setOverrides(payload.overrides ?? {});
+                                if (payload.title) document.title = `${payload.title}｜國小課文點讀小幫手`;
+                                setMode('read');
+                            })
+                            .catch(error => {
+                                console.error('Lesson load error:', error);
+                                setLessonLoadError('找不到這一課教材，請確認連結。');
+                                setMode('read');
+                            });
+                    }
+                } else if (lessonContent) {
                     try {
                         const decoded = decodeURIComponent(escape(atob(lessonContent)));
                         try {
@@ -643,6 +671,11 @@
                     </nav>
 
                     <main className="max-w-4xl mx-auto px-4 py-8">
+                        {lessonLoadError && (
+                            <div className="mb-6 p-4 bg-rose-50 border border-rose-200 rounded-xl text-sm text-rose-700">
+                                {lessonLoadError}
+                            </div>
+                        )}
                         {mode === 'read' && voices.length === 0 && (
                             <div className="mb-6 p-4 bg-rose-50 border border-rose-200 rounded-xl text-sm text-rose-700 flex items-start gap-3">
                                 <i data-lucide="alert-triangle" className="shrink-0 mt-0.5" width="18"></i>
