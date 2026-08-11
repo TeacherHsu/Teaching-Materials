@@ -1,0 +1,76 @@
+{
+  "contract_version": 1,
+  "lesson_id": "115HG0A01",
+  "title": "115G1A 翰版首冊 L01：手拉手",
+  "text": "|手拉手|\n|拉拉拉|\n|手拉手|\n|哈哈哈|\n|老師好|",
+  "overrides": {
+    "1": {
+      "char": "手",
+      "zhuyin": "ㄕㄡˇ"
+    },
+    "2": {
+      "char": "拉",
+      "zhuyin": "ㄌㄚ"
+    },
+    "3": {
+      "char": "手",
+      "zhuyin": "ㄕㄡˇ"
+    },
+    "7": {
+      "char": "拉",
+      "zhuyin": "ㄌㄚ"
+    },
+    "8": {
+      "char": "拉",
+      "zhuyin": "ㄌㄚ"
+    },
+    "9": {
+      "char": "拉",
+      "zhuyin": "ㄌㄚ"
+    },
+    "13": {
+      "char": "手",
+      "zhuyin": "ㄕㄡˇ"
+    },
+    "14": {
+      "char": "拉",
+      "zhuyin": "ㄌㄚ"
+    },
+    "15": {
+      "char": "手",
+      "zhuyin": "ㄕㄡˇ"
+    },
+    "19": {
+      "char": "哈",
+      "zhuyin": "ㄏㄚ"
+    },
+    "20": {
+      "char": "哈",
+      "zhuyin": "ㄏㄚ"
+    },
+    "21": {
+      "char": "哈",
+      "zhuyin": "ㄏㄚ"
+    },
+    "25": {
+      "char": "老",
+      "zhuyin": "ㄌㄠˇ"
+    },
+    "26": {
+      "char": "師",
+      "zhuyin": "ㄕ"
+    },
+    "27": {
+      "char": "好",
+      "zhuyin": "ㄏㄠˇ"
+    }
+  },
+  "sources": [
+    {
+      "id": "teacher-provided-transcript",
+      "path": "worksheet-batches\\115\\115G1A_國語 翰\\04_內容資料與草案\\reading-tool\\115G1A首冊_教師提供課文_20260811.md",
+      "sha256": "91105055a8df2bdaf4d7228693a10ea09acf942a7049a8d2301920951e5acd3f",
+      "locator": "第一課〈手拉手〉；CF 於 2026-08-11 提供並確認"
+    }
+  ]
+}
