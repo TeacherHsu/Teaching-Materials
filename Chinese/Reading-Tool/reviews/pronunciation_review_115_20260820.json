@@ -1,0 +1,1655 @@
+{
+  "review_version": 1,
+  "scope": "115 Reading Tool high-risk and disagreement review",
+  "generated_on": "2026-08-20",
+  "items": [
+    {
+      "lesson_id": "115HG0A03",
+      "index": 2,
+      "char": "數",
+      "context": "來數數 數一數 一張",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄕㄨˇ",
+        "ㄕㄨˋ"
+      ],
+      "final_zhuyin": "ㄕㄨˇ",
+      "decision_basis": "來數數：動詞，計算；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG0A03",
+      "index": 3,
+      "char": "數",
+      "context": "來數數 數一數 一張圖",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄕㄨˇ",
+        "ㄕㄨˋ"
+      ],
+      "final_zhuyin": "ㄕㄨˇ",
+      "decision_basis": "來數數：動詞，計算；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG0A03",
+      "index": 7,
+      "char": "數",
+      "context": "來數數 數一數 一張圖　三",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄕㄨˇ",
+        "ㄕㄨˋ"
+      ],
+      "final_zhuyin": "ㄕㄨˇ",
+      "decision_basis": "數一數：動詞，計算；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG0A03",
+      "index": 9,
+      "char": "數",
+      "context": "來數數 數一數 一張圖　三棵樹",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄕㄨˇ",
+        "ㄕㄨˋ"
+      ],
+      "final_zhuyin": "ㄕㄨˇ",
+      "decision_basis": "數一數：動詞，計算；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG0A05",
+      "index": 48,
+      "char": "一",
+      "context": " 嘩啦嘩啦 雨滴一串串 掛在走廊邊",
+      "risk_reasons": [
+        "rule_exception"
+      ],
+      "candidate_readings": [
+        "ㄧ",
+        "ㄧˊ",
+        "ㄧˋ"
+      ],
+      "final_zhuyin": "ㄧˊ",
+      "decision_basis": "一串串：一在四聲串前變調；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG0A07",
+      "index": 23,
+      "char": "喔",
+      "context": "日生 每天清晨 喔喔啼 叫醒沉睡的太陽",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄛ",
+        "ㄨㄛˋ"
+      ],
+      "final_zhuyin": "ㄨㄛˋ",
+      "decision_basis": "喔喔啼：公雞叫聲，教育部辭典列擬聲詞讀音；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG0A07",
+      "index": 24,
+      "char": "喔",
+      "context": "生 每天清晨 喔喔啼 叫醒沉睡的太陽",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄛ",
+        "ㄨㄛˋ"
+      ],
+      "final_zhuyin": "ㄨㄛˋ",
+      "decision_basis": "喔喔啼：公雞叫聲，教育部辭典列擬聲詞讀音；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG1A01",
+      "index": 8,
+      "char": "一",
+      "context": "一起走。 一二一，你在左。 ",
+      "risk_reasons": [
+        "rule_exception"
+      ],
+      "candidate_readings": [
+        "ㄧ",
+        "ㄧˊ"
+      ],
+      "final_zhuyin": "ㄧ",
+      "decision_basis": "口令中的數字序列「一二一」保留本調；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG1A01",
+      "index": 21,
+      "char": "一",
+      "context": "二一，你在左。 一二一，我在右。 ",
+      "risk_reasons": [
+        "rule_exception"
+      ],
+      "candidate_readings": [
+        "ㄧ",
+        "ㄧˊ"
+      ],
+      "final_zhuyin": "ㄧ",
+      "decision_basis": "口令中的數字序列「一二一」保留本調；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG1A01",
+      "index": 34,
+      "char": "一",
+      "context": "二一，我在右。 一二一二， 一起走。",
+      "risk_reasons": [
+        "rule_exception"
+      ],
+      "candidate_readings": [
+        "ㄧ",
+        "ㄧˊ"
+      ],
+      "final_zhuyin": "ㄧ",
+      "decision_basis": "口令中的數字序列「一二一二」保留本調；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG1A01",
+      "index": 36,
+      "char": "一",
+      "context": "，我在右。 一二一二， 一起走。 ",
+      "risk_reasons": [
+        "rule_exception"
+      ],
+      "candidate_readings": [
+        "ㄧ",
+        "ㄧˊ"
+      ],
+      "final_zhuyin": "ㄧ",
+      "decision_basis": "口令中的數字序列「一二一二」保留本調；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A01",
+      "index": 342,
+      "char": "省",
+      "context": "在邁入下一個求學階段前，省思成長的過程，進一步自我",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄕㄥˇ",
+        "ㄒㄧㄥˇ"
+      ],
+      "final_zhuyin": "ㄒㄧㄥˇ",
+      "decision_basis": "省思：反省思考；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A01",
+      "index": 380,
+      "char": "一",
+      "context": "　　整首詩分成三段，第一段寫的是孩子站在生態池邊",
+      "risk_reasons": [
+        "rule_exception"
+      ],
+      "candidate_readings": [
+        "ㄧ",
+        "ㄧˊ"
+      ],
+      "final_zhuyin": "ㄧ",
+      "decision_basis": "序數「第一段」保留本調；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A01",
+      "index": 517,
+      "char": "給",
+      "context": "永恆的記錄在心中，是詩人給予讀者的美好祝福。",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄍㄟˇ",
+        "ㄐㄧˇ"
+      ],
+      "final_zhuyin": "ㄐㄧˇ",
+      "decision_basis": "給予：授予；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A02",
+      "index": 293,
+      "char": "一",
+      "context": "，準備在教室裡拿出來，第一個就是讓許達三欣賞，然後",
+      "risk_reasons": [
+        "rule_exception"
+      ],
+      "candidate_readings": [
+        "ㄧ",
+        "ㄧˊ"
+      ],
+      "final_zhuyin": "ㄧ",
+      "decision_basis": "序數「第一個」保留本調；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A03",
+      "index": 470,
+      "char": "行",
+      "context": "譯 孔子說：「三人同行，其中必定有我可以效法的",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄒㄧㄥˊ",
+        "ㄏㄤˊ"
+      ],
+      "final_zhuyin": "ㄒㄧㄥˊ",
+      "decision_basis": "三人同行：一起行走；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A04",
+      "index": 783,
+      "char": "長",
+      "context": "要飛得起來，必須增加機翼長度，但是這樣會超過機場的",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄤˇ",
+        "ㄔㄤˊ"
+      ],
+      "final_zhuyin": "ㄔㄤˊ",
+      "decision_basis": "機翼長度：長短的長；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A04",
+      "index": 901,
+      "char": "長",
+      "context": "一來不僅符合機場對於機翼長度的安全標準，更讓八百多",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄤˇ",
+        "ㄔㄤˊ"
+      ],
+      "final_zhuyin": "ㄔㄤˊ",
+      "decision_basis": "機翼長度：長短的長；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A05",
+      "index": 211,
+      "char": "重",
+      "context": "寫意，那片深深淺淺的綠葉重疊成一頂華蓋。它默默的站",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˋ",
+        "ㄔㄨㄥˊ"
+      ],
+      "final_zhuyin": "ㄔㄨㄥˊ",
+      "decision_basis": "重疊：一層層疊合；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A05",
+      "index": 240,
+      "char": "長",
+      "context": "彷彿向人們訴說著堅強而漫長的故事。 平時，我就",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄤˇ",
+        "ㄔㄤˊ"
+      ],
+      "final_zhuyin": "ㄔㄤˊ",
+      "decision_basis": "漫長：長短的長；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A05",
+      "index": 556,
+      "char": "種",
+      "context": "的摯友。   （二）種樹   種樹真好，春",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˇ",
+        "ㄓㄨㄥˋ"
+      ],
+      "final_zhuyin": "ㄓㄨㄥˋ",
+      "decision_basis": "種樹：動詞，栽種；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A05",
+      "index": 563,
+      "char": "種",
+      "context": " （二）種樹   種樹真好，春天開花，秋天結",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˇ",
+        "ㄓㄨㄥˋ"
+      ],
+      "final_zhuyin": "ㄓㄨㄥˋ",
+      "decision_basis": "種樹：動詞，栽種；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A05",
+      "index": 592,
+      "char": "種",
+      "context": "在記憶深處，有一株樹，種在小學校園裡，每當春天來",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˇ",
+        "ㄓㄨㄥˋ"
+      ],
+      "final_zhuyin": "ㄓㄨㄥˋ",
+      "decision_basis": "種在校園：動詞，栽種；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A05",
+      "index": 656,
+      "char": "種",
+      "context": "麼樹？卻不懂得問：這是誰種的樹？而現在，我懂得問了",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˇ",
+        "ㄓㄨㄥˋ"
+      ],
+      "final_zhuyin": "ㄓㄨㄥˋ",
+      "decision_basis": "誰種的樹：動詞，栽種；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A05",
+      "index": 684,
+      "char": "種",
+      "context": "樹卻早已不見蹤影。 種樹真好，不但春天會開花，",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˇ",
+        "ㄓㄨㄥˋ"
+      ],
+      "final_zhuyin": "ㄓㄨㄥˋ",
+      "decision_basis": "種樹：動詞，栽種；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A05",
+      "index": 718,
+      "char": "種",
+      "context": "給他人快樂，這或許是當初種樹的人始料未及的事。有一",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˇ",
+        "ㄓㄨㄥˋ"
+      ],
+      "final_zhuyin": "ㄓㄨㄥˋ",
+      "decision_basis": "種樹的人：動詞，栽種；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A05",
+      "index": 825,
+      "char": "種",
+      "context": "對她的好，而我卻不自知。種樹的人或許只期待一片綠蔭",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˇ",
+        "ㄓㄨㄥˋ"
+      ],
+      "final_zhuyin": "ㄓㄨㄥˋ",
+      "decision_basis": "種樹的人：動詞，栽種；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A05",
+      "index": 901,
+      "char": "種",
+      "context": "達的道理，就像坐在他人所種的綠蔭下享受清涼。因此，",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˇ",
+        "ㄓㄨㄥˋ"
+      ],
+      "final_zhuyin": "ㄓㄨㄥˋ",
+      "decision_basis": "所種的綠蔭：動詞，栽種；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A05",
+      "index": 941,
+      "char": "種",
+      "context": "希望也能讓人在我用筆所栽種的綠蔭下駐足，享受美好。",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˇ",
+        "ㄓㄨㄥˋ"
+      ],
+      "final_zhuyin": "ㄓㄨㄥˋ",
+      "decision_basis": "所栽種的綠蔭：動詞，栽種；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A05",
+      "index": 957,
+      "char": "種",
+      "context": "下駐足，享受美好。 種樹不只是一個人的行動，而",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˇ",
+        "ㄓㄨㄥˋ"
+      ],
+      "final_zhuyin": "ㄓㄨㄥˋ",
+      "decision_basis": "種樹：動詞，栽種；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A06",
+      "index": 36,
+      "char": "應",
+      "context": "語言，運用機智，巧妙與人應對的能力。適時的幽默，不",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄧㄥ",
+        "ㄧㄥˋ"
+      ],
+      "final_zhuyin": "ㄧㄥˋ",
+      "decision_basis": "應對：回應對答；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A06",
+      "index": 194,
+      "char": "調",
+      "context": "，靈巧的轉移焦點，用言語調侃自己，來化解僵局，讓雙",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄉㄧㄠˋ",
+        "ㄊㄧㄠˊ"
+      ],
+      "final_zhuyin": "ㄊㄧㄠˊ",
+      "decision_basis": "調侃：戲謔言談；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A06",
+      "index": 399,
+      "char": "應",
+      "context": "更使觀眾對於如此智慧的回應，留下正面的印象。   ",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄧㄥ",
+        "ㄧㄥˋ"
+      ],
+      "final_zhuyin": "ㄧㄥˋ",
+      "decision_basis": "回應：回答反應；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A08",
+      "index": 70,
+      "char": "長",
+      "context": "那時，他正立定站在一個長圓形的石墩上，塗成白色的",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄤˇ",
+        "ㄔㄤˊ"
+      ],
+      "final_zhuyin": "ㄔㄤˊ",
+      "decision_basis": "長圓形：長短的長；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A08",
+      "index": 139,
+      "char": "樂",
+      "context": "膠娃娃。 突然間，音樂響了起來，一個強烈的節奏",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄌㄜˋ",
+        "ㄩㄝˋ"
+      ],
+      "final_zhuyin": "ㄩㄝˋ",
+      "decision_basis": "音樂：音樂的樂；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A08",
+      "index": 325,
+      "char": "樂",
+      "context": "討個生活，也照樣可以帶著樂器，在地鐵、火車站，甚至",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄌㄜˋ",
+        "ㄩㄝˋ"
+      ],
+      "final_zhuyin": "ㄩㄝˋ",
+      "decision_basis": "樂器：音樂器具；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A08",
+      "index": 375,
+      "char": "應",
+      "context": "水準，各有高低；得到的反應，也各不相同。記得在巴黎",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄧㄥ",
+        "ㄧㄥˋ"
+      ],
+      "final_zhuyin": "ㄧㄥˋ",
+      "decision_basis": "反應：反應的應；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A08",
+      "index": 473,
+      "char": "長",
+      "context": "，只想快快逃離那座又高又長的電扶梯。 而往往當",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄤˇ",
+        "ㄔㄤˊ"
+      ],
+      "final_zhuyin": "ㄔㄤˊ",
+      "decision_basis": "又高又長：長短的長；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A08",
+      "index": 522,
+      "char": "彈",
+      "context": "輕孩子，為首的一個孩子大彈電吉他，另幾個孩子則合唱",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄊㄢˊ",
+        "ㄉㄢˋ"
+      ],
+      "final_zhuyin": "ㄊㄢˊ",
+      "decision_basis": "彈電吉他：演奏；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A08",
+      "index": 538,
+      "char": "樂",
+      "context": "，另幾個孩子則合唱熱門音樂，儼然一個小型樂團。不過",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄌㄜˋ",
+        "ㄩㄝˋ"
+      ],
+      "final_zhuyin": "ㄩㄝˋ",
+      "decision_basis": "音樂：音樂的樂；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A08",
+      "index": 546,
+      "char": "樂",
+      "context": "唱熱門音樂，儼然一個小型樂團。不過，一陣嘈雜之後，",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄌㄜˋ",
+        "ㄩㄝˋ"
+      ],
+      "final_zhuyin": "ㄩㄝˋ",
+      "decision_basis": "樂團：音樂團體；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A08",
+      "index": 752,
+      "char": "樂",
+      "context": "或「實習生」的印象。愛音樂的人，不一定非得穿得正正",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄌㄜˋ",
+        "ㄩㄝˋ"
+      ],
+      "final_zhuyin": "ㄩㄝˋ",
+      "decision_basis": "音樂：音樂的樂；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A09",
+      "index": 828,
+      "char": "行",
+      "context": "比較容易了解。 （一行人來到舞臺前） 孫阿",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄒㄧㄥˊ",
+        "ㄏㄤˊ"
+      ],
+      "final_zhuyin": "ㄏㄤˊ",
+      "decision_basis": "一行人：一群人；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A09",
+      "index": 939,
+      "char": "差",
+      "context": "的穿著，依角色不同而有所差別。市井小民穿的是布衣，",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄔㄚ",
+        "ㄔㄚˋ",
+        "ㄔㄞ"
+      ],
+      "final_zhuyin": "ㄔㄚ",
+      "decision_basis": "差別：差異；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A09",
+      "index": 1101,
+      "char": "乾",
+      "context": "效，運用絢麗的雷射燈光、乾冰煙霧及空中飛人，演出經",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄍㄢ",
+        "ㄑㄧㄢˊ"
+      ],
+      "final_zhuyin": "ㄍㄢ",
+      "decision_basis": "乾冰：固態二氧化碳；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A10",
+      "index": 145,
+      "char": "場",
+      "context": "青山郭外斜。 開軒面場圃， 把酒話桑麻。",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄔㄤˊ",
+        "ㄔㄤˇ"
+      ],
+      "final_zhuyin": "ㄔㄤˊ",
+      "decision_basis": "場圃：田地；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A10",
+      "index": 162,
+      "char": "重",
+      "context": "把酒話桑麻。 待到重陽日， 還來就菊花。",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˋ",
+        "ㄔㄨㄥˊ"
+      ],
+      "final_zhuyin": "ㄔㄨㄥˊ",
+      "decision_basis": "重陽：節日名稱；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A10",
+      "index": 169,
+      "char": "還",
+      "context": " 待到重陽日， 還來就菊花。  注釋",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄏㄞˊ",
+        "ㄏㄨㄢˊ"
+      ],
+      "final_zhuyin": "ㄏㄨㄢˊ",
+      "decision_basis": "還來就菊花：返回；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A10",
+      "index": 299,
+      "char": "場",
+      "context": "。 軒：窗戶。 場圃：晒穀場和菜園。 ",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄔㄤˊ",
+        "ㄔㄤˇ"
+      ],
+      "final_zhuyin": "ㄔㄤˊ",
+      "decision_basis": "場圃：田地；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A10",
+      "index": 304,
+      "char": "場",
+      "context": "：窗戶。 場圃：晒穀場和菜園。 桑麻：此處",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄔㄤˊ",
+        "ㄔㄤˇ"
+      ],
+      "final_zhuyin": "ㄔㄤˊ",
+      "decision_basis": "場圃：田地；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A10",
+      "index": 326,
+      "char": "重",
+      "context": "：此處泛指農作物。 重陽：農曆九月九日，現稱重",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˋ",
+        "ㄔㄨㄥˊ"
+      ],
+      "final_zhuyin": "ㄔㄨㄥˊ",
+      "decision_basis": "重陽：節日名稱；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A10",
+      "index": 338,
+      "char": "重",
+      "context": "重陽：農曆九月九日，現稱重陽節。 還：再。 ",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˋ",
+        "ㄔㄨㄥˊ"
+      ],
+      "final_zhuyin": "ㄔㄨㄥˊ",
+      "decision_basis": "重陽：節日名稱；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A10",
+      "index": 430,
+      "char": "場",
+      "context": "斷。推開窗戶，面對著晒穀場和菜園，我和老友舉杯暢飲",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄔㄤˊ",
+        "ㄔㄤˇ"
+      ],
+      "final_zhuyin": "ㄔㄤˊ",
+      "decision_basis": "場圃：田地；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A10",
+      "index": 460,
+      "char": "重",
+      "context": "作物的生長情形。約好等到重陽節那天，我們要再次相聚",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˋ",
+        "ㄔㄨㄥˊ"
+      ],
+      "final_zhuyin": "ㄔㄨㄥˊ",
+      "decision_basis": "重陽：節日名稱；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A11",
+      "index": 194,
+      "char": "切",
+      "context": "販那兒預訂黑豬肉，取得後切成長條狀，泡醬醃製，之後",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄑㄧㄝ",
+        "ㄑㄧㄝˋ"
+      ],
+      "final_zhuyin": "ㄑㄧㄝ",
+      "decision_basis": "切成：切割；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A11",
+      "index": 196,
+      "char": "長",
+      "context": "兒預訂黑豬肉，取得後切成長條狀，泡醬醃製，之後再加",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄤˇ",
+        "ㄔㄤˊ"
+      ],
+      "final_zhuyin": "ㄔㄤˊ",
+      "decision_basis": "長條狀：長短的長；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A11",
+      "index": 518,
+      "char": "調",
+      "context": "水倒進鍋裡，煮開後，加入調味料並勾芡，肉與羹合而為",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄉㄧㄠˋ",
+        "ㄊㄧㄠˊ"
+      ],
+      "final_zhuyin": "ㄊㄧㄠˊ",
+      "decision_basis": "調味料：調配味道；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A11",
+      "index": 687,
+      "char": "調",
+      "context": "式也大同小異。不過在羹湯調味上就千變萬化了，可說人",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄉㄧㄠˋ",
+        "ㄊㄧㄠˊ"
+      ],
+      "final_zhuyin": "ㄊㄧㄠˊ",
+      "decision_basis": "調味：調配味道；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A12",
+      "index": 155,
+      "char": "種",
+      "context": "農夫，他在南瓜園裡足足耕種了四十年。這一年，布大爺",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˇ",
+        "ㄓㄨㄥˋ"
+      ],
+      "final_zhuyin": "ㄓㄨㄥˋ",
+      "decision_basis": "耕種：動詞，栽種；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A12",
+      "index": 168,
+      "char": "種",
+      "context": "了四十年。這一年，布大爺種出了四十顆碩大的南瓜，並",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˇ",
+        "ㄓㄨㄥˋ"
+      ],
+      "final_zhuyin": "ㄓㄨㄥˋ",
+      "decision_basis": "種出：動詞，栽種；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A12",
+      "index": 313,
+      "char": "覺",
+      "context": "難過了一整夜，根本睡不著覺，活像隔天要嫁女兒的父親",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄐㄩㄝˊ",
+        "ㄐㄧㄠˋ"
+      ],
+      "final_zhuyin": "ㄐㄧㄠˋ",
+      "decision_basis": "睡不著覺：睡眠；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A12",
+      "index": 465,
+      "char": "種",
+      "context": "逃跑。我一定要討回我辛苦種的南瓜！」他又在案發現場",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˇ",
+        "ㄓㄨㄥˋ"
+      ],
+      "final_zhuyin": "ㄓㄨㄥˋ",
+      "decision_basis": "種的南瓜：動詞，栽種；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A12",
+      "index": 1185,
+      "char": "種",
+      "context": "監牢。這些南瓜都是我親自種的！」 「現在就給你",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˇ",
+        "ㄓㄨㄥˋ"
+      ],
+      "final_zhuyin": "ㄓㄨㄥˋ",
+      "decision_basis": "親自種的：動詞，栽種；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A12",
+      "index": 1336,
+      "char": "差",
+      "context": "不一的南瓜蒂，竟然絲毫不差的和南瓜接在一起。 ",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄔㄚ",
+        "ㄔㄚˋ",
+        "ㄔㄞ"
+      ],
+      "final_zhuyin": "ㄔㄚ",
+      "decision_basis": "絲毫不差：差異；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A12",
+      "index": 1413,
+      "char": "還",
+      "context": "，弗大叔只好把賣南瓜的錢還給菜販，菜販再將錢交給布",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄏㄞˊ",
+        "ㄏㄨㄢˊ"
+      ],
+      "final_zhuyin": "ㄏㄨㄢˊ",
+      "decision_basis": "還給：歸還；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A02",
+      "index": 90,
+      "char": "乾",
+      "context": "有時是香氣撲鼻的奶油餅乾，有時是層次分明的千",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄍㄢ",
+        "ㄑㄧㄢˊ"
+      ],
+      "final_zhuyin": "ㄍㄢ",
+      "decision_basis": "餅乾：食物名稱；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A02",
+      "index": 221,
+      "char": "姐",
+      "context": "就是國語日報。我和姐姐常常為了誰先看而爭吵不休",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄐㄧㄝˇ"
+      ],
+      "final_zhuyin": "ㄐㄧㄝˇ",
+      "decision_basis": "姐姐：姊姊的姐；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A02",
+      "index": 252,
+      "char": "姐",
+      "context": "們一起想出好方法：姐姐看左邊，我就看右邊",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄐㄧㄝˇ"
+      ],
+      "final_zhuyin": "ㄐㄧㄝˇ",
+      "decision_basis": "姐姐：姊姊的姐；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A02",
+      "index": 268,
+      "char": "姐",
+      "context": "，我就看右邊；姐姐看正面，我就看反面…",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄐㄧㄝˇ"
+      ],
+      "final_zhuyin": "ㄐㄧㄝˇ",
+      "decision_basis": "姐姐：姊姊的姐；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A02",
+      "index": 342,
+      "char": "姐",
+      "context": "就是我的玩樂時間。姐姐、同學和我會在附近的",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄐㄧㄝˇ"
+      ],
+      "final_zhuyin": "ㄐㄧㄝˇ",
+      "decision_basis": "姐姐：姊姊的姐；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A03",
+      "index": 129,
+      "char": "一",
+      "context": "我，也決定勇敢踏出第一步，與好友一起加入籃",
+      "risk_reasons": [
+        "rule_exception"
+      ],
+      "candidate_readings": [
+        "ㄧ",
+        "ㄧˊ"
+      ],
+      "final_zhuyin": "ㄧ",
+      "decision_basis": "序數「第一步」保留本調；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A03",
+      "index": 452,
+      "char": "興",
+      "context": "時，場邊的歡呼都讓我興奮不已。  「加油！",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄒㄧㄥ",
+        "ㄒㄧㄥˋ"
+      ],
+      "final_zhuyin": "ㄒㄧㄥ",
+      "decision_basis": "興奮：興奮的興；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A04",
+      "index": 61,
+      "char": "興",
+      "context": "臺灣除了傳教之外，還興建醫院、創辦學校，因",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄒㄧㄥ",
+        "ㄒㄧㄥˋ"
+      ],
+      "final_zhuyin": "ㄒㄧㄥ",
+      "decision_basis": "興建：建設；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A04",
+      "index": 345,
+      "char": "興",
+      "context": "多的善事。馬偕在淡水興建北臺灣第一間西式醫院",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄒㄧㄥ",
+        "ㄒㄧㄥˋ"
+      ],
+      "final_zhuyin": "ㄒㄧㄥ",
+      "decision_basis": "興建：建設；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A04",
+      "index": 469,
+      "char": "一",
+      "context": "就學的機會，臺灣的第一位女醫師——蔡阿信，",
+      "risk_reasons": [
+        "rule_exception"
+      ],
+      "candidate_readings": [
+        "ㄧ",
+        "ㄧˊ"
+      ],
+      "final_zhuyin": "ㄧ",
+      "decision_basis": "序數「第一位」保留本調；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A05",
+      "index": 460,
+      "char": "興",
+      "context": "心流過，就會感受流水興奮的模樣；有時，",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄒㄧㄥ",
+        "ㄒㄧㄥˋ"
+      ],
+      "final_zhuyin": "ㄒㄧㄥ",
+      "decision_basis": "興奮：興奮的興；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A05",
+      "index": 463,
+      "char": "模",
+      "context": "，就會感受流水興奮的模樣；有時，當我來",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄇㄛˊ",
+        "ㄇㄨˊ"
+      ],
+      "final_zhuyin": "ㄇㄨˊ",
+      "decision_basis": "模樣：樣子；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A06",
+      "index": 92,
+      "char": "一",
+      "context": "朗的笑著。她是臺灣第一位登上珠穆朗瑪峰的女子",
+      "risk_reasons": [
+        "rule_exception"
+      ],
+      "candidate_readings": [
+        "ㄧ",
+        "ㄧˊ"
+      ],
+      "final_zhuyin": "ㄧ",
+      "decision_basis": "序數「第一位」保留本調；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A06",
+      "index": 444,
+      "char": "差",
+      "context": "，忍受五十多度的日夜溫差。登上頂峰的最後一段",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄔㄚ",
+        "ㄔㄚˋ",
+        "ㄔㄞ"
+      ],
+      "final_zhuyin": "ㄔㄚ",
+      "decision_basis": "溫差：差異；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A06",
+      "index": 465,
+      "char": "中",
+      "context": "最後一段路，是她生命中最大的難關。 當時",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥ",
+        "ㄓㄨㄥˋ"
+      ],
+      "final_zhuyin": "ㄓㄨㄥ",
+      "decision_basis": "生命中：裡面；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A07",
+      "index": 135,
+      "char": "不",
+      "context": "客家人會在清明節吃艾粄，不但好吃，還可以保平安。」",
+      "risk_reasons": [
+        "rule_exception"
+      ],
+      "candidate_readings": [
+        "ㄅㄨˋ",
+        "ㄅㄨˊ"
+      ],
+      "final_zhuyin": "ㄅㄨˊ",
+      "decision_basis": "不但：不在四聲但前變調；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A08",
+      "index": 5,
+      "char": "長",
+      "context": "建築界的長頸鹿。 假如把建築物",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄤˇ",
+        "ㄔㄤˊ"
+      ],
+      "final_zhuyin": "ㄔㄤˊ",
+      "decision_basis": "長頸鹿：長短的長；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A08",
+      "index": 40,
+      "char": "長",
+      "context": "下」的大樓就是建築界的「長頸鹿」。這些建築不但有重",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄤˇ",
+        "ㄔㄤˊ"
+      ],
+      "final_zhuyin": "ㄔㄤˊ",
+      "decision_basis": "長頸鹿：長短的長；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A08",
+      "index": 91,
+      "char": "長",
+      "context": "來認識世界上幾座著名的「長頸鹿」。 位於臺北市",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄤˇ",
+        "ㄔㄤˊ"
+      ],
+      "final_zhuyin": "ㄔㄤˊ",
+      "decision_basis": "長頸鹿：長短的長；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A08",
+      "index": 109,
+      "char": "一",
+      "context": " 位於臺北市的台北一○一大樓，外形有如一節一節的",
+      "risk_reasons": [
+        "rule_exception"
+      ],
+      "candidate_readings": [
+        "ㄧ",
+        "ㄧˊ"
+      ],
+      "final_zhuyin": "ㄧ",
+      "decision_basis": "建築名稱「台北一○一」中的數字保留本調；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A08",
+      "index": 211,
+      "char": "一",
+      "context": "年的跨年煙火秀，台北一○一大樓陪著大家迎接新年，更",
+      "risk_reasons": [
+        "rule_exception"
+      ],
+      "candidate_readings": [
+        "ㄧ",
+        "ㄧˊ"
+      ],
+      "final_zhuyin": "ㄧ",
+      "decision_basis": "建築名稱「台北一○一」中的數字保留本調；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A08",
+      "index": 240,
+      "char": "一",
+      "context": "認識臺灣。 西元二○一二年完工的東京晴空塔®，",
+      "risk_reasons": [
+        "rule_exception"
+      ],
+      "candidate_readings": [
+        "ㄧ",
+        "ㄧˊ"
+      ],
+      "final_zhuyin": "ㄧ",
+      "decision_basis": "年份「二○一二」中的數字保留本調；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A08",
+      "index": 340,
+      "char": "興",
+      "context": "是為了改善城市收訊不良而興建。現在，從這裡發展出完",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄒㄧㄥ",
+        "ㄒㄧㄥˋ"
+      ],
+      "final_zhuyin": "ㄒㄧㄥ",
+      "decision_basis": "興建：建設；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A08",
+      "index": 430,
+      "char": "長",
+      "context": "與四十二層樓之間，有一座長五十八公尺的「人字形」連",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄤˇ",
+        "ㄔㄤˊ"
+      ],
+      "final_zhuyin": "ㄔㄤˊ",
+      "decision_basis": "長五十八公尺：長短的長；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A08",
+      "index": 522,
+      "char": "長",
+      "context": "整座城市。這些建築界的「長頸鹿」散發光芒，希望讓更",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄤˇ",
+        "ㄔㄤˊ"
+      ],
+      "final_zhuyin": "ㄔㄤˊ",
+      "decision_basis": "長頸鹿：長短的長；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A09",
+      "index": 70,
+      "char": "和",
+      "context": "奉佛教的男人，都要出家當和尚一段時間，連國王也是如",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄏㄢˋ",
+        "ㄏㄜˊ"
+      ],
+      "final_zhuyin": "ㄏㄜˊ",
+      "decision_basis": "和尚：詞語固定讀音，教育部辭典列ㄏㄜˊ；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A09",
+      "index": 188,
+      "char": "乾",
+      "context": "國土大部分是沙漠，氣候又乾又熱，幸好有尼羅河緩緩流",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄍㄢ",
+        "ㄑㄧㄢˊ"
+      ],
+      "final_zhuyin": "ㄍㄢ",
+      "decision_basis": "乾又熱：乾燥；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A09",
+      "index": 311,
+      "char": "一",
+      "context": "荷蘭。這裡的國土有三分之一在海平面之下，所以要築堤",
+      "risk_reasons": [
+        "rule_exception"
+      ],
+      "candidate_readings": [
+        "ㄧ",
+        "ㄧˊ"
+      ],
+      "final_zhuyin": "ㄧ",
+      "decision_basis": "分數「三分之一」中的數字保留本調；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A09",
+      "index": 393,
+      "char": "種",
+      "context": "叫「花之王國」，人們喜歡種花，鬱金香和水仙都是知名",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄨㄥˇ",
+        "ㄓㄨㄥˋ"
+      ],
+      "final_zhuyin": "ㄓㄨㄥˋ",
+      "decision_basis": "種花：動詞，栽種；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A09",
+      "index": 438,
+      "char": "樂",
+      "context": "我的家鄉來，我的家鄉是音樂國度奧地利，許多世界上有",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄌㄜˋ",
+        "ㄩㄝˋ"
+      ],
+      "final_zhuyin": "ㄩㄝˋ",
+      "decision_basis": "音樂：音樂的樂；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A09",
+      "index": 454,
+      "char": "樂",
+      "context": "地利，許多世界上有名的音樂家，都曾經在這裡居住過。",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄌㄜˋ",
+        "ㄩㄝˋ"
+      ],
+      "final_zhuyin": "ㄩㄝˋ",
+      "decision_basis": "音樂：音樂的樂；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A09",
+      "index": 478,
+      "char": "樂",
+      "context": "。這裡的男女老少都喜愛音樂，國土雖然不大，卻充滿歡",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄌㄜˋ",
+        "ㄩㄝˋ"
+      ],
+      "final_zhuyin": "ㄩㄝˋ",
+      "decision_basis": "音樂：音樂的樂；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A09",
+      "index": 501,
+      "char": "樂",
+      "context": "滿歡樂的氣息。每年到了音樂節，常有大量的外國觀光客",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄌㄜˋ",
+        "ㄩㄝˋ"
+      ],
+      "final_zhuyin": "ㄩㄝˋ",
+      "decision_basis": "音樂：音樂的樂；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A10",
+      "index": 20,
+      "char": "一",
+      "context": "故事便利貼 一千零一夜是阿拉伯世界的民間故事",
+      "risk_reasons": [
+        "rule_exception"
+      ],
+      "candidate_readings": [
+        "ㄧ",
+        "ㄧˊ"
+      ],
+      "final_zhuyin": "ㄧ",
+      "decision_basis": "故事名稱「一千零一夜」中的數字保留本調；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A11",
+      "index": 383,
+      "char": "一",
+      "context": "三腳桌，快收起鑰匙啊！萬一被主人發現，這小女孩可就",
+      "risk_reasons": [
+        "rule_exception"
+      ],
+      "candidate_readings": [
+        "ㄧ",
+        "ㄧˊ"
+      ],
+      "final_zhuyin": "ㄧ",
+      "decision_basis": "固定詞「萬一」保留本調；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A12",
+      "index": 643,
+      "char": "長",
+      "context": "大約只跟老鞋匠的手掌一樣長。深夜裡，牆上時鐘滴答滴",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄤˇ",
+        "ㄔㄤˊ"
+      ],
+      "final_zhuyin": "ㄔㄤˊ",
+      "decision_basis": "一樣長：長短的長；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A12",
+      "index": 667,
+      "char": "長",
+      "context": "滴答的響著。小精靈抱著細長的針線，熟練的縫合皮革，",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄓㄤˇ",
+        "ㄔㄤˊ"
+      ],
+      "final_zhuyin": "ㄔㄤˊ",
+      "decision_basis": "細長：長短的長；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A12",
+      "index": 1034,
+      "char": "模",
+      "context": "夫婦看著小精靈蹦蹦跳跳的模樣，內心也充滿了幸福與喜",
+      "risk_reasons": [
+        "high_risk_polyphonic"
+      ],
+      "candidate_readings": [
+        "ㄇㄛˊ",
+        "ㄇㄨˊ"
+      ],
+      "final_zhuyin": "ㄇㄨˊ",
+      "decision_basis": "模樣：樣子；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    }
+  ]
+}
