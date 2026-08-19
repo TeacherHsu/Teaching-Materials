@@ -5,7 +5,7 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
     'use strict';
 
-    const VERSION = '1.0.0';
+    const VERSION = '1.1.0';
 
     // Teacher-approved defaults. Phrase rules below take precedence when the
     // surrounding text establishes another reading.
@@ -37,6 +37,30 @@
         return phraseRule(id, phrase, [{ offset, zhuyin }]);
     });
 
+    const CLASSIFIER_PRECEDERS = new Set(Array.from('一二三四五六七八九十百千萬兩两每各這那哪幾'));
+
+    function isClassifierGeAt(chars, index) {
+        if (chars[index] !== '個') return false;
+        const previous = chars[index - 1] || '';
+        const previousTwo = chars[index - 2] || '';
+        return CLASSIFIER_PRECEDERS.has(previous)
+            || (previous === '個' && CLASSIFIER_PRECEDERS.has(previousTwo));
+    }
+
+    function expectedContextualReadings(text) {
+        const chars = Array.from(text || '');
+        const expected = {};
+        for (let index = 0; index < chars.length; index++) {
+            if (isClassifierGeAt(chars, index)) expected[index] = '˙ㄍㄜ';
+            if (chars[index] === '一' && chars.slice(index, index + 3).join('') === '一會兒') {
+                expected[index] = 'ㄧˋ';
+                expected[index + 1] = 'ㄏㄨㄟˇ';
+                expected[index + 2] = 'ㄦ';
+            }
+        }
+        return expected;
+    }
+
     // Rules are intentionally phrase-bound. They are distilled from the 115
     // lesson corrections plus common classroom vocabulary; they must not turn
     // into a blind per-character replacement table.
@@ -53,6 +77,11 @@
         phraseRule('sleep-unable', '睡不著覺', [
             { offset: 2, zhuyin: 'ㄓㄠˊ' },
             { offset: 3, zhuyin: 'ㄐㄧㄠˋ' },
+        ]),
+        phraseRule('yi-hui-er', '一會兒', [
+            { offset: 0, zhuyin: 'ㄧˋ' },
+            { offset: 1, zhuyin: 'ㄏㄨㄟˇ' },
+            { offset: 2, zhuyin: 'ㄦ' },
         ]),
 
         ...targetChar('de-de2-front', ['得到', '得意', '得獎', '得分', '得手', '得名', '得知', '得救', '得罪', '得利', '得病'], '得', 'ㄉㄜˊ'),
@@ -234,6 +263,15 @@
             }
         });
 
+        // 量詞「個」在「一個、每個、這個、那個、哪個、幾個」等
+        // 語境通常讀輕聲；「個人、個性、個子」沒有量詞前件時不套用。
+        chars.forEach((char, index) => {
+            if (char !== '個') return;
+            if (isClassifierGeAt(chars, index)) {
+                setReading(index, '˙ㄍㄜ', 'ge-classifier-neutral');
+            }
+        });
+
         const nextReadable = index => {
             for (let next = index + 1; next < chars.length; next++) {
                 if (chars[next] === '|' || /\s/.test(chars[next])) continue;
@@ -263,7 +301,11 @@
                     return;
                 }
                 const next = nextReadable(index);
-                const nextTone = next >= 0 ? toneOf(readings[next]) : 0;
+                // 表面標成輕聲的量詞「個」仍以底層第四聲參與「一」的變調，
+                // 因此「一個」保留 `ㄧˊ`，不會因輕聲標示而退回本調。
+                const nextTone = next >= 0
+                    ? (isClassifierGeAt(chars, next) ? 4 : toneOf(readings[next]))
+                    : 0;
                 if (nextTone === 4) setReading(index, 'ㄧˊ', 'yi-before-fourth');
                 else if ([1, 2, 3].includes(nextTone)) setReading(index, 'ㄧˋ', 'yi-before-first-second-third');
                 else setReading(index, 'ㄧ', 'yi-base');
@@ -316,7 +358,9 @@
         COMMON_DEFAULTS,
         KINSHIP_REDUPLICATIONS,
         HIGH_RISK_CHARS,
+        CLASSIFIER_PRECEDERS,
         PHRASE_RULES,
+        expectedContextualReadings,
         normalizeZhuyin,
         pinyinSyllableToZhuyin,
         toneOf,

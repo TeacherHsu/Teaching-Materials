@@ -10,6 +10,7 @@ assert.equal(rules.pinyinSyllableToZhuyin('zhi4'), 'ㄓˋ');
 assert.equal(rules.pinyinSyllableToZhuyin('wen2'), 'ㄨㄣˊ');
 assert.equal(rules.pinyinSyllableToZhuyin('jue2'), 'ㄐㄩㄝˊ');
 assert.equal(rules.pinyinSyllableToZhuyin('xi0'), '˙ㄒㄧ');
+assert.equal(rules.VERSION, '1.1.0');
 
 function analyze(text, known = {}) {
     const readings = Array.from(text, (_, index) => known[index] || 'ㄗ');
@@ -53,6 +54,22 @@ expectReading('場圃', 0, 'ㄔㄤˊ');
 expectReading('喔喔啼', 0, 'ㄨㄛˋ');
 expectReading('喔喔啼', 1, 'ㄨㄛˋ');
 expectReading('休息', 1, 'ㄒㄧˊ');
+expectReading('每個人', 1, '˙ㄍㄜ');
+expectReading('一個城市', 1, '˙ㄍㄜ');
+expectReading('一個城市', 0, 'ㄧˊ', { 1: 'ㄍㄜˋ' });
+expectReading('這個目標', 1, '˙ㄍㄜ');
+expectReading('個人', 0, 'ㄍㄜˋ', { 0: 'ㄍㄜˋ' });
+expectReading('個性', 0, 'ㄍㄜˋ', { 0: 'ㄍㄜˋ' });
+expectReading('一會兒', 0, 'ㄧˋ');
+expectReading('一會兒', 1, 'ㄏㄨㄟˇ');
+expectReading('一會兒', 2, 'ㄦ');
+
+assert.deepEqual(rules.expectedContextualReadings('每個人一會兒'), {
+    1: '˙ㄍㄜ',
+    3: 'ㄧˋ',
+    4: 'ㄏㄨㄟˇ',
+    5: 'ㄦ',
+});
 
 const missingCandidate = rules.apply('他行嗎', ['ㄊㄚ', '', '˙ㄇㄚ']);
 assert.equal(missingCandidate.reviewItems.some(item => item.char === '行'), true);
