@@ -369,22 +369,45 @@
                 setParsedData(data);
             };
 
+            // 115 workflow: split every marked or unmarked text run into
+            // locale-aware Chinese words. Existing |...| markers remain useful
+            // as run boundaries, but no longer force a whole sentence/line to
+            // be read as one word.
             const buildWordRanges = (inputText) => {
                 const ranges = [];
                 const chars = inputText.split('');
-                let i = 0;
-                while (i < chars.length) {
-                    if (chars[i] === '|') {
-                        const startBar = i;
-                        let j = i + 1;
-                        while (j < chars.length && chars[j] !== '|') j++;
-                        if (j < chars.length && chars[j] === '|') {
-                            ranges.push({ s: startBar + 1, e: j - 1 });
-                            i = j + 1;
-                            continue;
+                const addSegmentedRun = (start, end) => {
+                    if (end < start) return;
+                    const run = chars.slice(start, end + 1).join('');
+                    if (typeof Intl !== 'undefined' && typeof Intl.Segmenter === 'function') {
+                        const segmenter = new Intl.Segmenter('zh-TW', { granularity: 'word' });
+                        let offset = 0;
+                        for (const part of segmenter.segment(run)) {
+                            const partStart = start + offset;
+                            const partEnd = partStart + part.segment.length - 1;
+                            if (part.isWordLike && !/[，。、；：？！「」『』（）()\s]/.test(part.segment)) {
+                                ranges.push({ s: partStart, e: partEnd });
+                            }
+                            offset += part.segment.length;
+                        }
+                        return;
+                    }
+                    // Fallback for older browsers: preserve marked runs and
+                    // otherwise use contiguous non-punctuation text.
+                    let s = start;
+                    for (let i = start; i <= end + 1; i++) {
+                        if (i > end || /[，。、；：？！「」『』（）()\s]/.test(chars[i])) {
+                            if (s <= i - 1) ranges.push({ s, e: i - 1 });
+                            s = i + 1;
                         }
                     }
-                    i++;
+                };
+                let runStart = 0;
+                for (let i = 0; i <= chars.length; i++) {
+                    if (i === chars.length || chars[i] === '|' || chars[i] === '\n') {
+                        addSegmentedRun(runStart, i - 1);
+                        runStart = i + 1;
+                    }
                 }
                 return ranges;
             };
