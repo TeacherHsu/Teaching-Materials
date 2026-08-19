@@ -181,6 +181,358 @@
       "review_status": "approved"
     },
     {
+      "lesson_id": "115HG2A05",
+      "index": 88,
+      "char": "媽",
+      "context": "好可愛！」  媽媽說：「你注意到螃",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄇㄚ",
+        "˙ㄇㄚ"
+      ],
+      "final_zhuyin": "˙ㄇㄚ",
+      "decision_basis": "媽媽：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A05",
+      "index": 113,
+      "char": "妹",
+      "context": "走的嗎？」  妹妹說：「我知道，",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄇㄟˋ",
+        "˙ㄇㄟ"
+      ],
+      "final_zhuyin": "˙ㄇㄟ",
+      "decision_basis": "妹妹：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A06",
+      "index": 46,
+      "char": "奶",
+      "context": "放學後，我們到奶奶家。吃過晚飯，",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄋㄞˇ",
+        "˙ㄋㄞ"
+      ],
+      "final_zhuyin": "˙ㄋㄞ",
+      "decision_basis": "奶奶：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A06",
+      "index": 120,
+      "char": "爸",
+      "context": "張大眼睛，想找爸爸說的「星星」。",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄅㄚˋ",
+        "˙ㄅㄚ"
+      ],
+      "final_zhuyin": "˙ㄅㄚ",
+      "decision_basis": "爸爸：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A06",
+      "index": 225,
+      "char": "妹",
+      "context": "，一顆星星躲到妹妹的頭上。爸爸笑著",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄇㄟˋ",
+        "˙ㄇㄟ"
+      ],
+      "final_zhuyin": "˙ㄇㄟ",
+      "decision_basis": "妹妹：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A06",
+      "index": 233,
+      "char": "爸",
+      "context": "到妹妹的頭上。爸爸笑著說：「星星想",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄅㄚˋ",
+        "˙ㄅㄚ"
+      ],
+      "final_zhuyin": "˙ㄅㄚ",
+      "decision_basis": "爸爸：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A06",
+      "index": 256,
+      "char": "妹",
+      "context": "你做朋友呢！」妹妹為了「新朋友」",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄇㄟˋ",
+        "˙ㄇㄟ"
+      ],
+      "final_zhuyin": "˙ㄇㄟ",
+      "decision_basis": "妹妹：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A07",
+      "index": 106,
+      "char": "奶",
+      "context": "竹子的香味，有奶奶的愛心，還有祖先",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄋㄞˇ",
+        "˙ㄋㄞ"
+      ],
+      "final_zhuyin": "˙ㄋㄞ",
+      "decision_basis": "奶奶：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A07",
+      "index": 146,
+      "char": "媽",
+      "context": "「這是艾粄。媽媽說，客家人會在清",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄇㄚ",
+        "˙ㄇㄚ"
+      ],
+      "final_zhuyin": "˙ㄇㄚ",
+      "decision_basis": "媽媽：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A08",
+      "index": 27,
+      "char": "媽",
+      "context": "日到了，明光請媽媽來跟大家介紹越南春捲",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄇㄚ",
+        "˙ㄇㄚ"
+      ],
+      "final_zhuyin": "˙ㄇㄚ",
+      "decision_basis": "媽媽：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A08",
+      "index": 113,
+      "char": "媽",
+      "context": "什麼？」明光的媽媽說：「用泡軟的米",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄇㄚ",
+        "˙ㄇㄚ"
+      ],
+      "final_zhuyin": "˙ㄇㄚ",
+      "decision_basis": "媽媽：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A08",
+      "index": 221,
+      "char": "媽",
+      "context": "吃，一邊聽明光媽媽說小時候的生活，",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄇㄚ",
+        "˙ㄇㄚ"
+      ],
+      "final_zhuyin": "˙ㄇㄚ",
+      "decision_basis": "媽媽：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A09",
+      "index": 23,
+      "char": "媽",
+      "context": " 好涼啊！ 媽媽給小黃瓜沖澡， ",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄇㄚ",
+        "˙ㄇㄚ"
+      ],
+      "final_zhuyin": "˙ㄇㄚ",
+      "decision_basis": "媽媽：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A09",
+      "index": 71,
+      "char": "爸",
+      "context": " 好暖哪！ 爸爸幫米粒泡澡， 送",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄅㄚˋ",
+        "˙ㄅㄚ"
+      ],
+      "final_zhuyin": "˙ㄅㄚ",
+      "decision_basis": "爸爸：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A10",
+      "index": 44,
+      "char": "姐",
+      "context": "了很多字。我和姐姐問他：「要不要來",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄐㄧㄝˇ",
+        "˙ㄐㄧㄝ"
+      ],
+      "final_zhuyin": "˙ㄐㄧㄝ",
+      "decision_basis": "姐姐：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A10",
+      "index": 228,
+      "char": "姐",
+      "context": "」  這時，姐姐趕緊寫下「王」",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄐㄧㄝˇ",
+        "˙ㄐㄧㄝ"
+      ],
+      "final_zhuyin": "˙ㄐㄧㄝ",
+      "decision_basis": "姐姐：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A10",
+      "index": 283,
+      "char": "姐",
+      "context": "是白了。」我和姐姐異口同聲的說：「",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄐㄧㄝˇ",
+        "˙ㄐㄧㄝ"
+      ],
+      "final_zhuyin": "˙ㄐㄧㄝ",
+      "decision_basis": "姐姐：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A12",
+      "index": 84,
+      "char": "媽",
+      "context": "掌撥清波。」 媽媽說：「詩人駱賓王",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄇㄚ",
+        "˙ㄇㄚ"
+      ],
+      "final_zhuyin": "˙ㄇㄚ",
+      "decision_basis": "媽媽：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A12",
+      "index": 113,
+      "char": "姐",
+      "context": "七歲呢！」  姐姐指著水面，說：",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄐㄧㄝˇ",
+        "˙ㄐㄧㄝ"
+      ],
+      "final_zhuyin": "˙ㄐㄧㄝ",
+      "decision_basis": "姐姐：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A12",
+      "index": 233,
+      "char": "姐",
+      "context": "一隻也這麼做。姐姐說：「我也來詠鵝",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄐㄧㄝˇ",
+        "˙ㄐㄧㄝ"
+      ],
+      "final_zhuyin": "˙ㄐㄧㄝ",
+      "decision_basis": "姐姐：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A12",
+      "index": 290,
+      "char": "媽",
+      "context": "皮向天空。」 媽媽笑著說：「姐姐變",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄇㄚ",
+        "˙ㄇㄚ"
+      ],
+      "final_zhuyin": "˙ㄇㄚ",
+      "decision_basis": "媽媽：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG2A12",
+      "index": 299,
+      "char": "姐",
+      "context": "媽媽笑著說：「姐姐變成小詩人了！」",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄐㄧㄝˇ",
+        "˙ㄐㄧㄝ"
+      ],
+      "final_zhuyin": "˙ㄐㄧㄝ",
+      "decision_basis": "姐姐：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
       "lesson_id": "115HG6A01",
       "index": 342,
       "char": "省",
@@ -242,6 +594,38 @@
       ],
       "final_zhuyin": "ㄧ",
       "decision_basis": "序數「第一個」保留本調；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A02",
+      "index": 870,
+      "char": "爺",
+      "context": "事，就掉了眼淚。妳爺爺來問我什麼事，我的回",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄧㄝˊ",
+        "˙ㄧㄝ"
+      ],
+      "final_zhuyin": "˙ㄧㄝ",
+      "decision_basis": "爺爺：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A02",
+      "index": 1320,
+      "char": "爸",
+      "context": "         爸爸",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄅㄚˋ",
+        "˙ㄅㄚ"
+      ],
+      "final_zhuyin": "˙ㄅㄚ",
+      "decision_basis": "爸爸：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
       "review_status": "approved"
     },
     {
@@ -533,6 +917,150 @@
       "review_status": "approved"
     },
     {
+      "lesson_id": "115HG6A07",
+      "index": 193,
+      "char": "媽",
+      "context": "藝術還是不太了解。媽媽說：「找個假期，讓我",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄇㄚ",
+        "˙ㄇㄚ"
+      ],
+      "final_zhuyin": "˙ㄇㄚ",
+      "decision_basis": "媽媽：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A07",
+      "index": 238,
+      "char": "爸",
+      "context": "」 上個週末，爸爸開車載著我們南下，途",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄅㄚˋ",
+        "˙ㄅㄚ"
+      ],
+      "final_zhuyin": "˙ㄅㄚ",
+      "decision_basis": "爸爸：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A07",
+      "index": 337,
+      "char": "媽",
+      "context": "，看起來花團錦簇。媽媽說：「這件作品叫做花",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄇㄚ",
+        "˙ㄇㄚ"
+      ],
+      "final_zhuyin": "˙ㄇㄚ",
+      "decision_basis": "媽媽：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A07",
+      "index": 403,
+      "char": "爸",
+      "context": "麼又是依法設置呢？爸爸看著困惑的我說：「因",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄅㄚˋ",
+        "˙ㄅㄚ"
+      ],
+      "final_zhuyin": "˙ㄅㄚ",
+      "decision_basis": "爸爸：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A07",
+      "index": 704,
+      "char": "媽",
+      "context": "在入口處閃閃發亮。媽媽告訴我，這件作品原本",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄇㄚ",
+        "˙ㄇㄚ"
+      ],
+      "final_zhuyin": "˙ㄇㄚ",
+      "decision_basis": "媽媽：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A07",
+      "index": 854,
+      "char": "爸",
+      "context": " 進入美術館後，爸爸叮囑我要輕聲細語，慢",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄅㄚˋ",
+        "˙ㄅㄚ"
+      ],
+      "final_zhuyin": "˙ㄅㄚ",
+      "decision_basis": "爸爸：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A07",
+      "index": 900,
+      "char": "媽",
+      "context": "要參與互動的。我在媽媽的解說下，努力體會藝",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄇㄚ",
+        "˙ㄇㄚ"
+      ],
+      "final_zhuyin": "˙ㄇㄚ",
+      "decision_basis": "媽媽：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A07",
+      "index": 955,
+      "char": "媽",
+      "context": "種主題和展現方式。媽媽說：「就像大地之書，",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄇㄚ",
+        "˙ㄇㄚ"
+      ],
+      "final_zhuyin": "˙ㄇㄚ",
+      "decision_basis": "媽媽：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A07",
+      "index": 1074,
+      "char": "爸",
+      "context": "能接觸到藝術品。」爸爸也說：「還有像花間小",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄅㄚˋ",
+        "˙ㄅㄚ"
+      ],
+      "final_zhuyin": "˙ㄅㄚ",
+      "decision_basis": "爸爸：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
       "lesson_id": "115HG6A08",
       "index": 70,
       "char": "長",
@@ -674,6 +1202,38 @@
       ],
       "final_zhuyin": "ㄩㄝˋ",
       "decision_basis": "音樂：音樂的樂；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A09",
+      "index": 63,
+      "char": "姑",
+      "context": "。同組陳姿雅同學的姑姑，正好認識明華園的一",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄍㄨ",
+        "˙ㄍㄨ"
+      ],
+      "final_zhuyin": "˙ㄍㄨ",
+      "decision_basis": "姑姑：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115HG6A09",
+      "index": 213,
+      "char": "奶",
+      "context": "：孫阿姨，我曾經陪奶奶看過您演的歌仔戲，我",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄋㄞˇ",
+        "˙ㄋㄞ"
+      ],
+      "final_zhuyin": "˙ㄋㄞ",
+      "decision_basis": "奶奶：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
       "review_status": "approved"
     },
     {
@@ -1066,60 +1626,64 @@
       "lesson_id": "115KG4A02",
       "index": 221,
       "char": "姐",
-      "context": "就是國語日報。我和姐姐常常為了誰先看而爭吵不休",
+      "context": "國語日報。我和姐姐常常為了誰先看而爭吵",
       "risk_reasons": [
         "tts_lexicon_mismatch"
       ],
       "candidate_readings": [
-        "ㄐㄧㄝˇ"
+        "ㄐㄧㄝˇ",
+        "˙ㄐㄧㄝ"
       ],
-      "final_zhuyin": "ㄐㄧㄝˇ",
-      "decision_basis": "姐姐：姊姊的姐；第二次依完整前後文、詞義與詞性複核",
+      "final_zhuyin": "˙ㄐㄧㄝ",
+      "decision_basis": "姐姐：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
       "review_status": "approved"
     },
     {
       "lesson_id": "115KG4A02",
       "index": 252,
       "char": "姐",
-      "context": "們一起想出好方法：姐姐看左邊，我就看右邊",
+      "context": "起想出好方法：姐姐看左邊，我就看右",
       "risk_reasons": [
         "tts_lexicon_mismatch"
       ],
       "candidate_readings": [
-        "ㄐㄧㄝˇ"
+        "ㄐㄧㄝˇ",
+        "˙ㄐㄧㄝ"
       ],
-      "final_zhuyin": "ㄐㄧㄝˇ",
-      "decision_basis": "姐姐：姊姊的姐；第二次依完整前後文、詞義與詞性複核",
+      "final_zhuyin": "˙ㄐㄧㄝ",
+      "decision_basis": "姐姐：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
       "review_status": "approved"
     },
     {
       "lesson_id": "115KG4A02",
       "index": 268,
       "char": "姐",
-      "context": "，我就看右邊；姐姐看正面，我就看反面…",
+      "context": "我就看右邊；姐姐看正面，我就看反",
       "risk_reasons": [
         "tts_lexicon_mismatch"
       ],
       "candidate_readings": [
-        "ㄐㄧㄝˇ"
+        "ㄐㄧㄝˇ",
+        "˙ㄐㄧㄝ"
       ],
-      "final_zhuyin": "ㄐㄧㄝˇ",
-      "decision_basis": "姐姐：姊姊的姐；第二次依完整前後文、詞義與詞性複核",
+      "final_zhuyin": "˙ㄐㄧㄝ",
+      "decision_basis": "姐姐：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
       "review_status": "approved"
     },
     {
       "lesson_id": "115KG4A02",
       "index": 342,
       "char": "姐",
-      "context": "就是我的玩樂時間。姐姐、同學和我會在附近的",
+      "context": "我的玩樂時間。姐姐、同學和我會在附",
       "risk_reasons": [
         "tts_lexicon_mismatch"
       ],
       "candidate_readings": [
-        "ㄐㄧㄝˇ"
+        "ㄐㄧㄝˇ",
+        "˙ㄐㄧㄝ"
       ],
-      "final_zhuyin": "ㄐㄧㄝˇ",
-      "decision_basis": "姐姐：姊姊的姐；第二次依完整前後文、詞義與詞性複核",
+      "final_zhuyin": "˙ㄐㄧㄝ",
+      "decision_basis": "姐姐：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
       "review_status": "approved"
     },
     {
@@ -1281,6 +1845,38 @@
       ],
       "final_zhuyin": "ㄓㄨㄥ",
       "decision_basis": "生命中：裡面；第二次依完整前後文、詞義與詞性複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A07",
+      "index": 87,
+      "char": "奶",
+      "context": "，有竹子的香味，有奶奶的愛心，還有祖先的故",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄋㄞˇ",
+        "˙ㄋㄞ"
+      ],
+      "final_zhuyin": "˙ㄋㄞ",
+      "decision_basis": "奶奶：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A07",
+      "index": 120,
+      "char": "媽",
+      "context": "盒說：「這是艾粄。媽媽說，客家人會在清明節",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄇㄚ",
+        "˙ㄇㄚ"
+      ],
+      "final_zhuyin": "˙ㄇㄚ",
+      "decision_basis": "媽媽：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
       "review_status": "approved"
     },
     {
@@ -1585,6 +2181,22 @@
       ],
       "final_zhuyin": "ㄧ",
       "decision_basis": "故事名稱「一千零一夜」中的數字保留本調；第二次依完整前後文複核",
+      "review_status": "approved"
+    },
+    {
+      "lesson_id": "115KG4A11",
+      "index": 133,
+      "char": "姐",
+      "context": "夏日的午後，原本與姐姐在樹下閱讀的愛麗絲，",
+      "risk_reasons": [
+        "tts_lexicon_mismatch"
+      ],
+      "candidate_readings": [
+        "ㄐㄧㄝˇ",
+        "˙ㄐㄧㄝ"
+      ],
+      "final_zhuyin": "˙ㄐㄧㄝ",
+      "decision_basis": "姐姐：家人重疊稱呼第二字預設輕聲；第二次依完整前後文複核",
       "review_status": "approved"
     },
     {
