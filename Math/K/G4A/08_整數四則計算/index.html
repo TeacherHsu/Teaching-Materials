@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>數學第8單元：整數四則運算大挑戰</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f0fdf4;
+            overflow-x: hidden;
+            touch-action: manipulation;
+            user-select: none;
+        }
+
+        .game-container {
+            position: relative;
+            width: 95%;
+            max-width: 900px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 10px 0 #86efac, 0 20px 25px rgba(0,0,0,0.1);
+            padding: 24px;
+            min-height: 680px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f3f4f6;
+        }
+
+        .score-board {
+            background: #fffbeb;
+            border: 2px solid #fcd34d;
+            color: #b45309;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 0 #fcd34d;
+        }
+
+        .btn-voice {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            border-radius: 50px;
+            padding: 8px 16px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.1s;
+            border: 2px solid #bae6fd;
+            box-shadow: 0 4px 0 #bae6fd;
+        }
+        .btn-voice:active { transform: translateY(4px); box-shadow: none; }
+
+        .interactive-box {
+            background: #fff;
+            border: 3px solid #cbd5e1;
+            border-radius: 16px;
+            padding: 15px 25px;
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #334155;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 6px 0 #94a3b8;
+            min-width: 70px;
+            margin: 8px;
+        }
+        .interactive-box:active { transform: translateY(6px); box-shadow: none; }
+        .interactive-box.correct { background-color: #dcfce7; border-color: #22c55e; color: #15803d; box-shadow: 0 6px 0 #22c55e; pointer-events: none; }
+        .interactive-box.wrong { background-color: #fee2e2; border-color: #ef4444; color: #991b1b; animation: shake 0.5s; }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .equation-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem; 
+            font-weight: bold;
+            color: #334155;
+            margin-bottom: 1.2rem;
+            min-height: 70px;
+            width: 100%;
+            flex-wrap: wrap; 
+        }
+        
+        .eq-symbol { width: 40px; text-align: right; margin-right: 10px; color: #94a3b8; flex-shrink: 0; }
+        .eq-placeholder { width: 40px; margin-right: 10px; flex-shrink: 0; }
+
+        .highlight-calc {
+            color: #ef4444;
+            border-bottom: 4px solid #ef4444;
+            padding-bottom: 2px;
+        }
+        
+        .calc-result-text { color: #ef4444; }
+
+        .step-input {
+            width: 130px;
+            height: 65px;
+            font-size: 2rem;
+            text-align: center;
+            border: 3px solid #3b82f6;
+            border-radius: 12px;
+            background: #eff6ff;
+            color: #1e40af;
+            outline: none;
+            transition: all 0.2s;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .step-input:focus {
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+            border-color: #2563eb;
+            background: #fff;
+        }
+        .step-input.error-shake {
+            border-color: #ef4444;
+            background-color: #fef2f2;
+            animation: shake 0.5s;
+        }
+
+        .item-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 16px;
+            border-radius: 20px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border: 3px solid #e2e8f0;
+            min-width: 140px;
+            transition: transform 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        .item-card:hover { transform: translateY(-4px); border-color: #60a5fa; }
+        
+        .price-tag {
+            background: #fee2e2;
+            color: #b91c1c;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 1.1rem;
+            margin-top: 8px;
+            border: 2px solid #fecaca;
+        }
+        
+        .qty-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #3b82f6;
+            color: white;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-bottom-left-radius: 16px;
+            font-size: 0.9rem;
+        }
+
+        .emoji-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            font-size: 2rem;
+            margin-bottom: 8px;
+            justify-items: center;
+        }
+        .emoji-single { font-size: 3.5rem; margin-bottom: 8px; }
+
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 24px;
+        }
+
+        .score-popup {
+            position: absolute;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #f59e0b;
+            text-shadow: 2px 2px 0px #fff;
+            pointer-events: none;
+            animation: floatUp 1s ease-out forwards;
+            z-index: 100;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(0.5); opacity: 0; }
+            20% { transform: translateY(-20px) scale(1.2); opacity: 1; }
+            100% { transform: translateY(-100px) scale(1); opacity: 0; }
+        }
+        
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="game-container" id="app">
+    
+    <div class="top-bar">
+        <div class="flex items-center gap-4">
+            <div class="score-board" id="scoreDisplay">
+                <span>⭐</span>
+                <span id="scoreValue">0</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-xs text-gray-500 font-bold">關卡</span>
+                <div class="text-blue-600 font-black text-xl">
+                    <span id="currentLevelText">1</span> / <span id="totalLevelText">10</span>
+                </div>
+            </div>
+        </div>
+        <button onclick="toggleSound()" class="btn-voice" aria-label="語音開關">
+            <span class="text-lg mr-2">🔊</span>
+            <span id="soundText">語音：開</span>
+        </button>
+    </div>
+
+    <div id="stageArea" class="flex-1 flex flex-col items-center justify-center relative z-20 min-h-[400px]">
+        <div class="text-center">
+            <p class="text-xl text-gray-500 mb-4 animate-pulse">正在準備數學冒險...</p>
+        </div>
+    </div>
+
+    <div id="controlArea" class="mt-4 h-24 flex items-center justify-center z-20 relative"></div>
+</div>
+
+<script>
+    // --- 遊戲設定 ---
+    const TOTAL_LEVELS_INIT = 10; // 初始關卡數
+    let levels = [];
+    let currentLevelIdx = 0;
+    let currentStep = 0;
+    let isSoundOn = true;
+    let score = 0;
+    let levelStartTime = 0;
+    let correctCount = 0; 
+    let failedInCurrentLevel = false; // 標記本題是否答錯過
+    let retryMode = false; // 是否為補題模式
+
+    // --- 初始化 ---
+    window.onload = () => {
+        levels = generateLevels();
+        updateLevelDisplay();
+        loadLevel(0);
+    };
+
+    function updateLevelDisplay() {
+        document.getElementById('totalLevelText').innerText = levels.length;
+    }
+
+    // --- 亂數與題庫生成 ---
+    function getRandomInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+
+    function generateLevels() {
+        const lvls = [];
+        // 1-4: 偵探模式 (觀念)
+        lvls.push(createDetectiveLevel("括號先算", "算式裡有括號，要先算哪裡？", (a,b,c)=>[{val:a+b+c+10,type:"num"},{val:"-",type:"op"},{val:`( ${b} + ${c} )`,type:"group",isAnswer:true}], 'bracket'));
+        lvls.push(createDetectiveLevel("括號先算", "括號在前面，還是要先算括號喔！", (a,b,c)=>[{val:`( ${a+b} - ${b} )`,type:"group",isAnswer:true},{val:"×",type:"op"},{val:c,type:"num"}], 'bracket'));
+        lvls.push(createDetectiveLevel("先乘除後加減", "沒有括號，要先算乘法！", (a,b,c)=>[{val:a*5+10,type:"num"},{val:"+",type:"op"},{val:`${b} × ${c}`,type:"group",isAnswer:true}], 'mul_div'));
+        lvls.push(createDetectiveLevel("先乘除後加減", "這次有除法，要先算哪裡？", (a,b,c)=>{const d=c*b; return[{val:d+20,type:"num"},{val:"-",type:"op"},{val:`${d} ÷ ${c}`,type:"group",isAnswer:true}]}, 'mul_div'));
+
+        // 5-8: 逐步計算 (Scaffold)
+        lvls.push(createScaffoldLevel('mul_last'));
+        lvls.push(createScaffoldLevel('div_last'));
+        lvls.push(createScaffoldLevel('bracket_last'));
+        lvls.push(createScaffoldLevel('bracket_first'));
+
+        // 9-10: 應用題 (Application)
+        lvls.push(createApplicationLevel('breakfast'));
+        lvls.push(createApplicationLevel('stationery'));
+
+        return lvls;
+    }
+
+    function createDetectiveLevel(concept, hint, partsGen, category) {
+        const b = getRandomInt(3, 9), c = getRandomInt(2, 5), a = getRandomInt(10, 50);
+        return { 
+            type: 'detective', 
+            title: `觀念題：${concept}`, 
+            instruction: "請點選算式中，應該要「最先計算」的部分。", 
+            expression: partsGen(a, b, c), 
+            hint, 
+            voiceIntro: `觀念題，${concept}。${hint} 請點選應該要最先計算的部分。`,
+            category: category // 用於判斷題型以進行補題
+        };
+    }
+
+    function createScaffoldLevel(subType) {
+        let steps=[], title="計算題：一步一步算", ruleVoice="", category="";
+        if(subType==='mul_last'){
+            const b=getRandomInt(2,8), c=getRandomInt(3,9), prod=b*c, a=prod+getRandomInt(10,50);
+            ruleVoice="算式裡有乘法，記得要先算乘法喔！";
+            category = "mul_div";
+            steps=[
+                {row1:{pre:`${a} - `,highlight:`${b} × ${c}`,post:""}, row2:{pre:`${a} - `,inputAnswer:prod,post:""}, voice:`先算乘法。${b} 乘 ${c} 等於多少？`},
+                {row1:{pre:`${a} - `,highlight:`${b} × ${c}`,post:""}, row2:{pre:`${a} - `,staticVal:prod,post:""}, row3:{pre:"",inputAnswer:a-prod,post:""}, voice:`算式變成 ${a} 減 ${prod}。答案是多少？`}
+            ];
+        } else if(subType==='div_last'){
+            const c=getRandomInt(2,5), ans=getRandomInt(3,9), b=c*ans, a=getRandomInt(10,50);
+            ruleVoice="算式裡有除法，要先算除法！";
+            category = "mul_div";
+            steps=[
+                {row1:{pre:`${a} + `,highlight:`${b} ÷ ${c}`,post:""}, row2:{pre:`${a} + `,inputAnswer:ans,post:""}, voice:`先算除法。${b} 除以 ${c} 等於多少？`},
+                {row1:{pre:`${a} + `,highlight:`${b} ÷ ${c}`,post:""}, row2:{pre:`${a} + `,staticVal:ans,post:""}, row3:{pre:"",inputAnswer:a+ans,post:""}, voice:`算式變成 ${a} 加 ${ans}。答案是多少？`}
+            ];
+        } else if(subType==='bracket_last'){
+            const b=getRandomInt(5,15), c=getRandomInt(5,10), sum=b+c, a=sum+getRandomInt(10,30);
+            ruleVoice="有括號，括號裡面先算！";
+            category = "bracket";
+            steps=[
+                {row1:{pre:`${a} - `,highlight:`( ${b} + ${c} )`,post:""}, row2:{pre:`${a} - `,inputAnswer:sum,post:""}, voice:`先算括號。${b} 加 ${c} 是多少？`},
+                {row1:{pre:`${a} - `,highlight:`( ${b} + ${c} )`,post:""}, row2:{pre:`${a} - `,staticVal:sum,post:""}, row3:{pre:"",inputAnswer:a-sum,post:""}, voice:`最後算 ${a} 減 ${sum}。答案是多少？`}
+            ];
+        } else {
+            const a=getRandomInt(10,20), b=getRandomInt(5,10), sum=a+b, c=getRandomInt(2,4);
+            ruleVoice="括號在前面，一樣先算括號！";
+            category = "bracket";
+            steps=[
+                {row1:{pre:"",highlight:`( ${a} + ${b} )`,post:` × ${c}`}, row2:{pre:"",inputAnswer:sum,post:` × ${c}`}, voice:`先算括號裡的加法。${a} 加 ${b} 是多少？`},
+                {row1:{pre:"",highlight:`( ${a} + ${b} )`,post:` × ${c}`}, row2:{pre:"",staticVal:sum,post:` × ${c}`}, row3:{pre:"",inputAnswer:sum*c,post:""}, voice:`現在算 ${sum} 乘 ${c}。`}
+            ];
+        }
+        return { type: 'scaffold_vertical', title, ruleVoice, steps, category, subType };
+    }
+
+    function createApplicationLevel(theme) {
+        let p1, p2, multiplier, items, story, voice, teaEmoji="";
+        
+        if (theme === 'breakfast') {
+            p1 = getRandomInt(25, 40); p2 = getRandomInt(10, 15); multiplier = getRandomInt(3, 5);
+            story = `媽媽買了 1 份蔥抓餅 ($${p1}) 和 ${multiplier} 杯紅茶 ($${p2})。共要付多少元？`;
+            voice = `應用題。媽媽買了1份蔥抓餅 ${p1}元，和 ${multiplier} 杯紅茶，每杯 ${p2}元。共要付多少錢？`;
+            teaEmoji = Array(multiplier).fill("🥤").join("");
+            items = [
+                { name: "蔥抓餅", price: p1, img: "🥞", unit: "單價" },
+                { name: "紅茶", price: p2, img: teaEmoji, count: multiplier, unit: "每杯" } 
+            ];
+        } else {
+            p1 = getRandomInt(100, 200); p2 = getRandomInt(10, 20); multiplier = getRandomInt(4, 6);
+            story = `小明買了 1 本書 ($${p1}) 和 ${multiplier} 枝原子筆 ($${p2})。共要付多少元？`;
+            voice = `應用題。買1本書 ${p1}元，和 ${multiplier} 枝原子筆，每枝 ${p2}元。總共要多少錢？`;
+            items = [
+                { name: "故事書", price: p1, img: "📚", unit: "一本" },
+                { name: "原子筆", price: p2, img: Array(multiplier).fill("🖊️").join(""), count: multiplier, unit: "每枝" }
+            ];
+        }
+
+        return {
+            type: 'application_vertical',
+            title: "應用題：生活小幫手", story, items, voiceIntro: voice,
+            steps: [
+                {
+                    instruction: "列出算式", voice: "請看上面的標價。把兩種商品的價格填入算式。",
+                    inputs: [p1, p2], multiplier, template: `[input] + [input] × ${multiplier}`
+                },
+                {
+                    instruction: "先算乘法", voice: `列式正確！先算 ${multiplier} 個 ${items[1].name} 要多少錢？`,
+                    row1: {pre:`${p1} + `,highlight:`${p2} × ${multiplier}`,post:""}, row2:{pre:`${p1} + `,inputAnswer:p2*multiplier,post:""}
+                },
+                {
+                    instruction: "算出總金額", voice: "最後把兩樣東西的錢加起來。",
+                    row1:{pre:`${p1} + `,highlight:`${p2} × ${multiplier}`,post:""}, row2:{pre:`${p1} + `,staticVal:p2*multiplier,post:""}, row3:{pre:"",inputAnswer:p1+(p2*multiplier),post:""}
+                }
+            ],
+            finalAnswer: p1 + p2 * multiplier,
+            category: 'application'
+        };
+    }
+
+    // --- 核心功能：載入關卡 ---
+    function loadLevel(idx) {
+        currentLevelIdx = idx;
+        currentStep = 0;
+        levelStartTime = Date.now(); 
+        failedInCurrentLevel = false; // 重置錯誤標記
+
+        document.getElementById('currentLevelText').innerText = idx + 1;
+        document.getElementById('controlArea').innerHTML = ''; 
+        
+        if (idx >= levels.length) {
+            renderSummary(); 
+            return;
+        }
+
+        const levelData = levels[idx];
+        // 如果是補題，顯示提示
+        if (levelData.isRetry) {
+            speak("別擔心，我們再練習一題類似的！");
+        }
+
+        if (levelData.type === 'detective') {
+            renderDetective(levelData);
+            setTimeout(() => speak(levelData.voiceIntro), 500);
+        } else if (levelData.type === 'scaffold_vertical') {
+            showRuleOverlay(levelData.ruleVoice, () => {
+                 renderScaffoldVertical(levelData);
+                 speak(levelData.steps[0].voice);
+            });
+        } else if (levelData.type === 'application_vertical') {
+             renderApplicationVertical(levelData);
+             setTimeout(() => speak(levelData.voiceIntro), 500);
+        }
+    }
+
+    function showRuleOverlay(voiceText, callback) {
+        const stage = document.getElementById('stageArea');
+        stage.innerHTML = `
+            <div class="overlay">
+                <div class="bg-white p-8 rounded-2xl shadow-2xl text-center max-w-md border-4 border-yellow-200">
+                    <div class="text-6xl mb-4">💡</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">重點提醒</h3>
+                    <p class="text-xl text-blue-600 font-bold mb-8">準備好了嗎？</p>
+                    <button id="startBtn" class="bg-blue-500 hover:bg-blue-600 text-white text-xl font-bold py-3 px-8 rounded-full shadow-lg transform transition hover:scale-105">
+                        開始解題
+                    </button>
+                </div>
+            </div>
+        `;
+        speak(voiceText);
+        document.getElementById('startBtn').onclick = callback;
+    }
+
+    // --- 補題機制 (Remediation Logic) ---
+    function insertRetryLevel(currentLevel) {
+        // 根據當前題型，生成一個新的類似題
+        let newLevel = null;
+        if (currentLevel.type === 'scaffold_vertical') {
+            newLevel = createScaffoldLevel(currentLevel.subType);
+        } else if (currentLevel.type === 'detective') {
+            // 隨機生成一個同類型的觀念題
+            const a = getRandomInt(10, 50), b = getRandomInt(3, 9), c = getRandomInt(2, 5);
+            if (currentLevel.category === 'bracket') {
+                newLevel = createDetectiveLevel("括號先算", "記得括號要先算喔！", (a,b,c)=>[{val:a+b+c,type:"num"},{val:"-",type:"op"},{val:`( ${b} + ${c} )`,type:"group",isAnswer:true}], 'bracket');
+            } else {
+                newLevel = createDetectiveLevel("先乘除後加減", "先乘除後加減喔！", (a,b,c)=>[{val:a,type:"num"},{val:"+",type:"op"},{val:`${b} × ${c}`,type:"group",isAnswer:true}], 'mul_div');
+            }
+        }
+
+        if (newLevel) {
+            newLevel.isRetry = true; // 標記為補題
+            newLevel.title += " (加強練習)";
+            // 插入到下一關之前
+            levels.splice(currentLevelIdx + 1, 0, newLevel);
+            updateLevelDisplay();
+        }
+    }
+
+    // --- 錯誤處理與引導 (Error Handling) ---
+    function handleMistake(feedbackMsg) {
+        failedInCurrentLevel = true;
+        // 震動效果在 CSS 處理
+        speak(`哎呀，${feedbackMsg} 再試一次看看！`);
+    }
+
+    // --- 渲染邏輯 (保持原樣，僅微調 ID) ---
+    function renderDetective(data) {
+        let html = `
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-blue-700 mb-2">${data.title} <button onclick="speak('${data.instruction}')" class="text-xl ml-2">🔊</button></h2>
+                <p class="text-gray-600 text-lg">${data.instruction}</p>
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-4 p-8 bg-white rounded-2xl shadow-sm border-2 border-blue-100">
+        `;
+        data.expression.forEach((part, index) => {
+            html += `<div id="box-${index}" class="interactive-box" onclick="checkDetective(${index})">${part.val}</div>`;
+        });
+        html += `</div>`;
+        document.getElementById('stageArea').innerHTML = html;
+    }
+
+    function renderScaffoldVertical(data) {
+        const stepData = data.steps[currentStep];
+        let html = `
+            <div class="w-full max-w-lg mx-auto">
+                <div class="text-center mb-4">
+                    <h2 class="text-2xl font-bold text-blue-700">${data.title} <button onclick="speak('${stepData.voice}')" class="text-xl ml-2">🔊</button></h2>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200 relative overflow-hidden">
+                    <div class="equation-row">
+                        <div class="eq-placeholder"></div>
+                        <div class="eq-content">
+                            <span>${stepData.row1.pre}</span>
+                            <span class="highlight-calc">${stepData.row1.highlight}</span>
+                            <span>${stepData.row1.post}</span>
+                        </div>
+                    </div>
+                    <div class="equation-row fade-in">
+                        <div class="eq-symbol">=</div>
+                        <div class="eq-content">
+                            <span>${stepData.row2.pre}</span>
+                            ${stepData.row2.inputAnswer !== undefined ? `<input type="number" id="scaffoldInput" class="step-input" placeholder="?">` : `<span class="calc-result-text text-4xl">${stepData.row2.staticVal}</span>`}
+                            <span>${stepData.row2.post}</span>
+                        </div>
+                    </div>
+                    ${stepData.row3 ? `<div class="equation-row fade-in"><div class="eq-symbol">=</div><div class="eq-content"><span>${stepData.row3.pre}</span><input type="number" id="scaffoldInput" class="step-input" placeholder="?"><span>${stepData.row3.post}</span></div></div>` : ''}
+                </div>
+                <div class="text-center mt-6">
+                    <button onclick="checkScaffold()" class="bg-green-500 hover:bg-green-600 text-white text-xl font-bold py-3 px-10 rounded-xl shadow-lg transition transform active:scale-95">送出答案</button>
+                </div>
+            </div>`;
+        document.getElementById('stageArea').innerHTML = html;
+        setTimeout(()=>{const i=document.getElementById('scaffoldInput');if(i)i.focus()},200);
+    }
+
+    function renderApplicationVertical(data) {
+        if(currentStep===0) currentStep=1;
+        const stepData = data.steps[currentStep - 1];
+        let calcHtml = '';
+        
+        if(currentStep===1) {
+            calcHtml = `<div class="equation-row"><div class="eq-content w-full justify-center"><input type="number" id="appInput1" class="step-input" placeholder="?"><span> + </span><input type="number" id="appInput2" class="step-input" placeholder="?"><span> × ${stepData.multiplier} </span></div></div>`;
+        } else {
+            calcHtml = `<div class="equation-row"><div class="eq-placeholder"></div><div class="eq-content"><span>${stepData.row1.pre}</span><span class="highlight-calc">${stepData.row1.highlight}</span><span>${stepData.row1.post}</span></div></div>
+                <div class="equation-row fade-in"><div class="eq-symbol">=</div><div class="eq-content"><span>${stepData.row2.pre}</span>${stepData.row2.inputAnswer!==undefined?`<input type="number" id="scaffoldInput" class="step-input" placeholder="?">`:`<span class="calc-result-text text-4xl">${stepData.row2.staticVal}</span>`}<span>${stepData.row2.post}</span></div></div>
+                ${stepData.row3?`<div class="equation-row fade-in"><div class="eq-symbol">=</div><div class="eq-content"><span>${stepData.row3.pre}</span><input type="number" id="scaffoldInput" class="step-input" placeholder="?"><span>${stepData.row3.post}</span></div></div>`:''}`;
+        }
+
+        let html = `
+            <div class="w-full max-w-3xl mx-auto">
+                <div class="text-center mb-2">
+                    <h2 class="text-2xl font-bold text-blue-700">${data.title} <button onclick="speak('${stepData.voice}')" class="text-xl ml-2">🔊</button></h2>
+                </div>
+                <div class="bg-orange-50 p-4 rounded-2xl border-2 border-orange-200 mb-4 shadow-sm">
+                     <div class="flex justify-center gap-6 mb-3 flex-wrap">
+                        ${data.items.map(item => `
+                            <div class="item-card">
+                                ${item.count ? `<div class="qty-badge">買了${item.count}個</div>` : ''}
+                                <div class="${item.img.length > 2 ? 'emoji-grid' : 'emoji-single'}">${item.img}</div>
+                                <div class="font-bold text-gray-700 text-lg">${item.name}</div>
+                                <div class="price-tag">${item.unit} $${item.price}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <p class="text-xl text-gray-800 font-bold text-center bg-white/50 p-2 rounded-lg">${data.story}</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200 relative min-h-[180px]">
+                    ${calcHtml}
+                </div>
+                <div class="text-center mt-4">
+                    <button onclick="checkApplication()" class="bg-green-500 hover:bg-green-600 text-white text-xl font-bold py-3 px-10 rounded-xl shadow-lg transition transform active:scale-95">${currentStep===1?'列式完成':'送出答案'}</button>
+                </div>
+            </div>`;
+        document.getElementById('stageArea').innerHTML = html;
+        setTimeout(()=>{const i=document.getElementById('appInput1')||document.getElementById('scaffoldInput');if(i)i.focus()},200);
+    }
+
+    // --- 檢查邏輯 ---
+
+    function checkDetective(index) {
+        const levelData = levels[currentLevelIdx];
+        const box = document.getElementById(`box-${index}`);
+        if (levelData.expression[index].isAnswer) {
+            box.classList.add('correct');
+            const pts = calculatePoints();
+            addScore(pts);
+            processLevelComplete();
+        } else {
+            box.classList.add('wrong');
+            setTimeout(()=>box.classList.remove('wrong'), 500);
+            handleMistake(levelData.hint); // 使用具體提示
+        }
+    }
+
+    function checkScaffold() {
+        const input = document.getElementById('scaffoldInput');
+        if(!input) return;
+        const userVal = parseInt(input.value);
+        const levelData = levels[currentLevelIdx];
+        const stepData = levelData.steps[currentStep];
+        const targetAns = stepData.row3 ? stepData.row3.inputAnswer : stepData.row2.inputAnswer;
+
+        if(userVal === targetAns) {
+            const pts = calculatePoints();
+            addScore(Math.floor(pts/2));
+            if(currentStep < levelData.steps.length - 1) {
+                showFeedback(true, "算對了！接著下一步！", () => {
+                    currentStep++;
+                    renderScaffoldVertical(levelData);
+                    speak(levelData.steps[currentStep].voice);
+                });
+            } else {
+                processLevelComplete();
+            }
+        } else {
+            input.classList.add('error-shake');
+            setTimeout(()=>input.classList.remove('error-shake'), 500);
+            input.value = ""; // 清空輸入
+            handleMistake("數字算錯囉，請再仔細算一次！"); // 引導修正
+        }
+    }
+
+    function checkApplication() {
+        const levelData = levels[currentLevelIdx];
+        const stepData = levelData.steps[currentStep - 1];
+
+        if(currentStep === 1) {
+            const v1 = parseInt(document.getElementById('appInput1').value);
+            const v2 = parseInt(document.getElementById('appInput2').value);
+            const correct = stepData.inputs;
+            if(v1===correct[0] && v2===correct[1]) {
+                addScore(50);
+                showFeedback(true, "列式正確！", () => {
+                    currentStep++;
+                    renderApplicationVertical(levelData);
+                    speak(levelData.steps[currentStep-1].voice);
+                });
+            } else {
+                handleMistake("價格填錯囉，請看清楚上面商品的單價！");
+            }
+        } else {
+            const input = document.getElementById('scaffoldInput');
+            const userVal = parseInt(input.value);
+            const targetAns = stepData.row3 ? stepData.row3.inputAnswer : stepData.row2.inputAnswer;
+            if(userVal === targetAns) {
+                const pts = calculatePoints();
+                addScore(pts);
+                if(currentStep < levelData.steps.length) {
+                    showFeedback(true, "算對了！", () => {
+                        currentStep++;
+                        renderApplicationVertical(levelData);
+                        speak(levelData.steps[currentStep-1].voice);
+                    });
+                } else {
+                    processLevelComplete();
+                }
+            } else {
+                input.classList.add('error-shake');
+                setTimeout(()=>input.classList.remove('error-shake'),500);
+                input.value = "";
+                handleMistake("計算有誤喔，再試一次！");
+            }
+        }
+    }
+
+    // --- 完成關卡後的處理 (含補題判定) ---
+    function processLevelComplete() {
+        if (failedInCurrentLevel && !levels[currentLevelIdx].isRetry) {
+            // 如果這題有錯過，且這題不是本身就是補題 -> 插入補題
+            insertRetryLevel(levels[currentLevelIdx]);
+            showFeedback(true, "不錯喔！但剛剛有點小失誤，我們再來練習一題！", null, true);
+        } else {
+            correctCount++; // 只有一次過才算答對題數 (或是補題過關也算，這裡邏輯可調整，目前設為過關都算)
+            showFeedback(true, "太厲害了！挑戰成功！", null, true);
+        }
+    }
+
+    // --- 其他輔助函式 ---
+    function addScore(points) {
+        score += points;
+        const popup = document.createElement('div');
+        popup.className = 'score-popup';
+        popup.innerText = `+${points}`;
+        popup.style.left = '50%';
+        popup.style.top = '20%';
+        document.body.appendChild(popup);
+        setTimeout(() => popup.remove(), 1000);
+        document.getElementById('scoreValue').innerText = score;
+    }
+
+    function calculatePoints() {
+        const timeTaken = (Date.now() - levelStartTime) / 1000;
+        let points = 100; 
+        if (timeTaken < 10) points += 50;
+        else if (timeTaken < 20) points += 20;
+        return points;
+    }
+
+    function showFeedback(isCorrect, msg, callback, isLevelComplete = false) {
+        const controlArea = document.getElementById('controlArea');
+        const color = isCorrect ? 'text-green-600' : 'text-red-500';
+        const icon = isCorrect ? '🎉' : '💪';
+        speak((isCorrect ? "答對了！" : "加油！") + msg);
+        
+        let btnHtml = '';
+        if (isCorrect) {
+            if (callback) {
+                btnHtml = `<button onclick="handleNext(true)" class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-2 rounded-full font-bold shadow-lg transition">下一步</button>`;
+            } else if (isLevelComplete) {
+                const isLastLevel = currentLevelIdx >= levels.length - 1;
+                const btnText = isLastLevel ? "看成績單" : "下一關";
+                btnHtml = `<button onclick="handleNext(false)" class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-2 rounded-full font-bold shadow-lg transition">${btnText}</button>`;
+            }
+        } else {
+            // 答錯時顯示提示但不給按鈕（強制留在原題）
+             controlArea.innerHTML = `<div class="text-red-500 font-bold text-xl animate-pulse">${msg}</div>`;
+             return;
+        }
+
+        controlArea.innerHTML = `
+            <div class="feedback-pop flex flex-col items-center">
+                <p class="${color} text-2xl font-bold mb-2">${icon} ${msg}</p>
+                ${btnHtml}
+            </div>`;
+
+        window.handleNext = (isCallback) => {
+            controlArea.innerHTML = '';
+            if (isCallback && callback) callback();
+            else loadLevel(currentLevelIdx + 1);
+        };
+    }
+
+    function renderSummary() {
+        const stage = document.getElementById('stageArea');
+        document.getElementById('controlArea').innerHTML = '';
+        document.querySelector('.top-bar').style.display = 'none';
+
+        let title = "", comment = "", medal = "";
+        // 簡單評分標準
+        if (score >= 2000) { title = "滿分！太神了！"; comment = "你是數學小天才！"; medal = "🏆 金牌"; }
+        else if (score >= 1500) { title = "很棒喔！"; comment = "繼續保持！"; medal = "🥈 銀牌"; }
+        else { title = "完成了！"; comment = "多練習會更厲害喔！"; medal = "🥉 銅牌"; }
+
+        stage.innerHTML = `
+            <div class="flex flex-col items-center justify-center animate-bounce-in">
+                <div class="text-6xl mb-4">${medal}</div>
+                <h1 class="text-4xl font-black text-blue-800 mb-2">${title}</h1>
+                <p class="text-xl text-gray-600 mb-8">${comment}</p>
+                
+                <div class="bg-white p-8 rounded-3xl shadow-xl border-4 border-yellow-300 w-full max-w-md">
+                    <div class="flex justify-between items-center mb-4 border-b pb-4">
+                        <span class="text-gray-500 font-bold text-xl">總得分</span>
+                        <span class="text-4xl font-black text-orange-500">${score}</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-gray-500 font-bold text-xl">挑戰關卡</span>
+                        <span class="text-2xl font-bold text-blue-600">${levels.length} 關</span>
+                    </div>
+                </div>
+
+                <button onclick="location.reload()" class="mt-10 bg-purple-500 hover:bg-purple-600 text-white text-2xl font-bold py-4 px-12 rounded-full shadow-xl transform transition hover:scale-110">
+                    再玩一次
+                </button>
+            </div>
+        `;
+        speak(`恭喜完成！你獲得了${score}分！${comment}`);
+    }
+
+    function toggleSound() {
+        isSoundOn = !isSoundOn;
+        document.getElementById('soundText').innerText = isSoundOn ? "語音：開" : "語音：關";
+        if(!isSoundOn) window.speechSynthesis.cancel();
+    }
+
+    function speak(text) {
+        if (!isSoundOn) return;
+        window.speechSynthesis.cancel();
+        let ttsText = text.replace(/×/g, "乘").replace(/÷/g, "除以").replace(/-/g, "減").replace(/\+/g, "加").replace(/\$/g, "元");
+        const u = new SpeechSynthesisUtterance(ttsText);
+        u.lang = 'zh-TW';
+        u.rate = 0.95; 
+        u.pitch = 1.1; 
+        window.speechSynthesis.speak(u);
+    }
+</script>
+</body>
+</html>

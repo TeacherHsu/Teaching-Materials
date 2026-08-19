@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>時間的計算 - 互動學習工具</title>
+    <!-- 引入 Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 基礎與字體設定 */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f0fdf4; /* 淺綠色背景，降低視覺壓力 */
+            color: #1f2937;
+        }
+
+        /* 輸入框設計 */
+        .slot-input {
+            width: 80px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border: 3px solid #cbd5e1;
+            border-radius: 8px;
+            margin: 0 4px;
+            padding: 4px;
+            color: #1e40af;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: all 0.2s ease-in-out;
+            -moz-appearance: textfield;
+        }
+        .slot-input::-webkit-outer-spin-button,
+        .slot-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .slot-input:focus {
+            border-color: #3b82f6;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.3);
+        }
+        .slot-correct {
+            border-color: #22c55e !important;
+            background-color: #dcfce7 !important;
+            color: #166534 !important;
+        }
+        .slot-wrong {
+            border-color: #ef4444 !important;
+            background-color: #fee2e2 !important;
+            color: #991b1b !important;
+        }
+
+        /* 螢光標記 */
+        mark {
+            background-color: #fef08a;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #854d0e;
+        }
+
+        /* 卡片與動畫 */
+        .step-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 8px solid #3b82f6;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.5s forwards;
+        }
+        .step-card.backup-card {
+            border-left: 8px solid #f59e0b;
+        }
+        @keyframes slideUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .animate-pop {
+            animation: pop 0.3s ease-in-out;
+        }
+
+        /* 按鈕設計 */
+        .btn-primary {
+            background-color: #3b82f6;
+            color: white;
+            font-weight: bold;
+            padding: 12px 28px;
+            border-radius: 999px;
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 0 #2563eb;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-primary:active {
+            transform: translateY(4px);
+            box-shadow: 0 0 0 #2563eb;
+        }
+        .btn-speaker {
+            background-color: #e0e7ff;
+            color: #4f46e5;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.1s;
+        }
+        .btn-speaker:active { transform: scale(0.9); }
+
+        /* 數學式呈現規則 (完全按照指示設定 CSS) */
+        .math { font-size: 28px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
+        .fraction { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.1; }
+        .fraction span:first-child { border-bottom: 2px solid #000; padding: 0 4px; }
+        .power { font-size: 18px; vertical-align: super; margin-left: 2px; color: #e63946; }
+        .sqrt::before { content: "√"; font-size: 28px; margin-right: 2px; }
+        .abs::before { content: "|"; } .abs::after { content: "|"; }
+        .mixed { display: inline-flex; align-items: center; gap: 2px; }
+
+        /* 回饋訊息區 */
+        .feedback-area {
+            margin-top: 16px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 36px;
+        }
+        .text-success { color: #16a34a; }
+        .text-error { color: #dc2626; }
+    </style>
+</head>
+<body class="pb-24">
+
+    <!-- 頂部標頭與計分板 -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="max-w-3xl mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-gray-800">🕒 時間的計算與換算</h1>
+            <div class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full font-bold text-lg flex items-center gap-2">
+                <span>⭐ 積分：</span>
+                <span id="score-display" class="text-2xl">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 mt-8" id="game-container">
+        <!-- 關卡標題 -->
+        <div class="mb-6 flex justify-between items-end">
+            <h2 id="level-title" class="text-3xl font-bold text-blue-800">載入中...</h2>
+            <span id="level-progress" class="text-gray-500 font-bold"></span>
+        </div>
+
+        <!-- 步驟卡片將動態產生在此 -->
+        <div id="steps-container"></div>
+    </main>
+
+    <!-- 結算畫面 (預設隱藏) -->
+    <div id="summary-screen" class="hidden max-w-2xl mx-auto mt-12 bg-white rounded-2xl shadow-xl p-8 text-center border-t-8 border-green-500">
+        <h2 class="text-4xl font-bold text-green-600 mb-4">🎉 太棒了！全部完成！</h2>
+        <p class="text-xl text-gray-600 mb-6">你已經跟著步驟學會時間的計算方法囉！</p>
+        <div class="bg-yellow-50 rounded-xl p-6 mb-8 inline-block">
+            <p class="text-gray-600 text-lg mb-2">你的總積分是</p>
+            <p class="text-6xl font-bold text-yellow-600 animate-pop" id="final-score">0</p>
+        </div>
+        <br>
+        <button onclick="location.reload()" class="btn-primary">再玩一次</button>
+    </div>
+
+    <!-- JavaScript 邏輯區 -->
+    <script>
+        // ---------------------------------------------------------
+        // 1. 教材資料結構設計 (融入鷹架學習單設計)
+        // ---------------------------------------------------------
+        const levelsData = [
+            {
+                title: "第一關：把「小時」換成「幾日幾小時」",
+                mainSteps: [
+                    {
+                        text: "例題：<mark>56 小時</mark> = ( )日( )小時<br>首先想一想，1日 = <input type='number' class='slot-input' data-ans='24' placeholder='?'> 小時。",
+                        errorHint: "提示：一天有幾個小時呢？（看看學習單上的「先記住」區塊喔）"
+                    },
+                    {
+                        text: "我們用學習單上「一直減24」的方法。<br>先減第一次：56 - <input type='number' class='slot-input' data-ans='24' placeholder='?'> = <input type='number' class='slot-input' data-ans='32' placeholder='?'>",
+                        errorHint: "提示：把全部的 56 減去一天的時數 24。"
+                    },
+                    {
+                        text: "剩下的 32 還比 24 大，我們再減一次：<br>32 - <input type='number' class='slot-input' data-ans='24' placeholder='?'> = <input type='number' class='slot-input' data-ans='8' placeholder='?'>",
+                        errorHint: "提示：用剛才算出來的 32，再減一次 24。"
+                    },
+                    {
+                        text: "最後剩下的 8 小於 24，不能再減了。<br>" +
+                              "<div class='flex border-2 border-gray-400 rounded mt-4 mb-1 w-full max-w-xs text-center font-bold overflow-hidden shadow-sm'>" +
+                              "<div class='flex-1 bg-pink-200 border-r-2 border-gray-400 p-2 text-xl'>24</div>" +
+                              "<div class='flex-1 bg-pink-200 border-r-2 border-gray-400 p-2 text-xl'>24</div>" +
+                              "<div class='flex-1 bg-yellow-100 p-2 text-xl'>8</div>" +
+                              "</div>" +
+                              "<div class='text-center w-full max-w-xs text-sm font-bold text-gray-500 mb-4'>總共 56 小時</div>" +
+                              "看看上面的圖，我們減掉了 <input type='number' class='slot-input' data-ans='2' placeholder='?'> 個 24 小時，所以是 <input type='number' class='slot-input' data-ans='2' placeholder='?'> 日，剩下 <input type='number' class='slot-input' data-ans='8' placeholder='?'> 小時。",
+                        errorHint: "提示：減了 2 次 24 就是 2 日，最後算出來的數字就是剩下的小時。"
+                    }
+                ],
+                backupSteps: [
+                    {
+                        text: "【類似題練習】<mark>76 小時</mark> = ( )日( )小時<br>先減第一次：76 - 24 = <input type='number' class='slot-input' data-ans='52' placeholder='?'>",
+                        errorHint: "提示：先把 76 減去 24。"
+                    },
+                    {
+                        text: "再減第二次：52 - <input type='number' class='slot-input' data-ans='24' placeholder='?'> = <input type='number' class='slot-input' data-ans='28' placeholder='?'>",
+                        errorHint: "提示：把剩下的 52 再減去 24。"
+                    },
+                    {
+                        text: "再減第三次：28 - 24 = <input type='number' class='slot-input' data-ans='4' placeholder='?'>",
+                        errorHint: "提示：把最後的 28 再減 24。"
+                    },
+                    {
+                        text: "4 小於 24，不能再減了。<br>總共減了 3 次，所以答案是 <input type='number' class='slot-input' data-ans='3' placeholder='?'> 日 <input type='number' class='slot-input' data-ans='4' placeholder='?'> 小時。",
+                        errorHint: "提示：減了幾次就是幾日，最後的數字填到小時。"
+                    }
+                ]
+            },
+            {
+                title: "第二關：把「分鐘」換成「幾小時幾分鐘」",
+                mainSteps: [
+                    {
+                        text: "例題：<mark>125 分鐘</mark> = ( )小時( )分鐘<br>首先想一想，1小時 = <input type='number' class='slot-input' data-ans='60' placeholder='?'> 分鐘。",
+                        errorHint: "提示：一小時有幾分鐘呢？（時鐘走一圈）"
+                    },
+                    {
+                        text: "這次我們用「一直減60」的方法。<br>先減第一次：125 - <input type='number' class='slot-input' data-ans='60' placeholder='?'> = <input type='number' class='slot-input' data-ans='65' placeholder='?'>",
+                        errorHint: "提示：把 125 減去 60。"
+                    },
+                    {
+                        text: "剩下的 65 還是比 60 大，再減一次：<br>65 - <input type='number' class='slot-input' data-ans='60' placeholder='?'> = <input type='number' class='slot-input' data-ans='5' placeholder='?'>",
+                        errorHint: "提示：用剛才的 65 再減一次 60。"
+                    },
+                    {
+                        text: "5 小於 60，不能再減了。<br>" +
+                              "<div class='flex border-2 border-green-600 rounded mt-4 mb-1 w-full max-w-xs text-center font-bold overflow-hidden shadow-sm'>" +
+                              "<div class='flex-1 bg-green-100 border-r-2 border-green-600 p-2 text-xl'>60</div>" +
+                              "<div class='flex-1 bg-green-100 border-r-2 border-green-600 p-2 text-xl'>60</div>" +
+                              "<div class='flex-1 bg-blue-100 p-2 text-xl'>5</div>" +
+                              "</div>" +
+                              "<div class='text-center w-full max-w-xs text-sm font-bold text-green-700 mb-4'>總共 125 分鐘</div>" +
+                              "我們總共減了 <input type='number' class='slot-input' data-ans='2' placeholder='?'> 個 60 分鐘，所以是 <input type='number' class='slot-input' data-ans='2' placeholder='?'> 小時，剩下 <input type='number' class='slot-input' data-ans='5' placeholder='?'> 分鐘。",
+                        errorHint: "提示：減了 2 次 60 就是 2 小時，最後的數字就是分鐘。"
+                    }
+                ],
+                backupSteps: [
+                    {
+                        text: "【類似題練習】<mark>145 分鐘</mark> = ( )小時( )分鐘<br>先減第一次：145 - 60 = <input type='number' class='slot-input' data-ans='85' placeholder='?'>",
+                        errorHint: "提示：先把 145 減去 60。"
+                    },
+                    {
+                        text: "再減第二次：85 - <input type='number' class='slot-input' data-ans='60' placeholder='?'> = <input type='number' class='slot-input' data-ans='25' placeholder='?'>",
+                        errorHint: "提示：把剩下的 85 再減去 60。"
+                    },
+                    {
+                        text: "25 小於 60，不能再減了。<br>減了 2 次 60，所以是 <input type='number' class='slot-input' data-ans='2' placeholder='?'> 小時 <input type='number' class='slot-input' data-ans='25' placeholder='?'> 分鐘。",
+                        errorHint: "提示：減幾次就是幾小時，剩下的寫在分鐘。"
+                    }
+                ]
+            },
+            {
+                title: "第三關：時間的加法 (時和分・需要進位)",
+                mainSteps: [
+                    {
+                        text: "例題：<mark>1時45分 ＋ 2時20分</mark><br>鷹架步驟一：先加小時，再加分鐘。<br>小時相加：1 + 2 = <input type='number' class='slot-input' data-ans='3' placeholder='?'> 時。<br>分鐘相加：45 + 20 = <input type='number' class='slot-input' data-ans='65' placeholder='?'> 分。",
+                        errorHint: "提示：同單位的數字自己相加，時加時，分加分。"
+                    },
+                    {
+                        text: "鷹架步驟二：檢查分鐘。<br><mark>65分鐘</mark> 超過 60 了！我們要換成小時。<br>65 - 60 = <input type='number' class='slot-input' data-ans='5' placeholder='?'> 分。<br>所以 65分鐘 = 1小時 <input type='number' class='slot-input' data-ans='5' placeholder='?'> 分鐘。",
+                        errorHint: "提示：超過60分，減去60就是剩下的分鐘。"
+                    },
+                    {
+                        text: "鷹架步驟三：把新換出來的 1 小時加回去。<br>原本算出的 3 時，加上新換的 1 時 = <input type='number' class='slot-input' data-ans='4' placeholder='?'> 時。",
+                        errorHint: "提示：記得把原本的 3 加上進位的 1 喔。"
+                    },
+                    {
+                        text: "結論：答案是 <input type='number' class='slot-input' data-ans='4' placeholder='?'> 時 <input type='number' class='slot-input' data-ans='5' placeholder='?'> 分。",
+                        errorHint: "提示：把剛剛最後算出來的小時和分鐘填進來。"
+                    }
+                ],
+                backupSteps: [
+                    {
+                        text: "【類似題練習】<mark>2時35分 ＋ 1時30分</mark><br>先加小時：2 + 1 = <input type='number' class='slot-input' data-ans='3' placeholder='?'> 時。<br>再加分鐘：35 + 30 = <input type='number' class='slot-input' data-ans='65' placeholder='?'> 分。",
+                        errorHint: "提示：時加時，分加分。"
+                    },
+                    {
+                        text: "分鐘超過 60 換算：<br>65 分鐘 = <input type='number' class='slot-input' data-ans='1' placeholder='?'> 小時 <input type='number' class='slot-input' data-ans='5' placeholder='?'> 分鐘。",
+                        errorHint: "提示：65 - 60 = 5，所以是1小時5分。"
+                    },
+                    {
+                        text: "合併答案：3 時加上進位的 1 時 = <input type='number' class='slot-input' data-ans='4' placeholder='?'> 時。<br>答案：<input type='number' class='slot-input' data-ans='4' placeholder='?'> 時 <input type='number' class='slot-input' data-ans='5' placeholder='?'> 分。",
+                        errorHint: "提示：把時加起來，分照填。"
+                    }
+                ]
+            },
+            {
+                title: "第四關：求經過的時間 (需要借位)",
+                mainSteps: [
+                    {
+                        text: "例題：活動從 <mark>上午 9 時 40 分</mark> 開始，到 <mark>中午 12 時 15 分</mark> 結束，經過了多久？<br>求經過時間，要用「結束時刻 - 開始時刻」。<br>先看分鐘：15 分不夠減 40 分，所以要向 12 時「借1小時」，12 時變成 <input type='number' class='slot-input' data-ans='11' placeholder='?'> 時。",
+                        errorHint: "提示：被借走 1，所以 12 要減 1。"
+                    },
+                    {
+                        text: "借過來的 1 小時，要換成 <input type='number' class='slot-input' data-ans='60' placeholder='?'> 分鐘。<br>加上原本的 15 分鐘：60 + 15 = <input type='number' class='slot-input' data-ans='75' placeholder='?'> 分鐘。",
+                        errorHint: "提示：1小時=60分鐘，記得把 60 加上原本的 15 喔。"
+                    },
+                    {
+                        text: "現在夠減了！(用新的數字來減)<br>分鐘相減：75 - 40 = <input type='number' class='slot-input' data-ans='35' placeholder='?'> 分鐘。<br>小時相減：11 - 9 = <input type='number' class='slot-input' data-ans='2' placeholder='?'> 小時。",
+                        errorHint: "提示：用剛才換好的 75 減 40；用剩下的 11 減 9。"
+                    },
+                    {
+                        text: "結論：活動共經過了 <input type='number' class='slot-input' data-ans='2' placeholder='?'> 小時 <input type='number' class='slot-input' data-ans='35' placeholder='?'> 分鐘。",
+                        errorHint: "提示：把算好的時和分填進來。"
+                    }
+                ],
+                backupSteps: [
+                    {
+                        text: "【類似題練習】從 <mark>上午 8 時 25 分</mark> 到 <mark>上午 10 時 10 分</mark><br>10 分不夠減 25 分，向 10 時借 1，剩下 <input type='number' class='slot-input' data-ans='9' placeholder='?'> 時。",
+                        errorHint: "提示：被借走 1，所以 10 要減 1。"
+                    },
+                    {
+                        text: "借來的 1 小時換成 60 分，加上原本的 10 分：<br>60 + 10 = <input type='number' class='slot-input' data-ans='70' placeholder='?'> 分。",
+                        errorHint: "提示：60 加上 10 等於多少？"
+                    },
+                    {
+                        text: "現在可以減了：<br>分鐘：70 - 25 = <input type='number' class='slot-input' data-ans='45' placeholder='?'> 分。<br>小時：9 - 8 = <input type='number' class='slot-input' data-ans='1' placeholder='?'> 時。<br>答案：<input type='number' class='slot-input' data-ans='1' placeholder='?'> 小時 <input type='number' class='slot-input' data-ans='45' placeholder='?'> 分鐘。",
+                        errorHint: "提示：按照算出的結果填寫。"
+                    }
+                ]
+            }
+        ];
+
+        // ---------------------------------------------------------
+        // 2. 遊戲狀態與變數設定
+        // ---------------------------------------------------------
+        let currentLevelIdx = 0;
+        let currentStepIdx = 0;
+        let isBackupMode = false;
+        let currentLevelHasError = false; 
+        let totalScore = 0;
+        let stepStartTime = Date.now();
+
+        const container = document.getElementById('steps-container');
+        const levelTitleEl = document.getElementById('level-title');
+        const levelProgressEl = document.getElementById('level-progress');
+        const scoreDisplayEl = document.getElementById('score-display');
+
+        // ---------------------------------------------------------
+        // 3. 核心運作邏輯
+        // ---------------------------------------------------------
+
+        // 初始化遊戲
+        function initGame() {
+            currentLevelIdx = 0;
+            totalScore = 0;
+            updateScore(0);
+            loadLevel();
+        }
+
+        // 載入當前關卡
+        function loadLevel() {
+            if (currentLevelIdx >= levelsData.length) {
+                showSummary();
+                return;
+            }
+            currentStepIdx = 0;
+            isBackupMode = false;
+            currentLevelHasError = false;
+            container.innerHTML = '';
+            
+            const levelData = levelsData[currentLevelIdx];
+            levelTitleEl.innerText = levelData.title;
+            updateProgress();
+            
+            renderStep();
+        }
+
+        // 繪製單一步驟卡片
+        function renderStep() {
+            const levelData = levelsData[currentLevelIdx];
+            const stepsArray = isBackupMode ? levelData.backupSteps : levelData.mainSteps;
+            const stepData = stepsArray[currentStepIdx];
+            
+            // 建立卡片容器
+            const stepCard = document.createElement('div');
+            stepCard.className = `step-card ${isBackupMode ? 'backup-card' : ''}`;
+            stepCard.id = `step-card-${currentStepIdx}`;
+
+            // 純文字語音內容(去除 HTML tag，但保留一些結構以便報讀自然)
+            let plainText = stepData.text.replace(/<input[^>]*>/g, '空格'); // 將 input 轉為念出「空格」
+            plainText = plainText.replace(/<[^>]+>/g, '').replace(/[\r\n]+/g, '，');
+
+            // 組合內部 HTML
+            stepCard.innerHTML = `
+                <div class="flex items-start gap-4">
+                    <button class="btn-speaker flex-shrink-0" onclick="speakText('${plainText}')" title="聽題目">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5 10v4a2 2 0 002 2h2.586l3.707 3.707a1 1 0 001.707-.707V4.95a1 1 0 00-1.707-.707L9.586 8H7a2 2 0 00-2 2z" />
+                        </svg>
+                    </button>
+                    <div class="flex-grow overflow-x-hidden">
+                        <div class="text-2xl leading-loose text-gray-800 mb-6 font-medium">
+                            ${stepData.text}
+                        </div>
+                        <div class="flex items-center justify-between flex-wrap gap-4">
+                            <button class="btn-primary btn-check" onclick="checkAnswer(this)">
+                                檢查答案
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </button>
+                            <div class="feedback-area w-full sm:w-auto"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            container.appendChild(stepCard);
+            stepStartTime = Date.now(); // 重置計時
+
+            // 平滑滾動到新卡片
+            setTimeout(() => {
+                stepCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        }
+
+        // 檢查答案邏輯
+        function checkAnswer(btn) {
+            const card = btn.closest('.step-card');
+            const inputs = card.querySelectorAll('.slot-input');
+            const feedbackArea = card.querySelector('.feedback-area');
+            const levelData = levelsData[currentLevelIdx];
+            const stepsArray = isBackupMode ? levelData.backupSteps : levelData.mainSteps;
+            const currentStepData = stepsArray[currentStepIdx];
+
+            let allFilled = true;
+            let allCorrect = true;
+
+            // 1. 檢查是否填完
+            inputs.forEach(input => {
+                input.classList.remove('slot-wrong'); // 每次檢查前先清除錯誤狀態
+                if (input.value.trim() === '') {
+                    allFilled = false;
+                }
+            });
+
+            if (!allFilled) {
+                feedbackArea.innerHTML = `<span class="text-orange-500">⚠️ 請先把所有空格填完喔！</span>`;
+                return;
+            }
+
+            // 2. 驗證正確性
+            inputs.forEach(input => {
+                const ans = input.getAttribute('data-ans');
+                // 使用 parseInt 避免 04 != 4 的問題
+                if (parseInt(input.value) === parseInt(ans)) {
+                    input.classList.add('slot-correct');
+                } else {
+                    input.classList.add('slot-wrong');
+                    allCorrect = false;
+                }
+            });
+
+            if (allCorrect) {
+                // 答對的處理
+                feedbackArea.innerHTML = `<span class="text-success animate-pop">✔️ 答對了！很棒！</span>`;
+                btn.style.display = 'none'; // 隱藏檢查按鈕
+                inputs.forEach(inp => inp.disabled = true); // 鎖定輸入框
+
+                // 計分邏輯 (時間快有加分)
+                let timeTaken = (Date.now() - stepStartTime) / 1000;
+                let points = 50; 
+                if (timeTaken < 15) points += 10; // 快速答題獎勵
+                updateScore(points);
+
+                // 解鎖下一步驟或下一關
+                setTimeout(() => unlockNext(), 1000);
+                
+            } else {
+                // 答錯的處理
+                currentLevelHasError = true;
+                updateScore(-5); // 扣一點分數
+                feedbackArea.innerHTML = `
+                    <div class="flex flex-col items-start gap-1 w-full">
+                        <span class="text-error">❌ 這裡有點小錯誤，再想一下！</span>
+                        <span class="text-[1.1rem] text-blue-700 bg-blue-50 px-3 py-2 rounded-lg border border-blue-200 mt-1 w-full block">
+                            💡 <b>老師提示：</b>${currentStepData.errorHint}
+                        </span>
+                    </div>
+                `;
+            }
+        }
+
+        // 解鎖下一步或判斷是否進入補救/下一關
+        function unlockNext() {
+            const levelData = levelsData[currentLevelIdx];
+            const stepsArray = isBackupMode ? levelData.backupSteps : levelData.mainSteps;
+
+            if (currentStepIdx < stepsArray.length - 1) {
+                // 還有下一步
+                currentStepIdx++;
+                renderStep();
+            } else {
+                // 當前序列結束
+                if (!isBackupMode && currentLevelHasError && levelData.backupSteps && levelData.backupSteps.length > 0) {
+                    // 主題答錯過，進入補救題
+                    isBackupMode = true;
+                    currentStepIdx = 0;
+                    
+                    // 插入一個提示區塊
+                    const notice = document.createElement('div');
+                    notice.className = 'bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded text-yellow-800 font-bold mb-6 animate-pop text-xl';
+                    notice.innerHTML = '🤔 發現剛才有小錯誤，我們來做一題類似題，確認你真的學會囉！';
+                    container.appendChild(notice);
+                    
+                    renderStep();
+                } else {
+                    // 該關卡順利結束 (或補救題也做完了)
+                    currentLevelIdx++;
+                    setTimeout(() => {
+                        loadLevel();
+                    }, 800);
+                }
+            }
+            updateProgress();
+        }
+
+        // 更新右上角進度與分數
+        function updateProgress() {
+            if (currentLevelIdx < levelsData.length) {
+                levelProgressEl.innerText = `任務進度：${currentLevelIdx + 1} / ${levelsData.length}`;
+            }
+        }
+
+        function updateScore(points) {
+            totalScore += points;
+            if (totalScore < 0) totalScore = 0;
+            scoreDisplayEl.innerText = totalScore;
+            
+            // 加入動畫
+            scoreDisplayEl.classList.remove('animate-pop');
+            void scoreDisplayEl.offsetWidth; // 觸發 reflow
+            scoreDisplayEl.classList.add('animate-pop');
+        }
+
+        // 語音報讀功能 (Web Speech API)
+        function speakText(text) {
+            if ('speechSynthesis' in window) {
+                // 停止當前語音
+                window.speechSynthesis.cancel();
+                
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'zh-TW';
+                utterance.rate = 0.85; // 稍微放慢語速，適合特教生
+                utterance.pitch = 1;
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert('您的瀏覽器不支援語音報讀功能。');
+            }
+        }
+
+        // 結算畫面
+        function showSummary() {
+            document.getElementById('game-container').classList.add('hidden');
+            const summary = document.getElementById('summary-screen');
+            summary.classList.remove('hidden');
+            document.getElementById('final-score').innerText = totalScore;
+            
+            // 完賽語音
+            speakText("太棒了！你已經完成了所有的時間計算關卡，一步一步穩穩地算，你非常厲害喔！");
+        }
+
+        // 啟動遊戲
+        window.onload = initGame;
+
+    </script>
+</body>
+</html>

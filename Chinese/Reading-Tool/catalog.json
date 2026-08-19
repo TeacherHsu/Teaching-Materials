@@ -1,0 +1,271 @@
+{
+  "catalog_version": 1,
+  "generated_on": "2026-08-19",
+  "lessons": [
+    {
+      "lesson_id": "115HG0A01",
+      "title": "115G1A 翰版首冊 L01：手拉手",
+      "path": "lessons/115HG0A01.json"
+    },
+    {
+      "lesson_id": "115HG0A02",
+      "title": "115G1A 翰版首冊 L02：排一排",
+      "path": "lessons/115HG0A02.json"
+    },
+    {
+      "lesson_id": "115HG0A03",
+      "title": "115G1A 翰版首冊 L03：來數數",
+      "path": "lessons/115HG0A03.json"
+    },
+    {
+      "lesson_id": "115HG0A04",
+      "title": "115G1A 翰版首冊 L04：找一找",
+      "path": "lessons/115HG0A04.json"
+    },
+    {
+      "lesson_id": "115HG0A05",
+      "title": "115G1A 翰版首冊 L05：雨來了",
+      "path": "lessons/115HG0A05.json"
+    },
+    {
+      "lesson_id": "115HG0A06",
+      "title": "115G1A 翰版首冊 L06：山坡上的學校",
+      "path": "lessons/115HG0A06.json"
+    },
+    {
+      "lesson_id": "115HG0A07",
+      "title": "115G1A 翰版首冊 L07：值日生",
+      "path": "lessons/115HG0A07.json"
+    },
+    {
+      "lesson_id": "115HG0A08",
+      "title": "115G1A 翰版首冊 L08：運動會",
+      "path": "lessons/115HG0A08.json"
+    },
+    {
+      "lesson_id": "115HG0A09",
+      "title": "115G1A 翰版首冊 L09：做卡片",
+      "path": "lessons/115HG0A09.json"
+    },
+    {
+      "lesson_id": "115HG0AR01",
+      "title": "115G1A 翰版首冊：來閱讀〈紙飛機〉",
+      "path": "lessons/115HG0AR01.json"
+    },
+    {
+      "lesson_id": "115HG1A01",
+      "title": "115G1A 翰版第一冊 L01：一起走",
+      "path": "lessons/115HG1A01.json"
+    },
+    {
+      "lesson_id": "115HG1A02",
+      "title": "115G1A 翰版第一冊 L02：大風吹",
+      "path": "lessons/115HG1A02.json"
+    },
+    {
+      "lesson_id": "115HG1A03",
+      "title": "115G1A 翰版第一冊 L03：火車過山洞",
+      "path": "lessons/115HG1A03.json"
+    },
+    {
+      "lesson_id": "115HG1A04",
+      "title": "115G1A 翰版第一冊 L04：請問",
+      "path": "lessons/115HG1A04.json"
+    },
+    {
+      "lesson_id": "115HG1A05",
+      "title": "115G1A 翰版第一冊 L05：七彩的滑梯",
+      "path": "lessons/115HG1A05.json"
+    },
+    {
+      "lesson_id": "115KG4A01",
+      "title": "115G4A 康版第七冊 L01：水陸小高手",
+      "path": "lessons/115KG4A01.json"
+    },
+    {
+      "lesson_id": "115KG4A02",
+      "title": "115G4A 康版第七冊 L02：放學後",
+      "path": "lessons/115KG4A02.json"
+    },
+    {
+      "lesson_id": "115KG4A03",
+      "title": "115G4A 康版第七冊 L03：我的籃球夢",
+      "path": "lessons/115KG4A03.json"
+    },
+    {
+      "lesson_id": "115KG4A04",
+      "title": "115G4A 康版第七冊 L04：永遠的馬偕",
+      "path": "lessons/115KG4A04.json"
+    },
+    {
+      "lesson_id": "115KG4A05",
+      "title": "115G4A 康版第七冊 L05：假如給我三天光明",
+      "path": "lessons/115KG4A05.json"
+    },
+    {
+      "lesson_id": "115KG4A06",
+      "title": "115G4A 康版第七冊 L06：攀登生命的高峰",
+      "path": "lessons/115KG4A06.json"
+    },
+    {
+      "lesson_id": "115HG1A06",
+      "title": "115G1A 翰版第一冊 L06：秋千",
+      "path": "lessons/115HG1A06.json"
+    },
+    {
+      "lesson_id": "115HG1A07",
+      "title": "115G1A 翰版第一冊 L07：回音",
+      "path": "lessons/115HG1A07.json"
+    },
+    {
+      "lesson_id": "115HG2A01",
+      "title": "115G2A 翰版第三冊 L01：我的心情",
+      "path": "lessons/115HG2A01.json"
+    },
+    {
+      "lesson_id": "115HG2A02",
+      "title": "115G2A 翰版第三冊 L02：彩色的天空",
+      "path": "lessons/115HG2A02.json"
+    },
+    {
+      "lesson_id": "115HG2A03",
+      "title": "115G2A 翰版第三冊 L03：國王做新衣",
+      "path": "lessons/115HG2A03.json"
+    },
+    {
+      "lesson_id": "115HG2A04",
+      "title": "115G2A 翰版第三冊 L04：水草下的呱呱",
+      "path": "lessons/115HG2A04.json"
+    },
+    {
+      "lesson_id": "115HG2A05",
+      "title": "115G2A 翰版第三冊 L05：沙灘上的畫",
+      "path": "lessons/115HG2A05.json"
+    },
+    {
+      "lesson_id": "115HG2A06",
+      "title": "115G2A 翰版第三冊 L06：草叢裡的星星",
+      "path": "lessons/115HG2A06.json"
+    },
+    {
+      "lesson_id": "115HG2A07",
+      "title": "115G2A 翰版第三冊 L07：不一樣的美食",
+      "path": "lessons/115HG2A07.json"
+    },
+    {
+      "lesson_id": "115HG2A08",
+      "title": "115G2A 翰版第三冊 L08：美食分享日",
+      "path": "lessons/115HG2A08.json"
+    },
+    {
+      "lesson_id": "115HG2A09",
+      "title": "115G2A 翰版第三冊 L09：好味道",
+      "path": "lessons/115HG2A09.json"
+    },
+    {
+      "lesson_id": "115HG2A10",
+      "title": "115G2A 翰版第三冊 L10：加加減減",
+      "path": "lessons/115HG2A10.json"
+    },
+    {
+      "lesson_id": "115HG2A11",
+      "title": "115G2A 翰版第三冊 L11：奇怪的門",
+      "path": "lessons/115HG2A11.json"
+    },
+    {
+      "lesson_id": "115HG2A12",
+      "title": "115G2A 翰版第三冊 L12：詠鵝",
+      "path": "lessons/115HG2A12.json"
+    },
+    {
+      "lesson_id": "115KG4A07",
+      "title": "115G4A 康版第七冊 L07：美味的一堂課",
+      "path": "lessons/115KG4A07.json"
+    },
+    {
+      "lesson_id": "115KG4A08",
+      "title": "115G4A 康版第七冊 L08：建築界的長頸鹿",
+      "path": "lessons/115KG4A08.json"
+    },
+    {
+      "lesson_id": "115KG4A09",
+      "title": "115G4A 康版第七冊 L09：請到我的家鄉來",
+      "path": "lessons/115KG4A09.json"
+    },
+    {
+      "lesson_id": "115KG4A10",
+      "title": "115G4A 康版第七冊 L10：奇幻旋律",
+      "path": "lessons/115KG4A10.json"
+    },
+    {
+      "lesson_id": "115KG4A11",
+      "title": "115G4A 康版第七冊 L11：兔子先生等等我",
+      "path": "lessons/115KG4A11.json"
+    },
+    {
+      "lesson_id": "115KG4A12",
+      "title": "115G4A 康版第七冊 L12：老鞋匠和小精靈",
+      "path": "lessons/115KG4A12.json"
+    },
+    {
+      "lesson_id": "115HG6A01",
+      "title": "115G6A 翰版第十一冊 L01：遇見自己",
+      "path": "lessons/115HG6A01.json"
+    },
+    {
+      "lesson_id": "115HG6A02",
+      "title": "115G6A 翰版第十一冊 L02：為什麼大家不理我？",
+      "path": "lessons/115HG6A02.json"
+    },
+    {
+      "lesson_id": "115HG6A03",
+      "title": "115G6A 翰版第十一冊 L03：孔子說的話",
+      "path": "lessons/115HG6A03.json"
+    },
+    {
+      "lesson_id": "115HG6A04",
+      "title": "115G6A 翰版第十一冊 L04：向大自然學習",
+      "path": "lessons/115HG6A04.json"
+    },
+    {
+      "lesson_id": "115HG6A05",
+      "title": "115G6A 翰版第十一冊 L05：樹的聯想",
+      "path": "lessons/115HG6A05.json"
+    },
+    {
+      "lesson_id": "115HG6A06",
+      "title": "115G6A 翰版第十一冊 L06：善用自嘲，展現幽默",
+      "path": "lessons/115HG6A06.json"
+    },
+    {
+      "lesson_id": "115HG6A07",
+      "title": "115G6A 翰版第十一冊 L07：跟著公共藝術去旅行",
+      "path": "lessons/115HG6A07.json"
+    },
+    {
+      "lesson_id": "115HG6A08",
+      "title": "115G6A 翰版第十一冊 L08：街頭藝術家",
+      "path": "lessons/115HG6A08.json"
+    },
+    {
+      "lesson_id": "115HG6A09",
+      "title": "115G6A 翰版第十一冊 L09：戲臺上的她與他",
+      "path": "lessons/115HG6A09.json"
+    },
+    {
+      "lesson_id": "115HG6A10",
+      "title": "115G6A 翰版第十一冊 L10：過故人莊",
+      "path": "lessons/115HG6A10.json"
+    },
+    {
+      "lesson_id": "115HG6A11",
+      "title": "115G6A 翰版第十一冊 L11：來一碗溫暖的羹湯",
+      "path": "lessons/115HG6A11.json"
+    },
+    {
+      "lesson_id": "115HG6A12",
+      "title": "115G6A 翰版第十一冊 L12：存根",
+      "path": "lessons/115HG6A12.json"
+    }
+  ]
+}

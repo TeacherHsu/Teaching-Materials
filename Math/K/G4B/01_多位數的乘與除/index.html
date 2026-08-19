@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>數學互動解題：多位數的乘與除</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body{font-family:'Noto Sans TC',system-ui;background:#f0f9ff;overflow-x:hidden}
+.math-table{display:inline-grid;grid-template-columns:repeat(9,72px);grid-auto-rows:76px;gap:4px 8px;align-items:center;justify-items:center;font-family:'Courier New',monospace;font-weight:800;width:max-content;margin:0 auto;padding:20px}
+.cell{display:flex;align-items:center;justify-content:center;font-size:3.5rem}
+.num{background:#f8fafc;border:2px solid #e2e8f0;border-radius:12px}
+.operator{font-size:4rem;color:#64748b}
+.border-bottom-line{border-bottom:6px solid #1e293b;width:100%}
+.carry-slot,.ans-slot{cursor:pointer;border-radius:16px;transition:.2s}
+.carry-slot{border:3px dashed #cbd5e1;font-size:2rem;color:#ef4444;width:48px;height:48px}
+.ans-slot{border:4px dashed #94a3b8;background:#fff}
+.carry-slot.selected,.ans-slot.selected{border-color:#f59e0b!important;background:#fffbeb!important}
+.carry-slot.correct,.ans-slot.correct{border-color:#22c55e!important;background:#f0fdf4}
+.carry-slot.error,.ans-slot.error{border-color:#ef4444!important;animation:shake .4s}
+.option-btn{background:#fff;border:2px solid #cbd5e1;border-bottom-width:6px;padding:12px 28px;border-radius:16px;font-size:2rem;font-weight:800}
+@keyframes shake{20%,80%{transform:translateX(-6px)}40%,60%{transform:translateX(6px)}}
+.animate-pop{animation:pop .3s ease}
+@keyframes pop{50%{transform:scale(1.08)}}
+</style>
+</head>
+
+<body class="h-screen flex flex-col text-slate-800">
+
+<header class="bg-white shadow-md p-4 flex justify-between items-center">
+<div class="font-bold text-2xl text-blue-600">🧮 多位數乘除</div>
+<div class="bg-yellow-100 px-5 py-2 rounded-full border-2 border-yellow-300 font-bold text-xl">
+⭐ 積分: <span id="score-display">0</span>
+</div>
+</header>
+
+<main class="flex-1 overflow-auto p-8 bg-slate-100">
+<div id="problem-title" class="text-3xl font-extrabold mb-6"></div>
+<div id="steps-wrapper"></div>
+</main>
+
+<script>
+
+/* ============================
+   安全 AudioContext
+============================ */
+let audioCtx
+function getAudio(){
+if(!audioCtx){
+audioCtx=new (window.AudioContext||window.webkitAudioContext)()
+}
+return audioCtx
+}
+function playSound(type){
+const ctx=getAudio()
+if(ctx.state==="suspended")ctx.resume()
+const osc=ctx.createOscillator()
+const gain=ctx.createGain()
+osc.connect(gain)
+gain.connect(ctx.destination)
+const now=ctx.currentTime
+if(type==="correct"){
+osc.frequency.setValueAtTime(500,now)
+osc.frequency.exponentialRampToValueAtTime(900,now+.2)
+gain.gain.setValueAtTime(.3,now)
+gain.gain.exponentialRampToValueAtTime(.01,now+.4)
+osc.start();osc.stop(now+.4)
+}else if(type==="error"){
+osc.frequency.setValueAtTime(200,now)
+gain.gain.setValueAtTime(.3,now)
+gain.gain.exponentialRampToValueAtTime(.01,now+.2)
+osc.start();osc.stop(now+.2)
+}else{
+osc.frequency.setValueAtTime(800,now)
+gain.gain.setValueAtTime(.15,now)
+gain.gain.exponentialRampToValueAtTime(.01,now+.05)
+osc.start();osc.stop(now+.05)
+}
+}
+
+/* ============================
+   狀態管理
+============================ */
+const STORAGE_KEY="multi_math_score"
+let state={score:0,currentStep:0}
+
+function loadScore(){
+const saved=localStorage.getItem(STORAGE_KEY)
+if(saved)state.score=parseInt(saved)
+document.getElementById("score-display").textContent=state.score
+}
+function saveScore(){
+localStorage.setItem(STORAGE_KEY,state.score)
+}
+
+/* ============================
+   題目（示範保留第一題）
+============================ */
+
+const problem={
+title:"384 × 465 = ?",
+steps:[
+{
+instruction:"步驟一：先算 465 × 4",
+expression:`
+<div class="math-table">
+<div class="cell num">4</div>
+<div class="cell num">6</div>
+<div class="cell num">5</div>
+<div class="cell operator">×</div>
+<div class="cell num">4</div>
+<div class="cell border-bottom-line"></div>
+<div class="cell slot ans-slot" data-ans="1"></div>
+<div class="cell slot ans-slot" data-ans="8"></div>
+<div class="cell slot ans-slot" data-ans="6"></div>
+<div class="cell slot ans-slot" data-ans="0"></div>
+</div>`,
+options:["1","8","6","0","2","5"]
+}
+]
+}
+
+/* ============================
+   初始化
+============================ */
+window.addEventListener("load",()=>{
+loadScore()
+document.getElementById("problem-title").innerHTML=problem.title
+renderStep()
+})
+
+function renderStep(){
+const wrapper=document.getElementById("steps-wrapper")
+wrapper.innerHTML=""
+const step=problem.steps[state.currentStep]
+const div=document.createElement("div")
+div.innerHTML=`
+<h2 class="text-2xl font-bold mb-4">${step.instruction}</h2>
+${step.expression}
+<div class="flex gap-4 mt-6 flex-wrap">
+${step.options.map(o=>`<button class="option-btn" data-val="${o}">${o}</button>`).join("")}
+<button class="option-btn bg-blue-600 text-white" id="checkBtn">檢查</button>
+</div>
+`
+wrapper.appendChild(div)
+}
+
+/* ============================
+   事件代理（完全安全）
+============================ */
+
+document.addEventListener("click",function(e){
+
+if(e.target.matches(".ans-slot")){
+document.querySelectorAll(".ans-slot").forEach(s=>s.classList.remove("selected"))
+e.target.classList.add("selected")
+playSound("click")
+}
+
+if(e.target.matches(".option-btn") && !e.target.id){
+const val=e.target.dataset.val
+const selected=document.querySelector(".ans-slot.selected")
+if(selected){
+selected.textContent=val
+selected.classList.remove("selected","error")
+}
+playSound("click")
+}
+
+if(e.target.id==="checkBtn"){
+checkAnswer()
+}
+
+})
+
+function checkAnswer(){
+const slots=document.querySelectorAll(".ans-slot")
+let correct=true
+slots.forEach(slot=>{
+if(slot.textContent!==slot.dataset.ans){
+correct=false
+slot.classList.add("error")
+}else{
+slot.classList.remove("error")
+slot.classList.add("correct")
+}
+})
+if(correct){
+state.score+=20
+saveScore()
+loadScore()
+playSound("correct")
+}else{
+playSound("error")
+}
+}
+
+</script>
+</body>
+</html>

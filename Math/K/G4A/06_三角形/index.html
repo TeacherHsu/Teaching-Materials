@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>國小數學4上：三角形探險隊（智慧測驗版）</title>
+    <style>
+        :root {
+            --primary: #009688; --secondary: #FF5722; --accent: #FFC107;
+            --bg: #E0F7FA; --text: #37474F; --score-bg: #263238; --score-text: #FFD700;
+        }
+        * { box-sizing: border-box; user-select: none; -webkit-user-select: none; }
+        body {
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg); color: var(--text); margin: 0; padding: 0;
+            display: flex; flex-direction: column; height: 100vh; overflow: hidden;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--primary); color: white; padding: 10px 15px;
+            display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); flex-shrink: 0; z-index: 10;
+        }
+        h1 { margin: 0; font-size: 1.2rem; font-weight: bold; }
+        
+        .score-board {
+            background-color: var(--score-bg); color: var(--score-text); padding: 5px 15px;
+            border-radius: 20px; font-weight: bold; display: flex; align-items: center; gap: 8px;
+            font-family: monospace; font-size: 1.2rem;
+        }
+        
+        .score-change {
+            position: absolute; right: 30px; top: 60px; font-weight: bold; font-size: 2.5rem;
+            color: var(--secondary); opacity: 0; pointer-events: none; text-shadow: 2px 2px 0 #fff; z-index: 20;
+        }
+        @keyframes scoreUp { 0% { opacity: 1; transform: translateY(0) scale(1); } 100% { opacity: 0; transform: translateY(-50px) scale(1.5); } }
+
+        /* Navigation */
+        .nav-container { background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.05); padding: 8px 0; flex-shrink: 0; }
+        .steps { display: flex; gap: 8px; overflow-x: auto; padding: 0 10px; scrollbar-width: none; }
+        .step-btn {
+            background: #ECEFF1; border: none; padding: 8px 14px; border-radius: 20px;
+            font-size: 0.95rem; color: #546E7A; cursor: pointer; transition: all 0.2s;
+            white-space: nowrap; flex-shrink: 0; font-weight: bold;
+        }
+        .step-btn.active { background: var(--secondary); color: white; transform: scale(1.05); box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+
+        /* Main */
+        main { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 10px; overflow-y: auto; }
+        .content-wrapper { width: 100%; max-width: 700px; display: flex; flex-direction: column; align-items: center; }
+
+        /* Canvas */
+        .canvas-container {
+            background: white; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            padding: 5px; width: 100%; aspect-ratio: 4/3; position: relative; margin-bottom: 15px;
+        }
+        canvas { width: 100%; height: 100%; border-radius: 12px; cursor: pointer; touch-action: none; }
+
+        /* Panels */
+        .panel {
+            width: 100%; background: white; border-radius: 16px; padding: 20px;
+            text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: none; animation: fadeIn 0.4s; margin-bottom: 20px;
+        }
+        .panel.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .instruction { 
+            font-size: 1.2rem; margin-bottom: 20px; line-height: 1.6; 
+            display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
+        }
+        .highlight { color: var(--secondary); font-weight: bold; font-size: 1.3rem; padding: 0 5px; }
+
+        /* Interactive Elements */
+        .btn-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+        .btn {
+            padding: 12px 24px; border: 2px solid var(--secondary); background: white;
+            color: var(--secondary); border-radius: 12px; font-size: 1.1rem; cursor: pointer; 
+            min-width: 100px; font-weight: bold; transition: all 0.1s;
+        }
+        .btn:active { transform: scale(0.95); }
+        .btn.primary { background: var(--secondary); color: white; border: none; }
+        .btn.success { background: var(--primary); border-color: var(--primary); color: white; }
+        
+        .tts-btn {
+            background: #E1F5FE; border: 1px solid #039BE5; color: #039BE5; border-radius: 50%;
+            width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center;
+            cursor: pointer; font-size: 1.1rem; padding: 0; flex-shrink: 0; margin-left: 5px;
+            transition: transform 0.2s;
+        }
+        .tts-btn:active { transform: scale(0.9); background: #B3E5FC; }
+
+        .feedback-box { margin-top: 20px; min-height: 30px; font-weight: bold; font-size: 1.2rem; padding: 10px; border-radius: 8px; }
+        .feedback-box.good { background: #E8F5E9; color: #2E7D32; }
+        .feedback-box.hint { background: #FFEBEE; color: #C62828; }
+        .feedback-box.info { background: #E3F2FD; color: #1565C0; }
+
+        .slider-container { display: flex; align-items: center; justify-content: center; margin: 20px 0; gap: 15px; width: 100%; }
+        input[type=range] { flex: 1; max-width: 250px; height: 30px; cursor: pointer; }
+
+        /* Quiz Specific */
+        .quiz-container { text-align: left; padding: 5px; }
+        .quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; color: #666; font-size: 0.9rem; }
+        .quiz-question { font-size: 1.3rem; font-weight: bold; margin-bottom: 20px; line-height: 1.5; }
+        .option-btn {
+            text-align: left; padding: 16px; background: #FAFAFA; border: 2px solid #eee;
+            border-radius: 12px; cursor: pointer; transition: all 0.2s; font-size: 1.1rem; margin-bottom: 12px; width: 100%;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .option-btn:hover { background: #F5F5F5; border-color: #ccc; }
+        .option-btn.correct { background: #C8E6C9; border-color: #4CAF50; color: #2E7D32; }
+        .option-btn.wrong { background: #FFCDD2; border-color: #EF5350; color: #C62828; }
+        .quiz-rationale { 
+            margin-top: 20px; padding: 15px; background: #FFF8E1; border-radius: 10px; 
+            font-size: 1.1rem; display: none; line-height: 1.6; border-left: 5px solid #FFC107;
+        }
+
+        .calc-input { font-size: 1.8rem; width: 120px; text-align: center; padding: 5px; border: 2px solid #90A4AE; border-radius: 10px; margin: 0 10px; }
+
+        #confetti-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100; }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85); z-index: 1000; display: none;
+            justify-content: center; align-items: center; backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background: white; padding: 40px; border-radius: 25px; text-align: center;
+            max-width: 90%; width: 450px; animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        @keyframes popIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .final-score { font-size: 4rem; color: var(--primary); font-weight: bold; margin: 15px 0; text-shadow: 2px 2px 0px #eee; }
+        .final-title { font-size: 1.8rem; color: var(--secondary); margin-bottom: 25px; font-weight: bold; }
+        .stars { font-size: 3rem; color: #FFC107; margin-bottom: 20px; letter-spacing: 10px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>三角形探險隊</h1>
+    <div class="score-board">
+        <span>⭐</span> <span id="score-display">0</span>
+    </div>
+</header>
+<div id="score-floater" class="score-change"></div>
+
+<div class="nav-container">
+    <div class="steps">
+        <button class="step-btn active" onclick="setStage(1)">1. 構造</button>
+        <button class="step-btn" onclick="setStage(2)">2. 分類</button>
+        <button class="step-btn" onclick="setStage(3)">3. 全等</button>
+        <button class="step-btn" onclick="setStage(4)">4. 測驗</button>
+        <button class="step-btn" onclick="setStage(5)">5. 繪圖</button>
+        <button class="step-btn" onclick="setStage(6)">6. 計算</button>
+    </div>
+</div>
+
+<main>
+    <div class="content-wrapper">
+        
+        <!-- Canvas Area -->
+        <div id="canvas-area" class="canvas-container">
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+            <canvas id="confetti-canvas" width="800" height="600"></canvas>
+        </div>
+
+        <!-- Stage 1: Anatomy -->
+        <div id="panel-1" class="panel active">
+            <div class="instruction">
+                任務：請在圖形上點出 <span id="s1-target-name" class="highlight">頂點</span>
+                <button class="tts-btn" onclick="speak('任務：請在圖形上點出' + document.getElementById('s1-target-name').innerText)">🔊</button>
+            </div>
+            <div class="btn-group">
+                <button class="btn primary" onclick="s1SetMode('vertex')">找頂點</button>
+                <button class="btn" onclick="s1SetMode('side')">找邊</button>
+                <button class="btn" onclick="s1SetMode('angle')">找角</button>
+                <button id="s1-next-btn" class="btn success" onclick="s1NextQuestion()">下一題</button>
+            </div>
+            <div id="s1-feedback" class="feedback-box info">點擊圖形開始得分！</div>
+        </div>
+
+        <!-- Stage 2: Classification -->
+        <div id="panel-2" class="panel">
+            <div class="instruction">
+                看數據，這是什麼三角形？
+                <button class="tts-btn" onclick="speak('看數據，這是什麼三角形？')">🔊</button>
+            </div>
+            <div class="btn-group" style="margin-bottom: 15px;">
+                <span style="width:100%; font-size:1rem; color:#777;">依角分類</span>
+                <button class="btn" onclick="s2Check('acute')">銳角</button>
+                <button class="btn" onclick="s2Check('right')">直角</button>
+                <button class="btn" onclick="s2Check('obtuse')">鈍角</button>
+            </div>
+            <div class="btn-group">
+                <span style="width:100%; font-size:1rem; color:#777;">依邊分類</span>
+                <button class="btn" onclick="s2Check('equilateral')">正三角形</button>
+                <button class="btn" onclick="s2Check('isosceles')">等腰</button>
+                <button class="btn" onclick="s2Check('scalene')">不等邊</button>
+            </div>
+            <div style="margin-top: 15px;">
+                 <button id="s2-next-btn" class="btn success" onclick="s2Init()" style="display:none;">下一題</button>
+            </div>
+            <div id="s2-feedback" class="feedback-box info">觀察角度和邊長，答錯會提示喔！</div>
+        </div>
+
+        <!-- Stage 3: Congruence -->
+        <div id="panel-3" class="panel">
+            <div id="s3-ui-drag">
+                <div class="instruction">
+                    拖曳並旋轉紅色三角形，使它與藍色全等
+                    <button class="tts-btn" onclick="speak('拖曳並旋轉紅色三角形，使它與藍色全等')">🔊</button>
+                </div>
+                <div class="slider-container">
+                    <span style="font-weight:bold; color:#666; font-size:1.2rem;">旋轉</span>
+                    <input type="range" id="rot-slider" min="0" max="360" value="0" oninput="s3UpdateRotation(this.value)">
+                </div>
+                <button class="btn primary" onclick="s3CheckMatch()">檢查疊合</button>
+            </div>
+            <div id="s3-ui-quiz" style="display:none;">
+                <div class="instruction">
+                    找出紅色三角形的 <span id="s3-quiz-target" class="highlight">對應角</span>
+                    <button class="tts-btn" onclick="speak('找出紅色三角形的' + document.getElementById('s3-quiz-target').innerText)">🔊</button>
+                </div>
+                <button class="btn success" onclick="s3Init()">重玩</button>
+            </div>
+            <div id="s3-feedback" class="feedback-box info">動手試試看！</div>
+        </div>
+
+        <!-- Stage 4: Quiz (Mastery Learning) -->
+        <div id="panel-4" class="panel" style="text-align: left;">
+            <div class="quiz-header">
+                <span>📝 隨堂測驗</span>
+                <span id="quiz-timer" style="color:var(--secondary); font-weight:bold;">0s</span>
+            </div>
+            <div id="quiz-content" class="quiz-container"></div>
+            <div style="margin-top:20px; text-align:center;">
+                <button class="btn success" id="quiz-next-btn" style="display:none;" onclick="s4Next()">下一題</button>
+                <button class="btn primary" id="quiz-restart-btn" style="display:none;" onclick="s4Init()">重新挑戰</button>
+            </div>
+        </div>
+
+        <!-- Stage 5: Drawing -->
+        <div id="panel-5" class="panel">
+            <div class="instruction">
+                任務：拖曳紅點，做出 <span id="s5-target-text" class="highlight">直角三角形</span>
+                <button class="tts-btn" onclick="speak('請拖曳紅點，做出' + document.getElementById('s5-target-text').innerText)">🔊</button>
+            </div>
+            <div class="btn-group">
+                <button class="btn" onclick="s5Check()">檢查答案</button>
+                <button class="btn success" onclick="s5Init()">下一題</button>
+            </div>
+            <div id="s5-feedback" class="feedback-box info">看著角度變化喔！</div>
+        </div>
+
+        <!-- Stage 6: Calculation -->
+        <div id="panel-6" class="panel">
+            <div id="s6-calc-ui">
+                <div class="instruction">
+                    <span id="s6-q-text">計算周長</span>
+                    <button class="tts-btn" onclick="speak(document.getElementById('s6-q-text').innerText)">🔊</button>
+                </div>
+                <div style="margin: 25px 0; display: flex; justify-content: center; align-items: center; gap:15px;">
+                     <span style="font-size:1.5rem; font-weight:bold;">答案：</span>
+                     <input type="number" id="s6-input" class="calc-input"> 
+                     <span id="s6-unit" style="font-size:1.5rem; font-weight:bold;">cm</span>
+                </div>
+                <button class="btn primary" onclick="s6Check()">送出答案</button>
+                <button id="s6-next-btn" class="btn success" style="display:none;" onclick="s6Init()">下一題</button>
+                <div id="s6-feedback" class="feedback-box info">算算看，答錯會教你喔！</div>
+            </div>
+        </div>
+    
+    </div>
+</main>
+
+<!-- Final Result Modal -->
+<div id="final-modal" class="modal-overlay">
+    <div class="modal-content">
+        <h2>🎉 恭喜完成！ 🎉</h2>
+        <div class="stars" id="final-stars">⭐⭐⭐</div>
+        <p style="font-size:1.2rem;">你的總分是</p>
+        <div class="final-score" id="final-score-val">0</div>
+        <p style="font-size:1.2rem;">獲得稱號</p>
+        <div class="final-title" id="final-title-val">三角形探險家</div>
+        <button class="btn primary" onclick="closeModal()">再來一次</button>
+    </div>
+</div>
+
+<script>
+/** * Math Game Engine v3.0
+ * Features: TTS, Canvas Drawing (Large Fonts), Gamification, Mastery Learning
+ */
+
+// --- Core & Audio ---
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+const cCtx = document.getElementById('confetti-canvas').getContext('2d');
+let scale = 1, currentStage = 1, score = 0;
+const AudioContext = window.AudioContext || window.webkitAudioContext;
+const audioCtx = new AudioContext();
+
+function playSound(type) {
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.connect(gain); gain.connect(audioCtx.destination);
+    const now = audioCtx.currentTime;
+    
+    if (type === 'correct') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(523.25, now);
+        osc.frequency.exponentialRampToValueAtTime(1046.5, now + 0.1);
+        gain.gain.setValueAtTime(0.3, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
+        osc.start(now); osc.stop(now + 0.4);
+    } else {
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(150, now);
+        osc.frequency.linearRampToValueAtTime(100, now + 0.2);
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+        osc.start(now); osc.stop(now + 0.3);
+    }
+}
+
+function speak(text) {
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'zh-TW'; window.speechSynthesis.speak(u);
+    }
+}
+
+function addScore(pts) {
+    score += pts;
+    document.getElementById('score-display').innerText = score;
+    const fl = document.getElementById('score-floater');
+    fl.innerText = `+${pts}`;
+    fl.style.animation = 'none'; void fl.offsetWidth; fl.style.animation = 'scoreUp 0.8s ease-out';
+}
+
+function resize() {
+    const w = document.querySelector('.canvas-container').clientWidth;
+    canvas.width = w; canvas.height = w * 0.75;
+    document.getElementById('confetti-canvas').width = w;
+    document.getElementById('confetti-canvas').height = w * 0.75;
+    scale = w / 800;
+    draw();
+}
+window.addEventListener('resize', resize);
+
+function setStage(n) {
+    currentStage = n;
+    document.querySelectorAll('.step-btn').forEach((b,i)=>b.classList.toggle('active',i+1===n));
+    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+    document.getElementById(`panel-${n}`).classList.add('active');
+    const cvs = document.getElementById('canvas-area');
+    if(n===4) cvs.style.display = 'none'; else cvs.style.display = 'block';
+
+    if(n===1) s1Init(); if(n===2) s2Init(); if(n===3) s3Init(); 
+    if(n===4) s4Init(); if(n===5) s5Init(); if(n===6) s6Init();
+    if(n!==4) resize();
+}
+
+function feedback(id, msg, type='normal') {
+    const el = document.getElementById(id); el.textContent = msg;
+    el.className = 'feedback-box ' + (type==='success'?'good':(type==='error'?'hint':'info'));
+}
+
+// --- Utils ---
+const rand = (min,max) => Math.random()*(max-min)+min;
+const dist = (a,b) => Math.sqrt((a.x-b.x)**2+(a.y-b.y)**2);
+function distToSegment(p, a, b) {
+    const l2 = dist(a, b)**2; if (l2 === 0) return dist(p, a);
+    let t = ((p.x - a.x) * (b.x - a.x) + (p.y - a.y) * (b.y - a.y)) / l2;
+    t = Math.max(0, Math.min(1, t));
+    return dist(p, { x: a.x + t * (b.x - a.x), y: a.y + t * (b.y - a.y) });
+}
+// Large Font Helper
+function drawLabel(text, x, y, color='#333', size=30) {
+    ctx.fillStyle = color; ctx.font = `bold ${size}px Arial`; ctx.fillText(text, x, y);
+}
+
+// --- Stage 1: Anatomy ---
+let s1Tri=[], s1Mode='vertex', s1Hits=[], s1Attempts=0;
+function s1Init() {
+    s1Tri = [{x:400,y:100}, {x:250,y:450}, {x:550,y:450}];
+    s1Tri.forEach(p=>{p.x+=rand(-40,40); p.y+=rand(-40,40);});
+    s1Hits=[]; s1Attempts=0;
+    s1SetMode(['vertex','side','angle'][Math.floor(rand(0,3))]);
+}
+function s1SetMode(m) {
+    s1Mode=m; s1Hits=[];
+    const map={'vertex':'頂點','side':'邊','angle':'角'};
+    document.getElementById('s1-target-name').innerText=map[m];
+    document.querySelectorAll('#panel-1 .btn').forEach(b=>b.classList.remove('primary'));
+    const btns=document.querySelectorAll('#panel-1 .btn');
+    if(m==='vertex')btns[0].classList.add('primary'); else if(m==='side')btns[1].classList.add('primary'); else btns[2].classList.add('primary');
+    const msg = `請點擊三角形的「${map[m]}」`;
+    feedback('s1-feedback', msg); speak(msg); draw();
+}
+function s1NextQuestion() { s1Init(); }
+
+// --- Stage 2: Classification ---
+let s2Tri=[], s2Props={}, s2State={type:0, attempts:0, remediation:false};
+function s2Init() {
+    let t;
+    if(s2State.remediation) {
+        t = s2State.type;
+        feedback('s2-feedback', '這是一題類似題，再試試看！', 'info');
+    } else {
+        t = Math.floor(rand(0,4));
+        feedback('s2-feedback', '觀察數據判斷');
+    }
+    s2State.type = t; s2State.attempts = 0;
+    if(t===0) s2Tri=[{x:300,y:450},{x:500,y:450},{x:300,y:250}];
+    else if(t===1) s2Tri=[{x:400,y:450-173},{x:300,y:450},{x:500,y:450}];
+    else if(t===2) s2Tri=[{x:400,y:200},{x:320,y:450},{x:480,y:450}];
+    else s2Tri=[{x:500,y:200},{x:250,y:450},{x:550,y:450}];
+    document.getElementById('s2-next-btn').style.display='none';
+    s2Calc(); draw();
+}
+function s2Calc() {
+    const [A,B,C]=s2Tri;
+    const a=dist(B,C), b=dist(A,C), c=dist(A,B);
+    const A_ang = Math.acos((b*b+c*c-a*a)/(2*b*c))*180/Math.PI;
+    const B_ang = Math.acos((a*a+c*c-b*b)/(2*a*c))*180/Math.PI;
+    s2Props={sides:[a,b,c].map(v=>Math.round(v/10)), angles:[A_ang,B_ang,180-A_ang-B_ang].map(Math.round)};
+}
+function s2Check(ans) {
+    if(document.getElementById('s2-next-btn').style.display==='inline-block') return;
+    const {angles, sides} = s2Props; const maxA = Math.max(...angles);
+    let ok=false;
+    if(ans==='right' && angles.includes(90)) ok=true;
+    else if(ans==='obtuse' && maxA>90) ok=true;
+    else if(ans==='acute' && maxA<90) ok=true;
+    else if(ans==='equilateral' && sides[0]===sides[1] && sides[1]===sides[2]) ok=true;
+    else if(ans==='isosceles' && (sides[0]===sides[1]||sides[1]===sides[2]||sides[0]===sides[2])) ok=true;
+    else if(ans==='scalene' && sides[0]!==sides[1] && sides[1]!==sides[2]) ok=true;
+    
+    if(ok) {
+        fireConfetti(); playSound('correct');
+        addScore(s2State.attempts===0 ? 10 : 5);
+        feedback('s2-feedback', '答對了！', 'success'); speak('答對了');
+        s2State.remediation = false;
+        document.getElementById('s2-next-btn').style.display='inline-block';
+    } else {
+        s2State.attempts++; s2State.remediation = true; playSound('wrong');
+        let hint="";
+        if(s2State.type===0) hint="有直角喔！"; else if(s2State.type===1) hint="三邊一樣長。";
+        else if(s2State.type===2) hint="兩邊一樣長。"; else if(s2State.type===3) hint="有鈍角喔！";
+        feedback('s2-feedback', `不對喔。${hint}`, 'hint'); speak(`不對喔。${hint}`);
+    }
+}
+
+// --- Stage 3: Congruence ---
+let s3B=[], s3St={x:0,y:0,r:0}, s3Drag={a:false,sx:0,sy:0,ox:0,oy:0}, s3Q={t:'',i:0}, s3Phase='drag';
+function s3Init() {
+    s3Phase='drag'; document.getElementById('s3-ui-drag').style.display='block'; document.getElementById('s3-ui-quiz').style.display='none';
+    s3B=[{x:300,y:250},{x:300,y:450},{x:500,y:450}]; // Right Triangle for clarity
+    s3St={x:200,y:-100,r:rand(30,330)}; document.getElementById('rot-slider').value=Math.round(s3St.r);
+    feedback('s3-feedback','移動並旋轉紅色三角形'); draw();
+}
+function s3UpdateRotation(v) { s3St.r=parseInt(v); draw(); }
+function s3GetR() {
+    const rad=s3St.r*Math.PI/180; const cx=(s3B[0].x+s3B[1].x+s3B[2].x)/3, cy=(s3B[0].y+s3B[1].y+s3B[2].y)/3;
+    return s3B.map(p=>{
+        const dx=p.x-cx, dy=p.y-cy;
+        return {x:(dx*Math.cos(rad)-dy*Math.sin(rad))+cx+s3St.x, y:(dx*Math.sin(rad)+dy*Math.cos(rad))+cy+s3St.y};
+    });
+}
+function s3CheckMatch() {
+    if(Math.sqrt(s3St.x**2+s3St.y**2)<30 && (s3St.r%360<15 || s3St.r%360>345)) {
+        s3Phase='quiz'; fireConfetti(); speak('疊合成功！進入對應題'); addScore(15); playSound('correct');
+        s3St={x:300,y:0,r:0}; document.getElementById('s3-ui-drag').style.display='none'; document.getElementById('s3-ui-quiz').style.display='block'; s3NewQ();
+    } else { feedback('s3-feedback','還沒對準喔，注意直角的位置','error'); speak('還沒對準喔'); playSound('wrong'); }
+}
+function s3NewQ() {
+    const types=['vertex','side','angle']; s3Q = {t:types[Math.floor(rand(0,3))], i:Math.floor(rand(0,3))};
+    const labs=['A','B','C'];
+    let txt = s3Q.t==='side' ? `邊 ${s3Q.i===0?'AB':(s3Q.i===1?'BC':'AC')}` : `${s3Q.t==='vertex'?'頂點':'角'} ${labs[s3Q.i]}`;
+    document.getElementById('s3-quiz-target').innerText = `對應${txt}`;
+    feedback('s3-feedback','點擊紅色三角形的對應位置'); draw();
+}
+function s3ClickQ(p) {
+    const rPts = s3GetR(); let hit = false;
+    if(s3Q.t==='side') {
+        const p1=rPts[s3Q.i], p2=rPts[(s3Q.i+1)%3];
+        if(distToSegment(p, p1, p2)<30) hit=true;
+    } else { if(dist(p, rPts[s3Q.i])<45) hit=true; }
+    if(hit) { feedback('s3-feedback','答對了！','success'); fireConfetti(); addScore(15); playSound('correct'); setTimeout(s3NewQ,1500); }
+    else { feedback('s3-feedback','不對喔','error'); playSound('wrong'); }
+}
+
+// --- Stage 4: Smart Quiz (Mastery & Categories) ---
+// Questions grouped by concept
+const s4Bank = {
+    basic: [
+        {q:"三角形有幾個頂點？", o:["3個","4個","2個"], a:0, n:"三角形有3個頂點、3個角、3條邊。"},
+        {q:"三角形有幾條邊？", o:["3條","4條","2條"], a:0, n:"三角形由三條邊組成。"},
+        {q:"三角形有幾個角？", o:["3個","4個","6個"], a:0, n:"三角形有3個角。"}
+    ],
+    iso_equi: [
+        {q:"正三角形的三個角是幾度？", o:["60度","90度","45度"], a:0, n:"正三角形三個角都是60度。"},
+        {q:"兩條邊一樣長的三角形是？", o:["等腰三角形","正三角形","不等邊"], a:0, n:"有兩邊等長就是等腰。"},
+        {q:"正三角形又叫做？", o:["等邊三角形","等腰三角形","直角三角形"], a:0, n:"因為三邊等長，所以叫等邊三角形。"}
+    ],
+    angles: [
+        {q:"有一個角是90度的三角形是？", o:["直角三角形","銳角","鈍角"], a:0, n:"有90度就是直角三角形。"},
+        {q:"有一個角大於90度是？", o:["鈍角三角形","直角","銳角"], a:0, n:"大於90度是鈍角。"},
+        {q:"三個角都小於90度是？", o:["銳角三角形","直角","鈍角"], a:0, n:"三個都是銳角才叫銳角三角形。"}
+    ]
+};
+let s4State = { categoryOrder: ['basic', 'iso_equi', 'angles'], catIdx: 0, qIdx: 0, startTime: 0, attempts: 0 };
+
+function s4Init() {
+    s4State.catIdx = 0;
+    s4State.qIdx = Math.floor(rand(0, s4Bank.basic.length)); // Start random in first cat
+    s4State.attempts = 0;
+    document.getElementById('quiz-next-btn').style.display='none';
+    document.getElementById('quiz-restart-btn').style.display='none';
+    s4Render();
+}
+
+function s4Render() {
+    const cat = s4State.categoryOrder[s4State.catIdx];
+    const q = s4Bank[cat][s4State.qIdx];
+    s4State.startTime = Date.now();
+    
+    document.getElementById('quiz-content').innerHTML = `
+        <div class="quiz-question"><span>${q.q}</span> <button class="tts-btn" onclick="speak('${q.q}')">🔊</button></div>
+        ${q.o.map((opt,i)=>`<div class="option-btn" onclick="s4Ans(${i},this)">${opt}<button class="tts-btn" onclick="event.stopPropagation();speak('${opt}')">🔊</button></div>`).join('')}
+        <div id="q-rat" class="quiz-rationale"></div>
+    `;
+    speak(q.q);
+}
+
+function s4Ans(i, btn) {
+    if(document.getElementById('quiz-next-btn').style.display==='inline-block') return;
+    
+    const cat = s4State.categoryOrder[s4State.catIdx];
+    const q = s4Bank[cat][s4State.qIdx];
+    const rat = document.getElementById('q-rat'); rat.style.display='block';
+    const timeTaken = (Date.now() - s4State.startTime)/1000;
+    
+    if(i === q.a) {
+        btn.classList.add('correct');
+        rat.innerHTML = `<strong>答對了！</strong> ${q.n}`;
+        rat.style.background = '#E8F5E9'; rat.style.color='#2E7D32';
+        playSound('correct'); fireConfetti(); speak('答對了');
+        
+        // Score calculation: Base 10 + Speed Bonus
+        let pts = 10;
+        if(timeTaken < 5) pts += 5;
+        addScore(pts);
+
+        // Logic: Correct -> Next Category or Finish
+        if(s4State.catIdx < s4State.categoryOrder.length - 1) {
+            document.getElementById('quiz-next-btn').style.display='inline-block';
+            document.getElementById('quiz-next-btn').onclick = s4NextCat;
+        } else {
+            document.getElementById('quiz-restart-btn').style.display='inline-block';
+        }
+    } else {
+        btn.classList.add('wrong');
+        rat.innerHTML = `<strong>答錯了...</strong> ${q.n} <br>我們會再練習一題類似的！`;
+        rat.style.background = '#FFEBEE'; rat.style.color='#C62828';
+        playSound('wrong'); speak('答錯了，請看解析');
+        
+        // Logic: Wrong -> Stay in category, pick DIFFERENT question
+        document.getElementById('quiz-next-btn').style.display='inline-block';
+        document.getElementById('quiz-next-btn').innerText = "再試一題";
+        document.getElementById('quiz-next-btn').onclick = s4RetryCat;
+    }
+}
+
+function s4NextCat() {
+    s4State.catIdx++;
+    s4State.qIdx = Math.floor(rand(0, s4Bank[s4State.categoryOrder[s4State.catIdx]].length));
+    document.getElementById('quiz-next-btn').style.display='none';
+    s4Render();
+}
+
+function s4RetryCat() {
+    const cat = s4State.categoryOrder[s4State.catIdx];
+    // Pick a different question from same category if possible
+    let newIdx = s4State.qIdx;
+    while(s4Bank[cat].length > 1 && newIdx === s4State.qIdx) {
+        newIdx = Math.floor(rand(0, s4Bank[cat].length));
+    }
+    s4State.qIdx = newIdx;
+    document.getElementById('quiz-next-btn').style.display='none';
+    s4Render();
+}
+
+
+// --- Stage 5: Drawing ---
+let s5Tri=[], s5Target='', s5DragIdx=-1;
+function s5Init() {
+    s5Tri = [{x:300,y:450}, {x:500,y:450}, {x:400,y:200}]; s5Tri[2].x = rand(250,550); s5Tri[2].y = rand(150,350);
+    s5Target = ['直角三角形','鈍角三角形','等腰三角形'][Math.floor(rand(0,3))];
+    document.getElementById('s5-target-text').innerText = s5Target; feedback('s5-feedback','拖曳紅點','info'); draw();
+}
+function s5Check() {
+    const [A,B,C] = [s5Tri[2], s5Tri[0], s5Tri[1]];
+    const a=dist(B,C), b=dist(A,C), c=dist(A,B);
+    const angA = Math.round(Math.acos((b*b+c*c-a*a)/(2*b*c))*180/Math.PI);
+    const angB = Math.round(Math.acos((a*a+c*c-b*b)/(2*a*c))*180/Math.PI);
+    const angles = [angA,angB,180-angA-angB];
+    let ok = false;
+    if(s5Target==='直角三角形' && angles.some(a=>Math.abs(a-90)<5)) ok=true;
+    else if(s5Target==='鈍角三角形' && angles.some(a=>a>95)) ok=true;
+    else if(s5Target==='等腰三角形' && (Math.abs(b-c)<5 || Math.abs(a-b)<5 || Math.abs(a-c)<5)) ok=true;
+    
+    if(ok) { feedback('s5-feedback','成功了！','success'); fireConfetti(); addScore(20); playSound('correct'); speak('成功了'); }
+    else { feedback('s5-feedback','還差一點點','hint'); playSound('wrong'); }
+}
+
+// --- Stage 6: Calculation ---
+let s6State={type:0, attempts:0, remediation:false, vals:[], ans:0};
+function s6Init() {
+    let type;
+    if(s6State.remediation) { type = s6State.type; feedback('s6-feedback','類似題，再算一次！','info'); }
+    else { type = Math.floor(rand(0,2)); feedback('s6-feedback','算出答案','info'); }
+    s6State.type = type; s6State.attempts = 0;
+    
+    const qText = document.getElementById('s6-q-text'); document.getElementById('s6-input').value = '';
+    const unit = document.getElementById('s6-unit');
+    
+    if(type === 0) {
+        qText.innerText = "這是一個等腰三角形，求周長？"; unit.innerText = "cm";
+        const leg=Math.floor(rand(5,15)), base=Math.floor(rand(5,15)); 
+        s6State.vals=[leg,leg,base]; s6State.ans=leg*2+base;
+        speak(`這是一個等腰三角形，腰長${leg}，底長${base}，求周長？`);
+    } else {
+        qText.innerText = "已知兩個底角，求頂角？"; unit.innerText = "度";
+        const ang=Math.floor(rand(30,70)); 
+        s6State.vals=[ang,ang]; s6State.ans=180-ang*2;
+        speak(`這是一個等腰三角形，底角是${ang}度，求頂角是幾度？`);
+    }
+    document.getElementById('s6-next-btn').style.display='none';
+    draw();
+}
+function s6Check() {
+    if(document.getElementById('s6-next-btn').style.display==='inline-block') return;
+    const user = parseInt(document.getElementById('s6-input').value);
+    if(user === s6State.ans) { 
+        playSound('correct'); fireConfetti();
+        addScore(s6State.attempts===0?20:10);
+        feedback('s6-feedback','答對了！','success'); s6State.remediation = false;
+        document.getElementById('s6-next-btn').style.display='inline-block';
+    } else {
+        s6State.attempts++; s6State.remediation = true; playSound('wrong');
+        let msg = s6State.type === 0 ? "周長 = 腰 + 腰 + 底" : "內角和是180度 (180 - 底角 - 底角)";
+        feedback('s6-feedback', msg, 'hint'); speak(msg);
+    }
+}
+
+// --- Interaction ---
+function getPos(e) {
+    const r=canvas.getBoundingClientRect();
+    const cx=e.touches?e.touches[0].clientX:e.clientX; const cy=e.touches?e.touches[0].clientY:e.clientY;
+    return {x:(cx-r.left)/scale, y:(cy-r.top)/scale};
+}
+canvas.addEventListener('mousedown',e=>handleStart(getPos(e)));
+canvas.addEventListener('touchstart',e=>{e.preventDefault();handleStart(getPos(e));},{passive:false});
+window.addEventListener('mousemove',e=>{if(s3Drag.a||s5DragIdx!==-1)handleMove(getPos(e));});
+window.addEventListener('touchmove',e=>{if(s3Drag.a||s5DragIdx!==-1)handleMove(getPos(e));},{passive:false});
+window.addEventListener('mouseup',handleEnd);
+window.addEventListener('touchend',handleEnd);
+
+function handleStart(p) {
+    if(currentStage===1) {
+        if(s1Mode==='vertex') s1Tri.forEach(pt=>{if(dist(p,pt)<30)s1Hits.push({t:'v',x:pt.x,y:pt.y})});
+        else if(s1Mode==='angle') s1Tri.forEach(pt=>{if(dist(p,pt)<40)s1Hits.push({t:'a',x:pt.x,y:pt.y})});
+        else for(let i=0;i<3;i++) if(distToSegment(p,s1Tri[i],s1Tri[(i+1)%3])<30)s1Hits.push({t:'s',p1:s1Tri[i],p2:s1Tri[(i+1)%3]});
+        if(s1Hits.length>0){ addScore(5); playSound('correct'); feedback('s1-feedback','找到了！','success'); draw(); }
+    } else if(currentStage===3) {
+        if(s3Phase==='drag') {
+            const c=(s3GetR().reduce((a,b)=>{a.x+=b.x;a.y+=b.y;return a},{x:0,y:0})); c.x/=3; c.y/=3;
+            if(dist(p,c)<100) s3Drag={a:true,sx:p.x,sy:p.y,ox:s3St.x,oy:s3St.y};
+        } else s3ClickQ(p);
+    } else if(currentStage===5) { if(dist(p, s5Tri[2]) < 50) s5DragIdx = 2; }
+}
+function handleMove(p) {
+    if(currentStage===3 && s3Drag.a) { s3St.x = s3Drag.ox + (p.x-s3Drag.sx); s3St.y = s3Drag.oy + (p.y-s3Drag.sy); draw(); }
+    else if(currentStage===5 && s5DragIdx!==-1) { s5Tri[s5DragIdx].x = p.x; s5Tri[s5DragIdx].y = p.y; draw(); }
+}
+function handleEnd() { s3Drag.a=false; s5DragIdx=-1; }
+
+// --- Drawing ---
+function draw() {
+    if(currentStage===4) return;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.save(); ctx.scale(scale,scale);
+    if(currentStage===1) drawS1(); if(currentStage===2) drawS2(); if(currentStage===3) drawS3();
+    if(currentStage===5) drawS5(); if(currentStage===6) drawS6();
+    ctx.restore();
+}
+// LARGE FONT drawing
+function drawTri(pts,s,f,lw=3) {
+    if(!pts||pts.length<3)return;
+    ctx.beginPath(); ctx.moveTo(pts[0].x,pts[0].y); ctx.lineTo(pts[1].x,pts[1].y); ctx.lineTo(pts[2].x,pts[2].y); ctx.closePath();
+    if(f){ctx.fillStyle=f;ctx.fill();} ctx.strokeStyle=s; ctx.lineWidth=lw; ctx.stroke();
+}
+function drawS1(){drawTri(s1Tri,'#333','#fff');s1Hits.forEach(h=>{ctx.fillStyle='rgba(255,193,7,0.6)';ctx.strokeStyle='#FF9800';if(h.t==='v'||h.t==='a'){ctx.beginPath();ctx.arc(h.x,h.y,20,0,6.28);ctx.fill();ctx.stroke();}else{ctx.beginPath();ctx.moveTo(h.p1.x,h.p1.y);ctx.lineTo(h.p2.x,h.p2.y);ctx.stroke();}});}
+function drawS2(){
+    drawTri(s2Tri,'#546E7A','#FAFAFA'); ctx.font='bold 26px Arial'; // Larger Font
+    const p=s2Tri; if(p&&p.length>=3){
+        ctx.fillStyle='#E91E63';
+        ctx.fillText(s2Props.sides[2]+'cm',(p[0].x+p[1].x)/2-25,(p[0].y+p[1].y)/2);
+        ctx.fillText(s2Props.sides[0]+'cm',(p[1].x+p[2].x)/2,(p[1].y+p[2].y)/2+25);
+        ctx.fillText(s2Props.sides[1]+'cm',(p[2].x+p[0].x)/2+10,(p[2].y+p[0].y)/2);
+        ctx.fillStyle='#2196F3';
+        p.forEach((pt,i)=>ctx.fillText(s2Props.angles[i]+'°',pt.x+(i===1?-45:5),pt.y+(i===0?-15:5)));
+    }
+}
+function drawS3(){drawTri(s3B,'#0288D1','rgba(3,169,244,0.2)');drawLabel('A',s3B[0].x,s3B[0].y-10);drawLabel('B',s3B[1].x-25,s3B[1].y+10);drawLabel('C',s3B[2].x+10,s3B[2].y+10);const r=s3GetR();drawTri(r,'#D32F2F','rgba(244,67,54,0.4)');drawLabel('D',r[0].x,r[0].y-10,'#B71C1C');drawLabel('E',r[1].x-25,r[1].y+10,'#B71C1C');drawLabel('F',r[2].x+10,r[2].y+10,'#B71C1C');if(s3Phase==='quiz'){ctx.strokeStyle='#FFC107';ctx.lineWidth=6;const i=s3Q.i;if(s3Q.t==='side'){ctx.beginPath();ctx.moveTo(s3B[i].x,s3B[i].y);ctx.lineTo(s3B[(i+1)%3].x,s3B[(i+1)%3].y);ctx.stroke();}else{ctx.beginPath();ctx.arc(s3B[i].x,s3B[i].y,30,0,6.28);ctx.stroke();}}}
+function drawS5(){drawTri(s5Tri,'#333','#EFEBE9');ctx.beginPath();ctx.arc(s5Tri[2].x,s5Tri[2].y,12,0,6.28);ctx.fillStyle='red';ctx.fill();const[A,B,C]=[s5Tri[2],s5Tri[0],s5Tri[1]];const a=dist(B,C),b=dist(A,C),c=dist(A,B);const angA=Math.round(Math.acos((b*b+c*c-a*a)/(2*b*c))*180/Math.PI);const angB=Math.round(Math.acos((a*a+c*c-b*b)/(2*a*c))*180/Math.PI);const angC=180-angA-angB;ctx.font='bold 22px Arial';ctx.fillStyle='blue';ctx.fillText(angB+'°',B.x-35,B.y);ctx.fillText(angC+'°',C.x+15,C.y);ctx.fillText(angA+'°',A.x,A.y-20);}
+function drawS6(){const cx=400;const pts=s6State.type===0?[{x:cx,y:150},{x:300,y:450},{x:500,y:450}]:[{x:cx,y:150},{x:250,y:450},{x:550,y:450}];drawTri(pts,'#333','#E0F2F1');ctx.fillStyle='#000';ctx.font='bold 28px Arial';if(s6State.type===0){ctx.fillText(s6State.vals[0]+'cm',310,300);ctx.fillText(s6State.vals[0]+'cm',470,300);ctx.fillText(s6State.vals[2]+'cm',370,480);}else{ctx.fillText(s6State.vals[0]+'°',240,440);ctx.fillText(s6State.vals[0]+'°',520,440);ctx.fillStyle='red';ctx.fillText('?°',390,180);}}
+
+function finishAll() { document.getElementById('final-modal').style.display='flex'; document.getElementById('final-score-val').innerText=score; playSound('correct'); }
+function closeModal() { document.getElementById('final-modal').style.display='none'; score=0; addScore(0); setStage(1); }
+
+const ps=[]; function fireConfetti(){for(let i=0;i<40;i++)ps.push({x:400,y:300,vx:rand(-5,5),vy:rand(-10,-2),c:`hsl(${rand(0,360)},100%,50%)`,l:100});ani();}
+function ani(){cCtx.clearRect(0,0,800,600);if(ps.length===0)return;for(let i=ps.length-1;i>=0;i--){let p=ps[i];p.x+=p.vx;p.y+=p.vy;p.vy+=0.2;p.l--;cCtx.fillStyle=p.c;cCtx.fillRect(p.x,p.y,6,6);if(p.l<=0)ps.splice(i,1);}requestAnimationFrame(ani);}
+window.onload=()=>{setStage(1);resize();};
+</script>
+</body>
+</html>
