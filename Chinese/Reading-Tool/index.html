@@ -25,6 +25,9 @@
     <!-- 5.1 115 教師校正經驗：多音字、變調與家人稱呼輕聲規則 -->
     <script src="./pronunciation-rules.js"></script>
 
+    <!-- 5.2 115 閱讀工作流：語境斷詞與短句跟讀規則 -->
+    <script src="./segmentation-rules.js"></script>
+
     <!-- 6. 注入自定義 CSS (直式注音核心) -->
     <style>
         body { font-family: 'Noto Sans TC', sans-serif; background-color: #F7F9F9; color: #5D6D7E; }
@@ -262,7 +265,7 @@
             // 3. 解析文本 (效能優化版)
             useEffect(() => {
                 parseText(text);
-                setWordRanges(buildWordRanges(text));
+                setWordRanges(window.ReadingSegmentationRules?.buildWordRanges(text) || []);
                 setTimeout(() => { if (window.lucide) window.lucide.createIcons(); }, 100);
             }, [text, overrides]);
 
@@ -344,49 +347,6 @@
                     };
                 });
                 setParsedData(data);
-            };
-
-            // 115 workflow: split every marked or unmarked text run into
-            // locale-aware Chinese words. Existing |...| markers remain useful
-            // as run boundaries, but no longer force a whole sentence/line to
-            // be read as one word.
-            const buildWordRanges = (inputText) => {
-                const ranges = [];
-                const chars = inputText.split('');
-                const addSegmentedRun = (start, end) => {
-                    if (end < start) return;
-                    const run = chars.slice(start, end + 1).join('');
-                    if (typeof Intl !== 'undefined' && typeof Intl.Segmenter === 'function') {
-                        const segmenter = new Intl.Segmenter('zh-TW', { granularity: 'word' });
-                        let offset = 0;
-                        for (const part of segmenter.segment(run)) {
-                            const partStart = start + offset;
-                            const partEnd = partStart + part.segment.length - 1;
-                            if (part.isWordLike && !/[，。、；：？！「」『』（）()\s]/.test(part.segment)) {
-                                ranges.push({ s: partStart, e: partEnd });
-                            }
-                            offset += part.segment.length;
-                        }
-                        return;
-                    }
-                    // Fallback for older browsers: preserve marked runs and
-                    // otherwise use contiguous non-punctuation text.
-                    let s = start;
-                    for (let i = start; i <= end + 1; i++) {
-                        if (i > end || /[，。、；：？！「」『』（）()\s]/.test(chars[i])) {
-                            if (s <= i - 1) ranges.push({ s, e: i - 1 });
-                            s = i + 1;
-                        }
-                    }
-                };
-                let runStart = 0;
-                for (let i = 0; i <= chars.length; i++) {
-                    if (i === chars.length || chars[i] === '|' || chars[i] === '\n') {
-                        addSegmentedRun(runStart, i - 1);
-                        runStart = i + 1;
-                    }
-                }
-                return ranges;
             };
 
             const handleTextChange = (e) => {
@@ -546,27 +506,12 @@
                 setCorrectionNotice('已清除本機校正，並恢復正式教材讀音。');
             };
 
-            // 115 workflow: a sentence is intentionally short for跟讀.
-            // Comma／period, sentence-final punctuation, and paragraph end
-            // each close the current read-sentence range.
-            const isSentenceBreak = (c) => /[，,。.!！？\n]/.test(c);
             const getSentenceRange = (idx) => {
-                const chars = text.split('');
-                let s = idx, e = idx;
-                while (s > 0 && !isSentenceBreak(chars[s - 1])) s--;
-                while (e < chars.length - 1 && !isSentenceBreak(chars[e])) e++;
-                return { s, e };
+                return window.ReadingSegmentationRules?.getSentenceRange(text, idx) || { s: idx, e: idx };
             };
 
             const getWordRange = (idx) => {
-                const hit = wordRanges.find(r => idx >= r.s && idx <= r.e);
-                if (hit) return { s: hit.s, e: hit.e };
-                const chars = text.split('');
-                const isWordBreak = (c) => /[，。、；：？！\n\s]/.test(c) || c === '|';
-                let s = idx, e = idx;
-                while (s > 0 && !isWordBreak(chars[s - 1])) s--;
-                while (e < chars.length - 1 && !isWordBreak(chars[e + 1])) e++;
-                return { s, e };
+                return window.ReadingSegmentationRules?.getWordRange(text, wordRanges, idx) || { s: idx, e: idx };
             };
 
             const CharBlock = ({ item, index }) => {
@@ -577,6 +522,8 @@
                 if (char === '\n') return <div className="w-full h-8 basis-full"></div>;
                 
                 const isPunctuation = /[，。、；：？！「」『』\(\)（）\s]/.test(char);
+                const diagnosticWordRange = isPunctuation ? null : getWordRange(index);
+                const diagnosticSentenceRange = isPunctuation ? null : getSentenceRange(index);
 
                 const handleClick = (e) => {
                     if (correctionMode && !isPunctuation) {
@@ -618,6 +565,8 @@
                         data-char-index={index}
                         data-source-pinyin={sourcePinyin || ''}
                         data-zhuyin={zhuyin || ''}
+                        data-word-range={diagnosticWordRange ? `${diagnosticWordRange.s}-${diagnosticWordRange.e}` : ''}
+                        data-sentence-range={diagnosticSentenceRange ? `${diagnosticSentenceRange.s}-${diagnosticSentenceRange.e}` : ''}
                         title={!isPunctuation ? "點擊朗讀" : ""}
                     >
                         {/* 修正：字型大小改為動態 style */}
@@ -834,7 +783,7 @@
                                     <i data-lucide="edit-3" width="18" className="text-teal-400"></i> 輸入課文
                                 </h2>
                                 <div className="mb-2 text-xs text-slate-400 bg-slate-50 p-2 rounded">
-                                    提示：可用 <code className="bg-slate-200 px-1 rounded text-slate-600">|</code> 符號標記詞塊，例如：<code>|一起走|</code>，系統將自動以此為單位朗讀。
+                                    系統會依臺灣中文語境自動斷詞；可用 <code className="bg-slate-200 px-1 rounded text-slate-600">|</code> 限制切詞範圍，避免詞語跨越教師指定邊界。
                                 </div>
                                 <textarea
                                     value={text}
@@ -915,7 +864,7 @@
                                 <p>目前模式：<span className="font-bold text-teal-500">
                                     {readUnit === 'char' ? '讀字' : readUnit === 'word' ? '讀詞' : '讀句'}
                                 </span></p>
-                                {readUnit === 'word' && <p className="text-xs text-slate-300">提示：老師可用 | | 標記重點詞彙</p>}
+                                {readUnit === 'word' && <p className="text-xs text-slate-300">已依語境自動斷詞；| | 可指定不可跨越的詞界</p>}
                             </div>
                         )}
                     </main>
