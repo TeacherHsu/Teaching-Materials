@@ -22,6 +22,9 @@
     <!-- 5. 引入 pinyin-pro 自動注音庫 -->
     <script src="https://unpkg.com/pinyin-pro@3.18.2/dist/index.js"></script>
 
+    <!-- 5.1 115 教師校正經驗：多音字、變調與家人稱呼輕聲規則 -->
+    <script src="./pronunciation-rules.js"></script>
+
     <!-- 6. 注入自定義 CSS (直式注音核心) -->
     <style>
         body { font-family: 'Noto Sans TC', sans-serif; background-color: #F7F9F9; color: #5D6D7E; }
@@ -77,71 +80,9 @@
             '麼': '˙ㄇㄜ', '還': 'ㄏㄞˊ', '不': 'ㄅㄨˋ', '回': 'ㄏㄨㄟˊ'
         };
 
-        // --- 拼音 -> 注音（Bopomofo）轉換邏輯 ---
-        const TONE_MAP = { 1: '', 2: 'ˊ', 3: 'ˇ', 4: 'ˋ', 5: '˙', 0: '' };
-        
-        const INITIAL_MAP = {
-            b:'ㄅ', p:'ㄆ', m:'ㄇ', f:'ㄈ',
-            d:'ㄉ', t:'ㄊ', n:'ㄋ', l:'ㄌ',
-            g:'ㄍ', k:'ㄎ', h:'ㄏ',
-            j:'ㄐ', q:'ㄑ', x:'ㄒ',
-            zh:'ㄓ', ch:'ㄔ', sh:'ㄕ', r:'ㄖ',
-            z:'ㄗ', c:'ㄘ', s:'ㄙ',
-            '':''
-        };
-
-        // 移除可能導致錯誤的 key，統一使用 v 代表 ü
-        const FINAL_MAP = {
-            a:'ㄚ', o:'ㄛ', e:'ㄜ', ai:'ㄞ', ei:'ㄟ', ao:'ㄠ', ou:'ㄡ',
-            an:'ㄢ', en:'ㄣ', ang:'ㄤ', eng:'ㄥ', er:'ㄦ',
-            i:'ㄧ', ia:'ㄧㄚ', ie:'ㄧㄝ', iao:'ㄧㄠ', iu:'ㄧㄡ',
-            ian:'ㄧㄢ', in:'ㄧㄣ', iang:'ㄧㄤ', ing:'ㄧㄥ', iong:'ㄩㄥ',
-            u:'ㄨ', ua:'ㄨㄚ', uo:'ㄨㄛ', uai:'ㄨㄞ', ui:'ㄨㄟ',
-            uan:'ㄨㄢ', un:'ㄨㄣ', uang:'ㄨㄤ', ong:'ㄨㄥ',
-            v:'ㄩ', ve:'ㄩㄝ', van:'ㄩㄢ', vn:'ㄩㄣ'
-        };
-
+        // 拼音轉注音由可獨立測試的規則模組提供。
         function pinyinSyllableToZhuyin(pyNum) {
-            if (!pyNum) return '';
-            const m = String(pyNum).match(/^([a-züv]+)([1-5])$/i);
-            let base = pyNum;
-            let tone = 0;
-            if (m) {
-                base = m[1].toLowerCase();
-                tone = parseInt(m[2], 10);
-            } else {
-                base = String(pyNum).toLowerCase();
-            }
-            base = base.replace('ü', 'v');
-
-            let initial = '';
-            let final = base;
-            const try2 = base.slice(0,2);
-            if (['zh','ch','sh'].includes(try2)) {
-                initial = try2;
-                final = base.slice(2);
-            } else {
-                const try1 = base.slice(0,1);
-                if (INITIAL_MAP.hasOwnProperty(try1)) {
-                    initial = try1;
-                    final = base.slice(1);
-                }
-            }
-
-            if (initial === 'y') { initial = ''; }
-            if (initial === 'w') { initial = ''; }
-            if (['j','q','x'].includes(initial) && final.startsWith('u')) {
-                final = 'v' + final.slice(1);
-            }
-
-            const zInitial = INITIAL_MAP[initial] ?? '';
-            const zFinal = FINAL_MAP[final] ?? '';
-            
-            if (!zFinal && !zInitial) return '';
-
-            const toneMark = TONE_MAP[tone] ?? '';
-            if (toneMark === '˙') return `˙${zInitial}${zFinal}`;
-            return `${zInitial}${zFinal}${toneMark}`;
+            return window.ReadingPronunciationRules?.pinyinSyllableToZhuyin(pyNum) || '';
         }
 
         const CORRECTION_STORAGE_PREFIX = 'reading-tool:teacher-corrections:v1:';
@@ -185,6 +126,13 @@
             const [officialLessonId, setOfficialLessonId] = useState(null);
             const [baselineOverrides, setBaselineOverrides] = useState({});
             const [correctionNotice, setCorrectionNotice] = useState('');
+            const [pronunciationAnalysis, setPronunciationAnalysis] = useState({
+                engineAvailable: false,
+                libraryAvailable: false,
+                version: '',
+                decisions: [],
+                reviewItems: [],
+            });
 
             const getTeacherCorrections = () => {
                 const result = {};
@@ -335,35 +283,64 @@
             };
 
             const parseText = (inputText) => {
-                let pinyinArr = [];
+                let pinyinDetails = [];
                 if (window.pinyinPro) {
                     try {
                         const { pinyin } = window.pinyinPro;
-                        pinyinArr = pinyin(inputText, {
+                        pinyinDetails = pinyin(inputText, {
                             toneType: 'num',
-                            type: 'array'
+                            type: 'all',
+                            pattern: 'pinyin',
+                            v: true,
+                            toneSandhi: false,
                         });
                     } catch(e) { console.error("Pinyin error:", e); }
                 }
 
                 const chars = inputText.split('');
+                const contextualReadings = Array(chars.length).fill('');
+                const contextualPinyin = Array(chars.length).fill('');
+                // type=all 保留 origin，能讓標點、換行與 | 詞界不再造成
+                // 拼音陣列和原文字元索引錯位。
+                let detailCursor = 0;
+                (Array.isArray(pinyinDetails) ? pinyinDetails : []).forEach(detail => {
+                    const origins = Array.from(String(detail?.origin ?? ''));
+                    origins.forEach(origin => {
+                        while (detailCursor < chars.length && chars[detailCursor] !== origin) detailCursor++;
+                        if (detailCursor < chars.length) {
+                            if (/[\u4e00-\u9fff]/.test(origin) && detail?.pinyin) {
+                                contextualPinyin[detailCursor] = detail.pinyin;
+                                contextualReadings[detailCursor] = pinyinSyllableToZhuyin(detail.pinyin);
+                            }
+                            detailCursor++;
+                        }
+                    });
+                });
+                // 先讓 pinyin-pro 依整句判斷，再以單字表作離線降級；不可讓
+                // 單字固定值蓋掉多音字的上下文判斷。
+                const baseReadings = chars.map((char, idx) => {
+                    if (contextualReadings[idx]) return contextualReadings[idx];
+                    return ZHUYIN_MAP[char] || '';
+                });
+                const analysis = window.ReadingPronunciationRules
+                    ? window.ReadingPronunciationRules.apply(inputText, baseReadings)
+                    : { version: '', readings: baseReadings, decisions: [], reviewItems: [] };
+                setPronunciationAnalysis({
+                    engineAvailable: Boolean(window.ReadingPronunciationRules),
+                    libraryAvailable: Boolean(window.pinyinPro) && pinyinDetails.length > 0,
+                    version: analysis.version || '',
+                    decisions: analysis.decisions || [],
+                    reviewItems: analysis.reviewItems || [],
+                });
+
                 const data = chars.map((char, idx) => {
                     const ov = overrides[idx];
-                    
-                    let autoZhuyin = '';
-                    if (ov?.zhuyin) {
-                        autoZhuyin = ov.zhuyin;
-                    } else if (ZHUYIN_MAP[char]) {
-                        autoZhuyin = ZHUYIN_MAP[char];
-                    } else if (/[\u4e00-\u9fff]/.test(char)) { 
-                        const py = (pinyinArr && pinyinArr[idx]) ? pinyinArr[idx] : '';
-                        autoZhuyin = pinyinSyllableToZhuyin(py);
-                    }
-
                     return {
                         char,
-                        zhuyin: autoZhuyin,
-                        phoneChar: ov?.phoneChar ?? ''
+                        // 正式課次或教師校正仍有最高優先權。
+                        zhuyin: ov?.zhuyin || analysis.readings[idx] || '',
+                        phoneChar: ov?.phoneChar ?? '',
+                        sourcePinyin: contextualPinyin[idx] || ''
                     };
                 });
                 setParsedData(data);
@@ -593,7 +570,7 @@
             };
 
             const CharBlock = ({ item, index }) => {
-                const { char, zhuyin, phoneChar } = item;
+                const { char, zhuyin, phoneChar, sourcePinyin } = item;
                 const isActive = activeRange && index >= activeRange.s && index <= activeRange.e;
                 
                 if (char === '|') return null;
@@ -638,6 +615,9 @@
                         ${correctionMode && !isPunctuation ? 'ring-2 ring-dashed ring-amber-300 bg-amber-50' : ''}
                         ${isActive ? 'bg-teal-100 ring-2 ring-teal-300 transform scale-110 z-10' : ''}`}
                         onClick={handleClick}
+                        data-char-index={index}
+                        data-source-pinyin={sourcePinyin || ''}
+                        data-zhuyin={zhuyin || ''}
                         title={!isPunctuation ? "點擊朗讀" : ""}
                     >
                         {/* 修正：字型大小改為動態 style */}
@@ -862,6 +842,32 @@
                                     className="w-full h-40 p-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-200 text-lg text-slate-700"
                                     placeholder="請在此貼上課文..."
                                 ></textarea>
+                                {pronunciationAnalysis.engineAvailable && (
+                                    <div className={`mt-3 rounded-xl border px-4 py-3 text-xs ${pronunciationAnalysis.reviewItems.length ? 'bg-amber-50 border-amber-200 text-amber-800' : 'bg-teal-50 border-teal-200 text-teal-800'}`}>
+                                        <p className="font-bold">
+                                            自動語境注音 v{pronunciationAnalysis.version}：已套用 {pronunciationAnalysis.decisions.length} 處規則
+                                        </p>
+                                        {pronunciationAnalysis.reviewItems.length ? (
+                                            <p className="mt-1">
+                                                另有 {pronunciationAnalysis.reviewItems.length} 處高風險多音字建議複核：
+                                                {[...new Set(pronunciationAnalysis.reviewItems.map(item => item.char))].join('、')}。
+                                                預覽後可按【校正】逐字確認。
+                                            </p>
+                                        ) : (
+                                            <p className="mt-1">目前沒有未決的高風險多音字；仍請依教學版本做最後抽查。</p>
+                                        )}
+                                    </div>
+                                )}
+                                {pronunciationAnalysis.engineAvailable && !pronunciationAnalysis.libraryAvailable && (
+                                    <div className="mt-3 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-xs text-rose-700">
+                                        基礎注音函式庫未載入；目前只能套用有限的固定規則，請重新整理後再產生教材。
+                                    </div>
+                                )}
+                                {!pronunciationAnalysis.engineAvailable && (
+                                    <div className="mt-3 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-xs text-rose-700">
+                                        多音字規則檔載入失敗，請重新整理後再產生教材。
+                                    </div>
+                                )}
                                 <div className="mt-4 flex justify-end gap-3">
                                     <button onClick={() => setMode('read')} className="px-5 py-2 rounded-xl text-slate-500 hover:bg-slate-100 font-medium text-sm">預覽</button>
                                     <button onClick={saveLesson} className="flex items-center gap-2 px-6 py-2 rounded-xl bg-teal-400 hover:bg-teal-500 text-white font-medium shadow-sm">
