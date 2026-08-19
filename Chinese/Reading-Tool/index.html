@@ -569,7 +569,10 @@
                 setCorrectionNotice('已清除本機校正，並恢復正式教材讀音。');
             };
 
-            const isSentenceBreak = (c) => /[。！？\n]/.test(c);
+            // 115 workflow: a sentence is intentionally short for跟讀.
+            // Comma／period, sentence-final punctuation, and paragraph end
+            // each close the current read-sentence range.
+            const isSentenceBreak = (c) => /[，,。.!！？\n]/.test(c);
             const getSentenceRange = (idx) => {
                 const chars = text.split('');
                 let s = idx, e = idx;
