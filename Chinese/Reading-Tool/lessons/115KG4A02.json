@@ -260,7 +260,8 @@
     },
     "90": {
       "char": "乾",
-      "zhuyin": "ㄍㄢ"
+      "zhuyin": "ㄍㄢ",
+      "phoneChar": "甘"
     },
     "94": {
       "char": "有",
@@ -631,7 +632,7 @@
     "219": {
       "char": "和",
       "zhuyin": "ㄏㄢˋ",
-      "phoneChar": "翰"
+      "phoneChar": "漢"
     },
     "220": {
       "char": "姐",
@@ -707,7 +708,8 @@
     },
     "241": {
       "char": "一",
-      "zhuyin": "ㄧˋ"
+      "zhuyin": "ㄧˋ",
+      "phoneChar": "義"
     },
     "242": {
       "char": "起",
@@ -845,7 +847,7 @@
     "295": {
       "char": "一",
       "zhuyin": "ㄧˋ",
-      "phoneChar": "意"
+      "phoneChar": "義"
     },
     "296": {
       "char": "邊",
