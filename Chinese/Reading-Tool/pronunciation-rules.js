@@ -5,7 +5,7 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
     'use strict';
 
-    const VERSION = '1.1.0';
+    const VERSION = '1.2.0';
 
     // Teacher-approved defaults. Phrase rules below take precedence when the
     // surrounding text establishes another reading.
@@ -27,7 +27,7 @@
     const HIGH_RISK_CHARS = new Set([
         '著', '和', '得', '誰', '一', '不', '樂', '長', '種', '重', '數', '行',
         '還', '調', '應', '乾', '差', '場', '興', '模', '彈', '給', '切', '中',
-        '覺', '省', '喔',
+        '覺', '省', '喔', '盡',
     ]);
 
     const phraseRule = (id, phrase, targets) => ({ id, phrase, targets });
@@ -38,6 +38,11 @@
     });
 
     const CLASSIFIER_PRECEDERS = new Set(Array.from('一二三四五六七八九十百千萬兩两每各這那哪幾'));
+    const JIN4_PHRASES = [
+        '用盡', '盡力', '盡情', '盡頭', '盡興', '盡歡', '意猶未盡',
+        '想盡辦法', '盡可能', '盡量', '盡快', '盡責', '盡忠', '盡心',
+    ];
+    const YI_HUI_ER_SPEECH = ['義', '毀', 'ㄦ'];
 
     function isClassifierGeAt(chars, index) {
         if (chars[index] !== '個') return false;
@@ -57,6 +62,30 @@
                 expected[index + 1] = 'ㄏㄨㄟˇ';
                 expected[index + 2] = 'ㄦ';
             }
+        }
+        JIN4_PHRASES.forEach(phrase => {
+            let start = 0;
+            while (start <= chars.length - phrase.length) {
+                const found = text.indexOf(phrase, start);
+                if (found < 0) break;
+                const jinIndex = found + phrase.indexOf('盡');
+                expected[jinIndex] = 'ㄐㄧㄣˋ';
+                start = found + Math.max(1, phrase.length);
+            }
+        });
+        return expected;
+    }
+
+    function expectedSpeechOverrides(text) {
+        const expected = {};
+        let start = 0;
+        while (start <= String(text || '').length - 3) {
+            const found = String(text || '').indexOf('一會兒', start);
+            if (found < 0) break;
+            YI_HUI_ER_SPEECH.forEach((phoneChar, offset) => {
+                expected[found + offset] = phoneChar;
+            });
+            start = found + 3;
         }
         return expected;
     }
@@ -83,6 +112,7 @@
             { offset: 1, zhuyin: 'ㄏㄨㄟˇ' },
             { offset: 2, zhuyin: 'ㄦ' },
         ]),
+        ...targetChar('jin-jin4', JIN4_PHRASES, '盡', 'ㄐㄧㄣˋ'),
 
         ...targetChar('de-de2-front', ['得到', '得意', '得獎', '得分', '得手', '得名', '得知', '得救', '得罪', '得利', '得病'], '得', 'ㄉㄜˊ'),
         ...targetChar('de-de2-back', ['取得', '獲得', '贏得', '博得', '值得', '難得', '所得', '心得', '自得'], '得', 'ㄉㄜˊ'),
@@ -348,6 +378,7 @@
         return {
             version: VERSION,
             readings,
+            speechOverrides: expectedSpeechOverrides(text),
             decisions: Array.from(decisions.values()).sort((a, b) => a.index - b.index),
             reviewItems,
         };
@@ -359,8 +390,10 @@
         KINSHIP_REDUPLICATIONS,
         HIGH_RISK_CHARS,
         CLASSIFIER_PRECEDERS,
+        JIN4_PHRASES,
         PHRASE_RULES,
         expectedContextualReadings,
+        expectedSpeechOverrides,
         normalizeZhuyin,
         pinyinSyllableToZhuyin,
         toneOf,

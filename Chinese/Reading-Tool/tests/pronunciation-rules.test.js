@@ -10,7 +10,7 @@ assert.equal(rules.pinyinSyllableToZhuyin('zhi4'), 'ㄓˋ');
 assert.equal(rules.pinyinSyllableToZhuyin('wen2'), 'ㄨㄣˊ');
 assert.equal(rules.pinyinSyllableToZhuyin('jue2'), 'ㄐㄩㄝˊ');
 assert.equal(rules.pinyinSyllableToZhuyin('xi0'), '˙ㄒㄧ');
-assert.equal(rules.VERSION, '1.1.0');
+assert.equal(rules.VERSION, '1.2.0');
 
 function analyze(text, known = {}) {
     const readings = Array.from(text, (_, index) => known[index] || 'ㄗ');
@@ -63,12 +63,28 @@ expectReading('個性', 0, 'ㄍㄜˋ', { 0: 'ㄍㄜˋ' });
 expectReading('一會兒', 0, 'ㄧˋ');
 expectReading('一會兒', 1, 'ㄏㄨㄟˇ');
 expectReading('一會兒', 2, 'ㄦ');
+expectReading('用盡', 1, 'ㄐㄧㄣˋ');
+expectReading('盡力', 0, 'ㄐㄧㄣˋ');
+expectReading('盡情', 0, 'ㄐㄧㄣˋ');
+expectReading('盡頭', 0, 'ㄐㄧㄣˋ');
+expectReading('想盡辦法', 1, 'ㄐㄧㄣˋ');
 
-assert.deepEqual(rules.expectedContextualReadings('每個人一會兒'), {
+assert.deepEqual(rules.expectedContextualReadings('每個人一會兒盡力'), {
     1: '˙ㄍㄜ',
     3: 'ㄧˋ',
     4: 'ㄏㄨㄟˇ',
     5: 'ㄦ',
+    6: 'ㄐㄧㄣˋ',
+});
+assert.deepEqual(rules.expectedSpeechOverrides('一會兒'), {
+    0: '義',
+    1: '毀',
+    2: 'ㄦ',
+});
+assert.deepEqual(analyze('一會兒').speechOverrides, {
+    0: '義',
+    1: '毀',
+    2: 'ㄦ',
 });
 
 const missingCandidate = rules.apply('他行嗎', ['ㄊㄚ', '', '˙ㄇㄚ']);
