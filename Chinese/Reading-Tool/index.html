@@ -342,7 +342,7 @@
                         char,
                         // 正式課次或教師校正仍有最高優先權。
                         zhuyin: ov?.zhuyin || analysis.readings[idx] || '',
-                        phoneChar: ov?.phoneChar ?? '',
+                        phoneChar: ov?.phoneChar ?? analysis.speechOverrides?.[idx] ?? '',
                         sourcePinyin: contextualPinyin[idx] || ''
                     };
                 });
@@ -565,6 +565,7 @@
                         data-char-index={index}
                         data-source-pinyin={sourcePinyin || ''}
                         data-zhuyin={zhuyin || ''}
+                        data-phone-char={phoneChar || ''}
                         data-word-range={diagnosticWordRange ? `${diagnosticWordRange.s}-${diagnosticWordRange.e}` : ''}
                         data-sentence-range={diagnosticSentenceRange ? `${diagnosticSentenceRange.s}-${diagnosticSentenceRange.e}` : ''}
                         title={!isPunctuation ? "點擊朗讀" : ""}
