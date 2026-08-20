@@ -10,6 +10,8 @@ const problems = [];
 let targetCount = 0;
 let classifierCount = 0;
 let yiHuiErCount = 0;
+let jin4Count = 0;
+let speechOverrideCount = 0;
 let affectedLessons = 0;
 
 for (const file of files) {
@@ -24,6 +26,7 @@ for (const file of files) {
         const index = Number(rawIndex);
         targetCount++;
         if (text[index] === '個') classifierCount++;
+        if (text[index] === '盡') jin4Count++;
         if (text.slice(index, index + 3) === '一會兒') yiHuiErCount++;
 
         const override = lesson.overrides && lesson.overrides[rawIndex];
@@ -36,6 +39,19 @@ for (const file of files) {
         }
         if (override.zhuyin !== expectedZhuyin) {
             problems.push(`${file}:${rawIndex} ${text[index]} expected ${expectedZhuyin}, got ${override.zhuyin}`);
+        }
+    }
+
+    const expectedSpeech = rules.expectedSpeechOverrides(text);
+    for (const [rawIndex, expectedPhoneChar] of Object.entries(expectedSpeech)) {
+        speechOverrideCount++;
+        const override = lesson.overrides && lesson.overrides[rawIndex];
+        if (!override) {
+            problems.push(`${file}:${rawIndex} missing TTS override`);
+            continue;
+        }
+        if (override.phoneChar !== expectedPhoneChar) {
+            problems.push(`${file}:${rawIndex} ${text[Number(rawIndex)]} expected TTS ${expectedPhoneChar}, got ${override.phoneChar || '(none)'}`);
         }
     }
 }
@@ -51,3 +67,5 @@ console.log(`AFFECTED LESSONS: ${affectedLessons}`);
 console.log(`TARGET OVERRIDES: ${targetCount}`);
 console.log(`CLASSIFIER 個: ${classifierCount}`);
 console.log(`一會兒 OCCURRENCES: ${yiHuiErCount}`);
+console.log(`盡 READINGS ㄐㄧㄣˋ: ${jin4Count}`);
+console.log(`TTS OVERRIDES: ${speechOverrideCount}`);
