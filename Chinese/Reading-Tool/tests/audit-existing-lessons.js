@@ -37,13 +37,15 @@ for (const correction of corrections) {
             reason: correction.reason,
         });
     }
-    if (correction.phoneChar !== undefined
-        && data.overrides[String(correction.index)]?.phoneChar !== correction.phoneChar) {
+    const expectedPhoneChar = correction.phoneChar
+        ?? rules.speechHomophoneFor(correction.char, correction.zhuyin);
+    if (expectedPhoneChar
+        && data.overrides[String(correction.index)]?.phoneChar !== expectedPhoneChar) {
         failures.push({
             lesson_id: correction.lesson_id,
             index: correction.index,
             char: correction.char,
-            expectedPhoneChar: correction.phoneChar,
+            expectedPhoneChar,
             actualPhoneChar: data.overrides[String(correction.index)]?.phoneChar || '',
             reason: correction.reason,
         });

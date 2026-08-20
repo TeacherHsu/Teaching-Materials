@@ -86,6 +86,13 @@ assert.deepEqual(analyze('一會兒').speechOverrides, {
     1: '毀',
     2: 'ㄦ',
 });
+assert.equal(rules.speechHomophoneFor('和', 'ㄏㄢˋ'), '漢');
+assert.equal(rules.speechHomophoneFor('盡', 'ㄐㄧㄣˋ'), '進');
+assert.equal(rules.speechHomophoneFor('不', 'ㄅㄨˊ'), '轐');
+assert.deepEqual(analyze('小花和小星', {
+    0: 'ㄒㄧㄠˇ', 1: 'ㄏㄨㄚ', 2: 'ㄏㄢˋ', 3: 'ㄒㄧㄠˇ', 4: 'ㄒㄧㄥ',
+}).speechOverrides, { 2: '漢' });
+assert.deepEqual(analyze('用盡', { 0: 'ㄩㄥˋ', 1: 'ㄐㄧㄣˋ' }).speechOverrides, { 1: '進' });
 
 const missingCandidate = rules.apply('他行嗎', ['ㄊㄚ', '', '˙ㄇㄚ']);
 assert.equal(missingCandidate.reviewItems.some(item => item.char === '行'), true);
