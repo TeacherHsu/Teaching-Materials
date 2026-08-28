@@ -42,7 +42,8 @@ for (const file of files) {
         }
     }
 
-    const expectedSpeech = rules.expectedSpeechOverrides(text);
+    const lessonReadings = Array.from(text, (_, index) => lesson.overrides?.[String(index)]?.zhuyin || '');
+    const expectedSpeech = rules.expectedSpeechOverrides(text, lessonReadings);
     for (const [rawIndex, expectedPhoneChar] of Object.entries(expectedSpeech)) {
         speechOverrideCount++;
         const override = lesson.overrides && lesson.overrides[rawIndex];

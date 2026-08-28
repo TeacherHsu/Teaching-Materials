@@ -44,6 +44,37 @@
     ];
     const YI_HUI_ER_SPEECH = ['義', '毀', 'ㄦ'];
 
+    // Browser speech synthesis reads the source character, not the displayed
+    // Zhuyin. These homophones are the approved TTS layer for corrected
+    // polyphonic readings; ordinary readings continue to use the source char.
+    const TTS_HOMOPHONES = {
+        '一|ㄧˊ': '宜', '一|ㄧˋ': '義',
+        '不|ㄅㄨˊ': '轐',
+        '數|ㄕㄨˇ': '暑',
+        '喔|ㄨㄛˋ': '握',
+        '省|ㄒㄧㄥˇ': '醒',
+        '給|ㄐㄧˇ': '己',
+        '行|ㄒㄧㄥˊ': '形', '行|ㄏㄤˊ': '航',
+        '長|ㄔㄤˊ': '常',
+        '重|ㄔㄨㄥˊ': '蟲',
+        '種|ㄓㄨㄥˋ': '眾',
+        '應|ㄧㄥˋ': '映',
+        '調|ㄊㄧㄠˊ': '條',
+        '樂|ㄩㄝˋ': '悅',
+        '彈|ㄊㄢˊ': '談',
+        '差|ㄔㄚ': '查',
+        '乾|ㄍㄢ': '甘',
+        '場|ㄔㄤˊ': '常',
+        '還|ㄏㄨㄢˊ': '環',
+        '覺|ㄐㄧㄠˋ': '叫',
+        '興|ㄒㄧㄥ': '星',
+        '中|ㄓㄨㄥ': '終',
+        '和|ㄏㄜˊ': '何', '和|ㄏㄢˋ': '漢',
+        '盡|ㄐㄧㄣˋ': '進',
+        '得|ㄉㄜˊ': '德', '得|˙ㄉㄜ': '的',
+        '著|ㄓㄨˋ': '注', '著|ㄓㄨㄛˊ': '卓',
+    };
+
     function isClassifierGeAt(chars, index) {
         if (chars[index] !== '個') return false;
         const previous = chars[index - 1] || '';
@@ -76,10 +107,15 @@
         return expected;
     }
 
-    function expectedSpeechOverrides(text) {
+    function expectedSpeechOverrides(text, readings = []) {
+        const chars = Array.from(text || '');
         const expected = {};
+        chars.forEach((char, index) => {
+            const phoneChar = TTS_HOMOPHONES[`${char}|${normalizeZhuyin(readings[index] || '')}`];
+            if (phoneChar) expected[index] = phoneChar;
+        });
         let start = 0;
-        while (start <= String(text || '').length - 3) {
+        while (start <= chars.length - 3) {
             const found = String(text || '').indexOf('一會兒', start);
             if (found < 0) break;
             YI_HUI_ER_SPEECH.forEach((phoneChar, offset) => {
@@ -378,7 +414,7 @@
         return {
             version: VERSION,
             readings,
-            speechOverrides: expectedSpeechOverrides(text),
+            speechOverrides: expectedSpeechOverrides(text, readings),
             decisions: Array.from(decisions.values()).sort((a, b) => a.index - b.index),
             reviewItems,
         };
@@ -391,9 +427,11 @@
         HIGH_RISK_CHARS,
         CLASSIFIER_PRECEDERS,
         JIN4_PHRASES,
+        TTS_HOMOPHONES,
         PHRASE_RULES,
         expectedContextualReadings,
         expectedSpeechOverrides,
+        speechHomophoneFor: (char, zhuyin) => TTS_HOMOPHONES[`${char}|${normalizeZhuyin(zhuyin)}`] || '',
         normalizeZhuyin,
         pinyinSyllableToZhuyin,
         toneOf,
