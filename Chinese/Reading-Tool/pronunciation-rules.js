@@ -5,7 +5,7 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
     'use strict';
 
-    const VERSION = '1.5.1';
+    const VERSION = '1.6.0';
 
     // Teacher-approved defaults. Phrase rules below take precedence when the
     // surrounding text establishes another reading.
@@ -71,6 +71,18 @@
     const LI2_PHRASES = ['高句麗', '高麗參', '高麗'];
     const LI4_PHRASES = ['高麗菜'];
 
+    // 「種」讀 ㄓㄨㄥˇ 的名詞／量詞語境。動詞語境（種花、種高麗菜）由
+    // isPlantingZhong4At 以結構判斷，不必逐一列舉作物名。
+    const ZHONG3_PHRASES = [
+        '種類', '種子', '種族', '種籽', '種畜', '種馬', '種苗', '種源', '種姓', '種種',
+        '品種', '物種', '良種', '育種', '火種', '人種', '絕種', '播種', '變種', '配種',
+        '選種', '留種', '樹種', '菌種', '雜種', '語種', '兵種', '劇種', '機種', '車種',
+        '各種', '這種', '那種', '一種',
+    ];
+    // 「種」緊接在數量詞、指示詞或「有」之後就是量詞，不是動詞
+    // （「有種孤零零的感覺」＝有一種感覺）。「別」不列入：「別種花」多指不要種花。
+    const ZHONG3_PRECEDERS = new Set(Array.from('一二三四五六七八九十百千萬兩两每各這那哪幾某同此另多數少全有'));
+
     const MA3_PHRASES = ['嗎啡'];
     const WU1_PHRASES = ['於菟'];
     const JI1_PHRASES = ['幾乎', '庶幾', '幾微'];
@@ -90,8 +102,9 @@
 
     // 「子」讀本音 ㄗˇ 的語境：本義（子女、種子）、諸子人名、學術詞與
     // 教師已在 115 課次核定的讀法（女子、妻子）。未列出的名詞詞尾走輕聲預設。
-    // 「兒子」不列入：教育部辭典作 ㄦˊ ㄗˇ，但 CF 2026-09-02 裁定依課堂讀法
-    // 標為 ㄦˊ ˙ㄗ，與孩子、孫子等稱謂一致。見 ADR-0024。
+    // 兒子、日子、鼻子、瓜子、孫子不列入：教育部辭典 2021 首列均為 ㄗˇ（兩讀詞），
+    // 但 CF 2026-09-02 裁定依課堂讀法標 ˙ㄗ。妻子相反，官方首列即為 ㄑㄧ ㄗˇ。
+    // 見 ADR-0024「教師裁定」節；測試已逐一鎖定，勿依辭典回改。
     const ZI3_PHRASES = [
         '子女', '子孫', '子彈', '子弟', '子民', '子宮', '子夜', '子時', '子音', '子句',
         '子曰', '子路', '子貢',
@@ -131,6 +144,19 @@
         '得|ㄉㄜˊ': '德', '得|˙ㄉㄜ': '的',
         '著|ㄓㄨˋ': '注', '著|ㄓㄨㄛˊ': '卓',
     };
+
+    // 動詞「種」：未被詞語規則認領、前面不是數量／指示詞，且後面接著漢字受詞，
+    // 例如「種高麗菜」「種下希望」「菜種好了」。作物名無法窮舉，故採結構判斷。
+    function isPlantingZhong4At(chars, index) {
+        if (chars[index] !== '種') return false;
+        if (ZHONG3_PRECEDERS.has(chars[index - 1] || '')) return false;
+        for (let next = index + 1; next < chars.length; next++) {
+            const char = chars[next];
+            if (char === '|' || /\s/.test(char)) continue;
+            return /[\u3400-\u9fff]/.test(char);
+        }
+        return false;
+    }
 
     function isClassifierGeAt(chars, index) {
         if (chars[index] !== '個') return false;
@@ -271,7 +297,11 @@
         ...targetChar('long-chang2', ['長頸鹿', '長度', '機翼長度', '漫長', '細長', '長條', '長圓', '一樣長', '又高又長', '長五十八公尺'], '長', 'ㄔㄤˊ'),
         ...targetChar('grow-zhang3', ['長大', '成長', '生長', '長高', '長出', '校長', '家長', '師長', '年長'], '長', 'ㄓㄤˇ'),
         ...targetChar('plant-zhong4', ['種樹', '種花', '種菜', '種田', '種出', '種在', '栽種', '耕種', '親自種', '誰種', '所種', '種的南瓜'], '種', 'ㄓㄨㄥˋ'),
-        ...targetChar('kind-zhong3', ['種類', '種子', '品種', '物種', '各種', '這種', '那種', '一種'], '種', 'ㄓㄨㄥˇ'),
+        ...targetChar('kind-zhong3', ZHONG3_PHRASES, '種', 'ㄓㄨㄥˇ'),
+        phraseRule('kind-zhong3-reduplication', '種種', [
+            { offset: 0, zhuyin: 'ㄓㄨㄥˇ' },
+            { offset: 1, zhuyin: 'ㄓㄨㄥˇ' },
+        ]),
         ...targetChar('again-chong2', ['重陽', '重疊', '重複', '重新', '重來', '重逢', '重播', '重建'], '重', 'ㄔㄨㄥˊ'),
         ...targetChar('weight-zhong4', ['重要', '重量', '重大', '重點', '重視', '尊重', '慎重', '嚴重'], '重', 'ㄓㄨㄥˋ'),
         phraseRule('count-shu3-double', '來數數', [
@@ -439,6 +469,22 @@
             }
         });
 
+        // 動詞「種」：詞語規則沒認領的位置才做結構判斷，避免蓋掉品種、種類等名詞語境。
+        chars.forEach((char, index) => {
+            if (char !== '種') return;
+            // 數量／指示詞前件的訊號強過「種＋作物」詞語規則：
+            // 「三種花」是三個種類，不是在種花，因此可以覆寫已命中的詞語規則。
+            if (ZHONG3_PRECEDERS.has(chars[index - 1] || '')) {
+                setReading(index, 'ㄓㄨㄥˇ', 'zhong3-classifier');
+                phraseMatched.add(index);
+                return;
+            }
+            if (phraseMatched.has(index)) return;
+            if (isPlantingZhong4At(chars, index)) {
+                setReading(index, 'ㄓㄨㄥˋ', 'zhong4-planting-verb');
+            }
+        });
+
         // 量詞「個」在「一個、每個、這個、那個、哪個、幾個」等
         // 語境通常讀輕聲；「個人、個性、個子」沒有量詞前件時不套用。
         chars.forEach((char, index) => {
@@ -541,6 +587,7 @@
         MEN2_PHRASES,
         LI2_PHRASES,
         LI4_PHRASES,
+        ZHONG3_PHRASES,
         CONTEXTUAL_CHAR_DEFAULTS,
         CONTEXTUAL_EXCEPTIONS,
         TTS_HOMOPHONES,
