@@ -10,7 +10,7 @@ assert.equal(rules.pinyinSyllableToZhuyin('zhi4'), 'ㄓˋ');
 assert.equal(rules.pinyinSyllableToZhuyin('wen2'), 'ㄨㄣˊ');
 assert.equal(rules.pinyinSyllableToZhuyin('jue2'), 'ㄐㄩㄝˊ');
 assert.equal(rules.pinyinSyllableToZhuyin('xi0'), '˙ㄒㄧ');
-assert.equal(rules.VERSION, '1.5.1');
+assert.equal(rules.VERSION, '1.6.0');
 
 function analyze(text, known = {}) {
     const readings = Array.from(text, (_, index) => known[index] || 'ㄗ');
@@ -48,6 +48,21 @@ expectReading('禁不得委屈', 2, '˙ㄉㄜ');
 expectReading('我得走了', 1, 'ㄉㄟˇ');
 expectReading('音樂課', 1, 'ㄩㄝˋ');
 expectReading('種樹的人', 0, 'ㄓㄨㄥˋ');
+// 動詞「種」以結構判斷，作物名不必逐一列舉。
+expectReading('種高麗菜', 0, 'ㄓㄨㄥˋ');
+expectReading('種空心菜', 0, 'ㄓㄨㄥˋ');
+expectReading('種下希望', 0, 'ㄓㄨㄥˋ');
+expectReading('菜種好了', 1, 'ㄓㄨㄥˋ');
+// 數量／指示詞前件是量詞，訊號強過「種＋作物」。
+expectReading('三種花', 1, 'ㄓㄨㄥˇ');
+expectReading('這種高麗菜', 1, 'ㄓㄨㄥˇ');
+expectReading('多種語言', 1, 'ㄓㄨㄥˇ');
+expectReading('種種困難', 0, 'ㄓㄨㄥˇ');
+expectReading('種種困難', 1, 'ㄓㄨㄥˇ');
+expectReading('人種歧視', 1, 'ㄓㄨㄥˇ');
+expectReading('播種季節', 1, 'ㄓㄨㄥˇ');
+expectReading('品種改良', 1, 'ㄓㄨㄥˇ');
+expectReading('有種孤零零的感覺', 1, 'ㄓㄨㄥˇ');
 expectReading('一行人', 1, 'ㄏㄤˊ');
 expectReading('還給同學', 0, 'ㄏㄨㄢˊ');
 expectReading('場圃', 0, 'ㄔㄤˊ');
@@ -62,6 +77,11 @@ expectReading('圖們江', 1, 'ㄇㄣˊ');
 expectReading('孩子', 1, '˙ㄗ');
 // CF 2026-09-02 裁定：「兒子」依課堂讀法標輕聲，不採教育部辭典的 ㄗˇ。
 expectReading('兒子', 1, '˙ㄗ');
+// CF 2026-09-02 裁定：辭典首列 ㄗˇ 的兩讀詞，依課堂讀法標輕聲。
+expectReading('好日子', 2, '˙ㄗ');
+expectReading('我的鼻子', 3, '˙ㄗ');
+expectReading('吃瓜子', 2, '˙ㄗ');
+expectReading('我的孫子', 3, '˙ㄗ');
 expectReading('我的兒子', 3, '˙ㄗ');
 expectReading('桌子上', 1, '˙ㄗ');
 expectReading('一下子就好', 2, '˙ㄗ');
