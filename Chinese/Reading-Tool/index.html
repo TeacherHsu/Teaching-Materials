@@ -58,7 +58,166 @@
     <script type="text/babel">
         // 為了在單一 HTML 運作，我們使用 React 全域變數
         const { useState, useEffect } = React;
+
+        // 2026-09-02: 抽出整句候選與規則分析，讓畫面渲染與分享連結共用同一份結果。
+        function analyzeReading(inputText) {
+            let pinyinDetails = [];
+            if (window.pinyinPro) {
+                try {
+                    const { pinyin } = window.pinyinPro;
+                    pinyinDetails = pinyin(inputText, {
+                        toneType: 'num',
+                        type: 'all',
+                        pattern: 'pinyin',
+                        v: true,
+                        toneSandhi: false,
+                    });
+                } catch(e) { console.error("Pinyin error:", e); }
+            }
+
+            const chars = inputText.split('');
+            const contextualReadings = Array(chars.length).fill('');
+            const contextualPinyin = Array(chars.length).fill('');
+            // type=all 保留 origin，能讓標點、換行與 | 詞界不再造成
+            // 拼音陣列和原文字元索引錯位。
+            let detailCursor = 0;
+            (Array.isArray(pinyinDetails) ? pinyinDetails : []).forEach(detail => {
+                const origins = Array.from(String(detail?.origin ?? ''));
+                origins.forEach(origin => {
+                    while (detailCursor < chars.length && chars[detailCursor] !== origin) detailCursor++;
+                    if (detailCursor < chars.length) {
+                        if (/[\u4e00-\u9fff]/.test(origin) && detail?.pinyin) {
+                            contextualPinyin[detailCursor] = detail.pinyin;
+                            contextualReadings[detailCursor] = pinyinSyllableToZhuyin(detail.pinyin);
+                        }
+                        detailCursor++;
+                    }
+                });
+            });
+            // 先讓 pinyin-pro 依整句判斷，再以單字表作離線降級；不可讓
+            // 單字固定值蓋掉多音字的上下文判斷。
+            const baseReadings = chars.map((char, idx) => {
+                if (contextualReadings[idx]) return contextualReadings[idx];
+                return ZHUYIN_MAP[char] || '';
+            });
+            const analysis = window.ReadingPronunciationRules
+                ? window.ReadingPronunciationRules.apply(inputText, baseReadings)
+                : { version: '', readings: baseReadings, decisions: [], reviewItems: [] };
+            return {
+                analysis,
+                contextualPinyin,
+                engineAvailable: Boolean(window.ReadingPronunciationRules),
+                libraryAvailable: Boolean(window.pinyinPro) && pinyinDetails.length > 0,
+            };
+        }
+
         
+        // --- 2026-09-02: 精簡分享連結 ---
+        // 舊格式把整份 overrides 塞進 ?content=，長課文會產生數千字元的網址。
+        // 新格式只帶「與規則結果不同」的校正，壓縮後放進 # 片段（不進伺服器記錄）。
+        const SHARE_FORMAT = 'rt2';
+        const SHARE_HASH_DEFLATE = 'd.';
+        const SHARE_HASH_PLAIN = 'j.';
+
+        function bytesToBase64Url(bytes) {
+            let binary = '';
+            const CHUNK = 0x8000;
+            for (let i = 0; i < bytes.length; i += CHUNK) {
+                binary += String.fromCharCode.apply(null, bytes.subarray(i, i + CHUNK));
+            }
+            return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+        }
+
+        function base64UrlToBytes(value) {
+            const normalized = String(value).replace(/-/g, '+').replace(/_/g, '/');
+            const padded = normalized + '='.repeat((4 - normalized.length % 4) % 4);
+            const binary = atob(padded);
+            const bytes = new Uint8Array(binary.length);
+            for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+            return bytes;
+        }
+
+        async function streamThrough(bytes, StreamCtor, format) {
+            const stream = new Blob([bytes]).stream().pipeThrough(new StreamCtor(format));
+            const buffer = await new Response(stream).arrayBuffer();
+            return new Uint8Array(buffer);
+        }
+
+        async function encodeSharePayload(payload) {
+            const bytes = new TextEncoder().encode(JSON.stringify(payload));
+            if (typeof CompressionStream === 'function') {
+                try {
+                    const deflated = await streamThrough(bytes, CompressionStream, 'deflate-raw');
+                    return SHARE_HASH_DEFLATE + bytesToBase64Url(deflated);
+                } catch (error) {
+                    console.warn('Compression unavailable, falling back.', error);
+                }
+            }
+            return SHARE_HASH_PLAIN + bytesToBase64Url(bytes);
+        }
+
+        async function decodeSharePayload(hash) {
+            const raw = String(hash || '').replace(/^#/, '');
+            if (!raw) return null;
+            let bytes;
+            if (raw.startsWith(SHARE_HASH_DEFLATE)) {
+                if (typeof DecompressionStream !== 'function') {
+                    throw new Error('此瀏覽器不支援壓縮連結，請改用課文檔匯入。');
+                }
+                bytes = await streamThrough(base64UrlToBytes(raw.slice(SHARE_HASH_DEFLATE.length)), DecompressionStream, 'deflate-raw');
+            } else if (raw.startsWith(SHARE_HASH_PLAIN)) {
+                bytes = base64UrlToBytes(raw.slice(SHARE_HASH_PLAIN.length));
+            } else {
+                return null;
+            }
+            const payload = JSON.parse(new TextDecoder().decode(bytes));
+            if (!payload || payload.f !== SHARE_FORMAT || typeof payload.t !== 'string') {
+                throw new Error('連結內容格式不符。');
+            }
+            return payload;
+        }
+
+        // 把「原文＋差異校正」還原成畫面用的 overrides；未列出的字由規則重算。
+        function rebuildOverrides(text, diffZhuyin = {}, diffPhone = {}) {
+            const chars = Array.from(text);
+            const { analysis } = analyzeReading(text);
+            const rebuilt = {};
+            const indexes = new Set([...Object.keys(diffZhuyin || {}), ...Object.keys(diffPhone || {})]);
+            indexes.forEach(key => {
+                const idx = Number(key);
+                if (!Number.isInteger(idx) || idx < 0 || idx >= chars.length) return;
+                rebuilt[key] = {
+                    char: chars[idx],
+                    zhuyin: (diffZhuyin || {})[key] ?? analysis.readings[idx] ?? '',
+                    phoneChar: (diffPhone || {})[key] ?? analysis.speechOverrides?.[idx] ?? '',
+                };
+            });
+            return rebuilt;
+        }
+
+        // 匯出用的完整課文檔：每個漢字都寫入最終讀音，不依賴日後的規則版本。
+        function buildLessonFile(text, overrides) {
+            const chars = Array.from(text);
+            const { analysis } = analyzeReading(text);
+            const full = {};
+            chars.forEach((char, idx) => {
+                if (!/[\u4e00-\u9fff]/.test(char)) return;
+                const ov = overrides?.[idx];
+                const zhuyin = ov?.zhuyin || analysis.readings[idx] || '';
+                const phoneChar = ov?.phoneChar ?? analysis.speechOverrides?.[idx] ?? '';
+                if (!zhuyin && !phoneChar) return;
+                full[String(idx)] = phoneChar ? { char, zhuyin, phoneChar } : { char, zhuyin };
+            });
+            return {
+                schema_version: 1,
+                kind: 'reading_tool_lesson_file',
+                rules_version: analysis.version || '',
+                exported_at: new Date().toISOString(),
+                text,
+                overrides: full,
+            };
+        }
+
         // --- 手動注音字典 (優先權最高) ---
         const ZHUYIN_MAP = {
             '一': 'ㄧ', '二': 'ㄦˋ', '三': 'ㄙㄢ', '四': 'ㄙˋ', '五': 'ㄨˇ',
@@ -129,6 +288,7 @@
             const [officialLessonId, setOfficialLessonId] = useState(null);
             const [baselineOverrides, setBaselineOverrides] = useState({});
             const [correctionNotice, setCorrectionNotice] = useState('');
+            const [shareVersionNotice, setShareVersionNotice] = useState('');
             const [pronunciationAnalysis, setPronunciationAnalysis] = useState({
                 engineAvailable: false,
                 libraryAvailable: false,
@@ -186,13 +346,48 @@
                 return () => { window.speechSynthesis.onvoiceschanged = null; }
             }, []);
 
+            // 貼上 # 連結時瀏覽器可能只做片段跳轉、不重新載入，因此另外監聽 hashchange。
+            const loadFromHash = (hash) => {
+                decodeSharePayload(hash)
+                    .then(payload => {
+                        if (!payload) return;
+                        setText(payload.t);
+                        setOverrides(rebuildOverrides(payload.t, payload.o, payload.p));
+                        setBaselineOverrides({});
+                        setOfficialLessonId(null);
+                        setLessonLoadError('');
+                        const current = window.ReadingPronunciationRules?.VERSION || '';
+                        setShareVersionNotice(payload.v && current && payload.v !== current
+                            ? `此連結是用注音規則 ${payload.v} 產生的，目前為 ${current}；未經校正的字可能與當初不同，請先確認。`
+                            : '');
+                        setMode('read');
+                    })
+                    .catch(error => {
+                        console.error('Share link decode error:', error);
+                        setLessonLoadError(error.message || '連結內容無法讀取，請改用課文檔匯入。');
+                        setMode('read');
+                    });
+            };
+
+            useEffect(() => {
+                const onHashChange = () => {
+                    const hash = window.location.hash;
+                    if (hash && hash.length > 1) loadFromHash(hash);
+                };
+                window.addEventListener('hashchange', onHashChange);
+                return () => window.removeEventListener('hashchange', onHashChange);
+            }, []);
+
             // 2. 初始化與讀取網址參數
             // 2026-08-11: 正式課次以 ?lesson=<lesson_id> 從靜態 JSON 載入；保留 ?content= 作臨時分享。
             useEffect(() => {
                 const params = new URLSearchParams(window.location.search);
                 const lessonId = params.get('lesson');
-                const lessonContent = params.get('content'); 
-                if (lessonId) {
+                const lessonContent = params.get('content');
+                const shareHash = window.location.hash;
+                if (!lessonId && !lessonContent && shareHash && shareHash.length > 1) {
+                    loadFromHash(shareHash);
+                } else if (lessonId) {
                     if (!/^[A-Za-z0-9_-]+$/.test(lessonId)) {
                         setLessonLoadError('課次代碼格式錯誤。');
                         setMode('read');
@@ -286,57 +481,16 @@
             };
 
             const parseText = (inputText) => {
-                let pinyinDetails = [];
-                if (window.pinyinPro) {
-                    try {
-                        const { pinyin } = window.pinyinPro;
-                        pinyinDetails = pinyin(inputText, {
-                            toneType: 'num',
-                            type: 'all',
-                            pattern: 'pinyin',
-                            v: true,
-                            toneSandhi: false,
-                        });
-                    } catch(e) { console.error("Pinyin error:", e); }
-                }
-
-                const chars = inputText.split('');
-                const contextualReadings = Array(chars.length).fill('');
-                const contextualPinyin = Array(chars.length).fill('');
-                // type=all 保留 origin，能讓標點、換行與 | 詞界不再造成
-                // 拼音陣列和原文字元索引錯位。
-                let detailCursor = 0;
-                (Array.isArray(pinyinDetails) ? pinyinDetails : []).forEach(detail => {
-                    const origins = Array.from(String(detail?.origin ?? ''));
-                    origins.forEach(origin => {
-                        while (detailCursor < chars.length && chars[detailCursor] !== origin) detailCursor++;
-                        if (detailCursor < chars.length) {
-                            if (/[\u4e00-\u9fff]/.test(origin) && detail?.pinyin) {
-                                contextualPinyin[detailCursor] = detail.pinyin;
-                                contextualReadings[detailCursor] = pinyinSyllableToZhuyin(detail.pinyin);
-                            }
-                            detailCursor++;
-                        }
-                    });
-                });
-                // 先讓 pinyin-pro 依整句判斷，再以單字表作離線降級；不可讓
-                // 單字固定值蓋掉多音字的上下文判斷。
-                const baseReadings = chars.map((char, idx) => {
-                    if (contextualReadings[idx]) return contextualReadings[idx];
-                    return ZHUYIN_MAP[char] || '';
-                });
-                const analysis = window.ReadingPronunciationRules
-                    ? window.ReadingPronunciationRules.apply(inputText, baseReadings)
-                    : { version: '', readings: baseReadings, decisions: [], reviewItems: [] };
+                const { analysis, contextualPinyin, engineAvailable, libraryAvailable } = analyzeReading(inputText);
                 setPronunciationAnalysis({
-                    engineAvailable: Boolean(window.ReadingPronunciationRules),
-                    libraryAvailable: Boolean(window.pinyinPro) && pinyinDetails.length > 0,
+                    engineAvailable,
+                    libraryAvailable,
                     version: analysis.version || '',
                     decisions: analysis.decisions || [],
                     reviewItems: analysis.reviewItems || [],
                 });
 
-                const data = chars.map((char, idx) => {
+                const data = inputText.split('').map((char, idx) => {
                     const ov = overrides[idx];
                     return {
                         char,
@@ -353,6 +507,7 @@
                 setText(e.target.value);
                 setOverrides({}); 
                 setShareUrl(null);
+                setShareVersionNotice('');
             };
 
             const cycleSpeed = () => {
@@ -407,18 +562,77 @@
                 return out.join('');
             };
 
-            const saveLesson = () => {
+            // 2026-09-02: 連結只帶「與規則結果不同」的校正並壓縮，長課文不再產生數千字元網址。
+            const saveLesson = async () => {
                 try {
-                    const payload = { text, overrides };
-                    const jsonString = JSON.stringify(payload);
-                    const base64 = btoa(unescape(encodeURIComponent(jsonString)));
-                    const encodedParam = encodeURIComponent(base64);
+                    const { analysis } = analyzeReading(text);
+                    const diffZhuyin = {};
+                    const diffPhone = {};
+                    Object.entries(overrides || {}).forEach(([key, value]) => {
+                        const idx = Number(key);
+                        if (!Number.isInteger(idx) || idx < 0 || idx >= text.length) return;
+                        const engineZhuyin = analysis.readings[idx] || '';
+                        const enginePhone = analysis.speechOverrides?.[idx] ?? '';
+                        if (value?.zhuyin && value.zhuyin !== engineZhuyin) diffZhuyin[key] = value.zhuyin;
+                        if ((value?.phoneChar ?? '') !== enginePhone) diffPhone[key] = value?.phoneChar ?? '';
+                    });
+                    const payload = { f: SHARE_FORMAT, v: analysis.version || '', t: text, o: diffZhuyin, p: diffPhone };
+                    const encoded = await encodeSharePayload(payload);
                     const baseUrl = window.location.href.split('?')[0].split('#')[0];
-                    const url = `${baseUrl}?content=${encodedParam}`;
-                    setShareUrl(url);
+                    setShareUrl(`${baseUrl}#${encoded}`);
                 } catch (e) {
                     console.error("Link Gen Error:", e);
-                    alert("連結產生失敗（內容可能過長）。");
+                    alert("連結產生失敗，請改用「匯出課文檔」分享。");
+                }
+            };
+
+            const downloadJson = (data, filename) => {
+                const blob = new Blob([JSON.stringify(data, null, 2) + '\n'], { type: 'application/json;charset=utf-8' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+                URL.revokeObjectURL(link.href);
+            };
+
+            // 課文檔不受網址長度限制，且把每個字的最終讀音都寫死，換規則版本也不會變。
+            const exportLessonFile = () => {
+                if (!text.trim()) { alert('請先輸入課文。'); return; }
+                try {
+                    const stamp = new Date().toISOString().slice(0, 16).replace(/[-:T]/g, '');
+                    downloadJson(buildLessonFile(text, overrides), `課文點讀-${stamp}.json`);
+                    setCorrectionNotice('已匯出課文檔；用「匯入課文檔」即可在任何裝置開啟，不受網址長度限制。');
+                } catch (error) {
+                    console.error('Lesson file export failed.', error);
+                    alert('課文檔匯出失敗，請確認瀏覽器允許下載。');
+                }
+            };
+
+            const importLessonFile = async (event) => {
+                const file = event.target.files?.[0];
+                event.target.value = '';
+                if (!file) return;
+                try {
+                    const payload = JSON.parse(await file.text());
+                    if (!payload || typeof payload.text !== 'string' || !payload.text.trim()) {
+                        throw new Error('檔案缺少課文內容。');
+                    }
+                    setText(payload.text);
+                    setOverrides(payload.overrides && typeof payload.overrides === 'object' ? payload.overrides : {});
+                    setBaselineOverrides({});
+                    setOfficialLessonId(null);
+                    setShareUrl(null);
+                    setLessonLoadError('');
+                    const current = window.ReadingPronunciationRules?.VERSION || '';
+                    setShareVersionNotice(payload.rules_version && current && payload.rules_version !== current
+                        ? `此課文檔以注音規則 ${payload.rules_version} 匯出，目前為 ${current}；檔內讀音維持匯出當時的版本。`
+                        : '');
+                    setMode('read');
+                } catch (error) {
+                    console.error('Lesson file import failed.', error);
+                    alert('課文檔匯入失敗，請確認是本工具匯出的 JSON 檔。');
                 }
             };
 
@@ -724,7 +938,12 @@
                                     </button>
                                 )}
 
-                                {mode === 'read' && officialLessonId && (
+                                {shareVersionNotice && (
+                            <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-800">
+                                {shareVersionNotice}
+                            </div>
+                        )}
+                        {mode === 'read' && officialLessonId && (
                                     <button
                                         onClick={exportTeacherCorrections}
                                         className="flex items-center gap-2 px-2 py-1.5 sm:px-3 rounded-full bg-teal-50 text-teal-700 border border-teal-200 hover:bg-teal-100 transition-colors text-sm font-medium"
@@ -818,13 +1037,19 @@
                                         多音字規則檔載入失敗，請重新整理後再產生教材。
                                     </div>
                                 )}
-                                <div className="mt-4 flex justify-end gap-3">
+                                <div className="mt-4 flex flex-wrap justify-end gap-3">
+                                    <label className="px-4 py-2 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50 font-medium text-sm cursor-pointer">
+                                        匯入課文檔
+                                        <input type="file" accept="application/json,.json" onChange={importLessonFile} className="hidden" />
+                                    </label>
+                                    <button onClick={exportLessonFile} className="px-4 py-2 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50 font-medium text-sm">匯出課文檔</button>
                                     <button onClick={() => setMode('read')} className="px-5 py-2 rounded-xl text-slate-500 hover:bg-slate-100 font-medium text-sm">預覽</button>
                                     <button onClick={saveLesson} className="flex items-center gap-2 px-6 py-2 rounded-xl bg-teal-400 hover:bg-teal-500 text-white font-medium shadow-sm">
                                         <i data-lucide="share-2" width="16"></i> 產生連結
                                     </button>
                                 </div>
                                 <p className="mt-2 text-[10px] text-slate-400 text-right">此連結包含全文內容與校正設定，請勿分享含個資文本。</p>
+                                <p className="text-[10px] text-slate-400 text-right">課文很長時連結可能貼不進通訊軟體；改用「匯出課文檔」分享 JSON 檔，不受長度限制。</p>
                                 <p className="text-[10px] text-slate-400 text-right">注音為系統自動產生，若與課堂教學不同，請使用【校正】調整。</p>
 
                                 {shareUrl && (
@@ -832,6 +1057,7 @@
                                         <div className="flex-1 w-full overflow-hidden">
                                             <p className="text-sm font-bold text-teal-600 mb-1">連結已產生！</p>
                                             <div className="bg-white/50 border border-teal-200 rounded px-2 py-1 text-xs text-slate-500 truncate">{shareUrl}</div>
+                                            <p className="mt-1 text-[10px] text-slate-400">連結長度 {shareUrl.length} 字元{shareUrl.length > 2000 ? '；偏長，若通訊軟體貼不完整請改用「匯出課文檔」。' : '。'}</p>
                                         </div>
                                         <div className="flex gap-2">
                                             <button onClick={copyToClipboard} className="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-sm flex items-center gap-1">
