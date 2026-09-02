@@ -10,7 +10,7 @@ assert.equal(rules.pinyinSyllableToZhuyin('zhi4'), 'ㄓˋ');
 assert.equal(rules.pinyinSyllableToZhuyin('wen2'), 'ㄨㄣˊ');
 assert.equal(rules.pinyinSyllableToZhuyin('jue2'), 'ㄐㄩㄝˊ');
 assert.equal(rules.pinyinSyllableToZhuyin('xi0'), '˙ㄒㄧ');
-assert.equal(rules.VERSION, '1.5.0');
+assert.equal(rules.VERSION, '1.5.1');
 
 function analyze(text, known = {}) {
     const readings = Array.from(text, (_, index) => known[index] || 'ㄗ');
@@ -77,7 +77,11 @@ expectReading('美麗的彩虹', 1, 'ㄌㄧˋ');
 expectReading('愛麗絲', 1, 'ㄌㄧˋ');
 expectReading('香榭麗舍大道', 2, 'ㄌㄧˋ');
 expectReading('絢麗的雷射', 1, 'ㄌㄧˋ');
-expectReading('高麗菜', 1, 'ㄌㄧˊ');
+// 教育部《重編國語辭典修訂本》2021：高麗菜 ㄍㄠ ㄌㄧˋ ㄘㄞˋ，與高麗(ㄌㄧˊ)不同。
+expectReading('高麗菜', 1, 'ㄌㄧˋ');
+expectReading('種高麗菜的人', 2, 'ㄌㄧˋ');
+expectReading('高麗參', 1, 'ㄌㄧˊ');
+expectReading('高麗時代', 1, 'ㄌㄧˊ');
 expectReading('高句麗', 2, 'ㄌㄧˊ');
 expectReading('什麼', 1, '˙ㄇㄜ');
 expectReading('怎麼辦', 1, '˙ㄇㄜ');
