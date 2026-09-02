@@ -5,7 +5,7 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
     'use strict';
 
-    const VERSION = '1.4.0';
+    const VERSION = '1.5.0';
 
     // Teacher-approved defaults. Phrase rules below take precedence when the
     // surrounding text establishes another reading.
@@ -20,6 +20,17 @@
         '子': '˙ㄗ',
         // 「麗」的美好、華美義讀 ㄌㄧˋ；ㄌㄧˊ 只用於「高麗」系列，見 LI2_PHRASES。
         '麗': 'ㄌㄧˋ',
+        // 以下為 2026-09-02 第二批：整句候選最常誤判、且臺灣讀音明確的字。
+        // 有例外語境者以 CONTEXTUAL_EXCEPTIONS 的詞語清單覆寫，不做整字替換。
+        '麼': '˙ㄇㄜ',
+        '嗎': '˙ㄇㄚ',
+        '妳': 'ㄋㄧˇ',
+        '於': 'ㄩˊ',
+        '只': 'ㄓˇ',
+        '幾': 'ㄐㄧˇ',
+        '處': 'ㄔㄨˋ',
+        '間': 'ㄐㄧㄢ',
+        '許': 'ㄒㄩˇ',
     };
 
     const KINSHIP_REDUPLICATIONS = {
@@ -34,6 +45,7 @@
         '著', '和', '得', '誰', '一', '不', '樂', '長', '種', '重', '數', '行',
         '還', '調', '應', '乾', '差', '場', '興', '模', '彈', '給', '切', '中',
         '覺', '省', '喔', '盡', '們', '子', '麗',
+        '麼', '嗎', '妳', '於', '只', '幾', '處', '間', '許',
     ]);
 
     const phraseRule = (id, phrase, targets) => ({ id, phrase, targets });
@@ -55,6 +67,23 @@
 
     // 「麗」讀 ㄌㄧˊ 的語境只有「高麗」系列（韓國古國名與高麗菜）。
     const LI2_PHRASES = ['高句麗', '高麗菜', '高麗'];
+
+    const MA3_PHRASES = ['嗎啡'];
+    const WU1_PHRASES = ['於菟'];
+    const JI1_PHRASES = ['幾乎', '庶幾', '幾微'];
+    // 「許」只有伐木聲的「許許」讀 ㄏㄨˇ。
+    const HU3_PHRASES = ['許許'];
+    // 「處」的動詞義（處理、相處、居處）讀 ㄔㄨˇ；名詞的地方義讀 ㄔㄨˋ。
+    const CHU3_PHRASES = [
+        '處理器', '處理', '處罰', '處置', '處分', '處境', '處事', '處世', '處方',
+        '處決', '處女', '處於', '相處', '獨處', '共處', '身處', '處變不驚',
+        '設身處地', '和平共處', '處之泰然', '處心積慮',
+    ];
+    // 「間」的隔開、離間義讀 ㄐㄧㄢˋ；時間、空間、量詞義讀 ㄐㄧㄢ。
+    const JIAN4_PHRASES = [
+        '間隔', '間斷', '間接', '間諜', '間歇', '間或', '離間', '相間',
+        '挑撥離間', '間不容髮',
+    ];
 
     // 「子」讀本音 ㄗˇ 的語境：本義（子女、種子）、諸子人名、學術詞與
     // 教師已在 115 課次核定的讀法（女子、妻子）。未列出的名詞詞尾走輕聲預設。
@@ -106,6 +135,26 @@
             || (previous === '個' && CLASSIFIER_PRECEDERS.has(previousTwo));
     }
 
+    // 逐位置稽核用的教師預設：覆蓋率極高、例外可窮舉的字才列入。
+    // 「子」不在此表——名詞詞尾以外的語境太多，只稽核 ZI3_PHRASES 的本音位置。
+    const CONTEXTUAL_CHAR_DEFAULTS = {
+        '們': '˙ㄇㄣ', '麗': 'ㄌㄧˋ', '麼': '˙ㄇㄜ', '嗎': '˙ㄇㄚ', '妳': 'ㄋㄧˇ',
+        '於': 'ㄩˊ', '只': 'ㄓˇ', '幾': 'ㄐㄧˇ', '處': 'ㄔㄨˋ', '間': 'ㄐㄧㄢ',
+        '許': 'ㄒㄩˇ',
+    };
+
+    const CONTEXTUAL_EXCEPTIONS = [
+        { char: '們', zhuyin: 'ㄇㄣˊ', phrases: MEN2_PHRASES },
+        { char: '麗', zhuyin: 'ㄌㄧˊ', phrases: LI2_PHRASES },
+        { char: '子', zhuyin: 'ㄗˇ', phrases: ZI3_PHRASES },
+        { char: '嗎', zhuyin: 'ㄇㄚˇ', phrases: MA3_PHRASES },
+        { char: '於', zhuyin: 'ㄨ', phrases: WU1_PHRASES },
+        { char: '幾', zhuyin: 'ㄐㄧ', phrases: JI1_PHRASES },
+        { char: '處', zhuyin: 'ㄔㄨˇ', phrases: CHU3_PHRASES },
+        { char: '間', zhuyin: 'ㄐㄧㄢˋ', phrases: JIAN4_PHRASES },
+        { char: '許', zhuyin: 'ㄏㄨˇ', phrases: HU3_PHRASES },
+    ];
+
     function expectedContextualReadings(text) {
         const chars = Array.from(text || '');
         const expected = {};
@@ -117,22 +166,20 @@
                 expected[index + 2] = 'ㄦ';
             }
         }
-        // 「們」逐位置固定輕聲；專有名詞「圖們」保留本音，稍後由詞語規則覆寫。
+        // 覆蓋率極高的教師預設先逐位置寫入，再由例外詞語清單覆寫。
         chars.forEach((char, index) => {
-            if (char === '們' && chars[index - 1] !== '圖') expected[index] = '˙ㄇㄣ';
-            // 「麗」逐位置固定 ㄌㄧˋ；「高麗」系列稍後由詞語規則覆寫。
-            if (char === '麗' && chars[index - 1] !== '高') expected[index] = 'ㄌㄧˋ';
+            if (CONTEXTUAL_CHAR_DEFAULTS[char]) expected[index] = CONTEXTUAL_CHAR_DEFAULTS[char];
         });
-        [...ZI3_PHRASES, ...MEN2_PHRASES, ...LI2_PHRASES].forEach(phrase => {
-            const char = phrase.includes('子') ? '子' : (phrase.includes('們') ? '們' : '麗');
-            const zhuyin = { '子': 'ㄗˇ', '們': 'ㄇㄣˊ', '麗': 'ㄌㄧˊ' }[char];
-            let start = 0;
-            while (start <= chars.length - phrase.length) {
-                const found = text.indexOf(phrase, start);
-                if (found < 0) break;
-                expected[found + phrase.indexOf(char)] = zhuyin;
-                start = found + Math.max(1, phrase.length);
-            }
+        CONTEXTUAL_EXCEPTIONS.forEach(({ char, zhuyin, phrases }) => {
+            phrases.forEach(phrase => {
+                let start = 0;
+                while (start <= chars.length - phrase.length) {
+                    const found = text.indexOf(phrase, start);
+                    if (found < 0) break;
+                    expected[found + phrase.indexOf(char)] = zhuyin;
+                    start = found + Math.max(1, phrase.length);
+                }
+            });
         });
         JIN4_PHRASES.forEach(phrase => {
             let start = 0;
@@ -192,6 +239,12 @@
         ...targetChar('zi-zi3', ZI3_PHRASES, '子', 'ㄗˇ'),
         ...targetChar('men-men2', MEN2_PHRASES, '們', 'ㄇㄣˊ'),
         ...targetChar('li-li2', LI2_PHRASES, '麗', 'ㄌㄧˊ'),
+        ...targetChar('ma-ma3', MA3_PHRASES, '嗎', 'ㄇㄚˇ'),
+        ...targetChar('yu-wu1', WU1_PHRASES, '於', 'ㄨ'),
+        ...targetChar('ji-ji1', JI1_PHRASES, '幾', 'ㄐㄧ'),
+        ...targetChar('chu-chu3', CHU3_PHRASES, '處', 'ㄔㄨˇ'),
+        ...targetChar('jian-jian4', JIAN4_PHRASES, '間', 'ㄐㄧㄢˋ'),
+        ...targetChar('xu-hu3', HU3_PHRASES, '許', 'ㄏㄨˇ'),
 
         ...targetChar('de-de2-front', ['得到', '得意', '得獎', '得分', '得手', '得名', '得知', '得救', '得罪', '得利', '得病'], '得', 'ㄉㄜˊ'),
         ...targetChar('de-de2-back', ['取得', '獲得', '贏得', '博得', '值得', '難得', '所得', '心得', '自得'], '得', 'ㄉㄜˊ'),
@@ -473,6 +526,8 @@
         ZI3_PHRASES,
         MEN2_PHRASES,
         LI2_PHRASES,
+        CONTEXTUAL_CHAR_DEFAULTS,
+        CONTEXTUAL_EXCEPTIONS,
         TTS_HOMOPHONES,
         PHRASE_RULES,
         expectedContextualReadings,
