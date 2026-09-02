@@ -5,7 +5,7 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
     'use strict';
 
-    const VERSION = '1.6.0';
+    const VERSION = '1.7.0';
 
     // Teacher-approved defaults. Phrase rules below take precedence when the
     // surrounding text establishes another reading.
@@ -31,6 +31,10 @@
         '處': 'ㄔㄨˋ',
         '間': 'ㄐㄧㄢ',
         '許': 'ㄒㄩˇ',
+        // 「還」的副詞義（還有、還可以、還在）遠多於歸還義，見 HUAN2_PHRASES。
+        '還': 'ㄏㄞˊ',
+        // 「為」的介詞義（因為、為了、為什麼）為預設；動詞與判斷義見 WEI2_PHRASES。
+        '為': 'ㄨㄟˋ',
     };
 
     const KINSHIP_REDUPLICATIONS = {
@@ -45,7 +49,7 @@
         '著', '和', '得', '誰', '一', '不', '樂', '長', '種', '重', '數', '行',
         '還', '調', '應', '乾', '差', '場', '興', '模', '彈', '給', '切', '中',
         '覺', '省', '喔', '盡', '們', '子', '麗',
-        '麼', '嗎', '妳', '於', '只', '幾', '處', '間', '許',
+        '麼', '嗎', '妳', '於', '只', '幾', '處', '間', '許', '為',
     ]);
 
     const phraseRule = (id, phrase, targets) => ({ id, phrase, targets });
@@ -88,6 +92,21 @@
     const JI1_PHRASES = ['幾乎', '庶幾', '幾微'];
     // 「許」只有伐木聲的「許許」讀 ㄏㄨˇ。
     const HU3_PHRASES = ['許許'];
+    // 「還」讀 ㄏㄨㄢˊ 的歸還、報復義。
+    const HUAN2_PHRASES = [
+        '還給', '歸還', '償還', '返還', '退還', '交還', '奉還', '討還', '發還',
+        '還錢', '還債', '還書', '還原', '還俗', '還鄉', '還手', '還嘴', '還擊',
+        '還價', '生還', '還魂', '以牙還牙', '以眼還眼', '還來就菊花',
+    ];
+    // 「為」讀 ㄨㄟˊ 的動詞（成為、作為、稱為）與判斷、文言義。
+    const WEI2_PHRASES = [
+        '認為', '成為', '作為', '稱為', '行為', '以為', '身為', '視為', '名為',
+        '化為', '分為', '列為', '改為', '選為', '評為', '譽為', '稱之為', '為之',
+        '為人', '為主', '為止', '為難', '為首', '為期', '為政', '為師', '為善',
+        '為伍', '為敵', '為生', '為業', '為榮', '為傲', '為妙', '為上', '為限',
+        '何者為', '則為', '即為', '習以為常', '不以為然', '融為一體', '化險為夷',
+        '所作所為', '人為', '無為', '有為', '大有可為', '為所欲為',
+    ];
     // 「處」的動詞義（處理、相處、居處）讀 ㄔㄨˇ；名詞的地方義讀 ㄔㄨˋ。
     const CHU3_PHRASES = [
         '處理器', '處理', '處罰', '處置', '處分', '處境', '處事', '處世', '處方',
@@ -147,6 +166,18 @@
 
     // 動詞「種」：未被詞語規則認領、前面不是數量／指示詞，且後面接著漢字受詞，
     // 例如「種高麗菜」「種下希望」「菜種好了」。作物名無法窮舉，故採結構判斷。
+    // 助動詞「得」（必須）只出現在謂語開頭：前面是句界或主語／副詞。
+    // 「記得、進得去、難過得想哭」的前字是動詞或形容詞，屬補語或輕聲，不得誤判。
+    const DEI3_PRECEDERS = new Set(Array.from('我你妳他她它牠們家這那就還也都可真才'));
+    const DEI3_FOLLOWERS = new Set(Array.from('走先再去做把從用有靠想等花帶穿等留回上下開'));
+    function isDei3At(chars, index) {
+        if (chars[index] !== '得') return false;
+        if (!DEI3_FOLLOWERS.has(chars[index + 1] || '')) return false;
+        const previous = chars[index - 1] || '';
+        if (!previous || /[^\u3400-\u9fff]/.test(previous)) return true;
+        return DEI3_PRECEDERS.has(previous);
+    }
+
     function isPlantingZhong4At(chars, index) {
         if (chars[index] !== '種') return false;
         if (ZHONG3_PRECEDERS.has(chars[index - 1] || '')) return false;
@@ -172,6 +203,10 @@
         '們': '˙ㄇㄣ', '麗': 'ㄌㄧˋ', '麼': '˙ㄇㄜ', '嗎': '˙ㄇㄚ', '妳': 'ㄋㄧˇ',
         '於': 'ㄩˊ', '只': 'ㄓˇ', '幾': 'ㄐㄧˇ', '處': 'ㄔㄨˋ', '間': 'ㄐㄧㄢ',
         '許': 'ㄒㄩˇ',
+        // 「還」的副詞義（還有、還可以、還在）遠多於歸還義，見 HUAN2_PHRASES。
+        '還': 'ㄏㄞˊ',
+        // 「為」的介詞義（因為、為了、為什麼）為預設；動詞與判斷義見 WEI2_PHRASES。
+        '為': 'ㄨㄟˋ',
     };
 
     const CONTEXTUAL_EXCEPTIONS = [
@@ -185,6 +220,8 @@
         { char: '處', zhuyin: 'ㄔㄨˇ', phrases: CHU3_PHRASES },
         { char: '間', zhuyin: 'ㄐㄧㄢˋ', phrases: JIAN4_PHRASES },
         { char: '許', zhuyin: 'ㄏㄨˇ', phrases: HU3_PHRASES },
+        { char: '還', zhuyin: 'ㄏㄨㄢˊ', phrases: HUAN2_PHRASES },
+        { char: '為', zhuyin: 'ㄨㄟˊ', phrases: WEI2_PHRASES },
     ];
 
     function expectedContextualReadings(text) {
@@ -285,12 +322,20 @@
         ...targetChar('chu-chu3', CHU3_PHRASES, '處', 'ㄔㄨˇ'),
         ...targetChar('jian-jian4', JIAN4_PHRASES, '間', 'ㄐㄧㄢˋ'),
         ...targetChar('xu-hu3', HU3_PHRASES, '許', 'ㄏㄨˇ'),
+        ...targetChar('hai-huan2', HUAN2_PHRASES, '還', 'ㄏㄨㄢˊ'),
+        ...targetChar('wei-wei2', WEI2_PHRASES, '為', 'ㄨㄟˊ'),
 
+        // 同長度詞語以陣列順序決勝，因此固定輕聲詞必須排在「得X」清單之前，
+        // 否則「懂得分辨」會被「得分」搶走。可能補語（做得到）同理。
+        ...targetChar('de-neutral-fixed', [
+            '禁不得', '經不得', '受不得', '忍不得', '捨不得', '巴不得',
+            '值得', '懂得', '記得', '覺得', '曉得', '免得', '省得', '樂得',
+            '做得到', '做得好', '看得到', '聽得到', '找得到', '買得到', '吃得到',
+            '進得去', '出得來', '受得了', '來得及', '等得到', '猜得到',
+        ], '得', '˙ㄉㄜ'),
         ...targetChar('de-de2-front', ['得到', '得意', '得獎', '得分', '得手', '得名', '得知', '得救', '得罪', '得利', '得病'], '得', 'ㄉㄜˊ'),
-        ...targetChar('de-de2-back', ['取得', '獲得', '贏得', '博得', '值得', '難得', '所得', '心得', '自得'], '得', 'ㄉㄜˊ'),
+        ...targetChar('de-de2-back', ['取得', '獲得', '贏得', '博得', '難得', '所得', '心得', '自得'], '得', 'ㄉㄜˊ'),
         ...targetChar('de-de2-result', ['不得', '得出'], '得', 'ㄉㄜˊ'),
-        ...targetChar('de-neutral-fixed', ['禁不得', '經不得', '受不得', '忍不得', '捨不得', '巴不得'], '得', '˙ㄉㄜ'),
-        ...targetChar('de-dei3', ['得走', '得先', '得再', '得去', '得做', '得把', '得從', '得用', '得有', '得靠', '得想', '得等'], '得', 'ㄉㄟˇ'),
 
         ...targetChar('music-yue4', ['音樂', '樂器', '樂團', '樂曲', '樂隊', '樂譜', '樂手', '樂章', '樂壇', '樂理', '樂聲', '聲樂', '器樂', '民樂', '國樂', '管樂', '弦樂', '爵士樂'], '樂', 'ㄩㄝˋ'),
         ...targetChar('happy-le4', ['快樂', '歡樂', '樂意', '樂趣', '樂園', '樂觀', '樂事'], '樂', 'ㄌㄜˋ'),
@@ -316,8 +361,6 @@
         ...targetChar('number-shu4', ['數學', '數字', '數量', '次數', '人數', '少數', '多數'], '數', 'ㄕㄨˋ'),
         ...targetChar('line-hang2', ['一行人', '行列', '行業', '銀行', '排行'], '行', 'ㄏㄤˊ'),
         ...targetChar('walk-xing2', ['三人同行', '行走', '行動', '步行', '旅行', '可行', '實行'], '行', 'ㄒㄧㄥˊ'),
-        ...targetChar('return-huan2', ['還給', '歸還', '償還', '返還', '還書', '還錢', '還來就菊花'], '還', 'ㄏㄨㄢˊ'),
-        ...targetChar('still-hai2', ['還是', '還有', '還要', '還會', '還能', '還沒'], '還', 'ㄏㄞˊ'),
         ...targetChar('tiao2', ['調味', '調味料', '調侃', '調整', '調和', '協調'], '調', 'ㄊㄧㄠˊ'),
         ...targetChar('diao4', ['調查', '聲調', '曲調', '音調', '格調'], '調', 'ㄉㄧㄠˋ'),
         ...targetChar('ying4', ['反應', '回應', '應對', '答應', '應用', '適應', '呼應'], '應', 'ㄧㄥˋ'),
@@ -469,6 +512,12 @@
             }
         });
 
+        // 助動詞「得」：詞語規則沒認領的位置才做結構判斷。
+        chars.forEach((char, index) => {
+            if (char !== '得' || phraseMatched.has(index)) return;
+            if (isDei3At(chars, index)) setReading(index, 'ㄉㄟˇ', 'de-dei3-modal');
+        });
+
         // 動詞「種」：詞語規則沒認領的位置才做結構判斷，避免蓋掉品種、種類等名詞語境。
         chars.forEach((char, index) => {
             if (char !== '種') return;
@@ -502,12 +551,16 @@
             return -1;
         };
         const numeralChars = new Set(Array.from('〇○零一二三四五六七八九十百千萬億兩两'));
+        // 百千萬億是數量倍數，「一百、一千、一萬」仍依語流變調；
+        // 只有序數、數字序列、年份、分數才保留本調。
+        const multiplierChars = new Set(Array.from('百千萬億'));
         const isNumericOne = index => {
             const previous = chars[index - 1] || '';
             const next = chars[index + 1] || '';
             if (text.slice(Math.max(0, index - 2), index + 1) === '秋千一') return false;
+            const nextIsNumeral = numeralChars.has(next) && !multiplierChars.has(next);
             return previous === '第' || previous === '之' || previous === '萬'
-                || numeralChars.has(previous) || numeralChars.has(next)
+                || numeralChars.has(previous) || nextIsNumeral
                 || /[0-9]/.test(previous) || /[0-9]/.test(next);
         };
 
@@ -588,6 +641,8 @@
         LI2_PHRASES,
         LI4_PHRASES,
         ZHONG3_PHRASES,
+        HUAN2_PHRASES,
+        WEI2_PHRASES,
         CONTEXTUAL_CHAR_DEFAULTS,
         CONTEXTUAL_EXCEPTIONS,
         TTS_HOMOPHONES,

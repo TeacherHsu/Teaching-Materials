@@ -10,7 +10,7 @@ assert.equal(rules.pinyinSyllableToZhuyin('zhi4'), 'ㄓˋ');
 assert.equal(rules.pinyinSyllableToZhuyin('wen2'), 'ㄨㄣˊ');
 assert.equal(rules.pinyinSyllableToZhuyin('jue2'), 'ㄐㄩㄝˊ');
 assert.equal(rules.pinyinSyllableToZhuyin('xi0'), '˙ㄒㄧ');
-assert.equal(rules.VERSION, '1.6.0');
+assert.equal(rules.VERSION, '1.7.0');
 
 function analyze(text, known = {}) {
     const readings = Array.from(text, (_, index) => known[index] || 'ㄗ');
@@ -25,6 +25,18 @@ function expectReading(text, index, expected, known = {}) {
 expectReading('不但', 0, 'ㄅㄨˊ', { 1: 'ㄉㄢˋ' });
 expectReading('不好', 0, 'ㄅㄨˋ', { 1: 'ㄏㄠˇ' });
 expectReading('一樣', 0, 'ㄧˊ', { 1: 'ㄧㄤˋ' });
+// 一二三聲前變調 ㄧˋ，依教育部《國語辭典簡編本》的「(變)」欄。
+expectReading('一張圖', 0, 'ㄧˋ', { 1: 'ㄓㄤ' });
+expectReading('有一天', 1, 'ㄧˋ', { 2: 'ㄊㄧㄢ' });
+expectReading('心裡一涼', 2, 'ㄧˋ', { 3: 'ㄌㄧㄤˊ' });
+expectReading('數一數', 1, 'ㄧˋ', { 2: 'ㄕㄨˇ' });
+expectReading('一半', 0, 'ㄧˊ', { 1: 'ㄅㄢˋ' });
+expectReading('一起走', 0, 'ㄧˋ', { 1: 'ㄑㄧˇ' });
+// 一百、一千、一萬是數量倍數，仍變調；序數與數字序列保留本調。
+expectReading('一百三十', 0, 'ㄧˋ', { 1: 'ㄅㄞˇ' });
+expectReading('第一課', 1, 'ㄧ');
+expectReading('一二一', 0, 'ㄧ');
+expectReading('三分之一', 3, 'ㄧ');
 expectReading('一張', 0, 'ㄧˋ', { 1: 'ㄓㄤ' });
 expectReading('第一課', 1, 'ㄧ');
 expectReading('二○一二年', 2, 'ㄧ');
@@ -65,6 +77,30 @@ expectReading('品種改良', 1, 'ㄓㄨㄥˇ');
 expectReading('有種孤零零的感覺', 1, 'ㄓㄨㄥˇ');
 expectReading('一行人', 1, 'ㄏㄤˊ');
 expectReading('還給同學', 0, 'ㄏㄨㄢˊ');
+// 「還」預設副詞義 ㄏㄞˊ，歸還義才讀 ㄏㄨㄢˊ。
+expectReading('還可以保存', 0, 'ㄏㄞˊ');
+expectReading('他還在水裡', 1, 'ㄏㄞˊ');
+expectReading('還記得剛才', 0, 'ㄏㄞˊ');
+expectReading('把錢歸還', 3, 'ㄏㄨㄢˊ');
+expectReading('以牙還牙', 2, 'ㄏㄨㄢˊ');
+// 「為」預設介詞義 ㄨㄟˋ，動詞與判斷義讀 ㄨㄟˊ。
+expectReading('因為下雨', 1, 'ㄨㄟˋ');
+expectReading('為了你', 0, 'ㄨㄟˋ');
+expectReading('為什麼', 0, 'ㄨㄟˋ');
+expectReading('我認為對', 2, 'ㄨㄟˊ');
+expectReading('成為老師', 1, 'ㄨㄟˊ');
+expectReading('被稱為杏壇', 2, 'ㄨㄟˊ');
+expectReading('可以為師矣', 2, 'ㄨㄟˊ');
+expectReading('何者為善', 2, 'ㄨㄟˊ');
+// 「得」：助動詞要在謂語開頭，補語與固定輕聲詞不得誤判。
+expectReading('得意的說', 0, 'ㄉㄜˊ');
+expectReading('懂得分辨', 1, '˙ㄉㄜ');
+expectReading('值得珍惜', 1, '˙ㄉㄜ');
+expectReading('自己做得到', 3, '˙ㄉㄜ');
+expectReading('難過得想哭', 2, '˙ㄉㄜ');
+expectReading('記得有一天', 1, '˙ㄉㄜ');
+expectReading('這得靠你', 1, 'ㄉㄟˇ');
+expectReading('我得走快點', 1, 'ㄉㄟˇ');
 expectReading('場圃', 0, 'ㄔㄤˊ');
 expectReading('喔喔啼', 0, 'ㄨㄛˋ');
 expectReading('喔喔啼', 1, 'ㄨㄛˋ');
