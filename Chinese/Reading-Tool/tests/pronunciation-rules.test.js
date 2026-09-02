@@ -60,6 +60,9 @@ expectReading('同學們也來了', 2, '˙ㄇㄣ');
 expectReading('人們有心', 1, '˙ㄇㄣ');
 expectReading('圖們江', 1, 'ㄇㄣˊ');
 expectReading('孩子', 1, '˙ㄗ');
+// CF 2026-09-02 裁定：「兒子」依課堂讀法標輕聲，不採教育部辭典的 ㄗˇ。
+expectReading('兒子', 1, '˙ㄗ');
+expectReading('我的兒子', 3, '˙ㄗ');
 expectReading('桌子上', 1, '˙ㄗ');
 expectReading('一下子就好', 2, '˙ㄗ');
 expectReading('伸長脖子', 3, '˙ㄗ');
