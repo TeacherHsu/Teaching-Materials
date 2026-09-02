@@ -5,7 +5,7 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
     'use strict';
 
-    const VERSION = '1.5.0';
+    const VERSION = '1.5.1';
 
     // Teacher-approved defaults. Phrase rules below take precedence when the
     // surrounding text establishes another reading.
@@ -65,8 +65,11 @@
     // 「們」的本音 ㄇㄣˊ 只出現在專有名詞；其餘複數詞綴一律輕聲。
     const MEN2_PHRASES = ['圖們江', '圖們'];
 
-    // 「麗」讀 ㄌㄧˊ 的語境只有「高麗」系列（韓國古國名與高麗菜）。
-    const LI2_PHRASES = ['高句麗', '高麗菜', '高麗'];
+    // 「麗」讀 ㄌㄧˊ 的語境只有韓國古國名「高麗」系列。
+    // 2026-09-02 依教育部《重編國語辭典修訂本》2021（臺灣學術網路第六版）更正：
+    // 高麗菜為 ㄍㄠ ㄌㄧˋ ㄘㄞˋ，不隨「高麗」讀 ㄌㄧˊ。
+    const LI2_PHRASES = ['高句麗', '高麗參', '高麗'];
+    const LI4_PHRASES = ['高麗菜'];
 
     const MA3_PHRASES = ['嗎啡'];
     const WU1_PHRASES = ['於菟'];
@@ -148,6 +151,7 @@
     const CONTEXTUAL_EXCEPTIONS = [
         { char: '們', zhuyin: 'ㄇㄣˊ', phrases: MEN2_PHRASES },
         { char: '麗', zhuyin: 'ㄌㄧˊ', phrases: LI2_PHRASES },
+        { char: '麗', zhuyin: 'ㄌㄧˋ', phrases: LI4_PHRASES },
         { char: '子', zhuyin: 'ㄗˇ', phrases: ZI3_PHRASES },
         { char: '嗎', zhuyin: 'ㄇㄚˇ', phrases: MA3_PHRASES },
         { char: '於', zhuyin: 'ㄨ', phrases: WU1_PHRASES },
@@ -172,17 +176,24 @@
         chars.forEach((char, index) => {
             if (CONTEXTUAL_CHAR_DEFAULTS[char]) expected[index] = CONTEXTUAL_CHAR_DEFAULTS[char];
         });
-        CONTEXTUAL_EXCEPTIONS.forEach(({ char, zhuyin, phrases }) => {
-            phrases.forEach(phrase => {
+        // 長詞優先：高麗菜(3) 必須蓋過高麗(2)，不能依 CONTEXTUAL_EXCEPTIONS 的陣列順序決定。
+        const claimed = new Set();
+        CONTEXTUAL_EXCEPTIONS
+            .flatMap(({ char, zhuyin, phrases }) => phrases.map(phrase => ({ char, zhuyin, phrase })))
+            .sort((a, b) => b.phrase.length - a.phrase.length)
+            .forEach(({ char, zhuyin, phrase }) => {
                 let start = 0;
                 while (start <= chars.length - phrase.length) {
                     const found = text.indexOf(phrase, start);
                     if (found < 0) break;
-                    expected[found + phrase.indexOf(char)] = zhuyin;
+                    const target = found + phrase.indexOf(char);
+                    if (!claimed.has(target)) {
+                        expected[target] = zhuyin;
+                        claimed.add(target);
+                    }
                     start = found + Math.max(1, phrase.length);
                 }
             });
-        });
         JIN4_PHRASES.forEach(phrase => {
             let start = 0;
             while (start <= chars.length - phrase.length) {
@@ -241,6 +252,7 @@
         ...targetChar('zi-zi3', ZI3_PHRASES, '子', 'ㄗˇ'),
         ...targetChar('men-men2', MEN2_PHRASES, '們', 'ㄇㄣˊ'),
         ...targetChar('li-li2', LI2_PHRASES, '麗', 'ㄌㄧˊ'),
+        ...targetChar('li-li4-cabbage', LI4_PHRASES, '麗', 'ㄌㄧˋ'),
         ...targetChar('ma-ma3', MA3_PHRASES, '嗎', 'ㄇㄚˇ'),
         ...targetChar('yu-wu1', WU1_PHRASES, '於', 'ㄨ'),
         ...targetChar('ji-ji1', JI1_PHRASES, '幾', 'ㄐㄧ'),
@@ -528,6 +540,7 @@
         ZI3_PHRASES,
         MEN2_PHRASES,
         LI2_PHRASES,
+        LI4_PHRASES,
         CONTEXTUAL_CHAR_DEFAULTS,
         CONTEXTUAL_EXCEPTIONS,
         TTS_HOMOPHONES,
