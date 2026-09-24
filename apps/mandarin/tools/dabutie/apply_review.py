@@ -28,6 +28,7 @@ REVIEWABLE_KEYS = [
     ("listening", "status"),
     ("polysemy", "status"),
     ("sentence_patterns", "examples_status"),
+    ("extensions", "status"),
 ]
 
 

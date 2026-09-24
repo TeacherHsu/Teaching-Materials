@@ -3,6 +3,7 @@ import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import Ajv from 'ajv';
+import { isAllowedLinkUrl } from '../src/config/linkDomains.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
@@ -55,6 +56,12 @@ for (const file of lessonFiles) {
     }
   } else {
     console.log(`[OK] ${file}`);
+    for (const ext of data.extensions || []) {
+      if (!isAllowedLinkUrl(ext.url)) {
+        failed = true;
+        console.error(`[FAIL] ${file} extensions「${ext.title || ext.id}」網址不在白名單或非 https：${ext.url}`);
+      }
+    }
   }
 }
 

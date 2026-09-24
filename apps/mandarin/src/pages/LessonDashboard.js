@@ -1,5 +1,6 @@
 import { h } from '../utils/dom.js';
 import { MODULE_REGISTRY, getModuleStatus } from '../activities/moduleRegistry.js';
+import { buildExtensionLinks } from '../components/ExtensionLinks.js';
 
 const STATUS_CLASS = {
   done: 'module-card__status--done',
@@ -53,5 +54,9 @@ export function LessonDashboard(lesson) {
     grid.appendChild(card);
   }
   root.appendChild(grid);
+
+  const extensionLinks = buildExtensionLinks(lesson, 'lesson', { title: '本課延伸資源' });
+  if (extensionLinks) root.appendChild(extensionLinks);
+
   return root;
 }

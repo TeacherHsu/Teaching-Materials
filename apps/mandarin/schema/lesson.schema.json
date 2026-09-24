@@ -173,6 +173,39 @@
       "type": "object",
       "description": "v2 新增：04生字累計表，跨課字彙索引"
     },
+    "extensions": {
+      "type": "array",
+      "description": "延伸練習外部連結。規格 docs/specs/2026-09-25-mandarin-dabutie-importer.md「延伸練習連結」一節。",
+      "items": {
+        "type": "object",
+        "required": ["id", "url", "title", "provider", "type", "module", "status"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "url": {
+            "type": "string",
+            "pattern": "^https://",
+            "description": "必須 https；網域須在 src/config/linkDomains.js 白名單內（由 scripts/validate-data.mjs 檢查）"
+          },
+          "title": { "type": "string", "minLength": 1, "maxLength": 40 },
+          "provider": { "type": "string", "minLength": 1 },
+          "type": { "type": "string", "enum": ["game", "quiz", "video", "dictionary", "reading"] },
+          "module": {
+            "type": "string",
+            "description": "對應大項 key（characters/vocabulary/idiom_builder/sentence_practice/reading/polysemy/structure_map/listening/rhetoric/review）或 \"lesson\"（整課，顯示在 Lesson Dashboard 底部）"
+          },
+          "version_note": { "type": "string" },
+          "login_required": { "type": "boolean" },
+          "checked_at": { "type": ["string", "null"] },
+          "note": { "type": "string", "maxLength": 25 },
+          "status": { "type": "string", "enum": ["draft", "approved", "rejected"] },
+          "char": {
+            "type": "string",
+            "maxLength": 1,
+            "description": "選填：module=characters 且 type=reading 時，對應到單一生字（用於 CharacterCard「看字的由來」次要連結）"
+          }
+        }
+      }
+    },
     "modules": {
       "type": "object",
       "description": "Lesson Dashboard 六個模組的狀態與對應資料鍵，data-driven，不 hard-code 元件內容",

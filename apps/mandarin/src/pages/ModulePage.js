@@ -10,6 +10,7 @@ import { buildListeningActivity } from '../activities/listening.js';
 import { buildRhetoricActivity } from '../activities/rhetoric.js';
 import { buildStructureMapActivity } from '../activities/structureMap.js';
 import { buildReviewActivity } from '../activities/review.js';
+import { buildExtensionLinks } from '../components/ExtensionLinks.js';
 import { findModuleEntry, getModuleStatus } from '../activities/moduleRegistry.js';
 import { saveModuleComplete } from '../utils/storage.js';
 import { navigate } from '../router/router.js';
@@ -121,6 +122,9 @@ export function ModulePage(lesson, moduleKey) {
   } else {
     root.appendChild(missingContentNotice());
   }
+
+  const extensionLinks = buildExtensionLinks(lesson, moduleKey);
+  if (extensionLinks) root.appendChild(extensionLinks);
 
   return root;
 }

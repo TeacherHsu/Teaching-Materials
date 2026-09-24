@@ -70,6 +70,7 @@ function filterLesson(lesson) {
   l.rhetoric = (l.rhetoric || []).filter((r) => isPublic(r.status));
   l.listening = (l.listening || []).filter((item) => isPublic(item.status));
   l.polysemy = (l.polysemy || []).filter((p) => isPublic(p.status));
+  l.extensions = (l.extensions || []).filter((e) => isPublic(e.status));
 
   if (l.modules) {
     const readingCount = l.paragraph_summary.length >= 3 || l.reading_questions.length >= 1
