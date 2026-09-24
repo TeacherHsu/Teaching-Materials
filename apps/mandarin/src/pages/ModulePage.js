@@ -1,15 +1,20 @@
 import { h } from '../utils/dom.js';
-import { CharacterCard } from '../components/CharacterCard.js';
-import { TaskBanner } from '../components/TaskBanner.js';
-import { buildChallengeActivity, missingContentNotice } from '../activities/engine.js';
+import { missingContentNotice } from '../activities/engine.js';
 import { buildIdiomBuilderActivity } from '../components/IdiomBuilder.js';
 import { buildReadingActivity } from '../activities/reading.js';
+import { buildCharactersActivity } from '../activities/characters.js';
+import { buildVocabularyActivity } from '../activities/vocabulary.js';
+import { buildSentencePracticeActivity } from '../activities/sentencePractice.js';
+import { findModuleEntry, getModuleStatus } from '../activities/moduleRegistry.js';
 import { saveModuleComplete } from '../utils/storage.js';
 import { navigate } from '../router/router.js';
 import { isPreview } from '../utils/preview.js';
 
 export function ModulePage(lesson, moduleKey) {
+  const entry = findModuleEntry(moduleKey);
   const mod = lesson.modules[moduleKey];
+  const label = (mod && mod.label) || (entry && entry.label) || moduleKey;
+  const status = entry ? getModuleStatus(lesson, entry) : { code: 'coming_soon', text: '即將推出' };
   const root = h('div', { class: 'container' });
   root.appendChild(
     h('p', { class: 'breadcrumb' }, [
@@ -17,20 +22,21 @@ export function ModulePage(lesson, moduleKey) {
       ' ／ ',
       h('a', { href: `#/lesson/${lesson.lesson_id}` }, `第 ${lesson.lesson_no} 課`),
       ' ／ ',
-      mod ? mod.label : moduleKey,
+      label,
     ]),
   );
 
-  if (!mod || mod.status !== 'available') {
-    root.appendChild(h('h1', {}, mod ? mod.label : '找不到模組'));
-    root.appendChild(missingContentNotice(mod && mod.note ? mod.note : '此部分教材待補'));
+  const playable = status.code === 'available' || status.code === 'done';
+  if (!playable) {
+    root.appendChild(h('h1', {}, label));
+    root.appendChild(missingContentNotice(status.text));
     root.appendChild(
       h('a', { class: 'btn', href: `#/lesson/${lesson.lesson_id}`, style: 'margin-top:16px' }, '回課程首頁'),
     );
     return root;
   }
 
-  root.appendChild(h('h1', {}, mod.label));
+  root.appendChild(h('h1', {}, label));
   if (isPreview()) {
     root.appendChild(h('p', { class: 'meta' }, '預覽模式：待審（draft）內容會顯示並加「待審」標籤，正式上線不會出現。'));
   }
@@ -38,17 +44,23 @@ export function ModulePage(lesson, moduleKey) {
   const onBack = () => navigate(`/lesson/${lesson.lesson_id}`);
 
   if (moduleKey === 'characters') {
-    root.appendChild(TaskBanner({ label: '認識這一課的生字：點卡片聽發音，看完全部生字就算完成' }));
-    const grid = h('div', { class: 'card-grid' });
-    for (const c of lesson.characters) {
-      grid.appendChild(CharacterCard(c));
-    }
-    root.appendChild(grid);
-    saveModuleComplete(lesson.lesson_id, 'characters');
-  } else if (moduleKey === 'challenge') {
     root.appendChild(
-      buildChallengeActivity(lesson, () => {
-        saveModuleComplete(lesson.lesson_id, 'challenge');
+      buildCharactersActivity(lesson, () => {
+        saveModuleComplete(lesson.lesson_id, 'characters');
+        onBack();
+      }),
+    );
+  } else if (moduleKey === 'vocabulary') {
+    root.appendChild(
+      buildVocabularyActivity(lesson, () => {
+        saveModuleComplete(lesson.lesson_id, 'vocabulary');
+        onBack();
+      }),
+    );
+  } else if (moduleKey === 'sentence_practice') {
+    root.appendChild(
+      buildSentencePracticeActivity(lesson, () => {
+        saveModuleComplete(lesson.lesson_id, 'sentence_practice');
         onBack();
       }),
     );
