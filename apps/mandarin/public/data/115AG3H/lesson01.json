@@ -8,12 +8,12 @@
   },
   "unit": {
     "no": 1,
-    "title": "第一單元"
+    "title": "TODO: 單元名稱待補"
   },
   "lesson_no": 1,
   "title": "時間是什麼",
   "author": "",
-  "blurb": "認識生活中「時間」的各種比喻與感受，練習描寫時間的快與慢。",
+  "blurb": "TODO: 課次簡介待教師撰寫",
   "characters": [
     {
       "char": "待",
@@ -262,7 +262,10 @@
       "explanation": "「待」讀作 ㄉㄞˋ（來源：教育部教育百科）。",
       "level": "basic",
       "status": "ready",
-      "source": "derived:pedia"
+      "source": "derived:pedia",
+      "hints": [
+        "先念念看聲母，再想想韻母，不要急著選。"
+      ]
     },
     {
       "id": "q02",
@@ -277,7 +280,10 @@
       "explanation": "「蝸」讀作 ㄍㄨㄚ（來源：教育部教育百科）。",
       "level": "basic",
       "status": "ready",
-      "source": "derived:pedia"
+      "source": "derived:pedia",
+      "hints": [
+        "先念念看聲母，再想想韻母，不要急著選。"
+      ]
     },
     {
       "id": "q03",
@@ -292,7 +298,10 @@
       "explanation": "「牛」讀作 ㄋㄧㄡˊ（來源：教育部教育百科）。",
       "level": "basic",
       "status": "ready",
-      "source": "derived:pedia"
+      "source": "derived:pedia",
+      "hints": [
+        "先念念看聲母，再想想韻母，不要急著選。"
+      ]
     },
     {
       "id": "q04",
@@ -307,7 +316,10 @@
       "explanation": "「牠」讀作 ㄊㄚ（來源：教育部教育百科）。",
       "level": "basic",
       "status": "ready",
-      "source": "derived:pedia"
+      "source": "derived:pedia",
+      "hints": [
+        "先念念看聲母，再想想韻母，不要急著選。"
+      ]
     },
     {
       "id": "q05",
@@ -322,7 +334,10 @@
       "explanation": "「吞」讀作 ㄊㄨㄣ（來源：教育部教育百科）。",
       "level": "basic",
       "status": "ready",
-      "source": "derived:pedia"
+      "source": "derived:pedia",
+      "hints": [
+        "先念念看聲母，再想想韻母，不要急著選。"
+      ]
     },
     {
       "id": "m01",
@@ -342,16 +357,16 @@
           "right": "牛"
         },
         {
-          "left": "牠",
-          "right": "牛"
-        },
-        {
           "left": "吞",
           "right": "口"
         },
         {
           "left": "寸",
           "right": "寸"
+        },
+        {
+          "left": "碌",
+          "right": "石"
         }
       ],
       "level": "basic",

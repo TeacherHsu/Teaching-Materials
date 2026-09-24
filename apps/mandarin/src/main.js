@@ -45,7 +45,7 @@ async function loadLesson(lessonId) {
 
 function renderHeader() {
   const header = h('header', { class: 'app-header' }, [
-    h('a', { href: '#/', style: 'font-weight:700;font-size:20px;text-decoration:none;color:var(--text-primary)' }, '國語課文樂園'),
+    h('a', { href: '#/', class: 'app-header__brand' }, '國語課文樂園'),
   ]);
   return header;
 }
