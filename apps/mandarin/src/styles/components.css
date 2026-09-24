@@ -1,0 +1,382 @@
+/* ---- 版面 ---- */
+.app-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.breadcrumb {
+  font-size: var(--font-size-meta);
+  color: var(--text-secondary);
+}
+
+.breadcrumb a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:focus-visible {
+  text-decoration: underline;
+}
+
+/* ---- 卡片牆（首頁／年級／單元／課次） ---- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.nav-card {
+  display: block;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  min-height: var(--tap-target-min);
+}
+
+.nav-card:hover,
+.nav-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-raised);
+}
+
+.nav-card__title {
+  font-size: var(--font-size-section);
+  margin: 0 0 var(--space-1);
+}
+
+.nav-card__meta {
+  font-size: var(--font-size-meta);
+  color: var(--text-secondary);
+}
+
+/* ---- 按鈕 ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  border: none;
+  background: var(--color-primary);
+  color: var(--text-on-primary);
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: var(--color-primary-hover);
+}
+
+.btn--secondary {
+  background: var(--color-surface);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn--accent {
+  background: var(--color-accent);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---- Lesson Dashboard 模組卡 ---- */
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.module-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.module-card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-size-meta);
+  padding: 4px 10px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.module-card__status--done {
+  background: #e4f3ea;
+  color: var(--color-success);
+}
+
+.module-card__status--available {
+  background: #eef1f6;
+  color: var(--color-primary);
+}
+
+.module-card__status--missing {
+  background: #f6ece4;
+  color: var(--color-accent);
+}
+
+/* ---- CharacterCard ---- */
+.character-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  text-align: center;
+  box-shadow: var(--shadow-card);
+}
+
+.character-card__glyph {
+  font-size: 96px;
+  line-height: 1;
+  margin: var(--space-2) 0;
+}
+
+.character-card__zhuyin {
+  font-size: var(--font-size-section);
+  color: var(--color-secondary);
+}
+
+.character-card__meta-row {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+  font-size: var(--font-size-meta);
+  color: var(--text-secondary);
+}
+
+.character-card__type-badge {
+  display: inline-block;
+  margin-top: var(--space-1);
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--color-surface-muted);
+  font-size: var(--font-size-meta);
+}
+
+/* ---- VocabularyCard ---- */
+.vocabulary-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-card);
+}
+
+/* ---- AudioButton ---- */
+.audio-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-surface-muted);
+  color: var(--text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-1) var(--space-3);
+}
+
+.audio-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---- ChoiceQuiz ---- */
+.quiz-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-card);
+}
+
+.quiz-stem {
+  font-size: var(--font-size-section);
+  margin-bottom: var(--space-3);
+}
+
+.quiz-options {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.quiz-option {
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: var(--font-size-button);
+}
+
+.quiz-option[aria-pressed="true"] {
+  border-color: var(--color-primary);
+  background: var(--color-surface-muted);
+}
+
+.quiz-option--correct {
+  border-color: var(--color-success);
+  background: #e4f3ea;
+}
+
+.quiz-option--incorrect {
+  border-color: var(--color-danger);
+  background: #fbe9e7;
+}
+
+/* ---- ProgressIndicator ---- */
+.progress-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-meta);
+  color: var(--text-secondary);
+}
+
+.progress-indicator__bar {
+  flex: 1;
+  height: 10px;
+  background: var(--color-surface-muted);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-indicator__fill {
+  height: 100%;
+  background: var(--color-primary);
+}
+
+/* ---- HintPanel ---- */
+.hint-panel {
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  background: #fff8ec;
+  border: 1px solid var(--color-warning);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-body);
+}
+
+/* ---- CompletionFeedback ---- */
+.completion-feedback {
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  background: #e4f3ea;
+  color: var(--color-success);
+}
+
+/* ---- MatchingGame ---- */
+.matching-game {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.matching-column {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.matching-item {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: var(--font-size-button);
+}
+
+.matching-item[aria-pressed="true"] {
+  border-color: var(--color-secondary);
+  background: var(--color-surface-muted);
+}
+
+.matching-item--matched {
+  border-color: var(--color-success);
+  background: #e4f3ea;
+}
+
+@media (max-width: 640px) {
+  .matching-game {
+    grid-template-columns: 1fr;
+  }
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ---- SentenceOrdering / SentenceBuilder ---- */
+.sentence-slots,
+.sentence-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.sentence-chip {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: var(--font-size-button);
+}
+
+.sentence-chip[aria-pressed="true"] {
+  border-color: var(--color-primary);
+}
+
+/* ---- 待補教材提示 ---- */
+.missing-content {
+  padding: var(--space-4);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* ---- 圖片容器：缺圖不塌陷 ---- */
+.image-frame {
+  aspect-ratio: 4 / 3;
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-frame__placeholder {
+  color: var(--text-secondary);
+  font-size: var(--font-size-meta);
+}

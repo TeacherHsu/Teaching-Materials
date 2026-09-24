@@ -1,0 +1,59 @@
+/*
+  Design tokens — 全新設計系統，不沿用參考站 xiulin-mandarin-2026 的
+  emerald 綠 / amber 米黃配色。目標：warm off-white 底、calm primary、
+  限量 accent，大字大間距，中高年級（含 ADHD／閱讀困難／學障）友善。
+*/
+:root {
+  /* 色彩：主色為沉靜的靛藍青（非 emerald），輔以暖陶土 accent（非 amber） */
+  --color-primary: #3a5a7a;
+  --color-primary-hover: #2e4a64;
+  --color-secondary: #6b5b95;
+  --color-accent: #c96f4a;
+  --color-success: #2f7a4f;
+  --color-warning: #b8860b;
+  --color-danger: #c0392b;
+
+  --color-background: #faf7f2; /* warm off-white，不是純白 */
+  --color-surface: #ffffff;
+  --color-surface-muted: #f1ece3;
+  --color-border: #ded5c6;
+
+  --text-primary: #2b2823;
+  --text-secondary: #5c574e;
+  --text-on-primary: #ffffff;
+
+  /* Typography（依需求下限設定，行高皆 >=1.5） */
+  --font-family-base: -apple-system, BlinkMacSystemFont, "PingFang TC",
+    "Microsoft JhengHei", "Heiti TC", system-ui, sans-serif;
+
+  --font-size-page-title: clamp(32px, 4vw, 40px);
+  --font-size-section: clamp(26px, 3vw, 32px);
+  --font-size-body: clamp(22px, 2.4vw, 28px);
+  --font-size-button: clamp(20px, 2.2vw, 24px);
+  --font-size-meta: 18px;
+
+  --line-height-tight: 1.5;
+  --line-height-loose: 1.7;
+
+  /* Spacing（8px 基準，寬鬆間距） */
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+
+  /* Radius / Shadow */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --shadow-card: 0 2px 8px rgba(43, 40, 35, 0.08);
+  --shadow-raised: 0 6px 20px rgba(43, 40, 35, 0.12);
+
+  /* 觸控目標下限 */
+  --tap-target-min: 44px;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* 目前不主動切換深色，僅保留 hook；教室投影以淺色為主 */
+}
