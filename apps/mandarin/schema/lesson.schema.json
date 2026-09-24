@@ -1,0 +1,160 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "國語課文樂園 — 單課資料契約 v1",
+  "description": "沿用 sped-os lesson-park 的欄位精神（level／type／source 標註、不放課文全文）。executed by scripts/validate-data.mjs。",
+  "type": "object",
+  "required": ["lesson_id", "volume", "unit", "lesson_no", "title", "blurb", "modules"],
+  "additionalProperties": true,
+  "properties": {
+    "lesson_id": {
+      "type": "string",
+      "pattern": "^\\d{3}[AB]G[1-6][HK]\\d{2}$"
+    },
+    "volume": {
+      "type": "object",
+      "required": ["code", "publisher", "grade", "term"],
+      "properties": {
+        "code": { "type": "string", "pattern": "^\\d{3}[AB]G[1-6][HK]$" },
+        "publisher": { "type": "string", "enum": ["翰林", "康軒", "南一"] },
+        "grade": { "type": "integer", "minimum": 1, "maximum": 6 },
+        "term": { "type": "string", "enum": ["上", "下"] }
+      }
+    },
+    "unit": {
+      "type": "object",
+      "required": ["no", "title"],
+      "properties": {
+        "no": { "type": "integer", "minimum": 1 },
+        "title": { "type": "string", "minLength": 1, "maxLength": 30 }
+      }
+    },
+    "lesson_no": { "type": "integer", "minimum": 1, "maximum": 99 },
+    "title": { "type": "string", "minLength": 1, "maxLength": 30 },
+    "author": { "type": "string", "maxLength": 20 },
+    "blurb": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "description": "課次卡片介紹，自行撰寫，不得摘錄課文原文"
+    },
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["char", "zhuyin", "stroke_count", "radical", "type", "level", "source"],
+        "properties": {
+          "char": { "type": "string", "minLength": 1, "maxLength": 1 },
+          "zhuyin": { "type": "string", "minLength": 1 },
+          "stroke_count": { "type": "integer", "minimum": 1, "maximum": 40 },
+          "radical": { "type": "string", "minLength": 1, "maxLength": 1 },
+          "type": { "type": "string", "enum": ["習寫字", "認讀字"] },
+          "level": { "type": "string", "enum": ["basic", "challenge"] },
+          "examples": {
+            "type": ["array", "null"],
+            "items": { "type": "string" }
+          },
+          "image": { "type": ["string", "null"] },
+          "audio_override": { "type": ["string", "null"] },
+          "pedia_url": { "type": "string" },
+          "source": { "type": "string" },
+          "status": { "type": "string", "enum": ["ready", "todo"] }
+        }
+      }
+    },
+    "words": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["word", "status", "source"],
+        "properties": {
+          "word": { "type": "string", "minLength": 1, "maxLength": 8 },
+          "zhuyin": { "type": ["string", "null"] },
+          "meaning": { "type": ["string", "null"] },
+          "example_sentence": { "type": ["string", "null"] },
+          "level": { "type": "string", "enum": ["basic", "challenge"] },
+          "image": { "type": ["string", "null"] },
+          "status": { "type": "string", "enum": ["ready", "todo"] },
+          "source": { "type": "string" }
+        }
+      }
+    },
+    "sentences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["pattern", "status", "source"],
+        "properties": {
+          "pattern": { "type": "string" },
+          "examples": { "type": "array", "items": { "type": "string" } },
+          "blanks": { "type": "array", "items": { "type": "string" } },
+          "level": { "type": "string", "enum": ["basic", "challenge"] },
+          "status": { "type": "string", "enum": ["ready", "todo"] },
+          "source": { "type": "string" }
+        }
+      }
+    },
+    "quiz": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "stem", "status", "source"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string", "enum": ["choice", "matching"] },
+          "stem": { "type": "string" },
+          "options": { "type": "array", "items": { "type": "string" } },
+          "answer": {},
+          "explanation": { "type": ["string", "null"] },
+          "pairs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "left": { "type": "string" },
+                "right": { "type": "string" }
+              }
+            }
+          },
+          "level": { "type": "string", "enum": ["basic", "challenge"] },
+          "status": { "type": "string", "enum": ["ready", "todo"] },
+          "source": {
+            "type": "string",
+            "description": "例如 derived:pedia（由已查證的教育百科資料機械生成）"
+          }
+        }
+      }
+    },
+    "modules": {
+      "type": "object",
+      "description": "Lesson Dashboard 六個模組的狀態與對應資料鍵，data-driven，不 hard-code 元件內容",
+      "required": [
+        "characters",
+        "vocabulary",
+        "reading",
+        "sentence_practice",
+        "challenge",
+        "application"
+      ],
+      "properties": {
+        "characters": { "$ref": "#/definitions/moduleEntry" },
+        "vocabulary": { "$ref": "#/definitions/moduleEntry" },
+        "reading": { "$ref": "#/definitions/moduleEntry" },
+        "sentence_practice": { "$ref": "#/definitions/moduleEntry" },
+        "challenge": { "$ref": "#/definitions/moduleEntry" },
+        "application": { "$ref": "#/definitions/moduleEntry" }
+      }
+    }
+  },
+  "definitions": {
+    "moduleEntry": {
+      "type": "object",
+      "required": ["label", "status"],
+      "properties": {
+        "label": { "type": "string" },
+        "status": { "type": "string", "enum": ["available", "missing"] },
+        "activity": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    }
+  }
+}

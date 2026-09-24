@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-background);
+  color: var(--text-primary);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-loose);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: var(--font-size-page-title);
+  line-height: var(--line-height-tight);
+  margin: 0 0 var(--space-3);
+}
+
+h2 {
+  font-size: var(--font-size-section);
+  line-height: var(--line-height-tight);
+  margin: 0 0 var(--space-2);
+}
+
+p,
+li {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-loose);
+}
+
+small,
+.meta {
+  font-size: var(--font-size-meta);
+  color: var(--text-secondary);
+}
+
+button {
+  font-family: inherit;
+  font-size: var(--font-size-button);
+  min-height: var(--tap-target-min);
+  min-width: var(--tap-target-min);
+  cursor: pointer;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+/* 可見 focus ring，鍵盤操作必須看得到焦點在哪 */
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* prefers-reduced-motion：關閉非必要動畫 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--space-4);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

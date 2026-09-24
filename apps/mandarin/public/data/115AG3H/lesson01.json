@@ -1,0 +1,394 @@
+{
+  "lesson_id": "115AG3H01",
+  "volume": {
+    "code": "115AG3H",
+    "publisher": "翰林",
+    "grade": 3,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "第一單元"
+  },
+  "lesson_no": 1,
+  "title": "時間是什麼",
+  "author": "",
+  "blurb": "認識生活中「時間」的各種比喻與感受，練習描寫時間的快與慢。",
+  "characters": [
+    {
+      "char": "待",
+      "zhuyin": "ㄉㄞˋ",
+      "stroke_count": 9,
+      "radical": "彳",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": "assets/115AG3H/lesson01/characters/待.webp",
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=待",
+      "source": "sped-os/30-materials/interactive/lesson-park/reference/115AG3H-pedia.json（教育部教育百科生字詞彙表）",
+      "status": "ready"
+    },
+    {
+      "char": "蝸",
+      "zhuyin": "ㄍㄨㄚ",
+      "stroke_count": 15,
+      "radical": "虫",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=蝸",
+      "source": "sped-os/30-materials/interactive/lesson-park/reference/115AG3H-pedia.json（教育部教育百科生字詞彙表）",
+      "status": "ready"
+    },
+    {
+      "char": "牛",
+      "zhuyin": "ㄋㄧㄡˊ",
+      "stroke_count": 4,
+      "radical": "牛",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=牛",
+      "source": "sped-os/30-materials/interactive/lesson-park/reference/115AG3H-pedia.json（教育部教育百科生字詞彙表）",
+      "status": "ready"
+    },
+    {
+      "char": "牠",
+      "zhuyin": "ㄊㄚ",
+      "stroke_count": 7,
+      "radical": "牛",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=牠",
+      "source": "sped-os/30-materials/interactive/lesson-park/reference/115AG3H-pedia.json（教育部教育百科生字詞彙表）",
+      "status": "ready"
+    },
+    {
+      "char": "吞",
+      "zhuyin": "ㄊㄨㄣ",
+      "stroke_count": 7,
+      "radical": "口",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=吞",
+      "source": "sped-os/30-materials/interactive/lesson-park/reference/115AG3H-pedia.json（教育部教育百科生字詞彙表）",
+      "status": "ready"
+    },
+    {
+      "char": "寸",
+      "zhuyin": "ㄘㄨㄣˋ",
+      "stroke_count": 3,
+      "radical": "寸",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=寸",
+      "source": "sped-os/30-materials/interactive/lesson-park/reference/115AG3H-pedia.json（教育部教育百科生字詞彙表）",
+      "status": "ready"
+    },
+    {
+      "char": "碌",
+      "zhuyin": "ㄌㄨˋ",
+      "stroke_count": 13,
+      "radical": "石",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=碌",
+      "source": "sped-os/30-materials/interactive/lesson-park/reference/115AG3H-pedia.json（教育部教育百科生字詞彙表）",
+      "status": "ready"
+    },
+    {
+      "char": "奔",
+      "zhuyin": "ㄅㄣ",
+      "stroke_count": 8,
+      "radical": "大",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=奔",
+      "source": "sped-os/30-materials/interactive/lesson-park/reference/115AG3H-pedia.json（教育部教育百科生字詞彙表）",
+      "status": "ready"
+    },
+    {
+      "char": "彈",
+      "zhuyin": "ㄉㄢˋ",
+      "stroke_count": 15,
+      "radical": "弓",
+      "type": "習寫字",
+      "level": "challenge",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=彈",
+      "source": "sped-os/30-materials/interactive/lesson-park/reference/115AG3H-pedia.json（教育部教育百科生字詞彙表）",
+      "status": "ready"
+    },
+    {
+      "char": "簧",
+      "zhuyin": "ㄏㄨㄤˊ",
+      "stroke_count": 18,
+      "radical": "竹",
+      "type": "習寫字",
+      "level": "challenge",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=簧",
+      "source": "sped-os/30-materials/interactive/lesson-park/reference/115AG3H-pedia.json（教育部教育百科生字詞彙表）",
+      "status": "ready"
+    },
+    {
+      "char": "它",
+      "zhuyin": "ㄊㄚ",
+      "stroke_count": 5,
+      "radical": "宀",
+      "type": "習寫字",
+      "level": "challenge",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=它",
+      "source": "sped-os/30-materials/interactive/lesson-park/reference/115AG3H-pedia.json（教育部教育百科生字詞彙表）",
+      "status": "ready"
+    },
+    {
+      "char": "短",
+      "zhuyin": "ㄉㄨㄢˇ",
+      "stroke_count": 12,
+      "radical": "矢",
+      "type": "習寫字",
+      "level": "challenge",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=短",
+      "source": "sped-os/30-materials/interactive/lesson-park/reference/115AG3H-pedia.json（教育部教育百科生字詞彙表）",
+      "status": "ready"
+    },
+    {
+      "char": "悲",
+      "zhuyin": "ㄅㄟ",
+      "stroke_count": 12,
+      "radical": "心",
+      "type": "習寫字",
+      "level": "challenge",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=悲",
+      "source": "sped-os/30-materials/interactive/lesson-park/reference/115AG3H-pedia.json（教育部教育百科生字詞彙表）",
+      "status": "ready"
+    },
+    {
+      "char": "流",
+      "zhuyin": "ㄌㄧㄡˊ",
+      "stroke_count": 9,
+      "radical": "水",
+      "type": "習寫字",
+      "level": "challenge",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=流",
+      "source": "sped-os/30-materials/interactive/lesson-park/reference/115AG3H-pedia.json（教育部教育百科生字詞彙表）",
+      "status": "ready"
+    },
+    {
+      "char": "永",
+      "zhuyin": "ㄩㄥˇ",
+      "stroke_count": 5,
+      "radical": "水",
+      "type": "習寫字",
+      "level": "challenge",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=永",
+      "source": "sped-os/30-materials/interactive/lesson-park/reference/115AG3H-pedia.json（教育部教育百科生字詞彙表）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "word": "TODO",
+      "zhuyin": null,
+      "meaning": null,
+      "example_sentence": null,
+      "level": "basic",
+      "image": null,
+      "status": "todo",
+      "source": "missing: 造詞需查證教育部辭典且 in_EDU 造詞表未取得授權確認，暫標待補"
+    }
+  ],
+  "sentences": [
+    {
+      "pattern": "TODO",
+      "examples": [],
+      "blanks": [],
+      "level": "basic",
+      "status": "todo",
+      "source": "missing: 句型練習需課文語句依據，第一期未取得可查證來源，暫標待補"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「待」的注音是？",
+      "options": [
+        "ㄉㄞˋ",
+        "ㄍㄨㄚ",
+        "ㄊㄨㄣ"
+      ],
+      "answer": "ㄉㄞˋ",
+      "explanation": "「待」讀作 ㄉㄞˋ（來源：教育部教育百科）。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:pedia"
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「蝸」的注音是？",
+      "options": [
+        "ㄌㄧㄡˊ",
+        "ㄍㄨㄚ",
+        "ㄊㄚ"
+      ],
+      "answer": "ㄍㄨㄚ",
+      "explanation": "「蝸」讀作 ㄍㄨㄚ（來源：教育部教育百科）。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:pedia"
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「牛」的注音是？",
+      "options": [
+        "ㄏㄨㄤˊ",
+        "ㄋㄧㄡˊ",
+        "ㄊㄚ"
+      ],
+      "answer": "ㄋㄧㄡˊ",
+      "explanation": "「牛」讀作 ㄋㄧㄡˊ（來源：教育部教育百科）。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:pedia"
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「牠」的注音是？",
+      "options": [
+        "ㄩㄥˇ",
+        "ㄉㄞˋ",
+        "ㄊㄚ"
+      ],
+      "answer": "ㄊㄚ",
+      "explanation": "「牠」讀作 ㄊㄚ（來源：教育部教育百科）。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:pedia"
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「吞」的注音是？",
+      "options": [
+        "ㄊㄚ",
+        "ㄉㄨㄢˇ",
+        "ㄊㄨㄣ"
+      ],
+      "answer": "ㄊㄨㄣ",
+      "explanation": "「吞」讀作 ㄊㄨㄣ（來源：教育部教育百科）。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:pedia"
+    },
+    {
+      "id": "m01",
+      "type": "matching",
+      "stem": "字 ↔ 部首配對",
+      "pairs": [
+        {
+          "left": "待",
+          "right": "彳"
+        },
+        {
+          "left": "蝸",
+          "right": "虫"
+        },
+        {
+          "left": "牛",
+          "right": "牛"
+        },
+        {
+          "left": "牠",
+          "right": "牛"
+        },
+        {
+          "left": "吞",
+          "right": "口"
+        },
+        {
+          "left": "寸",
+          "right": "寸"
+        }
+      ],
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:pedia"
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "missing",
+      "note": "教材待補：造詞來源尚待授權確認"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "missing",
+      "note": "教材待補：本專案不收錄課文全文（版權），此模組留待未來以摘要式活動設計"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "missing",
+      "note": "教材待補：句型範例尚未取得可查證來源"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "note": "教材待補：應用任務設計中"
+    }
+  }
+}

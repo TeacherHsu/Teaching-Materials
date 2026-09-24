@@ -1,0 +1,32 @@
+import { h } from '../utils/dom.js';
+import { AudioButton } from './AudioButton.js';
+import { ImageFrame } from './ImageFrame.js';
+
+/**
+ * @param {object} character 單一生字資料（見 schema/lesson.schema.json）
+ */
+export function CharacterCard(character) {
+  const { char, zhuyin, radical, stroke_count, type, examples, image, audio_override, pedia_url } = character;
+  const card = h('div', { class: 'character-card' }, [
+    h('span', { class: 'character-card__type-badge' }, type === '認讀字' ? '認讀字（只要會認）' : '習寫字'),
+    h('div', { class: 'character-card__glyph', 'aria-hidden': 'true' }, char),
+    h('div', { class: 'character-card__zhuyin' }, zhuyin),
+    AudioButton({ text: char, audioUrl: audio_override, label: '聽發音' }),
+    h('div', { class: 'character-card__meta-row' }, [
+      h('span', {}, `部首：${radical}`),
+      h('span', {}, `筆畫：${stroke_count}`),
+    ]),
+    image ? ImageFrame({ src: image, alt: `${char} 的插圖` }) : null,
+    examples && examples.length
+      ? h('p', { class: 'meta' }, `造詞：${examples.join('、')}`)
+      : h('p', { class: 'meta' }, '造詞：教材待補'),
+    pedia_url
+      ? h(
+          'a',
+          { href: pedia_url, target: '_blank', rel: 'noopener noreferrer', class: 'btn btn--secondary' },
+          '看筆順與完整解釋（教育百科，另開視窗）',
+        )
+      : null,
+  ]);
+  return card;
+}

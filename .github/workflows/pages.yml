@@ -1,0 +1,82 @@
+name: Deploy GitHub Pages
+
+# 這個 repo 原本是「main 分支 root」的 legacy Pages 模式：Chinese/、Math/、
+# Timer/、social-skills/、student-support/ 等既有靜態內容直接是網站根目錄。
+# 切到 Actions 部署後，必須保留這個行為——既有網址不能變。
+# 做法：把 repo 原有靜態內容（排除 apps/、.github、node_modules）整包複製到
+# _site/，再把 apps/mandarin 的 build 產物放進 _site/mandarin/。
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: apps/mandarin/package-lock.json
+
+      - name: Install mandarin app deps
+        working-directory: apps/mandarin
+        run: npm ci
+
+      - name: Validate lesson data
+        working-directory: apps/mandarin
+        run: npm run validate
+
+      - name: Build mandarin app
+        working-directory: apps/mandarin
+        run: npm run build
+
+      - name: Check dist for absolute paths / external resources
+        working-directory: apps/mandarin
+        run: npm run check-dist
+
+      - name: Assemble _site (legacy static content + mandarin build)
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          # 複製 repo 既有靜態內容，排除 apps/、.github、node_modules、_site 本身、.git
+          rsync -a \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='apps' \
+            --exclude='node_modules' \
+            --exclude='_site' \
+            ./ _site/
+          mkdir -p _site/mandarin
+          cp -r apps/mandarin/dist/* _site/mandarin/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
