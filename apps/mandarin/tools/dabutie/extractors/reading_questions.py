@@ -7,7 +7,7 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-from common import find_lesson_file, read_doc_via_textutil
+from common import find_lesson_file, read_doc_via_textutil, resolve_path
 
 Q_RE = re.compile(r"^(\d+)[.．]\s*(.+?)([推論提取比較詮釋][^\d]{2,4})\s*$")
 ANS_RE = re.compile(r"^︵(.+)︶\s*$")
@@ -37,7 +37,7 @@ def parse_text(text: str) -> list[dict]:
 
 
 def extract(src_dir: Path, lesson_no: int) -> dict:
-    folder = src_dir / "1.備課資料" / "15閱讀理解提問"
+    folder = resolve_path(src_dir, "1.備課資料", "15閱讀理解提問")
     path = find_lesson_file(folder, lesson_no, exts=(".doc", ".docx"))
     if path is None:
         return {"status": "missing", "source": str(folder), "items": []}

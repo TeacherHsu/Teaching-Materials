@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from common import lesson_cn, read_docx_tables
+from common import lesson_cn, read_docx_tables, resolve_path
 
 GRADE_CN = {1: "一", 2: "二", 3: "三", 4: "四", 5: "五", 6: "六"}
 
@@ -31,10 +31,12 @@ def pick_table(tables: list, grade: int, term: str) -> list | None:
 
 
 def extract(src_dir: Path, lesson_no: int, grade: int = 3, term: str = "上") -> dict:
-    path = src_dir / "1.備課資料" / "02各冊生字" / "115上翰林版生字.docx"
+    folder = resolve_path(src_dir, "1.備課資料", "02各冊生字")
+    path = folder / "115上翰林版生字.docx"
     if not path.exists():
-        # 容錯：資料夾名稱可能因版本不同微調，退而求其次掃一層找唯一 docx
-        cands = list((src_dir / "1.備課資料" / "02各冊生字").glob("*.docx"))
+        # 容錯：檔名可能因版本不同微調，退而求其次掃一層找唯一 docx
+        # （folder 本身已由 resolve_path 保證存在，找不到 docx 才是真的沒資料）
+        cands = list(folder.glob("*.docx"))
         if not cands:
             return {"status": "missing", "source": str(path), "basic_chars": [], "extended_chars": []}
         path = cands[0]

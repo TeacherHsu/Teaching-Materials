@@ -8,7 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "postbuild": "node scripts/filter-build-data.mjs",
+    "build:preview": "vite build --outDir dist-preview && MANDARIN_BUILD_PREVIEW=1 MANDARIN_DIST_DIR=dist-preview node scripts/filter-build-data.mjs",
     "preview": "vite preview",
+    "preview:draft": "vite preview --outDir dist-preview",
     "validate": "node scripts/validate-data.mjs",
     "check-dist": "node scripts/check-dist.mjs"
   },

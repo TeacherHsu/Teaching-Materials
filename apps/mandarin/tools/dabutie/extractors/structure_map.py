@@ -7,7 +7,7 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-from common import find_lesson_file, read_pdf_text
+from common import find_lesson_file, read_pdf_text, resolve_path
 
 ITEM_RE = re.compile(r"(\d+)[.．]\s*(.+)")
 
@@ -51,7 +51,7 @@ def parse_text(text: str, lesson_title: str = "") -> list[dict]:
 
 
 def extract(src_dir: Path, lesson_no: int, lesson_title: str = "") -> dict:
-    folder = src_dir / "1.備課資料" / "13課文結構表" / "PDF"
+    folder = resolve_path(src_dir, "1.備課資料", "13課文結構表", "PDF")
     path = find_lesson_file(folder, lesson_no, exts=(".pdf",))
     if path is None:
         return {"status": "missing", "source": str(folder), "items": []}

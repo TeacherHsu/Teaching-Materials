@@ -6,7 +6,7 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-from common import cn_to_int, read_doc_via_textutil
+from common import cn_to_int, read_doc_via_textutil, resolve_path
 
 LESSON_TAG_RE = re.compile(r"[（﹙]第(.+?)課[）﹚]\s*$")
 NUM_PREFIX_RE = re.compile(r"^\d+[.．]\s*")
@@ -46,7 +46,7 @@ def parse_text(text: str) -> list[dict]:
 
 
 def extract(src_dir: Path, lesson_no: int) -> dict:
-    folder = src_dir / "1.備課資料" / "09教冊句型總表"
+    folder = resolve_path(src_dir, "1.備課資料", "09教冊句型總表")
     cands = list(folder.glob("*.doc")) + list(folder.glob("*.docx"))
     if not cands:
         return {"status": "missing", "source": str(folder), "items": []}

@@ -7,7 +7,7 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-from common import read_docx_paragraphs
+from common import read_docx_paragraphs, resolve_path
 
 LESSON_HEAD_RE = re.compile(r"^第(.+?)課[　 ]*(.*)$")
 PARA_RE = re.compile(r"^第(.+?)段[：:]\s*(.*)$")
@@ -51,7 +51,7 @@ def parse_paragraphs(paragraphs: list[str], target_lesson_no: int) -> dict:
 
 
 def extract(src_dir: Path, lesson_no: int) -> dict:
-    folder = src_dir / "1.備課資料" / "12主旨、課文大意、段落大意"
+    folder = resolve_path(src_dir, "1.備課資料", "12主旨、課文大意、段落大意")
     cands = list(folder.glob("*.docx"))
     if not cands:
         return {"status": "missing", "source": str(folder), "theme": "", "gist": "", "paragraphs": []}
