@@ -17,6 +17,10 @@ export const ALLOWED_LINK_DOMAINS = [
   'xiaoxue.iis.sinica.edu.tw',
   'dict.variants.moe.edu.tw',
   'www.naer.edu.tw',
+  'gsyan888.blogspot.com',
+  'gsyan888.github.io',
+  'www.se365edu.com',
+  'stroke-order.learningweb.moe.edu.tw',
 ];
 
 /**
