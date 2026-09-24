@@ -261,6 +261,17 @@
       "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
     },
     {
+      "id": "word:115AG3H01:0124ae8c",
+      "word": "蝸牛",
+      "zhuyin": null,
+      "meaning": "動物名，外殼扁圓，頭有四個觸角，其中二個較長",
+      "example_sentence": null,
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
       "id": "word:115AG3H01:96a8623b",
       "word": "乳牛",
       "zhuyin": null,
@@ -430,6 +441,28 @@
       "word": "庸庸碌碌",
       "zhuyin": null,
       "meaning": "平凡無才能",
+      "example_sentence": null,
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "word:115AG3H01:6190ee0e",
+      "word": "狂奔",
+      "zhuyin": null,
+      "meaning": "快跑",
+      "example_sentence": null,
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "word:115AG3H01:1b840999",
+      "word": "奔跑",
+      "zhuyin": null,
+      "meaning": "快跑",
       "example_sentence": null,
       "level": "basic",
       "image": null,
@@ -710,6 +743,28 @@
       "image": null,
       "status": "ready",
       "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "word:115AG3H01:214cba61",
+      "word": "永遠",
+      "zhuyin": null,
+      "meaning": "恆久、久遠",
+      "example_sentence": null,
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "word:115AG3H01:012f1978",
+      "word": "永久",
+      "zhuyin": null,
+      "meaning": "恆久、久遠",
+      "example_sentence": null,
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
     }
   ],
   "word_meanings": [
@@ -741,12 +796,10 @@
       "strokes": "9／15",
       "senses": [
         {
-          "definition": "動物名，外殼扁圓，頭有四個觸角，其中二",
-          "examples": []
-        },
-        {
-          "definition": "個較長。例蝸牛",
-          "examples": []
+          "definition": "動物名，外殼扁圓，頭有四個觸角，其中二個較長",
+          "examples": [
+            "蝸牛"
+          ]
         }
       ],
       "status": "ready",
@@ -787,7 +840,7 @@
       "strokes": "3／7",
       "senses": [
         {
-          "definition": "專指動物的第三人稱代詞。例牠就是叔叔養的那隻小狗",
+          "definition": "專指動物的第三人稱代詞",
           "examples": []
         }
       ],
@@ -878,8 +931,11 @@
       "strokes": "5／8",
       "senses": [
         {
-          "definition": "快跑。例狂奔、奔跑",
-          "examples": []
+          "definition": "快跑",
+          "examples": [
+            "狂奔",
+            "奔跑"
+          ]
         }
       ],
       "status": "ready",
@@ -1059,8 +1115,11 @@
       "strokes": "1／5",
       "senses": [
         {
-          "definition": "恆久、久遠。例永遠、永久",
-          "examples": []
+          "definition": "恆久、久遠",
+          "examples": [
+            "永遠",
+            "永久"
+          ]
         }
       ],
       "status": "ready",
@@ -1438,30 +1497,6 @@
         "對待、照顧"
       ],
       "status": "draft",
-      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
-    },
-    {
-      "id": "polysemy:115AG3H01:蝸:0",
-      "char": "蝸",
-      "sentence": null,
-      "definition": "動物名，外殼扁圓，頭有四個觸角，其中二",
-      "options": [
-        "動物名，外殼扁圓，頭有四個觸角，其中二",
-        "個較長。例蝸牛"
-      ],
-      "status": "todo_rewrite",
-      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
-    },
-    {
-      "id": "polysemy:115AG3H01:蝸:1",
-      "char": "蝸",
-      "sentence": null,
-      "definition": "個較長。例蝸牛",
-      "options": [
-        "動物名，外殼扁圓，頭有四個觸角，其中二",
-        "個較長。例蝸牛"
-      ],
-      "status": "todo_rewrite",
       "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
     },
     {
