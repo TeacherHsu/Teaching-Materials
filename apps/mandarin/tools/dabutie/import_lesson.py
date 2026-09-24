@@ -233,8 +233,12 @@ def main():
     existing_rq_by_id = merge.index_existing(existing, "reading_questions")
     reading_questions = merge.build_reading_questions(raw["reading_questions"], lesson_id, existing_rq_by_id)
 
+    # ---- polysemy ----
+    existing_polysemy_by_id = merge.index_existing(existing, "polysemy")
+    polysemy = merge.build_polysemy(raw["word_meanings"], lesson_id, existing_polysemy_by_id)
+
     # ---- listening / review_words ----
-    listening = merge.build_listening(raw["listening"], lesson_id)
+    listening = merge.build_listening(raw["listening"], lesson_id, (existing or {}).get("listening", []))
     review_words = merge.build_review_words(raw["characters"], lesson_no)
 
     quiz = build_quiz(characters)
@@ -261,6 +265,7 @@ def main():
         "paragraph_summary": paragraph_summary,
         "main_idea": main_idea,
         "reading_questions": reading_questions,
+        "polysemy": polysemy,
         "listening": listening["items"],
         "review_words": review_words,
         "quiz": quiz,
@@ -274,7 +279,7 @@ def main():
                 "label": "我會應用", "status": "missing", "note": "教材待補：應用任務設計中",
             }),
             "idiom_builder": module_entry("生字變成語", "idiom-builder", len(idioms)),
-            "polysemy": module_entry("一字多義", "polysemy-quiz", len([r for r in word_meanings if len(r["senses"]) > 1])),
+            "polysemy": module_entry("一字多義", "polysemy-quiz", len(polysemy)),
             "structure_map": module_entry("課文地圖", "structure-map", len(paragraph_summary)),
             "listening": module_entry("聽聽看", "listening-quiz", len(listening["items"]),
                                        note="教材審核中：" + ("16聆聽練習無此課對應檔案（規格 §6 風險3）" if listening["status"] == "missing" else "結構未確認，待人工比對")),
@@ -311,8 +316,17 @@ def main():
             for q, it in zip(reading_questions, raw["reading_questions"].get("items", []))
         ],
         "rhetoric_examples": [
-            {"id": r["id"], "figure": r["figure"], "original_example": it.get("example")}
-            for r, it in zip(rhetoric, raw["rhetoric"].get("items", []))
+            {
+                "id": r["id"],
+                "figure": r["figure"],
+                # 一個修辭格在來源常有多句原文範例（見 build_rhetoric 去重說明），
+                # 全部列出供教師改寫時參考，不只取第一句。
+                "original_examples": [
+                    it.get("example") for it in raw["rhetoric"].get("items", [])
+                    if it.get("figure") == r["figure"]
+                ],
+            }
+            for r in rhetoric
         ],
     }
     write_json(work / "rewrite-queue" / f"lesson{lesson_no:02d}.json", rewrite_queue)

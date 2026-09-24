@@ -199,19 +199,35 @@ def build_sentence_patterns(phrase_raw: dict, sp_raw: dict, lesson_id: str, exis
 
 
 def build_rhetoric(rhetoric_raw: dict, lesson_id: str, existing_by_id: dict | None = None):
+    """一課同一修辭格在來源檔常有多個例句段落（見 11修辭總表反向歸課），
+    schema 只留一筆「結構事實」（figure/note）＋一個待改寫 example，
+    重複的原文段落只用來取 definition，不可各自產生一筆重複 id 的紀錄
+    （曾是重跑產生重複輸出的根因）：先依 figure 去重，僅取每個 figure
+    第一次出現的 definition。"""
     existing_by_id = existing_by_id or {}
-    out = []
+    by_figure: dict[str, str] = {}
+    order: list[str] = []
     for it in rhetoric_raw.get("items", []):
-        rid = stable_id(f"rhetoric:{lesson_id}", it.get("figure", ""))
+        figure = it.get("figure")
+        if not figure:
+            continue
+        if figure not in by_figure:
+            by_figure[figure] = it.get("definition", "")
+            order.append(figure)
+    out = []
+    for figure in order:
+        rid = stable_id(f"rhetoric:{lesson_id}", figure)
         existing = _preserved(existing_by_id, rid)
         entry = {
             "id": rid,
-            "figure": it.get("figure"),
-            "note": it.get("definition", ""),
+            "figure": figure,
+            "note": by_figure[figure],
             "example": existing.get("example") if existing else None,
             "status": existing["status"] if existing else "todo_rewrite",
             "source": rhetoric_raw.get("source", "dabutie:11修辭總表"),
         }
+        if existing and existing.get("child_note"):
+            entry["child_note"] = existing["child_note"]
         if existing and existing.get("review_note"):
             entry["review_note"] = existing["review_note"]
         out.append(entry)
@@ -281,10 +297,50 @@ def build_reading_questions(rq_raw: dict, lesson_id: str, existing_by_id: dict |
     return out
 
 
-def build_listening(listening_raw: dict, lesson_id: str):
+def build_polysemy(meaning_raw: dict, lesson_id: str, existing_by_id: dict | None = None):
+    """模組6 一字多義：word_meanings 中 ≥2 義項的生字，逐義項各留一筆待改寫的
+    原創生活句（sentence）。definition/options 為結構事實，每次重跑依當前
+    word_meanings 重新算；sentence（教師原創例句）與已核准的 status 需保留，
+    id 用「char:義項序」而非 hash，方便人工比對 rewrite 檔。"""
+    existing_by_id = existing_by_id or {}
+    out = []
+    for rec in meaning_raw.get("records", []):
+        senses = rec.get("senses", [])
+        if len(senses) < 2:
+            continue
+        char = rec["char"]
+        options = [s.get("definition", "") for s in senses]
+        for idx, sense in enumerate(senses):
+            pid = f"polysemy:{lesson_id}:{char}:{idx}"
+            existing = _preserved(existing_by_id, pid)
+            entry = {
+                "id": pid,
+                "char": char,
+                "sentence": existing.get("sentence") if existing else None,
+                "definition": sense.get("definition", ""),
+                "options": options,
+                "status": existing["status"] if existing else "todo_rewrite",
+                "source": meaning_raw.get("source", "dabutie:06字義分析"),
+            }
+            if existing and existing.get("review_note"):
+                entry["review_note"] = existing["review_note"]
+            out.append(entry)
+    return out
+
+
+def build_listening(listening_raw: dict, lesson_id: str, existing_items: list[dict] | None = None):
+    """16聆聽練習來源常無對應檔案（規格 §6 風險3）：此時 listening[] 完全依賴
+    教師以 rewrites 檔原創（apply_rewrites.py 會 upsert 進來），重跑匯入器
+    不可把既有 draft/approved 的聆聽題清空——保留既有清單中仍是
+    draft/approved/rejected 的項目。"""
+    existing_items = existing_items or []
+    preserved = [it for it in existing_items if isinstance(it, dict) and it.get("status") in PRESERVED_STATUSES]
+    status = listening_raw.get("status", "missing")
+    if preserved and status == "missing":
+        status = "todo"  # 有教師原創題目，不再顯示「完全無來源」
     return {
-        "items": [],
-        "status": listening_raw.get("status", "missing"),
+        "items": preserved,
+        "status": status,
         "source": listening_raw.get("source", "dabutie:16聆聽練習"),
     }
 
