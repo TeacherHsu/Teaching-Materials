@@ -39,6 +39,10 @@ function readyParagraphs(lesson) {
   return filterByStatus(lesson.paragraph_summary || []).filter((p) => p.summary);
 }
 
+function readyStructureParagraphs(lesson) {
+  return filterByStatus(lesson.paragraph_summary || []).filter((p) => p.summary && p.structure_role);
+}
+
 function readyReadingQuestions(lesson) {
   return filterByStatus(lesson.reading_questions || []).filter((q) => q.stem);
 }
@@ -111,7 +115,14 @@ export const MODULE_REGISTRY = [
       return readyPolysemy(lesson).length >= ROUND_MIN;
     },
   },
-  { key: 'structure_map', label: '課文地圖', implemented: false },
+  {
+    key: 'structure_map',
+    label: '課文地圖',
+    implemented: true,
+    ready(lesson) {
+      return readyStructureParagraphs(lesson).length >= ROUND_MIN;
+    },
+  },
   {
     key: 'listening',
     label: '聽聽看',
