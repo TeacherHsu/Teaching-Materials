@@ -8,6 +8,7 @@ import { buildSentencePracticeActivity } from '../activities/sentencePractice.js
 import { buildPolysemyActivity } from '../activities/polysemy.js';
 import { buildListeningActivity } from '../activities/listening.js';
 import { buildRhetoricActivity } from '../activities/rhetoric.js';
+import { buildReviewActivity } from '../activities/review.js';
 import { findModuleEntry, getModuleStatus } from '../activities/moduleRegistry.js';
 import { saveModuleComplete } from '../utils/storage.js';
 import { navigate } from '../router/router.js';
@@ -99,6 +100,13 @@ export function ModulePage(lesson, moduleKey) {
     root.appendChild(
       buildRhetoricActivity(lesson, () => {
         saveModuleComplete(lesson.lesson_id, 'rhetoric');
+        onBack();
+      }),
+    );
+  } else if (moduleKey === 'review') {
+    root.appendChild(
+      buildReviewActivity(lesson, () => {
+        saveModuleComplete(lesson.lesson_id, 'review');
         onBack();
       }),
     );

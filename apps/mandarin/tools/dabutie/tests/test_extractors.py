@@ -52,6 +52,24 @@ def test_word_meanings_long_example_goes_to_sentences_not_examples():
     assert senses[0]["sentences"]
 
 
+def test_word_meanings_wrapped_line_stays_one_sense():
+    # 合成 fixture 重現「蝸」的排版換行問題：只有一個義項的字，原文不編號
+    # （沒有「1.」），且該義項因欄寬不足被硬拆成兩段落，第二段沒有「數字.」
+    # 開頭，不該被誤判成第二個義項。
+    text = "動物名，外殼扁圓，頭上有觸角，其中二\n個較長。例蝸牛"
+    senses = parse_meaning_cell(text)
+    assert len(senses) == 1
+    assert senses[0]["definition"] == "動物名，外殼扁圓，頭上有觸角，其中二個較長"
+    assert senses[0]["examples"] == ["蝸牛"]
+
+
+def test_word_meanings_numbered_sense_still_splits_example():
+    text = "1.等候。例等待\n2.對待、照顧。例優待、款待"
+    senses = parse_meaning_cell(text)
+    assert senses[0] == {"definition": "等候", "examples": ["等待"], "sentences": []}
+    assert senses[1]["examples"] == ["優待", "款待"]
+
+
 def test_idioms_two_column_pdf_layout():
     lines = split_two_columns(
         "                              2.   一心一意：專心一意，形容做事專注。\n"

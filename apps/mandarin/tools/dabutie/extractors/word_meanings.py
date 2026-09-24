@@ -11,16 +11,31 @@ from pathlib import Path
 
 from common import find_lesson_file, read_docx_tables, resolve_path
 
-SENSE_RE = re.compile(r"^\s*\d+[.．]\s*(.+?)例(.+)$")
+# 開頭的「數字.」是選擇性的：只有一個義項的字，原文常常不編號
+# （例如「蝸」只有一義，儲存格直接寫「動物名……。例蝸牛」沒有「1.」）。
+SENSE_RE = re.compile(r"^\s*(?:\d+[.．]\s*)?(.+?)例(.+)$")
+NO_EXAMPLE_SENSE_RE = re.compile(r"^\s*(?:\d+[.．]\s*)?(.+)$")
+NEW_SENSE_LINE_RE = re.compile(r"^\d+[.．]")
+
+
+def _merge_wrapped_lines(text: str) -> list[str]:
+    """docx 儲存格內常因排版寬度不足，把同一個義項硬拆成兩行（無「數字.」開頭），
+    例如「……其中二」換行「個較長。例蝸牛」。只有以「數字.」開頭的行才算新義項，
+    其餘行一律併回上一行，避免同一義項被誤判成兩個。"""
+    lines = [ln for ln in (raw.strip() for raw in text.split("\n")) if ln]
+    merged: list[str] = []
+    for line in lines:
+        if NEW_SENSE_LINE_RE.match(line) or not merged:
+            merged.append(line)
+        else:
+            merged[-1] += line
+    return merged
 
 
 def parse_meaning_cell(text: str) -> list[dict]:
     """把「1.等候。例等待\\n2.對待、照顧。例優待、款待」拆成義項清單。"""
     senses = []
-    for line in text.split("\n"):
-        line = line.strip()
-        if not line:
-            continue
+    for line in _merge_wrapped_lines(text):
         m = SENSE_RE.match(line)
         if m:
             definition, examples_raw = m.groups()
@@ -35,8 +50,8 @@ def parse_meaning_cell(text: str) -> list[dict]:
                 "sentences": sentences,
             })
         else:
-            # 沒有「例」的義項（純定義）
-            m2 = re.match(r"^\s*\d+[.．]\s*(.+)$", line)
+            # 沒有「例」的義項（純定義，編號同樣是選擇性的）
+            m2 = NO_EXAMPLE_SENSE_RE.match(line)
             if m2:
                 senses.append({"definition": m2.group(1).strip("。"), "examples": [], "sentences": []})
             else:
