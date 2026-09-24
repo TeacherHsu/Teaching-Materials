@@ -46,11 +46,12 @@ export function buildVocabularyActivity(lesson, onBack) {
   const words = (lesson.words || []).filter((w) => w.status === 'ready' && w.word && w.meaning);
   const basicFirst = [...words].sort((a, b) => (wordLevel(a) === wordLevel(b) ? 0 : wordLevel(a) === 'basic' ? -1 : 1));
 
+  const flipRounds = chunkRounds(basicFirst, { min: 3, max: 5 });
   const matchingRounds = chunkRounds(basicFirst, { min: 3, max: 5 });
   const choiceRounds = chunkRounds(basicFirst, { min: 3, max: 5 }).map((round) => round.map((w) => buildChoiceItem(w, words)));
 
   const steps = [];
-  if (words.length > 0) steps.push('flip');
+  if (flipRounds.length > 0) steps.push('flip');
   if (matchingRounds.length > 0) steps.push('matching');
   if (choiceRounds.length > 0) steps.push('choice');
 
@@ -69,13 +70,26 @@ export function buildVocabularyActivity(lesson, onBack) {
     const stepLabel = `第 ${stepIndex + 1} 步／共 ${steps.length} 步`;
 
     if (step === 'flip') {
-      container.appendChild(TaskBanner({ label: '翻卡認識語詞：點卡片可以翻面看意思', step: stepLabel }));
+      const isLastRound = roundIndex === flipRounds.length - 1;
+      container.appendChild(
+        TaskBanner({
+          label: '翻卡認識語詞：點卡片可以翻面看意思',
+          step: `${stepLabel} ・ 第 ${roundIndex + 1} 組／共 ${flipRounds.length} 組`,
+        }),
+      );
       const grid = h('div', { class: 'card-grid' });
-      for (const w of basicFirst) grid.appendChild(VocabularyCard(w));
+      for (const w of flipRounds[roundIndex]) grid.appendChild(VocabularyCard(w));
       container.appendChild(grid);
-      const nextBtn = h('button', { class: 'btn', type: 'button', style: 'margin-top:16px' }, isLastStep ? '完成' : '繼續：詞義配對');
+      const nextBtn = h(
+        'button',
+        { class: 'btn', type: 'button', style: 'margin-top:16px' },
+        isLastRound ? (isLastStep ? '完成' : '繼續：詞義配對') : '下一組',
+      );
       nextBtn.addEventListener('click', () => {
-        if (isLastStep) {
+        if (!isLastRound) {
+          roundIndex += 1;
+          renderStep();
+        } else if (isLastStep) {
           onBack();
         } else {
           stepIndex += 1;
