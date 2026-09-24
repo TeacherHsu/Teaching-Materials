@@ -129,6 +129,46 @@
         }
       }
     },
+    "word_meanings": {
+      "type": "array",
+      "description": "v2 新增：06字義分析逐字義項，原文照登（版權表允許）"
+    },
+    "idioms": {
+      "type": "array",
+      "description": "v2 新增：07生字延伸成語，成語與定義可公開"
+    },
+    "idiom_sentences": {
+      "type": "array",
+      "description": "v2 新增：成語例句，需改寫，落地為 status:todo_rewrite 佔位"
+    },
+    "sentence_patterns": {
+      "type": "array",
+      "description": "v2 新增：08短語句型練習＋09句型總表(反向歸課)"
+    },
+    "rhetoric": {
+      "type": "array",
+      "description": "v2 新增：11修辭總表(反向歸課)"
+    },
+    "paragraph_summary": {
+      "type": "array",
+      "description": "v2 新增：12段落大意＋13課文結構表"
+    },
+    "main_idea": {
+      "type": "object",
+      "description": "v2 新增：12主旨/課文大意"
+    },
+    "reading_questions": {
+      "type": "array",
+      "description": "v2 新增：15閱讀理解提問"
+    },
+    "listening": {
+      "type": "array",
+      "description": "v2 新增：16聆聽練習（若可抽取，否則 todo）"
+    },
+    "review_words": {
+      "type": "object",
+      "description": "v2 新增：04生字累計表，跨課字彙索引"
+    },
     "modules": {
       "type": "object",
       "description": "Lesson Dashboard 六個模組的狀態與對應資料鍵，data-driven，不 hard-code 元件內容",
