@@ -43,6 +43,18 @@ function readyReadingQuestions(lesson) {
   return filterByStatus(lesson.reading_questions || []).filter((q) => q.stem);
 }
 
+function readyPolysemy(lesson) {
+  return filterByStatus(lesson.polysemy || []).filter((p) => p.sentence && p.definition);
+}
+
+function readyListening(lesson) {
+  return filterByStatus(lesson.listening || []).filter((l) => l.stem && l.question);
+}
+
+function readyRhetoric(lesson) {
+  return filterByStatus(lesson.rhetoric || []).filter((r) => r.example && r.figure);
+}
+
 /**
  * 10 大項模組，依 Dashboard 顯示順序排列。
  * implemented=false 的項目一律「即將推出」，不看資料。
@@ -91,10 +103,31 @@ export const MODULE_REGISTRY = [
       return readyParagraphs(lesson).length >= ROUND_MIN || readyReadingQuestions(lesson).length >= 1;
     },
   },
-  { key: 'polysemy', label: '一字多義', implemented: false },
+  {
+    key: 'polysemy',
+    label: '一字多義',
+    implemented: true,
+    ready(lesson) {
+      return readyPolysemy(lesson).length >= ROUND_MIN;
+    },
+  },
   { key: 'structure_map', label: '課文地圖', implemented: false },
-  { key: 'listening', label: '聽聽看', implemented: false },
-  { key: 'rhetoric', label: '修辭小偵探', implemented: false },
+  {
+    key: 'listening',
+    label: '聽聽看',
+    implemented: true,
+    ready(lesson) {
+      return readyListening(lesson).length >= ROUND_MIN;
+    },
+  },
+  {
+    key: 'rhetoric',
+    label: '修辭小偵探',
+    implemented: true,
+    ready(lesson) {
+      return readyRhetoric(lesson).length >= ROUND_MIN;
+    },
+  },
   {
     key: 'review',
     label: '舊字新詞',

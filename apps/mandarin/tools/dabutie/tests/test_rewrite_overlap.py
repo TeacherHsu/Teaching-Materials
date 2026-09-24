@@ -71,6 +71,13 @@ def _iter_pairs():
         if oq.get("answer_hint_original"):
             yield (f"reading_question.answer_hint:{q['id']}", q["answer_hint"], oq["answer_hint_original"])
 
+    # 修辭例句（模組 9）：11修辭總表反向歸課的原例句節錄（若有取得）與改寫比對。
+    orig_rhet = {r["id"]: r["original"] for r in queue.get("rhetoric_examples", [])}
+    for r in rewrites.get("rhetoric", []):
+        orig = orig_rhet.get(r["id"])
+        if orig:
+            yield (f"rhetoric:{r['id']}", r["example"], orig)
+
 
 @pytest.mark.skipif(not QUEUE_FILE.exists() or not REWRITES_FILE.exists(), reason="work 目錄改寫檔不存在，跳過")
 def test_no_long_verbatim_overlap():
