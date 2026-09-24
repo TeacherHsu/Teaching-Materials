@@ -268,6 +268,9 @@ def main():
         "polysemy": polysemy,
         "listening": listening["items"],
         "review_words": review_words,
+        # 延伸練習連結非大補帖抽取來源，由 apply_extensions.py 另外維護；
+        # 重跑本匯入器時原樣保留既有內容（含教師的 approved/rejected 決定）。
+        "extensions": (existing or {}).get("extensions", []),
         "quiz": quiz,
         "modules": {
             "characters": module_entry("認識生字", "character-cards", len([c for c in characters if c["status"] == "ready"])),

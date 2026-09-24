@@ -4,6 +4,7 @@
 // 3. 部首分類（DragToSlot，同一組內部首不重複）
 import { h, clear } from '../utils/dom.js';
 import { CharacterCard } from '../components/CharacterCard.js';
+import { filterByStatus } from '../utils/preview.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { DragToSlot } from '../components/DragToSlot.js';
 import { TaskBanner } from '../components/TaskBanner.js';
@@ -125,8 +126,13 @@ export function buildCharactersActivity(lesson, onBack) {
 
     if (step === 'cards') {
       container.appendChild(TaskBanner({ label: '看看這一課的生字：點卡片上的按鈕可以聽發音', step: stepLabel }));
+      const originByChar = new Map(
+        filterByStatus(lesson.extensions || [])
+          .filter((e) => e.module === 'characters' && e.type === 'reading' && e.char)
+          .map((e) => [e.char, e]),
+      );
       const grid = h('div', { class: 'card-grid' });
-      for (const c of characters) grid.appendChild(CharacterCard(c));
+      for (const c of characters) grid.appendChild(CharacterCard(c, originByChar.get(c.char) || null));
       container.appendChild(grid);
       const nextBtn = h('button', { class: 'btn', type: 'button', style: 'margin-top:16px' }, isLastStep ? '完成' : '繼續：看字選音');
       nextBtn.addEventListener('click', () => {

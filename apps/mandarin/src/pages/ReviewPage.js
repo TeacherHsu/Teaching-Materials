@@ -121,6 +121,20 @@ const GROUPS = [
         }));
     },
   },
+  {
+    key: 'extensions',
+    title: '延伸練習連結',
+    items(lesson) {
+      return (lesson.extensions || [])
+        .filter((e) => e.status === 'draft')
+        .map((e) => ({
+          id: e.id,
+          content: e.title || '（無標題）',
+          link: e.url,
+          requirement: `提供者：${e.provider || '（無）'}／類型：${e.type || '（無）'}／對應：${e.module || '（無）'}${e.version_note ? `／版本：${e.version_note}` : ''}${e.login_required ? '／需登入' : ''}`,
+        }));
+    },
+  },
 ];
 
 export function ReviewPage(lesson) {
@@ -208,7 +222,13 @@ export function ReviewPage(lesson) {
       const current = decisions[it.id] || {};
       const card = h('div', { class: 'review-item' });
       card.appendChild(h('p', { class: 'review-item__requirement' }, it.requirement));
-      card.appendChild(h('p', { class: 'review-item__content' }, it.content));
+      card.appendChild(
+        it.link
+          ? h('p', { class: 'review-item__content' }, [
+              h('a', { href: it.link, target: '_blank', rel: 'noopener noreferrer' }, it.content),
+            ])
+          : h('p', { class: 'review-item__content' }, it.content),
+      );
 
       const approveBtn = h(
         'button',

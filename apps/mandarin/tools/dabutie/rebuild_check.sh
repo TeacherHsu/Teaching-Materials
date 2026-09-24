@@ -14,6 +14,7 @@ WORK="${3:-$HOME/mandarin-work/115AG3H}"
 LESSON_TAG=$(printf "lesson%02d" "$LESSON_NO")
 OUT="$APP_ROOT/public/data/115AG3H/${LESSON_TAG}.json"
 REWRITES="$WORK/rewrites/${LESSON_TAG}.json"
+EXTENSIONS="$WORK/extensions/${LESSON_TAG}.candidates.json"
 BACKUP=$(mktemp -t "${LESSON_TAG}.backup.XXXXXX.json")
 
 if [ ! -f "$OUT" ]; then
@@ -30,6 +31,15 @@ if [ -f "$REWRITES" ]; then
   python3 apply_rewrites.py "$REWRITES" "$OUT"
 else
   echo "[提醒] 找不到 $REWRITES，本次重建不含改寫內容。" >&2
+fi
+
+# extensions 非大補帖抽取來源，import_lesson.py 只能從既有輸出檔繼承；
+# 這裡 OUT 已被刪除重建，比照 REWRITES 的做法，從 work/extensions/ 候選檔
+# 重新套用一次，讓「延伸練習連結」也納入重跑安全驗證。
+if [ -f "$EXTENSIONS" ]; then
+  python3 apply_extensions.py "$EXTENSIONS" "$OUT"
+else
+  echo "[提醒] 找不到 $EXTENSIONS，本次重建不含延伸練習連結。" >&2
 fi
 
 python3 - "$BACKUP" "$OUT" <<'PY'

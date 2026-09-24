@@ -1,0 +1,33 @@
+[
+  {
+    "url": "https://wordwall.net/tc/resource/00000001/lesson01-characters",
+    "title": "生字選字遊戲",
+    "provider": "Wordwall",
+    "type": "game",
+    "module": "characters",
+    "version_note": "通用",
+    "login_required": false,
+    "note": "選字配對練習"
+  },
+  {
+    "url": "https://pedia.cloud.edu.tw/Entry/Detail?title=待",
+    "title": "「待」字的由來",
+    "provider": "教育百科",
+    "type": "reading",
+    "module": "characters",
+    "char": "待",
+    "version_note": "通用",
+    "login_required": false,
+    "note": "字源說明"
+  },
+  {
+    "url": "https://quizlet.com/tw/000000000/lesson01-vocab",
+    "title": "語詞小測驗",
+    "provider": "Quizlet",
+    "type": "quiz",
+    "module": "vocabulary",
+    "version_note": "通用",
+    "login_required": true,
+    "note": "需登入才能作答"
+  }
+]
