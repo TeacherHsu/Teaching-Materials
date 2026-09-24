@@ -3,6 +3,7 @@ import { HomePage } from './pages/HomePage.js';
 import { GradePage } from './pages/GradePage.js';
 import { LessonDashboard } from './pages/LessonDashboard.js';
 import { ModulePage } from './pages/ModulePage.js';
+import { ReviewPage } from './pages/ReviewPage.js';
 import { FixturesPage } from './pages/FixturesPage.js';
 import { h, clear } from './utils/dom.js';
 import { isPreview } from './utils/preview.js';
@@ -95,6 +96,21 @@ route(/^\/lesson\/(?<lessonId>[^/]+)\/module\/(?<moduleKey>[^/]+)$/, async ({ le
     return;
   }
   mount(ModulePage(lesson, moduleKey));
+});
+
+route(/^\/review\/(?<lessonId>[^/]+)$/, async ({ lessonId }) => {
+  if (!isPreview()) {
+    mount(
+      h('div', { class: 'container' }, h('div', { class: 'missing-content' }, '此頁僅供教師預覽（網址需帶 ?preview=1）。')),
+    );
+    return;
+  }
+  const lesson = await loadLesson(lessonId);
+  if (!lesson) {
+    mount(h('div', { class: 'container' }, h('div', { class: 'missing-content' }, '找不到這一課的資料。')));
+    return;
+  }
+  mount(ReviewPage(lesson));
 });
 
 route(/^\/fixtures$/, async () => {

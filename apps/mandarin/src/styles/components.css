@@ -507,3 +507,101 @@
   gap: var(--space-2);
   max-width: 480px;
 }
+
+/* ---- ReviewPage：#/review/<lesson_id> 待審頁（教師用，大字＋鍵盤可操作） ---- */
+.review-progress {
+  font-size: var(--font-size-section);
+  font-weight: 700;
+  color: var(--color-primary);
+  position: sticky;
+  top: 0;
+  background: var(--color-background);
+  padding: var(--space-2) 0;
+  z-index: 1;
+}
+
+.review-group {
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.review-group__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.review-group__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.review-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.review-item__requirement {
+  font-size: var(--font-size-meta);
+  color: var(--text-secondary);
+}
+
+.review-item__content {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-loose);
+  white-space: pre-wrap;
+}
+
+.review-item__actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.review-decision {
+  min-height: var(--tap-target-min);
+  min-width: 96px;
+}
+
+.review-decision--approved[aria-pressed='true'] {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: var(--text-on-primary);
+}
+
+.review-decision--rejected[aria-pressed='true'] {
+  background: var(--color-danger);
+  border-color: var(--color-danger);
+  color: var(--text-on-primary);
+}
+
+.review-item__note-label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: var(--font-size-meta);
+  color: var(--text-secondary);
+}
+
+.review-item__note {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-meta);
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  min-height: var(--tap-target-min);
+}
+
+.review-page__footer {
+  margin-top: var(--space-5);
+}
