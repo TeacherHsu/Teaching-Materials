@@ -8,11 +8,23 @@ from common import stable_id
 PEDIA_URL = "https://pedia.cloud.edu.tw/Entry/Detail?title={}"
 
 
+# draft 也要保留：改寫作業（REWRITE-GUIDE.md）把 status 設為 draft 等待教師審核，
+# 重跑匯入器不可把它打回 todo_rewrite 並清空已改寫的文字（規格 §3）。
+PRESERVED_STATUSES = ("draft", "approved", "rejected")
+
+
 def _existing_status(existing_by_id: dict, item_id: str, default: str):
     ent = existing_by_id.get(item_id)
-    if ent and ent.get("status") in ("approved", "rejected"):
+    if ent and ent.get("status") in PRESERVED_STATUSES:
         return ent["status"], ent.get("rewritten"), ent.get("review_note")
     return default, None, None
+
+
+def _preserved(existing_by_id: dict, item_id: str):
+    ent = existing_by_id.get(item_id)
+    if ent and ent.get("status") in PRESERVED_STATUSES:
+        return ent
+    return None
 
 
 def index_existing(existing_lesson: dict | None, key: str) -> dict:
@@ -144,9 +156,11 @@ def build_sentence_patterns(phrase_raw: dict, sp_raw: dict, lesson_id: str, exis
             pat_id = stable_id(f"sentence_pattern:{lesson_id}", section_name, structure or it.get("head", ""))
             examples_ids = []
             examples_status = "todo_rewrite"
+            examples = []
             existing_entry = existing_by_id.get(pat_id)
-            if existing_entry and existing_entry.get("status") in ("approved", "rejected"):
-                examples_status = existing_entry["status"]
+            if existing_entry and existing_entry.get("examples_status") in PRESERVED_STATUSES:
+                examples_status = existing_entry["examples_status"]
+                examples = existing_entry.get("examples") or []
             out.append({
                 "id": pat_id,
                 "category": section_name,
@@ -155,13 +169,19 @@ def build_sentence_patterns(phrase_raw: dict, sp_raw: dict, lesson_id: str, exis
                 "description": it.get("description", ""),
                 "guide": it.get("guide", ""),
                 "analysis": it.get("analysis", ""),
-                "examples": [],  # 待改寫，原文於 rewrite-queue
+                "examples": examples,  # 待改寫，原文於 rewrite-queue
                 "examples_status": examples_status,
                 "status": "ready",  # 結構/說明本身可公開
                 "source": phrase_raw.get("source", "dabutie:08各課短語句型練習"),
             })
     for it in sp_raw.get("items", []):
         pat_id = stable_id(f"sentence_pattern:{lesson_id}", "教冊句型總表", it.get("category", ""))
+        existing_entry = existing_by_id.get(pat_id)
+        examples_status = "todo_rewrite"
+        examples = []
+        if existing_entry and existing_entry.get("examples_status") in PRESERVED_STATUSES:
+            examples_status = existing_entry["examples_status"]
+            examples = existing_entry.get("examples") or []
         out.append({
             "id": pat_id,
             "category": "教冊句型總表",
@@ -170,48 +190,70 @@ def build_sentence_patterns(phrase_raw: dict, sp_raw: dict, lesson_id: str, exis
             "description": it.get("definition", ""),
             "guide": "",
             "analysis": "",
-            "examples": [],
-            "examples_status": "todo_rewrite",
+            "examples": examples,
+            "examples_status": examples_status,
             "status": "ready",
             "source": sp_raw.get("source", "dabutie:09教冊句型總表"),
         })
     return out
 
 
-def build_rhetoric(rhetoric_raw: dict, lesson_id: str):
+def build_rhetoric(rhetoric_raw: dict, lesson_id: str, existing_by_id: dict | None = None):
+    existing_by_id = existing_by_id or {}
     out = []
     for it in rhetoric_raw.get("items", []):
         rid = stable_id(f"rhetoric:{lesson_id}", it.get("figure", ""))
-        out.append({
+        existing = _preserved(existing_by_id, rid)
+        entry = {
             "id": rid,
             "figure": it.get("figure"),
             "note": it.get("definition", ""),
-            "example": None,
-            "status": "todo_rewrite",
+            "example": existing.get("example") if existing else None,
+            "status": existing["status"] if existing else "todo_rewrite",
             "source": rhetoric_raw.get("source", "dabutie:11修辭總表"),
-        })
+        }
+        if existing and existing.get("review_note"):
+            entry["review_note"] = existing["review_note"]
+        out.append(entry)
     return out
 
 
-def build_paragraph_summary(summary_raw: dict, structure_raw: dict, lesson_id: str):
+def build_paragraph_summary(summary_raw: dict, structure_raw: dict, lesson_id: str, existing_by_id: dict | None = None):
+    existing_by_id = existing_by_id or {}
     out = []
     role_by_para = {it["para_no"]: it["structure_role"] for it in structure_raw.get("items", [])}
     for p in summary_raw.get("paragraphs", []):
         pid = stable_id(f"paragraph_summary:{lesson_id}", str(p["para_no"]))
-        out.append({
+        existing = _preserved(existing_by_id, pid)
+        entry = {
             "id": pid,
             "para_no": p["para_no"],
-            "summary": None,
+            "summary": existing.get("summary") if existing else None,
             "structure_role": role_by_para.get(p["para_no"], ""),
-            "status": "todo_rewrite",
+            "status": existing["status"] if existing else "todo_rewrite",
             "source": summary_raw.get("source", "dabutie:12"),
-        })
+        }
+        if existing and existing.get("review_note"):
+            entry["review_note"] = existing["review_note"]
+        out.append(entry)
     return out
 
 
-def build_main_idea(summary_raw: dict, lesson_id: str):
+def build_main_idea(summary_raw: dict, lesson_id: str, existing_main_idea: dict | None = None):
+    mid = stable_id(f"main_idea:{lesson_id}")
+    if existing_main_idea and existing_main_idea.get("status") in PRESERVED_STATUSES and existing_main_idea.get("id") == mid:
+        entry = {
+            "id": mid,
+            "gist": existing_main_idea.get("gist"),
+            "theme": existing_main_idea.get("theme"),
+            "status": existing_main_idea["status"],
+            "source": summary_raw.get("source", "dabutie:12"),
+        }
+        if existing_main_idea.get("review_note"):
+            entry["review_note"] = existing_main_idea["review_note"]
+        return entry
     return {
-        "id": stable_id(f"main_idea:{lesson_id}"),
+        "id": mid,
         "gist": None,
         "theme": None,
         "status": "todo_rewrite",
@@ -219,18 +261,23 @@ def build_main_idea(summary_raw: dict, lesson_id: str):
     }
 
 
-def build_reading_questions(rq_raw: dict, lesson_id: str):
+def build_reading_questions(rq_raw: dict, lesson_id: str, existing_by_id: dict | None = None):
+    existing_by_id = existing_by_id or {}
     out = []
     for it in rq_raw.get("items", []):
         qid = stable_id(f"reading_question:{lesson_id}", str(it["no"]))
-        out.append({
+        existing = _preserved(existing_by_id, qid)
+        entry = {
             "id": qid,
-            "stem": None,
+            "stem": existing.get("stem") if existing else None,
             "strategy_tag": it.get("strategy_tag", ""),
-            "answer_hint": None,
-            "status": "todo_rewrite",
+            "answer_hint": existing.get("answer_hint") if existing else None,
+            "status": existing["status"] if existing else "todo_rewrite",
             "source": rq_raw.get("source", "dabutie:15閱讀理解提問"),
-        })
+        }
+        if existing and existing.get("review_note"):
+            entry["review_note"] = existing["review_note"]
+        out.append(entry)
     return out
 
 

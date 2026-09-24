@@ -1131,43 +1131,43 @@
     {
       "id": "idiom_sentence:115AG3H01:迫不及待:e9c47cb7",
       "idiom_id": "idiom:115AG3H01:30bd0e1b",
-      "rewritten": null,
-      "status": "todo_rewrite",
+      "rewritten": "看到蛋糕端上桌，小美迫不及待的拿起叉子。",
+      "status": "draft",
       "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）"
     },
     {
       "id": "idiom_sentence:115AG3H01:忍氣吞聲:9f9b4f0b",
       "idiom_id": "idiom:115AG3H01:ced4a586",
-      "rewritten": null,
-      "status": "todo_rewrite",
+      "rewritten": "同學搶走了玩具，弟弟只能忍氣吞聲，不敢說話。",
+      "status": "draft",
       "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）"
     },
     {
       "id": "idiom_sentence:115AG3H01:疲於奔命:ebb3e921",
       "idiom_id": "idiom:115AG3H01:b08648cd",
-      "rewritten": null,
-      "status": "todo_rewrite",
+      "rewritten": "消防隊員整天四處滅火，忙得疲於奔命。",
+      "status": "draft",
       "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）"
     },
     {
       "id": "idiom_sentence:115AG3H01:對牛彈琴:b768e6a5",
       "idiom_id": "idiom:115AG3H01:5d0d3537",
-      "rewritten": null,
-      "status": "todo_rewrite",
+      "rewritten": "跟小狗解釋數學題目，簡直是對牛彈琴。",
+      "status": "draft",
       "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）"
     },
     {
       "id": "idiom_sentence:115AG3H01:長話短說:066e1c71",
       "idiom_id": "idiom:115AG3H01:c886e840",
-      "rewritten": null,
-      "status": "todo_rewrite",
+      "rewritten": "時間快到了，大家請長話短說，趕快講重點。",
+      "status": "draft",
       "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）"
     },
     {
       "id": "idiom_sentence:115AG3H01:一勞永逸:972e5000",
       "idiom_id": "idiom:115AG3H01:2a16b65b",
-      "rewritten": null,
-      "status": "todo_rewrite",
+      "rewritten": "把房間規劃好收納位置，才能一勞永逸不再亂。",
+      "status": "draft",
       "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）"
     }
   ],
@@ -1180,8 +1180,13 @@
       "description": "用「實在」表示一件事物的真實性。",
       "guide": "請學生想一想生活中有什麼太快、太慢、太長、太久、太短等的類似經驗。",
       "analysis": "",
-      "examples": [],
-      "examples_status": "todo_rewrite",
+      "examples": [
+        "跳得實在太高了",
+        "畫得實在太美了",
+        "唱得實在太大聲了",
+        "睡得實在太晚了"
+      ],
+      "examples_status": "draft",
       "status": "ready",
       "source": "dabutie:08各課短語句型練習（3上L01短語句型造句-時間是什麼.pdf）"
     },
@@ -1193,8 +1198,13 @@
       "description": "說話或動作很慢的樣子。",
       "guide": "請學生思考生活中有什麼事物是動作緩慢的。",
       "analysis": "",
-      "examples": [],
-      "examples_status": "todo_rewrite",
+      "examples": [
+        "哥哥吃飯慢吞吞，常常最後一個吃完。",
+        "他寫作業慢吞吞，媽媽在旁邊等好久。",
+        "小貓慢吞吞的走過草地。",
+        "弟弟慢吞吞的穿鞋子，差點遲到。"
+      ],
+      "examples_status": "draft",
       "status": "ready",
       "source": "dabutie:08各課短語句型練習（3上L01短語句型造句-時間是什麼.pdf）"
     },
@@ -1206,8 +1216,13 @@
       "description": "由長變短。",
       "guide": "請學生連結生活經驗，將「縮短」用在正確的句子裡。",
       "analysis": "",
-      "examples": [],
-      "examples_status": "todo_rewrite",
+      "examples": [
+        "認真練習後，跑步的時間縮短了不少。",
+        "新的橋樑縮短了回家的路程。",
+        "專心寫作業，可以縮短完成的時間。",
+        "老師講解後，同學解題的時間縮短了。"
+      ],
+      "examples_status": "draft",
       "status": "ready",
       "source": "dabutie:08各課短語句型練習（3上L01短語句型造句-時間是什麼.pdf）"
     },
@@ -1219,8 +1234,13 @@
       "description": "並列複句，「一會兒」連用在兩個分句中，表示兩種情況交替出現。",
       "guide": "請學生思考生活中有哪些兩種不同情況交替出現的例子。",
       "analysis": "文中運用「一會兒……一會兒……」來表達時間的日夜變化。",
-      "examples": [],
-      "examples_status": "todo_rewrite",
+      "examples": [
+        "妹妹的心情一會兒開心，一會兒難過。",
+        "天空一會兒出太陽，一會兒下雨。",
+        "弟弟一會兒站著，一會兒坐著，靜不下來。",
+        "小狗一會兒跑，一會兒跳，好活潑。"
+      ],
+      "examples_status": "draft",
       "status": "ready",
       "source": "dabutie:08各課短語句型練習（3上L01短語句型造句-時間是什麼.pdf）"
     },
@@ -1232,8 +1252,11 @@
       "description": "用不同句子分別描寫同時存在的幾種情況，就是並列複句。常用的關聯詞有「一會兒……一會兒……」、「一邊……一邊……」、「有人……有人……」等。",
       "guide": "",
       "analysis": "",
-      "examples": [],
-      "examples_status": "todo_rewrite",
+      "examples": [
+        "風是調皮的孩子，一會兒安靜，一會兒吵鬧。",
+        "太陽是勤勞的農夫，每天準時起床工作。"
+      ],
+      "examples_status": "draft",
       "status": "ready",
       "source": "dabutie:09教冊句型總表（115 國語3上句型總表.doc，反向歸課）"
     }
@@ -1332,106 +1355,106 @@
     {
       "id": "paragraph_summary:115AG3H01:e278d28f",
       "para_no": 1,
-      "summary": null,
+      "summary": "覺得時間過得很慢的人，把它比喻成爬得慢的蝸牛。",
       "structure_role": "分說",
-      "status": "todo_rewrite",
+      "status": "draft",
       "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）"
     },
     {
       "id": "paragraph_summary:115AG3H01:c38d232d",
       "para_no": 2,
-      "summary": null,
+      "summary": "每天很忙的人，覺得時間像跑得飛快的斑馬一樣。",
       "structure_role": "分說",
-      "status": "todo_rewrite",
+      "status": "draft",
       "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）"
     },
     {
       "id": "paragraph_summary:115AG3H01:58f54316",
       "para_no": 3,
-      "summary": null,
+      "summary": "還有人形容時間會像彈簧一樣，有時長、有時短。",
       "structure_role": "總說",
-      "status": "todo_rewrite",
+      "status": "draft",
       "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）"
     },
     {
       "id": "paragraph_summary:115AG3H01:d8f60335",
       "para_no": 4,
-      "summary": null,
+      "summary": "也有人把時間比喻成不斷流動的水，一去不回。",
       "structure_role": "總說",
-      "status": "todo_rewrite",
+      "status": "draft",
       "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）"
     },
     {
       "id": "paragraph_summary:115AG3H01:16af90d4",
       "para_no": 5,
-      "summary": null,
+      "summary": "文章最後提出疑問，時間究竟是什麼樣子呢？",
       "structure_role": "總說",
-      "status": "todo_rewrite",
+      "status": "draft",
       "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）"
     }
   ],
   "main_idea": {
     "id": "main_idea:115AG3H01:8b115dad",
-    "gist": null,
-    "theme": null,
-    "status": "todo_rewrite",
+    "gist": "課文用不同的比喻，說明時間快慢不定、長短不一的特性，並留下疑問讓大家思考。",
+    "theme": "本課希望小朋友觀察生活中的感受，體會時間帶給人的不同感覺。",
+    "status": "draft",
     "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）"
   },
   "reading_questions": [
     {
       "id": "reading_question:115AG3H01:ca39e35c",
-      "stem": null,
+      "stem": "課文為什麼用蝸牛來形容時間過得很慢？",
       "strategy_tag": "推論訊息",
-      "answer_hint": null,
-      "status": "todo_rewrite",
+      "answer_hint": "因為蝸牛爬行的速度很慢。",
+      "status": "draft",
       "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
     },
     {
       "id": "reading_question:115AG3H01:34309a55",
-      "stem": null,
+      "stem": "課文用斑馬來形容時間，你猜猜是什麼原因呢？",
       "strategy_tag": "推論訊息",
-      "answer_hint": null,
-      "status": "todo_rewrite",
+      "answer_hint": "斑馬跑得快，身上黑白相間的條紋也讓人聯想到白天和夜晚。",
+      "status": "draft",
       "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
     },
     {
       "id": "reading_question:115AG3H01:7c07ff54",
-      "stem": null,
+      "stem": "看看課文中的圖畫，說說時間被比喻成哪些東西？",
       "strategy_tag": "提取訊息",
-      "answer_hint": null,
-      "status": "todo_rewrite",
+      "answer_hint": "課文提到時間可能像蝸牛，也可能像斑馬，還有彈簧或流動的水。",
+      "status": "draft",
       "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
     },
     {
       "id": "reading_question:115AG3H01:2be75c92",
-      "stem": null,
+      "stem": "時間看不到也摸不到，作者為什麼要用具體的東西來說明它？",
       "strategy_tag": "推論訊息",
-      "answer_hint": null,
-      "status": "todo_rewrite",
+      "answer_hint": "用看得見的東西來比喻，可以幫助大家更容易理解抽象的時間。",
+      "status": "draft",
       "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
     },
     {
       "id": "reading_question:115AG3H01:bd67caf8",
-      "stem": null,
+      "stem": "讀完課文以後，你認為時間比較像什麼？請說出你的想法和理由。",
       "strategy_tag": "比較評估",
-      "answer_hint": null,
-      "status": "todo_rewrite",
+      "answer_hint": "答案不限，只要能舉出具體的例子並說明原因即可。",
+      "status": "draft",
       "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
     },
     {
       "id": "reading_question:115AG3H01:a09ef675",
-      "stem": null,
+      "stem": "你心中的時間又像什麼呢？和課文裡的說法一樣嗎？為什麼？",
       "strategy_tag": "詮釋整合",
-      "answer_hint": null,
-      "status": "todo_rewrite",
+      "answer_hint": "答案不限，鼓勵學生說出自己的比喻並解釋原因。",
+      "status": "draft",
       "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
     },
     {
       "id": "reading_question:115AG3H01:813aa9d6",
-      "stem": null,
+      "stem": "作者說了那麼多種比喻，最後有找到答案嗎？",
       "strategy_tag": "提取訊息",
-      "answer_hint": null,
-      "status": "todo_rewrite",
+      "answer_hint": "沒有，作者仍然沒有確定的答案。",
+      "status": "draft",
       "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
     }
   ],
