@@ -9,7 +9,7 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-from common import find_lesson_file, read_docx_tables
+from common import find_lesson_file, read_docx_tables, resolve_path
 
 SENSE_RE = re.compile(r"^\s*\d+[.．]\s*(.+?)例(.+)$")
 
@@ -61,7 +61,7 @@ def parse_table(table: list[list[str]]) -> list[dict]:
 
 
 def extract(src_dir: Path, lesson_no: int) -> dict:
-    folder = src_dir / "1.備課資料" / "06字義分析" / "WORD"
+    folder = resolve_path(src_dir, "1.備課資料", "06字義分析", "WORD")
     path = find_lesson_file(folder, lesson_no, exts=(".docx",))
     if path is None:
         return {"status": "missing", "source": str(folder), "records": []}

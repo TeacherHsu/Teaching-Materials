@@ -7,7 +7,7 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-from common import find_lesson_file, read_pdf_text
+from common import find_lesson_file, read_pdf_text, resolve_path
 
 SECTION_RE = re.compile(r"^[一二三]、")
 HEAD_RE = re.compile(r"^[◎⒈⒉⒊⒋⒌]\s*(.+)$")
@@ -59,7 +59,7 @@ def parse_lines(lines: list[str]) -> dict:
 
 
 def extract(src_dir: Path, lesson_no: int) -> dict:
-    folder = src_dir / "1.備課資料" / "08各課短語句型練習" / "PDF"
+    folder = resolve_path(src_dir, "1.備課資料", "08各課短語句型練習", "PDF")
     path = find_lesson_file(folder, lesson_no, exts=(".pdf",))
     if path is None:
         return {"status": "missing", "source": str(folder), "sections": {}}

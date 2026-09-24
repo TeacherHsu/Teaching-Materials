@@ -6,11 +6,11 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from common import find_lesson_file, read_docx_paragraphs
+from common import find_lesson_file, read_docx_paragraphs, resolve_path
 
 
 def extract(src_dir: Path, lesson_no: int) -> dict:
-    folder = src_dir / "1.備課資料" / "16聆聽練習"
+    folder = resolve_path(src_dir, "1.備課資料", "16聆聽練習")
     if not folder.exists():
         return {"status": "missing", "source": str(folder), "items": []}
     path = find_lesson_file(folder, lesson_no, exts=(".docx", ".doc"))

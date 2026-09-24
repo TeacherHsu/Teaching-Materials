@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from common import cn_to_int, read_docx_paragraphs
+from common import cn_to_int, read_docx_paragraphs, resolve_path
 from extractors.sentence_patterns import LESSON_TAG_RE, NUM_PREFIX_RE
 
 
@@ -40,7 +40,7 @@ def parse_paragraphs(paragraphs: list[str]) -> list[dict]:
 
 
 def extract(src_dir: Path, lesson_no: int) -> dict:
-    folder = src_dir / "1.備課資料" / "11修辭總表"
+    folder = resolve_path(src_dir, "1.備課資料", "11修辭總表")
     cands = list(folder.glob("*.docx"))
     if not cands:
         return {"status": "missing", "source": str(folder), "items": []}

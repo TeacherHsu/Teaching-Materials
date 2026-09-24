@@ -5,6 +5,7 @@ import hashlib
 import json
 import re
 import subprocess
+import unicodedata
 from pathlib import Path
 from typing import Optional
 
@@ -12,6 +13,47 @@ try:
     import docx  # python-docx
 except ImportError:  # pragma: no cover
     docx = None
+
+
+class SourceNotFoundError(RuntimeError):
+    """大補帖來源資料夾/檔案找不到時大聲失敗用（不得被吞掉、不得靜默回傳空資料）。"""
+
+    def __init__(self, base: Path, parts: tuple, available: list[str]):
+        self.base = base
+        self.parts = parts
+        self.available = available
+        missing_path = base.joinpath(*parts)
+        super().__init__(
+            f"找不到來源：{missing_path}\n"
+            f"（在 {base.joinpath(*parts[:-1])} 底下找到的項目：{available or '(空/資料夾不存在)'}）"
+        )
+
+
+def nfc(s: str) -> str:
+    """檔名比對一律先 NFC 正規化，容忍 unzip / ditto / Finder 解壓產生的
+    NFC/NFD 檔名編碼差異，避免路徑比對因正規化形式不同而找不到檔案。"""
+    return unicodedata.normalize("NFC", s)
+
+
+def resolve_path(base: Path, *parts: str) -> Path:
+    """逐層解析路徑，每層皆以 NFC 正規化後的檔名比對（而非直接 `/` 串接假設
+    檔名位元組完全相同）。任何一層找不到就丟 SourceNotFoundError（大聲失敗），
+    不回傳空結果、不讓呼叫端誤以為「這課本來就沒有這個來源」。"""
+    cur = base
+    for i, part in enumerate(parts):
+        target = nfc(part)
+        siblings: list[str] = []
+        match = None
+        if cur.exists() and cur.is_dir():
+            for child in sorted(cur.iterdir()):
+                siblings.append(child.name)
+                if nfc(child.name) == target:
+                    match = child
+                    break
+        if match is None:
+            raise SourceNotFoundError(base, parts[: i + 1], siblings)
+        cur = match
+    return cur
 
 CN_NUM = "一二三四五六七八九十"
 

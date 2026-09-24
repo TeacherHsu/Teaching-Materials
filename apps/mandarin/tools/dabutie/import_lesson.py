@@ -15,7 +15,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from common import desensitize_l0, read_json, write_json  # noqa: E402
+from common import SourceNotFoundError, desensitize_l0, read_json, write_json  # noqa: E402
 import merge  # noqa: E402
 from extractors import (  # noqa: E402
     characters as ex_characters,
@@ -44,21 +44,62 @@ def lesson_id_for(volume_code: str, lesson_no: int) -> str:
     return f"{volume_code}{lesson_no:02d}"
 
 
+def validate_src(src: Path) -> None:
+    """匯入前先確認來源根目錄真的存在、且長得像大補帖（有「1.備課資料」）。
+    找不到就大聲失敗（非 0 exit），不得讓後續抽取器各自吞掉例外、靜默回傳空資料。
+    路徑比對一律 NFC 正規化，容忍 unzip/ditto/Finder 解壓造成的檔名編碼差異。
+    """
+    if not src.exists():
+        print(f"[匯入失敗] --src 指定的資料夾不存在：{src}", file=sys.stderr)
+        sys.exit(2)
+    try:
+        from common import resolve_path
+        resolve_path(src, "1.備課資料")
+    except SourceNotFoundError as e:
+        print("[匯入失敗] 來源根目錄底下找不到「1.備課資料」，來源解壓可能不完整或損毀：", file=sys.stderr)
+        print(str(e), file=sys.stderr)
+        print(
+            "提示：本機 unzip（Info-ZIP）對這份大補帖 zip 的中文檔名會產生亂碼／"
+            "「Illegal byte sequence」，請改用 macOS `ditto -x -k <zip> <目的地>` "
+            "或 Finder 雙擊解壓，不要用 unzip。",
+            file=sys.stderr,
+        )
+        sys.exit(2)
+
+
 def run_extractors(src: Path, lesson_no: int, work: Path, pedia_title: str) -> dict:
-    raw = {
-        "characters": ex_characters.extract(src, lesson_no),
-        "word_meanings": ex_word_meanings.extract(src, lesson_no),
-        "idioms": None,  # 後面補 related_chars 後才算
-        "phrases_sentences": ex_phrases.extract(src, lesson_no),
-        "sentence_patterns": ex_sentence_patterns.extract(src, lesson_no),
-        "rhetoric": ex_rhetoric.extract(src, lesson_no),
-        "summary": ex_summary.extract(src, lesson_no),
-        "structure_map": ex_structure_map.extract(src, lesson_no, pedia_title),
-        "reading_questions": ex_reading_questions.extract(src, lesson_no),
-        "listening": ex_listening.extract(src, lesson_no),
-    }
+    validate_src(src)
+    steps = [
+        ("characters", lambda: ex_characters.extract(src, lesson_no)),
+        ("word_meanings", lambda: ex_word_meanings.extract(src, lesson_no)),
+        ("phrases_sentences", lambda: ex_phrases.extract(src, lesson_no)),
+        ("sentence_patterns", lambda: ex_sentence_patterns.extract(src, lesson_no)),
+        ("rhetoric", lambda: ex_rhetoric.extract(src, lesson_no)),
+        ("summary", lambda: ex_summary.extract(src, lesson_no)),
+        ("structure_map", lambda: ex_structure_map.extract(src, lesson_no, pedia_title)),
+        ("reading_questions", lambda: ex_reading_questions.extract(src, lesson_no)),
+        ("listening", lambda: ex_listening.extract(src, lesson_no)),
+    ]
+    raw: dict = {}
+    errors: list[str] = []
+    for key, fn in steps:
+        try:
+            raw[key] = fn()
+        except SourceNotFoundError as e:
+            errors.append(f"{key}: {e}")
+
+    if errors:
+        print(f"[匯入失敗] {len(errors)} 個來源資料夾找不到，全部列出（不做部分匯入）：", file=sys.stderr)
+        for e in errors:
+            print(f"- {e}", file=sys.stderr)
+        sys.exit(2)
+
     related_chars = raw["characters"].get("basic_chars", []) + raw["characters"].get("extended_chars", [])
-    raw["idioms"] = ex_idioms.extract(src, lesson_no, related_chars)
+    try:
+        raw["idioms"] = ex_idioms.extract(src, lesson_no, related_chars)
+    except SourceNotFoundError as e:
+        print(f"[匯入失敗] idioms: {e}", file=sys.stderr)
+        sys.exit(2)
 
     lesson_dir = work / "raw" / f"lesson{lesson_no:02d}"
     for key, data in raw.items():
