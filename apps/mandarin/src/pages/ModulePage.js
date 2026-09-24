@@ -5,6 +5,9 @@ import { buildReadingActivity } from '../activities/reading.js';
 import { buildCharactersActivity } from '../activities/characters.js';
 import { buildVocabularyActivity } from '../activities/vocabulary.js';
 import { buildSentencePracticeActivity } from '../activities/sentencePractice.js';
+import { buildPolysemyActivity } from '../activities/polysemy.js';
+import { buildListeningActivity } from '../activities/listening.js';
+import { buildRhetoricActivity } from '../activities/rhetoric.js';
 import { findModuleEntry, getModuleStatus } from '../activities/moduleRegistry.js';
 import { saveModuleComplete } from '../utils/storage.js';
 import { navigate } from '../router/router.js';
@@ -75,6 +78,27 @@ export function ModulePage(lesson, moduleKey) {
     root.appendChild(
       buildReadingActivity(lesson, () => {
         saveModuleComplete(lesson.lesson_id, 'reading');
+        onBack();
+      }),
+    );
+  } else if (moduleKey === 'polysemy') {
+    root.appendChild(
+      buildPolysemyActivity(lesson, () => {
+        saveModuleComplete(lesson.lesson_id, 'polysemy');
+        onBack();
+      }),
+    );
+  } else if (moduleKey === 'listening') {
+    root.appendChild(
+      buildListeningActivity(lesson, () => {
+        saveModuleComplete(lesson.lesson_id, 'listening');
+        onBack();
+      }),
+    );
+  } else if (moduleKey === 'rhetoric') {
+    root.appendChild(
+      buildRhetoricActivity(lesson, () => {
+        saveModuleComplete(lesson.lesson_id, 'rhetoric');
         onBack();
       }),
     );

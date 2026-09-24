@@ -68,6 +68,8 @@ function filterLesson(lesson) {
 
   l.reading_questions = (l.reading_questions || []).filter((q) => isPublic(q.status));
   l.rhetoric = (l.rhetoric || []).filter((r) => isPublic(r.status));
+  l.listening = (l.listening || []).filter((item) => isPublic(item.status));
+  l.polysemy = (l.polysemy || []).filter((p) => isPublic(p.status));
 
   if (l.modules) {
     const readingCount = l.paragraph_summary.length >= 3 || l.reading_questions.length >= 1
@@ -82,6 +84,16 @@ function filterLesson(lesson) {
       l.modules.rhetoric = l.rhetoric.length >= 3
         ? { ...l.modules.rhetoric, status: 'available' }
         : { label: l.modules.rhetoric.label || '修辭小偵探', status: 'missing', note: '教材審核中：改寫內容尚待教師核准' };
+    }
+    if (l.modules.listening) {
+      l.modules.listening = l.listening.length >= 3
+        ? { ...l.modules.listening, status: 'available' }
+        : { label: l.modules.listening.label || '聽聽看', status: 'missing', note: '教材審核中：改寫內容尚待教師核准' };
+    }
+    if (l.modules.polysemy) {
+      l.modules.polysemy = l.polysemy.length >= 3
+        ? { ...l.modules.polysemy, status: 'available' }
+        : { label: l.modules.polysemy.label || '一字多義', status: 'missing', note: '教材審核中：改寫內容尚待教師核准' };
     }
   }
 

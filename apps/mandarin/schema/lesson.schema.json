@@ -163,7 +163,11 @@
     },
     "listening": {
       "type": "array",
-      "description": "v2 新增：16聆聽練習（若可抽取，否則 todo）"
+      "description": "v2 新增：16聆聽練習（若可抽取，否則 todo）；無來源檔案時為原創 draft（stem 朗讀文字、question/options/answer）"
+    },
+    "polysemy": {
+      "type": "array",
+      "description": "v2 新增：模組6 一字多義。依 word_meanings 中 ≥2 義項的生字，逐義項各一句原創生活句（char/sentence/definition/options/status/source）"
     },
     "review_words": {
       "type": "object",
