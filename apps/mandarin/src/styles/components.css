@@ -462,3 +462,48 @@
   gap: var(--space-2);
   max-width: 360px;
 }
+
+/* ---- StructureMap：課文結構樹（寬螢幕橫排，手機單欄堆疊） ---- */
+.structure-map__tree {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+@media (min-width: 900px) {
+  .structure-map__tree {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .structure-map__arrow {
+    display: inline-block;
+  }
+}
+
+.structure-map__arrow {
+  display: none;
+  color: var(--text-secondary);
+}
+
+.structure-map__node {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  font-weight: 600;
+  text-align: center;
+}
+
+.structure-map__node--current {
+  border-color: var(--color-primary);
+  background: var(--color-surface-muted);
+}
+
+.structure-map__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 480px;
+}
