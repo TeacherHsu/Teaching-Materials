@@ -1,15 +1,16 @@
 import { h, clear } from '../utils/dom.js';
 import { CompletionFeedback } from './CompletionFeedback.js';
+import { shuffleDiffering } from '../utils/shuffle.js';
 
 /**
  * 句子排序：點選詞塊依序加入答案區；鍵盤可操作（button 逐一點選，
- * 不倚賴拖曳）。
+ * 不倚賴拖曳）。初始呈現順序保證被打亂（不等於正解、至少 2 個位置不同，seeded）。
  * @param {{prompt: string, parts: string[], solution: string[], onBack?: () => void}} opts
  */
 export function SentenceOrdering({ prompt, parts, solution, onBack }) {
   const root = h('div', { class: 'quiz-panel' });
   const chosen = [];
-  const bank = [...parts].sort(() => Math.random() - 0.5);
+  const bank = shuffleDiffering(parts, `${prompt}|${parts.join('')}`);
 
   root.appendChild(h('p', { class: 'quiz-stem' }, prompt));
   const slots = h('div', { class: 'sentence-slots', 'aria-label': '目前排出的句子' });

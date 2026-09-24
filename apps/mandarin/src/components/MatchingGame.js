@@ -4,9 +4,9 @@ import { CompletionFeedback } from './CompletionFeedback.js';
 /**
  * 配對遊戲：鍵盤可操作（不只有拖曳）——先選左欄一項，再選右欄一項，
  * 兩者皆用 button + aria-pressed，Tab/Enter 全程可完成。
- * @param {{pairs: Array<{left:string,right:string}>, onComplete?: () => void, onBack?: () => void, backLabel?: string}} opts
+ * @param {{pairs: Array<{left:string,right:string}>, onComplete?: () => void, onBack?: () => void, backLabel?: string, instructions?: string}} opts
  */
-export function MatchingGame({ pairs, onComplete, onBack, backLabel = '回課程首頁' }) {
+export function MatchingGame({ pairs, onComplete, onBack, backLabel = '回課程首頁', instructions = '選一個左邊的字，再選右邊對應的答案。' }) {
   const root = h('div', {});
   const left = [...pairs].sort(() => Math.random() - 0.5);
   const right = [...pairs].sort(() => Math.random() - 0.5);
@@ -14,7 +14,7 @@ export function MatchingGame({ pairs, onComplete, onBack, backLabel = '回課程
   let selectedLeft = null;
   let selectedRight = null;
 
-  const status = h('p', { role: 'status', 'aria-live': 'polite', class: 'meta' }, '選一個左邊的字，再選右邊對應的答案。');
+  const status = h('p', { role: 'status', 'aria-live': 'polite', class: 'meta' }, instructions);
   const game = h('div', { class: 'matching-game' });
   const leftCol = h('div', { class: 'matching-column', 'aria-label': '左欄' });
   const rightCol = h('div', { class: 'matching-column', 'aria-label': '右欄' });

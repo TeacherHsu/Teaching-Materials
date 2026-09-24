@@ -10,9 +10,36 @@ import { TaskBanner } from '../components/TaskBanner.js';
 import { missingContentNotice } from './engine.js';
 
 const ROUND_MAX = 5;
+const MAX_EXAMPLES = 3;
 
 function shuffled(arr) {
   return [...arr].sort(() => Math.random() - 0.5);
+}
+
+/** 從 word_meanings（字義分析）攤平出每個字的造詞範例，供 CharacterCard 缺 examples 時使用。 */
+function buildExampleMap(lesson) {
+  const map = new Map();
+  for (const wm of lesson.word_meanings || []) {
+    if (wm.status && wm.status !== 'ready') continue;
+    const words = [];
+    for (const sense of wm.senses || []) {
+      for (const ex of sense.examples || []) {
+        if (!words.includes(ex)) words.push(ex);
+      }
+    }
+    if (words.length) map.set(wm.char, words.slice(0, MAX_EXAMPLES));
+  }
+  return map;
+}
+
+/** 生字缺 examples 時，補上字義分析（word_meanings）裡的造詞。 */
+function withExamples(characters, lesson) {
+  const exampleMap = buildExampleMap(lesson);
+  return characters.map((c) => {
+    if (c.examples && c.examples.length) return c;
+    const fallback = exampleMap.get(c.char);
+    return fallback ? { ...c, examples: fallback } : c;
+  });
 }
 
 function chunkByMax(items, max) {
@@ -69,7 +96,10 @@ function buildRadicalDragItems(round, allCharacters) {
  * @param {() => void} onBack
  */
 export function buildCharactersActivity(lesson, onBack) {
-  const characters = (lesson.characters || []).filter((c) => c.status === 'ready' || !c.status);
+  const characters = withExamples(
+    (lesson.characters || []).filter((c) => c.status === 'ready' || !c.status),
+    lesson,
+  );
   const choiceItems = (lesson.quiz || []).filter((q) => q.type === 'choice' && q.status === 'ready');
   const choiceRounds = chunkByMax(choiceItems, ROUND_MAX);
   const radicalRounds = buildRadicalRounds(characters);

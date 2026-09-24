@@ -1,5 +1,5 @@
 // 「句型練習」模組：三步依序呈現（一畫面一任務）
-// 1. 短語搭配（MatchingGame：句型頭語 ↔ 說明，3–5 題一組）
+// 1. 短語搭配（MatchingGame：短語/語詞 ↔ 解釋，3–5 題一組；排除整句例句與句型總表）
 // 2. 句子重組（SentenceOrdering，用 approved 例句）
 // 3. 仿寫選填（SentenceBuilder，用另一句 approved 例句，避免和步驟 2 重複）
 //
@@ -36,9 +36,19 @@ function splitSentenceIntoChunks(sentence) {
   return chunks.filter(Boolean);
 }
 
+const SENTENCE_PUNCT_RE = /[。！？，、]/;
+// 句型總表（整條句型規則的名稱，如「並列複句」）不是短語，不放進「短語 ↔ 解釋」配對。
+const EXCLUDED_CATEGORY = '教冊句型總表';
+const MAX_PHRASE_LEN = 10;
+
+/** 只挑「短語/語詞 ↔ 解釋」可配對的句型項目：排除整句例句（含標點的完整句子）
+ * 與句型規則總表（head 是「並列複句」這種抽象規則名，不是可配對的短語）。 */
 function readyMatchingPairs(lesson) {
   return filterByStatus(lesson.sentence_patterns || [])
     .filter((p) => p.head && p.description)
+    .filter((p) => p.category !== EXCLUDED_CATEGORY)
+    .filter((p) => !SENTENCE_PUNCT_RE.test(p.head))
+    .filter((p) => p.head.length <= MAX_PHRASE_LEN)
     .map((p) => ({ left: p.head, right: p.description }));
 }
 
@@ -122,11 +132,12 @@ export function buildSentencePracticeActivity(lesson, onBack) {
     if (step === 'matching') {
       const isLastRound = roundIndex === matchingRounds.length - 1;
       container.appendChild(
-        TaskBanner({ label: '短語搭配：把句型和說明配對起來', step: `${stepLabel} ・ 第 ${roundIndex + 1} 組／共 ${matchingRounds.length} 組` }),
+        TaskBanner({ label: '短語搭配：把語詞和意思配對起來', step: `${stepLabel} ・ 第 ${roundIndex + 1} 組／共 ${matchingRounds.length} 組` }),
       );
       container.appendChild(
         MatchingGame({
           pairs: matchingRounds[roundIndex],
+          instructions: '選左邊的語詞，再選右邊的意思。',
           backLabel: isLastRound ? (isLastStep ? '回課程首頁' : '繼續：句子重組') : '再來一組',
           onBack: () => {
             if (!isLastRound) {

@@ -45,6 +45,7 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
     let attempts = 0;
 
     root.appendChild(ProgressIndicator({ current: index + 1, total: items.length }));
+    if (item.extra) root.appendChild(item.extra);
     root.appendChild(h('p', { class: 'quiz-stem' }, item.stem));
 
     const optionsWrap = h('div', { class: 'quiz-options', role: 'group', 'aria-label': '選項' });
