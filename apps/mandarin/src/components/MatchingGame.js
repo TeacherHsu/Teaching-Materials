@@ -4,9 +4,9 @@ import { CompletionFeedback } from './CompletionFeedback.js';
 /**
  * 配對遊戲：鍵盤可操作（不只有拖曳）——先選左欄一項，再選右欄一項，
  * 兩者皆用 button + aria-pressed，Tab/Enter 全程可完成。
- * @param {{pairs: Array<{left:string,right:string}>, onComplete?: () => void, onBack?: () => void}} opts
+ * @param {{pairs: Array<{left:string,right:string}>, onComplete?: () => void, onBack?: () => void, backLabel?: string}} opts
  */
-export function MatchingGame({ pairs, onComplete, onBack }) {
+export function MatchingGame({ pairs, onComplete, onBack, backLabel = '回課程首頁' }) {
   const root = h('div', {});
   const left = [...pairs].sort(() => Math.random() - 0.5);
   const right = [...pairs].sort(() => Math.random() - 0.5);
@@ -32,15 +32,15 @@ export function MatchingGame({ pairs, onComplete, onBack }) {
       rightBtn.classList.add('matching-item--matched');
       leftBtn.disabled = true;
       rightBtn.disabled = true;
-      status.textContent = `配對正確：${leftVal} ↔ ${pair.right}`;
+      status.textContent = `✓ 配對正確：${leftVal} ↔ ${pair.right}`;
       if (matched.size === pairs.length) {
         root.appendChild(
-          CompletionFeedback({ correct: pairs.length, total: pairs.length, onBack }),
+          CompletionFeedback({ correct: pairs.length, total: pairs.length, onBack, backLabel }),
         );
         if (onComplete) onComplete();
       }
     } else {
-      status.textContent = '再試試看，不對喔。';
+      status.textContent = '✗ 再試試看，這一組不對喔。';
       leftBtn.setAttribute('aria-pressed', 'false');
       rightBtn.setAttribute('aria-pressed', 'false');
     }

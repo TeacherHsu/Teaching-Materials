@@ -13,9 +13,11 @@ export function GradePage(courseIndex, gradeNo) {
   for (const volume of grade.volumes) {
     for (const unit of volume.units) {
       for (const lesson of unit.lessons) {
+        const metaText = unit.title.startsWith('TODO') ? volume.label : `${volume.label} ・ ${unit.title}`;
+        const cardLabel = `第 ${lesson.lesson_no} 課：${lesson.title}，${volume.label}`;
         grid.appendChild(
-          h('a', { class: 'nav-card', href: `#/lesson/${lesson.lesson_id}` }, [
-            h('div', { class: 'nav-card__meta' }, `${volume.label} ・ ${unit.title}`),
+          h('a', { class: 'nav-card', href: `#/lesson/${lesson.lesson_id}`, 'aria-label': cardLabel }, [
+            h('div', { class: 'nav-card__meta' }, metaText),
             h('div', { class: 'nav-card__title' }, `第 ${lesson.lesson_no} 課：${lesson.title}`),
           ]),
         );

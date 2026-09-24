@@ -1,5 +1,6 @@
 import { h } from '../utils/dom.js';
 import { CharacterCard } from '../components/CharacterCard.js';
+import { TaskBanner } from '../components/TaskBanner.js';
 import { buildChallengeActivity, missingContentNotice } from '../activities/engine.js';
 import { saveModuleComplete } from '../utils/storage.js';
 import { navigate } from '../router/router.js';
@@ -31,6 +32,7 @@ export function ModulePage(lesson, moduleKey) {
   const onBack = () => navigate(`/lesson/${lesson.lesson_id}`);
 
   if (moduleKey === 'characters') {
+    root.appendChild(TaskBanner({ label: '認識這一課的生字：點卡片聽發音，看完全部生字就算完成' }));
     const grid = h('div', { class: 'card-grid' });
     for (const c of lesson.characters) {
       grid.appendChild(CharacterCard(c));

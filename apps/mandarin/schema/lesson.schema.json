@@ -117,6 +117,11 @@
           },
           "level": { "type": "string", "enum": ["basic", "challenge"] },
           "status": { "type": "string", "enum": ["ready", "todo"] },
+          "hints": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "答錯時的 scaffold 提示，不揭曉答案。第 1 次答錯顯示，第 2 次答錯才揭曉正解。"
+          },
           "source": {
             "type": "string",
             "description": "例如 derived:pedia（由已查證的教育百科資料機械生成）"

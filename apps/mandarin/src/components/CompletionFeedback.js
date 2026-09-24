@@ -1,9 +1,9 @@
 import { h } from '../utils/dom.js';
 
 /**
- * @param {{correct: number, total: number, onRetry?: () => void, onBack?: () => void}} opts
+ * @param {{correct: number, total: number, onRetry?: () => void, onBack?: () => void, backLabel?: string}} opts
  */
-export function CompletionFeedback({ correct, total, onRetry, onBack }) {
+export function CompletionFeedback({ correct, total, onRetry, onBack, backLabel = '回課程首頁' }) {
   const wrap = h('div', { class: 'completion-feedback', role: 'status', 'aria-live': 'polite' }, [
     h('h2', {}, '完成了！'),
     h('p', {}, `答對 ${correct} / ${total} 題`),
@@ -14,7 +14,7 @@ export function CompletionFeedback({ correct, total, onRetry, onBack }) {
   }
   if (onBack) {
     actions.appendChild(
-      h('button', { class: 'btn btn--secondary', type: 'button', onclick: onBack }, '回課程首頁'),
+      h('button', { class: 'btn btn--secondary', type: 'button', onclick: onBack }, backLabel),
     );
   }
   wrap.appendChild(actions);

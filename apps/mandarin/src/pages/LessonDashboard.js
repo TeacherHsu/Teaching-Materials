@@ -15,7 +15,7 @@ export function LessonDashboard(lesson) {
     ]),
   );
   root.appendChild(h('h1', {}, `第 ${lesson.lesson_no} 課：${lesson.title}`));
-  root.appendChild(h('p', {}, lesson.blurb));
+  if (lesson.blurb && !lesson.blurb.startsWith('TODO')) root.appendChild(h('p', {}, lesson.blurb));
 
   const grid = h('div', { class: 'module-grid' });
   for (const key of MODULE_ORDER) {
