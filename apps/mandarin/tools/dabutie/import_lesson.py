@@ -180,14 +180,17 @@ def main():
     )
 
     # ---- rhetoric ----
-    rhetoric = merge.build_rhetoric(raw["rhetoric"], lesson_id)
+    existing_rhetoric_by_id = merge.index_existing(existing, "rhetoric")
+    rhetoric = merge.build_rhetoric(raw["rhetoric"], lesson_id, existing_rhetoric_by_id)
 
     # ---- paragraph_summary / main_idea ----
-    paragraph_summary = merge.build_paragraph_summary(raw["summary"], raw["structure_map"], lesson_id)
-    main_idea = merge.build_main_idea(raw["summary"], lesson_id)
+    existing_paragraph_by_id = merge.index_existing(existing, "paragraph_summary")
+    paragraph_summary = merge.build_paragraph_summary(raw["summary"], raw["structure_map"], lesson_id, existing_paragraph_by_id)
+    main_idea = merge.build_main_idea(raw["summary"], lesson_id, (existing or {}).get("main_idea"))
 
     # ---- reading_questions ----
-    reading_questions = merge.build_reading_questions(raw["reading_questions"], lesson_id)
+    existing_rq_by_id = merge.index_existing(existing, "reading_questions")
+    reading_questions = merge.build_reading_questions(raw["reading_questions"], lesson_id, existing_rq_by_id)
 
     # ---- listening / review_words ----
     listening = merge.build_listening(raw["listening"], lesson_id)

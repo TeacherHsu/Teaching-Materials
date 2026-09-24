@@ -2,8 +2,11 @@ import { h } from '../utils/dom.js';
 import { CharacterCard } from '../components/CharacterCard.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { buildChallengeActivity, missingContentNotice } from '../activities/engine.js';
+import { buildIdiomBuilderActivity } from '../components/IdiomBuilder.js';
+import { buildReadingActivity } from '../activities/reading.js';
 import { saveModuleComplete } from '../utils/storage.js';
 import { navigate } from '../router/router.js';
+import { isPreview } from '../utils/preview.js';
 
 export function ModulePage(lesson, moduleKey) {
   const mod = lesson.modules[moduleKey];
@@ -28,6 +31,9 @@ export function ModulePage(lesson, moduleKey) {
   }
 
   root.appendChild(h('h1', {}, mod.label));
+  if (isPreview()) {
+    root.appendChild(h('p', { class: 'meta' }, '預覽模式：待審（draft）內容會顯示並加「待審」標籤，正式上線不會出現。'));
+  }
 
   const onBack = () => navigate(`/lesson/${lesson.lesson_id}`);
 
@@ -43,6 +49,20 @@ export function ModulePage(lesson, moduleKey) {
     root.appendChild(
       buildChallengeActivity(lesson, () => {
         saveModuleComplete(lesson.lesson_id, 'challenge');
+        onBack();
+      }),
+    );
+  } else if (moduleKey === 'idiom_builder') {
+    root.appendChild(
+      buildIdiomBuilderActivity(lesson, () => {
+        saveModuleComplete(lesson.lesson_id, 'idiom_builder');
+        onBack();
+      }),
+    );
+  } else if (moduleKey === 'reading') {
+    root.appendChild(
+      buildReadingActivity(lesson, () => {
+        saveModuleComplete(lesson.lesson_id, 'reading');
         onBack();
       }),
     );

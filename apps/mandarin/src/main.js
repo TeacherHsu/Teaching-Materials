@@ -5,6 +5,7 @@ import { LessonDashboard } from './pages/LessonDashboard.js';
 import { ModulePage } from './pages/ModulePage.js';
 import { FixturesPage } from './pages/FixturesPage.js';
 import { h, clear } from './utils/dom.js';
+import { isPreview } from './utils/preview.js';
 
 // import.meta.env.BASE_URL 由 vite.config.js 的 base:'./' 決定，
 // 開發模式為 '/'，build 後在 index.html 中改寫為相對路徑；
@@ -34,10 +35,22 @@ function findLessonMeta(courseIndex, lessonId) {
   return null;
 }
 
+// 生產 build 會把 data/<code>/lessonNN.json 過濾成只剩 approved/ready 內容（見
+// scripts/filter-build-data.mjs），並把未過濾的完整版另存一份到
+// data/_preview/<code>/lessonNN.json。?preview=1 時優先讀 _preview 版本
+// （才看得到 draft 待審內容），讀不到（例如 dev server 未跑過 build）就
+// 退回正常路徑——dev 模式下 public/data 本來就是未過濾的完整版。
 async function loadLesson(lessonId) {
   const courseIndex = await loadCourseIndex();
   const meta = findLessonMeta(courseIndex, lessonId);
   if (!meta) return null;
+
+  if (isPreview()) {
+    const previewPath = meta.data.replace(/^data\//, 'data/_preview/');
+    const previewRes = await fetch(`${BASE}${previewPath}`);
+    if (previewRes.ok) return previewRes.json();
+  }
+
   const res = await fetch(`${BASE}${meta.data}`);
   if (!res.ok) return null;
   return res.json();
