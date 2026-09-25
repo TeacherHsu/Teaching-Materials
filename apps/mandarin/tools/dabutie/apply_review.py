@@ -55,6 +55,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("review_json")
     ap.add_argument("lesson_json")
+    ap.add_argument("--work", default=None,
+                    help="work 目錄（例 ~/mandarin-work/115AG3H）；給定時把審核決定累積存到 "
+                         "<work>/reviews/lessonNN.json，讓從零重建（rebuild_check.sh）時能重新套用，"
+                         "核准狀態不會被打回 draft。")
+    ap.add_argument("--no-save", action="store_true", help="只套用，不寫入 work/reviews（重建流程用）")
     args = ap.parse_args()
 
     review = read_json(Path(args.review_json))
@@ -67,6 +72,19 @@ def main():
 
     applied = apply_decisions(lesson, review.get("decisions", []))
     write_json(lesson_path, lesson)
+
+    if args.work and not args.no_save:
+        lesson_id = lesson.get("lesson_id", "")
+        store = Path(args.work).expanduser() / "reviews" / f"lesson{lesson_id[-2:]}.json"
+        store.parent.mkdir(parents=True, exist_ok=True)
+        merged = {}
+        if store.exists():
+            for d in read_json(store).get("decisions", []):
+                merged[d["id"]] = d
+        for d in review.get("decisions", []):
+            merged[d["id"]] = d  # 後來的決定覆蓋先前的
+        write_json(store, {"lesson_id": lesson_id, "decisions": list(merged.values())})
+        print(f"審核決定已累積存檔 → {store}（共 {len(merged)} 筆）")
     print(f"套用 {applied} 筆審核結果 → {lesson_path}")
 
 

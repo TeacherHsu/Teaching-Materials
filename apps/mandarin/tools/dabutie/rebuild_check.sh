@@ -42,6 +42,12 @@ else
   echo "[提醒] 找不到 $EXTENSIONS，本次重建不含延伸練習連結。" >&2
 fi
 
+# 教師審核決定（apply_review.py --work 累積存檔）也要重新套用，否則從零重建會把 approved 打回 draft。
+REVIEWS="$WORK/reviews/lesson$(printf '%02d' "$LESSON_NO").json"
+if [ -f "$REVIEWS" ]; then
+  python3 apply_review.py --no-save "$REVIEWS" "$OUT"
+fi
+
 python3 - "$BACKUP" "$OUT" <<'PY'
 import json
 import sys
