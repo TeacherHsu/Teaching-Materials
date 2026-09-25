@@ -31,6 +31,12 @@
                   "lesson_no": 3,
                   "title": "提早五分鐘",
                   "data": "data/115AG3H/lesson03.json"
+                },
+                {
+                  "lesson_id": "115AG3H04",
+                  "lesson_no": 4,
+                  "title": "水滾了",
+                  "data": "data/115AG3H/lesson04.json"
                 }
               ]
             }

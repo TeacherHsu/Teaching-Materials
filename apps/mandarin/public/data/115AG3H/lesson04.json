@@ -1,0 +1,1430 @@
+{
+  "lesson_id": "115AG3H04",
+  "volume": {
+    "code": "115AG3H",
+    "publisher": "翰林",
+    "grade": 3,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "TODO: 單元名稱待補"
+  },
+  "lesson_no": 4,
+  "title": "水滾了",
+  "author": "王宗仁",
+  "blurb": "從康康處理滾水的經驗，學會遇到問題要找到根本原因，再想出有效的方法。",
+  "characters": [
+    {
+      "char": "堂",
+      "zhuyin": "ㄊㄤˊ",
+      "stroke_count": 11,
+      "radical": "土",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "課堂",
+        "禮堂",
+        "食堂",
+        "天堂",
+        "教堂"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第4課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=堂",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "鈴",
+      "zhuyin": "ㄌㄧㄥˊ",
+      "stroke_count": 13,
+      "radical": "金",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "鈴聲",
+        "門鈴",
+        "風鈴",
+        "電鈴",
+        "鈴鐺"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第4課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=鈴",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "徒",
+      "zhuyin": "ㄊㄨˊ",
+      "stroke_count": 10,
+      "radical": "彳",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "徒步",
+        "學徒",
+        "師徒",
+        "徒手",
+        "信徒"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第4課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=徒",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "傅",
+      "zhuyin": "ㄈㄨˋ",
+      "stroke_count": 12,
+      "radical": "亻",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "師傅",
+        "老師傅",
+        "大師傅",
+        "太傅"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第4課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=傅",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "撿",
+      "zhuyin": "ㄐㄧㄢˇ",
+      "stroke_count": 16,
+      "radical": "扌",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "撿拾",
+        "撿起",
+        "撿到",
+        "撿來",
+        "撿回"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第4課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=撿",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "柴",
+      "zhuyin": "ㄔㄞˊ",
+      "stroke_count": 10,
+      "radical": "木",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "火柴",
+        "木柴",
+        "砍柴",
+        "柴火",
+        "薪柴"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第4課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=柴",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "鍋",
+      "zhuyin": "ㄍㄨㄛ",
+      "stroke_count": 17,
+      "radical": "金",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "鍋子",
+        "鍋蓋",
+        "火鍋",
+        "鍋底",
+        "鐵鍋"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第4課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=鍋",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "冒",
+      "zhuyin": "ㄇㄠˋ",
+      "stroke_count": 9,
+      "radical": "冂",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "冒險",
+        "冒出",
+        "冒泡",
+        "冒煙",
+        "冒雨"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第4課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=冒",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "騰",
+      "zhuyin": "ㄊㄥˊ",
+      "stroke_count": 20,
+      "radical": "馬",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "沸騰",
+        "奔騰",
+        "升騰",
+        "騰空",
+        "騰出"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第4課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=騰",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "揚",
+      "zhuyin": "ㄧㄤˊ",
+      "stroke_count": 13,
+      "radical": "扌",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "飛揚",
+        "表揚",
+        "宣揚",
+        "揚起",
+        "揚手"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第4課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=揚",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "湯",
+      "zhuyin": "ㄊㄤ",
+      "stroke_count": 12,
+      "radical": "氵",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "湯圓",
+        "湯匙",
+        "熱湯",
+        "高湯",
+        "揚湯"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第4課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=湯",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "止",
+      "zhuyin": "ㄓˇ",
+      "stroke_count": 4,
+      "radical": "止",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "停止",
+        "止步",
+        "止住",
+        "止痛",
+        "禁止"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第4課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=止",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "抽",
+      "zhuyin": "ㄔㄡ",
+      "stroke_count": 8,
+      "radical": "扌",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "抽出",
+        "抽取",
+        "抽空",
+        "抽查",
+        "抽水"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第4課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=抽",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "解",
+      "zhuyin": "ㄐㄧㄝˇ",
+      "stroke_count": 13,
+      "radical": "角",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "解決",
+        "解答",
+        "了解",
+        "理解",
+        "解開"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第4課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=解",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "薪",
+      "zhuyin": "ㄒㄧㄣ",
+      "stroke_count": 17,
+      "radical": "艸",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "薪水",
+        "薪柴",
+        "月薪",
+        "薪火",
+        "薪資"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第4課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=薪",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "舀",
+      "zhuyin": "ㄧㄠˇ",
+      "stroke_count": 10,
+      "radical": "臼",
+      "type": "認讀字",
+      "level": "challenge",
+      "examples": [
+        "舀起",
+        "舀水",
+        "舀湯",
+        "舀出"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第4課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=舀",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "沸",
+      "zhuyin": "ㄈㄟˋ",
+      "stroke_count": 8,
+      "radical": "氵",
+      "type": "認讀字",
+      "level": "challenge",
+      "examples": [
+        "沸騰",
+        "沸點",
+        "沸水",
+        "煮沸"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第4課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=沸",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "釜",
+      "zhuyin": "ㄈㄨˇ",
+      "stroke_count": 10,
+      "radical": "金",
+      "type": "認讀字",
+      "level": "challenge",
+      "examples": [
+        "釜底抽薪",
+        "破釜沉舟",
+        "鐵釜"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第4課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=釜",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG3H04:01",
+      "word": "食堂",
+      "zhuyin": null,
+      "meaning": "供人吃飯的地方。",
+      "example_sentence": "鐘聲一響，同學們陸續到食堂用餐。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson04/vocabulary/l04-01.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H04:02",
+      "word": "風鈴",
+      "zhuyin": null,
+      "meaning": "風吹時會發出聲音的鈴。",
+      "example_sentence": "微風吹過，窗邊的風鈴發出清脆聲音。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson04/vocabulary/l04-02.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H04:03",
+      "word": "師徒",
+      "zhuyin": null,
+      "meaning": "師傅和徒弟。",
+      "example_sentence": "這對師徒一起練習製作木工作品。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson04/vocabulary/l04-03.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H04:04",
+      "word": "師傅",
+      "zhuyin": null,
+      "meaning": "教授技藝或有專門技術的人。",
+      "example_sentence": "木工師傅教我們安全使用工具。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson04/vocabulary/l04-04.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H04:05",
+      "word": "撿柴",
+      "zhuyin": null,
+      "meaning": "拾取木柴。",
+      "example_sentence": "康康到山林旁撿柴，準備回食堂生火。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson04/vocabulary/l04-05.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H04:06",
+      "word": "鍋子",
+      "zhuyin": null,
+      "meaning": "烹煮食物用的器具。",
+      "example_sentence": "媽媽把蔬菜放進鍋子裡煮。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson04/vocabulary/l04-06.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H04:07",
+      "word": "沸騰",
+      "zhuyin": null,
+      "meaning": "液體受熱後不停翻滾冒泡。",
+      "example_sentence": "水沸騰後，鍋裡不停冒出泡泡。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson04/vocabulary/l04-09.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H04:08",
+      "word": "揚湯止沸",
+      "zhuyin": null,
+      "meaning": "舀起熱水再倒回，暫時讓沸勢減弱。",
+      "example_sentence": "只把熱水舀起倒回去，是揚湯止沸，不能處理根本問題。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson04/vocabulary/l04-10.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H04:09",
+      "word": "解決",
+      "zhuyin": null,
+      "meaning": "處理問題，使問題消失。",
+      "example_sentence": "大家一起討論，終於解決了找不到路的問題。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson04/vocabulary/l04-12.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H04:10",
+      "word": "釜底抽薪",
+      "zhuyin": null,
+      "meaning": "從根本處理問題。",
+      "example_sentence": "先找出問題根源，再採取方法，才是釜底抽薪。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson04/vocabulary/l04-13.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG3H04:打退堂鼓",
+      "idiom": "打退堂鼓",
+      "definition": "比喻做事中途退縮、放棄。",
+      "related_char": "堂",
+      "image": "idioms/01_打退堂鼓.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H04:骨瘦如柴",
+      "idiom": "骨瘦如柴",
+      "definition": "形容人非常消瘦，瘦得像枯乾的木柴一樣。",
+      "related_char": "柴",
+      "image": "idioms/02_骨瘦如柴.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H04:揚眉吐氣",
+      "idiom": "揚眉吐氣",
+      "definition": "形容擺脫長期壓抑後的暢快神情。",
+      "related_char": "揚",
+      "image": "idioms/03_揚眉吐氣.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H04:適可而止",
+      "idiom": "適可而止",
+      "definition": "做到適當的程度就停下來，不要做得太過分。",
+      "related_char": "止",
+      "image": "idioms/04_適可而止.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H04:一知半解",
+      "idiom": "一知半解",
+      "definition": "知道得不全面，理解得不夠透徹。",
+      "related_char": "解",
+      "image": "idioms/05_一知半解.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（07生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG3H04:1",
+      "idiom_id": "idiom:115AG3H04:打退堂鼓",
+      "rewritten": "我本來想參加比賽，遇到一點困難就打退堂鼓了。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H04:2",
+      "idiom_id": "idiom:115AG3H04:骨瘦如柴",
+      "rewritten": "這隻小狗生病後變得骨瘦如柴，需要好好照顧。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H04:3",
+      "idiom_id": "idiom:115AG3H04:揚眉吐氣",
+      "rewritten": "得到大家鼓勵後，他終於揚眉吐氣，完成了挑戰。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H04:4",
+      "idiom_id": "idiom:115AG3H04:適可而止",
+      "rewritten": "做事情要適可而止，休息夠了再繼續。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H04:5",
+      "idiom_id": "idiom:115AG3H04:一知半解",
+      "rewritten": "他只看了故事開頭，對內容還一知半解。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（教師自撰生活例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG3H04:01",
+      "category": "句型練習",
+      "head": "解決",
+      "structure": "（人物）＋想辦法，解決了＋（問題）。",
+      "description": "處理問題，使事情有結果。",
+      "guide": "想一想大家一起處理了什麼問題。",
+      "examples": [
+        "我們一起想辦法，解決了分工不清的問題。",
+        "大家討論後，解決了飲水不足的問題。"
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（08各課短語句型練習）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H04:02",
+      "category": "句型練習",
+      "head": "接待",
+      "structure": "（人物）＋（怎麼樣地）接待＋（客人）。",
+      "description": "迎接並招待客人。",
+      "guide": "想一想要用什麼態度招待客人。",
+      "examples": [
+        "我們親切地接待遠道而來的客人。",
+        "志工熱情地接待參觀學校的家長。"
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（08各課短語句型練習）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H04:03",
+      "category": "句型練習",
+      "head": "招呼遠方的客人",
+      "structure": "動詞＋形容詞（怎麼樣）的＋名詞（誰）。",
+      "description": "用動詞、形容詞和名詞組成短語，說明怎麼招待誰。",
+      "guide": "換一個動詞、形容詞和人物，完成短語。",
+      "examples": [
+        "服務人員熱情地接待每一位進門的客人。",
+        "我們親切地接待遠道而來的客人。"
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（08各課短語句型練習）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H04:04",
+      "category": "句型練習",
+      "head": "靜靜的山腳下",
+      "structure": "疊字形容詞＋的＋名詞（特定空間）＋方位詞。",
+      "description": "用疊字形容詞描寫特定的空間。",
+      "guide": "選一個空間和方位，用疊字形容詞完成短語。",
+      "examples": [
+        "暖暖的被窩裡，弟弟很快睡著了。",
+        "暗暗的角落旁，放著一個小箱子。"
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（08各課短語句型練習）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H04:05",
+      "category": "句型練習",
+      "head": "可是",
+      "structure": "（原先的行為），可是（不同的結果）。",
+      "description": "表示前後結果和原先想的不一樣。",
+      "guide": "先寫原先的做法，再用「可是」寫出不同的結果。",
+      "examples": [
+        "我們提早出門，可是路上還是塞車。",
+        "弟弟認真練習投球，可是比賽時還是失誤了。"
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（08各課短語句型練習）"
+    }
+  ],
+  "rhetoric": [
+    {
+      "id": "rhetoric:115AG3H04:01",
+      "figure": "摹寫",
+      "note": "描寫人物或現象時，加入聲音、顏色、形體或情狀等感受。",
+      "example": "風鈴清亮的聲音像是在招呼遠方的客人。",
+      "child_note": "摹寫＝把看到、聽到或感覺到的樣子說清楚。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（10修辭輕鬆學）"
+    },
+    {
+      "id": "rhetoric:115AG3H04:02",
+      "figure": "設問",
+      "note": "故意用問句引起注意，並在後面說明答案。",
+      "example": "想想看，還有什麼方法呢？",
+      "child_note": "設問＝先提出問題，再引導讀者想答案。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（10修辭輕鬆學）"
+    },
+    {
+      "id": "rhetoric:115AG3H04:03",
+      "figure": "映襯",
+      "note": "把兩種不同或相反的觀念、事物放在一起比較。",
+      "example": "處理問題不能只看表面，要先找到問題的根本。",
+      "child_note": "映襯＝把不同的地方放在一起，讓重點更明顯。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（10修辭輕鬆學）"
+    }
+  ],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG3H04:1",
+      "para_no": 1,
+      "summary": "安靜的山腳下有一間小食堂，門前的風鈴會在風吹時發出清亮聲音。",
+      "structure_role": "情境",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H04:2",
+      "para_no": 2,
+      "summary": "食堂由師徒分工，師傅負責燒水做菜，徒弟康康平時到外面撿柴。",
+      "structure_role": "情境",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H04:3",
+      "para_no": 3,
+      "summary": "康康看見鍋子裡的水不停冒泡，師傅正在接待客人，他慌張地想辦法。",
+      "structure_role": "嘗試",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H04:4",
+      "para_no": 4,
+      "summary": "康康使用揚湯止沸的方法，但水仍持續沸騰，師傅提醒他先思考原因。",
+      "structure_role": "嘗試",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H04:5",
+      "para_no": 5,
+      "summary": "師傅抽出鍋底的柴火，火勢變小，滾水也跟著停止沸騰。",
+      "structure_role": "領悟",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H04:6",
+      "para_no": 6,
+      "summary": "師傅教康康先找到問題的根本，再採取方法解決，這種做法叫釜底抽薪。",
+      "structure_role": "領悟",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+    }
+  ],
+  "main_idea": {
+    "id": "main_idea:115AG3H04:01",
+    "gist": "課文透過康康先後嘗試揚湯止沸、師傅抽柴解決沸水的過程，說明處理問題要先找到根本原因，再採取有效方法。",
+    "theme": "遇到問題先找根本，再想辦法解決。",
+    "status": "approved",
+    "source": "115G3A／翰林三上第4課官方教材與教師確認資料（主旨重述版）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG3H04:1",
+      "stem": "康康平時在食堂負責什麼工作？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "想想看師徒兩人的分工。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+    },
+    {
+      "id": "reading_question:115AG3H04:2",
+      "stem": "康康先用哪一種方法讓水停止沸騰？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "答案是一個和舀水有關的成語。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+    },
+    {
+      "id": "reading_question:115AG3H04:3",
+      "stem": "師傅最後怎麼讓水不再沸騰？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "想想看師傅從鍋底拿出了什麼。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+    },
+    {
+      "id": "reading_question:115AG3H04:4",
+      "stem": "師傅教康康解決問題時要先做什麼？",
+      "strategy_tag": "找出主旨",
+      "answer_hint": "不要只看表面，要找出問題的根本。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG3H04:1",
+      "char": "冒",
+      "sentence": "鍋子裡的水不停《冒》泡。",
+      "definition": "由下往上或往外透出、發散。",
+      "options": [
+        "由下往上或往外透出、發散。",
+        "衝犯、不顧。"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：字義辨正）"
+    },
+    {
+      "id": "polysemy:115AG3H04:2",
+      "char": "冒",
+      "sentence": "為了救小狗，他不顧危險《冒》雨前進。",
+      "definition": "衝犯、不顧。",
+      "options": [
+        "衝犯、不顧。",
+        "假稱、假託。"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：字義辨正）"
+    },
+    {
+      "id": "polysemy:115AG3H04:3",
+      "char": "冒",
+      "sentence": "他沒有《冒》名借用別人的作品。",
+      "definition": "假稱、假託。",
+      "options": [
+        "假稱、假託。",
+        "魯莽、莽撞。"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：字義辨正）"
+    },
+    {
+      "id": "polysemy:115AG3H04:4",
+      "char": "冒",
+      "sentence": "弟弟做事太《冒》失，忘了先問清楚規則。",
+      "definition": "魯莽、莽撞。",
+      "options": [
+        "魯莽、莽撞。",
+        "由下往上或往外透出、發散。"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：字義辨正）"
+    }
+  ],
+  "polysemy_senses": [],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG3H04:倒",
+      "char": "倒",
+      "readings": [
+        {
+          "zhuyin": "ㄉㄠˋ",
+          "dabutie_zhuyin": "ㄉㄠˋ",
+          "senses": [
+            {
+              "definition": "方向相反或向後退。",
+              "examples": [
+                "倒退",
+                "倒車"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄉㄠˇ",
+          "dabutie_zhuyin": "ㄉㄠˇ",
+          "senses": [
+            {
+              "definition": "仆下、橫躺下來。",
+              "examples": [
+                "跌倒",
+                "摔倒"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：認識多音字）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG3H04:1",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "賞",
+          "example": "獎賞、欣賞"
+        },
+        {
+          "char": "掌",
+          "example": "手掌、掌聲"
+        },
+        {
+          "char": "當",
+          "example": "當然、當時"
+        },
+        {
+          "char": "常",
+          "example": "常見、平常"
+        },
+        {
+          "char": "堂",
+          "example": "天堂、課堂"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H04:2",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "徙",
+          "example": "遷徙、徙居"
+        },
+        {
+          "char": "徒",
+          "example": "徒手、學徒"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H04:3",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "驗",
+          "example": "實驗、驗證"
+        },
+        {
+          "char": "檢",
+          "example": "檢查、檢驗"
+        },
+        {
+          "char": "儉",
+          "example": "節儉、儉樸"
+        },
+        {
+          "char": "撿",
+          "example": "撿拾、撿起"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H04:4",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "蹈",
+          "example": "舞蹈、手舞足蹈"
+        },
+        {
+          "char": "稻",
+          "example": "稻米、稻田"
+        },
+        {
+          "char": "滔",
+          "example": "滔天、滔滔"
+        },
+        {
+          "char": "舀",
+          "example": "舀水、舀湯"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H04:5",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "拂",
+          "example": "吹拂、拂面"
+        },
+        {
+          "char": "費",
+          "example": "費用、浪費"
+        },
+        {
+          "char": "佛",
+          "example": "佛寺、佛像"
+        },
+        {
+          "char": "沸",
+          "example": "煮沸、沸騰"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H04:6",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "陽",
+          "example": "太陽、陽光"
+        },
+        {
+          "char": "湯",
+          "example": "泡湯、熱湯"
+        },
+        {
+          "char": "場",
+          "example": "操場、廣場"
+        },
+        {
+          "char": "揚",
+          "example": "飛揚、表揚"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H04:7",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "斧",
+          "example": "斧頭、斧柄"
+        },
+        {
+          "char": "釜",
+          "example": "破釜沉舟、釜底抽薪"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG3H04:1",
+      "stem": "康康看見鍋子裡的水不停冒泡，師傅正在門口接待客人。",
+      "question": "康康平時負責哪一項工作？",
+      "options": [
+        "撿柴",
+        "做菜",
+        "接待客人"
+      ],
+      "answer": "撿柴",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（教師自撰聆聽題）"
+    },
+    {
+      "id": "listening:115AG3H04:2",
+      "stem": "康康把熱水舀起來再倒回鍋裡，水仍然不停沸騰。",
+      "question": "康康先使用哪一種方法？",
+      "options": [
+        "揚湯止沸",
+        "釜底抽薪",
+        "把鍋子搬走"
+      ],
+      "answer": "揚湯止沸",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（教師自撰聆聽題）"
+    },
+    {
+      "id": "listening:115AG3H04:3",
+      "stem": "師傅抽出鍋底的柴火後，火變小，水也停止沸騰。",
+      "question": "師傅教康康解決問題要怎麼做？",
+      "options": [
+        "先找到問題的根本",
+        "只處理表面現象",
+        "遇到問題就放棄"
+      ],
+      "answer": "先找到問題的根本",
+      "status": "approved",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（教師自撰聆聽題）"
+    }
+  ],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "待",
+        "蝸",
+        "牛",
+        "牠",
+        "吞",
+        "寸",
+        "碌",
+        "奔",
+        "彈",
+        "簧",
+        "它",
+        "短",
+        "悲",
+        "流",
+        "永"
+      ],
+      "2": [
+        "貼",
+        "使",
+        "醒",
+        "準",
+        "睡",
+        "鐘",
+        "效",
+        "序",
+        "而",
+        "且",
+        "排",
+        "冰",
+        "箱",
+        "原",
+        "條",
+        "顯",
+        "隔"
+      ],
+      "3": [
+        "統",
+        "票",
+        "角",
+        "板",
+        "業",
+        "本",
+        "況",
+        "該",
+        "喊",
+        "文",
+        "具",
+        "理",
+        "此",
+        "備",
+        "易",
+        "匆",
+        "餘"
+      ],
+      "4": [
+        "堂",
+        "鈴",
+        "徒",
+        "傅",
+        "撿",
+        "柴",
+        "鍋",
+        "冒",
+        "騰",
+        "揚",
+        "湯",
+        "止",
+        "抽",
+        "解",
+        "薪",
+        "舀",
+        "沸",
+        "釜"
+      ]
+    }
+  },
+  "extensions": [
+    {
+      "id": "ext:stroke-115g3h04",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E5%A0%82%E9%88%B4%E5%BE%92%E5%82%85%E6%92%BF%E6%9F%B4%E9%8D%8B%E5%86%92%E9%A8%B0%E6%8F%9A%E6%B9%AF%E6%AD%A2%E6%8A%BD%E8%A7%A3%E8%96%AA%E8%88%80%E6%B2%B8%E9%87%9C",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・三年級・第4課",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「堂」的注音是？",
+      "options": [
+        "ㄊㄤˊ",
+        "ㄊㄤˇ",
+        "ㄉㄤˋ"
+      ],
+      "answer": "ㄊㄤˊ",
+      "explanation": "「堂」讀作 ㄊㄤˊ。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「鈴」的注音是？",
+      "options": [
+        "ㄌㄧㄥˊ",
+        "ㄌㄧㄣˊ",
+        "ㄌㄧㄥˇ"
+      ],
+      "answer": "ㄌㄧㄥˊ",
+      "explanation": "「鈴」讀作 ㄌㄧㄥˊ。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「沸騰」是什麼意思？",
+      "options": [
+        "液體受熱後不停翻滾冒泡",
+        "把木柴撿回來",
+        "把客人迎接進門"
+      ],
+      "answer": "液體受熱後不停翻滾冒泡",
+      "explanation": "水加熱後不停翻滾、冒泡，就是沸騰。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「揚湯止沸」比喻什麼？",
+      "options": [
+        "只處理表面，沒有解決根本問題",
+        "從根本解決問題",
+        "把食物煮熟"
+      ],
+      "answer": "只處理表面，沒有解決根本問題",
+      "explanation": "揚湯止沸只能暫時減弱沸勢，沒有處理根本原因。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「釜底抽薪」比喻什麼？",
+      "options": [
+        "從根本解決問題",
+        "中途退縮放棄",
+        "知道得不全面"
+      ],
+      "answer": "從根本解決問題",
+      "explanation": "抽走鍋底的柴火，就是從根本處理問題。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「舀」的部首是哪一個？",
+      "options": [
+        "臼",
+        "金",
+        "水"
+      ],
+      "answer": "臼",
+      "explanation": "「舀」的部首是臼。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "哪一個詞語的「冒」是「由下往上透出」？",
+      "options": [
+        "冒泡",
+        "冒險",
+        "冒失"
+      ],
+      "answer": "冒泡",
+      "explanation": "水從鍋裡往上冒泡。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「撿柴」的「撿」是哪一個字？",
+      "options": [
+        "撿",
+        "檢",
+        "劍"
+      ],
+      "answer": "撿",
+      "explanation": "拾取木柴要用「撿」。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "m01",
+      "type": "matching",
+      "stem": "把生字和部首配對。",
+      "pairs": [
+        {
+          "left": "堂",
+          "right": "土"
+        },
+        {
+          "left": "鈴",
+          "right": "金"
+        },
+        {
+          "left": "徒",
+          "right": "彳"
+        },
+        {
+          "left": "舀",
+          "right": "臼"
+        }
+      ],
+      "answer": null,
+      "explanation": null,
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與部首資料）",
+      "hints": []
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "note": "教材待補：應用任務設計中"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "available",
+      "activity": "listening-quiz"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "available",
+      "activity": "rhetoric"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  }
+}
