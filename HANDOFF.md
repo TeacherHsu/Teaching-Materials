@@ -14,11 +14,13 @@
 
 ---
 
-## 2026-09-25｜學校 Win｜Codex｜狀態：🚧 施工中
-- 範圍：`apps/mandarin/public/data/115AG3H/lesson05.json`、`public/assets/115AG3H/lesson05/`、`course-index.json`
-- 做了什麼：準備依官方翰林 G3A 第 5 課資料生成網站課次，沿用第 1～4 課的資料結構、互動規格與壓縮圖片容量規範
-- 待辦：確認官方第 5 課內容、完成課次資料、圖片、延伸連結與驗證
-- 注意：不修改課文全文，不把官方原始教材、出版社補充原檔或第三方 xlsx 放入公開 repo
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/public/data/115AG3H/lesson05.json`、`apps/mandarin/public/assets/115AG3H/lesson05/`、`apps/mandarin/public/data/course-index.json`
+- 做了什麼：新增翰林三上第 5 課「為梨花撐傘」完整課次資料，包含 15 個生字、14 個目標語詞、5 個成語與插圖、句型、修辭、段落大意、閱讀理解、一字多義、一字多音、形似字、聆聽題、跨課複習與挑戰題；加入每課筆順直連，並把 14 張語詞圖與 5 張成語圖壓縮為 WebP
+- 驗證：`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、第 5 課 `MANDARIN_TEST_LESSON=../public/data/115AG3H/lesson05.json node scripts/test-module-star-coverage.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；瀏覽器確認課次首頁、語詞圖片與點選解釋、成語拖拉、形似字拆題、生字造詞與筆順連結，無水平溢出與 console 錯誤
+- 推送：已推送至 `origin/codex/mandarin-115g3a-lessons`（完成 commit 後更新）；`origin/main` 尚未更新
+- 待辦／給下一棒：後續可接續 G3A 第 6 課；本課圖片 19 張、約 2.05 MiB，維持單張 300 KiB 與單課 4 MiB 容量閘門
+- 注意：不修改課文全文，不把官方原始教材、出版社補充原檔或第三方 xlsx 放入公開 repo；網站資產只保留壓縮 WebP
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG3H/lesson04.json`、`public/assets/115AG3H/lesson04/`、`course-index.json`
