@@ -1,4 +1,4 @@
-import { h } from '../utils/dom.js';
+import { h, clear } from '../utils/dom.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 import { missingContentNotice } from '../activities/engine.js';
 import { buildIdiomBuilderActivity } from '../components/IdiomBuilder.js';
@@ -12,10 +12,34 @@ import { buildRhetoricActivity } from '../activities/rhetoric.js';
 import { buildStructureMapActivity } from '../activities/structureMap.js';
 import { buildReviewActivity } from '../activities/review.js';
 import { buildExtensionLinks } from '../components/ExtensionLinks.js';
-import { findModuleEntry, getModuleStatus } from '../activities/moduleRegistry.js';
-import { saveModuleComplete } from '../utils/storage.js';
+import { findModuleEntry, getModuleStatus, MODULE_REGISTRY, moduleColorVars } from '../activities/moduleRegistry.js';
+import { saveModuleComplete, saveModuleStars, getLessonStars } from '../utils/storage.js';
+import { startScoreSession, endScoreSession } from '../utils/scoreSession.js';
+import { computeModuleStars, starsMarkup } from '../utils/scoring.js';
+import { moduleIconMarkup } from '../components/icons.js';
 import { navigate } from '../router/router.js';
 import { isPreview } from '../utils/preview.js';
+
+const ACTIVITY_BUILDERS = {
+  characters: buildCharactersActivity,
+  vocabulary: buildVocabularyActivity,
+  sentence_practice: buildSentencePracticeActivity,
+  idiom_builder: buildIdiomBuilderActivity,
+  reading: buildReadingActivity,
+  polysemy: buildPolysemyActivity,
+  listening: buildListeningActivity,
+  rhetoric: buildRhetoricActivity,
+  structure_map: buildStructureMapActivity,
+  review: buildReviewActivity,
+};
+
+/** 可開始的大項清單，用來算「本課星星 N／最高 M」的分母（M = 這些大項數 × 3）。 */
+function availableModuleKeys(lesson) {
+  return MODULE_REGISTRY.filter((entry) => {
+    const s = getModuleStatus(lesson, entry);
+    return s.code === 'available' || s.code === 'done';
+  }).map((entry) => entry.key);
+}
 
 export function ModulePage(lesson, moduleKey) {
   const entry = findModuleEntry(moduleKey);
@@ -23,6 +47,10 @@ export function ModulePage(lesson, moduleKey) {
   const label = (mod && mod.label) || (entry && entry.label) || moduleKey;
   const status = entry ? getModuleStatus(lesson, entry) : { code: 'coming_soon', text: '即將推出' };
   const root = h('div', { class: 'container' });
+  if (entry) {
+    const colorVars = moduleColorVars(entry.color);
+    root.setAttribute('style', Object.entries(colorVars).map(([k, v]) => `${k}:${v}`).join(';'));
+  }
   root.appendChild(
     h('p', { class: 'breadcrumb' }, [
       h('a', { href: '#/' }, '首頁'),
@@ -43,6 +71,13 @@ export function ModulePage(lesson, moduleKey) {
     return root;
   }
 
+  if (entry) {
+    root.appendChild(
+      h('div', { class: 'module-page-strip', 'aria-hidden': 'true' }, [
+        h('span', { class: 'module-page-strip__icon', html: moduleIconMarkup(entry.icon) }),
+      ]),
+    );
+  }
   root.appendChild(
     h('div', { class: 'quiz-option-row' }, [
       h('h1', {}, label),
@@ -54,79 +89,23 @@ export function ModulePage(lesson, moduleKey) {
   }
 
   const onBack = () => navigate(`/lesson/${lesson.lesson_id}`);
+  const activitySlot = h('div', {});
+  root.appendChild(activitySlot);
 
-  if (moduleKey === 'characters') {
-    root.appendChild(
-      buildCharactersActivity(lesson, () => {
-        saveModuleComplete(lesson.lesson_id, 'characters');
-        onBack();
-      }),
-    );
-  } else if (moduleKey === 'vocabulary') {
-    root.appendChild(
-      buildVocabularyActivity(lesson, () => {
-        saveModuleComplete(lesson.lesson_id, 'vocabulary');
-        onBack();
-      }),
-    );
-  } else if (moduleKey === 'sentence_practice') {
-    root.appendChild(
-      buildSentencePracticeActivity(lesson, () => {
-        saveModuleComplete(lesson.lesson_id, 'sentence_practice');
-        onBack();
-      }),
-    );
-  } else if (moduleKey === 'idiom_builder') {
-    root.appendChild(
-      buildIdiomBuilderActivity(lesson, () => {
-        saveModuleComplete(lesson.lesson_id, 'idiom_builder');
-        onBack();
-      }),
-    );
-  } else if (moduleKey === 'reading') {
-    root.appendChild(
-      buildReadingActivity(lesson, () => {
-        saveModuleComplete(lesson.lesson_id, 'reading');
-        onBack();
-      }),
-    );
-  } else if (moduleKey === 'polysemy') {
-    root.appendChild(
-      buildPolysemyActivity(lesson, () => {
-        saveModuleComplete(lesson.lesson_id, 'polysemy');
-        onBack();
-      }),
-    );
-  } else if (moduleKey === 'listening') {
-    root.appendChild(
-      buildListeningActivity(lesson, () => {
-        saveModuleComplete(lesson.lesson_id, 'listening');
-        onBack();
-      }),
-    );
-  } else if (moduleKey === 'rhetoric') {
-    root.appendChild(
-      buildRhetoricActivity(lesson, () => {
-        saveModuleComplete(lesson.lesson_id, 'rhetoric');
-        onBack();
-      }),
-    );
-  } else if (moduleKey === 'structure_map') {
-    root.appendChild(
-      buildStructureMapActivity(lesson, () => {
-        saveModuleComplete(lesson.lesson_id, 'structure_map');
-        onBack();
-      }),
-    );
-  } else if (moduleKey === 'review') {
-    root.appendChild(
-      buildReviewActivity(lesson, () => {
-        saveModuleComplete(lesson.lesson_id, 'review');
-        onBack();
-      }),
-    );
+  const builder = ACTIVITY_BUILDERS[moduleKey];
+  if (builder) {
+    startScoreSession();
+    const onModuleDone = () => {
+      const meta = endScoreSession();
+      const stars = computeModuleStars(meta);
+      const { stars: bestStars, isNewRecord } = saveModuleStars(lesson.lesson_id, moduleKey, stars);
+      saveModuleComplete(lesson.lesson_id, moduleKey);
+      clear(activitySlot);
+      activitySlot.appendChild(renderModuleCompleteSummary({ lesson, stars, bestStars, isNewRecord, onBack }));
+    };
+    activitySlot.appendChild(builder(lesson, onModuleDone));
   } else {
-    root.appendChild(missingContentNotice());
+    activitySlot.appendChild(missingContentNotice());
   }
 
   const extensionLinks = buildExtensionLinks(lesson, moduleKey);
@@ -134,3 +113,41 @@ export function ModulePage(lesson, moduleKey) {
 
   return root;
 }
+
+/**
+ * 大項完成後的星星摘要卡：這次得到幾顆星、整課累計、若刷新最佳紀錄加提示。
+ * total=0（此大項沒有可判定題目，例如純瀏覽步驟）時不顯示星星列，只顯示完成訊息。
+ */
+function renderModuleCompleteSummary({ lesson, stars, bestStars, isNewRecord, onBack }) {
+  const keys = availableModuleKeys(lesson);
+  const lessonStars = getLessonStars(lesson.lesson_id, keys);
+  const lessonStarsMax = keys.length * 3;
+
+  const children = [
+    h('div', { class: 'completion-feedback__badge', 'aria-hidden': 'true', html: DONE_BADGE }),
+    h('h2', {}, '完成！'),
+  ];
+  if (bestStars > 0 || stars > 0) {
+    children.push(
+      h('div', { class: 'quiz-option-row', style: 'justify-content:center' }, [
+        h('p', { class: 'completion-feedback__stars-label' }, '這次得到：'),
+        h('span', { html: starsMarkup({ earned: stars, max: 3 }) }),
+      ]),
+    );
+    if (isNewRecord) {
+      children.push(h('p', { class: 'completion-feedback__new-record' }, '新紀錄！'));
+    }
+  }
+  children.push(
+    h('p', { class: 'meta' }, `本課累計星星：${lessonStars} ／ ${lessonStarsMax}`),
+  );
+  children.push(
+    h('div', { class: 'card-grid', style: 'margin-top:16px' }, [
+      h('button', { class: 'btn', type: 'button', onclick: onBack }, '回任務地圖'),
+    ]),
+  );
+
+  return h('div', { class: 'completion-feedback completion-feedback--module', role: 'status', 'aria-live': 'polite' }, children);
+}
+
+const DONE_BADGE = `<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3l6-6.5"/></svg>`;
