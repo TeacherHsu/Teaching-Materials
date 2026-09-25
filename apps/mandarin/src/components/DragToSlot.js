@@ -28,6 +28,7 @@ const DEFAULT_HINT = '再看看題目，仔細比對一下再選。';
  *     answerId: string,
  *     hint?: string,
  *     explanation?: string,
+ *     speech_overrides?: Array<{text:string, speak:string}>, // 候選卡朗讀讀音校正
  *   }>,
  *   onComplete?: (correct:number, total:number) => void,
  *   onBack?: () => void,
@@ -67,7 +68,7 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
 
     root.appendChild(ProgressIndicator({ current: index + 1, total: items.length }));
     if (item.speakText) {
-      root.appendChild(ReadAllButton(() => ({ stem: item.speakText })));
+      root.appendChild(ReadAllButton(() => ({ stem: item.speakText, options: options.map((o) => o.label) })));
     }
 
     const contextWrap = h('div', { class: 'drag-to-slot__context' });
@@ -91,22 +92,38 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
       type: 'button',
       'aria-label': '答案空格，點一下可以取消已放入的詞塊',
     }, item.slotLabel || '？');
-    const slotWrap = h('div', { class: 'sentence-slots', 'aria-label': '目前放入空格的詞塊' }, [slot]);
+    const slotSpeakWrap = h('span', { class: 'drag-to-slot__slot-speak' });
+    const slotWrap = h('div', { class: 'sentence-slots drag-to-slot__slot-row', 'aria-label': '目前放入空格的詞塊' }, [slot, slotSpeakWrap]);
     root.appendChild(slotWrap);
 
     const bankWrap = h('div', { class: 'sentence-bank', 'aria-label': '可選詞塊，先點選再點空格放入' });
     const options = [...item.options].sort(() => Math.random() - 0.5);
+    const overrides = item.speech_overrides || [];
 
     function refreshSlot() {
       const opt = options.find((o) => o.id === placed);
       slot.textContent = opt ? opt.label : item.slotLabel || '？';
       slot.classList.toggle('drag-to-slot__slot--filled', !!placed);
+      clear(slotSpeakWrap);
+      if (opt) {
+        slotSpeakWrap.appendChild(
+          SpeakButton({
+            text: opt.label,
+            overrides,
+            label: '聽',
+            variant: 'speak-button--option',
+            ariaLabel: `朗讀空格內容：${opt.label}`,
+          }),
+        );
+      }
     }
+
+    const chipById = new Map(); // optId -> 候選卡按鈕（bankWrap 的子節點現在是「卡片＋喇叭」的 row，不能直接當 chip 用）
 
     slot.addEventListener('click', () => {
       if (answered || !placed) return;
       // 取消放入，詞塊退回候選區
-      const chip = [...bankWrap.children].find((c) => c.dataset.optId === placed);
+      const chip = chipById.get(placed);
       if (chip) {
         chip.disabled = false;
         chip.setAttribute('aria-pressed', 'false');
@@ -135,7 +152,20 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
         refreshSlot();
         checkBtn.disabled = false;
       });
-      bankWrap.appendChild(chip);
+      // 候選卡本身的朗讀鈕：獨立節點，不觸發卡片選取。click 由 SpeakButton
+      // 內部 stopPropagation；這裡額外攔截 pointerdown，避免拖曳手勢誤把
+      // 喇叭當成候選卡的起點。
+      const optSpeaker = SpeakButton({
+        text: opt.label,
+        overrides,
+        label: '聽',
+        variant: 'speak-button--option',
+        ariaLabel: `朗讀：${opt.label}`,
+      });
+      optSpeaker.addEventListener('pointerdown', (e) => e.stopPropagation());
+      const row = h('div', { class: 'drag-to-slot__option-row' }, [chip, optSpeaker]);
+      bankWrap.appendChild(row);
+      chipById.set(opt.id, chip);
     });
 
     checkBtn.addEventListener('click', () => {
@@ -170,7 +200,7 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
       slot.classList.add('quiz-option--incorrect');
       if (attempts < 2) {
         // 第 1 次答錯：不揭曉正解，退回候選區重選
-        const chip = [...bankWrap.children].find((c) => c.dataset.optId === placed);
+        const chip = chipById.get(placed);
         if (chip) {
           chip.disabled = false;
           chip.setAttribute('aria-pressed', 'false');
@@ -193,7 +223,19 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
         slot.textContent = answerOpt ? answerOpt.label : item.slotLabel;
         slot.classList.remove('quiz-option--incorrect');
         slot.classList.add('quiz-option--correct');
-        [...bankWrap.children].forEach((c) => { c.disabled = true; });
+        clear(slotSpeakWrap);
+        if (answerOpt) {
+          slotSpeakWrap.appendChild(
+            SpeakButton({
+              text: answerOpt.label,
+              overrides,
+              label: '聽',
+              variant: 'speak-button--option',
+              ariaLabel: `朗讀空格內容：${answerOpt.label}`,
+            }),
+          );
+        }
+        chipById.forEach((c) => { c.disabled = true; });
         clear(feedbackSlot);
         feedbackSlot.appendChild(
           h('p', { role: 'status', 'aria-live': 'polite', class: 'meta' }, [

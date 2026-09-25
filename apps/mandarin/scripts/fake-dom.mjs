@@ -27,6 +27,13 @@ class FakeElement {
         names.forEach((n) => set.delete(n));
         self.className = [...set].join(' ');
       },
+      toggle(name, force) {
+        const set = new Set(self.className.split(/\s+/).filter(Boolean));
+        const shouldAdd = force === undefined ? !set.has(name) : force;
+        if (shouldAdd) set.add(name); else set.delete(name);
+        self.className = [...set].join(' ');
+        return shouldAdd;
+      },
     };
   }
 
@@ -43,7 +50,7 @@ class FakeElement {
   }
 
   dispatch(type) {
-    (this._listeners[type] || []).forEach((fn) => fn({ target: this }));
+    (this._listeners[type] || []).forEach((fn) => fn({ target: this, stopPropagation() {} }));
   }
 
   appendChild(child) {
