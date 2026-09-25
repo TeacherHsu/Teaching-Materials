@@ -15,6 +15,14 @@
 ---
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/` 成語內嵌答案空格的語音按鈕
+- 做了什麼：移除填入答案後出現在成語中間的額外朗讀按鈕；保留題目朗讀與下方候選字朗讀，並補上內嵌空格的答錯揭曉防呆
+- 驗證：`npm run validate`、`npm run build`、`npm run check-dist`、全部 `scripts/test-*.mjs` 通過；瀏覽器確認「原封不動」填入「原」後成語中間沒有多餘喇叭，無 console/page error
+- 推送：尚未推送（等待明確推送指示）
+- 待辦／給下一棒：後續若新增內嵌答案空格，不要在 `inlineSlotWrap` 放置 slot 專用朗讀鈕
+- 注意：不改官方教材內容；只調整內嵌答案空格的 UI 呈現
+
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/`「生字變成語」拖拉作答互動
 - 做了什麼：
   - `DragToSlot` 新增直接用滑鼠／觸控拖曳候選答案到空格的 Pointer Events 互動

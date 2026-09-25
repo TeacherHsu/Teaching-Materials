@@ -109,9 +109,10 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
         ? '答案空格，可將候選答案拖到這裡；點一下可以取消已放入的詞塊'
         : '答案空格，點一下可以取消已放入的詞塊',
     }, item.slotLabel || '？');
-    const slotSpeakWrap = h('span', { class: 'drag-to-slot__slot-speak' });
+    // 成語內嵌空格已經在詞語中，避免再插入一顆會打斷成語閱讀的朗讀鈕。
+    const slotSpeakWrap = item.inlineSlotWrap ? null : h('span', { class: 'drag-to-slot__slot-speak' });
     if (item.inlineSlotWrap) {
-      item.inlineSlotWrap.appendChild(slotSpeakWrap);
+      // 內嵌空格不放置額外語音按鈕。
     } else {
       const slotWrap = h('div', { class: 'sentence-slots drag-to-slot__slot-row', 'aria-label': '目前放入空格的詞塊' }, [slot, slotSpeakWrap]);
       root.appendChild(slotWrap);
@@ -129,8 +130,8 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
       const opt = options.find((o) => o.id === placed);
       slot.textContent = opt ? opt.label : item.slotLabel || '？';
       slot.classList.toggle('drag-to-slot__slot--filled', !!placed);
-      clear(slotSpeakWrap);
-      if (opt) {
+      if (slotSpeakWrap) clear(slotSpeakWrap);
+      if (opt && slotSpeakWrap) {
         slotSpeakWrap.appendChild(
           SpeakButton({
             text: opt.label,
@@ -316,8 +317,8 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
         slot.textContent = answerOpt ? answerOpt.label : item.slotLabel;
         slot.classList.remove('quiz-option--incorrect');
         slot.classList.add('quiz-option--correct');
-        clear(slotSpeakWrap);
-        if (answerOpt) {
+        if (slotSpeakWrap) clear(slotSpeakWrap);
+        if (answerOpt && slotSpeakWrap) {
           slotSpeakWrap.appendChild(
             SpeakButton({
               text: answerOpt.label,
