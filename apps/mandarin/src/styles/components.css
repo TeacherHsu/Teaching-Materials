@@ -491,6 +491,9 @@
   font-size: 96px;
   line-height: 1;
   margin: var(--space-2) 0;
+  font-family: var(--font-family-learning-glyph);
+  font-weight: 400;
+  font-synthesis: none;
 }
 
 .character-card__zhuyin {
@@ -543,6 +546,12 @@
   margin: var(--space-2) 0;
   font-size: 56px;
   line-height: 1.2;
+}
+
+.vocabulary-card__term:not(.vocabulary-card__term--meaning) {
+  font-family: var(--font-family-learning-glyph);
+  font-weight: 400;
+  font-synthesis: none;
 }
 
 .vocabulary-card__term--meaning {

@@ -3,6 +3,14 @@
   emerald 綠 / amber 米黃配色。目標：warm off-white 底、calm primary、
   限量 accent，大字大間距，中高年級（含 ADHD／閱讀困難／學障）友善。
 */
+@font-face {
+  font-family: "Bpmf Iansui";
+  src: url("/fonts/BpmfIansui-Regular.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
   /* 色彩：主色為沉靜的靛藍青（非 emerald），輔以暖陶土 accent（非 amber） */
   --color-primary: #3a5a7a;
@@ -25,6 +33,7 @@
   /* Typography（依需求下限設定，行高皆 >=1.5） */
   --font-family-base: -apple-system, BlinkMacSystemFont, "PingFang TC",
     "Microsoft JhengHei", "Heiti TC", system-ui, sans-serif;
+  --font-family-learning-glyph: "Bpmf Iansui", "PingFang TC", "Microsoft JhengHei", sans-serif;
 
   --font-size-page-title: clamp(32px, 4vw, 40px);
   --font-size-section: clamp(26px, 3vw, 32px);
