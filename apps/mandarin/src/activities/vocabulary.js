@@ -1,5 +1,5 @@
 // 「學會語詞」模組：三步依序呈現（一畫面一任務）
-// 1. 翻卡（VocabularyCard，可翻面看解釋）
+// 1. 看圖認識語詞（VocabularyCard，固定顯示圖片與語詞）
 // 2. 詞 ↔ 義配對（MatchingGame，3–5 題一組，多組依序進行）
 // 3. 看義選詞（ChoiceQuiz，3–5 題一組，多組依序進行）
 // 基礎／挑戰：以 word.level 欄位分層，缺欄位時依字數（≥3 字視為挑戰層）。
@@ -46,12 +46,12 @@ export function buildVocabularyActivity(lesson, onBack) {
   const words = (lesson.words || []).filter((w) => w.status === 'ready' && w.word && w.meaning);
   const basicFirst = [...words].sort((a, b) => (wordLevel(a) === wordLevel(b) ? 0 : wordLevel(a) === 'basic' ? -1 : 1));
 
-  const flipRounds = chunkRounds(basicFirst, { min: 3, max: 5 });
+  const recognitionRounds = chunkRounds(basicFirst, { min: 3, max: 5 });
   const matchingRounds = chunkRounds(basicFirst, { min: 3, max: 5 });
   const choiceRounds = chunkRounds(basicFirst, { min: 3, max: 5 }).map((round) => round.map((w) => buildChoiceItem(w, words)));
 
   const steps = [];
-  if (flipRounds.length > 0) steps.push('flip');
+  if (recognitionRounds.length > 0) steps.push('recognition');
   if (matchingRounds.length > 0) steps.push('matching');
   if (choiceRounds.length > 0) steps.push('choice');
 
@@ -69,16 +69,16 @@ export function buildVocabularyActivity(lesson, onBack) {
     const isLastStep = stepIndex === steps.length - 1;
     const stepLabel = `第 ${stepIndex + 1} 步／共 ${steps.length} 步`;
 
-    if (step === 'flip') {
-      const isLastRound = roundIndex === flipRounds.length - 1;
+    if (step === 'recognition') {
+      const isLastRound = roundIndex === recognitionRounds.length - 1;
       container.appendChild(
         TaskBanner({
-          label: '翻卡認識語詞：點卡片可以翻面看意思',
-          step: `${stepLabel} ・ 第 ${roundIndex + 1} 組／共 ${flipRounds.length} 組`,
+          label: '看圖片認識語詞：按喇叭聽語詞',
+          step: stepLabel,
         }),
       );
       const grid = h('div', { class: 'card-grid' });
-      for (const w of flipRounds[roundIndex]) grid.appendChild(VocabularyCard(w));
+      for (const w of recognitionRounds[roundIndex]) grid.appendChild(VocabularyCard(w));
       container.appendChild(grid);
       const nextBtn = h(
         'button',
