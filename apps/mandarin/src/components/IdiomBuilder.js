@@ -6,7 +6,9 @@ import { missingContentNotice } from '../activities/engine.js';
 import { filterByStatus, isPreview } from '../utils/preview.js';
 
 const ROUND_SIZE_MAX = 5;
-const BASE = import.meta.env.BASE_URL;
+// 與 activities/review.js 同一套防呆寫法：純 Node（無 Vite）測試環境下
+// import.meta.env 不存在，用 optional chaining 退回 '/'，不讓測試載入就先炸掉。
+const BASE = (typeof import.meta !== 'undefined' ? import.meta.env?.BASE_URL : undefined) ?? '/';
 
 function reviewPendingBadge() {
   return h('span', { class: 'review-pending-badge' }, '待審');

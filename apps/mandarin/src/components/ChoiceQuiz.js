@@ -5,6 +5,7 @@ import { CompletionFeedback } from './CompletionFeedback.js';
 import { SpeakButton } from './SpeakButton.js';
 import { ReadAllButton } from './ReadAllButton.js';
 import { recordOutcome } from '../utils/scoreSession.js';
+import { celebrateCorrect } from '../utils/celebrate.js';
 
 const CHECK_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>`;
 const CROSS_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>`;
@@ -48,14 +49,14 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
     let attempts = 0;
 
     root.appendChild(ProgressIndicator({ current: index + 1, total: items.length }));
-    root.appendChild(
-      ReadAllButton(() => ({ stem: item.stem, options: item.options })),
-    );
     if (item.extra) root.appendChild(item.extra);
     root.appendChild(
-      h('div', { class: 'quiz-option-row' }, [
-        h('p', { class: 'quiz-stem' }, item.stem),
-        SpeakButton({ text: item.stem, label: '聽', variant: 'speak-button--option' }),
+      h('div', { class: 'quiz-title-row' }, [
+        h('div', { class: 'quiz-option-row' }, [
+          h('p', { class: 'quiz-stem' }, item.stem),
+          SpeakButton({ text: item.stem, label: '聽', variant: 'speak-button--option' }),
+        ]),
+        ReadAllButton(() => ({ stem: item.stem, options: item.options })),
       ]),
     );
 
@@ -86,6 +87,7 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
           btn.innerHTML = `${CHECK_ICON}<span>${opt}</span>`;
           correctCount += 1;
           recordOutcome({ firstTry: attempts === 1, revealed: false });
+          celebrateCorrect(btn, 'var(--module-color)', { firstTry: attempts === 1 });
           optionButtons.forEach((c) => {
             if (c !== btn) c.disabled = true;
           });

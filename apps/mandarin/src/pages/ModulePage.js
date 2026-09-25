@@ -16,9 +16,11 @@ import { findModuleEntry, getModuleStatus, MODULE_REGISTRY, moduleColorVars } fr
 import { saveModuleComplete, saveModuleStars, getLessonStars } from '../utils/storage.js';
 import { startScoreSession, endScoreSession } from '../utils/scoreSession.js';
 import { computeModuleStars, starsMarkup } from '../utils/scoring.js';
+import { celebrateComplete } from '../utils/celebrate.js';
 import { moduleIconMarkup } from '../components/icons.js';
 import { navigate } from '../router/router.js';
 import { isPreview } from '../utils/preview.js';
+import { volumeLabel } from '../utils/volumeLabel.js';
 
 const ACTIVITY_BUILDERS = {
   characters: buildCharactersActivity,
@@ -54,6 +56,8 @@ export function ModulePage(lesson, moduleKey) {
   root.appendChild(
     h('p', { class: 'breadcrumb' }, [
       h('a', { href: '#/' }, '首頁'),
+      ' ／ ',
+      h('a', { href: `#/grade/${lesson.volume.grade}` }, volumeLabel(lesson.volume)),
       ' ／ ',
       h('a', { href: `#/lesson/${lesson.lesson_id}` }, `第 ${lesson.lesson_no} 課`),
       ' ／ ',
@@ -147,7 +151,15 @@ function renderModuleCompleteSummary({ lesson, stars, bestStars, isNewRecord, on
     ]),
   );
 
-  return h('div', { class: 'completion-feedback completion-feedback--module', role: 'status', 'aria-live': 'polite' }, children);
+  const summary = h(
+    'div',
+    { class: 'completion-feedback completion-feedback--module', role: 'status', 'aria-live': 'polite' },
+    children,
+  );
+  if (stars > 0) {
+    celebrateComplete(summary, { moduleColor: 'var(--module-color)', isNewRecord, starsEarned: stars });
+  }
+  return summary;
 }
 
 const DONE_BADGE = `<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3l6-6.5"/></svg>`;

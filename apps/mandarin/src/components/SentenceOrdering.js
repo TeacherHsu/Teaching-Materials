@@ -4,6 +4,7 @@ import { SpeakButton } from './SpeakButton.js';
 import { ReadAllButton } from './ReadAllButton.js';
 import { shuffleDiffering } from '../utils/shuffle.js';
 import { recordOutcome } from '../utils/scoreSession.js';
+import { celebrateCorrect } from '../utils/celebrate.js';
 
 /**
  * 句子排序：點選詞塊依序加入答案區；鍵盤可操作（button 逐一點選，
@@ -17,11 +18,13 @@ export function SentenceOrdering({ prompt, parts, solution, onBack }) {
   const bank = shuffleDiffering(parts, `${prompt}|${parts.join('')}`);
   let mistakes = 0; // 沒有揭曉正解機制，只記是否一次就排對，供星星計分用
 
-  root.appendChild(ReadAllButton(() => ({ task: prompt, options: bank })));
   root.appendChild(
-    h('div', { class: 'quiz-option-row' }, [
-      h('p', { class: 'quiz-stem' }, prompt),
-      SpeakButton({ text: prompt, label: '聽', variant: 'speak-button--option' }),
+    h('div', { class: 'quiz-title-row' }, [
+      h('div', { class: 'quiz-option-row' }, [
+        h('p', { class: 'quiz-stem' }, prompt),
+        SpeakButton({ text: prompt, label: '聽', variant: 'speak-button--option' }),
+      ]),
+      ReadAllButton(() => ({ task: prompt, options: bank })),
     ]),
   );
   const slots = h('div', { class: 'sentence-slots', 'aria-label': '目前排出的句子' });
@@ -57,6 +60,7 @@ export function SentenceOrdering({ prompt, parts, solution, onBack }) {
     const isCorrect = chosen.join('') === solution.join('');
     if (isCorrect) {
       recordOutcome({ firstTry: mistakes === 0, revealed: false });
+      celebrateCorrect(checkBtn, 'var(--module-color)', { firstTry: mistakes === 0 });
       const finished = chosen.join('');
       clear(root);
       root.appendChild(

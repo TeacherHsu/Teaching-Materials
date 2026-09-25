@@ -2,6 +2,7 @@ import { h, clear } from '../utils/dom.js';
 import { CompletionFeedback } from './CompletionFeedback.js';
 import { SpeakButton } from './SpeakButton.js';
 import { recordOutcome } from '../utils/scoreSession.js';
+import { celebrateCorrect } from '../utils/celebrate.js';
 
 /**
  * 配對遊戲：鍵盤可操作（不只有拖曳）——先選左欄一項，再選右欄一項，
@@ -39,6 +40,7 @@ export function MatchingGame({ pairs, onComplete, onBack, backLabel = '回課程
       leftBtn.disabled = true;
       rightBtn.disabled = true;
       status.textContent = `✓ 配對正確：${leftVal} ↔ ${pair.right}`;
+      celebrateCorrect(rightBtn, 'var(--module-color)', { firstTry: mistakes === 0 });
       if (matched.size === pairs.length) {
         recordOutcome({ firstTry: mistakes === 0, revealed: false });
         root.appendChild(

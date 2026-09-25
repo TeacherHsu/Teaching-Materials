@@ -32,11 +32,13 @@ export function ReadingQuestions({ items, onBack, backLabel = '回課程首頁' 
       root.appendChild(h('p', { class: 'meta' }, `（教師預覽）策略標籤：${item.strategy_tag}`));
     }
 
-    root.appendChild(ReadAllButton(() => ({ stem: item.stem })));
     root.appendChild(
-      h('div', { class: 'quiz-option-row' }, [
-        h('p', { class: 'quiz-stem' }, item.stem),
-        SpeakButton({ text: item.stem, label: '聽', variant: 'speak-button--option' }),
+      h('div', { class: 'quiz-title-row' }, [
+        h('div', { class: 'quiz-option-row' }, [
+          h('p', { class: 'quiz-stem' }, item.stem),
+          SpeakButton({ text: item.stem, label: '聽', variant: 'speak-button--option' }),
+        ]),
+        ReadAllButton(() => ({ stem: item.stem })),
       ]),
     );
 

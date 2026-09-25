@@ -5,9 +5,7 @@ import { SpeakButton } from '../components/SpeakButton.js';
 import { moduleIconMarkup, STATUS_ICONS } from '../components/icons.js';
 import { getModuleStars, getLessonStars } from '../utils/storage.js';
 import { starsMarkup } from '../utils/scoring.js';
-
-const CN_NUM = ['', '一', '二', '三', '四', '五', '六'];
-const volumeLabel = (v) => `${v.publisher || ''}${CN_NUM[v.grade] || v.grade}${v.term || ''}`;
+import { volumeLabel } from '../utils/volumeLabel.js';
 
 const STATUS_CLASS = {
   done: 'module-card__status--done',
@@ -36,7 +34,9 @@ export function LessonDashboard(lesson) {
 
   const lessonTitle = `第 ${lesson.lesson_no} 課：${lesson.title}`;
   const doneCount = MODULE_REGISTRY.filter((entry) => getModuleStatus(lesson, entry).code === 'done').length;
-  const totalCount = MODULE_REGISTRY.length;
+  // 分母只算「可開始的大項」：排除鎖住的（例如舊字新詞第 2 課起才開放），
+  // 不然學生第 1 課永遠湊不滿分母，見規格 §2。
+  const totalCount = MODULE_REGISTRY.filter((entry) => getModuleStatus(lesson, entry).code !== 'locked').length;
   const pct = totalCount > 0 ? Math.round((doneCount / totalCount) * 100) : 0;
   const availableKeys = MODULE_REGISTRY.filter((entry) => {
     const s = getModuleStatus(lesson, entry);

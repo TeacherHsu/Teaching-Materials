@@ -5,6 +5,7 @@ import { CompletionFeedback } from './CompletionFeedback.js';
 import { SpeakButton } from './SpeakButton.js';
 import { ReadAllButton } from './ReadAllButton.js';
 import { recordOutcome } from '../utils/scoreSession.js';
+import { celebrateCorrect } from '../utils/celebrate.js';
 
 const CHECK_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>`;
 const CROSS_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>`;
@@ -67,9 +68,15 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
     let attempts = 0;
     let answered = false;
 
-    root.appendChild(ProgressIndicator({ current: index + 1, total: items.length }));
     if (item.speakText) {
-      root.appendChild(ReadAllButton(() => ({ stem: item.speakText, options: options.map((o) => o.label) })));
+      root.appendChild(
+        h('div', { class: 'quiz-title-row' }, [
+          ProgressIndicator({ current: index + 1, total: items.length }),
+          ReadAllButton(() => ({ stem: item.speakText, options: options.map((o) => o.label) })),
+        ]),
+      );
+    } else {
+      root.appendChild(ProgressIndicator({ current: index + 1, total: items.length }));
     }
 
     const contextWrap = h('div', { class: 'drag-to-slot__context' });
@@ -178,6 +185,7 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
         answered = true;
         correctCount += 1;
         recordOutcome({ firstTry: attempts === 1, revealed: false });
+        celebrateCorrect(slot, 'var(--module-color)', { firstTry: attempts === 1 });
         slot.classList.add('quiz-option--correct');
         clear(feedbackSlot);
         feedbackSlot.appendChild(

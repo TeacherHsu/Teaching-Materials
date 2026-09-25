@@ -10,7 +10,7 @@ class FakeElement {
     this.children = [];
     this.parentNode = null;
     this._listeners = {};
-    this.disabled = false;
+    this._disabled = false;
     this._text = '';
     this._html = '';
     this.style = {};
@@ -39,10 +39,33 @@ class FakeElement {
 
   setAttribute(key, value) {
     this.attrs[key] = String(value);
+    // 真實瀏覽器：<button disabled> 這個 HTML 屬性會反映到 .disabled 這個 IDL
+    // 屬性（button.disabled 直接變 true）。這個 stub 之前沒做這件事，會讓「一開始
+    // 就 disabled」的按鈕被誤判成可點擊（.disabled 屬性仍是建構時的預設 false）。
+    if (key === 'disabled') this._disabled = true;
   }
 
   getAttribute(key) {
     return this.attrs[key] ?? null;
+  }
+
+  removeAttribute(key) {
+    delete this.attrs[key];
+    if (key === 'disabled') this._disabled = false;
+  }
+
+  // disabled 用 getter/setter 讓「屬性」與「HTML attribute」雙向同步，貼近真實瀏覽器的
+  // reflected boolean attribute 行為：元件常常直接 `el.disabled = true/false` 操作屬性
+  // （不是呼叫 setAttribute），若不同步，attrs.disabled 會殘留成初始值，讓「判斷是否可
+  // 點擊」的測試工具讀到過期狀態。
+  get disabled() {
+    return this._disabled;
+  }
+
+  set disabled(value) {
+    this._disabled = !!value;
+    if (this._disabled) this.attrs.disabled = 'disabled';
+    else delete this.attrs.disabled;
   }
 
   addEventListener(type, fn) {

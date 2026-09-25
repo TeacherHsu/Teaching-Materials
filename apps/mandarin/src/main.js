@@ -8,6 +8,7 @@ import { FixturesPage } from './pages/FixturesPage.js';
 import { h, clear } from './utils/dom.js';
 import { isPreview } from './utils/preview.js';
 import { VoiceWarningBanner } from './components/VoiceWarningBanner.js';
+import { isMuted, toggleMute } from './utils/celebrate.js';
 
 // import.meta.env.BASE_URL 由 vite.config.js 的 base:'./' 決定，
 // 開發模式為 '/'，build 後在 index.html 中改寫為相對路徑；
@@ -61,8 +62,31 @@ async function loadLesson(lessonId) {
 function renderHeader() {
   const header = h('header', { class: 'app-header' }, [
     h('a', { href: '#/', class: 'app-header__brand' }, '國語課文樂園'),
+    renderMuteButton(),
   ]);
   return header;
+}
+
+const MUTE_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z"/><path d="M16.5 12c0-1.77-.77-3.29-2-4.24v8.48c1.23-.95 2-2.47 2-4.24z"/><path d="M19.5 6a9.5 9.5 0 0 1 0 12"/></svg>`;
+const MUTED_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z"/><path d="M17 9l5 6M22 9l-5 6"/></svg>`;
+
+/** 音效靜音開關：答對／完成音效專用，不影響 TTS 朗讀。狀態存 localStorage，
+ * 純更新按鈕本身圖示／aria-label，不重新整個頁面。 */
+function renderMuteButton() {
+  const btn = h('button', {
+    class: 'app-header__mute',
+    type: 'button',
+    'aria-pressed': String(isMuted()),
+    'aria-label': isMuted() ? '目前靜音，點一下開啟音效' : '目前有音效，點一下靜音',
+    html: isMuted() ? MUTED_ICON : MUTE_ICON,
+  });
+  btn.addEventListener('click', () => {
+    const muted = toggleMute();
+    btn.setAttribute('aria-pressed', String(muted));
+    btn.setAttribute('aria-label', muted ? '目前靜音，點一下開啟音效' : '目前有音效，點一下靜音');
+    btn.innerHTML = muted ? MUTED_ICON : MUTE_ICON;
+  });
+  return btn;
 }
 
 function mount(pageEl) {
