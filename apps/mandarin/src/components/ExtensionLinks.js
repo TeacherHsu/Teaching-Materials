@@ -40,18 +40,19 @@ export function buildExtensionLinks(lesson, moduleKey, opts = {}) {
 
   const list = h('div', { class: 'extension-links__list' });
   for (const ext of visible) {
+    const compact = ext.compact === true;
     const icon = h('span', { class: 'extension-link__icon', html: TYPE_ICONS[ext.type] || '' });
     const meta = h('div', { class: 'extension-link__meta' }, [
       h('span', { class: 'extension-link__title' }, ext.title),
-      h('span', { class: 'extension-link__provider' }, [
+      compact ? null : h('span', { class: 'extension-link__provider' }, [
         ext.provider,
         ext.version_note ? `・${ext.version_note}` : '',
         ext.login_required ? '・需登入' : '',
       ].join('')),
-      ext.note ? h('span', { class: 'extension-link__note' }, ext.note) : null,
+      compact || !ext.note ? null : h('span', { class: 'extension-link__note' }, ext.note),
     ]);
     const badges = h('span', { class: 'extension-link__badges' }, [
-      h('span', { class: 'extension-link__type-label' }, TYPE_LABEL[ext.type] || ext.type),
+      compact ? null : h('span', { class: 'extension-link__type-label' }, TYPE_LABEL[ext.type] || ext.type),
       h('span', { class: 'extension-link__window-note' }, '另開新視窗'),
       isDraftVisible(ext) ? h('span', { class: 'extension-link__draft-badge' }, '待審') : null,
     ]);
