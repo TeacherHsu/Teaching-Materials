@@ -29,10 +29,20 @@ function buildRound1(idioms, assetBase) {
   const items = shuffle(usable)
     .slice(0, ROUND_SIZE_MAX)
     .map((idm) => {
-      const blanked = idm.idiom.replace(idm.related_char, '＿');
+      const [prefix, suffix] = idm.idiom.split(idm.related_char);
+      const inlineSlot = h('button', {
+        class: 'sentence-chip drag-to-slot__slot drag-to-slot__inline-slot',
+        type: 'button',
+        'aria-label': '成語中的答案空格，可將候選答案拖到這裡；點一下可以取消已放入的字',
+      }, '＿');
+      const inlineSlotWrap = h('span', { class: 'idiom-builder__inline-slot-wrap' }, [inlineSlot]);
       const context = h('div', { class: 'idiom-builder__card' }, [
         ImageFrame({ src: idm.image ? `${assetBase}${idm.image}` : null, alt: `「${idm.idiom}」插圖` }),
-        h('p', { class: 'quiz-stem' }, `成語：${blanked}`),
+        h('p', { class: 'quiz-stem idiom-builder__idiom-line' }, [
+          h('span', {}, `成語：${prefix}`),
+          inlineSlotWrap,
+          h('span', {}, suffix),
+        ]),
         h('p', { class: 'meta' }, idm.definition),
       ]);
       const distractorChars = pickDistractors(usable, idm.id, 2).map((d) => ({
@@ -42,7 +52,9 @@ function buildRound1(idioms, assetBase) {
       return {
         id: idm.id,
         context,
-        speakText: `成語：${blanked}。${idm.definition}`,
+        inlineSlot,
+        inlineSlotWrap,
+        speakText: `成語：${idm.idiom.replace(idm.related_char, '＿')}。${idm.definition}`,
         slotLabel: '？',
         options: [{ id: `char:${idm.related_char}`, label: idm.related_char }, ...distractorChars],
         answerId: `char:${idm.related_char}`,

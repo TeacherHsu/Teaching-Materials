@@ -102,7 +102,7 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
       );
     }
 
-    const slot = h('button', {
+    const slot = item.inlineSlot || h('button', {
       class: 'sentence-chip drag-to-slot__slot',
       type: 'button',
       'aria-label': dragEnabled
@@ -110,8 +110,12 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
         : '答案空格，點一下可以取消已放入的詞塊',
     }, item.slotLabel || '？');
     const slotSpeakWrap = h('span', { class: 'drag-to-slot__slot-speak' });
-    const slotWrap = h('div', { class: 'sentence-slots drag-to-slot__slot-row', 'aria-label': '目前放入空格的詞塊' }, [slot, slotSpeakWrap]);
-    root.appendChild(slotWrap);
+    if (item.inlineSlotWrap) {
+      item.inlineSlotWrap.appendChild(slotSpeakWrap);
+    } else {
+      const slotWrap = h('div', { class: 'sentence-slots drag-to-slot__slot-row', 'aria-label': '目前放入空格的詞塊' }, [slot, slotSpeakWrap]);
+      root.appendChild(slotWrap);
+    }
 
     const bankWrap = h('div', {
       class: 'sentence-bank',
