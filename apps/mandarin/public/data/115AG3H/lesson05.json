@@ -1,0 +1,1421 @@
+{
+  "lesson_id": "115AG3H05",
+  "volume": {
+    "code": "115AG3H",
+    "publisher": "翰林",
+    "grade": 3,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "TODO: 單元名稱待補"
+  },
+  "lesson_no": 5,
+  "title": "為梨花撐傘",
+  "author": "",
+  "blurb": "從替梨花遮雨的故事，學會觀察問題、改良方法，讓事情做得更方便、更有效。",
+  "characters": [
+    {
+      "char": "梨",
+      "zhuyin": "ㄌㄧˊ",
+      "stroke_count": 11,
+      "radical": "木",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "梨子",
+        "梨樹",
+        "水梨",
+        "梨花",
+        "雪梨"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第5課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%A2%A8",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "撐",
+      "zhuyin": "ㄔㄥ",
+      "stroke_count": 15,
+      "radical": "扌",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "撐傘",
+        "撐開",
+        "支撐",
+        "撐住",
+        "撐船"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第5課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%92%90",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "甜",
+      "zhuyin": "ㄊㄧㄢˊ",
+      "stroke_count": 11,
+      "radical": "甘",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "甜美",
+        "甜蜜",
+        "甜點",
+        "香甜",
+        "甜味"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第5課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%94%9C",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "汁",
+      "zhuyin": "ㄓ",
+      "stroke_count": 5,
+      "radical": "水",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "果汁",
+        "湯汁",
+        "汁液",
+        "多汁"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第5課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B1%81",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "綿",
+      "zhuyin": "ㄇㄧㄢˊ",
+      "stroke_count": 14,
+      "radical": "糸",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "綿羊",
+        "綿密",
+        "綿延",
+        "綿綿",
+        "連綿"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第5課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B6%BF",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "腐",
+      "zhuyin": "ㄈㄨˇ",
+      "stroke_count": 14,
+      "radical": "肉",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "腐敗",
+        "腐爛",
+        "腐朽",
+        "豆腐",
+        "防腐"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第5課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%85%90",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "爛",
+      "zhuyin": "ㄌㄢˋ",
+      "stroke_count": 21,
+      "radical": "火",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "燦爛",
+        "腐爛",
+        "破爛",
+        "煮爛",
+        "爛熟"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第5課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%88%9B",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "結",
+      "zhuyin": "ㄐㄧㄝˊ",
+      "stroke_count": 12,
+      "radical": "糸",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "結果",
+        "結合",
+        "結束",
+        "結婚",
+        "結局"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第5課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B5%90",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "筷",
+      "zhuyin": "ㄎㄨㄞˋ",
+      "stroke_count": 13,
+      "radical": "竹",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "筷子",
+        "竹筷",
+        "木筷",
+        "碗筷"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第5課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%AD%B7",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "膠",
+      "zhuyin": "ㄐㄧㄠ",
+      "stroke_count": 15,
+      "radical": "肉",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "膠帶",
+        "膠水",
+        "膠囊",
+        "膠片",
+        "橡膠"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第5課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%86%A0",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "綁",
+      "zhuyin": "ㄅㄤˇ",
+      "stroke_count": 13,
+      "radical": "糸",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "綁架",
+        "綁住",
+        "綁票",
+        "綁緊",
+        "捆綁"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第5課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B6%81",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "夾",
+      "zhuyin": "ㄐㄧㄚˊ",
+      "stroke_count": 7,
+      "radical": "大",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "夾子",
+        "夾帶",
+        "夾雜",
+        "夾層",
+        "皮夾"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第5課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A4%BE",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "遮",
+      "zhuyin": "ㄓㄜ",
+      "stroke_count": 15,
+      "radical": "辵",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "遮住",
+        "遮蔽",
+        "遮掩",
+        "遮陽",
+        "遮雨"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第5課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%81%AE",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "固",
+      "zhuyin": "ㄍㄨˋ",
+      "stroke_count": 8,
+      "radical": "囗",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "固定",
+        "固然",
+        "固執",
+        "固體",
+        "堅固"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第5課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%9B%BA",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "景",
+      "zhuyin": "ㄐㄧㄥˇ",
+      "stroke_count": 12,
+      "radical": "日",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "景色",
+        "景象",
+        "景觀",
+        "風景",
+        "景物"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第5課，2026-07-23）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%99%AF",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG3H05:01",
+      "word": "梨花",
+      "zhuyin": "ㄌㄧˊ ㄏㄨㄚ",
+      "meaning": "梨樹所開的花朵。",
+      "example_sentence": "春天到了，枝頭的梨花一朵朵開了。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson05/vocabulary/l05-01.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H05:02",
+      "word": "撐傘",
+      "zhuyin": "ㄔㄥ ㄙㄢˇ",
+      "meaning": "將傘撐開持著，以遮陽擋雨。",
+      "example_sentence": "下雨時，我們要撐傘再走出教室。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson05/vocabulary/l05-02.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H05:03",
+      "word": "甜美",
+      "zhuyin": "ㄊㄧㄢˊ ㄇㄟˇ",
+      "meaning": "甘甜味美。",
+      "example_sentence": "這顆水梨吃起來又甜美又多汁。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson05/vocabulary/l05-03.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H05:04",
+      "word": "多汁",
+      "zhuyin": "ㄉㄨㄛ ㄓ",
+      "meaning": "大量含有某種成分的水分、液體。",
+      "example_sentence": "這種水梨果肉細嫩多汁。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson05/vocabulary/l05-04.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H05:05",
+      "word": "綿",
+      "zhuyin": "ㄇㄧㄢˊ",
+      "meaning": "連續不斷。",
+      "example_sentence": "山路旁的雨絲綿綿不斷。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson05/vocabulary/l05-05.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H05:06",
+      "word": "腐爛",
+      "zhuyin": "ㄈㄨˇ ㄌㄢˋ",
+      "meaning": "腐壞潰爛。",
+      "example_sentence": "水果放太久就會腐爛。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson05/vocabulary/l05-06.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H05:07",
+      "word": "結",
+      "zhuyin": "ㄐㄧㄝˊ",
+      "meaning": "植物長出果實。",
+      "example_sentence": "梨樹開花後，慢慢結出果實。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson05/vocabulary/l05-07.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H05:08",
+      "word": "筷子",
+      "zhuyin": "ㄎㄨㄞˋ ㄗ˙",
+      "meaning": "用來夾飯菜或其他東西的長條形用具。",
+      "example_sentence": "吃飯時要用筷子夾菜。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson05/vocabulary/l05-08.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H05:09",
+      "word": "膠帶",
+      "zhuyin": "ㄐㄧㄠ ㄉㄞˋ",
+      "meaning": "具有黏性的帶狀用品，可用以纏裹電線、黏貼物品等。",
+      "example_sentence": "我用膠帶把破掉的紙邊貼好。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson05/vocabulary/l05-09.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H05:10",
+      "word": "綁",
+      "zhuyin": "ㄅㄤˇ",
+      "meaning": "用繩索纏繞或綑紮。",
+      "example_sentence": "姐姐把禮物綁上彩帶。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson05/vocabulary/l05-10.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H05:11",
+      "word": "夾子",
+      "zhuyin": "ㄐㄧㄚˊ ㄗ˙",
+      "meaning": "夾東西的器具。",
+      "example_sentence": "媽媽用夾子夾住曬好的衣服。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson05/vocabulary/l05-11.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H05:12",
+      "word": "遮雨",
+      "zhuyin": "ㄓㄜ ㄩˇ",
+      "meaning": "擋住雨水，不讓雨淋到身上或物品上。",
+      "example_sentence": "這把大傘可以幫我們遮雨。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson05/vocabulary/l05-12.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H05:13",
+      "word": "固定",
+      "zhuyin": "ㄍㄨˋ ㄉㄧㄥˋ",
+      "meaning": "穩定、不移動或不改變。",
+      "example_sentence": "請把紙張固定在桌面上。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson05/vocabulary/l05-13.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H05:14",
+      "word": "景色",
+      "zhuyin": "ㄐㄧㄥˇ ㄙㄜˋ",
+      "meaning": "風光、景物。",
+      "example_sentence": "山上的景色十分美麗。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson05/vocabulary/l05-14.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG3H05:甜言蜜語",
+      "idiom": "甜言蜜語",
+      "definition": "誘人動聽的言語。",
+      "related_char": "甜",
+      "image": "idioms/01_甜言蜜語.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H05:海枯石爛",
+      "idiom": "海枯石爛",
+      "definition": "比喻歷時極其長久，或意志堅定、永不改變。",
+      "related_char": "爛",
+      "image": "idioms/02_海枯石爛.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H05:張口結舌",
+      "idiom": "張口結舌",
+      "definition": "形容恐懼慌張，說不出話的樣子。",
+      "related_char": "結",
+      "image": "idioms/03_張口結舌.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H05:如膠似漆",
+      "idiom": "如膠似漆",
+      "definition": "形容感情非常深厚，彼此分不開。",
+      "related_char": "膠",
+      "image": "idioms/04_如膠似漆.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H05:一手遮天",
+      "idiom": "一手遮天",
+      "definition": "比喻有權勢的人運用手段，隱瞞真相。",
+      "related_char": "遮",
+      "image": "idioms/05_一手遮天.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（07生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG3H05:1",
+      "idiom_id": "idiom:115AG3H05:甜言蜜語",
+      "rewritten": "面對別人的甜言蜜語，我們還是要先想一想再決定。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H05:2",
+      "idiom_id": "idiom:115AG3H05:海枯石爛",
+      "rewritten": "他們約定要互相幫助，就算海枯石爛也不改變心意。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H05:3",
+      "idiom_id": "idiom:115AG3H05:張口結舌",
+      "rewritten": "弟弟突然被老師點名，一時張口結舌，不知道怎麼回答。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H05:4",
+      "idiom_id": "idiom:115AG3H05:如膠似漆",
+      "rewritten": "這對好朋友感情如膠似漆，常常一起完成任務。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H05:5",
+      "idiom_id": "idiom:115AG3H05:一手遮天",
+      "rewritten": "做事情要公平，不能靠權力一手遮天。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（教師自撰生活例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG3H05:01",
+      "category": "句型練習",
+      "head": "不只……還……",
+      "structure": "（誰）＋（做什麼事），不只＋（要做什麼事）＋還＋（要做什麼更困難的事）。",
+      "description": "表示不只完成一件事，還要再做另一件事。",
+      "guide": "想一想完成任務時，除了基本工作，還需要做什麼。",
+      "examples": [
+        "我不只要掃地，還要排椅子。",
+        "她不只會唱歌，還會跳舞。"
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（08各課短語句型練習）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H05:02",
+      "category": "句型練習",
+      "head": "把字句",
+      "structure": "把＋名詞（什麼事物）＋動作。",
+      "description": "說明對某個事物做了什麼處理。",
+      "guide": "想一想你把什麼東西怎麼整理或固定。",
+      "examples": [
+        "請把作業本放進書包。",
+        "我把作品貼在牆上。"
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（08各課短語句型練習）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H05:03",
+      "category": "句型練習",
+      "head": "四字形容詞",
+      "structure": "事物＋四字形容詞。",
+      "description": "用四個字一起描寫事物的特徵或感受。",
+      "guide": "選一個景物，再用四個字形容它。",
+      "examples": [
+        "山景風光明媚。",
+        "秋天天氣涼爽。"
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（08各課短語句型練習）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H05:04",
+      "category": "詞語運用",
+      "head": "改良",
+      "structure": "改良＋事物。",
+      "description": "除去原有的缺點，使事物變得更好。",
+      "guide": "想一想什麼物品經過改良後，使用起來更方便。",
+      "examples": [
+        "工程師改良雨傘。",
+        "媽媽改良食譜。"
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（08各課短語句型練習）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H05:05",
+      "category": "詞語運用",
+      "head": "浮現",
+      "structure": "（景象或想法）＋浮現。",
+      "description": "清楚地顯現或湧現出來。",
+      "guide": "想一想什麼景象會慢慢出現在眼前。",
+      "examples": [
+        "山景浮現眼前。",
+        "回憶浮現心頭。"
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（08各課短語句型練習）"
+    }
+  ],
+  "rhetoric": [
+    {
+      "id": "rhetoric:115AG3H05:01",
+      "figure": "映襯",
+      "note": "把兩種相反或不同的情況放在一起，讓其中一方的特色更明顯。",
+      "example": "小傘雖然不大，卻替整片梨園擋住了雨水。",
+      "child_note": "映襯＝把不同的情況放在一起比較。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（10修辭輕鬆學）"
+    },
+    {
+      "id": "rhetoric:115AG3H05:02",
+      "figure": "設問",
+      "note": "先提出問題，再自己回答或引導讀者思考。",
+      "example": "為什麼要替梨花撐傘？因為雨水可能讓花朵腐爛。",
+      "child_note": "設問＝先問一問，再想想答案。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（10修辭輕鬆學）"
+    },
+    {
+      "id": "rhetoric:115AG3H05:03",
+      "figure": "譬喻",
+      "note": "用熟悉的事物比喻另一個事物，使描寫更清楚。",
+      "example": "一朵朵梨花像小小的白傘，開滿枝頭。",
+      "child_note": "譬喻＝用「像」等詞，把事物說得更清楚。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（10修辭輕鬆學）"
+    },
+    {
+      "id": "rhetoric:115AG3H05:04",
+      "figure": "頂真",
+      "note": "前一句結尾的詞語，成為後一句開頭的詞語。",
+      "example": "先照顧梨花，梨花才會結出甜美的果實。",
+      "child_note": "頂真＝前一句最後的詞，接到後一句開頭。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（10修辭輕鬆學）"
+    }
+  ],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG3H05:1",
+      "para_no": 1,
+      "summary": "三星鄉的梨花遇到連日降雨，農民擔心花朵受傷、影響收成。",
+      "structure_role": "起因",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H05:2",
+      "para_no": 2,
+      "summary": "農民用空碗做成小傘，再用筷子、膠帶和繩子把它固定在梨花上。",
+      "structure_role": "第一次嘗試",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H05:3",
+      "para_no": 3,
+      "summary": "發現原來的方法太花時間後，農民改用夾子製作更方便的小傘。",
+      "structure_role": "改良方法",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H05:4",
+      "para_no": 4,
+      "summary": "改良後的遮雨方法幫助梨花順利結果，梨園終於有穩定的收成。",
+      "structure_role": "結果",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+    }
+  ],
+  "main_idea": {
+    "id": "main_idea:115AG3H05:01",
+    "gist": "課文透過農民替梨花遮雨並改良小傘的過程，說明觀察問題、改良方法，就能讓工作更有效率並得到好成果。",
+    "theme": "遇到問題要觀察原因，並持續改良方法。",
+    "status": "approved",
+    "source": "115G3A／翰林三上第5課官方教材與教師確認資料（主旨重述版）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG3H05:1",
+      "stem": "梨農為什麼想替梨花撐傘？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "因為連日下雨可能讓梨花腐爛，影響收成。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+    },
+    {
+      "id": "reading_question:115AG3H05:2",
+      "stem": "第一次製作小傘時，用到了哪些材料？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "空碗、筷子、膠帶和繩子。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+    },
+    {
+      "id": "reading_question:115AG3H05:3",
+      "stem": "為什麼要改良原來的小傘？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "原來的方法需要花很多時間，使用上不夠方便。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+    },
+    {
+      "id": "reading_question:115AG3H05:4",
+      "stem": "改良後的小傘帶來了什麼結果？",
+      "strategy_tag": "找出主旨",
+      "answer_hint": "梨花受到保護，最後順利結出果實，收成更穩定。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG3H05:1",
+      "char": "結",
+      "sentence": "梨樹開花後，慢慢《結》出果實。",
+      "definition": "植物長出果實。",
+      "options": [
+        "植物長出果實。",
+        "聯合構成某種關係。"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：字義辨正）"
+    },
+    {
+      "id": "polysemy:115AG3H05:2",
+      "char": "結",
+      "sentence": "哥哥和朋友《結》伴一起回家。",
+      "definition": "聯合構成某種關係。",
+      "options": [
+        "聯合構成某種關係。",
+        "凝聚。"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：字義辨正）"
+    },
+    {
+      "id": "polysemy:115AG3H05:3",
+      "char": "結",
+      "sentence": "天氣變冷，湖面開始《結》冰。",
+      "definition": "凝聚。",
+      "options": [
+        "凝聚。",
+        "終了、收束。"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：字義辨正）"
+    },
+    {
+      "id": "polysemy:115AG3H05:4",
+      "char": "結",
+      "sentence": "放學鐘聲響了，今天的活動也要《結》束了。",
+      "definition": "終了、收束。",
+      "options": [
+        "終了、收束。",
+        "植物長出果實。"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：字義辨正）"
+    }
+  ],
+  "polysemy_senses": [],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG3H05:將",
+      "char": "將",
+      "readings": [
+        {
+          "zhuyin": "ㄐㄧㄤˋ",
+          "dabutie_zhuyin": "ㄐㄧㄤˋ",
+          "senses": [
+            {
+              "definition": "軍隊中的高級指揮官。",
+              "examples": [
+                "將領",
+                "上將"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄐㄧㄤ",
+          "dabutie_zhuyin": "ㄐㄧㄤ",
+          "senses": [
+            {
+              "definition": "將要、快要；或表示把某物交給某人。",
+              "examples": [
+                "將近",
+                "將要",
+                "將門關好"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：認識多音字）"
+    },
+    {
+      "id": "polyphone:115AG3H05:結",
+      "char": "結",
+      "readings": [
+        {
+          "zhuyin": "ㄐㄧㄝˊ",
+          "dabutie_zhuyin": "ㄐㄧㄝˊ",
+          "senses": [
+            {
+              "definition": "凝聚、聯合，或植物長出果實。",
+              "examples": [
+                "結果",
+                "結婚",
+                "結冰"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄐㄧㄝ",
+          "dabutie_zhuyin": "ㄐㄧㄝ",
+          "senses": [
+            {
+              "definition": "堅固、牢固。",
+              "examples": [
+                "結實"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：認識多音字）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG3H05:1",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "犁",
+          "example": "犁田、犁地"
+        },
+        {
+          "char": "梨",
+          "example": "水梨、梨花"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H05:2",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "添",
+          "example": "添加、增添"
+        },
+        {
+          "char": "甜",
+          "example": "甜蜜、香甜"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H05:3",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "幫",
+          "example": "幫手、幫忙"
+        },
+        {
+          "char": "錦",
+          "example": "錦旗、錦繡"
+        },
+        {
+          "char": "棉",
+          "example": "棉被、棉花"
+        },
+        {
+          "char": "綿",
+          "example": "綿密、連綿"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H05:4",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "蘭",
+          "example": "蘭花、玉蘭"
+        },
+        {
+          "char": "欄",
+          "example": "布告欄、欄杆"
+        },
+        {
+          "char": "攔",
+          "example": "攔車、阻攔"
+        },
+        {
+          "char": "爛",
+          "example": "燦爛、腐爛"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H05:5",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "影",
+          "example": "影響、身影"
+        },
+        {
+          "char": "景",
+          "example": "景象、風景"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG3H05:1",
+      "stem": "梨花遇到連日降雨，農民擔心花朵受傷，於是想辦法保護梨花。",
+      "question": "農民最擔心什麼事情？",
+      "options": [
+        "梨花因下雨受傷",
+        "梨子太甜",
+        "筷子不夠用"
+      ],
+      "answer": "梨花因下雨受傷",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（教師自撰聆聽題）"
+    },
+    {
+      "id": "listening:115AG3H05:2",
+      "stem": "第一次製作小傘時，農民用筷子支撐，再用膠帶和繩子固定。",
+      "question": "哪一項不是第一次製作小傘用到的材料？",
+      "options": [
+        "筷子",
+        "膠帶",
+        "夾子"
+      ],
+      "answer": "夾子",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（教師自撰聆聽題）"
+    },
+    {
+      "id": "listening:115AG3H05:3",
+      "stem": "改良後的小傘更方便使用，也讓梨花受到保護，最後結出果實。",
+      "question": "改良小傘帶來了什麼結果？",
+      "options": [
+        "梨園有穩定收成",
+        "梨花全部腐爛",
+        "農民不再種梨"
+      ],
+      "answer": "梨園有穩定收成",
+      "status": "approved",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（教師自撰聆聽題）"
+    }
+  ],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "待",
+        "蝸",
+        "牛",
+        "牠",
+        "吞",
+        "寸",
+        "碌",
+        "奔",
+        "彈",
+        "簧",
+        "它",
+        "短",
+        "悲",
+        "流",
+        "永"
+      ],
+      "2": [
+        "貼",
+        "使",
+        "醒",
+        "準",
+        "睡",
+        "鐘",
+        "效",
+        "序",
+        "而",
+        "且",
+        "排",
+        "冰",
+        "箱",
+        "原",
+        "條",
+        "顯",
+        "隔"
+      ],
+      "3": [
+        "統",
+        "票",
+        "角",
+        "板",
+        "業",
+        "本",
+        "況",
+        "該",
+        "喊",
+        "文",
+        "具",
+        "理",
+        "此",
+        "備",
+        "易",
+        "匆",
+        "餘"
+      ],
+      "4": [
+        "堂",
+        "鈴",
+        "徒",
+        "傅",
+        "撿",
+        "柴",
+        "鍋",
+        "冒",
+        "騰",
+        "揚",
+        "湯",
+        "止",
+        "抽",
+        "解",
+        "薪",
+        "舀",
+        "沸",
+        "釜"
+      ],
+      "5": [
+        "梨",
+        "撐",
+        "甜",
+        "汁",
+        "綿",
+        "腐",
+        "爛",
+        "結",
+        "筷",
+        "膠",
+        "綁",
+        "夾",
+        "遮",
+        "固",
+        "景"
+      ]
+    }
+  },
+  "extensions": [
+    {
+      "id": "ext:stroke-115g3h05",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E6%A2%A8%E6%92%90%E7%94%9C%E6%B1%81%E7%B6%BF%E8%85%90%E7%88%9B%E7%B5%90%E7%AD%B7%E8%86%A0%E7%B6%81%E5%A4%BE%E9%81%AE%E5%9B%BA%E6%99%AF",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・三年級・第5課",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "已帶入本課15個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「梨」的部首是哪一個？",
+      "options": [
+        "木",
+        "禾",
+        "日"
+      ],
+      "answer": "木",
+      "explanation": "「梨」的部首是木。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「撐」的注音是？",
+      "options": [
+        "ㄔㄥ",
+        "ㄔㄣ",
+        "ㄓㄤ"
+      ],
+      "answer": "ㄔㄥ",
+      "explanation": "「撐」讀作 ㄔㄥ。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「腐爛」是什麼意思？",
+      "options": [
+        "腐壞潰爛",
+        "變得甜美",
+        "固定不動"
+      ],
+      "answer": "腐壞潰爛",
+      "explanation": "東西腐壞潰爛就是腐爛。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「固定」是什麼意思？",
+      "options": [
+        "穩定、不移動或不改變",
+        "大量含有水分",
+        "用繩索纏繞"
+      ],
+      "answer": "穩定、不移動或不改變",
+      "explanation": "穩定、不移動或不改變，就是固定。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "哪一個詞語和「遮」有關？",
+      "options": [
+        "遮雨",
+        "結冰",
+        "多汁"
+      ],
+      "answer": "遮雨",
+      "explanation": "「遮雨」是擋住雨水。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「結」在「梨樹結出果實」中是什麼意思？",
+      "options": [
+        "植物長出果實",
+        "堅固牢靠",
+        "用筷子夾取"
+      ],
+      "answer": "植物長出果實",
+      "explanation": "植物長出果實，可以說結出果實。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「膠帶」可以用來做什麼？",
+      "options": [
+        "黏貼或纏裹物品",
+        "盛裝湯汁",
+        "觀察景色"
+      ],
+      "answer": "黏貼或纏裹物品",
+      "explanation": "膠帶具有黏性，可以黏貼或纏裹物品。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "下列哪一個是形似字「梨」的詞語？",
+      "options": [
+        "水梨",
+        "犁田",
+        "景色"
+      ],
+      "answer": "水梨",
+      "explanation": "「水梨」的梨是本課生字。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q09",
+      "type": "choice",
+      "stem": "「筷子」的主要用途是什麼？",
+      "options": [
+        "夾取飯菜",
+        "遮住雨水",
+        "固定紙張"
+      ],
+      "answer": "夾取飯菜",
+      "explanation": "筷子是用來夾飯菜或其他東西的用具。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "m01",
+      "type": "matching",
+      "stem": "把生字和部首配對。",
+      "pairs": [
+        {
+          "left": "梨",
+          "right": "木"
+        },
+        {
+          "left": "撐",
+          "right": "扌"
+        },
+        {
+          "left": "筷",
+          "right": "竹"
+        },
+        {
+          "left": "固",
+          "right": "囗"
+        }
+      ],
+      "answer": null,
+      "explanation": null,
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（生字表與部首資料）",
+      "hints": []
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "note": "教材待補：應用任務設計中"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "available",
+      "activity": "listening-quiz"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "available",
+      "activity": "rhetoric"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  }
+}
