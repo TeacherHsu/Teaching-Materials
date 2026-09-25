@@ -14,6 +14,7 @@ class FakeElement {
     this._text = '';
     this._html = '';
     this.style = {};
+    this.dataset = {};
     const self = this;
     this.classList = {
       add(...names) {
@@ -121,6 +122,45 @@ class TextNode {
   }
 }
 
+/**
+ * 極簡 speechSynthesis stub，供 src/utils/speech.js 與各元件的 node 測試使用。
+ * @param {Array<{lang?:string, name?:string}>} [voices] 假的可用聲音清單
+ */
+export function installFakeSpeechSynthesis(voices = []) {
+  const listeners = { voiceschanged: [] };
+  const synth = {
+    speaking: false,
+    getVoices: () => voices,
+    speak(utterance) {
+      this.speaking = true;
+      // 立即同步觸發 onend，模擬瀏覽器唸完（測試不需要真的等待）。
+      if (typeof utterance.onend === 'function') utterance.onend();
+      this.speaking = false;
+    },
+    cancel() {
+      this.speaking = false;
+    },
+    addEventListener(type, fn) {
+      (listeners[type] = listeners[type] || []).push(fn);
+    },
+    removeEventListener(type, fn) {
+      if (listeners[type]) listeners[type] = listeners[type].filter((f) => f !== fn);
+    },
+  };
+  globalThis.window.speechSynthesis = synth;
+  globalThis.SpeechSynthesisUtterance = class {
+    constructor(text) {
+      this.text = text;
+      this.lang = '';
+      this.rate = 1;
+      this.voice = null;
+      this.onend = null;
+      this.onerror = null;
+    }
+  };
+  return synth;
+}
+
 export function installFakeDom() {
   globalThis.document = {
     createElement: (tag) => new FakeElement(tag),
@@ -128,6 +168,22 @@ export function installFakeDom() {
   };
   globalThis.window = {
     location: { search: '' },
+    localStorage: (() => {
+      const store = new Map();
+      return {
+        getItem: (k) => (store.has(k) ? store.get(k) : null),
+        setItem: (k, v) => store.set(k, String(v)),
+        removeItem: (k) => store.delete(k),
+      };
+    })(),
+    sessionStorage: (() => {
+      const store = new Map();
+      return {
+        getItem: (k) => (store.has(k) ? store.get(k) : null),
+        setItem: (k, v) => store.set(k, String(v)),
+        removeItem: (k) => store.delete(k),
+      };
+    })(),
   };
 }
 

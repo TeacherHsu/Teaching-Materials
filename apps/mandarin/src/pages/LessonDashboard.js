@@ -1,6 +1,7 @@
 import { h } from '../utils/dom.js';
 import { MODULE_REGISTRY, getModuleStatus } from '../activities/moduleRegistry.js';
 import { buildExtensionLinks } from '../components/ExtensionLinks.js';
+import { SpeakButton } from '../components/SpeakButton.js';
 
 const STATUS_CLASS = {
   done: 'module-card__status--done',
@@ -26,8 +27,21 @@ export function LessonDashboard(lesson) {
       `第 ${lesson.lesson_no} 課`,
     ]),
   );
-  root.appendChild(h('h1', {}, `第 ${lesson.lesson_no} 課：${lesson.title}`));
-  if (lesson.blurb && !lesson.blurb.startsWith('TODO')) root.appendChild(h('p', {}, lesson.blurb));
+  const lessonTitle = `第 ${lesson.lesson_no} 課：${lesson.title}`;
+  root.appendChild(
+    h('div', { class: 'quiz-option-row' }, [
+      h('h1', {}, lessonTitle),
+      SpeakButton({ text: lessonTitle, label: '聽', variant: 'speak-button--option' }),
+    ]),
+  );
+  if (lesson.blurb && !lesson.blurb.startsWith('TODO')) {
+    root.appendChild(
+      h('div', { class: 'quiz-option-row' }, [
+        h('p', {}, lesson.blurb),
+        SpeakButton({ text: lesson.blurb, label: '聽', variant: 'speak-button--option' }),
+      ]),
+    );
+  }
 
   const grid = h('div', { class: 'module-grid' });
   for (const entry of MODULE_REGISTRY) {
@@ -36,7 +50,10 @@ export function LessonDashboard(lesson) {
     const playable = status.code === 'available' || status.code === 'done';
 
     const card = h('div', { class: 'module-card' }, [
-      h('h2', {}, label),
+      h('div', { class: 'quiz-option-row' }, [
+        h('h2', {}, label),
+        SpeakButton({ text: label, label: '聽', variant: 'speak-button--option' }),
+      ]),
       h('span', { class: `module-card__status ${STATUS_CLASS[status.code]}` }, status.text),
     ]);
 

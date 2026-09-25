@@ -83,6 +83,7 @@ function buildRadicalDragItems(round, allCharacters) {
       context: h('div', { class: 'idiom-builder__card' }, [
         h('p', { class: 'quiz-stem' }, `「${c.char}」的部首是？`),
       ]),
+      speakText: `「${c.char}」的部首是？`,
       slotLabel: '？',
       options,
       answerId: `radical:${c.radical}`,

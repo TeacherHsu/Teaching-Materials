@@ -1,6 +1,8 @@
 import { h, clear } from '../utils/dom.js';
 import { ProgressIndicator } from './ProgressIndicator.js';
 import { CompletionFeedback } from './CompletionFeedback.js';
+import { SpeakButton } from './SpeakButton.js';
+import { ReadAllButton } from './ReadAllButton.js';
 import { isPreview } from '../utils/preview.js';
 
 /**
@@ -30,13 +32,25 @@ export function ReadingQuestions({ items, onBack, backLabel = '回課程首頁' 
       root.appendChild(h('p', { class: 'meta' }, `（教師預覽）策略標籤：${item.strategy_tag}`));
     }
 
-    root.appendChild(h('p', { class: 'quiz-stem' }, item.stem));
+    root.appendChild(ReadAllButton(() => ({ stem: item.stem })));
+    root.appendChild(
+      h('div', { class: 'quiz-option-row' }, [
+        h('p', { class: 'quiz-stem' }, item.stem),
+        SpeakButton({ text: item.stem, label: '聽', variant: 'speak-button--option' }),
+      ]),
+    );
 
     const revealSlot = h('div', { role: 'status', 'aria-live': 'polite' });
     const revealBtn = h('button', { class: 'btn btn--secondary', type: 'button', style: 'margin-top:12px' }, '看提示');
     revealBtn.addEventListener('click', () => {
       clear(revealSlot);
-      revealSlot.appendChild(h('p', { class: 'meta' }, item.answer_hint || '想一想，說說看你的答案。'));
+      const hintText = item.answer_hint || '想一想，說說看你的答案。';
+      revealSlot.appendChild(
+        h('div', { class: 'quiz-option-row' }, [
+          h('p', { class: 'meta' }, hintText),
+          SpeakButton({ text: hintText, label: '聽', variant: 'speak-button--option' }),
+        ]),
+      );
       revealBtn.disabled = true;
       root.appendChild(nextBtn);
     });

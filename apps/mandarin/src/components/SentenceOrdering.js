@@ -1,10 +1,13 @@
 import { h, clear } from '../utils/dom.js';
 import { CompletionFeedback } from './CompletionFeedback.js';
+import { SpeakButton } from './SpeakButton.js';
+import { ReadAllButton } from './ReadAllButton.js';
 import { shuffleDiffering } from '../utils/shuffle.js';
 
 /**
  * 句子排序：點選詞塊依序加入答案區；鍵盤可操作（button 逐一點選，
  * 不倚賴拖曳）。初始呈現順序保證被打亂（不等於正解、至少 2 個位置不同，seeded）。
+ * 每個詞塊旁附獨立的小喇叭鈕（不與選字按鈕合一），可朗讀該詞塊但不會誤觸選字。
  * @param {{prompt: string, parts: string[], solution: string[], onBack?: () => void}} opts
  */
 export function SentenceOrdering({ prompt, parts, solution, onBack }) {
@@ -12,12 +15,19 @@ export function SentenceOrdering({ prompt, parts, solution, onBack }) {
   const chosen = [];
   const bank = shuffleDiffering(parts, `${prompt}|${parts.join('')}`);
 
-  root.appendChild(h('p', { class: 'quiz-stem' }, prompt));
+  root.appendChild(ReadAllButton(() => ({ task: prompt, options: bank })));
+  root.appendChild(
+    h('div', { class: 'quiz-option-row' }, [
+      h('p', { class: 'quiz-stem' }, prompt),
+      SpeakButton({ text: prompt, label: '聽', variant: 'speak-button--option' }),
+    ]),
+  );
   const slots = h('div', { class: 'sentence-slots', 'aria-label': '目前排出的句子' });
-  const bankWrap = h('div', { class: 'sentence-bank', 'aria-label': '可選詞塊' });
+  const bankWrap = h('div', { class: 'sentence-bank', 'aria-label': '可選詞塊，詞塊旁的喇叭可以聽這個詞塊怎麼唸' });
   const status = h('p', { class: 'meta', role: 'status', 'aria-live': 'polite' });
   const checkBtn = h('button', { class: 'btn', type: 'button', style: 'margin-top:12px' }, '檢查答案');
   const resetBtn = h('button', { class: 'btn btn--secondary', type: 'button', style: 'margin-left:8px' }, '重新排列');
+  const chips = [];
 
   function renderSlots() {
     clear(slots);
@@ -26,6 +36,7 @@ export function SentenceOrdering({ prompt, parts, solution, onBack }) {
 
   bank.forEach((word) => {
     const chip = h('button', { class: 'sentence-chip', type: 'button' }, word);
+    chips.push(chip);
     chip.addEventListener('click', () => {
       if (chip.disabled) return;
       chosen.push(word);
@@ -33,13 +44,24 @@ export function SentenceOrdering({ prompt, parts, solution, onBack }) {
       chip.setAttribute('aria-pressed', 'true');
       renderSlots();
     });
-    bankWrap.appendChild(chip);
+    const row = h('span', { class: 'quiz-option-row', style: 'display:inline-flex' }, [
+      chip,
+      SpeakButton({ text: word, label: '聽', ariaLabel: `朗讀詞塊：${word}`, variant: 'speak-button--option' }),
+    ]);
+    bankWrap.appendChild(row);
   });
 
   checkBtn.addEventListener('click', () => {
     const isCorrect = chosen.join('') === solution.join('');
     if (isCorrect) {
+      const finished = chosen.join('');
       clear(root);
+      root.appendChild(
+        h('div', { class: 'quiz-option-row' }, [
+          h('p', { class: 'quiz-stem' }, finished),
+          SpeakButton({ text: finished, label: '聽完成句', variant: 'speak-button--option' }),
+        ]),
+      );
       root.appendChild(CompletionFeedback({ correct: 1, total: 1, onBack }));
     } else {
       status.textContent = '順序還不對，再想想看。';
@@ -49,7 +71,7 @@ export function SentenceOrdering({ prompt, parts, solution, onBack }) {
   resetBtn.addEventListener('click', () => {
     chosen.length = 0;
     renderSlots();
-    [...bankWrap.children].forEach((c) => {
+    chips.forEach((c) => {
       c.disabled = false;
       c.setAttribute('aria-pressed', 'false');
     });

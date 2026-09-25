@@ -2,6 +2,8 @@ import { h, clear } from '../utils/dom.js';
 import { ProgressIndicator } from './ProgressIndicator.js';
 import { HintPanel } from './HintPanel.js';
 import { CompletionFeedback } from './CompletionFeedback.js';
+import { SpeakButton } from './SpeakButton.js';
+import { ReadAllButton } from './ReadAllButton.js';
 
 const CHECK_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>`;
 const CROSS_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>`;
@@ -64,12 +66,23 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
     let answered = false;
 
     root.appendChild(ProgressIndicator({ current: index + 1, total: items.length }));
+    if (item.speakText) {
+      root.appendChild(ReadAllButton(() => ({ stem: item.speakText })));
+    }
 
     const contextWrap = h('div', { class: 'drag-to-slot__context' });
     if (typeof item.context === 'string') {
-      contextWrap.appendChild(h('p', { class: 'quiz-stem' }, item.context));
+      contextWrap.appendChild(
+        h('div', { class: 'quiz-option-row' }, [
+          h('p', { class: 'quiz-stem' }, item.context),
+          SpeakButton({ text: item.context, label: '聽', variant: 'speak-button--option' }),
+        ]),
+      );
     } else if (item.context) {
       contextWrap.appendChild(item.context);
+      if (item.speakText) {
+        contextWrap.appendChild(SpeakButton({ text: item.speakText, label: '聽題目', variant: 'speak-button--option' }));
+      }
     }
     root.appendChild(contextWrap);
 
@@ -141,7 +154,14 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
             html: `<span style="display:inline-flex;align-items:center;gap:4px;color:var(--color-success)">${CHECK_ICON}答對了！</span>`,
           }),
         );
-        if (item.explanation) feedbackSlot.appendChild(h('p', { class: 'meta' }, item.explanation));
+        if (item.explanation) {
+          feedbackSlot.appendChild(
+            h('div', { class: 'quiz-option-row' }, [
+              h('p', { class: 'meta' }, item.explanation),
+              SpeakButton({ text: item.explanation, label: '聽', variant: 'speak-button--option' }),
+            ]),
+          );
+        }
         appendNextButton();
         checkBtn.disabled = true;
         return;
@@ -181,7 +201,14 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
               `正確答案是：${answerOpt ? answerOpt.label : ''}`),
           ]),
         );
-        if (item.explanation) feedbackSlot.appendChild(h('p', { class: 'meta' }, item.explanation));
+        if (item.explanation) {
+          feedbackSlot.appendChild(
+            h('div', { class: 'quiz-option-row' }, [
+              h('p', { class: 'meta' }, item.explanation),
+              SpeakButton({ text: item.explanation, label: '聽', variant: 'speak-button--option' }),
+            ]),
+          );
+        }
         appendNextButton();
         checkBtn.disabled = true;
       }

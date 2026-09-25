@@ -1,7 +1,7 @@
 // 「聽聽看」模組：TTS 朗讀一個生活短句／短對話，學生選答案。
 // 語音不支援時顯示「此裝置不支援朗讀」並提供「顯示文字」按鈕。逐題呈現，3–5 題一組。
 import { h, clear } from '../utils/dom.js';
-import { AudioButton } from '../components/AudioButton.js';
+import { SpeakButton } from '../components/SpeakButton.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { missingContentNotice } from './engine.js';
@@ -30,7 +30,7 @@ export function buildListeningActivity(lesson, onBack) {
     function buildAudioRow(entry) {
       const row = h('div', { class: 'listening-audio', style: 'margin-bottom:16px' });
       if (speechSupported()) {
-        row.appendChild(AudioButton({ text: entry.stem, label: '播放' }));
+        row.appendChild(SpeakButton({ text: entry.stem, label: '播放' }));
       } else {
         row.appendChild(h('p', { class: 'meta' }, '此裝置不支援朗讀'));
         const textEl = h('p', { class: 'quiz-stem', style: 'display:none' }, entry.stem);

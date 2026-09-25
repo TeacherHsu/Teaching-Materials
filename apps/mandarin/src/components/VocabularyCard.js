@@ -1,5 +1,5 @@
 import { h } from '../utils/dom.js';
-import { AudioButton } from './AudioButton.js';
+import { SpeakButton } from './SpeakButton.js';
 import { ImageFrame } from './ImageFrame.js';
 
 /**
@@ -12,11 +12,17 @@ export function VocabularyCard(word) {
   const front = h('div', {}, [
     h('div', { class: 'character-card__glyph', style: 'font-size:56px' }, text),
     zhuyin ? h('div', { class: 'character-card__zhuyin' }, zhuyin) : null,
-    AudioButton({ text }),
+    SpeakButton({ text, label: '聽發音' }),
   ]);
   const back = h('div', {}, [
     h('p', {}, meaning || '（意思待補）'),
-    example_sentence ? h('p', { class: 'meta' }, `例句：${example_sentence}`) : null,
+    meaning ? SpeakButton({ text: meaning, label: '聽解釋' }) : null,
+    example_sentence
+      ? h('div', { class: 'quiz-option-row' }, [
+          h('p', { class: 'meta' }, `例句：${example_sentence}`),
+          SpeakButton({ text: example_sentence, label: '聽例句', variant: 'speak-button--option' }),
+        ])
+      : null,
   ]);
   back.style.display = 'none';
 
