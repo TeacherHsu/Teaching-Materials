@@ -18,22 +18,18 @@ function shuffled(arr) {
 }
 
 /** 從 word_meanings（字義分析）攤平出每個字的造詞範例，供 CharacterCard 缺 examples 時使用。 */
+// 生字卡的「造詞」只顯示本課目標語詞（words[]，來自 05 語詞解釋）中含該字者；
+// 06 字義分析的一般造詞（例：水牛、牛脾氣）不是本課語詞，不顯示（CF 2026-09-25）。
 function buildExampleMap(lesson) {
   const map = new Map();
-  for (const wm of lesson.word_meanings || []) {
-    if (wm.status && wm.status !== 'ready') continue;
-    const words = [];
-    for (const sense of wm.senses || []) {
-      for (const ex of sense.examples || []) {
-        if (!words.includes(ex)) words.push(ex);
-      }
-    }
-    if (words.length) map.set(wm.char, words.slice(0, MAX_EXAMPLES));
+  const targets = (lesson.words || []).map((w) => w.word).filter(Boolean);
+  for (const c of lesson.characters || []) {
+    const hits = targets.filter((w) => w.includes(c.char));
+    if (hits.length) map.set(c.char, hits.slice(0, MAX_EXAMPLES));
   }
   return map;
 }
 
-/** 生字缺 examples 時，補上字義分析（word_meanings）裡的造詞。 */
 function withExamples(characters, lesson) {
   const exampleMap = buildExampleMap(lesson);
   return characters.map((c) => {
