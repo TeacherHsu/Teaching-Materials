@@ -10,9 +10,8 @@ const EXTERNAL_LINK_ICON = `<svg viewBox="0 0 24 24" width="16" height="16" fill
  *   的已核准延伸連結（例如「漢字由來」），層級低於主要內容，放在卡片最下方。
  */
 export function CharacterCard(character, originExtension = null) {
-  const { char, zhuyin, radical, stroke_count, type, examples, image, audio_override, pedia_url } = character;
+  const { char, zhuyin, radical, stroke_count, examples, image, audio_override, pedia_url } = character;
   const card = h('div', { class: 'character-card' }, [
-    h('span', { class: 'character-card__type-badge' }, type === '認讀字' ? '認讀字（只要會認）' : '習寫字'),
     h('div', { class: 'character-card__glyph', 'aria-hidden': 'true' }, char),
     h('div', { class: 'character-card__zhuyin' }, zhuyin),
     SpeakButton({ text: char, audioUrl: audio_override, label: '聽發音' }),

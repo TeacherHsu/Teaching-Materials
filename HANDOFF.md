@@ -15,6 +15,14 @@
 ---
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/` 生字卡片視覺標籤
+- 做了什麼：依使用者回饋移除「習寫字」、「認讀字（只要會認）」等卡片上方標籤，保留資料分類供功能使用
+- 驗證：`npm.cmd run validate`、`node scripts/test-extension-links.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 通過；瀏覽器第三課確認 17 張生字卡片均無分類標籤，版面無橫向溢出，console 無錯誤或警告
+- 推送：尚未推送
+- 待辦／給下一棒：如需發布，再由使用者確認後推送目前本地 commit
+- 注意：不修改教材 JSON 的 `type` 分類，也不影響其他模組的待審或策略標籤
+
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/` 筆順直連卡片文字
 - 做了什麼：依使用者回饋簡化筆順直連顯示，主標題統一為「筆順練習(雄筆順)」，隱藏重複的提供者、版本與課次說明
 - 驗證：`npm.cmd run validate`、`node scripts/test-extension-links.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 通過；瀏覽器第三課頁面確認主標、版面無橫向溢出，console 無錯誤或警告
