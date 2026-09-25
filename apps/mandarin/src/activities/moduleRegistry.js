@@ -157,6 +157,28 @@ export const MODULE_REGISTRY = [
     },
   },
   {
+    key: 'polyphones',
+    label: '一字多音',
+    icon: 'polyphones',
+    color: 'blue',
+    description: '同一個字，不同讀音',
+    implemented: true,
+    ready(lesson) {
+      return usablePolyphoneEntries(lesson).length >= ROUND_MIN;
+    },
+  },
+  {
+    key: 'lookalikes',
+    label: '形似字',
+    icon: 'lookalikes',
+    color: 'teal',
+    description: '長得很像的字，選出正確的',
+    implemented: true,
+    ready(lesson) {
+      return readyLookalikeQuestions(lesson).length >= ROUND_MIN;
+    },
+  },
+  {
     key: 'structure_map',
     label: '課文地圖',
     icon: 'structure_map',
@@ -187,28 +209,6 @@ export const MODULE_REGISTRY = [
     implemented: true,
     ready(lesson) {
       return readyRhetoric(lesson).length >= ROUND_MIN;
-    },
-  },
-  {
-    key: 'polyphones',
-    label: '一字多音',
-    icon: 'polyphones',
-    color: 'blue',
-    description: '同一個字，不同讀音',
-    implemented: true,
-    ready(lesson) {
-      return usablePolyphoneEntries(lesson).length >= ROUND_MIN;
-    },
-  },
-  {
-    key: 'lookalikes',
-    label: '形似字',
-    icon: 'lookalikes',
-    color: 'teal',
-    description: '長得很像的字，選出正確的',
-    implemented: true,
-    ready(lesson) {
-      return readyLookalikeQuestions(lesson).length >= ROUND_MIN;
     },
   },
   {
