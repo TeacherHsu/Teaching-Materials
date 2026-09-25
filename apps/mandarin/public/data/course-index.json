@@ -1,0 +1,30 @@
+{
+  "grades": [
+    {
+      "grade": 3,
+      "label": "翰林三上",
+      "volumes": [
+        {
+          "code": "115AG3H",
+          "publisher": "翰林",
+          "term": "上",
+          "label": "115 學年上學期",
+          "units": [
+            {
+              "no": 1,
+              "title": "TODO: 單元名稱待補",
+              "lessons": [
+                {
+                  "lesson_id": "115AG3H01",
+                  "lesson_no": 1,
+                  "title": "時間是什麼",
+                  "data": "data/115AG3H/lesson01.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

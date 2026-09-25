@@ -1,0 +1,41 @@
+{
+  "_note": "元件測試用，非教材。僅供 scripts/test-review-cross-lesson.mjs 驗證『舊字新詞』跨課選題邏輯，不是真實課次資料，不進正式 course-index，不對外發布。",
+  "lesson_id": "FIXTURE-REVIEW-02",
+  "volume": { "code": "115AG3H", "publisher": "翰林", "grade": 3, "term": "上" },
+  "unit": { "no": 1, "title": "測試單元" },
+  "lesson_no": 2,
+  "title": "元件測試用假第 2 課",
+  "characters": [
+    {
+      "char": "測",
+      "zhuyin": "ㄘㄜˋ",
+      "stroke_count": 12,
+      "radical": "水",
+      "type": "習寫字",
+      "level": "basic",
+      "status": "ready"
+    },
+    {
+      "char": "驗",
+      "zhuyin": "ㄧㄢˋ",
+      "stroke_count": 23,
+      "radical": "馬",
+      "type": "習寫字",
+      "level": "basic",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:FIXTURE-REVIEW-02:0001",
+      "word": "測試",
+      "zhuyin": null,
+      "meaning": "為了檢查而嘗試",
+      "example_sentence": null,
+      "level": "basic",
+      "image": null,
+      "status": "ready"
+    }
+  ],
+  "modules": {}
+}

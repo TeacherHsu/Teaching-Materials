@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "國語課文樂園 — 課程索引契約 v1",
+  "type": "object",
+  "required": ["grades"],
+  "properties": {
+    "grades": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["grade", "label", "volumes"],
+        "properties": {
+          "grade": { "type": "integer", "minimum": 1, "maximum": 6 },
+          "label": { "type": "string" },
+          "volumes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["code", "publisher", "term", "label", "units"],
+              "properties": {
+                "code": { "type": "string", "pattern": "^\\d{3}[AB]G[1-6][HK]$" },
+                "publisher": { "type": "string" },
+                "term": { "type": "string", "enum": ["上", "下"] },
+                "label": { "type": "string" },
+                "units": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["no", "title", "lessons"],
+                    "properties": {
+                      "no": { "type": "integer" },
+                      "title": { "type": "string" },
+                      "lessons": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": ["lesson_id", "lesson_no", "title", "data"],
+                          "properties": {
+                            "lesson_id": { "type": "string" },
+                            "lesson_no": { "type": "integer" },
+                            "title": { "type": "string" },
+                            "data": {
+                              "type": "string",
+                              "description": "相對於 public/ 的 lesson JSON 路徑"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

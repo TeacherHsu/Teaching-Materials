@@ -1,0 +1,91 @@
+/*
+  Design tokens — 全新設計系統，不沿用參考站 xiulin-mandarin-2026 的
+  emerald 綠 / amber 米黃配色。目標：warm off-white 底、calm primary、
+  限量 accent，大字大間距，中高年級（含 ADHD／閱讀困難／學障）友善。
+*/
+:root {
+  /* 色彩：主色為沉靜的靛藍青（非 emerald），輔以暖陶土 accent（非 amber） */
+  --color-primary: #3a5a7a;
+  --color-primary-hover: #2e4a64;
+  --color-secondary: #6b5b95;
+  --color-accent: #c96f4a;
+  --color-success: #2f7a4f;
+  --color-warning: #b8860b;
+  --color-danger: #c0392b;
+
+  --color-background: #faf7f2; /* warm off-white，不是純白 */
+  --color-surface: #ffffff;
+  --color-surface-muted: #f1ece3;
+  --color-border: #ded5c6;
+
+  --text-primary: #2b2823;
+  --text-secondary: #5c574e;
+  --text-on-primary: #ffffff;
+
+  /* Typography（依需求下限設定，行高皆 >=1.5） */
+  --font-family-base: -apple-system, BlinkMacSystemFont, "PingFang TC",
+    "Microsoft JhengHei", "Heiti TC", system-ui, sans-serif;
+
+  --font-size-page-title: clamp(32px, 4vw, 40px);
+  --font-size-section: clamp(26px, 3vw, 32px);
+  --font-size-body: clamp(22px, 2.4vw, 28px);
+  --font-size-button: clamp(20px, 2.2vw, 24px);
+  --font-size-meta: 18px;
+
+  --line-height-tight: 1.5;
+  --line-height-loose: 1.7;
+
+  /* Spacing（8px 基準，寬鬆間距） */
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+
+  /* Radius / Shadow（柔和雙層陰影：貼合層 + 暈染層） */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --shadow-card: 0 1px 2px rgba(43, 40, 35, 0.06), 0 4px 12px rgba(43, 40, 35, 0.07);
+  --shadow-raised: 0 2px 4px rgba(43, 40, 35, 0.08), 0 10px 28px rgba(43, 40, 35, 0.14);
+
+  /* 觸控目標下限 */
+  --tap-target-min: 44px;
+
+  /*
+    10 大項「任務地圖」色系：6 色和諧調色盤輪用。每色一組
+    tint（淡底）／實色（圖示或次要用途）／dark（文字用，對暖白底與白卡片
+    皆 >=4.5:1，經 scripts/check-contrast.mjs 驗證）。元件只吃
+    --module-color / --module-color-dark / --module-color-tint（由
+    moduleRegistry 對照 inline style 注入），不得寫死色碼。
+  */
+  --module-blue: #3a6ea5;
+  --module-blue-dark: #1f4266;
+  --module-blue-tint: #e8eef5;
+
+  --module-teal: #2f8f76;
+  --module-teal-dark: #145c48;
+  --module-teal-tint: #e5f2ee;
+
+  --module-purple: #7a5fb5;
+  --module-purple-dark: #453077;
+  --module-purple-tint: #eeeaf8;
+
+  --module-terracotta: #b8622f;
+  --module-terracotta-dark: #833c14;
+  --module-terracotta-tint: #faece1;
+
+  --module-rose: #c14066;
+  --module-rose-dark: #781d3c;
+  --module-rose-tint: #f8e6ec;
+
+  --module-olive: #6b8f3a;
+  --module-olive-dark: #3a5219;
+  --module-olive-tint: #eef3e3;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* 目前不主動切換深色，僅保留 hook；教室投影以淺色為主 */
+}

@@ -1,0 +1,2463 @@
+{
+  "lesson_id": "115AG3H01",
+  "volume": {
+    "code": "115AG3H",
+    "publisher": "翰林",
+    "grade": 3,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "TODO: 單元名稱待補"
+  },
+  "lesson_no": 1,
+  "title": "時間是什麼",
+  "author": "",
+  "blurb": "TODO: 課次簡介待教師撰寫",
+  "characters": [
+    {
+      "char": "待",
+      "zhuyin": "ㄉㄞˋ",
+      "stroke_count": 9,
+      "radical": "彳",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=待",
+      "source": "dabutie:02各冊生字（115 上翰林版生字.docx）",
+      "status": "ready"
+    },
+    {
+      "char": "蝸",
+      "zhuyin": "ㄍㄨㄚ",
+      "stroke_count": 15,
+      "radical": "虫",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=蝸",
+      "source": "dabutie:02各冊生字（115 上翰林版生字.docx）",
+      "status": "ready"
+    },
+    {
+      "char": "牛",
+      "zhuyin": "ㄋㄧㄡˊ",
+      "stroke_count": 4,
+      "radical": "牛",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=牛",
+      "source": "dabutie:02各冊生字（115 上翰林版生字.docx）",
+      "status": "ready"
+    },
+    {
+      "char": "牠",
+      "zhuyin": "ㄊㄚ",
+      "stroke_count": 7,
+      "radical": "牛",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=牠",
+      "source": "dabutie:02各冊生字（115 上翰林版生字.docx）",
+      "status": "ready"
+    },
+    {
+      "char": "吞",
+      "zhuyin": "ㄊㄨㄣ",
+      "stroke_count": 7,
+      "radical": "口",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=吞",
+      "source": "dabutie:02各冊生字（115 上翰林版生字.docx）",
+      "status": "ready"
+    },
+    {
+      "char": "寸",
+      "zhuyin": "ㄘㄨㄣˋ",
+      "stroke_count": 3,
+      "radical": "寸",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=寸",
+      "source": "dabutie:02各冊生字（115 上翰林版生字.docx）",
+      "status": "ready"
+    },
+    {
+      "char": "碌",
+      "zhuyin": "ㄌㄨˋ",
+      "stroke_count": 13,
+      "radical": "石",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=碌",
+      "source": "dabutie:02各冊生字（115 上翰林版生字.docx）",
+      "status": "ready"
+    },
+    {
+      "char": "奔",
+      "zhuyin": "ㄅㄣ",
+      "stroke_count": 8,
+      "radical": "大",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=奔",
+      "source": "dabutie:02各冊生字（115 上翰林版生字.docx）",
+      "status": "ready"
+    },
+    {
+      "char": "彈",
+      "zhuyin": "ㄉㄢˋ",
+      "stroke_count": 15,
+      "radical": "弓",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=彈",
+      "source": "dabutie:02各冊生字（115 上翰林版生字.docx）",
+      "status": "ready"
+    },
+    {
+      "char": "簧",
+      "zhuyin": "ㄏㄨㄤˊ",
+      "stroke_count": 18,
+      "radical": "竹",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=簧",
+      "source": "dabutie:02各冊生字（115 上翰林版生字.docx）",
+      "status": "ready"
+    },
+    {
+      "char": "它",
+      "zhuyin": "ㄊㄚ",
+      "stroke_count": 5,
+      "radical": "宀",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=它",
+      "source": "dabutie:02各冊生字（115 上翰林版生字.docx）",
+      "status": "ready"
+    },
+    {
+      "char": "短",
+      "zhuyin": "ㄉㄨㄢˇ",
+      "stroke_count": 12,
+      "radical": "矢",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=短",
+      "source": "dabutie:02各冊生字（115 上翰林版生字.docx）",
+      "status": "ready"
+    },
+    {
+      "char": "悲",
+      "zhuyin": "ㄅㄟ",
+      "stroke_count": 12,
+      "radical": "心",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=悲",
+      "source": "dabutie:02各冊生字（115 上翰林版生字.docx）",
+      "status": "ready"
+    },
+    {
+      "char": "流",
+      "zhuyin": "ㄌㄧㄡˊ",
+      "stroke_count": 9,
+      "radical": "水",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=流",
+      "source": "dabutie:02各冊生字（115 上翰林版生字.docx）",
+      "status": "ready"
+    },
+    {
+      "char": "永",
+      "zhuyin": "ㄩㄥˇ",
+      "stroke_count": 5,
+      "radical": "水",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=永",
+      "source": "dabutie:02各冊生字（115 上翰林版生字.docx）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG3H01:4a7a51a2",
+      "word": "等待",
+      "zhuyin": null,
+      "meaning": "等候",
+      "example_sentence": "下課鐘還沒響，同學們早就排好隊，等待老師宣布放學。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H01:0124ae8c",
+      "word": "蝸牛",
+      "zhuyin": null,
+      "meaning": "動物名，軟體動物，頭有觸角，背上有殼",
+      "example_sentence": "蝸牛慢慢爬過葉子，留下一條亮亮的痕跡。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H01:756b040c",
+      "word": "牠",
+      "zhuyin": null,
+      "meaning": "專指動物的第三人稱代詞",
+      "example_sentence": "那隻小貓本來沒有家，鄰居收養牠以後，每天都吃得飽飽的。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H01:bd4de577",
+      "word": "慢吞吞",
+      "zhuyin": null,
+      "meaning": "形容說話或動作很慢的樣子",
+      "example_sentence": "弟弟寫功課總是慢吞吞，媽媽在旁邊看了都替他著急。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H01:57069107",
+      "word": "寸",
+      "zhuyin": null,
+      "meaning": "量詞。計算長度的單位。公制一寸等於十公分。也稱為「公寸」",
+      "example_sentence": "老師教我們用尺量課本的長度，單位是公分和寸。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H01:95003570",
+      "word": "忙碌",
+      "zhuyin": null,
+      "meaning": "事情太多，不得休息",
+      "example_sentence": "媽媽開了一間小麵店，每天忙碌得幾乎沒有時間休息。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H01:b90735af",
+      "word": "飛奔",
+      "zhuyin": null,
+      "meaning": "急速奔跑",
+      "example_sentence": "聽到冰淇淋車的音樂聲，孩子們立刻飛奔到門口。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H01:cfea14b9",
+      "word": "彈簧",
+      "zhuyin": null,
+      "meaning": "利用具有彈性的材料所製成的零件。能在外力作用下發生伸長、縮短、彎曲、扭轉等形變，除去外力後又可恢復原狀",
+      "example_sentence": "這張舊床墊裡的彈簧已經壓壞了，睡起來不太舒服。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H01:d57a0870",
+      "word": "它",
+      "zhuyin": null,
+      "meaning": "無生物的第三人稱代詞，專指人、動物以外的無生物或事物",
+      "example_sentence": "這隻玩偶雖然掉了一顆眼睛，我還是把它當成最珍貴的寶貝。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H01:452c222a",
+      "word": "縮短",
+      "zhuyin": null,
+      "meaning": "由長變短",
+      "example_sentence": "一句溫暖的問候，能縮短陌生人之間的距離。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H01:9a0b1701",
+      "word": "悲傷",
+      "zhuyin": null,
+      "meaning": "哀痛傷心",
+      "example_sentence": "小狗生病過世的那天，全家人都感到十分悲傷。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H01:3dfd6423",
+      "word": "流水",
+      "zhuyin": null,
+      "meaning": "流動的水",
+      "example_sentence": "爬山途中經過小溪，潺潺的流水聲讓人心情放鬆。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H01:c3d8e663",
+      "word": "永",
+      "zhuyin": null,
+      "meaning": "恆久、久遠",
+      "example_sentence": "奶奶說，只要一家人相親相愛，幸福就能永遠留在心裡。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    }
+  ],
+  "word_meanings": [
+    {
+      "char": "待",
+      "radical": "彳",
+      "strokes": "6／9",
+      "senses": [
+        {
+          "definition": "等候",
+          "examples": [
+            "等待"
+          ]
+        },
+        {
+          "definition": "對待、照顧",
+          "examples": [
+            "優待",
+            "款待"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "char": "蝸",
+      "radical": "虫",
+      "strokes": "9／15",
+      "senses": [
+        {
+          "definition": "動物名，外殼扁圓，頭有四個觸角，其中二個較長",
+          "examples": [
+            "蝸牛"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "char": "牛",
+      "radical": "牛",
+      "strokes": "0／4",
+      "senses": [
+        {
+          "definition": "哺乳類動物。體型大，性格溫馴，可以拉車、耕田，肉與乳的營養價值都很高",
+          "examples": [
+            "乳牛",
+            "水牛"
+          ]
+        },
+        {
+          "definition": "固執、倔強",
+          "examples": [
+            "牛脾氣",
+            "牛性子"
+          ]
+        },
+        {
+          "definition": "姓",
+          "examples": [
+            "牛小姐"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "char": "牠",
+      "radical": "牛",
+      "strokes": "3／7",
+      "senses": [
+        {
+          "definition": "專指動物的第三人稱代詞",
+          "examples": []
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "char": "吞",
+      "radical": "口",
+      "strokes": "4／7",
+      "senses": [
+        {
+          "definition": "食物未經咀嚼就吃下去",
+          "examples": [
+            "狼吞虎嚥"
+          ]
+        },
+        {
+          "definition": "忍住",
+          "examples": [
+            "忍氣吞聲"
+          ]
+        },
+        {
+          "definition": "侵占",
+          "examples": [
+            "吞沒",
+            "併吞"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "char": "寸",
+      "radical": "寸",
+      "strokes": "0／3",
+      "senses": [
+        {
+          "definition": "量詞。用於計算長度的單位",
+          "examples": [
+            "公寸"
+          ]
+        },
+        {
+          "definition": "形容小、少",
+          "examples": [
+            "寸土",
+            "寸步不離"
+          ]
+        },
+        {
+          "definition": "比喻「心」",
+          "examples": [
+            "方寸"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "char": "碌",
+      "radical": "石",
+      "strokes": "8／13",
+      "senses": [
+        {
+          "definition": "繁忙",
+          "examples": [
+            "忙碌",
+            "勞碌"
+          ]
+        },
+        {
+          "definition": "平凡無才能",
+          "examples": [
+            "庸庸碌碌"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "char": "奔",
+      "radical": "大",
+      "strokes": "5／8",
+      "senses": [
+        {
+          "definition": "快跑",
+          "examples": [
+            "狂奔",
+            "奔跑"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "char": "彈",
+      "radical": "弓",
+      "strokes": "12／15",
+      "senses": [
+        {
+          "definition": "物體由緊縮到伸展產生的力量",
+          "examples": [
+            "彈性"
+          ]
+        },
+        {
+          "definition": "演奏",
+          "examples": [
+            "彈奏",
+            "彈琴"
+          ]
+        },
+        {
+          "definition": "糾舉",
+          "examples": [
+            "彈劾"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "char": "簧",
+      "radical": "竹",
+      "strokes": "12／18",
+      "senses": [
+        {
+          "definition": "器物中具有彈力的機件",
+          "examples": [
+            "彈簧"
+          ]
+        },
+        {
+          "definition": "樂器中用以振動發聲的薄片，多用竹、金屬或其他材料製成",
+          "examples": [
+            "簧片"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "char": "它",
+      "radical": "宀",
+      "strokes": "2／5",
+      "senses": [
+        {
+          "definition": "無生物的第三人稱代詞，專指人、動物以外的無生物或事物",
+          "examples": []
+        },
+        {
+          "definition": "別的、另外的",
+          "examples": [
+            "它山之石"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "char": "短",
+      "radical": "矢",
+      "strokes": "7／12",
+      "senses": [
+        {
+          "definition": "長的相反詞。指距離或長度小",
+          "examples": [
+            "短跑",
+            "短袖"
+          ]
+        },
+        {
+          "definition": "過失、缺點",
+          "examples": [
+            "短處",
+            "截長補短"
+          ]
+        },
+        {
+          "definition": "缺少",
+          "examples": [
+            "短少"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "char": "悲",
+      "radical": "心",
+      "strokes": "8／12",
+      "senses": [
+        {
+          "definition": "傷痛、傷心",
+          "examples": [
+            "悲哀"
+          ]
+        },
+        {
+          "definition": "哀憐、憐惜",
+          "examples": [
+            "慈悲",
+            "悲憐"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "char": "流",
+      "radical": "人",
+      "strokes": "6／9",
+      "senses": [
+        {
+          "definition": "水的通稱",
+          "examples": [
+            "水流",
+            "隨波逐流"
+          ]
+        },
+        {
+          "definition": "像水流的東西",
+          "examples": [
+            "氣流",
+            "車流"
+          ]
+        },
+        {
+          "definition": "移動",
+          "examples": [
+            "外流"
+          ]
+        },
+        {
+          "definition": "品類、等級",
+          "examples": [
+            "上流",
+            "名流"
+          ]
+        },
+        {
+          "definition": "留傳、散布",
+          "examples": [
+            "流芳百世"
+          ]
+        },
+        {
+          "definition": "往來不定的、運轉不停的",
+          "examples": [
+            "流民",
+            "流星"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "char": "永",
+      "radical": "水",
+      "strokes": "1／5",
+      "senses": [
+        {
+          "definition": "恆久、久遠",
+          "examples": [
+            "永遠",
+            "永久"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    }
+  ],
+  "sentences": [
+    {
+      "pattern": "TODO",
+      "examples": [],
+      "blanks": [],
+      "level": "basic",
+      "status": "todo",
+      "source": "missing: 沿用 v1 欄位，v2 改用 sentence_patterns[]"
+    }
+  ],
+  "idioms": [
+    {
+      "id": "idiom:115AG3H01:30bd0e1b",
+      "idiom": "迫不及待",
+      "definition": "比喻情況或時間急切，不能再等。",
+      "related_char": "待",
+      "status": "ready",
+      "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）"
+    },
+    {
+      "id": "idiom:115AG3H01:ced4a586",
+      "idiom": "忍氣吞聲",
+      "definition": "忍住氣，不敢出聲。形容受了氣也強自忍耐，不敢作聲抗爭。",
+      "related_char": "吞",
+      "status": "ready",
+      "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）"
+    },
+    {
+      "id": "idiom:115AG3H01:b08648cd",
+      "idiom": "疲於奔命",
+      "definition": "形容事情繁多，奔波勞累。",
+      "related_char": "奔",
+      "status": "ready",
+      "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）"
+    },
+    {
+      "id": "idiom:115AG3H01:5d0d3537",
+      "idiom": "對牛彈琴",
+      "definition": "比喻對不懂道理的人講道理，彼此無法溝通。",
+      "related_char": "牛",
+      "status": "ready",
+      "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）"
+    },
+    {
+      "id": "idiom:115AG3H01:c886e840",
+      "idiom": "長話短說",
+      "definition": "省略冗長的談話，而只講重點。",
+      "related_char": "短",
+      "status": "ready",
+      "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）"
+    },
+    {
+      "id": "idiom:115AG3H01:2a16b65b",
+      "idiom": "一勞永逸",
+      "definition": "經過一次的勞苦，就能獲得永久的安逸。",
+      "related_char": "永",
+      "status": "ready",
+      "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG3H01:迫不及待:e9c47cb7",
+      "idiom_id": "idiom:115AG3H01:30bd0e1b",
+      "rewritten": "看到蛋糕端上桌，小美迫不及待的拿起叉子。",
+      "status": "approved",
+      "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H01:忍氣吞聲:9f9b4f0b",
+      "idiom_id": "idiom:115AG3H01:ced4a586",
+      "rewritten": "同學搶走了玩具，弟弟只能忍氣吞聲，不敢說話。",
+      "status": "approved",
+      "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H01:疲於奔命:ebb3e921",
+      "idiom_id": "idiom:115AG3H01:b08648cd",
+      "rewritten": "消防隊員整天四處滅火，忙得疲於奔命。",
+      "status": "approved",
+      "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H01:對牛彈琴:b768e6a5",
+      "idiom_id": "idiom:115AG3H01:5d0d3537",
+      "rewritten": "跟小狗解釋數學題目，簡直是對牛彈琴。",
+      "status": "approved",
+      "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H01:長話短說:066e1c71",
+      "idiom_id": "idiom:115AG3H01:c886e840",
+      "rewritten": "時間快到了，大家請長話短說，趕快講重點。",
+      "status": "approved",
+      "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H01:一勞永逸:972e5000",
+      "idiom_id": "idiom:115AG3H01:2a16b65b",
+      "rewritten": "把房間規劃好收納位置，才能一勞永逸不再亂。",
+      "status": "approved",
+      "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG3H01:2b3e44ae",
+      "category": "短語練習",
+      "head": "跑得實在太快了",
+      "structure": "動詞（加上動作）＋得＋實在＋形容詞（怎麼樣）",
+      "description": "用「實在」表示一件事物的真實性。",
+      "guide": "請學生想一想生活中有什麼太快、太慢、太長、太久、太短等的類似經驗。",
+      "analysis": "",
+      "examples": [
+        "跳得實在太高了",
+        "畫得實在太美了",
+        "唱得實在太大聲了",
+        "睡得實在太晚了"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "dabutie:08各課短語句型練習（3上L01短語句型造句-時間是什麼.pdf）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H01:a49ce48c",
+      "category": "造句練習",
+      "head": "慢吞吞",
+      "structure": "慢吞吞",
+      "description": "說話或動作很慢的樣子。",
+      "guide": "請學生思考生活中有什麼事物是動作緩慢的。",
+      "analysis": "",
+      "examples": [
+        "哥哥吃飯慢吞吞，常常最後一個吃完。",
+        "他寫作業慢吞吞，媽媽在旁邊等好久。",
+        "小貓慢吞吞的走過草地。",
+        "弟弟慢吞吞的穿鞋子，差點遲到。"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "dabutie:08各課短語句型練習（3上L01短語句型造句-時間是什麼.pdf）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H01:c21ebe7a",
+      "category": "造句練習",
+      "head": "縮短",
+      "structure": "縮短",
+      "description": "由長變短。",
+      "guide": "請學生連結生活經驗，將「縮短」用在正確的句子裡。",
+      "analysis": "",
+      "examples": [
+        "認真練習後，跑步的時間縮短了不少。",
+        "新的橋樑縮短了回家的路程。",
+        "專心寫作業，可以縮短完成的時間。",
+        "老師講解後，同學解題的時間縮短了。"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "dabutie:08各課短語句型練習（3上L01短語句型造句-時間是什麼.pdf）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H01:d20d521b",
+      "category": "句型練習",
+      "head": "時間是飛奔的斑馬，一會兒是白天，一會兒是黑夜。",
+      "structure": "（什麼情況），一會兒（怎麼樣），一會兒（怎麼樣）。",
+      "description": "並列複句，「一會兒」連用在兩個分句中，表示兩種情況交替出現。",
+      "guide": "請學生思考生活中有哪些兩種不同情況交替出現的例子。",
+      "analysis": "文中運用「一會兒……一會兒……」來表達時間的日夜變化。",
+      "examples": [
+        "妹妹的心情一會兒開心，一會兒難過。",
+        "天空一會兒出太陽，一會兒下雨。",
+        "弟弟一會兒站著，一會兒坐著，靜不下來。",
+        "小狗一會兒跑，一會兒跳，好活潑。"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "dabutie:08各課短語句型練習（3上L01短語句型造句-時間是什麼.pdf）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H01:f28ab3f2",
+      "category": "教冊句型總表",
+      "head": "並列複句",
+      "structure": "並列複句",
+      "description": "用不同句子分別描寫同時存在的幾種情況，就是並列複句。常用的關聯詞有「一會兒……一會兒……」、「一邊……一邊……」、「有人……有人……」等。",
+      "guide": "",
+      "analysis": "",
+      "examples": [
+        "風是調皮的孩子，一會兒安靜，一會兒吵鬧。",
+        "太陽是勤勞的農夫，每天準時起床工作。"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "dabutie:09教冊句型總表（115 國語3上句型總表.doc，反向歸課）"
+    }
+  ],
+  "rhetoric": [
+    {
+      "id": "rhetoric:115AG3H01:06c8d353",
+      "figure": "轉化",
+      "note": "描述一件事物時，轉變其原來性質，使它成為另一種本質完全不同的事物，再加以形容的修辭法。可分為擬人化、擬物化、形象化三種。",
+      "example": "小花對著風輕輕點頭，好像在跟他打招呼。",
+      "status": "approved",
+      "source": "dabutie:11修辭總表（115 國語3上修辭總表.docx，反向歸課）",
+      "child_note": "轉化＝把東西當成人來寫。"
+    },
+    {
+      "id": "rhetoric:115AG3H01:658553fb",
+      "figure": "類疊",
+      "note": "同一個字詞語句，接二連三反覆使用的修辭法。可以強調語意，可以貫串文意，也可以使語言富有節奏感。可分為疊字、疊句、類字、類句四種。",
+      "example": "風輕輕地吹，輕輕地吹過草地。",
+      "status": "approved",
+      "source": "dabutie:11修辭總表（115 國語3上修辭總表.docx，反向歸課）",
+      "child_note": "類疊＝把同一個詞語重複說，讓句子更有節奏感。"
+    },
+    {
+      "id": "rhetoric:115AG3H01:f63e38f8",
+      "figure": "映襯",
+      "note": "把兩種不同的，特別是相反的觀念或事物放在一起比較，使得語氣增強、意義明顯的修辭方式。",
+      "example": "教室裡安安靜靜，走廊上卻吵吵鬧鬧。",
+      "status": "approved",
+      "source": "dabutie:11修辭總表（115 國語3上修辭總表.docx，反向歸課）",
+      "child_note": "映襯＝把兩種不一樣（相反）的事情放在一起比較。"
+    },
+    {
+      "id": "rhetoric:115AG3H01:c5b78881",
+      "figure": "譬喻",
+      "note": "找出與所要描寫的對象有類似特點的人、事或物來做比方，加以說明，使文章內容表達得更具體、更生動的修辭方式。可分為明喻、隱喻、略喻、借喻四種。",
+      "example": "妹妹的笑容像陽光一樣溫暖。",
+      "status": "approved",
+      "source": "dabutie:11修辭總表（115 國語3上修辭總表.docx，反向歸課）",
+      "child_note": "譬喻＝用別的東西來比方要說的事物，讓句子更生動。"
+    },
+    {
+      "id": "rhetoric:115AG3H01:222d927a",
+      "figure": "設問",
+      "note": "不採用「敘述句」，故意改用「問句」來引起讀者注意的修辭法。設問包括：疑問，表示心中真有疑問；激問，表示答案在問題反面，也就是明知故問；提問，表示問題之後，附有答案，也就是自問自答。",
+      "example": "你知道小狗為什麼喜歡搖尾巴嗎？因為牠正在開心的跟你打招呼！",
+      "status": "approved",
+      "source": "dabutie:11修辭總表（115 國語3上修辭總表.docx，反向歸課）",
+      "child_note": "設問＝故意用問句，讓大家更注意，後面再自己回答。"
+    }
+  ],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG3H01:e278d28f",
+      "para_no": 1,
+      "summary": "覺得時間過得很慢的人，把它比喻成爬得慢的蝸牛。",
+      "structure_role": "分說",
+      "status": "approved",
+      "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H01:c38d232d",
+      "para_no": 2,
+      "summary": "每天很忙的人，覺得時間像跑得飛快的斑馬一樣。",
+      "structure_role": "分說",
+      "status": "approved",
+      "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H01:58f54316",
+      "para_no": 3,
+      "summary": "還有人形容時間會像彈簧一樣，有時長、有時短。",
+      "structure_role": "總說",
+      "status": "approved",
+      "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H01:d8f60335",
+      "para_no": 4,
+      "summary": "也有人把時間比喻成不斷流動的水，一去不回。",
+      "structure_role": "總說",
+      "status": "approved",
+      "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H01:16af90d4",
+      "para_no": 5,
+      "summary": "文章最後提出疑問，時間究竟是什麼樣子呢？",
+      "structure_role": "總說",
+      "status": "approved",
+      "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）"
+    }
+  ],
+  "main_idea": {
+    "id": "main_idea:115AG3H01:8b115dad",
+    "gist": "課文用不同的比喻，說明時間快慢不定、長短不一的特性，並留下疑問讓大家思考。",
+    "theme": "本課希望小朋友觀察生活中的感受，體會時間帶給人的不同感覺。",
+    "status": "approved",
+    "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG3H01:ca39e35c",
+      "stem": "課文為什麼用蝸牛來形容時間過得很慢？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為蝸牛爬行的速度很慢。",
+      "status": "approved",
+      "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
+    },
+    {
+      "id": "reading_question:115AG3H01:34309a55",
+      "stem": "課文用斑馬來形容時間，你猜猜是什麼原因呢？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "斑馬跑得快，身上黑白相間的條紋也讓人聯想到白天和夜晚。",
+      "status": "approved",
+      "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
+    },
+    {
+      "id": "reading_question:115AG3H01:7c07ff54",
+      "stem": "看看課文中的圖畫，說說時間被比喻成哪些東西？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "課文提到時間可能像蝸牛，也可能像斑馬，還有彈簧或流動的水。",
+      "status": "approved",
+      "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
+    },
+    {
+      "id": "reading_question:115AG3H01:2be75c92",
+      "stem": "時間看不到也摸不到，作者為什麼要用具體的東西來說明它？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "用看得見的東西來比喻，可以幫助大家更容易理解抽象的時間。",
+      "status": "approved",
+      "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
+    },
+    {
+      "id": "reading_question:115AG3H01:bd67caf8",
+      "stem": "讀完課文以後，你認為時間比較像什麼？請說出你的想法和理由。",
+      "strategy_tag": "比較評估",
+      "answer_hint": "答案不限，只要能舉出具體的例子並說明原因即可。",
+      "status": "approved",
+      "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
+    },
+    {
+      "id": "reading_question:115AG3H01:a09ef675",
+      "stem": "你心中的時間又像什麼呢？和課文裡的說法一樣嗎？為什麼？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "答案不限，鼓勵學生說出自己的比喻並解釋原因。",
+      "status": "approved",
+      "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
+    },
+    {
+      "id": "reading_question:115AG3H01:813aa9d6",
+      "stem": "作者說了那麼多種比喻，最後有找到答案嗎？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "沒有，作者仍然沒有確定的答案。",
+      "status": "approved",
+      "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG3H01:待:0",
+      "char": "待",
+      "sentence": "弟弟在公車站《等待》媽媽下班。",
+      "definition": "等候",
+      "options": [
+        "等候",
+        "對待、照顧"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:待:1",
+      "char": "待",
+      "sentence": "餐廳老闆總是《款待》每一位客人。",
+      "definition": "對待、照顧",
+      "options": [
+        "等候",
+        "對待、照顧"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:牛:0",
+      "char": "牛",
+      "sentence": "叔叔家養了一頭《乳牛》，每天早上都要去擠奶。",
+      "definition": "哺乳類動物。體型大，性格溫馴，可以拉車、耕田，肉與乳的營養價值都很高",
+      "options": [
+        "哺乳類動物。體型大，性格溫馴，可以拉車、耕田，肉與乳的營養價值都很高",
+        "固執、倔強",
+        "姓"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:牛:1",
+      "char": "牛",
+      "sentence": "妹妹一遇到不順心的事就發《牛脾氣》，誰都勸不動。",
+      "definition": "固執、倔強",
+      "options": [
+        "哺乳類動物。體型大，性格溫馴，可以拉車、耕田，肉與乳的營養價值都很高",
+        "固執、倔強",
+        "姓"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:牛:2",
+      "char": "牛",
+      "sentence": "隔壁新搬來的《牛小姐》是我們的鋼琴老師。",
+      "definition": "姓",
+      "options": [
+        "哺乳類動物。體型大，性格溫馴，可以拉車、耕田，肉與乳的營養價值都很高",
+        "固執、倔強",
+        "姓"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:吞:0",
+      "char": "吞",
+      "sentence": "妹妹吃飯太快，常常《狼吞虎嚥》，媽媽都會提醒她。",
+      "definition": "食物未經咀嚼就吃下去",
+      "options": [
+        "食物未經咀嚼就吃下去",
+        "忍住",
+        "侵占"
+      ],
+      "status": "approved",
+      "source": "dabutie:05形音輕鬆學（字義辨正）"
+    },
+    {
+      "id": "polysemy:115AG3H01:吞:1",
+      "char": "吞",
+      "sentence": "被同學誤會時，他選擇《忍氣吞聲》，沒有立刻反駁。",
+      "definition": "忍住",
+      "options": [
+        "食物未經咀嚼就吃下去",
+        "忍住",
+        "侵占"
+      ],
+      "status": "approved",
+      "source": "dabutie:05形音輕鬆學（字義辨正）"
+    },
+    {
+      "id": "polysemy:115AG3H01:吞:2",
+      "char": "吞",
+      "sentence": "壞人想要《併吞》別人辛苦存下的財產。",
+      "definition": "侵占",
+      "options": [
+        "食物未經咀嚼就吃下去",
+        "忍住",
+        "侵占"
+      ],
+      "status": "approved",
+      "source": "dabutie:05形音輕鬆學（字義辨正）"
+    },
+    {
+      "id": "polysemy:115AG3H01:寸:0",
+      "char": "寸",
+      "sentence": "這條緞帶量起來大約十《公寸》長。",
+      "definition": "量詞。用於計算長度的單位",
+      "options": [
+        "量詞。用於計算長度的單位",
+        "形容小、少",
+        "比喻「心」"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:寸:1",
+      "char": "寸",
+      "sentence": "沙漠中連一《寸土》都長不出植物。",
+      "definition": "形容小、少",
+      "options": [
+        "量詞。用於計算長度的單位",
+        "形容小、少",
+        "比喻「心」"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:寸:2",
+      "char": "寸",
+      "sentence": "看到心愛的玩具壞了，他《方寸》大亂，不知該怎麼辦。",
+      "definition": "比喻「心」",
+      "options": [
+        "量詞。用於計算長度的單位",
+        "形容小、少",
+        "比喻「心」"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:碌:0",
+      "char": "碌",
+      "sentence": "媽媽每天都要《忙碌》地準備晚餐和輔導功課。",
+      "definition": "繁忙",
+      "options": [
+        "繁忙",
+        "平凡無才能"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:碌:1",
+      "char": "碌",
+      "sentence": "他不想過《庸庸碌碌》的生活，決定努力學習新技能。",
+      "definition": "平凡無才能",
+      "options": [
+        "繁忙",
+        "平凡無才能"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:彈:0",
+      "char": "彈",
+      "sentence": "這條橡皮筋很有《彈性》，可以拉得很長。",
+      "definition": "物體由緊縮到伸展產生的力量",
+      "options": [
+        "物體由緊縮到伸展產生的力量",
+        "演奏",
+        "糾舉"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:彈:1",
+      "char": "彈",
+      "sentence": "姐姐每天放學後都會練習《彈琴》。",
+      "definition": "演奏",
+      "options": [
+        "物體由緊縮到伸展產生的力量",
+        "演奏",
+        "糾舉"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:彈:2",
+      "char": "彈",
+      "sentence": "議員在會議中提出《彈劾》案，要求調查官員。",
+      "definition": "糾舉",
+      "options": [
+        "物體由緊縮到伸展產生的力量",
+        "演奏",
+        "糾舉"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:簧:0",
+      "char": "簧",
+      "sentence": "門上的《彈簧》壞了，門關不緊。",
+      "definition": "器物中具有彈力的機件",
+      "options": [
+        "器物中具有彈力的機件",
+        "樂器中用以振動發聲的薄片，多用竹、金屬或其他材料製成"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:簧:1",
+      "char": "簧",
+      "sentence": "這把口琴裡的《簧片》會隨著吹氣振動發出聲音。",
+      "definition": "樂器中用以振動發聲的薄片，多用竹、金屬或其他材料製成",
+      "options": [
+        "器物中具有彈力的機件",
+        "樂器中用以振動發聲的薄片，多用竹、金屬或其他材料製成"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:它:0",
+      "char": "它",
+      "sentence": "桌上有一本書，《它》是我最喜歡的故事書。",
+      "definition": "無生物的第三人稱代詞，專指人、動物以外的無生物或事物",
+      "options": [
+        "無生物的第三人稱代詞，專指人、動物以外的無生物或事物",
+        "別的、另外的"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:它:1",
+      "char": "它",
+      "sentence": "老師常說《它山之石》可以幫助我們學到別人的優點。",
+      "definition": "別的、另外的",
+      "options": [
+        "無生物的第三人稱代詞，專指人、動物以外的無生物或事物",
+        "別的、另外的"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:短:0",
+      "char": "短",
+      "sentence": "妹妹今天穿了一件《短袖》上衣去上學。",
+      "definition": "長的相反詞。指距離或長度小",
+      "options": [
+        "長的相反詞。指距離或長度小",
+        "過失、缺點",
+        "缺少"
+      ],
+      "status": "approved",
+      "source": "dabutie:05形音輕鬆學（字義辨正）"
+    },
+    {
+      "id": "polysemy:115AG3H01:短:1",
+      "char": "短",
+      "sentence": "每個人都有自己的優點和《短處》，不需要太在意。",
+      "definition": "過失、缺點",
+      "options": [
+        "長的相反詞。指距離或長度小",
+        "過失、缺點",
+        "缺少"
+      ],
+      "status": "approved",
+      "source": "dabutie:05形音輕鬆學（字義辨正）"
+    },
+    {
+      "id": "polysemy:115AG3H01:短:2",
+      "char": "短",
+      "sentence": "這次活動報名人數《短少》了好幾位。",
+      "definition": "缺少",
+      "options": [
+        "長的相反詞。指距離或長度小",
+        "過失、缺點",
+        "缺少"
+      ],
+      "status": "approved",
+      "source": "dabutie:05形音輕鬆學（字義辨正）"
+    },
+    {
+      "id": "polysemy:115AG3H01:悲:0",
+      "char": "悲",
+      "sentence": "聽到心愛的小狗走失，小華心裡感到很《悲哀》。",
+      "definition": "傷痛、傷心",
+      "options": [
+        "傷痛、傷心",
+        "哀憐、憐惜"
+      ],
+      "status": "approved",
+      "source": "dabutie:05形音輕鬆學（字義辨正）"
+    },
+    {
+      "id": "polysemy:115AG3H01:悲:1",
+      "char": "悲",
+      "sentence": "師父對每個受傷的小動物都充滿《慈悲》之心。",
+      "definition": "哀憐、憐惜",
+      "options": [
+        "傷痛、傷心",
+        "哀憐、憐惜"
+      ],
+      "status": "approved",
+      "source": "dabutie:05形音輕鬆學（字義辨正）"
+    },
+    {
+      "id": "polysemy:115AG3H01:流:0",
+      "char": "流",
+      "sentence": "溪谷裡的《水流》清澈見底。",
+      "definition": "水的通稱",
+      "options": [
+        "水的通稱",
+        "像水流的東西",
+        "移動",
+        "品類、等級",
+        "留傳、散布",
+        "往來不定的、運轉不停的"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:流:1",
+      "char": "流",
+      "sentence": "飛機起飛時要注意上升的《氣流》。",
+      "definition": "像水流的東西",
+      "options": [
+        "水的通稱",
+        "像水流的東西",
+        "移動",
+        "品類、等級",
+        "留傳、散布",
+        "往來不定的、運轉不停的"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:流:2",
+      "char": "流",
+      "sentence": "許多年輕人為了工作機會而選擇《外流》到大城市。",
+      "definition": "移動",
+      "options": [
+        "水的通稱",
+        "像水流的東西",
+        "移動",
+        "品類、等級",
+        "留傳、散布",
+        "往來不定的、運轉不停的"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:流:3",
+      "char": "流",
+      "sentence": "這場音樂會請來了社會上的《名流》人士出席。",
+      "definition": "品類、等級",
+      "options": [
+        "水的通稱",
+        "像水流的東西",
+        "移動",
+        "品類、等級",
+        "留傳、散布",
+        "往來不定的、運轉不停的"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:流:4",
+      "char": "流",
+      "sentence": "這位科學家的偉大發明將會《流芳百世》。",
+      "definition": "留傳、散布",
+      "options": [
+        "水的通稱",
+        "像水流的東西",
+        "移動",
+        "品類、等級",
+        "留傳、散布",
+        "往來不定的、運轉不停的"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    },
+    {
+      "id": "polysemy:115AG3H01:流:5",
+      "char": "流",
+      "sentence": "夜空中劃過一顆閃亮的《流星》。",
+      "definition": "往來不定的、運轉不停的",
+      "options": [
+        "水的通稱",
+        "像水流的東西",
+        "移動",
+        "品類、等級",
+        "留傳、散布",
+        "往來不定的、運轉不停的"
+      ],
+      "status": "approved",
+      "source": "dabutie:06字義分析（3上L01字義分析-時間是什麼.docx）"
+    }
+  ],
+  "polysemy_senses": [
+    {
+      "id": "polysemy_sense:115AG3H01:0629d4eb",
+      "char": "吞",
+      "senses": [
+        {
+          "definition": "食物未經咀嚼就吃下去",
+          "examples": [
+            "狼吞虎嚥"
+          ]
+        },
+        {
+          "definition": "忍住",
+          "examples": [
+            "忍氣吞聲"
+          ]
+        },
+        {
+          "definition": "侵占",
+          "examples": [
+            "吞沒",
+            "併吞"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "polysemy_sense:115AG3H01:cce0ce5b",
+      "char": "短",
+      "senses": [
+        {
+          "definition": "長的相反詞。指距離或長度小",
+          "examples": [
+            "短跑",
+            "短袖"
+          ]
+        },
+        {
+          "definition": "過失、缺點",
+          "examples": [
+            "短處",
+            "截長補短"
+          ]
+        },
+        {
+          "definition": "缺少",
+          "examples": [
+            "短少"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "polysemy_sense:115AG3H01:b36bc1f8",
+      "char": "悲",
+      "senses": [
+        {
+          "definition": "傷痛、傷心",
+          "examples": [
+            "悲哀"
+          ]
+        },
+        {
+          "definition": "哀憐、憐惜",
+          "examples": [
+            "慈悲",
+            "悲憐"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG3H01:94ecb658",
+      "char": "待",
+      "readings": [
+        {
+          "zhuyin": "ㄉㄞˋ",
+          "dabutie_zhuyin": null,
+          "senses": [
+            {
+              "definition": "等候",
+              "examples": [
+                "等待"
+              ]
+            },
+            {
+              "definition": "對待、照顧",
+              "examples": [
+                "優待"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄉㄞ",
+          "dabutie_zhuyin": null,
+          "senses": [
+            {
+              "definition": "逗留、停留",
+              "examples": [
+                "我今天都待在家裡"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "polyphone:115AG3H01:763e1afe",
+      "char": "彈",
+      "readings": [
+        {
+          "zhuyin": "ㄊㄢˊ",
+          "dabutie_zhuyin": null,
+          "senses": [
+            {
+              "definition": "物體由緊縮到伸展產生的力量",
+              "examples": [
+                "彈性"
+              ]
+            },
+            {
+              "definition": "演奏",
+              "examples": [
+                "彈奏",
+                "彈琴"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄉㄢˋ",
+          "dabutie_zhuyin": null,
+          "senses": [
+            {
+              "definition": "藉彈力發射的小丸",
+              "examples": [
+                "彈珠"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "polyphone:115AG3H01:379e66fe",
+      "char": "樂",
+      "readings": [
+        {
+          "zhuyin": "ㄌㄜˋ",
+          "dabutie_zhuyin": null,
+          "senses": [
+            {
+              "definition": "開心、喜悅",
+              "examples": [
+                "快樂"
+              ]
+            },
+            {
+              "definition": "喜愛",
+              "examples": [
+                "樂於助人"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄩㄝˋ",
+          "dabutie_zhuyin": null,
+          "senses": [
+            {
+              "definition": "有節奏而和諧動人的聲音",
+              "examples": [
+                "音樂"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG3H01:9b86bf52",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "水",
+          "zhuyin": null,
+          "example": "水準、澆水"
+        },
+        {
+          "char": "永",
+          "zhuyin": "ㄩㄥˇ",
+          "example": "永遠、永恆"
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "lookalike:115AG3H01:ceda0f74",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "逗",
+          "zhuyin": "ㄉㄡˋ",
+          "example": "逗趣、逗點"
+        },
+        {
+          "char": "短",
+          "zhuyin": "ㄉㄨㄢˇ",
+          "example": "短褲、短暫"
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "lookalike:115AG3H01:1f92508e",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "錄",
+          "zhuyin": null,
+          "example": "錄音、登錄"
+        },
+        {
+          "char": "綠",
+          "zhuyin": null,
+          "example": "綠色、綠豆"
+        },
+        {
+          "char": "碌",
+          "zhuyin": "ㄌㄨˋ",
+          "example": "忙碌、勞碌"
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "lookalike:115AG3H01:ae7524b3",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "才",
+          "zhuyin": null,
+          "example": "才能、長才"
+        },
+        {
+          "char": "寸",
+          "zhuyin": "ㄘㄨㄣˋ",
+          "example": "尺寸、寸步"
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "lookalike:115AG3H01:e575d190",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "舌",
+          "zhuyin": null,
+          "example": "舌頭、舌尖"
+        },
+        {
+          "char": "吞",
+          "zhuyin": "ㄊㄨㄣ",
+          "example": "吞沒、慢吞吞"
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "lookalike:115AG3H01:1944bf1e",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "她",
+          "zhuyin": null,
+          "example": "她的眼睛"
+        },
+        {
+          "char": "他",
+          "zhuyin": null,
+          "example": "他鄉"
+        },
+        {
+          "char": "牠",
+          "zhuyin": "ㄊㄚ",
+          "example": "牠們"
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "lookalike:115AG3H01:a32e5f0a",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "過",
+          "zhuyin": null,
+          "example": "過年、過期"
+        },
+        {
+          "char": "蝸",
+          "zhuyin": "ㄍㄨㄚ",
+          "example": "蝸牛"
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    },
+    {
+      "id": "lookalike:115AG3H01:b4b9fa6c",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "侍",
+          "zhuyin": null,
+          "example": "侍者、侍衛"
+        },
+        {
+          "char": "待",
+          "zhuyin": "ㄉㄞˋ",
+          "example": "待客、待命"
+        }
+      ],
+      "status": "ready",
+      "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG3H01:0001",
+      "stem": "小明今天早上七點起床，先刷牙洗臉，再吃早餐。",
+      "question": "小明是先做什麼？",
+      "options": [
+        "先刷牙洗臉",
+        "先吃早餐",
+        "先寫功課"
+      ],
+      "answer": "先刷牙洗臉",
+      "status": "approved",
+      "source": "original:draft（教師自撰，無對應大補帖來源）"
+    },
+    {
+      "id": "listening:115AG3H01:0002",
+      "stem": "甲：你今天要去圖書館嗎？乙：不去了，我想在家看書。",
+      "question": "乙今天打算做什麼？",
+      "options": [
+        "去圖書館",
+        "在家看書",
+        "去公園"
+      ],
+      "answer": "在家看書",
+      "status": "approved",
+      "source": "original:draft（教師自撰，無對應大補帖來源）"
+    },
+    {
+      "id": "listening:115AG3H01:0003",
+      "stem": "下課鐘聲響起，同學們趕快排隊到操場做體操。",
+      "question": "下課鐘聲響起後，同學們要做什麼？",
+      "options": [
+        "排隊做體操",
+        "回教室午睡",
+        "去福利社買東西"
+      ],
+      "answer": "排隊做體操",
+      "status": "approved",
+      "source": "original:draft（教師自撰，無對應大補帖來源）"
+    }
+  ],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "待",
+        "蝸",
+        "牛",
+        "牠",
+        "吞",
+        "寸",
+        "碌",
+        "奔",
+        "彈",
+        "簧",
+        "它",
+        "短",
+        "悲",
+        "流",
+        "永"
+      ]
+    }
+  },
+  "extensions": [
+    {
+      "id": "ext:80f0f8d2",
+      "status": "approved",
+      "url": "https://dict.idioms.moe.edu.tw/idiomView.jsp?ID=743&webMd=1&la=1",
+      "title": "迫不及待（成語典）",
+      "provider": "教育部《成語典》2020",
+      "type": "dictionary",
+      "module": "idiom_builder",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "官方成語典條目，含釋義、典故、例句，可直接點閱"
+    },
+    {
+      "id": "ext:bcdbe8ce",
+      "status": "approved",
+      "url": "https://dict.idioms.moe.edu.tw/idiomView.jsp?ID=-307&webMd=1&la=1",
+      "title": "忍氣吞聲（成語典）",
+      "provider": "教育部《成語典》2020",
+      "type": "dictionary",
+      "module": "idiom_builder",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "官方成語典條目，含典故與八則例句"
+    },
+    {
+      "id": "ext:e30e8821",
+      "status": "approved",
+      "url": "https://dict.idioms.moe.edu.tw/idiomView.jsp?ID=715&webMd=1&la=1",
+      "title": "疲於奔命（成語典）",
+      "provider": "教育部《成語典》2020",
+      "type": "dictionary",
+      "module": "idiom_builder",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "官方成語典條目，出自《左傳》典故說明"
+    },
+    {
+      "id": "ext:b1e4c658",
+      "status": "approved",
+      "url": "https://dict.idioms.moe.edu.tw/idiomView.jsp?ID=47&q=1&webMd=1&la=1",
+      "title": "對牛彈琴（成語典）",
+      "provider": "教育部《成語典》2020",
+      "type": "dictionary",
+      "module": "idiom_builder",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "官方成語典條目，含公明儀典故與九則例句"
+    },
+    {
+      "id": "ext:1337b2a0",
+      "status": "approved",
+      "url": "https://dict.idioms.moe.edu.tw/idiomView.jsp?ID=18248&webMd=1&la=1",
+      "title": "長話短說（成語典）",
+      "provider": "教育部《成語典》2020",
+      "type": "dictionary",
+      "module": "idiom_builder",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "官方成語典條目，釋義為省略冗長談話只講重點"
+    },
+    {
+      "id": "ext:bea6a0df",
+      "status": "approved",
+      "url": "https://dict.idioms.moe.edu.tw/idiomView.jsp?ID=-786&webMd=1&la=1",
+      "title": "一勞永逸（成語典）",
+      "provider": "教育部《成語典》2020",
+      "type": "dictionary",
+      "module": "idiom_builder",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "官方成語典條目，出自揚雄〈諫勿許單于朝疏〉"
+    },
+    {
+      "id": "ext:4840bd50",
+      "status": "approved",
+      "url": "https://pedia.cloud.edu.tw/Entry/Detail/?search=%E8%BF%AB%E4%B8%8D%E5%8F%8A%E5%BE%85&title=%E8%BF%AB%E4%B8%8D%E5%8F%8A%E5%BE%85",
+      "title": "迫不及待（教育百科）",
+      "provider": "教育部教育雲教育百科",
+      "type": "dictionary",
+      "module": "idiom_builder",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "整合多部辭典釋義與例句，可作補充參考"
+    },
+    {
+      "id": "ext:79cd3541",
+      "status": "approved",
+      "url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%9D%B8%E7%89%9B",
+      "title": "蝸牛（教育百科）",
+      "provider": "教育部教育雲教育百科",
+      "type": "dictionary",
+      "module": "vocabulary",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "說明蝸牛外型與習性"
+    },
+    {
+      "id": "ext:b2d68093",
+      "status": "approved",
+      "url": "https://www.youtube.com/watch?v=feCqoggL9GM",
+      "title": "NEW01國小國語翰林版 三年級 第一課 時間是什麼？ 1",
+      "provider": "西松國小 安浦珠（YouTube頻道）",
+      "type": "video",
+      "module": "reading",
+      "version_note": "標題明確標示翰林版三年級第一課「時間是什麼」",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "教師自製課文朗讀教學影片，可作為預習或補救教學"
+    },
+    {
+      "id": "ext:4f6e1612",
+      "status": "approved",
+      "url": "https://gsyan888.blogspot.com/2023/08/html5-fun-game-laucher.html?sheet=10Nq6prSt0s_ZI1Z1phlGEtr0MDDE1wDqEiPmnHWSM_Q&gid=1268766218&gameid=115%23%E7%BF%B0%E6%9E%97%233%E4%B8%8A%E7%AD%86%E9%A0%86%23L01",
+      "title": "生字筆順練習（115 翰林 3 上 第 1 課）",
+      "provider": "HTML5 FUN（雄老師）",
+      "type": "game",
+      "module": "characters",
+      "version_note": "翰林三上",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "逐字練習本課生字筆順"
+    },
+    {
+      "id": "ext:bbb19b90",
+      "status": "approved",
+      "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=14183",
+      "title": "「待」的古代寫法（異體字字典）",
+      "provider": "教育部《異體字字典》",
+      "type": "reading",
+      "module": "characters",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "看甲骨文、金文等字形演變",
+      "char": "待"
+    },
+    {
+      "id": "ext:cc366e96",
+      "status": "approved",
+      "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=39936",
+      "title": "「蝸」的古代寫法（異體字字典）",
+      "provider": "教育部《異體字字典》",
+      "type": "reading",
+      "module": "characters",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "看甲骨文、金文等字形演變",
+      "char": "蝸"
+    },
+    {
+      "id": "ext:0b6111b0",
+      "status": "approved",
+      "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=26884",
+      "title": "「牛」的古代寫法（異體字字典）",
+      "provider": "教育部《異體字字典》",
+      "type": "reading",
+      "module": "characters",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "看甲骨文、金文等字形演變",
+      "char": "牛"
+    },
+    {
+      "id": "ext:bcc69990",
+      "status": "approved",
+      "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=26914",
+      "title": "「牠」的古代寫法（異體字字典）",
+      "provider": "教育部《異體字字典》",
+      "type": "reading",
+      "module": "characters",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "看甲骨文、金文等字形演變",
+      "char": "牠"
+    },
+    {
+      "id": "ext:28785df8",
+      "status": "approved",
+      "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=5582",
+      "title": "「吞」的古代寫法（異體字字典）",
+      "provider": "教育部《異體字字典》",
+      "type": "reading",
+      "module": "characters",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "看甲骨文、金文等字形演變",
+      "char": "吞"
+    },
+    {
+      "id": "ext:2bc3228e",
+      "status": "approved",
+      "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=11410",
+      "title": "「寸」的古代寫法（異體字字典）",
+      "provider": "教育部《異體字字典》",
+      "type": "reading",
+      "module": "characters",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "看甲骨文、金文等字形演變",
+      "char": "寸"
+    },
+    {
+      "id": "ext:c5037a3d",
+      "status": "approved",
+      "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=30381",
+      "title": "「碌」的古代寫法（異體字字典）",
+      "provider": "教育部《異體字字典》",
+      "type": "reading",
+      "module": "characters",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "看甲骨文、金文等字形演變",
+      "char": "碌"
+    },
+    {
+      "id": "ext:18defaeb",
+      "status": "approved",
+      "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=9376",
+      "title": "「奔」的古代寫法（異體字字典）",
+      "provider": "教育部《異體字字典》",
+      "type": "reading",
+      "module": "characters",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "看甲骨文、金文等字形演變",
+      "char": "奔"
+    },
+    {
+      "id": "ext:ab613b0e",
+      "status": "approved",
+      "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=13917",
+      "title": "「彈」的古代寫法（異體字字典）",
+      "provider": "教育部《異體字字典》",
+      "type": "reading",
+      "module": "characters",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "看甲骨文、金文等字形演變",
+      "char": "彈"
+    },
+    {
+      "id": "ext:a14697ec",
+      "status": "approved",
+      "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=32669",
+      "title": "「簧」的古代寫法（異體字字典）",
+      "provider": "教育部《異體字字典》",
+      "type": "reading",
+      "module": "characters",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "看甲骨文、金文等字形演變",
+      "char": "簧"
+    },
+    {
+      "id": "ext:8abe5e23",
+      "status": "approved",
+      "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=10603",
+      "title": "「它」的古代寫法（異體字字典）",
+      "provider": "教育部《異體字字典》",
+      "type": "reading",
+      "module": "characters",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "看甲骨文、金文等字形演變",
+      "char": "它"
+    },
+    {
+      "id": "ext:87de4b62",
+      "status": "approved",
+      "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=30218",
+      "title": "「短」的古代寫法（異體字字典）",
+      "provider": "教育部《異體字字典》",
+      "type": "reading",
+      "module": "characters",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "看甲骨文、金文等字形演變",
+      "char": "短"
+    },
+    {
+      "id": "ext:7cc030f3",
+      "status": "approved",
+      "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=15261",
+      "title": "「悲」的古代寫法（異體字字典）",
+      "provider": "教育部《異體字字典》",
+      "type": "reading",
+      "module": "characters",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "看甲骨文、金文等字形演變",
+      "char": "悲"
+    },
+    {
+      "id": "ext:aef5de30",
+      "status": "approved",
+      "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=23723",
+      "title": "「流」的古代寫法（異體字字典）",
+      "provider": "教育部《異體字字典》",
+      "type": "reading",
+      "module": "characters",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "看甲骨文、金文等字形演變",
+      "char": "流"
+    },
+    {
+      "id": "ext:ac20b74f",
+      "status": "approved",
+      "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=23293",
+      "title": "「永」的古代寫法（異體字字典）",
+      "provider": "教育部《異體字字典》",
+      "type": "reading",
+      "module": "characters",
+      "version_note": "通用",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "看甲骨文、金文等字形演變",
+      "char": "永"
+    },
+    {
+      "id": "ext:b6b31247",
+      "status": "approved",
+      "url": "https://wordwall.net/resource/13379418",
+      "title": "翰林國小國語_3上L01時間是什麼（成語找一找）",
+      "provider": "Wordwall（翰林官方 hanlindigi）",
+      "type": "game",
+      "module": "idiom_builder",
+      "version_note": "翰林三上",
+      "login_required": false,
+      "checked_at": "2026-09-25",
+      "note": "找出本課成語並配對解釋"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「待」的注音是？",
+      "options": [
+        "ㄉㄞˋ",
+        "ㄌㄨˋ",
+        "ㄋㄧㄡˊ"
+      ],
+      "answer": "ㄉㄞˋ",
+      "explanation": "「待」讀作 ㄉㄞˋ（來源：教育部教育百科）。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:pedia",
+      "hints": [
+        "先念念看聲母，再想想韻母，不要急著選。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「蝸」的注音是？",
+      "options": [
+        "ㄍㄨㄚ",
+        "ㄊㄚ",
+        "ㄅㄟ"
+      ],
+      "answer": "ㄍㄨㄚ",
+      "explanation": "「蝸」讀作 ㄍㄨㄚ（來源：教育部教育百科）。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:pedia",
+      "hints": [
+        "先念念看聲母，再想想韻母，不要急著選。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「牛」的注音是？",
+      "options": [
+        "ㄘㄨㄣˋ",
+        "ㄋㄧㄡˊ",
+        "ㄉㄨㄢˇ"
+      ],
+      "answer": "ㄋㄧㄡˊ",
+      "explanation": "「牛」讀作 ㄋㄧㄡˊ（來源：教育部教育百科）。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:pedia",
+      "hints": [
+        "先念念看聲母，再想想韻母，不要急著選。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「牠」的注音是？",
+      "options": [
+        "ㄊㄚ",
+        "ㄉㄨㄢˇ",
+        "ㄘㄨㄣˋ"
+      ],
+      "answer": "ㄊㄚ",
+      "explanation": "「牠」讀作 ㄊㄚ（來源：教育部教育百科）。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:pedia",
+      "hints": [
+        "先念念看聲母，再想想韻母，不要急著選。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「吞」的注音是？",
+      "options": [
+        "ㄊㄨㄣ",
+        "ㄏㄨㄤˊ",
+        "ㄉㄞˋ"
+      ],
+      "answer": "ㄊㄨㄣ",
+      "explanation": "「吞」讀作 ㄊㄨㄣ（來源：教育部教育百科）。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:pedia",
+      "hints": [
+        "先念念看聲母，再想想韻母，不要急著選。"
+      ]
+    },
+    {
+      "id": "m01",
+      "type": "matching",
+      "stem": "字 ↔ 部首配對",
+      "pairs": [
+        {
+          "left": "待",
+          "right": "彳"
+        },
+        {
+          "left": "蝸",
+          "right": "虫"
+        },
+        {
+          "left": "牛",
+          "right": "牛"
+        },
+        {
+          "left": "牠",
+          "right": "牛"
+        },
+        {
+          "left": "吞",
+          "right": "口"
+        },
+        {
+          "left": "寸",
+          "right": "寸"
+        }
+      ],
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:pedia"
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "note": "教材待補：應用任務設計中"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy-quiz"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "available",
+      "activity": "listening-quiz"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "available",
+      "activity": "rhetoric-quiz"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "note": "教材待補：需累積跨課 review_words.by_lesson 後才可用"
+    }
+  }
+}

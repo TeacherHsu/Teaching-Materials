@@ -1,0 +1,41 @@
+{
+  "_note": "元件測試用假資料，不是教材，不在課程 index 中，不得引用於任何正式課次。",
+  "vocabulary": [
+    {
+      "word": "假想詞",
+      "zhuyin": "ㄐㄧㄚˇ ㄒㄧㄤˇ ㄘˊ",
+      "meaning": "這是測試用的假造詞義，僅供元件開發驗證版面。",
+      "example_sentence": "這是一個測試用例句，僅供元件開發使用。",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "fixture:component-test"
+    },
+    {
+      "word": "示範詞",
+      "zhuyin": "ㄕˋ ㄈㄢˋ ㄘˊ",
+      "meaning": "第二筆測試資料，用來檢查列表版面與翻卡互動。",
+      "example_sentence": "老師用示範詞說明翻卡怎麼玩。",
+      "level": "challenge",
+      "image": "assets/_fixtures/vocab-demo.webp",
+      "status": "ready",
+      "source": "fixture:component-test"
+    }
+  ],
+  "sentenceBuilder": {
+    "prompt": "選出正確的詞塊，組成一句通順的句子。",
+    "bank": ["小狗", "在", "公園", "跑步", "開心地"],
+    "solution": ["小狗", "開心地", "在", "公園", "跑步"],
+    "level": "basic",
+    "status": "ready",
+    "source": "fixture:component-test"
+  },
+  "sentenceOrdering": {
+    "prompt": "把下面的詞語排成正確的句子順序。",
+    "parts": ["回家", "放學後", "弟弟", "先寫功課", "才玩玩具"],
+    "solution": ["放學後", "弟弟", "先寫功課", "才玩玩具", "回家"],
+    "level": "challenge",
+    "status": "ready",
+    "source": "fixture:component-test"
+  }
+}
