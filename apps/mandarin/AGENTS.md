@@ -21,6 +21,8 @@
 | 重新匯入大補帖、改寫句子、套用審核 | `~/mandarin-work/`＋大補帖 zip＋Microsoft Word | **只有家裡 Mac** |
 | 新增課次（批次匯入） | 同上 | **只有家裡 Mac** |
 
+> 家裡 Windows 的 Codex 也有大補帖等官方教材，並已做好整套學習單（含各課成語圖）。但匯入器的 .doc 轉檔（`convert_doc.py`）目前用 macOS AppleScript 呼叫 Word，而且 `~/mandarin-work/` 的改寫與審核紀錄沒有同步到 Windows，所以 **Windows 目前仍不跑匯入流程**。Windows 最適合的工作是提供現成的成語插圖與學習單素材。若要讓 Windows 也能匯入，需要先把 `convert_doc.py` 改成 Word COM 版，並決定 `mandarin-work` 的同步方式（它含大補帖原文，**不可以**進公開 repo）。
+
 沒有 `~/mandarin-work/` 的電腦**不要**執行 `tools/dabutie/import_lesson.py`、`rebuild_check.sh`、`apply_*.py`，也不要手動改 `public/data/*.json` 裡的教材內容。這些改動在下次重建時會被蓋掉，或和審核紀錄對不上。
 
 ## 驗證指令（完工前全部要通過）
