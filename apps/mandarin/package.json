@@ -1,0 +1,21 @@
+{
+  "name": "mandarin-lesson-site",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "國小國語數位教材網站（data-driven，取代 lesson-park 單檔 HTML 母版方案）",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "postbuild": "node scripts/filter-build-data.mjs",
+    "build:preview": "vite build --outDir dist-preview && MANDARIN_BUILD_PREVIEW=1 MANDARIN_DIST_DIR=dist-preview node scripts/filter-build-data.mjs",
+    "preview": "vite preview",
+    "preview:draft": "vite preview --outDir dist-preview",
+    "validate": "node scripts/validate-data.mjs",
+    "check-dist": "node scripts/check-dist.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "vite": "^5.4.10"
+  }
+}

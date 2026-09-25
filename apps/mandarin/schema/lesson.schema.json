@@ -1,0 +1,263 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "國語課文樂園 — 單課資料契約 v1",
+  "description": "沿用 sped-os lesson-park 的欄位精神（level／type／source 標註、不放課文全文）。executed by scripts/validate-data.mjs。",
+  "type": "object",
+  "required": ["lesson_id", "volume", "unit", "lesson_no", "title", "blurb", "modules"],
+  "additionalProperties": true,
+  "properties": {
+    "lesson_id": {
+      "type": "string",
+      "pattern": "^\\d{3}[AB]G[1-6][HK]\\d{2}$"
+    },
+    "volume": {
+      "type": "object",
+      "required": ["code", "publisher", "grade", "term"],
+      "properties": {
+        "code": { "type": "string", "pattern": "^\\d{3}[AB]G[1-6][HK]$" },
+        "publisher": { "type": "string", "enum": ["翰林", "康軒", "南一"] },
+        "grade": { "type": "integer", "minimum": 1, "maximum": 6 },
+        "term": { "type": "string", "enum": ["上", "下"] }
+      }
+    },
+    "unit": {
+      "type": "object",
+      "required": ["no", "title"],
+      "properties": {
+        "no": { "type": "integer", "minimum": 1 },
+        "title": { "type": "string", "minLength": 1, "maxLength": 30 }
+      }
+    },
+    "lesson_no": { "type": "integer", "minimum": 1, "maximum": 99 },
+    "title": { "type": "string", "minLength": 1, "maxLength": 30 },
+    "author": { "type": "string", "maxLength": 20 },
+    "blurb": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "description": "課次卡片介紹，自行撰寫，不得摘錄課文原文"
+    },
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["char", "zhuyin", "stroke_count", "radical", "type", "level", "source"],
+        "properties": {
+          "char": { "type": "string", "minLength": 1, "maxLength": 1 },
+          "zhuyin": { "type": "string", "minLength": 1 },
+          "stroke_count": { "type": "integer", "minimum": 1, "maximum": 40 },
+          "radical": { "type": "string", "minLength": 1, "maxLength": 1 },
+          "type": { "type": "string", "enum": ["習寫字", "認讀字"] },
+          "level": { "type": "string", "enum": ["basic", "challenge"] },
+          "examples": {
+            "type": ["array", "null"],
+            "items": { "type": "string" }
+          },
+          "image": { "type": ["string", "null"] },
+          "audio_override": { "type": ["string", "null"] },
+          "pedia_url": { "type": "string" },
+          "source": { "type": "string" },
+          "status": { "type": "string", "enum": ["ready", "todo"] }
+        }
+      }
+    },
+    "words": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["word", "status", "source"],
+        "properties": {
+          "id": { "type": "string" },
+          "word": { "type": "string", "minLength": 1, "maxLength": 8 },
+          "zhuyin": { "type": ["string", "null"] },
+          "meaning": { "type": ["string", "null"] },
+          "example_sentence": { "type": ["string", "null"] },
+          "example_status": {
+            "type": "string",
+            "enum": ["todo_rewrite", "draft", "approved", "rejected"],
+            "description": "v2 新增：example_sentence（05語詞解釋原例句改寫）審核狀態，獨立於 status（word/meaning 本身是否可公開）"
+          },
+          "level": { "type": "string", "enum": ["basic", "challenge"] },
+          "image": { "type": ["string", "null"] },
+          "status": {
+            "type": "string",
+            "enum": ["ready", "todo", "todo_rewrite", "draft", "approved", "rejected"]
+          },
+          "source": { "type": "string" }
+        }
+      }
+    },
+    "sentences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["pattern", "status", "source"],
+        "properties": {
+          "pattern": { "type": "string" },
+          "examples": { "type": "array", "items": { "type": "string" } },
+          "blanks": { "type": "array", "items": { "type": "string" } },
+          "level": { "type": "string", "enum": ["basic", "challenge"] },
+          "status": { "type": "string", "enum": ["ready", "todo"] },
+          "source": { "type": "string" }
+        }
+      }
+    },
+    "quiz": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "stem", "status", "source"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string", "enum": ["choice", "matching"] },
+          "stem": { "type": "string" },
+          "options": { "type": "array", "items": { "type": "string" } },
+          "answer": {},
+          "explanation": { "type": ["string", "null"] },
+          "pairs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "left": { "type": "string" },
+                "right": { "type": "string" }
+              }
+            }
+          },
+          "level": { "type": "string", "enum": ["basic", "challenge"] },
+          "status": { "type": "string", "enum": ["ready", "todo"] },
+          "hints": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "答錯時的 scaffold 提示，不揭曉答案。第 1 次答錯顯示，第 2 次答錯才揭曉正解。"
+          },
+          "source": {
+            "type": "string",
+            "description": "例如 derived:pedia（由已查證的教育百科資料機械生成）"
+          }
+        }
+      }
+    },
+    "word_meanings": {
+      "type": "array",
+      "description": "v2 新增：06字義分析逐字義項，原文照登（版權表允許）"
+    },
+    "idioms": {
+      "type": "array",
+      "description": "v2 新增：07生字延伸成語，成語與定義可公開"
+    },
+    "idiom_sentences": {
+      "type": "array",
+      "description": "v2 新增：成語例句，需改寫，落地為 status:todo_rewrite 佔位"
+    },
+    "sentence_patterns": {
+      "type": "array",
+      "description": "v2 新增：08短語句型練習＋09句型總表(反向歸課)"
+    },
+    "rhetoric": {
+      "type": "array",
+      "description": "v2 新增：11修辭總表(反向歸課)"
+    },
+    "paragraph_summary": {
+      "type": "array",
+      "description": "v2 新增：12段落大意＋13課文結構表"
+    },
+    "main_idea": {
+      "type": "object",
+      "description": "v2 新增：12主旨/課文大意"
+    },
+    "reading_questions": {
+      "type": "array",
+      "description": "v2 新增：15閱讀理解提問"
+    },
+    "listening": {
+      "type": "array",
+      "description": "v2 新增：16聆聽練習（若可抽取，否則 todo）；無來源檔案時為原創 draft（stem 朗讀文字、question/options/answer）"
+    },
+    "polysemy": {
+      "type": "array",
+      "description": "v2 新增：模組6 一字多義。字義權威來源為05■字義辨正（翰林 profile，見 source_profiles.py），06字義分析為備援；逐義項各一句原創生活句（char/sentence/definition/options/status/source）"
+    },
+    "polysemy_senses": {
+      "type": "array",
+      "description": "2026-09-25 新增：05■字義辨正逐字多個義項＋課本例詞，一字多義的權威字義來源（直接公開類，status 恆為 ready）"
+    },
+    "polyphones": {
+      "type": "array",
+      "description": "2026-09-25 新增：05■認識多音字，逐字列出各讀音的義項與課本例詞（直接公開類）；zhuyin 待 pedia／教育部辭典查證，dabutie_zhuyin 為大補帖端讀音（本版本無法從 docx 可靠抽取，一律 null）。本批只做資料層，前端「一字多音」大項另外批次做"
+    },
+    "lookalikes": {
+      "type": "array",
+      "description": "2026-09-25 新增：05■字形辨別（文字方塊表格），形似字組＋課本例詞（直接公開類）；zhuyin 只用 pedia 查得到的。本批只做資料層，前端「形似字」大項另外批次做"
+    },
+    "review_words": {
+      "type": "object",
+      "description": "v2 新增：04生字累計表，跨課字彙索引"
+    },
+    "extensions": {
+      "type": "array",
+      "description": "延伸練習外部連結。規格 docs/specs/2026-09-25-mandarin-dabutie-importer.md「延伸練習連結」一節。",
+      "items": {
+        "type": "object",
+        "required": ["id", "url", "title", "provider", "type", "module", "status"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "url": {
+            "type": "string",
+            "pattern": "^https://",
+            "description": "必須 https；網域須在 src/config/linkDomains.js 白名單內（由 scripts/validate-data.mjs 檢查）"
+          },
+          "title": { "type": "string", "minLength": 1, "maxLength": 40 },
+          "provider": { "type": "string", "minLength": 1 },
+          "type": { "type": "string", "enum": ["game", "quiz", "video", "dictionary", "reading"] },
+          "module": {
+            "type": "string",
+            "description": "對應大項 key（characters/vocabulary/idiom_builder/sentence_practice/reading/polysemy/structure_map/listening/rhetoric/review）或 \"lesson\"（整課，顯示在 Lesson Dashboard 底部）"
+          },
+          "version_note": { "type": "string" },
+          "login_required": { "type": "boolean" },
+          "checked_at": { "type": ["string", "null"] },
+          "note": { "type": "string", "maxLength": 25 },
+          "status": { "type": "string", "enum": ["draft", "approved", "rejected"] },
+          "char": {
+            "type": "string",
+            "maxLength": 1,
+            "description": "選填：module=characters 且 type=reading 時，對應到單一生字（用於 CharacterCard「看字的由來」次要連結）"
+          }
+        }
+      }
+    },
+    "modules": {
+      "type": "object",
+      "description": "Lesson Dashboard 六個模組的狀態與對應資料鍵，data-driven，不 hard-code 元件內容",
+      "required": [
+        "characters",
+        "vocabulary",
+        "reading",
+        "sentence_practice",
+        "challenge",
+        "application"
+      ],
+      "properties": {
+        "characters": { "$ref": "#/definitions/moduleEntry" },
+        "vocabulary": { "$ref": "#/definitions/moduleEntry" },
+        "reading": { "$ref": "#/definitions/moduleEntry" },
+        "sentence_practice": { "$ref": "#/definitions/moduleEntry" },
+        "challenge": { "$ref": "#/definitions/moduleEntry" },
+        "application": { "$ref": "#/definitions/moduleEntry" }
+      }
+    }
+  },
+  "definitions": {
+    "moduleEntry": {
+      "type": "object",
+      "required": ["label", "status"],
+      "properties": {
+        "label": { "type": "string" },
+        "status": { "type": "string", "enum": ["available", "missing"] },
+        "activity": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    }
+  }
+}

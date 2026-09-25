@@ -1,0 +1,37 @@
+{
+  "_note": "元件測試用，非教材。僅供 scripts/test-review-cross-lesson.mjs 驗證『舊字新詞』跨課選題邏輯，不進正式 course-index，不對外發布。",
+  "grades": [
+    {
+      "grade": 3,
+      "label": "三年級（測試）",
+      "volumes": [
+        {
+          "code": "115AG3H",
+          "publisher": "翰林",
+          "term": "上",
+          "label": "115 學年上學期・翰林三上（測試索引）",
+          "units": [
+            {
+              "no": 1,
+              "title": "測試單元",
+              "lessons": [
+                {
+                  "lesson_id": "115AG3H01",
+                  "lesson_no": 1,
+                  "title": "時間是什麼",
+                  "data": "data/115AG3H/lesson01.json"
+                },
+                {
+                  "lesson_id": "FIXTURE-REVIEW-02",
+                  "lesson_no": 2,
+                  "title": "元件測試用假第 2 課",
+                  "data": "data/_fixtures/review-lesson02.fixture.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
