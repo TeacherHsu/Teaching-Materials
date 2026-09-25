@@ -15,6 +15,14 @@
 ---
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/` G3A 翰林第 1～3 課筆順外連
+- 做了什麼：依固定網址規律 `html5_stroke_parts.html?by=gsyan&words=`，將三課生字依課本順序串接並 URL 編碼；三課「本課筆順教材」均改為直接開啟該課生字，備註改為顯示已帶入的生字數量
+- 驗證：`npm run validate`、`node scripts/test-extension-links.mjs`、`npm run build`、`npm run check-dist` 通過；瀏覽器實際開啟第 1～3 課直連，確認頁面標題為「雄-筆順練習」且輸入區帶入各課生字；本地第三課 href 已更新
+- 推送：尚未推送
+- 待辦／給下一棒：後續課次可沿用相同規律，由該課 `characters[].char` 依序串成 `words` 參數
+- 注意：未修改官方原始教材與既有造詞資料；保留 `Chinese/` 舊站與內部官方原始檔
+
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/` G3A 翰林第 1～3 課生字造詞資料與「認識生字」筆順教材入口
 - 做了什麼：依使用者提供的《115上114下學期生字表_大腦與語言實驗室_20260723.xlsx》翰林／115上／三年級第 1～3 課資料，補充每個生字最多 5 個造詞並保留 `examples_source`；新增每課筆順練習外連，放在「認識生字」第一步任務提示下方，以折疊卡顯示版本、年級與課別選取方式；延伸連結卡新增 `note` 顯示
 - 驗證：`npm run validate`、全部 `scripts/test-*.mjs`、`npm run build`、`npm run check-dist` 通過；瀏覽器確認第三課造詞與筆順入口、無橫向溢位、無 console error／warning
