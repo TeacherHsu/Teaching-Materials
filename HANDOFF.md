@@ -15,6 +15,14 @@
 ---
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/src/components/TaskBanner.js` 所有組別進度文字
+- 做了什麼：依使用者回饋移除所有「第 X 組／共 Y 組」，不論單組或多組；保留步驟進度
+- 驗證：`npm.cmd run validate`、`node scripts/test-extension-links.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 通過；瀏覽器確認多組語詞頁僅保留「第 1 步／共 3 步」，修辭頁不顯示組別資訊，console 無錯誤或警告
+- 推送：尚未推送
+- 待辦／給下一棒：如需發布，再由使用者確認後推送目前本地 commit
+- 注意：不影響題目本身的「第 X／共 Y 題」進度
+
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/components/TaskBanner.js` 單組進度文字
 - 做了什麼：移除只有一組時的「第 1 組／共 1 組」，保留多組練習的組別進度
 - 驗證：`npm.cmd run validate`、`node scripts/test-extension-links.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 通過；瀏覽器修辭頁確認單組提示已隱藏，語詞頁確認多組提示仍保留，頁面無橫向溢出，console 無錯誤或警告
