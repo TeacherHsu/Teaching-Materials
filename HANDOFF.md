@@ -14,6 +14,14 @@
 
 ---
 
+## 2026-09-25｜學校 Win｜Codex｜狀態：🚧 施工中
+- 範圍：`apps/mandarin/public/assets/fonts/`、`apps/mandarin/src/styles/tokens.css`、`apps/mandarin/src/styles/components.css`
+- 做了什麼：準備將使用者提供且附有 OFL／Apache 授權文件的芫荽注音體，套用至生字卡大字與語詞卡字詞
+- 驗證：施工中，待確認字型實際載入、版面與正式建置
+- 推送：施工紀錄待先行提交並推送
+- 待辦／給下一棒：嵌入字型與授權文件、調整兩類文字選擇器、瀏覽器確認與資產檢查
+- 注意：一般說明文字維持原字型；網站只散布原始字型與授權文件，不修改字型檔
+
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG3H/lesson05.json`、`apps/mandarin/scripts/test-vocabulary-image-pairs.mjs`
 - 做了什麼：修正第五課「夾子」與「遮雨」圖片路徑對調；新增回歸測試，固定確認夾子使用夾子圖、遮雨使用雨傘圖
