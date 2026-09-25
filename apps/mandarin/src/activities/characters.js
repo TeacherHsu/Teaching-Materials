@@ -8,16 +8,17 @@ import { filterByStatus } from '../utils/preview.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { DragToSlot } from '../components/DragToSlot.js';
 import { TaskBanner } from '../components/TaskBanner.js';
+import { buildExtensionLinks } from '../components/ExtensionLinks.js';
 import { missingContentNotice } from './engine.js';
 
 const ROUND_MAX = 5;
-const MAX_EXAMPLES = 3;
+const MAX_EXAMPLES = 5;
 
 function shuffled(arr) {
   return [...arr].sort(() => Math.random() - 0.5);
 }
 
-/** 從 word_meanings（字義分析）攤平出每個字的造詞範例，供 CharacterCard 缺 examples 時使用。 */
+/** 從本課語詞攤平出每個字的造詞範例，供 CharacterCard 缺 examples 時使用。 */
 // 生字卡的「造詞」只顯示本課目標語詞（words[]，來自 05 語詞解釋）中含該字者；
 // 06 字義分析的一般造詞（例：水牛、牛脾氣）不是本課語詞，不顯示（CF 2026-09-25）。
 function buildExampleMap(lesson) {
@@ -123,6 +124,8 @@ export function buildCharactersActivity(lesson, onBack) {
 
     if (step === 'cards') {
       container.appendChild(TaskBanner({ label: '看看這一課的生字：點卡片上的按鈕可以聽發音', step: stepLabel }));
+      const strokeLinks = buildExtensionLinks(lesson, 'characters', { title: '本課筆順教材' });
+      if (strokeLinks) container.appendChild(strokeLinks);
       const originByChar = new Map(
         filterByStatus(lesson.extensions || [])
           .filter((e) => e.module === 'characters' && e.type === 'reading' && e.char)
