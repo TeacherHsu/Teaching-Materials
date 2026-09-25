@@ -46,6 +46,14 @@ export const MODULE_ICONS = {
   review: wrap(
     '<path d="M4 12a8 8 0 0 1 14-5.3M4 12a8 8 0 0 0 14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/>',
   ),
+  // 一字多音：一個字＋音符（不同讀音）
+  polyphones: wrap(
+    '<circle cx="9" cy="12" r="6.5"/><path d="M9 9v6M7 10.5h4M7 13.5h4"/><path d="M17 6v9.5a2.5 2.5 0 1 1-1.2-2.1"/><circle cx="18.8" cy="17.5" r="1.7"/>',
+  ),
+  // 形似字：兩個相似方框＋放大鏡比對
+  lookalikes: wrap(
+    '<rect x="2.5" y="4" width="7.5" height="7.5" rx="1.2"/><rect x="12.5" y="4" width="7.5" height="7.5" rx="1.2"/><circle cx="9.5" cy="17.5" r="3.5"/><path d="M12.2 20.2L15 23"/>',
+  ),
 };
 
 // 狀態徽章圖示

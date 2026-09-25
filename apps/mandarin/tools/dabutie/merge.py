@@ -105,6 +105,43 @@ def build_words(meaning_raw: dict, lesson_id: str, existing_by_id: dict) -> tupl
     return out, todos
 
 
+def build_words_from_vocab_explanations(vocab_raw: dict, lesson_id: str, existing_by_id: dict) -> tuple[list[dict], list[str]]:
+    """words[]（學會語詞）正本：05形音輕鬆學．■語詞解釋，依課本序號排序（翰林 profile）。
+    word/meaning 屬直接公開類（版權表），example_sentence 是原例句，需改寫，走
+    todo_rewrite→draft→approved 狀態機，獨立於 word/meaning 的 status（沿用
+    sentence_patterns 的 status/examples_status 分工模式）。"""
+    todos = []
+    out = []
+    for w in sorted(vocab_raw.get("words", []), key=lambda w: w.get("no", 0)):
+        item_id = stable_id(f"word:{lesson_id}", w["word"])
+        existing = existing_by_id.get(item_id)
+        example_status = "todo_rewrite"
+        example_sentence = None
+        status = "ready"
+        if existing:
+            if existing.get("example_status") in PRESERVED_STATUSES:
+                example_status = existing["example_status"]
+                example_sentence = existing.get("example_sentence")
+            if existing.get("status") in ("approved", "rejected"):
+                status = existing["status"]
+        out.append({
+            "id": item_id,
+            "word": w["word"],
+            "zhuyin": None,
+            "meaning": w.get("meaning"),
+            "example_sentence": example_sentence,
+            "example_status": example_status,
+            "level": "basic",
+            "image": None,
+            "status": status,
+            "source": vocab_raw.get("source", "dabutie:05形音輕鬆學（語詞解釋）"),
+        })
+    if out:
+        todos.append(f"words: {len(out)} 筆 zhuyin 皆為 null（pedia 參考檔無語詞層級注音，僅有單字），待教師/後續工具補上")
+        todos.append(f"words: {len(out)} 筆 example_sentence 皆為原例句改寫佇列（todo_rewrite），原文見 work/rewrite-queue/")
+    return out, todos
+
+
 def build_word_meanings(meaning_raw: dict) -> list[dict]:
     out = []
     for rec in meaning_raw.get("records", []):
@@ -297,34 +334,128 @@ def build_reading_questions(rq_raw: dict, lesson_id: str, existing_by_id: dict |
     return out
 
 
-def build_polysemy(meaning_raw: dict, lesson_id: str, existing_by_id: dict | None = None):
-    """模組6 一字多義：word_meanings 中 ≥2 義項的生字，逐義項各留一筆待改寫的
-    原創生活句（sentence）。definition/options 為結構事實，每次重跑依當前
-    word_meanings 重新算；sentence（教師原創例句）與已核准的 status 需保留，
-    id 用「char:義項序」而非 hash，方便人工比對 rewrite 檔。"""
+def build_polysemy(meaning_raw: dict, lesson_id: str, existing_by_id: dict | None = None, authority_records: list[dict] | None = None):
+    """模組6 一字多義：逐義項各留一筆待改寫的原創生活句（sentence）。definition/
+    options 為結構事實，每次重跑重新算；sentence（教師原創例句）與已核准的
+    status 需保留，id 用「char:義項序」而非 hash，方便人工比對 rewrite 檔。
+
+    authority_records（05■字義辨正的 polysemy_groups，翰林 profile 的權威字義
+    來源）若提供，該字的義項改以它為準（覆蓋 06字義分析的版本）；若某字原本
+    approved 的義項字義因此改變，降級為 draft 待教師重審（規格：現有句子不刪，
+    但字義變了就要重審）。"""
     existing_by_id = existing_by_id or {}
+    authority_by_char = {r["char"]: r.get("senses", []) for r in (authority_records or []) if r.get("char")}
+    records_by_char = {rec["char"]: rec for rec in meaning_raw.get("records", [])}
+    for char, senses in authority_by_char.items():
+        records_by_char[char] = {
+            "char": char,
+            "senses": senses,
+            "source": "dabutie:05形音輕鬆學（字義辨正）",
+        }
     out = []
-    for rec in meaning_raw.get("records", []):
+    for char, rec in records_by_char.items():
         senses = rec.get("senses", [])
         if len(senses) < 2:
             continue
-        char = rec["char"]
         options = [s.get("definition", "") for s in senses]
         for idx, sense in enumerate(senses):
             pid = f"polysemy:{lesson_id}:{char}:{idx}"
             existing = _preserved(existing_by_id, pid)
+            definition = sense.get("definition", "")
+            status = existing["status"] if existing else "todo_rewrite"
+            review_note = existing.get("review_note") if existing else None
+            if existing and existing.get("status") == "approved" and existing.get("definition") not in (None, definition):
+                status = "draft"
+                review_note = f"字義依05字義辨正更新，待重審（原字義：{existing.get('definition')}）"
             entry = {
                 "id": pid,
                 "char": char,
                 "sentence": existing.get("sentence") if existing else None,
-                "definition": sense.get("definition", ""),
+                "definition": definition,
                 "options": options,
-                "status": existing["status"] if existing else "todo_rewrite",
-                "source": meaning_raw.get("source", "dabutie:06字義分析"),
+                "status": status,
+                "source": rec.get("source") or meaning_raw.get("source", "dabutie:06字義分析"),
             }
-            if existing and existing.get("review_note"):
-                entry["review_note"] = existing["review_note"]
+            if review_note:
+                entry["review_note"] = review_note
             out.append(entry)
+    return out
+
+
+def build_polysemy_senses(vocab_raw: dict, lesson_id: str, existing_by_id: dict | None = None):
+    """05■字義辨正 權威字義來源本體（新頂層欄位 polysemy_senses[]），逐字保留完整
+    義項清單＋課本例詞，供人工／前端對照 polysemy[] 題目用的字義是否已同步。
+    直接公開類（字義原文照登），status 恆為 ready。"""
+    existing_by_id = existing_by_id or {}
+    out = []
+    for rec in vocab_raw.get("polysemy_groups", []):
+        char = rec["char"]
+        pid = stable_id(f"polysemy_sense:{lesson_id}", char)
+        existing = _preserved(existing_by_id, pid)
+        out.append({
+            "id": pid,
+            "char": char,
+            "senses": rec.get("senses", []),
+            "status": existing["status"] if existing else "ready",
+            "source": vocab_raw.get("source", "dabutie:05形音輕鬆學（字義辨正）"),
+        })
+    return out
+
+
+def build_polyphones(vocab_raw: dict, lesson_id: str, existing_by_id: dict | None = None):
+    """一字多音（新頂層欄位 polyphones[]，05■認識多音字）：逐字列出各讀音的義項
+    與課本例詞，直接公開類（字義／例詞原文照登）。大補帖端注音無法可靠抽取
+    （見 vocab_explanations.py 說明），dabutie_zhuyin 一律 None；呼叫端可另外
+    用 pedia 補 zhuyin，pedia 沒有就是 None，不得憑記憶猜。"""
+    existing_by_id = existing_by_id or {}
+    out = []
+    for item in vocab_raw.get("polyphones", []):
+        char = item["char"]
+        pid = stable_id(f"polyphone:{lesson_id}", char)
+        existing = _preserved(existing_by_id, pid)
+        entry = {
+            "id": pid,
+            "char": char,
+            "readings": [
+                {
+                    "zhuyin": None,
+                    "dabutie_zhuyin": None,
+                    "senses": r.get("senses", []),
+                }
+                for r in item.get("readings", [])
+            ],
+            "status": existing["status"] if existing else "ready",
+            "source": vocab_raw.get("source", "dabutie:05形音輕鬆學（認識多音字）"),
+        }
+        out.append(entry)
+    return out
+
+
+def build_lookalikes(vocab_raw: dict, lesson_id: str, pedia: dict, existing_by_id: dict | None = None):
+    """形似字（新頂層欄位 lookalikes[]，05■字形辨別，文字方塊裡的表格）：逐組
+    列出形似字＋課本例詞，直接公開類。zhuyin 只用 pedia 查得到的，查不到就 None
+    （pedia 只有課次生字，形似字組裡常有非本課生字，屬預期會有缺）。"""
+    existing_by_id = existing_by_id or {}
+    pedia_chars = pedia.get("characters", {})
+    out = []
+    for group in vocab_raw.get("lookalikes", []):
+        gid = stable_id(f"lookalike:{lesson_id}", group.get("label", ""), "".join(c["char"] for c in group.get("chars", [])))
+        existing = _preserved(existing_by_id, gid)
+        entry = {
+            "id": gid,
+            "group_no": group.get("label"),
+            "chars": [
+                {
+                    "char": c["char"],
+                    "zhuyin": (pedia_chars.get(c["char"]) or {}).get("zhuyin"),
+                    "example": c.get("example"),
+                }
+                for c in group.get("chars", [])
+            ],
+            "status": existing["status"] if existing else "ready",
+            "source": vocab_raw.get("source", "dabutie:05形音輕鬆學（字形辨別）"),
+        }
+        out.append(entry)
     return out
 
 

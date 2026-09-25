@@ -34,14 +34,16 @@ export function LessonDashboard(lesson) {
 
   const lessonTitle = `第 ${lesson.lesson_no} 課：${lesson.title}`;
   const doneCount = MODULE_REGISTRY.filter((entry) => getModuleStatus(lesson, entry).code === 'done').length;
-  // 分母只算「可開始的大項」：排除鎖住的（例如舊字新詞第 2 課起才開放），
-  // 不然學生第 1 課永遠湊不滿分母，見規格 §2。
-  const totalCount = MODULE_REGISTRY.filter((entry) => getModuleStatus(lesson, entry).code !== 'locked').length;
-  const pct = totalCount > 0 ? Math.round((doneCount / totalCount) * 100) : 0;
+  // 分母只算「可開始的大項」（code==='available'|'done'）：排除鎖住的（例如舊字
+  // 新詞第 2 課起才開放）與教材審核中的（資料不足時，例如一字多音第 1 課），
+  // 不然學生第 1 課永遠湊不滿分母，見規格 §2。跟下面 availableKeys／
+  // lessonStarsMax 用同一個條件，避免「已完成 X／Y 項」跟星星最高值的 Y 對不上。
   const availableKeys = MODULE_REGISTRY.filter((entry) => {
     const s = getModuleStatus(lesson, entry);
     return s.code === 'available' || s.code === 'done';
   }).map((entry) => entry.key);
+  const totalCount = availableKeys.length;
+  const pct = totalCount > 0 ? Math.round((doneCount / totalCount) * 100) : 0;
   const lessonStars = getLessonStars(lesson.lesson_id, availableKeys);
   const lessonStarsMax = availableKeys.length * 3;
 

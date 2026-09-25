@@ -24,6 +24,11 @@ fi
 cp "$OUT" "$BACKUP"
 echo "備份：$BACKUP"
 
+CONVERTED_DOCX="$WORK/converted/L$(printf '%02d' "$LESSON_NO")-形音輕鬆學.docx"
+if [ ! -f "$CONVERTED_DOCX" ]; then
+  echo "[提醒] 找不到 $CONVERTED_DOCX，05語詞解釋來源缺檔，words[] 將 fallback 回 06字義分析造詞（非課本目標語詞正本）。先跑 convert_doc.py 轉檔可避免。" >&2
+fi
+
 cd "$APP_ROOT/tools/dabutie"
 rm -f "$OUT"
 python3 import_lesson.py --src "$SRC" --lesson "$LESSON_NO" --work "$WORK" --out "$OUT"
@@ -47,6 +52,14 @@ REVIEWS="$WORK/reviews/lesson$(printf '%02d' "$LESSON_NO").json"
 if [ -f "$REVIEWS" ]; then
   python3 apply_review.py --no-save "$REVIEWS" "$OUT"
 fi
+
+# modules.<key> 的 available/missing 門檻是 import_lesson.py 當下那一輪算出來的快照
+# （例如 listening 完全靠 apply_rewrites 補回的教師原創題目，import 當下還沒套用，
+# 算出來是 0 筆→missing）；apply_rewrites/apply_review 套用完之後，既有做法是
+# 再跑一次 import_lesson.py 讓它讀到剛寫回的 $OUT 當 existing，用真正套用後的筆數
+# 重算 modules（merge.py 的 PRESERVED_STATUSES 保留機制確保這次重算不會把內容
+# 打回 todo_rewrite）。
+python3 import_lesson.py --src "$SRC" --lesson "$LESSON_NO" --work "$WORK" --out "$OUT"
 
 python3 - "$BACKUP" "$OUT" <<'PY'
 import json

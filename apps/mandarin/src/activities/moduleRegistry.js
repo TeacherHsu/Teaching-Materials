@@ -2,6 +2,7 @@
 // 規格 docs/specs/2026-09-25-mandarin-dabutie-importer.md §4。
 import { filterByStatus } from '../utils/preview.js';
 import { isModuleComplete } from '../utils/storage.js';
+import { usablePolyphoneEntries } from './polyphones.js';
 
 const ROUND_MIN = 3;
 
@@ -74,8 +75,15 @@ function readyRhetoric(lesson) {
   return filterByStatus(lesson.rhetoric || []).filter((r) => r.example && r.figure);
 }
 
+function readyLookalikeQuestions(lesson) {
+  return filterByStatus(lesson.lookalikes || [])
+    .map((g) => (g.chars || []).filter((c) => c.char && c.example))
+    .filter((chars) => chars.length >= 2)
+    .flat();
+}
+
 /**
- * 10 大項模組，依 Dashboard 顯示順序排列。
+ * 12 大項模組（新增「一字多音」「形似字」），依 Dashboard 顯示順序排列。
  * implemented=false 的項目一律「即將推出」，不看資料。
  * reviewOnly 的項目（舊字新詞）狀態不是「可以開始／教材審核中」，而是
  * 「可以開始／第 2 課起開放」，因為它需要「前面課次」的資料才有內容。
@@ -179,6 +187,28 @@ export const MODULE_REGISTRY = [
     implemented: true,
     ready(lesson) {
       return readyRhetoric(lesson).length >= ROUND_MIN;
+    },
+  },
+  {
+    key: 'polyphones',
+    label: '一字多音',
+    icon: 'polyphones',
+    color: 'blue',
+    description: '同一個字，不同讀音',
+    implemented: true,
+    ready(lesson) {
+      return usablePolyphoneEntries(lesson).length >= ROUND_MIN;
+    },
+  },
+  {
+    key: 'lookalikes',
+    label: '形似字',
+    icon: 'lookalikes',
+    color: 'teal',
+    description: '長得很像的字，選出正確的',
+    implemented: true,
+    ready(lesson) {
+      return readyLookalikeQuestions(lesson).length >= ROUND_MIN;
     },
   },
   {
