@@ -14,13 +14,13 @@
 
 ---
 
-## 2026-09-25｜學校 Win｜Codex｜狀態：🚧 施工中
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/components/VocabularyCard.js`、`apps/mandarin/scripts/test-speak-button-coverage.mjs`
-- 做了什麼：準備移除語詞解釋卡中與芫荽注音體重複的下方注音列
-- 驗證：施工中，待確認語詞本身仍顯示注音、切換解釋後版面正常
-- 推送：施工紀錄待先行提交並推送
-- 待辦／給下一棒：調整 VocabularyCard、加入回歸檢查、重新建置
-- 注意：不改變語詞卡圖片、點選切換解釋與朗讀功能
+- 做了什麼：移除語詞解釋卡中與芫荽注音體重複的下方注音列；語詞本身保留芫荽注音體，切換成解釋時維持一般介面字型
+- 驗證：`node scripts/test-speak-button-coverage.mjs`、`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；瀏覽器確認下方注音列數量為 0、語詞字型載入成功，切換解釋後恢復一般字型，console 無錯誤
+- 推送：完成 commit 後推送至 `origin/codex/mandarin-115g3a-lessons`；`origin/main` 尚未更新
+- 待辦／給下一棒：後續新增卡片變體時，保持注音只由芫荽注音體呈現，避免重複列出
+- 注意：不修改語詞資料、圖片、卡片點選切換與朗讀功能
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/activities/characters.js`、`apps/mandarin/scripts/test-character-examples-limit.mjs`
