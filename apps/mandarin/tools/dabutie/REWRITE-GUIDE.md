@@ -8,6 +8,9 @@
 
 依規格 `docs/specs/2026-09-25-mandarin-dabutie-importer.md` §1 版權界線表：
 
+- `words[].example_sentence`（05語詞解釋的目標語詞原例句；word/meaning 本身是
+  05原文照登、直接公開，不用改寫，改寫的只有例句，審核狀態記在
+  `words[].example_status`，不是 `status`）
 - `idiom_sentences[].rewritten`（成語例句）
 - `sentence_patterns[].examples`（短語／造句／句型的範例句）
 - `paragraph_summary[].summary`（段落大意）
@@ -31,6 +34,12 @@
 
 `merge.py` 以穩定 id（例如 `idiom_sentence:115AG3H01:<hash>`）比對舊檔，
 若某筆已是 `approved` 或 `rejected`，重跑不會覆蓋其文字本體。
+
+## 一字多音（polyphones）／形似字（lookalikes）
+
+05■認識多音字／■字形辨別抽出的字、義項、課本例詞全部是直接公開類（原文照登），
+`status` 一律 `ready`，本批不產生需要改寫的題目句子（前端「一字多音」「形似字」
+兩個大項與對應題目由後續批次處理，本檔暫不列改寫規則）。
 
 ## 一字多義句子（polysemy）
 

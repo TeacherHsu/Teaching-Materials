@@ -66,6 +66,21 @@ def _apply_upsert(lesson_key: str, lesson: dict, rewrites: list[dict], fields: l
 
 def apply_rewrites(lesson: dict, rewrites: dict) -> int:
     applied = 0
+
+    # words：example_sentence 的審核狀態記在獨立的 example_status（word/meaning 本身
+    # 的 status 代表是否可公開，恆為 ready，不受改寫審核影響，比照 sentence_patterns）。
+    words_by_id = {it["id"]: it for it in lesson.get("words") or []}
+    for rw in rewrites.get("words", []):
+        item = words_by_id.get(rw["id"])
+        if not item:
+            print(f"警告：words 找不到 id={rw['id']}，略過")
+            continue
+        if item.get("example_status") in ("approved", "rejected"):
+            continue
+        item["example_sentence"] = rw.get("example_sentence")
+        item["example_status"] = "draft"
+        applied += 1
+
     applied += _apply_list("idiom_sentences", lesson, rewrites.get("idiom_sentences", []), ["rewritten"])
     applied += _apply_list("paragraph_summary", lesson, rewrites.get("paragraph_summary", []), ["summary"])
     applied += _apply_list("reading_questions", lesson, rewrites.get("reading_questions", []), ["stem", "answer_hint"])

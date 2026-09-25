@@ -53,6 +53,23 @@ function filterLesson(lesson) {
 
   l.idiom_sentences = (l.idiom_sentences || []).filter((s) => isPublic(s.status));
 
+  // words：word/meaning 是05語詞解釋原文照登（直接公開，status 恆為 ready），
+  // 改寫的是 example_sentence，審核狀態在獨立的 example_status，比照
+  // sentence_patterns.examples_status 的作法（清空內容留空殼標記，不整筆刪除，
+  // 因為語詞卡本身仍要顯示）。
+  for (const w of l.words || []) {
+    if (w.example_status !== undefined && !isPublic(w.example_status)) {
+      w.example_sentence = null;
+      w.example_status = 'todo_rewrite';
+    }
+  }
+
+  // polysemy_senses／polyphones／lookalikes：05字義辨正／認識多音字／字形辨別，
+  // 直接公開類（字義／例詞原文照登），status 恆為 ready，過濾規則同 ready 類。
+  l.polysemy_senses = (l.polysemy_senses || []).filter((p) => isPublic(p.status));
+  l.polyphones = (l.polyphones || []).filter((p) => isPublic(p.status));
+  l.lookalikes = (l.lookalikes || []).filter((g) => isPublic(g.status));
+
   for (const p of l.sentence_patterns || []) {
     if (!isPublic(p.examples_status)) {
       p.examples = [];

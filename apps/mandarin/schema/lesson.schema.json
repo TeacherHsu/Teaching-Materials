@@ -67,13 +67,22 @@
         "type": "object",
         "required": ["word", "status", "source"],
         "properties": {
+          "id": { "type": "string" },
           "word": { "type": "string", "minLength": 1, "maxLength": 8 },
           "zhuyin": { "type": ["string", "null"] },
           "meaning": { "type": ["string", "null"] },
           "example_sentence": { "type": ["string", "null"] },
+          "example_status": {
+            "type": "string",
+            "enum": ["todo_rewrite", "draft", "approved", "rejected"],
+            "description": "v2 新增：example_sentence（05語詞解釋原例句改寫）審核狀態，獨立於 status（word/meaning 本身是否可公開）"
+          },
           "level": { "type": "string", "enum": ["basic", "challenge"] },
           "image": { "type": ["string", "null"] },
-          "status": { "type": "string", "enum": ["ready", "todo"] },
+          "status": {
+            "type": "string",
+            "enum": ["ready", "todo", "todo_rewrite", "draft", "approved", "rejected"]
+          },
           "source": { "type": "string" }
         }
       }
@@ -167,7 +176,19 @@
     },
     "polysemy": {
       "type": "array",
-      "description": "v2 新增：模組6 一字多義。依 word_meanings 中 ≥2 義項的生字，逐義項各一句原創生活句（char/sentence/definition/options/status/source）"
+      "description": "v2 新增：模組6 一字多義。字義權威來源為05■字義辨正（翰林 profile，見 source_profiles.py），06字義分析為備援；逐義項各一句原創生活句（char/sentence/definition/options/status/source）"
+    },
+    "polysemy_senses": {
+      "type": "array",
+      "description": "2026-09-25 新增：05■字義辨正逐字多個義項＋課本例詞，一字多義的權威字義來源（直接公開類，status 恆為 ready）"
+    },
+    "polyphones": {
+      "type": "array",
+      "description": "2026-09-25 新增：05■認識多音字，逐字列出各讀音的義項與課本例詞（直接公開類）；zhuyin 待 pedia／教育部辭典查證，dabutie_zhuyin 為大補帖端讀音（本版本無法從 docx 可靠抽取，一律 null）。本批只做資料層，前端「一字多音」大項另外批次做"
+    },
+    "lookalikes": {
+      "type": "array",
+      "description": "2026-09-25 新增：05■字形辨別（文字方塊表格），形似字組＋課本例詞（直接公開類）；zhuyin 只用 pedia 查得到的。本批只做資料層，前端「形似字」大項另外批次做"
     },
     "review_words": {
       "type": "object",

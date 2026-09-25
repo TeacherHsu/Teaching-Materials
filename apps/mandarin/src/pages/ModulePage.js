@@ -11,6 +11,8 @@ import { buildListeningActivity } from '../activities/listening.js';
 import { buildRhetoricActivity } from '../activities/rhetoric.js';
 import { buildStructureMapActivity } from '../activities/structureMap.js';
 import { buildReviewActivity } from '../activities/review.js';
+import { buildPolyphonesActivity } from '../activities/polyphones.js';
+import { buildLookalikesActivity } from '../activities/lookalikes.js';
 import { buildExtensionLinks } from '../components/ExtensionLinks.js';
 import { findModuleEntry, getModuleStatus, MODULE_REGISTRY, moduleColorVars } from '../activities/moduleRegistry.js';
 import { saveModuleComplete, saveModuleStars, getLessonStars } from '../utils/storage.js';
@@ -32,6 +34,8 @@ const ACTIVITY_BUILDERS = {
   listening: buildListeningActivity,
   rhetoric: buildRhetoricActivity,
   structure_map: buildStructureMapActivity,
+  polyphones: buildPolyphonesActivity,
+  lookalikes: buildLookalikesActivity,
   review: buildReviewActivity,
 };
 

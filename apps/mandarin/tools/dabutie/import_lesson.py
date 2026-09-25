@@ -17,6 +17,7 @@ sys.path.insert(0, str(HERE))
 
 from common import SourceNotFoundError, desensitize_l0, read_json, write_json  # noqa: E402
 import merge  # noqa: E402
+import source_profiles  # noqa: E402
 from extractors import (  # noqa: E402
     characters as ex_characters,
     idioms as ex_idioms,
@@ -27,8 +28,11 @@ from extractors import (  # noqa: E402
     sentence_patterns as ex_sentence_patterns,
     structure_map as ex_structure_map,
     summary as ex_summary,
+    vocab_explanations as ex_vocab_explanations,
     word_meanings as ex_word_meanings,
 )
+
+PUBLISHER = "翰林"
 
 PEDIA_PATH = Path.home() / "sped-os/30-materials/interactive/lesson-park/reference/115AG3H-pedia.json"
 VOLUME_CODE = "115AG3H"
@@ -100,6 +104,12 @@ def run_extractors(src: Path, lesson_no: int, work: Path, pedia_title: str) -> d
     except SourceNotFoundError as e:
         print(f"[匯入失敗] idioms: {e}", file=sys.stderr)
         sys.exit(2)
+
+    # 05形音輕鬆學（vocab_explanations）：來源是 work/converted 的轉檔結果，不是
+    # --src 大補帖原始 .doc（textutil/antiword 讀不出來，需先跑 convert_doc.py），
+    # 缺檔時回傳 status:"missing" 並繼續（不中止整批匯入），由 profile 決定要不要
+    # fallback 回 06字義分析。
+    raw["vocab_explanations"] = ex_vocab_explanations.extract(work, lesson_no)
 
     lesson_dir = work / "raw" / f"lesson{lesson_no:02d}"
     for key, data in raw.items():
@@ -202,10 +212,18 @@ def main():
     if pedia_chars and dbt_chars and pedia_chars != dbt_chars:
         pedia_diff.append(f"02各冊生字（{dbt_chars}）與 pedia（{pedia_chars}）不一致")
 
-    # ---- words ----
+    # ---- words（出版社 profile 決定主來源；翰林＝05語詞解釋，06只留造詞給生字卡）----
+    profile = source_profiles.get_profile(PUBLISHER)
     existing_words_by_id = merge.index_existing(existing, "words")
-    words, word_todos = merge.build_words(raw["word_meanings"], lesson_id, existing_words_by_id)
-    word_meanings = merge.build_word_meanings(raw["word_meanings"])
+    if profile.get("words_primary_source") == "vocab_explanations" and raw["vocab_explanations"].get("status") == "ready":
+        words, word_todos = merge.build_words_from_vocab_explanations(raw["vocab_explanations"], lesson_id, existing_words_by_id)
+    else:
+        words, word_todos = merge.build_words(raw["word_meanings"], lesson_id, existing_words_by_id)
+        word_todos.append(
+            "words: 05語詞解釋不可用（" + (profile.get("note") or "來源缺檔或本課尚未轉檔") +
+            "），fallback 回 06字義分析 造詞，非課本目標語詞正本"
+        )
+    word_meanings = merge.build_word_meanings(raw["word_meanings"])  # 生字卡造詞，維持用 06
 
     # ---- idioms ----
     existing_idioms_by_id = merge.index_existing(existing, "idioms")
@@ -233,9 +251,18 @@ def main():
     existing_rq_by_id = merge.index_existing(existing, "reading_questions")
     reading_questions = merge.build_reading_questions(raw["reading_questions"], lesson_id, existing_rq_by_id)
 
-    # ---- polysemy ----
+    # ---- polysemy（一字多義；權威字義來源 05■字義辨正，翰林 profile）----
     existing_polysemy_by_id = merge.index_existing(existing, "polysemy")
-    polysemy = merge.build_polysemy(raw["word_meanings"], lesson_id, existing_polysemy_by_id)
+    polysemy_authority = raw["vocab_explanations"].get("polysemy_groups", []) if profile.get("polysemy_authority_source") == "vocab_explanations" else []
+    polysemy = merge.build_polysemy(raw["word_meanings"], lesson_id, existing_polysemy_by_id, authority_records=polysemy_authority)
+
+    # ---- polysemy_senses（05字義辨正權威字義本體）／polyphones（一字多音）／lookalikes（形似字）----
+    existing_polysemy_senses_by_id = merge.index_existing(existing, "polysemy_senses")
+    polysemy_senses = merge.build_polysemy_senses(raw["vocab_explanations"], lesson_id, existing_polysemy_senses_by_id)
+    existing_polyphones_by_id = merge.index_existing(existing, "polyphones")
+    polyphones = merge.build_polyphones(raw["vocab_explanations"], lesson_id, existing_polyphones_by_id)
+    existing_lookalikes_by_id = merge.index_existing(existing, "lookalikes")
+    lookalikes = merge.build_lookalikes(raw["vocab_explanations"], lesson_id, pedia, existing_lookalikes_by_id)
 
     # ---- listening / review_words ----
     listening = merge.build_listening(raw["listening"], lesson_id, (existing or {}).get("listening", []))
@@ -266,6 +293,9 @@ def main():
         "main_idea": main_idea,
         "reading_questions": reading_questions,
         "polysemy": polysemy,
+        "polysemy_senses": polysemy_senses,
+        "polyphones": polyphones,
+        "lookalikes": lookalikes,
         "listening": listening["items"],
         "review_words": review_words,
         # 延伸練習連結非大補帖抽取來源，由 apply_extensions.py 另外維護；
@@ -296,6 +326,10 @@ def main():
     # ---- rewrite-queue（原文只留 work 目錄）----
     rewrite_queue = {
         "lesson_id": lesson_id,
+        "words": [
+            {"id": w["id"], "word": w["word"], "original": orig.get("example_sentence")}
+            for w, orig in zip(words, sorted(raw["vocab_explanations"].get("words", []), key=lambda w: w.get("no", 0)))
+        ] if profile.get("words_primary_source") == "vocab_explanations" and raw["vocab_explanations"].get("status") == "ready" else [],
         "idiom_sentences": [
             {"id": s["id"], "idiom_id": s["idiom_id"], "original": orig}
             for s, orig in zip(idiom_sentences, [
@@ -339,8 +373,11 @@ def main():
         f"# 匯入報告：{lesson_id}（{lesson_title}）",
         "",
         f"- 生字：{len(characters)}（習寫 {len(raw['characters'].get('basic_chars', []))}／認讀 {len(raw['characters'].get('extended_chars', []))}）",
-        f"- 字義（06字義分析，逐字）：{len(word_meanings)}",
-        f"- 語詞（由字義例字衍生）：{len(words)}",
+        f"- 字義（06字義分析，逐字，生字卡造詞用）：{len(word_meanings)}",
+        f"- 語詞（05語詞解釋，學會語詞正本，來源：{raw['vocab_explanations'].get('status')}）：{len(words)}",
+        f"- 一字多義權威字義（05字義辨正）：{len(raw['vocab_explanations'].get('polysemy_groups', []))} 字",
+        f"- 一字多音（05認識多音字）：{len(polyphones)} 字",
+        f"- 形似字（05字形辨別）：{len(lookalikes)} 組",
         f"- 成語：{len(idioms)}（例句待改寫 {len(idiom_sentences)}）",
         f"- 短語句型（08，項目組數／例句總數）：短語 "
         f"{len(raw['phrases_sentences'].get('sections', {}).get('短語練習', []))}"
@@ -361,12 +398,12 @@ def main():
     ]
     report_lines += (pedia_diff or ["（無差異）"])
     report_lines += ["", "## TODO"]
-    todos = char_todos + word_todos
+    todos = char_todos + word_todos + raw["vocab_explanations"].get("todos", [])
     if listening["status"] == "missing":
         todos.append("16聆聽練習：第1課無對應檔案，modules.listening 標 missing（規格 §6 風險3 已預告）")
     if not sentence_patterns:
         todos.append("sentence_patterns 為空，需檢查 08/09 來源")
-    todos.append("words/idiom_sentences/sentence_patterns.examples/paragraph_summary/main_idea/reading_questions/rhetoric.example 皆為 status:todo_rewrite 佔位，原文在 work/rewrite-queue/，待後續改寫並 apply_review.py 核准")
+    todos.append("words.example_sentence/idiom_sentences/sentence_patterns.examples/paragraph_summary/main_idea/reading_questions/rhetoric.example 皆為 todo_rewrite 佔位，原文在 work/rewrite-queue/，待後續改寫並 apply_review.py 核准")
     report_lines += [f"- {t}" for t in todos] if todos else ["（無）"]
 
     (work / "reports").mkdir(parents=True, exist_ok=True)

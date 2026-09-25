@@ -1,4 +1,4 @@
-// 驗證規格 §2：第 1 課 9 個「可開始」大項都有可判定題目，玩到底一定會累積
+// 驗證規格 §2：第 1 課「可開始」大項都有可判定題目，玩到底一定會累積
 // scoreSession total > 0（不會永遠卡在 0 顆星、湊不滿最高值）。
 // 用真實 public/data/115AG3H/lesson01.json 資料驅動每個大項的實際 builder，
 // 用「無所不點」的通用互動驅動器（不需要事先知道正解）模擬學生作答到底：
@@ -31,6 +31,8 @@ const { buildPolysemyActivity } = await import('../src/activities/polysemy.js');
 const { buildListeningActivity } = await import('../src/activities/listening.js');
 const { buildRhetoricActivity } = await import('../src/activities/rhetoric.js');
 const { buildStructureMapActivity } = await import('../src/activities/structureMap.js');
+const { buildPolyphonesActivity } = await import('../src/activities/polyphones.js');
+const { buildLookalikesActivity } = await import('../src/activities/lookalikes.js');
 
 const BUILDERS = {
   characters: buildCharactersActivity,
@@ -39,6 +41,8 @@ const BUILDERS = {
   idiom_builder: buildIdiomBuilderActivity,
   reading: buildReadingActivity,
   polysemy: buildPolysemyActivity,
+  polyphones: buildPolyphonesActivity,
+  lookalikes: buildLookalikesActivity,
   listening: buildListeningActivity,
   rhetoric: buildRhetoricActivity,
   structure_map: buildStructureMapActivity,
@@ -212,6 +216,9 @@ const results = [];
 for (const entry of MODULE_REGISTRY) {
   const status = getModuleStatus(lesson, entry);
   if (status.code === 'locked') continue; // 舊字新詞第 1 課本來就鎖著，不在本次驗收範圍
+  if (status.code !== 'available' && status.code !== 'done') continue; // 教材審核中／即將推出：沒有可玩內容，不驅動
+  // 例：一字多音（polyphones）第 1 課大補帖端注音無法可靠抽取、pedia 也沒有
+  // 語詞多讀音層級的注音，資料層暫時 0 筆可用題目，屬預期中的「教材審核中」。
   const builder = BUILDERS[entry.key];
   assert.ok(builder, `${entry.key}：應該要有對應的 activity builder`);
 
@@ -234,9 +241,9 @@ for (const entry of MODULE_REGISTRY) {
   results.push({ key: entry.key, label: entry.label, total: meta.total, stars });
 }
 
-assert.equal(results.length, 9, `應該驗證了 9 個可開始的大項，實際 ${results.length}`);
+assert.equal(results.length, 10, `應該驗證了 10 個可開始的大項（原 9 個＋新增的形似字；一字多音第 1 課資料不足，教材審核中，不計入），實際 ${results.length}`);
 
-console.log('PASS: 第 1 課 9 個可開始大項逐一驗證，全部都有可判定題目、玩到底都能累積 1–3 顆星：');
+console.log('PASS: 第 1 課 10 個可開始大項逐一驗證，全部都有可判定題目、玩到底都能累積 1–3 顆星：');
 for (const r of results) {
   console.log(`  - ${r.label}（${r.key}）：total=${r.total}，stars=${r.stars}`);
 }

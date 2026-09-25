@@ -19,7 +19,9 @@ from common import read_json, write_json  # noqa: E402
 # sentence_patterns 的「結構/說明」恆為 ready，審核的是「例句改寫」，狀態
 # 存在獨立的 "examples_status"（見 apply_rewrites.py 同樣的區分）。
 REVIEWABLE_KEYS = [
-    ("words", "status"),
+    # words：word/meaning 本身（05語詞解釋原文照登）恆為 ready，需要教師審核的
+    # 是 example_sentence 改寫，狀態存在獨立的 example_status（見 apply_rewrites.py）。
+    ("words", "example_status"),
     ("idiom_sentences", "status"),
     ("rhetoric", "status"),
     ("paragraph_summary", "status"),
