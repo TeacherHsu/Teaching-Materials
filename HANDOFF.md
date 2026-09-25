@@ -23,7 +23,10 @@
 - 驗證：validate／build／check-dist、pytest 56、node 測試 13 支全數通過
 - 推送：已推送到 origin/main
 - 待辦／給下一棒：
-  1. **Codex（另一台電腦）**：照 `apps/mandarin/tools/dabutie/IMAGE-HANDOFF.md` 放第 1 課 6 張成語插圖，驗證後 push。
+  1. **家裡 Windows 的 Codex**：它的學習單專案裡已經有各課成語圖，**優先沿用，不要重新生成**。
+     - 照 `apps/mandarin/tools/dabutie/IMAGE-HANDOFF.md` 的規格轉成 .webp，並依清單改名，放到 `public/assets/115AG3H/lesson01/idioms/`。
+     - 學習單用的圖若有成語字樣、注音或題目文字，必須換成無字版本或重新裁切。
+     - 驗證通過後 push。
   2. **CF**：Codex 推完後，到 Settings → Pages 把 Source 改成「GitHub Actions」，新網站才會上線。
   3. 上線後確認 `/mandarin/` 和既有頁面（`Timer/`、`Chinese/Lesson-Park/`）都正常。
 - 注意：

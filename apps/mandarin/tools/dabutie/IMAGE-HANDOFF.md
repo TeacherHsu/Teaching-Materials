@@ -24,6 +24,14 @@ import json; d=json.load(open('public/data/115AG3H/lesson01.json'))
 [print(i['image'], i['idiom'], i['definition']) for i in d['idioms']]"
 ```
 
+## 圖從哪裡來
+
+家裡 Windows 的 Codex 在學習單專案裡已經替各課成語生過圖，**請優先沿用那批圖**，確保學習單和網站的圖一致，不必重新生成。沿用時要做三件事：
+
+1. 轉成 `.webp`。
+2. 依下方檔名改名。
+3. 確認畫面上沒有文字；有字的話，換成無字版本或重新裁切。
+
 ## 規格
 
 - 格式為 `.webp`，建議 1024×768（4:3）以內，單檔小於 200KB。
