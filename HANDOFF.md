@@ -15,6 +15,14 @@
 ---
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/` 圖片資產與建置容量檢查
+- 做了什麼：新增 WebP 壓縮腳本與 `check-assets` 容量閘門；第三課 20 張 PNG 轉成 WebP，資料路徑同步更新，原圖備份到 repo 外的 `_archive/mandarin-image-sources/115AG3H/lesson03/`
+- 驗證：第三課圖片由 35.79 MiB 降至 1.84 MiB，全站 `public/assets` 約 3.01 MiB；`npm.cmd run validate`、全套 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets` 通過；瀏覽器確認第三課語詞與成語 WebP 正常載入
+- 推送：尚未推送
+- 待辦／給下一棒：後續新增圖片先執行 `npm run check-assets`；若需發布，再由使用者確認後推送目前本地 commit
+- 注意：閘門為單張 300 KiB、單課 4 MiB、全站 600 MiB 警告／700 MiB 失敗；本次 `git pull --rebase origin main` 因 GitHub 憑證 `SEC_E_NO_CREDENTIALS` 失敗，當時本地追蹤資訊顯示分支 ahead 15、沒有落後
+
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/components/TaskBanner.js` 所有組別進度文字
 - 做了什麼：依使用者回饋移除所有「第 X 組／共 Y 組」，不論單組或多組；保留步驟進度
 - 驗證：`npm.cmd run validate`、`node scripts/test-extension-links.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 通過；瀏覽器確認多組語詞頁僅保留「第 1 步／共 3 步」，修辭頁不顯示組別資訊，console 無錯誤或警告

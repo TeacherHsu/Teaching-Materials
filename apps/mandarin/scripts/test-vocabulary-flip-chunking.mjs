@@ -1,4 +1,4 @@
-// 驗證「學會語詞」第 1 步（翻卡）改成每組 5 張、顯示「第 N 組／共 M 組」、有下一組按鈕，
+// 驗證「學會語詞」第 1 步（翻卡）改成每組 5 張、保留步驟進度但不顯示組別進度、有下一組按鈕，
 // 而不是一次全部（44+ 張）攤開成文字牆。無新依賴，純 Node（用 scripts/fake-dom.mjs 的 DOM stub）。
 // 用法：node scripts/test-vocabulary-flip-chunking.mjs
 import assert from 'node:assert/strict';
@@ -43,8 +43,8 @@ while (true) {
   totalShown += count;
   const banner = bannerText();
   assert.ok(
-    banner.includes(`第 ${round} 組／共 ${expectedRounds} 組`),
-    `banner 應顯示「第 ${round} 組／共 ${expectedRounds} 組」，實際：${banner}`,
+    banner.includes('第 1 步／共 3 步') && !/第\s*\d+\s*組\s*[／/]\s*共\s*\d+\s*組/.test(banner),
+    `banner 應保留步驟進度且不顯示組別進度，實際：${banner}`,
   );
 
   const nextBtn = container.find((n) => n.tagName === 'button' && /下一組|繼續|完成/.test(n.textContent));
@@ -57,4 +57,4 @@ while (true) {
 assert.equal(round, expectedRounds, `最後一組應該是第 ${expectedRounds} 組`);
 assert.equal(totalShown, WORD_COUNT, `所有分組加總應該等於總字數 ${WORD_COUNT}，實際 ${totalShown}`);
 
-console.log(`PASS: 44 個語詞被分成 ${expectedRounds} 組（每組 <=5 張），banner 文字與分組數一致。`);
+console.log(`PASS: 44 個語詞被分成 ${expectedRounds} 組（每組 <=5 張），banner 保留步驟進度且隱藏組別文字。`);
