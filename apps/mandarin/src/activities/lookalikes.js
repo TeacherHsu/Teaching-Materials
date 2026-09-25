@@ -7,12 +7,16 @@ import { TaskBanner } from '../components/TaskBanner.js';
 import { missingContentNotice } from './engine.js';
 import { filterByStatus } from '../utils/preview.js';
 import { chunkRounds } from '../utils/chunk.js';
+import { shuffle } from '../utils/shuffle.js';
 
-function shuffled(arr) {
-  return [...arr].sort(() => Math.random() - 0.5);
+function splitExamples(example) {
+  return String(example)
+    .split(/[、,，]/u)
+    .map((term) => term.trim())
+    .filter(Boolean);
 }
 
-function blankFirstChar(example, char) {
+function blankTarget(example, char) {
   const idx = example.indexOf(char);
   if (idx === -1) return null;
   return example.slice(0, idx) + '＿' + example.slice(idx + 1);
@@ -27,18 +31,38 @@ function usableGroups(lesson) {
     .filter((g) => g.chars.length >= 2);
 }
 
-function buildChoiceItem(group, target) {
-  const blanked = blankFirstChar(target.example, target.char);
-  const options = shuffled(group.chars.map((c) => c.char));
-  return {
-    id: `${group.id}:${target.char}`,
-    stem: `「${blanked || target.example}」，空格裡應該填哪一個字？`,
-    readAllStem: `${blanked || target.example}　空格裡應該填哪一個字？`,
-    options,
-    answer: target.char,
-    explanation: `正確答案是「${target.char}」：${target.example}`,
-    hints: [`這幾個字長得很像，比較一下部首或發音，想想哪一個字才對。`],
-  };
+function buildChoiceItems(group, target) {
+  return splitExamples(target.example).flatMap((example, exampleIndex) => {
+    const blanked = blankTarget(example, target.char);
+    if (!blanked) return [];
+
+    const options = shuffle(group.chars.map((c) => c.char));
+    return [{
+      id: `${group.id}:${target.char}:${exampleIndex}`,
+      stem: `「${blanked}」，空格裡應該填哪一個字？`,
+      readAllStem: `${blanked}　空格裡應該填哪一個字？`,
+      options,
+      answer: target.char,
+      explanation: `正確答案是「${target.char}」：${example}`,
+      hints: [`這幾個字長得很像，比較一下部首或發音，想想哪一個字才對。`],
+    }];
+  });
+}
+
+/**
+ * 將官方每個字的「例詞、例詞」拆成一個例詞一題，避免另一個完整例詞洩漏答案。
+ * @param {object} lesson
+ * @returns {Array<object>}
+ */
+export function buildLookalikeQuestionItems(lesson) {
+  const groups = usableGroups(lesson);
+  const items = [];
+  for (const group of groups) {
+    for (const target of group.chars) {
+      items.push(...buildChoiceItems(group, target));
+    }
+  }
+  return items;
 }
 
 /**
@@ -46,13 +70,7 @@ function buildChoiceItem(group, target) {
  * @param {() => void} onBack
  */
 export function buildLookalikesActivity(lesson, onBack) {
-  const groups = usableGroups(lesson);
-  const items = [];
-  for (const group of groups) {
-    for (const target of group.chars) {
-      items.push(buildChoiceItem(group, target));
-    }
-  }
+  const items = buildLookalikeQuestionItems(lesson);
   const rounds = chunkRounds(items, { min: 3, max: 5 });
 
   const container = h('div', {});

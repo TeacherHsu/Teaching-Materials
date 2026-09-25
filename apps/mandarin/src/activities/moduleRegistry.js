@@ -77,8 +77,11 @@ function readyRhetoric(lesson) {
 
 function readyLookalikeQuestions(lesson) {
   return filterByStatus(lesson.lookalikes || [])
-    .map((g) => (g.chars || []).filter((c) => c.char && c.example))
-    .filter((chars) => chars.length >= 2)
+    .map((g) => {
+      const chars = (g.chars || []).filter((c) => c.char && c.example);
+      if (chars.length < 2) return [];
+      return chars.flatMap((c) => String(c.example).split(/[、,，]/u).map((term) => term.trim()).filter(Boolean));
+    })
     .flat();
 }
 
