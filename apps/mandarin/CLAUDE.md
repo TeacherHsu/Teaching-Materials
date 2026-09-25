@@ -1,5 +1,6 @@
 # apps/mandarin（國語課文樂園）施工說明
 
+> 本檔與 `AGENTS.md` 內容相同（Claude Code 讀 CLAUDE.md，其他 AI 讀 AGENTS.md）。修改時兩份同步改，以 AGENTS.md 為正本。
 先讀 repo 根目錄的 `AGENTS.md`，裡面有開工、完工與交接的通用規則。本檔只寫這個子專案的細節。
 
 ## 架構一分鐘
