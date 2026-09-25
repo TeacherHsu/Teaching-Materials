@@ -978,10 +978,34 @@
   margin-bottom: var(--space-2);
 }
 
-/* ---- DragToSlot：沿用 sentence-chip／quiz-option 樣式，僅補空格的填入態 ---- */
+/* ---- DragToSlot：候選詞塊可直接拖曳，也保留點選／鍵盤操作 ---- */
+.drag-to-slot__instruction {
+  margin: var(--space-2) 0 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-meta);
+}
+
+.drag-to-slot--drag-enabled .drag-to-slot__option-chip--draggable {
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.drag-to-slot__option-chip--dragging {
+  opacity: 0.55;
+  cursor: grabbing;
+}
+
 .drag-to-slot__slot--filled {
   border-color: var(--color-primary);
   font-weight: 600;
+}
+
+.drag-to-slot__slot--drag-over {
+  border-style: dashed;
+  border-color: var(--module-color, var(--color-primary));
+  background: var(--module-color-tint, var(--color-surface-muted));
+  transform: scale(1.04);
 }
 
 /* 候選卡＋獨立喇叭：同一 row 內排列，row 本身跟著 sentence-bank 一起換行，

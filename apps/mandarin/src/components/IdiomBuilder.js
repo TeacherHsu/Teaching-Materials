@@ -123,6 +123,7 @@ export function buildIdiomBuilderActivity(lesson, onBack) {
     container.appendChild(
       DragToSlot({
         items: round.items,
+        dragEnabled: true,
         backLabel: isLast ? '回課程首頁' : '繼續：下一關',
         onBack: () => {
           if (isLast) {
