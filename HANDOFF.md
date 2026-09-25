@@ -15,6 +15,14 @@
 ---
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/` G3A 第三課「提早五分鐘」資料、圖片資產、課程索引與模組覆蓋測試
+- 做了什麼：依官方生字表／教育百科字庫建立 15 個習寫字與 2 個認讀字；接入 14 個語詞及 AI 圖片、6 個生字衍生成語及圖片、句型、修辭、段落重述、閱讀理解、一字多義、一字多音、形似字、聆聽與跨課複習。形似字沿用逐例詞拆題規則，避免同組例詞露出答案。
+- 驗證：`npm run validate`、`npm run build`、`npm run check-dist`、全部 `scripts/test-*.mjs` 通過；另以 `MANDARIN_TEST_LESSON=../public/data/115AG3H/lesson03.json node scripts/test-module-star-coverage.mjs` 驗證第三課 11 個可開始模組；瀏覽器確認課次首頁、成語拖拉、語詞圖片、形似字、舊字新詞，無 console error／warning，當前視窗無橫向溢位
+- 推送：尚未推送
+- 待辦／給下一棒：若要公開到 GitHub Pages，請另行確認後再推送；應用任務仍是既有待補項目
+- 注意：官方生字表採 `統票角板業本況該喊文具理此備易匆餘`；未把九份補充資料中的另一組生字混入本課。未動 `Chinese/` 舊站與內部官方原始檔
+
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/` 成語內嵌答案空格的語音按鈕
 - 做了什麼：移除填入答案後出現在成語中間的額外朗讀按鈕；保留題目朗讀與下方候選字朗讀，並補上內嵌空格的答錯揭曉防呆
 - 驗證：`npm run validate`、`npm run build`、`npm run check-dist`、全部 `scripts/test-*.mjs` 通過；瀏覽器確認「原封不動」填入「原」後成語中間沒有多餘喇叭，無 console/page error
