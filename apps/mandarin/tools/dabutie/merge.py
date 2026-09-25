@@ -165,6 +165,8 @@ def build_idioms(idiom_raw: dict, lesson_id: str, existing_by_id: dict, existing
             "idiom": it["idiom"],
             "definition": it["definition"],
             "related_char": it.get("related", ""),
+            # 插圖路徑明確指定，相對於 assets/<冊別>/lesson<NN>/（見 IMAGE-HANDOFF.md）
+            "image": f"idioms/{it['idiom']}.webp",
             "status": "ready",
             "source": idiom_raw.get("source", "dabutie:07生字延伸成語"),
         })
