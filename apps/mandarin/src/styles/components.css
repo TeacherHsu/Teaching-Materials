@@ -496,11 +496,6 @@
   font-synthesis: none;
 }
 
-.character-card__zhuyin {
-  font-size: var(--font-size-section);
-  color: var(--color-secondary);
-}
-
 .character-card__meta-row {
   display: flex;
   justify-content: center;
@@ -508,6 +503,25 @@
   margin-top: var(--space-2);
   font-size: var(--font-size-meta);
   color: var(--text-secondary);
+}
+
+.character-card__examples {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  color: var(--text-secondary);
+  font-family: var(--font-family-learning-glyph);
+  font-size: clamp(24px, 2.8vw, 32px);
+  line-height: 1.5;
+  text-align: center;
+  font-weight: 400;
+  font-synthesis: none;
+}
+
+.character-card__pedia-link {
+  min-height: var(--tap-target-min);
+  padding: 6px 14px;
+  font-size: 18px;
 }
 
 /* 次要連結（漢字由來等），層級低於「看筆順與完整解釋」主要連結。 */
