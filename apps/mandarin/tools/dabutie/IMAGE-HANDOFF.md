@@ -1,20 +1,44 @@
-# 成語圖片交接清單（草稿）
+# 成語插圖交接清單（給 Codex）
 
-`idiom_builder` 模組（生字變成語）的拖字/選字填空互動，若要加成語插圖，
-需要人工繪製或另尋授權素材（大補帖原始圖片不可用，版權不明）。
+「生字變成語」第一關的成語卡會顯示插圖。圖檔路徑由資料**明確指定**，前端不會猜檔名：
 
-本批（batch 1）匯入器只落地成語文字資料，不處理圖片。每課匯入完成後，
-`idioms[]` 中 `status:"ready"` 的成語即為「已可公開，尚缺圖」清單，
-可用以下指令列出待畫清單：
+- 資料欄位：`public/data/<冊別>/lessonNN.json` 的 `idioms[].image`，例如 `"idioms/迫不及待.webp"`
+- 實際檔案位置：`apps/mandarin/public/assets/<冊別>/lesson<NN>/<image>`
+  - 第 1 課：`apps/mandarin/public/assets/115AG3H/lesson01/idioms/迫不及待.webp`
+- 缺圖時畫面只留空白框，不會壞版，所以可以分批放。
 
+## 第 1 課待放圖（115AG3H 第 1 課〈時間是什麼〉）
+
+- idioms/迫不及待.webp
+- idioms/忍氣吞聲.webp
+- idioms/疲於奔命.webp
+- idioms/對牛彈琴.webp
+- idioms/長話短說.webp
+- idioms/一勞永逸.webp
+
+以下指令可列出任一課的清單（含解釋）：
+
+```bash
+cd apps/mandarin && python3 -c "
+import json; d=json.load(open('public/data/115AG3H/lesson01.json'))
+[print(i['image'], i['idiom'], i['definition']) for i in d['idioms']]"
 ```
-python3 -c "
-import json
-d = json.load(open('public/data/115AG3H/lesson01.json'))
-for it in d['idioms']:
-    print(it['idiom'], '-', it['definition'])
-"
+
+## 規格
+
+- 格式為 `.webp`，建議 1024×768（4:3）以內，單檔小於 200KB。
+- 檔名必須與 `image` 欄位**完全相同**，包括中文成語本身。不要自行改名，也不要另外加編號。
+- 畫面內**不要有文字**（成語字樣、注音都不要），避免與網站字體和讀音衝突。
+- 風格：簡潔插畫，不要滿版卡通，也不要恐怖或暴力畫面，適合國小中年級。
+- 大補帖內的原始圖片不可以用（版權不明）。
+
+## 放好之後
+
+```bash
+cd apps/mandarin
+npm ci
+npm run validate && npm run build && npm run check-dist
+for f in scripts/test-*.mjs; do node "$f" || exit 1; done
 ```
 
-後續批次若加上 `image` 欄位，請比照 `characters[].image` 的路徑慣例：
-`assets/<volume_code>/lesson<NN>/idioms/<idiom>.webp`。
+全部通過後再 commit 並 push 到 `main`。**不要改動** `public/data/*.json` 的其他欄位，也不要動 `tools/dabutie/` 的匯入器。
