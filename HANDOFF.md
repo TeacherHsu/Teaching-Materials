@@ -15,6 +15,14 @@
 ---
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/public/data/115AG3H/lesson03.json` 第三課詞彙圖片
+- 做了什麼：修正「喊」與「文具」兩筆詞彙圖片對調問題
+- 驗證：`npm.cmd run validate`、`node scripts/test-extension-links.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 通過；瀏覽器第三課語詞頁確認「喊」使用呼喊孩子圖片、「文具」使用文具桌面圖片，console 無錯誤
+- 推送：尚未推送
+- 待辦／給下一棒：如需發布，再由使用者確認後推送目前本地 commit
+- 注意：只調整圖片欄位，不重製或刪除既有圖片資產
+
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/` 生字卡片視覺標籤
 - 做了什麼：依使用者回饋移除「習寫字」、「認讀字（只要會認）」等卡片上方標籤，保留資料分類供功能使用
 - 驗證：`npm.cmd run validate`、`node scripts/test-extension-links.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 通過；瀏覽器第三課確認 17 張生字卡片均無分類標籤，版面無橫向溢出，console 無錯誤或警告
