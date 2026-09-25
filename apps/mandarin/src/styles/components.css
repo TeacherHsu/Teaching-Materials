@@ -526,6 +526,33 @@
   border-radius: var(--radius-lg);
   padding: var(--space-4);
   box-shadow: var(--shadow-card);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.vocabulary-card:hover,
+.vocabulary-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-raised);
+  outline: none;
+}
+
+.vocabulary-card__term {
+  min-height: 1.2em;
+  margin: var(--space-2) 0;
+  font-size: 56px;
+  line-height: 1.2;
+}
+
+.vocabulary-card__term--meaning {
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.35;
+}
+
+.vocabulary-card__speak {
+  display: flex;
+  justify-content: center;
 }
 
 /* ---- SpeakButton（朗讀鈕，整併舊 AudioButton） ---- */

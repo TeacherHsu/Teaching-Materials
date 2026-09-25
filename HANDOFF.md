@@ -16,6 +16,14 @@
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/` 語詞認識步驟與語詞卡片
+- 做了什麼：依使用者確認改為可點選語詞卡；圖片固定不變，點選後文字替換為對應解釋，再點一次可回到語詞；注音、朗讀內容與操作說明同步切換
+- 驗證：`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；第三課瀏覽器確認圖片不變、詞義可切換、朗讀內容同步、無水平溢出且無警告
+- 推送：尚未推送
+- 待辦／給下一棒：後續課次沿用此語詞卡互動與圖片資產容量閘門；若補圖，維持單張 150～300 KB、每課約 4 MB 內
+- 注意：點選喇叭只朗讀，不會觸發卡片切換；語詞解釋與例句仍保留在後續配對與選詞活動
+
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/` 語詞認識步驟與語詞卡片
 - 做了什麼：依使用者確認取消卡片翻面，改為固定顯示圖片、語詞、注音與朗讀按鈕；同步更新操作說明
 - 驗證：`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；第三課瀏覽器確認 5 張卡片都有圖片、每張 1 個朗讀鈕、無翻面互動、無水平溢出且無警告
 - 推送：尚未推送

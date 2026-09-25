@@ -1,5 +1,5 @@
 // 「學會語詞」模組：三步依序呈現（一畫面一任務）
-// 1. 看圖認識語詞（VocabularyCard，固定顯示圖片與語詞）
+// 1. 看圖認識語詞（VocabularyCard，點選後顯示詞義）
 // 2. 詞 ↔ 義配對（MatchingGame，3–5 題一組，多組依序進行）
 // 3. 看義選詞（ChoiceQuiz，3–5 題一組，多組依序進行）
 // 基礎／挑戰：以 word.level 欄位分層，缺欄位時依字數（≥3 字視為挑戰層）。
@@ -73,7 +73,7 @@ export function buildVocabularyActivity(lesson, onBack) {
       const isLastRound = roundIndex === recognitionRounds.length - 1;
       container.appendChild(
         TaskBanner({
-          label: '看圖片認識語詞：按喇叭聽語詞',
+          label: '看圖片認識語詞：點選卡片查看解釋',
           step: stepLabel,
         }),
       );
