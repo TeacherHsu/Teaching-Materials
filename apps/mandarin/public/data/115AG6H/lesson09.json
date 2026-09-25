@@ -1,0 +1,2049 @@
+{
+  "lesson_id": "115AG6H09",
+  "volume": {
+    "code": "115AG6H",
+    "publisher": "翰林",
+    "grade": 6,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "六上國語課程"
+  },
+  "lesson_no": 9,
+  "title": "戲臺上的她與他",
+  "author": "",
+  "blurb": "透過〈戲臺上的她與他〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "characters": [
+    {
+      "char": "份",
+      "zhuyin": "ㄈㄣˋ",
+      "stroke_count": 6,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "一份"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BB%BD",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "鬟",
+      "zhuyin": "ㄏㄨㄢˊ",
+      "stroke_count": 23,
+      "radical": "⾽",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "丫鬟"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%AC%9F",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "涯",
+      "zhuyin": "ㄧㄚˊ",
+      "stroke_count": 11,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "生涯"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B6%AF",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "辛",
+      "zhuyin": "ㄒㄧㄣ",
+      "stroke_count": 7,
+      "radical": "⾟",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "辛苦"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%BE%9B",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "劈",
+      "zhuyin": "ㄆㄧ",
+      "stroke_count": 15,
+      "radical": "⼑",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "劈腿"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8A%88",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "腿",
+      "zhuyin": "ㄊㄨㄟˇ",
+      "stroke_count": 13,
+      "radical": "⾁",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "劈腿"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%85%BF",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "獅",
+      "zhuyin": "ㄕ",
+      "stroke_count": 13,
+      "radical": "⽝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "獅子王"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%8D%85",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "丑",
+      "zhuyin": "ㄔㄡˇ",
+      "stroke_count": 4,
+      "radical": "⼀",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "丑角"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%B8%91",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "甘",
+      "zhuyin": "ㄍㄢ",
+      "stroke_count": 5,
+      "radical": "⽢",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "甘草人物"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%94%98",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "井",
+      "zhuyin": "ㄐㄧㄥˇ",
+      "stroke_count": 4,
+      "radical": "⼆",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "市井小民"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BA%95",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "騰",
+      "zhuyin": "ㄊㄥˊ",
+      "stroke_count": 20,
+      "radical": "⾺",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "圖騰"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%A8%B0",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "素",
+      "zhuyin": "ㄙㄨˋ",
+      "stroke_count": 10,
+      "radical": "⽷",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "元素"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B4%A0",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "絢",
+      "zhuyin": "ㄒㄩㄢˋ",
+      "stroke_count": 12,
+      "radical": "⽷",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "絢麗"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B5%A2",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "典",
+      "zhuyin": "ㄉㄧㄢˇ",
+      "stroke_count": 8,
+      "radical": "⼋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "經典"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%85%B8",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "吊",
+      "zhuyin": "ㄉㄧㄠˋ",
+      "stroke_count": 6,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "吊著"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%90%8A",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "蘭",
+      "zhuyin": "ㄌㄢˊ",
+      "stroke_count": 20,
+      "radical": "⾋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "蘭花指"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%98%AD",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "尤",
+      "zhuyin": "ㄧㄡˊ",
+      "stroke_count": 4,
+      "radical": "⼪",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "尤其"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B0%A4",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG6H09:01",
+      "word": "一份",
+      "zhuyin": "ㄧˊ ㄈㄣˋ",
+      "meaning": "計算定量事物的單位。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H09:02",
+      "word": "丫鬟",
+      "zhuyin": "ㄧㄚ ㄏㄨㄢˊ",
+      "meaning": "婢女。因其頭髮梳成兩個髻，就像分叉的樹枝，故得名。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H09:03",
+      "word": "生涯",
+      "zhuyin": "ㄕㄥ ㄧㄚˊ",
+      "meaning": "指所過的生活或所經歷的人生。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H09:04",
+      "word": "辛苦",
+      "zhuyin": "ㄒㄧㄣ ㄎㄨˇ",
+      "meaning": "勞累困苦。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H09:05",
+      "word": "劈腿",
+      "zhuyin": "ㄆㄧ ㄊㄨㄟˇ",
+      "meaning": "一種武術或舞蹈動作。將兩腿撐開成一字貼於地面。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG6H/lesson09/vocabulary/l09-05.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H09:06",
+      "word": "獅子王",
+      "zhuyin": "ㄕ ˙ㄗ ㄨㄤˊ",
+      "meaning": "獅子王是明華園西元二○○二年推出的公演製作。講述的是文殊菩薩度化私逃座騎青獅的故事。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H09:07",
+      "word": "丑角",
+      "zhuyin": "ㄔㄡˇ ㄐㄩㄝˊ",
+      "meaning": "戲劇中表演滑稽逗趣的角色。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H09:08",
+      "word": "甘草人物",
+      "zhuyin": "ㄍㄢ ㄘㄠˇ ㄖㄣˊ ㄨˋ",
+      "meaning": "言語幽默，行為逗趣，能帶給大眾歡笑的人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H09:09",
+      "word": "市井小民",
+      "zhuyin": "ㄕˋ ㄐㄧㄥˇ ㄒㄧㄠˇ ㄇㄧㄣˊ",
+      "meaning": "城市裡的居民百姓。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H09:10",
+      "word": "圖騰",
+      "zhuyin": "ㄊㄨˊ ㄊㄥˊ",
+      "meaning": "神聖化的自然物符號或形象，經常成為群體或氏族的標誌，並成為崇拜的對象。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H09:11",
+      "word": "元素",
+      "zhuyin": "ㄩㄢˊ ㄙㄨˋ",
+      "meaning": "事物的基本成分、性質。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H09:12",
+      "word": "絢麗",
+      "zhuyin": "ㄒㄩㄢˋ ㄌㄧˋ",
+      "meaning": "燦爛美麗。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H09:13",
+      "word": "經典",
+      "zhuyin": "ㄐㄧㄥ ㄉㄧㄢˇ",
+      "meaning": "形容製作精美，可以流傳久遠，成為後世典範的。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H09:14",
+      "word": "吊著",
+      "zhuyin": "ㄉㄧㄠˋ ˙ㄓㄜ",
+      "meaning": "懸掛在某物下方。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H09:15",
+      "word": "蘭花指",
+      "zhuyin": "ㄌㄢˊ ㄏㄨㄚ ㄓˇ",
+      "meaning": "一種舞蹈的手式，像蘭花開放時的樣子。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG6H/lesson09/vocabulary/l09-15.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H09:16",
+      "word": "尤其",
+      "zhuyin": "ㄧㄡˊ ㄑㄧˊ",
+      "meaning": "格外。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG6H09:咫尺天涯",
+      "idiom": "咫尺天涯",
+      "definition": "比喻相距雖近，卻有如相隔天涯一般，無緣相見。",
+      "related_char": "涯",
+      "image": "idioms/01_咫尺天涯.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H09:河東獅吼",
+      "idiom": "河東獅吼",
+      "definition": "比喻妻子凶悍發威。",
+      "related_char": "獅",
+      "image": "idioms/02_河東獅吼.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H09:跳梁小丑",
+      "idiom": "跳梁小丑",
+      "definition": "慣於興風作浪，卻成不了事的人。",
+      "related_char": "丑",
+      "image": "idioms/03_跳梁小丑.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H09:甘拜下風",
+      "idiom": "甘拜下風",
+      "definition": "表示自認不如，由衷佩服。",
+      "related_char": "甘",
+      "image": "idioms/04_甘拜下風.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H09:坐井觀天",
+      "idiom": "坐井觀天",
+      "definition": "比喻人眼界狹小，見識不廣。",
+      "related_char": "井",
+      "image": "idioms/05_坐井觀天.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H09:飛黃騰達",
+      "idiom": "飛黃騰達",
+      "definition": "比喻仕途得意，很快到達高位。",
+      "related_char": "騰",
+      "image": "idioms/06_飛黃騰達.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H09:尸位素餐",
+      "idiom": "尸位素餐",
+      "definition": "指空居職位享受俸祿而不盡職守。",
+      "related_char": "素",
+      "image": "idioms/07_尸位素餐.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H09:引經據典",
+      "idiom": "引經據典",
+      "definition": "引用經書典籍等作為說話、作文的依據。",
+      "related_char": "典",
+      "image": "idioms/08_引經據典.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H09:金蘭之交",
+      "idiom": "金蘭之交",
+      "definition": "情意相投的朋友。",
+      "related_char": "蘭",
+      "image": "idioms/09_金蘭之交.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H09:怨天尤人",
+      "idiom": "怨天尤人",
+      "definition": "比喻面對不如意時，只會責怪客觀環境，而不能自我檢討。",
+      "related_char": "尤",
+      "image": "idioms/10_怨天尤人.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG6H09:1",
+      "idiom_id": "idiom:115AG6H09:咫尺天涯",
+      "rewritten": "遇到生活中的相關情況時，可以用「咫尺天涯」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H09:2",
+      "idiom_id": "idiom:115AG6H09:河東獅吼",
+      "rewritten": "遇到生活中的相關情況時，可以用「河東獅吼」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H09:3",
+      "idiom_id": "idiom:115AG6H09:跳梁小丑",
+      "rewritten": "遇到生活中的相關情況時，可以用「跳梁小丑」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H09:4",
+      "idiom_id": "idiom:115AG6H09:甘拜下風",
+      "rewritten": "遇到生活中的相關情況時，可以用「甘拜下風」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H09:5",
+      "idiom_id": "idiom:115AG6H09:坐井觀天",
+      "rewritten": "遇到生活中的相關情況時，可以用「坐井觀天」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H09:6",
+      "idiom_id": "idiom:115AG6H09:飛黃騰達",
+      "rewritten": "遇到生活中的相關情況時，可以用「飛黃騰達」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H09:7",
+      "idiom_id": "idiom:115AG6H09:尸位素餐",
+      "rewritten": "遇到生活中的相關情況時，可以用「尸位素餐」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H09:8",
+      "idiom_id": "idiom:115AG6H09:引經據典",
+      "rewritten": "遇到生活中的相關情況時，可以用「引經據典」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H09:9",
+      "idiom_id": "idiom:115AG6H09:金蘭之交",
+      "rewritten": "遇到生活中的相關情況時，可以用「金蘭之交」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H09:10",
+      "idiom_id": "idiom:115AG6H09:怨天尤人",
+      "rewritten": "遇到生活中的相關情況時，可以用「怨天尤人」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG6H09:word:1",
+      "category": "詞語造句",
+      "head": "挖空心思",
+      "structure": "詞語造句",
+      "description": "費盡心思，想盡各種辦法。",
+      "guide": "為了完成這件事，我挖空心思＿＿＿＿。",
+      "examples": [
+        "為了讓傳統戲曲更吸引觀眾，劇團挖空心思設計新的舞臺效果。"
+      ],
+      "example_parts": [
+        [
+          "為了讓傳統戲曲",
+          "更吸引觀眾",
+          "劇團",
+          "挖空心思設計新舞臺效果"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "為了完成班級海報",
+          "我們",
+          "挖空心思",
+          "想出有趣的版面"
+        ]
+      ],
+      "word_bank": [
+        "畫出草圖",
+        "挑選照片",
+        "和同學討論"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H09:word:2",
+      "category": "詞語造句",
+      "head": "不虛此行",
+      "structure": "詞語造句",
+      "description": "這次行動或旅行很有收穫，沒有白來。",
+      "guide": "參加這次活動後，我覺得＿＿＿＿。",
+      "examples": [
+        "我們不但完成採訪報告，還學了一段歌仔戲，真是不虛此行。"
+      ],
+      "example_parts": [
+        [
+          "我們不但完成",
+          "採訪報告",
+          "還學了一段歌仔戲",
+          "真是不虛此行"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "參觀博物館後",
+          "我學到許多知識",
+          "覺得",
+          "不虛此行"
+        ]
+      ],
+      "word_bank": [
+        "仔細看展品",
+        "記下新發現",
+        "回家分享收穫"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H09:pattern:1",
+      "category": "句型練習",
+      "head": "遞進複句",
+      "structure": "還有＋情況，甚至＋更進一步的情況",
+      "description": "依照句型寫一句：先說一種情況，再補上更進一步的情況。",
+      "guide": "依照句型寫一句：先說一種情況，再補上更進一步的情況。",
+      "examples": [
+        "還有同學主動提問甚至上臺示範動作",
+        "還有大家認真練習甚至利用下課時間複習",
+        "還有老師介紹角色甚至讓我們穿上戲服體驗"
+      ],
+      "example_parts": [
+        [
+          "還有",
+          "同學主動提問",
+          "甚至",
+          "上臺示範動作"
+        ],
+        [
+          "還有",
+          "大家認真練習",
+          "甚至",
+          "利用下課時間複習"
+        ],
+        [
+          "還有",
+          "老師介紹角色",
+          "甚至",
+          "讓我們穿上戲服體驗"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "還有＋情況",
+          "choices": [
+            "還有同學主動提問",
+            "還有大家認真練習",
+            "還有老師介紹角色"
+          ]
+        },
+        {
+          "label": "甚至",
+          "choices": [
+            "甚至"
+          ]
+        },
+        {
+          "label": "更進一步的情況",
+          "choices": [
+            "上臺示範動作",
+            "利用下課時間複習",
+            "讓我們穿上戲服體驗"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H09:pattern:2",
+      "category": "句型練習",
+      "head": "並列複句",
+      "structure": "在＋情況下，一邊＋事情，一邊＋另一件事情",
+      "description": "依照句型寫一句：寫出同一時間進行的兩件事情。",
+      "guide": "依照句型寫一句：寫出同一時間進行的兩件事情。",
+      "examples": [
+        "上課時我們一邊專心聽講一邊寫下重點",
+        "練唱時我一邊看歌詞一邊跟著節拍唱",
+        "做勞作時大家一邊剪紙一邊整理桌面"
+      ],
+      "example_parts": [
+        [
+          "上課時",
+          "我們一邊專心聽講",
+          "一邊寫下重點"
+        ],
+        [
+          "練唱時",
+          "我一邊看歌詞",
+          "一邊跟著節拍唱"
+        ],
+        [
+          "做勞作時",
+          "大家一邊剪紙",
+          "一邊整理桌面"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "情況",
+          "choices": [
+            "上課時",
+            "做勞作時",
+            "練唱時"
+          ]
+        },
+        {
+          "label": "一邊做什麼",
+          "choices": [
+            "大家一邊剪紙",
+            "我一邊看歌詞",
+            "我們一邊專心聽講"
+          ]
+        },
+        {
+          "label": "一邊做什麼",
+          "choices": [
+            "跟著節拍唱",
+            "寫下重點",
+            "整理桌面"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H09:pattern:3",
+      "category": "句型練習",
+      "head": "遞進複句",
+      "structure": "不但＋情況，更＋進一步的結果",
+      "description": "依照句型寫一句：先寫一個收穫，再補上更大的收穫。",
+      "guide": "依照句型寫一句：先寫一個收穫，再補上更大的收穫。",
+      "examples": [
+        "這次練習不但讓我會唱一小段更讓我敢上臺表演",
+        "參觀戲臺不但很有趣更讓我了解演員的辛苦",
+        "完成訪問不但得到資料更學會尊重受訪者"
+      ],
+      "example_parts": [
+        [
+          "這次練習不但讓我會唱一小段",
+          "更",
+          "讓我敢上臺表演"
+        ],
+        [
+          "參觀戲臺不但很有趣",
+          "更",
+          "讓我了解演員的辛苦"
+        ],
+        [
+          "完成訪問不但得到資料",
+          "更",
+          "學會尊重受訪者"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "不但＋情況",
+          "choices": [
+            "這次練習會唱一小段",
+            "參觀戲臺很有趣",
+            "完成訪問得到資料"
+          ]
+        },
+        {
+          "label": "更",
+          "choices": [
+            "更"
+          ]
+        },
+        {
+          "label": "進一步結果",
+          "choices": [
+            "敢上臺表演",
+            "了解演員的辛苦",
+            "學會尊重受訪者"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:09:01",
+      "paragraph_no": 1,
+      "summary": "學生為了藝術課報告，到明華園採訪歌仔戲演員孫翠鳳。",
+      "structure_role": "【第1～3段】採訪與入行",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:09:02",
+      "paragraph_no": 2,
+      "summary": "孫翠鳳原本不會說閩南語，從臨時演員、跑龍套開始，靠辛苦練習成為小生。",
+      "structure_role": "【第4～6段】角色、身段與創新",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:09:03",
+      "paragraph_no": 3,
+      "summary": "她介紹歌仔戲的生、旦、淨、丑角色，以及不同的服裝與手勢。",
+      "structure_role": "【第7～8段】學戲與收穫",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:09:04",
+      "paragraph_no": 4,
+      "summary": "明華園用雷射燈光、乾冰煙霧和空中飛人等技術，讓傳統戲曲呈現新的舞臺效果。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:09:05",
+      "paragraph_no": 5,
+      "summary": "學生跟著學唱七字調、走台步和做蘭花指，雖然動作不易，仍覺得有趣。",
+      "structure_role": "第5段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:09:06",
+      "paragraph_no": 6,
+      "summary": "採訪後，學生不但完成作業，也更認識歌仔戲演員的努力與創新，感到不虛此行。",
+      "structure_role": "第6段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "main_idea": {
+    "gist": "學生採訪歌仔戲演員孫翠鳳，了解她從跑龍套開始、辛苦磨練並以創新舞臺傳承戲曲；學生也親自學唱腔與身段，收穫豐富。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:09:01",
+      "stem": "學生為什麼到明華園採訪？",
+      "options": [
+        "完成藝術課報告 (2)購買戲服"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:09:02",
+      "stem": "孫翠鳳剛開始學戲時，遇到什麼困難？",
+      "options": [
+        "閩南語和身段練習 (2)沒有觀眾鼓掌"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:09:03",
+      "stem": "明華園如何讓舞臺更有新意？",
+      "options": [
+        "運用燈光、煙霧和空中飛人 (2)取消所有服裝"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:09:04",
+      "stem": "學生從採訪與學戲中得到什麼？",
+      "options": [
+        "認識努力與創新的價值 (2)覺得歌仔戲不需要練習"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG6H09:份:1",
+      "char": "份",
+      "sentence": "語詞「股份」中的「份」，就是指整體中的一個單位。",
+      "definition": "整體中的一個單位",
+      "options": [
+        "整體中的一個單位",
+        "量詞：計算定量事物的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:份:2",
+      "char": "份",
+      "sentence": "語詞「一份工作」中的「份」，就是指量詞：計算定量事物的單位。",
+      "definition": "量詞：計算定量事物的單位",
+      "options": [
+        "整體中的一個單位",
+        "量詞：計算定量事物的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:鬟:1",
+      "char": "鬟",
+      "sentence": "語詞「丫鬟」中的「鬟」，就是指婢女。",
+      "definition": "婢女",
+      "options": [
+        "婢女",
+        "婦女頭髮梳挽成中空環形的一種髮髻"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:鬟:2",
+      "char": "鬟",
+      "sentence": "語詞「雲鬟」中的「鬟」，就是指婦女頭髮梳挽成中空環形的一種髮髻。",
+      "definition": "婦女頭髮梳挽成中空環形的一種髮髻",
+      "options": [
+        "婢女",
+        "婦女頭髮梳挽成中空環形的一種髮髻"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:辛:1",
+      "char": "辛",
+      "sentence": "語詞「艱辛」中的「辛」，就是指勞苦、勞累。",
+      "definition": "勞苦、勞累",
+      "options": [
+        "勞苦、勞累",
+        "辣的味道"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:辛:2",
+      "char": "辛",
+      "sentence": "語詞「辛辣」中的「辛」，就是指辣的味道。",
+      "definition": "辣的味道",
+      "options": [
+        "勞苦、勞累",
+        "辣的味道"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:劈:1",
+      "char": "劈",
+      "sentence": "語詞「天打雷劈」中的「劈」，就是指雷電擊毀。",
+      "definition": "雷電擊毀",
+      "options": [
+        "雷電擊毀",
+        "用刀斧等從縱面將物體破開、剖開",
+        "朝著、正對著"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:劈:2",
+      "char": "劈",
+      "sentence": "語詞「劈柴」中的「劈」，就是指用刀斧等從縱面將物體破開、剖開。",
+      "definition": "用刀斧等從縱面將物體破開、剖開",
+      "options": [
+        "雷電擊毀",
+        "用刀斧等從縱面將物體破開、剖開",
+        "朝著、正對著"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:劈:3",
+      "char": "劈",
+      "sentence": "語詞「劈面」中的「劈」，就是指朝著、正對著。",
+      "definition": "朝著、正對著",
+      "options": [
+        "雷電擊毀",
+        "用刀斧等從縱面將物體破開、剖開",
+        "朝著、正對著"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:腿:1",
+      "char": "腿",
+      "sentence": "語詞「盤腿而坐」中的「腿」，就是指大腿和小腿的合稱。人或動物用來行走或支持軀體的部位。",
+      "definition": "大腿和小腿的合稱。人或動物用來行走或支持軀體的部位",
+      "options": [
+        "大腿和小腿的合稱。人或動物用來行走或支持軀體的部位",
+        "器物底部用來支撐物體的部分"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:腿:2",
+      "char": "腿",
+      "sentence": "語詞「桌腿」中的「腿」，就是指器物底部用來支撐物體的部分。",
+      "definition": "器物底部用來支撐物體的部分",
+      "options": [
+        "大腿和小腿的合稱。人或動物用來行走或支持軀體的部位",
+        "器物底部用來支撐物體的部分"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:丑:1",
+      "char": "丑",
+      "sentence": "語詞「小丑」中的「丑」，就是指一種戲劇角色。扮演滑稽可笑的喜劇人物。",
+      "definition": "一種戲劇角色。扮演滑稽可笑的喜劇人物",
+      "options": [
+        "一種戲劇角色。扮演滑稽可笑的喜劇人物",
+        "時辰名。約當凌晨一點到三點"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:丑:2",
+      "char": "丑",
+      "sentence": "語詞「丑時」中的「丑」，就是指時辰名。約當凌晨一點到三點。",
+      "definition": "時辰名。約當凌晨一點到三點",
+      "options": [
+        "一種戲劇角色。扮演滑稽可笑的喜劇人物",
+        "時辰名。約當凌晨一點到三點"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:甘:1",
+      "char": "甘",
+      "sentence": "語詞「甘泉」中的「甘」，就是指味道甜美的，像糖蜜一樣。與「苦」相對。",
+      "definition": "味道甜美的，像糖蜜一樣。與「苦」相對",
+      "options": [
+        "味道甜美的，像糖蜜一樣。與「苦」相對",
+        "比喻舒適的處境",
+        "樂意、情願、自願"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:甘:2",
+      "char": "甘",
+      "sentence": "語詞「先甘後苦」中的「甘」，就是指比喻舒適的處境。",
+      "definition": "比喻舒適的處境",
+      "options": [
+        "味道甜美的，像糖蜜一樣。與「苦」相對",
+        "比喻舒適的處境",
+        "樂意、情願、自願"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:甘:3",
+      "char": "甘",
+      "sentence": "語詞「甘願」中的「甘」，就是指樂意、情願、自願。",
+      "definition": "樂意、情願、自願",
+      "options": [
+        "味道甜美的，像糖蜜一樣。與「苦」相對",
+        "比喻舒適的處境",
+        "樂意、情願、自願"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:井:1",
+      "char": "井",
+      "sentence": "語詞「市井」中的「井」，就是指指居住的地方。",
+      "definition": "指居住的地方",
+      "options": [
+        "指居住的地方",
+        "以人工方法挖掘的深洞，用以取水",
+        "形狀像井的坑洞",
+        "整齊、有次序條理"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:井:2",
+      "char": "井",
+      "sentence": "語詞「水井」中的「井」，就是指以人工方法挖掘的深洞，用以取水。",
+      "definition": "以人工方法挖掘的深洞，用以取水",
+      "options": [
+        "指居住的地方",
+        "以人工方法挖掘的深洞，用以取水",
+        "形狀像井的坑洞",
+        "整齊、有次序條理"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:井:3",
+      "char": "井",
+      "sentence": "語詞「鹽井」中的「井」，就是指形狀像井的坑洞。",
+      "definition": "形狀像井的坑洞",
+      "options": [
+        "指居住的地方",
+        "以人工方法挖掘的深洞，用以取水",
+        "形狀像井的坑洞",
+        "整齊、有次序條理"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:井:4",
+      "char": "井",
+      "sentence": "語詞「井井」中的「井」，就是指整齊、有次序條理。",
+      "definition": "整齊、有次序條理",
+      "options": [
+        "指居住的地方",
+        "以人工方法挖掘的深洞，用以取水",
+        "形狀像井的坑洞",
+        "整齊、有次序條理"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:騰:1",
+      "char": "騰",
+      "sentence": "語詞「萬馬奔騰」中的「騰」，就是指奔馳、跳躍。",
+      "definition": "奔馳、跳躍",
+      "options": [
+        "奔馳、跳躍",
+        "上升",
+        "空出、挪出"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:騰:2",
+      "char": "騰",
+      "sentence": "語詞「升騰」中的「騰」，就是指上升。",
+      "definition": "上升",
+      "options": [
+        "奔馳、跳躍",
+        "上升",
+        "空出、挪出"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:騰:3",
+      "char": "騰",
+      "sentence": "語詞「騰出房間」中的「騰」，就是指空出、挪出。",
+      "definition": "空出、挪出",
+      "options": [
+        "奔馳、跳躍",
+        "上升",
+        "空出、挪出"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:素:1",
+      "char": "素",
+      "sentence": "語詞「因素」中的「素」，就是指事物的基本成分、性質。",
+      "definition": "事物的基本成分、性質",
+      "options": [
+        "事物的基本成分、性質",
+        "白色的",
+        "樸質無華、清淡",
+        "一向的、平日的",
+        "蔬菜性食物。與「葷」相對"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:素:2",
+      "char": "素",
+      "sentence": "語詞「素絲」中的「素」，就是指白色的。",
+      "definition": "白色的",
+      "options": [
+        "事物的基本成分、性質",
+        "白色的",
+        "樸質無華、清淡",
+        "一向的、平日的",
+        "蔬菜性食物。與「葷」相對"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:素:3",
+      "char": "素",
+      "sentence": "語詞「樸素」中的「素」，就是指樸質無華、清淡。",
+      "definition": "樸質無華、清淡",
+      "options": [
+        "事物的基本成分、性質",
+        "白色的",
+        "樸質無華、清淡",
+        "一向的、平日的",
+        "蔬菜性食物。與「葷」相對"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:素:4",
+      "char": "素",
+      "sentence": "語詞「平素」中的「素」，就是指一向的、平日的。",
+      "definition": "一向的、平日的",
+      "options": [
+        "事物的基本成分、性質",
+        "白色的",
+        "樸質無華、清淡",
+        "一向的、平日的",
+        "蔬菜性食物。與「葷」相對"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:素:5",
+      "char": "素",
+      "sentence": "語詞「禮佛吃素」中的「素」，就是指蔬菜性食物。與「葷」相對。",
+      "definition": "蔬菜性食物。與「葷」相對",
+      "options": [
+        "事物的基本成分、性質",
+        "白色的",
+        "樸質無華、清淡",
+        "一向的、平日的",
+        "蔬菜性食物。與「葷」相對"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:典:1",
+      "char": "典",
+      "sentence": "語詞「字典」中的「典」，就是指可作為依據或模範的書。",
+      "definition": "可作為依據或模範的書",
+      "options": [
+        "可作為依據或模範的書",
+        "重要的文獻、簡冊",
+        "可遵守的法度、準則",
+        "典禮、儀式",
+        "文雅、雅緻",
+        "古代的故事、制度、文物",
+        "以物品質押貸款"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:典:2",
+      "char": "典",
+      "sentence": "語詞「典籍」中的「典」，就是指重要的文獻、簡冊。",
+      "definition": "重要的文獻、簡冊",
+      "options": [
+        "可作為依據或模範的書",
+        "重要的文獻、簡冊",
+        "可遵守的法度、準則",
+        "典禮、儀式",
+        "文雅、雅緻",
+        "古代的故事、制度、文物",
+        "以物品質押貸款"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:典:3",
+      "char": "典",
+      "sentence": "語詞「典範」中的「典」，就是指可遵守的法度、準則。",
+      "definition": "可遵守的法度、準則",
+      "options": [
+        "可作為依據或模範的書",
+        "重要的文獻、簡冊",
+        "可遵守的法度、準則",
+        "典禮、儀式",
+        "文雅、雅緻",
+        "古代的故事、制度、文物",
+        "以物品質押貸款"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:典:4",
+      "char": "典",
+      "sentence": "語詞「慶典」中的「典」，就是指典禮、儀式。",
+      "definition": "典禮、儀式",
+      "options": [
+        "可作為依據或模範的書",
+        "重要的文獻、簡冊",
+        "可遵守的法度、準則",
+        "典禮、儀式",
+        "文雅、雅緻",
+        "古代的故事、制度、文物",
+        "以物品質押貸款"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:典:5",
+      "char": "典",
+      "sentence": "語詞「典雅」中的「典」，就是指文雅、雅緻。",
+      "definition": "文雅、雅緻",
+      "options": [
+        "可作為依據或模範的書",
+        "重要的文獻、簡冊",
+        "可遵守的法度、準則",
+        "典禮、儀式",
+        "文雅、雅緻",
+        "古代的故事、制度、文物",
+        "以物品質押貸款"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:典:6",
+      "char": "典",
+      "sentence": "語詞「典故」中的「典」，就是指古代的故事、制度、文物。",
+      "definition": "古代的故事、制度、文物",
+      "options": [
+        "可作為依據或模範的書",
+        "重要的文獻、簡冊",
+        "可遵守的法度、準則",
+        "典禮、儀式",
+        "文雅、雅緻",
+        "古代的故事、制度、文物",
+        "以物品質押貸款"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:典:7",
+      "char": "典",
+      "sentence": "語詞「典當」中的「典」，就是指以物品質押貸款。",
+      "definition": "以物品質押貸款",
+      "options": [
+        "可作為依據或模範的書",
+        "重要的文獻、簡冊",
+        "可遵守的法度、準則",
+        "典禮、儀式",
+        "文雅、雅緻",
+        "古代的故事、制度、文物",
+        "以物品質押貸款"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:吊:1",
+      "char": "吊",
+      "sentence": "語詞「懸吊」中的「吊」，就是指懸掛。",
+      "definition": "懸掛",
+      "options": [
+        "懸掛",
+        "懸掛的",
+        "用繩索綁著物品垂直拉提",
+        "收回、扣留"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:吊:2",
+      "char": "吊",
+      "sentence": "語詞「吊鐘」中的「吊」，就是指懸掛的。",
+      "definition": "懸掛的",
+      "options": [
+        "懸掛",
+        "懸掛的",
+        "用繩索綁著物品垂直拉提",
+        "收回、扣留"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:吊:3",
+      "char": "吊",
+      "sentence": "語詞「把鋼筋吊上去」中的「吊」，就是指用繩索綁著物品垂直拉提。",
+      "definition": "用繩索綁著物品垂直拉提",
+      "options": [
+        "懸掛",
+        "懸掛的",
+        "用繩索綁著物品垂直拉提",
+        "收回、扣留"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:吊:4",
+      "char": "吊",
+      "sentence": "語詞「吊銷執照」中的「吊」，就是指收回、扣留。",
+      "definition": "收回、扣留",
+      "options": [
+        "懸掛",
+        "懸掛的",
+        "用繩索綁著物品垂直拉提",
+        "收回、扣留"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:尤:1",
+      "char": "尤",
+      "sentence": "語詞「尤甚」中的「尤」，就是指更加、格外。",
+      "definition": "更加、格外",
+      "options": [
+        "更加、格外",
+        "怨恨、責怪",
+        "特殊的、突出的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:尤:2",
+      "char": "尤",
+      "sentence": "語詞「怨天尤人」中的「尤」，就是指怨恨、責怪。",
+      "definition": "怨恨、責怪",
+      "options": [
+        "更加、格外",
+        "怨恨、責怪",
+        "特殊的、突出的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H09:尤:3",
+      "char": "尤",
+      "sentence": "語詞「尤物」中的「尤」，就是指特殊的、突出的。",
+      "definition": "特殊的、突出的",
+      "options": [
+        "更加、格外",
+        "怨恨、責怪",
+        "特殊的、突出的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    }
+  ],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG6H09:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "份",
+          "example": "份量、股份"
+        },
+        {
+          "char": "粉",
+          "example": "粉筆、粉色"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H09:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "丫",
+          "example": "丫鬟、雲鬟"
+        },
+        {
+          "char": "頭",
+          "example": "頭髮、髮型"
+        },
+        {
+          "char": "鬍",
+          "example": "鬍鬚、鬚根"
+        },
+        {
+          "char": "蓬",
+          "example": "蓬鬆、鬆開"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H09:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "天",
+          "example": "天涯、生涯"
+        },
+        {
+          "char": "山",
+          "example": "山崖、崖壁"
+        },
+        {
+          "char": "捱",
+          "example": "捱罵、捱過"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H09:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "辛",
+          "example": "辛苦、辛勞"
+        },
+        {
+          "char": "幸",
+          "example": "幸福、幸運"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H09:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "劈",
+          "example": "劈柴、劈開"
+        },
+        {
+          "char": "譬",
+          "example": "譬喻、譬如"
+        },
+        {
+          "char": "牆",
+          "example": "牆壁、壁紙"
+        },
+        {
+          "char": "白",
+          "example": "白璧、玉璧"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H09:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "跑",
+          "example": "跑腿、後腿"
+        },
+        {
+          "char": "褪",
+          "example": "褪色、褪去"
+        },
+        {
+          "char": "退",
+          "example": "退步、退後"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H09:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "獅",
+          "example": "獅子、舞獅"
+        },
+        {
+          "char": "施",
+          "example": "施行、施展"
+        },
+        {
+          "char": "師",
+          "example": "師父、老師"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H09:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "小",
+          "example": "小丑、丑角"
+        },
+        {
+          "char": "甘",
+          "example": "甘甜、不甘"
+        },
+        {
+          "char": "水",
+          "example": "水井、井口"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG6H09:1",
+      "stem": "學生為什麼到明華園採訪？",
+      "question": "學生為什麼到明華園採訪？",
+      "options": [
+        "完成藝術課報告 (2)購買戲服"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H09:2",
+      "stem": "孫翠鳳剛開始學戲時，遇到什麼困難？",
+      "question": "孫翠鳳剛開始學戲時，遇到什麼困難？",
+      "options": [
+        "閩南語和身段練習 (2)沒有觀眾鼓掌"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H09:3",
+      "stem": "明華園如何讓舞臺更有新意？",
+      "question": "明華園如何讓舞臺更有新意？",
+      "options": [
+        "運用燈光、煙霧和空中飛人 (2)取消所有服裝"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H09:4",
+      "stem": "學生從採訪與學戲中得到什麼？",
+      "question": "學生從採訪與學戲中得到什麼？",
+      "options": [
+        "認識努力與創新的價值 (2)覺得歌仔戲不需要練習"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    }
+  ],
+  "review_words": {},
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag6h-09",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E4%BB%BD%E9%AC%9F%E6%B6%AF%E8%BE%9B%E5%8A%88%E8%85%BF%E7%8D%85%E4%B8%91%E7%94%98%E4%BA%95%E9%A8%B0%E7%B4%A0%E7%B5%A2%E5%85%B8%E5%90%8A%E8%98%AD%E5%B0%A4",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・六年級・第9課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課17個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「份」的部首是哪一個？",
+      "options": [
+        "⼈",
+        "⽢",
+        "⼋"
+      ],
+      "answer": "⼈",
+      "explanation": "「份」的部首是⼈。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「鬟」的部首是哪一個？",
+      "options": [
+        "⾽",
+        "⽷",
+        "⾁"
+      ],
+      "answer": "⾽",
+      "explanation": "「鬟」的部首是⾽。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「涯」的部首是哪一個？",
+      "options": [
+        "⽝",
+        "⽷",
+        "⼆"
+      ],
+      "answer": "⽔",
+      "explanation": "「涯」的部首是⽔。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「一份」是什麼意思？",
+      "options": [
+        "指所過的生活或所經歷的人生。",
+        "一種武術或舞蹈動作。將兩腿撐開成一字貼於地面。",
+        "婢女。因其頭髮梳成兩個髻，就像分叉的樹枝，故得名。"
+      ],
+      "answer": "計算定量事物的單位。",
+      "explanation": "一份：計算定量事物的單位。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「丫鬟」是什麼意思？",
+      "options": [
+        "勞累困苦。",
+        "格外。",
+        "形容製作精美，可以流傳久遠，成為後世典範的。"
+      ],
+      "answer": "婢女。因其頭髮梳成兩個髻，就像分叉的樹枝，故得名。",
+      "explanation": "丫鬟：婢女。因其頭髮梳成兩個髻，就像分叉的樹枝，故得名。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「生涯」是什麼意思？",
+      "options": [
+        "城市裡的居民百姓。",
+        "事物的基本成分、性質。",
+        "格外。"
+      ],
+      "answer": "指所過的生活或所經歷的人生。",
+      "explanation": "生涯：指所過的生活或所經歷的人生。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「辛苦」是什麼意思？",
+      "options": [
+        "戲劇中表演滑稽逗趣的角色。",
+        "城市裡的居民百姓。",
+        "獅子王是明華園西元二○○二年推出的公演製作。講述的是文殊菩薩度化私逃座騎青獅的故事。"
+      ],
+      "answer": "勞累困苦。",
+      "explanation": "辛苦：勞累困苦。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「劈腿」是什麼意思？",
+      "options": [
+        "一種舞蹈的手式，像蘭花開放時的樣子。",
+        "指所過的生活或所經歷的人生。",
+        "燦爛美麗。"
+      ],
+      "answer": "一種武術或舞蹈動作。將兩腿撐開成一字貼於地面。",
+      "explanation": "劈腿：一種武術或舞蹈動作。將兩腿撐開成一字貼於地面。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "段落摘要已整理；課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "教材待補：應用任務設計中"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "聆聽題目保留待教師確認答案，未在正式模組顯示。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭教材尚未完成公開資料整理。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "跨課複習資料待補。"
+    }
+  }
+}

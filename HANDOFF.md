@@ -14,13 +14,13 @@
 
 ---
 
-## 2026-09-26｜學校 Win｜Codex｜狀態：🚧 施工中
-- 範圍：`apps/mandarin/public/data/115G6A/`、`apps/mandarin/public/assets/115G6A/`、`apps/mandarin/public/data/course-index.json`
-- 做了什麼：已完成翰林六上 G6A 官方教材來源盤點，接續生成第 1 課並依驗證結果自動處理後續課次。
-- 驗證：施工中，尚未完成教材建置驗證。
-- 推送：施工標記待推送。
-- 待辦／給下一棒：完成 G6A 第 1 至 12 課資料、WebP／AVIF 圖片、建置與瀏覽器回歸檢查；若中斷，從最後一個已驗證課次接續。
-- 注意：沿用既有教材網站資料結構與圖片容量規範；不將官方原始教材或第三方試算表放入公開 repo。
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/public/data/115AG6H/`、`apps/mandarin/public/assets/115AG6H/`、`apps/mandarin/public/data/course-index.json`
+- 做了什麼：依翰林六上官方教材資料完成 G6A 第 1～12 課網站資料；包含生字、語詞、成語、句型、段落摘要、閱讀提問、字義分析、形似字、多音字與各課雄筆順連結。可對應的官方語詞／成語圖已轉為 WebP，未將原始教材或第三方試算表放入公開 repo。
+- 驗證：`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；G6A 圖片共 121 張、約 6.60 MiB，單課均低於 4 MiB；瀏覽器已實際開啟 G6A 第 1 課與第 12 課，確認語詞圖片、生字頁與課次路由。
+- 推送：尚未推送；施工標記 `fc7e0db` 已推送，教材完成內容待確認後再推送。
+- 待辦／給下一棒：修辭、應用任務、聆聽答案與跨課複習仍依官方資料整理狀態保留為待補；若補齊，沿用本批資料結構與 WebP 容量規範。
+- 注意：網站資料使用 `115AG6H`（翰林六上）代碼；保留 `115HG6A` 作為 Reading-Tool 內部來源 ID，不要混用。
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG3H/lesson06.json`、`apps/mandarin/public/assets/115AG3H/lesson06/`、`apps/mandarin/public/data/course-index.json`

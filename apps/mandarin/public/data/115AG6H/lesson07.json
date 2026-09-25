@@ -1,0 +1,1665 @@
+{
+  "lesson_id": "115AG6H07",
+  "volume": {
+    "code": "115AG6H",
+    "publisher": "翰林",
+    "grade": 6,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "六上國語課程"
+  },
+  "lesson_no": 7,
+  "title": "跟著公共藝術去旅行",
+  "author": "",
+  "blurb": "透過〈跟著公共藝術去旅行〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "characters": [
+    {
+      "char": "姨",
+      "zhuyin": "ㄧˊ",
+      "stroke_count": 9,
+      "radical": "⼥",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "阿姨"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A7%A8",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "雕",
+      "zhuyin": "ㄉㄧㄠ",
+      "stroke_count": 16,
+      "radical": "⾫",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "雕塑"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%9B%95",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "拓",
+      "zhuyin": "ㄊㄚˋ",
+      "stroke_count": 8,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "拓印"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8B%93",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "蒐",
+      "zhuyin": "ㄙㄡ",
+      "stroke_count": 12,
+      "radical": "⾋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "蒐集"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%92%90",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "蕨",
+      "zhuyin": "ㄐㄩㄝˊ",
+      "stroke_count": 15,
+      "radical": "⾋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "蕨類"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%95%A8",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "梅",
+      "zhuyin": "ㄇㄟˊ",
+      "stroke_count": 11,
+      "radical": "⽊",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "梅花鹿"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%A2%85",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "鹿",
+      "zhuyin": "ㄌㄨˋ",
+      "stroke_count": 11,
+      "radical": "⿅",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "梅花鹿"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%B9%BF",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "佇",
+      "zhuyin": "ㄓㄨˋ",
+      "stroke_count": 7,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "佇立"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BD%87",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "冽",
+      "zhuyin": "ㄌㄧㄝˋ",
+      "stroke_count": 8,
+      "radical": "⼎",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "冷冽"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%86%BD",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "澤",
+      "zhuyin": "ㄗㄜˊ",
+      "stroke_count": 16,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "光澤"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%BE%A4",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "錦",
+      "zhuyin": "ㄐㄧㄣˇ",
+      "stroke_count": 16,
+      "radical": "⾦",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "花團錦簇"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%8C%A6",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "眨",
+      "zhuyin": "ㄓㄚˇ",
+      "stroke_count": 9,
+      "radical": "⽬",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "眨眨眼"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%9C%A8",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "鏽",
+      "zhuyin": "ㄒㄧㄡˋ",
+      "stroke_count": 21,
+      "radical": "⾦",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "不鏽鋼"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%8F%BD",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "鋼",
+      "zhuyin": "ㄍㄤ",
+      "stroke_count": 16,
+      "radical": "⾦",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "不鏽鋼"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%8B%BC",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "涵",
+      "zhuyin": "ㄏㄢˊ",
+      "stroke_count": 11,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "意涵"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B6%B5",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "銅",
+      "zhuyin": "ㄊㄨㄥˊ",
+      "stroke_count": 14,
+      "radical": "⾦",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "青銅"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%8A%85",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "籍",
+      "zhuyin": "ㄐㄧˊ",
+      "stroke_count": 20,
+      "radical": "⽵",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "書籍"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B1%8D",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "迭",
+      "zhuyin": "ㄉㄧㄝˊ",
+      "stroke_count": 9,
+      "radical": "⾡",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "更迭"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%BF%AD",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG6H07:01",
+      "word": "阿姨",
+      "zhuyin": "ㄚ ㄧˊ",
+      "meaning": "母親的姐妹。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H07:02",
+      "word": "雕塑",
+      "zhuyin": "ㄉㄧㄠ ㄙㄨˋ",
+      "meaning": "雕刻塑造。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H07:03",
+      "word": "拓印",
+      "zhuyin": "ㄊㄚˋ ㄧㄣˋ",
+      "meaning": "將石碑或金石器物上的文字、圖畫顯現在紙張上。課文中指將植物的紋理轉印在藝術作品上。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG6H/lesson07/vocabulary/l07-03.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H07:04",
+      "word": "蒐集",
+      "zhuyin": "ㄙㄡ ㄐㄧˊ",
+      "meaning": "蒐求聚集。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG6H/lesson07/vocabulary/l07-04.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H07:05",
+      "word": "蕨類",
+      "zhuyin": "ㄐㄩㄝˊ ㄌㄟˋ",
+      "meaning": "泛指蕨科植物。多生長於陰溼溫暖處，種類甚為繁多。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H07:06",
+      "word": "梅花鹿",
+      "zhuyin": "ㄇㄟˊ ㄏㄨㄚ ㄌㄨˋ",
+      "meaning": "動物名。夏季毛栗紅色，背有形似梅花的白斑，冬季呈棕紅黃色。分布在亞洲東南部。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H07:07",
+      "word": "佇立",
+      "zhuyin": "ㄓㄨˋ ㄌㄧˋ",
+      "meaning": "長時間站著。",
+      "example_sentence": "小鹿雕塑佇立在花草間，吸引許多人停下腳步欣賞。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG6H/lesson07/vocabulary/l07-07.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H07:08",
+      "word": "冷冽",
+      "zhuyin": "ㄌㄥˇ ㄌㄧㄝˋ",
+      "meaning": "寒冷、冰涼。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG6H/lesson07/vocabulary/l07-08.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H07:09",
+      "word": "光澤",
+      "zhuyin": "ㄍㄨㄤ ㄗㄜˊ",
+      "meaning": "物體表面所反射出來的光輝。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H07:10",
+      "word": "花團錦簇",
+      "zhuyin": "ㄏㄨㄚ ㄊㄨㄢˊ ㄐㄧㄣˇ ㄘㄨˋ",
+      "meaning": "形容五彩繽紛、繁華美麗的樣子。",
+      "example_sentence": "公園裡的花團錦簇，讓花間小鹿的作品更有生氣。",
+      "example_status": "approved",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H07:11",
+      "word": "眨眨眼",
+      "zhuyin": "ㄓㄚˇ ㄓㄚˇ ㄧㄢˇ",
+      "meaning": "眼睛迅速開合。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H07:12",
+      "word": "不鏽鋼",
+      "zhuyin": "ㄅㄨˊ ㄒㄧㄡˋ ㄍㄤ",
+      "meaning": "按比例冶煉的鋼，具耐蝕性，不易生鏽。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H07:13",
+      "word": "意涵",
+      "zhuyin": "ㄧˋ ㄏㄢˊ",
+      "meaning": "事物所包含的意義。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H07:14",
+      "word": "青銅",
+      "zhuyin": "ㄑㄧㄥ ㄊㄨㄥˊ",
+      "meaning": "以銅及錫為主要成分的合金。青灰色或灰黃色，硬度大，耐磨，抗蝕性良好，可製成飾品、銅像等。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H07:15",
+      "word": "書籍",
+      "zhuyin": "ㄕㄨ ㄐㄧˊ",
+      "meaning": "書本冊籍的總稱。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H07:16",
+      "word": "更迭",
+      "zhuyin": "ㄍㄥˋ ㄉㄧㄝˊ",
+      "meaning": "接連不斷的交替、更換。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG6H07:雕蟲小技",
+      "idiom": "雕蟲小技",
+      "definition": "比喻微不足道的技能。",
+      "related_char": "雕",
+      "image": "idioms/01_雕蟲小技.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H07:青梅竹馬",
+      "idiom": "青梅竹馬",
+      "definition": "形容從小一起長大的男女朋友。",
+      "related_char": "梅",
+      "image": "idioms/02_青梅竹馬.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H07:指鹿為馬",
+      "idiom": "指鹿為馬",
+      "definition": "比喻故意顛倒是非、混淆黑白。",
+      "related_char": "鹿",
+      "image": "idioms/03_指鹿為馬.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H07:竭澤而漁",
+      "idiom": "竭澤而漁",
+      "definition": "比喻只顧眼前利益，完全不留餘地。",
+      "related_char": "澤",
+      "image": "idioms/04_竭澤而漁.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H07:衣錦還鄉",
+      "idiom": "衣錦還鄉",
+      "definition": "比喻人在外地獲得功名或成就後回到故鄉。",
+      "related_char": "錦",
+      "image": "idioms/05_衣錦還鄉.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H07:銅牆鐵壁",
+      "idiom": "銅牆鐵壁",
+      "definition": "比喻防禦十分堅固。",
+      "related_char": "銅",
+      "image": "idioms/06_銅牆鐵壁.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG6H07:1",
+      "idiom_id": "idiom:115AG6H07:雕蟲小技",
+      "rewritten": "遇到生活中的相關情況時，可以用「雕蟲小技」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H07:2",
+      "idiom_id": "idiom:115AG6H07:青梅竹馬",
+      "rewritten": "遇到生活中的相關情況時，可以用「青梅竹馬」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H07:3",
+      "idiom_id": "idiom:115AG6H07:指鹿為馬",
+      "rewritten": "遇到生活中的相關情況時，可以用「指鹿為馬」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H07:4",
+      "idiom_id": "idiom:115AG6H07:竭澤而漁",
+      "rewritten": "遇到生活中的相關情況時，可以用「竭澤而漁」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H07:5",
+      "idiom_id": "idiom:115AG6H07:衣錦還鄉",
+      "rewritten": "遇到生活中的相關情況時，可以用「衣錦還鄉」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H07:6",
+      "idiom_id": "idiom:115AG6H07:銅牆鐵壁",
+      "rewritten": "遇到生活中的相關情況時，可以用「銅牆鐵壁」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG6H07:word:1",
+      "category": "詞語造句",
+      "head": "佇立",
+      "structure": "詞語造句",
+      "description": "長時間站立。",
+      "guide": "我在等候時，會＿＿＿＿。",
+      "examples": [
+        "小鹿雕塑佇立在花草間，吸引許多人停下腳步欣賞。"
+      ],
+      "example_parts": [
+        [
+          "小鹿雕塑",
+          "佇立在花草間",
+          "吸引許多人",
+          "停下腳步欣賞"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "路旁的導覽牌",
+          "佇立在入口處",
+          "提醒大家",
+          "先閱讀說明"
+        ]
+      ],
+      "word_bank": [
+        "排隊等待時",
+        "看著展覽說明",
+        "站在指定位置"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H07:word:2",
+      "category": "詞語造句",
+      "head": "花團錦簇",
+      "structure": "詞語造句",
+      "description": "形容五彩繽紛、十分華麗的景象。",
+      "guide": "看到花團錦簇的景象，我想＿＿＿＿。",
+      "examples": [
+        "公園裡的花團錦簇，讓花間小鹿的作品更有生氣。"
+      ],
+      "example_parts": [
+        [
+          "公園裡",
+          "花團錦簇",
+          "讓小鹿作品",
+          "更有生氣"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "春天來了",
+          "校園裡",
+          "花團錦簇",
+          "非常熱鬧"
+        ]
+      ],
+      "word_bank": [
+        "辨認小鹿作品",
+        "拍下美麗景象",
+        "保持步道整潔"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H07:pattern:1",
+      "category": "句型練習",
+      "head": "並列複句",
+      "structure": "一邊＋動作，一邊＋動作",
+      "description": "依照句型寫一句：寫出兩個同時進行的動作。",
+      "guide": "依照句型寫一句：寫出兩個同時進行的動作。",
+      "examples": [
+        "我一邊聽導覽一邊記下作品名稱",
+        "同學們一邊整理資料一邊討論展示方式",
+        "我們一邊走在步道上一邊欣賞公共藝術"
+      ],
+      "example_parts": [
+        [
+          "我",
+          "一邊聽導覽",
+          "一邊",
+          "記下作品名稱"
+        ],
+        [
+          "同學們",
+          "一邊整理資料",
+          "一邊",
+          "討論展示方式"
+        ],
+        [
+          "我們",
+          "一邊走在步道上",
+          "一邊",
+          "欣賞公共藝術"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "主角",
+          "choices": [
+            "同學們",
+            "我",
+            "我們"
+          ]
+        },
+        {
+          "label": "第一個動作",
+          "choices": [
+            "一邊聽導覽",
+            "一邊整理資料",
+            "一邊走在步道上"
+          ]
+        },
+        {
+          "label": "一邊",
+          "choices": [
+            "一邊"
+          ]
+        },
+        {
+          "label": "第二個動作",
+          "choices": [
+            "欣賞公共藝術",
+            "記下作品名稱",
+            "討論展示方式"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H07:pattern:2",
+      "category": "句型練習",
+      "head": "條件複句",
+      "structure": "若＋情況，就必須＋結果",
+      "description": "依照句型寫一句：先寫一種情況，再寫必須做到的事。",
+      "guide": "依照句型寫一句：先寫一種情況，再寫必須做到的事。",
+      "examples": [
+        "若想參觀展覽先了解規定就必須遵守場館秩序",
+        "若要完成小組作品分配工作就必須彼此合作",
+        "若發現作品受損通知老師就必須不要自行觸碰"
+      ],
+      "example_parts": [
+        [
+          "若想參觀展覽",
+          "先了解規定",
+          "就必須",
+          "遵守場館秩序"
+        ],
+        [
+          "若要完成小組作品",
+          "分配工作",
+          "就必須",
+          "彼此合作"
+        ],
+        [
+          "若發現作品受損",
+          "通知老師",
+          "就必須",
+          "不要自行觸碰"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "若",
+          "choices": [
+            "若想參觀展覽",
+            "若要完成小組作品",
+            "若發現作品受損"
+          ]
+        },
+        {
+          "label": "條件內容",
+          "choices": [
+            "先了解規定",
+            "分配工作",
+            "通知老師"
+          ]
+        },
+        {
+          "label": "就必須",
+          "choices": [
+            "就必須"
+          ]
+        },
+        {
+          "label": "結果",
+          "choices": [
+            "彼此合作",
+            "遵守場館秩序",
+            "不要自行觸碰"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H07:pattern:3",
+      "category": "句型練習",
+      "head": "並列複句",
+      "structure": "一方面＋情況，另一方面＋情況",
+      "description": "依照句型寫一句：寫出同一件事的兩個面向。",
+      "guide": "依照句型寫一句：寫出同一件事的兩個面向。",
+      "examples": [
+        "公共藝術一方面裝點街道另一方面帶來認識在地文化的機會",
+        "小組合作一方面分工完成任務另一方面學習彼此溝通",
+        "閱讀導覽資料一方面了解作品背景另一方面準備提問問題"
+      ],
+      "example_parts": [
+        [
+          "公共藝術",
+          "一方面裝點街道",
+          "另一方面",
+          "帶來認識在地文化的機會"
+        ],
+        [
+          "小組合作",
+          "一方面分工完成任務",
+          "另一方面",
+          "學習彼此溝通"
+        ],
+        [
+          "閱讀導覽資料",
+          "一方面了解作品背景",
+          "另一方面",
+          "準備提問問題"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "主題",
+          "choices": [
+            "公共藝術",
+            "小組合作",
+            "閱讀導覽資料"
+          ]
+        },
+        {
+          "label": "第一個面向",
+          "choices": [
+            "一方面裝點街道",
+            "一方面分工完成任務",
+            "一方面了解作品背景"
+          ]
+        },
+        {
+          "label": "另一方面",
+          "choices": [
+            "另一方面"
+          ]
+        },
+        {
+          "label": "第二個面向",
+          "choices": [
+            "學習彼此溝通",
+            "準備提問問題",
+            "帶來認識在地文化的機會"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:07:01",
+      "paragraph_no": 1,
+      "summary": "阿姨分享在公共藝術作品「大地之書」的製作經驗，讓家人決定規畫一趟公共藝術之旅。",
+      "structure_role": "【第1～2段】旅行的起點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:07:02",
+      "paragraph_no": 2,
+      "summary": "同事們蒐集蕨類和臺灣原生植物，用拓印把葉脈紋路轉化成作品的一部分。",
+      "structure_role": "【第3～5段】看見公共藝術",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:07:03",
+      "paragraph_no": 3,
+      "summary": "作者在公園看見「花間小鹿」，小鹿佇立在花草間，不鏽鋼表面帶著冷冽的光澤。",
+      "structure_role": "【第6～8段】藝術走進生活",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:07:04",
+      "paragraph_no": 4,
+      "summary": "另一件鏡面作品「分合隨緣」會映照周遭景物，隨觀看位置和光線變化呈現不同樣貌。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:07:05",
+      "paragraph_no": 5,
+      "summary": "公共藝術設置在生活空間，主題多元，有些作品還能讓人參與、互動與思考。",
+      "structure_role": "第5段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:07:06",
+      "paragraph_no": 6,
+      "summary": "作者恍然大悟：藝術不只在美術館，也能結合在地文化，走進人們每天經過的地方。",
+      "structure_role": "第6段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "main_idea": {
+    "gist": "作者跟著家人走訪公共藝術，從拓印、大地之書、花間小鹿和鏡面作品中，發現公共藝術結合在地文化，並讓藝術走進人們的生活。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:07:01",
+      "stem": "阿姨參與哪一件作品的製作？",
+      "options": [
+        "大地之書 (2)分合隨緣"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:07:02",
+      "stem": "「花間小鹿」的特色是什麼？",
+      "options": [
+        "結合小鹿、花草和在地文化 (2)只能在美術館看到"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:07:03",
+      "stem": "鏡面作品為什麼會呈現不同樣貌？",
+      "options": [
+        "會映照周遭景物、隨角度改變 (2)每天有人重新上色"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:07:04",
+      "stem": "作者最後明白了什麼？",
+      "options": [
+        "公共藝術能走進生活 (2)藝術只能由專家欣賞"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG6H07:姨:1",
+      "char": "姨",
+      "sentence": "語詞「姨媽」中的「姨」，就是指稱母親的姐妹。",
+      "definition": "稱母親的姐妹",
+      "options": [
+        "稱母親的姐妹",
+        "稱妻子的姐妹"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H07:姨:2",
+      "char": "姨",
+      "sentence": "語詞「小姨子」中的「姨」，就是指稱妻子的姐妹。",
+      "definition": "稱妻子的姐妹",
+      "options": [
+        "稱母親的姐妹",
+        "稱妻子的姐妹"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H07:雕:1",
+      "char": "雕",
+      "sentence": "語詞「雕塑」中的「雕」，就是指刻鏤。",
+      "definition": "刻鏤",
+      "options": [
+        "刻鏤",
+        "雕刻的技術或成品",
+        "經刻鏤或彩畫裝飾的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H07:雕:2",
+      "char": "雕",
+      "sentence": "語詞「竹雕」中的「雕」，就是指雕刻的技術或成品。",
+      "definition": "雕刻的技術或成品",
+      "options": [
+        "刻鏤",
+        "雕刻的技術或成品",
+        "經刻鏤或彩畫裝飾的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H07:雕:3",
+      "char": "雕",
+      "sentence": "語詞「雕欄玉砌」中的「雕」，就是指經刻鏤或彩畫裝飾的。",
+      "definition": "經刻鏤或彩畫裝飾的",
+      "options": [
+        "刻鏤",
+        "雕刻的技術或成品",
+        "經刻鏤或彩畫裝飾的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H07:梅:1",
+      "char": "梅",
+      "sentence": "語詞「寒梅」中的「梅」，就是指植物名。薔薇科櫻屬，落葉喬木。性耐寒，早春開紅或白花，花五瓣。果實亦稱為「梅」，味酸，可食。",
+      "definition": "植物名。薔薇科櫻屬，落葉喬木。性耐寒，早春開紅或白花，花五瓣。果實亦稱為「梅」，味酸，可食",
+      "options": [
+        "植物名。薔薇科櫻屬，落葉喬木。性耐寒，早春開紅或白花，花五瓣。果實亦稱為「梅」，味酸，可食",
+        "姓"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H07:梅:2",
+      "char": "梅",
+      "sentence": "語詞「梅先生」中的「梅」，就是指姓。",
+      "definition": "姓",
+      "options": [
+        "植物名。薔薇科櫻屬，落葉喬木。性耐寒，早春開紅或白花，花五瓣。果實亦稱為「梅」，味酸，可食",
+        "姓"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H07:澤:1",
+      "char": "澤",
+      "sentence": "語詞「光澤」中的「澤」，就是指光彩。",
+      "definition": "光彩",
+      "options": [
+        "光彩",
+        "水流匯聚的地方",
+        "恩惠"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H07:澤:2",
+      "char": "澤",
+      "sentence": "語詞「沼澤」中的「澤」，就是指水流匯聚的地方。",
+      "definition": "水流匯聚的地方",
+      "options": [
+        "光彩",
+        "水流匯聚的地方",
+        "恩惠"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H07:澤:3",
+      "char": "澤",
+      "sentence": "語詞「恩澤」中的「澤」，就是指恩惠。",
+      "definition": "恩惠",
+      "options": [
+        "光彩",
+        "水流匯聚的地方",
+        "恩惠"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H07:錦:1",
+      "char": "錦",
+      "sentence": "語詞「錦霞」中的「錦」，就是指色彩鮮明美麗的。",
+      "definition": "色彩鮮明美麗的",
+      "options": [
+        "色彩鮮明美麗的",
+        "一種色彩鮮豔、有花紋圖案的絲織品"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H07:錦:2",
+      "char": "錦",
+      "sentence": "語詞「錦緞」中的「錦」，就是指一種色彩鮮豔、有花紋圖案的絲織品。",
+      "definition": "一種色彩鮮豔、有花紋圖案的絲織品",
+      "options": [
+        "色彩鮮明美麗的",
+        "一種色彩鮮豔、有花紋圖案的絲織品"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H07:籍:1",
+      "char": "籍",
+      "sentence": "語詞「經籍」中的「籍」，就是指書本。",
+      "definition": "書本",
+      "options": [
+        "書本",
+        "登記以備查考用的名冊、檔案",
+        "姓氏或血統的來源地",
+        "個人對國家、團體、組織等的隸屬關係"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H07:籍:2",
+      "char": "籍",
+      "sentence": "語詞「戶籍」中的「籍」，就是指登記以備查考用的名冊、檔案。",
+      "definition": "登記以備查考用的名冊、檔案",
+      "options": [
+        "書本",
+        "登記以備查考用的名冊、檔案",
+        "姓氏或血統的來源地",
+        "個人對國家、團體、組織等的隸屬關係"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H07:籍:3",
+      "char": "籍",
+      "sentence": "語詞「本籍」中的「籍」，就是指姓氏或血統的來源地。",
+      "definition": "姓氏或血統的來源地",
+      "options": [
+        "書本",
+        "登記以備查考用的名冊、檔案",
+        "姓氏或血統的來源地",
+        "個人對國家、團體、組織等的隸屬關係"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H07:籍:4",
+      "char": "籍",
+      "sentence": "語詞「國籍」中的「籍」，就是指個人對國家、團體、組織等的隸屬關係。",
+      "definition": "個人對國家、團體、組織等的隸屬關係",
+      "options": [
+        "書本",
+        "登記以備查考用的名冊、檔案",
+        "姓氏或血統的來源地",
+        "個人對國家、團體、組織等的隸屬關係"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H07:迭:1",
+      "char": "迭",
+      "sentence": "語詞「更迭」中的「迭」，就是指輪流、更替。",
+      "definition": "輪流、更替",
+      "options": [
+        "輪流、更替",
+        "停止",
+        "屢次、接連"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H07:迭:2",
+      "char": "迭",
+      "sentence": "語詞「忙不迭」中的「迭」，就是指停止。",
+      "definition": "停止",
+      "options": [
+        "輪流、更替",
+        "停止",
+        "屢次、接連"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H07:迭:3",
+      "char": "迭",
+      "sentence": "語詞「高潮迭起」中的「迭」，就是指屢次、接連。",
+      "definition": "屢次、接連",
+      "options": [
+        "輪流、更替",
+        "停止",
+        "屢次、接連"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    }
+  ],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG6H07:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "拓",
+          "example": "拓印、拓本"
+        },
+        {
+          "char": "踏",
+          "example": "踏步、踏青"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H07:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "梅",
+          "example": "梅花、梅雨"
+        },
+        {
+          "char": "後",
+          "example": "後悔、悔改"
+        },
+        {
+          "char": "欺",
+          "example": "欺侮、侮辱"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H07:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "佇",
+          "example": "佇立、佇候"
+        },
+        {
+          "char": "貯",
+          "example": "貯存、貯水"
+        },
+        {
+          "char": "儲",
+          "example": "儲蓄、儲存"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H07:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "冷",
+          "example": "冷冽、凜冽"
+        },
+        {
+          "char": "範",
+          "example": "範例、例子"
+        },
+        {
+          "char": "強",
+          "example": "強烈、濃烈"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H07:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "光",
+          "example": "光澤、色澤"
+        },
+        {
+          "char": "選",
+          "example": "選擇、擇一"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H07:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "鐵",
+          "example": "鐵鏽、防鏽"
+        },
+        {
+          "char": "刺",
+          "example": "刺繡、繡花"
+        },
+        {
+          "char": "呼",
+          "example": "呼嘯、海嘯"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H07:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "鋼",
+          "example": "鋼筆、鋼琴"
+        },
+        {
+          "char": "剛",
+          "example": "剛才、剛好"
+        },
+        {
+          "char": "大",
+          "example": "大綱、綱要"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG6H07:1",
+      "stem": "阿姨參與哪一件作品的製作？",
+      "question": "阿姨參與哪一件作品的製作？",
+      "options": [
+        "大地之書 (2)分合隨緣"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H07:2",
+      "stem": "「花間小鹿」的特色是什麼？",
+      "question": "「花間小鹿」的特色是什麼？",
+      "options": [
+        "結合小鹿、花草和在地文化 (2)只能在美術館看到"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H07:3",
+      "stem": "鏡面作品為什麼會呈現不同樣貌？",
+      "question": "鏡面作品為什麼會呈現不同樣貌？",
+      "options": [
+        "會映照周遭景物、隨角度改變 (2)每天有人重新上色"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H07:4",
+      "stem": "作者最後明白了什麼？",
+      "question": "作者最後明白了什麼？",
+      "options": [
+        "公共藝術能走進生活 (2)藝術只能由專家欣賞"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    }
+  ],
+  "review_words": {},
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag6h-07",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E5%A7%A8%E9%9B%95%E6%8B%93%E8%92%90%E8%95%A8%E6%A2%85%E9%B9%BF%E4%BD%87%E5%86%BD%E6%BE%A4%E9%8C%A6%E7%9C%A8%E9%8F%BD%E9%8B%BC%E6%B6%B5%E9%8A%85%E7%B1%8D%E8%BF%AD",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・六年級・第7課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「姨」的部首是哪一個？",
+      "options": [
+        "⼿",
+        "⼈",
+        "⿅"
+      ],
+      "answer": "⼥",
+      "explanation": "「姨」的部首是⼥。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「雕」的部首是哪一個？",
+      "options": [
+        "⼈",
+        "⽵",
+        "⾦"
+      ],
+      "answer": "⾫",
+      "explanation": "「雕」的部首是⾫。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「拓」的部首是哪一個？",
+      "options": [
+        "⽔",
+        "⼥",
+        "⽵"
+      ],
+      "answer": "⼿",
+      "explanation": "「拓」的部首是⼿。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「阿姨」是什麼意思？",
+      "options": [
+        "寒冷、冰涼。",
+        "母親的姐妹。",
+        "事物所包含的意義。"
+      ],
+      "answer": "母親的姐妹。",
+      "explanation": "阿姨：母親的姐妹。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「雕塑」是什麼意思？",
+      "options": [
+        "母親的姐妹。",
+        "按比例冶煉的鋼，具耐蝕性，不易生鏽。",
+        "將石碑或金石器物上的文字、圖畫顯現在紙張上。課文中指將植物的紋理轉印在藝術作品上。"
+      ],
+      "answer": "雕刻塑造。",
+      "explanation": "雕塑：雕刻塑造。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「拓印」是什麼意思？",
+      "options": [
+        "雕刻塑造。",
+        "以銅及錫為主要成分的合金。青灰色或灰黃色，硬度大，耐磨，抗蝕性良好，可製成飾品、銅像等。",
+        "將石碑或金石器物上的文字、圖畫顯現在紙張上。課文中指將植物的紋理轉印在藝術作品上。"
+      ],
+      "answer": "將石碑或金石器物上的文字、圖畫顯現在紙張上。課文中指將植物的紋理轉印在藝術作品上。",
+      "explanation": "拓印：將石碑或金石器物上的文字、圖畫顯現在紙張上。課文中指將植物的紋理轉印在藝術作品上。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「蒐集」是什麼意思？",
+      "options": [
+        "母親的姐妹。",
+        "書本冊籍的總稱。",
+        "雕刻塑造。"
+      ],
+      "answer": "蒐求聚集。",
+      "explanation": "蒐集：蒐求聚集。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「蕨類」是什麼意思？",
+      "options": [
+        "物體表面所反射出來的光輝。",
+        "母親的姐妹。",
+        "泛指蕨科植物。多生長於陰溼溫暖處，種類甚為繁多。"
+      ],
+      "answer": "泛指蕨科植物。多生長於陰溼溫暖處，種類甚為繁多。",
+      "explanation": "蕨類：泛指蕨科植物。多生長於陰溼溫暖處，種類甚為繁多。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "段落摘要已整理；課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "教材待補：應用任務設計中"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "聆聽題目保留待教師確認答案，未在正式模組顯示。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭教材尚未完成公開資料整理。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "跨課複習資料待補。"
+    }
+  }
+}

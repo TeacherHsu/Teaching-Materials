@@ -1,0 +1,1989 @@
+{
+  "lesson_id": "115AG6H04",
+  "volume": {
+    "code": "115AG6H",
+    "publisher": "翰林",
+    "grade": 6,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "六上國語課程"
+  },
+  "lesson_no": 4,
+  "title": "向大自然學習",
+  "author": "",
+  "blurb": "透過〈向大自然學習〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "characters": [
+    {
+      "char": "鰭",
+      "zhuyin": "ㄑㄧˊ",
+      "stroke_count": 21,
+      "radical": "⿂",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "鰭"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%B0%AD",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "奧",
+      "zhuyin": "ㄠˋ",
+      "stroke_count": 13,
+      "radical": "⼤",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "奧妙"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A5%A7",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "仿",
+      "zhuyin": "ㄈㄤˇ",
+      "stroke_count": 6,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "仿生學"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BB%BF",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "迫",
+      "zhuyin": "ㄆㄛˋ",
+      "stroke_count": 8,
+      "radical": "⾡",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "從容不迫"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%BF%AB",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "蚊",
+      "zhuyin": "ㄨㄣˊ",
+      "stroke_count": 10,
+      "radical": "⾍",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%9A%8A",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "叮",
+      "zhuyin": "ㄉㄧㄥ",
+      "stroke_count": 5,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "叮"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8F%AE",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "膚",
+      "zhuyin": "ㄈㄨ",
+      "stroke_count": 15,
+      "radical": "⾁",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%86%9A",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "組",
+      "zhuyin": "ㄗㄨˇ",
+      "stroke_count": 11,
+      "radical": "⽷",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "組成"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B5%84",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "鋸",
+      "zhuyin": "ㄐㄩˋ",
+      "stroke_count": 16,
+      "radical": "⾦",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "鋸齒"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%8B%B8",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "擴",
+      "zhuyin": "ㄎㄨㄛˋ",
+      "stroke_count": 17,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "擴張"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%93%B4",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "液",
+      "zhuyin": "ㄧㄝˋ",
+      "stroke_count": 11,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B6%B2",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "蓮",
+      "zhuyin": "ㄌㄧㄢˊ",
+      "stroke_count": 13,
+      "radical": "⾋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%93%AE",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "奈",
+      "zhuyin": "ㄋㄞˋ",
+      "stroke_count": 8,
+      "radical": "⼤",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "奈米"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A5%88",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "構",
+      "zhuyin": "ㄍㄡˋ",
+      "stroke_count": 14,
+      "radical": "⽊",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "結構"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%A7%8B",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "藉",
+      "zhuyin": "ㄐㄧˊ",
+      "stroke_count": 17,
+      "radical": "⾋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "藉"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%97%89",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "霸",
+      "zhuyin": "ㄅㄚˋ",
+      "stroke_count": 21,
+      "radical": "⾬",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "巨無霸"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%9C%B8",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "翹",
+      "zhuyin": "ㄑㄧㄠˋ",
+      "stroke_count": 18,
+      "radical": "⽻",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "翹"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%BF%B9",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "垂",
+      "zhuyin": "ㄔㄨㄟˊ",
+      "stroke_count": 8,
+      "radical": "⼟",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "垂直"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%9E%82",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG6H04:01",
+      "word": "鰭",
+      "zhuyin": "ㄑㄧˊ",
+      "meaning": "水生脊椎動物的游泳器官。有調節速度、變換方向及保護身體的功用。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H04:02",
+      "word": "奧妙",
+      "zhuyin": "ㄠˋ ㄇㄧㄠˋ",
+      "meaning": "深奧奇妙。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H04:03",
+      "word": "仿生學",
+      "zhuyin": "ㄈㄤˇ ㄕㄥ ㄒㄩㄝˊ",
+      "meaning": "是一門模仿生物原理，並創造新科技的學問。通過了解生物功能、結構等，研發新的科技或解決生活難題。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H04:04",
+      "word": "從容不迫",
+      "zhuyin": "ㄘㄨㄥˊ ㄖㄨㄥˊ ㄅㄨˊ ㄆㄛˋ",
+      "meaning": "沉著、不慌張。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H04:05",
+      "word": "叮",
+      "zhuyin": "ㄉㄧㄥ",
+      "meaning": "蚊子、蜜蜂等昆蟲刺傷人畜。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H04:06",
+      "word": "組成",
+      "zhuyin": "ㄗㄨˇ ㄔㄥˊ",
+      "meaning": "組織個體成為整體。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H04:07",
+      "word": "鋸齒",
+      "zhuyin": "ㄐㄩˋ ㄔˇ",
+      "meaning": "像鋸子一般的銳齒。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H04:08",
+      "word": "擴張",
+      "zhuyin": "ㄎㄨㄛˋ ㄓㄤ",
+      "meaning": "擴大伸張。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H04:09",
+      "word": "奈米",
+      "zhuyin": "ㄋㄞˋ ㄇㄧˇ",
+      "meaning": "量詞。表示長度的單位。一奈米等於千分之一微米。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H04:10",
+      "word": "結構",
+      "zhuyin": "ㄐㄧㄝˊ ㄍㄡˋ",
+      "meaning": "各組織成分的搭配、排列或構造。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H04:11",
+      "word": "藉",
+      "zhuyin": "ㄐㄧˊ",
+      "meaning": "依賴。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H04:12",
+      "word": "巨無霸",
+      "zhuyin": "ㄐㄩˋ ㄨˊ ㄅㄚˋ",
+      "meaning": "形容體積高大的人或物。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H04:13",
+      "word": "翹",
+      "zhuyin": "ㄑㄧㄠˋ",
+      "meaning": "物體突起或高起。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H04:14",
+      "word": "垂直",
+      "zhuyin": "ㄔㄨㄟˊ ㄓˊ",
+      "meaning": "數學上指兩條直線、兩個平面或一直線與一平面以直角相交。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG6H04:探奧索隱",
+      "idiom": "探奧索隱",
+      "definition": "探索玄妙隱微的事理。",
+      "related_char": "奧",
+      "image": "idioms/01_探奧索隱.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H04:迫不及待",
+      "idiom": "迫不及待",
+      "definition": "情況急迫，不能再等。",
+      "related_char": "迫",
+      "image": "idioms/02_迫不及待.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H04:千叮萬囑",
+      "idiom": "千叮萬囑",
+      "definition": "一再叮嚀囑咐。",
+      "related_char": "叮",
+      "image": "idioms/03_千叮萬囑.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H04:切膚之痛",
+      "idiom": "切膚之痛",
+      "definition": "比喻極為深刻難忘的感受與經驗。",
+      "related_char": "膚",
+      "image": "idioms/04_切膚之痛.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H04:玉液瓊漿",
+      "idiom": "玉液瓊漿",
+      "definition": "比喻香醇的美酒。",
+      "related_char": "液",
+      "image": "idioms/05_玉液瓊漿.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H04:無可奈何",
+      "idiom": "無可奈何",
+      "definition": "毫無辦法或沒有辦法可想。",
+      "related_char": "奈",
+      "image": "idioms/06_無可奈何.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H04:一箭雙鵰",
+      "idiom": "一箭雙鵰",
+      "definition": "一次舉動，同時達成兩個目標。",
+      "related_char": "箭",
+      "image": "idioms/07_一箭雙鵰.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H04:橫行霸道",
+      "idiom": "橫行霸道",
+      "definition": "形容倚仗權勢，為非作歹。",
+      "related_char": "霸",
+      "image": "idioms/08_橫行霸道.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H04:垂涎三尺",
+      "idiom": "垂涎三尺",
+      "definition": "形容非常貪饞，也比喻極想據為己有。",
+      "related_char": "垂",
+      "image": "idioms/09_垂涎三尺.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG6H04:1",
+      "idiom_id": "idiom:115AG6H04:探奧索隱",
+      "rewritten": "遇到生活中的相關情況時，可以用「探奧索隱」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H04:2",
+      "idiom_id": "idiom:115AG6H04:迫不及待",
+      "rewritten": "遇到生活中的相關情況時，可以用「迫不及待」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H04:3",
+      "idiom_id": "idiom:115AG6H04:千叮萬囑",
+      "rewritten": "遇到生活中的相關情況時，可以用「千叮萬囑」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H04:4",
+      "idiom_id": "idiom:115AG6H04:切膚之痛",
+      "rewritten": "遇到生活中的相關情況時，可以用「切膚之痛」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H04:5",
+      "idiom_id": "idiom:115AG6H04:玉液瓊漿",
+      "rewritten": "遇到生活中的相關情況時，可以用「玉液瓊漿」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H04:6",
+      "idiom_id": "idiom:115AG6H04:無可奈何",
+      "rewritten": "遇到生活中的相關情況時，可以用「無可奈何」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H04:7",
+      "idiom_id": "idiom:115AG6H04:一箭雙鵰",
+      "rewritten": "遇到生活中的相關情況時，可以用「一箭雙鵰」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H04:8",
+      "idiom_id": "idiom:115AG6H04:橫行霸道",
+      "rewritten": "遇到生活中的相關情況時，可以用「橫行霸道」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H04:9",
+      "idiom_id": "idiom:115AG6H04:垂涎三尺",
+      "rewritten": "遇到生活中的相關情況時，可以用「垂涎三尺」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG6H04:word:1",
+      "category": "詞語造句",
+      "head": "原理",
+      "structure": "詞語造句",
+      "description": "事物運作的基本道理。",
+      "guide": "我想先＿＿＿＿，了解這個現象的原理。",
+      "examples": [
+        "了解原理後，才能正確使用這項裝置。"
+      ],
+      "example_parts": [
+        [
+          "了解原理後",
+          "才能",
+          "正確使用",
+          "這項裝置"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "先了解",
+          "植物生長的",
+          "原理",
+          "再照顧它"
+        ]
+      ],
+      "word_bank": [
+        "閱讀說明",
+        "請教老師",
+        "動手觀察"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H04:word:2",
+      "category": "詞語造句",
+      "head": "翱翔",
+      "structure": "詞語造句",
+      "description": "在天空中盤旋飛翔。",
+      "guide": "看到鳥兒在天空翱翔，我會＿＿＿＿。",
+      "examples": [
+        "老鷹張開翅膀，在天空自在翱翔。"
+      ],
+      "example_parts": [
+        [
+          "老鷹",
+          "張開翅膀",
+          "在天空",
+          "自在翱翔"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "海邊",
+          "一群海鳥",
+          "迎著風",
+          "翱翔"
+        ]
+      ],
+      "word_bank": [
+        "抬頭觀看",
+        "畫下來",
+        "安靜觀察"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H04:pattern:1",
+      "category": "句型練習",
+      "head": "說明原因和結果",
+      "structure": "因為＋原因，所以＋結果",
+      "description": "依照句型寫一句：先說原因，再說結果。",
+      "guide": "依照句型寫一句：先說原因，再說結果。",
+      "examples": [
+        "因為先做實驗所以發現新的方法",
+        "因為先做實驗所以了解結果",
+        "因為認真記錄所以找到答案"
+      ],
+      "example_parts": [
+        [
+          "因為",
+          "先做實驗",
+          "所以",
+          "發現新的方法"
+        ],
+        [
+          "因為",
+          "先做實驗",
+          "所以",
+          "了解結果"
+        ],
+        [
+          "因為",
+          "認真記錄",
+          "所以",
+          "找到答案"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "因為",
+          "choices": [
+            "因為"
+          ]
+        },
+        {
+          "label": "原因",
+          "choices": [
+            "天氣變冷",
+            "認真練習",
+            "主動請教"
+          ]
+        },
+        {
+          "label": "所以",
+          "choices": [
+            "所以"
+          ]
+        },
+        {
+          "label": "結果",
+          "choices": [
+            "穿上外套",
+            "表現更好",
+            "解決問題"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H04:pattern:2",
+      "category": "句型練習",
+      "head": "提出可能情況",
+      "structure": "若是＋情況，也許＋可能結果",
+      "description": "依照句型寫一句：先假設一種情況，再寫可能的結果。",
+      "guide": "依照句型寫一句：先假設一種情況，再寫可能的結果。",
+      "examples": [
+        "若是每天練習也許會更有信心",
+        "若是多問問題也許能找到答案",
+        "若是多做觀察也許會有新發現"
+      ],
+      "example_parts": [
+        [
+          "若是",
+          "每天練習",
+          "也許",
+          "會更有信心"
+        ],
+        [
+          "若是",
+          "多問問題",
+          "也許",
+          "能找到答案"
+        ],
+        [
+          "若是",
+          "多做觀察",
+          "也許",
+          "會有新發現"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "若是",
+          "choices": [
+            "若是"
+          ]
+        },
+        {
+          "label": "情況",
+          "choices": [
+            "認真閱讀",
+            "勇敢嘗試",
+            "多做觀察"
+          ]
+        },
+        {
+          "label": "也許",
+          "choices": [
+            "也許"
+          ]
+        },
+        {
+          "label": "結果",
+          "choices": [
+            "會有新發現",
+            "能解決困難",
+            "更了解自己"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:04:01",
+      "paragraph_no": 1,
+      "summary": "人們觀察大自然的構造與現象，從中得到解決問題的靈感。",
+      "structure_role": "【第一大意】自然啟發設計",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:04:02",
+      "paragraph_no": 2,
+      "summary": "仿生學就是模仿生物的特徵，設計出更方便或更有效的物品。",
+      "structure_role": "【第二大意】三個仿生例子",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:04:03",
+      "paragraph_no": 3,
+      "summary": "蚊子的口器有鋸齒狀構造，啟發科學家設計較不痛的針頭。",
+      "structure_role": "【第三大意】善用自然智慧",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:04:04",
+      "paragraph_no": 4,
+      "summary": "蓮葉表面的奈米結構能讓水珠滾落，啟發抗汙材料的設計。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:04:05",
+      "paragraph_no": 5,
+      "summary": "老鷹翅膀末端的羽毛能減少阻力，啟發飛機翼端的設計。",
+      "structure_role": "第5段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:04:06",
+      "paragraph_no": 6,
+      "summary": "只要仔細觀察與學習，大自然的智慧能讓生活更進步。",
+      "structure_role": "第6段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "main_idea": {
+    "gist": "本文以蚊子、蓮葉與老鷹為例，說明人類如何從自然構造得到設計靈感。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:04:01",
+      "stem": "本文主要介紹什麼？",
+      "options": [
+        "自然啟發人類的設計 (2)如何飼養動物"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:04:02",
+      "stem": "蓮葉的構造啟發什麼設計？",
+      "options": [
+        "抗汙材料 (2)更亮的燈泡"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:04:03",
+      "stem": "老鷹翅膀末端的設計有什麼作用？",
+      "options": [
+        "減少飛行阻力 (2)讓翅膀變重"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:04:04",
+      "stem": "作者想提醒讀者什麼？",
+      "options": [
+        "仔細觀察自然並學習其中智慧 (2)不要接近大自然"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG6H04:奧:1",
+      "char": "奧",
+      "sentence": "語詞「深奧」中的「奧」，就是指幽深、神祕。",
+      "definition": "幽深、神祕",
+      "options": [
+        "幽深、神祕",
+        "奧地利的簡稱"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:奧:2",
+      "char": "奧",
+      "sentence": "語詞「他赴奧深造」中的「奧」，就是指奧地利的簡稱。",
+      "definition": "奧地利的簡稱",
+      "options": [
+        "幽深、神祕",
+        "奧地利的簡稱"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:仿:1",
+      "char": "仿",
+      "sentence": "語詞「仿照」中的「仿」，就是指依樣加以模擬、學習。",
+      "definition": "依樣加以模擬、學習",
+      "options": [
+        "依樣加以模擬、學習",
+        "似、像"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:仿:2",
+      "char": "仿",
+      "sentence": "語詞「他倆年紀相仿」中的「仿」，就是指似、像。",
+      "definition": "似、像",
+      "options": [
+        "依樣加以模擬、學習",
+        "似、像"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:迫:1",
+      "char": "迫",
+      "sentence": "語詞「迫不及待」中的「迫」，就是指危急、緊急。",
+      "definition": "危急、緊急",
+      "options": [
+        "危急、緊急",
+        "接近",
+        "強逼",
+        "摧殘、殘害",
+        "催促"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:迫:2",
+      "char": "迫",
+      "sentence": "語詞「迫近」中的「迫」，就是指接近。",
+      "definition": "接近",
+      "options": [
+        "危急、緊急",
+        "接近",
+        "強逼",
+        "摧殘、殘害",
+        "催促"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:迫:3",
+      "char": "迫",
+      "sentence": "語詞「強迫」中的「迫」，就是指強逼。",
+      "definition": "強逼",
+      "options": [
+        "危急、緊急",
+        "接近",
+        "強逼",
+        "摧殘、殘害",
+        "催促"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:迫:4",
+      "char": "迫",
+      "sentence": "語詞「迫害」中的「迫」，就是指摧殘、殘害。",
+      "definition": "摧殘、殘害",
+      "options": [
+        "危急、緊急",
+        "接近",
+        "強逼",
+        "摧殘、殘害",
+        "催促"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:迫:5",
+      "char": "迫",
+      "sentence": "語詞「催迫」中的「迫」，就是指催促。",
+      "definition": "催促",
+      "options": [
+        "危急、緊急",
+        "接近",
+        "強逼",
+        "摧殘、殘害",
+        "催促"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:叮:1",
+      "char": "叮",
+      "sentence": "語詞「蚊子叮」中的「叮」，就是指蚊子、蜜蜂等昆蟲用尾針刺傷人畜。",
+      "definition": "蚊子、蜜蜂等昆蟲用尾針刺傷人畜",
+      "options": [
+        "蚊子、蜜蜂等昆蟲用尾針刺傷人畜",
+        "吩咐"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:叮:2",
+      "char": "叮",
+      "sentence": "語詞「叮嚀」中的「叮」，就是指吩咐。",
+      "definition": "吩咐",
+      "options": [
+        "蚊子、蜜蜂等昆蟲用尾針刺傷人畜",
+        "吩咐"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:膚:1",
+      "char": "膚",
+      "sentence": "語詞「皮膚」中的「膚」，就是指身體的表皮。",
+      "definition": "身體的表皮",
+      "options": [
+        "身體的表皮",
+        "表面的、浮淺的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:膚:2",
+      "char": "膚",
+      "sentence": "語詞「膚淺」中的「膚」，就是指表面的、浮淺的。",
+      "definition": "表面的、浮淺的",
+      "options": [
+        "身體的表皮",
+        "表面的、浮淺的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:組:1",
+      "char": "組",
+      "sentence": "語詞「組隊」中的「組」，就是指構成、組織。",
+      "definition": "構成、組織",
+      "options": [
+        "構成、組織",
+        "機關社團中因一定目的和需要合成的單位",
+        "事物性質相同或相近而分的類別",
+        "量詞。計算成套的物品或人事編制的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:組:2",
+      "char": "組",
+      "sentence": "語詞「宣傳組」中的「組」，就是指機關社團中因一定目的和需要合成的單位。",
+      "definition": "機關社團中因一定目的和需要合成的單位",
+      "options": [
+        "構成、組織",
+        "機關社團中因一定目的和需要合成的單位",
+        "事物性質相同或相近而分的類別",
+        "量詞。計算成套的物品或人事編制的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:組:3",
+      "char": "組",
+      "sentence": "語詞「自然組」中的「組」，就是指事物性質相同或相近而分的類別。",
+      "definition": "事物性質相同或相近而分的類別",
+      "options": [
+        "構成、組織",
+        "機關社團中因一定目的和需要合成的單位",
+        "事物性質相同或相近而分的類別",
+        "量詞。計算成套的物品或人事編制的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:組:4",
+      "char": "組",
+      "sentence": "語詞「這項遊戲分兩組進行」中的「組」，就是指量詞。計算成套的物品或人事編制的單位。",
+      "definition": "量詞。計算成套的物品或人事編制的單位",
+      "options": [
+        "構成、組織",
+        "機關社團中因一定目的和需要合成的單位",
+        "事物性質相同或相近而分的類別",
+        "量詞。計算成套的物品或人事編制的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:鋸:1",
+      "char": "鋸",
+      "sentence": "語詞「電鋸」中的「鋸」，就是指以薄金屬片製成，邊緣有高低尖齒，用來將固體材料截斷的工具。",
+      "definition": "以薄金屬片製成，邊緣有高低尖齒，用來將固體材料截斷的工具",
+      "options": [
+        "以薄金屬片製成，邊緣有高低尖齒，用來將固體材料截斷的工具",
+        "截斷"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:鋸:2",
+      "char": "鋸",
+      "sentence": "語詞「鋸斷」中的「鋸」，就是指截斷。",
+      "definition": "截斷",
+      "options": [
+        "以薄金屬片製成，邊緣有高低尖齒，用來將固體材料截斷的工具",
+        "截斷"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:奈:1",
+      "char": "奈",
+      "sentence": "語詞「奈何」中的「奈」，就是指如。",
+      "definition": "如",
+      "options": [
+        "如",
+        "無奈"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:奈:2",
+      "char": "奈",
+      "sentence": "語詞「無奈」中的「奈」，就是指無奈。",
+      "definition": "無奈",
+      "options": [
+        "如",
+        "無奈"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:構:1",
+      "char": "構",
+      "sentence": "語詞「結構」中的「構」，就是指組織。",
+      "definition": "組織",
+      "options": [
+        "組織",
+        "建築物",
+        "搭蓋、建築",
+        "策劃、創設"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:構:2",
+      "char": "構",
+      "sentence": "語詞「華構」中的「構」，就是指建築物。",
+      "definition": "建築物",
+      "options": [
+        "組織",
+        "建築物",
+        "搭蓋、建築",
+        "策劃、創設"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:構:3",
+      "char": "構",
+      "sentence": "語詞「構築」中的「構」，就是指搭蓋、建築。",
+      "definition": "搭蓋、建築",
+      "options": [
+        "組織",
+        "建築物",
+        "搭蓋、建築",
+        "策劃、創設"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:構:4",
+      "char": "構",
+      "sentence": "語詞「構思」中的「構」，就是指策劃、創設。",
+      "definition": "策劃、創設",
+      "options": [
+        "組織",
+        "建築物",
+        "搭蓋、建築",
+        "策劃、創設"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:藉:1",
+      "char": "藉",
+      "sentence": "語詞「憑藉」中的「藉」，就是指依賴。",
+      "definition": "依賴",
+      "options": [
+        "依賴",
+        "假託"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:藉:2",
+      "char": "藉",
+      "sentence": "語詞「藉口」中的「藉」，就是指假託。",
+      "definition": "假託",
+      "options": [
+        "依賴",
+        "假託"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:霸:1",
+      "char": "霸",
+      "sentence": "語詞「惡霸」中的「霸」，就是指在地方上為非作歹、作惡稱雄的人。",
+      "definition": "在地方上為非作歹、作惡稱雄的人",
+      "options": [
+        "在地方上為非作歹、作惡稱雄的人",
+        "把持、操控",
+        "強橫無理"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:霸:2",
+      "char": "霸",
+      "sentence": "語詞「獨霸一方」中的「霸」，就是指把持、操控。",
+      "definition": "把持、操控",
+      "options": [
+        "在地方上為非作歹、作惡稱雄的人",
+        "把持、操控",
+        "強橫無理"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:霸:3",
+      "char": "霸",
+      "sentence": "語詞「霸占」中的「霸」，就是指強橫無理。",
+      "definition": "強橫無理",
+      "options": [
+        "在地方上為非作歹、作惡稱雄的人",
+        "把持、操控",
+        "強橫無理"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:翹:1",
+      "char": "翹",
+      "sentence": "語詞「翹起尾巴」中的「翹」，就是指物體突起或高起。",
+      "definition": "物體突起或高起",
+      "options": [
+        "物體突起或高起",
+        "死。指翹辮子"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:翹:2",
+      "char": "翹",
+      "sentence": "語詞「寒流來襲」中的「翹」，就是指死。指翹辮子。",
+      "definition": "死。指翹辮子",
+      "options": [
+        "物體突起或高起",
+        "死。指翹辮子"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:垂:1",
+      "char": "垂",
+      "sentence": "語詞「垂掛」中的「垂」，就是指東西一頭由上直掛而下。",
+      "definition": "東西一頭由上直掛而下",
+      "options": [
+        "東西一頭由上直掛而下",
+        "留傳後世",
+        "即將、將要",
+        "長輩對晚輩關愛的敬語"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:垂:2",
+      "char": "垂",
+      "sentence": "語詞「永垂不朽」中的「垂」，就是指留傳後世。",
+      "definition": "留傳後世",
+      "options": [
+        "東西一頭由上直掛而下",
+        "留傳後世",
+        "即將、將要",
+        "長輩對晚輩關愛的敬語"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:垂:3",
+      "char": "垂",
+      "sentence": "語詞「生命垂危」中的「垂」，就是指即將、將要。",
+      "definition": "即將、將要",
+      "options": [
+        "東西一頭由上直掛而下",
+        "留傳後世",
+        "即將、將要",
+        "長輩對晚輩關愛的敬語"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H04:垂:4",
+      "char": "垂",
+      "sentence": "語詞「垂愛」中的「垂」，就是指長輩對晚輩關愛的敬語。",
+      "definition": "長輩對晚輩關愛的敬語",
+      "options": [
+        "東西一頭由上直掛而下",
+        "留傳後世",
+        "即將、將要",
+        "長輩對晚輩關愛的敬語"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    }
+  ],
+  "polysemy_senses": [],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG6H04:翹",
+      "char": "翹",
+      "readings": [
+        {
+          "zhuyin": "ㄑㄧㄠˋ",
+          "senses": [
+            {
+              "definition": "課本例詞「翹起」的讀音。",
+              "examples": [
+                "翹起"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄑㄧㄠˊ",
+          "senses": [
+            {
+              "definition": "課本例詞「翹楚」的讀音。",
+              "examples": [
+                "翹楚"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：一字多音）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG6H04:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "彷",
+          "example": "彷彿"
+        },
+        {
+          "char": "不",
+          "example": "不妨、妨害"
+        },
+        {
+          "char": "磨",
+          "example": "磨坊、坊間"
+        },
+        {
+          "char": "防",
+          "example": "防範、預防"
+        },
+        {
+          "char": "仿",
+          "example": "仿冒、仿製"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H04:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "腋",
+          "example": "腋下、腋窩"
+        },
+        {
+          "char": "液",
+          "example": "液體、液化"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H04:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "燠",
+          "example": "燠熱、燠燥"
+        },
+        {
+          "char": "棉",
+          "example": "棉襖、皮襖"
+        },
+        {
+          "char": "懊",
+          "example": "懊悔、懊惱"
+        },
+        {
+          "char": "澳",
+          "example": "澳洲、蘇澳"
+        },
+        {
+          "char": "奧",
+          "example": "奧援、深奧"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H04:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "停",
+          "example": "停泊、淡泊"
+        },
+        {
+          "char": "拍",
+          "example": "拍賣、拍照"
+        },
+        {
+          "char": "伯",
+          "example": "伯父、伯母"
+        },
+        {
+          "char": "逼",
+          "example": "逼迫、急迫"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H04:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "講",
+          "example": "講稿、開講"
+        },
+        {
+          "char": "購",
+          "example": "購買、採購"
+        },
+        {
+          "char": "代",
+          "example": "代溝、溝通"
+        },
+        {
+          "char": "架",
+          "example": "架構、構成"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H04:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "霹",
+          "example": "霹靂、晴天霹靂"
+        },
+        {
+          "char": "煙",
+          "example": "煙霧、雲霧"
+        },
+        {
+          "char": "風",
+          "example": "風霜、霜降"
+        },
+        {
+          "char": "露",
+          "example": "露珠、露臺"
+        },
+        {
+          "char": "彩",
+          "example": "彩霞、晚霞"
+        },
+        {
+          "char": "霸",
+          "example": "霸占、霸道"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H04:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "釘",
+          "example": "釘子、鐵釘"
+        },
+        {
+          "char": "訂",
+          "example": "訂貨、預訂"
+        },
+        {
+          "char": "緊",
+          "example": "緊迫盯人"
+        },
+        {
+          "char": "叮",
+          "example": "叮咬、叮嚀"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H04:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "咀",
+          "example": "咀嚼"
+        },
+        {
+          "char": "沮",
+          "example": "沮喪"
+        },
+        {
+          "char": "阻",
+          "example": "阻止、阻礙"
+        },
+        {
+          "char": "粗",
+          "example": "粗細、粗略"
+        },
+        {
+          "char": "組",
+          "example": "組合、組織"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H04:09",
+      "group_no": "9",
+      "chars": [
+        {
+          "char": "粗",
+          "example": "粗獷、獷悍"
+        },
+        {
+          "char": "曠",
+          "example": "曠職、空曠"
+        },
+        {
+          "char": "礦",
+          "example": "礦產、礦物"
+        },
+        {
+          "char": "擴",
+          "example": "擴張、擴充"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H04:10",
+      "group_no": "10",
+      "chars": [
+        {
+          "char": "倨",
+          "example": "倨傲、前倨後恭"
+        },
+        {
+          "char": "拮",
+          "example": "拮据"
+        },
+        {
+          "char": "盤",
+          "example": "盤踞、高踞"
+        },
+        {
+          "char": "拉",
+          "example": "拉鋸、電鋸"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG6H04:1",
+      "stem": "本文主要介紹什麼？",
+      "question": "本文主要介紹什麼？",
+      "options": [
+        "自然啟發人類的設計 (2)如何飼養動物"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H04:2",
+      "stem": "蓮葉的構造啟發什麼設計？",
+      "question": "蓮葉的構造啟發什麼設計？",
+      "options": [
+        "抗汙材料 (2)更亮的燈泡"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H04:3",
+      "stem": "老鷹翅膀末端的設計有什麼作用？",
+      "question": "老鷹翅膀末端的設計有什麼作用？",
+      "options": [
+        "減少飛行阻力 (2)讓翅膀變重"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H04:4",
+      "stem": "作者想提醒讀者什麼？",
+      "question": "作者想提醒讀者什麼？",
+      "options": [
+        "仔細觀察自然並學習其中智慧 (2)不要接近大自然"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    }
+  ],
+  "review_words": {},
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag6h-04",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E9%B0%AD%E5%A5%A7%E4%BB%BF%E8%BF%AB%E8%9A%8A%E5%8F%AE%E8%86%9A%E7%B5%84%E9%8B%B8%E6%93%B4%E6%B6%B2%E8%93%AE%E5%A5%88%E6%A7%8B%E8%97%89%E9%9C%B8%E7%BF%B9%E5%9E%82",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・六年級・第4課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「鰭」的部首是哪一個？",
+      "options": [
+        "⽊",
+        "⽔",
+        "⿂"
+      ],
+      "answer": "⿂",
+      "explanation": "「鰭」的部首是⿂。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「奧」的部首是哪一個？",
+      "options": [
+        "⼈",
+        "⼝",
+        "⼤"
+      ],
+      "answer": "⼤",
+      "explanation": "「奧」的部首是⼤。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「仿」的部首是哪一個？",
+      "options": [
+        "⿂",
+        "⽔",
+        "⽊"
+      ],
+      "answer": "⼈",
+      "explanation": "「仿」的部首是⼈。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「鰭」是什麼意思？",
+      "options": [
+        "擴大伸張。",
+        "物體突起或高起。",
+        "是一門模仿生物原理，並創造新科技的學問。通過了解生物功能、結構等，研發新的科技或解決生活難題。"
+      ],
+      "answer": "水生脊椎動物的游泳器官。有調節速度、變換方向及保護身體的功用。",
+      "explanation": "鰭：水生脊椎動物的游泳器官。有調節速度、變換方向及保護身體的功用。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「奧妙」是什麼意思？",
+      "options": [
+        "依賴。",
+        "像鋸子一般的銳齒。",
+        "數學上指兩條直線、兩個平面或一直線與一平面以直角相交。"
+      ],
+      "answer": "深奧奇妙。",
+      "explanation": "奧妙：深奧奇妙。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「仿生學」是什麼意思？",
+      "options": [
+        "依賴。",
+        "沉著、不慌張。",
+        "組織個體成為整體。"
+      ],
+      "answer": "是一門模仿生物原理，並創造新科技的學問。通過了解生物功能、結構等，研發新的科技或解決生活難題。",
+      "explanation": "仿生學：是一門模仿生物原理，並創造新科技的學問。通過了解生物功能、結構等，研發新的科技或解決生活難題。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「從容不迫」是什麼意思？",
+      "options": [
+        "深奧奇妙。",
+        "物體突起或高起。",
+        "沉著、不慌張。"
+      ],
+      "answer": "沉著、不慌張。",
+      "explanation": "從容不迫：沉著、不慌張。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「叮」是什麼意思？",
+      "options": [
+        "像鋸子一般的銳齒。",
+        "數學上指兩條直線、兩個平面或一直線與一平面以直角相交。",
+        "組織個體成為整體。"
+      ],
+      "answer": "蚊子、蜜蜂等昆蟲刺傷人畜。",
+      "explanation": "叮：蚊子、蜜蜂等昆蟲刺傷人畜。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "段落摘要已整理；課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "教材待補：應用任務設計中"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "聆聽題目保留待教師確認答案，未在正式模組顯示。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭教材尚未完成公開資料整理。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "跨課複習資料待補。"
+    }
+  }
+}

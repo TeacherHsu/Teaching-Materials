@@ -1,0 +1,2373 @@
+{
+  "lesson_id": "115AG6H12",
+  "volume": {
+    "code": "115AG6H",
+    "publisher": "翰林",
+    "grade": 6,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "六上國語課程"
+  },
+  "lesson_no": 12,
+  "title": "存根",
+  "author": "",
+  "blurb": "透過〈存根〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "characters": [
+    {
+      "char": "擬",
+      "zhuyin": "ㄋㄧˇ",
+      "stroke_count": 17,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "比擬"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%93%AC",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "銜",
+      "zhuyin": "ㄒㄧㄢˊ",
+      "stroke_count": 14,
+      "radical": "⾦",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "頭銜"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%8A%9C",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "豪",
+      "zhuyin": "ㄏㄠˊ",
+      "stroke_count": 14,
+      "radical": "⾗",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "自豪"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B1%AA",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "碩",
+      "zhuyin": "ㄕㄨㄛˋ",
+      "stroke_count": 14,
+      "radical": "⽯",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "碩大"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A2%A9",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "割",
+      "zhuyin": "ㄍㄜ",
+      "stroke_count": 12,
+      "radical": "⼑",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "割捨"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%89%B2",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "嫁",
+      "zhuyin": "ㄐㄧㄚˋ",
+      "stroke_count": 13,
+      "radical": "⼥",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "嫁"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%AB%81",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "竊",
+      "zhuyin": "ㄑㄧㄝˋ",
+      "stroke_count": 22,
+      "radical": "⽳",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "竊賊"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%AB%8A",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "賊",
+      "zhuyin": "ㄗㄟˊ",
+      "stroke_count": 13,
+      "radical": "⾙",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "竊賊"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B3%8A",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "攤",
+      "zhuyin": "ㄊㄢ",
+      "stroke_count": 22,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "攤"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%94%A4",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "憑",
+      "zhuyin": "ㄆㄧㄥˊ",
+      "stroke_count": 16,
+      "radical": "⼼",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "憑"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%86%91",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "鑿",
+      "zhuyin": "ㄗㄠˊ",
+      "stroke_count": 28,
+      "radical": "⾦",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "確鑿"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%91%BF",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "傢",
+      "zhuyin": "ㄐㄧㄚ",
+      "stroke_count": 12,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "傢伙"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%82%A2",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "駁",
+      "zhuyin": "ㄅㄛˊ",
+      "stroke_count": 14,
+      "radical": "⾺",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "反駁"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%A7%81",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "誣",
+      "zhuyin": "ㄨ",
+      "stroke_count": 14,
+      "radical": "⾔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "誣告"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%AA%A3",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "監",
+      "zhuyin": "ㄐㄧㄢ",
+      "stroke_count": 14,
+      "radical": "⽫",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "監牢"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%9B%A3",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "蒂",
+      "zhuyin": "ㄉㄧˋ",
+      "stroke_count": 13,
+      "radical": "⾋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "蒂"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%92%82",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "粗",
+      "zhuyin": "ㄘㄨ",
+      "stroke_count": 11,
+      "radical": "⽶",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "粗"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B2%97",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "毫",
+      "zhuyin": "ㄏㄠˊ",
+      "stroke_count": 11,
+      "radical": "⽑",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "絲毫不差"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%AF%AB",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG6H12:01",
+      "word": "比擬",
+      "zhuyin": "ㄅㄧˇ ㄋㄧˇ",
+      "meaning": "比較模擬。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H12:02",
+      "word": "頭銜",
+      "zhuyin": "ㄊㄡˊ ㄒㄧㄢˊ",
+      "meaning": "職位、官位的名稱。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H12:03",
+      "word": "自豪",
+      "zhuyin": "ㄗˋ ㄏㄠˊ",
+      "meaning": "為自己感到光榮、驕傲。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H12:04",
+      "word": "碩大",
+      "zhuyin": "ㄕㄨㄛˋ ㄉㄚˋ",
+      "meaning": "巨大。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H12:05",
+      "word": "割捨",
+      "zhuyin": "ㄍㄜ ㄕㄜˇ",
+      "meaning": "斷絕、捨棄。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H12:06",
+      "word": "嫁",
+      "zhuyin": "ㄐㄧㄚˋ",
+      "meaning": "女子結婚。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H12:07",
+      "word": "竊賊",
+      "zhuyin": "ㄑㄧㄝˋ ㄗㄟˊ",
+      "meaning": "偷竊他人財物的人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H12:08",
+      "word": "攤",
+      "zhuyin": "ㄊㄢ",
+      "meaning": "設於路旁、夜市等地，簡單的貨物零售處。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H12:09",
+      "word": "憑",
+      "zhuyin": "ㄆㄧㄥˊ",
+      "meaning": "依據、託賴。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H12:10",
+      "word": "確鑿",
+      "zhuyin": "ㄑㄩㄝˋ ㄗㄠˊ",
+      "meaning": "極為真實確定。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H12:11",
+      "word": "傢伙",
+      "zhuyin": "ㄐㄧㄚ ㄏㄨㄛˇ",
+      "meaning": "對人親暱、戲謔或輕蔑的稱呼。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H12:12",
+      "word": "反駁",
+      "zhuyin": "ㄈㄢˇ ㄅㄛˊ",
+      "meaning": "提出反對的理由加以辯駁。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H12:13",
+      "word": "誣告",
+      "zhuyin": "ㄨ ㄍㄠˋ",
+      "meaning": "偽造、變造證據或妄言指控，意圖使無罪者受到刑事或懲戒的處分。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H12:14",
+      "word": "監牢",
+      "zhuyin": "ㄐㄧㄢ ㄌㄠˊ",
+      "meaning": "囚禁罪犯的牢獄。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H12:15",
+      "word": "蒂",
+      "zhuyin": "ㄉㄧˋ",
+      "meaning": "果實與枝莖相連的部分。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H12:16",
+      "word": "粗",
+      "zhuyin": "ㄘㄨ",
+      "meaning": "長條物橫切面較大。與「細」相對。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H12:17",
+      "word": "絲毫不差",
+      "zhuyin": "ㄙ ㄏㄠˊ ㄅㄨˋ ㄔㄚˋ",
+      "meaning": "形容非常準確，毫無差錯。",
+      "example_sentence": "這家公司的品質控管非常嚴格，每件產品的外觀都絲毫不差。",
+      "example_status": "approved",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H12:18",
+      "word": "幸虧",
+      "zhuyin": "ㄒㄧㄥˋ ㄎㄨㄟ",
+      "meaning": "因某種機運而自困境中獲得解脫。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG6H12:無可比擬",
+      "idiom": "無可比擬",
+      "definition": "沒有可以與它相比的。",
+      "related_char": "擬",
+      "image": "idioms/01_無可比擬.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H12:結草銜環",
+      "idiom": "結草銜環",
+      "definition": "比喻至死不忘感恩圖報。",
+      "related_char": "銜",
+      "image": "idioms/02_結草銜環.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H12:巧取豪奪",
+      "idiom": "巧取豪奪",
+      "definition": "形容用不正當手段取得權利或財物。",
+      "related_char": "豪",
+      "image": "idioms/03_巧取豪奪.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H12:碩果僅存",
+      "idiom": "碩果僅存",
+      "definition": "比喻經過汰換後，極少數留存的可貴人物或成果。",
+      "related_char": "碩",
+      "image": "idioms/04_碩果僅存.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H12:心如刀割",
+      "idiom": "心如刀割",
+      "definition": "內心痛苦得像被刀割一樣。",
+      "related_char": "割",
+      "image": "idioms/05_心如刀割.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H12:為人作嫁",
+      "idiom": "為人作嫁",
+      "definition": "比喻徒然為別人辛苦，自己卻得不到好處。",
+      "related_char": "嫁",
+      "image": "idioms/06_為人作嫁.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H12:竊竊私語",
+      "idiom": "竊竊私語",
+      "definition": "指私下低聲談論。",
+      "related_char": "竊",
+      "image": "idioms/07_竊竊私語.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H12:穿鑿附會",
+      "idiom": "穿鑿附會",
+      "definition": "生拉硬扯，牽強解釋。",
+      "related_char": "鑿",
+      "image": "idioms/08_穿鑿附會.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H12:監守自盜",
+      "idiom": "監守自盜",
+      "definition": "竊取自己在職務上負責保管的財物。",
+      "related_char": "監",
+      "image": "idioms/09_監守自盜.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H12:瓜熟蒂落",
+      "idiom": "瓜熟蒂落",
+      "definition": "比喻時機成熟，事情自然成功。",
+      "related_char": "蒂",
+      "image": "idioms/10_瓜熟蒂落.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H12:粗茶淡飯",
+      "idiom": "粗茶淡飯",
+      "definition": "指簡單清淡的飲食。",
+      "related_char": "粗",
+      "image": "idioms/11_粗茶淡飯.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H12:明察秋毫",
+      "idiom": "明察秋毫",
+      "definition": "比喻能洞察一切，看見極細微的地方。",
+      "related_char": "毫",
+      "image": "idioms/12_明察秋毫.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H12:功虧一簣",
+      "idiom": "功虧一簣",
+      "definition": "比喻事情只差最後一步，卻因未能堅持而前功盡棄。",
+      "related_char": "虧",
+      "image": "idioms/13_功虧一簣.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG6H12:1",
+      "idiom_id": "idiom:115AG6H12:無可比擬",
+      "rewritten": "遇到生活中的相關情況時，可以用「無可比擬」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H12:2",
+      "idiom_id": "idiom:115AG6H12:結草銜環",
+      "rewritten": "遇到生活中的相關情況時，可以用「結草銜環」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H12:3",
+      "idiom_id": "idiom:115AG6H12:巧取豪奪",
+      "rewritten": "遇到生活中的相關情況時，可以用「巧取豪奪」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H12:4",
+      "idiom_id": "idiom:115AG6H12:碩果僅存",
+      "rewritten": "遇到生活中的相關情況時，可以用「碩果僅存」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H12:5",
+      "idiom_id": "idiom:115AG6H12:心如刀割",
+      "rewritten": "遇到生活中的相關情況時，可以用「心如刀割」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H12:6",
+      "idiom_id": "idiom:115AG6H12:為人作嫁",
+      "rewritten": "遇到生活中的相關情況時，可以用「為人作嫁」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H12:7",
+      "idiom_id": "idiom:115AG6H12:竊竊私語",
+      "rewritten": "遇到生活中的相關情況時，可以用「竊竊私語」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H12:8",
+      "idiom_id": "idiom:115AG6H12:穿鑿附會",
+      "rewritten": "遇到生活中的相關情況時，可以用「穿鑿附會」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H12:9",
+      "idiom_id": "idiom:115AG6H12:監守自盜",
+      "rewritten": "遇到生活中的相關情況時，可以用「監守自盜」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H12:10",
+      "idiom_id": "idiom:115AG6H12:瓜熟蒂落",
+      "rewritten": "遇到生活中的相關情況時，可以用「瓜熟蒂落」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H12:11",
+      "idiom_id": "idiom:115AG6H12:粗茶淡飯",
+      "rewritten": "遇到生活中的相關情況時，可以用「粗茶淡飯」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H12:12",
+      "idiom_id": "idiom:115AG6H12:明察秋毫",
+      "rewritten": "遇到生活中的相關情況時，可以用「明察秋毫」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H12:13",
+      "idiom_id": "idiom:115AG6H12:功虧一簣",
+      "rewritten": "遇到生活中的相關情況時，可以用「功虧一簣」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG6H12:word:1",
+      "category": "詞語造句",
+      "head": "說著說著悲從中來",
+      "structure": "詞語造句",
+      "description": "重複動作後，產生強烈悲傷的感受。",
+      "guide": "他想起心愛的物品，說著說著",
+      "examples": [
+        "布大爺說著說著悲從中來。"
+      ],
+      "example_parts": [
+        [
+          "布大爺",
+          "說著說著",
+          "悲從中來",
+          "。"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "悲從中來",
+          "布大爺",
+          "。",
+          "說著說著"
+        ]
+      ],
+      "word_bank": [
+        "唱著唱著泣不成聲",
+        "跳著跳著笑逐顏開",
+        "讀著讀著感動落淚"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H12:word:2",
+      "category": "詞語造句",
+      "head": "終於流下欣慰的淚水",
+      "structure": "詞語造句",
+      "description": "經過一段過程後，因放心或滿意而流淚。",
+      "guide": "看到努力有了成果，我",
+      "examples": [
+        "布大爺終於流下欣慰的淚水。"
+      ],
+      "example_parts": [
+        [
+          "布大爺",
+          "終於流下",
+          "欣慰的",
+          "淚水。"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "欣慰的",
+          "淚水。",
+          "布大爺",
+          "終於流下"
+        ]
+      ],
+      "word_bank": [
+        "總算浮現燦爛的笑容",
+        "立刻響起熱烈的掌聲",
+        "終於露出安心的表情"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H12:word:3",
+      "category": "詞語造句",
+      "head": "絲毫不差",
+      "structure": "詞語造句",
+      "description": "形容非常準確，毫無差錯。",
+      "guide": "我仔細檢查後，發現",
+      "examples": [
+        "這家公司的品質控管非常嚴格，每件產品的外觀都絲毫不差。"
+      ],
+      "example_parts": [
+        [
+          "品質控管",
+          "非常嚴格",
+          "產品外觀",
+          "絲毫不差。"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "絲毫不差。",
+          "產品外觀",
+          "非常嚴格",
+          "品質控管"
+        ]
+      ],
+      "word_bank": [
+        "尺寸相同",
+        "答案正確",
+        "順序一致",
+        "數量準確"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H12:word:4",
+      "category": "詞語造句",
+      "head": "來龍去脈",
+      "structure": "詞語造句",
+      "description": "比喻事情的首尾始末。",
+      "guide": "聽完他的說明，我了解了",
+      "examples": [
+        "作者清楚描述整個故事的來龍去脈。"
+      ],
+      "example_parts": [
+        [
+          "作者",
+          "清楚描述",
+          "整個故事的",
+          "來龍去脈。"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "來龍去脈。",
+          "作者",
+          "整個故事的",
+          "清楚描述"
+        ]
+      ],
+      "word_bank": [
+        "事情經過",
+        "問題原因",
+        "發生順序",
+        "解決方法"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H12:pattern:1",
+      "category": "句型練習",
+      "head": "轉折複句",
+      "structure": "……，竟然……。",
+      "description": "想一件出乎意料的事情，使用「竟然」造句。",
+      "guide": "想一件出乎意料的事情，使用「竟然」造句。",
+      "examples": [
+        "布大爺仔細尋找竟然在市場看見南瓜",
+        "我每天認真練習竟然得到第一名",
+        "天空原本晴朗竟然突然下起大雨"
+      ],
+      "example_parts": [
+        [
+          "布大爺仔細尋找",
+          "竟然",
+          "在市場看見南瓜"
+        ],
+        [
+          "我每天認真練習",
+          "竟然",
+          "得到第一名"
+        ],
+        [
+          "天空原本晴朗",
+          "竟然",
+          "突然下起大雨"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "情況",
+          "choices": [
+            "布大爺仔細尋找",
+            "我每天認真練習",
+            "天空原本晴朗"
+          ]
+        },
+        {
+          "label": "轉折",
+          "choices": [
+            "竟然"
+          ]
+        },
+        {
+          "label": "結果",
+          "choices": [
+            "在市場看見南瓜",
+            "得到第一名",
+            "突然下起大雨"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H12:pattern:2",
+      "category": "句型練習",
+      "head": "承接複句",
+      "structure": "一……，就……。",
+      "description": "想一個情況和接著發生的反應，使用「一……，就……」造句。",
+      "guide": "想一個情況和接著發生的反應，使用「一……，就……」造句。",
+      "examples": [
+        "我一聽到下課鐘聲就收拾書包",
+        "布大爺一看見南瓜就認出是自己的",
+        "弟弟一回到家就先洗手"
+      ],
+      "example_parts": [
+        [
+          "我一聽到下課鐘聲",
+          "就",
+          "收拾書包"
+        ],
+        [
+          "布大爺一看見南瓜",
+          "就",
+          "認出是自己的"
+        ],
+        [
+          "弟弟一回到家",
+          "就",
+          "先洗手"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "情況",
+          "choices": [
+            "我一聽到下課鐘聲",
+            "布大爺一看見南瓜",
+            "弟弟一回到家"
+          ]
+        },
+        {
+          "label": "承接",
+          "choices": [
+            "就"
+          ]
+        },
+        {
+          "label": "反應",
+          "choices": [
+            "收拾書包",
+            "認出是自己的",
+            "先洗手"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:12:01",
+      "paragraph_no": 1,
+      "summary": "羅達的農夫布大爺克服不利條件，種出許多好南瓜。",
+      "structure_role": "【背景與開端】疼愛南瓜、南瓜失竊",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:12:02",
+      "paragraph_no": 2,
+      "summary": "布大爺忍痛決定賣掉南瓜，採收前卻發現南瓜被偷走。",
+      "structure_role": "【發展與高潮】追查南瓜、以蒂為證",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:12:03",
+      "paragraph_no": 3,
+      "summary": "冷靜思考後，他判斷南瓜已被運往加迪斯市場。",
+      "structure_role": "【結尾】失而復得",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:12:04",
+      "paragraph_no": 4,
+      "summary": "布大爺在市場認出南瓜，卻與菜販弗大叔起了爭執。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:12:05",
+      "paragraph_no": 5,
+      "summary": "布大爺拿出留下的南瓜蒂，證明自己才是南瓜主人。",
+      "structure_role": "第5段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:12:06",
+      "paragraph_no": 6,
+      "summary": "他拿回賣瓜的錢，慶幸存根使南瓜失而復得。",
+      "structure_role": "第6段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "main_idea": {
+    "gist": "布大爺的南瓜被偷後，冷靜推理並到市場追查；他用事先留下的南瓜蒂證明所有權，最後讓南瓜失而復得。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:12:01",
+      "stem": "布大爺為什麼熟悉每一顆南瓜？",
+      "options": [
+        "十分疼愛並細心照料 (2)每天到市場購買"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:12:02",
+      "stem": "他為什麼先留在菜園？",
+      "options": [
+        "收集南瓜蒂作證 (2)等待南瓜長大"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:12:03",
+      "stem": "哪一項證據證明南瓜是他的？",
+      "options": [
+        "南瓜蒂能和南瓜接合 (2)菜販主動承認"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:12:04",
+      "stem": "故事主旨是什麼？",
+      "options": [
+        "冷靜分析能找到解決策略 (2)爭吵就能拿回物品"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG6H12:擬:1",
+      "char": "擬",
+      "sentence": "語詞「擬古」中的「擬」，就是指摹擬、仿效。",
+      "definition": "摹擬、仿效",
+      "options": [
+        "摹擬、仿效",
+        "揣度、打算",
+        "起草、編寫"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:擬:2",
+      "char": "擬",
+      "sentence": "語詞「擬議」中的「擬」，就是指揣度、打算。",
+      "definition": "揣度、打算",
+      "options": [
+        "摹擬、仿效",
+        "揣度、打算",
+        "起草、編寫"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:擬:3",
+      "char": "擬",
+      "sentence": "語詞「草擬」中的「擬」，就是指起草、編寫。",
+      "definition": "起草、編寫",
+      "options": [
+        "摹擬、仿效",
+        "揣度、打算",
+        "起草、編寫"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:銜:1",
+      "char": "銜",
+      "sentence": "語詞「官銜」中的「銜」，就是指官階、職稱。",
+      "definition": "官階、職稱",
+      "options": [
+        "官階、職稱",
+        "連接、相連",
+        "用嘴含物。同「啣賢」"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:銜:2",
+      "char": "銜",
+      "sentence": "語詞「銜接」中的「銜」，就是指連接、相連。",
+      "definition": "連接、相連",
+      "options": [
+        "官階、職稱",
+        "連接、相連",
+        "用嘴含物。同「啣賢」"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:銜:3",
+      "char": "銜",
+      "sentence": "語詞「銜著」中的「銜」，就是指用嘴含物。同「啣賢」。",
+      "definition": "用嘴含物。同「啣賢」",
+      "options": [
+        "官階、職稱",
+        "連接、相連",
+        "用嘴含物。同「啣賢」"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:豪:1",
+      "char": "豪",
+      "sentence": "語詞「英豪」中的「豪」，就是指才德智能出眾的人。",
+      "definition": "才德智能出眾的人",
+      "options": [
+        "才德智能出眾的人",
+        "有錢有勢或仗勢橫行的人",
+        "直爽、不拘小節的",
+        "極度、盛大的",
+        "強橫、橫暴"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:豪:2",
+      "char": "豪",
+      "sentence": "語詞「富豪」中的「豪」，就是指有錢有勢或仗勢橫行的人。",
+      "definition": "有錢有勢或仗勢橫行的人",
+      "options": [
+        "才德智能出眾的人",
+        "有錢有勢或仗勢橫行的人",
+        "直爽、不拘小節的",
+        "極度、盛大的",
+        "強橫、橫暴"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:豪:3",
+      "char": "豪",
+      "sentence": "語詞「豪邁」中的「豪」，就是指直爽、不拘小節的。",
+      "definition": "直爽、不拘小節的",
+      "options": [
+        "才德智能出眾的人",
+        "有錢有勢或仗勢橫行的人",
+        "直爽、不拘小節的",
+        "極度、盛大的",
+        "強橫、橫暴"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:豪:4",
+      "char": "豪",
+      "sentence": "語詞「豪奢」中的「豪」，就是指極度、盛大的。",
+      "definition": "極度、盛大的",
+      "options": [
+        "才德智能出眾的人",
+        "有錢有勢或仗勢橫行的人",
+        "直爽、不拘小節的",
+        "極度、盛大的",
+        "強橫、橫暴"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:豪:5",
+      "char": "豪",
+      "sentence": "語詞「豪奪」中的「豪」，就是指強橫、橫暴。",
+      "definition": "強橫、橫暴",
+      "options": [
+        "才德智能出眾的人",
+        "有錢有勢或仗勢橫行的人",
+        "直爽、不拘小節的",
+        "極度、盛大的",
+        "強橫、橫暴"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:碩:1",
+      "char": "碩",
+      "sentence": "語詞「碩大」中的「碩」，就是指大的。",
+      "definition": "大的",
+      "options": [
+        "大的",
+        "形容學識淵博的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:碩:2",
+      "char": "碩",
+      "sentence": "語詞「碩士」中的「碩」，就是指形容學識淵博的。",
+      "definition": "形容學識淵博的",
+      "options": [
+        "大的",
+        "形容學識淵博的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:割:1",
+      "char": "割",
+      "sentence": "語詞「割愛」中的「割」，就是指斷絕、截斷。",
+      "definition": "斷絕、截斷",
+      "options": [
+        "斷絕、截斷",
+        "用刀切劃",
+        "劃分、分開"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:割:2",
+      "char": "割",
+      "sentence": "語詞「切割」中的「割」，就是指用刀切劃。",
+      "definition": "用刀切劃",
+      "options": [
+        "斷絕、截斷",
+        "用刀切劃",
+        "劃分、分開"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:割:3",
+      "char": "割",
+      "sentence": "語詞「分割」中的「割」，就是指劃分、分開。",
+      "definition": "劃分、分開",
+      "options": [
+        "斷絕、截斷",
+        "用刀切劃",
+        "劃分、分開"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:嫁:1",
+      "char": "嫁",
+      "sentence": "語詞「出嫁」中的「嫁」，就是指女子結婚。",
+      "definition": "女子結婚",
+      "options": [
+        "女子結婚",
+        "轉移"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:嫁:2",
+      "char": "嫁",
+      "sentence": "語詞「嫁禍」中的「嫁」，就是指轉移。",
+      "definition": "轉移",
+      "options": [
+        "女子結婚",
+        "轉移"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:竊:1",
+      "char": "竊",
+      "sentence": "語詞「竊取」中的「竊」，就是指偷、盜取。",
+      "definition": "偷、盜取",
+      "options": [
+        "偷、盜取",
+        "暗中、偷偷的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:竊:2",
+      "char": "竊",
+      "sentence": "語詞「竊聽」中的「竊」，就是指暗中、偷偷的。",
+      "definition": "暗中、偷偷的",
+      "options": [
+        "偷、盜取",
+        "暗中、偷偷的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:賊:1",
+      "char": "賊",
+      "sentence": "語詞「盜賊」中的「賊」，就是指竊盜財物的人。亦泛指使壞作亂的人。",
+      "definition": "竊盜財物的人。亦泛指使壞作亂的人",
+      "options": [
+        "竊盜財物的人。亦泛指使壞作亂的人",
+        "奸詐、狡猾、不正派的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:賊:2",
+      "char": "賊",
+      "sentence": "語詞「賊眼」中的「賊」，就是指奸詐、狡猾、不正派的。",
+      "definition": "奸詐、狡猾、不正派的",
+      "options": [
+        "竊盜財物的人。亦泛指使壞作亂的人",
+        "奸詐、狡猾、不正派的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:攤:1",
+      "char": "攤",
+      "sentence": "語詞「地攤」中的「攤」，就是指設於路旁、夜市等地，簡單的貨物零售處。",
+      "definition": "設於路旁、夜市等地，簡單的貨物零售處",
+      "options": [
+        "設於路旁、夜市等地，簡單的貨物零售處",
+        "平鋪、擺開",
+        "分擔、分配",
+        "公開而無所隱瞞",
+        "量詞。計算靜止在一處或鋪開成一片的液體和糊狀物的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:攤:2",
+      "char": "攤",
+      "sentence": "語詞「她把蓆子攤在地上」中的「攤」，就是指平鋪、擺開。",
+      "definition": "平鋪、擺開",
+      "options": [
+        "設於路旁、夜市等地，簡單的貨物零售處",
+        "平鋪、擺開",
+        "分擔、分配",
+        "公開而無所隱瞞",
+        "量詞。計算靜止在一處或鋪開成一片的液體和糊狀物的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:攤:3",
+      "char": "攤",
+      "sentence": "語詞「攤錢」中的「攤」，就是指分擔、分配。",
+      "definition": "分擔、分配",
+      "options": [
+        "設於路旁、夜市等地，簡單的貨物零售處",
+        "平鋪、擺開",
+        "分擔、分配",
+        "公開而無所隱瞞",
+        "量詞。計算靜止在一處或鋪開成一片的液體和糊狀物的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:攤:4",
+      "char": "攤",
+      "sentence": "語詞「讓我們把話攤開來說清楚」中的「攤」，就是指公開而無所隱瞞。",
+      "definition": "公開而無所隱瞞",
+      "options": [
+        "設於路旁、夜市等地，簡單的貨物零售處",
+        "平鋪、擺開",
+        "分擔、分配",
+        "公開而無所隱瞞",
+        "量詞。計算靜止在一處或鋪開成一片的液體和糊狀物的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:攤:5",
+      "char": "攤",
+      "sentence": "語詞「一攤水」中的「攤」，就是指量詞。計算靜止在一處或鋪開成一片的液體和糊狀物的單位。",
+      "definition": "量詞。計算靜止在一處或鋪開成一片的液體和糊狀物的單位",
+      "options": [
+        "設於路旁、夜市等地，簡單的貨物零售處",
+        "平鋪、擺開",
+        "分擔、分配",
+        "公開而無所隱瞞",
+        "量詞。計算靜止在一處或鋪開成一片的液體和糊狀物的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:憑:1",
+      "char": "憑",
+      "sentence": "語詞「憑藉」中的「憑」，就是指依據、託賴。",
+      "definition": "依據、託賴",
+      "options": [
+        "依據、託賴",
+        "依靠",
+        "證據",
+        "任、隨"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:憑:2",
+      "char": "憑",
+      "sentence": "語詞「憑欄」中的「憑」，就是指依靠。",
+      "definition": "依靠",
+      "options": [
+        "依據、託賴",
+        "依靠",
+        "證據",
+        "任、隨"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:憑:3",
+      "char": "憑",
+      "sentence": "語詞「文憑」中的「憑」，就是指證據。",
+      "definition": "證據",
+      "options": [
+        "依據、託賴",
+        "依靠",
+        "證據",
+        "任、隨"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:憑:4",
+      "char": "憑",
+      "sentence": "語詞「憑你說破了嘴」中的「憑」，就是指任、隨。",
+      "definition": "任、隨",
+      "options": [
+        "依據、託賴",
+        "依靠",
+        "證據",
+        "任、隨"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:鑿:1",
+      "char": "鑿",
+      "sentence": "語詞「確鑿」中的「鑿」，就是指清楚、真實。",
+      "definition": "清楚、真實",
+      "options": [
+        "清楚、真實",
+        "穿孔或挖削用的工具",
+        "挖掘、打洞"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:鑿:2",
+      "char": "鑿",
+      "sentence": "語詞「石鑿」中的「鑿」，就是指穿孔或挖削用的工具。",
+      "definition": "穿孔或挖削用的工具",
+      "options": [
+        "清楚、真實",
+        "穿孔或挖削用的工具",
+        "挖掘、打洞"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:鑿:3",
+      "char": "鑿",
+      "sentence": "語詞「鑿井」中的「鑿」，就是指挖掘、打洞。",
+      "definition": "挖掘、打洞",
+      "options": [
+        "清楚、真實",
+        "穿孔或挖削用的工具",
+        "挖掘、打洞"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:傢:1",
+      "char": "傢",
+      "sentence": "語詞「你這傢伙總算遇到剋星了吧！」中的「傢」，就是指對人親暱、戲謔或輕蔑的稱呼。",
+      "definition": "對人親暱、戲謔或輕蔑的稱呼",
+      "options": [
+        "對人親暱、戲謔或輕蔑的稱呼",
+        "舊稱家具雜物",
+        "指工具、武器"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:傢:2",
+      "char": "傢",
+      "sentence": "語詞「他在搬到新居前」中的「傢」，就是指舊稱家具雜物。",
+      "definition": "舊稱家具雜物",
+      "options": [
+        "對人親暱、戲謔或輕蔑的稱呼",
+        "舊稱家具雜物",
+        "指工具、武器"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:傢:3",
+      "char": "傢",
+      "sentence": "語詞「忍一時風平浪靜」中的「傢」，就是指指工具、武器。",
+      "definition": "指工具、武器",
+      "options": [
+        "對人親暱、戲謔或輕蔑的稱呼",
+        "舊稱家具雜物",
+        "指工具、武器"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:駁:1",
+      "char": "駁",
+      "sentence": "語詞「反駁」中的「駁」，就是指爭辯事理，否定別人的意見。",
+      "definition": "爭辯事理，否定別人的意見",
+      "options": [
+        "爭辯事理，否定別人的意見",
+        "本指馬的毛色不純。後引申為顏色雜亂或事務紛雜"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:駁:2",
+      "char": "駁",
+      "sentence": "語詞「斑駁」中的「駁」，就是指本指馬的毛色不純。後引申為顏色雜亂或事務紛雜。",
+      "definition": "本指馬的毛色不純。後引申為顏色雜亂或事務紛雜",
+      "options": [
+        "爭辯事理，否定別人的意見",
+        "本指馬的毛色不純。後引申為顏色雜亂或事務紛雜"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:監:1",
+      "char": "監",
+      "sentence": "語詞「監獄」中的「監」，就是指關犯人的地方。",
+      "definition": "關犯人的地方",
+      "options": [
+        "關犯人的地方",
+        "視察、察看"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:監:2",
+      "char": "監",
+      "sentence": "語詞「監督」中的「監」，就是指視察、察看。",
+      "definition": "視察、察看",
+      "options": [
+        "關犯人的地方",
+        "視察、察看"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:蒂:1",
+      "char": "蒂",
+      "sentence": "語詞「根深蒂固」中的「蒂」，就是指果實與枝莖相連的部分。",
+      "definition": "果實與枝莖相連的部分",
+      "options": [
+        "果實與枝莖相連的部分",
+        "引申為東西的末端"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:蒂:2",
+      "char": "蒂",
+      "sentence": "語詞「菸蒂」中的「蒂」，就是指引申為東西的末端。",
+      "definition": "引申為東西的末端",
+      "options": [
+        "果實與枝莖相連的部分",
+        "引申為東西的末端"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:粗:1",
+      "char": "粗",
+      "sentence": "語詞「粗繩」中的「粗」，就是指長條物橫切面較大。與「細」相對。",
+      "definition": "長條物橫切面較大。與「細」相對",
+      "options": [
+        "長條物橫切面較大。與「細」相對",
+        "顆粒較大。與「細」相對",
+        "聲音較厚重",
+        "不周密、不仔細",
+        "不精緻、不細膩。與「精」相對",
+        "魯莽、不文雅",
+        "稍微、略微"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:粗:2",
+      "char": "粗",
+      "sentence": "語詞「粗沙」中的「粗」，就是指顆粒較大。與「細」相對。",
+      "definition": "顆粒較大。與「細」相對",
+      "options": [
+        "長條物橫切面較大。與「細」相對",
+        "顆粒較大。與「細」相對",
+        "聲音較厚重",
+        "不周密、不仔細",
+        "不精緻、不細膩。與「精」相對",
+        "魯莽、不文雅",
+        "稍微、略微"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:粗:3",
+      "char": "粗",
+      "sentence": "語詞「粗聲」中的「粗」，就是指聲音較厚重。",
+      "definition": "聲音較厚重",
+      "options": [
+        "長條物橫切面較大。與「細」相對",
+        "顆粒較大。與「細」相對",
+        "聲音較厚重",
+        "不周密、不仔細",
+        "不精緻、不細膩。與「精」相對",
+        "魯莽、不文雅",
+        "稍微、略微"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:粗:4",
+      "char": "粗",
+      "sentence": "語詞「粗心」中的「粗」，就是指不周密、不仔細。",
+      "definition": "不周密、不仔細",
+      "options": [
+        "長條物橫切面較大。與「細」相對",
+        "顆粒較大。與「細」相對",
+        "聲音較厚重",
+        "不周密、不仔細",
+        "不精緻、不細膩。與「精」相對",
+        "魯莽、不文雅",
+        "稍微、略微"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:粗:5",
+      "char": "粗",
+      "sentence": "語詞「粗糙」中的「粗」，就是指不精緻、不細膩。與「精」相對。",
+      "definition": "不精緻、不細膩。與「精」相對",
+      "options": [
+        "長條物橫切面較大。與「細」相對",
+        "顆粒較大。與「細」相對",
+        "聲音較厚重",
+        "不周密、不仔細",
+        "不精緻、不細膩。與「精」相對",
+        "魯莽、不文雅",
+        "稍微、略微"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:粗:6",
+      "char": "粗",
+      "sentence": "語詞「粗魯」中的「粗」，就是指魯莽、不文雅。",
+      "definition": "魯莽、不文雅",
+      "options": [
+        "長條物橫切面較大。與「細」相對",
+        "顆粒較大。與「細」相對",
+        "聲音較厚重",
+        "不周密、不仔細",
+        "不精緻、不細膩。與「精」相對",
+        "魯莽、不文雅",
+        "稍微、略微"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:粗:7",
+      "char": "粗",
+      "sentence": "語詞「粗具規模」中的「粗」，就是指稍微、略微。",
+      "definition": "稍微、略微",
+      "options": [
+        "長條物橫切面較大。與「細」相對",
+        "顆粒較大。與「細」相對",
+        "聲音較厚重",
+        "不周密、不仔細",
+        "不精緻、不細膩。與「精」相對",
+        "魯莽、不文雅",
+        "稍微、略微"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:毫:1",
+      "char": "毫",
+      "sentence": "語詞「毫釐之差」中的「毫」，就是指極小、細微的。",
+      "definition": "極小、細微的",
+      "options": [
+        "極小、細微的",
+        "細長的毛",
+        "毛筆",
+        "一點點",
+        "公制中表示度、量、衡等單位的千分之一"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:毫:2",
+      "char": "毫",
+      "sentence": "語詞「毫毛」中的「毫」，就是指細長的毛。",
+      "definition": "細長的毛",
+      "options": [
+        "極小、細微的",
+        "細長的毛",
+        "毛筆",
+        "一點點",
+        "公制中表示度、量、衡等單位的千分之一"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:毫:3",
+      "char": "毫",
+      "sentence": "語詞「揮毫」中的「毫」，就是指毛筆。",
+      "definition": "毛筆",
+      "options": [
+        "極小、細微的",
+        "細長的毛",
+        "毛筆",
+        "一點點",
+        "公制中表示度、量、衡等單位的千分之一"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:毫:4",
+      "char": "毫",
+      "sentence": "語詞「毫不介意」中的「毫」，就是指一點點。",
+      "definition": "一點點",
+      "options": [
+        "極小、細微的",
+        "細長的毛",
+        "毛筆",
+        "一點點",
+        "公制中表示度、量、衡等單位的千分之一"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:毫:5",
+      "char": "毫",
+      "sentence": "語詞「毫米」中的「毫」，就是指公制中表示度、量、衡等單位的千分之一。",
+      "definition": "公制中表示度、量、衡等單位的千分之一",
+      "options": [
+        "極小、細微的",
+        "細長的毛",
+        "毛筆",
+        "一點點",
+        "公制中表示度、量、衡等單位的千分之一"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:虧:1",
+      "char": "虧",
+      "sentence": "語詞「幸虧」中的「虧」，就是指表示僥倖。",
+      "definition": "表示僥倖",
+      "options": [
+        "表示僥倖",
+        "耗損、賠損。與「盈」相對",
+        "欠缺、缺少",
+        "損失、損害。當名詞用",
+        "辜負、對不起",
+        "表示斥責或譏諷"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:虧:2",
+      "char": "虧",
+      "sentence": "語詞「虧本」中的「虧」，就是指耗損、賠損。與「盈」相對。",
+      "definition": "耗損、賠損。與「盈」相對",
+      "options": [
+        "表示僥倖",
+        "耗損、賠損。與「盈」相對",
+        "欠缺、缺少",
+        "損失、損害。當名詞用",
+        "辜負、對不起",
+        "表示斥責或譏諷"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:虧:3",
+      "char": "虧",
+      "sentence": "語詞「自知理虧」中的「虧」，就是指欠缺、缺少。",
+      "definition": "欠缺、缺少",
+      "options": [
+        "表示僥倖",
+        "耗損、賠損。與「盈」相對",
+        "欠缺、缺少",
+        "損失、損害。當名詞用",
+        "辜負、對不起",
+        "表示斥責或譏諷"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:虧:4",
+      "char": "虧",
+      "sentence": "語詞「吃虧」中的「虧」，就是指損失、損害。當名詞用。",
+      "definition": "損失、損害。當名詞用",
+      "options": [
+        "表示僥倖",
+        "耗損、賠損。與「盈」相對",
+        "欠缺、缺少",
+        "損失、損害。當名詞用",
+        "辜負、對不起",
+        "表示斥責或譏諷"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:虧:5",
+      "char": "虧",
+      "sentence": "語詞「虧待」中的「虧」，就是指辜負、對不起。",
+      "definition": "辜負、對不起",
+      "options": [
+        "表示僥倖",
+        "耗損、賠損。與「盈」相對",
+        "欠缺、缺少",
+        "損失、損害。當名詞用",
+        "辜負、對不起",
+        "表示斥責或譏諷"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H12:虧:6",
+      "char": "虧",
+      "sentence": "語詞「虧你還是哥哥」中的「虧」，就是指表示斥責或譏諷。",
+      "definition": "表示斥責或譏諷",
+      "options": [
+        "表示僥倖",
+        "耗損、賠損。與「盈」相對",
+        "欠缺、缺少",
+        "損失、損害。當名詞用",
+        "辜負、對不起",
+        "表示斥責或譏諷"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    }
+  ],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG6H12:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "頭",
+          "example": "頭銜、銜接"
+        },
+        {
+          "char": "街",
+          "example": "街道、街口"
+        },
+        {
+          "char": "衝",
+          "example": "衝動、衝突"
+        },
+        {
+          "char": "平",
+          "example": "平衡、衡量"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H12:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "豪",
+          "example": "豪門、自豪"
+        },
+        {
+          "char": "絲",
+          "example": "絲毫、毫無"
+        },
+        {
+          "char": "藥",
+          "example": "藥膏、牙膏"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H12:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "收",
+          "example": "收割、割草"
+        },
+        {
+          "char": "瞎",
+          "example": "瞎忙、瞎說"
+        },
+        {
+          "char": "豁",
+          "example": "豁達、豁免"
+        },
+        {
+          "char": "轄",
+          "example": "轄區、管轄"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H12:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "出",
+          "example": "出嫁、嫁娶"
+        },
+        {
+          "char": "傢",
+          "example": "傢伙、傢俱"
+        },
+        {
+          "char": "莊",
+          "example": "莊稼、稼穡"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H12:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "攤",
+          "example": "攤販、地攤"
+        },
+        {
+          "char": "海",
+          "example": "海灘、沙灘"
+        },
+        {
+          "char": "癱",
+          "example": "癱瘓、癱軟"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG6H12:1",
+      "stem": "布大爺為什麼熟悉每一顆南瓜？",
+      "question": "布大爺為什麼熟悉每一顆南瓜？",
+      "options": [
+        "十分疼愛並細心照料 (2)每天到市場購買"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H12:2",
+      "stem": "他為什麼先留在菜園？",
+      "question": "他為什麼先留在菜園？",
+      "options": [
+        "收集南瓜蒂作證 (2)等待南瓜長大"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H12:3",
+      "stem": "哪一項證據證明南瓜是他的？",
+      "question": "哪一項證據證明南瓜是他的？",
+      "options": [
+        "南瓜蒂能和南瓜接合 (2)菜販主動承認"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H12:4",
+      "stem": "故事主旨是什麼？",
+      "question": "故事主旨是什麼？",
+      "options": [
+        "冷靜分析能找到解決策略 (2)爭吵就能拿回物品"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    }
+  ],
+  "review_words": {},
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag6h-12",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E6%93%AC%E9%8A%9C%E8%B1%AA%E7%A2%A9%E5%89%B2%E5%AB%81%E7%AB%8A%E8%B3%8A%E6%94%A4%E6%86%91%E9%91%BF%E5%82%A2%E9%A7%81%E8%AA%A3%E7%9B%A3%E8%92%82%E7%B2%97%E6%AF%AB",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・六年級・第12課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「擬」的部首是哪一個？",
+      "options": [
+        "⼼",
+        "⾋",
+        "⼑"
+      ],
+      "answer": "⼿",
+      "explanation": "「擬」的部首是⼿。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「銜」的部首是哪一個？",
+      "options": [
+        "⼥",
+        "⽑",
+        "⾔"
+      ],
+      "answer": "⾦",
+      "explanation": "「銜」的部首是⾦。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「豪」的部首是哪一個？",
+      "options": [
+        "⾗",
+        "⼈",
+        "⽯"
+      ],
+      "answer": "⾗",
+      "explanation": "「豪」的部首是⾗。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「比擬」是什麼意思？",
+      "options": [
+        "果實與枝莖相連的部分。",
+        "設於路旁、夜市等地，簡單的貨物零售處。",
+        "比較模擬。"
+      ],
+      "answer": "比較模擬。",
+      "explanation": "比擬：比較模擬。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「頭銜」是什麼意思？",
+      "options": [
+        "對人親暱、戲謔或輕蔑的稱呼。",
+        "極為真實確定。",
+        "巨大。"
+      ],
+      "answer": "職位、官位的名稱。",
+      "explanation": "頭銜：職位、官位的名稱。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「自豪」是什麼意思？",
+      "options": [
+        "巨大。",
+        "因某種機運而自困境中獲得解脫。",
+        "果實與枝莖相連的部分。"
+      ],
+      "answer": "為自己感到光榮、驕傲。",
+      "explanation": "自豪：為自己感到光榮、驕傲。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「碩大」是什麼意思？",
+      "options": [
+        "職位、官位的名稱。",
+        "設於路旁、夜市等地，簡單的貨物零售處。",
+        "對人親暱、戲謔或輕蔑的稱呼。"
+      ],
+      "answer": "巨大。",
+      "explanation": "碩大：巨大。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「割捨」是什麼意思？",
+      "options": [
+        "長條物橫切面較大。與「細」相對。",
+        "提出反對的理由加以辯駁。",
+        "比較模擬。"
+      ],
+      "answer": "斷絕、捨棄。",
+      "explanation": "割捨：斷絕、捨棄。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "段落摘要已整理；課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "教材待補：應用任務設計中"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "聆聽題目保留待教師確認答案，未在正式模組顯示。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭教材尚未完成公開資料整理。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "跨課複習資料待補。"
+    }
+  }
+}

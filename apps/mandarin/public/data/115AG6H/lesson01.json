@@ -1,0 +1,1894 @@
+{
+  "lesson_id": "115AG6H01",
+  "volume": {
+    "code": "115AG6H",
+    "publisher": "翰林",
+    "grade": 6,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "六上國語課程"
+  },
+  "lesson_no": 1,
+  "title": "遇見自己",
+  "author": "",
+  "blurb": "透過〈遇見自己〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "characters": [
+    {
+      "char": "漣",
+      "zhuyin": "ㄌㄧㄢˊ",
+      "stroke_count": 13,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "漣漪"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%BC%A3",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "漪",
+      "zhuyin": "ㄧ",
+      "stroke_count": 14,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "漣漪"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%BC%AA",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "皺",
+      "zhuyin": "ㄓㄡˋ",
+      "stroke_count": 15,
+      "radical": "⽪",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "皺巴巴"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%9A%BA",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "晃",
+      "zhuyin": "ㄏㄨㄤˇ",
+      "stroke_count": 10,
+      "radical": "⽇",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "搖晃"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%99%83",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "弄",
+      "zhuyin": "ㄋㄨㄥˋ",
+      "stroke_count": 7,
+      "radical": "⼶",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "捉弄"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%BC%84",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "摯",
+      "zhuyin": "ㄓˋ",
+      "stroke_count": 15,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "真摯"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%91%AF",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "蛹",
+      "zhuyin": "ㄩㄥˇ",
+      "stroke_count": 13,
+      "radical": "⾍",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "蛹"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%9B%B9",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "翼",
+      "zhuyin": "ㄧˋ",
+      "stroke_count": 17,
+      "radical": "⽻",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "翼"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%BF%BC",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "註",
+      "zhuyin": "ㄓㄨˋ",
+      "stroke_count": 12,
+      "radical": "⾔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "註定"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%A8%BB",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "噴",
+      "zhuyin": "ㄆㄣ",
+      "stroke_count": 15,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "噴泉"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%99%B4",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "儲",
+      "zhuyin": "ㄔㄨˇ",
+      "stroke_count": 17,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "儲存"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%84%B2",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "勉",
+      "zhuyin": "ㄇㄧㄢˇ",
+      "stroke_count": 9,
+      "radical": "⼒",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "勉勵"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8B%89",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "邁",
+      "zhuyin": "ㄇㄞˋ",
+      "stroke_count": 15,
+      "radical": "⾡",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "邁入"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%82%81",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "詢",
+      "zhuyin": "ㄒㄩㄣˊ",
+      "stroke_count": 13,
+      "radical": "⾔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "詢問"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%A9%A2",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "惘",
+      "zhuyin": "ㄨㄤˇ",
+      "stroke_count": 11,
+      "radical": "⼼",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "迷惘"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%83%98",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "赴",
+      "zhuyin": "ㄈㄨˋ",
+      "stroke_count": 9,
+      "radical": "⾛",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "奔赴"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B5%B4",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "恆",
+      "zhuyin": "ㄏㄥˊ",
+      "stroke_count": 9,
+      "radical": "⼼",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "永恆"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%81%86",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG6H01:01",
+      "word": "漣漪",
+      "zhuyin": "ㄌㄧㄢˊ ㄧ",
+      "meaning": "水面上細微的波紋。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG6H/lesson01/vocabulary/l01-01.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H01:02",
+      "word": "皺巴巴",
+      "zhuyin": "ㄓㄡˋ ㄅㄚ ㄅㄚ",
+      "meaning": "皺紋多，不平整。",
+      "example_sentence": "他從口袋裡掏出一張皺巴巴的鈔票。",
+      "example_status": "approved",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H01:03",
+      "word": "搖晃",
+      "zhuyin": "ㄧㄠˊ ㄏㄨㄤˇ",
+      "meaning": "搖擺晃動。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H01:04",
+      "word": "捉弄",
+      "zhuyin": "ㄓㄨㄛ ㄋㄨㄥˋ",
+      "meaning": "戲弄，對人開玩笑。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H01:05",
+      "word": "真摯",
+      "zhuyin": "ㄓㄣ ㄓˋ",
+      "meaning": "真實誠懇。",
+      "example_sentence": "經過許多事件的共患難，便可看出人與人之間真摯的友誼。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H01:06",
+      "word": "蛹",
+      "zhuyin": "ㄩㄥˇ",
+      "meaning": "昆蟲成長過程中，由幼蟲變為成蟲之前，所經歷一段不動不食，看起來好像死掉的狀態。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG6H/lesson01/vocabulary/l01-06.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H01:07",
+      "word": "翼",
+      "zhuyin": "ㄧˋ",
+      "meaning": "翅膀。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H01:08",
+      "word": "註定",
+      "zhuyin": "ㄓㄨˋ ㄉㄧㄥˋ",
+      "meaning": "一種宿命思想，以為個人或團體的一切遭遇或變化，上天早已決定，非人力所能更易。",
+      "example_sentence": "事情的成敗並不是註定的，大多取決於付出多少努力。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG6H/lesson01/vocabulary/l01-08.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H01:09",
+      "word": "噴泉",
+      "zhuyin": "ㄆㄣ ㄑㄩㄢˊ",
+      "meaning": "由地下往上噴出的泉水。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H01:10",
+      "word": "儲存",
+      "zhuyin": "ㄔㄨˇ ㄘㄨㄣˊ",
+      "meaning": "積聚存放。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG6H/lesson01/vocabulary/l01-10.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H01:11",
+      "word": "勉勵",
+      "zhuyin": "ㄇㄧㄢˇ ㄌㄧˋ",
+      "meaning": "勸勉鼓勵。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H01:12",
+      "word": "邁入",
+      "zhuyin": "ㄇㄞˋ ㄖㄨˋ",
+      "meaning": "跨入、進入。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H01:13",
+      "word": "詢問",
+      "zhuyin": "ㄒㄩㄣˊ ㄨㄣˋ",
+      "meaning": "查問。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H01:14",
+      "word": "迷惘",
+      "zhuyin": "ㄇㄧˊ ㄨㄤˇ",
+      "meaning": "困惑而不知所措。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H01:15",
+      "word": "奔赴",
+      "zhuyin": "ㄅㄣ ㄈㄨˋ",
+      "meaning": "驅奔某一目的地。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H01:16",
+      "word": "永恆",
+      "zhuyin": "ㄩㄥˇ ㄏㄥˊ",
+      "meaning": "恆久不變。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG6H01:搖頭晃腦",
+      "idiom": "搖頭晃腦",
+      "definition": "頭搖來搖去。形容自以為是或自得其樂。",
+      "related_char": "晃",
+      "image": "idioms/01_搖頭晃腦.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H01:班門弄斧",
+      "idiom": "班門弄斧",
+      "definition": "比喻在行家面前賣弄本事，不自量力。",
+      "related_char": "弄",
+      "image": "idioms/02_班門弄斧.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H01:情真意摯",
+      "idiom": "情真意摯",
+      "definition": "情感真切、心意誠摯。",
+      "related_char": "摯",
+      "image": "idioms/03_情真意摯.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H01:不翼而飛",
+      "idiom": "不翼而飛",
+      "definition": "比喻物品無故遺失。",
+      "related_char": "翼",
+      "image": "idioms/04_不翼而飛.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H01:含血噴人",
+      "idiom": "含血噴人",
+      "definition": "比喻捏造事實，誣賴他人。",
+      "related_char": "噴",
+      "image": "idioms/05_含血噴人.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H01:儲精蓄銳",
+      "idiom": "儲精蓄銳",
+      "definition": "保養精神，積蓄力量。",
+      "related_char": "儲",
+      "image": "idioms/06_儲精蓄銳.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H01:勉為其難",
+      "idiom": "勉為其難",
+      "definition": "雖然在事實上有所困難，但仍努力去做。",
+      "related_char": "勉",
+      "image": "idioms/07_勉為其難.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H01:赴湯蹈火",
+      "idiom": "赴湯蹈火",
+      "definition": "比喻奮不顧身，不避艱險。",
+      "related_char": "赴",
+      "image": "idioms/08_赴湯蹈火.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG6H01:1",
+      "idiom_id": "idiom:115AG6H01:搖頭晃腦",
+      "rewritten": "遇到生活中的相關情況時，可以用「搖頭晃腦」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H01:2",
+      "idiom_id": "idiom:115AG6H01:班門弄斧",
+      "rewritten": "遇到生活中的相關情況時，可以用「班門弄斧」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H01:3",
+      "idiom_id": "idiom:115AG6H01:情真意摯",
+      "rewritten": "遇到生活中的相關情況時，可以用「情真意摯」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H01:4",
+      "idiom_id": "idiom:115AG6H01:不翼而飛",
+      "rewritten": "遇到生活中的相關情況時，可以用「不翼而飛」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H01:5",
+      "idiom_id": "idiom:115AG6H01:含血噴人",
+      "rewritten": "遇到生活中的相關情況時，可以用「含血噴人」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H01:6",
+      "idiom_id": "idiom:115AG6H01:儲精蓄銳",
+      "rewritten": "遇到生活中的相關情況時，可以用「儲精蓄銳」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H01:7",
+      "idiom_id": "idiom:115AG6H01:勉為其難",
+      "rewritten": "遇到生活中的相關情況時，可以用「勉為其難」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H01:8",
+      "idiom_id": "idiom:115AG6H01:赴湯蹈火",
+      "rewritten": "遇到生活中的相關情況時，可以用「赴湯蹈火」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG6H01:word:1",
+      "category": "詞語造句",
+      "head": "皺巴巴",
+      "structure": "詞語造句",
+      "description": "皺紋多，不平整。",
+      "guide": "我打開抽屜，看見一張皺巴巴的＿＿＿＿。",
+      "examples": [
+        "他從口袋裡掏出一張皺巴巴的鈔票。"
+      ],
+      "example_parts": [
+        [
+          "他",
+          "從口袋裡掏出",
+          "一張皺巴巴的",
+          "鈔票"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "奶奶從盒子裡",
+          "拿出",
+          "一張皺巴巴的",
+          "照片"
+        ]
+      ],
+      "word_bank": [
+        "紙張",
+        "照片",
+        "鈔票",
+        "卡片"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H01:word:2",
+      "category": "詞語造句",
+      "head": "真摯",
+      "structure": "詞語造句",
+      "description": "真實誠懇。",
+      "guide": "畢業典禮上，我想對老師表達真摯的＿＿＿＿。",
+      "examples": [
+        "經過許多事件的共患難，便可看出人與人之間真摯的友誼。"
+      ],
+      "example_parts": [
+        [
+          "經過許多事件的共患難",
+          "便可看出",
+          "人與人之間",
+          "真摯的友誼"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "同學",
+          "送上",
+          "真摯的",
+          "祝福"
+        ]
+      ],
+      "word_bank": [
+        "感謝",
+        "祝福",
+        "關懷",
+        "歉意"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H01:word:3",
+      "category": "詞語造句",
+      "head": "註定",
+      "structure": "詞語造句",
+      "description": "認為遭遇早已決定、不能改變。",
+      "guide": "比賽的結果不是註定的，只要＿＿＿＿，就有機會進步。",
+      "examples": [
+        "事情的成敗並不是註定的，大多取決於付出多少努力。"
+      ],
+      "example_parts": [
+        [
+          "事情的成敗",
+          "並不是註定的",
+          "大多取決於",
+          "付出多少努力"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "成功",
+          "不是註定的",
+          "需要",
+          "持續努力"
+        ]
+      ],
+      "word_bank": [
+        "持續練習",
+        "主動請教",
+        "認真準備",
+        "調整方法"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H01:pattern:1",
+      "category": "句型練習",
+      "head": "動作＋數量＋描寫＋事物",
+      "structure": "動詞＋一＋量詞＋形容詞＋的＋名詞",
+      "description": "依照句型寫一句新的短語或句子；每一個部分都要出現。",
+      "guide": "依照句型寫一句新的短語或句子；每一個部分都要出現。",
+      "examples": [
+        "寫一頁工整的硬筆字",
+        "吃一顆苦澀的藥丸",
+        "折一隻潔白的紙鶴"
+      ],
+      "example_parts": [
+        [
+          "寫",
+          "一頁",
+          "工整的",
+          "硬筆字"
+        ],
+        [
+          "吃",
+          "一顆",
+          "苦澀的",
+          "藥丸"
+        ],
+        [
+          "折",
+          "一隻",
+          "潔白的",
+          "紙鶴"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "動詞",
+          "choices": [
+            "畫",
+            "讀",
+            "折"
+          ]
+        },
+        {
+          "label": "一＋量詞",
+          "choices": [
+            "一幅",
+            "一本",
+            "一隻"
+          ]
+        },
+        {
+          "label": "形容詞＋的",
+          "choices": [
+            "繽紛的",
+            "有趣的",
+            "潔白的"
+          ]
+        },
+        {
+          "label": "名詞",
+          "choices": [
+            "圖畫",
+            "故事書",
+            "紙鶴"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H01:pattern:2",
+      "category": "句型練習",
+      "head": "把負面轉成正面",
+      "structure": "把＋名詞（負面）＋動詞＋成＋名詞（正面）",
+      "description": "想一件可以改變的事，依照句型寫出由負面轉成正面的句子。",
+      "guide": "想一件可以改變的事，依照句型寫出由負面轉成正面的句子。",
+      "examples": [
+        "把缺點改成優點",
+        "把挫折當成養分",
+        "把失敗變成經驗"
+      ],
+      "example_parts": [
+        [
+          "把",
+          "缺點",
+          "改成",
+          "優點"
+        ],
+        [
+          "把",
+          "挫折",
+          "當成",
+          "養分"
+        ],
+        [
+          "把",
+          "失敗",
+          "變成",
+          "經驗"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "提示字",
+          "choices": [
+            "把"
+          ]
+        },
+        {
+          "label": "負面事物",
+          "choices": [
+            "困難",
+            "煩惱",
+            "失敗"
+          ]
+        },
+        {
+          "label": "改變動作",
+          "choices": [
+            "看成",
+            "化成",
+            "變成"
+          ]
+        },
+        {
+          "label": "正面結果",
+          "choices": [
+            "挑戰",
+            "動力",
+            "經驗"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:01:01",
+      "paragraph_no": 1,
+      "summary": "詩人站在生態池邊，看見水中倒影。風吹起漣漪，倒影變得皺巴巴，也讓他開始注意既熟悉又不確定的自己。",
+      "structure_role": "【第一段】觀察自己",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:01:02",
+      "paragraph_no": 2,
+      "summary": "池旁葉縫透出的光，好像家人、師長和同學關注的小眼睛。詩人猶豫要扮鬼臉還是笑咪咪，展開自我省思。",
+      "structure_role": "【第二段】探索自己",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:01:03",
+      "paragraph_no": 3,
+      "summary": "詩人詢問覓食的小魚：自己雖然熱情，卻常愛捉弄人，這樣能找到真摯友情嗎？他開始檢討與朋友相處的態度。",
+      "structure_role": "【第三段】期勉自己",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:01:04",
+      "paragraph_no": 4,
+      "summary": "詩人詢問自由自在的蝴蝶：想學習又貪玩的自己，能否破蛹飛起、追尋夢想？蝴蝶象徵經歷挑戰後的成長。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:01:05",
+      "paragraph_no": 5,
+      "summary": "詩人再詢問耀眼的陽光：優點與缺點是上天註定，還是能由自己決定？他明白願意選擇與努力，就能改進不足。",
+      "structure_role": "第5段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:01:06",
+      "paragraph_no": 6,
+      "summary": "最後，詩人想摘下雪白的雲，擦亮誠懇的心靈，迎向太陽，把幽暗抹成光明，並把彩虹般的微笑儲存給未來的自己。",
+      "structure_role": "第6段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "main_idea": {
+    "gist": "詩人藉池中倒影展開自我探索，省思友情、學習與特質，最後以正向積極態度追求光明的未來。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:01:01",
+      "stem": "詩中的「葉縫裡透出的小眼睛」主要象徵什麼？",
+      "options": [
+        "池裡覓食的小魚",
+        "周圍的人對自己的關注",
+        "樹葉上的昆蟲",
+        "陽光照出的水珠"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:01:02",
+      "stem": "詩人依序詢問小魚、蝴蝶和陽光，主要是在做什麼？",
+      "options": [
+        "蒐集自然觀察資料",
+        "尋找離開水池的方法",
+        "檢視友情、學習與性格",
+        "比較三種生物的外形"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:01:03",
+      "stem": "「破蛹飛起，張開夢想的彩翼」最接近哪一種意思？",
+      "options": [
+        "逃避困難，不再學習",
+        "經歷挑戰，勇敢成長逐夢",
+        "等待別人替自己決定",
+        "只要貪玩就能得到自由"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:01:04",
+      "stem": "本詩最後最想鼓勵讀者採取哪一種態度？",
+      "options": [
+        "隱藏缺點，迎合他人",
+        "把成敗都交給命運",
+        "只記得當下的快樂",
+        "真誠省思並主動改善自己"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG6H01:漣:1",
+      "char": "漣",
+      "sentence": "語詞「漣漪」中的「漣」，就是指水面的小波紋。",
+      "definition": "水面的小波紋",
+      "options": [
+        "水面的小波紋",
+        "流淚很多的樣子"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:漣:2",
+      "char": "漣",
+      "sentence": "語詞「漣漣」中的「漣」，就是指流淚很多的樣子。",
+      "definition": "流淚很多的樣子",
+      "options": [
+        "水面的小波紋",
+        "流淚很多的樣子"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:皺:1",
+      "char": "皺",
+      "sentence": "語詞「皺眉頭」中的「皺」，就是指擠壓而生皺紋。",
+      "definition": "擠壓而生皺紋",
+      "options": [
+        "擠壓而生皺紋",
+        "臉上皮膚所產生的摺紋",
+        "物體上的摺紋"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:皺:2",
+      "char": "皺",
+      "sentence": "語詞「皺紋」中的「皺」，就是指臉上皮膚所產生的摺紋。",
+      "definition": "臉上皮膚所產生的摺紋",
+      "options": [
+        "擠壓而生皺紋",
+        "臉上皮膚所產生的摺紋",
+        "物體上的摺紋"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:皺:3",
+      "char": "皺",
+      "sentence": "語詞「衣服弄皺了」中的「皺」，就是指物體上的摺紋。",
+      "definition": "物體上的摺紋",
+      "options": [
+        "擠壓而生皺紋",
+        "臉上皮膚所產生的摺紋",
+        "物體上的摺紋"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:弄:1",
+      "char": "弄",
+      "sentence": "語詞「玩弄」中的「弄」，就是指把玩、戲耍。",
+      "definition": "把玩、戲耍",
+      "options": [
+        "把玩、戲耍",
+        "做、從事、處理",
+        "取得",
+        "欺騙",
+        "搞",
+        "探查、追究"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:弄:2",
+      "char": "弄",
+      "sentence": "語詞「弄飯菜」中的「弄」，就是指做、從事、處理。",
+      "definition": "做、從事、處理",
+      "options": [
+        "把玩、戲耍",
+        "做、從事、處理",
+        "取得",
+        "欺騙",
+        "搞",
+        "探查、追究"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:弄:3",
+      "char": "弄",
+      "sentence": "語詞「他弄來一頂帽子」中的「弄」，就是指取得。",
+      "definition": "取得",
+      "options": [
+        "把玩、戲耍",
+        "做、從事、處理",
+        "取得",
+        "欺騙",
+        "搞",
+        "探查、追究"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:弄:4",
+      "char": "弄",
+      "sentence": "語詞「戲弄」中的「弄」，就是指欺騙。",
+      "definition": "欺騙",
+      "options": [
+        "把玩、戲耍",
+        "做、從事、處理",
+        "取得",
+        "欺騙",
+        "搞",
+        "探查、追究"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:弄:5",
+      "char": "弄",
+      "sentence": "語詞「這個消息把大家弄得人心惶惶」中的「弄」，就是指搞。",
+      "definition": "搞",
+      "options": [
+        "把玩、戲耍",
+        "做、從事、處理",
+        "取得",
+        "欺騙",
+        "搞",
+        "探查、追究"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:弄:6",
+      "char": "弄",
+      "sentence": "語詞「弄明白」中的「弄」，就是指探查、追究。",
+      "definition": "探查、追究",
+      "options": [
+        "把玩、戲耍",
+        "做、從事、處理",
+        "取得",
+        "欺騙",
+        "搞",
+        "探查、追究"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:摯:1",
+      "char": "摯",
+      "sentence": "語詞「誠摯」中的「摯」，就是指誠懇。",
+      "definition": "誠懇",
+      "options": [
+        "誠懇",
+        "誠懇深厚的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:摯:2",
+      "char": "摯",
+      "sentence": "語詞「摯友」中的「摯」，就是指誠懇深厚的。",
+      "definition": "誠懇深厚的",
+      "options": [
+        "誠懇",
+        "誠懇深厚的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:翼:1",
+      "char": "翼",
+      "sentence": "語詞「蟬翼」中的「翼」，就是指翅膀。",
+      "definition": "翅膀",
+      "options": [
+        "翅膀",
+        "外型或功能近似翅膀的東西",
+        "側、旁邊",
+        "輔助、庇護"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:翼:2",
+      "char": "翼",
+      "sentence": "語詞「機翼」中的「翼」，就是指外型或功能近似翅膀的東西。",
+      "definition": "外型或功能近似翅膀的東西",
+      "options": [
+        "翅膀",
+        "外型或功能近似翅膀的東西",
+        "側、旁邊",
+        "輔助、庇護"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:翼:3",
+      "char": "翼",
+      "sentence": "語詞「左翼」中的「翼」，就是指側、旁邊。",
+      "definition": "側、旁邊",
+      "options": [
+        "翅膀",
+        "外型或功能近似翅膀的東西",
+        "側、旁邊",
+        "輔助、庇護"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:翼:4",
+      "char": "翼",
+      "sentence": "語詞「卵翼」中的「翼」，就是指輔助、庇護。",
+      "definition": "輔助、庇護",
+      "options": [
+        "翅膀",
+        "外型或功能近似翅膀的東西",
+        "側、旁邊",
+        "輔助、庇護"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:註:1",
+      "char": "註",
+      "sentence": "語詞「註冊」中的「註」，就是指記載、登記。",
+      "definition": "記載、登記",
+      "options": [
+        "記載、登記",
+        "用來解釋或說明的文字。同「注」"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:註:2",
+      "char": "註",
+      "sentence": "語詞「補註」中的「註」，就是指用來解釋或說明的文字。同「注」。",
+      "definition": "用來解釋或說明的文字。同「注」",
+      "options": [
+        "記載、登記",
+        "用來解釋或說明的文字。同「注」"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:噴:1",
+      "char": "噴",
+      "sentence": "語詞「噴壺」中的「噴」，就是指具湧射功能的。",
+      "definition": "具湧射功能的",
+      "options": [
+        "具湧射功能的",
+        "氣體或液體急遽冒出、湧出",
+        "急速吐出"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:噴:2",
+      "char": "噴",
+      "sentence": "語詞「噴水」中的「噴」，就是指氣體或液體急遽冒出、湧出。",
+      "definition": "氣體或液體急遽冒出、湧出",
+      "options": [
+        "具湧射功能的",
+        "氣體或液體急遽冒出、湧出",
+        "急速吐出"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:噴:3",
+      "char": "噴",
+      "sentence": "語詞「噴飯」中的「噴」，就是指急速吐出。",
+      "definition": "急速吐出",
+      "options": [
+        "具湧射功能的",
+        "氣體或液體急遽冒出、湧出",
+        "急速吐出"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:儲:1",
+      "char": "儲",
+      "sentence": "語詞「儲蓄」中的「儲」，就是指蓄積、聚集。",
+      "definition": "蓄積、聚集",
+      "options": [
+        "蓄積、聚集",
+        "指太子或即將要繼承王位的人"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:儲:2",
+      "char": "儲",
+      "sentence": "語詞「立儲」中的「儲」，就是指指太子或即將要繼承王位的人。",
+      "definition": "指太子或即將要繼承王位的人",
+      "options": [
+        "蓄積、聚集",
+        "指太子或即將要繼承王位的人"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:勉:1",
+      "char": "勉",
+      "sentence": "語詞「嘉勉」中的「勉」，就是指鼓勵。",
+      "definition": "鼓勵",
+      "options": [
+        "鼓勵",
+        "強迫去做能力不夠或不願意做的事",
+        "盡力、努力"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:勉:2",
+      "char": "勉",
+      "sentence": "語詞「勉強」中的「勉」，就是指強迫去做能力不夠或不願意做的事。",
+      "definition": "強迫去做能力不夠或不願意做的事",
+      "options": [
+        "鼓勵",
+        "強迫去做能力不夠或不願意做的事",
+        "盡力、努力"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:勉:3",
+      "char": "勉",
+      "sentence": "語詞「勤勉」中的「勉」，就是指盡力、努力。",
+      "definition": "盡力、努力",
+      "options": [
+        "鼓勵",
+        "強迫去做能力不夠或不願意做的事",
+        "盡力、努力"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:邁:1",
+      "char": "邁",
+      "sentence": "語詞「邁步」中的「邁」，就是指抬腿跨步。",
+      "definition": "抬腿跨步",
+      "options": [
+        "抬腿跨步",
+        "豪放",
+        "衰老"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:邁:2",
+      "char": "邁",
+      "sentence": "語詞「豪邁」中的「邁」，就是指豪放。",
+      "definition": "豪放",
+      "options": [
+        "抬腿跨步",
+        "豪放",
+        "衰老"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:邁:3",
+      "char": "邁",
+      "sentence": "語詞「衰邁」中的「邁」，就是指衰老。",
+      "definition": "衰老",
+      "options": [
+        "抬腿跨步",
+        "豪放",
+        "衰老"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:惘:1",
+      "char": "惘",
+      "sentence": "語詞「迷惘」中的「惘」，就是指困惑、迷惑。",
+      "definition": "困惑、迷惑",
+      "options": [
+        "困惑、迷惑",
+        "失意或失志的樣子"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H01:惘:2",
+      "char": "惘",
+      "sentence": "語詞「悵惘」中的「惘」，就是指失意或失志的樣子。",
+      "definition": "失意或失志的樣子",
+      "options": [
+        "困惑、迷惑",
+        "失意或失志的樣子"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    }
+  ],
+  "polysemy_senses": [],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG6H01:弄",
+      "char": "弄",
+      "readings": [
+        {
+          "zhuyin": "ㄋㄨㄥˋ",
+          "senses": [
+            {
+              "definition": "課本例詞「玩弄」的讀音。",
+              "examples": [
+                "玩弄"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄌㄨㄥˋ",
+          "senses": [
+            {
+              "definition": "課本例詞「巷弄」的讀音。",
+              "examples": [
+                "巷弄"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：一字多音）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG6H01:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "皺",
+          "example": "皺紋、皺褶"
+        },
+        {
+          "char": "鄒",
+          "example": "鄒先生、鄒族"
+        },
+        {
+          "char": "雛",
+          "example": "雛菊、雛形"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H01:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "搖",
+          "example": "搖晃、搖頭晃腦"
+        },
+        {
+          "char": "晃",
+          "example": "晃耀、亮晃晃"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H01:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "摯",
+          "example": "摯情、摯友"
+        },
+        {
+          "char": "引",
+          "example": "引擎、擎天"
+        },
+        {
+          "char": "攻",
+          "example": "攻擊、目擊"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H01:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "蝶",
+          "example": "蝶蛹、破蛹而出"
+        },
+        {
+          "char": "通",
+          "example": "通知、通則"
+        },
+        {
+          "char": "朗",
+          "example": "朗誦、背誦"
+        },
+        {
+          "char": "冰",
+          "example": "冰桶、馬桶"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H01:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "蟬",
+          "example": "蟬翼、羽翼"
+        },
+        {
+          "char": "冀",
+          "example": "冀求、希冀"
+        },
+        {
+          "char": "糞",
+          "example": "糞便、糞土"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H01:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "註",
+          "example": "註冊、註銷"
+        },
+        {
+          "char": "注",
+          "example": "注意、關注"
+        },
+        {
+          "char": "水",
+          "example": "水柱、臺柱"
+        },
+        {
+          "char": "停",
+          "example": "停駐、駐唱"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H01:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "儲",
+          "example": "儲存、儲藏"
+        },
+        {
+          "char": "諸",
+          "example": "諸侯、諸多"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG6H01:1",
+      "stem": "詩中的「葉縫裡透出的小眼睛」主要象徵什麼？",
+      "question": "詩中的「葉縫裡透出的小眼睛」主要象徵什麼？",
+      "options": [
+        "池裡覓食的小魚",
+        "周圍的人對自己的關注",
+        "樹葉上的昆蟲"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H01:2",
+      "stem": "詩人依序詢問小魚、蝴蝶和陽光，主要是在做什麼？",
+      "question": "詩人依序詢問小魚、蝴蝶和陽光，主要是在做什麼？",
+      "options": [
+        "蒐集自然觀察資料",
+        "尋找離開水池的方法",
+        "檢視友情、學習與性格"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H01:3",
+      "stem": "「破蛹飛起，張開夢想的彩翼」最接近哪一種意思？",
+      "question": "「破蛹飛起，張開夢想的彩翼」最接近哪一種意思？",
+      "options": [
+        "逃避困難，不再學習",
+        "經歷挑戰，勇敢成長逐夢",
+        "等待別人替自己決定"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H01:4",
+      "stem": "本詩最後最想鼓勵讀者採取哪一種態度？",
+      "question": "本詩最後最想鼓勵讀者採取哪一種態度？",
+      "options": [
+        "隱藏缺點，迎合他人",
+        "把成敗都交給命運",
+        "只記得當下的快樂"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    }
+  ],
+  "review_words": {},
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag6h-01",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E6%BC%A3%E6%BC%AA%E7%9A%BA%E6%99%83%E5%BC%84%E6%91%AF%E8%9B%B9%E7%BF%BC%E8%A8%BB%E5%99%B4%E5%84%B2%E5%8B%89%E9%82%81%E8%A9%A2%E6%83%98%E8%B5%B4%E6%81%86",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・六年級・第1課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課17個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「漣」的部首是哪一個？",
+      "options": [
+        "⼒",
+        "⾡",
+        "⽻"
+      ],
+      "answer": "⽔",
+      "explanation": "「漣」的部首是⽔。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「漪」的部首是哪一個？",
+      "options": [
+        "⽪",
+        "⽔",
+        "⼼"
+      ],
+      "answer": "⽔",
+      "explanation": "「漪」的部首是⽔。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「皺」的部首是哪一個？",
+      "options": [
+        "⼝",
+        "⾍",
+        "⼿"
+      ],
+      "answer": "⽪",
+      "explanation": "「皺」的部首是⽪。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「漣漪」是什麼意思？",
+      "options": [
+        "真實誠懇。",
+        "一種宿命思想，以為個人或團體的一切遭遇或變化，上天早已決定，非人力所能更易。",
+        "查問。"
+      ],
+      "answer": "水面上細微的波紋。",
+      "explanation": "漣漪：水面上細微的波紋。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「皺巴巴」是什麼意思？",
+      "options": [
+        "驅奔某一目的地。",
+        "戲弄，對人開玩笑。",
+        "恆久不變。"
+      ],
+      "answer": "皺紋多，不平整。",
+      "explanation": "皺巴巴：皺紋多，不平整。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「搖晃」是什麼意思？",
+      "options": [
+        "勸勉鼓勵。",
+        "積聚存放。",
+        "查問。"
+      ],
+      "answer": "搖擺晃動。",
+      "explanation": "搖晃：搖擺晃動。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「捉弄」是什麼意思？",
+      "options": [
+        "昆蟲成長過程中，由幼蟲變為成蟲之前，所經歷一段不動不食，看起來好像死掉的狀態。",
+        "皺紋多，不平整。",
+        "困惑而不知所措。"
+      ],
+      "answer": "戲弄，對人開玩笑。",
+      "explanation": "捉弄：戲弄，對人開玩笑。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「真摯」是什麼意思？",
+      "options": [
+        "昆蟲成長過程中，由幼蟲變為成蟲之前，所經歷一段不動不食，看起來好像死掉的狀態。",
+        "一種宿命思想，以為個人或團體的一切遭遇或變化，上天早已決定，非人力所能更易。",
+        "由地下往上噴出的泉水。"
+      ],
+      "answer": "真實誠懇。",
+      "explanation": "真摯：真實誠懇。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "段落摘要已整理；課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "教材待補：應用任務設計中"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "聆聽題目保留待教師確認答案，未在正式模組顯示。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭教材尚未完成公開資料整理。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "跨課複習資料待補。"
+    }
+  }
+}

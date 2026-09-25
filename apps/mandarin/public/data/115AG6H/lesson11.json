@@ -1,0 +1,1668 @@
+{
+  "lesson_id": "115AG6H11",
+  "volume": {
+    "code": "115AG6H",
+    "publisher": "翰林",
+    "grade": 6,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "六上國語課程"
+  },
+  "lesson_no": 11,
+  "title": "來一碗溫暖的羹湯",
+  "author": "",
+  "blurb": "透過〈來一碗溫暖的羹湯〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "characters": [
+    {
+      "char": "羹",
+      "zhuyin": "ㄍㄥ",
+      "stroke_count": 19,
+      "radical": "⽺",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "羹"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%BE%B9",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "芡",
+      "zhuyin": "ㄑㄧㄢˋ",
+      "stroke_count": 7,
+      "radical": "⾋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "勾芡"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%8A%A1",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "稠",
+      "zhuyin": "ㄔㄡˊ",
+      "stroke_count": 13,
+      "radical": "⽲",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "濃稠"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A8%A0",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "鍋",
+      "zhuyin": "ㄍㄨㄛ",
+      "stroke_count": 16,
+      "radical": "⾦",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "鍋"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%8D%8B",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "喉",
+      "zhuyin": "ㄏㄡˊ",
+      "stroke_count": 12,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%96%89",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "巷",
+      "zhuyin": "ㄒㄧㄤˋ",
+      "stroke_count": 9,
+      "radical": "⼰",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "大街小巷"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B7%B7",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "販",
+      "zhuyin": "ㄈㄢˋ",
+      "stroke_count": 11,
+      "radical": "⾙",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "販"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B2%A9",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "醬",
+      "zhuyin": "ㄐㄧㄤˋ",
+      "stroke_count": 18,
+      "radical": "⾣",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "醬"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%86%AC",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "攪",
+      "zhuyin": "ㄐㄧㄠˇ",
+      "stroke_count": 23,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "攪拌"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%94%AA",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "拌",
+      "zhuyin": "ㄅㄢˋ",
+      "stroke_count": 8,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "攪拌"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8B%8C",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "狹",
+      "zhuyin": "ㄒㄧㄚˊ",
+      "stroke_count": 10,
+      "radical": "⽝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "狹小"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%8B%B9",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "蹲",
+      "zhuyin": "ㄉㄨㄣ",
+      "stroke_count": 19,
+      "radical": "⾜",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "蹲"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B9%B2",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "縱",
+      "zhuyin": "ㄗㄨㄥˋ",
+      "stroke_count": 17,
+      "radical": "⽷",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "縱容"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B8%B1",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "餃",
+      "zhuyin": "ㄐㄧㄠˇ",
+      "stroke_count": 14,
+      "radical": "⾷",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%A4%83",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "裹",
+      "zhuyin": "ㄍㄨㄛˇ",
+      "stroke_count": 14,
+      "radical": "⾐",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "裹"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%A3%B9",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "菇",
+      "zhuyin": "ㄍㄨ",
+      "stroke_count": 11,
+      "radical": "⾋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%8F%87",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "塞",
+      "zhuyin": "ㄙㄞ",
+      "stroke_count": 13,
+      "radical": "⼟",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "塞"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A1%9E",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "嬌",
+      "zhuyin": "ㄐㄧㄠ",
+      "stroke_count": 15,
+      "radical": "⼥",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "撒嬌"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%AC%8C",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG6H11:01",
+      "word": "羹",
+      "zhuyin": "ㄍㄥ",
+      "meaning": "用肉、菜等勾芡煮成的濃湯。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H11:02",
+      "word": "勾芡",
+      "zhuyin": "ㄍㄡ ㄑㄧㄢˋ",
+      "meaning": "烹飪菜餚時，將芡粉用水調勻，加入菜中，使成濃稠狀。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H11:03",
+      "word": "濃稠",
+      "zhuyin": "ㄋㄨㄥˊ ㄔㄡˊ",
+      "meaning": "深濃、厚密。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H11:04",
+      "word": "鍋",
+      "zhuyin": "ㄍㄨㄛ",
+      "meaning": "烹煮食物的器具。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H11:05",
+      "word": "大街小巷",
+      "zhuyin": "ㄉㄚˋ ㄐㄧㄝ ㄒㄧㄠˇ ㄒㄧㄤˋ",
+      "meaning": "城鎮裡大大小小的街巷。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H11:06",
+      "word": "祛寒",
+      "zhuyin": "ㄑㄩ ㄏㄢˊ",
+      "meaning": "去除風寒。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H11:07",
+      "word": "販",
+      "zhuyin": "ㄈㄢˋ",
+      "meaning": "做小買賣的人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H11:08",
+      "word": "醬",
+      "zhuyin": "ㄐㄧㄤˋ",
+      "meaning": "豆、麵等發酵後，加鹽製成的調味品。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H11:09",
+      "word": "攪拌",
+      "zhuyin": "ㄐㄧㄠˇ ㄅㄢˋ",
+      "meaning": "攪動、拌合。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H11:10",
+      "word": "狹小",
+      "zhuyin": "ㄒㄧㄚˊ ㄒㄧㄠˇ",
+      "meaning": "窄小。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H11:11",
+      "word": "蹲",
+      "zhuyin": "ㄉㄨㄣ",
+      "meaning": "彎曲兩腿，臀部虛坐而不著地。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H11:12",
+      "word": "縱容",
+      "zhuyin": "ㄗㄨㄥˋ ㄖㄨㄥˊ",
+      "meaning": "放任而不加約束。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H11:13",
+      "word": "裹",
+      "zhuyin": "ㄍㄨㄛˇ",
+      "meaning": "沾黏包住。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H11:14",
+      "word": "塞",
+      "zhuyin": "ㄙㄞ",
+      "meaning": "填滿空隙。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H11:15",
+      "word": "撒嬌",
+      "zhuyin": "ㄙㄚ ㄐㄧㄠ",
+      "meaning": "仗著對方的寵愛而任意做出嬌態。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG6H11:為民喉舌",
+      "idiom": "為民喉舌",
+      "definition": "比喻代替人民說話，表達意見。",
+      "related_char": "喉",
+      "image": "idioms/01_為民喉舌.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H11:街談巷議",
+      "idiom": "街談巷議",
+      "definition": "大街小巷中的談說議論。",
+      "related_char": "巷",
+      "image": "idioms/02_街談巷議.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H11:狹路相逢",
+      "idiom": "狹路相逢",
+      "definition": "比喻仇人相遇。",
+      "related_char": "狹",
+      "image": "idioms/03_狹路相逢.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H11:欲擒故縱",
+      "idiom": "欲擒故縱",
+      "definition": "為了要使對方就範，故意先放鬆一步。",
+      "related_char": "縱",
+      "image": "idioms/04_欲擒故縱.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H11:裹足不前",
+      "idiom": "裹足不前",
+      "definition": "形容有所顧忌，而停止腳步，不敢向前。",
+      "related_char": "裹",
+      "image": "idioms/05_裹足不前.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H11:嬌生慣養",
+      "idiom": "嬌生慣養",
+      "definition": "在備受寵愛縱容中成長。",
+      "related_char": "嬌",
+      "image": "idioms/06_嬌生慣養.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG6H11:1",
+      "idiom_id": "idiom:115AG6H11:為民喉舌",
+      "rewritten": "遇到生活中的相關情況時，可以用「為民喉舌」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H11:2",
+      "idiom_id": "idiom:115AG6H11:街談巷議",
+      "rewritten": "遇到生活中的相關情況時，可以用「街談巷議」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H11:3",
+      "idiom_id": "idiom:115AG6H11:狹路相逢",
+      "rewritten": "遇到生活中的相關情況時，可以用「狹路相逢」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H11:4",
+      "idiom_id": "idiom:115AG6H11:欲擒故縱",
+      "rewritten": "遇到生活中的相關情況時，可以用「欲擒故縱」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H11:5",
+      "idiom_id": "idiom:115AG6H11:裹足不前",
+      "rewritten": "遇到生活中的相關情況時，可以用「裹足不前」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H11:6",
+      "idiom_id": "idiom:115AG6H11:嬌生慣養",
+      "rewritten": "遇到生活中的相關情況時，可以用「嬌生慣養」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG6H11:word:1",
+      "category": "詞語造句",
+      "head": "特別想",
+      "structure": "詞語造句",
+      "description": "在某個時間或情境中，比平常更想做某件事。",
+      "guide": "下雨天，我特別想",
+      "examples": [
+        "天冷時，我特別想泡個熱水澡。"
+      ],
+      "example_parts": [
+        [
+          "天冷時，",
+          "我特別想",
+          "泡個",
+          "熱水澡。"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "泡個",
+          "天冷時，",
+          "熱水澡。",
+          "我特別想"
+        ]
+      ],
+      "word_bank": [
+        "喝熱湯",
+        "穿外套",
+        "泡熱水澡",
+        "吃火鍋"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H11:pattern:1",
+      "category": "句型練習",
+      "head": "承接複句",
+      "structure": "先……，再……，最後……。",
+      "description": "選一件你做過的事，依照三個步驟造句。",
+      "guide": "選一件你做過的事，依照三個步驟造句。",
+      "examples": [
+        "先洗青菜再切好食材最後煮成晚餐",
+        "先拿出湯鍋再放入食材最後加入芡粉",
+        "先完成作業再整理書包最後準備休息"
+      ],
+      "example_parts": [
+        [
+          "先洗青菜",
+          "再切好食材",
+          "最後煮成晚餐"
+        ],
+        [
+          "先拿出湯鍋",
+          "再放入食材",
+          "最後加入芡粉"
+        ],
+        [
+          "先完成作業",
+          "再整理書包",
+          "最後準備休息"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "先",
+          "choices": [
+            "先洗青菜",
+            "先拿出湯鍋",
+            "先完成作業"
+          ]
+        },
+        {
+          "label": "再",
+          "choices": [
+            "再切好食材",
+            "再放入食材",
+            "再整理書包"
+          ]
+        },
+        {
+          "label": "最後",
+          "choices": [
+            "最後煮成晚餐",
+            "最後加入芡粉",
+            "最後準備休息"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H11:pattern:2",
+      "category": "句型練習",
+      "head": "遞進複句",
+      "structure": "不是……，而是……。",
+      "description": "想一想你做一件事的真正原因，使用「不是……，而是……」造句。",
+      "guide": "想一想你做一件事的真正原因，使用「不是……，而是……」造句。",
+      "examples": [
+        "我喝羹湯不是因為肚子餓而是想感受溫暖",
+        "我努力練習不是為了炫耀而是想進步",
+        "我幫忙整理不是因為被要求而是想分擔工作"
+      ],
+      "example_parts": [
+        [
+          "我喝羹湯",
+          "不是因為肚子餓",
+          "而是想感受溫暖"
+        ],
+        [
+          "我努力練習",
+          "不是為了炫耀",
+          "而是想進步"
+        ],
+        [
+          "我幫忙整理",
+          "不是因為被要求",
+          "而是想分擔工作"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "不是",
+          "choices": [
+            "不是因為肚子餓",
+            "不是為了炫耀",
+            "不是因為被要求"
+          ]
+        },
+        {
+          "label": "而是",
+          "choices": [
+            "而是想感受溫暖",
+            "而是想進步",
+            "而是想分擔工作"
+          ]
+        },
+        {
+          "label": "情境",
+          "choices": [
+            "我喝羹湯",
+            "我努力練習",
+            "我幫忙整理"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:11:01",
+      "paragraph_no": 1,
+      "summary": "天冷的時候，作者特別想來一碗熱騰騰的羹湯。",
+      "structure_role": "【第1段】天冷想喝羹湯",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:11:02",
+      "paragraph_no": 2,
+      "summary": "一碗羹湯讓人感到暖和，也想起熟悉的街巷。",
+      "structure_role": "【第2段】羹湯的材料與做法",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:11:03",
+      "paragraph_no": 3,
+      "summary": "羹湯加入食材、醬料，再用芡粉勾芡。",
+      "structure_role": "【第3段】一碗湯的溫暖",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:11:04",
+      "paragraph_no": 4,
+      "summary": "濃稠的湯汁包住食材，散發香氣。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:11:05",
+      "paragraph_no": 5,
+      "summary": "作者品嘗羹湯，感受到店家用心準備的溫暖。",
+      "structure_role": "第5段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:11:06",
+      "paragraph_no": 6,
+      "summary": "這碗羹湯不只是食物，也連結生活記憶與人情味。",
+      "structure_role": "第6段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "main_idea": {
+    "gist": "作者在天冷時想喝羹湯，從食材、做法與品嘗感受，寫出一碗熱湯帶來的溫暖和生活記憶。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:11:01",
+      "stem": "作者在什麼時候特別想喝羹湯？",
+      "options": [
+        "天冷時 (2)炎熱時"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:11:02",
+      "stem": "羹湯用什麼讓湯汁變濃？",
+      "options": [
+        "芡粉 (2)砂糖"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:11:03",
+      "stem": "羹湯帶給作者什麼感受？",
+      "options": [
+        "溫暖 (2)害怕"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:11:04",
+      "stem": "這篇文章主要寫什麼？",
+      "options": [
+        "食物與生活記憶 (2)登山比賽"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG6H11:稠:1",
+      "char": "稠",
+      "sentence": "語詞「濃稠」中的「稠」，就是指深濃、厚密。",
+      "definition": "深濃、厚密",
+      "options": [
+        "深濃、厚密",
+        "繁多"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:稠:2",
+      "char": "稠",
+      "sentence": "語詞「地窄人稠」中的「稠」，就是指繁多。",
+      "definition": "繁多",
+      "options": [
+        "深濃、厚密",
+        "繁多"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:販:1",
+      "char": "販",
+      "sentence": "語詞「菜販」中的「販」，就是指做小買賣的人。",
+      "definition": "做小買賣的人",
+      "options": [
+        "做小買賣的人",
+        "賣"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:販:2",
+      "char": "販",
+      "sentence": "語詞「販魚」中的「販」，就是指賣。",
+      "definition": "賣",
+      "options": [
+        "做小買賣的人",
+        "賣"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:醬:1",
+      "char": "醬",
+      "sentence": "語詞「甜麵醬」中的「醬」，就是指豆、麵等發酵後，加鹽製成的調味品。",
+      "definition": "豆、麵等發酵後，加鹽製成的調味品",
+      "options": [
+        "豆、麵等發酵後，加鹽製成的調味品",
+        "通稱搗爛成泥狀的食物",
+        "用醬等醃漬的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:醬:2",
+      "char": "醬",
+      "sentence": "語詞「果醬」中的「醬」，就是指通稱搗爛成泥狀的食物。",
+      "definition": "通稱搗爛成泥狀的食物",
+      "options": [
+        "豆、麵等發酵後，加鹽製成的調味品",
+        "通稱搗爛成泥狀的食物",
+        "用醬等醃漬的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:醬:3",
+      "char": "醬",
+      "sentence": "語詞「醬瓜」中的「醬」，就是指用醬等醃漬的。",
+      "definition": "用醬等醃漬的",
+      "options": [
+        "豆、麵等發酵後，加鹽製成的調味品",
+        "通稱搗爛成泥狀的食物",
+        "用醬等醃漬的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:攪:1",
+      "char": "攪",
+      "sentence": "語詞「攪和」中的「攪」，就是指用手或器具將液體、粉末等調勻。",
+      "definition": "用手或器具將液體、粉末等調勻",
+      "options": [
+        "用手或器具將液體、粉末等調勻",
+        "擾亂",
+        "攙雜、混合"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:攪:2",
+      "char": "攪",
+      "sentence": "語詞「打攪」中的「攪」，就是指擾亂。",
+      "definition": "擾亂",
+      "options": [
+        "用手或器具將液體、粉末等調勻",
+        "擾亂",
+        "攙雜、混合"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:攪:3",
+      "char": "攪",
+      "sentence": "語詞「請不要把公事和私人恩怨攪在一起」中的「攪」，就是指攙雜、混合。",
+      "definition": "攙雜、混合",
+      "options": [
+        "用手或器具將液體、粉末等調勻",
+        "擾亂",
+        "攙雜、混合"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:拌:1",
+      "char": "拌",
+      "sentence": "語詞「拌勻」中的「拌」，就是指攪動使調和。",
+      "definition": "攪動使調和",
+      "options": [
+        "攪動使調和",
+        "爭吵、鬥嘴"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:拌:2",
+      "char": "拌",
+      "sentence": "語詞「拌嘴」中的「拌」，就是指爭吵、鬥嘴。",
+      "definition": "爭吵、鬥嘴",
+      "options": [
+        "攪動使調和",
+        "爭吵、鬥嘴"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:蹲:1",
+      "char": "蹲",
+      "sentence": "語詞「蹲在地上」中的「蹲」，就是指彎曲兩腿，臀部虛坐而不著地。",
+      "definition": "彎曲兩腿，臀部虛坐而不著地",
+      "options": [
+        "彎曲兩腿，臀部虛坐而不著地",
+        "比喻呆著不做事"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:蹲:2",
+      "char": "蹲",
+      "sentence": "語詞「他老在家裡蹲」中的「蹲」，就是指比喻呆著不做事。",
+      "definition": "比喻呆著不做事",
+      "options": [
+        "彎曲兩腿，臀部虛坐而不著地",
+        "比喻呆著不做事"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:縱:1",
+      "char": "縱",
+      "sentence": "語詞「放縱」中的「縱」，就是指放任、不加拘束。",
+      "definition": "放任、不加拘束",
+      "options": [
+        "放任、不加拘束",
+        "釋放",
+        "放、點燃",
+        "身體向上或猛力向前",
+        "即使"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:縱:2",
+      "char": "縱",
+      "sentence": "語詞「縱虎歸山」中的「縱」，就是指釋放。",
+      "definition": "釋放",
+      "options": [
+        "放任、不加拘束",
+        "釋放",
+        "放、點燃",
+        "身體向上或猛力向前",
+        "即使"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:縱:3",
+      "char": "縱",
+      "sentence": "語詞「縱火」中的「縱」，就是指放、點燃。",
+      "definition": "放、點燃",
+      "options": [
+        "放任、不加拘束",
+        "釋放",
+        "放、點燃",
+        "身體向上或猛力向前",
+        "即使"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:縱:4",
+      "char": "縱",
+      "sentence": "語詞「縱身一跳」中的「縱」，就是指身體向上或猛力向前。",
+      "definition": "身體向上或猛力向前",
+      "options": [
+        "放任、不加拘束",
+        "釋放",
+        "放、點燃",
+        "身體向上或猛力向前",
+        "即使"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:縱:5",
+      "char": "縱",
+      "sentence": "語詞「前程縱是千難萬險」中的「縱」，就是指即使。",
+      "definition": "即使",
+      "options": [
+        "放任、不加拘束",
+        "釋放",
+        "放、點燃",
+        "身體向上或猛力向前",
+        "即使"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:裹:1",
+      "char": "裹",
+      "sentence": "語詞「這魚片要裹麵粉油炸」中的「裹」，就是指沾黏包住。",
+      "definition": "沾黏包住",
+      "options": [
+        "沾黏包住",
+        "纏繞、包紮",
+        "包封的物品"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:裹:2",
+      "char": "裹",
+      "sentence": "語詞「裹粽子」中的「裹」，就是指纏繞、包紮。",
+      "definition": "纏繞、包紮",
+      "options": [
+        "沾黏包住",
+        "纏繞、包紮",
+        "包封的物品"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:裹:3",
+      "char": "裹",
+      "sentence": "語詞「包裹」中的「裹」，就是指包封的物品。",
+      "definition": "包封的物品",
+      "options": [
+        "沾黏包住",
+        "纏繞、包紮",
+        "包封的物品"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:塞:1",
+      "char": "塞",
+      "sentence": "語詞「塞滿食物」中的「塞」，就是指填滿空隙。",
+      "definition": "填滿空隙",
+      "options": [
+        "填滿空隙",
+        "封口或填堵的東西",
+        "受阻不暢"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:塞:2",
+      "char": "塞",
+      "sentence": "語詞「瓶塞」中的「塞」，就是指封口或填堵的東西。",
+      "definition": "封口或填堵的東西",
+      "options": [
+        "填滿空隙",
+        "封口或填堵的東西",
+        "受阻不暢"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:塞:3",
+      "char": "塞",
+      "sentence": "語詞「塞車」中的「塞」，就是指受阻不暢。",
+      "definition": "受阻不暢",
+      "options": [
+        "填滿空隙",
+        "封口或填堵的東西",
+        "受阻不暢"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:嬌:1",
+      "char": "嬌",
+      "sentence": "語詞「嬌妾」中的「嬌」，就是指疼愛、寵愛。",
+      "definition": "疼愛、寵愛",
+      "options": [
+        "疼愛、寵愛",
+        "柔美可愛",
+        "指美女"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:嬌:2",
+      "char": "嬌",
+      "sentence": "語詞「嬌美」中的「嬌」，就是指柔美可愛。",
+      "definition": "柔美可愛",
+      "options": [
+        "疼愛、寵愛",
+        "柔美可愛",
+        "指美女"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H11:嬌:3",
+      "char": "嬌",
+      "sentence": "語詞「金屋藏嬌」中的「嬌」，就是指指美女。",
+      "definition": "指美女",
+      "options": [
+        "疼愛、寵愛",
+        "柔美可愛",
+        "指美女"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    }
+  ],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG6H11:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "肉",
+          "example": "肉羹、羹湯"
+        },
+        {
+          "char": "美",
+          "example": "美麗、美食"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H11:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "勾",
+          "example": "勾芡、芡粉"
+        },
+        {
+          "char": "欠",
+          "example": "欠缺、哈欠"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H11:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "濃",
+          "example": "濃稠、稠密"
+        },
+        {
+          "char": "調",
+          "example": "調味、調整"
+        },
+        {
+          "char": "周",
+          "example": "周到、周末"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H11:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "火",
+          "example": "火鍋、鍋蓋"
+        },
+        {
+          "char": "漩",
+          "example": "漩渦、渦流"
+        },
+        {
+          "char": "經",
+          "example": "經過、過年"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H11:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "喉",
+          "example": "喉嚨、咽喉"
+        },
+        {
+          "char": "等",
+          "example": "等候、候車"
+        },
+        {
+          "char": "猴",
+          "example": "猴子、猴年"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H11:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "小",
+          "example": "小巷、巷口"
+        },
+        {
+          "char": "港",
+          "example": "港口、港灣"
+        },
+        {
+          "char": "捲",
+          "example": "捲起、蛋捲"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H11:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "攤",
+          "example": "攤販、販售"
+        },
+        {
+          "char": "吃",
+          "example": "吃飯、米飯"
+        },
+        {
+          "char": "木",
+          "example": "木板、黑板"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H11:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "醬",
+          "example": "醬油、果醬"
+        },
+        {
+          "char": "將",
+          "example": "將來、將軍"
+        },
+        {
+          "char": "米",
+          "example": "米漿、豆漿"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG6H11:1",
+      "stem": "作者在什麼時候特別想喝羹湯？",
+      "question": "作者在什麼時候特別想喝羹湯？",
+      "options": [
+        "天冷時 (2)炎熱時"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H11:2",
+      "stem": "羹湯用什麼讓湯汁變濃？",
+      "question": "羹湯用什麼讓湯汁變濃？",
+      "options": [
+        "芡粉 (2)砂糖"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H11:3",
+      "stem": "羹湯帶給作者什麼感受？",
+      "question": "羹湯帶給作者什麼感受？",
+      "options": [
+        "溫暖 (2)害怕"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H11:4",
+      "stem": "這篇文章主要寫什麼？",
+      "question": "這篇文章主要寫什麼？",
+      "options": [
+        "食物與生活記憶 (2)登山比賽"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    }
+  ],
+  "review_words": {},
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag6h-11",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E7%BE%B9%E8%8A%A1%E7%A8%A0%E9%8D%8B%E5%96%89%E5%B7%B7%E8%B2%A9%E9%86%AC%E6%94%AA%E6%8B%8C%E7%8B%B9%E8%B9%B2%E7%B8%B1%E9%A4%83%E8%A3%B9%E8%8F%87%E5%A1%9E%E5%AC%8C",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・六年級・第11課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「羹」的部首是哪一個？",
+      "options": [
+        "⾣",
+        "⼟",
+        "⽺"
+      ],
+      "answer": "⽺",
+      "explanation": "「羹」的部首是⽺。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「芡」的部首是哪一個？",
+      "options": [
+        "⾋",
+        "⼝",
+        "⾦"
+      ],
+      "answer": "⾋",
+      "explanation": "「芡」的部首是⾋。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「稠」的部首是哪一個？",
+      "options": [
+        "⽲",
+        "⾙",
+        "⽷"
+      ],
+      "answer": "⽲",
+      "explanation": "「稠」的部首是⽲。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「羹」是什麼意思？",
+      "options": [
+        "攪動、拌合。",
+        "窄小。",
+        "用肉、菜等勾芡煮成的濃湯。"
+      ],
+      "answer": "用肉、菜等勾芡煮成的濃湯。",
+      "explanation": "羹：用肉、菜等勾芡煮成的濃湯。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「勾芡」是什麼意思？",
+      "options": [
+        "彎曲兩腿，臀部虛坐而不著地。",
+        "做小買賣的人。",
+        "豆、麵等發酵後，加鹽製成的調味品。"
+      ],
+      "answer": "烹飪菜餚時，將芡粉用水調勻，加入菜中，使成濃稠狀。",
+      "explanation": "勾芡：烹飪菜餚時，將芡粉用水調勻，加入菜中，使成濃稠狀。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「濃稠」是什麼意思？",
+      "options": [
+        "城鎮裡大大小小的街巷。",
+        "彎曲兩腿，臀部虛坐而不著地。",
+        "沾黏包住。"
+      ],
+      "answer": "深濃、厚密。",
+      "explanation": "濃稠：深濃、厚密。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「鍋」是什麼意思？",
+      "options": [
+        "城鎮裡大大小小的街巷。",
+        "仗著對方的寵愛而任意做出嬌態。",
+        "用肉、菜等勾芡煮成的濃湯。"
+      ],
+      "answer": "烹煮食物的器具。",
+      "explanation": "鍋：烹煮食物的器具。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「大街小巷」是什麼意思？",
+      "options": [
+        "仗著對方的寵愛而任意做出嬌態。",
+        "窄小。",
+        "去除風寒。"
+      ],
+      "answer": "城鎮裡大大小小的街巷。",
+      "explanation": "大街小巷：城鎮裡大大小小的街巷。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "段落摘要已整理；課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "教材待補：應用任務設計中"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "聆聽題目保留待教師確認答案，未在正式模組顯示。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭教材尚未完成公開資料整理。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "跨課複習資料待補。"
+    }
+  }
+}

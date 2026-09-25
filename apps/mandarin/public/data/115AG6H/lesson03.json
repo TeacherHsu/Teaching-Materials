@@ -1,0 +1,2011 @@
+{
+  "lesson_id": "115AG6H03",
+  "volume": {
+    "code": "115AG6H",
+    "publisher": "翰林",
+    "grade": 6,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "六上國語課程"
+  },
+  "lesson_no": 3,
+  "title": "孔子說的話",
+  "author": "",
+  "blurb": "透過〈孔子說的話〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "characters": [
+    {
+      "char": "杏",
+      "zhuyin": "ㄒㄧㄥˋ",
+      "stroke_count": 7,
+      "radical": "⽊",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "杏樹",
+        "杏壇"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9D%8F",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "婆",
+      "zhuyin": "ㄆㄛˊ",
+      "stroke_count": 11,
+      "radical": "⼥",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "婆娑"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A9%86",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "娑",
+      "zhuyin": "ㄙㄨㄛ",
+      "stroke_count": 10,
+      "radical": "⼥",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "婆娑"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A8%91",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "鏗",
+      "zhuyin": "ㄎㄥ",
+      "stroke_count": 19,
+      "radical": "⾦",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "鏗鏘"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%8F%97",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "鏘",
+      "zhuyin": "ㄑㄧㄤ",
+      "stroke_count": 19,
+      "radical": "⾦",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "鏗鏘"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%8F%98",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "撫",
+      "zhuyin": "ㄈㄨˇ",
+      "stroke_count": 15,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "撫慰"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%92%AB",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "壇",
+      "zhuyin": "ㄊㄢˊ",
+      "stroke_count": 16,
+      "radical": "⼟",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "杏壇"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A3%87",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "徒",
+      "zhuyin": "ㄊㄨˊ",
+      "stroke_count": 10,
+      "radical": "⼻",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "授徒"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%BE%92",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "鍊",
+      "zhuyin": "ㄌㄧㄢˋ",
+      "stroke_count": 17,
+      "radical": "⾦",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "精鍊"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%8D%8A",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "曰",
+      "zhuyin": "ㄩㄝ",
+      "stroke_count": 4,
+      "radical": "⽈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "曰"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9B%B0",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "矣",
+      "zhuyin": "ㄧˇ",
+      "stroke_count": 7,
+      "radical": "⽮",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "矣"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%9F%A3",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "舊",
+      "zhuyin": "ㄐㄧㄡˋ",
+      "stroke_count": 17,
+      "radical": "⾅",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "舊"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%88%8A",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "焉",
+      "zhuyin": "ㄧㄢ",
+      "stroke_count": 11,
+      "radical": "⽕",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "焉"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%84%89",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "亦",
+      "zhuyin": "ㄧˋ",
+      "stroke_count": 6,
+      "radical": "⼇",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "亦"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BA%A6",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "辨",
+      "zhuyin": "ㄅㄧㄢˋ",
+      "stroke_count": 16,
+      "radical": "⾟",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "分辨"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%BE%A8",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "警",
+      "zhuyin": "ㄐㄧㄥˇ",
+      "stroke_count": 19,
+      "radical": "⾔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "警惕"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%AD%A6",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "惕",
+      "zhuyin": "ㄊㄧˋ",
+      "stroke_count": 11,
+      "radical": "⼼",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "警惕"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%83%95",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "慧",
+      "zhuyin": "ㄏㄨㄟˋ",
+      "stroke_count": 15,
+      "radical": "⼼",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "智慧"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%85%A7",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG6H03:01",
+      "word": "杏樹",
+      "zhuyin": "ㄒㄧㄥˋ ㄕㄨˋ",
+      "meaning": "植物名。薔薇科櫻屬，落葉喬木。三月開淡紅色花朵。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H03:02",
+      "word": "婆娑",
+      "zhuyin": "ㄆㄛˊ ㄙㄨㄛ",
+      "meaning": "枝葉繁茂而隨風搖曳的樣子。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H03:03",
+      "word": "鏗鏘",
+      "zhuyin": "ㄎㄥ ㄑㄧㄤ",
+      "meaning": "形容聲音清脆響亮。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H03:04",
+      "word": "撫慰",
+      "zhuyin": "ㄈㄨˇ ㄨㄟˋ",
+      "meaning": "安撫慰勉。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H03:05",
+      "word": "杏壇",
+      "zhuyin": "ㄒㄧㄥˋ ㄊㄢˊ",
+      "meaning": "孔子授徒講學的地方，今作為教育界的通稱。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H03:06",
+      "word": "授徒",
+      "zhuyin": "ㄕㄡˋ ㄊㄨˊ",
+      "meaning": "招收學生，傳授學問或技藝。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H03:07",
+      "word": "精鍊",
+      "zhuyin": "ㄐㄧㄥ ㄌㄧㄢˋ",
+      "meaning": "簡潔精要。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H03:08",
+      "word": "曰",
+      "zhuyin": "ㄩㄝ",
+      "meaning": "說。用於文言文。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H03:09",
+      "word": "矣",
+      "zhuyin": "ㄧˇ",
+      "meaning": "表示肯定、決定的語氣。多用於文言文。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H03:10",
+      "word": "舊",
+      "zhuyin": "ㄐㄧㄡˋ",
+      "meaning": "從前的，過去的。與「新」相對。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H03:11",
+      "word": "焉",
+      "zhuyin": "ㄧㄢ",
+      "meaning": "助詞，多用於文言文。置於句末，表示肯定的語氣。相當於「矣」、「呢」。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H03:12",
+      "word": "述",
+      "zhuyin": "ㄕㄨˋ",
+      "meaning": "說明、記錄。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H03:13",
+      "word": "亦",
+      "zhuyin": "ㄧˋ",
+      "meaning": "也、也是、又。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H03:14",
+      "word": "分辨",
+      "zhuyin": "ㄈㄣ ㄅㄧㄢˋ",
+      "meaning": "辨別。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H03:15",
+      "word": "警惕",
+      "zhuyin": "ㄐㄧㄥˇ ㄊㄧˋ",
+      "meaning": "對可能發生的情況，心生警覺而加以戒備。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H03:16",
+      "word": "智慧",
+      "zhuyin": "ㄓˋ ㄏㄨㄟˋ",
+      "meaning": "聰明才智。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG6H03:苦口婆心",
+      "idiom": "苦口婆心",
+      "definition": "以懇切真摯的態度，竭力勸告。",
+      "related_char": "婆",
+      "image": "idioms/01_苦口婆心.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H03:家徒四壁",
+      "idiom": "家徒四壁",
+      "definition": "家中只有四面牆壁，形容家境極貧。",
+      "related_char": "徒",
+      "image": "idioms/02_家徒四壁.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H03:千錘百鍊",
+      "idiom": "千錘百鍊",
+      "definition": "比喻文章多次潤飾，或人生歷經鍛鍊。",
+      "related_char": "鍊",
+      "image": "idioms/03_千錘百鍊.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H03:心不在焉",
+      "idiom": "心不在焉",
+      "definition": "心思不集中。",
+      "related_char": "焉",
+      "image": "idioms/04_心不在焉.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG6H03:1",
+      "idiom_id": "idiom:115AG6H03:苦口婆心",
+      "rewritten": "遇到生活中的相關情況時，可以用「苦口婆心」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H03:2",
+      "idiom_id": "idiom:115AG6H03:家徒四壁",
+      "rewritten": "遇到生活中的相關情況時，可以用「家徒四壁」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H03:3",
+      "idiom_id": "idiom:115AG6H03:千錘百鍊",
+      "rewritten": "遇到生活中的相關情況時，可以用「千錘百鍊」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H03:4",
+      "idiom_id": "idiom:115AG6H03:心不在焉",
+      "rewritten": "遇到生活中的相關情況時，可以用「心不在焉」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG6H03:word:1",
+      "category": "詞語造句",
+      "head": "借鏡",
+      "structure": "詞語造句",
+      "description": "比喻用別人的經驗或言行作為自己的參考或警惕。",
+      "guide": "我可以把＿＿＿＿當作借鏡，提醒自己努力。",
+      "examples": [
+        "歷史上許多奮鬥不懈的人物，可以作為我們努力的借鏡。"
+      ],
+      "example_parts": [
+        [
+          "歷史上許多",
+          "奮鬥不懈的人物",
+          "可以作為我們努力的",
+          "借鏡"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "別人的經驗",
+          "可以成為",
+          "我們學習的",
+          "借鏡"
+        ]
+      ],
+      "word_bank": [
+        "行為",
+        "故事",
+        "做法"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H03:pattern:1",
+      "category": "句型練習",
+      "head": "動作描寫",
+      "structure": "名詞＋副詞＋的＋動詞＋名詞",
+      "description": "依照句型寫一句，描寫一個景物或動作。",
+      "guide": "依照句型寫一句，描寫一個景物或動作。",
+      "examples": [
+        "陽光溫暖的照著操場",
+        "雨點輕輕的落在窗戶上",
+        "小鳥快樂的飛過天空"
+      ],
+      "example_parts": [
+        [
+          "陽光",
+          "溫暖的",
+          "照著",
+          "操場"
+        ],
+        [
+          "雨點",
+          "輕輕的",
+          "落在",
+          "窗戶上"
+        ],
+        [
+          "小鳥",
+          "快樂的",
+          "飛過",
+          "天空"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "名詞",
+          "choices": [
+            "陽光",
+            "雨點",
+            "小鳥"
+          ]
+        },
+        {
+          "label": "副詞",
+          "choices": [
+            "溫暖的",
+            "輕輕的",
+            "快樂的"
+          ]
+        },
+        {
+          "label": "動詞",
+          "choices": [
+            "照著",
+            "落在",
+            "飛過"
+          ]
+        },
+        {
+          "label": "名詞",
+          "choices": [
+            "操場",
+            "窗戶上",
+            "天空"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H03:pattern:2",
+      "category": "句型練習",
+      "head": "並列情況",
+      "structure": "有時＋情況一，有時＋情況二",
+      "description": "依照句型寫一句，說出兩種交替出現的情況。",
+      "guide": "依照句型寫一句，說出兩種交替出現的情況。",
+      "examples": [
+        "我有時閱讀故事有時練習運動",
+        "天空有時陽光明亮有時飄著細雨",
+        "弟弟有時安靜畫畫有時開心唱歌"
+      ],
+      "example_parts": [
+        [
+          "我有時",
+          "閱讀故事",
+          "有時",
+          "練習運動"
+        ],
+        [
+          "天空有時",
+          "陽光明亮",
+          "有時",
+          "飄著細雨"
+        ],
+        [
+          "弟弟有時",
+          "安靜畫畫",
+          "有時",
+          "開心唱歌"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "主語",
+          "choices": [
+            "我有時",
+            "天空有時",
+            "弟弟有時"
+          ]
+        },
+        {
+          "label": "情況一",
+          "choices": [
+            "閱讀故事",
+            "陽光明亮",
+            "安靜畫畫"
+          ]
+        },
+        {
+          "label": "提示",
+          "choices": [
+            "有時"
+          ]
+        },
+        {
+          "label": "情況二",
+          "choices": [
+            "練習運動",
+            "飄著細雨",
+            "開心唱歌"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H03:pattern:3",
+      "category": "句型練習",
+      "head": "不受條件限制",
+      "structure": "不論＋條件，都＋結果",
+      "description": "依照句型寫一句，表達不受條件影響的做法。",
+      "guide": "依照句型寫一句，表達不受條件影響的做法。",
+      "examples": [
+        "不論遇到什麼困難只要願意練習我都會繼續努力",
+        "不論結果如何只要認真完成我都能學到經驗",
+        "不論事情大小只要盡力幫忙我都感到很安心"
+      ],
+      "example_parts": [
+        [
+          "不論遇到什麼困難",
+          "只要願意練習",
+          "我都",
+          "會繼續努力"
+        ],
+        [
+          "不論結果如何",
+          "只要認真完成",
+          "我都",
+          "能學到經驗"
+        ],
+        [
+          "不論事情大小",
+          "只要盡力幫忙",
+          "我都",
+          "感到很安心"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "條件",
+          "choices": [
+            "不論事情大小",
+            "不論結果如何",
+            "不論遇到什麼困難"
+          ]
+        },
+        {
+          "label": "補充",
+          "choices": [
+            "只要願意練習",
+            "只要認真完成",
+            "只要盡力幫忙"
+          ]
+        },
+        {
+          "label": "提示",
+          "choices": [
+            "我都"
+          ]
+        },
+        {
+          "label": "結果",
+          "choices": [
+            "會繼續努力",
+            "能學到經驗",
+            "感到很安心"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:03:01",
+      "paragraph_no": 1,
+      "summary": "作者在杏樹林想像孔子在杏壇教學，帶出孔子的教育精神。",
+      "structure_role": "【第一大意】孔子與教育",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:03:02",
+      "paragraph_no": 2,
+      "summary": "孔子重視有教無類與因材施教，讓不同學生都能學習。",
+      "structure_role": "【第二大意】溫故知新",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:03:03",
+      "paragraph_no": 3,
+      "summary": "孔子說「溫故而知新」，複習舊知識可以得到新的理解。",
+      "structure_role": "【第三大意】擇善改過",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:03:04",
+      "paragraph_no": 4,
+      "summary": "能從溫習中發現新意的人，可以成為別人的老師。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:03:05",
+      "paragraph_no": 5,
+      "summary": "孔子說三人同行一定有可學習的人，要選擇別人的優點跟隨。",
+      "structure_role": "第5段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:03:06",
+      "paragraph_no": 6,
+      "summary": "看到別人的缺點時，也要提醒自己改正，持續學習。",
+      "structure_role": "第6段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "main_idea": {
+    "gist": "孔子用簡短話語提醒我們溫故知新、擇善改過，並向身邊的人學習。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:03:01",
+      "stem": "「溫故而知新」主要提醒我們什麼？",
+      "options": [
+        "複習舊知識並得到新理解 (2)只學新的內容"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:03:02",
+      "stem": "「三人行，必有我師焉」表示什麼？",
+      "options": [
+        "身邊的人都有可學之處 (2)只能跟老師學習"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:03:03",
+      "stem": "遇到別人的缺點時，孔子建議怎麼做？",
+      "options": [
+        "反省並改正自己 (2)立刻嘲笑對方"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:03:04",
+      "stem": "本文最主要介紹什麼？",
+      "options": [
+        "孔子話語中的學習智慧 (2)杏樹的種植方法"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG6H03:婆:1",
+      "char": "婆",
+      "sentence": "語詞「老婆婆」中的「婆」，就是指年老的婦女。",
+      "definition": "年老的婦女",
+      "options": [
+        "年老的婦女",
+        "過去稱呼從事某些職業的婦女",
+        "稱丈夫的母親",
+        "祖母輩"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:婆:2",
+      "char": "婆",
+      "sentence": "語詞「媒婆」中的「婆」，就是指過去稱呼從事某些職業的婦女。",
+      "definition": "過去稱呼從事某些職業的婦女",
+      "options": [
+        "年老的婦女",
+        "過去稱呼從事某些職業的婦女",
+        "稱丈夫的母親",
+        "祖母輩"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:婆:3",
+      "char": "婆",
+      "sentence": "語詞「婆婆」中的「婆」，就是指稱丈夫的母親。",
+      "definition": "稱丈夫的母親",
+      "options": [
+        "年老的婦女",
+        "過去稱呼從事某些職業的婦女",
+        "稱丈夫的母親",
+        "祖母輩"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:婆:4",
+      "char": "婆",
+      "sentence": "語詞「外婆」中的「婆」，就是指祖母輩。",
+      "definition": "祖母輩",
+      "options": [
+        "年老的婦女",
+        "過去稱呼從事某些職業的婦女",
+        "稱丈夫的母親",
+        "祖母輩"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:娑:1",
+      "char": "娑",
+      "sentence": "語詞「枝葉婆娑」中的「娑」，就是指枝葉繁茂而隨風搖曳的樣子。",
+      "definition": "枝葉繁茂而隨風搖曳的樣子",
+      "options": [
+        "枝葉繁茂而隨風搖曳的樣子",
+        "盤旋舞蹈的樣子",
+        "淚光閃動的樣子"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:娑:2",
+      "char": "娑",
+      "sentence": "語詞「婆娑起舞」中的「娑」，就是指盤旋舞蹈的樣子。",
+      "definition": "盤旋舞蹈的樣子",
+      "options": [
+        "枝葉繁茂而隨風搖曳的樣子",
+        "盤旋舞蹈的樣子",
+        "淚光閃動的樣子"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:娑:3",
+      "char": "娑",
+      "sentence": "語詞「淚眼婆娑」中的「娑」，就是指淚光閃動的樣子。",
+      "definition": "淚光閃動的樣子",
+      "options": [
+        "枝葉繁茂而隨風搖曳的樣子",
+        "盤旋舞蹈的樣子",
+        "淚光閃動的樣子"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:撫:1",
+      "char": "撫",
+      "sentence": "語詞「安撫」中的「撫」，就是指安慰。",
+      "definition": "安慰",
+      "options": [
+        "安慰",
+        "輕輕的摸",
+        "養育、照顧",
+        "彈奏、撥弄",
+        "拍打、輕擊"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:撫:2",
+      "char": "撫",
+      "sentence": "語詞「撫摸」中的「撫」，就是指輕輕的摸。",
+      "definition": "輕輕的摸",
+      "options": [
+        "安慰",
+        "輕輕的摸",
+        "養育、照顧",
+        "彈奏、撥弄",
+        "拍打、輕擊"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:撫:3",
+      "char": "撫",
+      "sentence": "語詞「撫養」中的「撫」，就是指養育、照顧。",
+      "definition": "養育、照顧",
+      "options": [
+        "安慰",
+        "輕輕的摸",
+        "養育、照顧",
+        "彈奏、撥弄",
+        "拍打、輕擊"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:撫:4",
+      "char": "撫",
+      "sentence": "語詞「撫琴」中的「撫」，就是指彈奏、撥弄。",
+      "definition": "彈奏、撥弄",
+      "options": [
+        "安慰",
+        "輕輕的摸",
+        "養育、照顧",
+        "彈奏、撥弄",
+        "拍打、輕擊"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:撫:5",
+      "char": "撫",
+      "sentence": "語詞「撫掌大笑」中的「撫」，就是指拍打、輕擊。",
+      "definition": "拍打、輕擊",
+      "options": [
+        "安慰",
+        "輕輕的摸",
+        "養育、照顧",
+        "彈奏、撥弄",
+        "拍打、輕擊"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:壇:1",
+      "char": "壇",
+      "sentence": "語詞「天壇」中的「壇」，就是指古代舉行祭祀的高臺。",
+      "definition": "古代舉行祭祀的高臺",
+      "options": [
+        "古代舉行祭祀的高臺",
+        "宗教舉行法事的處所",
+        "用土堆砌成的矮圍籬",
+        "團體的總稱"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:壇:2",
+      "char": "壇",
+      "sentence": "語詞「神壇」中的「壇」，就是指宗教舉行法事的處所。",
+      "definition": "宗教舉行法事的處所",
+      "options": [
+        "古代舉行祭祀的高臺",
+        "宗教舉行法事的處所",
+        "用土堆砌成的矮圍籬",
+        "團體的總稱"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:壇:3",
+      "char": "壇",
+      "sentence": "語詞「花壇」中的「壇」，就是指用土堆砌成的矮圍籬。",
+      "definition": "用土堆砌成的矮圍籬",
+      "options": [
+        "古代舉行祭祀的高臺",
+        "宗教舉行法事的處所",
+        "用土堆砌成的矮圍籬",
+        "團體的總稱"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:壇:4",
+      "char": "壇",
+      "sentence": "語詞「文壇」中的「壇」，就是指團體的總稱。",
+      "definition": "團體的總稱",
+      "options": [
+        "古代舉行祭祀的高臺",
+        "宗教舉行法事的處所",
+        "用土堆砌成的矮圍籬",
+        "團體的總稱"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:徒:1",
+      "char": "徒",
+      "sentence": "語詞「徒弟」中的「徒」，就是指弟子、學生。",
+      "definition": "弟子、學生",
+      "options": [
+        "弟子、學生",
+        "步行",
+        "空的，不憑藉什麼的",
+        "白白的、平白",
+        "只、僅",
+        "信仰某一宗教或學說的人",
+        "人，多指壞人或有不良習性的人",
+        "一種拘禁犯人，強服勞役的刑罰"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:徒:2",
+      "char": "徒",
+      "sentence": "語詞「徒步旅行」中的「徒」，就是指步行。",
+      "definition": "步行",
+      "options": [
+        "弟子、學生",
+        "步行",
+        "空的，不憑藉什麼的",
+        "白白的、平白",
+        "只、僅",
+        "信仰某一宗教或學說的人",
+        "人，多指壞人或有不良習性的人",
+        "一種拘禁犯人，強服勞役的刑罰"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:徒:3",
+      "char": "徒",
+      "sentence": "語詞「徒手體操」中的「徒」，就是指空的，不憑藉什麼的。",
+      "definition": "空的，不憑藉什麼的",
+      "options": [
+        "弟子、學生",
+        "步行",
+        "空的，不憑藉什麼的",
+        "白白的、平白",
+        "只、僅",
+        "信仰某一宗教或學說的人",
+        "人，多指壞人或有不良習性的人",
+        "一種拘禁犯人，強服勞役的刑罰"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:徒:4",
+      "char": "徒",
+      "sentence": "語詞「徒然」中的「徒」，就是指白白的、平白。",
+      "definition": "白白的、平白",
+      "options": [
+        "弟子、學生",
+        "步行",
+        "空的，不憑藉什麼的",
+        "白白的、平白",
+        "只、僅",
+        "信仰某一宗教或學說的人",
+        "人，多指壞人或有不良習性的人",
+        "一種拘禁犯人，強服勞役的刑罰"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:徒:5",
+      "char": "徒",
+      "sentence": "語詞「家徒四壁」中的「徒」，就是指只、僅。",
+      "definition": "只、僅",
+      "options": [
+        "弟子、學生",
+        "步行",
+        "空的，不憑藉什麼的",
+        "白白的、平白",
+        "只、僅",
+        "信仰某一宗教或學說的人",
+        "人，多指壞人或有不良習性的人",
+        "一種拘禁犯人，強服勞役的刑罰"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:徒:6",
+      "char": "徒",
+      "sentence": "語詞「信徒」中的「徒」，就是指信仰某一宗教或學說的人。",
+      "definition": "信仰某一宗教或學說的人",
+      "options": [
+        "弟子、學生",
+        "步行",
+        "空的，不憑藉什麼的",
+        "白白的、平白",
+        "只、僅",
+        "信仰某一宗教或學說的人",
+        "人，多指壞人或有不良習性的人",
+        "一種拘禁犯人，強服勞役的刑罰"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:徒:7",
+      "char": "徒",
+      "sentence": "語詞「暴徒」中的「徒」，就是指人，多指壞人或有不良習性的人。",
+      "definition": "人，多指壞人或有不良習性的人",
+      "options": [
+        "弟子、學生",
+        "步行",
+        "空的，不憑藉什麼的",
+        "白白的、平白",
+        "只、僅",
+        "信仰某一宗教或學說的人",
+        "人，多指壞人或有不良習性的人",
+        "一種拘禁犯人，強服勞役的刑罰"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:徒:8",
+      "char": "徒",
+      "sentence": "語詞「無期徒刑」中的「徒」，就是指一種拘禁犯人，強服勞役的刑罰。",
+      "definition": "一種拘禁犯人，強服勞役的刑罰",
+      "options": [
+        "弟子、學生",
+        "步行",
+        "空的，不憑藉什麼的",
+        "白白的、平白",
+        "只、僅",
+        "信仰某一宗教或學說的人",
+        "人，多指壞人或有不良習性的人",
+        "一種拘禁犯人，強服勞役的刑罰"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:鍊:1",
+      "char": "鍊",
+      "sentence": "語詞「鍊金」中的「鍊」，就是指用火燒或高溫加熱等方法，取得精純或適用的物質。通「煉」。",
+      "definition": "用火燒或高溫加熱等方法，取得精純或適用的物質。通「煉」",
+      "options": [
+        "用火燒或高溫加熱等方法，取得精純或適用的物質。通「煉」",
+        "金屬環相連而成的索條",
+        "訓練、磨練"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:鍊:2",
+      "char": "鍊",
+      "sentence": "語詞「鐵鍊」中的「鍊」，就是指金屬環相連而成的索條。",
+      "definition": "金屬環相連而成的索條",
+      "options": [
+        "用火燒或高溫加熱等方法，取得精純或適用的物質。通「煉」",
+        "金屬環相連而成的索條",
+        "訓練、磨練"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:鍊:3",
+      "char": "鍊",
+      "sentence": "語詞「鍛鍊」中的「鍊」，就是指訓練、磨練。",
+      "definition": "訓練、磨練",
+      "options": [
+        "用火燒或高溫加熱等方法，取得精純或適用的物質。通「煉」",
+        "金屬環相連而成的索條",
+        "訓練、磨練"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:曰:1",
+      "char": "曰",
+      "sentence": "語詞「子曰：「學而時習之」中的「曰」，就是指說。用於文言文。",
+      "definition": "說。用於文言文",
+      "options": [
+        "說。用於文言文",
+        "稱為。用於文言文"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:曰:2",
+      "char": "曰",
+      "sentence": "語詞「五行：一曰水」中的「曰」，就是指稱為。用於文言文。",
+      "definition": "稱為。用於文言文",
+      "options": [
+        "說。用於文言文",
+        "稱為。用於文言文"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:舊:1",
+      "char": "舊",
+      "sentence": "語詞「舊車」中的「舊」，就是指使用過一段時間的。與「新」相對。",
+      "definition": "使用過一段時間的。與「新」相對",
+      "options": [
+        "使用過一段時間的。與「新」相對",
+        "從前的、過去的。與「新」相對",
+        "老朋友"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:舊:2",
+      "char": "舊",
+      "sentence": "語詞「舊日」中的「舊」，就是指從前的、過去的。與「新」相對。",
+      "definition": "從前的、過去的。與「新」相對",
+      "options": [
+        "使用過一段時間的。與「新」相對",
+        "從前的、過去的。與「新」相對",
+        "老朋友"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:舊:3",
+      "char": "舊",
+      "sentence": "語詞「親朋故舊」中的「舊」，就是指老朋友。",
+      "definition": "老朋友",
+      "options": [
+        "使用過一段時間的。與「新」相對",
+        "從前的、過去的。與「新」相對",
+        "老朋友"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:焉:1",
+      "char": "焉",
+      "sentence": "語詞「焉」中的「焉」，就是指助詞。置於句末，表示肯定的語氣。相當於「矣」、「呢」。",
+      "definition": "助詞。置於句末，表示肯定的語氣。相當於「矣」、「呢」",
+      "options": [
+        "助詞。置於句末，表示肯定的語氣。相當於「矣」、「呢」",
+        "代名詞。用以表示指示，相當於「這裡」",
+        "豈、如何",
+        "詞綴。用於形容詞或副詞之後，表示狀態，相當於「然」、「樣子」"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:焉:2",
+      "char": "焉",
+      "sentence": "語詞「心不在焉」中的「焉」，就是指代名詞。用以表示指示，相當於「這裡」。",
+      "definition": "代名詞。用以表示指示，相當於「這裡」",
+      "options": [
+        "助詞。置於句末，表示肯定的語氣。相當於「矣」、「呢」",
+        "代名詞。用以表示指示，相當於「這裡」",
+        "豈、如何",
+        "詞綴。用於形容詞或副詞之後，表示狀態，相當於「然」、「樣子」"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:焉:3",
+      "char": "焉",
+      "sentence": "語詞「塞翁失馬」中的「焉」，就是指豈、如何。",
+      "definition": "豈、如何",
+      "options": [
+        "助詞。置於句末，表示肯定的語氣。相當於「矣」、「呢」",
+        "代名詞。用以表示指示，相當於「這裡」",
+        "豈、如何",
+        "詞綴。用於形容詞或副詞之後，表示狀態，相當於「然」、「樣子」"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:焉:4",
+      "char": "焉",
+      "sentence": "語詞「心有戚戚焉」中的「焉」，就是指詞綴。用於形容詞或副詞之後，表示狀態，相當於「然」、「樣子」。",
+      "definition": "詞綴。用於形容詞或副詞之後，表示狀態，相當於「然」、「樣子」",
+      "options": [
+        "助詞。置於句末，表示肯定的語氣。相當於「矣」、「呢」",
+        "代名詞。用以表示指示，相當於「這裡」",
+        "豈、如何",
+        "詞綴。用於形容詞或副詞之後，表示狀態，相當於「然」、「樣子」"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:警:1",
+      "char": "警",
+      "sentence": "語詞「警備」中的「警」，就是指戒備。",
+      "definition": "戒備",
+      "options": [
+        "戒備",
+        "告誡、示禁",
+        "覺悟、覺醒",
+        "敏捷",
+        "危險、緊急的消息或狀況",
+        "警察的簡稱"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:警:2",
+      "char": "警",
+      "sentence": "語詞「警告」中的「警」，就是指告誡、示禁。",
+      "definition": "告誡、示禁",
+      "options": [
+        "戒備",
+        "告誡、示禁",
+        "覺悟、覺醒",
+        "敏捷",
+        "危險、緊急的消息或狀況",
+        "警察的簡稱"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:警:3",
+      "char": "警",
+      "sentence": "語詞「警覺」中的「警」，就是指覺悟、覺醒。",
+      "definition": "覺悟、覺醒",
+      "options": [
+        "戒備",
+        "告誡、示禁",
+        "覺悟、覺醒",
+        "敏捷",
+        "危險、緊急的消息或狀況",
+        "警察的簡稱"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:警:4",
+      "char": "警",
+      "sentence": "語詞「機警」中的「警」，就是指敏捷。",
+      "definition": "敏捷",
+      "options": [
+        "戒備",
+        "告誡、示禁",
+        "覺悟、覺醒",
+        "敏捷",
+        "危險、緊急的消息或狀況",
+        "警察的簡稱"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:警:5",
+      "char": "警",
+      "sentence": "語詞「火警」中的「警」，就是指危險、緊急的消息或狀況。",
+      "definition": "危險、緊急的消息或狀況",
+      "options": [
+        "戒備",
+        "告誡、示禁",
+        "覺悟、覺醒",
+        "敏捷",
+        "危險、緊急的消息或狀況",
+        "警察的簡稱"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H03:警:6",
+      "char": "警",
+      "sentence": "語詞「交警」中的「警」，就是指警察的簡稱。",
+      "definition": "警察的簡稱",
+      "options": [
+        "戒備",
+        "告誡、示禁",
+        "覺悟、覺醒",
+        "敏捷",
+        "危險、緊急的消息或狀況",
+        "警察的簡稱"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    }
+  ],
+  "polysemy_senses": [],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG6H03:論",
+      "char": "論",
+      "readings": [
+        {
+          "zhuyin": "ㄌㄨㄣˋ",
+          "senses": [
+            {
+              "definition": "課本例詞「討論」的讀音。",
+              "examples": [
+                "討論"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄌㄨㄣˊ",
+          "senses": [
+            {
+              "definition": "課本例詞「論語」的讀音。",
+              "examples": [
+                "論語"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：一字多音）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG6H03:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "婆",
+          "example": "婆娑、婆婆"
+        },
+        {
+          "char": "波",
+          "example": "波浪、波紋"
+        },
+        {
+          "char": "頗",
+          "example": "頗多、偏頗"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H03:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "撫",
+          "example": "撫慰、撫摸"
+        },
+        {
+          "char": "荒",
+          "example": "荒蕪、荒地"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H03:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "徒",
+          "example": "徒弟、徒步"
+        },
+        {
+          "char": "遷",
+          "example": "遷徙、遷移"
+        },
+        {
+          "char": "陡",
+          "example": "陡峭、陡坡"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H03:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "杏",
+          "example": "杏壇、體壇"
+        },
+        {
+          "char": "擅",
+          "example": "擅長、擅自"
+        },
+        {
+          "char": "檀",
+          "example": "檀木、檀香"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H03:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "鍛",
+          "example": "鍛鍊、磨鍊"
+        },
+        {
+          "char": "練",
+          "example": "練習、練字"
+        },
+        {
+          "char": "提",
+          "example": "提煉、精煉"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H03:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "智",
+          "example": "智慧、聰慧"
+        },
+        {
+          "char": "恩",
+          "example": "恩惠、優惠"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H03:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "論",
+          "example": "論語、討論"
+        },
+        {
+          "char": "車",
+          "example": "車輪、輪子"
+        },
+        {
+          "char": "倫",
+          "example": "倫理、天倫"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG6H03:1",
+      "stem": "「溫故而知新」主要提醒我們什麼？",
+      "question": "「溫故而知新」主要提醒我們什麼？",
+      "options": [
+        "複習舊知識並得到新理解 (2)只學新的內容"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H03:2",
+      "stem": "「三人行，必有我師焉」表示什麼？",
+      "question": "「三人行，必有我師焉」表示什麼？",
+      "options": [
+        "身邊的人都有可學之處 (2)只能跟老師學習"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H03:3",
+      "stem": "遇到別人的缺點時，孔子建議怎麼做？",
+      "question": "遇到別人的缺點時，孔子建議怎麼做？",
+      "options": [
+        "反省並改正自己 (2)立刻嘲笑對方"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H03:4",
+      "stem": "本文最主要介紹什麼？",
+      "question": "本文最主要介紹什麼？",
+      "options": [
+        "孔子話語中的學習智慧 (2)杏樹的種植方法"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    }
+  ],
+  "review_words": {},
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag6h-03",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E6%9D%8F%E5%A9%86%E5%A8%91%E9%8F%97%E9%8F%98%E6%92%AB%E5%A3%87%E5%BE%92%E9%8D%8A%E6%9B%B0%E7%9F%A3%E8%88%8A%E7%84%89%E4%BA%A6%E8%BE%A8%E8%AD%A6%E6%83%95%E6%85%A7",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・六年級・第3課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「杏」的部首是哪一個？",
+      "options": [
+        "⾦",
+        "⾔",
+        "⼼"
+      ],
+      "answer": "⽊",
+      "explanation": "「杏」的部首是⽊。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「婆」的部首是哪一個？",
+      "options": [
+        "⾦",
+        "⽕",
+        "⼟"
+      ],
+      "answer": "⼥",
+      "explanation": "「婆」的部首是⼥。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「娑」的部首是哪一個？",
+      "options": [
+        "⾦",
+        "⾅",
+        "⽮"
+      ],
+      "answer": "⼥",
+      "explanation": "「娑」的部首是⼥。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「杏樹」是什麼意思？",
+      "options": [
+        "形容聲音清脆響亮。",
+        "辨別。",
+        "說明、記錄。"
+      ],
+      "answer": "植物名。薔薇科櫻屬，落葉喬木。三月開淡紅色花朵。",
+      "explanation": "杏樹：植物名。薔薇科櫻屬，落葉喬木。三月開淡紅色花朵。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「婆娑」是什麼意思？",
+      "options": [
+        "說。用於文言文。",
+        "安撫慰勉。",
+        "枝葉繁茂而隨風搖曳的樣子。"
+      ],
+      "answer": "枝葉繁茂而隨風搖曳的樣子。",
+      "explanation": "婆娑：枝葉繁茂而隨風搖曳的樣子。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「鏗鏘」是什麼意思？",
+      "options": [
+        "植物名。薔薇科櫻屬，落葉喬木。三月開淡紅色花朵。",
+        "說。用於文言文。",
+        "枝葉繁茂而隨風搖曳的樣子。"
+      ],
+      "answer": "形容聲音清脆響亮。",
+      "explanation": "鏗鏘：形容聲音清脆響亮。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「撫慰」是什麼意思？",
+      "options": [
+        "辨別。",
+        "聰明才智。",
+        "助詞，多用於文言文。置於句末，表示肯定的語氣。相當於「矣」、「呢」。"
+      ],
+      "answer": "安撫慰勉。",
+      "explanation": "撫慰：安撫慰勉。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「杏壇」是什麼意思？",
+      "options": [
+        "說。用於文言文。",
+        "孔子授徒講學的地方，今作為教育界的通稱。",
+        "植物名。薔薇科櫻屬，落葉喬木。三月開淡紅色花朵。"
+      ],
+      "answer": "孔子授徒講學的地方，今作為教育界的通稱。",
+      "explanation": "杏壇：孔子授徒講學的地方，今作為教育界的通稱。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "段落摘要已整理；課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "教材待補：應用任務設計中"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "聆聽題目保留待教師確認答案，未在正式模組顯示。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭教材尚未完成公開資料整理。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "跨課複習資料待補。"
+    }
+  }
+}
