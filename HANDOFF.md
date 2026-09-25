@@ -14,13 +14,13 @@
 
 ---
 
-## 2026-09-25｜學校 Win｜Codex｜狀態：🚧 施工中
-- 範圍：`apps/mandarin/public/assets/115AG3H/lesson05/vocabulary/`、`apps/mandarin/public/data/115AG3H/lesson05.json`
-- 做了什麼：準備檢查第五課語詞插圖與詞義是否相符，修正不符合教學意義的圖片
-- 驗證：施工中，待完成全課圖片檢查與瀏覽器回歸
-- 推送：施工紀錄待先行提交並推送
-- 待辦／給下一棒：檢查全課圖片、替換錯誤資產、重新壓縮並確認網站載入
-- 注意：只替換不符語意的圖片，不改語詞內容與既有資料結構
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/public/assets/115AG3H/lesson05/vocabulary/l05-05.webp`
+- 做了什麼：檢查第五課 14 張語詞圖，確認只有「綿」錯配；將跳繩圖替換為梨花山路上綿綿不斷的雨景，對應「連續不斷」的詞義。原始生成圖保留於 Codex 生成資產目錄，網站只放壓縮後 WebP
+- 驗證：`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；瀏覽器確認第五課語詞頁載入 `l05-05.webp`，圖片 naturalWidth=1254，console 無錯誤；新圖約 256 KiB，總資產約 9.89 MiB
+- 推送：完成 commit 後推送至 `origin/codex/mandarin-115g3a-lessons`；`origin/main` 尚未更新
+- 待辦／給下一棒：後續新增語詞圖片時，先逐張以詞義與例句檢查語意，不要只依檔名或生成提示判斷
+- 注意：不修改語詞內容與既有資料結構；不把 PNG 原圖放入公開網站
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/activities/sentencePractice.js`、`apps/mandarin/scripts/test-sentence-chunking.mjs`
