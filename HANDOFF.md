@@ -14,6 +14,14 @@
 
 ---
 
+## 2026-09-25｜學校 Win｜Codex｜狀態：🚧 施工中
+- 範圍：`apps/mandarin/public/data/115AG3H/lesson06.json`、`apps/mandarin/public/assets/115AG3H/lesson06/`、`apps/mandarin/public/data/course-index.json`
+- 做了什麼：準備依官方教材生成翰林三上第 6 課「小鉛筆大學問」教材網站資料與壓縮圖片資產
+- 驗證：施工中，待完成資料驗證、資產容量檢查、全套回歸測試、建置與瀏覽器檢查
+- 推送：施工紀錄待先行提交並推送
+- 待辦／給下一棒：完成第 6 課各模組、語詞／成語圖片與筆順連結，確認官方來源欄位不把教材全文帶入公開 repo
+- 注意：沿用既有第五課規格；不直接改寫共用元件，不把官方原始教材或第三方試算表放入公開 repo
+
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/components/VocabularyCard.js`、`apps/mandarin/scripts/test-speak-button-coverage.mjs`
 - 做了什麼：移除語詞解釋卡中與芫荽注音體重複的下方注音列；語詞本身保留芫荽注音體，切換成解釋時維持一般介面字型
