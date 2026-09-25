@@ -1,0 +1,1470 @@
+{
+  "lesson_id": "115AG3H03",
+  "volume": {
+    "code": "115AG3H",
+    "publisher": "翰林",
+    "grade": 3,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "TODO: 單元名稱待補"
+  },
+  "lesson_no": 3,
+  "title": "提早五分鐘",
+  "author": "林良",
+  "blurb": "從爸爸的小統計學會先整理、先準備，提早五分鐘讓做事更從容。",
+  "characters": [
+    {
+      "char": "統",
+      "zhuyin": "ㄊㄨㄥˇ",
+      "stroke_count": 11,
+      "radical": "糸",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=統",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "票",
+      "zhuyin": "ㄆㄧㄠˋ",
+      "stroke_count": 11,
+      "radical": "示",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=票",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "角",
+      "zhuyin": "ㄐㄧㄠˇ",
+      "stroke_count": 7,
+      "radical": "角",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=角",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "板",
+      "zhuyin": "ㄅㄢˇ",
+      "stroke_count": 8,
+      "radical": "木",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=板",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "業",
+      "zhuyin": "ㄧㄝˋ",
+      "stroke_count": 13,
+      "radical": "木",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=業",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "本",
+      "zhuyin": "ㄅㄣˇ",
+      "stroke_count": 5,
+      "radical": "木",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=本",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "況",
+      "zhuyin": "ㄎㄨㄤˋ",
+      "stroke_count": 8,
+      "radical": "水",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=況",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "該",
+      "zhuyin": "ㄍㄞ",
+      "stroke_count": 13,
+      "radical": "言",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=該",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "喊",
+      "zhuyin": "ㄏㄢˇ",
+      "stroke_count": 12,
+      "radical": "口",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=喊",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "文",
+      "zhuyin": "ㄨㄣˊ",
+      "stroke_count": 4,
+      "radical": "文",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=文",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "具",
+      "zhuyin": "ㄐㄩˋ",
+      "stroke_count": 8,
+      "radical": "八",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=具",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "理",
+      "zhuyin": "ㄌㄧˇ",
+      "stroke_count": 11,
+      "radical": "玉",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=理",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "此",
+      "zhuyin": "ㄘˇ",
+      "stroke_count": 6,
+      "radical": "止",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=此",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "備",
+      "zhuyin": "ㄅㄟˋ",
+      "stroke_count": 12,
+      "radical": "人",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=備",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "易",
+      "zhuyin": "ㄧˋ",
+      "stroke_count": 8,
+      "radical": "日",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=易",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "匆",
+      "zhuyin": "ㄘㄨㄥ",
+      "stroke_count": 5,
+      "radical": "勹",
+      "type": "認讀字",
+      "level": "challenge",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=匆",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "餘",
+      "zhuyin": "ㄩˊ",
+      "stroke_count": 15,
+      "radical": "食",
+      "type": "認讀字",
+      "level": "challenge",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=餘",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG3H03:01",
+      "word": "統計",
+      "zhuyin": null,
+      "meaning": "總括計算。",
+      "example_sentence": "爸爸用表格統計班上同學帶來的文具。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson03/vocabulary/l03-01.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H03:02",
+      "word": "公車票",
+      "zhuyin": null,
+      "meaning": "搭乘公共汽車時所使用的票券。",
+      "example_sentence": "我把公車票放進透明的小袋子裡。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson03/vocabulary/l03-02.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H03:03",
+      "word": "三角板",
+      "zhuyin": null,
+      "meaning": "繪圖用具，亦稱「三角尺」。",
+      "example_sentence": "美術課時，我用三角板畫出直線。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson03/vocabulary/l03-03.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H03:04",
+      "word": "作業本",
+      "zhuyin": null,
+      "meaning": "在校或在家作各種有關課業習題的簿本。",
+      "example_sentence": "寫完作業後，我把作業本放回書包。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson03/vocabulary/l03-04.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H03:05",
+      "word": "情況",
+      "zhuyin": null,
+      "meaning": "事情所呈現的狀態。",
+      "example_sentence": "老師先了解情況，再想出解決方法。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson03/vocabulary/l03-05.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H03:06",
+      "word": "匆忙",
+      "zhuyin": null,
+      "meaning": "急忙。",
+      "example_sentence": "出門前先檢查，才不會匆忙忘記東西。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson03/vocabulary/l03-06.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H03:07",
+      "word": "該",
+      "zhuyin": null,
+      "meaning": "應當。",
+      "example_sentence": "我們該在睡前準備好明天的用品。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson03/vocabulary/l03-07.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H03:08",
+      "word": "喊",
+      "zhuyin": null,
+      "meaning": "大聲呼叫。",
+      "example_sentence": "找不到同學時，我會先喊他的名字。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson03/vocabulary/l03-08.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H03:09",
+      "word": "文具",
+      "zhuyin": null,
+      "meaning": "讀書寫字所用的器具。",
+      "example_sentence": "我把常用的文具放在筆袋裡。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson03/vocabulary/l03-09.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H03:10",
+      "word": "整理",
+      "zhuyin": null,
+      "meaning": "整頓、收拾。",
+      "example_sentence": "放學前，我會整理自己的抽屜。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson03/vocabulary/l03-10.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H03:11",
+      "word": "因此",
+      "zhuyin": null,
+      "meaning": "連接詞。因而、所以，表示事情的結果。",
+      "example_sentence": "今天提早準備，因此出門時很從容。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson03/vocabulary/l03-11.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H03:12",
+      "word": "有餘",
+      "zhuyin": null,
+      "meaning": "有剩餘。",
+      "example_sentence": "時間有餘時，我會再檢查一次書包。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson03/vocabulary/l03-12.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H03:13",
+      "word": "準備",
+      "zhuyin": null,
+      "meaning": "事先安排或籌劃。",
+      "example_sentence": "我先準備好用品，再開始寫作業。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson03/vocabulary/l03-13.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H03:14",
+      "word": "容易",
+      "zhuyin": null,
+      "meaning": "不困難，做事情不費力氣就能完成。",
+      "example_sentence": "按照步驟做，事情就容易多了。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson03/vocabulary/l03-14.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG3H03:天涯海角",
+      "idiom": "天涯海角",
+      "definition": "形容非常遙遠的地方。",
+      "related_char": "角",
+      "image": "idioms/01_天涯海角.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H03:安居樂業",
+      "idiom": "安居樂業",
+      "definition": "生活安定，愉快地從事工作。",
+      "related_char": "業",
+      "image": "idioms/02_安居樂業.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H03:本末倒置",
+      "idiom": "本末倒置",
+      "definition": "把主要和次要、根本和枝節的位置弄反了。",
+      "related_char": "本",
+      "image": "idioms/03_本末倒置.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H03:每況愈下",
+      "idiom": "每況愈下",
+      "definition": "情況越來越不好。",
+      "related_char": "況",
+      "image": "idioms/04_每況愈下.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H03:文質彬彬",
+      "idiom": "文質彬彬",
+      "definition": "形容人舉止文雅，態度端莊。",
+      "related_char": "文",
+      "image": "idioms/05_文質彬彬.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H03:心安理得",
+      "idiom": "心安理得",
+      "definition": "做事合乎道理，心裡坦然安定。",
+      "related_char": "理",
+      "image": "idioms/06_心安理得.png",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（07生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG3H03:1",
+      "idiom_id": "idiom:115AG3H03:天涯海角",
+      "rewritten": "我和家人約好，無論走到天涯海角都要彼此照顧。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H03:2",
+      "idiom_id": "idiom:115AG3H03:安居樂業",
+      "rewritten": "大家一起維護社區，才能安居樂業。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H03:3",
+      "idiom_id": "idiom:115AG3H03:本末倒置",
+      "rewritten": "先完成重要工作再休息，才不會本末倒置。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H03:4",
+      "idiom_id": "idiom:115AG3H03:每況愈下",
+      "rewritten": "如果一直不整理房間，環境可能每況愈下。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H03:5",
+      "idiom_id": "idiom:115AG3H03:文質彬彬",
+      "rewritten": "哥哥待人有禮，看起來文質彬彬。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H03:6",
+      "idiom_id": "idiom:115AG3H03:心安理得",
+      "rewritten": "我把借來的物品準時歸還，心安理得。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（教師自撰生活例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG3H03:01",
+      "category": "句型練習",
+      "head": "足夠",
+      "structure": "（人物）＋有＋足夠的（事物），可以＋（行動）",
+      "description": "用「足夠」說明數量或時間充分、不缺乏。",
+      "guide": "想一想做一件事前，需要準備足夠的什麼。",
+      "examples": [
+        "我們有足夠的時間，可以檢查書包。",
+        "我們準備了足夠的飲水，可以安心出發。",
+        "我留有足夠的時間，可以再檢查一次。"
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（08各課短語句型練習）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H03:02",
+      "category": "句型練習",
+      "head": "是……不……的",
+      "structure": "（人物）＋是不＋（動作）＋的",
+      "description": "用「是……不……的」說明人物的習慣或做法。",
+      "guide": "想一想一個人的做事習慣，再用這個句型說一說。",
+      "examples": [
+        "媽媽是不遲到的。",
+        "哥哥是不賴床的。",
+        "我是不拖延的。"
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（08各課短語句型練習）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H03:03",
+      "category": "句型練習",
+      "head": "……，讓……",
+      "structure": "（什麼前提），讓（接續什麼情形）",
+      "description": "用「讓」說明前面的事情帶來什麼結果。",
+      "guide": "先想一個前提，再說說它帶來的改變。",
+      "examples": [
+        "春天的到來，讓花朵綻放。",
+        "老師的提醒，讓我準時完成作業。",
+        "充分的準備，讓比賽進行得更順利。"
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（08各課短語句型練習）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H03:04",
+      "category": "句型練習",
+      "head": "不……就不……",
+      "structure": "不＋（動作）＋就不＋（產生的結果）",
+      "description": "用「不……就不……」說明避免某種結果的方法。",
+      "guide": "想一想不做什麼，就能避免什麼結果。",
+      "examples": [
+        "不玩，就不會沉迷。",
+        "不買，就不必花錢。",
+        "不慌張，就不容易出錯。"
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（08各課短語句型練習）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H03:05",
+      "category": "句型練習",
+      "head": "因為……所以……",
+      "structure": "因為（原因），所以（結果）",
+      "description": "用「因為……所以……」說明事情的原因和結果。",
+      "guide": "想一件事情的原因和結果，把兩者說完整。",
+      "examples": [
+        "因為天空下起大雨，所以運動會延期了。",
+        "因為我提早準備，所以今天沒有遲到。",
+        "因為大家分工合作，所以很快完成任務。"
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（08各課短語句型練習）"
+    }
+  ],
+  "rhetoric": [
+    {
+      "id": "rhetoric:115AG3H03:01",
+      "figure": "排比",
+      "note": "把結構相似、詞性相近的語句連續排列，讓表達更有條理。",
+      "example": "星期一丟了公車票，星期二丟了筆和三角板，星期三又丟了作業本。",
+      "child_note": "排比＝把相似的句子一個接一個說，讀起來更有力量。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（10修辭輕鬆學）"
+    },
+    {
+      "id": "rhetoric:115AG3H03:02",
+      "figure": "設問",
+      "note": "先提出問題，再在後文說明或回答，吸引讀者注意。",
+      "example": "我的公車票呢？我的筆呢？",
+      "child_note": "設問＝先問一問，再想辦法找出答案。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（10修辭輕鬆學）"
+    },
+    {
+      "id": "rhetoric:115AG3H03:03",
+      "figure": "頂真",
+      "note": "前一句結尾的詞語，接到後一句開頭，讓語意連貫。",
+      "example": "我永遠不趕，不趕就不容易出錯。",
+      "child_note": "頂真＝把前一句最後的詞，接到下一句開頭。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（10修辭輕鬆學）"
+    }
+  ],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG3H03:1",
+      "para_no": 1,
+      "summary": "爸爸做了小統計，發現櫻櫻三天內接連弄丟公車票、筆、三角板和作業本，這些遺失都和做事過度匆忙有關。",
+      "structure_role": "發現",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（段落大意資料，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H03:2",
+      "para_no": 2,
+      "summary": "每天到了該上學的時候，櫻櫻才慌張尋找用品並大聲呼喊；她常在最後一刻行動，所以容易忘記重要物品。",
+      "structure_role": "發現",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（段落大意資料，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H03:3",
+      "para_no": 3,
+      "summary": "爸爸曾提醒她睡前整理明天要帶的書本和文具，她卻總回答到時候再說，沒有預先完成準備和檢查。",
+      "structure_role": "分析",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（段落大意資料，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H03:4",
+      "para_no": 4,
+      "summary": "爸爸進一步分析情況，指出問題不只是動作慢，而是做事缺乏計畫；總把事情拖到最後，自然容易來不及。",
+      "structure_role": "分析",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（段落大意資料，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H03:5",
+      "para_no": 5,
+      "summary": "他分享自己的方法：先想好要做的事，提前開始並把所需物品準備好，即使發現遺漏也還有時間處理。",
+      "structure_role": "方法",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（段落大意資料，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H03:6",
+      "para_no": 6,
+      "summary": "爸爸希望櫻櫻學會先準備好，再提早五分鐘行動；只要不趕時間，就能降低錯誤，做事也會更從容。",
+      "structure_role": "方法",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（段落大意資料，重述版）"
+    }
+  ],
+  "main_idea": {
+    "id": "main_idea:115AG3H03:01",
+    "gist": "課文透過櫻櫻常常匆忙遺漏物品的情況，說明先計畫、先準備，再提早五分鐘行動，做事就能更從容。",
+    "theme": "做事前先計畫和整理，提早準備可以減少遺漏。",
+    "status": "approved",
+    "source": "115G3A／翰林三上第3課官方教材與教師確認資料（主旨重述版）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG3H03:1",
+      "stem": "爸爸統計櫻櫻三天內丟了幾樣東西？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "四樣。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+    },
+    {
+      "id": "reading_question:115AG3H03:2",
+      "stem": "櫻櫻匆忙的根本原因是什麼？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "她做事沒有先計畫，總是拖到最後才行動。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+    },
+    {
+      "id": "reading_question:115AG3H03:3",
+      "stem": "爸爸建議睡前先做什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "先整理明天要帶的物品，完成準備和檢查。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+    },
+    {
+      "id": "reading_question:115AG3H03:4",
+      "stem": "提早五分鐘開始做事有什麼好處？",
+      "strategy_tag": "整合訊息",
+      "answer_hint": "即使發現遺漏，也還有足夠時間處理，做事會更從容。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG3H03:1",
+      "char": "統",
+      "sentence": "老師把全班的閱讀紀錄《統計》起來。",
+      "definition": "總括計算",
+      "options": [
+        "總括計算",
+        "世代相傳的體系"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H03:2",
+      "char": "統",
+      "sentence": "我們要保留家庭的《傳統》。",
+      "definition": "世代相傳的體系",
+      "options": [
+        "總括計算",
+        "世代相傳的體系"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H03:3",
+      "char": "票",
+      "sentence": "請把電影《票》收好。",
+      "definition": "作為憑證的紙張",
+      "options": [
+        "作為憑證的紙張",
+        "計算數量的單位"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H03:4",
+      "char": "角",
+      "sentence": "三角板可以畫出不同的《角》。",
+      "definition": "幾何學上兩直線相交所成的空間",
+      "options": [
+        "幾何學上兩直線相交所成的空間",
+        "競爭、較量"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H03:5",
+      "char": "角",
+      "sentence": "兩位選手在場上《角力》。",
+      "definition": "競爭、較量",
+      "options": [
+        "幾何學上兩直線相交所成的空間",
+        "競爭、較量"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H03:6",
+      "char": "本",
+      "sentence": "桌上有一本故事《本》。",
+      "definition": "書冊、簿子",
+      "options": [
+        "書冊、簿子",
+        "最初、初始的"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H03:7",
+      "char": "本",
+      "sentence": "事情的《本來》面目已經清楚了。",
+      "definition": "最初、初始的",
+      "options": [
+        "書冊、簿子",
+        "最初、初始的"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H03:8",
+      "char": "況",
+      "sentence": "老師先了解事情的《情況》。",
+      "definition": "情形、狀態",
+      "options": [
+        "情形、狀態",
+        "表示更進一層的語氣"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H03:9",
+      "char": "此",
+      "sentence": "請在《此》處排隊。",
+      "definition": "這、這個",
+      "options": [
+        "這、這個",
+        "剩下的部分"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H03:10",
+      "char": "餘",
+      "sentence": "準備充分，時間還《有餘》。",
+      "definition": "有剩餘",
+      "options": [
+        "有剩餘",
+        "交換"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H03:11",
+      "char": "易",
+      "sentence": "按照步驟做，事情很《容易》。",
+      "definition": "簡單、不困難",
+      "options": [
+        "簡單、不困難",
+        "交換"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H03:12",
+      "char": "易",
+      "sentence": "古人用物品互相《交易》。",
+      "definition": "交換",
+      "options": [
+        "簡單、不困難",
+        "交換"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（06字義分析）"
+    }
+  ],
+  "polysemy_senses": [],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG3H03:角",
+      "char": "角",
+      "readings": [
+        {
+          "zhuyin": "ㄐㄧㄠˇ",
+          "dabutie_zhuyin": "ㄐㄧㄠˇ",
+          "senses": [
+            {
+              "definition": "幾何圖形的一部分",
+              "examples": [
+                "主角",
+                "角度"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄐㄩㄝˊ",
+          "dabutie_zhuyin": "ㄐㄩㄝˊ",
+          "senses": [
+            {
+              "definition": "競爭、較量",
+              "examples": [
+                "角色"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：認識多音字）"
+    },
+    {
+      "id": "polyphone:115AG3H03:覺",
+      "char": "覺",
+      "readings": [
+        {
+          "zhuyin": "ㄐㄩㄝˊ",
+          "dabutie_zhuyin": "ㄐㄩㄝˊ",
+          "senses": [
+            {
+              "definition": "感受到、認為",
+              "examples": [
+                "感覺",
+                "覺得"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄐㄧㄠˋ",
+          "dabutie_zhuyin": "ㄐㄧㄠˋ",
+          "senses": [
+            {
+              "definition": "睡眠",
+              "examples": [
+                "睡覺"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：認識多音字）"
+    },
+    {
+      "id": "polyphone:115AG3H03:得",
+      "char": "得",
+      "readings": [
+        {
+          "zhuyin": "ㄉㄜ˙",
+          "dabutie_zhuyin": "ㄉㄜ˙",
+          "senses": [
+            {
+              "definition": "用在動詞後，表示連接作用",
+              "examples": [
+                "跑得快"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄉㄜˊ",
+          "dabutie_zhuyin": "ㄉㄜˊ",
+          "senses": [
+            {
+              "definition": "獲取、得到",
+              "examples": [
+                "獲得"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄉㄟˇ",
+          "dabutie_zhuyin": "ㄉㄟˇ",
+          "senses": [
+            {
+              "definition": "必須、需要",
+              "examples": [
+                "得先回家"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：認識多音字）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG3H03:1",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "充",
+          "example": "充滿、充足"
+        },
+        {
+          "char": "統",
+          "example": "統計、統一"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H03:2",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "栗",
+          "example": "栗子、板栗"
+        },
+        {
+          "char": "粟",
+          "example": "粟米、粟粒"
+        },
+        {
+          "char": "票",
+          "example": "門票、選票"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H03:3",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "板",
+          "example": "木板、黑板"
+        },
+        {
+          "char": "扳",
+          "example": "扳倒、扳動"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H03:4",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "況",
+          "example": "情況、狀況"
+        },
+        {
+          "char": "祝",
+          "example": "祝福、祝賀"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H03:5",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "匆",
+          "example": "匆促、匆忙"
+        },
+        {
+          "char": "勿",
+          "example": "切勿、勿忘"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H03:6",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "蚊",
+          "example": "蚊子、蚊蟲"
+        },
+        {
+          "char": "紋",
+          "example": "花紋、紋路"
+        },
+        {
+          "char": "文",
+          "example": "文章、文化"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H03:7",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "真",
+          "example": "真實、真正"
+        },
+        {
+          "char": "具",
+          "example": "工具、具體"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG3H03:1",
+      "stem": "爸爸發現櫻櫻常在最後一刻找用品，所以提醒她先整理。",
+      "question": "爸爸為什麼提醒櫻櫻先整理？",
+      "options": [
+        "因為她常常來不及找到用品",
+        "因為她不喜歡文具",
+        "因為她想換書包"
+      ],
+      "answer": "因為她常常來不及找到用品",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（教師自撰聆聽題）"
+    },
+    {
+      "id": "listening:115AG3H03:2",
+      "stem": "爸爸建議先想好步驟，再提早五分鐘開始做事。",
+      "question": "爸爸建議櫻櫻怎麼開始做事？",
+      "options": [
+        "先想好步驟並提早開始",
+        "先玩遊戲再準備",
+        "等到最後一刻再行動"
+      ],
+      "answer": "先想好步驟並提早開始",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（教師自撰聆聽題）"
+    },
+    {
+      "id": "listening:115AG3H03:3",
+      "stem": "提早準備，就算發現少了東西，也還有時間回頭處理。",
+      "question": "提早準備的好處是什麼？",
+      "options": [
+        "有時間處理遺漏",
+        "一定不用整理",
+        "可以忘記更多東西"
+      ],
+      "answer": "有時間處理遺漏",
+      "status": "approved",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（教師自撰聆聽題）"
+    }
+  ],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "待",
+        "蝸",
+        "牛",
+        "牠",
+        "吞",
+        "寸",
+        "碌",
+        "奔",
+        "彈",
+        "簧",
+        "它",
+        "短",
+        "悲",
+        "流",
+        "永"
+      ],
+      "2": [
+        "貼",
+        "使",
+        "醒",
+        "準",
+        "睡",
+        "鐘",
+        "效",
+        "序",
+        "而",
+        "且",
+        "排",
+        "冰",
+        "箱",
+        "原",
+        "條",
+        "顯",
+        "隔"
+      ],
+      "3": [
+        "統",
+        "票",
+        "角",
+        "板",
+        "業",
+        "本",
+        "況",
+        "該",
+        "喊",
+        "文",
+        "具",
+        "理",
+        "此",
+        "備",
+        "易",
+        "匆",
+        "餘"
+      ]
+    }
+  },
+  "extensions": [],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「統」的注音是？",
+      "options": [
+        "ㄊㄨㄥˇ",
+        "ㄐㄧㄠˇ",
+        "ㄅㄢˇ"
+      ],
+      "answer": "ㄊㄨㄥˇ",
+      "explanation": "「統」讀作 ㄊㄨㄥˇ。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（注音取自教育百科）",
+      "hints": [
+        "先看聲母，再想想韻母，不要急著選。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「票」的注音是？",
+      "options": [
+        "ㄆㄧㄠˋ",
+        "ㄅㄢˇ",
+        "ㄧㄝˋ"
+      ],
+      "answer": "ㄆㄧㄠˋ",
+      "explanation": "「票」讀作 ㄆㄧㄠˋ。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（注音取自教育百科）",
+      "hints": [
+        "先看聲母，再想想韻母，不要急著選。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「角」的注音是？",
+      "options": [
+        "ㄐㄧㄠˇ",
+        "ㄧㄝˋ",
+        "ㄅㄣˇ"
+      ],
+      "answer": "ㄐㄧㄠˇ",
+      "explanation": "「角」讀作 ㄐㄧㄠˇ。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（注音取自教育百科）",
+      "hints": [
+        "先看聲母，再想想韻母，不要急著選。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「板」的注音是？",
+      "options": [
+        "ㄅㄢˇ",
+        "ㄅㄣˇ",
+        "ㄎㄨㄤˋ"
+      ],
+      "answer": "ㄅㄢˇ",
+      "explanation": "「板」讀作 ㄅㄢˇ。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（注音取自教育百科）",
+      "hints": [
+        "先看聲母，再想想韻母，不要急著選。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「業」的注音是？",
+      "options": [
+        "ㄧㄝˋ",
+        "ㄎㄨㄤˋ",
+        "ㄍㄞ"
+      ],
+      "answer": "ㄧㄝˋ",
+      "explanation": "「業」讀作 ㄧㄝˋ。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（注音取自教育百科）",
+      "hints": [
+        "先看聲母，再想想韻母，不要急著選。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「本」的注音是？",
+      "options": [
+        "ㄅㄣˇ",
+        "ㄍㄞ",
+        "ㄏㄢˇ"
+      ],
+      "answer": "ㄅㄣˇ",
+      "explanation": "「本」讀作 ㄅㄣˇ。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（注音取自教育百科）",
+      "hints": [
+        "先看聲母，再想想韻母，不要急著選。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「況」的注音是？",
+      "options": [
+        "ㄎㄨㄤˋ",
+        "ㄏㄢˇ",
+        "ㄨㄣˊ"
+      ],
+      "answer": "ㄎㄨㄤˋ",
+      "explanation": "「況」讀作 ㄎㄨㄤˋ。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（注音取自教育百科）",
+      "hints": [
+        "先看聲母，再想想韻母，不要急著選。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「該」的注音是？",
+      "options": [
+        "ㄍㄞ",
+        "ㄨㄣˊ",
+        "ㄐㄩˋ"
+      ],
+      "answer": "ㄍㄞ",
+      "explanation": "「該」讀作 ㄍㄞ。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（注音取自教育百科）",
+      "hints": [
+        "先看聲母，再想想韻母，不要急著選。"
+      ]
+    },
+    {
+      "id": "m01",
+      "type": "matching",
+      "stem": "字 ↔ 部首配對",
+      "pairs": [
+        {
+          "left": "統",
+          "right": "糸"
+        },
+        {
+          "left": "票",
+          "right": "示"
+        },
+        {
+          "left": "角",
+          "right": "角"
+        },
+        {
+          "left": "板",
+          "right": "木"
+        },
+        {
+          "left": "業",
+          "right": "木"
+        },
+        {
+          "left": "本",
+          "right": "木"
+        }
+      ],
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（部首取自教育百科）"
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "note": "教材待補：應用任務設計中"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "available",
+      "activity": "listening-quiz"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "available",
+      "activity": "rhetoric"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  }
+}

@@ -16,7 +16,8 @@ document.body = new FakeElement('body');
 document.getElementById = () => null;
 window.matchMedia = () => ({ matches: true }); // 測試環境固定當作 reduced-motion，不需要噴粒子
 
-const lesson = JSON.parse(readFileSync(new URL('../public/data/115AG3H/lesson01.json', import.meta.url)));
+const lessonPath = process.env.MANDARIN_TEST_LESSON || '../public/data/115AG3H/lesson01.json';
+const lesson = JSON.parse(readFileSync(new URL(lessonPath, import.meta.url)));
 
 const { MODULE_REGISTRY, getModuleStatus } = await import('../src/activities/moduleRegistry.js');
 const { startScoreSession, endScoreSession } = await import('../src/utils/scoreSession.js');
@@ -216,6 +217,7 @@ const results = [];
 for (const entry of MODULE_REGISTRY) {
   const status = getModuleStatus(lesson, entry);
   if (status.code === 'locked') continue; // 舊字新詞第 1 課本來就鎖著，不在本次驗收範圍
+  if (entry.key === 'review') continue; // 舊字新詞需要非同步載入前課資料，另有專測，不在本 DOM driver 範圍
   if (status.code !== 'available' && status.code !== 'done') continue; // 教材審核中／即將推出：沒有可玩內容，不驅動
   // 例：一字多音（polyphones）第 1 課大補帖端注音無法可靠抽取、pedia 也沒有
   // 語詞多讀音層級的注音，資料層暫時 0 筆可用題目，屬預期中的「教材審核中」。
@@ -243,7 +245,7 @@ for (const entry of MODULE_REGISTRY) {
 
 assert.equal(results.length, 11, `應該驗證了 11 個可開始的大項（原 9 個＋形似字＋一字多音），實際 ${results.length}`);
 
-console.log('PASS: 第 1 課 11 個可開始大項逐一驗證，全部都有可判定題目、玩到底都能累積 1–3 顆星：');
+console.log(`PASS: 第 ${lesson.lesson_no} 課 11 個可開始大項逐一驗證，全部都有可判定題目、玩到底都能累積 1–3 顆星：`);
 for (const r of results) {
   console.log(`  - ${r.label}（${r.key}）：total=${r.total}，stars=${r.stars}`);
 }
