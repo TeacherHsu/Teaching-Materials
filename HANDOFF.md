@@ -14,6 +14,14 @@
 
 ---
 
+## 2026-09-25｜學校 Win｜Codex｜狀態：🚧 施工中
+- 範圍：`apps/mandarin/public/data/115AG3H/lesson05.json`、`apps/mandarin/scripts/test-vocabulary-image-pairs.mjs`
+- 做了什麼：準備修正第五課「夾子」與「遮雨」圖片路徑對調問題，並加入圖詞配對回歸檢查
+- 驗證：施工中，待完成資料驗證、測試與瀏覽器回歸
+- 推送：施工紀錄待先行提交並推送
+- 待辦／給下一棒：修正兩筆 image 欄位、測試卡片實際載入、重新建置
+- 注意：只修正資料引用，不更動圖片內容與卡片互動規格
+
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/assets/115AG3H/lesson05/vocabulary/l05-05.webp`
 - 做了什麼：檢查第五課 14 張語詞圖，確認只有「綿」錯配；將跳繩圖替換為梨花山路上綿綿不斷的雨景，對應「連續不斷」的詞義。原始生成圖保留於 Codex 生成資產目錄，網站只放壓縮後 WebP
