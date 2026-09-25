@@ -241,9 +241,9 @@ for (const entry of MODULE_REGISTRY) {
   results.push({ key: entry.key, label: entry.label, total: meta.total, stars });
 }
 
-assert.equal(results.length, 10, `應該驗證了 10 個可開始的大項（原 9 個＋新增的形似字；一字多音第 1 課資料不足，教材審核中，不計入），實際 ${results.length}`);
+assert.equal(results.length, 11, `應該驗證了 11 個可開始的大項（原 9 個＋形似字＋一字多音），實際 ${results.length}`);
 
-console.log('PASS: 第 1 課 10 個可開始大項逐一驗證，全部都有可判定題目、玩到底都能累積 1–3 顆星：');
+console.log('PASS: 第 1 課 11 個可開始大項逐一驗證，全部都有可判定題目、玩到底都能累積 1–3 顆星：');
 for (const r of results) {
   console.log(`  - ${r.label}（${r.key}）：total=${r.total}，stars=${r.stars}`);
 }

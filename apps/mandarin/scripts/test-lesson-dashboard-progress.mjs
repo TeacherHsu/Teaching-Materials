@@ -23,9 +23,9 @@ const statuses = MODULE_REGISTRY.map((entry) => ({ key: entry.key, code: getModu
 const lockedKeys = statuses.filter((s) => s.code === 'locked').map((s) => s.key);
 assert.deepEqual(lockedKeys, ['review'], `第 1 課應該只有「舊字新詞」鎖住，實際鎖住：${lockedKeys.join('、') || '無'}`);
 const pendingKeys = statuses.filter((s) => s.code === 'pending_review').map((s) => s.key);
-assert.deepEqual(pendingKeys, ['polyphones'], `第 1 課應該只有「一字多音」教材審核中，實際：${pendingKeys.join('、') || '無'}`);
+assert.deepEqual(pendingKeys, [], `第 1 課不應有教材審核中的大項（一字多音已補查證讀音），實際：${pendingKeys.join('、') || '無'}`);
 const availableCount = statuses.filter((s) => s.code === 'available' || s.code === 'done').length;
-assert.equal(availableCount, 10, `第 1 課可開始的大項應為 10 項，實際 ${availableCount}`);
+assert.equal(availableCount, 11, `第 1 課可開始的大項應為 11 項，實際 ${availableCount}`);
 
 // ---- LessonDashboard：hero 分母應為 10（不把鎖住／教材審核中的項目算進分母） ----
 const dashboard = LessonDashboard(lesson);
@@ -33,8 +33,8 @@ const progressLabel = dashboard.find((n) => n.hasClass('lesson-hero__progress-la
 assert.ok(progressLabel, '應該要有 lesson-hero__progress-label');
 assert.match(
   progressLabel.textContent,
-  /已完成 0 ／ 10 項/,
-  `hero 進度分母應為 10（排除鎖住的舊字新詞、教材審核中的一字多音），實際：「${progressLabel.textContent}」`,
+  /已完成 0 ／ 11 項/,
+  `hero 進度分母應為 11（排除鎖住的舊字新詞、教材審核中的一字多音），實際：「${progressLabel.textContent}」`,
 );
 
 // 進度環（progress-ring）文字也要用同一個分母換算百分比，0/10 = 0%
@@ -55,4 +55,4 @@ assert.ok(crumbText.includes(volumeLabel(lesson.volume)), `活動頁麵包屑應
 assert.ok(crumbText.indexOf(volumeLabel(lesson.volume)) < crumbText.indexOf('第 1 課'), '課本層應該排在「第 1 課」之前');
 assert.ok(crumbText.indexOf('第 1 課') < crumbText.indexOf('一字多義'), '「第 1 課」應該排在大項名稱之前');
 
-console.log('PASS: hero 進度分母只算可開始的大項（第 1 課＝10），且活動頁／課次首頁麵包屑補上課本層並共用 volumeLabel。');
+console.log('PASS: hero 進度分母只算可開始的大項（第 1 課＝11），且活動頁／課次首頁麵包屑補上課本層並共用 volumeLabel。');

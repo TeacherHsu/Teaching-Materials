@@ -402,15 +402,25 @@ def build_polysemy_senses(vocab_raw: dict, lesson_id: str, existing_by_id: dict 
     return out
 
 
+def _load_verified_readings() -> dict:
+    """tools/dabutie/verified_readings.json：教師端查證過的多音字讀音（見檔內 _note）。"""
+    import json as _json
+    from pathlib import Path as _Path
+    f = _Path(__file__).with_name("verified_readings.json")
+    return _json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+
+
 def build_polyphones(vocab_raw: dict, lesson_id: str, existing_by_id: dict | None = None):
     """一字多音（新頂層欄位 polyphones[]，05■認識多音字）：逐字列出各讀音的義項
     與課本例詞，直接公開類（字義／例詞原文照登）。大補帖端注音無法可靠抽取
     （見 vocab_explanations.py 說明），dabutie_zhuyin 一律 None；呼叫端可另外
     用 pedia 補 zhuyin，pedia 沒有就是 None，不得憑記憶猜。"""
     existing_by_id = existing_by_id or {}
+    verified = _load_verified_readings().get(lesson_id, {})
     out = []
     for item in vocab_raw.get("polyphones", []):
         char = item["char"]
+        vz = verified.get(char, [])
         pid = stable_id(f"polyphone:{lesson_id}", char)
         existing = _preserved(existing_by_id, pid)
         entry = {
@@ -418,11 +428,15 @@ def build_polyphones(vocab_raw: dict, lesson_id: str, existing_by_id: dict | Non
             "char": char,
             "readings": [
                 {
-                    "zhuyin": None,
+                    "zhuyin": vz[i] if i < len(vz) else None,
                     "dabutie_zhuyin": None,
-                    "senses": r.get("senses", []),
+                    # 例詞必須含該字；多音字段落的例句會被逗號切成片段（例：「沒出門」），濾掉
+                    "senses": [
+                        {**sense, "examples": [e for e in sense.get("examples", []) if char in e]}
+                        for sense in r.get("senses", [])
+                    ],
                 }
-                for r in item.get("readings", [])
+                for i, r in enumerate(item.get("readings", []))
             ],
             "status": existing["status"] if existing else "ready",
             "source": vocab_raw.get("source", "dabutie:05形音輕鬆學（認識多音字）"),
