@@ -1,4 +1,4 @@
-// 驗證「學會語詞」第 1 步（看圖）改成每組 5 張、保留步驟進度但不顯示組別進度、有下一組按鈕，
+// 驗證「學會語詞」第 1 步（看圖／點選看詞義）改成每組 5 張、保留步驟進度但不顯示組別進度、有下一組按鈕，
 // 而不是一次全部（44+ 張）攤開成文字牆。無新依賴，純 Node（用 scripts/fake-dom.mjs 的 DOM stub）。
 // 用法：node scripts/test-vocabulary-flip-chunking.mjs
 import assert from 'node:assert/strict';

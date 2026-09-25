@@ -158,8 +158,14 @@ function assertCoverage(root, label) {
     meaning: '心情很好',
     example_sentence: '我今天很快樂。',
   });
-  assert.equal(card.findAll((n) => n.hasClass('speak-button')).length, 1, '固定式 VocabularyCard 應有一個語詞朗讀鈕');
+  assert.equal(card.findAll((n) => n.hasClass('speak-button')).length, 1, 'VocabularyCard 初始應有一個語詞朗讀鈕');
   assert.equal(card.findAll((n) => n.hasClass('image-frame')).length, 1, 'VocabularyCard 應顯示圖片框');
+  assert.equal(card.getAttribute('role'), 'button', 'VocabularyCard 應可點選查看詞義');
+  card.dispatch('click');
+  assert.ok(card.textContent.includes('心情很好'), 'VocabularyCard 點選後應顯示詞義');
+  assert.equal(card.findAll((n) => n.hasClass('speak-button')).length, 1, '顯示詞義時仍應只有一個朗讀鈕');
+  card.dispatch('click');
+  assert.ok(card.textContent.includes('快樂'), 'VocabularyCard 再次點選後應回到語詞');
   checked += 1;
 
   const charCard = CharacterCard({ char: '回', zhuyin: 'ㄏㄨㄟˊ', radical: '囗', stroke_count: 6, type: '習寫字', examples: ['回家', '回答'] });
