@@ -22,6 +22,30 @@
   color: var(--text-primary);
 }
 
+.app-header__mute {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap-target-min);
+  min-height: var(--tap-target-min);
+  padding: 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--text-secondary);
+}
+
+.app-header__mute:hover,
+.app-header__mute:focus-visible {
+  background: var(--color-surface-muted);
+  color: var(--text-primary);
+}
+
+.app-header__mute[aria-pressed='true'] {
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
 .breadcrumb {
   display: flex;
   align-items: center;
@@ -405,8 +429,8 @@
 }
 
 .star-row--sm svg {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
 }
 
 /* ---- ModulePage 頂部主題色細條＋大項圖示 ---- */
@@ -577,7 +601,22 @@
 
 .speak-button--read-all {
   padding: var(--space-1) var(--space-3);
+}
+
+/* 題目標題列：題幹＋單題朗讀在左，「全部唸給我聽」貼右側；窄螢幕（375px）
+   自動換行，不橫向捲動，見規格 §5。 */
+.quiz-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
   margin-bottom: var(--space-3);
+}
+
+.quiz-title-row .quiz-option-row {
+  flex: 1;
+  min-width: 0;
 }
 
 /* ---- 台灣語音提示 banner ---- */
@@ -759,6 +798,64 @@
   margin: var(--space-1) 0 0;
   font-weight: 700;
   color: var(--color-warning);
+}
+
+/* ---- 答對／完成慶祝效果（src/utils/celebrate.js）----
+   短、不擋操作、不持續閃動：只在答對／完成那一刻播一次，播完不留殘影。
+   prefers-reduced-motion 時 JS 就不會加 --bounce／不噴粒子／不飛星星，這裡的
+   CSS 動畫規則本身也用 media query 再包一層保險，雙重防呆。 */
+.celebrate-stamp {
+  position: relative;
+}
+
+.celebrate-bounce {
+  animation: celebrate-bounce-kf 700ms ease-out;
+}
+
+@keyframes celebrate-bounce-kf {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.celebrate-streak-badge {
+  position: fixed;
+  top: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-primary);
+  color: var(--text-on-primary, #fff);
+  padding: var(--space-2) var(--space-4);
+  border-radius: 999px;
+  font-weight: 700;
+  z-index: 9999;
+  pointer-events: none;
+  animation: celebrate-badge-kf 1200ms ease-out forwards;
+}
+
+@keyframes celebrate-badge-kf {
+  0% { opacity: 0; transform: translate(-50%, -8px); }
+  15% { opacity: 1; transform: translate(-50%, 0); }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.celebrate-new-record {
+  animation: celebrate-pop-kf 400ms ease-out;
+}
+
+@keyframes celebrate-pop-kf {
+  0% { transform: scale(0.6); opacity: 0; }
+  70% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .celebrate-bounce,
+  .celebrate-streak-badge,
+  .celebrate-new-record {
+    animation: none !important;
+  }
 }
 
 /* ---- MatchingGame ---- */
