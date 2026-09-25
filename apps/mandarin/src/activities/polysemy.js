@@ -20,14 +20,15 @@ function sentenceCard(entry) {
   const p = h('p', { class: 'polysemy-sentence' });
   const m = raw.match(/^(.*?)《(.*?)》(.*)$/);
   const pushWord = (word) => {
-    const i = word.indexOf(entry.char);
-    if (i < 0) { p.appendChild(document.createTextNode(word)); return; }
-    const u = h('span', { class: 'polysemy-sentence__word' }, [
-      word.slice(0, i),
-      h('mark', { class: 'polysemy-sentence__char' }, entry.char),
-      word.slice(i + entry.char.length),
-    ]);
-    p.appendChild(u);
+    if (!word.includes(entry.char)) { p.appendChild(document.createTextNode(word)); return; }
+    // 詞內所有目標字都標色（例：庸庸碌碌 兩個「碌」）
+    const parts = word.split(entry.char);
+    const kids = [];
+    parts.forEach((part, i) => {
+      if (part) kids.push(part);
+      if (i < parts.length - 1) kids.push(h('mark', { class: 'polysemy-sentence__char' }, entry.char));
+    });
+    p.appendChild(h('span', { class: 'polysemy-sentence__word' }, kids));
   };
   if (m) {
     p.appendChild(document.createTextNode(m[1]));
