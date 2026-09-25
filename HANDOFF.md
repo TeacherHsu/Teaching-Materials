@@ -16,9 +16,9 @@
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/activities/sentencePractice.js`、`apps/mandarin/scripts/test-sentence-chunking.mjs`
-- 做了什麼：句型練習改用固定詞組保護、瀏覽器中文斷詞、助詞／介詞合併與標點歸併；不再以每兩字硬切，並支援教材以 `sentence_patterns[].example_parts` 提供人工確認詞塊
-- 驗證：新增 `node scripts/test-sentence-chunking.mjs`；全部 `scripts/test-*.mjs`、第 5 課星星覆蓋測試、`npm.cmd run validate`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；瀏覽器確認「不只要／還要」、「背起來」等詞組完整呈現，console 無錯誤
-- 推送：完成 commit `9bbdae0` 後推送至 `origin/codex/mandarin-115g3a-lessons`；`origin/main` 尚未更新
+- 做了什麼：句型練習改用固定詞組保護、瀏覽器中文斷詞、助詞／介詞合併與標點歸併；不再以每兩字硬切，並支援教材以 `sentence_patterns[].example_parts` 提供人工確認詞塊。同步檢查第 1～4 課 55 個例句，修正「寫作業」「暖暖的」「進門的客人」「今天沒有遲到」等詞組
+- 驗證：新增 `node scripts/test-sentence-chunking.mjs`；第 1～4 課 55 個例句重新串接全部成功，最大 7 個詞塊且無孤立助詞；全部 `scripts/test-*.mjs`、第 5 課星星覆蓋測試、`npm.cmd run validate`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；瀏覽器確認詞組完整呈現，console 無錯誤
+- 推送：完成 commit 後推送至 `origin/codex/mandarin-115g3a-lessons`；`origin/main` 尚未更新
 - 待辦／給下一棒：新增特殊句型時，可在該句型的 `example_parts` 放入人工確認且可重新串回原句的詞塊
 - 注意：保留原句內容與亂數呈現，只調整學生作答時的詞塊邊界
 
