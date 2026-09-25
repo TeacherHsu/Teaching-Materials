@@ -10,10 +10,9 @@ const EXTERNAL_LINK_ICON = `<svg viewBox="0 0 24 24" width="16" height="16" fill
  *   的已核准延伸連結（例如「漢字由來」），層級低於主要內容，放在卡片最下方。
  */
 export function CharacterCard(character, originExtension = null) {
-  const { char, zhuyin, radical, stroke_count, examples, image, audio_override, pedia_url } = character;
+  const { char, radical, stroke_count, examples, image, audio_override, pedia_url } = character;
   const card = h('div', { class: 'character-card' }, [
     h('div', { class: 'character-card__glyph', 'aria-hidden': 'true' }, char),
-    h('div', { class: 'character-card__zhuyin' }, zhuyin),
     SpeakButton({ text: char, audioUrl: audio_override, label: '聽發音' }),
     h('div', { class: 'character-card__meta-row' }, [
       h('span', {}, `部首：${radical}`),
@@ -22,10 +21,10 @@ export function CharacterCard(character, originExtension = null) {
     image ? ImageFrame({ src: image, alt: `${char} 的插圖` }) : null,
     examples && examples.length
       ? h('div', { class: 'quiz-option-row' }, [
-          h('p', { class: 'meta' }, `造詞：${examples.join('、')}`),
+          h('p', { class: 'character-card__examples' }, `造詞：${examples.join('、')}`),
           SpeakButton({ text: examples.join('、'), label: '聽造詞', variant: 'speak-button--option' }),
         ])
-      : h('p', { class: 'meta' }, '造詞：教材待補'),
+      : h('p', { class: 'character-card__examples' }, '造詞：教材待補'),
     pedia_url
       ? h(
           'a',
@@ -33,7 +32,7 @@ export function CharacterCard(character, originExtension = null) {
             href: pedia_url,
             target: '_blank',
             rel: 'noopener noreferrer',
-            class: 'btn btn--secondary',
+            class: 'btn btn--secondary character-card__pedia-link',
             'aria-label': '待：筆順與解釋，教育百科，另開新視窗',
             html: `筆順與解釋${EXTERNAL_LINK_ICON}`,
           },

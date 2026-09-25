@@ -15,6 +15,14 @@
 ---
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/src/components/CharacterCard.js`、`apps/mandarin/src/styles/components.css`、`apps/mandarin/scripts/test-speak-button-coverage.mjs`
+- 做了什麼：移除已由芫荽注音體大字呈現的重複注音列；造詞改用芫荽注音體並放大至 32px；筆順與解釋按鈕縮小文字與內距，但保留 44px 觸控高度
+- 驗證：`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；瀏覽器確認注音列數量為 0、造詞 computed font-family 為 `Bpmf Iansui`、字體 32px、按鈕文字 18px、無水平溢出，字型載入成功，console 無錯誤
+- 推送：完成 commit 後推送至 `origin/codex/mandarin-115g3a-lessons`；`origin/main` 尚未更新
+- 待辦／給下一棒：後續若調整芫荽注音體大小，需同步檢查多字造詞在小螢幕是否換行合理
+- 注意：一般說明文字與點開後的解釋維持原字型；不修改字型檔與授權文件
+
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/fonts/`、`apps/mandarin/src/styles/tokens.css`、`apps/mandarin/src/styles/components.css`
 - 做了什麼：加入使用者提供且附有 OFL／Apache 授權文件的 `BpmfIansui-Regular.ttf`；生字卡大字與語詞卡的字詞套用芫荽注音體，翻成解釋時恢復一般介面字型；字型移至 `public/fonts`，不納入圖片資產的單課 4 MiB 計算
 - 驗證：`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；瀏覽器確認 `document.fonts.check('96px "Bpmf Iansui"')` 為 true，生字卡 computed font-family 正確，語詞卡顯示解釋時恢復一般字型，console 無錯誤；字型檔約 6.25 MiB，圖片資產總量約 9.89 MiB

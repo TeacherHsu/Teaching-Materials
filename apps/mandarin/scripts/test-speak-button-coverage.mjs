@@ -170,6 +170,8 @@ function assertCoverage(root, label) {
 
   const charCard = CharacterCard({ char: '回', zhuyin: 'ㄏㄨㄟˊ', radical: '囗', stroke_count: 6, type: '習寫字', examples: ['回家', '回答'] });
   assert.ok(charCard.findAll((n) => n.hasClass('speak-button')).length >= 2, 'CharacterCard 應有朗讀鈕（字音／造詞）');
+  assert.equal(charCard.findAll((n) => n.hasClass('character-card__zhuyin')).length, 0, 'CharacterCard 大字已有芫荽注音，不應再重複顯示注音列');
+  assert.equal(charCard.findAll((n) => n.hasClass('character-card__examples')).length, 1, 'CharacterCard 造詞應使用專用字型樣式節點');
   checked += 1;
 }
 
