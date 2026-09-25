@@ -6,6 +6,7 @@ import { SpeakButton } from './SpeakButton.js';
 import { ReadAllButton } from './ReadAllButton.js';
 import { recordOutcome } from '../utils/scoreSession.js';
 import { celebrateCorrect } from '../utils/celebrate.js';
+import { shuffle } from '../utils/shuffle.js';
 
 const CHECK_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>`;
 const CROSS_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>`;
@@ -105,7 +106,8 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
     root.appendChild(slotWrap);
 
     const bankWrap = h('div', { class: 'sentence-bank', 'aria-label': '可選詞塊，先點選再點空格放入' });
-    const options = [...item.options].sort(() => Math.random() - 0.5);
+    // 候選詞塊每次進入題目都重新亂數排列，且不改動題庫資料。
+    const options = shuffle(item.options || []);
     const overrides = item.speech_overrides || [];
 
     function refreshSlot() {

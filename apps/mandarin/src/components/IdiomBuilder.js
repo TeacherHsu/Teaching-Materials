@@ -4,6 +4,7 @@ import { ImageFrame } from './ImageFrame.js';
 import { TaskBanner } from './TaskBanner.js';
 import { missingContentNotice } from '../activities/engine.js';
 import { filterByStatus, isPreview } from '../utils/preview.js';
+import { shuffle } from '../utils/shuffle.js';
 
 const ROUND_SIZE_MAX = 5;
 // 與 activities/review.js 同一套防呆寫法：純 Node（無 Vite）測試環境下
@@ -14,13 +15,9 @@ function reviewPendingBadge() {
   return h('span', { class: 'review-pending-badge' }, '待審');
 }
 
-function shuffled(arr) {
-  return [...arr].sort(() => Math.random() - 0.5);
-}
-
 function pickDistractors(all, excludeId, n) {
   const pool = all.filter((x) => x.id !== excludeId);
-  return shuffled(pool).slice(0, n);
+  return shuffle(pool).slice(0, n);
 }
 
 /**
@@ -29,7 +26,7 @@ function pickDistractors(all, excludeId, n) {
  */
 function buildRound1(idioms, assetBase) {
   const usable = idioms.filter((idm) => idm.related_char && idm.idiom.includes(idm.related_char));
-  const items = shuffled(usable)
+  const items = shuffle(usable)
     .slice(0, ROUND_SIZE_MAX)
     .map((idm) => {
       const blanked = idm.idiom.replace(idm.related_char, '＿');
@@ -68,7 +65,7 @@ function buildRound2(idioms, idiomSentences) {
   });
   const usableIdioms = [...new Set(visible.map((s) => idiomById.get(s.idiom_id)))];
 
-  const items = shuffled(visible)
+  const items = shuffle(visible)
     .slice(0, ROUND_SIZE_MAX)
     .map((s) => {
       const idm = idiomById.get(s.idiom_id);

@@ -33,6 +33,21 @@ function fisherYates(arr, rand) {
   return out;
 }
 
+/**
+ * 一般選項洗牌：不改動原陣列，預設每次以 Math.random 重新排列。
+ * 可傳入測試用 random 函式，讓回歸測試不必依賴真實隨機結果。
+ * @param {Array} items
+ * @param {() => number} [random]
+ * @returns {Array}
+ */
+export function shuffle(items, random = Math.random) {
+  const out = fisherYates(items, random);
+  if (out.length > 1 && out.every((item, index) => item === items[index])) {
+    [out[0], out[1]] = [out[1], out[0]];
+  }
+  return out;
+}
+
 function countDiffPositions(a, b) {
   let count = 0;
   for (let i = 0; i < a.length; i += 1) {

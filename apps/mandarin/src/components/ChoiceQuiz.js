@@ -6,6 +6,7 @@ import { SpeakButton } from './SpeakButton.js';
 import { ReadAllButton } from './ReadAllButton.js';
 import { recordOutcome } from '../utils/scoreSession.js';
 import { celebrateCorrect } from '../utils/celebrate.js';
+import { shuffle } from '../utils/shuffle.js';
 
 const CHECK_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>`;
 const CROSS_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>`;
@@ -45,6 +46,9 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
       return;
     }
     const item = items[index];
+    // 題庫資料保留內容順序；學生畫面每次重繪都重新亂數排列選項。
+    // ReadAllButton 也使用這份畫面順序，朗讀順序與視覺順序一致。
+    const options = shuffle(item.options || []);
     let answered = false; // 題目鎖定（答對，或第 2 次答錯揭曉正解）
     let attempts = 0;
 
@@ -56,7 +60,7 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
           h('p', { class: 'quiz-stem' }, item.stem),
           SpeakButton({ text: item.stem, label: '聽', variant: 'speak-button--option' }),
         ]),
-        ReadAllButton(() => ({ stem: item.readAllStem || item.stem, options: item.options })),
+        ReadAllButton(() => ({ stem: item.readAllStem || item.stem, options })),
       ]),
     );
 
@@ -64,7 +68,7 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
     const feedbackSlot = h('div', {});
     const optionButtons = [];
 
-    item.options.forEach((opt) => {
+    options.forEach((opt) => {
       const btn = h(
         'button',
         {

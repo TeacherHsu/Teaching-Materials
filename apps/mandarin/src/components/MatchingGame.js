@@ -3,6 +3,7 @@ import { CompletionFeedback } from './CompletionFeedback.js';
 import { SpeakButton } from './SpeakButton.js';
 import { recordOutcome } from '../utils/scoreSession.js';
 import { celebrateCorrect } from '../utils/celebrate.js';
+import { shuffle } from '../utils/shuffle.js';
 
 /**
  * 配對遊戲：鍵盤可操作（不只有拖曳）——先選左欄一項，再選右欄一項，
@@ -12,8 +13,8 @@ import { celebrateCorrect } from '../utils/celebrate.js';
  */
 export function MatchingGame({ pairs, onComplete, onBack, backLabel = '回課程首頁', instructions = '選一個左邊的字，再選右邊對應的答案。' }) {
   const root = h('div', {});
-  const left = [...pairs].sort(() => Math.random() - 0.5);
-  const right = [...pairs].sort(() => Math.random() - 0.5);
+  const left = shuffle(pairs);
+  const right = shuffle(pairs);
   const matched = new Set();
   let selectedLeft = null;
   let selectedRight = null;
