@@ -7,11 +7,10 @@ import { ImageFrame } from './ImageFrame.js';
  * @param {object} word
  */
 export function VocabularyCard(word) {
-  const { word: text, zhuyin, meaning, image } = word;
+  const { word: text, meaning, image } = word;
   const safeMeaning = meaning || '（意思待補）';
   let showingMeaning = false;
   const term = h('div', { class: 'vocabulary-card__term', 'aria-live': 'polite' }, text);
-  const pronunciation = zhuyin ? h('div', { class: 'character-card__zhuyin' }, zhuyin) : null;
   const speakSlot = h('div', { class: 'vocabulary-card__speak' }, [SpeakButton({ text, label: '聽發音' })]);
 
   const card = h(
@@ -23,14 +22,13 @@ export function VocabularyCard(word) {
       'aria-pressed': 'false',
       'aria-label': `語詞卡：${text}，點選查看意思`,
     },
-    [image ? ImageFrame({ src: image, alt: text }) : null, term, pronunciation, speakSlot],
+    [image ? ImageFrame({ src: image, alt: text }) : null, term, speakSlot],
   );
 
   function renderState() {
     const shownText = showingMeaning ? safeMeaning : text;
     term.textContent = shownText;
     term.classList.toggle('vocabulary-card__term--meaning', showingMeaning);
-    if (pronunciation) pronunciation.style.display = showingMeaning ? 'none' : '';
     card.setAttribute('aria-pressed', String(showingMeaning));
     card.setAttribute(
       'aria-label',

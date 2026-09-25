@@ -160,6 +160,7 @@ function assertCoverage(root, label) {
   });
   assert.equal(card.findAll((n) => n.hasClass('speak-button')).length, 1, 'VocabularyCard 初始應有一個語詞朗讀鈕');
   assert.equal(card.findAll((n) => n.hasClass('image-frame')).length, 1, 'VocabularyCard 應顯示圖片框');
+  assert.equal(card.findAll((n) => n.hasClass('character-card__zhuyin')).length, 0, 'VocabularyCard 不應在語詞下方重複顯示注音');
   assert.equal(card.getAttribute('role'), 'button', 'VocabularyCard 應可點選查看詞義');
   card.dispatch('click');
   assert.ok(card.textContent.includes('心情很好'), 'VocabularyCard 點選後應顯示詞義');
