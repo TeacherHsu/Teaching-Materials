@@ -73,8 +73,13 @@ export function buildExtensionLinks(lesson, moduleKey, opts = {}) {
     list.appendChild(row);
   }
 
+  // 預設折疊（CF 2026-09-25）：連結內容（如成語典條目）可能直接透露上方題目答案，
+  // 學生要自己點開才看得到。用原生 <details>，鍵盤與螢幕閱讀器皆可操作。
+  const summary = h('summary', { class: 'extension-links__summary' }, [
+    h('span', { class: 'extension-links__title' }, title),
+    h('span', { class: 'extension-links__count' }, `（${visible.length} 個連結，點開看）`),
+  ]);
   return h('section', { class: 'extension-links' }, [
-    h('h2', { class: 'extension-links__title' }, title),
-    list,
+    h('details', { class: 'extension-links__details' }, [summary, list]),
   ]);
 }
