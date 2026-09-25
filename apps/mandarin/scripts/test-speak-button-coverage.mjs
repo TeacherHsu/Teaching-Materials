@@ -78,6 +78,28 @@ function assertCoverage(root, label) {
     checked += 1;
     assert.ok(hasSpeakButtonNearby(stem), `DragToSlot：題目「${stem.textContent}」旁應有朗讀鈕`);
   }
+
+  // 候選卡（sentence-chip）本身也要各自有獨立朗讀鈕，且不是同一個節點
+  const optionChips = drag.findAll((n) => n.hasClass('sentence-chip') && n.tagName === 'button' && !n.hasClass('drag-to-slot__slot'));
+  assert.equal(optionChips.length, 2, 'DragToSlot：應該渲染兩張候選卡');
+  for (const chip of optionChips) {
+    checked += 1;
+    const row = chip.parentNode;
+    const speakBtn = row.findAll((n) => n.hasClass('speak-button'))[0];
+    assert.ok(speakBtn, `DragToSlot：候選卡「${chip.textContent}」旁應有朗讀鈕`);
+    assert.notEqual(speakBtn, chip, `DragToSlot：候選卡「${chip.textContent}」的朗讀鈕不可與卡片是同一個節點`);
+  }
+
+  // 點喇叭不會觸發候選卡的選取（click 是選取行為的觸發點，喇叭要 stopPropagation）
+  const firstChip = optionChips[0];
+  const firstRow = firstChip.parentNode;
+  const firstSpeakBtn = firstRow.findAll((n) => n.hasClass('speak-button'))[0];
+  assert.equal(firstChip.getAttribute('aria-pressed'), 'false', 'DragToSlot：候選卡初始未選取');
+  firstSpeakBtn.dispatch('pointerdown');
+  firstSpeakBtn.dispatch('click');
+  assert.equal(firstChip.getAttribute('aria-pressed'), 'false', 'DragToSlot：點喇叭不應該選取候選卡');
+  assert.equal(firstChip.disabled, false, 'DragToSlot：點喇叭不應該把候選卡設為已選取（disabled）');
+  checked += 1;
 }
 
 // --- SentenceOrdering：每個詞塊都可朗讀，且與選字按鈕分開 ---

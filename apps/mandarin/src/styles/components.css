@@ -542,6 +542,27 @@
   font-weight: 600;
 }
 
+/* 候選卡＋獨立喇叭：同一 row 內排列，row 本身跟著 sentence-bank 一起換行，
+   375px 手機寬度下不會橫向捲動（row 只會整個換到下一行）。 */
+.drag-to-slot__option-row {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  max-width: 100%;
+}
+
+.drag-to-slot__option-row .sentence-chip {
+  min-width: 0;
+}
+
+.drag-to-slot__slot-row {
+  align-items: center;
+}
+
+.drag-to-slot__slot-speak:empty {
+  display: none;
+}
+
 .idiom-builder__card {
   display: flex;
   flex-direction: column;
