@@ -6,21 +6,58 @@ import { TaskBanner } from '../components/TaskBanner.js';
 import { missingContentNotice } from './engine.js';
 import { filterByStatus } from '../utils/preview.js';
 import { chunkRounds } from '../utils/chunk.js';
+import { SpeakButton } from '../components/SpeakButton.js';
 
 function shuffled(arr) {
   return [...arr].sort(() => Math.random() - 0.5);
 }
 
+// 題目問的是「字」在句中的意思，所以只凸顯目標字本身；資料裡《》可能框住整個詞
+// （例：《併吞》），這裡去掉《》，把詞加底線、目標字另外標色，避免學生以為要解釋整個詞。
+function sentenceCard(entry) {
+  const raw = entry.sentence || '';
+  const clean = raw.replace(/[《》]/g, '');
+  const p = h('p', { class: 'polysemy-sentence' });
+  const m = raw.match(/^(.*?)《(.*?)》(.*)$/);
+  const pushWord = (word) => {
+    const i = word.indexOf(entry.char);
+    if (i < 0) { p.appendChild(document.createTextNode(word)); return; }
+    const u = h('span', { class: 'polysemy-sentence__word' }, [
+      word.slice(0, i),
+      h('mark', { class: 'polysemy-sentence__char' }, entry.char),
+      word.slice(i + entry.char.length),
+    ]);
+    p.appendChild(u);
+  };
+  if (m) {
+    p.appendChild(document.createTextNode(m[1]));
+    pushWord(m[2]);
+    p.appendChild(document.createTextNode(m[3]));
+  } else {
+    pushWord(clean);
+  }
+  return {
+    clean,
+    el: h('div', { class: 'quiz-option-row polysemy-sentence-row' }, [
+      p,
+      SpeakButton({ text: clean, variant: 'speak-button--option' }),
+    ]),
+  };
+}
+
 function buildChoiceItem(entry) {
   const options = shuffled([...new Set(entry.options)]);
+  const card = sentenceCard(entry);
+  const stem = `「${entry.char}」在這句話裡是什麼意思？`;
   return {
     id: entry.id,
-    // 句子用《詞語》標示要判斷意思的字／詞（沿用資料裡的標記，ChoiceQuiz 以純文字呈現題幹）。
-    stem: entry.sentence,
+    extra: card.el,
+    stem,
+    readAllStem: `${card.clean}　${stem}`,
     options,
     answer: entry.definition,
     explanation: `「${entry.char}」在這句話裡的意思是：${entry.definition}`,
-    hints: ['把句子多讀一次，想想這個字在這裡是不是講另一種意思。'],
+    hints: [`把句子多讀一次，只看「${entry.char}」這個字，想想它在這裡講的是哪一種意思。`],
   };
 }
 
@@ -43,7 +80,7 @@ export function buildPolysemyActivity(lesson, onBack) {
     }
     const isLastRound = roundIndex === rounds.length - 1;
     container.appendChild(
-      TaskBanner({ label: '讀句子，選出這個字在句子裡的意思', step: `第 ${roundIndex + 1} 組／共 ${rounds.length} 組` }),
+      TaskBanner({ label: '讀句子，選出標色的字在句子裡的意思', step: `第 ${roundIndex + 1} 組／共 ${rounds.length} 組` }),
     );
     container.appendChild(
       ChoiceQuiz({

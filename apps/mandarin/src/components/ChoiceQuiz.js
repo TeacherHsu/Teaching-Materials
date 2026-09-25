@@ -56,7 +56,7 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
           h('p', { class: 'quiz-stem' }, item.stem),
           SpeakButton({ text: item.stem, label: '聽', variant: 'speak-button--option' }),
         ]),
-        ReadAllButton(() => ({ stem: item.stem, options: item.options })),
+        ReadAllButton(() => ({ stem: item.readAllStem || item.stem, options: item.options })),
       ]),
     );
 
