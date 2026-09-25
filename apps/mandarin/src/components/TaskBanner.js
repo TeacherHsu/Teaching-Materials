@@ -6,7 +6,7 @@ const TASK_ICON = `<svg viewBox="0 0 24 24" width="24" height="24" fill="none" s
 function simplifyStep(step) {
   if (!step) return '';
   return step
-    .replace(/(?:^|\s*・\s*)第\s*1\s*組\s*[／/]\s*共\s*1\s*組\s*$/u, '')
+    .replace(/(?:^|\s*・\s*)第\s*\d+\s*組\s*[／/]\s*共\s*\d+\s*組\s*$/u, '')
     .replace(/\s*・\s*$/u, '')
     .trim();
 }
