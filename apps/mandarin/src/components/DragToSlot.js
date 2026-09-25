@@ -15,10 +15,8 @@ const DEFAULT_HINT = '再看看題目，仔細比對一下再選。';
 
 /**
  * 「拖到空格」通用引擎：一次一題，一畫面一任務。
- * 互動用 Pointer Events（`click`，同時支援滑鼠／觸控）＋鍵盤（原生 button，
- * Tab/Enter、Space 都可操作），不使用 HTML5 `draggable` API（iPad 不支援）：
- * 先在候選區「選取」一個詞塊，再點空格「放入」，模擬拖拉的兩段式操作，
- * 與 `SentenceOrdering.js` 的既有引擎同一設計原則。
+ * 互動用 Pointer Events 直接支援滑鼠／觸控拖曳，並保留原生 button 的點選與鍵盤
+ * 操作（Tab/Enter、Space），讓觸控裝置或鍵盤使用者也能完成同一題。
  *
  * 答錯先提示（第 1 次不揭曉正解，可重選），第 2 次答錯才揭曉正解。
  *
@@ -36,10 +34,13 @@ const DEFAULT_HINT = '再看看題目，仔細比對一下再選。';
  *   onComplete?: (correct:number, total:number) => void,
  *   onBack?: () => void,
  *   backLabel?: string,
+ *   dragEnabled?: boolean, // 開啟直接拖曳候選詞塊到空格
  * }} opts
  */
-export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程首頁' }) {
-  const root = h('div', { class: 'quiz-panel drag-to-slot' });
+export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程首頁', dragEnabled = false }) {
+  const root = h('div', {
+    class: `quiz-panel drag-to-slot${dragEnabled ? ' drag-to-slot--drag-enabled' : ''}`,
+  });
   let index = 0;
   let correctCount = 0;
 
@@ -64,7 +65,6 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
     }
 
     const item = items[index];
-    let selected = null; // 目前選取（尚未放入）的候選詞塊 id
     let placed = null; // 已放入空格的候選詞塊 id
     let attempts = 0;
     let answered = false;
@@ -96,16 +96,27 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
     }
     root.appendChild(contextWrap);
 
+    if (dragEnabled) {
+      root.appendChild(
+        h('p', { class: 'drag-to-slot__instruction' }, '把正確答案拖到空格裡，也可以先點選答案，再點一下空格。'),
+      );
+    }
+
     const slot = h('button', {
       class: 'sentence-chip drag-to-slot__slot',
       type: 'button',
-      'aria-label': '答案空格，點一下可以取消已放入的詞塊',
+      'aria-label': dragEnabled
+        ? '答案空格，可將候選答案拖到這裡；點一下可以取消已放入的詞塊'
+        : '答案空格，點一下可以取消已放入的詞塊',
     }, item.slotLabel || '？');
     const slotSpeakWrap = h('span', { class: 'drag-to-slot__slot-speak' });
     const slotWrap = h('div', { class: 'sentence-slots drag-to-slot__slot-row', 'aria-label': '目前放入空格的詞塊' }, [slot, slotSpeakWrap]);
     root.appendChild(slotWrap);
 
-    const bankWrap = h('div', { class: 'sentence-bank', 'aria-label': '可選詞塊，先點選再點空格放入' });
+    const bankWrap = h('div', {
+      class: 'sentence-bank',
+      'aria-label': dragEnabled ? '可選答案，拖到上方空格或先點選再放入' : '可選詞塊，先點選再點空格放入',
+    });
     // 候選詞塊每次進入題目都重新亂數排列，且不改動題庫資料。
     const options = shuffle(item.options || []);
     const overrides = item.speech_overrides || [];
@@ -130,6 +141,25 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
 
     const chipById = new Map(); // optId -> 候選卡按鈕（bankWrap 的子節點現在是「卡片＋喇叭」的 row，不能直接當 chip 用）
 
+    function placeOption(optId) {
+      if (answered) return;
+      const previous = placed;
+      if (previous && previous !== optId) {
+        const previousChip = chipById.get(previous);
+        if (previousChip) {
+          previousChip.disabled = false;
+          previousChip.setAttribute('aria-pressed', 'false');
+        }
+      }
+      const chip = chipById.get(optId);
+      if (!chip || chip.disabled) return;
+      placed = optId;
+      chip.disabled = true;
+      chip.setAttribute('aria-pressed', 'true');
+      refreshSlot();
+      checkBtn.disabled = false;
+    }
+
     slot.addEventListener('click', () => {
       if (answered || !placed) return;
       // 取消放入，詞塊退回候選區
@@ -149,19 +179,65 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
     options.forEach((opt) => {
       const chip = h(
         'button',
-        { class: 'sentence-chip', type: 'button', 'aria-pressed': 'false' },
+        {
+          class: `sentence-chip drag-to-slot__option-chip${dragEnabled ? ' drag-to-slot__option-chip--draggable' : ''}`,
+          type: 'button',
+          'aria-pressed': 'false',
+          title: dragEnabled ? '拖到上方空格，或點選後放入' : undefined,
+        },
         opt.label,
       );
       chip.dataset.optId = opt.id;
       chip.addEventListener('click', () => {
         if (answered || chip.disabled) return;
-        selected = opt.id;
-        placed = opt.id;
-        chip.disabled = true;
-        chip.setAttribute('aria-pressed', 'true');
-        refreshSlot();
-        checkBtn.disabled = false;
+        placeOption(opt.id);
       });
+
+      if (dragEnabled) {
+        let pointerDrag = null;
+        chip.addEventListener('pointerdown', (event) => {
+          if (answered || chip.disabled) return;
+          if (event.button !== undefined && event.button !== 0) return;
+          pointerDrag = {
+            startX: event.clientX ?? 0,
+            startY: event.clientY ?? 0,
+            started: false,
+          };
+          chip.setPointerCapture?.(event.pointerId);
+        });
+        chip.addEventListener('pointermove', (event) => {
+          if (!pointerDrag || answered) return;
+          const distance = Math.hypot(
+            (event.clientX ?? 0) - pointerDrag.startX,
+            (event.clientY ?? 0) - pointerDrag.startY,
+          );
+          if (!pointerDrag.started && distance < 8) return;
+          pointerDrag.started = true;
+          event.preventDefault?.();
+          chip.classList.add('drag-to-slot__option-chip--dragging');
+          const element = document.elementFromPoint?.(event.clientX, event.clientY);
+          const overSlot = !!element && (element === slot || slot.contains?.(element));
+          slot.classList.toggle('drag-to-slot__slot--drag-over', overSlot);
+        });
+        chip.addEventListener('pointerup', (event) => {
+          if (!pointerDrag) return;
+          const wasDragging = pointerDrag.started;
+          const element = document.elementFromPoint?.(event.clientX, event.clientY);
+          const overSlot = !!element && (element === slot || slot.contains?.(element));
+          pointerDrag = null;
+          chip.classList.remove('drag-to-slot__option-chip--dragging');
+          slot.classList.remove('drag-to-slot__slot--drag-over');
+          if (wasDragging) {
+            event.preventDefault?.();
+            if (overSlot) placeOption(opt.id);
+          }
+        });
+        chip.addEventListener('pointercancel', () => {
+          pointerDrag = null;
+          chip.classList.remove('drag-to-slot__option-chip--dragging');
+          slot.classList.remove('drag-to-slot__slot--drag-over');
+        });
+      }
       // 候選卡本身的朗讀鈕：獨立節點，不觸發卡片選取。click 由 SpeakButton
       // 內部 stopPropagation；這裡額外攔截 pointerdown，避免拖曳手勢誤把
       // 喇叭當成候選卡的起點。

@@ -15,6 +15,17 @@
 ---
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/`「生字變成語」拖拉作答互動
+- 做了什麼：
+  - `DragToSlot` 新增直接用滑鼠／觸控拖曳候選答案到空格的 Pointer Events 互動
+  - 第 2 課「生字變成語」兩關開啟拖拉模式，空格拖曳經過時會高亮
+  - 保留點選、鍵盤與觸控替代操作，新增 `test-drag-to-slot.mjs`
+- 驗證：`npm run validate`、`npm run build`、`npm run check-dist`、全部 `scripts/test-*.mjs` 通過；瀏覽器實際將「序」拖入「循＿漸進」並確認答對，無 console/page error
+- 推送：尚未推送（等待明確推送指示）
+- 待辦／給下一棒：後續需要拖拉作答的模組可傳入 `dragEnabled: true`；現有其他模組維持原本點選流程
+- 注意：不改官方教材內容；只修改作答互動與樣式
+
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/` 形似字題目生成與第 2 課資料
 - 做了什麼：
   - 形似字 activity 將每個 `example` 的逗號分隔語詞拆成獨立題目；「天使、使命」會分成「天＿」與「＿命」，不再把完整答案露在同一題
