@@ -12,7 +12,7 @@ function truncate(text, max = 20) {
 }
 
 /**
- * 朗讀鈕：icon + 可見文字（預設「聽」），朗讀「乾淨文字」（呼叫端提供，不自行
+ * 朗讀鈕：只顯示喇叭 icon（CF 2026-09-25：降低視覺干擾，不顯示文字；label 參數保留相容但不渲染），朗讀「乾淨文字」（呼叫端提供，不自行
  * 抓 innerText，避免把注音符號／「（另開視窗）」等 UI 字樣唸出來）。
  * @param {{
  *   text: string,                 // 要朗讀、也用於讀音替代表比對的文字
@@ -36,7 +36,7 @@ export function SpeakButton({ text, audioUrl = null, overrides = [], label = '�
       type: 'button',
       'aria-label': ariaLabel || `朗讀：${truncate(text)}`,
       'aria-pressed': 'false',
-      html: ICON + `<span class="speak-button__label">${label}</span>`,
+      html: ICON,
     },
   );
   let speaking = false;
