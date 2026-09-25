@@ -44,3 +44,11 @@ https://gsyan888.blogspot.com/2023/08/html5-fun-game-laucher.html?sheet=10Nq6prS
 `stroke-order.learningweb.moe.edu.tw` 提供官方單字筆順動畫，已加入白名單，
 可作為 `module=characters`、`type=reading` 的字源／筆順補充連結來源
 （對應 `char` 欄位）。
+
+## 2026-09-25 補充（瀏覽器實測）
+
+- **翰林官方 Wordwall（hanlindigi，teacher/393914）**：國小國語資料夾 `https://wordwall.net/teacher/393914/hanlindigi/folder/501375`；各冊「成語找一找」子資料夾（3上＝folder/749090），活動標題格式「翰林國小國語_3上LNN課名」。同課可能有新舊課本兩版標題（例 L02 明天再寫／妙用便利貼），**只收與 115 課名相符者**。入口頁：sites.google.com/hanlin.com.tw/e-wordwall。
+- **教育部異體字字典（漢字由來）**：`https://dict.variants.moe.edu.tw/search.jsp?QTP=0&WORD=<字>` 查詢結果頁（需瀏覽器執行 JS）→ 取字號以 A 開頭且無 `-NNN` 尾碼的正字 → `dictView.jsp?ID=<n>`（去掉 `&q=1`）。頁面含說文、甲骨文、金文字形。
+- **中研院小學堂**：查詢為 POST 表單，無每字固定網址，不收。
+- **特工365**：Notion「各版教材」頁已導向 sites.google.com/view/se365，目前只有首冊注音與空白的「全版本適用」頁，無翰林分課教材（2026-09-25 檢查）。
+- **Wordwall 社群搜尋**：未登入時搜尋結果固定為預設清單，無法用程式搜尋；以官方 hanlindigi 資料夾或教師提供網址為主。
