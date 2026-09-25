@@ -50,7 +50,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 2px;
+  gap: 0;
   min-height: var(--tap-target-min);
   font-size: var(--font-size-meta);
   color: var(--text-secondary);
@@ -68,6 +68,22 @@
 .breadcrumb a:hover,
 .breadcrumb a:focus-visible {
   text-decoration: underline;
+}
+
+.breadcrumb > a:not(:first-child)::before,
+.breadcrumb__current::before {
+  display: inline-flex;
+  align-items: center;
+  content: '／';
+  margin: 0 6px;
+  color: var(--text-secondary);
+}
+
+.breadcrumb__current {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-target-min);
+  white-space: nowrap;
 }
 
 /* ---- TaskBanner：一畫面一任務的頂端說明（帶大項主題色左邊框＋小圖示） ---- */
@@ -992,8 +1008,48 @@
 .idiom-builder__card {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
-  max-width: 360px;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+/* 成語圖是正方形教材插圖：完整呈現比填滿裁切更重要，並用邊框把圖和白底分開。 */
+.idiom-builder__card .image-frame {
+  aspect-ratio: 1;
+  padding: var(--space-1);
+  background: linear-gradient(145deg, var(--module-color-tint, var(--color-surface-muted)), var(--color-surface));
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+}
+
+.idiom-builder__card .image-frame img {
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+.idiom-builder__card .quiz-stem,
+.idiom-builder__card .meta {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-inline: var(--space-3);
+  }
+
+  .task-banner {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  /* 窄螢幕換行時，最後一層直接另起一行，不讓斜線孤零零地出現在行首。 */
+  .breadcrumb__current::before {
+    content: none;
+  }
+
+  .idiom-builder__card {
+    max-width: none;
+  }
 }
 
 /* ---- StructureMap：課文結構樹（寬螢幕橫排，手機單欄堆疊） ---- */

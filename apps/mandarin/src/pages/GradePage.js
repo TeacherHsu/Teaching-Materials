@@ -4,7 +4,7 @@ import { SpeakButton } from '../components/SpeakButton.js';
 export function GradePage(courseIndex, gradeNo) {
   const grade = courseIndex.grades.find((g) => String(g.grade) === String(gradeNo));
   const root = h('div', { class: 'container' });
-  root.appendChild(h('p', { class: 'breadcrumb' }, [h('a', { href: '#/' }, '首頁'), ' ／ ', grade ? grade.label : '找不到年級']));
+  root.appendChild(h('p', { class: 'breadcrumb' }, [h('a', { href: '#/' }, '首頁'), h('span', { class: 'breadcrumb__current' }, grade ? grade.label : '找不到年級')]));
   if (!grade) {
     root.appendChild(h('div', { class: 'missing-content' }, '找不到這個年級的資料。'));
     return root;

@@ -149,10 +149,8 @@ export function ReviewPage(lesson) {
   root.appendChild(
     h('p', { class: 'breadcrumb' }, [
       h('a', { href: '#/' }, '首頁'),
-      ' ／ ',
       h('a', { href: `#/lesson/${lessonId}` }, `第 ${lesson.lesson_no} 課`),
-      ' ／ ',
-      '待審核',
+      h('span', { class: 'breadcrumb__current' }, '待審核'),
     ]),
   );
   root.appendChild(h('h1', {}, `第 ${lesson.lesson_no} 課：${lesson.title} — 教材待審`));
