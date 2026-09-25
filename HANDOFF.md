@@ -14,11 +14,13 @@
 
 ---
 
-## 2026-09-25｜學校 Win｜Codex｜狀態：🚧 施工中
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG3H/lesson04.json`、`public/assets/115AG3H/lesson04/`、`course-index.json`
-- 做了什麼：準備依官方翰林 G3A 第 4 課「水滾了」資料生成網站課次，沿用第 1～3 課的資料結構與圖片容量規範
-- 待辦：完成第 4 課資料、圖片、延伸連結與驗證
-- 注意：本次不修改課文全文，不把官方原始教材放入公開 repo
+- 做了什麼：新增翰林三上第 4 課「水滾了」課次資料，包含 18 個生字、10 個目標語詞、5 個成語、句型、段落大意、修辭、形似字、一字多義、一字多音、聆聽題與挑戰題；加入 10 張語詞 WebP、5 張成語 WebP，並加入雄筆順直接連結
+- 驗證：`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；本機瀏覽器確認課次首頁、生字頁、語詞圖片與點選解釋、成語拖放題可開啟，頁面錯誤紀錄為空
+- 推送：尚未推送；開工前 `git pull --rebase origin main` 因 GitHub 憑證錯誤 `SEC_E_NO_CREDENTIALS` 受阻，本次不強行覆蓋或推送
+- 待辦／給下一棒：提交本次變更後，確認 GitHub 憑證可用再推送；後續課次沿用本課資料結構與壓縮資產規範
+- 注意：本次不修改課文全文，不把官方原始教材、出版社補充原檔或 xlsx 放入公開 repo；課 4 圖片只保留壓縮 WebP，總計約 1.37 MiB
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG3H/lesson01.json`、`lesson02.json` 與兩課語詞圖片資產
