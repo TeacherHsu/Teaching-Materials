@@ -14,6 +14,12 @@
 
 ---
 
+## 2026-09-25｜學校 Win｜Codex｜狀態：🚧 施工中
+- 範圍：`apps/mandarin/src/activities/sentencePractice.js`、`apps/mandarin/scripts/test-sentence-chunking.mjs`
+- 做了什麼：準備改善句型練習的中文語意詞塊切分，保留固定詞組、助詞與句型結構
+- 待辦：完成合理斷詞規則、回歸測試與建置驗證
+- 注意：不改教材句意，不把固定詞組拆成無意義的單字或單字元詞塊
+
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG3H/lesson05.json`、`apps/mandarin/public/assets/115AG3H/lesson05/`、`apps/mandarin/public/data/course-index.json`
 - 做了什麼：新增翰林三上第 5 課「為梨花撐傘」完整課次資料，包含 15 個生字、14 個目標語詞、5 個成語與插圖、句型、修辭、段落大意、閱讀理解、一字多義、一字多音、形似字、聆聽題、跨課複習與挑戰題；加入每課筆順直連，並把 14 張語詞圖與 5 張成語圖壓縮為 WebP
