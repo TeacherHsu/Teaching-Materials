@@ -14,6 +14,14 @@
 
 ---
 
+## 2026-09-25｜學校 Win｜Codex｜狀態：🚧 施工中
+- 範圍：`apps/mandarin/src/components/VocabularyCard.js`、`apps/mandarin/scripts/test-speak-button-coverage.mjs`
+- 做了什麼：準備移除語詞解釋卡中與芫荽注音體重複的下方注音列
+- 驗證：施工中，待確認語詞本身仍顯示注音、切換解釋後版面正常
+- 推送：施工紀錄待先行提交並推送
+- 待辦／給下一棒：調整 VocabularyCard、加入回歸檢查、重新建置
+- 注意：不改變語詞卡圖片、點選切換解釋與朗讀功能
+
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/activities/characters.js`、`apps/mandarin/scripts/test-character-examples-limit.mjs`
 - 做了什麼：生字卡造詞依教材資料現有的常用順序取前 3 個顯示；完整造詞資料保留不刪除、不改順序
