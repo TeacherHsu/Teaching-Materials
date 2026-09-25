@@ -14,6 +14,14 @@
 
 ---
 
+## 2026-09-25｜學校 Win｜Codex｜狀態：🚧 施工中
+- 範圍：`apps/mandarin/src/activities/characters.js`、`apps/mandarin/scripts/test-character-examples-limit.mjs`
+- 做了什麼：準備將生字卡造詞依教材現有常用順序取前 3 個顯示，完整資料不刪除
+- 驗證：施工中，待確認第 1～5 課畫面均不超過 3 個造詞並完成建置
+- 推送：施工紀錄待先行提交並推送
+- 待辦／給下一棒：調整顯示層、加入跨課回歸測試、瀏覽器確認
+- 注意：不改寫官方造詞資料順序與內容，只限制生字卡顯示數量
+
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/components/CharacterCard.js`、`apps/mandarin/src/styles/components.css`、`apps/mandarin/scripts/test-speak-button-coverage.mjs`
 - 做了什麼：移除已由芫荽注音體大字呈現的重複注音列；造詞改用芫荽注音體並放大至 32px；筆順與解釋按鈕縮小文字與內距，但保留 44px 觸控高度
