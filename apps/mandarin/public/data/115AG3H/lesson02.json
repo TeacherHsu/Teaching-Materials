@@ -374,6 +374,66 @@
       "image": null,
       "status": "ready",
       "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教材內容修正版：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H02:e5134c8a",
+      "word": "而且",
+      "zhuyin": null,
+      "meaning": "表示平列或更進一層。",
+      "example_sentence": "這個方法簡單，而且很有效。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H02:4e8a21d7",
+      "word": "安排",
+      "zhuyin": null,
+      "meaning": "安置辦理。",
+      "example_sentence": "爸爸幫我們安排好出遊時間。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H02:9b1f6d32",
+      "word": "冰箱",
+      "zhuyin": null,
+      "meaning": "以降低溫度來製冰或保存食物的電器用品。",
+      "example_sentence": "媽媽把水果放進冰箱保存。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H02:7a2d90f4",
+      "word": "原來",
+      "zhuyin": null,
+      "meaning": "推究事情本源的語氣。",
+      "example_sentence": "我找了好久的彩色筆，原來在書包最底下。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H02:2c6e4b18",
+      "word": "便條",
+      "zhuyin": null,
+      "meaning": "沒有正式規格、隨意書寫的簡便紙條。",
+      "example_sentence": "小真在便條上寫下要提醒爸爸的事情。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材（05形音輕鬆學：語詞解釋）"
     }
   ],
   "word_meanings": [],
@@ -548,53 +608,81 @@
       "source": "115G3A／翰林三上第2課官方教材與教師確認資料（短語句型造句資料）"
     }
   ],
-  "rhetoric": [],
+  "rhetoric": [
+    {
+      "id": "rhetoric:115AG3H02:4a0f1c9d",
+      "figure": "類疊",
+      "note": "同一個字詞語句反覆使用，能強調語意，也能讓語言更有節奏感。",
+      "example": "小真要時時刻刻提醒自己。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（10修辭輕鬆學：類疊）",
+      "child_note": "類疊＝把同一個詞語重複說，讓句子更有節奏感。"
+    },
+    {
+      "id": "rhetoric:115AG3H02:8d2b6e41",
+      "figure": "類疊",
+      "note": "同一個字詞語句反覆使用，能強調語意，也能讓語言更有節奏感。",
+      "example": "他清清楚楚知道，成功需要努力。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（10修辭輕鬆學：練習題）",
+      "child_note": "類疊＝把同一個詞語重複說，讓句子更有節奏感。"
+    },
+    {
+      "id": "rhetoric:115AG3H02:c7e1035b",
+      "figure": "摹寫",
+      "note": "運用感官感受描寫事物，讓讀者更具體地想像畫面。",
+      "example": "寒冷的風不停吹著，大家把衣領拉得更緊了。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（10修辭輕鬆學：練習題）",
+      "child_note": "摹寫＝把看到、聽到或感受到的樣子寫出來。"
+    }
+  ],
   "paragraph_summary": [
     {
       "id": "paragraph_summary:115AG3H02:633060cc",
       "para_no": 1,
-      "summary": "小真常常忘東忘西，也記不住還要完成的事情。",
-      "structure_role": "起因",
+      "summary": "小真升上三年級後仍常忘東忘西，做事慢吞吞，也記不住有哪些事情尚未完成。",
+      "structure_role": "困擾",
       "status": "approved",
       "source": "115G3A／翰林三上第2課官方教材與教師確認資料（段落大意資料，重述版）"
     },
     {
       "id": "paragraph_summary:115AG3H02:c5f23b62",
       "para_no": 2,
-      "summary": "爸爸建議她把要做的事情寫在便利貼上，先排好順序。",
-      "structure_role": "方法",
+      "summary": "爸爸教她使用便利貼，把要做的事和完成時間記下來，再貼在明顯的位置。",
+      "structure_role": "困擾",
       "status": "approved",
       "source": "115G3A／翰林三上第2課官方教材與教師確認資料（段落大意資料，重述版）"
     },
     {
       "id": "paragraph_summary:115AG3H02:0fa500cd",
       "para_no": 3,
-      "summary": "她把便利貼貼在明顯的地方，提醒自己下一件要做的事。",
-      "structure_role": "方法",
+      "summary": "媽媽隔天要開會，全家必須準時出門；小真把任務貼在書桌前，完成一件事就打勾，睡前還設定鬧鐘。",
+      "structure_role": "嘗試",
       "status": "approved",
       "source": "115G3A／翰林三上第2課官方教材與教師確認資料（段落大意資料，重述版）"
     },
     {
       "id": "paragraph_summary:115AG3H02:45646966",
       "para_no": 4,
-      "summary": "每完成一件事就打勾，便利貼讓她不再手忙腳亂。",
-      "structure_role": "方法",
+      "summary": "第二天大家果然在七點前出門，小真發現這個方法很有效，也知道逐項檢查能減少匆忙和遺漏。",
+      "structure_role": "嘗試",
       "status": "approved",
       "source": "115G3A／翰林三上第2課官方教材與教師確認資料（段落大意資料，重述版）"
     },
     {
       "id": "paragraph_summary:115AG3H02:6081273b",
       "para_no": 5,
-      "summary": "小真按計畫完成事情，全家終於準時出門。",
-      "structure_role": "結果",
+      "summary": "她開始更常運用便利貼，做事變得有次序，不但能按時完成計畫，也逐漸學會安排時間。",
+      "structure_role": "改變",
       "status": "approved",
       "source": "115G3A／翰林三上第2課官方教材與教師確認資料（段落大意資料，重述版）"
     },
     {
       "id": "paragraph_summary:115AG3H02:5536e42c",
       "para_no": 6,
-      "summary": "全文說明便利貼能幫助人規畫事情、依序完成。",
-      "structure_role": "總結",
+      "summary": "她後來把便條貼在冰箱，提醒爸爸帶她做視力檢查；便利貼也成為關心並提醒家人的方法。",
+      "structure_role": "改變",
       "status": "approved",
       "source": "115G3A／翰林三上第2課官方教材與教師確認資料（段落大意資料，重述版）"
     }
@@ -640,10 +728,437 @@
       "source": "115G3A／翰林三上第2課官方教材與教師確認資料（閱讀理解提問，重述版）"
     }
   ],
-  "polysemy": [],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG3H02:貼:0",
+      "char": "貼",
+      "sentence": "我把圖畫《貼》在教室後面的公布欄上。",
+      "definition": "黏附",
+      "options": ["黏附", "挨近、接近"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:貼:1",
+      "char": "貼",
+      "sentence": "小狗總是《貼近》主人。",
+      "definition": "挨近、接近",
+      "options": ["黏附", "挨近、接近"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:使:0",
+      "char": "使",
+      "sentence": "我們可以《使用》便利貼提醒自己。",
+      "definition": "運作、運用",
+      "options": ["運作、運用", "讓、叫"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:使:1",
+      "char": "使",
+      "sentence": "這個好消息《使人高興》。",
+      "definition": "讓、叫",
+      "options": ["運作、運用", "讓、叫"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:顯:0",
+      "char": "顯",
+      "sentence": "她把便利貼貼在《明顯》的地方。",
+      "definition": "清楚、明白",
+      "options": ["清楚、明白", "表露"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:顯:1",
+      "char": "顯",
+      "sentence": "他沒有《顯露》自己的緊張。",
+      "definition": "表露",
+      "options": ["清楚、明白", "表露"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:醒:0",
+      "char": "醒",
+      "sentence": "聽到鬧鐘後，我很快《睡醒》了。",
+      "definition": "從睡眠中恢復知覺",
+      "options": ["由迷惑轉為清楚", "從睡眠中恢復知覺"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:醒:1",
+      "char": "醒",
+      "sentence": "他終於《醒悟》，不能再得過且過。",
+      "definition": "由迷惑轉為清楚",
+      "options": ["由迷惑轉為清楚", "從睡眠中恢復知覺"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:隔:0",
+      "char": "隔",
+      "sentence": "兩棟房子《相隔》不遠。",
+      "definition": "距離、相間",
+      "options": ["距離、相間", "分開、阻絕"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:隔:1",
+      "char": "隔",
+      "sentence": "一道牆《阻隔》了兩個房間的聲音。",
+      "definition": "分開、阻絕",
+      "options": ["距離、相間", "分開、阻絕"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:準:0",
+      "char": "準",
+      "sentence": "請把箭頭《瞄準》紅色圓圈。",
+      "definition": "正確、精確",
+      "options": ["正確、精確", "預擬"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:準:1",
+      "char": "準",
+      "sentence": "媽媽正在《準備》明天的早餐。",
+      "definition": "預擬",
+      "options": ["正確、精確", "預擬"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:睡:0",
+      "char": "睡",
+      "sentence": "晚上九點，弟弟要《睡覺》。",
+      "definition": "閉著眼睛休息",
+      "options": ["閉著眼睛休息", "睡眠時用的"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:睡:1",
+      "char": "睡",
+      "sentence": "冬天要穿長袖《睡衣》。",
+      "definition": "睡眠時用的",
+      "options": ["閉著眼睛休息", "睡眠時用的"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:鐘:0",
+      "char": "鐘",
+      "sentence": "牆上的《時鐘》指向七點。",
+      "definition": "計時器",
+      "options": ["計時器", "樂器名"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:鐘:1",
+      "char": "鐘",
+      "sentence": "廟裡傳來悠揚的《鐘聲》。",
+      "definition": "樂器名",
+      "options": ["計時器", "樂器名"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:效:0",
+      "char": "效",
+      "sentence": "這個方法很《有效》。",
+      "definition": "功用",
+      "options": ["功用", "模仿"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:效:1",
+      "char": "效",
+      "sentence": "小明《仿效》哥哥整理書桌。",
+      "definition": "模仿",
+      "options": ["功用", "模仿"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:序:0",
+      "char": "序",
+      "sentence": "請按照《次序》排隊。",
+      "definition": "排列的次第",
+      "options": ["排列的次第", "開頭的"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:序:1",
+      "char": "序",
+      "sentence": "電影開始前先播放《序幕》。",
+      "definition": "開頭的",
+      "options": ["排列的次第", "開頭的"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:而:0",
+      "char": "而",
+      "sentence": "這個方法簡單《而且》有效。",
+      "definition": "並且",
+      "options": ["並且", "然而、但是、卻"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:而:1",
+      "char": "而",
+      "sentence": "天氣很冷，《然而》大家仍準時出發。",
+      "definition": "然而、但是、卻",
+      "options": ["並且", "然而、但是、卻"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:且:0",
+      "char": "且",
+      "sentence": "這個方法簡單《而且》有效。",
+      "definition": "又、並",
+      "options": ["又、並", "暫時"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:且:1",
+      "char": "且",
+      "sentence": "事情還沒確定，先《姑且》照原計畫進行。",
+      "definition": "暫時",
+      "options": ["又、並", "暫時"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:排:0",
+      "char": "排",
+      "sentence": "爸爸幫我們《安排》出遊時間。",
+      "definition": "安置、設置",
+      "options": ["安置、設置", "一個接一個，照順序擺列"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:排:1",
+      "char": "排",
+      "sentence": "同學們在操場《排隊》。",
+      "definition": "一個接一個，照順序擺列",
+      "options": ["安置、設置", "一個接一個，照順序擺列"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:冰:0",
+      "char": "冰",
+      "sentence": "請把飲料《冰》在冰箱裡。",
+      "definition": "利用冰塊或冰箱降低溫度",
+      "options": ["利用冰塊或冰箱降低溫度", "寒冷"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:冰:1",
+      "char": "冰",
+      "sentence": "北方冬天常是《冰天雪地》。",
+      "definition": "寒冷",
+      "options": ["利用冰塊或冰箱降低溫度", "寒冷"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:箱:0",
+      "char": "箱",
+      "sentence": "夏天要把食物放進《冰箱》。",
+      "definition": "像箱形的東西",
+      "options": ["像箱形的東西", "以竹、木、紙等製成的裝物器具"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:箱:1",
+      "char": "箱",
+      "sentence": "搬家時，我們用了三個《紙箱》。",
+      "definition": "以竹、木、紙等製成的裝物器具",
+      "options": ["像箱形的東西", "以竹、木、紙等製成的裝物器具"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:原:0",
+      "char": "原",
+      "sentence": "木工先選用《原木》。",
+      "definition": "未經加工的",
+      "options": ["最初、初始的", "未經加工的"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:原:1",
+      "char": "原",
+      "sentence": "我《原來》把鉛筆放在抽屜裡。",
+      "definition": "本來",
+      "options": ["最初、初始的", "本來"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:條:0",
+      "char": "條",
+      "sentence": "妹妹喜歡吃《麵條》。",
+      "definition": "細長形的物體",
+      "options": ["細長形的物體", "量詞，計算條狀物的單位"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG3H02:條:1",
+      "char": "條",
+      "sentence": "桌上有《一條魚》的圖畫。",
+      "definition": "量詞，計算條狀物的單位",
+      "options": ["細長形的物體", "量詞，計算條狀物的單位"],
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材（06字義分析）"
+    }
+  ],
   "polysemy_senses": [],
-  "polyphones": [],
-  "lookalikes": [],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG3H02:便",
+      "char": "便",
+      "readings": [
+        {
+          "zhuyin": "ㄅㄧㄢˋ",
+          "dabutie_zhuyin": "ㄅㄧㄢˋ",
+          "senses": [
+            {
+              "definition": "順利的、無阻礙的",
+              "examples": ["方便", "便利"]
+            },
+            {
+              "definition": "輕鬆的、簡單的",
+              "examples": ["便條紙"]
+            },
+            {
+              "definition": "適當的時機",
+              "examples": ["順便", "搭便車"]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄆㄧㄢˊ",
+          "dabutie_zhuyin": "ㄆㄧㄢˊ",
+          "senses": [
+            {
+              "definition": "物價低廉",
+              "examples": ["便宜"]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材（05形音輕鬆學：認識多音字）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG3H02:1",
+      "group_no": "1",
+      "chars": [
+        {"char": "便", "example": "便服、便條"},
+        {"char": "使", "example": "天使、使命"}
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H02:2",
+      "group_no": "2",
+      "chars": [
+        {"char": "垂", "example": "垂掛、垂直"},
+        {"char": "睡", "example": "睡衣、睡意"}
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H02:3",
+      "group_no": "3",
+      "chars": [
+        {"char": "鍾", "example": "鍾愛、一見鍾情"},
+        {"char": "鐘", "example": "鐘聲、鬧鐘"}
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H02:4",
+      "group_no": "4",
+      "chars": [
+        {"char": "郊", "example": "郊外、郊遊"},
+        {"char": "效", "example": "效果、有效"}
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H02:5",
+      "group_no": "5",
+      "chars": [
+        {"char": "需", "example": "需要、需求"},
+        {"char": "而", "example": "反而、然而"}
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H02:6",
+      "group_no": "6",
+      "chars": [
+        {"char": "直", "example": "直接、簡直"},
+        {"char": "具", "example": "具有、工具"},
+        {"char": "且", "example": "而且、並且"}
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H02:7",
+      "group_no": "7",
+      "chars": [
+        {"char": "相", "example": "相信、互相"},
+        {"char": "廂", "example": "車廂、包廂"},
+        {"char": "箱", "example": "紙箱、冰箱"}
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H02:8",
+      "group_no": "8",
+      "chars": [
+        {"char": "源", "example": "起源、電源"},
+        {"char": "原", "example": "原本、原諒"}
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材（05形音輕鬆學：形似字）"
+    }
+  ],
   "listening": [
     {
       "id": "listening:115AG3H02:0001",
@@ -890,18 +1405,18 @@
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "note": "教材待補：缺少可核對的一字多義資料"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
-      "status": "missing",
-      "note": "教材待補：缺少可核對的一字多音資料"
+      "status": "available",
+      "activity": "polyphones"
     },
     "lookalikes": {
       "label": "形似字",
-      "status": "missing",
-      "note": "教材待補：形似字資料需再逐組核對"
+      "status": "available",
+      "activity": "lookalikes"
     },
     "structure_map": {
       "label": "課文地圖",
@@ -915,8 +1430,8 @@
     },
     "rhetoric": {
       "label": "修辭小偵探",
-      "status": "missing",
-      "note": "教材待補：缺少可核對的本課修辭資料"
+      "status": "available",
+      "activity": "rhetoric"
     },
     "review": {
       "label": "舊字新詞",

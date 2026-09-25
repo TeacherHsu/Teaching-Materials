@@ -164,7 +164,8 @@ export const MODULE_REGISTRY = [
     description: '同一個字，不同讀音',
     implemented: true,
     ready(lesson) {
-      return usablePolyphoneEntries(lesson).length >= ROUND_MIN;
+      // 有些課的官方教材只有一個多音字，但仍可用兩個讀音完成一組練習。
+      return usablePolyphoneEntries(lesson).length >= 2;
     },
   },
   {

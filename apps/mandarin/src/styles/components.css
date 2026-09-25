@@ -1048,6 +1048,20 @@
     line-height: 1.45;
   }
 
+  /* 題幹先保持可讀寬度，整題朗讀鈕另起一列，避免窄螢幕一字一行。 */
+  .quiz-title-row {
+    align-items: flex-start;
+  }
+
+  .quiz-title-row > .quiz-option-row {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .quiz-title-row > .speak-button--read-all {
+    margin-left: auto;
+  }
+
   /* 窄螢幕換行時，最後一層直接另起一行，不讓斜線孤零零地出現在行首。 */
   .breadcrumb__current::before {
     content: none;
