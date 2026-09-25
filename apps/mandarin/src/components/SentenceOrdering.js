@@ -3,6 +3,7 @@ import { CompletionFeedback } from './CompletionFeedback.js';
 import { SpeakButton } from './SpeakButton.js';
 import { ReadAllButton } from './ReadAllButton.js';
 import { shuffleDiffering } from '../utils/shuffle.js';
+import { recordOutcome } from '../utils/scoreSession.js';
 
 /**
  * 句子排序：點選詞塊依序加入答案區；鍵盤可操作（button 逐一點選，
@@ -14,6 +15,7 @@ export function SentenceOrdering({ prompt, parts, solution, onBack }) {
   const root = h('div', { class: 'quiz-panel' });
   const chosen = [];
   const bank = shuffleDiffering(parts, `${prompt}|${parts.join('')}`);
+  let mistakes = 0; // 沒有揭曉正解機制，只記是否一次就排對，供星星計分用
 
   root.appendChild(ReadAllButton(() => ({ task: prompt, options: bank })));
   root.appendChild(
@@ -54,6 +56,7 @@ export function SentenceOrdering({ prompt, parts, solution, onBack }) {
   checkBtn.addEventListener('click', () => {
     const isCorrect = chosen.join('') === solution.join('');
     if (isCorrect) {
+      recordOutcome({ firstTry: mistakes === 0, revealed: false });
       const finished = chosen.join('');
       clear(root);
       root.appendChild(
@@ -64,6 +67,7 @@ export function SentenceOrdering({ prompt, parts, solution, onBack }) {
       );
       root.appendChild(CompletionFeedback({ correct: 1, total: 1, onBack }));
     } else {
+      mistakes += 1;
       status.textContent = '順序還不對，再想想看。';
     }
   });

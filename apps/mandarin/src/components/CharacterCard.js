@@ -2,6 +2,8 @@ import { h } from '../utils/dom.js';
 import { SpeakButton } from './SpeakButton.js';
 import { ImageFrame } from './ImageFrame.js';
 
+const EXTERNAL_LINK_ICON = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:4px;vertical-align:-2px"><path d="M14 5h5v5"/><path d="M19 5l-8 8"/><path d="M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>`;
+
 /**
  * @param {object} character 單一生字資料（見 schema/lesson.schema.json）
  * @param {{url: string, title: string}|null} [originExtension] module=characters、type=reading
@@ -28,8 +30,14 @@ export function CharacterCard(character, originExtension = null) {
     pedia_url
       ? h(
           'a',
-          { href: pedia_url, target: '_blank', rel: 'noopener noreferrer', class: 'btn btn--secondary' },
-          '看筆順與完整解釋（教育百科，另開視窗）',
+          {
+            href: pedia_url,
+            target: '_blank',
+            rel: 'noopener noreferrer',
+            class: 'btn btn--secondary',
+            'aria-label': '待：筆順與解釋，教育百科，另開新視窗',
+            html: `筆順與解釋${EXTERNAL_LINK_ICON}`,
+          },
         )
       : null,
     originExtension
@@ -40,8 +48,9 @@ export function CharacterCard(character, originExtension = null) {
             target: '_blank',
             rel: 'noopener noreferrer',
             class: 'character-card__origin-link',
+            'aria-label': '待：字的由來，教育部異體字字典，另開新視窗',
+            html: `字的由來${EXTERNAL_LINK_ICON}`,
           },
-          '看字的由來（另開視窗）',
         )
       : null,
   ]);

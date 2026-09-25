@@ -46,13 +46,29 @@
   text-decoration: underline;
 }
 
-/* ---- TaskBanner：一畫面一任務的頂端說明 ---- */
+/* ---- TaskBanner：一畫面一任務的頂端說明（帶大項主題色左邊框＋小圖示） ---- */
 .task-banner {
-  background: var(--color-surface-muted);
+  background: var(--module-color-tint, var(--color-surface-muted));
   border: 1px solid var(--color-border);
+  border-left: 6px solid var(--module-color, var(--color-primary));
   border-radius: var(--radius-md);
   padding: var(--space-3);
   margin-bottom: var(--space-4);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.task-banner__icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  color: var(--module-color-dark, var(--color-primary));
+  margin-top: 2px;
+}
+
+.task-banner__body {
+  flex: 1;
+  min-width: 0;
 }
 
 .task-banner__eyebrow {
@@ -67,6 +83,79 @@
   font-size: var(--font-size-section);
   font-weight: 700;
   color: var(--text-primary);
+}
+
+/* ---- 課次 Hero（任務地圖頂部）---- */
+.lesson-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-4);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.lesson-hero::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(58, 110, 165, 0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.lesson-hero__text {
+  flex: 1;
+  min-width: 240px;
+  position: relative;
+  z-index: 1;
+}
+
+.lesson-hero__eyebrow {
+  margin: 0 0 4px;
+  font-size: var(--font-size-meta);
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.lesson-hero__title {
+  margin: 0;
+}
+
+.lesson-hero__blurb {
+  margin: var(--space-1) 0 0;
+  color: var(--text-secondary);
+}
+
+.lesson-hero__progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  position: relative;
+  z-index: 1;
+}
+
+.lesson-hero__progress-label {
+  margin: 0;
+  font-size: var(--font-size-meta);
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.progress-ring svg {
+  display: block;
 }
 
 /* ---- 卡片牆（首頁／年級／單元／課次） ---- */
@@ -106,28 +195,69 @@
   color: var(--text-secondary);
 }
 
-/* ---- 按鈕 ---- */
+/* ---- 首頁／年級頁 hero ---- */
+.page-hero {
+  padding: var(--space-3) 0 var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+/* ---- 課本封面卡（首頁的年級／課本入口）---- */
+.nav-card--cover {
+  background: linear-gradient(155deg, var(--module-color-tint, var(--color-surface)) 0%, var(--color-surface) 65%);
+  border-top: 6px solid var(--module-color, var(--color-primary));
+}
+
+.nav-card--cover .nav-card__title {
+  color: var(--module-color-dark, var(--text-primary));
+  font-weight: 700;
+}
+
+/* ---- 按鈕：primary（主題色實心）／secondary（外框）／ghost（無底無框） ---- */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-1);
+  min-height: var(--tap-target-min);
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-md);
   border: none;
-  background: var(--color-primary);
+  background: var(--module-color, var(--color-primary));
   color: var(--text-on-primary);
   font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.1s ease, box-shadow 0.15s ease, background 0.15s ease;
+  box-shadow: var(--shadow-card);
 }
 
 .btn:hover {
-  background: var(--color-primary-hover);
+  background: var(--module-color-dark, var(--color-primary-hover));
+}
+
+.btn:active {
+  transform: scale(0.98);
 }
 
 .btn--secondary {
   background: var(--color-surface);
-  color: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  color: var(--module-color-dark, var(--color-primary));
+  border: 2px solid var(--module-color, var(--color-primary));
+  box-shadow: none;
+}
+
+.btn--secondary:hover {
+  background: var(--module-color-tint, var(--color-surface-muted));
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--module-color-dark, var(--color-primary));
+  box-shadow: none;
+  padding: var(--space-1) var(--space-2);
+}
+
+.btn--ghost:hover {
+  background: var(--module-color-tint, var(--color-surface-muted));
 }
 
 .btn--accent {
@@ -137,9 +267,10 @@
 .btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  transform: none;
 }
 
-/* ---- Lesson Dashboard 模組卡 ---- */
+/* ---- Lesson Dashboard 模組卡（任務地圖）---- */
 .module-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -148,14 +279,76 @@
 }
 
 .module-card {
+  position: relative;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
+  border-top: 5px solid var(--module-color, var(--color-primary));
   border-radius: var(--radius-lg);
   padding: var(--space-4);
   box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.module-card:hover,
+.module-card:focus-within {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-raised);
+}
+
+/* 鎖住／即將推出／審核中：降低彩度，文字仍維持可讀對比 */
+.module-card--locked {
+  filter: saturate(0.55);
+  background: var(--color-surface-muted);
+}
+
+.module-card--locked:hover,
+.module-card--locked:focus-within {
+  transform: none;
+  box-shadow: var(--shadow-card);
+}
+
+.module-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--module-color-tint, var(--color-surface-muted));
+  color: var(--module-color-dark, var(--color-primary));
+}
+
+.module-card__title {
+  margin: 0;
+}
+
+.module-card__desc {
+  margin: 0;
+  font-size: var(--font-size-meta);
+  color: var(--text-secondary);
+}
+
+.module-card__cta {
+  margin-top: auto;
+}
+
+/* 已完成卡片的角落勾勾印章：明顯完成感，不靠顏色（有圖形＋位置） */
+.module-card__stamp {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-success);
+  color: #fff;
+  box-shadow: var(--shadow-card);
 }
 
 .module-card__status {
@@ -164,8 +357,28 @@
   gap: 6px;
   font-size: var(--font-size-meta);
   padding: 4px 10px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   width: fit-content;
+}
+
+.module-card__status svg {
+  width: 18px;
+  height: 18px;
+}
+
+.module-card__stamp svg {
+  width: 20px;
+  height: 20px;
+}
+
+.task-banner__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.module-page-strip__icon svg {
+  width: 22px;
+  height: 22px;
 }
 
 .module-card__status--done {
@@ -174,13 +387,54 @@
 }
 
 .module-card__status--available {
-  background: #eef1f6;
-  color: var(--color-primary);
+  background: var(--module-color-tint, #eef1f6);
+  color: var(--module-color-dark, var(--color-primary));
 }
 
 .module-card__status--missing {
-  background: #f6ece4;
-  color: var(--color-accent);
+  background: var(--color-surface-muted);
+  color: var(--text-secondary);
+}
+
+/* ---- 星星列（大項卡最佳成績／完成卡得分／課次 hero 累計）---- */
+.star-row {
+  display: inline-flex;
+  gap: 2px;
+  color: var(--color-warning);
+  vertical-align: middle;
+}
+
+.star-row--sm svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---- ModulePage 頂部主題色細條＋大項圖示 ---- */
+.module-page-strip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.module-page-strip::after {
+  content: '';
+  flex: 1;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--module-color, var(--color-primary));
+}
+
+.module-page-strip__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--module-color-tint, var(--color-surface-muted));
+  color: var(--module-color-dark, var(--color-primary));
+  flex-shrink: 0;
 }
 
 /* ---- CharacterCard ---- */
@@ -375,11 +629,16 @@
   gap: 8px;
   min-height: var(--tap-target-min);
   padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   border: 2px solid var(--color-border);
   background: var(--color-surface);
   /* 選項本身是學習內容（注音／部首），字級對齊正文下限，不用較小的按鈕字級 */
   font-size: clamp(22px, 2.4vw, 26px);
+  transition: transform 0.08s ease, border-color 0.12s ease, background 0.12s ease;
+}
+
+.quiz-option:active:not(:disabled) {
+  transform: scale(0.98);
 }
 
 .quiz-option:disabled {
@@ -391,13 +650,14 @@
 }
 
 .quiz-option[aria-pressed="true"] {
-  border-color: var(--color-primary);
-  background: var(--color-surface-muted);
+  border-color: var(--module-color, var(--color-primary));
+  background: var(--module-color-tint, var(--color-surface-muted));
 }
 
 .quiz-option--correct {
   border-color: var(--color-success);
   background: #e4f3ea;
+  animation: quiz-option-celebrate 0.3s ease;
 }
 
 .quiz-option--incorrect {
@@ -405,7 +665,18 @@
   background: #fbe9e7;
 }
 
-/* ---- ProgressIndicator ---- */
+@keyframes quiz-option-celebrate {
+  from {
+    opacity: 0.5;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ---- ProgressIndicator：分段式，每題一格 ---- */
 .progress-indicator {
   display: flex;
   align-items: center;
@@ -414,17 +685,30 @@
   color: var(--text-secondary);
 }
 
-.progress-indicator__bar {
+.progress-indicator__segments {
   flex: 1;
-  height: 10px;
-  background: var(--color-surface-muted);
-  border-radius: 999px;
-  overflow: hidden;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
-.progress-indicator__fill {
-  height: 100%;
-  background: var(--color-primary);
+.progress-indicator__segment {
+  flex: 1;
+  min-width: 14px;
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+}
+
+.progress-indicator__segment--filled {
+  background: var(--module-color, var(--color-primary));
+  border-color: var(--module-color, var(--color-primary));
+}
+
+.progress-indicator__segment--current {
+  border-color: var(--module-color-dark, var(--color-primary));
+  border-width: 2px;
 }
 
 /* ---- HintPanel ---- */
@@ -437,7 +721,7 @@
   font-size: var(--font-size-body);
 }
 
-/* ---- CompletionFeedback ---- */
+/* ---- CompletionFeedback（一般每輪完成的小卡）---- */
 .completion-feedback {
   margin-top: var(--space-4);
   padding: var(--space-4);
@@ -445,6 +729,36 @@
   text-align: center;
   background: #e4f3ea;
   color: var(--color-success);
+}
+
+.completion-feedback__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--color-success);
+  color: #fff;
+  margin-bottom: var(--space-2);
+}
+
+/* ---- ModulePage 的整個大項完成摘要卡（含星星／整課累計）---- */
+.completion-feedback--module {
+  background: var(--color-surface);
+  border: 2px solid var(--color-success);
+  color: var(--text-primary);
+}
+
+.completion-feedback__stars-label {
+  margin: 0;
+  font-weight: 600;
+}
+
+.completion-feedback__new-record {
+  margin: var(--space-1) 0 0;
+  font-weight: 700;
+  color: var(--color-warning);
 }
 
 /* ---- MatchingGame ---- */

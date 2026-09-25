@@ -1,6 +1,7 @@
 import { h, clear } from '../utils/dom.js';
 import { CompletionFeedback } from './CompletionFeedback.js';
 import { SpeakButton } from './SpeakButton.js';
+import { recordOutcome } from '../utils/scoreSession.js';
 
 /**
  * 配對遊戲：鍵盤可操作（不只有拖曳）——先選左欄一項，再選右欄一項，
@@ -15,6 +16,7 @@ export function MatchingGame({ pairs, onComplete, onBack, backLabel = '回課程
   const matched = new Set();
   let selectedLeft = null;
   let selectedRight = null;
+  let mistakes = 0; // 配對遊戲沒有「揭曉正解」機制，全組完成才記一次星星結果，見下方 recordOutcome
 
   const status = h('p', { role: 'status', 'aria-live': 'polite', class: 'meta' }, instructions);
   const game = h('div', { class: 'matching-game' });
@@ -38,12 +40,14 @@ export function MatchingGame({ pairs, onComplete, onBack, backLabel = '回課程
       rightBtn.disabled = true;
       status.textContent = `✓ 配對正確：${leftVal} ↔ ${pair.right}`;
       if (matched.size === pairs.length) {
+        recordOutcome({ firstTry: mistakes === 0, revealed: false });
         root.appendChild(
           CompletionFeedback({ correct: pairs.length, total: pairs.length, onBack, backLabel }),
         );
         if (onComplete) onComplete();
       }
     } else {
+      mistakes += 1;
       status.textContent = '✗ 再試試看，這一組不對喔。';
       leftBtn.setAttribute('aria-pressed', 'false');
       rightBtn.setAttribute('aria-pressed', 'false');

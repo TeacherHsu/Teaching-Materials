@@ -10,9 +10,11 @@ export function GradePage(courseIndex, gradeNo) {
     return root;
   }
   root.appendChild(
-    h('div', { class: 'quiz-option-row' }, [
-      h('h1', {}, grade.label),
-      SpeakButton({ text: grade.label, label: '聽', variant: 'speak-button--option' }),
+    h('div', { class: 'page-hero' }, [
+      h('div', { class: 'quiz-option-row' }, [
+        h('h1', {}, grade.label),
+        SpeakButton({ text: grade.label, label: '聽', variant: 'speak-button--option' }),
+      ]),
     ]),
   );
   const grid = h('div', { class: 'card-grid' });

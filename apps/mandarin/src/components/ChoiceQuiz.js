@@ -4,6 +4,7 @@ import { HintPanel } from './HintPanel.js';
 import { CompletionFeedback } from './CompletionFeedback.js';
 import { SpeakButton } from './SpeakButton.js';
 import { ReadAllButton } from './ReadAllButton.js';
+import { recordOutcome } from '../utils/scoreSession.js';
 
 const CHECK_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>`;
 const CROSS_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>`;
@@ -84,6 +85,7 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
           btn.setAttribute('aria-pressed', 'true');
           btn.innerHTML = `${CHECK_ICON}<span>${opt}</span>`;
           correctCount += 1;
+          recordOutcome({ firstTry: attempts === 1, revealed: false });
           optionButtons.forEach((c) => {
             if (c !== btn) c.disabled = true;
           });
@@ -130,6 +132,7 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
         } else {
           // 第 2 次答錯：揭曉正解，鎖題
           answered = true;
+          recordOutcome({ firstTry: false, revealed: true });
           btn.disabled = true;
           optionButtons.forEach((c) => {
             c.disabled = true;

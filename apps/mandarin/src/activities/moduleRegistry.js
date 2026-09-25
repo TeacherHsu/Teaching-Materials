@@ -5,6 +5,21 @@ import { isModuleComplete } from '../utils/storage.js';
 
 const ROUND_MIN = 3;
 
+/**
+ * 6 色和諧調色盤，10 大項輪用（視覺升級）。色值定義在 src/styles/tokens.css，
+ * 對比驗證見 scripts/check-contrast.mjs。元件只吃這裡輸出的 CSS 變數，
+ * 不在 JS/CSS 另外寫死色碼。
+ */
+export const MODULE_COLOR_KEYS = ['blue', 'teal', 'purple', 'terracotta', 'rose', 'olive'];
+
+export function moduleColorVars(colorKey) {
+  return {
+    '--module-color': `var(--module-${colorKey})`,
+    '--module-color-dark': `var(--module-${colorKey}-dark)`,
+    '--module-color-tint': `var(--module-${colorKey}-tint)`,
+  };
+}
+
 function readyCharacters(lesson) {
   return (lesson.characters || []).filter((c) => c.status === 'ready' || !c.status);
 }
@@ -69,6 +84,9 @@ export const MODULE_REGISTRY = [
   {
     key: 'characters',
     label: '認識生字',
+    icon: 'characters',
+    color: 'blue',
+    description: '看字、聽音、分部首',
     implemented: true,
     ready(lesson) {
       const chars = readyCharacters(lesson);
@@ -78,6 +96,9 @@ export const MODULE_REGISTRY = [
   {
     key: 'vocabulary',
     label: '學會語詞',
+    icon: 'vocabulary',
+    color: 'teal',
+    description: '認識詞義、練習配對',
     implemented: true,
     ready(lesson) {
       return readyWords(lesson).length >= ROUND_MIN;
@@ -86,6 +107,9 @@ export const MODULE_REGISTRY = [
   {
     key: 'idiom_builder',
     label: '生字變成語',
+    icon: 'idiom_builder',
+    color: 'purple',
+    description: '用生字組出成語',
     implemented: true,
     ready(lesson) {
       return usableIdioms(lesson).length >= ROUND_MIN;
@@ -94,6 +118,9 @@ export const MODULE_REGISTRY = [
   {
     key: 'sentence_practice',
     label: '句型練習',
+    icon: 'sentence_practice',
+    color: 'terracotta',
+    description: '照句型練習造句',
     implemented: true,
     ready(lesson) {
       return readyPatterns(lesson).length >= ROUND_MIN && patternsWithApprovedExamples(lesson).length >= 1;
@@ -102,6 +129,9 @@ export const MODULE_REGISTRY = [
   {
     key: 'reading',
     label: '讀懂課文',
+    icon: 'reading',
+    color: 'rose',
+    description: '讀段落、抓重點',
     implemented: true,
     ready(lesson) {
       return readyParagraphs(lesson).length >= ROUND_MIN || readyReadingQuestions(lesson).length >= 1;
@@ -110,6 +140,9 @@ export const MODULE_REGISTRY = [
   {
     key: 'polysemy',
     label: '一字多義',
+    icon: 'polysemy',
+    color: 'olive',
+    description: '同一個字，不同意思',
     implemented: true,
     ready(lesson) {
       return readyPolysemy(lesson).length >= ROUND_MIN;
@@ -118,6 +151,9 @@ export const MODULE_REGISTRY = [
   {
     key: 'structure_map',
     label: '課文地圖',
+    icon: 'structure_map',
+    color: 'blue',
+    description: '整理課文的段落結構',
     implemented: true,
     ready(lesson) {
       return readyStructureParagraphs(lesson).length >= ROUND_MIN;
@@ -126,6 +162,9 @@ export const MODULE_REGISTRY = [
   {
     key: 'listening',
     label: '聽聽看',
+    icon: 'listening',
+    color: 'teal',
+    description: '聽一句、選答案',
     implemented: true,
     ready(lesson) {
       return readyListening(lesson).length >= ROUND_MIN;
@@ -134,6 +173,9 @@ export const MODULE_REGISTRY = [
   {
     key: 'rhetoric',
     label: '修辭小偵探',
+    icon: 'rhetoric',
+    color: 'purple',
+    description: '找出課文裡的修辭手法',
     implemented: true,
     ready(lesson) {
       return readyRhetoric(lesson).length >= ROUND_MIN;
@@ -142,6 +184,9 @@ export const MODULE_REGISTRY = [
   {
     key: 'review',
     label: '舊字新詞',
+    icon: 'review',
+    color: 'terracotta',
+    description: '複習前面課次學過的字詞',
     implemented: true,
     reviewOnly: true,
     ready(lesson) {
