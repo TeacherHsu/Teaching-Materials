@@ -12,7 +12,8 @@
     "preview": "vite preview",
     "preview:draft": "vite preview --outDir dist-preview",
     "validate": "node scripts/validate-data.mjs",
-    "check-dist": "node scripts/check-dist.mjs"
+    "check-assets": "node scripts/check-assets.mjs",
+    "check-dist": "node scripts/check-dist.mjs && npm run check-assets"
   },
   "devDependencies": {
     "ajv": "^8.17.1",
