@@ -14,6 +14,12 @@
 
 ---
 
+## 2026-09-25｜學校 Win｜Codex｜狀態：🚧 施工中
+- 範圍：`apps/mandarin/public/data/115AG3H/lesson05.json`、`public/assets/115AG3H/lesson05/`、`course-index.json`
+- 做了什麼：準備依官方翰林 G3A 第 5 課資料生成網站課次，沿用第 1～4 課的資料結構、互動規格與壓縮圖片容量規範
+- 待辦：確認官方第 5 課內容、完成課次資料、圖片、延伸連結與驗證
+- 注意：不修改課文全文，不把官方原始教材、出版社補充原檔或第三方 xlsx 放入公開 repo
+
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG3H/lesson04.json`、`public/assets/115AG3H/lesson04/`、`course-index.json`
 - 做了什麼：新增翰林三上第 4 課「水滾了」課次資料，包含 18 個生字、10 個目標語詞、5 個成語、句型、段落大意、修辭、形似字、一字多義、一字多音、聆聽題與挑戰題；加入 10 張語詞 WebP、5 張成語 WebP，並加入雄筆順直接連結
