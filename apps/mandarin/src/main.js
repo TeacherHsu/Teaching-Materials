@@ -20,7 +20,7 @@ const app = document.getElementById('app');
 let courseIndexCache = null;
 async function loadCourseIndex() {
   if (courseIndexCache) return courseIndexCache;
-  const res = await fetch(`${BASE}data/course-index.json`);
+  const res = await fetch(`${BASE}data/course-index.json`, { cache: 'no-cache' });
   courseIndexCache = await res.json();
   return courseIndexCache;
 }
@@ -50,11 +50,11 @@ async function loadLesson(lessonId) {
 
   if (isPreview()) {
     const previewPath = meta.data.replace(/^data\//, 'data/_preview/');
-    const previewRes = await fetch(`${BASE}${previewPath}`);
+    const previewRes = await fetch(`${BASE}${previewPath}`, { cache: 'no-cache' });
     if (previewRes.ok) return previewRes.json();
   }
 
-  const res = await fetch(`${BASE}${meta.data}`);
+  const res = await fetch(`${BASE}${meta.data}`, { cache: 'no-cache' });
   if (!res.ok) return null;
   return res.json();
 }
@@ -140,7 +140,7 @@ route(/^\/review\/(?<lessonId>[^/]+)$/, async ({ lessonId }) => {
 });
 
 route(/^\/fixtures$/, async () => {
-  const res = await fetch(`${BASE}data/_fixtures/component-fixtures.json`);
+  const res = await fetch(`${BASE}data/_fixtures/component-fixtures.json`, { cache: 'no-cache' });
   const fixtures = await res.json();
   mount(FixturesPage(fixtures));
 });
