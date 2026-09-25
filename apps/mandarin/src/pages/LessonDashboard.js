@@ -25,10 +25,8 @@ export function LessonDashboard(lesson) {
   root.appendChild(
     h('p', { class: 'breadcrumb' }, [
       h('a', { href: '#/' }, '首頁'),
-      ' ／ ',
       h('a', { href: `#/grade/${lesson.volume.grade}` }, volumeLabel(lesson.volume)),
-      ' ／ ',
-      `第 ${lesson.lesson_no} 課`,
+      h('span', { class: 'breadcrumb__current' }, `第 ${lesson.lesson_no} 課`),
     ]),
   );
 
