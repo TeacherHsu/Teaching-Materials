@@ -15,6 +15,18 @@
 ---
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/`、`HANDOFF.md`；115G3A／翰林三上第 2 課〈妙用便利貼〉批次資料與成語素材
+- 做了什麼：
+  - 依官方教師確認字表建立 17 個生字、教育百科讀音／部首／筆畫、10 個核准語詞、句型、段落重述、閱讀理解、聆聽與跨課複習資料
+  - 沿用既有學習單的 6 張無文字成語插圖，轉成 WebP 放入 `public/assets/115AG3H/lesson02/idioms/`，並在 `idioms[].image` 明確指定路徑
+  - `course-index.json` 已加入第 2 課；手機任務提示調整為 24–26px，降低窄螢幕斷行負擔
+  - 一字多義、一字多音、形似字、修辭等目前沒有足夠可核對資料，保留「教材審核中」，不自行猜填
+- 驗證：`npm run validate`、`npm run build`、`npm run check-dist`、全部 `scripts/test-*.mjs` 通過；Chromium 1440px／375px 實際渲染通過，無橫向捲動、無 console/page error，6 張成語圖 natural size 正常
+- 推送：尚未推送（依規則等待明確推送指示）
+- 待辦／給下一棒：後續課次沿用官方字表優先、來源可追溯、缺資料明確標示待審與舊圖優先重用的流程；推送前先檢查本分支與 `origin/main` 差異
+- 注意：官方確認字表優先於舊九份資料；不重跑 Mac 專用大補帖匯入器，不改 `Chinese/` 既有靜態頁面；本機 `node_modules`、`dist` 與暫存 QA 截圖不納入 commit
+
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/`、`HANDOFF.md`；115G3A／翰林三上第 1 課成語插圖與共用頁面視覺
 - 做了什麼：
   - 沿用舊學習單 PPTX 內嵌的 6 張無文字成語插圖，轉成 WebP 放入 `public/assets/115AG3H/lesson01/idioms/`；未重新生成圖片，未改課次 JSON 內容

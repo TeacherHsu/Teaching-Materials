@@ -1042,6 +1042,12 @@
     padding: var(--space-2) var(--space-3);
   }
 
+  /* 手機任務提示保留大字，但避免步驟文字被迫斷成三行。 */
+  .task-banner__label {
+    font-size: clamp(24px, 6vw, 26px);
+    line-height: 1.45;
+  }
+
   /* 窄螢幕換行時，最後一層直接另起一行，不讓斜線孤零零地出現在行首。 */
   .breadcrumb__current::before {
     content: none;
