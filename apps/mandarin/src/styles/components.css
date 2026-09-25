@@ -1243,3 +1243,16 @@
 .extension-links__summary .extension-links__title { margin: 0; }
 .extension-links__count { color: var(--text-secondary); font-size: var(--font-size-secondary, 18px); }
 .extension-links__details[open] > .extension-links__list { margin-top: var(--space-3); }
+
+/* 一字多義：句子卡，詞加底線、目標字標色（不只靠顏色：另有粗體與外框） */
+.polysemy-sentence-row .polysemy-sentence { font-size: var(--font-size-section); line-height: 1.7; margin: 0; flex: 1; }
+.polysemy-sentence__word { text-decoration: underline; text-underline-offset: 6px; }
+.polysemy-sentence__char {
+  background: var(--module-color-tint, var(--color-surface-muted));
+  color: var(--module-color-dark, var(--color-primary));
+  font-weight: 700;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+  padding: 0 2px;
+}
+.polysemy-sentence-row { margin-bottom: var(--space-3); }
