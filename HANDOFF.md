@@ -15,6 +15,17 @@
 ---
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/` 形似字題目生成與第 2 課資料
+- 做了什麼：
+  - 形似字 activity 將每個 `example` 的逗號分隔語詞拆成獨立題目；「天使、使命」會分成「天＿」與「＿命」，不再把完整答案露在同一題
+  - 使用共用 `shuffle()`，選項維持亂數排列
+  - 新增 `test-lookalike-splitting.mjs` 回歸測試
+- 驗證：`npm run validate`、`npm run build`、`npm run check-dist`、全部 `scripts/test-*.mjs` 通過；瀏覽器第 2 課形似字路由確認「天＿」與「＿命」兩題，無 console/page error
+- 推送：尚未推送（等待明確推送指示）
+- 待辦／給下一棒：後續課次沿用「一個語詞一題、只挖一個目標字」規則；既有歷史成品需重新生成才會套用
+- 注意：不改官方教材內容；canonical `example` 保留官方例詞，前端只改學生題面拆題
+
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/`；教材網頁各類選項題的共用洗牌規則
 - 做了什麼：
   - 新增共用 Fisher–Yates `shuffle()`，ChoiceQuiz、拖曳候選詞、成語題與配對題都改用亂數排列；若結果恰好等於原順序，會再交換前兩項
