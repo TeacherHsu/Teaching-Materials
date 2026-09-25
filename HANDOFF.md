@@ -14,6 +14,14 @@
 
 ---
 
+## 2026-09-26｜學校 Win｜Codex｜狀態：🚧 施工中
+- 範圍：`apps/mandarin/public/data/115G6A/`、`apps/mandarin/public/assets/115G6A/`、`apps/mandarin/public/data/course-index.json`
+- 做了什麼：已完成翰林六上 G6A 官方教材來源盤點，接續生成第 1 課並依驗證結果自動處理後續課次。
+- 驗證：施工中，尚未完成教材建置驗證。
+- 推送：施工標記待推送。
+- 待辦／給下一棒：完成 G6A 第 1 至 12 課資料、WebP／AVIF 圖片、建置與瀏覽器回歸檢查；若中斷，從最後一個已驗證課次接續。
+- 注意：沿用既有教材網站資料結構與圖片容量規範；不將官方原始教材或第三方試算表放入公開 repo。
+
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG3H/lesson06.json`、`apps/mandarin/public/assets/115AG3H/lesson06/`、`apps/mandarin/public/data/course-index.json`
 - 做了什麼：依官方教材生成翰林三上第 6 課「小鉛筆大學問」完整教材資料，加入 14 個生字、12 個語詞、6 個成語、句型、課文地圖、閱讀理解、聆聽、修辭、形似字與一字多音；補齊語詞／成語 WebP 圖片及雄筆順連結。官方形似字圖卡中的「削」已正確歸入一字多音，不重複放入形似字題。
