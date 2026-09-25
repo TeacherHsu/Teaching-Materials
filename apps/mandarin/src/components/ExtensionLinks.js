@@ -48,6 +48,7 @@ export function buildExtensionLinks(lesson, moduleKey, opts = {}) {
         ext.version_note ? `・${ext.version_note}` : '',
         ext.login_required ? '・需登入' : '',
       ].join('')),
+      ext.note ? h('span', { class: 'extension-link__note' }, ext.note) : null,
     ]);
     const badges = h('span', { class: 'extension-link__badges' }, [
       h('span', { class: 'extension-link__type-label' }, TYPE_LABEL[ext.type] || ext.type),

@@ -113,7 +113,8 @@ export function ModulePage(lesson, moduleKey) {
     activitySlot.appendChild(missingContentNotice());
   }
 
-  const extensionLinks = buildExtensionLinks(lesson, moduleKey);
+  // 「認識生字」的筆順入口已放在第一步任務提示下方，讓學生開始看字時就能找到；其他延伸資源維持放在大項底部。
+  const extensionLinks = moduleKey === 'characters' ? null : buildExtensionLinks(lesson, moduleKey);
   if (extensionLinks) root.appendChild(extensionLinks);
 
   return root;

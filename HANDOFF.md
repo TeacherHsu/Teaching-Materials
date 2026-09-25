@@ -15,6 +15,14 @@
 ---
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/` G3A 翰林第 1～3 課生字造詞資料與「認識生字」筆順教材入口
+- 做了什麼：依使用者提供的《115上114下學期生字表_大腦與語言實驗室_20260723.xlsx》翰林／115上／三年級第 1～3 課資料，補充每個生字最多 5 個造詞並保留 `examples_source`；新增每課筆順練習外連，放在「認識生字」第一步任務提示下方，以折疊卡顯示版本、年級與課別選取方式；延伸連結卡新增 `note` 顯示
+- 驗證：`npm run validate`、全部 `scripts/test-*.mjs`、`npm run build`、`npm run check-dist` 通過；瀏覽器確認第三課造詞與筆順入口、無橫向溢位、無 console error／warning
+- 推送：尚未推送
+- 待辦／給下一棒：後續課次可沿用 `characters[].examples` 與 `examples_source`；各課筆順入口沿用同一選單，依課次更新 note
+- 注意：未修改原始 Excel；保留 `Chinese/` 舊站與內部官方原始檔
+
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/` G3A 第三課「提早五分鐘」資料、圖片資產、課程索引與模組覆蓋測試
 - 做了什麼：依官方生字表／教育百科字庫建立 15 個習寫字與 2 個認讀字；接入 14 個語詞及 AI 圖片、6 個生字衍生成語及圖片、句型、修辭、段落重述、閱讀理解、一字多義、一字多音、形似字、聆聽與跨課複習。形似字沿用逐例詞拆題規則，避免同組例詞露出答案。
 - 驗證：`npm run validate`、`npm run build`、`npm run check-dist`、全部 `scripts/test-*.mjs` 通過；另以 `MANDARIN_TEST_LESSON=../public/data/115AG3H/lesson03.json node scripts/test-module-star-coverage.mjs` 驗證第三課 11 個可開始模組；瀏覽器確認課次首頁、成語拖拉、語詞圖片、形似字、舊字新詞，無 console error／warning，當前視窗無橫向溢位
