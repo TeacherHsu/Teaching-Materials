@@ -15,6 +15,14 @@
 ---
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/public/data/115AG3H/lesson01.json`、`lesson02.json` 與兩課語詞圖片資產
+- 做了什麼：第一課 13 張、第二課 15 張語詞補上兒童友善教學插圖；資料引用同步指向 WebP；沿用第三課圖片固定、點卡片切換詞義、朗讀同步的語詞卡規格
+- 驗證：`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；第一、二課 28 張圖片瀏覽器實際載入；第三課互動回歸確認通過；總資產 6.30 MiB，第一課 2.52 MiB、第二課 1.93 MiB、第三課 1.84 MiB
+- 推送：尚未推送
+- 待辦／給下一棒：後續課次補圖沿用 `l課次-序號.webp` 命名與圖片容量閘門；每張維持 300 KiB 內、每課約 4 MiB 內
+- 注意：原始 PNG 僅留在 Codex 生成目錄，網站與 repo 只保留 WebP；圖片為教學輔助，不在圖內加入文字
+
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/` 語詞認識步驟與語詞卡片
 - 做了什麼：依使用者確認改為可點選語詞卡；圖片固定不變，點選後文字替換為對應解釋，再點一次可回到語詞；注音、朗讀內容與操作說明同步切換
 - 驗證：`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；第三課瀏覽器確認圖片不變、詞義可切換、朗讀內容同步、無水平溢出且無警告
