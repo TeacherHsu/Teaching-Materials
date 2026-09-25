@@ -16,11 +16,10 @@ export function HomePage(courseIndex) {
       {
         class: 'nav-card',
         href: `#/grade/${grade.grade}`,
-        'aria-label': `${grade.label}，共 ${grade.volumes.length} 冊`,
+        'aria-label': grade.label,
       },
       [
         h('div', { class: 'nav-card__title' }, grade.label),
-        h('div', { class: 'nav-card__meta' }, `${grade.volumes.length} 冊`),
       ],
     );
     grid.appendChild(
