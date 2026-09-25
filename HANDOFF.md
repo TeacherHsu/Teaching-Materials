@@ -14,6 +14,12 @@
 
 ---
 
+## 2026-09-25｜學校 Win｜Codex｜狀態：🚧 施工中
+- 範圍：`apps/mandarin/public/data/115AG3H/lesson04.json`、`public/assets/115AG3H/lesson04/`、`course-index.json`
+- 做了什麼：準備依官方翰林 G3A 第 4 課「水滾了」資料生成網站課次，沿用第 1～3 課的資料結構與圖片容量規範
+- 待辦：完成第 4 課資料、圖片、延伸連結與驗證
+- 注意：本次不修改課文全文，不把官方原始教材放入公開 repo
+
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG3H/lesson01.json`、`lesson02.json` 與兩課語詞圖片資產
 - 做了什麼：第一課 13 張、第二課 15 張語詞補上兒童友善教學插圖；資料引用同步指向 WebP；沿用第三課圖片固定、點卡片切換詞義、朗讀同步的語詞卡規格

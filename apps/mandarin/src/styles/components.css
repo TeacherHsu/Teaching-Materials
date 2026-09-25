@@ -1001,6 +1001,20 @@
   margin: var(--space-2) 0 0;
   color: var(--text-secondary);
   font-size: var(--font-size-meta);
+  text-align: center;
+}
+
+.drag-to-slot__context-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.drag-to-slot__context-row > .idiom-builder__card {
+  margin-inline: 0;
 }
 
 .drag-to-slot--drag-enabled .drag-to-slot__option-chip--draggable {
@@ -1041,10 +1055,20 @@
 
 .drag-to-slot__slot-row {
   align-items: center;
+  justify-content: center;
 }
 
 .drag-to-slot__slot-speak:empty {
   display: none;
+}
+
+.drag-to-slot .sentence-bank {
+  justify-content: center;
+}
+
+.drag-to-slot > .btn {
+  display: block;
+  margin-inline: auto;
 }
 
 .idiom-builder__card {

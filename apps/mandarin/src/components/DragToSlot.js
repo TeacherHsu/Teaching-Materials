@@ -89,9 +89,15 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
         ]),
       );
     } else if (item.context) {
-      contextWrap.appendChild(item.context);
       if (item.speakText) {
-        contextWrap.appendChild(SpeakButton({ text: item.speakText, label: '聽題目', variant: 'speak-button--option' }));
+        contextWrap.appendChild(
+          h('div', { class: 'drag-to-slot__context-row' }, [
+            item.context,
+            SpeakButton({ text: item.speakText, label: '聽題目', variant: 'speak-button--option' }),
+          ]),
+        );
+      } else {
+        contextWrap.appendChild(item.context);
       }
     }
     root.appendChild(contextWrap);

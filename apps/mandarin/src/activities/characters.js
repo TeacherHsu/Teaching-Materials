@@ -124,7 +124,10 @@ export function buildCharactersActivity(lesson, onBack) {
 
     if (step === 'cards') {
       container.appendChild(TaskBanner({ label: '看看這一課的生字：點卡片上的按鈕可以聽發音', step: stepLabel }));
-      const strokeLinks = buildExtensionLinks(lesson, 'characters', { title: '本課筆順教材' });
+      const strokeLinks = buildExtensionLinks(lesson, 'characters', {
+        collapsible: false,
+        filter: (extension) => extension.type === 'reading' && extension.title === '筆順練習(雄筆順)',
+      });
       if (strokeLinks) container.appendChild(strokeLinks);
       const originByChar = new Map(
         filterByStatus(lesson.extensions || [])

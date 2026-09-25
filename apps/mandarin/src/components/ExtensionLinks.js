@@ -28,13 +28,16 @@ const TYPE_LABEL = {
 /**
  * @param {object} lesson 完整 lesson JSON
  * @param {string} moduleKey 對應大項 key，或 "lesson"（整課，Lesson Dashboard 用）
- * @param {{title?: string}} [opts] title 預設「做完了？再挑戰看看」（大項頁用）；
- *   Lesson Dashboard 呼叫時傳入「本課延伸資源」。
+ * @param {{title?: string, collapsible?: boolean, filter?: (extension: object) => boolean}} [opts]
+ *   title 預設「做完了？再挑戰看看」（大項頁用）；Lesson Dashboard 呼叫時傳入「本課延伸資源」。
+ *   collapsible=false 時直接顯示連結清單，不產生折疊標題列；filter 可限制要顯示的連結。
  * @returns {HTMLElement|null} 沒有可顯示連結時回傳 null（呼叫端自行判斷是否掛載）
  */
 export function buildExtensionLinks(lesson, moduleKey, opts = {}) {
   const title = opts.title || '做完了？再挑戰看看';
-  const all = (lesson.extensions || []).filter((e) => e.module === moduleKey);
+  const all = (lesson.extensions || [])
+    .filter((e) => e.module === moduleKey)
+    .filter((e) => !opts.filter || opts.filter(e));
   const visible = filterByStatus(all);
   if (visible.length === 0) return null;
 
@@ -73,6 +76,10 @@ export function buildExtensionLinks(lesson, moduleKey, opts = {}) {
       SpeakButton({ text: ext.title, label: '聽', variant: 'speak-button--option' }),
     ]);
     list.appendChild(row);
+  }
+
+  if (opts.collapsible === false) {
+    return h('section', { class: 'extension-links' }, [list]);
   }
 
   // 預設折疊（CF 2026-09-25）：連結內容（如成語典條目）可能直接透露上方題目答案，
