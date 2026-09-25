@@ -27,14 +27,14 @@ function pickDistractors(all, excludeId, n) {
  * 第一關：把生字拖進成語的空格（成語定義卡＋插圖，插圖若缺圖不塌陷）。
  * 只用 idioms[]（定義原文照登，status:"ready"，不需審核），任何時候都可上線。
  */
-function buildRound1(idioms) {
+function buildRound1(idioms, assetBase) {
   const usable = idioms.filter((idm) => idm.related_char && idm.idiom.includes(idm.related_char));
   const items = shuffled(usable)
     .slice(0, ROUND_SIZE_MAX)
     .map((idm) => {
       const blanked = idm.idiom.replace(idm.related_char, '＿');
       const context = h('div', { class: 'idiom-builder__card' }, [
-        ImageFrame({ src: `${BASE}assets/115AG3H/lesson01/idioms/${idm.idiom}.webp`, alt: `「${idm.idiom}」插圖` }),
+        ImageFrame({ src: idm.image ? `${assetBase}${idm.image}` : null, alt: `「${idm.idiom}」插圖` }),
         h('p', { class: 'quiz-stem' }, `成語：${blanked}`),
         h('p', { class: 'meta' }, idm.definition),
       ]);
@@ -98,7 +98,10 @@ function buildRound2(idioms, idiomSentences) {
  */
 export function buildIdiomBuilderActivity(lesson, onBack) {
   const idioms = lesson.idioms || [];
-  const round1Items = buildRound1(idioms);
+  // 圖檔路徑由資料明確指定（idioms[].image，例 "idioms/迫不及待.webp"），
+  // 相對於 assets/<冊別代碼>/lesson<NN>/；不猜檔名。
+  const assetBase = `${BASE}assets/${lesson.volume.code}/lesson${String(lesson.lesson_no).padStart(2, '0')}/`;
+  const round1Items = buildRound1(idioms, assetBase);
   const round2Items = buildRound2(idioms, lesson.idiom_sentences || []);
 
   const rounds = [];
