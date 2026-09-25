@@ -14,12 +14,12 @@
 
 ---
 
-## 2026-09-25｜學校 Win｜Codex｜狀態：🚧 施工中
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG3H/lesson05.json`、`apps/mandarin/scripts/test-vocabulary-image-pairs.mjs`
-- 做了什麼：準備修正第五課「夾子」與「遮雨」圖片路徑對調問題，並加入圖詞配對回歸檢查
-- 驗證：施工中，待完成資料驗證、測試與瀏覽器回歸
-- 推送：施工紀錄待先行提交並推送
-- 待辦／給下一棒：修正兩筆 image 欄位、測試卡片實際載入、重新建置
+- 做了什麼：修正第五課「夾子」與「遮雨」圖片路徑對調；新增回歸測試，固定確認夾子使用夾子圖、遮雨使用雨傘圖
+- 驗證：`node scripts/test-vocabulary-image-pairs.mjs`、`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；瀏覽器逐組確認兩張卡片實際載入正確圖片，console 無錯誤
+- 推送：完成 commit 後推送至 `origin/codex/mandarin-115g3a-lessons`；`origin/main` 尚未更新
+- 待辦／給下一棒：後續新增語詞圖片時，需同時檢查資料中的 image 路徑與畫面上的語詞文字
 - 注意：只修正資料引用，不更動圖片內容與卡片互動規格
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
