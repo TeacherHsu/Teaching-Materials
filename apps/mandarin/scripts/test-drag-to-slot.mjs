@@ -44,6 +44,11 @@ assert.equal(chips.length, 2, '拖曳模式仍應保留所有候選答案');
 chips.find((chip) => chip.textContent === '冰').dispatch('click');
 assert.equal(slot.textContent, '冰', '點選候選答案後應放入空格');
 assert.equal(chips.find((chip) => chip.textContent === '冰').disabled, true, '已放入答案應暫時鎖定候選卡');
+assert.equal(
+  inlineSlotWrap.findAll((node) => node.hasClass('speak-button')).length,
+  0,
+  '成語內嵌空格不應插入額外語音按鈕',
+);
 slot.dispatch('click');
 assert.equal(slot.textContent, '？', '點擊空格應可取消已放入答案');
 
