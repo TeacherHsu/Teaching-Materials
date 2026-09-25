@@ -3,6 +3,9 @@ import { MODULE_REGISTRY, getModuleStatus } from '../activities/moduleRegistry.j
 import { buildExtensionLinks } from '../components/ExtensionLinks.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 
+const CN_NUM = ['', '一', '二', '三', '四', '五', '六'];
+const volumeLabel = (v) => `${v.publisher || ''}${CN_NUM[v.grade] || v.grade}${v.term || ''}`;
+
 const STATUS_CLASS = {
   done: 'module-card__status--done',
   available: 'module-card__status--available',
@@ -22,7 +25,7 @@ export function LessonDashboard(lesson) {
     h('p', { class: 'breadcrumb' }, [
       h('a', { href: '#/' }, '首頁'),
       ' ／ ',
-      h('a', { href: `#/grade/${lesson.volume.grade}` }, `${lesson.volume.grade} 年級`),
+      h('a', { href: `#/grade/${lesson.volume.grade}` }, volumeLabel(lesson.volume)),
       ' ／ ',
       `第 ${lesson.lesson_no} 課`,
     ]),

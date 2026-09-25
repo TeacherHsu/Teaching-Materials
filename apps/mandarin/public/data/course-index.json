@@ -2,13 +2,13 @@
   "grades": [
     {
       "grade": 3,
-      "label": "三年級",
+      "label": "翰林三上",
       "volumes": [
         {
           "code": "115AG3H",
           "publisher": "翰林",
           "term": "上",
-          "label": "115 學年上學期・翰林三上",
+          "label": "115 學年上學期",
           "units": [
             {
               "no": 1,
