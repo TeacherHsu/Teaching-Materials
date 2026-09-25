@@ -15,6 +15,14 @@
 ---
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/` 筆順直連卡片文字
+- 做了什麼：依使用者回饋簡化筆順直連顯示，主標題統一為「筆順練習(雄筆順)」，隱藏重複的提供者、版本與課次說明
+- 驗證：`npm.cmd run validate`、`node scripts/test-extension-links.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 通過；瀏覽器第三課頁面確認主標、版面無橫向溢出，console 無錯誤或警告
+- 推送：尚未推送
+- 待辦／給下一棒：如需發布，再由使用者確認後推送目前本地 commit
+- 注意：其他延伸資源仍保留提供者與說明文字
+
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/` G3A 翰林第 1～3 課筆順外連
 - 做了什麼：依固定網址規律 `html5_stroke_parts.html?by=gsyan&words=`，將三課生字依課本順序串接並 URL 編碼；三課「本課筆順教材」均改為直接開啟該課生字，備註改為顯示已帶入的生字數量
 - 驗證：`npm run validate`、`node scripts/test-extension-links.mjs`、`npm run build`、`npm run check-dist` 通過；瀏覽器實際開啟第 1～3 課直連，確認頁面標題為「雄-筆順練習」且輸入區帶入各課生字；本地第三課 href 已更新
