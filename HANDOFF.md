@@ -14,11 +14,13 @@
 
 ---
 
-## 2026-09-25｜學校 Win｜Codex｜狀態：🚧 施工中
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/activities/sentencePractice.js`、`apps/mandarin/scripts/test-sentence-chunking.mjs`
-- 做了什麼：準備改善句型練習的中文語意詞塊切分，保留固定詞組、助詞與句型結構
-- 待辦：完成合理斷詞規則、回歸測試與建置驗證
-- 注意：不改教材句意，不把固定詞組拆成無意義的單字或單字元詞塊
+- 做了什麼：句型練習改用固定詞組保護、瀏覽器中文斷詞、助詞／介詞合併與標點歸併；不再以每兩字硬切，並支援教材以 `sentence_patterns[].example_parts` 提供人工確認詞塊
+- 驗證：新增 `node scripts/test-sentence-chunking.mjs`；全部 `scripts/test-*.mjs`、第 5 課星星覆蓋測試、`npm.cmd run validate`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；瀏覽器確認「不只要／還要」、「背起來」等詞組完整呈現，console 無錯誤
+- 推送：完成 commit `9bbdae0` 後推送至 `origin/codex/mandarin-115g3a-lessons`；`origin/main` 尚未更新
+- 待辦／給下一棒：新增特殊句型時，可在該句型的 `example_parts` 放入人工確認且可重新串回原句的詞塊
+- 注意：保留原句內容與亂數呈現，只調整學生作答時的詞塊邊界
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG3H/lesson05.json`、`apps/mandarin/public/assets/115AG3H/lesson05/`、`apps/mandarin/public/data/course-index.json`

@@ -15,25 +15,77 @@ import { missingContentNotice } from './engine.js';
 import { chunkRounds } from '../utils/chunk.js';
 import { filterByStatus, isPreview } from '../utils/preview.js';
 
-const PUNCT_RE = /[，。！？、]/;
+const PUNCT_RE = /[，。！？、]/u;
+const PROTECTED_PHRASES = [
+  // 課文句型與常見固定語塊：先保護，再交給斷詞器，避免被拆成單字元。
+  '一會兒', '不只要', '不只會', '不只', '不但', '而且', '如果', '因為', '所以', '只要', '除了',
+  '沒想到', '有時', '慢吞吞', '五彩繽紛', '各式各樣', '半信半疑', '迫不及待', '翻山越嶺',
+  // 課堂常見的複合詞，補足瀏覽器斷詞器容易拆開的內容詞。
+  '作業本', '服務人員', '每一位', '遠道而來', '穿起來', '背起來', '放進書包', '排椅子', '不費力', '不容易出錯',
+  '不會沉迷', '不必花錢', '不遲到', '不賴床', '不拖延', '不慌張', '分工合作', '一起想辦法',
+  '認真練習投球', '足夠的時間', '足夠的飲水', '再檢查一次', '春天的到來', '花朵綻放',
+  '老師的提醒', '充分的準備', '進行得更順利', '天空下起大雨', '很快睡著', '角落旁',
+  '調皮的孩子', '勤勞的農夫', '準時起床工作', '太大聲', '有品味', '有自信', '有秩序', '肥沃的土地',
+  '舒服的床', '安靜的角落', '輕巧防水', '書包容量很大', '山景', '風光明媚', '天氣涼爽',
+].sort((a, b) => b.length - a.length);
+const SUFFIX_PARTICLES = new Set(['的', '地', '得', '了', '著', '過', '們', '吧', '呢', '嗎', '啊', '呀', '喔', '啦', '上', '下', '裡', '中', '旁', '邊', '後', '時']);
+const PREFIX_WORDS = new Set(['把', '讓', '在', '用', '從', '向', '對', '和', '與', '而', '就', '很', '太', '更', '最', '還', '再', '可', '會', '要', '能']);
 
-/** 把一句例句拆成可重組的詞塊：先用標點斷開（標點併入前一片語），
- * 片語數不足 3 段時退回每兩字一組的簡化切法。 */
-function splitSentenceIntoChunks(sentence) {
-  const rawParts = sentence.split(/([，。！？、])/).filter((s) => s !== '');
-  const merged = [];
-  for (const part of rawParts) {
-    if (PUNCT_RE.test(part) && merged.length > 0) {
-      merged[merged.length - 1] += part;
+function segmentText(text) {
+  if (typeof Intl?.Segmenter !== 'function') return text ? [text] : [];
+
+  const segmenter = new Intl.Segmenter('zh-TW', { granularity: 'word' });
+  const tokens = [];
+  let buffer = '';
+
+  const flush = () => {
+    if (!buffer) return;
+    tokens.push(...[...segmenter.segment(buffer)].map(({ segment }) => segment).filter(Boolean));
+    buffer = '';
+  };
+
+  for (let index = 0; index < text.length;) {
+    const phrase = PROTECTED_PHRASES.find((candidate) => text.startsWith(candidate, index));
+    if (phrase) {
+      flush();
+      tokens.push(phrase);
+      index += phrase.length;
     } else {
-      merged.push(part);
+      buffer += text[index];
+      index += 1;
     }
   }
-  if (merged.length >= 3) return merged;
-  const chars = sentence.replace(new RegExp(PUNCT_RE, 'g'), '').split('');
-  const chunks = [];
-  for (let i = 0; i < chars.length; i += 2) chunks.push(chars.slice(i, i + 2).join(''));
-  return chunks.filter(Boolean);
+  flush();
+  return tokens;
+}
+
+function mergeSemanticTokens(tokens) {
+  const merged = [];
+  for (const token of tokens) {
+    if (PUNCT_RE.test(token)) {
+      if (merged.length > 0) merged[merged.length - 1] += token;
+      else merged.push(token);
+    } else if (SUFFIX_PARTICLES.has(token) && merged.length > 0) {
+      merged[merged.length - 1] += token;
+    } else if (PREFIX_WORDS.has(merged.at(-1)) && token.length <= 4) {
+      merged[merged.length - 1] += token;
+    } else {
+      merged.push(token);
+    }
+  }
+  return merged.filter(Boolean);
+}
+
+/**
+ * 把一句例句拆成可重組的語意詞塊。
+ *
+ * 先保護固定詞組，再使用瀏覽器中文斷詞，最後合併助詞、介詞與標點；
+ * 不再以「每兩個字」硬切，避免「一會兒」被拆開或留下孤單的「了／的」。
+ * 教材若有特殊句型，可在 sentence_patterns[].example_parts 提供人工確認的詞塊，
+ * buildRoundsFromExamples 會優先採用該資料。
+ */
+export function splitSentenceIntoChunks(sentence) {
+  return mergeSemanticTokens(segmentText(sentence));
 }
 
 const SENTENCE_PUNCT_RE = /[。！？，、]/;
@@ -59,15 +111,18 @@ function flattenExamples(lesson) {
   );
   const out = [];
   for (const p of patterns) {
-    for (const sentence of p.examples) out.push({ pattern: p, sentence });
+    for (const [index, sentence] of p.examples.entries()) {
+      out.push({ pattern: p, sentence, parts: p.example_parts?.[index] });
+    }
   }
   return out;
 }
 
 function buildRoundsFromExamples(examples, promptPrefix) {
   return examples
-    .map(({ pattern, sentence }) => {
-      const chunks = splitSentenceIntoChunks(sentence);
+    .map(({ pattern, sentence, parts }) => {
+      const manualParts = Array.isArray(parts) && parts.length >= 2 && parts.join('') === sentence ? parts : null;
+      const chunks = manualParts || splitSentenceIntoChunks(sentence);
       if (chunks.length < 2) return null;
       return {
         prompt: `${promptPrefix}（句型：${pattern.structure || pattern.head}）`,
