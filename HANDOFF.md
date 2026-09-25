@@ -14,13 +14,13 @@
 
 ---
 
-## 2026-09-25｜學校 Win｜Codex｜狀態：🚧 施工中
-- 範圍：`apps/mandarin/public/assets/fonts/`、`apps/mandarin/src/styles/tokens.css`、`apps/mandarin/src/styles/components.css`
-- 做了什麼：準備將使用者提供且附有 OFL／Apache 授權文件的芫荽注音體，套用至生字卡大字與語詞卡字詞
-- 驗證：施工中，待確認字型實際載入、版面與正式建置
-- 推送：施工紀錄待先行提交並推送
-- 待辦／給下一棒：嵌入字型與授權文件、調整兩類文字選擇器、瀏覽器確認與資產檢查
-- 注意：一般說明文字維持原字型；網站只散布原始字型與授權文件，不修改字型檔
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/public/fonts/`、`apps/mandarin/src/styles/tokens.css`、`apps/mandarin/src/styles/components.css`
+- 做了什麼：加入使用者提供且附有 OFL／Apache 授權文件的 `BpmfIansui-Regular.ttf`；生字卡大字與語詞卡的字詞套用芫荽注音體，翻成解釋時恢復一般介面字型；字型移至 `public/fonts`，不納入圖片資產的單課 4 MiB 計算
+- 驗證：`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；瀏覽器確認 `document.fonts.check('96px "Bpmf Iansui"')` 為 true，生字卡 computed font-family 正確，語詞卡顯示解釋時恢復一般字型，console 無錯誤；字型檔約 6.25 MiB，圖片資產總量約 9.89 MiB
+- 推送：完成 commit 後推送至 `origin/codex/mandarin-115g3a-lessons`；`origin/main` 尚未更新
+- 待辦／給下一棒：若未來要降低首屏下載量，可再做字型子集化或轉成 WOFF2，但須重新確認注音與教材生字覆蓋率
+- 注意：一般說明文字維持原字型；網站散布原始字型與授權文件，不修改字型檔
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG3H/lesson05.json`、`apps/mandarin/scripts/test-vocabulary-image-pairs.mjs`
