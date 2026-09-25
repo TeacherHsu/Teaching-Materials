@@ -1,0 +1,927 @@
+{
+  "lesson_id": "115AG3H02",
+  "volume": {
+    "code": "115AG3H",
+    "publisher": "翰林",
+    "grade": 3,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "TODO: 單元名稱待補"
+  },
+  "lesson_no": 2,
+  "title": "妙用便利貼",
+  "author": "",
+  "blurb": "學習用便利貼安排事情，養成做事有順序的好習慣。",
+  "characters": [
+    {
+      "char": "貼",
+      "zhuyin": "ㄊㄧㄝ",
+      "stroke_count": 12,
+      "radical": "貝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=貼",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字表，教師確認）",
+      "status": "ready"
+    },
+    {
+      "char": "使",
+      "zhuyin": "ㄕˇ",
+      "stroke_count": 8,
+      "radical": "人",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=使",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字表，教師確認）",
+      "status": "ready"
+    },
+    {
+      "char": "醒",
+      "zhuyin": "ㄒㄧㄥˇ",
+      "stroke_count": 16,
+      "radical": "酉",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=醒",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字表，教師確認）",
+      "status": "ready"
+    },
+    {
+      "char": "準",
+      "zhuyin": "ㄓㄨㄣˇ",
+      "stroke_count": 13,
+      "radical": "水",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=準",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字表，教師確認）",
+      "status": "ready"
+    },
+    {
+      "char": "睡",
+      "zhuyin": "ㄕㄨㄟˋ",
+      "stroke_count": 14,
+      "radical": "目",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=睡",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字表，教師確認）",
+      "status": "ready"
+    },
+    {
+      "char": "鐘",
+      "zhuyin": "ㄓㄨㄥ",
+      "stroke_count": 20,
+      "radical": "金",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=鐘",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字表，教師確認）",
+      "status": "ready"
+    },
+    {
+      "char": "效",
+      "zhuyin": "ㄒㄧㄠˋ",
+      "stroke_count": 10,
+      "radical": "攴",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=效",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字表，教師確認）",
+      "status": "ready"
+    },
+    {
+      "char": "序",
+      "zhuyin": "ㄒㄩˋ",
+      "stroke_count": 7,
+      "radical": "广",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=序",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字表，教師確認）",
+      "status": "ready"
+    },
+    {
+      "char": "而",
+      "zhuyin": "ㄦˊ",
+      "stroke_count": 6,
+      "radical": "而",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=而",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字表，教師確認）",
+      "status": "ready"
+    },
+    {
+      "char": "且",
+      "zhuyin": "ㄑㄧㄝˇ",
+      "stroke_count": 5,
+      "radical": "一",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=且",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字表，教師確認）",
+      "status": "ready"
+    },
+    {
+      "char": "排",
+      "zhuyin": "ㄆㄞˊ",
+      "stroke_count": 11,
+      "radical": "手",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=排",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字表，教師確認）",
+      "status": "ready"
+    },
+    {
+      "char": "冰",
+      "zhuyin": "ㄅㄧㄥ",
+      "stroke_count": 6,
+      "radical": "冫",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=冰",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字表，教師確認）",
+      "status": "ready"
+    },
+    {
+      "char": "箱",
+      "zhuyin": "ㄒㄧㄤ",
+      "stroke_count": 15,
+      "radical": "竹",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=箱",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字表，教師確認）",
+      "status": "ready"
+    },
+    {
+      "char": "原",
+      "zhuyin": "ㄩㄢˊ",
+      "stroke_count": 10,
+      "radical": "厂",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=原",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字表，教師確認）",
+      "status": "ready"
+    },
+    {
+      "char": "條",
+      "zhuyin": "ㄊㄧㄠˊ",
+      "stroke_count": 11,
+      "radical": "木",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=條",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字表，教師確認）",
+      "status": "ready"
+    },
+    {
+      "char": "顯",
+      "zhuyin": "ㄒㄧㄢˇ",
+      "stroke_count": 23,
+      "radical": "頁",
+      "type": "認讀字",
+      "level": "challenge",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=顯",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字表，教師確認）",
+      "status": "ready"
+    },
+    {
+      "char": "隔",
+      "zhuyin": "ㄍㄜˊ",
+      "stroke_count": 13,
+      "radical": "阜",
+      "type": "認讀字",
+      "level": "challenge",
+      "examples": null,
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=隔",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字表，教師確認）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG3H02:7fd92288",
+      "word": "便利貼",
+      "zhuyin": null,
+      "meaning": "一面帶有黏性、可反覆黏貼的小紙條。",
+      "example_sentence": "小真把明天要做的事情寫在便利貼上。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教材內容修正版：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H02:0e2d3a3c",
+      "word": "使用",
+      "zhuyin": null,
+      "meaning": "運用物品或方法來做事。",
+      "example_sentence": "我們可以使用便利貼提醒自己。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教材內容修正版：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H02:34e3be71",
+      "word": "明顯",
+      "zhuyin": null,
+      "meaning": "很容易看出或感覺到。",
+      "example_sentence": "她把便利貼貼在明顯的地方。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教材內容修正版：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H02:81944e48",
+      "word": "提醒",
+      "zhuyin": null,
+      "meaning": "讓人再次注意或想起。",
+      "example_sentence": "鬧鐘會提醒我準時起床。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教材內容修正版：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H02:c0a84151",
+      "word": "隔天",
+      "zhuyin": null,
+      "meaning": "過了一天後的那一天。",
+      "example_sentence": "隔天早上，小真照著便利貼準備書包。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教材內容修正版：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H02:06f64ac6",
+      "word": "準時",
+      "zhuyin": null,
+      "meaning": "在規定的時間到達或完成。",
+      "example_sentence": "我們約好八點準時集合。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教材內容修正版：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H02:da597cc0",
+      "word": "睡覺",
+      "zhuyin": null,
+      "meaning": "進入睡眠休息。",
+      "example_sentence": "睡覺前，我會檢查明天要帶的東西。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教材內容修正版：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H02:37f94521",
+      "word": "鬧鐘",
+      "zhuyin": null,
+      "meaning": "能在設定時間發出聲音的時鐘。",
+      "example_sentence": "我把鬧鐘設定在早上六點半。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教材內容修正版：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H02:ad385d38",
+      "word": "有效",
+      "zhuyin": null,
+      "meaning": "能產生預期的效果。",
+      "example_sentence": "依照順序做事，是有效的方法。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教材內容修正版：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H02:94b2754e",
+      "word": "次序",
+      "zhuyin": null,
+      "meaning": "事情排列的先後順序。",
+      "example_sentence": "小真按照次序完成每一件事情。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教材內容修正版：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG3H02:316ccf03",
+      "idiom": "循序漸進",
+      "definition": "依照一定的次序和步驟，逐步前進。",
+      "related_char": "序",
+      "image": "idioms/循序漸進.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H02:fa0b7ba7",
+      "idiom": "輕而易舉",
+      "definition": "形容事情很容易完成，毫不費力。",
+      "related_char": "而",
+      "image": "idioms/輕而易舉.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H02:4fcf2630",
+      "idiom": "得過且過",
+      "definition": "只求眼前過得去，不作長遠打算。",
+      "related_char": "且",
+      "image": "idioms/得過且過.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H02:d0ffff71",
+      "idiom": "排山倒海",
+      "definition": "形容力量強大，聲勢非常浩大。",
+      "related_char": "排",
+      "image": "idioms/排山倒海.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H02:78678b44",
+      "idiom": "冰天雪地",
+      "definition": "形容天氣嚴寒，到處都是冰雪。",
+      "related_char": "冰",
+      "image": "idioms/冰天雪地.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H02:75317e5e",
+      "idiom": "原封不動",
+      "definition": "保持原來的樣子，一點也沒有改動。",
+      "related_char": "原",
+      "image": "idioms/原封不動.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG3H02:316ccf03",
+      "idiom_id": "idiom:115AG3H02:316ccf03",
+      "rewritten": "按照老師安排的步驟循序漸進，功課就不會太難。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H02:fa0b7ba7",
+      "idiom_id": "idiom:115AG3H02:fa0b7ba7",
+      "rewritten": "這個小遊戲規則簡單，大家輕而易舉就學會了。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H02:4fcf2630",
+      "idiom_id": "idiom:115AG3H02:4fcf2630",
+      "rewritten": "做事情不能得過且過，要把該完成的事做好。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H02:d0ffff71",
+      "idiom_id": "idiom:115AG3H02:d0ffff71",
+      "rewritten": "大雨過後，排山倒海的水勢讓道路積水。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H02:78678b44",
+      "idiom_id": "idiom:115AG3H02:78678b44",
+      "rewritten": "冬天北方常出現冰天雪地的景象。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H02:75317e5e",
+      "idiom_id": "idiom:115AG3H02:75317e5e",
+      "rewritten": "我把借來的書原封不動地交還給圖書館。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教師自撰生活例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG3H02:6d3aae08",
+      "category": "句型練習",
+      "head": "變得有……",
+      "structure": "（事情）＋變得有＋（不同的改變）",
+      "description": "用「變得有……」說明事情產生新的改變。",
+      "guide": "想一想生活中哪些事情經過練習或整理後，變得更有條理。",
+      "examples": [
+        "穿著變得有品味。",
+        "走路變得有自信。",
+        "教室變得有秩序。"
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（短語句型造句資料）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H02:bbcd1707",
+      "category": "句型練習",
+      "head": "在……的……",
+      "structure": "動詞＋在＋形容詞＋的＋地方",
+      "description": "用「在……的……」說明動作發生的位置。",
+      "guide": "想一想人或物品可以放在哪一個地方。",
+      "examples": [
+        "種在肥沃的土地上。",
+        "躺在舒服的床上。",
+        "坐在安靜的角落。"
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（短語句型造句資料）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H02:03bbd753",
+      "category": "句型練習",
+      "head": "為了……",
+      "structure": "為了（目的），（人物）＋（行動）",
+      "description": "先說明目的，再說明為了目的採取的行動。",
+      "guide": "先想清楚想完成什麼，再說明要怎麼做。",
+      "examples": [
+        "為了準時到校，小明提早出門。",
+        "為了保持健康，爸爸每天運動。",
+        "為了完成作業，姐姐專心寫字。"
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（短語句型造句資料）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H02:1cc71383",
+      "category": "句型練習",
+      "head": "而且……",
+      "structure": "（人物／事物）＋（第一個特點），而且＋（更進一步的特點）",
+      "description": "用「而且」補充更進一步的優點或特色。",
+      "guide": "先說一個特點，再用「而且」補充另一個特點。",
+      "examples": [
+        "這本故事書內容有趣，而且插圖很精美。",
+        "這件雨衣輕巧防水，而且穿起來很舒服。",
+        "這個書包容量很大，而且背起來不費力。"
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（短語句型造句資料）"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG3H02:633060cc",
+      "para_no": 1,
+      "summary": "小真常常忘東忘西，也記不住還要完成的事情。",
+      "structure_role": "起因",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（段落大意資料，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H02:c5f23b62",
+      "para_no": 2,
+      "summary": "爸爸建議她把要做的事情寫在便利貼上，先排好順序。",
+      "structure_role": "方法",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（段落大意資料，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H02:0fa500cd",
+      "para_no": 3,
+      "summary": "她把便利貼貼在明顯的地方，提醒自己下一件要做的事。",
+      "structure_role": "方法",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（段落大意資料，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H02:45646966",
+      "para_no": 4,
+      "summary": "每完成一件事就打勾，便利貼讓她不再手忙腳亂。",
+      "structure_role": "方法",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（段落大意資料，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H02:6081273b",
+      "para_no": 5,
+      "summary": "小真按計畫完成事情，全家終於準時出門。",
+      "structure_role": "結果",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（段落大意資料，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H02:5536e42c",
+      "para_no": 6,
+      "summary": "全文說明便利貼能幫助人規畫事情、依序完成。",
+      "structure_role": "總結",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（段落大意資料，重述版）"
+    }
+  ],
+  "main_idea": {
+    "id": "main_idea:115AG3H02:a60e2cec",
+    "gist": "課文說明便利貼能幫助人記住事情、安排次序，讓生活變得更有條理。",
+    "theme": "學會先規畫，再依照順序完成每天要做的事情。",
+    "status": "approved",
+    "source": "115G3A／翰林三上第2課官方教材與教師確認資料（主旨重述版）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG3H02:c3d4732c",
+      "stem": "小真的困擾是什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "她常忘東忘西，也記不住要完成的事情。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（閱讀理解提問，重述版）"
+    },
+    {
+      "id": "reading_question:115AG3H02:74ca84a5",
+      "stem": "爸爸建議小真用什麼方法提醒自己？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "把要做的事情寫在便利貼上，並安排先後順序。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（閱讀理解提問，重述版）"
+    },
+    {
+      "id": "reading_question:115AG3H02:ba16cf35",
+      "stem": "小真把便利貼貼在哪裡？為什麼？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "貼在明顯的地方，方便自己看見並記得下一件事。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（閱讀理解提問，重述版）"
+    },
+    {
+      "id": "reading_question:115AG3H02:a7ca6f11",
+      "stem": "使用便利貼後，小真有什麼改變？",
+      "strategy_tag": "整合訊息",
+      "answer_hint": "她能依照次序完成事情，做事更有效率，也不再手忙腳亂。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（閱讀理解提問，重述版）"
+    }
+  ],
+  "polysemy": [],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [],
+  "listening": [
+    {
+      "id": "listening:115AG3H02:0001",
+      "stem": "小真把明天要做的事情寫在便利貼上，貼在書桌前。",
+      "question": "小真用便利貼做什麼？",
+      "options": [
+        "提醒自己要做的事",
+        "裝飾書桌",
+        "記錄天氣"
+      ],
+      "answer": "提醒自己要做的事",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教師自撰聆聽題）"
+    },
+    {
+      "id": "listening:115AG3H02:0002",
+      "stem": "爸爸提醒小真先安排事情的次序，再一件一件完成。",
+      "question": "爸爸希望小真怎麼做事？",
+      "options": [
+        "依照次序完成",
+        "想到什麼就做什麼",
+        "把事情全部留到晚上"
+      ],
+      "answer": "依照次序完成",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教師自撰聆聽題）"
+    },
+    {
+      "id": "listening:115AG3H02:0003",
+      "stem": "小真完成一件事情，就在便利貼上打勾。",
+      "question": "小真完成事情後會做什麼？",
+      "options": [
+        "打勾",
+        "撕掉書本",
+        "把鬧鐘關掉"
+      ],
+      "answer": "打勾",
+      "status": "approved",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教師自撰聆聽題）"
+    }
+  ],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "待",
+        "蝸",
+        "牛",
+        "牠",
+        "吞",
+        "寸",
+        "碌",
+        "奔",
+        "彈",
+        "簧",
+        "它",
+        "短",
+        "悲",
+        "流",
+        "永"
+      ],
+      "2": [
+        "貼",
+        "使",
+        "醒",
+        "準",
+        "睡",
+        "鐘",
+        "效",
+        "序",
+        "而",
+        "且",
+        "排",
+        "冰",
+        "箱",
+        "原",
+        "條",
+        "顯",
+        "隔"
+      ]
+    }
+  },
+  "extensions": [],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「貼」的注音是？",
+      "options": [
+        "ㄊㄧㄝ",
+        "ㄓㄨㄥ",
+        "ㄆㄞˊ"
+      ],
+      "answer": "ㄊㄧㄝ",
+      "explanation": "「貼」讀作 ㄊㄧㄝ。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（注音取自教育百科）",
+      "hints": [
+        "先看聲母，再想想韻母，不要急著選。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「使」的注音是？",
+      "options": [
+        "ㄕˇ",
+        "ㄒㄧㄠˋ",
+        "ㄅㄧㄥ"
+      ],
+      "answer": "ㄕˇ",
+      "explanation": "「使」讀作 ㄕˇ。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（注音取自教育百科）",
+      "hints": [
+        "先看聲母，再想想韻母，不要急著選。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「醒」的注音是？",
+      "options": [
+        "ㄒㄧㄥˇ",
+        "ㄒㄩˋ",
+        "ㄒㄧㄤ"
+      ],
+      "answer": "ㄒㄧㄥˇ",
+      "explanation": "「醒」讀作 ㄒㄧㄥˇ。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（注音取自教育百科）",
+      "hints": [
+        "先看聲母，再想想韻母，不要急著選。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「準」的注音是？",
+      "options": [
+        "ㄓㄨㄣˇ",
+        "ㄦˊ",
+        "ㄩㄢˊ"
+      ],
+      "answer": "ㄓㄨㄣˇ",
+      "explanation": "「準」讀作 ㄓㄨㄣˇ。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（注音取自教育百科）",
+      "hints": [
+        "先看聲母，再想想韻母，不要急著選。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「睡」的注音是？",
+      "options": [
+        "ㄕㄨㄟˋ",
+        "ㄑㄧㄝˇ",
+        "ㄊㄧㄠˊ"
+      ],
+      "answer": "ㄕㄨㄟˋ",
+      "explanation": "「睡」讀作 ㄕㄨㄟˋ。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（注音取自教育百科）",
+      "hints": [
+        "先看聲母，再想想韻母，不要急著選。"
+      ]
+    },
+    {
+      "id": "m01",
+      "type": "matching",
+      "stem": "字 ↔ 部首配對",
+      "pairs": [
+        {
+          "left": "貼",
+          "right": "貝"
+        },
+        {
+          "left": "使",
+          "right": "人"
+        },
+        {
+          "left": "醒",
+          "right": "酉"
+        },
+        {
+          "left": "準",
+          "right": "水"
+        },
+        {
+          "left": "睡",
+          "right": "目"
+        },
+        {
+          "left": "鐘",
+          "right": "金"
+        }
+      ],
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（部首取自教育百科）"
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "note": "教材待補：應用任務設計中"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "missing",
+      "note": "教材待補：缺少可核對的一字多義資料"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "note": "教材待補：缺少可核對的一字多音資料"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "missing",
+      "note": "教材待補：形似字資料需再逐組核對"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "available",
+      "activity": "listening-quiz"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "note": "教材待補：缺少可核對的本課修辭資料"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  }
+}
