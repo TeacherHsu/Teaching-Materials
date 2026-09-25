@@ -14,13 +14,13 @@
 
 ---
 
-## 2026-09-25｜學校 Win｜Codex｜狀態：🚧 施工中
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG3H/lesson06.json`、`apps/mandarin/public/assets/115AG3H/lesson06/`、`apps/mandarin/public/data/course-index.json`
-- 做了什麼：準備依官方教材生成翰林三上第 6 課「小鉛筆大學問」教材網站資料與壓縮圖片資產
-- 驗證：施工中，待完成資料驗證、資產容量檢查、全套回歸測試、建置與瀏覽器檢查
-- 推送：施工紀錄待先行提交並推送
-- 待辦／給下一棒：完成第 6 課各模組、語詞／成語圖片與筆順連結，確認官方來源欄位不把教材全文帶入公開 repo
-- 注意：沿用既有第五課規格；不直接改寫共用元件，不把官方原始教材或第三方試算表放入公開 repo
+- 做了什麼：依官方教材生成翰林三上第 6 課「小鉛筆大學問」完整教材資料，加入 14 個生字、12 個語詞、6 個成語、句型、課文地圖、閱讀理解、聆聽、修辭、形似字與一字多音；補齊語詞／成語 WebP 圖片及雄筆順連結。官方形似字圖卡中的「削」已正確歸入一字多音，不重複放入形似字題。
+- 驗證：`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；第六課 18 張圖片合計約 1.03 MiB，單張均低於 300 KB；瀏覽器已檢查首頁、生字、語詞、成語、句型、形似字與一字多音頁面。
+- 推送：尚未推送；本次結果已建立本地提交
+- 待辦／給下一棒：若要公開到 GitHub，推送本次提交；後續課次沿用同一資料結構、WebP 壓縮與語詞圖卡規格。
+- 注意：沿用既有第五課規格；不直接改寫共用元件，不把官方原始教材或第三方試算表放入公開 repo；本課未加入官方課文全文。
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/components/VocabularyCard.js`、`apps/mandarin/scripts/test-speak-button-coverage.mjs`

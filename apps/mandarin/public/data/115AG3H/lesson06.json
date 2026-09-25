@@ -1,0 +1,1533 @@
+{
+  "lesson_id": "115AG3H06",
+  "volume": {
+    "code": "115AG3H",
+    "publisher": "翰林",
+    "grade": 3,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "TODO: 單元名稱待補"
+  },
+  "lesson_no": 6,
+  "title": "小鉛筆大學問",
+  "author": "",
+  "blurb": "從鉛筆的原料、製作過程和種類，認識日常用品裡藏著的科學與巧思。",
+  "characters": [
+    {
+      "char": "墨",
+      "zhuyin": "ㄇㄛˋ",
+      "stroke_count": 15,
+      "radical": "黑",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "墨水",
+        "墨汁",
+        "墨鏡"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第6課，2026-07-23；依常用度取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A2%A8",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "製",
+      "zhuyin": "ㄓˋ",
+      "stroke_count": 14,
+      "radical": "衣",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "製作",
+        "製造",
+        "製成"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第6課，2026-07-23；依常用度取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%A3%BD",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "部",
+      "zhuyin": "ㄅㄨˋ",
+      "stroke_count": 11,
+      "radical": "邑",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "部分",
+        "部門",
+        "部位"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第6課，2026-07-23；依常用度取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%83%A8",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "芯",
+      "zhuyin": "ㄒㄧㄣ",
+      "stroke_count": 8,
+      "radical": "艸",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "筆芯",
+        "燈芯",
+        "燭芯"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第6課，2026-07-23；依常用度取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%8A%AF",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "斷",
+      "zhuyin": "ㄉㄨㄢˋ",
+      "stroke_count": 18,
+      "radical": "斤",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "斷裂",
+        "斷開",
+        "中斷"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第6課，2026-07-23；依常用度取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%96%B7",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "機",
+      "zhuyin": "ㄐㄧ",
+      "stroke_count": 16,
+      "radical": "木",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "機器",
+        "機會",
+        "機車"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第6課，2026-07-23；依常用度取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%A9%9F",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "器",
+      "zhuyin": "ㄑㄧˋ",
+      "stroke_count": 16,
+      "radical": "口",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "器具",
+        "機器",
+        "容器"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第6課，2026-07-23；依常用度取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%99%A8",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "凹",
+      "zhuyin": "ㄠ",
+      "stroke_count": 5,
+      "radical": "凵",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "凹槽",
+        "凹陷",
+        "凹凸"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第6課，2026-07-23；依常用度取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%87%B9",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "槽",
+      "zhuyin": "ㄘㄠˊ",
+      "stroke_count": 15,
+      "radical": "木",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "水槽",
+        "凹槽",
+        "溝槽"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第6課，2026-07-23；依常用度取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%A7%BD",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "入",
+      "zhuyin": "ㄖㄨˋ",
+      "stroke_count": 2,
+      "radical": "入",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "放入",
+        "入口",
+        "入學"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第6課，2026-07-23；依常用度取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%85%A5",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "另",
+      "zhuyin": "ㄌㄧㄥˋ",
+      "stroke_count": 5,
+      "radical": "口",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "另外",
+        "另類",
+        "另眼"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第6課，2026-07-23；依常用度取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8F%A6",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "治",
+      "zhuyin": "ㄓˋ",
+      "stroke_count": 8,
+      "radical": "水",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "治療",
+        "治病",
+        "治理"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第6課，2026-07-23；依常用度取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B2%BB",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "桿",
+      "zhuyin": "ㄍㄢˇ",
+      "stroke_count": 11,
+      "radical": "木",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "筆桿",
+        "桿子",
+        "旗桿"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第6課，2026-07-23；依常用度取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%A1%BF",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "削",
+      "zhuyin": "ㄒㄧㄠ",
+      "stroke_count": 9,
+      "radical": "刀",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "削鉛筆",
+        "削皮",
+        "削尖"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（翰林／115上／三年級／第6課，2026-07-23；依常用度取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%89%8A",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（生字表與教育百科字庫）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG3H06:01",
+      "word": "石墨",
+      "zhuyin": "ㄕˊ ㄇㄛˋ",
+      "meaning": "一種由碳組成的礦物。色暗黑，半金屬光澤，易汙手，具滑感。多用來製造電刷、滑潤劑、鉛筆芯和塗料等。",
+      "example_sentence": "鉛筆芯裡的石墨能在紙上留下深色的痕跡。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson06/vocabulary/l06-01.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H06:02",
+      "word": "製成",
+      "zhuyin": "ㄓˋ ㄔㄥˊ",
+      "meaning": "製作成成品。",
+      "example_sentence": "木板和筆芯組合後，就製成一枝完整的鉛筆。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson06/vocabulary/l06-02.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H06:03",
+      "word": "部分",
+      "zhuyin": "ㄅㄨˋ ㄈㄣˋ",
+      "meaning": "全體中的局部、某些個體。",
+      "example_sentence": "這盒彩色筆有一部分已經用完了。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson06/vocabulary/l06-03.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H06:04",
+      "word": "筆芯",
+      "zhuyin": "ㄅㄧˇ ㄒㄧㄣ",
+      "meaning": "位於筆中，可書寫的東西。",
+      "example_sentence": "筆芯太短時，寫字就不方便了。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson06/vocabulary/l06-04.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H06:05",
+      "word": "斷裂",
+      "zhuyin": "ㄉㄨㄢˋ ㄌㄧㄝˋ",
+      "meaning": "斷掉裂開。",
+      "example_sentence": "老舊的繩子因為拉扯而斷裂了。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson06/vocabulary/l06-05.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H06:06",
+      "word": "機器",
+      "zhuyin": "ㄐㄧ ㄑㄧˋ",
+      "meaning": "機械器具。由各種零件組成，可供運轉操控以節省人力，並使工作更為便利、生產量提高的裝置。",
+      "example_sentence": "工廠裡的機器正在把木板切成小段。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson06/vocabulary/l06-06.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H06:07",
+      "word": "凹槽",
+      "zhuyin": "ㄠ ㄘㄠˊ",
+      "meaning": "物體表面下凹的槽。",
+      "example_sentence": "木板上的凹槽剛好可以放入細細的筆芯。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson06/vocabulary/l06-07.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H06:08",
+      "word": "放入",
+      "zhuyin": "ㄈㄤˋ ㄖㄨˋ",
+      "meaning": "放進。",
+      "example_sentence": "請把用完的鉛筆放入筆盒裡。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson06/vocabulary/l06-08.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H06:09",
+      "word": "另",
+      "zhuyin": "ㄌㄧㄥˋ",
+      "meaning": "別的。",
+      "example_sentence": "如果這支筆不好寫，可以另拿一支試試看。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson06/vocabulary/l06-09.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H06:10",
+      "word": "三明治",
+      "zhuyin": "ㄙㄢ ㄇㄧㄥˊ ㄓˋ",
+      "meaning": "一種西方簡餐。即在數片土司麵包間夾以肉類、蔬菜、沙拉等配料而成。",
+      "example_sentence": "我把生菜和起司夾進麵包，做成三明治。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson06/vocabulary/l06-10.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H06:11",
+      "word": "筆桿",
+      "zhuyin": "ㄅㄧˇ ㄍㄢˇ",
+      "meaning": "筆的柄桿。",
+      "example_sentence": "這枝鉛筆的筆桿上畫著可愛的圖案。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson06/vocabulary/l06-11.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H06:12",
+      "word": "削鉛筆機",
+      "zhuyin": "ㄒㄧㄠ ㄑㄧㄢˊ ㄅㄧˇ ㄐㄧ",
+      "meaning": "一種用來把鉛筆削尖的機器。",
+      "example_sentence": "鉛筆變鈍時，可以用削鉛筆機把筆尖削尖。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson06/vocabulary/l06-12.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG3H06:墨守成規",
+      "idiom": "墨守成規",
+      "definition": "指固守舊規，不肯改變，形容行事保守。",
+      "related_char": "墨",
+      "image": "idioms/01_墨守成規.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H06:按部就班",
+      "idiom": "按部就班",
+      "definition": "指做事依照一定的層次、條理。",
+      "related_char": "部",
+      "image": "idioms/02_按部就班.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H06:隨機應變",
+      "idiom": "隨機應變",
+      "definition": "隨著時機和情況的變化而靈活應付。",
+      "related_char": "機",
+      "image": "idioms/03_隨機應變.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H06:大器晚成",
+      "idiom": "大器晚成",
+      "definition": "本指大的器具非一朝一夕可完成，後引申以指傑出人才的造就晚於常人。",
+      "related_char": "器",
+      "image": "idioms/04_大器晚成.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H06:出神入化",
+      "idiom": "出神入化",
+      "definition": "形容技藝達到非常高超、神妙的境界。",
+      "related_char": "入",
+      "image": "idioms/05_出神入化.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG3H06:另眼相看",
+      "idiom": "另眼相看",
+      "definition": "以特別的眼光或態度相待，以示重視或歧視。",
+      "related_char": "另",
+      "image": "idioms/06_另眼相看.webp",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（07生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG3H06:1",
+      "idiom_id": "idiom:115AG3H06:墨守成規",
+      "rewritten": "遇到新的問題時，不能墨守成規，要勇敢嘗試不同方法。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H06:2",
+      "idiom_id": "idiom:115AG3H06:按部就班",
+      "rewritten": "做實驗時按部就班，才能清楚看見每一步的結果。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H06:3",
+      "idiom_id": "idiom:115AG3H06:隨機應變",
+      "rewritten": "活動臨時改了場地，我們只好隨機應變。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H06:4",
+      "idiom_id": "idiom:115AG3H06:大器晚成",
+      "rewritten": "只要每天練習，普通人也可能大器晚成。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H06:5",
+      "idiom_id": "idiom:115AG3H06:出神入化",
+      "rewritten": "魔術師的表演出神入化，大家看得目不轉睛。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H06:6",
+      "idiom_id": "idiom:115AG3H06:另眼相看",
+      "rewritten": "這位同學進步很多，老師開始對他另眼相看。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（教師自撰生活例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG3H06:01",
+      "category": "短語練習",
+      "head": "閃亮亮的鉛筆",
+      "structure": "疊字形容詞（怎麼樣）＋的＋名詞（東西）。",
+      "description": "用疊字形容詞描寫事物的樣子。",
+      "guide": "想一想還有哪些事物看起來很有光彩。",
+      "examples": [
+        "閃亮亮的鉛筆",
+        "圓滾滾的石頭"
+      ],
+      "example_parts": [
+        [
+          "閃亮亮",
+          "的",
+          "鉛筆"
+        ],
+        [
+          "圓滾滾",
+          "的",
+          "石頭"
+        ]
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（08各課短語句型練習）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H06:02",
+      "category": "詞語運用",
+      "head": "斷裂",
+      "structure": "（物品）＋因為（原因）而斷裂，（造成什麼結果）。",
+      "description": "說明物品斷掉裂開的原因和結果。",
+      "guide": "想一想什麼東西因為什麼原因斷裂。",
+      "examples": [
+        "老舊的繩子因為拉扯而斷裂，東西掉了下來。",
+        "木板突然斷裂，工人立刻換上新的。"
+      ],
+      "example_parts": [
+        [
+          "老舊的繩子",
+          "因為拉扯而斷裂",
+          "東西掉了下來。"
+        ],
+        [
+          "木板突然斷裂",
+          "工人立刻換上新的。"
+        ]
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（08各課短語句型練習）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H06:03",
+      "category": "詞語運用",
+      "head": "混合",
+      "structure": "把（兩種以上的材料）混合，做成（新的東西）。",
+      "description": "把不同的材料摻在一起，調和成新的東西。",
+      "guide": "想一想哪些材料混合後會變成新的食物或顏色。",
+      "examples": [
+        "我把紅茶和牛奶混合，做成香甜的飲料。",
+        "不同顏色混合後，變成新的色彩。"
+      ],
+      "example_parts": [
+        [
+          "我把紅茶和牛奶混合",
+          "做成",
+          "香甜的飲料。"
+        ],
+        [
+          "不同顏色混合後",
+          "變成",
+          "新的色彩。"
+        ]
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（08各課短語句型練習）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H06:04",
+      "category": "句型練習",
+      "head": "如果……不但……還……",
+      "structure": "如果＋（誰／事物）＋（做什麼事），不但＋（結果一），還＋（結果二）。",
+      "description": "先提出條件，再說明兩個結果。",
+      "guide": "想一想沒有木板保護筆芯，會發生哪兩件事。",
+      "examples": [
+        "如果鉛筆沒有木板保護，不但容易斷裂，手還會變黑。",
+        "如果沒有先整理桌面，不但找不到文具，還會浪費時間。"
+      ],
+      "example_parts": [
+        [
+          "如果鉛筆沒有木板保護",
+          "不但容易斷裂",
+          "手還會變黑。"
+        ],
+        [
+          "如果沒有先整理桌面",
+          "不但找不到文具",
+          "還會浪費時間。"
+        ]
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（08各課短語句型練習）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H06:05",
+      "category": "句型練習",
+      "head": "只要……就……",
+      "structure": "（誰）只要（怎麼樣），就（有什麼樣的結果發生）。",
+      "description": "表示只要有一個條件，就會出現某個結果。",
+      "guide": "想一想按壓自動鉛筆後會發生什麼事。",
+      "examples": [
+        "只要輕輕按一下自動鉛筆，新的筆芯就會跑出來。",
+        "你只要準備好材料，就能開始做小實驗。"
+      ],
+      "example_parts": [
+        [
+          "只要輕輕按一下自動鉛筆",
+          "新的筆芯就會跑出來。"
+        ],
+        [
+          "你只要準備好材料",
+          "就能開始做小實驗。"
+        ]
+      ],
+      "analysis": "",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（08各課短語句型練習）"
+    }
+  ],
+  "rhetoric": [
+    {
+      "id": "rhetoric:115AG3H06:01",
+      "figure": "映襯",
+      "note": "把兩種相反或不同的情況放在一起，讓其中一方的特色更明顯。",
+      "example": "小鉛筆雖然不大，卻藏著大大的學問。",
+      "child_note": "映襯＝把不同的情況放在一起比較。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（10修辭輕鬆學）"
+    },
+    {
+      "id": "rhetoric:115AG3H06:02",
+      "figure": "設問",
+      "note": "先提出問題，再自己回答或引導讀者思考。",
+      "example": "鉛筆是用鉛做的嗎？不是，主要材料是石墨、黏土和木頭。",
+      "child_note": "設問＝先問一問，再想想答案。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（10修辭輕鬆學）"
+    },
+    {
+      "id": "rhetoric:115AG3H06:03",
+      "figure": "頂真",
+      "note": "前一句結尾的詞語，成為後一句開頭的詞語。",
+      "example": "鉛筆最重要的部分是筆芯，筆芯的原料有石墨和黏土。",
+      "child_note": "頂真＝前一句最後的詞，接到後一句開頭。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（10修辭輕鬆學）"
+    },
+    {
+      "id": "rhetoric:115AG3H06:04",
+      "figure": "類疊",
+      "note": "同一個詞語或語句接連使用，讓語氣更有節奏。",
+      "example": "我們用鉛筆寫下生活中的點點滴滴。",
+      "child_note": "類疊＝重複使用詞語，讓語氣更有力量。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（10修辭輕鬆學）"
+    }
+  ],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG3H06:1",
+      "para_no": 1,
+      "summary": "課本和作業處處可見鉛筆留下的字，課文從日常用品提出問題，帶領讀者認識它的原料、種類與製作過程。",
+      "structure_role": "引起問題",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H06:2",
+      "para_no": 2,
+      "summary": "鉛筆不是用鉛做成，主要材料包括石墨、黏土和木頭；其中最重要的部分是能在紙上留下痕跡的筆芯。",
+      "structure_role": "主要原料",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H06:3",
+      "para_no": 3,
+      "summary": "原料混合加工後形成光滑油亮的芯條，但直接拿來書寫容易斷裂，也會把手弄黑，因此需要木板提供保護。",
+      "structure_role": "筆芯問題",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H06:4",
+      "para_no": 4,
+      "summary": "機器先在木板刻出一道道凹槽，放入細芯後再黏上另一片木板，做成像三明治般的長條材料。",
+      "structure_role": "製作筆桿",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H06:5",
+      "para_no": 5,
+      "summary": "接著材料被切成一枝枝筆桿並上色；有些自動鉛筆不用削，只要按壓就能讓新的芯露出來繼續書寫。",
+      "structure_role": "自動鉛筆",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+    },
+    {
+      "id": "paragraph_summary:115AG3H06:6",
+      "para_no": 6,
+      "summary": "色鉛筆不含黑色原料，而是加入顏料畫出各種色彩；了解這些學問後，作者提醒大家愛惜使用每一枝鉛筆。",
+      "structure_role": "色鉛筆與提醒",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+    }
+  ],
+  "main_idea": {
+    "id": "main_idea:115AG3H06:01",
+    "gist": "課文說明鉛筆的原料、製作過程和種類，讓讀者發現小鉛筆裡藏著許多有趣的學問。",
+    "theme": "觀察日常用品，了解其中的知識與製作巧思。",
+    "status": "approved",
+    "source": "115G3A／翰林三上第6課官方教材與教師確認資料（主旨重述版）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG3H06:1",
+      "stem": "鉛筆是由哪些原料製成的？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "主要材料是石墨、黏土和木頭。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+    },
+    {
+      "id": "reading_question:115AG3H06:2",
+      "stem": "直接拿筆芯書寫會有什麼問題？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "筆芯容易斷裂，手也會變黑。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+    },
+    {
+      "id": "reading_question:115AG3H06:3",
+      "stem": "放入筆芯後，接著要做什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "黏合另一片木板，保護筆芯。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+    },
+    {
+      "id": "reading_question:115AG3H06:4",
+      "stem": "自動鉛筆如何讓筆芯露出來？",
+      "strategy_tag": "找出方法",
+      "answer_hint": "輕輕按壓，就能讓新的筆芯露出來。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+    },
+    {
+      "id": "reading_question:115AG3H06:5",
+      "stem": "色鉛筆和一般黑色鉛筆有什麼不同？",
+      "strategy_tag": "比較訊息",
+      "answer_hint": "色鉛筆不含石墨，而是加入顏料畫出不同色彩。",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG3H06:1",
+      "char": "部",
+      "sentence": "這本書分成三個《部》分。",
+      "definition": "全體中的局部。",
+      "options": [
+        "全體中的局部。",
+        "機關中分工的單位。"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：字義辨正與教師補充）"
+    },
+    {
+      "id": "polysemy:115AG3H06:2",
+      "char": "部",
+      "sentence": "學校的總務《部》門負責整理校園。",
+      "definition": "機關中分工的單位。",
+      "options": [
+        "機關中分工的單位。",
+        "所管轄的下屬。"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：字義辨正與教師補充）"
+    },
+    {
+      "id": "polysemy:115AG3H06:3",
+      "char": "入",
+      "sentence": "請把鉛筆《入》盒再離開座位。",
+      "definition": "放進。",
+      "options": [
+        "放進。",
+        "參加並被選取。"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：字義辨正與教師補充）"
+    },
+    {
+      "id": "polysemy:115AG3H06:4",
+      "char": "入",
+      "sentence": "她通過甄選，順利《入》選校隊。",
+      "definition": "參加並被選取。",
+      "options": [
+        "參加並被選取。",
+        "進入某個地方。"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：字義辨正與教師補充）"
+    },
+    {
+      "id": "polysemy:115AG3H06:5",
+      "char": "治",
+      "sentence": "醫生正在替病人《治》療。",
+      "definition": "醫治疾病。",
+      "options": [
+        "醫治疾病。",
+        "管理、整頓。"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：字義辨正與教師補充）"
+    },
+    {
+      "id": "polysemy:115AG3H06:6",
+      "char": "治",
+      "sentence": "市長努力《治》理城市，讓生活更方便。",
+      "definition": "管理、整頓。",
+      "options": [
+        "管理、整頓。",
+        "醫治疾病。"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：字義辨正與教師補充）"
+    }
+  ],
+  "polysemy_senses": [],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG3H06:削",
+      "char": "削",
+      "readings": [
+        {
+          "zhuyin": "ㄒㄧㄠ",
+          "dabutie_zhuyin": "ㄒㄧㄠ",
+          "senses": [
+            {
+              "definition": "用刀去掉物體表面的一部分。",
+              "examples": [
+                "削鉛筆",
+                "削皮"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄒㄩㄝˋ",
+          "dabutie_zhuyin": "ㄒㄩㄝˋ",
+          "senses": [
+            {
+              "definition": "剝奪、減少。",
+              "examples": [
+                "剝削",
+                "削弱"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：認識多音字）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG3H06:1",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "黑",
+          "example": "黑暗、黑色"
+        },
+        {
+          "char": "墨",
+          "example": "墨汁、墨水"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H06:2",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "制",
+          "example": "制服、控制"
+        },
+        {
+          "char": "製",
+          "example": "製造、製作"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H06:3",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "分",
+          "example": "分數、分開"
+        },
+        {
+          "char": "部",
+          "example": "部分、部門"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H06:4",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "心",
+          "example": "用心、心意"
+        },
+        {
+          "char": "芯",
+          "example": "燈芯、筆芯"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H06:5",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "繼",
+          "example": "繼續、繼承"
+        },
+        {
+          "char": "斷",
+          "example": "割斷、斷裂"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H06:6",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "幾",
+          "example": "幾乎、幾近"
+        },
+        {
+          "char": "機",
+          "example": "機械、機器"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H06:7",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "凸",
+          "example": "凸出、凸面"
+        },
+        {
+          "char": "凹",
+          "example": "凹陷、凹槽"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H06:8",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "糟",
+          "example": "糟糕、糟蹋"
+        },
+        {
+          "char": "遭",
+          "example": "周遭、遭遇"
+        },
+        {
+          "char": "槽",
+          "example": "水槽、凹槽"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H06:9",
+      "group_no": "9",
+      "chars": [
+        {
+          "char": "密",
+          "example": "密切、親密"
+        },
+        {
+          "char": "切",
+          "example": "切菜、切開"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H06:10",
+      "group_no": "10",
+      "chars": [
+        {
+          "char": "抬",
+          "example": "抬頭、抬起"
+        },
+        {
+          "char": "治",
+          "example": "治病、治療"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H06:11",
+      "group_no": "11",
+      "chars": [
+        {
+          "char": "趕",
+          "example": "趕緊、趕快"
+        },
+        {
+          "char": "桿",
+          "example": "筆桿、旗桿"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：形似字）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG3H06:1",
+      "stem": "鉛筆不是用鉛做成的，主要材料包括石墨、黏土和木頭。",
+      "question": "鉛筆的主要材料不包括哪一項？",
+      "options": [
+        "石墨",
+        "黏土",
+        "鉛塊"
+      ],
+      "answer": "鉛塊",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（教師自撰聆聽題）"
+    },
+    {
+      "id": "listening:115AG3H06:2",
+      "stem": "直接拿筆芯書寫，筆芯容易斷裂，也可能把手弄黑，所以需要木板保護。",
+      "question": "為什麼筆芯需要木板保護？",
+      "options": [
+        "避免斷裂和弄髒手",
+        "讓筆芯變成彩色",
+        "讓機器停止運轉"
+      ],
+      "answer": "避免斷裂和弄髒手",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（教師自撰聆聽題）"
+    },
+    {
+      "id": "listening:115AG3H06:3",
+      "stem": "機器在木板上刻出凹槽，放入細芯，再黏上另一片木板，做成長條材料。",
+      "question": "機器先在木板上做什麼？",
+      "options": [
+        "刻出凹槽",
+        "塗上顏色",
+        "削尖筆芯"
+      ],
+      "answer": "刻出凹槽",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（教師自撰聆聽題）"
+    },
+    {
+      "id": "listening:115AG3H06:4",
+      "stem": "有些自動鉛筆不用削，只要輕輕按壓，就能讓新的筆芯露出來繼續書寫。",
+      "question": "自動鉛筆如何讓新的筆芯露出來？",
+      "options": [
+        "輕輕按壓",
+        "放入水中",
+        "撕開筆桿"
+      ],
+      "answer": "輕輕按壓",
+      "status": "approved",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（教師自撰聆聽題）"
+    }
+  ],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "待",
+        "蝸",
+        "牛",
+        "牠",
+        "吞",
+        "寸",
+        "碌",
+        "奔",
+        "彈",
+        "簧",
+        "它",
+        "短",
+        "悲",
+        "流",
+        "永"
+      ],
+      "2": [
+        "貼",
+        "使",
+        "醒",
+        "準",
+        "睡",
+        "鐘",
+        "效",
+        "序",
+        "而",
+        "且",
+        "排",
+        "冰",
+        "箱",
+        "原",
+        "條",
+        "顯",
+        "隔"
+      ],
+      "3": [
+        "統",
+        "票",
+        "角",
+        "板",
+        "業",
+        "本",
+        "況",
+        "該",
+        "喊",
+        "文",
+        "具",
+        "理",
+        "此",
+        "備",
+        "易",
+        "匆",
+        "餘"
+      ],
+      "4": [
+        "堂",
+        "鈴",
+        "徒",
+        "傅",
+        "撿",
+        "柴",
+        "鍋",
+        "冒",
+        "騰",
+        "揚",
+        "湯",
+        "止",
+        "抽",
+        "解",
+        "薪",
+        "舀",
+        "沸",
+        "釜"
+      ],
+      "5": [
+        "梨",
+        "撐",
+        "甜",
+        "汁",
+        "綿",
+        "腐",
+        "爛",
+        "結",
+        "筷",
+        "膠",
+        "綁",
+        "夾",
+        "遮",
+        "固",
+        "景"
+      ]
+    }
+  },
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag3h06",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E5%A2%A8%E8%A3%BD%E9%83%A8%E8%8A%AF%E6%96%B7%E6%A9%9F%E5%99%A8%E5%87%B9%E6%A7%BD%E5%85%A5%E5%8F%A6%E6%B2%BB%E6%A1%BF%E5%89%8A",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・三年級・第6課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課14個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「墨」的部首是哪一個？",
+      "options": [
+        "黑",
+        "土",
+        "木"
+      ],
+      "answer": "黑",
+      "explanation": "「墨」的部首是黑。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「製」的注音是？",
+      "options": [
+        "ㄓˋ",
+        "ㄓˇ",
+        "ㄗˋ"
+      ],
+      "answer": "ㄓˋ",
+      "explanation": "「製」讀作 ㄓˋ。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「石墨」是什麼？",
+      "options": [
+        "一種由碳組成的礦物",
+        "一種木頭做成的筆桿",
+        "一種用來夾菜的用具"
+      ],
+      "answer": "一種由碳組成的礦物",
+      "explanation": "石墨是一種由碳組成的礦物。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「凹槽」是什麼？",
+      "options": [
+        "物體表面下凹的槽",
+        "物體表面凸起的角",
+        "用來削鉛筆的機器"
+      ],
+      "answer": "物體表面下凹的槽",
+      "explanation": "物體表面下凹的槽就是凹槽。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「筆芯」的用途是什麼？",
+      "options": [
+        "可以書寫",
+        "可以削尖木板",
+        "可以黏合兩片木板"
+      ],
+      "answer": "可以書寫",
+      "explanation": "筆芯是位於筆中、可以書寫的東西。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「削鉛筆機」可以做什麼？",
+      "options": [
+        "把鉛筆削尖",
+        "把顏料混合",
+        "把筆芯放入凹槽"
+      ],
+      "answer": "把鉛筆削尖",
+      "explanation": "削鉛筆機是用來把鉛筆削尖的機器。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「部分」是什麼意思？",
+      "options": [
+        "全體中的局部",
+        "全部都一樣",
+        "另一種材料"
+      ],
+      "answer": "全體中的局部",
+      "explanation": "全體中的局部就是部分。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「隨機應變」是什麼意思？",
+      "options": [
+        "隨著情況變化而靈活應付",
+        "固守舊規不肯改變",
+        "技藝達到神妙境界"
+      ],
+      "answer": "隨著情況變化而靈活應付",
+      "explanation": "隨機應變是隨著情況變化而靈活應付。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "q09",
+      "type": "choice",
+      "stem": "鉛筆的主要材料有哪些？",
+      "options": [
+        "石墨、黏土和木頭",
+        "鉛塊、玻璃和水",
+        "棉花、竹子和鐵"
+      ],
+      "answer": "石墨、黏土和木頭",
+      "explanation": "鉛筆的主要材料包括石墨、黏土和木頭。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（注音、字義與字形練習）",
+      "hints": [
+        "先找出題目問的是讀音、意思、部首還是字形。"
+      ]
+    },
+    {
+      "id": "m01",
+      "type": "matching",
+      "stem": "把生字和部首配對。",
+      "pairs": [
+        {
+          "left": "墨",
+          "right": "黑"
+        },
+        {
+          "left": "製",
+          "right": "衣"
+        },
+        {
+          "left": "部",
+          "right": "邑"
+        },
+        {
+          "left": "芯",
+          "right": "艸"
+        }
+      ],
+      "answer": null,
+      "explanation": null,
+      "level": "basic",
+      "status": "ready",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（生字表與部首資料）",
+      "hints": []
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "note": "教材待補：應用任務設計中"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "available",
+      "activity": "listening-quiz"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "available",
+      "activity": "rhetoric"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  }
+}
