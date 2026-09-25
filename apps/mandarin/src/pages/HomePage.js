@@ -7,7 +7,7 @@ export function HomePage(courseIndex) {
       h('h1', {}, '國語課文樂園'),
       SpeakButton({ text: '國語課文樂園', label: '聽', variant: 'speak-button--option' }),
     ]),
-    h('p', { class: 'meta' }, '選擇年級開始學習'),
+    h('p', { class: 'meta' }, '選擇課本開始學習'),
   ]);
   const grid = h('div', { class: 'card-grid' });
   for (const grade of courseIndex.grades) {
