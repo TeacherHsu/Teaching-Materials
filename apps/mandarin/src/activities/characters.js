@@ -12,10 +12,15 @@ import { buildExtensionLinks } from '../components/ExtensionLinks.js';
 import { missingContentNotice } from './engine.js';
 
 const ROUND_MAX = 5;
-const MAX_EXAMPLES = 5;
+const MAX_DISPLAY_EXAMPLES = 3;
 
 function shuffled(arr) {
   return [...arr].sort(() => Math.random() - 0.5);
+}
+
+/** 依教材已審核的常用順序取前幾個，完整 examples 仍保留在資料檔。 */
+function selectDisplayedExamples(examples) {
+  return [...new Set((examples || []).filter(Boolean))].slice(0, MAX_DISPLAY_EXAMPLES);
 }
 
 /** 從本課語詞攤平出每個字的造詞範例，供 CharacterCard 缺 examples 時使用。 */
@@ -26,7 +31,7 @@ function buildExampleMap(lesson) {
   const targets = (lesson.words || []).map((w) => w.word).filter(Boolean);
   for (const c of lesson.characters || []) {
     const hits = targets.filter((w) => w.includes(c.char));
-    if (hits.length) map.set(c.char, hits.slice(0, MAX_EXAMPLES));
+    if (hits.length) map.set(c.char, selectDisplayedExamples(hits));
   }
   return map;
 }
@@ -34,7 +39,7 @@ function buildExampleMap(lesson) {
 function withExamples(characters, lesson) {
   const exampleMap = buildExampleMap(lesson);
   return characters.map((c) => {
-    if (c.examples && c.examples.length) return c;
+    if (c.examples && c.examples.length) return { ...c, examples: selectDisplayedExamples(c.examples) };
     const fallback = exampleMap.get(c.char);
     return fallback ? { ...c, examples: fallback } : c;
   });

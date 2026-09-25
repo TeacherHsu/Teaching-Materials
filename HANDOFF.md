@@ -14,12 +14,12 @@
 
 ---
 
-## 2026-09-25｜學校 Win｜Codex｜狀態：🚧 施工中
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/activities/characters.js`、`apps/mandarin/scripts/test-character-examples-limit.mjs`
-- 做了什麼：準備將生字卡造詞依教材現有常用順序取前 3 個顯示，完整資料不刪除
-- 驗證：施工中，待確認第 1～5 課畫面均不超過 3 個造詞並完成建置
-- 推送：施工紀錄待先行提交並推送
-- 待辦／給下一棒：調整顯示層、加入跨課回歸測試、瀏覽器確認
+- 做了什麼：生字卡造詞依教材資料現有的常用順序取前 3 個顯示；完整造詞資料保留不刪除、不改順序
+- 驗證：`node scripts/test-character-examples-limit.mjs`、`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；瀏覽器確認第五課每字最多 3 個造詞且無水平溢出
+- 推送：完成 commit 後推送至 `origin/codex/mandarin-115g3a-lessons`；`origin/main` 尚未更新
+- 待辦／給下一棒：後續若要重新排序常用度，應先更新教材資料的 examples 順序，再由顯示層取前 3 個
 - 注意：不改寫官方造詞資料順序與內容，只限制生字卡顯示數量
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
