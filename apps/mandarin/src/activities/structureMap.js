@@ -85,6 +85,7 @@ function buildItems(paragraphs) {
     return {
       id: p.id,
       context,
+      speakText: `第 ${p.para_no} 段大意：${p.summary}`,
       slotLabel: '？',
       options: [{ id: `role:${p.structure_role}`, label: p.structure_role }, ...distractors],
       answerId: `role:${p.structure_role}`,

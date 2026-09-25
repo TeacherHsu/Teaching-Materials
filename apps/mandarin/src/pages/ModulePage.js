@@ -1,4 +1,5 @@
 import { h } from '../utils/dom.js';
+import { SpeakButton } from '../components/SpeakButton.js';
 import { missingContentNotice } from '../activities/engine.js';
 import { buildIdiomBuilderActivity } from '../components/IdiomBuilder.js';
 import { buildReadingActivity } from '../activities/reading.js';
@@ -42,7 +43,12 @@ export function ModulePage(lesson, moduleKey) {
     return root;
   }
 
-  root.appendChild(h('h1', {}, label));
+  root.appendChild(
+    h('div', { class: 'quiz-option-row' }, [
+      h('h1', {}, label),
+      SpeakButton({ text: label, label: '聽', variant: 'speak-button--option' }),
+    ]),
+  );
   if (isPreview()) {
     root.appendChild(h('p', { class: 'meta' }, '預覽模式：待審（draft）內容會顯示並加「待審」標籤，正式上線不會出現。'));
   }

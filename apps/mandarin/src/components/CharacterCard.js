@@ -1,5 +1,5 @@
 import { h } from '../utils/dom.js';
-import { AudioButton } from './AudioButton.js';
+import { SpeakButton } from './SpeakButton.js';
 import { ImageFrame } from './ImageFrame.js';
 
 /**
@@ -13,14 +13,17 @@ export function CharacterCard(character, originExtension = null) {
     h('span', { class: 'character-card__type-badge' }, type === '認讀字' ? '認讀字（只要會認）' : '習寫字'),
     h('div', { class: 'character-card__glyph', 'aria-hidden': 'true' }, char),
     h('div', { class: 'character-card__zhuyin' }, zhuyin),
-    AudioButton({ text: char, audioUrl: audio_override, label: '聽發音' }),
+    SpeakButton({ text: char, audioUrl: audio_override, label: '聽發音' }),
     h('div', { class: 'character-card__meta-row' }, [
       h('span', {}, `部首：${radical}`),
       h('span', {}, `筆畫：${stroke_count}`),
     ]),
     image ? ImageFrame({ src: image, alt: `${char} 的插圖` }) : null,
     examples && examples.length
-      ? h('p', { class: 'meta' }, `造詞：${examples.join('、')}`)
+      ? h('div', { class: 'quiz-option-row' }, [
+          h('p', { class: 'meta' }, `造詞：${examples.join('、')}`),
+          SpeakButton({ text: examples.join('、'), label: '聽造詞', variant: 'speak-button--option' }),
+        ])
       : h('p', { class: 'meta' }, '造詞：教材待補'),
     pedia_url
       ? h(

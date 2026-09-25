@@ -2,6 +2,8 @@ import { h, clear } from '../utils/dom.js';
 import { ProgressIndicator } from './ProgressIndicator.js';
 import { HintPanel } from './HintPanel.js';
 import { CompletionFeedback } from './CompletionFeedback.js';
+import { SpeakButton } from './SpeakButton.js';
+import { ReadAllButton } from './ReadAllButton.js';
 
 const CHECK_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>`;
 const CROSS_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>`;
@@ -45,11 +47,20 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
     let attempts = 0;
 
     root.appendChild(ProgressIndicator({ current: index + 1, total: items.length }));
+    root.appendChild(
+      ReadAllButton(() => ({ stem: item.stem, options: item.options })),
+    );
     if (item.extra) root.appendChild(item.extra);
-    root.appendChild(h('p', { class: 'quiz-stem' }, item.stem));
+    root.appendChild(
+      h('div', { class: 'quiz-option-row' }, [
+        h('p', { class: 'quiz-stem' }, item.stem),
+        SpeakButton({ text: item.stem, label: '聽', variant: 'speak-button--option' }),
+      ]),
+    );
 
     const optionsWrap = h('div', { class: 'quiz-options', role: 'group', 'aria-label': '選項' });
     const feedbackSlot = h('div', {});
+    const optionButtons = [];
 
     item.options.forEach((opt) => {
       const btn = h(
@@ -61,6 +72,7 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
         },
         opt,
       );
+      optionButtons.push(btn);
       btn.addEventListener('click', () => {
         if (answered || btn.disabled) return;
         const isCorrect = opt === item.answer;
@@ -72,17 +84,20 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
           btn.setAttribute('aria-pressed', 'true');
           btn.innerHTML = `${CHECK_ICON}<span>${opt}</span>`;
           correctCount += 1;
-          [...optionsWrap.children].forEach((c) => {
+          optionButtons.forEach((c) => {
             if (c !== btn) c.disabled = true;
           });
           clear(feedbackSlot);
           feedbackSlot.appendChild(
-            h('p', {
-              role: 'status',
-              'aria-live': 'polite',
-              class: 'meta',
-              html: `<span style="display:inline-flex;align-items:center;gap:4px;color:var(--color-success)">${CHECK_ICON}答對了！</span>`,
-            }),
+            h('div', { class: 'quiz-option-row' }, [
+              h('p', {
+                role: 'status',
+                'aria-live': 'polite',
+                class: 'meta',
+                html: `<span style="display:inline-flex;align-items:center;gap:4px;color:var(--color-success)">${CHECK_ICON}答對了！</span>`,
+              }),
+              SpeakButton({ text: '答對了！', label: '聽', variant: 'speak-button--option' }),
+            ]),
           );
           appendNextButton();
           return;
@@ -100,12 +115,15 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
           clear(feedbackSlot);
           const hintText = (item.hints && item.hints[0]) || item.hint || DEFAULT_HINT;
           feedbackSlot.appendChild(
-            h('p', { role: 'status', 'aria-live': 'polite', class: 'meta' }, [
-              h(
-                'span',
-                { style: 'display:inline-flex;align-items:center;gap:4px;color:var(--color-danger)', html: CROSS_ICON },
-                '再試一次',
-              ),
+            h('div', { class: 'quiz-option-row' }, [
+              h('p', { role: 'status', 'aria-live': 'polite', class: 'meta' }, [
+                h(
+                  'span',
+                  { style: 'display:inline-flex;align-items:center;gap:4px;color:var(--color-danger)', html: CROSS_ICON },
+                  '再試一次',
+                ),
+              ]),
+              SpeakButton({ text: '再試一次', label: '聽', variant: 'speak-button--option' }),
             ]),
           );
           feedbackSlot.appendChild(HintPanel({ message: hintText }));
@@ -113,7 +131,7 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
           // 第 2 次答錯：揭曉正解，鎖題
           answered = true;
           btn.disabled = true;
-          [...optionsWrap.children].forEach((c) => {
+          optionButtons.forEach((c) => {
             c.disabled = true;
             if (c.textContent.trim() === item.answer) {
               c.classList.add('quiz-option--correct');
@@ -122,21 +140,33 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
           });
           clear(feedbackSlot);
           feedbackSlot.appendChild(
-            h('p', { role: 'status', 'aria-live': 'polite', class: 'meta' }, [
-              h(
-                'span',
-                { style: 'display:inline-flex;align-items:center;gap:4px;color:var(--color-danger)', html: CROSS_ICON },
-                `正確答案是：${item.answer}`,
-              ),
+            h('div', { class: 'quiz-option-row' }, [
+              h('p', { role: 'status', 'aria-live': 'polite', class: 'meta' }, [
+                h(
+                  'span',
+                  { style: 'display:inline-flex;align-items:center;gap:4px;color:var(--color-danger)', html: CROSS_ICON },
+                  `正確答案是：${item.answer}`,
+                ),
+              ]),
+              SpeakButton({ text: `正確答案是：${item.answer}`, label: '聽', variant: 'speak-button--option' }),
             ]),
           );
           if (item.explanation) {
-            feedbackSlot.appendChild(h('p', { class: 'meta' }, item.explanation));
+            feedbackSlot.appendChild(
+              h('div', { class: 'quiz-option-row' }, [
+                h('p', { class: 'meta' }, item.explanation),
+                SpeakButton({ text: item.explanation, label: '聽', variant: 'speak-button--option' }),
+              ]),
+            );
           }
           appendNextButton();
         }
       });
-      optionsWrap.appendChild(btn);
+      const row = h('div', { class: 'quiz-option-row' }, [
+        btn,
+        SpeakButton({ text: opt, label: '聽', ariaLabel: `朗讀選項：${opt}`, variant: 'speak-button--option' }),
+      ]);
+      optionsWrap.appendChild(row);
     });
 
     function appendNextButton() {

@@ -6,6 +6,7 @@
 //   使用者主動點擊 <a target="_blank"> 不算違反。
 import { h } from '../utils/dom.js';
 import { filterByStatus, isDraftVisible } from '../utils/preview.js';
+import { SpeakButton } from './SpeakButton.js';
 
 // 純手繪 inline SVG（不對外抓圖），每種 type 一個極簡示意圖示。
 const TYPE_ICONS = {
@@ -64,7 +65,12 @@ export function buildExtensionLinks(lesson, moduleKey, opts = {}) {
       },
       [icon, meta, badges],
     );
-    list.appendChild(card);
+    // 朗讀鈕放在 <a> 外面，不巢狀在連結裡（避免互動元素巢狀），點擊不會觸發跳轉。
+    const row = h('div', { class: 'extension-link-row' }, [
+      card,
+      SpeakButton({ text: ext.title, label: '聽', variant: 'speak-button--option' }),
+    ]);
+    list.appendChild(row);
   }
 
   return h('section', { class: 'extension-links' }, [

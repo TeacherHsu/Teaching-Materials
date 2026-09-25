@@ -43,6 +43,7 @@ function buildRound1(idioms) {
       return {
         id: idm.id,
         context,
+        speakText: `成語：${blanked}。${idm.definition}`,
         slotLabel: '？',
         options: [{ id: `char:${idm.related_char}`, label: idm.related_char }, ...distractorChars],
         answerId: `char:${idm.related_char}`,
@@ -77,6 +78,7 @@ function buildRound2(idioms, idiomSentences) {
       return {
         id: s.id,
         context,
+        speakText: blanked,
         slotLabel: '？',
         options: [{ id: idm.id, label: idm.idiom }, ...distractors],
         answerId: idm.id,
