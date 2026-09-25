@@ -14,6 +14,14 @@
 
 ---
 
+## 2026-09-25｜學校 Win｜Codex｜狀態：🚧 施工中
+- 範圍：`apps/mandarin/public/assets/115AG3H/lesson05/vocabulary/`、`apps/mandarin/public/data/115AG3H/lesson05.json`
+- 做了什麼：準備檢查第五課語詞插圖與詞義是否相符，修正不符合教學意義的圖片
+- 驗證：施工中，待完成全課圖片檢查與瀏覽器回歸
+- 推送：施工紀錄待先行提交並推送
+- 待辦／給下一棒：檢查全課圖片、替換錯誤資產、重新壓縮並確認網站載入
+- 注意：只替換不符語意的圖片，不改語詞內容與既有資料結構
+
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/activities/sentencePractice.js`、`apps/mandarin/scripts/test-sentence-chunking.mjs`
 - 做了什麼：句型練習改用固定詞組保護、瀏覽器中文斷詞、助詞／介詞合併與標點歸併；不再以每兩字硬切，並支援教材以 `sentence_patterns[].example_parts` 提供人工確認詞塊。同步檢查第 1～4 課 55 個例句，修正「寫作業」「暖暖的」「進門的客人」「今天沒有遲到」等詞組
