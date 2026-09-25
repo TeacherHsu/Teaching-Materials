@@ -6,12 +6,22 @@ import { installFakeDom } from './fake-dom.mjs';
 installFakeDom();
 const { DragToSlot } = await import('../src/components/DragToSlot.js');
 
+const inlineSlot = document.createElement('button');
+inlineSlot.className = 'sentence-chip drag-to-slot__slot drag-to-slot__inline-slot';
+inlineSlot.textContent = '＿';
+const inlineSlotWrap = document.createElement('span');
+inlineSlotWrap.className = 'idiom-builder__inline-slot-wrap';
+inlineSlotWrap.appendChild(inlineSlot);
+const context = document.createElement('div');
+context.appendChild(inlineSlotWrap);
+
 const root = DragToSlot({
   dragEnabled: true,
   items: [{
     id: 'idiom-1',
-    context: '成語：＿天雪地',
-    slotLabel: '？',
+    context,
+    inlineSlot,
+    inlineSlotWrap,
     options: [
       { id: 'char:冰', label: '冰' },
       { id: 'char:夏', label: '夏' },
@@ -25,6 +35,7 @@ assert.ok(
   root.find((node) => node.hasClass('drag-to-slot__instruction')),
   '拖曳模式應顯示操作提示',
 );
+assert.equal(root.find((node) => node.hasClass('drag-to-slot__slot-row')), null, '成語內嵌空格不應再產生下方獨立答案框');
 const slot = root.find((node) => node.hasClass('drag-to-slot__slot'));
 const chips = root.findAll((node) => node.hasClass('drag-to-slot__option-chip'));
 assert.equal(chips.length, 2, '拖曳模式仍應保留所有候選答案');

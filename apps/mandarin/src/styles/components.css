@@ -1057,6 +1057,26 @@
   margin: 0;
 }
 
+.idiom-builder__idiom-line {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.idiom-builder__inline-slot-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.drag-to-slot__inline-slot {
+  min-width: 52px;
+  padding-inline: var(--space-2);
+  vertical-align: middle;
+}
+
 @media (max-width: 640px) {
   .container {
     padding-inline: var(--space-3);
