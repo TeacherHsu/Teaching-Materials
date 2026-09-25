@@ -15,6 +15,14 @@
 ---
 
 ## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/` 語詞認識步驟與語詞卡片
+- 做了什麼：依使用者確認取消卡片翻面，改為固定顯示圖片、語詞、注音與朗讀按鈕；同步更新操作說明
+- 驗證：`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；第三課瀏覽器確認 5 張卡片都有圖片、每張 1 個朗讀鈕、無翻面互動、無水平溢出且無警告
+- 推送：尚未推送
+- 待辦／給下一棒：後續課次沿用固定式語詞卡與圖片資產容量閘門；若補圖，維持單張 150～300 KB、每課約 4 MB 內
+- 注意：語詞解釋保留在後續配對與選詞活動；圖片容量閘門維持有效
+
+## 2026-09-25｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/` 圖片資產與建置容量檢查
 - 做了什麼：新增 WebP 壓縮腳本與 `check-assets` 容量閘門；第三課 20 張 PNG 轉成 WebP，資料路徑同步更新，原圖備份到 repo 外的 `_archive/mandarin-image-sources/115AG3H/lesson03/`
 - 驗證：第三課圖片由 35.79 MiB 降至 1.84 MiB，全站 `public/assets` 約 3.01 MiB；`npm.cmd run validate`、全套 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets` 通過；瀏覽器確認第三課語詞與成語 WebP 正常載入

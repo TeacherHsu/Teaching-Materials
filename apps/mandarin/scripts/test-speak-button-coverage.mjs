@@ -151,8 +151,15 @@ function assertCoverage(root, label) {
 
 // --- VocabularyCard／CharacterCard ---
 {
-  const card = VocabularyCard({ word: '快樂', zhuyin: 'ㄎㄨㄞˋㄌㄜˋ', meaning: '心情很好', example_sentence: '我今天很快樂。' });
-  assert.ok(card.findAll((n) => n.hasClass('speak-button')).length >= 3, 'VocabularyCard 正反面都應有朗讀鈕（詞／解釋／例句）');
+  const card = VocabularyCard({
+    word: '快樂',
+    zhuyin: 'ㄎㄨㄞˋㄌㄜˋ',
+    image: '/assets/test.webp',
+    meaning: '心情很好',
+    example_sentence: '我今天很快樂。',
+  });
+  assert.equal(card.findAll((n) => n.hasClass('speak-button')).length, 1, '固定式 VocabularyCard 應有一個語詞朗讀鈕');
+  assert.equal(card.findAll((n) => n.hasClass('image-frame')).length, 1, 'VocabularyCard 應顯示圖片框');
   checked += 1;
 
   const charCard = CharacterCard({ char: '回', zhuyin: 'ㄏㄨㄟˊ', radical: '囗', stroke_count: 6, type: '習寫字', examples: ['回家', '回答'] });
