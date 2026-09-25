@@ -55,6 +55,98 @@
           ]
         }
       ]
+    },
+    {
+      "grade": 6,
+      "label": "翰林六上",
+      "volumes": [
+        {
+          "code": "115AG6H",
+          "publisher": "翰林",
+          "term": "上",
+          "label": "115 學年上學期",
+          "units": [
+            {
+              "no": 1,
+              "title": "六上國語課程",
+              "lessons": [
+                {
+                  "lesson_id": "115AG6H01",
+                  "lesson_no": 1,
+                  "title": "遇見自己",
+                  "data": "data/115AG6H/lesson01.json"
+                },
+                {
+                  "lesson_id": "115AG6H02",
+                  "lesson_no": 2,
+                  "title": "為什麼大家不理我？",
+                  "data": "data/115AG6H/lesson02.json"
+                },
+                {
+                  "lesson_id": "115AG6H03",
+                  "lesson_no": 3,
+                  "title": "孔子說的話",
+                  "data": "data/115AG6H/lesson03.json"
+                },
+                {
+                  "lesson_id": "115AG6H04",
+                  "lesson_no": 4,
+                  "title": "向大自然學習",
+                  "data": "data/115AG6H/lesson04.json"
+                },
+                {
+                  "lesson_id": "115AG6H05",
+                  "lesson_no": 5,
+                  "title": "樹的聯想",
+                  "data": "data/115AG6H/lesson05.json"
+                },
+                {
+                  "lesson_id": "115AG6H06",
+                  "lesson_no": 6,
+                  "title": "善用自嘲，展現幽默",
+                  "data": "data/115AG6H/lesson06.json"
+                },
+                {
+                  "lesson_id": "115AG6H07",
+                  "lesson_no": 7,
+                  "title": "跟著公共藝術去旅行",
+                  "data": "data/115AG6H/lesson07.json"
+                },
+                {
+                  "lesson_id": "115AG6H08",
+                  "lesson_no": 8,
+                  "title": "街頭藝術家",
+                  "data": "data/115AG6H/lesson08.json"
+                },
+                {
+                  "lesson_id": "115AG6H09",
+                  "lesson_no": 9,
+                  "title": "戲臺上的她與他",
+                  "data": "data/115AG6H/lesson09.json"
+                },
+                {
+                  "lesson_id": "115AG6H10",
+                  "lesson_no": 10,
+                  "title": "過故人莊",
+                  "data": "data/115AG6H/lesson10.json"
+                },
+                {
+                  "lesson_id": "115AG6H11",
+                  "lesson_no": 11,
+                  "title": "來一碗溫暖的羹湯",
+                  "data": "data/115AG6H/lesson11.json"
+                },
+                {
+                  "lesson_id": "115AG6H12",
+                  "lesson_no": 12,
+                  "title": "存根",
+                  "data": "data/115AG6H/lesson12.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

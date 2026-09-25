@@ -1,0 +1,1862 @@
+{
+  "lesson_id": "115AG6H10",
+  "volume": {
+    "code": "115AG6H",
+    "publisher": "翰林",
+    "grade": 6,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "六上國語課程"
+  },
+  "lesson_no": 10,
+  "title": "過故人莊",
+  "author": "",
+  "blurb": "透過〈過故人莊〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "characters": [
+    {
+      "char": "莊",
+      "zhuyin": "ㄓㄨㄤ",
+      "stroke_count": 11,
+      "radical": "⾋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "莊"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%8E%8A",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "村",
+      "zhuyin": "ㄘㄨㄣ",
+      "stroke_count": 7,
+      "radical": "⽊",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "鄉村"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9D%91",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "暢",
+      "zhuyin": "ㄔㄤˋ",
+      "stroke_count": 14,
+      "radical": "⽇",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "暢談"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9A%A2",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "黍",
+      "zhuyin": "ㄕㄨˇ",
+      "stroke_count": 12,
+      "radical": "⿉",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "雞黍"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%BB%8D",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "郭",
+      "zhuyin": "ㄍㄨㄛ",
+      "stroke_count": 11,
+      "radical": "⾢",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "郭"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%83%AD",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "斜",
+      "zhuyin": "ㄒㄧㄝˊ",
+      "stroke_count": 11,
+      "radical": "⽃",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "斜"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%96%9C",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "軒",
+      "zhuyin": "ㄒㄩㄢ",
+      "stroke_count": 10,
+      "radical": "⾞",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "軒"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%BB%92",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "桑",
+      "zhuyin": "ㄙㄤ",
+      "stroke_count": 10,
+      "radical": "⽊",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "桑"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%A1%91",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "菊",
+      "zhuyin": "ㄐㄩˊ",
+      "stroke_count": 12,
+      "radical": "⾋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "菊花"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%8F%8A",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "穀",
+      "zhuyin": "ㄍㄨˇ",
+      "stroke_count": 15,
+      "radical": "⽲",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "晒穀場"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A9%80",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "曆",
+      "zhuyin": "ㄌㄧˋ",
+      "stroke_count": 16,
+      "radical": "⽇",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "農曆"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9B%86",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "綿",
+      "zhuyin": "ㄇㄧㄢˊ",
+      "stroke_count": 14,
+      "radical": "⽷",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "連綿"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B6%BF",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "殷",
+      "zhuyin": "ㄧㄣ",
+      "stroke_count": 10,
+      "radical": "⽎",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "殷勤"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%AE%B7",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "勤",
+      "zhuyin": "ㄑㄧㄣˊ",
+      "stroke_count": 13,
+      "radical": "⼒",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "殷勤"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8B%A4",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "樸",
+      "zhuyin": "ㄆㄨˇ",
+      "stroke_count": 16,
+      "radical": "⽊",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "樸實"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%A8%B8",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "訂",
+      "zhuyin": "ㄉㄧㄥˋ",
+      "stroke_count": 9,
+      "radical": "⾔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "訂"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%A8%82",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "恬",
+      "zhuyin": "ㄊㄧㄢˊ",
+      "stroke_count": 9,
+      "radical": "⼼",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "恬靜"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%81%AC",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG6H10:01",
+      "word": "莊",
+      "zhuyin": "ㄓㄨㄤ",
+      "meaning": "田舍、村落。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H10:02",
+      "word": "鄉村",
+      "zhuyin": "ㄒㄧㄤ ㄘㄨㄣ",
+      "meaning": "人口的分布較城市分散，而且居民以從事農業為主的地區。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H10:03",
+      "word": "暢談",
+      "zhuyin": "ㄔㄤˋ ㄊㄢˊ",
+      "meaning": "盡情的談話。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H10:04",
+      "word": "雞黍",
+      "zhuyin": "ㄐㄧ ㄕㄨˇ",
+      "meaning": "雞肉和黍飯。指招待客人的家常飯菜。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG6H/lesson10/vocabulary/l10-04.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H10:05",
+      "word": "郭",
+      "zhuyin": "ㄍㄨㄛ",
+      "meaning": "外城。城牆外另築的一道城牆。本課指村莊的外城。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H10:06",
+      "word": "斜",
+      "zhuyin": "ㄒㄧㄝˊ",
+      "meaning": "動詞，指起伏的青山橫列著。現今讀音念斜，本課念斜為古代字音。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H10:07",
+      "word": "軒",
+      "zhuyin": "ㄒㄩㄢ",
+      "meaning": "窗戶。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H10:08",
+      "word": "桑",
+      "zhuyin": "ㄙㄤ",
+      "meaning": "為農家養蠶所需的材料。借為農事的代稱。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H10:09",
+      "word": "菊花",
+      "zhuyin": "ㄐㄩˊ ㄏㄨㄚ",
+      "meaning": "菊所開的花。品種極多，花色豐富，有紅、黃、白、紫等。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H10:10",
+      "word": "晒穀場",
+      "zhuyin": "ㄕㄞˋ ㄍㄨˇ ㄔㄤˊ",
+      "meaning": "曝晒稻穀的場地。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H10:11",
+      "word": "農曆",
+      "zhuyin": "ㄋㄨㄥˊ ㄌㄧˋ",
+      "meaning": "傳統曆法，因適用於農事生產的時序，所以被稱為「農曆」。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H10:12",
+      "word": "連綿",
+      "zhuyin": "ㄌㄧㄢˊ ㄇㄧㄢˊ",
+      "meaning": "連續不斷。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H10:13",
+      "word": "殷勤",
+      "zhuyin": "ㄧㄣ ㄑㄧㄣˊ",
+      "meaning": "懇切、周到。",
+      "example_sentence": "我看到他很殷勤的幫老師打掃教室。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": "/assets/115AG6H/lesson10/vocabulary/l10-13.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H10:14",
+      "word": "樸實",
+      "zhuyin": "ㄆㄨˇ ㄕˊ",
+      "meaning": "質樸實在。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H10:15",
+      "word": "訂",
+      "zhuyin": "ㄉㄧㄥˋ",
+      "meaning": "事先預約。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H10:16",
+      "word": "恬靜",
+      "zhuyin": "ㄊㄧㄢˊ ㄐㄧㄥˋ",
+      "meaning": "淡泊安靜。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG6H10:康莊大道",
+      "idiom": "康莊大道",
+      "definition": "比喻光明的前途。",
+      "related_char": "莊",
+      "image": "idioms/01_康莊大道.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H10:暢所欲言",
+      "idiom": "暢所欲言",
+      "definition": "痛痛快快、毫無顧忌地把想說的話全部講出來。",
+      "related_char": "暢",
+      "image": "idioms/02_暢所欲言.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H10:軒然大波",
+      "idiom": "軒然大波",
+      "definition": "高高湧起的巨大波浪；比喻重大的糾紛或風潮。",
+      "related_char": "軒",
+      "image": "idioms/03_軒然大波.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H10:滄海桑田",
+      "idiom": "滄海桑田",
+      "definition": "比喻世事無常，變化很快。",
+      "related_char": "桑",
+      "image": "idioms/04_滄海桑田.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H10:連綿不絕",
+      "idiom": "連綿不絕",
+      "definition": "連續不斷。",
+      "related_char": "綿",
+      "image": "idioms/05_連綿不絕.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H10:殷鑒不遠",
+      "idiom": "殷鑒不遠",
+      "definition": "比喻前人的教訓近在眼前，不可不慎。",
+      "related_char": "殷",
+      "image": "idioms/06_殷鑒不遠.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H10:克勤克儉",
+      "idiom": "克勤克儉",
+      "definition": "既能勤勞又能節儉。",
+      "related_char": "勤",
+      "image": "idioms/07_克勤克儉.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H10:恬不知恥",
+      "idiom": "恬不知恥",
+      "definition": "有過錯卻安然不以為恥辱。",
+      "related_char": "恬",
+      "image": "idioms/08_恬不知恥.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG6H10:1",
+      "idiom_id": "idiom:115AG6H10:康莊大道",
+      "rewritten": "遇到生活中的相關情況時，可以用「康莊大道」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H10:2",
+      "idiom_id": "idiom:115AG6H10:暢所欲言",
+      "rewritten": "遇到生活中的相關情況時，可以用「暢所欲言」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H10:3",
+      "idiom_id": "idiom:115AG6H10:軒然大波",
+      "rewritten": "遇到生活中的相關情況時，可以用「軒然大波」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H10:4",
+      "idiom_id": "idiom:115AG6H10:滄海桑田",
+      "rewritten": "遇到生活中的相關情況時，可以用「滄海桑田」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H10:5",
+      "idiom_id": "idiom:115AG6H10:連綿不絕",
+      "rewritten": "遇到生活中的相關情況時，可以用「連綿不絕」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H10:6",
+      "idiom_id": "idiom:115AG6H10:殷鑒不遠",
+      "rewritten": "遇到生活中的相關情況時，可以用「殷鑒不遠」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H10:7",
+      "idiom_id": "idiom:115AG6H10:克勤克儉",
+      "rewritten": "遇到生活中的相關情況時，可以用「克勤克儉」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H10:8",
+      "idiom_id": "idiom:115AG6H10:恬不知恥",
+      "rewritten": "遇到生活中的相關情況時，可以用「恬不知恥」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG6H10:word:1",
+      "category": "詞語造句",
+      "head": "殷勤",
+      "structure": "詞語造句",
+      "description": "懇切、周到。",
+      "guide": "下課時，我很殷勤的",
+      "examples": [
+        "我看到他很殷勤的幫老師打掃教室。"
+      ],
+      "example_parts": [
+        [
+          "我看到他",
+          "很殷勤的",
+          "幫老師",
+          "打掃教室。"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "幫老師",
+          "我看到他",
+          "打掃教室。",
+          "很殷勤的"
+        ]
+      ],
+      "word_bank": [
+        "主動幫忙",
+        "整理圖書",
+        "耐心回答",
+        "帶領同學"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H10:pattern:1",
+      "category": "句型練習",
+      "head": "承接複句",
+      "structure": "先……，再……，最後……。",
+      "description": "選一件你完成過的事情，依照三個步驟造句。",
+      "guide": "選一件你完成過的事情，依照三個步驟造句。",
+      "examples": [
+        "先收好課本再擦乾淨桌子最後排好椅子",
+        "先洗青菜再切好食材最後煮成晚餐",
+        "先閱讀題目再寫下答案最後檢查一遍"
+      ],
+      "example_parts": [
+        [
+          "先收好課本",
+          "再擦乾淨桌子",
+          "最後排好椅子"
+        ],
+        [
+          "先洗青菜",
+          "再切好食材",
+          "最後煮成晚餐"
+        ],
+        [
+          "先閱讀題目",
+          "再寫下答案",
+          "最後檢查一遍"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "先",
+          "choices": [
+            "先收好課本",
+            "先洗青菜",
+            "先閱讀題目"
+          ]
+        },
+        {
+          "label": "再",
+          "choices": [
+            "再擦乾淨桌子",
+            "再切好食材",
+            "再寫下答案"
+          ]
+        },
+        {
+          "label": "最後",
+          "choices": [
+            "最後排好椅子",
+            "最後煮成晚餐",
+            "最後檢查一遍"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H10:pattern:2",
+      "category": "句型練習",
+      "head": "遞進複句",
+      "structure": "除了……，也……。",
+      "description": "想一想你還會做的事，使用「除了……，也……」造句。",
+      "guide": "想一想你還會做的事，使用「除了……，也……」造句。",
+      "examples": [
+        "除了完成作業也複習今天的重點",
+        "除了喜歡畫畫也喜歡欣賞美術作品",
+        "除了準時到校也主動整理座位"
+      ],
+      "example_parts": [
+        [
+          "除了完成作業",
+          "也複習今天的重點"
+        ],
+        [
+          "除了喜歡畫畫",
+          "也喜歡欣賞美術作品"
+        ],
+        [
+          "除了準時到校",
+          "也主動整理座位"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "除了",
+          "choices": [
+            "除了完成作業",
+            "除了喜歡畫畫",
+            "除了準時到校"
+          ]
+        },
+        {
+          "label": "也",
+          "choices": [
+            "也複習今天的重點",
+            "也喜歡欣賞美術作品",
+            "也主動整理座位"
+          ]
+        },
+        {
+          "label": "補充",
+          "choices": [
+            "放學後",
+            "在假日",
+            "每天早上"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:10:01",
+      "paragraph_no": 1,
+      "summary": "老朋友準備家常飯菜，邀請詩人到農莊做客。",
+      "structure_role": "【第1～2句】受邀做客",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:10:02",
+      "paragraph_no": 2,
+      "summary": "翠綠的樹林圍繞村莊，青山在城外連綿。",
+      "structure_role": "【第3～6句】田園景色與聚會",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:10:03",
+      "paragraph_no": 3,
+      "summary": "詩人推開窗戶，面對晒穀場和菜園。",
+      "structure_role": "【第7～8句】再聚之約",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:10:04",
+      "paragraph_no": 4,
+      "summary": "他和老朋友舉杯暢飲，閒談農作物的生長情形。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:10:05",
+      "paragraph_no": 5,
+      "summary": "賓主盡歡，詩人對田園生活和友情意猶未盡。",
+      "structure_role": "第5段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:10:06",
+      "paragraph_no": 6,
+      "summary": "兩人約定重陽節再相聚，一起欣賞菊花。",
+      "structure_role": "第6段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "main_idea": {
+    "gist": "詩人受老朋友邀請到農莊做客，欣賞田園景色、把酒談農事；賓主盡歡後，約定重陽節再相聚賞菊，流露深厚友情。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:10:01",
+      "stem": "故人準備什麼招待詩人？",
+      "options": [
+        "家常飯菜 (2)豪華宴席"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:10:02",
+      "stem": "詩中哪些景物呈現田園風光？",
+      "options": [
+        "綠樹、青山、場圃 (2)高樓、車站、商店"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:10:03",
+      "stem": "把酒話桑麻表現什麼情形？",
+      "options": [
+        "朋友歡聚談農事 (2)兩人準備離開"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:10:04",
+      "stem": "詩人為何約定重陽日再來？",
+      "options": [
+        "喜愛友情與田園生活 (2)想購買菊花"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG6H10:莊:1",
+      "char": "莊",
+      "sentence": "語詞「村莊」中的「莊」，就是指田舍、村落。",
+      "definition": "田舍、村落",
+      "options": [
+        "田舍、村落",
+        "商號、店鋪",
+        "穩重、嚴肅",
+        "莊家的簡稱。賭局中輪流作主的人"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:莊:2",
+      "char": "莊",
+      "sentence": "語詞「布莊」中的「莊」，就是指商號、店鋪。",
+      "definition": "商號、店鋪",
+      "options": [
+        "田舍、村落",
+        "商號、店鋪",
+        "穩重、嚴肅",
+        "莊家的簡稱。賭局中輪流作主的人"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:莊:3",
+      "char": "莊",
+      "sentence": "語詞「端莊」中的「莊」，就是指穩重、嚴肅。",
+      "definition": "穩重、嚴肅",
+      "options": [
+        "田舍、村落",
+        "商號、店鋪",
+        "穩重、嚴肅",
+        "莊家的簡稱。賭局中輪流作主的人"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:莊:4",
+      "char": "莊",
+      "sentence": "語詞「做莊」中的「莊」，就是指莊家的簡稱。賭局中輪流作主的人。",
+      "definition": "莊家的簡稱。賭局中輪流作主的人",
+      "options": [
+        "田舍、村落",
+        "商號、店鋪",
+        "穩重、嚴肅",
+        "莊家的簡稱。賭局中輪流作主的人"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:村:1",
+      "char": "村",
+      "sentence": "語詞「鄉村」中的「村」，就是指鄉民聚居的地方。",
+      "definition": "鄉民聚居的地方",
+      "options": [
+        "鄉民聚居的地方",
+        "地方政府行政區域之一，在鄉之下，鄰之上，與里平行",
+        "指具有共同特色或特定功能之聚落"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:村:2",
+      "char": "村",
+      "sentence": "語詞「寶山鄉 雙溪村」中的「村」，就是指地方政府行政區域之一，在鄉之下，鄰之上，與里平行。",
+      "definition": "地方政府行政區域之一，在鄉之下，鄰之上，與里平行",
+      "options": [
+        "鄉民聚居的地方",
+        "地方政府行政區域之一，在鄉之下，鄰之上，與里平行",
+        "指具有共同特色或特定功能之聚落"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:村:3",
+      "char": "村",
+      "sentence": "語詞「眷村」中的「村」，就是指指具有共同特色或特定功能之聚落。",
+      "definition": "指具有共同特色或特定功能之聚落",
+      "options": [
+        "鄉民聚居的地方",
+        "地方政府行政區域之一，在鄉之下，鄰之上，與里平行",
+        "指具有共同特色或特定功能之聚落"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:暢:1",
+      "char": "暢",
+      "sentence": "語詞「暢飲」中的「暢」，就是指痛快、盡情的。",
+      "definition": "痛快、盡情的",
+      "options": [
+        "痛快、盡情的",
+        "通達，沒有阻礙",
+        "繁茂",
+        "舒適",
+        "使流通"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:暢:2",
+      "char": "暢",
+      "sentence": "語詞「暢通」中的「暢」，就是指通達，沒有阻礙。",
+      "definition": "通達，沒有阻礙",
+      "options": [
+        "痛快、盡情的",
+        "通達，沒有阻礙",
+        "繁茂",
+        "舒適",
+        "使流通"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:暢:3",
+      "char": "暢",
+      "sentence": "語詞「暢盛」中的「暢」，就是指繁茂。",
+      "definition": "繁茂",
+      "options": [
+        "痛快、盡情的",
+        "通達，沒有阻礙",
+        "繁茂",
+        "舒適",
+        "使流通"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:暢:4",
+      "char": "暢",
+      "sentence": "語詞「舒暢」中的「暢」，就是指舒適。",
+      "definition": "舒適",
+      "options": [
+        "痛快、盡情的",
+        "通達，沒有阻礙",
+        "繁茂",
+        "舒適",
+        "使流通"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:暢:5",
+      "char": "暢",
+      "sentence": "語詞「貨暢其流」中的「暢」，就是指使流通。",
+      "definition": "使流通",
+      "options": [
+        "痛快、盡情的",
+        "通達，沒有阻礙",
+        "繁茂",
+        "舒適",
+        "使流通"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:郭:1",
+      "char": "郭",
+      "sentence": "語詞「城郭」中的「郭」，就是指外城。城牆外另築的一道城牆。",
+      "definition": "外城。城牆外另築的一道城牆",
+      "options": [
+        "外城。城牆外另築的一道城牆",
+        "姓"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:郭:2",
+      "char": "郭",
+      "sentence": "語詞「郭先生」中的「郭」，就是指姓。",
+      "definition": "姓",
+      "options": [
+        "外城。城牆外另築的一道城牆",
+        "姓"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:斜:1",
+      "char": "斜",
+      "sentence": "語詞「斜」中的「斜」，就是指動詞，指非水平或垂直方向的移動。",
+      "definition": "動詞，指非水平或垂直方向的移動",
+      "options": [
+        "動詞，指非水平或垂直方向的移動",
+        "不正、傾側。與平面或直線成斜角關係的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:斜:2",
+      "char": "斜",
+      "sentence": "語詞「傾斜」中的「斜」，就是指不正、傾側。與平面或直線成斜角關係的。",
+      "definition": "不正、傾側。與平面或直線成斜角關係的",
+      "options": [
+        "動詞，指非水平或垂直方向的移動",
+        "不正、傾側。與平面或直線成斜角關係的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:軒:1",
+      "char": "軒",
+      "sentence": "語詞「軒」中的「軒」，就是指窗戶。",
+      "definition": "窗戶",
+      "options": [
+        "窗戶",
+        "本是古代一種有篷、有屏蔽的車子，後亦泛稱一般車子",
+        "高",
+        "車前高起的部分"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:軒:2",
+      "char": "軒",
+      "sentence": "語詞「華軒」中的「軒」，就是指本是古代一種有篷、有屏蔽的車子，後亦泛稱一般車子。",
+      "definition": "本是古代一種有篷、有屏蔽的車子，後亦泛稱一般車子",
+      "options": [
+        "窗戶",
+        "本是古代一種有篷、有屏蔽的車子，後亦泛稱一般車子",
+        "高",
+        "車前高起的部分"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:軒:3",
+      "char": "軒",
+      "sentence": "語詞「氣宇軒昂」中的「軒」，就是指高。",
+      "definition": "高",
+      "options": [
+        "窗戶",
+        "本是古代一種有篷、有屏蔽的車子，後亦泛稱一般車子",
+        "高",
+        "車前高起的部分"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:軒:4",
+      "char": "軒",
+      "sentence": "語詞「軒輊」中的「軒」，就是指車前高起的部分。",
+      "definition": "車前高起的部分",
+      "options": [
+        "窗戶",
+        "本是古代一種有篷、有屏蔽的車子，後亦泛稱一般車子",
+        "高",
+        "車前高起的部分"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:曆:1",
+      "char": "曆",
+      "sentence": "語詞「陰曆」中的「曆」，就是指推算歲時節氣的方法。",
+      "definition": "推算歲時節氣的方法",
+      "options": [
+        "推算歲時節氣的方法",
+        "記載年、月、日、節氣等的表冊"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:曆:2",
+      "char": "曆",
+      "sentence": "語詞「日曆」中的「曆」，就是指記載年、月、日、節氣等的表冊。",
+      "definition": "記載年、月、日、節氣等的表冊",
+      "options": [
+        "推算歲時節氣的方法",
+        "記載年、月、日、節氣等的表冊"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:綿:1",
+      "char": "綿",
+      "sentence": "語詞「綿延」中的「綿」，就是指連續不斷。",
+      "definition": "連續不斷",
+      "options": [
+        "連續不斷",
+        "精細的絲絮",
+        "細密的",
+        "形狀、質地像綿的物體"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:綿:2",
+      "char": "綿",
+      "sentence": "語詞「絲綿」中的「綿」，就是指精細的絲絮。",
+      "definition": "精細的絲絮",
+      "options": [
+        "連續不斷",
+        "精細的絲絮",
+        "細密的",
+        "形狀、質地像綿的物體"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:綿:3",
+      "char": "綿",
+      "sentence": "語詞「綿密」中的「綿」，就是指細密的。",
+      "definition": "細密的",
+      "options": [
+        "連續不斷",
+        "精細的絲絮",
+        "細密的",
+        "形狀、質地像綿的物體"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:綿:4",
+      "char": "綿",
+      "sentence": "語詞「海綿」中的「綿」，就是指形狀、質地像綿的物體。",
+      "definition": "形狀、質地像綿的物體",
+      "options": [
+        "連續不斷",
+        "精細的絲絮",
+        "細密的",
+        "形狀、質地像綿的物體"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:殷:1",
+      "char": "殷",
+      "sentence": "語詞「殷切」中的「殷」，就是指情意深厚、周到。",
+      "definition": "情意深厚、周到",
+      "options": [
+        "情意深厚、周到",
+        "豐富、豐盛"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:殷:2",
+      "char": "殷",
+      "sentence": "語詞「殷富」中的「殷」，就是指豐富、豐盛。",
+      "definition": "豐富、豐盛",
+      "options": [
+        "情意深厚、周到",
+        "豐富、豐盛"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:勤:1",
+      "char": "勤",
+      "sentence": "語詞「殷勤」中的「勤」，就是指真誠、實在。",
+      "definition": "真誠、實在",
+      "options": [
+        "真誠、實在",
+        "盡心盡力做事。與「懶」相對",
+        "經常、常常",
+        "職務、工作"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:勤:2",
+      "char": "勤",
+      "sentence": "語詞「勤學」中的「勤」，就是指盡心盡力做事。與「懶」相對。",
+      "definition": "盡心盡力做事。與「懶」相對",
+      "options": [
+        "真誠、實在",
+        "盡心盡力做事。與「懶」相對",
+        "經常、常常",
+        "職務、工作"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:勤:3",
+      "char": "勤",
+      "sentence": "語詞「衣服必須勤於換洗」中的「勤」，就是指經常、常常。",
+      "definition": "經常、常常",
+      "options": [
+        "真誠、實在",
+        "盡心盡力做事。與「懶」相對",
+        "經常、常常",
+        "職務、工作"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:勤:4",
+      "char": "勤",
+      "sentence": "語詞「內勤」中的「勤」，就是指職務、工作。",
+      "definition": "職務、工作",
+      "options": [
+        "真誠、實在",
+        "盡心盡力做事。與「懶」相對",
+        "經常、常常",
+        "職務、工作"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:訂:1",
+      "char": "訂",
+      "sentence": "語詞「訂報」中的「訂」，就是指事先預約。",
+      "definition": "事先預約",
+      "options": [
+        "事先預約",
+        "協商簽立",
+        "修正",
+        "用線、釘子等把書頁等穿連成冊"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:訂:2",
+      "char": "訂",
+      "sentence": "語詞「擬訂」中的「訂」，就是指協商簽立。",
+      "definition": "協商簽立",
+      "options": [
+        "事先預約",
+        "協商簽立",
+        "修正",
+        "用線、釘子等把書頁等穿連成冊"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:訂:3",
+      "char": "訂",
+      "sentence": "語詞「增訂」中的「訂」，就是指修正。",
+      "definition": "修正",
+      "options": [
+        "事先預約",
+        "協商簽立",
+        "修正",
+        "用線、釘子等把書頁等穿連成冊"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:訂:4",
+      "char": "訂",
+      "sentence": "語詞「裝訂」中的「訂」，就是指用線、釘子等把書頁等穿連成冊。",
+      "definition": "用線、釘子等把書頁等穿連成冊",
+      "options": [
+        "事先預約",
+        "協商簽立",
+        "修正",
+        "用線、釘子等把書頁等穿連成冊"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:恬:1",
+      "char": "恬",
+      "sentence": "語詞「恬適」中的「恬」，就是指安適、清靜。",
+      "definition": "安適、清靜",
+      "options": [
+        "安適、清靜",
+        "淡泊"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H10:恬:2",
+      "char": "恬",
+      "sentence": "語詞「恬淡」中的「恬」，就是指淡泊。",
+      "definition": "淡泊",
+      "options": [
+        "安適、清靜",
+        "淡泊"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    }
+  ],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG6H10:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "村",
+          "example": "村莊、村落"
+        },
+        {
+          "char": "端",
+          "example": "端莊、莊重"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H10:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "暢",
+          "example": "暢談、暢所欲言"
+        },
+        {
+          "char": "心",
+          "example": "心腸、腸胃"
+        },
+        {
+          "char": "操",
+          "example": "操場、場地"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H10:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "軒",
+          "example": "軒窗、開軒"
+        },
+        {
+          "char": "斬",
+          "example": "斬獲、斬首"
+        },
+        {
+          "char": "軌",
+          "example": "軌道、軌跡"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H10:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "連",
+          "example": "連綿、綿延"
+        },
+        {
+          "char": "棉",
+          "example": "棉花、棉被"
+        },
+        {
+          "char": "錦",
+          "example": "錦旗、錦繡"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H10:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "城",
+          "example": "城郭、郭外"
+        },
+        {
+          "char": "孰",
+          "example": "孰是孰非、孰知"
+        },
+        {
+          "char": "敦",
+          "example": "敦厚、敦促"
+        },
+        {
+          "char": "醇",
+          "example": "醇美、醇酒"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H10:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "斜",
+          "example": "斜坡、傾斜"
+        },
+        {
+          "char": "材",
+          "example": "材料、料想"
+        },
+        {
+          "char": "科",
+          "example": "科學、科目"
+        },
+        {
+          "char": "斟",
+          "example": "斟酌、斟茶"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H10:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "勤",
+          "example": "勤勞、勤學"
+        },
+        {
+          "char": "僅",
+          "example": "僅有、僅剩"
+        },
+        {
+          "char": "謹",
+          "example": "謹慎、謹記"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H10:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "樸",
+          "example": "樸實、純樸"
+        },
+        {
+          "char": "撲",
+          "example": "撲滅、撲倒"
+        },
+        {
+          "char": "僕",
+          "example": "僕人、公僕"
+        },
+        {
+          "char": "璞",
+          "example": "璞玉、寶璞"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG6H10:1",
+      "stem": "故人準備什麼招待詩人？",
+      "question": "故人準備什麼招待詩人？",
+      "options": [
+        "家常飯菜 (2)豪華宴席"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H10:2",
+      "stem": "詩中哪些景物呈現田園風光？",
+      "question": "詩中哪些景物呈現田園風光？",
+      "options": [
+        "綠樹、青山、場圃 (2)高樓、車站、商店"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H10:3",
+      "stem": "把酒話桑麻表現什麼情形？",
+      "question": "把酒話桑麻表現什麼情形？",
+      "options": [
+        "朋友歡聚談農事 (2)兩人準備離開"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H10:4",
+      "stem": "詩人為何約定重陽日再來？",
+      "question": "詩人為何約定重陽日再來？",
+      "options": [
+        "喜愛友情與田園生活 (2)想購買菊花"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    }
+  ],
+  "review_words": {},
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag6h-10",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E8%8E%8A%E6%9D%91%E6%9A%A2%E9%BB%8D%E9%83%AD%E6%96%9C%E8%BB%92%E6%A1%91%E8%8F%8A%E7%A9%80%E6%9B%86%E7%B6%BF%E6%AE%B7%E5%8B%A4%E6%A8%B8%E8%A8%82%E6%81%AC",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・六年級・第10課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課17個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「莊」的部首是哪一個？",
+      "options": [
+        "⾔",
+        "⽃",
+        "⾢"
+      ],
+      "answer": "⾋",
+      "explanation": "「莊」的部首是⾋。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「村」的部首是哪一個？",
+      "options": [
+        "⽃",
+        "⾢",
+        "⼒"
+      ],
+      "answer": "⽊",
+      "explanation": "「村」的部首是⽊。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「暢」的部首是哪一個？",
+      "options": [
+        "⾞",
+        "⾋",
+        "⽊"
+      ],
+      "answer": "⽇",
+      "explanation": "「暢」的部首是⽇。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「莊」是什麼意思？",
+      "options": [
+        "外城。城牆外另築的一道城牆。本課指村莊的外城。",
+        "為農家養蠶所需的材料。借為農事的代稱。",
+        "窗戶。"
+      ],
+      "answer": "田舍、村落。",
+      "explanation": "莊：田舍、村落。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「鄉村」是什麼意思？",
+      "options": [
+        "連續不斷。",
+        "事先預約。",
+        "田舍、村落。"
+      ],
+      "answer": "人口的分布較城市分散，而且居民以從事農業為主的地區。",
+      "explanation": "鄉村：人口的分布較城市分散，而且居民以從事農業為主的地區。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「暢談」是什麼意思？",
+      "options": [
+        "菊所開的花。品種極多，花色豐富，有紅、黃、白、紫等。",
+        "懇切、周到。",
+        "傳統曆法，因適用於農事生產的時序，所以被稱為「農曆」。"
+      ],
+      "answer": "盡情的談話。",
+      "explanation": "暢談：盡情的談話。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「雞黍」是什麼意思？",
+      "options": [
+        "菊所開的花。品種極多，花色豐富，有紅、黃、白、紫等。",
+        "事先預約。",
+        "窗戶。"
+      ],
+      "answer": "雞肉和黍飯。指招待客人的家常飯菜。",
+      "explanation": "雞黍：雞肉和黍飯。指招待客人的家常飯菜。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「郭」是什麼意思？",
+      "options": [
+        "盡情的談話。",
+        "窗戶。",
+        "菊所開的花。品種極多，花色豐富，有紅、黃、白、紫等。"
+      ],
+      "answer": "外城。城牆外另築的一道城牆。本課指村莊的外城。",
+      "explanation": "郭：外城。城牆外另築的一道城牆。本課指村莊的外城。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "段落摘要已整理；課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "教材待補：應用任務設計中"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "聆聽題目保留待教師確認答案，未在正式模組顯示。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭教材尚未完成公開資料整理。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "跨課複習資料待補。"
+    }
+  }
+}

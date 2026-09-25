@@ -1,0 +1,2094 @@
+{
+  "lesson_id": "115AG6H08",
+  "volume": {
+    "code": "115AG6H",
+    "publisher": "翰林",
+    "grade": 6,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "六上國語課程"
+  },
+  "lesson_no": 8,
+  "title": "街頭藝術家",
+  "author": "",
+  "blurb": "透過〈街頭藝術家〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "characters": [
+    {
+      "char": "墩",
+      "zhuyin": "ㄉㄨㄣ",
+      "stroke_count": 15,
+      "radical": "⼟",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "石墩"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A2%A9",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "撇",
+      "zhuyin": "ㄆㄧㄝ",
+      "stroke_count": 14,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "撇"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%92%87",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "咧",
+      "zhuyin": "ㄌㄧㄝˇ",
+      "stroke_count": 9,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "咧開"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%92%A7",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "攏",
+      "zhuyin": "ㄌㄨㄥˇ",
+      "stroke_count": 19,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "靠攏"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%94%8F",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "副",
+      "zhuyin": "ㄈㄨˋ",
+      "stroke_count": 11,
+      "radical": "⼑",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "名副其實"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%89%AF",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "伙",
+      "zhuyin": "ㄏㄨㄛˇ",
+      "stroke_count": 6,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "小伙子"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BC%99",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "鈔",
+      "zhuyin": "ㄔㄠ",
+      "stroke_count": 12,
+      "radical": "⾦",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "紙鈔"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%88%94",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "幣",
+      "zhuyin": "ㄅㄧˋ",
+      "stroke_count": 14,
+      "radical": "⼱",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "錢幣"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B9%A3",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "喇",
+      "zhuyin": "ㄌㄚˇ",
+      "stroke_count": 12,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "喇叭"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%96%87",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "脹",
+      "zhuyin": "ㄓㄤˋ",
+      "stroke_count": 12,
+      "radical": "⾁",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "脹"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%84%B9",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "筋",
+      "zhuyin": "ㄐㄧㄣ",
+      "stroke_count": 12,
+      "radical": "⽵",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "筋"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%AD%8B",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "吉",
+      "zhuyin": "ㄐㄧˊ",
+      "stroke_count": 6,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%90%89",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "儼",
+      "zhuyin": "ㄧㄢˇ",
+      "stroke_count": 21,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "儼然"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%84%BC",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "按",
+      "zhuyin": "ㄢˋ",
+      "stroke_count": 9,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "按兵不動"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8C%89",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "廂",
+      "zhuyin": "ㄒㄧㄤ",
+      "stroke_count": 12,
+      "radical": "⼴",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "車廂"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%BB%82",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "弦",
+      "zhuyin": "ㄒㄧㄢˊ",
+      "stroke_count": 8,
+      "radical": "⼸",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "弦樂"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%BC%A6",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "矩",
+      "zhuyin": "ㄐㄩˇ",
+      "stroke_count": 10,
+      "radical": "⽮",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "規規矩矩"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%9F%A9",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "羨",
+      "zhuyin": "ㄒㄧㄢˋ",
+      "stroke_count": 13,
+      "radical": "⽺",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "稱羨"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%BE%A8",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG6H08:01",
+      "word": "石墩",
+      "zhuyin": "ㄕˊ ㄉㄨㄣ",
+      "meaning": "以石頭砌成的基座。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG6H/lesson08/vocabulary/l08-01.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H08:02",
+      "word": "撇",
+      "zhuyin": "ㄆㄧㄝ",
+      "meaning": "量詞。計算撇狀物的單位。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H08:03",
+      "word": "咧開",
+      "zhuyin": "ㄌㄧㄝˇ ㄎㄞ",
+      "meaning": "嘴角向兩旁張開。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG6H/lesson08/vocabulary/l08-03.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H08:04",
+      "word": "靠攏",
+      "zhuyin": "ㄎㄠˋ ㄌㄨㄥˇ",
+      "meaning": "靠近、聚攏。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H08:05",
+      "word": "名副其實",
+      "zhuyin": "ㄇㄧㄥˊ ㄈㄨˋ ㄑㄧˊ ㄕˊ",
+      "meaning": "名聲或名稱與事實相符合。",
+      "example_sentence": "鹿港到處都是著名的古蹟，真是名副其實的文化古鎮。",
+      "example_status": "approved",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H08:06",
+      "word": "不羈",
+      "zhuyin": "ㄅㄨˊ ㄐㄧ",
+      "meaning": "不受拘束，比喻人之才識高遠、俊秀脫俗。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H08:07",
+      "word": "小伙子",
+      "zhuyin": "ㄒㄧㄠˇ ㄏㄨㄛˇ ˙ㄗ",
+      "meaning": "年輕男子。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H08:08",
+      "word": "紙鈔",
+      "zhuyin": "ㄓˇ ㄔㄠ",
+      "meaning": "紙質的貨幣，多由國家銀行或政府授權的銀行發行。也稱為「紙幣」。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H08:09",
+      "word": "錢幣",
+      "zhuyin": "ㄑㄧㄢˊ ㄅㄧˋ",
+      "meaning": "錢。多指金屬貨幣。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H08:10",
+      "word": "喇叭",
+      "zhuyin": "ㄌㄚˇ ㄅㄚ",
+      "meaning": "樂器名。屬吹奏樂器。多為銅製。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H08:11",
+      "word": "脹",
+      "zhuyin": "ㄓㄤˋ",
+      "meaning": "物體體積由常態變大。與「縮」相對。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H08:12",
+      "word": "筋",
+      "zhuyin": "ㄐㄧㄣ",
+      "meaning": "皮下可見的靜脈管。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H08:13",
+      "word": "儼然",
+      "zhuyin": "ㄧㄢˇ ㄖㄢˊ",
+      "meaning": "彷彿、好像。",
+      "example_sentence": "地鐵上的年輕人彈電吉他、合唱熱門音樂，儼然一個小型樂團。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H08:14",
+      "word": "按兵不動",
+      "zhuyin": "ㄢˋ ㄅㄧㄥ ㄅㄨˊ ㄉㄨㄥˋ",
+      "meaning": "暫時停住軍事行動，有觀望形勢的意思。課文中是指暫不採取行動。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H08:15",
+      "word": "車廂",
+      "zhuyin": "ㄔㄜ ㄒㄧㄤ",
+      "meaning": "車輛上用來搭載乘客或裝運貨物的車身部分。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H08:16",
+      "word": "弦樂",
+      "zhuyin": "ㄒㄧㄢˊ ㄩㄝˋ",
+      "meaning": "用弦樂器演奏出的音樂。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H08:17",
+      "word": "規規矩矩",
+      "zhuyin": "ㄍㄨㄟ ㄍㄨㄟ ㄐㄩˇ ㄐㄩˇ",
+      "meaning": "形容行為端正、有條理，合於法度。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H08:18",
+      "word": "稱羨",
+      "zhuyin": "ㄔㄥ ㄒㄧㄢˋ",
+      "meaning": "讚揚羨慕。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG6H08:齜牙咧嘴",
+      "idiom": "齜牙咧嘴",
+      "definition": "形容因痛苦或驚恐而面部扭曲變形。",
+      "related_char": "咧",
+      "image": "idioms/01_齜牙咧嘴.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H08:名不副實",
+      "idiom": "名不副實",
+      "definition": "形容空有虛名，不合實際。",
+      "related_char": "副",
+      "image": "idioms/02_名不副實.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H08:頭昏腦脹",
+      "idiom": "頭昏腦脹",
+      "definition": "頭部昏暈，心思不清。",
+      "related_char": "脹",
+      "image": "idioms/03_頭昏腦脹.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H08:筋疲力盡",
+      "idiom": "筋疲力盡",
+      "definition": "筋肉疲憊，氣力耗盡。形容非常疲累。",
+      "related_char": "筋",
+      "image": "idioms/04_筋疲力盡.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H08:吉人天相",
+      "idiom": "吉人天相",
+      "definition": "形容吉善的人自有上天的幫助。",
+      "related_char": "吉",
+      "image": "idioms/05_吉人天相.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H08:按圖索驥",
+      "idiom": "按圖索驥",
+      "definition": "比喻按照所掌握的線索辦事。",
+      "related_char": "按",
+      "image": "idioms/06_按圖索驥.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H08:一廂情願",
+      "idiom": "一廂情願",
+      "definition": "完全出自單方面的主觀意願，不管對方意願如何。",
+      "related_char": "廂",
+      "image": "idioms/07_一廂情願.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H08:改弦易轍",
+      "idiom": "改弦易轍",
+      "definition": "比喻改變制度、做法或態度。",
+      "related_char": "弦",
+      "image": "idioms/08_改弦易轍.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H08:循規蹈矩",
+      "idiom": "循規蹈矩",
+      "definition": "遵守禮法，不踰越法度。",
+      "related_char": "矩",
+      "image": "idioms/09_循規蹈矩.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H08:臨淵羨魚",
+      "idiom": "臨淵羨魚",
+      "definition": "比喻雖有欲望，卻沒有實際行動。",
+      "related_char": "羨",
+      "image": "idioms/10_臨淵羨魚.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG6H08:1",
+      "idiom_id": "idiom:115AG6H08:齜牙咧嘴",
+      "rewritten": "遇到生活中的相關情況時，可以用「齜牙咧嘴」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H08:2",
+      "idiom_id": "idiom:115AG6H08:名不副實",
+      "rewritten": "遇到生活中的相關情況時，可以用「名不副實」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H08:3",
+      "idiom_id": "idiom:115AG6H08:頭昏腦脹",
+      "rewritten": "遇到生活中的相關情況時，可以用「頭昏腦脹」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H08:4",
+      "idiom_id": "idiom:115AG6H08:筋疲力盡",
+      "rewritten": "遇到生活中的相關情況時，可以用「筋疲力盡」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H08:5",
+      "idiom_id": "idiom:115AG6H08:吉人天相",
+      "rewritten": "遇到生活中的相關情況時，可以用「吉人天相」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H08:6",
+      "idiom_id": "idiom:115AG6H08:按圖索驥",
+      "rewritten": "遇到生活中的相關情況時，可以用「按圖索驥」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H08:7",
+      "idiom_id": "idiom:115AG6H08:一廂情願",
+      "rewritten": "遇到生活中的相關情況時，可以用「一廂情願」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H08:8",
+      "idiom_id": "idiom:115AG6H08:改弦易轍",
+      "rewritten": "遇到生活中的相關情況時，可以用「改弦易轍」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H08:9",
+      "idiom_id": "idiom:115AG6H08:循規蹈矩",
+      "rewritten": "遇到生活中的相關情況時，可以用「循規蹈矩」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H08:10",
+      "idiom_id": "idiom:115AG6H08:臨淵羨魚",
+      "rewritten": "遇到生活中的相關情況時，可以用「臨淵羨魚」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG6H08:word:1",
+      "category": "詞語造句",
+      "head": "名副其實",
+      "structure": "詞語造句",
+      "description": "名聲或名稱與事實相符合。",
+      "guide": "這場表演很精彩，真是＿＿＿＿。",
+      "examples": [
+        "鹿港到處都是著名的古蹟，真是名副其實的文化古鎮。"
+      ],
+      "example_parts": [
+        [
+          "鹿港到處都是",
+          "著名古蹟",
+          "真是",
+          "名副其實的文化古鎮"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "這場音樂會",
+          "名副其實",
+          "非常精彩",
+          "讓人難忘"
+        ]
+      ],
+      "word_bank": [
+        "看完完整演出",
+        "說出欣賞理由",
+        "推薦給家人"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H08:word:2",
+      "category": "詞語造句",
+      "head": "儼然",
+      "structure": "詞語造句",
+      "description": "彷彿、好像。",
+      "guide": "換上戲服後，他儼然＿＿＿＿。",
+      "examples": [
+        "地鐵上的年輕人彈電吉他、合唱熱門音樂，儼然一個小型樂團。"
+      ],
+      "example_parts": [
+        [
+          "地鐵上的年輕人",
+          "彈琴合唱",
+          "儼然",
+          "一個小型樂團"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "換上表演服裝",
+          "他",
+          "儼然",
+          "一位街頭藝人"
+        ]
+      ],
+      "word_bank": [
+        "站在石墩上",
+        "跟著音樂動作",
+        "吸引路人停下"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H08:pattern:1",
+      "category": "句型練習",
+      "head": "讓步複句",
+      "structure": "即使＋狀況，也＋結果",
+      "description": "依照句型寫一句：先寫一種狀況，再寫仍然會出現的結果。",
+      "guide": "依照句型寫一句：先寫一種狀況，再寫仍然會出現的結果。",
+      "examples": [
+        "即使下雨了也有人停下來欣賞表演",
+        "即使練習很久也要繼續調整節奏",
+        "即使觀眾不多也認真完成演出"
+      ],
+      "example_parts": [
+        [
+          "即使",
+          "下雨了",
+          "也",
+          "有人停下來欣賞表演"
+        ],
+        [
+          "即使",
+          "練習很久",
+          "也",
+          "要繼續調整節奏"
+        ],
+        [
+          "即使",
+          "觀眾不多",
+          "也",
+          "認真完成演出"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "即使",
+          "choices": [
+            "即使"
+          ]
+        },
+        {
+          "label": "狀況",
+          "choices": [
+            "觀眾不多",
+            "練習很久",
+            "下雨了"
+          ]
+        },
+        {
+          "label": "也",
+          "choices": [
+            "也"
+          ]
+        },
+        {
+          "label": "結果",
+          "choices": [
+            "認真完成演出",
+            "要繼續調整節奏",
+            "有人停下來欣賞表演"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H08:pattern:2",
+      "category": "句型練習",
+      "head": "假設複句",
+      "structure": "如果＋情況，就＋結果",
+      "description": "依照句型寫一句：先寫一種情況，再寫可能產生的結果。",
+      "guide": "依照句型寫一句：先寫一種情況，再寫可能產生的結果。",
+      "examples": [
+        "如果聽眾想了解作品就停下來聽導覽",
+        "如果表演結束了就給藝人掌聲鼓勵",
+        "如果音樂太大聲就調整音量"
+      ],
+      "example_parts": [
+        [
+          "如果",
+          "聽眾想了解作品",
+          "就",
+          "停下來聽導覽"
+        ],
+        [
+          "如果",
+          "表演結束了",
+          "就",
+          "給藝人掌聲鼓勵"
+        ],
+        [
+          "如果",
+          "音樂太大聲",
+          "就",
+          "調整音量"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "如果",
+          "choices": [
+            "如果"
+          ]
+        },
+        {
+          "label": "情況",
+          "choices": [
+            "表演結束了",
+            "音樂太大聲",
+            "聽眾想了解作品"
+          ]
+        },
+        {
+          "label": "就",
+          "choices": [
+            "就"
+          ]
+        },
+        {
+          "label": "結果",
+          "choices": [
+            "調整音量",
+            "給藝人掌聲鼓勵",
+            "停下來聽導覽"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H08:pattern:3",
+      "category": "句型練習",
+      "head": "短語結構",
+      "structure": "動詞＋著＋形容詞＋的＋名詞",
+      "description": "依照句型寫一句：先寫動作，再補上形容詞和名詞。",
+      "guide": "依照句型寫一句：先寫動作，再補上形容詞和名詞。",
+      "examples": [
+        "迴盪著悠揚的樂聲。",
+        "充滿著熱鬧的氣氛。",
+        "飄散著淡淡的花香。"
+      ],
+      "example_parts": [
+        [
+          "迴盪著",
+          "悠揚的",
+          "樂聲",
+          "。"
+        ],
+        [
+          "充滿著",
+          "熱鬧的",
+          "氣氛",
+          "。"
+        ],
+        [
+          "飄散著",
+          "淡淡的",
+          "花香",
+          "。"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "動詞加著",
+          "choices": [
+            "飄散著",
+            "迴盪著",
+            "充滿著"
+          ]
+        },
+        {
+          "label": "形容詞",
+          "choices": [
+            "淡淡的",
+            "熱鬧的",
+            "悠揚的"
+          ]
+        },
+        {
+          "label": "名詞",
+          "choices": [
+            "花香",
+            "氣氛",
+            "樂聲"
+          ]
+        },
+        {
+          "label": "句號",
+          "choices": [
+            "。"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:08:01",
+      "paragraph_no": 1,
+      "summary": "作者在巴黎香榭麗舍大道看見一位裝扮成卓別林的街頭藝術家，起初以為他是機器人。",
+      "structure_role": "【第1～3段】巴黎的街頭藝術",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:08:02",
+      "paragraph_no": 2,
+      "summary": "音樂響起後，原本靜止的「塑膠娃娃」開始轉動、咧開嘴角，行人好奇地靠攏欣賞。",
+      "structure_role": "【第4～8段】歐洲的街頭藝術",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:08:03",
+      "paragraph_no": 3,
+      "summary": "巴黎是藝術之都；演奏水準不同，觀眾的反應也不同。提琴演奏者受歡迎，吹喇叭新手卻讓人想離開。",
+      "structure_role": "【第9段】臺灣的街頭藝術",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:08:04",
+      "paragraph_no": 4,
+      "summary": "地鐵上的年輕人彈電吉他、唱歌，儼然小型樂團；乘客若沒有反應，他們便轉往下一節車廂。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:08:05",
+      "paragraph_no": 5,
+      "summary": "在瑞士伯恩，作者聽見專業的弦樂四重奏，發現欣賞音樂不一定要規規矩矩坐在劇院。",
+      "structure_role": "第5段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:08:06",
+      "paragraph_no": 6,
+      "summary": "臺灣的景點、公園、廣場和車站也常有街頭藝術家賣力表演；作者鼓勵大家駐足欣賞。",
+      "structure_role": "第6段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "main_idea": {
+    "gist": "作者在巴黎、歐洲和臺灣欣賞多樣的街頭藝術，發現藝術能走進公共空間、帶來活力與美感，並期望大家駐足欣賞、給予鼓勵。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:08:01",
+      "stem": "作者起初為什麼以為街頭藝術家是機器人？",
+      "options": [
+        "他站在石墩上一動也不動 (2)他穿著運動服跑步"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:08:02",
+      "stem": "巴黎兩位樂手的例子說明什麼？",
+      "options": [
+        "表演水準會影響觀眾反應 (2)提琴一定比喇叭好聽"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:08:03",
+      "stem": "伯恩的弦樂四重奏帶給作者什麼想法？",
+      "options": [
+        "街頭也能欣賞專業音樂 (2)音樂只能在劇院演出"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:08:04",
+      "stem": "作者期望讀者如何對待街頭藝術家？",
+      "options": [
+        "駐足欣賞並給予鼓勵 (2)看見表演就立刻離開"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG6H08:墩:1",
+      "char": "墩",
+      "sentence": "語詞「土墩」中的「墩」，就是指沙土堆成的高丘。",
+      "definition": "沙土堆成的高丘",
+      "options": [
+        "沙土堆成的高丘",
+        "用來支撐、墊物的粗壯木頭或柱石"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:墩:2",
+      "char": "墩",
+      "sentence": "語詞「橋墩」中的「墩」，就是指用來支撐、墊物的粗壯木頭或柱石。",
+      "definition": "用來支撐、墊物的粗壯木頭或柱石",
+      "options": [
+        "沙土堆成的高丘",
+        "用來支撐、墊物的粗壯木頭或柱石"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:撇:1",
+      "char": "撇",
+      "sentence": "語詞「兩撇鬍子」中的「撇」，就是指量詞。計算撇狀物的單位。",
+      "definition": "量詞。計算撇狀物的單位",
+      "options": [
+        "量詞。計算撇狀物的單位",
+        "國字筆畫名稱",
+        "斜向一邊"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:撇:2",
+      "char": "撇",
+      "sentence": "語詞「撇」中的「撇」，就是指國字筆畫名稱。",
+      "definition": "國字筆畫名稱",
+      "options": [
+        "量詞。計算撇狀物的單位",
+        "國字筆畫名稱",
+        "斜向一邊"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:撇:3",
+      "char": "撇",
+      "sentence": "語詞「撇嘴」中的「撇」，就是指斜向一邊。",
+      "definition": "斜向一邊",
+      "options": [
+        "量詞。計算撇狀物的單位",
+        "國字筆畫名稱",
+        "斜向一邊"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:攏:1",
+      "char": "攏",
+      "sentence": "語詞「拉攏」中的「攏」，就是指聚集、靠近。",
+      "definition": "聚集、靠近",
+      "options": [
+        "聚集、靠近",
+        "整理、梳理",
+        "總計"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:攏:2",
+      "char": "攏",
+      "sentence": "語詞「攏鬢」中的「攏」，就是指整理、梳理。",
+      "definition": "整理、梳理",
+      "options": [
+        "聚集、靠近",
+        "整理、梳理",
+        "總計"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:攏:3",
+      "char": "攏",
+      "sentence": "語詞「攏總」中的「攏」，就是指總計。",
+      "definition": "總計",
+      "options": [
+        "聚集、靠近",
+        "整理、梳理",
+        "總計"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:副:1",
+      "char": "副",
+      "sentence": "語詞「名副其實」中的「副」，就是指符合、相稱。",
+      "definition": "符合、相稱",
+      "options": [
+        "符合、相稱",
+        "職務是輔助的或擔任輔佐職務的人",
+        "附帶的",
+        "次要的。與「正」相對",
+        "量詞。計算成套、成組物品的單位。俗作「付」"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:副:2",
+      "char": "副",
+      "sentence": "語詞「副手」中的「副」，就是指職務是輔助的或擔任輔佐職務的人。",
+      "definition": "職務是輔助的或擔任輔佐職務的人",
+      "options": [
+        "符合、相稱",
+        "職務是輔助的或擔任輔佐職務的人",
+        "附帶的",
+        "次要的。與「正」相對",
+        "量詞。計算成套、成組物品的單位。俗作「付」"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:副:3",
+      "char": "副",
+      "sentence": "語詞「副作用」中的「副」，就是指附帶的。",
+      "definition": "附帶的",
+      "options": [
+        "符合、相稱",
+        "職務是輔助的或擔任輔佐職務的人",
+        "附帶的",
+        "次要的。與「正」相對",
+        "量詞。計算成套、成組物品的單位。俗作「付」"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:副:4",
+      "char": "副",
+      "sentence": "語詞「副本」中的「副」，就是指次要的。與「正」相對。",
+      "definition": "次要的。與「正」相對",
+      "options": [
+        "符合、相稱",
+        "職務是輔助的或擔任輔佐職務的人",
+        "附帶的",
+        "次要的。與「正」相對",
+        "量詞。計算成套、成組物品的單位。俗作「付」"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:副:5",
+      "char": "副",
+      "sentence": "語詞「一副碗筷」中的「副」，就是指量詞。計算成套、成組物品的單位。俗作「付」。",
+      "definition": "量詞。計算成套、成組物品的單位。俗作「付」",
+      "options": [
+        "符合、相稱",
+        "職務是輔助的或擔任輔佐職務的人",
+        "附帶的",
+        "次要的。與「正」相對",
+        "量詞。計算成套、成組物品的單位。俗作「付」"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:羈:1",
+      "char": "羈",
+      "sentence": "語詞「羈束」中的「羈」，就是指拘束、牽絆。",
+      "definition": "拘束、牽絆",
+      "options": [
+        "拘束、牽絆",
+        "停留"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:羈:2",
+      "char": "羈",
+      "sentence": "語詞「羈旅」中的「羈」，就是指停留。",
+      "definition": "停留",
+      "options": [
+        "拘束、牽絆",
+        "停留"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:伙:1",
+      "char": "伙",
+      "sentence": "語詞「同伙」中的「伙」，就是指在一起生活或工作的人。通「夥」。",
+      "definition": "在一起生活或工作的人。通「夥」",
+      "options": [
+        "在一起生活或工作的人。通「夥」",
+        "伙食的簡稱",
+        "量詞。計算人群的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:伙:2",
+      "char": "伙",
+      "sentence": "語詞「開伙」中的「伙」，就是指伙食的簡稱。",
+      "definition": "伙食的簡稱",
+      "options": [
+        "在一起生活或工作的人。通「夥」",
+        "伙食的簡稱",
+        "量詞。計算人群的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:伙:3",
+      "char": "伙",
+      "sentence": "語詞「一伙人」中的「伙」，就是指量詞。計算人群的單位。",
+      "definition": "量詞。計算人群的單位",
+      "options": [
+        "在一起生活或工作的人。通「夥」",
+        "伙食的簡稱",
+        "量詞。計算人群的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:鈔:1",
+      "char": "鈔",
+      "sentence": "語詞「鈔票」中的「鈔」，就是指紙幣。",
+      "definition": "紙幣",
+      "options": [
+        "紙幣",
+        "文學作品等經選錄而編成的書"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:鈔:2",
+      "char": "鈔",
+      "sentence": "語詞「文鈔」中的「鈔」，就是指文學作品等經選錄而編成的書。",
+      "definition": "文學作品等經選錄而編成的書",
+      "options": [
+        "紙幣",
+        "文學作品等經選錄而編成的書"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:喇:1",
+      "char": "喇",
+      "sentence": "語詞「喇叭」中的「喇」，就是指一種口吹的樂器。",
+      "definition": "一種口吹的樂器",
+      "options": [
+        "一種口吹的樂器",
+        "一種裝置在交通工具內，用手操作，會發出聲音以警示人的設備",
+        "蒙 藏地區對僧人、法師的尊稱"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:喇:2",
+      "char": "喇",
+      "sentence": "語詞「汽車喇叭」中的「喇」，就是指一種裝置在交通工具內，用手操作，會發出聲音以警示人的設備。",
+      "definition": "一種裝置在交通工具內，用手操作，會發出聲音以警示人的設備",
+      "options": [
+        "一種口吹的樂器",
+        "一種裝置在交通工具內，用手操作，會發出聲音以警示人的設備",
+        "蒙 藏地區對僧人、法師的尊稱"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:喇:3",
+      "char": "喇",
+      "sentence": "語詞「喇嘛」中的「喇」，就是指蒙 藏地區對僧人、法師的尊稱。",
+      "definition": "蒙 藏地區對僧人、法師的尊稱",
+      "options": [
+        "一種口吹的樂器",
+        "一種裝置在交通工具內，用手操作，會發出聲音以警示人的設備",
+        "蒙 藏地區對僧人、法師的尊稱"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:脹:1",
+      "char": "脹",
+      "sentence": "語詞「膨脹」中的「脹」，就是指物體體積由常態變大。與「縮」相對。",
+      "definition": "物體體積由常態變大。與「縮」相對",
+      "options": [
+        "物體體積由常態變大。與「縮」相對",
+        "形容飲食過飽，腸胃不舒服的感覺"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:脹:2",
+      "char": "脹",
+      "sentence": "語詞「胃脹」中的「脹」，就是指形容飲食過飽，腸胃不舒服的感覺。",
+      "definition": "形容飲食過飽，腸胃不舒服的感覺",
+      "options": [
+        "物體體積由常態變大。與「縮」相對",
+        "形容飲食過飽，腸胃不舒服的感覺"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:筋:1",
+      "char": "筋",
+      "sentence": "語詞「筋脈」中的「筋」，就是指靜脈管。",
+      "definition": "靜脈管",
+      "options": [
+        "靜脈管",
+        "肌腱、韌帶",
+        "泛指具彈性、可伸縮或形狀圓長堅韌的物體"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:筋:2",
+      "char": "筋",
+      "sentence": "語詞「筋骨」中的「筋」，就是指肌腱、韌帶。",
+      "definition": "肌腱、韌帶",
+      "options": [
+        "靜脈管",
+        "肌腱、韌帶",
+        "泛指具彈性、可伸縮或形狀圓長堅韌的物體"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:筋:3",
+      "char": "筋",
+      "sentence": "語詞「鋼筋」中的「筋」，就是指泛指具彈性、可伸縮或形狀圓長堅韌的物體。",
+      "definition": "泛指具彈性、可伸縮或形狀圓長堅韌的物體",
+      "options": [
+        "靜脈管",
+        "肌腱、韌帶",
+        "泛指具彈性、可伸縮或形狀圓長堅韌的物體"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:按:1",
+      "char": "按",
+      "sentence": "語詞「按兵不動」中的「按」，就是指抑止、擱置。",
+      "definition": "抑止、擱置",
+      "options": [
+        "抑止、擱置",
+        "用手或手指向下壓",
+        "依照"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:按:2",
+      "char": "按",
+      "sentence": "語詞「按鈴」中的「按」，就是指用手或手指向下壓。",
+      "definition": "用手或手指向下壓",
+      "options": [
+        "抑止、擱置",
+        "用手或手指向下壓",
+        "依照"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:按:3",
+      "char": "按",
+      "sentence": "語詞「按照」中的「按」，就是指依照。",
+      "definition": "依照",
+      "options": [
+        "抑止、擱置",
+        "用手或手指向下壓",
+        "依照"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:廂:1",
+      "char": "廂",
+      "sentence": "語詞「車廂」中的「廂」，就是指車內容納人、貨的地方。",
+      "definition": "車內容納人、貨的地方",
+      "options": [
+        "車內容納人、貨的地方",
+        "正屋兩側的房間",
+        "方面",
+        "戲院等娛樂場所裡另外隔間的特別座位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:廂:2",
+      "char": "廂",
+      "sentence": "語詞「廂房」中的「廂」，就是指正屋兩側的房間。",
+      "definition": "正屋兩側的房間",
+      "options": [
+        "車內容納人、貨的地方",
+        "正屋兩側的房間",
+        "方面",
+        "戲院等娛樂場所裡另外隔間的特別座位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:廂:3",
+      "char": "廂",
+      "sentence": "語詞「一廂情願」中的「廂」，就是指方面。",
+      "definition": "方面",
+      "options": [
+        "車內容納人、貨的地方",
+        "正屋兩側的房間",
+        "方面",
+        "戲院等娛樂場所裡另外隔間的特別座位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:廂:4",
+      "char": "廂",
+      "sentence": "語詞「包廂」中的「廂」，就是指戲院等娛樂場所裡另外隔間的特別座位。",
+      "definition": "戲院等娛樂場所裡另外隔間的特別座位",
+      "options": [
+        "車內容納人、貨的地方",
+        "正屋兩側的房間",
+        "方面",
+        "戲院等娛樂場所裡另外隔間的特別座位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:弦:1",
+      "char": "弦",
+      "sentence": "語詞「管弦」中的「弦」，就是指弦樂或弦樂器的簡稱。",
+      "definition": "弦樂或弦樂器的簡稱",
+      "options": [
+        "弦樂或弦樂器的簡稱",
+        "張於樂器上的絲、線，可用於彈奏發出樂音",
+        "半圓形的月亮",
+        "緊繫在弓上的線、索，具有彈性"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:弦:2",
+      "char": "弦",
+      "sentence": "語詞「琴弦」中的「弦」，就是指張於樂器上的絲、線，可用於彈奏發出樂音。",
+      "definition": "張於樂器上的絲、線，可用於彈奏發出樂音",
+      "options": [
+        "弦樂或弦樂器的簡稱",
+        "張於樂器上的絲、線，可用於彈奏發出樂音",
+        "半圓形的月亮",
+        "緊繫在弓上的線、索，具有彈性"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:弦:3",
+      "char": "弦",
+      "sentence": "語詞「上弦」中的「弦」，就是指半圓形的月亮。",
+      "definition": "半圓形的月亮",
+      "options": [
+        "弦樂或弦樂器的簡稱",
+        "張於樂器上的絲、線，可用於彈奏發出樂音",
+        "半圓形的月亮",
+        "緊繫在弓上的線、索，具有彈性"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:弦:4",
+      "char": "弦",
+      "sentence": "語詞「箭在弦上」中的「弦」，就是指緊繫在弓上的線、索，具有彈性。",
+      "definition": "緊繫在弓上的線、索，具有彈性",
+      "options": [
+        "弦樂或弦樂器的簡稱",
+        "張於樂器上的絲、線，可用於彈奏發出樂音",
+        "半圓形的月亮",
+        "緊繫在弓上的線、索，具有彈性"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:矩:1",
+      "char": "矩",
+      "sentence": "語詞「踰矩」中的「矩」，就是指法則、標準。",
+      "definition": "法則、標準",
+      "options": [
+        "法則、標準",
+        "畫方形或直角的曲尺",
+        "方形"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:矩:2",
+      "char": "矩",
+      "sentence": "語詞「以矩立方」中的「矩」，就是指畫方形或直角的曲尺。",
+      "definition": "畫方形或直角的曲尺",
+      "options": [
+        "法則、標準",
+        "畫方形或直角的曲尺",
+        "方形"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H08:矩:3",
+      "char": "矩",
+      "sentence": "語詞「矩形」中的「矩」，就是指方形。",
+      "definition": "方形",
+      "options": [
+        "法則、標準",
+        "畫方形或直角的曲尺",
+        "方形"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    }
+  ],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG6H08:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "石",
+          "example": "石墩、橋墩"
+        },
+        {
+          "char": "噸",
+          "example": "噸位、一噸"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H08:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "撇",
+          "example": "撇嘴、撇下"
+        },
+        {
+          "char": "幣",
+          "example": "幣值、錢幣"
+        },
+        {
+          "char": "蔽",
+          "example": "蔽日、遮蔽"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H08:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "靠",
+          "example": "靠攏、合攏"
+        },
+        {
+          "char": "田",
+          "example": "田隴、山隴"
+        },
+        {
+          "char": "朦",
+          "example": "朦朧、朧月"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H08:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "紙",
+          "example": "紙鈔、大鈔"
+        },
+        {
+          "char": "抄",
+          "example": "抄寫、抄錄"
+        },
+        {
+          "char": "美",
+          "example": "美妙、巧妙"
+        },
+        {
+          "char": "秒",
+          "example": "秒數、分秒"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H08:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "腫",
+          "example": "腫脹、胃脹"
+        },
+        {
+          "char": "帳",
+          "example": "帳簿、帳單"
+        },
+        {
+          "char": "悵",
+          "example": "悵然、惆悵"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H08:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "副",
+          "example": "副本、副手"
+        },
+        {
+          "char": "一",
+          "example": "一幅、降幅"
+        },
+        {
+          "char": "幸",
+          "example": "幸福、福氣"
+        },
+        {
+          "char": "輻",
+          "example": "輻射、車輻"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H08:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "儼",
+          "example": "儼然、儼如"
+        },
+        {
+          "char": "巖",
+          "example": "巖石、山巖"
+        },
+        {
+          "char": "嚴",
+          "example": "嚴格、嚴肅"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H08:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "車",
+          "example": "車廂、包廂"
+        },
+        {
+          "char": "冰",
+          "example": "冰箱、紙箱"
+        },
+        {
+          "char": "夢",
+          "example": "夢想、想法"
+        },
+        {
+          "char": "霜",
+          "example": "霜降、風霜"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG6H08:1",
+      "stem": "作者起初為什麼以為街頭藝術家是機器人？",
+      "question": "作者起初為什麼以為街頭藝術家是機器人？",
+      "options": [
+        "他站在石墩上一動也不動 (2)他穿著運動服跑步"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H08:2",
+      "stem": "巴黎兩位樂手的例子說明什麼？",
+      "question": "巴黎兩位樂手的例子說明什麼？",
+      "options": [
+        "表演水準會影響觀眾反應 (2)提琴一定比喇叭好聽"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H08:3",
+      "stem": "伯恩的弦樂四重奏帶給作者什麼想法？",
+      "question": "伯恩的弦樂四重奏帶給作者什麼想法？",
+      "options": [
+        "街頭也能欣賞專業音樂 (2)音樂只能在劇院演出"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H08:4",
+      "stem": "作者期望讀者如何對待街頭藝術家？",
+      "question": "作者期望讀者如何對待街頭藝術家？",
+      "options": [
+        "駐足欣賞並給予鼓勵 (2)看見表演就立刻離開"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    }
+  ],
+  "review_words": {},
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag6h-08",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E5%A2%A9%E6%92%87%E5%92%A7%E6%94%8F%E5%89%AF%E4%BC%99%E9%88%94%E5%B9%A3%E5%96%87%E8%84%B9%E7%AD%8B%E5%90%89%E5%84%BC%E6%8C%89%E5%BB%82%E5%BC%A6%E7%9F%A9%E7%BE%A8",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・六年級・第8課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「墩」的部首是哪一個？",
+      "options": [
+        "⼝",
+        "⼸",
+        "⼱"
+      ],
+      "answer": "⼟",
+      "explanation": "「墩」的部首是⼟。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「撇」的部首是哪一個？",
+      "options": [
+        "⾁",
+        "⼿",
+        "⼱"
+      ],
+      "answer": "⼿",
+      "explanation": "「撇」的部首是⼿。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「咧」的部首是哪一個？",
+      "options": [
+        "⼑",
+        "⽮",
+        "⼝"
+      ],
+      "answer": "⼝",
+      "explanation": "「咧」的部首是⼝。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「石墩」是什麼意思？",
+      "options": [
+        "皮下可見的靜脈管。",
+        "物體體積由常態變大。與「縮」相對。",
+        "年輕男子。"
+      ],
+      "answer": "以石頭砌成的基座。",
+      "explanation": "石墩：以石頭砌成的基座。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「撇」是什麼意思？",
+      "options": [
+        "暫時停住軍事行動，有觀望形勢的意思。課文中是指暫不採取行動。",
+        "錢。多指金屬貨幣。",
+        "以石頭砌成的基座。"
+      ],
+      "answer": "量詞。計算撇狀物的單位。",
+      "explanation": "撇：量詞。計算撇狀物的單位。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「咧開」是什麼意思？",
+      "options": [
+        "皮下可見的靜脈管。",
+        "形容行為端正、有條理，合於法度。",
+        "讚揚羨慕。"
+      ],
+      "answer": "嘴角向兩旁張開。",
+      "explanation": "咧開：嘴角向兩旁張開。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「靠攏」是什麼意思？",
+      "options": [
+        "用弦樂器演奏出的音樂。",
+        "紙質的貨幣，多由國家銀行或政府授權的銀行發行。也稱為「紙幣」。",
+        "年輕男子。"
+      ],
+      "answer": "靠近、聚攏。",
+      "explanation": "靠攏：靠近、聚攏。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「名副其實」是什麼意思？",
+      "options": [
+        "暫時停住軍事行動，有觀望形勢的意思。課文中是指暫不採取行動。",
+        "錢。多指金屬貨幣。",
+        "物體體積由常態變大。與「縮」相對。"
+      ],
+      "answer": "名聲或名稱與事實相符合。",
+      "explanation": "名副其實：名聲或名稱與事實相符合。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "段落摘要已整理；課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "教材待補：應用任務設計中"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "聆聽題目保留待教師確認答案，未在正式模組顯示。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭教材尚未完成公開資料整理。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "跨課複習資料待補。"
+    }
+  }
+}

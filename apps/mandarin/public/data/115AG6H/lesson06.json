@@ -1,0 +1,1912 @@
+{
+  "lesson_id": "115AG6H06",
+  "volume": {
+    "code": "115AG6H",
+    "publisher": "翰林",
+    "grade": 6,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "六上國語課程"
+  },
+  "lesson_no": 6,
+  "title": "善用自嘲，展現幽默",
+  "author": "",
+  "blurb": "透過〈善用自嘲，展現幽默〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "characters": [
+    {
+      "char": "嘲",
+      "zhuyin": "ㄔㄠˊ",
+      "stroke_count": 15,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "自嘲",
+        "嘲諷"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%98%B2",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "揶",
+      "zhuyin": "ㄧㄝˊ",
+      "stroke_count": 11,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "揶揄"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8F%B6",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "揄",
+      "zhuyin": "ㄩˊ",
+      "stroke_count": 12,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "揶揄"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8F%84",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "僵",
+      "zhuyin": "ㄐㄧㄤ",
+      "stroke_count": 15,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "僵持"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%83%B5",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "侃",
+      "zhuyin": "ㄎㄢˇ",
+      "stroke_count": 8,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "調侃"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BE%83",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "競",
+      "zhuyin": "ㄐㄧㄥˋ",
+      "stroke_count": 20,
+      "radical": "⽴",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "競選"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%AB%B6",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "醜",
+      "zhuyin": "ㄔㄡˇ",
+      "stroke_count": 16,
+      "radical": "⾣",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "醜"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%86%9C",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "哄",
+      "zhuyin": "ㄏㄨㄥ",
+      "stroke_count": 9,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "哄堂大笑"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%93%84",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "判",
+      "zhuyin": "ㄆㄢˋ",
+      "stroke_count": 7,
+      "radical": "⼑",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "批判"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%88%A4",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "倘",
+      "zhuyin": "ㄊㄤˇ",
+      "stroke_count": 10,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "倘若"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%80%98",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "諷",
+      "zhuyin": "ㄈㄥˇ",
+      "stroke_count": 16,
+      "radical": "⾔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "嘲諷"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%AB%B7",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "丐",
+      "zhuyin": "ㄍㄞˋ",
+      "stroke_count": 4,
+      "radical": "⼀",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "乞丐"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%B8%90",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "屑",
+      "zhuyin": "ㄒㄧㄝˋ",
+      "stroke_count": 10,
+      "radical": "⼫",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "不屑"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B1%91",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "貶",
+      "zhuyin": "ㄅㄧㄢˇ",
+      "stroke_count": 11,
+      "radical": "⾙",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "貶低"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B2%B6",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "捏",
+      "zhuyin": "ㄋㄧㄝ",
+      "stroke_count": 10,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "拿捏"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8D%8F",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "吻",
+      "zhuyin": "ㄨㄣˇ",
+      "stroke_count": 7,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "口吻"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%90%BB",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "坦",
+      "zhuyin": "ㄊㄢˇ",
+      "stroke_count": 8,
+      "radical": "⼟",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "坦然"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%9D%A6",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "窘",
+      "zhuyin": "ㄐㄩㄥˇ",
+      "stroke_count": 12,
+      "radical": "⽳",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "窘境"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%AA%98",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG6H06:01",
+      "word": "自嘲",
+      "zhuyin": "ㄗˋ ㄔㄠˊ",
+      "meaning": "以言辭嘲笑自己。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG6H/lesson06/vocabulary/l06-01.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H06:02",
+      "word": "揶揄",
+      "zhuyin": "ㄧㄝˊ ㄩˊ",
+      "meaning": "嘲笑、戲弄。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H06:03",
+      "word": "僵持",
+      "zhuyin": "ㄐㄧㄤ ㄔˊ",
+      "meaning": "相持不讓而無所進展。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H06:04",
+      "word": "調侃",
+      "zhuyin": "ㄊㄧㄠˊ ㄎㄢˇ",
+      "meaning": "揶揄、嘲諷、挖苦。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H06:05",
+      "word": "競選",
+      "zhuyin": "ㄐㄧㄥˋ ㄒㄩㄢˇ",
+      "meaning": "依法採取有組織、有計畫的競爭行動，以爭取選民投票支持。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H06:06",
+      "word": "醜",
+      "zhuyin": "ㄔㄡˇ",
+      "meaning": "形貌難看的。與「美」相對。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H06:07",
+      "word": "哄堂大笑",
+      "zhuyin": "ㄏㄨㄥ ㄊㄤˊ ㄉㄚˋ ㄒㄧㄠˋ",
+      "meaning": "眾人同時大笑。",
+      "example_sentence": "他不經意的一句話，竟引起全場一陣哄堂大笑。",
+      "example_status": "approved",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H06:08",
+      "word": "批判",
+      "zhuyin": "ㄆㄧ ㄆㄢˋ",
+      "meaning": "評論判斷。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H06:09",
+      "word": "倘若",
+      "zhuyin": "ㄊㄤˇ ㄖㄨㄛˋ",
+      "meaning": "如果、假使。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H06:10",
+      "word": "嘲諷",
+      "zhuyin": "ㄔㄠˊ ㄈㄥˇ",
+      "meaning": "嘲笑諷刺。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H06:11",
+      "word": "乞丐",
+      "zhuyin": "ㄑㄧˇ ㄍㄞˋ",
+      "meaning": "以索求食物、錢財維生的人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H06:12",
+      "word": "不屑",
+      "zhuyin": "ㄅㄨˊ ㄒㄧㄝˋ",
+      "meaning": "輕視而不加以注意。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H06:13",
+      "word": "貶低",
+      "zhuyin": "ㄅㄧㄢˇ ㄉㄧ",
+      "meaning": "刻意降低對人或事物的評價。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H06:14",
+      "word": "拿捏",
+      "zhuyin": "ㄋㄚˊ ㄋㄧㄝ",
+      "meaning": "掌握事情的分寸。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H06:15",
+      "word": "口吻",
+      "zhuyin": "ㄎㄡˇ ㄨㄣˇ",
+      "meaning": "說話的語氣及措辭。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H06:16",
+      "word": "坦然",
+      "zhuyin": "ㄊㄢˇ ㄖㄢˊ",
+      "meaning": "內心安寧舒泰的樣子。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H06:17",
+      "word": "窘境",
+      "zhuyin": "ㄐㄩㄥˇ ㄐㄧㄥˋ",
+      "meaning": "尷尬、難堪的境地。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG6H/lesson06/vocabulary/l06-17.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H06:18",
+      "word": "魅力",
+      "zhuyin": "ㄇㄟˋ ㄌㄧˋ",
+      "meaning": "吸引人的力量。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG6H06:冷嘲熱諷",
+      "idiom": "冷嘲熱諷",
+      "definition": "形容尖酸、刻薄的嘲笑和諷刺。",
+      "related_char": "嘲",
+      "image": "idioms/01_冷嘲熱諷.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H06:李代桃僵",
+      "idiom": "李代桃僵",
+      "definition": "比喻以此代彼，或代人受過。",
+      "related_char": "僵",
+      "image": "idioms/02_李代桃僵.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H06:侃侃而談",
+      "idiom": "侃侃而談",
+      "definition": "形容說話從容不迫的樣子。",
+      "related_char": "侃",
+      "image": "idioms/03_侃侃而談.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H06:一哄而散",
+      "idiom": "一哄而散",
+      "definition": "人群在吵鬧中各自散去。",
+      "related_char": "哄",
+      "image": "idioms/04_一哄而散.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H06:判若兩人",
+      "idiom": "判若兩人",
+      "definition": "形容一個人的行為態度前後截然不同。",
+      "related_char": "判",
+      "image": "idioms/05_判若兩人.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H06:不屑一顧",
+      "idiom": "不屑一顧",
+      "definition": "輕視、瞧不起。",
+      "related_char": "屑",
+      "image": "idioms/06_不屑一顧.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H06:扭扭捏捏",
+      "idiom": "扭扭捏捏",
+      "definition": "形容舉止、言談不自然。",
+      "related_char": "捏",
+      "image": "idioms/07_扭扭捏捏.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H06:坦腹東床",
+      "idiom": "坦腹東床",
+      "definition": "比喻當女婿。",
+      "related_char": "坦",
+      "image": "idioms/08_坦腹東床.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H06:窘態畢露",
+      "idiom": "窘態畢露",
+      "definition": "尷尬難堪的樣子全都顯露出來。",
+      "related_char": "窘",
+      "image": "idioms/09_窘態畢露.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG6H06:1",
+      "idiom_id": "idiom:115AG6H06:冷嘲熱諷",
+      "rewritten": "遇到生活中的相關情況時，可以用「冷嘲熱諷」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H06:2",
+      "idiom_id": "idiom:115AG6H06:李代桃僵",
+      "rewritten": "遇到生活中的相關情況時，可以用「李代桃僵」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H06:3",
+      "idiom_id": "idiom:115AG6H06:侃侃而談",
+      "rewritten": "遇到生活中的相關情況時，可以用「侃侃而談」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H06:4",
+      "idiom_id": "idiom:115AG6H06:一哄而散",
+      "rewritten": "遇到生活中的相關情況時，可以用「一哄而散」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H06:5",
+      "idiom_id": "idiom:115AG6H06:判若兩人",
+      "rewritten": "遇到生活中的相關情況時，可以用「判若兩人」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H06:6",
+      "idiom_id": "idiom:115AG6H06:不屑一顧",
+      "rewritten": "遇到生活中的相關情況時，可以用「不屑一顧」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H06:7",
+      "idiom_id": "idiom:115AG6H06:扭扭捏捏",
+      "rewritten": "遇到生活中的相關情況時，可以用「扭扭捏捏」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H06:8",
+      "idiom_id": "idiom:115AG6H06:坦腹東床",
+      "rewritten": "遇到生活中的相關情況時，可以用「坦腹東床」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H06:9",
+      "idiom_id": "idiom:115AG6H06:窘態畢露",
+      "rewritten": "遇到生活中的相關情況時，可以用「窘態畢露」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG6H06:word:1",
+      "category": "詞語造句",
+      "head": "適可而止",
+      "structure": "詞語造句",
+      "description": "到了適當程度就停止。",
+      "guide": "我想繼續玩時，會提醒自己要＿＿＿＿。",
+      "examples": [
+        "開玩笑要適可而止，不可以沒了分寸，傷害他人。"
+      ],
+      "example_parts": [
+        [
+          "開玩笑",
+          "要",
+          "適可而止",
+          "不可以傷害他人"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "玩遊戲",
+          "也要",
+          "適可而止",
+          "才不會耽誤功課"
+        ]
+      ],
+      "word_bank": [
+        "先提醒自己",
+        "聽聽別人的感受",
+        "做完再休息"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H06:word:2",
+      "category": "詞語造句",
+      "head": "哄堂大笑",
+      "structure": "詞語造句",
+      "description": "眾人同時大笑。",
+      "guide": "聽到有趣的故事後，大家＿＿＿＿。",
+      "examples": [
+        "他不經意的一句話，竟引起全場一陣哄堂大笑。"
+      ],
+      "example_parts": [
+        [
+          "他不經意的話",
+          "竟引起",
+          "全場一陣",
+          "哄堂大笑"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "班上的小故事",
+          "讓大家",
+          "忍不住",
+          "哄堂大笑"
+        ]
+      ],
+      "word_bank": [
+        "分享有趣的經驗",
+        "說明事情經過",
+        "安靜聽同學說話"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H06:pattern:1",
+      "category": "句型練習",
+      "head": "假設複句",
+      "structure": "如果＋情況，還會＋目前的狀況嗎？",
+      "description": "依照句型寫一句：先假設一種情況，再問可能會不會改變。",
+      "guide": "依照句型寫一句：先假設一種情況，再問可能會不會改變。",
+      "examples": [
+        "如果明天放假還會這麼早起床嗎",
+        "如果有公車能搭還會走這條山路嗎",
+        "如果已經準備好了還會感到很緊張嗎"
+      ],
+      "example_parts": [
+        [
+          "如果",
+          "明天放假",
+          "還會",
+          "這麼早起床嗎"
+        ],
+        [
+          "如果",
+          "有公車能搭",
+          "還會",
+          "走這條山路嗎"
+        ],
+        [
+          "如果",
+          "已經準備好了",
+          "還會",
+          "感到很緊張嗎"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "如果",
+          "choices": [
+            "如果"
+          ]
+        },
+        {
+          "label": "假設情況",
+          "choices": [
+            "有人一起幫忙",
+            "今天不用上課",
+            "已經找到答案"
+          ]
+        },
+        {
+          "label": "還會",
+          "choices": [
+            "還會"
+          ]
+        },
+        {
+          "label": "目前狀況",
+          "choices": [
+            "繼續擔心嗎",
+            "一個人完成嗎",
+            "急著離開嗎"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H06:pattern:2",
+      "category": "句型練習",
+      "head": "遞進複句",
+      "structure": "不僅＋情況，也＋進一步的情況",
+      "description": "依照句型寫一句：先寫第一個影響，再寫更進一步的影響。",
+      "guide": "依照句型寫一句：先寫第一個影響，再寫更進一步的影響。",
+      "examples": [
+        "善用幽默不僅讓氣氛輕鬆也讓溝通更順利",
+        "認真傾聽不僅了解對方想法也減少誤會",
+        "準時完成作業不僅讓自己安心也方便老師批改"
+      ],
+      "example_parts": [
+        [
+          "善用幽默",
+          "不僅讓氣氛輕鬆",
+          "也",
+          "讓溝通更順利"
+        ],
+        [
+          "認真傾聽",
+          "不僅了解對方想法",
+          "也",
+          "減少誤會"
+        ],
+        [
+          "準時完成作業",
+          "不僅讓自己安心",
+          "也",
+          "方便老師批改"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "主題",
+          "choices": [
+            "主動幫忙",
+            "認真傾聽",
+            "善用幽默"
+          ]
+        },
+        {
+          "label": "第一層影響",
+          "choices": [
+            "不僅讓氣氛輕鬆",
+            "不僅完成工作",
+            "不僅了解想法"
+          ]
+        },
+        {
+          "label": "也",
+          "choices": [
+            "也"
+          ]
+        },
+        {
+          "label": "更進一步影響",
+          "choices": [
+            "減少誤會",
+            "讓溝通順利",
+            "建立信任"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H06:pattern:3",
+      "category": "句型練習",
+      "head": "是……更是……",
+      "structure": "是＋情況，更是＋更進一步的情況",
+      "description": "依照句型寫一句：先說一個意義，再寫更深一層的意義。",
+      "guide": "依照句型寫一句：先說一個意義，再寫更深一層的意義。",
+      "examples": [
+        "誠實說明想法是一種尊重更是建立信任的方法",
+        "承認自己的錯誤是一種勇氣更是改進的開始",
+        "學習幽默表達是一種能力更是與人相處的智慧"
+      ],
+      "example_parts": [
+        [
+          "誠實說明想法",
+          "是一種尊重",
+          "更是",
+          "建立信任的方法"
+        ],
+        [
+          "承認自己的錯誤",
+          "是一種勇氣",
+          "更是",
+          "改進的開始"
+        ],
+        [
+          "學習幽默表達",
+          "是一種能力",
+          "更是",
+          "與人相處的智慧"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "主題",
+          "choices": [
+            "願意道歉",
+            "認真學習",
+            "誠實表達"
+          ]
+        },
+        {
+          "label": "第一層意義",
+          "choices": [
+            "是一種責任",
+            "是一種勇氣",
+            "是一種尊重"
+          ]
+        },
+        {
+          "label": "更是",
+          "choices": [
+            "更是"
+          ]
+        },
+        {
+          "label": "更深意義",
+          "choices": [
+            "改進的開始",
+            "建立信任的方法",
+            "持續進步的力量"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:06:01",
+      "paragraph_no": 1,
+      "summary": "作者先說明幽默能讓人會心一笑、化解尷尬、營造良好談話氣氛，並提出最高明的幽默是自嘲。",
+      "structure_role": "【第1～2段】提出觀點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:06:02",
+      "paragraph_no": 2,
+      "summary": "開玩笑若用挖苦或揶揄別人的方式，可能傷害他人、引起反感，使局勢僵持不下。",
+      "structure_role": "【第3～5段】正例與使用原則",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:06:03",
+      "paragraph_no": 3,
+      "summary": "林肯被批評是雙面人時，以自己的長相開玩笑，引來觀眾笑聲，也化解對手的批判。",
+      "structure_role": "【第6～8段】反例與結論",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:06:04",
+      "paragraph_no": 4,
+      "summary": "如果林肯惱羞成怒，可能錯失扭轉頹勢的機會；自嘲要適可而止，內容應是自己的缺點或弱點。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:06:05",
+      "paragraph_no": 5,
+      "summary": "餐廳男人久候餐點，用像乞丐般不受重視來抱怨；這種自嘲透露對乞丐的成見，容易引起反感。",
+      "structure_role": "第5段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:06:06",
+      "paragraph_no": 6,
+      "summary": "作者總結：適當自嘲需要自信與分寸，能把窘境轉化為幽默談吐，讓溝通更順利。",
+      "structure_role": "第6段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "main_idea": {
+    "gist": "作者以林肯和餐廳男人為例，說明適時、合宜的自嘲能化解尷尬、展現幽默；不當的自嘲則會傷害他人、引起反感。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:06:01",
+      "stem": "作者認為幽默有什麼好處？",
+      "options": [
+        "化解尷尬、讓溝通順利 (2)可以挖苦別人"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:06:02",
+      "stem": "林肯的自嘲產生什麼效果？",
+      "options": [
+        "化解批評、留下正面印象 (2)讓現場更緊張"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:06:03",
+      "stem": "餐廳男人的自嘲為什麼不恰當？",
+      "options": [
+        "透露對乞丐的成見 (2)說得太小聲"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:06:04",
+      "stem": "作者最想提醒讀者什麼？",
+      "options": [
+        "自嘲要有自信並拿捏分寸 (2)遇到事情都要嘲笑自己"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG6H06:僵:1",
+      "char": "僵",
+      "sentence": "語詞「別把事情弄僵了！」中的「僵」，就是指形容事情難以處理的狀況。",
+      "definition": "形容事情難以處理的狀況",
+      "options": [
+        "形容事情難以處理的狀況",
+        "硬化、不靈活",
+        "收斂起笑容，臉部表情變得嚴肅"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:僵:2",
+      "char": "僵",
+      "sentence": "語詞「凍僵」中的「僵」，就是指硬化、不靈活。",
+      "definition": "硬化、不靈活",
+      "options": [
+        "形容事情難以處理的狀況",
+        "硬化、不靈活",
+        "收斂起笑容，臉部表情變得嚴肅"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:僵:3",
+      "char": "僵",
+      "sentence": "語詞「僵著臉」中的「僵」，就是指收斂起笑容，臉部表情變得嚴肅。",
+      "definition": "收斂起笑容，臉部表情變得嚴肅",
+      "options": [
+        "形容事情難以處理的狀況",
+        "硬化、不靈活",
+        "收斂起笑容，臉部表情變得嚴肅"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:侃:1",
+      "char": "侃",
+      "sentence": "語詞「調侃」中的「侃」，就是指揶揄、嘲諷、挖苦。",
+      "definition": "揶揄、嘲諷、挖苦",
+      "options": [
+        "揶揄、嘲諷、挖苦",
+        "從容不迫"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:侃:2",
+      "char": "侃",
+      "sentence": "語詞「侃侃而談」中的「侃」，就是指從容不迫。",
+      "definition": "從容不迫",
+      "options": [
+        "揶揄、嘲諷、挖苦",
+        "從容不迫"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:醜:1",
+      "char": "醜",
+      "sentence": "語詞「醜陋」中的「醜」，就是指形貌難看的。與「美」相對。",
+      "definition": "形貌難看的。與「美」相對",
+      "options": [
+        "形貌難看的。與「美」相對",
+        "惡劣的、不好的",
+        "羞恥、不光榮的事"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:醜:2",
+      "char": "醜",
+      "sentence": "語詞「醜行」中的「醜」，就是指惡劣的、不好的。",
+      "definition": "惡劣的、不好的",
+      "options": [
+        "形貌難看的。與「美」相對",
+        "惡劣的、不好的",
+        "羞恥、不光榮的事"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:醜:3",
+      "char": "醜",
+      "sentence": "語詞「家醜」中的「醜」，就是指羞恥、不光榮的事。",
+      "definition": "羞恥、不光榮的事",
+      "options": [
+        "形貌難看的。與「美」相對",
+        "惡劣的、不好的",
+        "羞恥、不光榮的事"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:判:1",
+      "char": "判",
+      "sentence": "語詞「審判」中的「判」，就是指決斷、斷定。",
+      "definition": "決斷、斷定",
+      "options": [
+        "決斷、斷定",
+        "分明、辨明"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:判:2",
+      "char": "判",
+      "sentence": "語詞「判別」中的「判」，就是指分明、辨明。",
+      "definition": "分明、辨明",
+      "options": [
+        "決斷、斷定",
+        "分明、辨明"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:諷:1",
+      "char": "諷",
+      "sentence": "語詞「嘲諷」中的「諷」，就是指譏刺。",
+      "definition": "譏刺",
+      "options": [
+        "譏刺",
+        "委婉勸諫"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:諷:2",
+      "char": "諷",
+      "sentence": "語詞「諷諫」中的「諷」，就是指委婉勸諫。",
+      "definition": "委婉勸諫",
+      "options": [
+        "譏刺",
+        "委婉勸諫"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:屑:1",
+      "char": "屑",
+      "sentence": "語詞「不屑一顧」中的「屑」，就是指認為值得。",
+      "definition": "認為值得",
+      "options": [
+        "認為值得",
+        "介意、在乎",
+        "碎末",
+        "細碎、微小"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:屑:2",
+      "char": "屑",
+      "sentence": "語詞「不屑毀譽」中的「屑」，就是指介意、在乎。",
+      "definition": "介意、在乎",
+      "options": [
+        "認為值得",
+        "介意、在乎",
+        "碎末",
+        "細碎、微小"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:屑:3",
+      "char": "屑",
+      "sentence": "語詞「木屑」中的「屑」，就是指碎末。",
+      "definition": "碎末",
+      "options": [
+        "認為值得",
+        "介意、在乎",
+        "碎末",
+        "細碎、微小"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:屑:4",
+      "char": "屑",
+      "sentence": "語詞「瑣屑」中的「屑」，就是指細碎、微小。",
+      "definition": "細碎、微小",
+      "options": [
+        "認為值得",
+        "介意、在乎",
+        "碎末",
+        "細碎、微小"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:貶:1",
+      "char": "貶",
+      "sentence": "語詞「褒貶」中的「貶」，就是指對人的言行給予不好的批評。與「褒」相對。",
+      "definition": "對人的言行給予不好的批評。與「褒」相對",
+      "options": [
+        "對人的言行給予不好的批評。與「褒」相對",
+        "降低、減少",
+        "官員降級任用"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:貶:2",
+      "char": "貶",
+      "sentence": "語詞「貶值」中的「貶」，就是指降低、減少。",
+      "definition": "降低、減少",
+      "options": [
+        "對人的言行給予不好的批評。與「褒」相對",
+        "降低、減少",
+        "官員降級任用"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:貶:3",
+      "char": "貶",
+      "sentence": "語詞「貶官」中的「貶」，就是指官員降級任用。",
+      "definition": "官員降級任用",
+      "options": [
+        "對人的言行給予不好的批評。與「褒」相對",
+        "降低、減少",
+        "官員降級任用"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:捏:1",
+      "char": "捏",
+      "sentence": "語詞「捏鼻子」中的「捏」，就是指用拇指與其他指頭（一般用食指）夾住。",
+      "definition": "用拇指與其他指頭（一般用食指）夾住",
+      "options": [
+        "用拇指與其他指頭（一般用食指）夾住",
+        "用手指持續捏揉軟物體而成形",
+        "虛假、附會"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:捏:2",
+      "char": "捏",
+      "sentence": "語詞「捏麵人」中的「捏」，就是指用手指持續捏揉軟物體而成形。",
+      "definition": "用手指持續捏揉軟物體而成形",
+      "options": [
+        "用拇指與其他指頭（一般用食指）夾住",
+        "用手指持續捏揉軟物體而成形",
+        "虛假、附會"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:捏:3",
+      "char": "捏",
+      "sentence": "語詞「捏造」中的「捏」，就是指虛假、附會。",
+      "definition": "虛假、附會",
+      "options": [
+        "用拇指與其他指頭（一般用食指）夾住",
+        "用手指持續捏揉軟物體而成形",
+        "虛假、附會"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:吻:1",
+      "char": "吻",
+      "sentence": "語詞「口吻」中的「吻」，就是指說話的語氣態度。",
+      "definition": "說話的語氣態度",
+      "options": [
+        "說話的語氣態度",
+        "嘴脣",
+        "用嘴脣接觸"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:吻:2",
+      "char": "吻",
+      "sentence": "語詞「接吻」中的「吻」，就是指嘴脣。",
+      "definition": "嘴脣",
+      "options": [
+        "說話的語氣態度",
+        "嘴脣",
+        "用嘴脣接觸"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:吻:3",
+      "char": "吻",
+      "sentence": "語詞「吻別」中的「吻」，就是指用嘴脣接觸。",
+      "definition": "用嘴脣接觸",
+      "options": [
+        "說話的語氣態度",
+        "嘴脣",
+        "用嘴脣接觸"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:坦:1",
+      "char": "坦",
+      "sentence": "語詞「坦途」中的「坦」，就是指寬平、平穩。",
+      "definition": "寬平、平穩",
+      "options": [
+        "寬平、平穩",
+        "心胸寬大，沒有私心",
+        "露出"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:坦:2",
+      "char": "坦",
+      "sentence": "語詞「坦蕩」中的「坦」，就是指心胸寬大，沒有私心。",
+      "definition": "心胸寬大，沒有私心",
+      "options": [
+        "寬平、平穩",
+        "心胸寬大，沒有私心",
+        "露出"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:坦:3",
+      "char": "坦",
+      "sentence": "語詞「坦胸露背」中的「坦」，就是指露出。",
+      "definition": "露出",
+      "options": [
+        "寬平、平穩",
+        "心胸寬大，沒有私心",
+        "露出"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:窘:1",
+      "char": "窘",
+      "sentence": "語詞「受窘」中的「窘」，就是指難堪、困迫。",
+      "definition": "難堪、困迫",
+      "options": [
+        "難堪、困迫",
+        "艱困、貧乏"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H06:窘:2",
+      "char": "窘",
+      "sentence": "語詞「窘迫」中的「窘」，就是指艱困、貧乏。",
+      "definition": "艱困、貧乏",
+      "options": [
+        "難堪、困迫",
+        "艱困、貧乏"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    }
+  ],
+  "polysemy_senses": [],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG6H06:哄",
+      "char": "哄",
+      "readings": [
+        {
+          "zhuyin": "ㄏㄨㄥ",
+          "senses": [
+            {
+              "definition": "課本例詞「哄堂大笑」的讀音。",
+              "examples": [
+                "哄堂大笑"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄏㄨㄥˇ",
+          "senses": [
+            {
+              "definition": "課本例詞「哄騙」的讀音。",
+              "examples": [
+                "哄騙"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：一字多音）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG6H06:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "自",
+          "example": "自嘲、嘲笑"
+        },
+        {
+          "char": "潮",
+          "example": "潮水、潮濕"
+        },
+        {
+          "char": "廟",
+          "example": "廟宇、廟會"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H06:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "揶",
+          "example": "揶揄、揶揄人"
+        },
+        {
+          "char": "椰",
+          "example": "椰子、椰奶"
+        },
+        {
+          "char": "爺",
+          "example": "爺爺、老爺"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H06:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "揄",
+          "example": "揄揚、揶揄"
+        },
+        {
+          "char": "偷",
+          "example": "偷竊、小偷"
+        },
+        {
+          "char": "比",
+          "example": "比喻、家喻戶曉"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H06:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "僵",
+          "example": "僵局、僵硬"
+        },
+        {
+          "char": "疆",
+          "example": "疆界、新疆"
+        },
+        {
+          "char": "韁",
+          "example": "韁繩、脫韁"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H06:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "競",
+          "example": "競爭、競賽"
+        },
+        {
+          "char": "兢",
+          "example": "兢兢業業、戰戰兢兢"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H06:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "倘",
+          "example": "倘若、倘使"
+        },
+        {
+          "char": "躺",
+          "example": "躺下、躺椅"
+        },
+        {
+          "char": "敞",
+          "example": "敞開、寬敞"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H06:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "諷",
+          "example": "諷刺、譏諷"
+        },
+        {
+          "char": "楓",
+          "example": "楓樹、楓葉"
+        },
+        {
+          "char": "瘋",
+          "example": "瘋狂、發瘋"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG6H06:1",
+      "stem": "作者認為幽默有什麼好處？",
+      "question": "作者認為幽默有什麼好處？",
+      "options": [
+        "化解尷尬、讓溝通順利 (2)可以挖苦別人"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H06:2",
+      "stem": "林肯的自嘲產生什麼效果？",
+      "question": "林肯的自嘲產生什麼效果？",
+      "options": [
+        "化解批評、留下正面印象 (2)讓現場更緊張"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H06:3",
+      "stem": "餐廳男人的自嘲為什麼不恰當？",
+      "question": "餐廳男人的自嘲為什麼不恰當？",
+      "options": [
+        "透露對乞丐的成見 (2)說得太小聲"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H06:4",
+      "stem": "作者最想提醒讀者什麼？",
+      "question": "作者最想提醒讀者什麼？",
+      "options": [
+        "自嘲要有自信並拿捏分寸 (2)遇到事情都要嘲笑自己"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    }
+  ],
+  "review_words": {},
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag6h-06",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E5%98%B2%E6%8F%B6%E6%8F%84%E5%83%B5%E4%BE%83%E7%AB%B6%E9%86%9C%E5%93%84%E5%88%A4%E5%80%98%E8%AB%B7%E4%B8%90%E5%B1%91%E8%B2%B6%E6%8D%8F%E5%90%BB%E5%9D%A6%E7%AA%98",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・六年級・第6課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「嘲」的部首是哪一個？",
+      "options": [
+        "⼿",
+        "⼈",
+        "⾔"
+      ],
+      "answer": "⼝",
+      "explanation": "「嘲」的部首是⼝。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「揶」的部首是哪一個？",
+      "options": [
+        "⼟",
+        "⼿",
+        "⼝"
+      ],
+      "answer": "⼿",
+      "explanation": "「揶」的部首是⼿。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「揄」的部首是哪一個？",
+      "options": [
+        "⼝",
+        "⽴",
+        "⽳"
+      ],
+      "answer": "⼿",
+      "explanation": "「揄」的部首是⼿。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「自嘲」是什麼意思？",
+      "options": [
+        "如果、假使。",
+        "揶揄、嘲諷、挖苦。",
+        "以言辭嘲笑自己。"
+      ],
+      "answer": "以言辭嘲笑自己。",
+      "explanation": "自嘲：以言辭嘲笑自己。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「揶揄」是什麼意思？",
+      "options": [
+        "如果、假使。",
+        "說話的語氣及措辭。",
+        "依法採取有組織、有計畫的競爭行動，以爭取選民投票支持。"
+      ],
+      "answer": "嘲笑、戲弄。",
+      "explanation": "揶揄：嘲笑、戲弄。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「僵持」是什麼意思？",
+      "options": [
+        "依法採取有組織、有計畫的競爭行動，以爭取選民投票支持。",
+        "揶揄、嘲諷、挖苦。",
+        "吸引人的力量。"
+      ],
+      "answer": "相持不讓而無所進展。",
+      "explanation": "僵持：相持不讓而無所進展。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「調侃」是什麼意思？",
+      "options": [
+        "內心安寧舒泰的樣子。",
+        "評論判斷。",
+        "以言辭嘲笑自己。"
+      ],
+      "answer": "揶揄、嘲諷、挖苦。",
+      "explanation": "調侃：揶揄、嘲諷、挖苦。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「競選」是什麼意思？",
+      "options": [
+        "吸引人的力量。",
+        "掌握事情的分寸。",
+        "以言辭嘲笑自己。"
+      ],
+      "answer": "依法採取有組織、有計畫的競爭行動，以爭取選民投票支持。",
+      "explanation": "競選：依法採取有組織、有計畫的競爭行動，以爭取選民投票支持。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "段落摘要已整理；課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "教材待補：應用任務設計中"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "聆聽題目保留待教師確認答案，未在正式模組顯示。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭教材尚未完成公開資料整理。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "跨課複習資料待補。"
+    }
+  }
+}

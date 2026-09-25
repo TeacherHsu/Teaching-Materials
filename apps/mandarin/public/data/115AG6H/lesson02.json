@@ -1,0 +1,2247 @@
+{
+  "lesson_id": "115AG6H02",
+  "volume": {
+    "code": "115AG6H",
+    "publisher": "翰林",
+    "grade": 6,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "六上國語課程"
+  },
+  "lesson_no": 2,
+  "title": "為什麼大家不理我？",
+  "author": "",
+  "blurb": "透過〈為什麼大家不理我？〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "characters": [
+    {
+      "char": "眶",
+      "zhuyin": "ㄎㄨㄤˋ",
+      "stroke_count": 11,
+      "radical": "⽬",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "眼眶"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%9C%B6",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "固",
+      "zhuyin": "ㄍㄨˋ",
+      "stroke_count": 8,
+      "radical": "⼞",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "固執"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%9B%BA",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "執",
+      "zhuyin": "ㄓˊ",
+      "stroke_count": 11,
+      "radical": "⼟",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "固執"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%9F%B7",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "辯",
+      "zhuyin": "ㄅㄧㄢˋ",
+      "stroke_count": 21,
+      "radical": "⾟",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "辯論"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%BE%AF",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "胞",
+      "zhuyin": "ㄅㄠ",
+      "stroke_count": 9,
+      "radical": "⾁",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "雙胞胎"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%83%9E",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "胎",
+      "zhuyin": "ㄊㄞ",
+      "stroke_count": 9,
+      "radical": "⾁",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "雙胞胎"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%83%8E",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "郵",
+      "zhuyin": "ㄧㄡˊ",
+      "stroke_count": 10,
+      "radical": "⾢",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "郵票"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%83%B5",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "暈",
+      "zhuyin": "ㄩㄣ",
+      "stroke_count": 13,
+      "radical": "⽇",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "暈倒"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9A%88",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "溜",
+      "zhuyin": "ㄌㄧㄡ",
+      "stroke_count": 13,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "溜"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%BA%9C",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "慘",
+      "zhuyin": "ㄘㄢˇ",
+      "stroke_count": 14,
+      "radical": "⼼",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "慘白"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%85%98",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "憤",
+      "zhuyin": "ㄈㄣˋ",
+      "stroke_count": 15,
+      "radical": "⼼",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "憤慨"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%86%A4",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "慨",
+      "zhuyin": "ㄎㄞˇ",
+      "stroke_count": 12,
+      "radical": "⼼",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "憤慨"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%85%A8",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "狠",
+      "zhuyin": "ㄏㄣˇ",
+      "stroke_count": 9,
+      "radical": "⽝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "狠狠的"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%8B%A0",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "憂",
+      "zhuyin": "ㄧㄡ",
+      "stroke_count": 15,
+      "radical": "⼼",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "擔憂"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%86%82",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "涕",
+      "zhuyin": "ㄊㄧˋ",
+      "stroke_count": 10,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "鼻涕"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B6%95",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "寬",
+      "zhuyin": "ㄎㄨㄢ",
+      "stroke_count": 15,
+      "radical": "⼧",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "寬"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%AF%AC",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "慰",
+      "zhuyin": "ㄨㄟˋ",
+      "stroke_count": 15,
+      "radical": "⼼",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "慰問"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%85%B0",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    },
+    {
+      "char": "寞",
+      "zhuyin": "ㄇㄛˋ",
+      "stroke_count": 13,
+      "radical": "⼧",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "寂寞"
+      ],
+      "examples_source": "115G6A／翰林六上官方教材與教師確認資料（依課內語詞取前三項）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%AF%9E",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG6H02:01",
+      "word": "眼眶",
+      "zhuyin": "ㄧㄢˇ ㄎㄨㄤˋ",
+      "meaning": "眼窩的四周。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H02:02",
+      "word": "固執",
+      "zhuyin": "ㄍㄨˋ ㄓˊ",
+      "meaning": "堅持己見，不肯變通。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H02:03",
+      "word": "辯論",
+      "zhuyin": "ㄅㄧㄢˋ ㄌㄨㄣˋ",
+      "meaning": "各持不同的意見主張相互論爭。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H02:04",
+      "word": "雙胞胎",
+      "zhuyin": "ㄕㄨㄤ ㄅㄠ ㄊㄞ",
+      "meaning": "比喻非常相似的人、事、物。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H02:05",
+      "word": "郵票",
+      "zhuyin": "ㄧㄡˊ ㄆㄧㄠˋ",
+      "meaning": "黏貼在信件上，作為已繳納郵資的憑證。多為印花紙片。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H02:06",
+      "word": "暈倒",
+      "zhuyin": "ㄩㄣ ㄉㄠˋ",
+      "meaning": "昏倒。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H02:07",
+      "word": "溜",
+      "zhuyin": "ㄌㄧㄡ",
+      "meaning": "滑動、滑落。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H02:08",
+      "word": "慘白",
+      "zhuyin": "ㄘㄢˇ ㄅㄞˊ",
+      "meaning": "蒼白。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H02:09",
+      "word": "憤慨",
+      "zhuyin": "ㄈㄣˋ ㄎㄞˇ",
+      "meaning": "憤怒而激動。",
+      "example_sentence": "看到不公平的事，他感到十分憤慨。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H02:10",
+      "word": "狠狠的",
+      "zhuyin": "ㄏㄣˇ ㄏㄣˇ ˙ㄉㄜ",
+      "meaning": "激烈的、重重的。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H02:11",
+      "word": "擔憂",
+      "zhuyin": "ㄉㄢ ㄧㄡ",
+      "meaning": "擔心、憂慮。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H02:12",
+      "word": "鼻涕",
+      "zhuyin": "ㄅㄧˊ ㄊㄧˋ",
+      "meaning": "鼻腔內分泌的黏液。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H02:13",
+      "word": "寬",
+      "zhuyin": "ㄎㄨㄢ",
+      "meaning": "放鬆。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H02:14",
+      "word": "慰問",
+      "zhuyin": "ㄨㄟˋ ㄨㄣˋ",
+      "meaning": "安慰問候。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG6H02:15",
+      "word": "寂寞",
+      "zhuyin": "ㄐㄧˋ ㄇㄛˋ",
+      "meaning": "孤單冷清。",
+      "example_sentence": "即使一個人，也可以安排喜歡的事，讓心情不寂寞。",
+      "example_status": "approved",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG6H02:根深蒂固",
+      "idiom": "根深蒂固",
+      "definition": "比喻根基堅固，不可動搖。",
+      "related_char": "固",
+      "image": "idioms/01_根深蒂固.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H02:執迷不悟",
+      "idiom": "執迷不悟",
+      "definition": "堅持錯誤的觀念而不醒悟。",
+      "related_char": "執",
+      "image": "idioms/02_執迷不悟.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H02:百口莫辯",
+      "idiom": "百口莫辯",
+      "definition": "比喻冤屈無法申訴自白。",
+      "related_char": "辯",
+      "image": "idioms/03_百口莫辯.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H02:民胞物與",
+      "idiom": "民胞物與",
+      "definition": "視人民如同胞，視萬物如同類。比喻博愛。",
+      "related_char": "胞",
+      "image": "idioms/04_民胞物與.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H02:慘不忍睹",
+      "idiom": "慘不忍睹",
+      "definition": "情狀淒慘，使人不忍目睹。",
+      "related_char": "慘",
+      "image": "idioms/05_慘不忍睹.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H02:憤世嫉俗",
+      "idiom": "憤世嫉俗",
+      "definition": "痛恨腐敗的社會現狀及庸俗世態。",
+      "related_char": "憤",
+      "image": "idioms/06_憤世嫉俗.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H02:慷慨解囊",
+      "idiom": "慷慨解囊",
+      "definition": "指輕財仗義，毫不吝嗇地捐助錢財給人。",
+      "related_char": "慨",
+      "image": "idioms/07_慷慨解囊.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H02:杞人憂天",
+      "idiom": "杞人憂天",
+      "definition": "比喻缺乏根據的憂慮。",
+      "related_char": "憂",
+      "image": "idioms/08_杞人憂天.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H02:感激涕零",
+      "idiom": "感激涕零",
+      "definition": "形容非常感謝。",
+      "related_char": "涕",
+      "image": "idioms/09_感激涕零.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    },
+    {
+      "id": "idiom:115AG6H02:寬仁大度",
+      "idiom": "寬仁大度",
+      "definition": "形容心胸寬闊、度量宏大，能容人。",
+      "related_char": "寬",
+      "image": "idioms/10_寬仁大度.webp",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG6H02:1",
+      "idiom_id": "idiom:115AG6H02:根深蒂固",
+      "rewritten": "遇到生活中的相關情況時，可以用「根深蒂固」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H02:2",
+      "idiom_id": "idiom:115AG6H02:執迷不悟",
+      "rewritten": "遇到生活中的相關情況時，可以用「執迷不悟」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H02:3",
+      "idiom_id": "idiom:115AG6H02:百口莫辯",
+      "rewritten": "遇到生活中的相關情況時，可以用「百口莫辯」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H02:4",
+      "idiom_id": "idiom:115AG6H02:民胞物與",
+      "rewritten": "遇到生活中的相關情況時，可以用「民胞物與」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H02:5",
+      "idiom_id": "idiom:115AG6H02:慘不忍睹",
+      "rewritten": "遇到生活中的相關情況時，可以用「慘不忍睹」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H02:6",
+      "idiom_id": "idiom:115AG6H02:憤世嫉俗",
+      "rewritten": "遇到生活中的相關情況時，可以用「憤世嫉俗」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H02:7",
+      "idiom_id": "idiom:115AG6H02:慷慨解囊",
+      "rewritten": "遇到生活中的相關情況時，可以用「慷慨解囊」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H02:8",
+      "idiom_id": "idiom:115AG6H02:杞人憂天",
+      "rewritten": "遇到生活中的相關情況時，可以用「杞人憂天」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H02:9",
+      "idiom_id": "idiom:115AG6H02:感激涕零",
+      "rewritten": "遇到生活中的相關情況時，可以用「感激涕零」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    },
+    {
+      "id": "idiom_sentence:115AG6H02:10",
+      "idiom_id": "idiom:115AG6H02:寬仁大度",
+      "rewritten": "遇到生活中的相關情況時，可以用「寬仁大度」來形容。",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（教師自撰生活例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG6H02:word:1",
+      "category": "詞語造句",
+      "head": "孤零零",
+      "structure": "詞語造句",
+      "description": "形容孤單無依的樣子。",
+      "guide": "午休時，我一個人坐在＿＿＿＿，感覺有些孤零零。",
+      "examples": [
+        "那天在教室裡，我感覺到真正的孤獨。"
+      ],
+      "example_parts": [
+        [
+          "那天",
+          "在教室裡",
+          "我感覺到",
+          "真正的孤獨"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "放學後",
+          "小志",
+          "孤零零地",
+          "站在走廊"
+        ]
+      ],
+      "word_bank": [
+        "教室",
+        "走廊",
+        "圖書館",
+        "操場"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H02:word:2",
+      "category": "詞語造句",
+      "head": "憤慨",
+      "structure": "詞語造句",
+      "description": "憤怒而激動。",
+      "guide": "當我看到有人＿＿＿＿時，心裡感到很憤慨。",
+      "examples": [
+        "看到不公平的事，他感到十分憤慨。"
+      ],
+      "example_parts": [
+        [
+          "看到不公平的事",
+          "他",
+          "感到十分",
+          "憤慨"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "同學",
+          "看到",
+          "作弊的行為",
+          "很憤慨"
+        ]
+      ],
+      "word_bank": [
+        "浪費食物",
+        "插隊",
+        "作弊",
+        "亂丟垃圾"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H02:word:3",
+      "category": "詞語造句",
+      "head": "寂寞",
+      "structure": "詞語造句",
+      "description": "孤單冷清。",
+      "guide": "放學後，我可以＿＿＿＿，讓自己不感到寂寞。",
+      "examples": [
+        "即使一個人，也可以安排喜歡的事，讓心情不寂寞。"
+      ],
+      "example_parts": [
+        [
+          "即使一個人",
+          "也可以安排",
+          "喜歡的事",
+          "讓心情不寂寞"
+        ]
+      ],
+      "reorder_parts": [
+        [
+          "週末",
+          "小安",
+          "閱讀一本書",
+          "不再寂寞"
+        ]
+      ],
+      "word_bank": [
+        "畫畫",
+        "運動",
+        "閱讀",
+        "聽音樂"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H02:pattern:1",
+      "category": "句型練習",
+      "head": "雖然有困難，仍有結果",
+      "structure": "雖然＋情況，卻＋結果",
+      "description": "依照句型寫一句：先說困難，再說不同的結果。",
+      "guide": "依照句型寫一句：先說困難，再說不同的結果。",
+      "examples": [
+        "雖然下雨我們卻照常上課",
+        "雖然很緊張小安卻勇敢上臺",
+        "雖然題目困難他卻沒有放棄"
+      ],
+      "example_parts": [
+        [
+          "雖然下雨",
+          "我們卻",
+          "照常上課"
+        ],
+        [
+          "雖然很緊張",
+          "小安卻",
+          "勇敢上臺"
+        ],
+        [
+          "雖然題目困難",
+          "他卻",
+          "沒有放棄"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "雖然",
+          "choices": [
+            "雖然下雨",
+            "雖然很忙",
+            "雖然失敗"
+          ]
+        },
+        {
+          "label": "卻",
+          "choices": [
+            "我卻",
+            "大家卻",
+            "他卻"
+          ]
+        },
+        {
+          "label": "結果",
+          "choices": [
+            "照常練習",
+            "繼續努力",
+            "保持冷靜"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    },
+    {
+      "id": "sentence_pattern:115AG6H02:pattern:2",
+      "category": "句型練習",
+      "head": "有條件就有結果",
+      "structure": "只要＋條件，就＋結果",
+      "description": "依照句型寫一句：先寫做到什麼，再寫可能得到的結果。",
+      "guide": "依照句型寫一句：先寫做到什麼，再寫可能得到的結果。",
+      "examples": [
+        "只要認真練習就會有進步",
+        "只要主動關心就能交到朋友",
+        "只要願意溝通就能減少誤會"
+      ],
+      "example_parts": [
+        [
+          "只要",
+          "認真練習",
+          "就",
+          "會有進步"
+        ],
+        [
+          "只要",
+          "主動關心",
+          "就",
+          "能交到朋友"
+        ],
+        [
+          "只要",
+          "願意溝通",
+          "就",
+          "能減少誤會"
+        ]
+      ],
+      "choice_banks": [
+        {
+          "label": "只要",
+          "choices": [
+            "只要"
+          ]
+        },
+        {
+          "label": "條件",
+          "choices": [
+            "願意請教",
+            "每天閱讀",
+            "整理書包"
+          ]
+        },
+        {
+          "label": "就",
+          "choices": [
+            "就"
+          ]
+        },
+        {
+          "label": "結果",
+          "choices": [
+            "更有信心",
+            "更有效率",
+            "學得更好"
+          ]
+        }
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（08短語句型練習、09句型總表）"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:02:01",
+      "paragraph_no": 1,
+      "summary": "女兒在學校被同學冷落，寫信向父親詢問原因，感到害怕又焦急。",
+      "structure_role": "【第一大意】女兒被冷落",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:02:02",
+      "paragraph_no": 2,
+      "summary": "她回想同學稱讚雙胞胎、朋友忽然不理自己的情景，心裡很難過。",
+      "structure_role": "【第二大意】父親分享孤單經驗",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:02:03",
+      "paragraph_no": 3,
+      "summary": "父親想起童年在幼稚園迷路、獨自害怕的經驗，理解女兒的孤單。",
+      "structure_role": "【第三大意】安慰與期許",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:02:04",
+      "paragraph_no": 4,
+      "summary": "父親也曾因朋友冷淡而難過，後來知道朋友有困難，學會反省與關心。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:02:05",
+      "paragraph_no": 5,
+      "summary": "父親告訴女兒，不要只等別人接近自己，也要主動關懷別人。",
+      "structure_role": "第5段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "paragraph:02:06",
+      "paragraph_no": 6,
+      "summary": "父親期許女兒成為不怕寂寞、能體諒別人並堅強處理問題的人。",
+      "structure_role": "第6段重點",
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "main_idea": {
+    "gist": "父親用真誠的信安慰被同學冷落的女兒，分享孤單經驗並引導她理解、反省與關懷他人。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:02:01",
+      "stem": "女兒寫信給父親，主要是因為什麼？",
+      "options": [
+        "被同學冷落而困惑 (2)想買新郵票"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:02:02",
+      "stem": "父親分享童年迷路的經驗，主要想做什麼？",
+      "options": [
+        "讓女兒知道孤單能被理解 (2)責備女兒不勇敢"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:02:03",
+      "stem": "父親後來知道朋友不理他的原因後，學到什麼？",
+      "options": [
+        "要反省並關心別人 (2)再也不交朋友"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    },
+    {
+      "id": "reading_question:02:04",
+      "stem": "父親給女兒的期許最接近哪一項？",
+      "options": [
+        "能體諒別人並堅強處理問題 (2)永遠不要一個人"
+      ],
+      "answer": null,
+      "status": "approved",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG6H02:固:1",
+      "char": "固",
+      "sentence": "語詞「固守」中的「固」，就是指堅決的。",
+      "definition": "堅決的",
+      "options": [
+        "堅決的",
+        "結實、堅硬",
+        "使穩定",
+        "原來、一向"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:固:2",
+      "char": "固",
+      "sentence": "語詞「牢固」中的「固」，就是指結實、堅硬。",
+      "definition": "結實、堅硬",
+      "options": [
+        "堅決的",
+        "結實、堅硬",
+        "使穩定",
+        "原來、一向"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:固:3",
+      "char": "固",
+      "sentence": "語詞「鞏固」中的「固」，就是指使穩定。",
+      "definition": "使穩定",
+      "options": [
+        "堅決的",
+        "結實、堅硬",
+        "使穩定",
+        "原來、一向"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:固:4",
+      "char": "固",
+      "sentence": "語詞「固有」中的「固」，就是指原來、一向。",
+      "definition": "原來、一向",
+      "options": [
+        "堅決的",
+        "結實、堅硬",
+        "使穩定",
+        "原來、一向"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:執:1",
+      "char": "執",
+      "sentence": "語詞「執意」中的「執」，就是指堅持。",
+      "definition": "堅持",
+      "options": [
+        "堅持",
+        "拿著、握著",
+        "治理、掌握",
+        "實行",
+        "憑證"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:執:2",
+      "char": "執",
+      "sentence": "語詞「執筆」中的「執」，就是指拿著、握著。",
+      "definition": "拿著、握著",
+      "options": [
+        "堅持",
+        "拿著、握著",
+        "治理、掌握",
+        "實行",
+        "憑證"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:執:3",
+      "char": "執",
+      "sentence": "語詞「執政」中的「執」，就是指治理、掌握。",
+      "definition": "治理、掌握",
+      "options": [
+        "堅持",
+        "拿著、握著",
+        "治理、掌握",
+        "實行",
+        "憑證"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:執:4",
+      "char": "執",
+      "sentence": "語詞「執法」中的「執」，就是指實行。",
+      "definition": "實行",
+      "options": [
+        "堅持",
+        "拿著、握著",
+        "治理、掌握",
+        "實行",
+        "憑證"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:執:5",
+      "char": "執",
+      "sentence": "語詞「回執」中的「執」，就是指憑證。",
+      "definition": "憑證",
+      "options": [
+        "堅持",
+        "拿著、握著",
+        "治理、掌握",
+        "實行",
+        "憑證"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:辯:1",
+      "char": "辯",
+      "sentence": "語詞「辯護」中的「辯」，就是指爭論是非曲直。",
+      "definition": "爭論是非曲直",
+      "options": [
+        "爭論是非曲直",
+        "能言善道的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:辯:2",
+      "char": "辯",
+      "sentence": "語詞「辯士」中的「辯」，就是指能言善道的。",
+      "definition": "能言善道的",
+      "options": [
+        "爭論是非曲直",
+        "能言善道的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:胞:1",
+      "char": "胞",
+      "sentence": "語詞「胞兄」中的「胞」，就是指同父母所生的。",
+      "definition": "同父母所生的",
+      "options": [
+        "同父母所生的",
+        "胎衣。包裹在胎兒外面的薄膜"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:胞:2",
+      "char": "胞",
+      "sentence": "語詞「胞衣」中的「胞」，就是指胎衣。包裹在胎兒外面的薄膜。",
+      "definition": "胎衣。包裹在胎兒外面的薄膜",
+      "options": [
+        "同父母所生的",
+        "胎衣。包裹在胎兒外面的薄膜"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:胎:1",
+      "char": "胎",
+      "sentence": "語詞「懷胎」中的「胎」，就是指人或其他哺乳動物母體內的幼體。",
+      "definition": "人或其他哺乳動物母體內的幼體",
+      "options": [
+        "人或其他哺乳動物母體內的幼體",
+        "器物的粗胚",
+        "衣服、被褥等的夾襯物",
+        "事物的根源",
+        "輪胎的簡稱",
+        "量詞。計算生育次數的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:胎:2",
+      "char": "胎",
+      "sentence": "語詞「泥胎」中的「胎」，就是指器物的粗胚。",
+      "definition": "器物的粗胚",
+      "options": [
+        "人或其他哺乳動物母體內的幼體",
+        "器物的粗胚",
+        "衣服、被褥等的夾襯物",
+        "事物的根源",
+        "輪胎的簡稱",
+        "量詞。計算生育次數的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:胎:3",
+      "char": "胎",
+      "sentence": "語詞「被胎」中的「胎」，就是指衣服、被褥等的夾襯物。",
+      "definition": "衣服、被褥等的夾襯物",
+      "options": [
+        "人或其他哺乳動物母體內的幼體",
+        "器物的粗胚",
+        "衣服、被褥等的夾襯物",
+        "事物的根源",
+        "輪胎的簡稱",
+        "量詞。計算生育次數的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:胎:4",
+      "char": "胎",
+      "sentence": "語詞「禍胎」中的「胎」，就是指事物的根源。",
+      "definition": "事物的根源",
+      "options": [
+        "人或其他哺乳動物母體內的幼體",
+        "器物的粗胚",
+        "衣服、被褥等的夾襯物",
+        "事物的根源",
+        "輪胎的簡稱",
+        "量詞。計算生育次數的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:胎:5",
+      "char": "胎",
+      "sentence": "語詞「車胎」中的「胎」，就是指輪胎的簡稱。",
+      "definition": "輪胎的簡稱",
+      "options": [
+        "人或其他哺乳動物母體內的幼體",
+        "器物的粗胚",
+        "衣服、被褥等的夾襯物",
+        "事物的根源",
+        "輪胎的簡稱",
+        "量詞。計算生育次數的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:胎:6",
+      "char": "胎",
+      "sentence": "語詞「頭胎」中的「胎」，就是指量詞。計算生育次數的單位。",
+      "definition": "量詞。計算生育次數的單位",
+      "options": [
+        "人或其他哺乳動物母體內的幼體",
+        "器物的粗胚",
+        "衣服、被褥等的夾襯物",
+        "事物的根源",
+        "輪胎的簡稱",
+        "量詞。計算生育次數的單位"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:郵:1",
+      "char": "郵",
+      "sentence": "語詞「集郵」中的「郵」，就是指郵票的簡稱。",
+      "definition": "郵票的簡稱",
+      "options": [
+        "郵票的簡稱",
+        "與傳送文書信件有關的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:郵:2",
+      "char": "郵",
+      "sentence": "語詞「郵局」中的「郵」，就是指與傳送文書信件有關的。",
+      "definition": "與傳送文書信件有關的",
+      "options": [
+        "郵票的簡稱",
+        "與傳送文書信件有關的"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:稚:1",
+      "char": "稚",
+      "sentence": "語詞「稚氣」中的「稚」，就是指不成熟的。",
+      "definition": "不成熟的",
+      "options": [
+        "不成熟的",
+        "孩童、幼童"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:稚:2",
+      "char": "稚",
+      "sentence": "語詞「稚兒」中的「稚」，就是指孩童、幼童。",
+      "definition": "孩童、幼童",
+      "options": [
+        "不成熟的",
+        "孩童、幼童"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:溜:1",
+      "char": "溜",
+      "sentence": "語詞「溜冰」中的「溜」，就是指滑動、滑落。",
+      "definition": "滑動、滑落",
+      "options": [
+        "滑動、滑落",
+        "光滑、圓融",
+        "偷偷離開或進入",
+        "將炒過或炸好的食物，加入勾芡的糖醋汁，然後快炒讓汁液黏裹住食物的烹調方法",
+        "表示程度深的形容詞詞尾"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:溜:2",
+      "char": "溜",
+      "sentence": "語詞「滑溜」中的「溜」，就是指光滑、圓融。",
+      "definition": "光滑、圓融",
+      "options": [
+        "滑動、滑落",
+        "光滑、圓融",
+        "偷偷離開或進入",
+        "將炒過或炸好的食物，加入勾芡的糖醋汁，然後快炒讓汁液黏裹住食物的烹調方法",
+        "表示程度深的形容詞詞尾"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:溜:3",
+      "char": "溜",
+      "sentence": "語詞「溜課」中的「溜」，就是指偷偷離開或進入。",
+      "definition": "偷偷離開或進入",
+      "options": [
+        "滑動、滑落",
+        "光滑、圓融",
+        "偷偷離開或進入",
+        "將炒過或炸好的食物，加入勾芡的糖醋汁，然後快炒讓汁液黏裹住食物的烹調方法",
+        "表示程度深的形容詞詞尾"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:溜:4",
+      "char": "溜",
+      "sentence": "語詞「醋溜白菜」中的「溜」，就是指將炒過或炸好的食物，加入勾芡的糖醋汁，然後快炒讓汁液黏裹住食物的烹調方法。",
+      "definition": "將炒過或炸好的食物，加入勾芡的糖醋汁，然後快炒讓汁液黏裹住食物的烹調方法",
+      "options": [
+        "滑動、滑落",
+        "光滑、圓融",
+        "偷偷離開或進入",
+        "將炒過或炸好的食物，加入勾芡的糖醋汁，然後快炒讓汁液黏裹住食物的烹調方法",
+        "表示程度深的形容詞詞尾"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:溜:5",
+      "char": "溜",
+      "sentence": "語詞「光溜溜」中的「溜」，就是指表示程度深的形容詞詞尾。",
+      "definition": "表示程度深的形容詞詞尾",
+      "options": [
+        "滑動、滑落",
+        "光滑、圓融",
+        "偷偷離開或進入",
+        "將炒過或炸好的食物，加入勾芡的糖醋汁，然後快炒讓汁液黏裹住食物的烹調方法",
+        "表示程度深的形容詞詞尾"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:慘:1",
+      "char": "慘",
+      "sentence": "語詞「悽慘」中的「慘」，就是指悲哀、淒涼。",
+      "definition": "悲哀、淒涼",
+      "options": [
+        "悲哀、淒涼",
+        "程度厲害、嚴重",
+        "凶惡、狠毒",
+        "暗淡、昏暗"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:慘:2",
+      "char": "慘",
+      "sentence": "語詞「慘白」中的「慘」，就是指程度厲害、嚴重。",
+      "definition": "程度厲害、嚴重",
+      "options": [
+        "悲哀、淒涼",
+        "程度厲害、嚴重",
+        "凶惡、狠毒",
+        "暗淡、昏暗"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:慘:3",
+      "char": "慘",
+      "sentence": "語詞「慘酷」中的「慘」，就是指凶惡、狠毒。",
+      "definition": "凶惡、狠毒",
+      "options": [
+        "悲哀、淒涼",
+        "程度厲害、嚴重",
+        "凶惡、狠毒",
+        "暗淡、昏暗"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:慘:4",
+      "char": "慘",
+      "sentence": "語詞「慘淡」中的「慘」，就是指暗淡、昏暗。",
+      "definition": "暗淡、昏暗",
+      "options": [
+        "悲哀、淒涼",
+        "程度厲害、嚴重",
+        "凶惡、狠毒",
+        "暗淡、昏暗"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:憤:1",
+      "char": "憤",
+      "sentence": "語詞「憤恨」中的「憤」，就是指因心中不滿而動怒、生氣。",
+      "definition": "因心中不滿而動怒、生氣",
+      "options": [
+        "因心中不滿而動怒、生氣",
+        "怒氣、怨恨"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:憤:2",
+      "char": "憤",
+      "sentence": "語詞「公憤」中的「憤」，就是指怒氣、怨恨。",
+      "definition": "怒氣、怨恨",
+      "options": [
+        "因心中不滿而動怒、生氣",
+        "怒氣、怨恨"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:慨:1",
+      "char": "慨",
+      "sentence": "語詞「憤慨」中的「慨」，就是指激憤、憤怒。",
+      "definition": "激憤、憤怒",
+      "options": [
+        "激憤、憤怒",
+        "大方、不吝嗇",
+        "悲嘆、感傷"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:慨:2",
+      "char": "慨",
+      "sentence": "語詞「慷慨」中的「慨」，就是指大方、不吝嗇。",
+      "definition": "大方、不吝嗇",
+      "options": [
+        "激憤、憤怒",
+        "大方、不吝嗇",
+        "悲嘆、感傷"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:慨:3",
+      "char": "慨",
+      "sentence": "語詞「感慨」中的「慨」，就是指悲嘆、感傷。",
+      "definition": "悲嘆、感傷",
+      "options": [
+        "激憤、憤怒",
+        "大方、不吝嗇",
+        "悲嘆、感傷"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:狠:1",
+      "char": "狠",
+      "sentence": "語詞「狠下心」中的「狠」，就是指下極大的決心。",
+      "definition": "下極大的決心",
+      "options": [
+        "下極大的決心",
+        "凶惡、殘忍"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:狠:2",
+      "char": "狠",
+      "sentence": "語詞「狠毒」中的「狠」，就是指凶惡、殘忍。",
+      "definition": "凶惡、殘忍",
+      "options": [
+        "下極大的決心",
+        "凶惡、殘忍"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:憂:1",
+      "char": "憂",
+      "sentence": "語詞「憂慮」中的「憂」，就是指發愁、擔心。",
+      "definition": "發愁、擔心",
+      "options": [
+        "發愁、擔心",
+        "煩惱的事"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:憂:2",
+      "char": "憂",
+      "sentence": "語詞「高枕無憂」中的「憂」，就是指煩惱的事。",
+      "definition": "煩惱的事",
+      "options": [
+        "發愁、擔心",
+        "煩惱的事"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:涕:1",
+      "char": "涕",
+      "sentence": "語詞「鼻涕」中的「涕」，就是指鼻腔內分泌的黏液。",
+      "definition": "鼻腔內分泌的黏液",
+      "options": [
+        "鼻腔內分泌的黏液",
+        "眼淚"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:涕:2",
+      "char": "涕",
+      "sentence": "語詞「痛哭流涕」中的「涕」，就是指眼淚。",
+      "definition": "眼淚",
+      "options": [
+        "鼻腔內分泌的黏液",
+        "眼淚"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:寬:1",
+      "char": "寬",
+      "sentence": "語詞「寬心」中的「寬」，就是指放鬆。",
+      "definition": "放鬆",
+      "options": [
+        "放鬆",
+        "廣大、廣闊。與「狹」、「窄」相對",
+        "鬆、不緊",
+        "不嚴苛、度量大",
+        "闊綽、富裕",
+        "放寬、延緩",
+        "解、脫",
+        "數學上指長方形物體較長兩邊的相對距離"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:寬:2",
+      "char": "寬",
+      "sentence": "語詞「寬廣」中的「寬」，就是指廣大、廣闊。與「狹」、「窄」相對。",
+      "definition": "廣大、廣闊。與「狹」、「窄」相對",
+      "options": [
+        "放鬆",
+        "廣大、廣闊。與「狹」、「窄」相對",
+        "鬆、不緊",
+        "不嚴苛、度量大",
+        "闊綽、富裕",
+        "放寬、延緩",
+        "解、脫",
+        "數學上指長方形物體較長兩邊的相對距離"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:寬:3",
+      "char": "寬",
+      "sentence": "語詞「寬鬆」中的「寬」，就是指鬆、不緊。",
+      "definition": "鬆、不緊",
+      "options": [
+        "放鬆",
+        "廣大、廣闊。與「狹」、「窄」相對",
+        "鬆、不緊",
+        "不嚴苛、度量大",
+        "闊綽、富裕",
+        "放寬、延緩",
+        "解、脫",
+        "數學上指長方形物體較長兩邊的相對距離"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:寬:4",
+      "char": "寬",
+      "sentence": "語詞「寬厚」中的「寬」，就是指不嚴苛、度量大。",
+      "definition": "不嚴苛、度量大",
+      "options": [
+        "放鬆",
+        "廣大、廣闊。與「狹」、「窄」相對",
+        "鬆、不緊",
+        "不嚴苛、度量大",
+        "闊綽、富裕",
+        "放寬、延緩",
+        "解、脫",
+        "數學上指長方形物體較長兩邊的相對距離"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:寬:5",
+      "char": "寬",
+      "sentence": "語詞「寬裕」中的「寬」，就是指闊綽、富裕。",
+      "definition": "闊綽、富裕",
+      "options": [
+        "放鬆",
+        "廣大、廣闊。與「狹」、「窄」相對",
+        "鬆、不緊",
+        "不嚴苛、度量大",
+        "闊綽、富裕",
+        "放寬、延緩",
+        "解、脫",
+        "數學上指長方形物體較長兩邊的相對距離"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:寬:6",
+      "char": "寬",
+      "sentence": "語詞「寬限」中的「寬」，就是指放寬、延緩。",
+      "definition": "放寬、延緩",
+      "options": [
+        "放鬆",
+        "廣大、廣闊。與「狹」、「窄」相對",
+        "鬆、不緊",
+        "不嚴苛、度量大",
+        "闊綽、富裕",
+        "放寬、延緩",
+        "解、脫",
+        "數學上指長方形物體較長兩邊的相對距離"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:寬:7",
+      "char": "寬",
+      "sentence": "語詞「寬衣解帶」中的「寬」，就是指解、脫。",
+      "definition": "解、脫",
+      "options": [
+        "放鬆",
+        "廣大、廣闊。與「狹」、「窄」相對",
+        "鬆、不緊",
+        "不嚴苛、度量大",
+        "闊綽、富裕",
+        "放寬、延緩",
+        "解、脫",
+        "數學上指長方形物體較長兩邊的相對距離"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:寬:8",
+      "char": "寬",
+      "sentence": "語詞「有一長方形長六公分」中的「寬」，就是指數學上指長方形物體較長兩邊的相對距離。",
+      "definition": "數學上指長方形物體較長兩邊的相對距離",
+      "options": [
+        "放鬆",
+        "廣大、廣闊。與「狹」、「窄」相對",
+        "鬆、不緊",
+        "不嚴苛、度量大",
+        "闊綽、富裕",
+        "放寬、延緩",
+        "解、脫",
+        "數學上指長方形物體較長兩邊的相對距離"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:慰:1",
+      "char": "慰",
+      "sentence": "語詞「安慰」中的「慰」，就是指使人心情寬適。",
+      "definition": "使人心情寬適",
+      "options": [
+        "使人心情寬適",
+        "心安"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    },
+    {
+      "id": "polysemy:115AG6H02:慰:2",
+      "char": "慰",
+      "sentence": "語詞「欣慰」中的「慰」，就是指心安。",
+      "definition": "心安",
+      "options": [
+        "使人心情寬適",
+        "心安"
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（06字義分析）"
+    }
+  ],
+  "polysemy_senses": [],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG6H02:溜",
+      "char": "溜",
+      "readings": [
+        {
+          "zhuyin": "ㄌㄧㄡ",
+          "senses": [
+            {
+              "definition": "課本例詞「溜冰」的讀音。",
+              "examples": [
+                "溜冰"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄌㄧㄡ",
+          "senses": [
+            {
+              "definition": "課本例詞「英語很溜」的讀音。",
+              "examples": [
+                "英語很溜"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：一字多音）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG6H02:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "眼",
+          "example": "眼眶、眼眶紅"
+        },
+        {
+          "char": "框",
+          "example": "框架、相框"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H02:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "爭",
+          "example": "爭執、執法"
+        },
+        {
+          "char": "真",
+          "example": "真摯、摯友"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H02:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "辯",
+          "example": "辯論、辯護"
+        },
+        {
+          "char": "分",
+          "example": "分辨、辨析"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H02:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "頭",
+          "example": "頭暈、暈倒"
+        },
+        {
+          "char": "春",
+          "example": "春暉、餘暉"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H02:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "溜",
+          "example": "溜冰、溜下"
+        },
+        {
+          "char": "保",
+          "example": "保留、留下"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H02:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "慘",
+          "example": "慘白、悲慘"
+        },
+        {
+          "char": "摻",
+          "example": "摻雜、摻和"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H02:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "憤",
+          "example": "憤怒、氣憤"
+        },
+        {
+          "char": "噴",
+          "example": "噴泉、噴射"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H02:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "感",
+          "example": "感慨、慷慨"
+        },
+        {
+          "char": "概",
+          "example": "概念、大概"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H02:09",
+      "group_no": "9",
+      "chars": [
+        {
+          "char": "鼻",
+          "example": "鼻涕、流涕"
+        },
+        {
+          "char": "樓",
+          "example": "樓梯、電梯"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG6H02:10",
+      "group_no": "10",
+      "chars": [
+        {
+          "char": "寂",
+          "example": "寂寞、落寞"
+        },
+        {
+          "char": "沙",
+          "example": "沙漠、冷漠"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG6H02:1",
+      "stem": "女兒寫信給父親，主要是因為什麼？",
+      "question": "女兒寫信給父親，主要是因為什麼？",
+      "options": [
+        "被同學冷落而困惑 (2)想買新郵票"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H02:2",
+      "stem": "父親分享童年迷路的經驗，主要想做什麼？",
+      "question": "父親分享童年迷路的經驗，主要想做什麼？",
+      "options": [
+        "讓女兒知道孤單能被理解 (2)責備女兒不勇敢"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H02:3",
+      "stem": "父親後來知道朋友不理他的原因後，學到什麼？",
+      "question": "父親後來知道朋友不理他的原因後，學到什麼？",
+      "options": [
+        "要反省並關心別人 (2)再也不交朋友"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    },
+    {
+      "id": "listening:115AG6H02:4",
+      "stem": "父親給女兒的期許最接近哪一項？",
+      "question": "父親給女兒的期許最接近哪一項？",
+      "options": [
+        "能體諒別人並堅強處理問題 (2)永遠不要一個人"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（閱讀理解題改編，答案待教師確認）"
+    }
+  ],
+  "review_words": {},
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag6h-02",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E7%9C%B6%E5%9B%BA%E5%9F%B7%E8%BE%AF%E8%83%9E%E8%83%8E%E9%83%B5%E6%9A%88%E6%BA%9C%E6%85%98%E6%86%A4%E6%85%A8%E7%8B%A0%E6%86%82%E6%B6%95%E5%AF%AC%E6%85%B0%E5%AF%9E",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・六年級・第2課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「眶」的部首是哪一個？",
+      "options": [
+        "⽔",
+        "⼧",
+        "⾁"
+      ],
+      "answer": "⽬",
+      "explanation": "「眶」的部首是⽬。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「固」的部首是哪一個？",
+      "options": [
+        "⾁",
+        "⼟",
+        "⼼"
+      ],
+      "answer": "⼞",
+      "explanation": "「固」的部首是⼞。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「執」的部首是哪一個？",
+      "options": [
+        "⼼",
+        "⽇",
+        "⾢"
+      ],
+      "answer": "⼟",
+      "explanation": "「執」的部首是⼟。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「眼眶」是什麼意思？",
+      "options": [
+        "黏貼在信件上，作為已繳納郵資的憑證。多為印花紙片。",
+        "昏倒。",
+        "擔心、憂慮。"
+      ],
+      "answer": "眼窩的四周。",
+      "explanation": "眼眶：眼窩的四周。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「固執」是什麼意思？",
+      "options": [
+        "昏倒。",
+        "各持不同的意見主張相互論爭。",
+        "擔心、憂慮。"
+      ],
+      "answer": "堅持己見，不肯變通。",
+      "explanation": "固執：堅持己見，不肯變通。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「辯論」是什麼意思？",
+      "options": [
+        "蒼白。",
+        "孤單冷清。",
+        "放鬆。"
+      ],
+      "answer": "各持不同的意見主張相互論爭。",
+      "explanation": "辯論：各持不同的意見主張相互論爭。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「雙胞胎」是什麼意思？",
+      "options": [
+        "鼻腔內分泌的黏液。",
+        "滑動、滑落。",
+        "黏貼在信件上，作為已繳納郵資的憑證。多為印花紙片。"
+      ],
+      "answer": "比喻非常相似的人、事、物。",
+      "explanation": "雙胞胎：比喻非常相似的人、事、物。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「郵票」是什麼意思？",
+      "options": [
+        "安慰問候。",
+        "擔心、憂慮。",
+        "眼窩的四周。"
+      ],
+      "answer": "黏貼在信件上，作為已繳納郵資的憑證。多為印花紙片。",
+      "explanation": "郵票：黏貼在信件上，作為已繳納郵資的憑證。多為印花紙片。",
+      "level": "basic",
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "段落摘要已整理；課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "教材待補：應用任務設計中"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "聆聽題目保留待教師確認答案，未在正式模組顯示。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭教材尚未完成公開資料整理。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "跨課複習資料待補。"
+    }
+  }
+}
