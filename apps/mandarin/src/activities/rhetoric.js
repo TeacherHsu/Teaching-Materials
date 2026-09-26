@@ -11,12 +11,52 @@ function shuffled(arr) {
   return [...arr].sort(() => Math.random() - 0.5);
 }
 
+// 官方修辭解析會用「﹁﹂」框出關鍵字；同時接受既有資料常見的「」與『』標記。
+// 標記只供教材資料保存，不直接顯示在學生題幹中。
+const RHETORIC_MARKUP = /﹁([^﹂]*)﹂|「([^」]*)」|『([^』]*)』/g;
+
+export function splitRhetoricExample(value = '') {
+  const text = String(value);
+  const segments = [];
+  let lastIndex = 0;
+
+  for (const match of text.matchAll(RHETORIC_MARKUP)) {
+    if (match.index > lastIndex) {
+      segments.push({ text: text.slice(lastIndex, match.index), highlighted: false });
+    }
+    segments.push({ text: match[1] ?? match[2] ?? match[3], highlighted: true });
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < text.length) segments.push({ text: text.slice(lastIndex), highlighted: false });
+  return segments.length ? segments : [{ text: '', highlighted: false }];
+}
+
+export function stripRhetoricMarkup(value = '') {
+  return splitRhetoricExample(value)
+    .map(({ text }) => text)
+    .join('');
+}
+
+function buildRhetoricStem(example) {
+  return [
+    '這句話用了什麼修辭？「',
+    ...splitRhetoricExample(example).map(({ text, highlighted }) =>
+      highlighted ? h('span', { class: 'rhetoric-highlight' }, text) : text,
+    ),
+    '」',
+  ];
+}
+
 function buildChoiceItem(entry, all) {
   const distractors = shuffled(all.filter((r) => r.figure !== entry.figure)).slice(0, 2).map((r) => r.figure);
   const options = shuffled([...new Set([entry.figure, ...distractors])]);
+  const stemText = `這句話用了什麼修辭？「${stripRhetoricMarkup(entry.example)}」`;
   return {
     id: entry.id,
-    stem: `這句話用了什麼修辭？「${entry.example}」`,
+    stem: stemText,
+    stemText,
+    stemContent: buildRhetoricStem(entry.example),
     options,
     answer: entry.figure,
     explanation: `${entry.figure}：${entry.child_note || entry.note}`,

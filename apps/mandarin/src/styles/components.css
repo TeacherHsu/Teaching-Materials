@@ -713,6 +713,11 @@
   margin-bottom: var(--space-3);
 }
 
+.rhetoric-highlight {
+  color: var(--module-color-dark, var(--color-primary));
+  font-weight: 700;
+}
+
 .quiz-options {
   display: grid;
   gap: var(--space-2);

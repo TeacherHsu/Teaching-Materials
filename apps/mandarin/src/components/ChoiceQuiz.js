@@ -49,6 +49,8 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
     // 題庫資料保留內容順序；學生畫面每次重繪都重新亂數排列選項。
     // ReadAllButton 也使用這份畫面順序，朗讀順序與視覺順序一致。
     const options = shuffle(item.options || []);
+    const stemText = item.stemText || item.stem;
+    const stemContent = item.stemContent || stemText;
     let answered = false; // 題目鎖定（答對，或第 2 次答錯揭曉正解）
     let attempts = 0;
 
@@ -57,10 +59,10 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
     root.appendChild(
       h('div', { class: 'quiz-title-row' }, [
         h('div', { class: 'quiz-option-row' }, [
-          h('p', { class: 'quiz-stem' }, item.stem),
-          SpeakButton({ text: item.stem, label: '聽', variant: 'speak-button--option' }),
+          h('p', { class: 'quiz-stem' }, stemContent),
+          SpeakButton({ text: stemText, label: '聽', variant: 'speak-button--option' }),
         ]),
-        ReadAllButton(() => ({ stem: item.readAllStem || item.stem, options })),
+        ReadAllButton(() => ({ stem: item.readAllStem || stemText, options })),
       ]),
     );
 
