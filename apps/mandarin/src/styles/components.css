@@ -595,6 +595,15 @@
   justify-content: center;
 }
 
+/* 語詞插圖皆以方形資產製作，卡片不可用 4:3 cover 裁掉上下內容。 */
+.vocabulary-card .image-frame {
+  aspect-ratio: 1 / 1;
+}
+
+.vocabulary-card .image-frame img {
+  object-fit: contain;
+}
+
 /* ---- SpeakButton（朗讀鈕，整併舊 AudioButton） ---- */
 .speak-button {
   display: inline-flex;

@@ -1,6 +1,12 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/src/styles/components.css`、`apps/mandarin/scripts/test-vocabulary-image-fit.mjs`。
+- 做了什麼：修正語詞卡圖片框原本以 4:3 `object-fit: cover` 顯示，造成方形插圖上下被裁掉；語詞卡改用 1:1 圖片框與 `object-fit: contain`，完整保留插圖內容。其他圖片模組維持原本規則。
+- 驗證：已在 G4A 第 3 課「指揮」語詞卡預覽確認指揮者頭部與前景樂手完整顯示；新增圖片比例回歸測試；`npm.cmd run validate`、完整 `scripts/test-*.mjs`、升級權限 `npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets` 均通過。
+- 提交／推送：本項待建立本地提交；尚未推送遠端。工作樹另有既存的 G2A 未追蹤／修改內容，未納入本項。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/activities/sentencePractice.js`、`apps/mandarin/scripts/test-sentence-practice-prompt.mjs`。
 - 做了什麼：移除句子重組題幹中對學生不必要的「（句型：……）」資訊；保留上方的「句子重組」與步驟／題數進度提示。
 - 驗證：新增題幹回歸測試；`npm.cmd run validate`、完整 `scripts/test-*.mjs`、升級權限 `npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets` 均通過。已開啟第五課句型練習本機預覽。
