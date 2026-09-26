@@ -1,0 +1,691 @@
+{
+  "lesson_id": "115AG3H10",
+  "volume": {
+    "code": "115AG3H",
+    "publisher": "翰林",
+    "grade": 3,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "三上國語課程"
+  },
+  "lesson_no": 10,
+  "title": "秋千上的婚禮",
+  "author": "",
+  "blurb": "透過〈秋千上的婚禮〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "characters": [
+    {
+      "char": "婚",
+      "zhuyin": "ㄏㄨㄣ",
+      "stroke_count": 11,
+      "radical": "⼥",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "婚事",
+        "婚姻",
+        "婚後"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A9%9A",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "飾",
+      "zhuyin": "ㄕˋ",
+      "stroke_count": 13,
+      "radical": "⾷",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "修飾",
+        "吊飾",
+        "掩飾"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%A3%BE",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "郎",
+      "zhuyin": "ㄌㄤˊ",
+      "stroke_count": 9,
+      "radical": "⾢",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "侍郎",
+        "女郎",
+        "新郎"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%83%8E",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "參",
+      "zhuyin": "ㄘㄢ",
+      "stroke_count": 11,
+      "radical": "⼛",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "參加",
+        "參展",
+        "參拜"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8F%83",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "響",
+      "zhuyin": "ㄒㄧㄤˇ",
+      "stroke_count": 20,
+      "radical": "⾳",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "回響",
+        "巨響",
+        "影響"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%9F%BF",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "代",
+      "zhuyin": "ㄉㄞˋ",
+      "stroke_count": 5,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "世代",
+        "二代",
+        "交代"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BB%A3",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "福",
+      "zhuyin": "ㄈㄨˊ",
+      "stroke_count": 14,
+      "radical": "⽰",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "口福",
+        "幸福",
+        "惜福"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A6%8F",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "連",
+      "zhuyin": "ㄌㄧㄢˊ",
+      "stroke_count": 11,
+      "radical": "⾡",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "一連",
+        "串連",
+        "接連"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%80%A3",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "酒",
+      "zhuyin": "ㄐㄧㄡˇ",
+      "stroke_count": 10,
+      "radical": "⾣",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "啤酒",
+        "米酒",
+        "酒店"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%85%92",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "敬",
+      "zhuyin": "ㄐㄧㄥˋ",
+      "stroke_count": 13,
+      "radical": "⽁",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "尊敬",
+        "崇敬",
+        "恭敬"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%95%AC",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "藏",
+      "zhuyin": "ㄘㄤˊ",
+      "stroke_count": 18,
+      "radical": "⾋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "典藏",
+        "冷藏",
+        "寶藏"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%97%8F",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "俗",
+      "zhuyin": "ㄙㄨˊ",
+      "stroke_count": 9,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "世俗",
+        "俗稱",
+        "俗諺"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BF%97",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "惜",
+      "zhuyin": "ㄒㄧ",
+      "stroke_count": 11,
+      "radical": "⼼",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "不惜",
+        "可惜",
+        "惋惜"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%83%9C",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "互",
+      "zhuyin": "ㄏㄨˋ",
+      "stroke_count": 4,
+      "radical": "⼆",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "互信",
+        "互助",
+        "互動"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BA%92",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "精",
+      "zhuyin": "ㄐㄧㄥ",
+      "stroke_count": 14,
+      "radical": "⽶",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "受精",
+        "妖精",
+        "專精"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B2%BE",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG3H10:01",
+      "word": "婚禮",
+      "zhuyin": "ㄏㄨㄣ ㄌㄧˇ",
+      "meaning": "兩人結婚時舉行的儀式。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson10/vocabulary/l10-01.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H10:02",
+      "word": "秋千",
+      "zhuyin": "ㄑㄧㄡ ㄑㄧㄢ",
+      "meaning": "坐在繩索或架子上前後擺動的遊戲器材。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H10:03",
+      "word": "祝福",
+      "zhuyin": "ㄓㄨˋ ㄈㄨˊ",
+      "meaning": "希望別人平安、幸福的話。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson10/vocabulary/l10-03.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H10:04",
+      "word": "親友",
+      "zhuyin": "ㄑㄧㄣ ㄧㄡˇ",
+      "meaning": "親人和朋友。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H10:05",
+      "word": "新娘",
+      "zhuyin": "ㄒㄧㄣ ㄋㄧㄤˊ",
+      "meaning": "結婚儀式中的女方。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson10/vocabulary/l10-05.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H10:06",
+      "word": "熱鬧",
+      "zhuyin": "ㄖㄜˋ ㄋㄠˋ",
+      "meaning": "人多、聲音多，很有活動的樣子。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson10/vocabulary/l10-06.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [],
+  "idiom_sentences": [],
+  "sentence_patterns": [],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:115AG3H:10:01",
+      "paragraph_no": 1,
+      "summary": "魯凱婚禮中，新娘穿著族服站上秋千，新郎一次次拉動繩索；秋千盪得越高，就代表新娘越勇敢。",
+      "structure_role": "第1段重點",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（段落大意）"
+    },
+    {
+      "id": "paragraph:115AG3H:10:02",
+      "paragraph_no": 2,
+      "summary": "新娘身上的百合花頭飾和其他飾品發出清脆聲音，笑容像花朵，現場歡呼也讓儀式顯得格外熱鬧。",
+      "structure_role": "第2段重點",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（段落大意）"
+    },
+    {
+      "id": "paragraph:115AG3H:10:03",
+      "paragraph_no": 3,
+      "summary": "作者第一次參加這樣的婚禮，覺得一切很新奇；會場響起歌聲，親友以歡笑和掌聲送上心意。",
+      "structure_role": "第3段重點",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（段落大意）"
+    },
+    {
+      "id": "paragraph:115AG3H:10:04",
+      "paragraph_no": 4,
+      "summary": "盪秋千結束後，新人先喝連杯酒，再逐一向親友敬酒；大家手拉著手唱歌跳舞，共同祝福新人。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（段落大意）"
+    },
+    {
+      "id": "paragraph:115AG3H:10:05",
+      "paragraph_no": 5,
+      "summary": "活動中還穿插藏新娘的習俗，男方必須帶著親友到部落裡尋找，過程充滿互助合作和歡樂氣氛。",
+      "structure_role": "第5段重點",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（段落大意）"
+    },
+    {
+      "id": "paragraph:115AG3H:10:06",
+      "paragraph_no": 6,
+      "summary": "這項安排希望男方更加珍惜新娘，也表現魯凱族愛家互助的傳統精神；婚禮直到深夜才畫下句點，也讓參與者理解儀式背後的文化意義。",
+      "structure_role": "第6段重點",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（段落大意）"
+    }
+  ],
+  "main_idea": {
+    "gist": "魯凱婚禮中，新娘穿著族服站上秋千，新郎一次次拉動繩索；秋千盪得越高，就代表新娘越勇敢。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "derived:official-paragraph-summary"
+  },
+  "reading_questions": [],
+  "polysemy": [],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [],
+  "listening": [],
+  "review_words": {},
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag3h-10",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E5%A9%9A%E9%A3%BE%E9%83%8E%E5%8F%83%E9%9F%BF%E4%BB%A3%E7%A6%8F%E9%80%A3%E9%85%92%E6%95%AC%E8%97%8F%E4%BF%97%E6%83%9C%E4%BA%92%E7%B2%BE",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・3年級・第10課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課15個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「婚」的部首是哪一個？",
+      "options": [
+        "⾋",
+        "⾷",
+        "⼛"
+      ],
+      "answer": "⼥",
+      "explanation": "「婚」的部首是⼥。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「飾」的部首是哪一個？",
+      "options": [
+        "⼥",
+        "⾳",
+        "⽁"
+      ],
+      "answer": "⾷",
+      "explanation": "「飾」的部首是⾷。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「郎」的部首是哪一個？",
+      "options": [
+        "⾣",
+        "⾳",
+        "⼛"
+      ],
+      "answer": "⾢",
+      "explanation": "「郎」的部首是⾢。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「婚禮」是什麼意思？",
+      "options": [
+        "希望別人平安、幸福的話。",
+        "結婚儀式中的女方。",
+        "坐在繩索或架子上前後擺動的遊戲器材。"
+      ],
+      "answer": "兩人結婚時舉行的儀式。",
+      "explanation": "婚禮：兩人結婚時舉行的儀式。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「秋千」是什麼意思？",
+      "options": [
+        "親人和朋友。",
+        "希望別人平安、幸福的話。",
+        "坐在繩索或架子上前後擺動的遊戲器材。"
+      ],
+      "answer": "坐在繩索或架子上前後擺動的遊戲器材。",
+      "explanation": "秋千：坐在繩索或架子上前後擺動的遊戲器材。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「祝福」是什麼意思？",
+      "options": [
+        "坐在繩索或架子上前後擺動的遊戲器材。",
+        "人多、聲音多，很有活動的樣子。",
+        "兩人結婚時舉行的儀式。"
+      ],
+      "answer": "希望別人平安、幸福的話。",
+      "explanation": "祝福：希望別人平安、幸福的話。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「親友」是什麼意思？",
+      "options": [
+        "希望別人平安、幸福的話。",
+        "親人和朋友。",
+        "兩人結婚時舉行的儀式。"
+      ],
+      "answer": "親人和朋友。",
+      "explanation": "親友：親人和朋友。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「新娘」是什麼意思？",
+      "options": [
+        "坐在繩索或架子上前後擺動的遊戲器材。",
+        "人多、聲音多，很有活動的樣子。",
+        "希望別人平安、幸福的話。"
+      ],
+      "answer": "結婚儀式中的女方。",
+      "explanation": "新娘：結婚儀式中的女方。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "missing",
+      "activity": "sentence-practice",
+      "note": "句型資料待審核。"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "教材待補。"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "missing",
+      "activity": "idiom-builder",
+      "note": "成語資料待審核。"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "missing",
+      "activity": "polysemy",
+      "note": "字義資料待審核。"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones",
+      "note": "多音字資料待審核。"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "missing",
+      "activity": "lookalikes",
+      "note": "形似字資料待審核。"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "聆聽題資料待審核。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭資料待審核。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "跨課複習資料待補。"
+    }
+  }
+}

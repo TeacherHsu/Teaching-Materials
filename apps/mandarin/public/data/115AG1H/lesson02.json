@@ -1,0 +1,560 @@
+{
+  "lesson_id": "115AG1H02",
+  "volume": {
+    "code": "115AG1H",
+    "publisher": "翰林",
+    "grade": 1,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "一年級上學期國語課程"
+  },
+  "lesson_no": 2,
+  "title": "大風吹",
+  "author": "",
+  "blurb": "透過〈大風吹〉練習認讀生字、理解語詞，並用聲音和圖像建立閱讀連結。",
+  "characters": [
+    {
+      "char": "大",
+      "zhuyin": "ㄉㄚˋ",
+      "stroke_count": 3,
+      "radical": "⼤",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "不大",
+        "偉大",
+        "大人"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A4%A7",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "風",
+      "zhuyin": "ㄈㄥ",
+      "stroke_count": 9,
+      "radical": "⾵",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "中風",
+        "季風",
+        "強風"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%A2%A8",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "吹",
+      "zhuyin": "ㄔㄨㄟ",
+      "stroke_count": 7,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "吹乾",
+        "吹來",
+        "吹倒"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%90%B9",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "們",
+      "zhuyin": "˙ㄇㄣ",
+      "stroke_count": 10,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "人們",
+        "他們",
+        "你們"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%80%91",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "來",
+      "zhuyin": "ㄌㄞˊ",
+      "stroke_count": 8,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "下來",
+        "以來",
+        "來信"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BE%86",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "玩",
+      "zhuyin": "ㄨㄢˊ",
+      "stroke_count": 8,
+      "radical": "⽟",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "好玩",
+        "愛玩",
+        "把玩"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%8E%A9",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "不",
+      "zhuyin": "ㄅㄨˋ",
+      "stroke_count": 4,
+      "radical": "⼀",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "不但",
+        "不僅",
+        "不再"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%B8%8D",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "停",
+      "zhuyin": "ㄊㄧㄥˊ",
+      "stroke_count": 11,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "不停",
+        "停下",
+        "停停"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%81%9C",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "的",
+      "zhuyin": "˙ㄉㄜ",
+      "stroke_count": 8,
+      "radical": "⽩",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "似的",
+        "別的",
+        "有的"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%9A%84",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "跑",
+      "zhuyin": "ㄆㄠˇ",
+      "stroke_count": 12,
+      "radical": "⾜",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "亂跑",
+        "嚇跑",
+        "奔跑"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B7%91",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG1H02:01",
+      "word": "大風吹",
+      "zhuyin": "ㄉㄚˋ ㄈㄥ ㄔㄨㄟ",
+      "meaning": "一種遊戲。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG1H/lesson02/vocabulary/l02-01.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H02:02",
+      "word": "我們",
+      "zhuyin": "ㄨㄛˇ ㄇㄣ˙",
+      "meaning": "包括自己在內的一些人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson02/vocabulary/l02-02.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H02:03",
+      "word": "來",
+      "zhuyin": "ㄌㄞˊ",
+      "meaning": "用於動詞之前，表示意願。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson02/vocabulary/l02-03.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H02:04",
+      "word": "玩",
+      "zhuyin": "ㄨㄢˊ",
+      "meaning": "遊戲、嬉戲。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson02/vocabulary/l02-04.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H02:05",
+      "word": "不停",
+      "zhuyin": "ㄅㄨˋ ㄊㄧㄥˊ",
+      "meaning": "持續、繼續。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson02/vocabulary/l02-05.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H02:06",
+      "word": "的",
+      "zhuyin": "ㄉㄜ˙",
+      "meaning": "置於副詞後面。同「地」。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson02/vocabulary/l02-06.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H02:07",
+      "word": "跑",
+      "zhuyin": "ㄆㄠˇ",
+      "meaning": "快步走。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson02/vocabulary/l02-07.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [],
+  "idiom_sentences": [],
+  "sentence_patterns": [],
+  "rhetoric": [],
+  "paragraph_summary": [],
+  "main_idea": {
+    "gist": "本課閱讀重點待補。",
+    "theme": "閱讀理解",
+    "status": "draft",
+    "source": "teacher-review-required"
+  },
+  "reading_questions": [],
+  "polysemy": [],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [],
+  "listening": [],
+  "review_words": {},
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag1h-02",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E5%A4%A7%E9%A2%A8%E5%90%B9%E5%80%91%E4%BE%86%E7%8E%A9%E4%B8%8D%E5%81%9C%E7%9A%84%E8%B7%91",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・1年級・第2課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課10個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「大」的部首是哪一個？",
+      "options": [
+        "⼤",
+        "⽟",
+        "⾜"
+      ],
+      "answer": "⼤",
+      "explanation": "「大」的部首是⼤。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「風」的部首是哪一個？",
+      "options": [
+        "⼤",
+        "⽟",
+        "⾜"
+      ],
+      "answer": "⾵",
+      "explanation": "「風」的部首是⾵。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「吹」的部首是哪一個？",
+      "options": [
+        "⼤",
+        "⽟",
+        "⾜"
+      ],
+      "answer": "⼝",
+      "explanation": "「吹」的部首是⼝。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「大風吹」是什麼意思？",
+      "options": [
+        "包括自己在內的一些人。",
+        "置於副詞後面。同「地」。",
+        "用於動詞之前，表示意願。"
+      ],
+      "answer": "一種遊戲。",
+      "explanation": "大風吹：一種遊戲。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「我們」是什麼意思？",
+      "options": [
+        "用於動詞之前，表示意願。",
+        "快步走。",
+        "遊戲、嬉戲。"
+      ],
+      "answer": "包括自己在內的一些人。",
+      "explanation": "我們：包括自己在內的一些人。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「來」是什麼意思？",
+      "options": [
+        "包括自己在內的一些人。",
+        "置於副詞後面。同「地」。",
+        "一種遊戲。"
+      ],
+      "answer": "用於動詞之前，表示意願。",
+      "explanation": "來：用於動詞之前，表示意願。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「玩」是什麼意思？",
+      "options": [
+        "用於動詞之前，表示意願。",
+        "遊戲、嬉戲。",
+        "一種遊戲。"
+      ],
+      "answer": "遊戲、嬉戲。",
+      "explanation": "玩：遊戲、嬉戲。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「不停」是什麼意思？",
+      "options": [
+        "快步走。",
+        "置於副詞後面。同「地」。",
+        "包括自己在內的一些人。"
+      ],
+      "answer": "持續、繼續。",
+      "explanation": "不停：持續、繼續。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "missing",
+      "activity": "reading",
+      "note": "一年級課文內容待整理為公開摘要；課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "missing",
+      "activity": "sentence-practice",
+      "note": "句型資料待審核。"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "教材待補。"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "missing",
+      "activity": "idiom-builder",
+      "note": "一年級不安排成語題。"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "missing",
+      "activity": "polysemy",
+      "note": "一年級不安排一字多義題。"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones",
+      "note": "多音字資料待審核。"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "missing",
+      "activity": "lookalikes",
+      "note": "形似字資料待審核。"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "missing",
+      "activity": "structure-map",
+      "note": "摘要資料待補。"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "聆聽題資料待審核。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "一年級不安排修辭題。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "跨課複習資料待補。"
+    }
+  }
+}

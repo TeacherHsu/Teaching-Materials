@@ -1,0 +1,596 @@
+{
+  "lesson_id": "115AG1H01",
+  "volume": {
+    "code": "115AG1H",
+    "publisher": "翰林",
+    "grade": 1,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "一年級上學期國語課程"
+  },
+  "lesson_no": 1,
+  "title": "一起走",
+  "author": "",
+  "blurb": "透過〈一起走〉練習認讀生字、理解語詞，並用聲音和圖像建立閱讀連結。",
+  "characters": [
+    {
+      "char": "起",
+      "zhuyin": "ㄑㄧˇ",
+      "stroke_count": 10,
+      "radical": "⾛",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "一起",
+        "升起",
+        "喚起"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B5%B7",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "走",
+      "zhuyin": "ㄗㄡˇ",
+      "stroke_count": 7,
+      "radical": "⾛",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "健走",
+        "偷走",
+        "出走"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B5%B0",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "你",
+      "zhuyin": "ㄋㄧˇ",
+      "stroke_count": 7,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "你來我往",
+        "你們",
+        "你我"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BD%A0",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "在",
+      "zhuyin": "ㄗㄞˋ",
+      "stroke_count": 6,
+      "radical": "⼟",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "位在",
+        "住在",
+        "內在"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%9C%A8",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "左",
+      "zhuyin": "ㄗㄨㄛˇ",
+      "stroke_count": 5,
+      "radical": "⼯",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "左側",
+        "左右",
+        "左手"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B7%A6",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "我",
+      "zhuyin": "ㄨㄛˇ",
+      "stroke_count": 7,
+      "radical": "⼽",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "你我",
+        "忘我",
+        "我倆"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%88%91",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "右",
+      "zhuyin": "ㄧㄡˋ",
+      "stroke_count": 5,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "右側",
+        "右手",
+        "右方"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8F%B3",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "和",
+      "zhuyin": "ㄏㄢˋ",
+      "stroke_count": 8,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "中和",
+        "和好",
+        "和尚"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%92%8C",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "向",
+      "zhuyin": "ㄒㄧㄤˋ",
+      "stroke_count": 6,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "一向",
+        "傾向",
+        "南向"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%90%91",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "前",
+      "zhuyin": "ㄑㄧㄢˊ",
+      "stroke_count": 9,
+      "radical": "⼑",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "之前",
+        "以前",
+        "先前"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%89%8D",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG1H01:01",
+      "word": "一起",
+      "zhuyin": "ㄧˋ ㄑㄧˇ",
+      "meaning": "一塊。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson01/vocabulary/l01-01.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H01:02",
+      "word": "走",
+      "zhuyin": "ㄗㄡˇ",
+      "meaning": "用腳步行。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson01/vocabulary/l01-02.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H01:03",
+      "word": "你",
+      "zhuyin": "ㄋㄧˇ",
+      "meaning": "第二人稱，也指對方。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson01/vocabulary/l01-03.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H01:04",
+      "word": "在",
+      "zhuyin": "ㄗㄞˋ",
+      "meaning": "介詞，放在地點前面。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson01/vocabulary/l01-04.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H01:05",
+      "word": "左",
+      "zhuyin": "ㄗㄨㄛˇ",
+      "meaning": "表示位置、方向。與「右」相對。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson01/vocabulary/l01-05.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H01:06",
+      "word": "我",
+      "zhuyin": "ㄨㄛˇ",
+      "meaning": "指自己。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson01/vocabulary/l01-06.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H01:07",
+      "word": "右",
+      "zhuyin": "ㄧㄡˋ",
+      "meaning": "表示位置、方向。與「左」相對。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson01/vocabulary/l01-07.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H01:08",
+      "word": "你和我",
+      "zhuyin": "ㄋㄧˇ ㄏㄜˊ ㄨㄛˇ",
+      "meaning": "你與我、你跟我。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG1H/lesson01/vocabulary/l01-08.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H01:09",
+      "word": "向",
+      "zhuyin": "ㄒㄧㄤˋ",
+      "meaning": "對著、朝著。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson01/vocabulary/l01-09.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H01:10",
+      "word": "前",
+      "zhuyin": "ㄑㄧㄢˊ",
+      "meaning": "位置在正面的。與「後」相對。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson01/vocabulary/l01-10.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [],
+  "idiom_sentences": [],
+  "sentence_patterns": [],
+  "rhetoric": [],
+  "paragraph_summary": [],
+  "main_idea": {
+    "gist": "本課閱讀重點待補。",
+    "theme": "閱讀理解",
+    "status": "draft",
+    "source": "teacher-review-required"
+  },
+  "reading_questions": [],
+  "polysemy": [],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [],
+  "listening": [],
+  "review_words": {},
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag1h-01",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E8%B5%B7%E8%B5%B0%E4%BD%A0%E5%9C%A8%E5%B7%A6%E6%88%91%E5%8F%B3%E5%92%8C%E5%90%91%E5%89%8D",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・1年級・第1課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課10個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「起」的部首是哪一個？",
+      "options": [
+        "⾛",
+        "⼽",
+        "⼟"
+      ],
+      "answer": "⾛",
+      "explanation": "「起」的部首是⾛。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「走」的部首是哪一個？",
+      "options": [
+        "⾛",
+        "⼟",
+        "⼯"
+      ],
+      "answer": "⾛",
+      "explanation": "「走」的部首是⾛。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「你」的部首是哪一個？",
+      "options": [
+        "⼟",
+        "⼑",
+        "⾛"
+      ],
+      "answer": "⼈",
+      "explanation": "「你」的部首是⼈。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「一起」是什麼意思？",
+      "options": [
+        "對著、朝著。",
+        "表示位置、方向。與「右」相對。",
+        "你與我、你跟我。"
+      ],
+      "answer": "一塊。",
+      "explanation": "一起：一塊。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「走」是什麼意思？",
+      "options": [
+        "表示位置、方向。與「左」相對。",
+        "表示位置、方向。與「右」相對。",
+        "一塊。"
+      ],
+      "answer": "用腳步行。",
+      "explanation": "走：用腳步行。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「你」是什麼意思？",
+      "options": [
+        "用腳步行。",
+        "表示位置、方向。與「右」相對。",
+        "位置在正面的。與「後」相對。"
+      ],
+      "answer": "第二人稱，也指對方。",
+      "explanation": "你：第二人稱，也指對方。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「在」是什麼意思？",
+      "options": [
+        "對著、朝著。",
+        "第二人稱，也指對方。",
+        "介詞，放在地點前面。"
+      ],
+      "answer": "介詞，放在地點前面。",
+      "explanation": "在：介詞，放在地點前面。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「左」是什麼意思？",
+      "options": [
+        "介詞，放在地點前面。",
+        "表示位置、方向。與「左」相對。",
+        "你與我、你跟我。"
+      ],
+      "answer": "表示位置、方向。與「右」相對。",
+      "explanation": "左：表示位置、方向。與「右」相對。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "missing",
+      "activity": "reading",
+      "note": "一年級課文內容待整理為公開摘要；課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "missing",
+      "activity": "sentence-practice",
+      "note": "句型資料待審核。"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "教材待補。"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "missing",
+      "activity": "idiom-builder",
+      "note": "一年級不安排成語題。"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "missing",
+      "activity": "polysemy",
+      "note": "一年級不安排一字多義題。"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones",
+      "note": "多音字資料待審核。"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "missing",
+      "activity": "lookalikes",
+      "note": "形似字資料待審核。"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "missing",
+      "activity": "structure-map",
+      "note": "摘要資料待補。"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "聆聽題資料待審核。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "一年級不安排修辭題。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "跨課複習資料待補。"
+    }
+  }
+}

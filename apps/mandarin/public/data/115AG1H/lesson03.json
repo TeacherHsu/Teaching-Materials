@@ -1,0 +1,615 @@
+{
+  "lesson_id": "115AG1H03",
+  "volume": {
+    "code": "115AG1H",
+    "publisher": "翰林",
+    "grade": 1,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "一年級上學期國語課程"
+  },
+  "lesson_no": 3,
+  "title": "火車過山洞",
+  "author": "",
+  "blurb": "透過〈火車過山洞〉練習認讀生字、理解語詞，並用聲音和圖像建立閱讀連結。",
+  "characters": [
+    {
+      "char": "火",
+      "zhuyin": "ㄏㄨㄛˇ",
+      "stroke_count": 4,
+      "radical": "⽕",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "大火",
+        "怒火",
+        "戰火"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%81%AB",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "車",
+      "zhuyin": "ㄔㄜ",
+      "stroke_count": 7,
+      "radical": "⾞",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "上車",
+        "下車",
+        "公車"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%BB%8A",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "山",
+      "zhuyin": "ㄕㄢ",
+      "stroke_count": 3,
+      "radical": "⼭",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "上山",
+        "下山",
+        "壽山"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B1%B1",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "洞",
+      "zhuyin": "ㄉㄨㄥˋ",
+      "stroke_count": 9,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "凹洞",
+        "地洞",
+        "坑洞"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B4%9E",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "個",
+      "zhuyin": "˙ㄍㄜ",
+      "stroke_count": 10,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "個中",
+        "個人",
+        "個個"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%80%8B",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "又",
+      "zhuyin": "ㄧㄡˋ",
+      "stroke_count": 2,
+      "radical": "⼜",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "欲言又止",
+        "日新又新",
+        "又"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8F%88",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "出",
+      "zhuyin": "ㄔㄨ",
+      "stroke_count": 5,
+      "radical": "⼐",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "付出",
+        "伸出",
+        "做出"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%87%BA",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "小",
+      "zhuyin": "ㄒㄧㄠˇ",
+      "stroke_count": 3,
+      "radical": "⼩",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "國小",
+        "大小",
+        "嬌小"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B0%8F",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "堆",
+      "zhuyin": "ㄉㄨㄟ",
+      "stroke_count": 11,
+      "radical": "⼟",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "土堆",
+        "堆成",
+        "堆放"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A0%86",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "開",
+      "zhuyin": "ㄎㄞ",
+      "stroke_count": 12,
+      "radical": "⾨",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "公開",
+        "切開",
+        "剝開"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%96%8B",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "心",
+      "zhuyin": "ㄒㄧㄣ",
+      "stroke_count": 4,
+      "radical": "⼼",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "中心",
+        "內心",
+        "全心"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%BF%83",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG1H03:01",
+      "word": "火車",
+      "zhuyin": "ㄏㄨㄛˇ ㄔㄜ",
+      "meaning": "指行駛在鐵路上的列車。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson03/vocabulary/l03-01.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H03:02",
+      "word": "過",
+      "zhuyin": "ㄍㄨㄛˋ",
+      "meaning": "表示由甲到乙的過程。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson03/vocabulary/l03-02.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H03:03",
+      "word": "山洞",
+      "zhuyin": "ㄕㄢ ㄉㄨㄥˋ",
+      "meaning": "山中的洞穴。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson03/vocabulary/l03-03.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H03:04",
+      "word": "一個",
+      "zhuyin": "ㄧ ㄍㄜˋ",
+      "meaning": "指人或物的數量是一。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson03/vocabulary/l03-04.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H03:05",
+      "word": "又",
+      "zhuyin": "ㄧㄡˋ",
+      "meaning": "表示動作或現象的重複。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson03/vocabulary/l03-05.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H03:06",
+      "word": "做",
+      "zhuyin": "ㄗㄨㄛˋ",
+      "meaning": "製造。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson03/vocabulary/l03-06.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H03:07",
+      "word": "出",
+      "zhuyin": "ㄔㄨ",
+      "meaning": "放在動詞後面，表示動作的效果。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson03/vocabulary/l03-07.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H03:08",
+      "word": "小",
+      "zhuyin": "ㄒㄧㄠˇ",
+      "meaning": "與「大」相對。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson03/vocabulary/l03-08.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H03:09",
+      "word": "堆",
+      "zhuyin": "ㄉㄨㄟ",
+      "meaning": "用手或工具把東西聚積起來。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson03/vocabulary/l03-09.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H03:10",
+      "word": "開開心心",
+      "zhuyin": "ㄎㄞ ㄎㄞ ㄒㄧㄣ ㄒㄧㄣ",
+      "meaning": "高興、快樂。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG1H/lesson03/vocabulary/l03-10.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [],
+  "idiom_sentences": [],
+  "sentence_patterns": [],
+  "rhetoric": [],
+  "paragraph_summary": [],
+  "main_idea": {
+    "gist": "本課閱讀重點待補。",
+    "theme": "閱讀理解",
+    "status": "draft",
+    "source": "teacher-review-required"
+  },
+  "reading_questions": [],
+  "polysemy": [],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [],
+  "listening": [],
+  "review_words": {},
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag1h-03",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E7%81%AB%E8%BB%8A%E5%B1%B1%E6%B4%9E%E5%80%8B%E5%8F%88%E5%87%BA%E5%B0%8F%E5%A0%86%E9%96%8B%E5%BF%83",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・1年級・第3課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課11個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「火」的部首是哪一個？",
+      "options": [
+        "⾞",
+        "⽕",
+        "⼈"
+      ],
+      "answer": "⽕",
+      "explanation": "「火」的部首是⽕。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「車」的部首是哪一個？",
+      "options": [
+        "⽕",
+        "⼈",
+        "⼩"
+      ],
+      "answer": "⾞",
+      "explanation": "「車」的部首是⾞。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「山」的部首是哪一個？",
+      "options": [
+        "⼟",
+        "⼜",
+        "⽔"
+      ],
+      "answer": "⼭",
+      "explanation": "「山」的部首是⼭。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「火車」是什麼意思？",
+      "options": [
+        "用手或工具把東西聚積起來。",
+        "表示動作或現象的重複。",
+        "與「大」相對。"
+      ],
+      "answer": "指行駛在鐵路上的列車。",
+      "explanation": "火車：指行駛在鐵路上的列車。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「過」是什麼意思？",
+      "options": [
+        "放在動詞後面，表示動作的效果。",
+        "表示動作或現象的重複。",
+        "指行駛在鐵路上的列車。"
+      ],
+      "answer": "表示由甲到乙的過程。",
+      "explanation": "過：表示由甲到乙的過程。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「山洞」是什麼意思？",
+      "options": [
+        "表示由甲到乙的過程。",
+        "表示動作或現象的重複。",
+        "高興、快樂。"
+      ],
+      "answer": "山中的洞穴。",
+      "explanation": "山洞：山中的洞穴。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「一個」是什麼意思？",
+      "options": [
+        "用手或工具把東西聚積起來。",
+        "山中的洞穴。",
+        "指人或物的數量是一。"
+      ],
+      "answer": "指人或物的數量是一。",
+      "explanation": "一個：指人或物的數量是一。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「又」是什麼意思？",
+      "options": [
+        "指人或物的數量是一。",
+        "放在動詞後面，表示動作的效果。",
+        "與「大」相對。"
+      ],
+      "answer": "表示動作或現象的重複。",
+      "explanation": "又：表示動作或現象的重複。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "missing",
+      "activity": "reading",
+      "note": "一年級課文內容待整理為公開摘要；課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "missing",
+      "activity": "sentence-practice",
+      "note": "句型資料待審核。"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "教材待補。"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "missing",
+      "activity": "idiom-builder",
+      "note": "一年級不安排成語題。"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "missing",
+      "activity": "polysemy",
+      "note": "一年級不安排一字多義題。"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones",
+      "note": "多音字資料待審核。"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "missing",
+      "activity": "lookalikes",
+      "note": "形似字資料待審核。"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "missing",
+      "activity": "structure-map",
+      "note": "摘要資料待補。"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "聆聽題資料待審核。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "一年級不安排修辭題。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "跨課複習資料待補。"
+    }
+  }
+}

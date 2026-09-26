@@ -1,0 +1,701 @@
+{
+  "lesson_id": "115AG3H07",
+  "volume": {
+    "code": "115AG3H",
+    "publisher": "翰林",
+    "grade": 3,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "三上國語課程"
+  },
+  "lesson_no": 7,
+  "title": "風的味道",
+  "author": "",
+  "blurb": "透過〈風的味道〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "characters": [
+    {
+      "char": "鹹",
+      "zhuyin": "ㄒㄧㄢˊ",
+      "stroke_count": 20,
+      "radical": "⿄",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "鹹味",
+        "鹹水",
+        "鹹菜"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%B9%B9",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "蔚",
+      "zhuyin": "ㄨㄟˋ",
+      "stroke_count": 14,
+      "radical": "⾋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "蔚為",
+        "蔚藍",
+        "蔚藍區"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%94%9A",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "航",
+      "zhuyin": "ㄏㄤˊ",
+      "stroke_count": 10,
+      "radical": "⾈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "啟航",
+        "導航",
+        "航向"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%88%AA",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "乘",
+      "zhuyin": "ㄔㄥˊ",
+      "stroke_count": 10,
+      "radical": "⼃",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "乘以",
+        "乘坐",
+        "乘客"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%B9%98",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "橇",
+      "zhuyin": "ㄑㄧㄠ",
+      "stroke_count": 16,
+      "radical": "⽊",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "雪橇",
+        "拉雪橇",
+        "滑雪橇"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%A9%87",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "坡",
+      "zhuyin": "ㄆㄛ",
+      "stroke_count": 8,
+      "radical": "⼟",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "上坡",
+        "下坡",
+        "坡度"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%9D%A1",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "野",
+      "zhuyin": "ㄧㄝˇ",
+      "stroke_count": 11,
+      "radical": "⾥",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "原野",
+        "山野",
+        "朝野"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%87%8E",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "閉",
+      "zhuyin": "ㄅㄧˋ",
+      "stroke_count": 11,
+      "radical": "⾨",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "倒閉",
+        "密閉",
+        "封閉"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%96%89",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "深",
+      "zhuyin": "ㄕㄣ",
+      "stroke_count": 11,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "加深",
+        "景深",
+        "更深"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B7%B1",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "吸",
+      "zhuyin": "ㄒㄧ",
+      "stroke_count": 6,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "吸入",
+        "吸取",
+        "吸引"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%90%B8",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "欣",
+      "zhuyin": "ㄒㄧㄣ",
+      "stroke_count": 8,
+      "radical": "⽋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "欣喜",
+        "欣慰",
+        "欣然"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%AC%A3",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "賞",
+      "zhuyin": "ㄕㄤˇ",
+      "stroke_count": 15,
+      "radical": "⾙",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "欣賞",
+        "激賞",
+        "犒賞"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B3%9E",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "瞞",
+      "zhuyin": "ㄇㄢˊ",
+      "stroke_count": 16,
+      "radical": "⽬",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "隱瞞",
+        "欺瞞",
+        "瞞天過海"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%9E%9E",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG3H07:01",
+      "word": "鹹味",
+      "zhuyin": "ㄒㄧㄢˊ ㄨㄟˋ",
+      "meaning": "像鹽一樣的味道。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H07:02",
+      "word": "蔚藍",
+      "zhuyin": "ㄨㄟˋ ㄌㄢˊ",
+      "meaning": "深而清亮的藍色。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson07/vocabulary/l07-02.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H07:03",
+      "word": "回航",
+      "zhuyin": "ㄏㄨㄟˊ ㄏㄤˊ",
+      "meaning": "船隻或飛機返回原來的地方。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson07/vocabulary/l07-03.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H07:04",
+      "word": "雪橇",
+      "zhuyin": "ㄒㄩㄝˇ ㄑㄧㄠ",
+      "meaning": "在雪地上滑行的工具。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H07:05",
+      "word": "山坡",
+      "zhuyin": "ㄕㄢ ㄆㄛ",
+      "meaning": "山上傾斜的地面。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H07:06",
+      "word": "原野",
+      "zhuyin": "ㄩㄢˊ ㄧㄝˇ",
+      "meaning": "寬廣平坦的野外。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson07/vocabulary/l07-06.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H07:07",
+      "word": "閉上",
+      "zhuyin": "ㄅㄧˋ ㄕㄤˋ",
+      "meaning": "合起眼睛或門窗。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H07:08",
+      "word": "深呼吸",
+      "zhuyin": "ㄕㄣ ㄏㄨ ㄒㄧ",
+      "meaning": "慢慢吸入較多空氣，再呼出。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H07:09",
+      "word": "欣賞",
+      "zhuyin": "ㄒㄧㄣ ㄕㄤˇ",
+      "meaning": "用喜愛的心情觀看或感受。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H07:10",
+      "word": "瞞",
+      "zhuyin": "ㄇㄢˊ",
+      "meaning": "把事情藏起來不讓人知道。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson07/vocabulary/l07-10.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [],
+  "idiom_sentences": [],
+  "sentence_patterns": [],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:115AG3H:07:01",
+      "paragraph_no": 1,
+      "summary": "風四處流浪，沒有人知道他去過哪裡，詩中的我卻能從風帶來的味道和感覺，推想一路經過的自然景色。",
+      "structure_role": "第1段重點",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（段落大意）"
+    },
+    {
+      "id": "paragraph:115AG3H:07:02",
+      "paragraph_no": 2,
+      "summary": "風身上有淡淡鹹味，表示他剛從蔚藍大海回航；海水氣息成為線索，讓看不見的旅程出現清楚畫面。",
+      "structure_role": "第2段重點",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（段落大意）"
+    },
+    {
+      "id": "paragraph:115AG3H:07:03",
+      "paragraph_no": 3,
+      "summary": "風又帶著冰涼雪花，顯示他曾乘著雪橇由山坡滑下；溫度和觸感讓人聯想到覆雪山地的清冷景象。",
+      "structure_role": "第3段重點",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（段落大意）"
+    },
+    {
+      "id": "paragraph:115AG3H:07:04",
+      "paragraph_no": 4,
+      "summary": "當風帶來清新草香，我知道他剛在原野上快樂打滾，廣闊草地的氣味也隨著流動空氣來到身旁。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（段落大意）"
+    },
+    {
+      "id": "paragraph:115AG3H:07:05",
+      "paragraph_no": 5,
+      "summary": "閉上眼睛後再深呼吸，不只用眼睛觀看，也能靠嗅覺和觸覺發現環境，想像風所走過的每一條路。",
+      "structure_role": "第5段重點",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（段落大意）"
+    },
+    {
+      "id": "paragraph:115AG3H:07:06",
+      "paragraph_no": 6,
+      "summary": "風欣賞美景後把鹹味、雪花和草香帶回來，因此無法隱瞞行蹤；詩歌鼓勵讀者張開感官親近大自然。",
+      "structure_role": "第6段重點",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（段落大意）"
+    }
+  ],
+  "main_idea": {
+    "gist": "風四處流浪，沒有人知道他去過哪裡，詩中的我卻能從風帶來的味道和感覺，推想一路經過的自然景色。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "derived:official-paragraph-summary"
+  },
+  "reading_questions": [],
+  "polysemy": [],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [],
+  "listening": [],
+  "review_words": {},
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag3h-07",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E9%B9%B9%E8%94%9A%E8%88%AA%E4%B9%98%E6%A9%87%E5%9D%A1%E9%87%8E%E9%96%89%E6%B7%B1%E5%90%B8%E6%AC%A3%E8%B3%9E%E7%9E%9E",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・3年級・第7課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課13個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「鹹」的部首是哪一個？",
+      "options": [
+        "⼝",
+        "⾋",
+        "⽔"
+      ],
+      "answer": "⿄",
+      "explanation": "「鹹」的部首是⿄。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「蔚」的部首是哪一個？",
+      "options": [
+        "⿄",
+        "⽊",
+        "⾨"
+      ],
+      "answer": "⾋",
+      "explanation": "「蔚」的部首是⾋。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「航」的部首是哪一個？",
+      "options": [
+        "⽊",
+        "⾋",
+        "⼃"
+      ],
+      "answer": "⾈",
+      "explanation": "「航」的部首是⾈。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「鹹味」是什麼意思？",
+      "options": [
+        "用喜愛的心情觀看或感受。",
+        "山上傾斜的地面。",
+        "慢慢吸入較多空氣，再呼出。"
+      ],
+      "answer": "像鹽一樣的味道。",
+      "explanation": "鹹味：像鹽一樣的味道。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「蔚藍」是什麼意思？",
+      "options": [
+        "合起眼睛或門窗。",
+        "山上傾斜的地面。",
+        "像鹽一樣的味道。"
+      ],
+      "answer": "深而清亮的藍色。",
+      "explanation": "蔚藍：深而清亮的藍色。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「回航」是什麼意思？",
+      "options": [
+        "深而清亮的藍色。",
+        "山上傾斜的地面。",
+        "把事情藏起來不讓人知道。"
+      ],
+      "answer": "船隻或飛機返回原來的地方。",
+      "explanation": "回航：船隻或飛機返回原來的地方。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「雪橇」是什麼意思？",
+      "options": [
+        "用喜愛的心情觀看或感受。",
+        "船隻或飛機返回原來的地方。",
+        "在雪地上滑行的工具。"
+      ],
+      "answer": "在雪地上滑行的工具。",
+      "explanation": "雪橇：在雪地上滑行的工具。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「山坡」是什麼意思？",
+      "options": [
+        "在雪地上滑行的工具。",
+        "合起眼睛或門窗。",
+        "慢慢吸入較多空氣，再呼出。"
+      ],
+      "answer": "山上傾斜的地面。",
+      "explanation": "山坡：山上傾斜的地面。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "missing",
+      "activity": "sentence-practice",
+      "note": "句型資料待審核。"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "教材待補。"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "missing",
+      "activity": "idiom-builder",
+      "note": "成語資料待審核。"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "missing",
+      "activity": "polysemy",
+      "note": "字義資料待審核。"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones",
+      "note": "多音字資料待審核。"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "missing",
+      "activity": "lookalikes",
+      "note": "形似字資料待審核。"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "聆聽題資料待審核。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭資料待審核。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "跨課複習資料待補。"
+    }
+  }
+}

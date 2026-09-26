@@ -1,0 +1,672 @@
+{
+  "lesson_id": "115AG3H12",
+  "volume": {
+    "code": "115AG3H",
+    "publisher": "翰林",
+    "grade": 3,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "三上國語課程"
+  },
+  "lesson_no": 12,
+  "title": "不一樣的團圓",
+  "author": "",
+  "blurb": "透過〈不一樣的團圓〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "characters": [
+    {
+      "char": "團",
+      "zhuyin": "ㄊㄨㄢˊ",
+      "stroke_count": 14,
+      "radical": "⼞",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "劇團",
+        "團員",
+        "團圓"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%9C%98",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "剩",
+      "zhuyin": "ㄕㄥˋ",
+      "stroke_count": 12,
+      "radical": "⼑",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "剩下",
+        "剩菜",
+        "剩食"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%89%A9",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "默",
+      "zhuyin": "ㄇㄛˋ",
+      "stroke_count": 16,
+      "radical": "⿊",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "幽默",
+        "沉默",
+        "靜默"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%BB%98",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "樓",
+      "zhuyin": "ㄌㄡˊ",
+      "stroke_count": 15,
+      "radical": "⽊",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "一樓",
+        "三樓",
+        "上樓"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%A8%93",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "視",
+      "zhuyin": "ㄕˋ",
+      "stroke_count": 11,
+      "radical": "⽰",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "凝視",
+        "巡視",
+        "忽視"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%A6%96",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "訊",
+      "zhuyin": "ㄒㄩㄣˋ",
+      "stroke_count": 10,
+      "radical": "⾔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "簡訊",
+        "視訊",
+        "訊息"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%A8%8A",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "叔",
+      "zhuyin": "ㄕㄨ",
+      "stroke_count": 8,
+      "radical": "⼜",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "叔公",
+        "叔叔",
+        "大叔"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8F%94",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "鏡",
+      "zhuyin": "ㄐㄧㄥˋ",
+      "stroke_count": 19,
+      "radical": "⾦",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "借鏡",
+        "分鏡",
+        "墨鏡"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%8F%A1",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "逗",
+      "zhuyin": "ㄉㄡˋ",
+      "stroke_count": 10,
+      "radical": "⾡",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "逗弄",
+        "逗留",
+        "逗趣"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%80%97",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "娃",
+      "zhuyin": "ㄨㄚˊ",
+      "stroke_count": 9,
+      "radical": "⼥",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "娃娃",
+        "娃娃機",
+        "娃娃車"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A8%83",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "壓",
+      "zhuyin": "ㄧㄚ",
+      "stroke_count": 17,
+      "radical": "⼟",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "壓低",
+        "壓住",
+        "壓制"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A3%93",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "錢",
+      "zhuyin": "ㄑㄧㄢˊ",
+      "stroke_count": 16,
+      "radical": "⾦",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "付錢",
+        "價錢",
+        "大錢"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%8C%A2",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "透",
+      "zhuyin": "ㄊㄡˋ",
+      "stroke_count": 10,
+      "radical": "⾡",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "傷透",
+        "樂透",
+        "溼透"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%80%8F",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "握",
+      "zhuyin": "ㄨㄛˋ",
+      "stroke_count": 12,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "把握",
+        "掌握",
+        "握住"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8F%A1",
+      "source": "115G3A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG3H12:01",
+      "word": "團圓",
+      "zhuyin": "ㄊㄨㄢˊ ㄩㄢˊ",
+      "meaning": "家人從各處回來相聚。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson12/vocabulary/l12-01.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H12:02",
+      "word": "視訊",
+      "zhuyin": "ㄕˋ ㄒㄩㄣˋ",
+      "meaning": "利用螢幕看到對方並交談。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H12:03",
+      "word": "親戚",
+      "zhuyin": "ㄑㄧㄣ ㄑㄧ",
+      "meaning": "和自己有親屬關係的人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson12/vocabulary/l12-03.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H12:04",
+      "word": "想念",
+      "zhuyin": "ㄒㄧㄤˇ ㄋㄧㄢˋ",
+      "meaning": "心中掛念著不在身邊的人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson12/vocabulary/l12-04.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H12:05",
+      "word": "爺爺奶奶",
+      "zhuyin": "ㄧㄝˊ ㄧㄝˊ ㄋㄞˇ ㄋㄞˇ",
+      "meaning": "父親或母親的父母。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG3H12:06",
+      "word": "幸福",
+      "zhuyin": "ㄒㄧㄥˋ ㄈㄨˊ",
+      "meaning": "生活美滿、快樂的感覺。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson12/vocabulary/l12-06.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [],
+  "idiom_sentences": [],
+  "sentence_patterns": [],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:115AG3H:12:01",
+      "paragraph_no": 1,
+      "summary": "除夕團圓夜，車窗外雨絲不停，路上好像只剩下作者一家；他默默看時間，只盼趕快見到嬸嬸和親人。",
+      "structure_role": "第1段重點",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（段落大意）"
+    },
+    {
+      "id": "paragraph:115AG3H:12:02",
+      "paragraph_no": 2,
+      "summary": "車子抵達爺爺家後，大家匆忙上樓，奶奶開門迎接；小客廳雖然擁擠，卻因親人齊聚而十分溫暖。",
+      "structure_role": "第2段重點",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（段落大意）"
+    },
+    {
+      "id": "paragraph:115AG3H:12:03",
+      "paragraph_no": 3,
+      "summary": "嬸嬸在月子中心休息，爺爺提議用視訊問候；平板畫面讓分隔兩地的家人仍能在年夜飯時見面。",
+      "structure_role": "第3段重點",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（段落大意）"
+    },
+    {
+      "id": "paragraph:115AG3H:12:04",
+      "paragraph_no": 4,
+      "summary": "叔叔嬸嬸從畫面另一端拜年，鏡頭也拍到剛出生的小堂妹；爸爸提起車子故障，逗得全家一起大笑。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（段落大意）"
+    },
+    {
+      "id": "paragraph:115AG3H:12:05",
+      "paragraph_no": 5,
+      "summary": "奶奶隔著畫面送出小娃娃的第一份壓歲錢，爺爺也對這場透過科技完成的不一樣團聚感到滿足。",
+      "structure_role": "第5段重點",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（段落大意）"
+    },
+    {
+      "id": "paragraph:115AG3H:12:06",
+      "paragraph_no": 6,
+      "summary": "叔叔握著嬸嬸的手說家人在哪裡，家就在那裡；煙火照亮夜空，所有人的臉上都露出幸福笑容，也體會真心相連就能跨越距離。",
+      "structure_role": "第6段重點",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（段落大意）"
+    }
+  ],
+  "main_idea": {
+    "gist": "除夕團圓夜，車窗外雨絲不停，路上好像只剩下作者一家；他默默看時間，只盼趕快見到嬸嬸和親人。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "derived:official-paragraph-summary"
+  },
+  "reading_questions": [],
+  "polysemy": [],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [],
+  "listening": [],
+  "review_words": {},
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag3h-12",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E5%9C%98%E5%89%A9%E9%BB%98%E6%A8%93%E8%A6%96%E8%A8%8A%E5%8F%94%E9%8F%A1%E9%80%97%E5%A8%83%E5%A3%93%E9%8C%A2%E9%80%8F%E6%8F%A1",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・3年級・第12課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課14個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「團」的部首是哪一個？",
+      "options": [
+        "⼑",
+        "⽰",
+        "⼥"
+      ],
+      "answer": "⼞",
+      "explanation": "「團」的部首是⼞。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「剩」的部首是哪一個？",
+      "options": [
+        "⼞",
+        "⽰",
+        "⾦"
+      ],
+      "answer": "⼑",
+      "explanation": "「剩」的部首是⼑。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「默」的部首是哪一個？",
+      "options": [
+        "⽰",
+        "⼑",
+        "⽊"
+      ],
+      "answer": "⿊",
+      "explanation": "「默」的部首是⿊。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「團圓」是什麼意思？",
+      "options": [
+        "和自己有親屬關係的人。",
+        "父親或母親的父母。",
+        "利用螢幕看到對方並交談。"
+      ],
+      "answer": "家人從各處回來相聚。",
+      "explanation": "團圓：家人從各處回來相聚。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「視訊」是什麼意思？",
+      "options": [
+        "心中掛念著不在身邊的人。",
+        "和自己有親屬關係的人。",
+        "利用螢幕看到對方並交談。"
+      ],
+      "answer": "利用螢幕看到對方並交談。",
+      "explanation": "視訊：利用螢幕看到對方並交談。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「親戚」是什麼意思？",
+      "options": [
+        "利用螢幕看到對方並交談。",
+        "生活美滿、快樂的感覺。",
+        "家人從各處回來相聚。"
+      ],
+      "answer": "和自己有親屬關係的人。",
+      "explanation": "親戚：和自己有親屬關係的人。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「想念」是什麼意思？",
+      "options": [
+        "和自己有親屬關係的人。",
+        "心中掛念著不在身邊的人。",
+        "家人從各處回來相聚。"
+      ],
+      "answer": "心中掛念著不在身邊的人。",
+      "explanation": "想念：心中掛念著不在身邊的人。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「爺爺奶奶」是什麼意思？",
+      "options": [
+        "利用螢幕看到對方並交談。",
+        "生活美滿、快樂的感覺。",
+        "和自己有親屬關係的人。"
+      ],
+      "answer": "父親或母親的父母。",
+      "explanation": "爺爺奶奶：父親或母親的父母。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "missing",
+      "activity": "sentence-practice",
+      "note": "句型資料待審核。"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "教材待補。"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "missing",
+      "activity": "idiom-builder",
+      "note": "成語資料待審核。"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "missing",
+      "activity": "polysemy",
+      "note": "字義資料待審核。"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones",
+      "note": "多音字資料待審核。"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "missing",
+      "activity": "lookalikes",
+      "note": "形似字資料待審核。"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "聆聽題資料待審核。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭資料待審核。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "跨課複習資料待補。"
+    }
+  }
+}

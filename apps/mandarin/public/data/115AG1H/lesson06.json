@@ -1,0 +1,639 @@
+{
+  "lesson_id": "115AG1H06",
+  "volume": {
+    "code": "115AG1H",
+    "publisher": "翰林",
+    "grade": 1,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "一年級上學期國語課程"
+  },
+  "lesson_no": 6,
+  "title": "秋千",
+  "author": "",
+  "blurb": "透過〈秋千〉練習認讀生字、理解語詞，並用聲音和圖像建立閱讀連結。",
+  "characters": [
+    {
+      "char": "秋",
+      "zhuyin": "ㄑㄧㄡ",
+      "stroke_count": 9,
+      "radical": "⽲",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "中秋",
+        "入秋",
+        "春秋"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A7%8B",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "千",
+      "zhuyin": "ㄑㄧㄢ",
+      "stroke_count": 3,
+      "radical": "⼗",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "一千",
+        "三千",
+        "上千"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8D%83",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "子",
+      "zhuyin": "˙ㄗ",
+      "stroke_count": 3,
+      "radical": "⼦",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "兒子",
+        "兔子",
+        "子女"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%AD%90",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "空",
+      "zhuyin": "ㄎㄨㄥ",
+      "stroke_count": 8,
+      "radical": "⽳",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "上空",
+        "升空",
+        "夜空"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A9%BA",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "說",
+      "zhuyin": "ㄕㄨㄛ",
+      "stroke_count": 14,
+      "radical": "⾔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "傳說",
+        "圖說",
+        "小說"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%AA%AA",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "早",
+      "zhuyin": "ㄗㄠˇ",
+      "stroke_count": 6,
+      "radical": "⽇",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "一早",
+        "儘早",
+        "及早"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%97%A9",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "田",
+      "zhuyin": "ㄊㄧㄢˊ",
+      "stroke_count": 5,
+      "radical": "⽥",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "下田",
+        "心田",
+        "梯田"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%94%B0",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "是",
+      "zhuyin": "ㄕˋ",
+      "stroke_count": 9,
+      "radical": "⽇",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "但是",
+        "像是",
+        "只是"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%98%AF",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "誰",
+      "zhuyin": "ㄕㄟˊ",
+      "stroke_count": 15,
+      "radical": "⾔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "誰人",
+        "鹿死誰手",
+        "捨我其誰"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%AA%B0",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "陪",
+      "zhuyin": "ㄆㄟˊ",
+      "stroke_count": 10,
+      "radical": "⾩",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "陪伴",
+        "陪同",
+        "陪讀"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%99%AA",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    },
+    {
+      "char": "他",
+      "zhuyin": "ㄊㄚ",
+      "stroke_count": 5,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "他人",
+        "他們",
+        "他國"
+      ],
+      "examples_source": "大腦與語言實驗室生字表（依常用度取前三項；不足時以本課語詞補足）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BB%96",
+      "source": "115G1A／翰林官方教材與教育百科字庫",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG1H06:01",
+      "word": "秋千",
+      "zhuyin": "ㄑㄧㄡ ㄑㄧㄢ",
+      "meaning": "一種遊戲器材。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson06/vocabulary/l06-01.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H06:02",
+      "word": "一下子",
+      "zhuyin": "ㄧ ㄒㄧㄚˋ ㄗ˙",
+      "meaning": "很短的時間。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG1H/lesson06/vocabulary/l06-02.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H06:03",
+      "word": "天空",
+      "zhuyin": "ㄊㄧㄢ ㄎㄨㄥ",
+      "meaning": "日月星辰所在的空間。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson06/vocabulary/l06-03.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H06:04",
+      "word": "說",
+      "zhuyin": "ㄕㄨㄛ",
+      "meaning": "講話、告訴。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson06/vocabulary/l06-04.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H06:05",
+      "word": "陪",
+      "zhuyin": "ㄆㄟˊ",
+      "meaning": "在旁伴隨。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson06/vocabulary/l06-05.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H06:06",
+      "word": "誰",
+      "zhuyin": "ㄕㄨㄟˊ",
+      "meaning": "什麼人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson06/vocabulary/l06-06.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H06:07",
+      "word": "是",
+      "zhuyin": "ㄕˋ",
+      "meaning": "表示加強語氣。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson06/vocabulary/l06-07.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H06:08",
+      "word": "找",
+      "zhuyin": "ㄓㄠˇ",
+      "meaning": "尋覓、探求。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson06/vocabulary/l06-08.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H06:09",
+      "word": "花田",
+      "zhuyin": "ㄏㄨㄚ ㄊㄧㄢˊ",
+      "meaning": "種植花的土地。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson06/vocabulary/l06-09.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H06:10",
+      "word": "低",
+      "zhuyin": "ㄉㄧ",
+      "meaning": "上下距離小，或離地面近。與「高」相對。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson06/vocabulary/l06-10.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H06:11",
+      "word": "早",
+      "zhuyin": "ㄗㄠˇ",
+      "meaning": "早晨見面時互相招呼的用語。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson06/vocabulary/l06-11.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG1H06:12",
+      "word": "他",
+      "zhuyin": "ㄊㄚ",
+      "meaning": "指你、我以外的第三人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG1H/lesson06/vocabulary/l06-12.webp",
+      "status": "ready",
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [],
+  "idiom_sentences": [],
+  "sentence_patterns": [],
+  "rhetoric": [],
+  "paragraph_summary": [],
+  "main_idea": {
+    "gist": "本課閱讀重點待補。",
+    "theme": "閱讀理解",
+    "status": "draft",
+    "source": "teacher-review-required"
+  },
+  "reading_questions": [],
+  "polysemy": [],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [],
+  "listening": [],
+  "review_words": {},
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag1h-06",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E7%A7%8B%E5%8D%83%E5%AD%90%E7%A9%BA%E8%AA%AA%E6%97%A9%E7%94%B0%E6%98%AF%E8%AA%B0%E9%99%AA%E4%BB%96",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・1年級・第6課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課11個生字"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「秋」的部首是哪一個？",
+      "options": [
+        "⾔",
+        "⽲",
+        "⽇"
+      ],
+      "answer": "⽲",
+      "explanation": "「秋」的部首是⽲。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「千」的部首是哪一個？",
+      "options": [
+        "⽲",
+        "⾔",
+        "⾩"
+      ],
+      "answer": "⼗",
+      "explanation": "「千」的部首是⼗。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「子」的部首是哪一個？",
+      "options": [
+        "⽲",
+        "⾔",
+        "⼈"
+      ],
+      "answer": "⼦",
+      "explanation": "「子」的部首是⼦。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「秋千」是什麼意思？",
+      "options": [
+        "上下距離小，或離地面近。與「高」相對。",
+        "講話、告訴。",
+        "種植花的土地。"
+      ],
+      "answer": "一種遊戲器材。",
+      "explanation": "秋千：一種遊戲器材。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「一下子」是什麼意思？",
+      "options": [
+        "尋覓、探求。",
+        "在旁伴隨。",
+        "一種遊戲器材。"
+      ],
+      "answer": "很短的時間。",
+      "explanation": "一下子：很短的時間。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「天空」是什麼意思？",
+      "options": [
+        "很短的時間。",
+        "在旁伴隨。",
+        "講話、告訴。"
+      ],
+      "answer": "日月星辰所在的空間。",
+      "explanation": "天空：日月星辰所在的空間。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「說」是什麼意思？",
+      "options": [
+        "種植花的土地。",
+        "尋覓、探求。",
+        "講話、告訴。"
+      ],
+      "answer": "講話、告訴。",
+      "explanation": "說：講話、告訴。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「陪」是什麼意思？",
+      "options": [
+        "上下距離小，或離地面近。與「高」相對。",
+        "指你、我以外的第三人。",
+        "尋覓、探求。"
+      ],
+      "answer": "在旁伴隨。",
+      "explanation": "陪：在旁伴隨。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "missing",
+      "activity": "reading",
+      "note": "一年級課文內容待整理為公開摘要；課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "missing",
+      "activity": "sentence-practice",
+      "note": "句型資料待審核。"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "教材待補。"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "missing",
+      "activity": "idiom-builder",
+      "note": "一年級不安排成語題。"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "missing",
+      "activity": "polysemy",
+      "note": "一年級不安排一字多義題。"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones",
+      "note": "多音字資料待審核。"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "missing",
+      "activity": "lookalikes",
+      "note": "形似字資料待審核。"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "missing",
+      "activity": "structure-map",
+      "note": "摘要資料待補。"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "聆聽題資料待審核。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "一年級不安排修辭題。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "跨課複習資料待補。"
+    }
+  }
+}
