@@ -12,13 +12,25 @@ const supportedMarkup = /﹁([^﹂]+)﹂|「([^」]+)」|『([^』]+)』/g;
 const activeStatuses = new Set(['ready', 'approved']);
 let scannedEntries = 0;
 
-for (const grade of ['115AG1H', '115AG3H', '115AG6H']) {
+for (const grade of ['115AG1H', '115AG3H', '115AG4K', '115AG6H']) {
   const gradeDir = join(dataRoot, grade);
   for (const file of readdirSync(gradeDir).filter((name) => /^lesson\d+\.json$/.test(name))) {
     const data = JSON.parse(readFileSync(join(gradeDir, file), 'utf8'));
     for (const entry of data.rhetoric || []) {
       if (!activeStatuses.has(entry.status)) continue;
       scannedEntries += 1;
+      if (grade === '115AG4K') {
+        assert.ok(Array.isArray(entry.highlight_terms), `${grade}/${file} ${entry.id} 缺少保守關鍵詞欄位`);
+        for (const term of entry.highlight_terms) {
+          assert.ok(String(entry.example).includes(term), `${grade}/${file} ${entry.id} 關鍵詞不在官方例句中`);
+        }
+        const inferredSegments = splitRhetoricExample(entry.example, entry.highlight_terms);
+        const highlightedTexts = inferredSegments.filter(({ highlighted }) => highlighted).map(({ text }) => text);
+        for (const term of entry.highlight_terms) {
+          assert.ok(highlightedTexts.includes(term), `${grade}/${file} ${entry.id} 保守關鍵詞未形成變色片段`);
+        }
+        continue;
+      }
       const matches = [...String(entry.example || '').matchAll(supportedMarkup)];
       assert.ok(matches.length > 0, `${grade}/${file} ${entry.id} 缺少修辭關鍵字標記`);
       const segments = splitRhetoricExample(entry.example);
@@ -46,6 +58,12 @@ assert.deepEqual(segments, [
   { text: '己', highlighted: true },
 ]);
 assert.equal(stripRhetoricMarkup('甲﹁乙﹂丙「丁」戊『己』'), '甲乙丙丁戊己');
+assert.deepEqual(splitRhetoricExample('甲乙丙乙', ['乙']), [
+  { text: '甲', highlighted: false },
+  { text: '乙', highlighted: true },
+  { text: '丙', highlighted: false },
+  { text: '乙', highlighted: true },
+]);
 
 installFakeDom();
 const root = buildRhetoricActivity(
@@ -63,4 +81,4 @@ assert.equal(stem.textContent, '這句話用了什麼修辭？「甲關鍵乙」
 assert.equal(stem.find((node) => node.hasClass('rhetoric-highlight')).textContent, '關鍵');
 
 console.log('PASS: 修辭題幹會隱藏官方標記、保留朗讀純文字，並將關鍵字套用變色元素。');
-console.log(`PASS: 已掃描 G1A／G3A／G6A 共 ${scannedEntries} 筆可用修辭題，全部有關鍵字標記與變色樣式。`);
+console.log(`PASS: 已掃描 G1A／G3A／G4A／G6A 共 ${scannedEntries} 筆可用修辭題，官方標記或保守推導關鍵詞均通過。`);

@@ -397,12 +397,59 @@ def module_status(label: str, activity: str, available: bool, note: str = "") ->
     return value
 
 
+RHETORIC_NUMBER_MARKER = r"(?:[①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳]|[⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿⒀⒁⒂⒃⒄⒅⒆⒇]|[（(]\d+[）)])"
+RHETORIC_SOURCE_NOTE = re.compile(r"\s*[（(](?:擬人|視覺|聽覺|嗅覺|味覺|觸覺|每段結尾)[）)]\s*$")
+
+
 def split_rhetoric_examples(example: str) -> list[str]:
-    """Split official circled-number examples into separate quiz items."""
-    markers = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳"
-    parts = re.split(rf"(?=[{markers}])", example)
-    cleaned = [re.sub(rf"^[{markers}]", "", part).strip() for part in parts]
-    return [part for part in cleaned if part]
+    """Split every numbered official example into a separate quiz item."""
+    parts = re.split(rf"(?={RHETORIC_NUMBER_MARKER})", example)
+    cleaned = []
+    for part in parts:
+        value = re.sub(rf"^{RHETORIC_NUMBER_MARKER}\s*", "", part).strip()
+        value = RHETORIC_SOURCE_NOTE.sub("", value).strip()
+        if value:
+            cleaned.append(value)
+    return cleaned or [example.strip()]
+
+
+def _unique_longest_terms(terms: Iterable[str]) -> list[str]:
+    selected: list[str] = []
+    for term in sorted({term.strip() for term in terms if term and term.strip()}, key=len, reverse=True):
+        if not any(term in existing for existing in selected):
+            selected.append(term)
+    return selected
+
+
+def repeated_rhetoric_terms(example: str) -> list[str]:
+    """Return only exact, visibly repeated Chinese terms; fail closed otherwise."""
+    terms: list[str] = []
+    terms.extend(match.group(0) for match in re.finditer(rf"([{HAN}])\1+", example))
+    for length in range(min(12, len(example) // 2), 1, -1):
+        for start in range(0, len(example) - length + 1):
+            candidate = example[start : start + length]
+            if not re.fullmatch(rf"[{HAN}]{{{length}}}", candidate):
+                continue
+            if example.count(candidate) >= 2:
+                terms.append(candidate)
+    return _unique_longest_terms(terms)
+
+
+def infer_rhetoric_highlights(figure: str, example: str) -> list[str]:
+    """Infer only high-confidence visual clues from the official answer figure.
+
+    Uncertain figures intentionally return no terms instead of colouring an
+    arbitrary portion of the sentence.
+    """
+    if figure == "譬喻":
+        return _unique_longest_terms(re.findall(r"(?:就)?(?:像|有如)[^，。！？；!?]+", example))
+    if figure == "設問":
+        return _unique_longest_terms(re.findall(r"[^。！？!?]*[？?]", example))
+    if figure == "感嘆":
+        return _unique_longest_terms(re.findall(r"[^。！？!?]*?(?:啊|呀|唉|哇|哪)[！!]", example))
+    if figure in {"類疊", "排比"}:
+        return repeated_rhetoric_terms(example)
+    return []
 
 
 def main() -> None:
@@ -479,6 +526,7 @@ def main() -> None:
                         "figure": figure,
                         "note": note,
                         "example": example_part,
+                        "highlight_terms": infer_rhetoric_highlights(figure, example_part),
                         "child_note": f"{figure}：{note}",
                         "status": "approved",
                         "source": "康軒四上官方教材（10 修辭分析；官方例句拆題）",

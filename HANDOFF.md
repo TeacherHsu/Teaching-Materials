@@ -1,6 +1,13 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/src/activities/rhetoric.js`、`apps/mandarin/scripts/enrich_g4a_official.py`、`apps/mandarin/scripts/test-rhetoric-highlights.mjs`、G4A 12 課公開修辭資料。
+- 做了什麼：修辭小偵探改為每個官方例句逐題作答，不再把 3–5 題合併在同一畫面；康軒來源的 `⑴⑵⑶`、圈號與數字括號例句已拆開，並移除只供教材分析的尾端註記。
+- 關鍵詞規則：保留官方 `「」` 等明確標記；G4A 只對可由句型穩定逆推的譬喻、設問、感嘆、明確重複／排比片段加入 `highlight_terms`。摹寫、轉化等無法可靠定位者維持不標色，沒有臆造關鍵詞。
+- 驗證：G4A 修辭共 35 題；`npm.cmd run validate`、完整 `scripts/test-*.mjs`、Python `py_compile`、升級權限 `npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets` 均通過。已開啟本機 G4A 第 9 課修辭預覽，畫面顯示「第 1 題／共 3 題」且每題內只有 1 題。
+- 提交／推送：本項待建立本地提交；尚未推送遠端。工作樹另有既存的 G2A 未追蹤／修改內容，未納入本項。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/activities/structureMap.js`。
 - 做了什麼：課文地圖的整課結構樹不再直接顯示目前題目的結構角色；目前段落改顯示「目前段落」，保留其他結構節點作為情境參考，避免上方資訊先揭露下方作答答案。
 - 驗證：已在 G4A 第 5 課課文地圖本機預覽確認；`npm.cmd run validate`、`npm.cmd run check-workflow`、升級權限 `npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets`、全套 `scripts/test-*.mjs` 均通過。

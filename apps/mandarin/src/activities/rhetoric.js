@@ -1,11 +1,10 @@
 // 「修辭小偵探」模組（挑戰層）：依 11 修辭總表歸屬本課的修辭格，判斷生活句用了什麼修辭。
-// 選項旁附兒童語言說明（child_note），ChoiceQuiz 一組 3–5 題。
+// 選項旁附兒童語言說明（child_note），每題逐題作答。
 import { h, clear } from '../utils/dom.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { missingContentNotice } from './engine.js';
 import { filterByStatus } from '../utils/preview.js';
-import { chunkRounds } from '../utils/chunk.js';
 
 function shuffled(arr) {
   return [...arr].sort(() => Math.random() - 0.5);
@@ -16,20 +15,47 @@ function shuffled(arr) {
 const RHETORIC_MARKUP = /﹁([^﹂]*)﹂|「([^」]*)」|『([^』]*)』/g;
 const FALLBACK_FIGURES = ['譬喻', '擬人', '類疊', '排比', '設問', '感嘆', '摹寫', '轉化', '引用', '對偶'];
 
-export function splitRhetoricExample(value = '') {
+function highlightPlainText(text, highlightTerms) {
+  const terms = [...new Set((highlightTerms || []).map((term) => String(term).trim()).filter(Boolean))]
+    .sort((a, b) => b.length - a.length);
+  if (!terms.length) return [{ text, highlighted: false }];
+
+  const segments = [];
+  let cursor = 0;
+  while (cursor < text.length) {
+    let nextIndex = -1;
+    let nextTerm = '';
+    for (const term of terms) {
+      const index = text.indexOf(term, cursor);
+      if (index < 0) continue;
+      if (nextIndex < 0 || index < nextIndex || (index === nextIndex && term.length > nextTerm.length)) {
+        nextIndex = index;
+        nextTerm = term;
+      }
+    }
+    if (nextIndex < 0) break;
+    if (nextIndex > cursor) segments.push({ text: text.slice(cursor, nextIndex), highlighted: false });
+    segments.push({ text: nextTerm, highlighted: true });
+    cursor = nextIndex + nextTerm.length;
+  }
+  if (cursor < text.length) segments.push({ text: text.slice(cursor), highlighted: false });
+  return segments.length ? segments : [{ text, highlighted: false }];
+}
+
+export function splitRhetoricExample(value = '', highlightTerms = []) {
   const text = String(value);
   const segments = [];
   let lastIndex = 0;
 
   for (const match of text.matchAll(RHETORIC_MARKUP)) {
     if (match.index > lastIndex) {
-      segments.push({ text: text.slice(lastIndex, match.index), highlighted: false });
+      segments.push(...highlightPlainText(text.slice(lastIndex, match.index), highlightTerms));
     }
     segments.push({ text: match[1] ?? match[2] ?? match[3], highlighted: true });
     lastIndex = match.index + match[0].length;
   }
 
-  if (lastIndex < text.length) segments.push({ text: text.slice(lastIndex), highlighted: false });
+  if (lastIndex < text.length) segments.push(...highlightPlainText(text.slice(lastIndex), highlightTerms));
   return segments.length ? segments : [{ text: '', highlighted: false }];
 }
 
@@ -39,10 +65,10 @@ export function stripRhetoricMarkup(value = '') {
     .join('');
 }
 
-function buildRhetoricStem(example) {
+function buildRhetoricStem(example, highlightTerms = []) {
   return [
     '這句話用了什麼修辭？「',
-    ...splitRhetoricExample(example).map(({ text, highlighted }) =>
+    ...splitRhetoricExample(example, highlightTerms).map(({ text, highlighted }) =>
       highlighted ? h('span', { class: 'rhetoric-highlight' }, text) : text,
     ),
     '」',
@@ -61,7 +87,7 @@ function buildChoiceItem(entry, all) {
     id: entry.id,
     stem: stemText,
     stemText,
-    stemContent: buildRhetoricStem(entry.example),
+    stemContent: buildRhetoricStem(entry.example, entry.highlight_terms),
     options,
     answer: entry.figure,
     explanation: `${entry.figure}：${entry.child_note || entry.note}`,
@@ -75,7 +101,7 @@ function buildChoiceItem(entry, all) {
  */
 export function buildRhetoricActivity(lesson, onBack) {
   const entries = filterByStatus(lesson.rhetoric || []).filter((r) => r.example && r.figure);
-  const rounds = chunkRounds(entries, { min: 3, max: 5 }).map((round) => round.map((r) => buildChoiceItem(r, entries)));
+  const rounds = entries.map((entry) => [buildChoiceItem(entry, entries)]);
 
   const container = h('div', {});
   let roundIndex = 0;
@@ -88,12 +114,12 @@ export function buildRhetoricActivity(lesson, onBack) {
     }
     const isLastRound = roundIndex === rounds.length - 1;
     container.appendChild(
-      TaskBanner({ label: '讀句子，判斷用了什麼修辭（挑戰題）', step: `第 ${roundIndex + 1} 組／共 ${rounds.length} 組` }),
+      TaskBanner({ label: '讀句子，判斷用了什麼修辭（挑戰題）', step: `第 ${roundIndex + 1} 題／共 ${rounds.length} 題` }),
     );
     container.appendChild(
       ChoiceQuiz({
         items: rounds[roundIndex],
-        backLabel: isLastRound ? '回課程首頁' : '再來一組',
+        backLabel: isLastRound ? '回課程首頁' : '下一題',
         onBack: () => {
           if (!isLastRound) {
             roundIndex += 1;
