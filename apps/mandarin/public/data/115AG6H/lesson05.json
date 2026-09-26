@@ -1675,16 +1675,20 @@
       "group_no": "1",
       "chars": [
         {
-          "char": "泥",
-          "example": "泥濘、泥水"
-        },
-        {
-          "char": "叮",
-          "example": "叮嚀、叮囑"
+          "char": "擰",
+          "example": "擰開、擰乾"
         },
         {
           "char": "檸",
-          "example": "檸檬、檸檬汁"
+          "example": "檸檬"
+        },
+        {
+          "char": "嚀",
+          "example": "叮嚀"
+        },
+        {
+          "char": "濘",
+          "example": "泥濘"
         }
       ],
       "status": "ready",
@@ -1695,16 +1699,20 @@
       "group_no": "2",
       "chars": [
         {
-          "char": "急",
-          "example": "急躁、煩躁"
+          "char": "噪",
+          "example": "噪音、聒噪"
         },
         {
           "char": "燥",
           "example": "燥熱、乾燥"
         },
         {
-          "char": "噪",
-          "example": "噪音、噪聲"
+          "char": "操",
+          "example": "操場、操演"
+        },
+        {
+          "char": "躁",
+          "example": "急躁、煩躁"
         }
       ],
       "status": "ready",
@@ -1715,16 +1723,16 @@
       "group_no": "3",
       "chars": [
         {
-          "char": "淘",
-          "example": "淘氣、淘金"
+          "char": "庶",
+          "example": "庶民、庶務"
         },
         {
-          "char": "陶",
-          "example": "陶醉、陶器"
+          "char": "蔗",
+          "example": "甘蔗、蔗糖"
         },
         {
-          "char": "葡",
-          "example": "葡萄、葡萄乾"
+          "char": "遮",
+          "example": "遮蓋、遮掩"
         }
       ],
       "status": "ready",
@@ -1735,16 +1743,24 @@
       "group_no": "4",
       "chars": [
         {
-          "char": "樹",
-          "example": "樹蔭、綠蔭"
+          "char": "賢",
+          "example": "賢德、先賢"
         },
         {
-          "char": "陰",
-          "example": "陰天、陰影"
+          "char": "資",
+          "example": "資料、天資"
         },
         {
-          "char": "音",
-          "example": "音樂、聲音"
+          "char": "質",
+          "example": "質料、質疑"
+        },
+        {
+          "char": "貿",
+          "example": "貿易、貿然"
+        },
+        {
+          "char": "賀",
+          "example": "慶賀、賀年"
         }
       ],
       "status": "ready",
@@ -1755,16 +1771,12 @@
       "group_no": "5",
       "chars": [
         {
-          "char": "道",
-          "example": "道賀、賀卡"
+          "char": "陶",
+          "example": "陶醉、陶土"
         },
         {
-          "char": "貿",
-          "example": "貿易、貿然"
-        },
-        {
-          "char": "資",
-          "example": "資料、資源"
+          "char": "淘",
+          "example": "淘汰、淘金"
         }
       ],
       "status": "ready",
@@ -1775,16 +1787,12 @@
       "group_no": "6",
       "chars": [
         {
-          "char": "遮",
-          "example": "遮陽、遮住"
+          "char": "隱",
+          "example": "隱藏、隱形"
         },
         {
-          "char": "甘",
-          "example": "甘蔗、蔗糖"
-        },
-        {
-          "char": "庶",
-          "example": "庶民、庶務"
+          "char": "穩",
+          "example": "穩定、穩固"
         }
       ],
       "status": "ready",
@@ -1795,16 +1803,24 @@
       "group_no": "7",
       "chars": [
         {
-          "char": "栽",
-          "example": "栽種、盆栽"
-        },
-        {
-          "char": "剪",
-          "example": "剪裁、裁判"
+          "char": "戴",
+          "example": "愛戴、配戴"
         },
         {
           "char": "載",
           "example": "載貨、記載"
+        },
+        {
+          "char": "截",
+          "example": "截斷、攔截"
+        },
+        {
+          "char": "裁",
+          "example": "剪裁、裁判"
+        },
+        {
+          "char": "栽",
+          "example": "栽種、栽花"
         }
       ],
       "status": "ready",

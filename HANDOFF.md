@@ -1,6 +1,14 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/public/data/115AG6H/lesson05.json`、`apps/mandarin/scripts/test-g6a-lesson05-lookalikes.mjs`
+- 做了什麼：依私有官方教材「05形音輕鬆學（含語詞解釋）」校正 G6A 第 5 課 7 組形似字，移除「泥／叮／檸」等錯置選項，改為「擰／檸／嚀／濘」、「噪／燥／操／躁」、「庶／蔗／遮」、「賢／資／質／貿／賀」、「陶／淘」、「隱／穩」、「戴／載／截／裁／栽」；每個字補回官方例詞。
+- 驗證：`test-g6a-lesson05-lookalikes.mjs`、`test-lookalike-splitting.mjs`、全部 `scripts/test-*.mjs`、`npm.cmd run validate`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過。
+- 推送：尚未推送；本次修改待建立本地提交。
+- 待辦／給下一棒：其他課次若發現形似字選項疑似錯置，先對照私有官方「字形辨別」資料，再更新公開題庫並補回歸測試。
+- 注意：官方原始教材仍只留私有工作區，公開 repo 只保存校正後的字與例詞。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/docs/lesson-generation-workflow.md`、`apps/mandarin/scripts/test-idiom-sentence-contexts.mjs`
 - 做了什麼：全面掃描公開 G1A／G3A／G6A 課次；136 筆核准成語填句子全部是具體情境句。G1A 7 課沒有成語資料；G3A 6 課有 34 個成語、另 6 課無成語資料；G6A 12 課有 102 個成語。工作流新增成語情境句閘門，禁止泛用模板，要求每個可用成語都有核准例句；沒有成語資料的課次維持模組未開放。
 - 驗證：`node scripts/test-idiom-sentence-contexts.mjs`、`npm.cmd run validate`、全部 `scripts/test-*.mjs`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過。
