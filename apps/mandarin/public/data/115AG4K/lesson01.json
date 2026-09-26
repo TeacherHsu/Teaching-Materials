@@ -39,6 +39,36 @@
       "kind": "official",
       "locator": "14 課文大意、段落大意",
       "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    },
+    {
+      "kind": "official",
+      "locator": "04 生字延伸成語／第1課",
+      "sha256": "9776268150431107A35FA309327947662745CBCD68CE52C17427F09A449E2350"
+    },
+    {
+      "kind": "official",
+      "locator": "07 語句練習／第1課",
+      "sha256": "BD7B4BBEAAEDDDACC1128B1AF9B7469AAD5B60CEC1244518B76F62872CB6A5E9"
+    },
+    {
+      "kind": "official",
+      "locator": "09 生字解釋／第1課",
+      "sha256": "237FB70C678FFF9EA7A0AB645954F7A54A2829C7006380A7CD4DC6FE4A03F663"
+    },
+    {
+      "kind": "official",
+      "locator": "06 字音字形／第1課",
+      "sha256": "BCEB2E7CF05D5919ACC53AF2D454698D3BC94A02C2C944AC603D4A2B1E368BAB"
+    },
+    {
+      "kind": "official",
+      "locator": "15 閱讀理解／第1課",
+      "sha256": "6103E7B8CF142DF8CBE57CDE9CBDB6175C38364B3D4E3265402B97F5F13280FF"
+    },
+    {
+      "kind": "official",
+      "locator": "10 修辭分析／第1課",
+      "sha256": "35962C47D83A67C3158CD8DD9E71B57AFFEC45A3FB7D9494A459EE12E6B597FB"
     }
   ],
   "characters": [
@@ -51,9 +81,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "游泳"
+        "泳池",
+        "泳衣",
+        "泳裝"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B3%B3",
@@ -68,8 +100,12 @@
       "radical": "⼁",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "串成",
+        "串珠",
+        "串聯"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%B8%B2",
@@ -85,9 +121,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "一般"
+        "一般",
+        "百般",
+        "這般"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%88%AC",
@@ -103,9 +141,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "多采多姿"
+        "坐姿",
+        "姿勢",
+        "姿態"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A7%BF",
@@ -120,8 +160,12 @@
       "radical": "⽔",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "溜冰",
+        "溜走",
+        "溜進"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%BA%9C",
@@ -136,8 +180,12 @@
       "radical": "⽿",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "刺耳",
+        "悅耳",
+        "木耳"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%80%B3",
@@ -157,7 +205,7 @@
         "老鷹",
         "鷹架"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%B7%B9",
@@ -173,9 +221,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "滑行"
+        "下滑",
+        "光滑",
+        "平滑"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%BB%91",
@@ -191,9 +241,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "遨遊"
+        "遨遊",
+        "遨翔",
+        "遨嬉"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）；不足項目以教育部辭典補足",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%81%A8",
@@ -209,9 +261,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "緩緩"
+        "和緩",
+        "平緩",
+        "延緩"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B7%A9",
@@ -231,7 +285,7 @@
         "佛陀",
         "陀螺儀"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%99%80",
@@ -251,7 +305,7 @@
         "螺絲",
         "西螺"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%9E%BA",
@@ -267,9 +321,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "轉身"
+        "好轉",
+        "打轉",
+        "扭轉"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%BD%89",
@@ -284,8 +340,12 @@
       "radical": "⾜",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "活躍",
+        "跳躍",
+        "踴躍"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%BA%8D",
@@ -301,9 +361,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
+        "厭煩",
+        "煩悶",
         "煩惱"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%85%A9",
@@ -423,10 +485,257 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
-  "rhetoric": [],
+  "idioms": [
+    {
+      "id": "idiom:01:01",
+      "idiom": "洗耳恭聽",
+      "definition": "比喻專心恭敬的聆聽。",
+      "related_char": "耳",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:01:02",
+      "idiom": "耳目一新",
+      "definition": "形容所見所聞都有一種新奇、清新的感覺。",
+      "related_char": "耳",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:01:03",
+      "idiom": "回心轉意",
+      "definition": "改變心意。",
+      "related_char": "轉",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:01:04",
+      "idiom": "躍躍欲試",
+      "definition": "心動技癢，急切的想嘗試一下。",
+      "related_char": "躍",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:01:05",
+      "idiom": "要言不煩",
+      "definition": "說話精要，不囉嗦。",
+      "related_char": "煩",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:01:06",
+      "idiom": "心煩意亂",
+      "definition": "心情煩躁，思緒凌亂。",
+      "related_char": "煩",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:01:01",
+      "idiom_id": "idiom:01:01",
+      "rewritten": "這位教授的演講十分精采，大家都洗耳恭聽。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:01:02",
+      "idiom_id": "idiom:01:02",
+      "rewritten": "這個旅遊節目介紹了世界各地的風土人情及驚險的探險歷程，使觀眾耳目一新。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:01:03",
+      "idiom_id": "idiom:01:03",
+      "rewritten": "經過一番解釋，他終於回心轉意，決定答應我的請求。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:01:04",
+      "idiom_id": "idiom:01:04",
+      "rewritten": "比賽即將開始，每個球員都摩拳擦掌，躍躍欲試。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:01:05",
+      "idiom_id": "idiom:01:05",
+      "rewritten": "這家報社的社論總是要言不煩，而且見解精闢獨到。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:01:06",
+      "idiom_id": "idiom:01:06",
+      "rewritten": "夜裡來來往往的車聲，吵得人心煩意亂，無法入睡。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence:01:01",
+      "category": "短語練習",
+      "head": "無比堅定的自信",
+      "structure": "無比（形容詞）的（名詞）",
+      "description": "強調某一個事物怎樣狀態的短語。",
+      "guide": "請將語詞重新排列，組成通順的短語。",
+      "examples": [
+        "無比雄厚的實力",
+        "無比雀躍的心情",
+        "無比沉重的腳步"
+      ],
+      "example_parts": [
+        [
+          "無比",
+          "雄厚",
+          "的",
+          "實力"
+        ],
+        [
+          "無比",
+          "雀躍",
+          "的",
+          "心情"
+        ],
+        [
+          "無比",
+          "沉重",
+          "的",
+          "腳步"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:01:02",
+      "category": "短句練習",
+      "head": "風兒從耳旁呼呼吹過",
+      "structure": "（名詞）從（名詞）（疊字副詞）（動詞）。",
+      "description": "誰從哪裡如何做的短句。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "馬兒從原野匆匆跑過。",
+        "小鳥從樹梢緩緩飛過。",
+        "雨水從屋簷慢慢滴落。"
+      ],
+      "example_parts": [
+        [
+          "馬兒",
+          "從原野",
+          "匆匆",
+          "跑過。"
+        ],
+        [
+          "小鳥",
+          "從樹梢",
+          "緩緩",
+          "飛過。"
+        ],
+        [
+          "雨水",
+          "從屋簷",
+          "慢慢",
+          "滴落。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:01:03",
+      "category": "短句練習",
+      "head": "陽光在枝頭輕輕晃動",
+      "structure": "（名詞）在（名詞）（疊字副詞）（動詞）。",
+      "description": "誰在哪裡如何做某事的短句。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "白雲在天邊緩緩飄動。",
+        "小溪在山谷慢慢流動。",
+        "弟弟在操場快快奔跑。"
+      ],
+      "example_parts": [
+        [
+          "白雲",
+          "在天邊",
+          "緩緩",
+          "飄動。"
+        ],
+        [
+          "小溪",
+          "在山谷",
+          "慢慢",
+          "流動。"
+        ],
+        [
+          "弟弟",
+          "在操場",
+          "快快",
+          "奔跑。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:01:04",
+      "category": "造句練習",
+      "head": "多采多姿",
+      "structure": "生活情境句",
+      "description": "形容姿態多樣，色彩迷人。後引申為內容豐富華麗，且變化多端。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "姐姐上大學後，生活過得多采多姿。",
+        "爺爺退休後，生活依然多采多姿。",
+        "奶奶提醒我們，要把生活過得多采多姿。"
+      ],
+      "example_parts": [
+        [
+          "姐姐",
+          "上大學後，",
+          "生活過得",
+          "多采多姿。"
+        ],
+        [
+          "爺爺",
+          "退休後，",
+          "生活依然",
+          "多采多姿。"
+        ],
+        [
+          "奶奶",
+          "提醒我們，",
+          "要把生活過得",
+          "多采多姿。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    }
+  ],
+  "rhetoric": [
+    {
+      "id": "rhetoric:01:01",
+      "figure": "類疊",
+      "note": "同一個詞彙、語句，接連反覆的使用著，以加強表達的效果，使字句具備音律之美，就叫做「類疊」。類疊可分為：字的類疊、詞的類疊、句的類疊。",
+      "example": "⑴游成自由的魚，游成巨大的蛙，游成飛舞的蝶。⑵歡樂笑聲一陣陣⑶晶亮水珠一串串⑷游出無比堅定的自信，游出大海一般的壯志，游出多采多姿的人生。⑸風兒從耳旁呼呼吹過⑹陽光在枝頭輕輕晃動，汗水從臉上緩緩滴落。",
+      "child_note": "類疊：同一個詞彙、語句，接連反覆的使用著，以加強表達的效果，使字句具備音律之美，就叫做「類疊」。類疊可分為：字的類疊、詞的類疊、句的類疊。",
+      "status": "approved",
+      "source": "康軒四上官方教材（10 修辭分析）"
+    }
+  ],
   "paragraph_summary": [
     {
       "id": "paragraph:115AG4K01:01",
@@ -541,9 +850,644 @@
       "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
     }
   ],
-  "polysemy": [],
-  "polysemy_senses": [],
-  "polyphones": [],
+  "polysemy": [
+    {
+      "id": "polysemy:01:01",
+      "char": "串",
+      "sentence": "語詞「一串念珠」中的「串」，表示什麼意思？",
+      "definition": "計算成串物品的單位",
+      "options": [
+        "計算成串物品的單位",
+        "把東西連貫在一起",
+        "勾結做壞事",
+        "扮演"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:02",
+      "char": "串",
+      "sentence": "語詞「貫串」中的「串」，表示什麼意思？",
+      "definition": "把東西連貫在一起",
+      "options": [
+        "把東西連貫在一起",
+        "計算成串物品的單位",
+        "勾結做壞事",
+        "扮演"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:03",
+      "char": "串",
+      "sentence": "語詞「串通」中的「串」，表示什麼意思？",
+      "definition": "勾結做壞事",
+      "options": [
+        "勾結做壞事",
+        "計算成串物品的單位",
+        "把東西連貫在一起",
+        "扮演"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:04",
+      "char": "串",
+      "sentence": "語詞「客串」中的「串」，表示什麼意思？",
+      "definition": "扮演",
+      "options": [
+        "扮演",
+        "計算成串物品的單位",
+        "把東西連貫在一起",
+        "勾結做壞事"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:05",
+      "char": "串",
+      "sentence": "語詞「串門子」中的「串」，表示什麼意思？",
+      "definition": "隨意往來",
+      "options": [
+        "隨意往來",
+        "計算成串物品的單位",
+        "把東西連貫在一起",
+        "勾結做壞事"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:06",
+      "char": "般",
+      "sentence": "語詞「兄弟般的友誼」中的「般」，表示什麼意思？",
+      "definition": "同樣的",
+      "options": [
+        "同樣的",
+        "樣"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:07",
+      "char": "般",
+      "sentence": "語詞「那般」中的「般」，表示什麼意思？",
+      "definition": "樣",
+      "options": [
+        "樣",
+        "同樣的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:08",
+      "char": "溜",
+      "sentence": "語詞「滑落」中的「溜」，表示什麼意思？",
+      "definition": "滑動",
+      "options": [
+        "滑動",
+        "私自離開或進入",
+        "一種烹飪方法",
+        "形容詞詞尾"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:09",
+      "char": "溜",
+      "sentence": "語詞「溜課」中的「溜」，表示什麼意思？",
+      "definition": "私自離開或進入",
+      "options": [
+        "私自離開或進入",
+        "滑動",
+        "一種烹飪方法",
+        "形容詞詞尾"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:10",
+      "char": "溜",
+      "sentence": "語詞「醋溜白菜」中的「溜」，表示什麼意思？",
+      "definition": "一種烹飪方法",
+      "options": [
+        "一種烹飪方法",
+        "滑動",
+        "私自離開或進入",
+        "形容詞詞尾"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:11",
+      "char": "溜",
+      "sentence": "語詞「烏溜溜」中的「溜」，表示什麼意思？",
+      "definition": "形容詞詞尾",
+      "options": [
+        "形容詞詞尾",
+        "滑動",
+        "私自離開或進入",
+        "一種烹飪方法"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:12",
+      "char": "耳",
+      "sentence": "語詞「可分外耳」中的「耳」，表示什麼意思？",
+      "definition": "人及動物的聽覺器官與平衡器官",
+      "options": [
+        "人及動物的聽覺器官與平衡器官",
+        "形狀像耳朵的東西"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:13",
+      "char": "耳",
+      "sentence": "語詞「木耳」中的「耳」，表示什麼意思？",
+      "definition": "形狀像耳朵的東西",
+      "options": [
+        "形狀像耳朵的東西",
+        "人及動物的聽覺器官與平衡器官"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:14",
+      "char": "滑",
+      "sentence": "語詞「滑冰」中的「滑」，表示什麼意思？",
+      "definition": "在光溜的物體表面溜動",
+      "options": [
+        "在光溜的物體表面溜動",
+        "順溜",
+        "狡詐"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:15",
+      "char": "滑",
+      "sentence": "語詞「光滑」中的「滑」，表示什麼意思？",
+      "definition": "順溜",
+      "options": [
+        "順溜",
+        "在光溜的物體表面溜動",
+        "狡詐"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:16",
+      "char": "滑",
+      "sentence": "語詞「滑頭」中的「滑」，表示什麼意思？",
+      "definition": "狡詐",
+      "options": [
+        "狡詐",
+        "在光溜的物體表面溜動",
+        "順溜"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:17",
+      "char": "緩",
+      "sentence": "語詞「緩步」中的「緩」，表示什麼意思？",
+      "definition": "慢而不急",
+      "options": [
+        "慢而不急",
+        "延遲",
+        "放鬆"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:18",
+      "char": "緩",
+      "sentence": "語詞「緩期」中的「緩」，表示什麼意思？",
+      "definition": "延遲",
+      "options": [
+        "延遲",
+        "慢而不急",
+        "放鬆"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:19",
+      "char": "緩",
+      "sentence": "語詞「先緩口氣再說吧」中的「緩」，表示什麼意思？",
+      "definition": "放鬆",
+      "options": [
+        "放鬆",
+        "慢而不急",
+        "延遲"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:20",
+      "char": "轉",
+      "sentence": "語詞「落地後就能在地上直立旋轉」中的「轉」，表示什麼意思？",
+      "definition": "陀螺",
+      "options": [
+        "陀螺",
+        "改換方向",
+        "變換",
+        "間接傳送"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:21",
+      "char": "轉",
+      "sentence": "語詞「向右轉」中的「轉」，表示什麼意思？",
+      "definition": "改換方向",
+      "options": [
+        "改換方向",
+        "陀螺",
+        "變換",
+        "間接傳送"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:22",
+      "char": "轉",
+      "sentence": "語詞「轉學」中的「轉」，表示什麼意思？",
+      "definition": "變換",
+      "options": [
+        "變換",
+        "陀螺",
+        "改換方向",
+        "間接傳送"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:23",
+      "char": "轉",
+      "sentence": "語詞「轉交」中的「轉」，表示什麼意思？",
+      "definition": "間接傳送",
+      "options": [
+        "間接傳送",
+        "陀螺",
+        "改換方向",
+        "變換"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:24",
+      "char": "轉",
+      "sentence": "語詞「煩您轉達」中的「轉」，表示什麼意思？",
+      "definition": "勞動他人的敬詞",
+      "options": [
+        "勞動他人的敬詞",
+        "陀螺",
+        "改換方向",
+        "變換"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:25",
+      "char": "螺",
+      "sentence": "語詞「田螺」中的「螺」，表示什麼意思？",
+      "definition": "腹足類軟體動物的通稱",
+      "options": [
+        "腹足類軟體動物的通稱",
+        "螺形的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:01:26",
+      "char": "螺",
+      "sentence": "語詞「螺紋」中的「螺」，表示什麼意思？",
+      "definition": "螺形的",
+      "options": [
+        "螺形的",
+        "腹足類軟體動物的通稱"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    }
+  ],
+  "polysemy_senses": [
+    {
+      "char": "串",
+      "senses": [
+        {
+          "char": "串",
+          "definition": "計算成串物品的單位",
+          "examples": [
+            "一串念珠",
+            "兩串銅錢"
+          ]
+        },
+        {
+          "char": "串",
+          "definition": "把東西連貫在一起",
+          "examples": [
+            "貫串",
+            "串珠子"
+          ]
+        },
+        {
+          "char": "串",
+          "definition": "勾結做壞事",
+          "examples": [
+            "串通",
+            "串供",
+            "串騙"
+          ]
+        },
+        {
+          "char": "串",
+          "definition": "扮演",
+          "examples": [
+            "客串",
+            "反串"
+          ]
+        },
+        {
+          "char": "串",
+          "definition": "隨意往來",
+          "examples": [
+            "串門子"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "般",
+      "senses": [
+        {
+          "char": "般",
+          "definition": "同樣的",
+          "examples": [
+            "兄弟般的友誼",
+            "姐妹般的感情"
+          ]
+        },
+        {
+          "char": "般",
+          "definition": "樣",
+          "examples": [
+            "那般",
+            "萬般無奈"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "溜",
+      "senses": [
+        {
+          "char": "溜",
+          "definition": "滑動",
+          "examples": [
+            "滑落",
+            "溜冰",
+            "溜滑梯"
+          ]
+        },
+        {
+          "char": "溜",
+          "definition": "私自離開或進入",
+          "examples": [
+            "溜課",
+            "溜回家"
+          ]
+        },
+        {
+          "char": "溜",
+          "definition": "一種烹飪方法",
+          "examples": [
+            "醋溜白菜"
+          ]
+        },
+        {
+          "char": "溜",
+          "definition": "形容詞詞尾",
+          "examples": [
+            "烏溜溜",
+            "酸溜溜",
+            "光溜溜"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "耳",
+      "senses": [
+        {
+          "char": "耳",
+          "definition": "人及動物的聽覺器官與平衡器官",
+          "examples": [
+            "可分外耳",
+            "中耳",
+            "內耳三部分",
+            "耳朵",
+            "如雷貫耳"
+          ]
+        },
+        {
+          "char": "耳",
+          "definition": "形狀像耳朵的東西",
+          "examples": [
+            "木耳",
+            "銀耳"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "滑",
+      "senses": [
+        {
+          "char": "滑",
+          "definition": "在光溜的物體表面溜動",
+          "examples": [
+            "滑冰",
+            "滑雪",
+            "滑了一跤"
+          ]
+        },
+        {
+          "char": "滑",
+          "definition": "順溜",
+          "examples": [
+            "光滑"
+          ]
+        },
+        {
+          "char": "滑",
+          "definition": "狡詐",
+          "examples": [
+            "滑頭"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "緩",
+      "senses": [
+        {
+          "char": "緩",
+          "definition": "慢而不急",
+          "examples": [
+            "緩步",
+            "緩慢"
+          ]
+        },
+        {
+          "char": "緩",
+          "definition": "延遲",
+          "examples": [
+            "緩期",
+            "緩兵之計"
+          ]
+        },
+        {
+          "char": "緩",
+          "definition": "放鬆",
+          "examples": [
+            "先緩口氣再說吧"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "轉",
+      "senses": [
+        {
+          "char": "轉",
+          "definition": "陀螺",
+          "examples": [
+            "落地後就能在地上直立旋轉"
+          ]
+        },
+        {
+          "char": "轉",
+          "definition": "改換方向",
+          "examples": [
+            "向右轉",
+            "向後轉",
+            "轉彎"
+          ]
+        },
+        {
+          "char": "轉",
+          "definition": "變換",
+          "examples": [
+            "轉學",
+            "轉敗為勝",
+            "由晴轉陰",
+            "扭轉情勢"
+          ]
+        },
+        {
+          "char": "轉",
+          "definition": "間接傳送",
+          "examples": [
+            "轉交",
+            "轉送",
+            "轉播"
+          ]
+        },
+        {
+          "char": "轉",
+          "definition": "勞動他人的敬詞",
+          "examples": [
+            "煩您轉達"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "螺",
+      "senses": [
+        {
+          "char": "螺",
+          "definition": "腹足類軟體動物的通稱",
+          "examples": [
+            "田螺",
+            "海螺"
+          ]
+        },
+        {
+          "char": "螺",
+          "definition": "螺形的",
+          "examples": [
+            "螺紋",
+            "螺髻"
+          ]
+        }
+      ]
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:01:轉",
+      "char": "轉",
+      "readings": [
+        {
+          "zhuyin": "ㄓㄨㄢˇ",
+          "dabutie_zhuyin": "ㄓㄨㄢˇ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "轉身",
+                "轉彎"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄓㄨㄢˋ",
+          "dabutie_zhuyin": "ㄓㄨㄢˋ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "轉圈",
+                "公轉"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "康軒四上官方教材（06 字音字形；多音例詞經來源文字核對）"
+    }
+  ],
   "lookalikes": [
     {
       "id": "lookalike:115AG4K01:01",
@@ -694,7 +1638,47 @@
       "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
     }
   ],
-  "listening": [],
+  "listening": [
+    {
+      "id": "listening:01:01",
+      "stem": "游泳這首詩中，作者在哪裡游泳？",
+      "question": "游泳這首詩中，作者在哪裡游泳？",
+      "options": [
+        "游泳池",
+        "作者應該很喜歡游泳，從「游出無比堅定的自信，游出大海一般的壯志，游出多采多姿的人生。」句中可以判斷游泳讓他有自信、有壯志、人生也多采多姿",
+        "作者將自己想像成飛鷹和陀螺"
+      ],
+      "answer": "游泳池",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:01:02",
+      "stem": "作者感覺游泳時，自己變成哪些動物？",
+      "question": "作者感覺游泳時，自己變成哪些動物？",
+      "options": [
+        "作者應該很喜歡游泳，從「游出無比堅定的自信，游出大海一般的壯志，游出多采多姿的人生。」句中可以判斷游泳讓他有自信、有壯志、人生也多采多姿",
+        "作者將自己想像成飛鷹和陀螺",
+        "作者感覺自己游泳時，變成自由的魚、巨大的蛙、飛舞的蝶"
+      ],
+      "answer": "作者感覺自己游泳時，變成自由的魚、巨大的蛙、飛舞的蝶",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:01:03",
+      "stem": "作者在游泳時，心情如何？從哪些語句可以知道？",
+      "question": "作者在游泳時，心情如何？從哪些語句可以知道？",
+      "options": [
+        "作者將自己想像成飛鷹和陀螺",
+        "作者游泳時是歡樂暢快、堅定自信的心情。從句子「晶亮水珠一串串，化成歡樂的笑聲。」在「游出無比堅定的自信，游出大海一般的壯志，游出多采多姿的人生。」句中，水珠能化……",
+        "作者應該很喜歡游泳，從「游出無比堅定的自信，游出大海一般的壯志，游出多采多姿的人生。」句中可以判斷游泳讓他有自信、有壯志、人生也多采多姿"
+      ],
+      "answer": "作者游泳時是歡樂暢快、堅定自信的心情。從句子「晶亮水珠一串串，化成歡樂的笑聲。」在「游出無比堅定的自信，游出大海一般的壯志，游出多采多姿的人生。」句中，水珠能化……",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    }
+  ],
   "review_words": {
     "by_lesson": {
       "1": [
@@ -716,7 +1700,22 @@
       ]
     }
   },
-  "extensions": [],
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag4k-01",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E6%B3%B3%E4%B8%B2%E8%88%AC%E5%A7%BF%E6%BA%9C%E8%80%B3%E9%B7%B9%E6%BB%91%E9%81%A8%E7%B7%A9%E9%99%80%E8%9E%BA%E8%BD%89%E8%BA%8D%E7%85%A9",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・康軒・4年級・第1課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課15個生字"
+    }
+  ],
   "quiz": [
     {
       "id": "q01",
@@ -882,9 +1881,8 @@
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
-      "activity": "sentence-practice",
-      "note": "句型來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "sentence-practice"
     },
     "challenge": {
       "label": "動手挑戰",
@@ -899,21 +1897,18 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
-      "activity": "idiom-builder",
-      "note": "成語資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "idiom-builder"
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "一字多義資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
-      "status": "missing",
-      "activity": "polyphones",
-      "note": "一字多音資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "polyphones"
     },
     "lookalikes": {
       "label": "形似字",
@@ -927,15 +1922,14 @@
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
-      "activity": "listening-quiz",
-      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+      "status": "available",
+      "activity": "listening-quiz"
     },
     "rhetoric": {
       "label": "修辭小偵探",
       "status": "missing",
       "activity": "rhetoric",
-      "note": "修辭資料尚未完成來源核對。"
+      "note": "官方修辭分析不足 3 題。"
     },
     "review": {
       "label": "舊字新詞",

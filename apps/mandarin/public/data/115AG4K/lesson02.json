@@ -49,6 +49,36 @@
       "kind": "official",
       "locator": "14 課文大意、段落大意",
       "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    },
+    {
+      "kind": "official",
+      "locator": "04 生字延伸成語／第2課",
+      "sha256": "9776268150431107A35FA309327947662745CBCD68CE52C17427F09A449E2350"
+    },
+    {
+      "kind": "official",
+      "locator": "07 語句練習／第2課",
+      "sha256": "BD7B4BBEAAEDDDACC1128B1AF9B7469AAD5B60CEC1244518B76F62872CB6A5E9"
+    },
+    {
+      "kind": "official",
+      "locator": "09 生字解釋／第2課",
+      "sha256": "237FB70C678FFF9EA7A0AB645954F7A54A2829C7006380A7CD4DC6FE4A03F663"
+    },
+    {
+      "kind": "official",
+      "locator": "06 字音字形／第2課",
+      "sha256": "BCEB2E7CF05D5919ACC53AF2D454698D3BC94A02C2C944AC603D4A2B1E368BAB"
+    },
+    {
+      "kind": "official",
+      "locator": "15 閱讀理解／第2課",
+      "sha256": "6103E7B8CF142DF8CBE57CDE9CBDB6175C38364B3D4E3265402B97F5F13280FF"
+    },
+    {
+      "kind": "official",
+      "locator": "10 修辭分析／第2課",
+      "sha256": "35962C47D83A67C3158CD8DD9E71B57AFFEC45A3FB7D9494A459EE12E6B597FB"
     }
   ],
   "characters": [
@@ -61,9 +91,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "招招手"
+        "停招",
+        "妙招",
+        "招來"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8B%9B",
@@ -78,8 +110,12 @@
       "radical": "⽔",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "泡湯",
+        "湯匙",
+        "湯品"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B9%AF",
@@ -94,8 +130,12 @@
       "radical": "⼿",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "拋下",
+        "拋出",
+        "拋到"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8B%8B",
@@ -111,9 +151,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "食糧"
+        "糧食",
+        "食糧",
+        "乾糧"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B3%A7",
@@ -129,9 +171,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
+        "大姐",
+        "姐妹",
         "姐姐"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A7%90",
@@ -151,7 +195,7 @@
         "抗爭",
         "爭光"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%88%AD",
@@ -167,9 +211,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "警察"
+        "告警",
+        "員警",
+        "報警"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%AD%A6",
@@ -185,9 +231,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
+        "偷吃",
+        "偷懶",
         "小偷"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%81%B7",
@@ -202,8 +250,12 @@
       "radical": "⼑",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "原則",
+        "否則",
+        "守則"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%89%87",
@@ -219,9 +271,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "跳繩"
+        "棉繩",
+        "繩子",
+        "繩索"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B9%A9",
@@ -241,7 +295,7 @@
         "依循",
         "依據"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BE%9D",
@@ -257,9 +311,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "依依不捨"
+        "不捨",
+        "依依不捨",
+        "取捨"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8D%A8",
@@ -275,9 +331,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "結束"
+        "拘束",
+        "束縛",
+        "約束"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9D%9F",
@@ -293,9 +351,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "暫停"
+        "暫停",
+        "暫居",
+        "暫時"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9A%AB",
@@ -311,9 +371,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
+        "不幸",
+        "幸好",
         "幸福"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B9%B8",
@@ -505,10 +567,241 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
-  "rhetoric": [],
+  "idioms": [
+    {
+      "id": "idiom:02:01",
+      "idiom": "赴湯蹈火",
+      "definition": "比喻奮不顧身，不避艱險。",
+      "related_char": "湯",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:02:02",
+      "idiom": "拋磚引玉",
+      "definition": "比喻自己先發表粗陋的詩文或不成熟的意見，以引出別人的佳作或高論，多用作自謙之詞。亦用於比喻以身作則，引發眾人響應。",
+      "related_char": "拋",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:02:03",
+      "idiom": "力爭上游",
+      "definition": "比喻努力奮鬥，求取上進。",
+      "related_char": "爭",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:02:04",
+      "idiom": "以身作則",
+      "definition": "以自身行為作為他人的榜樣。",
+      "related_char": "則",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:02:05",
+      "idiom": "捨本逐末",
+      "definition": "指人不求事物的根本大端，只重視微末小節。",
+      "related_char": "捨",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:02:06",
+      "idiom": "束手無策",
+      "definition": "比喻面對問題時，毫無解決的辦法。",
+      "related_char": "束",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:02:01",
+      "idiom_id": "idiom:02:01",
+      "rewritten": "他早已下了赴湯蹈火的決心，要挑戰任何艱難險阻。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:02:02",
+      "idiom_id": "idiom:02:02",
+      "rewritten": "我藉著這段話拋磚引玉，希望各位能有許多精采的論見。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:02:03",
+      "idiom_id": "idiom:02:03",
+      "rewritten": "一次失敗，不要灰心，只要你能力爭上游，成功必然在望。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:02:04",
+      "idiom_id": "idiom:02:04",
+      "rewritten": "身為一位班長，他處處能以身作則，所以得到同學們的愛戴。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:02:05",
+      "idiom_id": "idiom:02:05",
+      "rewritten": "如果我們不充實內容，只在包裝上下功夫，就顯得捨本逐末了。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:02:06",
+      "idiom_id": "idiom:02:06",
+      "rewritten": "面對這突來的事件，大家面面相覷，束手無策。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence:02:01",
+      "category": "短語練習",
+      "head": "香氣撲鼻的奶油餅乾",
+      "structure": "（形容詞）的（名詞）",
+      "description": "描寫食物的短語。",
+      "guide": "請將語詞重新排列，組成通順的短語。",
+      "examples": [
+        "軟綿可口的紅豆湯"
+      ],
+      "example_parts": [
+        [
+          "軟綿",
+          "可口",
+          "的",
+          "紅豆湯"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:02:02",
+      "category": "造句練習",
+      "head": "不約而同",
+      "structure": "生活情境句",
+      "description": "並未事先約定，而彼此的意見或作法卻相同。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "演講結束後，聽眾都不約而同地起立鼓掌。",
+        "下大雨時，行人不約而同地躲進騎樓。",
+        "地震發生時，大家不約而同地尖叫。"
+      ],
+      "example_parts": [
+        [
+          "演講結束後，",
+          "聽眾都",
+          "不約而同地",
+          "起立鼓掌。"
+        ],
+        [
+          "下大雨時，",
+          "行人",
+          "不約而同地",
+          "躲進騎樓。"
+        ],
+        [
+          "地震發生時，",
+          "大家",
+          "不約而同地",
+          "尖叫。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:02:03",
+      "category": "造句練習",
+      "head": "一掃而空",
+      "structure": "生活情境句",
+      "description": "表示全部清除乾淨。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "他聽完笑話，臉上不安的神情全都一掃而空。",
+        "這款熱賣的商品，上架沒多久就一掃而空。"
+      ],
+      "example_parts": [
+        [
+          "他聽完笑話，",
+          "臉上",
+          "不安的神情",
+          "全都",
+          "一掃而空。"
+        ],
+        [
+          "這款熱賣的",
+          "商品，",
+          "上架沒多久就",
+          "一掃而空。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:02:04",
+      "category": "句型練習",
+      "head": "有時……有時……有時……",
+      "structure": "有時（事情一），有時（事情二），有時（事情三）。",
+      "description": "並列複句，表示幾種事物或事情前後陳述，彼此關係是平行的。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "放學後，他有時參加社團，有時學鋼琴，有時回家寫作業。",
+        "春天的天氣多變，有時炎熱，有時寒冷，有時下大雨。",
+        "爸爸像魔術師，有時變出美食，有時變出書，有時變出圍巾。"
+      ],
+      "example_parts": [
+        [
+          "放學後，",
+          "他有時",
+          "參加社團，",
+          "有時學鋼琴，",
+          "有時",
+          "回家寫作業。"
+        ],
+        [
+          "春天的",
+          "天氣多變，",
+          "有時炎熱，",
+          "有時寒冷，",
+          "有時下大雨。"
+        ],
+        [
+          "爸爸像魔術師，",
+          "有時",
+          "變出美食，",
+          "有時變出書，",
+          "有時變出圍巾。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    }
+  ],
+  "rhetoric": [
+    {
+      "id": "rhetoric:02:01",
+      "figure": "設問",
+      "note": "說話行文時，刻意設計問句，不直接陳述意見、想法，採自問自答或問而不答等形式來表達內容，目的在強調某個意思，引起對方注意或思考的修辭法。",
+      "example": "我們一邊吃點心，一邊讀有趣的故事，還有什麼比這更快樂呢？",
+      "child_note": "設問：說話行文時，刻意設計問句，不直接陳述意見、想法，採自問自答或問而不答等形式來表達內容，目的在強調某個意思，引起對方注意或思考的修辭法。",
+      "status": "approved",
+      "source": "康軒四上官方教材（10 修辭分析）"
+    }
+  ],
   "paragraph_summary": [
     {
       "id": "paragraph:115AG4K02:01",
@@ -623,8 +916,1323 @@
       "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
     }
   ],
-  "polysemy": [],
-  "polysemy_senses": [],
+  "polysemy": [
+    {
+      "id": "polysemy:02:01",
+      "char": "招",
+      "sentence": "語詞「招手」中的「招」，表示什麼意思？",
+      "definition": "打手勢以示意人過來",
+      "options": [
+        "打手勢以示意人過來",
+        "用廣告",
+        "逗",
+        "承認罪狀"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:02",
+      "char": "招",
+      "sentence": "語詞「招生」中的「招」，表示什麼意思？",
+      "definition": "用廣告",
+      "options": [
+        "用廣告",
+        "打手勢以示意人過來",
+        "逗",
+        "承認罪狀"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:03",
+      "char": "招",
+      "sentence": "語詞「招禍」中的「招」，表示什麼意思？",
+      "definition": "逗",
+      "options": [
+        "逗",
+        "打手勢以示意人過來",
+        "用廣告",
+        "承認罪狀"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:04",
+      "char": "招",
+      "sentence": "語詞「招認」中的「招」，表示什麼意思？",
+      "definition": "承認罪狀",
+      "options": [
+        "承認罪狀",
+        "打手勢以示意人過來",
+        "用廣告",
+        "逗"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:05",
+      "char": "招",
+      "sentence": "語詞「絕招」中的「招」，表示什麼意思？",
+      "definition": "武技",
+      "options": [
+        "武技",
+        "打手勢以示意人過來",
+        "用廣告",
+        "逗"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:06",
+      "char": "招",
+      "sentence": "語詞「招牌」中的「招」，表示什麼意思？",
+      "definition": "明顯的標幟",
+      "options": [
+        "明顯的標幟",
+        "打手勢以示意人過來",
+        "用廣告",
+        "逗"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:07",
+      "char": "招",
+      "sentence": "語詞「一招妙計」中的「招」，表示什麼意思？",
+      "definition": "計算招術的單位",
+      "options": [
+        "計算招術的單位",
+        "打手勢以示意人過來",
+        "用廣告",
+        "逗"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:08",
+      "char": "湯",
+      "sentence": "語詞「雞湯」中的「湯」，表示什麼意思？",
+      "definition": "食物烹煮後所得的汁液",
+      "options": [
+        "食物烹煮後所得的汁液",
+        "熱水",
+        "具有多量汁水的菜肴",
+        "藥材加水煎熬成的汁液"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:09",
+      "char": "湯",
+      "sentence": "語詞「揚湯止沸」中的「湯」，表示什麼意思？",
+      "definition": "熱水",
+      "options": [
+        "熱水",
+        "食物烹煮後所得的汁液",
+        "具有多量汁水的菜肴",
+        "藥材加水煎熬成的汁液"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:10",
+      "char": "湯",
+      "sentence": "語詞「蛋花湯」中的「湯」，表示什麼意思？",
+      "definition": "具有多量汁水的菜肴",
+      "options": [
+        "具有多量汁水的菜肴",
+        "食物烹煮後所得的汁液",
+        "熱水",
+        "藥材加水煎熬成的汁液"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:11",
+      "char": "湯",
+      "sentence": "語詞「湯藥」中的「湯」，表示什麼意思？",
+      "definition": "藥材加水煎熬成的汁液",
+      "options": [
+        "藥材加水煎熬成的汁液",
+        "食物烹煮後所得的汁液",
+        "熱水",
+        "具有多量汁水的菜肴"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:12",
+      "char": "湯",
+      "sentence": "語詞「溫湯」中的「湯」，表示什麼意思？",
+      "definition": "溫泉",
+      "options": [
+        "溫泉",
+        "食物烹煮後所得的汁液",
+        "熱水",
+        "具有多量汁水的菜肴"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:13",
+      "char": "拋",
+      "sentence": "語詞「把困難拋在腦後」中的「拋」，表示什麼意思？",
+      "definition": "棄而不顧",
+      "options": [
+        "棄而不顧",
+        "投擲",
+        "露出"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:14",
+      "char": "拋",
+      "sentence": "語詞「拋錨」中的「拋」，表示什麼意思？",
+      "definition": "投擲",
+      "options": [
+        "投擲",
+        "棄而不顧",
+        "露出"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:15",
+      "char": "拋",
+      "sentence": "語詞「拋頭露面」中的「拋」，表示什麼意思？",
+      "definition": "露出",
+      "options": [
+        "露出",
+        "棄而不顧",
+        "投擲"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:16",
+      "char": "糧",
+      "sentence": "語詞「乾糧」中的「糧」，表示什麼意思？",
+      "definition": "穀類食物",
+      "options": [
+        "穀類食物",
+        "賦稅"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:17",
+      "char": "糧",
+      "sentence": "語詞「納糧」中的「糧」，表示什麼意思？",
+      "definition": "賦稅",
+      "options": [
+        "賦稅",
+        "穀類食物"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:18",
+      "char": "姐",
+      "sentence": "語詞「大姐」中的「姐」，表示什麼意思？",
+      "definition": "用以稱比自己先出生的同胞女子",
+      "options": [
+        "用以稱比自己先出生的同胞女子",
+        "用以稱同輩而比自己年長的女子",
+        "對女性的通稱"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:19",
+      "char": "姐",
+      "sentence": "語詞「表姐」中的「姐」，表示什麼意思？",
+      "definition": "用以稱同輩而比自己年長的女子",
+      "options": [
+        "用以稱同輩而比自己年長的女子",
+        "用以稱比自己先出生的同胞女子",
+        "對女性的通稱"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:20",
+      "char": "姐",
+      "sentence": "語詞「小姐」中的「姐」，表示什麼意思？",
+      "definition": "對女性的通稱",
+      "options": [
+        "對女性的通稱",
+        "用以稱比自己先出生的同胞女子",
+        "用以稱同輩而比自己年長的女子"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:21",
+      "char": "爭",
+      "sentence": "語詞「競爭」中的「爭」，表示什麼意思？",
+      "definition": "奪取",
+      "options": [
+        "奪取",
+        "辯論"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:22",
+      "char": "爭",
+      "sentence": "語詞「據理力爭」中的「爭」，表示什麼意思？",
+      "definition": "辯論",
+      "options": [
+        "辯論",
+        "奪取"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:23",
+      "char": "警",
+      "sentence": "語詞「交警」中的「警」，表示什麼意思？",
+      "definition": "警察的簡稱",
+      "options": [
+        "警察的簡稱",
+        "危險",
+        "告誡",
+        "戒備"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:24",
+      "char": "警",
+      "sentence": "語詞「邊警」中的「警」，表示什麼意思？",
+      "definition": "危險",
+      "options": [
+        "危險",
+        "警察的簡稱",
+        "告誡",
+        "戒備"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:25",
+      "char": "警",
+      "sentence": "語詞「警告」中的「警」，表示什麼意思？",
+      "definition": "告誡",
+      "options": [
+        "告誡",
+        "警察的簡稱",
+        "危險",
+        "戒備"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:26",
+      "char": "警",
+      "sentence": "語詞「警備」中的「警」，表示什麼意思？",
+      "definition": "戒備",
+      "options": [
+        "戒備",
+        "警察的簡稱",
+        "危險",
+        "告誡"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:27",
+      "char": "警",
+      "sentence": "語詞「警覺」中的「警」，表示什麼意思？",
+      "definition": "覺悟",
+      "options": [
+        "覺悟",
+        "警察的簡稱",
+        "危險",
+        "告誡"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:28",
+      "char": "警",
+      "sentence": "語詞「機警」中的「警」，表示什麼意思？",
+      "definition": "敏捷",
+      "options": [
+        "敏捷",
+        "警察的簡稱",
+        "危險",
+        "告誡"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:29",
+      "char": "警",
+      "sentence": "語詞「警句」中的「警」，表示什麼意思？",
+      "definition": "形容文詞語意凝鍊",
+      "options": [
+        "形容文詞語意凝鍊",
+        "警察的簡稱",
+        "危險",
+        "告誡"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:30",
+      "char": "偷",
+      "sentence": "語詞「小偷」中的「偷」，表示什麼意思？",
+      "definition": "竊取東西的人",
+      "options": [
+        "竊取東西的人",
+        "竊取",
+        "抽出",
+        "私下"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:31",
+      "char": "偷",
+      "sentence": "語詞「偷錢」中的「偷」，表示什麼意思？",
+      "definition": "竊取",
+      "options": [
+        "竊取",
+        "竊取東西的人",
+        "抽出",
+        "私下"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:32",
+      "char": "偷",
+      "sentence": "語詞「偷空」中的「偷」，表示什麼意思？",
+      "definition": "抽出",
+      "options": [
+        "抽出",
+        "竊取東西的人",
+        "竊取",
+        "私下"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:33",
+      "char": "偷",
+      "sentence": "語詞「偷看」中的「偷」，表示什麼意思？",
+      "definition": "私下",
+      "options": [
+        "私下",
+        "竊取東西的人",
+        "竊取",
+        "抽出"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:34",
+      "char": "偷",
+      "sentence": "語詞「偷安」中的「偷」，表示什麼意思？",
+      "definition": "苟且敷衍",
+      "options": [
+        "苟且敷衍",
+        "竊取東西的人",
+        "竊取",
+        "抽出"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:35",
+      "char": "則",
+      "sentence": "語詞「不進則退」中的「則」，表示什麼意思？",
+      "definition": "便",
+      "options": [
+        "便",
+        "表示平列",
+        "卻",
+        "法度"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:36",
+      "char": "則",
+      "sentence": "語詞「弟子入則孝」中的「則」，表示什麼意思？",
+      "definition": "表示平列",
+      "options": [
+        "表示平列",
+        "便",
+        "卻",
+        "法度"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:37",
+      "char": "則",
+      "sentence": "語詞「欲速則不達」中的「則」，表示什麼意思？",
+      "definition": "卻",
+      "options": [
+        "卻",
+        "便",
+        "表示平列",
+        "法度"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:38",
+      "char": "則",
+      "sentence": "語詞「法則」中的「則」，表示什麼意思？",
+      "definition": "法度",
+      "options": [
+        "法度",
+        "便",
+        "表示平列",
+        "卻"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:39",
+      "char": "則",
+      "sentence": "語詞「以身作則」中的「則」，表示什麼意思？",
+      "definition": "規範",
+      "options": [
+        "規範",
+        "便",
+        "表示平列",
+        "卻"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:40",
+      "char": "則",
+      "sentence": "語詞「一則消息」中的「則」，表示什麼意思？",
+      "definition": "計算文字分項段落的單位",
+      "options": [
+        "計算文字分項段落的單位",
+        "便",
+        "表示平列",
+        "卻"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:41",
+      "char": "則",
+      "sentence": "語詞「準則」中的「則」，表示什麼意思？",
+      "definition": "規矩",
+      "options": [
+        "規矩",
+        "便",
+        "表示平列",
+        "卻"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:42",
+      "char": "繩",
+      "sentence": "語詞「麻繩」中的「繩」，表示什麼意思？",
+      "definition": "兩股以上的麻",
+      "options": [
+        "兩股以上的麻",
+        "約束"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:43",
+      "char": "繩",
+      "sentence": "語詞「繩之以法」中的「繩」，表示什麼意思？",
+      "definition": "約束",
+      "options": [
+        "約束",
+        "兩股以上的麻"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:44",
+      "char": "依",
+      "sentence": "語詞「相依為命」中的「依」，表示什麼意思？",
+      "definition": "倚靠",
+      "options": [
+        "倚靠",
+        "按照",
+        "聽從",
+        "靠著"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:45",
+      "char": "依",
+      "sentence": "語詞「依次」中的「依」，表示什麼意思？",
+      "definition": "按照",
+      "options": [
+        "按照",
+        "倚靠",
+        "聽從",
+        "靠著"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:46",
+      "char": "依",
+      "sentence": "語詞「百依百順」中的「依」，表示什麼意思？",
+      "definition": "聽從",
+      "options": [
+        "聽從",
+        "倚靠",
+        "按照",
+        "靠著"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:47",
+      "char": "依",
+      "sentence": "語詞「依山傍水」中的「依」，表示什麼意思？",
+      "definition": "靠著",
+      "options": [
+        "靠著",
+        "倚靠",
+        "按照",
+        "聽從"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:48",
+      "char": "依",
+      "sentence": "語詞「依然故我」中的「依」，表示什麼意思？",
+      "definition": "情況沒改變",
+      "options": [
+        "情況沒改變",
+        "倚靠",
+        "按照",
+        "聽從"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:49",
+      "char": "捨",
+      "sentence": "語詞「割捨」中的「捨」，表示什麼意思？",
+      "definition": "放下",
+      "options": [
+        "放下",
+        "布施"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:50",
+      "char": "捨",
+      "sentence": "語詞「施捨」中的「捨」，表示什麼意思？",
+      "definition": "布施",
+      "options": [
+        "布施",
+        "放下"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:51",
+      "char": "束",
+      "sentence": "語詞「無拘無束」中的「束」，表示什麼意思？",
+      "definition": "限制",
+      "options": [
+        "限制",
+        "捆縛",
+        "整理",
+        "計算成束物品的單位"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:52",
+      "char": "束",
+      "sentence": "語詞「以帶束腰」中的「束」，表示什麼意思？",
+      "definition": "捆縛",
+      "options": [
+        "捆縛",
+        "限制",
+        "整理",
+        "計算成束物品的單位"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:53",
+      "char": "束",
+      "sentence": "語詞「束裝」中的「束」，表示什麼意思？",
+      "definition": "整理",
+      "options": [
+        "整理",
+        "限制",
+        "捆縛",
+        "計算成束物品的單位"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:54",
+      "char": "束",
+      "sentence": "語詞「一束鮮花」中的「束」，表示什麼意思？",
+      "definition": "計算成束物品的單位",
+      "options": [
+        "計算成束物品的單位",
+        "限制",
+        "捆縛",
+        "整理"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:55",
+      "char": "束",
+      "sentence": "語詞「花束」中的「束」，表示什麼意思？",
+      "definition": "聚集成一束的東西",
+      "options": [
+        "聚集成一束的東西",
+        "限制",
+        "捆縛",
+        "整理"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:56",
+      "char": "幸",
+      "sentence": "語詞「榮幸」中的「幸」，表示什麼意思？",
+      "definition": "福分",
+      "options": [
+        "福分",
+        "意外獲得的",
+        "高興"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:57",
+      "char": "幸",
+      "sentence": "語詞「萬幸」中的「幸」，表示什麼意思？",
+      "definition": "意外獲得的",
+      "options": [
+        "意外獲得的",
+        "福分",
+        "高興"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:02:58",
+      "char": "幸",
+      "sentence": "語詞「慶幸」中的「幸」，表示什麼意思？",
+      "definition": "高興",
+      "options": [
+        "高興",
+        "福分",
+        "意外獲得的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    }
+  ],
+  "polysemy_senses": [
+    {
+      "char": "招",
+      "senses": [
+        {
+          "char": "招",
+          "definition": "打手勢以示意人過來",
+          "examples": [
+            "招手",
+            "招之即來"
+          ]
+        },
+        {
+          "char": "招",
+          "definition": "用廣告",
+          "examples": [
+            "招生",
+            "招考",
+            "招標"
+          ]
+        },
+        {
+          "char": "招",
+          "definition": "逗",
+          "examples": [
+            "招禍",
+            "招惹"
+          ]
+        },
+        {
+          "char": "招",
+          "definition": "承認罪狀",
+          "examples": [
+            "招認",
+            "不打自招"
+          ]
+        },
+        {
+          "char": "招",
+          "definition": "武技",
+          "examples": [
+            "絕招",
+            "耍花招"
+          ]
+        },
+        {
+          "char": "招",
+          "definition": "明顯的標幟",
+          "examples": [
+            "招牌",
+            "市招"
+          ]
+        },
+        {
+          "char": "招",
+          "definition": "計算招術的單位",
+          "examples": [
+            "一招妙計"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "湯",
+      "senses": [
+        {
+          "char": "湯",
+          "definition": "食物烹煮後所得的汁液",
+          "examples": [
+            "雞湯",
+            "高湯"
+          ]
+        },
+        {
+          "char": "湯",
+          "definition": "熱水",
+          "examples": [
+            "揚湯止沸",
+            "赴湯蹈火"
+          ]
+        },
+        {
+          "char": "湯",
+          "definition": "具有多量汁水的菜肴",
+          "examples": [
+            "蛋花湯",
+            "青菜豆腐湯"
+          ]
+        },
+        {
+          "char": "湯",
+          "definition": "藥材加水煎熬成的汁液",
+          "examples": [
+            "湯藥"
+          ]
+        },
+        {
+          "char": "湯",
+          "definition": "溫泉",
+          "examples": [
+            "溫湯",
+            "錢湯"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "拋",
+      "senses": [
+        {
+          "char": "拋",
+          "definition": "棄而不顧",
+          "examples": [
+            "把困難拋在腦後"
+          ]
+        },
+        {
+          "char": "拋",
+          "definition": "投擲",
+          "examples": [
+            "拋錨",
+            "拋物線",
+            "拋磚引玉"
+          ]
+        },
+        {
+          "char": "拋",
+          "definition": "露出",
+          "examples": [
+            "拋頭露面"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "糧",
+      "senses": [
+        {
+          "char": "糧",
+          "definition": "穀類食物",
+          "examples": [
+            "乾糧",
+            "雜糧"
+          ]
+        },
+        {
+          "char": "糧",
+          "definition": "賦稅",
+          "examples": [
+            "納糧",
+            "糧稅"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "姐",
+      "senses": [
+        {
+          "char": "姐",
+          "definition": "用以稱比自己先出生的同胞女子",
+          "examples": [
+            "大姐"
+          ]
+        },
+        {
+          "char": "姐",
+          "definition": "用以稱同輩而比自己年長的女子",
+          "examples": [
+            "表姐"
+          ]
+        },
+        {
+          "char": "姐",
+          "definition": "對女性的通稱",
+          "examples": [
+            "小姐"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "爭",
+      "senses": [
+        {
+          "char": "爭",
+          "definition": "奪取",
+          "examples": [
+            "競爭",
+            "分秒必爭",
+            "爭先恐後"
+          ]
+        },
+        {
+          "char": "爭",
+          "definition": "辯論",
+          "examples": [
+            "據理力爭"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "警",
+      "senses": [
+        {
+          "char": "警",
+          "definition": "警察的簡稱",
+          "examples": [
+            "交警",
+            "義警",
+            "保警",
+            "刑警"
+          ]
+        },
+        {
+          "char": "警",
+          "definition": "危險",
+          "examples": [
+            "邊警",
+            "火警"
+          ]
+        },
+        {
+          "char": "警",
+          "definition": "告誡",
+          "examples": [
+            "警告"
+          ]
+        },
+        {
+          "char": "警",
+          "definition": "戒備",
+          "examples": [
+            "警備",
+            "警惕"
+          ]
+        },
+        {
+          "char": "警",
+          "definition": "覺悟",
+          "examples": [
+            "警覺"
+          ]
+        },
+        {
+          "char": "警",
+          "definition": "敏捷",
+          "examples": [
+            "機警"
+          ]
+        },
+        {
+          "char": "警",
+          "definition": "形容文詞語意凝鍊",
+          "examples": [
+            "警句"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "偷",
+      "senses": [
+        {
+          "char": "偷",
+          "definition": "竊取東西的人",
+          "examples": [
+            "小偷"
+          ]
+        },
+        {
+          "char": "偷",
+          "definition": "竊取",
+          "examples": [
+            "偷錢",
+            "偷東西"
+          ]
+        },
+        {
+          "char": "偷",
+          "definition": "抽出",
+          "examples": [
+            "偷空",
+            "偷閒"
+          ]
+        },
+        {
+          "char": "偷",
+          "definition": "私下",
+          "examples": [
+            "偷看",
+            "偷聽"
+          ]
+        },
+        {
+          "char": "偷",
+          "definition": "苟且敷衍",
+          "examples": [
+            "偷安"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "則",
+      "senses": [
+        {
+          "char": "則",
+          "definition": "便",
+          "examples": [
+            "不進則退"
+          ]
+        },
+        {
+          "char": "則",
+          "definition": "表示平列",
+          "examples": [
+            "弟子入則孝",
+            "出則悌"
+          ]
+        },
+        {
+          "char": "則",
+          "definition": "卻",
+          "examples": [
+            "欲速則不達"
+          ]
+        },
+        {
+          "char": "則",
+          "definition": "法度",
+          "examples": [
+            "法則",
+            "細則",
+            "稅則",
+            "青年守則"
+          ]
+        },
+        {
+          "char": "則",
+          "definition": "規範",
+          "examples": [
+            "以身作則"
+          ]
+        },
+        {
+          "char": "則",
+          "definition": "計算文字分項段落的單位",
+          "examples": [
+            "一則消息",
+            "三則寓言",
+            "試題二則",
+            "新聞五則"
+          ]
+        },
+        {
+          "char": "則",
+          "definition": "規矩",
+          "examples": [
+            "準則",
+            "準繩"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "繩",
+      "senses": [
+        {
+          "char": "繩",
+          "definition": "兩股以上的麻",
+          "examples": [
+            "麻繩",
+            "草繩",
+            "尼龍繩"
+          ]
+        },
+        {
+          "char": "繩",
+          "definition": "約束",
+          "examples": [
+            "繩之以法"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "依",
+      "senses": [
+        {
+          "char": "依",
+          "definition": "倚靠",
+          "examples": [
+            "相依為命",
+            "脣齒相依"
+          ]
+        },
+        {
+          "char": "依",
+          "definition": "按照",
+          "examples": [
+            "依次",
+            "依樣畫葫蘆"
+          ]
+        },
+        {
+          "char": "依",
+          "definition": "聽從",
+          "examples": [
+            "百依百順"
+          ]
+        },
+        {
+          "char": "依",
+          "definition": "靠著",
+          "examples": [
+            "依山傍水"
+          ]
+        },
+        {
+          "char": "依",
+          "definition": "情況沒改變",
+          "examples": [
+            "依然故我"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "捨",
+      "senses": [
+        {
+          "char": "捨",
+          "definition": "放下",
+          "examples": [
+            "割捨",
+            "捨棄",
+            "捨近求遠",
+            "依依不捨"
+          ]
+        },
+        {
+          "char": "捨",
+          "definition": "布施",
+          "examples": [
+            "施捨",
+            "捨財",
+            "捨藥"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "束",
+      "senses": [
+        {
+          "char": "束",
+          "definition": "限制",
+          "examples": [
+            "無拘無束",
+            "管束",
+            "約束",
+            "拘束"
+          ]
+        },
+        {
+          "char": "束",
+          "definition": "捆縛",
+          "examples": [
+            "以帶束腰",
+            "束緊"
+          ]
+        },
+        {
+          "char": "束",
+          "definition": "整理",
+          "examples": [
+            "束裝"
+          ]
+        },
+        {
+          "char": "束",
+          "definition": "計算成束物品的單位",
+          "examples": [
+            "一束鮮花"
+          ]
+        },
+        {
+          "char": "束",
+          "definition": "聚集成一束的東西",
+          "examples": [
+            "花束",
+            "光束"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "幸",
+      "senses": [
+        {
+          "char": "幸",
+          "definition": "福分",
+          "examples": [
+            "榮幸",
+            "三生有幸"
+          ]
+        },
+        {
+          "char": "幸",
+          "definition": "意外獲得的",
+          "examples": [
+            "萬幸"
+          ]
+        },
+        {
+          "char": "幸",
+          "definition": "高興",
+          "examples": [
+            "慶幸",
+            "欣幸",
+            "幸災樂禍"
+          ]
+        }
+      ]
+    }
+  ],
   "polyphones": [],
   "lookalikes": [
     {
@@ -764,7 +2372,47 @@
       "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
     }
   ],
-  "listening": [],
+  "listening": [
+    {
+      "id": "listening:02:01",
+      "stem": "作者喜歡放學後的時光嗎？從課文中哪些地方可以知道？",
+      "question": "作者喜歡放學後的時光嗎？從課文中哪些地方可以知道？",
+      "options": [
+        "作者喜歡放學後的時光",
+        "國語日報有許多版面，內容多元，有新聞、科普知識、學生作文、童話故事、校園活動報導等，可以滋養作者成長，豐富心靈",
+        "一起想出好方法：姐姐看左邊，作者就看右邊。姐姐看正面，作者就看反面，一起享受讀報紙的樂趣"
+      ],
+      "answer": "作者喜歡放學後的時光",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:02:02",
+      "stem": "為什麼好朋友們常常不約而同到作者家「寫功課」？為什麼「寫功課」三個字要用引號？",
+      "question": "為什麼好朋友們常常不約而同到作者家「寫功課」？為什麼「寫功課」三個字要用引號？",
+      "options": [
+        "國語日報有許多版面，內容多元，有新聞、科普知識、學生作文、童話故事、校園活動報導等，可以滋養作者成長，豐富心靈",
+        "一起想出好方法：姐姐看左邊，作者就看右邊。姐姐看正面，作者就看反面，一起享受讀報紙的樂趣",
+        "他們不是真的到作者家寫功課，而是假借寫功課之名，實際上卻是要吃美味的點心，經常把美食一掃而空"
+      ],
+      "answer": "他們不是真的到作者家寫功課，而是假借寫功課之名，實際上卻是要吃美味的點心，經常把美食一掃而空",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:02:03",
+      "stem": "為什麼作者會說「回到家裡，常有美味的點心，對著我們招招手」？",
+      "question": "為什麼作者會說「回到家裡，常有美味的點心，對著我們招招手」？",
+      "options": [
+        "一起想出好方法：姐姐看左邊，作者就看右邊。姐姐看正面，作者就看反面，一起享受讀報紙的樂趣",
+        "美味的點心有香氣撲鼻的奶油餅乾，有層次分明的千層糕，有軟綿可口的紅豆湯，這些美食用各種感官感受吸引作者，像對作者招招手",
+        "國語日報有許多版面，內容多元，有新聞、科普知識、學生作文、童話故事、校園活動報導等，可以滋養作者成長，豐富心靈"
+      ],
+      "answer": "美味的點心有香氣撲鼻的奶油餅乾，有層次分明的千層糕，有軟綿可口的紅豆湯，這些美食用各種感官感受吸引作者，像對作者招招手",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    }
+  ],
   "review_words": {
     "by_lesson": {
       "1": [
@@ -803,7 +2451,22 @@
       ]
     }
   },
-  "extensions": [],
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag4k-02",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E6%8B%9B%E6%B9%AF%E6%8B%8B%E7%B3%A7%E5%A7%90%E7%88%AD%E8%AD%A6%E5%81%B7%E5%89%87%E7%B9%A9%E4%BE%9D%E6%8D%A8%E6%9D%9F%E6%9A%AB%E5%B9%B8",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・康軒・4年級・第2課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課15個生字"
+    }
+  ],
   "quiz": [
     {
       "id": "q01",
@@ -969,9 +2632,8 @@
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
-      "activity": "sentence-practice",
-      "note": "句型來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "sentence-practice"
     },
     "challenge": {
       "label": "動手挑戰",
@@ -986,21 +2648,19 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
-      "activity": "idiom-builder",
-      "note": "成語資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "idiom-builder"
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "一字多義資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
       "status": "missing",
       "activity": "polyphones",
-      "note": "一字多音資料尚未完成來源核對。"
+      "note": "06 文件本課未達兩個可核對讀音。"
     },
     "lookalikes": {
       "label": "形似字",
@@ -1014,15 +2674,14 @@
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
-      "activity": "listening-quiz",
-      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+      "status": "available",
+      "activity": "listening-quiz"
     },
     "rhetoric": {
       "label": "修辭小偵探",
       "status": "missing",
       "activity": "rhetoric",
-      "note": "修辭資料尚未完成來源核對。"
+      "note": "官方修辭分析不足 3 題。"
     },
     "review": {
       "label": "舊字新詞",

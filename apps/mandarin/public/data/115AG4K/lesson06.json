@@ -49,6 +49,36 @@
       "kind": "official",
       "locator": "14 課文大意、段落大意",
       "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    },
+    {
+      "kind": "official",
+      "locator": "04 生字延伸成語／第6課",
+      "sha256": "9776268150431107A35FA309327947662745CBCD68CE52C17427F09A449E2350"
+    },
+    {
+      "kind": "official",
+      "locator": "07 語句練習／第6課",
+      "sha256": "BD7B4BBEAAEDDDACC1128B1AF9B7469AAD5B60CEC1244518B76F62872CB6A5E9"
+    },
+    {
+      "kind": "official",
+      "locator": "09 生字解釋／第6課",
+      "sha256": "237FB70C678FFF9EA7A0AB645954F7A54A2829C7006380A7CD4DC6FE4A03F663"
+    },
+    {
+      "kind": "official",
+      "locator": "06 字音字形／第6課",
+      "sha256": "BCEB2E7CF05D5919ACC53AF2D454698D3BC94A02C2C944AC603D4A2B1E368BAB"
+    },
+    {
+      "kind": "official",
+      "locator": "15 閱讀理解／第6課",
+      "sha256": "6103E7B8CF142DF8CBE57CDE9CBDB6175C38364B3D4E3265402B97F5F13280FF"
+    },
+    {
+      "kind": "official",
+      "locator": "10 修辭分析／第6課",
+      "sha256": "35962C47D83A67C3158CD8DD9E71B57AFFEC45A3FB7D9494A459EE12E6B597FB"
     }
   ],
   "characters": [
@@ -61,9 +91,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "江秀真"
+        "優秀",
+        "新秀",
+        "秀出"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A7%80",
@@ -83,7 +115,7 @@
         "俗稱",
         "名稱"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A8%B1",
@@ -99,10 +131,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "開朗",
-        "珠穆朗瑪峰"
+        "伊朗",
+        "明朗",
+        "晴朗"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9C%97",
@@ -122,7 +155,7 @@
         "攀登",
         "榮登"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%99%BB",
@@ -138,9 +171,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
+        "肅穆",
+        "亞穆納河",
         "珠穆朗瑪峰"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A9%86",
@@ -156,9 +191,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "珠穆朗瑪峰"
+        "瑪瑙",
+        "珠穆朗瑪峰",
+        "名瑪瑙"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%91%AA",
@@ -174,9 +211,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "珠穆朗瑪峰"
+        "主峰",
+        "尖峰",
+        "山峰"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B3%B0",
@@ -192,9 +231,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "母親"
+        "伯母",
+        "保母",
+        "天母"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%AF%8D",
@@ -210,9 +251,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "冷酷"
+        "冷酷",
+        "殘酷",
+        "酷似"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%85%B7",
@@ -228,9 +271,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "磨練"
+        "打磨",
+        "折磨",
+        "消磨"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A3%A8",
@@ -246,9 +291,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "攀登"
+        "攀上",
+        "攀升",
+        "攀岩"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%94%80",
@@ -263,8 +310,12 @@
       "radical": "⽓",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "有氧",
+        "氧化",
+        "氧氣"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B0%A7",
@@ -280,9 +331,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "訓練"
+        "受訓",
+        "培訓",
+        "教訓"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%A8%93",
@@ -298,9 +351,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "谷底"
+        "山谷",
+        "峽谷",
+        "曼谷"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B0%B7",
@@ -315,8 +370,12 @@
       "radical": "⾳",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "回響",
+        "巨響",
+        "影響"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%9F%BF",
@@ -496,10 +555,201 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
-  "rhetoric": [],
+  "idioms": [
+    {
+      "id": "idiom:06:01",
+      "idiom": "秀外慧中",
+      "definition": "形容一個人容貌秀美，內心聰慧。",
+      "related_char": "秀",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:06:02",
+      "idiom": "額手稱慶",
+      "definition": "表示慶賀、高興。",
+      "related_char": "稱",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:06:03",
+      "idiom": "豁然開朗",
+      "definition": "眼前頓時開闊明亮起來。亦用於形容突然領悟到某個道理。",
+      "related_char": "朗",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:06:04",
+      "idiom": "虛懷若谷",
+      "definition": "心胸寬廣如山谷能容納萬物。形容為人謙虛，能接納他人的意見。",
+      "related_char": "谷",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:06:05",
+      "idiom": "不同凡響",
+      "definition": "比喻特出、不平凡的人或事物。",
+      "related_char": "響",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:06:01",
+      "idiom_id": "idiom:06:01",
+      "rewritten": "她秀外慧中，是眾人追求的對象。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:06:02",
+      "idiom_id": "idiom:06:02",
+      "rewritten": "為害社會已久的罪犯落網，民眾無不額手稱慶。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:06:03",
+      "idiom_id": "idiom:06:03",
+      "rewritten": "火車穿越山洞後，眼前豁然開朗，真是柳暗花明又一村哪！▼登、峰登峰造極：本指登上山峰，到達絕頂。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:06:04",
+      "idiom_id": "idiom:06:04",
+      "rewritten": "自古以來，真正的成功者都有著虛懷若谷的美德，不會盛氣凌人。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:06:05",
+      "idiom_id": "idiom:06:05",
+      "rewritten": "這位大師一出手，果然不同凡響。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence:06:01",
+      "category": "短語練習",
+      "head": "踩著沉重的腳步",
+      "structure": "（動詞）（形容詞）的（名詞）",
+      "description": "強調某物進行某個動作的短語。",
+      "guide": "請將語詞重新排列，組成通順的短語。",
+      "examples": [
+        "拿著新鮮的蔬菜",
+        "畫著美麗的景色",
+        "哼著輕快的節奏"
+      ],
+      "example_parts": [
+        [
+          "拿著",
+          "新鮮",
+          "的",
+          "蔬菜"
+        ],
+        [
+          "畫著",
+          "美麗",
+          "的",
+          "景色"
+        ],
+        [
+          "哼著",
+          "輕快",
+          "的",
+          "節奏"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:06:02",
+      "category": "造句練習",
+      "head": "千變萬化",
+      "structure": "生活情境句",
+      "description": "形容變化無窮；「千」和「萬」用來加強程度。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "天上的雲彩有時像綿羊，有時像飛機，真是千變萬化！",
+        "萬花筒一轉，就會出現千變萬化的圖案。",
+        "阿里山日出的景象千變萬化，讓人目不暇給。"
+      ],
+      "example_parts": [
+        [
+          "天上的雲彩",
+          "有時像綿羊，",
+          "有時像飛機，",
+          "真是千變萬化！"
+        ],
+        [
+          "萬花筒一轉，",
+          "就會出現",
+          "千變萬化的",
+          "圖案。"
+        ],
+        [
+          "阿里山",
+          "日出的景象",
+          "千變萬化，",
+          "讓人",
+          "目不暇給。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:06:03",
+      "category": "句型練習",
+      "head": "是……也是……",
+      "structure": "（主詞）是（情況一），也是（情況二）。",
+      "description": "並列複句，同時描述兩件相關的事情或情況。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "妹妹是班上的開心果，也是全家的寶貝。",
+        "這項研究是醫學界的創舉，也是病患的福祉。"
+      ],
+      "example_parts": [
+        [
+          "妹妹是班上的",
+          "開心果，",
+          "也是全家的",
+          "寶貝。"
+        ],
+        [
+          "這項研究",
+          "是醫學界的",
+          "創舉，",
+          "也是",
+          "病患的福祉。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    }
+  ],
+  "rhetoric": [
+    {
+      "id": "rhetoric:06:01",
+      "figure": "譬喻",
+      "note": "兩種不同的事物，只要有相同的地方，就可以拿來互相比方，叫做「譬喻」。用「譬喻」的方式說話或寫作，可以把事物說得更清楚，將情感表達得更生動，使聽的人或讀的人更容易了解和更加深印象。",
+      "example": "沉靜的高山就像母親一樣，時而溫暖的擁抱著她，時而冷酷的磨練著她。",
+      "child_note": "譬喻：兩種不同的事物，只要有相同的地方，就可以拿來互相比方，叫做「譬喻」。用「譬喻」的方式說話或寫作，可以把事物說得更清楚，將情感表達得更生動，使聽的人或讀的人更容易了解和更加深印象。",
+      "status": "approved",
+      "source": "康軒四上官方教材（10 修辭分析）"
+    }
+  ],
   "paragraph_summary": [
     {
       "id": "paragraph:115AG4K06:01",
@@ -614,9 +864,993 @@
       "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
     }
   ],
-  "polysemy": [],
-  "polysemy_senses": [],
-  "polyphones": [],
+  "polysemy": [
+    {
+      "id": "polysemy:06:01",
+      "char": "秀",
+      "sentence": "語詞「後起之秀」中的「秀」，表示什麼意思？",
+      "definition": "才智傑出的人",
+      "options": [
+        "才智傑出的人",
+        "演出",
+        "清麗",
+        "優異"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:02",
+      "char": "秀",
+      "sentence": "語詞「作秀」中的「秀」，表示什麼意思？",
+      "definition": "演出",
+      "options": [
+        "演出",
+        "才智傑出的人",
+        "清麗",
+        "優異"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:03",
+      "char": "秀",
+      "sentence": "語詞「娟秀」中的「秀」，表示什麼意思？",
+      "definition": "清麗",
+      "options": [
+        "清麗",
+        "才智傑出的人",
+        "演出",
+        "優異"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:04",
+      "char": "秀",
+      "sentence": "語詞「優秀」中的「秀」，表示什麼意思？",
+      "definition": "優異",
+      "options": [
+        "優異",
+        "才智傑出的人",
+        "演出",
+        "清麗"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:05",
+      "char": "秀",
+      "sentence": "語詞「秀一下」中的「秀」，表示什麼意思？",
+      "definition": "表現",
+      "options": [
+        "表現",
+        "才智傑出的人",
+        "演出",
+        "清麗"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:06",
+      "char": "稱",
+      "sentence": "語詞「稱呼」中的「稱」，表示什麼意思？",
+      "definition": "叫",
+      "options": [
+        "叫",
+        "述說",
+        "讚頌",
+        "稱"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:07",
+      "char": "稱",
+      "sentence": "語詞「據稱」中的「稱」，表示什麼意思？",
+      "definition": "述說",
+      "options": [
+        "述說",
+        "叫",
+        "讚頌",
+        "稱"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:08",
+      "char": "稱",
+      "sentence": "語詞「稱揚」中的「稱」，表示什麼意思？",
+      "definition": "讚頌",
+      "options": [
+        "讚頌",
+        "叫",
+        "述說",
+        "稱"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:09",
+      "char": "稱",
+      "sentence": "語詞「別稱」中的「稱」，表示什麼意思？",
+      "definition": "稱",
+      "options": [
+        "稱",
+        "叫",
+        "述說",
+        "讚頌"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:10",
+      "char": "朗",
+      "sentence": "語詞「明朗」中的「朗」，表示什麼意思？",
+      "definition": "明亮",
+      "options": [
+        "明亮",
+        "響亮"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:11",
+      "char": "朗",
+      "sentence": "語詞「朗誦」中的「朗」，表示什麼意思？",
+      "definition": "響亮",
+      "options": [
+        "響亮",
+        "明亮"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:12",
+      "char": "登",
+      "sentence": "語詞「登山」中的「登」，表示什麼意思？",
+      "definition": "上",
+      "options": [
+        "上",
+        "記錄"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:13",
+      "char": "登",
+      "sentence": "語詞「登記」中的「登」，表示什麼意思？",
+      "definition": "記錄",
+      "options": [
+        "記錄",
+        "上"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:14",
+      "char": "峰",
+      "sentence": "語詞「頂峰」中的「峰」，表示什麼意思？",
+      "definition": "高而尖的山頭",
+      "options": [
+        "高而尖的山頭",
+        "形似山頭高起的部分"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:15",
+      "char": "峰",
+      "sentence": "語詞「駝峰」中的「峰」，表示什麼意思？",
+      "definition": "形似山頭高起的部分",
+      "options": [
+        "形似山頭高起的部分",
+        "高而尖的山頭"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:16",
+      "char": "母",
+      "sentence": "語詞「對媽媽的稱呼」中的「母」，表示什麼意思？",
+      "definition": "稱謂",
+      "options": [
+        "稱謂",
+        "能有所滋衍的事物",
+        "根源",
+        "雌性的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:17",
+      "char": "母",
+      "sentence": "語詞「字母」中的「母」，表示什麼意思？",
+      "definition": "能有所滋衍的事物",
+      "options": [
+        "能有所滋衍的事物",
+        "稱謂",
+        "根源",
+        "雌性的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:18",
+      "char": "母",
+      "sentence": "語詞「失敗為成功之母」中的「母」，表示什麼意思？",
+      "definition": "根源",
+      "options": [
+        "根源",
+        "稱謂",
+        "能有所滋衍的事物",
+        "雌性的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:19",
+      "char": "母",
+      "sentence": "語詞「母牛」中的「母」，表示什麼意思？",
+      "definition": "雌性的",
+      "options": [
+        "雌性的",
+        "稱謂",
+        "能有所滋衍的事物",
+        "根源"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:20",
+      "char": "母",
+      "sentence": "語詞「母校」中的「母」，表示什麼意思？",
+      "definition": "原本的",
+      "options": [
+        "原本的",
+        "稱謂",
+        "能有所滋衍的事物",
+        "根源"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:21",
+      "char": "酷",
+      "sentence": "語詞「酷刑」中的「酷」，表示什麼意思？",
+      "definition": "殘忍",
+      "options": [
+        "殘忍",
+        "程度深的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:22",
+      "char": "酷",
+      "sentence": "語詞「酷愛」中的「酷」，表示什麼意思？",
+      "definition": "程度深的",
+      "options": [
+        "程度深的",
+        "殘忍"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:23",
+      "char": "磨",
+      "sentence": "語詞「好事多磨」中的「磨」，表示什麼意思？",
+      "definition": "艱難",
+      "options": [
+        "艱難",
+        "摩擦而使物品光滑或銳利",
+        "將物研細",
+        "消滅"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:24",
+      "char": "磨",
+      "sentence": "語詞「磨光」中的「磨」，表示什麼意思？",
+      "definition": "摩擦而使物品光滑或銳利",
+      "options": [
+        "摩擦而使物品光滑或銳利",
+        "艱難",
+        "將物研細",
+        "消滅"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:25",
+      "char": "磨",
+      "sentence": "語詞「磨細」中的「磨」，表示什麼意思？",
+      "definition": "將物研細",
+      "options": [
+        "將物研細",
+        "艱難",
+        "摩擦而使物品光滑或銳利",
+        "消滅"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:26",
+      "char": "磨",
+      "sentence": "語詞「磨滅」中的「磨」，表示什麼意思？",
+      "definition": "消滅",
+      "options": [
+        "消滅",
+        "艱難",
+        "摩擦而使物品光滑或銳利",
+        "將物研細"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:27",
+      "char": "攀",
+      "sentence": "語詞「攀岩」中的「攀」，表示什麼意思？",
+      "definition": "抓住物體往上爬",
+      "options": [
+        "抓住物體往上爬",
+        "依附",
+        "牽連",
+        "摘"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:28",
+      "char": "攀",
+      "sentence": "語詞「高攀」中的「攀」，表示什麼意思？",
+      "definition": "依附",
+      "options": [
+        "依附",
+        "抓住物體往上爬",
+        "牽連",
+        "摘"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:29",
+      "char": "攀",
+      "sentence": "語詞「誣攀」中的「攀」，表示什麼意思？",
+      "definition": "牽連",
+      "options": [
+        "牽連",
+        "抓住物體往上爬",
+        "依附",
+        "摘"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:30",
+      "char": "攀",
+      "sentence": "語詞「攀折」中的「攀」，表示什麼意思？",
+      "definition": "摘",
+      "options": [
+        "摘",
+        "抓住物體往上爬",
+        "依附",
+        "牽連"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:31",
+      "char": "訓",
+      "sentence": "語詞「訓練」中的「訓」，表示什麼意思？",
+      "definition": "教練",
+      "options": [
+        "教練",
+        "說教",
+        "教訓"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:32",
+      "char": "訓",
+      "sentence": "語詞「教訓」中的「訓」，表示什麼意思？",
+      "definition": "說教",
+      "options": [
+        "說教",
+        "教練",
+        "教訓"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:33",
+      "char": "訓",
+      "sentence": "語詞「庭訓」中的「訓」，表示什麼意思？",
+      "definition": "教訓",
+      "options": [
+        "教訓",
+        "教練",
+        "說教"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:34",
+      "char": "谷",
+      "sentence": "語詞「山谷」中的「谷」，表示什麼意思？",
+      "definition": "兩山間的水道或低地",
+      "options": [
+        "兩山間的水道或低地",
+        "窮困"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:35",
+      "char": "谷",
+      "sentence": "語詞「進退維谷」中的「谷」，表示什麼意思？",
+      "definition": "窮困",
+      "options": [
+        "窮困",
+        "兩山間的水道或低地"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:36",
+      "char": "響",
+      "sentence": "語詞「聲響」中的「響」，表示什麼意思？",
+      "definition": "聲音",
+      "options": [
+        "聲音",
+        "發出聲音",
+        "能發出聲音的",
+        "聲音宏亮"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:37",
+      "char": "響",
+      "sentence": "語詞「不聲不響」中的「響」，表示什麼意思？",
+      "definition": "發出聲音",
+      "options": [
+        "發出聲音",
+        "聲音",
+        "能發出聲音的",
+        "聲音宏亮"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:38",
+      "char": "響",
+      "sentence": "語詞「響板」中的「響」，表示什麼意思？",
+      "definition": "能發出聲音的",
+      "options": [
+        "能發出聲音的",
+        "聲音",
+        "發出聲音",
+        "聲音宏亮"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:39",
+      "char": "響",
+      "sentence": "語詞「響亮」中的「響」，表示什麼意思？",
+      "definition": "聲音宏亮",
+      "options": [
+        "聲音宏亮",
+        "聲音",
+        "發出聲音",
+        "能發出聲音的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:06:40",
+      "char": "響",
+      "sentence": "語詞「響噹噹」中的「響」，表示什麼意思？",
+      "definition": "氣大的",
+      "options": [
+        "氣大的",
+        "聲音",
+        "發出聲音",
+        "能發出聲音的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    }
+  ],
+  "polysemy_senses": [
+    {
+      "char": "秀",
+      "senses": [
+        {
+          "char": "秀",
+          "definition": "才智傑出的人",
+          "examples": [
+            "後起之秀"
+          ]
+        },
+        {
+          "char": "秀",
+          "definition": "演出",
+          "examples": [
+            "作秀",
+            "一場秀"
+          ]
+        },
+        {
+          "char": "秀",
+          "definition": "清麗",
+          "examples": [
+            "娟秀",
+            "清秀",
+            "山明水秀"
+          ]
+        },
+        {
+          "char": "秀",
+          "definition": "優異",
+          "examples": [
+            "優秀",
+            "一枝獨秀"
+          ]
+        },
+        {
+          "char": "秀",
+          "definition": "表現",
+          "examples": [
+            "秀一下"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "稱",
+      "senses": [
+        {
+          "char": "稱",
+          "definition": "叫",
+          "examples": [
+            "稱呼",
+            "稱兄道弟"
+          ]
+        },
+        {
+          "char": "稱",
+          "definition": "述說",
+          "examples": [
+            "據稱",
+            "稱慶",
+            "稱快"
+          ]
+        },
+        {
+          "char": "稱",
+          "definition": "讚頌",
+          "examples": [
+            "稱揚",
+            "稱美"
+          ]
+        },
+        {
+          "char": "稱",
+          "definition": "稱",
+          "examples": [
+            "別稱",
+            "通稱"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "朗",
+      "senses": [
+        {
+          "char": "朗",
+          "definition": "明亮",
+          "examples": [
+            "明朗",
+            "晴朗"
+          ]
+        },
+        {
+          "char": "朗",
+          "definition": "響亮",
+          "examples": [
+            "朗誦",
+            "朗讀"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "登",
+      "senses": [
+        {
+          "char": "登",
+          "definition": "上",
+          "examples": [
+            "登山",
+            "登峰造極",
+            "捷足先登"
+          ]
+        },
+        {
+          "char": "登",
+          "definition": "記錄",
+          "examples": [
+            "登記",
+            "登報",
+            "刊登"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "峰",
+      "senses": [
+        {
+          "char": "峰",
+          "definition": "高而尖的山頭",
+          "examples": [
+            "頂峰",
+            "高峰",
+            "巔峰"
+          ]
+        },
+        {
+          "char": "峰",
+          "definition": "形似山頭高起的部分",
+          "examples": [
+            "駝峰"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "母",
+      "senses": [
+        {
+          "char": "母",
+          "definition": "稱謂",
+          "examples": [
+            "對媽媽的稱呼",
+            "母愛",
+            "父母",
+            "對女性長輩的尊稱",
+            "姑母"
+          ]
+        },
+        {
+          "char": "母",
+          "definition": "能有所滋衍的事物",
+          "examples": [
+            "字母"
+          ]
+        },
+        {
+          "char": "母",
+          "definition": "根源",
+          "examples": [
+            "失敗為成功之母"
+          ]
+        },
+        {
+          "char": "母",
+          "definition": "雌性的",
+          "examples": [
+            "母牛",
+            "母雞"
+          ]
+        },
+        {
+          "char": "母",
+          "definition": "原本的",
+          "examples": [
+            "母校",
+            "母語"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "酷",
+      "senses": [
+        {
+          "char": "酷",
+          "definition": "殘忍",
+          "examples": [
+            "酷刑",
+            "殘酷"
+          ]
+        },
+        {
+          "char": "酷",
+          "definition": "程度深的",
+          "examples": [
+            "酷愛",
+            "酷寒",
+            "酷似"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "磨",
+      "senses": [
+        {
+          "char": "磨",
+          "definition": "艱難",
+          "examples": [
+            "好事多磨",
+            "磨難"
+          ]
+        },
+        {
+          "char": "磨",
+          "definition": "摩擦而使物品光滑或銳利",
+          "examples": [
+            "磨光",
+            "磨刀"
+          ]
+        },
+        {
+          "char": "磨",
+          "definition": "將物研細",
+          "examples": [
+            "磨細",
+            "磨粉",
+            "磨墨"
+          ]
+        },
+        {
+          "char": "磨",
+          "definition": "消滅",
+          "examples": [
+            "磨滅"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "攀",
+      "senses": [
+        {
+          "char": "攀",
+          "definition": "抓住物體往上爬",
+          "examples": [
+            "攀岩",
+            "攀爬"
+          ]
+        },
+        {
+          "char": "攀",
+          "definition": "依附",
+          "examples": [
+            "高攀"
+          ]
+        },
+        {
+          "char": "攀",
+          "definition": "牽連",
+          "examples": [
+            "誣攀",
+            "攀扯"
+          ]
+        },
+        {
+          "char": "攀",
+          "definition": "摘",
+          "examples": [
+            "攀折"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "訓",
+      "senses": [
+        {
+          "char": "訓",
+          "definition": "教練",
+          "examples": [
+            "訓練"
+          ]
+        },
+        {
+          "char": "訓",
+          "definition": "說教",
+          "examples": [
+            "教訓",
+            "訓誡"
+          ]
+        },
+        {
+          "char": "訓",
+          "definition": "教訓",
+          "examples": [
+            "庭訓"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "谷",
+      "senses": [
+        {
+          "char": "谷",
+          "definition": "兩山間的水道或低地",
+          "examples": [
+            "山谷",
+            "河谷"
+          ]
+        },
+        {
+          "char": "谷",
+          "definition": "窮困",
+          "examples": [
+            "進退維谷"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "響",
+      "senses": [
+        {
+          "char": "響",
+          "definition": "聲音",
+          "examples": [
+            "聲響",
+            "不同凡響"
+          ]
+        },
+        {
+          "char": "響",
+          "definition": "發出聲音",
+          "examples": [
+            "不聲不響"
+          ]
+        },
+        {
+          "char": "響",
+          "definition": "能發出聲音的",
+          "examples": [
+            "響板"
+          ]
+        },
+        {
+          "char": "響",
+          "definition": "聲音宏亮",
+          "examples": [
+            "響亮"
+          ]
+        },
+        {
+          "char": "響",
+          "definition": "氣大的",
+          "examples": [
+            "響噹噹"
+          ]
+        }
+      ]
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:06:稱",
+      "char": "稱",
+      "readings": [
+        {
+          "zhuyin": "ㄔㄥ",
+          "dabutie_zhuyin": "ㄔㄥ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "稱呼",
+                "名稱"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄔㄣˋ",
+          "dabutie_zhuyin": "ㄔㄣˋ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "稱職",
+                "稱意"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "康軒四上官方教材（06 字音字形；多音例詞經來源文字核對）"
+    },
+    {
+      "id": "polyphone:06:磨",
+      "char": "磨",
+      "readings": [
+        {
+          "zhuyin": "ㄇㄛˊ",
+          "dabutie_zhuyin": "ㄇㄛˊ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "折磨",
+                "磨練",
+                "研磨"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄇㄛˋ",
+          "dabutie_zhuyin": "ㄇㄛˋ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "磨坊",
+                "石磨"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "康軒四上官方教材（06 字音字形；多音例詞經來源文字核對）"
+    }
+  ],
   "lookalikes": [
     {
       "id": "lookalike:115AG4K06:01",
@@ -755,7 +1989,47 @@
       "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
     }
   ],
-  "listening": [],
+  "listening": [
+    {
+      "id": "listening:06:01",
+      "stem": "課文的第一段提到江秀真被稱為「最接近天空的女子」，作者為什麼會這麼寫呢？",
+      "question": "課文的第一段提到江秀真被稱為「最接近天空的女子」，作者為什麼會這麼寫呢？",
+      "options": [
+        "因為她是臺灣第一位登上珠穆朗瑪峰的女子，更是臺灣首位成功登上世界七頂峰的女登山家",
+        "事前必須提升自己的體力與耐力，江秀真每天跑步十公里，每星期進行三天的低氧訓練。因為登上山頂時，空氣稀薄，氣溫低，必須讓身體能適應良好",
+        "種樹的人指的是布非耶"
+      ],
+      "answer": "因為她是臺灣第一位登上珠穆朗瑪峰的女子，更是臺灣首位成功登上世界七頂峰的女登山家",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:06:02",
+      "stem": "江秀真是怎樣愛上了山？她對山有怎樣的感覺？",
+      "question": "江秀真是怎樣愛上了山？她對山有怎樣的感覺？",
+      "options": [
+        "事前必須提升自己的體力與耐力，江秀真每天跑步十公里，每星期進行三天的低氧訓練。因為登上山頂時，空氣稀薄，氣溫低，必須讓身體能適應良好",
+        "種樹的人指的是布非耶",
+        "江秀真從高中開始就喜歡登山，當她站上山頂，瞭望著千變萬化的美景，就不知不覺的愛上了山。沉靜的高山就像母親一樣，時而溫暖的擁抱著她，時而冷酷的磨練著她"
+      ],
+      "answer": "江秀真從高中開始就喜歡登山，當她站上山頂，瞭望著千變萬化的美景，就不知不覺的愛上了山。沉靜的高山就像母親一樣，時而溫暖的擁抱著她，時而冷酷的磨練著她",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:06:03",
+      "stem": "課文提到，經過什麼事情後，江秀真想要攀登世界頂峰？她為什麼會有這種想法？",
+      "question": "課文提到，經過什麼事情後，江秀真想要攀登世界頂峰？她為什麼會有這種想法？",
+      "options": [
+        "種樹的人指的是布非耶",
+        "在攀登完臺灣八十多座高山後，江秀真決定迎向世界最高峰──珠穆朗瑪峰。因為臺灣的高山有限，而且當她登上許多高山後，也想透過攀登世界最高峰，考驗自己的耐力與毅力，同……",
+        "事前必須提升自己的體力與耐力，江秀真每天跑步十公里，每星期進行三天的低氧訓練。因為登上山頂時，空氣稀薄，氣溫低，必須讓身體能適應良好"
+      ],
+      "answer": "在攀登完臺灣八十多座高山後，江秀真決定迎向世界最高峰──珠穆朗瑪峰。因為臺灣的高山有限，而且當她登上許多高山後，也想透過攀登世界最高峰，考驗自己的耐力與毅力，同……",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    }
+  ],
   "review_words": {
     "by_lesson": {
       "1": [
@@ -862,7 +2136,22 @@
       ]
     }
   },
-  "extensions": [],
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag4k-06",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E7%A7%80%E7%A8%B1%E6%9C%97%E7%99%BB%E7%A9%86%E7%91%AA%E5%B3%B0%E6%AF%8D%E9%85%B7%E7%A3%A8%E6%94%80%E6%B0%A7%E8%A8%93%E8%B0%B7%E9%9F%BF",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・康軒・4年級・第6課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課15個生字"
+    }
+  ],
   "quiz": [
     {
       "id": "q01",
@@ -1028,9 +2317,8 @@
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
-      "activity": "sentence-practice",
-      "note": "句型來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "sentence-practice"
     },
     "challenge": {
       "label": "動手挑戰",
@@ -1045,21 +2333,18 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
-      "activity": "idiom-builder",
-      "note": "成語資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "idiom-builder"
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "一字多義資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
-      "status": "missing",
-      "activity": "polyphones",
-      "note": "一字多音資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "polyphones"
     },
     "lookalikes": {
       "label": "形似字",
@@ -1073,15 +2358,14 @@
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
-      "activity": "listening-quiz",
-      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+      "status": "available",
+      "activity": "listening-quiz"
     },
     "rhetoric": {
       "label": "修辭小偵探",
       "status": "missing",
       "activity": "rhetoric",
-      "note": "修辭資料尚未完成來源核對。"
+      "note": "官方修辭分析不足 3 題。"
     },
     "review": {
       "label": "舊字新詞",

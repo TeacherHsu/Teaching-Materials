@@ -49,6 +49,36 @@
       "kind": "official",
       "locator": "14 課文大意、段落大意",
       "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    },
+    {
+      "kind": "official",
+      "locator": "04 生字延伸成語／第5課",
+      "sha256": "9776268150431107A35FA309327947662745CBCD68CE52C17427F09A449E2350"
+    },
+    {
+      "kind": "official",
+      "locator": "07 語句練習／第5課",
+      "sha256": "BD7B4BBEAAEDDDACC1128B1AF9B7469AAD5B60CEC1244518B76F62872CB6A5E9"
+    },
+    {
+      "kind": "official",
+      "locator": "09 生字解釋／第5課",
+      "sha256": "237FB70C678FFF9EA7A0AB645954F7A54A2829C7006380A7CD4DC6FE4A03F663"
+    },
+    {
+      "kind": "official",
+      "locator": "06 字音字形／第5課",
+      "sha256": "BCEB2E7CF05D5919ACC53AF2D454698D3BC94A02C2C944AC603D4A2B1E368BAB"
+    },
+    {
+      "kind": "official",
+      "locator": "15 閱讀理解／第5課",
+      "sha256": "6103E7B8CF142DF8CBE57CDE9CBDB6175C38364B3D4E3265402B97F5F13280FF"
+    },
+    {
+      "kind": "official",
+      "locator": "10 修辭分析／第5課",
+      "sha256": "35962C47D83A67C3158CD8DD9E71B57AFFEC45A3FB7D9494A459EE12E6B597FB"
     }
   ],
   "characters": [
@@ -61,9 +91,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "海倫‧凱勒"
+        "凱旋",
+        "凱旋門",
+        "魯凱族語"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%87%B1",
@@ -79,9 +111,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "海倫‧凱勒"
+        "勒索",
+        "勾勒",
+        "勒令"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8B%92",
@@ -97,9 +131,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
+        "企業",
+        "作業",
         "學業"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%A5%AD",
@@ -115,9 +151,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "勵志"
+        "勉勵",
+        "勵志",
+        "激勵"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8B%B5",
@@ -137,7 +175,7 @@
         "寧可",
         "寧靜"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%AF%A7",
@@ -153,9 +191,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "視力"
+        "凝視",
+        "巡視",
+        "忽視"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%A6%96",
@@ -171,9 +211,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "注意"
+        "專注",
+        "投注",
+        "挹注"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B3%A8",
@@ -189,9 +231,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "單憑"
+        "任憑",
+        "憑空",
+        "憑著"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%86%91",
@@ -209,7 +253,7 @@
       "examples": [
         "蓓蕾"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）；原始來源不足三項，保留可核對詞例",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%93%93",
@@ -225,9 +269,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "蓓蕾"
+        "味蕾",
+        "芭蕾舞",
+        "芭蕾舞劇"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%95%BE",
@@ -243,9 +289,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "任何"
+        "任何",
+        "何不",
+        "何以"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BD%95",
@@ -261,9 +309,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "地毯"
+        "地毯",
+        "毛毯",
+        "毯子"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%AF%AF",
@@ -279,9 +329,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
+        "不適",
+        "合適",
         "舒適"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%81%A9",
@@ -301,7 +353,7 @@
         "繽紛",
         "七彩繽紛"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B9%BD",
@@ -321,7 +373,7 @@
         "使盡",
         "善盡"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%9B%A1",
@@ -549,10 +601,246 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
-  "rhetoric": [],
+  "idioms": [
+    {
+      "id": "idiom:05:01",
+      "idiom": "懸崖勒馬",
+      "definition": "臨到懸崖時，緊勒住馬，不繼續前進。比喻到了危險的邊緣而及時回頭。",
+      "related_char": "勒",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:05:02",
+      "idiom": "兢兢業業",
+      "definition": "形容戒慎恐懼，認真負責的樣子。",
+      "related_char": "業",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:05:03",
+      "idiom": "雞犬不寧",
+      "definition": "連雞與狗都不得安寧。比喻被嚴重的騷擾。",
+      "related_char": "寧",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:05:04",
+      "idiom": "一視同仁",
+      "definition": "指平等待人，不分親疏厚薄。",
+      "related_char": "視",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:05:05",
+      "idiom": "孤注一擲",
+      "definition": "比喻危急時，投入全部力量，作最後的冒險。",
+      "related_char": "注",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:05:01",
+      "idiom_id": "idiom:05:01",
+      "rewritten": "他一度吸毒成癮，幸而後來懸崖勒馬，努力戒除，才未造成終身的遺憾。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:05:02",
+      "idiom_id": "idiom:05:02",
+      "rewritten": "他一向認真負責，每天都兢兢業業的做好自己分內的工作。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:05:03",
+      "idiom_id": "idiom:05:03",
+      "rewritten": "這些競選宣傳車日夜播音，真是弄得大家雞犬不寧。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:05:04",
+      "idiom_id": "idiom:05:04",
+      "rewritten": "無論是誰，我都抱著一視同仁的態度真誠相待。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:05:05",
+      "idiom_id": "idiom:05:05",
+      "rewritten": "現今情勢，只好背水一戰，孤注一擲了。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence:05:01",
+      "category": "短語練習",
+      "head": "清涼的流水從掌心流過",
+      "structure": "（形容詞）的（名詞）從（名詞）（動詞）",
+      "description": "加上形容詞的某物從某處動作過。",
+      "guide": "請將語詞重新排列，組成通順的短語。",
+      "examples": [
+        "嘹亮的歌聲從教室傳出",
+        "閃亮的流星從天空劃過",
+        "有趣的靈感從腦海閃過"
+      ],
+      "example_parts": [
+        [
+          "嘹亮的",
+          "歌聲",
+          "從教室",
+          "傳出"
+        ],
+        [
+          "閃亮的",
+          "流星",
+          "從天空",
+          "劃過"
+        ],
+        [
+          "有趣的",
+          "靈感",
+          "從腦海",
+          "閃過"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:05:02",
+      "category": "短語練習",
+      "head": "陽光是如此溫暖",
+      "structure": "（名詞）是如此（形容詞）",
+      "description": "說明名詞的性質。",
+      "guide": "請將語詞重新排列，組成通順的短語。",
+      "examples": [
+        "甜點是如此美味",
+        "戰爭是如此殘酷",
+        "舞姿是如此曼妙"
+      ],
+      "example_parts": [
+        [
+          "甜點",
+          "是",
+          "如此",
+          "美味"
+        ],
+        [
+          "戰爭",
+          "是",
+          "如此",
+          "殘酷"
+        ],
+        [
+          "舞姿",
+          "是",
+          "如此",
+          "曼妙"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:05:03",
+      "category": "造句練習",
+      "head": "五彩繽紛",
+      "structure": "生活情境句",
+      "description": "形容色彩繁多，鮮豔絢麗。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "花園裡的花朵五彩繽紛，蝴蝶在花上飛舞。",
+        "夜晚的城市燈光五彩繽紛，令人目不暇給。"
+      ],
+      "example_parts": [
+        [
+          "花園裡的花朵",
+          "五彩繽紛，",
+          "蝴蝶",
+          "在花上飛舞。"
+        ],
+        [
+          "夜晚的",
+          "城市燈光",
+          "五彩繽紛，",
+          "令人",
+          "目不暇給。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:05:04",
+      "category": "句型練習",
+      "head": "如果……",
+      "structure": "如果（假設的情況），（產生的結果）。",
+      "description": "假設複句，前一個分句假設某種情況，後一個分句說明產生的結果。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "如果下起大雨，今天的活動只能擇期再辦！",
+        "如果我會飛，我想要自由自在的翱翔於天際。",
+        "如果時間能倒流，我會好好珍惜求學的時光。"
+      ],
+      "example_parts": [
+        [
+          "如果",
+          "下起大雨，",
+          "今天的活動",
+          "只能",
+          "擇期再辦！"
+        ],
+        [
+          "如果我會飛，",
+          "我想要",
+          "自由自在的",
+          "翱翔於天際。"
+        ],
+        [
+          "如果時間能",
+          "倒流，",
+          "我會好好珍惜",
+          "求學的時光。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    }
+  ],
+  "rhetoric": [
+    {
+      "id": "rhetoric:05:01",
+      "figure": "設問",
+      "note": "說話行文時，刻意設計問句，不直接陳述意見、想法，採自問自答或問而不答等形式來表達內容，目的在強調某個意思，引起對方注意或思考的修辭法。",
+      "example": "⑴在森林裡走了一個多小時，怎麼可能沒有發現值得注意的東西呢？⑵那些視力完好的人，對於眼前五彩繽紛、姿態萬千的美景，怎麼能視而不見呢？",
+      "child_note": "設問：說話行文時，刻意設計問句，不直接陳述意見、想法，採自問自答或問而不答等形式來表達內容，目的在強調某個意思，引起對方注意或思考的修辭法。",
+      "status": "approved",
+      "source": "康軒四上官方教材（10 修辭分析）"
+    },
+    {
+      "id": "rhetoric:05:02",
+      "figure": "感嘆",
+      "note": "寫文章時，常會藉由呼喊的聲音表達喜怒哀樂的感情變化，來強調內心的驚訝、生氣、難過、讚嘆等感覺的修辭法。",
+      "example": "這世界是多麼奇妙哇！",
+      "child_note": "感嘆：寫文章時，常會藉由呼喊的聲音表達喜怒哀樂的感情變化，來強調內心的驚訝、生氣、難過、讚嘆等感覺的修辭法。",
+      "status": "approved",
+      "source": "康軒四上官方教材（10 修辭分析）"
+    }
+  ],
   "paragraph_summary": [
     {
       "id": "paragraph:115AG4K05:01",
@@ -667,9 +955,871 @@
       "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
     }
   ],
-  "polysemy": [],
-  "polysemy_senses": [],
-  "polyphones": [],
+  "polysemy": [
+    {
+      "id": "polysemy:05:01",
+      "char": "勒",
+      "sentence": "語詞「勒馬長城」中的「勒」，表示什麼意思？",
+      "definition": "駕御",
+      "options": [
+        "駕御",
+        "使停止",
+        "強制"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:02",
+      "char": "勒",
+      "sentence": "語詞「懸崖勒馬」中的「勒」，表示什麼意思？",
+      "definition": "使停止",
+      "options": [
+        "使停止",
+        "駕御",
+        "強制"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:03",
+      "char": "勒",
+      "sentence": "語詞「勒令」中的「勒」，表示什麼意思？",
+      "definition": "強制",
+      "options": [
+        "強制",
+        "駕御",
+        "使停止"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:04",
+      "char": "業",
+      "sentence": "語詞「修業」中的「業」，表示什麼意思？",
+      "definition": "學習的內容或過程",
+      "options": [
+        "學習的內容或過程",
+        "社會上的各種工作職務",
+        "財產",
+        "功績"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:05",
+      "char": "業",
+      "sentence": "語詞「農業」中的「業」，表示什麼意思？",
+      "definition": "社會上的各種工作職務",
+      "options": [
+        "社會上的各種工作職務",
+        "學習的內容或過程",
+        "財產",
+        "功績"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:06",
+      "char": "業",
+      "sentence": "語詞「產業」中的「業」，表示什麼意思？",
+      "definition": "財產",
+      "options": [
+        "財產",
+        "學習的內容或過程",
+        "社會上的各種工作職務",
+        "功績"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:07",
+      "char": "業",
+      "sentence": "語詞「偉業」中的「業」，表示什麼意思？",
+      "definition": "功績",
+      "options": [
+        "功績",
+        "學習的內容或過程",
+        "社會上的各種工作職務",
+        "財產"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:08",
+      "char": "業",
+      "sentence": "語詞「業已」中的「業」，表示什麼意思？",
+      "definition": "已經",
+      "options": [
+        "已經",
+        "學習的內容或過程",
+        "社會上的各種工作職務",
+        "財產"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:09",
+      "char": "勵",
+      "sentence": "語詞「勵志」中的「勵」，表示什麼意思？",
+      "definition": "勸勉",
+      "options": [
+        "勸勉",
+        "奮發"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:10",
+      "char": "勵",
+      "sentence": "語詞「勵精圖治」中的「勵」，表示什麼意思？",
+      "definition": "奮發",
+      "options": [
+        "奮發",
+        "勸勉"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:11",
+      "char": "寧",
+      "sentence": "語詞「寧靜」中的「寧」，表示什麼意思？",
+      "definition": "安定",
+      "options": [
+        "安定",
+        "情願"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:12",
+      "char": "寧",
+      "sentence": "語詞「寧願」中的「寧」，表示什麼意思？",
+      "definition": "情願",
+      "options": [
+        "情願",
+        "安定"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:13",
+      "char": "視",
+      "sentence": "語詞「凝視」中的「視」，表示什麼意思？",
+      "definition": "看",
+      "options": [
+        "看",
+        "察看",
+        "看待",
+        "眼力"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:14",
+      "char": "視",
+      "sentence": "語詞「視察」中的「視」，表示什麼意思？",
+      "definition": "察看",
+      "options": [
+        "察看",
+        "看",
+        "看待",
+        "眼力"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:15",
+      "char": "視",
+      "sentence": "語詞「忽視」中的「視」，表示什麼意思？",
+      "definition": "看待",
+      "options": [
+        "看待",
+        "看",
+        "察看",
+        "眼力"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:16",
+      "char": "視",
+      "sentence": "語詞「視茫茫」中的「視」，表示什麼意思？",
+      "definition": "眼力",
+      "options": [
+        "眼力",
+        "看",
+        "察看",
+        "看待"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:17",
+      "char": "注",
+      "sentence": "語詞「專注」中的「注」，表示什麼意思？",
+      "definition": "心神凝聚集中",
+      "options": [
+        "心神凝聚集中",
+        "灌入",
+        "用文字解釋文義",
+        "賭博時所下的財物"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:18",
+      "char": "注",
+      "sentence": "語詞「注入」中的「注」，表示什麼意思？",
+      "definition": "灌入",
+      "options": [
+        "灌入",
+        "心神凝聚集中",
+        "用文字解釋文義",
+        "賭博時所下的財物"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:19",
+      "char": "注",
+      "sentence": "語詞「注釋」中的「注」，表示什麼意思？",
+      "definition": "用文字解釋文義",
+      "options": [
+        "用文字解釋文義",
+        "心神凝聚集中",
+        "灌入",
+        "賭博時所下的財物"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:20",
+      "char": "注",
+      "sentence": "語詞「賭注」中的「注」，表示什麼意思？",
+      "definition": "賭博時所下的財物",
+      "options": [
+        "賭博時所下的財物",
+        "心神凝聚集中",
+        "灌入",
+        "用文字解釋文義"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:21",
+      "char": "憑",
+      "sentence": "語詞「憑藉」中的「憑」，表示什麼意思？",
+      "definition": "依據",
+      "options": [
+        "依據",
+        "靠",
+        "任"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:22",
+      "char": "憑",
+      "sentence": "語詞「依憑」中的「憑」，表示什麼意思？",
+      "definition": "靠",
+      "options": [
+        "靠",
+        "依據",
+        "任"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:23",
+      "char": "憑",
+      "sentence": "語詞「任憑」中的「憑」，表示什麼意思？",
+      "definition": "任",
+      "options": [
+        "任",
+        "依據",
+        "靠"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:24",
+      "char": "何",
+      "sentence": "語詞「何故」中的「何」，表示什麼意思？",
+      "definition": "什麼",
+      "options": [
+        "什麼",
+        "為什麼",
+        "豈",
+        "多麼"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:25",
+      "char": "何",
+      "sentence": "語詞「何必」中的「何」，表示什麼意思？",
+      "definition": "為什麼",
+      "options": [
+        "為什麼",
+        "什麼",
+        "豈",
+        "多麼"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:26",
+      "char": "何",
+      "sentence": "語詞「何止」中的「何」，表示什麼意思？",
+      "definition": "豈",
+      "options": [
+        "豈",
+        "什麼",
+        "為什麼",
+        "多麼"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:27",
+      "char": "何",
+      "sentence": "語詞「何等」中的「何」，表示什麼意思？",
+      "definition": "多麼",
+      "options": [
+        "多麼",
+        "什麼",
+        "為什麼",
+        "豈"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:28",
+      "char": "適",
+      "sentence": "語詞「舒適」中的「適」，表示什麼意思？",
+      "definition": "舒服",
+      "options": [
+        "舒服",
+        "相合",
+        "剛才"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:29",
+      "char": "適",
+      "sentence": "語詞「適時」中的「適」，表示什麼意思？",
+      "definition": "相合",
+      "options": [
+        "相合",
+        "舒服",
+        "剛才"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:30",
+      "char": "適",
+      "sentence": "語詞「適才」中的「適」，表示什麼意思？",
+      "definition": "剛才",
+      "options": [
+        "剛才",
+        "舒服",
+        "相合"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:31",
+      "char": "盡",
+      "sentence": "語詞「盡心盡力」中的「盡」，表示什麼意思？",
+      "definition": "全部用出",
+      "options": [
+        "全部用出",
+        "完結",
+        "死亡",
+        "完備"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:32",
+      "char": "盡",
+      "sentence": "語詞「取之不盡」中的「盡」，表示什麼意思？",
+      "definition": "完結",
+      "options": [
+        "完結",
+        "全部用出",
+        "死亡",
+        "完備"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:33",
+      "char": "盡",
+      "sentence": "語詞「自盡」中的「盡」，表示什麼意思？",
+      "definition": "死亡",
+      "options": [
+        "死亡",
+        "全部用出",
+        "完結",
+        "完備"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:34",
+      "char": "盡",
+      "sentence": "語詞「詳盡」中的「盡」，表示什麼意思？",
+      "definition": "完備",
+      "options": [
+        "完備",
+        "全部用出",
+        "完結",
+        "死亡"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:35",
+      "char": "盡",
+      "sentence": "語詞「應有盡有」中的「盡」，表示什麼意思？",
+      "definition": "全部",
+      "options": [
+        "全部",
+        "全部用出",
+        "完結",
+        "死亡"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:05:36",
+      "char": "盡",
+      "sentence": "語詞「盡善盡美」中的「盡」，表示什麼意思？",
+      "definition": "極端",
+      "options": [
+        "極端",
+        "全部用出",
+        "完結",
+        "死亡"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    }
+  ],
+  "polysemy_senses": [
+    {
+      "char": "勒",
+      "senses": [
+        {
+          "char": "勒",
+          "definition": "駕御",
+          "examples": [
+            "勒馬長城"
+          ]
+        },
+        {
+          "char": "勒",
+          "definition": "使停止",
+          "examples": [
+            "懸崖勒馬"
+          ]
+        },
+        {
+          "char": "勒",
+          "definition": "強制",
+          "examples": [
+            "勒令",
+            "勒索"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "業",
+      "senses": [
+        {
+          "char": "業",
+          "definition": "學習的內容或過程",
+          "examples": [
+            "修業",
+            "畢業"
+          ]
+        },
+        {
+          "char": "業",
+          "definition": "社會上的各種工作職務",
+          "examples": [
+            "農業",
+            "商業",
+            "各行各業"
+          ]
+        },
+        {
+          "char": "業",
+          "definition": "財產",
+          "examples": [
+            "產業",
+            "家業"
+          ]
+        },
+        {
+          "char": "業",
+          "definition": "功績",
+          "examples": [
+            "偉業",
+            "功業"
+          ]
+        },
+        {
+          "char": "業",
+          "definition": "已經",
+          "examples": [
+            "業已",
+            "業經"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "勵",
+      "senses": [
+        {
+          "char": "勵",
+          "definition": "勸勉",
+          "examples": [
+            "勵志",
+            "勉勵",
+            "獎勵"
+          ]
+        },
+        {
+          "char": "勵",
+          "definition": "奮發",
+          "examples": [
+            "勵精圖治"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "寧",
+      "senses": [
+        {
+          "char": "寧",
+          "definition": "安定",
+          "examples": [
+            "寧靜",
+            "安寧"
+          ]
+        },
+        {
+          "char": "寧",
+          "definition": "情願",
+          "examples": [
+            "寧願",
+            "寧可",
+            "寧死不屈",
+            "寧缺毋濫"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "視",
+      "senses": [
+        {
+          "char": "視",
+          "definition": "看",
+          "examples": [
+            "凝視",
+            "注視"
+          ]
+        },
+        {
+          "char": "視",
+          "definition": "察看",
+          "examples": [
+            "視察",
+            "巡視"
+          ]
+        },
+        {
+          "char": "視",
+          "definition": "看待",
+          "examples": [
+            "忽視",
+            "一視同仁",
+            "視如己出"
+          ]
+        },
+        {
+          "char": "視",
+          "definition": "眼力",
+          "examples": [
+            "視茫茫"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "注",
+      "senses": [
+        {
+          "char": "注",
+          "definition": "心神凝聚集中",
+          "examples": [
+            "專注",
+            "全神貫注"
+          ]
+        },
+        {
+          "char": "注",
+          "definition": "灌入",
+          "examples": [
+            "注入",
+            "灌注",
+            "大雨如注"
+          ]
+        },
+        {
+          "char": "注",
+          "definition": "用文字解釋文義",
+          "examples": [
+            "注釋",
+            "注解"
+          ]
+        },
+        {
+          "char": "注",
+          "definition": "賭博時所下的財物",
+          "examples": [
+            "賭注",
+            "下注",
+            "孤注一擲"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "憑",
+      "senses": [
+        {
+          "char": "憑",
+          "definition": "依據",
+          "examples": [
+            "憑藉",
+            "憑仗",
+            "憑恃"
+          ]
+        },
+        {
+          "char": "憑",
+          "definition": "靠",
+          "examples": [
+            "依憑",
+            "憑欄"
+          ]
+        },
+        {
+          "char": "憑",
+          "definition": "任",
+          "examples": [
+            "任憑"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "何",
+      "senses": [
+        {
+          "char": "何",
+          "definition": "什麼",
+          "examples": [
+            "何故",
+            "何時"
+          ]
+        },
+        {
+          "char": "何",
+          "definition": "為什麼",
+          "examples": [
+            "何必",
+            "何不",
+            "何樂不為"
+          ]
+        },
+        {
+          "char": "何",
+          "definition": "豈",
+          "examples": [
+            "何止",
+            "何足掛齒"
+          ]
+        },
+        {
+          "char": "何",
+          "definition": "多麼",
+          "examples": [
+            "何等",
+            "何其不幸"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "適",
+      "senses": [
+        {
+          "char": "適",
+          "definition": "舒服",
+          "examples": [
+            "舒適",
+            "安適"
+          ]
+        },
+        {
+          "char": "適",
+          "definition": "相合",
+          "examples": [
+            "適時",
+            "適宜"
+          ]
+        },
+        {
+          "char": "適",
+          "definition": "剛才",
+          "examples": [
+            "適才"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "盡",
+      "senses": [
+        {
+          "char": "盡",
+          "definition": "全部用出",
+          "examples": [
+            "盡心盡力"
+          ]
+        },
+        {
+          "char": "盡",
+          "definition": "完結",
+          "examples": [
+            "取之不盡",
+            "無窮無盡",
+            "冬盡春來"
+          ]
+        },
+        {
+          "char": "盡",
+          "definition": "死亡",
+          "examples": [
+            "自盡"
+          ]
+        },
+        {
+          "char": "盡",
+          "definition": "完備",
+          "examples": [
+            "詳盡"
+          ]
+        },
+        {
+          "char": "盡",
+          "definition": "全部",
+          "examples": [
+            "應有盡有",
+            "盡在不言中"
+          ]
+        },
+        {
+          "char": "盡",
+          "definition": "極端",
+          "examples": [
+            "盡善盡美"
+          ]
+        }
+      ]
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:05:勒",
+      "char": "勒",
+      "readings": [
+        {
+          "zhuyin": "ㄌㄜˋ",
+          "dabutie_zhuyin": "ㄌㄜˋ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "勒索",
+                "懸崖勒馬"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄌㄟ",
+          "dabutie_zhuyin": "ㄌㄟ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "勒緊",
+                "勒死"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "康軒四上官方教材（06 字音字形；多音例詞經來源文字核對）"
+    }
+  ],
   "lookalikes": [
     {
       "id": "lookalike:115AG4K05:01",
@@ -816,7 +1966,47 @@
       "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
     }
   ],
-  "listening": [],
+  "listening": [
+    {
+      "id": "listening:05:01",
+      "stem": "海倫‧凱勒為什麼會變成身體有殘缺的人？她的身體有什麼缺陷？",
+      "question": "海倫‧凱勒為什麼會變成身體有殘缺的人？她的身體有什麼缺陷？",
+      "options": [
+        "小時候生病。失明與失聰",
+        "海倫‧凱勒失明，再也無法看見。對失明的人而言，期待光明，哪怕只有短短的三天也是一種欣喜與奇蹟，是一種恩賜。看不見的人，哪怕只要能看見一下下，都會覺得特別珍惜與滿……",
+        "海倫‧凱勒的眼睛失明，她已經無法看見，所以用「假如」這樣的假設句，想像自己若能看見該有多美好"
+      ],
+      "answer": "小時候生病。失明與失聰",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:05:02",
+      "stem": "海倫‧凱勒為何說「如果一個人可以在生活中失明或失聰幾天的話，那將是一個值得珍惜的機會」？她想表達什麼？",
+      "question": "海倫‧凱勒為何說「如果一個人可以在生活中失明或失聰幾天的話，那將是一個值得珍惜的機會」？她想表達什麼？",
+      "options": [
+        "海倫‧凱勒失明，再也無法看見。對失明的人而言，期待光明，哪怕只有短短的三天也是一種欣喜與奇蹟，是一種恩賜。看不見的人，哪怕只要能看見一下下，都會覺得特別珍惜與滿……",
+        "海倫‧凱勒的眼睛失明，她已經無法看見，所以用「假如」這樣的假設句，想像自己若能看見該有多美好",
+        "海倫‧凱勒認為黑暗會讓人更加珍惜光明的可貴，寧靜會讓人更能感受聲音的愉悅，她希望人們珍惜看得見、聽得到的幸福與珍貴"
+      ],
+      "answer": "海倫‧凱勒認為黑暗會讓人更加珍惜光明的可貴，寧靜會讓人更能感受聲音的愉悅，她希望人們珍惜看得見、聽得到的幸福與珍貴",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:05:03",
+      "stem": "海倫‧凱勒用了哪些方法取代她看不見、聽不見的遺憾？",
+      "question": "海倫‧凱勒用了哪些方法取代她看不見、聽不見的遺憾？",
+      "options": [
+        "海倫‧凱勒的眼睛失明，她已經無法看見，所以用「假如」這樣的假設句，想像自己若能看見該有多美好",
+        "她靠觸覺感受世界，讓自己「看」見、「聽」見。她觸摸樹枝感受春天蓓蕾在枝頭綻放，把手放在小樹上感受小鳥歌唱，讓水從掌心流過，去柔軟的草地，感受動人的世界",
+        "海倫‧凱勒失明，再也無法看見。對失明的人而言，期待光明，哪怕只有短短的三天也是一種欣喜與奇蹟，是一種恩賜。看不見的人，哪怕只要能看見一下下，都會覺得特別珍惜與滿……"
+      ],
+      "answer": "她靠觸覺感受世界，讓自己「看」見、「聽」見。她觸摸樹枝感受春天蓓蕾在枝頭綻放，把手放在小樹上感受小鳥歌唱，讓水從掌心流過，去柔軟的草地，感受動人的世界",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    }
+  ],
   "review_words": {
     "by_lesson": {
       "1": [
@@ -906,7 +2096,22 @@
       ]
     }
   },
-  "extensions": [],
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag4k-05",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E5%87%B1%E5%8B%92%E6%A5%AD%E5%8B%B5%E5%AF%A7%E8%A6%96%E6%B3%A8%E6%86%91%E8%93%93%E8%95%BE%E4%BD%95%E6%AF%AF%E9%81%A9%E7%B9%BD%E7%9B%A1",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・康軒・4年級・第5課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課15個生字"
+    }
+  ],
   "quiz": [
     {
       "id": "q01",
@@ -1072,9 +2277,8 @@
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
-      "activity": "sentence-practice",
-      "note": "句型來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "sentence-practice"
     },
     "challenge": {
       "label": "動手挑戰",
@@ -1089,21 +2293,18 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
-      "activity": "idiom-builder",
-      "note": "成語資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "idiom-builder"
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "一字多義資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
-      "status": "missing",
-      "activity": "polyphones",
-      "note": "一字多音資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "polyphones"
     },
     "lookalikes": {
       "label": "形似字",
@@ -1117,15 +2318,14 @@
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
-      "activity": "listening-quiz",
-      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+      "status": "available",
+      "activity": "listening-quiz"
     },
     "rhetoric": {
       "label": "修辭小偵探",
       "status": "missing",
       "activity": "rhetoric",
-      "note": "修辭資料尚未完成來源核對。"
+      "note": "官方修辭分析不足 3 題。"
     },
     "review": {
       "label": "舊字新詞",

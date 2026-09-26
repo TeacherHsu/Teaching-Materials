@@ -49,6 +49,36 @@
       "kind": "official",
       "locator": "14 課文大意、段落大意",
       "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    },
+    {
+      "kind": "official",
+      "locator": "04 生字延伸成語／第7課",
+      "sha256": "9776268150431107A35FA309327947662745CBCD68CE52C17427F09A449E2350"
+    },
+    {
+      "kind": "official",
+      "locator": "07 語句練習／第7課",
+      "sha256": "BD7B4BBEAAEDDDACC1128B1AF9B7469AAD5B60CEC1244518B76F62872CB6A5E9"
+    },
+    {
+      "kind": "official",
+      "locator": "09 生字解釋／第7課",
+      "sha256": "237FB70C678FFF9EA7A0AB645954F7A54A2829C7006380A7CD4DC6FE4A03F663"
+    },
+    {
+      "kind": "official",
+      "locator": "06 字音字形／第7課",
+      "sha256": "BCEB2E7CF05D5919ACC53AF2D454698D3BC94A02C2C944AC603D4A2B1E368BAB"
+    },
+    {
+      "kind": "official",
+      "locator": "15 閱讀理解／第7課",
+      "sha256": "6103E7B8CF142DF8CBE57CDE9CBDB6175C38364B3D4E3265402B97F5F13280FF"
+    },
+    {
+      "kind": "official",
+      "locator": "10 修辭分析／第7課",
+      "sha256": "35962C47D83A67C3158CD8DD9E71B57AFFEC45A3FB7D9494A459EE12E6B597FB"
     }
   ],
   "characters": [
@@ -60,8 +90,12 @@
       "radical": "⾋",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "單薄",
+        "微薄",
+        "薄弱"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%96%84",
@@ -76,8 +110,12 @@
       "radical": "⽕",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "烙印",
+        "烙下",
+        "烙上"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%83%99",
@@ -97,7 +135,7 @@
         "沾到",
         "沾染"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B2%BE",
@@ -113,9 +151,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "咖哩"
+        "咖哩",
+        "咖啡",
+        "咖啡因"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%92%96",
@@ -131,9 +171,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "咖哩"
+        "咖哩",
+        "咖哩粉",
+        "咖哩飯"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%93%A9",
@@ -149,9 +191,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "印度"
+        "列印",
+        "印出",
+        "印刷"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8D%B0",
@@ -167,9 +211,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "甩餅"
+        "甩動",
+        "甩開",
+        "甩出"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%94%A9",
@@ -185,9 +231,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "食材"
+        "取材",
+        "器材",
+        "媒材"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9D%90",
@@ -203,9 +251,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "醬料"
+        "果醬",
+        "醬料",
+        "醬汁"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%86%AC",
@@ -225,7 +275,7 @@
         "來義",
         "信義"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%BE%A9",
@@ -245,7 +295,7 @@
         "泡麵",
         "麵包"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%BA%B5",
@@ -261,9 +311,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "濃郁"
+        "濃郁",
+        "馥郁",
+        "醇郁"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%83%81",
@@ -279,9 +331,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
+        "享壽",
+        "介壽",
         "壽司"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A3%BD",
@@ -296,8 +350,12 @@
       "radical": "⾣",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "白醋",
+        "糖醋",
+        "醋酸"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%86%8B",
@@ -313,9 +371,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "未知"
+        "尚未",
+        "從未",
+        "未來"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9C%AA",
@@ -579,10 +639,246 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
-  "rhetoric": [],
+  "idioms": [
+    {
+      "id": "idiom:07:01",
+      "idiom": "妄自菲薄",
+      "definition": "隨意看輕自己，不知自重。",
+      "related_char": "薄",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:07:02",
+      "idiom": "沾沾自喜",
+      "definition": "形容自得自滿的樣子。",
+      "related_char": "沾",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:07:03",
+      "idiom": "心心相印",
+      "definition": "比喻彼此心意互通。",
+      "related_char": "印",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:07:04",
+      "idiom": "因材施教",
+      "definition": "依據受教者不同的資材，而給予不同的教導。",
+      "related_char": "材",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:07:05",
+      "idiom": "義不容辭",
+      "definition": "道義上不容許推卻。",
+      "related_char": "義",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:07:06",
+      "idiom": "壽比南山",
+      "definition": "壽命如終南山那樣長久。為祝人長壽之辭。",
+      "related_char": "壽",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:07:01",
+      "idiom_id": "idiom:07:01",
+      "rewritten": "每個人都有優點，我們千萬不能妄自菲薄。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:07:02",
+      "idiom_id": "idiom:07:02",
+      "rewritten": "得到高分不必沾沾自喜，謙虛才能更進步。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:07:03",
+      "idiom_id": "idiom:07:03",
+      "rewritten": "祝你們二人心心相印，白首偕老。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:07:04",
+      "idiom_id": "idiom:07:04",
+      "rewritten": "孔子是歷史上最早實行因材施教理念的教育家。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:07:05",
+      "idiom_id": "idiom:07:05",
+      "rewritten": "他一向熱心公益，對於募款表演，當然是義不容辭的了。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:07:06",
+      "idiom_id": "idiom:07:06",
+      "rewritten": "賓客們都舉杯，祝福李老伯福如東海、壽比南山。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence:07:01",
+      "category": "短語練習",
+      "head": "餅皮漸漸變得又大又薄",
+      "structure": "（名詞）（副詞）變得又（形容詞）又（形容詞）",
+      "description": "形容事物變化狀態的短語。",
+      "guide": "請將語詞重新排列，組成通順的短語。",
+      "examples": [
+        "月亮慢慢變得又圓又亮",
+        "天氣漸漸變得又溼又冷",
+        "身材漸漸變得又高又壯"
+      ],
+      "example_parts": [
+        [
+          "月亮",
+          "慢慢",
+          "變得又圓",
+          "又亮"
+        ],
+        [
+          "天氣",
+          "漸漸",
+          "變得又溼",
+          "又冷"
+        ],
+        [
+          "身材",
+          "漸漸",
+          "變得又高",
+          "又壯"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:07:02",
+      "category": "造句練習",
+      "head": "各式各樣",
+      "structure": "生活情境句",
+      "description": "許多不同的樣式和種類。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "櫥窗裡擺放著各式各樣的蛋糕，令人垂涎三尺。",
+        "弟弟常常問媽媽各式各樣的問題。"
+      ],
+      "example_parts": [
+        [
+          "櫥窗裡",
+          "擺放著",
+          "各式各樣的",
+          "蛋糕，",
+          "令人垂涎三尺。"
+        ],
+        [
+          "弟弟",
+          "常常問媽媽",
+          "各式各樣的",
+          "問題。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:07:03",
+      "category": "造句練習",
+      "head": "大開眼界",
+      "structure": "生活情境句",
+      "description": "明顯的使視野開展，見聞增加。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "臺灣多元的地景與文化，讓外國遊客大開眼界。"
+      ],
+      "example_parts": [
+        [
+          "臺灣多元的",
+          "地景與文化，",
+          "讓外國遊客",
+          "大開眼界。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:07:04",
+      "category": "句型練習",
+      "head": "沒想到……竟然……",
+      "structure": "沒想到（前面的情況），竟然（意外的結果）。",
+      "description": "表示原本普通的情況，後面出現意料之外的結果。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "沒想到小小的臺灣，竟然擁有多項世界第一。",
+        "沒想到人口最少的國家，竟然不到一百人。",
+        "沒想到藍起司很臭，竟然是高檔食材。"
+      ],
+      "example_parts": [
+        [
+          "沒想到",
+          "小小的臺灣，",
+          "竟然擁有",
+          "多項世界第一。"
+        ],
+        [
+          "沒想到人口",
+          "最少的國家，",
+          "竟然不到",
+          "一百人。"
+        ],
+        [
+          "沒想到",
+          "藍起司很臭，",
+          "竟然是",
+          "高檔食材。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    }
+  ],
+  "rhetoric": [
+    {
+      "id": "rhetoric:07:01",
+      "figure": "感嘆",
+      "note": "寫文章時，常會藉由呼喊的聲音表達喜怒哀樂的感情變化，來強調內心的驚訝、生氣、難過、讚嘆等感覺的修辭法。",
+      "example": "啊！沒想到平常吃的義大利麵條，竟然有各式各樣的造型。",
+      "child_note": "感嘆：寫文章時，常會藉由呼喊的聲音表達喜怒哀樂的感情變化，來強調內心的驚訝、生氣、難過、讚嘆等感覺的修辭法。",
+      "status": "approved",
+      "source": "康軒四上官方教材（10 修辭分析）"
+    },
+    {
+      "id": "rhetoric:07:02",
+      "figure": "排比",
+      "note": "三個以上結構相同或相似的短語或句子，表達同一範圍或性質相關的意念，清楚的表達物象多樣化的性質，以加強語勢與節奏感的修辭方法。",
+      "example": "⑴沒想到平常吃的義大利麵條，竟然有各式各樣的造型，有的像蝴蝶，有的像車輪，有的像貓耳朵……令人大開眼界。⑵我還吃到不同醬料的義大利麵，紅醬的酸甜，白醬的濃郁，青醬的香氣，到現在還是讓我念念不忘呢！",
+      "child_note": "排比：三個以上結構相同或相似的短語或句子，表達同一範圍或性質相關的意念，清楚的表達物象多樣化的性質，以加強語勢與節奏感的修辭方法。",
+      "status": "approved",
+      "source": "康軒四上官方教材（10 修辭分析）"
+    }
+  ],
   "paragraph_summary": [
     {
       "id": "paragraph:115AG4K07:01",
@@ -697,8 +993,983 @@
       "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
     }
   ],
-  "polysemy": [],
-  "polysemy_senses": [],
+  "polysemy": [
+    {
+      "id": "polysemy:07:01",
+      "char": "薄",
+      "sentence": "語詞「薄紙」中的「薄」，表示什麼意思？",
+      "definition": "扁平物體表面與底面之間距離小的",
+      "options": [
+        "扁平物體表面與底面之間距離小的",
+        "稀疏的",
+        "微不足道的",
+        "苛刻"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:02",
+      "char": "薄",
+      "sentence": "語詞「稀薄」中的「薄」，表示什麼意思？",
+      "definition": "稀疏的",
+      "options": [
+        "稀疏的",
+        "扁平物體表面與底面之間距離小的",
+        "微不足道的",
+        "苛刻"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:03",
+      "char": "薄",
+      "sentence": "語詞「薄禮」中的「薄」，表示什麼意思？",
+      "definition": "微不足道的",
+      "options": [
+        "微不足道的",
+        "扁平物體表面與底面之間距離小的",
+        "稀疏的",
+        "苛刻"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:04",
+      "char": "薄",
+      "sentence": "語詞「刻薄」中的「薄」，表示什麼意思？",
+      "definition": "苛刻",
+      "options": [
+        "苛刻",
+        "扁平物體表面與底面之間距離小的",
+        "稀疏的",
+        "微不足道的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:05",
+      "char": "薄",
+      "sentence": "語詞「厚此薄彼」中的「薄」，表示什麼意思？",
+      "definition": "鄙視",
+      "options": [
+        "鄙視",
+        "扁平物體表面與底面之間距離小的",
+        "稀疏的",
+        "微不足道的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:06",
+      "char": "烙",
+      "sentence": "語詞「烙餅」中的「烙」，表示什麼意思？",
+      "definition": "將食物放在燒熱的鍋上烤熟",
+      "options": [
+        "將食物放在燒熱的鍋上烤熟",
+        "用燒熱的金屬燙"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:07",
+      "char": "烙",
+      "sentence": "語詞「烙印」中的「烙」，表示什麼意思？",
+      "definition": "用燒熱的金屬燙",
+      "options": [
+        "用燒熱的金屬燙",
+        "將食物放在燒熱的鍋上烤熟"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:08",
+      "char": "沾",
+      "sentence": "語詞「滴酒不沾」中的「沾」，表示什麼意思？",
+      "definition": "接觸",
+      "options": [
+        "接觸",
+        "浸溼",
+        "感染",
+        "藉別人的關係而得到好處"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:09",
+      "char": "沾",
+      "sentence": "語詞「沾溼」中的「沾」，表示什麼意思？",
+      "definition": "浸溼",
+      "options": [
+        "浸溼",
+        "接觸",
+        "感染",
+        "藉別人的關係而得到好處"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:10",
+      "char": "沾",
+      "sentence": "語詞「沾染惡習」中的「沾」，表示什麼意思？",
+      "definition": "感染",
+      "options": [
+        "感染",
+        "接觸",
+        "浸溼",
+        "藉別人的關係而得到好處"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:11",
+      "char": "沾",
+      "sentence": "語詞「沾光」中的「沾」，表示什麼意思？",
+      "definition": "藉別人的關係而得到好處",
+      "options": [
+        "藉別人的關係而得到好處",
+        "接觸",
+        "浸溼",
+        "感染"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:12",
+      "char": "沾",
+      "sentence": "語詞「沾親帶故」中的「沾」，表示什麼意思？",
+      "definition": "帶",
+      "options": [
+        "帶",
+        "接觸",
+        "浸溼",
+        "感染"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:13",
+      "char": "印",
+      "sentence": "語詞「印條約」中的「印」，表示什麼意思？",
+      "definition": "印度的簡稱",
+      "options": [
+        "印度的簡稱",
+        "用木或金石等所刻成的圖章",
+        "痕跡",
+        "在物體上留下痕跡"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:14",
+      "char": "印",
+      "sentence": "語詞「鋼印」中的「印」，表示什麼意思？",
+      "definition": "用木或金石等所刻成的圖章",
+      "options": [
+        "用木或金石等所刻成的圖章",
+        "印度的簡稱",
+        "痕跡",
+        "在物體上留下痕跡"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:15",
+      "char": "印",
+      "sentence": "語詞「腳印」中的「印」，表示什麼意思？",
+      "definition": "痕跡",
+      "options": [
+        "痕跡",
+        "印度的簡稱",
+        "用木或金石等所刻成的圖章",
+        "在物體上留下痕跡"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:16",
+      "char": "印",
+      "sentence": "語詞「烙印」中的「印」，表示什麼意思？",
+      "definition": "在物體上留下痕跡",
+      "options": [
+        "在物體上留下痕跡",
+        "印度的簡稱",
+        "用木或金石等所刻成的圖章",
+        "痕跡"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:17",
+      "char": "印",
+      "sentence": "語詞「翻印」中的「印」，表示什麼意思？",
+      "definition": "印刷",
+      "options": [
+        "印刷",
+        "印度的簡稱",
+        "用木或金石等所刻成的圖章",
+        "痕跡"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:18",
+      "char": "印",
+      "sentence": "語詞「心心相印」中的「印」，表示什麼意思？",
+      "definition": "符合",
+      "options": [
+        "符合",
+        "印度的簡稱",
+        "用木或金石等所刻成的圖章",
+        "痕跡"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:19",
+      "char": "甩",
+      "sentence": "語詞「甩頭」中的「甩」，表示什麼意思？",
+      "definition": "搖擺",
+      "options": [
+        "搖擺",
+        "拋棄",
+        "理會"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:20",
+      "char": "甩",
+      "sentence": "語詞「甩掉」中的「甩」，表示什麼意思？",
+      "definition": "拋棄",
+      "options": [
+        "拋棄",
+        "搖擺",
+        "理會"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:21",
+      "char": "甩",
+      "sentence": "語詞「她根本不甩他」中的「甩」，表示什麼意思？",
+      "definition": "理會",
+      "options": [
+        "理會",
+        "搖擺",
+        "拋棄"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:22",
+      "char": "材",
+      "sentence": "語詞「藥材」中的「材」，表示什麼意思？",
+      "definition": "原料",
+      "options": [
+        "原料",
+        "木料",
+        "資料",
+        "資質"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:23",
+      "char": "材",
+      "sentence": "語詞「木材」中的「材」，表示什麼意思？",
+      "definition": "木料",
+      "options": [
+        "木料",
+        "原料",
+        "資料",
+        "資質"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:24",
+      "char": "材",
+      "sentence": "語詞「教材」中的「材」，表示什麼意思？",
+      "definition": "資料",
+      "options": [
+        "資料",
+        "原料",
+        "木料",
+        "資質"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:25",
+      "char": "材",
+      "sentence": "語詞「因材施教」中的「材」，表示什麼意思？",
+      "definition": "資質",
+      "options": [
+        "資質",
+        "原料",
+        "木料",
+        "資料"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:26",
+      "char": "材",
+      "sentence": "語詞「人材」中的「材」，表示什麼意思？",
+      "definition": "有才能的人",
+      "options": [
+        "有才能的人",
+        "原料",
+        "木料",
+        "資料"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:27",
+      "char": "醬",
+      "sentence": "語詞「麵等發酵後」中的「醬」，表示什麼意思？",
+      "definition": "豆",
+      "options": [
+        "豆",
+        "通稱搗爛成泥狀的食物",
+        "用醬油等醃漬的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:28",
+      "char": "醬",
+      "sentence": "語詞「果醬」中的「醬」，表示什麼意思？",
+      "definition": "通稱搗爛成泥狀的食物",
+      "options": [
+        "通稱搗爛成泥狀的食物",
+        "豆",
+        "用醬油等醃漬的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:29",
+      "char": "醬",
+      "sentence": "語詞「醬瓜」中的「醬」，表示什麼意思？",
+      "definition": "用醬油等醃漬的",
+      "options": [
+        "用醬油等醃漬的",
+        "豆",
+        "通稱搗爛成泥狀的食物"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:30",
+      "char": "義",
+      "sentence": "語詞「見義勇為」中的「義」，表示什麼意思？",
+      "definition": "合宜的事情",
+      "options": [
+        "合宜的事情",
+        "意思",
+        "合於正義的",
+        "假的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:31",
+      "char": "義",
+      "sentence": "語詞「意義」中的「義」，表示什麼意思？",
+      "definition": "意思",
+      "options": [
+        "意思",
+        "合宜的事情",
+        "合於正義的",
+        "假的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:32",
+      "char": "義",
+      "sentence": "語詞「義民」中的「義」，表示什麼意思？",
+      "definition": "合於正義的",
+      "options": [
+        "合於正義的",
+        "合宜的事情",
+        "意思",
+        "假的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:33",
+      "char": "義",
+      "sentence": "語詞「義父」中的「義」，表示什麼意思？",
+      "definition": "假的",
+      "options": [
+        "假的",
+        "合宜的事情",
+        "意思",
+        "合於正義的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:34",
+      "char": "麵",
+      "sentence": "語詞「麵條」中的「麵」，表示什麼意思？",
+      "definition": "由麥子研磨成粉或再加工而成的食品",
+      "options": [
+        "由麥子研磨成粉或再加工而成的食品",
+        "泛指研磨成粉末狀而可食用的食品"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:35",
+      "char": "麵",
+      "sentence": "語詞「豆麵」中的「麵」，表示什麼意思？",
+      "definition": "泛指研磨成粉末狀而可食用的食品",
+      "options": [
+        "泛指研磨成粉末狀而可食用的食品",
+        "由麥子研磨成粉或再加工而成的食品"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:36",
+      "char": "壽",
+      "sentence": "語詞「福壽雙全」中的「壽」，表示什麼意思？",
+      "definition": "長久",
+      "options": [
+        "長久",
+        "生存的年歲",
+        "生日",
+        "生前預為死後準備裝殮用的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:37",
+      "char": "壽",
+      "sentence": "語詞「長壽」中的「壽」，表示什麼意思？",
+      "definition": "生存的年歲",
+      "options": [
+        "生存的年歲",
+        "長久",
+        "生日",
+        "生前預為死後準備裝殮用的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:38",
+      "char": "壽",
+      "sentence": "語詞「祝壽」中的「壽」，表示什麼意思？",
+      "definition": "生日",
+      "options": [
+        "生日",
+        "長久",
+        "生存的年歲",
+        "生前預為死後準備裝殮用的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:39",
+      "char": "壽",
+      "sentence": "語詞「壽衣」中的「壽」，表示什麼意思？",
+      "definition": "生前預為死後準備裝殮用的",
+      "options": [
+        "生前預為死後準備裝殮用的",
+        "長久",
+        "生存的年歲",
+        "生日"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:40",
+      "char": "醋",
+      "sentence": "語詞「白醋」中的「醋」，表示什麼意思？",
+      "definition": "用米",
+      "options": [
+        "用米",
+        "嫉妒的心理"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:41",
+      "char": "醋",
+      "sentence": "語詞「吃醋」中的「醋」，表示什麼意思？",
+      "definition": "嫉妒的心理",
+      "options": [
+        "嫉妒的心理",
+        "用米"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:42",
+      "char": "未",
+      "sentence": "語詞「所以未能準時到達」中的「未」，表示什麼意思？",
+      "definition": "不",
+      "options": [
+        "不",
+        "沒有"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:07:43",
+      "char": "未",
+      "sentence": "語詞「革命尚未成功」中的「未」，表示什麼意思？",
+      "definition": "沒有",
+      "options": [
+        "沒有",
+        "不"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    }
+  ],
+  "polysemy_senses": [
+    {
+      "char": "薄",
+      "senses": [
+        {
+          "char": "薄",
+          "definition": "扁平物體表面與底面之間距離小的",
+          "examples": [
+            "薄紙",
+            "薄冰"
+          ]
+        },
+        {
+          "char": "薄",
+          "definition": "稀疏的",
+          "examples": [
+            "稀薄",
+            "薄酒"
+          ]
+        },
+        {
+          "char": "薄",
+          "definition": "微不足道的",
+          "examples": [
+            "薄禮",
+            "微薄"
+          ]
+        },
+        {
+          "char": "薄",
+          "definition": "苛刻",
+          "examples": [
+            "刻薄",
+            "薄情"
+          ]
+        },
+        {
+          "char": "薄",
+          "definition": "鄙視",
+          "examples": [
+            "厚此薄彼"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "烙",
+      "senses": [
+        {
+          "char": "烙",
+          "definition": "將食物放在燒熱的鍋上烤熟",
+          "examples": [
+            "烙餅"
+          ]
+        },
+        {
+          "char": "烙",
+          "definition": "用燒熱的金屬燙",
+          "examples": [
+            "烙印"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "沾",
+      "senses": [
+        {
+          "char": "沾",
+          "definition": "接觸",
+          "examples": [
+            "滴酒不沾",
+            "沾不上邊"
+          ]
+        },
+        {
+          "char": "沾",
+          "definition": "浸溼",
+          "examples": [
+            "沾溼"
+          ]
+        },
+        {
+          "char": "沾",
+          "definition": "感染",
+          "examples": [
+            "沾染惡習"
+          ]
+        },
+        {
+          "char": "沾",
+          "definition": "藉別人的關係而得到好處",
+          "examples": [
+            "沾光",
+            "沾便宜"
+          ]
+        },
+        {
+          "char": "沾",
+          "definition": "帶",
+          "examples": [
+            "沾親帶故"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "印",
+      "senses": [
+        {
+          "char": "印",
+          "definition": "印度的簡稱",
+          "examples": [
+            "印條約"
+          ]
+        },
+        {
+          "char": "印",
+          "definition": "用木或金石等所刻成的圖章",
+          "examples": [
+            "鋼印",
+            "印章"
+          ]
+        },
+        {
+          "char": "印",
+          "definition": "痕跡",
+          "examples": [
+            "腳印",
+            "手印"
+          ]
+        },
+        {
+          "char": "印",
+          "definition": "在物體上留下痕跡",
+          "examples": [
+            "烙印",
+            "印上指紋"
+          ]
+        },
+        {
+          "char": "印",
+          "definition": "印刷",
+          "examples": [
+            "翻印",
+            "列印"
+          ]
+        },
+        {
+          "char": "印",
+          "definition": "符合",
+          "examples": [
+            "心心相印"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "甩",
+      "senses": [
+        {
+          "char": "甩",
+          "definition": "搖擺",
+          "examples": [
+            "甩頭",
+            "甩尾巴甩頭",
+            "甩尾巴"
+          ]
+        },
+        {
+          "char": "甩",
+          "definition": "拋棄",
+          "examples": [
+            "甩掉",
+            "甩脫"
+          ]
+        },
+        {
+          "char": "甩",
+          "definition": "理會",
+          "examples": [
+            "她根本不甩他"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "材",
+      "senses": [
+        {
+          "char": "材",
+          "definition": "原料",
+          "examples": [
+            "藥材",
+            "器材",
+            "建材",
+            "鋼材"
+          ]
+        },
+        {
+          "char": "材",
+          "definition": "木料",
+          "examples": [
+            "木材"
+          ]
+        },
+        {
+          "char": "材",
+          "definition": "資料",
+          "examples": [
+            "教材",
+            "題材",
+            "素材"
+          ]
+        },
+        {
+          "char": "材",
+          "definition": "資質",
+          "examples": [
+            "因材施教"
+          ]
+        },
+        {
+          "char": "材",
+          "definition": "有才能的人",
+          "examples": [
+            "人材"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "醬",
+      "senses": [
+        {
+          "char": "醬",
+          "definition": "豆",
+          "examples": [
+            "麵等發酵後",
+            "甜麵醬",
+            "豆瓣醬"
+          ]
+        },
+        {
+          "char": "醬",
+          "definition": "通稱搗爛成泥狀的食物",
+          "examples": [
+            "果醬",
+            "花生醬"
+          ]
+        },
+        {
+          "char": "醬",
+          "definition": "用醬油等醃漬的",
+          "examples": [
+            "醬瓜",
+            "醬菜"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "義",
+      "senses": [
+        {
+          "char": "義",
+          "definition": "合宜的事情",
+          "examples": [
+            "見義勇為"
+          ]
+        },
+        {
+          "char": "義",
+          "definition": "意思",
+          "examples": [
+            "意義",
+            "字義"
+          ]
+        },
+        {
+          "char": "義",
+          "definition": "合於正義的",
+          "examples": [
+            "義民",
+            "義舉"
+          ]
+        },
+        {
+          "char": "義",
+          "definition": "假的",
+          "examples": [
+            "義父",
+            "義肢"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "麵",
+      "senses": [
+        {
+          "char": "麵",
+          "definition": "由麥子研磨成粉或再加工而成的食品",
+          "examples": [
+            "麵條",
+            "麵粉"
+          ]
+        },
+        {
+          "char": "麵",
+          "definition": "泛指研磨成粉末狀而可食用的食品",
+          "examples": [
+            "豆麵",
+            "玉米麵"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "壽",
+      "senses": [
+        {
+          "char": "壽",
+          "definition": "長久",
+          "examples": [
+            "福壽雙全"
+          ]
+        },
+        {
+          "char": "壽",
+          "definition": "生存的年歲",
+          "examples": [
+            "長壽",
+            "壽命"
+          ]
+        },
+        {
+          "char": "壽",
+          "definition": "生日",
+          "examples": [
+            "祝壽",
+            "壽辰"
+          ]
+        },
+        {
+          "char": "壽",
+          "definition": "生前預為死後準備裝殮用的",
+          "examples": [
+            "壽衣",
+            "壽木"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "醋",
+      "senses": [
+        {
+          "char": "醋",
+          "definition": "用米",
+          "examples": [
+            "白醋",
+            "黑醋"
+          ]
+        },
+        {
+          "char": "醋",
+          "definition": "嫉妒的心理",
+          "examples": [
+            "吃醋",
+            "醋勁"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "未",
+      "senses": [
+        {
+          "char": "未",
+          "definition": "不",
+          "examples": [
+            "所以未能準時到達"
+          ]
+        },
+        {
+          "char": "未",
+          "definition": "沒有",
+          "examples": [
+            "革命尚未成功"
+          ]
+        }
+      ]
+    }
+  ],
   "polyphones": [],
   "lookalikes": [
     {
@@ -822,7 +2093,47 @@
       "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
     }
   ],
-  "listening": [],
+  "listening": [
+    {
+      "id": "listening:07:01",
+      "stem": "「美味的一堂課」是誰來分享？為什麼會有這堂課？",
+      "question": "「美味的一堂課」是誰來分享？為什麼會有這堂課？",
+      "options": [
+        "「美味的一堂課」是由巧文姐姐來分享。老師邀請她來的",
+        "壽司是日本的美食",
+        "不是。從「又分享許多國家別具特色的美食」和「這個下午，教室裡不但驚嘆聲此起彼落，我們也認識各地的美食文化。」我們可推測巧文姐姐介紹的美食不只三種"
+      ],
+      "answer": "「美味的一堂課」是由巧文姐姐來分享。老師邀請她來的",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:07:02",
+      "stem": "為什麼主角會用「特技表演」來形容印度甩餅的製作過程？",
+      "question": "為什麼主角會用「特技表演」來形容印度甩餅的製作過程？",
+      "options": [
+        "壽司是日本的美食",
+        "不是。從「又分享許多國家別具特色的美食」和「這個下午，教室裡不但驚嘆聲此起彼落，我們也認識各地的美食文化。」我們可推測巧文姐姐介紹的美食不只三種",
+        "主角認為印度師傅將小小的餅皮一邊在桌面拍打，一邊向空中拋的情況，餅皮逐漸變得又大又薄，就像是特技表演一樣非常神奇"
+      ],
+      "answer": "主角認為印度師傅將小小的餅皮一邊在桌面拍打，一邊向空中拋的情況，餅皮逐漸變得又大又薄，就像是特技表演一樣非常神奇",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:07:03",
+      "stem": "本文主要介紹義大利麵的哪些特色？",
+      "question": "本文主要介紹義大利麵的哪些特色？",
+      "options": [
+        "不是。從「又分享許多國家別具特色的美食」和「這個下午，教室裡不但驚嘆聲此起彼落，我們也認識各地的美食文化。」我們可推測巧文姐姐介紹的美食不只三種",
+        "介紹義大利麵的麵條有各式各樣的造型，以及能搭配各種不同的醬汁食用",
+        "壽司是日本的美食"
+      ],
+      "answer": "介紹義大利麵的麵條有各式各樣的造型，以及能搭配各種不同的醬汁食用",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    }
+  ],
   "review_words": {
     "by_lesson": {
       "1": [
@@ -946,7 +2257,22 @@
       ]
     }
   },
-  "extensions": [],
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag4k-07",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E8%96%84%E7%83%99%E6%B2%BE%E5%92%96%E5%93%A9%E5%8D%B0%E7%94%A9%E6%9D%90%E9%86%AC%E7%BE%A9%E9%BA%B5%E9%83%81%E5%A3%BD%E9%86%8B%E6%9C%AA",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・康軒・4年級・第7課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課15個生字"
+    }
+  ],
   "quiz": [
     {
       "id": "q01",
@@ -1112,9 +2438,8 @@
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
-      "activity": "sentence-practice",
-      "note": "句型來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "sentence-practice"
     },
     "challenge": {
       "label": "動手挑戰",
@@ -1129,21 +2454,19 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
-      "activity": "idiom-builder",
-      "note": "成語資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "idiom-builder"
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "一字多義資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
       "status": "missing",
       "activity": "polyphones",
-      "note": "一字多音資料尚未完成來源核對。"
+      "note": "06 文件本課未達兩個可核對讀音。"
     },
     "lookalikes": {
       "label": "形似字",
@@ -1157,15 +2480,14 @@
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
-      "activity": "listening-quiz",
-      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+      "status": "available",
+      "activity": "listening-quiz"
     },
     "rhetoric": {
       "label": "修辭小偵探",
       "status": "missing",
       "activity": "rhetoric",
-      "note": "修辭資料尚未完成來源核對。"
+      "note": "官方修辭分析不足 3 題。"
     },
     "review": {
       "label": "舊字新詞",

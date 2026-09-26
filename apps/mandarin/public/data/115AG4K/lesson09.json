@@ -49,6 +49,36 @@
       "kind": "official",
       "locator": "14 課文大意、段落大意",
       "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    },
+    {
+      "kind": "official",
+      "locator": "04 生字延伸成語／第9課",
+      "sha256": "9776268150431107A35FA309327947662745CBCD68CE52C17427F09A449E2350"
+    },
+    {
+      "kind": "official",
+      "locator": "07 語句練習／第9課",
+      "sha256": "BD7B4BBEAAEDDDACC1128B1AF9B7469AAD5B60CEC1244518B76F62872CB6A5E9"
+    },
+    {
+      "kind": "official",
+      "locator": "09 生字解釋／第9課",
+      "sha256": "237FB70C678FFF9EA7A0AB645954F7A54A2829C7006380A7CD4DC6FE4A03F663"
+    },
+    {
+      "kind": "official",
+      "locator": "06 字音字形／第9課",
+      "sha256": "BCEB2E7CF05D5919ACC53AF2D454698D3BC94A02C2C944AC603D4A2B1E368BAB"
+    },
+    {
+      "kind": "official",
+      "locator": "15 閱讀理解／第9課",
+      "sha256": "6103E7B8CF142DF8CBE57CDE9CBDB6175C38364B3D4E3265402B97F5F13280FF"
+    },
+    {
+      "kind": "official",
+      "locator": "10 修辭分析／第9課",
+      "sha256": "35962C47D83A67C3158CD8DD9E71B57AFFEC45A3FB7D9494A459EE12E6B597FB"
     }
   ],
   "characters": [
@@ -60,8 +90,12 @@
       "radical": "⼈",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "佛像",
+        "大佛",
+        "佛堂"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BD%9B",
@@ -77,9 +111,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "泰國"
+        "泰國",
+        "泰式",
+        "泰拳"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B3%B0",
@@ -94,8 +130,12 @@
       "radical": "⼴",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "孔廟",
+        "宮廟",
+        "寺廟"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%BB%9F",
@@ -111,9 +151,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "華麗"
+        "中華",
+        "光華",
+        "奢華"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%8F%AF",
@@ -129,9 +171,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "和尚"
+        "和尚",
+        "尚未",
+        "崇尚"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B0%9A",
@@ -147,9 +191,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "逛逛"
+        "逛街",
+        "逛逛",
+        "閒逛"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%80%9B",
@@ -165,9 +211,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "埃及"
+        "克羅埃西亞",
+        "埃及",
+        "埃及人"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%9F%83",
@@ -183,9 +231,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "尼羅河"
+        "張羅",
+        "普羅",
+        "網羅"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%BE%85",
@@ -201,9 +251,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "地勢"
+        "優勢",
+        "勢力",
+        "勢必"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8B%A2",
@@ -219,9 +271,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "低窪"
+        "低窪",
+        "水窪",
+        "窪地"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%AA%AA",
@@ -237,9 +291,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "築堤"
+        "河堤",
+        "潰堤",
+        "堤岸"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A0%A4",
@@ -255,9 +311,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "防潮"
+        "以防",
+        "國防",
+        "心防"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%98%B2",
@@ -277,7 +335,7 @@
         "低潮",
         "思潮"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%BD%AE",
@@ -293,9 +351,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "鬱金香"
+        "憂鬱",
+        "蓊鬱",
+        "鬱悶"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%AC%B1",
@@ -311,9 +371,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "划船"
+        "划算",
+        "划船",
+        "划動"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%88%92",
@@ -493,10 +555,186 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
-  "rhetoric": [],
+  "idioms": [
+    {
+      "id": "idiom:09:01",
+      "idiom": "借花獻佛",
+      "definition": "借用別人的花供養佛。比喻借用他人的東西來作人情。",
+      "related_char": "佛",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:09:02",
+      "idiom": "否極泰來",
+      "definition": "情況由壞逐漸好轉。",
+      "related_char": "泰",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:09:03",
+      "idiom": "門可羅雀",
+      "definition": "門前冷清，空曠得可張網捕雀。形容做官的人失勢後賓客稀少的景況。後亦用﹁門可羅雀﹂泛指一般來客稀少、門庭冷清的景況。",
+      "related_char": "羅",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:09:04",
+      "idiom": "勢均力敵",
+      "definition": "指雙方力量情勢相當，不分上下。",
+      "related_char": "勢",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:09:05",
+      "idiom": "防微杜漸",
+      "definition": "在錯誤或壞事萌芽的時候及時制止，杜絕它發展。",
+      "related_char": "防",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:09:06",
+      "idiom": "心血來潮",
+      "definition": "思緒像浪潮般的突起。形容突然興起的念頭。",
+      "related_char": "潮",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:09:01",
+      "idiom_id": "idiom:09:01",
+      "rewritten": "這是別人送給我的禮物，現在我借花獻佛，轉送給你。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:09:02",
+      "idiom_id": "idiom:09:02",
+      "rewritten": "我相信事情終會否極泰來，所以大家千萬不要因一時困頓就灰心喪志。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:09:03",
+      "idiom_id": "idiom:09:03",
+      "rewritten": "這地區已日漸沒落，有些商店的情形真可用﹁門可羅雀﹂來形容。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:09:04",
+      "idiom_id": "idiom:09:04",
+      "rewritten": "由於兩位選手的實力勢均力敵，所以比賽至今仍未分出勝負。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:09:05",
+      "idiom_id": "idiom:09:05",
+      "rewritten": "今天我們所以要注意這些小地方，目的在防微杜漸，免得日後釀成大問題。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:09:06",
+      "idiom_id": "idiom:09:06",
+      "rewritten": "他做事缺乏計畫，常常心血來潮的想到什麼就做什麼。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence:09:01",
+      "category": "短句練習",
+      "head": "風車就是為了排水出海而建造的",
+      "structure": "（名詞）就是為了（動詞）而（動詞）的。",
+      "description": "描述某物出現的原因。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "牛奶就是為了補充體力而沖泡的。",
+        "撲滿就是為了儲蓄金錢而準備的。",
+        "安全帽就是為了維護安全而戴的。"
+      ],
+      "example_parts": [
+        [
+          "牛奶",
+          "就是為了",
+          "補充體力",
+          "而沖泡的。"
+        ],
+        [
+          "撲滿",
+          "就是為了",
+          "儲蓄金錢",
+          "而準備的。"
+        ],
+        [
+          "安全帽",
+          "就是為了",
+          "維護安全",
+          "而戴的。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:09:02",
+      "category": "句型練習",
+      "head": "……所以……",
+      "structure": "（原因），所以（結果）。",
+      "description": "前面說明原因，後面接續事件的結果。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "今日天氣不穩定，所以原定的爬山計畫取消了。",
+        "妹妹感冒發燒，所以今天請假在家裡休息。",
+        "大雨使路面溼滑，所以走路要小心。"
+      ],
+      "example_parts": [
+        [
+          "今日",
+          "天氣不穩定，",
+          "所以原定的",
+          "爬山計畫",
+          "取消了。"
+        ],
+        [
+          "妹妹",
+          "感冒發燒，",
+          "所以今天請假",
+          "在家裡休息。"
+        ],
+        [
+          "大雨使",
+          "路面溼滑，",
+          "所以走路要",
+          "小心。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    }
+  ],
+  "rhetoric": [
+    {
+      "id": "rhetoric:09:01",
+      "figure": "類疊",
+      "note": "同一個詞彙、語句，接連反覆的使用著，以加強表達的效果，使字句具備音律之美，就叫做「類疊」。類疊可分為：字的類疊、詞的類疊、句的類疊。",
+      "example": "⑴氣候又乾又熱⑵請到我的家鄉來，我的家鄉是「千佛之國」的泰國。請到我的家鄉來，我的家鄉是五千年古國埃及。請到我的家鄉來，我的家鄉是地勢低窪的荷蘭。請到我的家鄉來，我的家鄉是音樂國度奧地利。⑶來吧，請到我的家鄉來！（每段結尾）",
+      "child_note": "類疊：同一個詞彙、語句，接連反覆的使用著，以加強表達的效果，使字句具備音律之美，就叫做「類疊」。類疊可分為：字的類疊、詞的類疊、句的類疊。",
+      "status": "approved",
+      "source": "康軒四上官方教材（10 修辭分析）"
+    }
+  ],
   "paragraph_summary": [
     {
       "id": "paragraph:115AG4K09:01",
@@ -611,9 +849,897 @@
       "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
     }
   ],
-  "polysemy": [],
-  "polysemy_senses": [],
-  "polyphones": [],
+  "polysemy": [
+    {
+      "id": "polysemy:09:01",
+      "char": "佛",
+      "sentence": "語詞「佛祖」中的「佛」，表示什麼意思？",
+      "definition": "佛陀的簡稱",
+      "options": [
+        "佛陀的簡稱",
+        "如佛一般的仁慈"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:02",
+      "char": "佛",
+      "sentence": "語詞「佛口蛇心」中的「佛」，表示什麼意思？",
+      "definition": "如佛一般的仁慈",
+      "options": [
+        "如佛一般的仁慈",
+        "佛陀的簡稱"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:03",
+      "char": "泰",
+      "sentence": "語詞「泰式料理」中的「泰」，表示什麼意思？",
+      "definition": "泰國的簡稱",
+      "options": [
+        "泰國的簡稱",
+        "舒適"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:04",
+      "char": "泰",
+      "sentence": "語詞「福體康泰」中的「泰」，表示什麼意思？",
+      "definition": "舒適",
+      "options": [
+        "舒適",
+        "泰國的簡稱"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:05",
+      "char": "廟",
+      "sentence": "語詞「神廟」中的「廟」，表示什麼意思？",
+      "definition": "供奉神佛的屋舍",
+      "options": [
+        "供奉神佛的屋舍",
+        "古時用來祭祀祖宗的屋舍"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:06",
+      "char": "廟",
+      "sentence": "語詞「太廟」中的「廟」，表示什麼意思？",
+      "definition": "古時用來祭祀祖宗的屋舍",
+      "options": [
+        "古時用來祭祀祖宗的屋舍",
+        "供奉神佛的屋舍"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:07",
+      "char": "華",
+      "sentence": "語詞「華麗」中的「華」，表示什麼意思？",
+      "definition": "美麗有光彩的",
+      "options": [
+        "美麗有光彩的",
+        "繁盛",
+        "時光",
+        "文章"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:08",
+      "char": "華",
+      "sentence": "語詞「繁華」中的「華」，表示什麼意思？",
+      "definition": "繁盛",
+      "options": [
+        "繁盛",
+        "美麗有光彩的",
+        "時光",
+        "文章"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:09",
+      "char": "華",
+      "sentence": "語詞「年華」中的「華」，表示什麼意思？",
+      "definition": "時光",
+      "options": [
+        "時光",
+        "美麗有光彩的",
+        "繁盛",
+        "文章"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:10",
+      "char": "華",
+      "sentence": "語詞「精華」中的「華」，表示什麼意思？",
+      "definition": "文章",
+      "options": [
+        "文章",
+        "美麗有光彩的",
+        "繁盛",
+        "時光"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:11",
+      "char": "華",
+      "sentence": "語詞「樸實無華」中的「華」，表示什麼意思？",
+      "definition": "文采",
+      "options": [
+        "文采",
+        "美麗有光彩的",
+        "繁盛",
+        "時光"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:12",
+      "char": "華",
+      "sentence": "語詞「洗盡鉛華」中的「華」，表示什麼意思？",
+      "definition": "化妝用的粉",
+      "options": [
+        "化妝用的粉",
+        "美麗有光彩的",
+        "繁盛",
+        "時光"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:13",
+      "char": "尚",
+      "sentence": "語詞「尚文」中的「尚」，表示什麼意思？",
+      "definition": "尊崇",
+      "options": [
+        "尊崇",
+        "猶"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:14",
+      "char": "尚",
+      "sentence": "語詞「尚未」中的「尚」，表示什麼意思？",
+      "definition": "猶",
+      "options": [
+        "猶",
+        "尊崇"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:15",
+      "char": "羅",
+      "sentence": "語詞「天羅地網」中的「羅」，表示什麼意思？",
+      "definition": "用來捕捉的網子",
+      "options": [
+        "用來捕捉的網子",
+        "質地輕軟的絲織品",
+        "捕捉",
+        "囊括"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:16",
+      "char": "羅",
+      "sentence": "語詞「綾羅綢緞」中的「羅」，表示什麼意思？",
+      "definition": "質地輕軟的絲織品",
+      "options": [
+        "質地輕軟的絲織品",
+        "用來捕捉的網子",
+        "捕捉",
+        "囊括"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:17",
+      "char": "羅",
+      "sentence": "語詞「門可羅雀」中的「羅」，表示什麼意思？",
+      "definition": "捕捉",
+      "options": [
+        "捕捉",
+        "用來捕捉的網子",
+        "質地輕軟的絲織品",
+        "囊括"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:18",
+      "char": "羅",
+      "sentence": "語詞「包羅萬象」中的「羅」，表示什麼意思？",
+      "definition": "囊括",
+      "options": [
+        "囊括",
+        "用來捕捉的網子",
+        "質地輕軟的絲織品",
+        "捕捉"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:19",
+      "char": "羅",
+      "sentence": "語詞「羅列」中的「羅」，表示什麼意思？",
+      "definition": "陳列",
+      "options": [
+        "陳列",
+        "用來捕捉的網子",
+        "質地輕軟的絲織品",
+        "捕捉"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:20",
+      "char": "羅",
+      "sentence": "語詞「網羅」中的「羅」，表示什麼意思？",
+      "definition": "招致",
+      "options": [
+        "招致",
+        "用來捕捉的網子",
+        "質地輕軟的絲織品",
+        "捕捉"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:21",
+      "char": "勢",
+      "sentence": "語詞「地勢」中的「勢」，表示什麼意思？",
+      "definition": "形貌",
+      "options": [
+        "形貌",
+        "權力",
+        "威力",
+        "動作的狀態"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:22",
+      "char": "勢",
+      "sentence": "語詞「有錢有勢」中的「勢」，表示什麼意思？",
+      "definition": "權力",
+      "options": [
+        "權力",
+        "形貌",
+        "威力",
+        "動作的狀態"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:23",
+      "char": "勢",
+      "sentence": "語詞「火勢」中的「勢」，表示什麼意思？",
+      "definition": "威力",
+      "options": [
+        "威力",
+        "形貌",
+        "權力",
+        "動作的狀態"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:24",
+      "char": "勢",
+      "sentence": "語詞「手勢」中的「勢」，表示什麼意思？",
+      "definition": "動作的狀態",
+      "options": [
+        "動作的狀態",
+        "形貌",
+        "權力",
+        "威力"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:25",
+      "char": "勢",
+      "sentence": "語詞「時勢」中的「勢」，表示什麼意思？",
+      "definition": "情形",
+      "options": [
+        "情形",
+        "形貌",
+        "權力",
+        "威力"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:26",
+      "char": "窪",
+      "sentence": "語詞「低窪」中的「窪」，表示什麼意思？",
+      "definition": "四周高",
+      "options": [
+        "四周高"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:27",
+      "char": "窪",
+      "sentence": "語詞「窪地」中的「窪」，表示什麼意思？",
+      "definition": "四周高",
+      "options": [
+        "四周高"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:28",
+      "char": "防",
+      "sentence": "語詞「防備」中的「防」，表示什麼意思？",
+      "definition": "戒備",
+      "options": [
+        "戒備",
+        "要塞",
+        "戒備的事"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:29",
+      "char": "防",
+      "sentence": "語詞「邊防」中的「防」，表示什麼意思？",
+      "definition": "要塞",
+      "options": [
+        "要塞",
+        "戒備",
+        "戒備的事"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:30",
+      "char": "防",
+      "sentence": "語詞「海防」中的「防」，表示什麼意思？",
+      "definition": "戒備的事",
+      "options": [
+        "戒備的事",
+        "戒備",
+        "要塞"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:31",
+      "char": "潮",
+      "sentence": "語詞「潮汐」中的「潮」，表示什麼意思？",
+      "definition": "海水受日月引力的影響而定時漲落的現象",
+      "options": [
+        "海水受日月引力的影響而定時漲落的現象",
+        "像潮水般洶湧起伏的形勢",
+        "微溼"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:32",
+      "char": "潮",
+      "sentence": "語詞「思潮」中的「潮」，表示什麼意思？",
+      "definition": "像潮水般洶湧起伏的形勢",
+      "options": [
+        "像潮水般洶湧起伏的形勢",
+        "海水受日月引力的影響而定時漲落的現象",
+        "微溼"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:33",
+      "char": "潮",
+      "sentence": "語詞「潮溼」中的「潮」，表示什麼意思？",
+      "definition": "微溼",
+      "options": [
+        "微溼",
+        "海水受日月引力的影響而定時漲落的現象",
+        "像潮水般洶湧起伏的形勢"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:34",
+      "char": "鬱",
+      "sentence": "語詞「鬱鬱蒼蒼」中的「鬱」，表示什麼意思？",
+      "definition": "茂盛的樣子",
+      "options": [
+        "茂盛的樣子",
+        "愁悶的",
+        "積聚"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:35",
+      "char": "鬱",
+      "sentence": "語詞「憂鬱」中的「鬱」，表示什麼意思？",
+      "definition": "愁悶的",
+      "options": [
+        "愁悶的",
+        "茂盛的樣子",
+        "積聚"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:36",
+      "char": "鬱",
+      "sentence": "語詞「鬱積」中的「鬱」，表示什麼意思？",
+      "definition": "積聚",
+      "options": [
+        "積聚",
+        "茂盛的樣子",
+        "愁悶的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:37",
+      "char": "划",
+      "sentence": "語詞「划船」中的「划」，表示什麼意思？",
+      "definition": "撥水前進",
+      "options": [
+        "撥水前進",
+        "計算"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:09:38",
+      "char": "划",
+      "sentence": "語詞「划算」中的「划」，表示什麼意思？",
+      "definition": "計算",
+      "options": [
+        "計算",
+        "撥水前進"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    }
+  ],
+  "polysemy_senses": [
+    {
+      "char": "佛",
+      "senses": [
+        {
+          "char": "佛",
+          "definition": "佛陀的簡稱",
+          "examples": [
+            "佛祖",
+            "佛教"
+          ]
+        },
+        {
+          "char": "佛",
+          "definition": "如佛一般的仁慈",
+          "examples": [
+            "佛口蛇心"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "泰",
+      "senses": [
+        {
+          "char": "泰",
+          "definition": "泰國的簡稱",
+          "examples": [
+            "泰式料理"
+          ]
+        },
+        {
+          "char": "泰",
+          "definition": "舒適",
+          "examples": [
+            "福體康泰",
+            "國泰民安"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "廟",
+      "senses": [
+        {
+          "char": "廟",
+          "definition": "供奉神佛的屋舍",
+          "examples": [
+            "神廟",
+            "寺廟"
+          ]
+        },
+        {
+          "char": "廟",
+          "definition": "古時用來祭祀祖宗的屋舍",
+          "examples": [
+            "太廟",
+            "祖廟"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "華",
+      "senses": [
+        {
+          "char": "華",
+          "definition": "美麗有光彩的",
+          "examples": [
+            "華麗",
+            "華燈初上"
+          ]
+        },
+        {
+          "char": "華",
+          "definition": "繁盛",
+          "examples": [
+            "繁華",
+            "榮華"
+          ]
+        },
+        {
+          "char": "華",
+          "definition": "時光",
+          "examples": [
+            "年華",
+            "韶華"
+          ]
+        },
+        {
+          "char": "華",
+          "definition": "文章",
+          "examples": [
+            "精華"
+          ]
+        },
+        {
+          "char": "華",
+          "definition": "文采",
+          "examples": [
+            "樸實無華"
+          ]
+        },
+        {
+          "char": "華",
+          "definition": "化妝用的粉",
+          "examples": [
+            "洗盡鉛華"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "尚",
+      "senses": [
+        {
+          "char": "尚",
+          "definition": "尊崇",
+          "examples": [
+            "尚文",
+            "尚武"
+          ]
+        },
+        {
+          "char": "尚",
+          "definition": "猶",
+          "examples": [
+            "尚未"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "羅",
+      "senses": [
+        {
+          "char": "羅",
+          "definition": "用來捕捉的網子",
+          "examples": [
+            "天羅地網"
+          ]
+        },
+        {
+          "char": "羅",
+          "definition": "質地輕軟的絲織品",
+          "examples": [
+            "綾羅綢緞"
+          ]
+        },
+        {
+          "char": "羅",
+          "definition": "捕捉",
+          "examples": [
+            "門可羅雀"
+          ]
+        },
+        {
+          "char": "羅",
+          "definition": "囊括",
+          "examples": [
+            "包羅萬象"
+          ]
+        },
+        {
+          "char": "羅",
+          "definition": "陳列",
+          "examples": [
+            "羅列",
+            "星羅棋布"
+          ]
+        },
+        {
+          "char": "羅",
+          "definition": "招致",
+          "examples": [
+            "網羅",
+            "羅致",
+            "搜羅"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "勢",
+      "senses": [
+        {
+          "char": "勢",
+          "definition": "形貌",
+          "examples": [
+            "地勢",
+            "山勢"
+          ]
+        },
+        {
+          "char": "勢",
+          "definition": "權力",
+          "examples": [
+            "有錢有勢",
+            "仗勢欺人"
+          ]
+        },
+        {
+          "char": "勢",
+          "definition": "威力",
+          "examples": [
+            "火勢",
+            "風勢"
+          ]
+        },
+        {
+          "char": "勢",
+          "definition": "動作的狀態",
+          "examples": [
+            "手勢",
+            "姿勢"
+          ]
+        },
+        {
+          "char": "勢",
+          "definition": "情形",
+          "examples": [
+            "時勢",
+            "局勢"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "窪",
+      "senses": [
+        {
+          "char": "窪",
+          "definition": "四周高",
+          "examples": [
+            "低窪",
+            "坑坑窪窪"
+          ]
+        },
+        {
+          "char": "窪",
+          "definition": "四周高",
+          "examples": [
+            "窪地",
+            "水窪"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "防",
+      "senses": [
+        {
+          "char": "防",
+          "definition": "戒備",
+          "examples": [
+            "防備",
+            "提防",
+            "以防萬一"
+          ]
+        },
+        {
+          "char": "防",
+          "definition": "要塞",
+          "examples": [
+            "邊防"
+          ]
+        },
+        {
+          "char": "防",
+          "definition": "戒備的事",
+          "examples": [
+            "海防",
+            "國防"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "潮",
+      "senses": [
+        {
+          "char": "潮",
+          "definition": "海水受日月引力的影響而定時漲落的現象",
+          "examples": [
+            "潮汐",
+            "潮起潮落"
+          ]
+        },
+        {
+          "char": "潮",
+          "definition": "像潮水般洶湧起伏的形勢",
+          "examples": [
+            "思潮",
+            "學潮"
+          ]
+        },
+        {
+          "char": "潮",
+          "definition": "微溼",
+          "examples": [
+            "潮溼",
+            "受潮"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "鬱",
+      "senses": [
+        {
+          "char": "鬱",
+          "definition": "茂盛的樣子",
+          "examples": [
+            "鬱鬱蒼蒼"
+          ]
+        },
+        {
+          "char": "鬱",
+          "definition": "愁悶的",
+          "examples": [
+            "憂鬱",
+            "鬱鬱寡歡"
+          ]
+        },
+        {
+          "char": "鬱",
+          "definition": "積聚",
+          "examples": [
+            "鬱積",
+            "鬱結"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "划",
+      "senses": [
+        {
+          "char": "划",
+          "definition": "撥水前進",
+          "examples": [
+            "划船",
+            "划龍舟"
+          ]
+        },
+        {
+          "char": "划",
+          "definition": "計算",
+          "examples": [
+            "划算",
+            "划得來"
+          ]
+        }
+      ]
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:09:華",
+      "char": "華",
+      "readings": [
+        {
+          "zhuyin": "ㄏㄨㄚˊ",
+          "dabutie_zhuyin": "ㄏㄨㄚˊ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "華麗",
+                "精華"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄏㄨㄚˋ",
+          "dabutie_zhuyin": "ㄏㄨㄚˋ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "華山",
+                "華佗"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "康軒四上官方教材（06 字音字形；多音例詞經來源文字核對）"
+    }
+  ],
   "lookalikes": [
     {
       "id": "lookalike:115AG4K09:01",
@@ -768,7 +1894,47 @@
       "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
     }
   ],
-  "listening": [],
+  "listening": [
+    {
+      "id": "listening:09:01",
+      "stem": "泰國的宗教文化有什麼特色？",
+      "question": "泰國的宗教文化有什麼特色？",
+      "options": [
+        "泰國有「千佛之國」之稱。那裡到處都能見到寺廟，每一個信奉佛教的男人，都要出家當和尚一段時間",
+        "荷蘭的地勢低窪，風車及木鞋就是為了適應這樣的環境而製造的。鬱金香和水仙都是知名的特產",
+        "奧地利是音樂國度，許多世界有名的音樂家，都曾居住在此。奧地利人喜愛音樂，所以國內總是充滿歡樂的氣息"
+      ],
+      "answer": "泰國有「千佛之國」之稱。那裡到處都能見到寺廟，每一個信奉佛教的男人，都要出家當和尚一段時間",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:09:02",
+      "stem": "埃及有什麼特別的文化風情？",
+      "question": "埃及有什麼特別的文化風情？",
+      "options": [
+        "荷蘭的地勢低窪，風車及木鞋就是為了適應這樣的環境而製造的。鬱金香和水仙都是知名的特產",
+        "奧地利是音樂國度，許多世界有名的音樂家，都曾居住在此。奧地利人喜愛音樂，所以國內總是充滿歡樂的氣息",
+        "埃及是五千年古國，國土大部分是沙漠，氣候又乾又熱。尼羅河旁的首都開羅，有世界聞名的金字塔"
+      ],
+      "answer": "埃及是五千年古國，國土大部分是沙漠，氣候又乾又熱。尼羅河旁的首都開羅，有世界聞名的金字塔",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:09:03",
+      "stem": "課文中如何描述金字塔？",
+      "question": "課文中如何描述金字塔？",
+      "options": [
+        "奧地利是音樂國度，許多世界有名的音樂家，都曾居住在此。奧地利人喜愛音樂，所以國內總是充滿歡樂的氣息",
+        "世界聞名的金字塔，最大的金字塔有五萬多平方公尺，一百三十七公尺高",
+        "荷蘭的地勢低窪，風車及木鞋就是為了適應這樣的環境而製造的。鬱金香和水仙都是知名的特產"
+      ],
+      "answer": "世界聞名的金字塔，最大的金字塔有五萬多平方公尺，一百三十七公尺高",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    }
+  ],
   "review_words": {
     "by_lesson": {
       "1": [
@@ -926,7 +2092,22 @@
       ]
     }
   },
-  "extensions": [],
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag4k-09",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E4%BD%9B%E6%B3%B0%E5%BB%9F%E8%8F%AF%E5%B0%9A%E9%80%9B%E5%9F%83%E7%BE%85%E5%8B%A2%E7%AA%AA%E5%A0%A4%E9%98%B2%E6%BD%AE%E9%AC%B1%E5%88%92",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・康軒・4年級・第9課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課15個生字"
+    }
+  ],
   "quiz": [
     {
       "id": "q01",
@@ -1094,7 +2275,7 @@
       "label": "練習句子",
       "status": "missing",
       "activity": "sentence-practice",
-      "note": "句型來源尚未完成來源核對。"
+      "note": "官方核准句型不足 3 組。"
     },
     "challenge": {
       "label": "動手挑戰",
@@ -1109,21 +2290,18 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
-      "activity": "idiom-builder",
-      "note": "成語資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "idiom-builder"
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "一字多義資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
-      "status": "missing",
-      "activity": "polyphones",
-      "note": "一字多音資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "polyphones"
     },
     "lookalikes": {
       "label": "形似字",
@@ -1137,15 +2315,14 @@
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
-      "activity": "listening-quiz",
-      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+      "status": "available",
+      "activity": "listening-quiz"
     },
     "rhetoric": {
       "label": "修辭小偵探",
       "status": "missing",
       "activity": "rhetoric",
-      "note": "修辭資料尚未完成來源核對。"
+      "note": "官方修辭分析不足 3 題。"
     },
     "review": {
       "label": "舊字新詞",

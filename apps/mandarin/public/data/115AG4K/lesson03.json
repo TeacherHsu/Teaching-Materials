@@ -49,6 +49,36 @@
       "kind": "official",
       "locator": "14 課文大意、段落大意",
       "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    },
+    {
+      "kind": "official",
+      "locator": "04 生字延伸成語／第3課",
+      "sha256": "9776268150431107A35FA309327947662745CBCD68CE52C17427F09A449E2350"
+    },
+    {
+      "kind": "official",
+      "locator": "07 語句練習／第3課",
+      "sha256": "BD7B4BBEAAEDDDACC1128B1AF9B7469AAD5B60CEC1244518B76F62872CB6A5E9"
+    },
+    {
+      "kind": "official",
+      "locator": "09 生字解釋／第3課",
+      "sha256": "237FB70C678FFF9EA7A0AB645954F7A54A2829C7006380A7CD4DC6FE4A03F663"
+    },
+    {
+      "kind": "official",
+      "locator": "06 字音字形／第3課",
+      "sha256": "BCEB2E7CF05D5919ACC53AF2D454698D3BC94A02C2C944AC603D4A2B1E368BAB"
+    },
+    {
+      "kind": "official",
+      "locator": "15 閱讀理解／第3課",
+      "sha256": "6103E7B8CF142DF8CBE57CDE9CBDB6175C38364B3D4E3265402B97F5F13280FF"
+    },
+    {
+      "kind": "official",
+      "locator": "10 修辭分析／第3課",
+      "sha256": "35962C47D83A67C3158CD8DD9E71B57AFFEC45A3FB7D9494A459EE12E6B597FB"
     }
   ],
   "characters": [
@@ -60,8 +90,12 @@
       "radical": "⽰",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "報社",
+        "社交",
+        "社區"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A4%BE",
@@ -77,9 +111,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "邀約"
+        "應邀",
+        "邀約",
+        "邀請"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%82%80",
@@ -99,7 +135,7 @@
         "與其",
         "與否"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%88%87",
@@ -115,9 +151,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "遙不可及"
+        "逍遙",
+        "遙控",
+        "遙測"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%81%99",
@@ -132,8 +170,12 @@
       "radical": "⼿",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "公投",
+        "北投",
+        "南投"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8A%95",
@@ -149,9 +191,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "熟能生巧"
+        "成熟",
+        "早熟",
+        "烤熟"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%86%9F",
@@ -167,9 +211,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "熟能生巧"
+        "不巧",
+        "乖巧",
+        "小巧"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B7%A7",
@@ -185,9 +231,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "反彈"
+        "動彈",
+        "反彈",
+        "子彈"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%BD%88",
@@ -207,7 +255,7 @@
         "曾祖母",
         "曾祖父"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9B%BE",
@@ -223,9 +271,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "指揮"
+        "指揮",
+        "揮出",
+        "揮別"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8F%AE",
@@ -241,9 +291,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "此起彼落"
+        "彼此",
+        "此起彼落",
+        "彼岸"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%BD%BC",
@@ -258,8 +310,12 @@
       "radical": "⽲",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "秒鐘",
+        "分秒",
+        "秒數"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A7%92",
@@ -275,9 +331,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
+        "喧囂",
+        "喧譁",
         "喧鬧"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%96%A7",
@@ -297,7 +355,7 @@
         "優勢",
         "優惠"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%84%AA",
@@ -313,9 +371,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "弧線"
+        "弧度",
+        "弧菌",
+        "圓弧"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%BC%A7",
@@ -507,10 +567,260 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
-  "rhetoric": [],
+  "idioms": [
+    {
+      "id": "idiom:03:01",
+      "idiom": "無與倫比",
+      "definition": "比喻沒有能比得上的。",
+      "related_char": "與",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:03:02",
+      "idiom": "五體投地",
+      "definition": "比喻非常欽佩對方。",
+      "related_char": "投",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:03:03",
+      "idiom": "耳熟能詳",
+      "definition": "聽得非常熟悉，而能詳盡的知道或說出來。",
+      "related_char": "熟",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:03:04",
+      "idiom": "弄巧成拙",
+      "definition": "本想賣弄才能、聰明，卻反而做了蠢事。比喻枉費心機。",
+      "related_char": "巧",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:03:05",
+      "idiom": "對牛彈琴",
+      "definition": "比喻講話、做事不看對象。後亦用於比喻對不懂道理的人講道理。",
+      "related_char": "彈",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:03:06",
+      "idiom": "借題發揮",
+      "definition": "假借某事為藉口，表達自己真正的意思，或想做的事。",
+      "related_char": "揮",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:03:01",
+      "idiom_id": "idiom:03:01",
+      "rewritten": "這位大師的木雕作品中所表現的力與美，真是無與倫比。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:03:02",
+      "idiom_id": "idiom:03:02",
+      "rewritten": "對他能博古通今的學識，我佩服得五體投地。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:03:03",
+      "idiom_id": "idiom:03:03",
+      "rewritten": "李白的靜夜思詩，大家都耳熟能詳，幾乎可以倒背如流。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:03:04",
+      "idiom_id": "idiom:03:04",
+      "rewritten": "讀書沒有捷徑，投機取巧，必然弄巧成拙。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:03:05",
+      "idiom_id": "idiom:03:05",
+      "rewritten": "你這場演講內容應很精采，遺憾的是對牛彈琴，我們都聽不懂。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:03:06",
+      "idiom_id": "idiom:03:06",
+      "rewritten": "他說的這些觀點，根本與今天討論的主題無關，純粹是借題發揮而已。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence:03:01",
+      "category": "短語練習",
+      "head": "跳出迷人的舞姿",
+      "structure": "（動詞）（形容詞）的（名詞）",
+      "description": "利用形容詞來描述事物。",
+      "guide": "請將語詞重新排列，組成通順的短語。",
+      "examples": [
+        "創作優美的旋律",
+        "演奏動聽的樂曲",
+        "寫出精采的文章"
+      ],
+      "example_parts": [
+        [
+          "創作",
+          "優美",
+          "的",
+          "旋律"
+        ],
+        [
+          "演奏",
+          "動聽",
+          "的",
+          "樂曲"
+        ],
+        [
+          "寫出",
+          "精采",
+          "的",
+          "文章"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:03:02",
+      "category": "造句練習",
+      "head": "有朝一日",
+      "structure": "生活情境句",
+      "description": "將來有一天。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "我相信堅持下去，有朝一日能成為太空人。",
+        "我希望有朝一日能夠和家人一起環遊世界。",
+        "哥哥夢想有朝一日進入大聯盟，於是勤奮練習。"
+      ],
+      "example_parts": [
+        [
+          "我相信",
+          "堅持下去，",
+          "有朝一日能",
+          "成為太空人。"
+        ],
+        [
+          "我希望",
+          "有朝一日",
+          "能夠和家人",
+          "一起環遊世界。"
+        ],
+        [
+          "哥哥夢想",
+          "有朝一日",
+          "進入大聯盟，",
+          "於是",
+          "勤奮練習。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:03:03",
+      "category": "造句練習",
+      "head": "風雲人物",
+      "structure": "生活情境句",
+      "description": "表現特出，深具知名度及影響力的人。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "姐姐在運動會表現優異，成為全校的風雲人物。",
+        "他每次比賽都有好表現，是學校的風雲人物。",
+        "劉備、關羽、張飛，是三國時代的風雲人物。"
+      ],
+      "example_parts": [
+        [
+          "姐姐在",
+          "運動會",
+          "表現優異，",
+          "成為全校的",
+          "風雲人物。"
+        ],
+        [
+          "他每次比賽",
+          "都有好表現，",
+          "是學校的",
+          "風雲人物。"
+        ],
+        [
+          "劉備、",
+          "關羽、張飛，",
+          "是三國時代的",
+          "風雲人物。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:03:04",
+      "category": "句型練習",
+      "head": "只要……就……",
+      "structure": "只要（條件），就（結果）。",
+      "description": "條件複句，前一個分句提出條件，後一個分句說明在這種條件下產生的結果。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "只要肯付出，就一定會有收穫。",
+        "只要全班同心協力，就有機會贏得拔河冠軍。",
+        "只要假期一到，高速公路就塞滿了出遊的車潮。"
+      ],
+      "example_parts": [
+        [
+          "只要",
+          "肯付出，",
+          "就一定會",
+          "有收穫。"
+        ],
+        [
+          "只要全班",
+          "同心協力，",
+          "就有機會贏得",
+          "拔河冠軍。"
+        ],
+        [
+          "只要",
+          "假期一到，",
+          "高速公路",
+          "就塞滿了",
+          "出遊的車潮。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    }
+  ],
+  "rhetoric": [
+    {
+      "id": "rhetoric:03:01",
+      "figure": "譬喻",
+      "note": "兩種不同的事物，只要有相同的地方，就可以拿來互相比方，叫做「譬喻」。用「譬喻」的方式說話或寫作，可以把事物說得更清楚，將情感表達得更生動，使聽的人或讀的人更容易了解和更加深印象。",
+      "example": "初次站在球場上的我，覺得籃球架像一座遙不可及的高山，一看就讓人覺得害怕。",
+      "child_note": "譬喻：兩種不同的事物，只要有相同的地方，就可以拿來互相比方，叫做「譬喻」。用「譬喻」的方式說話或寫作，可以把事物說得更清楚，將情感表達得更生動，使聽的人或讀的人更容易了解和更加深印象。",
+      "status": "approved",
+      "source": "康軒四上官方教材（10 修辭分析）"
+    }
+  ],
   "paragraph_summary": [
     {
       "id": "paragraph:115AG4K03:01",
@@ -625,9 +935,1200 @@
       "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
     }
   ],
-  "polysemy": [],
-  "polysemy_senses": [],
-  "polyphones": [],
+  "polysemy": [
+    {
+      "id": "polysemy:03:01",
+      "char": "邀",
+      "sentence": "語詞「應邀」中的「邀」，表示什麼意思？",
+      "definition": "招請",
+      "options": [
+        "招請",
+        "求取"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:02",
+      "char": "邀",
+      "sentence": "語詞「邀功」中的「邀」，表示什麼意思？",
+      "definition": "求取",
+      "options": [
+        "求取",
+        "招請"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:03",
+      "char": "與",
+      "sentence": "語詞「我與你」中的「與」，表示什麼意思？",
+      "definition": "和",
+      "options": [
+        "和",
+        "給予",
+        "推舉",
+        "支助"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:04",
+      "char": "與",
+      "sentence": "語詞「贈與」中的「與」，表示什麼意思？",
+      "definition": "給予",
+      "options": [
+        "給予",
+        "和",
+        "推舉",
+        "支助"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:05",
+      "char": "與",
+      "sentence": "語詞「選賢與能」中的「與」，表示什麼意思？",
+      "definition": "推舉",
+      "options": [
+        "推舉",
+        "和",
+        "給予",
+        "支助"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:06",
+      "char": "與",
+      "sentence": "語詞「與人為善」中的「與」，表示什麼意思？",
+      "definition": "支助",
+      "options": [
+        "支助",
+        "和",
+        "給予",
+        "推舉"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:07",
+      "char": "與",
+      "sentence": "語詞「民胞物與」中的「與」，表示什麼意思？",
+      "definition": "同類",
+      "options": [
+        "同類",
+        "和",
+        "給予",
+        "推舉"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:08",
+      "char": "投",
+      "sentence": "語詞「投球」中的「投」，表示什麼意思？",
+      "definition": "扔",
+      "options": [
+        "扔",
+        "放進去",
+        "跳進去",
+        "寄發"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:09",
+      "char": "投",
+      "sentence": "語詞「投入」中的「投」，表示什麼意思？",
+      "definition": "放進去",
+      "options": [
+        "放進去",
+        "扔",
+        "跳進去",
+        "寄發"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:10",
+      "char": "投",
+      "sentence": "語詞「自投羅網」中的「投」，表示什麼意思？",
+      "definition": "跳進去",
+      "options": [
+        "跳進去",
+        "扔",
+        "放進去",
+        "寄發"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:11",
+      "char": "投",
+      "sentence": "語詞「投遞」中的「投」，表示什麼意思？",
+      "definition": "寄發",
+      "options": [
+        "寄發",
+        "扔",
+        "放進去",
+        "跳進去"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:12",
+      "char": "投",
+      "sentence": "語詞「投宿」中的「投」，表示什麼意思？",
+      "definition": "前往",
+      "options": [
+        "前往",
+        "扔",
+        "放進去",
+        "跳進去"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:13",
+      "char": "投",
+      "sentence": "語詞「情投意合」中的「投」，表示什麼意思？",
+      "definition": "合",
+      "options": [
+        "合",
+        "扔",
+        "放進去",
+        "跳進去"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:14",
+      "char": "投",
+      "sentence": "語詞「投奔」中的「投」，表示什麼意思？",
+      "definition": "奔靠",
+      "options": [
+        "奔靠",
+        "扔",
+        "放進去",
+        "跳進去"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:15",
+      "char": "投",
+      "sentence": "語詞「投藥」中的「投」，表示什麼意思？",
+      "definition": "用",
+      "options": [
+        "用",
+        "扔",
+        "放進去",
+        "跳進去"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:16",
+      "char": "投",
+      "sentence": "語詞「投桃報李」中的「投」，表示什麼意思？",
+      "definition": "贈送",
+      "options": [
+        "贈送",
+        "扔",
+        "放進去",
+        "跳進去"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:17",
+      "char": "投",
+      "sentence": "語詞「投其所好」中的「投」，表示什麼意思？",
+      "definition": "迎合",
+      "options": [
+        "迎合",
+        "扔",
+        "放進去",
+        "跳進去"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:18",
+      "char": "熟",
+      "sentence": "語詞「熟手」中的「熟」，表示什麼意思？",
+      "definition": "技藝精巧的",
+      "options": [
+        "技藝精巧的",
+        "常見的",
+        "留有深刻印象的",
+        "經常使用的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:19",
+      "char": "熟",
+      "sentence": "語詞「熟人」中的「熟」，表示什麼意思？",
+      "definition": "常見的",
+      "options": [
+        "常見的",
+        "技藝精巧的",
+        "留有深刻印象的",
+        "經常使用的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:20",
+      "char": "熟",
+      "sentence": "語詞「耳熟能詳」中的「熟」，表示什麼意思？",
+      "definition": "留有深刻印象的",
+      "options": [
+        "留有深刻印象的",
+        "技藝精巧的",
+        "常見的",
+        "經常使用的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:21",
+      "char": "熟",
+      "sentence": "語詞「熟字」中的「熟」，表示什麼意思？",
+      "definition": "經常使用的",
+      "options": [
+        "經常使用的",
+        "技藝精巧的",
+        "常見的",
+        "留有深刻印象的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:22",
+      "char": "熟",
+      "sentence": "語詞「熟年」中的「熟」，表示什麼意思？",
+      "definition": "豐收的",
+      "options": [
+        "豐收的",
+        "技藝精巧的",
+        "常見的",
+        "留有深刻印象的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:23",
+      "char": "熟",
+      "sentence": "語詞「熟鐵」中的「熟」，表示什麼意思？",
+      "definition": "經過加工煉製的",
+      "options": [
+        "經過加工煉製的",
+        "技藝精巧的",
+        "常見的",
+        "留有深刻印象的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:24",
+      "char": "熟",
+      "sentence": "語詞「煮熟」中的「熟」，表示什麼意思？",
+      "definition": "烹煮使可食",
+      "options": [
+        "烹煮使可食",
+        "技藝精巧的",
+        "常見的",
+        "留有深刻印象的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:25",
+      "char": "熟",
+      "sentence": "語詞「熟睡」中的「熟」，表示什麼意思？",
+      "definition": "深沉安穩",
+      "options": [
+        "深沉安穩",
+        "技藝精巧的",
+        "常見的",
+        "留有深刻印象的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:26",
+      "char": "熟",
+      "sentence": "語詞「熟察」中的「熟」，表示什麼意思？",
+      "definition": "仔細",
+      "options": [
+        "仔細",
+        "技藝精巧的",
+        "常見的",
+        "留有深刻印象的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:27",
+      "char": "巧",
+      "sentence": "語詞「巧手」中的「巧」，表示什麼意思？",
+      "definition": "技藝精妙",
+      "options": [
+        "技藝精妙",
+        "高妙",
+        "虛偽不實",
+        "精妙的技能"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:28",
+      "char": "巧",
+      "sentence": "語詞「靈巧」中的「巧」，表示什麼意思？",
+      "definition": "高妙",
+      "options": [
+        "高妙",
+        "技藝精妙",
+        "虛偽不實",
+        "精妙的技能"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:29",
+      "char": "巧",
+      "sentence": "語詞「花言巧語」中的「巧」，表示什麼意思？",
+      "definition": "虛偽不實",
+      "options": [
+        "虛偽不實",
+        "技藝精妙",
+        "高妙",
+        "精妙的技能"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:30",
+      "char": "巧",
+      "sentence": "語詞「乞巧」中的「巧」，表示什麼意思？",
+      "definition": "精妙的技能",
+      "options": [
+        "精妙的技能",
+        "技藝精妙",
+        "高妙",
+        "虛偽不實"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:31",
+      "char": "巧",
+      "sentence": "語詞「湊巧」中的「巧」，表示什麼意思？",
+      "definition": "恰好",
+      "options": [
+        "恰好",
+        "技藝精妙",
+        "高妙",
+        "虛偽不實"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:32",
+      "char": "巧",
+      "sentence": "語詞「巧辯」中的「巧」，表示什麼意思？",
+      "definition": "狡詐",
+      "options": [
+        "狡詐",
+        "技藝精妙",
+        "高妙",
+        "虛偽不實"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:33",
+      "char": "彈",
+      "sentence": "語詞「彈棉花」中的「彈」，表示什麼意思？",
+      "definition": "鬆",
+      "options": [
+        "鬆",
+        "撥弄或按弄樂器",
+        "掉落",
+        "糾劾"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:34",
+      "char": "彈",
+      "sentence": "語詞「彈吉他」中的「彈」，表示什麼意思？",
+      "definition": "撥弄或按弄樂器",
+      "options": [
+        "撥弄或按弄樂器",
+        "鬆",
+        "掉落",
+        "糾劾"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:35",
+      "char": "彈",
+      "sentence": "語詞「英雄有淚不輕彈」中的「彈」，表示什麼意思？",
+      "definition": "掉落",
+      "options": [
+        "掉落",
+        "鬆",
+        "撥弄或按弄樂器",
+        "糾劾"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:36",
+      "char": "彈",
+      "sentence": "語詞「彈劾」中的「彈」，表示什麼意思？",
+      "definition": "糾劾",
+      "options": [
+        "糾劾",
+        "鬆",
+        "撥弄或按弄樂器",
+        "掉落"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:37",
+      "char": "揮",
+      "sentence": "語詞「揮令前進」中的「揮」，表示什麼意思？",
+      "definition": "發號令",
+      "options": [
+        "發號令",
+        "搖動",
+        "發散"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:38",
+      "char": "揮",
+      "sentence": "語詞「揮扇」中的「揮」，表示什麼意思？",
+      "definition": "搖動",
+      "options": [
+        "搖動",
+        "發號令",
+        "發散"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:39",
+      "char": "揮",
+      "sentence": "語詞「揮發」中的「揮」，表示什麼意思？",
+      "definition": "發散",
+      "options": [
+        "發散",
+        "發號令",
+        "搖動"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:40",
+      "char": "彼",
+      "sentence": "語詞「彼時」中的「彼」，表示什麼意思？",
+      "definition": "那",
+      "options": [
+        "那",
+        "他"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:41",
+      "char": "彼",
+      "sentence": "語詞「彼等」中的「彼」，表示什麼意思？",
+      "definition": "他",
+      "options": [
+        "他",
+        "那"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:42",
+      "char": "優",
+      "sentence": "語詞「優等」中的「優」，表示什麼意思？",
+      "definition": "好的",
+      "options": [
+        "好的",
+        "柔弱",
+        "悠閒",
+        "演戲的人"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:43",
+      "char": "優",
+      "sentence": "語詞「優柔寡斷」中的「優」，表示什麼意思？",
+      "definition": "柔弱",
+      "options": [
+        "柔弱",
+        "好的",
+        "悠閒",
+        "演戲的人"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:44",
+      "char": "優",
+      "sentence": "語詞「優哉游哉」中的「優」，表示什麼意思？",
+      "definition": "悠閒",
+      "options": [
+        "悠閒",
+        "好的",
+        "柔弱",
+        "演戲的人"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:45",
+      "char": "優",
+      "sentence": "語詞「倡優」中的「優」，表示什麼意思？",
+      "definition": "演戲的人",
+      "options": [
+        "演戲的人",
+        "好的",
+        "柔弱",
+        "悠閒"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:46",
+      "char": "弧",
+      "sentence": "語詞「弧形」中的「弧」，表示什麼意思？",
+      "definition": "彎曲的",
+      "options": [
+        "彎曲的",
+        "數學上指圓周的任意一段",
+        "弧形符號"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:47",
+      "char": "弧",
+      "sentence": "語詞「圓弧」中的「弧」，表示什麼意思？",
+      "definition": "數學上指圓周的任意一段",
+      "options": [
+        "數學上指圓周的任意一段",
+        "彎曲的",
+        "弧形符號"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:03:48",
+      "char": "弧",
+      "sentence": "語詞「括弧」中的「弧」，表示什麼意思？",
+      "definition": "弧形符號",
+      "options": [
+        "弧形符號",
+        "彎曲的",
+        "數學上指圓周的任意一段"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    }
+  ],
+  "polysemy_senses": [
+    {
+      "char": "邀",
+      "senses": [
+        {
+          "char": "邀",
+          "definition": "招請",
+          "examples": [
+            "應邀",
+            "邀集"
+          ]
+        },
+        {
+          "char": "邀",
+          "definition": "求取",
+          "examples": [
+            "邀功",
+            "邀名"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "與",
+      "senses": [
+        {
+          "char": "與",
+          "definition": "和",
+          "examples": [
+            "我與你",
+            "山與水"
+          ]
+        },
+        {
+          "char": "與",
+          "definition": "給予",
+          "examples": [
+            "贈與",
+            "授與"
+          ]
+        },
+        {
+          "char": "與",
+          "definition": "推舉",
+          "examples": [
+            "選賢與能"
+          ]
+        },
+        {
+          "char": "與",
+          "definition": "支助",
+          "examples": [
+            "與人為善"
+          ]
+        },
+        {
+          "char": "與",
+          "definition": "同類",
+          "examples": [
+            "民胞物與"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "投",
+      "senses": [
+        {
+          "char": "投",
+          "definition": "扔",
+          "examples": [
+            "投球",
+            "投籃"
+          ]
+        },
+        {
+          "char": "投",
+          "definition": "放進去",
+          "examples": [
+            "投入",
+            "投票",
+            "投資"
+          ]
+        },
+        {
+          "char": "投",
+          "definition": "跳進去",
+          "examples": [
+            "自投羅網"
+          ]
+        },
+        {
+          "char": "投",
+          "definition": "寄發",
+          "examples": [
+            "投遞",
+            "投稿",
+            "投郵"
+          ]
+        },
+        {
+          "char": "投",
+          "definition": "前往",
+          "examples": [
+            "投宿",
+            "投降",
+            "棄暗投明"
+          ]
+        },
+        {
+          "char": "投",
+          "definition": "合",
+          "examples": [
+            "情投意合",
+            "意氣相投"
+          ]
+        },
+        {
+          "char": "投",
+          "definition": "奔靠",
+          "examples": [
+            "投奔",
+            "投靠親友",
+            "走投無路"
+          ]
+        },
+        {
+          "char": "投",
+          "definition": "用",
+          "examples": [
+            "投藥"
+          ]
+        },
+        {
+          "char": "投",
+          "definition": "贈送",
+          "examples": [
+            "投桃報李"
+          ]
+        },
+        {
+          "char": "投",
+          "definition": "迎合",
+          "examples": [
+            "投其所好"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "熟",
+      "senses": [
+        {
+          "char": "熟",
+          "definition": "技藝精巧的",
+          "examples": [
+            "熟手",
+            "技藝純熟"
+          ]
+        },
+        {
+          "char": "熟",
+          "definition": "常見的",
+          "examples": [
+            "熟人",
+            "熟客"
+          ]
+        },
+        {
+          "char": "熟",
+          "definition": "留有深刻印象的",
+          "examples": [
+            "耳熟能詳"
+          ]
+        },
+        {
+          "char": "熟",
+          "definition": "經常使用的",
+          "examples": [
+            "熟字",
+            "熟語"
+          ]
+        },
+        {
+          "char": "熟",
+          "definition": "豐收的",
+          "examples": [
+            "熟年"
+          ]
+        },
+        {
+          "char": "熟",
+          "definition": "經過加工煉製的",
+          "examples": [
+            "熟鐵",
+            "熟藥"
+          ]
+        },
+        {
+          "char": "熟",
+          "definition": "烹煮使可食",
+          "examples": [
+            "煮熟"
+          ]
+        },
+        {
+          "char": "熟",
+          "definition": "深沉安穩",
+          "examples": [
+            "熟睡"
+          ]
+        },
+        {
+          "char": "熟",
+          "definition": "仔細",
+          "examples": [
+            "熟察",
+            "熟讀",
+            "熟視",
+            "深思熟慮"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "巧",
+      "senses": [
+        {
+          "char": "巧",
+          "definition": "技藝精妙",
+          "examples": [
+            "巧手",
+            "巧工"
+          ]
+        },
+        {
+          "char": "巧",
+          "definition": "高妙",
+          "examples": [
+            "靈巧",
+            "巧思",
+            "巧婦難為無米之炊"
+          ]
+        },
+        {
+          "char": "巧",
+          "definition": "虛偽不實",
+          "examples": [
+            "花言巧語"
+          ]
+        },
+        {
+          "char": "巧",
+          "definition": "精妙的技能",
+          "examples": [
+            "乞巧"
+          ]
+        },
+        {
+          "char": "巧",
+          "definition": "恰好",
+          "examples": [
+            "湊巧",
+            "碰巧",
+            "巧遇"
+          ]
+        },
+        {
+          "char": "巧",
+          "definition": "狡詐",
+          "examples": [
+            "巧辯",
+            "巧立名目"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "彈",
+      "senses": [
+        {
+          "char": "彈",
+          "definition": "鬆",
+          "examples": [
+            "彈棉花",
+            "彈球"
+          ]
+        },
+        {
+          "char": "彈",
+          "definition": "撥弄或按弄樂器",
+          "examples": [
+            "彈吉他",
+            "彈琵琶"
+          ]
+        },
+        {
+          "char": "彈",
+          "definition": "掉落",
+          "examples": [
+            "英雄有淚不輕彈"
+          ]
+        },
+        {
+          "char": "彈",
+          "definition": "糾劾",
+          "examples": [
+            "彈劾",
+            "糾彈"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "揮",
+      "senses": [
+        {
+          "char": "揮",
+          "definition": "發號令",
+          "examples": [
+            "揮令前進",
+            "指揮軍隊"
+          ]
+        },
+        {
+          "char": "揮",
+          "definition": "搖動",
+          "examples": [
+            "揮扇",
+            "揮手",
+            "揮刀"
+          ]
+        },
+        {
+          "char": "揮",
+          "definition": "發散",
+          "examples": [
+            "揮發",
+            "揮淚",
+            "揮金如土"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "彼",
+      "senses": [
+        {
+          "char": "彼",
+          "definition": "那",
+          "examples": [
+            "彼時",
+            "彼處",
+            "厚此薄彼"
+          ]
+        },
+        {
+          "char": "彼",
+          "definition": "他",
+          "examples": [
+            "彼等",
+            "彼輩",
+            "知己知彼"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "優",
+      "senses": [
+        {
+          "char": "優",
+          "definition": "好的",
+          "examples": [
+            "優等",
+            "優秀"
+          ]
+        },
+        {
+          "char": "優",
+          "definition": "柔弱",
+          "examples": [
+            "優柔寡斷"
+          ]
+        },
+        {
+          "char": "優",
+          "definition": "悠閒",
+          "examples": [
+            "優哉游哉"
+          ]
+        },
+        {
+          "char": "優",
+          "definition": "演戲的人",
+          "examples": [
+            "倡優",
+            "俳優"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "弧",
+      "senses": [
+        {
+          "char": "弧",
+          "definition": "彎曲的",
+          "examples": [
+            "弧形"
+          ]
+        },
+        {
+          "char": "弧",
+          "definition": "數學上指圓周的任意一段",
+          "examples": [
+            "圓弧"
+          ]
+        },
+        {
+          "char": "弧",
+          "definition": "弧形符號",
+          "examples": [
+            "括弧"
+          ]
+        }
+      ]
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:03:彈",
+      "char": "彈",
+      "readings": [
+        {
+          "zhuyin": "ㄊㄢˊ",
+          "dabutie_zhuyin": "ㄊㄢˊ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "彈力",
+                "彈跳",
+                "反彈",
+                "彈奏"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄉㄢˋ",
+          "dabutie_zhuyin": "ㄉㄢˋ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "彈珠",
+                "子彈"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "康軒四上官方教材（06 字音字形；多音例詞經來源文字核對）"
+    },
+    {
+      "id": "polyphone:03:曾",
+      "char": "曾",
+      "readings": [
+        {
+          "zhuyin": "ㄘㄥˊ",
+          "dabutie_zhuyin": "ㄘㄥˊ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "曾經",
+                "不曾"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄗㄥ",
+          "dabutie_zhuyin": "ㄗㄥ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "曾先生",
+                "曾祖母"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "康軒四上官方教材（06 字音字形；多音例詞經來源文字核對）"
+    },
+    {
+      "id": "polyphone:03:與",
+      "char": "與",
+      "readings": [
+        {
+          "zhuyin": "ㄩˇ",
+          "dabutie_zhuyin": "ㄩˇ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "贈與"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄩˋ",
+          "dabutie_zhuyin": "ㄩˋ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "參與",
+                "與會"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "康軒四上官方教材（06 字音字形；多音例詞經來源文字核對）"
+    }
+  ],
   "lookalikes": [
     {
       "id": "lookalike:115AG4K03:01",
@@ -778,7 +2279,47 @@
       "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
     }
   ],
-  "listening": [],
+  "listening": [
+    {
+      "id": "listening:03:01",
+      "stem": "課文中，為什麼大家都在為主角喝采？",
+      "question": "課文中，為什麼大家都在為主角喝采？",
+      "options": [
+        "因為他在比賽最後關鍵投出一球空心進籃",
+        "主角從剛開始的不會運球、投籃，慢慢克服心裡的恐懼和擔憂，不斷勤加練習，到後來不但能夠掌握球的運行，更可以投進籃，這是一種自我挑戰成功的成就感，所以會格外興奮",
+        "在這個關鍵決一勝負的時候上場，主角的心理壓力一定非常大，他一方面想要幫助球隊得分獲勝，一方面又要穩住自己的緊張情緒，這是個非常不容易的任務，他的心情一定是震盪不……"
+      ],
+      "answer": "因為他在比賽最後關鍵投出一球空心進籃",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:03:02",
+      "stem": "課文中，主角加入籃球社的起因是什麼？",
+      "question": "課文中，主角加入籃球社的起因是什麼？",
+      "options": [
+        "主角從剛開始的不會運球、投籃，慢慢克服心裡的恐懼和擔憂，不斷勤加練習，到後來不但能夠掌握球的運行，更可以投進籃，這是一種自我挑戰成功的成就感，所以會格外興奮",
+        "在這個關鍵決一勝負的時候上場，主角的心理壓力一定非常大，他一方面想要幫助球隊得分獲勝，一方面又要穩住自己的緊張情緒，這是個非常不容易的任務，他的心情一定是震盪不……",
+        "他認為自己運動神經不出色，一開始有些猶豫，但是為了實現夢想，仍鼓起勇氣加入籃球社"
+      ],
+      "answer": "他認為自己運動神經不出色，一開始有些猶豫，但是為了實現夢想，仍鼓起勇氣加入籃球社",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:03:03",
+      "stem": "為什麼主角一看到籃球架就害怕呢？",
+      "question": "為什麼主角一看到籃球架就害怕呢？",
+      "options": [
+        "在這個關鍵決一勝負的時候上場，主角的心理壓力一定非常大，他一方面想要幫助球隊得分獲勝，一方面又要穩住自己的緊張情緒，這是個非常不容易的任務，他的心情一定是震盪不……",
+        "因為他初次站在球場上，所以覺得籃球架的高度像一座遙不可及的高山",
+        "主角從剛開始的不會運球、投籃，慢慢克服心裡的恐懼和擔憂，不斷勤加練習，到後來不但能夠掌握球的運行，更可以投進籃，這是一種自我挑戰成功的成就感，所以會格外興奮"
+      ],
+      "answer": "因為他初次站在球場上，所以覺得籃球架的高度像一座遙不可及的高山",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    }
+  ],
   "review_words": {
     "by_lesson": {
       "1": [
@@ -834,7 +2375,22 @@
       ]
     }
   },
-  "extensions": [],
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag4k-03",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E7%A4%BE%E9%82%80%E8%88%87%E9%81%99%E6%8A%95%E7%86%9F%E5%B7%A7%E5%BD%88%E6%9B%BE%E6%8F%AE%E5%BD%BC%E7%A7%92%E5%96%A7%E5%84%AA%E5%BC%A7",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・康軒・4年級・第3課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課15個生字"
+    }
+  ],
   "quiz": [
     {
       "id": "q01",
@@ -1000,9 +2556,8 @@
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
-      "activity": "sentence-practice",
-      "note": "句型來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "sentence-practice"
     },
     "challenge": {
       "label": "動手挑戰",
@@ -1017,21 +2572,18 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
-      "activity": "idiom-builder",
-      "note": "成語資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "idiom-builder"
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "一字多義資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
-      "status": "missing",
-      "activity": "polyphones",
-      "note": "一字多音資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "polyphones"
     },
     "lookalikes": {
       "label": "形似字",
@@ -1045,15 +2597,14 @@
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
-      "activity": "listening-quiz",
-      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+      "status": "available",
+      "activity": "listening-quiz"
     },
     "rhetoric": {
       "label": "修辭小偵探",
       "status": "missing",
       "activity": "rhetoric",
-      "note": "修辭資料尚未完成來源核對。"
+      "note": "官方修辭分析不足 3 題。"
     },
     "review": {
       "label": "舊字新詞",

@@ -1,6 +1,14 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/public/data/115AG4K/lesson01.json`～`lesson12.json`、`apps/mandarin/scripts/enrich_g4a_official.py`、`apps/mandarin/scripts/generate_lessons.py`。
+- 做了什麼：依指定的康軒官方教材匯入生字變成語、練習句子、一字多義、一字多音、聽聽看、修辭小偵探；每課生字頁新增雄筆順連結；生字卡改以康軒工作表排序取最常見造詞，並保留來源不足項目的可核對詞例。
+- 來源邊界：官方 `.doc` 原檔與常用度 Excel 均未加入公開 repo；公開 JSON 只保存衍生內容、來源定位與 SHA-256。遨字第三項以教育部辭典核對的「遨嬉」補足；蓓只有「蓓蕾」、嘖只有兩個可靠詞例，沒有臆造第三項。
+- 開放狀態：符合既有活動最少題數契約的模組標為 `available`；第 9 課句型、各課修辭，以及第 2／7／12 課無明確官方多音辨析者，依來源數量維持 `missing`，避免把不足資料標成可開始。
+- 驗證：`npm.cmd run validate`、升級權限 `npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、Python `py_compile`、公開 JSON 亂碼／絕對路徑掃描均通過。沙箱第一次 build 因 `Access is denied` 失敗，升級權限後成功。
+- 提交／推送：本項本地提交為 `00576e3`；尚未推送遠端。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：G4A 康軒 1–12 課語詞解釋卡圖片補齊、舊圖明確配對盤點、WebP 壓縮與公開資料回寫；同步把 G4A 接回語詞圖片工作流與完整性測試。
 - 規則：只有檔名或私有 manifest 能明確對應完整詞名的舊圖才重用；沒有可靠詞圖對照的 `L02_01` 類舊圖不猜配。其餘依官方語詞 meaning 生成一詞一圖，原始生成 PNG 只留私有工作區，公開只放符合單張 300 KiB／單課 4 MiB 閘門的 WebP。
 - 完成結果：G4A 12 課、183 個語詞全部回寫圖片；共沿用 35 張能由完整詞名確認的舊圖，其餘使用依官方 meaning 建立的私有生成圖 manifest。公開只保留 183 張 WebP，原始生成 PNG 與 manifest 留在私有暫存區。

@@ -223,20 +223,20 @@ def parse_unihan(unihan_zip: Path | None) -> tuple[dict[str, str], dict[str, int
     return radicals, strokes
 
 
-def load_common_examples(workbook_path: Path | None, grade: int) -> dict[str, list[str]]:
-    """Read only derived term names from the private workbook."""
+def load_common_examples(workbook_path: Path | None, grade: int, publisher: str = "翰林") -> dict[str, list[str]]:
+    """Read only derived term names from the publisher sheet in the private workbook."""
     if not workbook_path or not workbook_path.exists():
         return {}
     try:
         from openpyxl import load_workbook
     except ImportError:
-        return load_common_examples_xlsx_xml(workbook_path, grade)
+        return load_common_examples_xlsx_xml(workbook_path, grade, publisher)
 
     workbook = load_workbook(workbook_path, read_only=True, data_only=True)
-    if "翰林" not in workbook.sheetnames:
+    if publisher not in workbook.sheetnames:
         workbook.close()
         return {}
-    sheet = workbook["翰林"]
+    sheet = workbook[publisher]
     terms_by_char: dict[str, dict[str, int]] = {}
     for row in sheet.iter_rows(min_row=2, values_only=True):
         if len(row) < 17 or row[1] != 115 or row[2] != grade or row[3] != 1:
@@ -262,12 +262,12 @@ def load_common_examples(workbook_path: Path | None, grade: int) -> dict[str, li
     }
 
 
-def load_common_examples_xlsx_xml(workbook_path: Path, grade: int) -> dict[str, list[str]]:
+def load_common_examples_xlsx_xml(workbook_path: Path, grade: int, publisher: str = "翰林") -> dict[str, list[str]]:
     """Dependency-free fallback for the private workbook.
 
     The public generator must also run on the lightweight Python environment
     used by the Windows handoff machine, where openpyxl may not be installed.
-    This reads only the ``翰林`` worksheet cells needed by the common-term
+    This reads only the requested publisher worksheet cells needed by the common-term
     ranking and never copies workbook content to the repository.
     """
     from xml.etree import ElementTree as ET
@@ -285,7 +285,7 @@ def load_common_examples_xlsx_xml(workbook_path: Path, grade: int) -> dict[str, 
         rel_targets = {rel.attrib["Id"]: rel.attrib["Target"] for rel in rels.findall(f"{{{ns_pkg}}}Relationship")}
         sheet_path = None
         for sheet in workbook_root.findall(f".//{{{ns_main}}}sheet"):
-            if sheet.attrib.get("name") == "翰林":
+            if sheet.attrib.get("name") == publisher:
                 target = rel_targets.get(sheet.attrib.get(f"{{{ns_rel}}}id"))
                 if target:
                     sheet_path = "xl/" + target.lstrip("/") if not target.startswith("xl/") else target
@@ -674,7 +674,7 @@ def build_g3a(profile: Profile, private_root: Path, lesson_no: int, output_data:
     image_map = image_map_for_g3a(private_root, lesson_no, source.get("meaning_manifest"))
     words = build_words(profile, lesson_no, lesson_id, source["word_items"], lambda word: image_map.get(word), output_assets, to_zhuyin)
     readings = g3a_readings(private_root, lesson_no, source["chars"], to_zhuyin)
-    examples = load_common_examples(workbook, profile.grade)
+    examples = load_common_examples(workbook, profile.grade, profile.publisher)
     characters = character_items(profile, lesson_no, source["chars"], readings, radicals, strokes, examples, source["word_items"])
     paragraphs, main_idea = simple_paragraphs(profile, lesson_no, source["paragraph"])
     lesson = {
@@ -721,7 +721,7 @@ def build_g1a(profile: Profile, private_root: Path, lesson_no: int, output_data:
     word_items = source["words"].get("items", [])
     words = build_words(profile, lesson_no, lesson_id, word_items, lambda word: image_for_g1a(private_root, lesson_no, word), output_assets, to_zhuyin)
     readings = g1a_readings(record, to_zhuyin)
-    examples = load_common_examples(workbook, profile.grade)
+    examples = load_common_examples(workbook, profile.grade, profile.publisher)
     characters = character_items(profile, lesson_no, chars, readings, radicals, strokes, examples, word_items)
     title = source["lesson"]["title"]
     lesson = {
@@ -888,7 +888,7 @@ def enrich_prepared_characters(
 def finalize_prepared_lesson(lesson: dict, profile: Profile, lesson_no: int) -> None:
     """Add deterministic public extensions and challenge items at import time."""
     chars = "".join(str(item.get("char") or "") for item in lesson.get("characters", []))
-    lesson.setdefault("extensions", [extension(profile, lesson_no, chars)])
+    lesson["extensions"] = [extension(profile, lesson_no, chars)]
     if not lesson.get("quiz"):
         lesson["quiz"] = quiz_items(profile, lesson["lesson_id"], lesson.get("characters", []), lesson.get("words", []))
     modules = lesson.setdefault("modules", {})
@@ -1026,7 +1026,7 @@ def main() -> int:
     output_assets = repo_root / "public" / "assets" / profile.code
     radicals, strokes = parse_unihan(args.unihan_zip)
     to_zhuyin = None if args.profile in PREPARED_PROFILES else pinyin_loader(args.pypinyin_path)
-    common_examples = load_common_examples(args.workbook, profile.grade)
+    common_examples = load_common_examples(args.workbook, profile.grade, profile.publisher)
     progress = load_progress(args.progress_file)
     generated: list[dict] = []
 

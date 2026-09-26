@@ -49,6 +49,36 @@
       "kind": "official",
       "locator": "14 課文大意、段落大意",
       "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    },
+    {
+      "kind": "official",
+      "locator": "04 生字延伸成語／第10課",
+      "sha256": "9776268150431107A35FA309327947662745CBCD68CE52C17427F09A449E2350"
+    },
+    {
+      "kind": "official",
+      "locator": "07 語句練習／第10課",
+      "sha256": "BD7B4BBEAAEDDDACC1128B1AF9B7469AAD5B60CEC1244518B76F62872CB6A5E9"
+    },
+    {
+      "kind": "official",
+      "locator": "09 生字解釋／第10課",
+      "sha256": "237FB70C678FFF9EA7A0AB645954F7A54A2829C7006380A7CD4DC6FE4A03F663"
+    },
+    {
+      "kind": "official",
+      "locator": "06 字音字形／第10課",
+      "sha256": "BCEB2E7CF05D5919ACC53AF2D454698D3BC94A02C2C944AC603D4A2B1E368BAB"
+    },
+    {
+      "kind": "official",
+      "locator": "15 閱讀理解／第10課",
+      "sha256": "6103E7B8CF142DF8CBE57CDE9CBDB6175C38364B3D4E3265402B97F5F13280FF"
+    },
+    {
+      "kind": "official",
+      "locator": "10 修辭分析／第10課",
+      "sha256": "35962C47D83A67C3158CD8DD9E71B57AFFEC45A3FB7D9494A459EE12E6B597FB"
     }
   ],
   "characters": [
@@ -61,9 +91,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "奇幻"
+        "夢幻",
+        "奇幻",
+        "幻想"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B9%BB",
@@ -79,9 +111,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
+        "凱旋",
+        "旋即",
         "旋律"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%97%8B",
@@ -96,8 +130,12 @@
       "radical": "⼾",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "壓扁",
+        "扁平",
+        "扁柏"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%89%81",
@@ -113,9 +151,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "一瞬間"
+        "一瞬間",
+        "瞬息萬變",
+        "瞬間"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%9E%AC",
@@ -131,9 +171,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "體驗"
+        "實驗",
+        "抽驗",
+        "查驗"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%A9%97",
@@ -153,7 +195,7 @@
         "假牙",
         "刷牙"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%89%99",
@@ -169,9 +211,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
+        "三芝",
+        "芝加哥",
         "芝麻"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%8A%9D",
@@ -187,9 +231,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "大盜"
+        "強盜",
+        "海盜",
+        "盜版"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%9B%9C",
@@ -205,9 +251,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "邁開"
+        "年邁",
+        "豪邁",
+        "邁入"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%82%81",
@@ -222,8 +270,12 @@
       "radical": "⼞",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "受困",
+        "困住",
+        "困在"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%9B%B0",
@@ -239,9 +291,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "臉龐"
+        "臉龐",
+        "龐大",
+        "龐然大物"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%BE%90",
@@ -256,8 +310,12 @@
       "radical": "⼿",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "搓揉",
+        "搓出",
+        "搓成"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%90%93",
@@ -273,9 +331,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "榮華富貴"
+        "光榮",
+        "共榮",
+        "榮幸"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%A6%AE",
@@ -291,9 +351,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "榮華富貴"
+        "富人",
+        "富含",
+        "富有"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%AF%8C",
@@ -308,8 +370,12 @@
       "radical": "⾡",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "傳遍",
+        "普遍",
+        "走遍"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%81%8D",
@@ -489,10 +555,226 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
-  "rhetoric": [],
+  "idioms": [
+    {
+      "id": "idiom:10:01",
+      "idiom": "咬牙切齒",
+      "definition": "咬緊牙齒，表示非常悲痛憤恨。",
+      "related_char": "牙",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:10:02",
+      "idiom": "拾人牙慧",
+      "definition": "比喻蹈襲他人的言論或主張。",
+      "related_char": "牙",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:10:03",
+      "idiom": "掩耳盜鈴",
+      "definition": "小偷盜鐘時，怕鐘所發出的聲音會引他人前來搶奪，因而急忙掩住自己的耳朵。後用﹁掩耳盜鈴﹂比喻妄想瞞騙他人，結果卻只是欺騙自己而已。",
+      "related_char": "盜",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:10:04",
+      "idiom": "困獸猶鬥",
+      "definition": "被圍困的野獸尚且作最後的搏鬥。比喻處於絕境，仍然奮力抵抗。",
+      "related_char": "困",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:10:05",
+      "idiom": "欣欣向榮",
+      "definition": "⑴草木生長繁盛的樣子。",
+      "related_char": "榮",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:10:06",
+      "idiom": "哀鴻遍野",
+      "definition": "比喻到處都是流離失所的難民。",
+      "related_char": "遍",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:10:01",
+      "idiom_id": "idiom:10:01",
+      "rewritten": "知道這件事情的真相後，每個人都咬牙切齒，憤恨不平。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:10:02",
+      "idiom_id": "idiom:10:02",
+      "rewritten": "這篇論文毫無見地，不過拾人牙慧而已。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:10:03",
+      "idiom_id": "idiom:10:03",
+      "rewritten": "一個人做了壞事，還編出一套理由來掩飾，那就是掩耳盜鈴，自欺欺人。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:10:04",
+      "idiom_id": "idiom:10:04",
+      "rewritten": "這個歹徒困獸猶鬥，與警察經歷一番對峙後，才終於束手就擒。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:10:05",
+      "idiom_id": "idiom:10:05",
+      "rewritten": "我最喜歡在春天去做森林浴，滿目翠綠，一片欣欣向榮。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:10:06",
+      "idiom_id": "idiom:10:06",
+      "rewritten": "天災人禍，讓世界許多地區陷入哀鴻遍野的慘況。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence:10:01",
+      "category": "短語練習",
+      "head": "奇幻旋律在耳邊",
+      "structure": "（形容詞）（名詞）在（位置）",
+      "description": "描述物品出現的位置。",
+      "guide": "請將語詞重新排列，組成通順的短語。",
+      "examples": [
+        "稀奇寶物在洞裡",
+        "新鮮蘋果在樹上",
+        "美麗雲彩在天上"
+      ],
+      "example_parts": [
+        [
+          "稀奇",
+          "寶物",
+          "在",
+          "洞裡"
+        ],
+        [
+          "新鮮",
+          "蘋果",
+          "在",
+          "樹上"
+        ],
+        [
+          "美麗",
+          "雲彩",
+          "在",
+          "天上"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:10:02",
+      "category": "造句練習",
+      "head": "天馬行空",
+      "structure": "生活情境句",
+      "description": "比喻才思奔放，文筆豪邁，也有灑脫自由、不著邊際的意思。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "李白才氣縱橫，行文如天馬行空，一氣呵成。",
+        "別再有天馬行空的幻想，對事情沒有幫助。"
+      ],
+      "example_parts": [
+        [
+          "李白",
+          "才氣縱橫，",
+          "行文",
+          "如天馬行空，",
+          "一氣呵成。"
+        ],
+        [
+          "別再有",
+          "天馬行空的",
+          "幻想，",
+          "對事情",
+          "沒有幫助。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:10:03",
+      "category": "造句練習",
+      "head": "一轉眼",
+      "structure": "生活情境句",
+      "description": "形容極短的時間。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "他剛剛還站在這裡，怎麼一轉眼人就不見了？",
+        "歲月匆匆，一轉眼我們就已經四年級了。",
+        "那隻野兔行動矯捷，一轉眼就消失在樹林之中。"
+      ],
+      "example_parts": [
+        [
+          "他剛剛還",
+          "站在這裡，",
+          "怎麼一轉眼",
+          "人就不見了？"
+        ],
+        [
+          "歲月匆匆，",
+          "一轉眼",
+          "我們就",
+          "已經四年級了。"
+        ],
+        [
+          "那隻野兔",
+          "行動矯捷，",
+          "一轉眼就",
+          "消失在樹林",
+          "之中。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    }
+  ],
+  "rhetoric": [
+    {
+      "id": "rhetoric:10:01",
+      "figure": "類疊",
+      "note": "同一個詞彙、語句，接連反覆的使用著，以加強表達的效果，使字句具備音律之美，就叫做「類疊」。類疊可分為：字的類疊、詞的類疊、句的類疊。",
+      "example": "⑴輕輕薄薄身子扁⑵頭硬硬，牙尖尖⑶鼻尖尖，臉圓圓",
+      "child_note": "類疊：同一個詞彙、語句，接連反覆的使用著，以加強表達的效果，使字句具備音律之美，就叫做「類疊」。類疊可分為：字的類疊、詞的類疊、句的類疊。",
+      "status": "approved",
+      "source": "康軒四上官方教材（10 修辭分析）"
+    },
+    {
+      "id": "rhetoric:10:02",
+      "figure": "轉化",
+      "note": "描述事物時，轉變其原來性質，化成另一種與本質截然不同的事物，而加以形容描述，叫做「轉化」。有擬物為人、擬人為物、擬虛為實等。",
+      "example": "⑴輕輕薄薄身子扁，上天下地一轉眼。坐上來吧！快一點！我載你離開危險，一瞬間來到天邊。一起遨遊！千山萬水來體驗。一同飛翔！美好風光到眼前。（擬人）⑵頭硬硬，牙尖尖。「芝麻芝麻請開門！」聽到暗語我張嘴。小心！別讓大盜發現。邁開大步走向前，黃金閃閃一大片。只怕你心思一轉起貪念，困在我的肚裡面。（擬人）⑶鼻尖尖，臉圓圓，沉睡洞裡數千年，祕密等你來發現。揉揉臉龐搓鼻尖，神燈巨人就出現，報答恩情送心願。山珍海味、榮華富貴……說吧！說吧！為你實現！（擬人）",
+      "child_note": "轉化：描述事物時，轉變其原來性質，化成另一種與本質截然不同的事物，而加以形容描述，叫做「轉化」。有擬物為人、擬人為物、擬虛為實等。",
+      "status": "approved",
+      "source": "康軒四上官方教材（10 修辭分析）"
+    }
+  ],
   "paragraph_summary": [
     {
       "id": "paragraph:115AG4K10:01",
@@ -607,9 +889,938 @@
       "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
     }
   ],
-  "polysemy": [],
-  "polysemy_senses": [],
-  "polyphones": [],
+  "polysemy": [
+    {
+      "id": "polysemy:10:01",
+      "char": "幻",
+      "sentence": "語詞「虛幻」中的「幻」，表示什麼意思？",
+      "definition": "虛假",
+      "options": [
+        "虛假",
+        "變化"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:02",
+      "char": "幻",
+      "sentence": "語詞「變幻莫測」中的「幻」，表示什麼意思？",
+      "definition": "變化",
+      "options": [
+        "變化",
+        "虛假"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:03",
+      "char": "旋",
+      "sentence": "語詞「盤旋」中的「旋」，表示什麼意思？",
+      "definition": "繞著轉動",
+      "options": [
+        "繞著轉動",
+        "回",
+        "立刻"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:04",
+      "char": "旋",
+      "sentence": "語詞「凱旋歸來」中的「旋」，表示什麼意思？",
+      "definition": "回",
+      "options": [
+        "回",
+        "繞著轉動",
+        "立刻"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:05",
+      "char": "旋",
+      "sentence": "語詞「旋即」中的「旋」，表示什麼意思？",
+      "definition": "立刻",
+      "options": [
+        "立刻",
+        "繞著轉動",
+        "回"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:06",
+      "char": "扁",
+      "sentence": "語詞「扁平」中的「扁」，表示什麼意思？",
+      "definition": "形狀寬而薄的",
+      "options": [
+        "形狀寬而薄的",
+        "不成器"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:07",
+      "char": "扁",
+      "sentence": "語詞「把人給瞧扁了」中的「扁」，表示什麼意思？",
+      "definition": "不成器",
+      "options": [
+        "不成器",
+        "形狀寬而薄的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:08",
+      "char": "瞬",
+      "sentence": "語詞「一瞬間」中的「瞬」，表示什麼意思？",
+      "definition": "比喻短暫的時間",
+      "options": [
+        "比喻短暫的時間",
+        "眨眼"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:09",
+      "char": "瞬",
+      "sentence": "語詞「轉瞬」中的「瞬」，表示什麼意思？",
+      "definition": "眨眼",
+      "options": [
+        "眨眼",
+        "比喻短暫的時間"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:10",
+      "char": "驗",
+      "sentence": "語詞「驗血」中的「驗」，表示什麼意思？",
+      "definition": "察看",
+      "options": [
+        "察看",
+        "審核",
+        "憑證",
+        "預期的效果"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:11",
+      "char": "驗",
+      "sentence": "語詞「測驗」中的「驗」，表示什麼意思？",
+      "definition": "審核",
+      "options": [
+        "審核",
+        "察看",
+        "憑證",
+        "預期的效果"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:12",
+      "char": "驗",
+      "sentence": "語詞「驗證」中的「驗」，表示什麼意思？",
+      "definition": "憑證",
+      "options": [
+        "憑證",
+        "察看",
+        "審核",
+        "預期的效果"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:13",
+      "char": "驗",
+      "sentence": "語詞「效驗」中的「驗」，表示什麼意思？",
+      "definition": "預期的效果",
+      "options": [
+        "預期的效果",
+        "察看",
+        "審核",
+        "憑證"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:14",
+      "char": "盜",
+      "sentence": "語詞「強盜」中的「盜」，表示什麼意思？",
+      "definition": "竊取或搶奪財物的人",
+      "options": [
+        "竊取或搶奪財物的人",
+        "偷取"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:15",
+      "char": "盜",
+      "sentence": "語詞「掩耳盜鈴」中的「盜」，表示什麼意思？",
+      "definition": "偷取",
+      "options": [
+        "偷取",
+        "竊取或搶奪財物的人"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:16",
+      "char": "邁",
+      "sentence": "語詞「邁步」中的「邁」，表示什麼意思？",
+      "definition": "跨",
+      "options": [
+        "跨",
+        "衰老",
+        "豪放",
+        "奮發"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:17",
+      "char": "邁",
+      "sentence": "語詞「衰邁」中的「邁」，表示什麼意思？",
+      "definition": "衰老",
+      "options": [
+        "衰老",
+        "跨",
+        "豪放",
+        "奮發"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:18",
+      "char": "邁",
+      "sentence": "語詞「爽邁」中的「邁」，表示什麼意思？",
+      "definition": "豪放",
+      "options": [
+        "豪放",
+        "跨",
+        "衰老",
+        "奮發"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:19",
+      "char": "邁",
+      "sentence": "語詞「勇往邁進」中的「邁」，表示什麼意思？",
+      "definition": "奮發",
+      "options": [
+        "奮發",
+        "跨",
+        "衰老",
+        "豪放"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:20",
+      "char": "困",
+      "sentence": "語詞「圍困」中的「困」，表示什麼意思？",
+      "definition": "包圍",
+      "options": [
+        "包圍",
+        "陷在艱難困苦裡",
+        "艱難痛苦",
+        "窮苦"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:21",
+      "char": "困",
+      "sentence": "語詞「為病所困」中的「困」，表示什麼意思？",
+      "definition": "陷在艱難困苦裡",
+      "options": [
+        "陷在艱難困苦裡",
+        "包圍",
+        "艱難痛苦",
+        "窮苦"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:22",
+      "char": "困",
+      "sentence": "語詞「艱困」中的「困」，表示什麼意思？",
+      "definition": "艱難痛苦",
+      "options": [
+        "艱難痛苦",
+        "包圍",
+        "陷在艱難困苦裡",
+        "窮苦"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:23",
+      "char": "困",
+      "sentence": "語詞「貧困」中的「困」，表示什麼意思？",
+      "definition": "窮苦",
+      "options": [
+        "窮苦",
+        "包圍",
+        "陷在艱難困苦裡",
+        "艱難痛苦"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:24",
+      "char": "困",
+      "sentence": "語詞「困倦」中的「困」，表示什麼意思？",
+      "definition": "疲倦",
+      "options": [
+        "疲倦",
+        "包圍",
+        "陷在艱難困苦裡",
+        "艱難痛苦"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:25",
+      "char": "龐",
+      "sentence": "語詞「臉龐」中的「龐」，表示什麼意思？",
+      "definition": "面貌",
+      "options": [
+        "面貌",
+        "高大"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:26",
+      "char": "龐",
+      "sentence": "語詞「龐大」中的「龐」，表示什麼意思？",
+      "definition": "高大",
+      "options": [
+        "高大",
+        "面貌"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:27",
+      "char": "榮",
+      "sentence": "語詞「榮華富貴」中的「榮」，表示什麼意思？",
+      "definition": "富貴",
+      "options": [
+        "富貴",
+        "光耀",
+        "茂盛",
+        "光耀的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:28",
+      "char": "榮",
+      "sentence": "語詞「光榮」中的「榮」，表示什麼意思？",
+      "definition": "光耀",
+      "options": [
+        "光耀",
+        "富貴",
+        "茂盛",
+        "光耀的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:29",
+      "char": "榮",
+      "sentence": "語詞「欣欣向榮」中的「榮」，表示什麼意思？",
+      "definition": "茂盛",
+      "options": [
+        "茂盛",
+        "富貴",
+        "光耀",
+        "光耀的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:30",
+      "char": "榮",
+      "sentence": "語詞「榮獲」中的「榮」，表示什麼意思？",
+      "definition": "光耀的",
+      "options": [
+        "光耀的",
+        "富貴",
+        "光耀",
+        "茂盛"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:31",
+      "char": "富",
+      "sentence": "語詞「富裕」中的「富」，表示什麼意思？",
+      "definition": "財物充裕",
+      "options": [
+        "財物充裕",
+        "包容很多的",
+        "財產",
+        "使豐裕"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:32",
+      "char": "富",
+      "sentence": "語詞「富麗堂皇」中的「富」，表示什麼意思？",
+      "definition": "包容很多的",
+      "options": [
+        "包容很多的",
+        "財物充裕",
+        "財產",
+        "使豐裕"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:33",
+      "char": "富",
+      "sentence": "語詞「財富」中的「富」，表示什麼意思？",
+      "definition": "財產",
+      "options": [
+        "財產",
+        "財物充裕",
+        "包容很多的",
+        "使豐裕"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:34",
+      "char": "富",
+      "sentence": "語詞「富國強兵」中的「富」，表示什麼意思？",
+      "definition": "使豐裕",
+      "options": [
+        "使豐裕",
+        "財物充裕",
+        "包容很多的",
+        "財產"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:35",
+      "char": "遍",
+      "sentence": "語詞「遍地」中的「遍」，表示什麼意思？",
+      "definition": "容到處都是",
+      "options": [
+        "容到處都是",
+        "沒有一處遺漏的",
+        "布滿",
+        "計算動作頭尾經歷的單位"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:36",
+      "char": "遍",
+      "sentence": "語詞「遍布」中的「遍」，表示什麼意思？",
+      "definition": "沒有一處遺漏的",
+      "options": [
+        "沒有一處遺漏的",
+        "容到處都是",
+        "布滿",
+        "計算動作頭尾經歷的單位"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:37",
+      "char": "遍",
+      "sentence": "語詞「朋友遍天下」中的「遍」，表示什麼意思？",
+      "definition": "布滿",
+      "options": [
+        "布滿",
+        "容到處都是",
+        "沒有一處遺漏的",
+        "計算動作頭尾經歷的單位"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:10:38",
+      "char": "遍",
+      "sentence": "語詞「朗誦課文三遍」中的「遍」，表示什麼意思？",
+      "definition": "計算動作頭尾經歷的單位",
+      "options": [
+        "計算動作頭尾經歷的單位",
+        "容到處都是",
+        "沒有一處遺漏的",
+        "布滿"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    }
+  ],
+  "polysemy_senses": [
+    {
+      "char": "幻",
+      "senses": [
+        {
+          "char": "幻",
+          "definition": "虛假",
+          "examples": [
+            "虛幻",
+            "幻象",
+            "幻境"
+          ]
+        },
+        {
+          "char": "幻",
+          "definition": "變化",
+          "examples": [
+            "變幻莫測"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "旋",
+      "senses": [
+        {
+          "char": "旋",
+          "definition": "繞著轉動",
+          "examples": [
+            "盤旋",
+            "迴旋"
+          ]
+        },
+        {
+          "char": "旋",
+          "definition": "回",
+          "examples": [
+            "凱旋歸來"
+          ]
+        },
+        {
+          "char": "旋",
+          "definition": "立刻",
+          "examples": [
+            "旋即"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "扁",
+      "senses": [
+        {
+          "char": "扁",
+          "definition": "形狀寬而薄的",
+          "examples": [
+            "扁平"
+          ]
+        },
+        {
+          "char": "扁",
+          "definition": "不成器",
+          "examples": [
+            "把人給瞧扁了"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "瞬",
+      "senses": [
+        {
+          "char": "瞬",
+          "definition": "比喻短暫的時間",
+          "examples": [
+            "一瞬間",
+            "瞬息萬變"
+          ]
+        },
+        {
+          "char": "瞬",
+          "definition": "眨眼",
+          "examples": [
+            "轉瞬"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "驗",
+      "senses": [
+        {
+          "char": "驗",
+          "definition": "察看",
+          "examples": [
+            "驗血"
+          ]
+        },
+        {
+          "char": "驗",
+          "definition": "審核",
+          "examples": [
+            "測驗",
+            "考驗"
+          ]
+        },
+        {
+          "char": "驗",
+          "definition": "憑證",
+          "examples": [
+            "驗證"
+          ]
+        },
+        {
+          "char": "驗",
+          "definition": "預期的效果",
+          "examples": [
+            "效驗"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "盜",
+      "senses": [
+        {
+          "char": "盜",
+          "definition": "竊取或搶奪財物的人",
+          "examples": [
+            "強盜",
+            "海盜"
+          ]
+        },
+        {
+          "char": "盜",
+          "definition": "偷取",
+          "examples": [
+            "掩耳盜鈴"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "邁",
+      "senses": [
+        {
+          "char": "邁",
+          "definition": "跨",
+          "examples": [
+            "邁步"
+          ]
+        },
+        {
+          "char": "邁",
+          "definition": "衰老",
+          "examples": [
+            "衰邁",
+            "頹邁"
+          ]
+        },
+        {
+          "char": "邁",
+          "definition": "豪放",
+          "examples": [
+            "爽邁",
+            "雄邁"
+          ]
+        },
+        {
+          "char": "邁",
+          "definition": "奮發",
+          "examples": [
+            "勇往邁進"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "困",
+      "senses": [
+        {
+          "char": "困",
+          "definition": "包圍",
+          "examples": [
+            "圍困"
+          ]
+        },
+        {
+          "char": "困",
+          "definition": "陷在艱難困苦裡",
+          "examples": [
+            "為病所困"
+          ]
+        },
+        {
+          "char": "困",
+          "definition": "艱難痛苦",
+          "examples": [
+            "艱困",
+            "窘困",
+            "困境"
+          ]
+        },
+        {
+          "char": "困",
+          "definition": "窮苦",
+          "examples": [
+            "貧困",
+            "窮困"
+          ]
+        },
+        {
+          "char": "困",
+          "definition": "疲倦",
+          "examples": [
+            "困倦",
+            "困頓"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "龐",
+      "senses": [
+        {
+          "char": "龐",
+          "definition": "面貌",
+          "examples": [
+            "臉龐",
+            "面龐"
+          ]
+        },
+        {
+          "char": "龐",
+          "definition": "高大",
+          "examples": [
+            "龐大"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "榮",
+      "senses": [
+        {
+          "char": "榮",
+          "definition": "富貴",
+          "examples": [
+            "榮華富貴"
+          ]
+        },
+        {
+          "char": "榮",
+          "definition": "光耀",
+          "examples": [
+            "光榮",
+            "引以為榮"
+          ]
+        },
+        {
+          "char": "榮",
+          "definition": "茂盛",
+          "examples": [
+            "欣欣向榮"
+          ]
+        },
+        {
+          "char": "榮",
+          "definition": "光耀的",
+          "examples": [
+            "榮獲",
+            "榮任",
+            "衣錦榮歸"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "富",
+      "senses": [
+        {
+          "char": "富",
+          "definition": "財物充裕",
+          "examples": [
+            "富裕",
+            "富有",
+            "富饒",
+            "富足"
+          ]
+        },
+        {
+          "char": "富",
+          "definition": "包容很多的",
+          "examples": [
+            "富麗堂皇",
+            "文富辭豐"
+          ]
+        },
+        {
+          "char": "富",
+          "definition": "財產",
+          "examples": [
+            "財富"
+          ]
+        },
+        {
+          "char": "富",
+          "definition": "使豐裕",
+          "examples": [
+            "富國強兵"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "遍",
+      "senses": [
+        {
+          "char": "遍",
+          "definition": "容到處都是",
+          "examples": [
+            "遍地",
+            "遍體鱗傷",
+            "哀鴻遍野",
+            "滿山遍野"
+          ]
+        },
+        {
+          "char": "遍",
+          "definition": "沒有一處遺漏的",
+          "examples": [
+            "遍布",
+            "遍歷"
+          ]
+        },
+        {
+          "char": "遍",
+          "definition": "布滿",
+          "examples": [
+            "朋友遍天下"
+          ]
+        },
+        {
+          "char": "遍",
+          "definition": "計算動作頭尾經歷的單位",
+          "examples": [
+            "朗誦課文三遍"
+          ]
+        }
+      ]
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:10:扁",
+      "char": "扁",
+      "readings": [
+        {
+          "zhuyin": "ㄅㄧㄢˇ",
+          "dabutie_zhuyin": "ㄅㄧㄢˇ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "扁平",
+                "扁鑽"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄆㄧㄢ",
+          "dabutie_zhuyin": "ㄆㄧㄢ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "扁舟"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "康軒四上官方教材（06 字音字形；多音例詞經來源文字核對）"
+    },
+    {
+      "id": "polyphone:10:旋",
+      "char": "旋",
+      "readings": [
+        {
+          "zhuyin": "ㄒㄩㄢˊ",
+          "dabutie_zhuyin": "ㄒㄩㄢˊ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "旋律",
+                "旋轉",
+                "旋球"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄒㄩㄢˋ",
+          "dabutie_zhuyin": "ㄒㄩㄢˋ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "旋風"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "康軒四上官方教材（06 字音字形；多音例詞經來源文字核對）"
+    }
+  ],
   "lookalikes": [
     {
       "id": "lookalike:115AG4K10:01",
@@ -768,7 +1979,47 @@
       "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
     }
   ],
-  "listening": [],
+  "listening": [
+    {
+      "id": "listening:10:01",
+      "stem": "「中東世界雖遙遠，奇幻旋律在耳邊……。」這句話是什麼意思？",
+      "question": "「中東世界雖遙遠，奇幻旋律在耳邊……。」這句話是什麼意思？",
+      "options": [
+        "中東世界離我們雖然很遙遠，但我們卻知道來自中東世界的一千零一夜故事",
+        "從「鼻尖尖，臉圓圓」可以知道神奇油燈的外形。從「揉揉臉龐搓鼻尖，神燈巨人就出現，報答恩情送心願。」可以知道神奇油燈的神奇功能",
+        "一千零一夜的故事和神奇物品自我介紹的內容"
+      ],
+      "answer": "中東世界離我們雖然很遙遠，但我們卻知道來自中東世界的一千零一夜故事",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:10:02",
+      "stem": "從課文中哪些句子，可以知道飛天魔毯的外形特色和神奇功能？",
+      "question": "從課文中哪些句子，可以知道飛天魔毯的外形特色和神奇功能？",
+      "options": [
+        "從「鼻尖尖，臉圓圓」可以知道神奇油燈的外形。從「揉揉臉龐搓鼻尖，神燈巨人就出現，報答恩情送心願。」可以知道神奇油燈的神奇功能",
+        "一千零一夜的故事和神奇物品自我介紹的內容",
+        "從「輕輕薄薄身子扁」可以知道飛天魔毯的外形。從「上天下地一轉眼」可以知道飛天魔毯的神奇功能"
+      ],
+      "answer": "從「輕輕薄薄身子扁」可以知道飛天魔毯的外形。從「上天下地一轉眼」可以知道飛天魔毯的神奇功能",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:10:03",
+      "stem": "從課文中哪些句子，可以知道黃金洞穴的外形特色和神奇功能？",
+      "question": "從課文中哪些句子，可以知道黃金洞穴的外形特色和神奇功能？",
+      "options": [
+        "一千零一夜的故事和神奇物品自我介紹的內容",
+        "從「頭硬硬，牙尖尖」可以知道黃金洞穴的外形。從「『芝麻芝麻請開門！』聽到暗語我張嘴。」可以知道黃金洞穴的神奇功能",
+        "從「鼻尖尖，臉圓圓」可以知道神奇油燈的外形。從「揉揉臉龐搓鼻尖，神燈巨人就出現，報答恩情送心願。」可以知道神奇油燈的神奇功能"
+      ],
+      "answer": "從「頭硬硬，牙尖尖」可以知道黃金洞穴的外形。從「『芝麻芝麻請開門！』聽到暗語我張嘴。」可以知道黃金洞穴的神奇功能",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    }
+  ],
   "review_words": {
     "by_lesson": {
       "1": [
@@ -943,7 +2194,22 @@
       ]
     }
   },
-  "extensions": [],
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag4k-10",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E5%B9%BB%E6%97%8B%E6%89%81%E7%9E%AC%E9%A9%97%E7%89%99%E8%8A%9D%E7%9B%9C%E9%82%81%E5%9B%B0%E9%BE%90%E6%90%93%E6%A6%AE%E5%AF%8C%E9%81%8D",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・康軒・4年級・第10課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課15個生字"
+    }
+  ],
   "quiz": [
     {
       "id": "q01",
@@ -1109,9 +2375,8 @@
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
-      "activity": "sentence-practice",
-      "note": "句型來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "sentence-practice"
     },
     "challenge": {
       "label": "動手挑戰",
@@ -1126,21 +2391,18 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
-      "activity": "idiom-builder",
-      "note": "成語資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "idiom-builder"
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "一字多義資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
-      "status": "missing",
-      "activity": "polyphones",
-      "note": "一字多音資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "polyphones"
     },
     "lookalikes": {
       "label": "形似字",
@@ -1154,15 +2416,14 @@
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
-      "activity": "listening-quiz",
-      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+      "status": "available",
+      "activity": "listening-quiz"
     },
     "rhetoric": {
       "label": "修辭小偵探",
       "status": "missing",
       "activity": "rhetoric",
-      "note": "修辭資料尚未完成來源核對。"
+      "note": "官方修辭分析不足 3 題。"
     },
     "review": {
       "label": "舊字新詞",

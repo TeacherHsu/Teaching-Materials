@@ -49,6 +49,36 @@
       "kind": "official",
       "locator": "14 課文大意、段落大意",
       "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    },
+    {
+      "kind": "official",
+      "locator": "04 生字延伸成語／第11課",
+      "sha256": "9776268150431107A35FA309327947662745CBCD68CE52C17427F09A449E2350"
+    },
+    {
+      "kind": "official",
+      "locator": "07 語句練習／第11課",
+      "sha256": "BD7B4BBEAAEDDDACC1128B1AF9B7469AAD5B60CEC1244518B76F62872CB6A5E9"
+    },
+    {
+      "kind": "official",
+      "locator": "09 生字解釋／第11課",
+      "sha256": "237FB70C678FFF9EA7A0AB645954F7A54A2829C7006380A7CD4DC6FE4A03F663"
+    },
+    {
+      "kind": "official",
+      "locator": "06 字音字形／第11課",
+      "sha256": "BCEB2E7CF05D5919ACC53AF2D454698D3BC94A02C2C944AC603D4A2B1E368BAB"
+    },
+    {
+      "kind": "official",
+      "locator": "15 閱讀理解／第11課",
+      "sha256": "6103E7B8CF142DF8CBE57CDE9CBDB6175C38364B3D4E3265402B97F5F13280FF"
+    },
+    {
+      "kind": "official",
+      "locator": "10 修辭分析／第11課",
+      "sha256": "35962C47D83A67C3158CD8DD9E71B57AFFEC45A3FB7D9494A459EE12E6B597FB"
     }
   ],
   "characters": [
@@ -61,9 +91,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "背心"
+        "手背",
+        "死背",
+        "背包"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%83%8C",
@@ -79,9 +111,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "懷錶"
+        "手錶",
+        "懷錶",
+        "鐘錶"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%8C%B6",
@@ -96,8 +130,12 @@
       "radical": "⼿",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "丟掉",
+        "倒掉",
+        "剪掉"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8E%89",
@@ -112,8 +150,12 @@
       "radical": "⽔",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "加深",
+        "景深",
+        "更深"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B7%B1",
@@ -129,9 +171,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "上鎖"
+        "上鎖",
+        "封鎖",
+        "枷鎖"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%8E%96",
@@ -147,9 +191,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "鑰匙"
+        "鑰匙",
+        "鑰匙圈",
+        "金鑰"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%91%B0",
@@ -165,9 +211,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "鑰匙"
+        "湯匙",
+        "鑰匙",
+        "鑰匙圈"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8C%99",
@@ -183,9 +231,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
+        "墨汁",
+        "多汁",
         "果汁"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B1%81",
@@ -201,9 +251,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "標示"
+        "啟示",
+        "宣示",
+        "展示"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A4%BA",
@@ -219,9 +271,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "迫不及待"
+        "壓迫",
+        "強迫",
+        "急迫"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%BF%AB",
@@ -237,9 +291,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "口袋"
+        "口袋",
+        "布袋",
+        "提袋"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%A2%8B",
@@ -254,8 +310,12 @@
       "radical": "⼝",
       "type": "習寫字",
       "level": "basic",
-      "examples": [],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples": [
+        "哭喊",
+        "哭泣",
+        "哭聲"
+      ],
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%93%AD",
@@ -271,9 +331,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "盒子"
+        "盒子",
+        "禮盒",
+        "紙盒"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%9B%92",
@@ -289,9 +351,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "扇子"
+        "扇子",
+        "電扇",
+        "風扇"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%89%87",
@@ -307,9 +371,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "遲到"
+        "延遲",
+        "遲到",
+        "遲早"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%81%B2",
@@ -501,10 +567,254 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
-  "rhetoric": [],
+  "idioms": [
+    {
+      "id": "idiom:11:01",
+      "idiom": "汗流浹背",
+      "definition": "指汗流很多，溼透了背部，本用以形容非常慚愧、驚恐的樣子。後也用以形容工作辛勞，汗出溼背。",
+      "related_char": "背",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:11:02",
+      "idiom": "背水一戰",
+      "definition": "「背水」就是背對著河流，毫無退路的意思。「背水一戰」比喻抱著必死的決心，奮戰取勝。",
+      "related_char": "背",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:11:03",
+      "idiom": "深思熟慮",
+      "definition": "仔細而深入的考慮。",
+      "related_char": "深",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:11:04",
+      "idiom": "根深蒂固",
+      "definition": "比喻根基堅固，不可動搖。",
+      "related_char": "深",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:11:05",
+      "idiom": "從容不迫",
+      "definition": "沉著鎮定不慌張。",
+      "related_char": "迫",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:11:06",
+      "idiom": "姍姍來遲",
+      "definition": "形容女子遲步緩來的樣子。後也用﹁姍姍來遲﹂形容人或事物不依時出現，害人苦等。",
+      "related_char": "遲",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:11:01",
+      "idiom_id": "idiom:11:01",
+      "rewritten": "跑完馬拉松全程後，選手個個汗流浹背。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:11:02",
+      "idiom_id": "idiom:11:02",
+      "rewritten": "我們已下定背水一戰的決心，一定要衝出敵軍的包圍。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:11:03",
+      "idiom_id": "idiom:11:03",
+      "rewritten": "他會作這個決定，應當是經過深思熟慮，而非草率為之。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:11:04",
+      "idiom_id": "idiom:11:04",
+      "rewritten": "想要建造一個現代化的社會，就要破除這些根深蒂固的錯誤觀念。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:11:05",
+      "idiom_id": "idiom:11:05",
+      "rewritten": "遇到緊急狀況，更要能從容不迫，才可使事情迎刃而解。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:11:06",
+      "idiom_id": "idiom:11:06",
+      "rewritten": "他每次總是姍姍來遲，害得大家老等他一人。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence:11:01",
+      "category": "造句練習",
+      "head": "東張西望",
+      "structure": "生活情境句",
+      "description": "四處探看、張望。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "朋友不在身後，我驚訝地東張西望。",
+        "學生站在路口東張西望，好像在找路。",
+        "妹妹第一次到百貨公司，好奇地東張西望。"
+      ],
+      "example_parts": [
+        [
+          "朋友不在",
+          "身後，",
+          "我驚訝地",
+          "東張西望。"
+        ],
+        [
+          "學生",
+          "站在路口",
+          "東張西望，",
+          "好像在找路。"
+        ],
+        [
+          "妹妹第一次",
+          "到百貨公司，",
+          "好奇地",
+          "東張西望。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:11:02",
+      "category": "造句練習",
+      "head": "半信半疑",
+      "structure": "生活情境句",
+      "description": "有點兒相信，也有點兒懷疑，無法判定真假。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "他常說大話，所以大家對他說的話都半信半疑。",
+        "對於這個傳聞，我是抱持半信半疑的態度。",
+        "聽完故事後，大家對這個發展半信半疑。"
+      ],
+      "example_parts": [
+        [
+          "他常說大話，",
+          "所以大家",
+          "對他說的話",
+          "都半信半疑。"
+        ],
+        [
+          "對於",
+          "這個傳聞，",
+          "我是抱持",
+          "半信半疑",
+          "的態度。"
+        ],
+        [
+          "聽完故事後，",
+          "大家對",
+          "這個發展",
+          "半信半疑。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:11:03",
+      "category": "造句練習",
+      "head": "迫不及待",
+      "structure": "生活情境句",
+      "description": "形容情況或時間急切，不能再等。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "妹妹看到甜甜圈，就迫不及待地想品嘗。"
+      ],
+      "example_parts": [
+        [
+          "妹妹",
+          "看到甜甜圈，",
+          "就迫不及待地",
+          "想品嘗。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:11:04",
+      "category": "句型練習",
+      "head": "如果……就……",
+      "structure": "如果（假設情況），就（結果）。",
+      "description": "先假設一種情況，再說明由此產生的結果。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "如果想要好成績，就要認真聽講和複習。",
+        "如果要準時放學，就要分工合作打掃教室。",
+        "如果想讓花園茂盛，就要給植物足夠的養分。"
+      ],
+      "example_parts": [
+        [
+          "如果",
+          "想要好成績，",
+          "就要",
+          "認真聽講",
+          "和複習。"
+        ],
+        [
+          "如果要",
+          "準時放學，",
+          "就要分工合作",
+          "打掃教室。"
+        ],
+        [
+          "如果想讓",
+          "花園茂盛，",
+          "就要給植物",
+          "足夠的養分。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    }
+  ],
+  "rhetoric": [
+    {
+      "id": "rhetoric:11:01",
+      "figure": "轉化",
+      "note": "描述事物時，轉變其原來性質，化成另一種與本質截然不同的事物，而加以形容描述，叫做「轉化」。有擬物為人、擬人為物、擬虛為實等。",
+      "example": "只見小門得意的守著入口，而三腳桌在旁邊靜靜的陪著她。（擬人）",
+      "child_note": "轉化：描述事物時，轉變其原來性質，化成另一種與本質截然不同的事物，而加以形容描述，叫做「轉化」。有擬物為人、擬人為物、擬虛為實等。",
+      "status": "approved",
+      "source": "康軒四上官方教材（10 修辭分析）"
+    },
+    {
+      "id": "rhetoric:11:02",
+      "figure": "類疊",
+      "note": "同一個詞彙、語句，接連反覆的使用著，以加強表達的效果，使字句具備音律之美，就叫做「類疊」。類疊可分為：字的類疊、詞的類疊、句的類疊。",
+      "example": "⑴停不了，停不了⑵遲到了！遲到了！⑶來不及了！來不及了！⑷我變小了！我變小了！",
+      "child_note": "類疊：同一個詞彙、語句，接連反覆的使用著，以加強表達的效果，使字句具備音律之美，就叫做「類疊」。類疊可分為：字的類疊、詞的類疊、句的類疊。",
+      "status": "approved",
+      "source": "康軒四上官方教材（10 修辭分析）"
+    }
+  ],
   "paragraph_summary": [
     {
       "id": "paragraph:115AG4K11:01",
@@ -619,9 +929,993 @@
       "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
     }
   ],
-  "polysemy": [],
-  "polysemy_senses": [],
-  "polyphones": [],
+  "polysemy": [
+    {
+      "id": "polysemy:11:01",
+      "char": "背",
+      "sentence": "語詞「背痛」中的「背」，表示什麼意思？",
+      "definition": "胸部的後面",
+      "options": [
+        "胸部的後面",
+        "物體的反面或後面",
+        "用背部對著",
+        "離開"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:02",
+      "char": "背",
+      "sentence": "語詞「背面」中的「背」，表示什麼意思？",
+      "definition": "物體的反面或後面",
+      "options": [
+        "物體的反面或後面",
+        "胸部的後面",
+        "用背部對著",
+        "離開"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:03",
+      "char": "背",
+      "sentence": "語詞「背著太陽」中的「背」，表示什麼意思？",
+      "definition": "用背部對著",
+      "options": [
+        "用背部對著",
+        "胸部的後面",
+        "物體的反面或後面",
+        "離開"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:04",
+      "char": "背",
+      "sentence": "語詞「離鄉背井」中的「背」，表示什麼意思？",
+      "definition": "離開",
+      "options": [
+        "離開",
+        "胸部的後面",
+        "物體的反面或後面",
+        "用背部對著"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:05",
+      "char": "背",
+      "sentence": "語詞「背約」中的「背」，表示什麼意思？",
+      "definition": "違反",
+      "options": [
+        "違反",
+        "胸部的後面",
+        "物體的反面或後面",
+        "用背部對著"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:06",
+      "char": "背",
+      "sentence": "語詞「背臺詞」中的「背」，表示什麼意思？",
+      "definition": "記憶",
+      "options": [
+        "記憶",
+        "胸部的後面",
+        "物體的反面或後面",
+        "用背部對著"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:07",
+      "char": "背",
+      "sentence": "語詞「耳背」中的「背」，表示什麼意思？",
+      "definition": "聽力不好",
+      "options": [
+        "聽力不好",
+        "胸部的後面",
+        "物體的反面或後面",
+        "用背部對著"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:08",
+      "char": "掉",
+      "sentence": "語詞「掉落」中的「掉」，表示什麼意思？",
+      "definition": "落下",
+      "options": [
+        "落下",
+        "遺失",
+        "減退",
+        "對換"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:09",
+      "char": "掉",
+      "sentence": "語詞「漏掉」中的「掉」，表示什麼意思？",
+      "definition": "遺失",
+      "options": [
+        "遺失",
+        "落下",
+        "減退",
+        "對換"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:10",
+      "char": "掉",
+      "sentence": "語詞「掉色」中的「掉」，表示什麼意思？",
+      "definition": "減退",
+      "options": [
+        "減退",
+        "落下",
+        "遺失",
+        "對換"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:11",
+      "char": "掉",
+      "sentence": "語詞「掉換」中的「掉」，表示什麼意思？",
+      "definition": "對換",
+      "options": [
+        "對換",
+        "落下",
+        "遺失",
+        "減退"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:12",
+      "char": "掉",
+      "sentence": "語詞「掉頭」中的「掉」，表示什麼意思？",
+      "definition": "回轉",
+      "options": [
+        "回轉",
+        "落下",
+        "遺失",
+        "減退"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:13",
+      "char": "掉",
+      "sentence": "語詞「尾大不掉」中的「掉」，表示什麼意思？",
+      "definition": "擺動",
+      "options": [
+        "擺動",
+        "落下",
+        "遺失",
+        "減退"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:14",
+      "char": "掉",
+      "sentence": "語詞「表示動作完成」中的「掉」，表示什麼意思？",
+      "definition": "置動詞之後",
+      "options": [
+        "置動詞之後",
+        "落下",
+        "遺失",
+        "減退"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:15",
+      "char": "深",
+      "sentence": "語詞「深海」中的「深」，表示什麼意思？",
+      "definition": "從高到下",
+      "options": [
+        "從高到下",
+        "高奧",
+        "濃厚",
+        "形容時間的久"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:16",
+      "char": "深",
+      "sentence": "語詞「他這句話的用意很深」中的「深」，表示什麼意思？",
+      "definition": "高奧",
+      "options": [
+        "高奧",
+        "從高到下",
+        "濃厚",
+        "形容時間的久"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:17",
+      "char": "深",
+      "sentence": "語詞「深藍色」中的「深」，表示什麼意思？",
+      "definition": "濃厚",
+      "options": [
+        "濃厚",
+        "從高到下",
+        "高奧",
+        "形容時間的久"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:18",
+      "char": "深",
+      "sentence": "語詞「年深日久」中的「深」，表示什麼意思？",
+      "definition": "形容時間的久",
+      "options": [
+        "形容時間的久",
+        "從高到下",
+        "高奧",
+        "濃厚"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:19",
+      "char": "深",
+      "sentence": "語詞「深得人緣」中的「深」，表示什麼意思？",
+      "definition": "很",
+      "options": [
+        "很",
+        "從高到下",
+        "高奧",
+        "濃厚"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:20",
+      "char": "深",
+      "sentence": "語詞「愁眉深鎖」中的「深」，表示什麼意思？",
+      "definition": "蹙緊",
+      "options": [
+        "蹙緊",
+        "從高到下",
+        "高奧",
+        "濃厚"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:21",
+      "char": "鎖",
+      "sentence": "語詞「鎖門」中的「鎖」，表示什麼意思？",
+      "definition": "用鎖關住",
+      "options": [
+        "用鎖關住",
+        "鏈條",
+        "安裝在門戶",
+        "鑰匙"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:22",
+      "char": "鎖",
+      "sentence": "語詞「枷鎖」中的「鎖」，表示什麼意思？",
+      "definition": "鏈條",
+      "options": [
+        "鏈條",
+        "用鎖關住",
+        "安裝在門戶",
+        "鑰匙"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:23",
+      "char": "鎖",
+      "sentence": "語詞「銅鎖」中的「鎖」，表示什麼意思？",
+      "definition": "安裝在門戶",
+      "options": [
+        "安裝在門戶",
+        "用鎖關住",
+        "鏈條",
+        "鑰匙"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:24",
+      "char": "鎖",
+      "sentence": "語詞「開鎖的器物」中的「鎖」，表示什麼意思？",
+      "definition": "鑰匙",
+      "options": [
+        "鑰匙",
+        "用鎖關住",
+        "鏈條",
+        "安裝在門戶"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:25",
+      "char": "示",
+      "sentence": "語詞「示範」中的「示」，表示什麼意思？",
+      "definition": "把事物顯現予人",
+      "options": [
+        "把事物顯現予人",
+        "告訴",
+        "命令"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:26",
+      "char": "示",
+      "sentence": "語詞「訓示」中的「示」，表示什麼意思？",
+      "definition": "告訴",
+      "options": [
+        "告訴",
+        "把事物顯現予人",
+        "命令"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:27",
+      "char": "示",
+      "sentence": "語詞「告示」中的「示」，表示什麼意思？",
+      "definition": "命令",
+      "options": [
+        "命令",
+        "把事物顯現予人",
+        "告訴"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:28",
+      "char": "迫",
+      "sentence": "語詞「迫不及待」中的「迫」，表示什麼意思？",
+      "definition": "危急",
+      "options": [
+        "危急",
+        "強逼",
+        "接近",
+        "摧殘"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:29",
+      "char": "迫",
+      "sentence": "語詞「壓迫」中的「迫」，表示什麼意思？",
+      "definition": "強逼",
+      "options": [
+        "強逼",
+        "危急",
+        "接近",
+        "摧殘"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:30",
+      "char": "迫",
+      "sentence": "語詞「迫近」中的「迫」，表示什麼意思？",
+      "definition": "接近",
+      "options": [
+        "接近",
+        "危急",
+        "強逼",
+        "摧殘"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:31",
+      "char": "迫",
+      "sentence": "語詞「迫害」中的「迫」，表示什麼意思？",
+      "definition": "摧殘",
+      "options": [
+        "摧殘",
+        "危急",
+        "強逼",
+        "接近"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:32",
+      "char": "袋",
+      "sentence": "語詞「口袋」中的「袋」，表示什麼意思？",
+      "definition": "裝東西的器物",
+      "options": [
+        "裝東西的器物",
+        "具有容納或盛裝作用的部位或器具",
+        "計算袋裝物的單位"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:33",
+      "char": "袋",
+      "sentence": "語詞「腦袋」中的「袋」，表示什麼意思？",
+      "definition": "具有容納或盛裝作用的部位或器具",
+      "options": [
+        "具有容納或盛裝作用的部位或器具",
+        "裝東西的器物",
+        "計算袋裝物的單位"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:34",
+      "char": "袋",
+      "sentence": "語詞「一袋米」中的「袋」，表示什麼意思？",
+      "definition": "計算袋裝物的單位",
+      "options": [
+        "計算袋裝物的單位",
+        "裝東西的器物",
+        "具有容納或盛裝作用的部位或器具"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:35",
+      "char": "盒",
+      "sentence": "語詞「禮盒」中的「盒」，表示什麼意思？",
+      "definition": "一種有底",
+      "options": [
+        "一種有底",
+        "計算盒裝物的單位"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:36",
+      "char": "盒",
+      "sentence": "語詞「一盒糖果」中的「盒」，表示什麼意思？",
+      "definition": "計算盒裝物的單位",
+      "options": [
+        "計算盒裝物的單位",
+        "一種有底"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:37",
+      "char": "扇",
+      "sentence": "語詞「摺扇」中的「扇」，表示什麼意思？",
+      "definition": "搖動生風的用具",
+      "options": [
+        "搖動生風的用具",
+        "計算板狀物或片狀物的單位"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:38",
+      "char": "扇",
+      "sentence": "語詞「一扇門板」中的「扇」，表示什麼意思？",
+      "definition": "計算板狀物或片狀物的單位",
+      "options": [
+        "計算板狀物或片狀物的單位",
+        "搖動生風的用具"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:39",
+      "char": "遲",
+      "sentence": "語詞「遲到」中的「遲」，表示什麼意思？",
+      "definition": "晚",
+      "options": [
+        "晚",
+        "緩",
+        "不靈活",
+        "猶豫"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:40",
+      "char": "遲",
+      "sentence": "語詞「事不宜遲」中的「遲」，表示什麼意思？",
+      "definition": "緩",
+      "options": [
+        "緩",
+        "晚",
+        "不靈活",
+        "猶豫"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:41",
+      "char": "遲",
+      "sentence": "語詞「遲鈍」中的「遲」，表示什麼意思？",
+      "definition": "不靈活",
+      "options": [
+        "不靈活",
+        "晚",
+        "緩",
+        "猶豫"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:11:42",
+      "char": "遲",
+      "sentence": "語詞「遲疑不決」中的「遲」，表示什麼意思？",
+      "definition": "猶豫",
+      "options": [
+        "猶豫",
+        "晚",
+        "緩",
+        "不靈活"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    }
+  ],
+  "polysemy_senses": [
+    {
+      "char": "背",
+      "senses": [
+        {
+          "char": "背",
+          "definition": "胸部的後面",
+          "examples": [
+            "背痛",
+            "虎背熊腰"
+          ]
+        },
+        {
+          "char": "背",
+          "definition": "物體的反面或後面",
+          "examples": [
+            "背面",
+            "山背",
+            "刀背"
+          ]
+        },
+        {
+          "char": "背",
+          "definition": "用背部對著",
+          "examples": [
+            "背著太陽",
+            "背山面海",
+            "背水一戰"
+          ]
+        },
+        {
+          "char": "背",
+          "definition": "離開",
+          "examples": [
+            "離鄉背井"
+          ]
+        },
+        {
+          "char": "背",
+          "definition": "違反",
+          "examples": [
+            "背約",
+            "棄理背義",
+            "背信忘義"
+          ]
+        },
+        {
+          "char": "背",
+          "definition": "記憶",
+          "examples": [
+            "背臺詞"
+          ]
+        },
+        {
+          "char": "背",
+          "definition": "聽力不好",
+          "examples": [
+            "耳背"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "掉",
+      "senses": [
+        {
+          "char": "掉",
+          "definition": "落下",
+          "examples": [
+            "掉落",
+            "掉淚"
+          ]
+        },
+        {
+          "char": "掉",
+          "definition": "遺失",
+          "examples": [
+            "漏掉"
+          ]
+        },
+        {
+          "char": "掉",
+          "definition": "減退",
+          "examples": [
+            "掉色",
+            "掉漆"
+          ]
+        },
+        {
+          "char": "掉",
+          "definition": "對換",
+          "examples": [
+            "掉換",
+            "掉包"
+          ]
+        },
+        {
+          "char": "掉",
+          "definition": "回轉",
+          "examples": [
+            "掉頭"
+          ]
+        },
+        {
+          "char": "掉",
+          "definition": "擺動",
+          "examples": [
+            "尾大不掉"
+          ]
+        },
+        {
+          "char": "掉",
+          "definition": "置動詞之後",
+          "examples": [
+            "表示動作完成",
+            "燒掉",
+            "丟掉",
+            "忘掉"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "深",
+      "senses": [
+        {
+          "char": "深",
+          "definition": "從高到下",
+          "examples": [
+            "深海",
+            "深淵"
+          ]
+        },
+        {
+          "char": "深",
+          "definition": "高奧",
+          "examples": [
+            "他這句話的用意很深"
+          ]
+        },
+        {
+          "char": "深",
+          "definition": "濃厚",
+          "examples": [
+            "深藍色",
+            "一往情深"
+          ]
+        },
+        {
+          "char": "深",
+          "definition": "形容時間的久",
+          "examples": [
+            "年深日久"
+          ]
+        },
+        {
+          "char": "深",
+          "definition": "很",
+          "examples": [
+            "深得人緣"
+          ]
+        },
+        {
+          "char": "深",
+          "definition": "蹙緊",
+          "examples": [
+            "愁眉深鎖"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "鎖",
+      "senses": [
+        {
+          "char": "鎖",
+          "definition": "用鎖關住",
+          "examples": [
+            "鎖門",
+            "封鎖"
+          ]
+        },
+        {
+          "char": "鎖",
+          "definition": "鏈條",
+          "examples": [
+            "枷鎖",
+            "鎖鏈"
+          ]
+        },
+        {
+          "char": "鎖",
+          "definition": "安裝在門戶",
+          "examples": [
+            "銅鎖",
+            "暗鎖"
+          ]
+        },
+        {
+          "char": "鎖",
+          "definition": "鑰匙",
+          "examples": [
+            "開鎖的器物"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "示",
+      "senses": [
+        {
+          "char": "示",
+          "definition": "把事物顯現予人",
+          "examples": [
+            "示範",
+            "展示"
+          ]
+        },
+        {
+          "char": "示",
+          "definition": "告訴",
+          "examples": [
+            "訓示"
+          ]
+        },
+        {
+          "char": "示",
+          "definition": "命令",
+          "examples": [
+            "告示"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "迫",
+      "senses": [
+        {
+          "char": "迫",
+          "definition": "危急",
+          "examples": [
+            "迫不及待",
+            "迫切需要"
+          ]
+        },
+        {
+          "char": "迫",
+          "definition": "強逼",
+          "examples": [
+            "壓迫",
+            "被迫投降"
+          ]
+        },
+        {
+          "char": "迫",
+          "definition": "接近",
+          "examples": [
+            "迫近"
+          ]
+        },
+        {
+          "char": "迫",
+          "definition": "摧殘",
+          "examples": [
+            "迫害"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "袋",
+      "senses": [
+        {
+          "char": "袋",
+          "definition": "裝東西的器物",
+          "examples": [
+            "口袋",
+            "布袋"
+          ]
+        },
+        {
+          "char": "袋",
+          "definition": "具有容納或盛裝作用的部位或器具",
+          "examples": [
+            "腦袋"
+          ]
+        },
+        {
+          "char": "袋",
+          "definition": "計算袋裝物的單位",
+          "examples": [
+            "一袋米"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "盒",
+      "senses": [
+        {
+          "char": "盒",
+          "definition": "一種有底",
+          "examples": [
+            "禮盒",
+            "餐盒",
+            "鉛筆盒"
+          ]
+        },
+        {
+          "char": "盒",
+          "definition": "計算盒裝物的單位",
+          "examples": [
+            "一盒糖果",
+            "三盒餅乾"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "扇",
+      "senses": [
+        {
+          "char": "扇",
+          "definition": "搖動生風的用具",
+          "examples": [
+            "摺扇",
+            "電風扇"
+          ]
+        },
+        {
+          "char": "扇",
+          "definition": "計算板狀物或片狀物的單位",
+          "examples": [
+            "一扇門板",
+            "兩扇窗子"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "遲",
+      "senses": [
+        {
+          "char": "遲",
+          "definition": "晚",
+          "examples": [
+            "遲到",
+            "姍姍來遲"
+          ]
+        },
+        {
+          "char": "遲",
+          "definition": "緩",
+          "examples": [
+            "事不宜遲",
+            "說時遲"
+          ]
+        },
+        {
+          "char": "遲",
+          "definition": "不靈活",
+          "examples": [
+            "遲鈍"
+          ]
+        },
+        {
+          "char": "遲",
+          "definition": "猶豫",
+          "examples": [
+            "遲疑不決"
+          ]
+        }
+      ]
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:11:背",
+      "char": "背",
+      "readings": [
+        {
+          "zhuyin": "ㄅㄟˋ",
+          "dabutie_zhuyin": "ㄅㄟˋ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "背心",
+                "違背"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄅㄟ",
+          "dabutie_zhuyin": "ㄅㄟ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "背包",
+                "背負"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "康軒四上官方教材（06 字音字形；多音例詞經來源文字核對）"
+    }
+  ],
   "lookalikes": [
     {
       "id": "lookalike:115AG4K11:01",
@@ -764,7 +2058,47 @@
       "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
     }
   ],
-  "listening": [],
+  "listening": [
+    {
+      "id": "listening:11:01",
+      "stem": "從愛麗絲夢遊仙境這個書名，可以讀出什麼訊息？",
+      "question": "從愛麗絲夢遊仙境這個書名，可以讀出什麼訊息？",
+      "options": [
+        "由書名大致可以推測是名叫愛麗絲的小女孩，進入自己的夢境後，開始她的奇幻冒險",
+        "三腳桌表達了無法幫忙的想法，是因為三腳桌畢竟是一張桌子，沒有手可以幫忙，這時候只有靠愛麗絲自己才能拿到鑰匙",
+        "他想傳達有些事情或許別人可以幫你，但有些事情還是得靠自己才可以完成"
+      ],
+      "answer": "由書名大致可以推測是名叫愛麗絲的小女孩，進入自己的夢境後，開始她的奇幻冒險",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:11:02",
+      "stem": "原本與姐姐在樹下閱讀的愛麗絲，為了追什麼，掉進了深不見底的兔子洞？",
+      "question": "原本與姐姐在樹下閱讀的愛麗絲，為了追什麼，掉進了深不見底的兔子洞？",
+      "options": [
+        "三腳桌表達了無法幫忙的想法，是因為三腳桌畢竟是一張桌子，沒有手可以幫忙，這時候只有靠愛麗絲自己才能拿到鑰匙",
+        "他想傳達有些事情或許別人可以幫你，但有些事情還是得靠自己才可以完成",
+        "愛麗絲為了追一隻身黃色背心，手裡還拿著懷錶的兔子，掉進了深不見底的兔子洞"
+      ],
+      "answer": "愛麗絲為了追一隻身黃色背心，手裡還拿著懷錶的兔子，掉進了深不見底的兔子洞",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:11:03",
+      "stem": "在這篇課文中，愛麗絲遇到了哪些問題？如何解決？",
+      "question": "在這篇課文中，愛麗絲遇到了哪些問題？如何解決？",
+      "options": [
+        "他想傳達有些事情或許別人可以幫你，但有些事情還是得靠自己才可以完成",
+        "愛麗絲掉入兔子洞之後，她進不去洞裡的門，直到三腳桌提醒她，獲得鑰匙和能縮小身體的果汁。但她在縮小身體後，發現鑰匙不在身上。吃下魔法蛋糕後，她身體變大，可以拿到鑰……",
+        "三腳桌表達了無法幫忙的想法，是因為三腳桌畢竟是一張桌子，沒有手可以幫忙，這時候只有靠愛麗絲自己才能拿到鑰匙"
+      ],
+      "answer": "愛麗絲掉入兔子洞之後，她進不去洞裡的門，直到三腳桌提醒她，獲得鑰匙和能縮小身體的果汁。但她在縮小身體後，發現鑰匙不在身上。吃下魔法蛋糕後，她身體變大，可以拿到鑰……",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    }
+  ],
   "review_words": {
     "by_lesson": {
       "1": [
@@ -956,7 +2290,22 @@
       ]
     }
   },
-  "extensions": [],
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag4k-11",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E8%83%8C%E9%8C%B6%E6%8E%89%E6%B7%B1%E9%8E%96%E9%91%B0%E5%8C%99%E6%B1%81%E7%A4%BA%E8%BF%AB%E8%A2%8B%E5%93%AD%E7%9B%92%E6%89%87%E9%81%B2",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・康軒・4年級・第11課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課15個生字"
+    }
+  ],
   "quiz": [
     {
       "id": "q01",
@@ -1122,9 +2471,8 @@
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
-      "activity": "sentence-practice",
-      "note": "句型來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "sentence-practice"
     },
     "challenge": {
       "label": "動手挑戰",
@@ -1139,21 +2487,18 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
-      "activity": "idiom-builder",
-      "note": "成語資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "idiom-builder"
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "一字多義資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
-      "status": "missing",
-      "activity": "polyphones",
-      "note": "一字多音資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "polyphones"
     },
     "lookalikes": {
       "label": "形似字",
@@ -1167,15 +2512,14 @@
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
-      "activity": "listening-quiz",
-      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+      "status": "available",
+      "activity": "listening-quiz"
     },
     "rhetoric": {
       "label": "修辭小偵探",
       "status": "missing",
       "activity": "rhetoric",
-      "note": "修辭資料尚未完成來源核對。"
+      "note": "官方修辭分析不足 3 題。"
     },
     "review": {
       "label": "舊字新詞",

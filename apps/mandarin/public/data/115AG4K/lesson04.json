@@ -49,6 +49,36 @@
       "kind": "official",
       "locator": "14 課文大意、段落大意",
       "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    },
+    {
+      "kind": "official",
+      "locator": "04 生字延伸成語／第4課",
+      "sha256": "9776268150431107A35FA309327947662745CBCD68CE52C17427F09A449E2350"
+    },
+    {
+      "kind": "official",
+      "locator": "07 語句練習／第4課",
+      "sha256": "BD7B4BBEAAEDDDACC1128B1AF9B7469AAD5B60CEC1244518B76F62872CB6A5E9"
+    },
+    {
+      "kind": "official",
+      "locator": "09 生字解釋／第4課",
+      "sha256": "237FB70C678FFF9EA7A0AB645954F7A54A2829C7006380A7CD4DC6FE4A03F663"
+    },
+    {
+      "kind": "official",
+      "locator": "06 字音字形／第4課",
+      "sha256": "BCEB2E7CF05D5919ACC53AF2D454698D3BC94A02C2C944AC603D4A2B1E368BAB"
+    },
+    {
+      "kind": "official",
+      "locator": "15 閱讀理解／第4課",
+      "sha256": "6103E7B8CF142DF8CBE57CDE9CBDB6175C38364B3D4E3265402B97F5F13280FF"
+    },
+    {
+      "kind": "official",
+      "locator": "10 修辭分析／第4課",
+      "sha256": "35962C47D83A67C3158CD8DD9E71B57AFFEC45A3FB7D9494A459EE12E6B597FB"
     }
   ],
   "characters": [
@@ -61,9 +91,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "馬偕"
+        "偕同",
+        "偕老",
+        "白頭偕老"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%81%95",
@@ -79,10 +111,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "醫院",
-        "醫療"
+        "中醫",
+        "名醫",
+        "就醫"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%86%AB",
@@ -102,7 +135,7 @@
         "使命",
         "命中"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%91%BD",
@@ -118,9 +151,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
+        "供奉",
+        "信奉",
         "奉獻"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A5%89",
@@ -136,9 +171,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "奉獻"
+        "奉獻",
+        "文獻",
+        "獻上"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%8D%BB",
@@ -154,9 +191,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "醫療"
+        "化療",
+        "治療",
+        "療效"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%99%82",
@@ -176,7 +215,7 @@
         "前衛",
         "守衛"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%A1%9B",
@@ -192,9 +231,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "藥品"
+        "中藥",
+        "搽藥",
+        "服藥"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%97%A5",
@@ -210,9 +251,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "治病"
+        "不治",
+        "主治",
+        "政治"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B2%BB",
@@ -228,9 +271,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "翻山越嶺"
+        "打翻",
+        "推翻",
+        "翻出"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%BF%BB",
@@ -246,9 +291,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "翻山越嶺"
+        "草嶺",
+        "分水嶺",
+        "大吉嶺"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B6%BA",
@@ -264,9 +311,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "捐錢"
+        "捐出",
+        "捐助",
+        "捐款"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8D%90",
@@ -282,9 +331,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "食宿"
+        "住宿",
+        "夜宿",
+        "宿舍"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%AE%BF",
@@ -300,9 +351,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
+        "堂弟",
+        "天堂",
         "學堂"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A0%82",
@@ -318,9 +371,11 @@
       "type": "習寫字",
       "level": "basic",
       "examples": [
-        "濃濃"
+        "濃厚",
+        "濃密",
+        "濃度"
       ],
-      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "examples_source": "康軒出版社生字頻率 Excel（康軒工作表；按分數取前三項）",
       "image": null,
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%BF%83",
@@ -560,10 +615,229 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
-  "rhetoric": [],
+  "idioms": [
+    {
+      "id": "idiom:04:01",
+      "idiom": "耳提面命",
+      "definition": "比喻懇切教誨。",
+      "related_char": "命",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:04:02",
+      "idiom": "借花獻佛",
+      "definition": "比喻借用他人的東西來作人情。",
+      "related_char": "獻",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:04:03",
+      "idiom": "精衛填海",
+      "definition": "比喻意志堅定，不懼艱苦。",
+      "related_char": "衛",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:04:04",
+      "idiom": "良藥苦口",
+      "definition": "能治好病的藥，多味苦難嚥。比喻諫言多不順耳，但卻有益於人。",
+      "related_char": "藥",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    },
+    {
+      "id": "idiom:04:05",
+      "idiom": "打退堂鼓",
+      "definition": "比喻中途退縮放棄。",
+      "related_char": "堂",
+      "status": "ready",
+      "source": "康軒四上官方教材（04 生字延伸成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:04:01",
+      "idiom_id": "idiom:04:01",
+      "rewritten": "中場休息時，只見雙方教練對隊員耳提面命，希望下半場能有更佳的表現。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:04:02",
+      "idiom_id": "idiom:04:02",
+      "rewritten": "這是別人送給我的禮物，現在我借花獻佛，轉送給你。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:04:03",
+      "idiom_id": "idiom:04:03",
+      "rewritten": "這是項艱鉅的工程，若沒有精衛填海的毅力，是不可能成功的。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:04:04",
+      "idiom_id": "idiom:04:04",
+      "rewritten": "我這番話雖然刺耳，但是良藥苦口，都是為你好呀！▼翻天翻地覆：形容巨大的改變原有的情狀。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    },
+    {
+      "id": "idiom-sentence:04:05",
+      "idiom_id": "idiom:04:05",
+      "rewritten": "既然已經決定完成這件任務，大家就要互相幫助、鼓勵，別打退堂鼓。",
+      "status": "approved",
+      "source": "康軒四上官方教材（04 生字延伸成語；例句）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence:04:01",
+      "category": "短語練習",
+      "head": "將生命奉獻給臺灣",
+      "structure": "將（名詞）（動詞）給（名詞）",
+      "description": "強調動作及心態的短語。",
+      "guide": "請將語詞重新排列，組成通順的短語。",
+      "examples": [
+        "將感恩回饋給社會",
+        "將知識傳遞給學生",
+        "將溫暖奉獻給家人"
+      ],
+      "example_parts": [
+        [
+          "將",
+          "感恩",
+          "回饋給",
+          "社會"
+        ],
+        [
+          "將",
+          "知識",
+          "傳遞給",
+          "學生"
+        ],
+        [
+          "將",
+          "溫暖",
+          "奉獻給",
+          "家人"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:04:02",
+      "category": "短句練習",
+      "head": "馬偕對臺灣有著濃濃的情感",
+      "structure": "（人物）對（名詞）有著（形容詞）的（名詞）。",
+      "description": "誰對於某事某物表達情感的短句。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "弟弟對恐龍有著強烈的喜好。",
+        "家人對孩子有著溫暖的關懷。",
+        "人民對國家有著崇高的期望。"
+      ],
+      "example_parts": [
+        [
+          "弟弟",
+          "對恐龍",
+          "有著",
+          "強烈的喜好。"
+        ],
+        [
+          "家人",
+          "對孩子",
+          "有著",
+          "溫暖的關懷。"
+        ],
+        [
+          "人民",
+          "對國家",
+          "有著",
+          "崇高的期望。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:04:03",
+      "category": "造句練習",
+      "head": "翻山越嶺",
+      "structure": "生活情境句",
+      "description": "形容長途跋涉、旅途辛苦的樣子。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "他們翻山越嶺，長途跋涉，終於到達這座廟宇。",
+        "我們翻山越嶺，終於登上玉山主峰。"
+      ],
+      "example_parts": [
+        [
+          "他們",
+          "翻山越嶺，",
+          "長途跋涉，",
+          "終於到達",
+          "這座廟宇。"
+        ],
+        [
+          "我們",
+          "翻山越嶺，",
+          "終於登上",
+          "玉山主峰。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    },
+    {
+      "id": "sentence:04:04",
+      "category": "句型練習",
+      "head": "當……就……",
+      "structure": "當（先發生的情境），就（接著產生的結果）。",
+      "description": "承接複句，表示連續發生的事情或動作，彼此順序不能移動。",
+      "guide": "請將語詞重新排列，組成通順的句子。",
+      "examples": [
+        "當爸爸一打開大門，小狗就跑了出去。",
+        "當火車一靠站，月臺上的人群就蜂擁而上。"
+      ],
+      "example_parts": [
+        [
+          "當爸爸",
+          "一打開大門，",
+          "小狗",
+          "就跑了出去。"
+        ],
+        [
+          "當火車一",
+          "靠站，",
+          "月臺上的人群",
+          "就蜂擁而上。"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+    }
+  ],
+  "rhetoric": [
+    {
+      "id": "rhetoric:04:01",
+      "figure": "類疊",
+      "note": "同一個詞彙、語句，接連反覆的使用著，以加強表達的效果，使字句具備音律之美，就叫做「類疊」。類疊可分為：字的類疊、詞的類疊、句的類疊。",
+      "example": "我心愛的臺灣哪！我的青春全部獻給你。我心愛的臺灣哪！我一生的喜悅都在這裡。",
+      "child_note": "類疊：同一個詞彙、語句，接連反覆的使用著，以加強表達的效果，使字句具備音律之美，就叫做「類疊」。類疊可分為：字的類疊、詞的類疊、句的類疊。",
+      "status": "approved",
+      "source": "康軒四上官方教材（10 修辭分析）"
+    }
+  ],
   "paragraph_summary": [
     {
       "id": "paragraph:115AG4K04:01",
@@ -678,9 +952,1326 @@
       "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
     }
   ],
-  "polysemy": [],
-  "polysemy_senses": [],
-  "polyphones": [],
+  "polysemy": [
+    {
+      "id": "polysemy:04:01",
+      "char": "醫",
+      "sentence": "語詞「牙醫」中的「醫」，表示什麼意思？",
+      "definition": "治療疾病的人",
+      "options": [
+        "治療疾病的人",
+        "醫術",
+        "治療",
+        "有關醫療方面的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:02",
+      "char": "醫",
+      "sentence": "語詞「醫學」中的「醫」，表示什麼意思？",
+      "definition": "醫術",
+      "options": [
+        "醫術",
+        "治療疾病的人",
+        "治療",
+        "有關醫療方面的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:03",
+      "char": "醫",
+      "sentence": "語詞「醫治」中的「醫」，表示什麼意思？",
+      "definition": "治療",
+      "options": [
+        "治療",
+        "治療疾病的人",
+        "醫術",
+        "有關醫療方面的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:04",
+      "char": "醫",
+      "sentence": "語詞「醫術」中的「醫」，表示什麼意思？",
+      "definition": "有關醫療方面的",
+      "options": [
+        "有關醫療方面的",
+        "治療疾病的人",
+        "醫術",
+        "治療"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:05",
+      "char": "命",
+      "sentence": "語詞「生命」中的「命」，表示什麼意思？",
+      "definition": "生物生存的機能",
+      "options": [
+        "生物生存的機能",
+        "上級對下級的指示",
+        "先天注定的窮通得失本分",
+        "差遣"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:06",
+      "char": "命",
+      "sentence": "語詞「遵命」中的「命」，表示什麼意思？",
+      "definition": "上級對下級的指示",
+      "options": [
+        "上級對下級的指示",
+        "生物生存的機能",
+        "先天注定的窮通得失本分",
+        "差遣"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:07",
+      "char": "命",
+      "sentence": "語詞「天命」中的「命」，表示什麼意思？",
+      "definition": "先天注定的窮通得失本分",
+      "options": [
+        "先天注定的窮通得失本分",
+        "生物生存的機能",
+        "上級對下級的指示",
+        "差遣"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:08",
+      "char": "命",
+      "sentence": "語詞「下命令」中的「命」，表示什麼意思？",
+      "definition": "差遣",
+      "options": [
+        "差遣",
+        "生物生存的機能",
+        "上級對下級的指示",
+        "先天注定的窮通得失本分"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:09",
+      "char": "命",
+      "sentence": "語詞「命名」中的「命」，表示什麼意思？",
+      "definition": "取定",
+      "options": [
+        "取定",
+        "生物生存的機能",
+        "上級對下級的指示",
+        "先天注定的窮通得失本分"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:10",
+      "char": "命",
+      "sentence": "語詞「自命不凡」中的「命」，表示什麼意思？",
+      "definition": "以為",
+      "options": [
+        "以為",
+        "生物生存的機能",
+        "上級對下級的指示",
+        "先天注定的窮通得失本分"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:11",
+      "char": "命",
+      "sentence": "語詞「奉命」中的「命」，表示什麼意思？",
+      "definition": "敬受",
+      "options": [
+        "敬受",
+        "生物生存的機能",
+        "上級對下級的指示",
+        "先天注定的窮通得失本分"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:12",
+      "char": "奉",
+      "sentence": "語詞「奉獻」中的「奉」，表示什麼意思？",
+      "definition": "進獻",
+      "options": [
+        "進獻",
+        "推崇",
+        "信仰",
+        "討好"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:13",
+      "char": "奉",
+      "sentence": "語詞「奉為圭臬」中的「奉」，表示什麼意思？",
+      "definition": "推崇",
+      "options": [
+        "推崇",
+        "進獻",
+        "信仰",
+        "討好"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:14",
+      "char": "奉",
+      "sentence": "語詞「信奉」中的「奉」，表示什麼意思？",
+      "definition": "信仰",
+      "options": [
+        "信仰",
+        "進獻",
+        "推崇",
+        "討好"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:15",
+      "char": "奉",
+      "sentence": "語詞「奉承」中的「奉」，表示什麼意思？",
+      "definition": "討好",
+      "options": [
+        "討好",
+        "進獻",
+        "推崇",
+        "信仰"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:16",
+      "char": "奉",
+      "sentence": "語詞「奉養」中的「奉」，表示什麼意思？",
+      "definition": "供養",
+      "options": [
+        "供養",
+        "進獻",
+        "推崇",
+        "信仰"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:17",
+      "char": "奉",
+      "sentence": "語詞「供奉」中的「奉」，表示什麼意思？",
+      "definition": "祭祀",
+      "options": [
+        "祭祀",
+        "進獻",
+        "推崇",
+        "信仰"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:18",
+      "char": "獻",
+      "sentence": "語詞「奉送」中的「獻」，表示什麼意思？",
+      "definition": "奉上",
+      "options": [
+        "奉上",
+        "表演",
+        "故意顯露"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:19",
+      "char": "獻",
+      "sentence": "語詞「獻技」中的「獻」，表示什麼意思？",
+      "definition": "表演",
+      "options": [
+        "表演",
+        "奉上",
+        "故意顯露"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:20",
+      "char": "獻",
+      "sentence": "語詞「獻媚」中的「獻」，表示什麼意思？",
+      "definition": "故意顯露",
+      "options": [
+        "故意顯露",
+        "奉上",
+        "表演"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:21",
+      "char": "療",
+      "sentence": "語詞「治療」中的「療」，表示什麼意思？",
+      "definition": "醫治",
+      "options": [
+        "醫治",
+        "解除"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:22",
+      "char": "療",
+      "sentence": "語詞「療貧」中的「療」，表示什麼意思？",
+      "definition": "解除",
+      "options": [
+        "解除",
+        "醫治"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:23",
+      "char": "衛",
+      "sentence": "語詞「防衛」中的「衛」，表示什麼意思？",
+      "definition": "保護",
+      "options": [
+        "保護",
+        "擔任防護工作的人"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:24",
+      "char": "衛",
+      "sentence": "語詞「侍衛」中的「衛」，表示什麼意思？",
+      "definition": "擔任防護工作的人",
+      "options": [
+        "擔任防護工作的人",
+        "保護"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:25",
+      "char": "藥",
+      "sentence": "語詞「西藥」中的「藥」，表示什麼意思？",
+      "definition": "用來治病的物質",
+      "options": [
+        "用來治病的物質",
+        "某些能發生特定效用的化學物質",
+        "治療"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:26",
+      "char": "藥",
+      "sentence": "語詞「火藥」中的「藥」，表示什麼意思？",
+      "definition": "某些能發生特定效用的化學物質",
+      "options": [
+        "某些能發生特定效用的化學物質",
+        "用來治病的物質",
+        "治療"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:27",
+      "char": "藥",
+      "sentence": "語詞「無可救藥」中的「藥」，表示什麼意思？",
+      "definition": "治療",
+      "options": [
+        "治療",
+        "用來治病的物質",
+        "某些能發生特定效用的化學物質"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:28",
+      "char": "治",
+      "sentence": "語詞「治病」中的「治」，表示什麼意思？",
+      "definition": "診療",
+      "options": [
+        "診療",
+        "管理",
+        "整理",
+        "研究"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:29",
+      "char": "治",
+      "sentence": "語詞「統治」中的「治」，表示什麼意思？",
+      "definition": "管理",
+      "options": [
+        "管理",
+        "診療",
+        "整理",
+        "研究"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:30",
+      "char": "治",
+      "sentence": "語詞「治水」中的「治」，表示什麼意思？",
+      "definition": "整理",
+      "options": [
+        "整理",
+        "診療",
+        "管理",
+        "研究"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:31",
+      "char": "治",
+      "sentence": "語詞「治學」中的「治」，表示什麼意思？",
+      "definition": "研究",
+      "options": [
+        "研究",
+        "診療",
+        "管理",
+        "整理"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:32",
+      "char": "治",
+      "sentence": "語詞「治罪」中的「治」，表示什麼意思？",
+      "definition": "懲罰",
+      "options": [
+        "懲罰",
+        "診療",
+        "管理",
+        "整理"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:33",
+      "char": "治",
+      "sentence": "語詞「治產」中的「治」，表示什麼意思？",
+      "definition": "經營",
+      "options": [
+        "經營",
+        "診療",
+        "管理",
+        "整理"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:34",
+      "char": "治",
+      "sentence": "語詞「治世」中的「治」，表示什麼意思？",
+      "definition": "太平的",
+      "options": [
+        "太平的",
+        "診療",
+        "管理",
+        "整理"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:35",
+      "char": "翻",
+      "sentence": "語詞「翻山越嶺」中的「翻」，表示什麼意思？",
+      "definition": "越過",
+      "options": [
+        "越過",
+        "反轉",
+        "掀動",
+        "改變"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:36",
+      "char": "翻",
+      "sentence": "語詞「翻身」中的「翻」，表示什麼意思？",
+      "definition": "反轉",
+      "options": [
+        "反轉",
+        "越過",
+        "掀動",
+        "改變"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:37",
+      "char": "翻",
+      "sentence": "語詞「翻書」中的「翻」，表示什麼意思？",
+      "definition": "掀動",
+      "options": [
+        "掀動",
+        "越過",
+        "反轉",
+        "改變"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:38",
+      "char": "翻",
+      "sentence": "語詞「花樣翻新」中的「翻」，表示什麼意思？",
+      "definition": "改變",
+      "options": [
+        "改變",
+        "越過",
+        "反轉",
+        "掀動"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:39",
+      "char": "翻",
+      "sentence": "語詞「翻譯」中的「翻」，表示什麼意思？",
+      "definition": "將某種語言文字譯成另一種語言文字",
+      "options": [
+        "將某種語言文字譯成另一種語言文字",
+        "越過",
+        "反轉",
+        "掀動"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:40",
+      "char": "嶺",
+      "sentence": "語詞「山嶺」中的「嶺」，表示什麼意思？",
+      "definition": "連綿不斷的山",
+      "options": [
+        "連綿不斷的山",
+        "有道路可通的山頂"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:41",
+      "char": "嶺",
+      "sentence": "語詞「崇山峻嶺」中的「嶺」，表示什麼意思？",
+      "definition": "有道路可通的山頂",
+      "options": [
+        "有道路可通的山頂",
+        "連綿不斷的山"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:42",
+      "char": "捐",
+      "sentence": "語詞「捐獻」中的「捐」，表示什麼意思？",
+      "definition": "奉獻財物幫助別人",
+      "options": [
+        "奉獻財物幫助別人",
+        "捨棄",
+        "人民向政府繳納的稅金"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:43",
+      "char": "捐",
+      "sentence": "語詞「捐棄」中的「捐」，表示什麼意思？",
+      "definition": "捨棄",
+      "options": [
+        "捨棄",
+        "奉獻財物幫助別人",
+        "人民向政府繳納的稅金"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:44",
+      "char": "捐",
+      "sentence": "語詞「地捐」中的「捐」，表示什麼意思？",
+      "definition": "人民向政府繳納的稅金",
+      "options": [
+        "人民向政府繳納的稅金",
+        "奉獻財物幫助別人",
+        "捨棄"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:45",
+      "char": "宿",
+      "sentence": "語詞「宿舍」中的「宿」，表示什麼意思？",
+      "definition": "供休止的處所",
+      "options": [
+        "供休止的處所",
+        "舊的",
+        "隔夜的",
+        "前世的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:46",
+      "char": "宿",
+      "sentence": "語詞「宿怨」中的「宿」，表示什麼意思？",
+      "definition": "舊的",
+      "options": [
+        "舊的",
+        "供休止的處所",
+        "隔夜的",
+        "前世的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:47",
+      "char": "宿",
+      "sentence": "語詞「宿雨」中的「宿」，表示什麼意思？",
+      "definition": "隔夜的",
+      "options": [
+        "隔夜的",
+        "供休止的處所",
+        "舊的",
+        "前世的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:48",
+      "char": "宿",
+      "sentence": "語詞「宿緣」中的「宿」，表示什麼意思？",
+      "definition": "前世的",
+      "options": [
+        "前世的",
+        "供休止的處所",
+        "舊的",
+        "隔夜的"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:49",
+      "char": "堂",
+      "sentence": "語詞「學堂」中的「堂」，表示什麼意思？",
+      "definition": "專門用途的房屋",
+      "options": [
+        "專門用途的房屋",
+        "正房",
+        "堂",
+        "同祖父的親屬"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:50",
+      "char": "堂",
+      "sentence": "語詞「廳堂」中的「堂」，表示什麼意思？",
+      "definition": "正房",
+      "options": [
+        "正房",
+        "專門用途的房屋",
+        "堂",
+        "同祖父的親屬"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:51",
+      "char": "堂",
+      "sentence": "語詞「政事堂」中的「堂」，表示什麼意思？",
+      "definition": "堂",
+      "options": [
+        "堂",
+        "專門用途的房屋",
+        "正房",
+        "同祖父的親屬"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:52",
+      "char": "堂",
+      "sentence": "語詞「堂兄弟」中的「堂」，表示什麼意思？",
+      "definition": "同祖父的親屬",
+      "options": [
+        "同祖父的親屬",
+        "專門用途的房屋",
+        "正房",
+        "堂"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:53",
+      "char": "堂",
+      "sentence": "語詞「一堂課」中的「堂」，表示什麼意思？",
+      "definition": "計算課程分節的單位",
+      "options": [
+        "計算課程分節的單位",
+        "專門用途的房屋",
+        "正房",
+        "堂"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:54",
+      "char": "堂",
+      "sentence": "語詞「富麗堂皇」中的「堂」，表示什麼意思？",
+      "definition": "宏偉",
+      "options": [
+        "宏偉",
+        "專門用途的房屋",
+        "正房",
+        "堂"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:55",
+      "char": "濃",
+      "sentence": "語詞「濃郁」中的「濃」，表示什麼意思？",
+      "definition": "味道",
+      "options": [
+        "味道",
+        "多",
+        "酣暢"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:56",
+      "char": "濃",
+      "sentence": "語詞「濃厚」中的「濃」，表示什麼意思？",
+      "definition": "多",
+      "options": [
+        "多",
+        "味道",
+        "酣暢"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    },
+    {
+      "id": "polysemy:04:57",
+      "char": "濃",
+      "sentence": "語詞「遊興正濃」中的「濃」，表示什麼意思？",
+      "definition": "酣暢",
+      "options": [
+        "酣暢",
+        "味道",
+        "多"
+      ],
+      "status": "approved",
+      "source": "康軒四上官方教材（09 生字解釋；字義辨析）"
+    }
+  ],
+  "polysemy_senses": [
+    {
+      "char": "醫",
+      "senses": [
+        {
+          "char": "醫",
+          "definition": "治療疾病的人",
+          "examples": [
+            "牙醫"
+          ]
+        },
+        {
+          "char": "醫",
+          "definition": "醫術",
+          "examples": [
+            "醫學",
+            "學醫",
+            "中醫"
+          ]
+        },
+        {
+          "char": "醫",
+          "definition": "治療",
+          "examples": [
+            "醫治",
+            "醫療"
+          ]
+        },
+        {
+          "char": "醫",
+          "definition": "有關醫療方面的",
+          "examples": [
+            "醫術",
+            "醫德"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "命",
+      "senses": [
+        {
+          "char": "命",
+          "definition": "生物生存的機能",
+          "examples": [
+            "生命",
+            "性命"
+          ]
+        },
+        {
+          "char": "命",
+          "definition": "上級對下級的指示",
+          "examples": [
+            "遵命",
+            "奉命"
+          ]
+        },
+        {
+          "char": "命",
+          "definition": "先天注定的窮通得失本分",
+          "examples": [
+            "天命",
+            "宿命"
+          ]
+        },
+        {
+          "char": "命",
+          "definition": "差遣",
+          "examples": [
+            "下命令",
+            "命人送信"
+          ]
+        },
+        {
+          "char": "命",
+          "definition": "取定",
+          "examples": [
+            "命名"
+          ]
+        },
+        {
+          "char": "命",
+          "definition": "以為",
+          "examples": [
+            "自命不凡"
+          ]
+        },
+        {
+          "char": "命",
+          "definition": "敬受",
+          "examples": [
+            "奉命"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "奉",
+      "senses": [
+        {
+          "char": "奉",
+          "definition": "進獻",
+          "examples": [
+            "奉獻"
+          ]
+        },
+        {
+          "char": "奉",
+          "definition": "推崇",
+          "examples": [
+            "奉為圭臬"
+          ]
+        },
+        {
+          "char": "奉",
+          "definition": "信仰",
+          "examples": [
+            "信奉"
+          ]
+        },
+        {
+          "char": "奉",
+          "definition": "討好",
+          "examples": [
+            "奉承"
+          ]
+        },
+        {
+          "char": "奉",
+          "definition": "供養",
+          "examples": [
+            "奉養",
+            "侍奉"
+          ]
+        },
+        {
+          "char": "奉",
+          "definition": "祭祀",
+          "examples": [
+            "供奉"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "獻",
+      "senses": [
+        {
+          "char": "獻",
+          "definition": "奉上",
+          "examples": [
+            "奉送",
+            "貢獻",
+            "呈獻"
+          ]
+        },
+        {
+          "char": "獻",
+          "definition": "表演",
+          "examples": [
+            "獻技",
+            "獻藝"
+          ]
+        },
+        {
+          "char": "獻",
+          "definition": "故意顯露",
+          "examples": [
+            "獻媚",
+            "獻殷勤"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "療",
+      "senses": [
+        {
+          "char": "療",
+          "definition": "醫治",
+          "examples": [
+            "治療",
+            "診療",
+            "療效"
+          ]
+        },
+        {
+          "char": "療",
+          "definition": "解除",
+          "examples": [
+            "療貧",
+            "療飢"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "衛",
+      "senses": [
+        {
+          "char": "衛",
+          "definition": "保護",
+          "examples": [
+            "防衛",
+            "守衛"
+          ]
+        },
+        {
+          "char": "衛",
+          "definition": "擔任防護工作的人",
+          "examples": [
+            "侍衛"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "藥",
+      "senses": [
+        {
+          "char": "藥",
+          "definition": "用來治病的物質",
+          "examples": [
+            "西藥",
+            "草藥"
+          ]
+        },
+        {
+          "char": "藥",
+          "definition": "某些能發生特定效用的化學物質",
+          "examples": [
+            "火藥",
+            "炸藥"
+          ]
+        },
+        {
+          "char": "藥",
+          "definition": "治療",
+          "examples": [
+            "無可救藥"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "治",
+      "senses": [
+        {
+          "char": "治",
+          "definition": "診療",
+          "examples": [
+            "治病",
+            "醫治"
+          ]
+        },
+        {
+          "char": "治",
+          "definition": "管理",
+          "examples": [
+            "統治",
+            "治國"
+          ]
+        },
+        {
+          "char": "治",
+          "definition": "整理",
+          "examples": [
+            "治水",
+            "整治"
+          ]
+        },
+        {
+          "char": "治",
+          "definition": "研究",
+          "examples": [
+            "治學"
+          ]
+        },
+        {
+          "char": "治",
+          "definition": "懲罰",
+          "examples": [
+            "治罪",
+            "處治"
+          ]
+        },
+        {
+          "char": "治",
+          "definition": "經營",
+          "examples": [
+            "治產"
+          ]
+        },
+        {
+          "char": "治",
+          "definition": "太平的",
+          "examples": [
+            "治世",
+            "長治久安"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "翻",
+      "senses": [
+        {
+          "char": "翻",
+          "definition": "越過",
+          "examples": [
+            "翻山越嶺"
+          ]
+        },
+        {
+          "char": "翻",
+          "definition": "反轉",
+          "examples": [
+            "翻身",
+            "車翻了"
+          ]
+        },
+        {
+          "char": "翻",
+          "definition": "掀動",
+          "examples": [
+            "翻書",
+            "翻報紙"
+          ]
+        },
+        {
+          "char": "翻",
+          "definition": "改變",
+          "examples": [
+            "花樣翻新",
+            "翻案",
+            "翻臉"
+          ]
+        },
+        {
+          "char": "翻",
+          "definition": "將某種語言文字譯成另一種語言文字",
+          "examples": [
+            "翻譯"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "嶺",
+      "senses": [
+        {
+          "char": "嶺",
+          "definition": "連綿不斷的山",
+          "examples": [
+            "山嶺"
+          ]
+        },
+        {
+          "char": "嶺",
+          "definition": "有道路可通的山頂",
+          "examples": [
+            "崇山峻嶺"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "捐",
+      "senses": [
+        {
+          "char": "捐",
+          "definition": "奉獻財物幫助別人",
+          "examples": [
+            "捐獻",
+            "捐贈"
+          ]
+        },
+        {
+          "char": "捐",
+          "definition": "捨棄",
+          "examples": [
+            "捐棄"
+          ]
+        },
+        {
+          "char": "捐",
+          "definition": "人民向政府繳納的稅金",
+          "examples": [
+            "地捐",
+            "稅捐"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "宿",
+      "senses": [
+        {
+          "char": "宿",
+          "definition": "供休止的處所",
+          "examples": [
+            "宿舍"
+          ]
+        },
+        {
+          "char": "宿",
+          "definition": "舊的",
+          "examples": [
+            "宿怨",
+            "宿憂"
+          ]
+        },
+        {
+          "char": "宿",
+          "definition": "隔夜的",
+          "examples": [
+            "宿雨",
+            "宿醉"
+          ]
+        },
+        {
+          "char": "宿",
+          "definition": "前世的",
+          "examples": [
+            "宿緣"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "堂",
+      "senses": [
+        {
+          "char": "堂",
+          "definition": "專門用途的房屋",
+          "examples": [
+            "學堂",
+            "食堂",
+            "禮堂",
+            "紀念堂"
+          ]
+        },
+        {
+          "char": "堂",
+          "definition": "正房",
+          "examples": [
+            "廳堂",
+            "登堂入室"
+          ]
+        },
+        {
+          "char": "堂",
+          "definition": "堂",
+          "examples": [
+            "政事堂"
+          ]
+        },
+        {
+          "char": "堂",
+          "definition": "同祖父的親屬",
+          "examples": [
+            "堂兄弟",
+            "堂姪"
+          ]
+        },
+        {
+          "char": "堂",
+          "definition": "計算課程分節的單位",
+          "examples": [
+            "一堂課"
+          ]
+        },
+        {
+          "char": "堂",
+          "definition": "宏偉",
+          "examples": [
+            "富麗堂皇"
+          ]
+        }
+      ]
+    },
+    {
+      "char": "濃",
+      "senses": [
+        {
+          "char": "濃",
+          "definition": "味道",
+          "examples": [
+            "濃郁"
+          ]
+        },
+        {
+          "char": "濃",
+          "definition": "多",
+          "examples": [
+            "濃厚",
+            "濃雲密布"
+          ]
+        },
+        {
+          "char": "濃",
+          "definition": "酣暢",
+          "examples": [
+            "遊興正濃"
+          ]
+        }
+      ]
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:04:宿",
+      "char": "宿",
+      "readings": [
+        {
+          "zhuyin": "ㄙㄨˋ",
+          "dabutie_zhuyin": "ㄙㄨˋ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "食宿",
+                "宿舍"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄒㄧㄡˋ",
+          "dabutie_zhuyin": "ㄒㄧㄡˋ",
+          "senses": [
+            {
+              "definition": "官方字音字形辨析中的例詞。",
+              "examples": [
+                "星宿"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "康軒四上官方教材（06 字音字形；多音例詞經來源文字核對）"
+    }
+  ],
   "lookalikes": [
     {
       "id": "lookalike:115AG4K04:01",
@@ -827,7 +2418,47 @@
       "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
     }
   ],
-  "listening": [],
+  "listening": [
+    {
+      "id": "listening:04:01",
+      "stem": "馬偕是因為什麼原因來到臺灣？",
+      "question": "馬偕是因為什麼原因來到臺灣？",
+      "options": [
+        "他在完成醫療和神學院的課程後，就自願到海外傳福音",
+        "⑴衛生觀念不佳。⑵醫療資源不足。⑶人民接受教育情況不普及",
+        "事例一：「為了讓孩子有讀書的機會，他在當地創辦第一所新式學校，除了不收學費，還有免費食宿，讓學生可以專心學習。」表示馬偕興辦教育不是為了賺錢，而是為了讓學生有安……"
+      ],
+      "answer": "他在完成醫療和神學院的課程後，就自願到海外傳福音",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:04:02",
+      "stem": "為什麼馬偕能獲得來自家鄉的捐款？",
+      "question": "為什麼馬偕能獲得來自家鄉的捐款？",
+      "options": [
+        "⑴衛生觀念不佳。⑵醫療資源不足。⑶人民接受教育情況不普及",
+        "事例一：「為了讓孩子有讀書的機會，他在當地創辦第一所新式學校，除了不收學費，還有免費食宿，讓學生可以專心學習。」表示馬偕興辦教育不是為了賺錢，而是為了讓學生有安……",
+        "因為捐款的人都認同馬偕的善行"
+      ],
+      "answer": "因為捐款的人都認同馬偕的善行",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    },
+    {
+      "id": "listening:04:03",
+      "stem": "本課題目為「永遠的馬偕」，為什麼用「永遠」二字？",
+      "question": "本課題目為「永遠的馬偕」，為什麼用「永遠」二字？",
+      "options": [
+        "事例一：「為了讓孩子有讀書的機會，他在當地創辦第一所新式學校，除了不收學費，還有免費食宿，讓學生可以專心學習。」表示馬偕興辦教育不是為了賺錢，而是為了讓學生有安……",
+        "「永遠」二字出自最後一段：「他的愛心永遠留在人們的心中，他的故事也永遠流傳在這座美麗的寶島。」強調馬偕的精神對臺灣的影響永久而深遠",
+        "⑴衛生觀念不佳。⑵醫療資源不足。⑶人民接受教育情況不普及"
+      ],
+      "answer": "「永遠」二字出自最後一段：「他的愛心永遠留在人們的心中，他的故事也永遠流傳在這座美麗的寶島。」強調馬偕的精神對臺灣的影響永久而深遠",
+      "status": "approved",
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+    }
+  ],
   "review_words": {
     "by_lesson": {
       "1": [
@@ -900,7 +2531,22 @@
       ]
     }
   },
-  "extensions": [],
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag4k-04",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E5%81%95%E9%86%AB%E5%91%BD%E5%A5%89%E7%8D%BB%E7%99%82%E8%A1%9B%E8%97%A5%E6%B2%BB%E7%BF%BB%E5%B6%BA%E6%8D%90%E5%AE%BF%E5%A0%82%E6%BF%83",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・康軒・4年級・第4課",
+      "login_required": false,
+      "checked_at": "2026-09-26",
+      "note": "已帶入本課15個生字"
+    }
+  ],
   "quiz": [
     {
       "id": "q01",
@@ -1066,9 +2712,8 @@
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
-      "activity": "sentence-practice",
-      "note": "句型來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "sentence-practice"
     },
     "challenge": {
       "label": "動手挑戰",
@@ -1083,21 +2728,18 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
-      "activity": "idiom-builder",
-      "note": "成語資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "idiom-builder"
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "一字多義資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
-      "status": "missing",
-      "activity": "polyphones",
-      "note": "一字多音資料尚未完成來源核對。"
+      "status": "available",
+      "activity": "polyphones"
     },
     "lookalikes": {
       "label": "形似字",
@@ -1111,15 +2753,14 @@
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
-      "activity": "listening-quiz",
-      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+      "status": "available",
+      "activity": "listening-quiz"
     },
     "rhetoric": {
       "label": "修辭小偵探",
       "status": "missing",
       "activity": "rhetoric",
-      "note": "修辭資料尚未完成來源核對。"
+      "note": "官方修辭分析不足 3 題。"
     },
     "review": {
       "label": "舊字新詞",
