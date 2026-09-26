@@ -1,6 +1,14 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/public/data/115AG3H/lesson01.json`～`lesson06.json`、`apps/mandarin/public/data/115AG6H/lesson02.json`、`lesson04.json`、`lesson11.json`、`apps/mandarin/scripts/test-rhetoric-highlights.mjs`、`apps/mandarin/docs/lesson-generation-workflow.md`
+- 做了什麼：全面檢查 G1A／G3A／G6A 所有課次的「修辭小偵探」；G3A 24 筆與 G6A 3 筆原本缺少關鍵字框標，已補上 `﹁關鍵字﹂`，G1A 無修辭資料的課次維持未開放。回歸測試現在會跨三個年級掃描 58 筆可用題目，確認每筆都有成對標記、標記數與 `.rhetoric-highlight` 變色片段一致，且朗讀純文字不含框字。工作流已列入資料標記、畫面變色、朗讀去標記與跨年級檢查規則。
+- 驗證：`test-rhetoric-highlights.mjs`、全部 `scripts/test-*.mjs`、`npm.cmd run validate`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過；建置後檢查 31 份課次資料與 520 張 WebP/AVIF 資產。
+- 推送：尚未推送；本次修改待建立本地提交。開工前 `git pull --rebase origin main` 因 GitHub Schannel `SEC_E_NO_CREDENTIALS` 失敗，未強行改動遠端。
+- 待辦／給下一棒：新增或匯入修辭題目時，先在 `example` 標出真正的關鍵字，再執行 `node scripts/test-rhetoric-highlights.mjs`。
+- 注意：未修改官方原始教材；G1A 沒有修辭資料的課次不製造空白標記。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/assets/115AG6H/lesson02/vocabulary/l02-13.webp`、`lesson03/vocabulary/l03-03.webp`、`lesson06/vocabulary/l06-17.webp`、`lesson08/vocabulary/l08-06.webp`
 - 做了什麼：依語詞正式解釋重做四張圖詞不符的 G6A 語詞卡圖片：「寬」改為明確放鬆情境、「鏗鏘」改為清脆響亮的三角鐵聲音、「窘境」改為孩子在教室紙張散落時的尷尬處境、「不羈」改為在開闊草地自由演奏的情境。四張均由私有生成來源產出後，依既有流程壓縮為 WebP。
 - 驗證：四張檔案分別為約 105.2、52.1、99.8、95.8 KiB，均低於單張 300 KiB；`test-vocabulary-image-pairs.mjs`、`test-vocabulary-image-completeness.mjs`、全部 `scripts/test-*.mjs`、`npm.cmd run validate`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過；已以本地圖片檢視確認四張新圖內容。
