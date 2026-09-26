@@ -13,11 +13,13 @@ left in a false "教材待補" state after a partial or resumed generation.
 Profiles currently covered by this public adapter:
   * g3a: 115 翰林三上, L07-L12 (the same adapter can rebuild L01-L12)
   * g1a: 115 翰林一上, L01-L07
+  * g6a: 115 翰林六上, prepared standard lesson JSON only
 
-G6A uses the same output contract and validation gates.  Its approved JSON is
-already in the repository; future G6A rebuilds should feed a prepared source
-directory to this adapter after the source review gate, rather than copying
-official source files into the repo.
+G6A uses the same output contract and validation gates.  Its official source
+cleaning remains private; after the source review gate, a prepared directory
+containing standard lesson JSON and compressed assets can be imported through
+the public ``g6a`` interface without copying official source files into the
+repository.
 """
 
 from __future__ import annotations
@@ -38,8 +40,8 @@ from urllib.parse import quote
 
 try:
     from PIL import Image
-except ImportError as exc:  # pragma: no cover - environment guidance
-    raise SystemExit("需要 Pillow：請在工作環境安裝 Pillow 後再執行。") from exc
+except ImportError:  # pragma: no cover - only image-producing profiles need Pillow
+    Image = None
 
 
 MAX_IMAGE_BYTES = 300 * 1024
@@ -55,11 +57,14 @@ class Profile:
     term: str
     label: str
     source_hint: str
+    publisher: str
+    unit_title: str
 
 
 PROFILES = {
-    "g3a": Profile("g3a", "115AG3H", 3, "上", "翰林三上", "115G3A_國語 翰"),
-    "g1a": Profile("g1a", "115AG1H", 1, "上", "翰林一上", "115G1A_國語 翰"),
+    "g3a": Profile("g3a", "115AG3H", 3, "上", "翰林三上", "115G3A_國語 翰", "翰林", "三上國語課程"),
+    "g1a": Profile("g1a", "115AG1H", 1, "上", "翰林一上", "115G1A_國語 翰", "翰林", "一年級上學期國語課程"),
+    "g6a": Profile("g6a", "115AG6H", 6, "上", "翰林六上", "115G6A_國語 翰（準備資料）", "翰林", "六上國語課程"),
 }
 
 
@@ -324,6 +329,8 @@ def load_common_examples_xlsx_xml(workbook_path: Path, grade: int) -> dict[str, 
 
 
 def compress_webp(source: Path, destination: Path) -> int:
+    if Image is None:
+        raise SystemExit("目前產生圖片需要 Pillow；G6A 準備資料匯入不需 Pillow，但 G1A／G3A 圖片產生需要先安裝。")
     destination.parent.mkdir(parents=True, exist_ok=True)
     with Image.open(source) as opened:
         image = opened.convert("RGB")
@@ -363,7 +370,7 @@ def extension(profile: Profile, lesson_no: int, chars: str) -> dict:
         "type": "reading",
         "module": "characters",
         "compact": True,
-        "version_note": f"115上・翰林・{profile.grade}年級・第{lesson_no}課",
+        "version_note": f"115上・{profile.publisher}・{profile.grade}年級・第{lesson_no}課",
         "login_required": False,
         "checked_at": TODAY,
         "note": f"已帶入本課{len(chars)}個生字",
@@ -631,7 +638,7 @@ def build_words(profile: Profile, lesson_no: int, lesson_id: str, items: list[di
             "level": "basic" if len(word) <= 2 else "challenge",
             "image": image,
             "status": "ready",
-            "source": f"115G{profile.grade}A／翰林官方教材（形音輕鬆學：語詞解釋）",
+            "source": f"115G{profile.grade}A／{profile.publisher}官方教材（形音輕鬆學：語詞解釋）",
         })
     return result
 
@@ -668,8 +675,8 @@ def build_g3a(profile: Profile, private_root: Path, lesson_no: int, output_data:
     paragraphs, main_idea = simple_paragraphs(profile, lesson_no, source["paragraph"])
     lesson = {
         "lesson_id": lesson_id,
-        "volume": {"code": profile.code, "publisher": "翰林", "grade": profile.grade, "term": profile.term},
-        "unit": {"no": 1, "title": "三上國語課程"},
+        "volume": {"code": profile.code, "publisher": profile.publisher, "grade": profile.grade, "term": profile.term},
+        "unit": {"no": 1, "title": profile.unit_title},
         "lesson_no": lesson_no,
         "title": source["title"],
         "author": "",
@@ -715,8 +722,8 @@ def build_g1a(profile: Profile, private_root: Path, lesson_no: int, output_data:
     title = source["lesson"]["title"]
     lesson = {
         "lesson_id": lesson_id,
-        "volume": {"code": profile.code, "publisher": "翰林", "grade": profile.grade, "term": profile.term},
-        "unit": {"no": 1, "title": "一年級上學期國語課程"},
+        "volume": {"code": profile.code, "publisher": profile.publisher, "grade": profile.grade, "term": profile.term},
+        "unit": {"no": 1, "title": profile.unit_title},
         "lesson_no": lesson_no,
         "title": title,
         "author": "",
@@ -746,6 +753,105 @@ def build_g1a(profile: Profile, private_root: Path, lesson_no: int, output_data:
         },
     }
     save_json(output_data / f"lesson{lesson_no:02d}.json", lesson)
+    return lesson
+
+
+def prepared_lesson_path(prepared_root: Path, profile: Profile, lesson_no: int) -> Path:
+    """Resolve one reviewed, normalized lesson from the private staging area.
+
+    The public adapter deliberately accepts only the standard lesson contract,
+    not publisher files.  The private source-materializer may choose its own
+    internal layout; it must export one of these stable hand-off layouts:
+    ``<root>/<volume-code>/lessonNN.json``, ``<root>/lessonNN.json`` or
+    ``<root>/public/data/<volume-code>/lessonNN.json``.
+    """
+    relative = f"lesson{lesson_no:02d}.json"
+    candidates = (
+        prepared_root / profile.code / relative,
+        prepared_root / relative,
+        prepared_root / "public" / "data" / profile.code / relative,
+        prepared_root / "data" / profile.code / relative,
+    )
+    for candidate in candidates:
+        if candidate.is_file():
+            return candidate
+    checked = ", ".join(str(path) for path in candidates)
+    raise FileNotFoundError(f"找不到 {profile.code} L{lesson_no:02d} 的準備資料；已檢查：{checked}")
+
+
+def _walk_strings(value: object):
+    if isinstance(value, dict):
+        for key, item in value.items():
+            yield from _walk_strings(key)
+            yield from _walk_strings(item)
+    elif isinstance(value, list):
+        for item in value:
+            yield from _walk_strings(item)
+    elif isinstance(value, str):
+        yield value
+
+
+def validate_prepared_lesson(lesson: dict, profile: Profile, lesson_no: int) -> None:
+    """Fail closed on an incomplete or private-path-bearing hand-off file."""
+    required = {"lesson_id", "volume", "unit", "lesson_no", "title", "characters", "words", "modules"}
+    missing = sorted(required - set(lesson))
+    if missing:
+        raise ValueError(f"{profile.code} L{lesson_no:02d} 準備資料缺少欄位：{', '.join(missing)}")
+    expected_id = f"{profile.code}{lesson_no:02d}"
+    if lesson.get("lesson_id") != expected_id or lesson.get("lesson_no") != lesson_no:
+        raise ValueError(f"{profile.code} L{lesson_no:02d} lesson_id／lesson_no 不一致")
+    volume = lesson.get("volume")
+    if not isinstance(volume, dict) or volume.get("code") != profile.code or volume.get("publisher") != profile.publisher:
+        raise ValueError(f"{profile.code} L{lesson_no:02d} volume 不是 {profile.publisher} 的 {profile.code} 契約")
+    if not isinstance(lesson.get("characters"), list) or not isinstance(lesson.get("words"), list):
+        raise ValueError(f"{profile.code} L{lesson_no:02d} characters／words 必須是陣列")
+    if not isinstance(lesson.get("modules"), dict):
+        raise ValueError(f"{profile.code} L{lesson_no:02d} modules 必須是物件")
+    private_markers = re.compile(r"(?:^|[\\/\s])(?:[A-Za-z]:[\\/]|\\\\)|worksheet-batches|mandarin-work|官方教材原檔", re.IGNORECASE)
+    leaked = next((text for text in _walk_strings(lesson) if private_markers.search(text)), None)
+    if leaked:
+        raise ValueError(f"{profile.code} L{lesson_no:02d} 準備資料疑似含私有絕對路徑或官方原檔標記：{leaked[:160]}")
+    undefined = next((text for text in _walk_strings(lesson) if re.search(r"\bundefined\b", text, re.IGNORECASE)), None)
+    if undefined:
+        raise ValueError(f"{profile.code} L{lesson_no:02d} 準備資料含 undefined：{undefined[:160]}")
+
+
+def copy_prepared_assets(prepared_root: Path, profile: Profile, lesson_no: int, output_assets: Path) -> int:
+    """Copy only already-compressed hand-off assets into the public asset tree."""
+    relative = Path(profile.code) / f"lesson{lesson_no:02d}"
+    candidates = (
+        prepared_root / "assets" / relative,
+        prepared_root / "public" / "assets" / relative,
+        prepared_root / profile.code / f"lesson{lesson_no:02d}" / "assets",
+    )
+    source_dir = next((path for path in candidates if path.is_dir()), None)
+    if source_dir is None:
+        return 0
+    copied = 0
+    destination = output_assets / f"lesson{lesson_no:02d}"
+    for source in sorted(source_dir.rglob("*")):
+        if not source.is_file():
+            continue
+        if source.suffix.lower() not in {".webp", ".avif"}:
+            raise ValueError(f"G6A 準備資產不是 WebP／AVIF：{source}")
+        if source.stat().st_size > MAX_IMAGE_BYTES:
+            raise ValueError(f"G6A 準備資產超過單張 300 KiB：{source}")
+        target = destination / source.relative_to(source_dir)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, target)
+        copied += 1
+    return copied
+
+
+def build_prepared(profile: Profile, prepared_root: Path, lesson_no: int, output_data: Path, output_assets: Path) -> dict:
+    source = prepared_lesson_path(prepared_root, profile, lesson_no)
+    lesson = load_json(source)
+    if not isinstance(lesson, dict):
+        raise ValueError(f"{source} 不是課次物件")
+    validate_prepared_lesson(lesson, profile, lesson_no)
+    copied = copy_prepared_assets(prepared_root, profile, lesson_no, output_assets)
+    save_json(output_data / f"lesson{lesson_no:02d}.json", lesson)
+    print(f"[OK] prepared {profile.code} L{lesson_no:02d} assets={copied}")
     return lesson
 
 
@@ -790,12 +896,12 @@ def update_course_index(repo_root: Path, profile: Profile, lessons: list[dict]) 
     existing_lessons.update(new_lessons)
     volume = {
         "code": profile.code,
-        "publisher": "翰林",
+        "publisher": profile.publisher,
         "term": profile.term,
         "label": "115 學年上學期",
         "units": [{
             "no": 1,
-            "title": "一年級上學期國語課程" if profile.grade == 1 else "三上國語課程",
+            "title": profile.unit_title,
             "lessons": [existing_lessons[number] for number in sorted(existing_lessons)],
         }],
     }
@@ -829,7 +935,8 @@ def mark_progress(path: Path, progress: dict, key: str, status: str, detail: str
 def main() -> int:
     parser = argparse.ArgumentParser(description="Generate resumable Mandarin lesson data and compressed assets.")
     parser.add_argument("--profile", choices=sorted(PROFILES), required=True)
-    parser.add_argument("--source-root", type=Path, required=True, help="Private workspace root containing worksheet-batches and source tools.")
+    parser.add_argument("--source-root", type=Path, help="Private workspace root containing worksheet-batches and source tools.")
+    parser.add_argument("--prepared-root", type=Path, help="G6A reviewed staging root containing normalized lesson JSON and WebP／AVIF assets.")
     parser.add_argument("--repo-root", type=Path, required=True, help="Teaching-Materials-github/apps/mandarin directory.")
     parser.add_argument("--lessons", required=True, help="Lesson numbers, for example 7-12 or 1-7.")
     parser.add_argument("--workbook", type=Path, help="Private Excel source for common character examples.")
@@ -841,12 +948,16 @@ def main() -> int:
     args = parser.parse_args()
 
     profile = PROFILES[args.profile]
+    if args.profile == "g6a" and not args.prepared_root:
+        parser.error("--profile g6a 必須提供 --prepared-root；不得直接讀取官方原始教材。")
+    if args.profile != "g6a" and not args.source_root:
+        parser.error("g1a／g3a 必須提供 --source-root。")
     lesson_numbers = parse_range(args.lessons)
     repo_root = args.repo_root.resolve()
     output_data = repo_root / "public" / "data" / profile.code
     output_assets = repo_root / "public" / "assets" / profile.code
     radicals, strokes = parse_unihan(args.unihan_zip)
-    to_zhuyin = pinyin_loader(args.pypinyin_path)
+    to_zhuyin = None if args.profile == "g6a" else pinyin_loader(args.pypinyin_path)
     progress = load_progress(args.progress_file)
     generated: list[dict] = []
 
@@ -858,7 +969,18 @@ def main() -> int:
             print(f"[SKIP] {key} 已完成，保留既有輸出")
             continue
         try:
-            if args.profile == "g3a":
+            if args.profile == "g6a":
+                source = prepared_lesson_path(args.prepared_root.resolve(), profile, lesson_no)
+                prepared = load_json(source)
+                if not isinstance(prepared, dict):
+                    raise ValueError(f"{source} 不是課次物件")
+                validate_prepared_lesson(prepared, profile, lesson_no)
+                if args.dry_run:
+                    print(f"[PLAN] {key} {prepared['title']} chars={len(prepared['characters'])} words={len(prepared['words'])}")
+                    mark_progress(args.progress_file, progress, key, "planned", prepared["title"])
+                    continue
+                lesson = build_prepared(profile, args.prepared_root.resolve(), lesson_no, output_data, output_assets)
+            elif args.profile == "g3a":
                 source = g3a_sources(args.source_root.resolve(), lesson_no)
                 if args.dry_run:
                     print(f"[PLAN] {key} {source['title']} chars={len(source['chars'])} words={len(source['word_items'])}")

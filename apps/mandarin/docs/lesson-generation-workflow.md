@@ -42,7 +42,7 @@ public/data/course-index.json
 
 檔案：`scripts/generate_lessons.py`
 
-這支工具目前直接涵蓋 G3A 與 G1A 的標準化輸入。G6A 使用同一份公開 JSON 契約；G6A 的官方來源清理、來源 hash 與每課 manifest 保留在私有工作流，完成審核後再匯入既有公開資料結構，避免把官方檔案帶入公開 repo。
+這支工具目前直接涵蓋 G3A 與 G1A 的官方來源標準化輸入，也提供 G6A 的公開準備資料介面。G6A 的官方來源清理、來源 hash 與每課 manifest 保留在私有工作流，完成審核後只將標準化課次 JSON 與壓縮圖片交給公開介面，避免把官方檔案帶入公開 repo。
 
 ### G3A 第 7–12 課
 
@@ -116,6 +116,33 @@ python scripts/generate_lessons.py `
 
 進度檔不放在 repo，而是放在私有工作區。每課完成後記錄 `ready`、時間與輸出 JSON 的 SHA-256；若執行中斷，重新執行同一指令並加上 `--resume`，會從第一個尚未完成或輸出不存在的課次接續。額度恢復後不需要重新產出已完成課次。
 
+### G6A 公開準備資料介面
+
+G6A 不直接把官方 `.doc`、`.docx`、PDF 或來源台帳交給公開 repo。私有來源清理器完成內容核對後，必須輸出下列準備資料結構：
+
+```text
+<prepared-root>/
+  115AG6H/
+    lesson01.json
+    lesson02.json
+  assets/115AG6H/lesson01/**/*.webp
+  assets/115AG6H/lesson02/**/*.webp
+```
+
+`lessonNN.json` 必須符合既有公開課次契約，至少包含 `lesson_id`、`volume`、`unit`、`lesson_no`、`title`、`characters`、`words` 與 `modules`；`volume.code` 必須是 `115AG6H`、`volume.publisher` 必須是「翰林」。介面會拒絕 `undefined`、私有絕對路徑、官方原檔標記、非 WebP／AVIF 資產與超過單張 300 KiB 的圖片。
+
+```powershell
+python scripts/generate_lessons.py `
+  --profile g6a `
+  --prepared-root <private-prepared-root> `
+  --repo-root <repo>\apps\mandarin `
+  --lessons 1-12 `
+  --progress-file <private-progress.json> `
+  --resume
+```
+
+這是「公開介面」，不是官方原始檔匯入器：來源清理、官方 hash、人工確認與準備資料產出仍在私有工作區完成；介面只負責契約驗證、複製衍生 JSON／壓縮資產、同步舊字新詞索引與合併課程索引。第一次匯入可先加 `--dry-run`，中斷後使用同一指令加 `--resume`。
+
 ## G6A 專用來源閘門
 
 G6A 的 12 課先在私有工作區完成：
@@ -129,6 +156,16 @@ G6A 的 12 課先在私有工作區完成：
 7. 使用同一組容量、資料、建置與回歸測試。
 
 G6A 目前的 12 課是已審核基準，不在公開產生器中重新攜入官方原始檔；若日後需要重建，只需把私有來源清理器的輸出接到相同的標準化課次契約，再沿用索引、圖片與驗證階段。
+
+## 工作流完整性檢查
+
+每次新增年級、出版社介面或教材模組時，先執行：
+
+```powershell
+node scripts/check-workflow-completeness.mjs
+```
+
+檢查器會確認工作流文件、匯入規格、G1A／G3A／G6A 批次介面、G6A 準備資料閘門、`dabutie` 抽取／合併工具、圖片容量閘門、舊字新詞同步，以及各項教材規則對應的回歸測試都仍存在。它只檢查公開 repo 的工具與契約，不會讀取或公開官方教材原檔；缺少任一必要項目即以非零狀態結束。
 
 ## 形似字選項核對
 
@@ -177,6 +214,7 @@ node scripts/test-lookalike-shape-groups.mjs
 npm.cmd run build
 npm.cmd run check-dist
 npm.cmd run check-assets
+node scripts/check-workflow-completeness.mjs
 Get-ChildItem scripts/test-*.mjs | ForEach-Object { node $_.FullName }
 ```
 

@@ -1,6 +1,14 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/scripts/generate_lessons.py`、`apps/mandarin/scripts/check-workflow-completeness.mjs`、`apps/mandarin/docs/specs/2026-09-25-mandarin-dabutie-importer.md`、`apps/mandarin/docs/lesson-generation-workflow.md`。
+- 做了什麼：補上 G6A 的公開準備資料介面（只接受已審核的標準課次 JSON 與 WebP／AVIF 資產，不把官方原始檔放進公開倉庫）；補齊大補帖匯入、來源邊界、圖片容量、回歸驗證與重跑規格；新增 `check-workflow-completeness.mjs` 與 `npm run check-workflow`，檢查 10 個工具／契約、13 個回歸測試與 10 個 npm 閘門。
+- G4A 只完成唯讀檔案／資料夾盤點，未開始生成：01–16 官方資料夾均存在，12 課核心課文與課文結構／圖像策略檔案齊全；但多份資料是合併文件，尚未建立內部課次索引，且 G4A 康軒來源 profile 尚未確認各模組權威段落。詞語解釋、字義／字音字形、修辭、聆聽等候選檔案已列出，需先完成內容抽取與來源綁定；目前不能據檔名直接生成。
+- 受限事項：Windows Word COM 內容抽取回傳 `CO_E_SERVER_EXEC_FAILURE (0x80080005)`，所以本次 G4A 掃描是檔案結構／檔名層級，沒有把未核實的內容當成官方資料。
+- 驗證：工作流完整性檢查、`npm.cmd run validate`、`npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets`、Python AST 解析、`git diff --check` 均通過；資產檢查為 521 張 WebP／AVIF、40.37 MiB。第一次沙箱建置被目錄存取限制擋住，升級權限重跑後建置通過。
+- 提交／推送：已建立本地提交 `e949e6e`；尚未推送。G4A 尚未生成，等待來源確認後再進入生成階段。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/components/IdiomBuilder.js`、`DragToSlot.js`、成語填句子回歸測試。
 - 做了什麼：第二關「成語填句子」改為把候選成語直接填入句子內的 `（　　）`，呈現為 `（成語）`；移除句子外獨立的 `?` 答案框，句中括號仍可點擊清除並重新選擇。第一關維持成語內嵌生字空格，並改用正確的操作說明。
 - 驗證：新增 `test-idiom-fill-sentence.mjs`；該測試、`test-drag-to-slot.mjs`、`test-module-star-coverage.mjs`、全部 `scripts/test-*.mjs`、`npm.cmd run validate`、`npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets`、`git diff --check` 均通過；本機預覽確認成語拖放操作說明正確。

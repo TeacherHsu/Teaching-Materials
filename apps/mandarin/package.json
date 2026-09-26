@@ -12,6 +12,7 @@
     "preview": "vite preview",
     "preview:draft": "vite preview --outDir dist-preview",
     "validate": "node scripts/validate-data.mjs",
+    "check-workflow": "node scripts/check-workflow-completeness.mjs",
     "check-assets": "node scripts/check-assets.mjs",
     "check-dist": "node scripts/check-dist.mjs && npm run check-assets"
   },
