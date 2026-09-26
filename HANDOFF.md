@@ -14,6 +14,11 @@
 
 ---
 
+## 2026-09-26｜學校 Win｜Codex｜狀態：🚧 施工中
+- 範圍：`apps/mandarin/scripts/`、`apps/mandarin/docs/`、`apps/mandarin/public/data/115AG3H/`、`apps/mandarin/public/data/115G1A/`、`apps/mandarin/public/assets/115AG3H/`、`apps/mandarin/public/assets/115G1A/`
+- 目標：建立 G3A／G6A 可重跑教材工作流與 Python 批次生成工具，完成 G3A 第 7～12 課，接續完成 G1A 第 1～7 課。
+- 注意：不把官方原始教材、第三方 Excel 或含教材全文的中間檔放入公開 repo；若額度中斷，依工作流進度檔續作。
+
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/`、`apps/mandarin/public/data/115AG6H/`、`apps/mandarin/public/assets/115AG6H/`、`apps/mandarin/scripts/test-module-star-coverage.mjs`、`apps/mandarin/scripts/test-star-scoring.mjs`
 - 做了什麼：依教師回饋完成 G6A 第 1～12 課修正；生字卡造詞改取 Excel 常見度前三項，補回可核對的官方語詞圖並轉 WebP；一字多義題幹改為不揭示答案；修正完成狀態覆蓋星星的累計問題；段落資料支援 `paragraph_no` 並在無有效段號時只顯示文本摘要；依官方「10修辭輕鬆學」逐課整理 3 題修辭；依「15閱讀理解提問」官方答案鍵補入每課 4 題聆聽答案，並修正選項解析；配對改用配對資料辨識，支援同名句型的不同解釋。
