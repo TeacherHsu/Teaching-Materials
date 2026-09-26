@@ -1,6 +1,12 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-27｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/scripts/test-sentence-practice-shared.mjs`、`scripts/check-workflow-completeness.mjs`。
+- 做了什麼：新增跨版本一致性閘門，掃描 course-index 登錄的 G1A、G2A、G3A、G4A、G6A 共 55 課，確認所有 `sentence_practice` 都導向共用句型練習與 `SentenceOrdering` 互動引擎。
+- 驗證：跨版本共用入口測試與工作流完整性檢查通過。
+- 提交／推送：本項已建立本地提交；尚未推送遠端。
+
+## 2026-09-27｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/components/SentenceOrdering.js`、句子排序回歸測試、星星覆蓋測試與工作流契約。
 - 做了什麼：檢查答案送出前，再點一次已放置詞塊即可單獨退回候選區原本的位置；其他詞塊不受影響，並保留原有檢查後的部分判錯、綠／紅底色與拖拉修正模式。
 - 驗證：句子排序回歸測試、SpeakButton coverage、模組星星覆蓋測試均通過；完整資料／工作流／建置檢查於本次修改後重新執行。

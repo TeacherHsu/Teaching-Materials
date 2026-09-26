@@ -33,6 +33,7 @@ const requiredTests = [
   ['成語點選填句', 'scripts/test-idiom-fill-sentence.mjs'],
   ['句型詞塊', 'scripts/test-sentence-chunking.mjs'],
   ['句子排序部分判錯', 'scripts/test-sentence-ordering-feedback.mjs'],
+  ['各年級句型練習共用入口', 'scripts/test-sentence-practice-shared.mjs'],
   ['修辭關鍵字變色', 'scripts/test-rhetoric-highlights.mjs'],
   ['形似字官方群組', 'scripts/test-lookalike-shape-groups.mjs'],
   ['一字多義／多音／聽聽看', 'scripts/test-g3a-official-extensions.mjs'],
