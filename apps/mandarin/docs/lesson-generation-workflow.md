@@ -27,7 +27,7 @@ public/data/course-index.json
 1. 建立課次清單，確認課名、生字與官方來源版本。
 2. 讀取生字表，使用已核對的字音、部首與筆畫資料。
 3. 從私有生字 Excel 依常用度取前三個造詞；若不足，才用本課官方語詞補足，不自行創詞。
-4. 讀取官方語詞解釋。G3A 第 7–12 課優先採用 `low-g3-v2` 已審核 manifest；圖片只接受 manifest 的完全同詞對應，沒有核對圖片就留空。
+4. 讀取官方語詞解釋。G3A 第 7–12 課優先採用 `low-g3-v2` 已審核 manifest；圖片只接受 manifest 的完全同詞對應。既有課次補圖時，使用 `fill_vocabulary_images.py`，舊教材明確對應圖優先，沒有可核對舊圖的詞才接入私有生成圖 manifest。
 5. 將圖片轉成 WebP，單張不得超過 300 KiB，單課不得超過 4 MiB。
 6. 產生固定網站資料結構：生字卡、語詞解釋卡、隨機選項、筆順外部連結與模組可用狀態。
 7. 合併 `course-index.json`，不能因為只產生部分課次而刪掉既有課次。
@@ -87,6 +87,22 @@ G6A 的 12 課先在私有工作區完成：
 6. 使用同一組容量、資料、建置與回歸測試。
 
 G6A 目前的 12 課是已審核基準，不在公開產生器中重新攜入官方原始檔；若日後需要重建，只需把私有來源清理器的輸出接到相同的標準化課次契約，再沿用索引、圖片與驗證階段。
+
+## 語詞解釋卡補圖
+
+檔案：`scripts/fill_vocabulary_images.py`
+
+這支工具只接受兩種來源：私有教材中檔名含有「完整詞名元件」的舊圖，或私有生成圖 manifest。它不會把「鹹味蔚藍回航」這類多詞合成預覽圖誤配給單一語詞；所有輸出會壓縮到 `public/assets/<冊別>/lessonNN/vocabulary/`，並回寫課次 JSON 的 `image` 路徑。
+
+```powershell
+python scripts/fill_vocabulary_images.py `
+  --source-root <private-workspace-root> `
+  --repo-root <repo>\apps\mandarin `
+  --codes 115AG3H,115AG6H `
+  --generated-manifest <private-generated-manifest.json>
+```
+
+生成圖 manifest 與原始 PNG 只留在私有工作區，不得加入公開 repo；完成後仍須執行 `npm.cmd run check-assets`，確認單張、單課與總容量閘門。
 
 ## 完工檢查
 

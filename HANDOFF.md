@@ -1,5 +1,13 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/scripts/fill_vocabulary_images.py`、`apps/mandarin/scripts/test-vocabulary-image-completeness.mjs`、`apps/mandarin/docs/lesson-generation-workflow.md`、`apps/mandarin/public/data/115AG3H/`、`apps/mandarin/public/data/115AG6H/`、`apps/mandarin/public/assets/115AG3H/`、`apps/mandarin/public/assets/115AG6H/`
+- 做了什麼：全面盤點 G3A／G6A 語詞解釋卡缺圖；156 個缺圖位置中，58 張沿用私有教材中詞名完全對應的舊圖，98 張依詞意生成兒童友善插圖；全部壓縮為 WebP 並回寫公開資料。補圖工具只接受完整詞名元件，不會把多詞合成預覽圖誤配給單一語詞；新增 G3A／G6A 語詞圖片完整性回歸測試與工作流說明。
+- 驗證：`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；共 313 個 G3A／G6A 語詞，全部有有效圖片；公開資產 520 張 WebP／AVIF、約 39.94 MiB，單張 ≤300 KiB、單課 ≤4 MiB。
+- 推送：尚未推送；本次修改已建立本地提交 `223e7f5`。
+- 待辦／給下一棒：若後續新增語詞圖片，使用 `fill_vocabulary_images.py` 搭配私有 manifest，完成後再跑圖片完整性測試與容量閘門。
+- 注意：生成來源、原始 PNG、官方教材與私有 manifest 不放入公開 repo；本次開工前 `git pull --rebase origin main` 因 GitHub Schannel 憑證錯誤 `SEC_E_NO_CREDENTIALS` 未成功，未強行改動遠端。
+
 每次開工先寫一行「🚧 施工中」；完工時把那一行改成完整紀錄，格式如下：
 
 ```
