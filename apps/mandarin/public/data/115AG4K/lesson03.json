@@ -573,6 +573,7 @@
       "idiom": "無與倫比",
       "definition": "比喻沒有能比得上的。",
       "related_char": "與",
+      "image": "idioms/01_無與倫比.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -581,6 +582,7 @@
       "idiom": "五體投地",
       "definition": "比喻非常欽佩對方。",
       "related_char": "投",
+      "image": "idioms/02_五體投地.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -589,6 +591,7 @@
       "idiom": "耳熟能詳",
       "definition": "聽得非常熟悉，而能詳盡的知道或說出來。",
       "related_char": "熟",
+      "image": "idioms/03_耳熟能詳.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -597,6 +600,7 @@
       "idiom": "弄巧成拙",
       "definition": "本想賣弄才能、聰明，卻反而做了蠢事。比喻枉費心機。",
       "related_char": "巧",
+      "image": "idioms/04_弄巧成拙.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -605,6 +609,7 @@
       "idiom": "對牛彈琴",
       "definition": "比喻講話、做事不看對象。後亦用於比喻對不懂道理的人講道理。",
       "related_char": "彈",
+      "image": "idioms/05_對牛彈琴.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -613,6 +618,7 @@
       "idiom": "借題發揮",
       "definition": "假借某事為藉口，表達自己真正的意思，或想做的事。",
       "related_char": "揮",
+      "image": "idioms/06_借題發揮.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     }
@@ -818,7 +824,7 @@
       "example": "初次站在球場上的我，覺得籃球架像一座遙不可及的高山，一看就讓人覺得害怕。",
       "child_note": "譬喻：兩種不同的事物，只要有相同的地方，就可以拿來互相比方，叫做「譬喻」。用「譬喻」的方式說話或寫作，可以把事物說得更清楚，將情感表達得更生動，使聽的人或讀的人更容易了解和更加深印象。",
       "status": "approved",
-      "source": "康軒四上官方教材（10 修辭分析）"
+      "source": "康軒四上官方教材（10 修辭分析；官方例句拆題）"
     }
   ],
   "paragraph_summary": [
@@ -2602,9 +2608,9 @@
     },
     "rhetoric": {
       "label": "修辭小偵探",
-      "status": "missing",
+      "status": "available",
       "activity": "rhetoric",
-      "note": "官方修辭分析不足 3 題。"
+      "note": "官方本課題數少於 3 題，仍開放來源題目。"
     },
     "review": {
       "label": "舊字新詞",

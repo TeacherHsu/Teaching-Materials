@@ -212,7 +212,10 @@ export const MODULE_REGISTRY = [
     description: '找出課文裡的修辭手法',
     implemented: true,
     ready(lesson) {
-      return readyRhetoric(lesson).length >= ROUND_MIN;
+      // 康軒四上官方修辭分析有些課只提供一至兩個例句；資料已核對就開放，
+      // activity 會以全冊修辭名稱補足選項，不把官方題數不足誤判成未補上。
+      const minimum = lesson.volume?.code === '115AG4K' ? 1 : ROUND_MIN;
+      return readyRhetoric(lesson).length >= minimum;
     },
   },
   {

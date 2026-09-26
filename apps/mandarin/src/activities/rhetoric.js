@@ -14,6 +14,7 @@ function shuffled(arr) {
 // 官方修辭解析會用「﹁﹂」框出關鍵字；同時接受既有資料常見的「」與『』標記。
 // 標記只供教材資料保存，不直接顯示在學生題幹中。
 const RHETORIC_MARKUP = /﹁([^﹂]*)﹂|「([^」]*)」|『([^』]*)』/g;
+const FALLBACK_FIGURES = ['譬喻', '擬人', '類疊', '排比', '設問', '感嘆', '摹寫', '轉化', '引用', '對偶'];
 
 export function splitRhetoricExample(value = '') {
   const text = String(value);
@@ -49,7 +50,11 @@ function buildRhetoricStem(example) {
 }
 
 function buildChoiceItem(entry, all) {
-  const distractors = shuffled(all.filter((r) => r.figure !== entry.figure)).slice(0, 2).map((r) => r.figure);
+  const availableFigures = [
+    ...all.filter((r) => r.figure !== entry.figure).map((r) => r.figure),
+    ...FALLBACK_FIGURES.filter((figure) => figure !== entry.figure),
+  ];
+  const distractors = [...new Set(shuffled(availableFigures))].slice(0, 2);
   const options = shuffled([...new Set([entry.figure, ...distractors])]);
   const stemText = `這句話用了什麼修辭？「${stripRhetoricMarkup(entry.example)}」`;
   return {

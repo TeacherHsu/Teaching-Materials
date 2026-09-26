@@ -561,6 +561,7 @@
       "idiom": "借花獻佛",
       "definition": "借用別人的花供養佛。比喻借用他人的東西來作人情。",
       "related_char": "佛",
+      "image": "idioms/01_借花獻佛.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -569,6 +570,7 @@
       "idiom": "否極泰來",
       "definition": "情況由壞逐漸好轉。",
       "related_char": "泰",
+      "image": "idioms/02_否極泰來.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -577,6 +579,7 @@
       "idiom": "門可羅雀",
       "definition": "門前冷清，空曠得可張網捕雀。形容做官的人失勢後賓客稀少的景況。後亦用﹁門可羅雀﹂泛指一般來客稀少、門庭冷清的景況。",
       "related_char": "羅",
+      "image": "idioms/03_門可羅雀.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -585,6 +588,7 @@
       "idiom": "勢均力敵",
       "definition": "指雙方力量情勢相當，不分上下。",
       "related_char": "勢",
+      "image": "idioms/04_勢均力敵.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -593,6 +597,7 @@
       "idiom": "防微杜漸",
       "definition": "在錯誤或壞事萌芽的時候及時制止，杜絕它發展。",
       "related_char": "防",
+      "image": "idioms/05_防微杜漸.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -601,6 +606,7 @@
       "idiom": "心血來潮",
       "definition": "思緒像浪潮般的突起。形容突然興起的念頭。",
       "related_char": "潮",
+      "image": "idioms/06_心血來潮.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     }
@@ -732,7 +738,7 @@
       "example": "⑴氣候又乾又熱⑵請到我的家鄉來，我的家鄉是「千佛之國」的泰國。請到我的家鄉來，我的家鄉是五千年古國埃及。請到我的家鄉來，我的家鄉是地勢低窪的荷蘭。請到我的家鄉來，我的家鄉是音樂國度奧地利。⑶來吧，請到我的家鄉來！（每段結尾）",
       "child_note": "類疊：同一個詞彙、語句，接連反覆的使用著，以加強表達的效果，使字句具備音律之美，就叫做「類疊」。類疊可分為：字的類疊、詞的類疊、句的類疊。",
       "status": "approved",
-      "source": "康軒四上官方教材（10 修辭分析）"
+      "source": "康軒四上官方教材（10 修辭分析；官方例句拆題）"
     }
   ],
   "paragraph_summary": [
@@ -2320,9 +2326,9 @@
     },
     "rhetoric": {
       "label": "修辭小偵探",
-      "status": "missing",
+      "status": "available",
       "activity": "rhetoric",
-      "note": "官方修辭分析不足 3 題。"
+      "note": "官方本課題數少於 3 題，仍開放來源題目。"
     },
     "review": {
       "label": "舊字新詞",

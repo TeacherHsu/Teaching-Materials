@@ -572,6 +572,7 @@
       "idiom": "洗心革面",
       "definition": "除去邪思雜念，改變舊日面目。比喻徹底悔悟，改過遷善。。",
       "related_char": "革",
+      "image": "idioms/01_洗心革面.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -580,6 +581,7 @@
       "idiom": "事半功倍",
       "definition": "事情只用古人一半的心力，而功效加倍。形容費力少而收效大。",
       "related_char": "倍",
+      "image": "idioms/02_事半功倍.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -588,6 +590,7 @@
       "idiom": "旁敲側擊",
       "definition": "說話或寫文章不從正面直接說，而是用從旁比喻或暗示來表達。",
       "related_char": "敲",
+      "image": "idioms/03_旁敲側擊.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -596,6 +599,7 @@
       "idiom": "福至心靈",
       "definition": "形容運氣來時，心思突然變得靈敏起來。",
       "related_char": "靈",
+      "image": "idioms/04_福至心靈.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -604,6 +608,7 @@
       "idiom": "心滿意足",
       "definition": "心中非常滿足。",
       "related_char": "足",
+      "image": "idioms/05_心滿意足.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -612,6 +617,7 @@
       "idiom": "循規蹈矩",
       "definition": "遵守禮法，不踰越法度。",
       "related_char": "蹈",
+      "image": "idioms/06_循規蹈矩.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     }
@@ -803,7 +809,7 @@
       "example": "唉！做完這雙鞋，賣出的錢只夠買食物，無法再買皮革了。",
       "child_note": "感嘆：寫文章時，常會藉由呼喊的聲音表達喜怒哀樂的感情變化，來強調內心的驚訝、生氣、難過、讚嘆等感覺的修辭法。",
       "status": "approved",
-      "source": "康軒四上官方教材（10 修辭分析）"
+      "source": "康軒四上官方教材（10 修辭分析；官方例句拆題）"
     },
     {
       "id": "rhetoric:12:02",
@@ -812,7 +818,7 @@
       "example": "奇怪！桌上怎麼沒有皮革呢？老鞋匠明天不賣新鞋了嗎？",
       "child_note": "設問：說話行文時，刻意設計問句，不直接陳述意見、想法，採自問自答或問而不答等形式來表達內容，目的在強調某個意思，引起對方注意或思考的修辭法。",
       "status": "approved",
-      "source": "康軒四上官方教材（10 修辭分析）"
+      "source": "康軒四上官方教材（10 修辭分析；官方例句拆題）"
     }
   ],
   "paragraph_summary": [
@@ -2410,9 +2416,9 @@
     },
     "rhetoric": {
       "label": "修辭小偵探",
-      "status": "missing",
+      "status": "available",
       "activity": "rhetoric",
-      "note": "官方修辭分析不足 3 題。"
+      "note": "官方本課題數少於 3 題，仍開放來源題目。"
     },
     "review": {
       "label": "舊字新詞",

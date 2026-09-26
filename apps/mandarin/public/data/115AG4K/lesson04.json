@@ -621,6 +621,7 @@
       "idiom": "耳提面命",
       "definition": "比喻懇切教誨。",
       "related_char": "命",
+      "image": "idioms/01_耳提面命.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -629,6 +630,7 @@
       "idiom": "借花獻佛",
       "definition": "比喻借用他人的東西來作人情。",
       "related_char": "獻",
+      "image": "idioms/02_借花獻佛.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -637,6 +639,7 @@
       "idiom": "精衛填海",
       "definition": "比喻意志堅定，不懼艱苦。",
       "related_char": "衛",
+      "image": "idioms/03_精衛填海.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -645,6 +648,7 @@
       "idiom": "良藥苦口",
       "definition": "能治好病的藥，多味苦難嚥。比喻諫言多不順耳，但卻有益於人。",
       "related_char": "藥",
+      "image": "idioms/04_良藥苦口.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -653,6 +657,7 @@
       "idiom": "打退堂鼓",
       "definition": "比喻中途退縮放棄。",
       "related_char": "堂",
+      "image": "idioms/05_打退堂鼓.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     }
@@ -835,7 +840,7 @@
       "example": "我心愛的臺灣哪！我的青春全部獻給你。我心愛的臺灣哪！我一生的喜悅都在這裡。",
       "child_note": "類疊：同一個詞彙、語句，接連反覆的使用著，以加強表達的效果，使字句具備音律之美，就叫做「類疊」。類疊可分為：字的類疊、詞的類疊、句的類疊。",
       "status": "approved",
-      "source": "康軒四上官方教材（10 修辭分析）"
+      "source": "康軒四上官方教材（10 修辭分析；官方例句拆題）"
     }
   ],
   "paragraph_summary": [
@@ -2758,9 +2763,9 @@
     },
     "rhetoric": {
       "label": "修辭小偵探",
-      "status": "missing",
+      "status": "available",
       "activity": "rhetoric",
-      "note": "官方修辭分析不足 3 題。"
+      "note": "官方本課題數少於 3 題，仍開放來源題目。"
     },
     "review": {
       "label": "舊字新詞",

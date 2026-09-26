@@ -491,6 +491,7 @@
       "idiom": "洗耳恭聽",
       "definition": "比喻專心恭敬的聆聽。",
       "related_char": "耳",
+      "image": "idioms/01_洗耳恭聽.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -499,6 +500,7 @@
       "idiom": "耳目一新",
       "definition": "形容所見所聞都有一種新奇、清新的感覺。",
       "related_char": "耳",
+      "image": "idioms/02_耳目一新.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -507,6 +509,7 @@
       "idiom": "回心轉意",
       "definition": "改變心意。",
       "related_char": "轉",
+      "image": "idioms/03_回心轉意.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -515,6 +518,7 @@
       "idiom": "躍躍欲試",
       "definition": "心動技癢，急切的想嘗試一下。",
       "related_char": "躍",
+      "image": "idioms/04_躍躍欲試.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -523,6 +527,7 @@
       "idiom": "要言不煩",
       "definition": "說話精要，不囉嗦。",
       "related_char": "煩",
+      "image": "idioms/05_要言不煩.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -531,6 +536,7 @@
       "idiom": "心煩意亂",
       "definition": "心情煩躁，思緒凌亂。",
       "related_char": "煩",
+      "image": "idioms/06_心煩意亂.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     }
@@ -733,7 +739,7 @@
       "example": "⑴游成自由的魚，游成巨大的蛙，游成飛舞的蝶。⑵歡樂笑聲一陣陣⑶晶亮水珠一串串⑷游出無比堅定的自信，游出大海一般的壯志，游出多采多姿的人生。⑸風兒從耳旁呼呼吹過⑹陽光在枝頭輕輕晃動，汗水從臉上緩緩滴落。",
       "child_note": "類疊：同一個詞彙、語句，接連反覆的使用著，以加強表達的效果，使字句具備音律之美，就叫做「類疊」。類疊可分為：字的類疊、詞的類疊、句的類疊。",
       "status": "approved",
-      "source": "康軒四上官方教材（10 修辭分析）"
+      "source": "康軒四上官方教材（10 修辭分析；官方例句拆題）"
     }
   ],
   "paragraph_summary": [
@@ -1927,9 +1933,9 @@
     },
     "rhetoric": {
       "label": "修辭小偵探",
-      "status": "missing",
+      "status": "available",
       "activity": "rhetoric",
-      "note": "官方修辭分析不足 3 題。"
+      "note": "官方本課題數少於 3 題，仍開放來源題目。"
     },
     "review": {
       "label": "舊字新詞",

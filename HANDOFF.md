@@ -1,6 +1,13 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：G4A 康軒 1–12 課生字變成語圖片、G4A 修辭小偵探開放條件與選項、G6A 第 5 課「腳踏實地」修正版圖片。
+- 做了什麼：依各課官方成語語義建立 69 張無文字語義插圖；`idioms[].image` 全部接回對應課次，公開資產統一為 960×720 WebP，單張低於 200 KiB；既有可核對成語圖只沿用明確對應者。G6A 保留原圖，新增 `04_腳踏實地-v2.webp` 並回寫 L05 JSON，修正人物多一隻腳。G4A 修辭官方例句拆成可作答題目，官方只有 1–2 題的課次仍以來源題開放，並以全冊修辭名稱補足選項。
+- 來源邊界：官方原始教材與 Excel 未加入公開 repo；圖片為無文字衍生視覺素材，原始生成 PNG 留在私有暫存區。未覆蓋 G6A 原問題資產。
+- 驗證：`npm.cmd run validate`、`npm.cmd run check-workflow`、`npm.cmd run check-assets`、全套 `scripts/test-*.mjs`、升級權限 `npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過；G4A 69 張成語圖皆存在且為 960×720，最大約 100 KiB。已開啟 G4A 第 1 課「生字變成語」與第 6 課「修辭小偵探」本機預覽。
+- 提交／推送：本項本地提交為 `4ff1c8f`；尚未推送遠端。工作樹另有既存的 G2A 未追蹤／修改內容，未納入本項。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG4K/lesson01.json`～`lesson12.json`、`apps/mandarin/scripts/enrich_g4a_official.py`、`apps/mandarin/scripts/generate_lessons.py`。
 - 做了什麼：依指定的康軒官方教材匯入生字變成語、練習句子、一字多義、一字多音、聽聽看、修辭小偵探；每課生字頁新增雄筆順連結；生字卡改以康軒工作表排序取最常見造詞，並保留來源不足項目的可核對詞例。
 - 來源邊界：官方 `.doc` 原檔與常用度 Excel 均未加入公開 repo；公開 JSON 只保存衍生內容、來源定位與 SHA-256。遨字第三項以教育部辭典核對的「遨嬉」補足；蓓只有「蓓蕾」、嘖只有兩個可靠詞例，沒有臆造第三項。

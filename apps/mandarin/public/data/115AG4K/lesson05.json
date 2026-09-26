@@ -607,6 +607,7 @@
       "idiom": "懸崖勒馬",
       "definition": "臨到懸崖時，緊勒住馬，不繼續前進。比喻到了危險的邊緣而及時回頭。",
       "related_char": "勒",
+      "image": "idioms/01_懸崖勒馬.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -615,6 +616,7 @@
       "idiom": "兢兢業業",
       "definition": "形容戒慎恐懼，認真負責的樣子。",
       "related_char": "業",
+      "image": "idioms/02_兢兢業業.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -623,6 +625,7 @@
       "idiom": "雞犬不寧",
       "definition": "連雞與狗都不得安寧。比喻被嚴重的騷擾。",
       "related_char": "寧",
+      "image": "idioms/03_雞犬不寧.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -631,6 +634,7 @@
       "idiom": "一視同仁",
       "definition": "指平等待人，不分親疏厚薄。",
       "related_char": "視",
+      "image": "idioms/04_一視同仁.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -639,6 +643,7 @@
       "idiom": "孤注一擲",
       "definition": "比喻危急時，投入全部力量，作最後的冒險。",
       "related_char": "注",
+      "image": "idioms/05_孤注一擲.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     }
@@ -829,7 +834,7 @@
       "example": "⑴在森林裡走了一個多小時，怎麼可能沒有發現值得注意的東西呢？⑵那些視力完好的人，對於眼前五彩繽紛、姿態萬千的美景，怎麼能視而不見呢？",
       "child_note": "設問：說話行文時，刻意設計問句，不直接陳述意見、想法，採自問自答或問而不答等形式來表達內容，目的在強調某個意思，引起對方注意或思考的修辭法。",
       "status": "approved",
-      "source": "康軒四上官方教材（10 修辭分析）"
+      "source": "康軒四上官方教材（10 修辭分析；官方例句拆題）"
     },
     {
       "id": "rhetoric:05:02",
@@ -838,7 +843,7 @@
       "example": "這世界是多麼奇妙哇！",
       "child_note": "感嘆：寫文章時，常會藉由呼喊的聲音表達喜怒哀樂的感情變化，來強調內心的驚訝、生氣、難過、讚嘆等感覺的修辭法。",
       "status": "approved",
-      "source": "康軒四上官方教材（10 修辭分析）"
+      "source": "康軒四上官方教材（10 修辭分析；官方例句拆題）"
     }
   ],
   "paragraph_summary": [
@@ -2323,9 +2328,9 @@
     },
     "rhetoric": {
       "label": "修辭小偵探",
-      "status": "missing",
+      "status": "available",
       "activity": "rhetoric",
-      "note": "官方修辭分析不足 3 題。"
+      "note": "官方本課題數少於 3 題，仍開放來源題目。"
     },
     "review": {
       "label": "舊字新詞",

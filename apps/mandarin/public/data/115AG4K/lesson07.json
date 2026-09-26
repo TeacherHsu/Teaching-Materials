@@ -645,6 +645,7 @@
       "idiom": "妄自菲薄",
       "definition": "隨意看輕自己，不知自重。",
       "related_char": "薄",
+      "image": "idioms/01_妄自菲薄.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -653,6 +654,7 @@
       "idiom": "沾沾自喜",
       "definition": "形容自得自滿的樣子。",
       "related_char": "沾",
+      "image": "idioms/02_沾沾自喜.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -661,6 +663,7 @@
       "idiom": "心心相印",
       "definition": "比喻彼此心意互通。",
       "related_char": "印",
+      "image": "idioms/03_心心相印.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -669,6 +672,7 @@
       "idiom": "因材施教",
       "definition": "依據受教者不同的資材，而給予不同的教導。",
       "related_char": "材",
+      "image": "idioms/04_因材施教.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -677,6 +681,7 @@
       "idiom": "義不容辭",
       "definition": "道義上不容許推卻。",
       "related_char": "義",
+      "image": "idioms/05_義不容辭.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     },
@@ -685,6 +690,7 @@
       "idiom": "壽比南山",
       "definition": "壽命如終南山那樣長久。為祝人長壽之辭。",
       "related_char": "壽",
+      "image": "idioms/06_壽比南山.webp",
       "status": "ready",
       "source": "康軒四上官方教材（04 生字延伸成語）"
     }
@@ -867,7 +873,7 @@
       "example": "啊！沒想到平常吃的義大利麵條，竟然有各式各樣的造型。",
       "child_note": "感嘆：寫文章時，常會藉由呼喊的聲音表達喜怒哀樂的感情變化，來強調內心的驚訝、生氣、難過、讚嘆等感覺的修辭法。",
       "status": "approved",
-      "source": "康軒四上官方教材（10 修辭分析）"
+      "source": "康軒四上官方教材（10 修辭分析；官方例句拆題）"
     },
     {
       "id": "rhetoric:07:02",
@@ -876,7 +882,7 @@
       "example": "⑴沒想到平常吃的義大利麵條，竟然有各式各樣的造型，有的像蝴蝶，有的像車輪，有的像貓耳朵……令人大開眼界。⑵我還吃到不同醬料的義大利麵，紅醬的酸甜，白醬的濃郁，青醬的香氣，到現在還是讓我念念不忘呢！",
       "child_note": "排比：三個以上結構相同或相似的短語或句子，表達同一範圍或性質相關的意念，清楚的表達物象多樣化的性質，以加強語勢與節奏感的修辭方法。",
       "status": "approved",
-      "source": "康軒四上官方教材（10 修辭分析）"
+      "source": "康軒四上官方教材（10 修辭分析；官方例句拆題）"
     }
   ],
   "paragraph_summary": [
@@ -2485,9 +2491,9 @@
     },
     "rhetoric": {
       "label": "修辭小偵探",
-      "status": "missing",
+      "status": "available",
       "activity": "rhetoric",
-      "note": "官方修辭分析不足 3 題。"
+      "note": "官方本課題數少於 3 題，仍開放來源題目。"
     },
     "review": {
       "label": "舊字新詞",

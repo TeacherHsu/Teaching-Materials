@@ -203,6 +203,7 @@ def parse_idioms(lesson_no: int, title: str, source_text: str, chars: str) -> tu
                 "idiom": idiom,
                 "definition": definition,
                 "related_char": related_char,
+                "image": f"idioms/{len(idioms) + 1:02d}_{idiom}.webp",
                 "status": "ready",
                 "source": "康軒四上官方教材（04 生字延伸成語）",
             }
@@ -396,6 +397,14 @@ def module_status(label: str, activity: str, available: bool, note: str = "") ->
     return value
 
 
+def split_rhetoric_examples(example: str) -> list[str]:
+    """Split official circled-number examples into separate quiz items."""
+    markers = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳"
+    parts = re.split(rf"(?=[{markers}])", example)
+    cleaned = [re.sub(rf"^[{markers}]", "", part).strip() for part in parts]
+    return [part for part in cleaned if part]
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--workspace-root", type=Path, required=True)
@@ -463,17 +472,18 @@ def main() -> None:
             example = re.sub(r"\s+", "", match.group("example")).strip()
             if not figure or not example:
                 continue
-            rhetoric.append(
-                {
-                    "id": f"rhetoric:{lesson_no:02d}:{len(rhetoric) + 1:02d}",
-                    "figure": figure,
-                    "note": note,
-                    "example": example,
-                    "child_note": f"{figure}：{note}",
-                    "status": "approved",
-                    "source": "康軒四上官方教材（10 修辭分析）",
-                }
-            )
+            for example_part in split_rhetoric_examples(example):
+                rhetoric.append(
+                    {
+                        "id": f"rhetoric:{lesson_no:02d}:{len(rhetoric) + 1:02d}",
+                        "figure": figure,
+                        "note": note,
+                        "example": example_part,
+                        "child_note": f"{figure}：{note}",
+                        "status": "approved",
+                        "source": "康軒四上官方教材（10 修辭分析；官方例句拆題）",
+                    }
+                )
 
         lesson["idioms"] = idioms
         lesson["idiom_sentences"] = idiom_sentences
@@ -516,7 +526,12 @@ def main() -> None:
         modules["polysemy"] = module_status("一字多義", "polysemy", len(polysemy) >= 3, "官方字義辨析不足 3 題。" if len(polysemy) < 3 else "")
         modules["polyphones"] = module_status("一字多音", "polyphones", sum(len(item.get("readings") or []) for item in polyphones) >= 2, "06 文件本課未達兩個可核對讀音。" if sum(len(item.get("readings") or []) for item in polyphones) < 2 else "")
         modules["listening"] = module_status("聽聽看", "listening-quiz", len(listening) >= 3, "官方閱讀理解可核對問答不足 3 題。" if len(listening) < 3 else "")
-        modules["rhetoric"] = module_status("修辭小偵探", "rhetoric", len(rhetoric) >= 3, "官方修辭分析不足 3 題。" if len(rhetoric) < 3 else "")
+        modules["rhetoric"] = module_status(
+            "修辭小偵探",
+            "rhetoric",
+            len(rhetoric) >= 1,
+            "官方本課題數少於 3 題，仍開放來源題目。" if 0 < len(rhetoric) < 3 else "官方修辭分析沒有可核對題目。" if not rhetoric else "",
+        )
 
         report.append(
             {
