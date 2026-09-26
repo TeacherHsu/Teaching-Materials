@@ -1,6 +1,13 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：G4A 第 5 課「失聰」語詞卡圖片 `apps/mandarin/public/assets/115AG4K/lesson05/vocabulary/l05-16-v2.webp` 與 `lesson05.json` 圖片引用。
+- 做了什麼：修正右側女孩多出的下垂手臂／手，保留耳旁的手與抓背包帶的手；原 `l05-16.webp` 保留，公開資料改接修正版 `l05-16-v2.webp`。
+- 資產規格：修正版為 1200×1200 RGB WebP，82,912 bytes；無文字、無浮水印，未改動其他語詞卡。
+- 驗證：`npm.cmd run validate`、語詞圖片完整性與配對測試、完整 `scripts/test-*.mjs`、升級權限 `npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets` 均通過。已開啟第五課語詞卡本機預覽。
+- 提交／推送：本項待建立本地提交；尚未推送遠端。工作樹另有既存的 G2A 未追蹤／修改內容，未納入本項。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/activities/rhetoric.js`、`apps/mandarin/scripts/enrich_g4a_official.py`、`apps/mandarin/scripts/test-rhetoric-highlights.mjs`、G4A 12 課公開修辭資料。
 - 做了什麼：修辭小偵探改為每個官方例句逐題作答，不再把 3–5 題合併在同一畫面；康軒來源的 `⑴⑵⑶`、圈號與數字括號例句已拆開，並移除只供教材分析的尾端註記。
 - 關鍵詞規則：保留官方 `「」` 等明確標記；G4A 只對可由句型穩定逆推的譬喻、設問、感嘆、明確重複／排比片段加入 `highlight_terms`。摹寫、轉化等無法可靠定位者維持不標色，沒有臆造關鍵詞。
