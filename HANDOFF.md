@@ -14,6 +14,14 @@
 
 ---
 
+## 2026-09-26｜學校 Win｜Codex｜狀態：🚧 施工中
+- 範圍：`apps/mandarin/src/`、`apps/mandarin/public/data/115AG6H/`、`apps/mandarin/public/assets/115AG6H/`、`apps/mandarin/public/data/course-index.json`
+- 做了什麼：依教師回饋修正 G6A 生字造詞、語詞圖片、一字多義、星星累計、詩歌段落顯示，並補整理修辭與聆聽答案來源。
+- 驗證：施工中，尚未完成本輪建置驗證。
+- 推送：施工標記待推送。
+- 待辦／給下一棒：讀取 Excel 常用造詞；補齊可確認的 WebP 語詞圖；修正資料與共用元件；跑完整驗證並回報未能核對的官方資料。
+- 注意：不把第三方 Excel 或官方原始教材放入公開 repo；圖片只使用已確認對應素材並遵守單張約 150～300 KB、單課 4 MB 內規範。
+
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG6H/`、`apps/mandarin/public/assets/115AG6H/`、`apps/mandarin/public/data/course-index.json`
 - 做了什麼：依翰林六上官方教材資料完成 G6A 第 1～12 課網站資料；包含生字、語詞、成語、句型、段落摘要、閱讀提問、字義分析、形似字、多音字與各課雄筆順連結。可對應的官方語詞／成語圖已轉為 WebP，未將原始教材或第三方試算表放入公開 repo。
