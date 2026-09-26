@@ -1653,132 +1653,236 @@
       "group_no": "1",
       "chars": [
         {
-          "char": "婆",
-          "example": "婆娑、婆婆"
+          "char": "鯊",
+          "example": "鯊魚"
         },
         {
-          "char": "波",
-          "example": "波浪、波紋"
+          "char": "裟",
+          "example": "袈裟"
         },
         {
-          "char": "頗",
-          "example": "頗多、偏頗"
+          "char": "娑",
+          "example": "婆娑"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H03:02",
       "group_no": "2",
       "chars": [
         {
-          "char": "撫",
-          "example": "撫慰、撫摸"
+          "char": "蕪",
+          "example": "荒蕪、荒地"
         },
         {
-          "char": "荒",
-          "example": "荒蕪、荒地"
+          "char": "嫵",
+          "example": "嫵媚"
+        },
+        {
+          "char": "撫",
+          "example": "撫慰、撫摸"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H03:03",
       "group_no": "3",
       "chars": [
         {
-          "char": "徒",
-          "example": "徒弟、徒步"
+          "char": "顫",
+          "example": "顫抖、打顫"
         },
         {
-          "char": "遷",
-          "example": "遷徙、遷移"
+          "char": "羶",
+          "example": "腥羶、羶肉"
         },
         {
-          "char": "陡",
-          "example": "陡峭、陡坡"
-        }
-      ],
-      "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
-    },
-    {
-      "id": "lookalike:115AG6H03:04",
-      "group_no": "4",
-      "chars": [
-        {
-          "char": "杏",
-          "example": "杏壇、體壇"
+          "char": "檀",
+          "example": "檀木、檀香"
         },
         {
           "char": "擅",
           "example": "擅長、擅自"
         },
         {
-          "char": "檀",
-          "example": "檀木、檀香"
+          "char": "壇",
+          "example": "政壇"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H03:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "徙",
+          "example": "遷徙、遷移"
+        },
+        {
+          "char": "徒",
+          "example": "徒弟、徒步"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H03:05",
       "group_no": "5",
       "chars": [
         {
-          "char": "鍛",
-          "example": "鍛鍊、磨鍊"
+          "char": "揀",
+          "example": "挑揀、揀選"
+        },
+        {
+          "char": "諫",
+          "example": "諫言、勸諫"
+        },
+        {
+          "char": "煉",
+          "example": "提煉、精煉"
         },
         {
           "char": "練",
           "example": "練習、練字"
         },
         {
-          "char": "提",
-          "example": "提煉、精煉"
+          "char": "鍊",
+          "example": "手鍊"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H03:06",
       "group_no": "6",
       "chars": [
         {
-          "char": "智",
-          "example": "智慧、聰慧"
+          "char": "唉",
+          "example": "唉聲嘆氣、唉唷"
         },
         {
-          "char": "恩",
-          "example": "恩惠、優惠"
+          "char": "挨",
+          "example": "挨罵、挨家挨戶"
+        },
+        {
+          "char": "埃",
+          "example": "塵埃、埃及"
+        },
+        {
+          "char": "矣",
+          "example": "已矣"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H03:07",
       "group_no": "7",
       "chars": [
         {
-          "char": "論",
-          "example": "論語、討論"
+          "char": "日",
+          "example": "日落、日期"
         },
         {
-          "char": "車",
-          "example": "車輪、輪子"
-        },
-        {
-          "char": "倫",
-          "example": "倫理、天倫"
+          "char": "曰",
+          "example": "曰"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H03:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "跡",
+          "example": "跡象、筆跡"
+        },
+        {
+          "char": "弈",
+          "example": "對弈、弈棋"
+        },
+        {
+          "char": "奕",
+          "example": "神采奕奕"
+        },
+        {
+          "char": "亦",
+          "example": "不亦樂乎"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H03:09",
+      "group_no": "9",
+      "chars": [
+        {
+          "char": "彗",
+          "example": "彗星"
+        },
+        {
+          "char": "慧",
+          "example": "智慧"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H03:10",
+      "group_no": "10",
+      "chars": [
+        {
+          "char": "擎",
+          "example": "擎天、引擎"
+        },
+        {
+          "char": "驚",
+          "example": "驚動、驚駭"
+        },
+        {
+          "char": "警",
+          "example": "告警"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H03:11",
+      "group_no": "11",
+      "chars": [
+        {
+          "char": "錫",
+          "example": "錫箔、錫礦"
+        },
+        {
+          "char": "賜",
+          "example": "賜福、賞賜"
+        },
+        {
+          "char": "踢",
+          "example": "踢球、踢腿"
+        },
+        {
+          "char": "惕",
+          "example": "警惕"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     }
   ],
   "listening": [

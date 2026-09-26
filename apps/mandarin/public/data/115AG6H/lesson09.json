@@ -1664,160 +1664,172 @@
       "group_no": "1",
       "chars": [
         {
-          "char": "份",
-          "example": "份量、股份"
+          "char": "鬆",
+          "example": "蓬鬆、鬆開"
         },
         {
-          "char": "粉",
-          "example": "粉筆、粉色"
-        }
-      ],
-      "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
-    },
-    {
-      "id": "lookalike:115AG6H09:02",
-      "group_no": "2",
-      "chars": [
-        {
-          "char": "丫",
-          "example": "丫鬟、雲鬟"
-        },
-        {
-          "char": "頭",
-          "example": "頭髮、髮型"
+          "char": "鬚",
+          "example": "鬍鬚、鬚根"
         },
         {
           "char": "鬍",
           "example": "鬍鬚、鬚根"
         },
         {
-          "char": "蓬",
-          "example": "蓬鬆、鬆開"
+          "char": "髮",
+          "example": "頭髮、髮型"
+        },
+        {
+          "char": "鬟",
+          "example": "丫鬟"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H09:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "捱",
+          "example": "捱罵、捱過"
+        },
+        {
+          "char": "崖",
+          "example": "山崖、崖壁"
+        },
+        {
+          "char": "涯",
+          "example": "天涯"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H09:03",
       "group_no": "3",
       "chars": [
         {
-          "char": "天",
-          "example": "天涯、生涯"
+          "char": "幸",
+          "example": "幸福、幸運"
         },
         {
-          "char": "山",
-          "example": "山崖、崖壁"
-        },
-        {
-          "char": "捱",
-          "example": "捱罵、捱過"
+          "char": "辛",
+          "example": "辛苦、辛勞"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H09:04",
       "group_no": "4",
       "chars": [
         {
-          "char": "辛",
-          "example": "辛苦、辛勞"
-        },
-        {
-          "char": "幸",
-          "example": "幸福、幸運"
-        }
-      ],
-      "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
-    },
-    {
-      "id": "lookalike:115AG6H09:05",
-      "group_no": "5",
-      "chars": [
-        {
-          "char": "劈",
-          "example": "劈柴、劈開"
-        },
-        {
-          "char": "譬",
-          "example": "譬喻、譬如"
-        },
-        {
-          "char": "牆",
-          "example": "牆壁、壁紙"
-        },
-        {
-          "char": "白",
-          "example": "白璧、玉璧"
-        }
-      ],
-      "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
-    },
-    {
-      "id": "lookalike:115AG6H09:06",
-      "group_no": "6",
-      "chars": [
-        {
-          "char": "跑",
-          "example": "跑腿、後腿"
+          "char": "退",
+          "example": "退步、退後"
         },
         {
           "char": "褪",
           "example": "褪色、褪去"
         },
         {
-          "char": "退",
-          "example": "退步、退後"
+          "char": "腿",
+          "example": "大腿"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H09:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "璧",
+          "example": "白璧、玉璧"
+        },
+        {
+          "char": "壁",
+          "example": "山崖、崖壁"
+        },
+        {
+          "char": "譬",
+          "example": "譬喻、譬如"
+        },
+        {
+          "char": "劈",
+          "example": "劈柴、劈開"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H09:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "勝",
+          "example": "勝利"
+        },
+        {
+          "char": "謄",
+          "example": "謄寫"
+        },
+        {
+          "char": "騰",
+          "example": "圖騰"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H09:07",
       "group_no": "7",
       "chars": [
         {
-          "char": "獅",
-          "example": "獅子、舞獅"
+          "char": "責",
+          "example": "責任"
         },
         {
-          "char": "施",
-          "example": "施行、施展"
+          "char": "表",
+          "example": "表格"
         },
         {
-          "char": "師",
-          "example": "師父、老師"
+          "char": "毒",
+          "example": "毒藥"
+        },
+        {
+          "char": "素",
+          "example": "元素"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H09:08",
       "group_no": "8",
       "chars": [
         {
-          "char": "小",
-          "example": "小丑、丑角"
+          "char": "殉",
+          "example": "殉職"
         },
         {
-          "char": "甘",
-          "example": "甘甜、不甘"
+          "char": "詢",
+          "example": "詢問"
         },
         {
-          "char": "水",
-          "example": "水井、井口"
+          "char": "絢",
+          "example": "絢爛"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     }
   ],
   "listening": [

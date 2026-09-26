@@ -1548,136 +1548,268 @@
       "group_no": "1",
       "chars": [
         {
-          "char": "自",
-          "example": "自嘲、嘲笑"
+          "char": "廟",
+          "example": "廟宇、廟會"
         },
         {
           "char": "潮",
           "example": "潮水、潮濕"
         },
         {
-          "char": "廟",
-          "example": "廟宇、廟會"
+          "char": "嘲",
+          "example": "嘲弄"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H06:02",
       "group_no": "2",
       "chars": [
         {
-          "char": "揶",
-          "example": "揶揄、揶揄人"
+          "char": "爺",
+          "example": "爺爺、老爺"
         },
         {
           "char": "椰",
           "example": "椰子、椰奶"
         },
         {
-          "char": "爺",
-          "example": "爺爺、老爺"
+          "char": "揶",
+          "example": "揶揄、揶揄人"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H06:03",
       "group_no": "3",
       "chars": [
         {
-          "char": "揄",
-          "example": "揄揚、揶揄"
+          "char": "喻",
+          "example": "比喻、家喻戶曉"
         },
         {
           "char": "偷",
           "example": "偷竊、小偷"
         },
         {
-          "char": "比",
-          "example": "比喻、家喻戶曉"
+          "char": "揄",
+          "example": "揄揚、揶揄"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H06:04",
       "group_no": "4",
       "chars": [
         {
-          "char": "僵",
-          "example": "僵局、僵硬"
+          "char": "薑",
+          "example": "薑湯、薑餅"
+        },
+        {
+          "char": "殭",
+          "example": "殭屍"
+        },
+        {
+          "char": "韁",
+          "example": "韁繩、脫韁"
         },
         {
           "char": "疆",
           "example": "疆界、新疆"
         },
         {
-          "char": "韁",
-          "example": "韁繩、脫韁"
+          "char": "僵",
+          "example": "僵局、僵硬"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H06:05",
       "group_no": "5",
       "chars": [
         {
-          "char": "競",
-          "example": "競爭、競賽"
-        },
-        {
           "char": "兢",
           "example": "兢兢業業、戰戰兢兢"
+        },
+        {
+          "char": "競",
+          "example": "競爭、競賽"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H06:06",
       "group_no": "6",
       "chars": [
         {
-          "char": "倘",
-          "example": "倘若、倘使"
+          "char": "魂",
+          "example": "鬼魂、魂魄"
         },
         {
-          "char": "躺",
-          "example": "躺下、躺椅"
+          "char": "瑰",
+          "example": "瑰寶、玫瑰"
         },
         {
-          "char": "敞",
-          "example": "敞開、寬敞"
+          "char": "槐",
+          "example": "指桑罵槐"
+        },
+        {
+          "char": "餽",
+          "example": "餽贈"
+        },
+        {
+          "char": "醜",
+          "example": "醜聞"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H06:07",
       "group_no": "7",
       "chars": [
         {
-          "char": "諷",
-          "example": "諷刺、譏諷"
+          "char": "叛",
+          "example": "背叛、反叛"
+        },
+        {
+          "char": "判",
+          "example": "判刑"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H06:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "趟",
+          "example": "一趟"
+        },
+        {
+          "char": "敞",
+          "example": "敞開、寬敞"
+        },
+        {
+          "char": "躺",
+          "example": "躺下、躺椅"
+        },
+        {
+          "char": "倘",
+          "example": "倘若、倘使"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H06:09",
+      "group_no": "9",
+      "chars": [
+        {
+          "char": "瘋",
+          "example": "瘋狂、發瘋"
         },
         {
           "char": "楓",
           "example": "楓樹、楓葉"
         },
         {
-          "char": "瘋",
-          "example": "瘋狂、發瘋"
+          "char": "諷",
+          "example": "諷刺、譏諷"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H06:10",
+      "group_no": "10",
+      "chars": [
+        {
+          "char": "宵",
+          "example": "宵夜、元宵"
+        },
+        {
+          "char": "屑",
+          "example": "不屑"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H06:11",
+      "group_no": "11",
+      "chars": [
+        {
+          "char": "泛",
+          "example": "廣泛、泛舟"
+        },
+        {
+          "char": "眨",
+          "example": "眨眼"
+        },
+        {
+          "char": "貶",
+          "example": "貶值"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H06:12",
+      "group_no": "12",
+      "chars": [
+        {
+          "char": "袒",
+          "example": "袒護、偏袒"
+        },
+        {
+          "char": "但",
+          "example": "但是、不但"
+        },
+        {
+          "char": "坦",
+          "example": "坦承"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H06:13",
+      "group_no": "13",
+      "chars": [
+        {
+          "char": "物",
+          "example": "動物、物品"
+        },
+        {
+          "char": "忽",
+          "example": "忽然、忽視"
+        },
+        {
+          "char": "吻",
+          "example": "口吻"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     }
   ],
   "listening": [

@@ -1707,168 +1707,236 @@
       "group_no": "1",
       "chars": [
         {
-          "char": "石",
-          "example": "石墩、橋墩"
+          "char": "蔽",
+          "example": "蔽日、遮蔽"
         },
         {
-          "char": "噸",
-          "example": "噸位、一噸"
+          "char": "斃",
+          "example": "擊斃、斃命"
+        },
+        {
+          "char": "弊",
+          "example": "弊案、作弊"
+        },
+        {
+          "char": "幣",
+          "example": "幣值、錢幣"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H08:02",
       "group_no": "2",
       "chars": [
         {
-          "char": "撇",
-          "example": "撇嘴、撇下"
+          "char": "瓏",
+          "example": "玲瓏、八面玲瓏"
         },
         {
-          "char": "幣",
-          "example": "幣值、錢幣"
+          "char": "朧",
+          "example": "朦朧、朧月"
         },
         {
-          "char": "蔽",
-          "example": "蔽日、遮蔽"
+          "char": "隴",
+          "example": "田隴、山隴"
+        },
+        {
+          "char": "攏",
+          "example": "拉攏"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H08:03",
       "group_no": "3",
       "chars": [
         {
-          "char": "靠",
-          "example": "靠攏、合攏"
-        },
-        {
-          "char": "田",
-          "example": "田隴、山隴"
-        },
-        {
-          "char": "朦",
-          "example": "朦朧、朧月"
-        }
-      ],
-      "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
-    },
-    {
-      "id": "lookalike:115AG6H08:04",
-      "group_no": "4",
-      "chars": [
-        {
-          "char": "紙",
-          "example": "紙鈔、大鈔"
-        },
-        {
-          "char": "抄",
-          "example": "抄寫、抄錄"
-        },
-        {
-          "char": "美",
-          "example": "美妙、巧妙"
-        },
-        {
-          "char": "秒",
-          "example": "秒數、分秒"
-        }
-      ],
-      "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
-    },
-    {
-      "id": "lookalike:115AG6H08:05",
-      "group_no": "5",
-      "chars": [
-        {
-          "char": "腫",
-          "example": "腫脹、胃脹"
+          "char": "悵",
+          "example": "悵然、惆悵"
         },
         {
           "char": "帳",
           "example": "帳簿、帳單"
         },
         {
-          "char": "悵",
-          "example": "悵然、惆悵"
+          "char": "脹",
+          "example": "腫脹"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H08:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "輻",
+          "example": "輻射、車輻"
+        },
+        {
+          "char": "福",
+          "example": "幸福、福氣"
+        },
+        {
+          "char": "幅",
+          "example": "一幅、降幅"
+        },
+        {
+          "char": "副",
+          "example": "副本、副手"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H08:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "秒",
+          "example": "秒數、分秒"
+        },
+        {
+          "char": "妙",
+          "example": "美妙、巧妙"
+        },
+        {
+          "char": "抄",
+          "example": "抄寫、抄錄"
+        },
+        {
+          "char": "鈔",
+          "example": "新鈔"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H08:06",
       "group_no": "6",
       "chars": [
         {
-          "char": "副",
-          "example": "副本、副手"
+          "char": "霜",
+          "example": "霜降、風霜"
         },
         {
-          "char": "一",
-          "example": "一幅、降幅"
+          "char": "想",
+          "example": "夢想、想法"
         },
         {
-          "char": "幸",
-          "example": "幸福、福氣"
+          "char": "箱",
+          "example": "冰箱、紙箱"
         },
         {
-          "char": "輻",
-          "example": "輻射、車輻"
+          "char": "廂",
+          "example": "車廂"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H08:07",
       "group_no": "7",
       "chars": [
         {
-          "char": "儼",
-          "example": "儼然、儼如"
+          "char": "嚴",
+          "example": "嚴格、嚴肅"
         },
         {
           "char": "巖",
           "example": "巖石、山巖"
         },
         {
-          "char": "嚴",
-          "example": "嚴格、嚴肅"
+          "char": "儼",
+          "example": "儼然、儼如"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H08:08",
       "group_no": "8",
       "chars": [
         {
-          "char": "車",
-          "example": "車廂、包廂"
+          "char": "炬",
+          "example": "火炬、付之一炬"
         },
         {
-          "char": "冰",
-          "example": "冰箱、紙箱"
+          "char": "鉅",
+          "example": "鉅額、鉅變"
         },
         {
-          "char": "夢",
-          "example": "夢想、想法"
+          "char": "距",
+          "example": "距離、差距"
         },
         {
-          "char": "霜",
-          "example": "霜降、風霜"
+          "char": "拒",
+          "example": "拒絕、抗拒"
+        },
+        {
+          "char": "矩",
+          "example": "規矩"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H08:09",
+      "group_no": "9",
+      "chars": [
+        {
+          "char": "眩",
+          "example": "眩目、暈眩"
+        },
+        {
+          "char": "舷",
+          "example": "船舷"
+        },
+        {
+          "char": "炫",
+          "example": "炫耀、炫目"
+        },
+        {
+          "char": "弦",
+          "example": "管弦"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H08:10",
+      "group_no": "10",
+      "chars": [
+        {
+          "char": "恙",
+          "example": "微恙、無恙"
+        },
+        {
+          "char": "善",
+          "example": "善舉、行善"
+        },
+        {
+          "char": "姜",
+          "example": "姜小姐"
+        },
+        {
+          "char": "羨",
+          "example": "稱羨"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     }
   ],
   "listening": [

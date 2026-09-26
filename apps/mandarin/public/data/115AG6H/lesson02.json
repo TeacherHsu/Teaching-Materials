@@ -1867,160 +1867,220 @@
       "group_no": "1",
       "chars": [
         {
-          "char": "眼",
-          "example": "眼眶、眼眶紅"
+          "char": "誆",
+          "example": "誆騙"
         },
         {
           "char": "框",
           "example": "框架、相框"
+        },
+        {
+          "char": "眶",
+          "example": "熱淚盈眶"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H02:02",
       "group_no": "2",
       "chars": [
         {
-          "char": "爭",
-          "example": "爭執、執法"
+          "char": "紈",
+          "example": "紈絝"
         },
         {
-          "char": "真",
-          "example": "真摯、摯友"
+          "char": "孰",
+          "example": "孰是孰非"
+        },
+        {
+          "char": "執",
+          "example": "固執"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H02:03",
       "group_no": "3",
       "chars": [
         {
-          "char": "辯",
-          "example": "辯論、辯護"
+          "char": "摻",
+          "example": "摻雜、摻和"
         },
         {
-          "char": "分",
-          "example": "分辨、辨析"
+          "char": "滲",
+          "example": "滲透"
+        },
+        {
+          "char": "慘",
+          "example": "慘白、悲慘"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H02:04",
       "group_no": "4",
       "chars": [
         {
-          "char": "頭",
-          "example": "頭暈、暈倒"
+          "char": "墳",
+          "example": "墳墓"
         },
         {
-          "char": "春",
-          "example": "春暉、餘暉"
+          "char": "噴",
+          "example": "噴泉、噴射"
+        },
+        {
+          "char": "憤",
+          "example": "憤怒、氣憤"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H02:05",
       "group_no": "5",
       "chars": [
         {
-          "char": "溜",
-          "example": "溜冰、溜下"
+          "char": "殆",
+          "example": "殆盡"
         },
         {
-          "char": "保",
-          "example": "保留、留下"
+          "char": "跆",
+          "example": "跆拳道"
+        },
+        {
+          "char": "飴",
+          "example": "飴糖"
+        },
+        {
+          "char": "貽",
+          "example": "貽笑大方"
+        },
+        {
+          "char": "胎",
+          "example": "胎兒"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H02:06",
       "group_no": "6",
       "chars": [
         {
-          "char": "慘",
-          "example": "慘白、悲慘"
+          "char": "暉",
+          "example": "春暉、餘暉"
         },
         {
-          "char": "摻",
-          "example": "摻雜、摻和"
+          "char": "葷",
+          "example": "葷食"
+        },
+        {
+          "char": "暈",
+          "example": "暈倒"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H02:07",
       "group_no": "7",
       "chars": [
         {
-          "char": "憤",
-          "example": "憤怒、氣憤"
+          "char": "辮",
+          "example": "辮子"
         },
         {
-          "char": "噴",
-          "example": "噴泉、噴射"
+          "char": "辦",
+          "example": "辦法"
+        },
+        {
+          "char": "瓣",
+          "example": "花瓣"
+        },
+        {
+          "char": "辨",
+          "example": "分辨、辨析"
+        },
+        {
+          "char": "辯",
+          "example": "辯論、辯護"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H02:08",
       "group_no": "8",
       "chars": [
         {
-          "char": "感",
-          "example": "感慨、慷慨"
+          "char": "垠",
+          "example": "無垠"
         },
         {
-          "char": "概",
-          "example": "概念、大概"
+          "char": "恨",
+          "example": "仇恨"
+        },
+        {
+          "char": "很",
+          "example": "很好"
+        },
+        {
+          "char": "狠",
+          "example": "凶狠"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H02:09",
       "group_no": "9",
       "chars": [
         {
-          "char": "鼻",
-          "example": "鼻涕、流涕"
+          "char": "溉",
+          "example": "灌溉"
         },
         {
-          "char": "樓",
-          "example": "樓梯、電梯"
+          "char": "概",
+          "example": "概念、大概"
+        },
+        {
+          "char": "慨",
+          "example": "感慨"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H02:10",
       "group_no": "10",
       "chars": [
         {
-          "char": "寂",
-          "example": "寂寞、落寞"
+          "char": "梯",
+          "example": "樓梯、電梯"
         },
         {
-          "char": "沙",
-          "example": "沙漠、冷漠"
+          "char": "悌",
+          "example": "孝悌"
+        },
+        {
+          "char": "涕",
+          "example": "破涕為笑"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     }
   ],
   "listening": [

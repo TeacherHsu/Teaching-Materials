@@ -1313,132 +1313,224 @@
       "group_no": "1",
       "chars": [
         {
-          "char": "拓",
-          "example": "拓印、拓本"
+          "char": "誨",
+          "example": "教誨、誨人不倦"
         },
         {
-          "char": "踏",
-          "example": "踏步、踏青"
+          "char": "侮",
+          "example": "欺侮、侮辱"
+        },
+        {
+          "char": "悔",
+          "example": "後悔、悔改"
+        },
+        {
+          "char": "梅",
+          "example": "梅花、梅雨"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H07:02",
       "group_no": "2",
       "chars": [
         {
-          "char": "梅",
-          "example": "梅花、梅雨"
+          "char": "貯",
+          "example": "貯存、貯水"
         },
         {
-          "char": "後",
-          "example": "後悔、悔改"
-        },
-        {
-          "char": "欺",
-          "example": "欺侮、侮辱"
+          "char": "佇",
+          "example": "佇立、佇候"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H07:03",
       "group_no": "3",
       "chars": [
         {
-          "char": "佇",
-          "example": "佇立、佇候"
+          "char": "烈",
+          "example": "強烈、濃烈"
         },
         {
-          "char": "貯",
-          "example": "貯存、貯水"
+          "char": "咧",
+          "example": "齜牙咧嘴"
         },
         {
-          "char": "儲",
-          "example": "儲蓄、儲存"
+          "char": "例",
+          "example": "範例、例子"
+        },
+        {
+          "char": "冽",
+          "example": "冷冽"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H07:04",
       "group_no": "4",
       "chars": [
         {
-          "char": "冷",
-          "example": "冷冽、凜冽"
+          "char": "擇",
+          "example": "選擇、擇一"
         },
         {
-          "char": "範",
-          "example": "範例、例子"
+          "char": "譯",
+          "example": "翻譯、譯者"
         },
         {
-          "char": "強",
-          "example": "強烈、濃烈"
+          "char": "釋",
+          "example": "解釋、釋放"
+        },
+        {
+          "char": "澤",
+          "example": "光澤"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H07:05",
       "group_no": "5",
       "chars": [
         {
-          "char": "光",
-          "example": "光澤、色澤"
+          "char": "綿",
+          "example": "綿長、綿延"
         },
         {
-          "char": "選",
-          "example": "選擇、擇一"
+          "char": "棉",
+          "example": "棉被、棉花"
+        },
+        {
+          "char": "錦",
+          "example": "錦囊"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H07:06",
       "group_no": "6",
       "chars": [
         {
-          "char": "鐵",
-          "example": "鐵鏽、防鏽"
-        },
-        {
-          "char": "刺",
+          "char": "繡",
           "example": "刺繡、繡花"
         },
         {
-          "char": "呼",
+          "char": "簫",
+          "example": "洞簫、笙簫"
+        },
+        {
+          "char": "嘯",
           "example": "呼嘯、海嘯"
+        },
+        {
+          "char": "蕭",
+          "example": "蕭條、蕭瑟"
+        },
+        {
+          "char": "鏽",
+          "example": "不鏽鋼"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H07:07",
       "group_no": "7",
       "chars": [
         {
-          "char": "鋼",
-          "example": "鋼筆、鋼琴"
+          "char": "崗",
+          "example": "山崗、花崗石"
+        },
+        {
+          "char": "綱",
+          "example": "大綱、綱要"
         },
         {
           "char": "剛",
           "example": "剛才、剛好"
         },
         {
-          "char": "大",
-          "example": "大綱、綱要"
+          "char": "鋼",
+          "example": "鋼筆、鋼琴"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H07:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "恫",
+          "example": "恫嚇"
+        },
+        {
+          "char": "洞",
+          "example": "洞簫、笙簫"
+        },
+        {
+          "char": "桐",
+          "example": "梧桐、油桐"
+        },
+        {
+          "char": "銅",
+          "example": "銅像"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H07:09",
+      "group_no": "9",
+      "chars": [
+        {
+          "char": "藉",
+          "example": "藉口、藉由"
+        },
+        {
+          "char": "籍",
+          "example": "古籍"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H07:10",
+      "group_no": "10",
+      "chars": [
+        {
+          "char": "佚",
+          "example": "佚名"
+        },
+        {
+          "char": "秩",
+          "example": "秩序"
+        },
+        {
+          "char": "跌",
+          "example": "跌倒、跌跤"
+        },
+        {
+          "char": "迭",
+          "example": "更迭"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     }
   ],
   "listening": [

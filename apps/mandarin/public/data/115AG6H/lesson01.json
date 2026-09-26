@@ -1516,140 +1516,184 @@
       "group_no": "1",
       "chars": [
         {
-          "char": "皺",
-          "example": "皺紋、皺褶"
+          "char": "雛",
+          "example": "雛菊、雛形"
         },
         {
           "char": "鄒",
           "example": "鄒先生、鄒族"
         },
         {
-          "char": "雛",
-          "example": "雛菊、雛形"
+          "char": "皺",
+          "example": "皺紋、皺褶"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H01:02",
       "group_no": "2",
       "chars": [
         {
-          "char": "搖",
-          "example": "搖晃、搖頭晃腦"
+          "char": "擊",
+          "example": "攻擊、目擊"
         },
         {
-          "char": "晃",
-          "example": "晃耀、亮晃晃"
+          "char": "擎",
+          "example": "引擎、擎天"
+        },
+        {
+          "char": "摯",
+          "example": "摯情、摯友"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H01:03",
       "group_no": "3",
       "chars": [
         {
-          "char": "摯",
-          "example": "摯情、摯友"
+          "char": "桶",
+          "example": "冰桶、馬桶"
         },
         {
-          "char": "引",
-          "example": "引擎、擎天"
-        },
-        {
-          "char": "攻",
-          "example": "攻擊、目擊"
-        }
-      ],
-      "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
-    },
-    {
-      "id": "lookalike:115AG6H01:04",
-      "group_no": "4",
-      "chars": [
-        {
-          "char": "蝶",
-          "example": "蝶蛹、破蛹而出"
+          "char": "誦",
+          "example": "朗誦、背誦"
         },
         {
           "char": "通",
           "example": "通知、通則"
         },
         {
-          "char": "朗",
-          "example": "朗誦、背誦"
-        },
-        {
-          "char": "冰",
-          "example": "冰桶、馬桶"
+          "char": "蛹",
+          "example": "化蛹"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
-      "id": "lookalike:115AG6H01:05",
-      "group_no": "5",
+      "id": "lookalike:115AG6H01:04",
+      "group_no": "4",
       "chars": [
         {
-          "char": "蟬",
-          "example": "蟬翼、羽翼"
+          "char": "糞",
+          "example": "糞便、糞土"
         },
         {
           "char": "冀",
           "example": "冀求、希冀"
         },
         {
-          "char": "糞",
-          "example": "糞便、糞土"
+          "char": "翼",
+          "example": "右翼"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
-      "id": "lookalike:115AG6H01:06",
-      "group_no": "6",
+      "id": "lookalike:115AG6H01:05",
+      "group_no": "5",
       "chars": [
         {
-          "char": "註",
-          "example": "註冊、註銷"
+          "char": "蛀",
+          "example": "蛀牙、蛀蟲"
+        },
+        {
+          "char": "駐",
+          "example": "停駐、駐唱"
+        },
+        {
+          "char": "柱",
+          "example": "水柱、臺柱"
         },
         {
           "char": "注",
           "example": "注意、關注"
         },
         {
-          "char": "水",
-          "example": "水柱、臺柱"
-        },
-        {
-          "char": "停",
-          "example": "停駐、駐唱"
+          "char": "註",
+          "example": "註冊、註銷"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H01:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "諸",
+          "example": "諸侯、諸多"
+        },
+        {
+          "char": "藷",
+          "example": "甘藷、番藷"
+        },
+        {
+          "char": "儲",
+          "example": "儲存、儲藏"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H01:07",
       "group_no": "7",
       "chars": [
         {
-          "char": "儲",
-          "example": "儲存、儲藏"
+          "char": "厲",
+          "example": "厲害、嚴厲"
         },
         {
-          "char": "諸",
-          "example": "諸侯、諸多"
+          "char": "邁",
+          "example": "年邁"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H01:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "網",
+          "example": "網站、魚網"
+        },
+        {
+          "char": "惘",
+          "example": "迷惘"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H01:09",
+      "group_no": "9",
+      "chars": [
+        {
+          "char": "殉",
+          "example": "殉國、殉職"
+        },
+        {
+          "char": "絢",
+          "example": "絢麗、絢爛"
+        },
+        {
+          "char": "詢",
+          "example": "徵詢"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     }
   ],
   "listening": [

@@ -1525,55 +1525,11 @@
       "group_no": "1",
       "chars": [
         {
-          "char": "彷",
-          "example": "彷彿"
-        },
-        {
-          "char": "不",
-          "example": "不妨、妨害"
-        },
-        {
-          "char": "磨",
-          "example": "磨坊、坊間"
-        },
-        {
-          "char": "防",
-          "example": "防範、預防"
-        },
-        {
-          "char": "仿",
-          "example": "仿冒、仿製"
-        }
-      ],
-      "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
-    },
-    {
-      "id": "lookalike:115AG6H04:02",
-      "group_no": "2",
-      "chars": [
-        {
-          "char": "腋",
-          "example": "腋下、腋窩"
-        },
-        {
-          "char": "液",
-          "example": "液體、液化"
-        }
-      ],
-      "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
-    },
-    {
-      "id": "lookalike:115AG6H04:03",
-      "group_no": "3",
-      "chars": [
-        {
           "char": "燠",
           "example": "燠熱、燠燥"
         },
         {
-          "char": "棉",
+          "char": "襖",
           "example": "棉襖、皮襖"
         },
         {
@@ -1590,14 +1546,42 @@
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
-      "id": "lookalike:115AG6H04:04",
-      "group_no": "4",
+      "id": "lookalike:115AG6H04:02",
+      "group_no": "2",
       "chars": [
         {
-          "char": "停",
+          "char": "彷",
+          "example": "彷彿"
+        },
+        {
+          "char": "妨",
+          "example": "不妨、妨害"
+        },
+        {
+          "char": "坊",
+          "example": "磨坊、坊間"
+        },
+        {
+          "char": "防",
+          "example": "防範、預防"
+        },
+        {
+          "char": "仿",
+          "example": "仿冒、仿製"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H04:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "泊",
           "example": "停泊、淡泊"
         },
         {
@@ -1609,72 +1593,16 @@
           "example": "伯父、伯母"
         },
         {
-          "char": "逼",
-          "example": "逼迫、急迫"
+          "char": "迫",
+          "example": "壓迫"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
-      "id": "lookalike:115AG6H04:05",
-      "group_no": "5",
-      "chars": [
-        {
-          "char": "講",
-          "example": "講稿、開講"
-        },
-        {
-          "char": "購",
-          "example": "購買、採購"
-        },
-        {
-          "char": "代",
-          "example": "代溝、溝通"
-        },
-        {
-          "char": "架",
-          "example": "架構、構成"
-        }
-      ],
-      "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
-    },
-    {
-      "id": "lookalike:115AG6H04:06",
-      "group_no": "6",
-      "chars": [
-        {
-          "char": "霹",
-          "example": "霹靂、晴天霹靂"
-        },
-        {
-          "char": "煙",
-          "example": "煙霧、雲霧"
-        },
-        {
-          "char": "風",
-          "example": "風霜、霜降"
-        },
-        {
-          "char": "露",
-          "example": "露珠、露臺"
-        },
-        {
-          "char": "彩",
-          "example": "彩霞、晚霞"
-        },
-        {
-          "char": "霸",
-          "example": "霸占、霸道"
-        }
-      ],
-      "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
-    },
-    {
-      "id": "lookalike:115AG6H04:07",
-      "group_no": "7",
+      "id": "lookalike:115AG6H04:04",
+      "group_no": "4",
       "chars": [
         {
           "char": "釘",
@@ -1685,7 +1613,7 @@
           "example": "訂貨、預訂"
         },
         {
-          "char": "緊",
+          "char": "盯",
           "example": "緊迫盯人"
         },
         {
@@ -1694,11 +1622,11 @@
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
-      "id": "lookalike:115AG6H04:08",
-      "group_no": "8",
+      "id": "lookalike:115AG6H04:05",
+      "group_no": "5",
       "chars": [
         {
           "char": "咀",
@@ -1722,14 +1650,94 @@
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H04:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "倨",
+          "example": "倨傲、前倨後恭"
+        },
+        {
+          "char": "据",
+          "example": "拮据"
+        },
+        {
+          "char": "踞",
+          "example": "盤踞、高踞"
+        },
+        {
+          "char": "鋸",
+          "example": "鋸子"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H04:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "霹",
+          "example": "霹靂、晴天霹靂"
+        },
+        {
+          "char": "霧",
+          "example": "煙霧、雲霧"
+        },
+        {
+          "char": "霜",
+          "example": "風霜、霜降"
+        },
+        {
+          "char": "露",
+          "example": "露珠、露臺"
+        },
+        {
+          "char": "霞",
+          "example": "彩霞、晚霞"
+        },
+        {
+          "char": "霸",
+          "example": "霸占、霸道"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H04:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "講",
+          "example": "講稿、開講"
+        },
+        {
+          "char": "購",
+          "example": "購買、採購"
+        },
+        {
+          "char": "溝",
+          "example": "代溝、溝通"
+        },
+        {
+          "char": "構",
+          "example": "建構"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H04:09",
       "group_no": "9",
       "chars": [
         {
-          "char": "粗",
+          "char": "獷",
           "example": "粗獷、獷悍"
         },
         {
@@ -1746,31 +1754,7 @@
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
-    },
-    {
-      "id": "lookalike:115AG6H04:10",
-      "group_no": "10",
-      "chars": [
-        {
-          "char": "倨",
-          "example": "倨傲、前倨後恭"
-        },
-        {
-          "char": "拮",
-          "example": "拮据"
-        },
-        {
-          "char": "盤",
-          "example": "盤踞、高踞"
-        },
-        {
-          "char": "拉",
-          "example": "拉鋸、電鋸"
-        }
-      ],
-      "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     }
   ],
   "listening": [

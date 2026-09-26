@@ -32,9 +32,10 @@ public/data/course-index.json
 6. 產生固定網站資料結構：生字卡、語詞解釋卡、隨機選項、筆順外部連結與模組可用狀態。
 7. 建立「成語填句子」資料：每個可用成語都要有一筆完整、自然、可由上下文判斷的具體情境句；句中必須包含該成語，挖空成語後仍要保留足夠語境。禁止使用「遇到生活中的相關情況時，可以用……來形容」等泛用模板。若該課尚無成語資料，維持模組未開放，不用空白或泛用題目填充。
 8. 建立「修辭小偵探」資料：每一筆可用的 `rhetoric` 題目都要在 `example` 中以 `﹁關鍵字﹂` 標出官方解析所框出的關鍵字；若是既有資料使用 `「關鍵字」` 或 `『關鍵字』`，可保留作相容格式，但新增資料統一使用 `﹁﹂`。
-9. 合併 `course-index.json`，不能因為只產生部分課次而刪掉既有課次。
-10. 寫入外部進度檔。中斷後以 `--resume` 跳過已有且狀態為 `ready` 的課次。
-11. 執行資料驗證、成語情境句檢查、修辭關鍵字變色檢查、圖片容量檢查、建置與回歸測試，再 commit。
+9. 建立「形似字」資料：答案選項只能來自官方形似字辨別題庫核定的同一字形群組；不可把例詞的第一個字直接當成答案，也不可因讀音、詞義相近就混入非形似字。每個選項都要有包含該字的有效例詞，並保留一份公開衍生的核對基準 `docs/lookalike-approved-groups.json`。
+10. 合併 `course-index.json`，不能因為只產生部分課次而刪掉既有課次。
+11. 寫入外部進度檔。中斷後以 `--resume` 跳過已有且狀態為 `ready` 的課次。
+12. 執行資料驗證、成語情境句檢查、形似字選項核對、修辭關鍵字變色檢查、圖片容量檢查、建置與回歸測試，再 commit。
 
 ## Python 批次產生器
 
@@ -85,10 +86,22 @@ G6A 的 12 課先在私有工作區完成：
 2. 每課保留來源檔案 SHA-256 與 `official_characters`，不從舊稿臆造缺漏內容。
 3. 由私有 Python source-materializer（`materialize_g6_rebuild_from_clean_sources.py`）產出各模組的標準化 JSON 與圖片 manifest。
 4. 人工確認語詞、圖片、修辭、聆聽答案與課文段落 fallback。
-5. 通過審核後才寫入 `public/data/115AG6H/lessonNN.json` 與 `public/assets/115AG6H/lessonNN/`。
-6. 使用同一組容量、資料、建置與回歸測試。
+5. 形似字選項以官方形似字辨別題庫的 `official_shape_group` 逐組核對；若選項無法確認為字形相近，標記 `REVIEW_REQUIRED`，不得直接公開。
+6. 通過審核後才寫入 `public/data/115AG6H/lessonNN.json` 與 `public/assets/115AG6H/lessonNN/`。
+7. 使用同一組容量、資料、建置與回歸測試。
 
 G6A 目前的 12 課是已審核基準，不在公開產生器中重新攜入官方原始檔；若日後需要重建，只需把私有來源清理器的輸出接到相同的標準化課次契約，再沿用索引、圖片與驗證階段。
+
+## 形似字選項核對
+
+官方來源的「形似字」資料常以例詞呈現，不能用例詞第一字推回答案字。批次處理時，先以官方題庫的空格正解與 `official_shape_group` 建立群組，再寫入公開 JSON；例詞只作為該字的作答情境。G3A、G6A 已核對內容的群組基準保存於 `docs/lookalike-approved-groups.json`，不包含官方原始檔或完整教材。
+
+```powershell
+cd apps/mandarin
+node scripts/test-lookalike-shape-groups.mjs
+```
+
+這項測試會跨公開的 G3A、G6A 與目前有資料的其他年級課次，檢查每課群組與核對基準一致、每組至少兩個不重複漢字、每個例詞確實包含對應字；若未經核對的字混入選項，建置前即失敗。G1A 尚無已核准的形似字資料時，維持模組未開放，不以猜測內容填充。
 
 ## 修辭小偵探關鍵字變色規則
 
@@ -120,6 +133,7 @@ python scripts/fill_vocabulary_images.py `
 ```powershell
 cd apps/mandarin
 npm.cmd run validate
+node scripts/test-lookalike-shape-groups.mjs
 npm.cmd run build
 npm.cmd run check-dist
 npm.cmd run check-assets

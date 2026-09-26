@@ -1,6 +1,16 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/public/data/115AG6H/lesson01.json`～`lesson12.json`、`apps/mandarin/docs/lookalike-approved-groups.json`、`apps/mandarin/scripts/sync-g6a-lookalikes-from-official.mjs`、`apps/mandarin/scripts/test-lookalike-shape-groups.mjs`、`apps/mandarin/scripts/test-g6a-lesson05-lookalikes.mjs`、`apps/mandarin/docs/lesson-generation-workflow.md`
+- 做了什麼：檢視 G1A／G3A／G6A 公開形似字題目。G6A 12 課改以官方形似字辨別題庫的 `official_shape_group` 重建答案群組，修正「例詞第一字被誤當答案」造成的非形似字選項，並保留每個選項的有效例詞；G3A 已有課次與 G1A 目前未開放課次一併建立公開核對基準。
+- 核對結果：跨 31 課、162 組、524 個選項檢查；每組至少兩個不重複漢字，每個例詞均包含對應字，沒有未核准字形混入。G1A 目前沒有形似字資料，維持未開放，不猜測補題。
+- 工作流：新增「形似字選項核對」規則，禁止用例詞第一字推回答案；新增私有官方題庫同步工具與 `docs/lookalike-approved-groups.json` 衍生基準，後續批次產出必須先核對 `official_shape_group`，不確定即標記 `REVIEW_REQUIRED`。
+- 驗證：`test-lookalike-shape-groups.mjs`、`test-g6a-lesson05-lookalikes.mjs`、`test-lookalike-splitting.mjs`、全部 `scripts/test-*.mjs`、`npm.cmd run validate`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過；建置後 31 份課次資料、520 張 WebP/AVIF、總資產 40.24 MiB。
+- 推送：本次修改已建立本地提交，尚未推送。開工前 `git pull --rebase origin main` 因 GitHub Schannel `SEC_E_NO_CREDENTIALS` 失敗，未強行改動遠端。
+- 待辦／給下一棒：新增或匯入形似字題目時，先更新私有官方核對資料，再重新產生公開核對基準並執行 `node scripts/test-lookalike-shape-groups.mjs`；不要直接手動加入未核准選項。
+- 注意：官方教材、Wordwall 私有題庫與來源檔未加入公開 repo；只提交衍生後的課程 JSON、核對基準與工具。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG3H/lesson01.json`～`lesson06.json`、`apps/mandarin/public/data/115AG6H/lesson02.json`、`lesson04.json`、`lesson11.json`、`apps/mandarin/scripts/test-rhetoric-highlights.mjs`、`apps/mandarin/docs/lesson-generation-workflow.md`
 - 做了什麼：全面檢查 G1A／G3A／G6A 所有課次的「修辭小偵探」；G3A 24 筆與 G6A 3 筆原本缺少關鍵字框標，已補上 `﹁關鍵字﹂`，G1A 無修辭資料的課次維持未開放。回歸測試現在會跨三個年級掃描 58 筆可用題目，確認每筆都有成對標記、標記數與 `.rhetoric-highlight` 變色片段一致，且朗讀純文字不含框字。工作流已列入資料標記、畫面變色、朗讀去標記與跨年級檢查規則。
 - 驗證：`test-rhetoric-highlights.mjs`、全部 `scripts/test-*.mjs`、`npm.cmd run validate`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過；建置後檢查 31 份課次資料與 520 張 WebP/AVIF 資產。

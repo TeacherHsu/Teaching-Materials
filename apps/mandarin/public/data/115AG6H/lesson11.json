@@ -1301,152 +1301,220 @@
       "group_no": "1",
       "chars": [
         {
-          "char": "肉",
-          "example": "肉羹、羹湯"
+          "char": "凋",
+          "example": "凋零、凋謝"
         },
         {
-          "char": "美",
-          "example": "美麗、美食"
-        }
-      ],
-      "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
-    },
-    {
-      "id": "lookalike:115AG6H11:02",
-      "group_no": "2",
-      "chars": [
-        {
-          "char": "勾",
-          "example": "勾芡、芡粉"
-        },
-        {
-          "char": "欠",
-          "example": "欠缺、哈欠"
-        }
-      ],
-      "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
-    },
-    {
-      "id": "lookalike:115AG6H11:03",
-      "group_no": "3",
-      "chars": [
-        {
-          "char": "濃",
-          "example": "濃稠、稠密"
+          "char": "綢",
+          "example": "絲綢、綢緞"
         },
         {
           "char": "調",
           "example": "調味、調整"
         },
         {
-          "char": "周",
-          "example": "周到、周末"
+          "char": "週",
+          "example": "週末、週刊"
+        },
+        {
+          "char": "稠",
+          "example": "濃稠"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H11:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "窩",
+          "example": "雞窩、窩心"
+        },
+        {
+          "char": "蝸",
+          "example": "蝸牛、蝸居"
+        },
+        {
+          "char": "禍",
+          "example": "災禍、嫁禍"
+        },
+        {
+          "char": "過",
+          "example": "經過、過年"
+        },
+        {
+          "char": "鍋",
+          "example": "下鍋"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H11:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "卷",
+          "example": "考卷、問卷"
+        },
+        {
+          "char": "巷",
+          "example": "巷口"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H11:04",
       "group_no": "4",
       "chars": [
         {
-          "char": "火",
-          "example": "火鍋、鍋蓋"
+          "char": "怯",
+          "example": "膽怯、怯場"
         },
         {
-          "char": "漩",
-          "example": "漩渦、渦流"
+          "char": "法",
+          "example": "辦法、法術"
         },
         {
-          "char": "經",
-          "example": "經過、過年"
+          "char": "祛",
+          "example": "祛除、祛病"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H11:05",
       "group_no": "5",
       "chars": [
         {
-          "char": "喉",
-          "example": "喉嚨、咽喉"
+          "char": "叛",
+          "example": "叛徒、叛逆"
         },
         {
-          "char": "等",
-          "example": "等候、候車"
+          "char": "版",
+          "example": "出版、絕版"
         },
         {
-          "char": "猴",
-          "example": "猴子、猴年"
+          "char": "飯",
+          "example": "吃飯、米飯"
+        },
+        {
+          "char": "販",
+          "example": "小販"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H11:06",
       "group_no": "6",
       "chars": [
         {
-          "char": "小",
-          "example": "小巷、巷口"
+          "char": "槳",
+          "example": "划槳、船槳"
         },
         {
-          "char": "港",
-          "example": "港口、港灣"
+          "char": "漿",
+          "example": "米漿、豆漿"
         },
         {
-          "char": "捲",
-          "example": "捲起、蛋捲"
+          "char": "獎",
+          "example": "獎狀、特獎"
+        },
+        {
+          "char": "醬",
+          "example": "醬油、果醬"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H11:07",
       "group_no": "7",
       "chars": [
         {
-          "char": "攤",
-          "example": "攤販、販售"
+          "char": "胖",
+          "example": "發胖、胖嘟嘟"
         },
         {
-          "char": "吃",
-          "example": "吃飯、米飯"
-        },
-        {
-          "char": "木",
-          "example": "木板、黑板"
+          "char": "拌",
+          "example": "拌勻"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H11:08",
       "group_no": "8",
       "chars": [
         {
-          "char": "醬",
-          "example": "醬油、果醬"
+          "char": "俠",
+          "example": "武俠、俠客"
         },
         {
-          "char": "將",
-          "example": "將來、將軍"
+          "char": "挾",
+          "example": "挾帶、挾持"
         },
         {
-          "char": "米",
-          "example": "米漿、豆漿"
+          "char": "頰",
+          "example": "臉頰、面頰"
+        },
+        {
+          "char": "狹",
+          "example": "狹小"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H11:09",
+      "group_no": "9",
+      "chars": [
+        {
+          "char": "寒",
+          "example": "寒冬、寒流"
+        },
+        {
+          "char": "賽",
+          "example": "賽程、決賽"
+        },
+        {
+          "char": "塞",
+          "example": "堵塞"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H11:10",
+      "group_no": "10",
+      "chars": [
+        {
+          "char": "轎",
+          "example": "花轎、轎車"
+        },
+        {
+          "char": "驕",
+          "example": "驕傲、驕縱"
+        },
+        {
+          "char": "嬌",
+          "example": "嬌客"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     }
   ],
   "listening": [

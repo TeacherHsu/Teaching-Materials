@@ -2045,108 +2045,180 @@
       "group_no": "1",
       "chars": [
         {
-          "char": "頭",
-          "example": "頭銜、銜接"
-        },
-        {
-          "char": "街",
-          "example": "街道、街口"
+          "char": "衡",
+          "example": "平衡、衡量"
         },
         {
           "char": "衝",
           "example": "衝動、衝突"
         },
         {
-          "char": "平",
-          "example": "平衡、衡量"
+          "char": "街",
+          "example": "街道、街口"
+        },
+        {
+          "char": "銜",
+          "example": "銜接"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H12:02",
       "group_no": "2",
       "chars": [
         {
+          "char": "膏",
+          "example": "藥膏、牙膏"
+        },
+        {
+          "char": "毫",
+          "example": "揮毫"
+        },
+        {
           "char": "豪",
           "example": "豪門、自豪"
-        },
-        {
-          "char": "絲",
-          "example": "絲毫、毫無"
-        },
-        {
-          "char": "藥",
-          "example": "藥膏、牙膏"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H12:03",
       "group_no": "3",
       "chars": [
         {
-          "char": "收",
-          "example": "收割、割草"
-        },
-        {
-          "char": "瞎",
-          "example": "瞎忙、瞎說"
+          "char": "轄",
+          "example": "轄區、管轄"
         },
         {
           "char": "豁",
           "example": "豁達、豁免"
         },
         {
-          "char": "轄",
-          "example": "轄區、管轄"
+          "char": "瞎",
+          "example": "瞎忙、瞎說"
+        },
+        {
+          "char": "割",
+          "example": "分割"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H12:04",
       "group_no": "4",
       "chars": [
         {
-          "char": "出",
-          "example": "出嫁、嫁娶"
+          "char": "稼",
+          "example": "莊稼、稼穡"
         },
         {
           "char": "傢",
           "example": "傢伙、傢俱"
         },
         {
-          "char": "莊",
-          "example": "莊稼、稼穡"
+          "char": "嫁",
+          "example": "出嫁"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     },
     {
       "id": "lookalike:115AG6H12:05",
       "group_no": "5",
       "chars": [
         {
-          "char": "攤",
-          "example": "攤販、地攤"
+          "char": "癱",
+          "example": "癱瘓、癱軟"
         },
         {
-          "char": "海",
+          "char": "灘",
           "example": "海灘、沙灘"
         },
         {
-          "char": "癱",
-          "example": "癱瘓、癱軟"
+          "char": "攤",
+          "example": "攤販、地攤"
         }
       ],
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H12:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "檻",
+          "example": "門檻、欄檻"
+        },
+        {
+          "char": "籃",
+          "example": "籃球、竹籃"
+        },
+        {
+          "char": "藍",
+          "example": "藍天、藍色"
+        },
+        {
+          "char": "監",
+          "example": "監察"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H12:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "祖",
+          "example": "祖宗、祖先"
+        },
+        {
+          "char": "阻",
+          "example": "阻止、阻擋"
+        },
+        {
+          "char": "組",
+          "example": "編組、組別"
+        },
+        {
+          "char": "租",
+          "example": "租借、租屋"
+        },
+        {
+          "char": "粗",
+          "example": "粗壯"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
+    },
+    {
+      "id": "lookalike:115AG6H12:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "蹄",
+          "example": "馬蹄、蹄印"
+        },
+        {
+          "char": "啼",
+          "example": "啼哭、啼叫"
+        },
+        {
+          "char": "蒂",
+          "example": "梵蒂岡"
+        }
+      ],
+      "status": "ready",
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：字形辨別；官方形似字辨別題庫核對）"
     }
   ],
   "listening": [
