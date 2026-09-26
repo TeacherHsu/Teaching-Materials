@@ -1,7 +1,7 @@
 // 「課文地圖」模組：先看整課的結構樹（開頭／經過／結果…），再把每段大意
 // 拖進正確的結構空格。沿用 DragToSlot（IdiomBuilder 已用過的同一引擎）：
 // 每一題的空格只放「結構角色」，context 顯示這一段的大意卡＋整課結構樹
-// （目前段落所屬的節點會標記起來），寬螢幕（≥900px）樹狀橫排，手機單欄堆疊。
+// （目前段落所屬的節點只標示位置、不直接顯示角色答案），寬螢幕（≥900px）樹狀橫排，手機單欄堆疊。
 // 規格 docs/specs/2026-09-25-mandarin-dabutie-importer.md §4：
 // modules key `structure_map`，資料來自 `paragraph_summary[].structure_role`。
 import { h, clear } from '../utils/dom.js';
@@ -60,7 +60,8 @@ function buildTree(paragraphs, currentParaNo) {
     tree.appendChild(
       h('div', {
         class: `structure-map__node${isCurrent ? ' structure-map__node--current' : ''}`,
-      }, node.role),
+        'aria-label': isCurrent ? '目前段落的位置，結構角色待判斷' : `結構角色：${node.role}`,
+      }, isCurrent ? '目前段落' : node.role),
     );
   });
   return tree;
