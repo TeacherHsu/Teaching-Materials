@@ -1,6 +1,12 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/src/activities/sentencePractice.js`、`apps/mandarin/scripts/test-sentence-practice-prompt.mjs`。
+- 做了什麼：移除句子重組題幹中對學生不必要的「（句型：……）」資訊；保留上方的「句子重組」與步驟／題數進度提示。
+- 驗證：新增題幹回歸測試；`npm.cmd run validate`、完整 `scripts/test-*.mjs`、升級權限 `npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets` 均通過。已開啟第五課句型練習本機預覽。
+- 提交／推送：本項待建立本地提交；尚未推送遠端。工作樹另有既存的 G2A 未追蹤／修改內容，未納入本項。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：G4A 第 5 課「失聰」語詞卡圖片 `apps/mandarin/public/assets/115AG4K/lesson05/vocabulary/l05-16-v2.webp` 與 `lesson05.json` 圖片引用。
 - 做了什麼：修正右側女孩多出的下垂手臂／手，保留耳旁的手與抓背包帶的手；原 `l05-16.webp` 保留，公開資料改接修正版 `l05-16-v2.webp`。
 - 資產規格：修正版為 1200×1200 RGB WebP，82,912 bytes；無文字、無浮水印，未改動其他語詞卡。

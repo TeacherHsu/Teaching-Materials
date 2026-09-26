@@ -130,7 +130,7 @@ function buildRoundsFromExamples(examples, promptPrefix) {
       const chunks = manualParts || splitSentenceIntoChunks(sentence);
       if (chunks.length < 2) return null;
       return {
-        prompt: `${promptPrefix}（句型：${pattern.structure || pattern.head}）`,
+        prompt: promptPrefix,
         parts: chunks,
         solution: chunks,
         draft: pattern.examples_status === 'draft',
