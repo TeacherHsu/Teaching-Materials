@@ -15,6 +15,14 @@
 ---
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/public/data/course-index.json`、`apps/mandarin/scripts/generate_lessons.py`
+- 做了什麼：首頁課本名稱由「翰林一年級上」簡化為「翰林一上」；課本索引依年級由小到大排列為一、三、六年級；批次產生器同步固定 G1A 顯示名稱與後續索引排序。
+- 驗證：`npm.cmd run validate`、年級排序／名稱檢查、`npm.cmd run build`、`npm.cmd run check-dist` 均通過。
+- 推送：尚未推送；本次修改待建立本地提交。
+- 待辦／給下一棒：新增年級時沿用 `update_course_index()` 的數字排序。
+- 注意：未修改課程內容、圖片或既有課次資料。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/scripts/generate_lessons.py`、`apps/mandarin/docs/lesson-generation-workflow.md`、`apps/mandarin/public/data/115AG3H/`、`apps/mandarin/public/assets/115AG3H/`、`apps/mandarin/public/data/115AG1H/`、`apps/mandarin/public/assets/115AG1H/`、`apps/mandarin/public/data/course-index.json`
 - 做了什麼：建立可重跑的教材網站工作流與 Python 批次產生器；完成 G3A 第 7～12 課，G3A 語詞優先採用已審核的 low-g3-v2 語詞／圖片 manifest，避免圖詞錯配；修正課程索引的增量合併，不會因批次只產生部分課次而刪除既有課次；完成 G1A 第 1～7 課，生字造詞依私有 Excel 常用度取前三項，語詞圖片轉為 WebP；加入外部進度檔與 `--resume` 接續規則、筆順連結與段落 fallback。
 - 驗證：`python -m py_compile apps/mandarin/scripts/generate_lessons.py`、G3A／G1A dry-run 與實際批次產出、`npm.cmd run validate`、全部 `scripts/test-*.mjs`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；公開資料共 31 課，資產 25.14 MiB，單張 WebP／AVIF 均未超過 300 KiB。

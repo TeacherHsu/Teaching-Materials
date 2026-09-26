@@ -8,7 +8,7 @@ skipped by ``--resume`` after their output files still exist.
 
 Profiles currently covered by this public adapter:
   * g3a: 115 翰林三上, L07-L12 (the same adapter can rebuild L01-L12)
-  * g1a: 115 翰林一年級上, L01-L07
+  * g1a: 115 翰林一上, L01-L07
 
 G6A uses the same output contract and validation gates.  Its approved JSON is
 already in the repository; future G6A rebuilds should feed a prepared source
@@ -55,7 +55,7 @@ class Profile:
 
 PROFILES = {
     "g3a": Profile("g3a", "115AG3H", 3, "上", "翰林三上", "115G3A_國語 翰"),
-    "g1a": Profile("g1a", "115AG1H", 1, "上", "翰林一年級上", "115G1A_國語 翰"),
+    "g1a": Profile("g1a", "115AG1H", 1, "上", "翰林一上", "115G1A_國語 翰"),
 }
 
 
@@ -745,6 +745,7 @@ def update_course_index(repo_root: Path, profile: Profile, lessons: list[dict]) 
             existing.clear()
             existing.update(volume)
         grade["label"] = profile.label
+    grades.sort(key=lambda item: int(item.get("grade", 10**9)))
     save_json(path, index)
 
 

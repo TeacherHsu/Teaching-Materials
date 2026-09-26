@@ -1,6 +1,68 @@
 {
   "grades": [
     {
+      "grade": 1,
+      "label": "翰林一上",
+      "volumes": [
+        {
+          "code": "115AG1H",
+          "publisher": "翰林",
+          "term": "上",
+          "label": "115 學年上學期",
+          "units": [
+            {
+              "no": 1,
+              "title": "一年級上學期國語課程",
+              "lessons": [
+                {
+                  "lesson_id": "115AG1H01",
+                  "lesson_no": 1,
+                  "title": "一起走",
+                  "data": "data/115AG1H/lesson01.json"
+                },
+                {
+                  "lesson_id": "115AG1H02",
+                  "lesson_no": 2,
+                  "title": "大風吹",
+                  "data": "data/115AG1H/lesson02.json"
+                },
+                {
+                  "lesson_id": "115AG1H03",
+                  "lesson_no": 3,
+                  "title": "火車過山洞",
+                  "data": "data/115AG1H/lesson03.json"
+                },
+                {
+                  "lesson_id": "115AG1H04",
+                  "lesson_no": 4,
+                  "title": "請問",
+                  "data": "data/115AG1H/lesson04.json"
+                },
+                {
+                  "lesson_id": "115AG1H05",
+                  "lesson_no": 5,
+                  "title": "七彩的滑梯",
+                  "data": "data/115AG1H/lesson05.json"
+                },
+                {
+                  "lesson_id": "115AG1H06",
+                  "lesson_no": 6,
+                  "title": "秋千",
+                  "data": "data/115AG1H/lesson06.json"
+                },
+                {
+                  "lesson_id": "115AG1H07",
+                  "lesson_no": 7,
+                  "title": "回音",
+                  "data": "data/115AG1H/lesson07.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "grade": 3,
       "label": "翰林三上",
       "volumes": [
@@ -177,68 +239,6 @@
                   "lesson_no": 12,
                   "title": "存根",
                   "data": "data/115AG6H/lesson12.json"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "grade": 1,
-      "label": "翰林一年級上",
-      "volumes": [
-        {
-          "code": "115AG1H",
-          "publisher": "翰林",
-          "term": "上",
-          "label": "115 學年上學期",
-          "units": [
-            {
-              "no": 1,
-              "title": "一年級上學期國語課程",
-              "lessons": [
-                {
-                  "lesson_id": "115AG1H01",
-                  "lesson_no": 1,
-                  "title": "一起走",
-                  "data": "data/115AG1H/lesson01.json"
-                },
-                {
-                  "lesson_id": "115AG1H02",
-                  "lesson_no": 2,
-                  "title": "大風吹",
-                  "data": "data/115AG1H/lesson02.json"
-                },
-                {
-                  "lesson_id": "115AG1H03",
-                  "lesson_no": 3,
-                  "title": "火車過山洞",
-                  "data": "data/115AG1H/lesson03.json"
-                },
-                {
-                  "lesson_id": "115AG1H04",
-                  "lesson_no": 4,
-                  "title": "請問",
-                  "data": "data/115AG1H/lesson04.json"
-                },
-                {
-                  "lesson_id": "115AG1H05",
-                  "lesson_no": 5,
-                  "title": "七彩的滑梯",
-                  "data": "data/115AG1H/lesson05.json"
-                },
-                {
-                  "lesson_id": "115AG1H06",
-                  "lesson_no": 6,
-                  "title": "秋千",
-                  "data": "data/115AG1H/lesson06.json"
-                },
-                {
-                  "lesson_id": "115AG1H07",
-                  "lesson_no": 7,
-                  "title": "回音",
-                  "data": "data/115AG1H/lesson07.json"
                 }
               ]
             }
