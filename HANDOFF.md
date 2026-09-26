@@ -1,6 +1,12 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/src/components/IdiomBuilder.js`、`DragToSlot.js`、成語填句子回歸測試。
+- 做了什麼：第二關「成語填句子」改為把候選成語直接填入句子內的 `（　　）`，呈現為 `（成語）`；移除句子外獨立的 `?` 答案框，句中括號仍可點擊清除並重新選擇。第一關維持成語內嵌生字空格，並改用正確的操作說明。
+- 驗證：新增 `test-idiom-fill-sentence.mjs`；該測試、`test-drag-to-slot.mjs`、`test-module-star-coverage.mjs`、全部 `scripts/test-*.mjs`、`npm.cmd run validate`、`npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets`、`git diff --check` 均通過；本機預覽確認成語拖放操作說明正確。
+- 推送：尚未推送；本次修改待建立本地提交。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：全面稽核 G1A／G3A／G6A 的「舊字新詞」跨課索引、公開課次 JSON、批次產出工具與工作流。
 - 做了什麼：發現 G1A 7 課、G6A 12 課、G3A 第 7～12 課的 `review_words` 有缺漏；新增 `scripts/sync-review-coverage.mjs`，以各課既有公開生字建立累積索引，並同步 `modules.review` 狀態。`generate_lessons.py` 批次產出後也會自動同步，不再只開放 G3A 前 5 課。
 - 查核結果：31 課中 28 課可開始舊字新詞；三個年級各自第 1 課因沒有前課資料維持鎖定，其餘第 2 課起均能產生 3～5 題跨課複習題。

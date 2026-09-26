@@ -25,6 +25,7 @@ const DEFAULT_HINT = '再看看題目，仔細比對一下再選。';
  *     id: string,
  *     context: Node | string,      // 題目情境（例如成語定義卡、生活語句）
  *     slotLabel?: string,          // 空格佔位文字，預設「？」
+ *     slotValue?: (label: string) => string, // 已選答案在空格中的顯示文字
  *     options: Array<{id: string, label: string}>, // 候選詞塊（含干擾項）
  *     answerId: string,
  *     hint?: string,
@@ -104,7 +105,14 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
 
     if (dragEnabled) {
       root.appendChild(
-        h('p', { class: 'drag-to-slot__instruction' }, '把正確答案拖到空格裡，也可以先點選答案，再點一下空格。'),
+        h(
+          'p',
+          { class: 'drag-to-slot__instruction' },
+          item.slotInstruction
+            || (item.inlineSlot
+              ? '點選正確答案，會直接填入空格；也可以拖曳到空格。'
+              : '把正確答案拖到空格裡，也可以先點選答案，再點一下空格。'),
+        ),
       );
     }
 
@@ -134,7 +142,10 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
 
     function refreshSlot() {
       const opt = options.find((o) => o.id === placed);
-      slot.textContent = opt ? opt.label : item.slotLabel || '？';
+      const displayValue = opt
+        ? (item.slotValue ? item.slotValue(opt.label) : opt.label)
+        : item.slotLabel || '？';
+      slot.textContent = displayValue;
       slot.classList.toggle('drag-to-slot__slot--filled', !!placed);
       if (slotSpeakWrap) clear(slotSpeakWrap);
       if (opt && slotSpeakWrap) {
@@ -320,7 +331,9 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
         answered = true;
         recordOutcome({ firstTry: false, revealed: true });
         const answerOpt = options.find((o) => o.id === item.answerId);
-        slot.textContent = answerOpt ? answerOpt.label : item.slotLabel;
+        slot.textContent = answerOpt
+          ? (item.slotValue ? item.slotValue(answerOpt.label) : answerOpt.label)
+          : item.slotLabel;
         slot.classList.remove('quiz-option--incorrect');
         slot.classList.add('quiz-option--correct');
         if (slotSpeakWrap) clear(slotSpeakWrap);

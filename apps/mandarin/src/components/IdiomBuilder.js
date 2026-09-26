@@ -58,6 +58,7 @@ function buildRound1(idioms, assetBase) {
         slotLabel: '？',
         options: [{ id: `char:${idm.related_char}`, label: idm.related_char }, ...distractorChars],
         answerId: `char:${idm.related_char}`,
+        slotInstruction: '點選正確的字，會直接填入成語中的空格；也可以拖曳到空格。',
         hint: '想一想這個成語的意思，哪一個字放進去最通順？',
         explanation: `「${idm.idiom}」：${idm.definition}`,
       };
@@ -81,18 +82,29 @@ function buildRound2(idioms, idiomSentences) {
     .slice(0, ROUND_SIZE_MAX)
     .map((s) => {
       const idm = idiomById.get(s.idiom_id);
-      const blanked = s.rewritten.replace(idm.idiom, '（　　）');
-      const contextChildren = [h('p', { class: 'quiz-stem' }, blanked)];
+      const [prefix, suffix] = s.rewritten.split(idm.idiom);
+      const inlineSlot = h('button', {
+        class: 'sentence-chip drag-to-slot__slot drag-to-slot__inline-slot',
+        type: 'button',
+        'aria-label': '句子中的成語空格，可將候選成語填入；點一下可以清除已填入的成語',
+      }, '（　　）');
+      const inlineSlotWrap = h('span', { class: 'idiom-builder__inline-slot-wrap' }, [inlineSlot]);
+      const blanked = `${prefix}（　　）${suffix}`;
+      const contextChildren = [h('p', { class: 'quiz-stem' }, [prefix, inlineSlotWrap, suffix])];
       if (s.status === 'draft') contextChildren.unshift(reviewPendingBadge());
       const context = h('div', { class: 'idiom-builder__card' }, contextChildren);
       const distractors = pickDistractors(usableIdioms, idm.id, 2).map((d) => ({ id: d.id, label: d.idiom }));
       return {
         id: s.id,
         context,
+        inlineSlot,
+        inlineSlotWrap,
         speakText: blanked,
-        slotLabel: '？',
+        slotLabel: '（　　）',
+        slotValue: (label) => `（${label}）`,
         options: [{ id: idm.id, label: idm.idiom }, ...distractors],
         answerId: idm.id,
+        slotInstruction: '點選正確成語，會直接填入句中的括號；也可以拖曳到括號。',
         hint: `想一想「${idm.idiom}」的意思，放進句子裡通不通順？`,
         explanation: `「${idm.idiom}」：${idm.definition}`,
       };
