@@ -81,7 +81,7 @@ G6A 的 12 課先在私有工作區完成：
 
 1. 以官方課文、形音資料、修辭輕鬆學與閱讀理解提問建立來源台帳。
 2. 每課保留來源檔案 SHA-256 與 `official_characters`，不從舊稿臆造缺漏內容。
-3. 由私有 source-materializer 產出各模組的標準化 JSON 與圖片 manifest。
+3. 由私有 Python source-materializer（`materialize_g6_rebuild_from_clean_sources.py`）產出各模組的標準化 JSON 與圖片 manifest。
 4. 人工確認語詞、圖片、修辭、聆聽答案與課文段落 fallback。
 5. 通過審核後才寫入 `public/data/115AG6H/lessonNN.json` 與 `public/assets/115AG6H/lessonNN/`。
 6. 使用同一組容量、資料、建置與回歸測試。
