@@ -1,6 +1,16 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/public/data/115AG3H/lesson07.json`～`lesson12.json`、`apps/mandarin/docs/lookalike-approved-groups.json`、`apps/mandarin/scripts/publish-g3a-extensions.mjs`、`apps/mandarin/docs/lesson-generation-workflow.md`
+- 做了什麼：依使用者明確授權「不用審核、直接公開」，將 G3A 第 7～12 課已有來源的句型、成語與具體情境句、聚焦理解提問、形似字資料直接寫入公開課次 JSON；同步開放句型練習、成語練習與形似字模組，並加入可重跑的直出工具與工作流說明。
+- 發佈數量：6 課共 33 筆句型、32 個成語、32 筆成語填句子情境句、36 筆閱讀提問、38 組形似字；每筆成語例句均包含成語且保留具體生活語境。
+- 圖片：來源成語圖仍為未壓縮 PNG，本次沒有帶入公開 repo；JSON 使用 `image: null`，避免違反單張 WebP／AVIF 300 KiB 與單課 4 MiB 規則，也避免私有絕對路徑外洩。
+- 驗證：`npm.cmd run validate`、`test-idiom-sentence-contexts.mjs`、`test-lookalike-shape-groups.mjs`、`npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets` 均通過；建置後 `public/assets` 為 40.37 MiB、521 張 WebP/AVIF，開發伺服器 HTTP 200 且第 7 課成語模組狀態為 `available`。
+- 推送：本次修改尚未建立提交，也尚未推送；本機預覽伺服器仍在工作階段運作。
+- 待辦／給下一棒：若發現直出內容錯誤，直接修正對應公開 JSON 後重跑上述測試；若要補成語圖片，先壓成符合容量規則的 WebP／AVIF，再回寫 `image`。
+- 注意：這批資料是使用者授權直出，未經人工審核；官方原始教材、私有工作檔與未壓縮圖片未加入公開 repo。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG6H/lesson05.json`、`apps/mandarin/public/assets/115AG6H/lesson05/vocabulary/l05-05-v2.webp`
 - 做了什麼：針對 G6A 第 5 課「淘氣」圖片與詞意不符的回報，核對公開資產後確認正確圖像應為孩童頑皮、玩具散落的情境；為避免瀏覽器或舊預覽伺服器快取同名舊樹木圖片，保留原檔並以版本化檔名 `l05-05-v2.webp` 回寫資料。圖片為 WebP，132,542 bytes；原檔未刪除。
 - 預覽：重新啟動 Vite 開發伺服器，`http://127.0.0.1:5173/` 可連線；伺服器直接回傳新的 `/assets/115AG6H/lesson05/vocabulary/l05-05-v2.webp`，HTTP 200、`image/webp`。

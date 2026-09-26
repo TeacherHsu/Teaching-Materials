@@ -430,9 +430,345 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG3H11:877e13b9",
+      "idiom": "斬草除根",
+      "definition": "比喻除去禍根，不留後患。",
+      "related_char": "除",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H11:4ffbb3b9",
+      "idiom": "烏煙瘴氣",
+      "definition": "形容人事或氣氛黑暗、混亂。",
+      "related_char": "煙",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H11:d7d6ac73",
+      "idiom": "息息相關",
+      "definition": "比喻關係極為密切。",
+      "related_char": "息",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H11:9142ee06",
+      "idiom": "不修邊幅",
+      "definition": "形容不注意衣飾、儀容。",
+      "related_char": "修",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H11:05c2942e",
+      "idiom": "幸災樂禍",
+      "definition": "指對別人的不幸遭遇引以為樂。",
+      "related_char": "幸",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H11:81199934",
+      "idiom": "七零八落",
+      "definition": "形容零散、不完整的樣子。",
+      "related_char": "零",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG3H11:e6504350",
+      "idiom_id": "idiom:115AG3H11:877e13b9",
+      "rewritten": "園丁把雜草斬草除根，花圃才不會很快又長滿。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H11:8a779996",
+      "idiom_id": "idiom:115AG3H11:4ffbb3b9",
+      "rewritten": "垃圾堆放太久，讓附近的空氣變得烏煙瘴氣。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H11:cfc9441b",
+      "idiom_id": "idiom:115AG3H11:d7d6ac73",
+      "rewritten": "飲水和每個人的生活息息相關。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H11:a538a25e",
+      "idiom_id": "idiom:115AG3H11:9142ee06",
+      "rewritten": "參加典禮前要整理儀容，不能不修邊幅。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H11:655a2e02",
+      "idiom_id": "idiom:115AG3H11:05c2942e",
+      "rewritten": "同學比賽失誤時，我們應該安慰他，不可以幸災樂禍。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H11:38bf56c0",
+      "idiom_id": "idiom:115AG3H11:81199934",
+      "rewritten": "大風吹過後，院子裡的落葉七零八落。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG3H11:6ca7d96f",
+      "category": "造句練習",
+      "head": "檢查",
+      "structure": "檢查",
+      "description": "檢視查看。",
+      "guide": "＿＿＿＿以前，要仔細檢查＿＿＿＿。",
+      "analysis": "",
+      "examples": [
+        "開學後，學生將暑假作業送交老師檢查。",
+        "出門前哥哥仔細檢查書包"
+      ],
+      "example_parts": [
+        [
+          "開學後",
+          "學生",
+          "將暑假作業送交老師",
+          "檢查"
+        ],
+        [
+          "出門前",
+          "哥哥",
+          "仔細",
+          "檢查書包"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／造句）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H11:c709cefa",
+      "category": "句型練習",
+      "head": "除了……，還……",
+      "structure": "（做什麼事），除了（可以達到某個目的），還（可以達到另一個目的）",
+      "description": "寫一件事情，再用「除了……還……」說出兩個好處。",
+      "guide": "寫一件事情，再用「除了……還……」說出兩個好處。",
+      "analysis": "運動除了可以讓身體健康，還能抒發壓力。",
+      "examples": [
+        "閱讀除了可以增加知識還能培養想像力",
+        "整理房間除了可以保持整潔還能快速找到物品",
+        "參加社團除了可以學習技能還能認識新朋友"
+      ],
+      "example_parts": [
+        [
+          "閱讀",
+          "除了可以增加知識",
+          "還能培養想像力"
+        ],
+        [
+          "整理房間",
+          "除了可以保持整潔",
+          "還能快速找到物品"
+        ],
+        [
+          "參加社團",
+          "除了可以學習技能",
+          "還能認識新朋友"
+        ]
+      ],
+      "color_legend": [
+        "事情",
+        "第一個目的",
+        "另一個目的"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H11:a6623cca",
+      "category": "句型練習",
+      "head": "……，才能……",
+      "structure": "（做什麼事情），才能（有什麼結果）",
+      "description": "先寫必要的條件，再用「才能」寫出結果。",
+      "guide": "先寫必要的條件，再用「才能」寫出結果。",
+      "analysis": "確認門窗瓦斯都關好了，媽媽才能安心出門。",
+      "examples": [
+        "每天按時複習學生才能熟悉學過的內容",
+        "遵守交通規則大家才能平安到達目的地",
+        "準備好材料我們才能順利完成實驗"
+      ],
+      "example_parts": [
+        [
+          "每天按時複習",
+          "學生",
+          "才能熟悉學過的內容"
+        ],
+        [
+          "遵守交通規則",
+          "大家",
+          "才能平安到達目的地"
+        ],
+        [
+          "準備好材料",
+          "我們",
+          "才能順利完成實驗"
+        ]
+      ],
+      "color_legend": [
+        "必要條件",
+        "人物",
+        "結果"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H11:b73e069a",
+      "category": "句型練習",
+      "head": "車子傳出一陣陣奇怪的聲音",
+      "structure": "名詞＋動詞＋一＋單位量詞疊字詞＋形容詞＋的＋名詞",
+      "description": "選一個事物，用量詞疊字詞和形容詞完成短語。",
+      "guide": "選一個事物，用量詞疊字詞和形容詞完成短語。",
+      "analysis": "車子傳出一陣陣奇怪的聲音",
+      "examples": [
+        "窗口飛進一隻隻可愛的小鳥",
+        "池塘冒出一顆顆透明的泡泡",
+        "天空飄來一朵朵潔白的雲"
+      ],
+      "example_parts": [
+        [
+          "窗口",
+          "飛進",
+          "一隻隻",
+          "可愛",
+          "的小鳥"
+        ],
+        [
+          "池塘",
+          "冒出",
+          "一顆顆",
+          "透明",
+          "的泡泡"
+        ],
+        [
+          "天空",
+          "飄來",
+          "一朵朵",
+          "潔白",
+          "的雲"
+        ]
+      ],
+      "color_legend": [
+        "事物",
+        "動作",
+        "數量詞",
+        "形容詞",
+        "名詞"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H11:10c7f7f2",
+      "category": "句型練習",
+      "head": "急忙跑過去",
+      "structure": "副詞＋動詞（動作）",
+      "description": "選一個副詞，寫出動作進行的樣子。",
+      "guide": "選一個副詞，寫出動作進行的樣子。",
+      "analysis": "急忙跑過去",
+      "examples": [
+        "大聲唱著歌",
+        "慢慢游過去",
+        "輕輕關上門"
+      ],
+      "example_parts": [
+        [
+          "大聲",
+          "唱",
+          "著歌"
+        ],
+        [
+          "慢慢",
+          "游",
+          "過去"
+        ],
+        [
+          "輕輕",
+          "關",
+          "上門"
+        ]
+      ],
+      "color_legend": [
+        "副詞",
+        "動作",
+        "方向或補充"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H11:c620e135",
+      "category": "句型練習",
+      "head": "……有人……，有人……",
+      "structure": "名詞（地點）＋有人（做什麼事情）＋有人（做什麼事情）＋並列複句",
+      "description": "選一個地點，並列描寫兩種人物活動。",
+      "guide": "選一個地點，並列描寫兩種人物活動。",
+      "analysis": "操場上有人練習跑步，有人練習跳遠，大家都在為校慶運動會做準備。",
+      "examples": [
+        "公園裡有人散步有人騎腳踏車大家都享受悠閒時光",
+        "教室裡有人讀書有人整理桌面大家都安靜做自己的事",
+        "圖書館裡有人查資料有人閱讀故事大家都專心學習"
+      ],
+      "example_parts": [
+        [
+          "公園裡",
+          "有人散步",
+          "有人騎腳踏車",
+          "大家都享受悠閒時光"
+        ],
+        [
+          "教室裡",
+          "有人讀書",
+          "有人整理桌面",
+          "大家都安靜做自己的事"
+        ],
+        [
+          "圖書館裡",
+          "有人查資料",
+          "有人閱讀故事",
+          "大家都專心學習"
+        ]
+      ],
+      "color_legend": [
+        "地點",
+        "第一件事",
+        "第二件事",
+        "共同情形"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    }
+  ],
   "rhetoric": [],
   "paragraph_summary": [
     {
@@ -490,11 +826,210 @@
     "status": "approved",
     "source": "derived:official-paragraph-summary"
   },
-  "reading_questions": [],
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG3H11:01",
+      "stem": "本課文的文體和主要內容是什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "文體：{記敘文}；新年前夜，機車在路上故障；修車師傅熱心幫忙，大家互相感謝並祝福彼此一路平安。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／第11課　一路平安"
+    },
+    {
+      "id": "reading_question:115AG3H11:02",
+      "stem": "「修車、師傅」是什麼意思？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "把壞掉的車子修好。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／課文重點："
+    },
+    {
+      "id": "reading_question:115AG3H11:03",
+      "stem": "新年前夜，機車在路上故障；修車師傅熱心幫忙，大家互相感謝並祝福彼此一路平安。",
+      "strategy_tag": "整合訊息",
+      "answer_hint": "請用自己的話說出〈一路平安〉的大意。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／事情發展："
+    },
+    {
+      "id": "reading_question:115AG3H11:04",
+      "stem": "感謝：對別人的幫助表示謝意。",
+      "strategy_tag": "語詞理解",
+      "answer_hint": "一路平安：祝福人在路途中安全順利的話。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／語詞理解："
+    },
+    {
+      "id": "reading_question:115AG3H11:05",
+      "stem": "我從〈一路平安〉學到什麼？",
+      "strategy_tag": "反思評鑑",
+      "answer_hint": "請寫下課文帶給你的啟發。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／我的想法："
+    },
+    {
+      "id": "reading_question:115AG3H11:06",
+      "stem": "如果我是課文中的人物，我會怎麼做？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "請用課文線索說明理由。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／延伸思考："
+    }
+  ],
   "polysemy": [],
   "polysemy_senses": [],
   "polyphones": [],
-  "lookalikes": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG3H11:1",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "途",
+          "zhuyin": null,
+          "example": "途中、用途"
+        },
+        {
+          "char": "除",
+          "zhuyin": null,
+          "example": "掃除、除法"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H11:2",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "陳",
+          "zhuyin": null,
+          "example": "陳列、陳舊"
+        },
+        {
+          "char": "陣",
+          "zhuyin": null,
+          "example": "陣容、陣地"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H11:3",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "候",
+          "zhuyin": null,
+          "example": "時候、等候"
+        },
+        {
+          "char": "條",
+          "zhuyin": null,
+          "example": "條件、枝條"
+        },
+        {
+          "char": "修",
+          "zhuyin": null,
+          "example": "修剪、修理"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H11:4",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "敞",
+          "zhuyin": null,
+          "example": "敞開、寬敞"
+        },
+        {
+          "char": "廠",
+          "zhuyin": null,
+          "example": "工廠、廠房"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H11:5",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "聯",
+          "zhuyin": null,
+          "example": "聯絡、門聯"
+        },
+        {
+          "char": "關",
+          "zhuyin": null,
+          "example": "關心、關門"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H11:6",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "托",
+          "zhuyin": null,
+          "example": "襯托、托付"
+        },
+        {
+          "char": "拖",
+          "zhuyin": null,
+          "example": "拖吊、拖地"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H11:7",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "辛",
+          "zhuyin": null,
+          "example": "辛苦、辛勞"
+        },
+        {
+          "char": "幸",
+          "zhuyin": null,
+          "example": "幸福、幸運"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H11:8",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "伶",
+          "zhuyin": null,
+          "example": "伶俐、伶人"
+        },
+        {
+          "char": "零",
+          "zhuyin": null,
+          "example": "零星、零用"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    }
+  ],
   "listening": [],
   "review_words": {},
   "extensions": [
@@ -678,7 +1213,7 @@
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
+      "status": "available",
       "activity": "sentence-practice",
       "note": "句型資料待審核。"
     },
@@ -695,7 +1230,7 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
+      "status": "available",
       "activity": "idiom-builder",
       "note": "成語資料待審核。"
     },
@@ -713,7 +1248,7 @@
     },
     "lookalikes": {
       "label": "形似字",
-      "status": "missing",
+      "status": "available",
       "activity": "lookalikes",
       "note": "形似字資料待審核。"
     },

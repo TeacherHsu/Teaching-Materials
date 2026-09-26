@@ -358,9 +358,332 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG3H12:13de3f30",
+      "idiom": "一團和氣",
+      "definition": "形容一片祥和的氣氛。",
+      "related_char": "團",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H12:3833659b",
+      "idiom": "潛移默化",
+      "definition": "人的思想、性格或習慣在不知不覺中改變。",
+      "related_char": "默",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H12:cf6105a2",
+      "idiom": "人去樓空",
+      "definition": "表示舊地重遊時，人事已非。",
+      "related_char": "樓",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H12:68c8bf4a",
+      "idiom": "一視同仁",
+      "definition": "平等對待，毫無歧視。",
+      "related_char": "視",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H12:70d4598b",
+      "idiom": "破鏡重圓",
+      "definition": "比喻夫妻離散或感情決裂後重新團圓和好。",
+      "related_char": "鏡",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG3H12:6f7e9fbb",
+      "idiom_id": "idiom:115AG3H12:13de3f30",
+      "rewritten": "大家在家庭聚會中互相禮讓，氣氛一團和氣。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H12:c0c7b87f",
+      "idiom_id": "idiom:115AG3H12:3833659b",
+      "rewritten": "孩子每天閱讀好書，在潛移默化中養成良好習慣。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H12:45840d91",
+      "idiom_id": "idiom:115AG3H12:cf6105a2",
+      "rewritten": "多年後回到老家，熟悉的房子已人去樓空。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H12:57b43baf",
+      "idiom_id": "idiom:115AG3H12:68c8bf4a",
+      "rewritten": "老師對班上每位同學一視同仁。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H12:69f06d5f",
+      "idiom_id": "idiom:115AG3H12:70d4598b",
+      "rewritten": "誤會說開後，兩位好朋友終於破鏡重圓。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG3H12:4ca2059c",
+      "category": "造句練習",
+      "head": "默默",
+      "structure": "默默",
+      "description": "沉靜不說話。",
+      "guide": "＿＿＿＿的時候，＿＿＿＿默默的＿＿＿＿。",
+      "analysis": "",
+      "examples": [
+        "下課時，他總是坐在座位，默默的看書。",
+        "午休時妹妹坐在窗邊默默的畫畫"
+      ],
+      "example_parts": [
+        [
+          "下課時",
+          "他",
+          "總是坐在座位",
+          "默默的看書"
+        ],
+        [
+          "午休時",
+          "妹妹",
+          "坐在窗邊",
+          "默默的畫畫"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／造句）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H12:cb1107f7",
+      "category": "造句練習",
+      "head": "匆匆忙忙",
+      "structure": "匆匆忙忙",
+      "description": "急忙。",
+      "guide": "＿＿＿＿匆匆忙忙的＿＿＿＿，準備＿＿＿＿。",
+      "analysis": "",
+      "examples": [
+        "姐姐匆匆忙忙的收拾書包，準備去學校。",
+        "哥哥匆匆忙忙的穿上外套準備去上課"
+      ],
+      "example_parts": [
+        [
+          "姐姐",
+          "匆匆忙忙",
+          "的收拾書包",
+          "準備去學校"
+        ],
+        [
+          "哥哥",
+          "匆匆忙忙",
+          "的穿上外套",
+          "準備去上課"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／造句）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H12:bec8c05b",
+      "category": "句型練習",
+      "head": "……，就……",
+      "structure": "（發生某一事件），就（產生的結果）",
+      "description": "先寫一件事，再用「就」接著寫結果。",
+      "guide": "先寫一件事，再用「就」接著寫結果。",
+      "analysis": "我們一直堅持下去，就會有成功的一天。",
+      "examples": [
+        "每天認真練習就會慢慢進步",
+        "大家互相合作就能完成任務",
+        "按時整理房間就能保持整潔"
+      ],
+      "example_parts": [
+        [
+          "每天認真練習",
+          "就",
+          "會慢慢進步"
+        ],
+        [
+          "大家互相合作",
+          "就",
+          "能完成任務"
+        ],
+        [
+          "按時整理房間",
+          "就",
+          "能保持整潔"
+        ]
+      ],
+      "color_legend": [
+        "事件",
+        "連接詞",
+        "結果"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H12:a3c56bd5",
+      "category": "句型練習",
+      "head": "……，沒想到……",
+      "structure": "（預想的情境），沒想到（情況／原因），（發生意外的結果）",
+      "description": "先寫原本的預想，再用「沒想到」寫出意外結果。",
+      "guide": "先寫原本的預想，再用「沒想到」寫出意外結果。",
+      "analysis": "我們已經提早出門了，沒想到卻遇到嚴重的塞車。",
+      "examples": [
+        "天空看起來很晴朗沒想到突然下起大雨",
+        "我準備了充足的材料沒想到還是少了一把剪刀",
+        "弟弟以為今天放假沒想到仍然要到學校上課"
+      ],
+      "example_parts": [
+        [
+          "天空看起來很晴朗",
+          "沒想到",
+          "突然下起大雨"
+        ],
+        [
+          "我準備了充足的材料",
+          "沒想到",
+          "還是少了一把剪刀"
+        ],
+        [
+          "弟弟以為今天放假",
+          "沒想到",
+          "仍然要到學校上課"
+        ]
+      ],
+      "color_legend": [
+        "原本情形",
+        "轉折詞",
+        "意外結果"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H12:4b1e3ba4",
+      "category": "句型練習",
+      "head": "緊緊握著嬸嬸的手",
+      "structure": "疊字副詞＋動詞＋著＋名詞（誰）＋的＋名詞（什麼事物）",
+      "description": "選一個人物和動作，用疊字副詞完成短語。",
+      "guide": "選一個人物和動作，用疊字副詞完成短語。",
+      "analysis": "緊緊握著嬸嬸的手",
+      "examples": [
+        "輕輕拍著弟弟的背",
+        "默默看著媽媽的眼睛",
+        "牢牢抓著爸爸的衣角"
+      ],
+      "example_parts": [
+        [
+          "輕輕",
+          "拍",
+          "著",
+          "弟弟",
+          "的",
+          "背"
+        ],
+        [
+          "默默",
+          "看",
+          "著",
+          "媽媽",
+          "的",
+          "眼睛"
+        ],
+        [
+          "牢牢",
+          "抓",
+          "著",
+          "爸爸",
+          "的",
+          "衣角"
+        ]
+      ],
+      "color_legend": [
+        "疊字副詞",
+        "動作",
+        "固定詞",
+        "人物",
+        "固定詞",
+        "事物"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H12:c0bd3f50",
+      "category": "句型練習",
+      "head": "長長的雨絲落在車窗上",
+      "structure": "疊字形容詞＋的＋名詞（什麼事物）＋動詞（動作）＋在＋名詞（什麼地方）",
+      "description": "選一個景物，寫出它在什麼地方做什麼。",
+      "guide": "選一個景物，寫出它在什麼地方做什麼。",
+      "analysis": "長長的雨絲落在車窗上",
+      "examples": [
+        "紅紅的花朵開在枝椏上",
+        "彎彎的月亮掛在天空中",
+        "亮亮的星星閃在夜空中"
+      ],
+      "example_parts": [
+        [
+          "紅紅",
+          "的",
+          "花朵",
+          "開",
+          "在",
+          "枝椏上"
+        ],
+        [
+          "彎彎",
+          "的",
+          "月亮",
+          "掛",
+          "在",
+          "天空中"
+        ],
+        [
+          "亮亮",
+          "的",
+          "星星",
+          "閃",
+          "在",
+          "夜空中"
+        ]
+      ],
+      "color_legend": [
+        "疊字形容詞",
+        "固定詞",
+        "事物",
+        "動作",
+        "固定詞",
+        "地方"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    }
+  ],
   "rhetoric": [],
   "paragraph_summary": [
     {
@@ -418,11 +741,143 @@
     "status": "approved",
     "source": "derived:official-paragraph-summary"
   },
-  "reading_questions": [],
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG3H12:01",
+      "stem": "本課文的文體和主要內容是什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "文體：{記敘文}；家人透過視訊和遠方的爺爺奶奶一起過節，即使不在同一個地方，也能分享想念與團圓的幸福。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／第12課　不一樣的團圓"
+    },
+    {
+      "id": "reading_question:115AG3H12:02",
+      "stem": "「團圓、視訊」是什麼意思？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "家人從各處回來相聚。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／課文重點："
+    },
+    {
+      "id": "reading_question:115AG3H12:03",
+      "stem": "家人透過視訊和遠方的爺爺奶奶一起過節，即使不在同一個地方，也能分享想念與團圓的幸福。",
+      "strategy_tag": "整合訊息",
+      "answer_hint": "請用自己的話說出〈不一樣的團圓〉的大意。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／事情發展："
+    },
+    {
+      "id": "reading_question:115AG3H12:04",
+      "stem": "親戚：和自己有親屬關係的人。",
+      "strategy_tag": "語詞理解",
+      "answer_hint": "想念：心中掛念著不在身邊的人。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／語詞理解："
+    },
+    {
+      "id": "reading_question:115AG3H12:05",
+      "stem": "我從〈不一樣的團圓〉學到什麼？",
+      "strategy_tag": "反思評鑑",
+      "answer_hint": "請寫下課文帶給你的啟發。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／我的想法："
+    },
+    {
+      "id": "reading_question:115AG3H12:06",
+      "stem": "如果我是課文中的人物，我會怎麼做？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "請用課文線索說明理由。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／延伸思考："
+    }
+  ],
   "polysemy": [],
   "polysemy_senses": [],
   "polyphones": [],
-  "lookalikes": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG3H12:1",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "傳",
+          "zhuyin": null,
+          "example": "傳說、傳話"
+        },
+        {
+          "char": "轉",
+          "zhuyin": null,
+          "example": "轉變、轉身"
+        },
+        {
+          "char": "團",
+          "zhuyin": null,
+          "example": "社團、團圓"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H12:2",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "乘",
+          "zhuyin": null,
+          "example": "乘車、乘法"
+        },
+        {
+          "char": "剩",
+          "zhuyin": null,
+          "example": "剩餘、剩下"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H12:3",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "點",
+          "zhuyin": null,
+          "example": "點心、點名"
+        },
+        {
+          "char": "默",
+          "zhuyin": null,
+          "example": "默契、默讀"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H12:4",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "屢",
+          "zhuyin": null,
+          "example": "屢次、屢屢"
+        },
+        {
+          "char": "數",
+          "zhuyin": null,
+          "example": "數學、數字"
+        },
+        {
+          "char": "樓",
+          "zhuyin": null,
+          "example": "樓層、大樓"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    }
+  ],
   "listening": [],
   "review_words": {},
   "extensions": [
@@ -606,7 +1061,7 @@
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
+      "status": "available",
       "activity": "sentence-practice",
       "note": "句型資料待審核。"
     },
@@ -623,7 +1078,7 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
+      "status": "available",
       "activity": "idiom-builder",
       "note": "成語資料待審核。"
     },
@@ -641,7 +1096,7 @@
     },
     "lookalikes": {
       "label": "形似字",
-      "status": "missing",
+      "status": "available",
       "activity": "lookalikes",
       "note": "形似字資料待審核。"
     },

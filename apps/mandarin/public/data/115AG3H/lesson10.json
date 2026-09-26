@@ -377,9 +377,301 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG3H10:a6a6d293",
+      "idiom": "江郎才盡",
+      "definition": "比喻才思枯竭，無法再寫出好作品。",
+      "related_char": "郎",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H10:b817cdd1",
+      "idiom": "不同凡響",
+      "definition": "比一般事物出色、不平凡。",
+      "related_char": "響",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H10:2a54c015",
+      "idiom": "有福同享",
+      "definition": "共同分享幸福和成果。",
+      "related_char": "福",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H10:fcafa387",
+      "idiom": "價值連城",
+      "definition": "形容東西十分昂貴、貴重。",
+      "related_char": "連",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H10:9a3a72fc",
+      "idiom": "相敬如賓",
+      "definition": "形容夫妻互相尊敬，如同對待賓客。",
+      "related_char": "敬",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H10:9b6e19ca",
+      "idiom": "笑裡藏刀",
+      "definition": "比喻外貌和善，內心卻另有打算。",
+      "related_char": "藏",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG3H10:4ad5b623",
+      "idiom_id": "idiom:115AG3H10:a6a6d293",
+      "rewritten": "小作家寫到最後，覺得江郎才盡，想不出新的故事。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H10:5389352d",
+      "idiom_id": "idiom:115AG3H10:b817cdd1",
+      "rewritten": "她在比賽中的表現不同凡響，獲得大家稱讚。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H10:6e49420b",
+      "idiom_id": "idiom:115AG3H10:2a54c015",
+      "rewritten": "好朋友一起分享獎品，約定有福同享。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H10:37801da9",
+      "idiom_id": "idiom:115AG3H10:fcafa387",
+      "rewritten": "博物館展示的古代玉器價值連城。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H10:9536b304",
+      "idiom_id": "idiom:115AG3H10:9a3a72fc",
+      "rewritten": "爺爺奶奶相處多年，仍然相敬如賓。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H10:01adcfb6",
+      "idiom_id": "idiom:115AG3H10:9b6e19ca",
+      "rewritten": "他表面答應幫忙，背後卻笑裡藏刀，大家要小心。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG3H10:21fccce8",
+      "category": "造句練習",
+      "head": "珍惜",
+      "structure": "珍惜",
+      "description": "重視愛惜。",
+      "guide": "因為＿＿＿＿得來不易，所以我們要珍惜＿＿＿＿。",
+      "analysis": "",
+      "examples": [
+        "餐桌上的每一樣食物都得來不易，大家要珍惜。",
+        "我們知道資源得來不易所以要珍惜物品"
+      ],
+      "example_parts": [
+        [
+          "餐桌上的每一樣食物",
+          "都得來不易",
+          "大家",
+          "要珍惜"
+        ],
+        [
+          "我們",
+          "知道資源得來不易",
+          "所以",
+          "要珍惜物品"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／造句）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H10:196d053c",
+      "category": "造句練習",
+      "head": "新奇",
+      "structure": "新奇",
+      "description": "新鮮奇特。",
+      "guide": "＿＿＿＿第一次＿＿＿＿，對＿＿＿＿感到很新奇。",
+      "analysis": "",
+      "examples": [
+        "妹妹第一次出國，對任何事物都感到很新奇。",
+        "弟弟第一次參觀科學館對每一項展品都感到很新奇"
+      ],
+      "example_parts": [
+        [
+          "妹妹第一次出國",
+          "對任何事物",
+          "都感到",
+          "很新奇"
+        ],
+        [
+          "弟弟第一次參觀科學館",
+          "對每一項展品",
+          "都感到",
+          "很新奇"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／造句）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H10:371b018d",
+      "category": "句型練習",
+      "head": "好像為她的美麗歡呼",
+      "structure": "好像為＋名詞（誰）＋的＋名詞（什麼）＋動詞（動作）",
+      "description": "選一個人物和一件事，再寫出適合的動作。",
+      "guide": "選一個人物和一件事，再寫出適合的動作。",
+      "analysis": "好像為她的美麗歡呼",
+      "examples": [
+        "好像為阿姨的婚禮祝福",
+        "好像為選手的勝利喝采",
+        "好像為朋友的幸運歌唱"
+      ],
+      "example_parts": [
+        [
+          "好像為",
+          "阿姨",
+          "的",
+          "婚禮",
+          "祝福"
+        ],
+        [
+          "好像為",
+          "選手",
+          "的",
+          "勝利",
+          "喝采"
+        ],
+        [
+          "好像為",
+          "朋友",
+          "的",
+          "幸運",
+          "歌唱"
+        ]
+      ],
+      "color_legend": [
+        "固定詞",
+        "人物",
+        "固定詞",
+        "事物",
+        "動作"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H10:847ac339",
+      "category": "句型練習",
+      "head": "熱熱鬧鬧的找回新娘",
+      "structure": "疊字副詞＋的＋動詞（動作）＋名詞（什麼事物）",
+      "description": "選一個疊字副詞，完成一個「怎樣做什麼」的短語。",
+      "guide": "選一個疊字副詞，完成一個「怎樣做什麼」的短語。",
+      "analysis": "熱熱鬧鬧的找回新娘",
+      "examples": [
+        "開開心心的帶回獎品",
+        "認認真真的寫完作業",
+        "匆匆忙忙的收好書包"
+      ],
+      "example_parts": [
+        [
+          "開開心心",
+          "的",
+          "帶回",
+          "獎品"
+        ],
+        [
+          "認認真真",
+          "的",
+          "寫完",
+          "作業"
+        ],
+        [
+          "匆匆忙忙",
+          "的",
+          "收好",
+          "書包"
+        ]
+      ],
+      "color_legend": [
+        "疊字副詞",
+        "固定詞",
+        "動作",
+        "事物"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H10:bee231c6",
+      "category": "句型練習",
+      "head": "先……，再……",
+      "structure": "（什麼情況），（誰）先（做什麼），再（做什麼）",
+      "description": "先寫第一件事，再寫接著發生的事。",
+      "guide": "先寫第一件事，再寫接著發生的事。",
+      "analysis": "每天吃完早餐後，爺爺會先照顧植物，再去公園散步。",
+      "examples": [
+        "放學回家後姐姐先完成作業再閱讀故事書",
+        "運動結束後同學們先收好器材再排隊回教室",
+        "晚餐吃完後爸爸先清洗碗盤再整理廚房"
+      ],
+      "example_parts": [
+        [
+          "放學回家後",
+          "姐姐",
+          "先完成作業",
+          "再閱讀故事書"
+        ],
+        [
+          "運動結束後",
+          "同學們",
+          "先收好器材",
+          "再排隊回教室"
+        ],
+        [
+          "晚餐吃完後",
+          "爸爸",
+          "先清洗碗盤",
+          "再整理廚房"
+        ]
+      ],
+      "color_legend": [
+        "情況",
+        "人物",
+        "先做的事",
+        "再做的事"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    }
+  ],
   "rhetoric": [],
   "paragraph_summary": [
     {
@@ -437,11 +729,192 @@
     "status": "approved",
     "source": "derived:official-paragraph-summary"
   },
-  "reading_questions": [],
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG3H10:01",
+      "stem": "本課文的文體和主要內容是什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "文體：{記敘文}；部落以秋千上的婚禮祝福新人，親友一起參與、分享食物；熱鬧的儀式留下珍貴回憶。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／第10課　秋千上的婚禮"
+    },
+    {
+      "id": "reading_question:115AG3H10:02",
+      "stem": "「婚禮、秋千」是什麼意思？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "兩人結婚時舉行的儀式。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／課文重點："
+    },
+    {
+      "id": "reading_question:115AG3H10:03",
+      "stem": "部落以秋千上的婚禮祝福新人，親友一起參與、分享食物；熱鬧的儀式留下珍貴回憶。",
+      "strategy_tag": "整合訊息",
+      "answer_hint": "請用自己的話說出〈秋千上的婚禮〉的大意。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／事情發展："
+    },
+    {
+      "id": "reading_question:115AG3H10:04",
+      "stem": "祝福：希望別人平安、幸福的話。",
+      "strategy_tag": "語詞理解",
+      "answer_hint": "親友：親人和朋友。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／語詞理解："
+    },
+    {
+      "id": "reading_question:115AG3H10:05",
+      "stem": "我從〈秋千上的婚禮〉學到什麼？",
+      "strategy_tag": "反思評鑑",
+      "answer_hint": "請寫下課文帶給你的啟發。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／我的想法："
+    },
+    {
+      "id": "reading_question:115AG3H10:06",
+      "stem": "如果我是課文中的人物，我會怎麼做？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "請用課文線索說明理由。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／延伸思考："
+    }
+  ],
   "polysemy": [],
   "polysemy_senses": [],
   "polyphones": [],
-  "lookalikes": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG3H10:1",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "朗",
+          "zhuyin": null,
+          "example": "開朗、明朗"
+        },
+        {
+          "char": "郎",
+          "zhuyin": null,
+          "example": "伴郎、新郎"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H10:2",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "慘",
+          "zhuyin": null,
+          "example": "悲慘、慘況"
+        },
+        {
+          "char": "參",
+          "zhuyin": null,
+          "example": "參選、參加、參拾元、參萬元、參差不齊、參伍錯綜、人參、參鬚"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H10:3",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "嚮",
+          "zhuyin": null,
+          "example": "嚮往、嚮導"
+        },
+        {
+          "char": "響",
+          "zhuyin": null,
+          "example": "聲響、音響"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H10:4",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "化",
+          "zhuyin": null,
+          "example": "變化、化學"
+        },
+        {
+          "char": "代",
+          "zhuyin": null,
+          "example": "代替、時代"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H10:5",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "醋",
+          "zhuyin": null,
+          "example": "黑醋、米醋"
+        },
+        {
+          "char": "酒",
+          "zhuyin": null,
+          "example": "米酒、酒杯"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H10:7",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "浴",
+          "zhuyin": null,
+          "example": "沐浴、浴室"
+        },
+        {
+          "char": "俗",
+          "zhuyin": null,
+          "example": "民俗、習俗"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H10:8",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "錯",
+          "zhuyin": null,
+          "example": "錯誤、錯字"
+        },
+        {
+          "char": "借",
+          "zhuyin": null,
+          "example": "借用、借書"
+        },
+        {
+          "char": "惜",
+          "zhuyin": null,
+          "example": "愛惜、珍惜"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    }
+  ],
   "listening": [],
   "review_words": {},
   "extensions": [
@@ -625,7 +1098,7 @@
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
+      "status": "available",
       "activity": "sentence-practice",
       "note": "句型資料待審核。"
     },
@@ -642,7 +1115,7 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
+      "status": "available",
       "activity": "idiom-builder",
       "note": "成語資料待審核。"
     },
@@ -660,7 +1133,7 @@
     },
     "lookalikes": {
       "label": "形似字",
-      "status": "missing",
+      "status": "available",
       "activity": "lookalikes",
       "note": "形似字資料待審核。"
     },

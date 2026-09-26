@@ -387,9 +387,238 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG3H07:f47922e4",
+      "idiom": "乘風破浪",
+      "definition": "順著風，破浪前進。比喻不畏艱難，奮勇前進。",
+      "related_char": "乘",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H07:9c22f179",
+      "idiom": "野心勃勃",
+      "definition": "形容企圖心非常強烈。",
+      "related_char": "野",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H07:1528b1fd",
+      "idiom": "發人深省",
+      "definition": "啟發人深入思考而有所醒悟。",
+      "related_char": "深",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H07:1422ea45",
+      "idiom": "欣欣向榮",
+      "definition": "形容草木生長繁盛，也比喻事業蓬勃發展。",
+      "related_char": "欣",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H07:2fa457c7",
+      "idiom": "賞心悅目",
+      "definition": "形容情景美好，使人心情舒暢。",
+      "related_char": "賞",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG3H07:14617f8c",
+      "idiom_id": "idiom:115AG3H07:f47922e4",
+      "rewritten": "少年帆船隊在海上乘風破浪，終於抵達小島。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H07:0ce42a7a",
+      "idiom_id": "idiom:115AG3H07:9c22f179",
+      "rewritten": "他野心勃勃地練習，希望將來成為優秀的發明家。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H07:22da06d3",
+      "idiom_id": "idiom:115AG3H07:1528b1fd",
+      "rewritten": "這部影片提醒大家愛護海洋，內容十分發人深省。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H07:00fb5ca0",
+      "idiom_id": "idiom:115AG3H07:1422ea45",
+      "rewritten": "春雨過後，校園裡的花草欣欣向榮。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H07:614c523d",
+      "idiom_id": "idiom:115AG3H07:2fa457c7",
+      "rewritten": "山上的雲海和花田景色賞心悅目。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG3H07:fc406a70",
+      "category": "造句練習",
+      "head": "瞞",
+      "structure": "瞞",
+      "description": "欺騙、隱藏。",
+      "guide": "他沒有隱瞞＿＿＿＿，而是＿＿＿＿。",
+      "analysis": "",
+      "examples": [
+        "他不隱瞞自己的過錯，表現出勇於負責的態度。",
+        "小美沒有隱瞞事情的真相誠實地向老師說明"
+      ],
+      "example_parts": [
+        [
+          "他",
+          "不隱瞞",
+          "自己的過錯",
+          "表現出勇於負責的態度"
+        ],
+        [
+          "小美",
+          "沒有隱瞞",
+          "事情的真相",
+          "誠實地向老師說明"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／造句）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H07:eb12a2bd",
+      "category": "造句練習",
+      "head": "欣賞",
+      "structure": "欣賞",
+      "description": "以喜愛的心情來玩賞。",
+      "guide": "我們在＿＿＿＿欣賞＿＿＿＿。",
+      "analysis": "",
+      "examples": [
+        "小新在公園裡欣賞美麗的花朵。",
+        "我們在音樂廳裡欣賞精彩的演奏"
+      ],
+      "example_parts": [
+        [
+          "小新",
+          "在公園裡",
+          "欣賞",
+          "美麗的花朵"
+        ],
+        [
+          "我們",
+          "在音樂廳裡",
+          "欣賞",
+          "精彩的演奏"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／造句）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H07:0235ad04",
+      "category": "句型練習",
+      "head": "在原野上快樂的打滾",
+      "structure": "在＋名詞（地點）＋上／下／裡＋副詞＋的＋動詞",
+      "description": "選一個地點和動作，完成這個短語。",
+      "guide": "選一個地點和動作，完成這個短語。",
+      "analysis": "在原野上快樂的打滾",
+      "examples": [
+        "在操場上盡情的奔跑",
+        "在水池裡愉快的游泳",
+        "在草地上開心的散步"
+      ],
+      "example_parts": [
+        [
+          "在",
+          "操場",
+          "上",
+          "盡情的",
+          "奔跑"
+        ],
+        [
+          "在",
+          "水池",
+          "裡",
+          "愉快的",
+          "游泳"
+        ],
+        [
+          "在",
+          "草地",
+          "上",
+          "開心的",
+          "散步"
+        ]
+      ],
+      "color_legend": [
+        "固定詞",
+        "地點",
+        "方位詞",
+        "副詞",
+        "動作"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H07:7688bcdb",
+      "category": "句型練習",
+      "head": "冰涼的雪花",
+      "structure": "形容詞（怎樣）＋的＋名詞（事物）",
+      "description": "選一樣事物，再用形容詞描述它。",
+      "guide": "選一樣事物，再用形容詞描述它。",
+      "analysis": "冰涼的雪花",
+      "examples": [
+        "涼爽的樹蔭",
+        "熱鬧的夜市",
+        "清香的花朵"
+      ],
+      "example_parts": [
+        [
+          "涼爽",
+          "的",
+          "樹蔭"
+        ],
+        [
+          "熱鬧",
+          "的",
+          "夜市"
+        ],
+        [
+          "清香",
+          "的",
+          "花朵"
+        ]
+      ],
+      "color_legend": [
+        "形容詞",
+        "固定詞",
+        "名詞"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    }
+  ],
   "rhetoric": [],
   "paragraph_summary": [
     {
@@ -447,11 +676,243 @@
     "status": "approved",
     "source": "derived:official-paragraph-summary"
   },
-  "reading_questions": [],
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG3H07:01",
+      "stem": "本課文的文體和主要內容是什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "文體：{詩歌}；詩人用鼻子聞風，從花香、草味和樹葉的氣息感受大自然；原來風也有不同的味道。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／第7課　風的味道"
+    },
+    {
+      "id": "reading_question:115AG3H07:02",
+      "stem": "「味道、花香」是什麼意思？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "用鼻子聞到或用舌頭嚐到的感覺。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／課文重點："
+    },
+    {
+      "id": "reading_question:115AG3H07:03",
+      "stem": "詩人用鼻子聞風，從花香、草味和樹葉的氣息感受大自然；原來風也有不同的味道。",
+      "strategy_tag": "整合訊息",
+      "answer_hint": "請用自己的話說出〈風的味道〉的大意。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／事情發展："
+    },
+    {
+      "id": "reading_question:115AG3H07:04",
+      "stem": "清新：乾淨舒爽，使人感到舒服。",
+      "strategy_tag": "語詞理解",
+      "answer_hint": "微風：輕輕吹過的小風。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／語詞理解："
+    },
+    {
+      "id": "reading_question:115AG3H07:05",
+      "stem": "我從〈風的味道〉學到什麼？",
+      "strategy_tag": "反思評鑑",
+      "answer_hint": "請寫下課文帶給你的啟發。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／我的想法："
+    },
+    {
+      "id": "reading_question:115AG3H07:06",
+      "stem": "如果我是課文中的人物，我會怎麼做？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "請用課文線索說明理由。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／延伸思考："
+    }
+  ],
   "polysemy": [],
   "polysemy_senses": [],
   "polyphones": [],
-  "lookalikes": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG3H07:1",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "喊",
+          "zhuyin": null,
+          "example": "喊叫、大喊"
+        },
+        {
+          "char": "減",
+          "zhuyin": null,
+          "example": "減法、減少"
+        },
+        {
+          "char": "鹹",
+          "zhuyin": null,
+          "example": "鹹味、鹹蛋"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H07:2",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "慰",
+          "zhuyin": null,
+          "example": "安慰、慰問"
+        },
+        {
+          "char": "蔚",
+          "zhuyin": null,
+          "example": "蔚藍、蔚為"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H07:3",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "抗",
+          "zhuyin": null,
+          "example": "抵抗、抗議"
+        },
+        {
+          "char": "航",
+          "zhuyin": null,
+          "example": "航行、航空"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H07:4",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "乖",
+          "zhuyin": null,
+          "example": "乖巧、乖順"
+        },
+        {
+          "char": "乘",
+          "zhuyin": null,
+          "example": "乘法、乘車"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H07:5",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "撬",
+          "zhuyin": null,
+          "example": "撬開、撬動"
+        },
+        {
+          "char": "橇",
+          "zhuyin": null,
+          "example": "雪橇、冰橇"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H07:6",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "被",
+          "zhuyin": null,
+          "example": "棉被、被子"
+        },
+        {
+          "char": "披",
+          "zhuyin": null,
+          "example": "披風、披肩"
+        },
+        {
+          "char": "波",
+          "zhuyin": null,
+          "example": "波浪、波紋"
+        },
+        {
+          "char": "坡",
+          "zhuyin": null,
+          "example": "山坡、坡地"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H07:7",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "舒",
+          "zhuyin": null,
+          "example": "舒服、舒展"
+        },
+        {
+          "char": "抒",
+          "zhuyin": null,
+          "example": "抒發、抒情"
+        },
+        {
+          "char": "野",
+          "zhuyin": null,
+          "example": "野蠻、野外"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H07:8",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "級",
+          "zhuyin": null,
+          "example": "年級、級別"
+        },
+        {
+          "char": "吸",
+          "zhuyin": null,
+          "example": "吸管、吸氣"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H07:9",
+      "group_no": "9",
+      "chars": [
+        {
+          "char": "滿",
+          "zhuyin": null,
+          "example": "充滿、滿足"
+        },
+        {
+          "char": "瞞",
+          "zhuyin": null,
+          "example": "隱瞞、欺瞞"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    }
+  ],
   "listening": [],
   "review_words": {},
   "extensions": [
@@ -635,7 +1096,7 @@
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
+      "status": "available",
       "activity": "sentence-practice",
       "note": "句型資料待審核。"
     },
@@ -652,7 +1113,7 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
+      "status": "available",
       "activity": "idiom-builder",
       "note": "成語資料待審核。"
     },
@@ -670,7 +1131,7 @@
     },
     "lookalikes": {
       "label": "形似字",
-      "status": "missing",
+      "status": "available",
       "activity": "lookalikes",
       "note": "形似字資料待審核。"
     },

@@ -60,6 +60,23 @@ python scripts/generate_lessons.py `
 
 第一次執行或來源已更新時，移除 `--resume`，讓課次重新生成。若只想檢查來源完整性，加入 `--dry-run`；dry-run 不會寫入公開課程資料。
 
+### 使用者授權直出模式
+
+若使用者明確表示「不用審核、直接公開」，可對已有私有來源與標準化資料的課次使用直出工具。這個模式只跳過人工等待，不跳過 JSON 結構、情境句、形似字群組、建置與容量檢查；沒有實際來源的模組仍維持未開放，不以空白題目冒充教材。
+
+G3A 第 7～12 課的直出指令：
+
+```powershell
+cd apps/mandarin
+node scripts/publish-g3a-extensions.mjs `
+  --source-root <private-workspace-root>\worksheet-batches\115\115G3A_國語 翰 `
+  --repo-root <repo>\apps\mandarin `
+  --lessons 7-12 `
+  --publish
+```
+
+工具會公開句型、成語與具體情境句、聚焦理解提問及形似字資料，並同步課次模組狀態與公開衍生核對基準。成語圖若仍是未壓縮 PNG，先保留 `image: null`，待轉成符合 WebP／AVIF 容量規則後再補圖；不得把私有絕對路徑寫入公開 JSON。直出內容標記為使用者授權的 `ready`／`approved`，後續發現錯誤時直接修正並重新執行相同檢查。
+
 ### G1A 第 1–7 課
 
 ```powershell

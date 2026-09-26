@@ -396,9 +396,320 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG3H09:53a34d84",
+      "idiom": "交頭接耳",
+      "definition": "形容低聲私語。",
+      "related_char": "交",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H09:cd137c19",
+      "idiom": "如影隨形",
+      "definition": "比喻彼此關係密切，總是緊緊跟隨。",
+      "related_char": "隨",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H09:46b55577",
+      "idiom": "投其所好",
+      "definition": "迎合他人的愛好。",
+      "related_char": "投",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H09:f4fe0c88",
+      "idiom": "夜以繼日",
+      "definition": "日夜不停地持續工作。",
+      "related_char": "繼",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H09:e0f6244b",
+      "idiom": "隔岸觀火",
+      "definition": "比喻對別人的困難不伸出援手。",
+      "related_char": "岸",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG3H09:63a07f5e",
+      "idiom_id": "idiom:115AG3H09:53a34d84",
+      "rewritten": "上課時同學們交頭接耳，老師只好提醒大家安靜。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H09:e916b658",
+      "idiom_id": "idiom:115AG3H09:cd137c19",
+      "rewritten": "小狗一路跟著主人，如影隨形。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H09:39c2969c",
+      "idiom_id": "idiom:115AG3H09:46b55577",
+      "rewritten": "他知道哥哥喜歡拼圖，便投其所好送上一盒拼圖。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H09:5ce4f69a",
+      "idiom_id": "idiom:115AG3H09:f4fe0c88",
+      "rewritten": "研究團隊夜以繼日地整理資料，終於找到答案。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H09:40b5aa96",
+      "idiom_id": "idiom:115AG3H09:e0f6244b",
+      "rewritten": "同學遇到困難時，我們應該幫忙，不能隔岸觀火。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG3H09:43f527a9",
+      "category": "造句練習",
+      "head": "挑戰",
+      "structure": "挑戰",
+      "description": "面對考驗，克服困難。",
+      "guide": "＿＿＿＿做好準備，勇敢挑戰＿＿＿＿。",
+      "analysis": "",
+      "examples": [
+        "我們應該讓孩子在成長中學會負起責任，勇敢挑戰困難。",
+        "登山隊員做好充分準備勇敢挑戰高山"
+      ],
+      "example_parts": [
+        [
+          "我們",
+          "應該讓孩子學會負起責任",
+          "勇敢",
+          "挑戰困難"
+        ],
+        [
+          "登山隊員",
+          "做好充分準備",
+          "勇敢",
+          "挑戰高山"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／造句）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H09:7f2c47a2",
+      "category": "造句練習",
+      "head": "著名",
+      "structure": "著名",
+      "description": "名聲響亮。",
+      "guide": "＿＿＿＿非常著名，常吸引＿＿＿＿。",
+      "analysis": "",
+      "examples": [
+        "這家店的牛肉麵非常著名，每天都有很多人排隊。",
+        "這座古老的建築非常著名假日常吸引遊客參觀"
+      ],
+      "example_parts": [
+        [
+          "這家店的牛肉麵",
+          "非常著名",
+          "每天",
+          "都有很多人排隊"
+        ],
+        [
+          "這座古老的建築",
+          "非常著名",
+          "假日",
+          "常吸引遊客參觀"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／造句）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H09:be68e12f",
+      "category": "句型練習",
+      "head": "浪花一曲曲輕唱",
+      "structure": "名詞（誰或什麼事物）＋一＋量詞疊字詞＋動詞",
+      "description": "選一個事物，再用量詞疊字詞完成短語。",
+      "guide": "選一個事物，再用量詞疊字詞完成短語。",
+      "analysis": "浪花一曲曲輕唱",
+      "examples": [
+        "我們一聲聲歡笑",
+        "花兒一朵朵綻放",
+        "鳥兒一隻隻飛翔"
+      ],
+      "example_parts": [
+        [
+          "我們",
+          "一聲聲",
+          "歡笑"
+        ],
+        [
+          "花兒",
+          "一朵朵",
+          "綻放"
+        ],
+        [
+          "鳥兒",
+          "一隻隻",
+          "飛翔"
+        ]
+      ],
+      "color_legend": [
+        "事物",
+        "數量詞",
+        "動作"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H09:abd15598",
+      "category": "句型練習",
+      "head": "踩著大大小小的石頭",
+      "structure": "動詞＋著＋疊字形容詞＋的＋名詞",
+      "description": "選一個動作和事物，用疊字形容詞完成短語。",
+      "guide": "選一個動作和事物，用疊字形容詞完成短語。",
+      "analysis": "踩著大大小小的石頭",
+      "examples": [
+        "堆著高高低低的積木",
+        "寫著密密麻麻的筆記",
+        "掛著大大小小的燈籠"
+      ],
+      "example_parts": [
+        [
+          "堆",
+          "著",
+          "高高低低",
+          "的",
+          "積木"
+        ],
+        [
+          "寫",
+          "著",
+          "密密麻麻",
+          "的",
+          "筆記"
+        ],
+        [
+          "掛",
+          "著",
+          "大大小小",
+          "的",
+          "燈籠"
+        ]
+      ],
+      "color_legend": [
+        "動詞",
+        "固定詞",
+        "疊字形容詞",
+        "固定詞",
+        "名詞"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H09:041100a2",
+      "category": "句型練習",
+      "head": "一邊……一邊……",
+      "structure": "（事物）一邊（有什麼樣的事物），一邊（有什麼樣的事物）",
+      "description": "選一個地方，分別描述它兩邊的景物。",
+      "guide": "選一個地方，分別描述它兩邊的景物。",
+      "analysis": "這座橋梁一邊是鄉村，一邊是都市，是重要的建築物。",
+      "examples": [
+        "這條步道一邊是山壁一邊是大海景色十分壯觀",
+        "這間教室一邊是窗戶一邊是書櫃空間明亮整齊",
+        "這座公園一邊是花園一邊是草地適合全家休息"
+      ],
+      "example_parts": [
+        [
+          "這條步道",
+          "一邊是山壁",
+          "一邊是大海",
+          "景色十分壯觀"
+        ],
+        [
+          "這間教室",
+          "一邊是窗戶",
+          "一邊是書櫃",
+          "空間明亮整齊"
+        ],
+        [
+          "這座公園",
+          "一邊是花園",
+          "一邊是草地",
+          "適合全家休息"
+        ]
+      ],
+      "color_legend": [
+        "事物",
+        "一側情形",
+        "另一側情形",
+        "補充說明"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H09:e83d78a2",
+      "category": "句型練習",
+      "head": "……，才……",
+      "structure": "（做到怎樣的條件），才（發生什麼事情）",
+      "description": "先寫必須完成的條件，再用「才」寫出結果。",
+      "guide": "先寫必須完成的條件，再用「才」寫出結果。",
+      "analysis": "奶奶確定公車停好後，才起身準備下車。",
+      "examples": [
+        "弟弟完成作業後才打開電視休息",
+        "大家確認安全後才開始進行實驗",
+        "媽媽看清楚路況後才開車通過路口"
+      ],
+      "example_parts": [
+        [
+          "弟弟完成作業後",
+          "才",
+          "打開電視休息"
+        ],
+        [
+          "大家確認安全後",
+          "才",
+          "開始進行實驗"
+        ],
+        [
+          "媽媽看清楚路況後",
+          "才",
+          "開車通過路口"
+        ]
+      ],
+      "color_legend": [
+        "必要條件",
+        "連接詞",
+        "結果"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    }
+  ],
   "rhetoric": [],
   "paragraph_summary": [
     {
@@ -456,11 +767,140 @@
     "status": "approved",
     "source": "derived:official-paragraph-summary"
   },
-  "reading_questions": [],
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG3H09:01",
+      "stem": "本課文的文體和主要內容是什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "文體：{記敘文}；作者走訪阿塱壹古道，沿著海岸和山林前進，看見林投樹與海岸景色，也體會保護古道的重要。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／第9課　阿塱壹古道"
+    },
+    {
+      "id": "reading_question:115AG3H09:02",
+      "stem": "「古道、海岸」是什麼意思？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "從前留下來的道路。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／課文重點："
+    },
+    {
+      "id": "reading_question:115AG3H09:03",
+      "stem": "作者走訪阿塱壹古道，沿著海岸和山林前進，看見林投樹與海岸景色，也體會保護古道的重要。",
+      "strategy_tag": "整合訊息",
+      "answer_hint": "請用自己的話說出〈阿塱壹古道〉的大意。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／事情發展："
+    },
+    {
+      "id": "reading_question:115AG3H09:04",
+      "stem": "林投：常生長在海岸邊的植物。",
+      "strategy_tag": "語詞理解",
+      "answer_hint": "挑戰：需要努力克服的困難事情。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／語詞理解："
+    },
+    {
+      "id": "reading_question:115AG3H09:05",
+      "stem": "我從〈阿塱壹古道〉學到什麼？",
+      "strategy_tag": "反思評鑑",
+      "answer_hint": "請寫下課文帶給你的啟發。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／我的想法："
+    },
+    {
+      "id": "reading_question:115AG3H09:06",
+      "stem": "如果我是課文中的人物，我會怎麼做？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "請用課文線索說明理由。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／延伸思考："
+    }
+  ],
   "polysemy": [],
   "polysemy_senses": [],
   "polyphones": [],
-  "lookalikes": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG3H09:3",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "設",
+          "zhuyin": null,
+          "example": "設計、建設"
+        },
+        {
+          "char": "服",
+          "zhuyin": null,
+          "example": "服飾、服裝"
+        },
+        {
+          "char": "段",
+          "zhuyin": null,
+          "example": "段落、階段"
+        },
+        {
+          "char": "投",
+          "zhuyin": null,
+          "example": "投球、投入"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H09:4",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "讀",
+          "zhuyin": null,
+          "example": "讀取、閱讀"
+        },
+        {
+          "char": "賣",
+          "zhuyin": null,
+          "example": "買賣、販賣"
+        },
+        {
+          "char": "續",
+          "zhuyin": null,
+          "example": "續集、繼續"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H09:5",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "盞",
+          "zhuyin": null,
+          "example": "一盞燈、燈盞"
+        },
+        {
+          "char": "錢",
+          "zhuyin": null,
+          "example": "錢包、金錢"
+        },
+        {
+          "char": "淺",
+          "zhuyin": null,
+          "example": "淺海、淺色"
+        },
+        {
+          "char": "棧",
+          "zhuyin": null,
+          "example": "客棧、棧道"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    }
+  ],
   "listening": [],
   "review_words": {},
   "extensions": [
@@ -644,7 +1084,7 @@
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
+      "status": "available",
       "activity": "sentence-practice",
       "note": "句型資料待審核。"
     },
@@ -661,7 +1101,7 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
+      "status": "available",
       "activity": "idiom-builder",
       "note": "成語資料待審核。"
     },
@@ -679,7 +1119,7 @@
     },
     "lookalikes": {
       "label": "形似字",
-      "status": "missing",
+      "status": "available",
       "activity": "lookalikes",
       "note": "形似字資料待審核。"
     },

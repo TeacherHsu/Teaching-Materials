@@ -377,9 +377,308 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
+  "idioms": [
+    {
+      "id": "idiom:115AG3H08:ae4e1153",
+      "idiom": "寄人籬下",
+      "definition": "依賴他人生活，不能自立。",
+      "related_char": "寄",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H08:cd95fe38",
+      "idiom": "金蟬脫殼",
+      "definition": "比喻用巧妙的方法脫身。",
+      "related_char": "殼",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H08:ed1b3c07",
+      "idiom": "物以類聚",
+      "definition": "同類的人或事物常聚集在一起。",
+      "related_char": "類",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H08:1d6a3c72",
+      "idiom": "守口如瓶",
+      "definition": "說話十分謹慎，嚴守祕密。",
+      "related_char": "瓶",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    },
+    {
+      "id": "idiom:115AG3H08:6174bf67",
+      "idiom": "志同道合",
+      "definition": "彼此志趣和理想相同。",
+      "related_char": "志",
+      "image": null,
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom_sentence:115AG3H08:19fbae55",
+      "idiom_id": "idiom:115AG3H08:ae4e1153",
+      "rewritten": "小鳥受傷時暫住在朋友家，不能一直寄人籬下。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H08:11c98783",
+      "idiom_id": "idiom:115AG3H08:cd95fe38",
+      "rewritten": "小偷趁警察轉身時金蟬脫殼，逃離了現場。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H08:73e595ac",
+      "idiom_id": "idiom:115AG3H08:ed1b3c07",
+      "rewritten": "喜歡閱讀的同學常聚在一起，真是物以類聚。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H08:be06883c",
+      "idiom_id": "idiom:115AG3H08:1d6a3c72",
+      "rewritten": "姐姐答應替我保守祕密，對這件事守口如瓶。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    },
+    {
+      "id": "idiom_sentence:115AG3H08:6d7d8194",
+      "idiom_id": "idiom:115AG3H08:6174bf67",
+      "rewritten": "小明和小華志同道合，都喜歡研究昆蟲。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（成語具體情境句，使用者授權直出）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "id": "sentence_pattern:115AG3H08:60212a81",
+      "category": "造句練習",
+      "head": "應該",
+      "structure": "應該",
+      "description": "表示推測，有不確定之意。",
+      "guide": "＿＿＿＿，應該是＿＿＿＿。",
+      "analysis": "",
+      "examples": [
+        "他已經遲到十分鐘，應該是路上塞車了。",
+        "天空烏雲密布遠處傳來雷聲應該是快要下雨了"
+      ],
+      "example_parts": [
+        [
+          "他",
+          "已經遲到十分鐘",
+          "應該是",
+          "路上塞車了"
+        ],
+        [
+          "天空烏雲密布",
+          "遠處傳來雷聲",
+          "應該是",
+          "快要下雨了"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／造句）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H08:4d963d58",
+      "category": "造句練習",
+      "head": "愛護",
+      "structure": "愛護",
+      "description": "愛惜保護。",
+      "guide": "＿＿＿＿在大家的愛護下，漸漸＿＿＿＿。",
+      "analysis": "",
+      "examples": [
+        "這隻小狗在全家人的愛護下，漸漸長大了。",
+        "校園裡的小樹在大家的愛護下慢慢長高了"
+      ],
+      "example_parts": [
+        [
+          "這隻小狗",
+          "在全家人的愛護下",
+          "漸漸",
+          "長大了"
+        ],
+        [
+          "校園裡的小樹",
+          "在大家的愛護下",
+          "慢慢",
+          "長高了"
+        ]
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／造句）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H08:60b91c9d",
+      "category": "句型練習",
+      "head": "從沙堆裡冒出來",
+      "structure": "從＋名詞（地點）＋動詞（動作）",
+      "description": "選一個地點，再用「從」寫出移動的動作。",
+      "guide": "選一個地點，再用「從」寫出移動的動作。",
+      "analysis": "從沙堆裡冒出來",
+      "examples": [
+        "從房間裡走出來",
+        "從滑梯上溜下來",
+        "從水面下浮上來"
+      ],
+      "example_parts": [
+        [
+          "從",
+          "房間裡",
+          "走出來"
+        ],
+        [
+          "從",
+          "滑梯上",
+          "溜下來"
+        ],
+        [
+          "從",
+          "水面下",
+          "浮上來"
+        ]
+      ],
+      "color_legend": [
+        "固定詞",
+        "地點",
+        "動作"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H08:8b01185a",
+      "category": "句型練習",
+      "head": "因為……只能……",
+      "structure": "因為（什麼原因），（誰）只能（什麼結果）",
+      "description": "想一個原因，再用「只能」寫出受到限制的結果。",
+      "guide": "想一個原因，再用「只能」寫出受到限制的結果。",
+      "analysis": "因為等不到公車，他只能自己走回家。",
+      "examples": [
+        "因為忘了帶雨傘妹妹只能留在屋簷下等雨停",
+        "因為圖書館休館我們只能改天再來借書",
+        "因為材料不夠大家只能先完成一半的作品"
+      ],
+      "example_parts": [
+        [
+          "因為忘了帶雨傘",
+          "妹妹只能",
+          "留在屋簷下等雨停"
+        ],
+        [
+          "因為圖書館休館",
+          "我們只能",
+          "改天再來借書"
+        ],
+        [
+          "因為材料不夠",
+          "大家只能",
+          "先完成一半的作品"
+        ]
+      ],
+      "color_legend": [
+        "原因",
+        "人物與限制",
+        "結果"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H08:5e5b939a",
+      "category": "句型練習",
+      "head": "慌慌張張的躲回沙堆",
+      "structure": "疊字副詞＋的＋動詞（做了什麼事）",
+      "description": "選一個疊字副詞，再寫出人物的動作。",
+      "guide": "選一個疊字副詞，再寫出人物的動作。",
+      "analysis": "慌慌張張的躲回沙堆",
+      "examples": [
+        "急急忙忙的走進教室",
+        "從從容容的走上舞臺",
+        "開開心心的跑回家裡"
+      ],
+      "example_parts": [
+        [
+          "急急忙忙",
+          "的",
+          "走進教室"
+        ],
+        [
+          "從從容容",
+          "的",
+          "走上舞臺"
+        ],
+        [
+          "開開心心",
+          "的",
+          "跑回家裡"
+        ]
+      ],
+      "color_legend": [
+        "疊字副詞",
+        "固定詞",
+        "動作"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    },
+    {
+      "id": "sentence_pattern:115AG3H08:9dc8bfc2",
+      "category": "句型練習",
+      "head": "……，竟然……",
+      "structure": "（有什麼情況），竟然（預料之外的後果）",
+      "description": "先寫原先的情況，再用「竟然」寫出意外結果。",
+      "guide": "先寫原先的情況，再用「竟然」寫出意外結果。",
+      "analysis": "我才睡了一下，竟然就天黑了。",
+      "examples": [
+        "弟弟第一次參加比賽竟然就得到冠軍",
+        "我們只離開一會兒竟然下起大雨",
+        "這棵小樹才種一年竟然已經開花了"
+      ],
+      "example_parts": [
+        [
+          "弟弟第一次參加比賽",
+          "竟然",
+          "就得到冠軍"
+        ],
+        [
+          "我們只離開一會兒",
+          "竟然",
+          "下起大雨"
+        ],
+        [
+          "這棵小樹才種一年",
+          "竟然",
+          "已經開花了"
+        ]
+      ],
+      "color_legend": [
+        "原先情況",
+        "轉折詞",
+        "意外結果"
+      ],
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
+    }
+  ],
   "rhetoric": [],
   "paragraph_summary": [
     {
@@ -437,11 +736,207 @@
     "status": "approved",
     "source": "derived:official-paragraph-summary"
   },
-  "reading_questions": [],
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG3H08:01",
+      "stem": "本課文的文體和主要內容是什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "文體：{記敘文}；寄居蟹找不到合適的貝殼，發現海灘上有垃圾；大家淨灘並保護環境，讓牠找到安心的新家。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／第8課　寄居蟹找新家"
+    },
+    {
+      "id": "reading_question:115AG3H08:02",
+      "stem": "「寄居蟹、貝殼」是什麼意思？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "會住在空貝殼裡的小螃蟹。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／課文重點："
+    },
+    {
+      "id": "reading_question:115AG3H08:03",
+      "stem": "寄居蟹找不到合適的貝殼，發現海灘上有垃圾；大家淨灘並保護環境，讓牠找到安心的新家。",
+      "strategy_tag": "整合訊息",
+      "answer_hint": "請用自己的話說出〈寄居蟹找新家〉的大意。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／事情發展："
+    },
+    {
+      "id": "reading_question:115AG3H08:04",
+      "stem": "淨灘：撿拾海灘垃圾、使海灘乾淨的活動。",
+      "strategy_tag": "語詞理解",
+      "answer_hint": "環境：人和動植物共同生活的周遭地方。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／語詞理解："
+    },
+    {
+      "id": "reading_question:115AG3H08:05",
+      "stem": "我從〈寄居蟹找新家〉學到什麼？",
+      "strategy_tag": "反思評鑑",
+      "answer_hint": "請寫下課文帶給你的啟發。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／我的想法："
+    },
+    {
+      "id": "reading_question:115AG3H08:06",
+      "stem": "如果我是課文中的人物，我會怎麼做？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "請用課文線索說明理由。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／延伸思考："
+    }
+  ],
   "polysemy": [],
   "polysemy_senses": [],
   "polyphones": [],
-  "lookalikes": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG3H08:1",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "慕",
+          "zhuyin": null,
+          "example": "羨慕、愛慕"
+        },
+        {
+          "char": "幕",
+          "zhuyin": null,
+          "example": "布幕、開幕"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H08:2",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "穀",
+          "zhuyin": null,
+          "example": "穀倉、五穀"
+        },
+        {
+          "char": "殼",
+          "zhuyin": null,
+          "example": "蛋殼、外殼"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H08:3",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "顧",
+          "zhuyin": null,
+          "example": "照顧、顧客"
+        },
+        {
+          "char": "顏",
+          "zhuyin": null,
+          "example": "顏色、容顏"
+        },
+        {
+          "char": "類",
+          "zhuyin": null,
+          "example": "分類、類別"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H08:4",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "靜",
+          "zhuyin": null,
+          "example": "安靜、寧靜"
+        },
+        {
+          "char": "淨",
+          "zhuyin": null,
+          "example": "乾淨、潔淨"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H08:5",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "怎",
+          "zhuyin": null,
+          "example": "怎麼、怎樣"
+        },
+        {
+          "char": "忘",
+          "zhuyin": null,
+          "example": "忘記、難忘"
+        },
+        {
+          "char": "志",
+          "zhuyin": null,
+          "example": "志向、志願"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H08:6",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "吸",
+          "zhuyin": null,
+          "example": "吸管、吸氣"
+        },
+        {
+          "char": "級",
+          "zhuyin": null,
+          "example": "班級、年級"
+        },
+        {
+          "char": "垃",
+          "zhuyin": null,
+          "example": "垃圾車、垃圾桶"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    },
+    {
+      "id": "lookalike:115AG3H08:8",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "獲",
+          "zhuyin": null,
+          "example": "獲得、獲勝"
+        },
+        {
+          "char": "穫",
+          "zhuyin": null,
+          "example": "收穫、秋穫"
+        },
+        {
+          "char": "護",
+          "zhuyin": null,
+          "example": "保護、護送"
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
+    }
+  ],
   "listening": [],
   "review_words": {},
   "extensions": [
@@ -625,7 +1120,7 @@
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
+      "status": "available",
       "activity": "sentence-practice",
       "note": "句型資料待審核。"
     },
@@ -642,7 +1137,7 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
+      "status": "available",
       "activity": "idiom-builder",
       "note": "成語資料待審核。"
     },
@@ -660,7 +1155,7 @@
     },
     "lookalikes": {
       "label": "形似字",
-      "status": "missing",
+      "status": "available",
       "activity": "lookalikes",
       "note": "形似字資料待審核。"
     },
