@@ -32,6 +32,7 @@ const requiredTests = [
   ['成語具體情境句', 'scripts/test-idiom-sentence-contexts.mjs'],
   ['成語點選填句', 'scripts/test-idiom-fill-sentence.mjs'],
   ['句型詞塊', 'scripts/test-sentence-chunking.mjs'],
+  ['句子排序部分判錯', 'scripts/test-sentence-ordering-feedback.mjs'],
   ['修辭關鍵字變色', 'scripts/test-rhetoric-highlights.mjs'],
   ['形似字官方群組', 'scripts/test-lookalike-shape-groups.mjs'],
   ['一字多義／多音／聽聽看', 'scripts/test-g3a-official-extensions.mjs'],
@@ -72,6 +73,7 @@ for (const [label, needle] of [
   ['成語具體情境規則', '可由上下文判斷的具體情境句'],
   ['修辭關鍵字規則', '﹁關鍵字﹂'],
   ['形似字核對規則', 'official_shape_group'],
+  ['各年級句子排序共用互動契約', '各年級「練習句子」的句子排序都必須使用共用'],
 ]) {
   if (workflow.includes(needle)) console.log(`[OK] 工作流文件：${label}`);
   else errors.push(`工作流文件缺少 ${label}（${needle}）`);

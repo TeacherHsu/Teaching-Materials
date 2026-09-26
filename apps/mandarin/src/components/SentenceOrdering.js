@@ -7,16 +7,25 @@ import { recordOutcome } from '../utils/scoreSession.js';
 import { celebrateCorrect } from '../utils/celebrate.js';
 
 /**
- * 句子排序：點選詞塊依序加入答案區；鍵盤可操作（button 逐一點選，
- * 不倚賴拖曳）。初始呈現順序保證被打亂（不等於正解、至少 2 個位置不同，seeded）。
- * 每個詞塊旁附獨立的小喇叭鈕（不與選字按鈕合一），可朗讀該詞塊但不會誤觸選字。
+ * 句子排序：點選詞塊依序加入答案區，也支援滑鼠／觸控拖曳到指定序位；
+ * 鍵盤仍可操作（button 逐一點選）。確認答案後只退回位置錯誤的詞塊，
+ * 正確詞塊留在原序位並鎖定，讓學習者可以再次拖曳錯誤詞塊修正。
  * @param {{prompt: string, parts: string[], solution: string[], onBack?: () => void}} opts
  */
 export function SentenceOrdering({ prompt, parts, solution, onBack }) {
   const root = h('div', { class: 'quiz-panel' });
-  const chosen = [];
-  const bank = shuffleDiffering(parts, `${prompt}|${parts.join('')}`);
-  let mistakes = 0; // 沒有揭曉正解機制，只記是否一次就排對，供星星計分用
+  const bank = shuffleDiffering(parts, `${prompt}|${parts.join('')}`).map((word, index) => ({
+    id: `sentence-part-${index}`,
+    word,
+    incorrect: false,
+  }));
+  const itemById = new Map(bank.map((item) => [item.id, item]));
+  const slotsState = Array(solution.length).fill(null);
+  const lockedIds = new Set();
+  let mistakes = 0;
+  let feedbackShown = false;
+  let returning = false;
+  let activeDragId = null;
 
   root.appendChild(
     h('div', { class: 'quiz-title-row' }, [
@@ -24,44 +33,243 @@ export function SentenceOrdering({ prompt, parts, solution, onBack }) {
         h('p', { class: 'quiz-stem' }, prompt),
         SpeakButton({ text: prompt, label: '聽', variant: 'speak-button--option' }),
       ]),
-      ReadAllButton(() => ({ task: prompt, options: bank })),
+      ReadAllButton(() => ({ task: prompt, options: bank.map((item) => item.word) })),
     ]),
   );
+  const instruction = h(
+    'p',
+    { class: 'sentence-ordering__instruction' },
+    '可點選詞塊依序排列；檢查後，將變紅的詞塊拖到正確序位。',
+  );
   const slots = h('div', { class: 'sentence-slots', 'aria-label': '目前排出的句子' });
-  const bankWrap = h('div', { class: 'sentence-bank', 'aria-label': '可選詞塊，詞塊旁的喇叭可以聽這個詞塊怎麼唸' });
+  const bankWrap = h('div', {
+    class: 'sentence-bank',
+    'aria-label': '可選詞塊；可點選加入，或拖曳到下方正確序位',
+  });
   const status = h('p', { class: 'meta', role: 'status', 'aria-live': 'polite' });
   const checkBtn = h('button', { class: 'btn', type: 'button', style: 'margin-top:12px' }, '檢查答案');
   const resetBtn = h('button', { class: 'btn btn--secondary', type: 'button', style: 'margin-left:8px' }, '重新排列');
-  const chips = [];
+  const chipById = new Map();
+
+  function getSlotIndex(target) {
+    let node = target;
+    while (node && node !== root) {
+      const raw = node.getAttribute?.('data-slot-index');
+      if (raw !== null && raw !== undefined) return Number(raw);
+      node = node.parentNode;
+    }
+    return -1;
+  }
+
+  function clearItemError(item) {
+    if (!item) return;
+    item.incorrect = false;
+    const chip = chipById.get(item.id);
+    chip?.classList.remove('sentence-chip--incorrect', 'sentence-chip--returning');
+  }
+
+  function firstEmptySlot() {
+    return slotsState.findIndex((id) => id === null);
+  }
+
+  function placeAt(itemId, targetIndex) {
+    if (returning || targetIndex < 0 || targetIndex >= slotsState.length) return;
+    const item = itemById.get(itemId);
+    if (!item || lockedIds.has(itemId) || lockedIds.has(slotsState[targetIndex])) return;
+
+    const sourceIndex = slotsState.indexOf(itemId);
+    const displacedId = slotsState[targetIndex];
+    if (sourceIndex === targetIndex) return;
+
+    if (sourceIndex >= 0) {
+      // 拖曳已排好的未鎖定詞塊時，與目標位置交換，避免破壞其他已排內容。
+      slotsState[sourceIndex] = displacedId || null;
+    }
+    slotsState[targetIndex] = itemId;
+    clearItemError(item);
+    if (displacedId && displacedId !== itemId) clearItemError(itemById.get(displacedId));
+    renderSlots();
+    renderBank();
+  }
+
+  function chooseFromBank(itemId) {
+    const targetIndex = firstEmptySlot();
+    if (targetIndex === -1) return;
+    placeAt(itemId, targetIndex);
+  }
+
+  function bindDropTarget(target, index) {
+    target.addEventListener('dragover', (event) => {
+      if (returning || lockedIds.has(slotsState[index])) return;
+      event.preventDefault?.();
+      target.classList.add('sentence-ordering__slot--drag-over');
+    });
+    target.addEventListener('dragleave', () => {
+      target.classList.remove('sentence-ordering__slot--drag-over');
+    });
+    target.addEventListener('drop', (event) => {
+      event.preventDefault?.();
+      target.classList.remove('sentence-ordering__slot--drag-over');
+      const itemId = event.dataTransfer?.getData?.('text/plain') || activeDragId;
+      if (itemId) placeAt(itemId, index);
+      activeDragId = null;
+    });
+  }
+
+  function bindDrag(chip, itemId) {
+    chip.draggable = true;
+    chip.setAttribute('draggable', 'true');
+    let pointerDrag = null;
+    let suppressClick = false;
+
+    chip.addEventListener('dragstart', (event) => {
+      if (returning || lockedIds.has(itemId)) return;
+      activeDragId = itemId;
+      event.dataTransfer?.setData?.('text/plain', itemId);
+      chip.classList.add('sentence-chip--dragging');
+    });
+    chip.addEventListener('dragend', () => {
+      activeDragId = null;
+      chip.classList.remove('sentence-chip--dragging');
+    });
+    chip.addEventListener('pointerdown', (event) => {
+      if (returning || lockedIds.has(itemId)) return;
+      if (event.button !== undefined && event.button !== 0) return;
+      pointerDrag = {
+        startX: event.clientX ?? 0,
+        startY: event.clientY ?? 0,
+        started: false,
+      };
+      activeDragId = itemId;
+      chip.setPointerCapture?.(event.pointerId);
+    });
+    chip.addEventListener('pointermove', (event) => {
+      if (!pointerDrag || returning) return;
+      const distance = Math.hypot(
+        (event.clientX ?? 0) - pointerDrag.startX,
+        (event.clientY ?? 0) - pointerDrag.startY,
+      );
+      if (!pointerDrag.started && distance < 8) return;
+      pointerDrag.started = true;
+      suppressClick = true;
+      event.preventDefault?.();
+      chip.classList.add('sentence-chip--dragging');
+      const targetIndex = getSlotIndex(document.elementFromPoint?.(event.clientX, event.clientY));
+      slots.querySelectorAll?.('.sentence-ordering__slot--drag-over').forEach((node) => {
+        node.classList.remove('sentence-ordering__slot--drag-over');
+      });
+      if (targetIndex >= 0) {
+        slots.querySelector?.(`[data-slot-index="${targetIndex}"]`)?.classList.add('sentence-ordering__slot--drag-over');
+      }
+    });
+    chip.addEventListener('pointerup', (event) => {
+      if (!pointerDrag) return;
+      const wasDragging = pointerDrag.started;
+      const targetIndex = getSlotIndex(document.elementFromPoint?.(event.clientX, event.clientY));
+      pointerDrag = null;
+      chip.classList.remove('sentence-chip--dragging');
+      if (wasDragging) {
+        event.preventDefault?.();
+        if (targetIndex >= 0) placeAt(itemId, targetIndex);
+      }
+      activeDragId = null;
+    });
+    chip.addEventListener('pointercancel', () => {
+      pointerDrag = null;
+      activeDragId = null;
+      chip.classList.remove('sentence-chip--dragging');
+    });
+    chip.addEventListener('click', () => {
+      if (suppressClick) {
+        suppressClick = false;
+        return;
+      }
+      if (returning || lockedIds.has(itemId)) return;
+      chooseFromBank(itemId);
+    });
+  }
 
   function renderSlots() {
     clear(slots);
-    chosen.forEach((word) => slots.appendChild(h('span', { class: 'sentence-chip' }, word)));
+    if (!feedbackShown) {
+      slotsState.forEach((itemId) => {
+        if (!itemId) return;
+        const item = itemById.get(itemId);
+        if (item) slots.appendChild(h('span', { class: 'sentence-chip' }, item.word));
+      });
+      return;
+    }
+
+    slotsState.forEach((itemId, index) => {
+      if (!itemId) {
+        const target = h('button', {
+          class: 'sentence-chip sentence-ordering__slot-target',
+          type: 'button',
+          'data-slot-index': index,
+          'aria-label': `第 ${index + 1} 個詞塊空位，可將詞塊拖到這裡`,
+        }, '放這裡');
+        bindDropTarget(target, index);
+        slots.appendChild(target);
+        return;
+      }
+
+      const item = itemById.get(itemId);
+      const locked = lockedIds.has(itemId);
+      const chip = h('button', {
+        class: `sentence-chip sentence-ordering__slot-chip${locked ? ' sentence-chip--correct' : ''}`,
+        type: 'button',
+        'data-slot-index': index,
+        'aria-pressed': 'true',
+        'aria-label': locked
+          ? `第 ${index + 1} 個詞塊：${item.word}，位置正確`
+          : `第 ${index + 1} 個詞塊：${item.word}，可拖曳調整`,
+        disabled: locked ? 'disabled' : undefined,
+      }, item.word);
+      if (!locked) {
+        bindDrag(chip, itemId);
+        bindDropTarget(chip, index);
+      }
+      slots.appendChild(chip);
+    });
   }
 
-  bank.forEach((word) => {
-    const chip = h('button', { class: 'sentence-chip', type: 'button' }, word);
-    chips.push(chip);
-    chip.addEventListener('click', () => {
-      if (chip.disabled) return;
-      chosen.push(word);
-      chip.disabled = true;
-      chip.setAttribute('aria-pressed', 'true');
-      renderSlots();
-    });
-    const row = h('span', { class: 'quiz-option-row', style: 'display:inline-flex' }, [
-      chip,
-      SpeakButton({ text: word, label: '聽', ariaLabel: `朗讀詞塊：${word}`, variant: 'speak-button--option' }),
-    ]);
-    bankWrap.appendChild(row);
-  });
+  function renderBank() {
+    clear(bankWrap);
+    for (const item of bank) {
+      if (slotsState.includes(item.id)) continue;
+      const chip = chipById.get(item.id);
+      if (!chip) continue;
+      chip.disabled = false;
+      chip.setAttribute('aria-pressed', 'false');
+      chip.classList.toggle('sentence-chip--incorrect', item.incorrect);
+      chip.classList.toggle('sentence-chip--returning', item.incorrect);
+      const row = h('span', { class: 'quiz-option-row', style: 'display:inline-flex' }, [
+        chip,
+        SpeakButton({ text: item.word, label: '聽', ariaLabel: `朗讀詞塊：${item.word}`, variant: 'speak-button--option' }),
+      ]);
+      bankWrap.appendChild(row);
+    }
+  }
+
+  for (const item of bank) {
+    const chip = h('button', {
+      class: 'sentence-chip',
+      type: 'button',
+      'aria-pressed': 'false',
+      title: '點選加入句子，或拖曳到正確序位',
+    }, item.word);
+    chipById.set(item.id, chip);
+    bindDrag(chip, item.id);
+  }
 
   checkBtn.addEventListener('click', () => {
-    const isCorrect = chosen.join('') === solution.join('');
+    if (returning) return;
+    const isComplete = slotsState.every(Boolean);
+    const isCorrect = isComplete && slotsState.every((itemId, index) => itemById.get(itemId)?.word === solution[index]);
     if (isCorrect) {
       recordOutcome({ firstTry: mistakes === 0, revealed: false });
       celebrateCorrect(checkBtn, 'var(--module-color)', { firstTry: mistakes === 0 });
-      const finished = chosen.join('');
+      const finished = slotsState.map((itemId) => itemById.get(itemId).word).join('');
       clear(root);
       root.appendChild(
         h('div', { class: 'quiz-option-row' }, [
@@ -70,22 +278,49 @@ export function SentenceOrdering({ prompt, parts, solution, onBack }) {
         ]),
       );
       root.appendChild(CompletionFeedback({ correct: 1, total: 1, onBack }));
+      return;
+    }
+
+    mistakes += 1;
+    const wrongIds = [];
+    slotsState.forEach((itemId, index) => {
+      if (!itemId) return;
+      const item = itemById.get(itemId);
+      if (item.word === solution[index]) lockedIds.add(itemId);
+      else wrongIds.push(itemId);
+    });
+
+    for (const itemId of wrongIds) {
+      const index = slotsState.indexOf(itemId);
+      if (index >= 0) slotsState[index] = null;
+      const item = itemById.get(itemId);
+      item.incorrect = true;
+    }
+    feedbackShown = true;
+    returning = true;
+    renderSlots();
+    renderBank();
+    returning = false;
+    if (wrongIds.length > 0) {
+      status.textContent = `紅色詞塊位置不正確，已退回候選區；請再次拖曳到正確序位。${isComplete ? '' : '尚有空位未完成。'}`;
     } else {
-      mistakes += 1;
-      status.textContent = '順序還不對，再想想看。';
+      status.textContent = '已排列的詞塊位置正確，請把剩下的詞塊拖到空位。';
     }
   });
 
   resetBtn.addEventListener('click', () => {
-    chosen.length = 0;
+    slotsState.fill(null);
+    lockedIds.clear();
+    bank.forEach((item) => { item.incorrect = false; });
+    feedbackShown = false;
+    returning = false;
+    activeDragId = null;
     renderSlots();
-    chips.forEach((c) => {
-      c.disabled = false;
-      c.setAttribute('aria-pressed', 'false');
-    });
+    renderBank();
     status.textContent = '';
   });
 
+  root.appendChild(instruction);
   root.appendChild(slots);
   root.appendChild(bankWrap);
   root.appendChild(status);
@@ -93,5 +328,7 @@ export function SentenceOrdering({ prompt, parts, solution, onBack }) {
   actions.appendChild(checkBtn);
   actions.appendChild(resetBtn);
   root.appendChild(actions);
+  renderSlots();
+  renderBank();
   return root;
 }

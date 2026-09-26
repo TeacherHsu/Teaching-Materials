@@ -1,5 +1,11 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-09-27｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/src/components/SentenceOrdering.js`、`src/styles/components.css`、句子排序回歸測試與教材網站批次產出工作流文件／完整性檢查。
+- 目標：將各年級「練習句子」統一採用部分判錯模式；正確詞塊綠底黑字並鎖定，錯誤詞塊紅底黑字退回候選區，保留再次拖拉修正的機會。
+- 驗證：`npm.cmd run validate`、`npm.cmd run check-workflow`、全部 `scripts/test-*.mjs`、升級權限 `npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過；已更新各年級共用句子排序工作流契約與回歸測試。
+- 提交／推送：本項已建立本地提交；尚未推送遠端。
+
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/styles/components.css`、`apps/mandarin/scripts/test-vocabulary-image-fit.mjs`。
 - 做了什麼：修正語詞卡圖片框原本以 4:3 `object-fit: cover` 顯示，造成方形插圖上下被裁掉；語詞卡改用 1:1 圖片框與 `object-fit: contain`，完整保留插圖內容。其他圖片模組維持原本規則。

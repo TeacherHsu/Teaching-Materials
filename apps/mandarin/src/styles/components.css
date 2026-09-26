@@ -1007,6 +1007,70 @@
   border-color: var(--color-primary);
 }
 
+.sentence-ordering__instruction {
+  margin: var(--space-2) 0 0;
+  color: var(--text-secondary);
+}
+
+.sentence-ordering__slot-target {
+  min-width: 88px;
+  color: var(--text-secondary);
+  border-style: dashed;
+}
+
+.sentence-ordering__slot--drag-over {
+  border-color: var(--module-color, var(--color-primary));
+  background: var(--module-color-tint, var(--color-surface-muted));
+}
+
+.sentence-chip--correct,
+.sentence-chip--correct:disabled {
+  border-color: var(--color-success);
+  background: #b9e6c8;
+  color: #000;
+  opacity: 1;
+  -webkit-text-fill-color: #000;
+}
+
+.sentence-chip--incorrect {
+  border-color: var(--color-danger);
+  background: #f7c6c2;
+  color: #000;
+  -webkit-text-fill-color: #000;
+}
+
+.sentence-chip--returning {
+  animation: sentence-chip-return 0.42s ease;
+}
+
+.sentence-chip--dragging {
+  opacity: 0.55;
+  transform: scale(0.97);
+}
+
+.sentence-chip[draggable="true"] {
+  cursor: grab;
+  touch-action: none;
+}
+
+.sentence-chip[draggable="true"]:active {
+  cursor: grabbing;
+}
+
+@keyframes sentence-chip-return {
+  0% {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.16);
+  }
+  65% {
+    transform: translateY(3px) scale(0.98);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: none;
+  }
+}
+
 /* ---- 待補教材提示 ---- */
 .missing-content {
   padding: var(--space-4);
