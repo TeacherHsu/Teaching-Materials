@@ -1,6 +1,14 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/docs/lesson-generation-workflow.md`、`apps/mandarin/scripts/test-idiom-sentence-contexts.mjs`
+- 做了什麼：全面掃描公開 G1A／G3A／G6A 課次；136 筆核准成語填句子全部是具體情境句。G1A 7 課沒有成語資料；G3A 6 課有 34 個成語、另 6 課無成語資料；G6A 12 課有 102 個成語。工作流新增成語情境句閘門，禁止泛用模板，要求每個可用成語都有核准例句；沒有成語資料的課次維持模組未開放。
+- 驗證：`node scripts/test-idiom-sentence-contexts.mjs`、`npm.cmd run validate`、全部 `scripts/test-*.mjs`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過。
+- 推送：尚未推送；本次修改待建立本地提交。
+- 待辦／給下一棒：後續新增成語資料需沿用此情境句閘門。
+- 注意：官方原始教材仍只留私有工作區，未納入公開 repo。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG6H/lesson01.json`～`lesson12.json`、`apps/mandarin/scripts/test-idiom-sentence-contexts.mjs`
 - 做了什麼：修正「成語填句子」原本使用「遇到生活中的相關情況時，可以用……來形容」的泛用題幹，G6A 112 筆核准例句全部改為具體生活情境句；學生需把候選成語拖入句中，使語句與語意完整。G3A 原有具體例句保留不動。
 - 驗證：`npm.cmd run validate`、全部 `scripts/test-*.mjs`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過；新增測試確認 136 筆核准成語例句皆不含泛用題幹且包含足夠語境。

@@ -30,9 +30,10 @@ public/data/course-index.json
 4. 讀取官方語詞解釋。G3A 第 7–12 課優先採用 `low-g3-v2` 已審核 manifest；圖片只接受 manifest 的完全同詞對應。既有課次補圖時，使用 `fill_vocabulary_images.py`，舊教材明確對應圖優先，沒有可核對舊圖的詞才接入私有生成圖 manifest。
 5. 將圖片轉成 WebP，單張不得超過 300 KiB，單課不得超過 4 MiB。
 6. 產生固定網站資料結構：生字卡、語詞解釋卡、隨機選項、筆順外部連結與模組可用狀態。
-7. 合併 `course-index.json`，不能因為只產生部分課次而刪掉既有課次。
-8. 寫入外部進度檔。中斷後以 `--resume` 跳過已有且狀態為 `ready` 的課次。
-9. 執行資料驗證、圖片容量檢查、建置與回歸測試，再 commit。
+7. 建立「成語填句子」資料：每個可用成語都要有一筆完整、自然、可由上下文判斷的具體情境句；句中必須包含該成語，挖空成語後仍要保留足夠語境。禁止使用「遇到生活中的相關情況時，可以用……來形容」等泛用模板。若該課尚無成語資料，維持模組未開放，不用空白或泛用題目填充。
+8. 合併 `course-index.json`，不能因為只產生部分課次而刪掉既有課次。
+9. 寫入外部進度檔。中斷後以 `--resume` 跳過已有且狀態為 `ready` 的課次。
+10. 執行資料驗證、成語情境句檢查、圖片容量檢查、建置與回歸測試，再 commit。
 
 ## Python 批次產生器
 
@@ -114,5 +115,7 @@ npm.cmd run check-dist
 npm.cmd run check-assets
 Get-ChildItem scripts/test-*.mjs | ForEach-Object { node $_.FullName }
 ```
+
+其中 `node scripts/test-idiom-sentence-contexts.mjs` 會跨所有公開年級與課次檢查：有成語的課次是否每個成語都有核准情境句、例句是否包含對應成語、挖空後是否仍有足夠語境，以及是否誤用泛用模板。沒有成語資料的課次會列為「不開放本模組」，不會被當成缺例句失敗。
 
 容量規則：單張 WebP／AVIF ≤ 300 KiB，單課 ≤ 4 MiB；`public/assets` 接近 600 MiB 時發出警告，達 700 MiB 時阻擋建置。完成後確認 `git status`、提交範圍與 `HANDOFF.md`，不要把私有來源、Excel、完整課文或進度檔加入公開 repo。
