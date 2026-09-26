@@ -1,6 +1,14 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/public/data/115AG6H/lesson02.json`
+- 做了什麼：修正第二課修辭「頂真」例句，完整顯示「他沒有理我。我走到他身邊，又說了一遍。」避免題幹截斷前後句的語意。
+- 驗證：`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；確認答案仍為「頂真」，解釋與其他課次未改動。
+- 推送：尚未推送；本次修改已建立本地提交（以 `git log -1` 為準）。
+- 待辦／給下一棒：若再調整修辭例句，回到官方來源／教師確認資料核對完整語境。
+- 注意：只修改 G6A 第二課第一題例句，未修改圖片、其他題目或其他課次資料。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/scripts/fill_vocabulary_images.py`、`apps/mandarin/scripts/test-vocabulary-image-completeness.mjs`、`apps/mandarin/docs/lesson-generation-workflow.md`、`apps/mandarin/public/data/115AG3H/`、`apps/mandarin/public/data/115AG6H/`、`apps/mandarin/public/assets/115AG3H/`、`apps/mandarin/public/assets/115AG6H/`
 - 做了什麼：全面盤點 G3A／G6A 語詞解釋卡缺圖；156 個缺圖位置中，58 張沿用私有教材中詞名完全對應的舊圖，98 張依詞意生成兒童友善插圖；全部壓縮為 WebP 並回寫公開資料。補圖工具只接受完整詞名元件，不會把多詞合成預覽圖誤配給單一語詞；新增 G3A／G6A 語詞圖片完整性回歸測試與工作流說明。
 - 驗證：`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；共 313 個 G3A／G6A 語詞，全部有有效圖片；公開資產 520 張 WebP／AVIF、約 39.94 MiB，單張 ≤300 KiB、單課 ≤4 MiB。
