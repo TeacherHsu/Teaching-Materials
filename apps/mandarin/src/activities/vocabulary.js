@@ -10,6 +10,7 @@ import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { missingContentNotice } from './engine.js';
 import { chunkRounds } from '../utils/chunk.js';
+import { PronunciationNotice } from '../components/PronunciationNotice.js';
 
 function shuffled(arr) {
   return [...arr].sort(() => Math.random() - 0.5);
@@ -98,6 +99,7 @@ export function buildVocabularyActivity(lesson, onBack) {
         }
       });
       container.appendChild(nextBtn);
+      container.appendChild(PronunciationNotice());
     } else if (step === 'matching') {
       const isLastRound = roundIndex === matchingRounds.length - 1;
       container.appendChild(

@@ -1,6 +1,14 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/src/components/PronunciationNotice.js`、`apps/mandarin/src/activities/characters.js`、`apps/mandarin/src/activities/vocabulary.js`、`apps/mandarin/src/styles/components.css`、`apps/mandarin/scripts/test-pronunciation-notice.mjs`
+- 做了什麼：在生字卡與語詞解釋卡頁面下方加入多音字提醒，說明不同語境／詞語的注音可能不同，使用者應以課本與課文標示為準；兩個頁面共用同一個提醒元件與樣式。
+- 驗證：`test-pronunciation-notice.mjs`、`test-module-star-coverage.mjs`、全部 `scripts/test-*.mjs`、`npm.cmd run validate`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過；瀏覽器實際確認 G6A 第 5 課生字卡／語詞卡皆顯示提醒。
+- 推送：尚未推送；本次修改待建立本地提交。
+- 待辦／給下一棒：後續新增生字卡或語詞解釋卡頁面時，沿用 `PronunciationNotice`，不要各自重寫提醒文字。
+- 注意：提醒是使用者校讀提示，不取代官方課本注音；未修改教材原始資料。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG6H/lesson05.json`、`apps/mandarin/scripts/test-g6a-lesson05-lookalikes.mjs`
 - 做了什麼：依私有官方教材「05形音輕鬆學（含語詞解釋）」校正 G6A 第 5 課 7 組形似字，移除「泥／叮／檸」等錯置選項，改為「擰／檸／嚀／濘」、「噪／燥／操／躁」、「庶／蔗／遮」、「賢／資／質／貿／賀」、「陶／淘」、「隱／穩」、「戴／載／截／裁／栽」；每個字補回官方例詞。
 - 驗證：`test-g6a-lesson05-lookalikes.mjs`、`test-lookalike-splitting.mjs`、全部 `scripts/test-*.mjs`、`npm.cmd run validate`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過。

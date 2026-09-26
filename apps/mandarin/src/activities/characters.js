@@ -9,6 +9,7 @@ import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { DragToSlot } from '../components/DragToSlot.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { buildExtensionLinks } from '../components/ExtensionLinks.js';
+import { PronunciationNotice } from '../components/PronunciationNotice.js';
 import { missingContentNotice } from './engine.js';
 
 const ROUND_MAX = 5;
@@ -153,6 +154,7 @@ export function buildCharactersActivity(lesson, onBack) {
         }
       });
       container.appendChild(nextBtn);
+      container.appendChild(PronunciationNotice());
     } else if (step === 'choice') {
       const isLastRound = roundIndex === choiceRounds.length - 1;
       container.appendChild(
