@@ -18,7 +18,7 @@
 - 範圍：`apps/mandarin/scripts/generate_lessons.py`、`apps/mandarin/docs/lesson-generation-workflow.md`、`apps/mandarin/public/data/115AG3H/`、`apps/mandarin/public/assets/115AG3H/`、`apps/mandarin/public/data/115AG1H/`、`apps/mandarin/public/assets/115AG1H/`、`apps/mandarin/public/data/course-index.json`
 - 做了什麼：建立可重跑的教材網站工作流與 Python 批次產生器；完成 G3A 第 7～12 課，G3A 語詞優先採用已審核的 low-g3-v2 語詞／圖片 manifest，避免圖詞錯配；修正課程索引的增量合併，不會因批次只產生部分課次而刪除既有課次；完成 G1A 第 1～7 課，生字造詞依私有 Excel 常用度取前三項，語詞圖片轉為 WebP；加入外部進度檔與 `--resume` 接續規則、筆順連結與段落 fallback。
 - 驗證：`python -m py_compile apps/mandarin/scripts/generate_lessons.py`、G3A／G1A dry-run 與實際批次產出、`npm.cmd run validate`、全部 `scripts/test-*.mjs`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；公開資料共 31 課，資產 25.14 MiB，單張 WebP／AVIF 均未超過 300 KiB。
-- 推送：尚未推送；本次修改待建立本地提交。
+- 推送：尚未推送；本次修改已建立本地提交 `5e93d58`、`b4e15cc`。
 - 待辦／給下一棒：G6A 目前維持已審核的 1～12 課公開基準；若日後重建，先在私有工作區完成官方來源台帳／manifest，再接入相同的標準化 JSON、圖片容量與驗證閘門。額度中斷時使用私有進度檔加 `--resume`。
 - 注意：不把官方原始教材、第三方 Excel、完整課文或進度檔放入公開 repo；語詞圖片只使用明確核對的圖詞 manifest，不以相似檔名猜圖。
 
