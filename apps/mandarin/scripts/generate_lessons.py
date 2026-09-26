@@ -6,6 +6,10 @@ only writes derived lesson JSON, compressed WebP assets, course-index entries,
 and an external progress file.  It is resumable: completed lesson keys are
 skipped by ``--resume`` after their output files still exist.
 
+After each non-dry-run batch it rebuilds the cumulative ``review_words`` index
+from the public lesson JSON files, so the cross-lesson review module is never
+left in a false "教材待補" state after a partial or resumed generation.
+
 Profiles currently covered by this public adapter:
   * g3a: 115 翰林三上, L07-L12 (the same adapter can rebuild L01-L12)
   * g1a: 115 翰林一上, L01-L07
@@ -66,6 +70,67 @@ def load_json(path: Path) -> object:
 def save_json(path: Path, value: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def sync_review_coverage(output_data: Path) -> None:
+    """Rebuild the cumulative old-character index after a batch run.
+
+    The review activity loads earlier lesson JSON files at runtime.  The
+    ``review_words`` index is therefore only the public availability manifest;
+    it must be rebuilt from existing derived lesson data instead of being
+    hand-authored or guessed from the private textbook.
+    """
+    lesson_files = sorted(output_data.glob("lesson*.json"))
+    lessons: list[dict] = []
+    for path in lesson_files:
+        try:
+            lesson = load_json(path)
+            if isinstance(lesson, dict) and isinstance(lesson.get("lesson_no"), int):
+                lessons.append(lesson)
+        except (OSError, json.JSONDecodeError):
+            continue
+    lessons.sort(key=lambda item: item["lesson_no"])
+
+    for lesson in lessons:
+        current_no = lesson["lesson_no"]
+        by_lesson: dict[str, list[str]] = {}
+        for source in lessons:
+            source_no = source["lesson_no"]
+            if source_no > current_no:
+                continue
+            by_lesson[str(source_no)] = [
+                item["char"]
+                for item in source.get("characters", [])
+                if item.get("char") and (item.get("status") in (None, "ready"))
+            ]
+        lesson["review_words"] = {"by_lesson": by_lesson}
+
+        previous = [source for source in lessons if source["lesson_no"] < current_no]
+        candidate_count = sum(
+            1
+            for source in previous
+            for item in source.get("characters", [])
+            if item.get("char") and item.get("zhuyin") and item.get("status") in (None, "ready")
+        )
+        candidate_count += sum(
+            1
+            for source in previous
+            for item in source.get("words", [])
+            if item.get("word") and item.get("meaning") and item.get("status") in ("ready", "approved")
+        )
+        review_module = lesson.get("modules", {}).get("review")
+        if review_module is not None:
+            if current_no == 1:
+                review_module["status"] = "missing"
+                review_module["note"] = "第 1 課沒有前課資料。"
+            elif candidate_count >= 3:
+                review_module["status"] = "available"
+                review_module.pop("note", None)
+            else:
+                review_module["status"] = "missing"
+                review_module["note"] = "前課可複習字詞不足 3 題。"
+
+        save_json(output_data / f"lesson{current_no:02d}.json", lesson)
 
 
 def first_lesson(value: object) -> dict:
@@ -815,6 +880,8 @@ def main() -> int:
             raise
 
     if not args.dry_run and generated:
+        sync_review_coverage(output_data)
+        print(f"[OK] review_words synced: {profile.code}")
         update_course_index(repo_root, profile, generated)
         print(f"[OK] course-index updated: {profile.code} lessons={len(generated)}")
     return 0

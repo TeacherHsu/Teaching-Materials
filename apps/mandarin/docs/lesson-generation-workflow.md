@@ -1,6 +1,6 @@
 # 國語教材網站批次產出工作流
 
-本文件把 G3A、G6A 的教材網站產出流程固定下來，並說明目前可重跑的 Python 產生器。公開 repo 只保存衍生後的課程 JSON、壓縮圖片與索引；官方教材、完整課文、Excel 與審核用工作檔仍留在私有工作區。
+本文件把 G1A、G3A、G6A 的教材網站產出流程固定下來，並說明目前可重跑的 Python 產生器。公開 repo 只保存衍生後的課程 JSON、壓縮圖片與索引；官方教材、完整課文、Excel 與審核用工作檔仍留在私有工作區。
 
 ## 產出架構
 
@@ -30,12 +30,13 @@ public/data/course-index.json
 4. 讀取官方語詞解釋。G3A 第 7–12 課優先採用 `low-g3-v2` 已審核 manifest；圖片只接受 manifest 的完全同詞對應。既有課次補圖時，使用 `fill_vocabulary_images.py`，舊教材明確對應圖優先，沒有可核對舊圖的詞才接入私有生成圖 manifest。
 5. 將圖片轉成 WebP，單張不得超過 300 KiB，單課不得超過 4 MiB。
 6. 產生固定網站資料結構：生字卡、語詞解釋卡、隨機選項、筆順外部連結與模組可用狀態。
-7. 建立「成語填句子」資料：每個可用成語都要有一筆完整、自然、可由上下文判斷的具體情境句；句中必須包含該成語，挖空成語後仍要保留足夠語境。禁止使用「遇到生活中的相關情況時，可以用……來形容」等泛用模板。若該課尚無成語資料，維持模組未開放，不用空白或泛用題目填充。
-8. 建立「修辭小偵探」資料：每一筆可用的 `rhetoric` 題目都要在 `example` 中以 `﹁關鍵字﹂` 標出官方解析所框出的關鍵字；若是既有資料使用 `「關鍵字」` 或 `『關鍵字』`，可保留作相容格式，但新增資料統一使用 `﹁﹂`。
-9. 建立「形似字」資料：答案選項只能來自官方形似字辨別題庫核定的同一字形群組；不可把例詞的第一個字直接當成答案，也不可因讀音、詞義相近就混入非形似字。每個選項都要有包含該字的有效例詞，並保留一份公開衍生的核對基準 `docs/lookalike-approved-groups.json`。
-10. 合併 `course-index.json`，不能因為只產生部分課次而刪掉既有課次。
-11. 寫入外部進度檔。中斷後以 `--resume` 跳過已有且狀態為 `ready` 的課次。
-12. 執行資料驗證、成語情境句檢查、形似字選項核對、修辭關鍵字變色檢查、圖片容量檢查、建置與回歸測試，再 commit。
+7. 建立「舊字新詞」跨課索引：每課的 `review_words.by_lesson` 必須累積同冊截至本課的已公開生字；第 2 課起要以實際前課生字／語詞至少 3 題為可開始條件，第 1 課維持鎖定。不得只改模組文字而沒有可產生的跨課題目。
+8. 建立「成語填句子」資料：每個可用成語都要有一筆完整、自然、可由上下文判斷的具體情境句；句中必須包含該成語，挖空成語後仍要保留足夠語境。禁止使用「遇到生活中的相關情況時，可以用……來形容」等泛用模板。若該課尚無成語資料，維持模組未開放，不用空白或泛用題目填充。
+9. 建立「修辭小偵探」資料：每一筆可用的 `rhetoric` 題目都要在 `example` 中以 `﹁關鍵字﹂` 標出官方解析所框出的關鍵字；若是既有資料使用 `「關鍵字」` 或 `『關鍵字』`，可保留作相容格式，但新增資料統一使用 `﹁﹂`。
+10. 建立「形似字」資料：答案選項只能來自官方形似字辨別題庫核定的同一字形群組；不可把例詞的第一個字直接當成答案，也不可因讀音、詞義相近就混入非形似字。每個選項都要有包含該字的有效例詞，並保留一份公開衍生的核對基準 `docs/lookalike-approved-groups.json`。
+11. 合併 `course-index.json`，不能因為只產生部分課次而刪掉既有課次。
+12. 寫入外部進度檔。中斷後以 `--resume` 跳過已有且狀態為 `ready` 的課次。
+13. 執行資料驗證、舊字新詞全面稽核、成語情境句檢查、形似字選項核對、修辭關鍵字變色檢查、圖片容量檢查、建置與回歸測試，再 commit。
 
 ## Python 批次產生器
 
@@ -59,6 +60,17 @@ python scripts/generate_lessons.py `
 ```
 
 第一次執行或來源已更新時，移除 `--resume`，讓課次重新生成。若只想檢查來源完整性，加入 `--dry-run`；dry-run 不會寫入公開課程資料。
+
+批次輸出後，無論是 G1A、G3A 或已審核匯入的 G6A，都要同步同冊跨課索引：
+
+```powershell
+cd apps/mandarin
+node scripts/sync-review-coverage.mjs --write
+node scripts/sync-review-coverage.mjs --check
+node scripts/test-review-coverage.mjs
+```
+
+`sync-review-coverage.mjs` 會掃描 `course-index.json` 的全部課次，從公開生字卡資料建立 `review_words.by_lesson`，並同步 `modules.review` 的可用狀態。`--check` 是唯讀稽核；若第 2 課以後沒有足夠前課字詞，會明確列為缺資料，不會用空白題目開放。
 
 ### 使用者授權直出模式
 
@@ -159,6 +171,8 @@ python scripts/fill_vocabulary_images.py `
 ```powershell
 cd apps/mandarin
 npm.cmd run validate
+node scripts/sync-review-coverage.mjs --check
+node scripts/test-review-coverage.mjs
 node scripts/test-lookalike-shape-groups.mjs
 npm.cmd run build
 npm.cmd run check-dist

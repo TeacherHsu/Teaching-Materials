@@ -1,6 +1,14 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：全面稽核 G1A／G3A／G6A 的「舊字新詞」跨課索引、公開課次 JSON、批次產出工具與工作流。
+- 做了什麼：發現 G1A 7 課、G6A 12 課、G3A 第 7～12 課的 `review_words` 有缺漏；新增 `scripts/sync-review-coverage.mjs`，以各課既有公開生字建立累積索引，並同步 `modules.review` 狀態。`generate_lessons.py` 批次產出後也會自動同步，不再只開放 G3A 前 5 課。
+- 查核結果：31 課中 28 課可開始舊字新詞；三個年級各自第 1 課因沒有前課資料維持鎖定，其餘第 2 課起均能產生 3～5 題跨課複習題。
+- 驗證：`node scripts/sync-review-coverage.mjs --check`、`node scripts/test-review-coverage.mjs`、全部 `scripts/test-*.mjs`、`npm.cmd run validate`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist`、Python `py_compile`、`git diff --check` 均通過；本機預覽確認 G3A 第 8 課顯示「舊字新詞／可以開始」。
+- 工作流：已加入跨課索引建立、唯讀稽核與實際題目回歸測試指令；資料仍只使用公開衍生課次 JSON，沒有新增或猜測官方教材內容。
+- 推送：尚未推送；本次修改待建立本地提交。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：G3A 第 7～12 課的 `polysemy`、`polysemy_senses`、`polyphones`、`listening`、`rhetoric`，以及官方延伸直出工具與工作流。
 - 做了什麼：依使用者指定的翰林官方來源補入公開衍生資料：`06字義分析` 建立一字多義題、各課 `05形音輕鬆學(含語詞解釋)` 的「認識多音字」建立一字多音題、`15閱讀理解提問` 建立聽聽看題目、`10修辭輕鬆學` 解析建立修辭題；修辭 `example` 保留官方 `﹁﹂` 關鍵字標記。新增 `scripts/publish-g3a-official-extensions.mjs` 可重跑直出，並把來源規則與「無官方多音字段落不硬湊」寫入工作流。
 - 發佈數量：一字多義 55 題、聽聽看 18 題、修辭 18 題；第 8～10 課共 7 個多音字，含經查證的不同注音。第 7、11、12 課官方檔案沒有「認識多音字」段落，維持未開放並在模組備註說明原因。
