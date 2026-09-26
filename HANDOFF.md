@@ -1,6 +1,15 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/public/data/115AG6H/lesson05.json`、`apps/mandarin/public/assets/115AG6H/lesson05/vocabulary/l05-05-v2.webp`
+- 做了什麼：針對 G6A 第 5 課「淘氣」圖片與詞意不符的回報，核對公開資產後確認正確圖像應為孩童頑皮、玩具散落的情境；為避免瀏覽器或舊預覽伺服器快取同名舊樹木圖片，保留原檔並以版本化檔名 `l05-05-v2.webp` 回寫資料。圖片為 WebP，132,542 bytes；原檔未刪除。
+- 預覽：重新啟動 Vite 開發伺服器，`http://127.0.0.1:5173/` 可連線；伺服器直接回傳新的 `/assets/115AG6H/lesson05/vocabulary/l05-05-v2.webp`，HTTP 200、`image/webp`。
+- 驗證：`node scripts/test-vocabulary-image-completeness.mjs`、`npm.cmd run validate`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；建置後 31 份課次資料、521 張 WebP/AVIF、總資產 40.37 MiB。
+- 推送：本次修改尚未建立提交，也尚未推送；預覽伺服器目前仍在本機工作階段運作。
+- 待辦／給下一棒：開啟 G6A 第 5 課語詞頁時使用 `http://127.0.0.1:5173/?cacheBust=20260926-g6a-l05#/lesson/115AG6H05/module/vocabulary`；若部署到 GitHub Pages，需一併提交新的 JSON 與 WebP 資產。
+- 注意：原始 `l05-05.webp` 保留作為回復依據，未修改官方教材與來源檔。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG6H/lesson01.json`～`lesson12.json`、`apps/mandarin/docs/lookalike-approved-groups.json`、`apps/mandarin/scripts/sync-g6a-lookalikes-from-official.mjs`、`apps/mandarin/scripts/test-lookalike-shape-groups.mjs`、`apps/mandarin/scripts/test-g6a-lesson05-lookalikes.mjs`、`apps/mandarin/docs/lesson-generation-workflow.md`
 - 做了什麼：檢視 G1A／G3A／G6A 公開形似字題目。G6A 12 課改以官方形似字辨別題庫的 `official_shape_group` 重建答案群組，修正「例詞第一字被誤當答案」造成的非形似字選項，並保留每個選項的有效例詞；G3A 已有課次與 G1A 目前未開放課次一併建立公開核對基準。
 - 核對結果：跨 31 課、162 組、524 個選項檢查；每組至少兩個不重複漢字，每個例詞均包含對應字，沒有未核准字形混入。G1A 目前沒有形似字資料，維持未開放，不猜測補題。
