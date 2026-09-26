@@ -1115,14 +1115,12 @@
     "reading": {
       "label": "讀懂課文",
       "status": "available",
-      "activity": "reading",
-      "note": "課文全文不放入公開網站。"
+      "activity": "reading"
     },
     "sentence_practice": {
       "label": "練習句子",
       "status": "available",
-      "activity": "sentence-practice",
-      "note": "句型資料待審核。"
+      "activity": "sentence-practice"
     },
     "challenge": {
       "label": "動手挑戰",
@@ -1138,8 +1136,7 @@
     "idiom_builder": {
       "label": "生字變成語",
       "status": "available",
-      "activity": "idiom-builder",
-      "note": "成語資料待審核。"
+      "activity": "idiom-builder"
     },
     "polysemy": {
       "label": "一字多義",
@@ -1156,8 +1153,7 @@
     "lookalikes": {
       "label": "形似字",
       "status": "available",
-      "activity": "lookalikes",
-      "note": "形似字資料待審核。"
+      "activity": "lookalikes"
     },
     "structure_map": {
       "label": "課文地圖",

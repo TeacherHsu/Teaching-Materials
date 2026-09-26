@@ -1,6 +1,14 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：G1A／G3A／G6A 全部公開課次資料與 G3A 直出工具
+- 做了什麼：逐課比對公開 JSON 的實際題目陣列、`modules` 狀態與生產 `dist/data` 過濾結果。沒有發現其他年級存在「已有可用題目但仍被阻擋」的新增案例；G3A 第 7～12 課已在前一項工作完成直出，本次另清除其已開放模組殘留的「待審核」備註，避免狀態文字矛盾。
+- 查核結果：G1A 未開放延伸模組的陣列均為空；G6A 尚未開放的一字多音課次沒有可直接使用的公開題目；G3A 第 7～12 課剩餘未開放項目同樣沒有題目資料。`application`、`review` 等屬於尚未有資料的預期狀態，沒有硬標成可開始。
+- 驗證：重新掃描 public／dist 資料、`git diff --check`；前一項已完成的 `npm.cmd run validate`、完整 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets` 結果仍適用，修改後將再跑一次。
+- 推送：本次修改尚未建立提交，也尚未推送；目前分支仍比遠端同名分支超前。
+- 注意：私有來源中仍有 PPTX／PDF 等未標準化教材，不等同可直接公開的網站資料；若要匯入，需先轉成網站 JSON 契約並確認題型欄位。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG3H/lesson07.json`～`lesson12.json`、`apps/mandarin/docs/lookalike-approved-groups.json`、`apps/mandarin/scripts/publish-g3a-extensions.mjs`、`apps/mandarin/docs/lesson-generation-workflow.md`
 - 做了什麼：依使用者明確授權「不用審核、直接公開」，將 G3A 第 7～12 課已有來源的句型、成語與具體情境句、聚焦理解提問、形似字資料直接寫入公開課次 JSON；同步開放句型練習、成語練習與形似字模組，並加入可重跑的直出工具與工作流說明。
 - 發佈數量：6 課共 33 筆句型、32 個成語、32 筆成語填句子情境句、36 筆閱讀提問、38 組形似字；每筆成語例句均包含成語且保留具體生活語境。

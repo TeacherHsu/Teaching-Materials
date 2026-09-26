@@ -241,22 +241,33 @@ function readingQuestions(source, lessonId) {
 
 function applyModuleStatuses(lesson) {
   const modules = lesson.modules || {};
-  if ((lesson.sentence_patterns || []).length >= 3) modules.sentence_practice = {
-    ...(modules.sentence_practice || { label: '練習句子', activity: 'sentence-practice' }),
-    status: 'available',
+  const expose = (key, fallback, condition) => {
+    if (!condition) return;
+    modules[key] = { ...(modules[key] || fallback), status: 'available' };
+    // 來源 JSON 的舊 note 可能還寫著「待審核」，直出後必須移除，
+    // 避免畫面狀態與實際可用狀態互相矛盾。
+    delete modules[key].note;
   };
-  if ((lesson.idioms || []).length >= 3) modules.idiom_builder = {
-    ...(modules.idiom_builder || { label: '生字變成語', activity: 'idiom-builder' }),
-    status: 'available',
-  };
-  if ((lesson.lookalikes || []).flatMap((group) => group.chars || []).length >= 3) modules.lookalikes = {
-    ...(modules.lookalikes || { label: '形似字', activity: 'lookalikes' }),
-    status: 'available',
-  };
-  if ((lesson.reading_questions || []).length >= 1) modules.reading = {
-    ...(modules.reading || { label: '讀懂課文', activity: 'reading' }),
-    status: 'available',
-  };
+  expose(
+    'sentence_practice',
+    { label: '練習句子', activity: 'sentence-practice' },
+    (lesson.sentence_patterns || []).length >= 3,
+  );
+  expose(
+    'idiom_builder',
+    { label: '生字變成語', activity: 'idiom-builder' },
+    (lesson.idioms || []).length >= 3,
+  );
+  expose(
+    'lookalikes',
+    { label: '形似字', activity: 'lookalikes' },
+    (lesson.lookalikes || []).flatMap((group) => group.chars || []).length >= 3,
+  );
+  expose(
+    'reading',
+    { label: '讀懂課文', activity: 'reading' },
+    (lesson.reading_questions || []).length >= 1,
+  );
   lesson.modules = modules;
 }
 
