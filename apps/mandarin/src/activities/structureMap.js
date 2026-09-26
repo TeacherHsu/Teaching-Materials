@@ -23,6 +23,17 @@ function shuffled(arr) {
   return [...arr].sort(() => Math.random() - 0.5);
 }
 
+function paragraphNo(paragraph) {
+  const value = paragraph.paragraph_no ?? paragraph.para_no;
+  const number = Number(value);
+  return Number.isInteger(number) && number > 0 ? number : null;
+}
+
+function paragraphPrompt(paragraph) {
+  const number = paragraphNo(paragraph);
+  return number ? `第 ${number} 段大意：${paragraph.summary}` : paragraph.summary;
+}
+
 function readyParagraphs(lesson) {
   return filterByStatus(lesson.paragraph_summary || []).filter((p) => p.summary && p.structure_role);
 }
@@ -32,13 +43,13 @@ function buildTree(paragraphs, currentParaNo) {
   const nodes = [];
   paragraphs
     .slice()
-    .sort((a, b) => a.para_no - b.para_no)
+    .sort((a, b) => (paragraphNo(a) || Number.MAX_SAFE_INTEGER) - (paragraphNo(b) || Number.MAX_SAFE_INTEGER))
     .forEach((p) => {
       const last = nodes[nodes.length - 1];
       if (last && last.role === p.structure_role) {
-        last.paraNos.push(p.para_no);
+        last.paraNos.push(paragraphNo(p));
       } else {
-        nodes.push({ role: p.structure_role, paraNos: [p.para_no] });
+        nodes.push({ role: p.structure_role, paraNos: [paragraphNo(p)] });
       }
     });
 
@@ -72,10 +83,10 @@ function buildItems(paragraphs) {
   return picked.map((p) => {
     const cardChildren = [];
     if (p.status === 'draft') cardChildren.push(reviewPendingBadge());
-    cardChildren.push(h('p', { class: 'quiz-stem' }, `第 ${p.para_no} 段大意：${p.summary}`));
+    cardChildren.push(h('p', { class: 'quiz-stem' }, paragraphPrompt(p)));
     const card = h('div', { class: 'structure-map__card' }, cardChildren);
 
-    const context = h('div', {}, [buildTree(paragraphs, p.para_no), card]);
+    const context = h('div', {}, [buildTree(paragraphs, paragraphNo(p)), card]);
 
     const distractors = pickRoleDistractors(allRoles, p.structure_role, 2).map((role) => ({
       id: `role:${role}`,
@@ -85,12 +96,14 @@ function buildItems(paragraphs) {
     return {
       id: p.id,
       context,
-      speakText: `第 ${p.para_no} 段大意：${p.summary}`,
+      speakText: paragraphPrompt(p),
       slotLabel: '？',
       options: [{ id: `role:${p.structure_role}`, label: p.structure_role }, ...distractors],
       answerId: `role:${p.structure_role}`,
       hint: '想一想這一段在課文結構圖裡，是接近開頭、經過還是結果？',
-      explanation: `第 ${p.para_no} 段屬於「${p.structure_role}」。`,
+      explanation: paragraphNo(p)
+        ? `第 ${paragraphNo(p)} 段屬於「${p.structure_role}」。`
+        : `這段內容屬於「${p.structure_role}」。`,
     };
   });
 }

@@ -55,7 +55,7 @@ console.log('computeModuleStars / scoreSession / starsMarkup：全部通過');
 import { installFakeDom } from './fake-dom.mjs';
 installFakeDom();
 
-const { saveModuleStars, getModuleStars, getLessonStars, isModuleComplete } = await import('../src/utils/storage.js');
+const { saveModuleStars, saveModuleComplete, getModuleStars, getLessonStars, isModuleComplete } = await import('../src/utils/storage.js');
 
 const lessonId = 'test-lesson-1';
 
@@ -65,6 +65,10 @@ assert.equal(r.stars, 2);
 assert.equal(r.isNewRecord, true);
 assert.equal(getModuleStars(lessonId, 'characters'), 2);
 assert.equal(isModuleComplete(lessonId, 'characters'), true);
+
+// 完成模組時不可把剛存下的星星覆蓋掉（曾造成完成頁顯示 0 / N）。
+assert.equal(saveModuleComplete(lessonId, 'characters'), true);
+assert.equal(getModuleStars(lessonId, 'characters'), 2, '完成模組後仍應保留既有星星');
 
 // 重玩拿到比較低的分數（1 顆）：最佳成績仍是 2，不會被蓋掉、也不會累加
 r = saveModuleStars(lessonId, 'characters', 1);

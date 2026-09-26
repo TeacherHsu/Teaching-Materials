@@ -16,7 +16,7 @@ function shuffled(arr) {
 // （例：《併吞》），這裡去掉《》，把詞加底線、目標字另外標色，避免學生以為要解釋整個詞。
 function sentenceCard(entry) {
   const raw = entry.sentence || '';
-  const clean = raw.replace(/[《》]/g, '');
+  const rawClean = raw.replace(/[《》]/g, '');
   const p = h('p', { class: 'polysemy-sentence' });
   const m = raw.match(/^(.*?)《(.*?)》(.*)$/);
   const pushWord = (word) => {
@@ -30,7 +30,18 @@ function sentenceCard(entry) {
     });
     p.appendChild(h('span', { class: 'polysemy-sentence__word' }, kids));
   };
-  if (m) {
+  let clean = rawClean;
+  const revealedDefinition = rawClean.match(/^語詞「(.+?)」中的「(.+?)」，就是指.+[。！]$/);
+  if (revealedDefinition) {
+    // 舊資料可能把正解接在題幹後面；畫面只保留語詞情境，答案留在選項中。
+    const [, term, target] = revealedDefinition;
+    clean = `請看語詞「${term}」中的「${target}」，想一想這個字在語詞中的意思。`;
+    p.appendChild(document.createTextNode('請看語詞「'));
+    pushWord(term);
+    p.appendChild(document.createTextNode('」中的「'));
+    p.appendChild(h('mark', { class: 'polysemy-sentence__char' }, target));
+    p.appendChild(document.createTextNode('」，想一想這個字在語詞中的意思。'));
+  } else if (m) {
     p.appendChild(document.createTextNode(m[1]));
     pushWord(m[2]);
     p.appendChild(document.createTextNode(m[3]));

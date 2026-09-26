@@ -15,6 +15,8 @@ export function MatchingGame({ pairs, onComplete, onBack, backLabel = '回課程
   const root = h('div', {});
   const left = shuffle(pairs);
   const right = shuffle(pairs);
+  // 以配對資料物件辨識，而不是以左欄文字辨識；同一課可能有同名
+  // 句型（例如兩個「並列複句」）但對應不同解釋。
   const matched = new Set();
   let selectedLeft = null;
   let selectedRight = null;
@@ -29,13 +31,13 @@ export function MatchingGame({ pairs, onComplete, onBack, backLabel = '回課程
 
   function checkMatch() {
     if (selectedLeft === null || selectedRight === null) return;
-    const leftVal = left[selectedLeft].left;
-    const pair = pairs.find((p) => p.left === leftVal);
+    const pair = left[selectedLeft];
+    const leftVal = pair.left;
     const isMatch = pair && pair.right === right[selectedRight].right;
     const leftBtn = leftButtons[selectedLeft];
     const rightBtn = rightButtons[selectedRight];
     if (isMatch) {
-      matched.add(leftVal);
+      matched.add(pair);
       leftBtn.classList.add('matching-item--matched');
       rightBtn.classList.add('matching-item--matched');
       leftBtn.disabled = true;

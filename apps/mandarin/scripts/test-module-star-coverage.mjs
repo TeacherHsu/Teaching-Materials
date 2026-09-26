@@ -25,7 +25,7 @@ const { computeModuleStars } = await import('../src/utils/scoring.js');
 
 const { buildCharactersActivity } = await import('../src/activities/characters.js');
 const { buildVocabularyActivity } = await import('../src/activities/vocabulary.js');
-const { buildSentencePracticeActivity } = await import('../src/activities/sentencePractice.js');
+const { buildSentencePracticeActivity, splitSentenceIntoChunks } = await import('../src/activities/sentencePractice.js');
 const { buildIdiomBuilderActivity } = await import('../src/components/IdiomBuilder.js');
 const { buildReadingActivity } = await import('../src/activities/reading.js');
 const { buildPolysemyActivity } = await import('../src/activities/polysemy.js');
@@ -80,6 +80,51 @@ function clickWordInOrder(container, word) {
   const chip = enabledButtons(container, (n) => n.hasClass('sentence-chip')).find((n) => n.textContent === word);
   assert.ok(chip, `句子重組／段落排序：應該能找到文字為「${word}」且尚未選取的詞塊`);
   chip.dispatch('click');
+}
+
+function sentenceOrderingSolutions(lesson) {
+  const solutions = [];
+  for (const pattern of lesson.sentence_patterns || []) {
+    if (!['ready', 'approved'].includes(pattern.examples_status)) continue;
+    if (!Array.isArray(pattern.examples) || pattern.examples.length === 0) continue;
+    for (const [index, sentence] of pattern.examples.entries()) {
+      const manualParts = pattern.example_parts?.[index];
+      const solution = Array.isArray(manualParts) && manualParts.length >= 2 && manualParts.join('') === sentence
+        ? manualParts
+        : splitSentenceIntoChunks(sentence);
+      if (solution.length >= 2) solutions.push(solution);
+    }
+  }
+  return solutions;
+}
+
+function sameWords(left, right) {
+  if (left.length !== right.length) return false;
+  const counts = new Map();
+  for (const word of left) counts.set(word, (counts.get(word) || 0) + 1);
+  for (const word of right) {
+    const next = (counts.get(word) || 0) - 1;
+    if (next < 0) return false;
+    counts.set(word, next);
+  }
+  return [...counts.values()].every((count) => count === 0);
+}
+
+/** G6A 有些人工確認過的句型詞塊超過 8 個，不能用排列窮舉測試；
+ * 依課次資料中的 example_parts 驗證同一個 SentenceOrdering 實際解答。 */
+function driveSentenceOrderingWithLessonSolution(container, solutions) {
+  const slots = container.find((n) => n.hasClass && n.hasClass('sentence-slots'));
+  if (!slots) return false;
+  const checkBtn = enabledButtons(container).find((b) => b.textContent.trim() === '檢查答案');
+  if (!checkBtn) return false;
+  const words = container.findAll((n) => n.tagName === 'button' && n.hasClass('sentence-chip')).map((n) => n.textContent);
+  const solution = solutions.find((candidate) => sameWords(candidate, words));
+  assert.ok(solution, `找不到目前句型詞塊的教材正解：${words.join('／')}`);
+  solution.forEach((word) => clickWordInOrder(container, word));
+  const btnAgain = enabledButtons(container).find((b) => b.textContent.trim() === '檢查答案');
+  assert.ok(btnAgain, '排完所有詞塊後應該還能按「檢查答案」');
+  btnAgain.dispatch('click');
+  return true;
 }
 
 /** 依已知正解直接排（讀懂課文段落排序：正解可從課次資料算出來，見 readingParagraphSolution）。 */
@@ -194,11 +239,12 @@ function driveOneGenericStep(container) {
   return false;
 }
 
-function driveActivityToCompletion(container, isFinished, { maxIterations = 3000, readingSolution } = {}) {
+function driveActivityToCompletion(container, isFinished, { maxIterations = 3000, readingSolution, sentenceSolutions } = {}) {
   let iterations = 0;
   while (!isFinished() && iterations < maxIterations) {
     iterations += 1;
     if (readingSolution && driveSentenceOrderingWithSolution(container, readingSolution)) continue;
+    if (sentenceSolutions && driveSentenceOrderingWithLessonSolution(container, sentenceSolutions)) continue;
     if (driveMatchingGameIfPresent(container)) continue;
     if (driveSentenceOrderingBruteForce(container)) continue;
     if (driveOneGenericStep(container)) continue;
@@ -212,7 +258,7 @@ function summarize(container) {
   return buttons.slice(0, 20).join(' ');
 }
 
-// ---- 逐一驅動 9 個可開始的大項，確認每項都能累積 total>0（不會永遠湊不滿星星） ----
+// ---- 逐一驅動目前課次所有可開始的大項，確認每項都能累積 total>0（不會永遠湊不滿星星） ----
 const results = [];
 for (const entry of MODULE_REGISTRY) {
   const status = getModuleStatus(lesson, entry);
@@ -230,7 +276,8 @@ for (const entry of MODULE_REGISTRY) {
     finished = true;
   });
   const readingSolution = entry.key === 'reading' ? readingParagraphSolution(lesson) : undefined;
-  driveActivityToCompletion(container, () => finished, { readingSolution });
+  const sentenceSolutions = entry.key === 'sentence_practice' ? sentenceOrderingSolutions(lesson) : undefined;
+  driveActivityToCompletion(container, () => finished, { readingSolution, sentenceSolutions });
   const meta = endScoreSession();
   const stars = computeModuleStars(meta);
 
@@ -243,7 +290,13 @@ for (const entry of MODULE_REGISTRY) {
   results.push({ key: entry.key, label: entry.label, total: meta.total, stars });
 }
 
-assert.equal(results.length, 11, `應該驗證了 11 個可開始的大項（原 9 個＋形似字＋一字多音），實際 ${results.length}`);
+const expectedResults = MODULE_REGISTRY.filter((entry) => {
+  const status = getModuleStatus(lesson, entry);
+  return status.code !== 'locked'
+    && entry.key !== 'review'
+    && (status.code === 'available' || status.code === 'done');
+}).length;
+assert.equal(results.length, expectedResults, `應該驗證所有可開始的大項，預期 ${expectedResults} 個，實際 ${results.length}`);
 
 console.log(`PASS: 第 ${lesson.lesson_no} 課 11 個可開始大項逐一驗證，全部都有可判定題目、玩到底都能累積 1–3 顆星：`);
 for (const r of results) {

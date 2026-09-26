@@ -14,13 +14,13 @@
 
 ---
 
-## 2026-09-26｜學校 Win｜Codex｜狀態：🚧 施工中
-- 範圍：`apps/mandarin/src/`、`apps/mandarin/public/data/115AG6H/`、`apps/mandarin/public/assets/115AG6H/`、`apps/mandarin/public/data/course-index.json`
-- 做了什麼：依教師回饋修正 G6A 生字造詞、語詞圖片、一字多義、星星累計、詩歌段落顯示，並補整理修辭與聆聽答案來源。
-- 驗證：施工中，尚未完成本輪建置驗證。
-- 推送：施工標記待推送。
-- 待辦／給下一棒：讀取 Excel 常用造詞；補齊可確認的 WebP 語詞圖；修正資料與共用元件；跑完整驗證並回報未能核對的官方資料。
-- 注意：不把第三方 Excel 或官方原始教材放入公開 repo；圖片只使用已確認對應素材並遵守單張約 150～300 KB、單課 4 MB 內規範。
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/src/`、`apps/mandarin/public/data/115AG6H/`、`apps/mandarin/public/assets/115AG6H/`、`apps/mandarin/scripts/test-module-star-coverage.mjs`、`apps/mandarin/scripts/test-star-scoring.mjs`
+- 做了什麼：依教師回饋完成 G6A 第 1～12 課修正；生字卡造詞改取 Excel 常見度前三項，補回可核對的官方語詞圖並轉 WebP；一字多義題幹改為不揭示答案；修正完成狀態覆蓋星星的累計問題；段落資料支援 `paragraph_no` 並在無有效段號時只顯示文本摘要；依官方「10修辭輕鬆學」逐課整理 3 題修辭；依「15閱讀理解提問」官方答案鍵補入每課 4 題聆聽答案，並修正選項解析；配對改用配對資料辨識，支援同名句型的不同解釋。
+- 驗證：G6A 第 1～12 課星星覆蓋測試、`npm.cmd run validate`、`npm.cmd run check-assets`、全部 `scripts/test-*.mjs`、`npm.cmd run build`、`npm.cmd run check-dist` 均通過；共 269 張 WebP/AVIF、`public/assets` 約 18.69 MiB；G6A 圖片約 7.76 MiB，單課最高約 1.40 MiB，均低於單張 300 KiB／單課 4 MiB 閘門；星星回歸測試確認完成模組後仍保留既有星數，內容抽查確認造詞最多 3 個、修辭每課 3 題、聆聽答案均已就緒且無答案揭示／undefined 段落字串。
+- 推送：已建立本地提交；尚未推送。
+- 待辦／給下一棒：若後續更換修辭例句，仍應回到官方 PDF 逐頁核對；語詞圖只可使用明確詞名對應的素材，不以相似檔名猜圖。
+- 注意：不把第三方 Excel 或官方原始教材放入公開 repo；網站只保留壓縮後 WebP/AVIF，維持單張約 150～300 KB、單課 4 MB 內規範。
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/data/115AG6H/`、`apps/mandarin/public/assets/115AG6H/`、`apps/mandarin/public/data/course-index.json`

@@ -14,7 +14,12 @@ export function loadProgress(lessonId) {
 export function saveModuleComplete(lessonId, moduleKey) {
   try {
     const progress = loadProgress(lessonId);
-    progress[moduleKey] = { completed: true, at: new Date().toISOString() };
+    // 完成狀態與星星共用同一筆 module progress；不可用新的物件覆蓋掉既有 stars。
+    progress[moduleKey] = {
+      ...(progress[moduleKey] || {}),
+      completed: true,
+      at: new Date().toISOString(),
+    };
     window.localStorage.setItem(PREFIX + lessonId, JSON.stringify(progress));
     return true;
   } catch (e) {
