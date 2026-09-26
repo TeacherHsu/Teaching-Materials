@@ -1,6 +1,14 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/public/assets/115AG6H/lesson05/vocabulary/l05-05.webp`
+- 做了什麼：更換與「淘氣」詞意不符的風吹樹木圖片，改為頑皮孩童藏玩具、周圍玩具散落的友善情境圖；輸出為 WebP，約 129 KiB，符合單張 300 KiB 與單課 4 MiB 資產規則。
+- 驗證：`test-vocabulary-image-pairs.mjs`、`test-vocabulary-image-completeness.mjs`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過；瀏覽器確認 G6A 第 5 課語詞卡仍正常載入。
+- 推送：尚未推送；本次修改待建立本地提交。
+- 待辦／給下一棒：若再發現語詞圖片與詞意不符，先做詞意檢查，再用相同 WebP 壓縮與圖詞完整性閘門。
+- 注意：原始生成 PNG 留在私有生成資料夾，未放入公開 repo。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/components/PronunciationNotice.js`、`apps/mandarin/src/activities/characters.js`、`apps/mandarin/src/activities/vocabulary.js`、`apps/mandarin/src/styles/components.css`、`apps/mandarin/scripts/test-pronunciation-notice.mjs`
 - 做了什麼：在生字卡與語詞解釋卡頁面下方加入多音字提醒，說明不同語境／詞語的注音可能不同，使用者應以課本與課文標示為準；兩個頁面共用同一個提醒元件與樣式。
 - 驗證：`test-pronunciation-notice.mjs`、`test-module-star-coverage.mjs`、全部 `scripts/test-*.mjs`、`npm.cmd run validate`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過；瀏覽器實際確認 G6A 第 5 課生字卡／語詞卡皆顯示提醒。
