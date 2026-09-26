@@ -710,7 +710,35 @@
       "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
     }
   ],
-  "rhetoric": [],
+  "rhetoric": [
+    {
+      "id": "rhetoric:115AG3H09:0001",
+      "figure": "設問",
+      "note": "用問句引起讀者注意，表示心中疑惑。",
+      "child_note": "用問句引起讀者注意，表示心中疑惑。",
+      "example": "﹁那會是什麼呢？﹂",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（10修辭輕鬆學：第9課解析）"
+    },
+    {
+      "id": "rhetoric:115AG3H09:0002",
+      "figure": "摹寫",
+      "note": "用顏色、聲音與形體描寫自然景象。",
+      "child_note": "用顏色、聲音與形體描寫自然景象。",
+      "example": "海水由天邊﹁深深的藍﹂變成岸邊﹁淺淺的藍﹂。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（10修辭輕鬆學：第9課解析）"
+    },
+    {
+      "id": "rhetoric:115AG3H09:0003",
+      "figure": "轉化",
+      "note": "把浪花想像成會唱歌的人。",
+      "child_note": "把浪花想像成會唱歌的人。",
+      "example": "﹁浪花一曲曲輕唱﹂，我們一聲聲歡笑。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（10修辭輕鬆學：第9課解析）"
+    }
+  ],
   "paragraph_summary": [
     {
       "id": "paragraph:115AG3H:09:01",
@@ -817,9 +845,368 @@
       "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／延伸思考："
     }
   ],
-  "polysemy": [],
-  "polysemy_senses": [],
-  "polyphones": [],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG3H09:0001",
+      "char": "挑",
+      "sentence": "他故意《挑撥》同學吵架。",
+      "definition": "激引、搬弄",
+      "options": [
+        "激引、搬弄",
+        "選取、揀選",
+        "以肩擔負"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第9課）"
+    },
+    {
+      "id": "polysemy:115AG3H09:0002",
+      "char": "挑",
+      "sentence": "奶奶正在《挑選》新鮮蔬菜。",
+      "definition": "選取、揀選",
+      "options": [
+        "激引、搬弄",
+        "選取、揀選",
+        "以肩擔負"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第9課）"
+    },
+    {
+      "id": "polysemy:115AG3H09:0003",
+      "char": "挑",
+      "sentence": "叔叔每天《挑擔子》到市場做生意。",
+      "definition": "以肩擔負",
+      "options": [
+        "激引、搬弄",
+        "選取、揀選",
+        "以肩擔負"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第9課）"
+    },
+    {
+      "id": "polysemy:115AG3H09:0004",
+      "char": "隨",
+      "sentence": "妹妹《跟隨》媽媽走進教室。",
+      "definition": "跟從、順從",
+      "options": [
+        "跟從、順從",
+        "沿著、順著"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第9課）"
+    },
+    {
+      "id": "polysemy:115AG3H09:0005",
+      "char": "隨",
+      "sentence": "我們《隨著》音樂一起拍手。",
+      "definition": "沿著、順著",
+      "options": [
+        "跟從、順從",
+        "沿著、順著"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第9課）"
+    },
+    {
+      "id": "polysemy:115AG3H09:0006",
+      "char": "棧",
+      "sentence": "我們沿著山上的《棧道》前進。",
+      "definition": "在山巖上用木頭架成的道路",
+      "options": [
+        "在山巖上用木頭架成的道路",
+        "圈養牲畜的柵欄",
+        "旅館或倉庫"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第9課）"
+    },
+    {
+      "id": "polysemy:115AG3H09:0007",
+      "char": "棧",
+      "sentence": "旅人今晚住在古老的《客棧》。",
+      "definition": "旅館或倉庫",
+      "options": [
+        "在山巖上用木頭架成的道路",
+        "圈養牲畜的柵欄",
+        "旅館或倉庫"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第9課）"
+    },
+    {
+      "id": "polysemy:115AG3H09:0008",
+      "char": "淺",
+      "sentence": "妹妹穿著《淺藍》的外套。",
+      "definition": "顏色淡",
+      "options": [
+        "顏色淡",
+        "不深",
+        "學識智謀粗陋、程度不高"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第9課）"
+    },
+    {
+      "id": "polysemy:115AG3H09:0009",
+      "char": "淺",
+      "sentence": "小心走過《淺水》區域。",
+      "definition": "不深",
+      "options": [
+        "顏色淡",
+        "不深",
+        "學識智謀粗陋、程度不高"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第9課）"
+    },
+    {
+      "id": "polysemy:115AG3H09:0010",
+      "char": "淺",
+      "sentence": "他對這個問題的理解還很《膚淺》。",
+      "definition": "學識智謀粗陋、程度不高",
+      "options": [
+        "顏色淡",
+        "不深",
+        "學識智謀粗陋、程度不高"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第9課）"
+    }
+  ],
+  "polysemy_senses": [
+    {
+      "id": "polysemy_sense:115AG3H09:0001",
+      "char": "挑",
+      "senses": [
+        {
+          "definition": "激引、搬弄",
+          "examples": [
+            "挑撥"
+          ]
+        },
+        {
+          "definition": "選取、揀選",
+          "examples": [
+            "挑選"
+          ]
+        },
+        {
+          "definition": "以肩擔負",
+          "examples": [
+            "挑擔子"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第9課）"
+    },
+    {
+      "id": "polysemy_sense:115AG3H09:0002",
+      "char": "隨",
+      "senses": [
+        {
+          "definition": "跟從、順從",
+          "examples": [
+            "跟隨"
+          ]
+        },
+        {
+          "definition": "沿著、順著",
+          "examples": [
+            "隨著"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第9課）"
+    },
+    {
+      "id": "polysemy_sense:115AG3H09:0003",
+      "char": "棧",
+      "senses": [
+        {
+          "definition": "在山巖上用木頭架成的道路",
+          "examples": [
+            "棧道"
+          ]
+        },
+        {
+          "definition": "旅館或倉庫",
+          "examples": [
+            "客棧"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第9課）"
+    },
+    {
+      "id": "polysemy_sense:115AG3H09:0004",
+      "char": "淺",
+      "senses": [
+        {
+          "definition": "顏色淡",
+          "examples": [
+            "淺藍"
+          ]
+        },
+        {
+          "definition": "不深",
+          "examples": [
+            "淺水"
+          ]
+        },
+        {
+          "definition": "學識智謀粗陋、程度不高",
+          "examples": [
+            "膚淺"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第9課）"
+    }
+  ],
+  "polyphones": [
+    {
+      "char": "挑",
+      "readings": [
+        {
+          "zhuyin": "ㄊㄧㄠˇ",
+          "senses": [
+            {
+              "definition": "激引、搬弄；引誘、逗弄",
+              "examples": [
+                "挑戰",
+                "挑撥",
+                "挑逗"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄊㄧㄠ",
+          "senses": [
+            {
+              "definition": "選取、揀選；以肩擔負",
+              "examples": [
+                "挑選",
+                "挑擔子",
+                "挑水"
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "polyphone:115AG3H09:0001",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：第9課認識多音字）"
+    },
+    {
+      "char": "著",
+      "readings": [
+        {
+          "zhuyin": "ㄓㄨˋ",
+          "senses": [
+            {
+              "definition": "撰述、寫作；文章、作品的通稱",
+              "examples": [
+                "編著",
+                "名著"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄓㄜ˙",
+          "senses": [
+            {
+              "definition": "附在動詞或形容詞後，表示狀態持續存在",
+              "examples": [
+                "記著",
+                "隨著"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄓㄠˊ",
+          "senses": [
+            {
+              "definition": "表示動作已達結果",
+              "examples": [
+                "找著",
+                "睡著"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄓㄨㄛˊ",
+          "senses": [
+            {
+              "definition": "穿上、到達、依附",
+              "examples": [
+                "穿著",
+                "著陸",
+                "著色"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄓㄠ",
+          "senses": [
+            {
+              "definition": "受、發生",
+              "examples": [
+                "著涼",
+                "著急"
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "polyphone:115AG3H09:0002",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：第9課認識多音字）"
+    },
+    {
+      "char": "曲",
+      "readings": [
+        {
+          "zhuyin": "ㄑㄩˇ",
+          "senses": [
+            {
+              "definition": "樂歌；計算歌曲、樂曲的單位",
+              "examples": [
+                "歌曲",
+                "舞曲",
+                "一曲"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄑㄩ",
+          "senses": [
+            {
+              "definition": "彎折，與「直」相對",
+              "examples": [
+                "曲線",
+                "彎曲"
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "polyphone:115AG3H09:0003",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：第9課認識多音字）"
+    }
+  ],
   "lookalikes": [
     {
       "id": "lookalike:115AG3H09:3",
@@ -901,7 +1288,47 @@
       "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
     }
   ],
-  "listening": [],
+  "listening": [
+    {
+      "id": "listening:115AG3H09:0001",
+      "stem": "弟弟看見林投樹的果實，以為是鳳梨，所以導遊笑著搖搖頭。",
+      "question": "導遊為什麼笑著搖搖頭？",
+      "options": [
+        "弟弟把林投樹的果實誤認為鳳梨",
+        "弟弟不想走木棧道",
+        "導遊找不到回家的路"
+      ],
+      "answer": "因為弟弟把林投樹的果實誤認為鳳梨。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第9課）"
+    },
+    {
+      "id": "listening:115AG3H09:0002",
+      "stem": "作者用藍色深淺的變化，寫出海天一色的美景。",
+      "question": "課文如何描寫海天一色？",
+      "options": [
+        "海水由天邊深藍慢慢變成岸邊淺藍",
+        "海水變成鮮紅色",
+        "天空完全被烏雲遮住"
+      ],
+      "answer": "海水的顏色由天邊深深的藍，慢慢變成岸邊淺淺的藍。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第9課）"
+    },
+    {
+      "id": "listening:115AG3H09:0003",
+      "stem": "不帶走南田石，才能讓自然景觀繼續留給後來的人欣賞。",
+      "question": "南田石為什麼只能拍照不能帶走？",
+      "options": [
+        "這樣美石和美景才能長久保留",
+        "南田石太重不能搬動",
+        "因為相機比石頭更有趣"
+      ],
+      "answer": "這樣美石和美景才能長久保留。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第9課）"
+    }
+  ],
   "review_words": {},
   "extensions": [
     {
@@ -1104,15 +1531,13 @@
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "字義資料待審核。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
-      "status": "missing",
-      "activity": "polyphones",
-      "note": "多音字資料待審核。"
+      "status": "available",
+      "activity": "polyphones"
     },
     "lookalikes": {
       "label": "形似字",
@@ -1126,15 +1551,13 @@
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
-      "activity": "listening-quiz",
-      "note": "聆聽題資料待審核。"
+      "status": "available",
+      "activity": "listening-quiz"
     },
     "rhetoric": {
       "label": "修辭小偵探",
-      "status": "missing",
-      "activity": "rhetoric",
-      "note": "修辭資料待審核。"
+      "status": "available",
+      "activity": "rhetoric"
     },
     "review": {
       "label": "舊字新詞",

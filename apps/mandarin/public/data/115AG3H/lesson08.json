@@ -679,7 +679,35 @@
       "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
     }
   ],
-  "rhetoric": [],
+  "rhetoric": [
+    {
+      "id": "rhetoric:115AG3H08:0001",
+      "figure": "設問",
+      "note": "用問句引起注意，表達心中的疑惑。",
+      "child_note": "用問句引起注意，表達心中的疑惑。",
+      "example": "﹁是什麼東西卡住我了？﹂",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（10修辭輕鬆學：第8課解析）"
+    },
+    {
+      "id": "rhetoric:115AG3H08:0002",
+      "figure": "頂真",
+      "note": "用前一句的結尾接下一句的開頭。",
+      "child_note": "用前一句的結尾接下一句的開頭。",
+      "example": "小螃蟹正要去找﹁寄居蟹﹂，﹁寄居蟹﹂就慌張地跑過來了。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（10修辭輕鬆學：第8課解析）"
+    },
+    {
+      "id": "rhetoric:115AG3H08:0003",
+      "figure": "類疊",
+      "note": "重複相同的詞語來強調語意。",
+      "child_note": "重複相同的詞語來強調語意。",
+      "example": "﹁拜託！拜託！﹂",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（10修辭輕鬆學：第8課解析）"
+    }
+  ],
   "paragraph_summary": [
     {
       "id": "paragraph:115AG3H:08:01",
@@ -786,9 +814,272 @@
       "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／延伸思考："
     }
   ],
-  "polysemy": [],
-  "polysemy_senses": [],
-  "polyphones": [],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG3H08:0001",
+      "char": "寄",
+      "sentence": "小螃蟹暫時《寄居》在空螺殼裡。",
+      "definition": "暫時依附",
+      "options": [
+        "暫時依附",
+        "託付",
+        "透過郵遞傳送書信、包裹"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第8課）"
+    },
+    {
+      "id": "polysemy:115AG3H08:0002",
+      "char": "寄",
+      "sentence": "小明寫好卡片後《寄信》給奶奶。",
+      "definition": "傳達言語、心意，或透過郵遞傳送書信、包裹",
+      "options": [
+        "暫時依附",
+        "託付",
+        "透過郵遞傳送書信、包裹"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第8課）"
+    },
+    {
+      "id": "polysemy:115AG3H08:0003",
+      "char": "寄",
+      "sentence": "媽媽把行李《寄存》在車站。",
+      "definition": "臨時委託",
+      "options": [
+        "暫時依附",
+        "臨時委託",
+        "透過郵遞傳送書信、包裹"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第8課）"
+    },
+    {
+      "id": "polysemy:115AG3H08:0004",
+      "char": "蓋",
+      "sentence": "桌上放著一個漂亮的《鍋蓋》。",
+      "definition": "有覆蓋功能的東西",
+      "options": [
+        "有覆蓋功能的東西",
+        "覆蓋、遮蔽",
+        "加上去、加在上面"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第8課）"
+    },
+    {
+      "id": "polysemy:115AG3H08:0005",
+      "char": "蓋",
+      "sentence": "弟弟用手《蓋住》眼睛。",
+      "definition": "覆蓋、遮蔽",
+      "options": [
+        "有覆蓋功能的東西",
+        "覆蓋、遮蔽",
+        "加上去、加在上面"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第8課）"
+    },
+    {
+      "id": "polysemy:115AG3H08:0006",
+      "char": "蓋",
+      "sentence": "爸爸在文件上《蓋章》。",
+      "definition": "加上去、加在上面",
+      "options": [
+        "有覆蓋功能的東西",
+        "覆蓋、遮蔽",
+        "加上去、加在上面"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第8課）"
+    },
+    {
+      "id": "polysemy:115AG3H08:0007",
+      "char": "淨",
+      "sentence": "吃飯前要先《淨手》。",
+      "definition": "使清潔",
+      "options": [
+        "使清潔",
+        "清潔",
+        "實質的、實際的"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第8課）"
+    },
+    {
+      "id": "polysemy:115AG3H08:0008",
+      "char": "淨",
+      "sentence": "洗完澡，弟弟的身體很《乾淨》。",
+      "definition": "清潔",
+      "options": [
+        "使清潔",
+        "清潔",
+        "實質的、實際的"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第8課）"
+    },
+    {
+      "id": "polysemy:115AG3H08:0009",
+      "char": "淨",
+      "sentence": "扣除成本後，這筆生意還能《淨賺》五百元。",
+      "definition": "實質的、實際的",
+      "options": [
+        "使清潔",
+        "清潔",
+        "實質的、實際的"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第8課）"
+    }
+  ],
+  "polysemy_senses": [
+    {
+      "id": "polysemy_sense:115AG3H08:0001",
+      "char": "寄",
+      "senses": [
+        {
+          "definition": "暫時依附",
+          "examples": [
+            "寄居"
+          ]
+        },
+        {
+          "definition": "傳達言語、心意，或透過郵遞傳送書信、包裹",
+          "examples": [
+            "寄信"
+          ]
+        },
+        {
+          "definition": "臨時委託",
+          "examples": [
+            "寄存"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第8課）"
+    },
+    {
+      "id": "polysemy_sense:115AG3H08:0002",
+      "char": "蓋",
+      "senses": [
+        {
+          "definition": "有覆蓋功能的東西",
+          "examples": [
+            "鍋蓋"
+          ]
+        },
+        {
+          "definition": "覆蓋、遮蔽",
+          "examples": [
+            "蓋住"
+          ]
+        },
+        {
+          "definition": "加上去、加在上面",
+          "examples": [
+            "蓋章"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第8課）"
+    },
+    {
+      "id": "polysemy_sense:115AG3H08:0003",
+      "char": "淨",
+      "senses": [
+        {
+          "definition": "使清潔",
+          "examples": [
+            "淨手"
+          ]
+        },
+        {
+          "definition": "清潔",
+          "examples": [
+            "乾淨"
+          ]
+        },
+        {
+          "definition": "實質的、實際的",
+          "examples": [
+            "淨賺"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第8課）"
+    }
+  ],
+  "polyphones": [
+    {
+      "char": "漂",
+      "readings": [
+        {
+          "zhuyin": "ㄆㄧㄠ",
+          "senses": [
+            {
+              "definition": "浮在液面上",
+              "examples": [
+                "漂流",
+                "漂浮"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄆㄧㄠˋ",
+          "senses": [
+            {
+              "definition": "美麗、好看",
+              "examples": [
+                "漂亮"
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "polyphone:115AG3H08:0001",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：第8課認識多音字）"
+    },
+    {
+      "char": "應",
+      "readings": [
+        {
+          "zhuyin": "ㄧㄥ",
+          "senses": [
+            {
+              "definition": "當、該",
+              "examples": [
+                "應當",
+                "應該"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄧㄥˋ",
+          "senses": [
+            {
+              "definition": "回答；承諾、同意",
+              "examples": [
+                "應對",
+                "回應",
+                "答應",
+                "應許"
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "polyphone:115AG3H08:0002",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：第8課認識多音字）"
+    }
+  ],
   "lookalikes": [
     {
       "id": "lookalike:115AG3H08:1",
@@ -937,7 +1228,47 @@
       "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
     }
   ],
-  "listening": [],
+  "listening": [
+    {
+      "id": "listening:115AG3H08:0001",
+      "stem": "沙灘上的貝殼被人類撿走，寄居蟹只好用海灘垃圾中的瓶蓋當殼。",
+      "question": "寄居蟹為什麼用瓶蓋當自己的殼？",
+      "options": [
+        "沙灘上的貝殼被人類撿走",
+        "瓶蓋比貝殼更漂亮",
+        "牠想收集各種瓶蓋"
+      ],
+      "answer": "因為沙灘上的貝殼被人類撿走，牠沒有殼可以換。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第8課）"
+    },
+    {
+      "id": "listening:115AG3H08:0002",
+      "stem": "閱讀提問指出，淨灘志工一邊清理海灘垃圾，一邊宣導保護海洋。",
+      "question": "淨灘志工的工作內容有哪些？",
+      "options": [
+        "在海灘撿垃圾，並宣導保護海洋的觀念",
+        "到海邊販賣飲料",
+        "替寄居蟹製作新房子"
+      ],
+      "answer": "在海灘撿垃圾，並宣導保護海洋的觀念。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第8課）"
+    },
+    {
+      "id": "listening:115AG3H08:0003",
+      "stem": "課文中的瓶蓋、紙杯和寶特瓶都提醒我們，海洋垃圾問題需要大家改掉亂丟垃圾的習慣。",
+      "question": "作者想透過海灘垃圾的描寫告訴我們什麼？",
+      "options": [
+        "海洋垃圾問題很嚴重，需要大家一起努力處理",
+        "海灘垃圾可以直接丟進海裡",
+        "只有寄居蟹需要整理住處"
+      ],
+      "answer": "海洋垃圾問題很嚴重，需要大家一起努力處理。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第8課）"
+    }
+  ],
   "review_words": {},
   "extensions": [
     {
@@ -1140,15 +1471,13 @@
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "字義資料待審核。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
-      "status": "missing",
-      "activity": "polyphones",
-      "note": "多音字資料待審核。"
+      "status": "available",
+      "activity": "polyphones"
     },
     "lookalikes": {
       "label": "形似字",
@@ -1162,15 +1491,13 @@
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
-      "activity": "listening-quiz",
-      "note": "聆聽題資料待審核。"
+      "status": "available",
+      "activity": "listening-quiz"
     },
     "rhetoric": {
       "label": "修辭小偵探",
-      "status": "missing",
-      "activity": "rhetoric",
-      "note": "修辭資料待審核。"
+      "status": "available",
+      "activity": "rhetoric"
     },
     "review": {
       "label": "舊字新詞",

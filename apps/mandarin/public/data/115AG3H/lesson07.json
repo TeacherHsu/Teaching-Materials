@@ -619,7 +619,35 @@
       "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
     }
   ],
-  "rhetoric": [],
+  "rhetoric": [
+    {
+      "id": "rhetoric:115AG3H07:0001",
+      "figure": "轉化",
+      "note": "把風想像成人，讓句子更有畫面。",
+      "child_note": "把風想像成人，讓句子更有畫面。",
+      "example": "風吹動的樣子被想像成﹁流浪﹂。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（10修辭輕鬆學：第7課解析）"
+    },
+    {
+      "id": "rhetoric:115AG3H07:0002",
+      "figure": "映襯",
+      "note": "把不同的觀念放在一起比較。",
+      "child_note": "把不同的觀念放在一起比較。",
+      "example": "﹁沒有人﹂知道他去過什麼地方，﹁只有我﹂知道。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（10修辭輕鬆學：第7課解析）"
+    },
+    {
+      "id": "rhetoric:115AG3H07:0003",
+      "figure": "摹寫",
+      "note": "用觸覺寫出雪花帶來的感受。",
+      "child_note": "用觸覺寫出雪花帶來的感受。",
+      "example": "有﹁冰涼的雪花﹂。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（10修辭輕鬆學：第7課解析）"
+    }
+  ],
   "paragraph_summary": [
     {
       "id": "paragraph:115AG3H:07:01",
@@ -726,8 +754,205 @@
       "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／延伸思考："
     }
   ],
-  "polysemy": [],
-  "polysemy_senses": [],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG3H07:0001",
+      "char": "乘",
+      "sentence": "爺爺以前常常《乘船》出海。",
+      "definition": "搭坐",
+      "options": [
+        "搭坐",
+        "順應、趁、藉",
+        "數學上的運算方法之一，即乘法"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第7課）"
+    },
+    {
+      "id": "polysemy:115AG3H07:0002",
+      "char": "乘",
+      "sentence": "帆船《乘風》前進，很快就抵達港口。",
+      "definition": "順應、趁、藉",
+      "options": [
+        "搭坐",
+        "順應、趁、藉",
+        "數學上的運算方法之一，即乘法"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第7課）"
+    },
+    {
+      "id": "polysemy:115AG3H07:0003",
+      "char": "乘",
+      "sentence": "四《乘》三等於十二。",
+      "definition": "數學上的運算方法之一，即乘法",
+      "options": [
+        "搭坐",
+        "順應、趁、藉",
+        "數學上的運算方法之一，即乘法"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第7課）"
+    },
+    {
+      "id": "polysemy:115AG3H07:0004",
+      "char": "野",
+      "sentence": "放假時，我們到《原野》上觀察小花。",
+      "definition": "廣平的地方",
+      "options": [
+        "廣平的地方",
+        "野生而未經人工栽培或馴養的",
+        "沒禮貌、不文雅"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第7課）"
+    },
+    {
+      "id": "polysemy:115AG3H07:0005",
+      "char": "野",
+      "sentence": "山邊長著許多《野花》。",
+      "definition": "野生而未經人工栽培或馴養的",
+      "options": [
+        "廣平的地方",
+        "野生而未經人工栽培或馴養的",
+        "沒禮貌、不文雅"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第7課）"
+    },
+    {
+      "id": "polysemy:115AG3H07:0006",
+      "char": "野",
+      "sentence": "他不可以在公共場所表現得太《野蠻》。",
+      "definition": "沒禮貌、不文雅",
+      "options": [
+        "廣平的地方",
+        "野生而未經人工栽培或馴養的",
+        "沒禮貌、不文雅"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第7課）"
+    },
+    {
+      "id": "polysemy:115AG3H07:0007",
+      "char": "賞",
+      "sentence": "爸爸帶我們去《欣賞》山上的美景。",
+      "definition": "感受事物的美好",
+      "options": [
+        "感受事物的美好",
+        "獎賞的事物",
+        "讚美、嘉許、看重"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第7課）"
+    },
+    {
+      "id": "polysemy:115AG3H07:0008",
+      "char": "賞",
+      "sentence": "警方公開《懸賞》尋找走失的狗。",
+      "definition": "獎賞的事物",
+      "options": [
+        "感受事物的美好",
+        "獎賞的事物",
+        "讚美、嘉許、看重"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第7課）"
+    },
+    {
+      "id": "polysemy:115AG3H07:0009",
+      "char": "賞",
+      "sentence": "老師很《賞識》小明的努力。",
+      "definition": "讚美、嘉許、看重",
+      "options": [
+        "感受事物的美好",
+        "獎賞的事物",
+        "讚美、嘉許、看重"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第7課）"
+    }
+  ],
+  "polysemy_senses": [
+    {
+      "id": "polysemy_sense:115AG3H07:0001",
+      "char": "乘",
+      "senses": [
+        {
+          "definition": "搭坐",
+          "examples": [
+            "乘船"
+          ]
+        },
+        {
+          "definition": "順應、趁、藉",
+          "examples": [
+            "乘風"
+          ]
+        },
+        {
+          "definition": "數學上的運算方法之一，即乘法",
+          "examples": [
+            "乘"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第7課）"
+    },
+    {
+      "id": "polysemy_sense:115AG3H07:0002",
+      "char": "野",
+      "senses": [
+        {
+          "definition": "廣平的地方",
+          "examples": [
+            "原野"
+          ]
+        },
+        {
+          "definition": "野生而未經人工栽培或馴養的",
+          "examples": [
+            "野花"
+          ]
+        },
+        {
+          "definition": "沒禮貌、不文雅",
+          "examples": [
+            "野蠻"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第7課）"
+    },
+    {
+      "id": "polysemy_sense:115AG3H07:0003",
+      "char": "賞",
+      "senses": [
+        {
+          "definition": "感受事物的美好",
+          "examples": [
+            "欣賞"
+          ]
+        },
+        {
+          "definition": "獎賞的事物",
+          "examples": [
+            "懸賞"
+          ]
+        },
+        {
+          "definition": "讚美、嘉許、看重",
+          "examples": [
+            "賞識"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第7課）"
+    }
+  ],
   "polyphones": [],
   "lookalikes": [
     {
@@ -913,7 +1138,47 @@
       "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
     }
   ],
-  "listening": [],
+  "listening": [
+    {
+      "id": "listening:115AG3H07:0001",
+      "stem": "作者閉上眼深呼吸，聞聞風的味道，再判斷風到底去過何處。",
+      "question": "作者用什麼方法發現風去過哪些地方？",
+      "options": [
+        "作者閉上眼深呼吸，聞風的味道",
+        "問路人風去了哪裡",
+        "追著風一路奔跑"
+      ],
+      "answer": "作者閉上眼深呼吸，聞聞風的味道，再判斷風去過哪裡。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第7課）"
+    },
+    {
+      "id": "listening:115AG3H07:0002",
+      "stem": "課文寫到風身上的鹹味、雪花和草香，分別讓作者想到大海、高山與原野。",
+      "question": "風到過哪些地方？",
+      "options": [
+        "大海、覆滿白雪的高山和綠油油的原野",
+        "城市、校園和市場",
+        "沙漠、河流和森林"
+      ],
+      "answer": "大海、覆滿白雪的高山和綠油油的原野。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第7課）"
+    },
+    {
+      "id": "listening:115AG3H07:0003",
+      "stem": "只要用心觀察與體會，就能發現大自然的奧祕。",
+      "question": "作者想告訴我們什麼道理？",
+      "options": [
+        "只要用心體會，就能發現大自然的奧祕",
+        "大自然只有在遠方才值得觀察",
+        "風永遠沒有任何味道"
+      ],
+      "answer": "只要用心體會，就能發現大自然的奧祕。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第7課）"
+    }
+  ],
   "review_words": {},
   "extensions": [
     {
@@ -1116,15 +1381,14 @@
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "字義資料待審核。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
       "status": "missing",
       "activity": "polyphones",
-      "note": "多音字資料待審核。"
+      "note": "本課官方教材未列「認識多音字」。"
     },
     "lookalikes": {
       "label": "形似字",
@@ -1138,15 +1402,13 @@
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
-      "activity": "listening-quiz",
-      "note": "聆聽題資料待審核。"
+      "status": "available",
+      "activity": "listening-quiz"
     },
     "rhetoric": {
       "label": "修辭小偵探",
-      "status": "missing",
-      "activity": "rhetoric",
-      "note": "修辭資料待審核。"
+      "status": "available",
+      "activity": "rhetoric"
     },
     "review": {
       "label": "舊字新詞",

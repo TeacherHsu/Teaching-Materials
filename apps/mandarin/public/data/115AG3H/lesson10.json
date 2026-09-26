@@ -672,7 +672,35 @@
       "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
     }
   ],
-  "rhetoric": [],
+  "rhetoric": [
+    {
+      "id": "rhetoric:115AG3H10:0001",
+      "figure": "感嘆",
+      "note": "用感嘆詞表達驚喜的情緒。",
+      "child_note": "用感嘆詞表達驚喜的情緒。",
+      "example": "盪得好高﹁哇﹂！",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（10修辭輕鬆學：第10課解析）"
+    },
+    {
+      "id": "rhetoric:115AG3H10:0002",
+      "figure": "譬喻",
+      "note": "用相似的花朵來比喻笑容。",
+      "child_note": "用相似的花朵來比喻笑容。",
+      "example": "臉上的笑容﹁就像花朵一樣美麗﹂。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（10修辭輕鬆學：第10課解析）"
+    },
+    {
+      "id": "rhetoric:115AG3H10:0003",
+      "figure": "頂真",
+      "note": "用前一句的結尾接下一句的開頭。",
+      "child_note": "用前一句的結尾接下一句的開頭。",
+      "example": "秋千盪得越高，代表新娘越﹁勇敢﹂。﹁勇敢﹂的新娘聽到祝福。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（10修辭輕鬆學：第10課解析）"
+    }
+  ],
   "paragraph_summary": [
     {
       "id": "paragraph:115AG3H:10:01",
@@ -779,9 +807,292 @@
       "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／延伸思考："
     }
   ],
-  "polysemy": [],
-  "polysemy_senses": [],
-  "polyphones": [],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG3H10:0001",
+      "char": "參",
+      "sentence": "老師邀請大家《參加》比賽。",
+      "definition": "干預、加入",
+      "options": [
+        "干預、加入",
+        "以相關的資料來幫助研究",
+        "進見"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第10課）"
+    },
+    {
+      "id": "polysemy:115AG3H10:0002",
+      "char": "參",
+      "sentence": "寫報告時可以《參考》資料。",
+      "definition": "以相關的資料來幫助研究",
+      "options": [
+        "干預、加入",
+        "以相關的資料來幫助研究",
+        "進見"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第10課）"
+    },
+    {
+      "id": "polysemy:115AG3H10:0003",
+      "char": "參",
+      "sentence": "我們下週要去《參拜》寺廟。",
+      "definition": "進見",
+      "options": [
+        "干預、加入",
+        "以相關的資料來幫助研究",
+        "進見"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第10課）"
+    },
+    {
+      "id": "polysemy:115AG3H10:0004",
+      "char": "代",
+      "sentence": "姐姐今天到學校《代課》。",
+      "definition": "替代、替換",
+      "options": [
+        "替代、替換",
+        "稱歷史的某一時段",
+        "量詞，用於計算輩分的單位"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第10課）"
+    },
+    {
+      "id": "polysemy:115AG3H10:0005",
+      "char": "代",
+      "sentence": "唐朝是中國歷史上的一個《朝代》。",
+      "definition": "稱歷史的某一時段",
+      "options": [
+        "替代、替換",
+        "稱歷史的某一時段",
+        "量詞，用於計算輩分的單位"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第10課）"
+    },
+    {
+      "id": "polysemy:115AG3H10:0006",
+      "char": "代",
+      "sentence": "他們一家《三代同堂》，每天都很熱鬧。",
+      "definition": "量詞，用於計算輩分的單位",
+      "options": [
+        "替代、替換",
+        "稱歷史的某一時段",
+        "量詞，用於計算輩分的單位"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第10課）"
+    },
+    {
+      "id": "polysemy:115AG3H10:0007",
+      "char": "響",
+      "sentence": "鐘聲突然《響起》。",
+      "definition": "發出聲音",
+      "options": [
+        "發出聲音",
+        "回應",
+        "聲音宏大"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第10課）"
+    },
+    {
+      "id": "polysemy:115AG3H10:0008",
+      "char": "響",
+      "sentence": "這項活動得到大家的《響應》。",
+      "definition": "回應",
+      "options": [
+        "發出聲音",
+        "回應",
+        "聲音宏大"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第10課）"
+    },
+    {
+      "id": "polysemy:115AG3H10:0009",
+      "char": "響",
+      "sentence": "禮堂裡傳來《響亮》的歌聲。",
+      "definition": "聲音宏大",
+      "options": [
+        "發出聲音",
+        "回應",
+        "聲音宏大"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第10課）"
+    }
+  ],
+  "polysemy_senses": [
+    {
+      "id": "polysemy_sense:115AG3H10:0001",
+      "char": "參",
+      "senses": [
+        {
+          "definition": "干預、加入",
+          "examples": [
+            "參加"
+          ]
+        },
+        {
+          "definition": "以相關的資料來幫助研究",
+          "examples": [
+            "參考"
+          ]
+        },
+        {
+          "definition": "進見",
+          "examples": [
+            "參拜"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第10課）"
+    },
+    {
+      "id": "polysemy_sense:115AG3H10:0002",
+      "char": "代",
+      "senses": [
+        {
+          "definition": "替代、替換",
+          "examples": [
+            "代課"
+          ]
+        },
+        {
+          "definition": "稱歷史的某一時段",
+          "examples": [
+            "朝代"
+          ]
+        },
+        {
+          "definition": "量詞，用於計算輩分的單位",
+          "examples": [
+            "三代同堂"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第10課）"
+    },
+    {
+      "id": "polysemy_sense:115AG3H10:0003",
+      "char": "響",
+      "senses": [
+        {
+          "definition": "發出聲音",
+          "examples": [
+            "響起"
+          ]
+        },
+        {
+          "definition": "回應",
+          "examples": [
+            "響應"
+          ]
+        },
+        {
+          "definition": "聲音宏大",
+          "examples": [
+            "響亮"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第10課）"
+    }
+  ],
+  "polyphones": [
+    {
+      "char": "藏",
+      "readings": [
+        {
+          "zhuyin": "ㄘㄤˊ",
+          "senses": [
+            {
+              "definition": "躲、隱蔽；收存",
+              "examples": [
+                "埋藏",
+                "躲藏",
+                "收藏"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄗㄤˋ",
+          "senses": [
+            {
+              "definition": "珍藏的寶物；藍而近黑的顏色",
+              "examples": [
+                "寶藏",
+                "藏青色"
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "polyphone:115AG3H10:0001",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：第10課認識多音字）"
+    },
+    {
+      "char": "參",
+      "readings": [
+        {
+          "zhuyin": "ㄘㄢ",
+          "senses": [
+            {
+              "definition": "參與、加入",
+              "examples": [
+                "參加"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄕㄣ",
+          "senses": [
+            {
+              "definition": "植物名，主根肥大，形狀像人",
+              "examples": [
+                "人參"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄘㄣ",
+          "senses": [
+            {
+              "definition": "雜亂不整齊",
+              "examples": [
+                "參差不齊"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄙㄢ",
+          "senses": [
+            {
+              "definition": "同「三」",
+              "examples": [
+                "參拾元"
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "polyphone:115AG3H10:0002",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：第10課認識多音字）"
+    }
+  ],
   "lookalikes": [
     {
       "id": "lookalike:115AG3H10:1",
@@ -915,7 +1226,47 @@
       "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
     }
   ],
-  "listening": [],
+  "listening": [
+    {
+      "id": "listening:115AG3H10:0001",
+      "stem": "課文與圖片說明，連杯酒是用一整塊木材雕成的並排雙人共飲酒杯。",
+      "question": "什麼是連杯酒？",
+      "options": [
+        "用一整塊木材雕刻成的並排雙人共飲酒杯",
+        "兩個分開的玻璃杯",
+        "裝滿果汁的大木桶"
+      ],
+      "answer": "用一整塊木材雕刻成的並排雙人共飲酒杯。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第10課）"
+    },
+    {
+      "id": "listening:115AG3H10:0002",
+      "stem": "新人一起喝連杯酒，象徵兩人同心，也表達彼此尊重。",
+      "question": "新人為什麼要喝連杯酒？",
+      "options": [
+        "表示永結同心、相敬如賓",
+        "表示比賽誰喝得最快",
+        "表示婚禮即將結束"
+      ],
+      "answer": "表示永結同心、相敬如賓。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第10課）"
+    },
+    {
+      "id": "listening:115AG3H10:0003",
+      "stem": "藏新娘、找新娘與祝福活動都由族人親友共同參與，展現愛家與互助。",
+      "question": "魯凱族婚禮如何表現愛家、互助的精神？",
+      "options": [
+        "親友一起祝福並共同參與藏新娘、找新娘等活動",
+        "只有新郎獨自完成所有活動",
+        "婚禮中大家都保持安靜不互動"
+      ],
+      "answer": "親友一起祝福並共同參與藏新娘、找新娘等活動。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第10課）"
+    }
+  ],
   "review_words": {},
   "extensions": [
     {
@@ -1118,15 +1469,13 @@
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "字義資料待審核。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
-      "status": "missing",
-      "activity": "polyphones",
-      "note": "多音字資料待審核。"
+      "status": "available",
+      "activity": "polyphones"
     },
     "lookalikes": {
       "label": "形似字",
@@ -1140,15 +1489,13 @@
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
-      "activity": "listening-quiz",
-      "note": "聆聽題資料待審核。"
+      "status": "available",
+      "activity": "listening-quiz"
     },
     "rhetoric": {
       "label": "修辭小偵探",
-      "status": "missing",
-      "activity": "rhetoric",
-      "note": "修辭資料待審核。"
+      "status": "available",
+      "activity": "rhetoric"
     },
     "review": {
       "label": "舊字新詞",

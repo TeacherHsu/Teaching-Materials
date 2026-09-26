@@ -684,7 +684,35 @@
       "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
     }
   ],
-  "rhetoric": [],
+  "rhetoric": [
+    {
+      "id": "rhetoric:115AG3H12:0001",
+      "figure": "映襯",
+      "note": "把大小與多寡的不同感受放在一起比較。",
+      "child_note": "把大小與多寡的不同感受放在一起比較。",
+      "example": "﹁小小的﹂客廳裡，擠了﹁滿滿的﹂親人。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（10修辭輕鬆學：第12課解析）"
+    },
+    {
+      "id": "rhetoric:115AG3H12:0002",
+      "figure": "摹寫",
+      "note": "用視覺描寫讓景物變得清楚。",
+      "child_note": "用視覺描寫讓景物變得清楚。",
+      "example": "﹁長長的雨絲﹂落在車窗上。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（10修辭輕鬆學：第12課解析）"
+    },
+    {
+      "id": "rhetoric:115AG3H12:0003",
+      "figure": "類疊",
+      "note": "重複詞語來加強語意。",
+      "child_note": "重複詞語來加強語意。",
+      "example": "小小的娃娃，滿臉紅通通，睡得﹁好香好香﹂。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（10修辭輕鬆學：第12課解析）"
+    }
+  ],
   "paragraph_summary": [
     {
       "id": "paragraph:115AG3H:12:01",
@@ -791,8 +819,230 @@
       "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／延伸思考："
     }
   ],
-  "polysemy": [],
-  "polysemy_senses": [],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG3H12:0001",
+      "char": "團",
+      "sentence": "除夕夜，家人回到老家《團聚》。",
+      "definition": "結合、聚集",
+      "options": [
+        "結合、聚集",
+        "因共同目的而組織聚集的人群",
+        "同類性質物體大量結集的聚合物"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第12課）"
+    },
+    {
+      "id": "polysemy:115AG3H12:0002",
+      "char": "團",
+      "sentence": "妹妹加入學校的《合唱團》。",
+      "definition": "因共同目的而組織聚集的人群",
+      "options": [
+        "結合、聚集",
+        "因共同目的而組織聚集的人群",
+        "同類性質物體大量結集的聚合物"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第12課）"
+    },
+    {
+      "id": "polysemy:115AG3H12:0003",
+      "char": "團",
+      "sentence": "天空飄來一《雲團》。",
+      "definition": "同類性質物體大量結集的聚合物",
+      "options": [
+        "結合、聚集",
+        "因共同目的而組織聚集的人群",
+        "同類性質物體大量結集的聚合物"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第12課）"
+    },
+    {
+      "id": "polysemy:115AG3H12:0004",
+      "char": "默",
+      "sentence": "她《默默》坐在一旁，沒有說話。",
+      "definition": "不出聲、沉靜無聲",
+      "options": [
+        "不出聲、沉靜無聲",
+        "內心認可或允許卻不表現出來",
+        "憑記憶寫出文字"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第12課）"
+    },
+    {
+      "id": "polysemy:115AG3H12:0005",
+      "char": "默",
+      "sentence": "爸爸沒有反對，算是《默許》我們出門。",
+      "definition": "內心認可或允許卻不表現出來",
+      "options": [
+        "不出聲、沉靜無聲",
+        "內心認可或允許卻不表現出來",
+        "憑記憶寫出文字"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第12課）"
+    },
+    {
+      "id": "polysemy:115AG3H12:0006",
+      "char": "默",
+      "sentence": "小明正在《默寫》課文。",
+      "definition": "憑記憶寫出文字",
+      "options": [
+        "不出聲、沉靜無聲",
+        "內心認可或允許卻不表現出來",
+        "憑記憶寫出文字"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第12課）"
+    },
+    {
+      "id": "polysemy:115AG3H12:0007",
+      "char": "樓",
+      "sentence": "奶奶住在大樓的《三樓》。",
+      "definition": "樓房的一層",
+      "options": [
+        "樓房的一層",
+        "兩層或兩層以上的房屋",
+        "在樓房中的辦公室"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第12課）"
+    },
+    {
+      "id": "polysemy:115AG3H12:0008",
+      "char": "樓",
+      "sentence": "那是一棟高大的《樓房》。",
+      "definition": "兩層或兩層以上的房屋",
+      "options": [
+        "樓房的一層",
+        "兩層或兩層以上的房屋",
+        "在樓房中的辦公室"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第12課）"
+    },
+    {
+      "id": "polysemy:115AG3H12:0009",
+      "char": "鏡",
+      "sentence": "桌上放著一面古老的《銅鏡》。",
+      "definition": "用來反映物體形象的器具",
+      "options": [
+        "用來反映物體形象的器具",
+        "利用光學原理製成的器具"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第12課）"
+    },
+    {
+      "id": "polysemy:115AG3H12:0010",
+      "char": "鏡",
+      "sentence": "科學家用《顯微鏡》觀察細胞。",
+      "definition": "利用光學原理製成的器具",
+      "options": [
+        "用來反映物體形象的器具",
+        "利用光學原理製成的器具"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第12課）"
+    }
+  ],
+  "polysemy_senses": [
+    {
+      "id": "polysemy_sense:115AG3H12:0001",
+      "char": "團",
+      "senses": [
+        {
+          "definition": "結合、聚集",
+          "examples": [
+            "團聚"
+          ]
+        },
+        {
+          "definition": "因共同目的而組織聚集的人群",
+          "examples": [
+            "合唱團"
+          ]
+        },
+        {
+          "definition": "同類性質物體大量結集的聚合物",
+          "examples": [
+            "雲團"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第12課）"
+    },
+    {
+      "id": "polysemy_sense:115AG3H12:0002",
+      "char": "默",
+      "senses": [
+        {
+          "definition": "不出聲、沉靜無聲",
+          "examples": [
+            "默默"
+          ]
+        },
+        {
+          "definition": "內心認可或允許卻不表現出來",
+          "examples": [
+            "默許"
+          ]
+        },
+        {
+          "definition": "憑記憶寫出文字",
+          "examples": [
+            "默寫"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第12課）"
+    },
+    {
+      "id": "polysemy_sense:115AG3H12:0003",
+      "char": "樓",
+      "senses": [
+        {
+          "definition": "樓房的一層",
+          "examples": [
+            "三樓"
+          ]
+        },
+        {
+          "definition": "兩層或兩層以上的房屋",
+          "examples": [
+            "樓房"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第12課）"
+    },
+    {
+      "id": "polysemy_sense:115AG3H12:0004",
+      "char": "鏡",
+      "senses": [
+        {
+          "definition": "用來反映物體形象的器具",
+          "examples": [
+            "銅鏡"
+          ]
+        },
+        {
+          "definition": "利用光學原理製成的器具",
+          "examples": [
+            "顯微鏡"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第12課）"
+    }
+  ],
   "polyphones": [],
   "lookalikes": [
     {
@@ -878,7 +1128,47 @@
       "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
     }
   ],
-  "listening": [],
+  "listening": [
+    {
+      "id": "listening:115AG3H12:0001",
+      "stem": "從長長的雨絲和匆匆忙忙的腳步聲，可以感受到作者有些著急。",
+      "question": "作者一家人在除夕夜趕路時，心情可能如何？",
+      "options": [
+        "有些著急，擔心來不及探望嬸嬸",
+        "非常生氣，不想見家人",
+        "覺得旅程無聊而想回家"
+      ],
+      "answer": "有些著急，擔心來不及探望嬸嬸。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第12課）"
+    },
+    {
+      "id": "listening:115AG3H12:0002",
+      "stem": "家人為了讓嬸嬸安心休息，改用視訊表達關懷與祝福。",
+      "question": "為什麼改用視訊問候叔叔和嬸嬸？",
+      "options": [
+        "因為嬸嬸剛生小寶寶，需要在月子中心好好休息",
+        "因為家裡沒有電話",
+        "因為大家不想和家人見面"
+      ],
+      "answer": "因為嬸嬸剛生小寶寶，需要在月子中心好好休息。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第12課）"
+    },
+    {
+      "id": "listening:115AG3H12:0003",
+      "stem": "只要家人在一起，無論身在何處，都能感受到家的溫暖。",
+      "question": "最能代表本課主題的是哪一句話？",
+      "options": [
+        "家人在哪裡，家就在那裡",
+        "下雨天不要出門",
+        "地下室只有腳步聲"
+      ],
+      "answer": "家人在哪裡，家就在那裡。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第12課）"
+    }
+  ],
   "review_words": {},
   "extensions": [
     {
@@ -1081,15 +1371,14 @@
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "字義資料待審核。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
       "status": "missing",
       "activity": "polyphones",
-      "note": "多音字資料待審核。"
+      "note": "本課官方教材未列「認識多音字」。"
     },
     "lookalikes": {
       "label": "形似字",
@@ -1103,15 +1392,13 @@
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
-      "activity": "listening-quiz",
-      "note": "聆聽題資料待審核。"
+      "status": "available",
+      "activity": "listening-quiz"
     },
     "rhetoric": {
       "label": "修辭小偵探",
-      "status": "missing",
-      "activity": "rhetoric",
-      "note": "修辭資料待審核。"
+      "status": "available",
+      "activity": "rhetoric"
     },
     "review": {
       "label": "舊字新詞",

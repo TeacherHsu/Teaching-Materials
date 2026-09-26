@@ -769,7 +769,35 @@
       "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（08各課短語句型練習／句型）"
     }
   ],
-  "rhetoric": [],
+  "rhetoric": [
+    {
+      "id": "rhetoric:115AG3H11:0001",
+      "figure": "摹寫",
+      "note": "用聽覺描寫車子故障的聲音。",
+      "child_note": "用聽覺描寫車子故障的聲音。",
+      "example": "車子傳出﹁ㄎㄡ ㄌㄨㄛ ㄎㄡ ㄌㄨㄛ﹂的奇怪聲音。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（10修辭輕鬆學：第11課解析）"
+    },
+    {
+      "id": "rhetoric:115AG3H11:0002",
+      "figure": "類疊",
+      "note": "反覆使用相同句式，讓語句更有節奏。",
+      "child_note": "反覆使用相同句式，讓語句更有節奏。",
+      "example": "﹁有人放煙火，有人放鞭炮﹂。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（10修辭輕鬆學：第11課解析）"
+    },
+    {
+      "id": "rhetoric:115AG3H11:0003",
+      "figure": "映襯",
+      "note": "把不同的情況放在一起比較。",
+      "child_note": "把不同的情況放在一起比較。",
+      "example": "大家準備過年了，我們﹁卻還在路上﹂。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（10修辭輕鬆學：第11課解析）"
+    }
+  ],
   "paragraph_summary": [
     {
       "id": "paragraph:115AG3H:11:01",
@@ -876,8 +904,184 @@
       "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／延伸思考："
     }
   ],
-  "polysemy": [],
-  "polysemy_senses": [],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG3H11:0001",
+      "char": "除",
+      "sentence": "清潔人員把落葉《掃除》乾淨。",
+      "definition": "去掉",
+      "options": [
+        "去掉",
+        "數學上的運算方法之一，即除法"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第11課）"
+    },
+    {
+      "id": "polysemy:115AG3H11:0002",
+      "char": "除",
+      "sentence": "六《除以》二等於三。",
+      "definition": "數學上的運算方法之一，即除法",
+      "options": [
+        "去掉",
+        "數學上的運算方法之一，即除法"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第11課）"
+    },
+    {
+      "id": "polysemy:115AG3H11:0003",
+      "char": "陣",
+      "sentence": "窗外吹來一《陣風》。",
+      "definition": "量詞，計算事情或動作的單位",
+      "options": [
+        "量詞，計算事情或動作的單位",
+        "鳥蟲等的行列",
+        "表示一小段的時間"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第11課）"
+    },
+    {
+      "id": "polysemy:115AG3H11:0004",
+      "char": "陣",
+      "sentence": "小鳥排成整齊的《雁陣》。",
+      "definition": "鳥蟲等的行列",
+      "options": [
+        "量詞，計算事情或動作的單位",
+        "鳥蟲等的行列",
+        "表示一小段的時間"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第11課）"
+    },
+    {
+      "id": "polysemy:115AG3H11:0005",
+      "char": "陣",
+      "sentence": "這《陣子》天氣很熱。",
+      "definition": "表示一小段的時間",
+      "options": [
+        "量詞，計算事情或動作的單位",
+        "鳥蟲等的行列",
+        "表示一小段的時間"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第11課）"
+    },
+    {
+      "id": "polysemy:115AG3H11:0006",
+      "char": "息",
+      "sentence": "跑完步後，我坐下《休息》。",
+      "definition": "停止活動，放鬆身心",
+      "options": [
+        "停止活動，放鬆身心",
+        "停止、消失",
+        "音訊、音信"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第11課）"
+    },
+    {
+      "id": "polysemy:115AG3H11:0007",
+      "char": "息",
+      "sentence": "雨聲漸漸《止息》。",
+      "definition": "停止、消失",
+      "options": [
+        "停止活動，放鬆身心",
+        "停止、消失",
+        "音訊、音信"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第11課）"
+    },
+    {
+      "id": "polysemy:115AG3H11:0008",
+      "char": "息",
+      "sentence": "爸爸收到叔叔的《訊息》。",
+      "definition": "音訊、音信",
+      "options": [
+        "停止活動，放鬆身心",
+        "停止、消失",
+        "音訊、音信"
+      ],
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（06字義分析：第11課）"
+    }
+  ],
+  "polysemy_senses": [
+    {
+      "id": "polysemy_sense:115AG3H11:0001",
+      "char": "除",
+      "senses": [
+        {
+          "definition": "去掉",
+          "examples": [
+            "掃除"
+          ]
+        },
+        {
+          "definition": "數學上的運算方法之一，即除法",
+          "examples": [
+            "除以"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第11課）"
+    },
+    {
+      "id": "polysemy_sense:115AG3H11:0002",
+      "char": "陣",
+      "senses": [
+        {
+          "definition": "量詞，計算事情或動作的單位",
+          "examples": [
+            "一陣風"
+          ]
+        },
+        {
+          "definition": "鳥蟲等的行列",
+          "examples": [
+            "雁陣"
+          ]
+        },
+        {
+          "definition": "表示一小段的時間",
+          "examples": [
+            "這陣子"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第11課）"
+    },
+    {
+      "id": "polysemy_sense:115AG3H11:0003",
+      "char": "息",
+      "senses": [
+        {
+          "definition": "停止活動，放鬆身心",
+          "examples": [
+            "休息"
+          ]
+        },
+        {
+          "definition": "停止、消失",
+          "examples": [
+            "止息"
+          ]
+        },
+        {
+          "definition": "音訊、音信",
+          "examples": [
+            "訊息"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（06字義分析：第11課）"
+    }
+  ],
   "polyphones": [],
   "lookalikes": [
     {
@@ -1030,7 +1234,47 @@
       "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（05形音輕鬆學／形似字）"
     }
   ],
-  "listening": [],
+  "listening": [
+    {
+      "id": "listening:115AG3H11:0001",
+      "stem": "作者一家人要回南部過年，除了拜訪爺爺奶奶，也要探望嬸嬸。",
+      "question": "除夕夜作者一家人為什麼還在路上？",
+      "options": [
+        "因為要回南部過年，拜訪家人",
+        "因為要去海邊玩水",
+        "因為要參加運動比賽"
+      ],
+      "answer": "因為他們要回南部過年，拜訪家人。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第11課）"
+    },
+    {
+      "id": "listening:115AG3H11:0002",
+      "stem": "車子發出怪聲，爸爸猜想車子有問題，所以先停下來找人修理。",
+      "question": "爸爸為什麼把車子停在路邊？",
+      "options": [
+        "因為車子突然發出怪聲，可能出了問題",
+        "因為大家要下車放煙火",
+        "因為爸爸想把車子送人"
+      ],
+      "answer": "因為車子突然發出怪聲，可能出了問題。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第11課）"
+    },
+    {
+      "id": "listening:115AG3H11:0003",
+      "stem": "修車師傅一家本來要吃年夜飯，仍願意幫忙修車，顯示他們善良又熱情。",
+      "question": "修車師傅一家人是怎麼樣的人？",
+      "options": [
+        "善良、熱情，願意在除夕夜幫忙修車",
+        "冷漠、不願意和人說話",
+        "只想趕快離開家裡"
+      ],
+      "answer": "善良、熱情，願意在除夕夜幫忙修車。",
+      "status": "approved",
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第11課）"
+    }
+  ],
   "review_words": {},
   "extensions": [
     {
@@ -1233,15 +1477,14 @@
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "字義資料待審核。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
       "status": "missing",
       "activity": "polyphones",
-      "note": "多音字資料待審核。"
+      "note": "本課官方教材未列「認識多音字」。"
     },
     "lookalikes": {
       "label": "形似字",
@@ -1255,15 +1498,13 @@
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
-      "activity": "listening-quiz",
-      "note": "聆聽題資料待審核。"
+      "status": "available",
+      "activity": "listening-quiz"
     },
     "rhetoric": {
       "label": "修辭小偵探",
-      "status": "missing",
-      "activity": "rhetoric",
-      "note": "修辭資料待審核。"
+      "status": "available",
+      "activity": "rhetoric"
     },
     "review": {
       "label": "舊字新詞",
