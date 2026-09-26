@@ -1,6 +1,12 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-27｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/src/components/SentenceOrdering.js`、句子排序回歸測試、星星覆蓋測試與工作流契約。
+- 做了什麼：檢查答案送出前，再點一次已放置詞塊即可單獨退回候選區原本的位置；其他詞塊不受影響，並保留原有檢查後的部分判錯、綠／紅底色與拖拉修正模式。
+- 驗證：句子排序回歸測試、SpeakButton coverage、模組星星覆蓋測試均通過；完整資料／工作流／建置檢查於本次修改後重新執行。
+- 提交／推送：本項已建立本地提交；尚未推送遠端。
+
+## 2026-09-27｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/components/SentenceOrdering.js`、`src/styles/components.css`、句子排序回歸測試與教材網站批次產出工作流文件／完整性檢查。
 - 目標：將各年級「練習句子」統一採用部分判錯模式；正確詞塊綠底黑字並鎖定，錯誤詞塊紅底黑字退回候選區，保留再次拖拉修正的機會。
 - 驗證：`npm.cmd run validate`、`npm.cmd run check-workflow`、全部 `scripts/test-*.mjs`、升級權限 `npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過；已更新各年級共用句子排序工作流契約與回歸測試。

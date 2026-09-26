@@ -39,7 +39,7 @@ export function SentenceOrdering({ prompt, parts, solution, onBack }) {
   const instruction = h(
     'p',
     { class: 'sentence-ordering__instruction' },
-    '可點選詞塊依序排列；檢查後，將變紅的詞塊拖到正確序位。',
+    '可點選詞塊依序排列；再點一次已放置詞塊可退回候選區；檢查後，將變紅的詞塊拖到正確序位。',
   );
   const slots = h('div', { class: 'sentence-slots', 'aria-label': '目前排出的句子' });
   const bankWrap = h('div', {
@@ -96,6 +96,16 @@ export function SentenceOrdering({ prompt, parts, solution, onBack }) {
     const targetIndex = firstEmptySlot();
     if (targetIndex === -1) return;
     placeAt(itemId, targetIndex);
+  }
+
+  function returnToBank(itemId) {
+    if (returning || feedbackShown || lockedIds.has(itemId)) return;
+    const slotIndex = slotsState.indexOf(itemId);
+    if (slotIndex < 0) return;
+    slotsState[slotIndex] = null;
+    clearItemError(itemById.get(itemId));
+    renderSlots();
+    renderBank();
   }
 
   function bindDropTarget(target, index) {
@@ -195,7 +205,20 @@ export function SentenceOrdering({ prompt, parts, solution, onBack }) {
       slotsState.forEach((itemId) => {
         if (!itemId) return;
         const item = itemById.get(itemId);
-        if (item) slots.appendChild(h('span', { class: 'sentence-chip' }, item.word));
+        if (!item) return;
+        const chip = h('button', {
+          class: 'sentence-chip sentence-ordering__placed-chip',
+          type: 'button',
+          'aria-pressed': 'true',
+          'aria-label': `${item.word}，再點一次退回候選區`,
+          title: '再點一次退回候選區',
+        }, item.word);
+        chip.addEventListener('click', () => returnToBank(item.id));
+        const row = h('span', { class: 'quiz-option-row', style: 'display:inline-flex' }, [
+          chip,
+          SpeakButton({ text: item.word, label: '聽', ariaLabel: `朗讀詞塊：${item.word}`, variant: 'speak-button--option' }),
+        ]);
+        slots.appendChild(row);
       });
       return;
     }

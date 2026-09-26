@@ -77,7 +77,8 @@ function readingParagraphSolution(lesson) {
 }
 
 function clickWordInOrder(container, word) {
-  const chip = enabledButtons(container, (n) => n.hasClass('sentence-chip')).find((n) => n.textContent === word);
+  const chip = enabledButtons(container, (n) => n.hasClass('sentence-chip') && !n.hasClass('sentence-ordering__placed-chip'))
+    .find((n) => n.textContent === word);
   assert.ok(chip, `句子重組／段落排序：應該能找到文字為「${word}」且尚未選取的詞塊`);
   chip.dispatch('click');
 }

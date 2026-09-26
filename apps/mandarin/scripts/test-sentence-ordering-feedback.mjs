@@ -35,6 +35,15 @@ const checkButton = () => ordering.find(
   (node) => node.tagName === 'button' && node.textContent.trim() === '檢查答案',
 );
 
+// 送出前再次點選已放置詞塊，該詞塊應單獨退回候選區，其他位置不受影響。
+bankChip('乙').dispatch('click');
+const placedBeforeCheck = ordering.find(
+  (node) => node.tagName === 'button' && node.hasClass('sentence-ordering__placed-chip') && node.textContent === '乙',
+);
+assert.ok(placedBeforeCheck, '送出前已放置的詞塊應是可再次點選的按鈕');
+placedBeforeCheck.dispatch('click');
+assert.ok(bankChip('乙'), '再次點選後，詞塊應退回候選區原本的位置');
+
 // 故意排成 乙、甲、丙：只有第 3 個詞塊位置正確。
 for (const word of ['乙', '甲', '丙']) {
   const chip = bankChip(word);
@@ -85,4 +94,4 @@ for (const [word, targetIndex] of [['乙', 1], ['甲', 0]]) {
 checkButton().dispatch('click');
 assert.equal(ordering.find((node) => node.hasClass('sentence-slots')), null, '重新排對後應進入完成畫面');
 
-console.log('PASS: SentenceOrdering 部分判錯、正確詞塊鎖定、錯誤詞塊退回與再次作答契約通過。');
+console.log('PASS: SentenceOrdering 送出前退回、部分判錯、正確詞塊鎖定與錯誤詞塊再次作答契約通過。');
