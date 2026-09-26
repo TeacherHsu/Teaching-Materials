@@ -167,7 +167,7 @@ python scripts/generate_lessons.py `
 
 `prepare_g4a.mjs` 會在 12 課中保留來源已備妥的生字、語詞解釋、段落摘要與形似字；注音優先使用各課已核對的語詞注音 manifest，沒有直接命中的生字才使用固定 pypinyin 環境作為衍生欄位。Python 產生器接手後補上 Unihan 部首／筆畫、常用造詞上限三項、筆順連結與部首挑戰題，並再次阻擋 `undefined`、私有絕對路徑、未壓縮圖片與超過 300 KiB 的資產。
 
-G4A 的圖片仍遵守「只接受完全對應、已壓縮的 WebP／AVIF」規則；準備資料沒有明確詞圖配對時保留 `image: null`，不把段落圖片或其他語詞圖片錯配到卡片。完成匯入後，照本文件的索引、舊字新詞、資料、容量、建置與回歸檢查執行。
+G4A 的圖片仍遵守「只接受完全對應、已壓縮的 WebP／AVIF」規則。補圖時先掃描私有來源，只有檔名或 manifest 能完整對應詞語的舊圖才可重用；`L02_01.png` 這類沒有詞名對照的舊圖不得猜配。沒有明確舊圖時，依官方詞義建立私有生成圖 manifest，再由 `fill_vocabulary_images.py` 壓縮成 WebP 並回寫公開 JSON。完成匯入後，照本文件的索引、舊字新詞、資料、容量、建置與回歸檢查執行。
 
 ## G6A 專用來源閘門
 
@@ -217,7 +217,7 @@ node scripts/test-lookalike-shape-groups.mjs
 
 檔案：`scripts/fill_vocabulary_images.py`
 
-這支工具只接受兩種來源：私有教材中檔名含有「完整詞名元件」的舊圖，或私有生成圖 manifest。它不會把「鹹味蔚藍回航」這類多詞合成預覽圖誤配給單一語詞；所有輸出會壓縮到 `public/assets/<冊別>/lessonNN/vocabulary/`，並回寫課次 JSON 的 `image` 路徑。
+這支工具只接受兩種來源：私有教材中檔名含有「完整詞名元件」的舊圖，或私有生成圖 manifest。它不會把「鹹味蔚藍回航」這類多詞合成預覽圖誤配給單一語詞；所有輸出會壓縮到 `public/assets/<冊別>/lessonNN/vocabulary/`，並回寫課次 JSON 的 `image` 路徑。G4A 康軒代碼 `115AG4K` 也走同一介面，預設檢查 G3A、G4A、G6A。若生成圖暫存檔以課次／詞序命名，可先用 `scripts/build_vocabulary_image_manifest.mjs` 建立私有 manifest，再交給補圖器；manifest 與原始 PNG 不得進入公開 repo。
 
 ```powershell
 python scripts/fill_vocabulary_images.py `

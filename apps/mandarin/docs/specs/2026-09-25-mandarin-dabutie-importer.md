@@ -84,7 +84,7 @@ python scripts/generate_lessons.py `
 
 ### 5.1 G4A 康軒來源準備與公開介面
 
-G4A 使用 `115AG4K` profile。私有準備器 `scripts/prepare_g4a.mjs` 只讀取已完成來源核對的康軒四上衍生資料，依課次資料夾與來源 manifest 對齊生字、語詞解釋、段落摘要及形似字；它不把官方 `.doc`、完整課文、來源絕對路徑或原始圖片寫入準備資料。沒有明確來源的句型、成語、修辭、一字多義、一字多音、聆聽答案與語詞圖片維持 `missing`／`image: null`。
+G4A 使用 `115AG4K` profile。私有準備器 `scripts/prepare_g4a.mjs` 只讀取已完成來源核對的康軒四上衍生資料，依課次資料夾與來源 manifest 對齊生字、語詞解釋、段落摘要及形似字；它不把官方 `.doc`、完整課文、來源絕對路徑或原始圖片寫入準備資料。沒有明確來源的句型、成語、修辭、一字多義、一字多音與聆聽答案維持 `missing`；語詞圖片則須在後續補圖階段以明確舊圖或私有生成圖 manifest 建立，無法對應時才維持 `image: null`。
 
 ```powershell
 node scripts/prepare_g4a.mjs `
@@ -113,6 +113,8 @@ python scripts/generate_lessons.py `
 - 單課不超過 4 MiB。
 - `public/assets` 接近 600 MiB 警告，達 700 MiB 阻擋建置。
 - 語詞圖片必須是完整詞名的明確對應，不可把多詞合成圖配給單一語詞。
+- 補圖順序固定為：先掃描同冊私有來源中能由完整詞名確認的舊圖，再使用依官方 meaning 產生的私有 manifest；不能由檔名或 manifest 確認的舊圖不得猜配。
+- `scripts/build_vocabulary_image_manifest.mjs` 只建立私有 manifest，原始 PNG 與 manifest 不得進公開 repo；`scripts/fill_vocabulary_images.py --refresh` 才能依來源優先序重新回寫既有圖片。
 
 使用 `scripts/fill_vocabulary_images.py` 或 `scripts/compress-images.py` 後，必須執行 `npm.cmd run check-assets`。
 

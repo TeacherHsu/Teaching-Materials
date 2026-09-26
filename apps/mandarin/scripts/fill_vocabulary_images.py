@@ -45,18 +45,19 @@ def lesson_number(lesson_id: str) -> int:
 
 
 def course_code(lesson_id: str) -> str:
-    match = re.match(r"^(\d{3}AG\dH)", lesson_id)
+    match = re.match(r"^(\d{3}AG\d[HK])", lesson_id)
     if not match:
         raise ValueError(f"無法從課次 ID 解析冊別代碼：{lesson_id}")
     return match.group(1)
 
 
 def source_roots(source_root: Path, code: str) -> list[Path]:
-    grade = re.search(r"G(\d+)H$", code)
-    if not grade:
+    match = re.search(r"AG(\d)([HK])$", code)
+    if not match:
         return []
-    grade_no = grade.group(1)
-    batch = source_root / "worksheet-batches" / "115" / f"115G{grade_no}A_國語 翰"
+    grade_no, publisher_code = match.groups()
+    publisher = "翰" if publisher_code == "H" else "康"
+    batch = source_root / "worksheet-batches" / "115" / f"115G{grade_no}A_國語 {publisher}"
     return [batch]
 
 
@@ -112,8 +113,9 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="補齊語詞解釋卡缺圖並壓縮為 WebP。")
     parser.add_argument("--source-root", type=Path, required=True, help="含私有 worksheet-batches 的工作區。")
     parser.add_argument("--repo-root", type=Path, required=True, help="apps/mandarin 目錄。")
-    parser.add_argument("--codes", default="115AG3H,115AG6H", help="要檢查的冊別代碼，以逗號分隔。")
+    parser.add_argument("--codes", default="115AG3H,115AG4K,115AG6H", help="要檢查的冊別代碼，以逗號分隔。")
     parser.add_argument("--generated-manifest", type=Path, help="生成圖片對照 JSON。")
+    parser.add_argument("--refresh", action="store_true", help="重新依來源優先序回寫既有圖片。")
     args = parser.parse_args()
 
     repo_root = args.repo_root.resolve()
@@ -145,13 +147,15 @@ def main() -> int:
                 continue
             existing = item.get("image")
             existing_path = repo_root / "public" / existing.lstrip("/") if existing else None
-            if existing and existing_path and existing_path.exists():
+            if not args.refresh and existing and existing_path and existing_path.exists():
                 continue
-            source = generated.get((lesson_id, word))
-            source_kind = "generated"
+            # 舊教材中能以完整詞名確認的圖片優先；只有找不到明確舊圖時，
+            # 才使用私有生成圖 manifest，避免新圖蓋掉既有可追溯素材。
+            source = find_reviewed_source(inventory, lesson_no, word)
+            source_kind = "reviewed"
             if source is None:
-                source = find_reviewed_source(inventory, lesson_no, word)
-                source_kind = "reviewed"
+                source = generated.get((lesson_id, word))
+                source_kind = "generated"
             if source is None or not source.exists():
                 unresolved.append(f"{lesson_id}:{word}")
                 continue

@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const scriptsDir = fileURLToPath(new URL('.', import.meta.url));
 const projectDir = join(scriptsDir, '..');
 const dataRoot = join(projectDir, 'public', 'data');
-const targetVolumes = new Set(['115AG3H', '115AG6H']);
+const targetVolumes = new Set(['115AG3H', '115AG4K', '115AG6H']);
 const failures = [];
 let wordsChecked = 0;
 
@@ -33,4 +33,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`PASS: G3A／G6A 語詞圖片完整，共檢查 ${wordsChecked} 個語詞。`);
+console.log(`PASS: G3A／G4A／G6A 語詞圖片完整，共檢查 ${wordsChecked} 個語詞。`);

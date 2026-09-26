@@ -1,6 +1,13 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：G4A 康軒 1–12 課語詞解釋卡圖片補齊、舊圖明確配對盤點、WebP 壓縮與公開資料回寫；同步把 G4A 接回語詞圖片工作流與完整性測試。
+- 規則：只有檔名或私有 manifest 能明確對應完整詞名的舊圖才重用；沒有可靠詞圖對照的 `L02_01` 類舊圖不猜配。其餘依官方語詞 meaning 生成一詞一圖，原始生成 PNG 只留私有工作區，公開只放符合單張 300 KiB／單課 4 MiB 閘門的 WebP。
+- 完成結果：G4A 12 課、183 個語詞全部回寫圖片；共沿用 35 張能由完整詞名確認的舊圖，其餘使用依官方 meaning 建立的私有生成圖 manifest。公開只保留 183 張 WebP，原始生成 PNG 與 manifest 留在私有暫存區。
+- 驗證：`npm.cmd run validate`、`test-vocabulary-image-completeness.mjs`（G3A／G4A／G6A 共 496 個語詞）、`check-workflow-completeness.mjs`、全套 `scripts/test-*.mjs`、升級權限 `npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets` 均通過；公開資產 708 個、704 張 WebP／AVIF、58.43 MiB，單張與單課容量均通過。
+- 注意：本項工作尚未推送遠端；G4A 來源內容依既有官方來源直接公開，圖片是依官方詞義生成的衍生視覺素材。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：G4A 康軒 1–12 課來源準備、`apps/mandarin/scripts/prepare_g4a.mjs`、`apps/mandarin/scripts/generate_lessons.py` 的 G4A 準備資料介面、G4A 工作流與公開課次資料。
 - 做了什麼：依康軒 12 課來源資料夾與既有來源 manifest 產出私有準備資料，再匯入 `public/data/115AG4K/lesson01.json`～`lesson12.json`；補上課名對齊、生字注音、Unihan 部首／筆畫、常用度造詞上限三項、形似字群組、段落摘要、課文地圖、挑戰題、筆順連結與課程索引。
 - 來源邊界：公開資料不含官方原檔、完整課文、私有路徑或未壓縮圖片。句型、成語、修辭、一字多義、一字多音、聆聽答案與沒有明確配對來源的語詞圖片維持未開放或 `image: null`；沒有以推測內容補齊。缺少直接命中語詞注音的生字，準備階段以固定 pypinyin 衍生並以 `zhuyin_source` 標記，後續仍可按課本複核。

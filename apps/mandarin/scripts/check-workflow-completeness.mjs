@@ -16,6 +16,7 @@ const requiredFiles = [
   ['G1A/G3A/G4A/G6A 批次介面', 'scripts/generate_lessons.py'],
   ['G4A 康軒來源準備器', 'scripts/prepare_g4a.mjs'],
   ['語詞圖片補圖器', 'scripts/fill_vocabulary_images.py'],
+  ['生成圖 manifest 建立器', 'scripts/build_vocabulary_image_manifest.mjs'],
   ['圖片壓縮器', 'scripts/compress-images.py'],
   ['圖片容量閘門', 'scripts/check-assets.mjs'],
   ['跨課舊字新詞同步器', 'scripts/sync-review-coverage.mjs'],
