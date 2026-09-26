@@ -1,6 +1,14 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/public/data/115AG6H/lesson01.json`～`lesson12.json`、`apps/mandarin/scripts/test-idiom-sentence-contexts.mjs`
+- 做了什麼：修正「成語填句子」原本使用「遇到生活中的相關情況時，可以用……來形容」的泛用題幹，G6A 112 筆核准例句全部改為具體生活情境句；學生需把候選成語拖入句中，使語句與語意完整。G3A 原有具體例句保留不動。
+- 驗證：`npm.cmd run validate`、全部 `scripts/test-*.mjs`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過；新增測試確認 136 筆核准成語例句皆不含泛用題幹且包含足夠語境。
+- 推送：尚未推送；本次修改待建立本地提交。
+- 待辦／給下一棒：後續新增成語填句子資料，需提供完整情境句，不可使用泛用模板。
+- 注意：未修改官方原始教材，只整理公開教材資料中的教師自撰例句。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/assets/115AG6H/lesson05/idioms/01_心浮氣躁.webp`
 - 做了什麼：更換與「心浮氣躁」詞意不符的冥想圖片，改為課桌前皺眉、敲筆、翻動作業紙的焦躁情境圖；輸出為 512×512 WebP，約 46 KiB。
 - 驗證：`test-vocabulary-image-pairs.mjs`、`test-vocabulary-image-completeness.mjs`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過；已用瀏覽器確認成語卡載入新圖。
