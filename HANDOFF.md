@@ -1,6 +1,14 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/public/assets/115AG6H/lesson02/vocabulary/l02-13.webp`、`lesson03/vocabulary/l03-03.webp`、`lesson06/vocabulary/l06-17.webp`、`lesson08/vocabulary/l08-06.webp`
+- 做了什麼：依語詞正式解釋重做四張圖詞不符的 G6A 語詞卡圖片：「寬」改為明確放鬆情境、「鏗鏘」改為清脆響亮的三角鐵聲音、「窘境」改為孩子在教室紙張散落時的尷尬處境、「不羈」改為在開闊草地自由演奏的情境。四張均由私有生成來源產出後，依既有流程壓縮為 WebP。
+- 驗證：四張檔案分別為約 105.2、52.1、99.8、95.8 KiB，均低於單張 300 KiB；`test-vocabulary-image-pairs.mjs`、`test-vocabulary-image-completeness.mjs`、全部 `scripts/test-*.mjs`、`npm.cmd run validate`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過；已以本地圖片檢視確認四張新圖內容。
+- 推送：尚未推送；本次修改待建立本地提交。
+- 待辦／給下一棒：若再發現 G6A 語詞圖片與詞意不符，先核對課次 JSON 的正式詞意與資產對應，再沿用同一 WebP 壓縮與圖片完整性閘門。
+- 注意：原始生成 PNG 留在私有生成資料夾，未放入公開 repo；未修改官方教材與公開資料詞義。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/public/assets/115AG6H/lesson05/vocabulary/l05-05.webp`
 - 做了什麼：更換與「淘氣」詞意不符的風吹樹木圖片，改為頑皮孩童藏玩具、周圍玩具散落的友善情境圖；輸出為 WebP，約 129 KiB，符合單張 300 KiB 與單課 4 MiB 資產規則。
 - 驗證：`test-vocabulary-image-pairs.mjs`、`test-vocabulary-image-completeness.mjs`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過；瀏覽器確認 G6A 第 5 課語詞卡仍正常載入。
