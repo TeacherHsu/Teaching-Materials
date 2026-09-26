@@ -1,6 +1,14 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：`apps/mandarin/public/assets/115AG6H/lesson05/idioms/01_心浮氣躁.webp`
+- 做了什麼：更換與「心浮氣躁」詞意不符的冥想圖片，改為課桌前皺眉、敲筆、翻動作業紙的焦躁情境圖；輸出為 512×512 WebP，約 46 KiB。
+- 驗證：`test-vocabulary-image-pairs.mjs`、`test-vocabulary-image-completeness.mjs`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過；已用瀏覽器確認成語卡載入新圖。
+- 推送：尚未推送；本次修改待建立本地提交。
+- 待辦／給下一棒：若再發現成語圖詞不符，沿用詞意檢視、WebP 壓縮、圖詞配對測試流程。
+- 注意：生成來源與原始 PNG 留在私有工作區，不放入公開 repo。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/src/activities/rhetoric.js`、`apps/mandarin/src/components/ChoiceQuiz.js`、`apps/mandarin/src/styles/components.css`、`apps/mandarin/public/data/115AG6H/lesson01.json`～`lesson12.json`、`apps/mandarin/scripts/test-rhetoric-highlights.mjs`
 - 做了什麼：修辭資料支援官方解析使用的 `﹁﹂`，並相容既有 `「」`／`『』` 標記；題幹只將標記內關鍵字套用修辭模組色彩，畫面與朗讀／全部朗讀共用純文字，不會讀出標記。G6A 第一至十二課例句依官方解析補上關鍵字標記。
 - 驗證：`npm.cmd run validate`、全部 `scripts/test-*.mjs`、`npm.cmd run check-assets`、`npm.cmd run build`、`npm.cmd run check-dist`、`git diff --check` 均通過；瀏覽器實際確認第六課「化解／營造」變色。
