@@ -13,7 +13,8 @@ const read = (relative) => fs.readFileSync(path.join(appRoot, relative), 'utf8')
 const requiredFiles = [
   ['主工作流文件', 'docs/lesson-generation-workflow.md'],
   ['匯入器規格', 'docs/specs/2026-09-25-mandarin-dabutie-importer.md'],
-  ['G1A/G3A/G6A 批次介面', 'scripts/generate_lessons.py'],
+  ['G1A/G3A/G4A/G6A 批次介面', 'scripts/generate_lessons.py'],
+  ['G4A 康軒來源準備器', 'scripts/prepare_g4a.mjs'],
   ['語詞圖片補圖器', 'scripts/fill_vocabulary_images.py'],
   ['圖片壓縮器', 'scripts/compress-images.py'],
   ['圖片容量閘門', 'scripts/check-assets.mjs'],
@@ -49,9 +50,10 @@ const generator = read('scripts/generate_lessons.py');
 for (const [label, needle] of [
   ['G1A profile', '"g1a": Profile'],
   ['G3A profile', '"g3a": Profile'],
+  ['G4A profile', '"g4a": Profile'],
   ['G6A profile', '"g6a": Profile'],
-  ['G6A prepared-root 介面', '--prepared-root'],
-  ['G6A 準備資料驗證', 'validate_prepared_lesson'],
+  ['G4A/G6A prepared-root 介面', 'PREPARED_PROFILES'],
+  ['G4A/G6A 準備資料驗證', 'validate_prepared_lesson'],
   ['中斷後續作', '--resume'],
   ['唯讀來源檢查', '--dry-run'],
 ]) {
@@ -62,6 +64,7 @@ for (const [label, needle] of [
 const workflow = read('docs/lesson-generation-workflow.md');
 for (const [label, needle] of [
   ['G6A 公開準備資料介面', 'G6A 公開準備資料介面'],
+  ['G4A 公開準備資料介面', 'G4A 公開準備資料介面'],
   ['G6A 私有來源閘門', 'G6A 專用來源閘門'],
   ['工作流完整性規則', '工作流完整性檢查'],
   ['WebP／AVIF 容量規則', '單張不得超過 300 KiB'],

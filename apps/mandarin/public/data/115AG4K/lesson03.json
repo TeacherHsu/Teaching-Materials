@@ -1,0 +1,1064 @@
+{
+  "lesson_id": "115AG4K03",
+  "volume": {
+    "code": "115AG4K",
+    "publisher": "康軒",
+    "grade": 4,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "康軒四上國語課程"
+  },
+  "lesson_no": 3,
+  "title": "我的籃球夢",
+  "author": "",
+  "blurb": "透過〈我的籃球夢〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "source_audit": [
+    {
+      "kind": "official",
+      "locator": "01 生字表",
+      "sha256": "1FC2FAE5BF0473C06699E5B1D01579AFA3BE8FBE57B97003DE3CF4000AC27F5F"
+    },
+    {
+      "kind": "official",
+      "locator": "第三課 我的籃球夢",
+      "sha256": "ED57ADBD76746D9EEADC5831F748CC89CE4643A7CF997D3F426476B9CE847334"
+    },
+    {
+      "kind": "official",
+      "locator": "第三課 我的籃球夢",
+      "sha256": "A949FA87B3BE26A1EAA736A6F2227ADA8C658D37ED37BC89FD0CE94C11443E8F"
+    },
+    {
+      "kind": "official",
+      "locator": "L03／我的籃球夢",
+      "sha256": "ED57ADBD76746D9EEADC5831F748CC89CE4643A7CF997D3F426476B9CE847334"
+    },
+    {
+      "kind": "official",
+      "locator": "L03／我的籃球夢",
+      "sha256": "A949FA87B3BE26A1EAA736A6F2227ADA8C658D37ED37BC89FD0CE94C11443E8F"
+    },
+    {
+      "kind": "official",
+      "locator": "03 課文",
+      "sha256": "1B7B73A5775FC7E4F6617E327BBC803E79B26580ACAE73F75A8D1B1C932ECA32"
+    },
+    {
+      "kind": "official",
+      "locator": "14 課文大意、段落大意",
+      "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    }
+  ],
+  "characters": [
+    {
+      "char": "社",
+      "zhuyin": "ㄕㄜˋ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 8,
+      "radical": "⽰",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A4%BE",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "邀",
+      "zhuyin": "ㄧㄠ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 16,
+      "radical": "⾡",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "邀約"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%82%80",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "與",
+      "zhuyin": "ㄩˇ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 14,
+      "radical": "⾅",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "參與",
+        "與其",
+        "與否"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%88%87",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "遙",
+      "zhuyin": "ㄧㄠˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 13,
+      "radical": "⾡",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "遙不可及"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%81%99",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "投",
+      "zhuyin": "ㄊㄡˊ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 7,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8A%95",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "熟",
+      "zhuyin": "ㄕㄨˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 15,
+      "radical": "⽕",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "熟能生巧"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%86%9F",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "巧",
+      "zhuyin": "ㄑㄧㄠˇ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 5,
+      "radical": "⼯",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "熟能生巧"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B7%A7",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "彈",
+      "zhuyin": "ㄊㄢˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 15,
+      "radical": "⼸",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "反彈"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%BD%88",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "曾",
+      "zhuyin": "ㄘㄥˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 12,
+      "radical": "⽈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "曾幾何時",
+        "曾祖母",
+        "曾祖父"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9B%BE",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "揮",
+      "zhuyin": "ㄏㄨㄟ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 12,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "指揮"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8F%AE",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "彼",
+      "zhuyin": "ㄅㄧˇ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 8,
+      "radical": "⼻",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "此起彼落"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%BD%BC",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "秒",
+      "zhuyin": "ㄇㄧㄠˇ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 9,
+      "radical": "⽲",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A7%92",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "喧",
+      "zhuyin": "ㄒㄩㄢ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 12,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "喧鬧"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%96%A7",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "優",
+      "zhuyin": "ㄧㄡ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 17,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "優先",
+        "優勢",
+        "優惠"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%84%AA",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "弧",
+      "zhuyin": "ㄏㄨˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 8,
+      "radical": "⼸",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "弧線"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%BC%A7",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG4K03:01",
+      "word": "邀約",
+      "zhuyin": "ㄧㄠㄩㄝ",
+      "meaning": "邀請、約請。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K03:02",
+      "word": "遙不可及",
+      "zhuyin": "ㄧㄠˊㄅㄨˋㄎㄜˇㄐㄧˊ",
+      "meaning": "距離遙遠無法到達或形容沒有希望。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K03:03",
+      "word": "熟能生巧",
+      "zhuyin": "ㄕㄨˊㄋㄥˊㄕㄥㄑㄧㄠˇ",
+      "meaning": "熟練了自然能領悟出竅門。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K03:04",
+      "word": "反彈",
+      "zhuyin": "ㄈㄢˇㄊㄢˊ",
+      "meaning": "⑴物理學上指作用力施於物體的同一時間，必產生相等而相反的動量，稱為「反彈」。⑵在極度壓迫的情況下突然反撲或突破困境。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K03:05",
+      "word": "不曾",
+      "zhuyin": "ㄅㄨˋㄘㄥˊ",
+      "meaning": "從不。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K03:06",
+      "word": "指揮",
+      "zhuyin": "ㄓˇㄏㄨㄟ",
+      "meaning": "⑴發號施令，指示別人行動。⑵樂隊、合唱團等表演時，以手或指揮棒指示節拍、表情的人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K03:07",
+      "word": "此起彼落",
+      "zhuyin": "ㄘˇㄑㄧˇㄅㄧˇㄌㄨㄛˋ",
+      "meaning": "這裡起來，那裡落下。形容連續不斷。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K03:08",
+      "word": "喧鬧",
+      "zhuyin": "ㄒㄩㄢㄋㄠˋ",
+      "meaning": "喧譁吵鬧。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K03:09",
+      "word": "優美",
+      "zhuyin": "ㄧㄡㄇㄟˇ",
+      "meaning": "良好、美妙。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K03:10",
+      "word": "弧線",
+      "zhuyin": "ㄏㄨˊㄒㄧㄢˋ",
+      "meaning": "彎曲如弓的線條。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K03:11",
+      "word": "喝采",
+      "zhuyin": "ㄏㄜˋㄘㄞˇ",
+      "meaning": "大聲叫好。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K03:12",
+      "word": "有朝一日",
+      "zhuyin": "ㄧㄡˇㄓㄠㄧㄖˋ",
+      "meaning": "將來有一天。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K03:13",
+      "word": "風雲人物",
+      "zhuyin": "ㄈㄥㄩㄣˊㄖㄣˊㄨˋ",
+      "meaning": "表現特出，深具知名度及影響力的人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K03:14",
+      "word": "打氣",
+      "zhuyin": "ㄉㄚˇㄑㄧˋ",
+      "meaning": "激勵他人使增加信心和勇氣。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K03:15",
+      "word": "平分秋色",
+      "zhuyin": "ㄆㄧㄥˊㄈㄣㄑㄧㄡㄙㄜˋ",
+      "meaning": "形容兩者一樣出色，不分高下。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [],
+  "idiom_sentences": [],
+  "sentence_patterns": [],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:115AG4K03:01",
+      "paragraph_no": 1,
+      "summary": "主角接受同學邀約，勇敢加入籃球社，希望自己有朝一日能在球場上發揮實力，成為受到大家肯定的選手。",
+      "structure_role": "加入】夢想與害怕",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K03:02",
+      "paragraph_no": 2,
+      "summary": "初次站上球場時，高高的球架像遙不可及的山，主角既害怕又不懂投球方法，只能先聽學長鼓勵。",
+      "structure_role": "加入】夢想與害怕",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K03:03",
+      "paragraph_no": 3,
+      "summary": "學長用熟能生巧勉勵他多練習；開始運球時，球常反彈飛撞下巴，讓學習過程充滿挫折與挑戰。",
+      "structure_role": "練習】挫折與進步",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K03:04",
+      "paragraph_no": 4,
+      "summary": "主角沒有放棄，每天提早到場反覆練習，逐漸學會控制籃球；當他投進籃時，終於感受運動的喜悅。",
+      "structure_role": "練習】挫折與進步",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K03:05",
+      "paragraph_no": 5,
+      "summary": "比賽結束前只剩五秒，雙方分數相同；主角帶著同伴鼓勵上場，努力讓自己在緊張中保持冷靜。",
+      "structure_role": "比賽】緊張與成就",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K03:06",
+      "paragraph_no": 6,
+      "summary": "他忘記四周喧鬧，深深吸氣後將球拋出，籃球沿著優美弧線飛向球框，最後進球並獲得全場喝采，證明持續努力能使夢想成真。",
+      "structure_role": "比賽】緊張與成就",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "gist": "主角接受同學邀約，勇敢加入籃球社，希望自己有朝一日能在球場上發揮實力，成為受到大家肯定的選手。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "question:115AG4K03:01",
+      "stem": "主角為什麼決定加入籃球社？",
+      "question": "主角為什麼決定加入籃球社？",
+      "options": [
+        "想逃避功課",
+        "夢想成為球場上的風雲人物",
+        "想買新球",
+        "想當裁判"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K03:02",
+      "stem": "主角剛站上球場時，是誰為他打氣？",
+      "question": "主角剛站上球場時，是誰為他打氣？",
+      "options": [
+        "老師",
+        "學長",
+        "家人",
+        "裁判"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K03:03",
+      "stem": "主角如何讓球技慢慢進步？",
+      "question": "主角如何讓球技慢慢進步？",
+      "options": [
+        "最早到球場練習",
+        "只在旁邊觀看",
+        "請別人代替",
+        "放棄運球"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K03:04",
+      "stem": "主角投出最後一球前，如何保持鎮定？",
+      "question": "主角投出最後一球前，如何保持鎮定？",
+      "options": [
+        "大聲唱歌",
+        "用力吸一口氣",
+        "閉眼休息",
+        "離開球場"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    }
+  ],
+  "polysemy": [],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG4K03:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "社",
+          "example": "社會、社區"
+        },
+        {
+          "char": "杜",
+          "example": "杜鵑、杜絕"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K03:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "邀",
+          "example": "邀請、邀約"
+        },
+        {
+          "char": "激",
+          "example": "激動、激勵"
+        },
+        {
+          "char": "繳",
+          "example": "繳費、繳交"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K03:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "遙",
+          "example": "遙遠、遙望"
+        },
+        {
+          "char": "搖",
+          "example": "搖頭、搖動"
+        },
+        {
+          "char": "歌",
+          "example": "歌謠、民謠"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K03:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "投",
+          "example": "投票、投入"
+        },
+        {
+          "char": "設",
+          "example": "設計、設備"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K03:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "成",
+          "example": "成熟、熟悉"
+        },
+        {
+          "char": "熱",
+          "example": "熱心、熱水"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K03:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "巧",
+          "example": "巧妙、靈巧"
+        },
+        {
+          "char": "朽",
+          "example": "朽木、不朽"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K03:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "彈",
+          "example": "彈琴、彈力"
+        },
+        {
+          "char": "禪",
+          "example": "禪師、禪讓"
+        },
+        {
+          "char": "蟬",
+          "example": "蟬鳴、蟬翼"
+        },
+        {
+          "char": "無",
+          "example": "無所忌憚、肆無忌憚"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K03:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "曾",
+          "example": "曾經、未曾"
+        },
+        {
+          "char": "樓",
+          "example": "樓層、層次"
+        },
+        {
+          "char": "增",
+          "example": "增加、增添"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    }
+  ],
+  "listening": [],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "泳",
+        "串",
+        "般",
+        "姿",
+        "溜",
+        "耳",
+        "鷹",
+        "滑",
+        "遨",
+        "緩",
+        "陀",
+        "螺",
+        "轉",
+        "躍",
+        "煩"
+      ],
+      "2": [
+        "招",
+        "湯",
+        "拋",
+        "糧",
+        "姐",
+        "爭",
+        "警",
+        "偷",
+        "則",
+        "繩",
+        "依",
+        "捨",
+        "束",
+        "暫",
+        "幸"
+      ],
+      "3": [
+        "社",
+        "邀",
+        "與",
+        "遙",
+        "投",
+        "熟",
+        "巧",
+        "彈",
+        "曾",
+        "揮",
+        "彼",
+        "秒",
+        "喧",
+        "優",
+        "弧"
+      ]
+    }
+  },
+  "extensions": [],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「社」的部首是哪一個？",
+      "options": [
+        "⾡",
+        "⽕",
+        "⽲"
+      ],
+      "answer": "⽰",
+      "explanation": "「社」的部首是⽰。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「邀」的部首是哪一個？",
+      "options": [
+        "⽰",
+        "⽕",
+        "⽈"
+      ],
+      "answer": "⾡",
+      "explanation": "「邀」的部首是⾡。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「與」的部首是哪一個？",
+      "options": [
+        "⽕",
+        "⾡",
+        "⼿"
+      ],
+      "answer": "⾅",
+      "explanation": "「與」的部首是⾅。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「邀約」是什麼意思？",
+      "options": [
+        "彎曲如弓的線條。",
+        "良好、美妙。",
+        "激勵他人使增加信心和勇氣。"
+      ],
+      "answer": "邀請、約請。",
+      "explanation": "邀約：邀請、約請。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「遙不可及」是什麼意思？",
+      "options": [
+        "從不。",
+        "良好、美妙。",
+        "邀請、約請。"
+      ],
+      "answer": "距離遙遠無法到達或形容沒有希望。",
+      "explanation": "遙不可及：距離遙遠無法到達或形容沒有希望。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「熟能生巧」是什麼意思？",
+      "options": [
+        "⑴物理學上指作用力施於物體的同一時間，必產生相等而相反的動量，稱為「反彈」。⑵在極度壓迫的情況下突然反撲或突破困境。",
+        "從不。",
+        "激勵他人使增加信心和勇氣。"
+      ],
+      "answer": "熟練了自然能領悟出竅門。",
+      "explanation": "熟能生巧：熟練了自然能領悟出竅門。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「反彈」是什麼意思？",
+      "options": [
+        "大聲叫好。",
+        "彎曲如弓的線條。",
+        "激勵他人使增加信心和勇氣。"
+      ],
+      "answer": "⑴物理學上指作用力施於物體的同一時間，必產生相等而相反的動量，稱為「反彈」。⑵在極度壓迫的情況下突然反撲或突破困境。",
+      "explanation": "反彈：⑴物理學上指作用力施於物體的同一時間，必產生相等而相反的動量，稱為「反彈」。⑵在極度壓迫的情況下突然反撲或突破困境。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「不曾」是什麼意思？",
+      "options": [
+        "大聲叫好。",
+        "激勵他人使增加信心和勇氣。",
+        "⑴物理學上指作用力施於物體的同一時間，必產生相等而相反的動量，稱為「反彈」。⑵在極度壓迫的情況下突然反撲或突破困境。"
+      ],
+      "answer": "從不。",
+      "explanation": "不曾：從不。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "missing",
+      "activity": "sentence-practice",
+      "note": "句型來源尚未完成來源核對。"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "應用任務來源尚未完成來源核對。"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "missing",
+      "activity": "idiom-builder",
+      "note": "成語資料尚未完成來源核對。"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "missing",
+      "activity": "polysemy",
+      "note": "一字多義資料尚未完成來源核對。"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones",
+      "note": "一字多音資料尚未完成來源核對。"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭資料尚未完成來源核對。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  }
+}

@@ -1,6 +1,14 @@
 # 交接紀錄（最新的寫在最上面）
 
 ## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
+- 範圍：G4A 康軒 1–12 課來源準備、`apps/mandarin/scripts/prepare_g4a.mjs`、`apps/mandarin/scripts/generate_lessons.py` 的 G4A 準備資料介面、G4A 工作流與公開課次資料。
+- 做了什麼：依康軒 12 課來源資料夾與既有來源 manifest 產出私有準備資料，再匯入 `public/data/115AG4K/lesson01.json`～`lesson12.json`；補上課名對齊、生字注音、Unihan 部首／筆畫、常用度造詞上限三項、形似字群組、段落摘要、課文地圖、挑戰題、筆順連結與課程索引。
+- 來源邊界：公開資料不含官方原檔、完整課文、私有路徑或未壓縮圖片。句型、成語、修辭、一字多義、一字多音、聆聽答案與沒有明確配對來源的語詞圖片維持未開放或 `image: null`；沒有以推測內容補齊。缺少直接命中語詞注音的生字，準備階段以固定 pypinyin 衍生並以 `zhuyin_source` 標記，後續仍可按課本複核。
+- 驗證：`npm run validate`（43 課）、`node scripts/sync-review-coverage.mjs --check`、`node scripts/check-workflow-completeness.mjs`、`npm run build`、`npm run check-dist`、`npm run check-assets`（525 資產／40.37 MiB）、全套 `scripts/test-*.mjs` 均通過。
+- 目前狀態：G4A 12 課可公開瀏覽，已與 `course-index.json` 對齊；圖片容量總量仍在既有 600 MiB 警告線以下。尚未推送遠端，提交前請再次確認 `git status` 與公開 diff。
+- 請勿同時修改上述範圍；若要補齊待開放模組，先提供對應的官方來源核對結果，再沿用同一準備資料契約重跑。
+
+## 2026-09-26｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/scripts/generate_lessons.py`、`apps/mandarin/scripts/check-workflow-completeness.mjs`、`apps/mandarin/docs/specs/2026-09-25-mandarin-dabutie-importer.md`、`apps/mandarin/docs/lesson-generation-workflow.md`。
 - 做了什麼：補上 G6A 的公開準備資料介面（只接受已審核的標準課次 JSON 與 WebP／AVIF 資產，不把官方原始檔放進公開倉庫）；補齊大補帖匯入、來源邊界、圖片容量、回歸驗證與重跑規格；新增 `check-workflow-completeness.mjs` 與 `npm run check-workflow`，檢查 10 個工具／契約、13 個回歸測試與 10 個 npm 閘門。
 - G4A 只完成唯讀檔案／資料夾盤點，未開始生成：01–16 官方資料夾均存在，12 課核心課文與課文結構／圖像策略檔案齊全；但多份資料是合併文件，尚未建立內部課次索引，且 G4A 康軒來源 profile 尚未確認各模組權威段落。詞語解釋、字義／字音字形、修辭、聆聽等候選檔案已列出，需先完成內容抽取與來源綁定；目前不能據檔名直接生成。

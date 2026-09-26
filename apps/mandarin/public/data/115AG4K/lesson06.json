@@ -1,0 +1,1092 @@
+{
+  "lesson_id": "115AG4K06",
+  "volume": {
+    "code": "115AG4K",
+    "publisher": "康軒",
+    "grade": 4,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "康軒四上國語課程"
+  },
+  "lesson_no": 6,
+  "title": "攀登生命的高峰",
+  "author": "",
+  "blurb": "透過〈攀登生命的高峰〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "source_audit": [
+    {
+      "kind": "official",
+      "locator": "01 生字表",
+      "sha256": "1FC2FAE5BF0473C06699E5B1D01579AFA3BE8FBE57B97003DE3CF4000AC27F5F"
+    },
+    {
+      "kind": "official",
+      "locator": "第六課 攀登生命的高峰",
+      "sha256": "ED57ADBD76746D9EEADC5831F748CC89CE4643A7CF997D3F426476B9CE847334"
+    },
+    {
+      "kind": "official",
+      "locator": "第六課 攀登生命的高峰",
+      "sha256": "A949FA87B3BE26A1EAA736A6F2227ADA8C658D37ED37BC89FD0CE94C11443E8F"
+    },
+    {
+      "kind": "official",
+      "locator": "L06／攀登生命的高峰",
+      "sha256": "ED57ADBD76746D9EEADC5831F748CC89CE4643A7CF997D3F426476B9CE847334"
+    },
+    {
+      "kind": "official",
+      "locator": "L06／攀登生命的高峰",
+      "sha256": "A949FA87B3BE26A1EAA736A6F2227ADA8C658D37ED37BC89FD0CE94C11443E8F"
+    },
+    {
+      "kind": "official",
+      "locator": "03 課文",
+      "sha256": "B343678E744600E4B254A222FC2C4C4692C83F3A3561B39D8D5F1BEC6C87AD28"
+    },
+    {
+      "kind": "official",
+      "locator": "14 課文大意、段落大意",
+      "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    }
+  ],
+  "characters": [
+    {
+      "char": "秀",
+      "zhuyin": "ㄒㄧㄡˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 7,
+      "radical": "⽲",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "江秀真"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A7%80",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "稱",
+      "zhuyin": "ㄔㄥ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 14,
+      "radical": "⽲",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "人稱",
+        "俗稱",
+        "名稱"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A8%B1",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "朗",
+      "zhuyin": "ㄌㄤˇ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 10,
+      "radical": "⽉",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "開朗",
+        "珠穆朗瑪峰"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9C%97",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "登",
+      "zhuyin": "ㄉㄥ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 12,
+      "radical": "⽨",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "刊登",
+        "攀登",
+        "榮登"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%99%BB",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "穆",
+      "zhuyin": "ㄇㄨˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 16,
+      "radical": "⽲",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "珠穆朗瑪峰"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A9%86",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "瑪",
+      "zhuyin": "ㄇㄚˇ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 14,
+      "radical": "⽟",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "珠穆朗瑪峰"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%91%AA",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "峰",
+      "zhuyin": "ㄈㄥ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 10,
+      "radical": "⼭",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "珠穆朗瑪峰"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B3%B0",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "母",
+      "zhuyin": "ㄇㄨˇ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 5,
+      "radical": "⽏",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "母親"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%AF%8D",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "酷",
+      "zhuyin": "ㄎㄨˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 14,
+      "radical": "⾣",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "冷酷"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%85%B7",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "磨",
+      "zhuyin": "ㄇㄛˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 16,
+      "radical": "⽯",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "磨練"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A3%A8",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "攀",
+      "zhuyin": "ㄆㄢ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 19,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "攀登"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%94%80",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "氧",
+      "zhuyin": "ㄧㄤˇ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 10,
+      "radical": "⽓",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B0%A7",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "訓",
+      "zhuyin": "ㄒㄩㄣˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 10,
+      "radical": "⾔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "訓練"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%A8%93",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "谷",
+      "zhuyin": "ㄍㄨˇ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 7,
+      "radical": "⾕",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "谷底"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B0%B7",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "響",
+      "zhuyin": "ㄒㄧㄤˇ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 20,
+      "radical": "⾳",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%9F%BF",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG4K06:01",
+      "word": "江秀真",
+      "zhuyin": "ㄐㄧㄤㄒㄧㄡˋㄓㄣ",
+      "meaning": "西元一九七一年生於新北市 雙溪區。畢業於嘉義大學森林系學士、嘉義大學森林研究所碩士，並於二○一七年拿到臺灣大學大氣所碩士。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K06:02",
+      "word": "開朗",
+      "zhuyin": "ㄎㄞㄌㄤˇ",
+      "meaning": "⑴豁達、樂觀。⑵明亮、開闊。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K06:03",
+      "word": "珠穆朗瑪峰",
+      "zhuyin": "ㄓㄨㄇㄨˋㄌㄤˇㄇㄚˇㄈㄥ",
+      "meaning": "為世界第一高峰，峰頂位於中國與尼泊爾的邊界。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K06:04",
+      "word": "母親",
+      "zhuyin": "ㄇㄨˇㄑㄧㄣ",
+      "meaning": "⑴稱謂。對媽媽的稱呼。⑵比喻蘊育的根源。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K06:05",
+      "word": "冷酷",
+      "zhuyin": "ㄌㄥˇㄎㄨˋ",
+      "meaning": "對人冷漠、毫無感情。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K06:06",
+      "word": "磨練",
+      "zhuyin": "ㄇㄛˊㄌㄧㄢˋ",
+      "meaning": "鍛鍊、考驗。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K06:07",
+      "word": "攀登",
+      "zhuyin": "ㄆㄢㄉㄥ",
+      "meaning": "用手抓住東西往上爬。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K06:08",
+      "word": "訓練",
+      "zhuyin": "ㄒㄩㄣˋㄌㄧㄢˋ",
+      "meaning": "經由有計畫、步驟的指導，並實地操作練習，使受訓者具有某種特長或技能。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K06:09",
+      "word": "谷底",
+      "zhuyin": "ㄍㄨˇㄉㄧˇ",
+      "meaning": "⑴山谷的底部。⑵比喻事物的底限。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K06:10",
+      "word": "擁有",
+      "zhuyin": "ㄩㄥㄧㄡˇ",
+      "meaning": "持有、據有。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K06:11",
+      "word": "千變萬化",
+      "zhuyin": "ㄑㄧㄢㄅㄧㄢˋㄨㄢˋㄏㄨㄚˋ",
+      "meaning": "形容變化無窮。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K06:12",
+      "word": "不知不覺",
+      "zhuyin": "ㄅㄨˋㄓㄅㄨˋㄐㄩㄝˊ",
+      "meaning": "不自覺。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K06:13",
+      "word": "難關",
+      "zhuyin": "ㄋㄢˊㄍㄨㄢ",
+      "meaning": "不易度過的關頭或具有決定性的重要時期。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K06:14",
+      "word": "不知所措",
+      "zhuyin": "ㄅㄨˋㄓㄙㄨㄛˇㄘㄨㄛˋ",
+      "meaning": "不知道怎麼辦才好。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [],
+  "idiom_sentences": [],
+  "sentence_patterns": [],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:115AG4K06:01",
+      "paragraph_no": 1,
+      "summary": "臺灣登山家江秀真站在雪山前開朗笑著，她成功登上世界多座高峰，被人稱為最接近天空的女子。",
+      "structure_role": "夢想】登山家的目標",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K06:02",
+      "paragraph_no": 2,
+      "summary": "她是臺灣第一位登上珠穆朗瑪峰的女性，熱愛高山，感覺沉靜的山像母親一樣擁抱並陪伴自己。",
+      "structure_role": "夢想】登山家的目標",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K06:03",
+      "paragraph_no": 3,
+      "summary": "高山有時帶來溫暖，有時也用嚴寒與困難冷酷磨練她；登頂美景則使她感到歡樂與自我實現。",
+      "structure_role": "準備】磨練與訓練",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K06:04",
+      "paragraph_no": 4,
+      "summary": "她決定攀登高峰，每天跑步並進行每週三天的低氧訓練，長期準備後正式朝最高目標出發。",
+      "structure_role": "準備】磨練與訓練",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K06:05",
+      "paragraph_no": 5,
+      "summary": "途中寒風呼嘯、溫差劇烈，她還冒著跌落谷底的危險緩慢前進，最後路段成為最大的生命考驗。",
+      "structure_role": "挑戰】危險、堅持與成功",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K06:06",
+      "paragraph_no": 6,
+      "summary": "體力耗盡時，成功畫面鼓舞她排除難關；她靠勇氣與決心登頂，也繼續面對人生中的每座高山，並鼓勵人們不要讓夢想只停在空想。",
+      "structure_role": "挑戰】危險、堅持與成功",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "gist": "臺灣登山家江秀真站在雪山前開朗笑著，她成功登上世界多座高峰，被人稱為最接近天空的女子。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "question:115AG4K06:01",
+      "stem": "江秀真完成了哪一項不凡事蹟？",
+      "question": "江秀真完成了哪一項不凡事蹟？",
+      "options": [
+        "成為臺灣首位登上世界七頂峰的女登山家",
+        "游遍世界",
+        "興建高山纜車",
+        "環遊各國"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K06:02",
+      "stem": "江秀真把山比喻成什麼？",
+      "question": "江秀真把山比喻成什麼？",
+      "options": [
+        "母親",
+        "老師",
+        "海洋",
+        "朋友"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K06:03",
+      "stem": "挑戰珠穆朗瑪峰前，江秀真做了哪些準備？",
+      "question": "挑戰珠穆朗瑪峰前，江秀真做了哪些準備？",
+      "options": [
+        "跑步與低氧訓練",
+        "只閱讀書本",
+        "停止運動",
+        "搭乘纜車"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K06:04",
+      "stem": "江秀真如何排除登頂時的難關？",
+      "question": "江秀真如何排除登頂時的難關？",
+      "options": [
+        "靠成功的渴望、勇氣與決心",
+        "立刻放棄",
+        "等待別人背她",
+        "改去較低的山"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    }
+  ],
+  "polysemy": [],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG4K06:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "秀",
+          "example": "秀麗、優秀"
+        },
+        {
+          "char": "引",
+          "example": "引誘、誘人"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K06:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "明",
+          "example": "明朗、朗讀"
+        },
+        {
+          "char": "新",
+          "example": "新郎、郎中"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K06:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "登",
+          "example": "登山、登記"
+        },
+        {
+          "char": "電",
+          "example": "電燈、燈光"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K06:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "瑪",
+          "example": "瑪瑙、瑪麗"
+        },
+        {
+          "char": "號",
+          "example": "號碼、碼頭"
+        },
+        {
+          "char": "螞",
+          "example": "螞蟻、螞蚱"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K06:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "山",
+          "example": "山峰、高峰"
+        },
+        {
+          "char": "鋒",
+          "example": "鋒利、刀鋒"
+        },
+        {
+          "char": "蜜",
+          "example": "蜜蜂、蜂蜜"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K06:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "母",
+          "example": "母親、母校"
+        },
+        {
+          "char": "每",
+          "example": "每天、每次"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K06:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "酷",
+          "example": "酷熱、殘酷"
+        },
+        {
+          "char": "皓",
+          "example": "皓月、皓白"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K06:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "磨",
+          "example": "磨刀、磨練"
+        },
+        {
+          "char": "摩",
+          "example": "摩擦、按摩"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    }
+  ],
+  "listening": [],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "泳",
+        "串",
+        "般",
+        "姿",
+        "溜",
+        "耳",
+        "鷹",
+        "滑",
+        "遨",
+        "緩",
+        "陀",
+        "螺",
+        "轉",
+        "躍",
+        "煩"
+      ],
+      "2": [
+        "招",
+        "湯",
+        "拋",
+        "糧",
+        "姐",
+        "爭",
+        "警",
+        "偷",
+        "則",
+        "繩",
+        "依",
+        "捨",
+        "束",
+        "暫",
+        "幸"
+      ],
+      "3": [
+        "社",
+        "邀",
+        "與",
+        "遙",
+        "投",
+        "熟",
+        "巧",
+        "彈",
+        "曾",
+        "揮",
+        "彼",
+        "秒",
+        "喧",
+        "優",
+        "弧"
+      ],
+      "4": [
+        "偕",
+        "醫",
+        "命",
+        "奉",
+        "獻",
+        "療",
+        "衛",
+        "藥",
+        "治",
+        "翻",
+        "嶺",
+        "捐",
+        "宿",
+        "堂",
+        "濃"
+      ],
+      "5": [
+        "凱",
+        "勒",
+        "業",
+        "勵",
+        "寧",
+        "視",
+        "注",
+        "憑",
+        "蓓",
+        "蕾",
+        "何",
+        "毯",
+        "適",
+        "繽",
+        "盡"
+      ],
+      "6": [
+        "秀",
+        "稱",
+        "朗",
+        "登",
+        "穆",
+        "瑪",
+        "峰",
+        "母",
+        "酷",
+        "磨",
+        "攀",
+        "氧",
+        "訓",
+        "谷",
+        "響"
+      ]
+    }
+  },
+  "extensions": [],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「秀」的部首是哪一個？",
+      "options": [
+        "⽓",
+        "⽉",
+        "⼿"
+      ],
+      "answer": "⽲",
+      "explanation": "「秀」的部首是⽲。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「稱」的部首是哪一個？",
+      "options": [
+        "⽉",
+        "⼭",
+        "⽯"
+      ],
+      "answer": "⽲",
+      "explanation": "「稱」的部首是⽲。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「朗」的部首是哪一個？",
+      "options": [
+        "⼭",
+        "⽨",
+        "⽟"
+      ],
+      "answer": "⽉",
+      "explanation": "「朗」的部首是⽉。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「江秀真」是什麼意思？",
+      "options": [
+        "形容變化無窮。",
+        "不自覺。",
+        "持有、據有。"
+      ],
+      "answer": "西元一九七一年生於新北市 雙溪區。畢業於嘉義大學森林系學士、嘉義大學森林研究所碩士，並於二○一七年拿到臺灣大學大氣所碩士。",
+      "explanation": "江秀真：西元一九七一年生於新北市 雙溪區。畢業於嘉義大學森林系學士、嘉義大學森林研究所碩士，並於二○一七年拿到臺灣大學大氣所碩士。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「開朗」是什麼意思？",
+      "options": [
+        "經由有計畫、步驟的指導，並實地操作練習，使受訓者具有某種特長或技能。",
+        "對人冷漠、毫無感情。",
+        "西元一九七一年生於新北市 雙溪區。畢業於嘉義大學森林系學士、嘉義大學森林研究所碩士，並於二○一七年拿到臺灣大學大氣所碩士。"
+      ],
+      "answer": "⑴豁達、樂觀。⑵明亮、開闊。",
+      "explanation": "開朗：⑴豁達、樂觀。⑵明亮、開闊。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「珠穆朗瑪峰」是什麼意思？",
+      "options": [
+        "鍛鍊、考驗。",
+        "⑴稱謂。對媽媽的稱呼。⑵比喻蘊育的根源。",
+        "為世界第一高峰，峰頂位於中國與尼泊爾的邊界。"
+      ],
+      "answer": "為世界第一高峰，峰頂位於中國與尼泊爾的邊界。",
+      "explanation": "珠穆朗瑪峰：為世界第一高峰，峰頂位於中國與尼泊爾的邊界。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「母親」是什麼意思？",
+      "options": [
+        "持有、據有。",
+        "⑴山谷的底部。⑵比喻事物的底限。",
+        "形容變化無窮。"
+      ],
+      "answer": "⑴稱謂。對媽媽的稱呼。⑵比喻蘊育的根源。",
+      "explanation": "母親：⑴稱謂。對媽媽的稱呼。⑵比喻蘊育的根源。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「冷酷」是什麼意思？",
+      "options": [
+        "持有、據有。",
+        "經由有計畫、步驟的指導，並實地操作練習，使受訓者具有某種特長或技能。",
+        "⑴稱謂。對媽媽的稱呼。⑵比喻蘊育的根源。"
+      ],
+      "answer": "對人冷漠、毫無感情。",
+      "explanation": "冷酷：對人冷漠、毫無感情。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "missing",
+      "activity": "sentence-practice",
+      "note": "句型來源尚未完成來源核對。"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "應用任務來源尚未完成來源核對。"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "missing",
+      "activity": "idiom-builder",
+      "note": "成語資料尚未完成來源核對。"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "missing",
+      "activity": "polysemy",
+      "note": "一字多義資料尚未完成來源核對。"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones",
+      "note": "一字多音資料尚未完成來源核對。"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭資料尚未完成來源核對。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  }
+}

@@ -1,0 +1,1211 @@
+{
+  "lesson_id": "115AG4K12",
+  "volume": {
+    "code": "115AG4K",
+    "publisher": "康軒",
+    "grade": 4,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "康軒四上國語課程"
+  },
+  "lesson_no": 12,
+  "title": "老鞋匠和小精靈",
+  "author": "",
+  "blurb": "透過〈老鞋匠和小精靈〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "source_audit": [
+    {
+      "kind": "official",
+      "locator": "01 生字表",
+      "sha256": "1FC2FAE5BF0473C06699E5B1D01579AFA3BE8FBE57B97003DE3CF4000AC27F5F"
+    },
+    {
+      "kind": "official",
+      "locator": "第十二課 老鞋匠和小精靈",
+      "sha256": "ED57ADBD76746D9EEADC5831F748CC89CE4643A7CF997D3F426476B9CE847334"
+    },
+    {
+      "kind": "official",
+      "locator": "第十二課 老鞋匠和小精靈",
+      "sha256": "A949FA87B3BE26A1EAA736A6F2227ADA8C658D37ED37BC89FD0CE94C11443E8F"
+    },
+    {
+      "kind": "official",
+      "locator": "L12／老鞋匠和小精靈",
+      "sha256": "ED57ADBD76746D9EEADC5831F748CC89CE4643A7CF997D3F426476B9CE847334"
+    },
+    {
+      "kind": "official",
+      "locator": "L12／老鞋匠和小精靈",
+      "sha256": "A949FA87B3BE26A1EAA736A6F2227ADA8C658D37ED37BC89FD0CE94C11443E8F"
+    },
+    {
+      "kind": "official",
+      "locator": "03 課文",
+      "sha256": "2E8A67BB4CD744AD57F0845ECF312F16DE586B40B8FCF1DC062C3DD1815F6A66"
+    },
+    {
+      "kind": "official",
+      "locator": "14 課文大意、段落大意",
+      "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    }
+  ],
+  "characters": [
+    {
+      "char": "妻",
+      "zhuyin": "ㄑㄧ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 8,
+      "radical": "⼥",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "妻子"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A6%BB",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "耐",
+      "zhuyin": "ㄋㄞˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 9,
+      "radical": "⽽",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "耐心"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%80%90",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "革",
+      "zhuyin": "ㄍㄜˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 9,
+      "radical": "⾰",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "皮革"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%9D%A9",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "賣",
+      "zhuyin": "ㄇㄞˋ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 15,
+      "radical": "⾙",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B3%A3",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "倍",
+      "zhuyin": "ㄅㄟˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 10,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "雙倍"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%80%8D",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "謎",
+      "zhuyin": "ㄇㄧˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 16,
+      "radical": "⾔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "謎團"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%AC%8E",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "鐘",
+      "zhuyin": "ㄓㄨㄥ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 20,
+      "radical": "⾦",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "鐘聲"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%90%98",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "敲",
+      "zhuyin": "ㄑㄧㄠ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 14,
+      "radical": "⽁",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%95%B2",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "靈",
+      "zhuyin": "ㄌㄧㄥˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 24,
+      "radical": "⾬",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "亡靈",
+        "失靈",
+        "幽靈"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%9D%88",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "鎚",
+      "zhuyin": "ㄔㄨㄟˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 17,
+      "radical": "⾦",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "鐵鎚"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%8E%9A",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "嘖",
+      "zhuyin": "ㄗㄜˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 14,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "嘖嘖稱奇"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%98%96",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "足",
+      "zhuyin": "ㄗㄨˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 7,
+      "radical": "⾜",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "手舞足蹈"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B6%B3",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "蹈",
+      "zhuyin": "ㄉㄠˇ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 17,
+      "radical": "⾜",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "手舞足蹈"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B9%88",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "蹦",
+      "zhuyin": "ㄅㄥˋ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 18,
+      "radical": "⾜",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B9%A6",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "內",
+      "zhuyin": "ㄋㄟˋ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 4,
+      "radical": "⼊",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%85%A7",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG4K12:01",
+      "word": "妻子",
+      "zhuyin": "ㄑㄧㄗˇ",
+      "meaning": "稱男子的配偶。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K12:02",
+      "word": "耐心",
+      "zhuyin": "ㄋㄞˋㄒㄧㄣ",
+      "meaning": "心情平和而不厭煩、急躁。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K12:03",
+      "word": "皮革",
+      "zhuyin": "ㄆㄧˊㄍㄜˊ",
+      "meaning": "獸皮經過去毛、去脂等處理而製成的熟皮。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K12:04",
+      "word": "雙倍",
+      "zhuyin": "ㄕㄨㄤㄅㄟˋ",
+      "meaning": "兩倍。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K12:05",
+      "word": "謎團",
+      "zhuyin": "ㄇㄧˊㄊㄨㄢˊ",
+      "meaning": "比喻事物隱晦不清，讓人難以明白、理解。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K12:06",
+      "word": "鐘聲",
+      "zhuyin": "ㄓㄨㄥㄕㄥ",
+      "meaning": "敲鐘所發出的聲音。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K12:07",
+      "word": "小精靈",
+      "zhuyin": "ㄒㄧㄠˇㄐㄧㄥㄌㄧㄥˊ",
+      "meaning": "⑴北歐神話中的人物。有親切可愛的白精靈和凶惡調皮的黑精靈。⑵年紀輕而聰明調皮的人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K12:08",
+      "word": "鐵鎚",
+      "zhuyin": "ㄊㄧㄝˇㄔㄨㄟˊ",
+      "meaning": "鐵製的鎚子。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K12:09",
+      "word": "嘖嘖稱奇",
+      "zhuyin": "ㄗㄜˊㄗㄜˊㄔㄥㄑㄧˊ",
+      "meaning": "對事物的奇妙讚嘆不已。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K12:10",
+      "word": "手舞足蹈",
+      "zhuyin": "ㄕㄡˇㄨˇㄗㄨˊㄉㄠˇ",
+      "meaning": "手、腳舞動跳躍。形容非常高興喜悅的樣子。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K12:11",
+      "word": "遠近知名",
+      "zhuyin": "ㄩㄢˇㄐㄧㄣˋㄓㄇㄧㄥˊ",
+      "meaning": "形容名聲響亮，眾人皆知。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K12:12",
+      "word": "喜出望外",
+      "zhuyin": "ㄒㄧˇㄔㄨㄨㄤˋㄨㄞˋ",
+      "meaning": "因意想不到的喜事而特別高興。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K12:13",
+      "word": "百思不解",
+      "zhuyin": "ㄅㄞˇㄙㄅㄨˋㄐㄧㄝˇ",
+      "meaning": "經過反覆思考，仍然無法了解。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K12:14",
+      "word": "不明就裡",
+      "zhuyin": "ㄅㄨˋㄇㄧㄥˊㄐㄧㄡˋㄌㄧˇ",
+      "meaning": "不清楚、不了解事件的內情。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K12:15",
+      "word": "一溜煙",
+      "zhuyin": "ㄧㄌㄧㄡˋㄧㄢ",
+      "meaning": "一道煙。形容飛快的樣子。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [],
+  "idiom_sentences": [],
+  "sentence_patterns": [],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:115AG4K12:01",
+      "paragraph_no": 1,
+      "summary": "鞋匠妻子親切招呼客人，鞋店原本生意很好；多年後老人動作變慢，顧客只好耐心等待新鞋。",
+      "structure_role": "困境】收入減少與奇蹟",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K12:02",
+      "paragraph_no": 2,
+      "summary": "收入越來越少，老鞋匠只剩最後一張皮革；他剪好材料，擔心賣完鞋後再也沒有錢繼續工作。",
+      "structure_role": "困境】收入減少與奇蹟",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K12:03",
+      "paragraph_no": 3,
+      "summary": "隔天皮革竟變成精美鞋子，顧客願意付雙倍的錢購買，使老夫婦能添購材料並改善生活。",
+      "structure_role": "困境】收入減少與奇蹟",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K12:04",
+      "paragraph_no": 4,
+      "summary": "每天早晨都出現新鞋，夫妻為了解開謎團而躲起來；午夜鐘聲響起時，他們終於看見幫助者。",
+      "structure_role": "真相與回報】善意循環",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K12:05",
+      "paragraph_no": 5,
+      "summary": "兩個小精靈熟練縫鞋，再用鐵鎚敲鞋底，很快完成工作；夫妻決定製作衣物和鞋子表達感謝。",
+      "structure_role": "真相與回報】善意循環",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K12:06",
+      "paragraph_no": 6,
+      "summary": "精靈穿上禮物後快樂跳舞並離開鞋店，老鞋匠夫婦看見對方開心，也感到幸福和滿足；故事展現受到幫助後真心回報的善意循環與幸福。",
+      "structure_role": "真相與回報】善意循環",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "gist": "鞋匠妻子親切招呼客人，鞋店原本生意很好；多年後老人動作變慢，顧客只好耐心等待新鞋。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "question:115AG4K12:01",
+      "stem": "老鞋匠後來為什麼變窮？",
+      "question": "老鞋匠後來為什麼變窮？",
+      "options": [
+        "製鞋速度變慢、收入變少",
+        "鞋店搬家",
+        "皮革被雨淋溼",
+        "顧客都去旅行"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K12:02",
+      "stem": "第二天早上發生了什麼奇妙的事？",
+      "question": "第二天早上發生了什麼奇妙的事？",
+      "options": [
+        "剪好的皮革變成新鞋",
+        "鞋店變大",
+        "桌上出現金幣",
+        "顧客送來皮革"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K12:03",
+      "stem": "是誰在午夜幫老鞋匠做鞋？",
+      "question": "是誰在午夜幫老鞋匠做鞋？",
+      "options": [
+        "兩個小精靈",
+        "鞋匠的妻子",
+        "鎮上的顧客",
+        "路過的商人"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K12:04",
+      "stem": "老鞋匠夫婦如何回報小精靈？",
+      "question": "老鞋匠夫婦如何回報小精靈？",
+      "options": [
+        "製作新衣和新鞋",
+        "贈送皮革",
+        "準備食物",
+        "關閉鞋店"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    }
+  ],
+  "polysemy": [],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG4K12:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "妻",
+          "example": "妻子、夫妻"
+        },
+        {
+          "char": "淒",
+          "example": "淒涼、淒苦"
+        },
+        {
+          "char": "棲",
+          "example": "棲息、棲身"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K12:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "買",
+          "example": "買賣、售賣"
+        },
+        {
+          "char": "買",
+          "example": "買來、購買"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K12:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "加",
+          "example": "加倍、倍數"
+        },
+        {
+          "char": "陪",
+          "example": "陪伴、陪同"
+        },
+        {
+          "char": "賠",
+          "example": "賠錢、賠償"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K12:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "謎",
+          "example": "謎語、謎底"
+        },
+        {
+          "char": "迷",
+          "example": "迷路、迷人"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K12:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "時",
+          "example": "時鐘、鐘聲"
+        },
+        {
+          "char": "鍾",
+          "example": "鍾愛、鍾情"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K12:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "嘖",
+          "example": "嘖嘖、嘖聲"
+        },
+        {
+          "char": "污",
+          "example": "污漬、漬水"
+        },
+        {
+          "char": "責",
+          "example": "責任、負責"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K12:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "舞",
+          "example": "舞蹈、蹈步"
+        },
+        {
+          "char": "滔",
+          "example": "滔滔不絕、滔天"
+        },
+        {
+          "char": "稻",
+          "example": "稻米、水稻"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K12:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "蹦",
+          "example": "蹦跳、蹦床"
+        },
+        {
+          "char": "繃",
+          "example": "繃帶、繃緊"
+        },
+        {
+          "char": "崩",
+          "example": "崩塌、崩壞"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    }
+  ],
+  "listening": [],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "泳",
+        "串",
+        "般",
+        "姿",
+        "溜",
+        "耳",
+        "鷹",
+        "滑",
+        "遨",
+        "緩",
+        "陀",
+        "螺",
+        "轉",
+        "躍",
+        "煩"
+      ],
+      "2": [
+        "招",
+        "湯",
+        "拋",
+        "糧",
+        "姐",
+        "爭",
+        "警",
+        "偷",
+        "則",
+        "繩",
+        "依",
+        "捨",
+        "束",
+        "暫",
+        "幸"
+      ],
+      "3": [
+        "社",
+        "邀",
+        "與",
+        "遙",
+        "投",
+        "熟",
+        "巧",
+        "彈",
+        "曾",
+        "揮",
+        "彼",
+        "秒",
+        "喧",
+        "優",
+        "弧"
+      ],
+      "4": [
+        "偕",
+        "醫",
+        "命",
+        "奉",
+        "獻",
+        "療",
+        "衛",
+        "藥",
+        "治",
+        "翻",
+        "嶺",
+        "捐",
+        "宿",
+        "堂",
+        "濃"
+      ],
+      "5": [
+        "凱",
+        "勒",
+        "業",
+        "勵",
+        "寧",
+        "視",
+        "注",
+        "憑",
+        "蓓",
+        "蕾",
+        "何",
+        "毯",
+        "適",
+        "繽",
+        "盡"
+      ],
+      "6": [
+        "秀",
+        "稱",
+        "朗",
+        "登",
+        "穆",
+        "瑪",
+        "峰",
+        "母",
+        "酷",
+        "磨",
+        "攀",
+        "氧",
+        "訓",
+        "谷",
+        "響"
+      ],
+      "7": [
+        "薄",
+        "烙",
+        "沾",
+        "咖",
+        "哩",
+        "印",
+        "甩",
+        "材",
+        "醬",
+        "義",
+        "麵",
+        "郁",
+        "壽",
+        "醋",
+        "未"
+      ],
+      "8": [
+        "臨",
+        "樓",
+        "頸",
+        "代",
+        "濟",
+        "阻",
+        "尼",
+        "器",
+        "震",
+        "京",
+        "晴",
+        "塔",
+        "訊",
+        "吉",
+        "橋"
+      ],
+      "9": [
+        "佛",
+        "泰",
+        "廟",
+        "華",
+        "尚",
+        "逛",
+        "埃",
+        "羅",
+        "勢",
+        "窪",
+        "堤",
+        "防",
+        "潮",
+        "鬱",
+        "划"
+      ],
+      "10": [
+        "幻",
+        "旋",
+        "扁",
+        "瞬",
+        "驗",
+        "牙",
+        "芝",
+        "盜",
+        "邁",
+        "困",
+        "龐",
+        "搓",
+        "榮",
+        "富",
+        "遍"
+      ],
+      "11": [
+        "背",
+        "錶",
+        "掉",
+        "深",
+        "鎖",
+        "鑰",
+        "匙",
+        "汁",
+        "示",
+        "迫",
+        "袋",
+        "哭",
+        "盒",
+        "扇",
+        "遲"
+      ],
+      "12": [
+        "妻",
+        "耐",
+        "革",
+        "賣",
+        "倍",
+        "謎",
+        "鐘",
+        "敲",
+        "靈",
+        "鎚",
+        "嘖",
+        "足",
+        "蹈",
+        "蹦",
+        "內"
+      ]
+    }
+  },
+  "extensions": [],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「妻」的部首是哪一個？",
+      "options": [
+        "⽽",
+        "⼈",
+        "⼝"
+      ],
+      "answer": "⼥",
+      "explanation": "「妻」的部首是⼥。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「耐」的部首是哪一個？",
+      "options": [
+        "⼥",
+        "⼈",
+        "⽁"
+      ],
+      "answer": "⽽",
+      "explanation": "「耐」的部首是⽽。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「革」的部首是哪一個？",
+      "options": [
+        "⼈",
+        "⽽",
+        "⾙"
+      ],
+      "answer": "⾰",
+      "explanation": "「革」的部首是⾰。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「妻子」是什麼意思？",
+      "options": [
+        "手、腳舞動跳躍。形容非常高興喜悅的樣子。",
+        "對事物的奇妙讚嘆不已。",
+        "不清楚、不了解事件的內情。"
+      ],
+      "answer": "稱男子的配偶。",
+      "explanation": "妻子：稱男子的配偶。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「耐心」是什麼意思？",
+      "options": [
+        "比喻事物隱晦不清，讓人難以明白、理解。",
+        "對事物的奇妙讚嘆不已。",
+        "稱男子的配偶。"
+      ],
+      "answer": "心情平和而不厭煩、急躁。",
+      "explanation": "耐心：心情平和而不厭煩、急躁。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「皮革」是什麼意思？",
+      "options": [
+        "兩倍。",
+        "比喻事物隱晦不清，讓人難以明白、理解。",
+        "不清楚、不了解事件的內情。"
+      ],
+      "answer": "獸皮經過去毛、去脂等處理而製成的熟皮。",
+      "explanation": "皮革：獸皮經過去毛、去脂等處理而製成的熟皮。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「雙倍」是什麼意思？",
+      "options": [
+        "形容名聲響亮，眾人皆知。",
+        "手、腳舞動跳躍。形容非常高興喜悅的樣子。",
+        "不清楚、不了解事件的內情。"
+      ],
+      "answer": "兩倍。",
+      "explanation": "雙倍：兩倍。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「謎團」是什麼意思？",
+      "options": [
+        "形容名聲響亮，眾人皆知。",
+        "不清楚、不了解事件的內情。",
+        "兩倍。"
+      ],
+      "answer": "比喻事物隱晦不清，讓人難以明白、理解。",
+      "explanation": "謎團：比喻事物隱晦不清，讓人難以明白、理解。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "missing",
+      "activity": "sentence-practice",
+      "note": "句型來源尚未完成來源核對。"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "應用任務來源尚未完成來源核對。"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "missing",
+      "activity": "idiom-builder",
+      "note": "成語資料尚未完成來源核對。"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "missing",
+      "activity": "polysemy",
+      "note": "一字多義資料尚未完成來源核對。"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones",
+      "note": "一字多音資料尚未完成來源核對。"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭資料尚未完成來源核對。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  }
+}

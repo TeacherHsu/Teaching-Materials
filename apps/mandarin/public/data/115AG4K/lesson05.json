@@ -1,0 +1,1136 @@
+{
+  "lesson_id": "115AG4K05",
+  "volume": {
+    "code": "115AG4K",
+    "publisher": "康軒",
+    "grade": 4,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "康軒四上國語課程"
+  },
+  "lesson_no": 5,
+  "title": "假如給我三天光明",
+  "author": "",
+  "blurb": "透過〈假如給我三天光明〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "source_audit": [
+    {
+      "kind": "official",
+      "locator": "01 生字表",
+      "sha256": "1FC2FAE5BF0473C06699E5B1D01579AFA3BE8FBE57B97003DE3CF4000AC27F5F"
+    },
+    {
+      "kind": "official",
+      "locator": "第五課 假如給我三天光明",
+      "sha256": "ED57ADBD76746D9EEADC5831F748CC89CE4643A7CF997D3F426476B9CE847334"
+    },
+    {
+      "kind": "official",
+      "locator": "第五課 假如給我三天光明",
+      "sha256": "A949FA87B3BE26A1EAA736A6F2227ADA8C658D37ED37BC89FD0CE94C11443E8F"
+    },
+    {
+      "kind": "official",
+      "locator": "L05／假如給我三天光明",
+      "sha256": "ED57ADBD76746D9EEADC5831F748CC89CE4643A7CF997D3F426476B9CE847334"
+    },
+    {
+      "kind": "official",
+      "locator": "L05／假如給我三天光明",
+      "sha256": "A949FA87B3BE26A1EAA736A6F2227ADA8C658D37ED37BC89FD0CE94C11443E8F"
+    },
+    {
+      "kind": "official",
+      "locator": "03 課文",
+      "sha256": "D394AA08E4F6F28EFAAD4C2CA036F5506313ACC818BE7A0E231B287DC49E36BD"
+    },
+    {
+      "kind": "official",
+      "locator": "14 課文大意、段落大意",
+      "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    }
+  ],
+  "characters": [
+    {
+      "char": "凱",
+      "zhuyin": "ㄎㄞˇ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 12,
+      "radical": "⼏",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "海倫‧凱勒"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%87%B1",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "勒",
+      "zhuyin": "ㄌㄟ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 11,
+      "radical": "⼒",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "海倫‧凱勒"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8B%92",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "業",
+      "zhuyin": "ㄧㄝˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 13,
+      "radical": "⽊",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "學業"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%A5%AD",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "勵",
+      "zhuyin": "ㄌㄧˋ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 17,
+      "radical": "⼒",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "勵志"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8B%B5",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "寧",
+      "zhuyin": "ㄋㄧㄥˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 14,
+      "radical": "⼧",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "安寧",
+        "寧可",
+        "寧靜"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%AF%A7",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "視",
+      "zhuyin": "ㄕˋ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 11,
+      "radical": "⽰",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "視力"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%A6%96",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "注",
+      "zhuyin": "ㄓㄨˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 8,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "注意"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B3%A8",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "憑",
+      "zhuyin": "ㄆㄧㄥˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 16,
+      "radical": "⼼",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "單憑"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%86%91",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "蓓",
+      "zhuyin": "ㄅㄟˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 13,
+      "radical": "⾋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "蓓蕾"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%93%93",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "蕾",
+      "zhuyin": "ㄌㄟˇ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 16,
+      "radical": "⾋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "蓓蕾"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%95%BE",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "何",
+      "zhuyin": "ㄏㄜˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 7,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "任何"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BD%95",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "毯",
+      "zhuyin": "ㄊㄢˇ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 12,
+      "radical": "⽑",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "地毯"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%AF%AF",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "適",
+      "zhuyin": "ㄕˋ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 15,
+      "radical": "⾡",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "舒適"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%81%A9",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "繽",
+      "zhuyin": "ㄅㄧㄣ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 20,
+      "radical": "⽷",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "五彩繽紛",
+        "繽紛",
+        "七彩繽紛"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B9%BD",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "盡",
+      "zhuyin": "ㄐㄧㄣˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 14,
+      "radical": "⽫",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "不盡",
+        "使盡",
+        "善盡"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%9B%A1",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG4K05:01",
+      "word": "海倫‧凱勒",
+      "zhuyin": "ㄏㄞˇㄌㄨㄣˊ‧ㄎㄞˇㄌㄜˋ",
+      "meaning": "西元一八八○年出生於美國 阿拉巴馬州的女作家，有聾、啞、盲三重障礙，卻能克服困難而成功。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K05:02",
+      "word": "學業",
+      "zhuyin": "ㄒㄩㄝˊㄧㄝˋ",
+      "meaning": "學習的課業。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K05:03",
+      "word": "勵志",
+      "zhuyin": "ㄌㄧˋㄓˋ",
+      "meaning": "激勵奮發向上的心志。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K05:04",
+      "word": "寧靜",
+      "zhuyin": "ㄋㄧㄥˊㄐㄧㄥˋ",
+      "meaning": "安靜、平和。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K05:05",
+      "word": "視力",
+      "zhuyin": "ㄕˋㄌㄧˋ",
+      "meaning": "眼力。常人在一定距離內，眼睛辨識事物的能力。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K05:06",
+      "word": "注意",
+      "zhuyin": "ㄓㄨˋㄧˋ",
+      "meaning": "關注留意。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K05:07",
+      "word": "單憑",
+      "zhuyin": "ㄉㄢㄆㄧㄥˊ",
+      "meaning": "只憑藉。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K05:08",
+      "word": "蓓蕾",
+      "zhuyin": "ㄅㄟˋㄌㄟˇ",
+      "meaning": "⑴含苞未開的花。⑵比喻事情即將成熟，尚未成熟的階段。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K05:09",
+      "word": "任何",
+      "zhuyin": "ㄖㄣˋㄏㄜˊ",
+      "meaning": "無論什麼。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K05:10",
+      "word": "地毯",
+      "zhuyin": "ㄉㄧˋㄊㄢˇ",
+      "meaning": "鋪在地面上的毯子，多為毛織物。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K05:11",
+      "word": "舒適",
+      "zhuyin": "ㄕㄨㄕˋ",
+      "meaning": "舒服安適。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K05:12",
+      "word": "五彩繽紛",
+      "zhuyin": "ㄨˇㄘㄞˇㄅㄧㄣㄈㄣ",
+      "meaning": "形容色彩繁多，鮮豔絢麗。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K05:13",
+      "word": "盡力",
+      "zhuyin": "ㄐㄧㄣˋㄌㄧˋ",
+      "meaning": "竭力。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K05:14",
+      "word": "教導",
+      "zhuyin": "ㄐㄧㄠˋㄉㄠˇ",
+      "meaning": "訓誨指導。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K05:15",
+      "word": "失明",
+      "zhuyin": "ㄕㄇㄧㄥˊ",
+      "meaning": "眼睛喪失了視力。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K05:16",
+      "word": "失聰",
+      "zhuyin": "ㄕㄘㄨㄥ",
+      "meaning": "失去聽力。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K05:17",
+      "word": "觸摸",
+      "zhuyin": "ㄔㄨˋㄇㄛ",
+      "meaning": "碰觸撫摸。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K05:18",
+      "word": "綻放",
+      "zhuyin": "ㄓㄢˋㄈㄤˋ",
+      "meaning": "開放。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [],
+  "idiom_sentences": [],
+  "sentence_patterns": [],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:115AG4K05:01",
+      "paragraph_no": 1,
+      "summary": "海倫凱勒幼時因病失去視覺與聽覺，仍靠老師教導和自己的努力完成學業，成為鼓舞世界的勵志人物。",
+      "structure_role": "人物】生命經歷與體會",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K05:02",
+      "paragraph_no": 2,
+      "summary": "她認為短暫失去感官能使人更珍惜光明，黑暗讓人懂得看見的可貴，寧靜也讓聲音顯得更加悅耳。",
+      "structure_role": "人物】生命經歷與體會",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K05:03",
+      "paragraph_no": 3,
+      "summary": "她詢問擁有正常視力的朋友在森林看見什麼，朋友卻說沒有特別發現，這個回答使她十分驚訝。",
+      "structure_role": "感受】觸覺發現世界",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K05:04",
+      "paragraph_no": 4,
+      "summary": "她單憑觸覺就能發現許多事物，例如摸到枝頭的春天蓓蕾，也能感受鳥鳴、流水和陽光的溫暖。",
+      "structure_role": "感受】觸覺發現世界",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K05:05",
+      "paragraph_no": 5,
+      "summary": "草地像柔軟地毯般舒適，她由指尖感受自然；因此無法理解看得見的人為何忽略眼前美麗景色。",
+      "structure_role": "省思】珍惜所見幸福",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K05:06",
+      "paragraph_no": 6,
+      "summary": "她渴望親眼看見五彩繽紛的世界；若能擁有三天光明，一定會盡力觀看並珍惜看得見的幸福，也提醒人們別把每天能看見的一切視為理所當然。",
+      "structure_role": "省思】珍惜所見幸福",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "gist": "海倫凱勒幼時因病失去視覺與聽覺，仍靠老師教導和自己的努力完成學業，成為鼓舞世界的勵志人物。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "question:115AG4K05:01",
+      "stem": "朋友從森林散步回來的回答，為什麼讓「我」驚訝？",
+      "question": "朋友從森林散步回來的回答，為什麼讓「我」驚訝？",
+      "options": [
+        "朋友走得很快",
+        "「我」靠觸覺也能發現許多事物",
+        "森林沒有樹",
+        "朋友忘了回家"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K05:02",
+      "stem": "「我」主要用什麼方式感受世界的溫暖動人？",
+      "question": "「我」主要用什麼方式感受世界的溫暖動人？",
+      "options": [
+        "用手觸摸",
+        "大聲呼喊",
+        "快速奔跑",
+        "閉眼睡覺"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K05:03",
+      "stem": "「我」對視力完好的人提出什麼疑問？",
+      "question": "「我」對視力完好的人提出什麼疑問？",
+      "options": [
+        "為何對眼前美景視而不見",
+        "為何不去森林",
+        "為何不學音樂",
+        "為何走得太慢"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K05:04",
+      "stem": "「我」最大的期許是什麼？",
+      "question": "「我」最大的期許是什麼？",
+      "options": [
+        "擁有三天光明並盡情看世界",
+        "永遠待在家裡",
+        "停止接觸事物",
+        "忘記所有聲音"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    }
+  ],
+  "polysemy": [],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG4K05:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "凱",
+          "example": "凱旋、凱歌"
+        },
+        {
+          "char": "豈",
+          "example": "豈敢、豈有"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K05:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "鼓",
+          "example": "鼓勵、勵志"
+        },
+        {
+          "char": "嚴",
+          "example": "嚴厲、厲害"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K05:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "重",
+          "example": "重視、視力"
+        },
+        {
+          "char": "現",
+          "example": "現在、現場"
+        },
+        {
+          "char": "規",
+          "example": "規則、規定"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K05:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "注",
+          "example": "注意、注音"
+        },
+        {
+          "char": "住",
+          "example": "住家、住院"
+        },
+        {
+          "char": "柱",
+          "example": "柱子、柱狀"
+        },
+        {
+          "char": "註",
+          "example": "註冊、註明"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K05:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "憑",
+          "example": "憑證、憑著"
+        },
+        {
+          "char": "馮",
+          "example": "馮先生、馮家"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K05:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "蓓",
+          "example": "蓓蕾、蓓蓓"
+        },
+        {
+          "char": "加",
+          "example": "加倍、倍數"
+        },
+        {
+          "char": "陪",
+          "example": "陪伴、陪同"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K05:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "花",
+          "example": "花蕾、蓓蕾"
+        },
+        {
+          "char": "雷",
+          "example": "雷雨、雷聲"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K05:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "如",
+          "example": "如何、任何"
+        },
+        {
+          "char": "可",
+          "example": "可是、可以"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    }
+  ],
+  "listening": [],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "泳",
+        "串",
+        "般",
+        "姿",
+        "溜",
+        "耳",
+        "鷹",
+        "滑",
+        "遨",
+        "緩",
+        "陀",
+        "螺",
+        "轉",
+        "躍",
+        "煩"
+      ],
+      "2": [
+        "招",
+        "湯",
+        "拋",
+        "糧",
+        "姐",
+        "爭",
+        "警",
+        "偷",
+        "則",
+        "繩",
+        "依",
+        "捨",
+        "束",
+        "暫",
+        "幸"
+      ],
+      "3": [
+        "社",
+        "邀",
+        "與",
+        "遙",
+        "投",
+        "熟",
+        "巧",
+        "彈",
+        "曾",
+        "揮",
+        "彼",
+        "秒",
+        "喧",
+        "優",
+        "弧"
+      ],
+      "4": [
+        "偕",
+        "醫",
+        "命",
+        "奉",
+        "獻",
+        "療",
+        "衛",
+        "藥",
+        "治",
+        "翻",
+        "嶺",
+        "捐",
+        "宿",
+        "堂",
+        "濃"
+      ],
+      "5": [
+        "凱",
+        "勒",
+        "業",
+        "勵",
+        "寧",
+        "視",
+        "注",
+        "憑",
+        "蓓",
+        "蕾",
+        "何",
+        "毯",
+        "適",
+        "繽",
+        "盡"
+      ]
+    }
+  },
+  "extensions": [],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「凱」的部首是哪一個？",
+      "options": [
+        "⽑",
+        "⼒",
+        "⼈"
+      ],
+      "answer": "⼏",
+      "explanation": "「凱」的部首是⼏。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「勒」的部首是哪一個？",
+      "options": [
+        "⼏",
+        "⽰",
+        "⾋"
+      ],
+      "answer": "⼒",
+      "explanation": "「勒」的部首是⼒。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「業」的部首是哪一個？",
+      "options": [
+        "⽰",
+        "⼒",
+        "⼧"
+      ],
+      "answer": "⽊",
+      "explanation": "「業」的部首是⽊。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「海倫‧凱勒」是什麼意思？",
+      "options": [
+        "舒服安適。",
+        "無論什麼。",
+        "學習的課業。"
+      ],
+      "answer": "西元一八八○年出生於美國 阿拉巴馬州的女作家，有聾、啞、盲三重障礙，卻能克服困難而成功。",
+      "explanation": "海倫‧凱勒：西元一八八○年出生於美國 阿拉巴馬州的女作家，有聾、啞、盲三重障礙，卻能克服困難而成功。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「學業」是什麼意思？",
+      "options": [
+        "失去聽力。",
+        "關注留意。",
+        "激勵奮發向上的心志。"
+      ],
+      "answer": "學習的課業。",
+      "explanation": "學業：學習的課業。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「勵志」是什麼意思？",
+      "options": [
+        "眼睛喪失了視力。",
+        "關注留意。",
+        "形容色彩繁多，鮮豔絢麗。"
+      ],
+      "answer": "激勵奮發向上的心志。",
+      "explanation": "勵志：激勵奮發向上的心志。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「寧靜」是什麼意思？",
+      "options": [
+        "關注留意。",
+        "碰觸撫摸。",
+        "失去聽力。"
+      ],
+      "answer": "安靜、平和。",
+      "explanation": "寧靜：安靜、平和。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「視力」是什麼意思？",
+      "options": [
+        "竭力。",
+        "西元一八八○年出生於美國 阿拉巴馬州的女作家，有聾、啞、盲三重障礙，卻能克服困難而成功。",
+        "安靜、平和。"
+      ],
+      "answer": "眼力。常人在一定距離內，眼睛辨識事物的能力。",
+      "explanation": "視力：眼力。常人在一定距離內，眼睛辨識事物的能力。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "missing",
+      "activity": "sentence-practice",
+      "note": "句型來源尚未完成來源核對。"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "應用任務來源尚未完成來源核對。"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "missing",
+      "activity": "idiom-builder",
+      "note": "成語資料尚未完成來源核對。"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "missing",
+      "activity": "polysemy",
+      "note": "一字多義資料尚未完成來源核對。"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones",
+      "note": "一字多音資料尚未完成來源核對。"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭資料尚未完成來源核對。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  }
+}

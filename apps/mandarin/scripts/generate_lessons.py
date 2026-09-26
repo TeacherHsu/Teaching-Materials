@@ -14,6 +14,7 @@ Profiles currently covered by this public adapter:
   * g3a: 115 翰林三上, L07-L12 (the same adapter can rebuild L01-L12)
   * g1a: 115 翰林一上, L01-L07
   * g6a: 115 翰林六上, prepared standard lesson JSON only
+  * g4a: 115 康軒四上, prepared standard lesson JSON only
 
 G6A uses the same output contract and validation gates.  Its official source
 cleaning remains private; after the source review gate, a prepared directory
@@ -65,7 +66,10 @@ PROFILES = {
     "g3a": Profile("g3a", "115AG3H", 3, "上", "翰林三上", "115G3A_國語 翰", "翰林", "三上國語課程"),
     "g1a": Profile("g1a", "115AG1H", 1, "上", "翰林一上", "115G1A_國語 翰", "翰林", "一年級上學期國語課程"),
     "g6a": Profile("g6a", "115AG6H", 6, "上", "翰林六上", "115G6A_國語 翰（準備資料）", "翰林", "六上國語課程"),
+    "g4a": Profile("g4a", "115AG4K", 4, "上", "康軒四上", "115G4A_國語 康（準備資料）", "康軒", "四上國語課程"),
 }
+
+PREPARED_PROFILES = {"g4a", "g6a"}
 
 
 def load_json(path: Path) -> object:
@@ -843,12 +847,76 @@ def copy_prepared_assets(prepared_root: Path, profile: Profile, lesson_no: int, 
     return copied
 
 
-def build_prepared(profile: Profile, prepared_root: Path, lesson_no: int, output_data: Path, output_assets: Path) -> dict:
+def enrich_prepared_characters(
+    lesson: dict,
+    profile: Profile,
+    lesson_no: int,
+    radicals: dict[str, str],
+    strokes: dict[str, int],
+    common_examples: dict[str, list[str]] | None = None,
+) -> None:
+    """Fill only mechanical character fields from the pinned Unihan source.
+
+    The prepared hand-off owns lesson-specific readings and examples.  Radical
+    and stroke-count fields are deterministic dictionary metadata, so they can
+    be completed at the public import boundary without inventing curriculum
+    content.  Missing readings or stroke data fail closed.
+    """
+    for item in lesson.get("characters", []):
+        char = str(item.get("char") or "").strip()
+        if len(char) != 1:
+            raise ValueError(f"{profile.code} L{lesson_no:02d} 生字欄位不是單一字：{char}")
+        if not item.get("zhuyin"):
+            raise ValueError(f"{profile.code} L{lesson_no:02d} 缺少生字讀音：{char}")
+        stroke_count = item.get("stroke_count") or strokes.get(char)
+        if not stroke_count:
+            raise ValueError(f"{profile.code} L{lesson_no:02d} 缺少筆畫資料：{char}")
+        item["radical"] = item.get("radical") or radicals.get(char) or char
+        item["stroke_count"] = stroke_count
+        item.setdefault("type", "習寫字")
+        item.setdefault("level", "basic")
+        existing_examples = list(item.get("examples") or [])
+        ranked_examples = list(common_examples.get(char, [])) if common_examples else []
+        item["examples"] = dedupe(ranked_examples + existing_examples)[:3]
+        item.setdefault("examples_source", "康軒官方教材來源整理；常用度排序由私有來源階段完成")
+        item.setdefault("image", None)
+        item.setdefault("audio_override", None)
+        item.setdefault("pedia_url", "https://pedia.cloud.edu.tw/Entry/Detail?title=" + quote(char))
+        item.setdefault("status", "ready")
+
+
+def finalize_prepared_lesson(lesson: dict, profile: Profile, lesson_no: int) -> None:
+    """Add deterministic public extensions and challenge items at import time."""
+    chars = "".join(str(item.get("char") or "") for item in lesson.get("characters", []))
+    lesson.setdefault("extensions", [extension(profile, lesson_no, chars)])
+    if not lesson.get("quiz"):
+        lesson["quiz"] = quiz_items(profile, lesson["lesson_id"], lesson.get("characters", []), lesson.get("words", []))
+    modules = lesson.setdefault("modules", {})
+    if modules.get("characters", {}).get("status") == "missing" and len(lesson.get("characters", [])) >= 3:
+        modules["characters"] = module("認識生字", "character-cards", True)
+    if modules.get("vocabulary", {}).get("status") == "missing" and len(lesson.get("words", [])) >= 3:
+        modules["vocabulary"] = module("學會語詞", "vocabulary-cards", True)
+    if modules.get("challenge", {}).get("status") == "missing" and len(lesson.get("quiz", [])) >= 3:
+        modules["challenge"] = module("動手挑戰", "challenge-quiz", True)
+
+
+def build_prepared(
+    profile: Profile,
+    prepared_root: Path,
+    lesson_no: int,
+    output_data: Path,
+    output_assets: Path,
+    radicals: dict[str, str],
+    strokes: dict[str, int],
+    common_examples: dict[str, list[str]] | None,
+) -> dict:
     source = prepared_lesson_path(prepared_root, profile, lesson_no)
     lesson = load_json(source)
     if not isinstance(lesson, dict):
         raise ValueError(f"{source} 不是課次物件")
     validate_prepared_lesson(lesson, profile, lesson_no)
+    enrich_prepared_characters(lesson, profile, lesson_no, radicals, strokes, common_examples)
+    finalize_prepared_lesson(lesson, profile, lesson_no)
     copied = copy_prepared_assets(prepared_root, profile, lesson_no, output_assets)
     save_json(output_data / f"lesson{lesson_no:02d}.json", lesson)
     print(f"[OK] prepared {profile.code} L{lesson_no:02d} assets={copied}")
@@ -948,16 +1016,17 @@ def main() -> int:
     args = parser.parse_args()
 
     profile = PROFILES[args.profile]
-    if args.profile == "g6a" and not args.prepared_root:
-        parser.error("--profile g6a 必須提供 --prepared-root；不得直接讀取官方原始教材。")
-    if args.profile != "g6a" and not args.source_root:
+    if args.profile in PREPARED_PROFILES and not args.prepared_root:
+        parser.error(f"--profile {args.profile} 必須提供 --prepared-root；不得直接讀取官方原始教材。")
+    if args.profile not in PREPARED_PROFILES and not args.source_root:
         parser.error("g1a／g3a 必須提供 --source-root。")
     lesson_numbers = parse_range(args.lessons)
     repo_root = args.repo_root.resolve()
     output_data = repo_root / "public" / "data" / profile.code
     output_assets = repo_root / "public" / "assets" / profile.code
     radicals, strokes = parse_unihan(args.unihan_zip)
-    to_zhuyin = None if args.profile == "g6a" else pinyin_loader(args.pypinyin_path)
+    to_zhuyin = None if args.profile in PREPARED_PROFILES else pinyin_loader(args.pypinyin_path)
+    common_examples = load_common_examples(args.workbook, profile.grade)
     progress = load_progress(args.progress_file)
     generated: list[dict] = []
 
@@ -969,7 +1038,7 @@ def main() -> int:
             print(f"[SKIP] {key} 已完成，保留既有輸出")
             continue
         try:
-            if args.profile == "g6a":
+            if args.profile in PREPARED_PROFILES:
                 source = prepared_lesson_path(args.prepared_root.resolve(), profile, lesson_no)
                 prepared = load_json(source)
                 if not isinstance(prepared, dict):
@@ -979,7 +1048,7 @@ def main() -> int:
                     print(f"[PLAN] {key} {prepared['title']} chars={len(prepared['characters'])} words={len(prepared['words'])}")
                     mark_progress(args.progress_file, progress, key, "planned", prepared["title"])
                     continue
-                lesson = build_prepared(profile, args.prepared_root.resolve(), lesson_no, output_data, output_assets)
+                lesson = build_prepared(profile, args.prepared_root.resolve(), lesson_no, output_data, output_assets, radicals, strokes, common_examples)
             elif args.profile == "g3a":
                 source = g3a_sources(args.source_root.resolve(), lesson_no)
                 if args.dry_run:

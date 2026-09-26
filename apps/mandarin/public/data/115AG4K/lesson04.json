@@ -1,0 +1,1130 @@
+{
+  "lesson_id": "115AG4K04",
+  "volume": {
+    "code": "115AG4K",
+    "publisher": "康軒",
+    "grade": 4,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "康軒四上國語課程"
+  },
+  "lesson_no": 4,
+  "title": "永遠的馬偕",
+  "author": "",
+  "blurb": "透過〈永遠的馬偕〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "source_audit": [
+    {
+      "kind": "official",
+      "locator": "01 生字表",
+      "sha256": "1FC2FAE5BF0473C06699E5B1D01579AFA3BE8FBE57B97003DE3CF4000AC27F5F"
+    },
+    {
+      "kind": "official",
+      "locator": "第四課 永遠的馬偕",
+      "sha256": "ED57ADBD76746D9EEADC5831F748CC89CE4643A7CF997D3F426476B9CE847334"
+    },
+    {
+      "kind": "official",
+      "locator": "第四課 永遠的馬偕",
+      "sha256": "A949FA87B3BE26A1EAA736A6F2227ADA8C658D37ED37BC89FD0CE94C11443E8F"
+    },
+    {
+      "kind": "official",
+      "locator": "L04／永遠的馬偕",
+      "sha256": "ED57ADBD76746D9EEADC5831F748CC89CE4643A7CF997D3F426476B9CE847334"
+    },
+    {
+      "kind": "official",
+      "locator": "L04／永遠的馬偕",
+      "sha256": "A949FA87B3BE26A1EAA736A6F2227ADA8C658D37ED37BC89FD0CE94C11443E8F"
+    },
+    {
+      "kind": "official",
+      "locator": "03 課文",
+      "sha256": "59C458C9BC856088AB32C4C9419DDAC44DD97ED57B055C06D1852C952B7FA835"
+    },
+    {
+      "kind": "official",
+      "locator": "14 課文大意、段落大意",
+      "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    }
+  ],
+  "characters": [
+    {
+      "char": "偕",
+      "zhuyin": "ㄒㄧㄝˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 11,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "馬偕"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%81%95",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "醫",
+      "zhuyin": "ㄧ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 18,
+      "radical": "⾣",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "醫院",
+        "醫療"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%86%AB",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "命",
+      "zhuyin": "ㄇㄧㄥˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 8,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "任命",
+        "使命",
+        "命中"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%91%BD",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "奉",
+      "zhuyin": "ㄈㄥˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 8,
+      "radical": "⼤",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "奉獻"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A5%89",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "獻",
+      "zhuyin": "ㄒㄧㄢˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 20,
+      "radical": "⽝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "奉獻"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%8D%BB",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "療",
+      "zhuyin": "ㄌㄧㄠˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 17,
+      "radical": "⽧",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "醫療"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%99%82",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "衛",
+      "zhuyin": "ㄨㄟˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 15,
+      "radical": "⾏",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "保衛",
+        "前衛",
+        "守衛"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%A1%9B",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "藥",
+      "zhuyin": "ㄧㄠˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 19,
+      "radical": "⾋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "藥品"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%97%A5",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "治",
+      "zhuyin": "ㄓˋ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 8,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "治病"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B2%BB",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "翻",
+      "zhuyin": "ㄈㄢ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 18,
+      "radical": "⽻",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "翻山越嶺"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%BF%BB",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "嶺",
+      "zhuyin": "ㄌㄧㄥˇ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 17,
+      "radical": "⼭",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "翻山越嶺"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B6%BA",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "捐",
+      "zhuyin": "ㄐㄩㄢ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 10,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "捐錢"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8D%90",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "宿",
+      "zhuyin": "ㄙㄨˋ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 11,
+      "radical": "⼧",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "食宿"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%AE%BF",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "堂",
+      "zhuyin": "ㄊㄤˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 11,
+      "radical": "⼟",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "學堂"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A0%82",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "濃",
+      "zhuyin": "ㄋㄨㄥˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 16,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "濃濃"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%BF%83",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG4K04:01",
+      "word": "馬偕",
+      "zhuyin": "ㄇㄚˇㄒㄧㄝˊ",
+      "meaning": "馬偕博士（西元一八四四—一九○一年）是蘇格蘭裔的加拿大人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K04:02",
+      "word": "醫院",
+      "zhuyin": "ㄧㄩㄢˋ",
+      "meaning": "診治或看護病人的機構。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K04:03",
+      "word": "生命",
+      "zhuyin": "ㄕㄥㄇㄧㄥˋ",
+      "meaning": "⑴生物生存的壽命。⑵某種活動延續的期間。⑶形容藝術作品十分靈活生動，非常有生氣。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K04:04",
+      "word": "奉獻",
+      "zhuyin": "ㄈㄥˋㄒㄧㄢˋ",
+      "meaning": "恭敬的交付、貢獻。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K04:05",
+      "word": "醫療",
+      "zhuyin": "ㄧㄌㄧㄠˊ",
+      "meaning": "醫治療養。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K04:06",
+      "word": "衛生",
+      "zhuyin": "ㄨㄟˋㄕㄥ",
+      "meaning": "⑴預防疾病，追求健康的觀念和措施。⑵清潔。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K04:07",
+      "word": "藥品",
+      "zhuyin": "ㄧㄠˋㄆㄧㄣˇ",
+      "meaning": "可以用來防治疾病的物質。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K04:08",
+      "word": "治病",
+      "zhuyin": "ㄓˋㄅㄧㄥˋ",
+      "meaning": "治療疾病，使恢復健康。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K04:09",
+      "word": "翻山越嶺",
+      "zhuyin": "ㄈㄢㄕㄢㄩㄝˋㄌㄧㄥˇ",
+      "meaning": "形容長途跋涉、旅途辛苦。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K04:10",
+      "word": "捐錢",
+      "zhuyin": "ㄐㄩㄢㄑㄧㄢˊ",
+      "meaning": "捐獻金錢。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K04:11",
+      "word": "食宿",
+      "zhuyin": "ㄕˊㄙㄨˋ",
+      "meaning": "飲食和住宿。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K04:12",
+      "word": "學堂",
+      "zhuyin": "ㄒㄩㄝˊㄊㄤˊ",
+      "meaning": "古代學生受教育的場所，相當於現今的學校。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K04:13",
+      "word": "濃濃",
+      "zhuyin": "ㄋㄨㄥˊㄋㄨㄥˊ",
+      "meaning": "濃厚、盛多的樣子。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K04:14",
+      "word": "傳教士",
+      "zhuyin": "ㄔㄨㄢˊㄐㄧㄠˋㄕˋ",
+      "meaning": "傳布宗教教義的人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K04:15",
+      "word": "福音",
+      "zhuyin": "ㄈㄨˊㄧㄣ",
+      "meaning": "基督徒稱耶穌所說的話及其門徒所傳布的教義。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K04:16",
+      "word": "良方",
+      "zhuyin": "ㄌㄧㄤˊㄈㄤ",
+      "meaning": "有效的藥方。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K04:17",
+      "word": "善行",
+      "zhuyin": "ㄕㄢˋㄒㄧㄥˊ",
+      "meaning": "良好的行為或慈善捐助救濟等行為。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K04:18",
+      "word": "創辦",
+      "zhuyin": "ㄔㄨㄤˋㄅㄢˋ",
+      "meaning": "開創舉辦。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K04:19",
+      "word": "披星戴月",
+      "zhuyin": "ㄆㄧㄒㄧㄥㄉㄞˋㄩㄝˋ",
+      "meaning": "形容早出晚歸或連夜趕路。有辛苦勞頓之意。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [],
+  "idiom_sentences": [],
+  "sentence_patterns": [],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:115AG4K04:01",
+      "paragraph_no": 1,
+      "summary": "來自加拿大的馬偕完成神學與醫學訓練後，自願前往海外服務，並決定把自己的能力帶到臺灣。",
+      "structure_role": "來臺】立定服務志向",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K04:02",
+      "paragraph_no": 2,
+      "summary": "抵達臺灣後，他下定決心奉獻一生，關心居民生活與健康，希望用實際行動幫助需要照顧的人。",
+      "structure_role": "來臺】立定服務志向",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K04:03",
+      "paragraph_no": 3,
+      "summary": "當時醫療條件落後，疾病容易流行；他陪居民清水溝、除草，並宣導保持居家衛生的重要。",
+      "structure_role": "行動】改善醫療衛生",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K04:04",
+      "paragraph_no": 4,
+      "summary": "他主動發放藥品、邀請醫師協助，許多人為了求助而翻山越嶺前來，逐漸得到治病與照顧的機會。",
+      "structure_role": "行動】改善醫療衛生",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K04:05",
+      "paragraph_no": 5,
+      "summary": "善心人士認同他的付出而捐錢支持，他因此興建醫院、創辦學校，也設立讓女子學習的女學堂。",
+      "structure_role": "貢獻】醫院、教育與精神",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K04:06",
+      "paragraph_no": 6,
+      "summary": "他長期走訪城鄉、照顧人民，把青春和愛留在臺灣；服務、教育與關懷的精神也一直流傳至今，後人仍記得他對健康與教育的長久貢獻。",
+      "structure_role": "貢獻】醫院、教育與精神",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "gist": "來自加拿大的馬偕完成神學與醫學訓練後，自願前往海外服務，並決定把自己的能力帶到臺灣。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "question:115AG4K04:01",
+      "stem": "馬偕來到臺灣後做了什麼決定？",
+      "question": "馬偕來到臺灣後做了什麼決定？",
+      "options": [
+        "留在臺灣幫助人民",
+        "立刻回國",
+        "到各地旅行",
+        "開設商店"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K04:02",
+      "stem": "馬偕如何改善當時的衛生？",
+      "question": "馬偕如何改善當時的衛生？",
+      "options": [
+        "清理環境並宣導居家衛生",
+        "興建遊樂園",
+        "販賣食物",
+        "停止求醫"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K04:03",
+      "stem": "馬偕得到捐款後，對臺灣有什麼貢獻？",
+      "question": "馬偕得到捐款後，對臺灣有什麼貢獻？",
+      "options": [
+        "興建醫院並創辦學校",
+        "購買船隻",
+        "舉辦比賽",
+        "離開臺灣"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K04:04",
+      "stem": "馬偕的故事為什麼永遠流傳？",
+      "question": "馬偕的故事為什麼永遠流傳？",
+      "options": [
+        "他長期奉獻並幫助人民",
+        "他喜歡旅行",
+        "他善於經商",
+        "他收藏很多物品"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    }
+  ],
+  "polysemy": [],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG4K04:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "偕",
+          "example": "偕同、偕老"
+        },
+        {
+          "char": "楷",
+          "example": "楷模、楷書"
+        },
+        {
+          "char": "階",
+          "example": "階梯、階段"
+        },
+        {
+          "char": "諧",
+          "example": "諧音、和諧"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K04:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "奉",
+          "example": "奉茶、奉獻"
+        },
+        {
+          "char": "演",
+          "example": "演奏、奏樂"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K04:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "治",
+          "example": "治療、醫療"
+        },
+        {
+          "char": "寮",
+          "example": "寮國、草寮"
+        },
+        {
+          "char": "遼",
+          "example": "遼闊、遼遠"
+        },
+        {
+          "char": "同",
+          "example": "同僚、僚機"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K04:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "治",
+          "example": "治理、治安"
+        },
+        {
+          "char": "冶",
+          "example": "冶金、陶冶"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K04:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "山",
+          "example": "山嶺、嶺南"
+        },
+        {
+          "char": "領",
+          "example": "領導、領取"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K04:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "捐",
+          "example": "捐款、捐贈"
+        },
+        {
+          "char": "損",
+          "example": "損失、損壞"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K04:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "濃",
+          "example": "濃厚、濃淡"
+        },
+        {
+          "char": "農",
+          "example": "農夫、農田"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K04:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "課",
+          "example": "課堂、堂前"
+        },
+        {
+          "char": "海",
+          "example": "海棠、棠梨"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    }
+  ],
+  "listening": [],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "泳",
+        "串",
+        "般",
+        "姿",
+        "溜",
+        "耳",
+        "鷹",
+        "滑",
+        "遨",
+        "緩",
+        "陀",
+        "螺",
+        "轉",
+        "躍",
+        "煩"
+      ],
+      "2": [
+        "招",
+        "湯",
+        "拋",
+        "糧",
+        "姐",
+        "爭",
+        "警",
+        "偷",
+        "則",
+        "繩",
+        "依",
+        "捨",
+        "束",
+        "暫",
+        "幸"
+      ],
+      "3": [
+        "社",
+        "邀",
+        "與",
+        "遙",
+        "投",
+        "熟",
+        "巧",
+        "彈",
+        "曾",
+        "揮",
+        "彼",
+        "秒",
+        "喧",
+        "優",
+        "弧"
+      ],
+      "4": [
+        "偕",
+        "醫",
+        "命",
+        "奉",
+        "獻",
+        "療",
+        "衛",
+        "藥",
+        "治",
+        "翻",
+        "嶺",
+        "捐",
+        "宿",
+        "堂",
+        "濃"
+      ]
+    }
+  },
+  "extensions": [],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「偕」的部首是哪一個？",
+      "options": [
+        "⼭",
+        "⾣",
+        "⼤"
+      ],
+      "answer": "⼈",
+      "explanation": "「偕」的部首是⼈。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「醫」的部首是哪一個？",
+      "options": [
+        "⼈",
+        "⽝",
+        "⽻"
+      ],
+      "answer": "⾣",
+      "explanation": "「醫」的部首是⾣。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「命」的部首是哪一個？",
+      "options": [
+        "⽔",
+        "⽝",
+        "⼤"
+      ],
+      "answer": "⼝",
+      "explanation": "「命」的部首是⼝。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「馬偕」是什麼意思？",
+      "options": [
+        "飲食和住宿。",
+        "形容長途跋涉、旅途辛苦。",
+        "診治或看護病人的機構。"
+      ],
+      "answer": "馬偕博士（西元一八四四—一九○一年）是蘇格蘭裔的加拿大人。",
+      "explanation": "馬偕：馬偕博士（西元一八四四—一九○一年）是蘇格蘭裔的加拿大人。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「醫院」是什麼意思？",
+      "options": [
+        "良好的行為或慈善捐助救濟等行為。",
+        "⑴生物生存的壽命。⑵某種活動延續的期間。⑶形容藝術作品十分靈活生動，非常有生氣。",
+        "馬偕博士（西元一八四四—一九○一年）是蘇格蘭裔的加拿大人。"
+      ],
+      "answer": "診治或看護病人的機構。",
+      "explanation": "醫院：診治或看護病人的機構。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「生命」是什麼意思？",
+      "options": [
+        "基督徒稱耶穌所說的話及其門徒所傳布的教義。",
+        "⑴預防疾病，追求健康的觀念和措施。⑵清潔。",
+        "古代學生受教育的場所，相當於現今的學校。"
+      ],
+      "answer": "⑴生物生存的壽命。⑵某種活動延續的期間。⑶形容藝術作品十分靈活生動，非常有生氣。",
+      "explanation": "生命：⑴生物生存的壽命。⑵某種活動延續的期間。⑶形容藝術作品十分靈活生動，非常有生氣。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「奉獻」是什麼意思？",
+      "options": [
+        "⑴預防疾病，追求健康的觀念和措施。⑵清潔。",
+        "開創舉辦。",
+        "傳布宗教教義的人。"
+      ],
+      "answer": "恭敬的交付、貢獻。",
+      "explanation": "奉獻：恭敬的交付、貢獻。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「醫療」是什麼意思？",
+      "options": [
+        "有效的藥方。",
+        "馬偕博士（西元一八四四—一九○一年）是蘇格蘭裔的加拿大人。",
+        "恭敬的交付、貢獻。"
+      ],
+      "answer": "醫治療養。",
+      "explanation": "醫療：醫治療養。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "missing",
+      "activity": "sentence-practice",
+      "note": "句型來源尚未完成來源核對。"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "應用任務來源尚未完成來源核對。"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "missing",
+      "activity": "idiom-builder",
+      "note": "成語資料尚未完成來源核對。"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "missing",
+      "activity": "polysemy",
+      "note": "一字多義資料尚未完成來源核對。"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones",
+      "note": "一字多音資料尚未完成來源核對。"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭資料尚未完成來源核對。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  }
+}

@@ -155,6 +155,98 @@
       ]
     },
     {
+      "grade": 4,
+      "label": "康軒四上",
+      "volumes": [
+        {
+          "code": "115AG4K",
+          "publisher": "康軒",
+          "term": "上",
+          "label": "115 學年上學期",
+          "units": [
+            {
+              "no": 1,
+              "title": "四上國語課程",
+              "lessons": [
+                {
+                  "lesson_id": "115AG4K01",
+                  "lesson_no": 1,
+                  "title": "水陸小高手",
+                  "data": "data/115AG4K/lesson01.json"
+                },
+                {
+                  "lesson_id": "115AG4K02",
+                  "lesson_no": 2,
+                  "title": "放學後",
+                  "data": "data/115AG4K/lesson02.json"
+                },
+                {
+                  "lesson_id": "115AG4K03",
+                  "lesson_no": 3,
+                  "title": "我的籃球夢",
+                  "data": "data/115AG4K/lesson03.json"
+                },
+                {
+                  "lesson_id": "115AG4K04",
+                  "lesson_no": 4,
+                  "title": "永遠的馬偕",
+                  "data": "data/115AG4K/lesson04.json"
+                },
+                {
+                  "lesson_id": "115AG4K05",
+                  "lesson_no": 5,
+                  "title": "假如給我三天光明",
+                  "data": "data/115AG4K/lesson05.json"
+                },
+                {
+                  "lesson_id": "115AG4K06",
+                  "lesson_no": 6,
+                  "title": "攀登生命的高峰",
+                  "data": "data/115AG4K/lesson06.json"
+                },
+                {
+                  "lesson_id": "115AG4K07",
+                  "lesson_no": 7,
+                  "title": "美味的一堂課",
+                  "data": "data/115AG4K/lesson07.json"
+                },
+                {
+                  "lesson_id": "115AG4K08",
+                  "lesson_no": 8,
+                  "title": "建築界的長頸鹿",
+                  "data": "data/115AG4K/lesson08.json"
+                },
+                {
+                  "lesson_id": "115AG4K09",
+                  "lesson_no": 9,
+                  "title": "請到我的家鄉來",
+                  "data": "data/115AG4K/lesson09.json"
+                },
+                {
+                  "lesson_id": "115AG4K10",
+                  "lesson_no": 10,
+                  "title": "奇幻旋律",
+                  "data": "data/115AG4K/lesson10.json"
+                },
+                {
+                  "lesson_id": "115AG4K11",
+                  "lesson_no": 11,
+                  "title": "兔子先生等等我",
+                  "data": "data/115AG4K/lesson11.json"
+                },
+                {
+                  "lesson_id": "115AG4K12",
+                  "lesson_no": 12,
+                  "title": "老鞋匠和小精靈",
+                  "data": "data/115AG4K/lesson12.json"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "grade": 6,
       "label": "翰林六上",
       "volumes": [

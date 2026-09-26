@@ -1,6 +1,6 @@
 # 國語教材網站批次產出工作流
 
-本文件把 G1A、G3A、G6A 的教材網站產出流程固定下來，並說明目前可重跑的 Python 產生器。公開 repo 只保存衍生後的課程 JSON、壓縮圖片與索引；官方教材、完整課文、Excel 與審核用工作檔仍留在私有工作區。
+本文件把 G1A、G3A、G4A、G6A 的教材網站產出流程固定下來，並說明目前可重跑的 Python 產生器與康軒 G4A 準備資料器。公開 repo 只保存衍生後的課程 JSON、壓縮圖片與索引；官方教材、完整課文、Excel 與審核用工作檔仍留在私有工作區。
 
 ## 產出架構
 
@@ -42,7 +42,7 @@ public/data/course-index.json
 
 檔案：`scripts/generate_lessons.py`
 
-這支工具目前直接涵蓋 G3A 與 G1A 的官方來源標準化輸入，也提供 G6A 的公開準備資料介面。G6A 的官方來源清理、來源 hash 與每課 manifest 保留在私有工作流，完成審核後只將標準化課次 JSON 與壓縮圖片交給公開介面，避免把官方檔案帶入公開 repo。
+這支工具目前直接涵蓋 G3A 與 G1A 的官方來源標準化輸入，也提供 G4A、G6A 的公開準備資料介面。G4A 與 G6A 的官方來源清理、來源 hash 與每課 manifest 保留在私有工作流，完成來源核對後只將標準化課次 JSON 與壓縮圖片交給公開介面，避免把官方檔案帶入公開 repo。
 
 ### G3A 第 7–12 課
 
@@ -143,6 +143,32 @@ python scripts/generate_lessons.py `
 
 這是「公開介面」，不是官方原始檔匯入器：來源清理、官方 hash、人工確認與準備資料產出仍在私有工作區完成；介面只負責契約驗證、複製衍生 JSON／壓縮資產、同步舊字新詞索引與合併課程索引。第一次匯入可先加 `--dry-run`，中斷後使用同一指令加 `--resume`。
 
+### G4A 公開準備資料介面（康軒來源閘門）
+
+G4A 使用康軒版，不能直接套用翰林資料夾名稱。私有來源階段先掃描並核對 `115G4A_國語 康/01_本學年官方教材` 的 12 課生字表、課文、語詞解釋、形似字、段落大意與閱讀理解來源，再由 `scripts/prepare_g4a.mjs` 輸出不含官方原檔與私有路徑的標準化課次 JSON。這一步只整理已有來源綁定的衍生資料；沒有完成來源核對的句型、成語、修辭、一字多義、一字多音、聆聽答案與語詞圖片維持未開放，不自行補寫。
+
+```powershell
+cd apps/mandarin
+node scripts/prepare_g4a.mjs `
+  --source-root <private-workspace-root> `
+  --prepared-root <private-prepared-root> `
+  --python <private-python.exe> `
+  --pypinyin-path <private-pypinyin-directory>
+
+python scripts/generate_lessons.py `
+  --profile g4a `
+  --prepared-root <private-prepared-root> `
+  --repo-root <repo>\apps\mandarin `
+  --lessons 1-12 `
+  --unihan-zip <private-Unihan.zip> `
+  --progress-file <private-progress.json> `
+  --resume
+```
+
+`prepare_g4a.mjs` 會在 12 課中保留來源已備妥的生字、語詞解釋、段落摘要與形似字；注音優先使用各課已核對的語詞注音 manifest，沒有直接命中的生字才使用固定 pypinyin 環境作為衍生欄位。Python 產生器接手後補上 Unihan 部首／筆畫、常用造詞上限三項、筆順連結與部首挑戰題，並再次阻擋 `undefined`、私有絕對路徑、未壓縮圖片與超過 300 KiB 的資產。
+
+G4A 的圖片仍遵守「只接受完全對應、已壓縮的 WebP／AVIF」規則；準備資料沒有明確詞圖配對時保留 `image: null`，不把段落圖片或其他語詞圖片錯配到卡片。完成匯入後，照本文件的索引、舊字新詞、資料、容量、建置與回歸檢查執行。
+
 ## G6A 專用來源閘門
 
 G6A 的 12 課先在私有工作區完成：
@@ -165,7 +191,7 @@ G6A 目前的 12 課是已審核基準，不在公開產生器中重新攜入官
 node scripts/check-workflow-completeness.mjs
 ```
 
-檢查器會確認工作流文件、匯入規格、G1A／G3A／G6A 批次介面、G6A 準備資料閘門、`dabutie` 抽取／合併工具、圖片容量閘門、舊字新詞同步，以及各項教材規則對應的回歸測試都仍存在。它只檢查公開 repo 的工具與契約，不會讀取或公開官方教材原檔；缺少任一必要項目即以非零狀態結束。
+檢查器會確認工作流文件、匯入規格、G1A／G3A／G4A／G6A 批次介面、G4A／G6A 準備資料閘門、`dabutie` 抽取／合併工具、圖片容量閘門、舊字新詞同步，以及各項教材規則對應的回歸測試都仍存在。它只檢查公開 repo 的工具與契約，不會讀取或公開官方教材原檔；缺少任一必要項目即以非零狀態結束。
 
 ## 形似字選項核對
 

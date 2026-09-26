@@ -1,0 +1,947 @@
+{
+  "lesson_id": "115AG4K01",
+  "volume": {
+    "code": "115AG4K",
+    "publisher": "康軒",
+    "grade": 4,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "康軒四上國語課程"
+  },
+  "lesson_no": 1,
+  "title": "水陸小高手",
+  "author": "",
+  "blurb": "透過〈水陸小高手〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "source_audit": [
+    {
+      "kind": "official",
+      "locator": "01 生字表",
+      "sha256": "1FC2FAE5BF0473C06699E5B1D01579AFA3BE8FBE57B97003DE3CF4000AC27F5F"
+    },
+    {
+      "kind": "official",
+      "locator": "L01／水陸小高手",
+      "sha256": "ED57ADBD76746D9EEADC5831F748CC89CE4643A7CF997D3F426476B9CE847334"
+    },
+    {
+      "kind": "official",
+      "locator": "L01／水陸小高手",
+      "sha256": "A949FA87B3BE26A1EAA736A6F2227ADA8C658D37ED37BC89FD0CE94C11443E8F"
+    },
+    {
+      "kind": "official",
+      "locator": "03 課文",
+      "sha256": "E1ECA8BD4B541C364BA893E3C30B6143EBFFC9E4335F1E174D7B738DEEEDA795"
+    },
+    {
+      "kind": "official",
+      "locator": "14 課文大意、段落大意",
+      "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    }
+  ],
+  "characters": [
+    {
+      "char": "泳",
+      "zhuyin": "ㄩㄥˇ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 8,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "游泳"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B3%B3",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "串",
+      "zhuyin": "ㄔㄨㄢˋ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 7,
+      "radical": "⼁",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%B8%B2",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "般",
+      "zhuyin": "ㄅㄢ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 10,
+      "radical": "⾈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "一般"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%88%AC",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "姿",
+      "zhuyin": "ㄗ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 9,
+      "radical": "⼥",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "多采多姿"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A7%BF",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "溜",
+      "zhuyin": "ㄌㄧㄡ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 13,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%BA%9C",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "耳",
+      "zhuyin": "ㄦˇ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 6,
+      "radical": "⽿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%80%B3",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "鷹",
+      "zhuyin": "ㄧㄥ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 24,
+      "radical": "⿃",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "獵鷹",
+        "老鷹",
+        "鷹架"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%B7%B9",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "滑",
+      "zhuyin": "ㄏㄨㄚˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 13,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "滑行"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%BB%91",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "遨",
+      "zhuyin": "ㄠˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 13,
+      "radical": "⾡",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "遨遊"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%81%A8",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "緩",
+      "zhuyin": "ㄏㄨㄢˇ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 15,
+      "radical": "⽷",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "緩緩"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B7%A9",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "陀",
+      "zhuyin": "ㄊㄨㄛˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 7,
+      "radical": "⾩",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "陀螺",
+        "佛陀",
+        "陀螺儀"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%99%80",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "螺",
+      "zhuyin": "ㄌㄨㄛˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 17,
+      "radical": "⾍",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "螺旋",
+        "螺絲",
+        "西螺"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%9E%BA",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "轉",
+      "zhuyin": "ㄓㄨㄢˇ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 18,
+      "radical": "⾞",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "轉身"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%BD%89",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "躍",
+      "zhuyin": "ㄩㄝˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 21,
+      "radical": "⾜",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%BA%8D",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "煩",
+      "zhuyin": "ㄈㄢˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 13,
+      "radical": "⽕",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "煩惱"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%85%A9",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG4K01:01",
+      "word": "游泳",
+      "zhuyin": "ㄧㄡˊㄩㄥˇ",
+      "meaning": "在水中靠身體漂浮、划水前進的運動。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K01:02",
+      "word": "一般",
+      "zhuyin": "ㄧˋㄅㄢ",
+      "meaning": "普通、通常。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K01:03",
+      "word": "多采多姿",
+      "zhuyin": "ㄉㄨㄛㄘㄞˇㄉㄨㄛㄗ",
+      "meaning": "形容內容或姿態豐富又多樣。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K01:04",
+      "word": "滑行",
+      "zhuyin": "ㄏㄨㄚˊㄒㄧㄥˊ",
+      "meaning": "滑動前進。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K01:05",
+      "word": "遨遊",
+      "zhuyin": "ㄠˊㄧㄡˊ",
+      "meaning": "逍遙自在地遊歷玩賞。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K01:06",
+      "word": "緩緩",
+      "zhuyin": "ㄏㄨㄢˇㄏㄨㄢˇ",
+      "meaning": "慢慢地。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K01:07",
+      "word": "陀螺",
+      "zhuyin": "ㄊㄨㄛˊㄌㄨㄛˊ",
+      "meaning": "一種能在地上旋轉的玩具。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K01:08",
+      "word": "轉身",
+      "zhuyin": "ㄓㄨㄢˇㄕㄣ",
+      "meaning": "回轉身體。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K01:09",
+      "word": "煩惱",
+      "zhuyin": "ㄈㄢˊㄋㄠˇ",
+      "meaning": "煩悶而不快活的情緒。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [],
+  "idiom_sentences": [],
+  "sentence_patterns": [],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:115AG4K01:01",
+      "paragraph_no": 1,
+      "summary": "大家在游泳池自在前進，想像自己化成魚、青蛙和蝴蝶，在水中展現不同姿態，也感受身體活動的自由。",
+      "structure_role": "游泳】想像、歡樂與自信",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K01:02",
+      "paragraph_no": 2,
+      "summary": "歡笑聲接連響起，晶亮的水珠一串串飛向空中，水花和笑聲彼此呼應，呈現熱鬧又快樂的游泳情景。",
+      "structure_role": "游泳】想像、歡樂與自信",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K01:03",
+      "paragraph_no": 3,
+      "summary": "游泳讓大家建立堅定自信與遠大志向，也期待自己能勇敢前進，活出多采多姿而充滿希望的人生。",
+      "structure_role": "游泳】想像、歡樂與自信",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K01:04",
+      "paragraph_no": 4,
+      "summary": "主角穿好裝備溜直排輪，風從耳旁吹過，眼前景物快速後退，速度感讓他覺得天地十分寬廣。",
+      "structure_role": "溜直排輪】速度、動作與快樂",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K01:05",
+      "paragraph_no": 5,
+      "summary": "他想像自己成為飛鷹，在寬闊天地間滑行加速，感受迎風前進、自由移動和勇敢探索的快樂。",
+      "structure_role": "溜直排輪】速度、動作與快樂",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K01:06",
+      "paragraph_no": 6,
+      "summary": "陽光與汗水陪伴他像陀螺般轉身跳躍，所有煩惱被風吹走，只留下緊緊跟隨自己的快樂心情，也更加喜愛迎風運動的感覺。",
+      "structure_role": "溜直排輪】速度、動作與快樂",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "gist": "大家在游泳池自在前進，想像自己化成魚、青蛙和蝴蝶，在水中展現不同姿態，也感受身體活動的自由。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "question:115AG4K01:01",
+      "stem": "游泳時，作者想像自己有哪些模樣？",
+      "question": "游泳時，作者想像自己有哪些模樣？",
+      "options": [
+        "魚、蛙和蝶",
+        "飛鷹和陀螺",
+        "海豚和小鳥",
+        "獅子和老虎"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K01:02",
+      "stem": "作者在游泳池中有什麼展望？",
+      "question": "作者在游泳池中有什麼展望？",
+      "options": [
+        "游出自信、壯志和多采多姿的人生",
+        "趕快離開",
+        "只和別人比快",
+        "不想看見水珠"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K01:03",
+      "stem": "作者踩著直排輪加速滑行時，想像自己是什麼？",
+      "question": "作者踩著直排輪加速滑行時，想像自己是什麼？",
+      "options": [
+        "一隻飛鷹",
+        "一條小魚",
+        "一隻青蛙",
+        "一隻蝴蝶"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K01:04",
+      "stem": "兩首詩共同表達運動帶來什麼感受？",
+      "question": "兩首詩共同表達運動帶來什麼感受？",
+      "options": [
+        "害怕與疲倦",
+        "煩惱與孤單",
+        "快樂、自信和自由",
+        "緊張與生氣"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    }
+  ],
+  "polysemy": [],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG4K01:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "游",
+          "example": "游泳、泳衣"
+        },
+        {
+          "char": "永",
+          "example": "永遠、永久"
+        },
+        {
+          "char": "歌",
+          "example": "歌詠、吟詠"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K01:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "一",
+          "example": "一般、百般"
+        },
+        {
+          "char": "搬",
+          "example": "搬動、搬開"
+        },
+        {
+          "char": "帆",
+          "example": "帆船、船員"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K01:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "姿",
+          "example": "姿態、多姿"
+        },
+        {
+          "char": "資",
+          "example": "資料、資訊"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K01:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "溜",
+          "example": "溜冰、溜走"
+        },
+        {
+          "char": "留",
+          "example": "留意、留學"
+        },
+        {
+          "char": "遛",
+          "example": "遛狗、閒遛"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K01:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "老",
+          "example": "老鷹、鷹架"
+        },
+        {
+          "char": "應",
+          "example": "應該、應當"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K01:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "緩",
+          "example": "緩緩、緩慢"
+        },
+        {
+          "char": "暖",
+          "example": "暖風、溫暖"
+        },
+        {
+          "char": "援",
+          "example": "援助、援手"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K01:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "螺",
+          "example": "螺絲、螺紋"
+        },
+        {
+          "char": "騾",
+          "example": "騾子、騾車"
+        },
+        {
+          "char": "勞",
+          "example": "勞累、疲累"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K01:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "跳",
+          "example": "跳躍、活躍"
+        },
+        {
+          "char": "閃",
+          "example": "閃耀、照耀"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    }
+  ],
+  "listening": [],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "泳",
+        "串",
+        "般",
+        "姿",
+        "溜",
+        "耳",
+        "鷹",
+        "滑",
+        "遨",
+        "緩",
+        "陀",
+        "螺",
+        "轉",
+        "躍",
+        "煩"
+      ]
+    }
+  },
+  "extensions": [],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「泳」的部首是哪一個？",
+      "options": [
+        "⾍",
+        "⼁",
+        "⾩"
+      ],
+      "answer": "⽔",
+      "explanation": "「泳」的部首是⽔。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「串」的部首是哪一個？",
+      "options": [
+        "⽔",
+        "⽿",
+        "⽷"
+      ],
+      "answer": "⼁",
+      "explanation": "「串」的部首是⼁。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「般」的部首是哪一個？",
+      "options": [
+        "⽿",
+        "⼁",
+        "⼥"
+      ],
+      "answer": "⾈",
+      "explanation": "「般」的部首是⾈。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「游泳」是什麼意思？",
+      "options": [
+        "回轉身體。",
+        "逍遙自在地遊歷玩賞。",
+        "慢慢地。"
+      ],
+      "answer": "在水中靠身體漂浮、划水前進的運動。",
+      "explanation": "游泳：在水中靠身體漂浮、划水前進的運動。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「一般」是什麼意思？",
+      "options": [
+        "一種能在地上旋轉的玩具。",
+        "逍遙自在地遊歷玩賞。",
+        "在水中靠身體漂浮、划水前進的運動。"
+      ],
+      "answer": "普通、通常。",
+      "explanation": "一般：普通、通常。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「多采多姿」是什麼意思？",
+      "options": [
+        "回轉身體。",
+        "普通、通常。",
+        "慢慢地。"
+      ],
+      "answer": "形容內容或姿態豐富又多樣。",
+      "explanation": "多采多姿：形容內容或姿態豐富又多樣。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「滑行」是什麼意思？",
+      "options": [
+        "普通、通常。",
+        "滑動前進。",
+        "一種能在地上旋轉的玩具。"
+      ],
+      "answer": "滑動前進。",
+      "explanation": "滑行：滑動前進。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「遨遊」是什麼意思？",
+      "options": [
+        "滑動前進。",
+        "慢慢地。",
+        "普通、通常。"
+      ],
+      "answer": "逍遙自在地遊歷玩賞。",
+      "explanation": "遨遊：逍遙自在地遊歷玩賞。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "missing",
+      "activity": "sentence-practice",
+      "note": "句型來源尚未完成來源核對。"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "應用任務來源尚未完成來源核對。"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "missing",
+      "activity": "idiom-builder",
+      "note": "成語資料尚未完成來源核對。"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "missing",
+      "activity": "polysemy",
+      "note": "一字多義資料尚未完成來源核對。"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones",
+      "note": "一字多音資料尚未完成來源核對。"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭資料尚未完成來源核對。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "第 1 課沒有前課資料。"
+    }
+  }
+}

@@ -1,0 +1,1156 @@
+{
+  "lesson_id": "115AG4K09",
+  "volume": {
+    "code": "115AG4K",
+    "publisher": "康軒",
+    "grade": 4,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "康軒四上國語課程"
+  },
+  "lesson_no": 9,
+  "title": "請到我的家鄉來",
+  "author": "",
+  "blurb": "透過〈請到我的家鄉來〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "source_audit": [
+    {
+      "kind": "official",
+      "locator": "01 生字表",
+      "sha256": "1FC2FAE5BF0473C06699E5B1D01579AFA3BE8FBE57B97003DE3CF4000AC27F5F"
+    },
+    {
+      "kind": "official",
+      "locator": "第九課 請到我的家鄉來",
+      "sha256": "ED57ADBD76746D9EEADC5831F748CC89CE4643A7CF997D3F426476B9CE847334"
+    },
+    {
+      "kind": "official",
+      "locator": "第九課 請到我的家鄉來",
+      "sha256": "A949FA87B3BE26A1EAA736A6F2227ADA8C658D37ED37BC89FD0CE94C11443E8F"
+    },
+    {
+      "kind": "official",
+      "locator": "L09／請到我的家鄉來",
+      "sha256": "ED57ADBD76746D9EEADC5831F748CC89CE4643A7CF997D3F426476B9CE847334"
+    },
+    {
+      "kind": "official",
+      "locator": "L09／請到我的家鄉來",
+      "sha256": "A949FA87B3BE26A1EAA736A6F2227ADA8C658D37ED37BC89FD0CE94C11443E8F"
+    },
+    {
+      "kind": "official",
+      "locator": "03 課文",
+      "sha256": "6119316A4F74FE000AAE6F5BF8BB60527E7000C8F85C22F350E748D6A5B6356D"
+    },
+    {
+      "kind": "official",
+      "locator": "14 課文大意、段落大意",
+      "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    }
+  ],
+  "characters": [
+    {
+      "char": "佛",
+      "zhuyin": "ㄈㄨˊ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 7,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BD%9B",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "泰",
+      "zhuyin": "ㄊㄞˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 10,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "泰國"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B3%B0",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "廟",
+      "zhuyin": "ㄇㄧㄠˋ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 15,
+      "radical": "⼴",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%BB%9F",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "華",
+      "zhuyin": "ㄏㄨㄚˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 12,
+      "radical": "⾋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "華麗"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%8F%AF",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "尚",
+      "zhuyin": "ㄕㄤˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 8,
+      "radical": "⼩",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "和尚"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B0%9A",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "逛",
+      "zhuyin": "ㄍㄨㄤˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 10,
+      "radical": "⾡",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "逛逛"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%80%9B",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "埃",
+      "zhuyin": "ㄞ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 10,
+      "radical": "⼟",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "埃及"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%9F%83",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "羅",
+      "zhuyin": "ㄌㄨㄛˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 19,
+      "radical": "⽹",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "尼羅河"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%BE%85",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "勢",
+      "zhuyin": "ㄕˋ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 13,
+      "radical": "⼒",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "地勢"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8B%A2",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "窪",
+      "zhuyin": "ㄨㄚ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 14,
+      "radical": "⽳",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "低窪"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%AA%AA",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "堤",
+      "zhuyin": "ㄉㄧ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 12,
+      "radical": "⼟",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "築堤"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A0%A4",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "防",
+      "zhuyin": "ㄈㄤˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 7,
+      "radical": "⾩",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "防潮"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%98%B2",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "潮",
+      "zhuyin": "ㄔㄠˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 15,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "人潮",
+        "低潮",
+        "思潮"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%BD%AE",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "鬱",
+      "zhuyin": "ㄩˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 29,
+      "radical": "⾿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "鬱金香"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%AC%B1",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "划",
+      "zhuyin": "ㄏㄨㄚˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 6,
+      "radical": "⼑",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "划船"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%88%92",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG4K09:01",
+      "word": "泰國",
+      "zhuyin": "ㄊㄞˋㄍㄨㄛˊ",
+      "meaning": "國名。位於東南亞 中南半島中部，首都曼谷。居民百分之九十以上信奉佛教，泰語是主要語言。西元一三七○年獨立，一九三九年定國名為﹁泰王國﹂，簡稱為﹁泰國﹂。物產以米、錫、柚木、橡膠為最重要，與我國貿易關係密切。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K09:02",
+      "word": "華麗",
+      "zhuyin": "ㄏㄨㄚˊㄌㄧˋ",
+      "meaning": "豪華美麗。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K09:03",
+      "word": "和尚",
+      "zhuyin": "ㄏㄜˊㄕㄤˋ",
+      "meaning": "泛稱男性僧侶。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K09:04",
+      "word": "逛逛",
+      "zhuyin": "ㄍㄨㄤˋㄍㄨㄤˋ",
+      "meaning": "隨意走動。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K09:05",
+      "word": "埃及",
+      "zhuyin": "ㄞㄐㄧˊ",
+      "meaning": "國名。位於東北非，首都為開羅。人民多信仰伊斯蘭教、天主教，主要語言為阿拉伯語。埃及約在西元前四千年時建國，為世界文明古國之一，七世紀時被阿拉伯人占領，成為阿拉伯語國家，十六世紀時受奧圖曼土耳其統治，第一次世界大戰後成為英國的保護國。西元一九二二年獨立，原稱為﹁阿聯﹂，一九七一年改名為﹁埃及阿拉伯共和國﹂。簡稱為﹁埃及﹂。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K09:06",
+      "word": "尼羅河",
+      "zhuyin": "ㄋㄧˊㄌㄨㄛˊㄏㄜˊ",
+      "meaning": "發源於東非高原的一條河流。全長約六千六百四十八公里，為世界最長的河流。每年定期氾濫，使沿岸土壤更加肥沃。河口三角洲是世界古文明發祥地之一。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K09:07",
+      "word": "地勢",
+      "zhuyin": "ㄉㄧˋㄕˋ",
+      "meaning": "地面高低起伏的形勢。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K09:08",
+      "word": "低窪",
+      "zhuyin": "ㄉㄧㄨㄚ",
+      "meaning": "地勢凹陷，比四周低下。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K09:09",
+      "word": "築堤",
+      "zhuyin": "ㄓㄨˋㄉㄧ",
+      "meaning": "建築堤防。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K09:10",
+      "word": "防潮",
+      "zhuyin": "ㄈㄤˊㄔㄠˊ",
+      "meaning": "⑴防止潮水入侵。⑵防止潮溼。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K09:11",
+      "word": "鬱金香",
+      "zhuyin": "ㄩˋㄐㄧㄣㄒㄧㄤ",
+      "meaning": "植物名，原產於小亞細亞。葉接莖下部互生，呈廣披針形或橢圓狀披針形，葉緣略向內捲。花似倒鐘形，花瓣六片，有單瓣也有重瓣，很容易產生變種。原種為白色紅緣，另有赤、黃、白、紫等色。主供觀賞。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K09:12",
+      "word": "划船",
+      "zhuyin": "ㄏㄨㄚˊㄔㄨㄢˊ",
+      "meaning": "划槳使船行動。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K09:13",
+      "word": "往來",
+      "zhuyin": "ㄨㄤˇㄌㄞˊ",
+      "meaning": "這裡指交往、交際。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K09:14",
+      "word": "氣息",
+      "zhuyin": "ㄑㄧˋㄒㄧ",
+      "meaning": "在一定環境中，給人某種強烈感覺的精神表現或景象。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [],
+  "idiom_sentences": [],
+  "sentence_patterns": [],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:115AG4K09:01",
+      "paragraph_no": 1,
+      "summary": "泰國因佛教文化深厚被稱為千佛之國，各地可見華麗安靜的泰國寺廟，形成重要的宗教景觀。",
+      "structure_role": "泰國與埃及】宗教和古文明",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K09:02",
+      "paragraph_no": 2,
+      "summary": "信奉佛教的男子曾有出家當和尚的傳統，遊客也會逛水上市場，看船隻載著貨物熱鬧交易。",
+      "structure_role": "泰國與埃及】宗教和古文明",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K09:03",
+      "paragraph_no": 3,
+      "summary": "埃及金字塔聞名世界，廣大沙漠雖然乾熱，尼羅河仍為城市和南北土地帶來珍貴水源。",
+      "structure_role": "泰國與埃及】宗教和古文明",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K09:04",
+      "paragraph_no": 4,
+      "summary": "荷蘭部分國土低於海面，因此必須築堤防潮並利用風車排水，居民也發展出適應環境的生活方式。",
+      "structure_role": "荷蘭與奧地利】環境和音樂",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K09:05",
+      "paragraph_no": 5,
+      "summary": "荷蘭盛產鬱金香與水仙；奧地利則以音樂聞名，許多作曲家曾居住，節慶時吸引各地遊客。",
+      "structure_role": "荷蘭與奧地利】環境和音樂",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K09:06",
+      "paragraph_no": 6,
+      "summary": "四個國家各有自然環境、建築、宗教與藝術特色，作者用邀請語氣帶領讀者認識不同家鄉，也理解人們如何依環境創造生活方式的智慧。",
+      "structure_role": "荷蘭與奧地利】環境和音樂",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "gist": "泰國因佛教文化深厚被稱為千佛之國，各地可見華麗安靜的泰國寺廟，形成重要的宗教景觀。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "question:115AG4K09:01",
+      "stem": "泰國為什麼被稱為「千佛之國」？",
+      "question": "泰國為什麼被稱為「千佛之國」？",
+      "options": [
+        "到處都是寺廟",
+        "金字塔很多",
+        "風車很多",
+        "盛產鬱金香"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K09:02",
+      "stem": "埃及哪一種建築世界聞名？",
+      "question": "埃及哪一種建築世界聞名？",
+      "options": [
+        "金字塔",
+        "雙峰塔",
+        "晴空塔",
+        "水上市場"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K09:03",
+      "stem": "荷蘭如何因應地勢低窪？",
+      "question": "荷蘭如何因應地勢低窪？",
+      "options": [
+        "築堤防潮並用風車排水",
+        "搬到高山",
+        "填平所有河流",
+        "停止種花"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K09:04",
+      "stem": "奧地利最突出的特色是什麼？",
+      "question": "奧地利最突出的特色是什麼？",
+      "options": [
+        "充滿音樂與歡樂氣氛",
+        "擁有許多寺廟",
+        "盛產水仙",
+        "以金字塔聞名"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    }
+  ],
+  "polysemy": [],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG4K09:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "佛",
+          "example": "佛像、佛教"
+        },
+        {
+          "char": "拂",
+          "example": "拂去、吹拂"
+        },
+        {
+          "char": "沸",
+          "example": "沸騰、沸水"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K09:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "泰",
+          "example": "泰國、泰山"
+        },
+        {
+          "char": "秦",
+          "example": "秦朝、秦國"
+        },
+        {
+          "char": "奉",
+          "example": "奉茶、奉獻"
+        },
+        {
+          "char": "演",
+          "example": "演奏、奏樂"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K09:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "逛",
+          "example": "逛街、逛逛"
+        },
+        {
+          "char": "瘋",
+          "example": "瘋狂、狂風"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K09:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "塵",
+          "example": "塵埃、埃及"
+        },
+        {
+          "char": "唉",
+          "example": "唉呀、唉聲"
+        },
+        {
+          "char": "挨",
+          "example": "挨近、挨著"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K09:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "氣",
+          "example": "氣勢、勢力"
+        },
+        {
+          "char": "熱",
+          "example": "熱心、熱水"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K09:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "堤",
+          "example": "堤防、河堤"
+        },
+        {
+          "char": "提",
+          "example": "提起、提出"
+        },
+        {
+          "char": "題",
+          "example": "題目、問題"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K09:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "防",
+          "example": "防止、防守"
+        },
+        {
+          "char": "妨",
+          "example": "妨害、無妨"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K09:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "潮",
+          "example": "潮水、潮濕"
+        },
+        {
+          "char": "朝",
+          "example": "朝陽、朝代"
+        },
+        {
+          "char": "嘲",
+          "example": "嘲笑、嘲弄"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    }
+  ],
+  "listening": [],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "泳",
+        "串",
+        "般",
+        "姿",
+        "溜",
+        "耳",
+        "鷹",
+        "滑",
+        "遨",
+        "緩",
+        "陀",
+        "螺",
+        "轉",
+        "躍",
+        "煩"
+      ],
+      "2": [
+        "招",
+        "湯",
+        "拋",
+        "糧",
+        "姐",
+        "爭",
+        "警",
+        "偷",
+        "則",
+        "繩",
+        "依",
+        "捨",
+        "束",
+        "暫",
+        "幸"
+      ],
+      "3": [
+        "社",
+        "邀",
+        "與",
+        "遙",
+        "投",
+        "熟",
+        "巧",
+        "彈",
+        "曾",
+        "揮",
+        "彼",
+        "秒",
+        "喧",
+        "優",
+        "弧"
+      ],
+      "4": [
+        "偕",
+        "醫",
+        "命",
+        "奉",
+        "獻",
+        "療",
+        "衛",
+        "藥",
+        "治",
+        "翻",
+        "嶺",
+        "捐",
+        "宿",
+        "堂",
+        "濃"
+      ],
+      "5": [
+        "凱",
+        "勒",
+        "業",
+        "勵",
+        "寧",
+        "視",
+        "注",
+        "憑",
+        "蓓",
+        "蕾",
+        "何",
+        "毯",
+        "適",
+        "繽",
+        "盡"
+      ],
+      "6": [
+        "秀",
+        "稱",
+        "朗",
+        "登",
+        "穆",
+        "瑪",
+        "峰",
+        "母",
+        "酷",
+        "磨",
+        "攀",
+        "氧",
+        "訓",
+        "谷",
+        "響"
+      ],
+      "7": [
+        "薄",
+        "烙",
+        "沾",
+        "咖",
+        "哩",
+        "印",
+        "甩",
+        "材",
+        "醬",
+        "義",
+        "麵",
+        "郁",
+        "壽",
+        "醋",
+        "未"
+      ],
+      "8": [
+        "臨",
+        "樓",
+        "頸",
+        "代",
+        "濟",
+        "阻",
+        "尼",
+        "器",
+        "震",
+        "京",
+        "晴",
+        "塔",
+        "訊",
+        "吉",
+        "橋"
+      ],
+      "9": [
+        "佛",
+        "泰",
+        "廟",
+        "華",
+        "尚",
+        "逛",
+        "埃",
+        "羅",
+        "勢",
+        "窪",
+        "堤",
+        "防",
+        "潮",
+        "鬱",
+        "划"
+      ]
+    }
+  },
+  "extensions": [],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「佛」的部首是哪一個？",
+      "options": [
+        "⽳",
+        "⽔",
+        "⼒"
+      ],
+      "answer": "⼈",
+      "explanation": "「佛」的部首是⼈。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「泰」的部首是哪一個？",
+      "options": [
+        "⼈",
+        "⼩",
+        "⽹"
+      ],
+      "answer": "⽔",
+      "explanation": "「泰」的部首是⽔。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「廟」的部首是哪一個？",
+      "options": [
+        "⼩",
+        "⽔",
+        "⾋"
+      ],
+      "answer": "⼴",
+      "explanation": "「廟」的部首是⼴。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「泰國」是什麼意思？",
+      "options": [
+        "植物名，原產於小亞細亞。葉接莖下部互生，呈廣披針形或橢圓狀披針形，葉緣略向內捲。花似倒鐘形，花瓣六片，有單瓣也有重瓣，很容易產生變種。原種為白色紅緣，另有赤、黃、白、紫等色。主供觀賞。",
+        "划槳使船行動。",
+        "⑴防止潮水入侵。⑵防止潮溼。"
+      ],
+      "answer": "國名。位於東南亞 中南半島中部，首都曼谷。居民百分之九十以上信奉佛教，泰語是主要語言。西元一三七○年獨立，一九三九年定國名為﹁泰王國﹂，簡稱為﹁泰國﹂。物產以米、錫、柚木、橡膠為最重要，與我國貿易關係密切。",
+      "explanation": "泰國：國名。位於東南亞 中南半島中部，首都曼谷。居民百分之九十以上信奉佛教，泰語是主要語言。西元一三七○年獨立，一九三九年定國名為﹁泰王國﹂，簡稱為﹁泰國﹂。物產以米、錫、柚木、橡膠為最重要，與我國貿易關係密切。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「華麗」是什麼意思？",
+      "options": [
+        "地勢凹陷，比四周低下。",
+        "國名。位於東北非，首都為開羅。人民多信仰伊斯蘭教、天主教，主要語言為阿拉伯語。埃及約在西元前四千年時建國，為世界文明古國之一，七世紀時被阿拉伯人占領，成為阿拉伯語國家，十六世紀時受奧圖曼土耳其統治，第一次世界大戰後成為英國的保護國。西元一九二二年獨立，原稱為﹁阿聯﹂，一九七一年改名為﹁埃及阿拉伯共和國﹂。簡稱為﹁埃及﹂。",
+        "國名。位於東南亞 中南半島中部，首都曼谷。居民百分之九十以上信奉佛教，泰語是主要語言。西元一三七○年獨立，一九三九年定國名為﹁泰王國﹂，簡稱為﹁泰國﹂。物產以米、錫、柚木、橡膠為最重要，與我國貿易關係密切。"
+      ],
+      "answer": "豪華美麗。",
+      "explanation": "華麗：豪華美麗。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「和尚」是什麼意思？",
+      "options": [
+        "發源於東非高原的一條河流。全長約六千六百四十八公里，為世界最長的河流。每年定期氾濫，使沿岸土壤更加肥沃。河口三角洲是世界古文明發祥地之一。",
+        "隨意走動。",
+        "泛稱男性僧侶。"
+      ],
+      "answer": "泛稱男性僧侶。",
+      "explanation": "和尚：泛稱男性僧侶。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「逛逛」是什麼意思？",
+      "options": [
+        "⑴防止潮水入侵。⑵防止潮溼。",
+        "建築堤防。",
+        "植物名，原產於小亞細亞。葉接莖下部互生，呈廣披針形或橢圓狀披針形，葉緣略向內捲。花似倒鐘形，花瓣六片，有單瓣也有重瓣，很容易產生變種。原種為白色紅緣，另有赤、黃、白、紫等色。主供觀賞。"
+      ],
+      "answer": "隨意走動。",
+      "explanation": "逛逛：隨意走動。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「埃及」是什麼意思？",
+      "options": [
+        "⑴防止潮水入侵。⑵防止潮溼。",
+        "地勢凹陷，比四周低下。",
+        "隨意走動。"
+      ],
+      "answer": "國名。位於東北非，首都為開羅。人民多信仰伊斯蘭教、天主教，主要語言為阿拉伯語。埃及約在西元前四千年時建國，為世界文明古國之一，七世紀時被阿拉伯人占領，成為阿拉伯語國家，十六世紀時受奧圖曼土耳其統治，第一次世界大戰後成為英國的保護國。西元一九二二年獨立，原稱為﹁阿聯﹂，一九七一年改名為﹁埃及阿拉伯共和國﹂。簡稱為﹁埃及﹂。",
+      "explanation": "埃及：國名。位於東北非，首都為開羅。人民多信仰伊斯蘭教、天主教，主要語言為阿拉伯語。埃及約在西元前四千年時建國，為世界文明古國之一，七世紀時被阿拉伯人占領，成為阿拉伯語國家，十六世紀時受奧圖曼土耳其統治，第一次世界大戰後成為英國的保護國。西元一九二二年獨立，原稱為﹁阿聯﹂，一九七一年改名為﹁埃及阿拉伯共和國﹂。簡稱為﹁埃及﹂。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "missing",
+      "activity": "sentence-practice",
+      "note": "句型來源尚未完成來源核對。"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "應用任務來源尚未完成來源核對。"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "missing",
+      "activity": "idiom-builder",
+      "note": "成語資料尚未完成來源核對。"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "missing",
+      "activity": "polysemy",
+      "note": "一字多義資料尚未完成來源核對。"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones",
+      "note": "一字多音資料尚未完成來源核對。"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭資料尚未完成來源核對。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  }
+}

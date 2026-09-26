@@ -82,6 +82,30 @@ python scripts/generate_lessons.py `
 
 介面只複製標準化衍生資料，不解析官方原始檔。它會拒絕契約欄位不足、課次編號不符、出版社不符、`undefined`、私有路徑、非 WebP／AVIF 及超過 300 KiB 的資產，完成後同步 `review_words` 與 `course-index.json`。
 
+### 5.1 G4A 康軒來源準備與公開介面
+
+G4A 使用 `115AG4K` profile。私有準備器 `scripts/prepare_g4a.mjs` 只讀取已完成來源核對的康軒四上衍生資料，依課次資料夾與來源 manifest 對齊生字、語詞解釋、段落摘要及形似字；它不把官方 `.doc`、完整課文、來源絕對路徑或原始圖片寫入準備資料。沒有明確來源的句型、成語、修辭、一字多義、一字多音、聆聽答案與語詞圖片維持 `missing`／`image: null`。
+
+```powershell
+node scripts/prepare_g4a.mjs `
+  --source-root <private-workspace-root> `
+  --prepared-root <private-prepared-root> `
+  --python <private-python.exe> `
+  --pypinyin-path <private-pypinyin-directory>
+
+python scripts/generate_lessons.py `
+  --profile g4a `
+  --prepared-root <private-prepared-root> `
+  --repo-root <repo>\apps\mandarin `
+  --lessons 1-12 `
+  --workbook <private-workbook.xlsx> `
+  --unihan-zip <private-Unihan.zip> `
+  --progress-file <private-progress.json> `
+  --resume
+```
+
+準備資料必須使用 `115AG4K`／「康軒」契約。公開 Python 介面在匯入時補上 Unihan 部首與筆畫、常用度前三項造詞、筆順連結及機械挑戰題，並再次執行私有路徑、`undefined`、資料契約與 WebP／AVIF 容量閘門。pypinyin 只作為已核對注音 manifest 缺漏時的明確衍生欄位，並以 `zhuyin_source` 留下方法標記，供後續依課本複核。
+
 ## 6. 圖片與容量
 
 - 只公開 WebP／AVIF。

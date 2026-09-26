@@ -1,0 +1,1176 @@
+{
+  "lesson_id": "115AG4K07",
+  "volume": {
+    "code": "115AG4K",
+    "publisher": "康軒",
+    "grade": 4,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "康軒四上國語課程"
+  },
+  "lesson_no": 7,
+  "title": "美味的一堂課",
+  "author": "",
+  "blurb": "透過〈美味的一堂課〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "source_audit": [
+    {
+      "kind": "official",
+      "locator": "01 生字表",
+      "sha256": "1FC2FAE5BF0473C06699E5B1D01579AFA3BE8FBE57B97003DE3CF4000AC27F5F"
+    },
+    {
+      "kind": "official",
+      "locator": "第七課 美味的一堂課",
+      "sha256": "ED57ADBD76746D9EEADC5831F748CC89CE4643A7CF997D3F426476B9CE847334"
+    },
+    {
+      "kind": "official",
+      "locator": "第七課 美味的一堂課",
+      "sha256": "A949FA87B3BE26A1EAA736A6F2227ADA8C658D37ED37BC89FD0CE94C11443E8F"
+    },
+    {
+      "kind": "official",
+      "locator": "L07／美味的一堂課",
+      "sha256": "ED57ADBD76746D9EEADC5831F748CC89CE4643A7CF997D3F426476B9CE847334"
+    },
+    {
+      "kind": "official",
+      "locator": "L07／美味的一堂課",
+      "sha256": "A949FA87B3BE26A1EAA736A6F2227ADA8C658D37ED37BC89FD0CE94C11443E8F"
+    },
+    {
+      "kind": "official",
+      "locator": "03 課文",
+      "sha256": "C5392E93DCAE2974E7733EFF3F03C93C56B27A6C961D9DA2FA9E273C7E86789D"
+    },
+    {
+      "kind": "official",
+      "locator": "14 課文大意、段落大意",
+      "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    }
+  ],
+  "characters": [
+    {
+      "char": "薄",
+      "zhuyin": "ㄅㄠˊ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 17,
+      "radical": "⾋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%96%84",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "烙",
+      "zhuyin": "ㄌㄠˋ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 10,
+      "radical": "⽕",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%83%99",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "沾",
+      "zhuyin": "ㄓㄢ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 8,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "沾上",
+        "沾到",
+        "沾染"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B2%BE",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "咖",
+      "zhuyin": "ㄎㄚ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 8,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "咖哩"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%92%96",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "哩",
+      "zhuyin": "ㄌㄧˇ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 10,
+      "radical": "⼝",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "咖哩"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%93%A9",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "印",
+      "zhuyin": "ㄧㄣˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 6,
+      "radical": "⼙",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "印度"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8D%B0",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "甩",
+      "zhuyin": "ㄕㄨㄞˇ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 5,
+      "radical": "⽤",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "甩餅"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%94%A9",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "材",
+      "zhuyin": "ㄘㄞˊ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 7,
+      "radical": "⽊",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "食材"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9D%90",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "醬",
+      "zhuyin": "ㄐㄧㄤˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 18,
+      "radical": "⾣",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "醬料"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%86%AC",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "義",
+      "zhuyin": "ㄧˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 13,
+      "radical": "⽺",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "主義",
+        "來義",
+        "信義"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%BE%A9",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "麵",
+      "zhuyin": "ㄇㄧㄢˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 20,
+      "radical": "⿆",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "拉麵",
+        "泡麵",
+        "麵包"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%BA%B5",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "郁",
+      "zhuyin": "ㄩˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 9,
+      "radical": "⾢",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "濃郁"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%83%81",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "壽",
+      "zhuyin": "ㄕㄡˋ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 14,
+      "radical": "⼠",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "壽司"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A3%BD",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "醋",
+      "zhuyin": "ㄘㄨˋ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 15,
+      "radical": "⾣",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%86%8B",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "未",
+      "zhuyin": "ㄨㄟˋ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 5,
+      "radical": "⽊",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "未知"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9C%AA",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG4K07:01",
+      "word": "咖哩",
+      "zhuyin": "ㄎㄚㄌㄧˇ",
+      "meaning": "用胡椒、薑黃、番椒、茴香、陳皮等粉末製成的調味品。色黃、味香而辛辣，以印度所產的咖哩最著名。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:02",
+      "word": "印度",
+      "zhuyin": "ㄧㄣˋㄉㄨˋ",
+      "meaning": "國名。位於亞洲南部，介於孟加拉灣與阿拉伯海之間，為世界文明古國之一。首都為新德里。人民信仰的宗教有印度教、基督教等。主要語言為北印度語、英語。原為英國殖民地，西元一九四七年正式獨立。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:03",
+      "word": "甩餅",
+      "zhuyin": "ㄕㄨㄞˇㄅㄧㄥˇ",
+      "meaning": "印度甩餅，是馬來西亞 印度裔發明的食物。做法是將和好的小片麵皮，多次旋轉向上拋甩，形成大而薄的圓餅，再放到鍋上烙。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:04",
+      "word": "食材",
+      "zhuyin": "ㄕˊㄘㄞˊ",
+      "meaning": "食物的原始材料。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:05",
+      "word": "醬料",
+      "zhuyin": "ㄐㄧㄤˋㄌㄧㄠˋ",
+      "meaning": "用來醃漬食材或增加食物風味的佐料。多呈糊狀或液態。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:06",
+      "word": "義大利",
+      "zhuyin": "ㄧˋㄉㄚˋㄌㄧˋ",
+      "meaning": "國名。位於南歐 義大利半島，首都羅馬，人民信仰天主教，主要語言為義大利語。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:07",
+      "word": "麵條",
+      "zhuyin": "ㄇㄧㄢˋㄊㄧㄠˊ",
+      "meaning": "麵粉製成的條狀食品。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:08",
+      "word": "濃郁",
+      "zhuyin": "ㄋㄨㄥˊㄩˋ",
+      "meaning": "香氣濃烈。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:09",
+      "word": "壽司",
+      "zhuyin": "ㄕㄡˋㄙ˙",
+      "meaning": "一種日本料理。在剛蒸熟的飯中，放入醋、糖、鹽等調味料，攪拌均勻，使飯冷卻。然後在細竹簾上先鋪一層海苔皮或豆皮，鋪上一層飯後，再鋪上生魚片、漬菜、炒蛋等食品，最後再壓緊成筒狀，切成小塊食用。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:10",
+      "word": "未知",
+      "zhuyin": "ㄨㄟˋㄓ",
+      "meaning": "不知道。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:11",
+      "word": "見聞",
+      "zhuyin": "ㄐㄧㄢˋㄨㄣˊ",
+      "meaning": "眼睛所看見、耳朵所聽見的事物。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:12",
+      "word": "享用",
+      "zhuyin": "ㄒㄧㄤˇㄩㄥˋ",
+      "meaning": "享受使用。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:13",
+      "word": "各式各樣",
+      "zhuyin": "ㄍㄜˋㄕˋㄍㄜˋㄧㄤˋ",
+      "meaning": "許多不同的樣式和種類。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:14",
+      "word": "大開眼界",
+      "zhuyin": "ㄉㄚˋㄎㄞㄧㄢˇㄐㄧㄝˋ",
+      "meaning": "明顯的使視野開展，見聞增加。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:15",
+      "word": "念念不忘",
+      "zhuyin": "ㄋㄧㄢˋㄋㄧㄢˋㄅㄨˋㄨㄤˋ",
+      "meaning": "心中常常惦記著，不曾忘記。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:16",
+      "word": "料理",
+      "zhuyin": "ㄌㄧㄠˋㄌㄧˇ",
+      "meaning": "菜肴。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:17",
+      "word": "成就感",
+      "zhuyin": "ㄔㄥˊㄐㄧㄡˋㄍㄢˇ",
+      "meaning": "付出心力獲得成就後，滿足或自豪的感覺。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:18",
+      "word": "雀躍",
+      "zhuyin": "ㄑㄩㄝˋㄩㄝˋ",
+      "meaning": "形容高興得像雀鳥般跳躍。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:19",
+      "word": "國度",
+      "zhuyin": "ㄍㄨㄛˊㄉㄨˋ",
+      "meaning": "國家。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:20",
+      "word": "探索",
+      "zhuyin": "ㄊㄢˋㄙㄨㄛˇ",
+      "meaning": "探索尋求。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K07:21",
+      "word": "此起彼落",
+      "zhuyin": "ㄘˇㄑㄧˇㄅㄧˇㄌㄨㄛˋ",
+      "meaning": "這裡起來，那裡落下。形容連續不斷。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [],
+  "idiom_sentences": [],
+  "sentence_patterns": [],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:115AG4K07:01",
+      "paragraph_no": 1,
+      "summary": "美食作家先介紹印度甩餅，師傅把餅皮拍打並向空中拋，使原本小小的麵皮逐漸變得又大又薄。",
+      "structure_role": "印度】甩餅製作與口感",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K07:02",
+      "paragraph_no": 2,
+      "summary": "餅皮烙過後可以沾些咖哩，也能包入不同食材和醬料，入口柔軟，呈現印度料理的獨特風味。",
+      "structure_role": "印度】甩餅製作與口感",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K07:03",
+      "paragraph_no": 3,
+      "summary": "她接著介紹造型多變的義大利麵，說明紅醬酸甜、濃郁白醬柔和，以及青醬香氣等不同口味。",
+      "structure_role": "義大利與日本】料理特色",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K07:04",
+      "paragraph_no": 4,
+      "summary": "最後全班動手製作日本壽司，把喜歡的材料加入醋飯，再用工具完成料理並分享親手做的成果。",
+      "structure_role": "義大利與日本】料理特色",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K07:05",
+      "paragraph_no": 5,
+      "summary": "巧文姐姐喜歡用味覺探索不同國度，大家也從影片、說明和實作中認識各地飲食與生活文化。",
+      "structure_role": "收穫】用味覺探索文化",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K07:06",
+      "paragraph_no": 6,
+      "summary": "這堂課充滿驚嘆與喜悅，學生不只吃到料理，也理解食物能記錄旅行經驗，成為難忘的學習，並發現每道料理背後都有文化故事。",
+      "structure_role": "收穫】用味覺探索文化",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "gist": "美食作家先介紹印度甩餅，師傅把餅皮拍打並向空中拋，使原本小小的麵皮逐漸變得又大又薄。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "question:115AG4K07:01",
+      "stem": "誰來班上分享旅行時的美食經驗？",
+      "question": "誰來班上分享旅行時的美食經驗？",
+      "options": [
+        "巧文姐姐",
+        "校長",
+        "體育老師",
+        "同學的弟弟"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K07:02",
+      "stem": "巧文姐姐介紹了哪些異國美食？",
+      "question": "巧文姐姐介紹了哪些異國美食？",
+      "options": [
+        "印度甩餅和義大利麵",
+        "包子和水餃",
+        "漢堡和薯條",
+        "粥和饅頭"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K07:03",
+      "stem": "巧文姐姐最後帶大家親手做什麼？",
+      "question": "巧文姐姐最後帶大家親手做什麼？",
+      "options": [
+        "日本壽司",
+        "印度甩餅",
+        "義大利麵",
+        "法國麵包"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K07:04",
+      "stem": "主角從這堂課得到什麼收穫？",
+      "question": "主角從這堂課得到什麼收穫？",
+      "options": [
+        "認識各地的美食文化",
+        "學會快速跑步",
+        "認識高樓建築",
+        "學會種樹"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    }
+  ],
+  "polysemy": [],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG4K07:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "薄",
+          "example": "薄片、薄荷"
+        },
+        {
+          "char": "書",
+          "example": "書簿、簿子"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K07:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "烙",
+          "example": "烙印、烙餅"
+        },
+        {
+          "char": "網",
+          "example": "網絡、絡繹"
+        },
+        {
+          "char": "格",
+          "example": "格子、格式"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K07:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "沾",
+          "example": "沾水、沾到"
+        },
+        {
+          "char": "站",
+          "example": "站立、車站"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K07:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "咖",
+          "example": "咖啡、咖哩"
+        },
+        {
+          "char": "加",
+          "example": "加入、加油"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K07:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "甩",
+          "example": "甩開、甩手"
+        },
+        {
+          "char": "作",
+          "example": "作用、用心"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K07:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "材",
+          "example": "材料、木材"
+        },
+        {
+          "char": "才",
+          "example": "才子、人才"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K07:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "醬",
+          "example": "醬油、果醬"
+        },
+        {
+          "char": "米",
+          "example": "米漿、豆漿"
+        },
+        {
+          "char": "獎",
+          "example": "獎品、獎勵"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    }
+  ],
+  "listening": [],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "泳",
+        "串",
+        "般",
+        "姿",
+        "溜",
+        "耳",
+        "鷹",
+        "滑",
+        "遨",
+        "緩",
+        "陀",
+        "螺",
+        "轉",
+        "躍",
+        "煩"
+      ],
+      "2": [
+        "招",
+        "湯",
+        "拋",
+        "糧",
+        "姐",
+        "爭",
+        "警",
+        "偷",
+        "則",
+        "繩",
+        "依",
+        "捨",
+        "束",
+        "暫",
+        "幸"
+      ],
+      "3": [
+        "社",
+        "邀",
+        "與",
+        "遙",
+        "投",
+        "熟",
+        "巧",
+        "彈",
+        "曾",
+        "揮",
+        "彼",
+        "秒",
+        "喧",
+        "優",
+        "弧"
+      ],
+      "4": [
+        "偕",
+        "醫",
+        "命",
+        "奉",
+        "獻",
+        "療",
+        "衛",
+        "藥",
+        "治",
+        "翻",
+        "嶺",
+        "捐",
+        "宿",
+        "堂",
+        "濃"
+      ],
+      "5": [
+        "凱",
+        "勒",
+        "業",
+        "勵",
+        "寧",
+        "視",
+        "注",
+        "憑",
+        "蓓",
+        "蕾",
+        "何",
+        "毯",
+        "適",
+        "繽",
+        "盡"
+      ],
+      "6": [
+        "秀",
+        "稱",
+        "朗",
+        "登",
+        "穆",
+        "瑪",
+        "峰",
+        "母",
+        "酷",
+        "磨",
+        "攀",
+        "氧",
+        "訓",
+        "谷",
+        "響"
+      ],
+      "7": [
+        "薄",
+        "烙",
+        "沾",
+        "咖",
+        "哩",
+        "印",
+        "甩",
+        "材",
+        "醬",
+        "義",
+        "麵",
+        "郁",
+        "壽",
+        "醋",
+        "未"
+      ]
+    }
+  },
+  "extensions": [],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「薄」的部首是哪一個？",
+      "options": [
+        "⽕",
+        "⼙",
+        "⿆"
+      ],
+      "answer": "⾋",
+      "explanation": "「薄」的部首是⾋。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「烙」的部首是哪一個？",
+      "options": [
+        "⾋",
+        "⼙",
+        "⾣"
+      ],
+      "answer": "⽕",
+      "explanation": "「烙」的部首是⽕。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「沾」的部首是哪一個？",
+      "options": [
+        "⼙",
+        "⽕",
+        "⼝"
+      ],
+      "answer": "⽔",
+      "explanation": "「沾」的部首是⽔。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「咖哩」是什麼意思？",
+      "options": [
+        "付出心力獲得成就後，滿足或自豪的感覺。",
+        "菜肴。",
+        "形容高興得像雀鳥般跳躍。"
+      ],
+      "answer": "用胡椒、薑黃、番椒、茴香、陳皮等粉末製成的調味品。色黃、味香而辛辣，以印度所產的咖哩最著名。",
+      "explanation": "咖哩：用胡椒、薑黃、番椒、茴香、陳皮等粉末製成的調味品。色黃、味香而辛辣，以印度所產的咖哩最著名。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「印度」是什麼意思？",
+      "options": [
+        "付出心力獲得成就後，滿足或自豪的感覺。",
+        "印度甩餅，是馬來西亞 印度裔發明的食物。做法是將和好的小片麵皮，多次旋轉向上拋甩，形成大而薄的圓餅，再放到鍋上烙。",
+        "用胡椒、薑黃、番椒、茴香、陳皮等粉末製成的調味品。色黃、味香而辛辣，以印度所產的咖哩最著名。"
+      ],
+      "answer": "國名。位於亞洲南部，介於孟加拉灣與阿拉伯海之間，為世界文明古國之一。首都為新德里。人民信仰的宗教有印度教、基督教等。主要語言為北印度語、英語。原為英國殖民地，西元一九四七年正式獨立。",
+      "explanation": "印度：國名。位於亞洲南部，介於孟加拉灣與阿拉伯海之間，為世界文明古國之一。首都為新德里。人民信仰的宗教有印度教、基督教等。主要語言為北印度語、英語。原為英國殖民地，西元一九四七年正式獨立。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「甩餅」是什麼意思？",
+      "options": [
+        "眼睛所看見、耳朵所聽見的事物。",
+        "香氣濃烈。",
+        "麵粉製成的條狀食品。"
+      ],
+      "answer": "印度甩餅，是馬來西亞 印度裔發明的食物。做法是將和好的小片麵皮，多次旋轉向上拋甩，形成大而薄的圓餅，再放到鍋上烙。",
+      "explanation": "甩餅：印度甩餅，是馬來西亞 印度裔發明的食物。做法是將和好的小片麵皮，多次旋轉向上拋甩，形成大而薄的圓餅，再放到鍋上烙。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「食材」是什麼意思？",
+      "options": [
+        "享受使用。",
+        "麵粉製成的條狀食品。",
+        "不知道。"
+      ],
+      "answer": "食物的原始材料。",
+      "explanation": "食材：食物的原始材料。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「醬料」是什麼意思？",
+      "options": [
+        "用胡椒、薑黃、番椒、茴香、陳皮等粉末製成的調味品。色黃、味香而辛辣，以印度所產的咖哩最著名。",
+        "一種日本料理。在剛蒸熟的飯中，放入醋、糖、鹽等調味料，攪拌均勻，使飯冷卻。然後在細竹簾上先鋪一層海苔皮或豆皮，鋪上一層飯後，再鋪上生魚片、漬菜、炒蛋等食品，最後再壓緊成筒狀，切成小塊食用。",
+        "探索尋求。"
+      ],
+      "answer": "用來醃漬食材或增加食物風味的佐料。多呈糊狀或液態。",
+      "explanation": "醬料：用來醃漬食材或增加食物風味的佐料。多呈糊狀或液態。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "missing",
+      "activity": "sentence-practice",
+      "note": "句型來源尚未完成來源核對。"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "應用任務來源尚未完成來源核對。"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "missing",
+      "activity": "idiom-builder",
+      "note": "成語資料尚未完成來源核對。"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "missing",
+      "activity": "polysemy",
+      "note": "一字多義資料尚未完成來源核對。"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones",
+      "note": "一字多音資料尚未完成來源核對。"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭資料尚未完成來源核對。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  }
+}

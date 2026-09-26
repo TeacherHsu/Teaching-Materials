@@ -1,0 +1,1173 @@
+{
+  "lesson_id": "115AG4K10",
+  "volume": {
+    "code": "115AG4K",
+    "publisher": "康軒",
+    "grade": 4,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "康軒四上國語課程"
+  },
+  "lesson_no": 10,
+  "title": "奇幻旋律",
+  "author": "",
+  "blurb": "透過〈奇幻旋律〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "source_audit": [
+    {
+      "kind": "official",
+      "locator": "01 生字表",
+      "sha256": "1FC2FAE5BF0473C06699E5B1D01579AFA3BE8FBE57B97003DE3CF4000AC27F5F"
+    },
+    {
+      "kind": "official",
+      "locator": "第十課 奇幻旋律",
+      "sha256": "ED57ADBD76746D9EEADC5831F748CC89CE4643A7CF997D3F426476B9CE847334"
+    },
+    {
+      "kind": "official",
+      "locator": "第十課 奇幻旋律",
+      "sha256": "A949FA87B3BE26A1EAA736A6F2227ADA8C658D37ED37BC89FD0CE94C11443E8F"
+    },
+    {
+      "kind": "official",
+      "locator": "L10／奇幻旋律",
+      "sha256": "ED57ADBD76746D9EEADC5831F748CC89CE4643A7CF997D3F426476B9CE847334"
+    },
+    {
+      "kind": "official",
+      "locator": "L10／奇幻旋律",
+      "sha256": "A949FA87B3BE26A1EAA736A6F2227ADA8C658D37ED37BC89FD0CE94C11443E8F"
+    },
+    {
+      "kind": "official",
+      "locator": "03 課文",
+      "sha256": "735B4C4E58FD9589552A199E226B16E8F3A5CF0C4897C3454A4065491B4E50B4"
+    },
+    {
+      "kind": "official",
+      "locator": "14 課文大意、段落大意",
+      "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    }
+  ],
+  "characters": [
+    {
+      "char": "幻",
+      "zhuyin": "ㄏㄨㄢˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 4,
+      "radical": "⼳",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "奇幻"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B9%BB",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "旋",
+      "zhuyin": "ㄒㄩㄢˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 11,
+      "radical": "⽅",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "旋律"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%97%8B",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "扁",
+      "zhuyin": "ㄅㄧㄢˇ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 9,
+      "radical": "⼾",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%89%81",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "瞬",
+      "zhuyin": "ㄕㄨㄣˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 17,
+      "radical": "⽬",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "一瞬間"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%9E%AC",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "驗",
+      "zhuyin": "ㄧㄢˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 23,
+      "radical": "⾺",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "體驗"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%A9%97",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "牙",
+      "zhuyin": "ㄧㄚˊ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 4,
+      "radical": "⽛",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "乳牙",
+        "假牙",
+        "刷牙"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%89%99",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "芝",
+      "zhuyin": "ㄓ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 6,
+      "radical": "⾋",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "芝麻"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%8A%9D",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "盜",
+      "zhuyin": "ㄉㄠˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 12,
+      "radical": "⽫",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "大盜"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%9B%9C",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "邁",
+      "zhuyin": "ㄇㄞˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 15,
+      "radical": "⾡",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "邁開"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%82%81",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "困",
+      "zhuyin": "ㄎㄨㄣˋ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 7,
+      "radical": "⼞",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%9B%B0",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "龐",
+      "zhuyin": "ㄆㄤˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 19,
+      "radical": "⼴",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "臉龐"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%BE%90",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "搓",
+      "zhuyin": "ㄘㄨㄛ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 12,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%90%93",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "榮",
+      "zhuyin": "ㄖㄨㄥˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 14,
+      "radical": "⽊",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "榮華富貴"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%A6%AE",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "富",
+      "zhuyin": "ㄈㄨˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 12,
+      "radical": "⼧",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "榮華富貴"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%AF%8C",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "遍",
+      "zhuyin": "ㄅㄧㄢˋ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 12,
+      "radical": "⾡",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%81%8D",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG4K10:01",
+      "word": "奇幻",
+      "zhuyin": "ㄑㄧˊㄏㄨㄢˋ",
+      "meaning": "非常神奇，好像夢幻一般。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K10:02",
+      "word": "旋律",
+      "zhuyin": "ㄒㄩㄢˊㄌㄩˋ",
+      "meaning": "若干高低、長短、強弱不同的樂音，依節奏上的一定組織關係連續奏出，稱為﹁旋律﹂。是構成音樂的基本要素，可以表現出音樂的內容、風格及體裁。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K10:03",
+      "word": "一瞬間",
+      "zhuyin": "ㄧㄕㄨㄣˋㄐㄧㄢ",
+      "meaning": "比喻很短的時間。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K10:04",
+      "word": "體驗",
+      "zhuyin": "ㄊㄧˇㄧㄢˋ",
+      "meaning": "親身體會、感受。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K10:05",
+      "word": "芝麻",
+      "zhuyin": "ㄓㄇㄚˊ",
+      "meaning": "植物名。莖方形。葉長，對生或互生，呈橢圓形或卵形。花單生於葉腋，表面有毛，向側方下垂，呈白色或雜有淡紅色。果實為長橢圓形的蒴角，熟後縱裂。種子小而扁平，有白色及黑色等數種，可供食用或榨油。大多分布於熱帶地區。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K10:06",
+      "word": "大盜",
+      "zhuyin": "ㄉㄚˋㄉㄠˋ",
+      "meaning": "強行掠奪別人財物的人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K10:07",
+      "word": "邁開",
+      "zhuyin": "ㄇㄞˋㄎㄞ",
+      "meaning": "跨出、踏出腳步。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K10:08",
+      "word": "臉龐",
+      "zhuyin": "ㄌㄧㄢˇㄆㄤˊ",
+      "meaning": "面容、臉蛋。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K10:09",
+      "word": "榮華富貴",
+      "zhuyin": "ㄖㄨㄥˊㄏㄨㄚˊㄈㄨˋㄍㄨㄟˋ",
+      "meaning": "顯榮發達，財多位尊。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K10:10",
+      "word": "天馬行空",
+      "zhuyin": "ㄊㄧㄢㄇㄚˇㄒㄧㄥˊㄎㄨㄥ",
+      "meaning": "比喻才思奔放，文筆豪邁。引申有灑脫自由、不著邊際之意。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K10:11",
+      "word": "一轉眼",
+      "zhuyin": "ㄧㄓㄨㄢˇㄧㄢˇ",
+      "meaning": "形容極短的時間。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K10:12",
+      "word": "千山萬水",
+      "zhuyin": "ㄑㄧㄢㄕㄢㄨㄢˋㄕㄨㄟˇ",
+      "meaning": "形容路途遙遠而多險阻。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K10:13",
+      "word": "暗語",
+      "zhuyin": "ㄢˋㄩˇ",
+      "meaning": "用作暗號的祕密語言。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K10:14",
+      "word": "山珍海味",
+      "zhuyin": "ㄕㄢㄓㄣㄏㄞˇㄨㄟˋ",
+      "meaning": "泛指珍異豐盛的菜肴。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [],
+  "idiom_sentences": [],
+  "sentence_patterns": [],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:115AG4K10:01",
+      "paragraph_no": 1,
+      "summary": "一千零一夜的奇幻旋律突破時間和空間，把中東故事帶到世界各地，也讓讀者走進充滿想像的旅程。",
+      "structure_role": "魔毯】飛越空間",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K10:02",
+      "paragraph_no": 2,
+      "summary": "飛天魔毯輕薄而身子扁，能載人快速離開危險，只要坐上去，就可在一瞬間飛到遙遠天邊。",
+      "structure_role": "魔毯】飛越空間",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K10:03",
+      "paragraph_no": 3,
+      "summary": "黃金洞穴有堅硬的頭和牙尖尖，只有聽見芝麻開門的暗語，才會張口讓來訪者進入其中。",
+      "structure_role": "洞穴】暗語與考驗",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K10:04",
+      "paragraph_no": 4,
+      "summary": "進洞時要小心別被大盜發現，也不可產生貪念；旅人必須邁開大步前進，才不會困在洞中。",
+      "structure_role": "洞穴】暗語與考驗",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K10:05",
+      "paragraph_no": 5,
+      "summary": "神奇油燈被揉搓後會出現巨人，能送來山珍海味與榮華富貴，幫助人們實現心中願望。",
+      "structure_role": "神燈】願望與流傳",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K10:06",
+      "paragraph_no": 6,
+      "summary": "這些故事沒有隨時間消逝，反而透過吟唱和閱讀傳遍世界，使古老想像繼續陪伴不同世代，也提醒人們在願望與選擇之間保持清醒與勇氣。",
+      "structure_role": "神燈】願望與流傳",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "gist": "一千零一夜的奇幻旋律突破時間和空間，把中東故事帶到世界各地，也讓讀者走進充滿想像的旅程。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "question:115AG4K10:01",
+      "stem": "一千零一夜的故事突破了什麼限制？",
+      "question": "一千零一夜的故事突破了什麼限制？",
+      "options": [
+        "空間與時間",
+        "身高與體重",
+        "天氣與季節",
+        "速度與距離"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K10:02",
+      "stem": "飛天魔毯有什麼神奇之處？",
+      "question": "飛天魔毯有什麼神奇之處？",
+      "options": [
+        "能載人到任何地方",
+        "能變出食物",
+        "能打開洞門",
+        "能讓時間停止"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K10:03",
+      "stem": "黃金洞穴聽到什麼就會打開洞門？",
+      "question": "黃金洞穴聽到什麼就會打開洞門？",
+      "options": [
+        "暗語",
+        "歌聲",
+        "笑聲",
+        "鐘聲"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K10:04",
+      "stem": "揉搓神奇油燈後會發生什麼事？",
+      "question": "揉搓神奇油燈後會發生什麼事？",
+      "options": [
+        "巨人出現並幫忙實現願望",
+        "飛出一群鳥",
+        "洞門立刻關閉",
+        "魔毯消失"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    }
+  ],
+  "polysemy": [],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG4K10:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "幻",
+          "example": "幻想、夢幻"
+        },
+        {
+          "char": "幼",
+          "example": "幼兒、幼年"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K10:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "扁",
+          "example": "扁平、扁豆"
+        },
+        {
+          "char": "遍",
+          "example": "遍地、普遍"
+        },
+        {
+          "char": "偏",
+          "example": "偏心、偏見"
+        },
+        {
+          "char": "編",
+          "example": "編寫、編號"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K10:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "實",
+          "example": "實驗、驗收"
+        },
+        {
+          "char": "危",
+          "example": "危險、險路"
+        },
+        {
+          "char": "檢",
+          "example": "檢查、檢驗"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K10:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "牙",
+          "example": "牙齒、牙刷"
+        },
+        {
+          "char": "發",
+          "example": "發芽、嫩芽"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K10:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "邁",
+          "example": "邁步、年邁"
+        },
+        {
+          "char": "遇",
+          "example": "遇見、相遇"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K10:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "困",
+          "example": "困難、困住"
+        },
+        {
+          "char": "因",
+          "example": "因為、原因"
+        },
+        {
+          "char": "囚",
+          "example": "囚犯、囚車"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K10:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "龐",
+          "example": "龐大、臉龐"
+        },
+        {
+          "char": "籠",
+          "example": "籠子、鳥籠"
+        },
+        {
+          "char": "朦",
+          "example": "朦朧、朧月"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K10:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "光",
+          "example": "光榮、榮耀"
+        },
+        {
+          "char": "營",
+          "example": "營養、營地"
+        },
+        {
+          "char": "螢",
+          "example": "螢火蟲、螢光"
+        },
+        {
+          "char": "晶",
+          "example": "晶瑩、瑩白"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    }
+  ],
+  "listening": [],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "泳",
+        "串",
+        "般",
+        "姿",
+        "溜",
+        "耳",
+        "鷹",
+        "滑",
+        "遨",
+        "緩",
+        "陀",
+        "螺",
+        "轉",
+        "躍",
+        "煩"
+      ],
+      "2": [
+        "招",
+        "湯",
+        "拋",
+        "糧",
+        "姐",
+        "爭",
+        "警",
+        "偷",
+        "則",
+        "繩",
+        "依",
+        "捨",
+        "束",
+        "暫",
+        "幸"
+      ],
+      "3": [
+        "社",
+        "邀",
+        "與",
+        "遙",
+        "投",
+        "熟",
+        "巧",
+        "彈",
+        "曾",
+        "揮",
+        "彼",
+        "秒",
+        "喧",
+        "優",
+        "弧"
+      ],
+      "4": [
+        "偕",
+        "醫",
+        "命",
+        "奉",
+        "獻",
+        "療",
+        "衛",
+        "藥",
+        "治",
+        "翻",
+        "嶺",
+        "捐",
+        "宿",
+        "堂",
+        "濃"
+      ],
+      "5": [
+        "凱",
+        "勒",
+        "業",
+        "勵",
+        "寧",
+        "視",
+        "注",
+        "憑",
+        "蓓",
+        "蕾",
+        "何",
+        "毯",
+        "適",
+        "繽",
+        "盡"
+      ],
+      "6": [
+        "秀",
+        "稱",
+        "朗",
+        "登",
+        "穆",
+        "瑪",
+        "峰",
+        "母",
+        "酷",
+        "磨",
+        "攀",
+        "氧",
+        "訓",
+        "谷",
+        "響"
+      ],
+      "7": [
+        "薄",
+        "烙",
+        "沾",
+        "咖",
+        "哩",
+        "印",
+        "甩",
+        "材",
+        "醬",
+        "義",
+        "麵",
+        "郁",
+        "壽",
+        "醋",
+        "未"
+      ],
+      "8": [
+        "臨",
+        "樓",
+        "頸",
+        "代",
+        "濟",
+        "阻",
+        "尼",
+        "器",
+        "震",
+        "京",
+        "晴",
+        "塔",
+        "訊",
+        "吉",
+        "橋"
+      ],
+      "9": [
+        "佛",
+        "泰",
+        "廟",
+        "華",
+        "尚",
+        "逛",
+        "埃",
+        "羅",
+        "勢",
+        "窪",
+        "堤",
+        "防",
+        "潮",
+        "鬱",
+        "划"
+      ],
+      "10": [
+        "幻",
+        "旋",
+        "扁",
+        "瞬",
+        "驗",
+        "牙",
+        "芝",
+        "盜",
+        "邁",
+        "困",
+        "龐",
+        "搓",
+        "榮",
+        "富",
+        "遍"
+      ]
+    }
+  },
+  "extensions": [],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「幻」的部首是哪一個？",
+      "options": [
+        "⼴",
+        "⽅",
+        "⽬"
+      ],
+      "answer": "⼳",
+      "explanation": "「幻」的部首是⼳。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「旋」的部首是哪一個？",
+      "options": [
+        "⼳",
+        "⾺",
+        "⼞"
+      ],
+      "answer": "⽅",
+      "explanation": "「旋」的部首是⽅。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「扁」的部首是哪一個？",
+      "options": [
+        "⾡",
+        "⾺",
+        "⽬"
+      ],
+      "answer": "⼾",
+      "explanation": "「扁」的部首是⼾。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「奇幻」是什麼意思？",
+      "options": [
+        "形容極短的時間。",
+        "形容路途遙遠而多險阻。",
+        "比喻才思奔放，文筆豪邁。引申有灑脫自由、不著邊際之意。"
+      ],
+      "answer": "非常神奇，好像夢幻一般。",
+      "explanation": "奇幻：非常神奇，好像夢幻一般。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「旋律」是什麼意思？",
+      "options": [
+        "面容、臉蛋。",
+        "植物名。莖方形。葉長，對生或互生，呈橢圓形或卵形。花單生於葉腋，表面有毛，向側方下垂，呈白色或雜有淡紅色。果實為長橢圓形的蒴角，熟後縱裂。種子小而扁平，有白色及黑色等數種，可供食用或榨油。大多分布於熱帶地區。",
+        "非常神奇，好像夢幻一般。"
+      ],
+      "answer": "若干高低、長短、強弱不同的樂音，依節奏上的一定組織關係連續奏出，稱為﹁旋律﹂。是構成音樂的基本要素，可以表現出音樂的內容、風格及體裁。",
+      "explanation": "旋律：若干高低、長短、強弱不同的樂音，依節奏上的一定組織關係連續奏出，稱為﹁旋律﹂。是構成音樂的基本要素，可以表現出音樂的內容、風格及體裁。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「一瞬間」是什麼意思？",
+      "options": [
+        "強行掠奪別人財物的人。",
+        "親身體會、感受。",
+        "比喻很短的時間。"
+      ],
+      "answer": "比喻很短的時間。",
+      "explanation": "一瞬間：比喻很短的時間。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「體驗」是什麼意思？",
+      "options": [
+        "比喻才思奔放，文筆豪邁。引申有灑脫自由、不著邊際之意。",
+        "顯榮發達，財多位尊。",
+        "形容極短的時間。"
+      ],
+      "answer": "親身體會、感受。",
+      "explanation": "體驗：親身體會、感受。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「芝麻」是什麼意思？",
+      "options": [
+        "比喻才思奔放，文筆豪邁。引申有灑脫自由、不著邊際之意。",
+        "面容、臉蛋。",
+        "親身體會、感受。"
+      ],
+      "answer": "植物名。莖方形。葉長，對生或互生，呈橢圓形或卵形。花單生於葉腋，表面有毛，向側方下垂，呈白色或雜有淡紅色。果實為長橢圓形的蒴角，熟後縱裂。種子小而扁平，有白色及黑色等數種，可供食用或榨油。大多分布於熱帶地區。",
+      "explanation": "芝麻：植物名。莖方形。葉長，對生或互生，呈橢圓形或卵形。花單生於葉腋，表面有毛，向側方下垂，呈白色或雜有淡紅色。果實為長橢圓形的蒴角，熟後縱裂。種子小而扁平，有白色及黑色等數種，可供食用或榨油。大多分布於熱帶地區。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "missing",
+      "activity": "sentence-practice",
+      "note": "句型來源尚未完成來源核對。"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "應用任務來源尚未完成來源核對。"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "missing",
+      "activity": "idiom-builder",
+      "note": "成語資料尚未完成來源核對。"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "missing",
+      "activity": "polysemy",
+      "note": "一字多義資料尚未完成來源核對。"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones",
+      "note": "一字多音資料尚未完成來源核對。"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭資料尚未完成來源核對。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  }
+}

@@ -1,0 +1,1033 @@
+{
+  "lesson_id": "115AG4K02",
+  "volume": {
+    "code": "115AG4K",
+    "publisher": "康軒",
+    "grade": 4,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "康軒四上國語課程"
+  },
+  "lesson_no": 2,
+  "title": "放學後",
+  "author": "",
+  "blurb": "透過〈放學後〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "source_audit": [
+    {
+      "kind": "official",
+      "locator": "01 生字表",
+      "sha256": "1FC2FAE5BF0473C06699E5B1D01579AFA3BE8FBE57B97003DE3CF4000AC27F5F"
+    },
+    {
+      "kind": "official",
+      "locator": "第二課 放學後",
+      "sha256": "ED57ADBD76746D9EEADC5831F748CC89CE4643A7CF997D3F426476B9CE847334"
+    },
+    {
+      "kind": "official",
+      "locator": "第二課 放學後",
+      "sha256": "A949FA87B3BE26A1EAA736A6F2227ADA8C658D37ED37BC89FD0CE94C11443E8F"
+    },
+    {
+      "kind": "official",
+      "locator": "L02／放學後",
+      "sha256": "ED57ADBD76746D9EEADC5831F748CC89CE4643A7CF997D3F426476B9CE847334"
+    },
+    {
+      "kind": "official",
+      "locator": "L02／放學後",
+      "sha256": "A949FA87B3BE26A1EAA736A6F2227ADA8C658D37ED37BC89FD0CE94C11443E8F"
+    },
+    {
+      "kind": "official",
+      "locator": "03 課文",
+      "sha256": "C646F38FD9E64777EE9433B55F3E1695F690481ECA653CA2B7BDF1E2C9C48896"
+    },
+    {
+      "kind": "official",
+      "locator": "14 課文大意、段落大意",
+      "sha256": "AD7D4FF8D8985AE1D963F7F18F309B20B406C80664589F22B52E20057D863CCB"
+    }
+  ],
+  "characters": [
+    {
+      "char": "招",
+      "zhuyin": "ㄓㄠ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 8,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "招招手"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8B%9B",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "湯",
+      "zhuyin": "ㄊㄤ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 12,
+      "radical": "⽔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B9%AF",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "拋",
+      "zhuyin": "ㄆㄠ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 8,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8B%8B",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "糧",
+      "zhuyin": "ㄌㄧㄤˊ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 18,
+      "radical": "⽶",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "食糧"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B3%A7",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "姐",
+      "zhuyin": "ㄐㄧㄝˇ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 8,
+      "radical": "⼥",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "姐姐"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A7%90",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "爭",
+      "zhuyin": "ㄓㄥ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 8,
+      "radical": "⽖",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "戰爭",
+        "抗爭",
+        "爭光"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%88%AD",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "警",
+      "zhuyin": "ㄐㄧㄥˇ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 19,
+      "radical": "⾔",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "警察"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%AD%A6",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "偷",
+      "zhuyin": "ㄊㄡ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 11,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "小偷"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%81%B7",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "則",
+      "zhuyin": "ㄗㄜˊ",
+      "zhuyin_source": "pypinyin_0.55.0_derivation",
+      "stroke_count": 9,
+      "radical": "⼑",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%89%87",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "繩",
+      "zhuyin": "ㄕㄥˊ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 19,
+      "radical": "⽷",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "跳繩"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B9%A9",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "依",
+      "zhuyin": "ㄧ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 8,
+      "radical": "⼈",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "依序",
+        "依循",
+        "依據"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BE%9D",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "捨",
+      "zhuyin": "ㄕㄜˇ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 11,
+      "radical": "⼿",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "依依不捨"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8D%A8",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "束",
+      "zhuyin": "ㄕㄨˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 7,
+      "radical": "⽊",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "結束"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9D%9F",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "暫",
+      "zhuyin": "ㄗㄢˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 15,
+      "radical": "⽇",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "暫停"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9A%AB",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    },
+    {
+      "char": "幸",
+      "zhuyin": "ㄒㄧㄥˋ",
+      "zhuyin_source": "wordwall_source_manifest",
+      "stroke_count": 8,
+      "radical": "⼲",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "幸福"
+      ],
+      "examples_source": "康軒官方教材來源整理（05 詞語解釋及例句；常用度前三項於匯入階段補齊）",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B9%B8",
+      "source": "康軒官方教材來源整理（01 生字表）",
+      "status": "ready"
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG4K02:01",
+      "word": "招招手",
+      "zhuyin": "ㄓㄠㄓㄠㄕㄡˇ",
+      "meaning": "揮動手，表招呼或示意前來。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K02:02",
+      "word": "食糧",
+      "zhuyin": "ㄕˊㄌㄧㄤˊ",
+      "meaning": "泛指一切米穀及食物。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K02:03",
+      "word": "姐姐",
+      "zhuyin": "ㄐㄧㄝˇㄐㄧㄝ˙",
+      "meaning": "稱同父母所生而比自己年長的女性。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K02:04",
+      "word": "爭吵",
+      "zhuyin": "ㄓㄥㄔㄠˇ",
+      "meaning": "爭鬥吵鬧。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K02:05",
+      "word": "警察",
+      "zhuyin": "ㄐㄧㄥˇㄔㄚˊ",
+      "meaning": "依法以維持公共秩序、保護社會安寧、促進人民福利為主要任務的人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K02:06",
+      "word": "小偷",
+      "zhuyin": "ㄒㄧㄠˇㄊㄡ",
+      "meaning": "竊賊。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K02:07",
+      "word": "跳繩",
+      "zhuyin": "ㄊㄧㄠˋㄕㄥˊ",
+      "meaning": "⑴一種跳過繩子的運動或遊戲。普通是把繩子掄成圓圈，人趁繩子近地時跳過去。有單腳跳、雙腳跳、交叉跳、轉身跳等多種花樣。⑵繩子兩端附有手柄以便掄動，供人跳躍的繩索。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K02:08",
+      "word": "依依不捨",
+      "zhuyin": "ㄧㄧㄅㄨˋㄕㄜˇ",
+      "meaning": "非常留戀、捨不得。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K02:09",
+      "word": "結束",
+      "zhuyin": "ㄐㄧㄝˊㄕㄨˋ",
+      "meaning": "終結、了結。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K02:10",
+      "word": "暫停",
+      "zhuyin": "ㄗㄢˋㄊㄧㄥˊ",
+      "meaning": "進行中作短時間的中止。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K02:11",
+      "word": "幸福",
+      "zhuyin": "ㄒㄧㄥˋㄈㄨˊ",
+      "meaning": "指生活、境遇圓滿愉快。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K02:12",
+      "word": "飛也似的",
+      "zhuyin": "ㄈㄟㄧㄝˇㄕˋㄉㄜ˙",
+      "meaning": "形容行走快速。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K02:13",
+      "word": "一掃而空",
+      "zhuyin": "ㄧㄙㄠˇㄦˊㄎㄨㄥ",
+      "meaning": "全部清除乾淨。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K02:14",
+      "word": "奮勇",
+      "zhuyin": "ㄈㄣˋㄩㄥˇ",
+      "meaning": "提起勇氣。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K02:15",
+      "word": "紛紛",
+      "zhuyin": "ㄈㄣㄈㄣ",
+      "meaning": "接連不斷的樣子。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": null,
+      "status": "ready",
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    }
+  ],
+  "word_meanings": [],
+  "sentences": [],
+  "idioms": [],
+  "idiom_sentences": [],
+  "sentence_patterns": [],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph:115AG4K02:01",
+      "paragraph_no": 1,
+      "summary": "作者放學後飛快趕回家，桌上的美味像在點心招手，有時還能喝到香甜柔軟、令人期待的紅豆湯。",
+      "structure_role": "回家】點心與好友",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K02:02",
+      "paragraph_no": 2,
+      "summary": "好友來家裡一起寫功課，大家卻抵擋不了食物香氣，常把作業拋到腦後，先將眼前點心吃得一乾二淨。",
+      "structure_role": "回家】點心與好友",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K02:03",
+      "paragraph_no": 3,
+      "summary": "國語日報是作者重要的精神食糧，他和姐姐看報時曾爭著先讀，後來想出分看左右面與正反面的好方法。",
+      "structure_role": "活動】閱讀與遊戲",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K02:04",
+      "paragraph_no": 4,
+      "summary": "完成作業後，大家到公園玩警察抓小偷，也一起比賽跳繩，人人奮勇爭先，享受追跑和競賽的樂趣。",
+      "structure_role": "活動】閱讀與遊戲",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K02:05",
+      "paragraph_no": 5,
+      "summary": "太陽快下山時，大人呼喊孩子回家吃飯，大家才依依不捨結束活動，告別共同遊玩的朋友和公園。",
+      "structure_role": "感受】留戀幸福時光",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph:115AG4K02:06",
+      "paragraph_no": 6,
+      "summary": "作者喜歡吃點心、看報紙與玩遊戲，覺得放學時間過得特別快，希望幸福快樂的時光能長久停留。",
+      "structure_role": "感受】留戀幸福時光",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "gist": "作者放學後飛快趕回家，桌上的美味像在點心招手，有時還能喝到香甜柔軟、令人期待的紅豆湯。",
+    "theme": "閱讀理解",
+    "status": "approved",
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "question:115AG4K02:01",
+      "stem": "作者一放學，如何趕回家？",
+      "question": "作者一放學，如何趕回家？",
+      "options": [
+        "慢慢散步",
+        "飛也似的跑回家",
+        "留在學校",
+        "搭車去公園"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K02:02",
+      "stem": "作者回家後，先做什麼，再做什麼？",
+      "question": "作者回家後，先做什麼，再做什麼？",
+      "options": [
+        "先寫功課，再吃點心",
+        "先吃點心，再寫功課",
+        "先玩遊戲，再看報紙",
+        "先睡覺，再寫功課"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K02:03",
+      "stem": "對作者來說，放學後最快樂的事是什麼？",
+      "question": "對作者來說，放學後最快樂的事是什麼？",
+      "options": [
+        "讀國語日報",
+        "整理書包",
+        "打掃教室",
+        "搭公車回家"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    },
+    {
+      "id": "question:115AG4K02:04",
+      "stem": "作者為什麼希望時間能停留？",
+      "question": "作者為什麼希望時間能停留？",
+      "options": [
+        "他不想完成作業",
+        "他害怕第二天上學",
+        "他很享受放學後的美好時光",
+        "他還沒有吃晚餐"
+      ],
+      "answer": null,
+      "status": "todo",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+    }
+  ],
+  "polysemy": [],
+  "polysemy_senses": [],
+  "polyphones": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG4K02:01",
+      "group_no": "1",
+      "chars": [
+        {
+          "char": "招",
+          "example": "招手、招待"
+        },
+        {
+          "char": "昭",
+          "example": "昭告、昭示"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K02:02",
+      "group_no": "2",
+      "chars": [
+        {
+          "char": "熱",
+          "example": "熱湯、湯匙"
+        },
+        {
+          "char": "飛",
+          "example": "飛揚、揚起"
+        },
+        {
+          "char": "陽",
+          "example": "陽光、太陽"
+        },
+        {
+          "char": "楊",
+          "example": "楊樹、楊梅"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K02:03",
+      "group_no": "3",
+      "chars": [
+        {
+          "char": "爭",
+          "example": "爭先、爭取"
+        },
+        {
+          "char": "掙",
+          "example": "掙錢、掙扎"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K02:04",
+      "group_no": "4",
+      "chars": [
+        {
+          "char": "警",
+          "example": "警告、警覺"
+        },
+        {
+          "char": "驚",
+          "example": "驚喜、驚訝"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K02:05",
+      "group_no": "5",
+      "chars": [
+        {
+          "char": "偷",
+          "example": "偷看、小偷"
+        },
+        {
+          "char": "愉",
+          "example": "愉快、愉悅"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K02:06",
+      "group_no": "6",
+      "chars": [
+        {
+          "char": "捨",
+          "example": "捨不得、捨棄"
+        },
+        {
+          "char": "拾",
+          "example": "拾起、收拾"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K02:07",
+      "group_no": "7",
+      "chars": [
+        {
+          "char": "幸",
+          "example": "幸運、幸福"
+        },
+        {
+          "char": "辛",
+          "example": "辛苦、辛辣"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    },
+    {
+      "id": "lookalike:115AG4K02:08",
+      "group_no": "8",
+      "chars": [
+        {
+          "char": "根",
+          "example": "根本、樹根"
+        },
+        {
+          "char": "跟",
+          "example": "跟隨、跟著"
+        }
+      ],
+      "status": "ready",
+      "source": "康軒官方教材來源整理（06 字音字形：形似字辨別）"
+    }
+  ],
+  "listening": [],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "泳",
+        "串",
+        "般",
+        "姿",
+        "溜",
+        "耳",
+        "鷹",
+        "滑",
+        "遨",
+        "緩",
+        "陀",
+        "螺",
+        "轉",
+        "躍",
+        "煩"
+      ],
+      "2": [
+        "招",
+        "湯",
+        "拋",
+        "糧",
+        "姐",
+        "爭",
+        "警",
+        "偷",
+        "則",
+        "繩",
+        "依",
+        "捨",
+        "束",
+        "暫",
+        "幸"
+      ]
+    }
+  },
+  "extensions": [],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「招」的部首是哪一個？",
+      "options": [
+        "⽔",
+        "⽖",
+        "⽊"
+      ],
+      "answer": "⼿",
+      "explanation": "「招」的部首是⼿。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「湯」的部首是哪一個？",
+      "options": [
+        "⼿",
+        "⽖",
+        "⼑"
+      ],
+      "answer": "⽔",
+      "explanation": "「湯」的部首是⽔。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「拋」的部首是哪一個？",
+      "options": [
+        "⽖",
+        "⽶",
+        "⼥"
+      ],
+      "answer": "⼿",
+      "explanation": "「拋」的部首是⼿。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「招招手」是什麼意思？",
+      "options": [
+        "進行中作短時間的中止。",
+        "終結、了結。",
+        "提起勇氣。"
+      ],
+      "answer": "揮動手，表招呼或示意前來。",
+      "explanation": "招招手：揮動手，表招呼或示意前來。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「食糧」是什麼意思？",
+      "options": [
+        "依法以維持公共秩序、保護社會安寧、促進人民福利為主要任務的人。",
+        "終結、了結。",
+        "揮動手，表招呼或示意前來。"
+      ],
+      "answer": "泛指一切米穀及食物。",
+      "explanation": "食糧：泛指一切米穀及食物。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「姐姐」是什麼意思？",
+      "options": [
+        "爭鬥吵鬧。",
+        "依法以維持公共秩序、保護社會安寧、促進人民福利為主要任務的人。",
+        "提起勇氣。"
+      ],
+      "answer": "稱同父母所生而比自己年長的女性。",
+      "explanation": "姐姐：稱同父母所生而比自己年長的女性。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「爭吵」是什麼意思？",
+      "options": [
+        "指生活、境遇圓滿愉快。",
+        "進行中作短時間的中止。",
+        "提起勇氣。"
+      ],
+      "answer": "爭鬥吵鬧。",
+      "explanation": "爭吵：爭鬥吵鬧。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「警察」是什麼意思？",
+      "options": [
+        "指生活、境遇圓滿愉快。",
+        "提起勇氣。",
+        "爭鬥吵鬧。"
+      ],
+      "answer": "依法以維持公共秩序、保護社會安寧、促進人民福利為主要任務的人。",
+      "explanation": "警察：依法以維持公共秩序、保護社會安寧、促進人民福利為主要任務的人。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "課文全文不放入公開網站。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "missing",
+      "activity": "sentence-practice",
+      "note": "句型來源尚未完成來源核對。"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "missing",
+      "activity": "application",
+      "note": "應用任務來源尚未完成來源核對。"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "missing",
+      "activity": "idiom-builder",
+      "note": "成語資料尚未完成來源核對。"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "missing",
+      "activity": "polysemy",
+      "note": "一字多義資料尚未完成來源核對。"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "missing",
+      "activity": "polyphones",
+      "note": "一字多音資料尚未完成來源核對。"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "題幹與選項已整理；答案尚待官方資料核對。"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "missing",
+      "activity": "rhetoric",
+      "note": "修辭資料尚未完成來源核對。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  }
+}
