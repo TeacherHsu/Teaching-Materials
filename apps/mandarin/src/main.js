@@ -9,6 +9,7 @@ import { h, clear } from './utils/dom.js';
 import { isPreview } from './utils/preview.js';
 import { VoiceWarningBanner } from './components/VoiceWarningBanner.js';
 import { isMuted, toggleMute } from './utils/celebrate.js';
+import { SiteFooter } from './components/SiteFooter.js';
 
 // import.meta.env.BASE_URL 由 vite.config.js 的 base:'./' 決定，
 // 開發模式為 '/'，build 後在 index.html 中改寫為相對路徑；
@@ -94,6 +95,7 @@ function mount(pageEl) {
   app.appendChild(renderHeader());
   app.appendChild(VoiceWarningBanner());
   app.appendChild(pageEl);
+  app.appendChild(SiteFooter());
 }
 
 route(/^\/$/, async () => {

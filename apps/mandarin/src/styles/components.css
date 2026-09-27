@@ -1703,3 +1703,24 @@
   padding: 0 2px;
 }
 .polysemy-sentence-row { margin-bottom: var(--space-3); }
+
+/* 頁尾來源說明：給大人看的資訊，字級小於教材文字但仍需足夠對比（text-secondary
+   對 surface-muted 的對比達 AA），不搶學生注意力。 */
+.site-footer {
+  margin-top: var(--space-6, 40px);
+  padding: var(--space-4) var(--space-4) calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
+  background: var(--color-surface-muted);
+  border-top: 1px solid var(--color-border);
+  color: var(--text-secondary);
+  font-size: var(--font-size-meta);
+  line-height: var(--line-height-loose);
+  text-align: center;
+}
+
+.site-footer__line {
+  margin: 0 auto;
+  max-width: 34em;
+  /* 手機寬度下置中容易讓行尾剩一兩個字（「材。」「途。」），balance 讓各行等長；
+     不支援的瀏覽器退回一般換行，仍可讀。 */
+  text-wrap: balance;
+}
