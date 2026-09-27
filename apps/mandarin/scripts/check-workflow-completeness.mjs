@@ -52,6 +52,7 @@ const requiredTests = [
   ['段落與朗讀 fallback', 'scripts/test-read-all-sequence.mjs'],
   ['跨年級閱讀選擇題對錯回饋', 'scripts/test-reading-question-feedback.mjs'],
   ['跨課複習', 'scripts/test-review-coverage.mjs'],
+  ['圖片路徑接回 BASE_URL', 'scripts/test-image-src-base-resolution.mjs'],
 ];
 
 const errors = [];

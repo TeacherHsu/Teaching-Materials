@@ -4,6 +4,10 @@
 //    <a href>，不算「載入時資源」，因此只檢查 <script src>/<link href>/<img src> 等資源標籤）
 // 3. dist 內不得有 _preview 目錄，或任何 status: draft/todo_rewrite 的資料
 //    （草稿內容絕不可跟著部署到公開 GitHub Pages，見規格 B）
+// 4. data/ 裡引用的資產路徑都要對得到 dist 內真實檔案。資料檔沿用根絕對路徑
+//    （'/assets/...'），由 ImageFrame 的 resolveImageSrc 接回 BASE_URL，所以這裡
+//    不禁止根絕對路徑，只驗「去掉開頭 / 之後檔案確實存在」——擋的是打錯路徑、
+//    漏 build 資產這類會讓學生看到空白圖框的問題。
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, dirname, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -84,6 +88,56 @@ for (const file of allFiles.filter((f) => extname(f) === '.json')) {
   }
 }
 
+// --- 4. data/ 引用的資產必須存在於 dist ---
+const ASSET_REF_RE = /\.(?:webp|avif|png|jpe?g|gif|svg|mp3|m4a|ogg|wav)$/i;
+const distFileSet = new Set(allFiles.map((f) => f.slice(distDir.length + 1)));
+
+function collectAssetRefs(value, path, hits) {
+  if (typeof value === 'string') {
+    if (ASSET_REF_RE.test(value) && !/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(value)) {
+      hits.push([value, path]);
+    }
+  } else if (Array.isArray(value)) {
+    value.forEach((v, i) => collectAssetRefs(v, `${path}[${i}]`, hits));
+  } else if (value && typeof value === 'object') {
+    for (const [k, v] of Object.entries(value)) collectAssetRefs(v, `${path}.${k}`, hits);
+  }
+}
+
+let assetRefCount = 0;
+const dataJsonFiles = allFiles.filter(
+  (f) => extname(f) === '.json' && f.slice(distDir.length + 1).split('/')[0] === 'data',
+);
+for (const file of dataJsonFiles) {
+  const rel = file.slice(distDir.length + 1);
+  // _fixtures 是元件測試用的假資料，不是要部署給學生的教材，故意引用不存在的圖。
+  if (rel.split('/').includes('_fixtures')) continue;
+  let data;
+  try {
+    data = JSON.parse(readFileSync(file, 'utf-8'));
+  } catch {
+    continue;
+  }
+  // 成語圖在資料檔裡只寫檔名，由 IdiomBuilder 接上
+  // assets/<冊別代碼>/lesson<NN>/；這裡用同一套規則還原後再驗存在。
+  const lessonBase =
+    data?.volume?.code && data?.lesson_no
+      ? `assets/${data.volume.code}/lesson${String(data.lesson_no).padStart(2, '0')}/`
+      : null;
+  const hits = [];
+  collectAssetRefs(data, '$', hits);
+  for (const [ref, where] of hits) {
+    assetRefCount += 1;
+    const candidates = ref.startsWith('/')
+      ? [ref.slice(1)]
+      : [ref, ...(lessonBase ? [`${lessonBase}${ref}`] : [])];
+    if (!candidates.some((c) => distFileSet.has(c))) {
+      failed = true;
+      console.error(`[FAIL] ${rel} 的 ${where} 指向 dist 內不存在的資產：${ref}`);
+    }
+  }
+}
+
 const files = allFiles.filter((f) => ['.html', '.js', '.css'].includes(extname(f)));
 
 const ABSOLUTE_RESOURCE_RE = /(?:src|href)=["']\/(?!\/)/g;
@@ -109,5 +163,5 @@ if (failed) {
   console.error('\ncheck-dist 未通過。');
   process.exit(1);
 } else {
-  console.log(`check-dist 通過：檢查了 ${files.length} 個檔案，沒有絕對路徑或外部資源標籤，dist 內無 _preview／draft 資料。`);
+  console.log(`check-dist 通過：檢查了 ${files.length} 個檔案，沒有絕對路徑或外部資源標籤，dist 內無 _preview／draft 資料；data/ 引用的 ${assetRefCount} 筆資產全部對得到檔案。`);
 }
