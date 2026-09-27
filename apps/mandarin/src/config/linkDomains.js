@@ -19,7 +19,6 @@ export const ALLOWED_LINK_DOMAINS = [
   'www.naer.edu.tw',
   'gsyan888.blogspot.com',
   'gsyan888.github.io',
-  'www.se365edu.com',
   'stroke-order.learningweb.moe.edu.tw',
 ];
 

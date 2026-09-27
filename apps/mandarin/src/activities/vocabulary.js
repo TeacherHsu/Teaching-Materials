@@ -76,7 +76,7 @@ export function buildVocabularyActivity(lesson, onBack) {
       container.appendChild(
         TaskBanner({
           label: '看圖片認識語詞：點選卡片查看解釋',
-          step: canContinue ? `${stepLabel} ・ 本課先完成` : stepLabel,
+          step: stepLabel,
         }),
       );
       const grid = h('div', { class: 'card-grid' });
@@ -106,7 +106,7 @@ export function buildVocabularyActivity(lesson, onBack) {
     } else if (step === 'matching') {
       const isLastRound = roundIndex === matchingRounds.length - 1;
       container.appendChild(
-        TaskBanner({ label: '把語詞和意思配對起來', step: roundIndex === 0 ? '本課先完成' : '加練挑戰' }),
+        TaskBanner({ label: '把語詞和意思配對起來', step: roundIndex === 0 ? '' : '加練挑戰' }),
       );
       const pairs = matchingRounds[roundIndex].map((w) => ({ left: w.word, right: w.meaning }));
       container.appendChild(
@@ -133,7 +133,7 @@ export function buildVocabularyActivity(lesson, onBack) {
     } else if (step === 'choice') {
       const isLastRound = roundIndex === choiceRounds.length - 1;
       container.appendChild(
-        TaskBanner({ label: '看意思選出正確的語詞', step: roundIndex === 0 ? '本課先完成' : '加練挑戰' }),
+        TaskBanner({ label: '看意思選出正確的語詞', step: roundIndex === 0 ? '' : '加練挑戰' }),
       );
       container.appendChild(
         ChoiceQuiz({

@@ -173,7 +173,7 @@ export function buildCharactersActivity(lesson, onBack) {
     } else if (step === 'choice') {
       const isLastRound = roundIndex === choiceRounds.length - 1;
       container.appendChild(
-        TaskBanner({ label: '看字選出正確的注音', step: roundIndex === 0 ? '本課先完成' : '加練挑戰' }),
+        TaskBanner({ label: '看字選出正確的注音', step: roundIndex === 0 ? '' : '加練挑戰' }),
       );
       container.appendChild(
         ChoiceQuiz({
@@ -199,7 +199,7 @@ export function buildCharactersActivity(lesson, onBack) {
     } else if (step === 'radical') {
       const isLastRound = roundIndex === radicalRounds.length - 1;
       container.appendChild(
-        TaskBanner({ label: '把生字分類到正確的部首', step: roundIndex === 0 ? '本課先完成' : '加練挑戰' }),
+        TaskBanner({ label: '把生字分類到正確的部首', step: roundIndex === 0 ? '' : '加練挑戰' }),
       );
       container.appendChild(
         DragToSlot({

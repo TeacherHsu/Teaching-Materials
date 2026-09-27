@@ -31,7 +31,10 @@ assert.ok(passageButton.textContent.startsWith('先聽一聽'), '課文段落語
 assert.ok(!container.textContent.includes('課文段落第 0'), '課文段落只作為語音來源，不應全文顯示在頁面上');
 
 const bannerText = container.find((n) => n.hasClass('task-banner__label')).textContent;
-assert.ok(bannerText.includes('本課先完成'), `TaskBanner 應標示核心練習，實際：${bannerText}`);
+// 核心練習不再標「本課先完成」（CF 決定移除，對學生是非必要資訊、造成干擾）；
+// TaskBanner 只留任務本身，「加練挑戰」才會另外標示。
+assert.ok(bannerText.includes('仔細聽'), `TaskBanner 應顯示任務說明，實際：${bannerText}`);
+assert.ok(!bannerText.includes('本課先完成'), `TaskBanner 不應再標示「本課先完成」，實際：${bannerText}`);
 
 function progressText() {
   const progress = container.find((n) => n.hasClass('progress-indicator'));

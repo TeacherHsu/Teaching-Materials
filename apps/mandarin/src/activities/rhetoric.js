@@ -114,7 +114,7 @@ export function buildRhetoricActivity(lesson, onBack) {
     }
     const isLastRound = roundIndex === rounds.length - 1;
     container.appendChild(
-      TaskBanner({ label: '讀句子，判斷用了什麼修辭（挑戰題）', step: roundIndex === 0 ? '本課先完成' : '加練挑戰' }),
+      TaskBanner({ label: '讀句子，判斷用了什麼修辭（挑戰題）', step: roundIndex === 0 ? '' : '加練挑戰' }),
     );
     container.appendChild(
       ChoiceQuiz({

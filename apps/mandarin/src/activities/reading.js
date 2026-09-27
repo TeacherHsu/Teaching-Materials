@@ -75,7 +75,7 @@ export function buildReadingActivity(lesson, onBack) {
     } else if (step === 'questions') {
       const isLastRound = roundIndex === questionRounds.length - 1;
       container.appendChild(TaskBanner({
-        label: roundIndex === 0 ? '本課先完成：讀題、找線索' : '加練挑戰：繼續讀題找線索',
+        label: roundIndex === 0 ? '讀題、找線索' : '加練挑戰：繼續讀題找線索',
         step: stepLabel,
       }));
       container.appendChild(

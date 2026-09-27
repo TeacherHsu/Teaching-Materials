@@ -28,7 +28,7 @@ export function buildListeningActivity(lesson, onBack) {
     }
 
     const isLastRound = roundIndex === rounds.length - 1;
-    container.appendChild(TaskBanner({ label: '仔細聽，選出正確答案', step: roundIndex === 0 ? '本課先完成' : '加練挑戰' }));
+    container.appendChild(TaskBanner({ label: '仔細聽，選出正確答案', step: roundIndex === 0 ? '' : '加練挑戰' }));
 
     // 每題先提供對應課文段落的「先聽一聽」按鈕；段落只作為語音來源，不在畫面全文列出。
     function buildAudioRow(entry) {

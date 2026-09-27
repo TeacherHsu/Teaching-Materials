@@ -150,7 +150,7 @@ export function buildReviewActivity(lesson, onBack, opts = {}) {
         const isLastRound = roundIndex === rounds.length - 1;
         container.appendChild(TaskBanner({
           label: '複習前面課次教過的字詞',
-          step: roundIndex === 0 ? '本課先完成' : '加練挑戰',
+          step: roundIndex === 0 ? '' : '加練挑戰',
         }));
         container.appendChild(ChoiceQuiz({
           items: rounds[roundIndex],

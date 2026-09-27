@@ -85,7 +85,7 @@ export function buildLookalikesActivity(lesson, onBack) {
     }
     const isLastRound = roundIndex === rounds.length - 1;
     container.appendChild(
-      TaskBanner({ label: '看語詞裡的空格，選出正確的字', step: roundIndex === 0 ? '本課先完成' : '加練挑戰' }),
+      TaskBanner({ label: '看語詞裡的空格，選出正確的字', step: roundIndex === 0 ? '' : '加練挑戰' }),
     );
     container.appendChild(
       ChoiceQuiz({

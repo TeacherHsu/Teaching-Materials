@@ -36,7 +36,7 @@ export function buildChallengeActivity(lesson, onBack) {
     }
     const step = steps[stepIndex];
     const isLastStep = stepIndex === steps.length - 1;
-    const taskLabel = coreComplete ? '加練挑戰' : '本課先完成';
+    const taskLabel = coreComplete ? '加練挑戰' : '';
 
     if (step === 'choice') {
       const isLastRound = roundIndex === choiceRounds.length - 1;

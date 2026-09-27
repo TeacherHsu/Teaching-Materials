@@ -143,7 +143,9 @@ export function LessonDashboard(lesson) {
   }
   if (coreGrid.childElementCount) {
     root.appendChild(h('section', { class: 'lesson-module-section', 'aria-labelledby': 'core-modules-heading' }, [
-      h('h2', { id: 'core-modules-heading', class: 'lesson-module-section__title' }, '本課先完成'),
+      // 「本課先完成」對學生是非必要資訊（CF 決定移除，減少視覺干擾）。標題保留給
+      // 螢幕閱讀器使用（section 仍以 aria-labelledby 指向它），只是視覺上隱藏。
+      h('h2', { id: 'core-modules-heading', class: 'lesson-module-section__title visually-hidden' }, '本課先完成'),
       coreGrid,
     ]));
   }

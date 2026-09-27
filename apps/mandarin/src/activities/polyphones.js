@@ -78,7 +78,7 @@ export function buildPolyphonesActivity(lesson, onBack) {
     }
     const isLastRound = roundIndex === rounds.length - 1;
     container.appendChild(
-      TaskBanner({ label: '看語詞，選出標色的字正確的讀音', step: roundIndex === 0 ? '本課先完成' : '加練挑戰' }),
+      TaskBanner({ label: '看語詞，選出標色的字正確的讀音', step: roundIndex === 0 ? '' : '加練挑戰' }),
     );
     container.appendChild(
       ChoiceQuiz({
