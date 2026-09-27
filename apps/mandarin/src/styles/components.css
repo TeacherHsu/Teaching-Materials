@@ -1704,23 +1704,23 @@
 }
 .polysemy-sentence-row { margin-bottom: var(--space-3); }
 
-/* 頁尾來源說明：給大人看的資訊，字級小於教材文字但仍需足夠對比（text-secondary
-   對 surface-muted 的對比達 AA），不搶學生注意力。 */
+/* 頁尾來源說明：給大人看的小字，不該跟教材文字爭注意力，所以不用 --font-size-meta
+   （18px 是學生用的下限），改用 15px 並降低彩度。#6f685c 對頁面底色對比 5.16，
+   仍達 AA。不加底色區塊，只留一條細分隔線，避免頁尾變成視覺重量。 */
 .site-footer {
-  margin-top: var(--space-6, 40px);
-  padding: var(--space-4) var(--space-4) calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
-  background: var(--color-surface-muted);
+  margin-top: var(--space-6);
+  padding: var(--space-3) var(--space-4) calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
   border-top: 1px solid var(--color-border);
-  color: var(--text-secondary);
-  font-size: var(--font-size-meta);
-  line-height: var(--line-height-loose);
+  color: #6f685c;
+  font-size: 15px;
+  line-height: 1.6;
   text-align: center;
 }
 
 .site-footer__line {
   margin: 0 auto;
-  max-width: 34em;
-  /* 手機寬度下置中容易讓行尾剩一兩個字（「材。」「途。」），balance 讓各行等長；
+  max-width: 46em;
+  /* 手機寬度下置中容易讓行尾剩一兩個字，balance 讓各行等長；
      不支援的瀏覽器退回一般換行，仍可讀。 */
   text-wrap: balance;
 }
