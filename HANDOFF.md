@@ -1,5 +1,11 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-09-27｜全年級工作樹整理與分支推送
+- 分支：`codex/mandarin-115-all-grades`。整理並提交此前累積的跨年級網站、教材資料、流程檢查與圖片變更，程式／教材提交為 `1b83a0f`；納入範圍限於 `HANDOFF.md` 與 `apps/mandarin/`。
+- 巡檢：一、二、三、四、六年級總覽與各年級課次首頁以 375px 視窗檢查，沒有水平溢位；另檢視二上閱讀排序暖身與四上第九課句型頁。
+- 驗證：`npm run validate`、`npm run check-workflow`、`npm run audit:listening -- --strict`、全部 35 個 `scripts/test-*.mjs`、正式／預覽建置、`check-dist`、`check-assets` 與 `git diff --check` 通過。`tools/dabutie` 的 pytest 未能執行，當前 Python 環境沒有安裝 `pytest`。
+- GitHub 同步：本機 `git fetch --prune origin` 與 `git push -u origin codex/mandarin-115-all-grades` 都被 `SEC_E_NO_CREDENTIALS` 擋下；遠端尚未更新。本機提交保留，認證恢復後執行 `git push -u origin codex/mandarin-115-all-grades`。
+
 ## 2026-09-27｜學校 Win｜Codex｜狀態：✅ 完成；G3A 原缺圖成語補上 32 張理解圖
 - 範圍：`apps/mandarin/scripts/materialize-g3a-missing-idiom-images.py`、`apps/mandarin/package.json`、`apps/mandarin/scripts/check-workflow-completeness.mjs`、`apps/mandarin/docs/lesson-generation-workflow.md`、G3A 第 7～12 課成語 JSON 與 WebP 資產。
 - 做了什麼：依 32 筆成語辭意生成兒童教材理解圖，涵蓋 G3A 第 7～12 課原本沒有圖片的全部成語；公開資料逐筆接回相對路徑，來源標記為 `generated:imagegen-idiom-meaning`。
