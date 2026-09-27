@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>省三國小潛能教室｜教材總覽</title>
+<style>
+  :root {
+    --bg: #faf7f3;
+    --surface: #ffffff;
+    --border: #e4ded6;
+    --text: #2f2a25;
+    --muted: #6d655c;
+    --accent: #2f6f5e;
+    --shadow: 0 1px 3px rgba(47, 42, 37, .07), 0 6px 18px rgba(47, 42, 37, .05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1c1a18; --surface: #262320; --border: #3a352f;
+      --text: #f0ebe4; --muted: #a79e93; --accent: #7fc4ae;
+      --shadow: 0 1px 3px rgba(0,0,0,.4);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 40px 16px 64px;
+    background: var(--bg); color: var(--text);
+    font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+    line-height: 1.7;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  header { margin-bottom: 40px; }
+  h1 { font-size: clamp(1.6rem, 5vw, 2.2rem); margin: 0 0 8px; letter-spacing: .02em; }
+  .sub { color: var(--muted); margin: 0; font-size: .95rem; }
+  h2 {
+    font-size: 1.1rem; margin: 40px 0 14px; padding-bottom: 8px;
+    border-bottom: 1px solid var(--border); letter-spacing: .04em;
+  }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .cards { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .units { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; }
+  a.card {
+    display: block; padding: 16px 18px; text-decoration: none; color: inherit;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    box-shadow: var(--shadow); transition: transform .15s ease, border-color .15s ease;
+  }
+  a.card:hover, a.card:focus-visible { transform: translateY(-2px); border-color: var(--accent); }
+  a.card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .name { font-weight: 600; display: block; }
+  .desc { color: var(--muted); font-size: .85rem; display: block; margin-top: 4px; }
+  .units a.card { padding: 12px 14px; font-size: .92rem; }
+  .tag {
+    display: inline-block; font-size: .75rem; color: var(--accent);
+    border: 1px solid var(--border); border-radius: 999px; padding: 1px 8px; margin-left: 8px;
+    vertical-align: middle;
+  }
+  footer { margin-top: 56px; color: var(--muted); font-size: .82rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>省三國小潛能教室</h1>
+    <p class="sub">教材與教室工具總覽</p>
+  </header>
+
+  <h2>國語</h2>
+  <ul class="cards">
+    <li><a class="card" href="mandarin/"><span class="name">國語課文樂園</span><span class="desc">一上／二上／三上／四上／六上・生字、語詞、句型、閱讀理解</span></a></li>
+    <li><a class="card" href="Chinese/Reading-Tool/"><span class="name">國小課文點讀小幫手</span><span class="desc">課文逐字點讀與讀音輔助</span></a></li>
+  </ul>
+
+  <h2>數學<span class="tag">四年級</span></h2>
+  <ul class="units">
+    <li><a class="card" href="Math/K/G4A/06_三角形/">四上 06 三角形</a></li>
+    <li><a class="card" href="Math/K/G4A/07_小數/">四上 07 小數</a></li>
+    <li><a class="card" href="Math/K/G4A/08_整數四則計算/">四上 08 整數四則計算</a></li>
+    <li><a class="card" href="Math/K/G4A/09_分數/">四上 09 分數</a></li>
+    <li><a class="card" href="Math/K/G4A/10_統計圖/">四上 10 統計圖</a></li>
+    <li><a class="card" href="Math/K/G4B/01_多位數的乘與除/">四下 01 多位數的乘與除</a></li>
+    <li><a class="card" href="Math/K/G4B/02_四邊形/">四下 02 四邊形</a></li>
+    <li><a class="card" href="Math/K/G4B/03_概數/">四下 03 概數</a></li>
+    <li><a class="card" href="Math/K/G4B/03_概數2/">四下 03 概數（二）</a></li>
+    <li><a class="card" href="Math/K/G4B/04_數量規則/">四下 04 數量規則</a></li>
+    <li><a class="card" href="Math/K/G4B/05_小數乘法/">四下 05 小數乘法</a></li>
+    <li><a class="card" href="Math/K/G4B/06_周長與面積/">四下 06 周長與面積</a></li>
+    <li><a class="card" href="Math/K/G4B/07_等值分數/">四下 07 等值分數</a></li>
+    <li><a class="card" href="Math/K/G4B/08_簡化計算/">四下 08 簡化計算</a></li>
+    <li><a class="card" href="Math/K/G4B/09_時間的計算/">四下 09 時間的計算</a></li>
+    <li><a class="card" href="Math/K/G4B/10_立方公分/">四下 10 立方公分</a></li>
+  </ul>
+
+  <h2>社會技巧與學生支持</h2>
+  <ul class="cards">
+    <li><a class="card" href="social-skills/body-boundary/"><span class="name">身體界線・性別平等</span><span class="desc">社會技巧課程簡報</span></a></li>
+    <li><a class="card" href="student-support/why-we-study/"><span class="name">我們為什麼要學習</span><span class="desc">學習動機引導簡報</span></a></li>
+    <li><a class="card" href="student-support/body-upgrade-mission/"><span class="name">身體升級任務</span><span class="desc">健康與自我照顧簡報</span></a></li>
+  </ul>
+
+  <h2>教室工具</h2>
+  <ul class="cards">
+    <li><a class="card" href="classroom-prep-board/"><span class="name">課前準備看板</span><span class="desc">上課前的準備步驟提示</span></a></li>
+    <li><a class="card" href="Timer/"><span class="name">教室考試倒數計時器</span><span class="desc">考試與活動計時</span></a></li>
+  </ul>
+
+  <footer>省三國小潛能教室教材站・以 GitHub Pages 發布</footer>
+</div>
+</body>
+</html>
