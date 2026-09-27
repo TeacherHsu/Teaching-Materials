@@ -13,7 +13,7 @@
   "lesson_no": 6,
   "title": "攀登生命的高峰",
   "author": "",
-  "blurb": "透過〈攀登生命的高峰〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "找出江秀真設定目標、訓練到登頂的經過，整理努力和成果的關係。",
   "source_audit": [
     {
       "kind": "official",
@@ -561,45 +561,55 @@
       "idiom": "秀外慧中",
       "definition": "形容一個人容貌秀美，內心聰慧。",
       "related_char": "秀",
-      "image": "idioms/01_秀外慧中.webp",
+      "image": "idioms/01_秀外慧中-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:06:02",
       "idiom": "額手稱慶",
       "definition": "表示慶賀、高興。",
       "related_char": "稱",
-      "image": "idioms/02_額手稱慶.webp",
+      "image": "idioms/02_額手稱慶-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:06:03",
       "idiom": "豁然開朗",
       "definition": "眼前頓時開闊明亮起來。亦用於形容突然領悟到某個道理。",
       "related_char": "朗",
-      "image": "idioms/03_豁然開朗.webp",
+      "image": "idioms/03_豁然開朗-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:06:04",
       "idiom": "虛懷若谷",
       "definition": "心胸寬廣如山谷能容納萬物。形容為人謙虛，能接納他人的意見。",
       "related_char": "谷",
-      "image": "idioms/04_虛懷若谷.webp",
+      "image": "idioms/04_虛懷若谷-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:06:05",
       "idiom": "不同凡響",
       "definition": "比喻特出、不平凡的人或事物。",
       "related_char": "響",
-      "image": "idioms/05_不同凡響.webp",
+      "image": "idioms/05_不同凡響-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -825,9 +835,10 @@
         "興建高山纜車",
         "環遊各國"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "成為臺灣首位登上世界七頂峰的女登山家",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K06:02",
@@ -839,9 +850,10 @@
         "海洋",
         "朋友"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "母親",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K06:03",
@@ -853,9 +865,10 @@
         "停止運動",
         "搭乘纜車"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "跑步與低氧訓練",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K06:04",
@@ -867,9 +880,10 @@
         "等待別人背她",
         "改去較低的山"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "靠成功的渴望、勇氣與決心",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -2003,26 +2017,28 @@
       "stem": "課文的第一段提到江秀真被稱為「最接近天空的女子」，作者為什麼會這麼寫呢？",
       "question": "課文的第一段提到江秀真被稱為「最接近天空的女子」，作者為什麼會這麼寫呢？",
       "options": [
-        "因為她是臺灣第一位登上珠穆朗瑪峰的女子，更是臺灣首位成功登上世界七頂峰的女登山家",
-        "事前必須提升自己的體力與耐力，江秀真每天跑步十公里，每星期進行三天的低氧訓練。因為登上山頂時，空氣稀薄，氣溫低，必須讓身體能適應良好",
+        "臺灣首位登上珠峰並完成七頂峰的女登山家。",
+        "每天跑步，並進行低氧訓練。",
         "種樹的人指的是布非耶"
       ],
-      "answer": "因為她是臺灣第一位登上珠穆朗瑪峰的女子，更是臺灣首位成功登上世界七頂峰的女登山家",
+      "answer": "臺灣首位登上珠峰並完成七頂峰的女登山家。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "她是臺灣第一位登上珠穆朗瑪峰的女子，也是臺灣首位成功登上世界七頂峰的女登山家。"
     },
     {
       "id": "listening:06:02",
       "stem": "江秀真是怎樣愛上了山？她對山有怎樣的感覺？",
       "question": "江秀真是怎樣愛上了山？她對山有怎樣的感覺？",
       "options": [
-        "事前必須提升自己的體力與耐力，江秀真每天跑步十公里，每星期進行三天的低氧訓練。因為登上山頂時，空氣稀薄，氣溫低，必須讓身體能適應良好",
+        "每天跑步，並進行低氧訓練。",
         "種樹的人指的是布非耶",
-        "江秀真從高中開始就喜歡登山，當她站上山頂，瞭望著千變萬化的美景，就不知不覺的愛上了山。沉靜的高山就像母親一樣，時而溫暖的擁抱著她，時而冷酷的磨練著她"
+        "從高中登山，覺得山像母親。"
       ],
-      "answer": "江秀真從高中開始就喜歡登山，當她站上山頂，瞭望著千變萬化的美景，就不知不覺的愛上了山。沉靜的高山就像母親一樣，時而溫暖的擁抱著她，時而冷酷的磨練著她",
+      "answer": "從高中登山，覺得山像母親。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "當她站上山頂，瞭望著千變萬化的美景，就不知不覺的愛上了山。沉靜的高山就像母親一樣，時而溫暖的擁抱著她，時而冷酷的磨練著她。"
     },
     {
       "id": "listening:06:03",
@@ -2030,12 +2046,13 @@
       "question": "課文提到，經過什麼事情後，江秀真想要攀登世界頂峰？她為什麼會有這種想法？",
       "options": [
         "種樹的人指的是布非耶",
-        "在攀登完臺灣八十多座高山後，江秀真決定迎向世界最高峰──珠穆朗瑪峰。因為臺灣的高山有限，而且當她登上許多高山後，也想透過攀登世界最高峰，考驗自己的耐力與毅力，同……",
-        "事前必須提升自己的體力與耐力，江秀真每天跑步十公里，每星期進行三天的低氧訓練。因為登上山頂時，空氣稀薄，氣溫低，必須讓身體能適應良好"
+        "攀登八十多座高山後，挑戰珠穆朗瑪峰。",
+        "每天跑步，並進行低氧訓練。"
       ],
-      "answer": "在攀登完臺灣八十多座高山後，江秀真決定迎向世界最高峰──珠穆朗瑪峰。因為臺灣的高山有限，而且當她登上許多高山後，也想透過攀登世界最高峰，考驗自己的耐力與毅力，同……",
+      "answer": "攀登八十多座高山後，挑戰珠穆朗瑪峰。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "在攀登完臺灣八十多座高山後，江秀真決定迎向世界最高峰──珠穆朗瑪峰。"
     }
   ],
   "review_words": {

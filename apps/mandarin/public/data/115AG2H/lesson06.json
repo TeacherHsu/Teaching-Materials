@@ -1,0 +1,1937 @@
+{
+  "lesson_id": "115AG2H06",
+  "volume": {
+    "code": "115AG2H",
+    "publisher": "翰林",
+    "grade": 2,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "二上國語課程"
+  },
+  "lesson_no": 6,
+  "title": "草叢裡的星星",
+  "blurb": "從夜晚散步時看到的線索，推想草叢裡的星星是什麼。",
+  "characters": [
+    {
+      "char": "月",
+      "zhuyin": "ㄩㄝˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "月亮",
+        "月光",
+        "月球"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=月",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽉",
+      "stroke_count": 4
+    },
+    {
+      "char": "奶",
+      "zhuyin": "ㄋㄞˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "奶奶",
+        "牛奶",
+        "奶瓶"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=奶",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼥",
+      "stroke_count": 5
+    },
+    {
+      "char": "晚",
+      "zhuyin": "ㄨㄢˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "晚飯",
+        "晚上",
+        "晚餐"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=晚",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽇",
+      "stroke_count": 11
+    },
+    {
+      "char": "飯",
+      "zhuyin": "ㄈㄢˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "晚飯",
+        "吃飯",
+        "飯菜"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=飯",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾷",
+      "stroke_count": 13
+    },
+    {
+      "char": "散",
+      "zhuyin": "ㄙㄢˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "散步",
+        "散開",
+        "散心"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=散",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽁",
+      "stroke_count": 12
+    },
+    {
+      "char": "屋",
+      "zhuyin": "ㄨ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "房屋",
+        "屋頂",
+        "屋子"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=屋",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼫",
+      "stroke_count": 9
+    },
+    {
+      "char": "竹",
+      "zhuyin": "ㄓㄨˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "竹林",
+        "竹子",
+        "竹筒"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=竹",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽵",
+      "stroke_count": 6
+    },
+    {
+      "char": "林",
+      "zhuyin": "ㄌㄧㄣˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "竹林",
+        "森林",
+        "樹林"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=林",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽊",
+      "stroke_count": 8
+    },
+    {
+      "char": "頭",
+      "zhuyin": "ㄊㄡˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "盡頭",
+        "頭髮",
+        "頭上"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=頭",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾴",
+      "stroke_count": 16
+    },
+    {
+      "char": "溪",
+      "zhuyin": "ㄒㄧ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "溪水",
+        "溪流",
+        "小溪"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=溪",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽔",
+      "stroke_count": 13
+    },
+    {
+      "char": "旁",
+      "zhuyin": "ㄆㄤˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "旁邊",
+        "身旁",
+        "一旁"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=旁",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽅",
+      "stroke_count": 10
+    },
+    {
+      "char": "暗",
+      "zhuyin": "ㄢˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "黑暗",
+        "暗中",
+        "暗號"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=暗",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽇",
+      "stroke_count": 13
+    },
+    {
+      "char": "眼",
+      "zhuyin": "ㄧㄢˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "眼睛",
+        "眼神",
+        "眼前"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=眼",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽬",
+      "stroke_count": 11
+    },
+    {
+      "char": "睛",
+      "zhuyin": "ㄐㄧㄥ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "眼睛",
+        "目不轉睛",
+        "眼睛明亮"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=睛",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽬",
+      "stroke_count": 13
+    },
+    {
+      "char": "那",
+      "zhuyin": "ㄋㄚˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "那邊",
+        "那裡",
+        "那個"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=那",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾢",
+      "stroke_count": 7
+    },
+    {
+      "char": "聚",
+      "zhuyin": "ㄐㄩˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "聚會",
+        "聚集",
+        "相聚"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=聚",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽿",
+      "stroke_count": 14
+    },
+    {
+      "char": "成",
+      "zhuyin": "ㄔㄥˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "成功",
+        "完成",
+        "變成"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=成",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼽",
+      "stroke_count": 7
+    },
+    {
+      "char": "顆",
+      "zhuyin": "ㄎㄜ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "一顆",
+        "顆粒",
+        "星星一顆"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=顆",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾴",
+      "stroke_count": 17
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG2H06:01",
+      "word": "月",
+      "zhuyin": null,
+      "meaning": "月球繞行地球一周所需的時間。十二個月為一年。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson06/vocabulary/l06-01.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H06:02",
+      "word": "草叢",
+      "zhuyin": null,
+      "meaning": "聚集、群生在一起的草。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson06/vocabulary/l06-02.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H06:03",
+      "word": "盡頭",
+      "zhuyin": null,
+      "meaning": "終點、末端。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson06/vocabulary/l06-03.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H06:04",
+      "word": "竹林",
+      "zhuyin": null,
+      "meaning": "竹叢遍布的林子。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson06/vocabulary/l06-04.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H06:05",
+      "word": "屋",
+      "zhuyin": null,
+      "meaning": "房子。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson06/vocabulary/l06-05.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H06:06",
+      "word": "散步",
+      "zhuyin": null,
+      "meaning": "隨意走走。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson06/vocabulary/l06-06.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H06:07",
+      "word": "晚飯",
+      "zhuyin": null,
+      "meaning": "晚上吃的正餐。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson06/vocabulary/l06-07.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H06:08",
+      "word": "奶奶",
+      "zhuyin": null,
+      "meaning": "對祖母的稱呼。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson06/vocabulary/l06-08.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H06:09",
+      "word": "聚",
+      "zhuyin": null,
+      "meaning": "集合在一起。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson06/vocabulary/l06-09.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H06:10",
+      "word": "那邊",
+      "zhuyin": null,
+      "meaning": "指比較遠的方向。與「這邊」相對。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson06/vocabulary/l06-10.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H06:11",
+      "word": "眼睛",
+      "zhuyin": null,
+      "meaning": "動物身上用來觀察外物的視覺器官。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson06/vocabulary/l06-11.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H06:12",
+      "word": "暗",
+      "zhuyin": null,
+      "meaning": "不明亮的、光線不充足的。與「明」相對。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson06/vocabulary/l06-12.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H06:13",
+      "word": "旁",
+      "zhuyin": null,
+      "meaning": "側面、側邊。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson06/vocabulary/l06-13.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H06:14",
+      "word": "溪",
+      "zhuyin": null,
+      "meaning": "小河。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson06/vocabulary/l06-14.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H06:15",
+      "word": "顆",
+      "zhuyin": null,
+      "meaning": "量詞。計算粒狀或圓形物體的單位。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson06/vocabulary/l06-15.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H06:16",
+      "word": "成",
+      "zhuyin": null,
+      "meaning": "變為。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson06/vocabulary/l06-16.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [
+    {
+      "id": "meaning:115AG2H06:01",
+      "word": "月",
+      "meaning": "月球繞行地球一周所需的時間。十二個月為一年。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H06:02",
+      "word": "草叢",
+      "meaning": "聚集、群生在一起的草。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H06:03",
+      "word": "盡頭",
+      "meaning": "終點、末端。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H06:04",
+      "word": "竹林",
+      "meaning": "竹叢遍布的林子。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H06:05",
+      "word": "屋",
+      "meaning": "房子。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H06:06",
+      "word": "散步",
+      "meaning": "隨意走走。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H06:07",
+      "word": "晚飯",
+      "meaning": "晚上吃的正餐。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H06:08",
+      "word": "奶奶",
+      "meaning": "對祖母的稱呼。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H06:09",
+      "word": "聚",
+      "meaning": "集合在一起。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H06:10",
+      "word": "那邊",
+      "meaning": "指比較遠的方向。與「這邊」相對。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H06:11",
+      "word": "眼睛",
+      "meaning": "動物身上用來觀察外物的視覺器官。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H06:12",
+      "word": "暗",
+      "meaning": "不明亮的、光線不充足的。與「明」相對。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H06:13",
+      "word": "旁",
+      "meaning": "側面、側邊。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H06:14",
+      "word": "溪",
+      "meaning": "小河。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H06:15",
+      "word": "顆",
+      "meaning": "量詞。計算粒狀或圓形物體的單位。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H06:16",
+      "word": "成",
+      "meaning": "變為。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "sentences": [
+    {
+      "category": "短語練習",
+      "pattern": "一朵又一朵發光的雲",
+      "examples": [
+        "一棵又一棵高大的樹木",
+        "一本又一本好看的故事書"
+      ],
+      "description": "單位詞疊起來，表示事物的數量很多。",
+      "structure": "一＋量詞＋又＋一＋量詞＋形容詞（怎麼樣）＋的＋名詞（什麼事物）",
+      "id": "sentence-pattern:115AG2H06:01",
+      "head": "一朵又一朵發光的雲",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短句練習",
+      "pattern": "竹林盡頭是小溪。",
+      "examples": [
+        "公園旁邊是市場。",
+        "鐵軌附近是農田。"
+      ],
+      "description": "表示在什麼地方有什麼事物。",
+      "structure": "名詞（地方）＋名詞（什麼位置）＋是＋名詞（什麼事物）。",
+      "id": "sentence-pattern:115AG2H06:02",
+      "head": "竹林盡頭是小溪。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "忽然，一顆星星躲到妹妹的頭上。",
+      "examples": [
+        "上課時，忽然發生地震，讓大家都驚叫起來。",
+        "外面忽然下起大雨，好多人都跑到附近的超商躲雨。"
+      ],
+      "description": "此處的﹁忽然﹂，用來描述事情在突然間發生變化。",
+      "id": "sentence-pattern:115AG2H06:03",
+      "head": "忽然，一顆星星躲到妹妹的頭上。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "idioms": [
+    {
+      "id": "idiom:115AG2H06:01",
+      "idiom": "粗茶淡飯",
+      "definition": "簡單清淡的飲食。",
+      "related_char": "飯",
+      "image": "idioms/01_粗茶淡飯-fit.webp",
+      "image_origin": "existing:private-reviewed-idiom-image",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H06:02",
+      "idiom": "胸有成竹",
+      "definition": "指畫竹之前，心中早已有了竹子的完整形象。比喻有成功的把握。",
+      "related_char": "竹",
+      "image": "idioms/02_胸有成竹-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H06:03",
+      "idiom": "頭頭是道",
+      "definition": "形容言語清楚明白，有條理。",
+      "related_char": "頭",
+      "image": "idioms/03_頭頭是道-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H06:04",
+      "idiom": "袖手旁觀",
+      "definition": "把手縮在袖子裡，在一旁觀看。形容不參與，不過問。",
+      "related_char": "旁",
+      "image": "idioms/04_袖手旁觀-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H06:05",
+      "idiom": "目不轉睛",
+      "definition": "指眼珠子一動也不動。形容集中精神注視，注意力非常集中。",
+      "related_char": "睛",
+      "image": "idioms/05_目不轉睛-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H06:06",
+      "idiom": "一成不變",
+      "definition": "事情已經確定後，從不改變。",
+      "related_char": "成",
+      "image": "idioms/06_一成不變-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:115AG2H06:01",
+      "idiom_id": "idiom:115AG2H06:01",
+      "rewritten": "鄰居的老夫婦每天都是粗茶淡飯，過著簡單的生活。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H06:02",
+      "idiom_id": "idiom:115AG2H06:02",
+      "rewritten": "哥哥胸有成竹的去比賽，果然拿回好成績。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H06:03",
+      "idiom_id": "idiom:115AG2H06:03",
+      "rewritten": "他講得頭頭是道，最後大家都同意採用他的意見。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H06:04",
+      "idiom_id": "idiom:115AG2H06:04",
+      "rewritten": "大家忙成一團，她卻沒事情做，袖手旁觀的站在那裡。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H06:05",
+      "idiom_id": "idiom:115AG2H06:05",
+      "rewritten": "看著廣場上奇幻的魔術表演，遊客們目不轉睛，就怕錯過精彩的演出。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H06:06",
+      "idiom_id": "idiom:115AG2H06:06",
+      "rewritten": "爸爸做事有個一成不變的原則，就是認真負責。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "category": "短語練習",
+      "pattern": "一朵又一朵發光的雲",
+      "examples": [
+        "一棵又一棵高大的樹木",
+        "一本又一本好看的故事書"
+      ],
+      "description": "單位詞疊起來，表示事物的數量很多。",
+      "structure": "一＋量詞＋又＋一＋量詞＋形容詞（怎麼樣）＋的＋名詞（什麼事物）",
+      "id": "sentence-pattern:115AG2H06:01",
+      "head": "一朵又一朵發光的雲",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短句練習",
+      "pattern": "竹林盡頭是小溪。",
+      "examples": [
+        "公園旁邊是市場。",
+        "鐵軌附近是農田。"
+      ],
+      "description": "表示在什麼地方有什麼事物。",
+      "structure": "名詞（地方）＋名詞（什麼位置）＋是＋名詞（什麼事物）。",
+      "id": "sentence-pattern:115AG2H06:02",
+      "head": "竹林盡頭是小溪。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "忽然，一顆星星躲到妹妹的頭上。",
+      "examples": [
+        "上課時，忽然發生地震，讓大家都驚叫起來。",
+        "外面忽然下起大雨，好多人都跑到附近的超商躲雨。"
+      ],
+      "description": "此處的﹁忽然﹂，用來描述事情在突然間發生變化。",
+      "id": "sentence-pattern:115AG2H06:03",
+      "head": "忽然，一顆星星躲到妹妹的頭上。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG2H06:散:01",
+      "char": "散",
+      "sentence": "生活中，我們會用到《散播》這個詞。",
+      "definition": "放出、撒出",
+      "options": [
+        "放出、撒出",
+        "由聚而分",
+        "排解",
+        "雜亂、零碎",
+        "鬆弛、安逸",
+        "藥粉",
+        "事物的開始或結束的兩個端 點",
+        "人或動物脖子以上的部分",
+        "物的起點或頂、前端。與「尾」 相對",
+        "量詞。計算牛、羊等牲畜的單 位"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H06:散:02",
+      "char": "散",
+      "sentence": "生活中，我們會用到《解散》這個詞。",
+      "definition": "由聚而分",
+      "options": [
+        "放出、撒出",
+        "由聚而分",
+        "排解",
+        "雜亂、零碎",
+        "鬆弛、安逸",
+        "藥粉",
+        "事物的開始或結束的兩個端 點",
+        "人或動物脖子以上的部分",
+        "物的起點或頂、前端。與「尾」 相對",
+        "量詞。計算牛、羊等牲畜的單 位"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H06:散:03",
+      "char": "散",
+      "sentence": "生活中，我們會用到《散心》這個詞。",
+      "definition": "排解",
+      "options": [
+        "放出、撒出",
+        "由聚而分",
+        "排解",
+        "雜亂、零碎",
+        "鬆弛、安逸",
+        "藥粉",
+        "事物的開始或結束的兩個端 點",
+        "人或動物脖子以上的部分",
+        "物的起點或頂、前端。與「尾」 相對",
+        "量詞。計算牛、羊等牲畜的單 位"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H06:散:04",
+      "char": "散",
+      "sentence": "生活中，我們會用到《散沙》這個詞。",
+      "definition": "雜亂、零碎",
+      "options": [
+        "放出、撒出",
+        "由聚而分",
+        "排解",
+        "雜亂、零碎",
+        "鬆弛、安逸",
+        "藥粉",
+        "事物的開始或結束的兩個端 點",
+        "人或動物脖子以上的部分",
+        "物的起點或頂、前端。與「尾」 相對",
+        "量詞。計算牛、羊等牲畜的單 位"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H06:散:05",
+      "char": "散",
+      "sentence": "生活中，我們會用到《閒散》這個詞。",
+      "definition": "鬆弛、安逸",
+      "options": [
+        "放出、撒出",
+        "由聚而分",
+        "排解",
+        "雜亂、零碎",
+        "鬆弛、安逸",
+        "藥粉",
+        "事物的開始或結束的兩個端 點",
+        "人或動物脖子以上的部分",
+        "物的起點或頂、前端。與「尾」 相對",
+        "量詞。計算牛、羊等牲畜的單 位"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H06:散:06",
+      "char": "散",
+      "sentence": "生活中，我們會用到《胃散。 8. 7. 6. 5. 很 跟 眼 房 旁 雞 溪 森 林 ：很好》這個詞。",
+      "definition": "藥粉",
+      "options": [
+        "放出、撒出",
+        "由聚而分",
+        "排解",
+        "雜亂、零碎",
+        "鬆弛、安逸",
+        "藥粉",
+        "事物的開始或結束的兩個端 點",
+        "人或動物脖子以上的部分",
+        "物的起點或頂、前端。與「尾」 相對",
+        "量詞。計算牛、羊等牲畜的單 位"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H06:散:07",
+      "char": "散",
+      "sentence": "生活中，我們會用到《開頭》這個詞。",
+      "definition": "事物的開始或結束的兩個端 點",
+      "options": [
+        "放出、撒出",
+        "由聚而分",
+        "排解",
+        "雜亂、零碎",
+        "鬆弛、安逸",
+        "藥粉",
+        "事物的開始或結束的兩個端 點",
+        "人或動物脖子以上的部分",
+        "物的起點或頂、前端。與「尾」 相對",
+        "量詞。計算牛、羊等牲畜的單 位"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H06:散:08",
+      "char": "散",
+      "sentence": "生活中，我們會用到《頭髮》這個詞。",
+      "definition": "人或動物脖子以上的部分",
+      "options": [
+        "放出、撒出",
+        "由聚而分",
+        "排解",
+        "雜亂、零碎",
+        "鬆弛、安逸",
+        "藥粉",
+        "事物的開始或結束的兩個端 點",
+        "人或動物脖子以上的部分",
+        "物的起點或頂、前端。與「尾」 相對",
+        "量詞。計算牛、羊等牲畜的單 位"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H06:散:09",
+      "char": "散",
+      "sentence": "生活中，我們會用到《船頭》這個詞。",
+      "definition": "物的起點或頂、前端。與「尾」 相對",
+      "options": [
+        "放出、撒出",
+        "由聚而分",
+        "排解",
+        "雜亂、零碎",
+        "鬆弛、安逸",
+        "藥粉",
+        "事物的開始或結束的兩個端 點",
+        "人或動物脖子以上的部分",
+        "物的起點或頂、前端。與「尾」 相對",
+        "量詞。計算牛、羊等牲畜的單 位"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H06:散:10",
+      "char": "散",
+      "sentence": "生活中，我們會用到《三頭牛》這個詞。",
+      "definition": "量詞。計算牛、羊等牲畜的單 位",
+      "options": [
+        "放出、撒出",
+        "由聚而分",
+        "排解",
+        "雜亂、零碎",
+        "鬆弛、安逸",
+        "藥粉",
+        "事物的開始或結束的兩個端 點",
+        "人或動物脖子以上的部分",
+        "物的起點或頂、前端。與「尾」 相對",
+        "量詞。計算牛、羊等牲畜的單 位"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG2H06:散",
+      "char": "散",
+      "readings": [
+        {
+          "zhuyin": "ㄙㄢˋ",
+          "senses": [
+            {
+              "definition": "放出、撒出",
+              "examples": [
+                "散播",
+                "散布"
+              ]
+            },
+            {
+              "definition": "由聚而分",
+              "examples": [
+                "解散",
+                "散開"
+              ]
+            },
+            {
+              "definition": "排解",
+              "examples": [
+                "散心",
+                "散悶"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄙㄢˇ",
+          "senses": [
+            {
+              "definition": "雜亂、零碎",
+              "examples": [
+                "散沙"
+              ]
+            },
+            {
+              "definition": "鬆弛、安逸",
+              "examples": [
+                "閒散"
+              ]
+            },
+            {
+              "definition": "藥粉",
+              "examples": [
+                "胃散。 8. 7. 6. 5. 很 跟 眼 房 旁 雞 溪 森 林 ：很好",
+                "很美 ：我跟他 ：眼鏡",
+                "眼皮 ：房間",
+                "廚房 ：旁邊",
+                "旁人 ：雞蛋",
+                "母雞 ：溪流",
+                "溪谷 ：森林 ：樹林",
+                "林地 4. 3. 2. 1. 室 屋 飽 飲 飯 兔 免 晚 仍 奶 ：室外",
+                "教室 ：屋頂",
+                "房屋 ：飽滿",
+                "飽足 ：飲料",
+                "飲水 ：飯粒",
+                "晚飯 ：兔子",
+                "兔寶寶 ：免費",
+                "避免 ：晚上",
+                "晚安 ：仍然 ：奶粉",
+                "奶茶 10. 課 棵 顆 ：一課課文 ：一棵大樹 ：一顆糖果 9. 情 請 睛 ：心情",
+                "感情 ：請假",
+                "申請 ：目不轉睛 27 2. 頭"
+              ]
+            },
+            {
+              "definition": "事物的開始或結束的兩個端 點",
+              "examples": [
+                "開頭",
+                "盡頭"
+              ]
+            },
+            {
+              "definition": "人或動物脖子以上的部分",
+              "examples": [
+                "頭髮",
+                "頭痛"
+              ]
+            },
+            {
+              "definition": "物的起點或頂、前端。與「尾」 相對",
+              "examples": [
+                "船頭",
+                "車頭"
+              ]
+            },
+            {
+              "definition": "量詞。計算牛、羊等牲畜的單 位",
+              "examples": [
+                "三頭牛"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG2H06:01",
+      "stem": "請仔細聽題目：草叢裡的小星星是指什麼呢？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "螢火蟲。",
+        "奶奶家應該是在山上，附近有竹林、茂密的草叢和小溪。",
+        "走進較暗的樹林，容易看到螢火蟲。"
+      ],
+      "answer": "螢火蟲。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "小星星在草叢裡，一下子這邊亮，一下子那邊亮。"
+    },
+    {
+      "id": "listening:115AG2H06:02",
+      "stem": "請仔細聽題目：觀察課文插圖，說說看奶奶家附近的環境有什麼？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "奶奶家應該是在山上，附近有竹林、茂密的草叢和小溪。",
+        "螢火蟲。",
+        "走進較暗的樹林，容易看到螢火蟲。"
+      ],
+      "answer": "奶奶家應該是在山上，附近有竹林、茂密的草叢和小溪。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "我們穿過屋後的竹林，竹林盡頭是小溪，小溪兩旁長滿了草。"
+    },
+    {
+      "id": "listening:115AG2H06:03",
+      "stem": "請仔細聽題目：仔細觀察課文插圖，為什麼第54頁的螢火蟲不會發亮，而第56、57頁的螢火蟲會發亮呢？這兩頁畫的環境有哪裡不同？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "走進較暗的樹林，容易看到螢火蟲。",
+        "螢火蟲。",
+        "奶奶家應該是在山上，附近有竹林、茂密的草叢和小溪。"
+      ],
+      "answer": "走進較暗的樹林，容易看到螢火蟲。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "天色很暗，我張大眼睛，想找爸爸說的「星星」。"
+    },
+    {
+      "id": "listening:115AG2H06:04",
+      "stem": "請仔細聽題目：閱讀課文及觀察插圖，說說看為什麼小星星在小溪旁，聚成一朵又一朵發光的雲？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "因為發光的螢火蟲圍在一起，一團又一團，看起來像是許多發光的雲。",
+        "螢火蟲。",
+        "奶奶家應該是在山上，附近有竹林、茂密的草叢和小溪。"
+      ],
+      "answer": "因為發光的螢火蟲圍在一起，一團又一團，看起來像是許多發光的雲。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "小星星在小溪旁，聚成一朵又一朵發光的雲，真是美麗呀！"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG2H06:01",
+      "para_no": 1,
+      "summary": "主角一家人到奶奶家拜訪。晚飯過後，到屋外尋找爸爸所說的﹁星星﹂。",
+      "structure_role": "第1段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H06:02",
+      "para_no": 2,
+      "summary": "主角在小溪旁的草叢裡發現了﹁星星﹂。",
+      "structure_role": "第2段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H06:03",
+      "para_no": 3,
+      "summary": "﹁星星﹂成為妹妹的新朋友。",
+      "structure_role": "第3段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "id": "main_idea:115AG2H06:01",
+    "gist": "主角全家人到奶奶家拜訪。吃過晚飯，一起出發去找爸爸所說的﹁星星﹂，在小溪旁草叢裡發現了﹁星星﹂，最後﹁星星﹂還成為了妹妹的新朋友。",
+    "theme": "透過探訪大自然，從發現的景物中引發聯想的樂趣，開啟學生觀察與想像的能力。",
+    "status": "approved",
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG2H06:01",
+      "stem": "草叢裡的小星星是指什麼呢？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "螢火蟲。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H06:02",
+      "stem": "觀察課文插圖，說說看奶奶家附近的環境有什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "奶奶家應該是在山上，附近有竹林、茂密的草叢和小溪。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H06:03",
+      "stem": "仔細觀察課文插圖，為什麼第54頁的螢火蟲不會發亮，而第56、57頁的螢火蟲會發亮呢？這兩頁畫的環境有哪裡不同？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為第54頁有月亮，而且比較靠近房子，所以不容易看到螢火蟲發光。而第56、57頁因為走進樹林裡比較暗，所以容易看見螢火蟲。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H06:04",
+      "stem": "閱讀課文及觀察插圖，說說看為什麼小星星在小溪旁，聚成一朵又一朵發光的雲？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為發光的螢火蟲圍在一起，一團又一團，看起來像是許多發光的雲。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H06:05",
+      "stem": "觀察課文插圖，妹妹的﹁新朋友﹂是誰？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "妹妹的新朋友是螢火蟲。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H06:06",
+      "stem": "書寫一篇日記，需要有哪些重點？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "必須先寫日期、星期和天氣，再把特別的事記錄下來。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H06:07",
+      "stem": "從這一篇課文來看，說一說螢火蟲的生長環境及生活習性有什麼？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "螢火蟲多半會在竹林、草叢附近，如果旁邊有小溪，潮溼的環境會更好。太亮的地方不會有螢火蟲，因為牠不會一直發亮。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H06:08",
+      "stem": "想一想，為什麼本課草叢裡的星星會飛到妹妹頭上和她做朋友，和第四課水草下的呱呱裡的小男孩，有什麼相同的地方？",
+      "strategy_tag": "比較評估",
+      "answer_hint": "當妹妹和小男孩安靜不動時，青蛙和螢火蟲就願意和人們做朋友了。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG2H06:01",
+      "group_no": "1",
+      "question": "____奶",
+      "answer": "奶",
+      "chars": [
+        {
+          "char": "奶",
+          "zhuyin": null,
+          "example": "奶奶"
+        },
+        {
+          "char": "仍",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H06:02",
+      "group_no": "2",
+      "question": "____飯",
+      "answer": "晚",
+      "chars": [
+        {
+          "char": "晚",
+          "zhuyin": null,
+          "example": "晚飯"
+        },
+        {
+          "char": "免",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "兔",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H06:03",
+      "group_no": "3",
+      "question": "晚____",
+      "answer": "飯",
+      "chars": [
+        {
+          "char": "飯",
+          "zhuyin": null,
+          "example": "晚飯"
+        },
+        {
+          "char": "飲",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "飽",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H06:04",
+      "group_no": "4",
+      "question": "房子：____",
+      "answer": "屋",
+      "chars": [
+        {
+          "char": "屋",
+          "zhuyin": null,
+          "example": "屋"
+        },
+        {
+          "char": "室",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H06:05",
+      "group_no": "5",
+      "question": "竹____",
+      "answer": "林",
+      "chars": [
+        {
+          "char": "林",
+          "zhuyin": null,
+          "example": "竹林"
+        },
+        {
+          "char": "森",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H06:06",
+      "group_no": "6",
+      "question": "小河：____",
+      "answer": "溪",
+      "chars": [
+        {
+          "char": "溪",
+          "zhuyin": null,
+          "example": "溪"
+        },
+        {
+          "char": "雞",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H06:07",
+      "group_no": "7",
+      "question": "側面、側邊：____",
+      "answer": "旁",
+      "chars": [
+        {
+          "char": "旁",
+          "zhuyin": null,
+          "example": "旁"
+        },
+        {
+          "char": "房",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H06:08",
+      "group_no": "8",
+      "question": "____睛",
+      "answer": "眼",
+      "chars": [
+        {
+          "char": "眼",
+          "zhuyin": null,
+          "example": "眼睛"
+        },
+        {
+          "char": "跟",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "很",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H06:09",
+      "group_no": "9",
+      "question": "眼____",
+      "answer": "睛",
+      "chars": [
+        {
+          "char": "睛",
+          "zhuyin": null,
+          "example": "眼睛"
+        },
+        {
+          "char": "請",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "情",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H06:10",
+      "group_no": "10",
+      "question": "計算粒狀或圓形物體的量詞：____",
+      "answer": "顆",
+      "chars": [
+        {
+          "char": "顆",
+          "zhuyin": null,
+          "example": "顆"
+        },
+        {
+          "char": "棵",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "課",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「月」的部首是哪一個？",
+      "options": [
+        "⽬",
+        "⾴",
+        "⾢"
+      ],
+      "answer": "⽉",
+      "explanation": "「月」的部首是⽉。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「奶」的部首是哪一個？",
+      "options": [
+        "⽉",
+        "⽁",
+        "⽔"
+      ],
+      "answer": "⼥",
+      "explanation": "「奶」的部首是⼥。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「晚」的部首是哪一個？",
+      "options": [
+        "⾴",
+        "⽁",
+        "⾷"
+      ],
+      "answer": "⽇",
+      "explanation": "「晚」的部首是⽇。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「月」是什麼意思？",
+      "options": [
+        "指比較遠的方向。與「這邊」相對。",
+        "集合在一起。",
+        "量詞。計算粒狀或圓形物體的單位。"
+      ],
+      "answer": "月球繞行地球一周所需的時間。十二個月為一年。",
+      "explanation": "月：月球繞行地球一周所需的時間。十二個月為一年。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「草叢」是什麼意思？",
+      "options": [
+        "小河。",
+        "隨意走走。",
+        "終點、末端。"
+      ],
+      "answer": "聚集、群生在一起的草。",
+      "explanation": "草叢：聚集、群生在一起的草。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「盡頭」是什麼意思？",
+      "options": [
+        "變為。",
+        "隨意走走。",
+        "晚上吃的正餐。"
+      ],
+      "answer": "終點、末端。",
+      "explanation": "盡頭：終點、末端。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「竹林」是什麼意思？",
+      "options": [
+        "指比較遠的方向。與「這邊」相對。",
+        "動物身上用來觀察外物的視覺器官。",
+        "量詞。計算粒狀或圓形物體的單位。"
+      ],
+      "answer": "竹叢遍布的林子。",
+      "explanation": "竹林：竹叢遍布的林子。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「屋」是什麼意思？",
+      "options": [
+        "動物身上用來觀察外物的視覺器官。",
+        "月球繞行地球一周所需的時間。十二個月為一年。",
+        "竹叢遍布的林子。"
+      ],
+      "answer": "房子。",
+      "explanation": "屋：房子。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "公開資料只放摘要與理解提問，不放課文全文。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "available",
+      "activity": "application"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "available",
+      "activity": "listening-quiz"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "unavailable",
+      "activity": "rhetoric",
+      "note": "無此資料。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  },
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag2h-06",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E6%9C%88%E5%A5%B6%E6%99%9A%E9%A3%AF%E6%95%A3%E5%B1%8B%E7%AB%B9%E6%9E%97%E9%A0%AD%E6%BA%AA%E6%97%81%E6%9A%97%E7%9C%BC%E7%9D%9B%E9%82%A3%E8%81%9A%E6%88%90%E9%A1%86",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・2年級・第6課",
+      "login_required": false,
+      "checked_at": "2026-09-27",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "候",
+        "颳",
+        "冷",
+        "躲",
+        "閃",
+        "電",
+        "難",
+        "烏",
+        "雲",
+        "密",
+        "布",
+        "盆",
+        "充",
+        "滿",
+        "放",
+        "晴",
+        "現",
+        "虹"
+      ],
+      "2": [
+        "老",
+        "師",
+        "新",
+        "希",
+        "望",
+        "卻",
+        "使",
+        "緊",
+        "因",
+        "為",
+        "知",
+        "道",
+        "怎",
+        "消",
+        "失",
+        "習",
+        "最",
+        "掛"
+      ],
+      "3": [
+        "國",
+        "王",
+        "喜",
+        "歡",
+        "穿",
+        "只",
+        "件",
+        "點",
+        "改",
+        "領",
+        "越",
+        "設",
+        "計",
+        "發",
+        "方",
+        "法",
+        "分",
+        "享"
+      ],
+      "4": [
+        "呱",
+        "聞",
+        "聲",
+        "猜",
+        "蛙",
+        "別",
+        "靠",
+        "近",
+        "抓",
+        "如",
+        "果",
+        "乖",
+        "腦",
+        "袋",
+        "瓜",
+        "證",
+        "明",
+        "頂"
+      ],
+      "5": [
+        "沙",
+        "灘",
+        "海",
+        "邊",
+        "退",
+        "遠",
+        "螃",
+        "蟹",
+        "愛",
+        "注",
+        "夕",
+        "腳",
+        "丫",
+        "橫",
+        "留",
+        "印",
+        "挖",
+        "麗"
+      ],
+      "6": [
+        "月",
+        "奶",
+        "晚",
+        "飯",
+        "散",
+        "屋",
+        "竹",
+        "林",
+        "頭",
+        "溪",
+        "旁",
+        "暗",
+        "眼",
+        "睛",
+        "那",
+        "聚",
+        "成",
+        "顆"
+      ]
+    }
+  }
+}

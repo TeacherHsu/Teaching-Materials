@@ -13,7 +13,7 @@
   "lesson_no": 3,
   "title": "提早五分鐘",
   "author": "林良",
-  "blurb": "從爸爸的小統計學會先整理、先準備，提早五分鐘讓做事更從容。",
+  "blurb": "把遺失物品和匆忙行動連起來，找出提早準備如何減少遺漏。",
   "characters": [
     {
       "char": "統",
@@ -551,54 +551,66 @@
       "idiom": "天涯海角",
       "definition": "形容非常遙遠的地方。",
       "related_char": "角",
-      "image": "idioms/01_天涯海角.webp",
+      "image": "idioms/01_天涯海角-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H03:安居樂業",
       "idiom": "安居樂業",
       "definition": "生活安定，愉快地從事工作。",
       "related_char": "業",
-      "image": "idioms/02_安居樂業.webp",
+      "image": "idioms/02_安居樂業-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H03:本末倒置",
       "idiom": "本末倒置",
       "definition": "把主要和次要、根本和枝節的位置弄反了。",
       "related_char": "本",
-      "image": "idioms/03_本末倒置.webp",
+      "image": "idioms/03_本末倒置-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H03:每況愈下",
       "idiom": "每況愈下",
       "definition": "情況越來越不好。",
       "related_char": "況",
-      "image": "idioms/04_每況愈下.webp",
+      "image": "idioms/04_每況愈下-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H03:文質彬彬",
       "idiom": "文質彬彬",
       "definition": "形容人舉止文雅，態度端莊。",
       "related_char": "文",
-      "image": "idioms/05_文質彬彬.webp",
+      "image": "idioms/05_文質彬彬-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H03:心安理得",
       "idiom": "心安理得",
       "definition": "做事合乎道理，心裡坦然安定。",
       "related_char": "理",
-      "image": "idioms/06_心安理得.webp",
+      "image": "idioms/06_心安理得-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -1245,7 +1257,8 @@
       ],
       "answer": "因為她常常來不及找到用品",
       "status": "approved",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（教師自撰聆聽題）"
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（教師自撰聆聽題）",
+      "passage": "會發生這些情況，都是因為「匆忙」。"
     },
     {
       "id": "listening:115AG3H03:2",
@@ -1258,7 +1271,8 @@
       ],
       "answer": "先想好步驟並提早開始",
       "status": "approved",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（教師自撰聆聽題）"
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（教師自撰聆聽題）",
+      "passage": "做的時候，又喜歡「提早五分鐘」開始，讓時間足夠、有餘。"
     },
     {
       "id": "listening:115AG3H03:3",
@@ -1271,7 +1285,8 @@
       ],
       "answer": "有時間處理遺漏",
       "status": "approved",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（教師自撰聆聽題）"
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（教師自撰聆聽題）",
+      "passage": "因為我上班總是提早出門，所以如果忘了帶東西，都有足夠的時間回來拿。"
     }
   ],
   "review_words": {

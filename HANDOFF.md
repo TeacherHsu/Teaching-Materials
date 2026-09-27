@@ -1,5 +1,88 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-09-27｜學校 Win｜Codex｜狀態：✅ 完成；G3A 原缺圖成語補上 32 張理解圖
+- 範圍：`apps/mandarin/scripts/materialize-g3a-missing-idiom-images.py`、`apps/mandarin/package.json`、`apps/mandarin/scripts/check-workflow-completeness.mjs`、`apps/mandarin/docs/lesson-generation-workflow.md`、G3A 第 7～12 課成語 JSON 與 WebP 資產。
+- 做了什麼：依 32 筆成語辭意生成兒童教材理解圖，涵蓋 G3A 第 7～12 課原本沒有圖片的全部成語；公開資料逐筆接回相對路徑，來源標記為 `generated:imagegen-idiom-meaning`。
+- 圖片契約：全部轉為 960×960 WebP，單張不超過 300 KiB，採 `square-contain` 完整容納，不使用長版 `cover` 裁切；生成原始 PNG 留在私有 `worksheet-batches`，未寫入公開 JSON 私有絕對路徑。
+- 驗證：成語圖片完整性 PASS（55 課、346 張、0 筆缺圖）；相關 `test-*.mjs`（排除既有且與本項無關的 `test-lesson-dashboard-progress.mjs`）、`npm.cmd run validate`、`npm.cmd run check-workflow`、`npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets`、`git diff --check` 均通過。
+- 提交／推送：本項尚未建立提交、尚未推送；保留工作樹中其他既有教材與網站修改。
+
+## 2026-09-27｜學校 Win｜Codex｜狀態：✅ 完成；G1A 生字變成語候選字重複修正
+- 範圍：`apps/mandarin/src/components/IdiomBuilder.js`、`scripts/test-idiom-option-uniqueness.mjs`、`scripts/check-workflow-completeness.mjs`。
+- 原因：第一關原本只排除同一個成語 ID，沒有排除相同 `related_char`；因此第 2 課「粗枝大葉／大驚小怪」、第 3 課與第 5 課的部分題目會出現兩個相同候選字，例如「大、大、心」。
+- 修正：干擾字改按畫面顯示字去重，並排除與正確字相同的字；第二關成語選項也共用同一個去重函式。
+- 驗證：新增 G1A 39 題候選字不重複回歸測試；`npm.cmd run validate`、`npm.cmd run check-workflow`、升級權限 `npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets`、`git diff --check` 均通過。
+- 提交／推送：本項尚未建立提交、尚未推送；保留工作樹中其他既有教材與網站修改。
+
+## 2026-09-27｜學校 Win｜Codex｜狀態：✅ 完成；全年級成語圖長版裁切稽核與完整容納版面
+- 範圍：`apps/mandarin/scripts/normalize-idiom-images.py`、`scripts/materialize-g1a-idiom-images.py`、`scripts/test-idiom-image-completeness.mjs`、`src/styles/components.css`、成語圖片 JSON 與 WebP 資產、工作流文件／完整性檢查。
+- 稽核結果：檢查 G1A、G2A、G3A、G4A、G6A 共 55 課、346 筆成語；其中 314 筆已有圖片，原有直式／橫式／非 960 正方形圖片均另存為 `-fit.webp`，以完整容納方式置中到 960×960，原圖不覆寫；另 32 筆仍無圖片，維持原本未補圖狀態。
+- G1A 修正：重新製作「聞雞起舞」安全構圖，雞完整留在畫面內；G1A 39 張成語圖均為 960×960 WebP。成語圖片框明確使用 1:1、`contain`、置中與背景，避免容器再度以 `cover` 裁切。
+- 容量：所有引用中的成語圖均為 960×960 WebP、單張不超過 300 KiB；`check-assets` 通過，單課 4 MiB 上限通過。
+- 驗證：成語圖片完整性 PASS（55 課、314 張）、成語情境句／填句／句型共用入口／星星覆蓋 PASS；`npm.cmd run validate`、`npm.cmd run check-workflow`、升級權限 `npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets`、`git diff --check` 均通過。
+- 來源／交付：生成來源 PNG 與接觸表留在私有工作區，公開 repo 只保留衍生 WebP 與相對路徑；本項尚未建立提交、尚未推送，保留工作樹中其他既有教材與網站修改。
+
+## 2026-09-27｜學校 Win｜Codex｜狀態：✅ 完成；G1A 生字變成語補上辭意理解圖
+- 範圍：`apps/mandarin/scripts/materialize-g1a-idiom-images.py`、`apps/mandarin/scripts/materialize-g1a-content.mjs`、`apps/mandarin/scripts/test-idiom-image-completeness.mjs`、G1A `public/assets` 與 `lesson01.json`～`lesson07.json`、工作流文件與完整性檢查。
+- 做了什麼：依 39 個成語辭意生成 7 張私有接觸表，再裁切為每成語 1 張公開理解圖；所有圖片為 960×960 WebP，並以 `image_origin=generated:imagegen-contact-sheet-crop` 保留生成來源標記。未將接觸表或私有絕對路徑放入公開 repo。
+- 工作流：新增 G1A 成語圖裁切器與成語圖片完整性回歸測試，逐筆檢查圖片存在、格式、960×960 尺寸與單張 300 KiB 上限。
+- 驗證：成語圖片 39／39 通過；`npm.cmd run materialize:g1a`、`npm.cmd run validate`、`npm.cmd run check-workflow`、成語情境／填句／星星覆蓋及其餘 `test-*.mjs`（排除既有與本項無關的 `test-lesson-dashboard-progress.mjs`）均通過；正式 `npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets`、`git diff --check` 通過。全套測試唯一既有失敗為 G3A 第 1 課 dashboard 測試仍預期 listening 不存在，但目前資料已有 listening，與本次 G1A 成語圖無關。
+- 提交／推送：本項尚未建立提交、尚未推送；保留工作樹中其他既有教材與網站修改，未廣泛提交。
+
+## 2026-09-27｜學校 Win｜Codex｜狀態：✅ 完成；套用使用者貼上的 G1A L01～L07 09 閱讀理解提問
+- 範圍：`apps/mandarin/scripts/materialize-g1a-content.mjs`、`apps/mandarin/public/data/115AG1H/lesson01.json`～`lesson07.json`。
+- 做了什麼：依使用者貼上的第 1～7 課閱讀理解教材，替換原先每課 3 題的精簡題目，保留提取訊息、推論訊息、詮釋整合、比較評估四類標籤與答案提示；七課題數為 6／7／8／9／10／9／10，共 59 題。
+- 顯示規則：正式學生畫面只顯示題目，按「看提示」才揭曉答案提示；策略標籤只在教師預覽顯示。
+- 驗證：`npm.cmd run materialize:g1a`、`npm.cmd run validate`、`npm.cmd run check-workflow`、讀懂課文順序／星星覆蓋／聽聽看內容稽核、升級權限 `npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets`、`git diff --check` 均通過。
+- 提交／推送：本項尚未建立提交、尚未推送；保留工作樹中其他既有教材與網站修改，未廣泛提交。
+
+## 2026-09-27｜學校 Win｜Codex｜狀態：✅ 完成；套用使用者貼上的 G1A L01～L07 06 句型教材
+- 範圍：`apps/mandarin/scripts/materialize-g1a-content.mjs`、`apps/mandarin/src/activities/moduleRegistry.js`、`apps/mandarin/public/data/115AG1H/lesson01.json`～`lesson07.json`。
+- 做了什麼：依使用者貼上的第 1～7 課「短語／短句／句型」內容，重建公開句型練習資料，保留各課結構、說明與例句；句型數量為 L01～L07：3／4／4／4／3／2／3。第 6 課來源本身只有 2 組，依已核准例句與來源內容新增 G1A L06 的 2 組開放例外，未補造第三組。
+- 開放狀態：7 課句型練習均為 available；其他既有 G1A 擴充模組狀態維持不變，L01／L03／L07 一字多音與 L07 一字多義仍因缺乏可核實來源而保留 missing。
+- 驗證：`npm.cmd run materialize:g1a`、`npm.cmd run validate`、`npm.cmd run check-workflow`、句型共用入口／形似字／星星覆蓋回歸測試、升級權限 `npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets`、`git diff --check` 均通過。
+- 提交／推送：本項尚未建立提交、尚未推送；保留工作樹中其他既有教材與網站修改，未廣泛提交。
+
+## 2026-09-27｜學校 Win｜Codex｜狀態：✅ 完成；套用使用者貼上的 G6A L06／L09 句型教材
+- 範圍：`apps/mandarin/scripts/apply-pasted-g6a-sentence-patterns.mjs`、`apps/mandarin/public/data/115AG6H/lesson06.json`、`lesson09.json`、`apps/mandarin/package.json`。
+- 做了什麼：依使用者貼上的 06「短語／句型／造句練習」內容，將 G6A 第 6 課與第 9 課各更新為 8 組，保留結構、說明、引導與四個例句；第 6 課「過多多身體」依語意修正為「過多對身體也沒有幫助」。
+- 驗證：`npm.cmd run materialize:g6a-pasted`、`npm.cmd run validate`、`node scripts/test-sentence-practice-shared.mjs`、升級權限 `npm.cmd run build` 均通過。
+- 提交／推送：本項尚未建立提交、尚未推送；保留工作樹中其他既有教材與網站修改，未廣泛提交。
+
+## 2026-09-27｜學校 Win｜Codex｜狀態：✅ 完成；G1A 課文樂園擴充項目物化與開放
+- 範圍：`apps/mandarin/scripts/materialize-g1a-content.mjs`、`apps/mandarin/public/data/115AG1H/lesson01.json`～`lesson07.json`、形似字核准基準、G1A 工作流文件與物化 npm script。
+- 做了什麼：依私有官方教材 04／05／06／08／09 與已核對課文來源，補入 7 課句型練習、讀懂課文提問、課文地圖、形似字、成語／生活化例句、一字多義；04 來源核實的 L02／L04／L05／L06 多音字也已開放。形似字沿用私有 7 課、每課 10 題題庫，未把官方原檔或私有路徑放入公開資料。
+- 開放狀態：句型、讀懂課文、課文地圖、形似字、成語、一字多義均為 7／7 課 available；一字多音為 L02、L04、L05、L06 available，L01、L03、L07 因來源沒有至少兩種可核實不同注音而保留 missing；L07 一字多義因 04 來源不足也保留 missing。
+- 工作流：新增 `npm run materialize:g1a`，並修正形似字回歸基準以接受官方題庫中只為正確字提供例詞的干擾選項；不要求臆造干擾字例詞。
+- 驗證：`npm.cmd run materialize:g1a`、`npm.cmd run validate`、`npm.cmd run check-workflow`、成語／句型／形似字／星星覆蓋／課文朗讀回歸測試、`npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets`、`git diff --check` 均通過。建置第一次受沙箱上層目錄權限阻擋，升級受控權限後成功。
+- 提交／推送：本項尚未建立提交、尚未推送；保留工作樹中其他既有教材與網站修改，未廣泛提交。
+
+## 2026-09-27｜學校 Win｜Codex｜狀態：✅ 完成；聽聽看待選選項精簡與工作流閘門
+- 範圍：`apps/mandarin/scripts/backfill-listening-passages.mjs`、`scripts/audit-listening-content.mjs`、`docs/lesson-generation-workflow.md`、各年級聽聽看 JSON。
+- 做了什麼：將 G2A、G4A 等課次中帶有課文全文、頁碼、解析或推論過程的待選選項，依原答案語意縮成可直接作答的短句；同步縮短答案欄位，避免答案與選項不一致。G4A 第 5 課畫面中的冗長選項已改為「期待光明，也珍惜看見的時光」、「小時候生病。失明與失聰」、「她用『假如』想像看見世界」。
+- 工作流規則：共用稽核器新增選項存在性與 45 字上限；超過上限即列為 `REVIEW_REQUIRED`，並在工作流文件明訂不得放入頁碼、依據、解析或推論說明。
+- 驗證：聽聽看 187 題 PASS、0 FAIL、0 REVIEW_REQUIRED；G3A 第 1 課仍保留 1 課 LOCKED。`npm.cmd run validate`、`npm.cmd run check-workflow`、`npm.cmd run audit:listening -- --strict`、`node scripts/test-listening-single-round.mjs`、升級權限 `npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets`、`git diff --check` 均通過；已重新讀回 G4A 第 5 課聽聽看預覽。
+- 提交／推送：本項尚未建立提交、尚未推送；保留工作樹中其他既有教材與網站修改，未廣泛提交。
+
+## 2026-09-27｜學校 Win｜Codex｜狀態：✅ 完成；全站語音語速與腔調選擇更新
+- 範圍：`apps/mandarin/src/utils/speech.js`、`apps/mandarin/scripts/test-speech-voice-selection.mjs`。
+- 做了什麼：TTS 預設語速與 normal preset 統一為 `0.9`；臺灣中文仍為必要條件，若裝置同時提供 Microsoft／Google 的臺灣 Natural 語音，優先選自然語音，否則回退臺灣內建語音；不退回中國大陸或香港中文聲音。
+- 驗證：語音選擇／讀音替代／語速回歸測試、`npm.cmd run validate`、`npm.cmd run check-workflow`、升級權限 `npm.cmd run build`、`npm.cmd run check-dist`、`npm.cmd run check-assets`、`git diff --check` 均通過；已重新開啟 G6A 第 5 課聽聽看預覽。
+- 提交／推送：本項尚未建立提交、尚未推送；工作樹另有既存教材與網站修改，未擅自覆蓋或廣泛提交。
+
+## 2026-09-27｜學校 Win｜Codex｜狀態：✅ 完成；G1A 第1～7課聽聽看開放
+- 範圍：`apps/mandarin/scripts/backfill-listening-passages.mjs`、`apps/mandarin/public/data/115AG1H/lesson01.json`～`lesson07.json`。
+- 做了什麼：回到 G1A 翰林官方「09閱讀理解提問」與第一冊課文逐課核對，補入 7 課、共 21 題；每題新增只支撐答案的短版 `passage`，畫面播放「先聽一聽」後再作答。七課 `modules.listening.status` 均改為 `available`。
+- 驗證：G1A 聽聽看 21/21 題 PASS；全冊聽聽看 PASS 187、FAIL 0、REVIEW_REQUIRED 0，G3A 第1課仍因題目與官方課文不符維持鎖定。`npm.cmd run validate`、`npm.cmd run check-workflow`、`npm.cmd run audit:listening -- --strict`、`node scripts/test-listening-single-round.mjs` 均通過。
+- 提交／推送：本項尚未建立提交、尚未推送；工作樹另有既存教材與網站修改，未擅自覆蓋或廣泛提交。
+
+## 2026-09-27｜學校 Win｜Codex｜狀態：✅ 完成；G3A 第1課維持鎖定
+- 範圍：`apps/mandarin/scripts/backfill-listening-passages.mjs`、聽聽看資料、工作流文件與完整性閘門。
+- 做了什麼：回到 G2A、G3A、G4A、G6A 私有官方課文逐題核對並補入 166 題 `passage`；每題只保留支持答案的一至兩句關鍵語句。另修正 G6A 第1課 3 題與官方詩文不一致的答案／選項。
+- 核對結果：可用題目 PASS 166；FAIL 0；REVIEW_REQUIRED 0。G1A 7 課沒有可用聽聽看資料；G3A 第1課現有生活作息題與〈時間是什麼〉不相符，因此標為 `missing` 並保留 `review_required` 題目，不硬塞不相關課文。
+- 驗證：`npm.cmd run validate`、`npm.cmd run check-workflow`、`npm.cmd run audit:listening -- --strict`、`node scripts/test-listening-single-round.mjs`、`git diff --check` 通過。
+- 提交／推送：本項尚未建立提交、尚未推送；工作樹另有既存教材與網站修改，未擅自覆蓋或廣泛提交。
+
 ## 2026-09-27｜學校 Win｜Codex｜狀態：✅ 完成
 - 範圍：`apps/mandarin/scripts/test-sentence-practice-shared.mjs`、`scripts/check-workflow-completeness.mjs`。
 - 做了什麼：新增跨版本一致性閘門，掃描 course-index 登錄的 G1A、G2A、G3A、G4A、G6A 共 55 課，確認所有 `sentence_practice` 都導向共用句型練習與 `SentenceOrdering` 互動引擎。

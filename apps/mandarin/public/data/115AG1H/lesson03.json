@@ -13,7 +13,7 @@
   "lesson_no": 3,
   "title": "火車過山洞",
   "author": "",
-  "blurb": "透過〈火車過山洞〉練習認讀生字、理解語詞，並用聲音和圖像建立閱讀連結。",
+  "blurb": "按同學加入、搭成山洞、火車穿過的順序，整理遊戲過程。",
   "characters": [
     {
       "char": "火",
@@ -349,23 +349,584 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
+  "idioms": [
+    {
+      "image": "idioms/01_人山人海.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H03:01",
+      "idiom": "人山人海",
+      "definition": "形容聚集的人很多。",
+      "related_char": "山",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/02_大同小異.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H03:02",
+      "idiom": "大同小異",
+      "definition": "大致相同，只有小地方不同。",
+      "related_char": "小",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/03_眉開眼笑.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H03:03",
+      "idiom": "眉開眼笑",
+      "definition": "形容非常開心。",
+      "related_char": "開",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/04_開卷有益.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H03:04",
+      "idiom": "開卷有益",
+      "definition": "讀書能得到好處。",
+      "related_char": "開",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/05_心平氣和.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H03:05",
+      "idiom": "心平氣和",
+      "definition": "心情平靜，態度溫和。",
+      "related_char": "心",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/06_一心一意.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H03:06",
+      "idiom": "一心一意",
+      "definition": "專心一致。",
+      "related_char": "心",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:115AG1H03:01",
+      "idiom_id": "idiom:115AG1H03:01",
+      "rewritten": "假日的遊樂園人山人海。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H03:02",
+      "idiom_id": "idiom:115AG1H03:02",
+      "rewritten": "這兩幅圖大同小異，只有顏色不同。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H03:03",
+      "idiom_id": "idiom:115AG1H03:03",
+      "rewritten": "弟弟收到生日禮物，立刻眉開眼笑。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H03:04",
+      "idiom_id": "idiom:115AG1H03:04",
+      "rewritten": "老師提醒我們開卷有益，要多讀好書。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H03:05",
+      "idiom_id": "idiom:115AG1H03:05",
+      "rewritten": "遇到問題時，我們要心平氣和地討論。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H03:06",
+      "idiom_id": "idiom:115AG1H03:06",
+      "rewritten": "小安一心一意完成手上的拼圖。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "category": "短語句型練習",
+      "pattern": "一個又一個",
+      "head": "一個又一個",
+      "description": "用重複的「一」和「又」來表達數量眾多的意思。",
+      "structure": "一＋量詞＋又＋一＋量詞",
+      "examples": [
+        "一件又一件",
+        "一片又一片",
+        "一包又一包"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H03:01",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "category": "短語句型練習",
+      "pattern": "做出小火車",
+      "head": "做出小火車",
+      "description": "描述做什麼動作後出現什麼事物。",
+      "structure": "動詞（什麼動作）＋出＋名詞（什麼事物）",
+      "examples": [
+        "寫出國字",
+        "畫出大老虎",
+        "摺出紙飛機"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H03:02",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "category": "短語句型練習",
+      "pattern": "開開心心",
+      "head": "開開心心",
+      "description": "形容動作的狀態。",
+      "structure": "疊字副詞（怎麼樣）",
+      "examples": [
+        "快快樂樂",
+        "安安靜靜",
+        "平平安安"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H03:03",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "category": "短語句型練習",
+      "pattern": "我們開開心心一起玩。",
+      "head": "我們開開心心一起玩。",
+      "description": "用疊字副詞來形容做某件事時的狀態。",
+      "structure": "名詞（人或物）＋疊字副詞（怎麼樣）＋動詞（做什麼）",
+      "examples": [
+        "姐姐安安靜靜看書。",
+        "哥哥快快樂樂上學去。",
+        "小狗平平安安過馬路。"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H03:04",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    }
+  ],
   "rhetoric": [],
-  "paragraph_summary": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG1H03:01",
+      "para_no": 1,
+      "paragraph_no": 1,
+      "summary": "起：同學輪流加入，一起玩火車遊戲。",
+      "structure_role": "開端",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    },
+    {
+      "id": "paragraph_summary:115AG1H03:02",
+      "para_no": 2,
+      "paragraph_no": 2,
+      "summary": "承：一個又一個做出小火車。",
+      "structure_role": "發展",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    },
+    {
+      "id": "paragraph_summary:115AG1H03:03",
+      "para_no": 3,
+      "paragraph_no": 3,
+      "summary": "承：一個又一個堆出大山洞。",
+      "structure_role": "發展",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    },
+    {
+      "id": "paragraph_summary:115AG1H03:04",
+      "para_no": 4,
+      "paragraph_no": 4,
+      "summary": "合：火車穿過山洞，大家開心一起玩。",
+      "structure_role": "收束",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    }
+  ],
   "main_idea": {
-    "gist": "本課閱讀重點待補。",
-    "theme": "閱讀理解",
-    "status": "draft",
-    "source": "teacher-review-required"
+    "gist": "課文描寫同學一個接一個合作做出小火車和大山洞，開心玩遊戲。",
+    "theme": "課文理解",
+    "status": "approved",
+    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
   },
-  "reading_questions": [],
-  "polysemy": [],
+  "reading_questions": [
+    {
+      "id": "reading-question:115AG1H03:01",
+      "stem": "仔細觀察課文插圖，小朋友們正在玩什麼？",
+      "answer_hint": "玩積木。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H03:02",
+      "stem": "他們用積木堆出了什麼？",
+      "answer_hint": "小火車和山洞。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H03:03",
+      "stem": "仔細觀察課文插圖中的男孩和女孩，和第二課裡畫的人物有什麼不同？為什麼畫家要這樣畫呢？",
+      "answer_hint": "這一課所畫的小朋友，頭、手都是正方形的，像是積木。因為這一課介紹「積木」遊戲，所以把課文裡的人物都畫成積木人。",
+      "strategy_tag": "比較評估",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H03:04",
+      "stem": "課文中的「來來來」，代表什麼意思？",
+      "answer_hint": "邀請別的小朋友一起來玩。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H03:05",
+      "stem": "課文中的「你一個，我一個」，「一個」是指什麼東西？",
+      "answer_hint": "一個個積木。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H03:06",
+      "stem": "課文中的「ㄨㄨㄨ」，是指什麼意思？",
+      "answer_hint": "是形容火車行進間所發出的聲音。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H03:07",
+      "stem": "為什麼課文中要一直強調「一起玩」呢？",
+      "answer_hint": "因為玩遊戲就是要大家一起來玩，才會比較好玩。",
+      "strategy_tag": "詮釋整合",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H03:08",
+      "stem": "第壹單元「一起玩」，介紹了三種不同的遊戲。這一課「火車過山洞」和前面兩課有什麼不同和相同的地方？",
+      "answer_hint": "不同的地方：這一課是比較安靜、需要想像力的遊戲；前面兩課都是需要跑步或活動的遊戲。相同的地方：這些遊戲都很好玩、有趣，而且是希望大家一起玩。",
+      "strategy_tag": "比較評估",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG1H03:個:01",
+      "char": "個",
+      "sentence": "我有一個蘋果。",
+      "definition": "用來計算人或物的量詞。",
+      "options": [
+        "用來計算人或物的量詞。",
+        "指人或物的外型、大小。",
+        "指自己或個人。"
+      ],
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；一字多義）"
+    },
+    {
+      "id": "polysemy:115AG1H03:個:02",
+      "char": "個",
+      "sentence": "弟弟的個子長高了。",
+      "definition": "指人或物的外型、大小。",
+      "options": [
+        "用來計算人或物的量詞。",
+        "指人或物的外型、大小。",
+        "指自己或個人。"
+      ],
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；一字多義）"
+    },
+    {
+      "id": "polysemy:115AG1H03:個:03",
+      "char": "個",
+      "sentence": "我個人喜歡紅色。",
+      "definition": "指自己或個人。",
+      "options": [
+        "用來計算人或物的量詞。",
+        "指人或物的外型、大小。",
+        "指自己或個人。"
+      ],
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；一字多義）"
+    }
+  ],
   "polysemy_senses": [],
   "polyphones": [],
-  "lookalikes": [],
-  "listening": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG1H03:01",
+      "group_no": "1",
+      "question": "＿車",
+      "answer": "火",
+      "chars": [
+        {
+          "char": "火",
+          "zhuyin": null,
+          "example": "火車"
+        },
+        {
+          "char": "活",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H03:02",
+      "group_no": "2",
+      "question": "＿馬路",
+      "answer": "過",
+      "chars": [
+        {
+          "char": "蝸",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "過",
+          "zhuyin": null,
+          "example": "過馬路"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H03:03",
+      "group_no": "3",
+      "question": "＿洞",
+      "answer": "山",
+      "chars": [
+        {
+          "char": "山",
+          "zhuyin": null,
+          "example": "山洞"
+        },
+        {
+          "char": "出",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H03:04",
+      "group_no": "4",
+      "question": "＿口",
+      "answer": "出",
+      "chars": [
+        {
+          "char": "粗",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "出",
+          "zhuyin": null,
+          "example": "出口"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H03:05",
+      "group_no": "5",
+      "question": "＿西瓜",
+      "answer": "小",
+      "chars": [
+        {
+          "char": "小",
+          "zhuyin": null,
+          "example": "小西瓜"
+        },
+        {
+          "char": "少",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H03:06",
+      "group_no": "6",
+      "question": "＿城堡",
+      "answer": "堆",
+      "chars": [
+        {
+          "char": "推",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "堆",
+          "zhuyin": null,
+          "example": "堆城堡"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H03:07",
+      "group_no": "7",
+      "question": "＿開心心",
+      "answer": "開",
+      "chars": [
+        {
+          "char": "開",
+          "zhuyin": null,
+          "example": "開開心心"
+        },
+        {
+          "char": "間",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H03:08",
+      "group_no": "8",
+      "question": "開＿心心",
+      "answer": "開",
+      "chars": [
+        {
+          "char": "間",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "開",
+          "zhuyin": null,
+          "example": "開開心心"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H03:09",
+      "group_no": "9",
+      "question": "開開＿心",
+      "answer": "心",
+      "chars": [
+        {
+          "char": "心",
+          "zhuyin": null,
+          "example": "開開心心"
+        },
+        {
+          "char": "星",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H03:10",
+      "group_no": "10",
+      "question": "開開心＿",
+      "answer": "心",
+      "chars": [
+        {
+          "char": "星",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "心",
+          "zhuyin": null,
+          "example": "開開心心"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG1H03:01",
+      "stem": "小朋友要一起做什麼？",
+      "question": "小朋友要一起做什麼？",
+      "options": [
+        "一起玩。",
+        "一起睡覺。",
+        "一起回家。"
+      ],
+      "answer": "一起玩。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
+      "passage": "來來來，一起玩。"
+    },
+    {
+      "id": "listening:115AG1H03:02",
+      "stem": "小朋友用積木推出什麼？",
+      "question": "小朋友用積木推出什麼？",
+      "options": [
+        "大山洞。",
+        "大房子。",
+        "小火車。"
+      ],
+      "answer": "大山洞。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
+      "passage": "一個又一個，推出大山洞。"
+    },
+    {
+      "id": "listening:115AG1H03:03",
+      "stem": "火車要通過哪裡？",
+      "question": "火車要通過哪裡？",
+      "options": [
+        "山洞。",
+        "操場。",
+        "教室。"
+      ],
+      "answer": "山洞。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
+      "passage": "一個又一個，火車過山洞，開開心心一起玩。"
+    }
+  ],
   "review_words": {
     "by_lesson": {
       "1": [
@@ -582,15 +1143,13 @@
     },
     "reading": {
       "label": "讀懂課文",
-      "status": "missing",
-      "activity": "reading",
-      "note": "一年級課文內容待整理為公開摘要；課文全文不放入公開網站。"
+      "status": "available",
+      "activity": "reading"
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
-      "activity": "sentence-practice",
-      "note": "句型資料待審核。"
+      "status": "available",
+      "activity": "sentence-practice"
     },
     "challenge": {
       "label": "動手挑戰",
@@ -605,39 +1164,35 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
-      "activity": "idiom-builder",
-      "note": "一年級不安排成語題。"
+      "status": "available",
+      "activity": "idiom-builder"
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "一年級不安排一字多義題。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
       "status": "missing",
       "activity": "polyphones",
-      "note": "多音字資料待審核。"
+      "note": "04形音輕鬆學本課未提供至少兩種可核對的不同注音，保留未開放。"
     },
     "lookalikes": {
       "label": "形似字",
-      "status": "missing",
-      "activity": "lookalikes",
-      "note": "形似字資料待審核。"
+      "status": "available",
+      "activity": "lookalikes"
     },
     "structure_map": {
       "label": "課文地圖",
-      "status": "missing",
-      "activity": "structure-map",
-      "note": "摘要資料待補。"
+      "status": "available",
+      "activity": "structure-map"
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
+      "status": "available",
       "activity": "listening-quiz",
-      "note": "聆聽題資料待審核。"
+      "note": "已依官方閱讀理解提問與課文關鍵語句逐題核對。"
     },
     "rhetoric": {
       "label": "修辭小偵探",

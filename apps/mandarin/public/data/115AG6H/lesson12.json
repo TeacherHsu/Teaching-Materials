@@ -13,7 +13,7 @@
   "lesson_no": 12,
   "title": "存根",
   "author": "",
-  "blurb": "透過〈存根〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "從南瓜蒂和買賣存根等線索，整理布大爺如何證明南瓜的歸屬。",
   "characters": [
     {
       "char": "擬",
@@ -584,117 +584,143 @@
       "idiom": "無可比擬",
       "definition": "沒有可以與它相比的。",
       "related_char": "擬",
-      "image": "idioms/01_無可比擬.webp",
+      "image": "idioms/01_無可比擬-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H12:結草銜環",
       "idiom": "結草銜環",
       "definition": "比喻至死不忘感恩圖報。",
       "related_char": "銜",
-      "image": "idioms/02_結草銜環.webp",
+      "image": "idioms/02_結草銜環-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H12:巧取豪奪",
       "idiom": "巧取豪奪",
       "definition": "形容用不正當手段取得權利或財物。",
       "related_char": "豪",
-      "image": "idioms/03_巧取豪奪.webp",
+      "image": "idioms/03_巧取豪奪-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H12:碩果僅存",
       "idiom": "碩果僅存",
       "definition": "比喻經過汰換後，極少數留存的可貴人物或成果。",
       "related_char": "碩",
-      "image": "idioms/04_碩果僅存.webp",
+      "image": "idioms/04_碩果僅存-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H12:心如刀割",
       "idiom": "心如刀割",
       "definition": "內心痛苦得像被刀割一樣。",
       "related_char": "割",
-      "image": "idioms/05_心如刀割.webp",
+      "image": "idioms/05_心如刀割-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H12:為人作嫁",
       "idiom": "為人作嫁",
       "definition": "比喻徒然為別人辛苦，自己卻得不到好處。",
       "related_char": "嫁",
-      "image": "idioms/06_為人作嫁.webp",
+      "image": "idioms/06_為人作嫁-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H12:竊竊私語",
       "idiom": "竊竊私語",
       "definition": "指私下低聲談論。",
       "related_char": "竊",
-      "image": "idioms/07_竊竊私語.webp",
+      "image": "idioms/07_竊竊私語-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H12:穿鑿附會",
       "idiom": "穿鑿附會",
       "definition": "生拉硬扯，牽強解釋。",
       "related_char": "鑿",
-      "image": "idioms/08_穿鑿附會.webp",
+      "image": "idioms/08_穿鑿附會-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H12:監守自盜",
       "idiom": "監守自盜",
       "definition": "竊取自己在職務上負責保管的財物。",
       "related_char": "監",
-      "image": "idioms/09_監守自盜.webp",
+      "image": "idioms/09_監守自盜-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H12:瓜熟蒂落",
       "idiom": "瓜熟蒂落",
       "definition": "比喻時機成熟，事情自然成功。",
       "related_char": "蒂",
-      "image": "idioms/10_瓜熟蒂落.webp",
+      "image": "idioms/10_瓜熟蒂落-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H12:粗茶淡飯",
       "idiom": "粗茶淡飯",
       "definition": "指簡單清淡的飲食。",
       "related_char": "粗",
-      "image": "idioms/11_粗茶淡飯.webp",
+      "image": "idioms/11_粗茶淡飯-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H12:明察秋毫",
       "idiom": "明察秋毫",
       "definition": "比喻能洞察一切，看見極細微的地方。",
       "related_char": "毫",
-      "image": "idioms/12_明察秋毫.webp",
+      "image": "idioms/12_明察秋毫-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H12:功虧一簣",
       "idiom": "功虧一簣",
       "definition": "比喻事情只差最後一步，卻因未能堅持而前功盡棄。",
       "related_char": "虧",
-      "image": "idioms/13_功虧一簣.webp",
+      "image": "idioms/13_功虧一簣-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -1138,9 +1164,10 @@
         "十分疼愛並細心照料",
         "每天到市場購買"
       ],
-      "answer": null,
+      "answer": "十分疼愛並細心照料",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:12:02",
@@ -1149,9 +1176,10 @@
         "收集南瓜蒂作證",
         "等待南瓜長大"
       ],
-      "answer": null,
+      "answer": "收集南瓜蒂作證",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:12:03",
@@ -1160,9 +1188,10 @@
         "南瓜蒂能和南瓜接合",
         "菜販主動承認"
       ],
-      "answer": null,
+      "answer": "南瓜蒂能和南瓜接合",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:12:04",
@@ -1171,9 +1200,10 @@
         "冷靜分析能找到解決策略",
         "爭吵就能拿回物品"
       ],
-      "answer": null,
+      "answer": "冷靜分析能找到解決策略",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -2232,7 +2262,8 @@
       ],
       "answer": "十分疼愛並細心照料",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "布大爺對它們的顏色、形狀，甚至是名字都一清二楚！"
     },
     {
       "id": "listening:115AG6H12:2",
@@ -2244,7 +2275,8 @@
       ],
       "answer": "收集南瓜蒂作證",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "這些就是南瓜被偷走前，跟莖長在一起的南瓜蒂。"
     },
     {
       "id": "listening:115AG6H12:3",
@@ -2256,7 +2288,8 @@
       ],
       "answer": "南瓜蒂能和南瓜接合",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "這個蒂是這顆南瓜的，那個蒂比較粗，是那顆南瓜的……接得剛剛好！"
     },
     {
       "id": "listening:115AG6H12:4",
@@ -2268,7 +2301,8 @@
       ],
       "answer": "冷靜分析能找到解決策略",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "眾人驚奇的看見，形狀不一的南瓜蒂，竟然絲毫不差的和南瓜接在一起。"
     }
   ],
   "review_words": {

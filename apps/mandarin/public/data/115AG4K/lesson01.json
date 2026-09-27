@@ -13,7 +13,7 @@
   "lesson_no": 1,
   "title": "水陸小高手",
   "author": "",
-  "blurb": "透過〈水陸小高手〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "從水花、動作和聲音的描寫，整理游泳時不同姿態帶來的自在感。",
   "source_audit": [
     {
       "kind": "official",
@@ -491,54 +491,66 @@
       "idiom": "洗耳恭聽",
       "definition": "比喻專心恭敬的聆聽。",
       "related_char": "耳",
-      "image": "idioms/01_洗耳恭聽.webp",
+      "image": "idioms/01_洗耳恭聽-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:01:02",
       "idiom": "耳目一新",
       "definition": "形容所見所聞都有一種新奇、清新的感覺。",
       "related_char": "耳",
-      "image": "idioms/02_耳目一新.webp",
+      "image": "idioms/02_耳目一新-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:01:03",
       "idiom": "回心轉意",
       "definition": "改變心意。",
       "related_char": "轉",
-      "image": "idioms/03_回心轉意.webp",
+      "image": "idioms/03_回心轉意-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:01:04",
       "idiom": "躍躍欲試",
       "definition": "心動技癢，急切的想嘗試一下。",
       "related_char": "躍",
-      "image": "idioms/04_躍躍欲試.webp",
+      "image": "idioms/04_躍躍欲試-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:01:05",
       "idiom": "要言不煩",
       "definition": "說話精要，不囉嗦。",
       "related_char": "煩",
-      "image": "idioms/05_要言不煩.webp",
+      "image": "idioms/05_要言不煩-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:01:06",
       "idiom": "心煩意亂",
       "definition": "心情煩躁，思緒凌亂。",
       "related_char": "煩",
-      "image": "idioms/06_心煩意亂.webp",
+      "image": "idioms/06_心煩意亂-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -873,9 +885,10 @@
         "海豚和小鳥",
         "獅子和老虎"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "魚、蛙和蝶",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K01:02",
@@ -887,9 +900,10 @@
         "只和別人比快",
         "不想看見水珠"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "游出自信、壯志和多采多姿的人生",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K01:03",
@@ -901,9 +915,10 @@
         "一隻青蛙",
         "一隻蝴蝶"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "一隻飛鷹",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K01:04",
@@ -915,9 +930,10 @@
         "快樂、自信和自由",
         "緊張與生氣"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "快樂、自信和自由",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -1715,38 +1731,41 @@
       "question": "游泳這首詩中，作者在哪裡游泳？",
       "options": [
         "游泳池",
-        "作者應該很喜歡游泳，從「游出無比堅定的自信，游出大海一般的壯志，游出多采多姿的人生。」句中可以判斷游泳讓他有自信、有壯志、人生也多采多姿",
-        "作者將自己想像成飛鷹和陀螺"
+        "游泳讓作者更有自信。",
+        "想像成飛鷹和陀螺。"
       ],
       "answer": "游泳池",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "我們在游泳池游呀游，游成自由的魚，游成巨大的蛙，游成飛舞的蝶。"
     },
     {
       "id": "listening:01:02",
       "stem": "作者感覺游泳時，自己變成哪些動物？",
       "question": "作者感覺游泳時，自己變成哪些動物？",
       "options": [
-        "作者應該很喜歡游泳，從「游出無比堅定的自信，游出大海一般的壯志，游出多采多姿的人生。」句中可以判斷游泳讓他有自信、有壯志、人生也多采多姿",
-        "作者將自己想像成飛鷹和陀螺",
+        "游泳讓作者更有自信。",
+        "想像成飛鷹和陀螺。",
         "作者感覺自己游泳時，變成自由的魚、巨大的蛙、飛舞的蝶"
       ],
       "answer": "作者感覺自己游泳時，變成自由的魚、巨大的蛙、飛舞的蝶",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "我們在游泳池游呀游，游成自由的魚，游成巨大的蛙，游成飛舞的蝶。"
     },
     {
       "id": "listening:01:03",
       "stem": "作者在游泳時，心情如何？從哪些語句可以知道？",
       "question": "作者在游泳時，心情如何？從哪些語句可以知道？",
       "options": [
-        "作者將自己想像成飛鷹和陀螺",
-        "作者游泳時是歡樂暢快、堅定自信的心情。從句子「晶亮水珠一串串，化成歡樂的笑聲。」在「游出無比堅定的自信，游出大海一般的壯志，游出多采多姿的人生。」句中，水珠能化……",
-        "作者應該很喜歡游泳，從「游出無比堅定的自信，游出大海一般的壯志，游出多采多姿的人生。」句中可以判斷游泳讓他有自信、有壯志、人生也多采多姿"
+        "想像成飛鷹和陀螺。",
+        "歡樂暢快、堅定自信。",
+        "游泳讓作者更有自信。"
       ],
-      "answer": "作者游泳時是歡樂暢快、堅定自信的心情。從句子「晶亮水珠一串串，化成歡樂的笑聲。」在「游出無比堅定的自信，游出大海一般的壯志，游出多采多姿的人生。」句中，水珠能化……",
+      "answer": "歡樂暢快、堅定自信。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "歡樂笑聲一陣陣，揚起晶亮的水珠。游出無比堅定的自信，游出大海一般的壯志，游出多采多姿的人生。"
     }
   ],
   "review_words": {

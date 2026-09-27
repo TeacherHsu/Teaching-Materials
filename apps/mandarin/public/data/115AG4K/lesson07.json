@@ -13,7 +13,7 @@
   "lesson_no": 7,
   "title": "美味的一堂課",
   "author": "",
-  "blurb": "透過〈美味的一堂課〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "比較甩餅、義大利麵和壽司的作法與特色，練習依例子整理說明。",
   "source_audit": [
     {
       "kind": "official",
@@ -645,54 +645,66 @@
       "idiom": "妄自菲薄",
       "definition": "隨意看輕自己，不知自重。",
       "related_char": "薄",
-      "image": "idioms/01_妄自菲薄.webp",
+      "image": "idioms/01_妄自菲薄-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:07:02",
       "idiom": "沾沾自喜",
       "definition": "形容自得自滿的樣子。",
       "related_char": "沾",
-      "image": "idioms/02_沾沾自喜.webp",
+      "image": "idioms/02_沾沾自喜-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:07:03",
       "idiom": "心心相印",
       "definition": "比喻彼此心意互通。",
       "related_char": "印",
-      "image": "idioms/03_心心相印.webp",
+      "image": "idioms/03_心心相印-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:07:04",
       "idiom": "因材施教",
       "definition": "依據受教者不同的資材，而給予不同的教導。",
       "related_char": "材",
-      "image": "idioms/04_因材施教.webp",
+      "image": "idioms/04_因材施教-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:07:05",
       "idiom": "義不容辭",
       "definition": "道義上不容許推卻。",
       "related_char": "義",
-      "image": "idioms/05_義不容辭.webp",
+      "image": "idioms/05_義不容辭-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:07:06",
       "idiom": "壽比南山",
       "definition": "壽命如終南山那樣長久。為祝人長壽之辭。",
       "related_char": "壽",
-      "image": "idioms/06_壽比南山.webp",
+      "image": "idioms/06_壽比南山-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -971,9 +983,10 @@
         "體育老師",
         "同學的弟弟"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "巧文姐姐",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K07:02",
@@ -985,9 +998,10 @@
         "漢堡和薯條",
         "粥和饅頭"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "印度甩餅和義大利麵",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K07:03",
@@ -999,9 +1013,10 @@
         "義大利麵",
         "法國麵包"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "印度甩餅",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K07:04",
@@ -1013,9 +1028,10 @@
         "認識高樓建築",
         "學會種樹"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "認識各地的美食文化",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -2124,13 +2140,14 @@
       "stem": "「美味的一堂課」是誰來分享？為什麼會有這堂課？",
       "question": "「美味的一堂課」是誰來分享？為什麼會有這堂課？",
       "options": [
-        "「美味的一堂課」是由巧文姐姐來分享。老師邀請她來的",
+        "巧文姐姐分享；老師邀請她來。",
         "壽司是日本的美食",
-        "不是。從「又分享許多國家別具特色的美食」和「這個下午，教室裡不但驚嘆聲此起彼落，我們也認識各地的美食文化。」我們可推測巧文姐姐介紹的美食不只三種"
+        "介紹了許多國家的美食。"
       ],
-      "answer": "「美味的一堂課」是由巧文姐姐來分享。老師邀請她來的",
+      "answer": "巧文姐姐分享；老師邀請她來。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "星期二下午，老師請美食作家巧文姐姐到班上和大家分享旅行時難忘的見聞。"
     },
     {
       "id": "listening:07:02",
@@ -2138,25 +2155,27 @@
       "question": "為什麼主角會用「特技表演」來形容印度甩餅的製作過程？",
       "options": [
         "壽司是日本的美食",
-        "不是。從「又分享許多國家別具特色的美食」和「這個下午，教室裡不但驚嘆聲此起彼落，我們也認識各地的美食文化。」我們可推測巧文姐姐介紹的美食不只三種",
-        "主角認為印度師傅將小小的餅皮一邊在桌面拍打，一邊向空中拋的情況，餅皮逐漸變得又大又薄，就像是特技表演一樣非常神奇"
+        "介紹了許多國家的美食。",
+        "甩餅變大變薄，動作像特技表演。"
       ],
-      "answer": "主角認為印度師傅將小小的餅皮一邊在桌面拍打，一邊向空中拋的情況，餅皮逐漸變得又大又薄，就像是特技表演一樣非常神奇",
+      "answer": "甩餅變大變薄，動作像特技表演。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "只見影片中的人先將餅皮一邊在桌面拍打，一邊向空中拋，小小的餅皮漸漸變得又大又薄。"
     },
     {
       "id": "listening:07:03",
       "stem": "本文主要介紹義大利麵的哪些特色？",
       "question": "本文主要介紹義大利麵的哪些特色？",
       "options": [
-        "不是。從「又分享許多國家別具特色的美食」和「這個下午，教室裡不但驚嘆聲此起彼落，我們也認識各地的美食文化。」我們可推測巧文姐姐介紹的美食不只三種",
+        "介紹了許多國家的美食。",
         "介紹義大利麵的麵條有各式各樣的造型，以及能搭配各種不同的醬汁食用",
         "壽司是日本的美食"
       ],
       "answer": "介紹義大利麵的麵條有各式各樣的造型，以及能搭配各種不同的醬汁食用",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "義大利麵條，竟然有各式各樣的造型；我還吃到不同醬料的義大利麵，紅醬的酸甜，白醬的濃郁，青醬的香氣。"
     }
   ],
   "review_words": {

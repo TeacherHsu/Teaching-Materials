@@ -82,7 +82,20 @@ python scripts/generate_lessons.py `
 
 介面只複製標準化衍生資料，不解析官方原始檔。它會拒絕契約欄位不足、課次編號不符、出版社不符、`undefined`、私有路徑、非 WebP／AVIF 及超過 300 KiB 的資產，完成後同步 `review_words` 與 `course-index.json`。
 
-### 5.1 G4A 康軒來源準備與公開介面
+### 5.1 G2A 翰林來源準備與公開介面
+
+G2A 使用 `115AG2H` profile。私有準備器 `scripts/prepare_g2a.py` 只讀取已完成來源核對的翰林二上資料，依課次 manifest 對齊生字注音、三個造詞、04 形音輕鬆學語詞解釋、05 生字延伸成語、06 句型、07 摘要、10 閱讀提問與形似字題庫；不把官方 `.doc`、完整課文、來源絕對路徑或原始 PNG 寫入準備資料。語詞及成語圖片先在私有來源階段盤點：完全對應的舊圖可沿用，缺圖才接入私有生成圖 manifest，並在交給公開介面前壓縮為 WebP。
+
+準備資料契約為：
+
+```text
+<prepared-root>/115AG2H/lessonNN.json
+<prepared-root>/assets/115AG2H/lessonNN/**/*.webp
+```
+
+公開 Python 介面在匯入時補上 Unihan 部首與筆畫、雄筆順連結、機械挑戰題、`review_words` 與 `course-index.json`；它拒絕 `undefined`、私有路徑、官方原檔標記、非 WebP／AVIF 及超過 300 KiB 的資產。
+
+### 5.2 G4A 康軒來源準備與公開介面
 
 G4A 使用 `115AG4K` profile。私有準備器 `scripts/prepare_g4a.mjs` 只讀取已完成來源核對的康軒四上衍生資料，依課次資料夾與來源 manifest 對齊生字、語詞解釋、段落摘要及形似字；它不把官方 `.doc`、完整課文、來源絕對路徑或原始圖片寫入準備資料。沒有明確來源的句型、成語、修辭、一字多義、一字多音與聆聽答案維持 `missing`；語詞圖片則須在後續補圖階段以明確舊圖或私有生成圖 manifest 建立，無法對應時才維持 `image: null`。
 

@@ -13,7 +13,7 @@
   "lesson_no": 7,
   "title": "風的味道",
   "author": "",
-  "blurb": "透過〈風的味道〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "從風帶來的鹹味、冰涼和草香，推想牠經過的地方與景色。",
   "characters": [
     {
       "char": "鹹",
@@ -393,45 +393,60 @@
       "idiom": "乘風破浪",
       "definition": "順著風，破浪前進。比喻不畏艱難，奮勇前進。",
       "related_char": "乘",
-      "image": null,
+      "image": "idioms/01_乘風破浪.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H07:9c22f179",
       "idiom": "野心勃勃",
       "definition": "形容企圖心非常強烈。",
       "related_char": "野",
-      "image": null,
+      "image": "idioms/02_野心勃勃.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H07:1528b1fd",
       "idiom": "發人深省",
       "definition": "啟發人深入思考而有所醒悟。",
       "related_char": "深",
-      "image": null,
+      "image": "idioms/03_發人深省.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H07:1422ea45",
       "idiom": "欣欣向榮",
       "definition": "形容草木生長繁盛，也比喻事業蓬勃發展。",
       "related_char": "欣",
-      "image": null,
+      "image": "idioms/04_欣欣向榮.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H07:2fa457c7",
       "idiom": "賞心悅目",
       "definition": "形容情景美好，使人心情舒暢。",
       "related_char": "賞",
-      "image": null,
+      "image": "idioms/05_賞心悅目.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -1150,7 +1165,8 @@
       ],
       "answer": "作者閉上眼深呼吸，聞聞風的味道，再判斷風去過哪裡。",
       "status": "approved",
-      "source": "115G3A／翰林官方教材（15閱讀理解提問：第7課）"
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第7課）",
+      "passage": "閉上眼睛深呼吸，風去過什麼地方，欣賞過哪些美景，別想瞞得了我。"
     },
     {
       "id": "listening:115AG3H07:0002",
@@ -1163,7 +1179,8 @@
       ],
       "answer": "大海、覆滿白雪的高山和綠油油的原野。",
       "status": "approved",
-      "source": "115G3A／翰林官方教材（15閱讀理解提問：第7課）"
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第7課）",
+      "passage": "他剛從蔚藍的大海回航；他乘著雪橇由山坡滑下；他剛剛在原野上快樂的打滾。"
     },
     {
       "id": "listening:115AG3H07:0003",
@@ -1176,7 +1193,8 @@
       ],
       "answer": "只要用心體會，就能發現大自然的奧祕。",
       "status": "approved",
-      "source": "115G3A／翰林官方教材（15閱讀理解提問：第7課）"
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第7課）",
+      "passage": "閉上眼睛深呼吸，風去過什麼地方，欣賞過哪些美景，別想瞞得了我。"
     }
   ],
   "review_words": {

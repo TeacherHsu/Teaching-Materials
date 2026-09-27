@@ -13,7 +13,7 @@
   "lesson_no": 2,
   "title": "大風吹",
   "author": "",
-  "blurb": "透過〈大風吹〉練習認讀生字、理解語詞，並用聲音和圖像建立閱讀連結。",
+  "blurb": "留意反覆句和動作變化，說出大風吹遊戲開始後的熱鬧情景。",
   "characters": [
     {
       "char": "大",
@@ -294,23 +294,607 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
+  "idioms": [
+    {
+      "image": "idioms/01_粗枝大葉.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H02:01",
+      "idiom": "粗枝大葉",
+      "definition": "比喻做事粗心大意。",
+      "related_char": "大",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/02_大驚小怪.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H02:02",
+      "idiom": "大驚小怪",
+      "definition": "對不足為奇的事情過分驚訝。",
+      "related_char": "大",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/03_呼風喚雨.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H02:03",
+      "idiom": "呼風喚雨",
+      "definition": "比喻能夠支配或影響很大的力量。",
+      "related_char": "風",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/04_心血來潮.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H02:04",
+      "idiom": "心血來潮",
+      "definition": "突然興起某種念頭。",
+      "related_char": "心",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/05_不可思議.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H02:05",
+      "idiom": "不可思議",
+      "definition": "難以想像、難以理解。",
+      "related_char": "不",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:115AG1H02:01",
+      "idiom_id": "idiom:115AG1H02:01",
+      "rewritten": "如果做事粗枝大葉，就容易漏掉重要細節。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H02:02",
+      "idiom_id": "idiom:115AG1H02:02",
+      "rewritten": "只是下了一點小雨，不必大驚小怪。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H02:03",
+      "idiom_id": "idiom:115AG1H02:03",
+      "rewritten": "故事裡的神仙好像能呼風喚雨。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H02:04",
+      "idiom_id": "idiom:115AG1H02:04",
+      "rewritten": "我心血來潮，想畫一張送給媽媽的卡片。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H02:05",
+      "idiom_id": "idiom:115AG1H02:05",
+      "rewritten": "魔術師讓硬幣消失，真是不可思議。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "category": "短語句型練習",
+      "pattern": "大風吹",
+      "head": "大風吹",
+      "description": "描述誰做了什麼動作。",
+      "structure": "名詞（人或物）＋動詞（做什麼動作）",
+      "examples": [
+        "小鳥叫",
+        "白雲飄",
+        "樹枝搖"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H02:01",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "category": "短語句型練習",
+      "pattern": "不停的跑",
+      "head": "不停的跑",
+      "description": "用「不停的」來表示某個動作持續進行著。",
+      "structure": "不停的＋動詞（做什麼動作）",
+      "examples": [
+        "不停的說",
+        "不停的笑",
+        "不停的揮手"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H02:02",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "category": "短語句型練習",
+      "pattern": "我們來玩大風吹。",
+      "head": "我們來玩大風吹。",
+      "description": "用「來」可以描述大家要做什麼事。",
+      "structure": "名詞（人或物）＋來＋動詞（做什麼事）",
+      "examples": [
+        "姐姐來看書。",
+        "爸爸來開門。",
+        "小狗來喝水。"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H02:03",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "category": "短語句型練習",
+      "pattern": "我們不停的跑。",
+      "head": "我們不停的跑。",
+      "description": "用「不停的」來表示某個動作持續進行著。",
+      "structure": "名詞（人或物）＋不停的＋動詞（做什麼事）",
+      "examples": [
+        "哥哥不停的拍球。",
+        "姐姐不停的打嗝。",
+        "毛毛蟲不停的吃樹葉。"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H02:04",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    }
+  ],
   "rhetoric": [],
-  "paragraph_summary": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG1H02:01",
+      "para_no": 1,
+      "paragraph_no": 1,
+      "summary": "起：反覆說大風吹，營造遊戲開始的節奏。",
+      "structure_role": "開端",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    },
+    {
+      "id": "paragraph_summary:115AG1H02:02",
+      "para_no": 2,
+      "paragraph_no": 2,
+      "summary": "承：大家一起玩大風吹，寫出共同遊戲的情景。",
+      "structure_role": "發展",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    },
+    {
+      "id": "paragraph_summary:115AG1H02:03",
+      "para_no": 3,
+      "paragraph_no": 3,
+      "summary": "合：不停跑、風不停吹，呈現遊戲的熱鬧與動感。",
+      "structure_role": "收束",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    }
+  ],
   "main_idea": {
-    "gist": "本課閱讀重點待補。",
-    "theme": "閱讀理解",
-    "status": "draft",
-    "source": "teacher-review-required"
+    "gist": "課文寫大家一起玩大風吹，在不停跑和不停吹的節奏中感受遊戲的熱鬧。",
+    "theme": "課文理解",
+    "status": "approved",
+    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
   },
-  "reading_questions": [],
-  "polysemy": [],
+  "reading_questions": [
+    {
+      "id": "reading-question:115AG1H02:01",
+      "stem": "仔細觀察課文插圖中，有幾個人？有幾張椅子？他們正在哪裡？",
+      "answer_hint": "課文插圖中總共有五個小朋友、四張椅子。他們正在教室裡。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H02:02",
+      "stem": "這些小朋友正在教室裡做什麼？你是怎麼知道的？",
+      "answer_hint": "他們正在玩遊戲。從插畫及課文中可以看得出來。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H02:03",
+      "stem": "圖片裡有四張椅子和五個小朋友，最後會剩下幾個小朋友沒有椅子坐？",
+      "answer_hint": "會剩下一個小朋友沒有椅子坐。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H02:04",
+      "stem": "第23頁課文插圖中，畫家用什麼方式來表現風很大的樣子？",
+      "answer_hint": "畫家畫窗邊有一朵雲，正在用力的吹氣；他用力的把嘴巴嘟起來，而且窗簾也被風吹起來。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H02:05",
+      "stem": "根據課文和插圖，「我們不停的跑」，插圖裡的小朋友看起來很緊張、跑得很快，他們是為了要做什麼事？",
+      "answer_hint": "為了要找椅子坐下來，或是為了搶位子。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H02:06",
+      "stem": "你覺得為什麼這個遊戲要叫大風吹？",
+      "answer_hint": "這個遊戲就像大風吹過一樣，只要有人喊口令，大家就要趕快離開座位、換一個新位置，風一吹過，東西都可能會換位子，所以才叫大風吹。",
+      "strategy_tag": "詮釋整合",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H02:07",
+      "stem": "這一課玩「大風吹」和第一課玩「兩人三腳」，這兩種遊戲有什麼不同的地方？",
+      "answer_hint": "兩人三腳一定要兩個人一組，團結合作才能走得快；大風吹是很多小朋友一起玩，每個人都要自己跑，不用跟別人綁在一起。",
+      "strategy_tag": "比較評估",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG1H02:大:01",
+      "char": "大",
+      "sentence": "今天下了大雨。",
+      "definition": "與「小」相對。",
+      "options": [
+        "與「小」相對。",
+        "最年長或排行第一。",
+        "不平常、重要。",
+        "約略、差不多。"
+      ],
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；一字多義）"
+    },
+    {
+      "id": "polysemy:115AG1H02:大:02",
+      "char": "大",
+      "sentence": "哥哥是家裡的大哥。",
+      "definition": "最年長或排行第一。",
+      "options": [
+        "與「小」相對。",
+        "最年長或排行第一。",
+        "不平常、重要。",
+        "約略、差不多。"
+      ],
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；一字多義）"
+    },
+    {
+      "id": "polysemy:115AG1H02:大:03",
+      "char": "大",
+      "sentence": "今天有一件大事。",
+      "definition": "不平常、重要。",
+      "options": [
+        "與「小」相對。",
+        "最年長或排行第一。",
+        "不平常、重要。",
+        "約略、差不多。"
+      ],
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；一字多義）"
+    },
+    {
+      "id": "polysemy:115AG1H02:大:04",
+      "char": "大",
+      "sentence": "走到車站大約要五分鐘。",
+      "definition": "約略、差不多。",
+      "options": [
+        "與「小」相對。",
+        "最年長或排行第一。",
+        "不平常、重要。",
+        "約略、差不多。"
+      ],
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；一字多義）"
+    }
+  ],
   "polysemy_senses": [],
-  "polyphones": [],
-  "lookalikes": [],
-  "listening": [],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG1H02:大",
+      "char": "大",
+      "readings": [
+        {
+          "zhuyin": "ㄉㄚˋ",
+          "definition": "大的、重要的或約略的意思。",
+          "examples": [
+            "大人",
+            "大雨",
+            "大事",
+            "大約"
+          ]
+        },
+        {
+          "zhuyin": "ㄉㄞˋ",
+          "definition": "醫生。",
+          "examples": [
+            "大夫"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；認識多音字；注音依官方標示）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG1H02:01",
+      "group_no": "1",
+      "question": "＿風吹",
+      "answer": "大",
+      "chars": [
+        {
+          "char": "大",
+          "zhuyin": null,
+          "example": "大風吹"
+        },
+        {
+          "char": "太",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "天",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H02:02",
+      "group_no": "2",
+      "question": "大＿吹",
+      "answer": "風",
+      "chars": [
+        {
+          "char": "分",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "風",
+          "zhuyin": null,
+          "example": "大風吹"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H02:03",
+      "group_no": "3",
+      "question": "大風＿",
+      "answer": "吹",
+      "chars": [
+        {
+          "char": "吹",
+          "zhuyin": null,
+          "example": "大風吹"
+        },
+        {
+          "char": "次",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H02:04",
+      "group_no": "4",
+      "question": "一起＿『大風吹』",
+      "answer": "玩",
+      "chars": [
+        {
+          "char": "晚",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "玩",
+          "zhuyin": null,
+          "example": "一起玩『大風吹』"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H02:05",
+      "group_no": "5",
+      "question": "不＿",
+      "answer": "停",
+      "chars": [
+        {
+          "char": "停",
+          "zhuyin": null,
+          "example": "不停"
+        },
+        {
+          "char": "零",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H02:06",
+      "group_no": "6",
+      "question": "快步＿",
+      "answer": "跑",
+      "chars": [
+        {
+          "char": "保",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "跑",
+          "zhuyin": null,
+          "example": "快步跑"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H02:07",
+      "group_no": "7",
+      "question": "小聲＿說話",
+      "answer": "的",
+      "chars": [
+        {
+          "char": "的",
+          "zhuyin": null,
+          "example": "小聲的說話"
+        },
+        {
+          "char": "白",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "百",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H02:08",
+      "group_no": "8",
+      "question": "我們一起玩『＿風吹』",
+      "answer": "大",
+      "chars": [
+        {
+          "char": "太",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "大",
+          "zhuyin": null,
+          "example": "我們一起玩『大風吹』"
+        },
+        {
+          "char": "天",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H02:09",
+      "group_no": "9",
+      "question": "我們一起玩『大＿吹』",
+      "answer": "風",
+      "chars": [
+        {
+          "char": "風",
+          "zhuyin": null,
+          "example": "我們一起玩『大風吹』"
+        },
+        {
+          "char": "分",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H02:10",
+      "group_no": "10",
+      "question": "公園＿步",
+      "answer": "跑",
+      "chars": [
+        {
+          "char": "保",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "跑",
+          "zhuyin": null,
+          "example": "公園跑步"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG1H02:01",
+      "stem": "小朋友要玩什麼遊戲？",
+      "question": "小朋友要玩什麼遊戲？",
+      "options": [
+        "大風吹。",
+        "捉迷藏。",
+        "跳舞。"
+      ],
+      "answer": "大風吹。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
+      "passage": "大風吹，我們來玩大風吹。"
+    },
+    {
+      "id": "listening:115AG1H02:02",
+      "stem": "大風吹時，小朋友怎麼跑？",
+      "question": "大風吹時，小朋友怎麼跑？",
+      "options": [
+        "不停止的跑。",
+        "慢慢走。",
+        "坐著不動。"
+      ],
+      "answer": "不停止的跑。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
+      "passage": "大風吹，大風吹，我們不停止的跑。"
+    },
+    {
+      "id": "listening:115AG1H02:03",
+      "stem": "這些小朋友正在做什麼？",
+      "question": "這些小朋友正在做什麼？",
+      "options": [
+        "玩大風吹。",
+        "排隊寫字。",
+        "唱歌跳舞。"
+      ],
+      "answer": "玩大風吹。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
+      "passage": "大風吹，我們來玩大風吹。"
+    }
+  ],
   "review_words": {
     "by_lesson": {
       "1": [
@@ -514,15 +1098,13 @@
     },
     "reading": {
       "label": "讀懂課文",
-      "status": "missing",
-      "activity": "reading",
-      "note": "一年級課文內容待整理為公開摘要；課文全文不放入公開網站。"
+      "status": "available",
+      "activity": "reading"
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
-      "activity": "sentence-practice",
-      "note": "句型資料待審核。"
+      "status": "available",
+      "activity": "sentence-practice"
     },
     "challenge": {
       "label": "動手挑戰",
@@ -537,39 +1119,34 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
-      "activity": "idiom-builder",
-      "note": "一年級不安排成語題。"
+      "status": "available",
+      "activity": "idiom-builder"
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "一年級不安排一字多義題。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
-      "status": "missing",
-      "activity": "polyphones",
-      "note": "多音字資料待審核。"
+      "status": "available",
+      "activity": "polyphones"
     },
     "lookalikes": {
       "label": "形似字",
-      "status": "missing",
-      "activity": "lookalikes",
-      "note": "形似字資料待審核。"
+      "status": "available",
+      "activity": "lookalikes"
     },
     "structure_map": {
       "label": "課文地圖",
-      "status": "missing",
-      "activity": "structure-map",
-      "note": "摘要資料待補。"
+      "status": "available",
+      "activity": "structure-map"
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
+      "status": "available",
       "activity": "listening-quiz",
-      "note": "聆聽題資料待審核。"
+      "note": "已依官方閱讀理解提問與課文關鍵語句逐題核對。"
     },
     "rhetoric": {
       "label": "修辭小偵探",

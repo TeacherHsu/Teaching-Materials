@@ -2,7 +2,7 @@
 // 規格 docs/specs/2026-09-25-mandarin-dabutie-importer.md §4。
 import { filterByStatus } from '../utils/preview.js';
 import { isModuleComplete } from '../utils/storage.js';
-import { usablePolyphoneEntries } from './polyphones.js';
+import { canStartPolyphones } from './polyphones.js';
 
 const ROUND_MIN = 3;
 
@@ -78,9 +78,12 @@ function readyRhetoric(lesson) {
 function readyLookalikeQuestions(lesson) {
   return filterByStatus(lesson.lookalikes || [])
     .map((g) => {
-      const chars = (g.chars || []).filter((c) => c.char && c.example);
+      // 官方形似字表通常只為正確字提供例詞，其他字只作為辨識選項。
+      // 因此就緒判定不能要求每個干擾字都附例詞，否則已完整的官方題組
+      // 會被誤判為「教材審核中」。
+      const chars = (g.chars || []).filter((c) => c.char);
       if (chars.length < 2) return [];
-      return chars.flatMap((c) => String(c.example).split(/[、,，]/u).map((term) => term.trim()).filter(Boolean));
+      return chars.flatMap((c) => String(c.example || '').split(/[、,，]/u).map((term) => term.trim()).filter(Boolean));
     })
     .flat();
 }
@@ -134,7 +137,14 @@ export const MODULE_REGISTRY = [
     description: '照句型練習造句',
     implemented: true,
     ready(lesson) {
-      return readyPatterns(lesson).length >= ROUND_MIN && patternsWithApprovedExamples(lesson).length >= 1;
+      // 翰林二上官方「06各課短語句型練習」第 9 課，以及翰林一年上
+      // 第 6 課，來源各只有兩組句型，但每組均有已核准例句；依官方
+      // 資料開放，不以共用三組門檻誤判為待審。
+      const minimum = lesson.volume?.code === '115AG2H'
+        || (lesson.volume?.code === '115AG1H' && lesson.lesson_no === 6)
+        ? 2
+        : ROUND_MIN;
+      return readyPatterns(lesson).length >= minimum && patternsWithApprovedExamples(lesson).length >= 1;
     },
   },
   {
@@ -167,8 +177,8 @@ export const MODULE_REGISTRY = [
     description: '同一個字，不同讀音',
     implemented: true,
     ready(lesson) {
-      // 有些課的官方教材只有一個多音字，但仍可用兩個讀音完成一組練習。
-      return usablePolyphoneEntries(lesson).length >= 2;
+      // 必須符合學生頁實際可建立至少一組題目的條件。
+      return canStartPolyphones(lesson);
     },
   },
   {
@@ -244,10 +254,16 @@ export function getModuleStatus(lesson, entry) {
   if (!entry.implemented) {
     return { code: 'coming_soon', text: '即將推出' };
   }
+  if (entry.key === 'rhetoric' && Number(lesson.volume?.grade) <= 2) {
+    return { code: 'coming_soon', text: '本冊未安排' };
+  }
+  if (lesson.modules?.[entry.key]?.status === 'unavailable') {
+    return { code: 'coming_soon', text: lesson.modules[entry.key].note || '目前無此資料' };
+  }
   if (entry.reviewOnly) {
     return entry.ready(lesson)
       ? { code: 'available', text: '可以開始' }
-      : { code: 'locked', text: '第 2 課起開放' };
+      : { code: 'locked', text: '從第二課開始' };
   }
   if (isModuleComplete(lesson.lesson_id, entry.key)) {
     return { code: 'done', text: '已完成' };

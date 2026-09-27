@@ -1,0 +1,1854 @@
+{
+  "lesson_id": "115AG2H05",
+  "volume": {
+    "code": "115AG2H",
+    "publisher": "翰林",
+    "grade": 2,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "二上國語課程"
+  },
+  "lesson_no": 5,
+  "title": "沙灘上的畫",
+  "blurb": "按觀察螃蟹、模仿走路到留下腳印的順序，說出沙灘畫怎麼形成。",
+  "characters": [
+    {
+      "char": "沙",
+      "zhuyin": "ㄕㄚ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "沙灘",
+        "沙子",
+        "沙包"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=沙",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽔",
+      "stroke_count": 7
+    },
+    {
+      "char": "灘",
+      "zhuyin": "ㄊㄢ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "沙灘",
+        "海灘",
+        "河灘"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=灘",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽔",
+      "stroke_count": 22
+    },
+    {
+      "char": "海",
+      "zhuyin": "ㄏㄞˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "海邊",
+        "海水",
+        "海洋"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=海",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽔",
+      "stroke_count": 10
+    },
+    {
+      "char": "邊",
+      "zhuyin": "ㄅㄧㄢ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "海邊",
+        "旁邊",
+        "一邊"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=邊",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾡",
+      "stroke_count": 18
+    },
+    {
+      "char": "退",
+      "zhuyin": "ㄊㄨㄟˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "退後",
+        "退步",
+        "後退"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=退",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾡",
+      "stroke_count": 10
+    },
+    {
+      "char": "遠",
+      "zhuyin": "ㄩㄢˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "遠方",
+        "遠處",
+        "遙遠"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=遠",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾡",
+      "stroke_count": 13
+    },
+    {
+      "char": "螃",
+      "zhuyin": "ㄆㄤˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "螃蟹",
+        "螃蟹車",
+        "螃蟹步"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=螃",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾍",
+      "stroke_count": 16
+    },
+    {
+      "char": "蟹",
+      "zhuyin": "ㄒㄧㄝˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "螃蟹",
+        "蟹腳",
+        "蟹殼"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=蟹",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾍",
+      "stroke_count": 19
+    },
+    {
+      "char": "愛",
+      "zhuyin": "ㄞˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "可愛",
+        "愛心",
+        "喜愛"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=愛",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼼",
+      "stroke_count": 13
+    },
+    {
+      "char": "注",
+      "zhuyin": "ㄓㄨˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "專注",
+        "投注",
+        "挹注"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=注",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽔",
+      "stroke_count": 8
+    },
+    {
+      "char": "夕",
+      "zhuyin": "ㄒㄧ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "夕陽",
+        "朝夕",
+        "除夕"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=夕",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼣",
+      "stroke_count": 3
+    },
+    {
+      "char": "腳",
+      "zhuyin": "ㄐㄧㄠˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "腳印",
+        "腳丫",
+        "腳步"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=腳",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾁",
+      "stroke_count": 13
+    },
+    {
+      "char": "丫",
+      "zhuyin": "ㄧㄚ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "腳丫",
+        "丫頭",
+        "丫枝"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=丫",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼁",
+      "stroke_count": 3
+    },
+    {
+      "char": "橫",
+      "zhuyin": "ㄏㄥˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "橫線",
+        "橫向",
+        "橫著"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=橫",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽊",
+      "stroke_count": 16
+    },
+    {
+      "char": "留",
+      "zhuyin": "ㄌㄧㄡˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "留下",
+        "留意",
+        "保留"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=留",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽥",
+      "stroke_count": 10
+    },
+    {
+      "char": "印",
+      "zhuyin": "ㄧㄣˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "列印",
+        "印出",
+        "印刷"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=印",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼙",
+      "stroke_count": 6
+    },
+    {
+      "char": "挖",
+      "zhuyin": "ㄨㄚ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "挖土",
+        "挖洞",
+        "挖掘"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=挖",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼿",
+      "stroke_count": 9
+    },
+    {
+      "char": "麗",
+      "zhuyin": "ㄌㄧˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "美麗",
+        "華麗",
+        "亮麗"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=麗",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⿅",
+      "stroke_count": 19
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG2H05:01",
+      "word": "海邊",
+      "zhuyin": null,
+      "meaning": "海的邊緣一帶。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson05/vocabulary/l05-01.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H05:02",
+      "word": "沙灘",
+      "zhuyin": null,
+      "meaning": "水邊的沙地。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson05/vocabulary/l05-02.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H05:03",
+      "word": "美麗",
+      "zhuyin": null,
+      "meaning": "漂亮、美好；使人看了心生喜悅的。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson05/vocabulary/l05-03.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H05:04",
+      "word": "挖",
+      "zhuyin": null,
+      "meaning": "用手或工具由物體的表面向內掏取或掘取。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson05/vocabulary/l05-04.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H05:05",
+      "word": "注意",
+      "zhuyin": null,
+      "meaning": "關注留意。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson05/vocabulary/l05-05.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H05:06",
+      "word": "可愛",
+      "zhuyin": null,
+      "meaning": "討人喜愛。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson05/vocabulary/l05-06.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H05:07",
+      "word": "螃蟹",
+      "zhuyin": null,
+      "meaning": "全身帶硬殼。有五對足，第一對為螯。左右向行走。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson05/vocabulary/l05-07.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H05:08",
+      "word": "遠",
+      "zhuyin": null,
+      "meaning": "時間、空間的距離大，與「近」相對。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson05/vocabulary/l05-08.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H05:09",
+      "word": "退",
+      "zhuyin": null,
+      "meaning": "向後倒行、移動。與「進」相反。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson05/vocabulary/l05-09.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H05:10",
+      "word": "腳印",
+      "zhuyin": null,
+      "meaning": "腳所踏過的痕跡。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson05/vocabulary/l05-10.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H05:11",
+      "word": "留",
+      "zhuyin": null,
+      "meaning": "遺下、放下。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson05/vocabulary/l05-11.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H05:12",
+      "word": "橫",
+      "zhuyin": null,
+      "meaning": "左右向的。與「直」相對。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson05/vocabulary/l05-12.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H05:13",
+      "word": "腳丫",
+      "zhuyin": null,
+      "meaning": "人或動物的腿，支撐身體接觸地面的部分。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson05/vocabulary/l05-13.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H05:14",
+      "word": "夕陽",
+      "zhuyin": null,
+      "meaning": "傍晚時將西下的太陽。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson05/vocabulary/l05-14.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [
+    {
+      "id": "meaning:115AG2H05:01",
+      "word": "海邊",
+      "meaning": "海的邊緣一帶。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H05:02",
+      "word": "沙灘",
+      "meaning": "水邊的沙地。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H05:03",
+      "word": "美麗",
+      "meaning": "漂亮、美好；使人看了心生喜悅的。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H05:04",
+      "word": "挖",
+      "meaning": "用手或工具由物體的表面向內掏取或掘取。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H05:05",
+      "word": "注意",
+      "meaning": "關注留意。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H05:06",
+      "word": "可愛",
+      "meaning": "討人喜愛。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H05:07",
+      "word": "螃蟹",
+      "meaning": "全身帶硬殼。有五對足，第一對為螯。左右向行走。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H05:08",
+      "word": "遠",
+      "meaning": "時間、空間的距離大，與「近」相對。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H05:09",
+      "word": "退",
+      "meaning": "向後倒行、移動。與「進」相反。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H05:10",
+      "word": "腳印",
+      "meaning": "腳所踏過的痕跡。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H05:11",
+      "word": "留",
+      "meaning": "遺下、放下。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H05:12",
+      "word": "橫",
+      "meaning": "左右向的。與「直」相對。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H05:13",
+      "word": "腳丫",
+      "meaning": "人或動物的腿，支撐身體接觸地面的部分。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H05:14",
+      "word": "夕陽",
+      "meaning": "傍晚時將西下的太陽。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "sentences": [
+    {
+      "category": "短語練習",
+      "pattern": "爬進爬出",
+      "examples": [
+        "轉來轉去",
+        "飛上飛下"
+      ],
+      "description": "﹁爬﹂是動作，加上相反意思的﹁進、出﹂，就變成﹁爬進﹂、",
+      "structure": "動詞（相反的兩個動作）",
+      "id": "sentence-pattern:115AG2H05:01",
+      "head": "爬進爬出",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短語練習",
+      "pattern": "大大小小的腳印",
+      "examples": [
+        "彎彎曲曲的山路",
+        "冰冰涼涼的果汁"
+      ],
+      "description": "利用疊字把事物形容得更豐富。",
+      "structure": "疊字形容詞（怎麼樣）＋的＋名詞（什麼事物）",
+      "id": "sentence-pattern:115AG2H05:02",
+      "head": "大大小小的腳印",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短句練習",
+      "pattern": "海水退得好遠好遠。",
+      "examples": [
+        "弟弟跑得好快好快。",
+        "老鷹飛得好高好高。"
+      ],
+      "description": "連用兩個﹁好＋怎麼樣﹂，可以強調動作的狀態。",
+      "structure": "名詞（人或物）＋動詞（動作）＋得＋好＋副詞（怎麼樣）＋",
+      "id": "sentence-pattern:115AG2H05:03",
+      "head": "海水退得好遠好遠。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "你注意到螃蟹是怎麼走的嗎？",
+      "examples": [
+        "爸爸常常提醒我要注意不要長時間看書。",
+        "過馬路時，必須注意左、右方來車。"
+      ],
+      "description": "用﹁注意﹂表示留意到某個事物。",
+      "id": "sentence-pattern:115AG2H05:04",
+      "head": "你注意到螃蟹是怎麼走的嗎？",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "idioms": [
+    {
+      "id": "idiom:115AG2H05:01",
+      "idiom": "聚沙成塔",
+      "definition": "比喻積少成多。",
+      "related_char": "沙",
+      "image": "idioms/01_聚沙成塔-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H05:02",
+      "idiom": "天涯海角",
+      "definition": "形容偏僻或相距遙遠的地方。",
+      "related_char": "海",
+      "image": "idioms/02_天涯海角-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H05:03",
+      "idiom": "知難而退",
+      "definition": "做事遇到困難後，就退縮不前，或者應該找機會退回。",
+      "related_char": "退",
+      "image": "idioms/03_知難而退-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H05:04",
+      "idiom": "一朝一夕",
+      "definition": "形容時間短暫。",
+      "related_char": "夕",
+      "image": "idioms/04_一朝一夕-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H05:05",
+      "idiom": "腳踏實地",
+      "definition": "比喻做事切實穩健。",
+      "related_char": "腳",
+      "image": "idioms/05_腳踏實地-fit.webp",
+      "image_origin": "existing:private-reviewed-idiom-image",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:115AG2H05:01",
+      "idiom_id": "idiom:115AG2H05:01",
+      "rewritten": "只要我們努力，聚沙成塔，成功就在眼前。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H05:02",
+      "idiom_id": "idiom:115AG2H05:02",
+      "rewritten": "有了手機，就算天涯海角，我們都能聯絡對方。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H05:03",
+      "idiom_id": "idiom:115AG2H05:03",
+      "rewritten": "他分享自己成功的方法，就是要努力向前，不能有知難而退的想法。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H05:04",
+      "idiom_id": "idiom:115AG2H05:04",
+      "rewritten": "畫圖要畫得好，不是一朝一夕就能達成，要經過長時間的練習。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H05:05",
+      "idiom_id": "idiom:115AG2H05:05",
+      "rewritten": "他透過腳踏實地的練習，才贏得比賽。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "category": "短語練習",
+      "pattern": "爬進爬出",
+      "examples": [
+        "轉來轉去",
+        "飛上飛下"
+      ],
+      "description": "﹁爬﹂是動作，加上相反意思的﹁進、出﹂，就變成﹁爬進﹂、",
+      "structure": "動詞（相反的兩個動作）",
+      "id": "sentence-pattern:115AG2H05:01",
+      "head": "爬進爬出",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短語練習",
+      "pattern": "大大小小的腳印",
+      "examples": [
+        "彎彎曲曲的山路",
+        "冰冰涼涼的果汁"
+      ],
+      "description": "利用疊字把事物形容得更豐富。",
+      "structure": "疊字形容詞（怎麼樣）＋的＋名詞（什麼事物）",
+      "id": "sentence-pattern:115AG2H05:02",
+      "head": "大大小小的腳印",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短句練習",
+      "pattern": "海水退得好遠好遠。",
+      "examples": [
+        "弟弟跑得好快好快。",
+        "老鷹飛得好高好高。"
+      ],
+      "description": "連用兩個﹁好＋怎麼樣﹂，可以強調動作的狀態。",
+      "structure": "名詞（人或物）＋動詞（動作）＋得＋好＋副詞（怎麼樣）＋",
+      "id": "sentence-pattern:115AG2H05:03",
+      "head": "海水退得好遠好遠。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "你注意到螃蟹是怎麼走的嗎？",
+      "examples": [
+        "爸爸常常提醒我要注意不要長時間看書。",
+        "過馬路時，必須注意左、右方來車。"
+      ],
+      "description": "用﹁注意﹂表示留意到某個事物。",
+      "id": "sentence-pattern:115AG2H05:04",
+      "head": "你注意到螃蟹是怎麼走的嗎？",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG2H05:遠:01",
+      "char": "遠",
+      "sentence": "生活中，我們會用到《遠景》這個詞。",
+      "definition": "時間、空間的距離大。與「近」 相對",
+      "options": [
+        "時間、空間的距離大。與「近」 相對",
+        "血緣關係不近的",
+        "遠離、避開"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H05:遠:02",
+      "char": "遠",
+      "sentence": "生活中，我們會用到《遠親》這個詞。",
+      "definition": "血緣關係不近的",
+      "options": [
+        "時間、空間的距離大。與「近」 相對",
+        "血緣關係不近的",
+        "遠離、避開"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H05:遠:03",
+      "char": "遠",
+      "sentence": "生活中，我們會用到《遠小人》這個詞。",
+      "definition": "遠離、避開",
+      "options": [
+        "時間、空間的距離大。與「近」 相對",
+        "血緣關係不近的",
+        "遠離、避開"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H05:橫:01",
+      "char": "橫",
+      "sentence": "生活中，我們會用到《橫排》這個詞。",
+      "definition": "左右向的。與「直」相對",
+      "options": [
+        "左右向的。與「直」相對",
+        "貫穿兩側的",
+        "把東西放平",
+        "雜亂的",
+        "國字筆畫名稱",
+        "粗暴猛烈、不講理的",
+        "意外的、不正常的"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H05:橫:02",
+      "char": "橫",
+      "sentence": "生活中，我們會用到《橫跨》這個詞。",
+      "definition": "貫穿兩側的",
+      "options": [
+        "左右向的。與「直」相對",
+        "貫穿兩側的",
+        "把東西放平",
+        "雜亂的",
+        "國字筆畫名稱",
+        "粗暴猛烈、不講理的",
+        "意外的、不正常的"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H05:橫:03",
+      "char": "橫",
+      "sentence": "生活中，我們會用到《橫刀而立》這個詞。",
+      "definition": "把東西放平",
+      "options": [
+        "左右向的。與「直」相對",
+        "貫穿兩側的",
+        "把東西放平",
+        "雜亂的",
+        "國字筆畫名稱",
+        "粗暴猛烈、不講理的",
+        "意外的、不正常的"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H05:橫:04",
+      "char": "橫",
+      "sentence": "生活中，我們會用到《雜草橫生》這個詞。",
+      "definition": "雜亂的",
+      "options": [
+        "左右向的。與「直」相對",
+        "貫穿兩側的",
+        "把東西放平",
+        "雜亂的",
+        "國字筆畫名稱",
+        "粗暴猛烈、不講理的",
+        "意外的、不正常的"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H05:橫:05",
+      "char": "橫",
+      "sentence": "生活中，我們會用到《橫折鉤》這個詞。",
+      "definition": "國字筆畫名稱",
+      "options": [
+        "左右向的。與「直」相對",
+        "貫穿兩側的",
+        "把東西放平",
+        "雜亂的",
+        "國字筆畫名稱",
+        "粗暴猛烈、不講理的",
+        "意外的、不正常的"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H05:橫:06",
+      "char": "橫",
+      "sentence": "生活中，我們會用到《蠻橫》這個詞。",
+      "definition": "粗暴猛烈、不講理的",
+      "options": [
+        "左右向的。與「直」相對",
+        "貫穿兩側的",
+        "把東西放平",
+        "雜亂的",
+        "國字筆畫名稱",
+        "粗暴猛烈、不講理的",
+        "意外的、不正常的"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H05:橫:07",
+      "char": "橫",
+      "sentence": "生活中，我們會用到《橫禍。 9. 8. 7. 6. 迎 印 溜 留 主 柱 蛀 住 注 受 愛 ：歡迎》這個詞。",
+      "definition": "意外的、不正常的",
+      "options": [
+        "左右向的。與「直」相對",
+        "貫穿兩側的",
+        "把東西放平",
+        "雜亂的",
+        "國字筆畫名稱",
+        "粗暴猛烈、不講理的",
+        "意外的、不正常的"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG2H05:遠",
+      "char": "遠",
+      "readings": [
+        {
+          "zhuyin": "ㄩㄢˇ",
+          "senses": [
+            {
+              "definition": "時間、空間的距離大。與「近」 相對",
+              "examples": [
+                "遠景",
+                "永遠"
+              ]
+            },
+            {
+              "definition": "血緣關係不近的",
+              "examples": [
+                "遠親"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄩㄢˋ",
+          "senses": [
+            {
+              "definition": "遠離、避開",
+              "examples": [
+                "遠小人"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    },
+    {
+      "id": "polyphone:115AG2H05:橫",
+      "char": "橫",
+      "readings": [
+        {
+          "zhuyin": "ㄏㄥˊ",
+          "senses": [
+            {
+              "definition": "左右向的。與「直」相對",
+              "examples": [
+                "橫排",
+                "橫向"
+              ]
+            },
+            {
+              "definition": "貫穿兩側的",
+              "examples": [
+                "橫跨",
+                "橫越"
+              ]
+            },
+            {
+              "definition": "把東西放平",
+              "examples": [
+                "橫刀而立"
+              ]
+            },
+            {
+              "definition": "雜亂的",
+              "examples": [
+                "雜草橫生"
+              ]
+            },
+            {
+              "definition": "國字筆畫名稱",
+              "examples": [
+                "橫折鉤"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄏㄥˋ",
+          "senses": [
+            {
+              "definition": "粗暴猛烈、不講理的",
+              "examples": [
+                "蠻橫"
+              ]
+            },
+            {
+              "definition": "意外的、不正常的",
+              "examples": [
+                "橫禍。 9. 8. 7. 6. 迎 印 溜 留 主 柱 蛀 住 注 受 愛 ：歡迎",
+                "迎接 ：印章",
+                "手印 ：溜冰",
+                "溜走 ：留言",
+                "停留 ：主要",
+                "主動 ：柱子 ：蛀牙",
+                "蛀蟲 ：居住",
+                "住家 ：注意",
+                "注重 ：難受",
+                "受傷 ：喜愛",
+                "愛心 5. 4. 3. 2. 1. 解 蟹 傍 螃 腿 退 莓 梅 海 炒 吵 沙 ：解決",
+                "解釋 ：蝦兵蟹將 ：傍晚 ：螃蟹 ：大腿",
+                "跑腿 ：後退",
+                "退步 ：草莓",
+                "莓果 ：梅花",
+                "酸梅 ：海水",
+                "海浪 ：炒菜",
+                "炒飯 ：吵鬧",
+                "吵架 ：泥沙",
+                "沙發 22"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG2H05:01",
+      "stem": "請仔細聽題目：為什麼沙灘看起來好大好大？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "因為退潮時，海水會離岸邊比較遠，讓沙灘看起來很大。",
+        "因為是螃蟹的家。",
+        "傍晚夕陽西下時。"
+      ],
+      "answer": "因為退潮時，海水會離岸邊比較遠，讓沙灘看起來很大。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "海水退得好遠好遠，沙灘看起來好大好大。"
+    },
+    {
+      "id": "listening:115AG2H05:02",
+      "stem": "請仔細聽題目：沙灘上為什麼會有很多小洞？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "因為是螃蟹的家。",
+        "因為退潮時，海水會離岸邊比較遠，讓沙灘看起來很大。",
+        "傍晚夕陽西下時。"
+      ],
+      "answer": "因為是螃蟹的家。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "你們看，沙灘上有很多小洞，小螃蟹爬進爬出好可愛！"
+    },
+    {
+      "id": "listening:115AG2H05:03",
+      "stem": "請仔細聽題目：小真一家人在沙灘畫畫的時間是什麼時候？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "傍晚夕陽西下時。",
+        "因為退潮時，海水會離岸邊比較遠，讓沙灘看起來很大。",
+        "因為是螃蟹的家。"
+      ],
+      "answer": "傍晚夕陽西下時。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "夕陽把沙灘照得閃閃發亮，他們光著腳丫，橫著走，在沙灘上留下大大小小的腳印。"
+    },
+    {
+      "id": "listening:115AG2H05:04",
+      "stem": "請仔細聽題目：為什麼小真一家人在沙灘上要橫著走？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "要學螃蟹走路。",
+        "因為退潮時，海水會離岸邊比較遠，讓沙灘看起來很大。",
+        "因為是螃蟹的家。"
+      ],
+      "answer": "要學螃蟹走路。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "妹妹說：「我知道，我們來學螃蟹走路吧！」"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG2H05:01",
+      "para_no": 1,
+      "summary": "小真一家人到海邊玩。",
+      "structure_role": "第1段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H05:02",
+      "para_no": 2,
+      "summary": "小真發現有螃蟹。",
+      "structure_role": "第2段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H05:03",
+      "para_no": 3,
+      "summary": "媽媽問小真螃蟹怎麼走路的。",
+      "structure_role": "第3段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H05:04",
+      "para_no": 4,
+      "summary": "妹妹搶答，並提議學螃蟹走路。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H05:05",
+      "para_no": 5,
+      "summary": "全家人一起學螃蟹橫著走路，留下大大小小的腳印。",
+      "structure_role": "第5段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H05:06",
+      "para_no": 6,
+      "summary": "全家人的腳印和螃蟹挖的小洞，好像美麗的畫。",
+      "structure_role": "第6段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "id": "main_idea:115AG2H05:01",
+    "gist": "小真一家人到海邊玩，發現沙灘上有很多小洞。小真和家人學著螃蟹走路的方式，在沙灘上留下腳印。夕陽下，全家人的腳印和螃蟹挖的小洞，形成了美麗的畫。",
+    "theme": "透過小真一家人到海邊沙灘遊玩，一家人的觀察、互動，引出人與自然所形成的美麗的畫。",
+    "status": "approved",
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG2H05:01",
+      "stem": "為什麼沙灘看起來好大好大？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為退潮時，海水會離岸邊比較遠，讓沙灘看起來很大。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H05:02",
+      "stem": "沙灘上為什麼會有很多小洞？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "因為是螃蟹的家。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H05:03",
+      "stem": "小真一家人在沙灘畫畫的時間是什麼時候？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "傍晚夕陽西下時。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H05:04",
+      "stem": "為什麼小真一家人在沙灘上要橫著走？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "要學螃蟹走路。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H05:05",
+      "stem": "沙灘上為什麼會有大大小小的腳印？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為小真一家有大人也有小孩，每個人的腳大小不同。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H05:06",
+      "stem": "說說看沙灘上的這幅畫，和一般的圖畫有什麼不同？",
+      "strategy_tag": "比較評估",
+      "answer_hint": "這幅畫是大自然和人類合作而成的天然畫作，美麗但無法永久保存，卻可以永遠留在家人心中。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H05:07",
+      "stem": "想一想，這篇文章主要想告訴我們什麼道理呢？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "我們如果能發揮觀察與想像力，善用大自然的材料，就可以畫出一幅幅好畫作。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG2H05:01",
+      "group_no": "1",
+      "question": "____灘",
+      "answer": "沙",
+      "chars": [
+        {
+          "char": "沙",
+          "zhuyin": null,
+          "example": "沙灘"
+        },
+        {
+          "char": "吵",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "炒",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H05:02",
+      "group_no": "2",
+      "question": "____邊",
+      "answer": "海",
+      "chars": [
+        {
+          "char": "海",
+          "zhuyin": null,
+          "example": "海邊"
+        },
+        {
+          "char": "梅",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "莓",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H05:03",
+      "group_no": "3",
+      "question": "向後倒行、移動：____",
+      "answer": "退",
+      "chars": [
+        {
+          "char": "退",
+          "zhuyin": null,
+          "example": "退"
+        },
+        {
+          "char": "腿",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H05:04",
+      "group_no": "4",
+      "question": "____蟹",
+      "answer": "螃",
+      "chars": [
+        {
+          "char": "螃",
+          "zhuyin": null,
+          "example": "螃蟹"
+        },
+        {
+          "char": "傍",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H05:05",
+      "group_no": "5",
+      "question": "螃____",
+      "answer": "蟹",
+      "chars": [
+        {
+          "char": "蟹",
+          "zhuyin": null,
+          "example": "螃蟹"
+        },
+        {
+          "char": "解",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H05:06",
+      "group_no": "6",
+      "question": "可____",
+      "answer": "愛",
+      "chars": [
+        {
+          "char": "愛",
+          "zhuyin": null,
+          "example": "可愛"
+        },
+        {
+          "char": "受",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H05:07",
+      "group_no": "7",
+      "question": "____意",
+      "answer": "注",
+      "chars": [
+        {
+          "char": "注",
+          "zhuyin": null,
+          "example": "注意"
+        },
+        {
+          "char": "住",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "柱",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "蛙",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H05:08",
+      "group_no": "8",
+      "question": "遺下、放下：____",
+      "answer": "留",
+      "chars": [
+        {
+          "char": "留",
+          "zhuyin": null,
+          "example": "留"
+        },
+        {
+          "char": "溜",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H05:09",
+      "group_no": "9",
+      "question": "腳____",
+      "answer": "印",
+      "chars": [
+        {
+          "char": "印",
+          "zhuyin": null,
+          "example": "腳印"
+        },
+        {
+          "char": "迎",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「沙」的部首是哪一個？",
+      "options": [
+        "⾡",
+        "⼣",
+        "⼙"
+      ],
+      "answer": "⽔",
+      "explanation": "「沙」的部首是⽔。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「灘」的部首是哪一個？",
+      "options": [
+        "⾡",
+        "⼣",
+        "⽊"
+      ],
+      "answer": "⽔",
+      "explanation": "「灘」的部首是⽔。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「海」的部首是哪一個？",
+      "options": [
+        "⼣",
+        "⾍",
+        "⼼"
+      ],
+      "answer": "⽔",
+      "explanation": "「海」的部首是⽔。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「海邊」是什麼意思？",
+      "options": [
+        "遺下、放下。",
+        "左右向的。與「直」相對。",
+        "腳所踏過的痕跡。"
+      ],
+      "answer": "海的邊緣一帶。",
+      "explanation": "海邊：海的邊緣一帶。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「沙灘」是什麼意思？",
+      "options": [
+        "時間、空間的距離大，與「近」相對。",
+        "關注留意。",
+        "海的邊緣一帶。"
+      ],
+      "answer": "水邊的沙地。",
+      "explanation": "沙灘：水邊的沙地。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「美麗」是什麼意思？",
+      "options": [
+        "討人喜愛。",
+        "用手或工具由物體的表面向內掏取或掘取。",
+        "漂亮、美好；使人看了心生喜悅的。"
+      ],
+      "answer": "漂亮、美好；使人看了心生喜悅的。",
+      "explanation": "美麗：漂亮、美好；使人看了心生喜悅的。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「挖」是什麼意思？",
+      "options": [
+        "腳所踏過的痕跡。",
+        "向後倒行、移動。與「進」相反。",
+        "遺下、放下。"
+      ],
+      "answer": "用手或工具由物體的表面向內掏取或掘取。",
+      "explanation": "挖：用手或工具由物體的表面向內掏取或掘取。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「注意」是什麼意思？",
+      "options": [
+        "腳所踏過的痕跡。",
+        "時間、空間的距離大，與「近」相對。",
+        "用手或工具由物體的表面向內掏取或掘取。"
+      ],
+      "answer": "關注留意。",
+      "explanation": "注意：關注留意。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "公開資料只放摘要與理解提問，不放課文全文。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "available",
+      "activity": "application"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "available",
+      "activity": "listening-quiz"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "unavailable",
+      "activity": "rhetoric",
+      "note": "無此資料。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  },
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag2h-05",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E6%B2%99%E7%81%98%E6%B5%B7%E9%82%8A%E9%80%80%E9%81%A0%E8%9E%83%E8%9F%B9%E6%84%9B%E6%B3%A8%E5%A4%95%E8%85%B3%E4%B8%AB%E6%A9%AB%E7%95%99%E5%8D%B0%E6%8C%96%E9%BA%97",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・2年級・第5課",
+      "login_required": false,
+      "checked_at": "2026-09-27",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "候",
+        "颳",
+        "冷",
+        "躲",
+        "閃",
+        "電",
+        "難",
+        "烏",
+        "雲",
+        "密",
+        "布",
+        "盆",
+        "充",
+        "滿",
+        "放",
+        "晴",
+        "現",
+        "虹"
+      ],
+      "2": [
+        "老",
+        "師",
+        "新",
+        "希",
+        "望",
+        "卻",
+        "使",
+        "緊",
+        "因",
+        "為",
+        "知",
+        "道",
+        "怎",
+        "消",
+        "失",
+        "習",
+        "最",
+        "掛"
+      ],
+      "3": [
+        "國",
+        "王",
+        "喜",
+        "歡",
+        "穿",
+        "只",
+        "件",
+        "點",
+        "改",
+        "領",
+        "越",
+        "設",
+        "計",
+        "發",
+        "方",
+        "法",
+        "分",
+        "享"
+      ],
+      "4": [
+        "呱",
+        "聞",
+        "聲",
+        "猜",
+        "蛙",
+        "別",
+        "靠",
+        "近",
+        "抓",
+        "如",
+        "果",
+        "乖",
+        "腦",
+        "袋",
+        "瓜",
+        "證",
+        "明",
+        "頂"
+      ],
+      "5": [
+        "沙",
+        "灘",
+        "海",
+        "邊",
+        "退",
+        "遠",
+        "螃",
+        "蟹",
+        "愛",
+        "注",
+        "夕",
+        "腳",
+        "丫",
+        "橫",
+        "留",
+        "印",
+        "挖",
+        "麗"
+      ]
+    }
+  }
+}

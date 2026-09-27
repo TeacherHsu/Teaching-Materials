@@ -13,7 +13,7 @@
   "lesson_no": 12,
   "title": "不一樣的團圓",
   "author": "",
-  "blurb": "透過〈不一樣的團圓〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "比較家人團聚與視訊相見的方式，讀出不同團圓裡相同的惦念。",
   "characters": [
     {
       "char": "團",
@@ -287,28 +287,148 @@
       "id": "word:115AG3H12:01",
       "word": "團圓",
       "zhuyin": "ㄊㄨㄢˊ ㄩㄢˊ",
-      "meaning": "家人從各處回來相聚。",
+      "meaning": "親屬團聚。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
-      "image": "/assets/115AG3H/lesson12/vocabulary/l12-01.webp",
+      "image": "/assets/115AG3H/lesson12/vocabulary/l12-target-01.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
     },
     {
       "id": "word:115AG3H12:02",
-      "word": "視訊",
-      "zhuyin": "ㄕˋ ㄒㄩㄣˋ",
-      "meaning": "利用螢幕看到對方並交談。",
+      "word": "剩下",
+      "zhuyin": null,
+      "meaning": "剩餘、殘留。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
-      "image": "/assets/115AG3H/lesson12/vocabulary/l12-02.webp",
+      "image": "/assets/115AG3H/lesson12/vocabulary/l12-target-02.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
     },
     {
       "id": "word:115AG3H12:03",
+      "word": "默默",
+      "zhuyin": null,
+      "meaning": "沉靜不說話。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson12/vocabulary/l12-target-03.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H12:04",
+      "word": "樓",
+      "zhuyin": null,
+      "meaning": "樓房的一層。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson12/vocabulary/l12-target-04.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H12:05",
+      "word": "視訊",
+      "zhuyin": "ㄕˋ ㄒㄩㄣˋ",
+      "meaning": "此指人們透過即時的語音和動態畫面，不必聚在同一處就可以看到對方並交談。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson12/vocabulary/l12-target-05.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H12:06",
+      "word": "叔叔",
+      "zhuyin": null,
+      "meaning": "稱父親的弟弟或泛稱與父親同輩，年紀較小的男子。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson12/vocabulary/l12-target-06.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H12:07",
+      "word": "鏡頭",
+      "zhuyin": null,
+      "meaning": "攝影機或放映機上，由透鏡組成的光學裝置。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson12/vocabulary/l12-target-07.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H12:08",
+      "word": "逗",
+      "zhuyin": null,
+      "meaning": "招惹、引弄。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson12/vocabulary/l12-target-08.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H12:09",
+      "word": "娃",
+      "zhuyin": null,
+      "meaning": "小孩。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson12/vocabulary/l12-target-09.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H12:10",
+      "word": "壓歲錢",
+      "zhuyin": null,
+      "meaning": "農曆除夕時，長輩給晚輩的錢。有為對方求福求壽的意思。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson12/vocabulary/l12-target-10.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H12:11",
+      "word": "透過",
+      "zhuyin": null,
+      "meaning": "經由、通過。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson12/vocabulary/l12-target-11.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H12:12",
+      "word": "握",
+      "zhuyin": null,
+      "meaning": "用手拿著或抓緊。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson12/vocabulary/l12-target-12.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H12:13",
       "word": "親戚",
       "zhuyin": "ㄑㄧㄣ ㄑㄧ",
       "meaning": "和自己有親屬關係的人。",
@@ -320,7 +440,7 @@
       "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
     },
     {
-      "id": "word:115AG3H12:04",
+      "id": "word:115AG3H12:14",
       "word": "想念",
       "zhuyin": "ㄒㄧㄤˇ ㄋㄧㄢˋ",
       "meaning": "心中掛念著不在身邊的人。",
@@ -332,7 +452,7 @@
       "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
     },
     {
-      "id": "word:115AG3H12:05",
+      "id": "word:115AG3H12:15",
       "word": "爺爺奶奶",
       "zhuyin": "ㄧㄝˊ ㄧㄝˊ ㄋㄞˇ ㄋㄞˇ",
       "meaning": "父親或母親的父母。",
@@ -344,7 +464,7 @@
       "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
     },
     {
-      "id": "word:115AG3H12:06",
+      "id": "word:115AG3H12:16",
       "word": "幸福",
       "zhuyin": "ㄒㄧㄥˋ ㄈㄨˊ",
       "meaning": "生活美滿、快樂的感覺。",
@@ -364,45 +484,60 @@
       "idiom": "一團和氣",
       "definition": "形容一片祥和的氣氛。",
       "related_char": "團",
-      "image": null,
+      "image": "idioms/01_一團和氣.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H12:3833659b",
       "idiom": "潛移默化",
       "definition": "人的思想、性格或習慣在不知不覺中改變。",
       "related_char": "默",
-      "image": null,
+      "image": "idioms/02_潛移默化.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H12:cf6105a2",
       "idiom": "人去樓空",
       "definition": "表示舊地重遊時，人事已非。",
       "related_char": "樓",
-      "image": null,
+      "image": "idioms/03_人去樓空.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H12:68c8bf4a",
       "idiom": "一視同仁",
       "definition": "平等對待，毫無歧視。",
       "related_char": "視",
-      "image": null,
+      "image": "idioms/04_一視同仁.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H12:70d4598b",
       "idiom": "破鏡重圓",
       "definition": "比喻夫妻離散或感情決裂後重新團圓和好。",
       "related_char": "鏡",
-      "image": null,
+      "image": "idioms/05_破鏡重圓.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -1140,7 +1275,8 @@
       ],
       "answer": "有些著急，擔心來不及探望嬸嬸。",
       "status": "approved",
-      "source": "115G3A／翰林官方教材（15閱讀理解提問：第12課）"
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第12課）",
+      "passage": "長長的雨絲落在車窗上，除夕夜的路上，好像只剩下我們一家人。我默默看著時間，心裡只想著要趕快看到嬸嬸。"
     },
     {
       "id": "listening:115AG3H12:0002",
@@ -1153,7 +1289,8 @@
       ],
       "answer": "因為嬸嬸剛生小寶寶，需要在月子中心好好休息。",
       "status": "approved",
-      "source": "115G3A／翰林官方教材（15閱讀理解提問：第12課）"
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第12課）",
+      "passage": "為了讓嬸嬸能在月子中心好好休息，我們改用視訊問候叔叔、嬸嬸吧！"
     },
     {
       "id": "listening:115AG3H12:0003",
@@ -1166,7 +1303,8 @@
       ],
       "answer": "家人在哪裡，家就在那裡。",
       "status": "approved",
-      "source": "115G3A／翰林官方教材（15閱讀理解提問：第12課）"
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第12課）",
+      "passage": "家人在哪裡，家就在那裡。"
     }
   ],
   "review_words": {

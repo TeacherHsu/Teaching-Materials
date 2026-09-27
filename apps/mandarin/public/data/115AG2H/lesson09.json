@@ -1,0 +1,1961 @@
+{
+  "lesson_id": "115AG2H09",
+  "volume": {
+    "code": "115AG2H",
+    "publisher": "翰林",
+    "grade": 2,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "二上國語課程"
+  },
+  "lesson_no": 9,
+  "title": "好味道",
+  "blurb": "找出家人各自準備食材的動作，說明壽司如何把大家的心意捲在一起。",
+  "characters": [
+    {
+      "char": "黃",
+      "zhuyin": "ㄏㄨㄤˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "小黃瓜",
+        "黃色",
+        "黃瓜"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=黃",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⿈",
+      "stroke_count": 12
+    },
+    {
+      "char": "沖",
+      "zhuyin": "ㄔㄨㄥ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "沖澡",
+        "沖洗",
+        "沖水"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=沖",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽔",
+      "stroke_count": 7
+    },
+    {
+      "char": "澡",
+      "zhuyin": "ㄗㄠˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "沖澡",
+        "洗澡",
+        "澡堂"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=澡",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽔",
+      "stroke_count": 16
+    },
+    {
+      "char": "蘿",
+      "zhuyin": "ㄌㄨㄛˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "紅蘿蔔",
+        "蘿蔔",
+        "蘿蔔糕"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=蘿",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾋",
+      "stroke_count": 22
+    },
+    {
+      "char": "蔔",
+      "zhuyin": "ㄅㄛˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "紅蘿蔔",
+        "蘿蔔",
+        "蘿蔔糕"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=蔔",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾋",
+      "stroke_count": 14
+    },
+    {
+      "char": "哪",
+      "zhuyin": "ㄋㄚˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "哪裡",
+        "哪個",
+        "哪些"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=哪",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼝",
+      "stroke_count": 9
+    },
+    {
+      "char": "粒",
+      "zhuyin": "ㄌㄧˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "米粒",
+        "顆粒",
+        "一粒"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=粒",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽶",
+      "stroke_count": 11
+    },
+    {
+      "char": "熱",
+      "zhuyin": "ㄖㄜˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "熱水",
+        "熱鬧",
+        "熱心"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=熱",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽕",
+      "stroke_count": 15
+    },
+    {
+      "char": "浴",
+      "zhuyin": "ㄩˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "浴室",
+        "浴巾",
+        "沐浴"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=浴",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽔",
+      "stroke_count": 10
+    },
+    {
+      "char": "蒸",
+      "zhuyin": "ㄓㄥ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "蒸煮",
+        "蒸氣",
+        "蒸熟"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=蒸",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽕",
+      "stroke_count": 13
+    },
+    {
+      "char": "胖",
+      "zhuyin": "ㄆㄤˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "胖子",
+        "肥胖",
+        "胖胖"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=胖",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾁",
+      "stroke_count": 9
+    },
+    {
+      "char": "名",
+      "zhuyin": "ㄇㄧㄥˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "點名",
+        "名字",
+        "名單"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=名",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼝",
+      "stroke_count": 6
+    },
+    {
+      "char": "苔",
+      "zhuyin": "ㄊㄞˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "海苔",
+        "苔蘚",
+        "青苔"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=苔",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾋",
+      "stroke_count": 9
+    },
+    {
+      "char": "蛋",
+      "zhuyin": "ㄉㄢˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "雞蛋",
+        "蛋糕",
+        "蛋白"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=蛋",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾍",
+      "stroke_count": 11
+    },
+    {
+      "char": "蔬",
+      "zhuyin": "ㄕㄨ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "蔬菜",
+        "蔬果",
+        "蔬食"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=蔬",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾋",
+      "stroke_count": 15
+    },
+    {
+      "char": "通",
+      "zhuyin": "ㄊㄨㄥ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "通通",
+        "通過",
+        "通知"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=通",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾡",
+      "stroke_count": 11
+    },
+    {
+      "char": "細",
+      "zhuyin": "ㄒㄧˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "細心",
+        "細小",
+        "細節"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=細",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽷",
+      "stroke_count": 11
+    },
+    {
+      "char": "淡",
+      "zhuyin": "ㄉㄢˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "淡淡",
+        "淡水",
+        "淡色"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=淡",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽔",
+      "stroke_count": 11
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG2H09:01",
+      "word": "沖澡",
+      "zhuyin": null,
+      "meaning": "用水清洗身體。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson09/vocabulary/l09-01.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H09:02",
+      "word": "小黃瓜",
+      "zhuyin": null,
+      "meaning": "一年生攀緣植物，果實長條形。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson09/vocabulary/l09-02.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H09:03",
+      "word": "蒸",
+      "zhuyin": null,
+      "meaning": "利用水蒸氣的熱力把食物加熱或煮熟。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson09/vocabulary/l09-03.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H09:04",
+      "word": "浴室",
+      "zhuyin": null,
+      "meaning": "洗澡用的隔間。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson09/vocabulary/l09-04.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H09:05",
+      "word": "熱",
+      "zhuyin": null,
+      "meaning": "溫度高。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson09/vocabulary/l09-05.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H09:06",
+      "word": "米粒",
+      "zhuyin": null,
+      "meaning": "米的顆粒。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson09/vocabulary/l09-06.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H09:07",
+      "word": "哪",
+      "zhuyin": null,
+      "meaning": "表示加強語氣的助詞。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson09/vocabulary/l09-07.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H09:08",
+      "word": "紅蘿蔔",
+      "zhuyin": null,
+      "meaning": "即胡蘿蔔，二年生草本植物，主要食用其地下根。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson09/vocabulary/l09-08.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H09:09",
+      "word": "通通",
+      "zhuyin": null,
+      "meaning": "所有、全部。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson09/vocabulary/l09-09.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H09:10",
+      "word": "蔬菜",
+      "zhuyin": null,
+      "meaning": "所有可食用的青菜瓜果。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson09/vocabulary/l09-10.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H09:11",
+      "word": "蛋",
+      "zhuyin": null,
+      "meaning": "鳥類或爬蟲類所生的卵。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson09/vocabulary/l09-11.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H09:12",
+      "word": "海苔",
+      "zhuyin": null,
+      "meaning": "植物名，生長在淺海岩石上，可食用。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson09/vocabulary/l09-12.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H09:13",
+      "word": "點名",
+      "zhuyin": null,
+      "meaning": "按照名冊一個一個檢查、核對。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson09/vocabulary/l09-13.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H09:14",
+      "word": "胖",
+      "zhuyin": null,
+      "meaning": "體態豐滿，脂肪多。相對於「瘦」。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson09/vocabulary/l09-14.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H09:15",
+      "word": "飄",
+      "zhuyin": null,
+      "meaning": "隨風吹送。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson09/vocabulary/l09-15.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H09:16",
+      "word": "淡淡",
+      "zhuyin": null,
+      "meaning": "味道清淺的樣子。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson09/vocabulary/l09-16.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H09:17",
+      "word": "黏",
+      "zhuyin": null,
+      "meaning": "物品像用膠水黏合一樣附著在一起。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson09/vocabulary/l09-17.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H09:18",
+      "word": "細心",
+      "zhuyin": null,
+      "meaning": "仔細、用心。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson09/vocabulary/l09-18.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [
+    {
+      "id": "meaning:115AG2H09:01",
+      "word": "沖澡",
+      "meaning": "用水清洗身體。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H09:02",
+      "word": "小黃瓜",
+      "meaning": "一年生攀緣植物，果實長條形。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H09:03",
+      "word": "蒸",
+      "meaning": "利用水蒸氣的熱力把食物加熱或煮熟。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H09:04",
+      "word": "浴室",
+      "meaning": "洗澡用的隔間。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H09:05",
+      "word": "熱",
+      "meaning": "溫度高。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H09:06",
+      "word": "米粒",
+      "meaning": "米的顆粒。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H09:07",
+      "word": "哪",
+      "meaning": "表示加強語氣的助詞。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H09:08",
+      "word": "紅蘿蔔",
+      "meaning": "即胡蘿蔔，二年生草本植物，主要食用其地下根。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H09:09",
+      "word": "通通",
+      "meaning": "所有、全部。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H09:10",
+      "word": "蔬菜",
+      "meaning": "所有可食用的青菜瓜果。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H09:11",
+      "word": "蛋",
+      "meaning": "鳥類或爬蟲類所生的卵。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H09:12",
+      "word": "海苔",
+      "meaning": "植物名，生長在淺海岩石上，可食用。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H09:13",
+      "word": "點名",
+      "meaning": "按照名冊一個一個檢查、核對。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H09:14",
+      "word": "胖",
+      "meaning": "體態豐滿，脂肪多。相對於「瘦」。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H09:15",
+      "word": "飄",
+      "meaning": "隨風吹送。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H09:16",
+      "word": "淡淡",
+      "meaning": "味道清淺的樣子。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H09:17",
+      "word": "黏",
+      "meaning": "物品像用膠水黏合一樣附著在一起。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H09:18",
+      "word": "細心",
+      "meaning": "仔細、用心。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "sentences": [
+    {
+      "category": "短語練習",
+      "pattern": "淡淡的香氣",
+      "examples": [
+        "香香的麵包",
+        "硬硬的石頭"
+      ],
+      "description": "利用疊字詞，強調事物的特色。",
+      "structure": "疊字形容詞＋的＋名詞（什麼事物）",
+      "id": "sentence-pattern:115AG2H09:01",
+      "head": "淡淡的香氣",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短句練習",
+      "pattern": "我來點點名。",
+      "examples": [
+        "小鴨來玩玩水。",
+        "妹妹來唱唱歌。"
+      ],
+      "description": "利用疊字詞來強調動作。",
+      "structure": "名詞（人或動物）＋來＋疊字動詞＋名詞（什麼事物）。",
+      "id": "sentence-pattern:115AG2H09:02",
+      "head": "我來點點名。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "idioms": [
+    {
+      "id": "idiom:115AG2H09:01",
+      "idiom": "古道熱腸",
+      "definition": "形容待人仁厚、熱心。",
+      "related_char": "熱",
+      "image": "idioms/01_古道熱腸-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H09:02",
+      "idiom": "水深火熱",
+      "definition": "比喻處境非常艱困、痛苦。",
+      "related_char": "熱",
+      "image": "idioms/02_水深火熱-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H09:03",
+      "idiom": "蒸蒸日上",
+      "definition": "形容事物不斷的進步。",
+      "related_char": "蒸",
+      "image": "idioms/03_蒸蒸日上-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H09:04",
+      "idiom": "名不虛傳",
+      "definition": "名聲與實際相符，而不是空有好名聲。",
+      "related_char": "名",
+      "image": "idioms/04_名不虛傳-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H09:05",
+      "idiom": "四通八達",
+      "definition": "四方相通的道路。形容交通便利。",
+      "related_char": "通",
+      "image": "idioms/05_四通八達-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H09:06",
+      "idiom": "細水長流",
+      "definition": "比喻力量微小，但是能堅持到底，最後就會成功。",
+      "related_char": "細",
+      "image": "idioms/06_細水長流-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:115AG2H09:01",
+      "idiom_id": "idiom:115AG2H09:01",
+      "rewritten": "黃里長總是那麼古道熱腸，待人誠懇又熱心。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H09:02",
+      "idiom_id": "idiom:115AG2H09:02",
+      "rewritten": "戰亂中的國家，人民通常都過著水深火熱的日子。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H09:03",
+      "idiom_id": "idiom:115AG2H09:03",
+      "rewritten": "在他的努力經營下，公司業績蒸蒸日上。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H09:04",
+      "idiom_id": "idiom:115AG2H09:04",
+      "rewritten": "親眼看到陽明山百花齊開的景色，果然名不虛傳！",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H09:05",
+      "idiom_id": "idiom:115AG2H09:05",
+      "rewritten": "這裡的交通四通八達，要到各個景點都很方便。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H09:06",
+      "idiom_id": "idiom:115AG2H09:06",
+      "rewritten": "每日存下一點小錢，細水長流，也會累積成一筆財富。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "category": "短語練習",
+      "pattern": "淡淡的香氣",
+      "examples": [
+        "香香的麵包",
+        "硬硬的石頭"
+      ],
+      "description": "利用疊字詞，強調事物的特色。",
+      "structure": "疊字形容詞＋的＋名詞（什麼事物）",
+      "id": "sentence-pattern:115AG2H09:01",
+      "head": "淡淡的香氣",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短句練習",
+      "pattern": "我來點點名。",
+      "examples": [
+        "小鴨來玩玩水。",
+        "妹妹來唱唱歌。"
+      ],
+      "description": "利用疊字詞來強調動作。",
+      "structure": "名詞（人或動物）＋來＋疊字動詞＋名詞（什麼事物）。",
+      "id": "sentence-pattern:115AG2H09:02",
+      "head": "我來點點名。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG2H09:哪:01",
+      "char": "哪",
+      "sentence": "生活中，我們會用到《好鹹哪！》這個詞。",
+      "definition": "助詞。表示加強語氣",
+      "options": [
+        "助詞。表示加強語氣",
+        "嘆詞",
+        "疑問詞",
+        "怎麼。表示反問",
+        "佛教故事中的神仙，名為哪吒"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H09:哪:02",
+      "char": "哪",
+      "sentence": "生活中，我們會用到《天哪！》這個詞。",
+      "definition": "嘆詞",
+      "options": [
+        "助詞。表示加強語氣",
+        "嘆詞",
+        "疑問詞",
+        "怎麼。表示反問",
+        "佛教故事中的神仙，名為哪吒"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H09:哪:03",
+      "char": "哪",
+      "sentence": "生活中，我們會用到《哪裡人？》這個詞。",
+      "definition": "疑問詞",
+      "options": [
+        "助詞。表示加強語氣",
+        "嘆詞",
+        "疑問詞",
+        "怎麼。表示反問",
+        "佛教故事中的神仙，名為哪吒"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H09:哪:04",
+      "char": "哪",
+      "sentence": "生活中，我們會用到《哪會？》這個詞。",
+      "definition": "怎麼。表示反問",
+      "options": [
+        "助詞。表示加強語氣",
+        "嘆詞",
+        "疑問詞",
+        "怎麼。表示反問",
+        "佛教故事中的神仙，名為哪吒"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H09:哪:05",
+      "char": "哪",
+      "sentence": "生活中，我們會用到《哪》這個詞。",
+      "definition": "佛教故事中的神仙，名為哪吒",
+      "options": [
+        "助詞。表示加強語氣",
+        "嘆詞",
+        "疑問詞",
+        "怎麼。表示反問",
+        "佛教故事中的神仙，名為哪吒"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H09:胖:01",
+      "char": "胖",
+      "sentence": "生活中，我們會用到《肥胖》這個詞。",
+      "definition": "體態豐滿、脂肪多。與「瘦」相 對",
+      "options": [
+        "體態豐滿、脂肪多。與「瘦」相 對",
+        "平安康泰，心情開闊舒暢"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H09:胖:02",
+      "char": "胖",
+      "sentence": "生活中，我們會用到《心寬體胖》這個詞。",
+      "definition": "平安康泰，心情開闊舒暢",
+      "options": [
+        "體態豐滿、脂肪多。與「瘦」相 對",
+        "平安康泰，心情開闊舒暢"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H09:苔:01",
+      "char": "苔",
+      "sentence": "生活中，我們會用到《海苔》這個詞。",
+      "definition": "植物名。常貼附於潮溼的地面或 石頭上生長",
+      "options": [
+        "植物名。常貼附於潮溼的地面或 石頭上生長",
+        "長在舌面上的滑膩物質。中醫師 用來診斷病情"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H09:苔:02",
+      "char": "苔",
+      "sentence": "生活中，我們會用到《舌苔。 10. 9. 8. 7. 6. 漂 飄 黍 黏 勇 通 蚤 蛋 抬 苔 ：漂浮》這個詞。",
+      "definition": "長在舌面上的滑膩物質。中醫師 用來診斷病情",
+      "options": [
+        "植物名。常貼附於潮溼的地面或 石頭上生長",
+        "長在舌面上的滑膩物質。中醫師 用來診斷病情"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG2H09:哪",
+      "char": "哪",
+      "readings": [
+        {
+          "zhuyin": "ㄋㄚˇ",
+          "senses": [
+            {
+              "definition": "助詞。表示加強語氣",
+              "examples": [
+                "好鹹哪！"
+              ]
+            },
+            {
+              "definition": "嘆詞",
+              "examples": [
+                "天哪！"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄋㄚˇ",
+          "senses": [
+            {
+              "definition": "疑問詞",
+              "examples": [
+                "哪裡人？"
+              ]
+            },
+            {
+              "definition": "怎麼。表示反問",
+              "examples": [
+                "哪會？"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄋㄜˊ",
+          "senses": [
+            {
+              "definition": "佛教故事中的神仙，名為哪吒",
+              "examples": []
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    },
+    {
+      "id": "polyphone:115AG2H09:胖",
+      "char": "胖",
+      "readings": [
+        {
+          "zhuyin": "ㄆㄤˋ",
+          "senses": [
+            {
+              "definition": "體態豐滿、脂肪多。與「瘦」相 對",
+              "examples": [
+                "肥胖"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄆㄢˊ",
+          "senses": [
+            {
+              "definition": "平安康泰，心情開闊舒暢",
+              "examples": [
+                "心寬體胖"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    },
+    {
+      "id": "polyphone:115AG2H09:苔",
+      "char": "苔",
+      "readings": [
+        {
+          "zhuyin": "ㄊㄞˊ",
+          "senses": [
+            {
+              "definition": "植物名。常貼附於潮溼的地面或 石頭上生長",
+              "examples": [
+                "海苔"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄊㄞ",
+          "senses": [
+            {
+              "definition": "長在舌面上的滑膩物質。中醫師 用來診斷病情",
+              "examples": [
+                "舌苔。 10. 9. 8. 7. 6. 漂 飄 黍 黏 勇 通 蚤 蛋 抬 苔 ：漂浮",
+                "漂流 ：飄揚",
+                "飄動 ：玉蜀黍 ：黏貼",
+                "黏合 ：勇敢",
+                "勇氣 ：通過",
+                "通知 ：跳蚤 ：皮蛋",
+                "蛋糕 ：抬頭",
+                "抬高 ：海苔",
+                "青苔 5. 4. 3. 2. 1. 拌 伴 胖 熟 熱 拉 位 粒 挪 哪 忠 沖 ：攪拌",
+                "涼拌 ：夥伴",
+                "陪伴 ：發胖",
+                "肥胖 ：成熟",
+                "熟睡 ：熱心",
+                "加熱 ：拉手",
+                "沙拉 ：位置",
+                "部位 ：顆粒",
+                "米粒 ：挪開",
+                "挪動 ：天哪",
+                "好難哪 ：忠心",
+                "忠誠 ：沖水",
+                "沖刷 42"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG2H09:01",
+      "stem": "請仔細聽題目：觀察課文圖片，說說看，第一段中敘述小黃瓜在洗澡，紅蘿蔔急著想玩水，是指什麼意思呢？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "指媽媽正在廚房裡清洗蔬菜。",
+        "這應該是主角急著想要包壽司，才會覺得食材很急。",
+        "電鍋。"
+      ],
+      "answer": "指媽媽正在廚房裡清洗蔬菜。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "媽媽給小黃瓜沖澡，等在後面的紅蘿蔔，急著想玩水。"
+    },
+    {
+      "id": "listening:115AG2H09:02",
+      "stem": "請仔細聽題目：媽媽沖洗食材時，食材為什麼「急著想玩水」？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "這應該是主角急著想要包壽司，才會覺得食材很急。",
+        "指媽媽正在廚房裡清洗蔬菜。",
+        "電鍋。"
+      ],
+      "answer": "這應該是主角急著想要包壽司，才會覺得食材很急。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "我們細心的捲哪捲，把全家人緊緊黏在一起。"
+    },
+    {
+      "id": "listening:115AG2H09:03",
+      "stem": "請仔細聽題目：觀察課文圖片，爸爸把米粒送進發熱的浴室，﹁發熱的浴室﹂是指什麼東西？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "電鍋。",
+        "指媽媽正在廚房裡清洗蔬菜。",
+        "這應該是主角急著想要包壽司，才會覺得食材很急。"
+      ],
+      "answer": "電鍋。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "爸爸幫米粒泡澡，送進發熱的浴室，顆顆蒸得白又胖。"
+    },
+    {
+      "id": "listening:115AG2H09:04",
+      "stem": "請仔細聽題目：﹁米粒蒸得白又胖﹂是什麼意思？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "是米粒被煮成飯了。",
+        "指媽媽正在廚房裡清洗蔬菜。",
+        "這應該是主角急著想要包壽司，才會覺得食材很急。"
+      ],
+      "answer": "是米粒被煮成飯了。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "爸爸幫米粒泡澡，送進發熱的浴室，顆顆蒸得白又胖。"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG2H09:01",
+      "para_no": 1,
+      "summary": "媽媽清洗食材，食材像玩水一樣涼快。",
+      "structure_role": "第1段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H09:02",
+      "para_no": 2,
+      "summary": "爸爸洗米煮飯，米粒像在浴室泡澡一樣溫暖。",
+      "structure_role": "第2段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H09:03",
+      "para_no": 3,
+      "summary": "主角像點名一樣，把所有食材集合在一起。",
+      "structure_role": "第3段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H09:04",
+      "para_no": 4,
+      "summary": "全家人合作，把食材捲成黏合全家人愛心的好味道餐點。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "id": "main_idea:115AG2H09:01",
+    "gist": "媽媽洗菜，爸爸煮飯，主角將各樣材料捲在一起，做出把全家人愛心黏在一起的好味道餐點。",
+    "theme": "全家人分工合作，製作壽司，更藉由這樣的活動，讓家人的感情緊密相連。",
+    "status": "approved",
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG2H09:01",
+      "stem": "觀察課文圖片，說說看，第一段中敘述小黃瓜在洗澡，紅蘿蔔急著想玩水，是指什麼意思呢？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "指媽媽正在廚房裡清洗蔬菜。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H09:02",
+      "stem": "媽媽沖洗食材時，食材為什麼「急著想玩水」？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "這應該是主角急著想要包壽司，才會覺得食材很急。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H09:03",
+      "stem": "觀察課文圖片，爸爸把米粒送進發熱的浴室，﹁發熱的浴室﹂是指什麼東西？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "電鍋。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H09:04",
+      "stem": "﹁米粒蒸得白又胖﹂是什麼意思？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "是米粒被煮成飯了。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H09:05",
+      "stem": "主角為什麼要﹁點名﹂食材呢？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為捲壽司的材料很多種，主角把食材排好，像在點名一樣，然後再把食材用海苔和米飯捲在一起。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H09:06",
+      "stem": "你覺得主角所嘗到的好味道是什麼食物？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "壽司。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H09:07",
+      "stem": "請說出製作壽司的過程？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "先洗好小黃瓜和紅蘿蔔，再煮一鍋白米飯，最後用海苔把米飯、蛋皮、紅蘿蔔和小黃瓜捲起來，就能做出一條好吃的壽司。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H09:08",
+      "stem": "說一說，是什麼東西把全家人緊緊的黏在一起呢？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "一起製作美食時的快樂，或是家人之間的感情、愛心，讓全家人緊緊的黏在一起。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H09:09",
+      "stem": "主角把清洗小黃瓜，敘述成小黃瓜在洗澡；把煮飯的過程，寫成白米在浴室泡澡。想一想，說一說，主角為什麼要這樣寫？",
+      "strategy_tag": "比較評估",
+      "answer_hint": "把蔬菜比喻成人、把煮飯寫成米粒在電鍋裡泡澡，這樣讓人在閱讀的時候覺得很有趣，很有想像力。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG2H09:01",
+      "group_no": "1",
+      "question": "____澡",
+      "answer": "沖",
+      "chars": [
+        {
+          "char": "沖",
+          "zhuyin": null,
+          "example": "沖澡"
+        },
+        {
+          "char": "忠",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H09:02",
+      "group_no": "2",
+      "question": "表示加強語氣的助詞：____",
+      "answer": "哪",
+      "chars": [
+        {
+          "char": "哪",
+          "zhuyin": null,
+          "example": "哪"
+        },
+        {
+          "char": "挪",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H09:03",
+      "group_no": "3",
+      "question": "米____",
+      "answer": "粒",
+      "chars": [
+        {
+          "char": "粒",
+          "zhuyin": null,
+          "example": "米粒"
+        },
+        {
+          "char": "位",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "拉",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H09:04",
+      "group_no": "4",
+      "question": "溫度高：____",
+      "answer": "熱",
+      "chars": [
+        {
+          "char": "熱",
+          "zhuyin": null,
+          "example": "熱"
+        },
+        {
+          "char": "熟",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H09:05",
+      "group_no": "5",
+      "question": "體態豐滿，脂肪多：____",
+      "answer": "胖",
+      "chars": [
+        {
+          "char": "胖",
+          "zhuyin": null,
+          "example": "胖"
+        },
+        {
+          "char": "伴",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "拌",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H09:06",
+      "group_no": "6",
+      "question": "海____",
+      "answer": "苔",
+      "chars": [
+        {
+          "char": "苔",
+          "zhuyin": null,
+          "example": "海苔"
+        },
+        {
+          "char": "抬",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H09:07",
+      "group_no": "7",
+      "question": "鳥類或爬蟲類所生的卵：____",
+      "answer": "蛋",
+      "chars": [
+        {
+          "char": "蛋",
+          "zhuyin": null,
+          "example": "蛋"
+        },
+        {
+          "char": "蚤",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H09:08",
+      "group_no": "8",
+      "question": "____通",
+      "answer": "通",
+      "chars": [
+        {
+          "char": "通",
+          "zhuyin": null,
+          "example": "通通"
+        },
+        {
+          "char": "勇",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H09:09",
+      "group_no": "9",
+      "question": "像用膠水黏合一樣附著：____",
+      "answer": "黏",
+      "chars": [
+        {
+          "char": "黏",
+          "zhuyin": null,
+          "example": "黏"
+        },
+        {
+          "char": "黍",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H09:10",
+      "group_no": "10",
+      "question": "隨風吹送：____",
+      "answer": "飄",
+      "chars": [
+        {
+          "char": "飄",
+          "zhuyin": null,
+          "example": "飄"
+        },
+        {
+          "char": "漂",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「黃」的部首是哪一個？",
+      "options": [
+        "⽶",
+        "⿈",
+        "⽕"
+      ],
+      "answer": "⿈",
+      "explanation": "「黃」的部首是⿈。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「沖」的部首是哪一個？",
+      "options": [
+        "⿈",
+        "⽶",
+        "⾍"
+      ],
+      "answer": "⽔",
+      "explanation": "「沖」的部首是⽔。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「澡」的部首是哪一個？",
+      "options": [
+        "⾡",
+        "⽕",
+        "⼝"
+      ],
+      "answer": "⽔",
+      "explanation": "「澡」的部首是⽔。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「沖澡」是什麼意思？",
+      "options": [
+        "鳥類或爬蟲類所生的卵。",
+        "所有、全部。",
+        "一年生攀緣植物，果實長條形。"
+      ],
+      "answer": "用水清洗身體。",
+      "explanation": "沖澡：用水清洗身體。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「小黃瓜」是什麼意思？",
+      "options": [
+        "味道清淺的樣子。",
+        "米的顆粒。",
+        "利用水蒸氣的熱力把食物加熱或煮熟。"
+      ],
+      "answer": "一年生攀緣植物，果實長條形。",
+      "explanation": "小黃瓜：一年生攀緣植物，果實長條形。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「蒸」是什麼意思？",
+      "options": [
+        "隨風吹送。",
+        "米的顆粒。",
+        "植物名，生長在淺海岩石上，可食用。"
+      ],
+      "answer": "利用水蒸氣的熱力把食物加熱或煮熟。",
+      "explanation": "蒸：利用水蒸氣的熱力把食物加熱或煮熟。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「浴室」是什麼意思？",
+      "options": [
+        "米的顆粒。",
+        "物品像用膠水黏合一樣附著在一起。",
+        "味道清淺的樣子。"
+      ],
+      "answer": "洗澡用的隔間。",
+      "explanation": "浴室：洗澡用的隔間。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「熱」是什麼意思？",
+      "options": [
+        "按照名冊一個一個檢查、核對。",
+        "用水清洗身體。",
+        "洗澡用的隔間。"
+      ],
+      "answer": "溫度高。",
+      "explanation": "熱：溫度高。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "公開資料只放摘要與理解提問，不放課文全文。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "available",
+      "activity": "application"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "available",
+      "activity": "listening-quiz"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "unavailable",
+      "activity": "rhetoric",
+      "note": "無此資料。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  },
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag2h-09",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E9%BB%83%E6%B2%96%E6%BE%A1%E8%98%BF%E8%94%94%E5%93%AA%E7%B2%92%E7%86%B1%E6%B5%B4%E8%92%B8%E8%83%96%E5%90%8D%E8%8B%94%E8%9B%8B%E8%94%AC%E9%80%9A%E7%B4%B0%E6%B7%A1",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・2年級・第9課",
+      "login_required": false,
+      "checked_at": "2026-09-27",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "候",
+        "颳",
+        "冷",
+        "躲",
+        "閃",
+        "電",
+        "難",
+        "烏",
+        "雲",
+        "密",
+        "布",
+        "盆",
+        "充",
+        "滿",
+        "放",
+        "晴",
+        "現",
+        "虹"
+      ],
+      "2": [
+        "老",
+        "師",
+        "新",
+        "希",
+        "望",
+        "卻",
+        "使",
+        "緊",
+        "因",
+        "為",
+        "知",
+        "道",
+        "怎",
+        "消",
+        "失",
+        "習",
+        "最",
+        "掛"
+      ],
+      "3": [
+        "國",
+        "王",
+        "喜",
+        "歡",
+        "穿",
+        "只",
+        "件",
+        "點",
+        "改",
+        "領",
+        "越",
+        "設",
+        "計",
+        "發",
+        "方",
+        "法",
+        "分",
+        "享"
+      ],
+      "4": [
+        "呱",
+        "聞",
+        "聲",
+        "猜",
+        "蛙",
+        "別",
+        "靠",
+        "近",
+        "抓",
+        "如",
+        "果",
+        "乖",
+        "腦",
+        "袋",
+        "瓜",
+        "證",
+        "明",
+        "頂"
+      ],
+      "5": [
+        "沙",
+        "灘",
+        "海",
+        "邊",
+        "退",
+        "遠",
+        "螃",
+        "蟹",
+        "愛",
+        "注",
+        "夕",
+        "腳",
+        "丫",
+        "橫",
+        "留",
+        "印",
+        "挖",
+        "麗"
+      ],
+      "6": [
+        "月",
+        "奶",
+        "晚",
+        "飯",
+        "散",
+        "屋",
+        "竹",
+        "林",
+        "頭",
+        "溪",
+        "旁",
+        "暗",
+        "眼",
+        "睛",
+        "那",
+        "聚",
+        "成",
+        "顆"
+      ],
+      "7": [
+        "樣",
+        "食",
+        "郊",
+        "活",
+        "奇",
+        "筒",
+        "香",
+        "味",
+        "便",
+        "當",
+        "盒",
+        "客",
+        "清",
+        "節",
+        "保",
+        "平",
+        "安",
+        "南"
+      ],
+      "8": [
+        "介",
+        "圓",
+        "形",
+        "白",
+        "紙",
+        "米",
+        "變",
+        "軟",
+        "搶",
+        "材",
+        "蝦",
+        "線",
+        "各",
+        "種",
+        "菜",
+        "接",
+        "聽",
+        "更"
+      ],
+      "9": [
+        "黃",
+        "沖",
+        "澡",
+        "蘿",
+        "蔔",
+        "哪",
+        "粒",
+        "熱",
+        "浴",
+        "蒸",
+        "胖",
+        "名",
+        "苔",
+        "蛋",
+        "蔬",
+        "通",
+        "細",
+        "淡"
+      ]
+    }
+  }
+}

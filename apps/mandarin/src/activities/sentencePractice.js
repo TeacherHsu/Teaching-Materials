@@ -11,6 +11,7 @@ import { MatchingGame } from '../components/MatchingGame.js';
 import { SentenceOrdering } from '../components/SentenceOrdering.js';
 import { SentenceBuilder } from '../components/SentenceBuilder.js';
 import { TaskBanner } from '../components/TaskBanner.js';
+import { SpeakButton } from '../components/SpeakButton.js';
 import { missingContentNotice } from './engine.js';
 import { chunkRounds } from '../utils/chunk.js';
 import { filterByStatus, isPreview } from '../utils/preview.js';
@@ -134,9 +135,33 @@ function buildRoundsFromExamples(examples, promptPrefix) {
         parts: chunks,
         solution: chunks,
         draft: pattern.examples_status === 'draft',
+        pattern,
       };
     })
     .filter(Boolean);
+}
+
+function appendPatternContext(round, container) {
+  const pattern = round.pattern;
+  if (!pattern?.show_practice_context) return;
+
+  const fields = [
+    ['說明', pattern.description],
+    ['結構', pattern.structure],
+    ['練習引導', pattern.guide],
+    ['課文原句', pattern.course_sentence],
+  ].filter(([, value]) => value);
+  const spokenText = fields.map(([label, value]) => `${label}：${value}`).join('；');
+  container.appendChild(h('aside', { class: 'sentence-pattern-context', role: 'note' }, [
+    h('div', { class: 'sentence-pattern-context__head' }, [
+      h('p', { class: 'sentence-pattern-context__title' }, `${pattern.category || '句型'}提示`),
+      SpeakButton({ text: spokenText, label: '聽句型提示', showLabel: true, variant: 'speak-button--option speak-button--audio-label' }),
+    ]),
+    ...fields.map(([label, value]) => h('p', { class: 'sentence-pattern-context__line' }, [
+      h('strong', {}, `${label}：`),
+      value,
+    ])),
+  ]));
 }
 
 /**
@@ -148,8 +173,8 @@ export function buildSentencePracticeActivity(lesson, onBack) {
   const matchingRounds = chunkRounds(matchingPairs, { min: 3, max: 5 });
 
   const allExamples = flattenExamples(lesson);
-  // 句子重組用每個句型的第 1 句、仿寫選填用第 2 句（若沒有第 2 句才退回第 1 句），
-  // 讓兩步驟盡量不用同一句例句。
+  // 句子重組用每個句型的第 1 句；仿寫選填使用其他例句，
+  // 讓完整例句都能練到，並避免同一句重複出現在兩步驟。
   const seenPatternIds = new Map();
   const orderingExamples = [];
   const builderExamples = [];
@@ -157,12 +182,12 @@ export function buildSentencePracticeActivity(lesson, onBack) {
     const count = seenPatternIds.get(ex.pattern.id) || 0;
     seenPatternIds.set(ex.pattern.id, count + 1);
     if (count === 0) orderingExamples.push(ex);
-    else if (count === 1) builderExamples.push(ex);
+    else if (count === 1 || ex.pattern.practice_all_examples) builderExamples.push(ex);
   }
   if (builderExamples.length === 0) builderExamples.push(...orderingExamples);
 
-  const orderingRounds = buildRoundsFromExamples(orderingExamples, '請把下面的詞語排成一句通順的句子');
-  const builderRounds = buildRoundsFromExamples(builderExamples, '請選出正確的詞語，仿照句型組成一句話');
+  const orderingRounds = chunkRounds(buildRoundsFromExamples(orderingExamples, '請把下面的詞語排成一句通順的句子'), { min: 1, max: 3 });
+  const builderRounds = chunkRounds(buildRoundsFromExamples(builderExamples, '請選出正確的詞語，仿照句型組成一句話'), { min: 1, max: 3 });
 
   const steps = [];
   if (matchingRounds.length > 0) steps.push('matching');
@@ -172,6 +197,8 @@ export function buildSentencePracticeActivity(lesson, onBack) {
   const container = h('div', {});
   let stepIndex = 0;
   let roundIndex = 0;
+  let itemIndex = 0;
+  let coreComplete = false;
 
   function draftNoticeIfNeeded(rounds, idx) {
     if (isPreview() && rounds[idx] && rounds[idx].draft) {
@@ -187,77 +214,101 @@ export function buildSentencePracticeActivity(lesson, onBack) {
     }
     const step = steps[stepIndex];
     const isLastStep = stepIndex === steps.length - 1;
-    const stepLabel = `第 ${stepIndex + 1} 步／共 ${steps.length} 步`;
+    const taskLabel = coreComplete ? '加練挑戰' : '本課先完成';
 
     if (step === 'matching') {
       const isLastRound = roundIndex === matchingRounds.length - 1;
+      const canContinue = !isLastRound || !isLastStep;
       container.appendChild(
-        TaskBanner({ label: '短語搭配：把語詞和意思配對起來', step: `${stepLabel} ・ 第 ${roundIndex + 1} 組／共 ${matchingRounds.length} 組` }),
+        TaskBanner({ label: '短語搭配：把語詞和意思配對起來', step: taskLabel }),
       );
       container.appendChild(
         MatchingGame({
           pairs: matchingRounds[roundIndex],
           instructions: '選左邊的語詞，再選右邊的意思。',
-          backLabel: isLastRound ? (isLastStep ? '回課程首頁' : '繼續：句子重組') : '再來一組',
-          onBack: () => {
+          backLabel: canContinue ? '本課先完成' : '回課程首頁',
+          onBack,
+          onContinue: canContinue ? () => {
+            coreComplete = true;
             if (!isLastRound) {
               roundIndex += 1;
-              renderStep();
-            } else if (isLastStep) {
-              onBack();
             } else {
               stepIndex += 1;
               roundIndex = 0;
-              renderStep();
+              itemIndex = 0;
             }
-          },
+            renderStep();
+          } : null,
+          continueLabel: isLastRound ? '繼續：句子重組' : '加練下一組',
         }),
       );
     } else if (step === 'ordering') {
+      const group = orderingRounds[roundIndex];
+      const round = group[itemIndex];
       const isLastRound = roundIndex === orderingRounds.length - 1;
-      container.appendChild(
-        TaskBanner({ label: '句子重組', step: `${stepLabel} ・ 第 ${roundIndex + 1} 題／共 ${orderingRounds.length} 題` }),
-      );
-      draftNoticeIfNeeded(orderingRounds, roundIndex);
+      const isLastItem = itemIndex === group.length - 1;
+      const hasNextItem = !isLastItem;
+      const canContinue = hasNextItem || !isLastRound || !isLastStep;
+      const continueLabel = hasNextItem
+        ? '下一題'
+        : !isLastRound
+          ? '加練下一組'
+          : !isLastStep
+            ? '繼續：仿寫選填'
+            : '完成';
+      container.appendChild(TaskBanner({ label: '句子重組', step: taskLabel }));
+      appendPatternContext(round, container);
+      draftNoticeIfNeeded(group, itemIndex);
       container.appendChild(
         SentenceOrdering({
-          ...orderingRounds[roundIndex],
-          onBack: () => {
-            if (!isLastRound) {
+          ...round,
+          backLabel: canContinue ? '本課先完成' : '回課程首頁',
+          onBack,
+          onContinue: canContinue ? () => {
+            if (!hasNextItem) coreComplete = true;
+            if (hasNextItem) {
+              itemIndex += 1;
+            } else if (!isLastRound) {
               roundIndex += 1;
-              renderStep();
-            } else if (isLastStep) {
-              onBack();
+              itemIndex = 0;
             } else {
               stepIndex += 1;
               roundIndex = 0;
-              renderStep();
+              itemIndex = 0;
             }
-          },
+            renderStep();
+          } : null,
+          continueLabel,
         }),
       );
     } else if (step === 'builder') {
+      const group = builderRounds[roundIndex];
+      const round = group[itemIndex];
       const isLastRound = roundIndex === builderRounds.length - 1;
-      container.appendChild(
-        TaskBanner({ label: '仿寫選填', step: `${stepLabel} ・ 第 ${roundIndex + 1} 題／共 ${builderRounds.length} 題` }),
-      );
-      draftNoticeIfNeeded(builderRounds, roundIndex);
-      const round = builderRounds[roundIndex];
-      container.appendChild(
-        SentenceBuilder({
-          prompt: round.prompt,
-          bank: round.parts,
-          solution: round.solution,
-          onBack: () => {
-            if (!isLastRound) {
-              roundIndex += 1;
-              renderStep();
-            } else {
-              onBack();
-            }
-          },
-        }),
-      );
+      const isLastItem = itemIndex === group.length - 1;
+      const hasNextItem = !isLastItem;
+      const canContinue = hasNextItem || !isLastRound;
+      container.appendChild(TaskBanner({ label: '仿寫選填', step: taskLabel }));
+      appendPatternContext(round, container);
+      draftNoticeIfNeeded(group, itemIndex);
+      container.appendChild(SentenceBuilder({
+        prompt: round.prompt,
+        bank: round.parts,
+        solution: round.solution,
+        backLabel: canContinue ? '本課先完成' : '回課程首頁',
+        onBack,
+        onContinue: canContinue ? () => {
+          if (!hasNextItem) coreComplete = true;
+          if (hasNextItem) {
+            itemIndex += 1;
+          } else {
+            roundIndex += 1;
+            itemIndex = 0;
+          }
+          renderStep();
+        } : null,
+        continueLabel: hasNextItem ? '下一題' : '加練下一組',
+      }));
     }
   }
 

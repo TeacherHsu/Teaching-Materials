@@ -13,7 +13,7 @@
   "lesson_no": 5,
   "title": "為梨花撐傘",
   "author": "",
-  "blurb": "從替梨花遮雨的故事，學會觀察問題、改良方法，讓事情做得更方便、更有效。",
+  "blurb": "按製作小傘、發現不便到改用夾子的順序，整理方法如何逐步改良。",
   "characters": [
     {
       "char": "梨",
@@ -507,45 +507,55 @@
       "idiom": "甜言蜜語",
       "definition": "誘人動聽的言語。",
       "related_char": "甜",
-      "image": "idioms/01_甜言蜜語.webp",
+      "image": "idioms/01_甜言蜜語-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H05:海枯石爛",
       "idiom": "海枯石爛",
       "definition": "比喻歷時極其長久，或意志堅定、永不改變。",
       "related_char": "爛",
-      "image": "idioms/02_海枯石爛.webp",
+      "image": "idioms/02_海枯石爛-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H05:張口結舌",
       "idiom": "張口結舌",
       "definition": "形容恐懼慌張，說不出話的樣子。",
       "related_char": "結",
-      "image": "idioms/03_張口結舌.webp",
+      "image": "idioms/03_張口結舌-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H05:如膠似漆",
       "idiom": "如膠似漆",
       "definition": "形容感情非常深厚，彼此分不開。",
       "related_char": "膠",
-      "image": "idioms/04_如膠似漆.webp",
+      "image": "idioms/04_如膠似漆-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H05:一手遮天",
       "idiom": "一手遮天",
       "definition": "比喻有權勢的人運用手段，隱瞞真相。",
       "related_char": "遮",
-      "image": "idioms/05_一手遮天.webp",
+      "image": "idioms/05_一手遮天-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -1012,7 +1022,8 @@
       ],
       "answer": "梨花因下雨受傷",
       "status": "approved",
-      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（教師自撰聆聽題）"
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（教師自撰聆聽題）",
+      "passage": "很多梨花因為淋雨而腐爛，結不成果子。"
     },
     {
       "id": "listening:115AG3H05:2",
@@ -1025,7 +1036,8 @@
       ],
       "answer": "夾子",
       "status": "approved",
-      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（教師自撰聆聽題）"
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（教師自撰聆聽題）",
+      "passage": "這個方法不只要貼膠帶，還要綁線，實在很花時間。於是，又有梨農改良成帶有夾子的小雨傘。"
     },
     {
       "id": "listening:115AG3H05:3",
@@ -1038,7 +1050,8 @@
       ],
       "answer": "梨園有穩定收成",
       "status": "approved",
-      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（教師自撰聆聽題）"
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（教師自撰聆聽題）",
+      "passage": "結果，那一年有「撐傘」的梨樹，結出的果實果然比其他梨樹還要多。"
     }
   ],
   "review_words": {

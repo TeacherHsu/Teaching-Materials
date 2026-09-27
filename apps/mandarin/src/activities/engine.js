@@ -5,6 +5,7 @@ import { h, clear } from '../utils/dom.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { MatchingGame } from '../components/MatchingGame.js';
 import { TaskBanner } from '../components/TaskBanner.js';
+import { chunkRounds } from '../utils/chunk.js';
 
 /**
  * 「動手挑戰」依序拆成兩個子任務（先選擇題、後配對），畫面同時只呈現一個任務：
@@ -15,13 +16,17 @@ import { TaskBanner } from '../components/TaskBanner.js';
 export function buildChallengeActivity(lesson, onBack) {
   const choiceItems = (lesson.quiz || []).filter((q) => q.type === 'choice' && q.status === 'ready');
   const matchingItem = (lesson.quiz || []).find((q) => q.type === 'matching' && q.status === 'ready');
+  const choiceRounds = chunkRounds(choiceItems, { min: 3, max: 5 });
+  const matchingRounds = chunkRounds(matchingItem?.pairs || [], { min: 3, max: 5 });
 
   const steps = [];
-  if (choiceItems.length > 0) steps.push('choice');
-  if (matchingItem) steps.push('matching');
+  if (choiceRounds.length > 0) steps.push('choice');
+  if (matchingRounds.length > 0) steps.push('matching');
 
   const container = h('div', {});
   let stepIndex = 0;
+  let roundIndex = 0;
+  let coreComplete = false;
 
   function renderStep() {
     clear(container);
@@ -31,31 +36,43 @@ export function buildChallengeActivity(lesson, onBack) {
     }
     const step = steps[stepIndex];
     const isLastStep = stepIndex === steps.length - 1;
-    const stepLabel = `第 ${stepIndex + 1} 步／共 ${steps.length} 步`;
+    const taskLabel = coreComplete ? '加練挑戰' : '本課先完成';
 
     if (step === 'choice') {
-      container.appendChild(TaskBanner({ label: '選出正確的注音', step: stepLabel }));
+      const isLastRound = roundIndex === choiceRounds.length - 1;
+      const canContinue = !isLastRound || !isLastStep;
+      container.appendChild(TaskBanner({ label: '選出正確的注音', step: taskLabel }));
       container.appendChild(
         ChoiceQuiz({
-          items: choiceItems,
-          backLabel: isLastStep ? '回課程首頁' : '繼續：字詞配對',
+          items: choiceRounds[roundIndex],
+          backLabel: canContinue ? '本課先完成' : '回課程首頁',
           onBack: () => {
-            if (isLastStep) {
-              onBack();
-            } else {
-              stepIndex += 1;
-              renderStep();
-            }
+            onBack();
           },
+          onContinue: canContinue ? () => {
+            coreComplete = true;
+            if (!isLastRound) roundIndex += 1;
+            else { stepIndex += 1; roundIndex = 0; }
+            renderStep();
+          } : null,
+          continueLabel: isLastRound ? '繼續：字詞配對' : '加練下一組',
         }),
       );
     } else if (step === 'matching') {
-      container.appendChild(TaskBanner({ label: matchingItem.stem || '字 ↔ 部首配對', step: stepLabel }));
+      const isLastRound = roundIndex === matchingRounds.length - 1;
+      const canContinue = !isLastRound;
+      container.appendChild(TaskBanner({ label: matchingItem?.stem || '字 ↔ 部首配對', step: taskLabel }));
       container.appendChild(
         MatchingGame({
-          pairs: matchingItem.pairs,
-          backLabel: '回課程首頁',
-          onBack: () => onBack(),
+          pairs: matchingRounds[roundIndex],
+          backLabel: canContinue ? '本課先完成' : '回課程首頁',
+          onBack,
+          onContinue: canContinue ? () => {
+            coreComplete = true;
+            roundIndex += 1;
+            renderStep();
+          } : null,
+          continueLabel: '加練下一組',
         }),
       );
     }

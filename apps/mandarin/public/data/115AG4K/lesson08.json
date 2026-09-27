@@ -13,7 +13,7 @@
   "lesson_no": 8,
   "title": "建築界的長頸鹿",
   "author": "",
-  "blurb": "透過〈建築界的長頸鹿〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "把大樓外形和阻尼器、煙火等功能配對，理解建築設計的特色。",
   "source_audit": [
     {
       "kind": "official",
@@ -561,54 +561,66 @@
       "idiom": "同舟共濟",
       "definition": "比喻同心協力，戰勝困難。",
       "related_char": "濟",
-      "image": "idioms/01_同舟共濟.webp",
+      "image": "idioms/01_同舟共濟-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:08:02",
       "idiom": "風雨無阻",
       "definition": "不論發生何種情況，心意或行動依舊不變。",
       "related_char": "阻",
-      "image": "idioms/02_風雨無阻.webp",
+      "image": "idioms/02_風雨無阻-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:08:03",
       "idiom": "器宇軒昂",
       "definition": "形容人的神采奕奕，氣度不凡。也作﹁氣宇軒昂﹂。",
       "related_char": "器",
-      "image": "idioms/03_器宇軒昂.webp",
+      "image": "idioms/03_器宇軒昂-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:08:04",
       "idiom": "震耳欲聾",
       "definition": "形容聲音很大，幾乎要將耳朵震聾。",
       "related_char": "震",
-      "image": "idioms/04_震耳欲聾.webp",
+      "image": "idioms/04_震耳欲聾-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:08:05",
       "idiom": "聚沙成塔",
       "definition": "本指兒童堆積泥沙成佛塔的遊戲，雖是遊戲也能成就功德。後比喻積少成多。",
       "related_char": "塔",
-      "image": "idioms/05_聚沙成塔.webp",
+      "image": "idioms/05_聚沙成塔-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:08:06",
       "idiom": "吉人天相",
       "definition": "吉善的人自有上天的幫助。",
       "related_char": "吉",
-      "image": "idioms/06_吉人天相.webp",
+      "image": "idioms/06_吉人天相-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -903,9 +915,10 @@
         "高大的樹木",
         "長長的橋"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "居高臨下的大樓",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K08:02",
@@ -917,9 +930,10 @@
         "一朵花",
         "一座山"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "層層向上的竹子",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K08:03",
@@ -931,9 +945,10 @@
         "展示動物",
         "種植花草"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "改善城市收訊不良",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K08:04",
@@ -945,9 +960,10 @@
         "停放車輛",
         "播放音樂"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "方便人們往來",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -2091,13 +2107,14 @@
       "stem": "本課介紹哪幾座高樓建築？它們都位於哪一洲？",
       "question": "本課介紹哪幾座高樓建築？它們都位於哪一洲？",
       "options": [
-        "台北一○一大樓、東京晴空塔®，以及吉隆坡的雙峰塔。它們都位於亞洲",
+        "台北一○一、東京晴空塔、吉隆坡雙峰塔，都在亞洲。",
         "吉隆坡的雙峰塔。因為它是一座「雙生大樓」",
         "可以提升城市或國家的知名度，吸引觀光人潮，帶來可觀商機"
       ],
-      "answer": "台北一○一大樓、東京晴空塔®，以及吉隆坡的雙峰塔。它們都位於亞洲",
+      "answer": "台北一○一、東京晴空塔、吉隆坡雙峰塔，都在亞洲。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "位於臺北市的台北一○一大樓；西元二○一二年完工的東京晴空塔®；吉隆坡的雙峰塔。"
     },
     {
       "id": "listening:08:02",
@@ -2106,11 +2123,12 @@
       "options": [
         "吉隆坡的雙峰塔。因為它是一座「雙生大樓」",
         "可以提升城市或國家的知名度，吸引觀光人潮，帶來可觀商機",
-        "它的外形有如一節一節的竹子，層層向上開展，加上巨大的古錢圖案，不但代表經濟節節高升，也代表其「金融中心」的重要地位"
+        "像竹節向上開展，並有古錢圖案。"
       ],
-      "answer": "它的外形有如一節一節的竹子，層層向上開展，加上巨大的古錢圖案，不但代表經濟節節高升，也代表其「金融中心」的重要地位",
+      "answer": "像竹節向上開展，並有古錢圖案。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "台北一○一大樓外形有如一節一節的竹子，層層向上開展，代表經濟節節高升。"
     },
     {
       "id": "listening:08:03",
@@ -2118,12 +2136,13 @@
       "question": "東京晴空塔®原先規畫的功能是什麼？但是現在的貢獻還包括什麼？",
       "options": [
         "可以提升城市或國家的知名度，吸引觀光人潮，帶來可觀商機",
-        "東京晴空塔®原本是一座電波通訊塔，但現在東京晴空塔®周邊發展出完整的都市開發計畫，也為當地帶來可觀的商機",
+        "原是通訊塔，也帶動都市開發與商機。",
         "吉隆坡的雙峰塔。因為它是一座「雙生大樓」"
       ],
-      "answer": "東京晴空塔®原本是一座電波通訊塔，但現在東京晴空塔®周邊發展出完整的都市開發計畫，也為當地帶來可觀的商機",
+      "answer": "原是通訊塔，也帶動都市開發與商機。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "這座電波通訊塔，最初是為了改善城市收訊不良而興建。現在，從這裡發展出完整的都市開發計畫，也為當地帶來了可觀的商機。"
     }
   ],
   "review_words": {

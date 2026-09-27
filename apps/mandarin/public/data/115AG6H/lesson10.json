@@ -13,7 +13,7 @@
   "lesson_no": 10,
   "title": "過故人莊",
   "author": "",
-  "blurb": "透過〈過故人莊〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "把詩句和農莊景物、聚會動作配對，讀出詩人珍惜友情的心情。",
   "characters": [
     {
       "char": "莊",
@@ -540,72 +540,88 @@
       "idiom": "康莊大道",
       "definition": "比喻光明的前途。",
       "related_char": "莊",
-      "image": "idioms/01_康莊大道.webp",
+      "image": "idioms/01_康莊大道-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H10:暢所欲言",
       "idiom": "暢所欲言",
       "definition": "痛痛快快、毫無顧忌地把想說的話全部講出來。",
       "related_char": "暢",
-      "image": "idioms/02_暢所欲言.webp",
+      "image": "idioms/02_暢所欲言-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H10:軒然大波",
       "idiom": "軒然大波",
       "definition": "高高湧起的巨大波浪；比喻重大的糾紛或風潮。",
       "related_char": "軒",
-      "image": "idioms/03_軒然大波.webp",
+      "image": "idioms/03_軒然大波-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H10:滄海桑田",
       "idiom": "滄海桑田",
       "definition": "比喻世事無常，變化很快。",
       "related_char": "桑",
-      "image": "idioms/04_滄海桑田.webp",
+      "image": "idioms/04_滄海桑田-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H10:連綿不絕",
       "idiom": "連綿不絕",
       "definition": "連續不斷。",
       "related_char": "綿",
-      "image": "idioms/05_連綿不絕.webp",
+      "image": "idioms/05_連綿不絕-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H10:殷鑒不遠",
       "idiom": "殷鑒不遠",
       "definition": "比喻前人的教訓近在眼前，不可不慎。",
       "related_char": "殷",
-      "image": "idioms/06_殷鑒不遠.webp",
+      "image": "idioms/06_殷鑒不遠-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H10:克勤克儉",
       "idiom": "克勤克儉",
       "definition": "既能勤勞又能節儉。",
       "related_char": "勤",
-      "image": "idioms/07_克勤克儉.webp",
+      "image": "idioms/07_克勤克儉-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H10:恬不知恥",
       "idiom": "恬不知恥",
       "definition": "有過錯卻安然不以為恥辱。",
       "related_char": "恬",
-      "image": "idioms/08_恬不知恥.webp",
+      "image": "idioms/08_恬不知恥-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -909,9 +925,10 @@
         "家常飯菜",
         "豪華宴席"
       ],
-      "answer": null,
+      "answer": "家常飯菜",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:10:02",
@@ -920,9 +937,10 @@
         "綠樹、青山、場圃",
         "高樓、車站、商店"
       ],
-      "answer": null,
+      "answer": "綠樹、青山、場圃",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:10:03",
@@ -931,9 +949,10 @@
         "朋友歡聚談農事",
         "兩人準備離開"
       ],
-      "answer": null,
+      "answer": "朋友歡聚談農事",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:10:04",
@@ -942,9 +961,10 @@
         "喜愛友情與田園生活",
         "想購買菊花"
       ],
-      "answer": null,
+      "answer": "喜愛友情與田園生活",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -1694,7 +1714,8 @@
       ],
       "answer": "家常飯菜",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "故人具雞黍，邀我至田家。"
     },
     {
       "id": "listening:115AG6H10:2",
@@ -1706,7 +1727,8 @@
       ],
       "answer": "綠樹、青山、場圃",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "綠樹村邊合，青山郭外斜。"
     },
     {
       "id": "listening:115AG6H10:3",
@@ -1718,7 +1740,8 @@
       ],
       "answer": "朋友歡聚談農事",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "開軒面場圃，把酒話桑麻。"
     },
     {
       "id": "listening:115AG6H10:4",
@@ -1730,7 +1753,8 @@
       ],
       "answer": "喜愛友情與田園生活",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "待到重陽日，還來就菊花。"
     }
   ],
   "review_words": {

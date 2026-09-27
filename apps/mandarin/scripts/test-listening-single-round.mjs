@@ -3,9 +3,10 @@
 // 無新依賴，純 Node（fake-dom stub）。
 // 用法：node scripts/test-listening-single-round.mjs
 import assert from 'node:assert/strict';
-import { installFakeDom } from './fake-dom.mjs';
+import { installFakeDom, installFakeSpeechSynthesis } from './fake-dom.mjs';
 
 installFakeDom();
+installFakeSpeechSynthesis([{ lang: 'zh-TW', name: 'Taiwan test voice' }]);
 const { buildListeningActivity } = await import('../src/activities/listening.js');
 
 const N = 3;
@@ -13,6 +14,7 @@ const items = Array.from({ length: N }, (_, i) => ({
   id: `l${i}`,
   stem: `小明在公園裡玩耍第 ${i} 句`,
   question: `這句話在說誰？${i}`,
+  passage: `課文段落第 ${i}`,
   options: ['小明', '小華', '小美'],
   answer: '小明',
   status: 'ready',
@@ -21,8 +23,15 @@ const items = Array.from({ length: N }, (_, i) => ({
 const lesson = { listening: items };
 const container = buildListeningActivity(lesson, () => {});
 
+const passageButton = container
+  .findAll((n) => n.tagName === 'button')
+  .find((button) => button.getAttribute('aria-label') === '先聽一聽：課文段落');
+assert.ok(passageButton, '每題應提供「先聽一聽」課文段落語音按鈕');
+assert.ok(passageButton.textContent.startsWith('先聽一聽'), '課文段落語音按鈕應在喇叭圖示前顯示「先聽一聽」');
+assert.ok(!container.textContent.includes('課文段落第 0'), '課文段落只作為語音來源，不應全文顯示在頁面上');
+
 const bannerText = container.find((n) => n.hasClass('task-banner__label')).textContent;
-assert.ok(bannerText.includes(`共 ${N} 題`), `TaskBanner 應顯示「共 ${N} 題」，實際：${bannerText}`);
+assert.ok(bannerText.includes('本課先完成'), `TaskBanner 應標示核心練習，實際：${bannerText}`);
 
 function progressText() {
   const progress = container.find((n) => n.hasClass('progress-indicator'));

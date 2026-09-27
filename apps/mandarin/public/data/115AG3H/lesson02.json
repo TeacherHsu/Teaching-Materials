@@ -13,7 +13,7 @@
   "lesson_no": 2,
   "title": "妙用便利貼",
   "author": "",
-  "blurb": "學習用便利貼安排事情，養成做事有順序的好習慣。",
+  "blurb": "沿著便利貼記下、打勾和檢查的步驟，練習用順序安排事情。",
   "characters": [
     {
       "char": "貼",
@@ -563,54 +563,66 @@
       "idiom": "循序漸進",
       "definition": "依照一定的次序和步驟，逐步前進。",
       "related_char": "序",
-      "image": "idioms/循序漸進.webp",
+      "image": "idioms/循序漸進-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字延伸成語）"
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H02:fa0b7ba7",
       "idiom": "輕而易舉",
       "definition": "形容事情很容易完成，毫不費力。",
       "related_char": "而",
-      "image": "idioms/輕而易舉.webp",
+      "image": "idioms/輕而易舉-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字延伸成語）"
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H02:4fcf2630",
       "idiom": "得過且過",
       "definition": "只求眼前過得去，不作長遠打算。",
       "related_char": "且",
-      "image": "idioms/得過且過.webp",
+      "image": "idioms/得過且過-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字延伸成語）"
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H02:d0ffff71",
       "idiom": "排山倒海",
       "definition": "形容力量強大，聲勢非常浩大。",
       "related_char": "排",
-      "image": "idioms/排山倒海.webp",
+      "image": "idioms/排山倒海-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字延伸成語）"
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H02:78678b44",
       "idiom": "冰天雪地",
       "definition": "形容天氣嚴寒，到處都是冰雪。",
       "related_char": "冰",
-      "image": "idioms/冰天雪地.webp",
+      "image": "idioms/冰天雪地-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字延伸成語）"
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H02:75317e5e",
       "idiom": "原封不動",
       "definition": "保持原來的樣子，一點也沒有改動。",
       "related_char": "原",
-      "image": "idioms/原封不動.webp",
+      "image": "idioms/原封不動-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字延伸成語）"
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -1456,7 +1468,8 @@
       ],
       "answer": "提醒自己要做的事",
       "status": "approved",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教師自撰聆聽題）"
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教師自撰聆聽題）",
+      "passage": "爸爸告訴小真可以使用「便利貼」，記下什麼時間要完成什麼事情，貼在明顯的地方，時時刻刻提醒自己。"
     },
     {
       "id": "listening:115AG3H02:0002",
@@ -1469,7 +1482,8 @@
       ],
       "answer": "依照次序完成",
       "status": "approved",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教師自撰聆聽題）"
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教師自撰聆聽題）",
+      "passage": "漸漸的，她做事變得有次序，而且都能按時完成計畫。"
     },
     {
       "id": "listening:115AG3H02:0003",
@@ -1482,7 +1496,8 @@
       ],
       "answer": "打勾",
       "status": "approved",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教師自撰聆聽題）"
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教師自撰聆聽題）",
+      "passage": "只要完成一件事就打個勾，睡覺前還先設定好鬧鐘。"
     }
   ],
   "review_words": {

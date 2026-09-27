@@ -13,7 +13,7 @@
   "lesson_no": 11,
   "title": "來一碗溫暖的羹湯",
   "author": "",
-  "blurb": "透過〈來一碗溫暖的羹湯〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "依食材、烹煮和品嘗的描寫，整理羹湯如何連結生活記憶與人情味。",
   "characters": [
     {
       "char": "羹",
@@ -547,54 +547,66 @@
       "idiom": "為民喉舌",
       "definition": "比喻代替人民說話，表達意見。",
       "related_char": "喉",
-      "image": "idioms/01_為民喉舌.webp",
+      "image": "idioms/01_為民喉舌-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H11:街談巷議",
       "idiom": "街談巷議",
       "definition": "大街小巷中的談說議論。",
       "related_char": "巷",
-      "image": "idioms/02_街談巷議.webp",
+      "image": "idioms/02_街談巷議-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H11:狹路相逢",
       "idiom": "狹路相逢",
       "definition": "比喻仇人相遇。",
       "related_char": "狹",
-      "image": "idioms/03_狹路相逢.webp",
+      "image": "idioms/03_狹路相逢-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H11:欲擒故縱",
       "idiom": "欲擒故縱",
       "definition": "為了要使對方就範，故意先放鬆一步。",
       "related_char": "縱",
-      "image": "idioms/04_欲擒故縱.webp",
+      "image": "idioms/04_欲擒故縱-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H11:裹足不前",
       "idiom": "裹足不前",
       "definition": "形容有所顧忌，而停止腳步，不敢向前。",
       "related_char": "裹",
-      "image": "idioms/05_裹足不前.webp",
+      "image": "idioms/05_裹足不前-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H11:嬌生慣養",
       "idiom": "嬌生慣養",
       "definition": "在備受寵愛縱容中成長。",
       "related_char": "嬌",
-      "image": "idioms/06_嬌生慣養.webp",
+      "image": "idioms/06_嬌生慣養-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -887,9 +899,10 @@
         "天冷時",
         "炎熱時"
       ],
-      "answer": null,
+      "answer": "天冷時",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:11:02",
@@ -898,9 +911,10 @@
         "芡粉",
         "砂糖"
       ],
-      "answer": null,
+      "answer": "芡粉",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:11:03",
@@ -909,9 +923,10 @@
         "溫暖",
         "害怕"
       ],
-      "answer": null,
+      "answer": "溫暖",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:11:04",
@@ -920,9 +935,10 @@
         "食物與生活記憶",
         "登山比賽"
       ],
-      "answer": null,
+      "answer": "食物與生活記憶",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -1528,7 +1544,8 @@
       ],
       "answer": "天冷時",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "天寒時，特別想來碗羹。"
     },
     {
       "id": "listening:115AG6H11:2",
@@ -1540,7 +1557,8 @@
       ],
       "answer": "芡粉",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "加入調味料並勾芡，肉與羹合而為一，就是肉羹。"
     },
     {
       "id": "listening:115AG6H11:3",
@@ -1552,7 +1570,8 @@
       ],
       "answer": "溫暖",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "那溫熱滑順的湯汁從喉間滾下，彷彿便能幫身體注入暖氣。"
     },
     {
       "id": "listening:115AG6H11:4",
@@ -1564,7 +1583,8 @@
       ],
       "answer": "食物與生活記憶",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "並不是因為它獨特的滋味，而是還能跟母親任性撒嬌，這可是世上最幸福的事了。"
     }
   ],
   "review_words": {

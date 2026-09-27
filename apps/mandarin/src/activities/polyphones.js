@@ -23,16 +23,27 @@ function shuffled(arr) {
 export function usablePolyphoneEntries(lesson) {
   const out = [];
   for (const entry of filterByStatus(lesson.polyphones || [])) {
-    const readings = (entry.readings || []).filter((r) => r.zhuyin && (r.senses || []).some((s) => (s.examples || []).length > 0));
+    const readings = (entry.readings || []).map((reading) => ({
+      ...reading,
+      // 舊資料有 readings[].examples，新資料則把例詞放在 senses[].examples。
+      examples: [...new Set([
+        ...(reading.examples || []),
+        ...(reading.senses || []).flatMap((sense) => sense.examples || []),
+      ].filter(Boolean))],
+    })).filter((r) => r.zhuyin && r.examples.length > 0);
     const distinctZhuyin = new Set(readings.map((r) => r.zhuyin));
     if (readings.length < 2 || distinctZhuyin.size < 2) continue;
     for (const reading of readings) {
-      const example = (reading.senses.find((s) => (s.examples || []).length > 0) || {}).examples[0];
+      const example = reading.examples[0];
       if (!example) continue;
       out.push({ char: entry.char, example, zhuyin: reading.zhuyin, allZhuyin: [...distinctZhuyin] });
     }
   }
   return out;
+}
+
+export function canStartPolyphones(lesson) {
+  return usablePolyphoneEntries(lesson).length >= 2;
 }
 
 function buildChoiceItem(item) {
@@ -61,25 +72,28 @@ export function buildPolyphonesActivity(lesson, onBack) {
 
   function renderStep() {
     clear(container);
-    if (rounds.length === 0) {
+    if (!canStartPolyphones(lesson) || rounds.length === 0) {
       container.appendChild(missingContentNotice('一字多音：教材審核中'));
       return;
     }
     const isLastRound = roundIndex === rounds.length - 1;
     container.appendChild(
-      TaskBanner({ label: '看語詞，選出標色的字正確的讀音', step: `第 ${roundIndex + 1} 組／共 ${rounds.length} 組` }),
+      TaskBanner({ label: '看語詞，選出標色的字正確的讀音', step: roundIndex === 0 ? '本課先完成' : '加練挑戰' }),
     );
     container.appendChild(
       ChoiceQuiz({
         items: rounds[roundIndex],
-        backLabel: isLastRound ? '回課程首頁' : '再來一組',
+        backLabel: isLastRound ? '回課程首頁' : '本課先完成',
         onBack: () => {
           if (!isLastRound) {
-            roundIndex += 1;
-            renderStep();
+            onBack();
           } else {
             onBack();
           }
+        },
+        onContinue: isLastRound ? null : () => {
+          roundIndex += 1;
+          renderStep();
         },
       }),
     );

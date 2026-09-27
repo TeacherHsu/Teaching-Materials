@@ -38,7 +38,7 @@ const DEFAULT_HINT = '再看看題目，仔細比對一下再選。';
  *   dragEnabled?: boolean, // 開啟直接拖曳候選詞塊到空格
  * }} opts
  */
-export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程首頁', dragEnabled = false }) {
+export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程首頁', onContinue, continueLabel = '加練下一組', dragEnabled = false }) {
   const root = h('div', {
     class: `quiz-panel drag-to-slot${dragEnabled ? ' drag-to-slot--drag-enabled' : ''}`,
   });
@@ -59,6 +59,8 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
           },
           onBack,
           backLabel,
+          onContinue,
+          continueLabel,
         }),
       );
       if (onComplete) onComplete(correctCount, items.length);

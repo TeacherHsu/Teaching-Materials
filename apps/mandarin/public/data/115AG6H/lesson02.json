@@ -13,7 +13,7 @@
   "lesson_no": 2,
   "title": "為什麼大家不理我？",
   "author": "",
-  "blurb": "透過〈為什麼大家不理我？〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "比較女兒和父親回想的經驗，找出父親如何理解孤單並提出建議。",
   "characters": [
     {
       "char": "眶",
@@ -548,90 +548,110 @@
       "idiom": "根深蒂固",
       "definition": "比喻根基堅固，不可動搖。",
       "related_char": "固",
-      "image": "idioms/01_根深蒂固.webp",
+      "image": "idioms/01_根深蒂固-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H02:執迷不悟",
       "idiom": "執迷不悟",
       "definition": "堅持錯誤的觀念而不醒悟。",
       "related_char": "執",
-      "image": "idioms/02_執迷不悟.webp",
+      "image": "idioms/02_執迷不悟-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H02:百口莫辯",
       "idiom": "百口莫辯",
       "definition": "比喻冤屈無法申訴自白。",
       "related_char": "辯",
-      "image": "idioms/03_百口莫辯.webp",
+      "image": "idioms/03_百口莫辯-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H02:民胞物與",
       "idiom": "民胞物與",
       "definition": "視人民如同胞，視萬物如同類。比喻博愛。",
       "related_char": "胞",
-      "image": "idioms/04_民胞物與.webp",
+      "image": "idioms/04_民胞物與-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H02:慘不忍睹",
       "idiom": "慘不忍睹",
       "definition": "情狀淒慘，使人不忍目睹。",
       "related_char": "慘",
-      "image": "idioms/05_慘不忍睹.webp",
+      "image": "idioms/05_慘不忍睹-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H02:憤世嫉俗",
       "idiom": "憤世嫉俗",
       "definition": "痛恨腐敗的社會現狀及庸俗世態。",
       "related_char": "憤",
-      "image": "idioms/06_憤世嫉俗.webp",
+      "image": "idioms/06_憤世嫉俗-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H02:慷慨解囊",
       "idiom": "慷慨解囊",
       "definition": "指輕財仗義，毫不吝嗇地捐助錢財給人。",
       "related_char": "慨",
-      "image": "idioms/07_慷慨解囊.webp",
+      "image": "idioms/07_慷慨解囊-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H02:杞人憂天",
       "idiom": "杞人憂天",
       "definition": "比喻缺乏根據的憂慮。",
       "related_char": "憂",
-      "image": "idioms/08_杞人憂天.webp",
+      "image": "idioms/08_杞人憂天-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H02:感激涕零",
       "idiom": "感激涕零",
       "definition": "形容非常感謝。",
       "related_char": "涕",
-      "image": "idioms/09_感激涕零.webp",
+      "image": "idioms/09_感激涕零-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H02:寬仁大度",
       "idiom": "寬仁大度",
       "definition": "形容心胸寬闊、度量宏大，能容人。",
       "related_char": "寬",
-      "image": "idioms/10_寬仁大度.webp",
+      "image": "idioms/10_寬仁大度-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -1031,9 +1051,10 @@
         "被同學冷落而困惑",
         "想買新郵票"
       ],
-      "answer": null,
+      "answer": "被同學冷落而困惑",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:02:02",
@@ -1042,9 +1063,10 @@
         "讓女兒知道孤單能被理解",
         "責備女兒不勇敢"
       ],
-      "answer": null,
+      "answer": "讓女兒知道孤單能被理解",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:02:03",
@@ -1053,9 +1075,10 @@
         "要反省並關心別人",
         "再也不交朋友"
       ],
-      "answer": null,
+      "answer": "要反省並關心別人",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:02:04",
@@ -1064,9 +1087,10 @@
         "能體諒別人並堅強處理問題",
         "永遠不要一個人"
       ],
-      "answer": null,
+      "answer": "能體諒別人並堅強處理問題",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -2094,7 +2118,8 @@
       ],
       "answer": "被同學冷落而困惑",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "我知道，妳說的是在學校裡被同學冷落了。"
     },
     {
       "id": "listening:115AG6H02:2",
@@ -2106,7 +2131,8 @@
       ],
       "answer": "讓女兒知道孤單能被理解",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "我多自私啊！只曉得關心自己，不知道去關心別人。"
     },
     {
       "id": "listening:115AG6H02:3",
@@ -2118,7 +2144,8 @@
       ],
       "answer": "再也不交朋友",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "聽了許達三的話之後，我哭了，也笑了，還流了鼻涕。"
     },
     {
       "id": "listening:115AG6H02:4",
@@ -2130,7 +2157,8 @@
       ],
       "answer": "能體諒別人並堅強處理問題",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "把心放寬，不要計較，並且學習去慰問別人。"
     }
   ],
   "review_words": {

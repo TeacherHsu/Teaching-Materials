@@ -1,0 +1,2029 @@
+{
+  "lesson_id": "115AG2H03",
+  "volume": {
+    "code": "115AG2H",
+    "publisher": "翰林",
+    "grade": 2,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "二上國語課程"
+  },
+  "lesson_no": 3,
+  "title": "國王做新衣",
+  "blurb": "追蹤國王改衣服的前後變化，理解他如何發現分享與創作的快樂。",
+  "characters": [
+    {
+      "char": "國",
+      "zhuyin": "ㄍㄨㄛˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "國王",
+        "國家",
+        "國語"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=國",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼞",
+      "stroke_count": 11
+    },
+    {
+      "char": "王",
+      "zhuyin": "ㄨㄤˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "國王",
+        "王子",
+        "女王"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=王",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽟",
+      "stroke_count": 4
+    },
+    {
+      "char": "喜",
+      "zhuyin": "ㄒㄧˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "喜歡",
+        "驚喜",
+        "喜悅"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=喜",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼝",
+      "stroke_count": 12
+    },
+    {
+      "char": "歡",
+      "zhuyin": "ㄏㄨㄢ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "喜歡",
+        "歡迎",
+        "歡樂"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=歡",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽋",
+      "stroke_count": 22
+    },
+    {
+      "char": "穿",
+      "zhuyin": "ㄔㄨㄢ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "穿衣",
+        "穿鞋",
+        "穿上"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=穿",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽳",
+      "stroke_count": 9
+    },
+    {
+      "char": "只",
+      "zhuyin": "ㄓˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "只有",
+        "一隻",
+        "只好"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=只",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼝",
+      "stroke_count": 5
+    },
+    {
+      "char": "件",
+      "zhuyin": "ㄐㄧㄢˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "一件",
+        "事件",
+        "文件"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=件",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼈",
+      "stroke_count": 6
+    },
+    {
+      "char": "點",
+      "zhuyin": "ㄉㄧㄢˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "一點",
+        "點心",
+        "點名"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=點",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⿊",
+      "stroke_count": 17
+    },
+    {
+      "char": "改",
+      "zhuyin": "ㄍㄞˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "改正",
+        "改變",
+        "修改"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=改",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽁",
+      "stroke_count": 7
+    },
+    {
+      "char": "領",
+      "zhuyin": "ㄌㄧㄥˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "領帶",
+        "領先",
+        "衣領"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=領",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾴",
+      "stroke_count": 14
+    },
+    {
+      "char": "越",
+      "zhuyin": "ㄩㄝˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "越來越",
+        "穿越",
+        "越過"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=越",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾛",
+      "stroke_count": 12
+    },
+    {
+      "char": "設",
+      "zhuyin": "ㄕㄜˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "設計",
+        "設法",
+        "建設"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=設",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾔",
+      "stroke_count": 11
+    },
+    {
+      "char": "計",
+      "zhuyin": "ㄐㄧˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "設計",
+        "計算",
+        "計畫"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=計",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾔",
+      "stroke_count": 9
+    },
+    {
+      "char": "發",
+      "zhuyin": "ㄈㄚ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "發現",
+        "發明",
+        "出發"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=發",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽨",
+      "stroke_count": 12
+    },
+    {
+      "char": "方",
+      "zhuyin": "ㄈㄤ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "方法",
+        "方向",
+        "地方"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=方",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽅",
+      "stroke_count": 4
+    },
+    {
+      "char": "法",
+      "zhuyin": "ㄈㄚˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "方法",
+        "法律",
+        "辦法"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=法",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽔",
+      "stroke_count": 8
+    },
+    {
+      "char": "分",
+      "zhuyin": "ㄈㄣ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "分享",
+        "分開",
+        "分數"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=分",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼑",
+      "stroke_count": 4
+    },
+    {
+      "char": "享",
+      "zhuyin": "ㄒㄧㄤˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "分享",
+        "享受",
+        "共享"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=享",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼇",
+      "stroke_count": 8
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG2H03:01",
+      "word": "大臣",
+      "zhuyin": null,
+      "meaning": "擔負國家重任的官吏。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson03/vocabulary/l03-01.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H03:02",
+      "word": "只",
+      "zhuyin": null,
+      "meaning": "唯一、僅有。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson03/vocabulary/l03-02.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H03:03",
+      "word": "穿",
+      "zhuyin": null,
+      "meaning": "把衣物等套在身體上。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson03/vocabulary/l03-03.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H03:04",
+      "word": "喜歡",
+      "zhuyin": null,
+      "meaning": "喜愛。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson03/vocabulary/l03-04.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H03:05",
+      "word": "國王",
+      "zhuyin": null,
+      "meaning": "君主制國家的最高領導人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson03/vocabulary/l03-05.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H03:06",
+      "word": "分享",
+      "zhuyin": null,
+      "meaning": "共同享受。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson03/vocabulary/l03-06.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H03:07",
+      "word": "讓",
+      "zhuyin": null,
+      "meaning": "使、令。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson03/vocabulary/l03-07.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H03:08",
+      "word": "方法",
+      "zhuyin": null,
+      "meaning": "為達到某種目的所用的方式和步驟。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson03/vocabulary/l03-08.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H03:09",
+      "word": "發現",
+      "zhuyin": null,
+      "meaning": "察覺、發覺。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson03/vocabulary/l03-09.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H03:10",
+      "word": "設計",
+      "zhuyin": null,
+      "meaning": "預先規劃、製定圖樣。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson03/vocabulary/l03-10.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H03:11",
+      "word": "越",
+      "zhuyin": null,
+      "meaning": "更加。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson03/vocabulary/l03-11.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H03:12",
+      "word": "驚喜",
+      "zhuyin": null,
+      "meaning": "驚奇歡喜。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson03/vocabulary/l03-12.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H03:13",
+      "word": "領",
+      "zhuyin": null,
+      "meaning": "衣服上圍護頸部的部分。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson03/vocabulary/l03-13.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H03:14",
+      "word": "袖子",
+      "zhuyin": null,
+      "meaning": "衣服從肩到手腕的部分。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson03/vocabulary/l03-14.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H03:15",
+      "word": "改",
+      "zhuyin": null,
+      "meaning": "變更、修正。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson03/vocabulary/l03-15.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H03:16",
+      "word": "一點",
+      "zhuyin": null,
+      "meaning": "形容體積很小或數量很少。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson03/vocabulary/l03-16.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H03:17",
+      "word": "件",
+      "zhuyin": null,
+      "meaning": "量詞。計算個體事物的單位。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson03/vocabulary/l03-17.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [
+    {
+      "id": "meaning:115AG2H03:01",
+      "word": "大臣",
+      "meaning": "擔負國家重任的官吏。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H03:02",
+      "word": "只",
+      "meaning": "唯一、僅有。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H03:03",
+      "word": "穿",
+      "meaning": "把衣物等套在身體上。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H03:04",
+      "word": "喜歡",
+      "meaning": "喜愛。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H03:05",
+      "word": "國王",
+      "meaning": "君主制國家的最高領導人。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H03:06",
+      "word": "分享",
+      "meaning": "共同享受。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H03:07",
+      "word": "讓",
+      "meaning": "使、令。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H03:08",
+      "word": "方法",
+      "meaning": "為達到某種目的所用的方式和步驟。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H03:09",
+      "word": "發現",
+      "meaning": "察覺、發覺。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H03:10",
+      "word": "設計",
+      "meaning": "預先規劃、製定圖樣。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H03:11",
+      "word": "越",
+      "meaning": "更加。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H03:12",
+      "word": "驚喜",
+      "meaning": "驚奇歡喜。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H03:13",
+      "word": "領",
+      "meaning": "衣服上圍護頸部的部分。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H03:14",
+      "word": "袖子",
+      "meaning": "衣服從肩到手腕的部分。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H03:15",
+      "word": "改",
+      "meaning": "變更、修正。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H03:16",
+      "word": "一點",
+      "meaning": "形容體積很小或數量很少。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H03:17",
+      "word": "件",
+      "meaning": "量詞。計算個體事物的單位。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "sentences": [
+    {
+      "category": "短語練習",
+      "pattern": "越做越高興",
+      "examples": [
+        "越想越生氣",
+        "越說越興奮"
+      ],
+      "description": "表達動作或事情隨著時間有進一步的變化。",
+      "structure": "越＋動詞（動作）＋越＋怎麼樣",
+      "id": "sentence-pattern:115AG2H03:01",
+      "head": "越做越高興",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短句練習",
+      "pattern": "國王喜歡穿新衣。",
+      "examples": [
+        "媽媽喜歡吃美食。",
+        "哥哥喜歡打籃球。"
+      ],
+      "description": "表達喜歡做某件事。",
+      "structure": "名詞（誰）＋喜歡＋做什麼事。",
+      "id": "sentence-pattern:115AG2H03:02",
+      "head": "國王喜歡穿新衣。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "國王只要穿上新衣，就會很高興。",
+      "examples": [
+        "哥哥只要上臺報告，就很緊張。",
+        "妹妹只要看到公園，就想玩秋千。"
+      ],
+      "description": "強調﹁誰＋只要＋做一件事，就＋有什麼反應﹂。",
+      "id": "sentence-pattern:115AG2H03:03",
+      "head": "國王只要穿上新衣，就會很高興。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "idioms": [
+    {
+      "id": "idiom:115AG2H03:01",
+      "idiom": "畫龍點睛",
+      "definition": "比喻繪畫、作文時在最重要的地方加上一筆，使全體更加生動傳神。",
+      "related_char": "點",
+      "image": "idioms/01_畫龍點睛-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H03:02",
+      "idiom": "改頭換面",
+      "definition": "比喻一個人完全改變，有重新做人的意思。",
+      "related_char": "改",
+      "image": "idioms/02_改頭換面-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H03:03",
+      "idiom": "千方百計",
+      "definition": "想盡所有辦法、計謀。",
+      "related_char": "計",
+      "image": "idioms/03_千方百計-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H03:04",
+      "idiom": "百發百中",
+      "definition": "每發一箭，都能射中。形容射擊技術高超。或形容料事、用計、施藥等非常準確。",
+      "related_char": "發",
+      "image": "idioms/04_百發百中-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H03:05",
+      "idiom": "約法三章",
+      "definition": "指事先約好或規定的事。",
+      "related_char": "法",
+      "image": "idioms/05_約法三章-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H03:06",
+      "idiom": "四分五裂",
+      "definition": "形容分散而不完整、不團結。",
+      "related_char": "分",
+      "image": "idioms/06_四分五裂-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:115AG2H03:01",
+      "idiom_id": "idiom:115AG2H03:01",
+      "rewritten": "這幅畫有了他畫龍點睛的一筆，看起來更漂亮了！",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H03:02",
+      "idiom_id": "idiom:115AG2H03:02",
+      "rewritten": "他已經改頭換面，努力做好事，我們應該給他鼓勵和機會。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H03:03",
+      "idiom_id": "idiom:115AG2H03:03",
+      "rewritten": "為了解決眼前的難題，我們用盡了千方百計，希望最後可以成功。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H03:04",
+      "idiom_id": "idiom:115AG2H03:04",
+      "rewritten": "爸爸很喜歡打籃球，只見他反身跳投，又進了，真是百發百中！",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H03:05",
+      "idiom_id": "idiom:115AG2H03:05",
+      "rewritten": "我和媽媽約法三章，在公園玩到五點就會回家。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H03:06",
+      "idiom_id": "idiom:115AG2H03:06",
+      "rewritten": "小組因為意見不同吵了起來，變得四分五裂。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "category": "短語練習",
+      "pattern": "越做越高興",
+      "examples": [
+        "越想越生氣",
+        "越說越興奮"
+      ],
+      "description": "表達動作或事情隨著時間有進一步的變化。",
+      "structure": "越＋動詞（動作）＋越＋怎麼樣",
+      "id": "sentence-pattern:115AG2H03:01",
+      "head": "越做越高興",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短句練習",
+      "pattern": "國王喜歡穿新衣。",
+      "examples": [
+        "媽媽喜歡吃美食。",
+        "哥哥喜歡打籃球。"
+      ],
+      "description": "表達喜歡做某件事。",
+      "structure": "名詞（誰）＋喜歡＋做什麼事。",
+      "id": "sentence-pattern:115AG2H03:02",
+      "head": "國王喜歡穿新衣。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "國王只要穿上新衣，就會很高興。",
+      "examples": [
+        "哥哥只要上臺報告，就很緊張。",
+        "妹妹只要看到公園，就想玩秋千。"
+      ],
+      "description": "強調﹁誰＋只要＋做一件事，就＋有什麼反應﹂。",
+      "id": "sentence-pattern:115AG2H03:03",
+      "head": "國王只要穿上新衣，就會很高興。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG2H03:只:01",
+      "char": "只",
+      "sentence": "生活中，我們會用到《只是》這個詞。",
+      "definition": "唯一、僅有",
+      "options": [
+        "唯一、僅有",
+        "儘管",
+        "量詞。計算物體件數的單位。同 「隻」"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H03:只:02",
+      "char": "只",
+      "sentence": "生活中，我們會用到《只管》這個詞。",
+      "definition": "儘管",
+      "options": [
+        "唯一、僅有",
+        "儘管",
+        "量詞。計算物體件數的單位。同 「隻」"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H03:只:03",
+      "char": "只",
+      "sentence": "生活中，我們會用到《一只戒指》這個詞。",
+      "definition": "量詞。計算物體件數的單位。同 「隻」",
+      "options": [
+        "唯一、僅有",
+        "儘管",
+        "量詞。計算物體件數的單位。同 「隻」"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H03:法:01",
+      "char": "法",
+      "sentence": "生活中，我們會用到《辦法》這個詞。",
+      "definition": "途徑",
+      "options": [
+        "途徑",
+        "制度、律令",
+        "仿效",
+        "方法"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H03:法:02",
+      "char": "法",
+      "sentence": "生活中，我們會用到《法律》這個詞。",
+      "definition": "制度、律令",
+      "options": [
+        "途徑",
+        "制度、律令",
+        "仿效",
+        "方法"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H03:法:03",
+      "char": "法",
+      "sentence": "生活中，我們會用到《效法》這個詞。",
+      "definition": "仿效",
+      "options": [
+        "途徑",
+        "制度、律令",
+        "仿效",
+        "方法"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H03:法:04",
+      "char": "法",
+      "sentence": "生活中，我們會用到《法子。 5. 4. 3. 2. 1. 放 攻 改 貼 站 點 觀 歡 善 喜 玉 王 ：放鬆》這個詞。",
+      "definition": "方法",
+      "options": [
+        "途徑",
+        "制度、律令",
+        "仿效",
+        "方法"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H03:分:01",
+      "char": "分",
+      "sentence": "生活中，我們會用到《分配》這個詞。",
+      "definition": "配與",
+      "options": [
+        "配與",
+        "分擔",
+        "將整體變成若干部分，或使合 在一起的事物離開",
+        "辨別",
+        "區別、不一樣的地方",
+        "成績或比賽勝負的記數",
+        "量詞",
+        "整體中的局部",
+        "名位、權利、義務等的範圍、 限度",
+        "構成事物的質素"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H03:分:02",
+      "char": "分",
+      "sentence": "生活中，我們會用到《分憂解勞》這個詞。",
+      "definition": "分擔",
+      "options": [
+        "配與",
+        "分擔",
+        "將整體變成若干部分，或使合 在一起的事物離開",
+        "辨別",
+        "區別、不一樣的地方",
+        "成績或比賽勝負的記數",
+        "量詞",
+        "整體中的局部",
+        "名位、權利、義務等的範圍、 限度",
+        "構成事物的質素"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H03:分:03",
+      "char": "分",
+      "sentence": "生活中，我們會用到《分割》這個詞。",
+      "definition": "將整體變成若干部分，或使合 在一起的事物離開",
+      "options": [
+        "配與",
+        "分擔",
+        "將整體變成若干部分，或使合 在一起的事物離開",
+        "辨別",
+        "區別、不一樣的地方",
+        "成績或比賽勝負的記數",
+        "量詞",
+        "整體中的局部",
+        "名位、權利、義務等的範圍、 限度",
+        "構成事物的質素"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H03:分:04",
+      "char": "分",
+      "sentence": "生活中，我們會用到《分辨對錯》這個詞。",
+      "definition": "辨別",
+      "options": [
+        "配與",
+        "分擔",
+        "將整體變成若干部分，或使合 在一起的事物離開",
+        "辨別",
+        "區別、不一樣的地方",
+        "成績或比賽勝負的記數",
+        "量詞",
+        "整體中的局部",
+        "名位、權利、義務等的範圍、 限度",
+        "構成事物的質素"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H03:分:05",
+      "char": "分",
+      "sentence": "生活中，我們會用到《大小之分》這個詞。",
+      "definition": "區別、不一樣的地方",
+      "options": [
+        "配與",
+        "分擔",
+        "將整體變成若干部分，或使合 在一起的事物離開",
+        "辨別",
+        "區別、不一樣的地方",
+        "成績或比賽勝負的記數",
+        "量詞",
+        "整體中的局部",
+        "名位、權利、義務等的範圍、 限度",
+        "構成事物的質素"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H03:分:06",
+      "char": "分",
+      "sentence": "生活中，我們會用到《滿分》這個詞。",
+      "definition": "成績或比賽勝負的記數",
+      "options": [
+        "配與",
+        "分擔",
+        "將整體變成若干部分，或使合 在一起的事物離開",
+        "辨別",
+        "區別、不一樣的地方",
+        "成績或比賽勝負的記數",
+        "量詞",
+        "整體中的局部",
+        "名位、權利、義務等的範圍、 限度",
+        "構成事物的質素"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H03:分:07",
+      "char": "分",
+      "sentence": "生活中，我們會用到《一小時有六十分》這個詞。",
+      "definition": "量詞",
+      "options": [
+        "配與",
+        "分擔",
+        "將整體變成若干部分，或使合 在一起的事物離開",
+        "辨別",
+        "區別、不一樣的地方",
+        "成績或比賽勝負的記數",
+        "量詞",
+        "整體中的局部",
+        "名位、權利、義務等的範圍、 限度",
+        "構成事物的質素"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H03:分:08",
+      "char": "分",
+      "sentence": "生活中，我們會用到《部分》這個詞。",
+      "definition": "整體中的局部",
+      "options": [
+        "配與",
+        "分擔",
+        "將整體變成若干部分，或使合 在一起的事物離開",
+        "辨別",
+        "區別、不一樣的地方",
+        "成績或比賽勝負的記數",
+        "量詞",
+        "整體中的局部",
+        "名位、權利、義務等的範圍、 限度",
+        "構成事物的質素"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H03:分:09",
+      "char": "分",
+      "sentence": "生活中，我們會用到《身分》這個詞。",
+      "definition": "名位、權利、義務等的範圍、 限度",
+      "options": [
+        "配與",
+        "分擔",
+        "將整體變成若干部分，或使合 在一起的事物離開",
+        "辨別",
+        "區別、不一樣的地方",
+        "成績或比賽勝負的記數",
+        "量詞",
+        "整體中的局部",
+        "名位、權利、義務等的範圍、 限度",
+        "構成事物的質素"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H03:分:10",
+      "char": "分",
+      "sentence": "生活中，我們會用到《糖分》這個詞。",
+      "definition": "構成事物的質素",
+      "options": [
+        "配與",
+        "分擔",
+        "將整體變成若干部分，或使合 在一起的事物離開",
+        "辨別",
+        "區別、不一樣的地方",
+        "成績或比賽勝負的記數",
+        "量詞",
+        "整體中的局部",
+        "名位、權利、義務等的範圍、 限度",
+        "構成事物的質素"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG2H03:只",
+      "char": "只",
+      "readings": [
+        {
+          "zhuyin": "ㄓˇ",
+          "senses": [
+            {
+              "definition": "唯一、僅有",
+              "examples": [
+                "只是",
+                "只好"
+              ]
+            },
+            {
+              "definition": "儘管",
+              "examples": [
+                "只管"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄓ",
+          "senses": [
+            {
+              "definition": "量詞。計算物體件數的單位。同 「隻」",
+              "examples": [
+                "一只戒指"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    },
+    {
+      "id": "polyphone:115AG2H03:分",
+      "char": "分",
+      "readings": [
+        {
+          "zhuyin": "ㄈㄣ",
+          "senses": [
+            {
+              "definition": "配與",
+              "examples": [
+                "分配",
+                "分享"
+              ]
+            },
+            {
+              "definition": "分擔",
+              "examples": [
+                "分憂解勞"
+              ]
+            },
+            {
+              "definition": "將整體變成若干部分，或使合 在一起的事物離開",
+              "examples": [
+                "分割",
+                "分離"
+              ]
+            },
+            {
+              "definition": "辨別",
+              "examples": [
+                "分辨對錯"
+              ]
+            },
+            {
+              "definition": "區別、不一樣的地方",
+              "examples": [
+                "大小之分",
+                "人我之分"
+              ]
+            },
+            {
+              "definition": "成績或比賽勝負的記數",
+              "examples": [
+                "滿分",
+                "零分"
+              ]
+            },
+            {
+              "definition": "量詞",
+              "examples": [
+                "一小時有六十分"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄈㄣˋ",
+          "senses": [
+            {
+              "definition": "整體中的局部",
+              "examples": [
+                "部分"
+              ]
+            },
+            {
+              "definition": "名位、權利、義務等的範圍、 限度",
+              "examples": [
+                "身分"
+              ]
+            },
+            {
+              "definition": "構成事物的質素",
+              "examples": [
+                "糖分"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG2H03:01",
+      "stem": "請仔細聽題目：故事中的國王最喜歡做什麼事情？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "穿新衣。",
+        "國王穿新衣就會高興，不穿新衣就會心情不好。",
+        "國王有滿滿一衣櫥的衣服。"
+      ],
+      "answer": "穿新衣。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "國王喜歡穿新衣，只要穿上新衣，就會很高興。沒有新衣穿，就會心情不好。"
+    },
+    {
+      "id": "listening:115AG2H03:02",
+      "stem": "請仔細聽題目：穿不穿新衣對國王的影響是什麼？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "國王穿新衣就會高興，不穿新衣就會心情不好。",
+        "穿新衣。",
+        "國王有滿滿一衣櫥的衣服。"
+      ],
+      "answer": "國王穿新衣就會高興，不穿新衣就會心情不好。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "國王喜歡穿新衣，只要穿上新衣，就會很高興。沒有新衣穿，就會心情不好。"
+    },
+    {
+      "id": "listening:115AG2H03:03",
+      "stem": "請仔細聽題目：觀察課文插圖，哪一張插圖最能看出國王很喜歡穿新衣？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "國王有滿滿一衣櫥的衣服。",
+        "穿新衣。",
+        "國王穿新衣就會高興，不穿新衣就會心情不好。"
+      ],
+      "answer": "國王有滿滿一衣櫥的衣服。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "國王喜歡穿新衣，只要穿上新衣，就會很高興。沒有新衣穿，就會心情不好。"
+    },
+    {
+      "id": "listening:115AG2H03:04",
+      "stem": "請仔細聽題目：誰解決了國王天天穿新衣的問題？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "大臣。",
+        "穿新衣。",
+        "國王穿新衣就會高興，不穿新衣就會心情不好。"
+      ],
+      "answer": "大臣。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "大臣送國王一件新衣，國王穿上以後很滿意。"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG2H03:01",
+      "para_no": 1,
+      "summary": "國王穿上新衣就會高興，沒有新衣穿就不開心。",
+      "structure_role": "第1段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H03:02",
+      "para_no": 2,
+      "summary": "大臣把國王穿過的衣服改造成新衣，國王很滿意。",
+      "structure_role": "第2段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H03:03",
+      "para_no": 3,
+      "summary": "國王動手改造衣服，進而喜歡上設計衣服。",
+      "structure_role": "第3段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H03:04",
+      "para_no": 4,
+      "summary": "國王不再想著穿新衣，他發現有不同的方法讓自己變開心，還能分享快樂。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "id": "main_idea:115AG2H03:01",
+    "gist": "國王沒新衣穿就心情不好，後來他看到大臣改造舊衣，然後喜歡上自己設計衣服。他發現做喜歡的事，能讓自己變得開心，還能分享快樂。",
+    "theme": "國王發現讓自己的情緒轉變為正向的方法。",
+    "status": "approved",
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG2H03:01",
+      "stem": "故事中的國王最喜歡做什麼事情？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "穿新衣。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H03:02",
+      "stem": "穿不穿新衣對國王的影響是什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "國王穿新衣就會高興，不穿新衣就會心情不好。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H03:03",
+      "stem": "觀察課文插圖，哪一張插圖最能看出國王很喜歡穿新衣？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "第25頁，可以看到國王有滿滿衣櫥的衣服，各式各樣的衣服，衣服多到放不進衣櫃。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H03:04",
+      "stem": "誰解決了國王天天穿新衣的問題？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "大臣。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H03:05",
+      "stem": "大臣為什麼會得意的說：「國王想穿新衣，一點都不難！」？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為大臣覺得自己找到了好方法，可以讓國王天天穿新衣。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H03:06",
+      "stem": "大臣用什麼方法解決了國王的問題？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "大臣找出國王穿過的舊衣服，改變了袖子，增加了領子，就變成另一件新衣服。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H03:07",
+      "stem": "大臣的做法，讓國王有了什麼改變？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "國王發現只要簡單修改，就可以讓一件衣服有全新的面貌，他也開始動手修改，甚至自己設計衣服，享受設計衣服的樂趣。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H03:08",
+      "stem": "課本第27頁的插圖中，有哪些人在做什麼事？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "有國王、大臣，和一般人民，大臣在送衣服給人民，國王開心的揮手。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H03:09",
+      "stem": "故事裡的國王，一開始和最後有什麼相同和不同的地方？",
+      "strategy_tag": "比較評估",
+      "answer_hint": "相同：都喜歡穿新衣。不同：以前的國王，會因為沒有新衣服穿而心情不好；但後來的國王，發現動手創造及設計衣服，做自己喜歡的事，可以讓心情變得很好，而且還能把快樂分享出去。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H03:10",
+      "stem": "想一想，你覺得國王是一個怎麼樣的人？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "我覺得國王是一個願意嘗試新事情的人，原本他只想穿新衣服，看到大臣改衣服之後，也試著一起動手做。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG2H03:01",
+      "group_no": "1",
+      "question": "國____",
+      "answer": "王",
+      "chars": [
+        {
+          "char": "王",
+          "zhuyin": null,
+          "example": "國王"
+        },
+        {
+          "char": "玉",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H03:02",
+      "group_no": "2",
+      "question": "____歡",
+      "answer": "喜",
+      "chars": [
+        {
+          "char": "喜",
+          "zhuyin": null,
+          "example": "喜歡"
+        },
+        {
+          "char": "善",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H03:03",
+      "group_no": "3",
+      "question": "喜____",
+      "answer": "歡",
+      "chars": [
+        {
+          "char": "歡",
+          "zhuyin": null,
+          "example": "喜歡"
+        },
+        {
+          "char": "觀",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H03:04",
+      "group_no": "4",
+      "question": "一____",
+      "answer": "點",
+      "chars": [
+        {
+          "char": "點",
+          "zhuyin": null,
+          "example": "一點"
+        },
+        {
+          "char": "站",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "貼",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H03:05",
+      "group_no": "5",
+      "question": "變更、修正：____",
+      "answer": "改",
+      "chars": [
+        {
+          "char": "改",
+          "zhuyin": null,
+          "example": "改"
+        },
+        {
+          "char": "攻",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "放",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H03:06",
+      "group_no": "6",
+      "question": "____子",
+      "answer": "袖",
+      "chars": [
+        {
+          "char": "袖",
+          "zhuyin": null,
+          "example": "袖子"
+        },
+        {
+          "char": "抽",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "油",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H03:07",
+      "group_no": "7",
+      "question": "衣服上圍護頸部的部分：____",
+      "answer": "領",
+      "chars": [
+        {
+          "char": "領",
+          "zhuyin": null,
+          "example": "領"
+        },
+        {
+          "char": "頒",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H03:08",
+      "group_no": "8",
+      "question": "____喜",
+      "answer": "驚",
+      "chars": [
+        {
+          "char": "驚",
+          "zhuyin": null,
+          "example": "驚喜"
+        },
+        {
+          "char": "警",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H03:09",
+      "group_no": "9",
+      "question": "____計",
+      "answer": "設",
+      "chars": [
+        {
+          "char": "設",
+          "zhuyin": null,
+          "example": "設計"
+        },
+        {
+          "char": "投",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H03:10",
+      "group_no": "10",
+      "question": "設____",
+      "answer": "計",
+      "chars": [
+        {
+          "char": "計",
+          "zhuyin": null,
+          "example": "設計"
+        },
+        {
+          "char": "什",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "針",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「國」的部首是哪一個？",
+      "options": [
+        "⽨",
+        "⾴",
+        "⽔"
+      ],
+      "answer": "⼞",
+      "explanation": "「國」的部首是⼞。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「王」的部首是哪一個？",
+      "options": [
+        "⼇",
+        "⽨",
+        "⾴"
+      ],
+      "answer": "⽟",
+      "explanation": "「王」的部首是⽟。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「喜」的部首是哪一個？",
+      "options": [
+        "⽅",
+        "⽋",
+        "⾛"
+      ],
+      "answer": "⼝",
+      "explanation": "「喜」的部首是⼝。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「大臣」是什麼意思？",
+      "options": [
+        "預先規劃、製定圖樣。",
+        "察覺、發覺。",
+        "唯一、僅有。"
+      ],
+      "answer": "擔負國家重任的官吏。",
+      "explanation": "大臣：擔負國家重任的官吏。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「只」是什麼意思？",
+      "options": [
+        "變更、修正。",
+        "共同享受。",
+        "把衣物等套在身體上。"
+      ],
+      "answer": "唯一、僅有。",
+      "explanation": "只：唯一、僅有。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「穿」是什麼意思？",
+      "options": [
+        "變更、修正。",
+        "共同享受。",
+        "驚奇歡喜。"
+      ],
+      "answer": "把衣物等套在身體上。",
+      "explanation": "穿：把衣物等套在身體上。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「喜歡」是什麼意思？",
+      "options": [
+        "預先規劃、製定圖樣。",
+        "形容體積很小或數量很少。",
+        "共同享受。"
+      ],
+      "answer": "喜愛。",
+      "explanation": "喜歡：喜愛。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「國王」是什麼意思？",
+      "options": [
+        "更加。",
+        "擔負國家重任的官吏。",
+        "喜愛。"
+      ],
+      "answer": "君主制國家的最高領導人。",
+      "explanation": "國王：君主制國家的最高領導人。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "公開資料只放摘要與理解提問，不放課文全文。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "available",
+      "activity": "application"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "available",
+      "activity": "listening-quiz"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "unavailable",
+      "activity": "rhetoric",
+      "note": "無此資料。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  },
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag2h-03",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E5%9C%8B%E7%8E%8B%E5%96%9C%E6%AD%A1%E7%A9%BF%E5%8F%AA%E4%BB%B6%E9%BB%9E%E6%94%B9%E9%A0%98%E8%B6%8A%E8%A8%AD%E8%A8%88%E7%99%BC%E6%96%B9%E6%B3%95%E5%88%86%E4%BA%AB",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・2年級・第3課",
+      "login_required": false,
+      "checked_at": "2026-09-27",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "候",
+        "颳",
+        "冷",
+        "躲",
+        "閃",
+        "電",
+        "難",
+        "烏",
+        "雲",
+        "密",
+        "布",
+        "盆",
+        "充",
+        "滿",
+        "放",
+        "晴",
+        "現",
+        "虹"
+      ],
+      "2": [
+        "老",
+        "師",
+        "新",
+        "希",
+        "望",
+        "卻",
+        "使",
+        "緊",
+        "因",
+        "為",
+        "知",
+        "道",
+        "怎",
+        "消",
+        "失",
+        "習",
+        "最",
+        "掛"
+      ],
+      "3": [
+        "國",
+        "王",
+        "喜",
+        "歡",
+        "穿",
+        "只",
+        "件",
+        "點",
+        "改",
+        "領",
+        "越",
+        "設",
+        "計",
+        "發",
+        "方",
+        "法",
+        "分",
+        "享"
+      ]
+    }
+  }
+}

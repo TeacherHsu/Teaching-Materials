@@ -55,6 +55,20 @@ const correctOrder = paragraphs.map((p) => p.summary);
 const lesson = { paragraph_summary: paragraphs, reading_questions: [] };
 const container = buildReadingActivity(lesson, () => {});
 
+const warmupChips = container.findAll((n) => n.hasClass && n.hasClass('sentence-chip') && n.tagName === 'button');
+assert.equal(warmupChips.length, 2, '暖身應先呈現兩段大意');
+for (const summary of correctOrder.slice(0, 2)) {
+  const chip = container.findAll((n) => n.hasClass && n.hasClass('sentence-chip') && n.tagName === 'button')
+    .find((n) => n.textContent === summary && !n.hasClass('sentence-ordering__placed-chip'));
+  assert.ok(chip, `暖身應有段落「${summary}」可選`);
+  chip.dispatch('click');
+}
+container.findAll((n) => n.tagName === 'button').find((n) => n.textContent.trim() === '檢查答案').dispatch('click');
+const continueButton = container.findAll((n) => n.tagName === 'button')
+  .find((n) => n.textContent.trim() === '繼續：全篇排序');
+assert.ok(continueButton, '暖身完成後應可進入全篇排序');
+continueButton.dispatch('click');
+
 const chips = container.findAll((n) => n.hasClass && n.hasClass('sentence-chip') && n.tagName === 'button');
 const bankOrder = chips.map((c) => c.textContent);
 

@@ -13,7 +13,7 @@
   "lesson_no": 8,
   "title": "街頭藝術家",
   "author": "",
-  "blurb": "透過〈街頭藝術家〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "比較不同地點的街頭表演和觀眾反應，整理作者的觀察與感受。",
   "characters": [
     {
       "char": "墩",
@@ -583,90 +583,110 @@
       "idiom": "齜牙咧嘴",
       "definition": "形容因痛苦或驚恐而面部扭曲變形。",
       "related_char": "咧",
-      "image": "idioms/01_齜牙咧嘴.webp",
+      "image": "idioms/01_齜牙咧嘴-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H08:名不副實",
       "idiom": "名不副實",
       "definition": "形容空有虛名，不合實際。",
       "related_char": "副",
-      "image": "idioms/02_名不副實.webp",
+      "image": "idioms/02_名不副實-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H08:頭昏腦脹",
       "idiom": "頭昏腦脹",
       "definition": "頭部昏暈，心思不清。",
       "related_char": "脹",
-      "image": "idioms/03_頭昏腦脹.webp",
+      "image": "idioms/03_頭昏腦脹-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H08:筋疲力盡",
       "idiom": "筋疲力盡",
       "definition": "筋肉疲憊，氣力耗盡。形容非常疲累。",
       "related_char": "筋",
-      "image": "idioms/04_筋疲力盡.webp",
+      "image": "idioms/04_筋疲力盡-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H08:吉人天相",
       "idiom": "吉人天相",
       "definition": "形容吉善的人自有上天的幫助。",
       "related_char": "吉",
-      "image": "idioms/05_吉人天相.webp",
+      "image": "idioms/05_吉人天相-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H08:按圖索驥",
       "idiom": "按圖索驥",
       "definition": "比喻按照所掌握的線索辦事。",
       "related_char": "按",
-      "image": "idioms/06_按圖索驥.webp",
+      "image": "idioms/06_按圖索驥-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H08:一廂情願",
       "idiom": "一廂情願",
       "definition": "完全出自單方面的主觀意願，不管對方意願如何。",
       "related_char": "廂",
-      "image": "idioms/07_一廂情願.webp",
+      "image": "idioms/07_一廂情願-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H08:改弦易轍",
       "idiom": "改弦易轍",
       "definition": "比喻改變制度、做法或態度。",
       "related_char": "弦",
-      "image": "idioms/08_改弦易轍.webp",
+      "image": "idioms/08_改弦易轍-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H08:循規蹈矩",
       "idiom": "循規蹈矩",
       "definition": "遵守禮法，不踰越法度。",
       "related_char": "矩",
-      "image": "idioms/09_循規蹈矩.webp",
+      "image": "idioms/09_循規蹈矩-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H08:臨淵羨魚",
       "idiom": "臨淵羨魚",
       "definition": "比喻雖有欲望，卻沒有實際行動。",
       "related_char": "羨",
-      "image": "idioms/10_臨淵羨魚.webp",
+      "image": "idioms/10_臨淵羨魚-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -1103,9 +1123,10 @@
         "他站在石墩上一動也不動",
         "他穿著運動服跑步"
       ],
-      "answer": null,
+      "answer": "他站在石墩上一動也不動",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:08:02",
@@ -1114,9 +1135,10 @@
         "表演水準會影響觀眾反應",
         "提琴一定比喇叭好聽"
       ],
-      "answer": null,
+      "answer": "表演水準會影響觀眾反應",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:08:03",
@@ -1125,9 +1147,10 @@
         "街頭也能欣賞專業音樂",
         "音樂只能在劇院演出"
       ],
-      "answer": null,
+      "answer": "街頭也能欣賞專業音樂",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:08:04",
@@ -1136,9 +1159,10 @@
         "駐足欣賞並給予鼓勵",
         "看見表演就立刻離開"
       ],
-      "answer": null,
+      "answer": "駐足欣賞並給予鼓勵",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -1950,7 +1974,8 @@
       ],
       "answer": "他站在石墩上一動也不動",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "在巴黎香榭麗舍大道第一眼看見這個裝扮成卓別林式的街頭藝術家時，我還以為他是個「機器人」呢！"
     },
     {
       "id": "listening:115AG6H08:2",
@@ -1962,7 +1987,8 @@
       ],
       "answer": "表演水準會影響觀眾反應",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "演奏的水準，各有高低；得到的反應，也各不相同。"
     },
     {
       "id": "listening:115AG6H08:3",
@@ -1974,7 +2000,8 @@
       ],
       "answer": "街頭也能欣賞專業音樂",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "這一次具有專業水準的表演大大開了我的眼界，也一改以往認為街頭藝術家大都是「業餘」或「實習生」的印象。"
     },
     {
       "id": "listening:115AG6H08:4",
@@ -1986,7 +2013,8 @@
       ],
       "answer": "駐足欣賞並給予鼓勵",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "下次，當你在人來人往的路口遇見他們時，別忘了抽空駐足欣賞，多多給他們一些鼓勵！"
     }
   ],
   "review_words": {

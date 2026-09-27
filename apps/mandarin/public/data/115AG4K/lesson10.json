@@ -13,7 +13,7 @@
   "lesson_no": 10,
   "title": "奇幻旋律",
   "author": "",
-  "blurb": "透過〈奇幻旋律〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "從物品的外形與功能線索，推想奇幻故事中的事物如何幫助角色。",
   "source_audit": [
     {
       "kind": "official",
@@ -561,54 +561,66 @@
       "idiom": "咬牙切齒",
       "definition": "咬緊牙齒，表示非常悲痛憤恨。",
       "related_char": "牙",
-      "image": "idioms/01_咬牙切齒.webp",
+      "image": "idioms/01_咬牙切齒-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:10:02",
       "idiom": "拾人牙慧",
       "definition": "比喻蹈襲他人的言論或主張。",
       "related_char": "牙",
-      "image": "idioms/02_拾人牙慧.webp",
+      "image": "idioms/02_拾人牙慧-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:10:03",
       "idiom": "掩耳盜鈴",
       "definition": "小偷盜鐘時，怕鐘所發出的聲音會引他人前來搶奪，因而急忙掩住自己的耳朵。後用﹁掩耳盜鈴﹂比喻妄想瞞騙他人，結果卻只是欺騙自己而已。",
       "related_char": "盜",
-      "image": "idioms/03_掩耳盜鈴.webp",
+      "image": "idioms/03_掩耳盜鈴-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:10:04",
       "idiom": "困獸猶鬥",
       "definition": "被圍困的野獸尚且作最後的搏鬥。比喻處於絕境，仍然奮力抵抗。",
       "related_char": "困",
-      "image": "idioms/04_困獸猶鬥.webp",
+      "image": "idioms/04_困獸猶鬥-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:10:05",
       "idiom": "欣欣向榮",
       "definition": "⑴草木生長繁盛的樣子。",
       "related_char": "榮",
-      "image": "idioms/05_欣欣向榮.webp",
+      "image": "idioms/05_欣欣向榮-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:10:06",
       "idiom": "哀鴻遍野",
       "definition": "比喻到處都是流離失所的難民。",
       "related_char": "遍",
-      "image": "idioms/06_哀鴻遍野.webp",
+      "image": "idioms/06_哀鴻遍野-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -899,9 +911,10 @@
         "天氣與季節",
         "速度與距離"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "空間與時間",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K10:02",
@@ -913,9 +926,10 @@
         "能打開洞門",
         "能讓時間停止"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "能載人到任何地方",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K10:03",
@@ -927,9 +941,10 @@
         "笑聲",
         "鐘聲"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "暗語",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K10:04",
@@ -941,9 +956,10 @@
         "洞門立刻關閉",
         "魔毯消失"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "巨人出現並幫忙實現願望",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -2043,38 +2059,41 @@
       "question": "「中東世界雖遙遠，奇幻旋律在耳邊……。」這句話是什麼意思？",
       "options": [
         "中東世界離我們雖然很遙遠，但我們卻知道來自中東世界的一千零一夜故事",
-        "從「鼻尖尖，臉圓圓」可以知道神奇油燈的外形。從「揉揉臉龐搓鼻尖，神燈巨人就出現，報答恩情送心願。」可以知道神奇油燈的神奇功能",
-        "一千零一夜的故事和神奇物品自我介紹的內容"
+        "油燈外形與神奇功能。",
+        "一千零一夜故事和神奇物品。"
       ],
       "answer": "中東世界離我們雖然很遙遠，但我們卻知道來自中東世界的一千零一夜故事",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "中東世界雖遙遠，奇幻旋律在耳邊……。"
     },
     {
       "id": "listening:10:02",
       "stem": "從課文中哪些句子，可以知道飛天魔毯的外形特色和神奇功能？",
       "question": "從課文中哪些句子，可以知道飛天魔毯的外形特色和神奇功能？",
       "options": [
-        "從「鼻尖尖，臉圓圓」可以知道神奇油燈的外形。從「揉揉臉龐搓鼻尖，神燈巨人就出現，報答恩情送心願。」可以知道神奇油燈的神奇功能",
-        "一千零一夜的故事和神奇物品自我介紹的內容",
-        "從「輕輕薄薄身子扁」可以知道飛天魔毯的外形。從「上天下地一轉眼」可以知道飛天魔毯的神奇功能"
+        "油燈外形與神奇功能。",
+        "一千零一夜故事和神奇物品。",
+        "魔毯扁薄，能快速飛行。"
       ],
-      "answer": "從「輕輕薄薄身子扁」可以知道飛天魔毯的外形。從「上天下地一轉眼」可以知道飛天魔毯的神奇功能",
+      "answer": "魔毯扁薄，能快速飛行。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "輕輕薄薄身子扁，上天下地一轉眼。"
     },
     {
       "id": "listening:10:03",
       "stem": "從課文中哪些句子，可以知道黃金洞穴的外形特色和神奇功能？",
       "question": "從課文中哪些句子，可以知道黃金洞穴的外形特色和神奇功能？",
       "options": [
-        "一千零一夜的故事和神奇物品自我介紹的內容",
-        "從「頭硬硬，牙尖尖」可以知道黃金洞穴的外形。從「『芝麻芝麻請開門！』聽到暗語我張嘴。」可以知道黃金洞穴的神奇功能",
-        "從「鼻尖尖，臉圓圓」可以知道神奇油燈的外形。從「揉揉臉龐搓鼻尖，神燈巨人就出現，報答恩情送心願。」可以知道神奇油燈的神奇功能"
+        "一千零一夜故事和神奇物品。",
+        "洞穴堅硬有尖牙，暗語後會開門。",
+        "油燈外形與神奇功能。"
       ],
-      "answer": "從「頭硬硬，牙尖尖」可以知道黃金洞穴的外形。從「『芝麻芝麻請開門！』聽到暗語我張嘴。」可以知道黃金洞穴的神奇功能",
+      "answer": "洞穴堅硬有尖牙，暗語後會開門。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "頭硬硬，牙尖尖；「芝麻芝麻請開門！」聽到暗語我張嘴。"
     }
   ],
   "review_words": {

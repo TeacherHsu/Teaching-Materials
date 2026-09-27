@@ -19,6 +19,7 @@ const STATUS_BUTTON_LABEL = {
   done: '再玩一次',
   available: '開始',
 };
+const CORE_MODULES = new Set(['characters', 'vocabulary', 'sentence_practice', 'reading']);
 
 export function LessonDashboard(lesson) {
   const root = h('div', { class: 'container' });
@@ -53,9 +54,12 @@ export function LessonDashboard(lesson) {
         SpeakButton({ text: lessonTitle, label: '聽', variant: 'speak-button--option' }),
       ]),
       lesson.blurb && !lesson.blurb.startsWith('TODO')
-        ? h('div', { class: 'quiz-option-row' }, [
-            h('p', { class: 'lesson-hero__blurb' }, lesson.blurb),
-            SpeakButton({ text: lesson.blurb, label: '聽', variant: 'speak-button--option' }),
+        ? h('div', { class: 'lesson-hero__focus' }, [
+            h('p', { class: 'lesson-hero__focus-label' }, '本課學習重點'),
+            h('div', { class: 'quiz-option-row' }, [
+              h('p', { class: 'lesson-hero__blurb' }, lesson.blurb),
+              SpeakButton({ text: lesson.blurb, label: '聽', variant: 'speak-button--option' }),
+            ]),
           ])
         : null,
     ].filter(Boolean)),
@@ -76,7 +80,8 @@ export function LessonDashboard(lesson) {
   ]);
   root.appendChild(hero);
 
-  const grid = h('div', { class: 'module-grid' });
+  const coreGrid = h('div', { class: 'module-grid' });
+  const challengeGrid = h('div', { class: 'module-grid' });
   for (const entry of MODULE_REGISTRY) {
     const status = getModuleStatus(lesson, entry);
     const label = (lesson.modules[entry.key] && lesson.modules[entry.key].label) || entry.label;
@@ -134,9 +139,23 @@ export function LessonDashboard(lesson) {
     } else {
       card.appendChild(h('button', { class: 'btn module-card__cta', type: 'button', disabled: 'disabled' }, status.text));
     }
-    grid.appendChild(card);
+    (CORE_MODULES.has(entry.key) ? coreGrid : challengeGrid).appendChild(card);
   }
-  root.appendChild(grid);
+  if (coreGrid.childElementCount) {
+    root.appendChild(h('section', { class: 'lesson-module-section', 'aria-labelledby': 'core-modules-heading' }, [
+      h('h2', { id: 'core-modules-heading', class: 'lesson-module-section__title' }, '本課先完成'),
+      coreGrid,
+    ]));
+  }
+  if (challengeGrid.childElementCount) {
+    const details = h('details', { class: 'lesson-challenge-group' });
+    details.appendChild(h('summary', { class: 'lesson-challenge-group__summary' }, [
+      h('span', {}, '加練挑戰'),
+      h('span', { class: 'lesson-challenge-group__hint' }, '想多練習時再展開'),
+    ]));
+    details.appendChild(challengeGrid);
+    root.appendChild(details);
+  }
 
   const extensionLinks = buildExtensionLinks(lesson, 'lesson', { title: '本課延伸資源' });
   if (extensionLinks) root.appendChild(extensionLinks);

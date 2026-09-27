@@ -13,7 +13,7 @@
   "lesson_no": 11,
   "title": "兔子先生等等我",
   "author": "",
-  "blurb": "透過〈兔子先生等等我〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "依愛麗絲喝果汁、吃蛋糕後的變化，整理身體大小和事件結果。",
   "source_audit": [
     {
       "kind": "official",
@@ -573,54 +573,66 @@
       "idiom": "汗流浹背",
       "definition": "指汗流很多，溼透了背部，本用以形容非常慚愧、驚恐的樣子。後也用以形容工作辛勞，汗出溼背。",
       "related_char": "背",
-      "image": "idioms/01_汗流浹背.webp",
+      "image": "idioms/01_汗流浹背-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:11:02",
       "idiom": "背水一戰",
       "definition": "「背水」就是背對著河流，毫無退路的意思。「背水一戰」比喻抱著必死的決心，奮戰取勝。",
       "related_char": "背",
-      "image": "idioms/02_背水一戰.webp",
+      "image": "idioms/02_背水一戰-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:11:03",
       "idiom": "深思熟慮",
       "definition": "仔細而深入的考慮。",
       "related_char": "深",
-      "image": "idioms/03_深思熟慮.webp",
+      "image": "idioms/03_深思熟慮-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:11:04",
       "idiom": "根深蒂固",
       "definition": "比喻根基堅固，不可動搖。",
       "related_char": "深",
-      "image": "idioms/04_根深蒂固.webp",
+      "image": "idioms/04_根深蒂固-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:11:05",
       "idiom": "從容不迫",
       "definition": "沉著鎮定不慌張。",
       "related_char": "迫",
-      "image": "idioms/05_從容不迫.webp",
+      "image": "idioms/05_從容不迫-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:11:06",
       "idiom": "姍姍來遲",
       "definition": "形容女子遲步緩來的樣子。後也用﹁姍姍來遲﹂形容人或事物不依時出現，害人苦等。",
       "related_char": "遲",
-      "image": "idioms/06_姍姍來遲.webp",
+      "image": "idioms/06_姍姍來遲-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -928,9 +940,10 @@
         "躲避大雨",
         "撿拾鑰匙"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "追兔子先生",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K11:02",
@@ -942,9 +955,10 @@
         "呼喚兔子",
         "搬動桌子"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "拿到鑰匙",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K11:03",
@@ -956,9 +970,10 @@
         "長出翅膀",
         "回到家裡"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "身體縮小",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K11:04",
@@ -970,9 +985,10 @@
         "再次吃蛋糕",
         "穿過小門"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "揮動兔子先生掉落的扇子",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -2110,39 +2126,42 @@
       "stem": "從愛麗絲夢遊仙境這個書名，可以讀出什麼訊息？",
       "question": "從愛麗絲夢遊仙境這個書名，可以讀出什麼訊息？",
       "options": [
-        "由書名大致可以推測是名叫愛麗絲的小女孩，進入自己的夢境後，開始她的奇幻冒險",
-        "三腳桌表達了無法幫忙的想法，是因為三腳桌畢竟是一張桌子，沒有手可以幫忙，這時候只有靠愛麗絲自己才能拿到鑰匙",
-        "他想傳達有些事情或許別人可以幫你，但有些事情還是得靠自己才可以完成"
+        "愛麗絲進入夢境，展開奇幻冒險。",
+        "三腳桌沒有手，無法幫忙。",
+        "有些事情還是要靠自己完成。"
       ],
-      "answer": "由書名大致可以推測是名叫愛麗絲的小女孩，進入自己的夢境後，開始她的奇幻冒險",
+      "answer": "愛麗絲進入夢境，展開奇幻冒險。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "原本與姐姐在樹下閱讀的愛麗絲，為了追一隻身穿鵝黃色背心，手裡還拿著懷錶的兔子，掉進了深不見底的兔子洞。"
     },
     {
       "id": "listening:11:02",
       "stem": "原本與姐姐在樹下閱讀的愛麗絲，為了追什麼，掉進了深不見底的兔子洞？",
       "question": "原本與姐姐在樹下閱讀的愛麗絲，為了追什麼，掉進了深不見底的兔子洞？",
       "options": [
-        "三腳桌表達了無法幫忙的想法，是因為三腳桌畢竟是一張桌子，沒有手可以幫忙，這時候只有靠愛麗絲自己才能拿到鑰匙",
-        "他想傳達有些事情或許別人可以幫你，但有些事情還是得靠自己才可以完成",
-        "愛麗絲為了追一隻身黃色背心，手裡還拿著懷錶的兔子，掉進了深不見底的兔子洞"
+        "三腳桌沒有手，無法幫忙。",
+        "有些事情還是要靠自己完成。",
+        "追一隻穿背心、拿懷錶的兔子。"
       ],
-      "answer": "愛麗絲為了追一隻身黃色背心，手裡還拿著懷錶的兔子，掉進了深不見底的兔子洞",
+      "answer": "追一隻穿背心、拿懷錶的兔子。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "原本與姐姐在樹下閱讀的愛麗絲，為了追一隻身穿鵝黃色背心，手裡還拿著懷錶的兔子，掉進了深不見底的兔子洞。"
     },
     {
       "id": "listening:11:03",
       "stem": "在這篇課文中，愛麗絲遇到了哪些問題？如何解決？",
       "question": "在這篇課文中，愛麗絲遇到了哪些問題？如何解決？",
       "options": [
-        "他想傳達有些事情或許別人可以幫你，但有些事情還是得靠自己才可以完成",
-        "愛麗絲掉入兔子洞之後，她進不去洞裡的門，直到三腳桌提醒她，獲得鑰匙和能縮小身體的果汁。但她在縮小身體後，發現鑰匙不在身上。吃下魔法蛋糕後，她身體變大，可以拿到鑰……",
-        "三腳桌表達了無法幫忙的想法，是因為三腳桌畢竟是一張桌子，沒有手可以幫忙，這時候只有靠愛麗絲自己才能拿到鑰匙"
+        "有些事情還是要靠自己完成。",
+        "遇到小門、鑰匙和身體大小問題，靠果汁與蛋糕解決。",
+        "三腳桌沒有手，無法幫忙。"
       ],
-      "answer": "愛麗絲掉入兔子洞之後，她進不去洞裡的門，直到三腳桌提醒她，獲得鑰匙和能縮小身體的果汁。但她在縮小身體後，發現鑰匙不在身上。吃下魔法蛋糕後，她身體變大，可以拿到鑰……",
+      "answer": "遇到小門、鑰匙和身體大小問題，靠果汁與蛋糕解決。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "但是，門實在太小了，就算我的頭進得去，我的身體也進不去呀！桌上的果汁或許可以解決你的問題。"
     }
   ],
   "review_words": {

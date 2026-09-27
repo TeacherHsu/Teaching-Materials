@@ -12,7 +12,7 @@ import { celebrateCorrect } from '../utils/celebrate.js';
  * 正確詞塊留在原序位並鎖定，讓學習者可以再次拖曳錯誤詞塊修正。
  * @param {{prompt: string, parts: string[], solution: string[], onBack?: () => void}} opts
  */
-export function SentenceOrdering({ prompt, parts, solution, onBack }) {
+export function SentenceOrdering({ prompt, parts, solution, onBack, backLabel = '回課程首頁', onContinue, continueLabel = '繼續' }) {
   const root = h('div', { class: 'quiz-panel' });
   const bank = shuffleDiffering(parts, `${prompt}|${parts.join('')}`).map((word, index) => ({
     id: `sentence-part-${index}`,
@@ -300,7 +300,7 @@ export function SentenceOrdering({ prompt, parts, solution, onBack }) {
           SpeakButton({ text: finished, label: '聽完成句', variant: 'speak-button--option' }),
         ]),
       );
-      root.appendChild(CompletionFeedback({ correct: 1, total: 1, onBack }));
+      root.appendChild(CompletionFeedback({ correct: 1, total: 1, onBack, backLabel, onContinue, continueLabel }));
       return;
     }
 

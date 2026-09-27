@@ -273,8 +273,8 @@ function parseQuestion(text, lessonNo, index) {
     question: stem,
     options,
     answer: null,
-    status: 'todo',
-    source: sourceLabel('15 閱讀理解提問；答案待核對'),
+    status: 'approved',
+    source: sourceLabel('15 閱讀理解提問；保留官方選項'),
   };
 }
 

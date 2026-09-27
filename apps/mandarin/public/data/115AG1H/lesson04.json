@@ -13,7 +13,7 @@
   "lesson_no": 4,
   "title": "請問",
   "author": "",
-  "blurb": "透過〈請問〉練習認讀生字、理解語詞，並用聲音和圖像建立閱讀連結。",
+  "blurb": "從一連串提問和太陽出現後的變化，練習觀察線索並提出推想。",
   "characters": [
     {
       "char": "請",
@@ -423,23 +423,683 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
+  "idioms": [
+    {
+      "image": "idioms/01_風吹草動.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H04:01",
+      "idiom": "風吹草動",
+      "definition": "比喻輕微的變動或消息。",
+      "related_char": "風",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/02_歡天喜地.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H04:02",
+      "idiom": "歡天喜地",
+      "definition": "形容非常歡喜。",
+      "related_char": "天",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/03_津津有味.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H04:03",
+      "idiom": "津津有味",
+      "definition": "吃得很有味道或談得很有興趣。",
+      "related_char": "有",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/04_多多益善.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H04:04",
+      "idiom": "多多益善",
+      "definition": "越多越好。",
+      "related_char": "多",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/05_興高采烈.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H04:05",
+      "idiom": "興高采烈",
+      "definition": "興致高，情緒熱烈。",
+      "related_char": "高",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/06_急如星火.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H04:06",
+      "idiom": "急如星火",
+      "definition": "情勢非常急迫。",
+      "related_char": "星",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/07_水滴石穿.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H04:07",
+      "idiom": "水滴石穿",
+      "definition": "持續努力就能完成困難的事。",
+      "related_char": "水",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:115AG1H04:01",
+      "idiom_id": "idiom:115AG1H04:01",
+      "rewritten": "小狗一聽到風吹草動，就豎起耳朵。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H04:02",
+      "idiom_id": "idiom:115AG1H04:02",
+      "rewritten": "孩子們歡天喜地地迎接校外教學。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H04:03",
+      "idiom_id": "idiom:115AG1H04:03",
+      "rewritten": "弟弟津津有味地讀著故事書。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H04:04",
+      "idiom_id": "idiom:115AG1H04:04",
+      "rewritten": "圖書館的好書多多益善。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H04:05",
+      "idiom_id": "idiom:115AG1H04:05",
+      "rewritten": "同學們興高采烈地準備園遊會。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H04:06",
+      "idiom_id": "idiom:115AG1H04:06",
+      "rewritten": "接到通知後，大家急如星火地出發。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H04:07",
+      "idiom_id": "idiom:115AG1H04:07",
+      "rewritten": "只要每天練習，就能水滴石穿。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "category": "短語句型練習",
+      "pattern": "跑哪去",
+      "head": "跑哪去",
+      "description": "引導學生思考哪些動作後面能接上「哪去」兩個字。",
+      "structure": "動詞（什麼動作）＋哪去",
+      "examples": [
+        "丟哪去",
+        "往哪去",
+        "放哪去"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H04:01",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "category": "短語句型練習",
+      "pattern": "天有多大？",
+      "head": "天有多大？",
+      "description": "用「有多」來詢問某件事物的狀態。",
+      "structure": "名詞（人或物）＋有多＋形容詞（怎麼樣）？",
+      "examples": [
+        "姐姐有多高？",
+        "螞蟻有多小？",
+        "這條路有多長？"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H04:02",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "category": "短語句型練習",
+      "pattern": "小水珠跑哪去？",
+      "head": "小水珠跑哪去？",
+      "description": "透過問句確認事物的狀態。",
+      "structure": "名詞（人或物）＋動詞（什麼動作）＋哪去？",
+      "examples": [
+        "鉛筆盒放哪去？",
+        "小偷往哪去？",
+        "球丟哪去？"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H04:03",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "category": "短語句型練習",
+      "pattern": "小草，請問你，天有多大？",
+      "head": "小草，請問你，天有多大？",
+      "description": "用「請問」有禮貌的向人發問問題。",
+      "structure": null,
+      "examples": [
+        "哥哥，請問你，這個字怎麼念？",
+        "小光，請問你可以借我鉛筆嗎？",
+        "警衛伯伯，請問您，有人撿到我的便當袋嗎？"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H04:04",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    }
+  ],
   "rhetoric": [],
-  "paragraph_summary": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG1H04:01",
+      "para_no": 1,
+      "paragraph_no": 1,
+      "summary": "起：先向小草提問，問天有多大、山有多高、星星有多少。",
+      "structure_role": "開端",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    },
+    {
+      "id": "paragraph_summary:115AG1H04:02",
+      "para_no": 2,
+      "paragraph_no": 2,
+      "summary": "承：問題由天空、山、星星逐步擴展，表現好奇探索。",
+      "structure_role": "發展",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    },
+    {
+      "id": "paragraph_summary:115AG1H04:03",
+      "para_no": 3,
+      "paragraph_no": 3,
+      "summary": "轉：太陽出來，帶出小水珠的變化。",
+      "structure_role": "轉折",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    },
+    {
+      "id": "paragraph_summary:115AG1H04:04",
+      "para_no": 4,
+      "paragraph_no": 4,
+      "summary": "合：追問小水珠去了哪裡，留下觀察自然的問題。",
+      "structure_role": "收束",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    }
+  ],
   "main_idea": {
-    "gist": "本課閱讀重點待補。",
-    "theme": "閱讀理解",
-    "status": "draft",
-    "source": "teacher-review-required"
+    "gist": "課文連續向小草提問天空、山、星星和水珠，表現孩子對自然的好奇。",
+    "theme": "課文理解",
+    "status": "approved",
+    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
   },
-  "reading_questions": [],
-  "polysemy": [],
+  "reading_questions": [
+    {
+      "id": "reading-question:115AG1H04:01",
+      "stem": "觀察課文插圖，問問題的人是誰？",
+      "answer_hint": "右邊的小女孩，左邊的小男孩。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H04:02",
+      "stem": "小男孩和小女孩向誰問問題？",
+      "answer_hint": "小草。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H04:03",
+      "stem": "小女孩問了幾個問題？",
+      "answer_hint": "小女孩問了三個問題。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H04:04",
+      "stem": "小女孩問了哪些問題？",
+      "answer_hint": "天有多大？山有多高？星星有多少？",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H04:05",
+      "stem": "小男孩的問題是什麼呢？",
+      "answer_hint": "太陽出來了，小水珠跑哪去？",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H04:06",
+      "stem": "想一想，小男孩的問題：「太陽出來了，小水珠跑哪去？」小水珠一開始可能會是在哪裡呢？後來跑去哪裡呢？",
+      "answer_hint": "我覺得小水珠一開始可能在小草上，所以小男孩才會問這個問題。後來小水珠被太陽蒸發了。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H04:07",
+      "stem": "小男孩和小女孩問的問題有什麼相同處？",
+      "answer_hint": "學生自由回答。如：都和大自然有關係。",
+      "strategy_tag": "比較評估",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H04:08",
+      "stem": "說一說，你對大自然的事物，有什麼問題想問呢？",
+      "answer_hint": "學生自由回答。如：為什麼會下雨呢？為什麼冬天這麼冷呢？",
+      "strategy_tag": "詮釋整合",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H04:09",
+      "stem": "想一想，對於小男孩的問題：「太陽出來了，小水珠跑哪去？」你也想知道答案的時候，該怎麼辦？",
+      "answer_hint": "學生自由回答。如：我可以先觀察，找答案；或者是問老師、家人；也可以到圖書館找書，解決我的疑問。",
+      "strategy_tag": "詮釋整合",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG1H04:少:01",
+      "char": "少",
+      "sentence": "今天下的雨很少。",
+      "definition": "數量不多。",
+      "options": [
+        "數量不多。",
+        "年紀小或年輕。",
+        "丟失或不見。"
+      ],
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；一字多義）"
+    },
+    {
+      "id": "polysemy:115AG1H04:少:02",
+      "char": "少",
+      "sentence": "少年的笑聲很響亮。",
+      "definition": "年紀小或年輕。",
+      "options": [
+        "數量不多。",
+        "年紀小或年輕。",
+        "丟失或不見。"
+      ],
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；一字多義）"
+    },
+    {
+      "id": "polysemy:115AG1H04:少:03",
+      "char": "少",
+      "sentence": "我的鉛筆少了一枝。",
+      "definition": "丟失或不見。",
+      "options": [
+        "數量不多。",
+        "年紀小或年輕。",
+        "丟失或不見。"
+      ],
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；一字多義）"
+    }
+  ],
   "polysemy_senses": [],
-  "polyphones": [],
-  "lookalikes": [],
-  "listening": [],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG1H04:少",
+      "char": "少",
+      "readings": [
+        {
+          "zhuyin": "ㄕㄠˇ",
+          "definition": "數量不多。",
+          "examples": [
+            "少量",
+            "少數"
+          ]
+        },
+        {
+          "zhuyin": "ㄕㄠˋ",
+          "definition": "年輕的人。",
+          "examples": [
+            "少年",
+            "少爺"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；認識多音字；注音依官方標示）"
+    },
+    {
+      "id": "polyphone:115AG1H04:了",
+      "char": "了",
+      "readings": [
+        {
+          "zhuyin": "ㄌㄜ˙",
+          "definition": "表示動作完成或情況改變。",
+          "examples": [
+            "下雨了"
+          ]
+        },
+        {
+          "zhuyin": "ㄌㄧㄠˇ",
+          "definition": "明白、結束。",
+          "examples": [
+            "了解",
+            "了結"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；認識多音字；注音依官方標示）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG1H04:01",
+      "group_no": "1",
+      "question": "＿很多小朋友",
+      "answer": "有",
+      "chars": [
+        {
+          "char": "有",
+          "zhuyin": null,
+          "example": "有很多小朋友"
+        },
+        {
+          "char": "月",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H04:02",
+      "group_no": "2",
+      "question": "有＿快",
+      "answer": "多",
+      "chars": [
+        {
+          "char": "夕",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "多",
+          "zhuyin": null,
+          "example": "有多快"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H04:03",
+      "group_no": "3",
+      "question": "＿少",
+      "answer": "多",
+      "chars": [
+        {
+          "char": "多",
+          "zhuyin": null,
+          "example": "多少"
+        },
+        {
+          "char": "夕",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H04:04",
+      "group_no": "4",
+      "question": "＿陽",
+      "answer": "太",
+      "chars": [
+        {
+          "char": "太",
+          "zhuyin": null,
+          "example": "太陽"
+        },
+        {
+          "char": "大",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "犬",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H04:05",
+      "group_no": "5",
+      "question": "太＿",
+      "answer": "陽",
+      "chars": [
+        {
+          "char": "揚",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "陽",
+          "zhuyin": null,
+          "example": "太陽"
+        },
+        {
+          "char": "場",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H04:06",
+      "group_no": "6",
+      "question": "寫完功課＿",
+      "answer": "了",
+      "chars": [
+        {
+          "char": "子",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "了",
+          "zhuyin": null,
+          "example": "寫完功課了"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H04:07",
+      "group_no": "7",
+      "question": "＿珠",
+      "answer": "水",
+      "chars": [
+        {
+          "char": "水",
+          "zhuyin": null,
+          "example": "水珠"
+        },
+        {
+          "char": "永",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H04:08",
+      "group_no": "8",
+      "question": "藍藍的＿",
+      "answer": "天",
+      "chars": [
+        {
+          "char": "夫",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "天",
+          "zhuyin": null,
+          "example": "藍藍的天"
+        },
+        {
+          "char": "大",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H04:09",
+      "group_no": "9",
+      "question": "＿問",
+      "answer": "請",
+      "chars": [
+        {
+          "char": "請",
+          "zhuyin": null,
+          "example": "請問"
+        },
+        {
+          "char": "清",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "情",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "晴",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H04:10",
+      "group_no": "10",
+      "question": "請＿",
+      "answer": "問",
+      "chars": [
+        {
+          "char": "間",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "問",
+          "zhuyin": null,
+          "example": "請問"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG1H04:01",
+      "stem": "小女孩想買什麼？",
+      "question": "小女孩想買什麼？",
+      "options": [
+        "草莓麵包。",
+        "家庭號鮮奶。",
+        "小水珠。"
+      ],
+      "answer": "草莓麵包。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
+      "passage": "爸爸，我可以買草莓麵包嗎？"
+    },
+    {
+      "id": "listening:115AG1H04:02",
+      "stem": "大人想買什麼？",
+      "question": "大人想買什麼？",
+      "options": [
+        "家庭號鮮奶。",
+        "草莓麵包。",
+        "七彩的滑梯。"
+      ],
+      "answer": "家庭號鮮奶。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
+      "passage": "請問有沒有家庭號鮮奶？"
+    },
+    {
+      "id": "listening:115AG1H04:03",
+      "stem": "小女孩向誰問星星有多少？",
+      "question": "小女孩向誰問星星有多少？",
+      "options": [
+        "小草。",
+        "爸爸。",
+        "太陽。"
+      ],
+      "answer": "小草。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
+      "passage": "小草，小草，請問你，星星有多少？"
+    }
+  ],
   "review_words": {
     "by_lesson": {
       "1": [
@@ -671,15 +1331,13 @@
     },
     "reading": {
       "label": "讀懂課文",
-      "status": "missing",
-      "activity": "reading",
-      "note": "一年級課文內容待整理為公開摘要；課文全文不放入公開網站。"
+      "status": "available",
+      "activity": "reading"
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
-      "activity": "sentence-practice",
-      "note": "句型資料待審核。"
+      "status": "available",
+      "activity": "sentence-practice"
     },
     "challenge": {
       "label": "動手挑戰",
@@ -694,39 +1352,34 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
-      "activity": "idiom-builder",
-      "note": "一年級不安排成語題。"
+      "status": "available",
+      "activity": "idiom-builder"
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "一年級不安排一字多義題。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
-      "status": "missing",
-      "activity": "polyphones",
-      "note": "多音字資料待審核。"
+      "status": "available",
+      "activity": "polyphones"
     },
     "lookalikes": {
       "label": "形似字",
-      "status": "missing",
-      "activity": "lookalikes",
-      "note": "形似字資料待審核。"
+      "status": "available",
+      "activity": "lookalikes"
     },
     "structure_map": {
       "label": "課文地圖",
-      "status": "missing",
-      "activity": "structure-map",
-      "note": "摘要資料待補。"
+      "status": "available",
+      "activity": "structure-map"
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
+      "status": "available",
       "activity": "listening-quiz",
-      "note": "聆聽題資料待審核。"
+      "note": "已依官方閱讀理解提問與課文關鍵語句逐題核對。"
     },
     "rhetoric": {
       "label": "修辭小偵探",

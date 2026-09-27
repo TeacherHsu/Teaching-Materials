@@ -114,16 +114,19 @@ export function buildRhetoricActivity(lesson, onBack) {
     }
     const isLastRound = roundIndex === rounds.length - 1;
     container.appendChild(
-      TaskBanner({ label: '讀句子，判斷用了什麼修辭（挑戰題）', step: `第 ${roundIndex + 1} 題／共 ${rounds.length} 題` }),
+      TaskBanner({ label: '讀句子，判斷用了什麼修辭（挑戰題）', step: roundIndex === 0 ? '本課先完成' : '加練挑戰' }),
     );
     container.appendChild(
       ChoiceQuiz({
         items: rounds[roundIndex],
-        backLabel: isLastRound ? '回課程首頁' : '下一題',
+        backLabel: isLastRound ? '回課程首頁' : '本課先完成',
+        onContinue: isLastRound ? null : () => {
+          roundIndex += 1;
+          renderStep();
+        },
         onBack: () => {
           if (!isLastRound) {
-            roundIndex += 1;
-            renderStep();
+            onBack();
           } else {
             onBack();
           }

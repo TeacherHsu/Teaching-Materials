@@ -1,0 +1,1972 @@
+{
+  "lesson_id": "115AG2H11",
+  "volume": {
+    "code": "115AG2H",
+    "publisher": "翰林",
+    "grade": 2,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "二上國語課程"
+  },
+  "lesson_no": 11,
+  "title": "奇怪的門",
+  "blurb": "比較進入奇怪的門後發生的事，從字形和句意推想門裡的世界。",
+  "characters": [
+    {
+      "char": "怪",
+      "zhuyin": "ㄍㄨㄞˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "奇怪",
+        "妖怪",
+        "怪物"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=怪",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼼",
+      "stroke_count": 8
+    },
+    {
+      "char": "門",
+      "zhuyin": "ㄇㄣˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "門口",
+        "大門",
+        "房門"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=門",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾨",
+      "stroke_count": 8
+    },
+    {
+      "char": "扇",
+      "zhuyin": "ㄕㄢˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "扇子",
+        "電扇",
+        "風扇"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=扇",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼾",
+      "stroke_count": 10
+    },
+    {
+      "char": "立",
+      "zhuyin": "ㄌㄧˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "立刻",
+        "成立",
+        "站立"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=立",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽴",
+      "stroke_count": 5
+    },
+    {
+      "char": "刻",
+      "zhuyin": "ㄎㄜˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "立刻",
+        "刻意",
+        "時刻"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=刻",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼑",
+      "stroke_count": 8
+    },
+    {
+      "char": "閒",
+      "zhuyin": "ㄒㄧㄢˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "閒暇",
+        "閒人",
+        "空閒"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=閒",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾨",
+      "stroke_count": 12
+    },
+    {
+      "char": "馬",
+      "zhuyin": "ㄇㄚˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "馬上",
+        "馬車",
+        "白馬"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=馬",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾺",
+      "stroke_count": 10
+    },
+    {
+      "char": "闖",
+      "zhuyin": "ㄔㄨㄤˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "闖入",
+        "闖關",
+        "闖禍"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=闖",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾨",
+      "stroke_count": 18
+    },
+    {
+      "char": "耳",
+      "zhuyin": "ㄦˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "刺耳",
+        "悅耳",
+        "木耳"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=耳",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽿",
+      "stroke_count": 6
+    },
+    {
+      "char": "主",
+      "zhuyin": "ㄓㄨˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "主播",
+        "主人",
+        "主要"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=主",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼂",
+      "stroke_count": 5
+    },
+    {
+      "char": "播",
+      "zhuyin": "ㄅㄛ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "播報",
+        "主播",
+        "播放"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=播",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼿",
+      "stroke_count": 15
+    },
+    {
+      "char": "報",
+      "zhuyin": "ㄅㄠˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "播報",
+        "報紙",
+        "報告"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=報",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼟",
+      "stroke_count": 12
+    },
+    {
+      "char": "力",
+      "zhuyin": "ㄌㄧˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "用力",
+        "力量",
+        "力氣"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=力",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼒",
+      "stroke_count": 2
+    },
+    {
+      "char": "竟",
+      "zhuyin": "ㄐㄧㄥˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "竟然",
+        "竟是",
+        "竟敢"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=竟",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾳",
+      "stroke_count": 11
+    },
+    {
+      "char": "巴",
+      "zhuyin": "ㄅㄚ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "嘴巴",
+        "巴士",
+        "尾巴"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=巴",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼰",
+      "stroke_count": 4
+    },
+    {
+      "char": "東",
+      "zhuyin": "ㄉㄨㄥ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "問東問西",
+        "東西",
+        "東方"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=東",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽊",
+      "stroke_count": 8
+    },
+    {
+      "char": "西",
+      "zhuyin": "ㄒㄧ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "問東問西",
+        "西方",
+        "西瓜"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=西",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾑",
+      "stroke_count": 6
+    },
+    {
+      "char": "底",
+      "zhuyin": "ㄉㄧˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "到底",
+        "底下",
+        "海底"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=底",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼴",
+      "stroke_count": 8
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG2H11:01",
+      "word": "閒",
+      "zhuyin": null,
+      "meaning": "空暇無事的。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson11/vocabulary/l11-01.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H11:02",
+      "word": "立刻",
+      "zhuyin": null,
+      "meaning": "即時、馬上。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson11/vocabulary/l11-02.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H11:03",
+      "word": "扇",
+      "zhuyin": null,
+      "meaning": "量詞，計算板狀或片狀物的單位。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson11/vocabulary/l11-03.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H11:04",
+      "word": "門",
+      "zhuyin": null,
+      "meaning": "建築物或車、船等可以開關的出入口。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson11/vocabulary/l11-04.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H11:05",
+      "word": "奇怪",
+      "zhuyin": null,
+      "meaning": "奇特怪異，超出意料。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson11/vocabulary/l11-05.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H11:06",
+      "word": "仔細",
+      "zhuyin": null,
+      "meaning": "注意、小心。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson11/vocabulary/l11-06.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H11:07",
+      "word": "闖",
+      "zhuyin": null,
+      "meaning": "猛衝。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson11/vocabulary/l11-07.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H11:08",
+      "word": "馬",
+      "zhuyin": null,
+      "meaning": "草食性動物，性溫和。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson11/vocabulary/l11-08.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H11:09",
+      "word": "發慌",
+      "zhuyin": null,
+      "meaning": "心裡不安、著急或驚慌。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson11/vocabulary/l11-09.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H11:10",
+      "word": "擠",
+      "zhuyin": null,
+      "meaning": "在有限的空間互相推、擁。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson11/vocabulary/l11-10.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H11:11",
+      "word": "用力",
+      "zhuyin": null,
+      "meaning": "使用力氣。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson11/vocabulary/l11-11.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H11:12",
+      "word": "播報",
+      "zhuyin": null,
+      "meaning": "利用擴音器、收音機或電視機傳送聲音、影像的報導方式。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson11/vocabulary/l11-12.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H11:13",
+      "word": "主播",
+      "zhuyin": null,
+      "meaning": "最主要的播報員。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson11/vocabulary/l11-13.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H11:14",
+      "word": "耳朵",
+      "zhuyin": null,
+      "meaning": "動物用來聽聲音的器官。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson11/vocabulary/l11-14.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H11:15",
+      "word": "妖怪",
+      "zhuyin": null,
+      "meaning": "怪異而害人的精怪。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson11/vocabulary/l11-15.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H11:16",
+      "word": "到底",
+      "zhuyin": null,
+      "meaning": "究竟。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson11/vocabulary/l11-16.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H11:17",
+      "word": "問東問西",
+      "zhuyin": null,
+      "meaning": "不斷的發問。「東」、「西」，不特定指稱。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson11/vocabulary/l11-17.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H11:18",
+      "word": "嘴巴",
+      "zhuyin": null,
+      "meaning": "人或動物的口。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson11/vocabulary/l11-18.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H11:19",
+      "word": "竟然",
+      "zhuyin": null,
+      "meaning": "居然。表示出乎意料之外。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson11/vocabulary/l11-19.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [
+    {
+      "id": "meaning:115AG2H11:01",
+      "word": "閒",
+      "meaning": "空暇無事的。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H11:02",
+      "word": "立刻",
+      "meaning": "即時、馬上。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H11:03",
+      "word": "扇",
+      "meaning": "量詞，計算板狀或片狀物的單位。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H11:04",
+      "word": "門",
+      "meaning": "建築物或車、船等可以開關的出入口。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H11:05",
+      "word": "奇怪",
+      "meaning": "奇特怪異，超出意料。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H11:06",
+      "word": "仔細",
+      "meaning": "注意、小心。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H11:07",
+      "word": "闖",
+      "meaning": "猛衝。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H11:08",
+      "word": "馬",
+      "meaning": "草食性動物，性溫和。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H11:09",
+      "word": "發慌",
+      "meaning": "心裡不安、著急或驚慌。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H11:10",
+      "word": "擠",
+      "meaning": "在有限的空間互相推、擁。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H11:11",
+      "word": "用力",
+      "meaning": "使用力氣。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H11:12",
+      "word": "播報",
+      "meaning": "利用擴音器、收音機或電視機傳送聲音、影像的報導方式。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H11:13",
+      "word": "主播",
+      "meaning": "最主要的播報員。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H11:14",
+      "word": "耳朵",
+      "meaning": "動物用來聽聲音的器官。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H11:15",
+      "word": "妖怪",
+      "meaning": "怪異而害人的精怪。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H11:16",
+      "word": "到底",
+      "meaning": "究竟。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H11:17",
+      "word": "問東問西",
+      "meaning": "不斷的發問。「東」、「西」，不特定指稱。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H11:18",
+      "word": "嘴巴",
+      "meaning": "人或動物的口。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H11:19",
+      "word": "竟然",
+      "meaning": "居然。表示出乎意料之外。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "sentences": [
+    {
+      "category": "短語練習",
+      "pattern": "闖來闖去闖不出來",
+      "examples": [
+        "跑來跑去跑不出來",
+        "想來想去想不出來"
+      ],
+      "description": "強調動作做不出來，以上三處﹁動詞（動作）﹂相同。",
+      "structure": "動詞（動作）＋來＋動詞（動作）＋去＋動詞（動作）＋不出來",
+      "id": "sentence-pattern:115AG2H11:01",
+      "head": "闖來闖去闖不出來",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "太陽想進門，竟然卡在門中間。",
+      "examples": [
+        "媽媽想買這家早餐店的早餐，想不到今天竟然休息。",
+        "我記得那本書放在書架上，現在竟然找不到。"
+      ],
+      "description": "用﹁竟然＋發生什麼事﹂，表達沒想到會發生這件事。",
+      "id": "sentence-pattern:115AG2H11:02",
+      "head": "太陽想進門，竟然卡在門中間。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "月亮一進去，立刻閒得發慌。",
+      "examples": [
+        "爸爸一進門，立刻去洗手。",
+        "哥哥一寫完考卷，立刻仔細檢查。"
+      ],
+      "description": "表示﹁一﹂做什麼事，﹁立刻﹂有了什麼結果。",
+      "id": "sentence-pattern:115AG2H11:03",
+      "head": "月亮一進去，立刻閒得發慌。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "idioms": [
+    {
+      "id": "idiom:115AG2H11:01",
+      "idiom": "少見多怪",
+      "definition": "很少看到而感到驚異奇怪。",
+      "related_char": "怪",
+      "image": "idioms/01_少見多怪-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H11:02",
+      "idiom": "坐立不安",
+      "definition": "形容焦急、煩躁，心神不寧的樣子。",
+      "related_char": "立",
+      "image": "idioms/02_坐立不安-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H11:03",
+      "idiom": "天馬行空",
+      "definition": "比喻文才氣勢奔放，不受拘束。",
+      "related_char": "馬",
+      "image": "idioms/03_天馬行空-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H11:04",
+      "idiom": "交頭接耳",
+      "definition": "形容低聲私語。",
+      "related_char": "耳",
+      "image": "idioms/04_交頭接耳-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H11:05",
+      "idiom": "力不從心",
+      "definition": "心裡想做某事，力量卻沒辦法達到。",
+      "related_char": "力",
+      "image": "idioms/05_力不從心-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H11:06",
+      "idiom": "海底撈針",
+      "definition": "比喻東西很難找到或事情很難做到。",
+      "related_char": "底",
+      "image": "idioms/06_海底撈針-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:115AG2H11:01",
+      "idiom_id": "idiom:115AG2H11:01",
+      "rewritten": "這種事經常發生，沒什麼稀奇，你就別少見多怪了。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H11:02",
+      "idiom_id": "idiom:115AG2H11:02",
+      "rewritten": "等一下就要公布得獎名單了，大家都開始坐立不安。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H11:03",
+      "idiom_id": "idiom:115AG2H11:03",
+      "rewritten": "這本故事書的情節，充滿天馬行空的想像，吸引我一直讀下去。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H11:04",
+      "idiom_id": "idiom:115AG2H11:04",
+      "rewritten": "上課時要專心聽講，不要交頭接耳。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H11:05",
+      "idiom_id": "idiom:115AG2H11:05",
+      "rewritten": "如果做事常常失敗，就會有力不從心的感覺。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H11:06",
+      "idiom_id": "idiom:115AG2H11:06",
+      "rewritten": "如果不知道他的地址，要找到他，就像海底撈針一樣困難。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "category": "短語練習",
+      "pattern": "闖來闖去闖不出來",
+      "examples": [
+        "跑來跑去跑不出來",
+        "想來想去想不出來"
+      ],
+      "description": "強調動作做不出來，以上三處﹁動詞（動作）﹂相同。",
+      "structure": "動詞（動作）＋來＋動詞（動作）＋去＋動詞（動作）＋不出來",
+      "id": "sentence-pattern:115AG2H11:01",
+      "head": "闖來闖去闖不出來",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "太陽想進門，竟然卡在門中間。",
+      "examples": [
+        "媽媽想買這家早餐店的早餐，想不到今天竟然休息。",
+        "我記得那本書放在書架上，現在竟然找不到。"
+      ],
+      "description": "用﹁竟然＋發生什麼事﹂，表達沒想到會發生這件事。",
+      "id": "sentence-pattern:115AG2H11:02",
+      "head": "太陽想進門，竟然卡在門中間。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "月亮一進去，立刻閒得發慌。",
+      "examples": [
+        "爸爸一進門，立刻去洗手。",
+        "哥哥一寫完考卷，立刻仔細檢查。"
+      ],
+      "description": "表示﹁一﹂做什麼事，﹁立刻﹂有了什麼結果。",
+      "id": "sentence-pattern:115AG2H11:03",
+      "head": "月亮一進去，立刻閒得發慌。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG2H11:仔:01",
+      "char": "仔",
+      "sentence": "生活中，我們會用到《仔細》這個詞。",
+      "definition": "周全細密",
+      "options": [
+        "周全細密",
+        "幼小的",
+        "方言指幼小的動物",
+        "方言中的語助詞",
+        "方言中多指具某種特性的人或物，或 指從事某種行業的人"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H11:仔:02",
+      "char": "仔",
+      "sentence": "生活中，我們會用到《仔豬》這個詞。",
+      "definition": "幼小的",
+      "options": [
+        "周全細密",
+        "幼小的",
+        "方言指幼小的動物",
+        "方言中的語助詞",
+        "方言中多指具某種特性的人或物，或 指從事某種行業的人"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H11:仔:03",
+      "char": "仔",
+      "sentence": "生活中，我們會用到《豬仔》這個詞。",
+      "definition": "方言指幼小的動物",
+      "options": [
+        "周全細密",
+        "幼小的",
+        "方言指幼小的動物",
+        "方言中的語助詞",
+        "方言中多指具某種特性的人或物，或 指從事某種行業的人"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H11:仔:04",
+      "char": "仔",
+      "sentence": "生活中，我們會用到《歌仔戲》這個詞。",
+      "definition": "方言中的語助詞",
+      "options": [
+        "周全細密",
+        "幼小的",
+        "方言指幼小的動物",
+        "方言中的語助詞",
+        "方言中多指具某種特性的人或物，或 指從事某種行業的人"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H11:仔:05",
+      "char": "仔",
+      "sentence": "生活中，我們會用到《牛仔。 4. 3. 2. 1. 聞 開 闖 閒 孩 該 刻 搧 扇 鬥 門 ：新聞》這個詞。",
+      "definition": "方言中多指具某種特性的人或物，或 指從事某種行業的人",
+      "options": [
+        "周全細密",
+        "幼小的",
+        "方言指幼小的動物",
+        "方言中的語助詞",
+        "方言中多指具某種特性的人或物，或 指從事某種行業的人"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG2H11:仔",
+      "char": "仔",
+      "readings": [
+        {
+          "zhuyin": "ㄗˇ",
+          "senses": [
+            {
+              "definition": "周全細密",
+              "examples": [
+                "仔細"
+              ]
+            },
+            {
+              "definition": "幼小的",
+              "examples": [
+                "仔豬",
+                "仔牛"
+              ]
+            },
+            {
+              "definition": "方言指幼小的動物",
+              "examples": [
+                "豬仔",
+                "雞仔"
+              ]
+            },
+            {
+              "definition": "方言中的語助詞",
+              "examples": [
+                "歌仔戲"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄗㄞˇ",
+          "senses": [
+            {
+              "definition": "方言中多指具某種特性的人或物，或 指從事某種行業的人",
+              "examples": [
+                "牛仔。 4. 3. 2. 1. 聞 開 闖 閒 孩 該 刻 搧 扇 鬥 門 ：新聞",
+                "聽聞 ：開心",
+                "打開 ：闖關",
+                "闖禍 ：空閒",
+                "悠閒 ：孩子",
+                "孩童 ：應該",
+                "不該 ：深刻",
+                "立刻 ：搧風 ：風扇",
+                "扇子 ：奮鬥",
+                "鬥志 ：門市",
+                "敲門 8. 7. 6. 5. 章 意 音 竟 功 動 加 力 翻 播 謊 慌 ：文章",
+                "章節 ：意思",
+                "心意 ：音樂",
+                "音響 ：竟然",
+                "竟敢 ：功課",
+                "成功 ：動物",
+                "動作 ：加減",
+                "加法 ：力氣",
+                "力量 ：翻滾",
+                "打翻 ：播送",
+                "廣播 ：說謊",
+                "謊言 ：慌張",
+                "驚慌 10. 抵 低 底 ：抵達",
+                "抵抗 ：低頭",
+                "高低 ：底下",
+                "海底 9. 束 果 東 ：花束",
+                "束緊 ：水果",
+                "果然 ：東方",
+                "東區 52"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG2H11:01",
+      "stem": "請仔細聽題目：觀察課本圖片，說一說「奇怪」的門，「奇怪」是什麼意思？你從哪裡找到線索的？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "門裡出現意外的東西，讓人驚訝。",
+        "有一匹馬、一個月亮、一個耳朵和一個太陽。",
+        "閃，因為門裡面有人就是﹁閃﹂。"
+      ],
+      "answer": "門裡出現意外的東西，讓人驚訝。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "這扇門，好奇怪！只要進去，就有怪事。"
+    },
+    {
+      "id": "listening:115AG2H11:02",
+      "stem": "請仔細聽題目：觀察課本圖片，這扇門裡面分別有什麼？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "有一匹馬、一個月亮、一個耳朵和一個太陽。",
+        "門裡出現意外的東西，讓人驚訝。",
+        "閃，因為門裡面有人就是﹁閃﹂。"
+      ],
+      "answer": "有一匹馬、一個月亮、一個耳朵和一個太陽。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "人走進去，閃一下就不見；月亮一進去，立刻閒得發慌；馬跑進去，闖來闖去闖不出來；耳朵走進門，變成主播。"
+    },
+    {
+      "id": "listening:115AG2H11:03",
+      "stem": "請仔細聽題目：課文中提到「人一走進去這扇門，閃一下就不見」，這句話是在說哪一個字？為什麼？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "閃，因為門裡面有人就是﹁閃﹂。",
+        "門裡出現意外的東西，讓人驚訝。",
+        "有一匹馬、一個月亮、一個耳朵和一個太陽。"
+      ],
+      "answer": "閃，因為門裡面有人就是﹁閃﹂。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "人走進去，閃一下就不見。"
+    },
+    {
+      "id": "listening:115AG2H11:04",
+      "stem": "請仔細聽題目：請依序找出課文裡有「門」部件的字有哪些？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "閃、閒、闖、聞、間、問。",
+        "門裡出現意外的東西，讓人驚訝。",
+        "有一匹馬、一個月亮、一個耳朵和一個太陽。"
+      ],
+      "answer": "閃、閒、闖、聞、間、問。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "人走進去，閃一下就不見；月亮一進去，立刻閒得發慌；馬跑進去，闖來闖去闖不出來。"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG2H11:01",
+      "para_no": 1,
+      "summary": "這扇門好奇怪。",
+      "structure_role": "第1段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H11:02",
+      "para_no": 2,
+      "summary": "人進去變不見。月亮進去閒得發慌。馬跑進去闖不出來。耳朵進去開始播報新聞。太陽想進門卡在門中間。嘴巴在門口問東問西。",
+      "structure_role": "第2段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H11:03",
+      "para_no": 3,
+      "summary": "主角猜裡頭住著大妖怪。",
+      "structure_role": "第3段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "id": "main_idea:115AG2H11:01",
+    "gist": "這扇門很奇怪，不論是人或東西進去就有怪事發生，主角猜門裡頭一定住著大妖怪。",
+    "theme": "以好奇的角度，啟發部件﹁門﹂與其他文字組合的語文探索樂趣。",
+    "status": "approved",
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG2H11:01",
+      "stem": "觀察課本圖片，說一說「奇怪」的門，「奇怪」是什麼意思？你從哪裡找到線索的？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "從課本圖片上看，門打開後裡面很奇怪，有很多東西在門裡面。我覺得這裡的﹁奇怪﹂是指很驚訝，和原先想的不一樣。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H11:02",
+      "stem": "觀察課本圖片，這扇門裡面分別有什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "有一匹馬、一個月亮、一個耳朵和一個太陽。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H11:03",
+      "stem": "課文中提到「人一走進去這扇門，閃一下就不見」，這句話是在說哪一個字？為什麼？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "閃，因為門裡面有人就是﹁閃﹂。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H11:04",
+      "stem": "請依序找出課文裡有「門」部件的字有哪些？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "閃、閒、闖、聞、間、問。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H11:05",
+      "stem": "有哪些東西跑到奇怪的門裡？有沒有東西沒有跑進門裡頭？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "跑到門裡的有人、月亮、馬和耳朵。太陽則是卡在門中間，嘴巴是站在門口。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H11:06",
+      "stem": "為什麼這些東西都和門有關？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為這些東西和﹁門﹂字組在一起就變成了新字：閃、閒、闖、聞、間、問。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H11:07",
+      "stem": "你覺得作者最主要想表達什麼意思？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "作者想要教我們認識和﹁門﹂相關的字，讓我們知道組字的構造及方法。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H11:08",
+      "stem": "為什麼主角認為門裡頭一定住著大妖怪？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為跑進門的東西都變得和原本的不太一樣，超乎主角的想像，所以主角認為這一定是妖怪所變的法術。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H11:09",
+      "stem": "翻開字典找找看，這扇奇怪的門裡，還會有什麼東西在裡面？可以怎麼介紹？",
+      "strategy_tag": "比較評估",
+      "answer_hint": "一隻小蟲飛進門裡，變成﹁閩﹂字。才剛走進門裡，大門馬上﹁閉﹂起來。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG2H11:01",
+      "group_no": "1",
+      "question": "建築物可以開關的出入口：____",
+      "answer": "門",
+      "chars": [
+        {
+          "char": "門",
+          "zhuyin": null,
+          "example": "門"
+        },
+        {
+          "char": "鬥",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H11:02",
+      "group_no": "2",
+      "question": "計算板狀或片狀物的量詞：____",
+      "answer": "扇",
+      "chars": [
+        {
+          "char": "扇",
+          "zhuyin": null,
+          "example": "扇"
+        },
+        {
+          "char": "搧",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H11:03",
+      "group_no": "3",
+      "question": "立____",
+      "answer": "刻",
+      "chars": [
+        {
+          "char": "刻",
+          "zhuyin": null,
+          "example": "立刻"
+        },
+        {
+          "char": "該",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "孩",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H11:04",
+      "group_no": "4",
+      "question": "空暇無事的：____",
+      "answer": "閒",
+      "chars": [
+        {
+          "char": "閒",
+          "zhuyin": null,
+          "example": "閒"
+        },
+        {
+          "char": "闖",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "開",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "聞",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H11:05",
+      "group_no": "5",
+      "question": "發____",
+      "answer": "慌",
+      "chars": [
+        {
+          "char": "慌",
+          "zhuyin": null,
+          "example": "發慌"
+        },
+        {
+          "char": "謊",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H11:06",
+      "group_no": "6",
+      "question": "____報",
+      "answer": "播",
+      "chars": [
+        {
+          "char": "播",
+          "zhuyin": null,
+          "example": "播報"
+        },
+        {
+          "char": "翻",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H11:07",
+      "group_no": "7",
+      "question": "用____",
+      "answer": "力",
+      "chars": [
+        {
+          "char": "力",
+          "zhuyin": null,
+          "example": "用力"
+        },
+        {
+          "char": "加",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "動",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "功",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H11:08",
+      "group_no": "8",
+      "question": "居然，表示出乎意料之外：____然",
+      "answer": "竟",
+      "chars": [
+        {
+          "char": "竟",
+          "zhuyin": null,
+          "example": "竟然"
+        },
+        {
+          "char": "音",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "意",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "章",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H11:09",
+      "group_no": "9",
+      "question": "問____問西",
+      "answer": "東",
+      "chars": [
+        {
+          "char": "東",
+          "zhuyin": null,
+          "example": "問東問西"
+        },
+        {
+          "char": "果",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "束",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H11:10",
+      "group_no": "10",
+      "question": "究竟：到____",
+      "answer": "底",
+      "chars": [
+        {
+          "char": "底",
+          "zhuyin": null,
+          "example": "到底"
+        },
+        {
+          "char": "低",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "抵",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「怪」的部首是哪一個？",
+      "options": [
+        "⾳",
+        "⼿",
+        "⽊"
+      ],
+      "answer": "⼼",
+      "explanation": "「怪」的部首是⼼。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「門」的部首是哪一個？",
+      "options": [
+        "⼴",
+        "⾳",
+        "⼿"
+      ],
+      "answer": "⾨",
+      "explanation": "「門」的部首是⾨。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「扇」的部首是哪一個？",
+      "options": [
+        "⼰",
+        "⽴",
+        "⼟"
+      ],
+      "answer": "⼾",
+      "explanation": "「扇」的部首是⼾。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「閒」是什麼意思？",
+      "options": [
+        "使用力氣。",
+        "心裡不安、著急或驚慌。",
+        "即時、馬上。"
+      ],
+      "answer": "空暇無事的。",
+      "explanation": "閒：空暇無事的。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「立刻」是什麼意思？",
+      "options": [
+        "不斷的發問。「東」、「西」，不特定指稱。",
+        "量詞，計算板狀或片狀物的單位。",
+        "空暇無事的。"
+      ],
+      "answer": "即時、馬上。",
+      "explanation": "立刻：即時、馬上。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「扇」是什麼意思？",
+      "options": [
+        "怪異而害人的精怪。",
+        "注意、小心。",
+        "利用擴音器、收音機或電視機傳送聲音、影像的報導方式。"
+      ],
+      "answer": "量詞，計算板狀或片狀物的單位。",
+      "explanation": "扇：量詞，計算板狀或片狀物的單位。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「門」是什麼意思？",
+      "options": [
+        "注意、小心。",
+        "人或動物的口。",
+        "動物用來聽聲音的器官。"
+      ],
+      "answer": "建築物或車、船等可以開關的出入口。",
+      "explanation": "門：建築物或車、船等可以開關的出入口。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「奇怪」是什麼意思？",
+      "options": [
+        "究竟。",
+        "空暇無事的。",
+        "建築物或車、船等可以開關的出入口。"
+      ],
+      "answer": "奇特怪異，超出意料。",
+      "explanation": "奇怪：奇特怪異，超出意料。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "公開資料只放摘要與理解提問，不放課文全文。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "available",
+      "activity": "application"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "available",
+      "activity": "listening-quiz"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "unavailable",
+      "activity": "rhetoric",
+      "note": "無此資料。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  },
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag2h-11",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E6%80%AA%E9%96%80%E6%89%87%E7%AB%8B%E5%88%BB%E9%96%92%E9%A6%AC%E9%97%96%E8%80%B3%E4%B8%BB%E6%92%AD%E5%A0%B1%E5%8A%9B%E7%AB%9F%E5%B7%B4%E6%9D%B1%E8%A5%BF%E5%BA%95",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・2年級・第11課",
+      "login_required": false,
+      "checked_at": "2026-09-27",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "候",
+        "颳",
+        "冷",
+        "躲",
+        "閃",
+        "電",
+        "難",
+        "烏",
+        "雲",
+        "密",
+        "布",
+        "盆",
+        "充",
+        "滿",
+        "放",
+        "晴",
+        "現",
+        "虹"
+      ],
+      "2": [
+        "老",
+        "師",
+        "新",
+        "希",
+        "望",
+        "卻",
+        "使",
+        "緊",
+        "因",
+        "為",
+        "知",
+        "道",
+        "怎",
+        "消",
+        "失",
+        "習",
+        "最",
+        "掛"
+      ],
+      "3": [
+        "國",
+        "王",
+        "喜",
+        "歡",
+        "穿",
+        "只",
+        "件",
+        "點",
+        "改",
+        "領",
+        "越",
+        "設",
+        "計",
+        "發",
+        "方",
+        "法",
+        "分",
+        "享"
+      ],
+      "4": [
+        "呱",
+        "聞",
+        "聲",
+        "猜",
+        "蛙",
+        "別",
+        "靠",
+        "近",
+        "抓",
+        "如",
+        "果",
+        "乖",
+        "腦",
+        "袋",
+        "瓜",
+        "證",
+        "明",
+        "頂"
+      ],
+      "5": [
+        "沙",
+        "灘",
+        "海",
+        "邊",
+        "退",
+        "遠",
+        "螃",
+        "蟹",
+        "愛",
+        "注",
+        "夕",
+        "腳",
+        "丫",
+        "橫",
+        "留",
+        "印",
+        "挖",
+        "麗"
+      ],
+      "6": [
+        "月",
+        "奶",
+        "晚",
+        "飯",
+        "散",
+        "屋",
+        "竹",
+        "林",
+        "頭",
+        "溪",
+        "旁",
+        "暗",
+        "眼",
+        "睛",
+        "那",
+        "聚",
+        "成",
+        "顆"
+      ],
+      "7": [
+        "樣",
+        "食",
+        "郊",
+        "活",
+        "奇",
+        "筒",
+        "香",
+        "味",
+        "便",
+        "當",
+        "盒",
+        "客",
+        "清",
+        "節",
+        "保",
+        "平",
+        "安",
+        "南"
+      ],
+      "8": [
+        "介",
+        "圓",
+        "形",
+        "白",
+        "紙",
+        "米",
+        "變",
+        "軟",
+        "搶",
+        "材",
+        "蝦",
+        "線",
+        "各",
+        "種",
+        "菜",
+        "接",
+        "聽",
+        "更"
+      ],
+      "9": [
+        "黃",
+        "沖",
+        "澡",
+        "蘿",
+        "蔔",
+        "哪",
+        "粒",
+        "熱",
+        "浴",
+        "蒸",
+        "胖",
+        "名",
+        "苔",
+        "蛋",
+        "蔬",
+        "通",
+        "細",
+        "淡"
+      ],
+      "10": [
+        "減",
+        "表",
+        "讀",
+        "認",
+        "識",
+        "謎",
+        "答",
+        "搖",
+        "百",
+        "嘴",
+        "哥",
+        "數",
+        "題",
+        "趕",
+        "突",
+        "異",
+        "口",
+        "對"
+      ],
+      "11": [
+        "怪",
+        "門",
+        "扇",
+        "立",
+        "刻",
+        "閒",
+        "馬",
+        "闖",
+        "耳",
+        "主",
+        "播",
+        "報",
+        "力",
+        "竟",
+        "巴",
+        "東",
+        "西",
+        "底"
+      ]
+    }
+  }
+}

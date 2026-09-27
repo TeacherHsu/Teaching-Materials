@@ -13,7 +13,7 @@
   "lesson_no": 1,
   "title": "遇見自己",
   "author": "",
-  "blurb": "透過〈遇見自己〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "從詩人詢問小魚、蝴蝶等對話，整理他如何看見自己的長處與不足。",
   "characters": [
     {
       "char": "漣",
@@ -537,72 +537,88 @@
       "idiom": "搖頭晃腦",
       "definition": "頭搖來搖去。形容自以為是或自得其樂。",
       "related_char": "晃",
-      "image": "idioms/01_搖頭晃腦.webp",
+      "image": "idioms/01_搖頭晃腦-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H01:班門弄斧",
       "idiom": "班門弄斧",
       "definition": "比喻在行家面前賣弄本事，不自量力。",
       "related_char": "弄",
-      "image": "idioms/02_班門弄斧.webp",
+      "image": "idioms/02_班門弄斧-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H01:情真意摯",
       "idiom": "情真意摯",
       "definition": "情感真切、心意誠摯。",
       "related_char": "摯",
-      "image": "idioms/03_情真意摯.webp",
+      "image": "idioms/03_情真意摯-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H01:不翼而飛",
       "idiom": "不翼而飛",
       "definition": "比喻物品無故遺失。",
       "related_char": "翼",
-      "image": "idioms/04_不翼而飛.webp",
+      "image": "idioms/04_不翼而飛-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H01:含血噴人",
       "idiom": "含血噴人",
       "definition": "比喻捏造事實，誣賴他人。",
       "related_char": "噴",
-      "image": "idioms/05_含血噴人.webp",
+      "image": "idioms/05_含血噴人-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H01:儲精蓄銳",
       "idiom": "儲精蓄銳",
       "definition": "保養精神，積蓄力量。",
       "related_char": "儲",
-      "image": "idioms/06_儲精蓄銳.webp",
+      "image": "idioms/06_儲精蓄銳-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H01:勉為其難",
       "idiom": "勉為其難",
       "definition": "雖然在事實上有所困難，但仍努力去做。",
       "related_char": "勉",
-      "image": "idioms/07_勉為其難.webp",
+      "image": "idioms/07_勉為其難-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H01:赴湯蹈火",
       "idiom": "赴湯蹈火",
       "definition": "比喻奮不顧身，不避艱險。",
       "related_char": "赴",
-      "image": "idioms/08_赴湯蹈火.webp",
+      "image": "idioms/08_赴湯蹈火-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -1003,9 +1019,10 @@
         "樹葉上的昆蟲。",
         "陽光照出的水珠。"
       ],
-      "answer": null,
+      "answer": "周圍的人對自己的關注。",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:01:02",
@@ -1016,9 +1033,10 @@
         "檢視友情、學習與性格。",
         "比較三種生物的外形。"
       ],
-      "answer": null,
+      "answer": "檢視友情、學習與性格。",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:01:03",
@@ -1029,9 +1047,10 @@
         "等待別人替自己決定。",
         "只要貪玩就能得到自由。"
       ],
-      "answer": null,
+      "answer": "經歷挑戰，勇敢成長逐夢。",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:01:04",
@@ -1042,9 +1061,10 @@
         "只記得當下的快樂。",
         "真誠省思並主動改善自己。"
       ],
-      "answer": null,
+      "answer": "真誠省思並主動改善自己。",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -1708,7 +1728,8 @@
       ],
       "answer": "池裡覓食的小魚。",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "覓食的小魚呀請問你，能不能找到真摯的友情？"
     },
     {
       "id": "listening:115AG6H01:2",
@@ -1719,9 +1740,10 @@
         "尋找離開水池的方法。",
         "檢視友情、學習與性格。"
       ],
-      "answer": "尋找離開水池的方法。",
+      "answer": "檢視友情、學習與性格。",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "覓食的小魚呀請問你，能不能找到真摯的友情？自由自在的蝴蝶呀請問你，能不能破蛹飛起張開夢想的彩翼？"
     },
     {
       "id": "listening:115AG6H01:3",
@@ -1732,22 +1754,24 @@
         "經歷挑戰，勇敢成長逐夢。",
         "等待別人替自己決定。"
       ],
-      "answer": "逃避困難，不再學習。",
+      "answer": "經歷挑戰，勇敢成長逐夢。",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "自由自在的蝴蝶呀請問你，能不能破蛹飛起張開夢想的彩翼？"
     },
     {
       "id": "listening:115AG6H01:4",
       "stem": "本詩最後最想鼓勵讀者採取哪一種態度？",
       "question": "本詩最後最想鼓勵讀者採取哪一種態度？",
       "options": [
-        "隱藏缺點，迎合他人。",
+        "面對自己，勇敢走向光明的未來。",
         "把成敗都交給命運。",
         "只記得當下的快樂。"
       ],
-      "answer": "隱藏缺點，迎合他人。",
+      "answer": "面對自己，勇敢走向光明的未來。",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "摘一片雪白的雲，擦亮誠懇的心靈，迎向太陽把幽暗抹成光明。"
     }
   ],
   "review_words": {

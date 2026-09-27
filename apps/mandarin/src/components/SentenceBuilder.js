@@ -8,6 +8,6 @@ import { SentenceOrdering } from './SentenceOrdering.js';
  * 未來若語意分歧（例如 SentenceBuilder 要開放自由輸入）可各自擴充不互相影響。
  * @param {{prompt: string, bank: string[], solution: string[], onBack?: () => void}} opts
  */
-export function SentenceBuilder({ prompt, bank, solution, onBack }) {
-  return SentenceOrdering({ prompt, parts: bank, solution, onBack });
+export function SentenceBuilder({ prompt, bank, solution, onBack, backLabel, onContinue, continueLabel }) {
+  return SentenceOrdering({ prompt, parts: bank, solution, onBack, backLabel, onContinue, continueLabel });
 }

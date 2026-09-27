@@ -7,6 +7,7 @@ import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { missingContentNotice } from './engine.js';
 import { filterByStatus } from '../utils/preview.js';
+import { chunkRounds } from '../utils/chunk.js';
 
 const ROUND_MIN = 3;
 const ROUND_MAX = 5;
@@ -69,7 +70,7 @@ export function buildReviewQuizItems(prevLessons) {
 }
 
 /**
- * 純函式：從候選題目裡挑一組 3–5 題；題目不足 3 題時回傳空陣列（教材審核中）。
+ * 純函式：從候選題目裡挑第一組 3–5 題；供既有使用者與測試相容。
  * @param {Array<object>} prevLessons
  * @param {{min?: number, max?: number}} [opts]
  */
@@ -137,22 +138,32 @@ export function buildReviewActivity(lesson, onBack, opts = {}) {
 
   loadPrevLessons(lesson, { base, fetchImpl })
     .then((prevLessons) => {
-      const roundItems = pickReviewRound(prevLessons);
+      const rounds = chunkRounds(buildReviewQuizItems(prevLessons), { min: ROUND_MIN, max: ROUND_MAX });
       clear(container);
-      if (roundItems.length === 0) {
+      if (rounds.length === 0) {
         container.appendChild(missingContentNotice('舊字新詞：教材審核中'));
         return;
       }
-      container.appendChild(
-        TaskBanner({ label: '複習前面課次教過的字詞', step: `共 ${roundItems.length} 題` }),
-      );
-      container.appendChild(
-        ChoiceQuiz({
-          items: roundItems,
-          backLabel: '回課程首頁',
+      let roundIndex = 0;
+      const renderRound = () => {
+        clear(container);
+        const isLastRound = roundIndex === rounds.length - 1;
+        container.appendChild(TaskBanner({
+          label: '複習前面課次教過的字詞',
+          step: roundIndex === 0 ? '本課先完成' : '加練挑戰',
+        }));
+        container.appendChild(ChoiceQuiz({
+          items: rounds[roundIndex],
+          backLabel: '本課先完成',
           onBack,
-        }),
-      );
+          onContinue: isLastRound ? null : () => {
+            roundIndex += 1;
+            renderRound();
+          },
+          continueLabel: '加練下一組',
+        }));
+      };
+      renderRound();
     })
     .catch(() => {
       clear(container);

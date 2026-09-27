@@ -1,0 +1,1730 @@
+{
+  "lesson_id": "115AG2H02",
+  "volume": {
+    "code": "115AG2H",
+    "publisher": "翰林",
+    "grade": 2,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "二上國語課程"
+  },
+  "lesson_no": 2,
+  "title": "彩色的天空",
+  "blurb": "沿著寫希望卡的經過，找出主角從緊張到快樂的心情轉折。",
+  "characters": [
+    {
+      "char": "老",
+      "zhuyin": "ㄌㄠˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "老師",
+        "老人",
+        "老家"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=老",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽼",
+      "stroke_count": 6
+    },
+    {
+      "char": "師",
+      "zhuyin": "ㄕ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "老師",
+        "教師",
+        "師傅"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=師",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼱",
+      "stroke_count": 10
+    },
+    {
+      "char": "新",
+      "zhuyin": "ㄒㄧㄣ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "新年",
+        "新衣",
+        "新聞"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=新",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽄",
+      "stroke_count": 13
+    },
+    {
+      "char": "希",
+      "zhuyin": "ㄒㄧ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "希望",
+        "希求",
+        "希有"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=希",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼱",
+      "stroke_count": 7
+    },
+    {
+      "char": "望",
+      "zhuyin": "ㄨㄤˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "希望",
+        "看望",
+        "盼望"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=望",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽉",
+      "stroke_count": 11
+    },
+    {
+      "char": "卻",
+      "zhuyin": "ㄑㄩㄝˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "卻是",
+        "卻步",
+        "忘卻"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=卻",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼙",
+      "stroke_count": 9
+    },
+    {
+      "char": "使",
+      "zhuyin": "ㄕˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "使用",
+        "使命",
+        "使者"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=使",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼈",
+      "stroke_count": 8
+    },
+    {
+      "char": "緊",
+      "zhuyin": "ㄐㄧㄣˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "緊張",
+        "緊急",
+        "緊密"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=緊",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽷",
+      "stroke_count": 14
+    },
+    {
+      "char": "因",
+      "zhuyin": "ㄧㄣ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "因為",
+        "原因",
+        "因果"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=因",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼞",
+      "stroke_count": 6
+    },
+    {
+      "char": "為",
+      "zhuyin": "ㄨㄟˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "因為",
+        "為了",
+        "行為"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=為",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽕",
+      "stroke_count": 9
+    },
+    {
+      "char": "知",
+      "zhuyin": "ㄓ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "知道",
+        "知識",
+        "通知"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=知",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽮",
+      "stroke_count": 8
+    },
+    {
+      "char": "道",
+      "zhuyin": "ㄉㄠˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "知道",
+        "道路",
+        "道理"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=道",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾡",
+      "stroke_count": 13
+    },
+    {
+      "char": "怎",
+      "zhuyin": "ㄗㄣˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "怎麼辦",
+        "怎麼",
+        "怎樣"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=怎",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼼",
+      "stroke_count": 9
+    },
+    {
+      "char": "消",
+      "zhuyin": "ㄒㄧㄠ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "消失",
+        "消息",
+        "消除"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=消",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽔",
+      "stroke_count": 10
+    },
+    {
+      "char": "失",
+      "zhuyin": "ㄕ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "失去",
+        "消失",
+        "失望"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=失",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼤",
+      "stroke_count": 5
+    },
+    {
+      "char": "習",
+      "zhuyin": "ㄒㄧˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "學習",
+        "習慣",
+        "自習"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=習",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽻",
+      "stroke_count": 11
+    },
+    {
+      "char": "最",
+      "zhuyin": "ㄗㄨㄟˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "最後",
+        "最好",
+        "最近"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=最",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼌",
+      "stroke_count": 12
+    },
+    {
+      "char": "掛",
+      "zhuyin": "ㄍㄨㄚˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "掛號",
+        "掛念",
+        "掛上"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=掛",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼿",
+      "stroke_count": 11
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG2H02:01",
+      "word": "開始",
+      "zhuyin": null,
+      "meaning": "著手進行。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson02/vocabulary/l02-01.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H02:02",
+      "word": "卻",
+      "zhuyin": null,
+      "meaning": "倒、反，表示轉折相承。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson02/vocabulary/l02-02.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H02:03",
+      "word": "希望",
+      "zhuyin": null,
+      "meaning": "心中的期待、指望。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson02/vocabulary/l02-03.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H02:04",
+      "word": "新",
+      "zhuyin": null,
+      "meaning": "剛開始的、剛出現的。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson02/vocabulary/l02-04.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H02:05",
+      "word": "老師",
+      "zhuyin": null,
+      "meaning": "對傳授學問或技藝者的尊稱。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson02/vocabulary/l02-05.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H02:06",
+      "word": "怎麼辦",
+      "zhuyin": null,
+      "meaning": "如何處理。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson02/vocabulary/l02-06.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H02:07",
+      "word": "知道",
+      "zhuyin": null,
+      "meaning": "明白、了解。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson02/vocabulary/l02-07.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H02:08",
+      "word": "不熟",
+      "zhuyin": null,
+      "meaning": "了解不多。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson02/vocabulary/l02-08.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H02:09",
+      "word": "轉學生",
+      "zhuyin": null,
+      "meaning": "指從甲校轉入乙校繼續學習的學生。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson02/vocabulary/l02-09.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H02:10",
+      "word": "因為",
+      "zhuyin": null,
+      "meaning": "連詞。表示事情的原因。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson02/vocabulary/l02-10.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H02:11",
+      "word": "緊張",
+      "zhuyin": null,
+      "meaning": "情緒害怕不安。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson02/vocabulary/l02-11.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H02:12",
+      "word": "消失",
+      "zhuyin": null,
+      "meaning": "原本看得到或存在的東西不見了。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson02/vocabulary/l02-12.webp",
+      "status": "ready",
+      "source": "教育百科 115 學年度上學期・翰林版二年級第 2 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150102",
+      "image_origin": "generated:imagegen-vocabulary-meaning"
+    },
+    {
+      "id": "word:115AG2H02:13",
+      "word": "學習",
+      "zhuyin": null,
+      "meaning": "透過閱讀、聆聽和練習，學會新的知識或本領。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson02/vocabulary/l02-13.webp",
+      "status": "ready",
+      "source": "教育百科 115 學年度上學期・翰林版二年級第 2 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150102",
+      "image_origin": "generated:imagegen-vocabulary-meaning"
+    },
+    {
+      "id": "word:115AG2H02:14",
+      "word": "最後",
+      "zhuyin": null,
+      "meaning": "在時間或順序上排在最末的位置。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson02/vocabulary/l02-14.webp",
+      "status": "ready",
+      "source": "教育百科 115 學年度上學期・翰林版二年級第 2 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150102",
+      "image_origin": "generated:imagegen-vocabulary-meaning"
+    },
+    {
+      "id": "word:115AG2H02:15",
+      "word": "跳舞",
+      "zhuyin": null,
+      "meaning": "跟著音樂的節奏做出舞蹈動作。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson02/vocabulary/l02-15.webp",
+      "status": "ready",
+      "source": "教育百科 115 學年度上學期・翰林版二年級第 2 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150102",
+      "image_origin": "generated:imagegen-vocabulary-meaning"
+    }
+  ],
+  "word_meanings": [
+    {
+      "id": "meaning:115AG2H02:01",
+      "word": "開始",
+      "meaning": "著手進行。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H02:02",
+      "word": "卻",
+      "meaning": "倒、反，表示轉折相承。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H02:03",
+      "word": "希望",
+      "meaning": "心中的期待、指望。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H02:04",
+      "word": "新",
+      "meaning": "剛開始的、剛出現的。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H02:05",
+      "word": "老師",
+      "meaning": "對傳授學問或技藝者的尊稱。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H02:06",
+      "word": "怎麼辦",
+      "meaning": "如何處理。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H02:07",
+      "word": "知道",
+      "meaning": "明白、了解。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H02:08",
+      "word": "不熟",
+      "meaning": "了解不多。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H02:09",
+      "word": "轉學生",
+      "meaning": "指從甲校轉入乙校繼續學習的學生。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H02:10",
+      "word": "因為",
+      "meaning": "連詞。表示事情的原因。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H02:11",
+      "word": "緊張",
+      "meaning": "情緒害怕不安。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H02:12",
+      "word": "消失",
+      "meaning": "原本看得到或存在的東西不見了。",
+      "status": "ready",
+      "source": "教育百科 115 學年度上學期・翰林版二年級第 2 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150102"
+    },
+    {
+      "id": "meaning:115AG2H02:13",
+      "word": "學習",
+      "meaning": "透過閱讀、聆聽和練習，學會新的知識或本領。",
+      "status": "ready",
+      "source": "教育百科 115 學年度上學期・翰林版二年級第 2 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150102"
+    },
+    {
+      "id": "meaning:115AG2H02:14",
+      "word": "最後",
+      "meaning": "在時間或順序上排在最末的位置。",
+      "status": "ready",
+      "source": "教育百科 115 學年度上學期・翰林版二年級第 2 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150102"
+    },
+    {
+      "id": "meaning:115AG2H02:15",
+      "word": "跳舞",
+      "meaning": "跟著音樂的節奏做出舞蹈動作。",
+      "status": "ready",
+      "source": "教育百科 115 學年度上學期・翰林版二年級第 2 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150102"
+    }
+  ],
+  "sentences": [
+    {
+      "category": "短語練習",
+      "pattern": "快樂得跳起舞來",
+      "examples": [
+        "高興得唱起歌來",
+        "難過得流下淚來"
+      ],
+      "description": "﹁怎麼樣﹂是為了表現心情的程度。",
+      "structure": "形容詞（心情）＋得＋怎麼樣",
+      "id": "sentence-pattern:115AG2H02:01",
+      "head": "快樂得跳起舞來",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "因為我是轉學生，和同學還不熟，不知道可以問誰。",
+      "examples": [
+        "因為弟弟剛開始學游泳，只能在淺水區練習。",
+        "因為外面正在下雨，我們就不能出去玩。"
+      ],
+      "description": "表達事情發生的原因。",
+      "id": "sentence-pattern:115AG2H02:02",
+      "head": "因為我是轉學生，和同學還不熟，不知道可以問誰。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "老師要大家寫上開學新希望，最後，老師把大家的卡片掛在教室的後面。",
+      "examples": [
+        "我努力練習踢球，最後成功進球了。",
+        "小狗跑了好久，最後累了躺下來。"
+      ],
+      "description": "用﹁最後﹂強調做完這件事，後面不會再接其他的事物了。",
+      "id": "sentence-pattern:115AG2H02:03",
+      "head": "老師要大家寫上開學新希望，最後，老師把大家的卡片掛在教室的後面。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "我想了好久，卻想不出要寫什麼。",
+      "examples": [
+        "爸爸想叫計程車，卻一直叫不到車。",
+        "我想早點睡覺，卻躺在床上睡不著。"
+      ],
+      "description": "﹁誰＋事件①，卻＋事件②﹂，當事件①和事件②的情況相",
+      "id": "sentence-pattern:115AG2H02:04",
+      "head": "我想了好久，卻想不出要寫什麼。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "idioms": [
+    {
+      "id": "idiom:115AG2H02:01",
+      "idiom": "老馬識途",
+      "definition": "比喻有經驗的人對情況比較熟悉，容易把工作做好。",
+      "related_char": "老",
+      "image": "idioms/01_老馬識途-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H02:02",
+      "idiom": "耳目一新",
+      "definition": "形容看到、聽到的事物，都有一種新奇、清新的感覺。",
+      "related_char": "新",
+      "image": "idioms/02_耳目一新-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H02:03",
+      "idiom": "守望相助",
+      "definition": "形容相互幫助，共同守衛、瞭望。",
+      "related_char": "望",
+      "image": "idioms/03_守望相助-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H02:04",
+      "idiom": "有始有終",
+      "definition": "有開頭，有結尾。比喻做事能貫徹到底。",
+      "related_char": null,
+      "image": "idioms/04_有始有終-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H02:05",
+      "idiom": "不知所措",
+      "definition": "形容人害怕不安，不知道怎麼辦才好。",
+      "related_char": "知",
+      "image": "idioms/05_不知所措-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H02:06",
+      "idiom": "志同道合",
+      "definition": "人和人之間的志向、興趣、理想一致。",
+      "related_char": "道",
+      "image": "idioms/06_志同道合-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:115AG2H02:01",
+      "idiom_id": "idiom:115AG2H02:01",
+      "rewritten": "小張常到日本旅遊，這次有他老馬識途的帶領下，一定玩得很盡興。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H02:02",
+      "idiom_id": "idiom:115AG2H02:02",
+      "rewritten": "這座兒童樂園經過整修後，讓人感到耳目一新。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H02:03",
+      "idiom_id": "idiom:115AG2H02:03",
+      "rewritten": "同學們要守望相助，可以幫助別人，也可以幫助自己。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H02:04",
+      "idiom_id": "idiom:115AG2H02:04",
+      "rewritten": "班長做事認真負責，總是能有始有終的完成，我要向他學習。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H02:05",
+      "idiom_id": "idiom:115AG2H02:05",
+      "rewritten": "遇到地震要保持冷靜，才不會不知所措。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H02:06",
+      "idiom_id": "idiom:115AG2H02:06",
+      "rewritten": "多參加各種活動，就可以找到志同道合的朋友。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "category": "短語練習",
+      "pattern": "快樂得跳起舞來",
+      "examples": [
+        "高興得唱起歌來",
+        "難過得流下淚來"
+      ],
+      "description": "﹁怎麼樣﹂是為了表現心情的程度。",
+      "structure": "形容詞（心情）＋得＋怎麼樣",
+      "id": "sentence-pattern:115AG2H02:01",
+      "head": "快樂得跳起舞來",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "因為我是轉學生，和同學還不熟，不知道可以問誰。",
+      "examples": [
+        "因為弟弟剛開始學游泳，只能在淺水區練習。",
+        "因為外面正在下雨，我們就不能出去玩。"
+      ],
+      "description": "表達事情發生的原因。",
+      "id": "sentence-pattern:115AG2H02:02",
+      "head": "因為我是轉學生，和同學還不熟，不知道可以問誰。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "老師要大家寫上開學新希望，最後，老師把大家的卡片掛在教室的後面。",
+      "examples": [
+        "我努力練習踢球，最後成功進球了。",
+        "小狗跑了好久，最後累了躺下來。"
+      ],
+      "description": "用﹁最後﹂強調做完這件事，後面不會再接其他的事物了。",
+      "id": "sentence-pattern:115AG2H02:03",
+      "head": "老師要大家寫上開學新希望，最後，老師把大家的卡片掛在教室的後面。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "我想了好久，卻想不出要寫什麼。",
+      "examples": [
+        "爸爸想叫計程車，卻一直叫不到車。",
+        "我想早點睡覺，卻躺在床上睡不著。"
+      ],
+      "description": "﹁誰＋事件①，卻＋事件②﹂，當事件①和事件②的情況相",
+      "id": "sentence-pattern:115AG2H02:04",
+      "head": "我想了好久，卻想不出要寫什麼。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG2H02:為:01",
+      "char": "為",
+      "sentence": "生活中，我們會用到《為什麼？》這個詞。",
+      "definition": "相當於「因」，表示原因",
+      "options": [
+        "相當於「因」，表示原因",
+        "行、作",
+        "是"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H02:為:02",
+      "char": "為",
+      "sentence": "生活中，我們會用到《行為》這個詞。",
+      "definition": "行、作",
+      "options": [
+        "相當於「因」，表示原因",
+        "行、作",
+        "是"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H02:為:03",
+      "char": "為",
+      "sentence": "生活中，我們會用到《以為》這個詞。",
+      "definition": "是",
+      "options": [
+        "相當於「因」，表示原因",
+        "行、作",
+        "是"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H02:轉:01",
+      "char": "轉",
+      "sentence": "生活中，我們會用到《轉頭》這個詞。",
+      "definition": "改變方向或變換形勢、情況 等",
+      "options": [
+        "改變方向或變換形勢、情況 等",
+        "間接傳送",
+        "迴旋環繞"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H02:轉:02",
+      "char": "轉",
+      "sentence": "生活中，我們會用到《轉交》這個詞。",
+      "definition": "間接傳送",
+      "options": [
+        "改變方向或變換形勢、情況 等",
+        "間接傳送",
+        "迴旋環繞"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H02:轉:03",
+      "char": "轉",
+      "sentence": "生活中，我們會用到《轉圈》這個詞。",
+      "definition": "迴旋環繞",
+      "options": [
+        "改變方向或變換形勢、情況 等",
+        "間接傳送",
+        "迴旋環繞"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG2H02:為",
+      "char": "為",
+      "readings": [
+        {
+          "zhuyin": "ㄨㄟˋ",
+          "senses": [
+            {
+              "definition": "相當於「因」，表示原因",
+              "examples": [
+                "為什麼？"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄨㄟˊ",
+          "senses": [
+            {
+              "definition": "行、作",
+              "examples": [
+                "行為"
+              ]
+            },
+            {
+              "definition": "是",
+              "examples": [
+                "以為"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    },
+    {
+      "id": "polyphone:115AG2H02:轉",
+      "char": "轉",
+      "readings": [
+        {
+          "zhuyin": "ㄓㄨㄢˇ",
+          "senses": [
+            {
+              "definition": "改變方向或變換形勢、情況 等",
+              "examples": [
+                "轉頭",
+                "轉動"
+              ]
+            },
+            {
+              "definition": "間接傳送",
+              "examples": [
+                "轉交",
+                "轉達"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄓㄨㄢˋ",
+          "senses": [
+            {
+              "definition": "迴旋環繞",
+              "examples": [
+                "轉圈",
+                "自轉。 4. 3. 2. 1. 固 困 囚 因 治 始 布 希 親 新 ：固定",
+                "堅固 ：困難",
+                "困住 ：囚犯",
+                "囚禁 ：起因",
+                "因此 ：治病",
+                "治理 ：開始",
+                "始終 ：布袋",
+                "布條 ：希望",
+                "希求 ：親切",
+                "親近 ：新年",
+                "新家 8. 7. 6. 5. 矢 失 逍 銷 宵 消 瓣 辯 辨 辦 傳 轉 ：矢口否認 ：失去",
+                "失誤 ：逍遙 ：銷售",
+                "推銷 ：宵夜",
+                "通宵 ：消息",
+                "消失 ：花瓣 ：辯解",
+                "辯論 ：辨認",
+                "辨別 ：辦理",
+                "辦公 ：傳說",
+                "傳染 ：轉彎",
+                "轉告 7"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG2H02:01",
+      "stem": "請仔細聽題目：老師給大家小雲朵卡片做什麼？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "請大家寫開學新希望。",
+        "應該是開學的第一天。",
+        "他的頭髮看起來很亂，皺著眉頭還冒著汗，抓著頭髮的樣子，感覺心情很不好。"
+      ],
+      "answer": "請大家寫開學新希望。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "上課時，老師給我們小雲朵卡片，要大家寫上開學新希望。"
+    },
+    {
+      "id": "listening:115AG2H02:02",
+      "stem": "請仔細聽題目：你覺得課文故事是發生在什麼時候？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "應該是開學的第一天。",
+        "請大家寫開學新希望。",
+        "他的頭髮看起來很亂，皺著眉頭還冒著汗，抓著頭髮的樣子，感覺心情很不好。"
+      ],
+      "answer": "應該是開學的第一天。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "上課時，老師給我們小雲朵卡片，要大家寫上開學新希望。"
+    },
+    {
+      "id": "listening:115AG2H02:03",
+      "stem": "請仔細聽題目：觀察課本第17頁插圖，插圖中的小男孩︵主角︶，心情如何？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "他的頭髮看起來很亂，皺著眉頭還冒著汗，抓著頭髮的樣子，感覺心情很不好。",
+        "請大家寫開學新希望。",
+        "應該是開學的第一天。"
+      ],
+      "answer": "他的頭髮看起來很亂，皺著眉頭還冒著汗，抓著頭髮的樣子，感覺心情很不好。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "我想了好久，卻想不出要寫什麼。"
+    },
+    {
+      "id": "listening:115AG2H02:04",
+      "stem": "請仔細聽題目：為什麼小男孩會緊張？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "轉學生不知如何寫新希望，感到緊張。",
+        "請大家寫開學新希望。",
+        "應該是開學的第一天。"
+      ],
+      "answer": "轉學生不知如何寫新希望，感到緊張。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "因為我是轉學生，和同學還不熟，不知道可以問誰，怎麼辦才好呢？"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG2H02:01",
+      "para_no": 1,
+      "summary": "老師要大家寫開學新希望，主角想不出要寫什麼。",
+      "structure_role": "第1段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H02:02",
+      "para_no": 2,
+      "summary": "主角是轉學生，和大家不熟，不知道可以問誰。",
+      "structure_role": "第2段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H02:03",
+      "para_no": 3,
+      "summary": "下課時，班長和同學親近主角，主角終於寫出開學新希望。",
+      "structure_role": "第3段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H02:04",
+      "para_no": 4,
+      "summary": "最後老師把卡片掛在教室後面，主角的心情快樂起來。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "id": "main_idea:115AG2H02:01",
+    "gist": "老師要大家寫開學新希望，主角很緊張，不知如何是好。下課時，班長和同學來親近他，讓主角轉變心情，最後老師把卡片掛在教室後面，主角的心情也快樂得跳起舞來。",
+    "theme": "轉學生面對新環境時心情由緊張到快樂的變化。",
+    "status": "approved",
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG2H02:01",
+      "stem": "老師給大家小雲朵卡片做什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "請大家寫開學新希望。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H02:02",
+      "stem": "你覺得課文故事是發生在什麼時候？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "應該是開學的第一天。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H02:03",
+      "stem": "觀察課本第17頁插圖，插圖中的小男孩︵主角︶，心情如何？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "他的頭髮看起來很亂，皺著眉頭還冒著汗，抓著頭髮的樣子，感覺心情很不好。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H02:04",
+      "stem": "為什麼小男孩會緊張？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "因為他剛轉學到學校，沒有認識的人可以問問題，他不知道該怎麼寫自己的新希望，感到很緊張又擔心。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H02:05",
+      "stem": "改變小男孩緊張情緒的重要原因是什麼？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為下課後班長跑來告訴他新希望，同學們也紛紛主動和他說話，所以心情好多了。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H02:06",
+      "stem": "小男孩的開學新希望是什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "想要和同學一起快樂學習。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H02:07",
+      "stem": "觀察課文插圖，小男孩前後兩頁有什麼不同，代表什麼意思？",
+      "strategy_tag": "比較評估",
+      "answer_hint": "小男孩的頭髮變得比較整齊，且有了笑容，看得出來心情變好了，因為同學們的善意，讓他的緊張消失了。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H02:08",
+      "stem": "試著將小男孩的心情變化過程整理出來。",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "小男孩轉學的第一天，和大家不熟，找不到人問，所以很緊張。幸好，下課後，同學們主動來找他說話，所以心情變得快樂起來。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H02:09",
+      "stem": "課文名稱「彩色的天空」，在這一課代表的意思是什麼？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "我覺得有兩個意思，一個是老師把彩色小卡片掛在教室的後面，布告欄是藍色的，看起來就像是彩色的天空。另一個是形容主角的緊張的心情消失了，彩色天空是形容愉快的心情。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG2H02:01",
+      "group_no": "1",
+      "question": "本課生詞：____",
+      "answer": "新",
+      "chars": [
+        {
+          "char": "新",
+          "zhuyin": null,
+          "example": "新"
+        },
+        {
+          "char": "親",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H02:02",
+      "group_no": "2",
+      "question": "____望",
+      "answer": "希",
+      "chars": [
+        {
+          "char": "希",
+          "zhuyin": null,
+          "example": "希望"
+        },
+        {
+          "char": "布",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H02:03",
+      "group_no": "3",
+      "question": "開____",
+      "answer": "始",
+      "chars": [
+        {
+          "char": "始",
+          "zhuyin": null,
+          "example": "開始"
+        },
+        {
+          "char": "治",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H02:04",
+      "group_no": "4",
+      "question": "____為",
+      "answer": "因",
+      "chars": [
+        {
+          "char": "因",
+          "zhuyin": null,
+          "example": "因為"
+        },
+        {
+          "char": "囚",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "困",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "固",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H02:05",
+      "group_no": "5",
+      "question": "____學生",
+      "answer": "轉",
+      "chars": [
+        {
+          "char": "轉",
+          "zhuyin": null,
+          "example": "轉學生"
+        },
+        {
+          "char": "傳",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H02:06",
+      "group_no": "6",
+      "question": "怎麼____",
+      "answer": "辦",
+      "chars": [
+        {
+          "char": "辦",
+          "zhuyin": null,
+          "example": "怎麼辦"
+        },
+        {
+          "char": "辨",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "辯",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "瓣",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H02:07",
+      "group_no": "7",
+      "question": "剛開始的、剛出現的：____",
+      "answer": "新",
+      "chars": [
+        {
+          "char": "新",
+          "zhuyin": null,
+          "example": "新"
+        },
+        {
+          "char": "親",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H02:08",
+      "group_no": "8",
+      "question": "心中的期待、指望：____望",
+      "answer": "希",
+      "chars": [
+        {
+          "char": "希",
+          "zhuyin": null,
+          "example": "希望"
+        },
+        {
+          "char": "布",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H02:09",
+      "group_no": "9",
+      "question": "著手進行：開____",
+      "answer": "始",
+      "chars": [
+        {
+          "char": "始",
+          "zhuyin": null,
+          "example": "開始"
+        },
+        {
+          "char": "治",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「老」的部首是哪一個？",
+      "options": [
+        "⼤",
+        "⽕",
+        "⼌"
+      ],
+      "answer": "⽼",
+      "explanation": "「老」的部首是⽼。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「師」的部首是哪一個？",
+      "options": [
+        "⼌",
+        "⼼",
+        "⽕"
+      ],
+      "answer": "⼱",
+      "explanation": "「師」的部首是⼱。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「新」的部首是哪一個？",
+      "options": [
+        "⼞",
+        "⽉",
+        "⽻"
+      ],
+      "answer": "⽄",
+      "explanation": "「新」的部首是⽄。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「開始」是什麼意思？",
+      "options": [
+        "連詞。表示事情的原因。",
+        "對傳授學問或技藝者的尊稱。",
+        "剛開始的、剛出現的。"
+      ],
+      "answer": "著手進行。",
+      "explanation": "開始：著手進行。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「卻」是什麼意思？",
+      "options": [
+        "明白、了解。",
+        "對傳授學問或技藝者的尊稱。",
+        "著手進行。"
+      ],
+      "answer": "倒、反，表示轉折相承。",
+      "explanation": "卻：倒、反，表示轉折相承。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「希望」是什麼意思？",
+      "options": [
+        "倒、反，表示轉折相承。",
+        "對傳授學問或技藝者的尊稱。",
+        "連詞。表示事情的原因。"
+      ],
+      "answer": "心中的期待、指望。",
+      "explanation": "希望：心中的期待、指望。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「新」是什麼意思？",
+      "options": [
+        "指從甲校轉入乙校繼續學習的學生。",
+        "了解不多。",
+        "剛開始的、剛出現的。"
+      ],
+      "answer": "剛開始的、剛出現的。",
+      "explanation": "新：剛開始的、剛出現的。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「老師」是什麼意思？",
+      "options": [
+        "情緒害怕不安。",
+        "剛開始的、剛出現的。",
+        "了解不多。"
+      ],
+      "answer": "對傳授學問或技藝者的尊稱。",
+      "explanation": "老師：對傳授學問或技藝者的尊稱。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "公開資料只放摘要與理解提問，不放課文全文。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "available",
+      "activity": "application"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "available",
+      "activity": "listening-quiz"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "unavailable",
+      "activity": "rhetoric",
+      "note": "無此資料。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  },
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag2h-02",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E8%80%81%E5%B8%AB%E6%96%B0%E5%B8%8C%E6%9C%9B%E5%8D%BB%E4%BD%BF%E7%B7%8A%E5%9B%A0%E7%82%BA%E7%9F%A5%E9%81%93%E6%80%8E%E6%B6%88%E5%A4%B1%E7%BF%92%E6%9C%80%E6%8E%9B",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・2年級・第2課",
+      "login_required": false,
+      "checked_at": "2026-09-27",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "候",
+        "颳",
+        "冷",
+        "躲",
+        "閃",
+        "電",
+        "難",
+        "烏",
+        "雲",
+        "密",
+        "布",
+        "盆",
+        "充",
+        "滿",
+        "放",
+        "晴",
+        "現",
+        "虹"
+      ],
+      "2": [
+        "老",
+        "師",
+        "新",
+        "希",
+        "望",
+        "卻",
+        "使",
+        "緊",
+        "因",
+        "為",
+        "知",
+        "道",
+        "怎",
+        "消",
+        "失",
+        "習",
+        "最",
+        "掛"
+      ]
+    }
+  }
+}

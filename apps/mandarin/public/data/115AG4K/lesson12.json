@@ -13,7 +13,7 @@
   "lesson_no": 12,
   "title": "老鞋匠和小精靈",
   "author": "",
-  "blurb": "透過〈老鞋匠和小精靈〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "追蹤鞋店困難、出現新鞋到發現小精靈的經過，找出善意帶來的改變。",
   "source_audit": [
     {
       "kind": "official",
@@ -562,6 +562,32 @@
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-15.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+    },
+    {
+      "id": "word:115AG4K12:16",
+      "word": "蹦蹦跳跳",
+      "zhuyin": null,
+      "meaning": "形容活潑地連續跳躍。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG4K/lesson12/vocabulary/l12-16.webp",
+      "status": "ready",
+      "source": "教育百科 115 學年度上學期・康軒版四年級第 12 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0103041150112",
+      "image_origin": "generated:imagegen-vocabulary-meaning"
+    },
+    {
+      "id": "word:115AG4K12:17",
+      "word": "內心",
+      "zhuyin": null,
+      "meaning": "一個人心裡的想法和感受。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG4K/lesson12/vocabulary/l12-17.webp",
+      "status": "ready",
+      "source": "教育百科 115 學年度上學期・康軒版四年級第 12 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0103041150112",
+      "image_origin": "generated:imagegen-vocabulary-meaning"
     }
   ],
   "word_meanings": [],
@@ -572,54 +598,66 @@
       "idiom": "洗心革面",
       "definition": "除去邪思雜念，改變舊日面目。比喻徹底悔悟，改過遷善。。",
       "related_char": "革",
-      "image": "idioms/01_洗心革面.webp",
+      "image": "idioms/01_洗心革面-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:12:02",
       "idiom": "事半功倍",
       "definition": "事情只用古人一半的心力，而功效加倍。形容費力少而收效大。",
       "related_char": "倍",
-      "image": "idioms/02_事半功倍.webp",
+      "image": "idioms/02_事半功倍-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:12:03",
       "idiom": "旁敲側擊",
       "definition": "說話或寫文章不從正面直接說，而是用從旁比喻或暗示來表達。",
       "related_char": "敲",
-      "image": "idioms/03_旁敲側擊.webp",
+      "image": "idioms/03_旁敲側擊-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:12:04",
       "idiom": "福至心靈",
       "definition": "形容運氣來時，心思突然變得靈敏起來。",
       "related_char": "靈",
-      "image": "idioms/04_福至心靈.webp",
+      "image": "idioms/04_福至心靈-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:12:05",
       "idiom": "心滿意足",
       "definition": "心中非常滿足。",
       "related_char": "足",
-      "image": "idioms/05_心滿意足.webp",
+      "image": "idioms/05_心滿意足-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:12:06",
       "idiom": "循規蹈矩",
       "definition": "遵守禮法，不踰越法度。",
       "related_char": "蹈",
-      "image": "idioms/06_循規蹈矩.webp",
+      "image": "idioms/06_循規蹈矩-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -895,9 +933,10 @@
         "皮革被雨淋溼",
         "顧客都去旅行"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "製鞋速度變慢、收入變少",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K12:02",
@@ -909,9 +948,10 @@
         "桌上出現金幣",
         "顧客送來皮革"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "剪好的皮革變成新鞋",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K12:03",
@@ -923,9 +963,10 @@
         "鎮上的顧客",
         "路過的商人"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "兩個小精靈",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K12:04",
@@ -937,9 +978,10 @@
         "準備食物",
         "關閉鞋店"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "製作新衣和新鞋",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -1953,38 +1995,41 @@
       "question": "鞋匠的鞋店生意不錯，有哪些原因？",
       "options": [
         "鞋匠製鞋的技術遠近知名，妻子招呼客人也很親切，因此大家喜歡跟他們買鞋",
-        "因為自動做出來的鞋子十分漂亮精美，讓客人願意付雙倍的價錢購買，而且無論鞋匠剪多少張皮革，隔天就會變出多少雙的鞋子，可以滿足客人的需求",
-        "因為他們在店裡都沒有發現任何異狀，而且鞋子都是隔天早上才出現，他們推測做鞋的人都是半夜出現，而且不想被人發現，所以他們才會躲起來查看"
+        "鞋子漂亮，還能滿足客人需求。",
+        "他們猜做鞋的人在半夜出現。"
       ],
       "answer": "鞋匠製鞋的技術遠近知名，妻子招呼客人也很親切，因此大家喜歡跟他們買鞋",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "由於鞋匠的技術遠近知名，妻子招呼客人的態度親切，因此鞋店的生意一直都不錯。"
     },
     {
       "id": "listening:12:02",
       "stem": "鞋店的生意為什麼會變差？",
       "question": "鞋店的生意為什麼會變差？",
       "options": [
-        "因為自動做出來的鞋子十分漂亮精美，讓客人願意付雙倍的價錢購買，而且無論鞋匠剪多少張皮革，隔天就會變出多少雙的鞋子，可以滿足客人的需求",
-        "因為他們在店裡都沒有發現任何異狀，而且鞋子都是隔天早上才出現，他們推測做鞋的人都是半夜出現，而且不想被人發現，所以他們才會躲起來查看",
-        "因為鞋匠的年紀大了，製鞋的速度變慢，無法供應顧客的需求，所以有人不來買鞋，收入就變差了"
+        "鞋子漂亮，還能滿足客人需求。",
+        "他們猜做鞋的人在半夜出現。",
+        "年紀大，製鞋變慢，收入減少。"
       ],
-      "answer": "因為鞋匠的年紀大了，製鞋的速度變慢，無法供應顧客的需求，所以有人不來買鞋，收入就變差了",
+      "answer": "年紀大，製鞋變慢，收入減少。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "製鞋的速度卻大不如前，上門的顧客買不到新鞋，店裡的收入便越來越少了。"
     },
     {
       "id": "listening:12:03",
       "stem": "老鞋匠嘆氣的原因是什麼？",
       "question": "老鞋匠嘆氣的原因是什麼？",
       "options": [
-        "因為他們在店裡都沒有發現任何異狀，而且鞋子都是隔天早上才出現，他們推測做鞋的人都是半夜出現，而且不想被人發現，所以他們才會躲起來查看",
-        "老鞋匠嘆氣的原因是他賣了鞋只能買食物，食物吃完了，就沒有錢過活了。他擔心之後的生活變得艱困，內心因此感到焦慮",
-        "因為自動做出來的鞋子十分漂亮精美，讓客人願意付雙倍的價錢購買，而且無論鞋匠剪多少張皮革，隔天就會變出多少雙的鞋子，可以滿足客人的需求"
+        "他們猜做鞋的人在半夜出現。",
+        "賣鞋收入只夠買食物，擔心生活困難。",
+        "鞋子漂亮，還能滿足客人需求。"
       ],
-      "answer": "老鞋匠嘆氣的原因是他賣了鞋只能買食物，食物吃完了，就沒有錢過活了。他擔心之後的生活變得艱困，內心因此感到焦慮",
+      "answer": "賣鞋收入只夠買食物，擔心生活困難。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "唉！做完這雙鞋，賣出的錢只夠買食物，無法再買皮革了。"
     }
   ],
   "review_words": {

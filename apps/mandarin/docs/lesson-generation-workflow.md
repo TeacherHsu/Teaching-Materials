@@ -1,6 +1,6 @@
 # 國語教材網站批次產出工作流
 
-本文件把 G1A、G3A、G4A、G6A 的教材網站產出流程固定下來，並說明目前可重跑的 Python 產生器與康軒 G4A 準備資料器。公開 repo 只保存衍生後的課程 JSON、壓縮圖片與索引；官方教材、完整課文、Excel 與審核用工作檔仍留在私有工作區。
+本文件把 G1A、G2A、G3A、G4A、G6A 的教材網站產出流程固定下來，並說明目前可重跑的 Python 產生器與各版本準備資料器。公開 repo 只保存衍生後的課程 JSON、壓縮圖片與索引；官方教材、完整課文、Excel 與審核用工作檔仍留在私有工作區。
 
 ## 產出架構
 
@@ -27,16 +27,18 @@ public/data/course-index.json
 1. 建立課次清單，確認課名、生字與官方來源版本。
 2. 讀取生字表，使用已核對的字音、部首與筆畫資料。
 3. 從私有生字 Excel 依常用度取前三個造詞；若不足，才用本課官方語詞補足，不自行創詞。
-4. 讀取官方語詞解釋。G3A 第 7–12 課優先採用 `low-g3-v2` 已審核 manifest；圖片只接受 manifest 的完全同詞對應。既有課次補圖時，使用 `fill_vocabulary_images.py`，舊教材明確對應圖優先，沒有可核對舊圖的詞才接入私有生成圖 manifest。
+4. 讀取官方語詞解釋。G3A 第 7 課採用 `low-g3-v2` 已審核 manifest；第 8–12 課逐課核對 05 形音輕鬆學官方詞表並完整匯入，官方詞目排在前面，既有非重複補充詞卡留在後面。所有圖片都要有逐詞完全相符的來源對應；既有課次補圖時，使用 `fill_vocabulary_images.py`，舊教材明確對應圖優先，沒有可核對舊圖的詞才接入私有生成圖 manifest。G3A 第 8–12 課執行 `npm run materialize:g3a-vocabulary`；來源台帳與原圖留在私有教材工作區。
 5. 將圖片轉成 WebP，單張不得超過 300 KiB，單課不得超過 4 MiB。
 6. 產生固定網站資料結構：生字卡、語詞解釋卡、隨機選項、筆順外部連結與模組可用狀態。
 7. 建立「舊字新詞」跨課索引：每課的 `review_words.by_lesson` 必須累積同冊截至本課的已公開生字；第 2 課起要以實際前課生字／語詞至少 3 題為可開始條件，第 1 課維持鎖定。不得只改模組文字而沒有可產生的跨課題目。
 8. 建立「成語填句子」資料：每個可用成語都要有一筆完整、自然、可由上下文判斷的具體情境句；句中必須包含該成語，挖空成語後仍要保留足夠語境。禁止使用「遇到生活中的相關情況時，可以用……來形容」等泛用模板。若該課尚無成語資料，維持模組未開放，不用空白或泛用題目填充。
+   成語理解圖須針對辭意建立清楚的兒童教材插圖；公開圖片統一為 960×960 WebP，單張不得超過 300 KiB。直式、橫式或非 960 正方形來源，必須以 `normalize-idiom-images.py` 完整容納於正方形畫布，不得用 `cover` 裁切；在 `idioms[].image` 使用明確的相對路徑，並以 `image_layout` 記錄 `square-native` 或 `square-contain`。圖片來源標記保留為 `image_origin`，不得寫入私有絕對路徑。
 9. 建立「修辭小偵探」資料：每一筆可用的 `rhetoric` 題目都要在 `example` 中以 `﹁關鍵字﹂` 標出官方解析所框出的關鍵字；若是既有資料使用 `「關鍵字」` 或 `『關鍵字』`，可保留作相容格式，但新增資料統一使用 `﹁﹂`。
-10. 建立「形似字」資料：答案選項只能來自官方形似字辨別題庫核定的同一字形群組；不可把例詞的第一個字直接當成答案，也不可因讀音、詞義相近就混入非形似字。每個選項都要有包含該字的有效例詞，並保留一份公開衍生的核對基準 `docs/lookalike-approved-groups.json`。
-11. 合併 `course-index.json`，不能因為只產生部分課次而刪掉既有課次。
-12. 寫入外部進度檔。中斷後以 `--resume` 跳過已有且狀態為 `ready` 的課次。
-13. 執行資料驗證、舊字新詞全面稽核、成語情境句檢查、形似字選項核對、修辭關鍵字變色檢查、圖片容量檢查、建置與回歸測試，再 commit。
+10. 建立「聽聽看」資料：每一題必須先回到官方課文或已核准的對應閱讀內容，找出足以支持答案的關鍵語句，寫入 `passage`；`passage` 只能放一至兩句關鍵語句，不得把整個自然段、題目、選項、答案解析或「請仔細聽題目」等提示句當成播放內容。`question` 是聽完後才顯示／朗讀的作答問題，不能與 `passage` 相同。
+11. 建立「形似字」資料：答案選項只能來自官方形似字辨別題庫核定的同一字形群組；不可把例詞的第一個字直接當成答案，也不可因讀音、詞義相近就混入非形似字。每個選項都要有包含該字的有效例詞，並保留一份公開衍生的核對基準 `docs/lookalike-approved-groups.json`。
+12. 合併 `course-index.json`，不能因為只產生部分課次而刪掉既有課次。
+13. 寫入外部進度檔。中斷後以 `--resume` 跳過已有且狀態為 `ready` 的課次。
+14. 執行資料驗證、舊字新詞全面稽核、成語情境句與成語圖片檢查、形似字選項核對、修辭關鍵字變色檢查、聽聽看內容對應稽核、圖片容量檢查、建置與回歸測試，再 commit。
 
 ### 句子排序共用互動契約
 
@@ -50,11 +52,41 @@ public/data/course-index.json
 
 這項契約由 `scripts/test-sentence-ordering-feedback.mjs` 驗證，並由 `scripts/check-workflow-completeness.mjs` 納入工作流完整性閘門；因此 G1A、G2A、G3A、G4A 與 G6A 只要使用同一個句型練習活動，就會自動套用相同模式。
 
+### 聽聽看：先聽對應內容再回答
+
+「聽聽看」不是把題目念一遍後再問同一題，而是依序完成：
+
+1. 從官方課文、官方閱讀理解資料或已核准的教師來源，定位本題答案所在的內容。
+2. 只摘錄能支持答案的一至兩句關鍵語句，寫入該題的 `passage` 欄位。必要時可保留兩句的前後因果，但不得全文搬入公開 JSON。
+3. `question` 只保留學生聽完後要回答的問題；不得把 `question`、選項、答案解析或「請仔細聽題目」當成 `passage`。
+4. 每題在畫面上顯示「先聽一聽」按鈕。正常支援語音的畫面只播放 `passage`，不把 `passage` 全文印在題目頁；沒有語音 API 時才提供文字 fallback。
+5. 選項只保留學生需要比較的答案短語或短句，不得放入頁碼、課文依據、解題過程、推論說明或整段課文；單一選項超過 45 字即列入 `REVIEW_REQUIRED`，回核後縮成精簡答案。
+6. 新資料必須有可追溯的官方來源標籤與課次定位；公開資料只放必要的關鍵語句，不放官方課文檔、完整自然段或私有絕對路徑。
+
+既有資料若只有 `stem`：
+
+- `stem` 是內容敘述且與題目不同時，標為 `REVIEW_REQUIRED`，回官方課文核對後搬入 `passage`。
+- `stem` 等於 `question`，或含「請仔細聽題目／根據剛才聽到」等提示時，判為 `FAIL`，不得直接開放。
+- 沒有聽聽看題目的課次可維持 `modules.listening.status: "missing"`，不可用空白題或朗讀題目冒充內容。
+
+每次新增或匯入聽聽看資料，執行：
+
+```powershell
+npm.cmd run backfill:listening
+node scripts/audit-listening-content.mjs
+node scripts/audit-listening-content.mjs --strict
+node scripts/test-listening-single-round.mjs
+```
+
+`backfill:listening` 只套用已回到私有官方課文核對過的逐題關鍵語句，不帶入官方課文全文；第一個稽核指令列出各年級與各課的盤點結果；`--strict` 在仍有 `FAIL` 或 `REVIEW_REQUIRED` 時阻擋發布。完成人工核對並補齊 `passage` 後，才可把課次標為 `available`。
+
+這支稽核器能可靠抓出欄位缺漏、把題目當成播放內容、提示句冒充內容，以及整段過長等結構問題；它不能只靠字串相似度證明 `passage` 的語意真的支持答案。因此 `REVIEW_REQUIRED` 必須回到官方課文逐題核對，不能把自動稽核通過當成教材內容審核完成。
+
 ## Python 批次產生器
 
 檔案：`scripts/generate_lessons.py`
 
-這支工具目前直接涵蓋 G3A 與 G1A 的官方來源標準化輸入，也提供 G4A、G6A 的公開準備資料介面。G4A 與 G6A 的官方來源清理、來源 hash 與每課 manifest 保留在私有工作流，完成來源核對後只將標準化課次 JSON 與壓縮圖片交給公開介面，避免把官方檔案帶入公開 repo。
+這支工具目前直接涵蓋 G3A 與 G1A 的官方來源標準化輸入，也提供 G2A、G4A、G6A 的公開準備資料介面。G2A、G4A 與 G6A 的官方來源清理、來源 hash 與每課 manifest 保留在私有工作流，完成來源核對後只將標準化課次 JSON 與壓縮圖片交給公開介面，避免把官方檔案帶入公開 repo。
 
 ### G3A 第 7–12 課
 
@@ -73,7 +105,7 @@ python scripts/generate_lessons.py `
 
 第一次執行或來源已更新時，移除 `--resume`，讓課次重新生成。若只想檢查來源完整性，加入 `--dry-run`；dry-run 不會寫入公開課程資料。
 
-批次輸出後，無論是 G1A、G3A 或已審核匯入的 G6A，都要同步同冊跨課索引：
+批次輸出後，無論是 G1A、G2A、G3A 或已審核匯入的 G4A／G6A，都要同步同冊跨課索引：
 
 ```powershell
 cd apps/mandarin
@@ -124,9 +156,68 @@ python scripts/generate_lessons.py `
   --progress-file <private-progress.json>
 ```
 
+G1A 基礎課次產出後，再執行公開擴充內容物化器，將私有官方來源轉成不含完整課文與私有路徑的衍生資料：
+
+```powershell
+npm run materialize:g1a
+```
+
+G1A 成語理解圖先在私有工作區保存生成接觸表，再以裁切器輸出每個成語一張 960×960 WebP；裁切器只將圖片與相對路徑寫入公開資料，不把接觸表或私有路徑帶入 repo：
+
+```powershell
+python scripts/materialize-g1a-idiom-images.py
+npm run materialize:g1a
+```
+
+G3A 第 7–12 課原本沒有成語圖片的 32 筆，依公開課次成語辭意在私有工作區生成單張理解圖，再由 `materialize-g3a-missing-idiom-images.py` 轉成公開資產。物化器只接受課次 JSON 中原本為空的成語圖片欄位，依課次、順序與成語名稱核對檔名；生成 PNG 不進公開 repo，公開資料只保留相對 WebP 路徑、`image_origin` 與 960×960 完整容納標記：
+
+```powershell
+python scripts/materialize-g3a-missing-idiom-images.py
+```
+
+全站既有年級的成語圖再執行一次完整容納器。它不覆寫原圖，非 960×960 來源另存為 `-fit.webp`，並回寫公開 JSON；原圖因此保留，教材只引用不裁切的正方形版本：
+
+```powershell
+python scripts/normalize-idiom-images.py
+```
+
+此物化器核對 `04形音輕鬆學(含語詞解釋)`、`05生字延伸成語`、`06各課短語句型練習`、`08課文結構表`、`09閱讀理解提問` 及私有形似字題庫；句型、讀懂課文、課文地圖、形似字、成語與一字多義／多音只寫入衍生 JSON。官方來源沒有兩種不同注音的課次，保留一字多音未開放，不以猜測內容補齊。
+
 ### 額度中斷後續作
 
 進度檔不放在 repo，而是放在私有工作區。每課完成後記錄 `ready`、時間與輸出 JSON 的 SHA-256；若執行中斷，重新執行同一指令並加上 `--resume`，會從第一個尚未完成或輸出不存在的課次接續。額度恢復後不需要重新產出已完成課次。
+
+### G2A 公開準備資料介面（翰林來源閘門）
+
+G2A 使用翰林二上官方來源 `115G2A_國語 翰/01_本學年官方教材`。私有準備器 `scripts/prepare_g2a.py` 先讀取已核對的生字注音 manifest、04 形音輕鬆學語詞解釋、05 生字延伸成語、06 短語句型、07 主旨摘要、10 閱讀提問、形似字題庫與教師提供的課文整理；它只輸出不含完整課文、官方原檔與私有絕對路徑的標準化課次 JSON。語詞圖與成語圖先在私有階段盤點，舊圖必須完全對應，缺圖才使用私有生成圖接觸表裁切，全部再壓成 WebP。
+
+```text
+<prepared-root>/
+  115AG2H/
+    lesson01.json
+    lesson02.json
+  assets/115AG2H/lesson01/**/*.webp
+  assets/115AG2H/lesson02/**/*.webp
+```
+
+`lessonNN.json` 必須符合既有公開課次契約，`volume.code` 為 `115AG2H`、出版社為「翰林」。每個生字保留課本核對注音、三個造詞與教育百科連結；每課由公開介面補上 Unihan 部首／筆畫，並帶入雄筆順外部連結。成語圖片來源與圖片容量留在私有來源稽核；公開 JSON 只保存衍生圖片路徑與不含本機路徑的來源標記。
+
+```powershell
+python scripts/prepare_g2a.py `
+  --source-root <private-workspace-root> `
+  --prepared-root <private-prepared-root> `
+  --repo-root <repo>\apps\mandarin `
+  --idiom-sheets <private-generated-contact-sheets>
+
+python scripts/generate_lessons.py `
+  --profile g2a `
+  --prepared-root <private-prepared-root> `
+  --repo-root <repo>\apps\mandarin `
+  --lessons 1-12 `
+  --unihan-zip <private-Unihan.zip> `
+  --progress-file <private-progress.json> `
+  --resume
+```
 
 ### G6A 公開準備資料介面
 
@@ -195,6 +286,22 @@ G6A 的 12 課先在私有工作區完成：
 
 G6A 目前的 12 課是已審核基準，不在公開產生器中重新攜入官方原始檔；若日後需要重建，只需把私有來源清理器的輸出接到相同的標準化課次契約，再沿用索引、圖片與驗證階段。
 
+### 讀懂課文：選擇題答案鍵與對錯回饋
+
+各年級的閱讀理解選擇題統一由 `src/components/ReadingQuestions.js` 轉交共用 `ChoiceQuiz`，不在年級頁另寫判分。選對時明確顯示「答對了」並標示正確選項；第一次答錯時保留其他選項、停用剛選錯的選項並給一個找線索提示；第二次答錯才揭曉正解並鎖定題目。未核定答案或答案不在選項內的題目會停止開放作答，避免只顯示所選文字或錯把資料當成可判分題。
+
+每個答案鍵都必須是該題 `options` 的完整原字串，並填入 `answer_source`。目前四上、六上有選擇題；一至三年級維持逐步提示問答，不為了統一畫面而補造選項。日後任一年級新增選擇題，都會由同一元件提供回饋，並由跨年級測試檢查答案鍵是否完整。
+
+四上、六上題目重建後，執行以下物化器；它會用題幹和正解文字成對核對，題目順序或題幹有變更時會停止，要求重新審核，不會默默把答案套到錯題：
+
+```powershell
+npm.cmd run materialize:g4a-reading-choices
+npm.cmd run materialize:reading-answer-keys
+node scripts/test-reading-question-feedback.mjs
+```
+
+新增或改寫答案鍵時，先回核該課閱讀教材與選項；有歧義的題目留待審，不以猜測的答案開放判分。公開 JSON 只存正確選項文字與衍生來源標記，不存官方解析或私有絕對路徑。
+
 ## 工作流完整性檢查
 
 每次新增年級、出版社介面或教材模組時，先執行：
@@ -203,7 +310,7 @@ G6A 目前的 12 課是已審核基準，不在公開產生器中重新攜入官
 node scripts/check-workflow-completeness.mjs
 ```
 
-檢查器會確認工作流文件、匯入規格、G1A／G3A／G4A／G6A 批次介面、G4A／G6A 準備資料閘門、`dabutie` 抽取／合併工具、圖片容量閘門、舊字新詞同步，以及各項教材規則對應的回歸測試都仍存在。它只檢查公開 repo 的工具與契約，不會讀取或公開官方教材原檔；缺少任一必要項目即以非零狀態結束。
+檢查器會確認工作流文件、匯入規格、G1A／G2A／G3A／G4A／G6A 批次介面、G2A／G4A／G6A 準備資料閘門、`dabutie` 抽取／合併工具、圖片容量閘門、舊字新詞同步，以及各項教材規則對應的回歸測試都仍存在。它只檢查公開 repo 的工具與契約，不會讀取或公開官方教材原檔；缺少任一必要項目即以非零狀態結束。
 
 ## 形似字選項核對
 
@@ -214,7 +321,7 @@ cd apps/mandarin
 node scripts/test-lookalike-shape-groups.mjs
 ```
 
-這項測試會跨公開的 G3A、G6A 與目前有資料的其他年級課次，檢查每課群組與核對基準一致、每組至少兩個不重複漢字、每個例詞確實包含對應字；若未經核對的字混入選項，建置前即失敗。G1A 尚無已核准的形似字資料時，維持模組未開放，不以猜測內容填充。
+這項測試會跨公開的 G1A、G3A、G6A 與目前有資料的其他年級課次，檢查每課群組與核對基準一致、每組至少兩個不重複漢字；正確字必須有核對例詞，官方題庫只提供選項而未提供例詞的干擾字可留空。若未經核對的字混入選項，建置前即失敗。
 
 ## 修辭小偵探關鍵字變色規則
 
@@ -249,6 +356,9 @@ npm.cmd run validate
 node scripts/sync-review-coverage.mjs --check
 node scripts/test-review-coverage.mjs
 node scripts/test-lookalike-shape-groups.mjs
+node scripts/test-reading-question-feedback.mjs
+npm.cmd run audit:listening
+node scripts/audit-listening-content.mjs --strict
 npm.cmd run build
 npm.cmd run check-dist
 npm.cmd run check-assets

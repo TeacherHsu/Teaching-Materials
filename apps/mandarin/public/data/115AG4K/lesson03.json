@@ -13,7 +13,7 @@
   "lesson_no": 3,
   "title": "我的籃球夢",
   "author": "",
-  "blurb": "透過〈我的籃球夢〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "追蹤主角加入籃球社後的練習和心情，整理夢想如何一步步前進。",
   "source_audit": [
     {
       "kind": "official",
@@ -573,54 +573,66 @@
       "idiom": "無與倫比",
       "definition": "比喻沒有能比得上的。",
       "related_char": "與",
-      "image": "idioms/01_無與倫比.webp",
+      "image": "idioms/01_無與倫比-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:03:02",
       "idiom": "五體投地",
       "definition": "比喻非常欽佩對方。",
       "related_char": "投",
-      "image": "idioms/02_五體投地.webp",
+      "image": "idioms/02_五體投地-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:03:03",
       "idiom": "耳熟能詳",
       "definition": "聽得非常熟悉，而能詳盡的知道或說出來。",
       "related_char": "熟",
-      "image": "idioms/03_耳熟能詳.webp",
+      "image": "idioms/03_耳熟能詳-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:03:04",
       "idiom": "弄巧成拙",
       "definition": "本想賣弄才能、聰明，卻反而做了蠢事。比喻枉費心機。",
       "related_char": "巧",
-      "image": "idioms/04_弄巧成拙.webp",
+      "image": "idioms/04_弄巧成拙-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:03:05",
       "idiom": "對牛彈琴",
       "definition": "比喻講話、做事不看對象。後亦用於比喻對不懂道理的人講道理。",
       "related_char": "彈",
-      "image": "idioms/05_對牛彈琴.webp",
+      "image": "idioms/05_對牛彈琴-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:03:06",
       "idiom": "借題發揮",
       "definition": "假借某事為藉口，表達自己真正的意思，或想做的事。",
       "related_char": "揮",
-      "image": "idioms/06_借題發揮.webp",
+      "image": "idioms/06_借題發揮-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -897,9 +909,10 @@
         "想買新球",
         "想當裁判"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "夢想成為球場上的風雲人物",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K03:02",
@@ -911,9 +924,10 @@
         "家人",
         "裁判"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "家人",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K03:03",
@@ -925,9 +939,10 @@
         "請別人代替",
         "放棄運球"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "最早到球場練習",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K03:04",
@@ -939,9 +954,10 @@
         "閉眼休息",
         "離開球場"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "用力吸一口氣",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -2295,38 +2311,41 @@
       "question": "課文中，為什麼大家都在為主角喝采？",
       "options": [
         "因為他在比賽最後關鍵投出一球空心進籃",
-        "主角從剛開始的不會運球、投籃，慢慢克服心裡的恐懼和擔憂，不斷勤加練習，到後來不但能夠掌握球的運行，更可以投進籃，這是一種自我挑戰成功的成就感，所以會格外興奮",
-        "在這個關鍵決一勝負的時候上場，主角的心理壓力一定非常大，他一方面想要幫助球隊得分獲勝，一方面又要穩住自己的緊張情緒，這是個非常不容易的任務，他的心情一定是震盪不……"
+        "克服恐懼，練習後投籃成功。",
+        "關鍵時刻上場，緊張又有壓力。"
       ],
       "answer": "因為他在比賽最後關鍵投出一球空心進籃",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "「刷──」空心進籃！全場歡聲四起，這一刻，大家都在為我喝采，真有說不出的成就感。"
     },
     {
       "id": "listening:03:02",
       "stem": "課文中，主角加入籃球社的起因是什麼？",
       "question": "課文中，主角加入籃球社的起因是什麼？",
       "options": [
-        "主角從剛開始的不會運球、投籃，慢慢克服心裡的恐懼和擔憂，不斷勤加練習，到後來不但能夠掌握球的運行，更可以投進籃，這是一種自我挑戰成功的成就感，所以會格外興奮",
-        "在這個關鍵決一勝負的時候上場，主角的心理壓力一定非常大，他一方面想要幫助球隊得分獲勝，一方面又要穩住自己的緊張情緒，這是個非常不容易的任務，他的心情一定是震盪不……",
-        "他認為自己運動神經不出色，一開始有些猶豫，但是為了實現夢想，仍鼓起勇氣加入籃球社"
+        "克服恐懼，練習後投籃成功。",
+        "關鍵時刻上場，緊張又有壓力。",
+        "運動神經不佳，仍為夢想加入籃球社。"
       ],
-      "answer": "他認為自己運動神經不出色，一開始有些猶豫，但是為了實現夢想，仍鼓起勇氣加入籃球社",
+      "answer": "運動神經不佳，仍為夢想加入籃球社。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "就算是運動神經不好的我，也決定勇敢踏出第一步，與好友一起加入籃球社。"
     },
     {
       "id": "listening:03:03",
       "stem": "為什麼主角一看到籃球架就害怕呢？",
       "question": "為什麼主角一看到籃球架就害怕呢？",
       "options": [
-        "在這個關鍵決一勝負的時候上場，主角的心理壓力一定非常大，他一方面想要幫助球隊得分獲勝，一方面又要穩住自己的緊張情緒，這是個非常不容易的任務，他的心情一定是震盪不……",
-        "因為他初次站在球場上，所以覺得籃球架的高度像一座遙不可及的高山",
-        "主角從剛開始的不會運球、投籃，慢慢克服心裡的恐懼和擔憂，不斷勤加練習，到後來不但能夠掌握球的運行，更可以投進籃，這是一種自我挑戰成功的成就感，所以會格外興奮"
+        "關鍵時刻上場，緊張又有壓力。",
+        "初次上場，覺得籃球架像高山。",
+        "克服恐懼，練習後投籃成功。"
       ],
-      "answer": "因為他初次站在球場上，所以覺得籃球架的高度像一座遙不可及的高山",
+      "answer": "初次上場，覺得籃球架像高山。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "初次站在球場上的我，覺得籃球架像一座遙不可及的高山，一看就讓人覺得害怕。"
     }
   ],
   "review_words": {

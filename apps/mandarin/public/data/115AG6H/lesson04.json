@@ -13,7 +13,7 @@
   "lesson_no": 4,
   "title": "向大自然學習",
   "author": "",
-  "blurb": "透過〈向大自然學習〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "依蚊子、蓮葉和老鷹的例子，整理大自然特徵如何啟發設計。",
   "characters": [
     {
       "char": "鰭",
@@ -536,81 +536,99 @@
       "idiom": "探奧索隱",
       "definition": "探索玄妙隱微的事理。",
       "related_char": "奧",
-      "image": "idioms/01_探奧索隱.webp",
+      "image": "idioms/01_探奧索隱-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H04:迫不及待",
       "idiom": "迫不及待",
       "definition": "情況急迫，不能再等。",
       "related_char": "迫",
-      "image": "idioms/02_迫不及待.webp",
+      "image": "idioms/02_迫不及待-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H04:千叮萬囑",
       "idiom": "千叮萬囑",
       "definition": "一再叮嚀囑咐。",
       "related_char": "叮",
-      "image": "idioms/03_千叮萬囑.webp",
+      "image": "idioms/03_千叮萬囑-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H04:切膚之痛",
       "idiom": "切膚之痛",
       "definition": "比喻極為深刻難忘的感受與經驗。",
       "related_char": "膚",
-      "image": "idioms/04_切膚之痛.webp",
+      "image": "idioms/04_切膚之痛-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H04:玉液瓊漿",
       "idiom": "玉液瓊漿",
       "definition": "比喻香醇的美酒。",
       "related_char": "液",
-      "image": "idioms/05_玉液瓊漿.webp",
+      "image": "idioms/05_玉液瓊漿-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H04:無可奈何",
       "idiom": "無可奈何",
       "definition": "毫無辦法或沒有辦法可想。",
       "related_char": "奈",
-      "image": "idioms/06_無可奈何.webp",
+      "image": "idioms/06_無可奈何-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H04:一箭雙鵰",
       "idiom": "一箭雙鵰",
       "definition": "一次舉動，同時達成兩個目標。",
       "related_char": "箭",
-      "image": "idioms/07_一箭雙鵰.webp",
+      "image": "idioms/07_一箭雙鵰-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H04:橫行霸道",
       "idiom": "橫行霸道",
       "definition": "形容倚仗權勢，為非作歹。",
       "related_char": "霸",
-      "image": "idioms/08_橫行霸道.webp",
+      "image": "idioms/08_橫行霸道-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H04:垂涎三尺",
       "idiom": "垂涎三尺",
       "definition": "形容非常貪饞，也比喻極想據為己有。",
       "related_char": "垂",
-      "image": "idioms/09_垂涎三尺.webp",
+      "image": "idioms/09_垂涎三尺-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -972,9 +990,10 @@
         "自然啟發人類的設計",
         "如何飼養動物"
       ],
-      "answer": null,
+      "answer": "自然啟發人類的設計",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:04:02",
@@ -983,9 +1002,10 @@
         "抗汙材料",
         "更亮的燈泡"
       ],
-      "answer": null,
+      "answer": "抗汙材料",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:04:03",
@@ -994,9 +1014,10 @@
         "減少飛行阻力",
         "讓翅膀變重"
       ],
-      "answer": null,
+      "answer": "減少飛行阻力",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:04:04",
@@ -1005,9 +1026,10 @@
         "仔細觀察自然並學習其中智慧",
         "不要接近大自然"
       ],
-      "answer": null,
+      "answer": "仔細觀察自然並學習其中智慧",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -1768,7 +1790,8 @@
       ],
       "answer": "自然啟發人類的設計",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "人類正是從觀察、研究大自然得到靈感，從而激發出無限的創意與發明。"
     },
     {
       "id": "listening:115AG6H04:2",
@@ -1780,7 +1803,8 @@
       ],
       "answer": "抗汙材料",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "人們根據這種原理，開發出具有奈米特性的材料。"
     },
     {
       "id": "listening:115AG6H04:3",
@@ -1792,7 +1816,8 @@
       ],
       "answer": "減少飛行阻力",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "草原鵰的翅膀末端羽毛會向上翹起，降低向上飛時的阻力。"
     },
     {
       "id": "listening:115AG6H04:4",
@@ -1804,7 +1829,8 @@
       ],
       "answer": "仔細觀察自然並學習其中智慧",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "若是未來遇到難解的問題，別忘了試著向擁有數十億年智慧的大自然請教。"
     }
   ],
   "review_words": {

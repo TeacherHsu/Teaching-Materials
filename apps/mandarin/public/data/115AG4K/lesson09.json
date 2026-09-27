@@ -13,7 +13,7 @@
   "lesson_no": 9,
   "title": "請到我的家鄉來",
   "author": "",
-  "blurb": "透過〈請到我的家鄉來〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "比較泰國、埃及和荷蘭的地景與生活方式，練習依地點整理異同。",
   "source_audit": [
     {
       "kind": "official",
@@ -561,54 +561,66 @@
       "idiom": "借花獻佛",
       "definition": "借用別人的花供養佛。比喻借用他人的東西來作人情。",
       "related_char": "佛",
-      "image": "idioms/01_借花獻佛.webp",
+      "image": "idioms/01_借花獻佛-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:09:02",
       "idiom": "否極泰來",
       "definition": "情況由壞逐漸好轉。",
       "related_char": "泰",
-      "image": "idioms/02_否極泰來.webp",
+      "image": "idioms/02_否極泰來-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:09:03",
       "idiom": "門可羅雀",
       "definition": "門前冷清，空曠得可張網捕雀。形容做官的人失勢後賓客稀少的景況。後亦用﹁門可羅雀﹂泛指一般來客稀少、門庭冷清的景況。",
       "related_char": "羅",
-      "image": "idioms/03_門可羅雀.webp",
+      "image": "idioms/03_門可羅雀-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:09:04",
       "idiom": "勢均力敵",
       "definition": "指雙方力量情勢相當，不分上下。",
       "related_char": "勢",
-      "image": "idioms/04_勢均力敵.webp",
+      "image": "idioms/04_勢均力敵-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:09:05",
       "idiom": "防微杜漸",
       "definition": "在錯誤或壞事萌芽的時候及時制止，杜絕它發展。",
       "related_char": "防",
-      "image": "idioms/05_防微杜漸.webp",
+      "image": "idioms/05_防微杜漸-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:09:06",
       "idiom": "心血來潮",
       "definition": "思緒像浪潮般的突起。形容突然興起的念頭。",
       "related_char": "潮",
-      "image": "idioms/06_心血來潮.webp",
+      "image": "idioms/06_心血來潮-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -657,77 +669,64 @@
   ],
   "sentence_patterns": [
     {
-      "id": "sentence:09:01",
+      "id": "sentence_pattern:115AG4K09:pasted:01",
+      "category": "短語練習",
+      "pattern": "氣候又乾又熱",
+      "head": "氣候又乾又熱",
+      "structure": "（名詞）又（形容詞）又（形容詞）",
+      "description": "描寫事物的兩個特色。",
+      "guide": "先選一個人、事或物，再用兩個形容詞說明它的特色。",
+      "examples": [
+        "球員又高又壯",
+        "水果又香又甜",
+        "夜晚又黑又冷"
+      ],
+      "course_sentence": "氣候又乾又熱",
+      "show_practice_context": true,
+      "practice_all_examples": true,
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "教師提供第九課句型教材（2026-09-27）"
+    },
+    {
+      "id": "sentence_pattern:115AG4K09:pasted:02",
       "category": "短句練習",
-      "head": "風車就是為了排水出海而建造的",
+      "pattern": "風車就是為了排水出海而建造的。",
+      "head": "風車就是為了排水出海而建造的。",
       "structure": "（名詞）就是為了（動詞）而（動詞）的。",
       "description": "描述某物出現的原因。",
-      "guide": "請將語詞重新排列，組成通順的句子。",
+      "guide": "先說明某物的用途，再說明為了這個用途而做了什麼。",
       "examples": [
         "牛奶就是為了補充體力而沖泡的。",
         "撲滿就是為了儲蓄金錢而準備的。",
         "安全帽就是為了維護安全而戴的。"
       ],
-      "example_parts": [
-        [
-          "牛奶",
-          "就是為了",
-          "補充體力",
-          "而沖泡的。"
-        ],
-        [
-          "撲滿",
-          "就是為了",
-          "儲蓄金錢",
-          "而準備的。"
-        ],
-        [
-          "安全帽",
-          "就是為了",
-          "維護安全",
-          "而戴的。"
-        ]
-      ],
+      "course_sentence": "風車就是為了排水出海而建造的。",
+      "show_practice_context": true,
+      "practice_all_examples": true,
       "examples_status": "approved",
       "status": "ready",
-      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+      "source": "教師提供第九課句型教材（2026-09-27）"
     },
     {
-      "id": "sentence:09:02",
+      "id": "sentence_pattern:115AG4K09:pasted:03",
       "category": "句型練習",
+      "pattern": "……所以……",
       "head": "……所以……",
-      "structure": "（原因），所以（結果）。",
-      "description": "前面說明原因，後面接續事件的結果。",
-      "guide": "請將語詞重新排列，組成通順的句子。",
+      "structure": "原因，所以結果。",
+      "description": "因果複句，由兩個有因果關係的分句組成；「所以」後面接事件的結果。",
+      "guide": "先找出課文句中的原因和結果，再用「所以」連接兩個分句。",
       "examples": [
         "今日天氣不穩定，所以原定的爬山計畫取消了。",
         "妹妹感冒發燒，所以今天請假在家裡休息。",
-        "大雨使路面溼滑，所以走路要小心。"
+        "大雨導致路面溼滑，所以走路要當心，以免滑倒。"
       ],
-      "example_parts": [
-        [
-          "今日",
-          "天氣不穩定，",
-          "所以原定的",
-          "爬山計畫",
-          "取消了。"
-        ],
-        [
-          "妹妹",
-          "感冒發燒，",
-          "所以今天請假",
-          "在家裡休息。"
-        ],
-        [
-          "大雨使",
-          "路面溼滑，",
-          "所以走路要",
-          "小心。"
-        ]
-      ],
+      "course_sentence": "這裡的國土有三分之一在海平面之下，所以要築堤防潮，風車就是當初為了排水出海而建造的。",
+      "show_practice_context": true,
+      "practice_all_examples": true,
       "examples_status": "approved",
       "status": "ready",
-      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）"
+      "source": "教師提供第九課句型教材（2026-09-27）"
     }
   ],
   "rhetoric": [
@@ -832,9 +831,10 @@
         "風車很多",
         "盛產鬱金香"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "到處都是寺廟",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K09:02",
@@ -846,9 +846,10 @@
         "晴空塔",
         "水上市場"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "金字塔",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K09:03",
@@ -860,9 +861,10 @@
         "填平所有河流",
         "停止種花"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "築堤防潮並用風車排水",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K09:04",
@@ -874,9 +876,10 @@
         "盛產水仙",
         "以金字塔聞名"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "充滿音樂與歡樂氣氛",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -1930,39 +1933,42 @@
       "stem": "泰國的宗教文化有什麼特色？",
       "question": "泰國的宗教文化有什麼特色？",
       "options": [
-        "泰國有「千佛之國」之稱。那裡到處都能見到寺廟，每一個信奉佛教的男人，都要出家當和尚一段時間",
-        "荷蘭的地勢低窪，風車及木鞋就是為了適應這樣的環境而製造的。鬱金香和水仙都是知名的特產",
-        "奧地利是音樂國度，許多世界有名的音樂家，都曾居住在此。奧地利人喜愛音樂，所以國內總是充滿歡樂的氣息"
+        "有「千佛之國」稱號，寺廟很多。",
+        "地勢低窪，風車和木鞋很有名。",
+        "奧地利是音樂國度。"
       ],
-      "answer": "泰國有「千佛之國」之稱。那裡到處都能見到寺廟，每一個信奉佛教的男人，都要出家當和尚一段時間",
+      "answer": "有「千佛之國」稱號，寺廟很多。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "我的家鄉是「千佛之國」的泰國。這裡到處都能見到廟，每一座都華麗清靜。"
     },
     {
       "id": "listening:09:02",
       "stem": "埃及有什麼特別的文化風情？",
       "question": "埃及有什麼特別的文化風情？",
       "options": [
-        "荷蘭的地勢低窪，風車及木鞋就是為了適應這樣的環境而製造的。鬱金香和水仙都是知名的特產",
-        "奧地利是音樂國度，許多世界有名的音樂家，都曾居住在此。奧地利人喜愛音樂，所以國內總是充滿歡樂的氣息",
-        "埃及是五千年古國，國土大部分是沙漠，氣候又乾又熱。尼羅河旁的首都開羅，有世界聞名的金字塔"
+        "地勢低窪，風車和木鞋很有名。",
+        "奧地利是音樂國度。",
+        "五千年古國，多沙漠，氣候乾熱。"
       ],
-      "answer": "埃及是五千年古國，國土大部分是沙漠，氣候又乾又熱。尼羅河旁的首都開羅，有世界聞名的金字塔",
+      "answer": "五千年古國，多沙漠，氣候乾熱。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "我的家鄉是五千年古國埃及。這裡的國土大部分是沙漠，氣候又乾又熱。"
     },
     {
       "id": "listening:09:03",
       "stem": "課文中如何描述金字塔？",
       "question": "課文中如何描述金字塔？",
       "options": [
-        "奧地利是音樂國度，許多世界有名的音樂家，都曾居住在此。奧地利人喜愛音樂，所以國內總是充滿歡樂的氣息",
-        "世界聞名的金字塔，最大的金字塔有五萬多平方公尺，一百三十七公尺高",
-        "荷蘭的地勢低窪，風車及木鞋就是為了適應這樣的環境而製造的。鬱金香和水仙都是知名的特產"
+        "奧地利是音樂國度。",
+        "最大的金字塔高137公尺，面積五萬多平方公尺。",
+        "地勢低窪，風車和木鞋很有名。"
       ],
-      "answer": "世界聞名的金字塔，最大的金字塔有五萬多平方公尺，一百三十七公尺高",
+      "answer": "最大的金字塔高137公尺，面積五萬多平方公尺。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "來到這裡可以看見世界聞名的金字塔，最大的金字塔有五萬多平方公尺，一百三十七公尺高。"
     }
   ],
   "review_words": {

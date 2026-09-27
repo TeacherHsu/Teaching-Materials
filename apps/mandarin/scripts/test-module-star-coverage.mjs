@@ -50,7 +50,7 @@ const BUILDERS = {
 };
 
 // ---- 通用互動驅動器：純看 DOM 狀態決定下一步，不需要事先知道任何一題的正解 ----
-const ADVANCE_RE = /^(下一題|下一組|看結果|回課程首頁|繼續|再來一組|完成)/;
+const ADVANCE_RE = /^(下一題|下一組|加練下一組|看結果|回課程首頁|繼續|再來一組|完成)/;
 
 /** fake-dom 的 h() 對 `disabled: 'disabled'` 這種初始屬性只會寫進 attrs，不會同步
  * FakeElement.disabled 這個屬性（那個屬性只有元件之後手動 `el.disabled = true` 才會更新）。
@@ -64,7 +64,14 @@ function enabledButtons(container, predicate) {
 }
 
 function findAdvanceButton(container) {
-  return enabledButtons(container).find((b) => ADVANCE_RE.test(b.textContent.trim()));
+  const buttons = enabledButtons(container);
+  const advance = buttons.find((b) => ADVANCE_RE.test(b.textContent.trim()));
+  if (advance) return advance;
+  // 最後一輪完成後只有返回按鈕時，回到課程首頁才能結束星星覆蓋檢查；
+  // 有候選題或「加練下一組」時仍需先完成作答／續做。
+  const finish = buttons.find((b) => b.textContent.trim() === '本課先完成');
+  const otherControls = buttons.filter((b) => b !== finish && !b.hasClass('speak-button'));
+  return finish && otherControls.length === 0 ? finish : undefined;
 }
 
 /** 段落排序（讀懂課文第 1 步）沒有揭曉正解機制，driver 需要知道正解：
@@ -134,7 +141,8 @@ function driveSentenceOrderingWithSolution(container, solution) {
   if (!slots) return false;
   const checkBtn = enabledButtons(container).find((b) => b.textContent.trim() === '檢查答案');
   if (!checkBtn) return false;
-  solution.forEach((word) => clickWordInOrder(container, word));
+  // 閱讀暖身先排前兩段；接著全篇排序才使用完整正解。
+  solution.slice(0, slots.children.length).forEach((word) => clickWordInOrder(container, word));
   const btnAgain = enabledButtons(container).find((b) => b.textContent.trim() === '檢查答案');
   assert.ok(btnAgain, '排完所有詞塊後應該還能按「檢查答案」');
   btnAgain.dispatch('click');
@@ -221,8 +229,8 @@ function driveOneGenericStep(container) {
     checkBtn.dispatch('click');
     return true;
   }
-  // ReadingQuestions（開放式閱讀提問）：不判對錯，「看提示」後才會出現「下一題／看結果」。
-  const revealBtn = enabledButtons(container).find((b) => b.textContent.trim() === '看提示');
+  // ReadingQuestions：依「找哪段／哪張圖 → 指出關鍵詞 → 看答案提示」逐步揭露。
+  const revealBtn = enabledButtons(container).find((b) => /^(看提示|找哪段／哪張圖|指出關鍵詞|看答案提示)$/.test(b.textContent.trim()));
   if (revealBtn) {
     revealBtn.dispatch('click');
     return true;
@@ -299,7 +307,7 @@ const expectedResults = MODULE_REGISTRY.filter((entry) => {
 }).length;
 assert.equal(results.length, expectedResults, `應該驗證所有可開始的大項，預期 ${expectedResults} 個，實際 ${results.length}`);
 
-console.log(`PASS: 第 ${lesson.lesson_no} 課 11 個可開始大項逐一驗證，全部都有可判定題目、玩到底都能累積 1–3 顆星：`);
+console.log(`PASS: 第 ${lesson.lesson_no} 課 ${results.length} 個可開始大項逐一驗證，全部都有可判定題目、玩到底都能累積 1–3 顆星：`);
 for (const r of results) {
   console.log(`  - ${r.label}（${r.key}）：total=${r.total}，stars=${r.stars}`);
 }

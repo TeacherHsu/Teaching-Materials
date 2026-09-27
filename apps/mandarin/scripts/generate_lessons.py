@@ -13,6 +13,7 @@ left in a false "教材待補" state after a partial or resumed generation.
 Profiles currently covered by this public adapter:
   * g3a: 115 翰林三上, L07-L12 (the same adapter can rebuild L01-L12)
   * g1a: 115 翰林一上, L01-L07
+  * g2a: 115 翰林二上, reviewed prepared standard lesson JSON only
   * g6a: 115 翰林六上, prepared standard lesson JSON only
   * g4a: 115 康軒四上, prepared standard lesson JSON only
 
@@ -65,11 +66,12 @@ class Profile:
 PROFILES = {
     "g3a": Profile("g3a", "115AG3H", 3, "上", "翰林三上", "115G3A_國語 翰", "翰林", "三上國語課程"),
     "g1a": Profile("g1a", "115AG1H", 1, "上", "翰林一上", "115G1A_國語 翰", "翰林", "一年級上學期國語課程"),
+    "g2a": Profile("g2a", "115AG2H", 2, "上", "翰林二上", "115G2A_國語 翰", "翰林", "二上國語課程"),
     "g6a": Profile("g6a", "115AG6H", 6, "上", "翰林六上", "115G6A_國語 翰（準備資料）", "翰林", "六上國語課程"),
     "g4a": Profile("g4a", "115AG4K", 4, "上", "康軒四上", "115G4A_國語 康（準備資料）", "康軒", "四上國語課程"),
 }
 
-PREPARED_PROFILES = {"g4a", "g6a"}
+PREPARED_PROFILES = {"g2a", "g4a", "g6a"}
 
 
 def load_json(path: Path) -> object:
@@ -837,7 +839,7 @@ def copy_prepared_assets(prepared_root: Path, profile: Profile, lesson_no: int, 
         if not source.is_file():
             continue
         if source.suffix.lower() not in {".webp", ".avif"}:
-            raise ValueError(f"G6A 準備資產不是 WebP／AVIF：{source}")
+            raise ValueError(f"{profile.name} 準備資產不是 WebP／AVIF：{source}")
         if source.stat().st_size > MAX_IMAGE_BYTES:
             raise ValueError(f"G6A 準備資產超過單張 300 KiB：{source}")
         target = destination / source.relative_to(source_dir)

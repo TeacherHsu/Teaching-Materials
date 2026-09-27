@@ -13,7 +13,7 @@
   "lesson_no": 3,
   "title": "孔子說的話",
   "author": "",
-  "blurb": "透過〈孔子說的話〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "把孔子的話和生活例子配對，整理每則格言提醒的學習方法。",
   "characters": [
     {
       "char": "杏",
@@ -555,36 +555,44 @@
       "idiom": "苦口婆心",
       "definition": "以懇切真摯的態度，竭力勸告。",
       "related_char": "婆",
-      "image": "idioms/01_苦口婆心.webp",
+      "image": "idioms/01_苦口婆心-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H03:家徒四壁",
       "idiom": "家徒四壁",
       "definition": "家中只有四面牆壁，形容家境極貧。",
       "related_char": "徒",
-      "image": "idioms/02_家徒四壁.webp",
+      "image": "idioms/02_家徒四壁-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H03:千錘百鍊",
       "idiom": "千錘百鍊",
       "definition": "比喻文章多次潤飾，或人生歷經鍛鍊。",
       "related_char": "鍊",
-      "image": "idioms/03_千錘百鍊.webp",
+      "image": "idioms/03_千錘百鍊-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H03:心不在焉",
       "idiom": "心不在焉",
       "definition": "心思不集中。",
       "related_char": "焉",
-      "image": "idioms/04_心不在焉.webp",
+      "image": "idioms/04_心不在焉-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -950,9 +958,10 @@
         "複習舊知識並得到新理解",
         "只學新的內容"
       ],
-      "answer": null,
+      "answer": "複習舊知識並得到新理解",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:03:02",
@@ -961,9 +970,10 @@
         "身邊的人都有可學之處",
         "只能跟老師學習"
       ],
-      "answer": null,
+      "answer": "身邊的人都有可學之處",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:03:03",
@@ -972,9 +982,10 @@
         "反省並改正自己",
         "立刻嘲笑對方"
       ],
-      "answer": null,
+      "answer": "反省並改正自己",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:03:04",
@@ -983,9 +994,10 @@
         "孔子話語中的學習智慧",
         "杏樹的種植方法"
       ],
-      "answer": null,
+      "answer": "孔子話語中的學習智慧",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -1896,7 +1908,8 @@
       ],
       "answer": "複習舊知識並得到新理解",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "複習學過的舊知識，而且獲得新的體會，用這種方式學習，就可以成為自己的老師。"
     },
     {
       "id": "listening:115AG6H03:2",
@@ -1908,7 +1921,8 @@
       ],
       "answer": "身邊的人都有可學之處",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "三人同行，其中必定有我可以效法的人。"
     },
     {
       "id": "listening:115AG6H03:3",
@@ -1920,7 +1934,8 @@
       ],
       "answer": "反省並改正自己",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "選擇他們的優點加以學習，缺點則作為改正的借鑑。"
     },
     {
       "id": "listening:115AG6H03:4",
@@ -1932,7 +1947,8 @@
       ],
       "answer": "孔子話語中的學習智慧",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "以上兩則孔子的話語，皆出自論語。"
     }
   ],
   "review_words": {

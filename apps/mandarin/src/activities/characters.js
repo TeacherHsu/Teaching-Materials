@@ -108,6 +108,7 @@ export function buildCharactersActivity(lesson, onBack) {
   const choiceItems = (lesson.quiz || []).filter((q) => q.type === 'choice' && q.status === 'ready');
   const choiceRounds = chunkByMax(choiceItems, ROUND_MAX);
   const radicalRounds = buildRadicalRounds(characters);
+  const cardRounds = chunkByMax(characters, 6);
 
   const steps = [];
   if (characters.length > 0) steps.push('cards');
@@ -117,6 +118,7 @@ export function buildCharactersActivity(lesson, onBack) {
   const container = h('div', {});
   let stepIndex = 0;
   let roundIndex = 0;
+  let cardRoundIndex = 0;
 
   function renderStep() {
     clear(container);
@@ -129,7 +131,11 @@ export function buildCharactersActivity(lesson, onBack) {
     const stepLabel = `第 ${stepIndex + 1} 步／共 ${steps.length} 步`;
 
     if (step === 'cards') {
-      container.appendChild(TaskBanner({ label: '看看這一課的生字：點卡片上的按鈕可以聽發音', step: stepLabel }));
+      const moreCards = cardRoundIndex < cardRounds.length - 1;
+      container.appendChild(TaskBanner({
+        label: '看看這一課的生字：點卡片上的按鈕可以聽發音',
+        step: moreCards ? `${stepLabel} ・ 第 ${cardRoundIndex + 1} 組` : stepLabel,
+      }));
       const strokeLinks = buildExtensionLinks(lesson, 'characters', {
         collapsible: false,
         filter: (extension) => extension.type === 'reading' && extension.title === '筆順練習(雄筆順)',
@@ -141,33 +147,41 @@ export function buildCharactersActivity(lesson, onBack) {
           .map((e) => [e.char, e]),
       );
       const grid = h('div', { class: 'card-grid' });
-      for (const c of characters) grid.appendChild(CharacterCard(c, originByChar.get(c.char) || null));
+      for (const c of cardRounds[cardRoundIndex]) grid.appendChild(CharacterCard(c, originByChar.get(c.char) || null));
       container.appendChild(grid);
-      const nextBtn = h('button', { class: 'btn', type: 'button', style: 'margin-top:16px' }, isLastStep ? '完成' : '繼續：看字選音');
-      nextBtn.addEventListener('click', () => {
-        if (isLastStep) {
+      const proceed = () => {
+        if (moreCards) {
+          cardRoundIndex += 1;
+        } else if (isLastStep) {
           onBack();
+          return;
         } else {
           stepIndex += 1;
           roundIndex = 0;
-          renderStep();
         }
-      });
-      container.appendChild(nextBtn);
+        renderStep();
+      };
+      if (moreCards) {
+        const actions = h('div', { class: 'activity-round-actions' });
+        actions.appendChild(h('button', { class: 'btn btn--secondary', type: 'button', onclick: onBack }, '本課先完成'));
+        actions.appendChild(h('button', { class: 'btn', type: 'button', onclick: proceed }, '加練下一組'));
+        container.appendChild(actions);
+      } else {
+        container.appendChild(h('button', { class: 'btn', type: 'button', style: 'margin-top:16px', onclick: proceed }, isLastStep ? '完成' : '繼續：看字選音'));
+      }
       container.appendChild(PronunciationNotice());
     } else if (step === 'choice') {
       const isLastRound = roundIndex === choiceRounds.length - 1;
       container.appendChild(
-        TaskBanner({ label: '看字選出正確的注音', step: `${stepLabel} ・ 第 ${roundIndex + 1} 組／共 ${choiceRounds.length} 組` }),
+        TaskBanner({ label: '看字選出正確的注音', step: roundIndex === 0 ? '本課先完成' : '加練挑戰' }),
       );
       container.appendChild(
         ChoiceQuiz({
           items: choiceRounds[roundIndex],
-          backLabel: isLastRound ? (isLastStep ? '回課程首頁' : '繼續：部首分類') : '再來一組',
+          backLabel: isLastRound ? (isLastStep ? '回課程首頁' : '繼續：部首分類') : '本課先完成',
           onBack: () => {
             if (!isLastRound) {
-              roundIndex += 1;
-              renderStep();
+              onBack();
             } else if (isLastStep) {
               onBack();
             } else {
@@ -176,21 +190,28 @@ export function buildCharactersActivity(lesson, onBack) {
               renderStep();
             }
           },
+          onContinue: isLastRound ? null : () => {
+            roundIndex += 1;
+            renderStep();
+          },
         }),
       );
     } else if (step === 'radical') {
       const isLastRound = roundIndex === radicalRounds.length - 1;
       container.appendChild(
-        TaskBanner({ label: '把生字分類到正確的部首', step: `${stepLabel} ・ 第 ${roundIndex + 1} 組／共 ${radicalRounds.length} 組` }),
+        TaskBanner({ label: '把生字分類到正確的部首', step: roundIndex === 0 ? '本課先完成' : '加練挑戰' }),
       );
       container.appendChild(
         DragToSlot({
           items: buildRadicalDragItems(radicalRounds[roundIndex], characters),
-          backLabel: isLastRound ? '回課程首頁' : '再來一組',
+          backLabel: isLastRound ? '回課程首頁' : '本課先完成',
+          onContinue: isLastRound ? null : () => {
+            roundIndex += 1;
+            renderStep();
+          },
           onBack: () => {
             if (!isLastRound) {
-              roundIndex += 1;
-              renderStep();
+              onBack();
             } else {
               onBack();
             }

@@ -1,0 +1,2419 @@
+{
+  "lesson_id": "115AG2H12",
+  "volume": {
+    "code": "115AG2H",
+    "publisher": "翰林",
+    "grade": 2,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "二上國語課程"
+  },
+  "lesson_no": 12,
+  "title": "詠鵝",
+  "blurb": "從白鵝的外形和動作對照詩句，再練習仿寫自己的小詩。",
+  "characters": [
+    {
+      "char": "念",
+      "zhuyin": "ㄋㄧㄢˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "念書",
+        "想念",
+        "念念不忘"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=念",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼼",
+      "stroke_count": 8
+    },
+    {
+      "char": "曲",
+      "zhuyin": "ㄑㄩ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "歌曲",
+        "曲線",
+        "曲子"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=曲",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽈",
+      "stroke_count": 6
+    },
+    {
+      "char": "項",
+      "zhuyin": "ㄒㄧㄤˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "項目",
+        "項鍊",
+        "頸項"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=項",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾴",
+      "stroke_count": 12
+    },
+    {
+      "char": "浮",
+      "zhuyin": "ㄈㄨˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "浮起",
+        "浮力",
+        "浮水"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=浮",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽔",
+      "stroke_count": 10
+    },
+    {
+      "char": "掌",
+      "zhuyin": "ㄓㄤˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "手掌",
+        "掌聲",
+        "腳掌"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=掌",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼿",
+      "stroke_count": 12
+    },
+    {
+      "char": "撥",
+      "zhuyin": "ㄅㄛ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "撥水",
+        "撥開",
+        "撥動"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=撥",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼿",
+      "stroke_count": 15
+    },
+    {
+      "char": "波",
+      "zhuyin": "ㄅㄛ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "水波",
+        "波浪",
+        "波動"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=波",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽔",
+      "stroke_count": 8
+    },
+    {
+      "char": "詩",
+      "zhuyin": "ㄕ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "詩人",
+        "詩歌",
+        "古詩"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=詩",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾔",
+      "stroke_count": 13
+    },
+    {
+      "char": "作",
+      "zhuyin": "ㄗㄨㄛˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "作業",
+        "工作",
+        "作家"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=作",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼈",
+      "stroke_count": 7
+    },
+    {
+      "char": "首",
+      "zhuyin": "ㄕㄡˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "一首",
+        "首都",
+        "首要"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=首",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾸",
+      "stroke_count": 9
+    },
+    {
+      "char": "指",
+      "zhuyin": "ㄓˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "手指",
+        "指導",
+        "指向"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=指",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼿",
+      "stroke_count": 9
+    },
+    {
+      "char": "伸",
+      "zhuyin": "ㄕㄣ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "伸長",
+        "伸手",
+        "伸展"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=伸",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼈",
+      "stroke_count": 7
+    },
+    {
+      "char": "脖",
+      "zhuyin": "ㄅㄛˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "脖子",
+        "脖頸",
+        "粗脖子"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=脖",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾁",
+      "stroke_count": 11
+    },
+    {
+      "char": "身",
+      "zhuyin": "ㄕㄣ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "身體",
+        "身邊",
+        "身心"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=身",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾝",
+      "stroke_count": 7
+    },
+    {
+      "char": "體",
+      "zhuyin": "ㄊㄧˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "身體",
+        "體育",
+        "體重"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=體",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾻",
+      "stroke_count": 22
+    },
+    {
+      "char": "隻",
+      "zhuyin": "ㄓ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "一隻",
+        "隻身",
+        "船隻"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=隻",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾫",
+      "stroke_count": 10
+    },
+    {
+      "char": "倒",
+      "zhuyin": "ㄉㄠˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "倒立",
+        "倒車",
+        "倒水"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=倒",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼈",
+      "stroke_count": 10
+    },
+    {
+      "char": "肚",
+      "zhuyin": "ㄉㄨˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "肚皮",
+        "肚子",
+        "肚臍"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=肚",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾁",
+      "stroke_count": 7
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG2H12:01",
+      "word": "念",
+      "zhuyin": null,
+      "meaning": "吟誦、誦讀。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-01.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H12:02",
+      "word": "詠鵝",
+      "zhuyin": null,
+      "meaning": "本課詠鵝詩為唐代詩人駱賓王七歲時的作品。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-02.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H12:03",
+      "word": "詩人",
+      "zhuyin": null,
+      "meaning": "很會作詩的人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-03.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H12:04",
+      "word": "波",
+      "zhuyin": null,
+      "meaning": "水面的起伏。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-04.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H12:05",
+      "word": "撥",
+      "zhuyin": null,
+      "meaning": "挑動、推開。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-05.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H12:06",
+      "word": "掌",
+      "zhuyin": null,
+      "meaning": "某些動物的腳。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-06.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H12:07",
+      "word": "浮",
+      "zhuyin": null,
+      "meaning": "漂在水上。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-07.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H12:08",
+      "word": "項",
+      "zhuyin": null,
+      "meaning": "脖子。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-08.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H12:09",
+      "word": "曲",
+      "zhuyin": null,
+      "meaning": "使彎折。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-09.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H12:10",
+      "word": "肚皮",
+      "zhuyin": null,
+      "meaning": "肚子。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-10.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H12:11",
+      "word": "倒立",
+      "zhuyin": null,
+      "meaning": "以手支撐，頭朝下，腳朝上，向上豎起身體。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-11.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H12:12",
+      "word": "翻跟頭",
+      "zhuyin": null,
+      "meaning": "以頭向地，快速翻身而過的動作。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-12.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H12:13",
+      "word": "隻",
+      "zhuyin": null,
+      "meaning": "計算飛禽走獸等動物的單位。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-13.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H12:14",
+      "word": "身體",
+      "zhuyin": null,
+      "meaning": "人的軀體。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-14.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H12:15",
+      "word": "脖子",
+      "zhuyin": null,
+      "meaning": "頭與身體連接的部分。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-15.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H12:16",
+      "word": "伸長",
+      "zhuyin": null,
+      "meaning": "延伸使更長。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-16.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H12:17",
+      "word": "指",
+      "zhuyin": null,
+      "meaning": "以手指點出方向。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-17.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H12:18",
+      "word": "歲",
+      "zhuyin": null,
+      "meaning": "量詞。計算年齡的單位。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-18.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H12:19",
+      "word": "首",
+      "zhuyin": null,
+      "meaning": "計算詩、詞、歌曲等的單位。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-19.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H12:20",
+      "word": "作",
+      "zhuyin": null,
+      "meaning": "創發、製造。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson12/vocabulary/l12-20.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [
+    {
+      "id": "meaning:115AG2H12:01",
+      "word": "念",
+      "meaning": "吟誦、誦讀。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H12:02",
+      "word": "詠鵝",
+      "meaning": "本課詠鵝詩為唐代詩人駱賓王七歲時的作品。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H12:03",
+      "word": "詩人",
+      "meaning": "很會作詩的人。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H12:04",
+      "word": "波",
+      "meaning": "水面的起伏。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H12:05",
+      "word": "撥",
+      "meaning": "挑動、推開。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H12:06",
+      "word": "掌",
+      "meaning": "某些動物的腳。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H12:07",
+      "word": "浮",
+      "meaning": "漂在水上。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H12:08",
+      "word": "項",
+      "meaning": "脖子。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H12:09",
+      "word": "曲",
+      "meaning": "使彎折。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H12:10",
+      "word": "肚皮",
+      "meaning": "肚子。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H12:11",
+      "word": "倒立",
+      "meaning": "以手支撐，頭朝下，腳朝上，向上豎起身體。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H12:12",
+      "word": "翻跟頭",
+      "meaning": "以頭向地，快速翻身而過的動作。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H12:13",
+      "word": "隻",
+      "meaning": "計算飛禽走獸等動物的單位。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H12:14",
+      "word": "身體",
+      "meaning": "人的軀體。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H12:15",
+      "word": "脖子",
+      "meaning": "頭與身體連接的部分。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H12:16",
+      "word": "伸長",
+      "meaning": "延伸使更長。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H12:17",
+      "word": "指",
+      "meaning": "以手指點出方向。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H12:18",
+      "word": "歲",
+      "meaning": "量詞。計算年齡的單位。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H12:19",
+      "word": "首",
+      "meaning": "計算詩、詞、歌曲等的單位。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H12:20",
+      "word": "作",
+      "meaning": "創發、製造。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "sentences": [
+    {
+      "category": "短語練習",
+      "pattern": "輕輕撥著水",
+      "examples": [
+        "慢慢喝著湯",
+        "靜靜看著書"
+      ],
+      "description": "利用疊字副詞來強調動作。",
+      "structure": "疊字副詞＋動詞（動作︶＋著＋名詞︵什麼事物︶",
+      "id": "sentence-pattern:115AG2H12:01",
+      "head": "輕輕撥著水",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短句練習",
+      "pattern": "白鵝身體浮在水面上。",
+      "examples": [
+        "小狗坐在草地上。",
+        "奶奶走在人行道上。"
+      ],
+      "description": "表達人或物在什麼地方的狀態。",
+      "structure": "名詞︵人或物︶＋動詞︵動作︶＋在＋名詞︵什麼地方︶。",
+      "id": "sentence-pattern:115AG2H12:02",
+      "head": "白鵝身體浮在水面上。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短句練習",
+      "pattern": "姐姐變成小詩人了！",
+      "examples": [
+        "哥哥變成小畫家了！",
+        "媽媽變成大廚師了！"
+      ],
+      "description": "強調什麼人有了特別的身分。",
+      "structure": "名詞︵誰︶＋變成＋名詞︵什麼身分︶！",
+      "id": "sentence-pattern:115AG2H12:03",
+      "head": "姐姐變成小詩人了！",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "詩人駱賓王作這首詩的時候才七歲呢！",
+      "examples": [
+        "妹妹學會游泳的時候才三歲呢！",
+        "爸爸打掃客廳才花了一個小時呢！"
+      ],
+      "description": "這裡的﹁才﹂，是﹁只﹂、﹁只有﹂的意思。",
+      "id": "sentence-pattern:115AG2H12:04",
+      "head": "詩人駱賓王作這首詩的時候才七歲呢！",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "有一隻鵝把脖子伸進水裡，接著，又有一隻也這麼做。",
+      "examples": [
+        "弟弟剛玩過雲霄飛車，接著玩碰碰車，玩得好開心。",
+        "爸爸洗好米，接著炒青菜，忙著煮晚餐。"
+      ],
+      "description": "﹁事件①，接著，事件②﹂，強調事件②是緊跟著事件①發生。",
+      "id": "sentence-pattern:115AG2H12:05",
+      "head": "有一隻鵝把脖子伸進水裡，接著，又有一隻也這麼做。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "idioms": [
+    {
+      "id": "idiom:115AG2H12:01",
+      "idiom": "千里鵝毛",
+      "definition": "比喻禮物雖輕，但情意深重。",
+      "related_char": null,
+      "image": "idioms/01_千里鵝毛-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H12:02",
+      "idiom": "一波三折",
+      "definition": "比喻事情進行得曲折不順。",
+      "related_char": "波",
+      "image": "idioms/02_一波三折-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H12:03",
+      "idiom": "一鼓作氣",
+      "definition": "比喻做事時要趁著初起時的勇氣去做才容易成功。",
+      "related_char": "作",
+      "image": "idioms/03_一鼓作氣-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H12:04",
+      "idiom": "首屈一指",
+      "definition": "彎下手指計算時，首先彎曲大拇指。用以表示第一或最優秀。",
+      "related_char": "首",
+      "image": "idioms/04_首屈一指-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H12:05",
+      "idiom": "身體力行",
+      "definition": "指親身努力去做。",
+      "related_char": "身",
+      "image": "idioms/05_身體力行-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H12:06",
+      "idiom": "形單影隻",
+      "definition": "形容孤單沒有同伴。",
+      "related_char": "隻",
+      "image": "idioms/06_形單影隻-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:115AG2H12:01",
+      "idiom_id": "idiom:115AG2H12:01",
+      "rewritten": "這份禮物雖然不貴重，卻是我千里鵝毛的心意，請你一定要收下。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H12:02",
+      "idiom_id": "idiom:115AG2H12:02",
+      "rewritten": "故事裡的英雄經過一波三折之後，終於打敗壞人救了大家。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H12:03",
+      "idiom_id": "idiom:115AG2H12:03",
+      "rewritten": "工作只剩下一點點了，我們一鼓作氣把這些事做完再休息。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H12:04",
+      "idiom_id": "idiom:115AG2H12:04",
+      "rewritten": "小彩是班上首屈一指的熱心同學，常常主動幫助別人。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H12:05",
+      "idiom_id": "idiom:115AG2H12:05",
+      "rewritten": "他聽了保護地球的故事之後，決定身體力行，從隨手關燈做起。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H12:06",
+      "idiom_id": "idiom:115AG2H12:06",
+      "rewritten": "湖面上的天鵝獨來獨往，形單影隻的，讓人覺得難過。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "category": "短語練習",
+      "pattern": "輕輕撥著水",
+      "examples": [
+        "慢慢喝著湯",
+        "靜靜看著書"
+      ],
+      "description": "利用疊字副詞來強調動作。",
+      "structure": "疊字副詞＋動詞（動作︶＋著＋名詞︵什麼事物︶",
+      "id": "sentence-pattern:115AG2H12:01",
+      "head": "輕輕撥著水",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短句練習",
+      "pattern": "白鵝身體浮在水面上。",
+      "examples": [
+        "小狗坐在草地上。",
+        "奶奶走在人行道上。"
+      ],
+      "description": "表達人或物在什麼地方的狀態。",
+      "structure": "名詞︵人或物︶＋動詞︵動作︶＋在＋名詞︵什麼地方︶。",
+      "id": "sentence-pattern:115AG2H12:02",
+      "head": "白鵝身體浮在水面上。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短句練習",
+      "pattern": "姐姐變成小詩人了！",
+      "examples": [
+        "哥哥變成小畫家了！",
+        "媽媽變成大廚師了！"
+      ],
+      "description": "強調什麼人有了特別的身分。",
+      "structure": "名詞︵誰︶＋變成＋名詞︵什麼身分︶！",
+      "id": "sentence-pattern:115AG2H12:03",
+      "head": "姐姐變成小詩人了！",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "詩人駱賓王作這首詩的時候才七歲呢！",
+      "examples": [
+        "妹妹學會游泳的時候才三歲呢！",
+        "爸爸打掃客廳才花了一個小時呢！"
+      ],
+      "description": "這裡的﹁才﹂，是﹁只﹂、﹁只有﹂的意思。",
+      "id": "sentence-pattern:115AG2H12:04",
+      "head": "詩人駱賓王作這首詩的時候才七歲呢！",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "有一隻鵝把脖子伸進水裡，接著，又有一隻也這麼做。",
+      "examples": [
+        "弟弟剛玩過雲霄飛車，接著玩碰碰車，玩得好開心。",
+        "爸爸洗好米，接著炒青菜，忙著煮晚餐。"
+      ],
+      "description": "﹁事件①，接著，事件②﹂，強調事件②是緊跟著事件①發生。",
+      "id": "sentence-pattern:115AG2H12:05",
+      "head": "有一隻鵝把脖子伸進水裡，接著，又有一隻也這麼做。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG2H12:曲:01",
+      "char": "曲",
+      "sentence": "生活中，我們會用到《彎曲》這個詞。",
+      "definition": "使彎折",
+      "options": [
+        "使彎折",
+        "不直的",
+        "不對的",
+        "樂歌",
+        "量詞。計算歌曲、樂曲的單 位"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H12:曲:02",
+      "char": "曲",
+      "sentence": "生活中，我們會用到《曲線》這個詞。",
+      "definition": "不直的",
+      "options": [
+        "使彎折",
+        "不直的",
+        "不對的",
+        "樂歌",
+        "量詞。計算歌曲、樂曲的單 位"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H12:曲:03",
+      "char": "曲",
+      "sentence": "生活中，我們會用到《曲解》這個詞。",
+      "definition": "不對的",
+      "options": [
+        "使彎折",
+        "不直的",
+        "不對的",
+        "樂歌",
+        "量詞。計算歌曲、樂曲的單 位"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H12:曲:04",
+      "char": "曲",
+      "sentence": "生活中，我們會用到《歌曲》這個詞。",
+      "definition": "樂歌",
+      "options": [
+        "使彎折",
+        "不直的",
+        "不對的",
+        "樂歌",
+        "量詞。計算歌曲、樂曲的單 位"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H12:曲:05",
+      "char": "曲",
+      "sentence": "生活中，我們會用到《高歌一曲》這個詞。",
+      "definition": "量詞。計算歌曲、樂曲的單 位",
+      "options": [
+        "使彎折",
+        "不直的",
+        "不對的",
+        "樂歌",
+        "量詞。計算歌曲、樂曲的單 位"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H12:倒:01",
+      "char": "倒",
+      "sentence": "生活中，我們會用到《倒掛》這個詞。",
+      "definition": "方向相反",
+      "options": [
+        "方向相反",
+        "把物體或液體從容器中傾倒出 來",
+        "向後退",
+        "橫躺下來",
+        "崩塌",
+        "上下前後與原本或應有的位置 相反"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H12:倒:02",
+      "char": "倒",
+      "sentence": "生活中，我們會用到《倒垃圾》這個詞。",
+      "definition": "把物體或液體從容器中傾倒出 來",
+      "options": [
+        "方向相反",
+        "把物體或液體從容器中傾倒出 來",
+        "向後退",
+        "橫躺下來",
+        "崩塌",
+        "上下前後與原本或應有的位置 相反"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H12:倒:03",
+      "char": "倒",
+      "sentence": "生活中，我們會用到《倒車》這個詞。",
+      "definition": "向後退",
+      "options": [
+        "方向相反",
+        "把物體或液體從容器中傾倒出 來",
+        "向後退",
+        "橫躺下來",
+        "崩塌",
+        "上下前後與原本或應有的位置 相反"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H12:倒:04",
+      "char": "倒",
+      "sentence": "生活中，我們會用到《跌倒》這個詞。",
+      "definition": "橫躺下來",
+      "options": [
+        "方向相反",
+        "把物體或液體從容器中傾倒出 來",
+        "向後退",
+        "橫躺下來",
+        "崩塌",
+        "上下前後與原本或應有的位置 相反"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H12:倒:05",
+      "char": "倒",
+      "sentence": "生活中，我們會用到《弄倒》這個詞。",
+      "definition": "崩塌",
+      "options": [
+        "方向相反",
+        "把物體或液體從容器中傾倒出 來",
+        "向後退",
+        "橫躺下來",
+        "崩塌",
+        "上下前後與原本或應有的位置 相反"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H12:倒:06",
+      "char": "倒",
+      "sentence": "生活中，我們會用到《顛倒。 5. 4. 3. 2. 1. 潑 撥 賞 掌 頭 頂 項 由 曲 鴉 鴨 鵝 ：活潑》這個詞。",
+      "definition": "上下前後與原本或應有的位置 相反",
+      "options": [
+        "方向相反",
+        "把物體或液體從容器中傾倒出 來",
+        "向後退",
+        "橫躺下來",
+        "崩塌",
+        "上下前後與原本或應有的位置 相反"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H12:長:01",
+      "char": "長",
+      "sentence": "生活中，我們會用到《長途》這個詞。",
+      "definition": "事物的距離、高度大。 與「短」相對",
+      "options": [
+        "事物的距離、高度大。 與「短」相對",
+        "時間久遠。與「短」相對",
+        "好處、優點",
+        "專精的技能",
+        "年紀大、輩分高的人",
+        "排行最大的",
+        "主管、領導人",
+        "生長、發育"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H12:長:02",
+      "char": "長",
+      "sentence": "生活中，我們會用到《長久》這個詞。",
+      "definition": "時間久遠。與「短」相對",
+      "options": [
+        "事物的距離、高度大。 與「短」相對",
+        "時間久遠。與「短」相對",
+        "好處、優點",
+        "專精的技能",
+        "年紀大、輩分高的人",
+        "排行最大的",
+        "主管、領導人",
+        "生長、發育"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H12:長:03",
+      "char": "長",
+      "sentence": "生活中，我們會用到《長處》這個詞。",
+      "definition": "好處、優點",
+      "options": [
+        "事物的距離、高度大。 與「短」相對",
+        "時間久遠。與「短」相對",
+        "好處、優點",
+        "專精的技能",
+        "年紀大、輩分高的人",
+        "排行最大的",
+        "主管、領導人",
+        "生長、發育"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H12:長:04",
+      "char": "長",
+      "sentence": "生活中，我們會用到《專長》這個詞。",
+      "definition": "專精的技能",
+      "options": [
+        "事物的距離、高度大。 與「短」相對",
+        "時間久遠。與「短」相對",
+        "好處、優點",
+        "專精的技能",
+        "年紀大、輩分高的人",
+        "排行最大的",
+        "主管、領導人",
+        "生長、發育"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H12:長:05",
+      "char": "長",
+      "sentence": "生活中，我們會用到《師長》這個詞。",
+      "definition": "年紀大、輩分高的人",
+      "options": [
+        "事物的距離、高度大。 與「短」相對",
+        "時間久遠。與「短」相對",
+        "好處、優點",
+        "專精的技能",
+        "年紀大、輩分高的人",
+        "排行最大的",
+        "主管、領導人",
+        "生長、發育"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H12:長:06",
+      "char": "長",
+      "sentence": "生活中，我們會用到《長子》這個詞。",
+      "definition": "排行最大的",
+      "options": [
+        "事物的距離、高度大。 與「短」相對",
+        "時間久遠。與「短」相對",
+        "好處、優點",
+        "專精的技能",
+        "年紀大、輩分高的人",
+        "排行最大的",
+        "主管、領導人",
+        "生長、發育"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H12:長:07",
+      "char": "長",
+      "sentence": "生活中，我們會用到《校長》這個詞。",
+      "definition": "主管、領導人",
+      "options": [
+        "事物的距離、高度大。 與「短」相對",
+        "時間久遠。與「短」相對",
+        "好處、優點",
+        "專精的技能",
+        "年紀大、輩分高的人",
+        "排行最大的",
+        "主管、領導人",
+        "生長、發育"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H12:長:08",
+      "char": "長",
+      "sentence": "生活中，我們會用到《成長》這個詞。",
+      "definition": "生長、發育",
+      "options": [
+        "事物的距離、高度大。 與「短」相對",
+        "時間久遠。與「短」相對",
+        "好處、優點",
+        "專精的技能",
+        "年紀大、輩分高的人",
+        "排行最大的",
+        "主管、領導人",
+        "生長、發育"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG2H12:曲",
+      "char": "曲",
+      "readings": [
+        {
+          "zhuyin": "ㄑㄩ",
+          "senses": [
+            {
+              "definition": "使彎折",
+              "examples": [
+                "彎曲",
+                "曲膝"
+              ]
+            },
+            {
+              "definition": "不直的",
+              "examples": [
+                "曲線",
+                "曲路"
+              ]
+            },
+            {
+              "definition": "不對的",
+              "examples": [
+                "曲解"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄑㄩˇ",
+          "senses": [
+            {
+              "definition": "樂歌",
+              "examples": [
+                "歌曲"
+              ]
+            },
+            {
+              "definition": "量詞。計算歌曲、樂曲的單 位",
+              "examples": [
+                "高歌一曲"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    },
+    {
+      "id": "polyphone:115AG2H12:倒",
+      "char": "倒",
+      "readings": [
+        {
+          "zhuyin": "ㄉㄠˋ",
+          "senses": [
+            {
+              "definition": "方向相反",
+              "examples": [
+                "倒掛",
+                "倒灌"
+              ]
+            },
+            {
+              "definition": "把物體或液體從容器中傾倒出 來",
+              "examples": [
+                "倒垃圾",
+                "倒茶水"
+              ]
+            },
+            {
+              "definition": "向後退",
+              "examples": [
+                "倒車",
+                "倒退"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄉㄠˇ",
+          "senses": [
+            {
+              "definition": "橫躺下來",
+              "examples": [
+                "跌倒",
+                "摔倒"
+              ]
+            },
+            {
+              "definition": "崩塌",
+              "examples": [
+                "弄倒"
+              ]
+            },
+            {
+              "definition": "上下前後與原本或應有的位置 相反",
+              "examples": [
+                "顛倒。 5. 4. 3. 2. 1. 潑 撥 賞 掌 頭 頂 項 由 曲 鴉 鴨 鵝 ：活潑",
+                "潑水 ：撥開",
+                "撥動 ：欣賞",
+                "賞月 ：手掌",
+                "掌聲 ：頭腦",
+                "頭髮 ：山頂",
+                "頂端 ：項鍊",
+                "項目 ：理由",
+                "自由 ：曲折",
+                "彎曲 ：烏鴉",
+                "塗鴉 ：鴨子",
+                "鴨蛋 ：天鵝",
+                "鵝毛 11. 10. 9. 8. 7. 6. 吐 肚 禮 體 膀 脖 炸 昨 作 時 詩 坡 波 ：嘔吐",
+                "上吐下瀉 ：肚子",
+                "肚皮 ：禮貌",
+                "禮物 ：體力",
+                "體育 ：翅膀",
+                "肩膀 ：脖子 ：爆炸",
+                "炸彈 ：昨天",
+                "昨晚 ：工作",
+                "作業 ：時間",
+                "時候 ：詩歌",
+                "詩人 ：山坡",
+                "坡度 ：波浪",
+                "水波 57 3.長"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    },
+    {
+      "id": "polyphone:115AG2H12:長",
+      "char": "長",
+      "readings": [
+        {
+          "zhuyin": "ㄔㄤˊ",
+          "senses": [
+            {
+              "definition": "事物的距離、高度大。 與「短」相對",
+              "examples": [
+                "長途"
+              ]
+            },
+            {
+              "definition": "時間久遠。與「短」相對",
+              "examples": [
+                "長久"
+              ]
+            },
+            {
+              "definition": "好處、優點",
+              "examples": [
+                "長處"
+              ]
+            },
+            {
+              "definition": "專精的技能",
+              "examples": [
+                "專長"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄓㄤˇ",
+          "senses": [
+            {
+              "definition": "年紀大、輩分高的人",
+              "examples": [
+                "師長"
+              ]
+            },
+            {
+              "definition": "排行最大的",
+              "examples": [
+                "長子"
+              ]
+            },
+            {
+              "definition": "主管、領導人",
+              "examples": [
+                "校長"
+              ]
+            },
+            {
+              "definition": "生長、發育",
+              "examples": [
+                "成長"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG2H12:01",
+      "stem": "請仔細聽題目：觀察課本圖片，池裡的鵝正在做什麼？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "鵝在池裡游泳，有的張嘴唱歌，有的伸長脖子。",
+        "讚嘆白鵝，也像在模仿叫聲。",
+        "白鵝伸長了脖子，對著天空唱歌。"
+      ],
+      "answer": "鵝在池裡游泳，有的張嘴唱歌，有的伸長脖子。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "我看到水裡的白鵝，就念出：「鵝、鵝、鵝，曲項向天歌。」"
+    },
+    {
+      "id": "listening:115AG2H12:02",
+      "stem": "請仔細聽題目：駱賓王詠鵝第一句是「鵝、鵝、鵝」，是什麼意思？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "讚嘆白鵝，也像在模仿叫聲。",
+        "鵝在池裡游泳，有的張嘴唱歌，有的伸長脖子。",
+        "白鵝伸長了脖子，對著天空唱歌。"
+      ],
+      "answer": "讚嘆白鵝，也像在模仿叫聲。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "我也來詠鵝。鵝、鵝、鵝，倒立在水中。"
+    },
+    {
+      "id": "listening:115AG2H12:03",
+      "stem": "請仔細聽題目：詠鵝中的「曲項向天歌」，是什麼意思？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "白鵝伸長了脖子，對著天空唱歌。",
+        "鵝在池裡游泳，有的張嘴唱歌，有的伸長脖子。",
+        "讚嘆白鵝，也像在模仿叫聲。"
+      ],
+      "answer": "白鵝伸長了脖子，對著天空唱歌。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "白鵝伸長脖子，對著天空唱歌。"
+    },
+    {
+      "id": "listening:115AG2H12:04",
+      "stem": "請仔細聽題目：如果想知道駱賓王寫的詠鵝整首詩的意思，可以從課文哪裡找到？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "姐姐指著水面說的話。",
+        "鵝在池裡游泳，有的張嘴唱歌，有的伸長脖子。",
+        "讚嘆白鵝，也像在模仿叫聲。"
+      ],
+      "answer": "姐姐指著水面說的話。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "姐姐指著水面，說：「你看，白鵝伸長脖子，對著天空唱歌。」"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG2H12:01",
+      "para_no": 1,
+      "summary": "主角看到鵝，念出詠鵝詩。",
+      "structure_role": "第1段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H12:02",
+      "para_no": 2,
+      "summary": "媽媽介紹詩人駱賓王。",
+      "structure_role": "第2段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H12:03",
+      "para_no": 3,
+      "summary": "姐姐說明詩的意思。",
+      "structure_role": "第3段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H12:04",
+      "para_no": 4,
+      "summary": "姐姐改編詠鵝詩。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H12:05",
+      "para_no": 5,
+      "summary": "媽媽誇獎姐姐是小詩人。",
+      "structure_role": "第5段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "id": "main_idea:115AG2H12:01",
+    "gist": "主角和家人散步時看到鵝，主角念詠鵝詩，姐姐說明詩的意思並加以改編。",
+    "theme": "從觀察自然景物，體會駱賓王 詠鵝詩的趣味，進而主動仿作。",
+    "status": "approved",
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG2H12:01",
+      "stem": "觀察課本圖片，池裡的鵝正在做什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "池裡有幾隻鵝在游泳，其中一隻張開嘴巴像在唱歌；另一隻鵝站在池塘邊伸長脖子。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H12:02",
+      "stem": "駱賓王詠鵝第一句是「鵝、鵝、鵝」，是什麼意思？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "我覺得是在讚嘆鵝，所以連寫了三次鵝；也像是在形容鵝的叫聲，連三次鵝、鵝、鵝，很像是鵝在叫。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H12:03",
+      "stem": "詠鵝中的「曲項向天歌」，是什麼意思？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "白鵝伸長了脖子，對著天空唱歌。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H12:04",
+      "stem": "如果想知道駱賓王寫的詠鵝整首詩的意思，可以從課文哪裡找到？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "可從課文中姐姐指著水面說的話。因為姐姐說眼前所看到的，和駱賓王寫的詩一樣。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H12:05",
+      "stem": "課文中提到有一隻鵝在水裡「翻跟頭」。觀察課文圖片，說一說，「翻跟頭」是什麼意思？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "我看到圖片中有兩隻鵝，頭鑽進水中，腳在水面上，這就是翻跟頭。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H12:06",
+      "stem": "想一想，說一說，駱賓王是一個怎麼樣的人？請從課文中找出答案。",
+      "strategy_tag": "比較評估",
+      "answer_hint": "駱賓王應該是個很聰明的人，因為他才七歲就寫出這麼有名的詩，而且只用短短的文句，就生動的描寫了鵝的樣貌。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H12:07",
+      "stem": "想一想，說一說，為什麼媽媽說姐姐也是個小詩人呢？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "因為姐姐一聽到駱賓王的詠鵝詩，能夠和眼前所觀察到池邊白鵝的樣子，產生了連結，發現駱賓王這首詩就是在生動描寫鵝的樣貌。然後當她看到白鵝一翻跟頭，馬上又能產生聯想，創作出另一首詩，所以媽媽說她是個小詩人。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG2H12:01",
+      "group_no": "1",
+      "question": "詠____",
+      "answer": "鵝",
+      "chars": [
+        {
+          "char": "鵝",
+          "zhuyin": null,
+          "example": "詠鵝"
+        },
+        {
+          "char": "鴨",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "鴉",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H12:02",
+      "group_no": "2",
+      "question": "使彎折：____",
+      "answer": "曲",
+      "chars": [
+        {
+          "char": "曲",
+          "zhuyin": null,
+          "example": "曲"
+        },
+        {
+          "char": "由",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H12:03",
+      "group_no": "3",
+      "question": "脖子：____",
+      "answer": "項",
+      "chars": [
+        {
+          "char": "項",
+          "zhuyin": null,
+          "example": "項"
+        },
+        {
+          "char": "頂",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "頭",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H12:04",
+      "group_no": "4",
+      "question": "某些動物的腳：____",
+      "answer": "掌",
+      "chars": [
+        {
+          "char": "掌",
+          "zhuyin": null,
+          "example": "掌"
+        },
+        {
+          "char": "賞",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H12:05",
+      "group_no": "5",
+      "question": "挑動、推開：____",
+      "answer": "撥",
+      "chars": [
+        {
+          "char": "撥",
+          "zhuyin": null,
+          "example": "撥"
+        },
+        {
+          "char": "潑",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H12:06",
+      "group_no": "6",
+      "question": "水面的起伏：____",
+      "answer": "波",
+      "chars": [
+        {
+          "char": "波",
+          "zhuyin": null,
+          "example": "波"
+        },
+        {
+          "char": "坡",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H12:07",
+      "group_no": "7",
+      "question": "____人",
+      "answer": "詩",
+      "chars": [
+        {
+          "char": "詩",
+          "zhuyin": null,
+          "example": "詩人"
+        },
+        {
+          "char": "時",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H12:08",
+      "group_no": "8",
+      "question": "創發、製造：____",
+      "answer": "作",
+      "chars": [
+        {
+          "char": "作",
+          "zhuyin": null,
+          "example": "作"
+        },
+        {
+          "char": "炸",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "昨",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H12:09",
+      "group_no": "9",
+      "question": "____子",
+      "answer": "脖",
+      "chars": [
+        {
+          "char": "脖",
+          "zhuyin": null,
+          "example": "脖子"
+        },
+        {
+          "char": "膀",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H12:10",
+      "group_no": "10",
+      "question": "身____",
+      "answer": "體",
+      "chars": [
+        {
+          "char": "體",
+          "zhuyin": null,
+          "example": "身體"
+        },
+        {
+          "char": "禮",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H12:11",
+      "group_no": "11",
+      "question": "____皮",
+      "answer": "肚",
+      "chars": [
+        {
+          "char": "肚",
+          "zhuyin": null,
+          "example": "肚皮"
+        },
+        {
+          "char": "吐",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「念」的部首是哪一個？",
+      "options": [
+        "⽈",
+        "⼿",
+        "⾝"
+      ],
+      "answer": "⼼",
+      "explanation": "「念」的部首是⼼。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「曲」的部首是哪一個？",
+      "options": [
+        "⼼",
+        "⼿",
+        "⾸"
+      ],
+      "answer": "⽈",
+      "explanation": "「曲」的部首是⽈。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「項」的部首是哪一個？",
+      "options": [
+        "⼿",
+        "⽈",
+        "⽔"
+      ],
+      "answer": "⾴",
+      "explanation": "「項」的部首是⾴。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「念」是什麼意思？",
+      "options": [
+        "延伸使更長。",
+        "脖子。",
+        "某些動物的腳。"
+      ],
+      "answer": "吟誦、誦讀。",
+      "explanation": "念：吟誦、誦讀。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「詠鵝」是什麼意思？",
+      "options": [
+        "以手指點出方向。",
+        "很會作詩的人。",
+        "吟誦、誦讀。"
+      ],
+      "answer": "本課詠鵝詩為唐代詩人駱賓王七歲時的作品。",
+      "explanation": "詠鵝：本課詠鵝詩為唐代詩人駱賓王七歲時的作品。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「詩人」是什麼意思？",
+      "options": [
+        "計算詩、詞、歌曲等的單位。",
+        "使彎折。",
+        "脖子。"
+      ],
+      "answer": "很會作詩的人。",
+      "explanation": "詩人：很會作詩的人。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「波」是什麼意思？",
+      "options": [
+        "以頭向地，快速翻身而過的動作。",
+        "漂在水上。",
+        "肚子。"
+      ],
+      "answer": "水面的起伏。",
+      "explanation": "波：水面的起伏。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「撥」是什麼意思？",
+      "options": [
+        "吟誦、誦讀。",
+        "脖子。",
+        "以手支撐，頭朝下，腳朝上，向上豎起身體。"
+      ],
+      "answer": "挑動、推開。",
+      "explanation": "撥：挑動、推開。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "公開資料只放摘要與理解提問，不放課文全文。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "available",
+      "activity": "application"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "available",
+      "activity": "listening-quiz"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "unavailable",
+      "activity": "rhetoric",
+      "note": "無此資料。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  },
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag2h-12",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E5%BF%B5%E6%9B%B2%E9%A0%85%E6%B5%AE%E6%8E%8C%E6%92%A5%E6%B3%A2%E8%A9%A9%E4%BD%9C%E9%A6%96%E6%8C%87%E4%BC%B8%E8%84%96%E8%BA%AB%E9%AB%94%E9%9A%BB%E5%80%92%E8%82%9A",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・2年級・第12課",
+      "login_required": false,
+      "checked_at": "2026-09-27",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "候",
+        "颳",
+        "冷",
+        "躲",
+        "閃",
+        "電",
+        "難",
+        "烏",
+        "雲",
+        "密",
+        "布",
+        "盆",
+        "充",
+        "滿",
+        "放",
+        "晴",
+        "現",
+        "虹"
+      ],
+      "2": [
+        "老",
+        "師",
+        "新",
+        "希",
+        "望",
+        "卻",
+        "使",
+        "緊",
+        "因",
+        "為",
+        "知",
+        "道",
+        "怎",
+        "消",
+        "失",
+        "習",
+        "最",
+        "掛"
+      ],
+      "3": [
+        "國",
+        "王",
+        "喜",
+        "歡",
+        "穿",
+        "只",
+        "件",
+        "點",
+        "改",
+        "領",
+        "越",
+        "設",
+        "計",
+        "發",
+        "方",
+        "法",
+        "分",
+        "享"
+      ],
+      "4": [
+        "呱",
+        "聞",
+        "聲",
+        "猜",
+        "蛙",
+        "別",
+        "靠",
+        "近",
+        "抓",
+        "如",
+        "果",
+        "乖",
+        "腦",
+        "袋",
+        "瓜",
+        "證",
+        "明",
+        "頂"
+      ],
+      "5": [
+        "沙",
+        "灘",
+        "海",
+        "邊",
+        "退",
+        "遠",
+        "螃",
+        "蟹",
+        "愛",
+        "注",
+        "夕",
+        "腳",
+        "丫",
+        "橫",
+        "留",
+        "印",
+        "挖",
+        "麗"
+      ],
+      "6": [
+        "月",
+        "奶",
+        "晚",
+        "飯",
+        "散",
+        "屋",
+        "竹",
+        "林",
+        "頭",
+        "溪",
+        "旁",
+        "暗",
+        "眼",
+        "睛",
+        "那",
+        "聚",
+        "成",
+        "顆"
+      ],
+      "7": [
+        "樣",
+        "食",
+        "郊",
+        "活",
+        "奇",
+        "筒",
+        "香",
+        "味",
+        "便",
+        "當",
+        "盒",
+        "客",
+        "清",
+        "節",
+        "保",
+        "平",
+        "安",
+        "南"
+      ],
+      "8": [
+        "介",
+        "圓",
+        "形",
+        "白",
+        "紙",
+        "米",
+        "變",
+        "軟",
+        "搶",
+        "材",
+        "蝦",
+        "線",
+        "各",
+        "種",
+        "菜",
+        "接",
+        "聽",
+        "更"
+      ],
+      "9": [
+        "黃",
+        "沖",
+        "澡",
+        "蘿",
+        "蔔",
+        "哪",
+        "粒",
+        "熱",
+        "浴",
+        "蒸",
+        "胖",
+        "名",
+        "苔",
+        "蛋",
+        "蔬",
+        "通",
+        "細",
+        "淡"
+      ],
+      "10": [
+        "減",
+        "表",
+        "讀",
+        "認",
+        "識",
+        "謎",
+        "答",
+        "搖",
+        "百",
+        "嘴",
+        "哥",
+        "數",
+        "題",
+        "趕",
+        "突",
+        "異",
+        "口",
+        "對"
+      ],
+      "11": [
+        "怪",
+        "門",
+        "扇",
+        "立",
+        "刻",
+        "閒",
+        "馬",
+        "闖",
+        "耳",
+        "主",
+        "播",
+        "報",
+        "力",
+        "竟",
+        "巴",
+        "東",
+        "西",
+        "底"
+      ],
+      "12": [
+        "念",
+        "曲",
+        "項",
+        "浮",
+        "掌",
+        "撥",
+        "波",
+        "詩",
+        "作",
+        "首",
+        "指",
+        "伸",
+        "脖",
+        "身",
+        "體",
+        "隻",
+        "倒",
+        "肚"
+      ]
+    }
+  }
+}

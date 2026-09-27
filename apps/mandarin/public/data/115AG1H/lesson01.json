@@ -13,7 +13,7 @@
   "lesson_no": 1,
   "title": "一起走",
   "author": "",
-  "blurb": "透過〈一起走〉練習認讀生字、理解語詞，並用聲音和圖像建立閱讀連結。",
+  "blurb": "讀一讀重複的行走節奏和左右位置，找出大家如何合作向前走。",
   "characters": [
     {
       "char": "起",
@@ -330,23 +330,540 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
+  "idioms": [
+    {
+      "image": "idioms/01_聞雞起舞.webp",
+      "image_origin": "generated:imagegen-safe-reframe",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H01:01",
+      "idiom": "聞雞起舞",
+      "definition": "聽到雞叫就起床舞劍，形容及時努力。",
+      "related_char": "起",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/02_走馬看花.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H01:02",
+      "idiom": "走馬看花",
+      "definition": "比喻粗略、匆忙地觀察。",
+      "related_char": "走",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/03_箭在弦上.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H01:03",
+      "idiom": "箭在弦上",
+      "definition": "事情已到眼前，不能不做。",
+      "related_char": "在",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/04_左顧右盼.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H01:04",
+      "idiom": "左顧右盼",
+      "definition": "向左向右張望。",
+      "related_char": "左",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/05_名列前茅.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H01:05",
+      "idiom": "名列前茅",
+      "definition": "名次排在前面。",
+      "related_char": "前",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:115AG1H01:01",
+      "idiom_id": "idiom:115AG1H01:01",
+      "rewritten": "姐姐每天早起練琴，真有聞雞起舞的精神。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H01:02",
+      "idiom_id": "idiom:115AG1H01:02",
+      "rewritten": "參觀博物館不能走馬看花，要仔細欣賞。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H01:03",
+      "idiom_id": "idiom:115AG1H01:03",
+      "rewritten": "比賽就要開始，大家已經箭在弦上。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H01:04",
+      "idiom_id": "idiom:115AG1H01:04",
+      "rewritten": "小貓在門口左顧右盼，好像在找主人。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H01:05",
+      "idiom_id": "idiom:115AG1H01:05",
+      "rewritten": "小芸認真準備考試，這次名列前茅。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "category": "短語句型練習",
+      "pattern": "一起走",
+      "head": "一起走",
+      "description": "描述共同進行某個動作或事情。",
+      "structure": "一起＋動詞（做什麼事）",
+      "examples": [
+        "一起吃飯",
+        "一起爬山",
+        "一起唱歌"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H01:01",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "category": "短語句型練習",
+      "pattern": "向前走",
+      "head": "向前走",
+      "description": "用「向」來描述某個動作往何處進行。",
+      "structure": "向＋方向＋動詞（動作）",
+      "examples": [
+        "向上爬",
+        "向右轉",
+        "向後跳"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H01:02",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "category": "短語句型練習",
+      "pattern": "你和我一起向前走。",
+      "head": "你和我一起向前走。",
+      "description": "用「和」可以把 A 和 B 連起來，再加上「一起」，可以表達共同做了什麼事。",
+      "structure": null,
+      "examples": [
+        "姐姐和妹妹一起看書。",
+        "小狗和小貓一起睡覺。",
+        "小魚和青蛙一起游泳。"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H01:03",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    }
+  ],
   "rhetoric": [],
-  "paragraph_summary": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG1H01:01",
+      "para_no": 1,
+      "paragraph_no": 1,
+      "summary": "起：用一二一和左右位置，帶出一起走的畫面。",
+      "structure_role": "開端",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    },
+    {
+      "id": "paragraph_summary:115AG1H01:02",
+      "para_no": 2,
+      "paragraph_no": 2,
+      "summary": "承：用重複節奏呈現大家同時行走。",
+      "structure_role": "發展",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    },
+    {
+      "id": "paragraph_summary:115AG1H01:03",
+      "para_no": 3,
+      "paragraph_no": 3,
+      "summary": "合：你和我一起向前走，表現合作前進。",
+      "structure_role": "收束",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    }
+  ],
   "main_idea": {
-    "gist": "本課閱讀重點待補。",
-    "theme": "閱讀理解",
-    "status": "draft",
-    "source": "teacher-review-required"
+    "gist": "課文用一二一的節奏和左右位置，描寫你和我一起向前走。",
+    "theme": "課文理解",
+    "status": "approved",
+    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
   },
-  "reading_questions": [],
-  "polysemy": [],
+  "reading_questions": [
+    {
+      "id": "reading-question:115AG1H01:01",
+      "stem": "仔細觀察課文插圖，圖中有幾個人？分別是誰？他們正在哪裡？",
+      "answer_hint": "課文插圖裡有七個人，分別是一個老師和六個小朋友，他們正在操場上。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H01:02",
+      "stem": "根據這篇課文，走路的人分別是誰？",
+      "answer_hint": "「你」和「我」。因為你和我一起向前走。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H01:03",
+      "stem": "根據課文，「你在左，我在右」，為什麼他們不分開走，一定要緊緊靠在一起前進？",
+      "answer_hint": "因為他們的腳被綁在一起了，如果不一起走，腳會被拉扯，就沒辦法前進。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H01:04",
+      "stem": "課文最後說「你和我，一起向前走」。你認為要做到「一起向前走」，最重要的是什麼？",
+      "answer_hint": "最重要的是「默契」，因為腳步要一樣、動作要同步。",
+      "strategy_tag": "詮釋整合",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H01:05",
+      "stem": "你覺得「兩個人綁在一起走」和「一個人自己走」，哪一個走法比較有趣？為什麼？",
+      "answer_hint": "答案示例一：我覺得兩個人綁在一起比較有趣，雖然比較難，但是可以和好朋友一起合作，成功了會很開心！答案示例二：我覺得一個人自己走比較有趣，因為一個人可以自由自在的控制速度，想快就快，想慢就慢，不用等別人，也不怕兩個人絆倒。",
+      "strategy_tag": "比較評估",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H01:06",
+      "stem": "閱讀課文，你覺得「兩人三腳」這個遊戲，要獲得勝利的方法是什麼？",
+      "answer_hint": "需要兩個人互相合作，步伐要相同，一起向前走。",
+      "strategy_tag": "詮釋整合",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG1H01:和:01",
+      "char": "和",
+      "sentence": "妹妹和我一起畫畫。",
+      "definition": "跟、與。",
+      "options": [
+        "跟、與。",
+        "溫順、安詳。",
+        "各數相加的總數。"
+      ],
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；一字多義）"
+    },
+    {
+      "id": "polysemy:115AG1H01:和:02",
+      "char": "和",
+      "sentence": "微風吹來，天氣很和暖。",
+      "definition": "溫順、安詳。",
+      "options": [
+        "跟、與。",
+        "溫順、安詳。",
+        "各數相加的總數。"
+      ],
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；一字多義）"
+    },
+    {
+      "id": "polysemy:115AG1H01:和:03",
+      "char": "和",
+      "sentence": "二加三的和是五。",
+      "definition": "各數相加的總數。",
+      "options": [
+        "跟、與。",
+        "溫順、安詳。",
+        "各數相加的總數。"
+      ],
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；一字多義）"
+    }
+  ],
   "polysemy_senses": [],
   "polyphones": [],
-  "lookalikes": [],
-  "listening": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG1H01:01",
+      "group_no": "1",
+      "question": "一＿",
+      "answer": "起",
+      "chars": [
+        {
+          "char": "起",
+          "zhuyin": null,
+          "example": "一起"
+        },
+        {
+          "char": "走",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H01:02",
+      "group_no": "2",
+      "question": "＿到花園去澆花",
+      "answer": "走",
+      "chars": [
+        {
+          "char": "起",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "走",
+          "zhuyin": null,
+          "example": "走到花園去澆花"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H01:03",
+      "group_no": "3",
+      "question": "我＿操場上拍球",
+      "answer": "在",
+      "chars": [
+        {
+          "char": "左",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "右",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "在",
+          "zhuyin": null,
+          "example": "我在操場上拍球"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H01:04",
+      "group_no": "4",
+      "question": "＿邊",
+      "answer": "左",
+      "chars": [
+        {
+          "char": "左",
+          "zhuyin": null,
+          "example": "左邊"
+        },
+        {
+          "char": "在",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "右",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H01:05",
+      "group_no": "5",
+      "question": "＿想要吃香蕉",
+      "answer": "我",
+      "chars": [
+        {
+          "char": "我",
+          "zhuyin": null,
+          "example": "我想要吃香蕉"
+        },
+        {
+          "char": "找",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H01:06",
+      "group_no": "6",
+      "question": "＿邊",
+      "answer": "右",
+      "chars": [
+        {
+          "char": "在",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "左",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "右",
+          "zhuyin": null,
+          "example": "右邊"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H01:07",
+      "group_no": "7",
+      "question": "你＿我",
+      "answer": "和",
+      "chars": [
+        {
+          "char": "和",
+          "zhuyin": null,
+          "example": "你和我"
+        },
+        {
+          "char": "知",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H01:08",
+      "group_no": "8",
+      "question": "＿志工媽媽說早安",
+      "answer": "向",
+      "chars": [
+        {
+          "char": "同",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "向",
+          "zhuyin": null,
+          "example": "向志工媽媽說早安"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H01:09",
+      "group_no": "9",
+      "question": "妹妹和我一＿畫",
+      "answer": "起",
+      "chars": [
+        {
+          "char": "起",
+          "zhuyin": null,
+          "example": "妹妹和我一起畫"
+        },
+        {
+          "char": "走",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H01:10",
+      "group_no": "10",
+      "question": "＿們",
+      "answer": "我",
+      "chars": [
+        {
+          "char": "找",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "我",
+          "zhuyin": null,
+          "example": "我們"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG1H01:01",
+      "stem": "課文中，「我」在哪裡？",
+      "question": "課文中，「我」在哪裡？",
+      "options": [
+        "在左。",
+        "在右。",
+        "在前面。"
+      ],
+      "answer": "在右。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
+      "passage": "一二一，我在右，你在左。"
+    },
+    {
+      "id": "listening:115AG1H01:02",
+      "stem": "大家要怎麼走？",
+      "question": "大家要怎麼走？",
+      "options": [
+        "一起走。",
+        "自己走。",
+        "停下來。"
+      ],
+      "answer": "一起走。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
+      "passage": "一二一二，一起走。"
+    },
+    {
+      "id": "listening:115AG1H01:03",
+      "stem": "最後，「你和我」一起往哪裡走？",
+      "question": "最後，「你和我」一起往哪裡走？",
+      "options": [
+        "向前走。",
+        "向後走。",
+        "向右走。"
+      ],
+      "answer": "向前走。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
+      "passage": "你和我，一起向前走。"
+    }
+  ],
   "review_words": {
     "by_lesson": {
       "1": [
@@ -538,15 +1055,13 @@
     },
     "reading": {
       "label": "讀懂課文",
-      "status": "missing",
-      "activity": "reading",
-      "note": "一年級課文內容待整理為公開摘要；課文全文不放入公開網站。"
+      "status": "available",
+      "activity": "reading"
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
-      "activity": "sentence-practice",
-      "note": "句型資料待審核。"
+      "status": "available",
+      "activity": "sentence-practice"
     },
     "challenge": {
       "label": "動手挑戰",
@@ -561,39 +1076,35 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
-      "activity": "idiom-builder",
-      "note": "一年級不安排成語題。"
+      "status": "available",
+      "activity": "idiom-builder"
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "一年級不安排一字多義題。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
       "status": "missing",
       "activity": "polyphones",
-      "note": "多音字資料待審核。"
+      "note": "04形音輕鬆學本課未提供至少兩種可核對的不同注音，保留未開放。"
     },
     "lookalikes": {
       "label": "形似字",
-      "status": "missing",
-      "activity": "lookalikes",
-      "note": "形似字資料待審核。"
+      "status": "available",
+      "activity": "lookalikes"
     },
     "structure_map": {
       "label": "課文地圖",
-      "status": "missing",
-      "activity": "structure-map",
-      "note": "摘要資料待補。"
+      "status": "available",
+      "activity": "structure-map"
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
+      "status": "available",
       "activity": "listening-quiz",
-      "note": "聆聽題資料待審核。"
+      "note": "已依官方閱讀理解提問與課文關鍵語句逐題核對。"
     },
     "rhetoric": {
       "label": "修辭小偵探",

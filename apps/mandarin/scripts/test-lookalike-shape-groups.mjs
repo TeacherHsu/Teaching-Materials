@@ -40,12 +40,17 @@ for (const [code, lessons] of Object.entries(manifest.grades)) {
     );
 
     for (const [groupIndex, group] of actualGroups.entries()) {
+      const targetChar = lesson.lookalikes?.[groupIndex]?.answer;
       assert.ok(group.length >= 2, `${code}/${lessonKey} 第${groupIndex + 1}組至少需要兩個選項`);
       const chars = group.map((item) => item.char);
       assert.equal(new Set(chars).size, chars.length, `${code}/${lessonKey} 第${groupIndex + 1}組不可重複字`);
       for (const item of group) {
         assert.match(String(item.char), /^\p{Script=Han}$/u, `${code}/${lessonKey} 有非單一漢字選項`);
-        assert.ok(item.example?.includes(item.char), `${code}/${lessonKey}「${item.char}」例詞沒有包含本字`);
+        // 一年級官方題庫只為正確字提供例詞，干擾字是形似字選項；
+        // 若干擾字有例詞仍需自洽，但不要求工作流臆造例詞。
+        if (item.char === targetChar || item.example) {
+          assert.ok(item.example?.includes(item.char), `${code}/${lessonKey}「${item.char}」例詞沒有包含本字`);
+        }
         checkedOptions += 1;
       }
       checkedGroups += 1;

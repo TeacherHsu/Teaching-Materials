@@ -26,7 +26,8 @@ function usableGroups(lesson) {
   return filterByStatus(lesson.lookalikes || [])
     .map((g) => ({
       ...g,
-      chars: (g.chars || []).filter((c) => c.char && c.example),
+      // 官方教材多半只在正確字上提供例詞；其餘形似字仍是必要的選項。
+      chars: (g.chars || []).filter((c) => c.char),
     }))
     .filter((g) => g.chars.length >= 2);
 }
@@ -84,19 +85,22 @@ export function buildLookalikesActivity(lesson, onBack) {
     }
     const isLastRound = roundIndex === rounds.length - 1;
     container.appendChild(
-      TaskBanner({ label: '看語詞裡的空格，選出正確的字', step: `第 ${roundIndex + 1} 組／共 ${rounds.length} 組` }),
+      TaskBanner({ label: '看語詞裡的空格，選出正確的字', step: roundIndex === 0 ? '本課先完成' : '加練挑戰' }),
     );
     container.appendChild(
       ChoiceQuiz({
         items: rounds[roundIndex],
-        backLabel: isLastRound ? '回課程首頁' : '再來一組',
+        backLabel: isLastRound ? '回課程首頁' : '本課先完成',
         onBack: () => {
           if (!isLastRound) {
-            roundIndex += 1;
-            renderStep();
+            onBack();
           } else {
             onBack();
           }
+        },
+        onContinue: isLastRound ? null : () => {
+          roundIndex += 1;
+          renderStep();
         },
       }),
     );

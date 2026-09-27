@@ -13,7 +13,7 @@
   "lesson_no": 2,
   "title": "放學後",
   "author": "",
-  "blurb": "透過〈放學後〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "沿著放學、寫功課和吃點心的經過，找出事情發展與人物選擇。",
   "source_audit": [
     {
       "kind": "official",
@@ -573,54 +573,66 @@
       "idiom": "赴湯蹈火",
       "definition": "比喻奮不顧身，不避艱險。",
       "related_char": "湯",
-      "image": "idioms/01_赴湯蹈火.webp",
+      "image": "idioms/01_赴湯蹈火-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:02:02",
       "idiom": "拋磚引玉",
       "definition": "比喻自己先發表粗陋的詩文或不成熟的意見，以引出別人的佳作或高論，多用作自謙之詞。亦用於比喻以身作則，引發眾人響應。",
       "related_char": "拋",
-      "image": "idioms/02_拋磚引玉.webp",
+      "image": "idioms/02_拋磚引玉-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:02:03",
       "idiom": "力爭上游",
       "definition": "比喻努力奮鬥，求取上進。",
       "related_char": "爭",
-      "image": "idioms/03_力爭上游.webp",
+      "image": "idioms/03_力爭上游-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:02:04",
       "idiom": "以身作則",
       "definition": "以自身行為作為他人的榜樣。",
       "related_char": "則",
-      "image": "idioms/04_以身作則.webp",
+      "image": "idioms/04_以身作則-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:02:05",
       "idiom": "捨本逐末",
       "definition": "指人不求事物的根本大端，只重視微末小節。",
       "related_char": "捨",
-      "image": "idioms/05_捨本逐末.webp",
+      "image": "idioms/05_捨本逐末-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:02:06",
       "idiom": "束手無策",
       "definition": "比喻面對問題時，毫無解決的辦法。",
       "related_char": "束",
-      "image": "idioms/06_束手無策.webp",
+      "image": "idioms/06_束手無策-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -878,9 +890,10 @@
         "留在學校",
         "搭車去公園"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "飛也似的跑回家",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K02:02",
@@ -892,9 +905,10 @@
         "先玩遊戲，再看報紙",
         "先睡覺，再寫功課"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "先吃點心，再寫功課",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K02:03",
@@ -906,9 +920,10 @@
         "打掃教室",
         "搭公車回家"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "讀國語日報",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K02:04",
@@ -920,9 +935,10 @@
         "他很享受放學後的美好時光",
         "他還沒有吃晚餐"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "他很享受放學後的美好時光",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -2388,38 +2404,41 @@
       "question": "作者喜歡放學後的時光嗎？從課文中哪些地方可以知道？",
       "options": [
         "作者喜歡放學後的時光",
-        "國語日報有許多版面，內容多元，有新聞、科普知識、學生作文、童話故事、校園活動報導等，可以滋養作者成長，豐富心靈",
-        "一起想出好方法：姐姐看左邊，作者就看右邊。姐姐看正面，作者就看反面，一起享受讀報紙的樂趣"
+        "國語日報內容豐富，能滋養心靈。",
+        "和姐姐分工讀報。"
       ],
       "answer": "作者喜歡放學後的時光",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "放學後的美好時光，不論是吃點心、看報紙，還是玩遊戲，時間總是過得特別快。"
     },
     {
       "id": "listening:02:02",
       "stem": "為什麼好朋友們常常不約而同到作者家「寫功課」？為什麼「寫功課」三個字要用引號？",
       "question": "為什麼好朋友們常常不約而同到作者家「寫功課」？為什麼「寫功課」三個字要用引號？",
       "options": [
-        "國語日報有許多版面，內容多元，有新聞、科普知識、學生作文、童話故事、校園活動報導等，可以滋養作者成長，豐富心靈",
-        "一起想出好方法：姐姐看左邊，作者就看右邊。姐姐看正面，作者就看反面，一起享受讀報紙的樂趣",
-        "他們不是真的到作者家寫功課，而是假借寫功課之名，實際上卻是要吃美味的點心，經常把美食一掃而空"
+        "國語日報內容豐富，能滋養心靈。",
+        "和姐姐分工讀報。",
+        "假借寫功課，其實是來吃點心。"
       ],
-      "answer": "他們不是真的到作者家寫功課，而是假借寫功課之名，實際上卻是要吃美味的點心，經常把美食一掃而空",
+      "answer": "假借寫功課，其實是來吃點心。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "好友們常常不約而同來我家「寫功課」，大家一坐下來，總是不敵美食當前，將功課拋到腦後，把眼前的美食一掃而空。"
     },
     {
       "id": "listening:02:03",
       "stem": "為什麼作者會說「回到家裡，常有美味的點心，對著我們招招手」？",
       "question": "為什麼作者會說「回到家裡，常有美味的點心，對著我們招招手」？",
       "options": [
-        "一起想出好方法：姐姐看左邊，作者就看右邊。姐姐看正面，作者就看反面，一起享受讀報紙的樂趣",
-        "美味的點心有香氣撲鼻的奶油餅乾，有層次分明的千層糕，有軟綿可口的紅豆湯，這些美食用各種感官感受吸引作者，像對作者招招手",
-        "國語日報有許多版面，內容多元，有新聞、科普知識、學生作文、童話故事、校園活動報導等，可以滋養作者成長，豐富心靈"
+        "和姐姐分工讀報。",
+        "美味點心香甜可口，吸引作者。",
+        "國語日報內容豐富，能滋養心靈。"
       ],
-      "answer": "美味的點心有香氣撲鼻的奶油餅乾，有層次分明的千層糕，有軟綿可口的紅豆湯，這些美食用各種感官感受吸引作者，像對作者招招手",
+      "answer": "美味點心香甜可口，吸引作者。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "回到家裡，常有美味的點心，對著我們招招手：有時是香氣撲鼻的奶油餅乾，有時是層次分明的千層糕，有時是軟綿可口的紅豆湯。"
     }
   ],
   "review_words": {

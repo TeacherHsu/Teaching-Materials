@@ -17,7 +17,7 @@ export function GradePage(courseIndex, gradeNo) {
       ]),
     ]),
   );
-  const grid = h('div', { class: 'card-grid' });
+  const lessons = [];
   for (const volume of grade.volumes) {
     for (const unit of volume.units) {
       for (const lesson of unit.lessons) {
@@ -28,15 +28,38 @@ export function GradePage(courseIndex, gradeNo) {
           h('div', { class: 'nav-card__meta' }, metaText),
           h('div', { class: 'nav-card__title' }, titleText),
         ]);
-        grid.appendChild(
-          h('div', { class: 'quiz-option-row' }, [
-            link,
-            SpeakButton({ text: titleText, label: '聽', variant: 'speak-button--option' }),
-          ]),
-        );
+        lessons.push({ lesson, titleText, link });
       }
     }
   }
-  root.appendChild(grid);
+
+  const makeGrid = (items) => {
+    const grid = h('div', { class: 'card-grid' });
+    for (const { titleText, link } of items) {
+      grid.appendChild(h('div', { class: 'quiz-option-row' }, [
+        link,
+        SpeakButton({ text: titleText, label: '聽', variant: 'speak-button--option' }),
+      ]));
+    }
+    return grid;
+  };
+
+  if (Number(grade.grade) >= 2 && Number(grade.grade) <= 6) {
+    for (const [start, end] of [[1, 6], [7, 12]]) {
+      const group = lessons.filter(({ lesson }) => lesson.lesson_no >= start && lesson.lesson_no <= end);
+      if (!group.length) continue;
+      const details = h('details', { class: 'course-group' });
+      details.appendChild(h('summary', { class: 'course-group__summary' }, [
+        h('span', {}, `第 ${start}～${end} 課`),
+        h('span', { class: 'course-group__count' }, `${group.length} 課`),
+      ]));
+      details.appendChild(makeGrid(group));
+      root.appendChild(details);
+    }
+    const otherLessons = lessons.filter(({ lesson }) => lesson.lesson_no < 1 || lesson.lesson_no > 12);
+    if (otherLessons.length) root.appendChild(makeGrid(otherLessons));
+  } else {
+    root.appendChild(makeGrid(lessons));
+  }
   return root;
 }

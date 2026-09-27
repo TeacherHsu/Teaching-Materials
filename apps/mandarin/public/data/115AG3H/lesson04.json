@@ -13,7 +13,7 @@
   "lesson_no": 4,
   "title": "水滾了",
   "author": "王宗仁",
-  "blurb": "從康康處理滾水的經驗，學會遇到問題要找到根本原因，再想出有效的方法。",
+  "blurb": "比較康康先後採用的方法，找出師傅如何從根本原因解決水滾問題。",
   "characters": [
     {
       "char": "堂",
@@ -519,45 +519,55 @@
       "idiom": "打退堂鼓",
       "definition": "比喻做事中途退縮、放棄。",
       "related_char": "堂",
-      "image": "idioms/01_打退堂鼓.webp",
+      "image": "idioms/01_打退堂鼓-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H04:骨瘦如柴",
       "idiom": "骨瘦如柴",
       "definition": "形容人非常消瘦，瘦得像枯乾的木柴一樣。",
       "related_char": "柴",
-      "image": "idioms/02_骨瘦如柴.webp",
+      "image": "idioms/02_骨瘦如柴-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H04:揚眉吐氣",
       "idiom": "揚眉吐氣",
       "definition": "形容擺脫長期壓抑後的暢快神情。",
       "related_char": "揚",
-      "image": "idioms/03_揚眉吐氣.webp",
+      "image": "idioms/03_揚眉吐氣-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H04:適可而止",
       "idiom": "適可而止",
       "definition": "做到適當的程度就停下來，不要做得太過分。",
       "related_char": "止",
-      "image": "idioms/04_適可而止.webp",
+      "image": "idioms/04_適可而止-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H04:一知半解",
       "idiom": "一知半解",
       "definition": "知道得不全面，理解得不夠透徹。",
       "related_char": "解",
-      "image": "idioms/05_一知半解.webp",
+      "image": "idioms/05_一知半解-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -1056,7 +1066,8 @@
       ],
       "answer": "撿柴",
       "status": "approved",
-      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（教師自撰聆聽題）"
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（教師自撰聆聽題）",
+      "passage": "食堂的工作由師徒兩人分工合作，年長的師傅燒水、做菜，年輕的徒弟康康只負責撿柴。"
     },
     {
       "id": "listening:115AG3H04:2",
@@ -1069,7 +1080,8 @@
       ],
       "answer": "揚湯止沸",
       "status": "approved",
-      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（教師自撰聆聽題）"
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（教師自撰聆聽題）",
+      "passage": "你這麼做是揚湯止沸，沒辦法讓水不再沸騰。"
     },
     {
       "id": "listening:115AG3H04:3",
@@ -1082,7 +1094,8 @@
       ],
       "answer": "先找到問題的根本",
       "status": "approved",
-      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（教師自撰聆聽題）"
+      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（教師自撰聆聽題）",
+      "passage": "處理問題不能只看表面，要先找到問題的根本，再解決問題。"
     }
   ],
   "review_words": {

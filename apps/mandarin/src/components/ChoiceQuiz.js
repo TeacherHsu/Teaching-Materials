@@ -21,7 +21,7 @@ const DEFAULT_HINT = '再看看題目，仔細比對一下再選。';
  * 鍵盤可操作（原生 button，Tab/Enter 即可）。
  * @param {{items: Array, onComplete?: (correct:number, total:number)=>void, onBack?: () => void, backLabel?: string}} opts
  */
-export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程首頁' }) {
+export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程首頁', onContinue, continueLabel = '加練下一組' }) {
   const root = h('div', { class: 'quiz-panel' });
   let index = 0;
   let correctCount = 0;
@@ -40,6 +40,8 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
           },
           onBack,
           backLabel,
+          onContinue,
+          continueLabel,
         }),
       );
       if (onComplete) onComplete(correctCount, items.length);
@@ -58,9 +60,9 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
     if (item.extra) root.appendChild(item.extra);
     root.appendChild(
       h('div', { class: 'quiz-title-row' }, [
-        h('div', { class: 'quiz-option-row' }, [
+        h('div', { class: 'quiz-option-row audio-control-group audio-control-group--prompt' }, [
           h('p', { class: 'quiz-stem' }, stemContent),
-          SpeakButton({ text: stemText, label: '聽', variant: 'speak-button--option' }),
+          SpeakButton({ text: stemText, label: '聽題目', showLabel: true, ariaLabel: `聽題目：${stemText}`, variant: 'speak-button--option speak-button--audio-label' }),
         ]),
         ReadAllButton(() => ({ stem: item.readAllStem || stemText, options })),
       ]),
@@ -173,9 +175,9 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
           appendNextButton();
         }
       });
-      const row = h('div', { class: 'quiz-option-row' }, [
+      const row = h('div', { class: 'quiz-option-row audio-control-group audio-control-group--option' }, [
         btn,
-        SpeakButton({ text: opt, label: '聽', ariaLabel: `朗讀選項：${opt}`, variant: 'speak-button--option' }),
+        SpeakButton({ text: opt, label: '聽選項', showLabel: true, ariaLabel: `聽選項：${opt}`, variant: 'speak-button--option speak-button--audio-label' }),
       ]);
       optionsWrap.appendChild(row);
     });

@@ -13,7 +13,7 @@
   "lesson_no": 11,
   "title": "一路平安",
   "author": "",
-  "blurb": "透過〈一路平安〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "按車子故障、尋找修理和繼續返鄉的順序，整理旅途中互相幫助的經過。",
   "characters": [
     {
       "char": "除",
@@ -357,6 +357,186 @@
   "words": [
     {
       "id": "word:115AG3H11:01",
+      "word": "除夕",
+      "zhuyin": null,
+      "meaning": "農曆十二月最後一天的夜晚。當晚有闔家團聚吃飯、守歲的習俗。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson11/vocabulary/l11-target-01.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H11:02",
+      "word": "嬸嬸",
+      "zhuyin": null,
+      "meaning": "稱謂。稱叔叔的妻子。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson11/vocabulary/l11-target-02.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H11:03",
+      "word": "煙火",
+      "zhuyin": null,
+      "meaning": "一種以火硝為主，並摻雜其他藥物製成的物品。燃燒時噴射出各種變幻燦爛的形狀，供遊戲觀賞之用。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson11/vocabulary/l11-target-03.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H11:04",
+      "word": "陣陣",
+      "zhuyin": null,
+      "meaning": "時有時無，斷斷續續的。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson11/vocabulary/l11-target-04.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H11:05",
+      "word": "附近",
+      "zhuyin": null,
+      "meaning": "距離不遠的地方。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson11/vocabulary/l11-target-05.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H11:06",
+      "word": "店家",
+      "zhuyin": null,
+      "meaning": "指商店或旅店。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson11/vocabulary/l11-target-06.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H11:07",
+      "word": "休息",
+      "zhuyin": null,
+      "meaning": "暫時停止工作或活動。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson11/vocabulary/l11-target-07.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H11:08",
+      "word": "修車廠",
+      "zhuyin": null,
+      "meaning": "維修汽車的地方。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson11/vocabulary/l11-target-08.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H11:09",
+      "word": "關",
+      "zhuyin": null,
+      "meaning": "掩閉、閉合。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson11/vocabulary/l11-target-09.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H11:10",
+      "word": "檢查",
+      "zhuyin": null,
+      "meaning": "檢視查看。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson11/vocabulary/l11-target-10.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H11:11",
+      "word": "拖",
+      "zhuyin": null,
+      "meaning": "牽拉，一般指拉著較重的物體。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson11/vocabulary/l11-target-11.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H11:12",
+      "word": "擺",
+      "zhuyin": null,
+      "meaning": "陳列、布置。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson11/vocabulary/l11-target-12.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H11:13",
+      "word": "打擾",
+      "zhuyin": null,
+      "meaning": "擾亂、驚動。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson11/vocabulary/l11-target-13.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H11:14",
+      "word": "幸好",
+      "zhuyin": null,
+      "meaning": "幸虧、還好。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson11/vocabulary/l11-target-14.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H11:15",
+      "word": "零件",
+      "zhuyin": null,
+      "meaning": "泛指各種機械設備的基本組成單位。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson11/vocabulary/l11-target-15.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H11:16",
       "word": "修車",
       "zhuyin": "ㄒㄧㄡ ㄔㄜ",
       "meaning": "把壞掉的車子修好。",
@@ -368,7 +548,7 @@
       "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
     },
     {
-      "id": "word:115AG3H11:02",
+      "id": "word:115AG3H11:17",
       "word": "師傅",
       "zhuyin": "ㄕ ㄈㄨˋ",
       "meaning": "有專門技術、能教導或服務別人的人。",
@@ -380,7 +560,7 @@
       "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
     },
     {
-      "id": "word:115AG3H11:03",
+      "id": "word:115AG3H11:18",
       "word": "感謝",
       "zhuyin": "ㄍㄢˇ ㄒㄧㄝˋ",
       "meaning": "對別人的幫助表示謝意。",
@@ -392,7 +572,7 @@
       "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
     },
     {
-      "id": "word:115AG3H11:04",
+      "id": "word:115AG3H11:19",
       "word": "一路平安",
       "zhuyin": "ㄧˊ ㄌㄨˋ ㄆㄧㄥˊ ㄢ",
       "meaning": "祝福人在路途中安全順利的話。",
@@ -404,7 +584,7 @@
       "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
     },
     {
-      "id": "word:115AG3H11:05",
+      "id": "word:115AG3H11:20",
       "word": "新年",
       "zhuyin": "ㄒㄧㄣ ㄋㄧㄢˊ",
       "meaning": "一年開始的節日。",
@@ -416,7 +596,7 @@
       "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
     },
     {
-      "id": "word:115AG3H11:06",
+      "id": "word:115AG3H11:21",
       "word": "祝福",
       "zhuyin": "ㄓㄨˋ ㄈㄨˊ",
       "meaning": "希望別人平安、幸福的話。",
@@ -436,54 +616,72 @@
       "idiom": "斬草除根",
       "definition": "比喻除去禍根，不留後患。",
       "related_char": "除",
-      "image": null,
+      "image": "idioms/01_斬草除根.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H11:4ffbb3b9",
       "idiom": "烏煙瘴氣",
       "definition": "形容人事或氣氛黑暗、混亂。",
       "related_char": "煙",
-      "image": null,
+      "image": "idioms/02_烏煙瘴氣.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H11:d7d6ac73",
       "idiom": "息息相關",
       "definition": "比喻關係極為密切。",
       "related_char": "息",
-      "image": null,
+      "image": "idioms/03_息息相關.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H11:9142ee06",
       "idiom": "不修邊幅",
       "definition": "形容不注意衣飾、儀容。",
       "related_char": "修",
-      "image": null,
+      "image": "idioms/04_不修邊幅.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H11:05c2942e",
       "idiom": "幸災樂禍",
       "definition": "指對別人的不幸遭遇引以為樂。",
       "related_char": "幸",
-      "image": null,
+      "image": "idioms/05_幸災樂禍.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H11:81199934",
       "idiom": "七零八落",
       "definition": "形容零散、不完整的樣子。",
       "related_char": "零",
-      "image": null,
+      "image": "idioms/06_七零八落.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -1246,7 +1444,8 @@
       ],
       "answer": "因為他們要回南部過年，拜訪家人。",
       "status": "approved",
-      "source": "115G3A／翰林官方教材（15閱讀理解提問：第11課）"
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第11課）",
+      "passage": "除夕那天，我們好想快點回南部過年，除了可以見到親愛的爺爺、奶奶，還可以先去探望好久不見的嬸嬸。"
     },
     {
       "id": "listening:115AG3H11:0002",
@@ -1259,7 +1458,8 @@
       ],
       "answer": "因為車子突然發出怪聲，可能出了問題。",
       "status": "approved",
-      "source": "115G3A／翰林官方教材（15閱讀理解提問：第11課）"
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第11課）",
+      "passage": "車子傳出一陣陣奇怪的聲音，爸爸趕緊停在路邊。"
     },
     {
       "id": "listening:115AG3H11:0003",
@@ -1272,7 +1472,8 @@
       ],
       "answer": "善良、熱情，願意在除夕夜幫忙修車。",
       "status": "approved",
-      "source": "115G3A／翰林官方教材（15閱讀理解提問：第11課）"
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第11課）",
+      "passage": "「可以呀！」"
     }
   ],
   "review_words": {

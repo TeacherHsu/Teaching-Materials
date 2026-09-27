@@ -13,7 +13,7 @@
   "lesson_no": 5,
   "title": "樹的聯想",
   "author": "",
-  "blurb": "透過〈樹的聯想〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "從樹的外形、姿態和作者聯想，理解樹如何象徵可靠的朋友。",
   "characters": [
     {
       "char": "濘",
@@ -550,81 +550,99 @@
       "idiom": "心浮氣躁",
       "definition": "形容情緒不穩，沉不住氣。",
       "related_char": "躁",
-      "image": "idioms/01_心浮氣躁.webp",
+      "image": "idioms/01_心浮氣躁-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H05:沙裡淘金",
       "idiom": "沙裡淘金",
       "definition": "比喻從大量材料中找出精華。",
       "related_char": "淘",
-      "image": "idioms/02_沙裡淘金.webp",
+      "image": "idioms/02_沙裡淘金-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H05:一手遮天",
       "idiom": "一手遮天",
       "definition": "比喻玩弄權術，瞞上欺下。",
       "related_char": "遮",
-      "image": "idioms/03_一手遮天.webp",
+      "image": "idioms/03_一手遮天-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H05:腳踏實地",
       "idiom": "腳踏實地",
       "definition": "比喻做事切實穩健。",
       "related_char": "踏",
-      "image": "idioms/04_腳踏實地-v2.webp",
+      "image": "idioms/04_腳踏實地-v2-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H05:十拿九穩",
       "idiom": "十拿九穩",
       "definition": "比喻事情很有把握。",
       "related_char": "穩",
-      "image": "idioms/05_十拿九穩.webp",
+      "image": "idioms/05_十拿九穩-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H05:稀奇古怪",
       "idiom": "稀奇古怪",
       "definition": "少見而奇怪。",
       "related_char": "稀",
-      "image": "idioms/06_稀奇古怪.webp",
+      "image": "idioms/06_稀奇古怪-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H05:初出茅廬",
       "idiom": "初出茅廬",
       "definition": "比喻初入社會，缺乏歷練。",
       "related_char": "初",
-      "image": "idioms/07_初出茅廬.webp",
+      "image": "idioms/07_初出茅廬-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H05:當仁不讓",
       "idiom": "當仁不讓",
       "definition": "遇到該做的事，主動承擔而不推辭。",
       "related_char": "仁",
-      "image": "idioms/08_當仁不讓.webp",
+      "image": "idioms/08_當仁不讓-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H05:駐顏有術",
       "idiom": "駐顏有術",
       "definition": "稱讚人保持青春美貌很有方法。",
       "related_char": "駐",
-      "image": "idioms/09_駐顏有術.webp",
+      "image": "idioms/09_駐顏有術-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -1058,9 +1076,10 @@
         "從車窗看見樹很美",
         "要砍掉那棵樹"
       ],
-      "answer": null,
+      "answer": "從車窗看見樹很美",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:05:02",
@@ -1069,9 +1088,10 @@
         "可靠、踏實的朋友",
         "愛炫耀的人"
       ],
-      "answer": null,
+      "answer": "可靠、踏實的朋友",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:05:03",
@@ -1080,9 +1100,10 @@
         "善意可能在無意間帶來喜悅",
         "杏仁酥最好吃"
       ],
-      "answer": null,
+      "answer": "善意可能在無意間帶來喜悅",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:05:04",
@@ -1091,9 +1112,10 @@
         "在享受美好時也為他人付出",
         "只要多種花"
       ],
-      "answer": null,
+      "answer": "在享受美好時也為他人付出",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -1858,7 +1880,8 @@
       ],
       "answer": "從車窗看見樹很美",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "直到有一天，我從車窗裡望見了那株樹，那株很美的樹。"
     },
     {
       "id": "listening:115AG6H05:2",
@@ -1870,7 +1893,8 @@
       ],
       "answer": "可靠、踏實的朋友",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "有些朋友，當你失意時，他卻會出現在你的身邊，像樹蔭為你遮陽，又像樹幹給你信心。"
     },
     {
       "id": "listening:115AG6H05:3",
@@ -1882,7 +1906,8 @@
       ],
       "answer": "善意可能在無意間帶來喜悅",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "種樹的人或許只期待一片綠蔭，卻往往在無意間，讓他人心中多了一份喜悅。"
     },
     {
       "id": "listening:115AG6H05:4",
@@ -1894,7 +1919,8 @@
       ],
       "answer": "在享受美好時也為他人付出",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "如果我們得到綠蔭的庇護，除了滿足於安閒的享有，也可以試著去想，我能為他人做些什麼？"
     }
   ],
   "review_words": {

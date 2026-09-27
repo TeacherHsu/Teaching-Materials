@@ -1,0 +1,2041 @@
+{
+  "lesson_id": "115AG2H08",
+  "volume": {
+    "code": "115AG2H",
+    "publisher": "翰林",
+    "grade": 2,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "二上國語課程"
+  },
+  "lesson_no": 8,
+  "title": "美食分享日",
+  "blurb": "依泡米紙、放入食材、捲起來的步驟，整理越南春捲的做法。",
+  "characters": [
+    {
+      "char": "介",
+      "zhuyin": "ㄐㄧㄝˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "介紹",
+        "介意",
+        "中介"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=介",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼈",
+      "stroke_count": 4
+    },
+    {
+      "char": "圓",
+      "zhuyin": "ㄩㄢˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "圓形",
+        "圓圈",
+        "圓滿"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=圓",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼞",
+      "stroke_count": 13
+    },
+    {
+      "char": "形",
+      "zhuyin": "ㄒㄧㄥˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "圓形",
+        "形狀",
+        "形影"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=形",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼺",
+      "stroke_count": 7
+    },
+    {
+      "char": "白",
+      "zhuyin": "ㄅㄞˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "白紙",
+        "白色",
+        "白天"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=白",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽩",
+      "stroke_count": 5
+    },
+    {
+      "char": "紙",
+      "zhuyin": "ㄓˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "米紙",
+        "白紙",
+        "紙張"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=紙",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽷",
+      "stroke_count": 10
+    },
+    {
+      "char": "米",
+      "zhuyin": "ㄇㄧˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "米紙",
+        "米線",
+        "米飯"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=米",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽶",
+      "stroke_count": 6
+    },
+    {
+      "char": "變",
+      "zhuyin": "ㄅㄧㄢˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "變成",
+        "變化",
+        "改變"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=變",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾔",
+      "stroke_count": 23
+    },
+    {
+      "char": "軟",
+      "zhuyin": "ㄖㄨㄢˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "柔軟",
+        "軟糖",
+        "軟體"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=軟",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾞",
+      "stroke_count": 11
+    },
+    {
+      "char": "搶",
+      "zhuyin": "ㄑㄧㄤˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "搶先",
+        "搶答",
+        "搶救"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=搶",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼿",
+      "stroke_count": 13
+    },
+    {
+      "char": "材",
+      "zhuyin": "ㄘㄞˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "取材",
+        "器材",
+        "媒材"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=材",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽊",
+      "stroke_count": 7
+    },
+    {
+      "char": "蝦",
+      "zhuyin": "ㄒㄧㄚ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "蝦子",
+        "蝦米",
+        "蝦仁"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=蝦",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾍",
+      "stroke_count": 15
+    },
+    {
+      "char": "線",
+      "zhuyin": "ㄒㄧㄢˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "米線",
+        "線條",
+        "毛線"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=線",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽷",
+      "stroke_count": 15
+    },
+    {
+      "char": "各",
+      "zhuyin": "ㄍㄜˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "各種",
+        "各自",
+        "各地"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=各",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼝",
+      "stroke_count": 6
+    },
+    {
+      "char": "種",
+      "zhuyin": "ㄓㄨㄥˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "各種",
+        "種子",
+        "種類"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=種",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽲",
+      "stroke_count": 14
+    },
+    {
+      "char": "菜",
+      "zhuyin": "ㄘㄞˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "青菜",
+        "菜園",
+        "菜市場"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=菜",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾋",
+      "stroke_count": 12
+    },
+    {
+      "char": "接",
+      "zhuyin": "ㄐㄧㄝ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "接著",
+        "接受",
+        "接近"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=接",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼿",
+      "stroke_count": 11
+    },
+    {
+      "char": "聽",
+      "zhuyin": "ㄊㄧㄥ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "聽見",
+        "聽話",
+        "聽說"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=聽",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽿",
+      "stroke_count": 22
+    },
+    {
+      "char": "更",
+      "zhuyin": "ㄍㄥˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "更加",
+        "更好",
+        "更快"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=更",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽈",
+      "stroke_count": 7
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG2H08:01",
+      "word": "搶",
+      "zhuyin": null,
+      "meaning": "爭先、趕緊的。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson08/vocabulary/l08-01.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H08:02",
+      "word": "軟",
+      "zhuyin": null,
+      "meaning": "物體質地柔，容易受外力而改變形狀的。與「硬」相對。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson08/vocabulary/l08-02.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H08:03",
+      "word": "變",
+      "zhuyin": null,
+      "meaning": "由某一種形態轉換成另一種形態。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson08/vocabulary/l08-03.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H08:04",
+      "word": "米紙",
+      "zhuyin": null,
+      "meaning": "用米製成像紙一樣薄的餅皮。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson08/vocabulary/l08-04.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H08:05",
+      "word": "白紙",
+      "zhuyin": null,
+      "meaning": "白色的紙。這裡指長得像白紙的米紙。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson08/vocabulary/l08-05.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H08:06",
+      "word": "圓形",
+      "zhuyin": null,
+      "meaning": "從中心到周圍每一點的距離都相等的形狀。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson08/vocabulary/l08-06.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H08:07",
+      "word": "介紹",
+      "zhuyin": null,
+      "meaning": "為人引進或帶入新的事物。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson08/vocabulary/l08-07.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H08:08",
+      "word": "更",
+      "zhuyin": null,
+      "meaning": "愈、再。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson08/vocabulary/l08-08.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H08:09",
+      "word": "聽",
+      "zhuyin": null,
+      "meaning": "用耳朵收受聲音。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson08/vocabulary/l08-09.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H08:10",
+      "word": "接著",
+      "zhuyin": null,
+      "meaning": "緊跟著。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson08/vocabulary/l08-10.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H08:11",
+      "word": "青菜",
+      "zhuyin": null,
+      "meaning": "泛指綠葉的蔬菜。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson08/vocabulary/l08-11.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H08:12",
+      "word": "各種",
+      "zhuyin": null,
+      "meaning": "每種。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson08/vocabulary/l08-12.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H08:13",
+      "word": "米線",
+      "zhuyin": null,
+      "meaning": "用米製成的條狀食品，顏色潔白，比米粉粗而有韌性。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson08/vocabulary/l08-13.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H08:14",
+      "word": "蝦子",
+      "zhuyin": null,
+      "meaning": "節足類動物。生於水中，種類繁多，可供食用。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson08/vocabulary/l08-14.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H08:15",
+      "word": "食材",
+      "zhuyin": null,
+      "meaning": "烹煮食物的材料。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson08/vocabulary/l08-15.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H08:16",
+      "word": "舉手",
+      "zhuyin": null,
+      "meaning": "抬高手臂。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson08/vocabulary/l08-16.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [
+    {
+      "id": "meaning:115AG2H08:01",
+      "word": "搶",
+      "meaning": "爭先、趕緊的。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H08:02",
+      "word": "軟",
+      "meaning": "物體質地柔，容易受外力而改變形狀的。與「硬」相對。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H08:03",
+      "word": "變",
+      "meaning": "由某一種形態轉換成另一種形態。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H08:04",
+      "word": "米紙",
+      "meaning": "用米製成像紙一樣薄的餅皮。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H08:05",
+      "word": "白紙",
+      "meaning": "白色的紙。這裡指長得像白紙的米紙。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H08:06",
+      "word": "圓形",
+      "meaning": "從中心到周圍每一點的距離都相等的形狀。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H08:07",
+      "word": "介紹",
+      "meaning": "為人引進或帶入新的事物。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H08:08",
+      "word": "更",
+      "meaning": "愈、再。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H08:09",
+      "word": "聽",
+      "meaning": "用耳朵收受聲音。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H08:10",
+      "word": "接著",
+      "meaning": "緊跟著。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H08:11",
+      "word": "青菜",
+      "meaning": "泛指綠葉的蔬菜。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H08:12",
+      "word": "各種",
+      "meaning": "每種。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H08:13",
+      "word": "米線",
+      "meaning": "用米製成的條狀食品，顏色潔白，比米粉粗而有韌性。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H08:14",
+      "word": "蝦子",
+      "meaning": "節足類動物。生於水中，種類繁多，可供食用。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H08:15",
+      "word": "食材",
+      "meaning": "烹煮食物的材料。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H08:16",
+      "word": "舉手",
+      "meaning": "抬高手臂。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "sentences": [
+    {
+      "category": "短語練習",
+      "pattern": "搶著舉手",
+      "examples": [
+        "坐著看書",
+        "跪著擦地板"
+      ],
+      "description": "表達做事時的動作。",
+      "structure": "動詞（動作）＋著＋動詞（做什麼事）",
+      "id": "sentence-pattern:115AG2H08:01",
+      "head": "搶著舉手",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "春捲一下子就包好了。",
+      "examples": [
+        "夕陽一下子就消失了。",
+        "哥哥一下子就完成作業。"
+      ],
+      "description": "﹁一下子、一會兒、馬上﹂這三個語詞，都可以表示速度很快。",
+      "id": "sentence-pattern:115AG2H08:02",
+      "head": "春捲一下子就包好了。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "大家一邊吃，一邊聽明光媽媽說小時候的生活。",
+      "examples": [
+        "媽媽一邊聽音樂，一邊運動。",
+        "爺爺一邊釣魚，一邊聊天。"
+      ],
+      "description": "表示同時做了兩件事。",
+      "id": "sentence-pattern:115AG2H08:03",
+      "head": "大家一邊吃，一邊聽明光媽媽說小時候的生活。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "有了故事，春捲更美味了。",
+      "examples": [
+        "有了花朵，院子更美麗。",
+        "有了秋千，公園更好玩。"
+      ],
+      "description": "﹁有了＋新的事物，原本的事物＋更＋怎麼樣﹂。加上﹁新",
+      "id": "sentence-pattern:115AG2H08:04",
+      "head": "有了故事，春捲更美味了。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "idioms": [
+    {
+      "id": "idiom:115AG2H08:01",
+      "idiom": "得意忘形",
+      "definition": "形容人高興過頭，舉止失去正常狀態。",
+      "related_char": "形",
+      "image": "idioms/01_得意忘形-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H08:02",
+      "idiom": "紙上談兵",
+      "definition": "比喻不切實際的議論。",
+      "related_char": "紙",
+      "image": "idioms/02_紙上談兵-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H08:03",
+      "idiom": "千變萬化",
+      "definition": "形容變化沒有盡頭。",
+      "related_char": "變",
+      "image": "idioms/03_千變萬化-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H08:04",
+      "idiom": "各有千秋",
+      "definition": "各有長處和特色，或各有其長期存在的價值。",
+      "related_char": "各",
+      "image": "idioms/04_各有千秋-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H08:05",
+      "idiom": "移花接木",
+      "definition": "將花木的枝條接到別種花木上。比喻暗中以假換真，欺騙他人。",
+      "related_char": "接",
+      "image": "idioms/05_移花接木-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H08:06",
+      "idiom": "言聽計從",
+      "definition": "形容某人非常受信任。",
+      "related_char": "聽",
+      "image": "idioms/06_言聽計從-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:115AG2H08:01",
+      "idiom_id": "idiom:115AG2H08:01",
+      "rewritten": "弟弟剛學會騎腳踏車就得意忘形的放開把手，差點摔倒。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H08:02",
+      "idiom_id": "idiom:115AG2H08:02",
+      "rewritten": "這些想法都只是紙上談兵，我們還是要動手做以後，才能發現問題。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H08:03",
+      "idiom_id": "idiom:115AG2H08:03",
+      "rewritten": "這裡施放的煙火，花樣千變萬化，看起來真是美麗！",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H08:04",
+      "idiom_id": "idiom:115AG2H08:04",
+      "rewritten": "這兩名選手的跳水動作各有千秋，裁判很難決定冠軍。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H08:05",
+      "idiom_id": "idiom:115AG2H08:05",
+      "rewritten": "王先生買的上等櫻桃，不知什麼時候被移花接木，變成葡萄了！",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H08:06",
+      "idiom_id": "idiom:115AG2H08:06",
+      "rewritten": "李經理很信任他的助理，對他總是言聽計從。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "category": "短語練習",
+      "pattern": "搶著舉手",
+      "examples": [
+        "坐著看書",
+        "跪著擦地板"
+      ],
+      "description": "表達做事時的動作。",
+      "structure": "動詞（動作）＋著＋動詞（做什麼事）",
+      "id": "sentence-pattern:115AG2H08:01",
+      "head": "搶著舉手",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "春捲一下子就包好了。",
+      "examples": [
+        "夕陽一下子就消失了。",
+        "哥哥一下子就完成作業。"
+      ],
+      "description": "﹁一下子、一會兒、馬上﹂這三個語詞，都可以表示速度很快。",
+      "id": "sentence-pattern:115AG2H08:02",
+      "head": "春捲一下子就包好了。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "大家一邊吃，一邊聽明光媽媽說小時候的生活。",
+      "examples": [
+        "媽媽一邊聽音樂，一邊運動。",
+        "爺爺一邊釣魚，一邊聊天。"
+      ],
+      "description": "表示同時做了兩件事。",
+      "id": "sentence-pattern:115AG2H08:03",
+      "head": "大家一邊吃，一邊聽明光媽媽說小時候的生活。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "有了故事，春捲更美味了。",
+      "examples": [
+        "有了花朵，院子更美麗。",
+        "有了秋千，公園更好玩。"
+      ],
+      "description": "﹁有了＋新的事物，原本的事物＋更＋怎麼樣﹂。加上﹁新",
+      "id": "sentence-pattern:115AG2H08:04",
+      "head": "有了故事，春捲更美味了。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG2H08:種:01",
+      "char": "種",
+      "sentence": "生活中，我們會用到《種類》這個詞。",
+      "definition": "事物的類別",
+      "options": [
+        "事物的類別",
+        "植物的種子",
+        "人的族類",
+        "量詞。用於計算人或事物類別 的單位",
+        "植栽，指把種子或秧苗的根埋在 土裡，讓它生長",
+        "注入體內"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H08:種:02",
+      "char": "種",
+      "sentence": "生活中，我們會用到《菜種》這個詞。",
+      "definition": "植物的種子",
+      "options": [
+        "事物的類別",
+        "植物的種子",
+        "人的族類",
+        "量詞。用於計算人或事物類別 的單位",
+        "植栽，指把種子或秧苗的根埋在 土裡，讓它生長",
+        "注入體內"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H08:種:03",
+      "char": "種",
+      "sentence": "生活中，我們會用到《黃種人》這個詞。",
+      "definition": "人的族類",
+      "options": [
+        "事物的類別",
+        "植物的種子",
+        "人的族類",
+        "量詞。用於計算人或事物類別 的單位",
+        "植栽，指把種子或秧苗的根埋在 土裡，讓它生長",
+        "注入體內"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H08:種:04",
+      "char": "種",
+      "sentence": "生活中，我們會用到《三種花色》這個詞。",
+      "definition": "量詞。用於計算人或事物類別 的單位",
+      "options": [
+        "事物的類別",
+        "植物的種子",
+        "人的族類",
+        "量詞。用於計算人或事物類別 的單位",
+        "植栽，指把種子或秧苗的根埋在 土裡，讓它生長",
+        "注入體內"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H08:種:05",
+      "char": "種",
+      "sentence": "生活中，我們會用到《種花》這個詞。",
+      "definition": "植栽，指把種子或秧苗的根埋在 土裡，讓它生長",
+      "options": [
+        "事物的類別",
+        "植物的種子",
+        "人的族類",
+        "量詞。用於計算人或事物類別 的單位",
+        "植栽，指把種子或秧苗的根埋在 土裡，讓它生長",
+        "注入體內"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H08:種:06",
+      "char": "種",
+      "sentence": "生活中，我們會用到《接種》這個詞。",
+      "definition": "注入體內",
+      "options": [
+        "事物的類別",
+        "植物的種子",
+        "人的族類",
+        "量詞。用於計算人或事物類別 的單位",
+        "植栽，指把種子或秧苗的根埋在 土裡，讓它生長",
+        "注入體內"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H08:聽:01",
+      "char": "聽",
+      "sentence": "生活中，我們會用到《聽歌》這個詞。",
+      "definition": "用耳朵收受聲音",
+      "options": [
+        "用耳朵收受聲音",
+        "探問消息",
+        "順從、服從",
+        "任由、任憑"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H08:聽:02",
+      "char": "聽",
+      "sentence": "生活中，我們會用到《打聽》這個詞。",
+      "definition": "探問消息",
+      "options": [
+        "用耳朵收受聲音",
+        "探問消息",
+        "順從、服從",
+        "任由、任憑"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H08:聽:03",
+      "char": "聽",
+      "sentence": "生活中，我們會用到《聽話》這個詞。",
+      "definition": "順從、服從",
+      "options": [
+        "用耳朵收受聲音",
+        "探問消息",
+        "順從、服從",
+        "任由、任憑"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H08:聽:04",
+      "char": "聽",
+      "sentence": "生活中，我們會用到《聽任》這個詞。",
+      "definition": "任由、任憑",
+      "options": [
+        "用耳朵收受聲音",
+        "探問消息",
+        "順從、服從",
+        "任由、任憑"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H08:更:01",
+      "char": "更",
+      "sentence": "生活中，我們會用到《更好》這個詞。",
+      "definition": "程度加重",
+      "options": [
+        "程度加重",
+        "再",
+        "改換、變換",
+        "代替"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H08:更:02",
+      "char": "更",
+      "sentence": "生活中，我們會用到《更上層樓》這個詞。",
+      "definition": "再",
+      "options": [
+        "程度加重",
+        "再",
+        "改換、變換",
+        "代替"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H08:更:03",
+      "char": "更",
+      "sentence": "生活中，我們會用到《變更》這個詞。",
+      "definition": "改換、變換",
+      "options": [
+        "程度加重",
+        "再",
+        "改換、變換",
+        "代替"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H08:更:04",
+      "char": "更",
+      "sentence": "生活中，我們會用到《更替。 5. 4. 3. 2. 1. 財 材 槍 搶 較 軟 型 形 結 絡 給 紹 ：財寶》這個詞。",
+      "definition": "代替",
+      "options": [
+        "程度加重",
+        "再",
+        "改換、變換",
+        "代替"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG2H08:種",
+      "char": "種",
+      "readings": [
+        {
+          "zhuyin": "ㄓㄨㄥˇ",
+          "senses": [
+            {
+              "definition": "事物的類別",
+              "examples": [
+                "種類",
+                "物種"
+              ]
+            },
+            {
+              "definition": "植物的種子",
+              "examples": [
+                "菜種"
+              ]
+            },
+            {
+              "definition": "人的族類",
+              "examples": [
+                "黃種人"
+              ]
+            },
+            {
+              "definition": "量詞。用於計算人或事物類別 的單位",
+              "examples": [
+                "三種花色"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄓㄨㄥˋ",
+          "senses": [
+            {
+              "definition": "植栽，指把種子或秧苗的根埋在 土裡，讓它生長",
+              "examples": [
+                "種花"
+              ]
+            },
+            {
+              "definition": "注入體內",
+              "examples": [
+                "接種"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    },
+    {
+      "id": "polyphone:115AG2H08:聽",
+      "char": "聽",
+      "readings": [
+        {
+          "zhuyin": "ㄊㄧㄥ",
+          "senses": [
+            {
+              "definition": "用耳朵收受聲音",
+              "examples": [
+                "聽歌"
+              ]
+            },
+            {
+              "definition": "探問消息",
+              "examples": [
+                "打聽"
+              ]
+            },
+            {
+              "definition": "順從、服從",
+              "examples": [
+                "聽話"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄊㄧㄥˋ",
+          "senses": [
+            {
+              "definition": "任由、任憑",
+              "examples": [
+                "聽任"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    },
+    {
+      "id": "polyphone:115AG2H08:更",
+      "char": "更",
+      "readings": [
+        {
+          "zhuyin": "ㄍㄥˋ",
+          "senses": [
+            {
+              "definition": "程度加重",
+              "examples": [
+                "更好"
+              ]
+            },
+            {
+              "definition": "再",
+              "examples": [
+                "更上層樓"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄍㄥ",
+          "senses": [
+            {
+              "definition": "改換、變換",
+              "examples": [
+                "變更"
+              ]
+            },
+            {
+              "definition": "代替",
+              "examples": [
+                "更替。 5. 4. 3. 2. 1. 財 材 槍 搶 較 軟 型 形 結 絡 給 紹 ：財寶",
+                "財富 ：材料",
+                "木材 ：水槍",
+                "標槍 ：搶答",
+                "搶手 ：比較",
+                "較量 ：軟糖",
+                "柔軟 ：模型",
+                "髮型 ：形狀",
+                "情形 ：蝴蝶結 ：聯絡",
+                "脈絡 ：交給他 ：介紹 9. 8. 7. 6. 廳 聽 採 彩 踩 菜 名 各 綠 線 ：客廳",
+                "餐廳 ：聽說",
+                "聽見 ：採草莓",
+                "採集 ：彩帶",
+                "彩色 ：踩住",
+                "踩影子 ：蔬菜",
+                "買菜 ：名",
+                "名單 ：各位",
+                "各自 ：綠色",
+                "綠葉 ：線條",
+                "紅線 37"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG2H08:01",
+      "stem": "請仔細聽題目：明光的媽媽是哪裡人？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "越南人。",
+        "米紙泡軟後，包入食材即可。",
+        "米紙。可以用來包蔬菜和蝦子成為越南春捲。"
+      ],
+      "answer": "越南人。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "明光請媽媽來跟大家介紹越南春捲。"
+    },
+    {
+      "id": "listening:115AG2H08:02",
+      "stem": "請仔細聽題目：說說看越南春捲的材料及作法？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "米紙泡軟後，包入食材即可。",
+        "越南人。",
+        "米紙。可以用來包蔬菜和蝦子成為越南春捲。"
+      ],
+      "answer": "米紙泡軟後，包入食材即可。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "材料有米紙、蝦子、米線和各種青菜。先將米紙泡軟，然後再將食材都包進去，就可以吃了。"
+    },
+    {
+      "id": "listening:115AG2H08:03",
+      "stem": "請仔細聽題目：圓形的「白紙」是什麼？有什麼功用？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "米紙。可以用來包蔬菜和蝦子成為越南春捲。",
+        "越南人。",
+        "米紙泡軟後，包入食材即可。"
+      ],
+      "answer": "米紙。可以用來包蔬菜和蝦子成為越南春捲。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "用泡軟的米紙包食材，就可以吃了。"
+    },
+    {
+      "id": "listening:115AG2H08:04",
+      "stem": "請仔細聽題目：說說看，明光班上的美食分享日是怎麼進行的？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "家長到班上分享家鄉美食。",
+        "越南人。",
+        "米紙泡軟後，包入食材即可。"
+      ],
+      "answer": "家長到班上分享家鄉美食。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "班上的美食分享日到了，明光請媽媽來跟大家介紹越南春捲。"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG2H08:01",
+      "para_no": 1,
+      "summary": "明光的媽媽到班上介紹越南春捲。",
+      "structure_role": "第1段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H08:02",
+      "para_no": 2,
+      "summary": "明光的媽媽說，用泡軟的米紙包食材就可以吃了。",
+      "structure_role": "第2段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H08:03",
+      "para_no": 3,
+      "summary": "大家一邊吃，一邊聽明光的媽媽說小時候的生活。",
+      "structure_role": "第3段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H08:04",
+      "para_no": 4,
+      "summary": "有了故事，春捲更美味了。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "id": "main_idea:115AG2H08:01",
+    "gist": "明光的媽媽到班上跟大家介紹越南春捲。用泡軟米紙包進蝦子、米線和各種青菜，捲起來就完成了。大家一邊吃，一邊聽明光的媽媽說她小時候的生活，感覺春捲更美味。",
+    "theme": "在享用美食的當下，可以進一步了解它們背後的故事，食物吃起來會更有滋味。",
+    "status": "approved",
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG2H08:01",
+      "stem": "明光的媽媽是哪裡人？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "越南人。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H08:02",
+      "stem": "說說看越南春捲的材料及作法？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "材料有米紙、蝦子、米線和各種青菜。先將米紙泡軟，然後再將食材都包進去，就可以吃了。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H08:03",
+      "stem": "圓形的「白紙」是什麼？有什麼功用？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "米紙。可以用來包蔬菜和蝦子成為越南春捲。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H08:04",
+      "stem": "說說看，明光班上的美食分享日是怎麼進行的？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "老師邀請同學們的家長到班上分享家鄉美食的做法，並實際操作給同學們看，最後大家可以一邊吃美食，一邊聽家長分享家鄉的故事。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H08:05",
+      "stem": "小花說：﹁有故事好好吃。﹂為什麼她會這樣說？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為大家一邊吃春捲，一邊聽明光的媽媽說小時候的生活。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H08:06",
+      "stem": "小花說：「有故事好好吃。」老師說：「是有了故事，春捲更美味了。」這兩句話有什麼相同和不同呢？",
+      "strategy_tag": "比較評估",
+      "answer_hint": "小花想要表達邊吃美食邊聽故事，讓食物變得更好吃。老師說的和小花相近，只是老師說得比較完整。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H08:07",
+      "stem": "想一想，說一說，為什麼老師要舉辦美食分享日呢？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "為了讓班上的同學們能夠認識不一樣的食物，並且了解其他國家或族群的風土民情，還能讓同學們與家長之間增加感情。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG2H08:01",
+      "group_no": "1",
+      "question": "介____",
+      "answer": "紹",
+      "chars": [
+        {
+          "char": "紹",
+          "zhuyin": null,
+          "example": "介紹"
+        },
+        {
+          "char": "給",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "絡",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "結",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H08:02",
+      "group_no": "2",
+      "question": "圓____",
+      "answer": "形",
+      "chars": [
+        {
+          "char": "形",
+          "zhuyin": null,
+          "example": "圓形"
+        },
+        {
+          "char": "型",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H08:03",
+      "group_no": "3",
+      "question": "質地柔，容易受外力而改變形狀：____",
+      "answer": "軟",
+      "chars": [
+        {
+          "char": "軟",
+          "zhuyin": null,
+          "example": "軟"
+        },
+        {
+          "char": "較",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H08:04",
+      "group_no": "4",
+      "question": "爭先、趕緊的：____",
+      "answer": "搶",
+      "chars": [
+        {
+          "char": "搶",
+          "zhuyin": null,
+          "example": "搶"
+        },
+        {
+          "char": "槍",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H08:05",
+      "group_no": "5",
+      "question": "食____",
+      "answer": "材",
+      "chars": [
+        {
+          "char": "材",
+          "zhuyin": null,
+          "example": "食材"
+        },
+        {
+          "char": "財",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H08:06",
+      "group_no": "6",
+      "question": "米____",
+      "answer": "線",
+      "chars": [
+        {
+          "char": "線",
+          "zhuyin": null,
+          "example": "米線"
+        },
+        {
+          "char": "綠",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H08:07",
+      "group_no": "7",
+      "question": "____種",
+      "answer": "各",
+      "chars": [
+        {
+          "char": "各",
+          "zhuyin": null,
+          "example": "各種"
+        },
+        {
+          "char": "名",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H08:08",
+      "group_no": "8",
+      "question": "青____",
+      "answer": "菜",
+      "chars": [
+        {
+          "char": "菜",
+          "zhuyin": null,
+          "example": "青菜"
+        },
+        {
+          "char": "踩",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "彩",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "採",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H08:09",
+      "group_no": "9",
+      "question": "用耳朵收受聲音：____",
+      "answer": "聽",
+      "chars": [
+        {
+          "char": "聽",
+          "zhuyin": null,
+          "example": "聽"
+        },
+        {
+          "char": "廳",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「介」的部首是哪一個？",
+      "options": [
+        "⼝",
+        "⼿",
+        "⾋"
+      ],
+      "answer": "⼈",
+      "explanation": "「介」的部首是⼈。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「圓」的部首是哪一個？",
+      "options": [
+        "⽈",
+        "⼝",
+        "⼿"
+      ],
+      "answer": "⼞",
+      "explanation": "「圓」的部首是⼞。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「形」的部首是哪一個？",
+      "options": [
+        "⽲",
+        "⽩",
+        "⽊"
+      ],
+      "answer": "⼺",
+      "explanation": "「形」的部首是⼺。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「搶」是什麼意思？",
+      "options": [
+        "緊跟著。",
+        "用耳朵收受聲音。",
+        "烹煮食物的材料。"
+      ],
+      "answer": "爭先、趕緊的。",
+      "explanation": "搶：爭先、趕緊的。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「軟」是什麼意思？",
+      "options": [
+        "節足類動物。生於水中，種類繁多，可供食用。",
+        "從中心到周圍每一點的距離都相等的形狀。",
+        "由某一種形態轉換成另一種形態。"
+      ],
+      "answer": "物體質地柔，容易受外力而改變形狀的。與「硬」相對。",
+      "explanation": "軟：物體質地柔，容易受外力而改變形狀的。與「硬」相對。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「變」是什麼意思？",
+      "options": [
+        "抬高手臂。",
+        "從中心到周圍每一點的距離都相等的形狀。",
+        "為人引進或帶入新的事物。"
+      ],
+      "answer": "由某一種形態轉換成另一種形態。",
+      "explanation": "變：由某一種形態轉換成另一種形態。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「米紙」是什麼意思？",
+      "options": [
+        "緊跟著。",
+        "泛指綠葉的蔬菜。",
+        "烹煮食物的材料。"
+      ],
+      "answer": "用米製成像紙一樣薄的餅皮。",
+      "explanation": "米紙：用米製成像紙一樣薄的餅皮。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「白紙」是什麼意思？",
+      "options": [
+        "泛指綠葉的蔬菜。",
+        "爭先、趕緊的。",
+        "用米製成像紙一樣薄的餅皮。"
+      ],
+      "answer": "白色的紙。這裡指長得像白紙的米紙。",
+      "explanation": "白紙：白色的紙。這裡指長得像白紙的米紙。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "公開資料只放摘要與理解提問，不放課文全文。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "available",
+      "activity": "application"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "available",
+      "activity": "listening-quiz"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "unavailable",
+      "activity": "rhetoric",
+      "note": "無此資料。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  },
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag2h-08",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E4%BB%8B%E5%9C%93%E5%BD%A2%E7%99%BD%E7%B4%99%E7%B1%B3%E8%AE%8A%E8%BB%9F%E6%90%B6%E6%9D%90%E8%9D%A6%E7%B7%9A%E5%90%84%E7%A8%AE%E8%8F%9C%E6%8E%A5%E8%81%BD%E6%9B%B4",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・2年級・第8課",
+      "login_required": false,
+      "checked_at": "2026-09-27",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "候",
+        "颳",
+        "冷",
+        "躲",
+        "閃",
+        "電",
+        "難",
+        "烏",
+        "雲",
+        "密",
+        "布",
+        "盆",
+        "充",
+        "滿",
+        "放",
+        "晴",
+        "現",
+        "虹"
+      ],
+      "2": [
+        "老",
+        "師",
+        "新",
+        "希",
+        "望",
+        "卻",
+        "使",
+        "緊",
+        "因",
+        "為",
+        "知",
+        "道",
+        "怎",
+        "消",
+        "失",
+        "習",
+        "最",
+        "掛"
+      ],
+      "3": [
+        "國",
+        "王",
+        "喜",
+        "歡",
+        "穿",
+        "只",
+        "件",
+        "點",
+        "改",
+        "領",
+        "越",
+        "設",
+        "計",
+        "發",
+        "方",
+        "法",
+        "分",
+        "享"
+      ],
+      "4": [
+        "呱",
+        "聞",
+        "聲",
+        "猜",
+        "蛙",
+        "別",
+        "靠",
+        "近",
+        "抓",
+        "如",
+        "果",
+        "乖",
+        "腦",
+        "袋",
+        "瓜",
+        "證",
+        "明",
+        "頂"
+      ],
+      "5": [
+        "沙",
+        "灘",
+        "海",
+        "邊",
+        "退",
+        "遠",
+        "螃",
+        "蟹",
+        "愛",
+        "注",
+        "夕",
+        "腳",
+        "丫",
+        "橫",
+        "留",
+        "印",
+        "挖",
+        "麗"
+      ],
+      "6": [
+        "月",
+        "奶",
+        "晚",
+        "飯",
+        "散",
+        "屋",
+        "竹",
+        "林",
+        "頭",
+        "溪",
+        "旁",
+        "暗",
+        "眼",
+        "睛",
+        "那",
+        "聚",
+        "成",
+        "顆"
+      ],
+      "7": [
+        "樣",
+        "食",
+        "郊",
+        "活",
+        "奇",
+        "筒",
+        "香",
+        "味",
+        "便",
+        "當",
+        "盒",
+        "客",
+        "清",
+        "節",
+        "保",
+        "平",
+        "安",
+        "南"
+      ],
+      "8": [
+        "介",
+        "圓",
+        "形",
+        "白",
+        "紙",
+        "米",
+        "變",
+        "軟",
+        "搶",
+        "材",
+        "蝦",
+        "線",
+        "各",
+        "種",
+        "菜",
+        "接",
+        "聽",
+        "更"
+      ]
+    }
+  }
+}

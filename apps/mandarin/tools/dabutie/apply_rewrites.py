@@ -86,7 +86,7 @@ def apply_rewrites(lesson: dict, rewrites: dict) -> int:
     applied += _apply_list("reading_questions", lesson, rewrites.get("reading_questions", []), ["stem", "answer_hint"])
     applied += _apply_list("rhetoric", lesson, rewrites.get("rhetoric", []), ["example", "child_note"])
     applied += _apply_list("polysemy", lesson, rewrites.get("polysemy", []), ["sentence"])
-    applied += _apply_upsert("listening", lesson, rewrites.get("listening", []), ["stem", "question", "options", "answer"])
+    applied += _apply_upsert("listening", lesson, rewrites.get("listening", []), ["passage", "stem", "question", "options", "answer"])
 
     # sentence_patterns：examples 欄位＋獨立的 examples_status（因為 status 本身代表「結構」是否可公開，
     # 恆為 ready；改寫審核狀態記在 examples_status）。

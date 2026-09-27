@@ -4,4 +4,5 @@
 // 只放「已查證」的案例，其餘不猜。
 export const SPEECH_OVERRIDES = {
   一會兒: '義毀ㄦ',
+  馬偕: '馬接',
 };

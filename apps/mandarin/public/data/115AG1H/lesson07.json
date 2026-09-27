@@ -13,7 +13,7 @@
   "lesson_no": 7,
   "title": "回音",
   "author": "",
-  "blurb": "透過〈回音〉練習認讀生字、理解語詞，並用聲音和圖像建立閱讀連結。",
+  "blurb": "比較山谷裡說出與聽見的話，找出回音如何一再呼應。",
   "characters": [
     {
       "char": "回",
@@ -317,23 +317,550 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
+  "idioms": [
+    {
+      "image": "idioms/01_回心轉意.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H07:01",
+      "idiom": "回心轉意",
+      "definition": "改變原來的想法。",
+      "related_char": "回",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/02_面面俱到.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H07:02",
+      "idiom": "面面俱到",
+      "definition": "各方面都照顧得很周全。",
+      "related_char": "到",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/03_大呼小叫.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H07:03",
+      "idiom": "大呼小叫",
+      "definition": "大聲喊叫，吵吵鬧鬧。",
+      "related_char": "叫",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/04_平易近人.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H07:04",
+      "idiom": "平易近人",
+      "definition": "態度謙遜，使人容易親近。",
+      "related_char": "人",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/05_有說有笑.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H07:05",
+      "idiom": "有說有笑",
+      "definition": "又說又笑，氣氛愉快。",
+      "related_char": "笑",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:115AG1H07:01",
+      "idiom_id": "idiom:115AG1H07:01",
+      "rewritten": "聽完大家的說明，他終於回心轉意。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H07:02",
+      "idiom_id": "idiom:115AG1H07:02",
+      "rewritten": "班長準備活動時面面俱到。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H07:03",
+      "idiom_id": "idiom:115AG1H07:03",
+      "rewritten": "在圖書館裡不能大呼小叫。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H07:04",
+      "idiom_id": "idiom:115AG1H07:04",
+      "rewritten": "新老師平易近人，同學都喜歡他。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H07:05",
+      "idiom_id": "idiom:115AG1H07:05",
+      "rewritten": "大家一路有說有笑地回家。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "category": "短語句型練習",
+      "pattern": "爬上高山",
+      "head": "爬上高山",
+      "description": "描述用什麼動作經過或到達什麼地方。",
+      "structure": "動詞＋上／下／進／入／到＋名詞（什麼地方）",
+      "examples": [
+        "來到山谷",
+        "走下樓梯",
+        "跑進教室"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H07:01",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "category": "短語句型練習",
+      "pattern": "你開心嗎？",
+      "head": "你開心嗎？",
+      "description": "透過問句來詢問人或物的狀態。",
+      "structure": "名詞（人或物）＋形容詞（怎麼樣）嗎？",
+      "examples": [
+        "叔叔生氣嗎？",
+        "作業困難嗎？",
+        "遊戲有趣嗎？"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H07:02",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "category": "短語句型練習",
+      "pattern": "我笑，他也笑。",
+      "head": "我笑，他也笑。",
+      "description": "用「也」來連接兩個相同的動作或事件。",
+      "structure": null,
+      "examples": [
+        "姐姐哭了，妹妹也哭了。",
+        "媽媽在上班，爸爸也在上班。",
+        "小狗來喝水，小貓也來喝水。"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H07:03",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    }
+  ],
   "rhetoric": [],
-  "paragraph_summary": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG1H07:01",
+      "para_no": 1,
+      "paragraph_no": 1,
+      "summary": "起：爬上高山、來到山谷，交代回音出現的地方。",
+      "structure_role": "開端",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    },
+    {
+      "id": "paragraph_summary:115AG1H07:02",
+      "para_no": 2,
+      "paragraph_no": 2,
+      "summary": "承：我先大叫你好，山谷有人回應同樣的話。",
+      "structure_role": "發展",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    },
+    {
+      "id": "paragraph_summary:115AG1H07:03",
+      "para_no": 3,
+      "paragraph_no": 3,
+      "summary": "承：我問你開心嗎，對方也問相同問題。",
+      "structure_role": "發展",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    },
+    {
+      "id": "paragraph_summary:115AG1H07:04",
+      "para_no": 4,
+      "paragraph_no": 4,
+      "summary": "轉：我的笑聲得到回應。",
+      "structure_role": "轉折",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    },
+    {
+      "id": "paragraph_summary:115AG1H07:05",
+      "para_no": 5,
+      "paragraph_no": 5,
+      "summary": "合：大家一起哈哈大笑，呈現回音互相呼應。",
+      "structure_role": "收束",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    }
+  ],
   "main_idea": {
-    "gist": "本課閱讀重點待補。",
-    "theme": "閱讀理解",
-    "status": "draft",
-    "source": "teacher-review-required"
+    "gist": "課文在山谷中描寫呼喊與回音的互相呼應，最後用笑聲表現分享的快樂。",
+    "theme": "課文理解",
+    "status": "approved",
+    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
   },
-  "reading_questions": [],
+  "reading_questions": [
+    {
+      "id": "reading-question:115AG1H07:01",
+      "stem": "仔細觀察課文插圖，主角和家人一起做什麼事情？",
+      "answer_hint": "和家人一起爬山。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H07:02",
+      "stem": "主角爬山爬到哪裡，才開始大喊呢？",
+      "answer_hint": "山谷。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H07:03",
+      "stem": "當主角大叫：「你好！」發生了什麼事？",
+      "answer_hint": "聽到有人也回應他：「你好！」",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H07:04",
+      "stem": "「我大叫：『你好！』有人回：『你好！』」課文中的「有人」是指誰？",
+      "answer_hint": "我看課本第57頁插圖，覺得是山谷，因為山谷上有一張張的笑臉；我覺得因為課文是在講「回音」，所以「有人」就是主角自己傳回來的聲音。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H07:05",
+      "stem": "為什麼主角會再大叫一聲：「你開心嗎？」",
+      "answer_hint": "因為想再確定是否還會有回音。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H07:06",
+      "stem": "你覺得課文中「有人」和「他」是同一人嗎？為什麼？",
+      "answer_hint": "我覺得是同一人，都是指山谷的回音。",
+      "strategy_tag": "比較評估",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H07:07",
+      "stem": "為什麼「我笑，他也笑」呢？",
+      "answer_hint": "因為在山谷，當主角笑的時候，就會傳回笑聲。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H07:08",
+      "stem": "最後主角為什麼會笑了？",
+      "answer_hint": "因為不論他喊什麼，都會傳回同樣的聲音，好像有人和他互動一樣，令人感覺驚喜。",
+      "strategy_tag": "詮釋整合",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H07:09",
+      "stem": "根據課文和插圖，再請你說說看什麼是「回音」？",
+      "answer_hint": "「回音」就是當人的聲音碰到山或牆壁，會再傳回來。",
+      "strategy_tag": "詮釋整合",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H07:10",
+      "stem": "想一想，生活中哪些地方也容易產生回音？和課本中產生回音的原因有什麼相同之處？",
+      "answer_hint": "生活中容易產生回音的地方有教室、禮堂、山洞等，都是空曠但是有圍起來的牆壁或山壁的地方。",
+      "strategy_tag": "比較評估",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    }
+  ],
   "polysemy": [],
   "polysemy_senses": [],
   "polyphones": [],
-  "lookalikes": [],
-  "listening": [],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG1H07:01",
+      "group_no": "1",
+      "question": "＿音",
+      "answer": "回",
+      "chars": [
+        {
+          "char": "回",
+          "zhuyin": null,
+          "example": "回音"
+        },
+        {
+          "char": "口",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H07:02",
+      "group_no": "2",
+      "question": "回＿",
+      "answer": "音",
+      "chars": [
+        {
+          "char": "意",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "音",
+          "zhuyin": null,
+          "example": "回音"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H07:03",
+      "group_no": "3",
+      "question": "你＿知道",
+      "answer": "也",
+      "chars": [
+        {
+          "char": "他",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "池",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "也",
+          "zhuyin": null,
+          "example": "你也知道"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H07:04",
+      "group_no": "4",
+      "question": "一起玩＿",
+      "answer": "嗎",
+      "chars": [
+        {
+          "char": "媽",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "嗎",
+          "zhuyin": null,
+          "example": "一起玩嗎"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H07:05",
+      "group_no": "5",
+      "question": "好多＿",
+      "answer": "人",
+      "chars": [
+        {
+          "char": "入",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "人",
+          "zhuyin": null,
+          "example": "好多人"
+        },
+        {
+          "char": "八",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H07:06",
+      "group_no": "6",
+      "question": "來＿",
+      "answer": "到",
+      "chars": [
+        {
+          "char": "倒",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "到",
+          "zhuyin": null,
+          "example": "來到"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H07:07",
+      "group_no": "7",
+      "question": "山谷傳來＿音",
+      "answer": "回",
+      "chars": [
+        {
+          "char": "回",
+          "zhuyin": null,
+          "example": "山谷傳來回音"
+        },
+        {
+          "char": "口",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H07:08",
+      "group_no": "8",
+      "question": "你要一起玩＿",
+      "answer": "嗎",
+      "chars": [
+        {
+          "char": "媽",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "嗎",
+          "zhuyin": null,
+          "example": "你要一起玩嗎"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H07:09",
+      "group_no": "9",
+      "question": "這件事我知道，你＿知道",
+      "answer": "也",
+      "chars": [
+        {
+          "char": "他",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "池",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "也",
+          "zhuyin": null,
+          "example": "這件事我知道，你也知道"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H07:10",
+      "group_no": "10",
+      "question": "終於來＿動物園了",
+      "answer": "到",
+      "chars": [
+        {
+          "char": "倒",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "到",
+          "zhuyin": null,
+          "example": "終於來到動物園了"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG1H07:01",
+      "stem": "主角爬上高山，來到哪裡？",
+      "question": "主角爬上高山，來到哪裡？",
+      "options": [
+        "山谷。",
+        "海邊。",
+        "教室。"
+      ],
+      "answer": "山谷。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
+      "passage": "爬上高山，來到山谷。"
+    },
+    {
+      "id": "listening:115AG1H07:02",
+      "stem": "主角大叫「你好」後，誰回應？",
+      "question": "主角大叫「你好」後，誰回應？",
+      "options": [
+        "有人。",
+        "小草。",
+        "老師。"
+      ],
+      "answer": "有人。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
+      "passage": "有人回：「你好！」"
+    },
+    {
+      "id": "listening:115AG1H07:03",
+      "stem": "最後誰一起哈哈大笑？",
+      "question": "最後誰一起哈哈大笑？",
+      "options": [
+        "我和他。",
+        "我和老師。",
+        "小草和他。"
+      ],
+      "answer": "我和他。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
+      "passage": "我笑，他也笑，我們一起哈哈大笑。"
+    }
+  ],
   "review_words": {
     "by_lesson": {
       "1": [
@@ -604,15 +1131,13 @@
     },
     "reading": {
       "label": "讀懂課文",
-      "status": "missing",
-      "activity": "reading",
-      "note": "一年級課文內容待整理為公開摘要；課文全文不放入公開網站。"
+      "status": "available",
+      "activity": "reading"
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
-      "activity": "sentence-practice",
-      "note": "句型資料待審核。"
+      "status": "available",
+      "activity": "sentence-practice"
     },
     "challenge": {
       "label": "動手挑戰",
@@ -627,39 +1152,36 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
-      "activity": "idiom-builder",
-      "note": "一年級不安排成語題。"
+      "status": "available",
+      "activity": "idiom-builder"
     },
     "polysemy": {
       "label": "一字多義",
       "status": "missing",
       "activity": "polysemy",
-      "note": "一年級不安排一字多義題。"
+      "note": "04形音輕鬆學來源未提供至少 3 筆可核對的一字多義資料。"
     },
     "polyphones": {
       "label": "一字多音",
       "status": "missing",
       "activity": "polyphones",
-      "note": "多音字資料待審核。"
+      "note": "04形音輕鬆學本課未提供至少兩種可核對的不同注音，保留未開放。"
     },
     "lookalikes": {
       "label": "形似字",
-      "status": "missing",
-      "activity": "lookalikes",
-      "note": "形似字資料待審核。"
+      "status": "available",
+      "activity": "lookalikes"
     },
     "structure_map": {
       "label": "課文地圖",
-      "status": "missing",
-      "activity": "structure-map",
-      "note": "摘要資料待補。"
+      "status": "available",
+      "activity": "structure-map"
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
+      "status": "available",
       "activity": "listening-quiz",
-      "note": "聆聽題資料待審核。"
+      "note": "已依官方閱讀理解提問與課文關鍵語句逐題核對。"
     },
     "rhetoric": {
       "label": "修辭小偵探",

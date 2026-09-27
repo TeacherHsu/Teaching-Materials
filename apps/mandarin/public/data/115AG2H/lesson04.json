@@ -1,0 +1,1849 @@
+{
+  "lesson_id": "115AG2H04",
+  "volume": {
+    "code": "115AG2H",
+    "publisher": "翰林",
+    "grade": 2,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "二上國語課程"
+  },
+  "lesson_no": 4,
+  "title": "水草下的呱呱",
+  "blurb": "聽青蛙用叫聲提出線索，分辨牠是在介紹自己還是在提醒對方。",
+  "characters": [
+    {
+      "char": "呱",
+      "zhuyin": "ㄍㄨ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "呱呱",
+        "頂呱呱",
+        "呱呱叫"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=呱",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼝",
+      "stroke_count": 8
+    },
+    {
+      "char": "聞",
+      "zhuyin": "ㄨㄣˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "新聞",
+        "聽聞",
+        "聞到"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=聞",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽿",
+      "stroke_count": 14
+    },
+    {
+      "char": "聲",
+      "zhuyin": "ㄕㄥ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "聲音",
+        "大聲",
+        "笑聲"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=聲",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽿",
+      "stroke_count": 17
+    },
+    {
+      "char": "猜",
+      "zhuyin": "ㄘㄞ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "猜想",
+        "猜測",
+        "猜謎"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=猜",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽝",
+      "stroke_count": 11
+    },
+    {
+      "char": "蛙",
+      "zhuyin": "ㄨㄚ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "青蛙",
+        "蛙泳",
+        "蛙跳"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=蛙",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾍",
+      "stroke_count": 12
+    },
+    {
+      "char": "別",
+      "zhuyin": "ㄅㄧㄝˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "別人",
+        "別怕",
+        "告別"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=別",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼑",
+      "stroke_count": 7
+    },
+    {
+      "char": "靠",
+      "zhuyin": "ㄎㄠˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "靠近",
+        "靠山",
+        "可靠"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=靠",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾮",
+      "stroke_count": 15
+    },
+    {
+      "char": "近",
+      "zhuyin": "ㄐㄧㄣˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "靠近",
+        "附近",
+        "近來"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=近",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾡",
+      "stroke_count": 8
+    },
+    {
+      "char": "抓",
+      "zhuyin": "ㄓㄨㄚ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "抓住",
+        "抓到",
+        "抓緊"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=抓",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼿",
+      "stroke_count": 7
+    },
+    {
+      "char": "如",
+      "zhuyin": "ㄖㄨˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "如果",
+        "如何",
+        "例如"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=如",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼥",
+      "stroke_count": 6
+    },
+    {
+      "char": "果",
+      "zhuyin": "ㄍㄨㄛˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "如果",
+        "水果",
+        "結果"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=果",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽊",
+      "stroke_count": 8
+    },
+    {
+      "char": "乖",
+      "zhuyin": "ㄍㄨㄞ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "乖巧",
+        "乖乖",
+        "乖孩子"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=乖",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼃",
+      "stroke_count": 8
+    },
+    {
+      "char": "腦",
+      "zhuyin": "ㄋㄠˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "腦袋瓜",
+        "腦袋",
+        "頭腦"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=腦",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾁",
+      "stroke_count": 13
+    },
+    {
+      "char": "袋",
+      "zhuyin": "ㄉㄞˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "口袋",
+        "布袋",
+        "提袋"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=袋",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾐",
+      "stroke_count": 11
+    },
+    {
+      "char": "瓜",
+      "zhuyin": "ㄍㄨㄚ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "腦袋瓜",
+        "西瓜",
+        "南瓜"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=瓜",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽠",
+      "stroke_count": 5
+    },
+    {
+      "char": "證",
+      "zhuyin": "ㄓㄥˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "證明",
+        "證件",
+        "保證"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=證",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾔",
+      "stroke_count": 19
+    },
+    {
+      "char": "明",
+      "zhuyin": "ㄇㄧㄥˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "證明",
+        "明白",
+        "明天"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=明",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽇",
+      "stroke_count": 8
+    },
+    {
+      "char": "頂",
+      "zhuyin": "ㄉㄧㄥˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "頂呱呱",
+        "頭頂",
+        "頂樓"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=頂",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾴",
+      "stroke_count": 11
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG2H04:01",
+      "word": "聲",
+      "zhuyin": null,
+      "meaning": "因物體撞擊所產生，能引起聽覺的音波。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson04/vocabulary/l04-01.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H04:02",
+      "word": "聞",
+      "zhuyin": null,
+      "meaning": "聽到。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson04/vocabulary/l04-02.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H04:03",
+      "word": "呱呱",
+      "zhuyin": null,
+      "meaning": "狀聲詞。形容鳴叫的聲音。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson04/vocabulary/l04-03.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H04:04",
+      "word": "青蛙",
+      "zhuyin": null,
+      "meaning": "兩棲類動物。表皮光滑溼潤，足有蹼，善於跳躍、游泳。多生活在水邊。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson04/vocabulary/l04-04.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H04:05",
+      "word": "蝦蟆",
+      "zhuyin": null,
+      "meaning": "動物名。體型類似蟾蜍而較小，常居於沼澤邊。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson04/vocabulary/l04-05.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H04:06",
+      "word": "猜",
+      "zhuyin": null,
+      "meaning": "推測、推想。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson04/vocabulary/l04-06.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H04:07",
+      "word": "影",
+      "zhuyin": null,
+      "meaning": "人物的形象或圖像。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson04/vocabulary/l04-07.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H04:08",
+      "word": "乖",
+      "zhuyin": null,
+      "meaning": "懂事、聽話。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson04/vocabulary/l04-08.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H04:09",
+      "word": "如果",
+      "zhuyin": null,
+      "meaning": "假使、要是。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson04/vocabulary/l04-09.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H04:10",
+      "word": "抓",
+      "zhuyin": null,
+      "meaning": "用手取物。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson04/vocabulary/l04-10.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H04:11",
+      "word": "擔心",
+      "zhuyin": null,
+      "meaning": "掛念、不放心。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson04/vocabulary/l04-11.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H04:12",
+      "word": "靠近",
+      "zhuyin": null,
+      "meaning": "逼近、接近。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson04/vocabulary/l04-12.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H04:13",
+      "word": "別",
+      "zhuyin": null,
+      "meaning": "不要。表示勸阻或禁止的意思。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson04/vocabulary/l04-13.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H04:14",
+      "word": "頂呱呱",
+      "zhuyin": null,
+      "meaning": "最好的、極佳的。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson04/vocabulary/l04-14.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H04:15",
+      "word": "證明",
+      "zhuyin": null,
+      "meaning": "用憑據表明事實。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson04/vocabulary/l04-15.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H04:16",
+      "word": "腦袋瓜",
+      "zhuyin": null,
+      "meaning": "頭部。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson04/vocabulary/l04-16.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [
+    {
+      "id": "meaning:115AG2H04:01",
+      "word": "聲",
+      "meaning": "因物體撞擊所產生，能引起聽覺的音波。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H04:02",
+      "word": "聞",
+      "meaning": "聽到。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H04:03",
+      "word": "呱呱",
+      "meaning": "狀聲詞。形容鳴叫的聲音。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H04:04",
+      "word": "青蛙",
+      "meaning": "兩棲類動物。表皮光滑溼潤，足有蹼，善於跳躍、游泳。多生活在水邊。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H04:05",
+      "word": "蝦蟆",
+      "meaning": "動物名。體型類似蟾蜍而較小，常居於沼澤邊。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H04:06",
+      "word": "猜",
+      "meaning": "推測、推想。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H04:07",
+      "word": "影",
+      "meaning": "人物的形象或圖像。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H04:08",
+      "word": "乖",
+      "meaning": "懂事、聽話。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H04:09",
+      "word": "如果",
+      "meaning": "假使、要是。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H04:10",
+      "word": "抓",
+      "meaning": "用手取物。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H04:11",
+      "word": "擔心",
+      "meaning": "掛念、不放心。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H04:12",
+      "word": "靠近",
+      "meaning": "逼近、接近。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H04:13",
+      "word": "別",
+      "meaning": "不要。表示勸阻或禁止的意思。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H04:14",
+      "word": "頂呱呱",
+      "meaning": "最好的、極佳的。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H04:15",
+      "word": "證明",
+      "meaning": "用憑據表明事實。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H04:16",
+      "word": "腦袋瓜",
+      "meaning": "頭部。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "sentences": [
+    {
+      "category": "短語練習",
+      "pattern": "只聞聲不見影",
+      "examples": [
+        "只吃飯不喝湯",
+        "只看書不寫字"
+      ],
+      "description": "表達兩件事只做其中一件。",
+      "structure": "只＋動詞（動作）＋不＋動詞（動作）",
+      "id": "sentence-pattern:115AG2H04:01",
+      "head": "只聞聲不見影",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短語練習",
+      "pattern": "不只想看，還想要抓",
+      "examples": [
+        "不只想打籃球，還想要參加比賽",
+        "不只會游泳，還會做體操"
+      ],
+      "description": "表達想要或能夠做兩件事情。",
+      "structure": "不只＋動詞（第一件事），還＋動詞（第二件事）",
+      "id": "sentence-pattern:115AG2H04:02",
+      "head": "不只想看，還想要抓",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "請別再靠近我。",
+      "examples": [
+        "奶奶常常提醒我走路時別靠近馬路，比較安全。",
+        "我靠近那盆花，聞到淡淡的花香。"
+      ],
+      "description": "用﹁靠近﹂表達接近、貼近某個人事物。",
+      "id": "sentence-pattern:115AG2H04:03",
+      "head": "請別再靠近我。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "你來猜一猜，我是蝦蟆還是青蛙？",
+      "examples": [
+        "你來看一看，牠是公雞還是母雞？",
+        "我們要去的地方是博物館還是動物園？"
+      ],
+      "description": "用﹁是……還是……﹂來詢問兩種事物。",
+      "id": "sentence-pattern:115AG2H04:04",
+      "head": "你來猜一猜，我是蝦蟆還是青蛙？",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "idioms": [
+    {
+      "id": "idiom:115AG2H04:01",
+      "idiom": "有聲有色",
+      "definition": "形容事物精彩，或文章、言語表達得很詳盡。",
+      "related_char": "聲",
+      "image": "idioms/01_有聲有色-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H04:02",
+      "idiom": "形影不離",
+      "definition": "形容關係密切，不能分開。",
+      "related_char": null,
+      "image": "idioms/02_形影不離-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H04:03",
+      "idiom": "別開生面",
+      "definition": "比喻另外開創新的局面、風格、形式。",
+      "related_char": "別",
+      "image": "idioms/03_別開生面-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H04:04",
+      "idiom": "易如反掌",
+      "definition": "比喻事情非常容易做到。",
+      "related_char": "如",
+      "image": "idioms/04_易如反掌-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H04:05",
+      "idiom": "明知故犯",
+      "definition": "形容明明知道不對，卻故意去做。",
+      "related_char": "明",
+      "image": "idioms/05_明知故犯-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:115AG2H04:01",
+      "idiom_id": "idiom:115AG2H04:01",
+      "rewritten": "他們把故事說得有聲有色，大家聽完都為他們鼓掌。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H04:02",
+      "idiom_id": "idiom:115AG2H04:02",
+      "rewritten": "姐姐和她的好朋友總是形影不離，像是親姐妹一樣。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H04:03",
+      "idiom_id": "idiom:115AG2H04:03",
+      "rewritten": "這場別開生面的棒球音樂會，有精彩的歌曲和表演，讓大家跟著音樂又唱又跳。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H04:04",
+      "idiom_id": "idiom:115AG2H04:04",
+      "rewritten": "他的力氣很大，抬起書櫃是易如反掌的事。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H04:05",
+      "idiom_id": "idiom:115AG2H04:05",
+      "rewritten": "弟弟明知故犯，又做錯事了，讓媽媽不知道該拿他怎麼辦？",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "category": "短語練習",
+      "pattern": "只聞聲不見影",
+      "examples": [
+        "只吃飯不喝湯",
+        "只看書不寫字"
+      ],
+      "description": "表達兩件事只做其中一件。",
+      "structure": "只＋動詞（動作）＋不＋動詞（動作）",
+      "id": "sentence-pattern:115AG2H04:01",
+      "head": "只聞聲不見影",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短語練習",
+      "pattern": "不只想看，還想要抓",
+      "examples": [
+        "不只想打籃球，還想要參加比賽",
+        "不只會游泳，還會做體操"
+      ],
+      "description": "表達想要或能夠做兩件事情。",
+      "structure": "不只＋動詞（第一件事），還＋動詞（第二件事）",
+      "id": "sentence-pattern:115AG2H04:02",
+      "head": "不只想看，還想要抓",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "請別再靠近我。",
+      "examples": [
+        "奶奶常常提醒我走路時別靠近馬路，比較安全。",
+        "我靠近那盆花，聞到淡淡的花香。"
+      ],
+      "description": "用﹁靠近﹂表達接近、貼近某個人事物。",
+      "id": "sentence-pattern:115AG2H04:03",
+      "head": "請別再靠近我。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "你來猜一猜，我是蝦蟆還是青蛙？",
+      "examples": [
+        "你來看一看，牠是公雞還是母雞？",
+        "我們要去的地方是博物館還是動物園？"
+      ],
+      "description": "用﹁是……還是……﹂來詢問兩種事物。",
+      "id": "sentence-pattern:115AG2H04:04",
+      "head": "你來猜一猜，我是蝦蟆還是青蛙？",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG2H04:呱:01",
+      "char": "呱",
+      "sentence": "生活中，我們會用到《呱呱叫》這個詞。",
+      "definition": "泛指鳥、獸鳴叫的聲音",
+      "options": [
+        "泛指鳥、獸鳴叫的聲音",
+        "形容啼哭、鳴叫等的聲音"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H04:呱:02",
+      "char": "呱",
+      "sentence": "生活中，我們會用到《呱呱墜地》這個詞。",
+      "definition": "形容啼哭、鳴叫等的聲音",
+      "options": [
+        "泛指鳥、獸鳴叫的聲音",
+        "形容啼哭、鳴叫等的聲音"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H04:蝦:01",
+      "char": "蝦",
+      "sentence": "生活中，我們會用到《蝦蟆》這個詞。",
+      "definition": "動物名。體型類似蟾蜍而較小， 常居於沼澤邊",
+      "options": [
+        "動物名。體型類似蟾蜍而較小， 常居於沼澤邊",
+        "動物名。生於水中，可食用"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H04:蝦:02",
+      "char": "蝦",
+      "sentence": "生活中，我們會用到《蝦仁》這個詞。",
+      "definition": "動物名。生於水中，可食用",
+      "options": [
+        "動物名。體型類似蟾蜍而較小， 常居於沼澤邊",
+        "動物名。生於水中，可食用"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H04:擔:01",
+      "char": "擔",
+      "sentence": "生活中，我們會用到《擔心》這個詞。",
+      "definition": "憂慮、操心",
+      "options": [
+        "憂慮、操心",
+        "用肩膀挑東西",
+        "負責、承當",
+        "用扁擔所挑的物品",
+        "肩負的責任"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H04:擔:02",
+      "char": "擔",
+      "sentence": "生活中，我們會用到《擔水》這個詞。",
+      "definition": "用肩膀挑東西",
+      "options": [
+        "憂慮、操心",
+        "用肩膀挑東西",
+        "負責、承當",
+        "用扁擔所挑的物品",
+        "肩負的責任"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H04:擔:03",
+      "char": "擔",
+      "sentence": "生活中，我們會用到《擔任》這個詞。",
+      "definition": "負責、承當",
+      "options": [
+        "憂慮、操心",
+        "用肩膀挑東西",
+        "負責、承當",
+        "用扁擔所挑的物品",
+        "肩負的責任"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H04:擔:04",
+      "char": "擔",
+      "sentence": "生活中，我們會用到《擔子》這個詞。",
+      "definition": "用扁擔所挑的物品",
+      "options": [
+        "憂慮、操心",
+        "用肩膀挑東西",
+        "負責、承當",
+        "用扁擔所挑的物品",
+        "肩負的責任"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H04:擔:05",
+      "char": "擔",
+      "sentence": "生活中，我們會用到《重擔。 5. 4. 3. 2. 1. 進 近 告 靠 漠 蟆 清 情 猜 瓜 呱 ：進步》這個詞。",
+      "definition": "肩負的責任",
+      "options": [
+        "憂慮、操心",
+        "用肩膀挑東西",
+        "負責、承當",
+        "用扁擔所挑的物品",
+        "肩負的責任"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG2H04:呱",
+      "char": "呱",
+      "readings": [
+        {
+          "zhuyin": "ㄍㄨㄚ",
+          "senses": [
+            {
+              "definition": "泛指鳥、獸鳴叫的聲音",
+              "examples": [
+                "呱呱叫"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄍㄨ",
+          "senses": [
+            {
+              "definition": "形容啼哭、鳴叫等的聲音",
+              "examples": [
+                "呱呱墜地"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    },
+    {
+      "id": "polyphone:115AG2H04:蝦",
+      "char": "蝦",
+      "readings": [
+        {
+          "zhuyin": "ㄏㄚˊ",
+          "senses": [
+            {
+              "definition": "動物名。體型類似蟾蜍而較小， 常居於沼澤邊",
+              "examples": [
+                "蝦蟆"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄒㄧㄚ",
+          "senses": [
+            {
+              "definition": "動物名。生於水中，可食用",
+              "examples": [
+                "蝦仁",
+                "蝦餅"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    },
+    {
+      "id": "polyphone:115AG2H04:擔",
+      "char": "擔",
+      "readings": [
+        {
+          "zhuyin": "ㄉㄢ",
+          "senses": [
+            {
+              "definition": "憂慮、操心",
+              "examples": [
+                "擔心",
+                "擔憂"
+              ]
+            },
+            {
+              "definition": "用肩膀挑東西",
+              "examples": [
+                "擔水"
+              ]
+            },
+            {
+              "definition": "負責、承當",
+              "examples": [
+                "擔任"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄉㄢˋ",
+          "senses": [
+            {
+              "definition": "用扁擔所挑的物品",
+              "examples": [
+                "擔子"
+              ]
+            },
+            {
+              "definition": "肩負的責任",
+              "examples": [
+                "重擔。 5. 4. 3. 2. 1. 進 近 告 靠 漠 蟆 清 情 猜 瓜 呱 ：進步",
+                "前進 ：近視",
+                "接近 ：告知",
+                "報告 ：依靠",
+                "靠近 ：沙漠",
+                "冷漠 ：蝦蟆 ：清楚",
+                "清水 ：情形",
+                "表情 ：猜想",
+                "猜拳 ：西瓜",
+                "南瓜 ：呱呱叫 11. 10. 9. 8. 7. 6. 朋 明 貸 袋 惱 腦 乘 乖 知 如 爬 抓 ：朋友",
+                "小朋友 ：明天",
+                "聰明 ：借貸",
+                "貸款 ：口袋",
+                "購物袋 ：煩惱",
+                "苦惱 ：腦袋",
+                "電腦 ：乘客",
+                "乘涼 ：乖巧",
+                "不乖 ：知道",
+                "知識 ：假如",
+                "如意 ：爬山",
+                "爬行 ：抓住",
+                "抓緊 17 ■"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG2H04:01",
+      "stem": "請仔細聽題目：觀察課文圖片，這篇文章發生的地點在哪裡？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "池塘邊。",
+        "青蛙。",
+        "池塘邊想要找青蛙的小男孩。"
+      ],
+      "answer": "池塘邊。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "只聞聲不見影。"
+    },
+    {
+      "id": "listening:115AG2H04:02",
+      "stem": "請仔細聽題目：水草下的呱呱是指誰？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "青蛙。",
+        "池塘邊。",
+        "池塘邊想要找青蛙的小男孩。"
+      ],
+      "answer": "青蛙。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "你來猜一猜，我是蝦蟆還是青蛙？"
+    },
+    {
+      "id": "listening:115AG2H04:03",
+      "stem": "請仔細聽題目：配合課文圖片「水草上的你呀！」這個「你」是指誰呢？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "池塘邊想要找青蛙的小男孩。",
+        "池塘邊。",
+        "青蛙。"
+      ],
+      "answer": "池塘邊想要找青蛙的小男孩。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "請別再靠近我。"
+    },
+    {
+      "id": "listening:115AG2H04:04",
+      "stem": "請仔細聽題目：為什麼課文一開始提到「只聞聲不見影」？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "因為小青蛙躲在池塘的某一處，只能聽到聲音，卻看不見他在哪裡。",
+        "池塘邊。",
+        "青蛙。"
+      ],
+      "answer": "因為小青蛙躲在池塘的某一處，只能聽到聲音，卻看不見他在哪裡。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "只聞聲不見影。"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG2H04:01",
+      "para_no": 1,
+      "summary": "猜猜我是蝦蟆還是青蛙？",
+      "structure_role": "第1段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H04:02",
+      "para_no": 2,
+      "summary": "我擔心你不只想要靠近我，還想抓我。",
+      "structure_role": "第2段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H04:03",
+      "para_no": 3,
+      "summary": "你乖乖的，我會證明你頂呱呱。",
+      "structure_role": "第3段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "id": "main_idea:115AG2H04:01",
+    "gist": "青蛙要小朋友只要觀察，不要動手抓，就會證明你頂呱呱。",
+    "theme": "觀察大自然，可以多聽多看，但是不要動手。",
+    "status": "approved",
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG2H04:01",
+      "stem": "觀察課文圖片，這篇文章發生的地點在哪裡？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "池塘邊。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H04:02",
+      "stem": "水草下的呱呱是指誰？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "青蛙。從課本41頁的插圖可見，﹁呱呱﹂是綠色的，而﹁蝦蟆﹂依簡編本解釋，色彩多是暗褐色的。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H04:03",
+      "stem": "配合課文圖片「水草上的你呀！」這個「你」是指誰呢？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "池塘邊想要找青蛙的小男孩。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H04:04",
+      "stem": "為什麼課文一開始提到「只聞聲不見影」？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為小青蛙躲在池塘的某一處，只能聽到聲音，卻看不見他在哪裡。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H04:05",
+      "stem": "觀察課文圖片，說說看「腦袋瓜」是什麼意思？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "小男孩的頭。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H04:06",
+      "stem": "課文提到「證明你頂呱呱」，而「頂呱呱」有兩種不同的意思，請你說說看有哪些不同？",
+      "strategy_tag": "比較評估",
+      "answer_hint": "﹁頂呱呱﹂是指最好的、極佳的，因為小男孩能夠有耐心的等待青蛙，沒有動手抓，所以稱讚他﹁頂呱呱﹂。另外，﹁呱呱﹂是青蛙的叫聲，而青蛙跳到小男孩的﹁頭頂上呱呱叫﹂，也可以想成是﹁頂呱呱﹂。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H04:07",
+      "stem": "這篇文章想要告訴我們什麼道理？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "在野外觀察時，要仔細聆聽，耐心等待與觀察，不要急著亂找、亂摸，就能成為一個頂呱呱的觀察者。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG2H04:01",
+      "group_no": "1",
+      "question": "____呱",
+      "answer": "呱",
+      "chars": [
+        {
+          "char": "呱",
+          "zhuyin": null,
+          "example": "呱呱"
+        },
+        {
+          "char": "瓜",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H04:02",
+      "group_no": "2",
+      "question": "推測、推想：____",
+      "answer": "猜",
+      "chars": [
+        {
+          "char": "猜",
+          "zhuyin": null,
+          "example": "猜"
+        },
+        {
+          "char": "情",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "清",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H04:03",
+      "group_no": "3",
+      "question": "____蟆",
+      "answer": "蝦",
+      "chars": [
+        {
+          "char": "蝦",
+          "zhuyin": null,
+          "example": "蝦蟆"
+        },
+        {
+          "char": "漢",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H04:04",
+      "group_no": "4",
+      "question": "____近",
+      "answer": "靠",
+      "chars": [
+        {
+          "char": "靠",
+          "zhuyin": null,
+          "example": "靠近"
+        },
+        {
+          "char": "告",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H04:05",
+      "group_no": "5",
+      "question": "靠____",
+      "answer": "近",
+      "chars": [
+        {
+          "char": "近",
+          "zhuyin": null,
+          "example": "靠近"
+        },
+        {
+          "char": "進",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H04:06",
+      "group_no": "6",
+      "question": "用手取物：____",
+      "answer": "抓",
+      "chars": [
+        {
+          "char": "抓",
+          "zhuyin": null,
+          "example": "抓"
+        },
+        {
+          "char": "爬",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H04:07",
+      "group_no": "7",
+      "question": "____果",
+      "answer": "如",
+      "chars": [
+        {
+          "char": "如",
+          "zhuyin": null,
+          "example": "如果"
+        },
+        {
+          "char": "知",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H04:08",
+      "group_no": "8",
+      "question": "懂事、聽話：____",
+      "answer": "乖",
+      "chars": [
+        {
+          "char": "乖",
+          "zhuyin": null,
+          "example": "乖"
+        },
+        {
+          "char": "乘",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H04:09",
+      "group_no": "9",
+      "question": "____袋瓜",
+      "answer": "腦",
+      "chars": [
+        {
+          "char": "腦",
+          "zhuyin": null,
+          "example": "腦袋瓜"
+        },
+        {
+          "char": "惱",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H04:10",
+      "group_no": "10",
+      "question": "腦____瓜",
+      "answer": "袋",
+      "chars": [
+        {
+          "char": "袋",
+          "zhuyin": null,
+          "example": "腦袋瓜"
+        },
+        {
+          "char": "貸",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H04:11",
+      "group_no": "11",
+      "question": "證____",
+      "answer": "明",
+      "chars": [
+        {
+          "char": "明",
+          "zhuyin": null,
+          "example": "證明"
+        },
+        {
+          "char": "朋",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「呱」的部首是哪一個？",
+      "options": [
+        "⽠",
+        "⼥",
+        "⽇"
+      ],
+      "answer": "⼝",
+      "explanation": "「呱」的部首是⼝。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「聞」的部首是哪一個？",
+      "options": [
+        "⽇",
+        "⾁",
+        "⼥"
+      ],
+      "answer": "⽿",
+      "explanation": "「聞」的部首是⽿。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「聲」的部首是哪一個？",
+      "options": [
+        "⼿",
+        "⾍",
+        "⾔"
+      ],
+      "answer": "⽿",
+      "explanation": "「聲」的部首是⽿。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「聲」是什麼意思？",
+      "options": [
+        "用手取物。",
+        "假使、要是。",
+        "用憑據表明事實。"
+      ],
+      "answer": "因物體撞擊所產生，能引起聽覺的音波。",
+      "explanation": "聲：因物體撞擊所產生，能引起聽覺的音波。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「聞」是什麼意思？",
+      "options": [
+        "最好的、極佳的。",
+        "推測、推想。",
+        "狀聲詞。形容鳴叫的聲音。"
+      ],
+      "answer": "聽到。",
+      "explanation": "聞：聽到。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「呱呱」是什麼意思？",
+      "options": [
+        "頭部。",
+        "推測、推想。",
+        "人物的形象或圖像。"
+      ],
+      "answer": "狀聲詞。形容鳴叫的聲音。",
+      "explanation": "呱呱：狀聲詞。形容鳴叫的聲音。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「青蛙」是什麼意思？",
+      "options": [
+        "用手取物。",
+        "掛念、不放心。",
+        "用憑據表明事實。"
+      ],
+      "answer": "兩棲類動物。表皮光滑溼潤，足有蹼，善於跳躍、游泳。多生活在水邊。",
+      "explanation": "青蛙：兩棲類動物。表皮光滑溼潤，足有蹼，善於跳躍、游泳。多生活在水邊。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「蝦蟆」是什麼意思？",
+      "options": [
+        "掛念、不放心。",
+        "因物體撞擊所產生，能引起聽覺的音波。",
+        "兩棲類動物。表皮光滑溼潤，足有蹼，善於跳躍、游泳。多生活在水邊。"
+      ],
+      "answer": "動物名。體型類似蟾蜍而較小，常居於沼澤邊。",
+      "explanation": "蝦蟆：動物名。體型類似蟾蜍而較小，常居於沼澤邊。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "公開資料只放摘要與理解提問，不放課文全文。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "available",
+      "activity": "application"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "available",
+      "activity": "listening-quiz"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "unavailable",
+      "activity": "rhetoric",
+      "note": "無此資料。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  },
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag2h-04",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E5%91%B1%E8%81%9E%E8%81%B2%E7%8C%9C%E8%9B%99%E5%88%A5%E9%9D%A0%E8%BF%91%E6%8A%93%E5%A6%82%E6%9E%9C%E4%B9%96%E8%85%A6%E8%A2%8B%E7%93%9C%E8%AD%89%E6%98%8E%E9%A0%82",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・2年級・第4課",
+      "login_required": false,
+      "checked_at": "2026-09-27",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "候",
+        "颳",
+        "冷",
+        "躲",
+        "閃",
+        "電",
+        "難",
+        "烏",
+        "雲",
+        "密",
+        "布",
+        "盆",
+        "充",
+        "滿",
+        "放",
+        "晴",
+        "現",
+        "虹"
+      ],
+      "2": [
+        "老",
+        "師",
+        "新",
+        "希",
+        "望",
+        "卻",
+        "使",
+        "緊",
+        "因",
+        "為",
+        "知",
+        "道",
+        "怎",
+        "消",
+        "失",
+        "習",
+        "最",
+        "掛"
+      ],
+      "3": [
+        "國",
+        "王",
+        "喜",
+        "歡",
+        "穿",
+        "只",
+        "件",
+        "點",
+        "改",
+        "領",
+        "越",
+        "設",
+        "計",
+        "發",
+        "方",
+        "法",
+        "分",
+        "享"
+      ],
+      "4": [
+        "呱",
+        "聞",
+        "聲",
+        "猜",
+        "蛙",
+        "別",
+        "靠",
+        "近",
+        "抓",
+        "如",
+        "果",
+        "乖",
+        "腦",
+        "袋",
+        "瓜",
+        "證",
+        "明",
+        "頂"
+      ]
+    }
+  }
+}

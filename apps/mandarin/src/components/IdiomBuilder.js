@@ -15,9 +15,16 @@ function reviewPendingBadge() {
   return h('span', { class: 'review-pending-badge' }, '待審');
 }
 
-function pickDistractors(all, excludeId, n) {
-  const pool = all.filter((x) => x.id !== excludeId);
-  return shuffle(pool).slice(0, n);
+export function pickDistractors(all, excludeId, n, getLabel = (item) => item.id, excludedLabel = null) {
+  const seen = new Set(excludedLabel === null ? [] : [excludedLabel]);
+  return shuffle(all.filter((x) => x.id !== excludeId))
+    .filter((item) => {
+      const label = getLabel(item);
+      if (seen.has(label)) return false;
+      seen.add(label);
+      return true;
+    })
+    .slice(0, n);
 }
 
 /**
@@ -45,7 +52,13 @@ function buildRound1(idioms, assetBase) {
         ]),
         h('p', { class: 'meta' }, idm.definition),
       ]);
-      const distractorChars = pickDistractors(usable, idm.id, 2).map((d) => ({
+      const distractorChars = pickDistractors(
+        usable,
+        idm.id,
+        2,
+        (item) => item.related_char,
+        idm.related_char,
+      ).map((d) => ({
         id: `char:${d.related_char}`,
         label: d.related_char,
       }));

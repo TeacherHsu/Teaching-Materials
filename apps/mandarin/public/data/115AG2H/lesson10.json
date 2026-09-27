@@ -1,0 +1,1906 @@
+{
+  "lesson_id": "115AG2H10",
+  "volume": {
+    "code": "115AG2H",
+    "publisher": "翰林",
+    "grade": 2,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "二上國語課程"
+  },
+  "lesson_no": 10,
+  "title": "加加減減",
+  "blurb": "跟著猜字謎的提示找出加減規則，理解表弟如何答對。",
+  "characters": [
+    {
+      "char": "減",
+      "zhuyin": "ㄐㄧㄢˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "減少",
+        "減法",
+        "加減"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=減",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽔",
+      "stroke_count": 12
+    },
+    {
+      "char": "表",
+      "zhuyin": "ㄅㄧㄠˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "表弟",
+        "表哥",
+        "表格"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=表",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾐",
+      "stroke_count": 8
+    },
+    {
+      "char": "讀",
+      "zhuyin": "ㄉㄨˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "讀書",
+        "閱讀",
+        "讀者"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=讀",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾔",
+      "stroke_count": 22
+    },
+    {
+      "char": "認",
+      "zhuyin": "ㄖㄣˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "認識",
+        "認真",
+        "認得"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=認",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾔",
+      "stroke_count": 14
+    },
+    {
+      "char": "識",
+      "zhuyin": "ㄕˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "認識",
+        "知識",
+        "識字"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=識",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾔",
+      "stroke_count": 19
+    },
+    {
+      "char": "謎",
+      "zhuyin": "ㄇㄧˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "猜謎",
+        "謎團",
+        "謎底"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=謎",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾔",
+      "stroke_count": 16
+    },
+    {
+      "char": "答",
+      "zhuyin": "ㄉㄚˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "回答",
+        "答案",
+        "答應"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=答",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽵",
+      "stroke_count": 12
+    },
+    {
+      "char": "搖",
+      "zhuyin": "ㄧㄠˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "搖搖頭",
+        "搖頭",
+        "搖動"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=搖",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼿",
+      "stroke_count": 13
+    },
+    {
+      "char": "百",
+      "zhuyin": "ㄅㄞˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "一百",
+        "百年",
+        "百貨"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=百",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽩",
+      "stroke_count": 6
+    },
+    {
+      "char": "嘴",
+      "zhuyin": "ㄗㄨㄟˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "嘟著嘴",
+        "嘴巴",
+        "嘴角"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=嘴",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼝",
+      "stroke_count": 16
+    },
+    {
+      "char": "哥",
+      "zhuyin": "ㄍㄜ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "表哥",
+        "哥哥",
+        "大哥"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=哥",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼝",
+      "stroke_count": 10
+    },
+    {
+      "char": "數",
+      "zhuyin": "ㄕㄨˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "數學",
+        "數字",
+        "數量"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=數",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽁",
+      "stroke_count": 15
+    },
+    {
+      "char": "題",
+      "zhuyin": "ㄊㄧˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "題目",
+        "問題",
+        "題庫"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=題",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾴",
+      "stroke_count": 18
+    },
+    {
+      "char": "趕",
+      "zhuyin": "ㄍㄢˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "趕緊",
+        "趕快",
+        "趕路"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=趕",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾛",
+      "stroke_count": 14
+    },
+    {
+      "char": "突",
+      "zhuyin": "ㄊㄨ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "突然",
+        "突破",
+        "突發"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=突",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽳",
+      "stroke_count": 9
+    },
+    {
+      "char": "異",
+      "zhuyin": "ㄧˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "異口同聲",
+        "異同",
+        "異常"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=異",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽥",
+      "stroke_count": 11
+    },
+    {
+      "char": "口",
+      "zhuyin": "ㄎㄡˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "異口同聲",
+        "人口",
+        "口水"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=口",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼝",
+      "stroke_count": 3
+    },
+    {
+      "char": "對",
+      "zhuyin": "ㄉㄨㄟˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "對話",
+        "對面",
+        "正對"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=對",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼨",
+      "stroke_count": 14
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG2H10:01",
+      "word": "讀書",
+      "zhuyin": null,
+      "meaning": "看書。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson10/vocabulary/l10-01.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H10:02",
+      "word": "表弟",
+      "zhuyin": null,
+      "meaning": "稱呼姑媽、姨媽、舅舅的兒子，且年紀比自己小的。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson10/vocabulary/l10-02.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H10:03",
+      "word": "減",
+      "zhuyin": null,
+      "meaning": "從整體中去掉一部分。與「加」相對。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson10/vocabulary/l10-03.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H10:04",
+      "word": "嘟著嘴",
+      "zhuyin": null,
+      "meaning": "嘴向前突出，像發出「ㄨ」音的嘴形。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson10/vocabulary/l10-04.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H10:05",
+      "word": "百",
+      "zhuyin": null,
+      "meaning": "數目字。十的十倍。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson10/vocabulary/l10-05.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H10:06",
+      "word": "搖搖頭",
+      "zhuyin": null,
+      "meaning": "頭向左右搖動。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson10/vocabulary/l10-06.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H10:07",
+      "word": "回答",
+      "zhuyin": null,
+      "meaning": "答覆。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson10/vocabulary/l10-07.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H10:08",
+      "word": "字謎",
+      "zhuyin": null,
+      "meaning": "答案是字的謎語。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson10/vocabulary/l10-08.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H10:09",
+      "word": "認識",
+      "zhuyin": null,
+      "meaning": "認得。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson10/vocabulary/l10-09.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H10:10",
+      "word": "突然",
+      "zhuyin": null,
+      "meaning": "形容情況緊急且出人意外。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson10/vocabulary/l10-10.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H10:11",
+      "word": "趕緊",
+      "zhuyin": null,
+      "meaning": "掌握時機，快速進行。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson10/vocabulary/l10-11.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H10:12",
+      "word": "題",
+      "zhuyin": null,
+      "meaning": "要求解答的條目。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson10/vocabulary/l10-12.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H10:13",
+      "word": "數學",
+      "zhuyin": null,
+      "meaning": "討論數量、形狀及它們之間的關係的科學。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson10/vocabulary/l10-13.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H10:14",
+      "word": "表哥",
+      "zhuyin": null,
+      "meaning": "稱姑媽、姨媽、舅舅的兒子，且年紀比自己大的人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson10/vocabulary/l10-14.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H10:15",
+      "word": "對",
+      "zhuyin": null,
+      "meaning": "正確。與「錯」相對。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson10/vocabulary/l10-15.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H10:16",
+      "word": "異口同聲",
+      "zhuyin": null,
+      "meaning": "大家都說同樣的話。形容意見相同。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson10/vocabulary/l10-16.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [
+    {
+      "id": "meaning:115AG2H10:01",
+      "word": "讀書",
+      "meaning": "看書。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H10:02",
+      "word": "表弟",
+      "meaning": "稱呼姑媽、姨媽、舅舅的兒子，且年紀比自己小的。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H10:03",
+      "word": "減",
+      "meaning": "從整體中去掉一部分。與「加」相對。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H10:04",
+      "word": "嘟著嘴",
+      "meaning": "嘴向前突出，像發出「ㄨ」音的嘴形。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H10:05",
+      "word": "百",
+      "meaning": "數目字。十的十倍。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H10:06",
+      "word": "搖搖頭",
+      "meaning": "頭向左右搖動。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H10:07",
+      "word": "回答",
+      "meaning": "答覆。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H10:08",
+      "word": "字謎",
+      "meaning": "答案是字的謎語。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H10:09",
+      "word": "認識",
+      "meaning": "認得。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H10:10",
+      "word": "突然",
+      "meaning": "形容情況緊急且出人意外。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H10:11",
+      "word": "趕緊",
+      "meaning": "掌握時機，快速進行。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H10:12",
+      "word": "題",
+      "meaning": "要求解答的條目。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H10:13",
+      "word": "數學",
+      "meaning": "討論數量、形狀及它們之間的關係的科學。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H10:14",
+      "word": "表哥",
+      "meaning": "稱姑媽、姨媽、舅舅的兒子，且年紀比自己大的人。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H10:15",
+      "word": "對",
+      "meaning": "正確。與「錯」相對。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H10:16",
+      "word": "異口同聲",
+      "meaning": "大家都說同樣的話。形容意見相同。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "sentences": [
+    {
+      "category": "短語練習",
+      "pattern": "想也不想",
+      "examples": [
+        "聽也不聽",
+        "找也不找"
+      ],
+      "description": "用﹁也不﹂強調沒有去行動。",
+      "structure": "動詞（動作）＋也不＋動詞（動作）",
+      "id": "sentence-pattern:115AG2H10:01",
+      "head": "想也不想",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "表弟突然搶著回答問題。",
+      "examples": [
+        "不愛運動的姐姐突然說要參加馬拉松比賽，我們都覺得很驚奇。",
+        "溫度突然下降，好多人都感冒了。"
+      ],
+      "description": "用﹁突然﹂強調沒有想到會這麼做。",
+      "id": "sentence-pattern:115AG2H10:02",
+      "head": "表弟突然搶著回答問題。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "我和姐姐異口同聲的說：﹁答對了！﹂",
+      "examples": [
+        "我和妹妹聽到爺爺說要去公園，異口同聲的說：﹁我也要去。﹂",
+        "大家異口同聲的請求舞臺上的歌手再來一首安可曲。"
+      ],
+      "description": "﹁異口同聲、一起、同時﹂這三個語詞，都有﹁在同一個時",
+      "id": "sentence-pattern:115AG2H10:03",
+      "head": "我和姐姐異口同聲的說：﹁答對了！﹂",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "你說要玩猜字謎，可是都問數學題。",
+      "examples": [
+        "他說要認真複習功課，可是都在玩玩具。",
+        "哥哥說好一起做家事，可是一張桌子都沒擦完。"
+      ],
+      "description": "﹁名詞︵誰︶＋事件①，可是＋事件②。﹂當事件①和事件",
+      "id": "sentence-pattern:115AG2H10:04",
+      "head": "你說要玩猜字謎，可是都問數學題。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "idioms": [
+    {
+      "id": "idiom:115AG2H10:01",
+      "idiom": "虛有其表",
+      "definition": "形容空有華麗的外表，卻無實際的內涵。",
+      "related_char": "表",
+      "image": "idioms/01_虛有其表-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H10:02",
+      "idiom": "對答如流",
+      "definition": "形容思想敏捷，答話像流水一樣順暢流利。",
+      "related_char": "答",
+      "image": "idioms/02_對答如流-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H10:03",
+      "idiom": "七嘴八舌",
+      "definition": "形容人多口雜，議論紛亂。",
+      "related_char": "嘴",
+      "image": "idioms/03_七嘴八舌-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H10:04",
+      "idiom": "異想天開",
+      "definition": "不符實際、不合事理的奇特想法。",
+      "related_char": "異",
+      "image": "idioms/04_異想天開-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H10:05",
+      "idiom": "守口如瓶",
+      "definition": "嘴像瓶口一樣封得嚴緊。",
+      "related_char": "口",
+      "image": "idioms/05_守口如瓶-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H10:06",
+      "idiom": "對牛彈琴",
+      "definition": "比喻對不懂道理的人講道理。",
+      "related_char": "對",
+      "image": "idioms/06_對牛彈琴-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:115AG2H10:01",
+      "idiom_id": "idiom:115AG2H10:01",
+      "rewritten": "別看他說得頭頭是道，其實什麼也不懂，只是虛有其表罷了。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H10:02",
+      "idiom_id": "idiom:115AG2H10:02",
+      "rewritten": "小明對老師的提問，總是對答如流，真厲害。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H10:03",
+      "idiom_id": "idiom:115AG2H10:03",
+      "rewritten": "今天班會討論慶生會的活動，同學七嘴八舌的爭相提出意見。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H10:04",
+      "idiom_id": "idiom:115AG2H10:04",
+      "rewritten": "因為萊特兄弟的異想天開，最後竟然實現了人類飛行的美夢。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H10:05",
+      "idiom_id": "idiom:115AG2H10:05",
+      "rewritten": "媽媽守口如瓶，一直不告訴我生日禮物是什麼。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H10:06",
+      "idiom_id": "idiom:115AG2H10:06",
+      "rewritten": "跟他講道理，就像對牛彈琴，還是別浪費時間吧！",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "category": "短語練習",
+      "pattern": "想也不想",
+      "examples": [
+        "聽也不聽",
+        "找也不找"
+      ],
+      "description": "用﹁也不﹂強調沒有去行動。",
+      "structure": "動詞（動作）＋也不＋動詞（動作）",
+      "id": "sentence-pattern:115AG2H10:01",
+      "head": "想也不想",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "表弟突然搶著回答問題。",
+      "examples": [
+        "不愛運動的姐姐突然說要參加馬拉松比賽，我們都覺得很驚奇。",
+        "溫度突然下降，好多人都感冒了。"
+      ],
+      "description": "用﹁突然﹂強調沒有想到會這麼做。",
+      "id": "sentence-pattern:115AG2H10:02",
+      "head": "表弟突然搶著回答問題。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "我和姐姐異口同聲的說：﹁答對了！﹂",
+      "examples": [
+        "我和妹妹聽到爺爺說要去公園，異口同聲的說：﹁我也要去。﹂",
+        "大家異口同聲的請求舞臺上的歌手再來一首安可曲。"
+      ],
+      "description": "﹁異口同聲、一起、同時﹂這三個語詞，都有﹁在同一個時",
+      "id": "sentence-pattern:115AG2H10:03",
+      "head": "我和姐姐異口同聲的說：﹁答對了！﹂",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "你說要玩猜字謎，可是都問數學題。",
+      "examples": [
+        "他說要認真複習功課，可是都在玩玩具。",
+        "哥哥說好一起做家事，可是一張桌子都沒擦完。"
+      ],
+      "description": "﹁名詞︵誰︶＋事件①，可是＋事件②。﹂當事件①和事件",
+      "id": "sentence-pattern:115AG2H10:04",
+      "head": "你說要玩猜字謎，可是都問數學題。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG2H10:答:01",
+      "char": "答",
+      "sentence": "生活中，我們會用到《答案》這個詞。",
+      "definition": "應對、回覆別人的問題",
+      "options": [
+        "應對、回覆別人的問題",
+        "回報",
+        "准許、理睬"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H10:答:02",
+      "char": "答",
+      "sentence": "生活中，我們會用到《報答》這個詞。",
+      "definition": "回報",
+      "options": [
+        "應對、回覆別人的問題",
+        "回報",
+        "准許、理睬"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H10:答:03",
+      "char": "答",
+      "sentence": "生活中，我們會用到《答應》這個詞。",
+      "definition": "准許、理睬",
+      "options": [
+        "應對、回覆別人的問題",
+        "回報",
+        "准許、理睬"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H10:數:01",
+      "char": "數",
+      "sentence": "生活中，我們會用到《數字》這個詞。",
+      "definition": "計算事物的詞或符號",
+      "options": [
+        "計算事物的詞或符號",
+        "幾、幾個",
+        "計算",
+        "責備"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H10:數:02",
+      "char": "數",
+      "sentence": "生活中，我們會用到《數年》這個詞。",
+      "definition": "幾、幾個",
+      "options": [
+        "計算事物的詞或符號",
+        "幾、幾個",
+        "計算",
+        "責備"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H10:數:03",
+      "char": "數",
+      "sentence": "生活中，我們會用到《數一數》這個詞。",
+      "definition": "計算",
+      "options": [
+        "計算事物的詞或符號",
+        "幾、幾個",
+        "計算",
+        "責備"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H10:數:04",
+      "char": "數",
+      "sentence": "生活中，我們會用到《數落他幾句。 4. 3. 2. 1. 瞇 迷 謎 織 識 春 衣 表 喊 減 ：瞇瞇眼 ：迷路》這個詞。",
+      "definition": "責備",
+      "options": [
+        "計算事物的詞或符號",
+        "幾、幾個",
+        "計算",
+        "責備"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG2H10:答",
+      "char": "答",
+      "readings": [
+        {
+          "zhuyin": "ㄉㄚˊ",
+          "senses": [
+            {
+              "definition": "應對、回覆別人的問題",
+              "examples": [
+                "答案",
+                "對答"
+              ]
+            },
+            {
+              "definition": "回報",
+              "examples": [
+                "報答"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄉㄚ",
+          "senses": [
+            {
+              "definition": "准許、理睬",
+              "examples": [
+                "答應"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    },
+    {
+      "id": "polyphone:115AG2H10:數",
+      "char": "數",
+      "readings": [
+        {
+          "zhuyin": "ㄕㄨˋ",
+          "senses": [
+            {
+              "definition": "計算事物的詞或符號",
+              "examples": [
+                "數字"
+              ]
+            },
+            {
+              "definition": "幾、幾個",
+              "examples": [
+                "數年"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄕㄨˇ",
+          "senses": [
+            {
+              "definition": "計算",
+              "examples": [
+                "數一數"
+              ]
+            },
+            {
+              "definition": "責備",
+              "examples": [
+                "數落他幾句。 4. 3. 2. 1. 瞇 迷 謎 織 識 春 衣 表 喊 減 ：瞇瞇眼 ：迷路",
+                "著迷 ：猜謎",
+                "謎語 ：編織",
+                "織布 ：常識",
+                "知識 ：春天",
+                "春節 ：衣服",
+                "雨衣 ：表妹",
+                "表示 ：大喊",
+                "呼喊 ：減法",
+                "減少 9. 8. 7. 6. 5. 超 起 趕 顏 題 歌 哥 白 百 謠 遙 搖 ：超級",
+                "超越 ：起來",
+                "起床 ：趕緊",
+                "趕路 ：顏色",
+                "容顏 ：題目",
+                "難題 ：唱歌",
+                "歌手 ：哥哥",
+                "表哥 ：白色",
+                "白板 ：百貨",
+                "百寶箱 ：歌謠",
+                "謠言 ：遙遠",
+                "遙控 ：搖籃",
+                "搖頭 47"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG2H10:01",
+      "stem": "請仔細聽題目：為什麼表弟願意接受猜字謎的挑戰？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "因為他覺得自己認識了很多字，所以應該能夠猜出來。",
+        "﹁一加一﹂是王、﹁一減一﹂是三。",
+        "姐姐提示字的結構，讓表弟找出答案。"
+      ],
+      "answer": "因為他覺得自己認識了很多字，所以應該能夠猜出來。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "他說上學讀書真好玩，認識了很多字。"
+    },
+    {
+      "id": "listening:115AG2H10:02",
+      "stem": "請仔細聽題目：「一加一」，是什麼字？「一減一」，又是什麼字呢？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "﹁一加一﹂是王、﹁一減一﹂是三。",
+        "因為他覺得自己認識了很多字，所以應該能夠猜出來。",
+        "姐姐提示字的結構，讓表弟找出答案。"
+      ],
+      "answer": "﹁一加一﹂是王、﹁一減一﹂是三。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "這時，姐姐趕緊寫下「王」，又寫下「三」。"
+    },
+    {
+      "id": "listening:115AG2H10:03",
+      "stem": "請仔細聽題目：表弟最後為什麼能夠猜出正確答案？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "姐姐提示字的結構，讓表弟找出答案。",
+        "因為他覺得自己認識了很多字，所以應該能夠猜出來。",
+        "﹁一加一﹂是王、﹁一減一﹂是三。"
+      ],
+      "answer": "姐姐提示字的結構，讓表弟找出答案。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "這時，姐姐趕緊寫下「王」，又寫下「三」。"
+    },
+    {
+      "id": "listening:115AG2H10:04",
+      "stem": "請仔細聽題目：主角和姐姐「異口同聲」的說：「答對了！」請問「異口同聲」是什麼意思？你是根據什麼方法知道的？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "兩人同時說出一樣的話。",
+        "因為他覺得自己認識了很多字，所以應該能夠猜出來。",
+        "﹁一加一﹂是王、﹁一減一﹂是三。"
+      ],
+      "answer": "兩人同時說出一樣的話。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "我和姐姐異口同聲的說：「答對了！」"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG2H10:01",
+      "para_no": 1,
+      "summary": "表弟到家裡玩，主角和姐姐找表弟玩猜字謎。",
+      "structure_role": "第1段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H10:02",
+      "para_no": 2,
+      "summary": "主角用加減法出題目，表弟說主角都問數學題。",
+      "structure_role": "第2段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H10:03",
+      "para_no": 3,
+      "summary": "表弟明白猜字規則後答對一題，高興得笑了。",
+      "structure_role": "第3段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "id": "main_idea:115AG2H10:01",
+    "gist": "姐姐和主角找表弟玩猜字謎遊戲，表弟後來明白規則，說出正確答案而高興。",
+    "theme": "藉由表弟與表姐、表哥玩猜字謎遊戲的過程，體會語文遊戲的樂趣。",
+    "status": "approved",
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG2H10:01",
+      "stem": "為什麼表弟願意接受猜字謎的挑戰？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "因為他覺得自己認識了很多字，所以應該能夠猜出來。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H10:02",
+      "stem": "「一加一」，是什麼字？「一減一」，又是什麼字呢？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "﹁一加一﹂是王、﹁一減一﹂是三。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H10:03",
+      "stem": "表弟最後為什麼能夠猜出正確答案？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為主角的姐姐把答案寫在紙上，讓表弟能夠領悟到原來答案和數學無關，和字的結構有關。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H10:04",
+      "stem": "主角和姐姐「異口同聲」的說：「答對了！」請問「異口同聲」是什麼意思？你是根據什麼方法知道的？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "根據上下文推斷。﹁異口同聲﹂是指兩個人同時說一樣的話，因為主角和姐姐都說：﹁答對了！﹂。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H10:05",
+      "stem": "課文中有許多描寫動作的語詞，表弟「抓抓頭」、表弟「嘟著嘴」分別代表什麼情緒？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "表弟﹁抓抓頭﹂，表示有點疑惑，不知道該怎麼辦。﹁嘟著嘴﹂，表示表弟有點撒嬌、生氣的感覺。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H10:06",
+      "stem": "想一想，說一說，根據課文，你覺得想要猜中字謎，需要運用什麼方法？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "必須要先將字謎中所出現的部件都寫出來，再根據字謎的說明，去做部件加加減減的推想。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H10:07",
+      "stem": "說一說，表弟玩猜字謎過程時的心情起伏如何？",
+      "strategy_tag": "比較評估",
+      "answer_hint": "從一開始願意參加猜字謎時的自信，到中間猜不出字謎時的沮喪和生氣，最後在主角姐姐的提示下，猜出字謎時的高興。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H10:08",
+      "stem": "想一想，說一說，這一課為什麼要取名為「加加減減」？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "猜字謎雖然看似和數學題無關，但其實也是需要透過加減字的部件，才能設計出和猜出字謎。因此取名為﹁加加減減﹂。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG2H10:01",
+      "group_no": "1",
+      "question": "從整體中去掉一部分：____",
+      "answer": "減",
+      "chars": [
+        {
+          "char": "減",
+          "zhuyin": null,
+          "example": "減"
+        },
+        {
+          "char": "喊",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H10:02",
+      "group_no": "2",
+      "question": "____弟",
+      "answer": "表",
+      "chars": [
+        {
+          "char": "表",
+          "zhuyin": null,
+          "example": "表弟"
+        },
+        {
+          "char": "衣",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "春",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H10:03",
+      "group_no": "3",
+      "question": "認____",
+      "answer": "識",
+      "chars": [
+        {
+          "char": "識",
+          "zhuyin": null,
+          "example": "認識"
+        },
+        {
+          "char": "織",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H10:04",
+      "group_no": "4",
+      "question": "字____",
+      "answer": "謎",
+      "chars": [
+        {
+          "char": "謎",
+          "zhuyin": null,
+          "example": "字謎"
+        },
+        {
+          "char": "迷",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H10:05",
+      "group_no": "5",
+      "question": "____搖頭",
+      "answer": "搖",
+      "chars": [
+        {
+          "char": "搖",
+          "zhuyin": null,
+          "example": "搖搖頭"
+        },
+        {
+          "char": "遙",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "謠",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H10:06",
+      "group_no": "6",
+      "question": "數目字，十的十倍：____",
+      "answer": "百",
+      "chars": [
+        {
+          "char": "百",
+          "zhuyin": null,
+          "example": "百"
+        },
+        {
+          "char": "白",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H10:07",
+      "group_no": "7",
+      "question": "表____",
+      "answer": "哥",
+      "chars": [
+        {
+          "char": "哥",
+          "zhuyin": null,
+          "example": "表哥"
+        },
+        {
+          "char": "歌",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H10:08",
+      "group_no": "8",
+      "question": "要求解答的條目：____",
+      "answer": "題",
+      "chars": [
+        {
+          "char": "題",
+          "zhuyin": null,
+          "example": "題"
+        },
+        {
+          "char": "顏",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H10:09",
+      "group_no": "9",
+      "question": "____緊",
+      "answer": "趕",
+      "chars": [
+        {
+          "char": "趕",
+          "zhuyin": null,
+          "example": "趕緊"
+        },
+        {
+          "char": "起",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "超",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「減」的部首是哪一個？",
+      "options": [
+        "⾛",
+        "⾐",
+        "⾴"
+      ],
+      "answer": "⽔",
+      "explanation": "「減」的部首是⽔。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「表」的部首是哪一個？",
+      "options": [
+        "⽔",
+        "⼿",
+        "⽁"
+      ],
+      "answer": "⾐",
+      "explanation": "「表」的部首是⾐。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「讀」的部首是哪一個？",
+      "options": [
+        "⼿",
+        "⾐",
+        "⽵"
+      ],
+      "answer": "⾔",
+      "explanation": "「讀」的部首是⾔。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「讀書」是什麼意思？",
+      "options": [
+        "形容情況緊急且出人意外。",
+        "認得。",
+        "正確。與「錯」相對。"
+      ],
+      "answer": "看書。",
+      "explanation": "讀書：看書。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「表弟」是什麼意思？",
+      "options": [
+        "稱姑媽、姨媽、舅舅的兒子，且年紀比自己大的人。",
+        "頭向左右搖動。",
+        "從整體中去掉一部分。與「加」相對。"
+      ],
+      "answer": "稱呼姑媽、姨媽、舅舅的兒子，且年紀比自己小的。",
+      "explanation": "表弟：稱呼姑媽、姨媽、舅舅的兒子，且年紀比自己小的。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「減」是什麼意思？",
+      "options": [
+        "大家都說同樣的話。形容意見相同。",
+        "頭向左右搖動。",
+        "答覆。"
+      ],
+      "answer": "從整體中去掉一部分。與「加」相對。",
+      "explanation": "減：從整體中去掉一部分。與「加」相對。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「嘟著嘴」是什麼意思？",
+      "options": [
+        "形容情況緊急且出人意外。",
+        "掌握時機，快速進行。",
+        "正確。與「錯」相對。"
+      ],
+      "answer": "嘴向前突出，像發出「ㄨ」音的嘴形。",
+      "explanation": "嘟著嘴：嘴向前突出，像發出「ㄨ」音的嘴形。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「百」是什麼意思？",
+      "options": [
+        "掌握時機，快速進行。",
+        "看書。",
+        "嘴向前突出，像發出「ㄨ」音的嘴形。"
+      ],
+      "answer": "數目字。十的十倍。",
+      "explanation": "百：數目字。十的十倍。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "公開資料只放摘要與理解提問，不放課文全文。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "available",
+      "activity": "application"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "available",
+      "activity": "listening-quiz"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "unavailable",
+      "activity": "rhetoric",
+      "note": "無此資料。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  },
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag2h-10",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E6%B8%9B%E8%A1%A8%E8%AE%80%E8%AA%8D%E8%AD%98%E8%AC%8E%E7%AD%94%E6%90%96%E7%99%BE%E5%98%B4%E5%93%A5%E6%95%B8%E9%A1%8C%E8%B6%95%E7%AA%81%E7%95%B0%E5%8F%A3%E5%B0%8D",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・2年級・第10課",
+      "login_required": false,
+      "checked_at": "2026-09-27",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "候",
+        "颳",
+        "冷",
+        "躲",
+        "閃",
+        "電",
+        "難",
+        "烏",
+        "雲",
+        "密",
+        "布",
+        "盆",
+        "充",
+        "滿",
+        "放",
+        "晴",
+        "現",
+        "虹"
+      ],
+      "2": [
+        "老",
+        "師",
+        "新",
+        "希",
+        "望",
+        "卻",
+        "使",
+        "緊",
+        "因",
+        "為",
+        "知",
+        "道",
+        "怎",
+        "消",
+        "失",
+        "習",
+        "最",
+        "掛"
+      ],
+      "3": [
+        "國",
+        "王",
+        "喜",
+        "歡",
+        "穿",
+        "只",
+        "件",
+        "點",
+        "改",
+        "領",
+        "越",
+        "設",
+        "計",
+        "發",
+        "方",
+        "法",
+        "分",
+        "享"
+      ],
+      "4": [
+        "呱",
+        "聞",
+        "聲",
+        "猜",
+        "蛙",
+        "別",
+        "靠",
+        "近",
+        "抓",
+        "如",
+        "果",
+        "乖",
+        "腦",
+        "袋",
+        "瓜",
+        "證",
+        "明",
+        "頂"
+      ],
+      "5": [
+        "沙",
+        "灘",
+        "海",
+        "邊",
+        "退",
+        "遠",
+        "螃",
+        "蟹",
+        "愛",
+        "注",
+        "夕",
+        "腳",
+        "丫",
+        "橫",
+        "留",
+        "印",
+        "挖",
+        "麗"
+      ],
+      "6": [
+        "月",
+        "奶",
+        "晚",
+        "飯",
+        "散",
+        "屋",
+        "竹",
+        "林",
+        "頭",
+        "溪",
+        "旁",
+        "暗",
+        "眼",
+        "睛",
+        "那",
+        "聚",
+        "成",
+        "顆"
+      ],
+      "7": [
+        "樣",
+        "食",
+        "郊",
+        "活",
+        "奇",
+        "筒",
+        "香",
+        "味",
+        "便",
+        "當",
+        "盒",
+        "客",
+        "清",
+        "節",
+        "保",
+        "平",
+        "安",
+        "南"
+      ],
+      "8": [
+        "介",
+        "圓",
+        "形",
+        "白",
+        "紙",
+        "米",
+        "變",
+        "軟",
+        "搶",
+        "材",
+        "蝦",
+        "線",
+        "各",
+        "種",
+        "菜",
+        "接",
+        "聽",
+        "更"
+      ],
+      "9": [
+        "黃",
+        "沖",
+        "澡",
+        "蘿",
+        "蔔",
+        "哪",
+        "粒",
+        "熱",
+        "浴",
+        "蒸",
+        "胖",
+        "名",
+        "苔",
+        "蛋",
+        "蔬",
+        "通",
+        "細",
+        "淡"
+      ],
+      "10": [
+        "減",
+        "表",
+        "讀",
+        "認",
+        "識",
+        "謎",
+        "答",
+        "搖",
+        "百",
+        "嘴",
+        "哥",
+        "數",
+        "題",
+        "趕",
+        "突",
+        "異",
+        "口",
+        "對"
+      ]
+    }
+  }
+}

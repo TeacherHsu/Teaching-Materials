@@ -11,7 +11,7 @@ import { shuffle } from '../utils/shuffle.js';
  * 的小喇叭鈕，可朗讀該項目但不會誤觸選取。
  * @param {{pairs: Array<{left:string,right:string}>, onComplete?: () => void, onBack?: () => void, backLabel?: string, instructions?: string}} opts
  */
-export function MatchingGame({ pairs, onComplete, onBack, backLabel = '回課程首頁', instructions = '選一個左邊的字，再選右邊對應的答案。' }) {
+export function MatchingGame({ pairs, onComplete, onBack, backLabel = '回課程首頁', onContinue, continueLabel = '加練下一組', instructions = '選一個左邊的字，再選右邊對應的答案。' }) {
   const root = h('div', {});
   const left = shuffle(pairs);
   const right = shuffle(pairs);
@@ -47,7 +47,7 @@ export function MatchingGame({ pairs, onComplete, onBack, backLabel = '回課程
       if (matched.size === pairs.length) {
         recordOutcome({ firstTry: mistakes === 0, revealed: false });
         root.appendChild(
-          CompletionFeedback({ correct: pairs.length, total: pairs.length, onBack, backLabel }),
+          CompletionFeedback({ correct: pairs.length, total: pairs.length, onBack, backLabel, onContinue, continueLabel }),
         );
         if (onComplete) onComplete();
       }

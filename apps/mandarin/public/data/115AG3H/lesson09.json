@@ -13,7 +13,7 @@
   "lesson_no": 9,
   "title": "阿塱壹古道",
   "author": "",
-  "blurb": "透過〈阿塱壹古道〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "從交通、地形和海水顏色等線索，整理阿塱壹古道的行程與景觀。",
   "characters": [
     {
       "char": "挑",
@@ -323,6 +323,174 @@
   "words": [
     {
       "id": "word:115AG3H09:01",
+      "word": "挑戰",
+      "zhuyin": "ㄊㄧㄠ ㄓㄢˋ",
+      "meaning": "面對考驗，克服困難。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson09/vocabulary/l09-target-01.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H09:02",
+      "word": "交通",
+      "zhuyin": null,
+      "meaning": "汽車、船舶、飛機等各種運輸工具在陸地、海上或空中的往來。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson09/vocabulary/l09-target-02.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H09:03",
+      "word": "隨",
+      "zhuyin": null,
+      "meaning": "跟從。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson09/vocabulary/l09-target-03.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H09:04",
+      "word": "導遊",
+      "zhuyin": null,
+      "meaning": "專門引導觀光客遊覽的從業人員。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson09/vocabulary/l09-target-04.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H09:05",
+      "word": "鳳梨",
+      "zhuyin": null,
+      "meaning": "植物名。葉大，邊緣呈鋸齒狀，花小，淡紫色，果實亦稱為「鳳梨」，味酸甜芳香。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson09/vocabulary/l09-target-05.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H09:06",
+      "word": "林投樹",
+      "zhuyin": null,
+      "meaning": "樹名。具耐風、耐鹽的特質，是臺灣常見的海岸防風定砂植物。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson09/vocabulary/l09-target-06.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H09:07",
+      "word": "繼續",
+      "zhuyin": null,
+      "meaning": "連續而不間斷。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson09/vocabulary/l09-target-07.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H09:08",
+      "word": "木棧道",
+      "zhuyin": null,
+      "meaning": "在山巖上用木頭架成的道路。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson09/vocabulary/l09-target-08.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H09:09",
+      "word": "岸邊",
+      "zhuyin": null,
+      "meaning": "水邊陸地。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson09/vocabulary/l09-target-09.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H09:10",
+      "word": "淺",
+      "zhuyin": null,
+      "meaning": "顏色淡。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson09/vocabulary/l09-target-10.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H09:11",
+      "word": "沿",
+      "zhuyin": null,
+      "meaning": "順著。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson09/vocabulary/l09-target-11.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H09:12",
+      "word": "踩",
+      "zhuyin": null,
+      "meaning": "用腳在物體上面踐踏。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson09/vocabulary/l09-target-12.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H09:13",
+      "word": "疊",
+      "zhuyin": null,
+      "meaning": "一層一層向上堆積。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson09/vocabulary/l09-target-13.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H09:14",
+      "word": "一般",
+      "zhuyin": null,
+      "meaning": "普通、通常。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson09/vocabulary/l09-target-14.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H09:15",
       "word": "古道",
       "zhuyin": "ㄍㄨˇ ㄉㄠˋ",
       "meaning": "從前留下來的道路。",
@@ -334,7 +502,7 @@
       "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
     },
     {
-      "id": "word:115AG3H09:02",
+      "id": "word:115AG3H09:16",
       "word": "海岸",
       "zhuyin": "ㄏㄞˇ ㄢˋ",
       "meaning": "陸地和海洋相接的地方。",
@@ -346,7 +514,7 @@
       "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
     },
     {
-      "id": "word:115AG3H09:03",
+      "id": "word:115AG3H09:17",
       "word": "林投",
       "zhuyin": "ㄌㄧㄣˊ ㄊㄡˊ",
       "meaning": "常生長在海岸邊的植物。",
@@ -358,19 +526,7 @@
       "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
     },
     {
-      "id": "word:115AG3H09:04",
-      "word": "挑戰",
-      "zhuyin": "ㄊㄧㄠ ㄓㄢˋ",
-      "meaning": "需要努力克服的困難事情。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
-      "level": "basic",
-      "image": "/assets/115AG3H/lesson09/vocabulary/l09-04.webp",
-      "status": "ready",
-      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
-    },
-    {
-      "id": "word:115AG3H09:05",
+      "id": "word:115AG3H09:18",
       "word": "山路",
       "zhuyin": "ㄕㄢ ㄌㄨˋ",
       "meaning": "在山區行走的道路。",
@@ -382,7 +538,7 @@
       "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
     },
     {
-      "id": "word:115AG3H09:06",
+      "id": "word:115AG3H09:19",
       "word": "南田",
       "zhuyin": "ㄋㄢˊ ㄊㄧㄢˊ",
       "meaning": "阿塱壹古道附近的地名。",
@@ -402,45 +558,60 @@
       "idiom": "交頭接耳",
       "definition": "形容低聲私語。",
       "related_char": "交",
-      "image": null,
+      "image": "idioms/01_交頭接耳.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H09:cd137c19",
       "idiom": "如影隨形",
       "definition": "比喻彼此關係密切，總是緊緊跟隨。",
       "related_char": "隨",
-      "image": null,
+      "image": "idioms/02_如影隨形.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H09:46b55577",
       "idiom": "投其所好",
       "definition": "迎合他人的愛好。",
       "related_char": "投",
-      "image": null,
+      "image": "idioms/03_投其所好.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H09:f4fe0c88",
       "idiom": "夜以繼日",
       "definition": "日夜不停地持續工作。",
       "related_char": "繼",
-      "image": null,
+      "image": "idioms/04_夜以繼日.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H09:e0f6244b",
       "idiom": "隔岸觀火",
       "definition": "比喻對別人的困難不伸出援手。",
       "related_char": "岸",
-      "image": null,
+      "image": "idioms/05_隔岸觀火.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -1300,7 +1471,8 @@
       ],
       "answer": "因為弟弟把林投樹的果實誤認為鳳梨。",
       "status": "approved",
-      "source": "115G3A／翰林官方教材（15閱讀理解提問：第9課）"
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第9課）",
+      "passage": "弟弟指著前方的樹叢，高興的大喊：「你們看，有鳳梨！」導遊笑著搖搖頭，我也覺得很奇怪，那會是什麼呢？"
     },
     {
       "id": "listening:115AG3H09:0002",
@@ -1313,7 +1485,8 @@
       ],
       "answer": "海水的顏色由天邊深深的藍，慢慢變成岸邊淺淺的藍。",
       "status": "approved",
-      "source": "115G3A／翰林官方教材（15閱讀理解提問：第9課）"
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第9課）",
+      "passage": "海水的顏色由天邊深深的藍，慢慢變成岸邊淺淺的藍。"
     },
     {
       "id": "listening:115AG3H09:0003",
@@ -1326,7 +1499,8 @@
       ],
       "answer": "這樣美石和美景才能長久保留。",
       "status": "approved",
-      "source": "115G3A／翰林官方教材（15閱讀理解提問：第9課）"
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第9課）",
+      "passage": "只能拍照，不能帶走，美石、美景才能長久。"
     }
   ],
   "review_words": {

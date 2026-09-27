@@ -13,7 +13,7 @@
   "lesson_no": 7,
   "title": "跟著公共藝術去旅行",
   "author": "",
-  "blurb": "透過〈跟著公共藝術去旅行〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "比較公共藝術的材料、外形和觀看效果，找出作品如何融入生活空間。",
   "characters": [
     {
       "char": "姨",
@@ -560,54 +560,66 @@
       "idiom": "雕蟲小技",
       "definition": "比喻微不足道的技能。",
       "related_char": "雕",
-      "image": "idioms/01_雕蟲小技.webp",
+      "image": "idioms/01_雕蟲小技-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H07:青梅竹馬",
       "idiom": "青梅竹馬",
       "definition": "形容從小一起長大的男女朋友。",
       "related_char": "梅",
-      "image": "idioms/02_青梅竹馬.webp",
+      "image": "idioms/02_青梅竹馬-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H07:指鹿為馬",
       "idiom": "指鹿為馬",
       "definition": "比喻故意顛倒是非、混淆黑白。",
       "related_char": "鹿",
-      "image": "idioms/03_指鹿為馬.webp",
+      "image": "idioms/03_指鹿為馬-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H07:竭澤而漁",
       "idiom": "竭澤而漁",
       "definition": "比喻只顧眼前利益，完全不留餘地。",
       "related_char": "澤",
-      "image": "idioms/04_竭澤而漁.webp",
+      "image": "idioms/04_竭澤而漁-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H07:衣錦還鄉",
       "idiom": "衣錦還鄉",
       "definition": "比喻人在外地獲得功名或成就後回到故鄉。",
       "related_char": "錦",
-      "image": "idioms/05_衣錦還鄉.webp",
+      "image": "idioms/05_衣錦還鄉-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG6H07:銅牆鐵壁",
       "idiom": "銅牆鐵壁",
       "definition": "比喻防禦十分堅固。",
       "related_char": "銅",
-      "image": "idioms/06_銅牆鐵壁.webp",
+      "image": "idioms/06_銅牆鐵壁-fit.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -1020,9 +1032,10 @@
         "大地之書",
         "分合隨緣"
       ],
-      "answer": null,
+      "answer": "大地之書",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:07:02",
@@ -1031,9 +1044,10 @@
         "結合小鹿、花草和在地文化",
         "只能在美術館看到"
       ],
-      "answer": null,
+      "answer": "結合小鹿、花草和在地文化",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:07:03",
@@ -1042,9 +1056,10 @@
         "會映照周遭景物、隨角度改變",
         "每天有人重新上色"
       ],
-      "answer": null,
+      "answer": "會映照周遭景物、隨角度改變",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "reading_question:07:04",
@@ -1053,9 +1068,10 @@
         "公共藝術能走進生活",
         "藝術只能由專家欣賞"
       ],
-      "answer": null,
+      "answer": "公共藝術能走進生活",
       "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -1544,7 +1560,8 @@
       ],
       "answer": "大地之書",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "這就是公共藝術大地之書。"
     },
     {
       "id": "listening:115AG6H07:2",
@@ -1556,7 +1573,8 @@
       ],
       "answer": "結合小鹿、花草和在地文化",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "這件作品叫做花間小鹿，是依法設置的公共藝術。"
     },
     {
       "id": "listening:115AG6H07:3",
@@ -1568,7 +1586,8 @@
       ],
       "answer": "每天有人重新上色",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "原來是分合隨緣的凹凸鏡面，隨著人們觀賞角度的不同，鏡面所反射出的影像就會呈現不斷分合的面貌。"
     },
     {
       "id": "listening:115AG6H07:4",
@@ -1580,7 +1599,8 @@
       ],
       "answer": "公共藝術能走進生活",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
+      "passage": "公共藝術像花朵或蝴蝶一樣，在生活周遭綻放與飛舞。"
     }
   ],
   "review_words": {

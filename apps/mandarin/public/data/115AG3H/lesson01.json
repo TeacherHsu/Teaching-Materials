@@ -13,7 +13,7 @@
   "lesson_no": 1,
   "title": "時間是什麼",
   "author": "",
-  "blurb": "TODO: 課次簡介待教師撰寫",
+  "blurb": "比較蝸牛、斑馬、彈簧和流水的比喻，推想人們感受到的時間快慢。",
   "characters": [
     {
       "char": "待",
@@ -861,7 +861,9 @@
       "related_char": "待",
       "status": "ready",
       "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）",
-      "image": "idioms/迫不及待.webp"
+      "image": "idioms/迫不及待-fit.webp",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H01:ced4a586",
@@ -870,7 +872,9 @@
       "related_char": "吞",
       "status": "ready",
       "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）",
-      "image": "idioms/忍氣吞聲.webp"
+      "image": "idioms/忍氣吞聲-fit.webp",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H01:b08648cd",
@@ -879,7 +883,9 @@
       "related_char": "奔",
       "status": "ready",
       "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）",
-      "image": "idioms/疲於奔命.webp"
+      "image": "idioms/疲於奔命-fit.webp",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H01:5d0d3537",
@@ -888,7 +894,9 @@
       "related_char": "牛",
       "status": "ready",
       "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）",
-      "image": "idioms/對牛彈琴.webp"
+      "image": "idioms/對牛彈琴-fit.webp",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H01:c886e840",
@@ -897,7 +905,9 @@
       "related_char": "短",
       "status": "ready",
       "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）",
-      "image": "idioms/長話短說.webp"
+      "image": "idioms/長話短說-fit.webp",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H01:2a16b65b",
@@ -906,7 +916,9 @@
       "related_char": "永",
       "status": "ready",
       "source": "dabutie:07生字延伸成語（3上L01生字延伸成語-時間是什麼.pdf，PDF雙欄解析）",
-      "image": "idioms/一勞永逸.webp"
+      "image": "idioms/一勞永逸-fit.webp",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -1972,7 +1984,7 @@
         "先寫功課"
       ],
       "answer": "先刷牙洗臉",
-      "status": "approved",
+      "status": "review_required",
       "source": "original:draft（教師自撰，無對應大補帖來源）"
     },
     {
@@ -1985,7 +1997,7 @@
         "去公園"
       ],
       "answer": "在家看書",
-      "status": "approved",
+      "status": "review_required",
       "source": "original:draft（教師自撰，無對應大補帖來源）"
     },
     {
@@ -1998,7 +2010,7 @@
         "去福利社買東西"
       ],
       "answer": "排隊做體操",
-      "status": "approved",
+      "status": "review_required",
       "source": "original:draft（教師自撰，無對應大補帖來源）"
     }
   ],
@@ -2566,8 +2578,9 @@
     },
     "listening": {
       "label": "聽聽看",
-      "status": "available",
-      "activity": "listening-quiz"
+      "status": "missing",
+      "activity": "listening-quiz",
+      "note": "官方課文核對後，現有題目內容與本課課文不相符，待重新編題。"
     },
     "rhetoric": {
       "label": "修辭小偵探",

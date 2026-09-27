@@ -13,7 +13,7 @@
   "lesson_no": 6,
   "title": "小鉛筆大學問",
   "author": "",
-  "blurb": "從鉛筆的原料、製作過程和種類，認識日常用品裡藏著的科學與巧思。",
+  "blurb": "依原料、加工和成品的順序，整理鉛筆的材料與製作方法。",
   "characters": [
     {
       "char": "墨",
@@ -436,54 +436,66 @@
       "idiom": "墨守成規",
       "definition": "指固守舊規，不肯改變，形容行事保守。",
       "related_char": "墨",
-      "image": "idioms/01_墨守成規.webp",
+      "image": "idioms/01_墨守成規-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H06:按部就班",
       "idiom": "按部就班",
       "definition": "指做事依照一定的層次、條理。",
       "related_char": "部",
-      "image": "idioms/02_按部就班.webp",
+      "image": "idioms/02_按部就班-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H06:隨機應變",
       "idiom": "隨機應變",
       "definition": "隨著時機和情況的變化而靈活應付。",
       "related_char": "機",
-      "image": "idioms/03_隨機應變.webp",
+      "image": "idioms/03_隨機應變-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H06:大器晚成",
       "idiom": "大器晚成",
       "definition": "本指大的器具非一朝一夕可完成，後引申以指傑出人才的造就晚於常人。",
       "related_char": "器",
-      "image": "idioms/04_大器晚成.webp",
+      "image": "idioms/04_大器晚成-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H06:出神入化",
       "idiom": "出神入化",
       "definition": "形容技藝達到非常高超、神妙的境界。",
       "related_char": "入",
-      "image": "idioms/05_出神入化.webp",
+      "image": "idioms/05_出神入化-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H06:另眼相看",
       "idiom": "另眼相看",
       "definition": "以特別的眼光或態度相待，以示重視或歧視。",
       "related_char": "另",
-      "image": "idioms/06_另眼相看.webp",
+      "image": "idioms/06_另眼相看-fit.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（07生字延伸成語）"
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（07生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -1111,7 +1123,8 @@
       ],
       "answer": "鉛塊",
       "status": "approved",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（教師自撰聆聽題）"
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（教師自撰聆聽題）",
+      "passage": "很多人以為鉛筆是用「鉛」做的，其實，它是由石墨、黏土和木頭製成的。"
     },
     {
       "id": "listening:115AG3H06:2",
@@ -1124,7 +1137,8 @@
       ],
       "answer": "避免斷裂和弄髒手",
       "status": "approved",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（教師自撰聆聽題）"
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（教師自撰聆聽題）",
+      "passage": "如果你直接拿筆芯來書寫，不但容易斷裂，手還會變黑。"
     },
     {
       "id": "listening:115AG3H06:3",
@@ -1137,7 +1151,8 @@
       ],
       "answer": "刻出凹槽",
       "status": "approved",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（教師自撰聆聽題）"
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（教師自撰聆聽題）",
+      "passage": "機器先在木板上做出一道道凹槽，再放入筆芯。"
     },
     {
       "id": "listening:115AG3H06:4",
@@ -1150,7 +1165,8 @@
       ],
       "answer": "輕輕按壓",
       "status": "approved",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（教師自撰聆聽題）"
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（教師自撰聆聽題）",
+      "passage": "像自動鉛筆，你只要輕輕的按一按，筆芯就會自動跑出來。"
     }
   ],
   "review_words": {

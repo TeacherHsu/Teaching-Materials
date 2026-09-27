@@ -13,7 +13,7 @@
   "lesson_no": 6,
   "title": "秋千",
   "author": "",
-  "blurb": "透過〈秋千〉練習認讀生字、理解語詞，並用聲音和圖像建立閱讀連結。",
+  "blurb": "跟著秋千升高、降低的反覆變化，整理每個畫面和提問。",
   "characters": [
     {
       "char": "秋",
@@ -373,23 +373,651 @@
   ],
   "word_meanings": [],
   "sentences": [],
-  "idioms": [],
-  "idiom_sentences": [],
-  "sentence_patterns": [],
+  "idioms": [
+    {
+      "image": "idioms/01_平分秋色.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H06:01",
+      "idiom": "平分秋色",
+      "definition": "雙方實力相當，不分上下。",
+      "related_char": "秋",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/02_千鈞一髮.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H06:02",
+      "idiom": "千鈞一髮",
+      "definition": "情勢非常危急。",
+      "related_char": "千",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/03_海闊天空.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H06:03",
+      "idiom": "海闊天空",
+      "definition": "形容開闊、自由的境界。",
+      "related_char": "海",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/04_空穴來風.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H06:04",
+      "idiom": "空穴來風",
+      "definition": "事情傳出並非完全沒有原因。",
+      "related_char": "空",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/05_低聲下氣.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H06:05",
+      "idiom": "低聲下氣",
+      "definition": "形容說話恭順小心。",
+      "related_char": "低",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    },
+    {
+      "image": "idioms/06_口是心非.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "image_layout": "square-native",
+      "id": "idiom:115AG1H06:06",
+      "idiom": "口是心非",
+      "definition": "嘴上說的和心裡想的不一樣。",
+      "related_char": "是",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；成語與字義整理）"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:115AG1H06:01",
+      "idiom_id": "idiom:115AG1H06:01",
+      "rewritten": "這兩隊表現都很好，真是平分秋色。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H06:02",
+      "idiom_id": "idiom:115AG1H06:02",
+      "rewritten": "消防員在千鈞一髮之際救出小狗。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H06:03",
+      "idiom_id": "idiom:115AG1H06:03",
+      "rewritten": "走出山谷後，眼前一片海闊天空。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H06:04",
+      "idiom_id": "idiom:115AG1H06:04",
+      "rewritten": "這個消息不是空穴來風，已有人看見相關資料。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H06:05",
+      "idiom_id": "idiom:115AG1H06:05",
+      "rewritten": "他低聲下氣地向同學道歉。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    },
+    {
+      "id": "idiom-sentence:115AG1H06:06",
+      "idiom_id": "idiom:115AG1H06:06",
+      "rewritten": "答應幫忙就要做到，不要口是心非。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（05生字延伸成語；生活化例句改寫；成語逐句回核）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "category": "短語句型練習",
+      "pattern": "上上下下",
+      "head": "上上下下",
+      "description": "用疊詞動詞來描述動作，會有重複的效果。",
+      "structure": "疊字動詞（什麼動作）",
+      "examples": [
+        "來來去去",
+        "進進出出",
+        "跑跑跳跳"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H06:01",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "category": "短語句型練習",
+      "pattern": "秋千一下子高，一下子低，向小草問好。",
+      "head": "秋千一下子高，一下子低，向小草問好。",
+      "description": "句子裡用了兩個「一下子」，可以表達在很短的時間裡，有不同的變化。",
+      "structure": null,
+      "examples": [
+        "哥哥一下子跑步，一下子打球，流了好多汗。",
+        "小狗一下子搖尾巴，一下子大叫，看起來好開心。",
+        "爸爸一下子打掃，一下子煮飯，真是辛苦。"
+      ],
+      "examples_status": "approved",
+      "id": "sentence-pattern:115AG1H06:02",
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    }
+  ],
   "rhetoric": [],
-  "paragraph_summary": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG1H06:01",
+      "para_no": 1,
+      "paragraph_no": 1,
+      "summary": "起：秋千升高，和天空說早。",
+      "structure_role": "開端",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    },
+    {
+      "id": "paragraph_summary:115AG1H06:02",
+      "para_no": 2,
+      "paragraph_no": 2,
+      "summary": "承：秋千降低，向小草問好。",
+      "structure_role": "發展",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    },
+    {
+      "id": "paragraph_summary:115AG1H06:03",
+      "para_no": 3,
+      "paragraph_no": 3,
+      "summary": "轉：到花田、天上尋找答案。",
+      "structure_role": "轉折",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    },
+    {
+      "id": "paragraph_summary:115AG1H06:04",
+      "para_no": 4,
+      "paragraph_no": 4,
+      "summary": "合：問是誰陪秋千上下擺動。",
+      "structure_role": "收束",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    }
+  ],
   "main_idea": {
-    "gist": "本課閱讀重點待補。",
-    "theme": "閱讀理解",
-    "status": "draft",
-    "source": "teacher-review-required"
+    "gist": "課文描寫秋千上下擺動，和天空、小草問候，並想找出陪伴它的人。",
+    "theme": "課文理解",
+    "status": "approved",
+    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
   },
-  "reading_questions": [],
-  "polysemy": [],
+  "reading_questions": [
+    {
+      "id": "reading-question:115AG1H06:01",
+      "stem": "仔細觀察課文插圖，是誰在盪秋千？",
+      "answer_hint": "小女孩和小男孩。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H06:02",
+      "stem": "觀察課文插圖，是誰陪著秋千，向天空說早？",
+      "answer_hint": "小女孩和小鳥。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H06:03",
+      "stem": "觀察課文插圖，是誰陪著秋千，向小草問好？",
+      "answer_hint": "小男孩和風。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H06:04",
+      "stem": "為什麼秋千可以「一下子高，和天空說早」、「一下子低，向小草問好」？",
+      "answer_hint": "因為秋千擺盪到最高的地方，看起來和天空最靠近，所以可以和天空說早；擺盪到低的地方，微風輕動，可以向小草問好。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H06:05",
+      "stem": "為什麼秋千會一下子高，一下子低呢？",
+      "answer_hint": "因為小朋友盪秋千時會推動秋千，或是風吹動秋千。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H06:06",
+      "stem": "秋千的問題是什麼？",
+      "answer_hint": "想知道是誰陪他上上下下？",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H06:07",
+      "stem": "秋千解決問題的方式是什麼？",
+      "answer_hint": "秋千自己去花田問、去天上找，來得到答案。",
+      "strategy_tag": "詮釋整合",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H06:08",
+      "stem": "課文最後一句「是誰陪他上上下下」，句中的「他」是指誰？",
+      "answer_hint": "秋千。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    },
+    {
+      "id": "reading-question:115AG1H06:09",
+      "stem": "觀察課文插圖，小女孩和小男孩盪秋千有什麼不同？",
+      "answer_hint": "小女孩盪得比較高，和小鳥及雲朵在一起；小男孩盪得比較低，靠近花田，還有風在他背後幫忙推呢！",
+      "strategy_tag": "比較評估",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG1H06:空:01",
+      "char": "空",
+      "sentence": "白雲在天空飄。",
+      "definition": "天空或空間。",
+      "options": [
+        "天空或空間。",
+        "裡面沒有東西。",
+        "閒餘的時間。"
+      ],
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；一字多義）"
+    },
+    {
+      "id": "polysemy:115AG1H06:空:02",
+      "char": "空",
+      "sentence": "房間裡是空的。",
+      "definition": "裡面沒有東西。",
+      "options": [
+        "天空或空間。",
+        "裡面沒有東西。",
+        "閒餘的時間。"
+      ],
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；一字多義）"
+    },
+    {
+      "id": "polysemy:115AG1H06:空:03",
+      "char": "空",
+      "sentence": "我有空就來找你。",
+      "definition": "閒餘的時間。",
+      "options": [
+        "天空或空間。",
+        "裡面沒有東西。",
+        "閒餘的時間。"
+      ],
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；一字多義）"
+    }
+  ],
   "polysemy_senses": [],
-  "polyphones": [],
-  "lookalikes": [],
-  "listening": [],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG1H06:子",
+      "char": "子",
+      "readings": [
+        {
+          "zhuyin": "ㄗ˙",
+          "definition": "附在名詞後的語助成分。",
+          "examples": [
+            "桌子",
+            "杯子"
+          ]
+        },
+        {
+          "zhuyin": "ㄗˇ",
+          "definition": "孩子、時辰或種子等意思。",
+          "examples": [
+            "子時",
+            "父子",
+            "瓜子"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；認識多音字；注音依官方標示）"
+    },
+    {
+      "id": "polyphone:115AG1H06:空",
+      "char": "空",
+      "readings": [
+        {
+          "zhuyin": "ㄎㄨㄥ",
+          "definition": "天空或沒有東西。",
+          "examples": [
+            "天空",
+            "空屋"
+          ]
+        },
+        {
+          "zhuyin": "ㄎㄨㄥˋ",
+          "definition": "閒餘或可使用的位置。",
+          "examples": [
+            "空閒",
+            "抽空",
+            "空位"
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；認識多音字；注音依官方標示）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG1H06:01",
+      "group_no": "1",
+      "question": "＿千",
+      "answer": "秋",
+      "chars": [
+        {
+          "char": "秋",
+          "zhuyin": null,
+          "example": "秋千"
+        },
+        {
+          "char": "科",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "秒",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H06:02",
+      "group_no": "2",
+      "question": "秋＿",
+      "answer": "千",
+      "chars": [
+        {
+          "char": "干",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "千",
+          "zhuyin": null,
+          "example": "秋千"
+        },
+        {
+          "char": "十",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H06:03",
+      "group_no": "3",
+      "question": "＿話",
+      "answer": "說",
+      "chars": [
+        {
+          "char": "話",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "語",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "說",
+          "zhuyin": null,
+          "example": "說話"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H06:04",
+      "group_no": "4",
+      "question": "＿在",
+      "answer": "陪",
+      "chars": [
+        {
+          "char": "部",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "陪",
+          "zhuyin": null,
+          "example": "陪在"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H06:05",
+      "group_no": "5",
+      "question": "花＿",
+      "answer": "田",
+      "chars": [
+        {
+          "char": "田",
+          "zhuyin": null,
+          "example": "花田"
+        },
+        {
+          "char": "由",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "甲",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "草",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H06:06",
+      "group_no": "6",
+      "question": "＿",
+      "answer": "早",
+      "chars": [
+        {
+          "char": "旱",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "早",
+          "zhuyin": null,
+          "example": "早"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H06:07",
+      "group_no": "7",
+      "question": "＿都是我的好朋友",
+      "answer": "他",
+      "chars": [
+        {
+          "char": "他",
+          "zhuyin": null,
+          "example": "他都是我的好朋友"
+        },
+        {
+          "char": "她",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "牠",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H06:08",
+      "group_no": "8",
+      "question": "公園裡看到＿千",
+      "answer": "秋",
+      "chars": [
+        {
+          "char": "科",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "秋",
+          "zhuyin": null,
+          "example": "公園裡看到秋千"
+        },
+        {
+          "char": "秒",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H06:09",
+      "group_no": "9",
+      "question": "公園裡看到秋＿",
+      "answer": "千",
+      "chars": [
+        {
+          "char": "干",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "十",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "千",
+          "zhuyin": null,
+          "example": "公園裡看到秋千"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    },
+    {
+      "id": "lookalike:115AG1H06:10",
+      "group_no": "10",
+      "question": "媽媽總是＿在我身邊",
+      "answer": "陪",
+      "chars": [
+        {
+          "char": "部",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "陪",
+          "zhuyin": null,
+          "example": "媽媽總是陪在我身邊"
+        }
+      ],
+      "status": "ready",
+      "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG1H06:01",
+      "stem": "秋千一下子高時，向誰問好？",
+      "question": "秋千一下子高時，向誰問好？",
+      "options": [
+        "小草。",
+        "小鳥。",
+        "小朋友。"
+      ],
+      "answer": "小草。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
+      "passage": "秋千一下子高，向小草問好。"
+    },
+    {
+      "id": "listening:115AG1H06:02",
+      "stem": "秋千和誰說早？",
+      "question": "秋千和誰說早？",
+      "options": [
+        "天空。",
+        "花田。",
+        "山谷。"
+      ],
+      "answer": "天空。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
+      "passage": "和天空說早。"
+    },
+    {
+      "id": "listening:115AG1H06:03",
+      "stem": "秋千一下子低時，去哪裡問一問？",
+      "question": "秋千一下子低時，去哪裡問一問？",
+      "options": [
+        "花田。",
+        "天空。",
+        "操場。"
+      ],
+      "answer": "花田。",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
+      "passage": "秋千一下子低，去花田問一問。"
+    }
+  ],
   "review_words": {
     "by_lesson": {
       "1": [
@@ -648,15 +1276,13 @@
     },
     "reading": {
       "label": "讀懂課文",
-      "status": "missing",
-      "activity": "reading",
-      "note": "一年級課文內容待整理為公開摘要；課文全文不放入公開網站。"
+      "status": "available",
+      "activity": "reading"
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
-      "activity": "sentence-practice",
-      "note": "句型資料待審核。"
+      "status": "available",
+      "activity": "sentence-practice"
     },
     "challenge": {
       "label": "動手挑戰",
@@ -671,39 +1297,34 @@
     },
     "idiom_builder": {
       "label": "生字變成語",
-      "status": "missing",
-      "activity": "idiom-builder",
-      "note": "一年級不安排成語題。"
+      "status": "available",
+      "activity": "idiom-builder"
     },
     "polysemy": {
       "label": "一字多義",
-      "status": "missing",
-      "activity": "polysemy",
-      "note": "一年級不安排一字多義題。"
+      "status": "available",
+      "activity": "polysemy"
     },
     "polyphones": {
       "label": "一字多音",
-      "status": "missing",
-      "activity": "polyphones",
-      "note": "多音字資料待審核。"
+      "status": "available",
+      "activity": "polyphones"
     },
     "lookalikes": {
       "label": "形似字",
-      "status": "missing",
-      "activity": "lookalikes",
-      "note": "形似字資料待審核。"
+      "status": "available",
+      "activity": "lookalikes"
     },
     "structure_map": {
       "label": "課文地圖",
-      "status": "missing",
-      "activity": "structure-map",
-      "note": "摘要資料待補。"
+      "status": "available",
+      "activity": "structure-map"
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
+      "status": "available",
       "activity": "listening-quiz",
-      "note": "聆聽題資料待審核。"
+      "note": "已依官方閱讀理解提問與課文關鍵語句逐題核對。"
     },
     "rhetoric": {
       "label": "修辭小偵探",

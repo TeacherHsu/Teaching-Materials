@@ -72,48 +72,54 @@ export function buildVocabularyActivity(lesson, onBack) {
 
     if (step === 'recognition') {
       const isLastRound = roundIndex === recognitionRounds.length - 1;
+      const canContinue = !isLastRound;
       container.appendChild(
         TaskBanner({
           label: '看圖片認識語詞：點選卡片查看解釋',
-          step: stepLabel,
+          step: canContinue ? `${stepLabel} ・ 本課先完成` : stepLabel,
         }),
       );
       const grid = h('div', { class: 'card-grid' });
       for (const w of recognitionRounds[roundIndex]) grid.appendChild(VocabularyCard(w));
       container.appendChild(grid);
-      const nextBtn = h(
-        'button',
-        { class: 'btn', type: 'button', style: 'margin-top:16px' },
-        isLastRound ? (isLastStep ? '完成' : '繼續：詞義配對') : '下一組',
-      );
-      nextBtn.addEventListener('click', () => {
-        if (!isLastRound) {
+      const proceed = () => {
+        if (canContinue) {
           roundIndex += 1;
-          renderStep();
         } else if (isLastStep) {
           onBack();
+          return;
         } else {
           stepIndex += 1;
           roundIndex = 0;
-          renderStep();
         }
-      });
-      container.appendChild(nextBtn);
+        renderStep();
+      };
+      if (canContinue) {
+        const actions = h('div', { class: 'activity-round-actions' });
+        actions.appendChild(h('button', { class: 'btn btn--secondary', type: 'button', onclick: onBack }, '本課先完成'));
+        actions.appendChild(h('button', { class: 'btn', type: 'button', onclick: proceed }, '加練下一組'));
+        container.appendChild(actions);
+      } else {
+        container.appendChild(h('button', { class: 'btn', type: 'button', style: 'margin-top:16px', onclick: proceed }, isLastStep ? '完成' : '繼續：詞義配對'));
+      }
       container.appendChild(PronunciationNotice());
     } else if (step === 'matching') {
       const isLastRound = roundIndex === matchingRounds.length - 1;
       container.appendChild(
-        TaskBanner({ label: '把語詞和意思配對起來', step: `${stepLabel} ・ 第 ${roundIndex + 1} 組／共 ${matchingRounds.length} 組` }),
+        TaskBanner({ label: '把語詞和意思配對起來', step: roundIndex === 0 ? '本課先完成' : '加練挑戰' }),
       );
       const pairs = matchingRounds[roundIndex].map((w) => ({ left: w.word, right: w.meaning }));
       container.appendChild(
         MatchingGame({
           pairs,
-          backLabel: isLastRound ? (isLastStep ? '回課程首頁' : '繼續：看義選詞') : '再來一組',
+          backLabel: isLastRound ? (isLastStep ? '回課程首頁' : '繼續：看義選詞') : '本課先完成',
+          onContinue: isLastRound ? null : () => {
+            roundIndex += 1;
+            renderStep();
+          },
           onBack: () => {
             if (!isLastRound) {
-              roundIndex += 1;
-              renderStep();
+              onBack();
             } else if (isLastStep) {
               onBack();
             } else {
@@ -127,16 +133,19 @@ export function buildVocabularyActivity(lesson, onBack) {
     } else if (step === 'choice') {
       const isLastRound = roundIndex === choiceRounds.length - 1;
       container.appendChild(
-        TaskBanner({ label: '看意思選出正確的語詞', step: `${stepLabel} ・ 第 ${roundIndex + 1} 組／共 ${choiceRounds.length} 組` }),
+        TaskBanner({ label: '看意思選出正確的語詞', step: roundIndex === 0 ? '本課先完成' : '加練挑戰' }),
       );
       container.appendChild(
         ChoiceQuiz({
           items: choiceRounds[roundIndex],
-          backLabel: isLastRound ? '回課程首頁' : '再來一組',
+          backLabel: isLastRound ? '回課程首頁' : '本課先完成',
+          onContinue: isLastRound ? null : () => {
+            roundIndex += 1;
+            renderStep();
+          },
           onBack: () => {
             if (!isLastRound) {
-              roundIndex += 1;
-              renderStep();
+              onBack();
             } else {
               onBack();
             }

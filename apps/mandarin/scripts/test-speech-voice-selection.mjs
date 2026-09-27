@@ -1,5 +1,6 @@
 // 驗證朗讀核心（src/utils/speech.js）：
-//   1. 聲音選擇：只有 zh-CN 時不選、回報缺台灣聲音；有 zh-TW／Meijia／Google 國語（臺灣）時選中。
+//   1. 聲音選擇：只有 zh-CN 時不選、回報缺台灣聲音；有 zh-TW／Meijia／Google 國語（臺灣）時選中；
+//      同時有多個臺灣聲音時優先選自然語音。
 //   2. 讀音替代表（TTS 替代字）套用：課次專屬 overrides 優先於全域表，全域表含「一會兒」案例。
 //   3. speak() 實際送進 SpeechSynthesisUtterance 的字串是替代後的文字，lang 固定 zh-TW。
 // 無新依賴，純 Node（scripts/fake-dom.mjs 的 DOM／speechSynthesis stub）。
@@ -46,6 +47,15 @@ const {
 
 console.log('PASS (1/3): 聲音選擇嚴格優先 zh-TW，不退回 zh-CN／zh-HK。');
 
+// --- 1e. 同時有多個臺灣聲音時，優先自然語音 ---
+{
+  const natural = { lang: 'zh-TW', name: 'Microsoft HsiaoChen Online (Natural) - Chinese (Taiwan)', localService: false };
+  const builtIn = { lang: 'zh-TW', name: 'Meijia', localService: true };
+  assert.equal(pickTaiwanVoice([builtIn, natural]), natural, '同時有多個臺灣聲音時應優先自然語音');
+}
+
+console.log('PASS (1e): 有自然語音時優先自然語音，沒有時保留臺灣內建聲音 fallback。');
+
 // --- 2. 讀音替代表 ---
 assert.equal(applySpeechOverrides('一會兒'), '義毀ㄦ', '全域替代表應涵蓋「一會兒」（ADR-0023 案例）');
 assert.equal(
@@ -53,6 +63,8 @@ assert.equal(
   '等義毀ㄦ再走',
   '含替代詞的長句也應正確替換',
 );
+assert.equal(applySpeechOverrides('馬偕'), '馬接', '專名「馬偕」應套用「馬接」讀法');
+assert.equal(applySpeechOverrides('馬偕來到臺灣'), '馬接來到臺灣', '含專名的長句也應套用「馬接」讀法');
 assert.equal(
   applySpeechOverrides('一會兒', [{ text: '一會兒', speak: '課次專屬讀法' }]),
   '課次專屬讀法',
@@ -67,16 +79,19 @@ console.log('PASS (2/3): 讀音替代表（TTS 替代字）套用邏輯正確，
   const synth = installFakeSpeechSynthesis([{ lang: 'zh-TW', name: 'Meijia' }]);
   let spokenText = null;
   let spokenLang = null;
+  let spokenRate = null;
   const originalSpeak = synth.speak.bind(synth);
   synth.speak = (utter) => {
     spokenText = utter.text;
     spokenLang = utter.lang;
+    spokenRate = utter.rate;
     originalSpeak(utter);
   };
   await ensureVoicesLoaded();
   await speak('一會兒');
   assert.equal(spokenText, '義毀ㄦ', '合成語音應唸替代後的字串，不是原字面');
   assert.equal(spokenLang, 'zh-TW', 'utterance.lang 應固定為 zh-TW');
+  assert.equal(spokenRate, 0.9, '預設語速應為 0.9');
 
   const shouldWarn = await shouldWarnNoTaiwanVoice();
   assert.equal(shouldWarn, false, '已有台灣聲音時不應顯示提示');

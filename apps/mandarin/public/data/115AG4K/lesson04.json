@@ -13,7 +13,7 @@
   "lesson_no": 4,
   "title": "永遠的馬偕",
   "author": "",
-  "blurb": "透過〈永遠的馬偕〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "按馬偕來臺、行醫和服務的先後，整理人物行動與帶來的影響。",
   "source_audit": [
     {
       "kind": "official",
@@ -387,7 +387,7 @@
     {
       "id": "word:115AG4K04:01",
       "word": "馬偕",
-      "zhuyin": "ㄇㄚˇㄒㄧㄝˊ",
+      "zhuyin": "ㄇㄚˇㄐㄧㄝ",
       "meaning": "馬偕博士（西元一八四四—一九○一年）是蘇格蘭裔的加拿大人。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -621,45 +621,55 @@
       "idiom": "耳提面命",
       "definition": "比喻懇切教誨。",
       "related_char": "命",
-      "image": "idioms/01_耳提面命.webp",
+      "image": "idioms/01_耳提面命-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:04:02",
       "idiom": "借花獻佛",
       "definition": "比喻借用他人的東西來作人情。",
       "related_char": "獻",
-      "image": "idioms/02_借花獻佛.webp",
+      "image": "idioms/02_借花獻佛-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:04:03",
       "idiom": "精衛填海",
       "definition": "比喻意志堅定，不懼艱苦。",
       "related_char": "衛",
-      "image": "idioms/03_精衛填海.webp",
+      "image": "idioms/03_精衛填海-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:04:04",
       "idiom": "良藥苦口",
       "definition": "能治好病的藥，多味苦難嚥。比喻諫言多不順耳，但卻有益於人。",
       "related_char": "藥",
-      "image": "idioms/04_良藥苦口.webp",
+      "image": "idioms/04_良藥苦口-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:04:05",
       "idiom": "打退堂鼓",
       "definition": "比喻中途退縮放棄。",
       "related_char": "堂",
-      "image": "idioms/05_打退堂鼓.webp",
+      "image": "idioms/05_打退堂鼓-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -913,9 +923,10 @@
         "到各地旅行",
         "開設商店"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "留在臺灣幫助人民",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K04:02",
@@ -927,9 +938,10 @@
         "販賣食物",
         "停止求醫"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "清理環境並宣導居家衛生",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K04:03",
@@ -941,9 +953,10 @@
         "舉辦比賽",
         "離開臺灣"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "興建醫院並創辦學校",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K04:04",
@@ -955,9 +968,10 @@
         "他善於經商",
         "他收藏很多物品"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "他長期奉獻並幫助人民",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -2431,12 +2445,13 @@
       "id": "listening:04:01",
       "stem": "馬偕是因為什麼原因來到臺灣？",
       "question": "馬偕是因為什麼原因來到臺灣？",
+      "passage": "在完成醫療和神學院的課程後，馬偕自願到海外傳福音。",
       "options": [
-        "他在完成醫療和神學院的課程後，就自願到海外傳福音",
-        "⑴衛生觀念不佳。⑵醫療資源不足。⑶人民接受教育情況不普及",
-        "事例一：「為了讓孩子有讀書的機會，他在當地創辦第一所新式學校，除了不收學費，還有免費食宿，讓學生可以專心學習。」表示馬偕興辦教育不是為了賺錢，而是為了讓學生有安……"
+        "完成醫療和神學院課程後，自願到海外傳福音",
+        "為了改善臺灣的衛生與醫療",
+        "為了在臺灣創辦新式學校"
       ],
-      "answer": "他在完成醫療和神學院的課程後，就自願到海外傳福音",
+      "answer": "完成醫療和神學院課程後，自願到海外傳福音",
       "status": "approved",
       "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
     },
@@ -2444,9 +2459,10 @@
       "id": "listening:04:02",
       "stem": "為什麼馬偕能獲得來自家鄉的捐款？",
       "question": "為什麼馬偕能獲得來自家鄉的捐款？",
+      "passage": "馬偕的善行很快傳回故鄉，熱心的地方人士不但認同馬偕的付出，還捐錢讓他能做更多的善事。",
       "options": [
-        "⑴衛生觀念不佳。⑵醫療資源不足。⑶人民接受教育情況不普及",
-        "事例一：「為了讓孩子有讀書的機會，他在當地創辦第一所新式學校，除了不收學費，還有免費食宿，讓學生可以專心學習。」表示馬偕興辦教育不是為了賺錢，而是為了讓學生有安……",
+        "因為臺灣當時缺乏衛生與醫療資源",
+        "因為他在臺灣創辦新式學校",
         "因為捐款的人都認同馬偕的善行"
       ],
       "answer": "因為捐款的人都認同馬偕的善行",
@@ -2457,12 +2473,13 @@
       "id": "listening:04:03",
       "stem": "本課題目為「永遠的馬偕」，為什麼用「永遠」二字？",
       "question": "本課題目為「永遠的馬偕」，為什麼用「永遠」二字？",
+      "passage": "他的愛心永遠留在人們的心中，他的故事也永遠流傳在這座美麗的寶島。",
       "options": [
-        "事例一：「為了讓孩子有讀書的機會，他在當地創辦第一所新式學校，除了不收學費，還有免費食宿，讓學生可以專心學習。」表示馬偕興辦教育不是為了賺錢，而是為了讓學生有安……",
-        "「永遠」二字出自最後一段：「他的愛心永遠留在人們的心中，他的故事也永遠流傳在這座美麗的寶島。」強調馬偕的精神對臺灣的影響永久而深遠",
-        "⑴衛生觀念不佳。⑵醫療資源不足。⑶人民接受教育情況不普及"
+        "因為他在臺灣創辦新式學校",
+        "因為他的愛心留在人們心中，故事也流傳在臺灣",
+        "因為臺灣當時缺乏衛生與醫療資源"
       ],
-      "answer": "「永遠」二字出自最後一段：「他的愛心永遠留在人們的心中，他的故事也永遠流傳在這座美麗的寶島。」強調馬偕的精神對臺灣的影響永久而深遠",
+      "answer": "因為他的愛心留在人們心中，故事也流傳在臺灣",
       "status": "approved",
       "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
     }

@@ -12,8 +12,8 @@
 import { SPEECH_OVERRIDES as globalOverrides } from '../data/speech-overrides.js';
 
 const RATE_KEY = 'mandarin:speech-rate';
-const DEFAULT_RATE = 0.85;
-export const RATE_PRESETS = { slow: 0.7, normal: 0.85, fast: 1.0 };
+const DEFAULT_RATE = 0.9;
+export const RATE_PRESETS = { slow: 0.7, normal: 0.9, fast: 1.0 };
 
 const TAIWAN_LANGS = ['zh-tw', 'zh_tw', 'cmn-hant-tw'];
 const TAIWAN_NAME_HINTS = [
@@ -29,6 +29,16 @@ const TAIWAN_NAME_HINTS = [
   'zhiwei',
 ];
 const NON_TAIWAN_ZH_LANGS = ['zh-cn', 'zh_cn', 'zh-hk', 'zh_hk', 'cmn-hans-cn', 'yue-hant-hk'];
+const NATURAL_TAIWAN_VOICE_HINTS = [
+  'online (natural)',
+  'online natural',
+  'natural',
+  'google 國語（臺灣）',
+  'google 國語(臺灣)',
+  'google mandarin (taiwan)',
+  'microsoft hsiaochen',
+  'microsoft yun jhe',
+];
 
 export function speechSupported() {
   return typeof window !== 'undefined' && 'speechSynthesis' in window;
@@ -77,8 +87,27 @@ function isNonTaiwanChinese(voice) {
  */
 export function pickTaiwanVoice(voices) {
   if (!voices || voices.length === 0) return null;
-  const taiwan = voices.find(isTaiwanVoice);
-  return taiwan || null;
+  const taiwan = voices.filter(isTaiwanVoice);
+  if (taiwan.length === 0) return null;
+
+  // 同樣是 zh-TW 時，優先選瀏覽器提供的自然語音（通常是 Microsoft
+  // Online (Natural) 或 Google 國語（臺灣）），再退回裝置內建聲音。
+  // 不把名稱寫死成單一平台，避免 Windows、Chrome、iOS 的清單差異造成無聲。
+  const score = (voice) => {
+    const name = (voice.name || '').toLowerCase();
+    const lang = (voice.lang || '').toLowerCase();
+    let value = 0;
+    if (lang === 'zh-tw') value += 30;
+    if (lang === 'cmn-hant-tw') value += 25;
+    if (NATURAL_TAIWAN_VOICE_HINTS.some((hint) => name.includes(hint.toLowerCase()))) value += 100;
+    if (name.includes('hsiaochen') || name.includes('小 Chen'.toLowerCase())) value += 10;
+    if (name.includes('yun jhe') || name.includes('雲哲')) value += 10;
+    if (voice.localService === false) value += 5;
+    return value;
+  };
+  return taiwan
+    .map((voice, index) => ({ voice, index, score: score(voice) }))
+    .sort((a, b) => b.score - a.score || a.index - b.index)[0].voice;
 }
 
 /** 是否完全沒有可用的台灣腔調聲音（用來決定要不要顯示提示）。 */

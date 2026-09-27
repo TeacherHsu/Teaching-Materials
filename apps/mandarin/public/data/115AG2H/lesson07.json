@@ -1,0 +1,2273 @@
+{
+  "lesson_id": "115AG2H07",
+  "volume": {
+    "code": "115AG2H",
+    "publisher": "翰林",
+    "grade": 2,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "二上國語課程"
+  },
+  "lesson_no": 7,
+  "title": "不一樣的美食",
+  "blurb": "比較竹筒飯、艾粄和越南春捲的故事，練習從對話整理食物特色。",
+  "characters": [
+    {
+      "char": "樣",
+      "zhuyin": "ㄧㄤˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "不一樣",
+        "樣子",
+        "一樣"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=樣",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽊",
+      "stroke_count": 15
+    },
+    {
+      "char": "食",
+      "zhuyin": "ㄕˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "美食",
+        "食物",
+        "食品"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=食",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾷",
+      "stroke_count": 9
+    },
+    {
+      "char": "郊",
+      "zhuyin": "ㄐㄧㄠ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "郊外",
+        "郊遊",
+        "近郊"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=郊",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾢",
+      "stroke_count": 8
+    },
+    {
+      "char": "活",
+      "zhuyin": "ㄏㄨㄛˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "活動",
+        "生活",
+        "活潑"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=活",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽔",
+      "stroke_count": 9
+    },
+    {
+      "char": "奇",
+      "zhuyin": "ㄑㄧˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "好奇",
+        "奇怪",
+        "奇妙"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=奇",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼤",
+      "stroke_count": 8
+    },
+    {
+      "char": "筒",
+      "zhuyin": "ㄊㄨㄥˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "竹筒",
+        "筆筒",
+        "筒子"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=筒",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽵",
+      "stroke_count": 12
+    },
+    {
+      "char": "香",
+      "zhuyin": "ㄒㄧㄤ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "香味",
+        "香水",
+        "香甜"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=香",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾹",
+      "stroke_count": 9
+    },
+    {
+      "char": "味",
+      "zhuyin": "ㄨㄟˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "香味",
+        "味道",
+        "美味"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=味",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼝",
+      "stroke_count": 8
+    },
+    {
+      "char": "便",
+      "zhuyin": "ㄅㄧㄢˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "便當盒",
+        "方便",
+        "便當"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=便",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼈",
+      "stroke_count": 9
+    },
+    {
+      "char": "當",
+      "zhuyin": "ㄉㄤ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "便當盒",
+        "當時",
+        "當然"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=當",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽥",
+      "stroke_count": 13
+    },
+    {
+      "char": "盒",
+      "zhuyin": "ㄏㄜˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "盒子",
+        "禮盒",
+        "紙盒"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=盒",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽫",
+      "stroke_count": 11
+    },
+    {
+      "char": "客",
+      "zhuyin": "ㄎㄜˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "客家人",
+        "客人",
+        "客家"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=客",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼧",
+      "stroke_count": 9
+    },
+    {
+      "char": "清",
+      "zhuyin": "ㄑㄧㄥ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "清明節",
+        "清楚",
+        "清明"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=清",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽔",
+      "stroke_count": 11
+    },
+    {
+      "char": "節",
+      "zhuyin": "ㄐㄧㄝˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "清明節",
+        "節日",
+        "節目"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=節",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽵",
+      "stroke_count": 13
+    },
+    {
+      "char": "保",
+      "zhuyin": "ㄅㄠˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "保平安",
+        "保護",
+        "保留"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=保",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼈",
+      "stroke_count": 9
+    },
+    {
+      "char": "平",
+      "zhuyin": "ㄆㄧㄥˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "保平安",
+        "平安",
+        "和平"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=平",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼲",
+      "stroke_count": 5
+    },
+    {
+      "char": "安",
+      "zhuyin": "ㄢ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "保平安",
+        "安全",
+        "平安"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=安",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼧",
+      "stroke_count": 6
+    },
+    {
+      "char": "南",
+      "zhuyin": "ㄋㄢˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "越南春捲",
+        "南方",
+        "南部"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=南",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼗",
+      "stroke_count": 9
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG2H07:01",
+      "word": "便當盒",
+      "zhuyin": null,
+      "meaning": "飯盒。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson07/vocabulary/l07-01.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H07:02",
+      "word": "祖先",
+      "zhuyin": null,
+      "meaning": "始祖或歷代的先人。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson07/vocabulary/l07-02.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H07:03",
+      "word": "香味",
+      "zhuyin": null,
+      "meaning": "芳香的氣味。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson07/vocabulary/l07-03.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H07:04",
+      "word": "竹筒",
+      "zhuyin": null,
+      "meaning": "竹橫截成段，節與節間的中空部分可用來裝東西，故稱為「竹筒」。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson07/vocabulary/l07-04.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H07:05",
+      "word": "好奇",
+      "zhuyin": null,
+      "meaning": "對於自己所不了解的事物，覺得新奇而感興趣。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson07/vocabulary/l07-05.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H07:06",
+      "word": "活動",
+      "zhuyin": null,
+      "meaning": "運動，使血脈暢通，以增進身體健康。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson07/vocabulary/l07-06.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H07:07",
+      "word": "郊外",
+      "zhuyin": null,
+      "meaning": "環繞城市外面的地方。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson07/vocabulary/l07-07.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H07:08",
+      "word": "美食",
+      "zhuyin": null,
+      "meaning": "美味的食物。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson07/vocabulary/l07-08.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H07:09",
+      "word": "不一樣",
+      "zhuyin": null,
+      "meaning": "不相同。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson07/vocabulary/l07-09.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H07:10",
+      "word": "越南春捲",
+      "zhuyin": null,
+      "meaning": "越南的春捲，用米紙包著生菜和肉類。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson07/vocabulary/l07-10.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H07:11",
+      "word": "保平安",
+      "zhuyin": null,
+      "meaning": "維護不使遭受危險。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson07/vocabulary/l07-11.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H07:12",
+      "word": "清明節",
+      "zhuyin": null,
+      "meaning": "祭祖、掃墓的傳統節日。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson07/vocabulary/l07-12.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H07:13",
+      "word": "客家人",
+      "zhuyin": null,
+      "meaning": "現在居住於臺灣，多由廣東遷來的，稱為「客家人」。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson07/vocabulary/l07-13.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H07:14",
+      "word": "艾粄",
+      "zhuyin": null,
+      "meaning": "用米和艾草製成的食品。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson07/vocabulary/l07-14.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "word_meanings": [
+    {
+      "id": "meaning:115AG2H07:01",
+      "word": "便當盒",
+      "meaning": "飯盒。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H07:02",
+      "word": "祖先",
+      "meaning": "始祖或歷代的先人。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H07:03",
+      "word": "香味",
+      "meaning": "芳香的氣味。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H07:04",
+      "word": "竹筒",
+      "meaning": "竹橫截成段，節與節間的中空部分可用來裝東西，故稱為「竹筒」。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H07:05",
+      "word": "好奇",
+      "meaning": "對於自己所不了解的事物，覺得新奇而感興趣。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H07:06",
+      "word": "活動",
+      "meaning": "運動，使血脈暢通，以增進身體健康。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H07:07",
+      "word": "郊外",
+      "meaning": "環繞城市外面的地方。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H07:08",
+      "word": "美食",
+      "meaning": "美味的食物。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H07:09",
+      "word": "不一樣",
+      "meaning": "不相同。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H07:10",
+      "word": "越南春捲",
+      "meaning": "越南的春捲，用米紙包著生菜和肉類。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H07:11",
+      "word": "保平安",
+      "meaning": "維護不使遭受危險。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H07:12",
+      "word": "清明節",
+      "meaning": "祭祖、掃墓的傳統節日。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H07:13",
+      "word": "客家人",
+      "meaning": "現在居住於臺灣，多由廣東遷來的，稱為「客家人」。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H07:14",
+      "word": "艾粄",
+      "meaning": "用米和艾草製成的食品。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    }
+  ],
+  "sentences": [
+    {
+      "category": "短語練習",
+      "pattern": "教大家做越南春捲",
+      "examples": [
+        "教外婆玩桌遊",
+        "教妹妹打籃球"
+      ],
+      "description": "說明教導人或物做某件事。",
+      "structure": "教＋名詞（誰）＋動詞（做什麼事）",
+      "id": "sentence-pattern:115AG2H07:01",
+      "head": "教大家做越南春捲",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短句練習",
+      "pattern": "你怎麼帶竹筒來？",
+      "examples": [
+        "哥哥怎麼還沒來？",
+        "小貓怎麼跑走了？"
+      ],
+      "description": "加上﹁怎麼﹂變成疑問句。",
+      "structure": "名詞（人或物）＋怎麼＋動詞（做什麼事）？",
+      "id": "sentence-pattern:115AG2H07:02",
+      "head": "你怎麼帶竹筒來？",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "這是竹筒飯，有竹子的香味，有奶奶的愛心，還有祖先的故事。",
+      "examples": [
+        "蛋糕上，有酸酸的草莓，有甜甜的水蜜桃，還有香香的巧克力。",
+        "公園裡，有五顏六色的花朵，有飛來飛去的蝴蝶，還有好玩的秋千。"
+      ],
+      "description": "表達事物包含了三個特別的地方。",
+      "id": "sentence-pattern:115AG2H07:03",
+      "head": "這是竹筒飯，有竹子的香味，有奶奶的愛心，還有祖先的故事。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "客家人會在清明節吃艾粄，不但好吃，還可以保平安。",
+      "examples": [
+        "奶奶織的毛衣不但合身，還很保暖。",
+        "媽媽煮的義大利麵，不但放滿新鮮的蛤蜊，還有多汁的甜椒，真是美味！"
+      ],
+      "description": "強調事物有兩個特別的地方。",
+      "id": "sentence-pattern:115AG2H07:04",
+      "head": "客家人會在清明節吃艾粄，不但好吃，還可以保平安。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "idioms": [
+    {
+      "id": "idiom:115AG2H07:01",
+      "idiom": "裝模作樣",
+      "definition": "故意做作，不是出於自然的表現。",
+      "related_char": "樣",
+      "image": "idioms/01_裝模作樣-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H07:02",
+      "idiom": "生龍活虎",
+      "definition": "像有活力的龍、虎一樣。比喻活潑勇猛，充滿生氣。",
+      "related_char": "活",
+      "image": "idioms/02_生龍活虎-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H07:03",
+      "idiom": "出奇制勝",
+      "definition": "比喻用奇特、創新的方法取得好效果。",
+      "related_char": "奇",
+      "image": "idioms/03_出奇制勝-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H07:04",
+      "idiom": "節外生枝",
+      "definition": "枝節上又生出分枝。比喻事外又生事端。",
+      "related_char": "節",
+      "image": "idioms/04_節外生枝-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H07:05",
+      "idiom": "風平浪靜",
+      "definition": "比喻平靜無事，或事情狀況穩定。",
+      "related_char": "平",
+      "image": "idioms/05_風平浪靜-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H07:06",
+      "idiom": "安分守己",
+      "definition": "安於本分，小心遵守身分。",
+      "related_char": "安",
+      "image": "idioms/06_安分守己-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:115AG2H07:01",
+      "idiom_id": "idiom:115AG2H07:01",
+      "rewritten": "他裝模作樣的道歉，很難讓人原諒他。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H07:02",
+      "idiom_id": "idiom:115AG2H07:02",
+      "rewritten": "球場上的同學們，個個生龍活虎，非常有活力的樣子。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H07:03",
+      "idiom_id": "idiom:115AG2H07:03",
+      "rewritten": "這次球賽，教練的戰略出奇制勝，我們終於贏得冠軍。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H07:04",
+      "idiom_id": "idiom:115AG2H07:04",
+      "rewritten": "這消息越多人知道，越會節外生枝。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H07:05",
+      "idiom_id": "idiom:115AG2H07:05",
+      "rewritten": "這件事總算風平浪靜的過去了。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H07:06",
+      "idiom_id": "idiom:115AG2H07:06",
+      "rewritten": "他經過這次可怕的事件，終於知道安分守己了。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "category": "短語練習",
+      "pattern": "教大家做越南春捲",
+      "examples": [
+        "教外婆玩桌遊",
+        "教妹妹打籃球"
+      ],
+      "description": "說明教導人或物做某件事。",
+      "structure": "教＋名詞（誰）＋動詞（做什麼事）",
+      "id": "sentence-pattern:115AG2H07:01",
+      "head": "教大家做越南春捲",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短句練習",
+      "pattern": "你怎麼帶竹筒來？",
+      "examples": [
+        "哥哥怎麼還沒來？",
+        "小貓怎麼跑走了？"
+      ],
+      "description": "加上﹁怎麼﹂變成疑問句。",
+      "structure": "名詞（人或物）＋怎麼＋動詞（做什麼事）？",
+      "id": "sentence-pattern:115AG2H07:02",
+      "head": "你怎麼帶竹筒來？",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "這是竹筒飯，有竹子的香味，有奶奶的愛心，還有祖先的故事。",
+      "examples": [
+        "蛋糕上，有酸酸的草莓，有甜甜的水蜜桃，還有香香的巧克力。",
+        "公園裡，有五顏六色的花朵，有飛來飛去的蝴蝶，還有好玩的秋千。"
+      ],
+      "description": "表達事物包含了三個特別的地方。",
+      "id": "sentence-pattern:115AG2H07:03",
+      "head": "這是竹筒飯，有竹子的香味，有奶奶的愛心，還有祖先的故事。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "客家人會在清明節吃艾粄，不但好吃，還可以保平安。",
+      "examples": [
+        "奶奶織的毛衣不但合身，還很保暖。",
+        "媽媽煮的義大利麵，不但放滿新鮮的蛤蜊，還有多汁的甜椒，真是美味！"
+      ],
+      "description": "強調事物有兩個特別的地方。",
+      "id": "sentence-pattern:115AG2H07:04",
+      "head": "客家人會在清明節吃艾粄，不但好吃，還可以保平安。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG2H07:奇:01",
+      "char": "奇",
+      "sentence": "生活中，我們會用到《稀奇》這個詞。",
+      "definition": "特別、少有",
+      "options": [
+        "特別、少有",
+        "怪異、出人意料",
+        "單數的"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:奇:02",
+      "char": "奇",
+      "sentence": "生活中，我們會用到《奇怪》這個詞。",
+      "definition": "怪異、出人意料",
+      "options": [
+        "特別、少有",
+        "怪異、出人意料",
+        "單數的"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:奇:03",
+      "char": "奇",
+      "sentence": "生活中，我們會用到《奇數》這個詞。",
+      "definition": "單數的",
+      "options": [
+        "特別、少有",
+        "怪異、出人意料",
+        "單數的"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:便:01",
+      "char": "便",
+      "sentence": "生活中，我們會用到《方便》這個詞。",
+      "definition": "順利、無阻礙的",
+      "options": [
+        "順利、無阻礙的",
+        "簡單的、不是正式的",
+        "適當的時機",
+        "即、就",
+        "價格低",
+        "肥胖的樣子"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:便:02",
+      "char": "便",
+      "sentence": "生活中，我們會用到《隨便》這個詞。",
+      "definition": "簡單的、不是正式的",
+      "options": [
+        "順利、無阻礙的",
+        "簡單的、不是正式的",
+        "適當的時機",
+        "即、就",
+        "價格低",
+        "肥胖的樣子"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:便:03",
+      "char": "便",
+      "sentence": "生活中，我們會用到《順便》這個詞。",
+      "definition": "適當的時機",
+      "options": [
+        "順利、無阻礙的",
+        "簡單的、不是正式的",
+        "適當的時機",
+        "即、就",
+        "價格低",
+        "肥胖的樣子"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:便:04",
+      "char": "便",
+      "sentence": "生活中，我們會用到《他一早便走了》這個詞。",
+      "definition": "即、就",
+      "options": [
+        "順利、無阻礙的",
+        "簡單的、不是正式的",
+        "適當的時機",
+        "即、就",
+        "價格低",
+        "肥胖的樣子"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:便:05",
+      "char": "便",
+      "sentence": "生活中，我們會用到《便宜》這個詞。",
+      "definition": "價格低",
+      "options": [
+        "順利、無阻礙的",
+        "簡單的、不是正式的",
+        "適當的時機",
+        "即、就",
+        "價格低",
+        "肥胖的樣子"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:便:06",
+      "char": "便",
+      "sentence": "生活中，我們會用到《大腹便便。 5. 4. 3. 2. 1. 阻 組 祖 妹 味 洞 筒 哥 奇 話 活 ：阻止》這個詞。",
+      "definition": "肥胖的樣子",
+      "options": [
+        "順利、無阻礙的",
+        "簡單的、不是正式的",
+        "適當的時機",
+        "即、就",
+        "價格低",
+        "肥胖的樣子"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:當:01",
+      "char": "當",
+      "sentence": "生活中，我們會用到《當班長》這個詞。",
+      "definition": "擔任",
+      "options": [
+        "擔任",
+        "指時間、位置正處於某點",
+        "對著",
+        "應該",
+        "合宜、適合",
+        "視為、認為",
+        "圈套"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:當:02",
+      "char": "當",
+      "sentence": "生活中，我們會用到《當天》這個詞。",
+      "definition": "指時間、位置正處於某點",
+      "options": [
+        "擔任",
+        "指時間、位置正處於某點",
+        "對著",
+        "應該",
+        "合宜、適合",
+        "視為、認為",
+        "圈套"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:當:03",
+      "char": "當",
+      "sentence": "生活中，我們會用到《當面》這個詞。",
+      "definition": "對著",
+      "options": [
+        "擔任",
+        "指時間、位置正處於某點",
+        "對著",
+        "應該",
+        "合宜、適合",
+        "視為、認為",
+        "圈套"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:當:04",
+      "char": "當",
+      "sentence": "生活中，我們會用到《當然》這個詞。",
+      "definition": "應該",
+      "options": [
+        "擔任",
+        "指時間、位置正處於某點",
+        "對著",
+        "應該",
+        "合宜、適合",
+        "視為、認為",
+        "圈套"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:當:05",
+      "char": "當",
+      "sentence": "生活中，我們會用到《恰當》這個詞。",
+      "definition": "合宜、適合",
+      "options": [
+        "擔任",
+        "指時間、位置正處於某點",
+        "對著",
+        "應該",
+        "合宜、適合",
+        "視為、認為",
+        "圈套"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:當:06",
+      "char": "當",
+      "sentence": "生活中，我們會用到《當作》這個詞。",
+      "definition": "視為、認為",
+      "options": [
+        "擔任",
+        "指時間、位置正處於某點",
+        "對著",
+        "應該",
+        "合宜、適合",
+        "視為、認為",
+        "圈套"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:當:07",
+      "char": "當",
+      "sentence": "生活中，我們會用到《上當》這個詞。",
+      "definition": "圈套",
+      "options": [
+        "擔任",
+        "指時間、位置正處於某點",
+        "對著",
+        "應該",
+        "合宜、適合",
+        "視為、認為",
+        "圈套"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:好:01",
+      "char": "好",
+      "sentence": "生活中，我們會用到《好客》這個詞。",
+      "definition": "喜愛、喜歡",
+      "options": [
+        "喜愛、喜歡",
+        "美善的、良善的",
+        "和睦、親愛",
+        "容易",
+        "完成",
+        "恢復健康",
+        "很、非常",
+        "放在某些動詞、量詞、時間詞 之前，有強調或表示程度深的 語氣"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:好:02",
+      "char": "好",
+      "sentence": "生活中，我們會用到《好人》這個詞。",
+      "definition": "美善的、良善的",
+      "options": [
+        "喜愛、喜歡",
+        "美善的、良善的",
+        "和睦、親愛",
+        "容易",
+        "完成",
+        "恢復健康",
+        "很、非常",
+        "放在某些動詞、量詞、時間詞 之前，有強調或表示程度深的 語氣"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:好:03",
+      "char": "好",
+      "sentence": "生活中，我們會用到《好朋友》這個詞。",
+      "definition": "和睦、親愛",
+      "options": [
+        "喜愛、喜歡",
+        "美善的、良善的",
+        "和睦、親愛",
+        "容易",
+        "完成",
+        "恢復健康",
+        "很、非常",
+        "放在某些動詞、量詞、時間詞 之前，有強調或表示程度深的 語氣"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:好:04",
+      "char": "好",
+      "sentence": "生活中，我們會用到《這件事好解決！》這個詞。",
+      "definition": "容易",
+      "options": [
+        "喜愛、喜歡",
+        "美善的、良善的",
+        "和睦、親愛",
+        "容易",
+        "完成",
+        "恢復健康",
+        "很、非常",
+        "放在某些動詞、量詞、時間詞 之前，有強調或表示程度深的 語氣"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:好:05",
+      "char": "好",
+      "sentence": "生活中，我們會用到《做好了！》這個詞。",
+      "definition": "完成",
+      "options": [
+        "喜愛、喜歡",
+        "美善的、良善的",
+        "和睦、親愛",
+        "容易",
+        "完成",
+        "恢復健康",
+        "很、非常",
+        "放在某些動詞、量詞、時間詞 之前，有強調或表示程度深的 語氣"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:好:06",
+      "char": "好",
+      "sentence": "生活中，我們會用到《頭痛好了》這個詞。",
+      "definition": "恢復健康",
+      "options": [
+        "喜愛、喜歡",
+        "美善的、良善的",
+        "和睦、親愛",
+        "容易",
+        "完成",
+        "恢復健康",
+        "很、非常",
+        "放在某些動詞、量詞、時間詞 之前，有強調或表示程度深的 語氣"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:好:07",
+      "char": "好",
+      "sentence": "生活中，我們會用到《好冷》這個詞。",
+      "definition": "很、非常",
+      "options": [
+        "喜愛、喜歡",
+        "美善的、良善的",
+        "和睦、親愛",
+        "容易",
+        "完成",
+        "恢復健康",
+        "很、非常",
+        "放在某些動詞、量詞、時間詞 之前，有強調或表示程度深的 語氣"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H07:好:08",
+      "char": "好",
+      "sentence": "生活中，我們會用到《好看》這個詞。",
+      "definition": "放在某些動詞、量詞、時間詞 之前，有強調或表示程度深的 語氣",
+      "options": [
+        "喜愛、喜歡",
+        "美善的、良善的",
+        "和睦、親愛",
+        "容易",
+        "完成",
+        "恢復健康",
+        "很、非常",
+        "放在某些動詞、量詞、時間詞 之前，有強調或表示程度深的 語氣"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG2H07:奇",
+      "char": "奇",
+      "readings": [
+        {
+          "zhuyin": "ㄑㄧˊ",
+          "senses": [
+            {
+              "definition": "特別、少有",
+              "examples": [
+                "稀奇"
+              ]
+            },
+            {
+              "definition": "怪異、出人意料",
+              "examples": [
+                "奇怪"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄐㄧ",
+          "senses": [
+            {
+              "definition": "單數的",
+              "examples": [
+                "奇數"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    },
+    {
+      "id": "polyphone:115AG2H07:便",
+      "char": "便",
+      "readings": [
+        {
+          "zhuyin": "ㄅㄧㄢˋ",
+          "senses": [
+            {
+              "definition": "順利、無阻礙的",
+              "examples": [
+                "方便"
+              ]
+            },
+            {
+              "definition": "簡單的、不是正式的",
+              "examples": [
+                "隨便"
+              ]
+            },
+            {
+              "definition": "適當的時機",
+              "examples": [
+                "順便"
+              ]
+            },
+            {
+              "definition": "即、就",
+              "examples": [
+                "他一早便走了"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄆㄧㄢˊ",
+          "senses": [
+            {
+              "definition": "價格低",
+              "examples": [
+                "便宜"
+              ]
+            },
+            {
+              "definition": "肥胖的樣子",
+              "examples": [
+                "大腹便便。 5. 4. 3. 2. 1. 阻 組 祖 妹 味 洞 筒 哥 奇 話 活 ：阻止",
+                "阻擋 ：組合",
+                "分組 ：祖父",
+                "祖先 ：妹妹",
+                "姐妹 ：味道",
+                "香味 ：洞穴",
+                "山洞 ：竹筒",
+                "手電筒 ：表哥",
+                "哥哥 ：奇怪",
+                "神奇 ：說話",
+                "電話 ：生活",
+                "活水 10. 9. 8. 7. 6. 即 節 容 客 返 板 版 粄 盆 盒 常 當 ：立即",
+                "即刻 ：節目",
+                "節省 ：容易",
+                "笑容 ：客人",
+                "請客 ：返回",
+                "往返 ：木板",
+                "地板 ：版面",
+                "出版 ：粄條",
+                "艾粄 ：臉盆",
+                "花盆 ：餐盒",
+                "盒子 ：常常",
+                "時常 ：當時",
+                "當心 32 3.當 4.好"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    },
+    {
+      "id": "polyphone:115AG2H07:當",
+      "char": "當",
+      "readings": [
+        {
+          "zhuyin": "ㄉㄤ",
+          "senses": [
+            {
+              "definition": "擔任",
+              "examples": [
+                "當班長"
+              ]
+            },
+            {
+              "definition": "指時間、位置正處於某點",
+              "examples": [
+                "當天",
+                "當時"
+              ]
+            },
+            {
+              "definition": "對著",
+              "examples": [
+                "當面"
+              ]
+            },
+            {
+              "definition": "應該",
+              "examples": [
+                "當然"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄉㄤˋ",
+          "senses": [
+            {
+              "definition": "合宜、適合",
+              "examples": [
+                "恰當"
+              ]
+            },
+            {
+              "definition": "視為、認為",
+              "examples": [
+                "當作"
+              ]
+            },
+            {
+              "definition": "圈套",
+              "examples": [
+                "上當"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    },
+    {
+      "id": "polyphone:115AG2H07:好",
+      "char": "好",
+      "readings": [
+        {
+          "zhuyin": "ㄏㄠˋ",
+          "senses": [
+            {
+              "definition": "喜愛、喜歡",
+              "examples": [
+                "好客"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄏㄠˇ",
+          "senses": [
+            {
+              "definition": "美善的、良善的",
+              "examples": [
+                "好人"
+              ]
+            },
+            {
+              "definition": "和睦、親愛",
+              "examples": [
+                "好朋友"
+              ]
+            },
+            {
+              "definition": "容易",
+              "examples": [
+                "這件事好解決！"
+              ]
+            },
+            {
+              "definition": "完成",
+              "examples": [
+                "做好了！"
+              ]
+            },
+            {
+              "definition": "恢復健康",
+              "examples": [
+                "頭痛好了"
+              ]
+            },
+            {
+              "definition": "很、非常",
+              "examples": [
+                "好冷"
+              ]
+            },
+            {
+              "definition": "放在某些動詞、量詞、時間詞 之前，有強調或表示程度深的 語氣",
+              "examples": [
+                "好看",
+                "好笑"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG2H07:01",
+      "stem": "請仔細聽題目：觀察課文圖片，說一說，明光班上到郊外活動時，午餐的方式是什麼？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "每個人帶自己的午餐，在戶外野餐。",
+        "拿竹筒飯的是小星；女生是小花。",
+        "竹子的香味，奶奶的愛心和祖先的故事。"
+      ],
+      "answer": "每個人帶自己的午餐，在戶外野餐。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "今天，老師帶我們到郊外活動。"
+    },
+    {
+      "id": "listening:115AG2H07:02",
+      "stem": "請仔細聽題目：觀察第75頁的圖片，裡面的小朋友哪一個是小星、明光和小花？為什麼？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "拿竹筒飯的是小星；女生是小花。",
+        "每個人帶自己的午餐，在戶外野餐。",
+        "竹子的香味，奶奶的愛心和祖先的故事。"
+      ],
+      "answer": "拿竹筒飯的是小星；女生是小花。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "小星把竹筒打開，裡面包著飯。"
+    },
+    {
+      "id": "listening:115AG2H07:03",
+      "stem": "請仔細聽題目：說說看，小星的竹筒飯裡除了包著飯，還有什麼呢？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "竹子的香味，奶奶的愛心和祖先的故事。",
+        "每個人帶自己的午餐，在戶外野餐。",
+        "拿竹筒飯的是小星；女生是小花。"
+      ],
+      "answer": "竹子的香味，奶奶的愛心和祖先的故事。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "這是竹筒飯，有竹子的香味，有奶奶的愛心，還有祖先的故事。"
+    },
+    {
+      "id": "listening:115AG2H07:04",
+      "stem": "請仔細聽題目：為什麼在清明節，客家人要吃艾粄？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "除了好吃，還能夠保平安。",
+        "每個人帶自己的午餐，在戶外野餐。",
+        "拿竹筒飯的是小星；女生是小花。"
+      ],
+      "answer": "除了好吃，還能夠保平安。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "這是艾粄。媽媽說，客家人會在清明節吃艾粄，不但好吃，還可以保平安。"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG2H07:01",
+      "para_no": 1,
+      "summary": "郊外活動時，明光問小星為什麼要帶竹筒來。",
+      "structure_role": "第1段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H07:02",
+      "para_no": 2,
+      "summary": "小星說這是竹筒飯，有奶奶的愛心和祖先的故事。",
+      "structure_role": "第2段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H07:03",
+      "para_no": 3,
+      "summary": "小花說客家艾粄好吃又可以保平安。",
+      "structure_role": "第3段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H07:04",
+      "para_no": 4,
+      "summary": "明光下星期請家人到學校說關於越南春捲的故事。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "id": "main_idea:115AG2H07:01",
+    "gist": "郊外活動的午餐時間，大家分享自己帶來的食物，說著關於食物的故事，大家都期待下星期二班上的活動，明光的家人介紹越南春捲。",
+    "theme": "透過同學們的對話，開啟「竹筒飯」、「艾粄」、「越南春捲」三種美食的話題。",
+    "status": "approved",
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG2H07:01",
+      "stem": "觀察課文圖片，說一說，明光班上到郊外活動時，午餐的方式是什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "每個人帶自己的午餐，在戶外野餐。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H07:02",
+      "stem": "觀察第75頁的圖片，裡面的小朋友哪一個是小星、明光和小花？為什麼？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "藍色野餐墊上，拿著竹筒飯的是小星，因為課文裡有提到小星帶竹筒，所以右邊的男生是小星。小花帶客家艾粄，她也是唯一的女生。剩下的中間那一個男孩就是明光。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H07:03",
+      "stem": "說說看，小星的竹筒飯裡除了包著飯，還有什麼呢？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "竹子的香味，奶奶的愛心和祖先的故事。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H07:04",
+      "stem": "為什麼在清明節，客家人要吃艾粄？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "除了好吃，還能夠保平安。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H07:05",
+      "stem": "說一說，小星班上可能會有哪些族群的人呢？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "原住民、客家人和越南人。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H07:06",
+      "stem": "從小星說的話裡，你覺得小星是一個怎麼樣的人，為什麼？",
+      "strategy_tag": "比較評估",
+      "answer_hint": "小星是個很細心的人，因為他能感受到竹筒飯的意義。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H07:07",
+      "stem": "想一想，為什麼美食會不一樣呢？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "因為班上每個同學的家人，都來自於不同的地區，每個族群都有自己的生活方式、飲食習慣，所以有不一樣的美食。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG2H07:01",
+      "group_no": "1",
+      "question": "____動",
+      "answer": "活",
+      "chars": [
+        {
+          "char": "活",
+          "zhuyin": null,
+          "example": "活動"
+        },
+        {
+          "char": "話",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H07:02",
+      "group_no": "2",
+      "question": "好____",
+      "answer": "奇",
+      "chars": [
+        {
+          "char": "奇",
+          "zhuyin": null,
+          "example": "好奇"
+        },
+        {
+          "char": "哥",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H07:03",
+      "group_no": "3",
+      "question": "竹____",
+      "answer": "筒",
+      "chars": [
+        {
+          "char": "筒",
+          "zhuyin": null,
+          "example": "竹筒"
+        },
+        {
+          "char": "洞",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H07:04",
+      "group_no": "4",
+      "question": "香____",
+      "answer": "味",
+      "chars": [
+        {
+          "char": "味",
+          "zhuyin": null,
+          "example": "香味"
+        },
+        {
+          "char": "妹",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H07:05",
+      "group_no": "5",
+      "question": "____先",
+      "answer": "祖",
+      "chars": [
+        {
+          "char": "祖",
+          "zhuyin": null,
+          "example": "祖先"
+        },
+        {
+          "char": "組",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "阻",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H07:06",
+      "group_no": "6",
+      "question": "便____盒",
+      "answer": "當",
+      "chars": [
+        {
+          "char": "當",
+          "zhuyin": null,
+          "example": "便當盒"
+        },
+        {
+          "char": "常",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H07:07",
+      "group_no": "7",
+      "question": "便當____",
+      "answer": "盒",
+      "chars": [
+        {
+          "char": "盒",
+          "zhuyin": null,
+          "example": "便當盒"
+        },
+        {
+          "char": "盆",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H07:08",
+      "group_no": "8",
+      "question": "艾____",
+      "answer": "粄",
+      "chars": [
+        {
+          "char": "粄",
+          "zhuyin": null,
+          "example": "艾粄"
+        },
+        {
+          "char": "版",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "板",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "返",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H07:09",
+      "group_no": "9",
+      "question": "____家人",
+      "answer": "客",
+      "chars": [
+        {
+          "char": "客",
+          "zhuyin": null,
+          "example": "客家人"
+        },
+        {
+          "char": "容",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H07:10",
+      "group_no": "10",
+      "question": "清明____",
+      "answer": "節",
+      "chars": [
+        {
+          "char": "節",
+          "zhuyin": null,
+          "example": "清明節"
+        },
+        {
+          "char": "即",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「樣」的部首是哪一個？",
+      "options": [
+        "⽫",
+        "⾷",
+        "⽔"
+      ],
+      "answer": "⽊",
+      "explanation": "「樣」的部首是⽊。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「食」的部首是哪一個？",
+      "options": [
+        "⽊",
+        "⼤",
+        "⽥"
+      ],
+      "answer": "⾷",
+      "explanation": "「食」的部首是⾷。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「郊」的部首是哪一個？",
+      "options": [
+        "⼈",
+        "⼤",
+        "⽔"
+      ],
+      "answer": "⾢",
+      "explanation": "「郊」的部首是⾢。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「便當盒」是什麼意思？",
+      "options": [
+        "維護不使遭受危險。",
+        "祭祖、掃墓的傳統節日。",
+        "越南的春捲，用米紙包著生菜和肉類。"
+      ],
+      "answer": "飯盒。",
+      "explanation": "便當盒：飯盒。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「祖先」是什麼意思？",
+      "options": [
+        "美味的食物。",
+        "對於自己所不了解的事物，覺得新奇而感興趣。",
+        "飯盒。"
+      ],
+      "answer": "始祖或歷代的先人。",
+      "explanation": "祖先：始祖或歷代的先人。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「香味」是什麼意思？",
+      "options": [
+        "運動，使血脈暢通，以增進身體健康。",
+        "竹橫截成段，節與節間的中空部分可用來裝東西，故稱為「竹筒」。",
+        "芳香的氣味。"
+      ],
+      "answer": "芳香的氣味。",
+      "explanation": "香味：芳香的氣味。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「竹筒」是什麼意思？",
+      "options": [
+        "越南的春捲，用米紙包著生菜和肉類。",
+        "不相同。",
+        "維護不使遭受危險。"
+      ],
+      "answer": "竹橫截成段，節與節間的中空部分可用來裝東西，故稱為「竹筒」。",
+      "explanation": "竹筒：竹橫截成段，節與節間的中空部分可用來裝東西，故稱為「竹筒」。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「好奇」是什麼意思？",
+      "options": [
+        "越南的春捲，用米紙包著生菜和肉類。",
+        "美味的食物。",
+        "竹橫截成段，節與節間的中空部分可用來裝東西，故稱為「竹筒」。"
+      ],
+      "answer": "對於自己所不了解的事物，覺得新奇而感興趣。",
+      "explanation": "好奇：對於自己所不了解的事物，覺得新奇而感興趣。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "公開資料只放摘要與理解提問，不放課文全文。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "available",
+      "activity": "application"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "available",
+      "activity": "listening-quiz"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "unavailable",
+      "activity": "rhetoric",
+      "note": "無此資料。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "available",
+      "activity": "review"
+    }
+  },
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag2h-07",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E6%A8%A3%E9%A3%9F%E9%83%8A%E6%B4%BB%E5%A5%87%E7%AD%92%E9%A6%99%E5%91%B3%E4%BE%BF%E7%95%B6%E7%9B%92%E5%AE%A2%E6%B8%85%E7%AF%80%E4%BF%9D%E5%B9%B3%E5%AE%89%E5%8D%97",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・2年級・第7課",
+      "login_required": false,
+      "checked_at": "2026-09-27",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "候",
+        "颳",
+        "冷",
+        "躲",
+        "閃",
+        "電",
+        "難",
+        "烏",
+        "雲",
+        "密",
+        "布",
+        "盆",
+        "充",
+        "滿",
+        "放",
+        "晴",
+        "現",
+        "虹"
+      ],
+      "2": [
+        "老",
+        "師",
+        "新",
+        "希",
+        "望",
+        "卻",
+        "使",
+        "緊",
+        "因",
+        "為",
+        "知",
+        "道",
+        "怎",
+        "消",
+        "失",
+        "習",
+        "最",
+        "掛"
+      ],
+      "3": [
+        "國",
+        "王",
+        "喜",
+        "歡",
+        "穿",
+        "只",
+        "件",
+        "點",
+        "改",
+        "領",
+        "越",
+        "設",
+        "計",
+        "發",
+        "方",
+        "法",
+        "分",
+        "享"
+      ],
+      "4": [
+        "呱",
+        "聞",
+        "聲",
+        "猜",
+        "蛙",
+        "別",
+        "靠",
+        "近",
+        "抓",
+        "如",
+        "果",
+        "乖",
+        "腦",
+        "袋",
+        "瓜",
+        "證",
+        "明",
+        "頂"
+      ],
+      "5": [
+        "沙",
+        "灘",
+        "海",
+        "邊",
+        "退",
+        "遠",
+        "螃",
+        "蟹",
+        "愛",
+        "注",
+        "夕",
+        "腳",
+        "丫",
+        "橫",
+        "留",
+        "印",
+        "挖",
+        "麗"
+      ],
+      "6": [
+        "月",
+        "奶",
+        "晚",
+        "飯",
+        "散",
+        "屋",
+        "竹",
+        "林",
+        "頭",
+        "溪",
+        "旁",
+        "暗",
+        "眼",
+        "睛",
+        "那",
+        "聚",
+        "成",
+        "顆"
+      ],
+      "7": [
+        "樣",
+        "食",
+        "郊",
+        "活",
+        "奇",
+        "筒",
+        "香",
+        "味",
+        "便",
+        "當",
+        "盒",
+        "客",
+        "清",
+        "節",
+        "保",
+        "平",
+        "安",
+        "南"
+      ]
+    }
+  }
+}

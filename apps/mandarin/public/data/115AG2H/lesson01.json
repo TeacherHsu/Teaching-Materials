@@ -1,0 +1,1973 @@
+{
+  "lesson_id": "115AG2H01",
+  "volume": {
+    "code": "115AG2H",
+    "publisher": "翰林",
+    "grade": 2,
+    "term": "上"
+  },
+  "unit": {
+    "no": 1,
+    "title": "二上國語課程"
+  },
+  "lesson_no": 1,
+  "title": "我的心情",
+  "blurb": "從風、雷、雨和陽光的比喻，辨認害怕、生氣、難過與開心的心情。",
+  "characters": [
+    {
+      "char": "候",
+      "zhuyin": "ㄏㄡˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "時候",
+        "候車",
+        "候鳥"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=候",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼈",
+      "stroke_count": 10
+    },
+    {
+      "char": "颳",
+      "zhuyin": "ㄍㄨㄚ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "颳風",
+        "颳起",
+        "颳大風"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=颳",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾵",
+      "stroke_count": 15
+    },
+    {
+      "char": "冷",
+      "zhuyin": "ㄌㄥˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "冷冷",
+        "冷水",
+        "冷天"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=冷",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼎",
+      "stroke_count": 7
+    },
+    {
+      "char": "躲",
+      "zhuyin": "ㄉㄨㄛˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "躲開",
+        "躲雨",
+        "躲藏"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=躲",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾝",
+      "stroke_count": 13
+    },
+    {
+      "char": "閃",
+      "zhuyin": "ㄕㄢˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "閃電",
+        "閃亮",
+        "閃開"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=閃",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾨",
+      "stroke_count": 10
+    },
+    {
+      "char": "電",
+      "zhuyin": "ㄉㄧㄢˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "閃電",
+        "電話",
+        "電車"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=電",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾬",
+      "stroke_count": 13
+    },
+    {
+      "char": "難",
+      "zhuyin": "ㄋㄢˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "難過",
+        "困難",
+        "難題"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=難",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾫",
+      "stroke_count": 19
+    },
+    {
+      "char": "烏",
+      "zhuyin": "ㄨ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "烏龜",
+        "烏黑",
+        "烏雲"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=烏",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽕",
+      "stroke_count": 10
+    },
+    {
+      "char": "雲",
+      "zhuyin": "ㄩㄣˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "白雲",
+        "烏雲",
+        "雲朵"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=雲",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾬",
+      "stroke_count": 12
+    },
+    {
+      "char": "密",
+      "zhuyin": "ㄇㄧˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "秘密",
+        "密集",
+        "緊密"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=密",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼧",
+      "stroke_count": 11
+    },
+    {
+      "char": "布",
+      "zhuyin": "ㄅㄨˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "布置",
+        "布袋",
+        "公布"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=布",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼱",
+      "stroke_count": 5
+    },
+    {
+      "char": "盆",
+      "zhuyin": "ㄆㄣˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "花盆",
+        "盆子",
+        "盆栽"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=盆",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽫",
+      "stroke_count": 9
+    },
+    {
+      "char": "充",
+      "zhuyin": "ㄔㄨㄥ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "充滿",
+        "充電",
+        "充足"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=充",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⼉",
+      "stroke_count": 6
+    },
+    {
+      "char": "滿",
+      "zhuyin": "ㄇㄢˇ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "滿意",
+        "滿分",
+        "充滿"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=滿",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽔",
+      "stroke_count": 14
+    },
+    {
+      "char": "放",
+      "zhuyin": "ㄈㄤˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "放學",
+        "放心",
+        "放假"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=放",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽁",
+      "stroke_count": 8
+    },
+    {
+      "char": "晴",
+      "zhuyin": "ㄑㄧㄥˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "晴天",
+        "晴朗",
+        "晴空"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=晴",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽇",
+      "stroke_count": 12
+    },
+    {
+      "char": "現",
+      "zhuyin": "ㄒㄧㄢˋ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "出現",
+        "現在",
+        "現場"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=現",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⽟",
+      "stroke_count": 11
+    },
+    {
+      "char": "虹",
+      "zhuyin": "ㄏㄨㄥˊ",
+      "type": "習寫字",
+      "level": "basic",
+      "examples": [
+        "彩虹",
+        "虹橋",
+        "長虹"
+      ],
+      "examples_source": "既有翰林課次常用造詞資料＋本課官方語詞；本工作區未找到獨立常用度試算表",
+      "image": null,
+      "audio_override": null,
+      "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=虹",
+      "source": "115G2A／翰林二上官方教材（02各冊生字／生字注音來源清單）",
+      "status": "ready",
+      "radical": "⾍",
+      "stroke_count": 9
+    }
+  ],
+  "words": [
+    {
+      "id": "word:115AG2H01:01",
+      "word": "難過",
+      "zhuyin": null,
+      "meaning": "傷心、難受。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson01/vocabulary/l01-01.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H01:02",
+      "word": "閃電",
+      "zhuyin": null,
+      "meaning": "天空中雲和雲之間，或雲和地面之間，肉眼可以見到的放電現象。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson01/vocabulary/l01-02.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H01:03",
+      "word": "躲",
+      "zhuyin": null,
+      "meaning": "隱藏、藏身。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson01/vocabulary/l01-03.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H01:04",
+      "word": "冷冷",
+      "zhuyin": null,
+      "meaning": "寒冷。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson01/vocabulary/l01-04.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H01:05",
+      "word": "颳",
+      "zhuyin": null,
+      "meaning": "吹。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson01/vocabulary/l01-05.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H01:06",
+      "word": "時候",
+      "zhuyin": null,
+      "meaning": "時刻。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson01/vocabulary/l01-06.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H01:07",
+      "word": "彩虹",
+      "zhuyin": null,
+      "meaning": "大氣中的水滴經過日光的照射，發生折射或反射作用而形成的彩色弧形光圈。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson01/vocabulary/l01-07.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H01:08",
+      "word": "美麗",
+      "zhuyin": null,
+      "meaning": "漂亮、美好；使人看了心生喜悅的。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson01/vocabulary/l01-08.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H01:09",
+      "word": "出現",
+      "zhuyin": null,
+      "meaning": "產生、顯現。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG2H/lesson01/vocabulary/l01-09.webp",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "word:115AG2H01:10",
+      "word": "烏雲密布",
+      "zhuyin": null,
+      "meaning": "黑雲把天空蓋得滿滿的，常表示天氣陰暗。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson01/vocabulary/l01-10.webp",
+      "status": "ready",
+      "source": "教育百科 115 學年度上學期・翰林版二年級第 1 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150101",
+      "image_origin": "generated:imagegen-vocabulary-meaning"
+    },
+    {
+      "id": "word:115AG2H01:11",
+      "word": "傾盆大雨",
+      "zhuyin": null,
+      "meaning": "雨下得又大又急，好像把一整盆水倒下來。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson01/vocabulary/l01-11.webp",
+      "status": "ready",
+      "source": "教育百科 115 學年度上學期・翰林版二年級第 1 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150101",
+      "image_origin": "generated:imagegen-vocabulary-meaning"
+    },
+    {
+      "id": "word:115AG2H01:12",
+      "word": "充滿",
+      "zhuyin": null,
+      "meaning": "被東西裝得滿滿的。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson01/vocabulary/l01-12.webp",
+      "status": "ready",
+      "source": "教育百科 115 學年度上學期・翰林版二年級第 1 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150101",
+      "image_origin": "generated:imagegen-vocabulary-meaning"
+    },
+    {
+      "id": "word:115AG2H01:13",
+      "word": "放晴",
+      "zhuyin": null,
+      "meaning": "陰雨過後，天空轉晴並出太陽。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "challenge",
+      "image": "/assets/115AG2H/lesson01/vocabulary/l01-13.webp",
+      "status": "ready",
+      "source": "教育百科 115 學年度上學期・翰林版二年級第 1 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150101",
+      "image_origin": "generated:imagegen-vocabulary-meaning"
+    }
+  ],
+  "word_meanings": [
+    {
+      "id": "meaning:115AG2H01:01",
+      "word": "難過",
+      "meaning": "傷心、難受。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H01:02",
+      "word": "閃電",
+      "meaning": "天空中雲和雲之間，或雲和地面之間，肉眼可以見到的放電現象。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H01:03",
+      "word": "躲",
+      "meaning": "隱藏、藏身。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H01:04",
+      "word": "冷冷",
+      "meaning": "寒冷。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H01:05",
+      "word": "颳",
+      "meaning": "吹。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H01:06",
+      "word": "時候",
+      "meaning": "時刻。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H01:07",
+      "word": "彩虹",
+      "meaning": "大氣中的水滴經過日光的照射，發生折射或反射作用而形成的彩色弧形光圈。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H01:08",
+      "word": "美麗",
+      "meaning": "漂亮、美好；使人看了心生喜悅的。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H01:09",
+      "word": "出現",
+      "meaning": "產生、顯現。",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+    },
+    {
+      "id": "meaning:115AG2H01:10",
+      "word": "烏雲密布",
+      "meaning": "黑雲把天空蓋得滿滿的，常表示天氣陰暗。",
+      "status": "ready",
+      "source": "教育百科 115 學年度上學期・翰林版二年級第 1 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150101"
+    },
+    {
+      "id": "meaning:115AG2H01:11",
+      "word": "傾盆大雨",
+      "meaning": "雨下得又大又急，好像把一整盆水倒下來。",
+      "status": "ready",
+      "source": "教育百科 115 學年度上學期・翰林版二年級第 1 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150101"
+    },
+    {
+      "id": "meaning:115AG2H01:12",
+      "word": "充滿",
+      "meaning": "被東西裝得滿滿的。",
+      "status": "ready",
+      "source": "教育百科 115 學年度上學期・翰林版二年級第 1 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150101"
+    },
+    {
+      "id": "meaning:115AG2H01:13",
+      "word": "放晴",
+      "meaning": "陰雨過後，天空轉晴並出太陽。",
+      "status": "ready",
+      "source": "教育百科 115 學年度上學期・翰林版二年級第 1 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150101"
+    }
+  ],
+  "sentences": [
+    {
+      "category": "短語練習",
+      "pattern": "害怕的時候",
+      "examples": [
+        "快樂的時候",
+        "緊張的時候"
+      ],
+      "description": "描述當時的心情狀態。",
+      "structure": "形容詞（心情）＋的時候",
+      "id": "sentence-pattern:115AG2H01:01",
+      "head": "害怕的時候",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短句練習",
+      "pattern": "我好想躲起來。",
+      "examples": [
+        "弟弟好想去運動。",
+        "妹妹好想吃點心。"
+      ],
+      "description": "表達想去做某件事的想法。",
+      "structure": "名詞（誰）＋好想＋動詞（做什麼事）。",
+      "id": "sentence-pattern:115AG2H01:02",
+      "head": "我好想躲起來。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "心裡充滿溫暖的陽光。",
+      "examples": [
+        "新學期開始，我的心裡充滿新希望。",
+        "早上的花園裡，充滿了新鮮的空氣。"
+      ],
+      "description": "描述事物裡裝滿了有形或無形的東西。",
+      "id": "sentence-pattern:115AG2H01:03",
+      "head": "心裡充滿溫暖的陽光。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "生氣的時候，我的心裡一會兒閃電，一會兒打雷，好想叫出來。",
+      "examples": [
+        "小妹妹一會兒咯咯笑，一會兒拍拍手，真是可愛！",
+        "天上的白雲一會兒變成兔子，一會兒變成小狗，真有趣！"
+      ],
+      "description": "句子裡用了兩個﹁一會兒﹂，指很短的時間裡就做了兩件事。",
+      "id": "sentence-pattern:115AG2H01:04",
+      "head": "生氣的時候，我的心裡一會兒閃電，一會兒打雷，好想叫出來。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "idioms": [
+    {
+      "id": "idiom:115AG2H01:01",
+      "idiom": "難能可貴",
+      "definition": "做到了不容易做到的事，所以特別珍貴。",
+      "related_char": "難",
+      "image": "idioms/01_難能可貴-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H01:02",
+      "idiom": "愛屋及烏",
+      "definition": "比喻愛一個人，也連帶關愛和他有關係的所有事。",
+      "related_char": "烏",
+      "image": "idioms/02_愛屋及烏-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H01:03",
+      "idiom": "行雲流水",
+      "definition": "形容待人處事或文章字畫生動流暢，沒有拘束。",
+      "related_char": "雲",
+      "image": "idioms/03_行雲流水-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H01:04",
+      "idiom": "開誠布公",
+      "definition": "敞開胸懷，提出公正客觀的見解。比喻誠意待人，坦白無私。",
+      "related_char": "布",
+      "image": "idioms/04_開誠布公-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H01:05",
+      "idiom": "心花怒放",
+      "definition": "形容心情非常快活。",
+      "related_char": "放",
+      "image": "idioms/05_心花怒放-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    },
+    {
+      "id": "idiom:115AG2H01:06",
+      "idiom": "現身說法",
+      "definition": "以親身經歷為例，來說明道理或勸導別人。",
+      "related_char": "現",
+      "image": "idioms/06_現身說法-fit.webp",
+      "image_origin": "generated:imagegen-contact-sheet-crop",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
+    }
+  ],
+  "idiom_sentences": [
+    {
+      "id": "idiom-sentence:115AG2H01:01",
+      "idiom_id": "idiom:115AG2H01:01",
+      "rewritten": "他小小年紀就懂得幫忙做家事，真是難能可貴。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H01:02",
+      "idiom_id": "idiom:115AG2H01:02",
+      "rewritten": "我喜歡和他一起玩，愛屋及烏，也喜歡和他妹妹一起玩。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H01:03",
+      "idiom_id": "idiom:115AG2H01:03",
+      "rewritten": "這首歌的節奏自然順暢，有如行雲流水，大家都喜歡聽。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H01:04",
+      "idiom_id": "idiom:115AG2H01:04",
+      "rewritten": "我希望你們開誠布公的說一說，來化解彼此的誤會。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H01:05",
+      "idiom_id": "idiom:115AG2H01:05",
+      "rewritten": "弟弟真誠的讚美，讓媽媽心花怒放。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    },
+    {
+      "id": "idiom-sentence:115AG2H01:06",
+      "idiom_id": "idiom:115AG2H01:06",
+      "rewritten": "老師請跳繩得獎的人現身說法，告訴大家練習的好方法。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（05生字延伸成語：官方例句整理）"
+    }
+  ],
+  "sentence_patterns": [
+    {
+      "category": "短語練習",
+      "pattern": "害怕的時候",
+      "examples": [
+        "快樂的時候",
+        "緊張的時候"
+      ],
+      "description": "描述當時的心情狀態。",
+      "structure": "形容詞（心情）＋的時候",
+      "id": "sentence-pattern:115AG2H01:01",
+      "head": "害怕的時候",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "短句練習",
+      "pattern": "我好想躲起來。",
+      "examples": [
+        "弟弟好想去運動。",
+        "妹妹好想吃點心。"
+      ],
+      "description": "表達想去做某件事的想法。",
+      "structure": "名詞（誰）＋好想＋動詞（做什麼事）。",
+      "id": "sentence-pattern:115AG2H01:02",
+      "head": "我好想躲起來。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "造句練習",
+      "pattern": "心裡充滿溫暖的陽光。",
+      "examples": [
+        "新學期開始，我的心裡充滿新希望。",
+        "早上的花園裡，充滿了新鮮的空氣。"
+      ],
+      "description": "描述事物裡裝滿了有形或無形的東西。",
+      "id": "sentence-pattern:115AG2H01:03",
+      "head": "心裡充滿溫暖的陽光。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    },
+    {
+      "category": "句型練習",
+      "pattern": "生氣的時候，我的心裡一會兒閃電，一會兒打雷，好想叫出來。",
+      "examples": [
+        "小妹妹一會兒咯咯笑，一會兒拍拍手，真是可愛！",
+        "天上的白雲一會兒變成兔子，一會兒變成小狗，真有趣！"
+      ],
+      "description": "句子裡用了兩個﹁一會兒﹂，指很短的時間裡就做了兩件事。",
+      "id": "sentence-pattern:115AG2H01:04",
+      "head": "生氣的時候，我的心裡一會兒閃電，一會兒打雷，好想叫出來。",
+      "examples_status": "approved",
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）"
+    }
+  ],
+  "polysemy": [
+    {
+      "id": "polysemy:115AG2H01:難:01",
+      "char": "難",
+      "sentence": "生活中，我們會用到《難聽》這個詞。",
+      "definition": "不好",
+      "options": [
+        "不好",
+        "不容易、艱困。與「易」相對",
+        "不可、不能",
+        "阻梗、困住",
+        "災禍",
+        "質問、責備"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H01:難:02",
+      "char": "難",
+      "sentence": "生活中，我們會用到《難關》這個詞。",
+      "definition": "不容易、艱困。與「易」相對",
+      "options": [
+        "不好",
+        "不容易、艱困。與「易」相對",
+        "不可、不能",
+        "阻梗、困住",
+        "災禍",
+        "質問、責備"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H01:難:03",
+      "char": "難",
+      "sentence": "生活中，我們會用到《難保》這個詞。",
+      "definition": "不可、不能",
+      "options": [
+        "不好",
+        "不容易、艱困。與「易」相對",
+        "不可、不能",
+        "阻梗、困住",
+        "災禍",
+        "質問、責備"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H01:難:04",
+      "char": "難",
+      "sentence": "生活中，我們會用到《為難》這個詞。",
+      "definition": "阻梗、困住",
+      "options": [
+        "不好",
+        "不容易、艱困。與「易」相對",
+        "不可、不能",
+        "阻梗、困住",
+        "災禍",
+        "質問、責備"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H01:難:05",
+      "char": "難",
+      "sentence": "生活中，我們會用到《災難》這個詞。",
+      "definition": "災禍",
+      "options": [
+        "不好",
+        "不容易、艱困。與「易」相對",
+        "不可、不能",
+        "阻梗、困住",
+        "災禍",
+        "質問、責備"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H01:難:06",
+      "char": "難",
+      "sentence": "生活中，我們會用到《責難》這個詞。",
+      "definition": "質問、責備",
+      "options": [
+        "不好",
+        "不容易、艱困。與「易」相對",
+        "不可、不能",
+        "阻梗、困住",
+        "災禍",
+        "質問、責備"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H01:麗:01",
+      "char": "麗",
+      "sentence": "生活中，我們會用到《華麗》這個詞。",
+      "definition": "美好、華美",
+      "options": [
+        "美好、華美",
+        "隋 唐時代的古國名，位於今朝鮮半 島"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H01:麗:02",
+      "char": "麗",
+      "sentence": "生活中，我們會用到《高麗。 5. 4. 3. 2. 1. 鳥 烏 雷 電 間 問 閃 鈴 玲 冷 侯 候 ：鳥窩》這個詞。",
+      "definition": "隋 唐時代的古國名，位於今朝鮮半 島",
+      "options": [
+        "美好、華美",
+        "隋 唐時代的古國名，位於今朝鮮半 島"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H01:會:01",
+      "char": "會",
+      "sentence": "生活中，我們會用到《一會》這個詞。",
+      "definition": "片刻，短暫時間",
+      "options": [
+        "片刻，短暫時間",
+        "集合、相見",
+        "多數人的聚會",
+        "團體組織",
+        "瞭解、領悟",
+        "時機",
+        "能、能夠",
+        "管理財務帳目的人"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H01:會:02",
+      "char": "會",
+      "sentence": "生活中，我們會用到《會合》這個詞。",
+      "definition": "集合、相見",
+      "options": [
+        "片刻，短暫時間",
+        "集合、相見",
+        "多數人的聚會",
+        "團體組織",
+        "瞭解、領悟",
+        "時機",
+        "能、能夠",
+        "管理財務帳目的人"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H01:會:03",
+      "char": "會",
+      "sentence": "生活中，我們會用到《晚會》這個詞。",
+      "definition": "多數人的聚會",
+      "options": [
+        "片刻，短暫時間",
+        "集合、相見",
+        "多數人的聚會",
+        "團體組織",
+        "瞭解、領悟",
+        "時機",
+        "能、能夠",
+        "管理財務帳目的人"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H01:會:04",
+      "char": "會",
+      "sentence": "生活中，我們會用到《教會》這個詞。",
+      "definition": "團體組織",
+      "options": [
+        "片刻，短暫時間",
+        "集合、相見",
+        "多數人的聚會",
+        "團體組織",
+        "瞭解、領悟",
+        "時機",
+        "能、能夠",
+        "管理財務帳目的人"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H01:會:05",
+      "char": "會",
+      "sentence": "生活中，我們會用到《體會》這個詞。",
+      "definition": "瞭解、領悟",
+      "options": [
+        "片刻，短暫時間",
+        "集合、相見",
+        "多數人的聚會",
+        "團體組織",
+        "瞭解、領悟",
+        "時機",
+        "能、能夠",
+        "管理財務帳目的人"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H01:會:06",
+      "char": "會",
+      "sentence": "生活中，我們會用到《機會》這個詞。",
+      "definition": "時機",
+      "options": [
+        "片刻，短暫時間",
+        "集合、相見",
+        "多數人的聚會",
+        "團體組織",
+        "瞭解、領悟",
+        "時機",
+        "能、能夠",
+        "管理財務帳目的人"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H01:會:07",
+      "char": "會",
+      "sentence": "生活中，我們會用到《一定會實現》這個詞。",
+      "definition": "能、能夠",
+      "options": [
+        "片刻，短暫時間",
+        "集合、相見",
+        "多數人的聚會",
+        "團體組織",
+        "瞭解、領悟",
+        "時機",
+        "能、能夠",
+        "管理財務帳目的人"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    },
+    {
+      "id": "polysemy:115AG2H01:會:08",
+      "char": "會",
+      "sentence": "生活中，我們會用到《會計》這個詞。",
+      "definition": "管理財務帳目的人",
+      "options": [
+        "片刻，短暫時間",
+        "集合、相見",
+        "多數人的聚會",
+        "團體組織",
+        "瞭解、領悟",
+        "時機",
+        "能、能夠",
+        "管理財務帳目的人"
+      ],
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多義）"
+    }
+  ],
+  "polyphones": [
+    {
+      "id": "polyphone:115AG2H01:難",
+      "char": "難",
+      "readings": [
+        {
+          "zhuyin": "ㄋㄢˊ",
+          "senses": [
+            {
+              "definition": "不好",
+              "examples": [
+                "難聽",
+                "難看"
+              ]
+            },
+            {
+              "definition": "不容易、艱困。與「易」相對",
+              "examples": [
+                "難關"
+              ]
+            },
+            {
+              "definition": "不可、不能",
+              "examples": [
+                "難保",
+                "難言之隱"
+              ]
+            },
+            {
+              "definition": "阻梗、困住",
+              "examples": [
+                "為難"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄋㄢˋ",
+          "senses": [
+            {
+              "definition": "災禍",
+              "examples": [
+                "災難"
+              ]
+            },
+            {
+              "definition": "質問、責備",
+              "examples": [
+                "責難"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    },
+    {
+      "id": "polyphone:115AG2H01:麗",
+      "char": "麗",
+      "readings": [
+        {
+          "zhuyin": "ㄌㄧˋ",
+          "senses": [
+            {
+              "definition": "美好、華美",
+              "examples": [
+                "華麗"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄌㄧˊ",
+          "senses": [
+            {
+              "definition": "隋 唐時代的古國名，位於今朝鮮半 島",
+              "examples": [
+                "高麗。 5. 4. 3. 2. 1. 鳥 烏 雷 電 間 問 閃 鈴 玲 冷 侯 候 ：鳥窩",
+                "鳥類 ：烏雲",
+                "烏鴉 ：雷射",
+                "打雷 ：電話",
+                "電燈 ：房間",
+                "時間 ：問題",
+                "詢問 ：閃躲",
+                "閃光 ：鈴鐺",
+                "扯鈴 ：玲瓏 ：冷氣",
+                "冷風 ：王侯",
+                "侯先生 ：時候",
+                "候鳥 10. 9. 8. 7. 6. 鹿 麗 先 充 有 布 蜜 密 雪 雲 ：梅花鹿",
+                "鹿角 ：亮麗",
+                "保麗龍 ：先後",
+                "優先 ：充電",
+                "補充 ：有趣",
+                "有理 ：抹布",
+                "布丁 ：蜜蜂",
+                "甜蜜 ：密集",
+                "緊密 ：雪花",
+                "白雪 ：雲朵",
+                "雲層 2 3. 會"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    },
+    {
+      "id": "polyphone:115AG2H01:會",
+      "char": "會",
+      "readings": [
+        {
+          "zhuyin": "ㄏㄨㄟˇ",
+          "senses": [
+            {
+              "definition": "片刻，短暫時間",
+              "examples": [
+                "一會"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄏㄨㄟˋ",
+          "senses": [
+            {
+              "definition": "集合、相見",
+              "examples": [
+                "會合",
+                "會面"
+              ]
+            },
+            {
+              "definition": "多數人的聚會",
+              "examples": [
+                "晚會"
+              ]
+            },
+            {
+              "definition": "團體組織",
+              "examples": [
+                "教會"
+              ]
+            },
+            {
+              "definition": "瞭解、領悟",
+              "examples": [
+                "體會"
+              ]
+            },
+            {
+              "definition": "時機",
+              "examples": [
+                "機會"
+              ]
+            },
+            {
+              "definition": "能、能夠",
+              "examples": [
+                "一定會實現"
+              ]
+            }
+          ]
+        },
+        {
+          "zhuyin": "ㄎㄨㄞˋ",
+          "senses": [
+            {
+              "definition": "管理財務帳目的人",
+              "examples": [
+                "會計"
+              ]
+            }
+          ]
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／一字多音）"
+    }
+  ],
+  "listening": [
+    {
+      "id": "listening:115AG2H01:01",
+      "stem": "請仔細聽題目：這篇課文裡，寫了哪些心情？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "害怕、生氣、難過和開心。",
+        "主角皺眉，動作像是在發抖、躲起來，心情有可能在害怕。",
+        "心裡像是颳冷風，想躲起來。"
+      ],
+      "answer": "害怕、生氣、難過和開心。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "我的心情像天氣，會颳風，會打雷，也會下雨，但是，雨後放晴，會出現美麗的彩虹。"
+    },
+    {
+      "id": "listening:115AG2H01:02",
+      "stem": "請仔細聽題目：觀察課本第8頁的圖，主角的表情、動作是什麼？你覺得她的心情怎麼樣？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "主角皺眉，動作像是在發抖、躲起來，心情有可能在害怕。",
+        "害怕、生氣、難過和開心。",
+        "心裡像是颳冷風，想躲起來。"
+      ],
+      "answer": "主角皺眉，動作像是在發抖、躲起來，心情有可能在害怕。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "害怕的時候，心裡颳起冷冷的風，我好想躲起來。"
+    },
+    {
+      "id": "listening:115AG2H01:03",
+      "stem": "請仔細聽題目：課文中提到主角害怕的時候，心裡的感覺像什麼？又有什麼樣的動作？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "心裡像是颳冷風，想躲起來。",
+        "害怕、生氣、難過和開心。",
+        "主角皺眉，動作像是在發抖、躲起來，心情有可能在害怕。"
+      ],
+      "answer": "心裡像是颳冷風，想躲起來。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "害怕的時候，心裡颳起冷冷的風，我好想躲起來。"
+    },
+    {
+      "id": "listening:115AG2H01:04",
+      "stem": "請仔細聽題目：觀察課本第9頁的圖，主角的動作是什麼？你覺得她的心情怎麼樣？",
+      "question": "根據剛才聽到的題目，哪一個答案最合適？",
+      "options": [
+        "主角眉毛上揚，雙手交叉，心情有可能在生氣。",
+        "害怕、生氣、難過和開心。",
+        "主角皺眉，動作像是在發抖、躲起來，心情有可能在害怕。"
+      ],
+      "answer": "主角眉毛上揚，雙手交叉，心情有可能在生氣。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
+      "passage": "生氣的時候，心裡一會兒閃電，一會兒打雷，我好想叫出來。"
+    }
+  ],
+  "rhetoric": [],
+  "paragraph_summary": [
+    {
+      "id": "paragraph_summary:115AG2H01:01",
+      "para_no": 1,
+      "summary": "害怕的心情像颳風，主角想躲起來。",
+      "structure_role": "第1段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H01:02",
+      "para_no": 2,
+      "summary": "生氣的心情像閃電打雷，主角想叫出來。",
+      "structure_role": "第2段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H01:03",
+      "para_no": 3,
+      "summary": "難過的心情像是有了烏雲又下雨，主角忍不住哭出來。",
+      "structure_role": "第3段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H01:04",
+      "para_no": 4,
+      "summary": "開心的心情充滿陽光，主角忍不住笑出來。",
+      "structure_role": "第4段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    },
+    {
+      "id": "paragraph_summary:115AG2H01:05",
+      "para_no": 5,
+      "summary": "主角的心情像天氣，有各種變化，希望難過的事情結束了，心情會變美好，像美麗的彩虹。",
+      "structure_role": "第5段重點",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    }
+  ],
+  "main_idea": {
+    "id": "main_idea:115AG2H01:01",
+    "gist": "主角的心情像天氣一樣有不同變化而有不同反應，最後希望能像雨後放晴有美麗的彩虹，心情也變美好。",
+    "theme": "發現自己心情的變化。",
+    "status": "approved",
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+  },
+  "reading_questions": [
+    {
+      "id": "reading_question:115AG2H01:01",
+      "stem": "這篇課文裡，寫了哪些心情？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "害怕、生氣、難過和開心。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H01:02",
+      "stem": "觀察課本第8頁的圖，主角的表情、動作是什麼？你覺得她的心情怎麼樣？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "主角皺眉，動作像是在發抖、躲起來，心情有可能在害怕。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H01:03",
+      "stem": "課文中提到主角害怕的時候，心裡的感覺像什麼？又有什麼樣的動作？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "心裡像是颳冷風，想躲起來。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H01:04",
+      "stem": "觀察課本第9頁的圖，主角的動作是什麼？你覺得她的心情怎麼樣？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "主角眉毛上揚，雙手交叉，心情有可能在生氣。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H01:05",
+      "stem": "課文中提到主角生氣的時候，心裡的感覺像什麼？又有什麼樣的動作？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "心裡像是閃電、打雷，想叫出來。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H01:06",
+      "stem": "為什麼作者寫主角生氣的時候，心裡一會兒閃電，一會兒打雷？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "閃電發出的光，還有雷聲轟隆隆的，很大聲，就像人生氣的時候，可能會大聲的說話，很嚇人，作者用這樣的寫法，讓人比較能了解。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H01:07",
+      "stem": "觀察課文圖片第8、9、10頁的插圖，說說看插圖和課文描述的角色有什麼不同？",
+      "strategy_tag": "比較評估",
+      "answer_hint": "文中只有提到﹁我﹂，但是插圖中都有出現一個兔子小布偶陪伴著主角。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H01:08",
+      "stem": "你覺得為什麼插畫家要畫這隻小兔子？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "我覺得小兔子都在陪伴主角，感受主角的情緒，也透過這隻兔子凸顯出主角的喜怒哀樂。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H01:09",
+      "stem": "作者都用什麼事物來描述心情？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "作者都用大自然的現象，如冷風、打雷、下雨、陽光來描述情緒。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    },
+    {
+      "id": "reading_question:115AG2H01:10",
+      "stem": "課文最後﹁雨後放晴，會出現美麗的彩虹。﹂是什麼意思？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "作者用彩虹來表示，即使心情有變化，有好的，也有不好的，但最後都能變好。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+    }
+  ],
+  "lookalikes": [
+    {
+      "id": "lookalike:115AG2H01:01",
+      "group_no": "1",
+      "question": "時____",
+      "answer": "候",
+      "chars": [
+        {
+          "char": "候",
+          "zhuyin": null,
+          "example": "時候"
+        },
+        {
+          "char": "侯",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H01:02",
+      "group_no": "2",
+      "question": "____冷",
+      "answer": "冷",
+      "chars": [
+        {
+          "char": "冷",
+          "zhuyin": null,
+          "example": "冷冷"
+        },
+        {
+          "char": "玲",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "鈴",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H01:03",
+      "group_no": "3",
+      "question": "____電",
+      "answer": "閃",
+      "chars": [
+        {
+          "char": "閃",
+          "zhuyin": null,
+          "example": "閃電"
+        },
+        {
+          "char": "問",
+          "zhuyin": null,
+          "example": ""
+        },
+        {
+          "char": "間",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H01:04",
+      "group_no": "4",
+      "question": "閃____",
+      "answer": "電",
+      "chars": [
+        {
+          "char": "電",
+          "zhuyin": null,
+          "example": "閃電"
+        },
+        {
+          "char": "雷",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H01:05",
+      "group_no": "5",
+      "question": "____雲密布",
+      "answer": "烏",
+      "chars": [
+        {
+          "char": "烏",
+          "zhuyin": null,
+          "example": "烏雲密布"
+        },
+        {
+          "char": "鳥",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H01:06",
+      "group_no": "6",
+      "question": "烏____密布",
+      "answer": "雲",
+      "chars": [
+        {
+          "char": "雲",
+          "zhuyin": null,
+          "example": "烏雲密布"
+        },
+        {
+          "char": "雪",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H01:07",
+      "group_no": "7",
+      "question": "烏雲____布",
+      "answer": "密",
+      "chars": [
+        {
+          "char": "密",
+          "zhuyin": null,
+          "example": "烏雲密布"
+        },
+        {
+          "char": "蜜",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H01:08",
+      "group_no": "8",
+      "question": "烏雲密____",
+      "answer": "布",
+      "chars": [
+        {
+          "char": "布",
+          "zhuyin": null,
+          "example": "烏雲密布"
+        },
+        {
+          "char": "有",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H01:09",
+      "group_no": "9",
+      "question": "____滿",
+      "answer": "充",
+      "chars": [
+        {
+          "char": "充",
+          "zhuyin": null,
+          "example": "充滿"
+        },
+        {
+          "char": "先",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    },
+    {
+      "id": "lookalike:115AG2H01:10",
+      "group_no": "10",
+      "question": "美____",
+      "answer": "麗",
+      "chars": [
+        {
+          "char": "麗",
+          "zhuyin": null,
+          "example": "美麗"
+        },
+        {
+          "char": "鹿",
+          "zhuyin": null,
+          "example": ""
+        }
+      ],
+      "status": "ready",
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學 PDF／字形辨別）"
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q01",
+      "type": "choice",
+      "stem": "「候」的部首是哪一個？",
+      "options": [
+        "⽁",
+        "⼧",
+        "⽟"
+      ],
+      "answer": "⼈",
+      "explanation": "「候」的部首是⼈。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "choice",
+      "stem": "「颳」的部首是哪一個？",
+      "options": [
+        "⽟",
+        "⼉",
+        "⼧"
+      ],
+      "answer": "⾵",
+      "explanation": "「颳」的部首是⾵。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "choice",
+      "stem": "「冷」的部首是哪一個？",
+      "options": [
+        "⽕",
+        "⾝",
+        "⽇"
+      ],
+      "answer": "⼎",
+      "explanation": "「冷」的部首是⼎。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:character-dictionary",
+      "hints": [
+        "先觀察字的哪一部分是部首。"
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "choice",
+      "stem": "「難過」是什麼意思？",
+      "options": [
+        "漂亮、美好；使人看了心生喜悅的。",
+        "吹。",
+        "時刻。"
+      ],
+      "answer": "傷心、難受。",
+      "explanation": "難過：傷心、難受。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "choice",
+      "stem": "「閃電」是什麼意思？",
+      "options": [
+        "大氣中的水滴經過日光的照射，發生折射或反射作用而形成的彩色弧形光圈。",
+        "吹。",
+        "傷心、難受。"
+      ],
+      "answer": "天空中雲和雲之間，或雲和地面之間，肉眼可以見到的放電現象。",
+      "explanation": "閃電：天空中雲和雲之間，或雲和地面之間，肉眼可以見到的放電現象。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "choice",
+      "stem": "「躲」是什麼意思？",
+      "options": [
+        "漂亮、美好；使人看了心生喜悅的。",
+        "天空中雲和雲之間，或雲和地面之間，肉眼可以見到的放電現象。",
+        "時刻。"
+      ],
+      "answer": "隱藏、藏身。",
+      "explanation": "躲：隱藏、藏身。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "choice",
+      "stem": "「冷冷」是什麼意思？",
+      "options": [
+        "天空中雲和雲之間，或雲和地面之間，肉眼可以見到的放電現象。",
+        "寒冷。",
+        "大氣中的水滴經過日光的照射，發生折射或反射作用而形成的彩色弧形光圈。"
+      ],
+      "answer": "寒冷。",
+      "explanation": "冷冷：寒冷。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "choice",
+      "stem": "「颳」是什麼意思？",
+      "options": [
+        "寒冷。",
+        "時刻。",
+        "天空中雲和雲之間，或雲和地面之間，肉眼可以見到的放電現象。"
+      ],
+      "answer": "吹。",
+      "explanation": "颳：吹。",
+      "level": "basic",
+      "status": "ready",
+      "source": "derived:official-vocabulary-definition",
+      "hints": [
+        "把語詞放回生活情境中想一想。"
+      ]
+    }
+  ],
+  "modules": {
+    "characters": {
+      "label": "認識生字",
+      "status": "available",
+      "activity": "character-cards"
+    },
+    "vocabulary": {
+      "label": "學會語詞",
+      "status": "available",
+      "activity": "vocabulary-cards"
+    },
+    "reading": {
+      "label": "讀懂課文",
+      "status": "available",
+      "activity": "reading",
+      "note": "公開資料只放摘要與理解提問，不放課文全文。"
+    },
+    "sentence_practice": {
+      "label": "練習句子",
+      "status": "available",
+      "activity": "sentence-practice"
+    },
+    "challenge": {
+      "label": "動手挑戰",
+      "status": "available",
+      "activity": "challenge-quiz"
+    },
+    "application": {
+      "label": "我會應用",
+      "status": "available",
+      "activity": "application"
+    },
+    "idiom_builder": {
+      "label": "生字變成語",
+      "status": "available",
+      "activity": "idiom-builder"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
+    "polysemy": {
+      "label": "一字多義",
+      "status": "available",
+      "activity": "polysemy"
+    },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "structure_map": {
+      "label": "課文地圖",
+      "status": "available",
+      "activity": "structure-map"
+    },
+    "listening": {
+      "label": "聽聽看",
+      "status": "available",
+      "activity": "listening-quiz"
+    },
+    "rhetoric": {
+      "label": "修辭小偵探",
+      "status": "unavailable",
+      "activity": "rhetoric",
+      "note": "無此資料。"
+    },
+    "review": {
+      "label": "舊字新詞",
+      "status": "missing",
+      "activity": "review",
+      "note": "第 1 課沒有前課資料。"
+    }
+  },
+  "extensions": [
+    {
+      "id": "ext:stroke-115ag2h-01",
+      "status": "approved",
+      "url": "https://gsyan888.github.io/html5_fun/html5_stroke_parts/html5_stroke_parts.html?by=gsyan&words=%E5%80%99%E9%A2%B3%E5%86%B7%E8%BA%B2%E9%96%83%E9%9B%BB%E9%9B%A3%E7%83%8F%E9%9B%B2%E5%AF%86%E5%B8%83%E7%9B%86%E5%85%85%E6%BB%BF%E6%94%BE%E6%99%B4%E7%8F%BE%E8%99%B9",
+      "title": "筆順練習(雄筆順)",
+      "provider": "雄::gsyan 筆順練習選單",
+      "type": "reading",
+      "module": "characters",
+      "compact": true,
+      "version_note": "115上・翰林・2年級・第1課",
+      "login_required": false,
+      "checked_at": "2026-09-27",
+      "note": "已帶入本課18個生字"
+    }
+  ],
+  "review_words": {
+    "by_lesson": {
+      "1": [
+        "候",
+        "颳",
+        "冷",
+        "躲",
+        "閃",
+        "電",
+        "難",
+        "烏",
+        "雲",
+        "密",
+        "布",
+        "盆",
+        "充",
+        "滿",
+        "放",
+        "晴",
+        "現",
+        "虹"
+      ]
+    }
+  }
+}

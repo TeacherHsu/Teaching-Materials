@@ -13,7 +13,7 @@
   "lesson_no": 10,
   "title": "秋千上的婚禮",
   "author": "",
-  "blurb": "透過〈秋千上的婚禮〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "找出魯凱婚禮中服飾、盪秋千和敬酒的習俗，理解它們代表的祝福。",
   "characters": [
     {
       "char": "婚",
@@ -306,16 +306,172 @@
       "id": "word:115AG3H10:01",
       "word": "婚禮",
       "zhuyin": "ㄏㄨㄣ ㄌㄧˇ",
-      "meaning": "兩人結婚時舉行的儀式。",
+      "meaning": "結婚時所舉行的公開儀式。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
-      "image": "/assets/115AG3H/lesson10/vocabulary/l10-01.webp",
+      "image": "/assets/115AG3H/lesson10/vocabulary/l10-target-01.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
     },
     {
       "id": "word:115AG3H10:02",
+      "word": "服飾",
+      "zhuyin": null,
+      "meaning": "服裝和佩飾。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson10/vocabulary/l10-target-02.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H10:03",
+      "word": "新郎",
+      "zhuyin": null,
+      "meaning": "稱剛結婚或正要舉行結婚典禮的男子。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson10/vocabulary/l10-target-03.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H10:04",
+      "word": "參加",
+      "zhuyin": null,
+      "meaning": "參與、加入。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson10/vocabulary/l10-target-04.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H10:05",
+      "word": "響",
+      "zhuyin": null,
+      "meaning": "發出聲音。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson10/vocabulary/l10-target-05.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H10:06",
+      "word": "代表",
+      "zhuyin": null,
+      "meaning": "象徵。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson10/vocabulary/l10-target-06.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H10:07",
+      "word": "祝福",
+      "zhuyin": "ㄓㄨˋ ㄈㄨˊ",
+      "meaning": "祝人平安、幸福。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson10/vocabulary/l10-target-07.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H10:08",
+      "word": "連杯酒",
+      "zhuyin": null,
+      "meaning": "兩個以上連接在一起的酒杯。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson10/vocabulary/l10-target-08.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H10:09",
+      "word": "敬酒",
+      "zhuyin": null,
+      "meaning": "筵席間舉杯向人表示敬意。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson10/vocabulary/l10-target-09.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H10:10",
+      "word": "藏新娘",
+      "zhuyin": null,
+      "meaning": "魯凱族婚禮的高潮，女方親屬趁新郎不注意時，將新娘藏在部落的小角落，再由新郎率眾尋找。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson10/vocabulary/l10-target-10.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H10:11",
+      "word": "習俗",
+      "zhuyin": null,
+      "meaning": "某地區內的人們長期養成的習慣、風俗。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson10/vocabulary/l10-target-11.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H10:12",
+      "word": "珍惜",
+      "zhuyin": null,
+      "meaning": "重視愛惜。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson10/vocabulary/l10-target-12.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H10:13",
+      "word": "互助",
+      "zhuyin": null,
+      "meaning": "互相幫助。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson10/vocabulary/l10-target-13.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H10:14",
+      "word": "精神",
+      "zhuyin": null,
+      "meaning": "思想或主義。",
+      "example_sentence": null,
+      "example_status": "todo_rewrite",
+      "level": "basic",
+      "image": "/assets/115AG3H/lesson10/vocabulary/l10-target-14.webp",
+      "status": "ready",
+      "source": "115G3A／翰林官方教材（05形音輕鬆學：語詞解釋；逐詞配圖採既有核對素材）"
+    },
+    {
+      "id": "word:115AG3H10:15",
       "word": "秋千",
       "zhuyin": "ㄑㄧㄡ ㄑㄧㄢ",
       "meaning": "坐在繩索或架子上前後擺動的遊戲器材。",
@@ -327,19 +483,7 @@
       "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
     },
     {
-      "id": "word:115AG3H10:03",
-      "word": "祝福",
-      "zhuyin": "ㄓㄨˋ ㄈㄨˊ",
-      "meaning": "希望別人平安、幸福的話。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
-      "level": "basic",
-      "image": "/assets/115AG3H/lesson10/vocabulary/l10-03.webp",
-      "status": "ready",
-      "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
-    },
-    {
-      "id": "word:115AG3H10:04",
+      "id": "word:115AG3H10:16",
       "word": "親友",
       "zhuyin": "ㄑㄧㄣ ㄧㄡˇ",
       "meaning": "親人和朋友。",
@@ -351,7 +495,7 @@
       "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
     },
     {
-      "id": "word:115AG3H10:05",
+      "id": "word:115AG3H10:17",
       "word": "新娘",
       "zhuyin": "ㄒㄧㄣ ㄋㄧㄤˊ",
       "meaning": "結婚儀式中的女方。",
@@ -363,7 +507,7 @@
       "source": "115G3A／翰林官方教材（形音輕鬆學：語詞解釋）"
     },
     {
-      "id": "word:115AG3H10:06",
+      "id": "word:115AG3H10:18",
       "word": "熱鬧",
       "zhuyin": "ㄖㄜˋ ㄋㄠˋ",
       "meaning": "人多、聲音多，很有活動的樣子。",
@@ -383,54 +527,72 @@
       "idiom": "江郎才盡",
       "definition": "比喻才思枯竭，無法再寫出好作品。",
       "related_char": "郎",
-      "image": null,
+      "image": "idioms/01_江郎才盡.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H10:b817cdd1",
       "idiom": "不同凡響",
       "definition": "比一般事物出色、不平凡。",
       "related_char": "響",
-      "image": null,
+      "image": "idioms/02_不同凡響.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H10:2a54c015",
       "idiom": "有福同享",
       "definition": "共同分享幸福和成果。",
       "related_char": "福",
-      "image": null,
+      "image": "idioms/03_有福同享.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H10:fcafa387",
       "idiom": "價值連城",
       "definition": "形容東西十分昂貴、貴重。",
       "related_char": "連",
-      "image": null,
+      "image": "idioms/04_價值連城.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H10:9a3a72fc",
       "idiom": "相敬如賓",
       "definition": "形容夫妻互相尊敬，如同對待賓客。",
       "related_char": "敬",
-      "image": null,
+      "image": "idioms/05_相敬如賓.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:115AG3H10:9b6e19ca",
       "idiom": "笑裡藏刀",
       "definition": "比喻外貌和善，內心卻另有打算。",
       "related_char": "藏",
-      "image": null,
+      "image": "idioms/06_笑裡藏刀.webp",
       "status": "ready",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）"
+      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（07生字衍生成語）",
+      "image_origin": "generated:imagegen-idiom-meaning",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -1238,7 +1400,8 @@
       ],
       "answer": "用一整塊木材雕刻成的並排雙人共飲酒杯。",
       "status": "approved",
-      "source": "115G3A／翰林官方教材（15閱讀理解提問：第10課）"
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第10課）",
+      "passage": "故人具雞黍，邀我至田家。"
     },
     {
       "id": "listening:115AG3H10:0002",
@@ -1251,7 +1414,8 @@
       ],
       "answer": "表示永結同心、相敬如賓。",
       "status": "approved",
-      "source": "115G3A／翰林官方教材（15閱讀理解提問：第10課）"
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第10課）",
+      "passage": "綠樹村邊合，青山郭外斜。"
     },
     {
       "id": "listening:115AG3H10:0003",
@@ -1264,7 +1428,8 @@
       ],
       "answer": "親友一起祝福並共同參與藏新娘、找新娘等活動。",
       "status": "approved",
-      "source": "115G3A／翰林官方教材（15閱讀理解提問：第10課）"
+      "source": "115G3A／翰林官方教材（15閱讀理解提問：第10課）",
+      "passage": "開軒面場圃，把酒話桑麻。"
     }
   ],
   "review_words": {

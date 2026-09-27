@@ -7,6 +7,7 @@ import { TaskBanner } from '../components/TaskBanner.js';
 import { missingContentNotice } from './engine.js';
 import { filterByStatus } from '../utils/preview.js';
 import { speechSupported } from '../utils/speech.js';
+import { chunkRounds } from '../utils/chunk.js';
 
 /**
  * @param {object} lesson
@@ -14,6 +15,8 @@ import { speechSupported } from '../utils/speech.js';
  */
 export function buildListeningActivity(lesson, onBack) {
   const items = filterByStatus(lesson.listening || []).filter((l) => l.stem && l.question);
+  const rounds = chunkRounds(items, { min: 3, max: 5 });
+  let roundIndex = 0;
 
   const container = h('div', {});
 
@@ -24,22 +27,31 @@ export function buildListeningActivity(lesson, onBack) {
       return;
     }
 
-    container.appendChild(TaskBanner({ label: '仔細聽，選出正確答案', step: `共 ${items.length} 題` }));
+    const isLastRound = roundIndex === rounds.length - 1;
+    container.appendChild(TaskBanner({ label: '仔細聽，選出正確答案', step: roundIndex === 0 ? '本課先完成' : '加練挑戰' }));
 
-    // 每題各自的朗讀／顯示文字按鈕，隨題目一起顯示在 ChoiceQuiz 題幹上方（見 item.extra）。
+    // 每題先提供對應課文段落的「先聽一聽」按鈕；段落只作為語音來源，不在畫面全文列出。
     function buildAudioRow(entry) {
       const row = h('div', { class: 'listening-audio', style: 'margin-bottom:16px' });
+      const passage = entry.passage || entry.stem;
       if (speechSupported()) {
-        row.appendChild(SpeakButton({ text: entry.stem, label: '播放' }));
+        row.appendChild(
+          SpeakButton({
+            text: passage,
+            label: '先聽一聽',
+            showLabel: true,
+            ariaLabel: '先聽一聽：課文段落',
+          }),
+        );
       } else {
         row.appendChild(h('p', { class: 'meta' }, '此裝置不支援朗讀'));
-        const textEl = h('p', { class: 'quiz-stem', style: 'display:none' }, entry.stem);
-        const toggleBtn = h('button', { class: 'btn', type: 'button' }, '顯示文字');
+        const textEl = h('p', { class: 'quiz-stem', style: 'display:none' }, passage);
+        const toggleBtn = h('button', { class: 'btn', type: 'button' }, '顯示課文段落');
         let shown = false;
         toggleBtn.addEventListener('click', () => {
           shown = !shown;
           textEl.style.display = shown ? '' : 'none';
-          toggleBtn.textContent = shown ? '隱藏文字' : '顯示文字';
+          toggleBtn.textContent = shown ? '隱藏課文段落' : '顯示課文段落';
         });
         row.appendChild(toggleBtn);
         row.appendChild(textEl);
@@ -49,7 +61,7 @@ export function buildListeningActivity(lesson, onBack) {
 
     container.appendChild(
       ChoiceQuiz({
-        items: items.map((entry) => ({
+        items: rounds[roundIndex].map((entry) => ({
           id: entry.id,
           stem: entry.question,
           options: entry.options,
@@ -58,7 +70,12 @@ export function buildListeningActivity(lesson, onBack) {
           hints: ['再聽一次（或看看文字），注意誰做了什麼事。'],
           extra: buildAudioRow(entry),
         })),
+        backLabel: isLastRound ? '回課程首頁' : '本課先完成',
         onBack: () => onBack(),
+        onContinue: isLastRound ? null : () => {
+          roundIndex += 1;
+          renderStep();
+        },
       }),
     );
   }

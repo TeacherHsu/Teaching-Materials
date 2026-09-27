@@ -38,9 +38,9 @@ export function ReadAllButton(getParts) {
     {
       class: 'speak-button speak-button--read-all',
       type: 'button',
-      'aria-label': '全部唸給我聽',
+      'aria-label': '全部朗讀',
       'aria-pressed': 'false',
-      html: ICON + '<span class="speak-button__label">全部唸給我聽</span>',
+      html: ICON + '<span class="speak-button__label">全部朗讀</span>',
     },
   );
   let playing = false;

@@ -21,10 +21,10 @@ export function CharacterCard(character, originExtension = null) {
     image ? ImageFrame({ src: image, alt: `${char} 的插圖` }) : null,
     examples && examples.length
       ? h('div', { class: 'quiz-option-row' }, [
-          h('p', { class: 'character-card__examples' }, `造詞：${examples.join('、')}`),
+          h('p', { class: 'character-card__examples' }, examples.join('、')),
           SpeakButton({ text: examples.join('、'), label: '聽造詞', variant: 'speak-button--option' }),
         ])
-      : h('p', { class: 'character-card__examples' }, '造詞：教材待補'),
+      : null,
     pedia_url
       ? h(
           'a',

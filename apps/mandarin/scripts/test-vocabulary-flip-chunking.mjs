@@ -47,9 +47,9 @@ while (true) {
     `banner 應保留步驟進度且不顯示組別進度，實際：${banner}`,
   );
 
-  const nextBtn = container.find((n) => n.tagName === 'button' && /下一組|繼續|完成/.test(n.textContent));
-  assert.ok(nextBtn, '應該有下一組／繼續／完成按鈕');
   if (round === expectedRounds) break;
+  const nextBtn = container.find((n) => n.tagName === 'button' && n.textContent.trim() === '加練下一組');
+  assert.ok(nextBtn, '非最後一組應該有「加練下一組」按鈕');
   nextBtn.dispatch('click');
   round += 1;
 }

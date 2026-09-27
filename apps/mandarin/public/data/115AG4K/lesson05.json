@@ -13,7 +13,7 @@
   "lesson_no": 5,
   "title": "假如給我三天光明",
   "author": "",
-  "blurb": "透過〈假如給我三天光明〉整理生字、語詞與閱讀重點，練習把課文內容連結到生活。",
+  "blurb": "比較海倫凱勒如何運用不同感官觀察世界，理解她為何珍惜光明。",
   "source_audit": [
     {
       "kind": "official",
@@ -607,45 +607,55 @@
       "idiom": "懸崖勒馬",
       "definition": "臨到懸崖時，緊勒住馬，不繼續前進。比喻到了危險的邊緣而及時回頭。",
       "related_char": "勒",
-      "image": "idioms/01_懸崖勒馬.webp",
+      "image": "idioms/01_懸崖勒馬-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:05:02",
       "idiom": "兢兢業業",
       "definition": "形容戒慎恐懼，認真負責的樣子。",
       "related_char": "業",
-      "image": "idioms/02_兢兢業業.webp",
+      "image": "idioms/02_兢兢業業-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:05:03",
       "idiom": "雞犬不寧",
       "definition": "連雞與狗都不得安寧。比喻被嚴重的騷擾。",
       "related_char": "寧",
-      "image": "idioms/03_雞犬不寧.webp",
+      "image": "idioms/03_雞犬不寧-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:05:04",
       "idiom": "一視同仁",
       "definition": "指平等待人，不分親疏厚薄。",
       "related_char": "視",
-      "image": "idioms/04_一視同仁.webp",
+      "image": "idioms/04_一視同仁-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     },
     {
       "id": "idiom:05:05",
       "idiom": "孤注一擲",
       "definition": "比喻危急時，投入全部力量，作最後的冒險。",
       "related_char": "注",
-      "image": "idioms/05_孤注一擲.webp",
+      "image": "idioms/05_孤注一擲-fit.webp",
       "status": "ready",
-      "source": "康軒四上官方教材（04 生字延伸成語）"
+      "source": "康軒四上官方教材（04 生字延伸成語）",
+      "image_layout": "square-contain",
+      "image_layout_origin": "workflow:960x960-contain"
     }
   ],
   "idiom_sentences": [
@@ -931,9 +941,10 @@
         "森林沒有樹",
         "朋友忘了回家"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "「我」靠觸覺也能發現許多事物",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K05:02",
@@ -945,9 +956,10 @@
         "快速奔跑",
         "閉眼睡覺"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "用手觸摸",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K05:03",
@@ -959,9 +971,10 @@
         "為何不學音樂",
         "為何走得太慢"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "為何對眼前美景視而不見",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     },
     {
       "id": "question:115AG4K05:04",
@@ -973,9 +986,10 @@
         "停止接觸事物",
         "忘記所有聲音"
       ],
-      "answer": null,
-      "status": "todo",
-      "source": "康軒官方教材來源整理（15 閱讀理解提問；答案待核對）"
+      "answer": "擁有三天光明並盡情看世界",
+      "status": "approved",
+      "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
+      "answer_source": "derived:reviewed-reading-question-context"
     }
   ],
   "polysemy": [
@@ -1996,38 +2010,41 @@
       "question": "海倫‧凱勒為什麼會變成身體有殘缺的人？她的身體有什麼缺陷？",
       "options": [
         "小時候生病。失明與失聰",
-        "海倫‧凱勒失明，再也無法看見。對失明的人而言，期待光明，哪怕只有短短的三天也是一種欣喜與奇蹟，是一種恩賜。看不見的人，哪怕只要能看見一下下，都會覺得特別珍惜與滿……",
-        "海倫‧凱勒的眼睛失明，她已經無法看見，所以用「假如」這樣的假設句，想像自己若能看見該有多美好"
+        "期待光明，也珍惜看見的時光。",
+        "她用「假如」想像看見世界。"
       ],
       "answer": "小時候生病。失明與失聰",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "小時候因為生病，造成她失明與失聰。"
     },
     {
       "id": "listening:05:02",
       "stem": "海倫‧凱勒為何說「如果一個人可以在生活中失明或失聰幾天的話，那將是一個值得珍惜的機會」？她想表達什麼？",
       "question": "海倫‧凱勒為何說「如果一個人可以在生活中失明或失聰幾天的話，那將是一個值得珍惜的機會」？她想表達什麼？",
       "options": [
-        "海倫‧凱勒失明，再也無法看見。對失明的人而言，期待光明，哪怕只有短短的三天也是一種欣喜與奇蹟，是一種恩賜。看不見的人，哪怕只要能看見一下下，都會覺得特別珍惜與滿……",
-        "海倫‧凱勒的眼睛失明，她已經無法看見，所以用「假如」這樣的假設句，想像自己若能看見該有多美好",
-        "海倫‧凱勒認為黑暗會讓人更加珍惜光明的可貴，寧靜會讓人更能感受聲音的愉悅，她希望人們珍惜看得見、聽得到的幸福與珍貴"
+        "期待光明，也珍惜看見的時光。",
+        "她用「假如」想像看見世界。",
+        "珍惜看得見、聽得到的幸福。"
       ],
-      "answer": "海倫‧凱勒認為黑暗會讓人更加珍惜光明的可貴，寧靜會讓人更能感受聲音的愉悅，她希望人們珍惜看得見、聽得到的幸福與珍貴",
+      "answer": "珍惜看得見、聽得到的幸福。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "黑暗會讓他更加珍惜光明的可貴，寧靜會讓他更能感受聲音的愉悅。"
     },
     {
       "id": "listening:05:03",
       "stem": "海倫‧凱勒用了哪些方法取代她看不見、聽不見的遺憾？",
       "question": "海倫‧凱勒用了哪些方法取代她看不見、聽不見的遺憾？",
       "options": [
-        "海倫‧凱勒的眼睛失明，她已經無法看見，所以用「假如」這樣的假設句，想像自己若能看見該有多美好",
-        "她靠觸覺感受世界，讓自己「看」見、「聽」見。她觸摸樹枝感受春天蓓蕾在枝頭綻放，把手放在小樹上感受小鳥歌唱，讓水從掌心流過，去柔軟的草地，感受動人的世界",
-        "海倫‧凱勒失明，再也無法看見。對失明的人而言，期待光明，哪怕只有短短的三天也是一種欣喜與奇蹟，是一種恩賜。看不見的人，哪怕只要能看見一下下，都會覺得特別珍惜與滿……"
+        "她用「假如」想像看見世界。",
+        "用觸覺感受世界。",
+        "期待光明，也珍惜看見的時光。"
       ],
-      "answer": "她靠觸覺感受世界，讓自己「看」見、「聽」見。她觸摸樹枝感受春天蓓蕾在枝頭綻放，把手放在小樹上感受小鳥歌唱，讓水從掌心流過，去柔軟的草地，感受動人的世界",
+      "answer": "用觸覺感受世界。",
       "status": "approved",
-      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）"
+      "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
+      "passage": "有時，我的手觸摸著樹枝，就能感受春天的蓓蕾在枝頭綻放；有時，我的手輕輕的放在一棵小樹上面，就能感受到小鳥歡聲歌唱。"
     }
   ],
   "review_words": {
