@@ -1704,23 +1704,23 @@
 }
 .polysemy-sentence-row { margin-bottom: var(--space-3); }
 
-/* 頁尾來源說明：給大人看的小字，不該跟教材文字爭注意力，所以不用 --font-size-meta
-   （18px 是學生用的下限），改用 15px 並降低彩度。#6f685c 對頁面底色對比 5.16，
-   仍達 AA。不加底色區塊，只留一條細分隔線，避免頁尾變成視覺重量。 */
+/* 頁尾來源說明：給大人看的小字，不該跟教材文字爭注意力。13px＋#777064，
+   對頁面底色對比 4.58，是「還能通過 AA」前提下最淡的一檔——再淡就低於 4.5，
+   不可為了更不顯眼而犧牲可讀性。不加底色區塊，只留細分隔線。
+   三句各自一行（CF 指定），375px 下每句都能單行容納，不會斷行。 */
 .site-footer {
   margin-top: var(--space-6);
   padding: var(--space-3) var(--space-4) calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
   border-top: 1px solid var(--color-border);
-  color: #6f685c;
-  font-size: 15px;
-  line-height: 1.6;
+  color: #777064;
+  font-size: 13px;
+  line-height: 1.8;
   text-align: center;
 }
 
 .site-footer__line {
-  margin: 0 auto;
-  max-width: 46em;
-  /* 手機寬度下置中容易讓行尾剩一兩個字，balance 讓各行等長；
-     不支援的瀏覽器退回一般換行，仍可讀。 */
+  margin: 0;
+  /* 第一句在 375px 會斷行並剩下「方產品。」四個孤字；balance 讓斷開的兩行等長。
+     其餘兩句本來就單行容納，不受影響。 */
   text-wrap: balance;
 }
