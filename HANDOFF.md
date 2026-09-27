@@ -1,5 +1,12 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-09-27｜家中 Mac｜Claude｜狀態：✅ 完成；全年級分支獨立驗收與 main 合併
+- 分支：`codex/mandarin-115-all-grades`，驗收 commit `0a63e99`。本機 `~/Teaching-Materials` 原為 single-branch clone（fetch refspec 只含 main），已改為 `+refs/heads/*:refs/remotes/origin/*` 才能取得此分支。
+- 更正前一筆紀錄：前一筆記為「push 被 `SEC_E_NO_CREDENTIALS` 擋下、遠端尚未更新」，實際上遠端已是 `0a63e99`，本機與 origin 同步，推送當時已成功。
+- 更正既有失敗標記：多筆紀錄把 `scripts/test-lesson-dashboard-progress.mjs`（G3A L01 dashboard 預期 listening 不存在）列為與該項無關的既有失敗；本次在 Mac 上 35 個 `scripts/test-*.mjs` 全數通過，該測試已不再失敗。
+- 驗收結果（全部在 Mac、Node v26.0.0／npm 11.12.1）：`validate` PASS（55 份課次、1 份索引）；`check-workflow` PASS（18 個工具／契約、20 個回歸測試、20 個 npm 閘門）；`audit:listening --strict` PASS（187 PASS／0 FAIL／0 REVIEW／1 LOCKED）；`build` 成功且 dist 不含 `_preview`；`check-dist` PASS；`check-assets` PASS（1458 個資產、105.58 MiB）；35／35 `scripts/test-*.mjs` 通過；`git diff --check` 乾淨。
+- 補跑先前無法執行的項目：`tools/dabutie` pytest 在 Mac 上 56 passed（學校 Win 環境當時缺 pytest 才未跑）。
+
 ## 2026-09-27｜全年級工作樹整理與分支推送
 - 分支：`codex/mandarin-115-all-grades`。整理並提交此前累積的跨年級網站、教材資料、流程檢查與圖片變更，程式／教材提交為 `1b83a0f`；納入範圍限於 `HANDOFF.md` 與 `apps/mandarin/`。
 - 巡檢：一、二、三、四、六年級總覽與各年級課次首頁以 375px 視窗檢查，沒有水平溢位；另檢視二上閱讀排序暖身與四上第九課句型頁。
