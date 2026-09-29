@@ -1,5 +1,10 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-09-29｜學校 Win｜Codex｜狀態：施工中
+- 範圍：`apps/mandarin/` 生字測驗與課文地圖的全年級稽核、修正及回歸驗證；請勿同時修改這個子專案。
+- 依據：CF 提供 repo 外課文 Word 與教育百科生字詞彙表；只修正可查證項目，缺乏對照資料者記入待辦，不推測補造。原文不進 repo。
+- 完工後補記逐冊檢查範圍、驗證結果與後續工作，再提交並推送（CF 已授權）。
+
 ## 2026-09-27｜家中 Mac｜Claude｜狀態：✅ 完成；全年級分支獨立驗收與 main 合併
 - 分支：`codex/mandarin-115-all-grades`，驗收 commit `0a63e99`。本機 `~/Teaching-Materials` 原為 single-branch clone（fetch refspec 只含 main），已改為 `+refs/heads/*:refs/remotes/origin/*` 才能取得此分支。
 - 更正前一筆紀錄：前一筆記為「push 被 `SEC_E_NO_CREDENTIALS` 擋下、遠端尚未更新」，實際上遠端已是 `0a63e99`，本機與 origin 同步，推送當時已成功。
