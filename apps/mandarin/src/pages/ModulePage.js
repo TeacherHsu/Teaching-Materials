@@ -15,6 +15,8 @@ import { buildPolyphonesActivity } from '../activities/polyphones.js';
 import { buildLookalikesActivity } from '../activities/lookalikes.js';
 import { buildExtensionLinks } from '../components/ExtensionLinks.js';
 import { findModuleEntry, getModuleStatus, MODULE_REGISTRY, moduleColorVars } from '../activities/moduleRegistry.js';
+import { StrategyCard } from '../components/StrategyCard.js';
+import { strategyFor } from '../activities/strategyCards.js';
 import { saveModuleComplete, saveModuleStars, getLessonStars } from '../utils/storage.js';
 import { startScoreSession, endScoreSession } from '../utils/scoreSession.js';
 import { computeModuleStars, starsMarkup } from '../utils/scoring.js';
@@ -92,6 +94,10 @@ export function ModulePage(lesson, moduleKey) {
   if (isPreview()) {
     root.appendChild(h('p', { class: 'meta' }, '預覽模式：待審（draft）內容會顯示並加「待審」標籤，正式上線不會出現。'));
   }
+
+  // 學習策略先講一次，不只在答錯時才出現（見 activities/strategyCards.js）。
+  const strategy = strategyFor(moduleKey);
+  if (strategy) root.appendChild(StrategyCard({ text: strategy }));
 
   const onBack = () => navigate(`/lesson/${lesson.lesson_id}`);
   const activitySlot = h('div', {});

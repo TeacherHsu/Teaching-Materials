@@ -4,7 +4,11 @@ import assert from 'node:assert/strict';
 import { computeModuleStars, starsMarkup } from '../src/utils/scoring.js';
 import { startScoreSession, recordOutcome, endScoreSession } from '../src/utils/scoreSession.js';
 
-// ---- computeModuleStars 規則 ----
+// ---- computeModuleStars 規則（2026-09-30 由表現導向改為精熟導向）----
+// 舊規則是「全部第一次就答對才 3 顆星」，等於用過提示就永遠拿不到滿星，
+// 讓唯一的獎勵訊號和唯一的鷹架機制互相對立；對閱讀困難、學障學生而言
+// 滿星結構性拿不到。現行規則只看「最後有沒有自己學會」。
+// 詳見 src/utils/scoring.js 與 docs/specs/2026-09-30-pedagogy-optimisation.md §0。
 assert.equal(computeModuleStars({ total: 0, firstTryCount: 0, revealedCount: 0 }), 0, '沒有題目應該是 0 顆星');
 assert.equal(
   computeModuleStars({ total: 3, firstTryCount: 3, revealedCount: 0 }),
@@ -12,19 +16,19 @@ assert.equal(
   '全部第一次就答對 → 3 顆星',
 );
 assert.equal(
-  computeModuleStars({ total: 3, firstTryCount: 2, revealedCount: 0 }),
-  2,
-  '沒有被揭曉，但至少一題靠提示才答對 → 2 顆星',
+  computeModuleStars({ total: 3, firstTryCount: 0, revealedCount: 0 }),
+  3,
+  '全部看過提示但最後都自己答對 → 仍是 3 顆星（使用鷹架不可以有代價）',
 );
 assert.equal(
   computeModuleStars({ total: 3, firstTryCount: 1, revealedCount: 1 }),
-  1,
-  '至少一題被揭曉正解 → 1 顆星（即使其他題答對）',
+  2,
+  '一題被揭曉正解 → 2 顆星',
 );
 assert.equal(
   computeModuleStars({ total: 5, firstTryCount: 0, revealedCount: 5 }),
   1,
-  '全部被揭曉，仍完成活動 → 給 1 顆鼓勵星，不是 0',
+  '多題被揭曉，仍完成活動 → 給 1 顆鼓勵星，不是 0',
 );
 
 // ---- scoreSession：跨多個元件（同一大項內多輪）彙總 ----
@@ -34,7 +38,7 @@ recordOutcome({ firstTry: true, revealed: false });
 recordOutcome({ firstTry: false, revealed: true });
 const meta = endScoreSession();
 assert.deepEqual(meta, { total: 3, firstTryCount: 2, revealedCount: 1 });
-assert.equal(computeModuleStars(meta), 1);
+assert.equal(computeModuleStars(meta), 2, '一題被揭曉 → 2 顆星');
 
 // 沒有 startScoreSession 就呼叫 recordOutcome：安靜忽略，不丟例外
 assert.doesNotThrow(() => recordOutcome({ firstTry: true, revealed: false }));
