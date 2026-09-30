@@ -5,7 +5,7 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
     'use strict';
 
-    const VERSION = '1.7.0';
+    const VERSION = '1.8.0';
 
     // Teacher-approved defaults. Phrase rules below take precedence when the
     // surrounding text establishes another reading.
@@ -133,6 +133,55 @@
         '種子', '蓮子', '愛玉子', '分子', '原子', '電子', '粒子', '量子', '精子', '卵子',
     ];
 
+    // === 台灣腔讀音層（2026-09-30） ===
+    // pinyin-pro 的詞庫依據大陸普通話，整句候選會把「期」算成 qī、
+    // 「垃圾」算成 lājī。這一層把只是「陳腔 vs 台腔」、在台灣並非破音的字
+    // 拉回教育部辭典的讀法。每一筆都需引教育部官方辭典（dict.revised / dict.concised），
+    // 禁止憑記憶新增；反例見下方 TAIWAN_READING_EXCEPTIONS。
+    // 套用時機：緊接在 COMMON_DEFAULTS 之後、PHRASE_RULES 之前，
+    // 因此多音字的詞語規則與結構判斷仍能覆寫它。
+    // 來源：教育部《國語辭典簡編本》2021（https://dict.concised.moe.edu.tw/）。
+    // 簡編本是教育部明訂給中小學使用的版本（重編本頁面自己標註
+    // 「適用於語文研究者，中小學階段建議使用簡編本」），因此兩典不一致時一律以簡編本為準。
+    // 每一筆都是 2026-09-30 逐詞查證過、且確實與 pinyin-pro 輸出不同的項目；
+    // 查證結果與 pinyin-pro 相同者（液、哺、型、熙、癌、俗、瑰、仔…）不列入，避免無效覆寫。
+    const TAIWAN_CHAR_READINGS = {
+        '期': 'ㄑㄧˊ',      // 星期 ㄒㄧㄥ ㄑㄧˊ（pinyin-pro：ㄑㄧ）
+        '崖': 'ㄧㄞˊ',      // 懸崖 ㄒㄩㄢˊ ㄧㄞˊ（pinyin-pro：ㄧㄚˊ）
+        '企': 'ㄑㄧˋ',      // 企鵝 ㄑㄧˋ ㄜˊ；企業 ㄑㄧˋ ㄧㄝˋ（pinyin-pro：ㄑㄧˇ）
+        '垃': 'ㄌㄜˋ',      // 垃圾 ㄌㄜˋ ㄙㄜˋ（pinyin-pro：ㄌㄚ）
+        '圾': 'ㄙㄜˋ',      // 同上（pinyin-pro：ㄐㄧ）
+        '蝸': 'ㄍㄨㄚ',      // 蝸牛 ㄍㄨㄚ ㄋㄧㄡˊ（pinyin-pro：ㄨㄛ）
+        '暫': 'ㄓㄢˋ',      // 暫時 ㄓㄢˋ ㄕˊ（pinyin-pro：ㄗㄢˋ）
+        '質': 'ㄓˊ',        // 品質 ㄆㄧㄣˇ ㄓˊ；質問 ㄓˊ ㄨㄣˋ（pinyin-pro：ㄓˋ）
+        '夾': 'ㄐㄧㄚˊ',    // 夾克 ㄐㄧㄚˊ ㄎㄜˋ（pinyin-pro：ㄐㄧㄚ）
+        '擊': 'ㄐㄧˊ',      // 攻擊 ㄍㄨㄥ ㄐㄧˊ（pinyin-pro：ㄐㄧ）
+        '惜': 'ㄒㄧˊ',      // 珍惜 ㄓㄣ ㄒㄧˊ；可惜 ㄎㄜˇ ㄒㄧˊ（pinyin-pro：ㄒㄧ）
+        '息': 'ㄒㄧˊ',      // 消息 ㄒㄧㄠ ㄒㄧˊ；休息 ㄒㄧㄡ ㄒㄧˊ（pinyin-pro：ㄒㄧ）
+        '跡': 'ㄐㄧ',        // 蹤跡 ㄗㄨㄥ ㄐㄧ（pinyin-pro：ㄐㄧˋ）
+        '蹟': 'ㄐㄧ',        // 古蹟 ㄍㄨˇ ㄐㄧ（pinyin-pro：ㄐㄧˋ）
+        '酵': 'ㄒㄧㄠˋ',    // 發酵 ㄈㄚ ㄒㄧㄠˋ（pinyin-pro：ㄐㄧㄠˋ）
+        '攜': 'ㄒㄧ',        // 攜帶 ㄒㄧ ㄉㄞˋ（pinyin-pro：ㄒㄧㄝˊ）
+        '曝': 'ㄆㄨˋ',      // 曝光 ㄆㄨˋ ㄍㄨㄤ（pinyin-pro：ㄅㄠˋ）
+        '究': 'ㄐㄧㄡˋ',    // 研究 ㄧㄢˊ ㄐㄧㄡˋ（pinyin-pro：ㄐㄧㄡ）
+        '危': 'ㄨㄟˊ',      // 危險 ㄨㄟˊ ㄒㄧㄢˇ（pinyin-pro：ㄨㄟ）
+        '擁': 'ㄩㄥˇ',      // 擁抱 ㄩㄥˇ ㄅㄠˋ（pinyin-pro：ㄩㄥ）
+        '髮': 'ㄈㄚˇ',      // 頭髮 ㄊㄡˊ ㄈㄚˇ（pinyin-pro：ㄈㄚˋ）
+        '播': 'ㄅㄛˋ',      // 廣播 ㄍㄨㄤˇ ㄅㄛˋ（pinyin-pro：ㄅㄛ）
+        // 2026-09-30 CF 裁定採簡編本：括 在簡編本一律 ㄍㄨㄚ
+        // （單字ㄍㄨㄚ、包括ㄅㄠ ㄍㄨㄚ、概括ㄍㄞˋ ㄍㄨㄚ、括號ㄍㄨㄚ ㄏㄠˋ、
+        // 總括ㄗㄨㄥˇ ㄍㄨㄚ、囊括ㄋㄤˊ ㄍㄨㄚ），與重編本／一般教學的 ㄎㄨㄛˋ 不同。
+        '括': 'ㄍㄨㄚ',      // 包括 ㄅㄠ ㄍㄨㄚ（pinyin-pro：ㄎㄨㄛˋ）
+    };
+
+    // 只在特定詞語成立的台灣讀音（該字本身是真破音字）。
+    const TAIWAN_PHRASE_READINGS = [
+    ];
+
+    // TAIWAN_CHAR_READINGS 的反例：該字在這些詞裡不該被改寫。
+    const TAIWAN_READING_EXCEPTIONS = [
+    ];
+
     // Browser speech synthesis reads the source character, not the displayed
     // Zhuyin. These homophones are the approved TTS layer for corrected
     // polyphonic readings; ordinary readings continue to use the source char.
@@ -162,7 +211,43 @@
         '盡|ㄐㄧㄣˋ': '進',
         '得|ㄉㄜˊ': '德', '得|˙ㄉㄜ': '的',
         '著|ㄓㄨˋ': '注', '著|ㄓㄨㄛˊ': '卓',
+
+        // === 2026-09-30 補齊：53 課語料稽核出的破音字缺口 ===
+        // 這批組合在課文檔裡有正確注音、卻沒有讀音備註，是「顯示對、念錯」的主因。
+        // 每個同音字都經教育部《國語辭典簡編本》查證，且本身必須是「單音字」——
+        // 同音字若自己也是破音字（號ㄏㄠˋ/ㄏㄠˊ、瞭ㄌㄧㄠˇ/ㄌㄧㄠˋ、噢ㄛ/ㄩˇ），
+        // 語音合成一樣會猜錯，等於沒修，因此一律不採用。
+        '為|ㄨㄟˊ': '圍',
+        '個|ㄍㄜˋ': '各',
+        '好|ㄏㄠˋ': '浩',
+        '角|ㄐㄩㄝˊ': '決',
+        '處|ㄔㄨˇ': '楚',
+        '都|ㄉㄨ': '嘟',
+        '空|ㄎㄨㄥˋ': '控',
+        '假|ㄐㄧㄚˋ': '架',
+        '分|ㄈㄣˋ': '份',
+        '差|ㄔㄚˋ': '岔',
+        '答|ㄉㄚ': '搭',
+        '肚|ㄉㄨˇ': '賭',
+        '更|ㄍㄥ': '耕',
+        '調|ㄉㄧㄠˋ': '掉',
+        '倒|ㄉㄠˇ': '導',
+        '喝|ㄏㄜˋ': '賀',
+        '朝|ㄓㄠ': '招',
+        '彈|ㄉㄢˋ': '蛋',
+        '少|ㄕㄠˋ': '紹',
+        '背|ㄅㄟˋ': '備',
+        '相|ㄒㄧㄤˋ': '像',
+        '子|ㄗˇ': '紫',
     };
+
+    // 稽核確認「找不到可用單音同音字」的組合。引擎不會硬湊，改為標示出來，
+    // 讓教師知道這些位置只能靠語音合成自己判斷，必要時自行指定備註。
+    // 輕聲（˙開頭）不列入：找不到輕聲同音字，且臺灣語音對疊詞輕聲通常正確。
+    const SPEECH_HOMOPHONE_GAPS = new Set([
+        '了|ㄌㄧㄠˇ', '喔|ㄛ', '得|ㄉㄟˇ', '切|ㄑㄧㄝ',
+        '著|ㄓㄠˊ', '佛|ㄈㄛˊ', '划|ㄏㄨㄚˊ',
+    ]);
 
     // 動詞「種」：未被詞語規則認領、前面不是數量／指示詞，且後面接著漢字受詞，
     // 例如「種高麗菜」「種下希望」「菜種好了」。作物名無法窮舉，故採結構判斷。
@@ -494,6 +579,33 @@
             }
         });
 
+        // 台灣腔讀音層：先逐字拉回台腔，再用反例詞語還原。
+        const taiwanExcepted = new Set();
+        TAIWAN_READING_EXCEPTIONS.forEach(({ char, phrases }) => {
+            phrases.forEach(phrase => {
+                let start = 0;
+                while (start <= chars.length - phrase.length) {
+                    const found = text.indexOf(phrase, start);
+                    if (found < 0) break;
+                    taiwanExcepted.add(found + phrase.indexOf(char));
+                    start = found + Math.max(1, phrase.length);
+                }
+            });
+        });
+        chars.forEach((char, index) => {
+            if (!TAIWAN_CHAR_READINGS[char] || taiwanExcepted.has(index)) return;
+            setReading(index, TAIWAN_CHAR_READINGS[char], `tw-reading-${char}`, 'default');
+        });
+        TAIWAN_PHRASE_READINGS.forEach(({ phrase, char, zhuyin }) => {
+            let start = 0;
+            while (start <= chars.length - phrase.length) {
+                const found = text.indexOf(phrase, start);
+                if (found < 0) break;
+                setReading(found + phrase.indexOf(char), zhuyin, `tw-phrase-${phrase}`, 'deterministic');
+                start = found + Math.max(1, phrase.length);
+            }
+        });
+
         PHRASE_RULES.forEach(rule => {
             let start = 0;
             while (start <= text.length - rule.phrase.length) {
@@ -643,9 +755,14 @@
         ZHONG3_PHRASES,
         HUAN2_PHRASES,
         WEI2_PHRASES,
+        TAIWAN_CHAR_READINGS,
+        TAIWAN_PHRASE_READINGS,
+        TAIWAN_READING_EXCEPTIONS,
         CONTEXTUAL_CHAR_DEFAULTS,
         CONTEXTUAL_EXCEPTIONS,
         TTS_HOMOPHONES,
+        SPEECH_HOMOPHONE_GAPS,
+        speechHomophoneGapFor: (char, zhuyin) => SPEECH_HOMOPHONE_GAPS.has(`${char}|${normalizeZhuyin(zhuyin)}`),
         PHRASE_RULES,
         expectedContextualReadings,
         expectedSpeechOverrides,

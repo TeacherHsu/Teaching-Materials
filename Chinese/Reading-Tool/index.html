@@ -22,6 +22,10 @@
     <!-- 5. 引入 pinyin-pro 自動注音庫 -->
     <script src="https://unpkg.com/pinyin-pro@3.18.2/dist/index.js"></script>
 
+    <!-- 5.0 課文存取密碼門：課文有版權，未解鎖不載入 lessons/ 內容 -->
+    <script src="./access-config.js"></script>
+    <script src="./access-gate.js"></script>
+
     <!-- 5.1 115 教師校正經驗：多音字、變調與家人稱呼輕聲規則 -->
     <script src="./pronunciation-rules.js"></script>
 
@@ -60,6 +64,26 @@
         const { useState, useEffect } = React;
 
         // 2026-09-02: 抽出整句候選與規則分析，讓畫面渲染與分享連結共用同一份結果。
+        // 2026-09-30: 讀音一律預設臺灣腔。瀏覽器回傳的 zh 語音包含 zh-CN / zh-HK，
+        // 舊版未命中 zh-TW 時會落到第一個（常常是大陸腔）。這裡改用評分，
+        // 同時讓 lang 與 name 都能證明臺灣腔（macOS 的「美佳」、Google 的 Taiwan）。
+        const TAIWAN_VOICE_MIN_SCORE = 60;
+        const TAIWAN_VOICE_NAME_HINTS = /Taiwan|臺灣|台灣|國語|美佳|Meijia|Yating|Hanhan|Zhiyu|Xiaochen/i;
+        const NON_TAIWAN_LANGS = /^(zh[-_](CN|SG|Hans)|cmn[-_](Hans|CN))/i;
+
+        function taiwanVoiceScore(voice) {
+            if (!voice) return 0;
+            const lang = String(voice.lang || '').replace('_', '-');
+            const name = String(voice.name || '');
+            if (/^zh-TW$/i.test(lang)) return 100;
+            if (/^(zh|cmn)-Hant(-TW)?$/i.test(lang)) return 95;
+            if (/^zh-Hant/i.test(lang)) return 90;
+            if (TAIWAN_VOICE_NAME_HINTS.test(name)) return 80;
+            if (NON_TAIWAN_LANGS.test(lang)) return 10;
+            if (/^zh-HK|^yue/i.test(lang)) return 20;
+            return 30;
+        }
+
         function analyzeReading(inputText) {
             let pinyinDetails = [];
             if (window.pinyinPro) {
@@ -277,6 +301,7 @@
 
             const [voices, setVoices] = useState([]);
             const [selectedVoice, setSelectedVoice] = useState(null);
+            const [nonTaiwanVoiceWarning, setNonTaiwanVoiceWarning] = useState(false);
 
             const [editingIndex, setEditingIndex] = useState(null);
             const [tempZhuyin, setTempZhuyin] = useState("");
@@ -328,17 +353,26 @@
                 if (!window.speechSynthesis) return;
                 const loadVoices = () => {
                     const list = window.speechSynthesis.getVoices();
-                    const zhVoices = list.filter(v => v.lang.indexOf('zh') !== -1);
+                    const zhVoices = list
+                        .filter(v => /zh|cmn|Chinese|Mandarin|\u570b\u8a9e|\u4e2d\u6587/i.test(`${v.lang} ${v.name}`))
+                        .map(v => ({ voice: v, score: taiwanVoiceScore(v) }))
+                        // \u81fa\u7063\u8154\u512a\u5148\uff1b\u540c\u5206\u4fdd\u6301\u700f\u89bd\u5668\u539f\u672c\u9806\u5e8f\uff0c\u907f\u514d\u6bcf\u6b21\u91cd\u6392\u3002
+                        .sort((a, b) => b.score - a.score)
+                        .map(entry => entry.voice);
                     setVoices(zhVoices);
                     if (zhVoices.length > 0) {
-                        const tw = zhVoices.find(v => v.lang === 'zh-TW' || v.lang === 'zh_TW');
+                        // \u6392\u5e8f\u5f8c\u7b2c\u4e00\u500b\u5c31\u662f\u6700\u63a5\u8fd1\u81fa\u7063\u8154\u7684\u9078\u9805\u3002
                         setSelectedVoice(prev => {
-                            if (prev && zhVoices.find(v => v.name === prev.name)) return prev;
-                            return tw || zhVoices[0];
+                            const kept = prev && zhVoices.find(v => v.name === prev.name);
+                            // \u820a\u7248\u66fe\u9810\u8a2d\u843d\u5230 zh-CN\uff1b\u82e5\u4e0a\u4e00\u6b21\u9078\u7684\u662f\u975e\u81fa\u7063\u8154\uff0c\u4e14\u73fe\u5728\u6709\u81fa\u7063\u8154\u53ef\u7528\uff0c\u5c31\u63db\u6210\u81fa\u7063\u8154\u3002
+                            if (kept && taiwanVoiceScore(kept) >= TAIWAN_VOICE_MIN_SCORE) return kept;
+                            return zhVoices[0];
                         });
+                        setNonTaiwanVoiceWarning(taiwanVoiceScore(zhVoices[0]) < TAIWAN_VOICE_MIN_SCORE);
                     } else {
                         setVoices([]);
                         setSelectedVoice(null);
+                        setNonTaiwanVoiceWarning(false);
                     }
                 };
                 loadVoices();
@@ -392,7 +426,9 @@
                         setLessonLoadError('課次代碼格式錯誤。');
                         setMode('read');
                     } else {
-                        fetch(`lessons/${encodeURIComponent(lessonId)}.json`, { cache: 'no-store' })
+                        // 課文有版權：等密碼門放行後才向伺服器要課文內容。
+                        (window.ReadingAccessGate?.ready || Promise.resolve(true))
+                            .then(() => fetch(`lessons/${encodeURIComponent(lessonId)}.json`, { cache: 'no-store' }))
                             .then(response => {
                                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
                                 return response.json();
@@ -547,17 +583,32 @@
                 window.speechSynthesis.speak(utterance);
             };
 
-            const buildSpeakText = (range) => {
-                if (!range) return text.split('|').join('');
+            // 2026-09-30: \u539f\u672c\u53ea\u8b80 overrides\uff08\u53ea\u88dd\u6559\u5e2b\u624b\u6539\u7684\u5dee\u7570\uff09\uff0c\u898f\u5247\u5f15\u64ce\u7b97\u51fa\u7684\u8b80\u97f3\u5099\u8a3b
+            // \uff08analysis.speechOverrides\uff0c\u5982\u300c\u548c\u2192\u6f22\u300d\uff09\u5168\u88ab\u7565\u904e\uff0c\u9020\u6210\u300c\u6ce8\u97f3\u5c0d\u3001\u5099\u8a3b\u5c0d\u3001
+            // \u5ff5\u51fa\u4f86\u932f\u300d\u3002\u6539\u8b80 parsedData\uff0c\u5b83\u5df2\u5408\u4f75\u5f15\u64ce\u7d50\u679c\u8207\u6559\u5e2b\u6821\u6b63\u3002
+            const phoneCharAt = (index, fallbackChar) => {
+                const merged = parsedData[index];
+                if (merged && typeof merged.phoneChar === 'string' && merged.phoneChar.trim()) {
+                    return merged.phoneChar.trim();
+                }
+                const ov = overrides[index];
+                if (ov && typeof ov.phoneChar === 'string' && ov.phoneChar.trim()) {
+                    return ov.phoneChar.trim();
+                }
+                return fallbackChar;
+            };
 
+            const buildSpeakText = (range) => {
                 const chars = text.split('');
+                const start = range ? range.s : 0;
+                const end = range ? range.e : chars.length - 1;
                 const out = [];
 
-                for (let i = range.s; i <= range.e; i++) {
+                for (let i = start; i <= end; i++) {
                     const c = chars[i];
-                    if (c === '|') continue; 
-                    const ov = overrides[i];
-                    out.push(ov?.phoneChar || c);
+                    if (c === undefined) break;
+                    if (c === '|') continue;
+                    out.push(phoneCharAt(i, c));
                 }
                 return out.join('');
             };
@@ -765,7 +816,7 @@
                         const sentence = buildSpeakText({ s, e: end });
                         playSound(sentence, { s, e: end });
                     } else {
-                        playSound(phoneChar || char, { s: index, e: index });
+                        playSound(buildSpeakText({ s: index, e: index }) || phoneChar || char, { s: index, e: index });
                     }
                 };
 
@@ -911,7 +962,7 @@
                                     >
                                         {voices.map(v => (
                                             <option key={v.name} value={v.name}>
-                                                {v.name.replace(/Google |Microsoft |Apple /g, '')}
+                                                {`${v.name.replace(/Google |Microsoft |Apple /g, '')}${taiwanVoiceScore(v) >= TAIWAN_VOICE_MIN_SCORE ? '（臺）' : ''}`}
                                             </option>
                                         ))}
                                     </select>
@@ -979,6 +1030,15 @@
                                 <div className="flex gap-2 shrink-0">
                                     <button onClick={exportTeacherCorrections} className="px-3 py-1.5 rounded-lg bg-teal-500 hover:bg-teal-600 text-white text-sm">匯出校正</button>
                                     <button onClick={clearLocalCorrections} className="px-3 py-1.5 rounded-lg bg-white border border-teal-200 text-teal-700 text-sm">清除本機</button>
+                                </div>
+                            </div>
+                        )}
+                        {mode === 'read' && voices.length > 0 && nonTaiwanVoiceWarning && (
+                            <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-xl text-sm text-amber-800 flex items-start gap-3">
+                                <i data-lucide="alert-triangle" className="shrink-0 mt-0.5" width="18"></i>
+                                <div>
+                                    <p className="font-bold">⚠️ 這台裝置沒有臺灣腔（zh-TW）語音</p>
+                                    <p className="mt-1 text-xs">目前只找得到非臺灣腔的中文語音，念讀可能帶大陸腔。請到裝置設定下載「中文（臺灣）」語音包（macOS：系統設定 › 輔助使用 › 旁白；安卓：Google 文字轉語音）。</p>
                                 </div>
                             </div>
                         )}

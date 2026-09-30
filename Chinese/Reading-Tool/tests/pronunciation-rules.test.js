@@ -10,7 +10,7 @@ assert.equal(rules.pinyinSyllableToZhuyin('zhi4'), 'ㄓˋ');
 assert.equal(rules.pinyinSyllableToZhuyin('wen2'), 'ㄨㄣˊ');
 assert.equal(rules.pinyinSyllableToZhuyin('jue2'), 'ㄐㄩㄝˊ');
 assert.equal(rules.pinyinSyllableToZhuyin('xi0'), '˙ㄒㄧ');
-assert.equal(rules.VERSION, '1.7.0');
+assert.equal(rules.VERSION, '1.8.0');
 
 function analyze(text, known = {}) {
     const readings = Array.from(text, (_, index) => known[index] || 'ㄗ');
@@ -205,5 +205,47 @@ const missingCandidate = rules.apply('他行嗎', ['ㄊㄚ', '', '˙ㄇㄚ']);
 assert.equal(missingCandidate.reviewItems.some(item => item.char === '行'), true);
 const conjunction = analyze('你和我');
 assert.equal(conjunction.reviewItems.some(item => item.char === '和'), false);
+
+
+// === 台灣腔讀音層（2026-09-30）===
+// 來源一律為教育部《國語辭典簡編本》2021（dict.concised.moe.edu.tw），
+// 逐詞查證；兩典不一致時以簡編本為準。pinyin-pro 的詞庫是大陸普通話，
+// 這一層負責把它拉回臺灣讀音。
+expectReading('星期', 1, 'ㄑㄧˊ');
+expectReading('懸崖', 1, 'ㄧㄞˊ');
+expectReading('企鵝', 0, 'ㄑㄧˋ');
+expectReading('垃圾', 0, 'ㄌㄜˋ');
+expectReading('垃圾', 1, 'ㄙㄜˋ');
+expectReading('蝸牛', 0, 'ㄍㄨㄚ');
+expectReading('暫時', 0, 'ㄓㄢˋ');
+expectReading('品質', 1, 'ㄓˊ');
+expectReading('夾克', 0, 'ㄐㄧㄚˊ');
+expectReading('攻擊', 1, 'ㄐㄧˊ');
+expectReading('珍惜', 1, 'ㄒㄧˊ');
+expectReading('消息', 1, 'ㄒㄧˊ');
+expectReading('蹤跡', 1, 'ㄐㄧ');
+expectReading('古蹟', 1, 'ㄐㄧ');
+expectReading('發酵', 1, 'ㄒㄧㄠˋ');
+expectReading('攜帶', 0, 'ㄒㄧ');
+expectReading('曝光', 0, 'ㄆㄨˋ');
+expectReading('研究', 1, 'ㄐㄧㄡˋ');
+expectReading('危險', 0, 'ㄨㄟˊ');
+expectReading('擁抱', 0, 'ㄩㄥˇ');
+expectReading('頭髮', 1, 'ㄈㄚˇ');
+expectReading('廣播', 1, 'ㄅㄛˋ');
+expectReading('包括', 1, 'ㄍㄨㄚ');
+expectReading('括號', 0, 'ㄍㄨㄚ');
+
+// 台灣腔層不得蓋掉多音字的詞語規則與結構判斷：
+// 「播種」的「種」仍由名詞詞語規則認領。
+expectReading('播種', 0, 'ㄅㄛˋ');
+expectReading('播種', 1, 'ㄓㄨㄥˇ');
+
+// speechOverrides 只按最終讀音產生；台灣腔層不應凿空新增同音字。
+{
+    const r = rules.apply('星期', ['ㄒㄧㄥ', 'ㄑㄧ']);
+    assert.equal(r.readings[1], 'ㄑㄧˊ');
+    assert.equal(r.speechOverrides[1], undefined);
+}
 
 console.log(`PRONUNCIATION RULE TESTS PASSED: ${rules.VERSION}`);
