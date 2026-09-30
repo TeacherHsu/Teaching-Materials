@@ -1755,7 +1755,7 @@
       "type": "reading",
       "module": "characters",
       "compact": true,
-      "version_note": "115上・翰林・六年級・第7課",
+      "version_note": "115 上・翰林・六年級・第7課",
       "login_required": false,
       "checked_at": "2026-09-26",
       "note": "已帶入本課18個生字"
@@ -1980,5 +1980,84 @@
       "status": "available",
       "activity": "review"
     }
+  },
+  "structure_tree": {
+    "source": "13課文結構表/WORD/6上L07課文結構表-跟著公共藝術去旅行.doc",
+    "verified_on": "2026-09-30",
+    "task_type": "A",
+    "nodes": [
+      {
+        "order": 1,
+        "label": "一、觀賞原因",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H07:一、觀賞原因:1:88148570",
+            "paragraphs": [
+              1
+            ],
+            "gist": "因為好奇公共藝術是什麼，一家人決定出門去看看。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      },
+      {
+        "order": 2,
+        "label": "二、觀賞經過",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H07:二、觀賞經過:2:a5091819",
+            "paragraphs": [
+              2
+            ],
+            "gist": "先看「花間小鹿」的外形，弄懂它為什麼依規定設置，又想表達什麼。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H07:二、觀賞經過:3:b8b948a9",
+            "paragraphs": [
+              3
+            ],
+            "gist": "再看「分合隨緣」，了解它被安放的過程，還能動手互動，體會創作的用意。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H07:二、觀賞經過:4:abe92f80",
+            "paragraphs": [
+              4
+            ],
+            "gist": "接著走進美術館，欣賞館內的作品。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      },
+      {
+        "order": 3,
+        "label": "三、歸納特色",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H07:三、歸納特色:5-6:9b1c6654",
+            "paragraphs": [
+              5,
+              6
+            ],
+            "gist": "他們發現現代藝術的主題和表現方式很多樣，聽爸媽解說後，整理出公共藝術的幾項特點。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      }
+    ]
   }
 }

@@ -1817,7 +1817,7 @@
       "type": "reading",
       "module": "characters",
       "compact": true,
-      "version_note": "115上・翰林・六年級・第11課",
+      "version_note": "115 上・翰林・六年級・第11課",
       "login_required": false,
       "checked_at": "2026-09-26",
       "note": "已帶入本課18個生字"
@@ -2042,5 +2042,84 @@
       "status": "available",
       "activity": "review"
     }
+  },
+  "structure_tree": {
+    "source": "13課文結構表/WORD/6上L11課文結構表-來一碗溫暖的羹湯.doc",
+    "verified_on": "2026-09-30",
+    "task_type": "A",
+    "nodes": [
+      {
+        "order": 1,
+        "label": "一、羹湯溫暖的特點",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H11:一、羹湯溫暖的特點:1:6dd4bc16",
+            "paragraphs": [
+              1
+            ],
+            "gist": "說明羹湯為什麼讓人覺得溫暖，以及宜蘭人愛吃羹湯的緣由。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      },
+      {
+        "order": 2,
+        "label": "二、母親料理羹湯的情形",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H11:二、母親料理羹湯的情形:2-3:be85ccb9",
+            "paragraphs": [
+              2,
+              3
+            ],
+            "gist": "早年母親常在冬天熬肉湯，從備料到起鍋都很仔細，我在旁邊幫忙，廚房裡又香又暖。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H11:二、母親料理羹湯的情形:4:d8415999",
+            "paragraphs": [
+              4
+            ],
+            "gist": "母親煮肉羹的時候，我常在一旁偷嘗幾口。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H11:二、母親料理羹湯的情形:5:94b48e5d",
+            "paragraphs": [
+              5
+            ],
+            "gist": "現在她會為孩子上街買肉羹回來，再添些變化，做成自家的口味。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      },
+      {
+        "order": 3,
+        "label": "三、羹湯裡的母愛",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H11:三、羹湯裡的母愛:6:e431939a",
+            "paragraphs": [
+              6
+            ],
+            "gist": "我喜歡羹湯，是因為能藉著它向母親撒嬌，感覺很幸福。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      }
+    ]
   }
 }

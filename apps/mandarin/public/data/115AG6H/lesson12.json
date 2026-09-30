@@ -2555,7 +2555,7 @@
       "type": "reading",
       "module": "characters",
       "compact": true,
-      "version_note": "115上・翰林・六年級・第12課",
+      "version_note": "115 上・翰林・六年級・第12課",
       "login_required": false,
       "checked_at": "2026-09-26",
       "note": "已帶入本課18個生字"
@@ -2780,5 +2780,122 @@
       "status": "available",
       "activity": "review"
     }
+  },
+  "structure_tree": {
+    "source": "13課文結構表/WORD/6上L12課文結構表-存根.doc",
+    "verified_on": "2026-09-30",
+    "task_type": "A",
+    "nodes": [
+      {
+        "order": 1,
+        "label": "一、背景",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H12:一、背景:1:7a60adcf",
+            "paragraphs": [
+              1
+            ],
+            "gist": "羅達的農夫克服了當地不好種植的條件，收成許多品質很好的南瓜。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      },
+      {
+        "order": 2,
+        "label": "二、開端",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H12:二、開端:2-3:e1245b6f",
+            "paragraphs": [
+              2,
+              3
+            ],
+            "gist": "布大爺狠下心，捨得把四十顆寶貝大南瓜賣出去。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H12:二、開端:4:13a636b3",
+            "paragraphs": [
+              4
+            ],
+            "gist": "預定採收的那天早晨，他發現南瓜不見了。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      },
+      {
+        "order": 3,
+        "label": "三、發展",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H12:三、發展:5-15:321a1b4b",
+            "paragraphs": [
+              5,
+              15
+            ],
+            "gist": "他在市場上認出自己種的南瓜，和攤販吵了起來，警察要他拿出憑據。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H12:三、發展:16-20:d4a8bd70",
+            "paragraphs": [
+              16,
+              20
+            ],
+            "gist": "弗大叔一口咬定南瓜是自己的。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      },
+      {
+        "order": 4,
+        "label": "四、高潮",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H12:四、高潮:21-23:aa3b7d24",
+            "paragraphs": [
+              21,
+              23
+            ],
+            "gist": "布大爺拿出一把新鮮的南瓜蒂，一一對上那些南瓜的斷口，證明主人是他。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      },
+      {
+        "order": 5,
+        "label": "五、結尾",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H12:五、結尾:24-25:76a65eb0",
+            "paragraphs": [
+              24,
+              25
+            ],
+            "gist": "他順利拿回賣南瓜的錢，也慶幸自己留下了存根，才把南瓜要了回來。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      }
+    ]
   }
 }

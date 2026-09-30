@@ -2035,7 +2035,7 @@
       "type": "reading",
       "module": "characters",
       "compact": true,
-      "version_note": "115上・翰林・六年級・第5課",
+      "version_note": "115 上・翰林・六年級・第5課",
       "login_required": false,
       "checked_at": "2026-09-26",
       "note": "已帶入本課17個生字"
@@ -2260,5 +2260,118 @@
       "status": "available",
       "activity": "review"
     }
+  },
+  "structure_tree": {
+    "source": "13課文結構表/WORD/6上L05課文結構表-樹的聯想.doc",
+    "verified_on": "2026-09-30",
+    "task_type": "A",
+    "note": "兩篇獨立文本，段落編號各自從 1 起算",
+    "nodes": [
+      {
+        "order": 1,
+        "label": "﹙一﹚觀樹",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H05:﹙一﹚觀樹:1-3:a6137870",
+            "paragraphs": [
+              1,
+              3
+            ],
+            "gist": "作者在正在動工的路邊，看見一棵長得很好看的樹。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H05:﹙一﹚觀樹:4:441b0f35",
+            "paragraphs": [
+              4
+            ],
+            "gist": "他偏愛樹，因為樹的姿態隨時在變，和花給人的感覺不一樣。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H05:﹙一﹚觀樹:5:98f50212",
+            "paragraphs": [
+              5
+            ],
+            "gist": "有些朋友也像樹，可靠、沉穩，值得好好珍惜。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H05:﹙一﹚觀樹:6:e8956688",
+            "paragraphs": [
+              6
+            ],
+            "gist": "還好樹一直都在，天天像老朋友一樣站在那裡跟他打招呼。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      },
+      {
+        "order": 2,
+        "label": "﹙二﹚種樹",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H05:﹙二﹚種樹:1:c4650034",
+            "paragraphs": [
+              1
+            ],
+            "gist": "他覺得種樹是一件很好的事。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H05:﹙二﹚種樹:2:8b05a1d5",
+            "paragraphs": [
+              2
+            ],
+            "gist": "他忍不住想知道，校園裡這些樹當初是誰栽下的。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H05:﹙二﹚種樹:3:927b8cd3",
+            "paragraphs": [
+              3
+            ],
+            "gist": "種樹的人也許沒想那麼多，卻讓後來的人開心；就像我們會被別人的好意打動，往往是因為自己也曾對人好。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H05:﹙二﹚種樹:4:b7eff3bc",
+            "paragraphs": [
+              4
+            ],
+            "gist": "種樹和讀書很像，都讓人心裡舒坦；他也用寫作種下一片綠蔭，讓別人乘涼。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H05:﹙二﹚種樹:5:df73873c",
+            "paragraphs": [
+              5
+            ],
+            "gist": "這份善意是一棒接一棒傳下來的，享受的同時，也可以想想自己能留下什麼。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      }
+    ]
   }
 }

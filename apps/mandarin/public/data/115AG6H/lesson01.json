@@ -1807,7 +1807,7 @@
       "type": "reading",
       "module": "characters",
       "compact": true,
-      "version_note": "115上・翰林・六年級・第1課",
+      "version_note": "115 上・翰林・六年級・第1課",
       "login_required": false,
       "checked_at": "2026-09-26",
       "note": "已帶入本課17個生字"
@@ -2033,5 +2033,76 @@
       "activity": "review",
       "note": "第 1 課沒有前課資料。"
     }
+  },
+  "structure_tree": {
+    "source": "13課文結構表/WORD/6上L01課文結構表-遇見自己.doc",
+    "verified_on": "2026-09-30",
+    "task_type": "B",
+    "note": "詩。分「詩」與「賞析」兩支，詩支無段落編號",
+    "nodes": [
+      {
+        "order": 1,
+        "label": "一、觀察自己",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H01:一、觀察自己:noparas:0c8542b3",
+            "paragraphs": [],
+            "gist": "詩人望向水面上自己的影子，開始想起平常和別人相處的樣子。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      },
+      {
+        "order": 2,
+        "label": "二、探索自己",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H01:二、探索自己:noparas:dcf333d4",
+            "paragraphs": [],
+            "gist": "他一項項反問自己：待朋友夠不夠真心？讀書夠不夠認真？期待自己能再進步。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      },
+      {
+        "order": 3,
+        "label": "三、期勉自己",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H01:三、期勉自己:noparas:0b156af4",
+            "paragraphs": [],
+            "gist": "他告訴自己要帶著真誠的心，走向像彩虹那樣明亮的日子。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      },
+      {
+        "order": 4,
+        "label": "賞析",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H01:賞析:1-2:051178f8",
+            "paragraphs": [
+              1,
+              2
+            ],
+            "gist": "這首詩鼓勵學生回頭看看自己怎麼長大，也為將來許下美好的祝福。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      }
+    ]
   }
 }

@@ -1892,7 +1892,7 @@
       "type": "reading",
       "module": "characters",
       "compact": true,
-      "version_note": "115上・翰林・六年級・第6課",
+      "version_note": "115 上・翰林・六年級・第6課",
       "login_required": false,
       "checked_at": "2026-09-26",
       "note": "已帶入本課18個生字"
@@ -2117,5 +2117,96 @@
       "status": "available",
       "activity": "review"
     }
+  },
+  "structure_tree": {
+    "source": "13課文結構表/WORD/6上L06課文結構表-善用自嘲，展現幽默.doc",
+    "verified_on": "2026-09-30",
+    "task_type": "A",
+    "note": "二、論據支持 下含【論據一】【論據二】子層",
+    "nodes": [
+      {
+        "order": 1,
+        "label": "一、提出論點",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H06:一、提出論點:1-2:e765f389",
+            "paragraphs": [
+              1,
+              2
+            ],
+            "gist": "作者認為，最高段的幽默是拿自己開玩笑。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      },
+      {
+        "order": 2,
+        "label": "二、論據支持",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H06:二、論據支持:3:594662e2",
+            "paragraphs": [
+              3
+            ],
+            "gist": "林肯被對手指責表裡不一時，用一句自我調侃化解了難堪。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H06:二、論據支持:4:68cc43e1",
+            "paragraphs": [
+              4
+            ],
+            "gist": "假如他當時沒有這樣回應，恐怕就錯過了翻轉局面、替自己加分的時機。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H06:二、論據支持:5:1d4830fb",
+            "paragraphs": [
+              5
+            ],
+            "gist": "不過自嘲要拿捏分寸，談的也應該是自己的短處。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H06:二、論據支持:6-7:4603b078",
+            "paragraphs": [
+              6,
+              7
+            ],
+            "gist": "餐廳裡那位等餐太久的男客，就是把自嘲用錯了地方。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      },
+      {
+        "order": 3,
+        "label": "三、綜合結論",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H06:三、綜合結論:8:135c362c",
+            "paragraphs": [
+              8
+            ],
+            "gist": "懂得幽默，彼此溝通就會順暢許多。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      }
+    ]
   }
 }

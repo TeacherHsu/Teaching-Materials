@@ -1999,7 +1999,7 @@
       "type": "reading",
       "module": "characters",
       "compact": true,
-      "version_note": "115上・翰林・六年級・第9課",
+      "version_note": "115 上・翰林・六年級・第9課",
       "login_required": false,
       "checked_at": "2026-09-26",
       "note": "已帶入本課17個生字"
@@ -2224,5 +2224,95 @@
       "status": "available",
       "activity": "review"
     }
+  },
+  "structure_tree": {
+    "source": "13課文結構表/WORD/6上L09課文結構表-戲臺上的她與他.doc",
+    "verified_on": "2026-09-30",
+    "task_type": "A",
+    "nodes": [
+      {
+        "order": 1,
+        "label": "一、原因",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H09:一、原因:1:a53126e2",
+            "paragraphs": [
+              1
+            ],
+            "gist": "為了完成藝術課的報告，我們到明華園訪問孫翠鳳。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      },
+      {
+        "order": 2,
+        "label": "二、經過",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H09:二、經過:2-3:49cb4900",
+            "paragraphs": [
+              2,
+              3
+            ],
+            "gist": "她先談自己是怎麼走進明華園、認識歌仔戲的。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H09:二、經過:4-5:e5f8e593",
+            "paragraphs": [
+              4,
+              5
+            ],
+            "gist": "接著介紹生、旦、淨、丑四種角色，不同角色穿的戲服也不一樣。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H09:二、經過:6:e9baa738",
+            "paragraphs": [
+              6
+            ],
+            "gist": "劇團還加入科技特效，帶給觀眾新鮮的視覺效果。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H09:二、經過:7:424ac5d2",
+            "paragraphs": [
+              7
+            ],
+            "gist": "最後孫阿姨帶著我們邊唱邊走臺步、比手勢。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      },
+      {
+        "order": 3,
+        "label": "三、感想",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H09:三、感想:8:9ff37863",
+            "paragraphs": [
+              8
+            ],
+            "gist": "這趟不只交出了作業，還見到本人、學了一小段戲，收穫滿滿。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      }
+    ]
   }
 }

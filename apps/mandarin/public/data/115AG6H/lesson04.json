@@ -1926,7 +1926,7 @@
       "type": "reading",
       "module": "characters",
       "compact": true,
-      "version_note": "115上・翰林・六年級・第4課",
+      "version_note": "115 上・翰林・六年級・第4課",
       "login_required": false,
       "checked_at": "2026-09-26",
       "note": "已帶入本課18個生字"
@@ -2151,5 +2151,83 @@
       "status": "available",
       "activity": "review"
     }
+  },
+  "structure_tree": {
+    "source": "13課文結構表/WORD/6上L04課文結構表-向大自然學習.doc",
+    "verified_on": "2026-09-30",
+    "task_type": "A",
+    "nodes": [
+      {
+        "order": 1,
+        "label": "一、主題概說",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H04:一、主題概說:1:6a110fc0",
+            "paragraphs": [
+              1
+            ],
+            "gist": "許多發明的點子，其實都是從大自然身上學來的。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      },
+      {
+        "order": 2,
+        "label": "二、舉例說明",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H04:二、舉例說明:2:810abfa9",
+            "paragraphs": [
+              2
+            ],
+            "gist": "研究人員模仿蚊子叮人的細長口器，做出幾乎感覺不到痛的針頭。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H04:二、舉例說明:3:466f2ca5",
+            "paragraphs": [
+              3
+            ],
+            "gist": "蓮葉表面的細微構造不沾水，有人依這個道理做出馬桶的防髒塗層和車窗鍍膜，髒汙不容易留下。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          },
+          {
+            "gist_id": "structure_gist:115AG6H04:二、舉例說明:4:5e8c9388",
+            "paragraphs": [
+              4
+            ],
+            "gist": "草原鵰翅膀尾端翹起的羽毛能減低阻力，工程師照著這個道理改良客機翼尖，飛起來更省力。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      },
+      {
+        "order": 3,
+        "label": "三、綜合結論",
+        "segments": [
+          {
+            "gist_id": "structure_gist:115AG6H04:三、綜合結論:5:a9e9af81",
+            "paragraphs": [
+              5
+            ],
+            "gist": "多向大自然請教，也許就能找到讓生活更好的方法。",
+            "status": "approved",
+            "approved_by": "CF",
+            "approved_on": "2026-09-30"
+          }
+        ],
+        "children": []
+      }
+    ]
   }
 }
