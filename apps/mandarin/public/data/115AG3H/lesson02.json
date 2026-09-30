@@ -223,7 +223,14 @@
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=且",
       "source": "115G3A／翰林三上第2課官方教材與教師確認資料（生字表，教師確認）",
-      "status": "ready"
+      "status": "ready",
+      "videos": [
+        {
+          "title": "「漢字說故事」動畫 Ⅱ － 且",
+          "url": "https://www.youtube.com/watch?v=1AyKZ3dG6II",
+          "source": "中華語文知識庫"
+        }
+      ]
     },
     {
       "char": "排",

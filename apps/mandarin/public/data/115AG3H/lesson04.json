@@ -264,7 +264,14 @@
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=止",
       "source": "115G3A／翰林三上第4課官方教材與教師確認資料（生字表與教育百科字庫）",
-      "status": "ready"
+      "status": "ready",
+      "videos": [
+        {
+          "title": "「漢字說故事」動畫 Ⅰ － 止",
+          "url": "https://www.youtube.com/watch?v=UciSn1shPXE",
+          "source": "中華語文知識庫"
+        }
+      ]
     },
     {
       "char": "抽",

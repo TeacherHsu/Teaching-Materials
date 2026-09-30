@@ -171,6 +171,38 @@
               "ready",
               "todo"
             ]
+          },
+          "etymology": {
+            "$ref": "#/$defs/etymology"
+          },
+          "videos": {
+            "type": "array",
+            "description": "延伸影片。獨立於字源：有可查證來源的影片就能放，不必等字源寫好。",
+            "items": {
+              "type": "object",
+              "required": [
+                "title",
+                "url",
+                "source"
+              ],
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "minLength": 2
+                },
+                "url": {
+                  "type": "string",
+                  "pattern": "^https://www\\.youtube\\.com/watch\\?v="
+                },
+                "source": {
+                  "type": "string",
+                  "minLength": 2
+                },
+                "note": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
@@ -482,6 +514,77 @@
           "type": "string"
         },
         "note": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "etymology": {
+      "type": "object",
+      "required": [
+        "story",
+        "source",
+        "status"
+      ],
+      "description": "字源說明。內容風險高（俗詞源普遍），一律標明出處並經教師核准後才公開；沒有可靠來源的字不得填寫。",
+      "properties": {
+        "structure": {
+          "enum": [
+            "象形",
+            "指事",
+            "會意",
+            "形聲",
+            "轉注",
+            "假借"
+          ]
+        },
+        "components": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "part",
+              "role"
+            ],
+            "properties": {
+              "part": {
+                "type": "string",
+                "minLength": 1
+              },
+              "role": {
+                "enum": [
+                  "義符",
+                  "聲符",
+                  "象形",
+                  "指事"
+                ]
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "story": {
+          "type": "string",
+          "minLength": 10
+        },
+        "source": {
+          "type": "string",
+          "minLength": 4
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "approved",
+            "rejected"
+          ]
+        },
+        "approved_by": {
+          "type": "string"
+        },
+        "approved_on": {
           "type": "string"
         }
       }

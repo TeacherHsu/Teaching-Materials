@@ -1990,3 +1990,94 @@
   .zk__symbol { font-size: 1.25rem; }
   .zk__hint { display: none; }
 }
+
+/* ---- 字的故事（子頁） ---- */
+.character-story { padding-bottom: var(--space-6); }
+.cs__hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin: var(--space-3) 0 var(--space-5);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+.cs__glyph {
+  font-family: var(--font-family-learning-glyph);
+  font-size: clamp(72px, 18vw, 120px);
+  line-height: 1;
+  color: var(--color-primary);
+}
+.cs__zhuyin {
+  margin: 0;
+  font-family: var(--font-family-learning-glyph);
+  font-size: 1.75rem;
+  color: var(--color-accent);
+}
+.cs__badge {
+  display: inline-block;
+  margin: var(--space-1) 0 0;
+  padding: 2px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+  color: var(--text-on-primary);
+  font-size: 1rem;
+}
+.cs__section { margin-bottom: var(--space-5); }
+.cs__section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-3);
+  font-size: var(--font-size-section);
+}
+.cs__section-no {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 1.25rem;
+}
+.cs__parts { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.cs__part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 132px;
+  padding: var(--space-3);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+.cs__part--meaning { border-color: var(--zk-initial-line); background: var(--zk-initial-bg); }
+.cs__part--sound { border-color: var(--zk-final-line); background: var(--zk-final-bg); }
+.cs__part-glyph { font-family: var(--font-family-learning-glyph); font-size: 2.5rem; line-height: 1.2; }
+.cs__part-role { font-size: 1.0625rem; font-weight: 700; }
+.cs__part-note { font-size: 1rem; color: var(--text-secondary); text-align: center; }
+.cs__story { align-items: flex-start; }
+.cs__story-text { flex: 1 1 14rem; min-width: 0; margin: 0; font-size: var(--font-size-body); line-height: var(--line-height-loose); }
+.cs__source { margin-top: var(--space-2); font-size: 0.9375rem; color: var(--text-secondary); }
+.cs__words { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.cs__word {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 150px;
+  margin: 0;
+  padding: var(--space-2);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+.cs__word-image { width: 118px; height: 118px; object-fit: cover; border-radius: var(--radius-sm); }
+.cs__word-text { display: block; font-size: 1.375rem; font-weight: 700; }
+.cs__word-meaning { display: block; font-size: 0.9375rem; color: var(--text-secondary); }
+.cs__videos { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }

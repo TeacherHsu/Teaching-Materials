@@ -298,7 +298,14 @@
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%9B%A3",
       "source": "115G6A／翰林六上官方教材與教師確認資料（02各冊生字、教育百科字庫）",
-      "status": "ready"
+      "status": "ready",
+      "videos": [
+        {
+          "title": "「漢字說故事」動畫 Ⅱ － 監",
+          "url": "https://www.youtube.com/watch?v=hXNWIF987RA",
+          "source": "中華語文知識庫"
+        }
+      ]
     },
     {
       "char": "蒂",

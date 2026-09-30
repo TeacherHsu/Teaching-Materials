@@ -90,7 +90,28 @@
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B3%B3",
       "source": "康軒官方教材來源整理（01 生字表）",
-      "status": "ready"
+      "status": "ready",
+      "etymology": {
+        "structure": "形聲",
+        "components": [
+          {
+            "part": "⽔",
+            "role": "義符",
+            "note": "和水有關"
+          },
+          {
+            "part": "永",
+            "role": "聲符",
+            "note": "只借音，和水沒關係"
+          }
+        ],
+        "story": "「泳」的左邊是「水」，表示這個字和水有關；右邊的「永」只借來表示讀音。《說文解字》說「泳」是「潛行水中」，也就是在水裡前進。所以看到「泳」，就可以想到人在水裡游動的樣子。",
+        "source": "《說文解字．水部》：「泳，潛行水中也。從水永聲。」",
+        "videos": [],
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "串",
@@ -130,7 +151,28 @@
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%88%AC",
       "source": "康軒官方教材來源整理（01 生字表）",
-      "status": "ready"
+      "status": "ready",
+      "etymology": {
+        "structure": "會意",
+        "components": [
+          {
+            "part": "舟",
+            "role": "義符",
+            "note": "船"
+          },
+          {
+            "part": "殳",
+            "role": "義符",
+            "note": "手拿工具撐船"
+          }
+        ],
+        "story": "「般」的左邊是「舟」（船），右邊的「殳」表示手拿著工具。《說文解字》說它「象舟之旋」，就是船在水上打轉的樣子。後來「般」多用在「一般」「這般」，表示某種樣子或情形。",
+        "source": "《說文解字．舟部》：「般，辟也。象舟之旋，從舟從殳。」",
+        "videos": [],
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "姿",
@@ -150,7 +192,28 @@
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%A7%BF",
       "source": "康軒官方教材來源整理（01 生字表）",
-      "status": "ready"
+      "status": "ready",
+      "etymology": {
+        "structure": "形聲",
+        "components": [
+          {
+            "part": "女",
+            "role": "義符",
+            "note": "和人的樣子有關"
+          },
+          {
+            "part": "次",
+            "role": "聲符",
+            "note": "只借音"
+          }
+        ],
+        "story": "「姿」的下面是「女」，上面的「次」表示讀音。《說文解字》說「姿」就是「態」，指人的樣子、模樣。所以「姿勢」「姿態」都是在說一個人擺出來的樣子。",
+        "source": "《說文解字．女部》：「姿，態也。從女次聲。」",
+        "videos": [],
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "溜",
@@ -170,7 +233,28 @@
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%BA%9C",
       "source": "康軒官方教材來源整理（01 生字表）",
-      "status": "ready"
+      "status": "ready",
+      "etymology": {
+        "structure": "形聲",
+        "components": [
+          {
+            "part": "⽔",
+            "role": "義符",
+            "note": "和水有關"
+          },
+          {
+            "part": "留",
+            "role": "聲符",
+            "note": "只借音"
+          }
+        ],
+        "story": "「溜」的左邊是「水」，右邊的「留」表示讀音。在《說文解字》裡，「溜」本來是一條河的名字。後來因為水流動得很快又很順，「溜」就常用來表示滑動，像「溜滑梯」「溜冰」。",
+        "source": "《說文解字．水部》：「溜，水。出鬱林郡。從水留聲。」（今常用義為後起引申）",
+        "videos": [],
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "耳",
@@ -190,7 +274,30 @@
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%80%B3",
       "source": "康軒官方教材來源整理（01 生字表）",
-      "status": "ready"
+      "status": "ready",
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "耳",
+            "role": "象形",
+            "note": "整個字就是耳朵的形狀"
+          }
+        ],
+        "story": "「耳」是照著耳朵的樣子畫出來的字。《說文解字》說「耳」是「主聽者也」，就是負責聽聲音的器官。所以有「耳」的字，像「聽」「聞」，常常和聽有關係。",
+        "source": "《說文解字．耳部》：「耳，主聽者也。象形。」",
+        "videos": [],
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      },
+      "videos": [
+        {
+          "title": "「漢字說故事」動畫 Ⅰ － 耳",
+          "url": "https://www.youtube.com/watch?v=Y10RPSEM8nA",
+          "source": "中華語文知識庫"
+        }
+      ]
     },
     {
       "char": "鷹",
@@ -230,7 +337,28 @@
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%BB%91",
       "source": "康軒官方教材來源整理（01 生字表）",
-      "status": "ready"
+      "status": "ready",
+      "etymology": {
+        "structure": "形聲",
+        "components": [
+          {
+            "part": "⽔",
+            "role": "義符",
+            "note": "和水有關"
+          },
+          {
+            "part": "骨",
+            "role": "聲符",
+            "note": "只借音，和骨頭沒關係"
+          }
+        ],
+        "story": "「滑」的左邊是「水」，右邊的「骨」表示讀音。《說文解字》說「滑」是「利也」，也就是順、不卡住。水讓東西變得好滑動，所以「滑」表示滑溜溜、很順暢。",
+        "source": "《說文解字．水部》：「滑，利也。從水骨聲。」",
+        "videos": [],
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "遨",
@@ -270,7 +398,28 @@
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B7%A9",
       "source": "康軒官方教材來源整理（01 生字表）",
-      "status": "ready"
+      "status": "ready",
+      "etymology": {
+        "structure": "形聲",
+        "components": [
+          {
+            "part": "糸",
+            "role": "義符",
+            "note": "和絲線有關"
+          },
+          {
+            "part": "爰",
+            "role": "聲符",
+            "note": "只借音"
+          }
+        ],
+        "story": "「緩」的左邊是「糸」，表示絲線；右邊的「爰」表示讀音。《說文解字》說「緩」是「繛」，意思是寬鬆。繩子綁得鬆，動作就快不起來，所以「緩」有慢慢的、不急的意思。",
+        "source": "《說文解字．素部》：「緩，繛也。從素爰聲。」",
+        "videos": [],
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "陀",
@@ -330,7 +479,28 @@
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%BD%89",
       "source": "康軒官方教材來源整理（01 生字表）",
-      "status": "ready"
+      "status": "ready",
+      "etymology": {
+        "structure": "形聲",
+        "components": [
+          {
+            "part": "車",
+            "role": "義符",
+            "note": "和車子有關"
+          },
+          {
+            "part": "專",
+            "role": "聲符",
+            "note": "只借音"
+          }
+        ],
+        "story": "「轉」的左邊是「車」，右邊的「專」表示讀音。《說文解字》說「轉」是「運也」，就是車輪滾動、東西被搬運。所以「轉」表示旋轉、改變方向。",
+        "source": "《說文解字．車部》：「轉，運也。從車專聲。」",
+        "videos": [],
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "躍",
@@ -350,7 +520,28 @@
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%BA%8D",
       "source": "康軒官方教材來源整理（01 生字表）",
-      "status": "ready"
+      "status": "ready",
+      "etymology": {
+        "structure": "形聲",
+        "components": [
+          {
+            "part": "⾜",
+            "role": "義符",
+            "note": "和腳的動作有關"
+          },
+          {
+            "part": "翟",
+            "role": "聲符",
+            "note": "只借音"
+          }
+        ],
+        "story": "「躍」的左邊是「足」，表示和腳有關；右邊的「翟」表示讀音。《說文解字》說「躍」是「迅也」，就是很快的跳起來。所以「跳躍」「躍過」都是用腳快速往上或往前跳。",
+        "source": "《說文解字．足部》：「躍，迅也。從足翟聲。」",
+        "videos": [],
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "煩",
@@ -370,7 +561,28 @@
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%85%A9",
       "source": "康軒官方教材來源整理（01 生字表）",
-      "status": "ready"
+      "status": "ready",
+      "etymology": {
+        "structure": "會意",
+        "components": [
+          {
+            "part": "頁",
+            "role": "義符",
+            "note": "人的頭"
+          },
+          {
+            "part": "火",
+            "role": "義符",
+            "note": "發熱"
+          }
+        ],
+        "story": "「煩」的左邊是「火」，右邊的「頁」本來是指人的頭。《說文解字》說「煩」是「熱頭痛也」，就是頭發熱、痛得難受。後來「煩」就用來表示心裡不舒服、覺得麻煩。",
+        "source": "《說文解字．頁部》：「煩，熱頭痛也。從頁從火。」",
+        "videos": [],
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     }
   ],
   "words": [

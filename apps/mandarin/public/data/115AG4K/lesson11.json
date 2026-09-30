@@ -260,7 +260,14 @@
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%A4%BA",
       "source": "康軒官方教材來源整理（01 生字表）",
-      "status": "ready"
+      "status": "ready",
+      "videos": [
+        {
+          "title": "「漢字說故事」動畫 Ⅰ － 示",
+          "url": "https://www.youtube.com/watch?v=W5P8407HRBk",
+          "source": "中華語文知識庫"
+        }
+      ]
     },
     {
       "char": "迫",

@@ -29,6 +29,7 @@ export function SpeakButton({
   text,
   audioUrl = null,
   overrides = [],
+  rate = null,
   label = '聽',
   showLabel = false,
   ariaLabel,
@@ -63,7 +64,7 @@ export function SpeakButton({
       return;
     }
     setSpeaking(true);
-    speak(text, { audioUrl, overrides }).finally(() => setSpeaking(false));
+    speak(text, { audioUrl, overrides, rate }).finally(() => setSpeaking(false));
   });
   return btn;
 }

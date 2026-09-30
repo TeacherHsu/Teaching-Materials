@@ -1,6 +1,7 @@
 import { h } from '../utils/dom.js';
 import { SpeakButton } from './SpeakButton.js';
 import { ImageFrame } from './ImageFrame.js';
+import { hasCharacterStory } from '../pages/CharacterStoryPage.js';
 
 const EXTERNAL_LINK_ICON = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:4px;vertical-align:-2px"><path d="M14 5h5v5"/><path d="M19 5l-8 8"/><path d="M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>`;
 
@@ -9,8 +10,10 @@ const EXTERNAL_LINK_ICON = `<svg viewBox="0 0 24 24" width="16" height="16" fill
  * @param {{url: string, title: string}|null} [originExtension] module=characters、type=reading
  *   的已核准延伸連結（例如「漢字由來」），層級低於主要內容，放在卡片最下方。
  */
-export function CharacterCard(character, originExtension = null) {
+export function CharacterCard(character, originExtension = null, lessonId = '') {
   const { char, radical, stroke_count, examples, image, audio_override, pedia_url } = character;
+  // 「字的故事」按鈕只在查得到可靠字源時出現；沒有字源的字就少一顆按鈕，
+  // 不放空殼入口（CF 指定）。
   const card = h('div', { class: 'character-card' }, [
     h('div', { class: 'character-card__glyph', 'aria-hidden': 'true' }, char),
     SpeakButton({ text: char, audioUrl: audio_override, label: '聽發音' }),
@@ -24,6 +27,12 @@ export function CharacterCard(character, originExtension = null) {
           h('p', { class: 'character-card__examples' }, examples.join('、')),
           SpeakButton({ text: examples.join('、'), label: '聽造詞', variant: 'speak-button--option' }),
         ])
+      : null,
+    lessonId && hasCharacterStory(character)
+      ? h('a', {
+          class: 'btn btn--secondary character-card__story-link',
+          href: `#/lesson/${lessonId}/char/${encodeURIComponent(char)}`,
+        }, `${char} 的故事`)
       : null,
     pedia_url
       ? h(

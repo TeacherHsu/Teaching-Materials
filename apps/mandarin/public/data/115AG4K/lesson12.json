@@ -319,7 +319,14 @@
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B6%B3",
       "source": "康軒官方教材來源整理（01 生字表）",
-      "status": "ready"
+      "status": "ready",
+      "videos": [
+        {
+          "title": "「漢字說故事」動畫 Ⅱ － 足",
+          "url": "https://www.youtube.com/watch?v=bedJnZ_CFp8",
+          "source": "中華語文知識庫"
+        }
+      ]
     },
     {
       "char": "蹈",
@@ -379,7 +386,14 @@
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%85%A7",
       "source": "康軒官方教材來源整理（01 生字表）",
-      "status": "ready"
+      "status": "ready",
+      "videos": [
+        {
+          "title": "「漢字說故事」動畫 Ⅱ － 內",
+          "url": "https://www.youtube.com/watch?v=JNb2KfN7hmE",
+          "source": "中華語文知識庫"
+        }
+      ]
     }
   ],
   "words": [

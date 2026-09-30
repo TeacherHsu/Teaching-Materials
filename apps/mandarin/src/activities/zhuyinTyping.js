@@ -20,6 +20,7 @@ import { missingContentNotice } from './engine.js';
 import { filterByStatus } from '../utils/preview.js';
 
 const CANDIDATE_COUNT = { support: 3, standard: 5, challenge: 8 };
+const LISTEN_RATE = 0.8;   // 注音高手專用語速（CF 指定）
 let charIndexCache = null;
 
 /** 候選字索引（同音字與高頻字）；載入失敗時回空表，活動仍可跑，只是干擾項較弱。 */
@@ -232,7 +233,8 @@ export function buildZhuyinTypingActivity(lesson, onModuleDone) {
     container.appendChild(h('div', { class: 'zt__prompt' }, [
       image,
       h('div', { class: 'zt__listen' }, [
-        SpeakButton({ text: speakText, label: '聽語詞' }),
+        // 要把聽到的音一個符號一個符號打出來，語速比全站預設再慢一點（CF 指定 0.8）
+        SpeakButton({ text: speakText, label: '聽語詞', rate: LISTEN_RATE }),
         h('p', { class: 'meta' }, '可以重複聽'),
       ]),
     ].filter(Boolean)));

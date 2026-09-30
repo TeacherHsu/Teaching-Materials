@@ -149,7 +149,7 @@ export function buildCharactersActivity(lesson, onBack) {
           .map((e) => [e.char, e]),
       );
       const grid = h('div', { class: 'card-grid' });
-      for (const c of cardRounds[cardRoundIndex]) grid.appendChild(CharacterCard(c, originByChar.get(c.char) || null));
+      for (const c of cardRounds[cardRoundIndex]) grid.appendChild(CharacterCard(c, originByChar.get(c.char) || null, lesson.lesson_id));
       container.appendChild(grid);
       const proceed = () => {
         if (moreCards) {

@@ -89,7 +89,14 @@
       "audio_override": null,
       "pedia_url": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B0%B7",
       "source": "115G1A／翰林官方教材與教育百科字庫",
-      "status": "ready"
+      "status": "ready",
+      "videos": [
+        {
+          "title": "「漢字說故事」動畫 Ⅰ － 谷",
+          "url": "https://www.youtube.com/watch?v=VGjIkU2Kgzo",
+          "source": "中華語文知識庫"
+        }
+      ]
     },
     {
       "char": "叫",

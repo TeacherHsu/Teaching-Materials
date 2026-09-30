@@ -213,24 +213,30 @@ let currentUtterance = null;
  * @param {{audioUrl?: string|null, overrides?: Array<{text:string,speak:string}>}} opts
  * @returns {Promise<void>}
  */
+/**
+ * @param {string} text
+ * @param {{audioUrl?:string, overrides?:Array, rate?:number}} opts
+ *   rate：單一活動可覆寫語速（例如注音高手要聽得更清楚才打得出注音），
+ *   不影響使用者在設定裡選的全站語速。
+ */
 export function speak(text, opts = {}) {
-  const { audioUrl, overrides } = opts;
+  const { audioUrl, overrides, rate } = opts;
   cancelSpeaking();
   if (audioUrl) {
     const audio = new Audio(audioUrl);
-    return audio.play().catch(() => speakWithSynthesis(text, overrides));
+    return audio.play().catch(() => speakWithSynthesis(text, overrides, rate));
   }
-  return speakWithSynthesis(text, overrides);
+  return speakWithSynthesis(text, overrides, rate);
 }
 
-function speakWithSynthesis(text, overrides) {
+function speakWithSynthesis(text, overrides, rateOverride) {
   if (!speechSupported() || !text) return Promise.resolve();
   const speakText = applySpeechOverrides(text, overrides);
   return new Promise((resolve) => {
     try {
       const utter = new SpeechSynthesisUtterance(speakText);
       utter.lang = 'zh-TW';
-      utter.rate = getRate();
+      utter.rate = Number.isFinite(rateOverride) && rateOverride > 0 ? rateOverride : getRate();
       const voice = pickVoice();
       if (voice) utter.voice = voice;
       utter.onend = () => resolve();

@@ -141,6 +141,16 @@ route(/^\/review\/(?<lessonId>[^/]+)$/, async ({ lessonId }) => {
   mount(ReviewPage(lesson));
 });
 
+route(/^\/lesson\/(?<lessonId>[^/]+)\/char\/(?<char>[^/]+)$/, async ({ lessonId, char }) => {
+  const lesson = await loadLesson(lessonId);
+  if (!lesson) {
+    mount(h('div', { class: 'container' }, h('div', { class: 'missing-content' }, '找不到這一課的資料。')));
+    return;
+  }
+  const { CharacterStoryPage } = await import('./pages/CharacterStoryPage.js');
+  mount(CharacterStoryPage(lesson, decodeURIComponent(char)));
+});
+
 route(/^\/teacher$/, async () => {
   const { TeacherPage } = await import('./pages/TeacherPage.js');
   mount(TeacherPage());
