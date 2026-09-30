@@ -29,6 +29,7 @@ const { buildSentencePracticeActivity, splitSentenceIntoChunks } = await import(
 const { buildIdiomBuilderActivity } = await import('../src/components/IdiomBuilder.js');
 const { buildReadingActivity } = await import('../src/activities/reading.js');
 const { buildMainIdeaActivity } = await import('../src/activities/mainIdea.js');
+const { buildZhuyinTypingActivity } = await import('../src/activities/zhuyinTyping.js');
 const { buildPolysemyActivity } = await import('../src/activities/polysemy.js');
 const { buildListeningActivity } = await import('../src/activities/listening.js');
 const { buildRhetoricActivity } = await import('../src/activities/rhetoric.js');
@@ -42,6 +43,7 @@ const BUILDERS = {
   idiom_builder: buildIdiomBuilderActivity,
   reading: buildReadingActivity,
   main_idea: buildMainIdeaActivity,
+  zhuyin_typing: buildZhuyinTypingActivity,
   polysemy: buildPolysemyActivity,
   polyphones: buildPolyphonesActivity,
   lookalikes: buildLookalikesActivity,
@@ -284,6 +286,41 @@ for (const entry of MODULE_REGISTRY) {
   const container = builder(lesson, () => {
     finished = true;
   });
+
+  // 注音高手要「打字」才走得下去，通用驅動器看 DOM 找不到解答，
+  // 改用活動提供的測試掛勾把每一題做完。
+  if (entry.key === 'zhuyin_typing') {
+    let guard = 0;
+    while (!finished && guard < 200) {
+      guard += 1;
+      const keys = container.findAll((n) => n.tagName === 'button');
+      // 全部做完會換成完成小卡，要按「回課程首頁」才會回報整個大項結束
+      const back = keys.find((b) => /^(回課程首頁|看結果|完成)/.test(b.textContent.trim()));
+      const solution = container.__solution;
+      if (back && !container.find((n) => n.hasClass('zt__slot'))) { back.dispatch('click'); continue; }
+      if (!solution) break;
+      const chooser = keys.filter((b) => b.hasClass('zt__candidate') && !b.disabled);
+      const doneSlots = container.findAll((n) => n.hasClass('zt__slot--done')).length;
+      if (chooser.length > 0) {
+        const want = solution.chars[doneSlots];
+        (chooser.find((b) => b.textContent === want) || chooser[0]).dispatch('click');
+        continue;
+      }
+      const target = solution.syllables[doneSlots] || '';
+      const currentSlot = container.find((n) => n.hasClass('zt__slot--current'));
+      const typedNode = currentSlot && currentSlot.find((n) => n.hasClass('zt__slot-zhuyin'));
+      const typed = (typedNode ? typedNode.textContent : '').trim().replace(/\u3000/g, '');
+      const next = [...target][typed.length];
+      const key = keys.find((b) => b.getAttribute('data-symbol') === next);
+      if (!key) break;
+      key.dispatch('click');
+    }
+    const meta0 = endScoreSession();
+    assert.ok(finished, `${entry.label}（${entry.key}）應該可以一路做到完成`);
+    assert.ok(meta0.total > 0, `${entry.label}（${entry.key}）完成後應該要有可判定題目`);
+    results.push({ key: entry.key, label: entry.label, total: meta0.total, stars: computeModuleStars(meta0) });
+    continue;
+  }
   const readingSolution = entry.key === 'reading' ? readingParagraphSolution(lesson) : undefined;
   const sentenceSolutions = entry.key === 'sentence_practice' ? sentenceOrderingSolutions(lesson) : undefined;
   driveActivityToCompletion(container, () => finished, { readingSolution, sentenceSolutions });

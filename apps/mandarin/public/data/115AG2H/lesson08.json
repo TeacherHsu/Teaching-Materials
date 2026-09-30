@@ -361,38 +361,41 @@
     {
       "id": "word:115AG2H08:01",
       "word": "搶",
-      "zhuyin": null,
+      "zhuyin": "ㄑㄧㄤˇ",
       "meaning": "爭先、趕緊的。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson08/vocabulary/l08-01.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%90%B6"
     },
     {
       "id": "word:115AG2H08:02",
       "word": "軟",
-      "zhuyin": null,
+      "zhuyin": "ㄖㄨㄢˇ",
       "meaning": "物體質地柔，容易受外力而改變形狀的。與「硬」相對。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson08/vocabulary/l08-02.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%BB%9F"
     },
     {
       "id": "word:115AG2H08:03",
       "word": "變",
-      "zhuyin": null,
+      "zhuyin": "ㄅㄧㄢˋ",
       "meaning": "由某一種形態轉換成另一種形態。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson08/vocabulary/l08-03.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%AE%8A"
     },
     {
       "id": "word:115AG2H08:04",
@@ -409,146 +412,158 @@
     {
       "id": "word:115AG2H08:05",
       "word": "白紙",
-      "zhuyin": null,
+      "zhuyin": "ㄅㄞˊ ㄓˇ",
       "meaning": "白色的紙。這裡指長得像白紙的米紙。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson08/vocabulary/l08-05.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%99%BD%E7%B4%99"
     },
     {
       "id": "word:115AG2H08:06",
       "word": "圓形",
-      "zhuyin": null,
+      "zhuyin": "ㄩㄢˊ ㄒㄧㄥˊ",
       "meaning": "從中心到周圍每一點的距離都相等的形狀。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson08/vocabulary/l08-06.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%9C%93%E5%BD%A2"
     },
     {
       "id": "word:115AG2H08:07",
       "word": "介紹",
-      "zhuyin": null,
+      "zhuyin": "ㄐㄧㄝˋ ㄕㄠˋ",
       "meaning": "為人引進或帶入新的事物。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson08/vocabulary/l08-07.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E4%BB%8B%E7%B4%B9"
     },
     {
       "id": "word:115AG2H08:08",
       "word": "更",
-      "zhuyin": null,
+      "zhuyin": "ㄍㄥˋ",
       "meaning": "愈、再。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson08/vocabulary/l08-08.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9B%B4"
     },
     {
       "id": "word:115AG2H08:09",
       "word": "聽",
-      "zhuyin": null,
+      "zhuyin": "ㄊㄧㄥ",
       "meaning": "用耳朵收受聲音。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson08/vocabulary/l08-09.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%81%BD"
     },
     {
       "id": "word:115AG2H08:10",
       "word": "接著",
-      "zhuyin": null,
+      "zhuyin": "ㄐㄧㄝ ㄓㄜ˙",
       "meaning": "緊跟著。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson08/vocabulary/l08-10.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%8E%A5%E8%91%97"
     },
     {
       "id": "word:115AG2H08:11",
       "word": "青菜",
-      "zhuyin": null,
+      "zhuyin": "ㄑㄧㄥ ㄘㄞˋ",
       "meaning": "泛指綠葉的蔬菜。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson08/vocabulary/l08-11.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%9D%92%E8%8F%9C"
     },
     {
       "id": "word:115AG2H08:12",
       "word": "各種",
-      "zhuyin": null,
+      "zhuyin": "ㄍㄜˋ ㄓㄨㄥˇ",
       "meaning": "每種。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson08/vocabulary/l08-12.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%90%84%E7%A8%AE"
     },
     {
       "id": "word:115AG2H08:13",
       "word": "米線",
-      "zhuyin": null,
+      "zhuyin": "ㄇㄧˇ ㄒㄧㄢˋ",
       "meaning": "用米製成的條狀食品，顏色潔白，比米粉粗而有韌性。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson08/vocabulary/l08-13.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B1%B3%E7%B7%9A"
     },
     {
       "id": "word:115AG2H08:14",
       "word": "蝦子",
-      "zhuyin": null,
+      "zhuyin": "ㄒㄧㄚ ㄗ˙",
       "meaning": "節足類動物。生於水中，種類繁多，可供食用。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson08/vocabulary/l08-14.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%9D%A6%E5%AD%90"
     },
     {
       "id": "word:115AG2H08:15",
       "word": "食材",
-      "zhuyin": null,
+      "zhuyin": "ㄕˊ ㄘㄞˊ",
       "meaning": "烹煮食物的材料。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson08/vocabulary/l08-15.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%A3%9F%E6%9D%90"
     },
     {
       "id": "word:115AG2H08:16",
       "word": "舉手",
-      "zhuyin": null,
+      "zhuyin": "ㄐㄩˇ ㄕㄡˇ",
       "meaning": "抬高手臂。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson08/vocabulary/l08-16.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%88%89%E6%89%8B"
     }
   ],
   "word_meanings": [

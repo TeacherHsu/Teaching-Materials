@@ -60,6 +60,8 @@ for (const volume of readdirSync(dataRoot, { withFileTypes: true }).filter((e) =
   }
   ready[volume.name] = lessons;
 }
-assert.equal(ready['115AG2H'], 0, '二上語詞尚無注音，不得出題');
-assert.ok(ready['115AG1H'] > 0 && ready['115AG4K'] > 0 && ready['115AG6H'] > 0, '一上／四上／六上應可出題');
+// 語詞注音補齊後五冊皆可出題；仍保留 fail-closed 檢查（上面逐筆驗證過音節對應）。
+for (const [volume, lessons] of Object.entries(ready)) {
+  assert.ok(lessons > 0, `${volume} 應該要有可出題的課次`);
+}
 console.log(`PASS: 大千排列正確、候選字同音優先、閘門 fail-closed — 可出題課數 ${JSON.stringify(ready)}`);

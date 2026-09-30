@@ -385,62 +385,67 @@
     {
       "id": "word:115AG2H09:03",
       "word": "蒸",
-      "zhuyin": null,
+      "zhuyin": "ㄓㄥ",
       "meaning": "利用水蒸氣的熱力把食物加熱或煮熟。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson09/vocabulary/l09-03.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%92%B8"
     },
     {
       "id": "word:115AG2H09:04",
       "word": "浴室",
-      "zhuyin": null,
+      "zhuyin": "ㄩˋ ㄕˋ",
       "meaning": "洗澡用的隔間。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson09/vocabulary/l09-04.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B5%B4%E5%AE%A4"
     },
     {
       "id": "word:115AG2H09:05",
       "word": "熱",
-      "zhuyin": null,
+      "zhuyin": "ㄖㄜˋ",
       "meaning": "溫度高。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson09/vocabulary/l09-05.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%86%B1"
     },
     {
       "id": "word:115AG2H09:06",
       "word": "米粒",
-      "zhuyin": null,
+      "zhuyin": "ㄇㄧˇ ㄌㄧˋ",
       "meaning": "米的顆粒。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson09/vocabulary/l09-06.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B1%B3%E7%B2%92"
     },
     {
       "id": "word:115AG2H09:07",
       "word": "哪",
-      "zhuyin": null,
+      "zhuyin": "ㄋㄚˇ",
       "meaning": "表示加強語氣的助詞。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson09/vocabulary/l09-07.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%93%AA"
     },
     {
       "id": "word:115AG2H09:08",
@@ -457,122 +462,132 @@
     {
       "id": "word:115AG2H09:09",
       "word": "通通",
-      "zhuyin": null,
+      "zhuyin": "ㄊㄨㄥ ㄊㄨㄥ",
       "meaning": "所有、全部。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson09/vocabulary/l09-09.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%80%9A%E9%80%9A"
     },
     {
       "id": "word:115AG2H09:10",
       "word": "蔬菜",
-      "zhuyin": null,
+      "zhuyin": "ㄕㄨ ㄘㄞˋ",
       "meaning": "所有可食用的青菜瓜果。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson09/vocabulary/l09-10.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%94%AC%E8%8F%9C"
     },
     {
       "id": "word:115AG2H09:11",
       "word": "蛋",
-      "zhuyin": null,
+      "zhuyin": "ㄉㄢˋ",
       "meaning": "鳥類或爬蟲類所生的卵。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson09/vocabulary/l09-11.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%9B%8B"
     },
     {
       "id": "word:115AG2H09:12",
       "word": "海苔",
-      "zhuyin": null,
+      "zhuyin": "ㄏㄞˇ ㄊㄞˊ",
       "meaning": "植物名，生長在淺海岩石上，可食用。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson09/vocabulary/l09-12.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B5%B7%E8%8B%94"
     },
     {
       "id": "word:115AG2H09:13",
       "word": "點名",
-      "zhuyin": null,
+      "zhuyin": "ㄉㄧㄢˇ ㄇㄧㄥˊ",
       "meaning": "按照名冊一個一個檢查、核對。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson09/vocabulary/l09-13.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%BB%9E%E5%90%8D"
     },
     {
       "id": "word:115AG2H09:14",
       "word": "胖",
-      "zhuyin": null,
+      "zhuyin": "ㄆㄤˋ",
       "meaning": "體態豐滿，脂肪多。相對於「瘦」。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson09/vocabulary/l09-14.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%83%96"
     },
     {
       "id": "word:115AG2H09:15",
       "word": "飄",
-      "zhuyin": null,
+      "zhuyin": "ㄆㄧㄠ",
       "meaning": "隨風吹送。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson09/vocabulary/l09-15.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%A3%84"
     },
     {
       "id": "word:115AG2H09:16",
       "word": "淡淡",
-      "zhuyin": null,
+      "zhuyin": "ㄉㄢˋ ㄉㄢˋ",
       "meaning": "味道清淺的樣子。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson09/vocabulary/l09-16.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B7%A1%E6%B7%A1"
     },
     {
       "id": "word:115AG2H09:17",
       "word": "黏",
-      "zhuyin": null,
+      "zhuyin": "ㄋㄧㄢˊ",
       "meaning": "物品像用膠水黏合一樣附著在一起。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson09/vocabulary/l09-17.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%BB%8F"
     },
     {
       "id": "word:115AG2H09:18",
       "word": "細心",
-      "zhuyin": null,
+      "zhuyin": "ㄒㄧˋ ㄒㄧㄣ",
       "meaning": "仔細、用心。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson09/vocabulary/l09-18.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B4%B0%E5%BF%83"
     }
   ],
   "word_meanings": [

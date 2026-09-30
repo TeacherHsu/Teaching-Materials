@@ -1,6 +1,6 @@
 // 驗證規格 2026-09-25-mandarin-dabutie-importer.md §1／§4：
 // 1. 課次首頁 hero 進度分母只算「可開始的大項」（code==='available'|'done'；鎖住的
-//    舊字新詞與待重新編題的聽聽看都不計入），第 1 課應為 10（移除課文地圖、新增抓重點）。
+//    舊字新詞與待重新編題的聽聽看都不計入），第 1 課應為 11（含抓重點與注音高手）。
 // 4. 活動頁／課次首頁麵包屑補上課本層（翰林三上），且與 LessonDashboard 共用同一份 volumeLabel。
 // 用法：node scripts/test-lesson-dashboard-progress.mjs
 import assert from 'node:assert/strict';
@@ -21,10 +21,9 @@ const statuses = MODULE_REGISTRY.map((entry) => ({ key: entry.key, code: getModu
 const lockedKeys = statuses.filter((s) => s.code === 'locked').map((s) => s.key);
 assert.deepEqual(lockedKeys, ['review'], `第 1 課應該只有「舊字新詞」鎖住，實際鎖住：${lockedKeys.join('、') || '無'}`);
 const pendingKeys = statuses.filter((s) => s.code === 'pending_review').map((s) => s.key);
-// 三上 L01 的語詞尚無注音，注音高手因此待審；聽聽看待重新編題。
-assert.deepEqual(pendingKeys, ['zhuyin_typing', 'listening'], `第 1 課應待審：注音高手、聽聽看，實際：${pendingKeys.join('、') || '無'}`);
+assert.deepEqual(pendingKeys, ['listening'], `第 1 課聽聽看應待重新編題，實際待審：${pendingKeys.join('、') || '無'}`);
 const availableCount = statuses.filter((s) => s.code === 'available' || s.code === 'done').length;
-assert.equal(availableCount, 10, `第 1 課可開始的大項應為 10 項，實際 ${availableCount}`);
+assert.equal(availableCount, 11, `第 1 課可開始的大項應為 11 項，實際 ${availableCount}`);
 
 // ---- LessonDashboard：hero 分母排除鎖住與待審項目 ----
 const dashboard = LessonDashboard(lesson);
@@ -32,13 +31,13 @@ const progressLabel = dashboard.find((n) => n.hasClass('lesson-hero__progress-la
 assert.ok(progressLabel, '應該要有 lesson-hero__progress-label');
 assert.match(
   progressLabel.textContent,
-  /已完成 0 ／ 10 項/,
-  `hero 進度分母應為 10（排除鎖住的舊字新詞與待重新編題的聽聽看），實際：「${progressLabel.textContent}」`,
+  /已完成 0 ／ 11 項/,
+  `hero 進度分母應為 11（排除鎖住的舊字新詞與待重新編題的聽聽看），實際：「${progressLabel.textContent}」`,
 );
 
 // 進度環（progress-ring）文字也要用同一個分母換算百分比，0／10 = 0%
 const ringSvgHtml = dashboard.find((n) => n.hasClass('progress-ring')).innerHTML;
-assert.match(ringSvgHtml, /0%/, '進度環百分比應該用「可開始大項」當分母（0／10＝0%），不是把鎖住／待審項目也算進分母');
+assert.match(ringSvgHtml, /0%/, '進度環百分比應該用「可開始大項」當分母（0／11＝0%），不是把鎖住／待審項目也算進分母');
 
 // ---- LessonDashboard 麵包屑：首頁／翰林三上／第 1 課 ----
 const dashboardBreadcrumb = dashboard.find((n) => n.hasClass('breadcrumb'));
@@ -54,4 +53,4 @@ assert.ok(crumbText.includes(volumeLabel(lesson.volume)), `活動頁麵包屑應
 assert.ok(crumbText.indexOf(volumeLabel(lesson.volume)) < crumbText.indexOf('第 1 課'), '課本層應該排在「第 1 課」之前');
 assert.ok(crumbText.indexOf('第 1 課') < crumbText.indexOf('一字多義'), '「第 1 課」應該排在大項名稱之前');
 
-console.log('PASS: hero 進度只計可開始的大項（第 1 課＝10），且活動頁／課次首頁麵包屑補上課本層並共用 volumeLabel。');
+console.log('PASS: hero 進度只計可開始的大項（第 1 課＝11），且活動頁／課次首頁麵包屑補上課本層並共用 volumeLabel。');

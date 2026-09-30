@@ -194,6 +194,10 @@ export function buildZhuyinTypingActivity(lesson, onModuleDone) {
       renderSlots();
     }
 
+    // 測試用掛勾：讓回歸測試能把這一題做完。刻意不放進 DOM，
+    // 免得學生打開開發者工具就看到答案。
+    container.__solution = { word: word.word, syllables, chars };
+
     const keyboard = ZhuyinKeyboard({ onKey: press, onBackspace: backspace });
 
     const onPhysicalKey = (event) => {
@@ -205,8 +209,11 @@ export function buildZhuyinTypingActivity(lesson, onModuleDone) {
       keyboard.flash(symbol);
       press(symbol);
     };
-    window.addEventListener('keydown', onPhysicalKey);
-    container.__cleanup = () => window.removeEventListener('keydown', onPhysicalKey);
+    // 有實體鍵盤的載具可以直接打字；沒有 window 監聽能力的環境（測試夾具）
+    // 就只用畫面鍵盤，不影響活動本身。
+    const canListen = typeof window !== 'undefined' && typeof window.addEventListener === 'function';
+    if (canListen) window.addEventListener('keydown', onPhysicalKey);
+    container.__cleanup = () => { if (canListen) window.removeEventListener('keydown', onPhysicalKey); };
 
     const hintBtn = h('button', { class: 'btn', type: 'button' }, '提示');
     hintBtn.addEventListener('click', () => {

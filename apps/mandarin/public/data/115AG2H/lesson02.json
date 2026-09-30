@@ -361,86 +361,93 @@
     {
       "id": "word:115AG2H02:01",
       "word": "開始",
-      "zhuyin": null,
+      "zhuyin": "ㄎㄞ ㄕˇ",
       "meaning": "著手進行。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson02/vocabulary/l02-01.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E9%96%8B%E5%A7%8B"
     },
     {
       "id": "word:115AG2H02:02",
       "word": "卻",
-      "zhuyin": null,
+      "zhuyin": "ㄑㄩㄝˋ",
       "meaning": "倒、反，表示轉折相承。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson02/vocabulary/l02-02.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%8D%BB"
     },
     {
       "id": "word:115AG2H02:03",
       "word": "希望",
-      "zhuyin": null,
+      "zhuyin": "ㄒㄧ ㄨㄤˋ",
       "meaning": "心中的期待、指望。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson02/vocabulary/l02-03.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%B8%8C%E6%9C%9B"
     },
     {
       "id": "word:115AG2H02:04",
       "word": "新",
-      "zhuyin": null,
+      "zhuyin": "ㄒㄧㄣ",
       "meaning": "剛開始的、剛出現的。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson02/vocabulary/l02-04.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%96%B0"
     },
     {
       "id": "word:115AG2H02:05",
       "word": "老師",
-      "zhuyin": null,
+      "zhuyin": "ㄌㄠˇ ㄕ",
       "meaning": "對傳授學問或技藝者的尊稱。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson02/vocabulary/l02-05.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%80%81%E5%B8%AB"
     },
     {
       "id": "word:115AG2H02:06",
       "word": "怎麼辦",
-      "zhuyin": null,
+      "zhuyin": "ㄗㄣˇ ㄇㄜ˙ ㄅㄢˋ",
       "meaning": "如何處理。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "challenge",
       "image": "/assets/115AG2H/lesson02/vocabulary/l02-06.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%80%8E%E9%BA%BC%E8%BE%A6"
     },
     {
       "id": "word:115AG2H02:07",
       "word": "知道",
-      "zhuyin": null,
+      "zhuyin": "ㄓ ㄉㄠˋ",
       "meaning": "明白、了解。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson02/vocabulary/l02-07.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%9F%A5%E9%81%93"
     },
     {
       "id": "word:115AG2H02:08",
@@ -469,31 +476,33 @@
     {
       "id": "word:115AG2H02:10",
       "word": "因為",
-      "zhuyin": null,
+      "zhuyin": "ㄧㄣ ㄨㄟˋ",
       "meaning": "連詞。表示事情的原因。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson02/vocabulary/l02-10.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%9B%A0%E7%82%BA"
     },
     {
       "id": "word:115AG2H02:11",
       "word": "緊張",
-      "zhuyin": null,
+      "zhuyin": "ㄐㄧㄣˇ ㄓㄤ",
       "meaning": "情緒害怕不安。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG2H/lesson02/vocabulary/l02-11.webp",
       "status": "ready",
-      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）"
+      "source": "115G2A／翰林二上官方教材（04形音輕鬆學：語詞解釋）",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E7%B7%8A%E5%BC%B5"
     },
     {
       "id": "word:115AG2H02:12",
       "word": "消失",
-      "zhuyin": null,
+      "zhuyin": "ㄒㄧㄠ ㄕ",
       "meaning": "原本看得到或存在的東西不見了。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -501,12 +510,13 @@
       "image": "/assets/115AG2H/lesson02/vocabulary/l02-12.webp",
       "status": "ready",
       "source": "教育百科 115 學年度上學期・翰林版二年級第 2 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150102",
-      "image_origin": "generated:imagegen-vocabulary-meaning"
+      "image_origin": "generated:imagegen-vocabulary-meaning",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%B6%88%E5%A4%B1"
     },
     {
       "id": "word:115AG2H02:13",
       "word": "學習",
-      "zhuyin": null,
+      "zhuyin": "ㄒㄩㄝˊ ㄒㄧˊ",
       "meaning": "透過閱讀、聆聽和練習，學會新的知識或本領。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -514,12 +524,13 @@
       "image": "/assets/115AG2H/lesson02/vocabulary/l02-13.webp",
       "status": "ready",
       "source": "教育百科 115 學年度上學期・翰林版二年級第 2 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150102",
-      "image_origin": "generated:imagegen-vocabulary-meaning"
+      "image_origin": "generated:imagegen-vocabulary-meaning",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%AD%B8%E7%BF%92"
     },
     {
       "id": "word:115AG2H02:14",
       "word": "最後",
-      "zhuyin": null,
+      "zhuyin": "ㄗㄨㄟˋ ㄏㄡˋ",
       "meaning": "在時間或順序上排在最末的位置。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -527,12 +538,13 @@
       "image": "/assets/115AG2H/lesson02/vocabulary/l02-14.webp",
       "status": "ready",
       "source": "教育百科 115 學年度上學期・翰林版二年級第 2 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150102",
-      "image_origin": "generated:imagegen-vocabulary-meaning"
+      "image_origin": "generated:imagegen-vocabulary-meaning",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E6%9C%80%E5%BE%8C"
     },
     {
       "id": "word:115AG2H02:15",
       "word": "跳舞",
-      "zhuyin": null,
+      "zhuyin": "ㄊㄧㄠˋ ㄨˇ",
       "meaning": "跟著音樂的節奏做出舞蹈動作。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -540,7 +552,8 @@
       "image": "/assets/115AG2H/lesson02/vocabulary/l02-15.webp",
       "status": "ready",
       "source": "教育百科 115 學年度上學期・翰林版二年級第 2 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0101021150102",
-      "image_origin": "generated:imagegen-vocabulary-meaning"
+      "image_origin": "generated:imagegen-vocabulary-meaning",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B7%B3%E8%88%9E"
     }
   ],
   "word_meanings": [

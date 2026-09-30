@@ -566,7 +566,7 @@
     {
       "id": "word:115AG4K12:16",
       "word": "蹦蹦跳跳",
-      "zhuyin": null,
+      "zhuyin": "ㄅㄥˋ ㄅㄥˋ ㄊㄧㄠˋ ㄊㄧㄠˋ",
       "meaning": "形容活潑地連續跳躍。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -574,12 +574,13 @@
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-16.webp",
       "status": "ready",
       "source": "教育百科 115 學年度上學期・康軒版四年級第 12 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0103041150112",
-      "image_origin": "generated:imagegen-vocabulary-meaning"
+      "image_origin": "generated:imagegen-vocabulary-meaning",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B9%A6%E8%B9%A6%E8%B7%B3%E8%B7%B3"
     },
     {
       "id": "word:115AG4K12:17",
       "word": "內心",
-      "zhuyin": null,
+      "zhuyin": "ㄋㄟˋ ㄒㄧㄣ",
       "meaning": "一個人心裡的想法和感受。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -587,7 +588,8 @@
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-17.webp",
       "status": "ready",
       "source": "教育百科 115 學年度上學期・康軒版四年級第 12 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0103041150112",
-      "image_origin": "generated:imagegen-vocabulary-meaning"
+      "image_origin": "generated:imagegen-vocabulary-meaning",
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%85%A7%E5%BF%83"
     }
   ],
   "word_meanings": [],
