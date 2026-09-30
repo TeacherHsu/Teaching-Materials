@@ -1606,7 +1606,25 @@
     "gist": "郊外活動的午餐時間，大家分享自己帶來的食物，說著關於食物的故事，大家都期待下星期二班上的活動，明光的家人介紹越南春捲。",
     "theme": "透過同學們的對話，開啟「竹筒飯」、「艾粄」、「越南春捲」三種美食的話題。",
     "status": "approved",
-    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG2H07:vague",
+        "type": "vague",
+        "text": "課文寫出同學相處的情形，讓人讀了覺得很有意思。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG2H07:offtopic",
+        "type": "offtopic",
+        "text": "課文教我們郊外活動要帶哪些東西，還有食物要怎麼保存才新鮮。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

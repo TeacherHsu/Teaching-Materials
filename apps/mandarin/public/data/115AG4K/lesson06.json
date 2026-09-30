@@ -822,7 +822,25 @@
     "gist": "臺灣登山家江秀真站在雪山前開朗笑著，她成功登上世界多座高峰，被人稱為最接近天空的女子。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG4K06:vague",
+        "type": "vague",
+        "text": "課文介紹一位值得學習的人物，讓我們讀了很佩服。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG4K06:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹世界上最高的幾座山分別在哪裡，還有它們的高度。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

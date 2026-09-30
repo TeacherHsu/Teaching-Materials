@@ -928,7 +928,25 @@
     "gist": "海倫凱勒幼時因病失去視覺與聽覺，仍靠老師教導和自己的努力完成學業，成為鼓舞世界的勵志人物。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG4K05:vague",
+        "type": "vague",
+        "text": "課文寫出一個人的經歷，讓我們讀了深受感動。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG4K05:offtopic",
+        "type": "offtopic",
+        "text": "課文說明點字是怎麼發明出來的，還有視障者平常如何閱讀。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

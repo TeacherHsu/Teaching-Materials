@@ -562,7 +562,25 @@
     "gist": "課文描寫秋千上下擺動，和天空、小草問候，並想找出陪伴它的人。",
     "theme": "課文理解",
     "status": "approved",
-    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG1H06:vague",
+        "type": "vague",
+        "text": "課文寫出遊戲時的快樂，讓人讀了心情也跟著變好。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG1H06:offtopic",
+        "type": "offtopic",
+        "text": "課文說明秋千是用什麼做成的，還有繩子要綁多長才安全。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

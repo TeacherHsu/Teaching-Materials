@@ -4,6 +4,7 @@ import { filterByStatus } from '../utils/preview.js';
 import { isModuleComplete } from '../utils/storage.js';
 import { canStartPolyphones } from './polyphones.js';
 import { buildPronunciationItems } from './pronunciationQuestions.js';
+import { canStartMainIdea } from './mainIdea.js';
 
 const ROUND_MIN = 3;
 
@@ -152,6 +153,17 @@ export const MODULE_REGISTRY = [
     implemented: true,
     ready(lesson) {
       return readyParagraphs(lesson).length >= ROUND_MIN || readyReadingQuestions(lesson).length >= 1;
+    },
+  },
+  {
+    key: 'main_idea',
+    label: '抓重點',
+    icon: 'main_idea',
+    color: 'blue',
+    description: '讀大意、找出整課重點',
+    implemented: true,
+    ready(lesson) {
+      return canStartMainIdea(lesson);
     },
   },
   {

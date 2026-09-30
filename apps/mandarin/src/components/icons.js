@@ -30,9 +30,9 @@ export const MODULE_ICONS = {
   polysemy: wrap(
     '<circle cx="12" cy="7" r="3"/><path d="M12 10v3"/><path d="M12 13l-5 5M12 13l5 5M12 13v5"/>',
   ),
-  // 課文地圖：路徑節點圖
-  structure_map: wrap(
-    '<circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="13" r="2"/><circle cx="12" cy="20" r="2"/><path d="M6.6 7.4L10.4 11.6M17.4 7.4L13.6 11.6M12 15v3"/>',
+  // 抓重點：文件上標出重點的星號
+  main_idea: wrap(
+    '<path d="M6 3h9l4 4v14H6Z"/><path d="M14 3v5h5"/><path d="m12 11 1.2 2.5 2.8.4-2 2 .5 2.7-2.5-1.3-2.5 1.3.5-2.7-2-2 2.8-.4Z"/>',
   ),
   // 聽聽看：耳朵＋聲波
   listening: wrap(

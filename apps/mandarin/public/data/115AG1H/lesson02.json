@@ -488,7 +488,25 @@
     "gist": "課文寫大家一起玩大風吹，在不停跑和不停吹的節奏中感受遊戲的熱鬧。",
     "theme": "課文理解",
     "status": "approved",
-    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG1H02:vague",
+        "type": "vague",
+        "text": "課文介紹一個好玩的活動，讓大家讀了都很開心。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG1H02:offtopic",
+        "type": "offtopic",
+        "text": "課文說明風是從哪裡吹來的，還有颳大風時要怎麼避開危險。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

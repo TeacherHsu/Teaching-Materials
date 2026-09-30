@@ -1177,7 +1177,25 @@
     "gist": "這扇門很奇怪，不論是人或東西進去就有怪事發生，主角猜門裡頭一定住著大妖怪。",
     "theme": "以好奇的角度，啟發部件﹁門﹂與其他文字組合的語文探索樂趣。",
     "status": "approved",
-    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG2H11:vague",
+        "type": "vague",
+        "text": "課文描寫奇特的情形，讓人讀了覺得很好奇。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG2H11:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹妖怪通常住在什麼地方，還有遇到妖怪的時候該怎麼辦。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

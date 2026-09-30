@@ -1113,7 +1113,25 @@
     "gist": "作者在巴黎、歐洲和臺灣欣賞多樣的街頭藝術，發現藝術能走進公共空間、帶來活力與美感，並期望大家駐足欣賞、給予鼓勵。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG6H08:vague",
+        "type": "vague",
+        "text": "課文描寫在各地見到的情形，讓我們讀了增加不少見識。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG6H08:offtopic",
+        "type": "offtopic",
+        "text": "課文說明想成為街頭藝人要考什麼證照，以及申請的完整流程。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

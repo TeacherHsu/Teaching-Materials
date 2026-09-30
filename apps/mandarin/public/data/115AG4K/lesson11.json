@@ -927,7 +927,25 @@
     "gist": "愛麗絲看見穿鵝黃背心、手拿懷錶的兔子先生，因為好奇一路追趕，離開姐姐身邊展開奇遇。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG4K11:vague",
+        "type": "vague",
+        "text": "課文說了一段奇妙的經過，讓我們讀了覺得很有趣。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG4K11:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹兔子有哪些生活習性，還有在家養兔子要注意什麼。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

@@ -83,6 +83,14 @@ function filterLesson(lesson) {
     l.main_idea = { ...l.main_idea, gist: null, theme: null, status: 'todo_rewrite' };
   }
 
+  // 抓重點的誘答：未核准者不得帶著文字進 build（比照 sentence_patterns 的作法，
+  // 留空殼標記而非整筆刪除，這樣待審頁仍看得到有幾筆待處理）。
+  if (l.main_idea && Array.isArray(l.main_idea.distractors)) {
+    l.main_idea.distractors = l.main_idea.distractors.map((d) => (
+      isPublic(d.status) ? d : { ...d, text: null, status: 'todo_rewrite' }
+    ));
+  }
+
   l.reading_questions = (l.reading_questions || []).filter((q) => isPublic(q.status));
   l.rhetoric = (l.rhetoric || []).filter((r) => isPublic(r.status));
   l.listening = (l.listening || []).filter((item) => isPublic(item.status));

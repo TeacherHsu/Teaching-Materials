@@ -1007,7 +1007,25 @@
     "gist": "詩人藉池中倒影展開自我探索，省思友情、學習與特質，最後以正向積極態度追求光明的未來。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG6H01:vague",
+        "type": "vague",
+        "text": "這首詩寫出作者的心情和想法，讓我們讀了很有共鳴。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG6H01:offtopic",
+        "type": "offtopic",
+        "text": "這首詩描寫池塘四季的景色變化，以及水中各種生物的活動。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

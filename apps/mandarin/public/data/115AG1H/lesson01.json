@@ -508,7 +508,25 @@
     "gist": "課文用一二一的節奏和左右位置，描寫你和我一起向前走。",
     "theme": "課文理解",
     "status": "approved",
-    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG1H01:vague",
+        "type": "vague",
+        "text": "課文寫了一件生活中常見的事，讓我們讀了覺得很有趣。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG1H01:offtopic",
+        "type": "offtopic",
+        "text": "課文教我們過馬路要看紅綠燈，走路時要注意安全。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

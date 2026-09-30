@@ -1022,7 +1022,25 @@
     "gist": "作者跟著家人走訪公共藝術，從拓印、大地之書、花間小鹿和鏡面作品中，發現公共藝術結合在地文化，並讓藝術走進人們的生活。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG6H07:vague",
+        "type": "vague",
+        "text": "課文記錄一次外出的見聞，讓我們讀了也想親自去走走。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG6H07:offtopic",
+        "type": "offtopic",
+        "text": "課文說明公共藝術的設置有哪些法規，以及經費通常從哪裡來。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

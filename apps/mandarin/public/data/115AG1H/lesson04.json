@@ -662,7 +662,25 @@
     "gist": "課文連續向小草提問天空、山、星星和水珠，表現孩子對自然的好奇。",
     "theme": "課文理解",
     "status": "approved",
-    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG1H04:vague",
+        "type": "vague",
+        "text": "課文寫出小朋友的心情，讓我們讀了很有感覺。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG1H04:offtopic",
+        "type": "offtopic",
+        "text": "課文教我們遇到不懂的事要舉手發問，才是有禮貌的孩子。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

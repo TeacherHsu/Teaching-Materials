@@ -877,7 +877,25 @@
     "gist": "作者放學後飛快趕回家，桌上的美味像在點心招手，有時還能喝到香甜柔軟、令人期待的紅豆湯。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG4K02:vague",
+        "type": "vague",
+        "text": "課文描寫日常生活的一段時光，讀起來讓人覺得很溫暖。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG4K02:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹紅豆湯的做法，還有煮紅豆的時候要注意什麼。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

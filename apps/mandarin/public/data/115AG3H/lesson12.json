@@ -902,7 +902,25 @@
     "gist": "除夕團圓夜，車窗外雨絲不停，路上好像只剩下作者一家；他默默看時間，只盼趕快見到嬸嬸和親人。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "derived:official-paragraph-summary"
+    "source": "derived:official-paragraph-summary",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG3H12:vague",
+        "type": "vague",
+        "text": "課文描寫一段路上的情形，讓我們讀了覺得很真實。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG3H12:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹除夕要吃哪些年菜，還有過年期間有什麼特別的習俗。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

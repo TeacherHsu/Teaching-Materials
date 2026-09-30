@@ -920,7 +920,25 @@
     "gist": "鞋匠妻子親切招呼客人，鞋店原本生意很好；多年後老人動作變慢，顧客只好耐心等待新鞋。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG4K12:vague",
+        "type": "vague",
+        "text": "課文說了一個溫馨的故事，讓我們讀了很有感觸。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG4K12:offtopic",
+        "type": "offtopic",
+        "text": "課文說明鞋子是怎麼製作的，從裁皮、打版到縫製的完整步驟。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

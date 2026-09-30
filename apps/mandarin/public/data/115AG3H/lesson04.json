@@ -773,7 +773,25 @@
     "gist": "課文透過康康先後嘗試揚湯止沸、師傅抽柴解決沸水的過程，說明處理問題要先找到根本原因，再採取有效方法。",
     "theme": "遇到問題先找根本，再想辦法解決。",
     "status": "approved",
-    "source": "115G3A／翰林三上第4課官方教材與教師確認資料（主旨重述版）"
+    "source": "115G3A／翰林三上第4課官方教材與教師確認資料（主旨重述版）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG3H04:vague",
+        "type": "vague",
+        "text": "課文說了一段師徒之間的故事，讓我們讀了學到道理。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG3H04:offtopic",
+        "type": "offtopic",
+        "text": "課文說明水要加熱到幾度才會沸騰，還有蒸氣是怎麼產生的。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

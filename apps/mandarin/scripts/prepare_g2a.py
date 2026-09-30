@@ -703,7 +703,6 @@ def modules(words: list, idioms: list, patterns: list, questions: list, lookalik
         "vocabulary": {"label": "學會語詞", "status": "available", "activity": "vocabulary-cards"},
         "reading": {"label": "讀懂課文", "status": "available", "activity": "reading", "note": "公開資料只放摘要與理解提問，不放課文全文。"},
         "sentence_practice": {"label": "練習句子", "status": "available" if patterns else "missing", "activity": "sentence-practice"},
-        "challenge": {"label": "動手挑戰", "status": "available", "activity": "challenge-quiz"},
         "application": {"label": "我會應用", "status": "available" if questions else "missing", "activity": "application"},
         "idiom_builder": {"label": "生字變成語", "status": "available" if idioms else "missing", "activity": "idiom-builder"},
         "lookalikes": {"label": "形似字", "status": "available" if lookalikes else "missing", "activity": "lookalikes"},
@@ -784,7 +783,6 @@ def main() -> int:
             "main_idea": {"id": f"main_idea:115AG2H{lesson_no:02d}:01", "gist": gist, "theme": theme, "status": "approved", "source": f"{SOURCE}（07主旨、課文大意、段落大意）"},
             "reading_questions": questions,
             "lookalikes": lookalikes,
-            "quiz": [],
             "modules": modules(words, idioms, patterns, questions, lookalikes, paragraphs, polysemy, polyphones, listening),
         }
         save_json(profile_dir / f"lesson{lesson_no:02d}.json", lesson)

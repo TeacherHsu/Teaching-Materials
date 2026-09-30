@@ -942,7 +942,25 @@
     "gist": "學生採訪歌仔戲演員孫翠鳳，了解她從跑龍套開始、辛苦磨練並以創新舞臺傳承戲曲；學生也親自學唱腔與身段，收穫豐富。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG6H09:vague",
+        "type": "vague",
+        "text": "課文記錄一次訪問的經過，讓我們讀了收穫很多。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG6H09:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹歌仔戲的起源、發展歷史，以及有哪些著名的劇目。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

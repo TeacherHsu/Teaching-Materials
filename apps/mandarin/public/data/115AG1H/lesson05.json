@@ -546,7 +546,25 @@
     "gist": "課文想像天上的七彩滑梯，想爬上去找棉花糖，也想滑下去找泡泡池。",
     "theme": "課文理解",
     "status": "approved",
-    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG1H05:vague",
+        "type": "vague",
+        "text": "課文描寫一個好玩的地方，讓人讀了也想去看看。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG1H05:offtopic",
+        "type": "offtopic",
+        "text": "課文提醒我們玩滑梯要排隊，滑下來時才不會跌倒受傷。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

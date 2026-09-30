@@ -1066,7 +1066,25 @@
     "gist": "作者先觀樹，從樹的沉穩想到可靠的朋友；再寫種樹，體會善意能像綠蔭一樣庇護他人，並期許自己把美好傳下去。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG6H05:vague",
+        "type": "vague",
+        "text": "課文寫出作者的觀察和感受，讓人讀了很有啟發。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG6H05:offtopic",
+        "type": "offtopic",
+        "text": "課文說明種樹的步驟和方法，以及不同樹種各自適合的生長環境。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

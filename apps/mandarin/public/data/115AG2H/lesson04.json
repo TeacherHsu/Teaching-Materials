@@ -1232,7 +1232,25 @@
     "gist": "青蛙要小朋友只要觀察，不要動手抓，就會證明你頂呱呱。",
     "theme": "觀察大自然，可以多聽多看，但是不要動手。",
     "status": "approved",
-    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG2H04:vague",
+        "type": "vague",
+        "text": "課文寫出動物的樣子，讓我們讀了覺得很可愛。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG2H04:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹青蛙和蝦蟆有什麼分別，還有牠們平常生活在什麼地方。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

@@ -1,6 +1,6 @@
 // 驗證規格 2026-09-25-mandarin-dabutie-importer.md §1／§4：
 // 1. 課次首頁 hero 進度分母只算「可開始的大項」（code==='available'|'done'；鎖住的
-//    舊字新詞與待重新編題的聽聽看都不計入），第 1 課應為 9（課文地圖已移除）。
+//    舊字新詞與待重新編題的聽聽看都不計入），第 1 課應為 10（移除課文地圖、新增抓重點）。
 // 4. 活動頁／課次首頁麵包屑補上課本層（翰林三上），且與 LessonDashboard 共用同一份 volumeLabel。
 // 用法：node scripts/test-lesson-dashboard-progress.mjs
 import assert from 'node:assert/strict';
@@ -23,7 +23,7 @@ assert.deepEqual(lockedKeys, ['review'], `第 1 課應該只有「舊字新詞�
 const pendingKeys = statuses.filter((s) => s.code === 'pending_review').map((s) => s.key);
 assert.deepEqual(pendingKeys, ['listening'], `第 1 課聽聽看應待重新編題，實際待審：${pendingKeys.join('、') || '無'}`);
 const availableCount = statuses.filter((s) => s.code === 'available' || s.code === 'done').length;
-assert.equal(availableCount, 9, `第 1 課可開始的大項應為 9 項，實際 ${availableCount}`);
+assert.equal(availableCount, 10, `第 1 課可開始的大項應為 10 項，實際 ${availableCount}`);
 
 // ---- LessonDashboard：hero 分母排除鎖住與待審項目 ----
 const dashboard = LessonDashboard(lesson);
@@ -31,8 +31,8 @@ const progressLabel = dashboard.find((n) => n.hasClass('lesson-hero__progress-la
 assert.ok(progressLabel, '應該要有 lesson-hero__progress-label');
 assert.match(
   progressLabel.textContent,
-  /已完成 0 ／ 9 項/,
-  `hero 進度分母應為 9（排除鎖住的舊字新詞與待重新編題的聽聽看），實際：「${progressLabel.textContent}」`,
+  /已完成 0 ／ 10 項/,
+  `hero 進度分母應為 10（排除鎖住的舊字新詞與待重新編題的聽聽看），實際：「${progressLabel.textContent}」`,
 );
 
 // 進度環（progress-ring）文字也要用同一個分母換算百分比，0／10 = 0%
@@ -53,4 +53,4 @@ assert.ok(crumbText.includes(volumeLabel(lesson.volume)), `活動頁麵包屑應
 assert.ok(crumbText.indexOf(volumeLabel(lesson.volume)) < crumbText.indexOf('第 1 課'), '課本層應該排在「第 1 課」之前');
 assert.ok(crumbText.indexOf('第 1 課') < crumbText.indexOf('一字多義'), '「第 1 課」應該排在大項名稱之前');
 
-console.log('PASS: hero 進度只計可開始的大項（第 1 課＝9），且活動頁／課次首頁麵包屑補上課本層並共用 volumeLabel。');
+console.log('PASS: hero 進度只計可開始的大項（第 1 課＝10），且活動頁／課次首頁麵包屑補上課本層並共用 volumeLabel。');

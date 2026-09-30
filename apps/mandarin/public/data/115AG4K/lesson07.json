@@ -970,7 +970,25 @@
     "gist": "美食作家先介紹印度甩餅，師傅把餅皮拍打並向空中拋，使原本小小的麵皮逐漸變得又大又薄。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG4K07:vague",
+        "type": "vague",
+        "text": "課文描寫一段有趣的過程，讓我們讀了也想試試看。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG4K07:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹印度的飲食文化，還有他們做菜常用哪些香料。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

@@ -898,7 +898,25 @@
     "gist": "一千零一夜的奇幻旋律突破時間和空間，把中東故事帶到世界各地，也讓讀者走進充滿想像的旅程。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG4K10:vague",
+        "type": "vague",
+        "text": "課文介紹一部有名的作品，讓我們讀了很想找來看。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG4K10:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹中東地區在什麼位置，還有那裡的氣候有什麼特色。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

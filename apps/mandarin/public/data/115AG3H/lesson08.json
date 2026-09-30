@@ -885,7 +885,25 @@
     "gist": "夜晚海灘上，小螃蟹的身體被紙杯卡住，幸好寄居蟹靠近協助，才讓牠重新自由並看見朋友的處境。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "derived:official-paragraph-summary"
+    "source": "derived:official-paragraph-summary",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG3H08:vague",
+        "type": "vague",
+        "text": "課文說了一段動物之間的故事，讓我們讀了很感動。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG3H08:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹寄居蟹一生要換幾次殼，還有牠們平常吃什麼食物。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

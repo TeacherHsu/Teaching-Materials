@@ -902,7 +902,25 @@
     "gist": "城市中居高臨下的大樓像建築界的長頸鹿，不只外形醒目，也具有重要功能並形成特有景觀。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG4K08:vague",
+        "type": "vague",
+        "text": "課文介紹城市裡的景象，讓我們讀了增加不少知識。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG4K08:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹長頸鹿有多高、吃什麼食物，還有牠們生活在什麼地方。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

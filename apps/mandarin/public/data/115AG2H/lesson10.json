@@ -1190,7 +1190,25 @@
     "gist": "姐姐和主角找表弟玩猜字謎遊戲，表弟後來明白規則，說出正確答案而高興。",
     "theme": "藉由表弟與表姐、表哥玩猜字謎遊戲的過程，體會語文遊戲的樂趣。",
     "status": "approved",
-    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG2H10:vague",
+        "type": "vague",
+        "text": "課文寫出一段有趣的過程，讓我們讀了也想試試看。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG2H10:offtopic",
+        "type": "offtopic",
+        "text": "課文教我們怎麼做加法和減法，還有怎麼算得又快又正確。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

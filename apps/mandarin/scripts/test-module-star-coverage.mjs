@@ -28,6 +28,7 @@ const { buildVocabularyActivity } = await import('../src/activities/vocabulary.j
 const { buildSentencePracticeActivity, splitSentenceIntoChunks } = await import('../src/activities/sentencePractice.js');
 const { buildIdiomBuilderActivity } = await import('../src/components/IdiomBuilder.js');
 const { buildReadingActivity } = await import('../src/activities/reading.js');
+const { buildMainIdeaActivity } = await import('../src/activities/mainIdea.js');
 const { buildPolysemyActivity } = await import('../src/activities/polysemy.js');
 const { buildListeningActivity } = await import('../src/activities/listening.js');
 const { buildRhetoricActivity } = await import('../src/activities/rhetoric.js');
@@ -40,6 +41,7 @@ const BUILDERS = {
   sentence_practice: buildSentencePracticeActivity,
   idiom_builder: buildIdiomBuilderActivity,
   reading: buildReadingActivity,
+  main_idea: buildMainIdeaActivity,
   polysemy: buildPolysemyActivity,
   polyphones: buildPolyphonesActivity,
   lookalikes: buildLookalikesActivity,

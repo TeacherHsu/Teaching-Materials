@@ -896,7 +896,25 @@
     "gist": "主角接受同學邀約，勇敢加入籃球社，希望自己有朝一日能在球場上發揮實力，成為受到大家肯定的選手。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG4K03:vague",
+        "type": "vague",
+        "text": "課文寫出主角的想法和心情，讓我們讀了很受鼓勵。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG4K03:offtopic",
+        "type": "offtopic",
+        "text": "課文說明籃球比賽的規則，還有球場上各個位置的分工。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

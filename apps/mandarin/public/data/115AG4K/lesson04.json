@@ -910,7 +910,25 @@
     "gist": "來自加拿大的馬偕完成神學與醫學訓練後，自願前往海外服務，並決定把自己的能力帶到臺灣。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG4K04:vague",
+        "type": "vague",
+        "text": "課文介紹一個人的生平事蹟，讓我們讀了非常敬佩他。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG4K04:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹加拿大在什麼位置、氣候如何，還有主要的城市。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

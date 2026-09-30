@@ -754,7 +754,25 @@
     "gist": "課文透過農民替梨花遮雨並改良小傘的過程，說明觀察問題、改良方法，就能讓工作更有效率並得到好成果。",
     "theme": "遇到問題要觀察原因，並持續改良方法。",
     "status": "approved",
-    "source": "115G3A／翰林三上第5課官方教材與教師確認資料（主旨重述版）"
+    "source": "115G3A／翰林三上第5課官方教材與教師確認資料（主旨重述版）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG3H05:vague",
+        "type": "vague",
+        "text": "課文介紹一段工作的經過，讓我們讀了增加不少見識。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG3H05:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹梨子有哪些品種和產地，還有怎麼挑選好吃的梨。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

@@ -774,7 +774,25 @@
     "gist": "課文說明鉛筆的原料、製作過程和種類，讓讀者發現小鉛筆裡藏著許多有趣的學問。",
     "theme": "觀察日常用品，了解其中的知識與製作巧思。",
     "status": "approved",
-    "source": "115G3A／翰林三上第6課官方教材與教師確認資料（主旨重述版）"
+    "source": "115G3A／翰林三上第6課官方教材與教師確認資料（主旨重述版）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG3H06:vague",
+        "type": "vague",
+        "text": "課文介紹一樣常見的東西，讓我們讀了知道很多新知識。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG3H06:offtopic",
+        "type": "offtopic",
+        "text": "課文教我們握筆的正確姿勢，還有寫字的時候要注意什麼。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

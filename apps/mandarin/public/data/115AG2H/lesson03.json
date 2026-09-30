@@ -1410,7 +1410,25 @@
     "gist": "國王沒新衣穿就心情不好，後來他看到大臣改造舊衣，然後喜歡上自己設計衣服。他發現做喜歡的事，能讓自己變得開心，還能分享快樂。",
     "theme": "國王發現讓自己的情緒轉變為正向的方法。",
     "status": "approved",
-    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG2H03:vague",
+        "type": "vague",
+        "text": "課文講了一個有趣的故事，讓我們讀了學到不少道理。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG2H03:offtopic",
+        "type": "offtopic",
+        "text": "課文說明衣服是怎麼做出來的，從量身、裁布到縫製有很多步驟。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

@@ -1632,7 +1632,25 @@
     "gist": "主角和家人散步時看到鵝，主角念詠鵝詩，姐姐說明詩的意思並加以改編。",
     "theme": "從觀察自然景物，體會駱賓王 詠鵝詩的趣味，進而主動仿作。",
     "status": "approved",
-    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG2H12:vague",
+        "type": "vague",
+        "text": "課文寫出家人一起活動的情形，讀起來很輕鬆。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG2H12:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹鵝的外形和生活習性，還有牠們是怎麼在水上游動的。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

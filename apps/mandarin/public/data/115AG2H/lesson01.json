@@ -1403,7 +1403,25 @@
     "gist": "主角的心情像天氣一樣有不同變化而有不同反應，最後希望能像雨後放晴有美麗的彩虹，心情也變美好。",
     "theme": "發現自己心情的變化。",
     "status": "approved",
-    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG2H01:vague",
+        "type": "vague",
+        "text": "課文寫出主角遇到的事情，讓我們讀了也很有同感。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG2H01:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹天氣會有哪些變化，還有下過雨以後為什麼會出現彩虹。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

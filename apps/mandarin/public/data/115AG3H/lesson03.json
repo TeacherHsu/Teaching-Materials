@@ -828,7 +828,25 @@
     "gist": "課文透過櫻櫻常常匆忙遺漏物品的情況，說明先計畫、先準備，再提早五分鐘行動，做事就能更從容。",
     "theme": "做事前先計畫和整理，提早準備可以減少遺漏。",
     "status": "approved",
-    "source": "115G3A／翰林三上第3課官方教材與教師確認資料（主旨重述版）"
+    "source": "115G3A／翰林三上第3課官方教材與教師確認資料（主旨重述版）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG3H03:vague",
+        "type": "vague",
+        "text": "課文寫出一段家人相處的經過，讓人讀了很有感觸。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG3H03:offtopic",
+        "type": "offtopic",
+        "text": "課文說明遲到會造成什麼後果，提醒我們做人一定要守時。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

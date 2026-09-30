@@ -1149,7 +1149,25 @@
     "gist": "課文用不同的比喻，說明時間快慢不定、長短不一的特性，並留下疑問讓大家思考。",
     "theme": "本課希望小朋友觀察生活中的感受，體會時間帶給人的不同感覺。",
     "status": "approved",
-    "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）"
+    "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG3H01:vague",
+        "type": "vague",
+        "text": "課文說明一件生活中的事物，讓我們讀了增加不少知識。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG3H01:offtopic",
+        "type": "offtopic",
+        "text": "課文教我們認識時鐘上的長針和短針，學會看現在幾點幾分。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

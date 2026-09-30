@@ -948,7 +948,25 @@
     "gist": "孔子用簡短話語提醒我們溫故知新、擇善改過，並向身邊的人學習。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG6H03:vague",
+        "type": "vague",
+        "text": "課文介紹古人說過的話，讓我們讀了學到不少做人的道理。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG6H03:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹孔子的生平、周遊列國的經過，以及他有哪些著名弟子。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

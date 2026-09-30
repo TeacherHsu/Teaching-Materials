@@ -1241,7 +1241,25 @@
     "gist": "媽媽洗菜，爸爸煮飯，主角將各樣材料捲在一起，做出把全家人愛心黏在一起的好味道餐點。",
     "theme": "全家人分工合作，製作壽司，更藉由這樣的活動，讓家人的感情緊密相連。",
     "status": "approved",
-    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG2H09:vague",
+        "type": "vague",
+        "text": "課文寫出家人相處的情形，讀起來讓人覺得很溫暖。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG2H09:offtopic",
+        "type": "offtopic",
+        "text": "課文教我們洗菜和煮飯的正確步驟，還有進廚房要注意的安全。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

@@ -872,7 +872,25 @@
     "gist": "大家在游泳池自在前進，想像自己化成魚、青蛙和蝴蝶，在水中展現不同姿態，也感受身體活動的自由。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "康軒官方教材來源整理（14 課文大意、段落大意）"
+    "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG4K01:vague",
+        "type": "vague",
+        "text": "課文寫出運動時的情形，讓我們讀了也想動一動。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG4K01:offtopic",
+        "type": "offtopic",
+        "text": "課文教我們游泳前要先暖身，還有下水前該注意哪些安全規則。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

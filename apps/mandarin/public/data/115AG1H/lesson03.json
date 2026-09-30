@@ -570,7 +570,25 @@
     "gist": "課文描寫同學一個接一個合作做出小火車和大山洞，開心玩遊戲。",
     "theme": "課文理解",
     "status": "approved",
-    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG1H03:vague",
+        "type": "vague",
+        "text": "課文描寫同學相處的情形，讀起來讓人覺得很溫暖。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG1H03:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹火車有哪些種類，還有山洞是怎麼開鑿出來的。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

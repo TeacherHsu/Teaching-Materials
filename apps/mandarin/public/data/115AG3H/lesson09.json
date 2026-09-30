@@ -964,7 +964,25 @@
     "gist": "作者全家一起挑戰古道阿塱壹，爸爸說這條路過去是屏東與臺東之間的重要交通要道，具有歷史意義。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "derived:official-paragraph-summary"
+    "source": "derived:official-paragraph-summary",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG3H09:vague",
+        "type": "vague",
+        "text": "課文寫出一次出遊的經過，讓人讀了也想親自去走走。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG3H09:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹屏東和臺東有哪些好吃的名產和值得一看的景點。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

@@ -1154,7 +1154,25 @@
     "gist": "布大爺的南瓜被偷後，冷靜推理並到市場追查；他用事先留下的南瓜蒂證明所有權，最後讓南瓜失而復得。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG6H12:vague",
+        "type": "vague",
+        "text": "課文說了一個曲折的故事，讓我們讀了覺得很精彩。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG6H12:offtopic",
+        "type": "offtopic",
+        "text": "課文說明南瓜的種植方法，以及怎麼判斷南瓜已經成熟可以採收。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

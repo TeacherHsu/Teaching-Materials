@@ -823,7 +823,25 @@
     "gist": "課文說明便利貼能幫助人記住事情、安排次序，讓生活變得更有條理。",
     "theme": "學會先規畫，再依照順序完成每天要做的事情。",
     "status": "approved",
-    "source": "115G3A／翰林三上第2課官方教材與教師確認資料（主旨重述版）"
+    "source": "115G3A／翰林三上第2課官方教材與教師確認資料（主旨重述版）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG3H02:vague",
+        "type": "vague",
+        "text": "課文介紹一樣東西的用法，讓我們讀了覺得很實用。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG3H02:offtopic",
+        "type": "offtopic",
+        "text": "課文說明便利貼是誰發明的，還有上面的黏膠是什麼成分。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

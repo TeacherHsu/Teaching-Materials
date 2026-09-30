@@ -1369,7 +1369,25 @@
     "gist": "明光的媽媽到班上跟大家介紹越南春捲。用泡軟米紙包進蝦子、米線和各種青菜，捲起來就完成了。大家一邊吃，一邊聽明光的媽媽說她小時候的生活，感覺春捲更美味。",
     "theme": "在享用美食的當下，可以進一步了解它們背後的故事，食物吃起來會更有滋味。",
     "status": "approved",
-    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG2H08:vague",
+        "type": "vague",
+        "text": "課文說了一件班上發生的事，讓大家讀了很有收穫。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG2H08:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹越南在什麼位置、氣候如何，還有那裡有名的景點。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

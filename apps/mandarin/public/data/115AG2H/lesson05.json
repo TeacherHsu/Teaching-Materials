@@ -1242,7 +1242,25 @@
     "gist": "小真一家人到海邊玩，發現沙灘上有很多小洞。小真和家人學著螃蟹走路的方式，在沙灘上留下腳印。夕陽下，全家人的腳印和螃蟹挖的小洞，形成了美麗的畫。",
     "theme": "透過小真一家人到海邊沙灘遊玩，一家人的觀察、互動，引出人與自然所形成的美麗的畫。",
     "status": "approved",
-    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG2H05:vague",
+        "type": "vague",
+        "text": "課文寫一家人出去玩的經過，讀起來讓人覺得很開心。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG2H05:offtopic",
+        "type": "offtopic",
+        "text": "課文說明螃蟹為什麼要橫著走路，還有牠們是怎麼在沙裡挖洞的。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

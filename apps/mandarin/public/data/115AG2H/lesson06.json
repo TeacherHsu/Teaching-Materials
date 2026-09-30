@@ -1271,7 +1271,25 @@
     "gist": "主角全家人到奶奶家拜訪。吃過晚飯，一起出發去找爸爸所說的﹁星星﹂，在小溪旁草叢裡發現了﹁星星﹂，最後﹁星星﹂還成為了妹妹的新朋友。",
     "theme": "透過探訪大自然，從發現的景物中引發聯想的樂趣，開啟學生觀察與想像的能力。",
     "status": "approved",
-    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG2H06:vague",
+        "type": "vague",
+        "text": "課文描寫一次難忘的經驗，讓我們讀了印象很深刻。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG2H06:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹天上的星星各有什麼名字，晚上要用什麼方法觀察。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

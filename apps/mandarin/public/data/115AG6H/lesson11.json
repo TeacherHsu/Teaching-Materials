@@ -889,7 +889,25 @@
     "gist": "作者在天冷時想喝羹湯，從食材、做法與品嘗感受，寫出一碗熱湯帶來的溫暖和生活記憶。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG6H11:vague",
+        "type": "vague",
+        "text": "課文寫出生活中的一段回憶，讓人讀了覺得很溫暖。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG6H11:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹羹湯的詳細做法，以及勾芡要用什麼粉才會順口。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

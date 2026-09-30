@@ -1050,7 +1050,25 @@
     "gist": "除夕那天，作者一家急著回南部過年，也想探望嬸嬸；天黑後，煙火鞭炮已響起，他們卻仍在返鄉路上。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "derived:official-paragraph-summary"
+    "source": "derived:official-paragraph-summary",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG3H11:vague",
+        "type": "vague",
+        "text": "課文寫出一家人出門的經過，讓人讀了很有共鳴。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG3H11:offtopic",
+        "type": "offtopic",
+        "text": "課文提醒我們開車一定要繫安全帶，長途行車也要適時休息。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

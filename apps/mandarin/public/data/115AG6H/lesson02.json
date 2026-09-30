@@ -1041,7 +1041,25 @@
     "gist": "父親用真誠的信安慰被同學冷落的女兒，分享孤單經驗並引導她理解、反省與關懷他人。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG6H02:vague",
+        "type": "vague",
+        "text": "課文寫出親人之間的互動，讓我們讀了覺得很溫暖。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG6H02:offtopic",
+        "type": "offtopic",
+        "text": "課文教我們寫信的格式，包括稱謂、問候語、正文和署名。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

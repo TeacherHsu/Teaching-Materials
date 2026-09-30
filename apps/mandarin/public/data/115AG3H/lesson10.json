@@ -917,7 +917,25 @@
     "gist": "魯凱婚禮中，新娘穿著族服站上秋千，新郎一次次拉動繩索；秋千盪得越高，就代表新娘越勇敢。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "derived:official-paragraph-summary"
+    "source": "derived:official-paragraph-summary",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG3H10:vague",
+        "type": "vague",
+        "text": "課文描寫一場特別的活動，讓我們讀了印象很深刻。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG3H10:offtopic",
+        "type": "offtopic",
+        "text": "課文說明秋千要怎麼搭建才牢固，還有盪秋千的安全規則。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

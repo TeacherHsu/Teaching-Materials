@@ -381,13 +381,11 @@ function buildLesson(lessonNo, characterManifest) {
     listening: [],
     review_words: {},
     extensions: [],
-    quiz: [],
     modules: {
       characters: moduleEntry('認識生字', 'character-cards', true),
       vocabulary: moduleEntry('學會語詞', 'vocabulary-cards', words.length >= 3),
       reading: moduleEntry('讀懂課文', 'reading', hasParagraphs, '課文全文不放入公開網站。'),
       sentence_practice: moduleEntry('練習句子', 'sentence-practice', false, '句型來源尚未完成來源核對。'),
-      challenge: moduleEntry('動手挑戰', 'challenge-quiz', false, '匯入階段由生字與語詞資料機械建立題目。'),
       application: moduleEntry('我會應用', 'application', false, '應用任務來源尚未完成來源核對。'),
       idiom_builder: moduleEntry('生字變成語', 'idiom-builder', false, '成語資料尚未完成來源核對。'),
       polysemy: moduleEntry('一字多義', 'polysemy', false, '一字多義資料尚未完成來源核對。'),

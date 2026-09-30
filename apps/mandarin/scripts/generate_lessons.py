@@ -428,41 +428,6 @@ def deterministic_options(correct: str, pool: list[str], seed: int, limit: int =
     return values[:limit]
 
 
-def quiz_items(profile: Profile, lesson_id: str, characters: list[dict], words: list[dict]) -> list[dict]:
-    result = []
-    for index, item in enumerate(characters[:3], start=1):
-        distractors = [char["radical"] for char in characters if char["char"] != item["char"]]
-        options = deterministic_options(item["radical"], distractors, index * 91 + len(lesson_id))
-        result.append({
-            "id": f"q{index:02d}",
-            "type": "choice",
-            "stem": f"「{item['char']}」的部首是哪一個？",
-            "options": options,
-            "answer": item["radical"],
-            "explanation": f"「{item['char']}」的部首是{item['radical']}。",
-            "level": "basic",
-            "status": "ready",
-            "source": "derived:character-dictionary",
-            "hints": ["先觀察字的哪一部分是部首。"],
-        })
-    for offset, item in enumerate(words[:5], start=len(result) + 1):
-        meaning = item.get("meaning") or "請根據語詞和圖片想一想。"
-        pool = [other.get("meaning") for other in words if other is not item and other.get("meaning")]
-        options = deterministic_options(meaning, pool, offset * 97 + len(lesson_id))
-        result.append({
-            "id": f"q{offset:02d}",
-            "type": "choice",
-            "stem": f"「{item['word']}」是什麼意思？",
-            "options": options,
-            "answer": meaning,
-            "explanation": f"{item['word']}：{meaning}",
-            "level": "basic",
-            "status": "ready",
-            "source": "derived:official-vocabulary-definition",
-            "hints": ["把語詞放回生活情境中想一想。"],
-        })
-    return result[:10]
-
 
 def image_map_for_g3a(private_root: Path, lesson_no: int, meaning_manifest: Path | None = None) -> dict[str, Path]:
     """Return only reviewed exact-word illustrations.
@@ -693,13 +658,11 @@ def build_g3a(profile: Profile, private_root: Path, lesson_no: int, output_data:
         "rhetoric": [], "paragraph_summary": paragraphs, "main_idea": main_idea, "reading_questions": [],
         "polysemy": [], "polysemy_senses": [], "polyphones": [], "lookalikes": [], "listening": [],
         "review_words": {}, "extensions": [extension(profile, lesson_no, source["chars"])],
-        "quiz": quiz_items(profile, lesson_id, characters, words),
         "modules": {
             "characters": module("認識生字", "character-cards", len(characters) >= 3),
             "vocabulary": module("學會語詞", "vocabulary-cards", len(words) >= 3),
             "reading": module("讀懂課文", "reading", bool(paragraphs), "課文全文不放入公開網站。"),
             "sentence_practice": module("練習句子", "sentence-practice", False, "句型資料待審核。"),
-            "challenge": module("動手挑戰", "challenge-quiz", len(characters) >= 3),
             "application": module("我會應用", "application", False, "教材待補。"),
             "idiom_builder": module("生字變成語", "idiom-builder", False, "成語資料待審核。"),
             "polysemy": module("一字多義", "polysemy", False, "字義資料待審核。"),
@@ -740,13 +703,11 @@ def build_g1a(profile: Profile, private_root: Path, lesson_no: int, output_data:
         "rhetoric": [], "paragraph_summary": [], "main_idea": {"gist": "本課閱讀重點待補。", "theme": "閱讀理解", "status": "draft", "source": "teacher-review-required"},
         "reading_questions": [], "polysemy": [], "polysemy_senses": [], "polyphones": [], "lookalikes": [], "listening": [],
         "review_words": {}, "extensions": [extension(profile, lesson_no, chars)],
-        "quiz": quiz_items(profile, lesson_id, characters, words),
         "modules": {
             "characters": module("認識生字", "character-cards", len(characters) >= 3),
             "vocabulary": module("學會語詞", "vocabulary-cards", len(words) >= 3),
             "reading": module("讀懂課文", "reading", False, "一年級課文內容待整理為公開摘要；課文全文不放入公開網站。"),
             "sentence_practice": module("練習句子", "sentence-practice", False, "句型資料待審核。"),
-            "challenge": module("動手挑戰", "challenge-quiz", len(characters) >= 3),
             "application": module("我會應用", "application", False, "教材待補。"),
             "idiom_builder": module("生字變成語", "idiom-builder", False, "一年級不安排成語題。"),
             "polysemy": module("一字多義", "polysemy", False, "一年級不安排一字多義題。"),
@@ -888,18 +849,14 @@ def enrich_prepared_characters(
 
 
 def finalize_prepared_lesson(lesson: dict, profile: Profile, lesson_no: int) -> None:
-    """Add deterministic public extensions and challenge items at import time."""
+    """Add deterministic public extensions at import time."""
     chars = "".join(str(item.get("char") or "") for item in lesson.get("characters", []))
     lesson["extensions"] = [extension(profile, lesson_no, chars)]
-    if not lesson.get("quiz"):
-        lesson["quiz"] = quiz_items(profile, lesson["lesson_id"], lesson.get("characters", []), lesson.get("words", []))
     modules = lesson.setdefault("modules", {})
     if modules.get("characters", {}).get("status") == "missing" and len(lesson.get("characters", [])) >= 3:
         modules["characters"] = module("認識生字", "character-cards", True)
     if modules.get("vocabulary", {}).get("status") == "missing" and len(lesson.get("words", [])) >= 3:
         modules["vocabulary"] = module("學會語詞", "vocabulary-cards", True)
-    if modules.get("challenge", {}).get("status") == "missing" and len(lesson.get("quiz", [])) >= 3:
-        modules["challenge"] = module("動手挑戰", "challenge-quiz", True)
 
 
 def build_prepared(

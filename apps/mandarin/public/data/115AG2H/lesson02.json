@@ -1160,7 +1160,25 @@
     "gist": "老師要大家寫開學新希望，主角很緊張，不知如何是好。下課時，班長和同學來親近他，讓主角轉變心情，最後老師把卡片掛在教室後面，主角的心情也快樂得跳起舞來。",
     "theme": "轉學生面對新環境時心情由緊張到快樂的變化。",
     "status": "approved",
-    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+    "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG2H02:vague",
+        "type": "vague",
+        "text": "課文說了一段校園裡發生的事，讓人讀完覺得很溫暖。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG2H02:offtopic",
+        "type": "offtopic",
+        "text": "課文描寫天空在早上、中午和傍晚會出現各種不同的顏色。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

@@ -980,7 +980,25 @@
     "gist": "本文以蚊子、蓮葉與老鷹為例，說明人類如何從自然構造得到設計靈感。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+    "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG6H04:vague",
+        "type": "vague",
+        "text": "課文舉了一些例子來說明道理，讓我們讀了增加不少知識。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG6H04:offtopic",
+        "type": "offtopic",
+        "text": "課文介紹蚊子、蓮葉和老鷹的外形特徵，以及牠們的生活習性。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

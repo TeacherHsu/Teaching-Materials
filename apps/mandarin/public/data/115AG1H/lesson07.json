@@ -513,7 +513,25 @@
     "gist": "課文在山谷中描寫呼喊與回音的互相呼應，最後用笑聲表現分享的快樂。",
     "theme": "課文理解",
     "status": "approved",
-    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）"
+    "source": "115G1A／翰林一年上官方教材（08課文結構表；公開版課文地圖摘要）",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG1H07:vague",
+        "type": "vague",
+        "text": "課文描寫山裡的情形，讓我們讀了覺得很新鮮。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG1H07:offtopic",
+        "type": "offtopic",
+        "text": "課文說明聲音為什麼會產生回音，還有山谷是怎麼形成的。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {

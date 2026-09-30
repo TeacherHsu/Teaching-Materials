@@ -717,7 +717,25 @@
     "gist": "風四處流浪，沒有人知道他去過哪裡，詩中的我卻能從風帶來的味道和感覺，推想一路經過的自然景色。",
     "theme": "閱讀理解",
     "status": "approved",
-    "source": "derived:official-paragraph-summary"
+    "source": "derived:official-paragraph-summary",
+    "distractors": [
+      {
+        "id": "main_idea_distractor:115AG3H07:vague",
+        "type": "vague",
+        "text": "課文描寫自然的景象，讓人讀了覺得很有畫面。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      },
+      {
+        "id": "main_idea_distractor:115AG3H07:offtopic",
+        "type": "offtopic",
+        "text": "課文說明風是怎麼形成的，還有風力可以用來發電。",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-09-30"
+      }
+    ]
   },
   "reading_questions": [
     {
