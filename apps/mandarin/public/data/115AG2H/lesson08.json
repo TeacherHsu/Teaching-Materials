@@ -95,7 +95,22 @@
           "url": "https://www.youtube.com/watch?v=GtLj9csXf-8",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "白",
+            "role": "象形",
+            "note": "像日光剛透出來的樣子"
+          }
+        ],
+        "story": "「白」的字形上面像一點光，下面是「日」。天剛亮、日光透出來的時候是白色的，所以用來表示白色、明亮。",
+        "source": "《說文解字．白部》：「白，西方色也。…從入合二。」（段注等釋為日光初出之形）",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "紙",
@@ -140,7 +155,22 @@
           "url": "https://www.youtube.com/watch?v=85aP5n3SK48",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "米",
+            "role": "象形",
+            "note": "像散開的米粒"
+          }
+        ],
+        "story": "「米」畫的是散開的米粒，中間那一橫是把米隔開。有「米」的字，像「粥」「粉」「糧」，多半和穀物或食物有關。",
+        "source": "《說文解字．米部》：「米，粟實也。象禾實之形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "變",
@@ -280,7 +310,27 @@
           "url": "https://www.youtube.com/watch?v=GDfJeOF5THQ",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "會意",
+        "components": [
+          {
+            "part": "夂",
+            "role": "義符",
+            "note": "倒過來的腳，表示走來"
+          },
+          {
+            "part": "口",
+            "role": "義符",
+            "note": "地方"
+          }
+        ],
+        "story": "「各」的上面是一隻朝下的腳，表示有人走過來；下面的「口」表示地方。本來是「來到」的意思，後來借去表示「每一個」。",
+        "source": "《說文解字．口部》：「各，異辭也。從口夂。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "種",

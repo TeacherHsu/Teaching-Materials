@@ -189,7 +189,22 @@
           "url": "https://www.youtube.com/watch?v=bVj2elhW14k",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "指事",
+        "components": [
+          {
+            "part": "甘",
+            "role": "指事",
+            "note": "「口」裡加一橫，指出嘴裡含著好吃的東西"
+          }
+        ],
+        "story": "「甘」是在「口」裡加一橫，指出嘴裡含著好吃的東西。《說文解字》說「甘，美也」，所以「甘」就是甜、好吃的意思。",
+        "source": "《說文解字．甘部》：「甘，美也。從口含一。一，道也。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "井",

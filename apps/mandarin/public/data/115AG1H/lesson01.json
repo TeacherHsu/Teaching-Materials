@@ -58,7 +58,27 @@
           "url": "https://www.youtube.com/watch?v=DRA6eyin9Ug",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "會意",
+        "components": [
+          {
+            "part": "夭",
+            "role": "義符",
+            "note": "人擺動手臂"
+          },
+          {
+            "part": "止",
+            "role": "義符",
+            "note": "腳"
+          }
+        ],
+        "story": "「走」的上面本來是人擺動手臂的樣子，下面是「止」，也就是腳。兩個合起來表示快步前進。《說文解字》說「走」是「趨也」，在古代其實是「跑」的意思。",
+        "source": "《說文解字．走部》：「走，趨也。從夭止。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "你",

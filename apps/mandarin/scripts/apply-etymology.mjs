@@ -10,7 +10,7 @@
  *
  *   node scripts/apply-etymology.mjs --volume 115AG4K --lesson 1 --source <drafts.json>
  */
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -20,32 +20,48 @@ const volume = opt('volume');
 const lessonNo = opt('lesson');
 const source = opt('source');
 const dryRun = args.includes('--dry-run');
-if (!volume || !lessonNo || !source || !existsSync(source)) {
-  console.error('需要 --volume、--lesson、--source <drafts.json>');
+if (!source || !existsSync(source)) {
+  console.error('需要 --source <drafts.json>；--volume／--lesson 可省略（省略時套用全站符合的字）');
   process.exit(1);
 }
 
 const drafts = JSON.parse(readFileSync(source, 'utf8'));
-const file = join(fileURLToPath(new URL('../public/data/', import.meta.url)), volume, `lesson${String(lessonNo).padStart(2, '0')}.json`);
-const lesson = JSON.parse(readFileSync(file, 'utf8'));
+const dataRoot = fileURLToPath(new URL('../public/data/', import.meta.url));
 
-let applied = 0;
-const missing = [];
-for (const c of lesson.characters || []) {
-  const draft = drafts[c.char];
-  if (!draft) { missing.push(c.char); continue; }
-  if (c.etymology && (c.etymology.status === 'approved' || c.etymology.status === 'rejected')) continue;
-  c.etymology = {
-    structure: draft.structure,
-    components: draft.components || [],
-    story: draft.story,
-    source: draft.source,
-    videos: draft.videos || [],
-    status: 'draft',
-  };
-  applied += 1;
+/** 同一個字可能在多冊出現，一次全部套用；已核准或退回者不覆蓋。 */
+function applyToLesson(path) {
+  const lesson = JSON.parse(readFileSync(path, 'utf8'));
+  let applied = 0;
+  for (const c of lesson.characters || []) {
+    const draft = drafts[c.char];
+    if (!draft) continue;
+    if (c.etymology && (c.etymology.status === 'approved' || c.etymology.status === 'rejected')) continue;
+    c.etymology = {
+      structure: draft.structure,
+      components: draft.components || [],
+      story: draft.story,
+      source: draft.source,
+      status: 'draft',
+    };
+    applied += 1;
+  }
+  if (applied && !dryRun) writeFileSync(path, `${JSON.stringify(lesson, null, 2)}\n`, 'utf8');
+  return applied;
 }
 
-if (!dryRun) writeFileSync(file, `${JSON.stringify(lesson, null, 2)}\n`, 'utf8');
-console.log(`${lesson.lesson_id}：寫入 ${applied} 個字的字源（draft）`);
-if (missing.length) console.log(`  無字源（不會出現按鈕）：${missing.join('、')}`);
+const volumes = volume ? [volume] : readdirSync(dataRoot, { withFileTypes: true })
+  .filter((e) => e.isDirectory() && /^115AG\d/.test(e.name)).map((e) => e.name);
+let total = 0;
+const perVolume = {};
+for (const v of volumes) {
+  perVolume[v] = 0;
+  const files = lessonNo
+    ? [`lesson${String(lessonNo).padStart(2, '0')}.json`]
+    : readdirSync(join(dataRoot, v)).filter((n) => /^lesson\d+\.json$/.test(n));
+  for (const f of files) {
+    const n = applyToLesson(join(dataRoot, v, f));
+    perVolume[v] += n;
+    total += n;
+  }
+}
+console.log(`${dryRun ? '試跑' : '完成'}：寫入 ${total} 筆字源（draft）${JSON.stringify(perVolume)}`);

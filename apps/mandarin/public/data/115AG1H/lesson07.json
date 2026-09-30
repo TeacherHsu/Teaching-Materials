@@ -96,7 +96,27 @@
           "url": "https://www.youtube.com/watch?v=VGjIkU2Kgzo",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "會意",
+        "components": [
+          {
+            "part": "八",
+            "role": "義符",
+            "note": "水流出來的樣子"
+          },
+          {
+            "part": "口",
+            "role": "義符",
+            "note": "山谷的出口"
+          }
+        ],
+        "story": "「谷」的上面是水從山間流出來的樣子，下面的「口」是山谷的出口。《說文解字》說「泉出通川為谷」，就是泉水流出來通向河川的地方。",
+        "source": "《說文解字．谷部》：「谷，泉出通川為谷。從水半見，出於口。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "叫",

@@ -167,7 +167,27 @@
           "url": "https://www.youtube.com/watch?v=z-e47js-mg0",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "會意",
+        "components": [
+          {
+            "part": "癶",
+            "role": "義符",
+            "note": "兩隻腳往上走"
+          },
+          {
+            "part": "豆",
+            "role": "義符",
+            "note": "古代的高腳器皿"
+          }
+        ],
+        "story": "「登」的上面是兩隻腳往上走，下面本來是高腳的器皿。合起來表示一步一步往上爬，所以有「登山」「登高」。",
+        "source": "《說文解字．癶部》：「登，上車也。從癶豆。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "穆",
@@ -254,7 +274,22 @@
           "url": "https://www.youtube.com/watch?v=3JufhoF5B3k",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "母",
+            "role": "象形",
+            "note": "像女子的樣子，加上兩點表示哺乳"
+          }
+        ],
+        "story": "「母」是在「女」字上加兩點，表示餵奶的媽媽。所以「母」就是母親的意思。",
+        "source": "《說文解字．女部》：「母，牧也。從女，象褱子形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "酷",
@@ -381,7 +416,27 @@
           "url": "https://www.youtube.com/watch?v=VGjIkU2Kgzo",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "會意",
+        "components": [
+          {
+            "part": "八",
+            "role": "義符",
+            "note": "水流出來的樣子"
+          },
+          {
+            "part": "口",
+            "role": "義符",
+            "note": "山谷的出口"
+          }
+        ],
+        "story": "「谷」的上面是水從山間流出來的樣子，下面的「口」是山谷的出口。《說文解字》說「泉出通川為谷」，就是泉水流出來通向河川的地方。",
+        "source": "《說文解字．谷部》：「谷，泉出通川為谷。從水半見，出於口。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "響",

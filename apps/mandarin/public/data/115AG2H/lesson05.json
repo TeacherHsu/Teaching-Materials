@@ -228,7 +228,22 @@
           "url": "https://www.youtube.com/watch?v=sM3TnoIdHVw",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "夕",
+            "role": "象形",
+            "note": "像月亮剛露出一半"
+          }
+        ],
+        "story": "「夕」畫的是月亮剛出來、還只露出一半的樣子，表示傍晚。《說文解字》說「莫也」，也就是天快黑的時候。所以「夕陽」就是傍晚的太陽。",
+        "source": "《說文解字．夕部》：「夕，莫也。從月半見。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "腳",

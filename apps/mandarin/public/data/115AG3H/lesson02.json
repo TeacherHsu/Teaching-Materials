@@ -230,7 +230,22 @@
           "url": "https://www.youtube.com/watch?v=1AyKZ3dG6II",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "且",
+            "role": "象形",
+            "note": "像疊放東西的架子"
+          }
+        ],
+        "story": "「且」本來畫的是古代疊放祭品的架子。後來被借去當連接詞用，表示「而且」「並且」，原來的意思反而看不出來了。",
+        "source": "《說文解字．且部》：「且，薦也。從几，足有二橫，一其下地也。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "排",

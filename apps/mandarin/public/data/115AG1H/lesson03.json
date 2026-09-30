@@ -39,7 +39,22 @@
           "url": "https://www.youtube.com/watch?v=oKQscGK2i_s",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "火",
+            "role": "象形",
+            "note": "像火焰往上竄的樣子"
+          }
+        ],
+        "story": "「火」是照著火焰往上竄的樣子畫出來的字。有「火」或「灬」的字，像「燒」「熱」「煮」，多半和火或熱有關。",
+        "source": "《說文解字．火部》：「火，燬也。南方之行，炎而上。象形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "車",
@@ -65,7 +80,22 @@
           "url": "https://www.youtube.com/watch?v=5ZvsG33sz2U",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "車",
+            "role": "象形",
+            "note": "像車子的輪子和車軸"
+          }
+        ],
+        "story": "「車」是照著車子的樣子畫出來的，中間是車身，上下是兩個輪子。有「車」的字，像「輪」「轉」「載」，多半和車子或運送有關。",
+        "source": "《說文解字．車部》：「車，輿輪之緫名。夏后時奚仲所造。象形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "山",
@@ -91,7 +121,22 @@
           "url": "https://www.youtube.com/watch?v=deWBixSQ8qA",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "山",
+            "role": "象形",
+            "note": "像三個山峰連在一起"
+          }
+        ],
+        "story": "「山」是照著山的樣子畫出來的，中間高、兩邊低，像連著的山峰。有「山」的字，像「岩」「峰」，多半和山有關。",
+        "source": "《說文解字．山部》：「山，宣也…有石而高。象形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "洞",
@@ -155,7 +200,22 @@
           "url": "https://www.youtube.com/watch?v=rmWLp5imkjw",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "又",
+            "role": "象形",
+            "note": "像一隻右手"
+          }
+        ],
+        "story": "「又」是照著一隻手的樣子畫出來的字。《說文解字》說「又，手也」。所以有「又」的字，像「取」「友」，常常和手的動作有關。",
+        "source": "《說文解字．又部》：「又，手也。象形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "出",
@@ -181,7 +241,27 @@
           "url": "https://www.youtube.com/watch?v=YzSB0ImYmlA",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "會意",
+        "components": [
+          {
+            "part": "止",
+            "role": "義符",
+            "note": "腳"
+          },
+          {
+            "part": "凵",
+            "role": "義符",
+            "note": "門口或洞口"
+          }
+        ],
+        "story": "「出」的下面是洞口或門口，上面是一隻腳。腳跨出門口，就是「出去」。《說文解字》從草木長出來的角度說明，也是往外冒出的意思。",
+        "source": "《說文解字．出部》：「出，進也。象艸木益滋，上出達也。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "小",
@@ -264,7 +344,22 @@
           "url": "https://www.youtube.com/watch?v=EVwbDXIjMBM",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "心",
+            "role": "象形",
+            "note": "像心臟的形狀"
+          }
+        ],
+        "story": "「心」是照著心臟的樣子畫出來的字。古人認為心是想事情、有感覺的地方，所以有「心」或「忄」的字，像「想」「情」「怕」，多半和心情或想法有關。",
+        "source": "《說文解字．心部》：「心，人心，土藏，在身之中。象形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     }
   ],
   "words": [

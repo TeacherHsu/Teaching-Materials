@@ -2010,12 +2010,6 @@
   line-height: 1;
   color: var(--color-primary);
 }
-.cs__zhuyin {
-  margin: 0;
-  font-family: var(--font-family-learning-glyph);
-  font-size: 1.75rem;
-  color: var(--color-accent);
-}
 .cs__badge {
   display: inline-block;
   margin: var(--space-1) 0 0;
@@ -2081,3 +2075,16 @@
 .cs__word-text { display: block; font-size: 1.375rem; font-weight: 700; }
 .cs__word-meaning { display: block; font-size: 0.9375rem; color: var(--text-secondary); }
 .cs__videos { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+
+/* 只給螢幕閱讀器的文字（畫面上不顯示，但輔助科技讀得到） */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

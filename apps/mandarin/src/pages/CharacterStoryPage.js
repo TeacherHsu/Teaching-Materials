@@ -77,10 +77,12 @@ export function CharacterStoryPage(lesson, char) {
 
   root.appendChild(h('div', { class: 'cs__hero' }, [
     h('div', { class: 'cs__glyph', 'aria-label': `生字 ${char}` }, char),
+    // 注音不另外列一行：大字用的是注音字型（BpmfIansui），字旁已經帶注音了，
+    // 再列一次是重複資訊（CF 指出）。仍保留給螢幕閱讀器。
     h('div', { class: 'cs__hero-meta' }, [
-      h('p', { class: 'cs__zhuyin' }, character.zhuyin || ''),
+      character.zhuyin ? h('p', { class: 'sr-only' }, `注音：${character.zhuyin}`) : null,
       h('p', { class: 'meta' }, `部首：${character.radical || '—'}　筆畫：${character.stroke_count ?? '—'}`),
-      e.structure ? h('p', { class: 'cs__badge' }, e.structure) : null,
+      showEtymology && e.structure ? h('p', { class: 'cs__badge' }, e.structure) : null,
     ].filter(Boolean)),
   ]));
 

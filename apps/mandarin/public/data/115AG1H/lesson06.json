@@ -39,7 +39,27 @@
           "url": "https://www.youtube.com/watch?v=5T-iTbdYUBA",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "會意",
+        "components": [
+          {
+            "part": "禾",
+            "role": "義符",
+            "note": "稻穀"
+          },
+          {
+            "part": "火",
+            "role": "義符",
+            "note": "烘乾、成熟"
+          }
+        ],
+        "story": "「秋」由「禾」和「火」組成。禾是稻穀，秋天穀物成熟、顏色變得像火一樣金黃，所以用這兩個部分表示收成的季節。",
+        "source": "《說文解字．禾部》：「秋，禾穀孰也。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "千",
@@ -84,7 +104,22 @@
           "url": "https://www.youtube.com/watch?v=PuRwQIqjCSI",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "子",
+            "role": "象形",
+            "note": "像包著的小嬰兒，有頭和手"
+          }
+        ],
+        "story": "「子」像一個還包在襁褓裡的小嬰兒，畫出了頭和兩隻手。《說文解字》把它列為象形字，本來就是指小孩子。",
+        "source": "《說文解字．子部》：「子，十一月陽气動，萬物滋，人以為偁。象形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "空",
@@ -167,7 +202,22 @@
           "url": "https://www.youtube.com/watch?v=48dlOO4Hkcw",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "田",
+            "role": "象形",
+            "note": "像一塊塊分開的田地"
+          }
+        ],
+        "story": "「田」像從上面看下去的田地，被田埂分成一塊一塊。《說文解字》說它是「陳也」，就是整齊排列的意思。有「田」的字，像「男」「界」，常和耕田或土地有關。",
+        "source": "《說文解字．田部》：「田，陳也。樹穀曰田。象四口。十，阡陌之制也。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "是",

@@ -57,7 +57,22 @@
           "url": "https://www.youtube.com/watch?v=-TWfyAwQ0CU",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "門",
+            "role": "象形",
+            "note": "像兩扇對開的門"
+          }
+        ],
+        "story": "「門」畫的是兩扇對開的門。有「門」的字，像「開」「關」「閉」，多半和門或進出有關。",
+        "source": "《說文解字．門部》：「門，聞也。從二戶。象形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "扇",
@@ -102,7 +117,27 @@
           "url": "https://www.youtube.com/watch?v=ujUazAAiGWY",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "會意",
+        "components": [
+          {
+            "part": "大",
+            "role": "義符",
+            "note": "張開手腳的人"
+          },
+          {
+            "part": "一",
+            "role": "義符",
+            "note": "地面"
+          }
+        ],
+        "story": "「立」的上面是一個張開手腳的人，下面那一橫是地面。人站在地上，就是「站立」。所以「立正」「站立」都用這個字。",
+        "source": "《說文解字．立部》：「立，住也。從大立一之上。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "刻",
@@ -166,7 +201,22 @@
           "url": "https://www.youtube.com/watch?v=k5GTQRRJovA",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "馬",
+            "role": "象形",
+            "note": "像馬的頭、鬃毛和四條腿"
+          }
+        ],
+        "story": "「馬」是照著馬的樣子畫出來的，可以看到馬頭、鬃毛和腳。有「馬」的字，像「騎」「駛」「驚」，常和馬或快速有關。",
+        "source": "《說文解字．馬部》：「馬，怒也，武也。象馬頭髦尾四足之形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "闖",
@@ -211,7 +261,22 @@
           "url": "https://www.youtube.com/watch?v=Y10RPSEM8nA",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "耳",
+            "role": "象形",
+            "note": "整個字就是耳朵的形狀"
+          }
+        ],
+        "story": "「耳」是照著耳朵的樣子畫出來的字。《說文解字》說「耳」是「主聽者也」，就是負責聽聲音的器官。所以有「耳」的字，像「聽」「聞」，常常和聽有關係。",
+        "source": "《說文解字．耳部》：「耳，主聽者也。象形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "主",
@@ -294,7 +359,22 @@
           "url": "https://www.youtube.com/watch?v=UYzjxL4Ss5o",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "力",
+            "role": "象形",
+            "note": "像古代翻土的農具"
+          }
+        ],
+        "story": "「力」本來畫的是古代翻土用的農具（耒）。用這種工具要出很大的力氣，所以「力」就表示力量。有「力」的字，像「動」「勞」，常和用力有關。",
+        "source": "《說文解字．力部》：「力，筋也。象人筋之形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "竟",
@@ -358,7 +438,27 @@
           "url": "https://www.youtube.com/watch?v=Sqsd31PsItg",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "會意",
+        "components": [
+          {
+            "part": "日",
+            "role": "義符",
+            "note": "太陽"
+          },
+          {
+            "part": "木",
+            "role": "義符",
+            "note": "樹木"
+          }
+        ],
+        "story": "《說文解字》說「東」是太陽升起、光穿過樹木的樣子，所以用來表示太陽出來的方向，也就是東邊。",
+        "source": "《說文解字．東部》：「東，動也。從木。官溥說：從日在木中。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "西",

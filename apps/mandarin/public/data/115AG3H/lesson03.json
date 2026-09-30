@@ -83,7 +83,22 @@
           "url": "https://www.youtube.com/watch?v=zKGhVILJLxk",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "角",
+            "role": "象形",
+            "note": "像獸角上的紋路"
+          }
+        ],
+        "story": "「角」畫的是動物頭上的角，可以看到角上的紋路。所以「角」本來就是牛羊頭上的角，後來也用來說牆角、角落。",
+        "source": "《說文解字．角部》：「角，獸角也。象形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "板",

@@ -83,7 +83,22 @@
           "url": "https://www.youtube.com/watch?v=OBVQF6upL8A",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "牛",
+            "role": "象形",
+            "note": "像牛頭和兩隻角"
+          }
+        ],
+        "story": "「牛」畫的是牛頭，上面兩撇是牛角。有「牛」的字，像「牧」「物」，常和牛或牲畜有關。",
+        "source": "《說文解字．牛部》：「牛，大牲也。…象角頭三、封尾之形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "牠",
@@ -253,7 +268,22 @@
           "url": "https://www.youtube.com/watch?v=iIt3OT45cbc",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "它",
+            "role": "象形",
+            "note": "像一條蛇"
+          }
+        ],
+        "story": "「它」本來畫的是一條蛇。古人住在草地裡怕蛇，見面會問「無它乎」（沒遇到蛇吧）。後來「它」被借去代稱東西，蛇的意思就改用「蛇」字。",
+        "source": "《說文解字．它部》：「它，虫也。…上古艸居患它，故相問無它乎。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "短",

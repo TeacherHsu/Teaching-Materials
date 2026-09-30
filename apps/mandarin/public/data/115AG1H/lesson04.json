@@ -115,7 +115,27 @@
           "url": "https://www.youtube.com/watch?v=k-fwzLwIFP4",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "會意",
+        "components": [
+          {
+            "part": "又",
+            "role": "義符",
+            "note": "手"
+          },
+          {
+            "part": "月",
+            "role": "義符",
+            "note": "肉"
+          }
+        ],
+        "story": "「有」的上面是「又」，也就是手；下面本來是「肉」。用手拿著肉，表示「擁有」。這也是為什麼「有」字看起來像是手拿著東西。",
+        "source": "《說文解字．有部》：「有，不宜有也。…從月又聲。」（段注等釋為從又持肉）",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "多",
@@ -160,7 +180,22 @@
           "url": "https://www.youtube.com/watch?v=wSm_UzgorD4",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "高",
+            "role": "象形",
+            "note": "像一座高高的樓臺"
+          }
+        ],
+        "story": "「高」是照著高樓的樣子畫出來的字，上面是屋頂，下面是臺基。《說文解字》說它「象臺觀高之形」，就是高高的建築物。",
+        "source": "《說文解字．高部》：「高，崇也。象臺觀高之形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "星",
@@ -186,7 +221,27 @@
           "url": "https://www.youtube.com/watch?v=tQuqR734dRY",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "形聲",
+        "components": [
+          {
+            "part": "晶",
+            "role": "義符",
+            "note": "許多星星的光"
+          },
+          {
+            "part": "生",
+            "role": "聲符",
+            "note": "只借音"
+          }
+        ],
+        "story": "「星」上面本來是「晶」，畫的是好幾顆星星在發光；下面的「生」表示讀音。《說文解字》說星是「萬物之精，上為列星」，就是天上排列著的星星。",
+        "source": "《說文解字．晶部》：「星，萬物之精，上為列星。從晶生聲。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "少",
@@ -212,7 +267,27 @@
           "url": "https://www.youtube.com/watch?v=WlbRkFa1FGc",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "形聲",
+        "components": [
+          {
+            "part": "小",
+            "role": "義符",
+            "note": "和數量少有關"
+          },
+          {
+            "part": "丿",
+            "role": "聲符",
+            "note": "只借音"
+          }
+        ],
+        "story": "「少」和「小」本來是同一個來源，都表示不多。《說文解字》說「少，不多也」。所以「少」就是數量不多的意思。",
+        "source": "《說文解字．小部》：「少，不多也。從小丿聲。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "太",
@@ -276,7 +351,22 @@
           "url": "https://www.youtube.com/watch?v=jHdMRXTO_IM",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "水",
+            "role": "象形",
+            "note": "像流動的水和兩旁的水花"
+          }
+        ],
+        "story": "「水」是照著水流動的樣子畫出來的，中間是水道，兩旁是水花。有「水」或「氵」的字，像「河」「洗」「游」，幾乎都和水有關。",
+        "source": "《說文解字．水部》：「水，準也。北方之行。象眾水並流，中有微陽之气也。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "去",

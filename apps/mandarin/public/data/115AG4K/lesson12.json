@@ -326,7 +326,22 @@
           "url": "https://www.youtube.com/watch?v=bedJnZ_CFp8",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "足",
+            "role": "象形",
+            "note": "上面是膝蓋，下面是腳掌"
+          }
+        ],
+        "story": "「足」的上面是膝蓋，下面是腳掌，整個字就是一條腿。有「足」（𧾷）的字，像「跑」「跳」「路」，幾乎都和腳的動作有關。",
+        "source": "《說文解字．足部》：「足，人之足也，在下。從止口。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "蹈",
@@ -393,7 +408,27 @@
           "url": "https://www.youtube.com/watch?v=JNb2KfN7hmE",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "會意",
+        "components": [
+          {
+            "part": "冂",
+            "role": "義符",
+            "note": "房子或範圍"
+          },
+          {
+            "part": "入",
+            "role": "義符",
+            "note": "進去"
+          }
+        ],
+        "story": "「內」的外面是房子的範圍，裡面是「入」，表示走進去。走進屋子裡，就是「裡面」。",
+        "source": "《說文解字．入部》：「內，入也。從冂，自外而入也。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     }
   ],
   "words": [

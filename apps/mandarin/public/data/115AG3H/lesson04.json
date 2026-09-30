@@ -271,7 +271,22 @@
           "url": "https://www.youtube.com/watch?v=UciSn1shPXE",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "止",
+            "role": "象形",
+            "note": "像一隻腳掌"
+          }
+        ],
+        "story": "「止」畫的是一隻腳掌，本來是「腳」的意思。腳停下來就是「停止」，所以後來「止」表示停下來。有「止」的字，像「步」「正」，常和走路有關。",
+        "source": "《說文解字．止部》：「止，下基也。象艸木出有址，故以止為足。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "抽",

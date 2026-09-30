@@ -153,7 +153,22 @@
           "url": "https://www.youtube.com/watch?v=LtIvPX1wkM0",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "鹿",
+            "role": "象形",
+            "note": "像鹿的角、頭和四條腿"
+          }
+        ],
+        "story": "「鹿」是照著鹿的樣子畫出來的，可以看到頭上的角和細細的腿。《說文解字》說它「象頭角四足之形」。",
+        "source": "《說文解字．鹿部》：「鹿，獸也。象頭角四足之形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "佇",

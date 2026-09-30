@@ -267,7 +267,22 @@
           "url": "https://www.youtube.com/watch?v=W5P8407HRBk",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "指事",
+        "components": [
+          {
+            "part": "示",
+            "role": "指事",
+            "note": "上面兩橫是天，下面三撇是日月星"
+          }
+        ],
+        "story": "《說文解字》說「示」上面代表天，下面三撇是日月星，古人看天象來推測吉凶。有「示」（礻）的字，像「神」「祝」「福」，多半和祭祀或祈求有關。",
+        "source": "《說文解字．示部》：「示，天垂象，見吉凶，所以示人也。從二。三垂，日月星也。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "迫",

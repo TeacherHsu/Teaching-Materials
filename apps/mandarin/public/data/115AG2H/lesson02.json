@@ -38,7 +38,27 @@
           "url": "https://www.youtube.com/watch?v=nEG3ynCfOWw",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "會意",
+        "components": [
+          {
+            "part": "毛",
+            "role": "義符",
+            "note": "長長的頭髮"
+          },
+          {
+            "part": "匕",
+            "role": "義符",
+            "note": "彎腰的人"
+          }
+        ],
+        "story": "「老」畫的是一個頭髮長長、彎著腰、拄著拐杖的人。《說文解字》說「七十曰老」，就是上了年紀的人。",
+        "source": "《說文解字．老部》：「老，考也。七十曰老。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "師",
@@ -197,7 +217,27 @@
           "url": "https://www.youtube.com/watch?v=g8rR7hG1fxE",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "會意",
+        "components": [
+          {
+            "part": "囗",
+            "role": "義符",
+            "note": "蓆子的邊框"
+          },
+          {
+            "part": "大",
+            "role": "義符",
+            "note": "躺著的人"
+          }
+        ],
+        "story": "「因」的外面是一張蓆子，裡面是一個人躺在上面。人要靠著蓆子，所以「因」有「依靠」的意思，後來引申成「原因」。",
+        "source": "《說文解字．囗部》：「因，就也。從囗大。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "為",

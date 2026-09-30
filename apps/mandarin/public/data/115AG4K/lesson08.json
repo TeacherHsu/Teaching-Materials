@@ -287,7 +287,22 @@
           "url": "https://www.youtube.com/watch?v=BbeOHaV_8n8",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "京",
+            "role": "象形",
+            "note": "像蓋在高地上的大房子"
+          }
+        ],
+        "story": "「京」畫的是蓋在高處的大建築。《說文解字》說「人所為絕高丘也」，就是人造的很高的地方，後來用來指首都，像「京城」。",
+        "source": "《說文解字．京部》：「京，人所為絕高丘也。象高形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "晴",
@@ -374,7 +389,27 @@
           "url": "https://www.youtube.com/watch?v=fnG2HdyYmnI",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "會意",
+        "components": [
+          {
+            "part": "士",
+            "role": "義符",
+            "note": "兵器或有本事的人"
+          },
+          {
+            "part": "口",
+            "role": "義符",
+            "note": "說話"
+          }
+        ],
+        "story": "《說文解字》說「吉」是「善也」，就是好的事情。上面的「士」和下面的「口」合起來，表示說出好話、有好事。所以「吉祥」就是好運氣。",
+        "source": "《說文解字．口部》：「吉，善也。從士口。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "橋",

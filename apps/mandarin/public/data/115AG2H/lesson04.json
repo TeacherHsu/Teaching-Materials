@@ -228,7 +228,22 @@
           "url": "https://www.youtube.com/watch?v=PWdC9fZtVxI",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "果",
+            "role": "象形",
+            "note": "樹上結著果實的樣子"
+          }
+        ],
+        "story": "「果」的上面是果實，下面是「木」，也就是樹。合起來就是樹上結了果子。《說文解字》說「木實曰果」。",
+        "source": "《說文解字．木部》：「果，木實也。從木，象果形在木之上。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "乖",

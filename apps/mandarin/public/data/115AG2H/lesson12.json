@@ -323,7 +323,27 @@
           "url": "https://www.youtube.com/watch?v=gtBxzg5SBNw",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "會意",
+        "components": [
+          {
+            "part": "隹",
+            "role": "義符",
+            "note": "短尾巴的鳥"
+          },
+          {
+            "part": "又",
+            "role": "義符",
+            "note": "手"
+          }
+        ],
+        "story": "「隻」的上面是「隹」（鳥），下面是「又」（手），意思是手裡抓著一隻鳥。所以「隻」用來數鳥或動物，像「一隻鳥」。",
+        "source": "《說文解字．隹部》：「隻，鳥一枚也。從又持隹。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "倒",

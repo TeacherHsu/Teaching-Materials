@@ -57,7 +57,27 @@
           "url": "https://www.youtube.com/watch?v=tqenu_b6t8g",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "會意",
+        "components": [
+          {
+            "part": "亼",
+            "role": "義符",
+            "note": "蓋子"
+          },
+          {
+            "part": "皀",
+            "role": "義符",
+            "note": "裝滿食物的容器"
+          }
+        ],
+        "story": "「食」的上面是蓋子，下面是裝滿食物的容器，合起來就是一碗蓋著的飯。有「食」（飠）的字，像「飯」「飽」「餓」，多半和吃有關。",
+        "source": "《說文解字．食部》：「食，一米也。從皀亼聲。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "郊",

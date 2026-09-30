@@ -38,7 +38,22 @@
           "url": "https://www.youtube.com/watch?v=DprzUUPLrbo",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "月",
+            "role": "象形",
+            "note": "像缺了一角的月亮"
+          }
+        ],
+        "story": "「月」畫的是月亮的樣子。因為月亮常常不是圓的，所以畫成缺了一角。《說文解字》說它是「太陰之精」，就是夜裡發光的月亮。",
+        "source": "《說文解字．月部》：「月，闕也。太陰之精。象形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "奶",
@@ -159,7 +174,22 @@
           "url": "https://www.youtube.com/watch?v=3D5iOX1FY1M",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "竹",
+            "role": "象形",
+            "note": "像兩根竹子垂下的葉子"
+          }
+        ],
+        "story": "「竹」畫的是兩根竹子和垂下來的葉子。有「竹」（⺮）的字，像「筆」「箱」「筷」，多半和竹子做的東西有關。",
+        "source": "《說文解字．竹部》：「竹，冬生艸也。象形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "林",
@@ -356,7 +386,27 @@
           "url": "https://www.youtube.com/watch?v=78s2hHai43s",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "形聲",
+        "components": [
+          {
+            "part": "戊",
+            "role": "義符",
+            "note": "古代的兵器"
+          },
+          {
+            "part": "丁",
+            "role": "聲符",
+            "note": "只借音"
+          }
+        ],
+        "story": "「成」從「戊」（一種兵器），「丁」表示讀音。《說文解字》說「成，就也」，就是事情做完、達成了。",
+        "source": "《說文解字．戊部》：「成，就也。從戊丁聲。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "顆",

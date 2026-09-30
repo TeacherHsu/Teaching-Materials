@@ -39,7 +39,22 @@
           "url": "https://www.youtube.com/watch?v=niOKeHYqQB4",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "大",
+            "role": "象形",
+            "note": "像一個人張開手腳站著"
+          }
+        ],
+        "story": "「大」像一個人張開雙手雙腳站著的樣子。《說文解字》說「大象人形」，用人把身體張到最開，來表示「很大」的意思。",
+        "source": "《說文解字．大部》：「大，天大，地大，人亦大，故大象人形。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "風",
@@ -122,7 +137,22 @@
           "url": "https://www.youtube.com/watch?v=lztRGEPegJQ",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "象形",
+        "components": [
+          {
+            "part": "來",
+            "role": "象形",
+            "note": "像一株麥子，有麥穗和葉子"
+          }
+        ],
+        "story": "「來」本來畫的是一株麥子，上面是麥穗，兩旁是葉子。古人說麥子是上天送來的，後來「來」就被借去表示「過來」的意思，本來的意思反而改用「麥」字。",
+        "source": "《說文解字．來部》：「來，周所受瑞麥來麰…天所來也，故為行來之來。」",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "玩",

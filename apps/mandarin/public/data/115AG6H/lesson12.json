@@ -305,7 +305,27 @@
           "url": "https://www.youtube.com/watch?v=hXNWIF987RA",
           "source": "中華語文知識庫"
         }
-      ]
+      ],
+      "etymology": {
+        "structure": "會意",
+        "components": [
+          {
+            "part": "臥",
+            "role": "義符",
+            "note": "低頭看的人"
+          },
+          {
+            "part": "皿",
+            "role": "義符",
+            "note": "裝水的器皿"
+          }
+        ],
+        "story": "「監」畫的是一個人低頭看著裝水的盆子——古代沒有鏡子，就用水照自己。所以「監」有「看」的意思，後來引申成「監看」「監督」。",
+        "source": "《說文解字．臥部》：「監，臨下也。從臥，𧾷省聲。」（段注：以水為鑑）",
+        "status": "approved",
+        "approved_by": "CF",
+        "approved_on": "2026-10-01"
+      }
     },
     {
       "char": "蒂",
