@@ -117,43 +117,6 @@ def run_extractors(src: Path, lesson_no: int, work: Path, pedia_title: str) -> d
     return raw
 
 
-def build_quiz(characters: list[dict]) -> list[dict]:
-    quiz = []
-    for i, ch in enumerate(characters[:5], start=1):
-        if ch["status"] != "ready":
-            continue
-        others = [c for c in characters if c["char"] != ch["char"] and c.get("zhuyin")]
-        import random
-        random.seed(ch["char"])  # 確定性亂數，重跑結果穩定
-        distractors = random.sample(others, k=min(2, len(others))) if others else []
-        options = [ch["zhuyin"]] + [d["zhuyin"] for d in distractors]
-        random.shuffle(options)
-        quiz.append({
-            "id": f"q{i:02d}",
-            "type": "choice",
-            "stem": f"「{ch['char']}」的注音是？",
-            "options": options,
-            "answer": ch["zhuyin"],
-            "explanation": f"「{ch['char']}」讀作 {ch['zhuyin']}（來源：教育部教育百科）。",
-            "level": "basic",
-            "status": "ready",
-            "source": "derived:pedia",
-            "hints": ["先念念看聲母，再想想韻母，不要急著選。"],
-        })
-    ready_chars = [c for c in characters if c["status"] == "ready"]
-    if len(ready_chars) >= 2:
-        quiz.append({
-            "id": "m01",
-            "type": "matching",
-            "stem": "字 ↔ 部首配對",
-            "pairs": [{"left": c["char"], "right": c["radical"]} for c in ready_chars[:6]],
-            "level": "basic",
-            "status": "ready",
-            "source": "derived:pedia",
-        })
-    return quiz
-
-
 def _sentence_pattern_originals(raw: dict) -> list[list[str]]:
     """對應 merge.build_sentence_patterns 的組裝順序：先 08 各分類項目，後 09 反向歸課項目。"""
     out = []
@@ -268,8 +231,6 @@ def main():
     listening = merge.build_listening(raw["listening"], lesson_id, (existing or {}).get("listening", []))
     review_words = merge.build_review_words(raw["characters"], lesson_no)
 
-    quiz = build_quiz(characters)
-
     lesson = {
         "lesson_id": lesson_id,
         "volume": {"code": VOLUME_CODE, "publisher": "翰林", "grade": 3, "term": "上"},
@@ -301,7 +262,6 @@ def main():
         # 延伸練習連結非大補帖抽取來源，由 apply_extensions.py 另外維護；
         # 重跑本匯入器時原樣保留既有內容（含教師的 approved/rejected 決定）。
         "extensions": (existing or {}).get("extensions", []),
-        "quiz": quiz,
         "modules": {
             "characters": module_entry("認識生字", "character-cards", len([c for c in characters if c["status"] == "ready"])),
             "vocabulary": module_entry("學會語詞", "vocabulary-cards", len(words)),

@@ -9,7 +9,6 @@ import { buildSentencePracticeActivity } from '../activities/sentencePractice.js
 import { buildPolysemyActivity } from '../activities/polysemy.js';
 import { buildListeningActivity } from '../activities/listening.js';
 import { buildRhetoricActivity } from '../activities/rhetoric.js';
-import { buildStructureMapActivity } from '../activities/structureMap.js';
 import { buildReviewActivity } from '../activities/review.js';
 import { buildPolyphonesActivity } from '../activities/polyphones.js';
 import { buildLookalikesActivity } from '../activities/lookalikes.js';
@@ -33,7 +32,6 @@ const ACTIVITY_BUILDERS = {
   polysemy: buildPolysemyActivity,
   listening: buildListeningActivity,
   rhetoric: buildRhetoricActivity,
-  structure_map: buildStructureMapActivity,
   polyphones: buildPolyphonesActivity,
   lookalikes: buildLookalikesActivity,
   review: buildReviewActivity,

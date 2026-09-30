@@ -1,8 +1,9 @@
-// 10 大項模組註冊表：狀態由資料＋是否已實作決定，不寫死於元件／頁面。
+// 9 大項模組註冊表：狀態由資料＋是否已實作決定，不寫死於元件／頁面。
 // 規格 docs/specs/2026-09-25-mandarin-dabutie-importer.md §4。
 import { filterByStatus } from '../utils/preview.js';
 import { isModuleComplete } from '../utils/storage.js';
 import { canStartPolyphones } from './polyphones.js';
+import { buildPronunciationItems } from './pronunciationQuestions.js';
 
 const ROUND_MIN = 3;
 
@@ -25,9 +26,6 @@ function readyCharacters(lesson) {
   return (lesson.characters || []).filter((c) => c.status === 'ready' || !c.status);
 }
 
-function readyChoiceQuiz(lesson) {
-  return (lesson.quiz || []).filter((q) => q.type === 'choice' && q.status === 'ready');
-}
 
 function distinctRadicals(characters) {
   return new Set(characters.map((c) => c.radical).filter(Boolean));
@@ -55,9 +53,6 @@ function readyParagraphs(lesson) {
   return filterByStatus(lesson.paragraph_summary || []).filter((p) => p.summary);
 }
 
-function readyStructureParagraphs(lesson) {
-  return filterByStatus(lesson.paragraph_summary || []).filter((p) => p.summary && p.structure_role);
-}
 
 function readyReadingQuestions(lesson) {
   return filterByStatus(lesson.reading_questions || []).filter((q) => q.stem);
@@ -104,7 +99,8 @@ export const MODULE_REGISTRY = [
     implemented: true,
     ready(lesson) {
       const chars = readyCharacters(lesson);
-      return chars.length >= ROUND_MIN && readyChoiceQuiz(lesson).length >= ROUND_MIN && distinctRadicals(chars).size >= 2;
+      // 看字選音題由生字資料產生（pronunciationQuestions.js），不再依賴已移除的 lesson.quiz。
+      return buildPronunciationItems(chars, chars).length >= ROUND_MIN && distinctRadicals(chars).size >= 2;
     },
   },
   {
@@ -190,17 +186,6 @@ export const MODULE_REGISTRY = [
     implemented: true,
     ready(lesson) {
       return readyLookalikeQuestions(lesson).length >= ROUND_MIN;
-    },
-  },
-  {
-    key: 'structure_map',
-    label: '課文地圖',
-    icon: 'structure_map',
-    color: 'blue',
-    description: '整理課文的段落結構',
-    implemented: true,
-    ready(lesson) {
-      return readyStructureParagraphs(lesson).length >= ROUND_MIN;
     },
   },
   {

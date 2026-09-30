@@ -64,33 +64,6 @@ def _apply_upsert(lesson_key: str, lesson: dict, rewrites: list[dict], fields: l
     return applied
 
 
-def _walk_segments(nodes):
-    """遞迴走訪 structure_tree 的節點，產出每一個 segment（樹可有任意深度）。"""
-    for node in nodes or []:
-        for segment in node.get("segments") or []:
-            yield segment
-        yield from _walk_segments(node.get("children"))
-
-
-def _apply_structure_gists(lesson: dict, rewrites: list[dict]) -> int:
-    """課文結構表的段落大意：官方原文不進 repo，只寫入改寫後文字。
-    比照其他欄位，教師已核准／退回者不覆蓋。"""
-    tree = lesson.get("structure_tree") or {}
-    by_id = {seg["gist_id"]: seg for seg in _walk_segments(tree.get("nodes")) if seg.get("gist_id")}
-    applied = 0
-    for rw in rewrites:
-        segment = by_id.get(rw["id"])
-        if not segment:
-            print(f"警告：structure_tree 找不到 gist_id={rw['id']}，略過")
-            continue
-        if segment.get("status") in ("approved", "rejected"):
-            continue
-        segment["gist"] = rw.get("gist")
-        segment["status"] = "draft"
-        applied += 1
-    return applied
-
-
 def apply_rewrites(lesson: dict, rewrites: dict) -> int:
     applied = 0
 
@@ -108,7 +81,6 @@ def apply_rewrites(lesson: dict, rewrites: dict) -> int:
         item["example_status"] = "draft"
         applied += 1
 
-    applied += _apply_structure_gists(lesson, rewrites.get("structure_gists", []))
     applied += _apply_list("idiom_sentences", lesson, rewrites.get("idiom_sentences", []), ["rewritten"])
     applied += _apply_list("paragraph_summary", lesson, rewrites.get("paragraph_summary", []), ["summary"])
     applied += _apply_list("reading_questions", lesson, rewrites.get("reading_questions", []), ["stem", "answer_hint"])

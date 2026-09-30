@@ -296,86 +296,6 @@
         }
       }
     },
-    "quiz": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": [
-          "id",
-          "type",
-          "stem",
-          "status",
-          "source"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string",
-            "enum": [
-              "choice",
-              "matching"
-            ]
-          },
-          "stem": {
-            "type": "string"
-          },
-          "options": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "answer": {},
-          "explanation": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "pairs": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "left": {
-                  "type": "string"
-                },
-                "right": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "level": {
-            "type": "string",
-            "enum": [
-              "basic",
-              "challenge"
-            ]
-          },
-          "status": {
-            "type": "string",
-            "enum": [
-              "ready",
-              "todo"
-            ]
-          },
-          "hints": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "答錯時的 scaffold 提示，不揭曉答案。第 1 次答錯顯示，第 2 次答錯才揭曉正解。"
-          },
-          "source": {
-            "type": "string",
-            "description": "例如 derived:pedia（由已查證的教育百科資料機械生成）"
-          }
-        }
-      }
-    },
     "word_meanings": {
       "type": "array",
       "description": "v2 新增：06字義分析逐字義項，原文照登（版權表允許）"
@@ -519,7 +439,6 @@
         "vocabulary",
         "reading",
         "sentence_practice",
-        "challenge",
         "application"
       ],
       "properties": {
@@ -535,42 +454,8 @@
         "sentence_practice": {
           "$ref": "#/definitions/moduleEntry"
         },
-        "challenge": {
-          "$ref": "#/definitions/moduleEntry"
-        },
         "application": {
           "$ref": "#/definitions/moduleEntry"
-        }
-      }
-    },
-    "structure_tree": {
-      "type": "object",
-      "description": "官方課文結構表判讀結果（樹狀）。規格 docs/specs/2026-09-30-structure-map-redesign.md。gist 須經 rewrite-queue 改寫核准，本欄不放出版社原文。",
-      "required": [
-        "source",
-        "nodes"
-      ],
-      "properties": {
-        "source": {
-          "type": "string"
-        },
-        "verified_on": {
-          "type": "string"
-        },
-        "task_type": {
-          "enum": [
-            "A",
-            "B"
-          ]
-        },
-        "note": {
-          "type": "string"
-        },
-        "nodes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/structureNode"
-          }
         }
       }
     }
@@ -598,67 +483,6 @@
         },
         "note": {
           "type": "string"
-        }
-      }
-    }
-  },
-  "$defs": {
-    "structureNode": {
-      "type": "object",
-      "required": [
-        "label"
-      ],
-      "properties": {
-        "order": {
-          "type": "integer"
-        },
-        "label": {
-          "type": "string",
-          "minLength": 1
-        },
-        "children": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/structureNode"
-          }
-        },
-        "segments": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "required": [
-              "gist_id",
-              "paragraphs"
-            ],
-            "properties": {
-              "gist_id": {
-                "type": "string"
-              },
-              "paragraphs": {
-                "type": "array",
-                "items": {
-                  "type": "integer",
-                  "minimum": 1
-                },
-                "minItems": 0,
-                "maxItems": 2
-              },
-              "gist": {
-                "type": [
-                  "string",
-                  "null"
-                ]
-              },
-              "status": {
-                "enum": [
-                  "todo_rewrite",
-                  "draft",
-                  "approved",
-                  "rejected"
-                ]
-              }
-            }
-          }
         }
       }
     }

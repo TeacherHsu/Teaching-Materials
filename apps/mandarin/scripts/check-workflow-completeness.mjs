@@ -33,8 +33,7 @@ const requiredFiles = [
 
 const requiredTests = [
   ['常用造詞前三項', 'scripts/test-character-examples-limit.mjs'],
-  ['看字選音題型與答案閘門', 'scripts/test-character-pronunciation-filter.mjs'],
-  ['課文地圖結構角色閘門', 'scripts/test-structure-map-role-filter.mjs'],
+  ['看字選音題目產生器', 'scripts/test-pronunciation-questions.mjs'],
   ['語詞圖片完整性', 'scripts/test-vocabulary-image-completeness.mjs'],
   ['圖片詞意配對', 'scripts/test-vocabulary-image-pairs.mjs'],
   ['成語具體情境句', 'scripts/test-idiom-sentence-contexts.mjs'],

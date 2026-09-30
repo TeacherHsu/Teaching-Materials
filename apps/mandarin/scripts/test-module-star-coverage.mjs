@@ -31,7 +31,6 @@ const { buildReadingActivity } = await import('../src/activities/reading.js');
 const { buildPolysemyActivity } = await import('../src/activities/polysemy.js');
 const { buildListeningActivity } = await import('../src/activities/listening.js');
 const { buildRhetoricActivity } = await import('../src/activities/rhetoric.js');
-const { buildStructureMapActivity } = await import('../src/activities/structureMap.js');
 const { buildPolyphonesActivity } = await import('../src/activities/polyphones.js');
 const { buildLookalikesActivity } = await import('../src/activities/lookalikes.js');
 
@@ -46,7 +45,6 @@ const BUILDERS = {
   lookalikes: buildLookalikesActivity,
   listening: buildListeningActivity,
   rhetoric: buildRhetoricActivity,
-  structure_map: buildStructureMapActivity,
 };
 
 // ---- 通用互動驅動器：純看 DOM 狀態決定下一步，不需要事先知道任何一題的正解 ----
