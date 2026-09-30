@@ -141,6 +141,11 @@ route(/^\/review\/(?<lessonId>[^/]+)$/, async ({ lessonId }) => {
   mount(ReviewPage(lesson));
 });
 
+route(/^\/teacher$/, async () => {
+  const { TeacherPage } = await import('./pages/TeacherPage.js');
+  mount(TeacherPage());
+});
+
 route(/^\/fixtures$/, async () => {
   const res = await fetch(`${BASE}data/_fixtures/component-fixtures.json`, { cache: 'no-cache' });
   const fixtures = await res.json();

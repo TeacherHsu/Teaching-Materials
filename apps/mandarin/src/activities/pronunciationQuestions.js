@@ -5,6 +5,8 @@
 // 通得過檢核。生字的注音與教育百科來源本來就逐字核過，直接據此出題比修補
 // 舊題目可靠，也和「部首」那一步的做法一致。
 
+import { getScaffoldLevel } from '../utils/deviceSettings.js';
+
 const SINGLE_BOPOMOFO = /^[ㄅ-ㄩ]+[ˊˇˋ˙]?$/u;
 const TONE = /[ˊˇˋ˙]$/u;
 const PEDIA_PREFIX = 'https://pedia.cloud.edu.tw/Entry/Detail?title=';
@@ -57,13 +59,15 @@ function shuffled(arr) {
  * @param {object[]} characters 該課生字
  * @param {object[]} allCharacters 誘答來源（同冊生字較貼近學生已學過的字）
  */
-export function buildPronunciationItems(characters, allCharacters = characters) {
+export function buildPronunciationItems(characters, allCharacters = characters, optionCount = getScaffoldLevel().optionCount) {
   const quizzable = (characters || []).filter(isQuizzableCharacter);
   const pool = (allCharacters || []).filter(isQuizzableCharacter).map((c) => c.zhuyin);
+  // 鷹架厚度只改干擾項數量，題目本身不變（見 utils/deviceSettings.js）。
+  const wanted = Math.max(1, (optionCount || 3) - 1);
 
   return quizzable.map((c) => {
-    const distractors = pickPronunciationDistractors(c.zhuyin, pool, 2);
-    if (distractors.length < 2) return null;
+    const distractors = pickPronunciationDistractors(c.zhuyin, pool, wanted);
+    if (distractors.length < 1) return null;
     // ChoiceQuiz 以純字串比對選項，且自己也會再亂序一次。
     const options = shuffled([c.zhuyin, ...distractors]);
     return {

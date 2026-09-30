@@ -12,6 +12,7 @@ import { buildExtensionLinks } from '../components/ExtensionLinks.js';
 import { PronunciationNotice } from '../components/PronunciationNotice.js';
 import { missingContentNotice } from './engine.js';
 import { buildPronunciationItems } from './pronunciationQuestions.js';
+import { getScaffoldLevel } from '../utils/deviceSettings.js';
 
 const ROUND_MAX = 5;
 const MAX_DISPLAY_EXAMPLES = 3;
@@ -80,7 +81,7 @@ function pickDistractorRadicals(all, excludeRadicals, n) {
 function buildRadicalDragItems(round, allCharacters) {
   const roundRadicals = new Set(round.map((c) => c.radical));
   return round.map((c) => {
-    const distractors = pickDistractorRadicals(allCharacters, roundRadicals, 2);
+    const distractors = pickDistractorRadicals(allCharacters, roundRadicals, Math.max(1, getScaffoldLevel().optionCount - 1));
     const options = shuffled([c.radical, ...distractors]).map((r) => ({ id: `radical:${r}`, label: r }));
     return {
       id: `radical-item:${c.char}`,

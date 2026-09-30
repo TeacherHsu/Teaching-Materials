@@ -1762,11 +1762,22 @@
   background: var(--color-surface-muted);
 }
 .strategy-card__label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
   margin: 0 0 2px;
   font-size: 1rem;
   font-weight: 700;
   color: var(--text-secondary);
   letter-spacing: 0.02em;
+}
+.strategy-card__tag {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 0.9375rem;
 }
 .strategy-card__body {
   align-items: flex-start;
@@ -1778,4 +1789,49 @@
   margin: 0;
   font-size: 1.1875rem;   /* 次要文字，仍符合 ≥18px 的設計底線 */
   line-height: 1.7;
+}
+
+/* ---- 教師設定頁 ---- */
+.teacher-page { padding-bottom: var(--space-6, 32px); }
+.teacher-challenge {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin: var(--space-3) 0;
+}
+.teacher-input {
+  width: 100%;
+  max-width: 22rem;
+  min-height: 48px;
+  padding: var(--space-2) var(--space-3);
+  font-size: 1.25rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+.teacher-export {
+  width: 100%;
+  margin-top: var(--space-2);
+  padding: var(--space-2);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9375rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+.teacher-table-wrap { overflow-x: auto; margin: var(--space-2) 0; }
+.teacher-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.teacher-table th,
+.teacher-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--color-border);
+  text-align: start;
+  white-space: nowrap;
+}
+.teacher-table th { color: var(--text-secondary); }
+
+.site-footer__teacher { margin-top: 10px; }
+.site-footer__teacher a {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-decoration: underline;
 }

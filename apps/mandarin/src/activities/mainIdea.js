@@ -12,6 +12,7 @@ import { TaskBanner } from '../components/TaskBanner.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 import { missingContentNotice } from './engine.js';
 import { filterByStatus, isPreview } from '../utils/preview.js';
+import { getScaffoldLevel } from '../utils/deviceSettings.js';
 
 function approvedMainIdea(lesson) {
   const mainIdea = lesson.main_idea;
@@ -53,11 +54,14 @@ export function canStartMainIdea(lesson) {
 function buildQuizItem(lesson, mainIdea, paragraphs) {
   const partial = partialDistractor(paragraphs);
   const distractors = approvedDistractors(mainIdea);
-  const options = [
-    mainIdea.gist,
+  // 「以偏概全」排最前面：它是最有教學意義的誘答，選項變少時要優先保留。
+  const candidates = [
     ...(partial ? [partial] : []),
     ...distractors.map((d) => d.text),
-  ].filter((text, index, all) => text && all.indexOf(text) === index);
+  ];
+  const wanted = Math.max(1, getScaffoldLevel().optionCount - 1);
+  const options = [mainIdea.gist, ...candidates.slice(0, wanted)]
+    .filter((text, index, all) => text && all.indexOf(text) === index);
 
   return {
     id: `main-idea:${lesson.lesson_id}`,

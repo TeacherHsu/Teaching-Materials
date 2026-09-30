@@ -16,6 +16,7 @@ import { buildLookalikesActivity } from '../activities/lookalikes.js';
 import { buildExtensionLinks } from '../components/ExtensionLinks.js';
 import { findModuleEntry, getModuleStatus, MODULE_REGISTRY, moduleColorVars } from '../activities/moduleRegistry.js';
 import { StrategyCard } from '../components/StrategyCard.js';
+import { recordAttempt } from '../utils/records.js';
 import { strategyFor } from '../activities/strategyCards.js';
 import { saveModuleComplete, saveModuleStars, getLessonStars } from '../utils/storage.js';
 import { startScoreSession, endScoreSession } from '../utils/scoreSession.js';
@@ -108,6 +109,8 @@ export function ModulePage(lesson, moduleKey) {
     startScoreSession();
     const onModuleDone = () => {
       const meta = endScoreSession();
+      // 星星給學生（精熟導向），正確率留給教師（診斷用），兩套訊號刻意分開。
+      recordAttempt(lesson.lesson_id, moduleKey, meta);
       const stars = computeModuleStars(meta);
       const { stars: bestStars, isNewRecord } = saveModuleStars(lesson.lesson_id, moduleKey, stars);
       saveModuleComplete(lesson.lesson_id, moduleKey);

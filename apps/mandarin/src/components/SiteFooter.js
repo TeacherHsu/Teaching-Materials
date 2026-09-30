@@ -18,6 +18,13 @@ export function SiteFooter() {
   return h(
     'footer',
     { class: 'site-footer' },
-    FOOTER_LINES.map((line) => h('p', { class: 'site-footer__line' }, line)),
+    [
+      ...FOOTER_LINES.map((line) => h('p', { class: 'site-footer__line' }, line)),
+      // 教師設定入口刻意放在頁尾、字小、不加圖示：學生不會順手點進去，
+      // 而且進去還有一道兩位數乘法擋著（見 pages/TeacherPage.js）。
+      h('p', { class: 'site-footer__line site-footer__teacher' }, [
+        h('a', { href: '#/teacher' }, '教師設定'),
+      ]),
+    ],
   );
 }
