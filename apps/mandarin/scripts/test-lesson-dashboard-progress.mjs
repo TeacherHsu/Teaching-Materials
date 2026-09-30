@@ -21,7 +21,8 @@ const statuses = MODULE_REGISTRY.map((entry) => ({ key: entry.key, code: getModu
 const lockedKeys = statuses.filter((s) => s.code === 'locked').map((s) => s.key);
 assert.deepEqual(lockedKeys, ['review'], `第 1 課應該只有「舊字新詞」鎖住，實際鎖住：${lockedKeys.join('、') || '無'}`);
 const pendingKeys = statuses.filter((s) => s.code === 'pending_review').map((s) => s.key);
-assert.deepEqual(pendingKeys, ['listening'], `第 1 課聽聽看應待重新編題，實際待審：${pendingKeys.join('、') || '無'}`);
+// 三上 L01 的語詞尚無注音，注音高手因此待審；聽聽看待重新編題。
+assert.deepEqual(pendingKeys, ['zhuyin_typing', 'listening'], `第 1 課應待審：注音高手、聽聽看，實際：${pendingKeys.join('、') || '無'}`);
 const availableCount = statuses.filter((s) => s.code === 'available' || s.code === 'done').length;
 assert.equal(availableCount, 10, `第 1 課可開始的大項應為 10 項，實際 ${availableCount}`);
 

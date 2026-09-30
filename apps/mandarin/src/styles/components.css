@@ -1835,3 +1835,158 @@
   color: var(--text-secondary);
   text-decoration: underline;
 }
+
+/* ---- 注音高手 ---- */
+/* 版面三段：看圖聽音 → 音節格 → 鍵盤。每段之間留白拉開，
+   讓「現在該做什麼」在畫面上一眼可辨（一個畫面一個任務）。 */
+.zt__prompt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin: var(--space-3) 0 var(--space-4);
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+.zt__image {
+  width: 132px;
+  height: 132px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-muted);
+}
+.zt__listen { display: flex; flex-direction: column; gap: 6px; }
+
+.zt__slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+.zt__slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 84px;
+  min-height: 96px;
+  padding: var(--space-2);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+.zt__slot--current {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(201, 111, 74, 0.16);
+}
+.zt__slot--done { background: var(--zk-tone-bg); border-color: var(--zk-tone-line); }
+.zt__slot-zhuyin {
+  font-family: var(--font-family-learning-glyph);
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: var(--color-primary);
+}
+.zt__slot-char { font-size: 2rem; font-weight: 700; line-height: 1.2; }
+
+.zt__chooser { margin-bottom: var(--space-3); }
+.zt__chooser-stem { font-size: var(--font-size-body); margin: 0 0 var(--space-2); }
+.zt__candidates { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.zt__candidate {
+  min-width: 64px;
+  min-height: 64px;
+  padding: var(--space-2);
+  font-size: 2rem;
+  font-weight: 700;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  cursor: pointer;
+}
+.zt__candidate:hover { border-color: var(--color-primary); }
+.zt__candidate--wrong { opacity: 0.4; text-decoration: line-through; cursor: not-allowed; }
+
+.zt__actions { margin-top: var(--space-3); }
+.zt__credit {
+  margin-top: var(--space-5);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* 注音鍵盤：大千排列，列與列之間刻意錯開，形狀貼近真的鍵盤 */
+.zk {
+  margin: var(--space-3) 0;
+  padding: var(--space-2);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-muted);
+}
+.zk__legend { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-2); font-size: 0.9375rem; }
+.zk__legend-item { padding: 2px 10px; border-radius: var(--radius-pill); border: 2px solid transparent; }
+.zk__legend-item--initial { background: var(--zk-initial-bg); border-color: var(--zk-initial-line); }
+.zk__legend-item--medial { background: var(--zk-medial-bg); border-color: var(--zk-medial-line); }
+.zk__legend-item--final { background: var(--zk-final-bg); border-color: var(--zk-final-line); }
+.zk__legend-item--tone { background: var(--zk-tone-bg); border-color: var(--zk-tone-line); }
+
+.zk__row { display: flex; gap: 6px; margin-bottom: 6px; }
+.zk__row--1 { padding-inline-start: 14px; }
+.zk__row--2 { padding-inline-start: 26px; }
+.zk__row--3 { padding-inline-start: 38px; }
+.zk__row--actions { padding-inline-start: 0; margin-top: var(--space-2); }
+.zk__key {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 44px;
+  min-height: 52px;
+  padding: 4px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: transform 90ms ease, background-color 90ms ease;
+}
+.zk__key--initial { background: var(--zk-initial-bg); border-color: var(--zk-initial-line); }
+.zk__key--medial { background: var(--zk-medial-bg); border-color: var(--zk-medial-line); }
+.zk__key--final { background: var(--zk-final-bg); border-color: var(--zk-final-line); }
+.zk__key--tone { background: var(--zk-tone-bg); border-color: var(--zk-tone-line); }
+.zk__key--active { transform: translateY(2px); filter: brightness(0.94); }
+.zk__key--wide { flex: 0 0 auto; min-width: 120px; font-size: 1.125rem; }
+.zk__symbol {
+  display: block;
+  font-family: var(--font-family-learning-glyph);
+  font-size: 1.375rem;
+  line-height: 1.3;
+}
+.zk__hint {
+  position: absolute;
+  inset-block-start: 2px;
+  inset-inline-end: 5px;
+  font-size: 0.6875rem;
+  color: var(--text-secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zk__key { transition: none; }
+  .zk__key--active { transform: none; }
+}
+
+/* 窄螢幕：11 顆鍵 × 44px 觸控下限 ＝ 484px，375px 的手機放不下。
+   三個選項裡——縮小按鍵、重排鍵盤、讓鍵盤自己捲動——只有第三個不必犧牲東西：
+   縮小按鍵會低於觸控下限，重排會破壞大千排列（排列本身就是要學的）。
+   所以鍵盤區域自己橫向捲動，頁面本身仍然沒有橫向捲動。
+   本模組主要設想在平板上使用，平板寬度不會觸發捲動。 */
+.zk__keys {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+}
+.zk__keys-inner { min-width: 520px; }
+
+@media (max-width: 480px) {
+  .zk__symbol { font-size: 1.25rem; }
+  .zk__hint { display: none; }
+}

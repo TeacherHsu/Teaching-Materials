@@ -5,6 +5,7 @@ import { isModuleComplete } from '../utils/storage.js';
 import { canStartPolyphones } from './polyphones.js';
 import { buildPronunciationItems } from './pronunciationQuestions.js';
 import { canStartMainIdea } from './mainIdea.js';
+import { canStartZhuyinTyping } from './zhuyinTyping.js';
 
 const ROUND_MIN = 3;
 
@@ -164,6 +165,17 @@ export const MODULE_REGISTRY = [
     implemented: true,
     ready(lesson) {
       return canStartMainIdea(lesson);
+    },
+  },
+  {
+    key: 'zhuyin_typing',
+    label: '注音高手',
+    icon: 'zhuyin_typing',
+    color: 'terracotta',
+    description: '聽語詞，用注音鍵盤打出來',
+    implemented: true,
+    ready(lesson) {
+      return canStartZhuyinTyping(lesson);
     },
   },
   {

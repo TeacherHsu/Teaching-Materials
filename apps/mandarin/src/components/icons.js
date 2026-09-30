@@ -30,6 +30,10 @@ export const MODULE_ICONS = {
   polysemy: wrap(
     '<circle cx="12" cy="7" r="3"/><path d="M12 10v3"/><path d="M12 13l-5 5M12 13l5 5M12 13v5"/>',
   ),
+  // 注音高手：鍵盤
+  zhuyin_typing: wrap(
+    '<rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h12"/>',
+  ),
   // 抓重點：文件上標出重點的星號
   main_idea: wrap(
     '<path d="M6 3h9l4 4v14H6Z"/><path d="M14 3v5h5"/><path d="m12 11 1.2 2.5 2.8.4-2 2 .5 2.7-2.5-1.3-2.5 1.3.5-2.7-2-2 2.8-.4Z"/>',

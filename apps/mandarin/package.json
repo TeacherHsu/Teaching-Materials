@@ -24,7 +24,8 @@
     "audit:listening": "node scripts/audit-listening-content.mjs",
     "backfill:listening": "node scripts/backfill-listening-passages.mjs",
     "check-assets": "node scripts/check-assets.mjs",
-    "check-dist": "node scripts/check-dist.mjs && npm run check-assets"
+    "check-dist": "node scripts/check-dist.mjs && npm run check-assets",
+    "build-char-index": "node scripts/build-char-index.mjs"
   },
   "devDependencies": {
     "ajv": "^8.17.1",

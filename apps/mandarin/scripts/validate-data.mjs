@@ -20,7 +20,8 @@ let failed = false;
 function findLessonFiles(dir) {
   const results = [];
   for (const entry of readdirSync(dir)) {
-    if (entry === '_fixtures') continue; // fixture 資料不受課次 schema 拘束
+    // 底線開頭的目錄不是課次資料（_fixtures 測試夾具、_index 衍生索引、_preview 預覽輸出）
+    if (entry.startsWith('_')) continue;
     const full = join(dir, entry);
     const stat = statSync(full);
     if (stat.isDirectory()) {

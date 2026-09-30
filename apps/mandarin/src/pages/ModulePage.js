@@ -3,6 +3,7 @@ import { SpeakButton } from '../components/SpeakButton.js';
 import { missingContentNotice } from '../activities/engine.js';
 import { buildIdiomBuilderActivity } from '../components/IdiomBuilder.js';
 import { buildMainIdeaActivity } from '../activities/mainIdea.js';
+import { buildZhuyinTypingActivity } from '../activities/zhuyinTyping.js';
 import { buildReadingActivity } from '../activities/reading.js';
 import { buildCharactersActivity } from '../activities/characters.js';
 import { buildVocabularyActivity } from '../activities/vocabulary.js';
@@ -34,6 +35,7 @@ const ACTIVITY_BUILDERS = {
   idiom_builder: buildIdiomBuilderActivity,
   reading: buildReadingActivity,
   main_idea: buildMainIdeaActivity,
+  zhuyin_typing: buildZhuyinTypingActivity,
   polysemy: buildPolysemyActivity,
   listening: buildListeningActivity,
   rhetoric: buildRhetoricActivity,

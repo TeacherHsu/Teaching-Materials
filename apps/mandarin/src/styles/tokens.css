@@ -98,3 +98,18 @@
 @media (prefers-color-scheme: dark) {
   /* 目前不主動切換深色，僅保留 hook；教室投影以淺色為主 */
 }
+
+/* 注音符號分類色（注音高手）。
+   四類各自一個色相，用來讓學生看見「聲母—介音—韻母—聲調」的結構，
+   不是裝飾。全部從既有色盤延伸，維持全站調性；且不單靠顏色傳達資訊
+   ——鍵盤位置本身就是分組，另有文字圖例與 aria-label。 */
+:root {
+  --zk-initial-bg: #e8eef4;
+  --zk-initial-line: #3a5a7a;
+  --zk-medial-bg: #ece8f2;
+  --zk-medial-line: #6b5b95;
+  --zk-final-bg: #f7ece5;
+  --zk-final-line: #c96f4a;
+  --zk-tone-bg: #e6f0ea;
+  --zk-tone-line: #2f7a4f;
+}
