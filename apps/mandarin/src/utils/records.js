@@ -100,3 +100,70 @@ export function recordsAsTsv(rows, deviceLabel = '') {
 export function clearRecords() {
   return write({});
 }
+
+/** 還沒同步過的紀錄（syncedAt 未設定）。 */
+export function unsyncedAttempts() {
+  const all = read();
+  const out = [];
+  for (const [lessonId, modules] of Object.entries(all)) {
+    for (const [moduleKey, list] of Object.entries(modules)) {
+      (Array.isArray(list) ? list : []).forEach((a, index) => {
+        if (!a.syncedAt) out.push({ lessonId, moduleKey, index, ...a });
+      });
+    }
+  }
+  return out.sort((a, b) => String(a.at).localeCompare(String(b.at)));
+}
+
+function markSynced(items, syncedAt) {
+  const all = read();
+  for (const it of items) {
+    const list = all[it.lessonId] && all[it.lessonId][it.moduleKey];
+    if (Array.isArray(list) && list[it.index]) list[it.index].syncedAt = syncedAt;
+  }
+  return write(all);
+}
+
+/**
+ * 把還沒送出的紀錄送到 Google 試算表（Apps Script 網頁應用程式）。
+ *
+ * 刻意設計成「教師按一次才送」而不是即時同步：課堂網路不可靠，即時同步
+ * 失敗會是靜默的，教師不會知道哪幾筆沒上去。手動同步則成功與失敗都看得見。
+ * 送出成功才標記 syncedAt，所以重複按不會重複寫入。
+ *
+ * 用 text/plain 送出是刻意的：這樣屬於 CORS 的 simple request，不會觸發
+ * preflight（Apps Script 不處理 OPTIONS，會因此失敗）。
+ *
+ * @returns {Promise<{ok:boolean, sent:number, message:string}>}
+ */
+export async function syncRecords(url, deviceLabel, fetchImpl = globalThis.fetch) {
+  if (!url) return { ok: false, sent: 0, message: '尚未設定試算表網址。' };
+  const pending = unsyncedAttempts();
+  if (pending.length === 0) return { ok: true, sent: 0, message: '沒有新的紀錄需要同步。' };
+
+  const rows = pending.map((a) => ({
+    device: deviceLabel || '',
+    lessonId: a.lessonId,
+    moduleKey: a.moduleKey,
+    at: a.at,
+    accuracy: a.accuracy,
+    total: a.total,
+    firstTry: a.firstTry,
+    revealed: a.revealed,
+  }));
+
+  try {
+    const res = await fetchImpl(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ rows }),
+    });
+    if (!res || !res.ok) {
+      return { ok: false, sent: 0, message: `試算表沒有收到（HTTP ${res ? res.status : '無回應'}）。請確認網址與部署權限。` };
+    }
+    markSynced(pending, new Date().toISOString());
+    return { ok: true, sent: rows.length, message: `已送出 ${rows.length} 筆紀錄。` };
+  } catch (err) {
+    return { ok: false, sent: 0, message: `連線失敗：${err && err.message ? err.message : '請檢查網路'}。紀錄仍保留在這台載具。` };
+  }
+}

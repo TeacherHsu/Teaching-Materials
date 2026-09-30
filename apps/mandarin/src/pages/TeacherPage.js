@@ -5,9 +5,9 @@
 // 頁面不顯示、也不儲存任何學生姓名；紀錄只有課次代號、大項代號與正確率。
 import { h, clear } from '../utils/dom.js';
 import { findModuleEntry } from '../activities/moduleRegistry.js';
-import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel, setDeviceLabel } from '../utils/deviceSettings.js';
+import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel, setDeviceLabel, getSheetUrl, setSheetUrl } from '../utils/deviceSettings.js';
 import { makeTeacherChallenge, verifyTeacherChallenge } from '../utils/teacherGate.js';
-import { listRecords, recordsAsTsv, clearRecords } from '../utils/records.js';
+import { listRecords, recordsAsTsv, clearRecords, unsyncedAttempts, syncRecords } from '../utils/records.js';
 
 function moduleLabel(key) {
   const entry = findModuleEntry(key);
@@ -90,6 +90,33 @@ function buildPanel(root) {
   });
   root.appendChild(h('div', { class: 'quiz-option-row' }, [exportBtn]));
   root.appendChild(exportBox);
+
+  // ---- Google 試算表同步 ----
+  root.appendChild(h('h2', {}, '同步到 Google 試算表'));
+  root.appendChild(h('p', { class: 'meta' }, '選用。設定後可以按一次把新紀錄送到你的試算表；不設定也不影響上課，紀錄一樣留在這台載具。設定步驟見教師操作手冊。'));
+  const urlInput = h('input', {
+    class: 'teacher-input', type: 'url', value: getSheetUrl(),
+    placeholder: 'https://script.google.com/macros/s/.../exec', 'aria-label': 'Apps Script 網址',
+  });
+  const urlNote = h('p', { class: 'meta' }, '');
+  urlInput.addEventListener('change', () => {
+    urlNote.textContent = setSheetUrl(urlInput.value)
+      ? '已儲存。'
+      : '網址必須是 script.google.com 開頭的 Apps Script 網址。';
+  });
+  const syncStatus = h('p', { class: 'meta', role: 'status', 'aria-live': 'polite' }, `目前有 ${unsyncedAttempts().length} 筆尚未同步。`);
+  const syncBtn = h('button', { class: 'btn btn--primary', type: 'button' }, '同步新紀錄');
+  syncBtn.addEventListener('click', async () => {
+    syncBtn.disabled = true;
+    syncStatus.textContent = '同步中…';
+    const result = await syncRecords(getSheetUrl(), getDeviceLabel());
+    syncStatus.textContent = `${result.message}（尚未同步：${unsyncedAttempts().length} 筆）`;
+    syncBtn.disabled = false;
+  });
+  root.appendChild(urlInput);
+  root.appendChild(urlNote);
+  root.appendChild(h('div', { class: 'quiz-option-row' }, [syncBtn]));
+  root.appendChild(syncStatus);
 
   const clearBtn = h('button', { class: 'btn', type: 'button' }, '清除這台載具的紀錄');
   let armed = false;

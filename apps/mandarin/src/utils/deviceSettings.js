@@ -54,6 +54,21 @@ export function setScaffoldLevel(levelKey) {
   return write({ ...read(), scaffoldLevel: levelKey });
 }
 
+/**
+ * Google 試算表同步網址（Apps Script 網頁應用程式）。
+ * 存在這台載具，不進 repo——網址等同於寫入權限，不可以進版本控制。
+ */
+export function getSheetUrl() {
+  return read().sheetUrl || '';
+}
+
+export function setSheetUrl(url) {
+  const value = String(url || '').trim();
+  // 只接受 Apps Script 的網址，避免誤填成別的地方而把成績送錯對象。
+  if (value && !/^https:\/\/script\.google(usercontent)?\.com\//.test(value)) return false;
+  return write({ ...read(), sheetUrl: value });
+}
+
 /** 這台載具的標記（例如「三年級 3 號機」），只作為成績紀錄的標頭，不含學生姓名。 */
 export function getDeviceLabel() {
   return read().deviceLabel || '';
