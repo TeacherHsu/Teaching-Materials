@@ -40,6 +40,12 @@ public/data/course-index.json
 13. 寫入外部進度檔。中斷後以 `--resume` 跳過已有且狀態為 `ready` 的課次。
 14. 執行資料驗證、舊字新詞全面稽核、成語情境句與成語圖片檢查、形似字選項核對、修辭關鍵字變色檢查、聽聽看內容對應稽核、圖片容量檢查、建置與回歸測試，再 commit。
 
+### 生字測驗與課文地圖內容閘門
+
+- 「看字選音」只可呈現題幹為單一生字注音題、答案與該字已記錄的教育百科注音一致、三個選項皆為注音且互異並包含答案的題目。部首、字義或來源／選項未完整核對的選擇題不得混入此步驟。
+- 「課文地圖」的 `structure_role` 必須是經來源核對的結構角色；課文小標題、內容主題和「第 N 段重點」等段落標籤不能充當結構答案。暫無核准角色的課次應維持教材審核中，不以猜測補齊。新增角色須同時更新 `src/activities/structureMapRoles.js` 與對應回歸測試。
+- 執行 `node scripts/test-character-pronunciation-filter.mjs` 與 `node scripts/test-structure-map-role-filter.mjs`，確認題型、答案與可呈現的結構角色通過閘門。
+
 ### 句子排序共用互動契約
 
 各年級「練習句子」的句子排序都必須使用共用 `src/components/SentenceOrdering.js`，不得在年級或出版社資料中另做一套判錯邏輯。學生按下「檢查答案」後，逐詞塊比對目前序位：

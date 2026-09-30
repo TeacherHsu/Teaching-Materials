@@ -9,6 +9,7 @@ import { DragToSlot } from '../components/DragToSlot.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { missingContentNotice } from './engine.js';
 import { filterByStatus, isPreview } from '../utils/preview.js';
+import { isApprovedStructureRole } from './structureMapRoles.js';
 
 const ROUND_SIZE_MAX = 5;
 
@@ -35,7 +36,9 @@ function paragraphPrompt(paragraph) {
 }
 
 function readyParagraphs(lesson) {
-  return filterByStatus(lesson.paragraph_summary || []).filter((p) => p.summary && p.structure_role);
+  return filterByStatus(lesson.paragraph_summary || []).filter(
+    (p) => p.summary && isApprovedStructureRole(p.structure_role),
+  );
 }
 
 /** 整課結構樹：依段落順序列出各段的結構角色（重複角色只顯示一次連續節點）。 */

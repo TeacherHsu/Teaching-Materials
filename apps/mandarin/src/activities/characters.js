@@ -11,6 +11,7 @@ import { TaskBanner } from '../components/TaskBanner.js';
 import { buildExtensionLinks } from '../components/ExtensionLinks.js';
 import { PronunciationNotice } from '../components/PronunciationNotice.js';
 import { missingContentNotice } from './engine.js';
+import { selectPronunciationQuizItems } from './pronunciationQuizFilter.js';
 
 const ROUND_MAX = 5;
 const MAX_DISPLAY_EXAMPLES = 3;
@@ -105,7 +106,7 @@ export function buildCharactersActivity(lesson, onBack) {
     (lesson.characters || []).filter((c) => c.status === 'ready' || !c.status),
     lesson,
   );
-  const choiceItems = (lesson.quiz || []).filter((q) => q.type === 'choice' && q.status === 'ready');
+  const choiceItems = selectPronunciationQuizItems(lesson.quiz, characters);
   const choiceRounds = chunkByMax(choiceItems, ROUND_MAX);
   const radicalRounds = buildRadicalRounds(characters);
   const cardRounds = chunkByMax(characters, 6);
