@@ -2137,7 +2137,9 @@
 .entry-card--dashed { border-style: dashed; }
 .entry-card__icon { font-size: var(--font-size-section); line-height: 1; }
 .entry-card__body { display: flex; flex-direction: column; gap: 2px; flex: 1; }
-.entry-card__title { font-size: var(--font-size-button); font-weight: 700; }
+/* 標題字級和大項卡片一致（--font-size-section），四個入口和十個大項
+   是同一層級的東西，字級不同會看起來像次要功能。 */
+.entry-card__title { font-size: var(--font-size-section); font-weight: 700; }
 .entry-card__desc { font-size: var(--font-size-meta); color: var(--text-secondary); }
 .entry-card__note { font-size: var(--font-size-meta); color: var(--text-secondary); }
 .entry-card__arrow { flex: none; color: var(--text-secondary); }

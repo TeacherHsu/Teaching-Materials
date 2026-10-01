@@ -11,6 +11,7 @@ import { listRecords, recordsAsTsv, clearRecords, unsyncedAttempts, syncRecords 
 import { allMistakes, clearMistakes } from '../utils/mistakes.js';
 import { listSentences, markSentence, pendingSentences, clearSentences, MARKS } from '../utils/madeSentences.js';
 import { reciteLessons, reciteSummary, clearRecite } from '../utils/reciteRecords.js';
+import { isUnlocked, lock as lockReadings } from '../utils/classroomKey.js';
 
 function moduleLabel(key) {
   const entry = findModuleEntry(key);
@@ -127,6 +128,29 @@ function buildPanel(root) {
     ]);
     root.appendChild(row);
   }
+
+  // ---- 教室密碼 ----
+  // 解鎖後金鑰會記在這台載具（學生不必每次輸入），所以一定要給老師一個
+  // 「鎖回去」的方法——借出去的 iPad、換班級、學期結束都需要。
+  // 先前只實作了 lock() 卻沒有在畫面上露出來，等於鎖不回去。
+  root.appendChild(h('h2', {}, '教室密碼'));
+  const unlocked = isUnlocked();
+  root.appendChild(h('p', { class: 'meta' },
+    unlocked
+      ? '這台載具目前**已解鎖**，課文點讀與朗讀挑戰可以直接打開。'.replace(/\*\*/g, '')
+      : '這台載具目前是鎖上的，要先輸入教室密碼才能打開課文。'));
+  const lockBtn = h('button', {
+    class: 'btn',
+    type: 'button',
+    ...(unlocked ? {} : { disabled: 'disabled' }),
+  }, unlocked ? '🔒 鎖上課文（下次要重新輸入密碼）' : '課文目前是鎖上的');
+  if (unlocked) {
+    lockBtn.addEventListener('click', () => {
+      lockReadings();
+      buildPanel(root);
+    });
+  }
+  root.appendChild(h('div', { class: 'quiz-option-row' }, [lockBtn]));
 
   // ---- 朗讀挑戰 ----
   const recited = reciteLessons();
@@ -260,6 +284,7 @@ function buildPanel(root) {
     clearMistakes();
     clearSentences();
     clearRecite();
+    lockReadings();
     buildPanel(root);
   });
   root.appendChild(h('div', { class: 'quiz-option-row', style: 'margin-top:24px' }, [clearBtn]));
