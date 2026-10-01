@@ -12,7 +12,8 @@
 // 「朗讀用字」是教師裁定的讀音覆寫（例如「一會兒」的「會」念 ㄏㄨㄟˇ，
 // 餵「毀」給語音合成才對），優先於語音引擎自己的判斷。
 import { h, clear } from '../utils/dom.js';
-import { speak, cancelSpeaking, speechSupported } from '../utils/speech.js';
+import { speak, cancelSpeaking, speechSupported, RATE_PRESETS, getRate, setRate } from '../utils/speech.js';
+import { READER_FONT_SCALES, getReaderFontKey, getReaderFontScale, setReaderFont } from '../utils/deviceSettings.js';
 import {
   cryptoAvailable,
   getReading,
@@ -21,6 +22,7 @@ import {
 } from '../utils/classroomKey.js';
 import { volumeLabel } from '../utils/volumeLabel.js';
 import { ZhuyinText } from '../components/ZhuyinText.js';
+import { segmentWords } from '../utils/readingUnits.js';
 
 // 句子的切點。點讀的「句」用標點切，和學生讀出來的停頓一致。
 const SENTENCE_END = /[，。？！；：]/;
@@ -29,10 +31,13 @@ const TRAILING = /[，。、；：？！」』）…─—]/;
 const LEADING = /[「『（]/;
 
 const MODES = [
-  { key: 'char', label: '讀字', hint: '點一個字，念那個字。' },
-  { key: 'word', label: '讀詞', hint: '點一個字，念整個語詞。' },
-  { key: 'sent', label: '讀句', hint: '點一個字，念整句話。' },
+  { key: 'char', label: '讀字' },
+  { key: 'word', label: '讀詞' },
+  { key: 'sent', label: '讀句' },
 ];
+
+// CF 指定的副標題：一句話講完怎麼用，不隨模式換來換去（換字會分散注意力）。
+const READER_HINT = '讀字、讀詞或讀句，點一點讀讀看。';
 
 /**
  * @param {object} lesson 課次物件（含 lesson_id、lesson_no、title、volume）
@@ -145,7 +150,11 @@ function renderReader(lesson, reading) {
   /** @type {Map<HTMLElement, {char:object, word:object, sent:object}>} */
   const ownerOf = new Map();
 
-  const textBox = h('div', { class: 'lesson-text', lang: 'zh-TW' });
+  const textBox = h('div', {
+    class: 'lesson-text',
+    lang: 'zh-TW',
+    style: `--reader-font-scale:${getReaderFontScale()}`,
+  });
 
   function clearHighlight() {
     highlighted.forEach((el) => el.classList.remove('lesson-text__ch--reading'));
@@ -183,10 +192,14 @@ function renderReader(lesson, reading) {
       let group = null;
       let pendingOpen = null;
 
+      // 「讀詞」的詞界不能用資料裡的 `|`——那標的是短語甚至整段，點一個字會
+      // 念出一整句。改成整行建完之後用 Intl.Segmenter 依語境斷詞（見下方）。
+      // 這裡先把這一行的每個字和它的元素收起來。
+      const lineChars = [];
+
       line.forEach((token) => {
         const [text, zhuyinText, say] = token;
         const zhuyins = zhuyinText ? zhuyinText.split(' ') : [];
-        const word = { els: [], text, say: say || text };
 
         [...text].forEach((ch, i) => {
           const zhuyin = zhuyins[i] || '';
@@ -202,11 +215,10 @@ function renderReader(lesson, reading) {
             const charSay = say && [...say].length === [...text].length ? [...say][i] : ch;
             const charUnit = { els: [el], text: ch, say: charSay };
             units.char.push(charUnit);
-            word.els.push(el);
             sent.els.push(el);
             sent.text += ch;
             sent.say += charSay;
-            ownerOf.set(el, { char: charUnit, word, sent });
+            lineChars.push({ el, ch, say: charSay, charUnit, sent });
             el.addEventListener('click', () => onCharClick(el));
             el.addEventListener('keydown', (e) => {
               if (e.key === 'Enter' || e.key === ' ') {
@@ -218,6 +230,7 @@ function renderReader(lesson, reading) {
             // 標點也要進句子的文字，念出來的停頓才對。
             sent.text += ch;
             sent.say += ch;
+            lineChars.push({ el: null, ch, say: ch, charUnit: null, sent });
           }
 
           // 排版：標點黏前字、上引號黏後字。
@@ -239,8 +252,25 @@ function renderReader(lesson, reading) {
           }
         });
 
-        if (word.els.length) units.word.push(word);
       });
+
+      // 整行建完才斷詞：Intl.Segmenter 要有上下文才判得準
+      //（「一會兒 / 打雷」而不是「一 / 會 / 兒 / 打雷」）。
+      const lineText = lineChars.map((c) => c.ch).join('');
+      for (const range of segmentWords(lineText)) {
+        const slice = lineChars.slice(range.start, range.end).filter((c) => c.el);
+        if (!slice.length) continue;
+        const word = {
+          els: slice.map((c) => c.el),
+          text: slice.map((c) => c.ch).join(''),
+          say: slice.map((c) => c.say).join(''),
+        };
+        units.word.push(word);
+        // 每個字記住自己屬於哪一個詞，點下去才知道要念哪一段
+        slice.forEach((c) => {
+          ownerOf.set(c.el, { char: c.charUnit, word, sent: c.sent });
+        });
+      }
 
       if (pendingOpen) lineEl.appendChild(pendingOpen);
       paraEl.appendChild(lineEl);
@@ -251,8 +281,7 @@ function renderReader(lesson, reading) {
   });
 
   // ── 工具列 ──────────────────────────────────────
-  const hint = h('p', { class: 'lesson-hint', role: 'status', 'aria-live': 'polite' },
-    MODES.find((m) => m.key === mode).hint);
+  const hint = h('p', { class: 'lesson-hint' }, READER_HINT);
 
   const modeGroup = h('div', { class: 'seg lesson-toolbar__modes', role: 'group', 'aria-label': '點讀範圍' });
   MODES.forEach((m) => {
@@ -273,7 +302,6 @@ function renderReader(lesson, reading) {
         other.classList.toggle('seg__btn--on', on);
         other.setAttribute('aria-pressed', on ? 'true' : 'false');
       });
-      hint.textContent = m.hint;
     });
     modeGroup.appendChild(btn);
   });
@@ -291,6 +319,48 @@ function renderReader(lesson, reading) {
     zhuyinToggle.textContent = showZhuyin ? '注音：顯示' : '注音：隱藏';
     zhuyinToggle.setAttribute('aria-pressed', showZhuyin ? 'true' : 'false');
     zhuyinToggle.classList.toggle('toggle--on', showZhuyin);
+  });
+
+  // 共用的分段切換小工廠：字級、語速都用同一套語彙，畫面才一致。
+  function segGroup(label, options, currentKey, onPick) {
+    const group = h('div', { class: 'seg', role: 'group', 'aria-label': label });
+    options.forEach((option) => {
+      const on = option.key === currentKey;
+      const btn = h('button', {
+        class: `seg__btn${on ? ' seg__btn--on' : ''}`,
+        type: 'button',
+        'aria-pressed': String(on),
+      }, option.label);
+      btn.addEventListener('click', () => {
+        [...group.children].forEach((other) => {
+          const isThis = other === btn;
+          other.classList.toggle('seg__btn--on', isThis);
+          other.setAttribute('aria-pressed', String(isThis));
+        });
+        onPick(option);
+      });
+      group.appendChild(btn);
+    });
+    return group;
+  }
+
+  // 字級：學生的視力、閱讀距離、要不要投影差很多，現場直接調。
+  const fontGroup = segGroup('字體大小', READER_FONT_SCALES, getReaderFontKey(), (option) => {
+    setReaderFont(option.key);
+    textBox.style.setProperty('--reader-font-scale', String(option.scale));
+  });
+
+  // 語速：跟著全站的語音設定走（同一個 localStorage），在這裡調了別頁也生效。
+  const RATES = [
+    { key: 'slow', label: '慢', rate: RATE_PRESETS.slow },
+    { key: 'normal', label: '普通', rate: RATE_PRESETS.normal },
+    { key: 'fast', label: '快', rate: RATE_PRESETS.fast },
+  ];
+  const currentRate = getRate();
+  const rateKey = (RATES.find((r) => Math.abs(r.rate - currentRate) < 0.01) || RATES[1]).key;
+  const rateGroup = segGroup('朗讀速度', RATES, rateKey, (option) => {
+    setRate(option.rate);
+    speak('速度像這樣');          // 立刻聽到差別，不必自己想像
   });
 
   const readAll = h('button', { class: 'btn btn--primary lesson-toolbar__spacer', type: 'button' }, '念全文');
@@ -327,8 +397,14 @@ function renderReader(lesson, reading) {
   const card = h('div', { class: 'card' }, [
     h('div', { class: 'lesson-toolbar' }, [
       modeGroup,
-      zhuyinToggle,
       speechSupported() ? readAll : null,
+    ].filter(Boolean)),
+    h('div', { class: 'lesson-toolbar lesson-toolbar--secondary' }, [
+      h('span', { class: 'lesson-toolbar__label' }, '字體'),
+      fontGroup,
+      speechSupported() ? h('span', { class: 'lesson-toolbar__label' }, '語速') : null,
+      speechSupported() ? rateGroup : null,
+      zhuyinToggle,
     ].filter(Boolean)),
     hint,
     h('h1', { class: 'lesson-title' }, `第 ${lesson.lesson_no} 課　${lesson.title}`),

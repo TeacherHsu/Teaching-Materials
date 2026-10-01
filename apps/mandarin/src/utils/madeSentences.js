@@ -95,10 +95,12 @@ export function missingKeywords(raw, pattern) {
  * 其餘一律放行，交給教師批改。
  * @returns {{ok: boolean, reason: string, text: string}}
  */
-export function checkSentence(raw) {
+export function checkSentence(raw, prefilled = '') {
   const text = String(raw || '').trim().replace(/\s+/g, '');
   if (!text) return { ok: false, reason: '還沒有寫喔，試著寫一句話。', text };
-  const han = (text.match(/[\u3400-\u9fff]/g) || []).length;
+  // 預填的字不算學生寫的，否則他什麼都沒打、光靠預填就能送出。
+  const own = text.startsWith(prefilled) ? text.slice(prefilled.length) : text;
+  const han = (own.match(/[\u3400-\u9fff]/g) || []).length;
   if (han < 4) return { ok: false, reason: '再多寫一點，讓句子完整。', text };
   // 句號沒打不算錯，幫他補上
   const ended = /[。！？]$/.test(text) ? text : `${text}。`;

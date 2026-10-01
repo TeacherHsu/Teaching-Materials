@@ -117,3 +117,40 @@ export function groupByParagraph(sentences) {
   }
   return out;
 }
+
+/**
+ * 依語境斷詞。
+ *
+ * 課文資料裡的 `|` 標的**不是詞**：低年級課文標的是短語（「害怕的時候」），
+ * 長課文標的甚至是整段。所以「讀詞」模式不能用 `|` 當詞界，否則點一個字會
+ * 念出一整句——這正是 CF 回報的問題。
+ *
+ * 改用瀏覽器內建的 Intl.Segmenter（zh-TW、granularity: 'word'），那是有
+ * 語境判斷的中文斷詞。不支援的瀏覽器安全降級成**單字**，寧可切太細也不要
+ * 把整句誤當成一詞。
+ *
+ * @param {string} text
+ * @returns {Array<{start:number, end:number, text:string}>} end 為 exclusive
+ */
+export function segmentWords(text) {
+  const source = String(text || '');
+  if (!source) return [];
+
+  const Segmenter = typeof Intl !== 'undefined' ? Intl.Segmenter : null;
+  if (typeof Segmenter !== 'function') {
+    // 降級：一個字一個單位
+    return [...source].map((ch, i) => ({ start: i, end: i + 1, text: ch }));
+  }
+
+  const segmenter = new Segmenter('zh-TW', { granularity: 'word' });
+  const out = [];
+  for (const piece of segmenter.segment(source)) {
+    if (!piece.segment.trim()) continue;
+    out.push({
+      start: piece.index,
+      end: piece.index + piece.segment.length,
+      text: piece.segment,
+    });
+  }
+  return out;
+}

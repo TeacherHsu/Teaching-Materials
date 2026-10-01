@@ -17,6 +17,10 @@ const KEY = 'mandarin:device-settings:v1';
  *     要先聽到題目才讀得下去，不該每題都得自己按喇叭。
  * - reciteUnit：朗讀挑戰一次念多少。'sentence' 一句、'paragraph' 一整段。
  *     挑戰層才念整段——連續語流比單句難得多。
+ * - prefill：造句時預先幫他填好句型的前幾個必用字，游標停在最後。
+ *     支持層填 1 個。我們的造句是一個輸入框的自由書寫，在句子**中間**
+ *     插字對手部控制不佳或不熟輸入法的學生很痛苦；預填開頭等於給一個
+ *     「起頭」，他只要往後寫。
  * - reciteModel：朗讀前可不可以先聽範讀。支持與標準層開，挑戰層關
  *     （挑戰層要的是自己讀出來，不是跟著念）。
  */
@@ -30,6 +34,7 @@ export const SCAFFOLD_LEVELS = {
     autoRead: true,
     reciteUnit: 'sentence',
     reciteModel: true,
+    prefill: 1,
     note: '選項少、題數少；答錯一次就直接告訴他答案；題目會自動念出來；朗讀一次一句、可先聽範讀。',
   },
   standard: {
@@ -41,6 +46,7 @@ export const SCAFFOLD_LEVELS = {
     autoRead: false,
     reciteUnit: 'sentence',
     reciteModel: true,
+    prefill: 0,
     note: '一般難度。答錯先給提示，再錯才揭曉答案；朗讀一次一句、可先聽範讀。',
   },
   challenge: {
@@ -52,6 +58,7 @@ export const SCAFFOLD_LEVELS = {
     autoRead: false,
     reciteUnit: 'paragraph',
     reciteModel: false,
+    prefill: 0,
     note: '選項多。答錯先給提示，再錯才揭曉答案；朗讀一次一整段、沒有範讀。',
   },
 };
@@ -131,6 +138,31 @@ export function setOverride(name, value) {
   if (value === null) delete overrides[name];
   else overrides[name] = Boolean(value);
   return write({ ...state, overrides });
+}
+
+/**
+ * 課文點讀／朗讀的字級。學生的視力、閱讀距離、投影與否差很多，
+ * 讓現場可以直接調，不必改程式。數值是 --font-size 的倍率。
+ */
+export const READER_FONT_SCALES = [
+  { key: 'small', label: '小', scale: 0.85 },
+  { key: 'medium', label: '中', scale: 1 },
+  { key: 'large', label: '大', scale: 1.25 },
+  { key: 'xlarge', label: '特大', scale: 1.5 },
+];
+
+export function getReaderFontKey() {
+  const key = read().readerFont;
+  return READER_FONT_SCALES.some((f) => f.key === key) ? key : 'medium';
+}
+
+export function getReaderFontScale() {
+  return (READER_FONT_SCALES.find((f) => f.key === getReaderFontKey()) || READER_FONT_SCALES[1]).scale;
+}
+
+export function setReaderFont(key) {
+  if (!READER_FONT_SCALES.some((f) => f.key === key)) return false;
+  return write({ ...read(), readerFont: key });
 }
 
 /**

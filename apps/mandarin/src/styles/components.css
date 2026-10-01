@@ -2602,3 +2602,23 @@
   border-color: var(--color-primary);
 }
 @media (prefers-reduced-motion: reduce) { .toggle::before { transition: none; } }
+
+/* 課文字級可由現場調整（--reader-font-scale 由 ReaderPage 注入） */
+.lesson-text {
+  font-size: calc(clamp(26px, 2.6vw, 34px) * var(--reader-font-scale, 1));
+}
+/* 第二列工具（字體、語速、注音）比主工具列低一階 */
+.lesson-toolbar--secondary {
+  padding-bottom: 0;
+  margin-bottom: var(--space-3);
+  border-bottom: none;
+  font-size: var(--font-size-meta);
+}
+.lesson-toolbar--secondary .seg__btn {
+  padding-inline: var(--space-2);
+  font-size: var(--font-size-meta);
+}
+.lesson-toolbar__label {
+  color: var(--text-secondary);
+  font-size: var(--font-size-meta);
+}

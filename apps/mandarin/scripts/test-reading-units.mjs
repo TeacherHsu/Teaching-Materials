@@ -102,3 +102,24 @@ assert.deepEqual(splitSentences(poem).map((s) => s.text), ['風吹過山頭', '�
 
 console.log(`✅ 分句：${lessons} 課 ${sentences} 句，最長 ${longest} 字（上限 ${MAX_SENTENCE}）、`
   + '零掉字、注音與朗讀用字對位正確、併段一致');
+
+// ── 語境斷詞（讀詞模式）────────────────────────────
+// 資料裡的 `|` 標的不是詞（低年級標短語、長課文標整段），所以讀詞不能用它。
+const { segmentWords } = await import('../src/utils/readingUnits.js');
+const seg = (t) => segmentWords(t).map((w) => w.text);
+assert.deepEqual(seg('害怕的時候，'), ['害怕', '的', '時候', '，'], '要依語境斷詞，不是整句一個單位');
+assert.deepEqual(seg('一會兒打雷，'), ['一會兒', '打雷', '，'], '「一會兒」要當成一個詞');
+assert.deepEqual(seg(''), []);
+// 範圍要能還原原文、不重疊不遺漏
+for (const text of ['心裡颳起冷冷的風，', '回外公家度假時，阿姨帶著我們一家人散步。']) {
+  const ranges = segmentWords(text);
+  let at = 0;
+  for (const r of ranges) {
+    assert.ok(r.start >= at, `斷詞範圍不可重疊：${text}`);
+    assert.equal(text.slice(r.start, r.end), r.text, '範圍要對得上原文');
+    at = r.end;
+  }
+  // 去掉空白後要能完整還原
+  assert.equal(ranges.map((r) => r.text).join(''), text.replace(/\s/g, ''), `斷詞不可掉字：${text}`);
+}
+console.log('✅ 語境斷詞：依語意切詞、範圍不重疊、不掉字');
