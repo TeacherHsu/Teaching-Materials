@@ -7,6 +7,7 @@
 //
 // 答錯的題目會自動進錯題盒（ChoiceQuiz 已經接好），考完可以直接去複習。
 import { h, clear } from '../utils/dom.js';
+import { uiIconMarkup } from '../components/icons.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 import { TaskBanner } from '../components/TaskBanner.js';
@@ -47,7 +48,7 @@ export function QuizPage(lesson) {
     if (!moduleKeys.length) {
       body.appendChild(
         h('div', { class: 'card card--centered' }, [
-          h('p', { class: 'outcome__icon', 'aria-hidden': 'true' }, '📝'),
+          h('p', { class: 'outcome__icon', 'aria-hidden': 'true', html: uiIconMarkup('quiz') }),
           h('h1', { class: 'outcome__title' }, '這一課還不能小考'),
           h('p', { class: 'outcome__note' }, '要先有可以考的練習題，教材審核完成後就會開放。'),
           h('a', { class: 'btn btn--primary', href: backHref }, '回到本課'),
@@ -63,7 +64,7 @@ export function QuizPage(lesson) {
 
     body.appendChild(
       h('div', { class: 'card card--centered' }, [
-        h('p', { class: 'outcome__icon', 'aria-hidden': 'true' }, '📝'),
+        h('p', { class: 'outcome__icon', 'aria-hidden': 'true', html: uiIconMarkup('quiz') }),
         h('div', { class: 'quiz-option-row' }, [
           h('h1', { class: 'outcome__title' }, `第 ${lesson.lesson_no} 課 單課小考`),
           SpeakButton({ text: intro, label: '聽', variant: 'speak-button--option' }),
@@ -158,7 +159,7 @@ export function QuizPage(lesson) {
 
     body.appendChild(
       h('div', { class: 'card card--centered' }, [
-        h('p', { class: 'outcome__icon', 'aria-hidden': 'true' }, score >= 90 ? '🏆' : score >= 60 ? '👍' : '💪'),
+        h('p', { class: 'outcome__icon', 'aria-hidden': 'true', html: uiIconMarkup(score >= 60 ? 'award' : 'target') }),
         h('div', { class: 'quiz-option-row' }, [
           h('p', { class: 'outcome__score' }, `${score} 分`),
           SpeakButton({ text: headline, label: '聽', variant: 'speak-button--option' }),
@@ -180,7 +181,7 @@ export function quizEntry(lesson) {
   const bank = collectQuizBank(lesson);
   if (!Object.keys(bank).length) return null;
   return h('a', { class: 'entry-card entry-card--wide entry-card--dashed entry-card--quiz', href: `#/lesson/${lesson.lesson_id}/quiz` }, [
-    h('span', { class: 'entry-card__icon', 'aria-hidden': 'true' }, '📝'),
+    h('span', { class: 'entry-card__icon', 'aria-hidden': 'true', html: uiIconMarkup('quiz') }),
     h('span', { class: 'entry-card__body' }, [
       h('span', { class: 'entry-card__title' }, '單課小考'),
       h('span', { class: 'entry-card__desc' }, '各站的題目混在一起考，沒有提示。'),

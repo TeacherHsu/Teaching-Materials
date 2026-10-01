@@ -2,7 +2,7 @@ import { h } from '../utils/dom.js';
 import { MODULE_REGISTRY, getModuleStatus, moduleColorVars } from '../activities/moduleRegistry.js';
 import { buildExtensionLinks } from '../components/ExtensionLinks.js';
 import { SpeakButton } from '../components/SpeakButton.js';
-import { moduleIconMarkup, STATUS_ICONS } from '../components/icons.js';
+import { moduleIconMarkup, STATUS_ICONS, uiIconMarkup } from '../components/icons.js';
 import { getModuleStars, getLessonStars } from '../utils/storage.js';
 import { starsMarkup } from '../utils/scoring.js';
 import { volumeLabel } from '../utils/volumeLabel.js';
@@ -182,7 +182,7 @@ export function LessonDashboard(lesson) {
       const summary = reciteSummary(lesson.lesson_id);
       reciteSlot.appendChild(
         h('a', { class: 'entry-card entry-card--recite', href: `#/lesson/${lesson.lesson_id}/recite` }, [
-          h('span', { class: 'entry-card__icon', 'aria-hidden': 'true' }, isUnlocked() ? '🎤' : '🔒'),
+          h('span', { class: 'entry-card__icon', 'aria-hidden': 'true', html: isUnlocked() ? uiIconMarkup('mic') : STATUS_ICONS.lock }),
           h('span', { class: 'entry-card__body' }, [
             h('span', { class: 'entry-card__title' }, '朗讀挑戰'),
             h('span', { class: 'entry-card__desc' },
@@ -264,7 +264,7 @@ function readerEntry(lesson) {
       const unlocked = isUnlocked();
       slot.appendChild(
         h('a', { class: 'entry-card entry-card--wide entry-card--reader', href: `#/lesson/${lesson.lesson_id}/reader` }, [
-          h('span', { class: 'entry-card__icon', 'aria-hidden': 'true' }, unlocked ? '📖' : '🔒'),
+          h('span', { class: 'entry-card__icon', 'aria-hidden': 'true', html: unlocked ? uiIconMarkup('book') : STATUS_ICONS.lock }),
           h('span', { class: 'entry-card__body' }, [
             h('span', { class: 'entry-card__title' }, '課文點讀'),
             h(

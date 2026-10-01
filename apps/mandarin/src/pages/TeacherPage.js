@@ -143,7 +143,7 @@ function buildPanel(root) {
     class: 'btn',
     type: 'button',
     ...(unlocked ? {} : { disabled: 'disabled' }),
-  }, unlocked ? '🔒 鎖上課文（下次要重新輸入密碼）' : '課文目前是鎖上的');
+  }, unlocked ? '鎖上課文（下次要重新輸入密碼）' : '課文目前是鎖上的');
   if (unlocked) {
     lockBtn.addEventListener('click', () => {
       lockReadings();

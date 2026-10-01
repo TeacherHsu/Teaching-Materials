@@ -12,6 +12,7 @@
 // 「朗讀用字」是教師裁定的讀音覆寫（例如「一會兒」的「會」念 ㄏㄨㄟˇ，
 // 餵「毀」給語音合成才對），優先於語音引擎自己的判斷。
 import { h, clear } from '../utils/dom.js';
+import { STATUS_ICONS } from '../components/icons.js';
 import { speak, cancelSpeaking, speechSupported, RATE_PRESETS, getRate, setRate } from '../utils/speech.js';
 import { READER_FONT_SCALES, getReaderFontKey, getReaderFontScale, setReaderFont } from '../utils/deviceSettings.js';
 import {
@@ -128,7 +129,7 @@ function renderGate(lesson, onUnlocked) {
   setTimeout(() => input.focus(), 50);
 
   return h('div', { class: 'card card--centered' }, [
-    h('p', { class: 'gate__icon', 'aria-hidden': 'true' }, '🔒'),
+    h('p', { class: 'gate__icon', 'aria-hidden': 'true', html: STATUS_ICONS.lock }),
     h('h1', { class: 'gate__title' }, '請輸入教室密碼'),
     h('p', { class: 'gate__note' }, '課文只給班上同學使用。輸入一次之後，這台載具會記住。'),
     input,

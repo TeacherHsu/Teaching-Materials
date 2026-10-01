@@ -10,6 +10,7 @@
 //   · 「還沒用到的字」只是**提示**，永遠可以直接送出。用不可靠的規則擋住
 //     學生，比不檢查更糟（句型敘述的寫法並不一致，見 utils/madeSentences.js）。
 import { h, clear } from '../utils/dom.js';
+import { uiIconMarkup } from './icons.js';
 import { SpeakButton } from './SpeakButton.js';
 import { checkSentence, missingKeywords, saveSentence } from '../utils/madeSentences.js';
 
@@ -72,7 +73,7 @@ export function SentenceWriter({ lessonId, pattern, previous = '', onDone, onBac
 
   // ── 語音輸入 ────────────────────────────────────
   let recognition = null;
-  const micBtn = h('button', { class: 'btn writer__mic', type: 'button' }, '🎤 用說的');
+  const micBtn = h('button', { class: 'btn writer__mic', type: 'button' }, '用說的');
   if (recognitionSupported()) {
     micBtn.addEventListener('click', () => {
       if (recognition) {
@@ -84,7 +85,7 @@ export function SentenceWriter({ lessonId, pattern, previous = '', onDone, onBac
       recognition.lang = 'zh-TW';
       recognition.interimResults = false;
       recognition.maxAlternatives = 1;
-      micBtn.textContent = '🔴 正在聽…（再按一次停止）';
+      micBtn.textContent = '正在聽…（再按一次停止）';
       micBtn.classList.add('writer__mic--on');
       recognition.onresult = (event) => {
         const said = event.results?.[0]?.[0]?.transcript || '';
@@ -97,7 +98,7 @@ export function SentenceWriter({ lessonId, pattern, previous = '', onDone, onBac
       };
       recognition.onend = () => {
         recognition = null;
-        micBtn.textContent = '🎤 用說的';
+        micBtn.textContent = '用說的';
         micBtn.classList.remove('writer__mic--on');
       };
       try {
@@ -146,7 +147,7 @@ export function SentenceWriter({ lessonId, pattern, previous = '', onDone, onBac
     const done = `寫好了！你的句子是：${result.text}　老師看過之後會告訴你。`;
     root.appendChild(
       h('div', { class: 'writer__done' }, [
-        h('p', { class: 'outcome__icon', 'aria-hidden': 'true' }, '📨'),
+        h('p', { class: 'outcome__icon', 'aria-hidden': 'true', html: uiIconMarkup('sent') }),
         h('div', { class: 'quiz-option-row' }, [
           h('h2', { class: 'outcome__title' }, '交出去了！'),
           SpeakButton({ text: done, label: '聽', variant: 'speak-button--option' }),

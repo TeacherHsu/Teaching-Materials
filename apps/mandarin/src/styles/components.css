@@ -142,17 +142,8 @@
   overflow: hidden;
 }
 
-.lesson-hero::before {
-  content: '';
-  position: absolute;
-  top: -40px;
-  right: -40px;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(58, 110, 165, 0.08), transparent 70%);
-  pointer-events: none;
-}
+/* 原本這裡是一個放射狀暈染的裝飾圓。拿掉漸層之後它變成一塊突兀的灰圓，
+   而且本來就沒有傳達任何資訊——直接移除，層次由頂部色條與陰影負責。 */
 
 .lesson-hero__text {
   flex: 1;
@@ -314,7 +305,7 @@
 
 /* ---- 課本封面卡（首頁的年級／課本入口）---- */
 .nav-card--cover {
-  background: linear-gradient(155deg, var(--module-color-tint, var(--color-surface)) 0%, var(--color-surface) 65%);
+  background: var(--color-surface);
   border-top: 6px solid var(--module-color, var(--color-primary));
 }
 
@@ -1358,7 +1349,7 @@
 .idiom-builder__card .image-frame {
   aspect-ratio: 1 / 1;
   padding: var(--space-1);
-  background: linear-gradient(145deg, var(--module-color-tint, var(--color-surface-muted)), var(--color-surface));
+  background: var(--module-color-tint, var(--color-surface-muted));
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-card);
   overflow: hidden;
@@ -2633,18 +2624,15 @@
 
 /* 課次 hero：加一層很淡的主色暈染，讓頁面頂端不是一片白 */
 .lesson-hero {
-  background:
-    radial-gradient(120% 140% at 100% 0%, var(--module-blue-tint) 0%, transparent 60%),
-    var(--color-surface);
+  background: var(--color-surface);
 }
 
 /* 大項卡片：hover 時整張帶一點該大項的顏色，讓「這一站是什麼顏色」被記住 */
 .module-card { transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease; }
 .module-card:hover,
 .module-card:focus-within {
-  background:
-    linear-gradient(0deg, var(--module-color-tint) 0%, transparent 70%),
-    var(--color-surface);
+  background: var(--color-surface);
+  border-color: var(--module-color, var(--color-border));
 }
 @media (prefers-reduced-motion: reduce) { .module-card { transition: none; } }
 
@@ -2652,9 +2640,7 @@
    （課文點讀＝藍、錯題複習＝陶土、朗讀挑戰＝teal、小考＝紫） */
 .entry-card { --entry-tint: var(--color-surface-muted); --entry-line: var(--color-border); }
 .entry-card {
-  background:
-    linear-gradient(0deg, var(--entry-tint) 0%, transparent 72%),
-    var(--color-surface);
+  background: var(--entry-tint);
   border-inline-start: 5px solid var(--entry-line);
 }
 .entry-card--reader { --entry-tint: var(--module-blue-tint); --entry-line: var(--module-blue); }
@@ -2776,4 +2762,98 @@
 @media (prefers-reduced-motion: reduce) {
   .walkthrough__item { transition: none; }
   .walkthrough__item:hover { transform: none; }
+}
+
+/* ════════════════════════════════════════════════════════
+   視覺風格第二輪（2026-10-02，依 Codex 設計檢視）
+   定調：「暖紙本 × 任務遊戲板」——保留米色紙感與課本的親切，
+   但用清楚的模組色條、統一線性圖示、卡片節奏與互動回饋，
+   讓學生覺得是在選關卡，而不是看傳統教材頁。
+
+   三個硬決定：
+   1. 全站**不用漸層**。層次改由「純色淡底 + 頂部色條 + 陰影 + 邊框」建立。
+      漸層只保留給慶祝這類一次性回饋（目前沒有用到）。
+   2. 介面圖示全部改自繪線性 SVG，不用 emoji——emoji 在不同平台長得不一樣，
+      和自繪的大項圖示放在一起會像拼貼，細節與顏色也是視覺干擾。
+   3. 動效一律 160ms ease-out、只做位移與陰影，reduced-motion 時只留顏色變化。
+   ════════════════════════════════════════════════════════ */
+
+/* 圖示容器：所有入口與結算共用，讓圖示有「貼紙」的實體感 */
+.entry-card__icon,
+.outcome__icon,
+.gate__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-6);
+  height: var(--space-6);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--entry-line, var(--color-primary));
+  box-shadow: none;
+  flex: none;
+}
+.outcome__icon,
+.gate__icon {
+  margin: 0 auto var(--space-2);
+  width: calc(var(--space-6) + var(--space-2));
+  height: calc(var(--space-6) + var(--space-2));
+  border-radius: var(--radius-lg);
+}
+.entry-card__icon svg,
+.outcome__icon svg,
+.gate__icon svg { width: 28px; height: 28px; }
+
+/* 入口卡：左側色條改成頂部色條，和大項卡片同一個語彙 */
+.entry-card {
+  border-inline-start: 1px solid var(--color-border);
+  border-top: 6px solid var(--entry-line);
+  transition: transform 160ms ease-out, box-shadow 160ms ease-out, border-color 160ms ease-out;
+}
+.entry-card--locked { opacity: 0.72; }
+
+/* 焦點環：全站統一，offset 拉大才看得清楚 */
+.entry-card:focus-visible,
+.module-card:focus-within,
+.vsearch__cell:focus-visible,
+.recite-picker__item:focus-visible,
+.walkthrough__item:focus-visible,
+.seg__btn:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* 標題下方的短色塊：取代漸層當視覺重點 */
+.lesson-hero__eyebrow { position: relative; padding-bottom: var(--space-2); }
+.lesson-hero__eyebrow::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: 0;
+  width: 72px;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+}
+
+/* 朗讀按鈕收進卡片：避免「喇叭漂在卡片外」的關係不明 */
+.speak-button {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+.speak-button:hover { background: var(--color-surface-muted); }
+
+/* 動效統一 160ms ease-out */
+.module-card,
+.nav-card,
+.btn { transition: transform 160ms ease-out, box-shadow 160ms ease-out, background 160ms ease-out, border-color 160ms ease-out; }
+
+@media (prefers-reduced-motion: reduce) {
+  .entry-card,
+  .module-card,
+  .nav-card,
+  .btn { transition: background 160ms ease-out, border-color 160ms ease-out; }
 }

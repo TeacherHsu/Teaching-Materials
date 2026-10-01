@@ -14,6 +14,7 @@
 // 流暢度**不給百分制分數**，只和自己的上一次比——給分數會讓學生把「念快」
 // 當目標，對口吃、構音異常、閱讀困難的學生是有害的誘因。
 import { h, clear } from '../utils/dom.js';
+import { STATUS_ICONS } from '../components/icons.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { ZhuyinText } from '../components/ZhuyinText.js';
@@ -120,7 +121,7 @@ function gate(onUnlocked) {
   input.addEventListener('keydown', (e) => { if (e.key === 'Enter') tryUnlock(); });
   setTimeout(() => input.focus(), 50);
   return h('div', { class: 'card card--centered' }, [
-    h('p', { class: 'gate__icon', 'aria-hidden': 'true' }, '🔒'),
+    h('p', { class: 'gate__icon', 'aria-hidden': 'true', html: STATUS_ICONS.lock }),
     h('h1', { class: 'gate__title' }, '請輸入教室密碼'),
     h('p', { class: 'gate__note' }, '課文只給班上同學使用。輸入一次之後，這台載具會記住。'),
     input, message, submit,
@@ -244,7 +245,7 @@ function renderChallenge(lesson, reading, backHref) {
 
     const status = h('p', { class: 'recite__status', role: 'status', 'aria-live': 'polite' }, '');
     const result = h('div', {});
-    const micBtn = h('button', { class: 'btn btn--primary recite__mic', type: 'button' }, '🎤 開始念');
+    const micBtn = h('button', { class: 'btn btn--primary recite__mic', type: 'button' }, '開始念');
 
     micBtn.addEventListener('click', () => {
       if (recognition) { stopRecognition(); return; }
@@ -257,7 +258,7 @@ function renderChallenge(lesson, reading, backHref) {
       recognition.interimResults = false;
       recognition.maxAlternatives = 1;
       startedAt = Date.now();
-      micBtn.textContent = '🔴 正在聽……（再按一次結束）';
+      micBtn.textContent = '正在聽……（再按一次結束）';
       micBtn.classList.add('recite__mic--on');
       status.textContent = '慢慢念，念完再按一次。';
       recognition.onresult = (event) => {
@@ -269,7 +270,7 @@ function renderChallenge(lesson, reading, backHref) {
       };
       recognition.onend = () => {
         recognition = null;
-        micBtn.textContent = '🎤 再念一次';
+        micBtn.textContent = '再念一次';
         micBtn.classList.remove('recite__mic--on');
       };
       try { recognition.start(); } catch {

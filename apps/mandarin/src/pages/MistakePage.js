@@ -6,6 +6,7 @@
 // 一次只出一批（不超過一輪題數 + 2 題）：一次面對一整牆錯題會讓學生放棄，
 // 這和站上「一個畫面只放一個任務」的底線是同一個理由。
 import { h, clear } from '../utils/dom.js';
+import { uiIconMarkup } from '../components/icons.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { SpeakButton } from '../components/SpeakButton.js';
@@ -127,7 +128,7 @@ function summary({ learned, moreDue, lessonId, backHref, backLabel, onNext }) {
   actions.push(h('a', { class: moreDue ? 'btn' : 'btn btn--primary', href: backHref }, backLabel));
 
   return h('div', { class: 'card card--centered' }, [
-    h('p', { class: 'outcome__icon', 'aria-hidden': 'true' }, learned ? '🏅' : '🎉'),
+    h('p', { class: 'outcome__icon', 'aria-hidden': 'true', html: uiIconMarkup(learned ? 'award' : 'check') }),
     h('div', { class: 'quiz-option-row' }, [
       h('h1', { class: 'outcome__title' }, title),
       SpeakButton({ text: `${title}。${note}`, label: '聽', variant: 'speak-button--option' }),
@@ -189,7 +190,7 @@ function emptyState(lessonId, backHref, backLabel) {
     : '做練習時第一次沒答對的題目，會自動收到這裡。';
 
   return h('div', { class: 'card card--centered' }, [
-    h('p', { class: 'outcome__icon', 'aria-hidden': 'true' }, done ? '🎉' : '📥'),
+    h('p', { class: 'outcome__icon', 'aria-hidden': 'true', html: uiIconMarkup(done ? 'check' : 'inbox') }),
     h('div', { class: 'quiz-option-row' }, [
       h('h1', { class: 'outcome__title' }, title),
       SpeakButton({ text: `${title} ${note}`, label: '聽', variant: 'speak-button--option' }),
@@ -204,7 +205,7 @@ export function mistakeEntry(lessonId, count) {
   if (!count) return null;
   const href = lessonId ? `#/mistakes/${lessonId}` : '#/mistakes';
   return h('a', { class: 'entry-card entry-card--accent entry-card--mistake', href }, [
-    h('span', { class: 'entry-card__icon', 'aria-hidden': 'true' }, '🔁'),
+    h('span', { class: 'entry-card__icon', 'aria-hidden': 'true', html: uiIconMarkup('redo') }),
     h('span', { class: 'entry-card__body' }, [
       h('span', { class: 'entry-card__title' }, '錯題複習'),
       h('span', { class: 'entry-card__desc' }, '把之前答錯的題目再做一次。'),

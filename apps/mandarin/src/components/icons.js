@@ -68,6 +68,39 @@ export const STATUS_ICONS = {
   star: wrap('<path d="M12 3.5l2.2 4.6l5 .7l-3.6 3.6l.9 5l-4.5-2.4l-4.5 2.4l.9-5l-3.6-3.6l5-.7Z"/>'),
 };
 
+// 介面圖示：取代 emoji。
+// 為什麼不用 emoji：每個平台的 emoji 長得不一樣（iPad 的 📖 和 Windows 的 📖
+// 是兩套畫風），和自繪的大項圖示放在一起會像拼貼。而且 emoji 的細節多、
+// 顏色雜，對視覺敏感的學生是干擾。這裡沿用同一套線條規格（2px 描邊、
+// viewBox 0 0 24 24、currentColor），全站才是同一個視覺系統。
+export const UI_ICONS = {
+  // 課文點讀：攤開的書
+  book: wrap('<path d="M12 6.5C10.5 5 8.5 4.5 4 4.5v13c4.5 0 6.5.5 8 2c1.5-1.5 3.5-2 8-2v-13c-4.5 0-6.5.5-8 2Z"/><path d="M12 6.5v13"/>'),
+  // 朗讀挑戰：麥克風
+  mic: wrap('<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0"/><path d="M12 18v3M9 21h6"/>'),
+  // 錯題複習：循環箭頭
+  redo: wrap('<path d="M3.5 12a8.5 8.5 0 0 1 14.5-6"/><path d="M18 3v3.5h-3.5"/><path d="M20.5 12a8.5 8.5 0 0 1-14.5 6"/><path d="M6 21v-3.5h3.5"/>'),
+  // 單課小考：紙筆
+  quiz: wrap('<path d="M5 3.5h9l5 5v12H5Z"/><path d="M14 3.5v5h5"/><path d="M8.5 13h7M8.5 16.5h4.5"/>'),
+  // 自己寫一句話：鉛筆
+  pencil: wrap('<path d="M4 20h4l10.5-10.5a2.5 2.5 0 0 0-3.5-3.5L4.5 16.5Z"/><path d="M14 7.5l2.5 2.5"/>'),
+  // 完成／看過了
+  check: wrap('<path d="M4.5 12.5l5 5l10-11"/>'),
+  // 送出之後
+  sent: wrap('<path d="M4 11.5L20 4l-6 16l-3-6.5Z"/><path d="M11 13.5L20 4"/>'),
+  // 慶祝（取代 🎉 🏅）
+  award: wrap('<circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5L7 21l5-2.5L17 21l-1.5-7.5"/>'),
+  // 字感訓練：目標
+  target: wrap('<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/>'),
+  // 空狀態：收件匣
+  inbox: wrap('<path d="M3.5 13.5V18a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-4.5"/><path d="M3.5 13.5L6 5h12l2.5 8.5h-5a3 3 0 0 1-5 0Z"/>'),
+};
+
+/** 取 UI 圖示的 SVG 字串；沒有這個 key 時回空字串（不要顯示錯的圖）。 */
+export function uiIconMarkup(key) {
+  return UI_ICONS[key] || '';
+}
+
 export function moduleIconMarkup(key) {
   return MODULE_ICONS[key] || STATUS_ICONS.star;
 }
