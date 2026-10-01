@@ -2944,3 +2944,22 @@
   font-weight: 700;
 }
 @media (prefers-reduced-motion: reduce) { .memory-card { transition: none; } }
+
+/* 翻牌正面的文字容器；卡片本身已經設好字級與對齊，這裡只負責換行 */
+.memory-card__text {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: var(--font-size-meta);
+  line-height: 1.5;
+}
+/* 逐張看過的卡片格線（沿用 .card-grid 的欄位設定，這裡只加語意 hook） */
+.walkthrough { margin-top: 0; }
+
+/* 自檢補漏（2026-10-02）：這兩個動畫原本沒有 reduced-motion 保護。
+   答對的慶祝與詞塊歸位都是「有意義的回饋」，所以不是整個拿掉，
+   而是改成不位移、不縮放，只留顏色變化——前庭敏感或暈動症的學生
+   也看得出「答對了」「這塊回去了」。 */
+@media (prefers-reduced-motion: reduce) {
+  .quiz-option--correct { animation: none; }
+  .sentence-chip--returning { animation: none; }
+}
