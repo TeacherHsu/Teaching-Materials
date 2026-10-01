@@ -146,9 +146,9 @@ export function SentenceWriter({ lessonId, pattern, previous = '', onDone, onBac
     const done = `寫好了！你的句子是：${result.text}　老師看過之後會告訴你。`;
     root.appendChild(
       h('div', { class: 'writer__done' }, [
-        h('p', { class: 'writer__done-icon', 'aria-hidden': 'true' }, '📨'),
+        h('p', { class: 'outcome__icon', 'aria-hidden': 'true' }, '📨'),
         h('div', { class: 'quiz-option-row' }, [
-          h('h2', { class: 'writer__done-title' }, '交出去了！'),
+          h('h2', { class: 'outcome__title' }, '交出去了！'),
           SpeakButton({ text: done, label: '聽', variant: 'speak-button--option' }),
         ]),
         h('p', { class: 'writer__done-text' }, result.text),

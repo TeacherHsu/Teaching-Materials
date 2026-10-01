@@ -2082,72 +2082,356 @@
   border: 0;
 }
 
-/* ── 課文點讀（ReaderPage）─────────────────────────
-   設計底線：正文 ≥22px、觸控 ≥44px、375px 不橫向捲動、尊重 reduced-motion。
-   字級用 clamp 讓低年級課文在 iPad 上更大，但手機寬度不爆版。        */
-.reader__bar {
+/* ════════════════════════════════════════════════════════
+   以下為 2026-10-01 新增的畫面（點讀、朗讀、錯題、小考、造句）。
+   一律使用 tokens.css 的刻度，不寫死數值——間距走 --space-*、
+   字級走 --font-size-*、圓角走 --radius-*、陰影走 --shadow-*。
+   ════════════════════════════════════════════════════════ */
+
+/* ── 卡片：全站共用的內容容器 ─────────────────────
+   先前 .card 被用了十幾處卻從未定義，等於沒有樣式。
+   這裡補上，語彙對齊既有的 .nav-card／.module-card。 */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-card);
+}
+
+/* 置中、窄欄的「單一訊息」卡片（密碼門、空狀態、結算）。
+   限制行長是刻意的：一行太寬會讓閱讀困難的學生跳行。 */
+.card--centered {
+  max-width: 34rem;
+  margin: var(--space-5) auto;
+  text-align: center;
+}
+
+/* ── 大型入口（課文點讀／錯題複習／朗讀挑戰／單課小考）──
+   四個入口共用同一套語彙，才會看起來是同一個系統。
+   差別只在強調程度：錯題複習有待辦才出現，所以用 accent 外框。 */
+.entry-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  position: relative;
+  padding: var(--space-4);
+  min-height: var(--tap-target-min);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.entry-card:hover,
+.entry-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-raised);
+}
+.entry-card:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+.entry-card:active { transform: translateY(0); }
+.entry-card--wide { flex-direction: row; align-items: center; gap: var(--space-3); }
+.entry-card--accent { border-color: var(--color-accent); }
+.entry-card--dashed { border-style: dashed; }
+.entry-card__icon { font-size: var(--font-size-section); line-height: 1; }
+.entry-card__body { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.entry-card__title { font-size: var(--font-size-button); font-weight: 700; }
+.entry-card__desc { font-size: var(--font-size-meta); color: var(--text-secondary); }
+.entry-card__note { font-size: var(--font-size-meta); color: var(--text-secondary); }
+.entry-card__arrow { flex: none; color: var(--text-secondary); }
+.entry-card__badge {
+  position: absolute;
+  top: var(--space-3);
+  inset-inline-end: var(--space-3);
+  min-width: var(--space-5);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: var(--text-on-primary);
+  font-size: var(--font-size-button);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.4;
+}
+@media (prefers-reduced-motion: reduce) {
+  .entry-card { transition: none; }
+  .entry-card:hover, .entry-card:focus-visible { transform: none; }
+}
+
+/* ── 課文：點讀與朗讀共用的字體排版 ─────────────── */
+.lesson-text {
+  font-size: clamp(26px, 2.6vw, 34px);
+  line-height: 2.5;                /* 容納字右側的注音，行距要夠 */
+  letter-spacing: 0.02em;
+}
+.lesson-text__para + .lesson-text__para { margin-top: var(--space-4); }
+.lesson-text__line { margin: 0; }
+.lesson-text__nowrap { white-space: nowrap; }
+.lesson-text--no-zhuyin .zhuyin__rt { display: none; }
+
+.lesson-text__ch {
+  display: inline-block;
+  border-radius: var(--radius-sm);
+  /* 觸控目標：字本身在 iPad 上就有 30–34px 寬，再靠 line-height 2.5 的行框
+     把垂直可點範圍撐到約 60px。這裡**刻意不**套 min-width:44px——行內文字
+     硬撐成 44px 會把字距拉開成「我 的 心 情」，課文就不像課文了，對閱讀
+     困難的學生反而更難讀。水平少幾 px 用「讀詞／讀句」模式補償。 */
+  padding: 0.26em 1px;
+  text-align: center;
+  transition: background-color 0.12s ease;
+}
+.lesson-text__ch--punct { padding-inline: 0; }
+.lesson-text__ch[role='button'] { cursor: pointer; }
+.lesson-text__ch[role='button']:hover { background: var(--color-surface-muted); }
+.lesson-text__ch:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+.lesson-text__ch--reading {
+  background: var(--module-blue-tint);
+  box-shadow: inset 0 -3px 0 var(--module-blue);
+}
+@media (prefers-reduced-motion: reduce) {
+  .lesson-text__ch { transition: none; }
+}
+
+/* 工具列：模式切換、注音開關、念全文 */
+.lesson-toolbar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
-  padding-bottom: 12px;
+  gap: var(--space-2);
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-3);
   border-bottom: 1px solid var(--color-border);
 }
-.reader__read-all { margin-inline-start: auto; }
-.reader__hint {
-  margin: 12px 0 0;
-  font-size: 1.125rem;
+.lesson-toolbar__spacer { margin-inline-start: auto; }
+.lesson-hint {
+  margin: 0 0 var(--space-3);
+  font-size: var(--font-size-meta);
   color: var(--text-secondary);
 }
-.reader__title {
-  margin: 16px 0 24px;
-  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+.lesson-title {
+  margin: 0 0 var(--space-4);
+  font-size: var(--font-size-section);
 }
-.reader__text {
-  font-size: clamp(1.5rem, 1.25rem + 1.2vw, 2.125rem);
-  line-height: 2.4;          /* 容納字右側的注音，行距要夠 */
-  letter-spacing: 0.02em;
-}
-.reader__para + .reader__para { margin-top: 1.5em; }
-.reader__line { margin: 0; }
-/* 詞與黏著標點不拆行 */
-.reader__nowrap { white-space: nowrap; }
 
-.reader__ch {
-  display: inline-block;
-  border-radius: 6px;
-  padding: 0 1px;
-  cursor: pointer;
-  transition: background-color 120ms ease;
-  /* 觸控目標：字本身在 iPad 上就有 30–34px 寬，再靠 line-height 2.4 的行框
-     把垂直可點範圍撐到約 60px。這裡**刻意不**套 min-width:44px——行內文字
-     硬撐成 44px 會把字距拉開成「我 的 心 情」，課文就不像課文了，對閱讀
-     困難的學生反而更難讀。水平方向少幾 px，用「讀詞／讀句」模式補償：
-     點歪到同一個詞裡的鄰字，念出來的仍然是同一個詞或同一句。 */
-  padding: 0.28em 1px;
+/* ── 教室密碼門 ────────────────────────────────── */
+.gate__icon { font-size: var(--font-size-page-title); margin: 0 0 var(--space-1); }
+.gate__title { margin: 0 0 var(--space-1); font-size: var(--font-size-section); }
+.gate__note {
+  color: var(--text-secondary);
+  line-height: var(--line-height-loose);
+  margin: 0 0 var(--space-3);
+}
+.gate__input {
+  width: 100%;
+  min-height: var(--tap-target-min);
+  font: inherit;
+  font-size: var(--font-size-body);
   text-align: center;
+  letter-spacing: 0.3em;
+  padding: var(--space-1) var(--space-2);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--text-primary);
 }
-.reader__ch--punct { cursor: default; }
-.reader__ch:hover { background: var(--color-surface-muted); }
-.reader__ch:focus-visible {
-  outline: 3px solid var(--color-accent);
-  outline-offset: 2px;
+.gate__input:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+.gate__message {
+  min-height: 1.6em;
+  margin: var(--space-2) 0;
+  color: var(--text-secondary);
 }
-/* 正在念的字／詞／句 */
-.reader__ch--reading {
-  background: var(--module-blue-tint, #dceafc);
-  box-shadow: inset 0 -3px 0 var(--module-blue, #2f6db0);
+.gate__input--shake { animation: gate-shake 360ms ease; }
+@keyframes gate-shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gate__input--shake { animation: none; border-color: var(--color-danger); }
 }
 
-/* 注音：台灣慣用的「字右側直排」。
+/* ── 空狀態／結算（錯題複習、小考、朗讀共用）────── */
+.outcome__icon { font-size: var(--font-size-page-title); margin: 0 0 var(--space-1); }
+.outcome__title { margin: 0 0 var(--space-1); font-size: var(--font-size-section); }
+.outcome__note {
+  color: var(--text-secondary);
+  line-height: var(--line-height-loose);
+  margin: 0 0 var(--space-3);
+}
+.outcome__score {
+  margin: 0;
+  font-size: var(--font-size-page-title);
+  font-weight: 700;
+  color: var(--color-primary);
+  font-variant-numeric: tabular-nums;
+}
+.outcome__summary { font-size: var(--font-size-body); margin: var(--space-1) 0 var(--space-3); }
+.outcome__table { width: 100%; margin: 0 0 var(--space-3); }
+.outcome__legend {
+  margin: 0 0 var(--space-3);
+  padding-inline-start: 1.3em;
+  color: var(--text-secondary);
+  font-size: var(--font-size-meta);
+  text-align: start;
+}
+
+/* ── 教師頁：個別調整與學生造的句子 ──────────────── */
+.teacher-override { margin: var(--space-2) 0; }
+.teacher-override__label {
+  margin: 0 0 var(--space-1);
+  font-size: var(--font-size-button);
+  font-weight: 700;
+}
+.teacher-sentence { margin: var(--space-2) 0; }
+.teacher-sentence__text {
+  font-size: var(--font-size-button);
+  line-height: var(--line-height-loose);
+  margin: var(--space-1) 0;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-md);
+}
+
+/* ── 自己寫一句話 ──────────────────────────────── */
+.writer__prompt { font-size: var(--font-size-button); font-weight: 700; margin: 0; }
+.writer__scaffold {
+  margin: var(--space-2) 0 var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-inline-start: 4px solid var(--color-accent);
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-sm);
+}
+.writer__desc { margin: 0 0 var(--space-1); font-size: var(--font-size-meta); }
+.writer__examples-label { margin: 0 0 var(--space-1); font-weight: 700; font-size: var(--font-size-meta); }
+.writer__examples { margin: 0; padding-inline-start: 1.3em; font-size: var(--font-size-meta); }
+.writer__examples li { margin-bottom: var(--space-1); }
+.writer__input {
+  width: 100%;
+  min-height: calc(var(--tap-target-min) * 2);
+  font: inherit;
+  font-size: var(--font-size-button);
+  line-height: var(--line-height-loose);
+  padding: var(--space-2);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--text-primary);
+}
+.writer__input:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+.writer__mic--on { background: var(--color-danger); color: var(--text-on-primary); }
+.writer__message { min-height: 1.6em; margin: var(--space-1) 0 0; color: var(--text-secondary); }
+.writer__hint {
+  margin: var(--space-1) 0 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-meta);
+  display: none;
+}
+.writer__hint--show { display: block; }
+.writer__actions { margin-top: var(--space-3); }
+.writer__done { text-align: center; padding: var(--space-3) 0; }
+.writer__done-text {
+  font-size: var(--font-size-body);
+  font-weight: 700;
+  margin: var(--space-1) 0;
+  padding: var(--space-2);
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-md);
+}
+.redo-previous { margin: var(--space-2) 0; }
+.redo-previous__text {
+  font-size: var(--font-size-meta);
+  line-height: var(--line-height-loose);
+  margin: var(--space-1) 0 0;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+}
+
+/* ── 朗讀挑戰 ──────────────────────────────────── */
+/* 評分結果的標示。顏色不是唯一線索：同音字加雙底線、漏字加刪除線，
+   結果區另有文字摘要，螢幕閱讀器也讀得到。 */
+.lesson-text__ch--homophone {
+  text-decoration: underline;
+  text-decoration-style: double;
+  text-decoration-color: var(--module-teal);
+  text-underline-offset: 0.15em;
+}
+.lesson-text__ch--wrong {
+  background: var(--module-rose-tint);
+  box-shadow: inset 0 -3px 0 var(--module-rose);
+}
+.lesson-text__ch--missed {
+  color: var(--text-secondary);
+  text-decoration: line-through;
+  text-decoration-color: var(--module-rose);
+  opacity: 0.7;
+}
+.recite__mic { min-height: calc(var(--tap-target-min) + 4px); font-size: var(--font-size-button); }
+.recite__mic--on { background: var(--module-rose); color: var(--text-on-primary); }
+.recite__status { min-height: 1.6em; margin: var(--space-1) 0; color: var(--text-secondary); }
+.recite__actions { margin-top: var(--space-3); }
+
+/* 句／段挑選列 */
+.recite-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin: var(--space-3) 0;
+}
+.recite-picker__item {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--tap-target-min);
+  min-height: var(--tap-target-min);
+  padding: var(--space-1) 6px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--text-primary);
+  cursor: pointer;
+  font: inherit;
+  line-height: 1.15;
+  transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+}
+.recite-picker__item:hover { background: var(--color-surface-muted); transform: translateY(-1px); }
+.recite-picker__item:active { transform: translateY(0); }
+.recite-picker__item:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+.recite-picker__no { font-size: var(--font-size-meta); font-weight: 700; font-variant-numeric: tabular-nums; }
+.recite-picker__score {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+.recite-picker__score--empty { color: var(--color-border); }
+/* 成績分級用外框顏色，但格子裡同時印著分數，不只靠顏色 */
+.recite-picker__item--good { border-color: var(--module-teal); }
+.recite-picker__item--fair { border-color: var(--module-terracotta); }
+.recite-picker__item--poor { border-color: var(--module-rose); }
+.recite-picker__item--current {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--text-on-primary);
+}
+.recite-picker__item--current .recite-picker__score { color: var(--text-on-primary); }
+@media (prefers-reduced-motion: reduce) {
+  .recite-picker__item { transition: none; }
+  .recite-picker__item:hover { transform: none; }
+}
+
+/* ── 字旁注音（ZhuyinText）─────────────────────────
    刻意**不**用 ruby-position: inter-character——那是注音的正規解法，但只有
    Safari／Firefox 支援，Chrome（含 Chromebook、Windows）會默默退回「注音排在
    字的上方」，同一份教材在不同載具長得不一樣。改用 inline-flex 接管 <ruby>
    的版面，再用 writing-mode 把注音轉成直排，所有瀏覽器結果一致。
 
-   聲調的位置依台灣的寫法：
-     二、三、四聲（ˊ ˇ ˋ）在注音符號的**右側**（靠下）
-     輕聲（˙）在注音符號的**上方**
+   聲調位置依台灣的寫法：
+     二、三、四聲（ˊ ˇ ˋ）在注音符號的**右側**（靠下緣）
+     輕聲（˙）在注音符號的**上方**（置中）
      一聲不標
    整串一起直排會把聲調擠到最下面，那是錯的。 */
 .zhuyin {
@@ -2157,13 +2441,12 @@
 }
 .zhuyin__rt {
   display: inline-flex;
-  align-items: flex-end;          /* 聲調靠注音符號的下緣 */
+  align-items: flex-end;
   font-size: 0.4em;
   line-height: 1.05;
   margin-inline-start: 0.08em;
   color: var(--text-secondary);
 }
-/* 輕聲：改成直向排列，符號在本體上方並置中 */
 .zhuyin__rt--neutral {
   flex-direction: column;
   align-items: center;
@@ -2175,364 +2458,147 @@
 }
 .zhuyin__tone {
   line-height: 1;
-  /* 二～四聲在右側，所以要排在本體後面 */
-  order: 1;
+  order: 1;                       /* 二～四聲排在本體後面＝右側 */
   margin-inline-start: 0.04em;
 }
-/* 輕聲在上方，排在本體前面 */
 .zhuyin__rt--neutral .zhuyin__tone {
-  order: -1;
+  order: -1;                      /* 輕聲排在本體前面＝上方 */
   margin-inline-start: 0;
 }
 /* 不支援 ruby 的瀏覽器才顯示 <rp> 的括號 */
-.reader__text rp { display: none; }
-/* 注音隱藏：只關 CSS，不重建 DOM，學生不會失去閱讀位置 */
-.reader__text--no-zhuyin .zhuyin__rt { display: none; }
+.lesson-text rp, .zhuyin rp { display: none; }
 
-@media (prefers-reduced-motion: reduce) {
-  .reader__ch { transition: none; }
-}
-
-/* ── 教室密碼門 ────────────────────────────────── */
-.gate { max-width: 520px; margin: 24px auto; text-align: center; }
-.gate__icon { font-size: 56px; margin: 0; }
-.gate__title { margin: 8px 0; }
-.gate__note {
-  color: var(--text-secondary);
-  line-height: 1.8;
-  margin: 0 0 16px;
-}
-.gate__input {
-  width: 100%;
-  min-height: 48px;
-  font-size: 1.375rem;
-  text-align: center;
-  letter-spacing: 0.3em;
-  padding: 8px 12px;
-  border: 2px solid var(--color-border);
-  border-radius: 10px;
-}
-.gate__input:focus-visible {
-  outline: 3px solid var(--color-accent);
-  outline-offset: 2px;
-}
-.gate__message {
-  min-height: 1.6em;
-  margin: 12px 0;
-  color: var(--text-secondary);
-}
-.gate__input--shake { animation: gate-shake 360ms ease; }
-@keyframes gate-shake {
-  0%, 100% { transform: translateX(0); }
-  20%, 60% { transform: translateX(-6px); }
-  40%, 80% { transform: translateX(6px); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .gate__input--shake { animation: none; }
-}
-
-/* ── 課次首頁的「課文點讀」入口 ──────────────────── */
-.reader-entry {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin: 0 0 20px;
-  padding: 16px 20px;
-  min-height: 44px;
-  border: 2px solid var(--color-border);
-  border-radius: 16px;
+/* ── 按鈕的層級 ────────────────────────────────────
+   .btn--primary 先前從未定義，所以「主要動作」和「次要動作」長得一模一樣，
+   學生看不出該按哪一個。這裡把層級補起來：
+     主要＝實心主色（一個畫面最多一個）
+     次要＝描邊（.btn 預設）
+     幽靈＝只有文字 */
+.btn {
   background: var(--color-surface);
-  color: var(--text-primary);
-  text-decoration: none;
-}
-.reader-entry:hover { background: var(--color-surface-muted); }
-.reader-entry:focus-visible {
-  outline: 3px solid var(--color-accent);
-  outline-offset: 2px;
-}
-.reader-entry__icon { font-size: 32px; line-height: 1; }
-.reader-entry__text { display: flex; flex-direction: column; gap: 2px; flex: 1; }
-.reader-entry__title { font-size: 1.375rem; font-weight: 700; }
-.reader-entry__desc { font-size: 1.125rem; color: var(--text-secondary); }
-.reader-entry__arrow { flex: none; }
-
-/* ── 錯題複習入口與空狀態 ─────────────────────────── */
-/* 入口放在「加練挑戰」的卡片格線裡（舊字新詞之前），所以版型要和
-   .module-card 一致：直式、圖示在上、標題、說明。差別只有強調色外框
-   和右上角的待複習題數。 */
-.mistake-entry {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 20px;
-  border: 2px solid var(--color-accent);
-  border-radius: 16px;
-  background: var(--color-surface);
-  color: var(--text-primary);
-  text-decoration: none;
-}
-.mistake-entry:hover { background: var(--color-surface-muted); }
-.mistake-entry:focus-visible {
-  outline: 3px solid var(--color-accent);
-  outline-offset: 2px;
-}
-.mistake-entry__icon { font-size: 32px; line-height: 1; }
-.mistake-entry__text { display: flex; flex-direction: column; gap: 4px; }
-.mistake-entry__title { font-size: 1.375rem; font-weight: 700; }
-.mistake-entry__desc { font-size: 1.125rem; color: var(--text-secondary); }
-.mistake-entry__count {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  min-width: 36px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: var(--color-accent);
-  color: var(--text-on-primary);
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-align: center;
-}
-
-.mistake-empty { max-width: 520px; margin: 24px auto; text-align: center; }
-.mistake-empty__icon { font-size: 56px; margin: 0; }
-.mistake-empty__title { margin: 8px 0; }
-.mistake-empty__note {
-  color: var(--text-secondary);
-  line-height: 1.8;
-  margin: 0 0 16px;
-}
-
-/* ── 單課小考 ──────────────────────────────────── */
-.quiz-entry {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin: 20px 0 0;
-  padding: 16px 20px;
-  min-height: 44px;
-  border: 2px dashed var(--color-border);
-  border-radius: 16px;
-  background: var(--color-surface);
-  color: var(--text-primary);
-  text-decoration: none;
-}
-.quiz-entry:hover { background: var(--color-surface-muted); }
-.quiz-entry:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
-.quiz-entry__icon { font-size: 32px; line-height: 1; }
-.quiz-entry__text { display: flex; flex-direction: column; gap: 2px; flex: 1; }
-.quiz-entry__title { font-size: 1.375rem; font-weight: 700; }
-.quiz-entry__desc { font-size: 1.125rem; color: var(--text-secondary); }
-
-.quiz-intro, .quiz-result { max-width: 560px; margin: 24px auto; text-align: center; }
-.quiz-intro__icon, .quiz-result__icon { font-size: 56px; margin: 0; }
-.quiz-intro__title { margin: 8px 0; }
-.quiz-intro__note, .quiz-result__note {
-  color: var(--text-secondary);
-  line-height: 1.8;
-  margin: 0 0 20px;
-}
-.quiz-result__score {
-  margin: 8px 0;
-  font-size: 3rem;
-  font-weight: 700;
   color: var(--color-primary);
-}
-.quiz-result__table { margin: 0 auto 20px; width: 100%; }
-
-/* ── 教師頁：個別調整 ───────────────────────────── */
-.teacher-override { margin: 12px 0; padding: 16px 20px; }
-.teacher-override__label { margin: 0 0 4px; font-size: 1.25rem; font-weight: 700; }
-
-/* ── 自己寫一句話（SentenceWriter）───────────────── */
-.writer__prompt { font-size: 1.375rem; font-weight: 700; margin: 0; }
-.writer__scaffold {
-  margin: 12px 0 16px;
-  padding: 12px 16px;
-  border-left: 4px solid var(--color-accent);
-  background: var(--color-surface-muted);
-  border-radius: 8px;
-}
-.writer__desc { margin: 0 0 8px; font-size: 1.125rem; }
-.writer__examples-label { margin: 0 0 4px; font-weight: 700; font-size: 1.0625rem; }
-.writer__examples { margin: 0; padding-inline-start: 1.2em; font-size: 1.125rem; }
-.writer__examples li { margin-bottom: 4px; }
-.writer__input {
-  width: 100%;
-  min-height: 96px;
-  font-size: 1.375rem;
-  line-height: 1.8;
-  padding: 12px;
   border: 2px solid var(--color-border);
-  border-radius: 10px;
-  font-family: inherit;
 }
-.writer__input:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
-.writer__mic { min-height: 44px; }
-.writer__mic--on { background: var(--color-danger, #b04a6a); color: #fff; }
-.writer__message { min-height: 1.6em; margin: 8px 0 0; color: var(--text-secondary); }
-.writer__hint { margin: 4px 0 0; color: var(--text-secondary); font-size: 1.0625rem; display: none; }
-.writer__hint--show { display: block; }
-.writer__actions { margin-top: 16px; }
-.writer__done { text-align: center; padding: 16px 0; }
-.writer__done-icon { font-size: 56px; margin: 0; }
-.writer__done-title { margin: 8px 0; }
-.writer__done-text {
-  font-size: 1.5rem;
+.btn:hover { background: var(--color-surface-muted); }
+.btn--primary {
+  background: var(--module-color, var(--color-primary));
+  border-color: transparent;
+  color: var(--text-on-primary);
   font-weight: 700;
-  margin: 8px 0;
-  padding: 12px;
-  background: var(--color-surface-muted);
-  border-radius: 10px;
 }
-
-/* ── 教師頁：學生造的句子 ──────────────────────── */
-.teacher-sentence { margin: 12px 0; padding: 16px 20px; }
-.teacher-sentence__text {
-  font-size: 1.375rem;
-  line-height: 1.8;
-  margin: 8px 0;
-  padding: 10px 14px;
-  background: var(--color-surface-muted);
-  border-radius: 8px;
+.btn--primary:hover { background: var(--module-color-dark, var(--color-primary-hover)); }
+.btn--ghost {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
+.btn--ghost:hover { background: var(--color-surface-muted); }
+.btn--block { width: 100%; }
+.btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+.btn[disabled]:hover { background: var(--color-surface); }
 
-/* ── 錯題複習：老師要求重寫的句子 ─────────────────── */
-.redo-previous { margin: 12px 0; padding: 16px 20px; }
-.redo-previous__text {
-  font-size: 1.25rem;
-  line-height: 1.8;
-  margin: 8px 0 0;
-  padding: 10px 14px;
-  background: var(--color-surface-muted);
-  border-radius: 8px;
+/* ── 資料表（教師頁、小考結算）───────────────────── */
+.records {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-meta);
+}
+.records th,
+.records td {
+  padding: var(--space-2);
+  text-align: start;
+  border-bottom: 1px solid var(--color-border);
+}
+.records th {
+  font-weight: 700;
   color: var(--text-secondary);
+  white-space: nowrap;
 }
+.records td { font-variant-numeric: tabular-nums; }
+.records tr:last-child td { border-bottom: none; }
+
+/* ── 分段切換（讀字／讀詞／讀句）──────────────────── */
+.seg {
+  display: inline-flex;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.seg__btn {
+  min-height: var(--tap-target-min);
+  padding: var(--space-1) var(--space-3);
+  border: none;
+  background: var(--color-surface);
+  color: var(--color-primary);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+.seg__btn + .seg__btn { border-inline-start: 2px solid var(--color-border); }
+.seg__btn:hover { background: var(--color-surface-muted); }
+.seg__btn:focus-visible { outline: 3px solid var(--color-accent); outline-offset: -3px; }
+.seg__btn--on {
+  background: var(--color-primary);
+  color: var(--text-on-primary);
+}
+@media (prefers-reduced-motion: reduce) { .seg__btn { transition: none; } }
+
+/* 網格裡的一格（讓非 .module-card 的入口也能填滿格高） */
+.module-grid__cell { display: flex; }
+.module-grid__cell > * { flex: 1; }
+.writer__mic { min-height: var(--tap-target-min); }
+.lesson-toolbar__back { margin-top: var(--space-4); }
 
 /* ── 頁首的教師設定齒輪（統一入口）───────────────── */
 .app-header__teacher {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
+  width: var(--tap-target-min);
+  height: var(--tap-target-min);
+  border-radius: var(--radius-pill);
   color: var(--text-secondary);
   text-decoration: none;
   flex: none;
+  transition: background 0.12s ease, color 0.12s ease;
 }
 .app-header__teacher:hover { background: var(--color-surface-muted); color: var(--text-primary); }
 .app-header__teacher:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
-
-/* 頁首現在有兩個按鈕（靜音、教師設定）：把它們一起推到右邊，
+/* 頁首有兩個按鈕（靜音、教師設定）：一起推到右邊，
    不然 space-between 會把靜音鈕丟到正中間。 */
 .app-header__mute { margin-inline-start: auto; }
+@media (prefers-reduced-motion: reduce) { .app-header__teacher { transition: none; } }
 
-/* ── 朗讀挑戰 ──────────────────────────────────── */
-.recite-entry {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 20px;
+/* 造句區塊的外層容器 */
+.writer { display: block; }
+/* 工具列裡的分段切換與注音開關：維持可換行，手機才不會爆版 */
+.lesson-toolbar__modes { flex: none; }
+.lesson-toolbar__zhuyin { flex: none; }
+
+/* ── 開關型按鈕（注音：顯示／隱藏）─────────────────
+   不用底線文字樣式——那會被讀成連結。開關要看得出「現在是開還是關」，
+   所以 on 的狀態用實色小圓點＋邊框變色，並帶 aria-pressed。 */
+.toggle { position: relative; padding-inline-start: calc(var(--space-4) + 2px); }
+.toggle::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: var(--space-2);
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  margin-top: -6px;
+  border-radius: var(--radius-pill);
   border: 2px solid var(--color-border);
-  border-radius: 16px;
   background: var(--color-surface);
-  color: var(--text-primary);
-  text-decoration: none;
-  height: 100%;
+  transition: background 0.12s ease, border-color 0.12s ease;
 }
-.recite-entry:hover { background: var(--color-surface-muted); }
-.recite-entry:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
-.recite-entry__icon { font-size: 32px; line-height: 1; }
-.recite-entry__text { display: flex; flex-direction: column; gap: 4px; }
-.recite-entry__title { font-size: 1.375rem; font-weight: 700; }
-.recite-entry__desc { font-size: 1.125rem; color: var(--text-secondary); }
-.recite-entry__best { font-size: 1rem; color: var(--text-secondary); }
-
-.recite__bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding-bottom: 12px;
-  margin-bottom: 12px;
-  border-bottom: 1px solid var(--color-border);
-}
-.recite__text {
-  font-size: clamp(1.5rem, 1.25rem + 1.2vw, 2.125rem);
-  line-height: 2.4;
-  letter-spacing: 0.02em;
-}
-.recite__text--no-zhuyin .zhuyin__rt { display: none; }
-.recite__ch {
-  display: inline-block;
-  border-radius: 6px;
-  padding: 0 2px;
-}
-/* 評分結果的標示。顏色不是唯一線索：同音字加底線、漏字加刪除線，
-   結果區另有文字摘要，螢幕閱讀器也讀得到。 */
-.recite__ch--homophone {
-  text-decoration: underline;
-  text-decoration-style: double;
-  text-decoration-color: var(--module-teal, #2e8b6e);
-}
-.recite__ch--wrong {
-  background: var(--module-rose-tint, #f6dde4);
-  box-shadow: inset 0 -3px 0 var(--module-rose, #b04a6a);
-}
-.recite__ch--missed {
-  color: var(--text-secondary);
-  text-decoration: line-through;
-  opacity: 0.75;
-}
-.recite__actions { margin-top: 16px; }
-.recite__mic { min-height: 48px; font-size: 1.25rem; }
-.recite__mic--on { background: var(--module-rose, #b04a6a); color: #fff; }
-.recite__status { min-height: 1.6em; margin: 8px 0; color: var(--text-secondary); }
-.recite-result { margin-top: 16px; }
-.recite-result__score { font-size: 2.5rem; font-weight: 700; margin: 0; color: var(--color-primary); }
-.recite-result__summary { font-size: 1.25rem; margin: 8px 0; }
-.recite-legend { margin: 8px 0 0; padding-inline-start: 1.2em; color: var(--text-secondary); }
-.recite-legend__item { margin-bottom: 2px; }
-.recite-notice { max-width: 520px; margin: 24px auto; text-align: center; }
-.recite-notice__text { font-size: 1.25rem; line-height: 1.8; margin: 0 0 16px; }
-
-/* ── 朗讀：句／段挑選列 ────────────────────────── */
-.recite-picker {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 16px 0;
-}
-.recite-picker__item {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1px;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 4px 6px;
-  border: 2px solid var(--color-border);
-  border-radius: 12px;
-  background: var(--color-surface);
-  color: var(--text-primary);
-  cursor: pointer;
-  font: inherit;
-  line-height: 1.1;
-}
-.recite-picker__item:hover { background: var(--color-surface-muted); }
-.recite-picker__item:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
-.recite-picker__no { font-size: 1rem; font-weight: 700; }
-.recite-picker__score { font-size: 0.8125rem; color: var(--text-secondary); }
-.recite-picker__score--empty { color: var(--color-border); }
-/* 念過的成績用顏色＋左下角的小點雙重標示，不只靠顏色 */
-.recite-picker__item--good { border-color: var(--module-teal, #2e8b6e); }
-.recite-picker__item--fair { border-color: var(--module-terracotta, #c77a2b); }
-.recite-picker__item--poor { border-color: var(--module-rose, #b04a6a); }
-.recite-picker__item--current {
+.toggle--on { border-color: var(--color-primary); }
+.toggle--on::before {
   background: var(--color-primary);
   border-color: var(--color-primary);
-  color: var(--text-on-primary);
 }
-.recite-picker__item--current .recite-picker__score { color: var(--text-on-primary); }
+@media (prefers-reduced-motion: reduce) { .toggle::before { transition: none; } }

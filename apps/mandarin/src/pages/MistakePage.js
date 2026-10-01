@@ -126,13 +126,13 @@ function summary({ learned, moreDue, lessonId, backHref, backLabel, onNext }) {
   }
   actions.push(h('a', { class: moreDue ? 'btn' : 'btn btn--primary', href: backHref }, backLabel));
 
-  return h('div', { class: 'card mistake-empty' }, [
-    h('p', { class: 'mistake-empty__icon', 'aria-hidden': 'true' }, learned ? '🏅' : '🎉'),
+  return h('div', { class: 'card card--centered' }, [
+    h('p', { class: 'outcome__icon', 'aria-hidden': 'true' }, learned ? '🏅' : '🎉'),
     h('div', { class: 'quiz-option-row' }, [
-      h('h1', { class: 'mistake-empty__title' }, title),
+      h('h1', { class: 'outcome__title' }, title),
       SpeakButton({ text: `${title}。${note}`, label: '聽', variant: 'speak-button--option' }),
     ]),
-    h('p', { class: 'mistake-empty__note' }, note),
+    h('p', { class: 'outcome__note' }, note),
     h('div', { class: 'quiz-option-row' }, actions),
   ]);
 }
@@ -188,13 +188,13 @@ function emptyState(lessonId, backHref, backLabel) {
     ? `還有 ${pending.length} 題在練習中${days ? `，${days} 天後會再出現` : ''}。`
     : '做練習時第一次沒答對的題目，會自動收到這裡。';
 
-  return h('div', { class: 'card mistake-empty' }, [
-    h('p', { class: 'mistake-empty__icon', 'aria-hidden': 'true' }, done ? '🎉' : '📥'),
+  return h('div', { class: 'card card--centered' }, [
+    h('p', { class: 'outcome__icon', 'aria-hidden': 'true' }, done ? '🎉' : '📥'),
     h('div', { class: 'quiz-option-row' }, [
-      h('h1', { class: 'mistake-empty__title' }, title),
+      h('h1', { class: 'outcome__title' }, title),
       SpeakButton({ text: `${title} ${note}`, label: '聽', variant: 'speak-button--option' }),
     ]),
-    h('p', { class: 'mistake-empty__note' }, note),
+    h('p', { class: 'outcome__note' }, note),
     h('a', { class: 'btn btn--primary', href: backHref }, backLabel),
   ]);
 }
@@ -203,12 +203,12 @@ function emptyState(lessonId, backHref, backLabel) {
 export function mistakeEntry(lessonId, count) {
   if (!count) return null;
   const href = lessonId ? `#/mistakes/${lessonId}` : '#/mistakes';
-  return h('a', { class: 'mistake-entry', href }, [
-    h('span', { class: 'mistake-entry__icon', 'aria-hidden': 'true' }, '🔁'),
-    h('span', { class: 'mistake-entry__text' }, [
-      h('span', { class: 'mistake-entry__title' }, '錯題複習'),
-      h('span', { class: 'mistake-entry__desc' }, '把之前答錯的題目再做一次。'),
+  return h('a', { class: 'entry-card entry-card--accent', href }, [
+    h('span', { class: 'entry-card__icon', 'aria-hidden': 'true' }, '🔁'),
+    h('span', { class: 'entry-card__body' }, [
+      h('span', { class: 'entry-card__title' }, '錯題複習'),
+      h('span', { class: 'entry-card__desc' }, '把之前答錯的題目再做一次。'),
     ]),
-    h('span', { class: 'mistake-entry__count', 'aria-label': `${count} 題待複習` }, String(count)),
+    h('span', { class: 'entry-card__badge', 'aria-label': `${count} 題待複習` }, String(count)),
   ]);
 }

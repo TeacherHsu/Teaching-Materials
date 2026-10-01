@@ -180,14 +180,14 @@ export function LessonDashboard(lesson) {
       if (!available) return;
       const summary = reciteSummary(lesson.lesson_id);
       reciteSlot.appendChild(
-        h('a', { class: 'recite-entry', href: `#/lesson/${lesson.lesson_id}/recite` }, [
-          h('span', { class: 'recite-entry__icon', 'aria-hidden': 'true' }, isUnlocked() ? '🎤' : '🔒'),
-          h('span', { class: 'recite-entry__text' }, [
-            h('span', { class: 'recite-entry__title' }, '朗讀挑戰'),
-            h('span', { class: 'recite-entry__desc' },
+        h('a', { class: 'entry-card', href: `#/lesson/${lesson.lesson_id}/recite` }, [
+          h('span', { class: 'entry-card__icon', 'aria-hidden': 'true' }, isUnlocked() ? '🎤' : '🔒'),
+          h('span', { class: 'entry-card__body' }, [
+            h('span', { class: 'entry-card__title' }, '朗讀挑戰'),
+            h('span', { class: 'entry-card__desc' },
               isUnlocked() ? '把課文念出來，看看念對幾個字。' : '需要教室密碼才能打開課文。'),
             summary
-              ? h('span', { class: 'recite-entry__best' }, `念過 ${summary.units} 段，平均 ${summary.averageAccuracy} 分`)
+              ? h('span', { class: 'entry-card__note' }, `念過 ${summary.units} 段，平均 ${summary.averageAccuracy} 分`)
               : null,
           ].filter(Boolean)),
         ]),
@@ -232,17 +232,17 @@ function readerEntry(lesson) {
       if (!available) return;
       const unlocked = isUnlocked();
       slot.appendChild(
-        h('a', { class: 'reader-entry', href: `#/lesson/${lesson.lesson_id}/reader` }, [
-          h('span', { class: 'reader-entry__icon', 'aria-hidden': 'true' }, unlocked ? '📖' : '🔒'),
-          h('span', { class: 'reader-entry__text' }, [
-            h('span', { class: 'reader-entry__title' }, '課文點讀'),
+        h('a', { class: 'entry-card entry-card--wide', href: `#/lesson/${lesson.lesson_id}/reader` }, [
+          h('span', { class: 'entry-card__icon', 'aria-hidden': 'true' }, unlocked ? '📖' : '🔒'),
+          h('span', { class: 'entry-card__body' }, [
+            h('span', { class: 'entry-card__title' }, '課文點讀'),
             h(
               'span',
-              { class: 'reader-entry__desc' },
+              { class: 'entry-card__desc' },
               unlocked ? '點字、點詞、點句都會念，也可以整篇念下來。' : '需要教室密碼才能打開課文。',
             ),
           ]),
-          h('span', { class: 'reader-entry__arrow', 'aria-hidden': 'true', html: STATUS_ICONS.arrow }),
+          h('span', { class: 'entry-card__arrow', 'aria-hidden': 'true', html: STATUS_ICONS.arrow }),
         ]),
       );
     })

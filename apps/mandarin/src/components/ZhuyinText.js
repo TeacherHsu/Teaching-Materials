@@ -7,7 +7,7 @@
 //   2. 注音隱藏時只要 CSS 關掉 <rt>，不必重建 DOM，學生不會失去閱讀位置。
 //
 // 注意：這裡**不**負責決定要不要顯示注音，由呼叫端在容器上加
-// .reader__text--no-zhuyin 之類的 class 控制，理由同第 2 點。
+// .lesson-text--no-zhuyin 之類的 class 控制，理由同第 2 點。
 import { h } from '../utils/dom.js';
 import { normalizeZhuyin } from '../utils/zhuyin.js';
 

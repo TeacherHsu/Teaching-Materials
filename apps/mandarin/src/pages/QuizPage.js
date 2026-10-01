@@ -46,10 +46,10 @@ export function QuizPage(lesson) {
     clear(body);
     if (!moduleKeys.length) {
       body.appendChild(
-        h('div', { class: 'card quiz-intro' }, [
-          h('p', { class: 'quiz-intro__icon', 'aria-hidden': 'true' }, '📝'),
-          h('h1', { class: 'quiz-intro__title' }, '這一課還不能小考'),
-          h('p', { class: 'quiz-intro__note' }, '要先有可以考的練習題，教材審核完成後就會開放。'),
+        h('div', { class: 'card card--centered' }, [
+          h('p', { class: 'outcome__icon', 'aria-hidden': 'true' }, '📝'),
+          h('h1', { class: 'outcome__title' }, '這一課還不能小考'),
+          h('p', { class: 'outcome__note' }, '要先有可以考的練習題，教材審核完成後就會開放。'),
           h('a', { class: 'btn btn--primary', href: backHref }, '回到本課'),
         ]),
       );
@@ -62,13 +62,13 @@ export function QuizPage(lesson) {
     start.addEventListener('click', () => renderQuiz(picked));
 
     body.appendChild(
-      h('div', { class: 'card quiz-intro' }, [
-        h('p', { class: 'quiz-intro__icon', 'aria-hidden': 'true' }, '📝'),
+      h('div', { class: 'card card--centered' }, [
+        h('p', { class: 'outcome__icon', 'aria-hidden': 'true' }, '📝'),
         h('div', { class: 'quiz-option-row' }, [
-          h('h1', { class: 'quiz-intro__title' }, `第 ${lesson.lesson_no} 課 單課小考`),
+          h('h1', { class: 'outcome__title' }, `第 ${lesson.lesson_no} 課 單課小考`),
           SpeakButton({ text: intro, label: '聽', variant: 'speak-button--option' }),
         ]),
-        h('p', { class: 'quiz-intro__note' }, [
+        h('p', { class: 'outcome__note' }, [
           `一共 ${picked.length} 題，題目從各個練習站抽出來。`,
           h('br'),
           '這次沒有提示；答錯會告訴你正確答案，考完會放進錯題複習。',
@@ -141,7 +141,7 @@ export function QuizPage(lesson) {
 
     const headline = `小考完成，${score} 分。第一次就答對 ${session.firstTryCount} 題，共 ${session.total} 題。`;
 
-    const table = h('table', { class: 'records quiz-result__table' }, [
+    const table = h('table', { class: 'records outcome__table' }, [
       h('thead', {}, h('tr', {}, [h('th', {}, '練習站'), h('th', {}, '第一次答對')])),
       h(
         'tbody',
@@ -157,13 +157,13 @@ export function QuizPage(lesson) {
     actions.push(h('a', { class: wrong > 0 ? 'btn' : 'btn btn--primary', href: backHref }, '回到本課'));
 
     body.appendChild(
-      h('div', { class: 'card quiz-result' }, [
-        h('p', { class: 'quiz-result__icon', 'aria-hidden': 'true' }, score >= 90 ? '🏆' : score >= 60 ? '👍' : '💪'),
+      h('div', { class: 'card card--centered' }, [
+        h('p', { class: 'outcome__icon', 'aria-hidden': 'true' }, score >= 90 ? '🏆' : score >= 60 ? '👍' : '💪'),
         h('div', { class: 'quiz-option-row' }, [
-          h('p', { class: 'quiz-result__score' }, `${score} 分`),
+          h('p', { class: 'outcome__score' }, `${score} 分`),
           SpeakButton({ text: headline, label: '聽', variant: 'speak-button--option' }),
         ]),
-        h('p', { class: 'quiz-result__note' },
+        h('p', { class: 'outcome__note' },
           `第一次就答對 ${session.firstTryCount}／${session.total} 題` + (wrong ? `，答錯的 ${wrong} 題已經放進錯題複習。` : '。')),
         table,
         h('div', { class: 'quiz-option-row' }, actions),
@@ -179,11 +179,11 @@ export function QuizPage(lesson) {
 export function quizEntry(lesson) {
   const bank = collectQuizBank(lesson);
   if (!Object.keys(bank).length) return null;
-  return h('a', { class: 'quiz-entry', href: `#/lesson/${lesson.lesson_id}/quiz` }, [
-    h('span', { class: 'quiz-entry__icon', 'aria-hidden': 'true' }, '📝'),
-    h('span', { class: 'quiz-entry__text' }, [
-      h('span', { class: 'quiz-entry__title' }, '單課小考'),
-      h('span', { class: 'quiz-entry__desc' }, '各站的題目混在一起考，沒有提示。'),
+  return h('a', { class: 'entry-card entry-card--wide entry-card--dashed', href: `#/lesson/${lesson.lesson_id}/quiz` }, [
+    h('span', { class: 'entry-card__icon', 'aria-hidden': 'true' }, '📝'),
+    h('span', { class: 'entry-card__body' }, [
+      h('span', { class: 'entry-card__title' }, '單課小考'),
+      h('span', { class: 'entry-card__desc' }, '各站的題目混在一起考，沒有提示。'),
     ]),
   ]);
 }

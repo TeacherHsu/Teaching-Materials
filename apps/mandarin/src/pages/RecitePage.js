@@ -81,8 +81,8 @@ export function RecitePage(lesson) {
 }
 
 function notice(text, backHref) {
-  return h('div', { class: 'card recite-notice' }, [
-    h('p', { class: 'recite-notice__text' }, text),
+  return h('div', { class: 'card card--centered' }, [
+    h('p', { class: 'outcome__note' }, text),
     h('a', { class: 'btn btn--primary', href: backHref }, '回到本課'),
   ]);
 }
@@ -119,7 +119,7 @@ function gate(onUnlocked) {
   submit.addEventListener('click', tryUnlock);
   input.addEventListener('keydown', (e) => { if (e.key === 'Enter') tryUnlock(); });
   setTimeout(() => input.focus(), 50);
-  return h('div', { class: 'card gate' }, [
+  return h('div', { class: 'card card--centered' }, [
     h('p', { class: 'gate__icon', 'aria-hidden': 'true' }, '🔒'),
     h('h1', { class: 'gate__title' }, '請輸入教室密碼'),
     h('p', { class: 'gate__note' }, '課文只給班上同學使用。輸入一次之後，這台載具會記住。'),
@@ -204,13 +204,13 @@ function renderChallenge(lesson, reading, backHref) {
     wrap.appendChild(renderPicker());
 
     // 課文（可切注音）
-    const textBox = h('div', { class: `recite__text${showZhuyin ? '' : ' recite__text--no-zhuyin'}` });
+    const textBox = h('div', { class: `lesson-text${showZhuyin ? '' : ' lesson-text--no-zhuyin'}` });
     const charEls = [];
     for (const [text, zhuyinText] of unit.tokens) {
       const zs = zhuyinText ? zhuyinText.split(' ') : [];
       [...text].forEach((ch, i) => {
         const zhuyin = zs[i] || '';
-        const el = h('span', { class: zhuyin ? 'recite__ch' : 'recite__ch recite__ch--punct' });
+        const el = h('span', { class: zhuyin ? 'lesson-text__ch' : 'lesson-text__ch lesson-text__ch--punct' });
         el.appendChild(ZhuyinText(ch, zhuyin));
         if (zhuyin) charEls.push(el);
         textBox.appendChild(el);
@@ -218,13 +218,14 @@ function renderChallenge(lesson, reading, backHref) {
     }
 
     const zhuyinToggle = h('button', {
-      class: 'btn btn--ghost', type: 'button', 'aria-pressed': String(showZhuyin),
+      class: `btn toggle${showZhuyin ? ' toggle--on' : ''}`, type: 'button', 'aria-pressed': String(showZhuyin),
     }, showZhuyin ? '注音：顯示' : '注音：隱藏');
     zhuyinToggle.addEventListener('click', () => {
       showZhuyin = !showZhuyin;
-      textBox.classList.toggle('recite__text--no-zhuyin', !showZhuyin);
+      textBox.classList.toggle('lesson-text--no-zhuyin', !showZhuyin);
       zhuyinToggle.textContent = showZhuyin ? '注音：顯示' : '注音：隱藏';
       zhuyinToggle.setAttribute('aria-pressed', String(showZhuyin));
+      zhuyinToggle.classList.toggle('toggle--on', showZhuyin);
     });
 
     const tools = [zhuyinToggle];
@@ -235,7 +236,7 @@ function renderChallenge(lesson, reading, backHref) {
     }
 
     wrap.appendChild(h('div', { class: 'card' }, [
-      h('div', { class: 'recite__bar' }, tools),
+      h('div', { class: 'lesson-toolbar' }, tools),
       textBox,
     ]));
 
@@ -247,7 +248,7 @@ function renderChallenge(lesson, reading, backHref) {
       if (recognition) { stopRecognition(); return; }
       cancelSpeaking();
       clear(result);
-      charEls.forEach((el) => el.classList.remove('recite__ch--ok', 'recite__ch--homophone', 'recite__ch--wrong', 'recite__ch--missed'));
+      charEls.forEach((el) => el.classList.remove('lesson-text__ch--ok', 'lesson-text__ch--homophone', 'lesson-text__ch--wrong', 'lesson-text__ch--missed'));
       const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
       recognition = new Recognition();
       recognition.lang = 'zh-TW';
@@ -285,7 +286,7 @@ function renderChallenge(lesson, reading, backHref) {
       // 上色
       score.marks.forEach((mark, i) => {
         const el = charEls[i];
-        if (el) el.classList.add(`recite__ch--${mark}`);
+        if (el) el.classList.add(`lesson-text__ch--${mark}`);
       });
 
       const previous = best ? best.charsPerMinute : null;
@@ -357,21 +358,21 @@ function renderResult(score, speed, previous, unitWord) {
     first: '',
   }[trend];
 
-  return h('div', { class: 'card recite-result' }, [
+  return h('div', { class: 'card card--centered' }, [
     h('div', { class: 'quiz-option-row' }, [
-      h('p', { class: 'recite-result__score' }, `${score.accuracy} 分`),
+      h('p', { class: 'outcome__score' }, `${score.accuracy} 分`),
       h('span', { html: starsMarkup({ earned: accuracyStars(score.accuracy), max: 3, size: 'sm' }) }),
       SpeakButton({ text: `${summary}${trendText}`, label: '聽', variant: 'speak-button--option' }),
     ]),
-    h('p', { class: 'recite-result__summary' }, summary),
+    h('p', { class: 'outcome__summary' }, summary),
     speed.charsPerMinute
       ? h('p', { class: 'meta' }, `每分鐘 ${speed.charsPerMinute} 個字。${trendText}`)
       : null,
     // 圖例：每一種狀態都要有顏色以外的線索
-    h('ul', { class: 'recite-legend' }, [
+    h('ul', { class: 'outcome__legend' }, [
       ['homophone', MARK_LABEL.homophone],
       ['wrong', MARK_LABEL.wrong],
       ['missed', MARK_LABEL.missed],
-    ].filter(([key]) => counts[key]).map(([key, label]) => h('li', { class: `recite-legend__item recite-legend__item--${key}` }, `${label}：${counts[key]} 個`))),
+    ].filter(([key]) => counts[key]).map(([key, label]) => h('li', { class: `outcome__legend-item outcome__legend-item--${key}` }, `${label}：${counts[key]} 個`))),
   ].filter(Boolean));
 }

@@ -62,7 +62,7 @@ export function ReaderPage(lesson) {
     const reading = getReading(lesson.lesson_id);
     if (!reading) {
       body.appendChild(
-        h('div', { class: 'card notice' }, [
+        h('div', { class: 'card card--centered' }, [
           h('p', {}, '這一課還沒有課文點讀。'),
           h('a', { class: 'btn', href: `#/lesson/${lesson.lesson_id}` }, '← 回到本課'),
         ]),
@@ -122,7 +122,7 @@ function renderGate(lesson, onUnlocked) {
   });
   setTimeout(() => input.focus(), 50);
 
-  return h('div', { class: 'card gate' }, [
+  return h('div', { class: 'card card--centered' }, [
     h('p', { class: 'gate__icon', 'aria-hidden': 'true' }, '🔒'),
     h('h1', { class: 'gate__title' }, '請輸入教室密碼'),
     h('p', { class: 'gate__note' }, '課文只給班上同學使用。輸入一次之後，這台載具會記住。'),
@@ -145,17 +145,17 @@ function renderReader(lesson, reading) {
   /** @type {Map<HTMLElement, {char:object, word:object, sent:object}>} */
   const ownerOf = new Map();
 
-  const textBox = h('div', { class: 'reader__text', lang: 'zh-TW' });
+  const textBox = h('div', { class: 'lesson-text', lang: 'zh-TW' });
 
   function clearHighlight() {
-    highlighted.forEach((el) => el.classList.remove('reader__ch--reading'));
+    highlighted.forEach((el) => el.classList.remove('lesson-text__ch--reading'));
     highlighted = [];
   }
 
   async function play(unit) {
     if (!unit) return;
     clearHighlight();
-    unit.els.forEach((el) => el.classList.add('reader__ch--reading'));
+    unit.els.forEach((el) => el.classList.add('lesson-text__ch--reading'));
     highlighted = unit.els;
     // say 是教師裁定的朗讀用字；沒有覆寫時就用畫面上的字。
     await speak(unit.say || unit.text);
@@ -169,7 +169,7 @@ function renderReader(lesson, reading) {
 
   // 建 DOM：段 → 行 → 詞 → 字
   reading.paras.forEach((para) => {
-    const paraEl = h('div', { class: 'reader__para' });
+    const paraEl = h('div', { class: 'lesson-text__para' });
     let sent = { els: [], text: '', say: '' };
 
     const closeSentence = () => {
@@ -178,7 +178,7 @@ function renderReader(lesson, reading) {
     };
 
     para.forEach((line) => {
-      const lineEl = h('p', { class: 'reader__line' });
+      const lineEl = h('p', { class: 'lesson-text__line' });
       // 標點不孤行：把「字＋黏著的標點」包成一個不換行的群組。
       let group = null;
       let pendingOpen = null;
@@ -192,7 +192,7 @@ function renderReader(lesson, reading) {
           const zhuyin = zhuyins[i] || '';
           const isHan = Boolean(zhuyin);
           const el = h('span', {
-            class: isHan ? 'reader__ch' : 'reader__ch reader__ch--punct',
+            class: isHan ? 'lesson-text__ch' : 'lesson-text__ch lesson-text__ch--punct',
             ...(isHan ? { role: 'button', tabindex: '0' } : { 'aria-hidden': 'true' }),
           });
           el.appendChild(ZhuyinText(ch, zhuyin));
@@ -224,10 +224,10 @@ function renderReader(lesson, reading) {
           if (TRAILING.test(ch) && group) {
             group.appendChild(el);
           } else if (LEADING.test(ch)) {
-            pendingOpen = pendingOpen || h('span', { class: 'reader__nowrap' });
+            pendingOpen = pendingOpen || h('span', { class: 'lesson-text__nowrap' });
             pendingOpen.appendChild(el);
           } else {
-            group = pendingOpen || h('span', { class: 'reader__nowrap' });
+            group = pendingOpen || h('span', { class: 'lesson-text__nowrap' });
             pendingOpen = null;
             group.appendChild(el);
             lineEl.appendChild(group);
@@ -251,10 +251,10 @@ function renderReader(lesson, reading) {
   });
 
   // ── 工具列 ──────────────────────────────────────
-  const hint = h('p', { class: 'reader__hint', role: 'status', 'aria-live': 'polite' },
+  const hint = h('p', { class: 'lesson-hint', role: 'status', 'aria-live': 'polite' },
     MODES.find((m) => m.key === mode).hint);
 
-  const modeGroup = h('div', { class: 'seg reader__modes', role: 'group', 'aria-label': '點讀範圍' });
+  const modeGroup = h('div', { class: 'seg lesson-toolbar__modes', role: 'group', 'aria-label': '點讀範圍' });
   MODES.forEach((m) => {
     const btn = h(
       'button',
@@ -282,17 +282,18 @@ function renderReader(lesson, reading) {
   // 已經能讀的學生看注音反而受干擾；還在解碼階段的學生需要注音當鷹架。
   const zhuyinToggle = h(
     'button',
-    { class: 'btn btn--ghost reader__zhuyin-toggle', type: 'button', 'aria-pressed': 'true' },
+    { class: 'btn toggle toggle--on lesson-toolbar__zhuyin', type: 'button', 'aria-pressed': 'true' },
     '注音：顯示',
   );
   zhuyinToggle.addEventListener('click', () => {
     showZhuyin = !showZhuyin;
-    textBox.classList.toggle('reader__text--no-zhuyin', !showZhuyin);
+    textBox.classList.toggle('lesson-text--no-zhuyin', !showZhuyin);
     zhuyinToggle.textContent = showZhuyin ? '注音：顯示' : '注音：隱藏';
     zhuyinToggle.setAttribute('aria-pressed', showZhuyin ? 'true' : 'false');
+    zhuyinToggle.classList.toggle('toggle--on', showZhuyin);
   });
 
-  const readAll = h('button', { class: 'btn btn--primary reader__read-all', type: 'button' }, '念全文');
+  const readAll = h('button', { class: 'btn btn--primary lesson-toolbar__spacer', type: 'button' }, '念全文');
   const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
 
   function stopAll() {
@@ -323,16 +324,16 @@ function renderReader(lesson, reading) {
     if (playingAll) stopAll();
   });
 
-  const card = h('div', { class: 'card reader' }, [
-    h('div', { class: 'reader__bar' }, [
+  const card = h('div', { class: 'card' }, [
+    h('div', { class: 'lesson-toolbar' }, [
       modeGroup,
       zhuyinToggle,
       speechSupported() ? readAll : null,
     ].filter(Boolean)),
     hint,
-    h('h1', { class: 'reader__title' }, `第 ${lesson.lesson_no} 課　${lesson.title}`),
+    h('h1', { class: 'lesson-title' }, `第 ${lesson.lesson_no} 課　${lesson.title}`),
     textBox,
-    h('a', { class: 'btn btn--ghost reader__back', href: `#/lesson/${lesson.lesson_id}` }, '← 回到本課'),
+    h('a', { class: 'btn btn--ghost lesson-toolbar__back', href: `#/lesson/${lesson.lesson_id}` }, '← 回到本課'),
   ]);
 
   // 離開這一頁時別讓語音繼續念。
