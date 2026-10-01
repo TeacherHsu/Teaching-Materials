@@ -1,6 +1,6 @@
 # 參考站設計採用計畫（國語課文樂園優化設計）
 
-日期：2026-10-01｜狀態：**設計草案，待 CF 核可，尚未實作**
+日期：2026-10-01｜狀態：**CF 已核可施工順序；P0-C 已完成，其餘待做**
 
 參考對象：`https://sped-teacher.github.io/Teaching-Materials/mandarin/`
 （「國語五上學習樂園」，康軒五上，單檔 vanilla JS）。**已取得原作者同意參考**。
@@ -229,11 +229,23 @@ challenge: wrongLimit 2, autoRead false, unlockMemory true,  prefill 0
 列出未批改的，給 ✓／✗ → ✗ 的句型進錯題複習，要求用同一句型重寫（`skip`
 可當天跳過）。教師頁標題顯示「（N 句待批改）」。
 
-### P2-F　朗讀挑戰（與 speaking-practice 草案合併）
+### P2-F　念讀語詞與朗讀挑戰（CF 2026-10-01 裁示）
 
-同一個模組兩個層級：語詞（草案已設計）→ 課文段落。判準統一為無聲調讀音比對、
-同音字算對、標出沒念到的字、90／70／40 → 3／2／1 星、每段取最高分。
-需要先完成 P0-C（課文解鎖）才有課文段落可念。出處標示比照草案第一節。
+**不合併成一個模組。** CF 的決定：
+
+1. **念讀語詞**（雄老師 HTML5 FUN Speaking）**放在「學會語詞」大項裡、語詞卡的後面**，
+   當成同一項的最後一步——學生先看詞卡、配對、選意思，最後把這個詞念出來。
+   它是語詞學習的收尾，不是獨立的一站。出處標示比照
+   `2026-09-30-speaking-practice.md` 第一節，列入驗收條件。
+2. **朗讀挑戰**（念課文段落）**另闢一區**，和各大項並列，不塞進語詞裡。
+   它評的是連續語流，和單詞念讀是兩回事。
+3. **朗讀要能選擇顯示或不顯示注音**（CF 指定）。理由：已經能解碼的學生看注音
+   反而受干擾，還在解碼階段的需要注音當鷹架；同一課同一份教材要能兩種都用。
+   課文點讀（P0-C）已經做了這個開關，朗讀挑戰沿用同一個互動與同一個 class
+   （`.reader__text--no-zhuyin`），不要另做一套。
+
+判準統一：無聲調讀音比對、同音字算對、標出沒念到的字、90／70／40 → 3／2／1 星、
+每段取最高分。朗讀挑戰需要先完成 P0-C 才有課文段落可念（已完成）。
 
 ### P2-G　分組與解鎖
 
@@ -251,6 +263,52 @@ challenge: wrongLimit 2, autoRead false, unlockMemory true,  prefill 0
 | 全域 `CAPTURE` 旗標收題 | 改成參數傳遞（見 P0-B） |
 | 錯題存 `innerHTML` | 我們的題目是純資料，存資料即可（見 P0-A） |
 | 無 `status` 審核閘門 | 我們的教材來自出版社大補帖，審核閘門是版權界線的一部分，不可移除 |
+
+---
+
+## 5.5　P0-C 完工紀錄（2026-10-01）
+
+已實作並驗證：
+
+| 產出 | 說明 |
+|---|---|
+| `tools/encrypt_readings.py` | PBKDF2-SHA256（210000 次）→ AES-GCM。明碼讀 `~/mandarin-work/reading-tool-lessons/`，輸出 `public/data/readings.enc.json` |
+| `src/utils/classroomKey.js` | 解鎖／記住金鑰／鎖上。存的是 raw key，不是密碼 |
+| `src/pages/ReaderPage.js` | 讀字／讀詞／讀句三粒度共用同一份 DOM；念全文逐句高亮＋捲動；注音可切換 |
+| `src/components/ZhuyinText.js` | 注音字右側直排 |
+| `schema/readings-envelope.schema.json` ＋ `validate-data.mjs` | 密文檔納入 `npm run validate` |
+| `scripts/test-classroom-key.mjs` | 9 組斷言，含「密文檔不得出現明碼」 |
+
+決策與踩到的坑（寫下來免得重蹈）：
+
+- **資料對位**：`overrides` 的 index 是數進原始 `text` 的位置，**包含詞邊界符
+  `|`**。第一版掃描時跳過 `|`，整份注音錯一格（「我」拿到空注音、「的」拿到
+  ㄨㄛˇ）。現在用 `overrides[idx].char` 逐字驗證，對不上就整批失敗。
+- **段與行要分開**：課文有詩歌（〈我的心情〉），把一段裡的換行吃掉會讓詩變散文。
+  資料是 `[段][行][詞]` 三層。
+- **注音排版不用 `ruby-position: inter-character`**：那是正規解法但只有
+  Safari／Firefox 支援，Chrome（Chromebook、Windows）會默默退回「注音排在字上方」，
+  同一份教材在不同載具長得不一樣。改用 `inline-flex` ＋ `writing-mode: vertical-rl`，
+  各瀏覽器一致。
+- **行內文字不套 44px 觸控**：硬撐會變成「我 的 心 情」，課文就不像課文了。
+  改為自然字寬（iPad 上 30–34px）＋ `line-height: 2.4` 把垂直可點範圍撐到約 50–60px，
+  並以「讀詞／讀句」模式補償點歪（點到同詞鄰字，念出來仍是同一個詞）。
+- **課次代號在加密時就轉換**：Reading-Tool 是 `115HG2A01`、課文樂園是 `115AG2H01`
+  （出版社字母與學期字母互換）。密文直接用課文樂園的 id 當 key，前端不做字串轉換。
+
+覆蓋率：course-index 登記 55 課，其中 **43 課有課文**。
+**三上（115AG3H）12 課全部沒有課文**，Reading-Tool 從來沒做過這一冊。
+Reading-Tool 另有 9 課學前教材（G0）課文樂園沒有對應課次，未收進密文。
+
+已知待修：7 個漢字沒有注音（仍可點讀，只是沒注音），全部是「盡」的後一字，
+源頭是 Reading-Tool 多音規則的 off-by-one，另案處理。
+
+歷史改寫：`Chinese/Reading-Tool/lessons/`（53 檔）已用 `git filter-repo` 從
+全部歷史移除並 force push。改寫前鏡像備份在
+`~/git-archives/Teaching-Materials-before-filter-repo-20261001.git`。
+213 → 204 commits（9 個只動過 lessons/ 的 commit 變空被刪）。
+**其他機器的 clone 要跑 `git fetch origin && git reset --hard origin/main`。**
+注意：這不會收回已經公開約六週（2026-08-19 起）的內容，只是停止繼續散布。
 
 ---
 
