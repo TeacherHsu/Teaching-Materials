@@ -2857,3 +2857,38 @@
   .nav-card,
   .btn { transition: background 160ms ease-out, border-color 160ms ease-out; }
 }
+
+/* ── 字感訓練：遮罩補全與閃現 ─────────────────────
+   這兩種題型是「部件拼一拼」學習單的數位替代。原本要有拆字資料，
+   但 etymology.components 只有 7% 覆蓋率。遮罩不需要拆字——漢字本來就是
+   空間組合的，遮掉左半，剩下的「禾」就是幾何上免費得到的部件。 */
+.glyph-quiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  margin: var(--space-3) 0 var(--space-4);
+}
+.glyph-quiz__hint {
+  font-size: var(--font-size-meta);
+  color: var(--text-secondary);
+}
+.glyph-mask,
+.glyph-flash {
+  display: inline-block;
+  font-size: clamp(96px, 22vw, 160px);
+  line-height: 1.1;
+  font-family: var(--font-family-base);
+  color: var(--text-primary);
+  /* 用純色遮罩而不是半透明：半透明會讓學生隱約看見答案，等於沒遮 */
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2) var(--space-4);
+}
+/* 四個方向各遮一半。clip-path 比疊圖層可靠：縮放與字型變化都跟著走。 */
+.glyph-mask--left { clip-path: inset(0 0 0 50%); }
+.glyph-mask--right { clip-path: inset(0 50% 0 0); }
+.glyph-mask--top { clip-path: inset(50% 0 0 0); }
+.glyph-mask--bottom { clip-path: inset(0 0 50% 0); }
+.glyph-flash--gone { color: var(--text-secondary); opacity: 0.5; }

@@ -1,4 +1,14 @@
-// 「字感訓練」：在一片字陣裡找出目標字。
+// 「字感訓練」：建立生字的「心理圖像」——學生腦中要能看見字長什麼樣，
+// 才寫得出來。三種題型由易到難：
+//
+//   1. 視覺搜尋：在字陣裡找出目標字（辨識）
+//   2. 遮罩補全：字被遮掉一半，猜是哪個字（部件辨識）
+//   3. 閃現後寫出：字出現兩秒就消失，從形近字裡選出（字形記憶）
+//
+// 第 2、3 種是「部件拼一拼」學習單的數位替代方案。原本的做法要有拆字資料，
+// 但 etymology.components 只有 7% 覆蓋率。遮罩不需要拆字資料——漢字本來就是
+// 空間組合的，用 CSS 遮掉左半，剩下的「禾」就是幾何上免費得到的部件。
+// 閃現則切斷視覺比對，強迫從記憶中提取，那正是心理圖像的訓練。
 //
 // 這是視覺辨識與注意力的訓練，來源是 CF 提供的「識寫策略學習單」。
 // 紙本做不到、數位版才做得到的部分是**記錄歷程**：找到幾個、點錯幾次、
@@ -15,6 +25,7 @@ import { h, clear } from '../utils/dom.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 import { CompletionFeedback } from '../components/CompletionFeedback.js';
+import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { missingContentNotice } from './engine.js';
 import { filterByStatus } from '../utils/preview.js';
 import { shuffle } from '../utils/shuffle.js';
@@ -71,6 +82,55 @@ export function buildRound(group, level, shuffleImpl = shuffle) {
   return { target, cells: shuffleImpl(cells), cols: config.cols };
 }
 
+/** 遮罩的方向：各遮掉一半，剩下的那半就是「部件」。 */
+const MASK_SIDES = [
+  { key: 'left', label: '左半邊被遮住了' },
+  { key: 'right', label: '右半邊被遮住了' },
+  { key: 'top', label: '上半部被遮住了' },
+  { key: 'bottom', label: '下半部被遮住了' },
+];
+
+/**
+ * 遮罩補全：顯示被遮掉一半的字，從同組形近字裡選出正確的。
+ * 形近字當選項是刻意的——它們的另一半長得很像，學生必須看懂露出來的部件。
+ */
+export function buildMaskItems(groups, shuffleImpl = shuffle) {
+  const items = [];
+  for (const group of groups) {
+    for (const char of group.chars) {
+      const others = group.chars.filter((c) => c !== char);
+      if (!others.length) continue;
+      const side = shuffleImpl(MASK_SIDES)[0];
+      items.push({
+        char,
+        side,
+        options: shuffleImpl([char, ...others]).slice(0, Math.min(4, group.chars.length)),
+        answer: char,
+      });
+    }
+  }
+  return shuffleImpl(items);
+}
+
+/**
+ * 閃現後寫出：字出現兩秒就消失，再從形近字裡選出剛剛看到的那個。
+ * 看得到字的時候不能作答，看不到的時候才能選——這樣才是考記憶不是考比對。
+ */
+export function buildFlashItems(groups, shuffleImpl = shuffle) {
+  const items = [];
+  for (const group of groups) {
+    if (group.chars.length < 2) continue;
+    for (const char of group.chars) {
+      items.push({
+        char,
+        options: shuffleImpl([...group.chars]).slice(0, Math.min(4, group.chars.length)),
+        answer: char,
+      });
+    }
+  }
+  return shuffleImpl(items);
+}
+
 /**
  * @param {object} lesson
  * @param {() => void} onBack
@@ -87,12 +147,29 @@ export function buildVisualSearchActivity(lesson, onBack) {
   // 字陣大小由教師設定決定
   const level = getScaffoldLevelKey();
 
+  // 三個步驟依序進行：找字 → 遮罩補全 → 閃現後寫出，由易到難。
+  const maskItems = buildMaskItems(groups).slice(0, GRID[level]?.targets ? 4 : 4);
+  const flashItems = buildFlashItems(groups).slice(0, 4);
+  const steps = ['search'];
+  if (maskItems.length) steps.push('mask');
+  if (flashItems.length) steps.push('flash');
+  let stepIndex = 0;
+
   let roundIndex = 0;
   const stats = { rounds: 0, firstTry: 0 };
 
+  function nextStep() {
+    stepIndex += 1;
+    roundIndex = 0;
+    render();
+  }
+
   function render() {
     clear(container);
+    if (steps[stepIndex] === 'mask') { renderMask(); return; }
+    if (steps[stepIndex] === 'flash') { renderFlash(); return; }
     if (roundIndex >= groups.length) {
+      if (stepIndex < steps.length - 1) { nextStep(); return; }
       container.appendChild(CompletionFeedback({
         correct: stats.firstTry,
         total: stats.rounds,
@@ -175,6 +252,92 @@ export function buildVisualSearchActivity(lesson, onBack) {
     container.appendChild(status);
     container.appendChild(grid);
     container.appendChild(actions);
+  }
+
+  // ── 遮罩補全 ────────────────────────────────────
+  function renderMask() {
+    const items = maskItems.map((item) => ({
+      id: `mask:${item.char}:${item.side.key}`,
+      stem: `${item.side.label}，這是哪一個字？`,
+      stemContent: h('div', { class: 'glyph-quiz' }, [
+        h('span', { class: `glyph-mask glyph-mask--${item.side.key}` }, item.char),
+        h('span', { class: 'glyph-quiz__hint' }, item.side.label),
+      ]),
+      options: item.options,
+      answer: item.answer,
+      explanation: `答案是「${item.answer}」。`,
+      hints: ['看看露出來的那一半，想想哪一個字有這個部分。'],
+    }));
+    container.appendChild(TaskBanner({
+      label: '字被遮住一半了，猜猜看是哪一個字。',
+      step: `第 ${stepIndex + 1}／${steps.length} 步`,
+    }));
+    container.appendChild(ChoiceQuiz({
+      items,
+      onBack,
+      backLabel: '回課程首頁',
+      onContinue: stepIndex < steps.length - 1 ? nextStep : null,
+      continueLabel: '繼續：閃一下就不見',
+    }));
+  }
+
+  // ── 閃現後寫出 ──────────────────────────────────
+  function renderFlash() {
+    let index = 0;
+
+    function showOne() {
+      clear(container);
+      if (index >= flashItems.length) {
+        container.appendChild(CompletionFeedback({
+          correct: stats.firstTry,
+          total: stats.rounds,
+          onRetry: () => { stepIndex = 0; roundIndex = 0; stats.rounds = 0; stats.firstTry = 0; render(); },
+          onBack,
+          backLabel: '回課程首頁',
+        }));
+        return;
+      }
+      const item = flashItems[index];
+      container.appendChild(TaskBanner({
+        label: '看清楚這個字，記住了就按下面的按鈕，字會蓋起來。',
+        step: `第 ${stepIndex + 1}／${steps.length} 步 ・ 第 ${index + 1}／${flashItems.length} 題`,
+      }));
+
+      const stage = h('div', { class: 'glyph-quiz' }, [
+        h('span', { class: 'glyph-flash' }, item.char),
+      ]);
+      const slot = h('div', {});
+      container.appendChild(stage);
+      container.appendChild(slot);
+
+      // 由學生自己按「我記住了」才蓋掉，不用倒數計時。
+      // 計時對 ADHD 學生是額外的焦慮來源，而焦慮正是記憶的敵人；
+      // 讓他自己決定看多久，願意多看幾次也沒關係——這一項練的是
+      // 「把字存進腦中」，不是「在幾秒內存進腦中」。
+      const ready = h('button', { class: 'btn btn--primary', type: 'button' }, '我記住了');
+      ready.addEventListener('click', () => {
+        clear(stage);
+        stage.appendChild(h('span', { class: 'glyph-flash glyph-flash--gone' }, '？'));
+        ready.remove();
+        slot.appendChild(ChoiceQuiz({
+          items: [{
+            id: `flash:${item.char}:${index}`,
+            stem: '剛剛看到的是哪一個字？',
+            options: item.options,
+            answer: item.answer,
+            explanation: `答案是「${item.answer}」。`,
+            hints: ['想想它的部首在左邊還是上面。'],
+          }],
+          onBack,
+          backLabel: '回課程首頁',
+          onContinue: () => { index += 1; showOne(); },
+          continueLabel: index < flashItems.length - 1 ? '下一題' : '看結果',
+        }));
+      });
+      container.appendChild(h('div', { class: 'quiz-option-row' }, [ready]));
+    }
+
+    showOne();
   }
 
   render();

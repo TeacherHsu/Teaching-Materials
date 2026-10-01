@@ -91,6 +91,15 @@ class FakeElement {
     return child;
   }
 
+  /** 把自己從父節點移除（真實 DOM 的 ChildNode.remove）。 */
+  remove() {
+    const parent = this.parentNode;
+    if (!parent) return;
+    const at = parent.children.indexOf(this);
+    if (at >= 0) parent.children.splice(at, 1);
+    this.parentNode = null;
+  }
+
   insertBefore(child, reference) {
     child.parentNode = this;
     const at = reference ? this.children.indexOf(reference) : -1;
