@@ -19,6 +19,9 @@ const KEY = 'mandarin:device-settings:v1';
  *     'clause'    支持層：念到逗號，或滿 20 字就斷——一口氣念得完才有成就感。
  *     'sentence'  標準層：念到句號，也就是完整的一句話。
  *     'paragraph' 挑戰層：一次一整段，練連續語流。
+ * - unlockMemory：配對改成翻牌記憶遊戲。只有挑戰層開——工作記憶正是學障
+ *     學生的弱項，翻牌直接打在弱點上，所以只給能力較好的學生，而且在
+ *     加練區，沒有人被迫玩。
  * - prefill：造句時預先幫他填好句型的前幾個必用字，游標停在最後。
  *     支持層填 1 個。我們的造句是一個輸入框的自由書寫，在句子**中間**
  *     插字對手部控制不佳或不熟輸入法的學生很痛苦；預填開頭等於給一個
@@ -36,6 +39,7 @@ export const SCAFFOLD_LEVELS = {
     autoRead: true,
     reciteUnit: 'clause',
     reciteModel: true,
+    unlockMemory: false,
     prefill: 1,
     note: '選項少、題數少；答錯一次就直接告訴他答案；題目會自動念出來；朗讀一次一句、可先聽範讀。',
   },
@@ -48,6 +52,7 @@ export const SCAFFOLD_LEVELS = {
     autoRead: false,
     reciteUnit: 'sentence',
     reciteModel: true,
+    unlockMemory: false,
     prefill: 0,
     note: '一般難度。答錯先給提示，再錯才揭曉答案；朗讀一次一句、可先聽範讀。',
   },
@@ -60,6 +65,7 @@ export const SCAFFOLD_LEVELS = {
     autoRead: false,
     reciteUnit: 'paragraph',
     reciteModel: false,
+    unlockMemory: true,
     prefill: 0,
     note: '選項多。答錯先給提示，再錯才揭曉答案；朗讀一次一整段、沒有範讀。',
   },

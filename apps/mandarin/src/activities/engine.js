@@ -4,6 +4,8 @@
 import { h, clear } from '../utils/dom.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { MatchingGame } from '../components/MatchingGame.js';
+import { MemoryGame } from '../components/MemoryGame.js';
+import { getScaffoldLevel } from '../utils/deviceSettings.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { chunkRounds } from '../utils/chunk.js';
 
@@ -63,7 +65,7 @@ export function buildChallengeActivity(lesson, onBack) {
       const canContinue = !isLastRound;
       container.appendChild(TaskBanner({ label: matchingItem?.stem || '字 ↔ 部首配對', step: taskLabel }));
       container.appendChild(
-        MatchingGame({
+        (getScaffoldLevel().unlockMemory ? MemoryGame : MatchingGame)({
           pairs: matchingRounds[roundIndex],
           backLabel: canContinue ? '本課先完成' : '回課程首頁',
           onBack,

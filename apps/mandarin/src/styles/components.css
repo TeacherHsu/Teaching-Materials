@@ -2892,3 +2892,55 @@
 .glyph-mask--top { clip-path: inset(50% 0 0 0); }
 .glyph-mask--bottom { clip-path: inset(0 0 50% 0); }
 .glyph-flash--gone { color: var(--text-secondary); opacity: 0.5; }
+
+/* ── 翻牌記憶（挑戰層的配對）────────────────────── */
+.memory-game {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+.memory-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(var(--tap-target-min) * 1.8);
+  padding: var(--space-2);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-muted);
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: var(--font-size-button);
+  line-height: 1.4;
+  text-align: center;
+  cursor: pointer;
+  transition: background 160ms ease-out, border-color 160ms ease-out;
+}
+.memory-card:hover { border-color: var(--module-color, var(--color-primary)); }
+.memory-card:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 4px; }
+.memory-card__back { font-size: var(--font-size-section); color: var(--text-secondary); }
+/* 翻開：換底色與文字色，不做 3D 翻轉動畫——翻轉對前庭敏感的學生不舒服，
+   而且 reduced-motion 下還是得有另一套表現，不如一開始就用顏色表達。 */
+.memory-card--up {
+  background: var(--color-surface);
+  border-color: var(--module-color, var(--color-primary));
+  color: var(--text-primary);
+}
+/* 配對成功：顏色＋勾號雙重標示 */
+.memory-card--matched {
+  background: var(--module-color-tint, var(--color-surface-muted));
+  border-color: var(--module-color, var(--color-primary));
+  color: var(--module-color-dark, var(--color-primary));
+  cursor: default;
+  position: relative;
+}
+.memory-card--matched::after {
+  content: '✓';
+  position: absolute;
+  top: 4px;
+  inset-inline-end: 8px;
+  font-size: var(--font-size-meta);
+  font-weight: 700;
+}
+@media (prefers-reduced-motion: reduce) { .memory-card { transition: none; } }

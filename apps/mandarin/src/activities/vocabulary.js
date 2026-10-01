@@ -7,6 +7,8 @@ import { h, clear } from '../utils/dom.js';
 import { shuffle as shuffled } from '../utils/shuffle.js';
 import { VocabularyCard } from '../components/VocabularyCard.js';
 import { MatchingGame } from '../components/MatchingGame.js';
+import { MemoryGame } from '../components/MemoryGame.js';
+import { getScaffoldLevel } from '../utils/deviceSettings.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { missingContentNotice } from './engine.js';
@@ -115,7 +117,7 @@ export function buildVocabularyActivity(lesson, onBack) {
       );
       const pairs = matchingRounds[roundIndex].map((w) => ({ left: w.word, right: w.meaning }));
       container.appendChild(
-        MatchingGame({
+        (getScaffoldLevel().unlockMemory ? MemoryGame : MatchingGame)({
           pairs,
           backLabel: isLastRound ? (isLastStep ? '回課程首頁' : '繼續：看義選詞') : '本課先完成',
           onContinue: isLastRound ? null : () => {
