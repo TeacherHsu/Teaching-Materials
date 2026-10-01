@@ -5,7 +5,7 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
     'use strict';
 
-    const VERSION = '1.8.0';
+    const VERSION = '1.9.0';
 
     // Teacher-approved defaults. Phrase rules below take precedence when the
     // surrounding text establishes another reading.
@@ -44,6 +44,19 @@
         '叔叔': '˙ㄕㄨ', '姑姑': '˙ㄍㄨ', '舅舅': '˙ㄐㄧㄡ', '姨姨': '˙ㄧ',
         '嬸嬸': '˙ㄕㄣ', '太太': '˙ㄊㄞ',
     };
+
+
+    // 名詞詞尾「頭」讀輕聲（2026-09-30，CF 指示）。
+    // 不能做成「詞尾頭一律輕聲」的通則——教育部《國語辭典簡編本》裡
+    // 鏡頭、源頭、盡頭、眉頭、肩頭、老頭、龍頭、山頭、彈頭 等仍讀本調 ㄊㄡˊ，
+    // 動詞片語（點頭、搖頭、低頭、抬頭、回頭、從頭）也是本調，因此逐詞查證列舉。
+    // 辭典並列兩讀者（對頭、風頭）不收，交由教師自行裁定。
+    const TOU_NEUTRAL_PHRASES = [
+        '念頭', '石頭', '木頭', '骨頭', '饅頭', '磚頭', '芋頭', '舌頭', '枕頭',
+        '罐頭', '拳頭', '指頭', '碼頭', '額頭', '鋤頭', '斧頭', '苦頭', '甜頭',
+        '丫頭', '來頭', '看頭', '兆頭', '苗頭',
+        '裡頭', '外頭', '上頭', '下頭', '前頭', '後頭',
+    ];
 
     const HIGH_RISK_CHARS = new Set([
         '著', '和', '得', '誰', '一', '不', '樂', '長', '種', '重', '數', '行',
@@ -699,6 +712,19 @@
             }
         });
 
+        // 名詞詞尾「頭」輕聲：長詞優先（水龍頭不可被龍頭影響），逐詞比對。
+        TOU_NEUTRAL_PHRASES.forEach(phrase => {
+            let start = 0;
+            while (start <= text.length - phrase.length) {
+                const found = text.indexOf(phrase, start);
+                if (found < 0) break;
+                const target = found + phrase.indexOf('頭');
+                setReading(target, '˙ㄊㄡ', 'tou-neutral-suffix');
+                phraseMatched.add(target);
+                start = found + Math.max(1, phrase.length);
+            }
+        });
+
         Object.entries(KINSHIP_REDUPLICATIONS).forEach(([term, zhuyin]) => {
             let start = 0;
             while (start <= text.length - term.length) {
@@ -745,6 +771,7 @@
         VERSION,
         COMMON_DEFAULTS,
         KINSHIP_REDUPLICATIONS,
+        TOU_NEUTRAL_PHRASES,
         HIGH_RISK_CHARS,
         CLASSIFIER_PRECEDERS,
         JIN4_PHRASES,

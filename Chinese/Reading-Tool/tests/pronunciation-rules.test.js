@@ -10,7 +10,7 @@ assert.equal(rules.pinyinSyllableToZhuyin('zhi4'), 'ㄓˋ');
 assert.equal(rules.pinyinSyllableToZhuyin('wen2'), 'ㄨㄣˊ');
 assert.equal(rules.pinyinSyllableToZhuyin('jue2'), 'ㄐㄩㄝˊ');
 assert.equal(rules.pinyinSyllableToZhuyin('xi0'), '˙ㄒㄧ');
-assert.equal(rules.VERSION, '1.8.0');
+assert.equal(rules.VERSION, '1.9.0');
 
 function analyze(text, known = {}) {
     const readings = Array.from(text, (_, index) => known[index] || 'ㄗ');
@@ -247,5 +247,29 @@ expectReading('播種', 1, 'ㄓㄨㄥˇ');
     assert.equal(r.readings[1], 'ㄑㄧˊ');
     assert.equal(r.speechOverrides[1], undefined);
 }
+
+// === 名詞詞尾「頭」輕聲（2026-09-30）===
+// 來源：教育部《國語辭典簡編本》逐詞查證。
+expectReading('念頭', 1, '˙ㄊㄡ');
+expectReading('石頭', 1, '˙ㄊㄡ');
+expectReading('骨頭', 1, '˙ㄊㄡ');
+expectReading('饅頭', 1, '˙ㄊㄡ');
+expectReading('裡頭', 1, '˙ㄊㄡ');
+expectReading('外頭', 1, '˙ㄊㄡ');
+// 不是一律輕聲：這些詞在辭典裡仍讀本調，不得被通則掃到。
+expectReading('鏡頭', 1, 'ㄊㄡˊ', { 1: 'ㄊㄡˊ' });
+expectReading('源頭', 1, 'ㄊㄡˊ', { 1: 'ㄊㄡˊ' });
+expectReading('眉頭', 1, 'ㄊㄡˊ', { 1: 'ㄊㄡˊ' });
+expectReading('點頭', 1, 'ㄊㄡˊ', { 1: 'ㄊㄡˊ' });
+expectReading('回頭', 1, 'ㄊㄡˊ', { 1: 'ㄊㄡˊ' });
+expectReading('頭髮', 0, 'ㄊㄡˊ', { 0: 'ㄊㄡˊ' });
+// 盡頭：「盡」讀 ㄐㄧㄣˋ，「頭」維持本調。
+expectReading('盡頭', 0, 'ㄐㄧㄣˋ');
+expectReading('盡頭', 1, 'ㄊㄡˊ', { 1: 'ㄊㄡˊ' });
+// 疊字稱謂第二字輕聲（既有規則，補上回歸測試）。
+expectReading('爸爸', 1, '˙ㄅㄚ');
+expectReading('媽媽', 1, '˙ㄇㄚ');
+expectReading('哥哥', 1, '˙ㄍㄜ');
+expectReading('我的爸爸很高', 3, '˙ㄅㄚ');
 
 console.log(`PRONUNCIATION RULE TESTS PASSED: ${rules.VERSION}`);
