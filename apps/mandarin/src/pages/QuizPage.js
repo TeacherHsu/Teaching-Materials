@@ -164,6 +164,8 @@ export function QuizPage(lesson) {
           h('p', { class: 'outcome__score' }, `${score} 分`),
           SpeakButton({ text: headline, label: '聽', variant: 'speak-button--option' }),
         ]),
+        h('h1', { class: 'outcome__title' }, praise.title),
+        h('p', { class: 'outcome__praise' }, praise.text),
         h('p', { class: 'outcome__note' },
           `第一次就答對 ${session.firstTryCount}／${session.total} 題` + (wrong ? `，答錯的 ${wrong} 題已經放進錯題複習。` : '。')),
         table,

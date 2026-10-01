@@ -1,3 +1,4 @@
+import { MODULE_COLOR_KEYS, moduleColorVars } from '../activities/moduleRegistry.js';
 import { h } from '../utils/dom.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 
@@ -21,12 +22,27 @@ export function GradePage(courseIndex, gradeNo) {
   for (const volume of grade.volumes) {
     for (const unit of volume.units) {
       for (const lesson of unit.lessons) {
-        const metaText = unit.title.startsWith('TODO') ? volume.label : `${volume.label} ・ ${unit.title}`;
+        // 單元名稱是 TODO 或只是「N 年級上學期國語課程」這種樣板字時不顯示
+        const unitLabel = unit.title.startsWith('TODO') || /國語課程$/.test(unit.title)
+          ? '' : unit.title;
         const cardLabel = `第 ${lesson.lesson_no} 課：${lesson.title}，${volume.label}`;
         const titleText = `第 ${lesson.lesson_no} 課：${lesson.title}`;
-        const link = h('a', { class: 'nav-card', href: `#/lesson/${lesson.lesson_id}`, 'aria-label': cardLabel }, [
-          h('div', { class: 'nav-card__meta' }, metaText),
-          h('div', { class: 'nav-card__title' }, titleText),
+        // 課次卡片沿用這一冊的顏色與課號徽章。原本全部純白，和站上其他
+        // 頁面的卡片語彙不一致，掃視時也分不出第幾課。
+        const colorKey = MODULE_COLOR_KEYS[(lesson.lesson_no - 1) % MODULE_COLOR_KEYS.length];
+        const link = h('a', {
+          class: 'nav-card nav-card--lesson',
+          href: `#/lesson/${lesson.lesson_id}`,
+          'aria-label': cardLabel,
+          style: Object.entries(moduleColorVars(colorKey)).map(([k, v]) => `${k}:${v}`).join(';'),
+        }, [
+          h('span', { class: 'nav-card__no', 'aria-hidden': 'true' }, String(lesson.lesson_no)),
+          // 卡片上不再重複冊別（頁面標題已經寫了「康軒四上」），那行比課名
+          // 還長、又每張都一樣，只會搶走視線。單元名稱有意義時才顯示。
+          h('div', { class: 'nav-card__body' }, [
+            h('div', { class: 'nav-card__title' }, lesson.title),
+            unitLabel ? h('div', { class: 'nav-card__meta' }, unitLabel) : null,
+          ].filter(Boolean)),
         ]);
         lessons.push({ lesson, titleText, link });
       }

@@ -74,6 +74,44 @@ export const SCAFFOLD_LEVELS = {
 const DEFAULT_LEVEL = 'standard';
 
 /**
+ * 「本課先完成」按鈕要不要出現。**預設關**（CF 指定）：
+ * 開著的話學生可以在任何一步中途離開，為了快點拿到星星而跳過練習。
+ * 教師需要讓學生中途停下來時（下課了、要換活動）再打開。
+ * 這是教師設定，不是等級的一部分——和能力無關，是課堂節奏的需要。
+ */
+/**
+ * 最後看的冊別（年級）。教師設定頁沒有課次脈絡，但老師是從某一冊點進去的，
+ * 回去時應該回到那一冊，不是整站首頁——不然每次調完設定都要重新點三層。
+ */
+export function getLastGrade() {
+  const grade = read().lastGrade;
+  return typeof grade === 'string' && grade ? grade : null;
+}
+
+export function setLastGrade(grade) {
+  if (!grade) return false;
+  return write({ ...read(), lastGrade: String(grade) });
+}
+
+export const EARLY_EXIT_LABEL = '本課先完成';
+
+/**
+ * 這個返回按鈕是不是「中途離開」。活動結束時的「回課程首頁」要永遠顯示，
+ * 只有中途離開的那顆受設定控制——用標籤區分，呼叫端不必各自傳旗標。
+ */
+export function shouldShowBackButton(label) {
+  return label !== EARLY_EXIT_LABEL || getShowEarlyExit();
+}
+
+export function getShowEarlyExit() {
+  return read().showEarlyExit === true;
+}
+
+export function setShowEarlyExit(on) {
+  return write({ ...read(), showEarlyExit: Boolean(on) });
+}
+
+/**
  * 可以個別覆寫的項目。值為 null 代表「跟隨等級」——這個哨兵值是刻意的：
  * 教師手動調過的項目，之後切換等級**不會**被蓋掉；要恢復成跟著等級走，
  * 必須明確按「跟隨等級」。沒有這個區分的話，教師每次換等級都要重調一次。

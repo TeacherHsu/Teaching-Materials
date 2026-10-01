@@ -5,7 +5,7 @@
 // 頁面不顯示、也不儲存任何學生姓名；紀錄只有課次代號、大項代號與正確率。
 import { h, clear } from '../utils/dom.js';
 import { findModuleEntry } from '../activities/moduleRegistry.js';
-import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel, setDeviceLabel, getSheetUrl, setSheetUrl, getScaffoldLevel, getOverride, setOverride } from '../utils/deviceSettings.js';
+import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel, setDeviceLabel, getSheetUrl, setSheetUrl, getScaffoldLevel, getOverride, setOverride, getShowEarlyExit, setShowEarlyExit, getLastGrade } from '../utils/deviceSettings.js';
 import { makeTeacherChallenge, verifyTeacherChallenge } from '../utils/teacherGate.js';
 import { listRecords, recordsAsTsv, clearRecords, unsyncedAttempts, syncRecords } from '../utils/records.js';
 import { allMistakes, clearMistakes } from '../utils/mistakes.js';
@@ -128,6 +128,30 @@ function buildPanel(root) {
     ]);
     root.appendChild(row);
   }
+
+  // ---- 課堂控制 ----
+  root.appendChild(h('h3', {}, '課堂控制'));
+  const earlyOn = getShowEarlyExit();
+  const earlyRow = h('div', { class: 'card teacher-override' }, [
+    h('p', { class: 'teacher-override__label' }, '顯示「本課先完成」按鈕'),
+    h('p', { class: 'meta' },
+      '預設關閉。開著的話學生可以在任何一步中途離開，為了快點拿到星星而跳過練習。'
+      + '需要讓學生停下來時（下課了、要換活動）再打開。活動做完的「回課程首頁」不受影響。'),
+    h('div', { class: 'quiz-option-row' }, [
+      ...[['關', false], ['開', true]].map(([label, value]) => {
+        const on = earlyOn === value;
+        const btn = h('button', {
+          class: `btn${on ? ' btn--primary' : ''}`,
+          type: 'button',
+          'aria-pressed': String(on),
+        }, label);
+        btn.addEventListener('click', () => { setShowEarlyExit(value); buildPanel(root); });
+        return btn;
+      }),
+    ]),
+    h('p', { class: 'meta' }, `目前：${earlyOn ? '會顯示' : '不顯示'}`),
+  ]);
+  root.appendChild(earlyRow);
 
   // ---- 教室密碼 ----
   // 解鎖後金鑰會記在這台載具（學生不必每次輸入），所以一定要給老師一個
@@ -288,7 +312,13 @@ function buildPanel(root) {
     buildPanel(root);
   });
   root.appendChild(h('div', { class: 'quiz-option-row', style: 'margin-top:24px' }, [clearBtn]));
-  root.appendChild(h('a', { class: 'btn', href: '#/', style: 'margin-top:16px' }, '回首頁'));
+  // 回到老師進來之前的那一冊，不是整站首頁——不然每次調完設定都要重新點三層。
+  const lastGrade = getLastGrade();
+  root.appendChild(h('a', {
+    class: 'btn',
+    href: lastGrade ? `#/grade/${lastGrade}` : '#/',
+    style: 'margin-top:16px',
+  }, lastGrade ? '回到課本' : '回首頁'));
 }
 
 export function TeacherPage() {
@@ -319,7 +349,13 @@ export function TeacherPage() {
     root.appendChild(input);
     root.appendChild(h('div', { class: 'quiz-option-row' }, [submit]));
     root.appendChild(error);
-    root.appendChild(h('a', { class: 'btn', href: '#/', style: 'margin-top:16px' }, '回首頁'));
+    // 回到老師進來之前的那一冊，不是整站首頁——不然每次調完設定都要重新點三層。
+  const lastGrade = getLastGrade();
+  root.appendChild(h('a', {
+    class: 'btn',
+    href: lastGrade ? `#/grade/${lastGrade}` : '#/',
+    style: 'margin-top:16px',
+  }, lastGrade ? '回到課本' : '回首頁'));
   }
 
   buildGate();

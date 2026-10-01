@@ -8,7 +8,7 @@ import { shuffle as shuffled } from '../utils/shuffle.js';
 import { VocabularyCard } from '../components/VocabularyCard.js';
 import { MatchingGame } from '../components/MatchingGame.js';
 import { MemoryGame } from '../components/MemoryGame.js';
-import { getScaffoldLevel } from '../utils/deviceSettings.js';
+import { getScaffoldLevel, shouldShowBackButton, EARLY_EXIT_LABEL } from '../utils/deviceSettings.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { missingContentNotice } from './engine.js';
@@ -103,7 +103,10 @@ export function buildVocabularyActivity(lesson, onBack) {
       };
       if (canContinue) {
         const actions = h('div', { class: 'activity-round-actions' });
-        actions.appendChild(h('button', { class: 'btn btn--secondary', type: 'button', onclick: onBack }, '本課先完成'));
+        // 「本課先完成」預設不顯示，由教師設定控制（見 utils/deviceSettings.js）
+        if (shouldShowBackButton(EARLY_EXIT_LABEL)) {
+          actions.appendChild(h('button', { class: 'btn btn--secondary', type: 'button', onclick: onBack }, EARLY_EXIT_LABEL));
+        }
         actions.appendChild(h('button', { class: 'btn', type: 'button', onclick: proceed }, '加練下一組'));
         container.appendChild(actions);
       } else {

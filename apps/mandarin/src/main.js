@@ -1,5 +1,6 @@
 import { route, notFoundRoute, startRouter } from './router/router.js';
 import { unlockFromStore } from './utils/classroomKey.js';
+import { setLastGrade } from './utils/deviceSettings.js';
 import { HomePage } from './pages/HomePage.js';
 import { GradePage } from './pages/GradePage.js';
 import { LessonDashboard } from './pages/LessonDashboard.js';
@@ -125,12 +126,14 @@ route(/^\/$/, async () => {
 });
 
 route(/^\/grade\/(?<grade>[^/]+)$/, async ({ grade }) => {
+  setLastGrade(grade);   // 教師設定頁回去時要回到這一冊
   const courseIndex = await loadCourseIndex();
   mount(GradePage(courseIndex, grade));
 });
 
 route(/^\/lesson\/(?<lessonId>[^/]+)$/, async ({ lessonId }) => {
   const lesson = await loadLesson(lessonId);
+  if (lesson) setLastGrade(String(lesson.volume.grade));
   if (!lesson) {
     mount(h('div', { class: 'container' }, h('div', { class: 'missing-content' }, '找不到這一課的資料。')));
     return;

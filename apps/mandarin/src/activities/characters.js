@@ -15,7 +15,7 @@ import { buildExtensionLinks } from '../components/ExtensionLinks.js';
 import { PronunciationNotice } from '../components/PronunciationNotice.js';
 import { missingContentNotice } from './engine.js';
 import { buildPronunciationItems } from './pronunciationQuestions.js';
-import { getScaffoldLevel } from '../utils/deviceSettings.js';
+import { getScaffoldLevel, shouldShowBackButton, EARLY_EXIT_LABEL } from '../utils/deviceSettings.js';
 
 const ROUND_MAX = 5;
 const MAX_DISPLAY_EXAMPLES = 3;
@@ -198,7 +198,10 @@ export function buildCharactersActivity(lesson, onBack) {
       };
       if (moreCards) {
         const actions = h('div', { class: 'activity-round-actions' });
-        actions.appendChild(h('button', { class: 'btn', type: 'button', onclick: onBack }, '本課先完成'));
+        // 「本課先完成」預設不顯示，由教師設定控制（見 utils/deviceSettings.js）
+        if (shouldShowBackButton(EARLY_EXIT_LABEL)) {
+          actions.appendChild(h('button', { class: 'btn', type: 'button', onclick: onBack }, EARLY_EXIT_LABEL));
+        }
         actions.appendChild(makeContinue('加練下一組', 'btn btn--primary'));
         container.appendChild(actions);
       } else {

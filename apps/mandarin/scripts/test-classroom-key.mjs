@@ -11,7 +11,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const ENC_PATH = path.join(ROOT, 'public', 'data', 'readings.enc.json');
-const PASSWORD = '078451';
+const PASSWORD = '3939889';
 
 if (!fs.existsSync(ENC_PATH)) {
   console.log('⚠ 找不到 public/data/readings.enc.json，跳過（這台電腦沒有 mandarin-work）');

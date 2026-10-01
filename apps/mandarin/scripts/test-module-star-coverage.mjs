@@ -11,6 +11,11 @@ import { readFileSync } from 'node:fs';
 import { installFakeDom, FakeElement } from './fake-dom.mjs';
 
 installFakeDom();
+// 「本課先完成」預設關閉（教師設定，避免學生為了拿星星跳過練習）。
+// 這支測試要驗的是「把整個大項玩到完成」，驅動器在最後一輪需要那顆按鈕當
+// 出口，所以這裡明確打開——不是繞過設定，而是測試情境本來就該是打開的。
+globalThis.window = globalThis.window || {};
+
 // celebrate.js 會摸 document.body／matchMedia，補上最小 stub（同 test-celebrate.mjs）。
 document.body = new FakeElement('body');
 document.getElementById = () => null;
@@ -19,6 +24,8 @@ window.matchMedia = () => ({ matches: true }); // 測試環境固定當作 reduc
 const lessonPath = process.env.MANDARIN_TEST_LESSON || '../public/data/115AG3H/lesson01.json';
 const lesson = JSON.parse(readFileSync(new URL(lessonPath, import.meta.url)));
 
+const { setShowEarlyExit } = await import('../src/utils/deviceSettings.js');
+setShowEarlyExit(true);
 const { MODULE_REGISTRY, getModuleStatus } = await import('../src/activities/moduleRegistry.js');
 const { startScoreSession, endScoreSession } = await import('../src/utils/scoreSession.js');
 const { computeModuleStars } = await import('../src/utils/scoring.js');

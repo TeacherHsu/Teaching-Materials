@@ -22,7 +22,7 @@ const envelope = JSON.parse(readFileSync(ENC, 'utf8'));
 globalThis.fetch = async () => ({ ok: true, status: 200, json: async () => envelope });
 
 const K = await import('../src/utils/classroomKey.js');
-await K.unlockWithPassword('078451');
+await K.unlockWithPassword('3939889');
 const { splitSentences, groupByParagraph } = await import('../src/utils/readingUnits.js');
 
 // 朗讀一句的長度上限。超過這個長度，這群學生一口氣念不完，
