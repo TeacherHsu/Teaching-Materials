@@ -12,6 +12,8 @@ import { SpeakButton } from '../components/SpeakButton.js';
 import { volumeLabel } from '../utils/volumeLabel.js';
 import { getScaffoldLevel } from '../utils/deviceSettings.js';
 import { shuffle } from '../utils/shuffle.js';
+import { SentenceWriter } from '../components/SentenceWriter.js';
+import { redoSentences, skipToday } from '../utils/madeSentences.js';
 import {
   BOX_DAYS,
   allMistakes,
@@ -44,6 +46,16 @@ export function MistakePage(lesson) {
 
   function renderBatch() {
     clear(body);
+
+    // 老師打 ✗ 的句子要先重寫，再做選擇題。
+    // 這是全站唯一的教師→學生回饋通道，排在最前面才不會被跳過；
+    // 但學生卡住時可以「今天先跳過」，不要讓一句話擋住整個複習。
+    const redo = redoSentences(lessonId);
+    if (redo.length) {
+      body.appendChild(renderRedo(redo[0], redo.length, renderBatch));
+      return;
+    }
+
     const due = shuffle(dueMistakes(lessonId));
 
     if (!due.length) {
@@ -123,6 +135,47 @@ function summary({ learned, moreDue, lessonId, backHref, backLabel, onNext }) {
     h('p', { class: 'mistake-empty__note' }, note),
     h('div', { class: 'quiz-option-row' }, actions),
   ]);
+}
+
+// 老師打 ✗ 的句子：用同一個句型再寫一次。
+function renderRedo(entry, remaining, onDone) {
+  const wrap = h('div', {});
+  wrap.appendChild(
+    TaskBanner({
+      label: '老師請你再寫一次這一句。',
+      step: remaining > 1 ? `還有 ${remaining - 1} 句要重寫` : '',
+    }),
+  );
+  wrap.appendChild(
+    h('div', { class: 'card redo-previous' }, [
+      h('p', { class: 'meta' }, '你上次寫的是'),
+      h('p', { class: 'redo-previous__text' }, entry.text),
+    ]),
+  );
+
+  const pattern = {
+    id: entry.patternId,
+    head: entry.patternHead,
+    structure: entry.structure,
+    description: '',
+    examples: [],
+  };
+  // 不帶入上次寫的句子：要重寫就重新想一次，不是改錯字。
+  wrap.appendChild(
+    SentenceWriter({
+      lessonId: entry.lessonId,
+      pattern,
+      onDone: () => setTimeout(onDone, 1200),
+    }),
+  );
+
+  const skip = h('button', { class: 'btn', type: 'button' }, '今天先跳過這一句');
+  skip.addEventListener('click', () => {
+    skipToday(entry.lessonId, entry.patternId);
+    onDone();
+  });
+  wrap.appendChild(h('div', { class: 'quiz-option-row' }, [skip]));
+  return wrap;
 }
 
 function emptyState(lessonId, backHref, backLabel) {

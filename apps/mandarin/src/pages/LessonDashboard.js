@@ -8,6 +8,7 @@ import { starsMarkup } from '../utils/scoring.js';
 import { volumeLabel } from '../utils/volumeLabel.js';
 import { hasReading, isUnlocked } from '../utils/classroomKey.js';
 import { dueCount } from '../utils/mistakes.js';
+import { redoSentences } from '../utils/madeSentences.js';
 import { mistakeEntry } from './MistakePage.js';
 import { quizEntry } from './QuizPage.js';
 
@@ -169,7 +170,11 @@ export function LessonDashboard(lesson) {
   // 錯題複習放在「加練挑戰」裡、舊字新詞之前（CF 2026-10-01 指定）：
   // 兩者都是「回頭複習前面學過的東西」，放在一起學生比較好理解；
   // 錯題是自己錯過的，比舊字新詞更該先做，所以排在它前面。
-  const mistakes = mistakeEntry(lesson.lesson_id, dueCount(lesson.lesson_id));
+  // 待複習數＝到期錯題 ＋ 老師要求重寫的句子
+  const mistakes = mistakeEntry(
+    lesson.lesson_id,
+    dueCount(lesson.lesson_id) + redoSentences(lesson.lesson_id).length,
+  );
   if (mistakes) {
     if (reviewCard) challengeGrid.insertBefore(mistakes, reviewCard);
     else challengeGrid.appendChild(mistakes);

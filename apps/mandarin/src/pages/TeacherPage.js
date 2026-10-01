@@ -9,6 +9,7 @@ import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel,
 import { makeTeacherChallenge, verifyTeacherChallenge } from '../utils/teacherGate.js';
 import { listRecords, recordsAsTsv, clearRecords, unsyncedAttempts, syncRecords } from '../utils/records.js';
 import { allMistakes, clearMistakes } from '../utils/mistakes.js';
+import { listSentences, markSentence, pendingSentences, clearSentences, MARKS } from '../utils/madeSentences.js';
 
 function moduleLabel(key) {
   const entry = findModuleEntry(key);
@@ -126,6 +127,50 @@ function buildPanel(root) {
     root.appendChild(row);
   }
 
+  // ---- 學生造的句子 ----
+  // 這是全站唯一需要「人看過」的產出：句子通不通順不是比對字串能決定的。
+  // 打 ✗ 的句型會進學生的錯題複習，要求用同一個句型重寫。
+  const sentences = listSentences();
+  const pendingCount = pendingSentences().length;
+  root.appendChild(h('h2', {}, `學生造的句子${pendingCount ? `（${pendingCount} 句待批改）` : ''}`));
+  root.appendChild(
+    h('p', { class: 'meta' },
+      '句子只存在這台載具，不會同步到試算表（學生可能寫到自己或同學的名字）。'
+      + '打 ✗ 的句型會進學生的錯題複習，要求重寫。'),
+  );
+  if (!sentences.length) {
+    root.appendChild(h('p', { class: 'meta' }, '目前還沒有學生寫的句子。'));
+  } else {
+    for (const item of sentences) {
+      const markLabel = item.mark === MARKS.OK ? '✓ 通過'
+        : item.mark === MARKS.REDO ? '✗ 要重寫'
+        : '還沒看';
+      const card = h('div', { class: 'card teacher-sentence' }, [
+        h('p', { class: 'meta' }, `${item.lessonId}　句型：${item.structure || item.patternHead || '—'}`),
+        h('p', { class: 'teacher-sentence__text' }, item.text),
+        h('p', { class: 'meta' }, `目前：${markLabel}`),
+      ]);
+      const choices = [
+        { mark: MARKS.OK, text: '✓ 通過' },
+        { mark: MARKS.REDO, text: '✗ 要重寫' },
+      ];
+      card.appendChild(h('div', { class: 'quiz-option-row' }, choices.map((choice) => {
+        const on = item.mark === choice.mark;
+        const btn = h('button', {
+          class: `btn${on ? ' btn--primary' : ''}`,
+          type: 'button',
+          'aria-pressed': String(on),
+        }, choice.text);
+        btn.addEventListener('click', () => {
+          markSentence(item.lessonId, item.patternId, on ? MARKS.PENDING : choice.mark);
+          buildPanel(root);
+        });
+        return btn;
+      })));
+      root.appendChild(card);
+    }
+  }
+
   // ---- 作答紀錄 ----
   root.appendChild(h('h2', {}, '作答紀錄'));
   root.appendChild(h('p', { class: 'meta' }, '正確率＝第一次作答就答對的比率。學生答錯後會得到提示並再試，最後都會通過，所以只有第一次的判斷有診斷價值。'));
@@ -181,11 +226,12 @@ function buildPanel(root) {
   clearBtn.addEventListener('click', () => {
     if (!armed) {
       armed = true;
-      clearBtn.textContent = '再按一次確認清除（含錯題盒，無法復原）';
+      clearBtn.textContent = '再按一次確認清除（含錯題盒與學生寫的句子，無法復原）';
       return;
     }
     clearRecords();
     clearMistakes();
+    clearSentences();
     buildPanel(root);
   });
   root.appendChild(h('div', { class: 'quiz-option-row', style: 'margin-top:24px' }, [clearBtn]));

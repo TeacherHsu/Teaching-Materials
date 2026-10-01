@@ -72,6 +72,15 @@ class FakeElement {
     (this._listeners[type] = this._listeners[type] || []).push(fn);
   }
 
+  // 真實 DOM 有、但對測試沒有意義的方法：做成 no-op，元件不必為了測試加防護。
+  focus() {}
+
+  blur() {}
+
+  select() {}
+
+  scrollIntoView() {}
+
   dispatch(type) {
     (this._listeners[type] || []).forEach((fn) => fn({ target: this, stopPropagation() {} }));
   }

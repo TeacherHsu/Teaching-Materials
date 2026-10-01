@@ -11,6 +11,7 @@ import { MatchingGame } from '../components/MatchingGame.js';
 import { SentenceOrdering } from '../components/SentenceOrdering.js';
 import { SentenceBuilder } from '../components/SentenceBuilder.js';
 import { TaskBanner } from '../components/TaskBanner.js';
+import { SentenceWriter } from '../components/SentenceWriter.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 import { missingContentNotice } from './engine.js';
 import { chunkRounds } from '../utils/chunk.js';
@@ -193,6 +194,11 @@ export function buildSentencePracticeActivity(lesson, onBack) {
   if (matchingRounds.length > 0) steps.push('matching');
   if (orderingRounds.length > 0) steps.push('ordering');
   if (builderRounds.length > 0) steps.push('builder');
+  // 最後一步：用句型自己寫一句話，交給老師看。
+  // 排在組句之後——先看過句型怎麼用、組過幾句，才有東西可以仿。
+  const writablePatterns = filterByStatus(lesson.sentence_patterns || [])
+    .filter((pattern) => pattern.structure || pattern.head);
+  if (writablePatterns.length > 0) steps.push('write');
 
   const container = h('div', {});
   let stepIndex = 0;
@@ -309,6 +315,19 @@ export function buildSentencePracticeActivity(lesson, onBack) {
         } : null,
         continueLabel: hasNextItem ? '下一題' : '加練下一組',
       }));
+    } else if (step === 'write') {
+      // 一課只寫一句：對特教學生，寫一句好的比趕三句有用。挑第一個句型。
+      const pattern = writablePatterns[0];
+      container.appendChild(TaskBanner({ label: '自己寫一句話', step: taskLabel }));
+      container.appendChild(
+        SentenceWriter({
+          lessonId: lesson.lesson_id,
+          pattern,
+          onDone: () => { coreComplete = true; },
+          onBack,
+          backLabel: '回課程首頁',
+        }),
+      );
     }
   }
 
