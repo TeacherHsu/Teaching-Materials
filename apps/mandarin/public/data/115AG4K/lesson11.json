@@ -204,7 +204,7 @@
     },
     {
       "char": "匙",
-      "zhuyin": "ㄕ˙",
+      "zhuyin": "˙ㄕ",
       "zhuyin_source": "pypinyin_0.55.0_derivation",
       "stroke_count": 11,
       "radical": "⼔",
@@ -445,7 +445,7 @@
     {
       "id": "word:115AG4K11:04",
       "word": "鑰匙",
-      "zhuyin": "ㄧㄠˋㄕ˙",
+      "zhuyin": "ㄧㄠˋ˙ㄕ",
       "meaning": "開鎖的器物。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -505,7 +505,7 @@
     {
       "id": "word:115AG4K11:09",
       "word": "盒子",
-      "zhuyin": "ㄏㄜˊㄗ˙",
+      "zhuyin": "ㄏㄜˊ˙ㄗ",
       "meaning": "有底、蓋可相合的盛物器皿。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -517,7 +517,7 @@
     {
       "id": "word:115AG4K11:10",
       "word": "扇子",
-      "zhuyin": "ㄕㄢˋㄗ˙",
+      "zhuyin": "ㄕㄢˋ˙ㄗ",
       "meaning": "一種搖動生風以驅除熱氣的用具。",
       "example_sentence": null,
       "example_status": "todo_rewrite",

@@ -52,6 +52,32 @@ if (!validateCourseIndex(courseIndex)) {
   console.log(`[OK] ${courseIndexPath}`);
 }
 
+// 輕聲符號一律前置（˙ㄌㄜ），不可後置（ㄌㄜ˙）——後者是注音輸入法的敲鍵
+// 順序，不是給學生看的寫法，混進資料會讓語詞卡顯示錯的注音。
+// 修正方式：node scripts/normalize-zhuyin-light-tone.mjs --write
+const POSTFIX_NEUTRAL = /[\u3105-\u3129]˙/;
+
+function checkNeutralTone(file, data) {
+  const bad = [];
+  const visit = (node, path) => {
+    if (typeof node === 'string') {
+      if (POSTFIX_NEUTRAL.test(node)) bad.push(`${path} = ${node}`);
+    } else if (Array.isArray(node)) {
+      node.forEach((item, i) => visit(item, `${path}[${i}]`));
+    } else if (node && typeof node === 'object') {
+      for (const [k, v] of Object.entries(node)) visit(v, `${path}.${k}`);
+    }
+  };
+  visit(data, '');
+  if (bad.length) {
+    console.error(`[FAIL] ${file} 輕聲符號寫在後面（應為 ˙ㄌㄜ 不是 ㄌㄜ˙）：`);
+    for (const line of bad.slice(0, 5)) console.error(`  ${line}`);
+    console.error('  修正：node scripts/normalize-zhuyin-light-tone.mjs --write');
+    return false;
+  }
+  return true;
+}
+
 const dataDir = join(root, 'public/data');
 const lessonFiles = findLessonFiles(dataDir);
 
@@ -79,6 +105,7 @@ for (const file of readingFiles) {
 }
 for (const file of lessonFiles) {
   const data = JSON.parse(readFileSync(file, 'utf-8'));
+  if (!checkNeutralTone(file, data)) failed = true;
   if (!validateLesson(data)) {
     failed = true;
     console.error(`[FAIL] ${file}`);

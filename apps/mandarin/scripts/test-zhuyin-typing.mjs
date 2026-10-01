@@ -4,7 +4,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { installFakeDom } from './fake-dom.mjs';
-import { splitSyllables, syllablesMatchWord } from '../src/utils/zhuyin.js';
+import { splitSyllables, syllablesMatchWord, syllableKeys } from '../src/utils/zhuyin.js';
 import { KEY_MAP, KEYBOARD_ROWS, symbolKind } from '../src/components/ZhuyinKeyboard.js';
 
 installFakeDom();
@@ -13,8 +13,19 @@ const { typableWords, canStartZhuyinTyping, pickCandidates } = await import('../
 // ---- 音節切分：有無空白都要對 ----
 assert.deepEqual(splitSyllables('ㄧㄡˊㄩㄥˇ'), ['ㄧㄡˊ', 'ㄩㄥˇ'], '無空白也要切得開');
 assert.deepEqual(splitSyllables('ㄌㄧㄢˊ ㄧ'), ['ㄌㄧㄢˊ', 'ㄧ'], '空白分隔');
-assert.deepEqual(splitSyllables('ㄕ ˙ㄗ ㄨㄤˊ'), ['ㄕ', 'ㄗ˙', 'ㄨㄤˊ'], '輕聲寫在前面時要靠空白斷句');
+// 輕聲一律輸出**顯示形式**（前置，˙ㄗ）——台灣的印刷慣例，學生看到的就是這樣。
+// 敲鍵順序（後置）由 syllableKeys 負責，見下面。
+assert.deepEqual(splitSyllables('ㄕ ˙ㄗ ㄨㄤˊ'), ['ㄕ', '˙ㄗ', 'ㄨㄤˊ'], '輕聲前置，靠空白斷句');
+assert.deepEqual(splitSyllables('ㄕ ㄗ˙ ㄨㄤˊ'), ['ㄕ', '˙ㄗ', 'ㄨㄤˊ'], '來源寫成後置也要正規化成前置');
+assert.deepEqual(splitSyllables('ㄐㄧㄝˇ˙ㄐㄧㄝ'), ['ㄐㄧㄝˇ', '˙ㄐㄧㄝ'], '無空白＋前置輕聲也要切得對');
+assert.deepEqual(splitSyllables('˙ㄌㄜ'), ['˙ㄌㄜ'], '單音節輕聲');
 assert.deepEqual(splitSyllables('ㄉㄨㄛㄘㄞˇㄉㄨㄛㄗ'), ['ㄉㄨㄛ', 'ㄘㄞˇ', 'ㄉㄨㄛ', 'ㄗ'], '空韻單獨成音節');
+
+// ---- 敲鍵順序：輕聲要移到最後 ----
+// 注音輸入法是最後才按聲調，所以顯示是 ˙ㄌㄜ，敲的是 ㄌ → ㄜ → ˙。
+assert.deepEqual(syllableKeys('˙ㄌㄜ'), ['ㄌ', 'ㄜ', '˙'], '輕聲敲鍵要在最後');
+assert.deepEqual(syllableKeys('ㄏㄡˋ'), ['ㄏ', 'ㄡ', 'ˋ'], '一般聲調本來就在最後');
+assert.deepEqual(syllableKeys('ㄗ'), ['ㄗ'], '一聲不帶符號');
 
 // ---- 鍵盤排列必須是大千標準，不可為了排版重排 ----
 assert.equal(Object.keys(KEY_MAP).length, 41, '41 個鍵（37 注音＋4 聲調）');

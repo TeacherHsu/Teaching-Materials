@@ -199,6 +199,41 @@ def build_payload(src: Path, known: set[str] | None = None) -> dict:
     return out
 
 
+def char_readings(payload: dict) -> dict:
+    """字 → 讀音清單。朗讀挑戰要判「同音字算對」，就得知道辨識出來的字怎麼念。
+
+    這份**不加密**：內容只有「字」和「注音」，沒有課文的任何一句話，
+    不涉及出版社教材的版權。加密的是課文，不是字音。
+    """
+    out: dict[str, list[str]] = {}
+    for lesson in payload.values():
+        for para in lesson["paras"]:
+            for line in para:
+                for text, zhuyin, _say in line:
+                    zs = zhuyin.split(" ")
+                    for i, ch in enumerate(text):
+                        z = zs[i] if i < len(zs) else ""
+                        if not z or not HAN.match(ch):
+                            continue
+                        out.setdefault(ch, [])
+                        if z not in out[ch]:
+                            out[ch].append(z)
+    return dict(sorted(out.items()))
+
+
+def merge_char_index(readings: dict, index_path: Path) -> dict:
+    """併入既有的 char-index.json（五冊生字與語詞的字音統計），擴大覆蓋率。"""
+    if not index_path.is_file():
+        return readings
+    data = json.loads(index_path.read_text(encoding="utf-8"))
+    for ch, info in (data.get("chars") or {}).items():
+        for z in info.get("z", []):
+            readings.setdefault(ch, [])
+            if z not in readings[ch]:
+                readings[ch].append(z)
+    return dict(sorted(readings.items()))
+
+
 def encrypt(payload: dict, password: str) -> dict:
     salt, nonce = os.urandom(16), os.urandom(12)
     key = PBKDF2HMAC(
@@ -227,6 +262,12 @@ def main() -> int:
         help="course-index.json，用來核對課次代號",
     )
     ap.add_argument(
+        "--readings-out",
+        type=Path,
+        default=Path(__file__).resolve().parent.parent / "public" / "data" / "_index" / "char-readings.json",
+        help="字→讀音索引（明碼，朗讀挑戰判同音字用）",
+    )
+    ap.add_argument(
         "--out",
         type=Path,
         default=Path(__file__).resolve().parent.parent / "public" / "data" / "readings.enc.json",
@@ -250,6 +291,18 @@ def main() -> int:
     if not payload:
         print("沒有任何課文可加密。", file=sys.stderr)
         return 1
+
+    # 字→讀音索引（明碼）
+    readings = merge_char_index(
+        char_readings(payload),
+        args.index.parent / "_index" / "char-index.json",
+    )
+    args.readings_out.parent.mkdir(parents=True, exist_ok=True)
+    args.readings_out.write_text(
+        json.dumps({"v": 1, "count": len(readings), "chars": readings}, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    print(f"字→讀音索引：{len(readings)} 字 → {args.readings_out}")
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(
