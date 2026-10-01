@@ -5,6 +5,7 @@ import { CompletionFeedback } from './CompletionFeedback.js';
 import { SpeakButton } from './SpeakButton.js';
 import { ReadAllButton } from './ReadAllButton.js';
 import { recordOutcome } from '../utils/scoreSession.js';
+import { noteMistake, gradeMistake } from '../utils/mistakes.js';
 import { celebrateCorrect } from '../utils/celebrate.js';
 import { shuffle } from '../utils/shuffle.js';
 
@@ -94,7 +95,12 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
           btn.setAttribute('aria-pressed', 'true');
           btn.innerHTML = `${CHECK_ICON}<span>${opt}</span>`;
           correctCount += 1;
-          recordOutcome({ firstTry: attempts === 1, revealed: false });
+          const firstTry = attempts === 1;
+          recordOutcome({ firstTry, revealed: false });
+          // 第一次沒答對就收進錯題盒（和「正確率＝第一次答對率」同一個判準）。
+          // 在複習模式下則是把這一題往上推一格（連對夠多次就學會、移除）。
+          if (item._mistakeId) gradeMistake(item._mistakeId, firstTry);
+          else if (!firstTry) noteMistake(item);
           celebrateCorrect(btn, 'var(--module-color)', { firstTry: attempts === 1 });
           optionButtons.forEach((c) => {
             if (c !== btn) c.disabled = true;
@@ -143,6 +149,8 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
           // 第 2 次答錯：揭曉正解，鎖題
           answered = true;
           recordOutcome({ firstTry: false, revealed: true });
+          if (item._mistakeId) gradeMistake(item._mistakeId, false);
+          else noteMistake(item);
           btn.disabled = true;
           optionButtons.forEach((c) => {
             c.disabled = true;

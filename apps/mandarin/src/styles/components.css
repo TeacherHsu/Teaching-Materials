@@ -1482,7 +1482,7 @@
   max-width: 480px;
 }
 
-/* ---- ReviewPage：#/review/<lesson_id> 待審頁（教師用，大字＋鍵盤可操作） ---- */
+/* ---- PendingReviewPage：#/review/<lesson_id> 大補帖教材待審頁（教師用，大字＋鍵盤可操作） ---- */
 .review-progress {
   font-size: var(--font-size-section);
   font-weight: 700;
@@ -2237,3 +2237,47 @@
 .reader-entry__title { font-size: 1.375rem; font-weight: 700; }
 .reader-entry__desc { font-size: 1.125rem; color: var(--text-secondary); }
 .reader-entry__arrow { flex: none; }
+
+/* ── 錯題複習入口與空狀態 ─────────────────────────── */
+.mistake-entry {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 12px;
+  padding: 16px 20px;
+  min-height: 44px;
+  border: 2px solid var(--color-accent);
+  border-radius: 16px;
+  background: var(--color-surface);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+.mistake-entry:hover { background: var(--color-surface-muted); }
+.mistake-entry:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+.mistake-entry__icon { font-size: 32px; line-height: 1; }
+.mistake-entry__text { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.mistake-entry__title { font-size: 1.375rem; font-weight: 700; }
+.mistake-entry__desc { font-size: 1.125rem; color: var(--text-secondary); }
+.mistake-entry__count {
+  flex: none;
+  min-width: 40px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--text-on-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.mistake-empty { max-width: 520px; margin: 24px auto; text-align: center; }
+.mistake-empty__icon { font-size: 56px; margin: 0; }
+.mistake-empty__title { margin: 8px 0; }
+.mistake-empty__note {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0 0 16px;
+}

@@ -7,6 +7,8 @@ import { getModuleStars, getLessonStars } from '../utils/storage.js';
 import { starsMarkup } from '../utils/scoring.js';
 import { volumeLabel } from '../utils/volumeLabel.js';
 import { hasReading, isUnlocked } from '../utils/classroomKey.js';
+import { dueCount } from '../utils/mistakes.js';
+import { mistakeEntry } from './MistakePage.js';
 
 const STATUS_CLASS = {
   done: 'module-card__status--done',
@@ -145,6 +147,10 @@ export function LessonDashboard(lesson) {
   // 課文點讀放在所有大項之前：對閱讀困難的學生，先把課文聽過一遍再做練習
   // 才有意義。要不要顯示取決於「這一課有沒有課文」，而那要讀密文檔的 manifest
   // （非同步），所以先插一個空殼，問到答案再填——不讓整頁等網路。
+  // 錯題複習排在課文點讀之前：有到期錯題時，那是今天最該做的事。
+  const mistakes = mistakeEntry(lesson.lesson_id, dueCount(lesson.lesson_id));
+  if (mistakes) root.appendChild(mistakes);
+
   root.appendChild(readerEntry(lesson));
 
   if (coreGrid.childElementCount) {

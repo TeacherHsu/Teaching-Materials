@@ -1,6 +1,6 @@
 # 參考站設計採用計畫（國語課文樂園優化設計）
 
-日期：2026-10-01｜狀態：**CF 已核可施工順序；P0-C 已完成，其餘待做**
+日期：2026-10-01｜狀態：**CF 已核可施工順序；P0-C、P0-A 已完成，其餘待做**
 
 參考對象：`https://sped-teacher.github.io/Teaching-Materials/mandarin/`
 （「國語五上學習樂園」，康軒五上，單檔 vanilla JS）。**已取得原作者同意參考**。
@@ -300,6 +300,11 @@ challenge: wrongLimit 2, autoRead false, unlockMemory true,  prefill 0
 **三上（115AG3H）12 課全部沒有課文**，Reading-Tool 從來沒做過這一冊。
 Reading-Tool 另有 9 課學前教材（G0）課文樂園沒有對應課次，未收進密文。
 
+> **三上課文排在最後做（CF 2026-10-01 裁示）**：這組學生對點讀沒有急迫性，
+> 等 P0-A～P2-G 全部完成後再回頭補。補的方式是在 Reading-Tool 做好注音校訂、
+> 存進 `~/mandarin-work/reading-tool-lessons/`，再重跑 `encrypt_readings.py`——
+> 不需要再動任何程式，點讀入口會自動出現。
+
 已知待修：7 個漢字沒有注音（仍可點讀，只是沒注音），全部是「盡」的後一字，
 源頭是 Reading-Tool 多音規則的 off-by-one，另案處理。
 
@@ -311,6 +316,31 @@ Reading-Tool 另有 9 課學前教材（G0）課文樂園沒有對應課次，�
 注意：這不會收回已經公開約六週（2026-08-19 起）的內容，只是停止繼續散布。
 
 ---
+
+## 5.6　P0-A 完工紀錄（2026-10-01）
+
+| 產出 | 說明 |
+|---|---|
+| `src/utils/mistakes.js` | Leitner 盒 `[0,1,3,7]` 天，連對 4 次算學會並移除；上限 300 |
+| `src/components/ChoiceQuiz.js` | 第一次沒答對 → 進盒子；複習模式（題目帶 `_mistakeId`）→ 升降格 |
+| `src/pages/MistakePage.js` | `#/mistakes` 與 `#/mistakes/<lesson_id>`；一批 `roundSize + 2` 題 |
+| `src/pages/PendingReviewPage.js` | 原 `ReviewPage.js` 改名，解決三個「review」撞名 |
+| `scripts/test-mistakes.mjs`、`test-mistake-capture.mjs` | 間隔邏輯 11 組＋整合 6 組斷言 |
+
+決策：
+
+- **收題判準＝「第一次沒答對」**，和 `records.js` 的「正確率＝第一次答對率」
+  同一個定義。第一次就答對不收（不懲罰已經會的題目）；答錯後自己答對、
+  以及兩次答錯被揭曉，兩種都收。
+- **存題目資料，不存 `innerHTML`**。參考站存 HTML 是為了讓錯題不依賴原模組，
+  但我們的題目本來就是純資料。代價：修辭小偵探那種有 DOM 題幹（`stemContent`）
+  的題目，重練時退成純文字題幹——可接受，重練的重點是判斷本身。
+  `mistakes.js` 的 `snapshot()` 會濾掉所有不可序列化的欄位，有測試守著。
+- **結算畫面蓋掉 ChoiceQuiz 的預設完成畫面**：錯題複習的重點不是「這批對幾題」，
+  而是「有幾題學會了、還剩幾題、幾天後再出現」。
+- **到期才顯示入口**：課次首頁的「🔁 錯題複習」只在今天有到期錯題時出現，
+  並排在課文點讀之前——有錯題要複習時，那是今天最該做的事。
+- 教師頁顯示「錯題盒：N 題在練習中」，「清除紀錄」會一併清掉錯題盒。
 
 ## 6. 建議施工順序
 

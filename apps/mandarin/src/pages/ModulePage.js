@@ -21,6 +21,7 @@ import { recordAttempt } from '../utils/records.js';
 import { strategyFor } from '../activities/strategyCards.js';
 import { saveModuleComplete, saveModuleStars, getLessonStars } from '../utils/storage.js';
 import { startScoreSession, endScoreSession } from '../utils/scoreSession.js';
+import { startMistakeContext, endMistakeContext } from '../utils/mistakes.js';
 import { computeModuleStars, starsMarkup } from '../utils/scoring.js';
 import { celebrateComplete } from '../utils/celebrate.js';
 import { moduleIconMarkup } from '../components/icons.js';
@@ -109,8 +110,11 @@ export function ModulePage(lesson, moduleKey) {
   const builder = ACTIVITY_BUILDERS[moduleKey];
   if (builder) {
     startScoreSession();
+    // 錯題盒要知道這一題是哪一課哪一大項的（和 scoreSession 同一個模式）
+    startMistakeContext(lesson.lesson_id, moduleKey);
     const onModuleDone = () => {
       const meta = endScoreSession();
+      endMistakeContext();
       // 星星給學生（精熟導向），正確率留給教師（診斷用），兩套訊號刻意分開。
       recordAttempt(lesson.lesson_id, moduleKey, meta);
       const stars = computeModuleStars(meta);

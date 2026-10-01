@@ -1,4 +1,8 @@
-// 待審頁：#/review/<lesson_id>（僅 ?preview=1 可進，main.js 已做這層 gate）。
+// 大補帖教材的「待審頁」：#/review/<lesson_id>
+// 注意：這不是學生的錯題複習（那是 MistakePage，#/mistakes/...），
+// 也不是「舊字新詞」大項（activities/review.js）。三者名字很像，別搞混。
+// 原本叫 ReviewPage，2026-10-01 為了和錯題複習區分而改名。
+// 原註解：#/review/<lesson_id>（僅 ?preview=1 可進，main.js 已做這層 gate）。
 // 規格 docs/specs/2026-09-25-mandarin-dabutie-importer.md §5。
 //
 // 純靜態站沒有寫回能力：這頁只做「本機暫存審核決定＋下載審核結果 JSON」，
@@ -137,7 +141,7 @@ const GROUPS = [
   },
 ];
 
-export function ReviewPage(lesson) {
+export function PendingReviewPage(lesson) {
   const lessonId = lesson.lesson_id;
   const decisions = loadReviewDecisions(lessonId); // { [id]: { decision, note } }
 

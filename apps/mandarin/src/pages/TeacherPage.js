@@ -8,6 +8,7 @@ import { findModuleEntry } from '../activities/moduleRegistry.js';
 import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel, setDeviceLabel, getSheetUrl, setSheetUrl } from '../utils/deviceSettings.js';
 import { makeTeacherChallenge, verifyTeacherChallenge } from '../utils/teacherGate.js';
 import { listRecords, recordsAsTsv, clearRecords, unsyncedAttempts, syncRecords } from '../utils/records.js';
+import { allMistakes, clearMistakes } from '../utils/mistakes.js';
 
 function moduleLabel(key) {
   const entry = findModuleEntry(key);
@@ -118,15 +119,25 @@ function buildPanel(root) {
   root.appendChild(h('div', { class: 'quiz-option-row' }, [syncBtn]));
   root.appendChild(syncStatus);
 
+  // 錯題盒狀態：教師看得到「還有幾題在練習中」，才知道學生是不是真的在複習。
+  const mistakeCount = allMistakes().length;
+  root.appendChild(
+    h('p', { class: 'meta', style: 'margin-top:24px' },
+      mistakeCount
+        ? `錯題盒：${mistakeCount} 題在練習中（連續答對 4 次才會移除）。`
+        : '錯題盒：目前沒有錯題。'),
+  );
+
   const clearBtn = h('button', { class: 'btn', type: 'button' }, '清除這台載具的紀錄');
   let armed = false;
   clearBtn.addEventListener('click', () => {
     if (!armed) {
       armed = true;
-      clearBtn.textContent = '再按一次確認清除（無法復原）';
+      clearBtn.textContent = '再按一次確認清除（含錯題盒，無法復原）';
       return;
     }
     clearRecords();
+    clearMistakes();
     buildPanel(root);
   });
   root.appendChild(h('div', { class: 'quiz-option-row', style: 'margin-top:24px' }, [clearBtn]));

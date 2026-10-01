@@ -4,8 +4,9 @@ import { HomePage } from './pages/HomePage.js';
 import { GradePage } from './pages/GradePage.js';
 import { LessonDashboard } from './pages/LessonDashboard.js';
 import { ModulePage } from './pages/ModulePage.js';
-import { ReviewPage } from './pages/ReviewPage.js';
+import { PendingReviewPage } from './pages/PendingReviewPage.js';
 import { ReaderPage } from './pages/ReaderPage.js';
+import { MistakePage } from './pages/MistakePage.js';
 import { FixturesPage } from './pages/FixturesPage.js';
 import { h, clear } from './utils/dom.js';
 import { isPreview } from './utils/preview.js';
@@ -119,6 +120,19 @@ route(/^\/lesson\/(?<lessonId>[^/]+)$/, async ({ lessonId }) => {
   mount(LessonDashboard(lesson));
 });
 
+route(/^\/mistakes$/, async () => {
+  mount(MistakePage(null));
+});
+
+route(/^\/mistakes\/(?<lessonId>[^/]+)$/, async ({ lessonId }) => {
+  const lesson = await loadLesson(lessonId);
+  if (!lesson) {
+    mount(h('div', { class: 'container' }, h('div', { class: 'missing-content' }, '找不到這一課的資料。')));
+    return;
+  }
+  mount(MistakePage(lesson));
+});
+
 route(/^\/lesson\/(?<lessonId>[^/]+)\/reader$/, async ({ lessonId }) => {
   const lesson = await loadLesson(lessonId);
   if (!lesson) {
@@ -149,7 +163,7 @@ route(/^\/review\/(?<lessonId>[^/]+)$/, async ({ lessonId }) => {
     mount(h('div', { class: 'container' }, h('div', { class: 'missing-content' }, '找不到這一課的資料。')));
     return;
   }
-  mount(ReviewPage(lesson));
+  mount(PendingReviewPage(lesson));
 });
 
 route(/^\/lesson\/(?<lessonId>[^/]+)\/char\/(?<char>[^/]+)$/, async ({ lessonId, char }) => {
