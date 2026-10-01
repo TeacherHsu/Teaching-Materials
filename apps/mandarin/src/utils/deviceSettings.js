@@ -15,6 +15,10 @@ const KEY = 'mandarin:device-settings:v1';
  *     （近似零錯誤學習）。標準／挑戰層設 2＝先給提示，再錯才揭曉。
  * - autoRead：題目出現時自動念一次。支持層預設開——閱讀困難的學生
  *     要先聽到題目才讀得下去，不該每題都得自己按喇叭。
+ * - reciteUnit：朗讀挑戰一次念多少。'sentence' 一句、'paragraph' 一整段。
+ *     挑戰層才念整段——連續語流比單句難得多。
+ * - reciteModel：朗讀前可不可以先聽範讀。支持與標準層開，挑戰層關
+ *     （挑戰層要的是自己讀出來，不是跟著念）。
  */
 export const SCAFFOLD_LEVELS = {
   support: {
@@ -24,7 +28,9 @@ export const SCAFFOLD_LEVELS = {
     roundSize: 3,
     wrongLimit: 1,
     autoRead: true,
-    note: '選項少、題數少；答錯一次就直接告訴他答案；題目會自動念出來。',
+    reciteUnit: 'sentence',
+    reciteModel: true,
+    note: '選項少、題數少；答錯一次就直接告訴他答案；題目會自動念出來；朗讀一次一句、可先聽範讀。',
   },
   standard: {
     key: 'standard',
@@ -33,7 +39,9 @@ export const SCAFFOLD_LEVELS = {
     roundSize: 5,
     wrongLimit: 2,
     autoRead: false,
-    note: '一般難度。答錯先給提示，再錯才揭曉答案。',
+    reciteUnit: 'sentence',
+    reciteModel: true,
+    note: '一般難度。答錯先給提示，再錯才揭曉答案；朗讀一次一句、可先聽範讀。',
   },
   challenge: {
     key: 'challenge',
@@ -42,7 +50,9 @@ export const SCAFFOLD_LEVELS = {
     roundSize: 5,
     wrongLimit: 2,
     autoRead: false,
-    note: '選項多。答錯先給提示，再錯才揭曉答案。',
+    reciteUnit: 'paragraph',
+    reciteModel: false,
+    note: '選項多。答錯先給提示，再錯才揭曉答案；朗讀一次一整段、沒有範讀。',
   },
 };
 

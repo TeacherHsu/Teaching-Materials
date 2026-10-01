@@ -1,6 +1,6 @@
 # 參考站設計採用計畫（國語課文樂園優化設計）
 
-日期：2026-10-01｜狀態：**P0-C、P0-A、P0-B、P1-D、P1-E 已完成；P2-F 待做**
+日期：2026-10-01｜狀態：**P0-C、P0-A、P0-B、P1-D、P1-E、P2-F、P2-G 全部完成**
 
 參考對象：`https://sped-teacher.github.io/Teaching-Materials/mandarin/`
 （「國語五上學習樂園」，康軒五上，單檔 vanilla JS）。**已取得原作者同意參考**。

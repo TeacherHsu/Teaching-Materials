@@ -8,6 +8,7 @@ import { PendingReviewPage } from './pages/PendingReviewPage.js';
 import { ReaderPage } from './pages/ReaderPage.js';
 import { MistakePage } from './pages/MistakePage.js';
 import { QuizPage } from './pages/QuizPage.js';
+import { RecitePage } from './pages/RecitePage.js';
 import { FixturesPage } from './pages/FixturesPage.js';
 import { h, clear } from './utils/dom.js';
 import { isPreview } from './utils/preview.js';
@@ -64,10 +65,26 @@ async function loadLesson(lessonId) {
   return res.json();
 }
 
+// 教師設定的齒輪：固定在每一頁右上角（CF 指定統一入口）。
+// 進去還有一道兩位數 × 一位數的乘法擋著（utils/teacherGate.js），
+// 所以放在顯眼處不要緊——擋的是順手亂點，不是資訊安全。
+const GEAR_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>`;
+
+function renderTeacherButton() {
+  return h('a', {
+    class: 'app-header__teacher',
+    href: '#/teacher',
+    'aria-label': '教師設定',
+    title: '教師設定',
+    html: GEAR_ICON,
+  });
+}
+
 function renderHeader() {
   const header = h('header', { class: 'app-header' }, [
     h('a', { href: '#/', class: 'app-header__brand' }, '國語課文樂園'),
     renderMuteButton(),
+    renderTeacherButton(),
   ]);
   return header;
 }
@@ -141,6 +158,15 @@ route(/^\/lesson\/(?<lessonId>[^/]+)\/quiz$/, async ({ lessonId }) => {
     return;
   }
   mount(QuizPage(lesson));
+});
+
+route(/^\/lesson\/(?<lessonId>[^/]+)\/recite$/, async ({ lessonId }) => {
+  const lesson = await loadLesson(lessonId);
+  if (!lesson) {
+    mount(h('div', { class: 'container' }, h('div', { class: 'missing-content' }, '找不到這一課的資料。')));
+    return;
+  }
+  mount(RecitePage(lesson));
 });
 
 route(/^\/lesson\/(?<lessonId>[^/]+)\/reader$/, async ({ lessonId }) => {

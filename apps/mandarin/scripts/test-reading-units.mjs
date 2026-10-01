@@ -1,0 +1,104 @@
+// 驗證課文的分句：不可掉字、注音與朗讀用字要跟著切、句子不可長到念不完。
+//
+// 這支守的是朗讀挑戰的前提——一句一句念，句子就得切得對。
+// 曾經踩過的兩個坑都寫成斷言：
+//   1. 只在「詞的邊界」切句 → 長課文的詞邊界符標的是整段，切出 500 字的一句。
+//   2. 丟掉只有標點的「句」 → 10 課掉字。
+// 用法：node scripts/test-reading-units.mjs
+import assert from 'node:assert/strict';
+import { readFileSync, existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+
+const ENC = fileURLToPath(new URL('../public/data/readings.enc.json', import.meta.url));
+if (!existsSync(ENC)) {
+  console.log('⚠ 找不到 readings.enc.json，跳過（這台電腦沒有 mandarin-work）');
+  process.exit(0);
+}
+
+globalThis.window = { localStorage: { getItem: () => null, setItem: () => {}, removeItem: () => {} } };
+globalThis.atob = (s) => Buffer.from(s, 'base64').toString('binary');
+globalThis.btoa = (s) => Buffer.from(s, 'binary').toString('base64');
+const envelope = JSON.parse(readFileSync(ENC, 'utf8'));
+globalThis.fetch = async () => ({ ok: true, status: 200, json: async () => envelope });
+
+const K = await import('../src/utils/classroomKey.js');
+await K.unlockWithPassword('078451');
+const { splitSentences, groupByParagraph } = await import('../src/utils/readingUnits.js');
+
+// 朗讀一句的長度上限。超過這個長度，這群學生一口氣念不完，
+// 而且語音辨識的結果也會難以對齊。
+const MAX_SENTENCE = 50;
+
+let lessons = 0;
+let sentences = 0;
+let longest = 0;
+
+for (const lessonId of envelope.lessons) {
+  const reading = K.getReading(lessonId);
+  assert.ok(reading, `${lessonId} 應該解得開`);
+  lessons += 1;
+
+  const list = splitSentences(reading.paras);
+  assert.ok(list.length > 0, `${lessonId} 應該切得出句子`);
+
+  // ── 不可掉字 ──────────────────────────────────
+  const original = reading.paras.flat(2).map((t) => t[0]).join('');
+  assert.equal(list.map((s) => s.text).join(''), original,
+    `${lessonId} 切句後的字串必須和原文完全一致（不可掉字或重複）`);
+
+  for (const sentence of list) {
+    sentences += 1;
+    longest = Math.max(longest, [...sentence.text].length);
+    assert.ok(sentence.text.trim(), `${lessonId} 不可有空句`);
+    assert.ok([...sentence.text].length <= MAX_SENTENCE,
+      `${lessonId} 有一句 ${[...sentence.text].length} 字，超過 ${MAX_SENTENCE}：${sentence.text.slice(0, 30)}…`);
+    assert.ok(typeof sentence.paraIndex === 'number');
+
+    // ── 注音與朗讀用字要跟著切 ───────────────────
+    let tokenText = '';
+    for (const [text, zhuyin, say] of sentence.tokens) {
+      tokenText += text;
+      assert.equal(zhuyin.split(' ').length, [...text].length,
+        `${lessonId} 注音格數要和字數一致：${JSON.stringify([text, zhuyin])}`);
+      if (say !== null) {
+        assert.equal([...say].length, [...text].length,
+          `${lessonId} 朗讀用字長度要和字數一致：${JSON.stringify([text, say])}`);
+      }
+    }
+    assert.equal(tokenText, sentence.text, `${lessonId} 詞串起來要等於句子文字`);
+  }
+
+  // ── 併段：不可掉字、段數要對 ───────────────────
+  const paragraphs = groupByParagraph(list);
+  assert.equal(paragraphs.map((p) => p.text).join(''), original,
+    `${lessonId} 併段後也不可掉字`);
+  assert.equal(paragraphs.length, new Set(list.map((s) => s.paraIndex)).size,
+    `${lessonId} 段數要等於不同 paraIndex 的數量`);
+  for (const para of paragraphs) {
+    assert.ok(para.sentences.length >= 1);
+    assert.equal(para.sentences.map((s) => s.text).join(''), para.text);
+  }
+}
+
+// ── 回歸：詞內部有句號也要切得開 ───────────────────
+const proseLike = [[[['第一句話。第二句話。第三句話。', '  '.repeat(0) + Array(15).fill('ㄅ').join(' '), null]]]];
+const chars = '第一句話。第二句話。第三句話。';
+const tokens = [[chars, [...chars].map(() => 'ㄅㄨ').join(' '), null]];
+const split = splitSentences([[tokens]]);
+assert.equal(split.length, 3, `一個 token 裡有三句就要切成三句，實際 ${split.length}`);
+assert.deepEqual(split.map((s) => s.text), ['第一句話。', '第二句話。', '第三句話。']);
+
+// ── 回歸：只有標點的尾段要併進上一句，不可丟掉 ───────
+const withTail = splitSentences([[[['他說：「好。', [...'他說：「好。'].map(() => 'ㄅㄨ').join(' '), null], ['」', 'ㄅㄨ', null]]]]);
+assert.equal(withTail.map((s) => s.text).join(''), '他說：「好。」', '只有標點的尾巴不可被丟掉');
+
+// ── 回歸：行尾要斷句（無標點的詩）───────────────────
+const poem = [[
+  [['風吹過山頭', [...'風吹過山頭'].map(() => 'ㄅㄨ').join(' '), null]],
+  [['雲停在天邊', [...'雲停在天邊'].map(() => 'ㄅㄨ').join(' '), null]],
+]];
+assert.deepEqual(splitSentences(poem).map((s) => s.text), ['風吹過山頭', '雲停在天邊'],
+  '沒有標點的詩要在行尾斷句');
+
+console.log(`✅ 分句：${lessons} 課 ${sentences} 句，最長 ${longest} 字（上限 ${MAX_SENTENCE}）、`
+  + '零掉字、注音與朗讀用字對位正確、併段一致');

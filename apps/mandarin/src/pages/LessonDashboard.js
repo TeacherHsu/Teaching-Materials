@@ -7,6 +7,7 @@ import { getModuleStars, getLessonStars } from '../utils/storage.js';
 import { starsMarkup } from '../utils/scoring.js';
 import { volumeLabel } from '../utils/volumeLabel.js';
 import { hasReading, isUnlocked } from '../utils/classroomKey.js';
+import { reciteSummary } from '../utils/reciteRecords.js';
 import { dueCount } from '../utils/mistakes.js';
 import { redoSentences } from '../utils/madeSentences.js';
 import { mistakeEntry } from './MistakePage.js';
@@ -171,6 +172,29 @@ export function LessonDashboard(lesson) {
   // 兩者都是「回頭複習前面學過的東西」，放在一起學生比較好理解；
   // 錯題是自己錯過的，比舊字新詞更該先做，所以排在它前面。
   // 待複習數＝到期錯題 ＋ 老師要求重寫的句子
+  // 朗讀挑戰也放加練挑戰區（CF 指定），和錯題複習、小考同一區。
+  // 有沒有課文是非同步才知道的，所以先放空殼再填。
+  const reciteSlot = h('div', { class: 'module-grid__cell' });
+  hasReading(lesson.lesson_id)
+    .then((available) => {
+      if (!available) return;
+      const summary = reciteSummary(lesson.lesson_id);
+      reciteSlot.appendChild(
+        h('a', { class: 'recite-entry', href: `#/lesson/${lesson.lesson_id}/recite` }, [
+          h('span', { class: 'recite-entry__icon', 'aria-hidden': 'true' }, isUnlocked() ? '🎤' : '🔒'),
+          h('span', { class: 'recite-entry__text' }, [
+            h('span', { class: 'recite-entry__title' }, '朗讀挑戰'),
+            h('span', { class: 'recite-entry__desc' },
+              isUnlocked() ? '把課文念出來，看看念對幾個字。' : '需要教室密碼才能打開課文。'),
+            summary
+              ? h('span', { class: 'recite-entry__best' }, `念過 ${summary.units} 段，平均 ${summary.averageAccuracy} 分`)
+              : null,
+          ].filter(Boolean)),
+        ]),
+      );
+    })
+    .catch(() => { /* 讀不到密文檔就不顯示入口 */ });
+
   const mistakes = mistakeEntry(
     lesson.lesson_id,
     dueCount(lesson.lesson_id) + redoSentences(lesson.lesson_id).length,
@@ -179,6 +203,8 @@ export function LessonDashboard(lesson) {
     if (reviewCard) challengeGrid.insertBefore(mistakes, reviewCard);
     else challengeGrid.appendChild(mistakes);
   }
+  if (reviewCard) challengeGrid.insertBefore(reciteSlot, reviewCard);
+  else challengeGrid.appendChild(reciteSlot);
 
   if (challengeGrid.childElementCount) {
     const details = h('details', { class: 'lesson-challenge-group' });

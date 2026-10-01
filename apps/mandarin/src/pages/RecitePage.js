@@ -1,0 +1,331 @@
+// 朗讀挑戰：#/lesson/<lesson_id>/recite
+//
+// 一句一句（挑戰層一段一段）念出來，用瀏覽器內建的語音辨識比對課文，
+// 標出念錯和漏掉的字。
+//
+// 評分判準見 utils/readingScore.js：**不比聲調、同音字算對**。
+// 重點是「說得夠清楚讓機器抓得到」，不是「發音標準」——構音異常與聲調不穩
+// 在這群學生很常見，拿那個扣分只會讓他們不敢開口。
+//
+// 難易度由教師設定控制（CF 指定）：
+//   支持／標準層：一次一句，可以先聽範讀。
+//   挑戰層：一次一整段，沒有範讀。
+//
+// 流暢度**不給百分制分數**，只和自己的上一次比——給分數會讓學生把「念快」
+// 當目標，對口吃、構音異常、閱讀困難的學生是有害的誘因。
+import { h, clear } from '../utils/dom.js';
+import { SpeakButton } from '../components/SpeakButton.js';
+import { TaskBanner } from '../components/TaskBanner.js';
+import { ZhuyinText } from '../components/ZhuyinText.js';
+import { volumeLabel } from '../utils/volumeLabel.js';
+import { getScaffoldLevel } from '../utils/deviceSettings.js';
+import { speak, cancelSpeaking, speechSupported } from '../utils/speech.js';
+import { cryptoAvailable, getReading, isUnlocked, unlockWithPassword } from '../utils/classroomKey.js';
+import { splitSentences, groupByParagraph } from '../utils/readingUnits.js';
+import {
+  ensureCharReadings, scorableChars, scoreReading, fluency, compareFluency, accuracyStars,
+} from '../utils/readingScore.js';
+import { saveRecite, bestRecite } from '../utils/reciteRecords.js';
+import { starsMarkup } from '../utils/scoring.js';
+
+function recognitionSupported() {
+  return Boolean(window.SpeechRecognition || window.webkitSpeechRecognition);
+}
+
+const MARK_LABEL = {
+  ok: '念對了',
+  homophone: '念對了（辨識成同音字）',
+  wrong: '念錯了',
+  missed: '沒有念到',
+};
+
+export function RecitePage(lesson) {
+  const lessonId = lesson.lesson_id;
+  const root = h('div', { class: 'container' });
+  root.appendChild(
+    h('p', { class: 'breadcrumb' }, [
+      h('a', { href: '#/' }, '首頁'),
+      h('a', { href: `#/grade/${lesson.volume.grade}` }, volumeLabel(lesson.volume)),
+      h('a', { href: `#/lesson/${lessonId}` }, `第 ${lesson.lesson_no} 課`),
+      h('span', { class: 'breadcrumb__current' }, '朗讀挑戰'),
+    ]),
+  );
+  const body = h('div', {});
+  root.appendChild(body);
+  const backHref = `#/lesson/${lessonId}`;
+
+  function render() {
+    clear(body);
+    if (!isUnlocked()) {
+      body.appendChild(gate(render));
+      return;
+    }
+    const reading = getReading(lessonId);
+    if (!reading) {
+      body.appendChild(notice('這一課還沒有課文可以朗讀。', backHref));
+      return;
+    }
+    if (!recognitionSupported()) {
+      body.appendChild(notice(
+        '這台裝置不能用語音辨識，請改用 iPad 的 Safari 或電腦的 Chrome 開啟。',
+        backHref,
+      ));
+      return;
+    }
+    ensureCharReadings().catch(() => { /* 查不到讀音就退回同字比對，不擋操作 */ });
+    body.appendChild(renderChallenge(lesson, reading, backHref));
+  }
+
+  render();
+  return root;
+}
+
+function notice(text, backHref) {
+  return h('div', { class: 'card recite-notice' }, [
+    h('p', { class: 'recite-notice__text' }, text),
+    h('a', { class: 'btn btn--primary', href: backHref }, '回到本課'),
+  ]);
+}
+
+// 教室密碼門（和課文點讀同一道）
+function gate(onUnlocked) {
+  const input = h('input', {
+    class: 'gate__input', type: 'password', autocomplete: 'off',
+    autocapitalize: 'off', spellcheck: 'false', inputmode: 'numeric', 'aria-label': '教室密碼',
+  });
+  const message = h('p', { class: 'gate__message', role: 'status', 'aria-live': 'polite' }, '');
+  const submit = h('button', { class: 'btn btn--primary btn--block', type: 'button' }, '進入教室');
+  let busy = false;
+  async function tryUnlock() {
+    const password = input.value.trim();
+    if (!password || busy) return;
+    if (!cryptoAvailable()) {
+      message.textContent = '這個瀏覽器不能解鎖課文，請用 Safari 或 Chrome 開啟正式網址（https）。';
+      return;
+    }
+    busy = true; submit.disabled = true; message.textContent = '開門中……';
+    try {
+      await unlockWithPassword(password);
+      onUnlocked();
+    } catch {
+      busy = false; submit.disabled = false; input.value = '';
+      message.textContent = '密碼不對，再試一次。';
+      input.classList.remove('gate__input--shake');
+      void input.offsetWidth;
+      input.classList.add('gate__input--shake');
+      input.focus();
+    }
+  }
+  submit.addEventListener('click', tryUnlock);
+  input.addEventListener('keydown', (e) => { if (e.key === 'Enter') tryUnlock(); });
+  setTimeout(() => input.focus(), 50);
+  return h('div', { class: 'card gate' }, [
+    h('p', { class: 'gate__icon', 'aria-hidden': 'true' }, '🔒'),
+    h('h1', { class: 'gate__title' }, '請輸入教室密碼'),
+    h('p', { class: 'gate__note' }, '課文只給班上同學使用。輸入一次之後，這台載具會記住。'),
+    input, message, submit,
+  ]);
+}
+
+function renderChallenge(lesson, reading, backHref) {
+  const lessonId = lesson.lesson_id;
+  const scaffold = getScaffoldLevel();
+  const sentences = splitSentences(reading.paras);
+  const units = scaffold.reciteUnit === 'paragraph' ? groupByParagraph(sentences) : sentences;
+
+  const wrap = h('div', {});
+  let index = 0;
+  let showZhuyin = true;
+  let recognition = null;
+  let startedAt = 0;
+
+  const unitWord = scaffold.reciteUnit === 'paragraph' ? '段' : '句';
+
+  function stopRecognition() {
+    if (recognition) {
+      try { recognition.abort(); } catch { /* 已經停了 */ }
+      recognition = null;
+    }
+  }
+
+  function renderUnit() {
+    stopRecognition();
+    cancelSpeaking();
+    clear(wrap);
+
+    const unit = units[index];
+    const expected = scorableChars(unit.tokens);
+    const best = bestRecite(lessonId, index);
+
+    wrap.appendChild(TaskBanner({
+      label: `把這一${unitWord}念出來。`,
+      step: `第 ${index + 1}／${units.length} ${unitWord}`,
+    }));
+
+    // 課文（可切注音）
+    const textBox = h('div', { class: `recite__text${showZhuyin ? '' : ' recite__text--no-zhuyin'}` });
+    const charEls = [];
+    for (const [text, zhuyinText] of unit.tokens) {
+      const zs = zhuyinText ? zhuyinText.split(' ') : [];
+      [...text].forEach((ch, i) => {
+        const zhuyin = zs[i] || '';
+        const el = h('span', { class: zhuyin ? 'recite__ch' : 'recite__ch recite__ch--punct' });
+        el.appendChild(ZhuyinText(ch, zhuyin));
+        if (zhuyin) charEls.push(el);
+        textBox.appendChild(el);
+      });
+    }
+
+    const zhuyinToggle = h('button', {
+      class: 'btn btn--ghost', type: 'button', 'aria-pressed': String(showZhuyin),
+    }, showZhuyin ? '注音：顯示' : '注音：隱藏');
+    zhuyinToggle.addEventListener('click', () => {
+      showZhuyin = !showZhuyin;
+      textBox.classList.toggle('recite__text--no-zhuyin', !showZhuyin);
+      zhuyinToggle.textContent = showZhuyin ? '注音：顯示' : '注音：隱藏';
+      zhuyinToggle.setAttribute('aria-pressed', String(showZhuyin));
+    });
+
+    const tools = [zhuyinToggle];
+    if (scaffold.reciteModel && speechSupported()) {
+      const model = h('button', { class: 'btn', type: 'button' }, '先聽一次');
+      model.addEventListener('click', () => speak(unit.say || unit.text));
+      tools.push(model);
+    }
+
+    wrap.appendChild(h('div', { class: 'card' }, [
+      h('div', { class: 'recite__bar' }, tools),
+      textBox,
+    ]));
+
+    const status = h('p', { class: 'recite__status', role: 'status', 'aria-live': 'polite' }, '');
+    const result = h('div', {});
+    const micBtn = h('button', { class: 'btn btn--primary recite__mic', type: 'button' }, '🎤 開始念');
+
+    micBtn.addEventListener('click', () => {
+      if (recognition) { stopRecognition(); return; }
+      cancelSpeaking();
+      clear(result);
+      charEls.forEach((el) => el.classList.remove('recite__ch--ok', 'recite__ch--homophone', 'recite__ch--wrong', 'recite__ch--missed'));
+      const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      recognition = new Recognition();
+      recognition.lang = 'zh-TW';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+      startedAt = Date.now();
+      micBtn.textContent = '🔴 正在聽……（再按一次結束）';
+      micBtn.classList.add('recite__mic--on');
+      status.textContent = '慢慢念，念完再按一次。';
+      recognition.onresult = (event) => {
+        const heard = event.results?.[0]?.[0]?.transcript || '';
+        finish(heard);
+      };
+      recognition.onerror = (event) => {
+        finish('', event.error === 'no-speech' ? '沒有聽到聲音，再試一次。' : '聽不清楚，再試一次。');
+      };
+      recognition.onend = () => {
+        recognition = null;
+        micBtn.textContent = '🎤 再念一次';
+        micBtn.classList.remove('recite__mic--on');
+      };
+      try { recognition.start(); } catch {
+        recognition = null;
+        status.textContent = '這台裝置不能用麥克風，請檢查權限。';
+      }
+    });
+
+    function finish(heard, errorText) {
+      const elapsed = Date.now() - startedAt;
+      stopRecognition();
+      if (errorText) { status.textContent = errorText; return; }
+      const score = scoreReading(expected, heard);
+      const speed = fluency(score.total, elapsed);
+
+      // 上色
+      score.marks.forEach((mark, i) => {
+        const el = charEls[i];
+        if (el) el.classList.add(`recite__ch--${mark}`);
+      });
+
+      const previous = best ? best.charsPerMinute : null;
+      saveRecite(lessonId, index, {
+        accuracy: score.accuracy,
+        charsPerMinute: speed.charsPerMinute,
+        total: score.total,
+      });
+
+      status.textContent = '';
+      clear(result);
+      result.appendChild(renderResult(score, speed, previous, unitWord));
+
+      const actions = h('div', { class: 'quiz-option-row' }, []);
+      if (index < units.length - 1) {
+        const next = h('button', { class: 'btn btn--primary', type: 'button' }, `下一${unitWord}`);
+        next.addEventListener('click', () => { index += 1; renderUnit(); });
+        actions.appendChild(next);
+      } else {
+        actions.appendChild(h('a', { class: 'btn btn--primary', href: backHref }, '念完了，回到本課'));
+      }
+      result.appendChild(actions);
+    }
+
+    wrap.appendChild(h('div', { class: 'quiz-option-row recite__actions' }, [
+      micBtn,
+      h('a', { class: 'btn', href: backHref }, '回到本課'),
+    ]));
+    wrap.appendChild(status);
+    wrap.appendChild(result);
+
+    if (best) {
+      wrap.appendChild(h('p', { class: 'meta' },
+        `這一${unitWord}之前最高 ${best.accuracy} 分`
+        + (best.charsPerMinute ? `，每分鐘 ${best.charsPerMinute} 個字。` : '。')));
+    }
+  }
+
+  // 換頁時停掉辨識與朗讀
+  window.addEventListener('hashchange', () => { stopRecognition(); cancelSpeaking(); }, { once: true });
+
+  renderUnit();
+  return wrap;
+}
+
+function renderResult(score, speed, previous, unitWord) {
+  const counts = score.marks.reduce((acc, mark) => {
+    acc[mark] = (acc[mark] || 0) + 1;
+    return acc;
+  }, {});
+  const ok = (counts.ok || 0) + (counts.homophone || 0);
+
+  // 一定要有文字摘要：顏色不是唯一的線索（色覺與螢幕閱讀器）。
+  const parts = [`這一${unitWord} ${score.total} 個字，念對 ${ok} 個`];
+  if (counts.wrong) parts.push(`念錯 ${counts.wrong} 個`);
+  if (counts.missed) parts.push(`漏掉 ${counts.missed} 個`);
+  const summary = `${parts.join('、')}。`;
+
+  const trend = compareFluency(speed.charsPerMinute, previous);
+  const trendText = {
+    faster: '比上次快一些。',
+    slower: '比上次慢一些，念清楚比念快重要。',
+    similar: '和上次差不多。',
+    first: '',
+  }[trend];
+
+  return h('div', { class: 'card recite-result' }, [
+    h('div', { class: 'quiz-option-row' }, [
+      h('p', { class: 'recite-result__score' }, `${score.accuracy} 分`),
+      h('span', { html: starsMarkup({ earned: accuracyStars(score.accuracy), max: 3, size: 'sm' }) }),
+      SpeakButton({ text: `${summary}${trendText}`, label: '聽', variant: 'speak-button--option' }),
+    ]),
+    h('p', { class: 'recite-result__summary' }, summary),
+    speed.charsPerMinute
+      ? h('p', { class: 'meta' }, `每分鐘 ${speed.charsPerMinute} 個字。${trendText}`)
+      : null,
+    // 圖例：每一種狀態都要有顏色以外的線索
+    h('ul', { class: 'recite-legend' }, [
+      ['homophone', MARK_LABEL.homophone],
+      ['wrong', MARK_LABEL.wrong],
+      ['missed', MARK_LABEL.missed],
+    ].filter(([key]) => counts[key]).map(([key, label]) => h('li', { class: `recite-legend__item recite-legend__item--${key}` }, `${label}：${counts[key]} 個`))),
+  ].filter(Boolean));
+}

@@ -1829,13 +1829,6 @@
 }
 .teacher-table th { color: var(--text-secondary); }
 
-.site-footer__teacher { margin-top: 10px; }
-.site-footer__teacher a {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  text-decoration: underline;
-}
-
 /* ---- 注音高手 ---- */
 /* 版面三段：看圖聽音 → 音節格 → 鍵盤。每段之間留白拉開，
    讓「現在該做什麼」在畫面上一眼可辨（一個畫面一個任務）。 */
@@ -2391,3 +2384,90 @@
   border-radius: 8px;
   color: var(--text-secondary);
 }
+
+/* ── 頁首的教師設定齒輪（統一入口）───────────────── */
+.app-header__teacher {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--text-secondary);
+  text-decoration: none;
+  flex: none;
+}
+.app-header__teacher:hover { background: var(--color-surface-muted); color: var(--text-primary); }
+.app-header__teacher:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+
+/* 頁首現在有兩個按鈕（靜音、教師設定）：把它們一起推到右邊，
+   不然 space-between 會把靜音鈕丟到正中間。 */
+.app-header__mute { margin-inline-start: auto; }
+
+/* ── 朗讀挑戰 ──────────────────────────────────── */
+.recite-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  border: 2px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-surface);
+  color: var(--text-primary);
+  text-decoration: none;
+  height: 100%;
+}
+.recite-entry:hover { background: var(--color-surface-muted); }
+.recite-entry:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+.recite-entry__icon { font-size: 32px; line-height: 1; }
+.recite-entry__text { display: flex; flex-direction: column; gap: 4px; }
+.recite-entry__title { font-size: 1.375rem; font-weight: 700; }
+.recite-entry__desc { font-size: 1.125rem; color: var(--text-secondary); }
+.recite-entry__best { font-size: 1rem; color: var(--text-secondary); }
+
+.recite__bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+.recite__text {
+  font-size: clamp(1.5rem, 1.25rem + 1.2vw, 2.125rem);
+  line-height: 2.4;
+  letter-spacing: 0.02em;
+}
+.recite__text--no-zhuyin .zhuyin__rt { display: none; }
+.recite__ch {
+  display: inline-block;
+  border-radius: 6px;
+  padding: 0 2px;
+}
+/* 評分結果的標示。顏色不是唯一線索：同音字加底線、漏字加刪除線，
+   結果區另有文字摘要，螢幕閱讀器也讀得到。 */
+.recite__ch--homophone {
+  text-decoration: underline;
+  text-decoration-style: double;
+  text-decoration-color: var(--module-teal, #2e8b6e);
+}
+.recite__ch--wrong {
+  background: var(--module-rose-tint, #f6dde4);
+  box-shadow: inset 0 -3px 0 var(--module-rose, #b04a6a);
+}
+.recite__ch--missed {
+  color: var(--text-secondary);
+  text-decoration: line-through;
+  opacity: 0.75;
+}
+.recite__actions { margin-top: 16px; }
+.recite__mic { min-height: 48px; font-size: 1.25rem; }
+.recite__mic--on { background: var(--module-rose, #b04a6a); color: #fff; }
+.recite__status { min-height: 1.6em; margin: 8px 0; color: var(--text-secondary); }
+.recite-result { margin-top: 16px; }
+.recite-result__score { font-size: 2.5rem; font-weight: 700; margin: 0; color: var(--color-primary); }
+.recite-result__summary { font-size: 1.25rem; margin: 8px 0; }
+.recite-legend { margin: 8px 0 0; padding-inline-start: 1.2em; color: var(--text-secondary); }
+.recite-legend__item { margin-bottom: 2px; }
+.recite-notice { max-width: 520px; margin: 24px auto; text-align: center; }
+.recite-notice__text { font-size: 1.25rem; line-height: 1.8; margin: 0 0 16px; }

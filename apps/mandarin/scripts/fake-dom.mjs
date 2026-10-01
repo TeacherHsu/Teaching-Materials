@@ -91,6 +91,14 @@ class FakeElement {
     return child;
   }
 
+  insertBefore(child, reference) {
+    child.parentNode = this;
+    const at = reference ? this.children.indexOf(reference) : -1;
+    if (at < 0) this.children.push(child);
+    else this.children.splice(at, 0, child);
+    return child;
+  }
+
   removeChild(child) {
     this.children = this.children.filter((c) => c !== child);
     child.parentNode = null;

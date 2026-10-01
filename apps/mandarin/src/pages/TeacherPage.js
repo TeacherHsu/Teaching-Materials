@@ -10,6 +10,7 @@ import { makeTeacherChallenge, verifyTeacherChallenge } from '../utils/teacherGa
 import { listRecords, recordsAsTsv, clearRecords, unsyncedAttempts, syncRecords } from '../utils/records.js';
 import { allMistakes, clearMistakes } from '../utils/mistakes.js';
 import { listSentences, markSentence, pendingSentences, clearSentences, MARKS } from '../utils/madeSentences.js';
+import { reciteLessons, reciteSummary, clearRecite } from '../utils/reciteRecords.js';
 
 function moduleLabel(key) {
   const entry = findModuleEntry(key);
@@ -127,6 +128,32 @@ function buildPanel(root) {
     root.appendChild(row);
   }
 
+  // ---- 朗讀挑戰 ----
+  const recited = reciteLessons();
+  root.appendChild(h('h2', {}, '朗讀挑戰'));
+  if (!recited.length) {
+    root.appendChild(h('p', { class: 'meta' }, '目前還沒有朗讀紀錄。'));
+  } else {
+    root.appendChild(h('p', { class: 'meta' },
+      '正確率不比聲調、同音字算對——重點是「說得夠清楚讓機器抓得到」，不是發音標準。'
+      + '少數不在字音索引裡的字會被判成念錯，所以分數是參考不是絕對。'
+      + '每分鐘字數只作為和自己比較的依據，沒有對照年段常模。'));
+    const tbody = h('tbody', {}, recited.map((lessonId) => {
+      const s2 = reciteSummary(lessonId);
+      return h('tr', {}, [
+        h('td', {}, lessonId),
+        h('td', {}, `${s2.units} 段`),
+        h('td', {}, `${s2.averageAccuracy} 分`),
+        h('td', {}, s2.averageCharsPerMinute ? `${s2.averageCharsPerMinute} 字/分` : '—'),
+        h('td', {}, `${s2.attempts} 次`),
+      ]);
+    }));
+    root.appendChild(h('table', { class: 'records' }, [
+      h('thead', {}, h('tr', {}, ['課次', '念過', '平均正確率', '平均速度', '嘗試'].map((t) => h('th', {}, t)))),
+      tbody,
+    ]));
+  }
+
   // ---- 學生造的句子 ----
   // 這是全站唯一需要「人看過」的產出：句子通不通順不是比對字串能決定的。
   // 打 ✗ 的句型會進學生的錯題複習，要求用同一個句型重寫。
@@ -226,12 +253,13 @@ function buildPanel(root) {
   clearBtn.addEventListener('click', () => {
     if (!armed) {
       armed = true;
-      clearBtn.textContent = '再按一次確認清除（含錯題盒與學生寫的句子，無法復原）';
+      clearBtn.textContent = '再按一次確認清除（含錯題盒、學生寫的句子、朗讀成績，無法復原）';
       return;
     }
     clearRecords();
     clearMistakes();
     clearSentences();
+    clearRecite();
     buildPanel(root);
   });
   root.appendChild(h('div', { class: 'quiz-option-row', style: 'margin-top:24px' }, [clearBtn]));
