@@ -87,7 +87,7 @@ export function buildPolysemyQuizItems(lesson) {
 
 export function buildPolysemyActivity(lesson, onBack) {
   const entries = filterByStatus(lesson.polysemy || []).filter((p) => p.sentence && p.definition);
-  const rounds = chunkRounds(entries, { min: 3, max: 5 }).map((round) => round.map(buildChoiceItem));
+  const rounds = chunkRounds(entries).map((round) => round.map(buildChoiceItem));
 
   const container = h('div', {});
   let roundIndex = 0;

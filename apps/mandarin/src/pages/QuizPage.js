@@ -104,6 +104,12 @@ export function QuizPage(lesson) {
 
     const quiz = ChoiceQuiz({
       items,
+      // 小考固定：答錯一次就揭曉答案，不受教師的鷹架設定影響。
+      // 考試的重點是「混題之後還會不會」，不是讓學生在這裡反覆猜。
+      wrongLimit: 1,
+      // 題目不自動念——混題測驗自動念會變成逐題等它念完，節奏被拖垮。
+      // 喇叭鈕仍然在，要聽隨時可以按。
+      autoRead: false,
       // 逐題回呼：統計每一站第一次答對幾題。
       onItemResolved: ({ item, firstTry }) => {
         if (!firstTry) return;

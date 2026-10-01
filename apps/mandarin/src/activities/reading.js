@@ -24,7 +24,7 @@ export function buildReadingQuizItems(lesson) {
 export function buildReadingActivity(lesson, onBack) {
   const paragraphs = filterByStatus(lesson.paragraph_summary || []).filter((p) => p.summary);
   const questions = filterByStatus(lesson.reading_questions || []).filter((q) => q.stem);
-  const questionRounds = chunkRounds(questions, { min: 3, max: 5 });
+  const questionRounds = chunkRounds(questions);
 
   const steps = [];
   if (paragraphs.length >= 3) {

@@ -138,7 +138,7 @@ export function buildReviewActivity(lesson, onBack, opts = {}) {
 
   loadPrevLessons(lesson, { base, fetchImpl })
     .then((prevLessons) => {
-      const rounds = chunkRounds(buildReviewQuizItems(prevLessons), { min: ROUND_MIN, max: ROUND_MAX });
+      const rounds = chunkRounds(buildReviewQuizItems(prevLessons));
       clear(container);
       if (rounds.length === 0) {
         container.appendChild(missingContentNotice('舊字新詞：教材審核中'));

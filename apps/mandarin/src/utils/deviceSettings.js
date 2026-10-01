@@ -2,27 +2,64 @@
 //
 // 潛能教室的現實：同一節課裡有不同年級、不同能力的學生，教師無法為每個人
 // 另做一份教材。這裡採「同一份教材、不同鷹架厚度」——題目本身不變，
-// 只調整干擾項數量、每輪題數與提示層數。這樣同一課仍是同一份教材，好帶。
+// 只調整支持的多寡。這樣同一課仍是同一份教材，好帶。
 const KEY = 'mandarin:device-settings:v1';
 
 /**
  * 三段鷹架厚度。題目內容完全相同，差別只在支持的多寡。
+ *
  * - optionCount：選擇題的選項數（含正解）
- * - roundSize：每一輪幾題
- * - eliminateHint：答錯第二次時是否用刪去法畫掉一個明顯錯的選項
+ * - roundSize：每一輪最多幾題
+ * - wrongLimit：答錯幾次之後直接揭曉正解。
+ *     支持層設 1＝**答錯一次就告訴他答案**，不讓學生在錯誤裡反覆打轉
+ *     （近似零錯誤學習）。標準／挑戰層設 2＝先給提示，再錯才揭曉。
+ * - autoRead：題目出現時自動念一次。支持層預設開——閱讀困難的學生
+ *     要先聽到題目才讀得下去，不該每題都得自己按喇叭。
  */
 export const SCAFFOLD_LEVELS = {
-  support: { key: 'support', label: '支持', optionCount: 2, roundSize: 3, eliminateHint: true, note: '選項少、題數少，答錯會幫忙刪掉一個。' },
-  standard: { key: 'standard', label: '標準', optionCount: 3, roundSize: 5, eliminateHint: true, note: '一般難度。' },
-  challenge: { key: 'challenge', label: '挑戰', optionCount: 4, roundSize: 5, eliminateHint: false, note: '選項多，不提供刪去法。' },
+  support: {
+    key: 'support',
+    label: '支持',
+    optionCount: 2,
+    roundSize: 3,
+    wrongLimit: 1,
+    autoRead: true,
+    note: '選項少、題數少；答錯一次就直接告訴他答案；題目會自動念出來。',
+  },
+  standard: {
+    key: 'standard',
+    label: '標準',
+    optionCount: 3,
+    roundSize: 5,
+    wrongLimit: 2,
+    autoRead: false,
+    note: '一般難度。答錯先給提示，再錯才揭曉答案。',
+  },
+  challenge: {
+    key: 'challenge',
+    label: '挑戰',
+    optionCount: 4,
+    roundSize: 5,
+    wrongLimit: 2,
+    autoRead: false,
+    note: '選項多。答錯先給提示，再錯才揭曉答案。',
+  },
 };
 
 const DEFAULT_LEVEL = 'standard';
 
+/**
+ * 可以個別覆寫的項目。值為 null 代表「跟隨等級」——這個哨兵值是刻意的：
+ * 教師手動調過的項目，之後切換等級**不會**被蓋掉；要恢復成跟著等級走，
+ * 必須明確按「跟隨等級」。沒有這個區分的話，教師每次換等級都要重調一次。
+ */
+export const OVERRIDABLE = ['autoRead'];
+
 function read() {
   try {
     const raw = window.localStorage.getItem(KEY);
-    return raw ? JSON.parse(raw) : {};
+    const parsed = raw ? JSON.parse(raw) : {};
+    return parsed && typeof parsed === 'object' ? parsed : {};
   } catch {
     return {};
   }
@@ -43,15 +80,47 @@ export function getScaffoldLevelKey() {
   return SCAFFOLD_LEVELS[level] ? level : DEFAULT_LEVEL;
 }
 
-/** @returns {{key:string,label:string,optionCount:number,roundSize:number,eliminateHint:boolean,note:string}} */
+/**
+ * 目前生效的設定＝等級預設 ⊕ 教師的個別覆寫。
+ * @returns {{key:string,label:string,optionCount:number,roundSize:number,
+ *            wrongLimit:number,autoRead:boolean,note:string}}
+ */
 export function getScaffoldLevel() {
-  return SCAFFOLD_LEVELS[getScaffoldLevelKey()];
+  const base = SCAFFOLD_LEVELS[getScaffoldLevelKey()];
+  const overrides = read().overrides || {};
+  const merged = { ...base };
+  for (const name of OVERRIDABLE) {
+    if (overrides[name] !== null && overrides[name] !== undefined) merged[name] = overrides[name];
+  }
+  return merged;
 }
 
 /** @returns {boolean} 是否成功寫入（localStorage 不可用時回 false，但不丟例外）。 */
 export function setScaffoldLevel(levelKey) {
   if (!SCAFFOLD_LEVELS[levelKey]) return false;
   return write({ ...read(), scaffoldLevel: levelKey });
+}
+
+/**
+ * 這個項目現在是跟著等級，還是教師手調過的。
+ * @returns {null|boolean} null＝跟隨等級
+ */
+export function getOverride(name) {
+  if (!OVERRIDABLE.includes(name)) return null;
+  const value = (read().overrides || {})[name];
+  return value === undefined ? null : value;
+}
+
+/**
+ * 設定個別覆寫。傳 null 代表恢復「跟隨等級」。
+ */
+export function setOverride(name, value) {
+  if (!OVERRIDABLE.includes(name)) return false;
+  const state = read();
+  const overrides = { ...(state.overrides || {}) };
+  if (value === null) delete overrides[name];
+  else overrides[name] = Boolean(value);
+  return write({ ...state, overrides });
 }
 
 /**

@@ -2322,3 +2322,7 @@
   color: var(--color-primary);
 }
 .quiz-result__table { margin: 0 auto 20px; width: 100%; }
+
+/* ── 教師頁：個別調整 ───────────────────────────── */
+.teacher-override { margin: 12px 0; padding: 16px 20px; }
+.teacher-override__label { margin: 0 0 4px; font-size: 1.25rem; font-weight: 700; }

@@ -72,7 +72,7 @@ export function buildLookalikeQuestionItems(lesson) {
  */
 export function buildLookalikesActivity(lesson, onBack) {
   const items = buildLookalikeQuestionItems(lesson);
-  const rounds = chunkRounds(items, { min: 3, max: 5 });
+  const rounds = chunkRounds(items);
 
   const container = h('div', {});
   let roundIndex = 0;

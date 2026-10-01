@@ -71,7 +71,7 @@ export function buildPolyphoneQuizItems(lesson) {
 
 export function buildPolyphonesActivity(lesson, onBack) {
   const entries = usablePolyphoneEntries(lesson);
-  const rounds = chunkRounds(entries, { min: 3, max: 5 }).map((round) => round.map(buildChoiceItem));
+  const rounds = chunkRounds(entries).map((round) => round.map(buildChoiceItem));
 
   const container = h('div', {});
   let roundIndex = 0;

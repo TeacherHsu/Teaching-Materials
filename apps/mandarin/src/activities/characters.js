@@ -3,6 +3,7 @@
 // 2. 看字選音（ChoiceQuiz，3–5 題一組，多組依序進行）
 // 3. 部首分類（DragToSlot，同一組內部首不重複）
 import { h, clear } from '../utils/dom.js';
+import { chunkRounds } from '../utils/chunk.js';
 import { CharacterCard } from '../components/CharacterCard.js';
 import { filterByStatus } from '../utils/preview.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
@@ -46,12 +47,6 @@ function withExamples(characters, lesson) {
     const fallback = exampleMap.get(c.char);
     return fallback ? { ...c, examples: fallback } : c;
   });
-}
-
-function chunkByMax(items, max) {
-  const rounds = [];
-  for (let i = 0; i < items.length; i += max) rounds.push(items.slice(i, i + max));
-  return rounds;
 }
 
 /** 把生字依部首輪流分配到各組，確保同一組內部首不重複。 */
@@ -118,9 +113,9 @@ export function buildCharactersActivity(lesson, onBack) {
     lesson,
   );
   const choiceItems = buildPronunciationItems(characters, characters);
-  const choiceRounds = chunkByMax(choiceItems, ROUND_MAX);
+  const choiceRounds = chunkRounds(choiceItems);
   const radicalRounds = buildRadicalRounds(characters);
-  const cardRounds = chunkByMax(characters, 6);
+  const cardRounds = chunkRounds(characters, { max: 6 });   // 字卡一次最多 6 張，和題目的節奏不同
 
   const steps = [];
   if (characters.length > 0) steps.push('cards');

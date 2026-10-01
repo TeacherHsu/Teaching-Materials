@@ -16,8 +16,8 @@ import { chunkRounds } from '../utils/chunk.js';
 export function buildChallengeActivity(lesson, onBack) {
   const choiceItems = (lesson.quiz || []).filter((q) => q.type === 'choice' && q.status === 'ready');
   const matchingItem = (lesson.quiz || []).find((q) => q.type === 'matching' && q.status === 'ready');
-  const choiceRounds = chunkRounds(choiceItems, { min: 3, max: 5 });
-  const matchingRounds = chunkRounds(matchingItem?.pairs || [], { min: 3, max: 5 });
+  const choiceRounds = chunkRounds(choiceItems);
+  const matchingRounds = chunkRounds(matchingItem?.pairs || []);
 
   const steps = [];
   if (choiceRounds.length > 0) steps.push('choice');

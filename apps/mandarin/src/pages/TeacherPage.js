@@ -5,7 +5,7 @@
 // 頁面不顯示、也不儲存任何學生姓名；紀錄只有課次代號、大項代號與正確率。
 import { h, clear } from '../utils/dom.js';
 import { findModuleEntry } from '../activities/moduleRegistry.js';
-import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel, setDeviceLabel, getSheetUrl, setSheetUrl } from '../utils/deviceSettings.js';
+import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel, setDeviceLabel, getSheetUrl, setSheetUrl, getScaffoldLevel, getOverride, setOverride } from '../utils/deviceSettings.js';
 import { makeTeacherChallenge, verifyTeacherChallenge } from '../utils/teacherGate.js';
 import { listRecords, recordsAsTsv, clearRecords, unsyncedAttempts, syncRecords } from '../utils/records.js';
 import { allMistakes, clearMistakes } from '../utils/mistakes.js';
@@ -77,6 +77,54 @@ function buildPanel(root) {
   }));
   root.appendChild(levelRow);
   root.appendChild(levelStatus);
+
+  // ---- 個別調整 ----
+  // null＝跟隨等級。教師手動調過的項目，之後切換等級**不會**被蓋掉；
+  // 要恢復成跟著等級走，必須明確按「跟隨等級」。沒有這個區分的話，
+  // 教師每次換等級都要重調一次。
+  const level = getScaffoldLevel();
+  root.appendChild(h('h3', {}, '個別調整'));
+  root.appendChild(
+    h('p', { class: 'meta' }, '沒有調整的項目會跟著上面的難易度走；調整過的項目換難易度時不會被蓋掉。'),
+  );
+
+  const OVERRIDE_UI = [
+    {
+      name: 'autoRead',
+      label: '題目自動念出來',
+      note: '閱讀困難的學生要先聽到題目才讀得下去。關掉之後喇叭鈕仍然在。',
+    },
+  ];
+
+  for (const spec of OVERRIDE_UI) {
+    const override = getOverride(spec.name);
+    const effective = level[spec.name];
+    const following = override === null;
+    const choices = [
+      { value: null, text: `跟隨等級（目前${SCAFFOLD_LEVELS[current][spec.name] ? '開' : '關'}）` },
+      { value: true, text: '開' },
+      { value: false, text: '關' },
+    ];
+    const row = h('div', { class: 'card teacher-override' }, [
+      h('p', { class: 'teacher-override__label' }, spec.label),
+      h('p', { class: 'meta' }, spec.note),
+      h('div', { class: 'quiz-option-row' }, choices.map((choice) => {
+        const on = choice.value === null ? following : (!following && override === choice.value);
+        const btn = h('button', {
+          class: `btn${on ? ' btn--primary' : ''}`,
+          type: 'button',
+          'aria-pressed': String(on),
+        }, choice.text);
+        btn.addEventListener('click', () => {
+          setOverride(spec.name, choice.value);
+          buildPanel(root);
+        });
+        return btn;
+      })),
+      h('p', { class: 'meta' }, `目前生效：${effective ? '開' : '關'}${following ? '' : '（已個別設定）'}`),
+    ]);
+    root.appendChild(row);
+  }
 
   // ---- 作答紀錄 ----
   root.appendChild(h('h2', {}, '作答紀錄'));

@@ -170,7 +170,7 @@ function appendPatternContext(round, container) {
  */
 export function buildSentencePracticeActivity(lesson, onBack) {
   const matchingPairs = readyMatchingPairs(lesson);
-  const matchingRounds = chunkRounds(matchingPairs, { min: 3, max: 5 });
+  const matchingRounds = chunkRounds(matchingPairs);
 
   const allExamples = flattenExamples(lesson);
   // 句子重組用每個句型的第 1 句；仿寫選填使用其他例句，

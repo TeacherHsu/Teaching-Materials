@@ -31,7 +31,7 @@ export function buildListeningQuizItems(lesson) {
 
 export function buildListeningActivity(lesson, onBack) {
   const items = filterByStatus(lesson.listening || []).filter((l) => l.stem && l.question);
-  const rounds = chunkRounds(items, { min: 3, max: 5 });
+  const rounds = chunkRounds(items);
   let roundIndex = 0;
 
   const container = h('div', {});

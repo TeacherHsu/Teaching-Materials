@@ -1,6 +1,6 @@
 # 參考站設計採用計畫（國語課文樂園優化設計）
 
-日期：2026-10-01｜狀態：**CF 已核可施工順序；P0-C、P0-A、P0-B 已完成，其餘待做**
+日期：2026-10-01｜狀態：**CF 已核可施工順序；P0-C、P0-A、P0-B、P1-D 已完成，其餘待做**
 
 參考對象：`https://sped-teacher.github.io/Teaching-Materials/mandarin/`
 （「國語五上學習樂園」，康軒五上，單檔 vanilla JS）。**已取得原作者同意參考**。
@@ -210,18 +210,46 @@ curl -o /dev/null -w "%{http_code} %{size_download}" \
 驗收：每個有選擇題的大項都至少抽到一題；同一題不會重複出現；
 答錯的題目考完後出現在錯題複習；成績出現在教師頁與 TSV。
 
-### P1-D　等級表擴充
+### P1-D　等級表擴充（已完成 2026-10-01）
 
-`SCAFFOLD_LEVELS` 加四欄：
+`SCAFFOLD_LEVELS` 現在是：
 
-```
-support  : wrongLimit 1, autoRead true,  unlockMemory false, prefill 1
-standard : wrongLimit 2, autoRead false, unlockMemory false, prefill 0
-challenge: wrongLimit 2, autoRead false, unlockMemory true,  prefill 0
-```
+| | optionCount | roundSize | wrongLimit | autoRead |
+|---|---|---|---|---|
+| 支持 | 2 | 3 | **1** | **true** |
+| 標準 | 3 | 5 | 2 | false |
+| 挑戰 | 4 | 5 | 2 | false |
 
-教師頁的「個別調整」用 `null = 跟隨等級` 哨兵值，切等級不蓋掉教師手調過的項。
-`MatchingGame` 的翻牌模式由 `unlockMemory` 決定；`SentenceBuilder` 吃 `prefill`。
+- **`wrongLimit`**：支持層設 1＝答錯一次就直接揭曉答案（近似零錯誤學習），
+  不讓學生在錯誤裡反覆打轉。原本 `ChoiceQuiz` 寫死 `attempts < 2`。
+  單課小考以參數強制 `wrongLimit: 1`，不受教師設定影響。
+- **`autoRead`**：題目出現時自動念一次，支持層預設開。小考明確關閉——
+  混題測驗自動念會逐題等它念完，節奏被拖垮，喇叭鈕仍然在。
+- **個別調整用 `null = 跟隨等級` 哨兵值**（`OVERRIDABLE` 白名單）。教師手調過的
+  項目，之後切等級**不會**被蓋掉；要恢復必須明確按「跟隨等級」。白名單外的
+  項目（例如 optionCount）不開放覆寫。
+
+順手修掉兩個既有問題：
+
+- **`eliminateHint` 是死設定**：宣告在 `SCAFFOLD_LEVELS` 裡但全站沒有任何程式讀它。
+  已移除。支持層改用 `wrongLimit: 1`，「刪去法」本來想解決的問題（支持層的學生
+  面對多個干擾項）由「選項只有 2 個 ＋ 答錯一次就揭曉」解決，不需要再做刪去法。
+- **`roundSize` 形同虛設**：各活動都寫死 `chunkRounds(items, { min: 3, max: 5 })`，
+  設定根本沒接上。已拿掉那些寫死參數，改為跟隨教師設定（刻意保留造句的
+  `{ min: 1, max: 3 }`，那一站本來就需要不同節奏）。
+
+**連帶完成 P2-G 的分組部分**：要讓 `roundSize` 真的生效，必須先修分組演算法。
+舊的 `chunkRounds` 是「切滿上限，尾數不足就併入前一組」，那會讓最後一組
+**超過上限**（7 題上限 3 → 3／4），支持層設 3 題卻出現 4 題的一輪。
+改成參考站的平均分配：15 題上限 6 → 5／5／5、7 題上限 3 → 3／2／2。
+`characters.js` 裡另一份本地的 `chunkByMax` 也一併改用共用實作。
+`scripts/test-chunk-balanced.mjs` 以 1–60 題 × 上限 1–8 窮舉驗證。
+
+**未做，另排**（這兩項不是設定旗標，是新元件，不該混進本項）：
+
+- `unlockMemory`（挑戰層解鎖翻牌記憶遊戲）：`MatchingGame` 目前**沒有**翻牌模式，
+  要新寫一個記憶遊戲元件。
+- `prefill`（支持層造句預先填好幾格）：`SentenceBuilder` 目前**沒有**預填能力。
 
 ### P1-E　造句批改回饋環
 

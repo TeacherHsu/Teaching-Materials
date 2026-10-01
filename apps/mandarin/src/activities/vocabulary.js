@@ -54,9 +54,9 @@ export function buildVocabularyActivity(lesson, onBack) {
   const words = (lesson.words || []).filter((w) => w.status === 'ready' && w.word && w.meaning);
   const basicFirst = [...words].sort((a, b) => (wordLevel(a) === wordLevel(b) ? 0 : wordLevel(a) === 'basic' ? -1 : 1));
 
-  const recognitionRounds = chunkRounds(basicFirst, { min: 3, max: 5 });
-  const matchingRounds = chunkRounds(basicFirst, { min: 3, max: 5 });
-  const choiceRounds = chunkRounds(basicFirst, { min: 3, max: 5 }).map((round) => round.map((w) => buildChoiceItem(w, words)));
+  const recognitionRounds = chunkRounds(basicFirst);
+  const matchingRounds = chunkRounds(basicFirst);
+  const choiceRounds = chunkRounds(basicFirst).map((round) => round.map((w) => buildChoiceItem(w, words)));
 
   const steps = [];
   if (recognitionRounds.length > 0) steps.push('recognition');

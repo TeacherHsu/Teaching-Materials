@@ -8,6 +8,8 @@ import { recordOutcome } from '../utils/scoreSession.js';
 import { noteMistake, gradeMistake } from '../utils/mistakes.js';
 import { celebrateCorrect } from '../utils/celebrate.js';
 import { shuffle } from '../utils/shuffle.js';
+import { getScaffoldLevel } from '../utils/deviceSettings.js';
+import { speak, cancelSpeaking } from '../utils/speech.js';
 
 const CHECK_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>`;
 const CROSS_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>`;
@@ -30,7 +32,21 @@ const DEFAULT_HINT = '再看看題目，仔細比對一下再選。';
  *   backLabel?: string,
  * }} opts
  */
-export function ChoiceQuiz({ items, onComplete, onItemResolved, onBack, backLabel = '回課程首頁', onContinue, continueLabel = '加練下一組' }) {
+export function ChoiceQuiz({
+  items,
+  onComplete,
+  onItemResolved,
+  onBack,
+  backLabel = '回課程首頁',
+  onContinue,
+  continueLabel = '加練下一組',
+  wrongLimit,
+  autoRead,
+}) {
+  // 預設跟著這台載具的鷹架設定；呼叫端可以覆寫（單課小考固定 wrongLimit 1）。
+  const scaffold = getScaffoldLevel();
+  const limit = Number.isFinite(wrongLimit) && wrongLimit > 0 ? wrongLimit : scaffold.wrongLimit;
+  const readAloud = autoRead === undefined ? scaffold.autoRead : autoRead;
   const root = h('div', { class: 'quiz-panel' });
   let index = 0;
   let correctCount = 0;
@@ -76,6 +92,15 @@ export function ChoiceQuiz({ items, onComplete, onItemResolved, onBack, backLabe
         ReadAllButton(() => ({ stem: item.readAllStem || stemText, options })),
       ]),
     );
+
+    // 自動念題目（支持層預設開）：閱讀困難的學生要先聽到題目才讀得下去，
+    // 不該每一題都得自己按喇叭。換題時先停掉上一題，免得兩句疊在一起念。
+    // 第一題可能因為瀏覽器的自動播放限制而不會出聲——學生按過「開始」之後
+    // 就有使用者手勢，後續都正常，所以不另外處理，喇叭鈕仍然在。
+    if (readAloud) {
+      cancelSpeaking();
+      speak(stemText);
+    }
 
     const optionsWrap = h('div', { class: 'quiz-options', role: 'group', 'aria-label': '選項' });
     const feedbackSlot = h('div', {});
@@ -136,8 +161,9 @@ export function ChoiceQuiz({ items, onComplete, onItemResolved, onBack, backLabe
         btn.setAttribute('aria-pressed', 'true');
         btn.innerHTML = `${CROSS_ICON}<span>${opt}</span>`;
 
-        if (attempts < 2) {
-          // 第 1 次答錯：不揭曉正解，該選項停用，其餘選項仍可選
+        if (attempts < limit) {
+          // 還沒到揭曉次數：不揭曉正解，該選項停用，其餘選項仍可選。
+          // 支持層 limit=1，所以這一段不會執行——答錯一次就直接揭曉（零錯誤學習）。
           btn.disabled = true;
           clear(feedbackSlot);
           const hintText = (item.hints && item.hints[0]) || item.hint || DEFAULT_HINT;
@@ -155,7 +181,7 @@ export function ChoiceQuiz({ items, onComplete, onItemResolved, onBack, backLabe
           );
           feedbackSlot.appendChild(HintPanel({ message: hintText }));
         } else {
-          // 第 2 次答錯：揭曉正解，鎖題
+          // 達到揭曉次數：揭曉正解，鎖題
           answered = true;
           recordOutcome({ firstTry: false, revealed: true });
           if (item._mistakeId) gradeMistake(item._mistakeId, false);
