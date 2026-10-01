@@ -9,6 +9,7 @@
 // 注意：這裡**不**負責決定要不要顯示注音，由呼叫端在容器上加
 // .reader__text--no-zhuyin 之類的 class 控制，理由同第 2 點。
 import { h } from '../utils/dom.js';
+import { normalizeZhuyin } from '../utils/zhuyin.js';
 
 /**
  * @param {string} char 一個字（標點也可以，會原樣輸出）
@@ -17,11 +18,29 @@ import { h } from '../utils/dom.js';
  */
 export function ZhuyinText(char, zhuyin) {
   if (!zhuyin) return document.createTextNode(char);
+
+  // 聲調要和注音符號本體分開放：
+  //   二、三、四聲（ˊ ˇ ˋ）在注音符號的**右側**
+  //   輕聲（˙）在注音符號的**上方**
+  //   一聲不標
+  // 整串一起直排會把聲調擠到最下面，那不是台灣的寫法。
+  // 先正規化：來源若把輕聲寫成後置（ㄌㄜ˙）也要處理成前置，
+  // 否則 ˙ 會被當成本體的一部分跟著直排下去。
+  const text = normalizeZhuyin(zhuyin);
+  const neutral = text.startsWith('˙');
+  const body = neutral ? text.slice(1) : text.replace(/[ˊˇˋ]$/, '');
+  const tone = neutral ? '˙' : (text.match(/[ˊˇˋ]$/) || [''])[0];
+
+  const rt = h('rt', { class: `zhuyin__rt${neutral ? ' zhuyin__rt--neutral' : ''}` }, [
+    tone ? h('span', { class: 'zhuyin__tone' }, tone) : null,
+    h('span', { class: 'zhuyin__body' }, body),
+  ].filter(Boolean));
+
   return h('ruby', { class: 'zhuyin' }, [
     document.createTextNode(char),
-    // <rp> 是不支援 ruby 的瀏覽器的退路，讓注音至少以括號呈現而不是黏在字後面
+    // <rp> 是不支援 ruby 的瀏覽器的退路
     h('rp', { 'aria-hidden': 'true' }, '('),
-    h('rt', { class: 'zhuyin__rt' }, zhuyin),
+    rt,
     h('rp', { 'aria-hidden': 'true' }, ')'),
   ]);
 }

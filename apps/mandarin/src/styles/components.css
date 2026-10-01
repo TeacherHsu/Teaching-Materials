@@ -2143,21 +2143,46 @@
    刻意**不**用 ruby-position: inter-character——那是注音的正規解法，但只有
    Safari／Firefox 支援，Chrome（含 Chromebook、Windows）會默默退回「注音排在
    字的上方」，同一份教材在不同載具長得不一樣。改用 inline-flex 接管 <ruby>
-   的版面，再用 writing-mode 把注音轉成直排，所有瀏覽器結果一致。 */
+   的版面，再用 writing-mode 把注音轉成直排，所有瀏覽器結果一致。
+
+   聲調的位置依台灣的寫法：
+     二、三、四聲（ˊ ˇ ˋ）在注音符號的**右側**（靠下）
+     輕聲（˙）在注音符號的**上方**
+     一聲不標
+   整串一起直排會把聲調擠到最下面，那是錯的。 */
 .zhuyin {
   display: inline-flex;
   align-items: center;
   vertical-align: baseline;
 }
 .zhuyin__rt {
-  display: inline-block;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
+  display: inline-flex;
+  align-items: flex-end;          /* 聲調靠注音符號的下緣 */
   font-size: 0.4em;
   line-height: 1.05;
-  letter-spacing: -0.04em;
   margin-inline-start: 0.08em;
   color: var(--text-secondary);
+}
+/* 輕聲：改成直向排列，符號在本體上方並置中 */
+.zhuyin__rt--neutral {
+  flex-direction: column;
+  align-items: center;
+}
+.zhuyin__body {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: -0.04em;
+}
+.zhuyin__tone {
+  line-height: 1;
+  /* 二～四聲在右側，所以要排在本體後面 */
+  order: 1;
+  margin-inline-start: 0.04em;
+}
+/* 輕聲在上方，排在本體前面 */
+.zhuyin__rt--neutral .zhuyin__tone {
+  order: -1;
+  margin-inline-start: 0;
 }
 /* 不支援 ruby 的瀏覽器才顯示 <rp> 的括號 */
 .reader__text rp { display: none; }
