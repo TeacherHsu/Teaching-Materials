@@ -4,6 +4,7 @@
 // 3. 看義選詞（ChoiceQuiz，3–5 題一組，多組依序進行）
 // 基礎／挑戰：以 word.level 欄位分層，缺欄位時依字數（≥3 字視為挑戰層）。
 import { h, clear } from '../utils/dom.js';
+import { shuffle as shuffled } from '../utils/shuffle.js';
 import { VocabularyCard } from '../components/VocabularyCard.js';
 import { MatchingGame } from '../components/MatchingGame.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
@@ -12,9 +13,6 @@ import { missingContentNotice } from './engine.js';
 import { chunkRounds } from '../utils/chunk.js';
 import { PronunciationNotice } from '../components/PronunciationNotice.js';
 
-function shuffled(arr) {
-  return [...arr].sort(() => Math.random() - 0.5);
-}
 
 export function wordLevel(word) {
   if (word.level === 'challenge' || word.level === 'basic') return word.level;

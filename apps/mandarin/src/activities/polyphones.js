@@ -9,15 +9,13 @@
 // 題庫；若某課完全沒有可用的 zhuyin，本大項在 moduleRegistry 就會判定
 // ready()=false，顯示「教材審核中」（等同教材待補，見 moduleRegistry.js）。
 import { h, clear } from '../utils/dom.js';
+import { shuffle as shuffled } from '../utils/shuffle.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { missingContentNotice } from './engine.js';
 import { filterByStatus } from '../utils/preview.js';
 import { chunkRounds } from '../utils/chunk.js';
 
-function shuffled(arr) {
-  return [...arr].sort(() => Math.random() - 0.5);
-}
 
 /** 一個字要能出題，至少要有 2 個讀音各自查得到 zhuyin，且彼此不同。 */
 export function usablePolyphoneEntries(lesson) {

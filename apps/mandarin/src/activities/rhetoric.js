@@ -1,14 +1,12 @@
 // 「修辭小偵探」模組（挑戰層）：依 11 修辭總表歸屬本課的修辭格，判斷生活句用了什麼修辭。
 // 選項旁附兒童語言說明（child_note），每題逐題作答。
 import { h, clear } from '../utils/dom.js';
+import { shuffle as shuffled } from '../utils/shuffle.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { missingContentNotice } from './engine.js';
 import { filterByStatus } from '../utils/preview.js';
 
-function shuffled(arr) {
-  return [...arr].sort(() => Math.random() - 0.5);
-}
 
 // 官方修辭解析會用「﹁﹂」框出關鍵字；同時接受既有資料常見的「」與『』標記。
 // 標記只供教材資料保存，不直接顯示在學生題幹中。

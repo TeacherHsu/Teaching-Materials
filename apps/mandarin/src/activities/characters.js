@@ -3,6 +3,7 @@
 // 2. 看字選音（ChoiceQuiz，3–5 題一組，多組依序進行）
 // 3. 部首分類（DragToSlot，同一組內部首不重複）
 import { h, clear } from '../utils/dom.js';
+import { shuffle as shuffled } from '../utils/shuffle.js';
 import { chunkRounds } from '../utils/chunk.js';
 import { CharacterCard } from '../components/CharacterCard.js';
 import { filterByStatus } from '../utils/preview.js';
@@ -18,9 +19,6 @@ import { getScaffoldLevel } from '../utils/deviceSettings.js';
 const ROUND_MAX = 5;
 const MAX_DISPLAY_EXAMPLES = 3;
 
-function shuffled(arr) {
-  return [...arr].sort(() => Math.random() - 0.5);
-}
 
 /** 依教材已審核的常用順序取前幾個，完整 examples 仍保留在資料檔。 */
 function selectDisplayedExamples(examples) {

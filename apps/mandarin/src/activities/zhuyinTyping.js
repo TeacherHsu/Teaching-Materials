@@ -8,6 +8,7 @@
 // 聲符、韻符、聲調一個個打出來，沒有選項可猜，練的是聲韻覺識與注音自動化。
 // 規格：docs/specs/2026-09-30-zhuyin-typing.md
 import { h, clear } from '../utils/dom.js';
+import { shuffle as shuffled } from '../utils/shuffle.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { HintPanel } from '../components/HintPanel.js';
@@ -46,9 +47,6 @@ export function canStartZhuyinTyping(lesson) {
   return typableWords(lesson).length >= 3;
 }
 
-function shuffled(arr) {
-  return [...arr].sort(() => Math.random() - 0.5);
-}
 
 /**
  * 選字階段的候選：正確答案 ＋ 高頻干擾字，亂序。

@@ -1,6 +1,7 @@
 // 「一字多義」模組：依 06 字義分析中有 ≥2 個字義的生字，逐句判斷該字在句中的意思。
 // 每字每個義項各出一句三年級生活句（字挖空／標底線），ChoiceQuiz 一組 3–5 題。
 import { h, clear } from '../utils/dom.js';
+import { shuffle as shuffled } from '../utils/shuffle.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { missingContentNotice } from './engine.js';
@@ -8,9 +9,6 @@ import { filterByStatus } from '../utils/preview.js';
 import { chunkRounds } from '../utils/chunk.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 
-function shuffled(arr) {
-  return [...arr].sort(() => Math.random() - 0.5);
-}
 
 // 題目問的是「字」在句中的意思，所以只凸顯目標字本身；資料裡《》可能框住整個詞
 // （例：《併吞》），這裡去掉《》，把詞加底線、目標字另外標色，避免學生以為要解釋整個詞。

@@ -6,6 +6,7 @@
 // 舊題目可靠，也和「部首」那一步的做法一致。
 
 import { getScaffoldLevel } from '../utils/deviceSettings.js';
+import { shuffle as shuffled } from '../utils/shuffle.js';
 
 const SINGLE_BOPOMOFO = /^[ㄅ-ㄩ]+[ˊˇˋ˙]?$/u;
 const TONE = /[ˊˇˋ˙]$/u;
@@ -50,9 +51,6 @@ export function pickPronunciationDistractors(answer, pool, n) {
     .map((x) => x.z);
 }
 
-function shuffled(arr) {
-  return [...arr].sort(() => Math.random() - 0.5);
-}
 
 /**
  * 產生該課的看字選音題。選項一律亂序，並附解析。

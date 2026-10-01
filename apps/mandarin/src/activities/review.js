@@ -3,6 +3,7 @@
 // 這一項需要跨課資料，元件內自己 fetch course-index＋前課 JSON（其他模組只吃已載入的
 // 單課 lesson 物件，唯獨這項例外，因為它的內容不屬於單一課）。
 import { h, clear } from '../utils/dom.js';
+import { shuffle as shuffled } from '../utils/shuffle.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { missingContentNotice } from './engine.js';
@@ -12,9 +13,6 @@ import { chunkRounds } from '../utils/chunk.js';
 const ROUND_MIN = 3;
 const ROUND_MAX = 5;
 
-function shuffled(arr) {
-  return [...arr].sort(() => Math.random() - 0.5);
-}
 
 function readyCharsOf(lesson) {
   return (lesson.characters || []).filter((c) => (c.status === 'ready' || !c.status) && c.char && c.zhuyin);

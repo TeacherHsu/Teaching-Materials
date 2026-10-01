@@ -41,11 +41,15 @@ function fisherYates(arr, rand) {
  * @returns {Array}
  */
 export function shuffle(items, random = Math.random) {
-  const out = fisherYates(items, random);
-  if (out.length > 1 && out.every((item, index) => item === items[index])) {
-    [out[0], out[1]] = [out[1], out[0]];
-  }
-  return out;
+  // 這裡**不可以**加「如果結果和輸入完全相同就交換前兩個」那種修正。
+  // 它會讓小 n 的分布嚴重偏斜，而且正好打在支持層：
+  //   2 選項 → Fisher-Yates 有 1/2 機率得到原序，全部被改成交換，
+  //            結果變成「永遠交換」，正解 100% 固定在第二個位置，
+  //            學生只要學會「選下面那個」就全對。
+  //   3 選項 → 第一位 16.9%／第二位 49.7%／第三位 33.4%（理想各 33.3%）
+  // 「保證和原順序不同」是排序題的需求（不能一開始就顯示正解順序），
+  // 那是 shuffleDiffering 的職責，不是一般選項洗牌的。
+  return fisherYates(items, random);
 }
 
 function countDiffPositions(a, b) {

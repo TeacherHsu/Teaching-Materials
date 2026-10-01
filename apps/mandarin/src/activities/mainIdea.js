@@ -7,6 +7,7 @@
 //   offtopic 偏離：與主題相關但不是本課內容
 // 規格 docs/specs/2026-09-30-main-idea-module.md。
 import { h, clear } from '../utils/dom.js';
+import { shuffle as shuffled } from '../utils/shuffle.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { SpeakButton } from '../components/SpeakButton.js';
@@ -31,9 +32,6 @@ export function readyParagraphSummaries(lesson) {
   return filterByStatus(lesson.paragraph_summary || []).filter((p) => p.summary);
 }
 
-function shuffled(arr) {
-  return [...arr].sort(() => Math.random() - 0.5);
-}
 
 /** 以偏概全的誘答直接取用該課段落大意，不另存文字，避免與段落內容不同步。 */
 function partialDistractor(paragraphs) {
