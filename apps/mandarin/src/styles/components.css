@@ -2496,3 +2496,43 @@
 .recite-legend__item { margin-bottom: 2px; }
 .recite-notice { max-width: 520px; margin: 24px auto; text-align: center; }
 .recite-notice__text { font-size: 1.25rem; line-height: 1.8; margin: 0 0 16px; }
+
+/* ── 朗讀：句／段挑選列 ────────────────────────── */
+.recite-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+.recite-picker__item {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 4px 6px;
+  border: 2px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface);
+  color: var(--text-primary);
+  cursor: pointer;
+  font: inherit;
+  line-height: 1.1;
+}
+.recite-picker__item:hover { background: var(--color-surface-muted); }
+.recite-picker__item:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+.recite-picker__no { font-size: 1rem; font-weight: 700; }
+.recite-picker__score { font-size: 0.8125rem; color: var(--text-secondary); }
+.recite-picker__score--empty { color: var(--color-border); }
+/* 念過的成績用顏色＋左下角的小點雙重標示，不只靠顏色 */
+.recite-picker__item--good { border-color: var(--module-teal, #2e8b6e); }
+.recite-picker__item--fair { border-color: var(--module-terracotta, #c77a2b); }
+.recite-picker__item--poor { border-color: var(--module-rose, #b04a6a); }
+.recite-picker__item--current {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--text-on-primary);
+}
+.recite-picker__item--current .recite-picker__score { color: var(--text-on-primary); }

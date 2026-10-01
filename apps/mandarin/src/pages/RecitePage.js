@@ -148,6 +148,43 @@ function renderChallenge(lesson, reading, backHref) {
     }
   }
 
+  // 句／段的挑選列。每一格顯示編號與目前最高分，點了就跳過去。
+  function renderPicker() {
+    const list = h('div', {
+      class: 'recite-picker',
+      role: 'tablist',
+      'aria-label': `選擇要念的${unitWord}`,
+    });
+    units.forEach((unit, i) => {
+      const best = bestRecite(lessonId, i);
+      const current = i === index;
+      const tone = best ? (best.accuracy >= 90 ? 'good' : best.accuracy >= 60 ? 'fair' : 'poor') : 'none';
+      const label = `第 ${i + 1} ${unitWord}`
+        + (best ? `，最高 ${best.accuracy} 分` : '，還沒念過')
+        + `：${unit.text.slice(0, 12)}`;
+      const btn = h('button', {
+        class: `recite-picker__item recite-picker__item--${tone}${current ? ' recite-picker__item--current' : ''}`,
+        type: 'button',
+        role: 'tab',
+        'aria-selected': String(current),
+        'aria-label': label,
+        title: unit.text,
+      }, [
+        h('span', { class: 'recite-picker__no' }, String(i + 1)),
+        best
+          ? h('span', { class: 'recite-picker__score' }, String(best.accuracy))
+          : h('span', { class: 'recite-picker__score recite-picker__score--empty', 'aria-hidden': 'true' }, '·'),
+      ]);
+      btn.addEventListener('click', () => {
+        if (i === index) return;
+        index = i;
+        renderUnit();
+      });
+      list.appendChild(btn);
+    });
+    return list;
+  }
+
   function renderUnit() {
     stopRecognition();
     cancelSpeaking();
@@ -161,6 +198,10 @@ function renderChallenge(lesson, reading, backHref) {
       label: `把這一${unitWord}念出來。`,
       step: `第 ${index + 1}／${units.length} ${unitWord}`,
     }));
+
+    // 隨點隨選：不必照順序念完才能跳下一句。學生可能只想練某一句，
+    // 教師也可能指定某一段；強迫循序只會讓人卡住。
+    wrap.appendChild(renderPicker());
 
     // 課文（可切注音）
     const textBox = h('div', { class: `recite__text${showZhuyin ? '' : ' recite__text--no-zhuyin'}` });
@@ -263,10 +304,15 @@ function renderChallenge(lesson, reading, backHref) {
         const next = h('button', { class: 'btn btn--primary', type: 'button' }, `下一${unitWord}`);
         next.addEventListener('click', () => { index += 1; renderUnit(); });
         actions.appendChild(next);
-      } else {
-        actions.appendChild(h('a', { class: 'btn btn--primary', href: backHref }, '念完了，回到本課'));
       }
+      actions.appendChild(h('a', {
+        class: index < units.length - 1 ? 'btn' : 'btn btn--primary',
+        href: backHref,
+      }, index < units.length - 1 ? '回到本課' : '念完了，回到本課'));
       result.appendChild(actions);
+      // 念完一次要更新挑選列上的分數
+      const picker = wrap.querySelector('.recite-picker');
+      if (picker) picker.replaceWith(renderPicker());
     }
 
     wrap.appendChild(h('div', { class: 'quiz-option-row recite__actions' }, [
