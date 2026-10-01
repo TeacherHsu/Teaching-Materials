@@ -101,6 +101,26 @@ export function uiIconMarkup(key) {
   return UI_ICONS[key] || '';
 }
 
+// 大項插圖（Codex 生成，扁平化貼紙風，統一配色）。
+// 有插圖的大項優先用插圖——比線性圖示更吸引學生，也更分得出彼此；
+// 沒有插圖的退回原本的線性 SVG，不會開天窗。
+const ILLUSTRATED = new Set([
+  'characters', 'vocabulary', 'idiom_builder', 'sentence_practice', 'reading',
+  'visual_search', 'lookalikes', 'polysemy', 'polyphones', 'listening',
+  'rhetoric', 'zhuyin_typing', 'main_idea', 'review',
+]);
+
+/** 插圖的網址；沒有這個大項的插圖時回 null。 */
+export function moduleArtUrl(key, base = import.meta.env?.BASE_URL || '/') {
+  if (!ILLUSTRATED.has(key)) return null;
+  return `${String(base).replace(/\/$/, '')}/assets/icons/${key}.webp`;
+}
+
 export function moduleIconMarkup(key) {
+  const url = moduleArtUrl(key);
+  if (url) {
+    // alt 留空：圖示旁邊一定有大項名稱的文字，重複念一次只是噪音
+    return `<img src="${url}" alt="" width="48" height="48" loading="lazy" decoding="async">`;
+  }
   return MODULE_ICONS[key] || STATUS_ICONS.star;
 }

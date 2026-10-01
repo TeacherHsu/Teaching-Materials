@@ -3012,3 +3012,33 @@
 .card-grid:has(.nav-card--lesson) {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
+
+/* 大項插圖：取代線性圖示。容器維持原本的尺寸與淡底，圖片填滿但留一點內距，
+   讓貼紙不會貼到邊。 */
+.module-card__icon img,
+.entry-card__icon img,
+.nav-card__no img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 2px;
+}
+/* 有插圖時不需要淡底色塊——插圖本身已經有顏色，再加底色會變成兩層色。
+   尺寸也要放大：56px 看不出插圖的細節，等於白畫了。 */
+.module-card__icon:has(img) {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  width: 88px;
+  height: 88px;
+  margin-bottom: calc(var(--space-1) * -1);
+}
+.entry-card__icon:has(img) {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  width: 64px;
+  height: 64px;
+}
+.module-card__icon img,
+.entry-card__icon img { padding: 0; }
