@@ -6,8 +6,15 @@
 // 切句用標點，和學生讀出來的停頓一致。句末的下引號歸到前一句
 // （「他說：『好。』」不該切出一個只有『』的句子）。
 
-/** 句子的切點。 */
-const SENTENCE_END = /[，。？！；：]/;
+/** 短句（clause）的切點：所有的停頓標點。 */
+const CLAUSE_END = /[，。？！；：]/;
+/** 完整一句的切點：只有句末標點。 */
+const FULL_STOP = /[。？！]/;
+/** 支持層一口氣念的上限字數——超過就算沒有逗號也要斷。 */
+const CLAUSE_MAX_CHARS = 20;
+
+/** 句子的切點（預設粒度：短句）。 */
+const SENTENCE_END = CLAUSE_END;
 /** 只有這些符號的「句子」不成句（例如單獨的下引號）。 */
 const PUNCT_ONLY = /^[「」『』（）\s，。、；：？！…─—]*$/;
 
@@ -152,5 +159,104 @@ export function segmentWords(text) {
       text: piece.segment,
     });
   }
+  return out;
+}
+
+/**
+ * 依朗讀粒度把句子重新組合。
+ *
+ * splitSentences() 切得最細（每個停頓標點都斷），那是點讀「讀句」要的粒度，
+ * 但拿來朗讀對中高組太細碎——CF 回報「切得太細碎了」。這裡按教師設定重組：
+ *
+ *   clause     支持層：念到逗號，或滿 20 字就斷
+ *   sentence   標準層：念到句號，上限 45 字
+ *   paragraph  挑戰層：一次一整段，上限 90 字
+ *
+ * **每一種都有字數上限**：超過就在最近的停頓處斷開。沒有上限的話，
+ * 散文課次會出現 1200 字的一「段」，挑戰層的學生也念不完。
+ * 一口氣念得完才有成就感，念不完只會讓人放棄。
+ */
+const UNIT_RULES = {
+  clause: { max: 20, stopAt: null },          // 任何停頓標點都可斷
+  sentence: { max: 45, stopAt: FULL_STOP },   // 盡量斷在句末標點
+  paragraph: { max: 90, stopAt: FULL_STOP },  // 同上，但可以裝更多
+};
+
+/**
+ * 把超過上限的 token 用語境斷詞拆成詞級 token，注音與朗讀用字一起切。
+ * 散文課次的詞邊界符標的是整段，所以一個 token 可能長達數十字，
+ * 不先拆就沒有地方可以斷行。
+ */
+function splitLongTokens(tokens, max) {
+  const out = [];
+  for (const token of tokens) {
+    const [text, zhuyinText, say] = token;
+    if ([...text].length <= max) { out.push(token); continue; }
+    const zs = zhuyinText ? zhuyinText.split(' ') : [];
+    const chars = [...text];
+    const sayChars = say && [...say].length === chars.length ? [...say] : null;
+    for (const word of segmentWords(text)) {
+      const slice = chars.slice(word.start, word.end);
+      if (!slice.length) continue;
+      out.push([
+        slice.join(''),
+        zs.slice(word.start, word.end).join(' '),
+        sayChars ? sayChars.slice(word.start, word.end).join('') : null,
+      ]);
+    }
+  }
+  return out;
+}
+
+export function groupByUnit(sentences, unit) {
+  const rule = UNIT_RULES[unit] || UNIT_RULES.sentence;
+  const out = [];
+  let current = null;
+
+  const flush = () => {
+    if (current && current.tokens.length) out.push(current);
+    current = null;
+  };
+  const start = (paraIndex) => ({ paraIndex, text: '', say: '', tokens: [] });
+  const len = (t) => [...t].length;
+
+  for (const piece of sentences) {
+    // 換段一定斷：段落是作者給的意義邊界
+    if (current && current.paraIndex !== piece.paraIndex) flush();
+    if (!current) current = start(piece.paraIndex);
+
+    // 單一 piece 本身就超過上限：依詞逐一裝填。
+    // 散文課次的一個 token 可能就是整句（詞邊界符標的是整段），
+    // 所以先把過長的 token 用語境斷詞拆成詞，才有地方可以斷。
+    if (len(piece.text) > rule.max) {
+      flush();
+      let buf = start(piece.paraIndex);
+      for (const token of splitLongTokens(piece.tokens, rule.max)) {
+        if (buf.tokens.length && len(buf.text) + len(token[0]) > rule.max) {
+          out.push(buf);
+          buf = start(piece.paraIndex);
+        }
+        buf.tokens.push(token);
+        buf.text += token[0];
+        buf.say += token[2] || token[0];
+      }
+      if (buf.tokens.length) out.push(buf);
+      continue;
+    }
+
+    // 裝得下就併進來，裝不下就先收掉
+    if (current.tokens.length && len(current.text) + len(piece.text) > rule.max) {
+      flush();
+      current = start(piece.paraIndex);
+    }
+    current.text += piece.text;
+    current.say += piece.say;
+    current.tokens.push(...piece.tokens);
+
+    // clause 每個停頓都斷；其餘斷在句末標點
+    const last = piece.text[piece.text.length - 1];
+    if (!rule.stopAt || rule.stopAt.test(last)) flush();
+  }
+  flush();
   return out;
 }

@@ -35,8 +35,10 @@ const { buildListeningActivity } = await import('../src/activities/listening.js'
 const { buildRhetoricActivity } = await import('../src/activities/rhetoric.js');
 const { buildPolyphonesActivity } = await import('../src/activities/polyphones.js');
 const { buildLookalikesActivity } = await import('../src/activities/lookalikes.js');
+const { buildVisualSearchActivity } = await import('../src/activities/visualSearch.js');
 
 const BUILDERS = {
+  visual_search: buildVisualSearchActivity,
   characters: buildCharactersActivity,
   vocabulary: buildVocabularyActivity,
   sentence_practice: buildSentencePracticeActivity,
@@ -221,6 +223,19 @@ function driveMatchingGameIfPresent(container) {
  * 回傳 true 代表這一步有動作，false 代表這個畫面沒有通用驅動器認得的元素
  * （呼叫端會先試 MatchingGame／SentenceOrdering 專用驅動器）。 */
 function driveOneGenericStep(container) {
+  // 純資料卡片要逐張點過才放行（CardWalkthrough）。這一段必須排在
+  // findAdvanceButton 之前：卡片沒點完時「繼續」是停用的，驅動器會誤以為
+  // 只剩「本課先完成」而直接結束，星星覆蓋就會驗不到任何題目。
+  const unseen = [];
+  (function collect(node) {
+    if (node.hasClass && node.hasClass('walkthrough__item') && !node.hasClass('walkthrough__item--seen')) unseen.push(node);
+    (node.children || []).forEach(collect);
+  })(container);
+  if (unseen.length) {
+    unseen[0].dispatch('click');
+    return true;
+  }
+
   const advanceBtn = findAdvanceButton(container);
   if (advanceBtn) {
     advanceBtn.dispatch('click');
@@ -246,6 +261,18 @@ function driveOneGenericStep(container) {
   if (quizOpt) {
     quizOpt.dispatch('click');
     return true;
+  }
+  // 字感訓練：字陣裡要點的是「目標字」，通用驅動器不知道哪一格是答案，
+  // 所以從任務說明「找出所有的「X」」取出目標字再點。
+  const cells = enabledButtons(container, (n) => n.hasClass('vsearch__cell'));
+  if (cells.length) {
+    const banner = container.find((n) => n.hasClass && n.hasClass('task-banner__label'));
+    const target = (banner?.textContent || '').match(/找出所有的「(.+?)」/)?.[1];
+    const hit = target ? cells.find((c) => c.textContent.trim() === target) : null;
+    if (hit) {
+      hit.dispatch('click');
+      return true;
+    }
   }
   return false;
 }

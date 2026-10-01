@@ -2677,3 +2677,103 @@
 
 /* 進度環與星星是整個站少數的「獎勵」訊號，給它們一點份量 */
 .progress-ring { filter: drop-shadow(0 2px 4px rgba(43, 40, 35, 0.12)); }
+
+/* ── 字感訓練（視覺搜尋）────────────────────────── */
+.vsearch__status {
+  margin: var(--space-2) 0 var(--space-3);
+  font-size: var(--font-size-button);
+  color: var(--text-secondary);
+}
+.vsearch__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--vsearch-cols, 4), minmax(0, 1fr));
+  gap: var(--space-2);
+  max-width: 34rem;
+}
+.vsearch__cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  min-height: calc(var(--tap-target-min) + var(--space-2));
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--text-primary);
+  /* 字陣要大才看得出字形差異——這一項練的就是辨識 */
+  font-size: clamp(28px, 5vw, 40px);
+  font-family: var(--font-family-base);
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.1s ease, border-color 0.12s ease, background 0.12s ease;
+}
+.vsearch__cell:hover { background: var(--color-surface-muted); }
+.vsearch__cell:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+.vsearch__cell:active { transform: scale(0.96); }
+/* 找到：顏色＋勾號雙重標示，不只靠顏色 */
+.vsearch__cell--found {
+  background: var(--module-color-tint, var(--module-olive-tint));
+  border-color: var(--module-color, var(--module-olive));
+  color: var(--module-color-dark, var(--module-olive-dark));
+  cursor: default;
+}
+.vsearch__cell--found::after {
+  content: '✓';
+  position: absolute;
+  font-size: var(--font-size-meta);
+  transform: translate(1.1em, -1.1em);
+  color: var(--module-color, var(--module-olive));
+}
+.vsearch__cell { position: relative; }
+/* 點錯：短暫晃動，不留紅色（不要讓錯誤留在畫面上） */
+.vsearch__cell--miss { animation: vsearch-miss 500ms ease; }
+@keyframes vsearch-miss {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+.vsearch__actions { margin-top: var(--space-4); }
+@media (prefers-reduced-motion: reduce) {
+  .vsearch__cell { transition: none; }
+  .vsearch__cell--miss { animation: none; border-color: var(--color-danger); }
+}
+
+/* ── 卡片逐張看過（CardWalkthrough）────────────────
+   純資料卡片（生字卡、語詞卡）要學生逐張點過才放行。這一步的目的是
+   「接觸」不是評量，所以沒有對錯、不計分——只是把「我看過了」變成一個動作。 */
+.walkthrough__status {
+  margin: 0 0 var(--space-3);
+  font-size: var(--font-size-meta);
+  color: var(--text-secondary);
+}
+.walkthrough__item {
+  position: relative;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: transform 0.12s ease, opacity 0.2s ease;
+}
+.walkthrough__item:hover { transform: translateY(-2px); }
+.walkthrough__item:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+/* 看過的：打勾＋降低明度，剩幾張一目了然（不只靠顏色） */
+.walkthrough__item--seen { opacity: 0.6; cursor: default; }
+.walkthrough__item--seen:hover { transform: none; }
+.walkthrough__item--seen::after {
+  content: '✓';
+  position: absolute;
+  top: var(--space-2);
+  inset-inline-end: var(--space-2);
+  width: var(--space-5);
+  height: var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  background: var(--module-color, var(--color-primary));
+  color: var(--text-on-primary);
+  font-size: var(--font-size-meta);
+  font-weight: 700;
+}
+@media (prefers-reduced-motion: reduce) {
+  .walkthrough__item { transition: none; }
+  .walkthrough__item:hover { transform: none; }
+}

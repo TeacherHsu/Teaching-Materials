@@ -146,6 +146,7 @@ export function LessonDashboard(lesson) {
     } else {
       card.appendChild(h('button', { class: 'btn module-card__cta', type: 'button', disabled: 'disabled' }, status.text));
     }
+    card.setAttribute('data-module-key', entry.key);
     (CORE_MODULES.has(entry.key) ? coreGrid : challengeGrid).appendChild(card);
     if (entry.key === 'review') reviewCard = card;
   }
@@ -199,12 +200,19 @@ export function LessonDashboard(lesson) {
     lesson.lesson_id,
     dueCount(lesson.lesson_id) + redoSentences(lesson.lesson_id).length,
   );
-  if (mistakes) {
-    if (reviewCard) challengeGrid.insertBefore(mistakes, reviewCard);
-    else challengeGrid.appendChild(mistakes);
+  // 加練挑戰的順序（CF 2026-10-02 指定）：
+  //   字感訓練 → 其餘大項 → 錯題複習 → 朗讀挑戰
+  // 字感訓練排第一是暖身性質的辨識練習，先做再進其他站。
+  // 舊字新詞移出加練區，改排在單課小考之後。
+  const visualCard = challengeGrid.children.find
+    ? challengeGrid.children.find((c) => c.getAttribute?.('data-module-key') === 'visual_search')
+    : [...challengeGrid.children].find((c) => c.getAttribute?.('data-module-key') === 'visual_search');
+  if (visualCard && challengeGrid.children[0] !== visualCard) {
+    challengeGrid.insertBefore(visualCard, challengeGrid.children[0]);
   }
-  if (reviewCard) challengeGrid.insertBefore(reciteSlot, reviewCard);
-  else challengeGrid.appendChild(reciteSlot);
+  if (reviewCard && reviewCard.parentNode === challengeGrid) challengeGrid.removeChild(reviewCard);
+  if (mistakes) challengeGrid.appendChild(mistakes);
+  challengeGrid.appendChild(reciteSlot);
 
   if (challengeGrid.childElementCount) {
     const details = h('details', { class: 'lesson-challenge-group' });
@@ -217,6 +225,29 @@ export function LessonDashboard(lesson) {
   }
 
   root.appendChild(quizSlot);
+
+  // 舊字新詞排在單課小考之後，並改成和小考一樣的寬版入口卡（CF 指定）：
+  // 兩者都是「跨出本課」的收尾活動，格式一致才看得出是同一層級。
+  if (reviewCard) {
+    const reviewEntryDef = MODULE_REGISTRY.find((m) => m.key === 'review');
+    const reviewStatus = getModuleStatus(lesson, reviewEntryDef);
+    const playable = reviewStatus.code === 'available' || reviewStatus.code === 'done';
+    root.appendChild(h(
+      playable ? 'a' : 'div',
+      {
+        class: `entry-card entry-card--wide entry-card--dashed entry-card--review${playable ? '' : ' entry-card--locked'}`,
+        ...(playable ? { href: `#/lesson/${lesson.lesson_id}/module/review` } : {}),
+      },
+      [
+        h('span', { class: 'entry-card__icon', 'aria-hidden': 'true', html: moduleIconMarkup(reviewEntryDef.icon) }),
+        h('span', { class: 'entry-card__body' }, [
+          h('span', { class: 'entry-card__title' }, reviewEntryDef.label),
+          h('span', { class: 'entry-card__desc' }, playable ? reviewEntryDef.description : reviewStatus.text),
+        ]),
+        playable ? h('span', { class: 'entry-card__arrow', 'aria-hidden': 'true', html: STATUS_ICONS.arrow }) : null,
+      ].filter(Boolean),
+    ));
+  }
 
   const extensionLinks = buildExtensionLinks(lesson, 'lesson', { title: '本課延伸資源' });
   if (extensionLinks) root.appendChild(extensionLinks);

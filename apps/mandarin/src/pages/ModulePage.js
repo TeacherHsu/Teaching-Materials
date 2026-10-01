@@ -12,6 +12,7 @@ import { buildPolysemyActivity } from '../activities/polysemy.js';
 import { buildListeningActivity } from '../activities/listening.js';
 import { buildRhetoricActivity } from '../activities/rhetoric.js';
 import { buildReviewActivity } from '../activities/review.js';
+import { buildVisualSearchActivity } from '../activities/visualSearch.js';
 import { buildPolyphonesActivity } from '../activities/polyphones.js';
 import { buildLookalikesActivity } from '../activities/lookalikes.js';
 import { buildExtensionLinks } from '../components/ExtensionLinks.js';
@@ -43,6 +44,7 @@ const ACTIVITY_BUILDERS = {
   polyphones: buildPolyphonesActivity,
   lookalikes: buildLookalikesActivity,
   review: buildReviewActivity,
+  visual_search: buildVisualSearchActivity,
 };
 
 /** 可開始的大項清單，用來算「本課星星 N／最高 M」的分母（M = 這些大項數 × 3）。 */

@@ -6,6 +6,7 @@ import { canStartPolyphones } from './polyphones.js';
 import { buildPronunciationItems } from './pronunciationQuestions.js';
 import { canStartMainIdea } from './mainIdea.js';
 import { canStartZhuyinTyping } from './zhuyinTyping.js';
+import { canStartVisualSearch } from './visualSearch.js';
 
 const ROUND_MIN = 3;
 
@@ -250,6 +251,17 @@ export const MODULE_REGISTRY = [
       return Object.keys(byLesson)
         .map(Number)
         .some((n) => n < lesson.lesson_no);
+    },
+  },
+  {
+    key: 'visual_search',
+    label: '字感訓練',
+    icon: 'lookalikes',
+    color: 'olive',
+    description: '在字陣裡找出目標字',
+    implemented: true,
+    ready(lesson) {
+      return canStartVisualSearch(lesson);
     },
   },
 ];

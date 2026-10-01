@@ -21,7 +21,7 @@ import { volumeLabel } from '../utils/volumeLabel.js';
 import { getScaffoldLevel } from '../utils/deviceSettings.js';
 import { speak, cancelSpeaking, speechSupported } from '../utils/speech.js';
 import { cryptoAvailable, getReading, isUnlocked, unlockWithPassword } from '../utils/classroomKey.js';
-import { splitSentences, groupByParagraph } from '../utils/readingUnits.js';
+import { splitSentences, groupByUnit } from '../utils/readingUnits.js';
 import {
   ensureCharReadings, scorableChars, scoreReading, fluency, compareFluency, accuracyStars,
 } from '../utils/readingScore.js';
@@ -131,7 +131,7 @@ function renderChallenge(lesson, reading, backHref) {
   const lessonId = lesson.lesson_id;
   const scaffold = getScaffoldLevel();
   const sentences = splitSentences(reading.paras);
-  const units = scaffold.reciteUnit === 'paragraph' ? groupByParagraph(sentences) : sentences;
+  const units = groupByUnit(sentences, scaffold.reciteUnit);
 
   const wrap = h('div', {});
   let index = 0;
@@ -140,6 +140,8 @@ function renderChallenge(lesson, reading, backHref) {
   let startedAt = 0;
 
   const unitWord = scaffold.reciteUnit === 'paragraph' ? '段' : '句';
+  // 支持層切到逗號，說「句」容易讓學生以為要念到句號；用「小段」比較不會誤會。
+  const unitLabel = scaffold.reciteUnit === 'clause' ? '小段' : unitWord;
 
   function stopRecognition() {
     if (recognition) {
@@ -153,13 +155,13 @@ function renderChallenge(lesson, reading, backHref) {
     const list = h('div', {
       class: 'recite-picker',
       role: 'tablist',
-      'aria-label': `選擇要念的${unitWord}`,
+      'aria-label': `選擇要念的${unitLabel}`,
     });
     units.forEach((unit, i) => {
       const best = bestRecite(lessonId, i);
       const current = i === index;
       const tone = best ? (best.accuracy >= 90 ? 'good' : best.accuracy >= 60 ? 'fair' : 'poor') : 'none';
-      const label = `第 ${i + 1} ${unitWord}`
+      const label = `第 ${i + 1} ${unitLabel}`
         + (best ? `，最高 ${best.accuracy} 分` : '，還沒念過')
         + `：${unit.text.slice(0, 12)}`;
       const btn = h('button', {
@@ -195,8 +197,8 @@ function renderChallenge(lesson, reading, backHref) {
     const best = bestRecite(lessonId, index);
 
     wrap.appendChild(TaskBanner({
-      label: `把這一${unitWord}念出來。`,
-      step: `第 ${index + 1}／${units.length} ${unitWord}`,
+      label: `把這一${unitLabel}念出來。`,
+      step: `第 ${index + 1}／${units.length} ${unitLabel}`,
     }));
 
     // 隨點隨選：不必照順序念完才能跳下一句。學生可能只想練某一句，
@@ -298,11 +300,11 @@ function renderChallenge(lesson, reading, backHref) {
 
       status.textContent = '';
       clear(result);
-      result.appendChild(renderResult(score, speed, previous, unitWord));
+      result.appendChild(renderResult(score, speed, previous, unitLabel));
 
       const actions = h('div', { class: 'quiz-option-row' }, []);
       if (index < units.length - 1) {
-        const next = h('button', { class: 'btn btn--primary', type: 'button' }, `下一${unitWord}`);
+        const next = h('button', { class: 'btn btn--primary', type: 'button' }, `下一${unitLabel}`);
         next.addEventListener('click', () => { index += 1; renderUnit(); });
         actions.appendChild(next);
       }
@@ -325,7 +327,7 @@ function renderChallenge(lesson, reading, backHref) {
 
     if (best) {
       wrap.appendChild(h('p', { class: 'meta' },
-        `這一${unitWord}之前最高 ${best.accuracy} 分`
+        `這一${unitLabel}之前最高 ${best.accuracy} 分`
         + (best.charsPerMinute ? `，每分鐘 ${best.charsPerMinute} 個字。` : '。')));
     }
   }
@@ -337,7 +339,7 @@ function renderChallenge(lesson, reading, backHref) {
   return wrap;
 }
 
-function renderResult(score, speed, previous, unitWord) {
+function renderResult(score, speed, previous, unitLabel) {
   const counts = score.marks.reduce((acc, mark) => {
     acc[mark] = (acc[mark] || 0) + 1;
     return acc;

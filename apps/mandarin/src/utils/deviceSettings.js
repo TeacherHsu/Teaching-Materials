@@ -15,8 +15,10 @@ const KEY = 'mandarin:device-settings:v1';
  *     （近似零錯誤學習）。標準／挑戰層設 2＝先給提示，再錯才揭曉。
  * - autoRead：題目出現時自動念一次。支持層預設開——閱讀困難的學生
  *     要先聽到題目才讀得下去，不該每題都得自己按喇叭。
- * - reciteUnit：朗讀挑戰一次念多少。'sentence' 一句、'paragraph' 一整段。
- *     挑戰層才念整段——連續語流比單句難得多。
+ * - reciteUnit：朗讀挑戰一次念多少（CF 2026-10-02 指定的三段）：
+ *     'clause'    支持層：念到逗號，或滿 20 字就斷——一口氣念得完才有成就感。
+ *     'sentence'  標準層：念到句號，也就是完整的一句話。
+ *     'paragraph' 挑戰層：一次一整段，練連續語流。
  * - prefill：造句時預先幫他填好句型的前幾個必用字，游標停在最後。
  *     支持層填 1 個。我們的造句是一個輸入框的自由書寫，在句子**中間**
  *     插字對手部控制不佳或不熟輸入法的學生很痛苦；預填開頭等於給一個
@@ -32,7 +34,7 @@ export const SCAFFOLD_LEVELS = {
     roundSize: 3,
     wrongLimit: 1,
     autoRead: true,
-    reciteUnit: 'sentence',
+    reciteUnit: 'clause',
     reciteModel: true,
     prefill: 1,
     note: '選項少、題數少；答錯一次就直接告訴他答案；題目會自動念出來；朗讀一次一句、可先聽範讀。',

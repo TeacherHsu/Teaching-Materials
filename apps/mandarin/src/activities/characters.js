@@ -6,6 +6,7 @@ import { h, clear } from '../utils/dom.js';
 import { shuffle as shuffled } from '../utils/shuffle.js';
 import { chunkRounds } from '../utils/chunk.js';
 import { CharacterCard } from '../components/CharacterCard.js';
+import { CardWalkthrough } from '../components/CardWalkthrough.js';
 import { filterByStatus } from '../utils/preview.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { DragToSlot } from '../components/DragToSlot.js';
@@ -151,9 +152,25 @@ export function buildCharactersActivity(lesson, onBack) {
           .filter((e) => e.module === 'characters' && e.type === 'reading' && e.char)
           .map((e) => [e.char, e]),
       );
-      const grid = h('div', { class: 'card-grid' });
-      for (const c of cardRounds[cardRoundIndex]) grid.appendChild(CharacterCard(c, originByChar.get(c.char) || null, lesson.lesson_id));
-      container.appendChild(grid);
+      // 逐張點過才能繼續（CF 2026-10-02 指定）：原本整組攤開、按一下就過，
+      // 學生可以完全不看。這一步的目的是「接觸」，不是評量，所以不計分。
+      const walkthrough = CardWalkthrough({
+        cards: cardRounds[cardRoundIndex].map((c) => ({
+          el: CharacterCard(c, originByChar.get(c.char) || null, lesson.lesson_id),
+          key: c.char,
+        })),
+        label: '點一下卡片，看過的會打勾',
+        onAllSeen: () => {
+          for (const btn of continueButtons) {
+            btn.disabled = false;
+            btn.removeAttribute('aria-disabled');
+            btn.textContent = btn.dataset.readyLabel || btn.textContent;
+          }
+        },
+      });
+      const continueButtons = [];
+      container.appendChild(walkthrough.status);
+      container.appendChild(walkthrough.grid);
       const proceed = () => {
         if (moreCards) {
           cardRoundIndex += 1;
@@ -166,13 +183,26 @@ export function buildCharactersActivity(lesson, onBack) {
         }
         renderStep();
       };
+      // 卡片還沒全部看過之前，「繼續」是停用的，按鈕上直接寫明原因。
+      const makeContinue = (readyLabel, cls) => {
+        const btn = h('button', {
+          class: cls,
+          type: 'button',
+          disabled: 'disabled',
+          'aria-disabled': 'true',
+          onclick: proceed,
+        }, '先把卡片都看過');
+        btn.dataset.readyLabel = readyLabel;
+        continueButtons.push(btn);
+        return btn;
+      };
       if (moreCards) {
         const actions = h('div', { class: 'activity-round-actions' });
-        actions.appendChild(h('button', { class: 'btn btn--secondary', type: 'button', onclick: onBack }, '本課先完成'));
-        actions.appendChild(h('button', { class: 'btn', type: 'button', onclick: proceed }, '加練下一組'));
+        actions.appendChild(h('button', { class: 'btn', type: 'button', onclick: onBack }, '本課先完成'));
+        actions.appendChild(makeContinue('加練下一組', 'btn btn--primary'));
         container.appendChild(actions);
       } else {
-        container.appendChild(h('button', { class: 'btn', type: 'button', style: 'margin-top:16px', onclick: proceed }, isLastStep ? '完成' : '繼續：看字選音'));
+        container.appendChild(makeContinue(isLastStep ? '完成' : '繼續：看字選音', 'btn btn--primary'));
       }
       container.appendChild(PronunciationNotice());
     } else if (step === 'choice') {

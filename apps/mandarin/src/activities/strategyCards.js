@@ -8,6 +8,7 @@
 const STRATEGY_CARDS = {
   characters: '先看字的左邊或上面，找出部首；再拼拼看注音。',
   vocabulary: '把語詞放回句子裡念一次，再想想它在說什麼。',
+  visual_search: '先記住目標字的樣子，再一格一格比對；長得像的要看部首和筆畫哪裡不一樣。',
   idiom_builder: '先想這個成語在講什麼情況，再找出缺的那個字。',
   sentence_practice: '先找出句子的骨架：誰、做什麼，再把其他部分排進去。',
   reading: '一段一段讀，先問每段在講誰、做什麼，再看前後怎麼接起來。',

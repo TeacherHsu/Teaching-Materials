@@ -123,3 +123,35 @@ for (const text of ['心裡颳起冷冷的風，', '回外公家度假時，阿�
   assert.equal(ranges.map((r) => r.text).join(''), text.replace(/\s/g, ''), `斷詞不可掉字：${text}`);
 }
 console.log('✅ 語境斷詞：依語意切詞、範圍不重疊、不掉字');
+
+// ── 朗讀粒度（CF 2026-10-02）────────────────────────
+// 低組念到逗號或 20 字、中組念到句號、高組一整段；每種都有字數上限，
+// 沒有上限的話散文會出現 1200 字的一「段」，挑戰層的學生也念不完。
+const { groupByUnit } = await import('../src/utils/readingUnits.js');
+const CAPS = { clause: 20, sentence: 45, paragraph: 90 };
+let unitTotal = 0;
+for (const lessonId of envelope.lessons) {
+  const list = splitSentences(K.getReading(lessonId).paras);
+  const original = list.map((s) => s.text).join('');
+  for (const [unit, cap] of Object.entries(CAPS)) {
+    const grouped = groupByUnit(list, unit);
+    unitTotal += grouped.length;
+    assert.equal(grouped.map((g) => g.text).join(''), original,
+      `${lessonId} ${unit}：重組後不可掉字`);
+    for (const g of grouped) {
+      assert.ok([...g.text].length <= cap,
+        `${lessonId} ${unit}：有一段 ${[...g.text].length} 字，超過上限 ${cap}：${g.text.slice(0, 24)}…`);
+      for (const [text, zhuyin] of g.tokens) {
+        assert.equal(zhuyin.split(' ').length, [...text].length,
+          `${lessonId} ${unit}：注音對位要跟著切`);
+      }
+    }
+  }
+}
+// 粒度要真的不同：段數 clause > sentence >= paragraph
+const sample = splitSentences(K.getReading(envelope.lessons[0]).paras);
+assert.ok(groupByUnit(sample, 'clause').length >= groupByUnit(sample, 'sentence').length,
+  'clause 應該切得比 sentence 細');
+assert.ok(groupByUnit(sample, 'sentence').length >= groupByUnit(sample, 'paragraph').length,
+  'sentence 應該切得比 paragraph 細');
+console.log(`✅ 朗讀粒度：3 種共 ${unitTotal} 段，零掉字、都不超過上限、注音對位正確`);
