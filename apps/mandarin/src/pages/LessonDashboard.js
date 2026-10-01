@@ -9,6 +9,7 @@ import { volumeLabel } from '../utils/volumeLabel.js';
 import { hasReading, isUnlocked } from '../utils/classroomKey.js';
 import { dueCount } from '../utils/mistakes.js';
 import { mistakeEntry } from './MistakePage.js';
+import { quizEntry } from './QuizPage.js';
 
 const STATUS_CLASS = {
   done: 'module-card__status--done',
@@ -85,6 +86,7 @@ export function LessonDashboard(lesson) {
 
   const coreGrid = h('div', { class: 'module-grid' });
   const challengeGrid = h('div', { class: 'module-grid' });
+  let reviewCard = null;   // 「舊字新詞」卡片，錯題複習要插在它前面
   for (const entry of MODULE_REGISTRY) {
     const status = getModuleStatus(lesson, entry);
     const label = (lesson.modules[entry.key] && lesson.modules[entry.key].label) || entry.label;
@@ -143,15 +145,18 @@ export function LessonDashboard(lesson) {
       card.appendChild(h('button', { class: 'btn module-card__cta', type: 'button', disabled: 'disabled' }, status.text));
     }
     (CORE_MODULES.has(entry.key) ? coreGrid : challengeGrid).appendChild(card);
+    if (entry.key === 'review') reviewCard = card;
   }
   // 課文點讀放在所有大項之前：對閱讀困難的學生，先把課文聽過一遍再做練習
   // 才有意義。要不要顯示取決於「這一課有沒有課文」，而那要讀密文檔的 manifest
   // （非同步），所以先插一個空殼，問到答案再填——不讓整頁等網路。
-  // 錯題複習排在課文點讀之前：有到期錯題時，那是今天最該做的事。
-  const mistakes = mistakeEntry(lesson.lesson_id, dueCount(lesson.lesson_id));
-  if (mistakes) root.appendChild(mistakes);
+  const quizSlot = h('div', {});
 
   root.appendChild(readerEntry(lesson));
+
+  // 小考放在所有大項之後：先練完各站，再混在一起考。
+  const quiz = quizEntry(lesson);
+  if (quiz) quizSlot.appendChild(quiz);
 
   if (coreGrid.childElementCount) {
     root.appendChild(h('section', { class: 'lesson-module-section', 'aria-labelledby': 'core-modules-heading' }, [
@@ -161,6 +166,15 @@ export function LessonDashboard(lesson) {
       coreGrid,
     ]));
   }
+  // 錯題複習放在「加練挑戰」裡、舊字新詞之前（CF 2026-10-01 指定）：
+  // 兩者都是「回頭複習前面學過的東西」，放在一起學生比較好理解；
+  // 錯題是自己錯過的，比舊字新詞更該先做，所以排在它前面。
+  const mistakes = mistakeEntry(lesson.lesson_id, dueCount(lesson.lesson_id));
+  if (mistakes) {
+    if (reviewCard) challengeGrid.insertBefore(mistakes, reviewCard);
+    else challengeGrid.appendChild(mistakes);
+  }
+
   if (challengeGrid.childElementCount) {
     const details = h('details', { class: 'lesson-challenge-group' });
     details.appendChild(h('summary', { class: 'lesson-challenge-group__summary' }, [
@@ -170,6 +184,8 @@ export function LessonDashboard(lesson) {
     details.appendChild(challengeGrid);
     root.appendChild(details);
   }
+
+  root.appendChild(quizSlot);
 
   const extensionLinks = buildExtensionLinks(lesson, 'lesson', { title: '本課延伸資源' });
   if (extensionLinks) root.appendChild(extensionLinks);

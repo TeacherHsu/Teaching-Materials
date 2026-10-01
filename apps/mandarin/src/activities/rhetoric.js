@@ -99,6 +99,13 @@ function buildChoiceItem(entry, all) {
  * @param {object} lesson
  * @param {() => void} onBack
  */
+// 單課小考用：只出題、不畫面。和下面的 build*Activity 共用同一份出題邏輯，
+// 題目才不會兩邊長得不一樣。
+export function buildRhetoricQuizItems(lesson) {
+  const entries = filterByStatus(lesson.rhetoric || []).filter((r) => r.example && r.figure);
+  return entries.map((entry) => buildChoiceItem(entry, entries));
+}
+
 export function buildRhetoricActivity(lesson, onBack) {
   const entries = filterByStatus(lesson.rhetoric || []).filter((r) => r.example && r.figure);
   const rounds = entries.map((entry) => [buildChoiceItem(entry, entries)]);

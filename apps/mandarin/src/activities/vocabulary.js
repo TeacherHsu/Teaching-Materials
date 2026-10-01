@@ -43,6 +43,13 @@ function buildChoiceItem(word, all) {
  * @param {object} lesson
  * @param {() => void} onBack
  */
+// 單課小考用：只出題、不畫面。和下面的 build*Activity 共用同一份出題邏輯，
+// 題目才不會兩邊長得不一樣。
+export function buildVocabularyQuizItems(lesson) {
+  const words = (lesson.words || []).filter((w) => w.status === 'ready' && w.word && w.meaning);
+  return words.map((w) => buildChoiceItem(w, words));
+}
+
 export function buildVocabularyActivity(lesson, onBack) {
   const words = (lesson.words || []).filter((w) => w.status === 'ready' && w.word && w.meaning);
   const basicFirst = [...words].sort((a, b) => (wordLevel(a) === wordLevel(b) ? 0 : wordLevel(a) === 'basic' ? -1 : 1));

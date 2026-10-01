@@ -13,6 +13,22 @@ import { chunkRounds } from '../utils/chunk.js';
  * @param {object} lesson
  * @param {() => void} onBack
  */
+// 單課小考用：只出題、不畫面。和下面的 build*Activity 共用同一份出題邏輯，
+// 題目才不會兩邊長得不一樣。
+// 注意：不帶 extra（音檔播放列）——小考是混題測驗，不重播音檔。
+export function buildListeningQuizItems(lesson) {
+  return filterByStatus(lesson.listening || [])
+    .filter((l) => l.stem && l.question)
+    .map((entry) => ({
+      id: entry.id,
+      stem: entry.question,
+      options: entry.options,
+      answer: entry.answer,
+      explanation: `對照內容：${entry.stem}`,
+      hints: ['再想一想，注意誰做了什麼事。'],
+    }));
+}
+
 export function buildListeningActivity(lesson, onBack) {
   const items = filterByStatus(lesson.listening || []).filter((l) => l.stem && l.question);
   const rounds = chunkRounds(items, { min: 3, max: 5 });

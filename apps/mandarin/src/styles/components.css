@@ -2239,13 +2239,15 @@
 .reader-entry__arrow { flex: none; }
 
 /* ── 錯題複習入口與空狀態 ─────────────────────────── */
+/* 入口放在「加練挑戰」的卡片格線裡（舊字新詞之前），所以版型要和
+   .module-card 一致：直式、圖示在上、標題、說明。差別只有強調色外框
+   和右上角的待複習題數。 */
 .mistake-entry {
+  position: relative;
   display: flex;
-  align-items: center;
-  gap: 16px;
-  margin: 0 0 12px;
-  padding: 16px 20px;
-  min-height: 44px;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
   border: 2px solid var(--color-accent);
   border-radius: 16px;
   background: var(--color-surface);
@@ -2258,13 +2260,15 @@
   outline-offset: 2px;
 }
 .mistake-entry__icon { font-size: 32px; line-height: 1; }
-.mistake-entry__text { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.mistake-entry__text { display: flex; flex-direction: column; gap: 4px; }
 .mistake-entry__title { font-size: 1.375rem; font-weight: 700; }
 .mistake-entry__desc { font-size: 1.125rem; color: var(--text-secondary); }
 .mistake-entry__count {
-  flex: none;
-  min-width: 40px;
-  padding: 4px 12px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  min-width: 36px;
+  padding: 4px 10px;
   border-radius: 999px;
   background: var(--color-accent);
   color: var(--text-on-primary);
@@ -2281,3 +2285,40 @@
   line-height: 1.8;
   margin: 0 0 16px;
 }
+
+/* ── 單課小考 ──────────────────────────────────── */
+.quiz-entry {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 20px 0 0;
+  padding: 16px 20px;
+  min-height: 44px;
+  border: 2px dashed var(--color-border);
+  border-radius: 16px;
+  background: var(--color-surface);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+.quiz-entry:hover { background: var(--color-surface-muted); }
+.quiz-entry:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+.quiz-entry__icon { font-size: 32px; line-height: 1; }
+.quiz-entry__text { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.quiz-entry__title { font-size: 1.375rem; font-weight: 700; }
+.quiz-entry__desc { font-size: 1.125rem; color: var(--text-secondary); }
+
+.quiz-intro, .quiz-result { max-width: 560px; margin: 24px auto; text-align: center; }
+.quiz-intro__icon, .quiz-result__icon { font-size: 56px; margin: 0; }
+.quiz-intro__title { margin: 8px 0; }
+.quiz-intro__note, .quiz-result__note {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0 0 20px;
+}
+.quiz-result__score {
+  margin: 8px 0;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+.quiz-result__table { margin: 0 auto 20px; width: 100%; }

@@ -20,9 +20,17 @@ const DEFAULT_HINT = '再看看題目，仔細比對一下再選。';
  *   第 1 次答錯 → 該選項標「再試一次」＋顯示 scaffold 提示，選項停用但不揭曉正解，可再選其他選項。
  *   第 2 次答錯 → 才揭曉正解，鎖題進入下一題。
  * 鍵盤可操作（原生 button，Tab/Enter 即可）。
- * @param {{items: Array, onComplete?: (correct:number, total:number)=>void, onBack?: () => void, backLabel?: string}} opts
+ * @param {{
+ *   items: Array,
+ *   onComplete?: (correct:number, total:number)=>void,
+ *   onItemResolved?: (info:{item:object, firstTry:boolean, revealed:boolean})=>void,
+ *     每一題判定完（答對、或被揭曉答案）時呼叫一次，同一題只會呼叫一次。
+ *     單課小考用它統計「每一站第一次答對幾題」——比在外面監看 DOM 可靠。
+ *   onBack?: () => void,
+ *   backLabel?: string,
+ * }} opts
  */
-export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程首頁', onContinue, continueLabel = '加練下一組' }) {
+export function ChoiceQuiz({ items, onComplete, onItemResolved, onBack, backLabel = '回課程首頁', onContinue, continueLabel = '加練下一組' }) {
   const root = h('div', { class: 'quiz-panel' });
   let index = 0;
   let correctCount = 0;
@@ -101,6 +109,7 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
           // 在複習模式下則是把這一題往上推一格（連對夠多次就學會、移除）。
           if (item._mistakeId) gradeMistake(item._mistakeId, firstTry);
           else if (!firstTry) noteMistake(item);
+          if (onItemResolved) onItemResolved({ item, firstTry, revealed: false });
           celebrateCorrect(btn, 'var(--module-color)', { firstTry: attempts === 1 });
           optionButtons.forEach((c) => {
             if (c !== btn) c.disabled = true;
@@ -151,6 +160,7 @@ export function ChoiceQuiz({ items, onComplete, onBack, backLabel = '回課程�
           recordOutcome({ firstTry: false, revealed: true });
           if (item._mistakeId) gradeMistake(item._mistakeId, false);
           else noteMistake(item);
+          if (onItemResolved) onItemResolved({ item, firstTry: false, revealed: true });
           btn.disabled = true;
           optionButtons.forEach((c) => {
             c.disabled = true;

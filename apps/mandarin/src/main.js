@@ -7,6 +7,7 @@ import { ModulePage } from './pages/ModulePage.js';
 import { PendingReviewPage } from './pages/PendingReviewPage.js';
 import { ReaderPage } from './pages/ReaderPage.js';
 import { MistakePage } from './pages/MistakePage.js';
+import { QuizPage } from './pages/QuizPage.js';
 import { FixturesPage } from './pages/FixturesPage.js';
 import { h, clear } from './utils/dom.js';
 import { isPreview } from './utils/preview.js';
@@ -131,6 +132,15 @@ route(/^\/mistakes\/(?<lessonId>[^/]+)$/, async ({ lessonId }) => {
     return;
   }
   mount(MistakePage(lesson));
+});
+
+route(/^\/lesson\/(?<lessonId>[^/]+)\/quiz$/, async ({ lessonId }) => {
+  const lesson = await loadLesson(lessonId);
+  if (!lesson) {
+    mount(h('div', { class: 'container' }, h('div', { class: 'missing-content' }, '找不到這一課的資料。')));
+    return;
+  }
+  mount(QuizPage(lesson));
 });
 
 route(/^\/lesson\/(?<lessonId>[^/]+)\/reader$/, async ({ lessonId }) => {

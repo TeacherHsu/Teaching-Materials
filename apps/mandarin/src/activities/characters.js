@@ -102,6 +102,16 @@ function buildRadicalDragItems(round, allCharacters) {
  * @param {object} lesson
  * @param {() => void} onBack
  */
+// 單課小考用：只出題、不畫面。和下面的 build*Activity 共用同一份出題邏輯，
+// 題目才不會兩邊長得不一樣。
+export function buildCharacterQuizItems(lesson) {
+  const characters = withExamples(
+    (lesson.characters || []).filter((c) => c.status === 'ready' || !c.status),
+    lesson,
+  );
+  return buildPronunciationItems(characters, characters);
+}
+
 export function buildCharactersActivity(lesson, onBack) {
   const characters = withExamples(
     (lesson.characters || []).filter((c) => c.status === 'ready' || !c.status),

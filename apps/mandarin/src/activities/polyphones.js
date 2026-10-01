@@ -63,6 +63,12 @@ function buildChoiceItem(item) {
  * @param {object} lesson
  * @param {() => void} onBack
  */
+// 單課小考用：只出題、不畫面。和下面的 build*Activity 共用同一份出題邏輯，
+// 題目才不會兩邊長得不一樣。
+export function buildPolyphoneQuizItems(lesson) {
+  return usablePolyphoneEntries(lesson).map(buildChoiceItem);
+}
+
 export function buildPolyphonesActivity(lesson, onBack) {
   const entries = usablePolyphoneEntries(lesson);
   const rounds = chunkRounds(entries, { min: 3, max: 5 }).map((round) => round.map(buildChoiceItem));

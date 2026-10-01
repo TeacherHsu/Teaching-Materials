@@ -11,6 +11,16 @@ import { chunkRounds } from '../utils/chunk.js';
  * @param {object} lesson
  * @param {() => void} onBack
  */
+// 單課小考用：只出題、不畫面。和下面的 build*Activity 共用同一份出題邏輯，
+// 題目才不會兩邊長得不一樣。
+// 只收「有選項且答案在選項裡」的閱讀理解題；開放問答進不了小考。
+export function buildReadingQuizItems(lesson) {
+  return filterByStatus(lesson.reading_questions || []).filter(
+    (q) => q.stem && Array.isArray(q.options) && q.options.length >= 2
+      && typeof q.answer === 'string' && q.options.includes(q.answer),
+  );
+}
+
 export function buildReadingActivity(lesson, onBack) {
   const paragraphs = filterByStatus(lesson.paragraph_summary || []).filter((p) => p.summary);
   const questions = filterByStatus(lesson.reading_questions || []).filter((q) => q.stem);
