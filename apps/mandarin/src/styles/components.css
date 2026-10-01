@@ -2088,3 +2088,152 @@
   white-space: nowrap;
   border: 0;
 }
+
+/* ── 課文點讀（ReaderPage）─────────────────────────
+   設計底線：正文 ≥22px、觸控 ≥44px、375px 不橫向捲動、尊重 reduced-motion。
+   字級用 clamp 讓低年級課文在 iPad 上更大，但手機寬度不爆版。        */
+.reader__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+.reader__read-all { margin-inline-start: auto; }
+.reader__hint {
+  margin: 12px 0 0;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+.reader__title {
+  margin: 16px 0 24px;
+  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+}
+.reader__text {
+  font-size: clamp(1.5rem, 1.25rem + 1.2vw, 2.125rem);
+  line-height: 2.4;          /* 容納字右側的注音，行距要夠 */
+  letter-spacing: 0.02em;
+}
+.reader__para + .reader__para { margin-top: 1.5em; }
+.reader__line { margin: 0; }
+/* 詞與黏著標點不拆行 */
+.reader__nowrap { white-space: nowrap; }
+
+.reader__ch {
+  display: inline-block;
+  border-radius: 6px;
+  padding: 0 1px;
+  cursor: pointer;
+  transition: background-color 120ms ease;
+  /* 觸控目標：字本身在 iPad 上就有 30–34px 寬，再靠 line-height 2.4 的行框
+     把垂直可點範圍撐到約 60px。這裡**刻意不**套 min-width:44px——行內文字
+     硬撐成 44px 會把字距拉開成「我 的 心 情」，課文就不像課文了，對閱讀
+     困難的學生反而更難讀。水平方向少幾 px，用「讀詞／讀句」模式補償：
+     點歪到同一個詞裡的鄰字，念出來的仍然是同一個詞或同一句。 */
+  padding: 0.28em 1px;
+  text-align: center;
+}
+.reader__ch--punct { cursor: default; }
+.reader__ch:hover { background: var(--color-surface-muted); }
+.reader__ch:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+/* 正在念的字／詞／句 */
+.reader__ch--reading {
+  background: var(--module-blue-tint, #dceafc);
+  box-shadow: inset 0 -3px 0 var(--module-blue, #2f6db0);
+}
+
+/* 注音：台灣慣用的「字右側直排」。
+   刻意**不**用 ruby-position: inter-character——那是注音的正規解法，但只有
+   Safari／Firefox 支援，Chrome（含 Chromebook、Windows）會默默退回「注音排在
+   字的上方」，同一份教材在不同載具長得不一樣。改用 inline-flex 接管 <ruby>
+   的版面，再用 writing-mode 把注音轉成直排，所有瀏覽器結果一致。 */
+.zhuyin {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: baseline;
+}
+.zhuyin__rt {
+  display: inline-block;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 0.4em;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin-inline-start: 0.08em;
+  color: var(--text-secondary);
+}
+/* 不支援 ruby 的瀏覽器才顯示 <rp> 的括號 */
+.reader__text rp { display: none; }
+/* 注音隱藏：只關 CSS，不重建 DOM，學生不會失去閱讀位置 */
+.reader__text--no-zhuyin .zhuyin__rt { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reader__ch { transition: none; }
+}
+
+/* ── 教室密碼門 ────────────────────────────────── */
+.gate { max-width: 520px; margin: 24px auto; text-align: center; }
+.gate__icon { font-size: 56px; margin: 0; }
+.gate__title { margin: 8px 0; }
+.gate__note {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0 0 16px;
+}
+.gate__input {
+  width: 100%;
+  min-height: 48px;
+  font-size: 1.375rem;
+  text-align: center;
+  letter-spacing: 0.3em;
+  padding: 8px 12px;
+  border: 2px solid var(--color-border);
+  border-radius: 10px;
+}
+.gate__input:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+.gate__message {
+  min-height: 1.6em;
+  margin: 12px 0;
+  color: var(--text-secondary);
+}
+.gate__input--shake { animation: gate-shake 360ms ease; }
+@keyframes gate-shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gate__input--shake { animation: none; }
+}
+
+/* ── 課次首頁的「課文點讀」入口 ──────────────────── */
+.reader-entry {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 20px;
+  padding: 16px 20px;
+  min-height: 44px;
+  border: 2px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-surface);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+.reader-entry:hover { background: var(--color-surface-muted); }
+.reader-entry:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+.reader-entry__icon { font-size: 32px; line-height: 1; }
+.reader-entry__text { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.reader-entry__title { font-size: 1.375rem; font-weight: 700; }
+.reader-entry__desc { font-size: 1.125rem; color: var(--text-secondary); }
+.reader-entry__arrow { flex: none; }

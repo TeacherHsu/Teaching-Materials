@@ -1,9 +1,11 @@
 import { route, notFoundRoute, startRouter } from './router/router.js';
+import { unlockFromStore } from './utils/classroomKey.js';
 import { HomePage } from './pages/HomePage.js';
 import { GradePage } from './pages/GradePage.js';
 import { LessonDashboard } from './pages/LessonDashboard.js';
 import { ModulePage } from './pages/ModulePage.js';
 import { ReviewPage } from './pages/ReviewPage.js';
+import { ReaderPage } from './pages/ReaderPage.js';
 import { FixturesPage } from './pages/FixturesPage.js';
 import { h, clear } from './utils/dom.js';
 import { isPreview } from './utils/preview.js';
@@ -117,6 +119,15 @@ route(/^\/lesson\/(?<lessonId>[^/]+)$/, async ({ lessonId }) => {
   mount(LessonDashboard(lesson));
 });
 
+route(/^\/lesson\/(?<lessonId>[^/]+)\/reader$/, async ({ lessonId }) => {
+  const lesson = await loadLesson(lessonId);
+  if (!lesson) {
+    mount(h('div', { class: 'container' }, h('div', { class: 'missing-content' }, '找不到這一課的資料。')));
+    return;
+  }
+  mount(ReaderPage(lesson));
+});
+
 route(/^\/lesson\/(?<lessonId>[^/]+)\/module\/(?<moduleKey>[^/]+)$/, async ({ lessonId, moduleKey }) => {
   const lesson = await loadLesson(lessonId);
   if (!lesson) {
@@ -170,5 +181,16 @@ notFoundRoute(() => {
     ]),
   );
 });
+
+// 開站時先用這台載具記住的教室金鑰試解一次課文，解開了課次首頁才會
+// 顯示「課文點讀」入口。失敗（沒存過、金鑰過期）不影響其他功能，所以
+// 不等它完成就啟動路由；解完之後重跑一次目前的路由讓入口出現。
+unlockFromStore()
+  .then((unlocked) => {
+    if (unlocked) window.dispatchEvent(new HashChangeEvent('hashchange'));
+  })
+  .catch(() => {
+    /* 解不開就是沒解鎖，學生仍可做其他大項 */
+  });
 
 startRouter();

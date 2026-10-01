@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "課文密文封包（readings.enc.json）",
+  "description": "課文全文的 AES-GCM 密文。由 tools/encrypt_readings.py 產生；明碼正本在 ~/mandarin-work/reading-tool-lessons/，不進 repo（sped-os ADR-0034）。",
+  "type": "object",
+  "required": ["v", "kdf", "iter", "salt", "iv", "lessons", "data"],
+  "additionalProperties": false,
+  "properties": {
+    "v": { "const": 1 },
+    "kdf": { "const": "PBKDF2-SHA256" },
+    "iter": {
+      "type": "integer",
+      "minimum": 100000,
+      "description": "PBKDF2 迭代次數。下限 100000 是刻意的：太低等於沒加密。"
+    },
+    "salt": { "type": "string", "minLength": 16, "description": "base64，至少 12 bytes" },
+    "iv": { "type": "string", "minLength": 12, "description": "base64 的 AES-GCM nonce" },
+    "lessons": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "有課文的課次代號（課文樂園的 lesson_id）。這是 manifest，不含課文內容。",
+      "items": { "type": "string", "pattern": "^\\d{3}[A-Z]G\\d[A-Z]\\d{2}$" }
+    },
+    "data": { "type": "string", "minLength": 1024, "description": "base64 的密文" }
+  }
+}

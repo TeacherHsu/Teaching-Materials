@@ -1,0 +1,9 @@
+
+# 課文全文絕對不進 repo（sped-os ADR-0034）。明碼正本在
+# ~/mandarin-work/reading-tool-lessons/，公開站只放 AES-GCM 密文
+# apps/mandarin/public/data/readings.enc.json。
+Chinese/Reading-Tool/lessons/
+Chinese/Reading-Tool/lessons.bak-*/
+
+# 手動備份檔（改檔前的 <檔名>.bak-YYYYMMDD）
+*.bak-20[0-9][0-9][0-9][0-9][0-9][0-9]

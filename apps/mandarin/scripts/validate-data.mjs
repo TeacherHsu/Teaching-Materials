@@ -11,11 +11,16 @@ const root = join(__dirname, '..');
 const ajv = new Ajv({ allErrors: true, strict: false });
 const courseIndexSchema = JSON.parse(readFileSync(join(root, 'schema/course-index.schema.json'), 'utf-8'));
 const lessonSchema = JSON.parse(readFileSync(join(root, 'schema/lesson.schema.json'), 'utf-8'));
+// 課文密文封包不是課次資料，用自己的 schema 驗（確保迭代次數夠、manifest 不含課文）。
+const readingsSchema = JSON.parse(readFileSync(join(root, 'schema/readings-envelope.schema.json'), 'utf-8'));
+const READINGS_FILE = 'readings.enc.json';
 
 const validateCourseIndex = ajv.compile(courseIndexSchema);
 const validateLesson = ajv.compile(lessonSchema);
+const validateReadings = ajv.compile(readingsSchema);
 
 let failed = false;
+const readingFiles = [];
 
 function findLessonFiles(dir) {
   const results = [];
@@ -26,6 +31,8 @@ function findLessonFiles(dir) {
     const stat = statSync(full);
     if (stat.isDirectory()) {
       results.push(...findLessonFiles(full));
+    } else if (entry === READINGS_FILE) {
+      readingFiles.push(join(dir, entry));
     } else if (entry.endsWith('.json') && entry !== 'course-index.json') {
       results.push(full);
     }
@@ -47,6 +54,29 @@ if (!validateCourseIndex(courseIndex)) {
 
 const dataDir = join(root, 'public/data');
 const lessonFiles = findLessonFiles(dataDir);
+
+// 課文密文封包：除了 schema，再確認 manifest 區沒有夾帶明碼課文。
+// 這一條守的是版權界線（sped-os ADR-0034），不只是格式正確性。
+for (const file of readingFiles) {
+  const raw = readFileSync(file, 'utf-8');
+  const data = JSON.parse(raw);
+  if (!validateReadings(data)) {
+    failed = true;
+    console.error(`[FAIL] ${file}`);
+    for (const err of validateReadings.errors) {
+      console.error(`  ${err.instancePath} ${err.message}`);
+    }
+    continue;
+  }
+  const manifestOnly = JSON.stringify({ ...data, data: '', salt: '', iv: '' });
+  const leaked = manifestOnly.match(/[\u3400-\u9fff]{2,}/g);
+  if (leaked) {
+    failed = true;
+    console.error(`[FAIL] ${file} 的 manifest 區出現漢字（疑似夾帶明碼課文）：${leaked.slice(0, 5)}`);
+    continue;
+  }
+  console.log(`[OK] ${file}（${data.lessons.length} 課密文、PBKDF2 ${data.iter} 次、無明碼）`);
+}
 for (const file of lessonFiles) {
   const data = JSON.parse(readFileSync(file, 'utf-8'));
   if (!validateLesson(data)) {

@@ -6,6 +6,7 @@ import { moduleIconMarkup, STATUS_ICONS } from '../components/icons.js';
 import { getModuleStars, getLessonStars } from '../utils/storage.js';
 import { starsMarkup } from '../utils/scoring.js';
 import { volumeLabel } from '../utils/volumeLabel.js';
+import { hasReading, isUnlocked } from '../utils/classroomKey.js';
 
 const STATUS_CLASS = {
   done: 'module-card__status--done',
@@ -141,6 +142,11 @@ export function LessonDashboard(lesson) {
     }
     (CORE_MODULES.has(entry.key) ? coreGrid : challengeGrid).appendChild(card);
   }
+  // 課文點讀放在所有大項之前：對閱讀困難的學生，先把課文聽過一遍再做練習
+  // 才有意義。要不要顯示取決於「這一課有沒有課文」，而那要讀密文檔的 manifest
+  // （非同步），所以先插一個空殼，問到答案再填——不讓整頁等網路。
+  root.appendChild(readerEntry(lesson));
+
   if (coreGrid.childElementCount) {
     root.appendChild(h('section', { class: 'lesson-module-section', 'aria-labelledby': 'core-modules-heading' }, [
       // 「本課先完成」對學生是非必要資訊（CF 決定移除，減少視覺干擾）。標題保留給
@@ -163,6 +169,34 @@ export function LessonDashboard(lesson) {
   if (extensionLinks) root.appendChild(extensionLinks);
 
   return root;
+}
+
+// 「課文點讀」入口。沒有課文就什麼都不顯示（不要留一個按不動的按鈕）。
+function readerEntry(lesson) {
+  const slot = h('div', {});
+  hasReading(lesson.lesson_id)
+    .then((available) => {
+      if (!available) return;
+      const unlocked = isUnlocked();
+      slot.appendChild(
+        h('a', { class: 'reader-entry', href: `#/lesson/${lesson.lesson_id}/reader` }, [
+          h('span', { class: 'reader-entry__icon', 'aria-hidden': 'true' }, unlocked ? '📖' : '🔒'),
+          h('span', { class: 'reader-entry__text' }, [
+            h('span', { class: 'reader-entry__title' }, '課文點讀'),
+            h(
+              'span',
+              { class: 'reader-entry__desc' },
+              unlocked ? '點字、點詞、點句都會念，也可以整篇念下來。' : '需要教室密碼才能打開課文。',
+            ),
+          ]),
+          h('span', { class: 'reader-entry__arrow', 'aria-hidden': 'true', html: STATUS_ICONS.arrow }),
+        ]),
+      );
+    })
+    .catch(() => {
+      /* 讀不到密文檔就不顯示入口，其他大項照常 */
+    });
+  return slot;
 }
 
 function statusIcon(code) {
