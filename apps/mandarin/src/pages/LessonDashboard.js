@@ -180,7 +180,7 @@ export function LessonDashboard(lesson) {
       if (!available) return;
       const summary = reciteSummary(lesson.lesson_id);
       reciteSlot.appendChild(
-        h('a', { class: 'entry-card', href: `#/lesson/${lesson.lesson_id}/recite` }, [
+        h('a', { class: 'entry-card entry-card--recite', href: `#/lesson/${lesson.lesson_id}/recite` }, [
           h('span', { class: 'entry-card__icon', 'aria-hidden': 'true' }, isUnlocked() ? '🎤' : '🔒'),
           h('span', { class: 'entry-card__body' }, [
             h('span', { class: 'entry-card__title' }, '朗讀挑戰'),
@@ -232,14 +232,14 @@ function readerEntry(lesson) {
       if (!available) return;
       const unlocked = isUnlocked();
       slot.appendChild(
-        h('a', { class: 'entry-card entry-card--wide', href: `#/lesson/${lesson.lesson_id}/reader` }, [
+        h('a', { class: 'entry-card entry-card--wide entry-card--reader', href: `#/lesson/${lesson.lesson_id}/reader` }, [
           h('span', { class: 'entry-card__icon', 'aria-hidden': 'true' }, unlocked ? '📖' : '🔒'),
           h('span', { class: 'entry-card__body' }, [
             h('span', { class: 'entry-card__title' }, '課文點讀'),
             h(
               'span',
               { class: 'entry-card__desc' },
-              unlocked ? '點字、點詞、點句都會念，也可以整篇念下來。' : '需要教室密碼才能打開課文。',
+              unlocked ? '讀字、讀詞或讀句，點一點讀讀看。' : '需要教室密碼才能打開課文。',
             ),
           ]),
           h('span', { class: 'entry-card__arrow', 'aria-hidden': 'true', html: STATUS_ICONS.arrow }),

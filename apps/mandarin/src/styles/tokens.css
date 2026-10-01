@@ -13,21 +13,21 @@
 
 :root {
   /* 色彩：主色為沉靜的靛藍青（非 emerald），輔以暖陶土 accent（非 amber） */
-  --color-primary: #3a5a7a;
-  --color-primary-hover: #2e4a64;
+  --color-primary: #35679a;
+  --color-primary-hover: #2a5280;
   --color-secondary: #6b5b95;
-  --color-accent: #c96f4a;
+  --color-accent: #d4723f;
   --color-success: #2f7a4f;
   --color-warning: #b8860b;
   --color-danger: #c0392b;
 
-  --color-background: #faf7f2; /* warm off-white，不是純白 */
+  --color-background: #faf6ef; /* warm off-white，不是純白 */
   --color-surface: #ffffff;
-  --color-surface-muted: #f1ece3;
-  --color-border: #ded5c6;
+  --color-surface-muted: #f3ede3;
+  --color-border: #e0d7c8;
 
-  --text-primary: #2b2823;
-  --text-secondary: #5c574e;
+  --text-primary: #332f29;
+  --text-secondary: #5f594f;
   --text-on-primary: #ffffff;
 
   /* Typography（依需求下限設定，行高皆 >=1.5） */
@@ -57,8 +57,8 @@
   --radius-md: 14px;
   --radius-lg: 20px;
   --radius-pill: 999px;
-  --shadow-card: 0 1px 2px rgba(43, 40, 35, 0.06), 0 4px 12px rgba(43, 40, 35, 0.07);
-  --shadow-raised: 0 2px 4px rgba(43, 40, 35, 0.08), 0 10px 28px rgba(43, 40, 35, 0.14);
+  --shadow-card: 0 1px 2px rgba(51, 47, 41, 0.05), 0 4px 12px rgba(51, 47, 41, 0.06);
+  --shadow-raised: 0 2px 4px rgba(51, 47, 41, 0.07), 0 10px 28px rgba(51, 47, 41, 0.12);
 
   /* 觸控目標下限 */
   --tap-target-min: 44px;
@@ -70,29 +70,29 @@
     --module-color / --module-color-dark / --module-color-tint（由
     moduleRegistry 對照 inline style 注入），不得寫死色碼。
   */
-  --module-blue: #3a6ea5;
-  --module-blue-dark: #1f4266;
-  --module-blue-tint: #e8eef5;
+  --module-blue: #3a7cc0;
+  --module-blue-dark: #2e5578;
+  --module-blue-tint: #dfebf8;
 
-  --module-teal: #2f8f76;
-  --module-teal-dark: #145c48;
-  --module-teal-tint: #e5f2ee;
+  --module-teal: #1d8c72;
+  --module-teal-dark: #1e6b55;
+  --module-teal-tint: #daf0e9;
 
-  --module-purple: #7a5fb5;
-  --module-purple-dark: #453077;
-  --module-purple-tint: #eeeaf8;
+  --module-purple: #8268c8;
+  --module-purple-dark: #574283;
+  --module-purple-tint: #eae3f8;
 
-  --module-terracotta: #b8622f;
-  --module-terracotta-dark: #833c14;
-  --module-terracotta-tint: #faece1;
+  --module-terracotta: #cc6a2c;
+  --module-terracotta-dark: #8d4a20;
+  --module-terracotta-tint: #fae4d2;
 
-  --module-rose: #c14066;
-  --module-rose-dark: #781d3c;
-  --module-rose-tint: #f8e6ec;
+  --module-rose: #d14a72;
+  --module-rose-dark: #8c2f4d;
+  --module-rose-tint: #fadee6;
 
-  --module-olive: #6b8f3a;
-  --module-olive-dark: #3a5219;
-  --module-olive-tint: #eef3e3;
+  --module-olive: #64892c;
+  --module-olive-dark: #4a6424;
+  --module-olive-tint: #e9f2d8;
 }
 
 @media (prefers-color-scheme: dark) {

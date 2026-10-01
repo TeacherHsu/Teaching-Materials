@@ -2622,3 +2622,56 @@
   color: var(--text-secondary);
   font-size: var(--font-size-meta);
 }
+
+/* ════════════════════════════════════════════════════════
+   視覺層級與色彩的出場：原本色彩只出現在卡片頂端細線與小圖示，
+   面積太小，整體偏灰。以下在**不增加閱讀負擔**的前提下讓顏色實際被看見：
+   用大面積的淡色（tint）鋪底，而不是把文字或大色塊變鮮豔。
+   ════════════════════════════════════════════════════════ */
+
+/* 課次 hero：加一層很淡的主色暈染，讓頁面頂端不是一片白 */
+.lesson-hero {
+  background:
+    radial-gradient(120% 140% at 100% 0%, var(--module-blue-tint) 0%, transparent 60%),
+    var(--color-surface);
+}
+
+/* 大項卡片：hover 時整張帶一點該大項的顏色，讓「這一站是什麼顏色」被記住 */
+.module-card { transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease; }
+.module-card:hover,
+.module-card:focus-within {
+  background:
+    linear-gradient(0deg, var(--module-color-tint) 0%, transparent 70%),
+    var(--color-surface);
+}
+@media (prefers-reduced-motion: reduce) { .module-card { transition: none; } }
+
+/* 四個入口卡：各自帶一個顏色，不再全部是白底白框
+   （課文點讀＝藍、錯題複習＝陶土、朗讀挑戰＝teal、小考＝紫） */
+.entry-card { --entry-tint: var(--color-surface-muted); --entry-line: var(--color-border); }
+.entry-card {
+  background:
+    linear-gradient(0deg, var(--entry-tint) 0%, transparent 72%),
+    var(--color-surface);
+  border-inline-start: 5px solid var(--entry-line);
+}
+.entry-card--reader { --entry-tint: var(--module-blue-tint); --entry-line: var(--module-blue); }
+.entry-card--mistake { --entry-tint: var(--module-terracotta-tint); --entry-line: var(--color-accent); }
+.entry-card--recite { --entry-tint: var(--module-teal-tint); --entry-line: var(--module-teal); }
+.entry-card--quiz { --entry-tint: var(--module-purple-tint); --entry-line: var(--module-purple); }
+.entry-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--tap-target-min) - 4px);
+  height: calc(var(--tap-target-min) - 4px);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+/* 分段切換：選中的那一格用主色，但加一點內陰影讓它有「按下去」的實感 */
+.seg__btn--on { box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.18); }
+
+/* 進度環與星星是整個站少數的「獎勵」訊號，給它們一點份量 */
+.progress-ring { filter: drop-shadow(0 2px 4px rgba(43, 40, 35, 0.12)); }

@@ -179,7 +179,7 @@ export function QuizPage(lesson) {
 export function quizEntry(lesson) {
   const bank = collectQuizBank(lesson);
   if (!Object.keys(bank).length) return null;
-  return h('a', { class: 'entry-card entry-card--wide entry-card--dashed', href: `#/lesson/${lesson.lesson_id}/quiz` }, [
+  return h('a', { class: 'entry-card entry-card--wide entry-card--dashed entry-card--quiz', href: `#/lesson/${lesson.lesson_id}/quiz` }, [
     h('span', { class: 'entry-card__icon', 'aria-hidden': 'true' }, '📝'),
     h('span', { class: 'entry-card__body' }, [
       h('span', { class: 'entry-card__title' }, '單課小考'),

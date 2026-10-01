@@ -203,7 +203,7 @@ function emptyState(lessonId, backHref, backLabel) {
 export function mistakeEntry(lessonId, count) {
   if (!count) return null;
   const href = lessonId ? `#/mistakes/${lessonId}` : '#/mistakes';
-  return h('a', { class: 'entry-card entry-card--accent', href }, [
+  return h('a', { class: 'entry-card entry-card--accent entry-card--mistake', href }, [
     h('span', { class: 'entry-card__icon', 'aria-hidden': 'true' }, '🔁'),
     h('span', { class: 'entry-card__body' }, [
       h('span', { class: 'entry-card__title' }, '錯題複習'),
