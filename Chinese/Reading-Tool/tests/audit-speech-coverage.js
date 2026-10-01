@@ -10,6 +10,7 @@ const rules = require('../pronunciation-rules.js');
 
 const lessonsDir = process.argv[2] || path.join(__dirname, '..', 'lessons');
 const missing = [];
+const overrides = [];
 const gaps = new Map();
 let totalChars = 0;
 
@@ -20,8 +21,12 @@ for (const file of fs.readdirSync(lessonsDir).filter(name => name.endsWith('.jso
         totalChars++;
         const zhuyin = rules.normalizeZhuyin(entry.zhuyin);
         const expected = rules.speechHomophoneFor(entry.char, zhuyin);
-        if (expected && (entry.phoneChar || '') !== expected) {
-            missing.push(`${file}[${index}] ${entry.char}|${zhuyin} 應有讀音備註「${expected}」，實際為「${entry.phoneChar || '(無)'}」`);
+        if (expected && !entry.phoneChar) {
+            missing.push(`${file}[${index}] ${entry.char}|${zhuyin} 缺讀音備註，對照表建議「${expected}」`);
+        } else if (expected && entry.phoneChar !== expected) {
+            // 教師裁定優先於對照表：同一個讀音常有多個同樣正確的同音字
+            // （颱風假：教師選「價」，對照表是「架」），這不是錯誤。
+            overrides.push(`${file}[${index}] ${entry.char}|${zhuyin} 教師用「${entry.phoneChar}」（對照表：「${expected}」）`);
         }
         if (rules.speechHomophoneGapFor(entry.char, zhuyin) && !entry.phoneChar) {
             const key = `${entry.char}|${zhuyin}`;
@@ -38,6 +43,10 @@ if (missing.length) {
 }
 
 console.log(`SPEECH COVERAGE AUDIT PASSED: ${totalChars} 字，讀音備註無缺口`);
+if (overrides.length) {
+    console.log(`  註：${overrides.length} 處採教師自訂的同音字，未依對照表：`);
+    overrides.forEach(line => console.log('    ' + line));
+}
 if (gaps.size) {
     // 這些不是失敗：教育部辭典裡找不到可用的單音同音字，只能交由教師判斷。
     const total = [...gaps.values()].reduce((sum, n) => sum + n, 0);
