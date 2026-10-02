@@ -1417,45 +1417,45 @@
     {
       "id": "paragraph_summary:115AG2H01:01",
       "para_no": 1,
-      "summary": "害怕的心情像颱風，主角想躲起來。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "summary": "主角害怕的時候，覺得自己像遇上大風，只想找個地方躲起來。",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "分說",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     },
     {
       "id": "paragraph_summary:115AG2H01:02",
       "para_no": 2,
-      "summary": "生氣的心情像閃電打雷，主角想叫出來。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "summary": "生氣時，主角心裡轟隆作響，很想大聲喊出來。",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "分說",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     },
     {
       "id": "paragraph_summary:115AG2H01:03",
       "para_no": 3,
-      "summary": "難過的心情像是有了烏雲又下雨，主角忍不住哭出來。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "summary": "傷心時，主角覺得天色暗了下來，眼淚跟著掉下來。",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "分說",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     },
     {
       "id": "paragraph_summary:115AG2H01:04",
       "para_no": 4,
-      "summary": "開心的心情充滿陽光，主角忍不住笑出來。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "summary": "高興時，主角心裡亮亮的，忍不住笑了出來。",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "分說",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     },
     {
       "id": "paragraph_summary:115AG2H01:05",
       "para_no": 5,
-      "summary": "主角的心情像天氣，有各種變化，希望難過的事情結束了，心情會變美好，像美麗的彩虹。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "summary": "主角把各種心情比成天氣。天氣會變，心情也會變；難過過去以後，心裡就會出現彩虹。",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "總說",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     }
@@ -1898,6 +1898,5 @@
         "虹"
       ]
     }
-  },
-  "summary_issue": "二上 12 課的段落大意與官方「08課文結構表」逐字相同（已比對 L01、L09、L11、L12）。專案規則是大意改寫後才公開（structure-map 規格 §3.1、ADR-0034 版權界線），這 48 筆沒有改寫，source 欄也沒有像三上那樣標「重述版」。需要 CF 裁定是改寫後重新上線，還是先下架。"
+  }
 }

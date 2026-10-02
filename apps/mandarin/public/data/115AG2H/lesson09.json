@@ -1275,36 +1275,36 @@
     {
       "id": "paragraph_summary:115AG2H09:01",
       "para_no": 1,
-      "summary": "媽媽清洗食材，食材像玩水一樣涼快。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "summary": "媽媽把食材洗乾淨，水嘩啦啦的流，食材像在玩水一樣。",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "分說",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     },
     {
       "id": "paragraph_summary:115AG2H09:02",
       "para_no": 2,
-      "summary": "爸爸洗米煮飯，米粒像在浴室泡澡一樣溫暖。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "summary": "爸爸淘米煮飯，米粒在水裡滾動，像泡在熱呼呼的澡盆裡。",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "分說",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     },
     {
       "id": "paragraph_summary:115AG2H09:03",
       "para_no": 3,
-      "summary": "主角像點名一樣，把所有食材集合在一起。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "summary": "主角把食材一樣一樣排好，就像老師點名一樣。",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "分說",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     },
     {
       "id": "paragraph_summary:115AG2H09:04",
       "para_no": 4,
-      "summary": "全家人合作，把食材捲成黏合全家人愛心的好味道餐點。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "summary": "全家人一起動手，把食材捲成一道餐點，裡面包的是全家人的心意。",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "總說",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     }
@@ -1897,6 +1897,5 @@
         "淡"
       ]
     }
-  },
-  "summary_issue": "二上 12 課的段落大意與官方「08課文結構表」逐字相同（已比對 L01、L09、L11、L12）。專案規則是大意改寫後才公開（structure-map 規格 §3.1、ADR-0034 版權界線），這 48 筆沒有改寫，source 欄也沒有像三上那樣標「重述版」。需要 CF 裁定是改寫後重新上線，還是先下架。"
+  }
 }
