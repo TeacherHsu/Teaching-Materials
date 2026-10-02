@@ -922,52 +922,40 @@
   ],
   "paragraph_summary": [
     {
-      "id": "paragraph:115AG3H:09:01",
+      "id": "paragraph:3H09:01",
       "paragraph_no": 1,
-      "summary": "作者全家一起挑戰古道阿塱壹，爸爸說這條路過去是屏東與臺東之間的重要交通要道，具有歷史意義。",
-      "structure_role": "第1段重點",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材（段落大意）"
+      "summary": "作者和弟弟跟著爸爸，一起挑戰有名的阿塱壹古道。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "原因",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
-      "id": "paragraph:115AG3H:09:02",
+      "id": "paragraph:3H09:02",
       "paragraph_no": 2,
-      "summary": "大家隨著導遊走過山路，弟弟把樹叢中的果實誤認為鳳梨，經過解說才知道那是林投樹的果實。",
-      "structure_role": "第2段重點",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材（段落大意）"
+      "summary": "他們隨著導遊走山路，看到路旁的林投樹，再沿著木棧道下山。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "經過",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
-      "id": "paragraph:115AG3H:09:03",
+      "id": "paragraph:3H09:03",
       "paragraph_no": 3,
-      "summary": "隊伍繼續前進，原本看似無路的地方其實藏著木棧道；眾人小心下山，眼前很快展開海天一色的景象。",
-      "structure_role": "第3段重點",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材（段落大意）"
+      "summary": "古道的特色是海岸的美景，還有岸邊的南田石。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "經過",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
-      "id": "paragraph:115AG3H:09:04",
+      "id": "paragraph:3H09:04",
       "paragraph_no": 4,
-      "summary": "海岸線由深藍逐漸變成淺藍，風捲起白色浪花；家人沿岸行走，欣賞山海相依的遼闊自然風景。",
-      "structure_role": "第4段重點",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材（段落大意）"
-    },
-    {
-      "id": "paragraph:115AG3H:09:05",
-      "paragraph_no": 5,
-      "summary": "孩子踩石頭前進，並和父母把南田石疊成小山；動手遊戲使旅程充滿樂趣，也留下鮮明共同記憶。",
-      "structure_role": "第5段重點",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材（段落大意）"
-    },
-    {
-      "id": "paragraph:115AG3H:09:06",
-      "paragraph_no": 6,
-      "summary": "導遊提醒南田石只能拍照不能帶走，作者因此明白珍惜美石和美景，才能讓值得探訪的古道長久保存。",
-      "structure_role": "第6段重點",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材（段落大意）"
+      "summary": "作者覺得一邊是山、一邊是海的阿塱壹古道，很值得挑戰。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "結果",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     }
   ],
   "main_idea": {
@@ -1776,5 +1764,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "narrative"
 }

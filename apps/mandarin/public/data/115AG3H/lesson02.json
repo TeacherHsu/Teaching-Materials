@@ -805,52 +805,40 @@
   ],
   "paragraph_summary": [
     {
-      "id": "paragraph_summary:115AG3H02:633060cc",
-      "para_no": 1,
-      "summary": "小真升上三年級後仍常忘東忘西，做事慢吞吞，也記不住有哪些事情尚未完成。",
-      "structure_role": "困擾",
-      "status": "approved",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（段落大意資料，重述版）"
+      "id": "paragraph:3H02:01",
+      "paragraph_no": 1,
+      "summary": "小真常常忘東忘西，爸爸教她用便利貼提醒自己。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "起因",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
-      "id": "paragraph_summary:115AG3H02:c5f23b62",
-      "para_no": 2,
-      "summary": "爸爸教她使用便利貼，把要做的事和完成時間記下來，再貼在明顯的位置。",
-      "structure_role": "困擾",
-      "status": "approved",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（段落大意資料，重述版）"
+      "id": "paragraph:3H02:02",
+      "paragraph_no": 2,
+      "summary": "媽媽隔天要開會，小真把要做的事寫在便利貼上，做完一件就打勾，全家準時在七點前出門。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "經過",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
-      "id": "paragraph_summary:115AG3H02:0fa500cd",
-      "para_no": 3,
-      "summary": "媽媽隔天要開會，全家必須準時出門；小真把任務貼在書桌前，完成一件事就打勾，睡前還設定鬧鐘。",
-      "structure_role": "嘗試",
-      "status": "approved",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（段落大意資料，重述版）"
+      "id": "paragraph:3H02:03",
+      "paragraph_no": 3,
+      "summary": "小真做事變得有次序，會安排時間，還用便利貼提醒家人。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "結果",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
-      "id": "paragraph_summary:115AG3H02:45646966",
-      "para_no": 4,
-      "summary": "第二天大家果然在七點前出門，小真發現這個方法很有效，也知道逐項檢查能減少匆忙和遺漏。",
-      "structure_role": "嘗試",
-      "status": "approved",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（段落大意資料，重述版）"
-    },
-    {
-      "id": "paragraph_summary:115AG3H02:6081273b",
-      "para_no": 5,
-      "summary": "她開始更常運用便利貼，做事變得有次序，不但能按時完成計畫，也逐漸學會安排時間。",
-      "structure_role": "改變",
-      "status": "approved",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（段落大意資料，重述版）"
-    },
-    {
-      "id": "paragraph_summary:115AG3H02:5536e42c",
-      "para_no": 6,
-      "summary": "她後來把便條貼在冰箱，提醒爸爸帶她做視力檢查；便利貼也成為關心並提醒家人的方法。",
-      "structure_role": "改變",
-      "status": "approved",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（段落大意資料，重述版）"
+      "id": "paragraph:3H02:04",
+      "paragraph_no": 4,
+      "summary": "小真在冰箱貼上便條，提醒爸爸帶她去檢查視力。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "結果",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     }
   ],
   "main_idea": {
@@ -1675,5 +1663,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "narrative"
 }

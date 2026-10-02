@@ -720,33 +720,41 @@
       "id": "paragraph_summary:115AG3H05:1",
       "para_no": 1,
       "summary": "三星鄉的梨花遇到連日降雨，農民擔心花朵受傷、影響收成。",
-      "structure_role": "起因",
       "status": "approved",
-      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）",
+      "paragraph_no": 1,
+      "structure_block": "起因",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
       "id": "paragraph_summary:115AG3H05:2",
       "para_no": 2,
       "summary": "農民用空碗做成小傘，再用筷子、膠帶和繩子把它固定在梨花上。",
-      "structure_role": "第一次嘗試",
       "status": "approved",
-      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）",
+      "paragraph_no": 2,
+      "structure_block": "經過",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
       "id": "paragraph_summary:115AG3H05:3",
       "para_no": 3,
       "summary": "發現原來的方法太花時間後，農民改用夾子製作更方便的小傘。",
-      "structure_role": "改良方法",
       "status": "approved",
-      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）",
+      "paragraph_no": 3,
+      "structure_block": "經過",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
       "id": "paragraph_summary:115AG3H05:4",
       "para_no": 4,
       "summary": "改良後的遮雨方法幫助梨花順利結果，梨園終於有穩定的收成。",
-      "structure_role": "結果",
       "status": "approved",
-      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）",
+      "paragraph_no": 4,
+      "structure_block": "結果",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     }
   ],
   "main_idea": {
@@ -1250,5 +1258,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "narrative"
 }

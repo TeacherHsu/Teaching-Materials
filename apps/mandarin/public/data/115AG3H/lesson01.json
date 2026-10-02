@@ -1164,41 +1164,51 @@
       "id": "paragraph_summary:115AG3H01:e278d28f",
       "para_no": 1,
       "summary": "覺得時間過得很慢的人，把它比喻成爬得慢的蝸牛。",
-      "structure_role": "分說",
       "status": "approved",
-      "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）"
+      "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）",
+      "paragraph_no": 1,
+      "structure_block": "分說",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
       "id": "paragraph_summary:115AG3H01:c38d232d",
       "para_no": 2,
       "summary": "每天很忙的人，覺得時間像跑得飛快的斑馬一樣。",
-      "structure_role": "分說",
       "status": "approved",
-      "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）"
+      "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）",
+      "paragraph_no": 2,
+      "structure_block": "分說",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
       "id": "paragraph_summary:115AG3H01:58f54316",
       "para_no": 3,
       "summary": "還有人形容時間會像彈簧一樣，有時長、有時短。",
-      "structure_role": "總說",
       "status": "approved",
-      "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）"
+      "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）",
+      "paragraph_no": 3,
+      "structure_block": "分說",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
       "id": "paragraph_summary:115AG3H01:d8f60335",
       "para_no": 4,
       "summary": "也有人把時間比喻成不斷流動的水，一去不回。",
-      "structure_role": "總說",
       "status": "approved",
-      "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）"
+      "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）",
+      "paragraph_no": 4,
+      "structure_block": "分說",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
       "id": "paragraph_summary:115AG3H01:16af90d4",
       "para_no": 5,
       "summary": "文章最後提出疑問，時間究竟是什麼樣子呢？",
-      "structure_role": "總說",
       "status": "approved",
-      "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）"
+      "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）",
+      "paragraph_no": 5,
+      "structure_block": "總說",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     }
   ],
   "main_idea": {
@@ -2536,5 +2546,6 @@
       "status": "missing",
       "note": "第 1 課沒有前課資料。"
     }
-  }
+  },
+  "genre": "poetry"
 }

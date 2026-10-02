@@ -840,52 +840,31 @@
   ],
   "paragraph_summary": [
     {
-      "id": "paragraph:115AG3H:08:01",
+      "id": "paragraph:3H08:01",
       "paragraph_no": 1,
-      "summary": "夜晚海灘上，小螃蟹的身體被紙杯卡住，幸好寄居蟹靠近協助，才讓牠重新自由並看見朋友的處境。",
-      "structure_role": "第1段重點",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材（段落大意）"
+      "summary": "小螃蟹被紙杯卡住，寄居蟹找不到殼只好住在瓶蓋裡，牠們擔心美麗的海邊會不見。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "第一幕",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
-      "id": "paragraph:115AG3H:08:02",
+      "id": "paragraph:3H08:02",
       "paragraph_no": 2,
-      "summary": "牠因為人們撿走貝殼，只能暫住瓶蓋；兩隻小動物望著月光海面，擔心美好風景和合適住處會逐漸消失。",
-      "structure_role": "第2段重點",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材（段落大意）"
+      "summary": "友友、美美和淨灘志工發現海灘到處是垃圾，希望大家帶走垃圾、留下貝殼。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "第二幕",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
-      "id": "paragraph:115AG3H:08:03",
+      "id": "paragraph:3H08:03",
       "paragraph_no": 3,
-      "summary": "第二天，友友、美美跟著淨灘志工來到海邊，發現大量寶特瓶和人們留下的物品，使沙灘像垃圾場。",
-      "structure_role": "第3段重點",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材（段落大意）"
-    },
-    {
-      "id": "paragraph:115AG3H:08:04",
-      "paragraph_no": 4,
-      "summary": "志工說明這種小動物找不到可住的殼，提醒大家遊玩後帶走廢棄物，並把自然資源留給真正需要的生物。",
-      "structure_role": "第4段重點",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材（段落大意）"
-    },
-    {
-      "id": "paragraph:115AG3H:08:05",
-      "paragraph_no": 5,
-      "summary": "兩位孩子答應告訴同學，不再把海邊的殼帶回家，也加入愛護自然的行動，希望更多人一起保護環境。",
-      "structure_role": "第5段重點",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材（段落大意）"
-    },
-    {
-      "id": "paragraph:115AG3H:08:06",
-      "paragraph_no": 6,
-      "summary": "牠後來告訴小螃蟹遇見人類的經過，牠們知道對方是善意志工，應該很快就能找到安全的新家。",
-      "structure_role": "第6段重點",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材（段落大意）"
+      "summary": "小螃蟹和寄居蟹希望多一些像淨灘志工這樣愛護環境的人。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "第三幕",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     }
   ],
   "main_idea": {
@@ -1647,5 +1626,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "script"
 }

@@ -810,52 +810,40 @@
   ],
   "paragraph_summary": [
     {
-      "id": "paragraph_summary:115AG3H03:1",
-      "para_no": 1,
-      "summary": "爸爸做了小統計，發現櫻櫻三天內接連弄丟公車票、筆、三角板和作業本，這些遺失都和做事過度匆忙有關。",
-      "structure_role": "發現",
-      "status": "approved",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（段落大意資料，重述版）"
+      "id": "paragraph:3H03:01",
+      "paragraph_no": 1,
+      "summary": "櫻櫻做事太匆忙，弄丟了很多東西。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "事情的背景",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
-      "id": "paragraph_summary:115AG3H03:2",
-      "para_no": 2,
-      "summary": "每天到了該上學的時候，櫻櫻才慌張尋找用品並大聲呼喊；她常在最後一刻行動，所以容易忘記重要物品。",
-      "structure_role": "發現",
-      "status": "approved",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（段落大意資料，重述版）"
+      "id": "paragraph:3H03:02",
+      "paragraph_no": 2,
+      "summary": "爸爸要櫻櫻先整理好明天要帶的文具，櫻櫻卻說「到時候再說」。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "做事匆忙的實例",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
-      "id": "paragraph_summary:115AG3H03:3",
-      "para_no": 3,
-      "summary": "爸爸曾提醒她睡前整理明天要帶的書本和文具，她卻總回答到時候再說，沒有預先完成準備和檢查。",
-      "structure_role": "分析",
-      "status": "approved",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（段落大意資料，重述版）"
+      "id": "paragraph:3H03:03",
+      "paragraph_no": 3,
+      "summary": "爸爸發現櫻櫻會這麼匆忙，是因為她做事沒有先準備。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "指導的事項",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
-      "id": "paragraph_summary:115AG3H03:4",
-      "para_no": 4,
-      "summary": "爸爸進一步分析情況，指出問題不只是動作慢，而是做事缺乏計畫；總把事情拖到最後，自然容易來不及。",
-      "structure_role": "分析",
-      "status": "approved",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（段落大意資料，重述版）"
-    },
-    {
-      "id": "paragraph_summary:115AG3H03:5",
-      "para_no": 5,
-      "summary": "他分享自己的方法：先想好要做的事，提前開始並把所需物品準備好，即使發現遺漏也還有時間處理。",
-      "structure_role": "方法",
-      "status": "approved",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（段落大意資料，重述版）"
-    },
-    {
-      "id": "paragraph_summary:115AG3H03:6",
-      "para_no": 6,
-      "summary": "爸爸希望櫻櫻學會先準備好，再提早五分鐘行動；只要不趕時間，就能降低錯誤，做事也會更從容。",
-      "structure_role": "方法",
-      "status": "approved",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（段落大意資料，重述版）"
+      "id": "paragraph:3H03:04",
+      "paragraph_no": 4,
+      "summary": "爸爸教櫻櫻先想好要做什麼，並且提早五分鐘開始，時間就會有餘。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "指導的事項",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     }
   ],
   "main_idea": {
@@ -1483,5 +1471,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "narrative"
 }

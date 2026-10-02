@@ -752,52 +752,40 @@
   ],
   "paragraph_summary": [
     {
-      "id": "paragraph_summary:115AG3H04:1",
-      "para_no": 1,
-      "summary": "安靜的山腳下有一間小食堂，門前的風鈴會在風吹時發出清亮聲音。",
-      "structure_role": "情境",
-      "status": "approved",
-      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+      "id": "paragraph:3H04:01",
+      "paragraph_no": 1,
+      "summary": "山腳下有一間食堂，由師傅和徒弟兩個人負責。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "故事背景",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
-      "id": "paragraph_summary:115AG3H04:2",
-      "para_no": 2,
-      "summary": "食堂由師徒分工，師傅負責燒水做菜，徒弟康康平時到外面撿柴。",
-      "structure_role": "情境",
-      "status": "approved",
-      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+      "id": "paragraph:3H04:02",
+      "paragraph_no": 2,
+      "summary": "徒弟康康看到鍋子裡的水沸騰了，就舀起熱水再倒回去，想讓水不再滾，這就是揚湯止沸。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "解決問題的過程",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
-      "id": "paragraph_summary:115AG3H04:3",
-      "para_no": 3,
-      "summary": "康康看見鍋子裡的水不停冒泡，師傅正在接待客人，他慌張地想辦法。",
-      "structure_role": "嘗試",
-      "status": "approved",
-      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+      "id": "paragraph:3H04:03",
+      "paragraph_no": 3,
+      "summary": "師傅先請康康想一想，再把灶裡的柴抽出來，這就是釜底抽薪。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "解決問題的過程",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
-      "id": "paragraph_summary:115AG3H04:4",
-      "para_no": 4,
-      "summary": "康康使用揚湯止沸的方法，但水仍持續沸騰，師傅提醒他先思考原因。",
-      "structure_role": "嘗試",
-      "status": "approved",
-      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
-    },
-    {
-      "id": "paragraph_summary:115AG3H04:5",
-      "para_no": 5,
-      "summary": "師傅抽出鍋底的柴火，火勢變小，滾水也跟著停止沸騰。",
-      "structure_role": "領悟",
-      "status": "approved",
-      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
-    },
-    {
-      "id": "paragraph_summary:115AG3H04:6",
-      "para_no": 6,
-      "summary": "師傅教康康先找到問題的根本，再採取方法解決，這種做法叫釜底抽薪。",
-      "structure_role": "領悟",
-      "status": "approved",
-      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）"
+      "id": "paragraph:3H04:04",
+      "paragraph_no": 4,
+      "summary": "師傅告訴康康，要找到問題的根本，才能真正解決。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "學會解決問題",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     }
   ],
   "main_idea": {
@@ -1309,5 +1297,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "narrative"
 }

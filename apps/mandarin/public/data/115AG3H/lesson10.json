@@ -876,52 +876,53 @@
   ],
   "paragraph_summary": [
     {
-      "id": "paragraph:115AG3H:10:01",
+      "id": "paragraph:3H10:01",
       "paragraph_no": 1,
-      "summary": "魯凱婚禮中，新娘穿著族服站上秋千，新郎一次次拉動繩索；秋千盪得越高，就代表新娘越勇敢。",
-      "structure_role": "第1段重點",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材（段落大意）"
+      "paragraph_span": [
+        1,
+        2
+      ],
+      "summary": "新娘站在秋千上，由新郎來回拉動。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "婚禮的高潮",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
-      "id": "paragraph:115AG3H:10:02",
-      "paragraph_no": 2,
-      "summary": "新娘身上的百合花頭飾和其他飾品發出清脆聲音，笑容像花朵，現場歡呼也讓儀式顯得格外熱鬧。",
-      "structure_role": "第2段重點",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材（段落大意）"
-    },
-    {
-      "id": "paragraph:115AG3H:10:03",
+      "id": "paragraph:3H10:02",
       "paragraph_no": 3,
-      "summary": "作者第一次參加這樣的婚禮，覺得一切很新奇；會場響起歌聲，親友以歡笑和掌聲送上心意。",
-      "structure_role": "第3段重點",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材（段落大意）"
+      "summary": "作者第一次參加魯凱族的婚禮，覺得很新奇。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "新奇的婚禮",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
-      "id": "paragraph:115AG3H:10:04",
+      "id": "paragraph:3H10:03",
       "paragraph_no": 4,
-      "summary": "盪秋千結束後，新人先喝連杯酒，再逐一向親友敬酒；大家手拉著手唱歌跳舞，共同祝福新人。",
-      "structure_role": "第4段重點",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材（段落大意）"
+      "summary": "親友唱歌跳舞，一起祝福新人。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "新奇的婚禮",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
-      "id": "paragraph:115AG3H:10:05",
+      "id": "paragraph:3H10:04",
       "paragraph_no": 5,
-      "summary": "活動中還穿插藏新娘的習俗，男方必須帶著親友到部落裡尋找，過程充滿互助合作和歡樂氣氛。",
-      "structure_role": "第5段重點",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材（段落大意）"
+      "summary": "婚禮中還有「藏新娘」的習俗，非常熱鬧。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "新奇的婚禮",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     },
     {
-      "id": "paragraph:115AG3H:10:06",
+      "id": "paragraph:3H10:05",
       "paragraph_no": 6,
-      "summary": "這項安排希望男方更加珍惜新娘，也表現魯凱族愛家互助的傳統精神；婚禮直到深夜才畫下句點，也讓參與者理解儀式背後的文化意義。",
-      "structure_role": "第6段重點",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材（段落大意）"
+      "summary": "一直到深夜，婚禮才結束。",
+      "status": "draft",
+      "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "structure_block": "婚禮的結束",
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
     }
   ],
   "main_idea": {
@@ -1723,5 +1724,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "narrative"
 }
