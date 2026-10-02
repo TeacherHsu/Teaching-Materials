@@ -766,64 +766,170 @@
   ],
   "paragraph_summary": [
     {
-      "id": "paragraph:115AG4K09:01",
+      "id": "paragraph:4K09:01",
       "paragraph_no": 1,
-      "summary": "泰國因佛教文化深厚被稱為千佛之國，各地可見華麗安靜的泰國寺廟，形成重要的宗教景觀。",
-      "structure_role": "泰國與埃及】宗教和古文明",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "泰國與埃及",
-      "structure_focus": "宗教和古文明"
+      "summary": "泰國到處都是華麗的廟，男人要出家當和尚一段時間，水上市場也很熱鬧。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "sha": [
+            "bb4eb3a4",
+            "81ebd9eb",
+            "1a644b7f",
+            "51359140",
+            "19c22832",
+            "badd90e9",
+            "d2deff50",
+            "429e57fb",
+            "79c9f5ea",
+            "474db7be",
+            "78e0a999",
+            "e19a2993",
+            "72b30560",
+            "0e9d9ca2"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K09:02",
+      "id": "paragraph:4K09:02",
       "paragraph_no": 2,
-      "summary": "信奉佛教的男子曾有出家當和尚的傳統，遊客也會逛水上市場，看船隻載著貨物熱鬧交易。",
-      "structure_role": "泰國與埃及】宗教和古文明",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "泰國與埃及",
-      "structure_focus": "宗教和古文明"
+      "summary": "埃及有五千年的古老文化，金字塔世界聞名。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ],
+          "sha": [
+            "bb4eb3a4",
+            "4389fc3d",
+            "782d7669",
+            "b0700909",
+            "7c7a0872",
+            "240cd72c",
+            "38acab83",
+            "16db3ea6",
+            "6bd7d4ed",
+            "47b35cee",
+            "72b30560",
+            "0e9d9ca2"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K09:03",
+      "id": "paragraph:4K09:03",
       "paragraph_no": 3,
-      "summary": "埃及金字塔聞名世界，廣大沙漠雖然乾熱，尼羅河仍為城市和南北土地帶來珍貴水源。",
-      "structure_role": "泰國與埃及】宗教和古文明",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "泰國與埃及",
-      "structure_focus": "宗教和古文明"
+      "summary": "荷蘭地勢低窪，要築堤防潮、用風車排水，鬱金香和水仙是有名的特產。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38
+          ],
+          "sha": [
+            "bb4eb3a4",
+            "de9ee037",
+            "5b9c63cc",
+            "4137f6d7",
+            "119785d2",
+            "c216c8fe",
+            "ecd45c23",
+            "dd889cee",
+            "45a19b48",
+            "58feff0e",
+            "72b30560",
+            "0e9d9ca2"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K09:04",
+      "id": "paragraph:4K09:04",
       "paragraph_no": 4,
-      "summary": "荷蘭部分國土低於海面，因此必須築堤防潮並利用風車排水，居民也發展出適應環境的生活方式。",
-      "structure_role": "荷蘭與奧地利】環境和音樂",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "荷蘭與奧地利",
-      "structure_focus": "環境和音樂"
-    },
-    {
-      "id": "paragraph:115AG4K09:05",
-      "paragraph_no": 5,
-      "summary": "荷蘭盛產鬱金香與水仙；奧地利則以音樂聞名，許多作曲家曾居住，節慶時吸引各地遊客。",
-      "structure_role": "荷蘭與奧地利】環境和音樂",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "荷蘭與奧地利",
-      "structure_focus": "環境和音樂"
-    },
-    {
-      "id": "paragraph:115AG4K09:06",
-      "paragraph_no": 6,
-      "summary": "四個國家各有自然環境、建築、宗教與藝術特色，作者用邀請語氣帶領讀者認識不同家鄉，也理解人們如何依環境創造生活方式的智慧。",
-      "structure_role": "荷蘭與奧地利】環境和音樂",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "荷蘭與奧地利",
-      "structure_focus": "環境和音樂"
+      "summary": "奧地利是音樂的國度，大家都愛音樂，到處充滿歡樂的氣息。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51
+          ],
+          "sha": [
+            "bb4eb3a4",
+            "926e7a85",
+            "d2c1e309",
+            "0d3b523a",
+            "35a4893f",
+            "d7f50444",
+            "0a782c3a",
+            "1a1f3da7",
+            "4136efff",
+            "33c0dd8f",
+            "336467ea",
+            "72b30560",
+            "0e9d9ca2"
+          ]
+        }
+      ]
     }
   ],
   "main_idea": {
@@ -882,7 +988,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "看「泰國與埃及」那一塊，先找泰國。"
+          "text": "看第一段，先找泰國。"
         },
         {
           "level": 2,
@@ -926,7 +1032,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "還是「泰國與埃及」那一塊，往後找埃及。"
+          "text": "看第二段，往後找埃及。"
         },
         {
           "level": 2,
@@ -972,7 +1078,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "換到「荷蘭與奧地利」那一塊，先找荷蘭。"
+          "text": "看第三段，先找荷蘭。"
         },
         {
           "level": 2,
@@ -1018,7 +1124,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "還是「荷蘭與奧地利」那一塊，往後找奧地利。"
+          "text": "看第四段，往後找奧地利。"
         },
         {
           "level": 2,

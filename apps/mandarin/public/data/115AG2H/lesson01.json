@@ -1421,7 +1421,22 @@
       "status": "draft",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "分說",
-      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
+      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "927d7255",
+            "7b3a7014",
+            "9bcdabbc"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph_summary:115AG2H01:02",
@@ -1430,7 +1445,24 @@
       "status": "draft",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "分說",
-      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
+      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
+      "text_spots": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "d5e2cce9",
+            "b6482fe4",
+            "b97feca4",
+            "87bc4cdb"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph_summary:115AG2H01:03",
@@ -1439,7 +1471,24 @@
       "status": "draft",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "分說",
-      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
+      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
+      "text_spots": [
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "c7a931d2",
+            "106e6f3c",
+            "7e6981ea",
+            "43db42e4"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph_summary:115AG2H01:04",
@@ -1448,7 +1497,22 @@
       "status": "draft",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "分說",
-      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
+      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
+      "text_spots": [
+        {
+          "para": 4,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "d3a62409",
+            "5558bbc8",
+            "40caab76"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph_summary:115AG2H01:05",
@@ -1457,7 +1521,30 @@
       "status": "draft",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "總說",
-      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
+      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
+      "text_spots": [
+        {
+          "para": 5,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "d44ef0ec",
+            "951ab0d1",
+            "08c0e262",
+            "a7144f0d",
+            "34e25cd5",
+            "cfb622e5",
+            "32f4f344"
+          ]
+        }
+      ]
     }
   ],
   "main_idea": {

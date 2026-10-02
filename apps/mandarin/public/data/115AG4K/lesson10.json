@@ -846,64 +846,166 @@
   ],
   "paragraph_summary": [
     {
-      "id": "paragraph:115AG4K10:01",
+      "id": "paragraph:4K10:01",
       "paragraph_no": 1,
-      "summary": "一千零一夜的奇幻旋律突破時間和空間，把中東故事帶到世界各地，也讓讀者走進充滿想像的旅程。",
-      "structure_role": "魔毯】飛越空間",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "魔毯",
-      "structure_focus": "飛越空間"
+      "summary": "一千零一夜的故事穿過空間，傳到世界各地。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "66eda384",
+            "3377de17",
+            "a33188e5",
+            "d9213029"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K10:02",
+      "id": "paragraph:4K10:02",
       "paragraph_no": 2,
-      "summary": "飛天魔毯輕薄而身子扁，能載人快速離開危險，只要坐上去，就可在一瞬間飛到遙遠天邊。",
-      "structure_role": "魔毯】飛越空間",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "魔毯",
-      "structure_focus": "飛越空間"
+      "summary": "飛天魔毯一轉眼就能把人載到千山萬水外的地方。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "sha": [
+            "2835ff0f",
+            "cfbb3b88",
+            "bdf07fdb",
+            "605e30b4",
+            "926c7407",
+            "5840313a",
+            "8cdcf696",
+            "6c2d5728",
+            "9f5285eb",
+            "b1c3606b"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K10:03",
+      "id": "paragraph:4K10:03",
       "paragraph_no": 3,
-      "summary": "黃金洞穴有堅硬的頭和牙尖尖，只有聽見芝麻開門的暗語，才會張口讓來訪者進入其中。",
-      "structure_role": "洞穴】暗語與考驗",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "洞穴",
-      "structure_focus": "暗語與考驗"
+      "summary": "黃金洞穴一聽到暗語，就會打開洞門。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 4,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "sha": [
+            "e6ebbb05",
+            "41765368",
+            "9740cac2",
+            "8fe56021",
+            "db69e6e4",
+            "e8255a27",
+            "e6b1e498",
+            "c1a82597",
+            "ba4ba259",
+            "11de8d19",
+            "4328b726"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K10:04",
+      "id": "paragraph:4K10:04",
       "paragraph_no": 4,
-      "summary": "進洞時要小心別被大盜發現，也不可產生貪念；旅人必須邁開大步前進，才不會困在洞中。",
-      "structure_role": "洞穴】暗語與考驗",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "洞穴",
-      "structure_focus": "暗語與考驗"
+      "summary": "揉一揉神燈，巨人就會出現，幫人實現願望。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 5,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "sha": [
+            "d535468d",
+            "c7458559",
+            "91445e66",
+            "342dc637",
+            "102d3c97",
+            "7ffcd947",
+            "6f82e005",
+            "eb991c87",
+            "52384a83",
+            "0b528184",
+            "0b528184",
+            "748ffd72"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K10:05",
+      "id": "paragraph:4K10:05",
       "paragraph_no": 5,
-      "summary": "神奇油燈被揉搓後會出現巨人，能送來山珍海味與榮華富貴，幫助人們實現心中願望。",
-      "structure_role": "神燈】願望與流傳",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "神燈",
-      "structure_focus": "願望與流傳"
-    },
-    {
-      "id": "paragraph:115AG4K10:06",
-      "paragraph_no": 6,
-      "summary": "這些故事沒有隨時間消逝，反而透過吟唱和閱讀傳遍世界，使古老想像繼續陪伴不同世代，也提醒人們在願望與選擇之間保持清醒與勇氣。",
-      "structure_role": "神燈】願望與流傳",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "神燈",
-      "structure_focus": "願望與流傳"
+      "summary": "這些奇幻的故事沒有隨時間消失，一直流傳到今天。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 6,
+          "sentences": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "95373f10",
+            "061f23d4",
+            "5d3f6eed",
+            "d753d338"
+          ]
+        }
+      ]
     }
   ],
   "main_idea": {
@@ -1017,7 +1119,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "看「魔毯」那一塊，魔毯自己說它能做什麼。"
+          "text": "看第二段，魔毯自己說它能做什麼。"
         },
         {
           "level": 2,
@@ -1061,7 +1163,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "換到「洞穴」那一塊，洞穴說它聽到什麼就張嘴。"
+          "text": "看第三段，洞穴說它聽到什麼就張嘴。"
         },
         {
           "level": 2,
@@ -1107,7 +1209,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "看最後「神燈」那一塊，揉過之後誰出現了。"
+          "text": "看第四段，揉過之後誰出現了。"
         },
         {
           "level": 2,

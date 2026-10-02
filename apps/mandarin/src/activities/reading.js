@@ -16,6 +16,7 @@ import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { MatchingGame } from '../components/MatchingGame.js';
 import { resolveSpots } from '../components/EvidencePanel.js';
 import { shuffle } from '../utils/shuffle.js';
+import { getScaffoldLevel } from '../utils/deviceSettings.js';
 
 const CN_NUM = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
 function cnNumber(n) {
@@ -101,6 +102,46 @@ export function buildDecodePairs(lessonId, activity, resolve = resolveSpots) {
 }
 
 /**
+ * 一段一段讀（參考站讀懂課文的第 2 步）：顯示這一段的課文原文，選出它在說什麼。
+ * 原文從密文取（要教室密碼，CF：原文對照放在密碼後面、不另外改寫）；
+ * 正解是這一段的大意，誘答是其他段的大意——學生要真的讀這一段才分得出來。
+ * 沒解鎖、或某段取不到原文，就整步不出現。
+ */
+export function buildParagraphItems(lessonId, paragraphs, optionCount = 3, resolve = resolveSpots, shuffleImpl = shuffle) {
+  const usable = paragraphs.filter((p) => Array.isArray(p.text_spots) && p.text_spots.length);
+  if (usable.length < 2 || usable.length !== paragraphs.length) return [];
+  const items = [];
+  for (const [i, p] of usable.entries()) {
+    const text = resolve(lessonId, p.text_spots);
+    if (!text) return [];
+    const others = usable.filter((o) => o !== p);
+    // 誘答優先挑相鄰的段：內容最接近，最需要真的讀過才分得出來
+    const near = others.sort((a, b) => Math.abs(usable.indexOf(a) - i) - Math.abs(usable.indexOf(b) - i));
+    const distractors = near.slice(0, Math.max(1, optionCount - 1)).map((o) => o.summary);
+    const range = p.paragraph_span
+      ? `第 ${p.paragraph_span[0]}～${p.paragraph_span[1]} 段`
+      : (Number.isFinite(p.paragraph_no) ? `第 ${p.paragraph_no} 段` : `第 ${i + 1} 部分`);
+    const label = `${p.section ? `〈${p.section}〉` : ''}${range}`;
+    items.push({
+      id: `paragraph-read:${lessonId}:${i}`,
+      noReview: true,
+      stem: '這一段在說什麼？',
+      readAllStem: `${text}　這一段在說什麼？`,
+      stemContent: h('div', { class: 'para-read' }, [
+        h('p', { class: 'para-read__label' }, label),
+        h('div', { class: 'para-read__text' }, text),
+        h('p', { class: 'quiz-stem' }, '這一段在說什麼？'),
+      ]),
+      options: shuffleImpl([p.summary, ...distractors]),
+      answer: p.summary,
+      explanation: `這一段在說：${p.summary}`,
+      hints: ['先找這一段在講誰、做了什麼，再看哪個選項說的是同一件事。'],
+    });
+  }
+  return items;
+}
+
+/**
  * @param {object} lesson
  * @param {() => void} onBack
  */
@@ -123,12 +164,16 @@ export function buildReadingActivity(lesson, onBack) {
   const classifyItems = activity?.type === 'classify' ? buildClassifyItems(activity) : [];
   const decodePairs = activity?.type === 'decode' ? buildDecodePairs(lesson.lesson_id, activity) : [];
 
+  const paragraphItems = buildParagraphItems(lesson.lesson_id, paragraphs, Math.max(2, getScaffoldLevel().optionCount));
+
   const steps = [];
   if (paragraphs.length >= 3) {
     // 有課文地圖就不再做「兩段比較」暖身：學生剛看過全篇骨架，
     // 直接排全篇就是一次回想練習。
     steps.push('map');
   }
+  // 一段一段讀：要解鎖課文才出現（原文在密碼後面）
+  if (paragraphItems.length >= 2) steps.push('paragraphs');
   // 第三步依文體：說明文分類、詩句解碼；都沒有就排順序（故事最適合）
   if (classifyItems.length >= 3) steps.push('classify');
   else if (decodePairs.length >= 2) steps.push('decode');
@@ -180,6 +225,18 @@ export function buildReadingActivity(lesson, onBack) {
       container.appendChild(walkthrough.status);
       container.appendChild(walkthrough.grid);
       container.appendChild(h('div', { class: 'quiz-option-row' }, [next]));
+    } else if (step === 'paragraphs') {
+      container.appendChild(TaskBanner({ label: '一段一段讀：讀完這一段，選出它在說什麼', step: stepLabel }));
+      if (isPreview() && paragraphs.some((p) => p.status === 'draft')) {
+        container.appendChild(h('p', { class: 'meta' }, '「待審」標籤只在預覽模式顯示，正式上線只會出現教師核准過的內容。'));
+      }
+      container.appendChild(ChoiceQuiz({
+        items: paragraphItems,
+        backLabel: isLast ? '回課程首頁' : '本課先完成',
+        onBack,
+        onContinue: isLast ? null : () => { stepIndex += 1; renderStep(); },
+        continueLabel: '繼續',
+      }));
     } else if (step === 'classify') {
       container.appendChild(TaskBanner({ label: '說明文分類：這件事屬於哪一個？', step: stepLabel }));
       if (isPreview() && activity.status === 'draft') {
@@ -224,7 +281,9 @@ export function buildReadingActivity(lesson, onBack) {
       }));
     } else if (step === 'order') {
       container.appendChild(TaskBanner({
-        label: lesson.genre === 'narrative' ? '故事排順序：把事情照發生的先後排好' : '把段落大意排回課文順序',
+        // 「照課文的順序」而不是「照發生的先後」：倒敘的課文（四上 L03 第一段就是
+        // 最後比賽投進的畫面）兩者正好相反，正解是課文順序。
+        label: lesson.genre === 'narrative' ? '故事排順序：照課文的順序排好' : '把段落大意排回課文順序',
         step: stepLabel,
       }));
       if (isPreview() && paragraphs.some((p) => p.status === 'draft')) {

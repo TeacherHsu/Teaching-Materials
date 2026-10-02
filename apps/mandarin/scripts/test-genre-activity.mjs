@@ -27,3 +27,26 @@ assert.equal(pairs[1].left, '故人具雞黍，邀我至田家', '有標點就�
 // 沒解鎖（取不到原文）就整組不出，不顯示半套
 assert.deepEqual(buildDecodePairs('X', { pairs: [{ line: { para: 9, sentences: [0] }, meaning: 'x' }] }, resolve), []);
 console.log('✅ 依文體活動：分類答案必在選項內；詩句解碼詩行分隔正確、沒解鎖就不出現');
+
+// ── 一段一段讀
+{
+  const { buildParagraphItems } = await import('../src/activities/reading.js');
+  const paras = [
+    { paragraph_no: 1, summary: 'A 在講開頭', text_spots: [{ para: 1, sentences: [0] }] },
+    { paragraph_no: 2, paragraph_span: [2, 4], summary: 'B 在講經過', text_spots: [{ para: 1, sentences: [1] }] },
+    { paragraph_no: 5, summary: 'C 在講結果', text_spots: [{ para: 1, sentences: [2] }] },
+  ];
+  const text = { 0: '第一段原文', 1: '第二段原文', 2: '第三段原文' };
+  const resolve = (_id, spots) => text[spots[0].sentences[0]] ?? null;
+  const items = buildParagraphItems('X', paras, 3, resolve, (a) => a);
+  assert.equal(items.length, 3);
+  assert.equal(items[1].answer, 'B 在講經過');
+  assert.ok(items[1].options.includes('B 在講經過') && items[1].options.length === 3);
+  assert.equal(items[1].noReview, true, '離開原文就沒意義的題目不進錯題盒');
+  assert.equal(buildParagraphItems('X', paras, 2, resolve, (a) => a)[0].options.length, 2, '支持層兩個選項');
+  assert.deepEqual(buildParagraphItems('X', paras, 3, () => null), [], '沒解鎖就整步不出現');
+  assert.deepEqual(buildParagraphItems('X', [paras[0], { paragraph_no: 2, summary: 'x' }], 3, resolve), [], '有段落對不上原文就整步不出');
+  const { inScope } = await import('../src/utils/mistakes.js');
+  assert.ok(inScope);
+  console.log('✅ 一段一段讀：原文取自密文、誘答是鄰近段大意、選項數跟著等級、不進錯題盒');
+}

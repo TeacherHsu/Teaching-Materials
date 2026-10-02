@@ -844,64 +844,206 @@
   ],
   "paragraph_summary": [
     {
-      "id": "paragraph:115AG4K03:01",
+      "id": "paragraph:4K03:01",
       "paragraph_no": 1,
-      "summary": "主角接受同學邀約，勇敢加入籃球社，希望自己有朝一日能在球場上發揮實力，成為受到大家肯定的選手。",
-      "structure_role": "加入】夢想與害怕",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "加入",
-      "structure_focus": "夢想與害怕"
+      "summary": "主角投進最後一球，全場都為他喝采。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "d8e19e1a",
+            "40216719",
+            "aa9d377d",
+            "94cb3c32",
+            "0bbfab31"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K03:02",
+      "id": "paragraph:4K03:02",
       "paragraph_no": 2,
-      "summary": "初次站上球場時，高高的球架像遙不可及的山，主角既害怕又不懂投球方法，只能先聽學長鼓勵。",
-      "structure_role": "加入】夢想與害怕",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "加入",
-      "structure_focus": "夢想與害怕"
+      "summary": "主角想著有朝一日成為球場上的風雲人物，就加入了籃球社。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "sha": [
+            "ed2600c0",
+            "74fdf4ec",
+            "d41b1749",
+            "2ad45c0c",
+            "bc2101fe",
+            "c7e00f56",
+            "c3de7811",
+            "0fe6ead2"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K03:03",
+      "id": "paragraph:4K03:03",
       "paragraph_no": 3,
-      "summary": "學長用熟能生巧勉勵他多練習；開始運球時，球常反彈飛撞下巴，讓學習過程充滿挫折與挑戰。",
-      "structure_role": "練習】挫折與進步",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "練習",
-      "structure_focus": "挫折與進步"
+      "summary": "剛上球場時，籃球架像遙不可及的高山，主角很害怕，學長為他打氣。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "sha": [
+            "7b62d16b",
+            "e0be62b4",
+            "1016b192",
+            "bcd9ca43",
+            "f53658b3",
+            "fa85fe34",
+            "eb61b808",
+            "c90c6945",
+            "67678dc8"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K03:04",
+      "id": "paragraph:4K03:04",
       "paragraph_no": 4,
-      "summary": "主角沒有放棄，每天提早到場反覆練習，逐漸學會控制籃球；當他投進籃時，終於感受運動的喜悅。",
-      "structure_role": "練習】挫折與進步",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "練習",
-      "structure_focus": "挫折與進步"
+      "summary": "為了夢想，主角每天最早到球場練習，慢慢學會運球、投進籃框，高興極了。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 4,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "sha": [
+            "e1151d8d",
+            "68abb921",
+            "c7305872",
+            "4ca809f7",
+            "adb3090c",
+            "812c3a1e",
+            "78d5534d",
+            "39df2c79",
+            "4c4806ed",
+            "48c0678b",
+            "d7dba5bb",
+            "b130c870",
+            "1d250c62",
+            "c2099ea7"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K03:05",
+      "id": "paragraph:4K03:05",
       "paragraph_no": 5,
-      "summary": "比賽結束前只剩五秒，雙方分數相同；主角帶著同伴鼓勵上場，努力讓自己在緊張中保持冷靜。",
-      "structure_role": "比賽】緊張與成就",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "比賽",
-      "structure_focus": "緊張與成就"
+      "summary": "比賽只剩五秒、兩隊平分秋色，主角帶著同伴的鼓勵上場，心裡好緊張。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 5,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "sha": [
+            "5182d376",
+            "54ce5981",
+            "cdfd6066",
+            "89ca4fa3",
+            "1c0052a8",
+            "56253c6b",
+            "7f29028b",
+            "faa13d50",
+            "5365ec97",
+            "45990373",
+            "0e7943fa",
+            "54ce5981",
+            "d9f7bfb6"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K03:06",
+      "id": "paragraph:4K03:06",
       "paragraph_no": 6,
-      "summary": "他忘記四周喧鬧，深深吸氣後將球拋出，籃球沿著優美弧線飛向球框，最後進球並獲得全場喝采，證明持續努力能使夢想成真。",
-      "structure_role": "比賽】緊張與成就",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "比賽",
-      "structure_focus": "緊張與成就"
+      "summary": "主角深深吸一口氣，把球投了出去。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 6,
+          "sentences": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "0f978f3e",
+            "ff7bcb20",
+            "a15d8145",
+            "8469b7d6"
+          ]
+        }
+      ]
     }
   ],
   "main_idea": {
@@ -962,7 +1104,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "看「加入」那一塊，他為什麼想打籃球。"
+          "text": "看第二段，他為什麼想打籃球。"
         },
         {
           "level": 2,
@@ -1010,7 +1152,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "換到「練習」那一塊，有人在他害怕時說話。"
+          "text": "看第三段，有人在他害怕時說話。"
         },
         {
           "level": 2,
@@ -1052,7 +1194,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "還是「練習」那一塊，看他每天怎麼做。"
+          "text": "看第四段，找他每天怎麼做。"
         },
         {
           "level": 2,
@@ -1098,7 +1240,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "看最後「比賽」那一塊，投球前他做了什麼動作。"
+          "text": "看第六段，投球前他做了什麼動作。"
         },
         {
           "level": 2,

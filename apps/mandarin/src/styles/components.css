@@ -3357,3 +3357,29 @@
   border-bottom: 3px solid var(--module-color, var(--color-accent));
   background: var(--color-surface);
 }
+
+/* 一段一段讀：顯示這一段的課文原文 */
+.para-read__label {
+  margin: 0 0 var(--space-2);
+  font-size: var(--font-size-meta);
+  font-weight: 700;
+  color: var(--module-color-dark, var(--text-secondary));
+}
+.para-read__text {
+  max-height: 16em;
+  overflow-y: auto;
+  margin-bottom: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-left: 6px solid var(--module-color, var(--color-accent));
+  border-radius: 10px;
+  background: var(--color-surface);
+  font-size: var(--font-size-body);
+  line-height: 1.9;
+  color: var(--text-primary);
+}
+/* 有課文原文的題目：原文要用整行寬度，聽題目按鈕排到下面 */
+.quiz-title-row:has(.para-read),
+.audio-control-group--prompt:has(.para-read) { flex-wrap: wrap; }
+.quiz-stem:has(.para-read) { flex: 1 1 100%; max-width: none; }
+.para-read { width: 100%; }
+.audio-control-group--prompt:has(.para-read) { flex: 1 1 100%; }

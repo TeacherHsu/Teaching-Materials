@@ -899,64 +899,172 @@
   ],
   "paragraph_summary": [
     {
-      "id": "paragraph:115AG4K08:01",
+      "id": "paragraph:4K08:01",
       "paragraph_no": 1,
-      "summary": "城市中居高臨下的大樓像建築界的長頸鹿，不只外形醒目，也具有重要功能並形成特有景觀。",
-      "structure_role": "總說與臺北】高樓功能",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "總說與臺北",
-      "structure_focus": "高樓功能"
+      "summary": "居高臨下的大樓，就像建築界的長頸鹿。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "35ce6352",
+            "e4c1c3fb",
+            "7bbc1381",
+            "2fd2c03e",
+            "51ba757c",
+            "24a198c9"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K08:02",
+      "id": "paragraph:4K08:02",
       "paragraph_no": 2,
-      "summary": "台北一○一外形像竹節向上開展，象徵經濟高升；大樓上的古錢圖案也代表金融中心的角色。",
-      "structure_role": "總說與臺北】高樓功能",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "總說與臺北",
-      "structure_focus": "高樓功能"
+      "summary": "台北一○一的外形像一節節的竹子，代表經濟節節高升，也是金融中心。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "sha": [
+            "8dcd7a58",
+            "41adcfef",
+            "7aa2e880",
+            "e79e63e6",
+            "263950ea",
+            "b1b8014a",
+            "d73e2e82",
+            "4d5b73f9",
+            "15456484",
+            "6516c11d",
+            "c3d6e779"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K08:03",
+      "id": "paragraph:4K08:03",
       "paragraph_no": 3,
-      "summary": "建築內安裝大型阻尼器，可以減少強風吹動的搖晃並避免地震造成危險，跨年煙火也吸引世界目光。",
-      "structure_role": "總說與臺北】高樓功能",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "總說與臺北",
-      "structure_focus": "高樓功能"
+      "summary": "東京晴空塔底部是三角形、往上變圓，原本是為了改善通訊而蓋，後來帶來可觀的商機。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29
+          ],
+          "sha": [
+            "b28bab7d",
+            "a387954e",
+            "507dd3ee",
+            "7c2272b2",
+            "0d756f08",
+            "83bd94a6",
+            "ad4fe6b9",
+            "0edc6d35",
+            "9ed6dfab",
+            "51ba757c",
+            "5f3bffc7",
+            "d41c022c"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K08:04",
+      "id": "paragraph:4K08:04",
       "paragraph_no": 4,
-      "summary": "東京晴空塔由三角形底部逐漸轉為圓形，白色塔身帶有青色光澤，外觀能融入遼闊藍天。",
-      "structure_role": "東京與吉隆坡】外形特色",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "東京與吉隆坡",
-      "structure_focus": "外形特色"
+      "summary": "吉隆坡雙峰塔中間有連通橋，方便人們往來，也是大型商場。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37
+          ],
+          "sha": [
+            "ae6c0a57",
+            "0f998d4e",
+            "26162d0d",
+            "ce4eaeae",
+            "9f6ebb2b",
+            "52e9ab42",
+            "c8b53604",
+            "bb4ebb43"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K08:05",
+      "id": "paragraph:4K08:05",
       "paragraph_no": 5,
-      "summary": "它原是改善城市收訊的電波通訊塔，後來結合都市開發，為周邊地區帶來觀光人潮與商業機會。",
-      "structure_role": "東京與吉隆坡】外形特色",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "東京與吉隆坡",
-      "structure_focus": "外形特色"
-    },
-    {
-      "id": "paragraph:115AG4K08:06",
-      "paragraph_no": 6,
-      "summary": "吉隆坡雙峰塔之間設有連通橋，方便人們往來；多功能高樓也讓旅客認識當地文化與城市特色，並留下難忘的城市印象。",
-      "structure_role": "東京與吉隆坡】外形特色",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "東京與吉隆坡",
-      "structure_focus": "外形特色"
+      "summary": "這些有特色的大樓吸引四面八方的人，讓人留下難忘的印象。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44
+          ],
+          "sha": [
+            "a6600852",
+            "9183faf3",
+            "6944651a",
+            "c2d884f0",
+            "53db9bb5",
+            "23f27148",
+            "0b0f2f34"
+          ]
+        }
+      ]
     }
   ],
   "main_idea": {
@@ -1015,7 +1123,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "看「總說與臺北」那一塊，開頭就說長頸鹿是指什麼。"
+          "text": "看第一段，開頭就說長頸鹿是指什麼。"
         },
         {
           "level": 2,
@@ -1059,7 +1167,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "還是「總說與臺北」那一塊，一○一的外形像一種植物。"
+          "text": "看第二段，一○一的外形像一種植物。"
         },
         {
           "level": 2,
@@ -1103,7 +1211,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "換到「東京與吉隆坡」那一塊，先找晴空塔。"
+          "text": "看第三段，先找晴空塔。"
         },
         {
           "level": 2,
@@ -1147,7 +1255,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "還是「東京與吉隆坡」那一塊，往後找雙峰塔。"
+          "text": "看第四段，往後找雙峰塔。"
         },
         {
           "level": 2,

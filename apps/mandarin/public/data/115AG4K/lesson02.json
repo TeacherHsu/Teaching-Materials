@@ -825,64 +825,172 @@
   ],
   "paragraph_summary": [
     {
-      "id": "paragraph:115AG4K02:01",
+      "id": "paragraph:4K02:01",
       "paragraph_no": 1,
-      "summary": "作者放學後飛快趕回家，桌上的美味像在點心招手，有時還能喝到香甜柔軟、令人期待的紅豆湯。",
-      "structure_role": "回家】點心與好友",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "回家",
-      "structure_focus": "點心與好友"
+      "summary": "一放學，作者就飛也似的跑回家。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "fdf11081",
+            "32c3ecee"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K02:02",
+      "id": "paragraph:4K02:02",
       "paragraph_no": 2,
-      "summary": "好友來家裡一起寫功課，大家卻抵擋不了食物香氣，常把作業拋到腦後，先將眼前點心吃得一乾二淨。",
-      "structure_role": "回家】點心與好友",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "回家",
-      "structure_focus": "點心與好友"
+      "summary": "回到家，作者先吃美味的點心，再寫功課。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "sha": [
+            "4c9c10ff",
+            "b1c3937d",
+            "20f4e992",
+            "d670c2f8",
+            "7526d082",
+            "242f55ed",
+            "784163bc",
+            "d74d77f3",
+            "75e1482d",
+            "a4d0c782",
+            "ccb21689"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K02:03",
+      "id": "paragraph:4K02:03",
       "paragraph_no": 3,
-      "summary": "國語日報是作者重要的精神食糧，他和姐姐看報時曾爭著先讀，後來想出分看左右面與正反面的好方法。",
-      "structure_role": "活動】閱讀與遊戲",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "活動",
-      "structure_focus": "閱讀與遊戲"
+      "summary": "對作者來說，放學後最快樂的事，是讀國語日報這份精神食糧。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "sha": [
+            "8a339733",
+            "fa865b58",
+            "2add1783",
+            "cfb731e7",
+            "b8b5d741",
+            "492ee9e7",
+            "aec1f7e9",
+            "ee1db18d",
+            "2ea8ec4f",
+            "d0f0cd21",
+            "a153e0d8",
+            "6b9e8d04"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K02:04",
+      "id": "paragraph:4K02:04",
       "paragraph_no": 4,
-      "summary": "完成作業後，大家到公園玩警察抓小偷，也一起比賽跳繩，人人奮勇爭先，享受追跑和競賽的樂趣。",
-      "structure_role": "活動】閱讀與遊戲",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "活動",
-      "structure_focus": "閱讀與遊戲"
+      "summary": "寫完功課，作者和同學玩警察抓小偷、比賽跳繩。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 4,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "sha": [
+            "f68ad457",
+            "9e6c0aa0",
+            "f8625b5e",
+            "5d74bd40",
+            "be5680a3",
+            "5c87a073",
+            "d593b90d",
+            "e760d5a7",
+            "fa180bd2",
+            "36c20ee7",
+            "56d24b2f",
+            "d986c37c",
+            "6e7fd55d"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K02:05",
+      "id": "paragraph:4K02:05",
       "paragraph_no": 5,
-      "summary": "太陽快下山時，大人呼喊孩子回家吃飯，大家才依依不捨結束活動，告別共同遊玩的朋友和公園。",
-      "structure_role": "感受】留戀幸福時光",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "感受",
-      "structure_focus": "留戀幸福時光"
-    },
-    {
-      "id": "paragraph:115AG4K02:06",
-      "paragraph_no": 6,
-      "summary": "作者喜歡吃點心、看報紙與玩遊戲，覺得放學時間過得特別快，希望幸福快樂的時光能長久停留。",
-      "structure_role": "感受】留戀幸福時光",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "感受",
-      "structure_focus": "留戀幸福時光"
+      "summary": "作者覺得放學後的時光很幸福，過得特別快，真希望時間能暫停。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 5,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "sha": [
+            "05616ea8",
+            "2e7f3741",
+            "e6967727",
+            "e4508129",
+            "baa27096",
+            "85ce9721"
+          ]
+        }
+      ]
     }
   ],
   "main_idea": {
@@ -941,7 +1049,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "看「回家」那一塊，作者怎麼回到家。"
+          "text": "看第一段，作者怎麼回到家。"
         },
         {
           "level": 2,
@@ -996,7 +1104,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "還是「回家」那一塊，注意他先做什麼、後做什麼。"
+          "text": "看第二段，注意他先做什麼、後做什麼。"
         },
         {
           "level": 2,
@@ -1051,7 +1159,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "換到「活動」那一塊，看他在家裡做的事。"
+          "text": "看第三段，找他在家裡做的事。"
         },
         {
           "level": 2,
@@ -1099,7 +1207,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "看最後「感受」那一塊，他捨不得什麼。"
+          "text": "看第五段，他捨不得什麼。"
         },
         {
           "level": 2,

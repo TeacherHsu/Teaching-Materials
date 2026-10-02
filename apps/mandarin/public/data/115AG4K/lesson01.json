@@ -1032,64 +1032,182 @@
   ],
   "paragraph_summary": [
     {
-      "id": "paragraph:115AG4K01:01",
+      "id": "paragraph:4K01:01",
       "paragraph_no": 1,
-      "summary": "大家在游泳池自在前進，想像自己化成魚、青蛙和蝴蝶，在水中展現不同姿態，也感受身體活動的自由。",
-      "structure_role": "游泳】想像、歡樂與自信",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "游泳",
-      "structure_focus": "想像、歡樂與自信"
+      "section": "游泳",
+      "summary": "大家在游泳池裡游呀游，想像自己變成魚、青蛙和蝴蝶。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "2fa82064",
+            "d73541c3",
+            "3c8c9317",
+            "c648f85f",
+            "011ab0d7",
+            "f000f0d4"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K01:02",
+      "id": "paragraph:4K01:02",
       "paragraph_no": 2,
-      "summary": "歡笑聲接連響起，晶亮的水珠一串串飛向空中，水花和笑聲彼此呼應，呈現熱鬧又快樂的游泳情景。",
-      "structure_role": "游泳】想像、歡樂與自信",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "游泳",
-      "structure_focus": "想像、歡樂與自信"
+      "section": "游泳",
+      "summary": "笑聲一陣接一陣，晶亮的水珠也一串串飛起來。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "966868d7",
+            "b4422f7a",
+            "3284cfd0",
+            "3fca68d7"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K01:03",
+      "id": "paragraph:4K01:03",
       "paragraph_no": 3,
-      "summary": "游泳讓大家建立堅定自信與遠大志向，也期待自己能勇敢前進，活出多采多姿而充滿希望的人生。",
-      "structure_role": "游泳】想像、歡樂與自信",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "游泳",
-      "structure_focus": "想像、歡樂與自信"
+      "section": "游泳",
+      "summary": "游泳讓我們游出自信和壯志，也游出多采多姿的人生。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "3c8c9317",
+            "eff5246c",
+            "9b63a3fd",
+            "4020b5b8"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K01:04",
-      "paragraph_no": 4,
-      "summary": "主角穿好裝備溜直排輪，風從耳旁吹過，眼前景物快速後退，速度感讓他覺得天地十分寬廣。",
-      "structure_role": "溜直排輪】速度、動作與快樂",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "溜直排輪",
-      "structure_focus": "速度、動作與快樂"
+      "id": "paragraph:4K01:04",
+      "paragraph_no": 1,
+      "section": "溜直排輪",
+      "summary": "踩上直排輪加速滑行，風吹過耳邊，我想像自己是一隻飛鷹，在天地間遨遊。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 4,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "sha": [
+            "9bd64ad6",
+            "cbd1e7a7",
+            "cc31fa2f",
+            "31f40d6e",
+            "c217a26b",
+            "1e94d749",
+            "3df54364",
+            "2e3becde",
+            "5ca2d6ec",
+            "72caf16a"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K01:05",
-      "paragraph_no": 5,
-      "summary": "他想像自己成為飛鷹，在寬闊天地間滑行加速，感受迎風前進、自由移動和勇敢探索的快樂。",
-      "structure_role": "溜直排輪】速度、動作與快樂",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "溜直排輪",
-      "structure_focus": "速度、動作與快樂"
+      "id": "paragraph:4K01:05",
+      "paragraph_no": 2,
+      "section": "溜直排輪",
+      "summary": "轉身跳躍時，陽光晃動、汗水滴落，我想像自己是一顆陀螺。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 5,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "sha": [
+            "cc31fa2f",
+            "c91b0c44",
+            "d4991eeb",
+            "9d967a0e",
+            "f3eab9ad",
+            "156f32da",
+            "8729e436",
+            "4d5091be"
+          ]
+        }
+      ]
     },
     {
-      "id": "paragraph:115AG4K01:06",
-      "paragraph_no": 6,
-      "summary": "陽光與汗水陪伴他像陀螺般轉身跳躍，所有煩惱被風吹走，只留下緊緊跟隨自己的快樂心情，也更加喜愛迎風運動的感覺。",
-      "structure_role": "溜直排輪】速度、動作與快樂",
-      "status": "approved",
-      "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
-      "structure_block": "溜直排輪",
-      "structure_focus": "速度、動作與快樂"
+      "id": "paragraph:4K01:06",
+      "paragraph_no": 3,
+      "section": "溜直排輪",
+      "summary": "所有的煩惱都被風吹走，只剩下快樂跟著我。",
+      "status": "draft",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "text_spots": [
+        {
+          "para": 6,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "sha": [
+            "0aa78e0c",
+            "11c1c5ab",
+            "229c3b37",
+            "b6a12732",
+            "d19b5ac6",
+            "447f7816"
+          ]
+        }
+      ]
     }
   ],
   "main_idea": {

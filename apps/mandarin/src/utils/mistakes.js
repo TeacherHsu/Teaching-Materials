@@ -68,7 +68,9 @@ function snapshot(item) {
 
 /** 這一題是不是可以收進錯題盒（沒有選項或答案的題型就不收）。 */
 function storable(item) {
-  return Boolean(item && Array.isArray(item.options) && item.options.length >= 2 && item.answer);
+  // noReview：題目離開原本的畫面就沒有意義（「一段一段讀」要搭配那一段原文），
+  // 收進錯題盒重練時只剩一句「這一段在說什麼？」，所以不收。
+  return Boolean(item && !item.noReview && Array.isArray(item.options) && item.options.length >= 2 && item.answer);
 }
 
 // ── 作答情境 ──────────────────────────────────────
