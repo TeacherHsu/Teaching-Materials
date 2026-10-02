@@ -1131,50 +1131,71 @@
     {
       "id": "paragraph:12:01",
       "paragraph_no": 1,
-      "summary": "羅達的農夫布大爺克服不利條件，種出許多好南瓜。",
-      "structure_role": "【背景與開端】疼愛南瓜、南瓜失竊",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "summary": "羅達的農夫靠著本事克服當地不利的條件，種出又多又好的南瓜。",
+      "status": "draft",
+      "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02"
     },
     {
       "id": "paragraph:12:02",
       "paragraph_no": 2,
-      "summary": "布大爺忍痛決定賣掉南瓜，採收前卻發現南瓜被偷走。",
-      "structure_role": "【發展與高潮】追查南瓜、以蒂為證",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "paragraph_span": [
+        2,
+        3
+      ],
+      "summary": "布大爺忍痛割捨四十顆心愛的大南瓜。",
+      "status": "draft",
+      "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02"
     },
     {
       "id": "paragraph:12:03",
-      "paragraph_no": 3,
-      "summary": "冷靜思考後，他判斷南瓜已被運往加迪斯市場。",
-      "structure_role": "【結尾】失而復得",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "paragraph_no": 4,
+      "summary": "打算採收的那天早上，他發現南瓜被偷走了。",
+      "status": "draft",
+      "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02"
     },
     {
       "id": "paragraph:12:04",
-      "paragraph_no": 4,
-      "summary": "布大爺在市場認出南瓜，卻與菜販弗大叔起了爭執。",
-      "structure_role": "第4段重點",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "paragraph_no": 5,
+      "paragraph_span": [
+        5,
+        15
+      ],
+      "summary": "他在市場認出自己種的南瓜，和菜販起了爭執；警察要他拿出證據。",
+      "status": "draft",
+      "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02"
     },
     {
       "id": "paragraph:12:05",
-      "paragraph_no": 5,
-      "summary": "布大爺拿出留下的南瓜蒂，證明自己才是南瓜主人。",
-      "structure_role": "第5段重點",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "paragraph_no": 16,
+      "paragraph_span": [
+        16,
+        20
+      ],
+      "summary": "弗大叔卻一口咬定，自己才是南瓜的主人。",
+      "status": "draft",
+      "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02"
     },
     {
       "id": "paragraph:12:06",
-      "paragraph_no": 6,
-      "summary": "他拿回賣瓜的錢，慶幸存根使南瓜失而復得。",
-      "structure_role": "第6段重點",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "paragraph_no": 21,
+      "paragraph_span": [
+        21,
+        23
+      ],
+      "summary": "布大爺拿出新鮮的南瓜蒂，一一接回南瓜上，絲毫不差，證明南瓜是他的。",
+      "status": "draft",
+      "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02"
+    },
+    {
+      "id": "paragraph:12:07",
+      "paragraph_no": 24,
+      "paragraph_span": [
+        24,
+        25
+      ],
+      "summary": "他拿回賣南瓜的錢，幸虧當初留下了「存根」，南瓜才能失而復得。",
+      "status": "draft",
+      "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02"
     }
   ],
   "main_idea": {

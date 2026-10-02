@@ -991,50 +991,53 @@
     {
       "id": "paragraph:02:01",
       "paragraph_no": 1,
-      "summary": "女兒在學校被同學冷落，寫信向父親詢問原因，感到害怕又焦急。",
-      "structure_role": "【第一大意】女兒被冷落",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "summary": "女兒在班上被同學晾在一旁，紅著眼眶回家。",
+      "status": "draft",
+      "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02"
     },
     {
       "id": "paragraph:02:02",
       "paragraph_no": 2,
-      "summary": "她回想同學稱讚雙胞胎、朋友忽然不理自己的情景，心裡很難過。",
-      "structure_role": "【第二大意】父親分享孤單經驗",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "paragraph_span": [
+        2,
+        4
+      ],
+      "summary": "父親回想自己小時候也遇過同樣的事：好朋友忽然不理他，他慌得臉色慘白。",
+      "status": "draft",
+      "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02"
     },
     {
       "id": "paragraph:02:03",
-      "paragraph_no": 3,
-      "summary": "父親想起童年在幼稚園迷路、獨自害怕的經驗，理解女兒的孤單。",
-      "structure_role": "【第三大意】安慰與期許",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "paragraph_no": 5,
+      "paragraph_span": [
+        5,
+        9
+      ],
+      "summary": "那段日子他又憤慨又擔憂，幾乎受不了被好友冷落的滋味。",
+      "status": "draft",
+      "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02"
     },
     {
       "id": "paragraph:02:04",
-      "paragraph_no": 4,
-      "summary": "父親也曾因朋友冷淡而難過，後來知道朋友有困難，學會反省與關心。",
-      "structure_role": "第4段重點",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "paragraph_no": 10,
+      "paragraph_span": [
+        10,
+        11
+      ],
+      "summary": "後來他弄清楚好友疏遠他的原因，也及時反省了自己。",
+      "status": "draft",
+      "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02"
     },
     {
       "id": "paragraph:02:05",
-      "paragraph_no": 5,
-      "summary": "父親告訴女兒，不要只等別人接近自己，也要主動關懷別人。",
-      "structure_role": "第5段重點",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
-    },
-    {
-      "id": "paragraph:02:06",
-      "paragraph_no": 6,
-      "summary": "父親期許女兒成為不怕寂寞、能體諒別人並堅強處理問題的人。",
-      "structure_role": "第6段重點",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）"
+      "paragraph_no": 12,
+      "paragraph_span": [
+        12,
+        13
+      ],
+      "summary": "他期許女兒練成不怕寂寞的本事，遇到問題能自己堅強面對。",
+      "status": "draft",
+      "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02"
     }
   ],
   "main_idea": {
@@ -2362,6 +2365,5 @@
       "status": "available",
       "activity": "review"
     }
-  },
-  "summary_issue": "本課段落大意疑似與課文不符：課文中高頻出現的主要人物在六筆大意中完全沒有出現。L11 另外寫了課文沒有的「芡粉」（課文用的是「勾芡」），且官方結構表談的是母親煮羹湯，與大意內容不同。source 欄標為官方教材，但內容對不上，需要 CF 對照課本裁定。"
+  }
 }
