@@ -35,8 +35,26 @@ function buildChoiceItem(word, all) {
     options,
     answer: word.word,
     explanation: `「${word.word}」：${word.meaning}`,
-    hints: ['再想想這個意思最常用在哪一個詞語裡。'],
+    hints: vocabularyHints(word, options.length),
   };
+}
+
+/**
+ * 語詞意思的三層提示：
+ *   1 策略：找意思裡最重要的字
+ *   2 縮小：意思和答案共有的字（「邀約」的意思「邀請、約請」裡有「邀」），並劃掉一個選項
+ *   3 示範：把意思念出來，請他把每個語詞放進去說說看
+ * 共有的字是從資料算的，沒有就只劃選項。
+ */
+export function vocabularyHints(word, optionCount) {
+  const shared = [...new Set([...String(word.word)])].filter((ch) => /\p{Script=Han}/u.test(ch) && String(word.meaning).includes(ch));
+  return [
+    { text: '先找意思裡最重要的那幾個字。' },
+    shared.length
+      ? { text: `意思裡有「${shared[0]}」這個字，找找看哪個語詞也有。`, eliminate: optionCount >= 3 ? 1 : 0 }
+      : { text: '先把意思明顯不一樣的劃掉。', eliminate: optionCount >= 3 ? 1 : 0 },
+    { text: `聽一聽意思：「${word.meaning}」，把剩下的語詞放進去說說看。`, speak: word.meaning },
+  ];
 }
 
 /**

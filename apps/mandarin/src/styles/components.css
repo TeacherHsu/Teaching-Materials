@@ -3398,3 +3398,16 @@
 }
 .task-step__progress { font-weight: 700; color: var(--module-color-dark, var(--text-primary)); }
 .task-step__name { font-size: var(--font-size-button); color: var(--text-primary); }
+
+/* 提示刪掉的選項：劃掉、變淡，還看得到（學生知道「這個不是」） */
+.quiz-option--eliminated {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  opacity: 0.45;
+}
+/* 排句子提示：標亮下一塊該放的詞塊 */
+.sentence-chip--hinted {
+  outline: 4px solid var(--color-accent);
+  outline-offset: 3px;
+  background: #fff4e8;
+}

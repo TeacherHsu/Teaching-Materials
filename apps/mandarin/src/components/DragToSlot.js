@@ -1,6 +1,7 @@
 import { h, clear } from '../utils/dom.js';
 import { ProgressIndicator } from './ProgressIndicator.js';
 import { HintPanel } from './HintPanel.js';
+import { getScaffoldLevel } from '../utils/deviceSettings.js';
 import { CompletionFeedback } from './CompletionFeedback.js';
 import { SpeakButton } from './SpeakButton.js';
 import { ReadAllButton } from './ReadAllButton.js';
@@ -286,8 +287,8 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
       if (isCorrect) {
         answered = true;
         correctCount += 1;
-        recordOutcome({ firstTry: attempts === 1, revealed: false });
-        celebrateCorrect(slot, 'var(--module-color)', { firstTry: attempts === 1 });
+        recordOutcome({ firstTry: attempts === 1 && !hintUsed, revealed: false });
+        celebrateCorrect(slot, 'var(--module-color)', { firstTry: attempts === 1 && !hintUsed });
         slot.classList.add('quiz-option--correct');
         clear(feedbackSlot);
         feedbackSlot.appendChild(
@@ -382,7 +383,36 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
     }
 
     root.appendChild(bankWrap);
+    // 分層提示（item.hints：[{text, eliminate?}]）：和 ChoiceQuiz 同一套「看提示」。
+    // eliminate 會把錯誤的選項劃掉（不能再拖），正解永遠留著。挑戰層不給主動提示。
+    let hintUsed = false;
+    let hintLevel = 0;
+    const layers = Array.isArray(item.hints) ? item.hints : [];
+    const hintBtn = layers.length && getScaffoldLevel().key !== 'challenge'
+      ? h('button', { class: 'btn btn--ghost quiz-hint-button', type: 'button', style: 'margin:12px 0 0 8px' }, `看提示（1／${layers.length}）`)
+      : null;
+    if (hintBtn) {
+      hintBtn.addEventListener('click', () => {
+        if (answered || hintLevel >= layers.length) return;
+        const layer = layers[hintLevel];
+        hintLevel += 1;
+        hintUsed = true;
+        if (layer.eliminate) {
+          const wrong = options.filter((o) => o.id !== item.answerId && o.id !== placed)
+            .map((o) => chipById.get(o.id)).filter((c) => c && !c.disabled);
+          wrong.slice(0, layer.eliminate).forEach((c) => {
+            c.disabled = true;
+            c.classList.add('quiz-option--eliminated');
+          });
+        }
+        clear(feedbackSlot);
+        feedbackSlot.appendChild(HintPanel({ message: layer.text }));
+        hintBtn.hidden = hintLevel >= layers.length;
+        hintBtn.textContent = `看提示（${Math.min(hintLevel + 1, layers.length)}／${layers.length}）`;
+      });
+    }
     root.appendChild(checkBtn);
+    if (hintBtn) root.appendChild(hintBtn);
     root.appendChild(feedbackSlot);
   }
 

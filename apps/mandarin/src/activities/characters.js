@@ -72,6 +72,23 @@ function pickDistractorRadicals(all, excludeRadicals, n) {
   return shuffled(pool).slice(0, n);
 }
 
+/**
+ * 部首的三層提示：
+ *   1 策略：部首常和字的意思有關
+ *   2 縮小：部首常在左邊或上面，並劃掉一個錯誤選項（只剩兩個選項時不劃）
+ *   3 示範：列出本課同部首的其他字——看得出共同的部分，就知道部首是哪個
+ */
+export function radicalHints(c, allCharacters, optionCount) {
+  const same = (allCharacters || []).filter((o) => o.char !== c.char && o.radical === c.radical).map((o) => o.char);
+  return [
+    { text: `部首常常和字的意思有關。想一想「${c.char}」的意思和什麼有關？` },
+    { text: '部首常在字的左邊或上面，先看那裡。', eliminate: optionCount >= 3 ? 1 : 0 },
+    same.length
+      ? { text: `這幾個字的部首都一樣：「${same.slice(0, 3).join('」「')}」。它們共同的部分就是部首。` }
+      : { text: `把「${c.char}」拆成兩半，看哪一半和選項長得一樣。` },
+  ];
+}
+
 function buildRadicalDragItems(round, allCharacters) {
   const roundRadicals = new Set(round.map((c) => c.radical));
   return round.map((c) => {
@@ -87,6 +104,7 @@ function buildRadicalDragItems(round, allCharacters) {
       options,
       answerId: `radical:${c.radical}`,
       hint: '想一想這個字拆開來看，哪一部分是部首？',
+      hints: radicalHints(c, allCharacters, options.length),
       explanation: `「${c.char}」的部首是「${c.radical}」。`,
     };
   });

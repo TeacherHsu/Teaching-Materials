@@ -69,6 +69,17 @@ function TextMapCard(node) {
 // 先介紹哪一棟都可以），排順序沒有唯一答案，改成「這個細節屬於哪一部分」；
 // 詩的難處在「詩句在說什麼」，改成詩句配白話意思。
 
+/** 段落的第一句（到第一個句號、驚嘆號或問號），當「一段一段讀」第 3 層的線索。 */
+function firstSentence(text) {
+  const m = String(text || '').match(/^.*?[。！？]/u);
+  return (m ? m[0] : String(text || '').slice(0, 24)).replace(/^[「『]/u, '');
+}
+
+/** 同一類的另一個細節，當分類第 3 層的類比線索。 */
+function sameCategory(items, it) {
+  return (items || []).find((o) => o !== it && o.answer === it.answer)?.text || null;
+}
+
 /** 說明文分類題：細節 → 屬於哪一類。細節是改寫過的短句，公開也沒問題。 */
 export function buildClassifyItems(activity, shuffleImpl = shuffle) {
   const categories = activity?.categories || [];
@@ -80,7 +91,14 @@ export function buildClassifyItems(activity, shuffleImpl = shuffle) {
       options: shuffleImpl([...categories]),
       answer: it.answer,
       explanation: `「${it.text}」屬於「${it.answer}」。`,
-      hints: [activity.hint || '想一想，課文是在介紹哪一個的時候提到這件事？'],
+      // 三層：1 想想在介紹哪一個 → 2 劃掉一個 → 3 給一個同類的例子（類比）
+      hints: [
+        { text: activity.hint || '想一想，課文是在介紹哪一個的時候提到這件事？' },
+        { text: '先劃掉一個一定不是的。', eliminate: categories.length >= 3 ? 1 : 0 },
+        sameCategory(activity.items, it)
+          ? { text: `和它同一類的還有：「${sameCategory(activity.items, it)}」。` }
+          : { text: '回到課文，找出提到這件事的那一段。' },
+      ],
     }));
 }
 
@@ -135,7 +153,14 @@ export function buildParagraphItems(lessonId, paragraphs, optionCount = 3, resol
       options: shuffleImpl([p.summary, ...distractors]),
       answer: p.summary,
       explanation: `這一段在說：${p.summary}`,
-      hints: ['先找這一段在講誰、做了什麼，再看哪個選項說的是同一件事。'],
+      // 三層：1 找誰做了什麼 → 2 這段屬於哪一部分＋劃掉一個 → 3 指出這段的第一句（通常就是重點）
+      hints: [
+        { text: '先找這一段在講誰、做了什麼。' },
+        p.structure_block
+          ? { text: `這一段屬於「${p.structure_block}」這一部分。先劃掉一個說的是別段的。`, eliminate: optionCount >= 3 ? 1 : 0 }
+          : { text: '先劃掉一個說的是別段的。', eliminate: optionCount >= 3 ? 1 : 0 },
+        { text: `再讀一次這一段的開頭：「${firstSentence(text)}」，它常常就是這一段的重點。` },
+      ],
     });
   }
   return items;

@@ -179,7 +179,7 @@ export function ChoiceQuiz({
           // 提示可以「做事」：第 2 層展開段落、第 3 層畫螢光筆。
           // 對閱讀困難的學生，「回到課文找線索」這句話沒有作用——
           // 他不知道回到哪裡、找什麼。要把動作做給他看。
-          if (layer && typeof layer.on === 'function') layer.on();
+          applyLayer(layer);
           refreshHintButton();
           revealExtra();
           const hintText = (layer && (layer.text || layer)) || item.hint || DEFAULT_HINT;
@@ -203,7 +203,7 @@ export function ChoiceQuiz({
           // 揭曉答案時，把還沒用到的提示動作全部執行——證據要留在畫面上，
           // 學生才看得到「答案為什麼是這個」，而不是只看到一個紅勾綠勾。
           if (Array.isArray(item.hints)) {
-            item.hints.slice(hintLevel).forEach((l) => { if (l && typeof l.on === 'function') l.on(); });
+            item.hints.slice(hintLevel).forEach((l) => { if (l && typeof l === 'object' && typeof l.on === 'function') l.on(); });
             revealExtra();
           }
           recordOutcome({ firstTry: false, revealed: true });
@@ -274,6 +274,26 @@ export function ChoiceQuiz({
     const hintButton = layered
       ? h('button', { class: 'btn btn--ghost quiz-hint-button', type: 'button' })
       : null;
+    /**
+     * 套用一層提示的「動作」。除了自訂的 on()，還有兩種通用動作：
+     *   eliminate: n  刪掉 n 個錯誤選項（縮小範圍，最少到最多提示法的第 2 層）
+     *   speak: '…'    念出一段話（示範，例如念出這個字所在的語詞）
+     * 刪選項只挑還沒被刪、也還沒被選過的錯誤選項，正解永遠留著。
+     */
+    function applyLayer(layer) {
+      if (!layer || typeof layer !== 'object') return;
+      if (typeof layer.on === 'function') layer.on();
+      if (layer.eliminate) {
+        const wrong = optionButtons.filter((b) => !b.disabled && b.textContent.trim() !== item.answer);
+        shuffle(wrong).slice(0, layer.eliminate).forEach((b) => {
+          b.disabled = true;
+          b.classList.add('quiz-option--eliminated');
+          b.setAttribute('aria-label', `${b.textContent.trim()}（提示：不是這個）`);
+        });
+      }
+      if (layer.speak) speak(layer.speak);
+    }
+
     function revealExtra() {
       if (!item.extra || item.extra.hidden || typeof item.extra.scrollIntoView !== 'function') return;
       const reduce = typeof window !== 'undefined' && window.matchMedia
@@ -293,7 +313,7 @@ export function ChoiceQuiz({
         const layer = item.hints[hintLevel];
         hintLevel += 1;
         hintUsed = true;
-        if (layer && typeof layer.on === 'function') layer.on();
+        applyLayer(layer);
         clear(feedbackSlot);
         feedbackSlot.appendChild(HintPanel({ message: (layer && layer.text) || DEFAULT_HINT }));
         refreshHintButton();

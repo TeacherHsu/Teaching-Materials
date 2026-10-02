@@ -270,6 +270,11 @@ const TYPE_HINTS = {
   取捨: '是不是先說不是哪個，再說真正是哪個？',
 };
 
+/** 同一個句型的另一句例句（關聯詞完整的），當選關聯詞第 3 層的示範。 */
+function modelSentence(pattern, current, pair) {
+  return (pattern.examples || []).find((ex) => ex !== current && pair.words.every((w) => ex.includes(w))) || null;
+}
+
 export function buildConnectiveItems(lesson, optionCount = 3, shuffleImpl = shuffle) {
   const items = [];
   const patterns = filterByStatus(lesson.sentence_patterns || [], { statusKey: 'examples_status' })
@@ -303,7 +308,14 @@ export function buildConnectiveItems(lesson, optionCount = 3, shuffleImpl = shuf
       options: shuffleImpl([answer, ...distractors.map((d) => pairLabel(d.words))]),
       answer,
       explanation: `答案是「${answer}」。`,
-      hints: [TYPE_HINTS[pair.type] || '想一想前後兩句是什麼關係。'],
+      // 選關聯詞的三層：1 想關係 → 2 劃掉一個 → 3 看同一組關聯詞的另一個例句（示範）
+      hints: [
+        { text: TYPE_HINTS[pair.type] || '想一想前後兩句是什麼關係。' },
+        { text: '先把放進去讀起來最不通的那一組劃掉。', eliminate: optionCount >= 3 ? 1 : 0 },
+        modelSentence(pattern, sentence, pair)
+          ? { text: `看看另一個例子：「${modelSentence(pattern, sentence, pair)}」` }
+          : { text: `把每一組放進句子讀一遍，哪一組最通順？` },
+      ],
     });
   }
   return items;
@@ -382,10 +394,16 @@ function buildRoundsFromExamples(examples, promptPrefix) {
       const manualParts = Array.isArray(parts) && parts.length >= 2 && parts.join('') === sentence ? parts : null;
       const chunks = chunksForExample(pattern, sentence, manualParts);
       if (chunks.length < 2) return null;
+      // 排句子的第 1 層提示：有關聯詞就先找關聯詞（它決定句子的骨架），
+      // 沒有就先找「誰」。之後每按一次提示會標亮下一塊（SentenceOrdering）。
+      const lead = connectivesInStructure(pattern.structure)[0];
       return {
         prompt: promptPrefix,
         parts: chunks,
         solution: chunks,
+        hint: lead
+          ? `先找關聯詞「${lead}」，想想它要放在哪裡。`
+          : '先找句子的主角是「誰」，再找他「做什麼」。',
         draft: pattern.examples_status === 'draft',
         pattern,
       };

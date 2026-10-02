@@ -57,6 +57,25 @@ export function pickPronunciationDistractors(answer, pool, n) {
  * @param {object[]} characters 該課生字
  * @param {object[]} allCharacters 誘答來源（同冊生字較貼近學生已學過的字）
  */
+/**
+ * 生字讀音的三層提示（最少到最多提示法）：
+ *   1 策略：想想這個字在哪個語詞裡、那個語詞怎麼念（從已知的詞找讀音）
+ *   2 縮小：告訴他第一個注音符號，並刪掉一個錯誤選項（只剩兩個選項時不刪，免得直接變成答案）
+ *   3 示範：把那個語詞念給他聽
+ * 沒有例詞的字，第 1、3 層退回通用說法。
+ */
+export function pronunciationHints(c, optionCount) {
+  const word = (c.examples || []).find((w) => w && w.includes(c.char) && w.length >= 2);
+  const first = String(c.zhuyin || '').replace(/^˙/u, '').charAt(0);
+  return [
+    { text: word ? `想一想「${word}」這個語詞怎麼念。` : '先想想這個字在課文的語詞裡怎麼念。' },
+    { text: first ? `第一個注音符號是「${first}」。` : '再比較看看聲調。', eliminate: optionCount >= 3 ? 1 : 0 },
+    word
+      ? { text: `聽一聽「${word}」，注意「${c.char}」的音。`, speak: word }
+      : { text: '注意聲調：一聲平、二聲往上、三聲先下再上、四聲往下。' },
+  ];
+}
+
 export function buildPronunciationItems(characters, allCharacters = characters, optionCount = getScaffoldLevel().optionCount) {
   const quizzable = (characters || []).filter(isQuizzableCharacter);
   const pool = (allCharacters || []).filter(isQuizzableCharacter).map((c) => c.zhuyin);
@@ -75,6 +94,7 @@ export function buildPronunciationItems(characters, allCharacters = characters, 
       options,
       stem: `「${c.char}」的注音是？`,
       hint: '先想想這個字在課文語詞裡怎麼念，再比較看看聲調。',
+      hints: pronunciationHints(c, options.length),
       explanation: `「${c.char}」念作「${c.zhuyin}」。`,
     };
   }).filter(Boolean);

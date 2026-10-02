@@ -5,6 +5,8 @@ import { ReadAllButton } from './ReadAllButton.js';
 import { shuffleDiffering } from '../utils/shuffle.js';
 import { recordOutcome } from '../utils/scoreSession.js';
 import { celebrateCorrect } from '../utils/celebrate.js';
+import { HintPanel } from './HintPanel.js';
+import { getScaffoldLevel } from '../utils/deviceSettings.js';
 
 /**
  * 句子排序：點選詞塊依序加入答案區，也支援滑鼠／觸控拖曳到指定序位；
@@ -12,7 +14,7 @@ import { celebrateCorrect } from '../utils/celebrate.js';
  * 正確詞塊留在原序位並鎖定，讓學習者可以再次拖曳錯誤詞塊修正。
  * @param {{prompt: string, parts: string[], solution: string[], onBack?: () => void}} opts
  */
-export function SentenceOrdering({ prompt, parts, solution, onBack, backLabel = '回課程首頁', onContinue, continueLabel = '繼續' }) {
+export function SentenceOrdering({ prompt, parts, solution, onBack, backLabel = '回課程首頁', onContinue, continueLabel = '繼續', hint }) {
   const root = h('div', { class: 'quiz-panel' });
   const bank = shuffleDiffering(parts, `${prompt}|${parts.join('')}`).map((word, index) => ({
     id: `sentence-part-${index}`,
@@ -50,6 +52,34 @@ export function SentenceOrdering({ prompt, parts, solution, onBack, backLabel = 
   const checkBtn = h('button', { class: 'btn', type: 'button', style: 'margin-top:12px' }, '檢查答案');
   const resetBtn = h('button', { class: 'btn btn--secondary', type: 'button', style: 'margin-left:8px' }, '重新排列');
   const chipById = new Map();
+
+  // 「看提示」：第 1 次給策略（先找開頭），之後每按一次標亮下一塊該放的詞塊。
+  // 參考站的排句子也是這樣——直接指出下一步，學生不必在一堆詞塊裡亂試。
+  // 挑戰層不給主動提示（和 ChoiceQuiz 一致）；用過提示就不算獨立排對。
+  let hintsUsed = 0;
+  const hintBox = h('div', { role: 'status', 'aria-live': 'polite' });
+  const hintBtn = getScaffoldLevel().key === 'challenge'
+    ? null
+    : h('button', { class: 'btn btn--ghost quiz-hint-button', type: 'button', style: 'margin-left:8px' }, '看提示');
+  function showHint() {
+    hintsUsed += 1;
+    chipById.forEach((c) => c.classList.remove('sentence-chip--hinted'));
+    clear(hintBox);
+    if (hintsUsed === 1) {
+      hintBox.appendChild(HintPanel({ message: hint || '先找句子的開頭：是誰？什麼時候？還是一個關聯詞？' }));
+      return;
+    }
+    const next = solution.findIndex((word, i) => itemById.get(slotsState[i])?.word !== word);
+    if (next < 0) return;
+    const wanted = solution[next];
+    const item = bank.find((it) => it.word === wanted && !slotsState.includes(it.id));
+    const chip = item && chipById.get(item.id);
+    if (!chip) return;
+    chip.classList.add('sentence-chip--hinted');
+    chip.scrollIntoView?.({ block: 'nearest' });
+    hintBox.appendChild(HintPanel({ message: `第 ${next + 1} 格要放亮起來的那一塊。` }));
+  }
+  if (hintBtn) hintBtn.addEventListener('click', showHint);
 
   function getSlotIndex(target) {
     let node = target;
@@ -290,8 +320,9 @@ export function SentenceOrdering({ prompt, parts, solution, onBack, backLabel = 
     const isComplete = slotsState.every(Boolean);
     const isCorrect = isComplete && slotsState.every((itemId, index) => itemById.get(itemId)?.word === solution[index]);
     if (isCorrect) {
-      recordOutcome({ firstTry: mistakes === 0, revealed: false });
-      celebrateCorrect(checkBtn, 'var(--module-color)', { firstTry: mistakes === 0 });
+      const firstTry = mistakes === 0 && hintsUsed === 0;
+      recordOutcome({ firstTry, revealed: false });
+      celebrateCorrect(checkBtn, 'var(--module-color)', { firstTry });
       const finished = slotsState.map((itemId) => itemById.get(itemId).word).join('');
       clear(root);
       root.appendChild(
@@ -350,7 +381,9 @@ export function SentenceOrdering({ prompt, parts, solution, onBack, backLabel = 
   const actions = h('div', {});
   actions.appendChild(checkBtn);
   actions.appendChild(resetBtn);
+  if (hintBtn) actions.appendChild(hintBtn);
   root.appendChild(actions);
+  root.appendChild(hintBox);
   renderSlots();
   renderBank();
   return root;
