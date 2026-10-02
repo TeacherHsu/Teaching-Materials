@@ -11,6 +11,7 @@ import { reciteSummary } from '../utils/reciteRecords.js';
 import { dueCount } from '../utils/mistakes.js';
 import { redoSentences } from '../utils/madeSentences.js';
 import { mistakeEntry } from './MistakePage.js';
+import { partdleUrl } from '../utils/partdle.js';
 import { quizEntry } from './QuizPage.js';
 
 const STATUS_CLASS = {
@@ -196,9 +197,11 @@ export function LessonDashboard(lesson) {
     })
     .catch(() => { /* 讀不到密文檔就不顯示入口 */ });
 
+  // 錯題以「冊」為範圍（同一台平板不同年級共用）；入口只放在課次頁，
+  // 不放首頁，免得不同年級的錯題混在一起。
   const mistakes = mistakeEntry(
     lesson.lesson_id,
-    dueCount(lesson.lesson_id) + redoSentences(lesson.lesson_id).length,
+    dueCount(lesson.volume.code) + redoSentences(lesson.volume.code).length,
   );
   // 加練挑戰的順序（CF 2026-10-02 指定）：
   //   字感訓練 → 其餘大項 → 錯題複習 → 朗讀挑戰
@@ -209,6 +212,25 @@ export function LessonDashboard(lesson) {
     : [...challengeGrid.children].find((c) => c.getAttribute?.('data-module-key') === 'visual_search');
   if (visualCard && challengeGrid.children[0] !== visualCard) {
     challengeGrid.insertBefore(visualCard, challengeGrid.children[0]);
+  }
+  // 雄老師部件拼字放在字感訓練上方（CF 2026-10-03）：兩者都是在練字形，
+  // 先在站內做字感，再到外站拼部件。外連另開分頁，學生關掉就回到這裡。
+  const partdle = partdleUrl(lesson);
+  if (partdle) {
+    const partdleCard = h('a', {
+      class: 'entry-card entry-card--external',
+      href: partdle,
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      'data-module-key': 'partdle',
+    }, [
+      h('span', { class: 'entry-card__icon', 'aria-hidden': 'true', html: uiIconMarkup('pencil') }),
+      h('span', { class: 'entry-card__body' }, [
+        h('span', { class: 'entry-card__title' }, '部件拼字'),
+        h('span', { class: 'entry-card__desc' }, '雄老師的部件拼一拼（另開新分頁）。'),
+      ]),
+    ]);
+    challengeGrid.insertBefore(partdleCard, challengeGrid.children[0] || null);
   }
   if (reviewCard && reviewCard.parentNode === challengeGrid) challengeGrid.removeChild(reviewCard);
   if (mistakes) challengeGrid.appendChild(mistakes);

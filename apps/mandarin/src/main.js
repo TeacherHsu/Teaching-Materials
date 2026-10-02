@@ -150,8 +150,9 @@ route(/^\/lesson\/(?<lessonId>[^/]+)$/, async ({ lessonId }) => {
   mount(LessonDashboard(lesson));
 });
 
+// 不分冊的錯題複習已停用（同一台平板跨年級共用），舊連結導回首頁。
 route(/^\/mistakes$/, async () => {
-  mount(MistakePage(null));
+  location.hash = '#/';
 });
 
 route(/^\/mistakes\/(?<lessonId>[^/]+)$/, async ({ lessonId }) => {

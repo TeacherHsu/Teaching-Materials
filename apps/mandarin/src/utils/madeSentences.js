@@ -1,3 +1,4 @@
+import { inScope } from './mistakes.js';
 // 學生自己寫的句子：存、批改、要求重寫。
 //
 // 這是全站唯一的「教師 → 學生」回饋通道。其他練習都是機器判對錯，只有造句
@@ -130,7 +131,7 @@ export function saveSentence({ lessonId, patternId, patternHead, structure, text
 
 /** 全部句子；給 lessonId 時只回那一課的。最近寫的排前面。 */
 export function listSentences(lessonId) {
-  const list = read().filter((s) => !lessonId || s.lessonId === lessonId);
+  const list = read().filter((s) => inScope(s.lessonId, lessonId));
   return list.sort((a, b) => b.at - a.at);
 }
 

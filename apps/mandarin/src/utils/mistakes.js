@@ -123,25 +123,35 @@ export function noteMistake(item) {
   return true;
 }
 
-/** 全部錯題；給定 lessonId 時只回那一課的。 */
-export function allMistakes(lessonId) {
-  const list = read();
-  return lessonId ? list.filter((m) => m.lessonId === lessonId) : list;
+/**
+ * 錯題範圍：給課次代號（115AG6H11）只取那一課；給冊別代號（115AG6H）取整冊。
+ * 同一台平板會給不同年級的學生用（CF 2026-10-03），所以學生端一律以冊為範圍，
+ * 六年級的學生不會在錯題複習裡撞見二年級的題目。不給範圍＝全部，只留給教師頁。
+ */
+export function inScope(lessonId, scope) {
+  if (!scope) return true;
+  if (!lessonId) return false;
+  return scope.length === 7 ? lessonId.startsWith(scope) : lessonId === scope;
+}
+
+/** 全部錯題；給定範圍（課或冊）時只回範圍內的。 */
+export function allMistakes(scope) {
+  return read().filter((m) => inScope(m.lessonId, scope));
 }
 
 /** 今天該複習的錯題（到期的）。 */
-export function dueMistakes(lessonId, now = Date.now()) {
-  return allMistakes(lessonId).filter((m) => m.due <= now);
+export function dueMistakes(scope, now = Date.now()) {
+  return allMistakes(scope).filter((m) => m.due <= now);
 }
 
 /** 課次首頁／首頁上的紅點數字。 */
-export function dueCount(lessonId, now = Date.now()) {
-  return dueMistakes(lessonId, now).length;
+export function dueCount(scope, now = Date.now()) {
+  return dueMistakes(scope, now).length;
 }
 
 /** 下一題到期還要幾天（無錯題或全部到期時回 null）。 */
-export function daysUntilNextDue(lessonId, now = Date.now()) {
-  const pending = allMistakes(lessonId).filter((m) => m.due > now);
+export function daysUntilNextDue(scope, now = Date.now()) {
+  const pending = allMistakes(scope).filter((m) => m.due > now);
   if (!pending.length) return null;
   const soonest = pending.reduce((min, m) => Math.min(min, m.due), Infinity);
   return Math.max(1, Math.ceil((soonest - now) / DAY_MS));

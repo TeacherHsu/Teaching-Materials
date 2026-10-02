@@ -171,3 +171,15 @@ M.startMistakeContext('115AG2H01', 'characters');
 assert.doesNotThrow(() => M.noteMistake(item(1)), '寫不進去也不能影響作答');
 
 console.log('✅ mistakes：Leitner 0/1/3/7 天、連對 4 次學會、答錯歸零、提早一小時到期、上限 300、DOM 不入庫、壞資料不炸');
+
+// ── 錯題範圍：以冊為單位，不跨年級（CF 2026-10-03：同一台平板不同年級共用）
+{
+  const { inScope } = await import('../src/utils/mistakes.js');
+  assert.equal(inScope('115AG6H11', '115AG6H'), true, '同一冊的課要算進來');
+  assert.equal(inScope('115AG2H03', '115AG6H'), false, '別的年級不能混進來');
+  assert.equal(inScope('115AG6H11', '115AG6H11'), true);
+  assert.equal(inScope('115AG6H12', '115AG6H11'), false, '給課次代號就只取那一課');
+  assert.equal(inScope('115AG6H11', undefined), true, '不給範圍＝全部（教師頁用）');
+  assert.equal(inScope(undefined, '115AG6H'), false);
+  console.log('✅ 錯題範圍以冊為單位');
+}
