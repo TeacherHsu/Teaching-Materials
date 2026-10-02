@@ -989,51 +989,231 @@
   "reading_questions": [
     {
       "id": "reading_question:09:01",
-      "stem": "學生為什麼到明華園採訪？",
+      "stem": "孫翠鳳是怎麼開始演歌仔戲的？",
       "options": [
-        "完成藝術課報告",
-        "購買戲服"
+        "劇團臨時缺個丫鬟，她被推上臺演出",
+        "從小在戲班長大，跟著長輩一起學戲",
+        "考上戲劇學校後，畢業就進了明華園",
+        "參加歌唱比賽得獎，被明華園邀請"
       ],
-      "answer": "完成藝術課報告",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "劇團臨時缺個丫鬟，她被推上臺演出",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31
+          ],
+          "sha": [
+            "0c7a443e",
+            "9de1c074",
+            "2311d7b2",
+            "46a261fd",
+            "09a27215",
+            "054950f9"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看伊鈴問第一個問題之後，孫阿姨的回答。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「先生家的劇團（明華園）臨時需要一個……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:09:02",
-      "stem": "孫翠鳳剛開始學戲時，遇到什麼困難？",
+      "stem": "孫阿姨說「我的年紀是別人的兩倍，我就用兩倍的時間練」，可以看出她是怎樣的人？",
       "options": [
-        "閩南語和身段練習",
-        "沒有觀眾鼓掌"
+        "不怕困難，願意加倍努力",
+        "喜歡和年輕演員比賽年紀",
+        "覺得練功一點都不辛苦",
+        "很快就放棄了劈腿下腰"
       ],
-      "answer": "閩南語和身段練習",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "不怕困難，願意加倍努力",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56
+          ],
+          "sha": [
+            "eb86d0e2",
+            "b29135c8",
+            "174df07d",
+            "d9b0817f",
+            "4cc9247a",
+            "b56facbf",
+            "2513fff0",
+            "4e17d307",
+            "a7108776",
+            "7202c400",
+            "1cd1971e",
+            "da1f021b",
+            "d98cdcd8",
+            "0c5d0710",
+            "8e8fb1b5"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看玉宣問「是不是很辛苦」之後的回答。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "她學戲時不會閩南語、筋骨又硬，她怎麼面對？再看「全身的傷變成……」這一句。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:09:03",
-      "stem": "明華園如何讓舞臺更有新意？",
+      "stem": "歌仔戲的「生、旦、淨、丑」四種角色中，負責製造笑料的是哪一種？",
       "options": [
-        "運用燈光、煙霧和空中飛人",
-        "取消所有服裝"
+        "丑",
+        "生",
+        "旦",
+        "淨"
       ],
-      "answer": "運用燈光、煙霧和空中飛人",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "丑",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            83,
+            84,
+            85,
+            86,
+            87,
+            88
+          ],
+          "sha": [
+            "5551f6ff",
+            "988dd2eb",
+            "874d0387",
+            "27eb32cc",
+            "96d16cae",
+            "6e6f1c65"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看孫阿姨帶大家到舞臺前介紹角色的那一段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「製造笑料的甘草人物」，破折號後面那個字就是。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:09:04",
-      "stem": "學生從採訪與學戲中得到什麼？",
+      "stem": "明華園為什麼要在白蛇傳裡加入雷射燈光、空中飛人等特效？",
       "options": [
-        "認識努力與創新的價值",
-        "覺得歌仔戲不需要練習"
+        "擔心歌仔戲沒落，想用創新吸引觀眾",
+        "演員年紀大了，只好用特效代替演技",
+        "舞臺太小了，只能靠特效往上發展",
+        "政府規定傳統戲劇都一定要用特效"
       ],
-      "answer": "認識努力與創新的價值",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "擔心歌仔戲沒落，想用創新吸引觀眾",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102
+          ],
+          "sha": [
+            "44780043",
+            "9613d53e",
+            "28c38f9b",
+            "9794aa4e",
+            "0c7a443e",
+            "f1362f49",
+            "911faa96",
+            "d5ef4741",
+            "75321208"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看伊鈴問「您會不會擔心歌仔戲會沒落」之後。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「為了提供觀眾不同的視覺感受……加入創新的元素」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2179,5 +2359,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "interview"
 }

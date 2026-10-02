@@ -988,51 +988,227 @@
   "reading_questions": [
     {
       "id": "reading_question:06:01",
-      "stem": "作者認為幽默有什麼好處？",
+      "stem": "課文認為最高明的幽默是哪一種？",
       "options": [
-        "化解尷尬、讓溝通順利",
-        "可以挖苦別人"
+        "拿自己的短處開玩笑的自嘲",
+        "拿別人的短處開玩笑的挖苦",
+        "說很多好笑的故事逗大家開心",
+        "故意做出誇張動作的表演"
       ],
-      "answer": "化解尷尬、讓溝通順利",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "拿自己的短處開玩笑的自嘲",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "sha": [
+            "e2353886",
+            "edcde546",
+            "e76c30a3",
+            "a9b0ff95",
+            "8e6f2d22",
+            "51fea7f2",
+            "54d232dd"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看課文開頭說「要達到幽默的境界有許多方法」的地方。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「其中最高明的幽默應該就是……」，下一句還解釋了它是什麼意思。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:06:02",
-      "stem": "林肯的自嘲產生什麼效果？",
+      "stem": "林肯說「如果有另一張臉，還會用這張臉見人嗎？」，他其實想表達什麼？",
       "options": [
-        "化解批評、留下正面印象",
-        "讓現場更緊張"
+        "笑自己長得醜，巧妙否認是雙面人",
+        "坦白承認自己說一套、做一套",
+        "拐個彎笑道格拉斯長得比自己醜",
+        "真心希望能換一張更好看的臉來見人"
       ],
-      "answer": "化解批評、留下正面印象",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "笑自己長得醜，巧妙否認是雙面人",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "sha": [
+            "960be173",
+            "96d718e2",
+            "7bb68abb",
+            "3d612620",
+            "69317ba4",
+            "ec239a39",
+            "d11b32c7",
+            "19f6dd4e",
+            "c41fd517",
+            "0b88791e"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看林肯競選參議員的那個例子。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "道格拉斯罵他是「雙面人」。林肯拿自己的長相開玩笑，等於在回答什麼？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:06:03",
-      "stem": "餐廳男人的自嘲為什麼不恰當？",
+      "stem": "餐廳裡那個男人的自嘲，為什麼不算「善用自嘲」？",
       "options": [
-        "透露對乞丐的成見",
-        "說得太小聲"
+        "表面笑自己，其實貶低了乞丐",
+        "表面笑自己，其實是在稱讚服務生",
+        "他說的話不夠好笑，朋友都沒笑",
+        "他講話太大聲，吵到別的客人"
       ],
-      "answer": "透露對乞丐的成見",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "表面笑自己，其實貶低了乞丐",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "比較評估",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            59,
+            60,
+            61,
+            62,
+            63,
+            64
+          ],
+          "sha": [
+            "cc2891f2",
+            "efd20788",
+            "90ae24f7",
+            "943bd197",
+            "ea44613e",
+            "6af75310"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看餐廳男人的例子，和前面林肯的例子比一比：兩人都在笑自己，差別在哪裡？"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「但在這看似幽默的話語間，卻透露出……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:06:04",
-      "stem": "作者最想提醒讀者什麼？",
+      "stem": "依照課文，要怎樣才能善用自嘲？",
       "options": [
-        "自嘲要有自信並拿捏分寸",
-        "遇到事情都要嘲笑自己"
+        "有自信、坦然面對缺點，並拿捏分寸",
+        "把自己的缺點藏好，只說別人的缺點",
+        "多背一些笑話，在任何場合都拿出來說",
+        "常常取笑身邊的朋友，讓氣氛熱絡"
       ],
-      "answer": "自嘲要有自信並拿捏分寸",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "有自信、坦然面對缺點，並拿捏分寸",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75
+          ],
+          "sha": [
+            "00594de2",
+            "f17fdcc4",
+            "e53595af",
+            "be81f37f",
+            "d70782f2",
+            "664c89d9",
+            "34de4bb8",
+            "f347706b",
+            "d50b15b9",
+            "94d7e3d6",
+            "9ad79a79"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看課文最後的結論，從「因此」開始。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「適當的自嘲是一種……」和「當你擁有足夠的……」這兩句。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2014,5 +2190,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "argument"
 }

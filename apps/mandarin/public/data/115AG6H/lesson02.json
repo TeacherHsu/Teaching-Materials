@@ -1067,51 +1067,213 @@
   "reading_questions": [
     {
       "id": "reading_question:02:01",
-      "stem": "女兒寫信給父親，主要是因為什麼？",
+      "stem": "被冷落的那天早上，爸爸原本帶了什麼要給許達三看？",
       "options": [
-        "被同學冷落而困惑",
-        "想買新郵票"
+        "一套新買的郵票",
+        "一本新買的漫畫",
+        "一張新拍的照片",
+        "一盒新買的彩筆"
       ],
-      "answer": "被同學冷落而困惑",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "一套新買的郵票",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "sha": [
+            "e7aa19bd",
+            "e04f72e2",
+            "4e87296e",
+            "8b81a80c",
+            "45ab671c",
+            "c7d5d225"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "找爸爸回憶「有天早晨」上學的那幾句。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "他書包裡裝著一樣新買的東西，準備第一個拿給許達三欣賞。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:02:02",
-      "stem": "父親分享童年迷路的經驗，主要想做什麼？",
+      "stem": "許達三說「不想看」以後，爸爸心裡的感受是怎麼變化的？",
       "options": [
-        "讓女兒知道孤單能被理解",
-        "責備女兒不勇敢"
+        "先是害怕，後來覺得憤慨",
+        "先是憤慨，後來覺得害怕",
+        "先是驚訝，後來覺得好笑",
+        "先是難過，後來覺得無所謂"
       ],
-      "answer": "讓女兒知道孤單能被理解",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "先是害怕，後來覺得憤慨",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            43,
+            44,
+            45,
+            46,
+            47,
+            60,
+            61,
+            62
+          ],
+          "sha": [
+            "2dd94f9e",
+            "9b2f2128",
+            "4364396c",
+            "18bed3bf",
+            "05a79404",
+            "548ee482",
+            "994b9fe5",
+            "262e5398"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看許達三冷淡回答之後。爸爸用溜滑梯、在電影院找不到媽媽來形容那時的心情。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "注意「過了一會兒，那一陣……總算過去了，這才慢慢感覺……」這一句。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:02:03",
-      "stem": "父親後來知道朋友不理他的原因後，學到什麼？",
+      "stem": "許達三那天為什麼不理爸爸？",
       "options": [
-        "要反省並關心別人",
-        "再也不交朋友"
+        "母親開刀，他心裡很擔憂",
+        "他想改跟陳文虎做好朋友",
+        "他對郵票一點興趣也沒有",
+        "他前一天和爸爸吵了一架"
       ],
-      "answer": "要反省並關心別人",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "母親開刀，他心裡很擔憂",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            98,
+            99,
+            100,
+            101,
+            102,
+            103
+          ],
+          "sha": [
+            "7f59269d",
+            "38dcdd40",
+            "aa1be160",
+            "d9f7102f",
+            "5045312d",
+            "1d914c52"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看「第二天上學我就知道了」後面。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "許達三自己說出了原因，最後還說「對不起」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:02:04",
-      "stem": "父親給女兒的期許最接近哪一項？",
+      "stem": "爸爸寫這封信，最想讓櫻櫻明白什麼？",
       "options": [
-        "能體諒別人並堅強處理問題",
-        "永遠不要一個人"
+        "冷落總有原因，要不怕寂寞並關心別人",
+        "被冷落時，可以多找別的同學說話出氣",
+        "朋友冷落你時，你也不必再理會他",
+        "在學校難過時，就早點回家休息吧"
       ],
-      "answer": "能體諒別人並堅強處理問題",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "冷落總有原因，要不怕寂寞並關心別人",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            115,
+            116,
+            117,
+            124,
+            125,
+            126,
+            129
+          ],
+          "sha": [
+            "f20c284b",
+            "85bfea6f",
+            "6cd7a59e",
+            "0b785347",
+            "3d8e788c",
+            "c46681a6",
+            "46e0d574"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看信的最後一部分，爸爸開始直接對櫻櫻說「妳應該……」。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「如果別人冷落了妳」、「把心放寬」、「堅強的人」這幾句。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2365,5 +2527,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "narrative"
 }

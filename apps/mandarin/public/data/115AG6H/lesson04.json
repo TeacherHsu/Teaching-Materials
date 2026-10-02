@@ -990,51 +990,203 @@
   "reading_questions": [
     {
       "id": "reading_question:04:01",
-      "stem": "本文主要介紹什麼？",
+      "stem": "蚊子叮人為什麼不太會痛？",
       "options": [
-        "自然啟發人類的設計",
-        "如何飼養動物"
+        "先用鋸齒狀刺針劃破皮膚，少碰到神經",
+        "先注入讓血管擴張的物質，麻痺神經",
+        "口針比針頭更尖細平滑，刺得很順",
+        "只在人睡著時叮咬，所以感覺不到"
       ],
-      "answer": "自然啟發人類的設計",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "先用鋸齒狀刺針劃破皮膚，少碰到神經",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "sha": [
+            "5da562eb",
+            "b5585b3f",
+            "3d58cfe2",
+            "00c97f3f",
+            "a1eb00bb",
+            "c8c37ffc"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看小標題「蚊子叮人不會痛」那一部分。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "蚊子的口針由六根小針組成，找最外側那兩根在做什麼。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:04:02",
-      "stem": "蓮葉的構造啟發什麼設計？",
+      "stem": "蓮葉為什麼淋雨不會溼？",
       "options": [
-        "抗汙材料",
-        "更亮的燈泡"
+        "葉面的奈米結構讓水珠滾落",
+        "葉片會把雨水很快吸進去，不會溼",
+        "葉面有一層油，雨水一碰就滑走了",
+        "蓮葉長得又高又大，雨水很快流走"
       ],
-      "answer": "抗汙材料",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "葉面的奈米結構讓水珠滾落",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            39,
+            40,
+            41,
+            42,
+            43,
+            44
+          ],
+          "sha": [
+            "6ae61656",
+            "324cf078",
+            "ad8fdcdf",
+            "d90eded1",
+            "a76788b6",
+            "4a9f644f"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看小標題「蓮葉淋雨不會溼」那一部分。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「是因為葉子的表面上有……」那一句。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:04:03",
-      "stem": "老鷹翅膀末端的設計有什麼作用？",
+      "stem": "為什麼 A380 不能直接把機翼加長，來解決飛不起來的問題？",
       "options": [
-        "減少飛行阻力",
-        "讓翅膀變重"
+        "機翼加長會超過機場的安全規定",
+        "機翼加長會讓飛機坐不下八百人",
+        "機翼加長會產生更多螺旋狀氣旋",
+        "機翼加長會讓上升力變得更小"
       ],
-      "answer": "減少飛行阻力",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "機翼加長會超過機場的安全規定",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            63,
+            64,
+            65
+          ],
+          "sha": [
+            "b0655bf5",
+            "a374121f",
+            "adb5e216"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看小標題「向草原鵰學飛行」，工程師一開始碰到什麼難題。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「如果要飛得起來，必須……，但是……」這一句。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:04:04",
-      "stem": "作者想提醒讀者什麼？",
+      "stem": "課文舉了三個例子，共同想說明什麼道理？",
       "options": [
-        "仔細觀察自然並學習其中智慧",
-        "不要接近大自然"
+        "觀察大自然，能幫人類解決問題",
+        "大自然的動物都比人類聰明得多",
+        "人類的發明都比大自然的設計更好",
+        "只有昆蟲和鳥類的身體值得研究"
       ],
-      "answer": "仔細觀察自然並學習其中智慧",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "觀察大自然，能幫人類解決問題",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82
+          ],
+          "sha": [
+            "b70bfd65",
+            "e81c4ade",
+            "b38ae87f",
+            "d2de6fab",
+            "5d30036d",
+            "d13dc75e",
+            "40590740"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "這題不在任何一個例子裡，要看三個例子說完之後的最後一部分。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「仔細觀察這些大自然設計的作品後，我們可以……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2041,5 +2193,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "expository"
 }

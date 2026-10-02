@@ -81,3 +81,57 @@ def apply(lesson_id, filename, genre, annotations):
 
     json.dump(lesson, open(path, 'w'), ensure_ascii=False, indent=2)
     print(f'已寫入 {path}（{len(annotations)} 題）')
+
+
+def replace_questions(lesson_id, filename, genre, questions, source):
+    """整組換掉一課的閱讀理解題（原創布題用）。
+
+    questions: [{stem, options, answer, tag, evidence, hint, locate}]
+      - options 第一個不必是答案，前端會洗牌；但 answer 一定要在 options 裡。
+      - evidence 寫法同 apply()。
+      - hint 是第 1 層（看不到課文時給，說「去哪裡找」），
+        locate 是第 2 層（打開證據面板時給，句子線索）。
+    原創題一律 status: draft，要教師核准才上線。
+    """
+    path = f'public/data/{lesson_id[:7]}/{filename}'
+    lesson = json.load(open(path))
+    table = hashes(lesson_id)
+    paras = {key[0] for key in table}
+    if genre:
+        lesson['genre'] = genre
+    built = []
+    for index, q in enumerate(questions, 1):
+        if q['answer'] not in q['options']:
+            raise SystemExit(f'{lesson_id} 第 {index} 題：答案不在選項裡')
+        if len(set(q['options'])) != len(q['options']):
+            raise SystemExit(f'{lesson_id} 第 {index} 題：選項重複')
+        groups = q['evidence']
+        if groups and not isinstance(groups[0], tuple):
+            if len(paras) != 1:
+                raise SystemExit(f'{lesson_id} 第 {index} 題：課文有 {len(paras)} 段，必須寫明段號')
+            groups = [(next(iter(paras)), groups)]
+        for hint_text in (q['hint'], q['locate']):
+            if q['answer'] in hint_text:
+                raise SystemExit(f'{lesson_id} 第 {index} 題：提示直接寫出答案')
+        built.append({
+            'id': f'reading_question:{lesson_id[-2:]}:{index:02d}',
+            'stem': q['stem'],
+            'options': q['options'],
+            'answer': q['answer'],
+            'status': 'draft',
+            'source': source,
+            'answer_source': 'authored:依課文證據句布題（證據見 evidence 欄）',
+            'strategy_tag': q['tag'],
+            'evidence': [
+                {'para': para, 'sentences': rows, 'sha': [table[(para, row)] for row in rows]}
+                for para, rows in groups
+            ],
+            'hints': [
+                {'level': 1, 'text': q['hint']},
+                {'level': 2, 'type': 'locate', 'text': q['locate']},
+                {'level': 3, 'type': 'evidence'},
+            ],
+        })
+    lesson['reading_questions'] = built
+    json.dump(lesson, open(path, 'w'), ensure_ascii=False, indent=2)
+    print(f'已寫入 {path}（{len(built)} 題，draft）')

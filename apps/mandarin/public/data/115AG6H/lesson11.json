@@ -903,51 +903,225 @@
   "reading_questions": [
     {
       "id": "reading_question:11:01",
-      "stem": "作者在什麼時候特別想喝羹湯？",
+      "stem": "宜蘭人為什麼特別愛吃羹？",
       "options": [
-        "天冷時",
-        "炎熱時"
+        "宜蘭多雨溼冷，羹湯保溫能祛寒",
+        "宜蘭盛產黑豬肉，做羹特別方便",
+        "宜蘭的羹店很多，價錢都很便宜",
+        "宜蘭天氣熱，大家喜歡吃涼羹湯"
       ],
-      "answer": "天冷時",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "宜蘭多雨溼冷，羹湯保溫能祛寒",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "sha": [
+            "fc7147e5",
+            "b8d237e1",
+            "e2c49a8f",
+            "bf2041a0",
+            "913d9500",
+            "c44327eb",
+            "89176627"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看課文開頭說到宜蘭的那幾句。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「或許是氣候……的緣故」和「因為羹湯保溫的特點」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:11:02",
-      "stem": "羹湯用什麼讓湯汁變濃？",
+      "stem": "「母親總是縱容我」，從哪件事看得出來？",
       "options": [
-        "芡粉",
-        "砂糖"
+        "讓「我」拿筷子亂攪，還問要吃麵或粄條",
+        "讓「我」一個人掌廚，自己決定放什麼配料",
+        "讓「我」去肉販那裡預訂黑豬肉",
+        "讓「我」自己端大鍋，還教我煮羹湯"
       ],
-      "answer": "芡粉",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "讓「我」拿筷子亂攪，還問要吃麵或粄條",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "sha": [
+            "efebd34e",
+            "460e6336",
+            "42fdc930",
+            "d2249c4a",
+            "e8732e08",
+            "44562d81",
+            "de499c1a",
+            "90751329",
+            "048c115b",
+            "a5e9fdb1"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看母親坐在小椅子上攪拌肉條的那一段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「我」蹲在旁邊做了什麼？母親不但沒阻止，還邊拌邊問了什麼？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:11:03",
-      "stem": "羹湯帶給作者什麼感受？",
+      "stem": "為什麼肉羹正式上桌時，「我」已經吃飽了？",
       "options": [
-        "溫暖",
-        "害怕"
+        "趁母親忙著顧羹湯，偷夾了好幾塊肉來吃",
+        "趁母親上街買菜，先煮了一大碗麵吃",
+        "在客廳玩的時候，吃了一大包零食",
+        "母親先盛了一大碗羹湯讓「我」試味道"
       ],
-      "answer": "溫暖",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "趁母親忙著顧羹湯，偷夾了好幾塊肉來吃",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62
+          ],
+          "sha": [
+            "74a20080",
+            "1cda327d",
+            "9d091a1a",
+            "7e733adf",
+            "5b8faad5",
+            "cdd7bb05",
+            "33578660",
+            "3f79a148",
+            "4d1c5f57",
+            "a2289c1f"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看「在旁等候的我當然也沒閒著」之後。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "母親一轉身，「我」做了什麼？而且「如此往返多次」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:11:04",
-      "stem": "這篇文章主要寫什麼？",
+      "stem": "作者特別喜愛肉羹湯，真正的原因是什麼？",
       "options": [
-        "食物與生活記憶",
-        "登山比賽"
+        "因為可以跟母親撒嬌，感受到幸福",
+        "因為肉羹有獨特的滋味，別處吃不到",
+        "因為宜蘭的羹湯可以幫身體祛寒",
+        "因為母親煮的羹比外面賣的好吃"
       ],
-      "answer": "食物與生活記憶",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "因為可以跟母親撒嬌，感受到幸福",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            83,
+            84,
+            85,
+            86,
+            87,
+            88
+          ],
+          "sha": [
+            "6b93d86e",
+            "3d7bfce1",
+            "8cca36c0",
+            "bec08ad2",
+            "2335677e",
+            "3eea442e"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看課文最後，作者問自己的那個問題。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "作者先說「並不是因為……」，接著說「而是……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -1952,5 +2126,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "essay"
 }

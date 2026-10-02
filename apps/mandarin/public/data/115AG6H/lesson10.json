@@ -911,51 +911,213 @@
   "reading_questions": [
     {
       "id": "reading_question:10:01",
-      "stem": "故人準備什麼招待詩人？",
+      "stem": "「故人具雞黍」中，老朋友用什麼招待詩人？",
       "options": [
         "家常飯菜",
-        "豪華宴席"
+        "山珍海味",
+        "新鮮水果",
+        "一盆菊花"
       ],
       "answer": "家常飯菜",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "291c2670",
+            "161ef4c7"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "9e72fba9",
+            "93f93840",
+            "dd97d1ef"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "先看原文第一句，再到「注釋」找「雞黍」的意思。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "注釋說「雞黍」指的是招待客人的哪一種飯菜？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:10:02",
-      "stem": "詩中哪些景物呈現田園風光？",
+      "stem": "「開軒面場圃，把酒話桑麻」，詩人和朋友在做什麼？",
       "options": [
-        "綠樹、青山、場圃",
-        "高樓、車站、商店"
+        "開窗對著田園，邊喝酒邊聊農作物",
+        "打開大門走進菜園，一起動手種桑麻",
+        "推開窗戶看青山，邊喝茶邊聊往事",
+        "在晒穀場上擺酒，邊喝邊賞菊花"
       ],
-      "answer": "綠樹、青山、場圃",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "開窗對著田園，邊喝酒邊聊農作物",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            30,
+            31,
+            32,
+            33
+          ],
+          "sha": [
+            "741f8fff",
+            "a77115e1",
+            "37598f3d",
+            "b5fd73a9"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看「語譯」，找跟這兩句對應的地方。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "語譯裡的「推開窗戶」「舉杯暢飲」「閒談著……」就是線索。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:10:03",
-      "stem": "把酒話桑麻表現什麼情形？",
+      "stem": "最後兩句「待到重陽日，還來就菊花」，表現出詩人怎樣的心情？",
       "options": [
-        "朋友歡聚談農事",
-        "兩人準備離開"
+        "玩得盡興捨不得走，期待再次相聚",
+        "覺得飯菜太普通，下次不想再來了",
+        "擔心重陽節的菊花會凋謝，很著急",
+        "想念自己的家人，急著想要回家去"
       ],
-      "answer": "朋友歡聚談農事",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "玩得盡興捨不得走，期待再次相聚",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            34,
+            35,
+            36
+          ],
+          "sha": [
+            "b07e1128",
+            "508b2e10",
+            "4f94d525"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            14,
+            15,
+            16
+          ],
+          "sha": [
+            "7208ba7c",
+            "731c5d58",
+            "80269be1"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看語譯的最後兩句，再看賞析的最後幾句。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "賞析說「賓主盡歡，意猶未盡，故……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:10:04",
-      "stem": "詩人為何約定重陽日再來？",
+      "stem": "這首詩描寫的田園生活，給人什麼樣的感覺？",
       "options": [
-        "喜愛友情與田園生活",
-        "想購買菊花"
+        "恬靜閒適、充滿朋友的情意",
+        "熱鬧吵雜、到處人來人往",
+        "辛苦忙碌、整天沒空休息",
+        "冷清寂寞、四周看不到人"
       ],
-      "answer": "喜愛友情與田園生活",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "恬靜閒適、充滿朋友的情意",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 4,
+          "sentences": [
+            5,
+            6,
+            17,
+            18,
+            19
+          ],
+          "sha": [
+            "d23bef19",
+            "99913c28",
+            "3e460237",
+            "0d774c72",
+            "3a21e521"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看「賞析」。開頭說老友怎麼待客，最後一句說全詩像一幅什麼樣的畫。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「點出老友殷勤待客的心意」和「凝鍊成一幅……的山水田園畫」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2080,5 +2242,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "classical"
 }

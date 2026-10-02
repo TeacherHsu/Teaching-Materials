@@ -1225,51 +1225,211 @@
   "reading_questions": [
     {
       "id": "reading_question:12:01",
-      "stem": "布大爺為什麼熟悉每一顆南瓜？",
+      "stem": "布大爺為什麼認定南瓜被帶到了加迪斯？",
       "options": [
-        "十分疼愛並細心照料",
-        "每天到市場購買"
+        "南瓜留在羅達，一定會被他認出來",
+        "加迪斯的南瓜價錢比羅達高很多",
+        "他親眼看見小偷搭船往加迪斯逃",
+        "弗大叔家就住在加迪斯的市場旁"
       ],
-      "answer": "十分疼愛並細心照料",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "南瓜留在羅達，一定會被他認出來",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43
+          ],
+          "sha": [
+            "05290588",
+            "1f7c659f",
+            "f1b6da14",
+            "4c21591d",
+            "7d941f4a",
+            "00ac517a",
+            "5249857b",
+            "53f1b385"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看布大爺發現南瓜被偷、冷靜下來之後。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「布大爺認為他的寶貝南瓜不可能留在羅達，因為……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:12:02",
-      "stem": "他為什麼先留在菜園？",
+      "stem": "警察為什麼不接受布大爺「我認得這些南瓜」的說法？",
       "options": [
-        "收集南瓜蒂作證",
-        "等待南瓜長大"
+        "光說認得，在法律上不能當證據",
+        "布大爺說錯了其中一顆南瓜的名字",
+        "警察和菜販是認識很久的老朋友",
+        "布大爺沒有帶身分證，無法證明"
       ],
-      "answer": "收集南瓜蒂作證",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "光說認得，在法律上不能當證據",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "比較評估",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            75,
+            76,
+            77,
+            86,
+            87,
+            88
+          ],
+          "sha": [
+            "ddeb8f5a",
+            "65b79e65",
+            "7fdfb709",
+            "a02963d1",
+            "8b2e41cd",
+            "32a8469c"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看布大爺說「我認得這些南瓜」之後，警察怎麼回答。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「光憑這樣在法律上是……，你必須要有……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:12:03",
-      "stem": "哪一項證據證明南瓜是他的？",
+      "stem": "布大爺拿出的「南瓜蒂」，為什麼能證明南瓜是他的？",
       "options": [
-        "南瓜蒂能和南瓜接合",
-        "菜販主動承認"
+        "南瓜蒂和南瓜原本相連，能剛好接回去",
+        "每個南瓜蒂上都刻了布大爺的名字",
+        "南瓜蒂的顏色和布大爺菜園的土一樣",
+        "只有布大爺叫得出每一顆南瓜的名字"
       ],
-      "answer": "南瓜蒂能和南瓜接合",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "南瓜蒂和南瓜原本相連，能剛好接回去",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            116,
+            117,
+            118,
+            125,
+            126,
+            127,
+            128
+          ],
+          "sha": [
+            "dc237d4a",
+            "83978a26",
+            "fff9120c",
+            "10806f26",
+            "4a4eb991",
+            "4be6d5be",
+            "73e1498f"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看布大爺打開背包之後。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「這些就是南瓜被偷走前，跟莖長在一起的……」，再看眾人看見了什麼。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:12:04",
-      "stem": "故事主旨是什麼？",
+      "stem": "課文題目「存根」指的是什麼？從布大爺身上可以學到什麼？",
       "options": [
-        "冷靜分析能找到解決策略",
-        "爭吵就能拿回物品"
+        "留下的南瓜蒂；遇事要冷靜，留下證據",
+        "銀行的存款單；平時要懂得存錢理財",
+        "南瓜的根；種田要細心照顧每株幼苗",
+        "法官的判決書；吵架時要相信法律"
       ],
-      "answer": "冷靜分析能找到解決策略",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "留下的南瓜蒂；遇事要冷靜，留下證據",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            37,
+            138,
+            139,
+            140,
+            141
+          ],
+          "sha": [
+            "1f7c659f",
+            "fa9b148b",
+            "de80cd62",
+            "ae9f2131",
+            "90a5efe4"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看課文最後一句布大爺說的話，再回想他在整個故事裡怎麼解決問題。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "他最後說「幸虧我有留下……」，對照他從背包裡拿出來的東西。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2735,5 +2895,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "narrative"
 }

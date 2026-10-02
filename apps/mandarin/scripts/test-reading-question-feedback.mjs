@@ -49,7 +49,7 @@ for (const volumeCode of fs.readdirSync(dataRoot).filter((name) => /^115AG[1-6][
       // 教師裁定排在衍生之上——衍生有標錯的前例（四上 L03 把「學長」標成「家人」）。
       assert.ok(
         question.answer_source === 'derived:reviewed-reading-question-context'
-        || /^teacher:.+/u.test(question.answer_source || ''),
+        || /^(teacher|authored):.+/u.test(question.answer_source || ''),
         `${volumeCode}/${lessonFile} ${question.stem}: 必須標示已核對的答案來源（derived 或 teacher:…）`,
       );
     }

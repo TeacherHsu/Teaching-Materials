@@ -1010,59 +1010,208 @@
   "reading_questions": [
     {
       "id": "reading_question:01:01",
-      "stem": "詩中的「葉縫裡透出的小眼睛」主要象徵什麼？",
+      "stem": "詩中的孩子在哪裡看見「皺巴巴的自己」？",
       "options": [
-        "池裡覓食的小魚。",
-        "周圍的人對自己的關注。",
-        "樹葉上的昆蟲。",
-        "陽光照出的水珠。"
+        "被風吹起漣漪的池水裡",
+        "教室窗戶的玻璃反光裡",
+        "同學手機拍的照片裡",
+        "雨後路上的積水倒影"
       ],
-      "answer": "周圍的人對自己的關注。",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "被風吹起漣漪的池水裡",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "d77bbcb2",
+            "b5da5ceb"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一段的開頭兩行。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "是什麼東西被「揚起」了，倒影才會變得皺皺的？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:01:02",
-      "stem": "詩人依序詢問小魚、蝴蝶和陽光，主要是在做什麼？",
+      "stem": "「葉縫裡透出的小眼睛」指的是誰？",
       "options": [
-        "蒐集自然觀察資料。",
-        "尋找離開水池的方法。",
-        "檢視友情、學習與性格。",
-        "比較三種生物的外形。"
+        "家人、師長和同學的關心",
+        "躲在葉縫裡偷看的小鳥",
+        "池中游來游去的小魚",
+        "陽光在水面映出的光點"
       ],
-      "answer": "檢視友情、學習與性格。",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "家人、師長和同學的關心",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            3,
+            4,
+            5
+          ],
+          "sha": [
+            "48ba26a9",
+            "64496c8b",
+            "f5253a88"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "還在第一段。「小眼睛」是一個比喻，下一行會說它像什麼。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「有如」兩個字，後面接的就是小眼睛代表的人。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:01:03",
-      "stem": "「破蛹飛起，張開夢想的彩翼」最接近哪一種意思？",
+      "stem": "第二段詩人分別問小魚、蝴蝶和陽光，他心裡在想哪三件事？",
       "options": [
-        "逃避困難，不再學習。",
-        "經歷挑戰，勇敢成長逐夢。",
-        "等待別人替自己決定。",
-        "只要貪玩就能得到自由。"
+        "交朋友、學習、自己的優缺點",
+        "交朋友、運動、未來的工作",
+        "學習、玩耍、家人的期待",
+        "友情、旅行、天氣的變化"
       ],
-      "answer": "經歷挑戰，勇敢成長逐夢。",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "交朋友、學習、自己的優缺點",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "3dd96403",
+            "70859861"
+          ]
+        },
+        {
+          "para": 2,
+          "sentences": [
+            4,
+            5
+          ],
+          "sha": [
+            "52e9b30d",
+            "6ff19bdf"
+          ]
+        },
+        {
+          "para": 2,
+          "sentences": [
+            7,
+            8
+          ],
+          "sha": [
+            "803c864f",
+            "b20226c9"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第二段。每問一種生物，後面都跟著一個「能不能……」的問題。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "三個問題分別提到「真摯的友情」、「想學習又貪玩」、「明亮的優點和陰暗的缺點」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:01:04",
-      "stem": "本詩最後最想鼓勵讀者採取哪一種態度？",
+      "stem": "從第一段到第三段，孩子看待自己的態度有什麼改變？",
       "options": [
-        "隱藏缺點，迎合他人。",
-        "把成敗都交給命運。",
-        "只記得當下的快樂。",
-        "真誠省思並主動改善自己。"
+        "從看不清自己，到真誠面對、迎向光明",
+        "從迎向光明，到變得害怕別人的眼光",
+        "從開心玩耍，到擔心考試成績不好",
+        "從討厭池水，到喜歡在池邊看小魚"
       ],
-      "answer": "真誠省思並主動改善自己。",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "從看不清自己，到真誠面對、迎向光明",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "比較評估",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            2
+          ],
+          "sha": [
+            "b5da5ceb"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "fa247b8b",
+            "ae57623c"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "比一比第一段開頭和第三段：前面的自己是什麼樣子，後面他決定做什麼？"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "第一段的自己是「皺巴巴」的；第三段他要「擦亮誠懇的心靈」、「迎向太陽」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -1934,5 +2083,6 @@
       "activity": "review",
       "note": "第 1 課沒有前課資料。"
     }
-  }
+  },
+  "genre": "poetry"
 }

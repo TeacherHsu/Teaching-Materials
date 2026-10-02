@@ -944,51 +944,199 @@
   "reading_questions": [
     {
       "id": "reading_question:03:01",
-      "stem": "「溫故而知新」主要提醒我們什麼？",
+      "stem": "課文中的「杏壇」指的是什麼地方？",
       "options": [
-        "複習舊知識並得到新理解",
-        "只學新的內容"
+        "孔子授徒講學的地方",
+        "孔子種植杏樹的果園",
+        "孔子彈琴休息的庭院",
+        "學生考試比賽的會場"
       ],
-      "answer": "複習舊知識並得到新理解",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "孔子授徒講學的地方",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "74d61601",
+            "e4495c2c",
+            "632756e2",
+            "e11d77f2",
+            "b628e665",
+            "5ef0ec8b"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看課文最前面描寫杏樹林的那幾句。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「這裡被稱為杏壇」，下一句就說明它是什麼地方。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:03:02",
-      "stem": "「三人行，必有我師焉」表示什麼？",
+      "stem": "「溫故而知新」說的是哪一種學習方法？",
       "options": [
-        "身邊的人都有可學之處",
-        "只能跟老師學習"
+        "複習學過的知識，從中得到新體會",
+        "多學新的知識，把舊的知識先放一邊",
+        "跟著老師背誦，不必自己動腦思考",
+        "把讀過的書反覆背熟，一字也不漏"
       ],
-      "answer": "身邊的人都有可學之處",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "複習學過的知識，從中得到新體會",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            30,
+            31,
+            32,
+            33,
+            34
+          ],
+          "sha": [
+            "d8feb01f",
+            "128392ca",
+            "716d9f09",
+            "dd6940ee",
+            "3c32a328"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一則的「語譯」，那是把古文換成白話。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "語譯裡有兩個動作：一個對「舊知識」，一個對「新體會」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:03:03",
-      "stem": "遇到別人的缺點時，孔子建議怎麼做？",
+      "stem": "下面哪一個做法，最符合「擇其善者而從之，其不善者而改之」？",
       "options": [
-        "反省並改正自己",
-        "立刻嘲笑對方"
+        "看到同學講話不禮貌，提醒自己不要這樣",
+        "看到同學講話不禮貌，也跟著學他說話",
+        "只和成績好的同學在一起，學他的優點",
+        "覺得別人有缺點，和自己一點關係都沒有"
       ],
-      "answer": "反省並改正自己",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "看到同學講話不禮貌，提醒自己不要這樣",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "sha": [
+            "72d23a37",
+            "dbf0fe13",
+            "a7520565",
+            "5e6c80b2"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第二則的「語譯」最後兩句。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "別人的優點要學習；別人的缺點，語譯說要拿來做什麼？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:03:04",
-      "stem": "本文最主要介紹什麼？",
+      "stem": "賞析說第二則的重點在哪一個字？為什麼？",
       "options": [
-        "孔子話語中的學習智慧",
-        "杏樹的種植方法"
+        "「擇」，懂得分辨好壞，才知道該學什麼",
+        "「師」，身邊一定要有老師，才能學習",
+        "「三」，一定要剛好三個人一起走才行",
+        "「行」，要常常出門走走，才能長見識"
       ],
-      "answer": "孔子話語中的學習智慧",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "「擇」，懂得分辨好壞，才知道該學什麼",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            34,
+            35,
+            36,
+            37,
+            38
+          ],
+          "sha": [
+            "3957dc43",
+            "7f52e9a0",
+            "1133a582",
+            "39c114b4",
+            "5730c69e"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看課文最後的「賞析」。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「重點在……字上」那一句，後面兩句說明了原因。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2141,5 +2289,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "classical"
 }

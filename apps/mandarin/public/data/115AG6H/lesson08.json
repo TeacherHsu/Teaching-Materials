@@ -1155,51 +1155,221 @@
   "reading_questions": [
     {
       "id": "reading_question:08:01",
-      "stem": "作者起初為什麼以為街頭藝術家是機器人？",
+      "stem": "作者第一眼為什麼以為那位街頭藝術家是「機器人」？",
       "options": [
-        "他站在石墩上一動也不動",
-        "他穿著運動服跑步"
+        "他把臉塗白站在石墩上，一動也不動",
+        "他把臉塗白，隨著音樂不停的跳舞",
+        "他戴著黑禮帽，說話聲音很奇怪",
+        "他站在錄音機旁，身上接著電線"
       ],
-      "answer": "他站在石墩上一動也不動",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "他把臉塗白站在石墩上，一動也不動",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "4a540826",
+            "a41ff25e",
+            "6fe77b9f",
+            "5b732b4b",
+            "7ba28caa",
+            "8ffe018d"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看課文開頭，作者在香榭麗舍大道第一眼看到他的樣子。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找他站在哪裡、臉塗成什麼顏色、身體在做什麼。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:08:02",
-      "stem": "巴黎兩位樂手的例子說明什麼？",
+      "stem": "巴黎地鐵兩個出口的表演者，為什麼得到的反應不一樣？",
       "options": [
-        "表演水準會影響觀眾反應",
-        "提琴一定比喇叭好聽"
+        "表演水準不同，拉提琴的比吹喇叭的好",
+        "表演時間不同，一個早上一個晚上",
+        "收費方式不同，一個要門票一個免費",
+        "表演地點不同，一個在車廂一個在月臺"
       ],
-      "answer": "表演水準會影響觀眾反應",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "表演水準不同，拉提琴的比吹喇叭的好",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "比較評估",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47
+          ],
+          "sha": [
+            "fb0e560e",
+            "15751e79",
+            "0375e03f",
+            "052b11cc",
+            "e39dd74d",
+            "2550eb4e",
+            "0b50bf1a",
+            "9cdc223f",
+            "62e4864c",
+            "4b874c53",
+            "ebcc8510",
+            "aaf12c58",
+            "465804f1"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "找作者記得的「巴黎地鐵，同一天兩個不同的出口」。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "前面先說了「演奏的水準，各有高低；得到的反應，也各不相同」。比一比兩人的琴盒和聽眾。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:08:03",
-      "stem": "伯恩的弦樂四重奏帶給作者什麼想法？",
+      "stem": "在伯恩聽到的弦樂四重奏，改變了作者什麼想法？",
       "options": [
-        "街頭也能欣賞專業音樂",
-        "音樂只能在劇院演出"
+        "原以為街頭藝術家多是業餘，其實也有專業",
+        "原以為歐洲人不愛音樂，其實大家都很愛",
+        "原以為弦樂只能在戶外，其實也能進劇院",
+        "原以為街頭表演都免費，其實也要收錢"
       ],
-      "answer": "街頭也能欣賞專業音樂",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "原以為街頭藝術家多是業餘，其實也有專業",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            63,
+            64,
+            65,
+            66,
+            67
+          ],
+          "sha": [
+            "11bbe6ef",
+            "e9190c05",
+            "1e4b7ecf",
+            "abcac033",
+            "d3a39d03"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看作者經過瑞士首都伯恩的那一段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「一改以往認為……的印象」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:08:04",
-      "stem": "作者期望讀者如何對待街頭藝術家？",
+      "stem": "作者希望讀者在路上遇到街頭藝術家時怎麼做？為什麼？",
       "options": [
-        "駐足欣賞並給予鼓勵",
-        "看見表演就立刻離開"
+        "停下來欣賞鼓勵，因為他們帶來活力",
+        "趕快走開不要擋路，因為表演常常很吵",
+        "拍照上傳就好，因為他們只想要出名",
+        "請他們去劇院表演，因為街頭不夠正式"
       ],
-      "answer": "駐足欣賞並給予鼓勵",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "停下來欣賞鼓勵，因為他們帶來活力",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82
+          ],
+          "sha": [
+            "f5296962",
+            "4616e606",
+            "8b3f5d0e",
+            "7f1983cc",
+            "50561f89",
+            "b53b66c8",
+            "90410bf5"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看課文最後寫臺灣街頭藝術的部分。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「可說是每個城市裡美好的風景」，以及最後一句「別忘了……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2356,5 +2526,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "narrative"
 }

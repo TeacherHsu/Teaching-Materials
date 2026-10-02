@@ -1117,51 +1117,235 @@
   "reading_questions": [
     {
       "id": "reading_question:05:01",
-      "stem": "作者為什麼注意到施工路旁的樹？",
+      "stem": "作者原本不喜歡那段路，後來為什麼願意多停留？",
       "options": [
-        "從車窗看見樹很美",
-        "要砍掉那棵樹"
+        "施工路段很髒亂，但路旁有一株很美的樹",
+        "施工路段很髒亂，但路旁有好吃的早餐店",
+        "施工路段常塞車，但可以在車上聽音樂",
+        "施工路段很危險，但能看到遠方的高山"
       ],
-      "answer": "從車窗看見樹很美",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "施工路段很髒亂，但路旁有一株很美的樹",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            5,
+            6,
+            7,
+            8,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "sha": [
+            "8163c2a1",
+            "6e185d1d",
+            "1e4f3819",
+            "fcccef80",
+            "028486fb",
+            "93acefde",
+            "fdfc5241",
+            "ab59655e",
+            "6a7f5d15",
+            "065f5960"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看「觀樹」的開頭。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "先找他不喜歡那段路的原因，再找「直到有一天，我從車窗裡望見了……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:05:02",
-      "stem": "作者把哪一種人比作樹？",
+      "stem": "作者為什麼覺得樹比花更耐看？",
       "options": [
-        "可靠、踏實的朋友",
-        "愛炫耀的人"
+        "樹每次看都不同，花的美卻很短暫",
+        "樹每次看都一樣，不會像花一樣凋謝",
+        "花每次看都有不同顏色，樹卻很單調",
+        "樹比花長得高大，站在遠處也看得到"
       ],
-      "answer": "可靠、踏實的朋友",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "樹每次看都不同，花的美卻很短暫",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "比較評估",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            24,
+            25,
+            26,
+            27,
+            30,
+            31,
+            32,
+            33,
+            34
+          ],
+          "sha": [
+            "1edc9f76",
+            "69c8c6ff",
+            "c9823362",
+            "c9d9f463",
+            "72c107a5",
+            "77caa33d",
+            "bdebb6b7",
+            "fdb6799b",
+            "464c1ff3"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "在「觀樹」裡，找作者說自己「別人看花，我看樹」的那部分。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「同一株樹，每次看它……而花卻不這樣……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:05:03",
-      "stem": "作者提到杏仁酥的經驗，主要想說明什麼？",
+      "stem": "作者說有些朋友「就像樹」，指的是哪一種朋友？",
       "options": [
-        "善意可能在無意間帶來喜悅",
-        "杏仁酥最好吃"
+        "平時話不多，卻會在你失意時陪著你",
+        "平時話不多，總在你成功時第一個來道賀",
+        "平時很熱情，會常常約你出去玩的朋友",
+        "平時很安靜，不太喜歡和別人說話的人"
       ],
-      "answer": "善意可能在無意間帶來喜悅",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "平時話不多，卻會在你失意時陪著你",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48
+          ],
+          "sha": [
+            "8a348dfb",
+            "a43ff667",
+            "b19db309",
+            "b4138889",
+            "8a348dfb",
+            "23717bb3",
+            "9b725955",
+            "4c726f66",
+            "1348af92",
+            "579e490a",
+            "06b1ee3a"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "在「觀樹」裡，找「在朋友之中，有些人就像樹」之後。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "注意「當你成功時……可是當你失意時……」，這兩種情況正好相反。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:05:04",
-      "stem": "課文最後希望讀者怎麼做？",
+      "stem": "在「種樹」中，作者說希望別人能在他「用筆所栽種的綠蔭下」駐足，意思是什麼？",
       "options": [
-        "在享受美好時也為他人付出",
-        "只要多種花"
+        "希望自己的文章能帶給讀者美好感受",
+        "希望自己能在書頁上畫滿各種樹木",
+        "希望讀者看書時都能坐在樹下乘涼",
+        "希望大家看完文章後都去學校種樹"
       ],
-      "answer": "在享受美好時也為他人付出",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "希望自己的文章能帶給讀者美好感受",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44
+          ],
+          "sha": [
+            "0386756b",
+            "03cd9615",
+            "6819d619",
+            "00594de2",
+            "7676d39e",
+            "da5ac62b",
+            "2f30168a",
+            "d887d753"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "換到「種樹」，看作者說自己喜歡看書的那部分。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "他說看書就像「坐在他人所種的綠蔭下享受清涼」。那他自己寫作，是想讓讀者怎樣？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2199,5 +2383,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "essay"
 }

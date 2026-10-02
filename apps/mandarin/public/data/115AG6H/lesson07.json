@@ -1058,51 +1058,221 @@
   "reading_questions": [
     {
       "id": "reading_question:07:01",
-      "stem": "阿姨參與哪一件作品的製作？",
+      "stem": "「花間小鹿」的作者，想透過這件作品告訴大家什麼？",
       "options": [
-        "大地之書",
-        "分合隨緣"
+        "原住民鄒族從前的獵鹿傳說",
+        "梅花鹿園區保育梅花鹿的故事",
+        "臺灣原生植物的生長特性",
+        "嘉義觸口遊客中心的歷史"
       ],
-      "answer": "大地之書",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "原住民鄒族從前的獵鹿傳說",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41
+          ],
+          "sha": [
+            "70b1539a",
+            "f08af1e2",
+            "1ae76834",
+            "c06ea4f3",
+            "bcd9ca43",
+            "650fdf83",
+            "6dbc07a7"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看在嘉義觸口遊客中心那一段，爸爸回答「我」的疑問。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「此外，作者也想透過這件作品，告訴我們……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:07:02",
-      "stem": "「花間小鹿」的特色是什麼？",
+      "stem": "「分合隨緣」這個作品名稱是怎麼來的？",
       "options": [
-        "結合小鹿、花草和在地文化",
-        "只能在美術館看到"
+        "凹凸鏡面隨角度反射出分合的影像",
+        "作品從臺北移到臺南，分開又重聚",
+        "作品由許多小塊拼成，可以拆開",
+        "作者和好友分開多年後又重逢"
       ],
-      "answer": "結合小鹿、花草和在地文化",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "凹凸鏡面隨角度反射出分合的影像",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71
+          ],
+          "sha": [
+            "f594de85",
+            "c7779cb0",
+            "1ccf9d27",
+            "6764d932",
+            "d7b3e46b",
+            "f74d159b",
+            "fad4cde8",
+            "5554a0b7"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看到臺南市美術館入口那一段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「我」往左走兩步，鏡中的影像也跟著變。找「原來是分合隨緣的……」那一句。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:07:03",
-      "stem": "鏡面作品為什麼會呈現不同樣貌？",
+      "stem": "依照課文引用的法律，公共建設經費五千萬元時，至少要設置多少錢的公共藝術？",
       "options": [
-        "會映照周遭景物、隨角度改變",
-        "每天有人重新上色"
+        "五十萬元",
+        "五百萬元",
+        "五萬元",
+        "五千元"
       ],
-      "answer": "會映照周遭景物、隨角度改變",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "五十萬元",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55
+          ],
+          "sha": [
+            "12887b70",
+            "01f802fe",
+            "a3b18e61",
+            "856a7856",
+            "5da87aaf",
+            "7d3a7d51",
+            "c5fb6480",
+            "ecabe830",
+            "ee9253bd"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "找課文中引用法律條文的那一段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "條文說經費不得少於造價的「百分之一」，後面還舉了例子。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "reading_question:07:04",
-      "stem": "作者最後明白了什麼？",
+      "stem": "聽完爸媽的說明後，「我」認為公共藝術最特別的地方是什麼？",
       "options": [
-        "公共藝術能走進生活",
-        "藝術只能由專家欣賞"
+        "放在生活周遭，讓人隨時接觸、互動",
+        "放在美術館裡，大家要輕聲細語參觀",
+        "都用不鏽鋼或青銅做成，不怕破壞",
+        "都在說原住民的傳說，介紹在地文化"
       ],
-      "answer": "公共藝術能走進生活",
-      "status": "approved",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（12主旨、段落大意、13課文結構表）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer": "放在生活周遭，讓人隨時接觸、互動",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
+      "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
+      "strategy_tag": "比較評估",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102
+          ],
+          "sha": [
+            "d376a4da",
+            "ac19e720",
+            "22c1a356",
+            "49905717",
+            "6f910c66",
+            "9e70987c",
+            "84eca446"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看最後「聽完爸媽的說明，我才恍然大悟」之後。也想一想：在美術館裡參觀要注意什麼？"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「儘管時空更迭變換，卻始終可以讓人們……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -1908,5 +2078,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "narrative"
 }
