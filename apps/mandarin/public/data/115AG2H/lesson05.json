@@ -1283,49 +1283,55 @@
       "id": "paragraph_summary:115AG2H05:01",
       "para_no": 1,
       "summary": "小真一家人到海邊玩。",
-      "structure_role": "第1段重點",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "structure_block": "起因",
+      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     },
     {
       "id": "paragraph_summary:115AG2H05:02",
       "para_no": 2,
       "summary": "小真發現有螃蟹。",
-      "structure_role": "第2段重點",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "structure_block": "起因",
+      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     },
     {
       "id": "paragraph_summary:115AG2H05:03",
       "para_no": 3,
       "summary": "媽媽問小真螃蟹怎麼走路的。",
-      "structure_role": "第3段重點",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "structure_block": "經過",
+      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     },
     {
       "id": "paragraph_summary:115AG2H05:04",
       "para_no": 4,
       "summary": "妹妹搶答，並提議學螃蟹走路。",
-      "structure_role": "第4段重點",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "structure_block": "經過",
+      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     },
     {
       "id": "paragraph_summary:115AG2H05:05",
       "para_no": 5,
       "summary": "全家人一起學螃蟹橫著走路，留下大大小小的腳印。",
-      "structure_role": "第5段重點",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "structure_block": "經過",
+      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     },
     {
       "id": "paragraph_summary:115AG2H05:06",
       "para_no": 6,
       "summary": "全家人的腳印和螃蟹挖的小洞，好像美麗的畫。",
-      "structure_role": "第6段重點",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "structure_block": "結果",
+      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     }
   ],
   "main_idea": {
@@ -1808,5 +1814,6 @@
         "麗"
       ]
     }
-  }
+  },
+  "summary_issue": "二上 12 課的段落大意與官方「08課文結構表」逐字相同（已比對 L01、L09、L11、L12）。專案規則是大意改寫後才公開（structure-map 規格 §3.1、ADR-0034 版權界線），這 48 筆沒有改寫，source 欄也沒有像三上那樣標「重述版」。需要 CF 裁定是改寫後重新上線，還是先下架。"
 }

@@ -1285,25 +1285,28 @@
       "id": "paragraph_summary:115AG2H04:01",
       "para_no": 1,
       "summary": "猜猜我是蝦蟆還是青蛙？",
-      "structure_role": "第1段重點",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "structure_block": "猜測",
+      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     },
     {
       "id": "paragraph_summary:115AG2H04:02",
       "para_no": 2,
       "summary": "我擔心你不只想要靠近我，還想抓我。",
-      "structure_role": "第2段重點",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "structure_block": "擔心",
+      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     },
     {
       "id": "paragraph_summary:115AG2H04:03",
       "para_no": 3,
       "summary": "你乖乖的，我會證明你頂呱呱。",
-      "structure_role": "第3段重點",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "structure_block": "期許",
+      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     }
   ],
   "main_idea": {
@@ -1791,5 +1794,6 @@
         "頂"
       ]
     }
-  }
+  },
+  "summary_issue": "二上 12 課的段落大意與官方「08課文結構表」逐字相同（已比對 L01、L09、L11、L12）。專案規則是大意改寫後才公開（structure-map 規格 §3.1、ADR-0034 版權界線），這 48 筆沒有改寫，source 欄也沒有像三上那樣標「重述版」。需要 CF 裁定是改寫後重新上線，還是先下架。"
 }

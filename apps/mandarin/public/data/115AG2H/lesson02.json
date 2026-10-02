@@ -1249,33 +1249,37 @@
       "id": "paragraph_summary:115AG2H02:01",
       "para_no": 1,
       "summary": "老師要大家寫開學新希望，主角想不出要寫什麼。",
-      "structure_role": "第1段重點",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "structure_block": "起因",
+      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     },
     {
       "id": "paragraph_summary:115AG2H02:02",
       "para_no": 2,
       "summary": "主角是轉學生，和大家不熟，不知道可以問誰。",
-      "structure_role": "第2段重點",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "structure_block": "經過",
+      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     },
     {
       "id": "paragraph_summary:115AG2H02:03",
       "para_no": 3,
       "summary": "下課時，班長和同學親近主角，主角終於寫出開學新希望。",
-      "structure_role": "第3段重點",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "structure_block": "經過",
+      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     },
     {
       "id": "paragraph_summary:115AG2H02:04",
       "para_no": 4,
       "summary": "最後老師把卡片掛在教室後面，主角的心情快樂起來。",
-      "structure_role": "第4段重點",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）"
+      "source": "115G2A／翰林二上官方教材（07主旨、課文大意、段落大意）",
+      "structure_block": "結果",
+      "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）"
     }
   ],
   "main_idea": {
@@ -1716,5 +1720,6 @@
         "掛"
       ]
     }
-  }
+  },
+  "summary_issue": "二上 12 課的段落大意與官方「08課文結構表」逐字相同（已比對 L01、L09、L11、L12）。專案規則是大意改寫後才公開（structure-map 規格 §3.1、ADR-0034 版權界線），這 48 筆沒有改寫，source 欄也沒有像三上那樣標「重述版」。需要 CF 裁定是改寫後重新上線，還是先下架。"
 }
