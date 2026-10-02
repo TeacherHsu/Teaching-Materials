@@ -88,6 +88,28 @@ const GROUPS = [
     },
   },
   {
+    key: 'genre_activity',
+    title: '5 讀懂課文 — 依文體的活動（說明文分類／詩句解碼）',
+    items(lesson) {
+      const ga = lesson.genre_activity;
+      if (!ga || ga.status !== 'draft') return [];
+      const content = ga.type === 'classify'
+        ? `分類：${(ga.categories || []).join('、')}\n${(ga.items || []).map((it) => `・${it.text} → ${it.answer}`).join('\n')}`
+        : (ga.pairs || []).map((pair) => {
+          // 詩句是課文原文，存在密文裡；待審頁只列位置，對照時請開課文點讀
+          const where = `第 ${pair.line.para} 段第 ${pair.line.sentences.map((i) => i + 1).join('、')} 句`;
+          return `・${where} → ${pair.meaning}`;
+        }).join('\n');
+      return [{
+        id: ga.id,
+        content,
+        requirement: ga.type === 'classify'
+          ? '說明文分類：細節是改寫的短句，答案要和課文一致'
+          : '詩句解碼：詩句從課文密文取原文（要教室密碼），右邊白話意思為改寫',
+      }];
+    },
+  },
+  {
     key: 'polysemy',
     title: '6 一字多義 — 例句',
     items(lesson) {

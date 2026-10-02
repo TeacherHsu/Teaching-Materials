@@ -135,3 +135,38 @@ def replace_questions(lesson_id, filename, genre, questions, source):
     lesson['reading_questions'] = built
     json.dump(lesson, open(path, 'w'), ensure_ascii=False, indent=2)
     print(f'已寫入 {path}（{len(built)} 題，draft）')
+
+
+def set_genre_activity(lesson_id, filename, activity, source):
+    """寫入依文體的第三步（說明文分類／詩句解碼），一律 draft。
+
+    classify: {'type':'classify', 'categories':[...], 'items':[{'text','answer'}], 'hint'?}
+    decode:   {'type':'decode', 'pairs':[{'line': (段, [句序...]), 'meaning': '白話'}]}
+              詩句不存文字，只存段號＋句序＋雜湊，顯示時從課文密文取（要教室密碼）。
+    """
+    path = f'public/data/{lesson_id[:7]}/{filename}'
+    lesson = json.load(open(path))
+    out = {'id': f'genre_activity:{lesson_id}', 'type': activity['type'], 'status': 'draft', 'source': source}
+    if activity['type'] == 'classify':
+        cats = activity['categories']
+        for it in activity['items']:
+            if it['answer'] not in cats:
+                raise SystemExit(f'{lesson_id}：「{it["text"]}」的答案不在分類裡')
+        out.update({'categories': cats, 'items': activity['items']})
+        if activity.get('hint'):
+            out['hint'] = activity['hint']
+    elif activity['type'] == 'decode':
+        table = hashes(lesson_id)
+        pairs = []
+        for pair in activity['pairs']:
+            para, rows = pair['line']
+            pairs.append({
+                'line': {'para': para, 'sentences': rows, 'sha': [table[(para, r)] for r in rows]},
+                'meaning': pair['meaning'],
+            })
+        out['pairs'] = pairs
+    else:
+        raise SystemExit(f'不認得的活動類型：{activity["type"]}')
+    lesson['genre_activity'] = out
+    json.dump(lesson, open(path, 'w'), ensure_ascii=False, indent=2)
+    print(f'已寫入 {path}（{activity["type"]}，draft）')

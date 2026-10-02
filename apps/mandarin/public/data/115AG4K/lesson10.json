@@ -2514,5 +2514,87 @@
       "activity": "review"
     }
   },
-  "genre": "poetry"
+  "genre": "poetry",
+  "genre_activity": {
+    "id": "genre_activity:115AG4K10",
+    "type": "decode",
+    "status": "draft",
+    "source": "原創設計（CF 2026-10-03 委託；依文體的閱讀活動，細節與白話意思為改寫）",
+    "pairs": [
+      {
+        "line": {
+          "para": 3,
+          "sentences": [
+            0,
+            1
+          ],
+          "sha": [
+            "2835ff0f",
+            "cfbb3b88"
+          ]
+        },
+        "meaning": "魔毯又輕又薄，一下子就能飛上天、落到地"
+      },
+      {
+        "line": {
+          "para": 4,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "9740cac2",
+            "8fe56021"
+          ]
+        },
+        "meaning": "洞穴聽到通關密語，就會打開"
+      },
+      {
+        "line": {
+          "para": 4,
+          "sentences": [
+            8,
+            9,
+            10
+          ],
+          "sha": [
+            "ba4ba259",
+            "11de8d19",
+            "4328b726"
+          ]
+        },
+        "meaning": "要是起了貪心，就會被關在洞裡出不來"
+      },
+      {
+        "line": {
+          "para": 5,
+          "sentences": [
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "102d3c97",
+            "7ffcd947",
+            "6f82e005"
+          ]
+        },
+        "meaning": "搓一搓神燈，巨人就會出來幫你實現願望"
+      },
+      {
+        "line": {
+          "para": 6,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "5d3f6eed",
+            "d753d338"
+          ]
+        },
+        "meaning": "遙遠的中東故事，現在大家都聽過了"
+      }
+    ]
+  }
 }

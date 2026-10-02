@@ -2249,5 +2249,69 @@
       "activity": "review"
     }
   },
-  "genre": "classical"
+  "genre": "classical",
+  "genre_activity": {
+    "id": "genre_activity:115AG6H10",
+    "type": "decode",
+    "status": "draft",
+    "source": "原創設計（CF 2026-10-03 委託；依文體的閱讀活動，細節與白話意思為改寫）",
+    "pairs": [
+      {
+        "line": {
+          "para": 2,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "291c2670",
+            "161ef4c7"
+          ]
+        },
+        "meaning": "老朋友準備了飯菜，請我到他鄉下的家作客"
+      },
+      {
+        "line": {
+          "para": 2,
+          "sentences": [
+            4,
+            5
+          ],
+          "sha": [
+            "000885fd",
+            "81c07cfc"
+          ]
+        },
+        "meaning": "綠樹圍著村子，青山在城外連成一片"
+      },
+      {
+        "line": {
+          "para": 2,
+          "sentences": [
+            6,
+            7
+          ],
+          "sha": [
+            "79fe8f3b",
+            "be88f0d4"
+          ]
+        },
+        "meaning": "打開窗對著曬穀場和菜園，邊喝酒邊聊農作物"
+      },
+      {
+        "line": {
+          "para": 2,
+          "sentences": [
+            8,
+            9
+          ],
+          "sha": [
+            "8364235c",
+            "b9c93dcc"
+          ]
+        },
+        "meaning": "約好重陽節那天，還要再來一起賞菊花"
+      }
+    ]
+  }
 }

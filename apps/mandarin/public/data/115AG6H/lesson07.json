@@ -2089,5 +2089,47 @@
       "activity": "review"
     }
   },
-  "genre": "narrative"
+  "genre": "narrative",
+  "genre_activity": {
+    "id": "genre_activity:115AG6H07",
+    "type": "classify",
+    "status": "draft",
+    "source": "原創設計（CF 2026-10-03 委託；依文體的閱讀活動，細節與白話意思為改寫）",
+    "categories": [
+      "花間小鹿",
+      "分合隨緣",
+      "大地之書"
+    ],
+    "items": [
+      {
+        "text": "全身布滿花朵的金屬公鹿",
+        "answer": "花間小鹿"
+      },
+      {
+        "text": "站在梅花鹿園區的步道旁",
+        "answer": "花間小鹿"
+      },
+      {
+        "text": "讓人認識鄒族的獵鹿傳說",
+        "answer": "花間小鹿"
+      },
+      {
+        "text": "凹凸的鏡面讓影像一下分開一下合起來",
+        "answer": "分合隨緣"
+      },
+      {
+        "text": "從臺北搬到臺南，最後放在美術館入口",
+        "answer": "分合隨緣"
+      },
+      {
+        "text": "把植物葉子和花朵的紋路封在青銅裡",
+        "answer": "大地之書"
+      },
+      {
+        "text": "阿姨曾經和同事一起參與製作",
+        "answer": "大地之書"
+      }
+    ],
+    "hint": "想一想，課文是在介紹哪一件作品的時候提到這件事？"
+  }
 }

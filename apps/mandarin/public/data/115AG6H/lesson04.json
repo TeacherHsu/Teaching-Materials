@@ -2204,5 +2204,47 @@
       "activity": "review"
     }
   },
-  "genre": "expository"
+  "genre": "expository",
+  "genre_activity": {
+    "id": "genre_activity:115AG6H04",
+    "type": "classify",
+    "status": "draft",
+    "source": "原創設計（CF 2026-10-03 委託；依文體的閱讀活動，細節與白話意思為改寫）",
+    "categories": [
+      "蚊子",
+      "蓮葉",
+      "草原鵰"
+    ],
+    "items": [
+      {
+        "text": "口針是由六根小針組成的",
+        "answer": "蚊子"
+      },
+      {
+        "text": "先用鋸齒狀的針劃開皮膚，減少碰到神經",
+        "answer": "蚊子"
+      },
+      {
+        "text": "讓人研發出比較不痛的針頭",
+        "answer": "蚊子"
+      },
+      {
+        "text": "表面有很小的奈米結構，水珠會滾走",
+        "answer": "蓮葉"
+      },
+      {
+        "text": "讓人做出不容易沾上髒汙的馬桶",
+        "answer": "蓮葉"
+      },
+      {
+        "text": "翅膀末端的羽毛向上翹起",
+        "answer": "草原鵰"
+      },
+      {
+        "text": "讓工程師改良巨型客機的機翼尾端",
+        "answer": "草原鵰"
+      }
+    ],
+    "hint": "想一想，這件事是在介紹哪一種生物的時候提到的？"
+  }
 }

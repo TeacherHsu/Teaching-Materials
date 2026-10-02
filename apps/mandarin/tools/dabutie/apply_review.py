@@ -31,6 +31,8 @@ REVIEWABLE_KEYS = [
     ("polysemy", "status"),
     ("sentence_patterns", "examples_status"),
     ("extensions", "status"),
+    # 依文體的第三步（說明文分類／詩句解碼），一課一組，整組核准
+    ("genre_activity", "status"),
 ]
 
 

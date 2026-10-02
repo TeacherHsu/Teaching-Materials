@@ -2336,5 +2336,89 @@
       "note": "第 1 課沒有前課資料。"
     }
   },
-  "genre": "poetry"
+  "genre": "poetry",
+  "genre_activity": {
+    "id": "genre_activity:115AG4K01",
+    "type": "decode",
+    "status": "draft",
+    "source": "原創設計（CF 2026-10-03 委託；依文體的閱讀活動，細節與白話意思為改寫）",
+    "pairs": [
+      {
+        "line": {
+          "para": 1,
+          "sentences": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "3c8c9317",
+            "c648f85f",
+            "011ab0d7",
+            "f000f0d4"
+          ]
+        },
+        "meaning": "在泳池裡游泳，好像變成魚、青蛙和蝴蝶"
+      },
+      {
+        "line": {
+          "para": 2,
+          "sentences": [
+            0,
+            1
+          ],
+          "sha": [
+            "966868d7",
+            "b4422f7a"
+          ]
+        },
+        "meaning": "大家笑得好開心，把水花潑得亮晶晶"
+      },
+      {
+        "line": {
+          "para": 3,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "eff5246c",
+            "9b63a3fd"
+          ]
+        },
+        "meaning": "游泳讓我越來越有信心，也有了遠大的志向"
+      },
+      {
+        "line": {
+          "para": 4,
+          "sentences": [
+            5,
+            6,
+            7
+          ],
+          "sha": [
+            "1e94d749",
+            "3df54364",
+            "2e3becde"
+          ]
+        },
+        "meaning": "溜直排輪時，覺得自己像老鷹一樣越滑越快"
+      },
+      {
+        "line": {
+          "para": 6,
+          "sentences": [
+            0,
+            1
+          ],
+          "sha": [
+            "0aa78e0c",
+            "11c1c5ab"
+          ]
+        },
+        "meaning": "一溜起直排輪，煩惱都不見了"
+      }
+    ]
+  }
 }

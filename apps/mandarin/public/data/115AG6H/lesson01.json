@@ -2092,5 +2092,83 @@
       "note": "第 1 課沒有前課資料。"
     }
   },
-  "genre": "poetry"
+  "genre": "poetry",
+  "genre_activity": {
+    "id": "genre_activity:115AG6H01",
+    "type": "decode",
+    "status": "draft",
+    "source": "原創設計（CF 2026-10-03 委託；依文體的閱讀活動，細節與白話意思為改寫）",
+    "pairs": [
+      {
+        "line": {
+          "para": 1,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "d77bbcb2",
+            "b5da5ceb"
+          ]
+        },
+        "meaning": "風吹動池水，水中的倒影變得歪歪扭扭"
+      },
+      {
+        "line": {
+          "para": 1,
+          "sentences": [
+            3,
+            4
+          ],
+          "sha": [
+            "48ba26a9",
+            "64496c8b"
+          ]
+        },
+        "meaning": "樹葉間好像有很多雙眼睛，就像關心我的家人、老師和同學"
+      },
+      {
+        "line": {
+          "para": 2,
+          "sentences": [
+            4,
+            5
+          ],
+          "sha": [
+            "52e9b30d",
+            "6ff19bdf"
+          ]
+        },
+        "meaning": "愛玩又想學的我，能不能長大後實現夢想"
+      },
+      {
+        "line": {
+          "para": 2,
+          "sentences": [
+            7,
+            8
+          ],
+          "sha": [
+            "803c864f",
+            "b20226c9"
+          ]
+        },
+        "meaning": "我的優點和缺點，是天生的，還是由我自己決定"
+      },
+      {
+        "line": {
+          "para": 3,
+          "sentences": [
+            0,
+            1
+          ],
+          "sha": [
+            "1a866cc1",
+            "fa247b8b"
+          ]
+        },
+        "meaning": "摘一片白雲，把真誠的心擦得亮亮的"
+      }
+    ]
+  }
 }

@@ -2535,5 +2535,39 @@
       "activity": "review"
     }
   },
-  "genre": "narrative"
+  "genre": "narrative",
+  "genre_activity": {
+    "id": "genre_activity:115AG6H08",
+    "type": "classify",
+    "status": "draft",
+    "source": "原創設計（CF 2026-10-03 委託；依文體的閱讀活動，細節與白話意思為改寫）",
+    "categories": [
+      "巴黎",
+      "伯恩",
+      "臺灣"
+    ],
+    "items": [
+      {
+        "text": "打扮成卓別林，站在石墩上一動也不動",
+        "answer": "巴黎"
+      },
+      {
+        "text": "地鐵出口拉提琴的人，琴盒裡堆滿了錢",
+        "answer": "巴黎"
+      },
+      {
+        "text": "幾個孩子跳上地鐵車廂彈吉他、唱歌",
+        "answer": "巴黎"
+      },
+      {
+        "text": "在服飾店門口聽到專業的弦樂四重奏",
+        "answer": "伯恩"
+      },
+      {
+        "text": "在景點、公園和車站都看得到賣力的表演",
+        "answer": "臺灣"
+      }
+    ],
+    "hint": "想一想，作者是在哪裡看到這個表演的？"
+  }
 }

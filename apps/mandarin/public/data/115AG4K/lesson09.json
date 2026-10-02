@@ -2406,5 +2406,52 @@
       "activity": "review"
     }
   },
-  "genre": "poetry"
+  "genre": "poetry",
+  "genre_activity": {
+    "id": "genre_activity:115AG4K09",
+    "type": "classify",
+    "status": "draft",
+    "source": "原創設計（CF 2026-10-03 委託；依文體的閱讀活動，細節與白話意思為改寫）",
+    "categories": [
+      "泰國",
+      "埃及",
+      "荷蘭",
+      "奧地利"
+    ],
+    "items": [
+      {
+        "text": "到處都看得到華麗的廟",
+        "answer": "泰國"
+      },
+      {
+        "text": "清晨就有幾百條小船在做生意",
+        "answer": "泰國"
+      },
+      {
+        "text": "大部分的土地是又乾又熱的沙漠",
+        "answer": "埃及"
+      },
+      {
+        "text": "有世界聞名的金字塔",
+        "answer": "埃及"
+      },
+      {
+        "text": "三分之一的土地比海面還低",
+        "answer": "荷蘭"
+      },
+      {
+        "text": "鬱金香和水仙是有名的特產",
+        "answer": "荷蘭"
+      },
+      {
+        "text": "很多有名的音樂家在這裡住過",
+        "answer": "奧地利"
+      },
+      {
+        "text": "音樂節時可以在河上划船、在山上滑雪",
+        "answer": "奧地利"
+      }
+    ],
+    "hint": "想一想，課文是在介紹哪一個國家的時候提到這件事？"
+  }
 }

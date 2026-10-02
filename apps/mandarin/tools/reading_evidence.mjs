@@ -12,7 +12,8 @@
  *
  * 用法：
  *   node tools/reading_evidence.mjs list <lesson_id>      # 印出編號後的句子，供人工標注
- *   node tools/reading_evidence.mjs check <lesson_id>     # 驗證已標注的證據還對得上
+ *   node tools/reading_evidence.mjs check <lesson_id>     # 驗證已標注的證據（含詩句解碼）還對得上
+ *   node tools/reading_evidence.mjs check <lesson_id> --show  # 另外印出詩句與白話意思對照
  */
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -81,8 +82,16 @@ if (!isCli) {
   const lesson = JSON.parse(readFileSync(file, 'utf8'));
   let checked = 0;
   let bad = 0;
-  for (const q of lesson.reading_questions || []) {
-    for (const key of ['evidence', 'context']) {
+  // 詩句解碼的詩句也是存位置＋雜湊，一起檢查；--show 會把詩句和白話意思印出來對照
+  const decode = (lesson.genre_activity?.type === 'decode' ? lesson.genre_activity.pairs : [])
+    .map((pair, i) => ({ id: `decode:${i + 1}`, line: pair.line, meaning: pair.meaning }));
+  const owners = [...(lesson.reading_questions || []), ...decode];
+  for (const q of owners) {
+    if (q.meaning && process.argv.includes('--show')) {
+      const sentences = byPara.get(q.line.para) || [];
+      console.log(`  ${q.line.sentences.map((i) => sentences[i]).join('')}  →  ${q.meaning}`);
+    }
+    for (const key of ['evidence', 'context', 'line']) {
       const spots = q[key];
       if (!spots) continue;
       for (const spot of Array.isArray(spots) ? spots : [spots]) {

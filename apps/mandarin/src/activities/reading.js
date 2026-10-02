@@ -12,6 +12,10 @@ import { filterByStatus, isPreview } from '../utils/preview.js';
 import { chunkRounds } from '../utils/chunk.js';
 import { CardWalkthrough } from '../components/CardWalkthrough.js';
 import { speak } from '../utils/speech.js';
+import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
+import { MatchingGame } from '../components/MatchingGame.js';
+import { resolveSpots } from '../components/EvidencePanel.js';
+import { shuffle } from '../utils/shuffle.js';
 
 const CN_NUM = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
 function cnNumber(n) {
@@ -59,6 +63,43 @@ function TextMapCard(node) {
   ]);
 }
 
+// ── 依文體的第三步（參考站：故事排順序、說明文分類、詩句解碼） ─────────
+// 故事有先後，排順序有意義；說明文的段落常常是並列的（101、晴空塔、雙峰塔
+// 先介紹哪一棟都可以），排順序沒有唯一答案，改成「這個細節屬於哪一部分」；
+// 詩的難處在「詩句在說什麼」，改成詩句配白話意思。
+
+/** 說明文分類題：細節 → 屬於哪一類。細節是改寫過的短句，公開也沒問題。 */
+export function buildClassifyItems(activity, shuffleImpl = shuffle) {
+  const categories = activity?.categories || [];
+  return (activity?.items || [])
+    .filter((it) => it.text && categories.includes(it.answer))
+    .map((it, i) => ({
+      id: `classify:${i}:${it.text}`,
+      stem: `「${it.text}」屬於哪一個？`,
+      options: shuffleImpl([...categories]),
+      answer: it.answer,
+      explanation: `「${it.text}」屬於「${it.answer}」。`,
+      hints: [activity.hint || '想一想，課文是在介紹哪一個的時候提到這件事？'],
+    }));
+}
+
+/**
+ * 詩句解碼：詩句從課文密文取原文（要教室密碼，和證據面板同一套），
+ * 白話意思是改寫過的。沒解鎖就回空陣列，這一步不出現。
+ */
+export function buildDecodePairs(lessonId, activity, resolve = resolveSpots) {
+  const pairs = [];
+  for (const pair of activity?.pairs || []) {
+    // 一句一句取，現代詩的詩行之間沒有標點，直接接起來會變成
+    // 「風揚起池水的漣漪我遇見皺巴巴的自己」，要留空才讀得出是兩行。
+    const lines = (pair.line?.sentences || []).map((i) => resolve(lessonId, [{ ...pair.line, sentences: [i] }]));
+    if (!lines.length || lines.some((l) => !l) || !pair.meaning) return [];   // 少一句就整組不出
+    const text = lines.reduce((acc, l) => (acc && !/[，。、；！？：」]$/u.test(acc) ? `${acc}　${l}` : acc + l), '');
+    pairs.push({ left: text.replace(/[，。、；！？]+$/u, ''), right: pair.meaning });
+  }
+  return pairs;
+}
+
 /**
  * @param {object} lesson
  * @param {() => void} onBack
@@ -78,13 +119,20 @@ export function buildReadingActivity(lesson, onBack) {
   const questions = filterByStatus(lesson.reading_questions || []).filter((q) => q.stem);
   const questionRounds = chunkRounds(questions);
 
+  const activity = filterByStatus(lesson.genre_activity ? [lesson.genre_activity] : [])[0] || null;
+  const classifyItems = activity?.type === 'classify' ? buildClassifyItems(activity) : [];
+  const decodePairs = activity?.type === 'decode' ? buildDecodePairs(lesson.lesson_id, activity) : [];
+
   const steps = [];
   if (paragraphs.length >= 3) {
     // 有課文地圖就不再做「兩段比較」暖身：學生剛看過全篇骨架，
     // 直接排全篇就是一次回想練習。
     steps.push('map');
-    steps.push('order');
   }
+  // 第三步依文體：說明文分類、詩句解碼；都沒有就排順序（故事最適合）
+  if (classifyItems.length >= 3) steps.push('classify');
+  else if (decodePairs.length >= 2) steps.push('decode');
+  else if (paragraphs.length >= 3) steps.push('order');
   if (questionRounds.length >= 1) steps.push('questions');
 
   const container = h('div', {});
@@ -132,6 +180,31 @@ export function buildReadingActivity(lesson, onBack) {
       container.appendChild(walkthrough.status);
       container.appendChild(walkthrough.grid);
       container.appendChild(h('div', { class: 'quiz-option-row' }, [next]));
+    } else if (step === 'classify') {
+      container.appendChild(TaskBanner({ label: '說明文分類：這件事屬於哪一個？', step: stepLabel }));
+      if (isPreview() && activity.status === 'draft') {
+        container.appendChild(h('p', { class: 'meta' }, '「待審」題目只在預覽模式顯示，正式上線只會出現教師核准過的內容。'));
+      }
+      container.appendChild(ChoiceQuiz({
+        items: classifyItems,
+        backLabel: isLast ? '回課程首頁' : '本課先完成',
+        onBack,
+        onContinue: isLast ? null : () => { stepIndex += 1; renderStep(); },
+        continueLabel: '繼續：讀題找線索',
+      }));
+    } else if (step === 'decode') {
+      container.appendChild(TaskBanner({ label: '詩句解碼：每一句詩在說什麼？', step: stepLabel }));
+      if (isPreview() && activity.status === 'draft') {
+        container.appendChild(h('p', { class: 'meta' }, '「待審」題目只在預覽模式顯示，正式上線只會出現教師核准過的內容。'));
+      }
+      container.appendChild(MatchingGame({
+        pairs: decodePairs,
+        instructions: '先選左邊的詩句，再選右邊它的意思。',
+        backLabel: isLast ? '回課程首頁' : '本課先完成',
+        onBack,
+        onContinue: isLast ? null : () => { stepIndex += 1; renderStep(); },
+        continueLabel: '繼續：讀題找線索',
+      }));
     } else if (step === 'warmup') {
       // 段落大意一律照資料順序，不用段號排：欄位其實叫 paragraph_no（原本寫 para_no，
       // 比較結果是 NaN，排序從來沒生效過），而六上 L05 有兩個子篇、段號各自從 1 起算，
@@ -150,7 +223,10 @@ export function buildReadingActivity(lesson, onBack) {
         },
       }));
     } else if (step === 'order') {
-      container.appendChild(TaskBanner({ label: '把段落大意排回課文順序', step: stepLabel }));
+      container.appendChild(TaskBanner({
+        label: lesson.genre === 'narrative' ? '故事排順序：把事情照發生的先後排好' : '把段落大意排回課文順序',
+        step: stepLabel,
+      }));
       if (isPreview() && paragraphs.some((p) => p.status === 'draft')) {
         container.appendChild(h('p', { class: 'meta' }, '「待審」標籤只在預覽模式顯示，正式上線只會出現教師核准過的內容。'));
       }
