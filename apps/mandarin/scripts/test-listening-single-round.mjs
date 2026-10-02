@@ -30,7 +30,7 @@ assert.ok(passageButton, '每題應提供「先聽一聽」課文段落語音按
 assert.ok(passageButton.textContent.startsWith('先聽一聽'), '課文段落語音按鈕應在喇叭圖示前顯示「先聽一聽」');
 assert.ok(!container.textContent.includes('課文段落第 0'), '課文段落只作為語音來源，不應全文顯示在頁面上');
 
-const bannerText = container.find((n) => n.hasClass('task-banner__label')).textContent;
+const bannerText = container.find((n) => n.hasClass('task-step')).textContent;
 // 核心練習不再標「本課先完成」（CF 決定移除，對學生是非必要資訊、造成干擾）；
 // TaskBanner 只留任務本身，「加練挑戰」才會另外標示。
 assert.ok(bannerText.includes('仔細聽'), `TaskBanner 應顯示任務說明，實際：${bannerText}`);

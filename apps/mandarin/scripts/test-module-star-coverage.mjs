@@ -282,8 +282,8 @@ function driveOneGenericStep(container) {
   // 所以從任務說明「找出所有的「X」」取出目標字再點。
   const cells = enabledButtons(container, (n) => n.hasClass('vsearch__cell'));
   if (cells.length) {
-    const banner = container.find((n) => n.hasClass && n.hasClass('task-banner__label'));
-    const target = (banner?.textContent || '').match(/找出所有的「(.+?)」/)?.[1];
+    // 目標字放在字陣上方的放大區（.vsearch__target-glyph）
+    const target = container.find((n) => n.hasClass && n.hasClass('vsearch__target-glyph'))?.textContent.trim();
     const hit = target ? cells.find((c) => c.textContent.trim() === target) : null;
     if (hit) {
       hit.dispatch('click');

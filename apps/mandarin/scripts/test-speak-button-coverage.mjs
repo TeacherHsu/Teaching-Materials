@@ -140,8 +140,12 @@ function assertCoverage(root, label) {
   assert.ok(hint.findAll((n) => n.hasClass('speak-button')).length > 0, 'HintPanel 應有朗讀鈕');
   checked += 1;
 
-  const banner = TaskBanner({ label: '看字選出正確的注音' });
-  assert.ok(banner.findAll((n) => n.hasClass('speak-button')).length > 0, 'TaskBanner 應有朗讀鈕');
+  // TaskBanner 改成步驟進度列（CF 2026-10-03：原本的說明和題目重複），
+  // 不再有朗讀鈕——要念的是題目本身，題目旁邊有自己的「聽題目」。
+  const banner = TaskBanner({ label: '一段一段讀：讀完這一段，選出它在說什麼', step: '第 2 步／共 4 步' });
+  assert.equal(banner.findAll((n) => n.hasClass('speak-button')).length, 0, '進度列不放朗讀鈕');
+  assert.match(banner.textContent, /第 2／4 步/);
+  assert.ok(!banner.textContent.includes('選出它在說什麼'), '只留步驟短名，不重複題目');
   checked += 1;
 
   const done = CompletionFeedback({ correct: 3, total: 5 });

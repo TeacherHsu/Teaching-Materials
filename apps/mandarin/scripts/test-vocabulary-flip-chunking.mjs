@@ -29,7 +29,7 @@ function gridChildCount() {
 }
 
 function bannerText() {
-  const banner = container.find((n) => n.hasClass('task-banner__label'));
+  const banner = container.find((n) => n.hasClass('task-step'));
   return banner.textContent;
 }
 
@@ -43,7 +43,7 @@ while (true) {
   totalShown += count;
   const banner = bannerText();
   assert.ok(
-    banner.includes('第 1 步／共 3 步') && !/第\s*\d+\s*組\s*[／/]\s*共\s*\d+\s*組/.test(banner),
+    banner.includes('第 1／3 步') && !/第\s*\d+\s*組\s*[／/]\s*共\s*\d+\s*組/.test(banner),
     `banner 應保留步驟進度且不顯示組別進度，實際：${banner}`,
   );
 
