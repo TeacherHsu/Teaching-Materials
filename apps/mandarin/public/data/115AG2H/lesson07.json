@@ -1557,7 +1557,19 @@
       "answer": "每個人帶自己的午餐，在戶外野餐。",
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
-      "passage": "今天，老師帶我們到郊外活動。"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "729f81d3",
+            "bff727b5"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG2H07:02",
@@ -1571,7 +1583,19 @@
       "answer": "拿竹筒飯的是小星；女生是小花。",
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
-      "passage": "小星把竹筒打開，裡面包著飯。"
+      "passage_ref": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1
+          ],
+          "sha": [
+            "bc1c647a",
+            "e92a09da"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG2H07:03",
@@ -1585,7 +1609,23 @@
       "answer": "竹子的香味，奶奶的愛心和祖先的故事。",
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
-      "passage": "這是竹筒飯，有竹子的香味，有奶奶的愛心，還有祖先的故事。"
+      "passage_ref": [
+        {
+          "para": 2,
+          "sentences": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "352aeaf6",
+            "9e284a73",
+            "ab567cd9",
+            "479e44eb"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG2H07:04",
@@ -1599,7 +1639,25 @@
       "answer": "除了好吃，還能夠保平安。",
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
-      "passage": "這是艾粄。媽媽說，客家人會在清明節吃艾粄，不但好吃，還可以保平安。"
+      "passage_ref": [
+        {
+          "para": 3,
+          "sentences": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "sha": [
+            "224aaf0c",
+            "49d3b350",
+            "9a917d82",
+            "620f2bc1",
+            "c85bb5ac"
+          ]
+        }
+      ]
     }
   ],
   "rhetoric": [],

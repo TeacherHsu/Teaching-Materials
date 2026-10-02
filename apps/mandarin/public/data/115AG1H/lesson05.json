@@ -1058,7 +1058,19 @@
       "answer": "高高在天上。",
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
-      "passage": "七彩的滑梯，高高在天上。"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            0,
+            2
+          ],
+          "sha": [
+            "cf593536",
+            "24f26bdd"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG1H05:02",
@@ -1072,7 +1084,21 @@
       "answer": "棉花糖。",
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
-      "passage": "好想爬上去，看一看，有沒有棉花糖？"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            3,
+            4,
+            5
+          ],
+          "sha": [
+            "a5c61789",
+            "ada9f189",
+            "6f70cde2"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG1H05:03",
@@ -1086,7 +1112,21 @@
       "answer": "泡泡池。",
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
-      "passage": "好想滑下去，看一看，有沒有泡泡池？"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            6,
+            7,
+            8
+          ],
+          "sha": [
+            "ec9863c4",
+            "ada9f189",
+            "51bdbcb6"
+          ]
+        }
+      ]
     }
   ],
   "review_words": {

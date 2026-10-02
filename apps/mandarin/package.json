@@ -11,7 +11,7 @@
     "build:preview": "vite build --outDir dist-preview && node scripts/filter-preview-data.mjs",
     "preview": "vite preview",
     "preview:draft": "vite preview --outDir dist-preview",
-    "validate": "node scripts/validate-data.mjs",
+    "validate": "node scripts/validate-data.mjs && npm run check-text-leak",
     "check-workflow": "node scripts/check-workflow-completeness.mjs",
     "materialize:g1a": "node scripts/materialize-g1a-content.mjs",
     "materialize:lesson-focus": "node scripts/materialize-lesson-focus.mjs",
@@ -25,7 +25,8 @@
     "backfill:listening": "node scripts/backfill-listening-passages.mjs",
     "check-assets": "node scripts/check-assets.mjs",
     "check-dist": "node scripts/check-dist.mjs && npm run check-assets",
-    "build-char-index": "node scripts/build-char-index.mjs"
+    "build-char-index": "node scripts/build-char-index.mjs",
+    "check-text-leak": "node scripts/check-text-leak.mjs"
   },
   "devDependencies": {
     "ajv": "^8.17.1",

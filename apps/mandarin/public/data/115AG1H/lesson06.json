@@ -1090,7 +1090,17 @@
       "answer": "天空。",
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
-      "passage": "和天空說早。"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            2
+          ],
+          "sha": [
+            "7eae79ed"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG1H06:03",

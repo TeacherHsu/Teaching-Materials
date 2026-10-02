@@ -1,6 +1,7 @@
 // 「聽聽看」模組：TTS 朗讀一個生活短句／短對話，學生選答案。
 // 語音不支援時顯示「此裝置不支援朗讀」並提供「顯示文字」按鈕。逐題呈現，3–5 題一組。
 import { h, clear } from '../utils/dom.js';
+import { resolveSpots } from '../components/EvidencePanel.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { TaskBanner } from '../components/TaskBanner.js';
@@ -49,7 +50,11 @@ export function buildListeningActivity(lesson, onBack) {
     // 每題先提供對應課文段落的「先聽一聽」按鈕；段落只作為語音來源，不在畫面全文列出。
     function buildAudioRow(entry) {
       const row = h('div', { class: 'listening-audio', style: 'margin-bottom:16px' });
-      const passage = entry.passage || entry.stem;
+      // 聽聽看要念的那段話就是課文：不存明碼，改存索引參照，這裡從解密後的
+      // 課文取回來。沒解鎖就沒有短文——這和課文點讀、朗讀挑戰一致。
+      const passage = entry.passage
+        || resolveSpots(lesson.lesson_id, entry.passage_ref)
+        || entry.stem;
       if (speechSupported()) {
         row.appendChild(
           SpeakButton({

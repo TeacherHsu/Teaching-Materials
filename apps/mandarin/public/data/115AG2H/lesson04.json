@@ -1192,7 +1192,17 @@
       "answer": "池塘邊。",
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
-      "passage": "只聞聲不見影。"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            3
+          ],
+          "sha": [
+            "fcd6bce6"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG2H04:02",
@@ -1206,7 +1216,19 @@
       "answer": "青蛙。",
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
-      "passage": "你來猜一猜，我是蝦蟆還是青蛙？"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            5,
+            6
+          ],
+          "sha": [
+            "1adfd52e",
+            "cffdd8c1"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG2H04:03",
@@ -1220,7 +1242,17 @@
       "answer": "池塘邊想要找青蛙的小男孩。",
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
-      "passage": "請別再靠近我。"
+      "passage_ref": [
+        {
+          "para": 2,
+          "sentences": [
+            2
+          ],
+          "sha": [
+            "d8f95e6d"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG2H04:04",
@@ -1234,7 +1266,17 @@
       "answer": "因為小青蛙躲在池塘的某一處，只能聽到聲音，卻看不見他在哪裡。",
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
-      "passage": "只聞聲不見影。"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            3
+          ],
+          "sha": [
+            "fcd6bce6"
+          ]
+        }
+      ]
     }
   ],
   "rhetoric": [],

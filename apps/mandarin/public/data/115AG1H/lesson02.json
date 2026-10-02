@@ -926,7 +926,19 @@
       "answer": "大風吹。",
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
-      "passage": "大風吹，我們來玩大風吹。"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            0,
+            3
+          ],
+          "sha": [
+            "d53b84c0",
+            "1853fdbb"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG1H02:02",
@@ -954,7 +966,19 @@
       "answer": "玩大風吹。",
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
-      "passage": "大風吹，我們來玩大風吹。"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            0,
+            3
+          ],
+          "sha": [
+            "d53b84c0",
+            "1853fdbb"
+          ]
+        }
+      ]
     }
   ],
   "review_words": {

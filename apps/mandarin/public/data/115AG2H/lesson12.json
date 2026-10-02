@@ -1585,7 +1585,23 @@
       "answer": "鵝在池裡游泳，有的張嘴唱歌，有的伸長脖子。",
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
-      "passage": "我看到水裡的白鵝，就念出：「鵝、鵝、鵝，曲項向天歌。」"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "e62d2107",
+            "9666ce81",
+            "96be48d9",
+            "147854fa"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG2H12:02",
@@ -1599,7 +1615,21 @@
       "answer": "讚嘆白鵝，也像在模仿叫聲。",
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
-      "passage": "我也來詠鵝。鵝、鵝、鵝，倒立在水中。"
+      "passage_ref": [
+        {
+          "para": 3,
+          "sentences": [
+            6,
+            7,
+            8
+          ],
+          "sha": [
+            "cece37d9",
+            "02ec1b7c",
+            "4e837c85"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG2H12:03",
@@ -1613,7 +1643,19 @@
       "answer": "白鵝伸長了脖子，對著天空唱歌。",
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
-      "passage": "白鵝伸長脖子，對著天空唱歌。"
+      "passage_ref": [
+        {
+          "para": 2,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "cd7a8c7e",
+            "bec21f8d"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG2H12:04",
@@ -1627,7 +1669,23 @@
       "answer": "姐姐指著水面說的話。",
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
-      "passage": "姐姐指著水面，說：「你看，白鵝伸長脖子，對著天空唱歌。」"
+      "passage_ref": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "a3aa036e",
+            "07da4eaa",
+            "cd7a8c7e",
+            "bec21f8d"
+          ]
+        }
+      ]
     }
   ],
   "rhetoric": [],

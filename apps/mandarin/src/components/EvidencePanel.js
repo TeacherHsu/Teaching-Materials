@@ -90,3 +90,29 @@ export function EvidencePanel({ lessonId, spots, label = '課文裡是這樣寫�
     },
   };
 }
+
+/**
+ * 把「索引參照」還原成課文原句。
+ *
+ * 用在 listening[].passage_ref：聽聽看要念的那段話就是課文，所以不存明碼
+ * （那等於把課文片段漏到公開 repo），只存第幾段第幾句，這裡才取回來。
+ *
+ * @param {string} lessonId
+ * @param {Array<{para:number, sentences:number[]}>} spots
+ * @returns {string|null} 課文沒解鎖或索引對不上時回 null
+ */
+export function resolveSpots(lessonId, spots) {
+  if (!isUnlocked() || !Array.isArray(spots) || !spots.length) return null;
+  const byPara = paragraphSentences(lessonId);
+  if (!byPara) return null;
+  const parts = [];
+  for (const spot of spots) {
+    const sentences = byPara.get(spot.para - 1);
+    if (!sentences) return null;
+    for (const index of spot.sentences) {
+      if (sentences[index] === undefined) return null;
+      parts.push(sentences[index]);
+    }
+  }
+  return parts.join('') || null;
+}

@@ -1733,7 +1733,19 @@
       "answer": "家常飯菜",
       "status": "ready",
       "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
-      "passage": "故人具雞黍，邀我至田家。"
+      "passage_ref": [
+        {
+          "para": 2,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "291c2670",
+            "161ef4c7"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG6H10:2",
@@ -1746,7 +1758,19 @@
       "answer": "綠樹、青山、場圃",
       "status": "ready",
       "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
-      "passage": "綠樹村邊合，青山郭外斜。"
+      "passage_ref": [
+        {
+          "para": 2,
+          "sentences": [
+            4,
+            5
+          ],
+          "sha": [
+            "000885fd",
+            "81c07cfc"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG6H10:3",
@@ -1759,7 +1783,19 @@
       "answer": "朋友歡聚談農事",
       "status": "ready",
       "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
-      "passage": "開軒面場圃，把酒話桑麻。"
+      "passage_ref": [
+        {
+          "para": 2,
+          "sentences": [
+            6,
+            7
+          ],
+          "sha": [
+            "79fe8f3b",
+            "be88f0d4"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG6H10:4",
@@ -1772,7 +1808,19 @@
       "answer": "喜愛友情與田園生活",
       "status": "ready",
       "source": "115G6A／翰林六上官方教材與教師確認資料（15閱讀理解提問；答案以官方題目資料核對）",
-      "passage": "待到重陽日，還來就菊花。"
+      "passage_ref": [
+        {
+          "para": 2,
+          "sentences": [
+            8,
+            9
+          ],
+          "sha": [
+            "8364235c",
+            "b9c93dcc"
+          ]
+        }
+      ]
     }
   ],
   "review_words": {

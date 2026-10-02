@@ -1370,7 +1370,17 @@
       "answer": "越南人。",
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
-      "passage": "明光請媽媽來跟大家介紹越南春捲。"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            2
+          ],
+          "sha": [
+            "8260a104"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG2H08:02",
@@ -1398,7 +1408,19 @@
       "answer": "米紙。可以用來包蔬菜和蝦子成為越南春捲。",
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
-      "passage": "用泡軟的米紙包食材，就可以吃了。"
+      "passage_ref": [
+        {
+          "para": 2,
+          "sentences": [
+            6,
+            7
+          ],
+          "sha": [
+            "eb49ae86",
+            "e4f991b0"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG2H08:04",
@@ -1412,7 +1434,19 @@
       "answer": "家長到班上分享家鄉美食。",
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
-      "passage": "班上的美食分享日到了，明光請媽媽來跟大家介紹越南春捲。"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "a05adbbf",
+            "8260a104"
+          ]
+        }
+      ]
     }
   ],
   "rhetoric": [],

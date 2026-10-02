@@ -56,9 +56,14 @@ export async function lessonSentences(lessonId) {
     .map(([paraIndex, sentences]) => ({ para: paraIndex + 1, sentences }));
 }
 
+// 這支同時是 CLI 與函式庫（delink_listening_passages.mjs 會 import 它），
+// 所以只有「直接執行」時才跑 CLI，被 import 時不要有副作用。
+const isCli = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
 const [, , cmd, lessonId] = process.argv;
 
-if (cmd === 'list') {
+if (!isCli) {
+  // 被 import：什麼都不做
+} else if (cmd === 'list') {
   const paras = await lessonSentences(lessonId);
   console.log(`${lessonId}　${paras.length} 段\n`);
   for (const { para, sentences } of paras) {

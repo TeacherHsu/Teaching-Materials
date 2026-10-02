@@ -1051,7 +1051,19 @@
       "answer": "一起玩。",
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
-      "passage": "來來來，一起玩。"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "ecb46f39",
+            "3d31a6ab"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG1H03:02",
@@ -1079,7 +1091,28 @@
       "answer": "山洞。",
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
-      "passage": "一個又一個，火車過山洞，開開心心一起玩。"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            5
+          ],
+          "sha": [
+            "c6a43c22"
+          ]
+        },
+        {
+          "para": 2,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "6fedea7c",
+            "2f840579"
+          ]
+        }
+      ]
     }
   ],
   "review_words": {

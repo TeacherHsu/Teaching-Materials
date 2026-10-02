@@ -875,7 +875,19 @@
       "answer": "山谷。",
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
-      "passage": "爬上高山，來到山谷。"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "82932ddf",
+            "abb71d39"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG1H07:02",
@@ -889,7 +901,19 @@
       "answer": "有人。",
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
-      "passage": "有人回：「你好！」"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            5,
+            6
+          ],
+          "sha": [
+            "fe35a190",
+            "00dafea9"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG1H07:03",
@@ -903,7 +927,21 @@
       "answer": "我和他。",
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
-      "passage": "我笑，他也笑，我們一起哈哈大笑。"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            11,
+            12,
+            13
+          ],
+          "sha": [
+            "8a18d76e",
+            "086a6606",
+            "a11a3cbc"
+          ]
+        }
+      ]
     }
   ],
   "review_words": {

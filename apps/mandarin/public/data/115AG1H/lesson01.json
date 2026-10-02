@@ -906,7 +906,19 @@
       "answer": "向前走。",
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
-      "passage": "你和我，一起向前走。"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            7,
+            8
+          ],
+          "sha": [
+            "1380c795",
+            "07d4d427"
+          ]
+        }
+      ]
     }
   ],
   "review_words": {

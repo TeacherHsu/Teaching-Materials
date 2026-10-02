@@ -1240,7 +1240,23 @@
       "answer": "小草。",
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；課文逐題回核）",
-      "passage": "小草，小草，請問你，星星有多少？"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2,
+            3,
+            6
+          ],
+          "sha": [
+            "63970141",
+            "63970141",
+            "bbfdeecb",
+            "61bd56a8"
+          ]
+        }
+      ]
     }
   ],
   "review_words": {

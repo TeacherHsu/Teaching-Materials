@@ -1126,7 +1126,19 @@
       "answer": "因為他覺得自己認識了很多字，所以應該能夠猜出來。",
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
-      "passage": "他說上學讀書真好玩，認識了很多字。"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "4938361f",
+            "0513a207"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG2H10:02",
@@ -1140,7 +1152,21 @@
       "answer": "﹁一加一﹂是王、﹁一減一﹂是三。",
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
-      "passage": "這時，姐姐趕緊寫下「王」，又寫下「三」。"
+      "passage_ref": [
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "c732e0d4",
+            "f938a12f",
+            "47ed2ffd"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG2H10:03",
@@ -1154,7 +1180,21 @@
       "answer": "姐姐提示字的結構，讓表弟找出答案。",
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
-      "passage": "這時，姐姐趕緊寫下「王」，又寫下「三」。"
+      "passage_ref": [
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "c732e0d4",
+            "f938a12f",
+            "47ed2ffd"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG2H10:04",
@@ -1168,7 +1208,19 @@
       "answer": "兩人同時說出一樣的話。",
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問／聽聽看衍生題）",
-      "passage": "我和姐姐異口同聲的說：「答對了！」"
+      "passage_ref": [
+        {
+          "para": 3,
+          "sentences": [
+            6,
+            7
+          ],
+          "sha": [
+            "f1051b30",
+            "9dcdf459"
+          ]
+        }
+      ]
     }
   ],
   "rhetoric": [],
