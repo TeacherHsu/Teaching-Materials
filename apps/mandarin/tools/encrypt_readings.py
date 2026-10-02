@@ -268,6 +268,17 @@ def main() -> int:
         help="字→讀音索引（明碼，朗讀挑戰判同音字用）",
     )
     ap.add_argument(
+        "--skip",
+        nargs="*",
+        default=[],
+        metavar="LESSON_ID",
+        help=(
+            "不要加密的課次（Reading-Tool 代號或課文樂園代號都收）。"
+            "用在課文檔抓錯版本時：寧可讓點讀／朗讀入口整個不出現，"
+            "也不要讓學生讀到掛著這一課課名的別篇課文。"
+        ),
+    )
+    ap.add_argument(
         "--out",
         type=Path,
         default=Path(__file__).resolve().parent.parent / "public" / "data" / "readings.enc.json",
@@ -288,6 +299,14 @@ def main() -> int:
 
     print(f"讀取 {args.src}")
     payload = build_payload(args.src, known)
+    for raw in args.skip:
+        for candidate in (raw, to_park_id(raw)):
+            if candidate in payload:
+                payload.pop(candidate)
+                print(f"⏭  略過 {candidate}（--skip {raw}）")
+                break
+        else:
+            print(f"⚠ --skip {raw} 在課文目錄裡找不到，沒有略過任何課次", file=sys.stderr)
     if not payload:
         print("沒有任何課文可加密。", file=sys.stderr)
         return 1

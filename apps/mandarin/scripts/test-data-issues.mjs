@@ -25,21 +25,52 @@ for (const volume of fs.readdirSync(dataRoot, { withFileTypes: true }).filter((e
     }
   }
 }
-assert.ok(flagged >= 1, '這支測試要有實際資料才有意義（目前四上有待裁定的疑義）');
-
 installFakeDom();
 document.body = new FakeElement('body');
 window.matchMedia = () => ({ matches: true });
 
 const { PendingReviewPage } = await import('../src/pages/PendingReviewPage.js');
-const lesson = JSON.parse(fs.readFileSync(path.join(dataRoot, '115AG4K', 'lesson07.json'), 'utf8'));
-const rendered = PendingReviewPage(lesson).textContent;
-assert.match(rendered, /資料疑義/u, '待審頁要列出資料疑義區');
-assert.match(rendered, /巧文姐姐/u, '疑義題的題幹要印出來，教師才能對照課本');
-assert.match(rendered, /對不上|不符/u, '疑義說明要一起印出來');
 
-// 沒有疑義的課不該憑空長出這一區
-const clean = JSON.parse(fs.readFileSync(path.join(dataRoot, '115AG4K', 'lesson05.json'), 'utf8'));
-assert.doesNotMatch(PendingReviewPage(clean).textContent, /資料疑義/u, '沒有疑義的課不顯示疑義區');
+// 用合成課次測渲染，不綁任何一課的現狀——疑義一旦裁定就會從資料裡消失，
+// 綁實際課次的測試會在裁定後無聲失效。
+function fakeLesson(extra) {
+  return { lesson_id: '115AG9X01', lesson_no: 1, title: '測試課', ...extra };
+}
 
-console.log(`✅ 資料疑義：${flagged} 筆都沒有誤標證據，待審頁也看得到`);
+const perQuestion = PendingReviewPage(fakeLesson({
+  reading_questions: [{
+    id: 'question:115AG9X01:01',
+    stem: '這題問了什麼？',
+    answer: '甲',
+    options: ['甲', '乙'],
+    answer_source: 'derived:test',
+    data_issue: '答案與課文對不上，待教師裁定。',
+  }],
+})).textContent;
+assert.match(perQuestion, /資料疑義/u, '待審頁要列出資料疑義區');
+assert.match(perQuestion, /這題問了什麼/u, '疑義題的題幹要印出來，教師才能對照課本');
+assert.match(perQuestion, /對不上/u, '疑義說明要一起印出來');
+
+const lessonLevel = PendingReviewPage(fakeLesson({
+  reading_issue: '本課課文檔抓錯版本，待更換後才能標證據。',
+})).textContent;
+assert.match(lessonLevel, /資料疑義/u, '課次層級的疑義也要顯示');
+assert.match(lessonLevel, /抓錯版本/u, '課次層級疑義的說明要印出來');
+
+assert.doesNotMatch(PendingReviewPage(fakeLesson({})).textContent, /資料疑義/u, '沒有疑義的課不顯示疑義區');
+
+// 課次層級疑義：課文還沒換就不能標證據，否則螢光筆會畫在別篇課文上
+let readingIssues = 0;
+for (const volume of fs.readdirSync(dataRoot, { withFileTypes: true }).filter((e) => e.isDirectory() && /^115AG\d/.test(e.name))) {
+  for (const filename of fs.readdirSync(path.join(dataRoot, volume.name)).filter((n) => /^lesson\d+\.json$/.test(n))) {
+    const lesson = JSON.parse(fs.readFileSync(path.join(dataRoot, volume.name, filename), 'utf8'));
+    if (!lesson.reading_issue) continue;
+    readingIssues += 1;
+    assert.ok(
+      !(lesson.reading_questions || []).some((q) => q.evidence),
+      `${lesson.lesson_id}: 課文本身有疑義時不得標閱讀證據`,
+    );
+  }
+}
+
+console.log(`✅ 資料疑義：題目層級 ${flagged} 筆、課次層級 ${readingIssues} 筆，都沒有誤標證據，待審頁也看得到`);

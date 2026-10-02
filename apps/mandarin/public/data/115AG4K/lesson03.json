@@ -972,11 +972,42 @@
         "家人",
         "裁判"
       ],
-      "answer": "家人",
+      "answer": "學長",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context",
-      "data_issue": "答案標為「家人」，但課文寫的是「學長都為我打氣」；選項裡也有「學長」。answer_source 是 derived 不是官方答案，待 CF 裁定後再標證據。"
+      "answer_source": "teacher:CF 裁定 2026-10-02（原標「家人」與課文「學長都為我打氣」不符）",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "sha": [
+            "fa85fe34",
+            "eb61b808",
+            "c90c6945",
+            "67678dc8"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "主角剛上球場很害怕，有人對他說「熟能生巧」。找出說這句話的是誰。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K03:03",

@@ -27,10 +27,16 @@ let lessons = 0;
 for (const file of lessonFiles()) {
   const lesson = JSON.parse(readFileSync(file, 'utf8'));
   const flagged = (lesson.reading_questions || []).filter((q) => q.data_issue);
-  if (flagged.length === 0) continue;
+  if (flagged.length === 0 && !lesson.reading_issue) continue;
   lessons += 1;
-  console.log(`\n${lesson.lesson_id}　第 ${lesson.lesson_no} 課〈${lesson.title}〉　${flagged.length} 筆`);
+  const n = flagged.length + (lesson.reading_issue ? 1 : 0);
+  console.log(`\n${lesson.lesson_id}　第 ${lesson.lesson_no} 課〈${lesson.title}〉　${n} 筆`);
   console.log(`  待審頁：#/review/${lesson.lesson_id}?preview=1`);
+  if (lesson.reading_issue) {
+    count += 1;
+    console.log('  ─ 【課次層級】本課課文');
+    console.log(`    疑義：${lesson.reading_issue}`);
+  }
   for (const q of flagged) {
     count += 1;
     console.log(`  ─ ${q.stem}`);

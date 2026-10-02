@@ -45,10 +45,12 @@ for (const volumeCode of fs.readdirSync(dataRoot).filter((name) => /^115AG[1-6][
       optioned += 1;
       assert.ok(question.options.length >= 2, `${volumeCode}/${lessonFile} ${question.stem}: 選項至少要有兩個`);
       assert.ok(question.options.includes(question.answer), `${volumeCode}/${lessonFile} ${question.stem}: 正解必須是現有選項`);
-      assert.equal(
-        question.answer_source,
-        'derived:reviewed-reading-question-context',
-        `${volumeCode}/${lessonFile} ${question.stem}: 必須標示已核對的答案來源`,
+      // 答案來源要嘛是衍生時核對過的，要嘛是教師親自裁定的（teacher: 開頭並寫明理由）。
+      // 教師裁定排在衍生之上——衍生有標錯的前例（四上 L03 把「學長」標成「家人」）。
+      assert.ok(
+        question.answer_source === 'derived:reviewed-reading-question-context'
+        || /^teacher:.+/u.test(question.answer_source || ''),
+        `${volumeCode}/${lessonFile} ${question.stem}: 必須標示已核對的答案來源（derived 或 teacher:…）`,
       );
     }
   }

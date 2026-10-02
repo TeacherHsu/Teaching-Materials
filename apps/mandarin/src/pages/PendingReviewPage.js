@@ -146,12 +146,22 @@ const GROUPS = [
 // 這類疑義該改哪個欄位，給按鈕會讓人以為按了就生效。這區只負責讓教師看見。
 function dataIssueSection(lesson) {
   const flagged = (lesson.reading_questions || []).filter((q) => q.data_issue);
-  if (flagged.length === 0) return null;
+  if (flagged.length === 0 && !lesson.reading_issue) return null;
   const section = h('section', { class: 'review-group review-group--issue' });
-  section.appendChild(h('h2', {}, `⚠ 資料疑義（待教師裁定，${flagged.length} 筆）`));
+  section.appendChild(h('h2', {}, `⚠ 資料疑義（待教師裁定，${flagged.length + (lesson.reading_issue ? 1 : 0)} 筆）`));
   section.appendChild(
     h('p', { class: 'meta' }, '這些題目在標注閱讀證據時發現與課文對不上，無法標注證據。需要教師對照課本裁定，不能由程式判斷。'),
   );
+  // 課次層級的疑義（整課課文對不上，不是某一題的問題）
+  if (lesson.reading_issue) {
+    section.appendChild(
+      h('article', { class: 'review-item' }, [
+        h('p', { class: 'review-item__content' }, '本課課文（點讀／朗讀／閱讀證據的來源）'),
+        h('p', { class: 'review-item__requirement' }, lesson.reading_issue),
+      ]),
+    );
+  }
+
   for (const q of flagged) {
     section.appendChild(
       h('article', { class: 'review-item' }, [
