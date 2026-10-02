@@ -1491,6 +1491,17 @@
   border-bottom: 2px solid var(--color-border);
 }
 
+.review-group--issue {
+  padding: var(--space-4);
+  border: 2px solid var(--color-warning);
+  border-radius: var(--radius-lg, 12px);
+  background: var(--color-surface);
+}
+
+.review-group--issue .review-item {
+  border-left: 4px solid var(--color-warning);
+}
+
 .review-group__header {
   display: flex;
   flex-wrap: wrap;

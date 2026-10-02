@@ -141,6 +141,31 @@ const GROUPS = [
   },
 ];
 
+// 「資料疑義」區：標注時發現題目與課文對不上的題目（q.data_issue）。
+// 刻意不給核准／退回按鈕，也刻意不計入審核進度 —— apply_review.py 不知道
+// 這類疑義該改哪個欄位，給按鈕會讓人以為按了就生效。這區只負責讓教師看見。
+function dataIssueSection(lesson) {
+  const flagged = (lesson.reading_questions || []).filter((q) => q.data_issue);
+  if (flagged.length === 0) return null;
+  const section = h('section', { class: 'review-group review-group--issue' });
+  section.appendChild(h('h2', {}, `⚠ 資料疑義（待教師裁定，${flagged.length} 筆）`));
+  section.appendChild(
+    h('p', { class: 'meta' }, '這些題目在標注閱讀證據時發現與課文對不上，無法標注證據。需要教師對照課本裁定，不能由程式判斷。'),
+  );
+  for (const q of flagged) {
+    section.appendChild(
+      h('article', { class: 'review-item' }, [
+        h('p', { class: 'review-item__content' }, `題幹：${q.stem || '（空白）'}`),
+        h('p', { class: 'review-item__content' }, `現有答案：${q.answer || '（空白）'}`),
+        h('p', { class: 'meta' }, `選項：${(q.options || []).join('、') || '（無）'}`),
+        h('p', { class: 'meta' }, `答案來源：${q.answer_source || '（未標）'}`),
+        h('p', { class: 'review-item__requirement' }, q.data_issue),
+      ]),
+    );
+  }
+  return section;
+}
+
 export function PendingReviewPage(lesson) {
   const lessonId = lesson.lesson_id;
   const decisions = loadReviewDecisions(lessonId); // { [id]: { decision, note } }
@@ -159,9 +184,14 @@ export function PendingReviewPage(lesson) {
   );
   root.appendChild(h('h1', {}, `第 ${lesson.lesson_no} 課：${lesson.title} — 教材待審`));
 
+  const issues = dataIssueSection(lesson);
+  if (issues) root.appendChild(issues);
+
   if (total === 0) {
     root.appendChild(
-      h('p', { class: 'missing-content' }, '目前沒有待審（draft）內容。可能已全數核准，或這是生產資料（不含草稿）。'),
+      h('p', { class: 'missing-content' }, issues
+        ? '除了上面的資料疑義外，沒有其他待審（draft）內容。'
+        : '目前沒有待審（draft）內容。可能已全數核准，或這是生產資料（不含草稿）。'),
     );
     root.appendChild(h('a', { class: 'btn', href: `#/lesson/${lessonId}` }, '回課程首頁'));
     return root;
