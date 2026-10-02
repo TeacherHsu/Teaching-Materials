@@ -873,36 +873,136 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG3H03:1",
+      "id": "reading_question:03:01",
       "stem": "爸爸統計櫻櫻三天內丟了幾樣東西？",
+      "options": [
+        "四樣",
+        "三樣",
+        "兩樣",
+        "五樣"
+      ],
+      "answer": "四樣",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "四樣。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看信的開頭，爸爸做了一個小統計。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "星期一、星期二、星期三各丟了什麼？數數看。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H03:2",
-      "stem": "櫻櫻匆忙的根本原因是什麼？",
+      "id": "reading_question:03:02",
+      "stem": "爸爸認為櫻櫻常丟東西，是因為什麼？",
+      "options": [
+        "做事太匆忙",
+        "東西太多了",
+        "書包太小了",
+        "同學拿走了"
+      ],
+      "answer": "做事太匆忙",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "提取訊息",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一段最後一句。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找有引號的那個詞。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
+    },
+    {
+      "id": "reading_question:03:03",
+      "stem": "櫻櫻為什麼總是那麼匆忙？",
+      "options": [
+        "做事前不先計畫",
+        "每天起床都太晚了",
+        "學校的功課太多了",
+        "走路的速度太慢了"
+      ],
+      "answer": "做事前不先計畫",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "她做事沒有先計畫，總是拖到最後才行動。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第三段，爸爸說的原因。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "櫻櫻常說「到時候再說」，這表示她做事前會不會先想好？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H03:3",
-      "stem": "爸爸建議睡前先做什麼？",
-      "strategy_tag": "提取訊息",
-      "answer_hint": "先整理明天要帶的物品，完成準備和檢查。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（15閱讀理解提問，重述版）"
-    },
-    {
-      "id": "reading_question:115AG3H03:4",
-      "stem": "提早五分鐘開始做事有什麼好處？",
-      "strategy_tag": "整合訊息",
-      "answer_hint": "即使發現遺漏，也還有足夠時間處理，做事會更從容。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+      "id": "reading_question:03:04",
+      "stem": "爸爸教櫻櫻什麼方法？",
+      "options": [
+        "先計畫，再提早五分鐘開始",
+        "每天提早五分鐘起床就好",
+        "把東西都交給爸爸保管",
+        "做事前先去問一問老師"
+      ],
+      "answer": "先計畫，再提早五分鐘開始",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "詮釋整合",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看最後一段，也想想課名。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "課名說「提早五分鐘」，可是做事之前還要先做什麼？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     }
   ],
   "polysemy": [

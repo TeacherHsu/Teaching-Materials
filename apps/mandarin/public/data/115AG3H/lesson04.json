@@ -815,36 +815,136 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG3H04:1",
-      "stem": "康康平時在食堂負責什麼工作？",
+      "id": "reading_question:04:01",
+      "stem": "食堂裡，師徒兩人怎麼分工？",
+      "options": [
+        "師傅燒水做菜，康康撿柴",
+        "康康燒水做菜，師傅撿柴",
+        "兩個人一起去撿柴",
+        "師傅招呼客人，康康做菜"
+      ],
+      "answer": "師傅燒水做菜，康康撿柴",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "想想看師徒兩人的分工。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一段最後一句。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「年長的師傅……，年輕的徒弟康康只負責……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H04:2",
-      "stem": "康康先用哪一種方法讓水停止沸騰？",
+      "id": "reading_question:04:02",
+      "stem": "水滾了，康康用什麼方法想讓水停下來？",
+      "options": [
+        "把熱水舀起來再倒回去",
+        "把整個鍋子搬離爐灶",
+        "往鍋子裡加很多冷水",
+        "趴在灶前用力把火吹熄"
+      ],
+      "answer": "把熱水舀起來再倒回去",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "答案是一個和舀水有關的成語。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第二段，康康跑到鍋子旁做了什麼。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "這個方法叫「揚湯止沸」，「揚湯」就是把湯舀起來。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H04:3",
-      "stem": "師傅最後怎麼讓水不再沸騰？",
-      "strategy_tag": "提取訊息",
-      "answer_hint": "想想看師傅從鍋底拿出了什麼。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+      "id": "reading_question:04:03",
+      "stem": "為什麼康康舀了很多次，水還是在沸騰？",
+      "options": [
+        "鍋子底下的柴火還在燒",
+        "康康舀水舀得不夠快",
+        "鍋子裡裝的水實在太多",
+        "師傅偷偷又加了一把柴"
+      ],
+      "answer": "鍋子底下的柴火還在燒",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "推論訊息",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "想一想，水為什麼會滾？"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "康康只動了鍋子上面的水，鍋子下面呢？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H04:4",
-      "stem": "師傅教康康解決問題時要先做什麼？",
-      "strategy_tag": "找出主旨",
-      "answer_hint": "不要只看表面，要找出問題的根本。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第4課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+      "id": "reading_question:04:04",
+      "stem": "師傅的方法和康康的有什麼不同？",
+      "options": [
+        "師傅抽掉柴火，從根本解決",
+        "師傅舀水舀得比康康快",
+        "師傅往鍋裡加了一桶冷水",
+        "師傅請客人一起來幫忙"
+      ],
+      "answer": "師傅抽掉柴火，從根本解決",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "比較評估",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第三段，師傅做了什麼。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「釜底抽薪」：把鍋子底下的柴抽走。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     }
   ],
   "polysemy": [

@@ -1238,60 +1238,136 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG3H01:ca39e35c",
-      "stem": "課文為什麼用蝸牛來形容時間過得很慢？",
+      "id": "reading_question:01:01",
+      "stem": "課文用蝸牛形容時間，是因為蝸牛有什麼特性？",
+      "options": [
+        "爬得很慢",
+        "背著殼",
+        "喜歡下雨",
+        "身體軟軟的"
+      ],
+      "answer": "爬得很慢",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "因為蝸牛爬行的速度很慢。",
-      "status": "approved",
-      "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一段：等待的人說時間是蝸牛。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "想一想，等待的時候，時間感覺過得快還是慢？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H01:34309a55",
-      "stem": "課文用斑馬來形容時間，你猜猜是什麼原因呢？",
+      "id": "reading_question:01:02",
+      "stem": "為什麼忙碌的人說時間是「飛奔的斑馬」？",
+      "options": [
+        "時間過得很快",
+        "時間過得很慢",
+        "時間常常休息",
+        "時間會發出聲音"
+      ],
+      "answer": "時間過得很快",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "斑馬跑得快，身上黑白相間的條紋也讓人聯想到白天和夜晚。",
-      "status": "approved",
-      "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第二段：說這句話的是什麼樣的人？"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "忙碌的時候，一下子就天黑了；斑馬又跑得怎麼樣？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H01:7c07ff54",
-      "stem": "看看課文中的圖畫，說說時間被比喻成哪些東西？",
+      "id": "reading_question:01:03",
+      "stem": "課文把時間比成哪些東西？",
+      "options": [
+        "蝸牛、斑馬、彈簧、流水",
+        "蝸牛、小鳥、彈簧、流水",
+        "斑馬、時鐘、彈簧、雲朵",
+        "蝸牛、斑馬、氣球、星星"
+      ],
+      "answer": "蝸牛、斑馬、彈簧、流水",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "課文提到時間可能像蝸牛，也可能像斑馬，還有彈簧或流動的水。",
-      "status": "approved",
-      "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "一段一段找，每段都說「時間是……」或「時間像……」。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "第一到第四段各有一個，一個一個對。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H01:2be75c92",
-      "stem": "時間看不到也摸不到，作者為什麼要用具體的東西來說明它？",
-      "strategy_tag": "推論訊息",
-      "answer_hint": "用看得見的東西來比喻，可以幫助大家更容易理解抽象的時間。",
-      "status": "approved",
-      "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
-    },
-    {
-      "id": "reading_question:115AG3H01:bd67caf8",
-      "stem": "讀完課文以後，你認為時間比較像什麼？請說出你的想法和理由。",
-      "strategy_tag": "比較評估",
-      "answer_hint": "答案不限，只要能舉出具體的例子並說明原因即可。",
-      "status": "approved",
-      "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
-    },
-    {
-      "id": "reading_question:115AG3H01:a09ef675",
-      "stem": "你心中的時間又像什麼呢？和課文裡的說法一樣嗎？為什麼？",
-      "strategy_tag": "詮釋整合",
-      "answer_hint": "答案不限，鼓勵學生說出自己的比喻並解釋原因。",
-      "status": "approved",
-      "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
-    },
-    {
-      "id": "reading_question:115AG3H01:813aa9d6",
-      "stem": "作者說了那麼多種比喻，最後有找到答案嗎？",
+      "id": "reading_question:01:04",
+      "stem": "課文最後，作者知道時間是什麼了嗎？",
+      "options": [
+        "還是不知道",
+        "知道時間是蝸牛",
+        "知道時間是流水",
+        "知道時間是斑馬"
+      ],
+      "answer": "還是不知道",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "沒有，作者仍然沒有確定的答案。",
-      "status": "approved",
-      "source": "dabutie:15閱讀理解提問（3上L01閱讀理解提問-時間是什麼.doc）"
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看最後一段的標點符號。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "最後一句用的是問號，表示還在問。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     }
   ],
   "polysemy": [

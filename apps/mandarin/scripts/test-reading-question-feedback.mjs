@@ -60,7 +60,8 @@ for (const volumeCode of fs.readdirSync(dataRoot).filter((name) => /^115AG[1-6][
 
 assert.equal(gradeQuestionCounts.get('115AG4K'), 48, '四上 12 課各 4 題選擇題應全部有答案鍵');
 assert.equal(gradeQuestionCounts.get('115AG6H'), 48, '六上 12 課各 4 題選擇題應全部有答案鍵');
-for (const volumeCode of ['115AG1H', '115AG2H', '115AG3H']) {
+assert.equal(gradeQuestionCounts.get('115AG3H'), 48, '三上 12 課各 4 題選擇題（依官方參考答案改寫）應全部有答案鍵');
+for (const volumeCode of ['115AG1H', '115AG2H']) {
   if (gradeQuestionCounts.has(volumeCode)) {
     assert.equal(gradeQuestionCounts.get(volumeCode), 0, `${volumeCode} 目前是逐步提示問答，不應被誤標為選擇題`);
   }

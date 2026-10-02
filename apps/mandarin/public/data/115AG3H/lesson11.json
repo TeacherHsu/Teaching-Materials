@@ -1108,52 +1108,136 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG3H11:01",
-      "stem": "本課文的文體和主要內容是什麼？",
+      "id": "reading_question:11:01",
+      "stem": "除夕那天，作者一家為什麼還在路上？",
+      "options": [
+        "要回南部過年、探望家人",
+        "要去旅行，看跨年煙火",
+        "要把車子開去修車廠",
+        "要去市場買一些年貨"
+      ],
+      "answer": "要回南部過年、探望家人",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "文體：{記敘文}；新年前夜，機車在路上故障；修車師傅熱心幫忙，大家互相感謝並祝福彼此一路平安。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／第11課　一路平安"
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「好想快點回……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H11:02",
-      "stem": "「修車、師傅」是什麼意思？",
-      "strategy_tag": "提取訊息",
-      "answer_hint": "把壞掉的車子修好。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／課文重點："
-    },
-    {
-      "id": "reading_question:115AG3H11:03",
-      "stem": "新年前夜，機車在路上故障；修車師傅熱心幫忙，大家互相感謝並祝福彼此一路平安。",
-      "strategy_tag": "整合訊息",
-      "answer_hint": "請用自己的話說出〈一路平安〉的大意。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／事情發展："
-    },
-    {
-      "id": "reading_question:115AG3H11:04",
-      "stem": "感謝：對別人的幫助表示謝意。",
-      "strategy_tag": "語詞理解",
-      "answer_hint": "一路平安：祝福人在路途中安全順利的話。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／語詞理解："
-    },
-    {
-      "id": "reading_question:115AG3H11:05",
-      "stem": "我從〈一路平安〉學到什麼？",
-      "strategy_tag": "反思評鑑",
-      "answer_hint": "請寫下課文帶給你的啟發。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／我的想法："
-    },
-    {
-      "id": "reading_question:115AG3H11:06",
-      "stem": "如果我是課文中的人物，我會怎麼做？",
+      "id": "reading_question:11:02",
+      "stem": "爸爸為什麼把車子停在路邊？",
+      "options": [
+        "車子發出怪聲，可能壞了",
+        "爸爸想下車看看煙火",
+        "車子的油快要用完了",
+        "他們迷路，找不到方向"
+      ],
+      "answer": "車子發出怪聲，可能壞了",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "請用課文線索說明理由。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／延伸思考："
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第三段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "車子發出了什麼？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
+    },
+    {
+      "id": "reading_question:11:03",
+      "stem": "修車師傅是怎樣的人？",
+      "options": [
+        "熱心，放下年夜飯來幫忙",
+        "很兇，一點也不想幫忙",
+        "很忙，沒有空理他們",
+        "只想多賺一點修車錢"
+      ],
+      "answer": "熱心，放下年夜飯來幫忙",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "詮釋整合",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第四到第七段，師傅本來正要做什麼？"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "他本來要關門吃年夜飯，後來卻怎麼做？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
+    },
+    {
+      "id": "reading_question:11:04",
+      "stem": "修車師傅說「一路平安」，是什麼意思？",
+      "options": [
+        "祝他們平安到家團聚",
+        "提醒他們車子要開慢一點",
+        "告訴他們車子不用再修了",
+        "請他們明年過年再來玩"
+      ],
+      "answer": "祝他們平安到家團聚",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "詮釋整合",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看最後一段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「一路平安」是送別時對人說的祝福。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     }
   ],
   "polysemy": [

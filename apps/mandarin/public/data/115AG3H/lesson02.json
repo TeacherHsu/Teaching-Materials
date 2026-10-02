@@ -868,36 +868,136 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG3H02:c3d4732c",
-      "stem": "小真的困擾是什麼？",
+      "id": "reading_question:02:01",
+      "stem": "一開始，小真有什麼問題？",
+      "options": [
+        "做事慢，常常忘東忘西",
+        "做事很快，可是常常粗心",
+        "不喜歡寫功課，常常拖延",
+        "早上起不來，常常遲到"
+      ],
+      "answer": "做事慢，常常忘東忘西",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "她常忘東忘西，也記不住要完成的事情。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（閱讀理解提問，重述版）"
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一段開頭。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「做事還是……，常常……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H02:74ca84a5",
-      "stem": "爸爸建議小真用什麼方法提醒自己？",
+      "id": "reading_question:02:02",
+      "stem": "爸爸教小真用什麼方法提醒自己？",
+      "options": [
+        "把要做的事寫在便利貼上",
+        "請媽媽每天早上叫她起床",
+        "把鬧鐘調早一點再睡覺",
+        "每天睡前寫一篇日記"
+      ],
+      "answer": "把要做的事寫在便利貼上",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "把要做的事情寫在便利貼上，並安排先後順序。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（閱讀理解提問，重述版）"
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一段後半，爸爸告訴小真的話。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「可以使用……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H02:ba16cf35",
-      "stem": "小真把便利貼貼在哪裡？為什麼？",
+      "id": "reading_question:02:03",
+      "stem": "媽媽要開會那天，全家為什麼能準時出門？",
+      "options": [
+        "小真照便利貼一件件做完",
+        "爸爸開車開得比平常快很多",
+        "媽媽幫小真把書包整理好",
+        "那天全家人都起得特別早"
+      ],
+      "answer": "小真照便利貼一件件做完",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "貼在明顯的地方，方便自己看見並記得下一件事。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（閱讀理解提問，重述版）"
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第二段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "小真把便利貼貼在哪裡？做完一件事就怎樣？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H02:a7ca6f11",
-      "stem": "使用便利貼後，小真有什麼改變？",
-      "strategy_tag": "整合訊息",
-      "answer_hint": "她能依照次序完成事情，做事更有效率，也不再手忙腳亂。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（閱讀理解提問，重述版）"
+      "id": "reading_question:02:04",
+      "stem": "爸爸看到冰箱上的便利貼，為什麼會笑？",
+      "options": [
+        "小真改掉壞習慣，還提醒他",
+        "便利貼上的字寫得很好笑",
+        "小真把冰箱貼得滿滿的",
+        "小真寫錯了要買的東西"
+      ],
+      "answer": "小真改掉壞習慣，還提醒他",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "推論訊息",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看最後一段，便利貼上寫了什麼。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "想想以前的小真，和現在比一比。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     }
   ],
   "polysemy": [

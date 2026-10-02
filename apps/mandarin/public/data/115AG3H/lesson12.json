@@ -942,52 +942,136 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG3H12:01",
-      "stem": "本課文的文體和主要內容是什麼？",
-      "strategy_tag": "提取訊息",
-      "answer_hint": "文體：{記敘文}；家人透過視訊和遠方的爺爺奶奶一起過節，即使不在同一個地方，也能分享想念與團圓的幸福。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／第12課　不一樣的團圓"
-    },
-    {
-      "id": "reading_question:115AG3H12:02",
-      "stem": "「團圓、視訊」是什麼意思？",
-      "strategy_tag": "提取訊息",
-      "answer_hint": "家人從各處回來相聚。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／課文重點："
-    },
-    {
-      "id": "reading_question:115AG3H12:03",
-      "stem": "家人透過視訊和遠方的爺爺奶奶一起過節，即使不在同一個地方，也能分享想念與團圓的幸福。",
-      "strategy_tag": "整合訊息",
-      "answer_hint": "請用自己的話說出〈不一樣的團圓〉的大意。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／事情發展："
-    },
-    {
-      "id": "reading_question:115AG3H12:04",
-      "stem": "親戚：和自己有親屬關係的人。",
-      "strategy_tag": "語詞理解",
-      "answer_hint": "想念：心中掛念著不在身邊的人。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／語詞理解："
-    },
-    {
-      "id": "reading_question:115AG3H12:05",
-      "stem": "我從〈不一樣的團圓〉學到什麼？",
-      "strategy_tag": "反思評鑑",
-      "answer_hint": "請寫下課文帶給你的啟發。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／我的想法："
-    },
-    {
-      "id": "reading_question:115AG3H12:06",
-      "stem": "如果我是課文中的人物，我會怎麼做？",
+      "id": "reading_question:12:01",
+      "stem": "第一段「我默默看著時間」，可以看出作者的心情怎樣？",
+      "options": [
+        "著急，想快點見到嬸嬸",
+        "很累，只想好好睡一覺",
+        "很生氣，不想去探望",
+        "很無聊，一直看手機"
+      ],
+      "answer": "著急，想快點見到嬸嬸",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "請用課文線索說明理由。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／延伸思考："
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一段最後一句。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「心裡只想著要趕快……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
+    },
+    {
+      "id": "reading_question:12:02",
+      "stem": "為什麼地下室只聽到他們一家的腳步聲？",
+      "options": [
+        "除夕夜，大家都回家團圓了",
+        "地下室停車場正在整修",
+        "他們來得太早，還沒開門",
+        "停車場實在太大太空曠"
+      ],
+      "answer": "除夕夜，大家都回家團圓了",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "推論訊息",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "想一想那天是什麼日子。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "除夕夜，大家都在做什麼？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
+    },
+    {
+      "id": "reading_question:12:03",
+      "stem": "為什麼他們用視訊問候叔叔和嬸嬸？",
+      "options": [
+        "讓剛生寶寶的嬸嬸休息",
+        "叔叔一家人住在國外",
+        "爺爺年紀大了不能出門",
+        "嬸嬸不喜歡有客人來訪"
+      ],
+      "answer": "讓剛生寶寶的嬸嬸休息",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "提取訊息",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第三、四段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「為了讓嬸嬸……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
+    },
+    {
+      "id": "reading_question:12:04",
+      "stem": "哪一句話最能代表這一課的意思？",
+      "options": [
+        "家人在哪裡，家就在那裡",
+        "長長的雨絲落在車窗上",
+        "小小的客廳裡，擠滿了親人",
+        "奶奶拿出壓歲錢"
+      ],
+      "answer": "家人在哪裡，家就在那裡",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "比較評估",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看最後一段，叔叔說的話。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "這句話說：只要家人在一起，在哪裡都像是……"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     }
   ],
   "polysemy": [

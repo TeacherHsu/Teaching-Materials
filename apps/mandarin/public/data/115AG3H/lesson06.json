@@ -811,44 +811,136 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG3H06:1",
-      "stem": "鉛筆是由哪些原料製成的？",
+      "id": "reading_question:06:01",
+      "stem": "鉛筆是用哪些原料做成的？",
+      "options": [
+        "石墨、黏土和木頭",
+        "石頭、沙子和木頭",
+        "石墨、塑膠和紙",
+        "鐵片、黏土和木頭"
+      ],
+      "answer": "石墨、黏土和木頭",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "主要材料是石墨、黏土和木頭。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看「簡介鉛筆」那一部分。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「原料是……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H06:2",
-      "stem": "直接拿筆芯書寫會有什麼問題？",
+      "id": "reading_question:06:02",
+      "stem": "直接拿筆芯寫字會怎樣？",
+      "options": [
+        "容易斷，也會弄髒手",
+        "寫不出字，要用力才行",
+        "寫出來的字是彩色的",
+        "筆芯會越寫越長變粗"
+      ],
+      "answer": "容易斷，也會弄髒手",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "筆芯容易斷裂，手也會變黑。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看「鉛筆的製作」第一段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "筆芯做好了，為什麼還要放進木板？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H06:3",
-      "stem": "放入筆芯後，接著要做什麼？",
-      "strategy_tag": "提取訊息",
-      "answer_hint": "黏合另一片木板，保護筆芯。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+      "id": "reading_question:06:03",
+      "stem": "為什麼說鉛筆像「筆芯三明治」？",
+      "options": [
+        "筆芯夾在兩片木板中間",
+        "鉛筆可以像三明治一樣吃",
+        "鉛筆一共有三種顏色",
+        "鉛筆的形狀是三角形的"
+      ],
+      "answer": "筆芯夾在兩片木板中間",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "推論訊息",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "先想想三明治長什麼樣子。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "看「鉛筆的製作」第二段，筆芯放在哪裡？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H06:4",
-      "stem": "自動鉛筆如何讓筆芯露出來？",
-      "strategy_tag": "找出方法",
-      "answer_hint": "輕輕按壓，就能讓新的筆芯露出來。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（15閱讀理解提問，重述版）"
-    },
-    {
-      "id": "reading_question:115AG3H06:5",
-      "stem": "色鉛筆和一般黑色鉛筆有什麼不同？",
-      "strategy_tag": "比較訊息",
-      "answer_hint": "色鉛筆不含石墨，而是加入顏料畫出不同色彩。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+      "id": "reading_question:06:04",
+      "stem": "色鉛筆和一般鉛筆有什麼不一樣？",
+      "options": [
+        "筆芯沒有石墨，畫得出顏色",
+        "色鉛筆不用削，就能一直寫",
+        "色鉛筆比一般鉛筆長很多",
+        "色鉛筆的木頭比較硬一點"
+      ],
+      "answer": "筆芯沒有石墨，畫得出顏色",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "比較評估",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看「多樣的鉛筆」那一部分。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "不用削的是自動鉛筆；色鉛筆的筆芯裡少了什麼？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     }
   ],
   "polysemy": [

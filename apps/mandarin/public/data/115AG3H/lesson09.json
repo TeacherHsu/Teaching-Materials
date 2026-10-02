@@ -984,52 +984,136 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG3H09:01",
-      "stem": "本課文的文體和主要內容是什麼？",
-      "strategy_tag": "提取訊息",
-      "answer_hint": "文體：{記敘文}；作者走訪阿塱壹古道，沿著海岸和山林前進，看見林投樹與海岸景色，也體會保護古道的重要。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／第9課　阿塱壹古道"
-    },
-    {
-      "id": "reading_question:115AG3H09:02",
-      "stem": "「古道、海岸」是什麼意思？",
-      "strategy_tag": "提取訊息",
-      "answer_hint": "從前留下來的道路。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／課文重點："
-    },
-    {
-      "id": "reading_question:115AG3H09:03",
-      "stem": "作者走訪阿塱壹古道，沿著海岸和山林前進，看見林投樹與海岸景色，也體會保護古道的重要。",
-      "strategy_tag": "整合訊息",
-      "answer_hint": "請用自己的話說出〈阿塱壹古道〉的大意。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／事情發展："
-    },
-    {
-      "id": "reading_question:115AG3H09:04",
-      "stem": "林投：常生長在海岸邊的植物。",
-      "strategy_tag": "語詞理解",
-      "answer_hint": "挑戰：需要努力克服的困難事情。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／語詞理解："
-    },
-    {
-      "id": "reading_question:115AG3H09:05",
-      "stem": "我從〈阿塱壹古道〉學到什麼？",
-      "strategy_tag": "反思評鑑",
-      "answer_hint": "請寫下課文帶給你的啟發。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／我的想法："
-    },
-    {
-      "id": "reading_question:115AG3H09:06",
-      "stem": "如果我是課文中的人物，我會怎麼做？",
+      "id": "reading_question:09:01",
+      "stem": "導遊為什麼笑著搖搖頭？",
+      "options": [
+        "弟弟把林投果看成鳳梨",
+        "弟弟走錯了路，迷路了",
+        "弟弟想偷偷摘水果吃",
+        "弟弟在步道上跌倒了"
+      ],
+      "answer": "弟弟把林投果看成鳳梨",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "請用課文線索說明理由。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／延伸思考："
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第二段，弟弟大喊了什麼。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "那真的是鳳梨嗎？導遊後來說那是什麼？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
+    },
+    {
+      "id": "reading_question:09:02",
+      "stem": "前面好像沒路了，走近一看發現什麼？",
+      "options": [
+        "還有木棧道可以走",
+        "前面有一座橋",
+        "岸邊有一條小船",
+        "只能原路走回去"
+      ],
+      "answer": "還有木棧道可以走",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "提取訊息",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第二段最後。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「走近一看才發現……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
+    },
+    {
+      "id": "reading_question:09:03",
+      "stem": "課文怎麼寫海水的顏色？",
+      "options": [
+        "從天邊深藍變成岸邊淺藍",
+        "從綠色慢慢變成了藍色",
+        "整片海都是黑黑的顏色",
+        "海水是透明的沒有顏色"
+      ],
+      "answer": "從天邊深藍變成岸邊淺藍",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "提取訊息",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第三段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「深深的」和「淺淺的」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
+    },
+    {
+      "id": "reading_question:09:04",
+      "stem": "岸邊的南田石，為什麼只能拍照不能帶走？",
+      "options": [
+        "美石和美景才能留得長久",
+        "南田石太重了，拿不動",
+        "南田石可以賣很多錢",
+        "帶走石頭會被導遊罵"
+      ],
+      "answer": "美石和美景才能留得長久",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "推論訊息",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第三段後面。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「這樣……才能……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     }
   ],
   "polysemy": [

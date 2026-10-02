@@ -784,36 +784,136 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG3H05:1",
-      "stem": "梨農為什麼想替梨花撐傘？",
+      "id": "reading_question:05:01",
+      "stem": "上將梨種在臺灣的哪裡？",
+      "options": [
+        "宜蘭三星鄉",
+        "臺中梨山",
+        "花蓮玉里",
+        "南投埔里"
+      ],
+      "answer": "宜蘭三星鄉",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "因為連日下雨可能讓梨花腐爛，影響收成。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一段開頭。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找找看課文裡的地名。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H05:2",
-      "stem": "第一次製作小傘時，用到了哪些材料？",
+      "id": "reading_question:05:02",
+      "stem": "梨花遇到什麼困難？",
+      "options": [
+        "開花時常下雨，梨花會腐爛",
+        "天氣太熱，梨花被曬乾了",
+        "蟲子太多，梨花被吃掉了",
+        "風太大了，梨花被吹走了"
+      ],
+      "answer": "開花時常下雨，梨花會腐爛",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "空碗、筷子、膠帶和繩子。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一段「但是」後面。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "梨子在幾月開花？那時候天氣怎樣？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H05:3",
-      "stem": "為什麼要改良原來的小傘？",
+      "id": "reading_question:05:03",
+      "stem": "翁先生最早的小雨傘是用什麼做的？",
+      "options": [
+        "泡麵的空碗和竹筷子",
+        "塑膠袋和彎彎的吸管",
+        "舊報紙和透明的膠帶",
+        "雨傘布和細細的鐵絲"
+      ],
+      "answer": "泡麵的空碗和竹筷子",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "提取訊息",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第二段，他吃完什麼突然想到好主意？"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "把吃完的空碗倒過來，用什麼撐著？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
+    },
+    {
+      "id": "reading_question:05:04",
+      "stem": "為什麼大家都來學翁先生的方法？",
+      "options": [
+        "撐傘的梨樹結果比較多",
+        "這個方法花的錢比較少",
+        "翁先生是村裡的村長",
+        "小雨傘看起來非常漂亮"
+      ],
+      "answer": "撐傘的梨樹結果比較多",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "原來的方法需要花很多時間，使用上不夠方便。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（15閱讀理解提問，重述版）"
-    },
-    {
-      "id": "reading_question:115AG3H05:4",
-      "stem": "改良後的小傘帶來了什麼結果？",
-      "strategy_tag": "找出主旨",
-      "answer_hint": "梨花受到保護，最後順利結出果實，收成更穩定。",
-      "status": "approved",
-      "source": "115G3A／翰林三上第5課官方教材與教師確認資料（15閱讀理解提問，重述版）"
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第二段最後的「結果」。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "有撐傘和沒撐傘的梨樹，哪一種結的果實多？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     }
   ],
   "polysemy": [

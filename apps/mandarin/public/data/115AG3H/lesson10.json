@@ -951,52 +951,136 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG3H10:01",
-      "stem": "本課文的文體和主要內容是什麼？",
-      "strategy_tag": "提取訊息",
-      "answer_hint": "文體：{記敘文}；部落以秋千上的婚禮祝福新人，親友一起參與、分享食物；熱鬧的儀式留下珍貴回憶。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／第10課　秋千上的婚禮"
-    },
-    {
-      "id": "reading_question:115AG3H10:02",
-      "stem": "「婚禮、秋千」是什麼意思？",
-      "strategy_tag": "提取訊息",
-      "answer_hint": "兩人結婚時舉行的儀式。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／課文重點："
-    },
-    {
-      "id": "reading_question:115AG3H10:03",
-      "stem": "部落以秋千上的婚禮祝福新人，親友一起參與、分享食物；熱鬧的儀式留下珍貴回憶。",
-      "strategy_tag": "整合訊息",
-      "answer_hint": "請用自己的話說出〈秋千上的婚禮〉的大意。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／事情發展："
-    },
-    {
-      "id": "reading_question:115AG3H10:04",
-      "stem": "祝福：希望別人平安、幸福的話。",
-      "strategy_tag": "語詞理解",
-      "answer_hint": "親友：親人和朋友。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／語詞理解："
-    },
-    {
-      "id": "reading_question:115AG3H10:05",
-      "stem": "我從〈秋千上的婚禮〉學到什麼？",
-      "strategy_tag": "反思評鑑",
-      "answer_hint": "請寫下課文帶給你的啟發。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／我的想法："
-    },
-    {
-      "id": "reading_question:115AG3H10:06",
-      "stem": "如果我是課文中的人物，我會怎麼做？",
+      "id": "reading_question:10:01",
+      "stem": "課文第一段只有「盪得好高哇！」，這樣寫有什麼作用？",
+      "options": [
+        "引起好奇，帶出盪秋千",
+        "告訴我們婚禮已經結束了",
+        "說明新娘心裡非常害怕",
+        "介紹魯凱族很久的歷史"
+      ],
+      "answer": "引起好奇，帶出盪秋千",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "請用課文線索說明理由。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／延伸思考："
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "讀到這一句時，你會不會想知道是誰在盪？"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "再看課名「秋千上的婚禮」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
+    },
+    {
+      "id": "reading_question:10:02",
+      "stem": "誰站在秋千上？",
+      "options": [
+        "新娘",
+        "新郎",
+        "作者",
+        "親友"
+      ],
+      "answer": "新娘",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "提取訊息",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第二段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「站在秋千上」那一句。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
+    },
+    {
+      "id": "reading_question:10:03",
+      "stem": "新人為什麼要喝連杯酒？",
+      "options": [
+        "表示兩人永結同心",
+        "因為那天天氣很冷",
+        "比賽看誰喝得最快",
+        "因為酒非常好喝"
+      ],
+      "answer": "表示兩人永結同心",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "推論訊息",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "「連杯」是兩個杯子連在一起的。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "兩個人一起用同一個連杯喝，代表什麼？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
+    },
+    {
+      "id": "reading_question:10:04",
+      "stem": "「藏新娘」的習俗，是希望新郎學會什麼？",
+      "options": [
+        "更珍惜新娘",
+        "跑得更快",
+        "唱歌跳舞",
+        "認識親友"
+      ],
+      "answer": "更珍惜新娘",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "詮釋整合",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第五段的習俗。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "新娘被藏起來，新郎要去找，找到後心裡會怎麼想？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     }
   ],
   "polysemy": [

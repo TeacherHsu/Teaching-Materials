@@ -736,52 +736,136 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG3H07:01",
-      "stem": "本課文的文體和主要內容是什麼？",
+      "id": "reading_question:07:01",
+      "stem": "風到過哪些地方？",
+      "options": [
+        "大海、山坡和原野",
+        "大海、城市和森林",
+        "沙漠、山坡和河流",
+        "學校、公園和原野"
+      ],
+      "answer": "大海、山坡和原野",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "文體：{詩歌}；詩人用鼻子聞風，從花香、草味和樹葉的氣息感受大自然；原來風也有不同的味道。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／第7課　風的味道"
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第二到第四段，每段開頭「風剛……」。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「從大海」「由山坡」「在原野」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H07:02",
-      "stem": "「味道、花香」是什麼意思？",
+      "id": "reading_question:07:02",
+      "stem": "風從大海回來，身上有什麼？",
+      "options": [
+        "淡淡的鹹味",
+        "冰涼的雪花",
+        "清新的草香",
+        "濃濃的花香"
+      ],
+      "answer": "淡淡的鹹味",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "用鼻子聞到或用舌頭嚐到的感覺。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／課文重點："
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第二段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "海水嚐起來是什麼味道？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H07:03",
-      "stem": "詩人用鼻子聞風，從花香、草味和樹葉的氣息感受大自然；原來風也有不同的味道。",
-      "strategy_tag": "整合訊息",
-      "answer_hint": "請用自己的話說出〈風的味道〉的大意。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／事情發展："
-    },
-    {
-      "id": "reading_question:115AG3H07:04",
-      "stem": "清新：乾淨舒爽，使人感到舒服。",
-      "strategy_tag": "語詞理解",
-      "answer_hint": "微風：輕輕吹過的小風。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／語詞理解："
-    },
-    {
-      "id": "reading_question:115AG3H07:05",
-      "stem": "我從〈風的味道〉學到什麼？",
-      "strategy_tag": "反思評鑑",
-      "answer_hint": "請寫下課文帶給你的啟發。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／我的想法："
-    },
-    {
-      "id": "reading_question:115AG3H07:06",
-      "stem": "如果我是課文中的人物，我會怎麼做？",
+      "id": "reading_question:07:03",
+      "stem": "「我」用什麼方法知道風去過哪裡？",
+      "options": [
+        "閉上眼睛聞風的味道",
+        "看看風吹動了哪些樹葉",
+        "仔細聽風吹過的聲音",
+        "問問路上遇到的每個人"
+      ],
+      "answer": "閉上眼睛聞風的味道",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "請用課文線索說明理由。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／延伸思考："
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看最後一段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "詩的題目是「風的味道」，味道要用什麼去發現？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
+    },
+    {
+      "id": "reading_question:07:04",
+      "stem": "風在原野打滾，身上為什麼有清新的草香？",
+      "options": [
+        "原野上長滿了草",
+        "風剛淋過雨",
+        "原野上有很多花",
+        "風剛從大海回來"
+      ],
+      "answer": "原野上長滿了草",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "推論訊息",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第四段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "想想原野上有什麼。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     }
   ],
   "polysemy": [

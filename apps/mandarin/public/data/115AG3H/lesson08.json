@@ -893,52 +893,136 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG3H08:01",
-      "stem": "本課文的文體和主要內容是什麼？",
+      "id": "reading_question:08:01",
+      "stem": "寄居蟹為什麼要用瓶蓋當殼？",
+      "options": [
+        "海灘上的貝殼被人撿走了",
+        "瓶蓋比貝殼好看又漂亮",
+        "瓶蓋比貝殼輕，比較好背",
+        "海灘上的貝殼都太小了"
+      ],
+      "answer": "海灘上的貝殼被人撿走了",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "文體：{記敘文}；寄居蟹找不到合適的貝殼，發現海灘上有垃圾；大家淨灘並保護環境，讓牠找到安心的新家。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／第8課　寄居蟹找新家"
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一幕。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "寄居蟹本來住在什麼裡面？那些東西去哪了？"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG3H08:02",
-      "stem": "「寄居蟹、貝殼」是什麼意思？",
-      "strategy_tag": "提取訊息",
-      "answer_hint": "會住在空貝殼裡的小螃蟹。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／課文重點："
-    },
-    {
-      "id": "reading_question:115AG3H08:03",
-      "stem": "寄居蟹找不到合適的貝殼，發現海灘上有垃圾；大家淨灘並保護環境，讓牠找到安心的新家。",
-      "strategy_tag": "整合訊息",
-      "answer_hint": "請用自己的話說出〈寄居蟹找新家〉的大意。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／事情發展："
-    },
-    {
-      "id": "reading_question:115AG3H08:04",
-      "stem": "淨灘：撿拾海灘垃圾、使海灘乾淨的活動。",
-      "strategy_tag": "語詞理解",
-      "answer_hint": "環境：人和動植物共同生活的周遭地方。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／語詞理解："
-    },
-    {
-      "id": "reading_question:115AG3H08:05",
-      "stem": "我從〈寄居蟹找新家〉學到什麼？",
-      "strategy_tag": "反思評鑑",
-      "answer_hint": "請寫下課文帶給你的啟發。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／我的想法："
-    },
-    {
-      "id": "reading_question:115AG3H08:06",
-      "stem": "如果我是課文中的人物，我會怎麼做？",
+      "id": "reading_question:08:02",
+      "stem": "寄居蟹說「不知道美好的風景還能欣賞多久」，是擔心什麼？",
+      "options": [
+        "垃圾越來越多，住不下去",
+        "天快要黑了，看不到風景",
+        "要搬到很遠很遠的地方去",
+        "美麗的風景會被別人買走"
+      ],
+      "answer": "垃圾越來越多，住不下去",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "請用課文線索說明理由。",
-      "status": "approved",
-      "source": "115G3A／翰林官方教材衍生資料（使用者授權直接公開，2026-09-26）（15閱讀理解提問／聚焦理解）／延伸思考："
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一幕的結尾。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "想想牠們身邊出現了哪些東西：紙杯、瓶蓋……"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
+    },
+    {
+      "id": "reading_question:08:03",
+      "stem": "淨灘志工在海邊做什麼？",
+      "options": [
+        "撿垃圾，宣導保護海洋",
+        "撿漂亮的貝殼帶回家",
+        "抓寄居蟹回去做研究",
+        "在海邊游泳、玩沙"
+      ],
+      "answer": "撿垃圾，宣導保護海洋",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "提取訊息",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第二幕。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「淨灘」就是把海灘弄乾淨。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
+    },
+    {
+      "id": "reading_question:08:04",
+      "stem": "小螃蟹最後對人類的看法有什麼改變？",
+      "options": [
+        "從害怕，變成希望人類幫忙",
+        "從喜歡，到變得很討厭人類",
+        "從頭到尾都很討厭人類",
+        "從頭到尾都很喜歡人類"
+      ],
+      "answer": "從害怕，變成希望人類幫忙",
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
+      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "strategy_tag": "詮釋整合",
+      "evidence_pending": true,
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第三幕，小螃蟹前後說了什麼。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "一開始說「不妙！快跑！」，後來說「如果能多一些這樣的人……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence",
+          "eliminate": 2,
+          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+        }
+      ]
     }
   ],
   "polysemy": [
