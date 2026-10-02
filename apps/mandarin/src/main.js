@@ -58,7 +58,16 @@ async function loadLesson(lessonId) {
   if (isPreview()) {
     const previewPath = meta.data.replace(/^data\//, 'data/_preview/');
     const previewRes = await fetch(`${BASE}${previewPath}`, { cache: 'no-cache' });
-    if (previewRes.ok) return previewRes.json();
+    // dev server 對不存在的路徑會回 200＋index.html（SPA fallback），所以不能只看
+    // previewRes.ok，否則 .json() 會丟出「Unexpected token '<'」而整頁空白——
+    // 註解寫的「退回正常路徑」從來沒有真的發生過。改成連 JSON 都解得開才採用。
+    if (previewRes.ok) {
+      try {
+        return await previewRes.json();
+      } catch {
+        // 不是 JSON，當作沒有 _preview 版本，往下走正常路徑
+      }
+    }
   }
 
   const res = await fetch(`${BASE}${meta.data}`, { cache: 'no-cache' });
