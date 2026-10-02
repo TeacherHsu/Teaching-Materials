@@ -930,7 +930,37 @@
       "answer": "夢想成為球場上的風雲人物",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            5,
+            6,
+            7
+          ],
+          "sha": [
+            "c7e00f56",
+            "c3de7811",
+            "0fe6ead2"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "主角報名籃球社的時候，心裡在想什麼？那就是他的理由。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K03:02",
@@ -945,7 +975,8 @@
       "answer": "家人",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "data_issue": "答案標為「家人」，但課文寫的是「學長都為我打氣」；選項裡也有「學長」。answer_source 是 derived 不是官方答案，待 CF 裁定後再標證據。"
     },
     {
       "id": "question:115AG4K03:03",
@@ -960,7 +991,33 @@
       "answer": "最早到球場練習",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 4,
+          "sentences": [
+            7
+          ],
+          "sha": [
+            "39df2c79"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "球技進步不是一下子的事。看看主角每天比別人多做了什麼。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K03:04",
@@ -975,7 +1032,37 @@
       "answer": "用力吸一口氣",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 6,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "0f978f3e",
+            "ff7bcb20",
+            "a15d8145"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "最後一球投出去之前，主角做了一個動作讓自己冷靜下來。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2534,5 +2621,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "narrative"
 }

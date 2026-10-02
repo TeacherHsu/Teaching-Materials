@@ -911,7 +911,35 @@
       "answer": "飛也似的跑回家",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "fdf11081",
+            "32c3ecee"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "這題問「怎麼回家」。第一段就寫了放學以後做什麼。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K02:02",
@@ -926,7 +954,46 @@
       "answer": "先吃點心，再寫功課",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            1,
+            6
+          ],
+          "sha": [
+            "b1c3937d",
+            "784163bc"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            0,
+            1
+          ],
+          "sha": [
+            "f68ad457",
+            "9e6c0aa0"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "這題問先後順序。看看「點心」和「功課」各出現在第幾段，哪一段在前面。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K02:03",
@@ -941,7 +1008,46 @@
       "answer": "讀國語日報",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "fa865b58",
+            "2add1783"
+          ]
+        }
+      ],
+      "context": [
+        {
+          "para": 3,
+          "sentences": [
+            11
+          ],
+          "sha": [
+            "6b9e8d04"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "作者說有一樣東西是他「最重要的精神食糧」，那是什麼？"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K02:04",
@@ -956,7 +1062,39 @@
       "answer": "他很享受放學後的美好時光",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 5,
+          "sentences": [
+            0,
+            3,
+            4,
+            5
+          ],
+          "sha": [
+            "05616ea8",
+            "e4508129",
+            "baa27096",
+            "85ce9721"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "最後一段說時間過得特別快。想一想：為什麼會覺得快？"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2621,5 +2759,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "narrative"
 }

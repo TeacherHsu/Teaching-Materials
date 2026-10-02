@@ -944,7 +944,35 @@
       "answer": "留在臺灣幫助人民",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            10,
+            11
+          ],
+          "sha": [
+            "f950cfb9",
+            "c6d0ef0c"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "馬偕剛到臺灣的時候，心裡下了一個決定。找找看那句話。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K04:02",
@@ -959,7 +987,48 @@
       "answer": "清理環境並宣導居家衛生",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            14,
+            15
+          ],
+          "sha": [
+            "888e2b6a",
+            "8b62b89c"
+          ]
+        }
+      ],
+      "context": [
+        {
+          "para": 1,
+          "sentences": [
+            12,
+            13
+          ],
+          "sha": [
+            "c00a849e",
+            "6854133a"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "當時臺灣常流行傳染病。馬偕做了兩件事來改善，一件是動手做，一件是用說的。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K04:03",
@@ -974,7 +1043,48 @@
       "answer": "興建醫院並創辦學校",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            24,
+            27
+          ],
+          "sha": [
+            "fc3452e6",
+            "4bf06f92"
+          ]
+        }
+      ],
+      "context": [
+        {
+          "para": 1,
+          "sentences": [
+            22,
+            23
+          ],
+          "sha": [
+            "a9b5e629",
+            "33956b19"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "有人捐錢給他之後，他蓋了兩種地方：一種治病、一種讀書。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K04:04",
@@ -989,7 +1099,43 @@
       "answer": "他長期奉獻並幫助人民",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            42,
+            43,
+            44,
+            45,
+            46,
+            47
+          ],
+          "sha": [
+            "129554bc",
+            "beeac87c",
+            "943c9ed7",
+            "1a016433",
+            "ca839d8b",
+            "04324cbf"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "課文最後兩句在說他留下了什麼。想一想：他做了多久、做了多少事？"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2697,5 +2843,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "narrative"
 }

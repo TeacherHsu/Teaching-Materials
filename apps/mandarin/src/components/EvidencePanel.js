@@ -17,6 +17,13 @@ import { SpeakButton } from './SpeakButton.js';
 import { getReading, isUnlocked } from '../utils/classroomKey.js';
 import { splitSentences } from '../utils/readingUnits.js';
 
+/**
+ * 證據句前後各留幾句當上下文。
+ * 0 會讓證據變成沒有脈絡的碎片，整段又太囉嗦——1 句剛好夠學生知道
+ * 「這句話出現在什麼地方」，又不會把課名、作者這些無關的字一起拉進來。
+ */
+const CONTEXT_SENTENCES = 1;
+
 /** 把一課的課文切成「每段一組句子」，索引和 tools/reading_evidence.mjs 一致。 */
 function paragraphSentences(lessonId) {
   const reading = getReading(lessonId);
@@ -48,10 +55,20 @@ export function EvidencePanel({ lessonId, spots, label = '課文裡是這樣寫�
   for (const spot of spots) {
     const sentences = byPara.get(spot.para - 1);
     if (!sentences) continue;
-    const wanted = new Set(spot.sentences);
+    const wanted = [...spot.sentences].sort((a, b) => a - b);
+
+    // 只呈現證據句與它緊鄰的上下文，不是整段。
+    // CF 指出：證據是「我們在游泳池游呀游，游成自由的魚……」時，
+    // 前面的「水陸小高手。游泳。謝安通。」（課名、詩名、作者）是多餘的，
+    // 對要找答案的學生只是干擾。多出來的字會讓閱讀困難的學生先累了才讀到重點。
+    const first = Math.max(0, wanted[0] - CONTEXT_SENTENCES);
+    const last = Math.min(sentences.length - 1, wanted[wanted.length - 1] + CONTEXT_SENTENCES);
+
     const line = h('p', { class: 'evidence__text', lang: 'zh-TW' });
-    sentences.forEach((text, index) => {
-      if (wanted.has(index)) {
+    if (first > 0) line.appendChild(h('span', { class: 'evidence__ellipsis', 'aria-label': '前面還有' }, '…'));
+    for (let index = first; index <= last; index += 1) {
+      const text = sentences[index];
+      if (wanted.includes(index)) {
         // 用 <mark> 而不是只上背景色：語意正確，螢幕閱讀器會念出「標記」
         const mk = h('mark', { class: 'evidence__key' }, text);
         marks.push(mk);
@@ -59,7 +76,11 @@ export function EvidencePanel({ lessonId, spots, label = '課文裡是這樣寫�
       } else {
         line.appendChild(document.createTextNode(text));
       }
-    });
+    }
+    if (last < sentences.length - 1) {
+      line.appendChild(h('span', { class: 'evidence__ellipsis', 'aria-label': '後面還有' }, '…'));
+    }
+
     blocks.push(h('div', { class: 'evidence__para' }, [
       h('p', { class: 'evidence__no' }, `第 ${spot.para} 段`),
       line,

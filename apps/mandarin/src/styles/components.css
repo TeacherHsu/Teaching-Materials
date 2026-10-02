@@ -3082,3 +3082,9 @@
 @media (prefers-reduced-motion: reduce) {
   .evidence__key { transition: none; }
 }
+
+/* 證據前後被截掉的部分用刪節號表示，學生才知道「這不是整段」 */
+.evidence__ellipsis {
+  color: var(--text-secondary);
+  padding: 0 2px;
+}
