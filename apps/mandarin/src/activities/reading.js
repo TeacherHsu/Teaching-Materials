@@ -50,7 +50,7 @@ export function buildTextMap(paragraphs) {
 function TextMapCard(node) {
   return h('div', { class: 'text-map__node' }, [
     h('div', { class: 'text-map__head' }, [
-      node.section ? h('span', { class: 'text-map__section' }, node.section) : null,
+      node.section && node.section !== node.label ? h('span', { class: 'text-map__section' }, node.section) : null,
       node.label ? h('span', { class: 'text-map__label' }, node.label) : null,
       node.focus ? h('span', { class: 'text-map__focus' }, node.focus) : null,
       node.range ? h('span', { class: 'text-map__range' }, node.range) : null,
