@@ -1971,7 +1971,8 @@
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 4px;
+  /* 上下留空間給提示放大的鍵，不然 overflow-y:hidden 會把它裁掉 */
+  padding: 10px 10px 12px;
 }
 .zk__keys-inner { min-width: 520px; }
 
@@ -3180,18 +3181,75 @@
   .type-answer__input--wrong { animation: none; }
 }
 
-/* 注音高手提示：正確的鍵直接標紅、放大（CF 2026-10-03） */
-.zk__key--hinted {
+/* 注音高手提示：正確的鍵直接標紅、放大（CF 2026-10-03：要足夠大）。
+   實心紅底白字＋放大，在一整排淺色鍵裡一眼就看得到；只靠紅框不夠醒目。 */
+.zk .zk__key.zk__key--hinted {
   position: relative;
-  z-index: 1;
-  background: #fff1f0;
+  z-index: 2;
+  background: var(--color-danger);
   border-color: var(--color-danger);
-  border-width: 3px;
-  color: var(--color-danger);
-  transform: scale(1.18);
-  box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.18);
+  color: #fff;
+  transform: scale(1.3);
+  box-shadow: 0 0 0 5px rgba(192, 57, 43, 0.25), 0 6px 14px rgba(0, 0, 0, 0.2);
 }
-.zk__key--hinted .zk__symbol { font-size: 1.35em; font-weight: 700; }
+.zk .zk__key.zk__key--hinted .zk__symbol {
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 700;
+}
 @media (prefers-reduced-motion: reduce) {
-  .zk__key--hinted { transform: none; }
+  .zk .zk__key.zk__key--hinted { transform: none; }
 }
+
+/* ── 句型卡（練習句子第一步，CF 2026-10-03） ──
+   同一個句型的名稱、關聯詞、例句框在同一個顏色裡；例句中的關聯詞用同色標出，
+   學生看得到「句型長在句子的哪裡」。 */
+.pattern-card {
+  --pc: var(--module-blue-dark);
+  --pc-tint: var(--module-blue-tint);
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 3px solid var(--pc);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  text-align: left;
+}
+.pattern-card--teal { --pc: var(--module-teal-dark); --pc-tint: var(--module-teal-tint); }
+.pattern-card--purple { --pc: var(--module-purple-dark); --pc-tint: var(--module-purple-tint); }
+.pattern-card--terracotta { --pc: var(--module-terracotta-dark); --pc-tint: var(--module-terracotta-tint); }
+.pattern-card--rose { --pc: var(--module-rose-dark); --pc-tint: var(--module-rose-tint); }
+.pattern-card--olive { --pc: var(--module-olive-dark); --pc-tint: var(--module-olive-tint); }
+.pattern-card__name {
+  margin: 0;
+  font-size: var(--font-size-section);
+  font-weight: 700;
+  color: var(--pc);
+}
+.pattern-card__frame {
+  margin: 0;
+  font-size: var(--font-size-button);
+  color: var(--text-secondary);
+}
+.pattern-card__example {
+  margin: 0;
+  font-size: var(--font-size-body);
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+.pattern-card__key {
+  padding: 0 0.15em;
+  border-radius: 6px;
+  background: var(--pc-tint);
+  color: var(--pc);
+  font-weight: 700;
+}
+
+/* 一字多義的語詞題：只放語詞本身，放大 */
+.polysemy-sentence--word {
+  font-size: clamp(2.25rem, 6vw, 3rem);
+  text-align: center;
+  letter-spacing: 0.08em;
+}
+
+.hint-panel__icon { display: inline-flex; flex: none; color: var(--color-accent); margin-right: 4px; }

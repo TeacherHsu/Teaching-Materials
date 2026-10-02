@@ -13,6 +13,9 @@ import { SentenceBuilder } from '../components/SentenceBuilder.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { SentenceWriter } from '../components/SentenceWriter.js';
 import { SpeakButton } from '../components/SpeakButton.js';
+import { CardWalkthrough } from '../components/CardWalkthrough.js';
+import { speak } from '../utils/speech.js';
+import { getScaffoldLevelKey } from '../utils/deviceSettings.js';
 import { missingContentNotice } from './engine.js';
 import { chunkRounds } from '../utils/chunk.js';
 import { filterByStatus, isPreview } from '../utils/preview.js';
@@ -91,8 +94,45 @@ function mergeSemanticTokens(tokens) {
  * 教材若有特殊句型，可在 sentence_patterns[].example_parts 提供人工確認的詞塊，
  * buildRoundsFromExamples 會優先採用該資料。
  */
-export function splitSentenceIntoChunks(sentence) {
-  return mergeSemanticTokens(segmentText(sentence));
+export function splitSentenceIntoChunks(sentence, maxChunks = Infinity) {
+  return coarsenChunks(mergeSemanticTokens(segmentText(sentence)), maxChunks);
+}
+
+// 句子重組的詞塊數依組別（CF 2026-10-03：詞塊過於細碎）。
+// 原本一句「我喜歡吃肉羹，不是因為它的味道，而是因為可以跟媽媽撒嬌」會被切成
+// 14 塊，排列組合太多，學生在拼字面而不是在理解句子結構。
+export const CHUNK_TARGET = { support: 3, standard: 4, challenge: 5 };
+
+/**
+ * 把細詞塊合併到最多 target 塊。
+ * - 不跨標點合併（「肉羹，」和「不是」之間是自然的分句處），除非分句本身就超過 target。
+ * - 每次合併「合起來最短」的相鄰兩塊，讓塊的長度平均。
+ * - 單字詞（我、他、跟、吃）優先黏到後面：中文的單字代名詞、介詞、動詞
+ *   通常和後面的詞是一個意群（「他卻沒有」「跟媽媽」「吃肉羹」）。
+ * - 「……的」要接住後面的名詞，太短的句尾併到前面，不留孤單的「事，」。
+ */
+export function coarsenChunks(tokens, target) {
+  const blocks = [...tokens];
+  if (!Number.isFinite(target) || blocks.length <= target) return blocks;
+  const endsClause = (t) => /[，。！？、；：]$/u.test(t);
+  const cost = (a, b) => a.length + b.length
+    - (a.length === 1 ? 2 : 0)              // 單字黏後面
+    - (/的$/u.test(a) ? 3 : 0)              // 「不公平的」要接住「事」
+    - (b.length <= 2 && endsClause(b) ? 2 : 0); // 短句尾「事，」「憤慨。」併到前面
+  while (blocks.length > target) {
+    let best = -1;
+    let bestCost = Infinity;
+    for (const crossClause of [false, true]) {
+      for (let i = 0; i < blocks.length - 1; i += 1) {
+        if (!crossClause && endsClause(blocks[i])) continue;
+        const c = cost(blocks[i], blocks[i + 1]);
+        if (c < bestCost) { bestCost = c; best = i; }
+      }
+      if (best >= 0) break;
+    }
+    blocks.splice(best, 2, blocks[best] + blocks[best + 1]);
+  }
+  return blocks;
 }
 
 const SENTENCE_PUNCT_RE = /[。！？，、]/;
@@ -108,7 +148,59 @@ function readyMatchingPairs(lesson) {
     .filter((p) => p.category !== EXCLUDED_CATEGORY)
     .filter((p) => !SENTENCE_PUNCT_RE.test(p.head))
     .filter((p) => p.head.length <= MAX_PHRASE_LEN)
+    .filter((p) => !isAbstractPattern(p))
     .map((p) => ({ left: p.head, right: p.description }));
+}
+
+/**
+ * 「遞進複句」「把字句」這類句型名稱是抽象術語，右邊配的往往是造句指示
+ * （「依照句型寫一句：先說表面的意義……」）而不是定義——學生沒辦法從字面配對
+ * （CF 2026-10-03）。這類改成句型卡：看例句、聽一遍，而不是考術語。
+ */
+export function isAbstractPattern(pattern) {
+  return /句$/u.test(pattern.head || '');
+}
+
+/** 從句型結構「不是……，而是……」「雖然＋情況，卻＋結果」取出關聯詞。 */
+export function connectivesOf(structure) {
+  return String(structure || '')
+    .split(/[＋+…，,、。（）()「」\s]+/u)
+    .map((w) => w.trim())
+    .filter((w) => w && w.length <= 3 && !/情況|結果|行動|原因|狀態|事情|動作/u.test(w));
+}
+
+/** 句型卡資料：句型名、關聯詞、一句例句（要有核准例句才出卡）。 */
+function readyPatternCards(lesson) {
+  const withExamples = new Map(
+    filterByStatus(lesson.sentence_patterns || [], { statusKey: 'examples_status' })
+      .filter((p) => p.examples && p.examples.length)
+      .map((p) => [p.id || p.head, p.examples[0]]),
+  );
+  return filterByStatus(lesson.sentence_patterns || [])
+    .filter((p) => p.head && isAbstractPattern(p))
+    .map((p) => ({ head: p.head, structure: p.structure || '', example: withExamples.get(p.id || p.head) }))
+    .filter((card) => card.example);
+}
+
+const CARD_HUES = ['blue', 'teal', 'purple', 'terracotta', 'rose', 'olive'];
+
+/** 例句中把關聯詞用卡片同色標出來，學生看得到「句型長在句子的哪裡」。 */
+function highlightConnectives(sentence, words) {
+  if (!words.length) return [sentence];
+  const re = new RegExp(`(${words.map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'gu');
+  return sentence.split(re).filter(Boolean).map((part) => (
+    words.includes(part) ? h('mark', { class: 'pattern-card__key' }, part) : part
+  ));
+}
+
+function PatternCard(card, index) {
+  const hue = CARD_HUES[index % CARD_HUES.length];
+  const words = connectivesOf(card.structure);
+  return h('div', { class: `pattern-card pattern-card--${hue}` }, [
+    h('p', { class: 'pattern-card__name' }, card.head),
+    words.length ? h('p', { class: 'pattern-card__frame' }, words.join(' …… ')) : null,
+    h('p', { class: 'pattern-card__example' }, highlightConnectives(card.example, words)),
+  ].filter(Boolean));
 }
 
 /** 把每個句型的 approved（或 preview 下的 draft）例句攤平成 {pattern, sentence} 清單。 */
@@ -129,7 +221,7 @@ function buildRoundsFromExamples(examples, promptPrefix) {
   return examples
     .map(({ pattern, sentence, parts }) => {
       const manualParts = Array.isArray(parts) && parts.length >= 2 && parts.join('') === sentence ? parts : null;
-      const chunks = manualParts || splitSentenceIntoChunks(sentence);
+      const chunks = manualParts || splitSentenceIntoChunks(sentence, CHUNK_TARGET[getScaffoldLevelKey()] || 4);
       if (chunks.length < 2) return null;
       return {
         prompt: promptPrefix,
@@ -190,7 +282,9 @@ export function buildSentencePracticeActivity(lesson, onBack) {
   const orderingRounds = chunkRounds(buildRoundsFromExamples(orderingExamples, '請把下面的詞語排成一句通順的句子'), { min: 1, max: 3 });
   const builderRounds = chunkRounds(buildRoundsFromExamples(builderExamples, '請選出正確的詞語，仿照句型組成一句話'), { min: 1, max: 3 });
 
+  const patternCards = readyPatternCards(lesson);
   const steps = [];
+  if (patternCards.length > 0) steps.push('patterns');
   if (matchingRounds.length > 0) steps.push('matching');
   if (orderingRounds.length > 0) steps.push('ordering');
   if (builderRounds.length > 0) steps.push('builder');
@@ -222,7 +316,37 @@ export function buildSentencePracticeActivity(lesson, onBack) {
     const isLastStep = stepIndex === steps.length - 1;
     const taskLabel = coreComplete ? '加練挑戰' : '';
 
-    if (step === 'matching') {
+    if (step === 'patterns') {
+      container.appendChild(TaskBanner({ label: '認識句型：點一下卡片聽聽看', step: taskLabel }));
+      const advance = h('button', { class: 'btn btn--primary', type: 'button', disabled: true, 'aria-disabled': 'true' },
+        '每一張都點過才能繼續');
+      const walkthrough = CardWalkthrough({
+        cards: patternCards.map((card, i) => {
+          const el = PatternCard(card, i);
+          // 點卡片就念出來：句型名稱＋例句。學生先聽到句型「用起來」的樣子，
+          // 而不是先背術語。
+          el.addEventListener('click', () => speak(`${card.head}。${card.example}`));
+          return { el, key: `${card.head}:${i}` };
+        }),
+        label: '點一下卡片，會念給你聽',
+        onAllSeen: () => {
+          advance.disabled = false;
+          advance.removeAttribute('aria-disabled');
+          advance.textContent = isLastStep ? '回課程首頁' : '繼續';
+        },
+      });
+      advance.addEventListener('click', () => {
+        if (advance.disabled) return;
+        if (isLastStep) { onBack(); return; }
+        stepIndex += 1;
+        roundIndex = 0;
+        itemIndex = 0;
+        renderStep();
+      });
+      container.appendChild(walkthrough.status);
+      container.appendChild(walkthrough.grid);
+      container.appendChild(h('div', { class: 'quiz-option-row' }, [advance]));
+    } else if (step === 'matching') {
       const isLastRound = roundIndex === matchingRounds.length - 1;
       const canContinue = !isLastRound || !isLastStep;
       container.appendChild(

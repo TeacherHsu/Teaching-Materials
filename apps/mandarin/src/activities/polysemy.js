@@ -10,6 +10,16 @@ import { chunkRounds } from '../utils/chunk.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 
 
+
+// 語詞題的資料是樣板句，兩種寫法都有：
+//   請看語詞「固守」中的「固」，想一想這個字在語詞中的意思。
+//   語詞「固守」中的「固」，就是指堅決的。（舊資料，正解接在後面）
+// 抽出語詞本身；不是語詞題就回 null。
+export function wordOnlyTerm(text) {
+  const m = String(text || '').match(/^(?:請看)?語詞「(.+?)」中的「.+?」/u);
+  return m ? m[1] : null;
+}
+
 // 題目問的是「字」在句中的意思，所以只凸顯目標字本身；資料裡《》可能框住整個詞
 // （例：《併吞》），這裡去掉《》，把詞加底線、目標字另外標色，避免學生以為要解釋整個詞。
 function sentenceCard(entry) {
@@ -29,16 +39,15 @@ function sentenceCard(entry) {
     p.appendChild(h('span', { class: 'polysemy-sentence__word' }, kids));
   };
   let clean = rawClean;
-  const revealedDefinition = rawClean.match(/^語詞「(.+?)」中的「(.+?)」，就是指.+[。！]$/);
-  if (revealedDefinition) {
-    // 舊資料可能把正解接在題幹後面；畫面只保留語詞情境，答案留在選項中。
-    const [, term, target] = revealedDefinition;
-    clean = `請看語詞「${term}」中的「${target}」，想一想這個字在語詞中的意思。`;
-    p.appendChild(document.createTextNode('請看語詞「'));
+  const term = wordOnlyTerm(rawClean);
+  if (term) {
+    // 語詞題（466 題）：畫面上只放語詞本身，放大、標出目標字。
+    // 原本是「請看語詞『固守』中的『固』，想一想這個字在語詞中的意思。」
+    // 再加上題目「『固』在這句話裡是什麼意思？」——兩句話說同一件事，
+    // 而且它根本不是一句話（CF 2026-10-03：拗口冗長）。
+    clean = term;
+    p.classList.add('polysemy-sentence--word');
     pushWord(term);
-    p.appendChild(document.createTextNode('」中的「'));
-    p.appendChild(h('mark', { class: 'polysemy-sentence__char' }, target));
-    p.appendChild(document.createTextNode('」，想一想這個字在語詞中的意思。'));
   } else if (m) {
     p.appendChild(document.createTextNode(m[1]));
     pushWord(m[2]);
@@ -58,16 +67,19 @@ function sentenceCard(entry) {
 function buildChoiceItem(entry) {
   const options = shuffled([...new Set(entry.options)]);
   const card = sentenceCard(entry);
-  const stem = `「${entry.char}」在這句話裡是什麼意思？`;
+  const term = wordOnlyTerm(entry.sentence);
+  const where = term ? `「${term}」的` : '這裡的';
+  const stem = `${where}「${entry.char}」是什麼意思？`;
   return {
     id: entry.id,
     extra: card.el,
     stem,
-    readAllStem: `${card.clean}　${stem}`,
+    readAllStem: term ? stem : `${card.clean}　${stem}`,
     options,
     answer: entry.definition,
-    explanation: `「${entry.char}」在這句話裡的意思是：${entry.definition}`,
-    hints: [`把句子多讀一次，只看「${entry.char}」這個字，想想它在這裡講的是哪一種意思。`],
+    explanation: `${where}「${entry.char}」是：${entry.definition}`,
+    // 一字多義最實用的策略是「代入」：把每個意思放回去讀，通順的就是。
+    hints: ['把每個意思放進去讀讀看，哪一個最通順？'],
   };
 }
 
@@ -98,7 +110,7 @@ export function buildPolysemyActivity(lesson, onBack) {
     }
     const isLastRound = roundIndex === rounds.length - 1;
     container.appendChild(
-      TaskBanner({ label: '讀句子，選出標色的字在句子裡的意思', step: roundIndex === 0 ? '' : '加練挑戰' }),
+      TaskBanner({ label: '選出標色的字是什麼意思', step: roundIndex === 0 ? '' : '加練挑戰' }),
     );
     container.appendChild(
       ChoiceQuiz({

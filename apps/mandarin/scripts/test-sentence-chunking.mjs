@@ -67,3 +67,23 @@ for (const { sentence, required, forbidden } of cases) {
 }
 
 console.log('PASS: 句型詞塊保留固定語、助詞與語意單位，不再以每兩字硬切。');
+
+// ── 依組別合併詞塊（CF 2026-10-03：詞塊過於細碎）
+{
+  const { coarsenChunks, CHUNK_TARGET, isAbstractPattern, connectivesOf } = await import('../src/activities/sentencePractice.js');
+  const sentence = '我喜歡吃肉羹，不是因為它的味道，而是因為可以跟媽媽撒嬌。';
+  for (const [level, target] of Object.entries(CHUNK_TARGET)) {
+    const blocks = splitSentenceIntoChunks(sentence, target);
+    assert.ok(blocks.length <= target, `${level} 組最多 ${target} 塊，實際 ${blocks.length}`);
+    assert.equal(blocks.join(''), sentence, '合併後不能掉字或改字');
+  }
+  assert.deepEqual(splitSentenceIntoChunks(sentence, 3),
+    ['我喜歡吃肉羹，', '不是因為它的味道，', '而是因為可以跟媽媽撒嬌。'], '低組三塊剛好是三個分句');
+  assert.ok(!splitSentenceIntoChunks('看到不公平的事，他感到十分憤慨。', 4).includes('事，'), '不留孤單的句尾');
+  assert.deepEqual(coarsenChunks(['a', 'b'], 5), ['a', 'b'], '塊數已經夠少就不動');
+
+  assert.equal(isAbstractPattern({ head: '遞進複句' }), true);
+  assert.equal(isAbstractPattern({ head: '孤零零' }), false);
+  assert.deepEqual(connectivesOf('雖然＋情況，卻＋結果'), ['雖然', '卻']);
+  console.log('✅ 詞塊依組別合併、句型名稱改成句型卡');
+}

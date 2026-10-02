@@ -32,7 +32,8 @@ const { computeModuleStars } = await import('../src/utils/scoring.js');
 
 const { buildCharactersActivity } = await import('../src/activities/characters.js');
 const { buildVocabularyActivity } = await import('../src/activities/vocabulary.js');
-const { buildSentencePracticeActivity, splitSentenceIntoChunks } = await import('../src/activities/sentencePractice.js');
+const { buildSentencePracticeActivity, splitSentenceIntoChunks, CHUNK_TARGET } = await import('../src/activities/sentencePractice.js');
+const { getScaffoldLevelKey } = await import('../src/utils/deviceSettings.js');
 const { buildIdiomBuilderActivity } = await import('../src/components/IdiomBuilder.js');
 const { buildReadingActivity } = await import('../src/activities/reading.js');
 const { buildMainIdeaActivity } = await import('../src/activities/mainIdea.js');
@@ -110,7 +111,7 @@ function sentenceOrderingSolutions(lesson) {
       const manualParts = pattern.example_parts?.[index];
       const solution = Array.isArray(manualParts) && manualParts.length >= 2 && manualParts.join('') === sentence
         ? manualParts
-        : splitSentenceIntoChunks(sentence);
+        : splitSentenceIntoChunks(sentence, CHUNK_TARGET[getScaffoldLevelKey()] || 4);
       if (solution.length >= 2) solutions.push(solution);
     }
   }
