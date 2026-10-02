@@ -3345,3 +3345,15 @@
 }
 .teacher-advice--up { border-left-color: var(--color-success); }
 .teacher-advice--down { border-left-color: var(--color-accent); }
+
+/* 選關聯詞：例句中的空格 */
+.connective-quiz__sentence { font-size: var(--font-size-body); line-height: 2; margin: 0 0 var(--space-3); }
+.connective-quiz__blank {
+  display: inline-block;
+  min-width: 2.6em;
+  height: 1.3em;
+  margin: 0 0.2em;
+  vertical-align: middle;
+  border-bottom: 3px solid var(--module-color, var(--color-accent));
+  background: var(--color-surface);
+}

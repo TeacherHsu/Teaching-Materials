@@ -19,6 +19,12 @@ import { getScaffoldLevelKey } from '../utils/deviceSettings.js';
 import { missingContentNotice } from './engine.js';
 import { chunkRounds } from '../utils/chunk.js';
 import { filterByStatus, isPreview } from '../utils/preview.js';
+import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
+import { shuffle } from '../utils/shuffle.js';
+import { getScaffoldLevel } from '../utils/deviceSettings.js';
+import {
+  connectivesInStructure, matchPair, blankConnectives, connectiveDistractors, pairLabel,
+} from '../utils/connectives.js';
 
 const PUNCT_RE = /[，。！？、]/u;
 const PROTECTED_PHRASES = [
@@ -172,7 +178,8 @@ export function chunksForExample(pattern, sentence, manualParts, levelKey = getS
   const target = CHUNK_TARGET[levelKey] || 4;
   // 低組只排分句（塊數少、負荷低）；中、高組要放對關聯詞
   const withConnectives = levelKey !== 'support'
-    ? splitWithConnectives(sentence, connectivesOf(pattern?.structure), target)
+    // 只用關聯詞表認得的詞：結構字串常是「一＋量詞＋又＋一＋量詞」，拆字串會把「量詞」也當關聯詞
+    ? splitWithConnectives(sentence, connectivesInStructure(pattern?.structure), target)
     : null;
   return withConnectives || splitSentenceIntoChunks(sentence, target);
 }
@@ -247,6 +254,69 @@ function readyPatternCards(lesson) {
     .map((p) => ({ head: p.head, structure: p.structure || '', example: withExamples.get(p.id || p.head) }))
     .filter((card) => card.example);
 }
+
+// ── 選關聯詞（參考站句型練習的第 3 步） ─────────────────────
+// 例句的關聯詞挖空，從不同關係類型的關聯詞組中選。
+// 排句子練的是「關聯詞放哪裡」，這一步練的是「該用哪一組」。
+const TYPE_HINTS = {
+  轉折: '前後兩句的意思是相反的嗎？',
+  因果: '前面是不是後面的原因？',
+  遞進: '後面是不是比前面說得更多、更進一步？',
+  假設: '前面是不是「如果發生了」的情況？',
+  條件: '是不是要先做到前面，才會有後面？',
+  承接: '事情是不是一件接著一件發生？',
+  並列: '是不是兩件事同時在做？',
+  讓步: '是不是就算前面這樣，後面也不改變？',
+  取捨: '是不是先說不是哪個，再說真正是哪個？',
+};
+
+export function buildConnectiveItems(lesson, optionCount = 3, shuffleImpl = shuffle) {
+  const items = [];
+  const patterns = filterByStatus(lesson.sentence_patterns || [], { statusKey: 'examples_status' })
+    .filter((p) => p.structure && p.examples && p.examples.length);
+  for (const pattern of patterns) {
+    let pair = matchPair(connectivesInStructure(pattern.structure));
+    if (!pair) continue;
+    let distractors = connectiveDistractors(pair, optionCount - 1, shuffleImpl);
+    // 「先……再……最後」找不到三個詞的誘答，改挖前兩個
+    if (!distractors.length && pair.words.length > 2) {
+      pair = matchPair(pair.words.slice(0, 2));
+      if (!pair) continue;
+      distractors = connectiveDistractors(pair, optionCount - 1, shuffleImpl);
+    }
+    if (!distractors.length) continue;
+    const sentence = pattern.examples.find((ex) => blankConnectives(ex, pair.words));
+    if (!sentence) continue;
+    const parts = blankConnectives(sentence, pair.words);
+    const answer = pairLabel(pair.words);
+    const readable = parts.reduce((acc, part, i) => acc + part + (i < pair.words.length ? '（空格）' : ''), '');
+    items.push({
+      id: `connective:${lesson.lesson_id}:${pattern.id || pattern.head}`,
+      stem: '空格要填哪一組關聯詞？',
+      readAllStem: `${readable}${/[。！？]$/u.test(readable) ? '' : '。'}空格要填哪一組關聯詞？`,
+      stemContent: h('div', { class: 'connective-quiz' }, [
+        h('p', { class: 'connective-quiz__sentence' }, parts.flatMap((part, i) => (
+          i < pair.words.length ? [part, h('span', { class: 'connective-quiz__blank', 'aria-label': '空格' }, '')] : [part]
+        ))),
+        h('p', { class: 'quiz-stem' }, '空格要填哪一組關聯詞？'),
+      ]),
+      options: shuffleImpl([answer, ...distractors.map((d) => pairLabel(d.words))]),
+      answer,
+      explanation: `答案是「${answer}」。`,
+      hints: [TYPE_HINTS[pair.type] || '想一想前後兩句是什麼關係。'],
+    });
+  }
+  return items;
+}
+
+const NEXT_STEP_LABEL = {
+  patterns: '繼續：認識句型',
+  matching: '繼續：短語搭配',
+  ordering: '繼續：句子重組',
+  connectives: '繼續：選關聯詞',
+  builder: '繼續：仿寫選填',
+  write: '繼續：自己寫一句',
+};
 
 const CARD_HUES = ['blue', 'teal', 'purple', 'terracotta', 'rose', 'olive'];
 
@@ -376,6 +446,8 @@ export function buildSentencePracticeActivity(lesson, onBack) {
   if (patternCards.length > 0) steps.push('patterns');
   if (matchingRounds.length > 0) steps.push('matching');
   if (orderingRounds.length > 0) steps.push('ordering');
+  const connectiveItems = buildConnectiveItems(lesson, Math.max(2, getScaffoldLevel().optionCount));
+  if (connectiveItems.length > 0) steps.push('connectives');
   if (builderRounds.length > 0) steps.push('builder');
   // 最後一步：用句型自己寫一句話，交給老師看。
   // 排在組句之後——先看過句型怎麼用、組過幾句，才有東西可以仿。
@@ -458,7 +530,7 @@ export function buildSentencePracticeActivity(lesson, onBack) {
             }
             renderStep();
           } : null,
-          continueLabel: isLastRound ? '繼續：句子重組' : '加練下一組',
+          continueLabel: isLastRound ? (NEXT_STEP_LABEL[steps[stepIndex + 1]] || '繼續') : '加練下一組',
         }),
       );
     } else if (step === 'ordering') {
@@ -473,7 +545,7 @@ export function buildSentencePracticeActivity(lesson, onBack) {
         : !isLastRound
           ? '加練下一組'
           : !isLastStep
-            ? '繼續：仿寫選填'
+            ? NEXT_STEP_LABEL[steps[stepIndex + 1]] || '繼續'
             : '完成';
       container.appendChild(TaskBanner({ label: '句子重組', step: taskLabel }));
       appendPatternContext(round, container);
@@ -500,6 +572,20 @@ export function buildSentencePracticeActivity(lesson, onBack) {
           continueLabel,
         }),
       );
+    } else if (step === 'connectives') {
+      container.appendChild(TaskBanner({ label: '選關聯詞：空格要填哪一組？', step: taskLabel }));
+      container.appendChild(ChoiceQuiz({
+        items: connectiveItems,
+        backLabel: isLastStep ? '回課程首頁' : '本課先完成',
+        onBack,
+        onContinue: isLastStep ? null : () => {
+          stepIndex += 1;
+          roundIndex = 0;
+          itemIndex = 0;
+          renderStep();
+        },
+        continueLabel: NEXT_STEP_LABEL[steps[stepIndex + 1]] || '繼續',
+      }));
     } else if (step === 'builder') {
       const group = builderRounds[roundIndex];
       const round = group[itemIndex];
