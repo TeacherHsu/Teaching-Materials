@@ -932,7 +932,35 @@
       "answer": "成為臺灣首位登上世界七頂峰的女登山家",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            7,
+            8
+          ],
+          "sha": [
+            "e230b944",
+            "8acb85b0"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "文章一開始就介紹江秀真「是臺灣第一位……」。找出那兩句。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K06:02",
@@ -947,7 +975,37 @@
       "answer": "母親",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            13,
+            14,
+            15
+          ],
+          "sha": [
+            "bb01bd4d",
+            "46295233",
+            "41f1a1ab"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "文章把高山說成一個人。找出有「就像」的那一句。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K06:03",
@@ -962,7 +1020,37 @@
       "answer": "跑步與低氧訓練",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            21,
+            22,
+            23
+          ],
+          "sha": [
+            "4bf599a6",
+            "aa2a4aa0",
+            "a06bea60"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "為了挑戰最高峰，她每天、每星期都做了一件事。找出那兩件事。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K06:04",
@@ -977,7 +1065,41 @@
       "answer": "靠成功的渴望、勇氣與決心",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            39,
+            40,
+            41,
+            42,
+            43
+          ],
+          "sha": [
+            "3d7ef978",
+            "cbc49953",
+            "0ca4f7a1",
+            "80f3987f",
+            "9923ab74"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "體力用盡時，是什麼東西在她眼前閃過、鼓舞了她？接著她又做了什麼？"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2372,5 +2494,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "narrative"
 }

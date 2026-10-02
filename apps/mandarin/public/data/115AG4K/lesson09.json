@@ -852,7 +852,35 @@
       "answer": "到處都是寺廟",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "81ebd9eb",
+            "1a644b7f"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "說到泰國時，文章提到這裡到處都看得到同一種建築。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K09:02",
@@ -867,7 +895,35 @@
       "answer": "金字塔",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            21,
+            22
+          ],
+          "sha": [
+            "38acab83",
+            "16db3ea6"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "介紹埃及時，提到首都開羅旁邊有一種世界聞名的建築。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K09:03",
@@ -882,7 +938,37 @@
       "answer": "築堤防潮並用風車排水",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            29,
+            30,
+            31
+          ],
+          "sha": [
+            "5b9c63cc",
+            "4137f6d7",
+            "119785d2"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "荷蘭有三分之一的土地在海平面之下，所以人們做了兩件事。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K09:04",
@@ -897,7 +983,37 @@
       "answer": "充滿音樂與歡樂氣氛",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            43,
+            44,
+            45
+          ],
+          "sha": [
+            "35a4893f",
+            "d7f50444",
+            "0a782c3a"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "奧地利那一段最後說這個國家雖然不大，卻充滿了某種東西。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2273,5 +2389,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "poetry"
 }

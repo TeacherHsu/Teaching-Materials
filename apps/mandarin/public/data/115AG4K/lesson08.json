@@ -985,7 +985,35 @@
       "answer": "居高臨下的大樓",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "35ce6352",
+            "e4c1c3fb"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "第一段用動物來比喻建築。找出哪一種建築被叫做「長頸鹿」。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K08:02",
@@ -1000,7 +1028,35 @@
       "answer": "層層向上的竹子",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            8,
+            9
+          ],
+          "sha": [
+            "41adcfef",
+            "7aa2e880"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "介紹台北一○一時，說它的外形像一種植物。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K08:03",
@@ -1015,7 +1071,35 @@
       "answer": "改善城市收訊不良",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            25,
+            26
+          ],
+          "sha": [
+            "0edc6d35",
+            "9ed6dfab"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "晴空塔是一座通訊塔。找出「最初是為了……」那一句。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K08:04",
@@ -1030,7 +1114,35 @@
       "answer": "方便人們往來",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            34,
+            35
+          ],
+          "sha": [
+            "9f6ebb2b",
+            "52e9ab42"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "雙峰塔的兩棟樓之間有一座橋。找出說明這座橋用途的句子。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2454,5 +2566,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "expository"
 }

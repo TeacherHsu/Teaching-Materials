@@ -1005,7 +1005,39 @@
       "answer": "製鞋速度變慢、收入變少",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            16,
+            17,
+            18,
+            21
+          ],
+          "sha": [
+            "f7afbb83",
+            "653402e4",
+            "4567620d",
+            "d5da0629"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "老鞋匠年紀大了，做鞋的速度變了，客人買不到鞋會怎樣？店裡的收入就……"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K12:02",
@@ -1020,7 +1052,37 @@
       "answer": "剪好的皮革變成新鞋",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            28,
+            29,
+            30
+          ],
+          "sha": [
+            "7fe1e57c",
+            "7b136897",
+            "190763dd"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "第二天早上老鞋匠很驚訝。找出他發現了什麼。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K12:03",
@@ -1035,7 +1097,37 @@
       "answer": "兩個小精靈",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            58,
+            59,
+            60
+          ],
+          "sha": [
+            "f81259c6",
+            "35284c51",
+            "11aa9dd5"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "午夜鐘響後，跳上桌面的是誰？"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K12:04",
@@ -1050,7 +1142,37 @@
       "answer": "製作新衣和新鞋",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            78,
+            79,
+            80
+          ],
+          "sha": [
+            "0f67fad1",
+            "373718d9",
+            "713a1e7c"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "老鞋匠夫婦決定送禮物答謝。妻子做什麼、老鞋匠做什麼？"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2437,5 +2559,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "narrative"
 }

@@ -932,7 +932,46 @@
       "answer": "空間與時間",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "比較評估",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1
+          ],
+          "sha": [
+            "66eda384",
+            "3377de17"
+          ]
+        },
+        {
+          "para": 6,
+          "sentences": [
+            0,
+            1
+          ],
+          "sha": [
+            "95373f10",
+            "061f23d4"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "第一段和最後一段都用了「轉轉轉、變變變」。比一比：前面變的是方向，後面變的是什麼？"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K10:02",
@@ -947,7 +986,35 @@
       "answer": "能載人到任何地方",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            4,
+            5
+          ],
+          "sha": [
+            "926c7407",
+            "5840313a"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "魔毯自己說它能做什麼。找出「我載你……」那兩句。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K10:03",
@@ -962,7 +1029,35 @@
       "answer": "暗語",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 4,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "9740cac2",
+            "8fe56021"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "黃金洞穴說它聽到某句話就會張嘴。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K10:04",
@@ -977,7 +1072,37 @@
       "answer": "巨人出現並幫忙實現願望",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 5,
+          "sentences": [
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "102d3c97",
+            "7ffcd947",
+            "6f82e005"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "只要揉揉臉龐搓鼻尖，接下來會出現誰、做什麼事？"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2372,5 +2497,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "poetry"
 }

@@ -983,7 +983,39 @@
       "answer": "追兔子先生",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "sha": [
+            "0cefa045",
+            "185d4d42",
+            "059fc7e8",
+            "b2353f86"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "旁白說愛麗絲本來在樹下看書，後來為了追一樣東西才掉下去。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K11:02",
@@ -998,7 +1030,35 @@
       "answer": "拿到鑰匙",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            30,
+            31
+          ],
+          "sha": [
+            "68b6acf4",
+            "e3951f9f"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "三腳桌第一次開口時，說要打開門得用什麼。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K11:03",
@@ -1013,7 +1073,35 @@
       "answer": "身體縮小",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            56,
+            57
+          ],
+          "sha": [
+            "cd149e3a",
+            "9a483c64"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "喝下果汁後，旁白說愛麗絲變成多高？"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K11:04",
@@ -1028,7 +1116,37 @@
       "answer": "揮動兔子先生掉落的扇子",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "推論訊息",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            116,
+            117,
+            118
+          ],
+          "sha": [
+            "34fb7113",
+            "c7ffa9da",
+            "bf7454e0"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "愛麗絲變得太高時，兔子先生掉了一樣東西。她拿起來做了什麼？"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2529,5 +2647,6 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "genre": "script"
 }
