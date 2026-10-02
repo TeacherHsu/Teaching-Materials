@@ -43,16 +43,21 @@ function buildScaffoldedItem(lessonId, item) {
     };
   }
 
-  // 證據面板先掛在題目下方但隱藏，第 2 層提示才打開
+  // 證據面板先掛在題目下方但隱藏，第 2 層提示才打開。
+  // 第 2 層是「教怎麼找」那一層：課次若標了區塊（例如「找『練習』那一塊」），
+  // 就說出範圍；沒標就退回通用句。通用句幾乎沒給資訊，但勝過印出
+  // 「第4段重點」這種匯入殘留的空殼標籤。
   panel.el.hidden = true;
+  const byLevel = (level) => written.find((hint) => hint.level === level);
   const layers = [];
-  if (written[0]) layers.push({ text: written[0].text });
+  const first = byLevel(1) || written[0];
+  if (first) layers.push({ text: first.text });
   layers.push({
-    text: '答案就在下面這一段裡，讀讀看。',
+    text: byLevel(2)?.text || '答案就在下面這一段裡，讀讀看。',
     on: () => { panel.el.hidden = false; },
   });
   layers.push({
-    text: '用螢光筆畫起來的那一句，就是答案。',
+    text: byLevel(3)?.text || '用螢光筆畫起來的那一句，就是答案。',
     on: () => { panel.el.hidden = false; panel.highlight(); },
   });
 

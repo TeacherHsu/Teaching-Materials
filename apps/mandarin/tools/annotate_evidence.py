@@ -71,11 +71,13 @@ def apply(lesson_id, filename, genre, annotations):
             {'para': para, 'sentences': rows, 'sha': [table[(para, row)] for row in rows]}
             for para, rows in groups
         ]
-        question['hints'] = [
-            {'level': 1, 'text': hint},
-            {'level': 2, 'type': 'locate'},
-            {'level': 3, 'type': 'evidence'},
-        ]
+        # hint 可以是一句（只給第 1 層）或 (第1層, 第2層) ——第 2 層是「教怎麼找」，
+        # 通常是說出結構區塊，例如「答案在『練習』那一塊裡」。不給就用通用句。
+        first, locate = (hint, None) if isinstance(hint, str) else (hint[0], hint[1])
+        hints = [{'level': 1, 'text': first}]
+        hints.append({'level': 2, 'type': 'locate', **({'text': locate} if locate else {})})
+        hints.append({'level': 3, 'type': 'evidence'})
+        question['hints'] = hints
 
     json.dump(lesson, open(path, 'w'), ensure_ascii=False, indent=2)
     print(f'已寫入 {path}（{len(annotations)} 題）')

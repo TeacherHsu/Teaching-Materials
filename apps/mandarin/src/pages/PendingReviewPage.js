@@ -47,14 +47,15 @@ const GROUPS = [
   },
   {
     key: 'reading_paragraph',
-    title: '5／7 讀懂課文・課文地圖 — 段落大意',
+    title: '5 讀懂課文 — 段落大意',
     items(lesson) {
       return (lesson.paragraph_summary || [])
         .filter((p) => p.status === 'draft')
         .map((p) => ({
           id: p.id,
           content: p.summary || '（空白）',
-          requirement: `第 ${p.para_no} 段・課文地圖結構角色：${p.structure_role || '（未標註）'}`,
+          // 欄位名是 paragraph_no；原本寫 para_no，印出來一直是「第 undefined 段」
+          requirement: `第 ${p.paragraph_no} 段・結構區塊：${p.structure_block || p.structure_role || '（未標註）'}`,
         }));
     },
   },
