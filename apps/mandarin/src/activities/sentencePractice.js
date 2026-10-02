@@ -111,6 +111,72 @@ export const CHUNK_TARGET = { support: 3, standard: 4, challenge: 5 };
  *   通常和後面的詞是一個意群（「他卻沒有」「跟媽媽」「吃肉羹」）。
  * - 「……的」要接住後面的名詞，太短的句尾併到前面，不留孤單的「事，」。
  */
+/**
+ * 排句子時把關聯詞獨立成一塊（參考站做法：可是／雖然／外面下著大雨，／我們還是準時到校。）。
+ * 句型練習要練的正是「關聯詞放在哪裡」；關聯詞黏在分句裡，學生排的只是分句順序。
+ * 關聯詞分兩類：
+ * - 本身就在分句開頭的（先、再、最後、不是、而是、雖然、可是……）：在哪裡都切。
+ * - 跟在主語後面的副詞（卻、也、就、還……）：只在句首或標點後切；
+ *   「他卻沒有放棄」硬切會留下孤單的「他」。
+ */
+const ADVERB_CONNECTIVES = new Set(['卻', '也', '就', '還', '才', '都', '便', '仍', '又', '更', '一']);
+
+export function splitWithConnectives(sentence, connectives, target) {
+  const words = [...new Set(connectives)].filter(Boolean).sort((a, b) => b.length - a.length);
+  if (!words.length) return null;
+  const blocks = [];
+  let rest = sentence;
+  let clauseStart = true;
+  let buffer = '';
+  while (rest) {
+    const hit = words.find((w) => rest.startsWith(w) && (clauseStart || !ADVERB_CONNECTIVES.has(w)));
+    if (hit) {
+      if (buffer) blocks.push(buffer);
+      buffer = '';
+      blocks.push(hit);
+      rest = rest.slice(hit.length);
+      clauseStart = false;
+      continue;
+    }
+    const ch = rest[0];
+    buffer += ch;
+    rest = rest.slice(1);
+    clauseStart = /[，。！？、；：]/u.test(ch);
+  }
+  if (buffer) blocks.push(buffer);
+  const connectiveCount = blocks.filter((b) => words.includes(b)).length;
+  // 沒切到關聯詞，或只切出兩塊（排兩塊沒有練習價值），就退回一般切法
+  if (connectiveCount === 0 || blocks.length < 3) return null;
+  // 非關聯詞的分句若太長，再用一般規則切開，但總塊數不超過 target＋關聯詞數
+  const budget = Math.max(target, connectiveCount + 2);
+  if (blocks.length >= budget) return blocks;
+  const out = [];
+  const spare = budget - blocks.length;
+  let extra = spare;
+  for (const block of blocks) {
+    // 分句十個字以內就保持完整，切開反而打斷意群（「外面下著／大雨」）
+    if (words.includes(block) || extra <= 0 || block.length <= 10) { out.push(block); continue; }
+    const pieces = coarsenChunks(mergeSemanticTokens(segmentText(block)), 1 + Math.min(extra, 1));
+    extra -= pieces.length - 1;
+    out.push(...pieces);
+  }
+  return out;
+}
+
+/**
+ * 一句例句在目前組別下要切成哪些詞塊。活動和測試都用這一個函式，答案才一致。
+ * 優先序：教師人工確認的詞塊 → 關聯詞獨立成塊（中、高組）→ 一般語意切法。
+ */
+export function chunksForExample(pattern, sentence, manualParts, levelKey = getScaffoldLevelKey()) {
+  if (manualParts) return manualParts;
+  const target = CHUNK_TARGET[levelKey] || 4;
+  // 低組只排分句（塊數少、負荷低）；中、高組要放對關聯詞
+  const withConnectives = levelKey !== 'support'
+    ? splitWithConnectives(sentence, connectivesOf(pattern?.structure), target)
+    : null;
+  return withConnectives || splitSentenceIntoChunks(sentence, target);
+}
+
 export function coarsenChunks(tokens, target) {
   const blocks = [...tokens];
   if (!Number.isFinite(target) || blocks.length <= target) return blocks;
@@ -184,6 +250,27 @@ function readyPatternCards(lesson) {
 
 const CARD_HUES = ['blue', 'teal', 'purple', 'terracotta', 'rose', 'olive'];
 
+// 句型的意思用孩子聽得懂的話說（參考站的做法：「前後意思相反或轉彎」）。
+// 術語本身不考，但知道「這種句子在做什麼」，學生才會用。
+const PATTERN_MEANINGS = {
+  轉折: '前面和後面的意思相反，或是轉了一個彎。',
+  遞進: '後面比前面更進一步、說得更多。',
+  並列: '兩件事一起說，一樣重要。',
+  承接: '事情一件接著一件，照順序發生。',
+  因果: '前面是原因，後面是結果。',
+  條件: '要先做到前面，才會有後面。',
+  假設: '如果前面發生了，就會有後面的結果。',
+  讓步: '就算前面這樣，後面還是不會改變。',
+  選擇: '從兩個裡面選一個。',
+  目的: '後面是做前面這件事的目的。',
+  把字: '說出把一樣東西怎麼處理了。',
+  被字: '說出一樣東西被別人怎麼了。',
+};
+export function patternMeaning(head) {
+  const key = Object.keys(PATTERN_MEANINGS).find((k) => String(head || '').startsWith(k));
+  return key ? PATTERN_MEANINGS[key] : '';
+}
+
 /** 例句中把關聯詞用卡片同色標出來，學生看得到「句型長在句子的哪裡」。 */
 function highlightConnectives(sentence, words) {
   if (!words.length) return [sentence];
@@ -196,9 +283,11 @@ function highlightConnectives(sentence, words) {
 function PatternCard(card, index) {
   const hue = CARD_HUES[index % CARD_HUES.length];
   const words = connectivesOf(card.structure);
+  const meaning = patternMeaning(card.head);
   return h('div', { class: `pattern-card pattern-card--${hue}` }, [
     h('p', { class: 'pattern-card__name' }, card.head),
     words.length ? h('p', { class: 'pattern-card__frame' }, words.join(' …… ')) : null,
+    meaning ? h('p', { class: 'pattern-card__meaning' }, meaning) : null,
     h('p', { class: 'pattern-card__example' }, highlightConnectives(card.example, words)),
   ].filter(Boolean));
 }
@@ -221,7 +310,7 @@ function buildRoundsFromExamples(examples, promptPrefix) {
   return examples
     .map(({ pattern, sentence, parts }) => {
       const manualParts = Array.isArray(parts) && parts.length >= 2 && parts.join('') === sentence ? parts : null;
-      const chunks = manualParts || splitSentenceIntoChunks(sentence, CHUNK_TARGET[getScaffoldLevelKey()] || 4);
+      const chunks = chunksForExample(pattern, sentence, manualParts);
       if (chunks.length < 2) return null;
       return {
         prompt: promptPrefix,
@@ -325,7 +414,7 @@ export function buildSentencePracticeActivity(lesson, onBack) {
           const el = PatternCard(card, i);
           // 點卡片就念出來：句型名稱＋例句。學生先聽到句型「用起來」的樣子，
           // 而不是先背術語。
-          el.addEventListener('click', () => speak(`${card.head}。${card.example}`));
+          el.addEventListener('click', () => speak(`${card.head}。${patternMeaning(card.head)}例如：${card.example}`));
           return { el, key: `${card.head}:${i}` };
         }),
         label: '點一下卡片，會念給你聽',

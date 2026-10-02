@@ -267,7 +267,10 @@ export function ChoiceQuiz({
     // 的學生一層提示都拿不到；標準／挑戰層答錯兩次揭曉，第 2 層也永遠跳過。
     // 零錯誤學習本來就該「先給提示再作答」，所以提示改成也能主動取用。
     // 只有分層提示（閱讀理解）才出現；一般題目沒有這顆按鈕。
-    const layered = Array.isArray(item.hints) && item.hints.some((l) => l && typeof l === 'object');
+    // 挑戰層不給主動提示（參考站等級 3 也沒有 💡）：這一層要練的是獨立作答；
+    // 答錯時照樣會推進提示層數，不會卡死。
+    const layered = scaffold.key !== 'challenge'
+      && Array.isArray(item.hints) && item.hints.some((l) => l && typeof l === 'object');
     const hintButton = layered
       ? h('button', { class: 'btn btn--ghost quiz-hint-button', type: 'button' })
       : null;

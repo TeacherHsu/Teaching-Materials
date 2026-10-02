@@ -3253,3 +3253,95 @@
 }
 
 .hint-panel__icon { display: inline-flex; flex: none; color: var(--color-accent); margin-right: 4px; }
+.pattern-card__meaning {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  border-radius: 10px;
+  background: var(--pc-tint);
+  color: var(--text-primary);
+  font-size: var(--font-size-button);
+}
+
+/* ── 課文地圖（讀懂課文第一步）：由上而下一格一格，箭頭表示順序 ── */
+.card-grid.text-map {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  max-width: 720px;
+  margin-inline: auto;
+}
+.text-map .walkthrough__item { position: relative; }
+.text-map .walkthrough__item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: calc(-1 * var(--space-5) + 4px);
+  width: 14px;
+  height: 14px;
+  border-right: 3px solid var(--module-color, var(--color-accent));
+  border-bottom: 3px solid var(--module-color, var(--color-accent));
+  transform: translateX(-50%) rotate(45deg);
+  opacity: 0.6;
+}
+.text-map__node {
+  padding: var(--space-4);
+  border: 2px solid var(--color-border);
+  border-left: 8px solid var(--module-color, var(--color-accent));
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  text-align: left;
+}
+.text-map__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-2);
+}
+.text-map__label {
+  font-size: var(--font-size-section);
+  font-weight: 700;
+  color: var(--module-color-dark, var(--text-primary));
+}
+.text-map__section {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--module-color, var(--color-accent));
+  color: #fff;
+  font-size: var(--font-size-meta);
+}
+.text-map__focus { font-size: var(--font-size-button); color: var(--text-secondary); }
+.text-map__range { font-size: var(--font-size-meta); color: var(--text-secondary); }
+.text-map__gist { margin: 0; font-size: var(--font-size-body); line-height: 1.6; color: var(--text-primary); }
+
+/* 「下一步」推薦：核心大項裡第一個還沒完成的 */
+.module-card--next {
+  border-color: var(--module-color, var(--color-accent));
+  box-shadow: 0 0 0 3px var(--module-color, var(--color-accent)), 0 8px 20px rgba(51, 47, 41, 0.12);
+}
+.module-card__next-badge {
+  position: absolute;
+  top: -12px;
+  left: var(--space-4);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--module-color, var(--color-accent));
+  color: #fff;
+  font-size: var(--font-size-meta);
+  font-weight: 700;
+}
+.module-card__next-badge svg { width: 16px; height: 16px; }
+.module-card { position: relative; }
+
+.teacher-grade-scope { font-weight: 700; color: var(--text-primary); }
+.teacher-advice {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  border-left: 6px solid var(--color-border);
+  background: var(--color-surface);
+}
+.teacher-advice--up { border-left-color: var(--color-success); }
+.teacher-advice--down { border-left-color: var(--color-accent); }

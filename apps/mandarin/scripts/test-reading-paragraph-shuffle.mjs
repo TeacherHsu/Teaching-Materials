@@ -1,8 +1,8 @@
 // 驗證「讀懂課文」段落排序題的初始呈現順序一定被打亂：
 //   1. shuffleDiffering() 本身：對多組不同輸入，結果都不等於原順序、且至少 2 個位置不同，
 //      同一份輸入重複呼叫得到相同結果（seeded，可重現）。
-//   2. 整合到 buildReadingActivity()：段落大意的「詞塊」初始呈現順序（bank）
-//      不等於正解順序（sorted by para_no）。
+//   2. 整合到 buildReadingActivity()：過完課文地圖後，全篇排序的詞塊初始順序
+//      不等於正解順序。
 // 無新依賴，純 Node（fake-dom stub 只給整合測試用）。
 // 用法：node scripts/test-reading-paragraph-shuffle.mjs
 import assert from 'node:assert/strict';
@@ -55,18 +55,13 @@ const correctOrder = paragraphs.map((p) => p.summary);
 const lesson = { paragraph_summary: paragraphs, reading_questions: [] };
 const container = buildReadingActivity(lesson, () => {});
 
-const warmupChips = container.findAll((n) => n.hasClass && n.hasClass('sentence-chip') && n.tagName === 'button');
-assert.equal(warmupChips.length, 2, '暖身應先呈現兩段大意');
-for (const summary of correctOrder.slice(0, 2)) {
-  const chip = container.findAll((n) => n.hasClass && n.hasClass('sentence-chip') && n.tagName === 'button')
-    .find((n) => n.textContent === summary && !n.hasClass('sentence-ordering__placed-chip'));
-  assert.ok(chip, `暖身應有段落「${summary}」可選`);
-  chip.dispatch('click');
-}
-container.findAll((n) => n.tagName === 'button').find((n) => n.textContent.trim() === '檢查答案').dispatch('click');
+// 第 1 步是課文地圖（逐格點過才放行），點完再進全篇排序
+const mapItems = container.findAll((n) => n.hasClass && n.hasClass('walkthrough__item'));
+assert.equal(mapItems.length, paragraphs.length, '沒有結構區塊時，課文地圖一段一格');
+mapItems.forEach((item) => item.dispatch('click'));
 const continueButton = container.findAll((n) => n.tagName === 'button')
-  .find((n) => n.textContent.trim() === '繼續：全篇排序');
-assert.ok(continueButton, '暖身完成後應可進入全篇排序');
+  .find((n) => n.textContent.trim() === '我看懂了，繼續');
+assert.ok(continueButton, '課文地圖每格都點過後應可繼續');
 continueButton.dispatch('click');
 
 const chips = container.findAll((n) => n.hasClass && n.hasClass('sentence-chip') && n.tagName === 'button');

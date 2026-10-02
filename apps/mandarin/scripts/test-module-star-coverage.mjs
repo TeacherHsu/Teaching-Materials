@@ -32,8 +32,7 @@ const { computeModuleStars } = await import('../src/utils/scoring.js');
 
 const { buildCharactersActivity } = await import('../src/activities/characters.js');
 const { buildVocabularyActivity } = await import('../src/activities/vocabulary.js');
-const { buildSentencePracticeActivity, splitSentenceIntoChunks, CHUNK_TARGET } = await import('../src/activities/sentencePractice.js');
-const { getScaffoldLevelKey } = await import('../src/utils/deviceSettings.js');
+const { buildSentencePracticeActivity, chunksForExample } = await import('../src/activities/sentencePractice.js');
 const { buildIdiomBuilderActivity } = await import('../src/components/IdiomBuilder.js');
 const { buildReadingActivity } = await import('../src/activities/reading.js');
 const { buildMainIdeaActivity } = await import('../src/activities/mainIdea.js');
@@ -62,7 +61,7 @@ const BUILDERS = {
 };
 
 // ---- 通用互動驅動器：純看 DOM 狀態決定下一步，不需要事先知道任何一題的正解 ----
-const ADVANCE_RE = /^(下一題|下一組|加練下一組|看結果|回課程首頁|繼續|再來一組|完成)|^我記住了$/;
+const ADVANCE_RE = /^(下一題|下一組|加練下一組|看結果|回課程首頁|繼續|再來一組|完成|我看懂了)|^我記住了$/;
 
 /** fake-dom 的 h() 對 `disabled: 'disabled'` 這種初始屬性只會寫進 attrs，不會同步
  * FakeElement.disabled 這個屬性（那個屬性只有元件之後手動 `el.disabled = true` 才會更新）。
@@ -92,7 +91,8 @@ function readingParagraphSolution(lesson) {
   const paragraphs = (lesson.paragraph_summary || [])
     .filter((p) => !p.status || p.status === 'approved' || p.status === 'ready')
     .filter((p) => p.summary);
-  return [...paragraphs].sort((a, b) => a.para_no - b.para_no).map((p) => p.summary);
+  // reading.js 照資料順序呈現（段號欄位叫 paragraph_no，且六上有子篇段號重複），解答也照資料順序
+  return paragraphs.map((p) => p.summary);
 }
 
 function clickWordInOrder(container, word) {
@@ -111,7 +111,7 @@ function sentenceOrderingSolutions(lesson) {
       const manualParts = pattern.example_parts?.[index];
       const solution = Array.isArray(manualParts) && manualParts.length >= 2 && manualParts.join('') === sentence
         ? manualParts
-        : splitSentenceIntoChunks(sentence, CHUNK_TARGET[getScaffoldLevelKey()] || 4);
+        : chunksForExample(pattern, sentence, null);
       if (solution.length >= 2) solutions.push(solution);
     }
   }

@@ -137,10 +137,26 @@ function write(next) {
   }
 }
 
-/** @returns {string} 目前的鷹架層級 key；讀不到或值不合法時回到標準。 */
+/**
+ * 目前的鷹架層級 key；讀不到或值不合法時回到標準。
+ *
+ * 等級依「年級」各自記（CF 2026-10-03：同一台平板會給不同年級用）。
+ * 原本整台平板一個等級，六年級調成挑戰層，二年級用同一台也變挑戰層。
+ * 年級取自最後進入的課次（main.js 每次載入課次都會更新）。
+ * 某個年級沒設定過，就用整台的預設——也就是升級前的舊設定，舊資料不會失效。
+ */
 export function getScaffoldLevelKey() {
-  const level = read().scaffoldLevel;
-  return SCAFFOLD_LEVELS[level] ? level : DEFAULT_LEVEL;
+  const settings = read();
+  const grade = settings.lastGrade;
+  const byGrade = grade && settings.gradeLevels ? settings.gradeLevels[grade] : null;
+  if (SCAFFOLD_LEVELS[byGrade]) return byGrade;
+  return SCAFFOLD_LEVELS[settings.scaffoldLevel] ? settings.scaffoldLevel : DEFAULT_LEVEL;
+}
+
+/** 這個年級有沒有自己的等級設定（沒有就是跟著整台預設）。 */
+export function hasGradeLevel(grade = read().lastGrade) {
+  const levels = read().gradeLevels || {};
+  return Boolean(grade && SCAFFOLD_LEVELS[levels[grade]]);
 }
 
 /**
@@ -159,9 +175,16 @@ export function getScaffoldLevel() {
 }
 
 /** @returns {boolean} 是否成功寫入（localStorage 不可用時回 false，但不丟例外）。 */
-export function setScaffoldLevel(levelKey) {
+/**
+ * 設定等級。有年級脈絡時只改這個年級；沒有（從首頁直接進設定）就改整台預設。
+ * @param {string} levelKey
+ * @param {string|null} [grade] 預設為目前年級
+ */
+export function setScaffoldLevel(levelKey, grade = read().lastGrade) {
   if (!SCAFFOLD_LEVELS[levelKey]) return false;
-  return write({ ...read(), scaffoldLevel: levelKey });
+  const settings = read();
+  if (!grade) return write({ ...settings, scaffoldLevel: levelKey });
+  return write({ ...settings, gradeLevels: { ...(settings.gradeLevels || {}), [grade]: levelKey } });
 }
 
 /**

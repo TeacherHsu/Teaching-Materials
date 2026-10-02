@@ -5,9 +5,9 @@
 // 頁面不顯示、也不儲存任何學生姓名；紀錄只有課次代號、大項代號與正確率。
 import { h, clear } from '../utils/dom.js';
 import { findModuleEntry } from '../activities/moduleRegistry.js';
-import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel, setDeviceLabel, getSheetUrl, setSheetUrl, getScaffoldLevel, getOverride, setOverride, getShowEarlyExit, setShowEarlyExit, getLastGrade } from '../utils/deviceSettings.js';
+import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel, setDeviceLabel, getSheetUrl, setSheetUrl, getScaffoldLevel, getOverride, setOverride, getShowEarlyExit, setShowEarlyExit, getLastGrade, hasGradeLevel } from '../utils/deviceSettings.js';
 import { makeTeacherChallenge, verifyTeacherChallenge } from '../utils/teacherGate.js';
-import { listRecords, recordsAsTsv, clearRecords, unsyncedAttempts, syncRecords } from '../utils/records.js';
+import { listRecords, recordsAsTsv, clearRecords, unsyncedAttempts, syncRecords, levelAdvice } from '../utils/records.js';
 import { allMistakes, clearMistakes } from '../utils/mistakes.js';
 import { listSentences, markSentence, pendingSentences, clearSentences, MARKS } from '../utils/madeSentences.js';
 import { reciteLessons, reciteSummary, clearRecite } from '../utils/reciteRecords.js';
@@ -21,6 +21,8 @@ function moduleLabel(key) {
 function percent(value) {
   return `${Math.round((value || 0) * 100)}%`;
 }
+
+const GRADE_NAMES = { 1: '一年級', 2: '二年級', 3: '三年級', 4: '四年級', 5: '五年級', 6: '六年級' };
 
 function buildRecordsTable() {
   const rows = listRecords();
@@ -65,7 +67,12 @@ function buildPanel(root) {
   root.appendChild(h('h2', {}, '挑戰難易度'));
   root.appendChild(h('p', { class: 'meta' }, '題目內容完全相同，只調整支持的多寡。'));
   const current = getScaffoldLevelKey();
-  const levelStatus = h('p', { class: 'meta' }, `目前：${SCAFFOLD_LEVELS[current].label}`);
+  const gradeNow = getLastGrade();
+  // 等級依年級記：同一台平板給不同年級用時，各年級互不影響
+  root.appendChild(h('p', { class: 'teacher-grade-scope' }, gradeNow
+    ? `正在調整：${GRADE_NAMES[gradeNow] || `${gradeNow} 年級`}的等級（其他年級不受影響）`
+    : '正在調整：整台預設等級（還沒有個別設定的年級會用這個）'));
+  const levelStatus = h('p', { class: 'meta' }, `目前：${SCAFFOLD_LEVELS[current].label}${gradeNow && !hasGradeLevel(gradeNow) ? '（跟著整台預設）' : ''}`);
   const levelRow = h('div', { class: 'card-grid' }, Object.values(SCAFFOLD_LEVELS).map((level) => {
     const btn = h('button', {
       class: `btn${level.key === current ? ' btn--primary' : ''}`,
@@ -80,6 +87,24 @@ function buildPanel(root) {
   }));
   root.appendChild(levelRow);
   root.appendChild(levelStatus);
+
+  // 升降級建議：依這個年級最近的獨立答對率（不用提示、第一次就答對）
+  if (gradeNow) {
+    const advice = levelAdvice(gradeNow, current);
+    const order = ['support', 'standard', 'challenge'];
+    const idx = order.indexOf(current);
+    let text;
+    if (advice.rate === null) {
+      text = `最近三週這個年級只有 ${advice.items} 題作答紀錄，滿 ${advice.minItems} 題後會給升降級建議。`;
+    } else {
+      const pct = Math.round(advice.rate * 100);
+      const target = advice.advice === 'up' ? order[idx + 1] : advice.advice === 'down' ? order[idx - 1] : null;
+      text = `最近三週 ${advice.items} 題，獨立答對 ${pct}%。`
+        + (target ? `建議${advice.advice === 'up' ? '升' : '降'}到「${SCAFFOLD_LEVELS[target].label}」。` : '建議維持目前等級。')
+        + '（低於 5 成降一級、5～8 成維持、8 成以上升一級）';
+    }
+    root.appendChild(h('p', { class: `teacher-advice teacher-advice--${advice.advice || 'none'}` }, text));
+  }
 
   // ---- 個別調整 ----
   // null＝跟隨等級。教師手動調過的項目，之後切換等級**不會**被蓋掉；

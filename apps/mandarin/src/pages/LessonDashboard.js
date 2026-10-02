@@ -87,6 +87,12 @@ export function LessonDashboard(lesson) {
   ]);
   root.appendChild(hero);
 
+  // 「下一步」：核心大項裡第一個還沒完成的（參考站的做法）。
+  // 對執行功能弱的學生，「接下來做哪一個」本身就是一個要決定的負擔；
+  // 直接標出來，他不必自己看完全部卡片再判斷。
+  const nextKey = MODULE_REGISTRY.find((entry) => CORE_MODULES.has(entry.key)
+    && getModuleStatus(lesson, entry).code === 'available')?.key || null;
+
   const coreGrid = h('div', { class: 'module-grid' });
   const challengeGrid = h('div', { class: 'module-grid' });
   let reviewCard = null;   // 「舊字新詞」卡片，錯題複習要插在它前面
@@ -102,12 +108,18 @@ export function LessonDashboard(lesson) {
     const card = h(
       'div',
       {
-        class: `module-card module-card--${status.code}${status.code === 'locked' || status.code === 'coming_soon' || status.code === 'pending_review' ? ' module-card--locked' : ''}`,
+        class: `module-card module-card--${status.code}${status.code === 'locked' || status.code === 'coming_soon' || status.code === 'pending_review' ? ' module-card--locked' : ''}${entry.key === nextKey ? ' module-card--next' : ''}`,
         style: styleAttr,
       },
       [
         status.code === 'done'
           ? h('span', { class: 'module-card__stamp', 'aria-hidden': 'true', html: STATUS_ICONS.done })
+          : null,
+        entry.key === nextKey
+          ? h('span', { class: 'module-card__next-badge' }, [
+              h('span', { 'aria-hidden': 'true', html: STATUS_ICONS.arrow }),
+              h('span', {}, '下一步'),
+            ])
           : null,
         h('div', {
           class: 'module-card__icon',
@@ -137,7 +149,7 @@ export function LessonDashboard(lesson) {
       card.appendChild(
         h(
           'a',
-          { class: 'btn module-card__cta', href: `#/lesson/${lesson.lesson_id}/module/${entry.key}` },
+          { class: `btn module-card__cta${entry.key === nextKey ? ' btn--primary' : ''}`, href: `#/lesson/${lesson.lesson_id}/module/${entry.key}` },
           [
             h('span', {}, STATUS_BUTTON_LABEL[status.code] || '開始'),
             h('span', { 'aria-hidden': 'true', html: STATUS_ICONS.arrow }),

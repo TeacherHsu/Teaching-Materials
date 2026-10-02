@@ -63,7 +63,7 @@ async function loadLesson(lessonId) {
     // 註解寫的「退回正常路徑」從來沒有真的發生過。改成連 JSON 都解得開才採用。
     if (previewRes.ok) {
       try {
-        return await previewRes.json();
+        return remember(await previewRes.json());
       } catch {
         // 不是 JSON，當作沒有 _preview 版本，往下走正常路徑
       }
@@ -72,7 +72,14 @@ async function loadLesson(lessonId) {
 
   const res = await fetch(`${BASE}${meta.data}`, { cache: 'no-cache' });
   if (!res.ok) return null;
-  return res.json();
+  return remember(await res.json());
+}
+
+// 任何載入課次的路徑（課次頁、大項、小考、朗讀、錯題）都更新「目前年級」：
+// 鷹架等級依年級記，直接從書籤進到大項也要拿到對的等級。
+function remember(lesson) {
+  if (lesson?.volume?.grade !== undefined) setLastGrade(String(lesson.volume.grade));
+  return lesson;
 }
 
 // 教師設定的齒輪：固定在每一頁右上角（CF 指定統一入口）。

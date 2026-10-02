@@ -87,3 +87,29 @@ console.log('PASS: 句型詞塊保留固定語、助詞與語意單位，不再�
   assert.deepEqual(connectivesOf('雖然＋情況，卻＋結果'), ['雖然', '卻']);
   console.log('✅ 詞塊依組別合併、句型名稱改成句型卡');
 }
+
+// ── 關聯詞獨立成塊（中、高組），參考站「可是／雖然／外面下著大雨，／……」的做法
+{
+  const { splitWithConnectives, connectivesOf, chunksForExample, patternMeaning } = await import('../src/activities/sentencePractice.js');
+  assert.deepEqual(
+    splitWithConnectives('雖然外面下著大雨，可是我們還是準時到校。', connectivesOf('雖然……可是……'), 4),
+    ['雖然', '外面下著大雨，', '可是', '我們還是準時到校。'],
+  );
+  assert.deepEqual(
+    splitWithConnectives('先洗青菜再切好食材最後煮成晚餐', connectivesOf('先……，再……，最後……'), 4),
+    ['先', '洗青菜', '再', '切好食材', '最後', '煮成晚餐'],
+    '本來就在分句開頭的關聯詞，沒有逗號也要切',
+  );
+  assert.equal(
+    splitWithConnectives('雖然題目困難他卻沒有放棄', connectivesOf('雖然＋情況，卻＋結果'), 4), null,
+    '「他卻」不能切成孤單的「他」；只切出兩塊就退回一般切法',
+  );
+  assert.equal(splitWithConnectives('他一回到家就開始寫功課', connectivesOf('一……，就……'), 4), null, '「一」太常見，不在句中硬切');
+  const pattern = { structure: '雖然……可是……' };
+  const s = '雖然外面下著大雨，可是我們還是準時到校。';
+  assert.equal(chunksForExample(pattern, s, null, 'support').includes('可是'), false, '低組只排分句');
+  assert.ok(chunksForExample(pattern, s, null, 'standard').includes('可是'), '中組要放關聯詞');
+  assert.deepEqual(chunksForExample(pattern, s, ['人工', '確認'], 'standard'), ['人工', '確認'], '教師確認的詞塊優先');
+  assert.match(patternMeaning('轉折複句'), /相反|轉/);
+  console.log('✅ 關聯詞獨立成塊、句型意思用兒童語言');
+}

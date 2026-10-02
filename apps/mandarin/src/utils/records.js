@@ -167,3 +167,38 @@ export async function syncRecords(url, deviceLabel, fetchImpl = globalThis.fetch
     return { ok: false, sent: 0, message: `連線失敗：${err && err.message ? err.message : '請檢查網路'}。紀錄仍保留在這台載具。` };
   }
 }
+
+/**
+ * 依「獨立答對率」給老師升降級建議（參考站的判準）：
+ *   低於 5 成 → 降一級；5～8 成 → 維持；8 成以上 → 升一級。
+ * 「獨立答對」＝沒用提示、第一次就答對（ChoiceQuiz 用過「看提示」就不算第一次答對）。
+ *
+ * 只算這個年級的課次（同一台平板會給不同年級用），取最近 days 天內的作答；
+ * 題數太少時不給建議，免得兩三題的運氣影響判斷。
+ *
+ * @param {string} grade 年級（'2'、'6'……），對應課次代號第 6 碼（115AG6H11 → 6）
+ * @param {string} levelKey 目前等級
+ * @returns {{items:number, rate:number|null, advice:'up'|'down'|'stay'|null, minItems:number}}
+ */
+export function levelAdvice(grade, levelKey, { days = 21, minItems = 20, now = Date.now() } = {}) {
+  const since = now - days * 24 * 60 * 60 * 1000;
+  let total = 0;
+  let firstTry = 0;
+  for (const [lessonId, modules] of Object.entries(read())) {
+    if (String(lessonId).charAt(5) !== String(grade)) continue;
+    for (const list of Object.values(modules)) {
+      if (!Array.isArray(list)) continue;
+      for (const attempt of list) {
+        if (Date.parse(attempt.at) < since) continue;
+        total += attempt.total || 0;
+        firstTry += attempt.firstTry || 0;
+      }
+    }
+  }
+  if (total < minItems) return { items: total, rate: null, advice: null, minItems };
+  const rate = firstTry / total;
+  let advice = 'stay';
+  if (rate < 0.5 && levelKey !== 'support') advice = 'down';
+  if (rate >= 0.8 && levelKey !== 'challenge') advice = 'up';
+  return { items: total, rate, advice, minItems };
+}
