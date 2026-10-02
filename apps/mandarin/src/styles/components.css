@@ -3099,3 +3099,8 @@
   color: var(--text-secondary);
   padding: 0 2px;
 }
+
+/* 「看提示」用完要真的消失：.btn--ghost 的 display 會蓋過 [hidden] */
+.quiz-hint-button[hidden] {
+  display: none;
+}

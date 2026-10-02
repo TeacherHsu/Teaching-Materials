@@ -48,7 +48,10 @@ export function buildReadingActivity(lesson, onBack) {
     const stepLabel = `第 ${stepIndex + 1} 步／共 ${steps.length} 步`;
 
     if (step === 'warmup') {
-      const sorted = [...paragraphs].sort((a, b) => a.para_no - b.para_no).slice(0, 2);
+      // 段落大意一律照資料順序，不用段號排：欄位其實叫 paragraph_no（原本寫 para_no，
+      // 比較結果是 NaN，排序從來沒生效過），而六上 L05 有兩個子篇、段號各自從 1 起算，
+      // 用段號排會把「觀樹」和「種樹」交錯打亂。資料順序就是課文順序。
+      const sorted = [...paragraphs].slice(0, 2);
       container.appendChild(TaskBanner({ label: '先比較兩段，找出內容先後的線索', step: stepLabel }));
       container.appendChild(h('p', { class: 'reading-warmup__instruction' }, '先比較兩段，找出內容先後或因果的線索。'));
       container.appendChild(SentenceOrdering({
@@ -66,12 +69,15 @@ export function buildReadingActivity(lesson, onBack) {
       if (isPreview() && paragraphs.some((p) => p.status === 'draft')) {
         container.appendChild(h('p', { class: 'meta' }, '「待審」標籤只在預覽模式顯示，正式上線只會出現教師核准過的內容。'));
       }
-      const sorted = [...paragraphs].sort((a, b) => a.para_no - b.para_no);
+      const sorted = [...paragraphs];
       container.appendChild(
         SentenceOrdering({
           prompt: '課文有好幾段，請把下面的段落大意排回正確的順序。',
           parts: sorted.map((p) => p.summary),
           solution: sorted.map((p) => p.summary),
+          // 不是最後一步時，按鈕會進到下一步；原本沒傳文字，顯示預設的「回課程首頁」，
+          // 學生會以為做完了要離開。
+          backLabel: isLast ? '回課程首頁' : '繼續：讀題找線索',
           onBack: () => {
             if (isLast) {
               onBack();

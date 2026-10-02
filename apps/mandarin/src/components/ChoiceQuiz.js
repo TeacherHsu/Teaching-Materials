@@ -84,6 +84,7 @@ export function ChoiceQuiz({
     // 每一層對應一個策略動作（想一想 → 找位置 → 看證據），
     // 而不是「同一句話講得更白」——後者只是暗示，前者才是教方法。
     let hintLevel = 0;
+    let hintUsed = false;
 
     root.appendChild(ProgressIndicator({ current: index + 1, total: items.length }));
     if (item.extra) root.appendChild(item.extra);
@@ -132,18 +133,20 @@ export function ChoiceQuiz({
           btn.setAttribute('aria-pressed', 'true');
           btn.innerHTML = `${CHECK_ICON}<span>${opt}</span>`;
           correctCount += 1;
-          const firstTry = attempts === 1;
+          // 用過提示才答對，不算獨立答對：照樣收進錯題盒，之後再練一次。
+          const firstTry = attempts === 1 && !hintUsed;
           recordOutcome({ firstTry, revealed: false });
           // 第一次沒答對就收進錯題盒（和「正確率＝第一次答對率」同一個判準）。
           // 在複習模式下則是把這一題往上推一格（連對夠多次就學會、移除）。
           if (item._mistakeId) gradeMistake(item._mistakeId, firstTry);
           else if (!firstTry) noteMistake(item);
           if (onItemResolved) onItemResolved({ item, firstTry, revealed: false });
-          celebrateCorrect(btn, 'var(--module-color)', { firstTry: attempts === 1 });
+          celebrateCorrect(btn, 'var(--module-color)', { firstTry });
           optionButtons.forEach((c) => {
             if (c !== btn) c.disabled = true;
           });
           clear(feedbackSlot);
+          refreshHintButton();
           feedbackSlot.appendChild(
             h('div', { class: 'quiz-option-row' }, [
               h('p', {
@@ -177,6 +180,8 @@ export function ChoiceQuiz({
           // 對閱讀困難的學生，「回到課文找線索」這句話沒有作用——
           // 他不知道回到哪裡、找什麼。要把動作做給他看。
           if (layer && typeof layer.on === 'function') layer.on();
+          refreshHintButton();
+          revealExtra();
           const hintText = (layer && (layer.text || layer)) || item.hint || DEFAULT_HINT;
           feedbackSlot.appendChild(
             h('div', { class: 'quiz-option-row' }, [
@@ -194,10 +199,12 @@ export function ChoiceQuiz({
         } else {
           // 達到揭曉次數：揭曉正解，鎖題
           answered = true;
+          refreshHintButton();
           // 揭曉答案時，把還沒用到的提示動作全部執行——證據要留在畫面上，
           // 學生才看得到「答案為什麼是這個」，而不是只看到一個紅勾綠勾。
           if (Array.isArray(item.hints)) {
             item.hints.slice(hintLevel).forEach((l) => { if (l && typeof l.on === 'function') l.on(); });
+            revealExtra();
           }
           recordOutcome({ firstTry: false, revealed: true });
           if (item._mistakeId) gradeMistake(item._mistakeId, false);
@@ -255,7 +262,47 @@ export function ChoiceQuiz({
       feedbackSlot.appendChild(nextBtn);
     }
 
+    // 「看提示」：學生不必先答錯，就能主動要下一層提示。
+    // 原本提示只綁在答錯上，支持層答錯一次就揭曉（零錯誤學習），結果最需要鷹架
+    // 的學生一層提示都拿不到；標準／挑戰層答錯兩次揭曉，第 2 層也永遠跳過。
+    // 零錯誤學習本來就該「先給提示再作答」，所以提示改成也能主動取用。
+    // 只有分層提示（閱讀理解）才出現；一般題目沒有這顆按鈕。
+    const layered = Array.isArray(item.hints) && item.hints.some((l) => l && typeof l === 'object');
+    const hintButton = layered
+      ? h('button', { class: 'btn btn--ghost quiz-hint-button', type: 'button' })
+      : null;
+    function revealExtra() {
+      if (!item.extra || item.extra.hidden || typeof item.extra.scrollIntoView !== 'function') return;
+      const reduce = typeof window !== 'undefined' && window.matchMedia
+        && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      item.extra.scrollIntoView({ block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
+    }
+    function refreshHintButton() {
+      if (!hintButton) return;
+      const total = item.hints.length;
+      const done = answered || hintLevel >= total;
+      hintButton.hidden = done;
+      hintButton.textContent = `看提示（${Math.min(hintLevel + 1, total)}／${total}）`;
+    }
+    if (hintButton) {
+      hintButton.addEventListener('click', () => {
+        if (answered || hintLevel >= item.hints.length) return;
+        const layer = item.hints[hintLevel];
+        hintLevel += 1;
+        hintUsed = true;
+        if (layer && typeof layer.on === 'function') layer.on();
+        clear(feedbackSlot);
+        feedbackSlot.appendChild(HintPanel({ message: (layer && layer.text) || DEFAULT_HINT }));
+        refreshHintButton();
+        // 證據面板在題目上方，提示在選項下方；面板一打開，學生的視線還停在下面，
+        // 常常沒注意到上面多了課文。打開時把面板捲進畫面。
+        revealExtra();
+      });
+      refreshHintButton();
+    }
+
     root.appendChild(optionsWrap);
+    if (hintButton) root.appendChild(hintButton);
     root.appendChild(feedbackSlot);
   }
 
