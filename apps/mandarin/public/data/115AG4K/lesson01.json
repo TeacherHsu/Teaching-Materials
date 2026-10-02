@@ -1118,7 +1118,37 @@
       "answer": "魚、蛙和蝶",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "c648f85f",
+            "011ab0d7",
+            "f000f0d4"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "這一題問的是「想像自己變成什麼」。詩裡用了三次一樣的說法，找找看。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K01:02",
@@ -1133,7 +1163,48 @@
       "answer": "游出自信、壯志和多采多姿的人生",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "eff5246c",
+            "9b63a3fd",
+            "4020b5b8"
+          ]
+        }
+      ],
+      "context": [
+        {
+          "para": 1,
+          "sentences": [
+            3
+          ],
+          "sha": [
+            "3c8c9317"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "「展望」是對未來的期待。詩的最後一段常常寫的就是這個。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K01:03",
@@ -1148,7 +1219,46 @@
       "answer": "一隻飛鷹",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 4,
+          "sentences": [
+            5
+          ],
+          "sha": [
+            "1e94d749"
+          ]
+        }
+      ],
+      "context": [
+        {
+          "para": 4,
+          "sentences": [
+            6,
+            7
+          ],
+          "sha": [
+            "3df54364",
+            "2e3becde"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "詩裡說「想像自己是……」，後面接的那個東西就是答案。"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K01:04",
@@ -1163,7 +1273,55 @@
       "answer": "快樂、自信和自由",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            1
+          ],
+          "sha": [
+            "eff5246c"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            8,
+            9
+          ],
+          "sha": [
+            "5ca2d6ec",
+            "72caf16a"
+          ]
+        },
+        {
+          "para": 6,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "229c3b37",
+            "b6a12732"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "這一題要把兩首詩合起來看。〈游泳〉的最後和〈溜直排輪〉的最後，各在說什麼心情？"
+        },
+        {
+          "level": 2,
+          "type": "locate"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2104,5 +2262,6 @@
       "activity": "review",
       "note": "第 1 課沒有前課資料。"
     }
-  }
+  },
+  "genre": "poetry"
 }

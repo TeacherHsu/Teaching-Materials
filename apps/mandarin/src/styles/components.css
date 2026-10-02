@@ -3042,3 +3042,43 @@
 }
 .module-card__icon img,
 .entry-card__icon img { padding: 0; }
+
+/* ── 證據面板（閱讀理解的第 2、3 層提示）────────────
+   第 2 層只展開段落，第 3 層才畫螢光筆——分兩步是刻意的：
+   先練「定位」，再練「比對」。一次全給等於幫他做完。 */
+.evidence {
+  margin: var(--space-2) 0 var(--space-3);
+  padding: var(--space-3);
+  border-inline-start: 4px solid var(--module-color, var(--color-primary));
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-md);
+}
+.evidence__label { margin: 0; font-size: var(--font-size-meta); color: var(--text-secondary); }
+.evidence__para + .evidence__para { margin-top: var(--space-2); }
+.evidence__no {
+  margin: 0 0 2px;
+  font-size: var(--font-size-meta);
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+.evidence__text {
+  margin: 0;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-loose);
+}
+/* 預設不畫：第 2 層只展開段落。第 3 層加上 --marked 才上螢光筆。 */
+.evidence__key {
+  background: transparent;
+  color: inherit;
+  padding: 0 2px;
+  border-radius: var(--radius-sm);
+  transition: background 200ms ease-out;
+}
+.evidence--marked .evidence__key {
+  /* 螢光筆的黃不走模組色——它要在任何大項都是同一個意思：「這裡就是答案」 */
+  background: #ffe9a3;
+  box-shadow: inset 0 -2px 0 #e0a800;
+}
+@media (prefers-reduced-motion: reduce) {
+  .evidence__key { transition: none; }
+}

@@ -90,6 +90,7 @@ export function buildReadingActivity(lesson, onBack) {
       }));
       container.appendChild(
         ReadingQuestions({
+          lessonId: lesson.lesson_id,
           items: questionRounds[roundIndex],
           backLabel: '本課先完成',
           onBack: () => onBack(),

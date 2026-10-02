@@ -80,6 +80,10 @@ export function ChoiceQuiz({
     const stemContent = item.stemContent || stemText;
     let answered = false; // 題目鎖定（答對，或第 2 次答錯揭曉正解）
     let attempts = 0;
+    // 提示是**分層遞進**的：每答錯一次就往下一層。
+    // 每一層對應一個策略動作（想一想 → 找位置 → 看證據），
+    // 而不是「同一句話講得更白」——後者只是暗示，前者才是教方法。
+    let hintLevel = 0;
 
     root.appendChild(ProgressIndicator({ current: index + 1, total: items.length }));
     if (item.extra) root.appendChild(item.extra);
@@ -166,7 +170,14 @@ export function ChoiceQuiz({
           // 支持層 limit=1，所以這一段不會執行——答錯一次就直接揭曉（零錯誤學習）。
           btn.disabled = true;
           clear(feedbackSlot);
-          const hintText = (item.hints && item.hints[0]) || item.hint || DEFAULT_HINT;
+          const layers = Array.isArray(item.hints) ? item.hints : [];
+          const layer = layers[Math.min(hintLevel, layers.length - 1)];
+          hintLevel += 1;
+          // 提示可以「做事」：第 2 層展開段落、第 3 層畫螢光筆。
+          // 對閱讀困難的學生，「回到課文找線索」這句話沒有作用——
+          // 他不知道回到哪裡、找什麼。要把動作做給他看。
+          if (layer && typeof layer.on === 'function') layer.on();
+          const hintText = (layer && (layer.text || layer)) || item.hint || DEFAULT_HINT;
           feedbackSlot.appendChild(
             h('div', { class: 'quiz-option-row' }, [
               h('p', { role: 'status', 'aria-live': 'polite', class: 'meta' }, [
@@ -183,6 +194,11 @@ export function ChoiceQuiz({
         } else {
           // 達到揭曉次數：揭曉正解，鎖題
           answered = true;
+          // 揭曉答案時，把還沒用到的提示動作全部執行——證據要留在畫面上，
+          // 學生才看得到「答案為什麼是這個」，而不是只看到一個紅勾綠勾。
+          if (Array.isArray(item.hints)) {
+            item.hints.slice(hintLevel).forEach((l) => { if (l && typeof l.on === 'function') l.on(); });
+          }
           recordOutcome({ firstTry: false, revealed: true });
           if (item._mistakeId) gradeMistake(item._mistakeId, false);
           else noteMistake(item);
