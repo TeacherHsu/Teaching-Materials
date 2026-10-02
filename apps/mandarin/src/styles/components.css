@@ -1919,12 +1919,6 @@
   border-radius: var(--radius-lg);
   background: var(--color-surface-muted);
 }
-.zk__legend { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-2); font-size: 0.9375rem; }
-.zk__legend-item { padding: 2px 10px; border-radius: var(--radius-pill); border: 2px solid transparent; }
-.zk__legend-item--initial { background: var(--zk-initial-bg); border-color: var(--zk-initial-line); }
-.zk__legend-item--medial { background: var(--zk-medial-bg); border-color: var(--zk-medial-line); }
-.zk__legend-item--final { background: var(--zk-final-bg); border-color: var(--zk-final-line); }
-.zk__legend-item--tone { background: var(--zk-tone-bg); border-color: var(--zk-tone-line); }
 
 .zk__row { display: flex; gap: 6px; margin-bottom: 6px; }
 .zk__row--1 { padding-inline-start: 14px; }
@@ -3103,4 +3097,101 @@
 /* 「看提示」用完要真的消失：.btn--ghost 的 display 會蓋過 [hidden] */
 .quiz-hint-button[hidden] {
   display: none;
+}
+
+/* ── 字感訓練：目標字放大上色（CF 2026-10-03） ── */
+.vsearch__target {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin: var(--space-3) auto var(--space-4);
+}
+.vsearch__target-label {
+  font-size: var(--font-size-button);
+  color: var(--text-secondary);
+}
+.vsearch__target-glyph {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.6em;
+  min-height: 1.6em;
+  padding: 0.1em;
+  font-size: clamp(3.5rem, 9vw, 5.5rem);
+  line-height: 1;
+  color: var(--module-color, var(--color-accent));
+  background: var(--color-surface);
+  border: 3px solid var(--module-color, var(--color-accent));
+  border-radius: var(--radius-lg, 16px);
+}
+
+/* ── 自己寫出目標字（高、中組） ── */
+.type-answer { margin-top: var(--space-4); }
+.type-answer__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+.type-answer__input {
+  width: 4.5em;
+  height: 1.6em;
+  font-size: clamp(2.5rem, 7vw, 3.5rem);
+  text-align: center;
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius-lg, 16px);
+  background: var(--color-surface);
+  color: var(--text-primary);
+}
+.type-answer__input:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+.type-answer__input--correct { border-color: var(--color-success); }
+.type-answer__input--wrong { border-color: var(--color-danger); animation: vsearch-miss 500ms ease; }
+.type-answer__ok { color: var(--color-success); text-align: center; }
+.type-answer__reveal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+.type-answer__glyph {
+  font-size: clamp(2.5rem, 7vw, 3.5rem);
+  color: var(--color-success);
+}
+
+/* 高組閃現：用細長的進度條表示剩餘時間，不顯示倒數數字（數字會加重焦慮） */
+.glyph-quiz { position: relative; }
+.glyph-flash__timer {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: -10px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--module-color, var(--color-accent));
+  transform-origin: left;
+  animation: flash-timer var(--flash-ms, 5000ms) linear forwards;
+}
+@keyframes flash-timer { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .glyph-flash__timer { animation: none; opacity: 0.5; }
+  .type-answer__input--wrong { animation: none; }
+}
+
+/* 注音高手提示：正確的鍵直接標紅、放大（CF 2026-10-03） */
+.zk__key--hinted {
+  position: relative;
+  z-index: 1;
+  background: #fff1f0;
+  border-color: var(--color-danger);
+  border-width: 3px;
+  color: var(--color-danger);
+  transform: scale(1.18);
+  box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.18);
+}
+.zk__key--hinted .zk__symbol { font-size: 1.35em; font-weight: 700; }
+@media (prefers-reduced-motion: reduce) {
+  .zk__key--hinted { transform: none; }
 }

@@ -3,7 +3,12 @@
 //
 //   1. 視覺搜尋：在字陣裡找出目標字（辨識）
 //   2. 遮罩補全：字被遮掉一半，猜是哪個字（部件辨識）
-//   3. 閃現後寫出：字出現兩秒就消失，從形近字裡選出（字形記憶）
+//   3. 閃現後寫出：字出現後消失，憑記憶寫出來（字形記憶）
+//
+// 第 2、3 種依組別分層（CF 2026-10-03）：
+//   高組：自己打字或手寫輸入；閃現 5 秒後自動蓋起來
+//   中組：自己打字或手寫輸入；閃現由學生按「我記住了」才蓋
+//   低組：從形近字選項裡選（辨認比回憶容易）
 //
 // 第 2、3 種是「部件拼一拼」學習單的數位替代方案。原本的做法要有拆字資料，
 // 但 etymology.components 只有 7% 覆蓋率。遮罩不需要拆字資料——漢字本來就是
@@ -32,6 +37,8 @@ import { shuffle } from '../utils/shuffle.js';
 import { getScaffoldLevelKey } from '../utils/deviceSettings.js';
 import { recordOutcome } from '../utils/scoreSession.js';
 import { celebrateCorrect } from '../utils/celebrate.js';
+import { noteMistake } from '../utils/mistakes.js';
+import { HintPanel } from '../components/HintPanel.js';
 
 // 非字干擾：用 Unicode 既有符號，不需要美術資源。
 // 刻意挑「筆畫感」接近漢字但明顯不是字的形狀。
@@ -83,6 +90,16 @@ export function buildRound(group, level, shuffleImpl = shuffle) {
 }
 
 /** 遮罩的方向：各遮掉一半，剩下的那半就是「部件」。 */
+/**
+ * 選項＝正解＋最多三個形近字，再洗牌。
+ * 不能先把整組洗牌再取前四個：一組超過四個字時（六上 L05「戴載截裁栽」），
+ * 正解有機會被切掉，題目就沒有正確答案（CF 2026-10-03 回報）。
+ */
+export function optionsWithAnswer(answer, chars, shuffleImpl = shuffle, max = 4) {
+  const others = shuffleImpl(chars.filter((c) => c !== answer)).slice(0, max - 1);
+  return shuffleImpl([answer, ...others]);
+}
+
 const MASK_SIDES = [
   { key: 'left', label: '左半邊被遮住了' },
   { key: 'right', label: '右半邊被遮住了' },
@@ -104,7 +121,7 @@ export function buildMaskItems(groups, shuffleImpl = shuffle) {
       items.push({
         char,
         side,
-        options: shuffleImpl([char, ...others]).slice(0, Math.min(4, group.chars.length)),
+        options: optionsWithAnswer(char, group.chars, shuffleImpl),
         answer: char,
       });
     }
@@ -123,12 +140,133 @@ export function buildFlashItems(groups, shuffleImpl = shuffle) {
     for (const char of group.chars) {
       items.push({
         char,
-        options: shuffleImpl([...group.chars]).slice(0, Math.min(4, group.chars.length)),
+        options: optionsWithAnswer(char, group.chars, shuffleImpl),
         answer: char,
       });
     }
   }
   return shuffleImpl(items);
+}
+
+/** 依組別決定：要不要自己寫出來（高、中組），閃現要不要自動蓋起來（高組）。 */
+export function recallMode(levelKey) {
+  return {
+    typed: levelKey === 'standard' || levelKey === 'challenge',
+    autoHideMs: levelKey === 'challenge' ? 5000 : 0,
+  };
+}
+
+/** 從輸入框的字串取出第一個漢字（平板手寫、注音輸入法都可能多帶空白或標點）。 */
+export function firstHanzi(value) {
+  const match = String(value || '').match(/\p{Script=Han}/u);
+  return match ? match[0] : '';
+}
+
+/**
+ * 自己寫出目標字：打字或用平板手寫輸入都行。
+ * 「寫得出來」比「認得出來」難一個層次，所以只給高、中組。
+ * 寫不出來時可以改用選的，不讓一個字卡住整個練習。
+ */
+function TypeAnswer({ item, hint, onResolved }) {
+  const root = h('div', { class: 'type-answer' });
+  const input = h('input', {
+    class: 'type-answer__input',
+    type: 'text',
+    inputmode: 'text',
+    autocomplete: 'off',
+    autocapitalize: 'off',
+    spellcheck: 'false',
+    maxlength: '4',
+    'aria-label': '把字寫在這裡',
+    placeholder: '寫在這裡',
+  });
+  const submit = h('button', { class: 'btn btn--primary', type: 'button' }, '確定');
+  const fallback = h('button', { class: 'btn btn--ghost', type: 'button' }, '我寫不出來，改用選的');
+  const feedback = h('div', { role: 'status', 'aria-live': 'polite' });
+  let attempts = 0;
+  let done = false;
+
+  function finish(firstTry) {
+    done = true;
+    input.disabled = true;
+    submit.remove?.();
+    fallback.remove?.();
+    recordOutcome({ firstTry, revealed: !firstTry });
+    if (!firstTry) noteMistake({ stem: item.stem, options: item.options, answer: item.answer });
+    onResolved(firstTry);
+  }
+
+  function check() {
+    if (done) return;
+    const got = firstHanzi(input.value);
+    if (!got) {
+      clear(feedback);
+      feedback.appendChild(h('p', { class: 'meta' }, '先把字寫進框框裡。'));
+      return;
+    }
+    attempts += 1;
+    clear(feedback);
+    if (got === item.answer) {
+      input.classList.add('type-answer__input--correct');
+      celebrateCorrect(input, 'var(--module-color)', { firstTry: attempts === 1 });
+      feedback.appendChild(h('p', { class: 'meta type-answer__ok' }, '寫對了！'));
+      finish(attempts === 1);
+      return;
+    }
+    input.classList.add('type-answer__input--wrong');
+    setTimeout(() => input.classList.remove('type-answer__input--wrong'), 600);
+    if (attempts < 2) {
+      feedback.appendChild(HintPanel({ message: `你寫的是「${got}」。${hint}` }));
+      input.select?.();
+      return;
+    }
+    feedback.appendChild(h('div', { class: 'type-answer__reveal' }, [
+      h('span', { class: 'meta' }, '正確的字是'),
+      h('span', { class: 'type-answer__glyph' }, item.answer),
+    ]));
+    finish(false);
+  }
+
+  submit.addEventListener('click', check);
+  input.addEventListener('keydown', (e) => {
+    // 輸入法選字時按 Enter 不算送出（isComposing），不然注音一選字就被判錯
+    if (e.key === 'Enter' && !e.isComposing) check();
+  });
+  // 改用選的：就地換成形近字選項（不另開一個 ChoiceQuiz——那會多出一張
+  // 「完成了 1／1」的結算卡，學生要多按一次才回到這一步）。
+  // 退回選擇題就不算獨立寫出，結果照樣記入錯題盒。
+  fallback.addEventListener('click', () => {
+    if (done) return;
+    clear(root);
+    const note = h('div', { role: 'status', 'aria-live': 'polite' });
+    const buttons = item.options.map((opt) => {
+      const btn = h('button', { class: 'quiz-option type-answer__choice', type: 'button' }, opt);
+      btn.addEventListener('click', () => {
+        if (done || btn.disabled) return;
+        if (opt === item.answer) {
+          btn.classList.add('quiz-option--correct');
+          buttons.forEach((b) => { b.disabled = true; });
+          clear(note);
+          note.appendChild(h('p', { class: 'meta type-answer__ok' }, '選對了！'));
+          finish(false);
+          return;
+        }
+        btn.classList.add('quiz-option--incorrect');
+        btn.disabled = true;
+        clear(note);
+        note.appendChild(HintPanel({ message: hint }));
+      });
+      return btn;
+    });
+    root.appendChild(h('div', { class: 'quiz-options type-answer__choices' }, buttons));
+    root.appendChild(note);
+  });
+
+  root.appendChild(h('div', { class: 'type-answer__row' }, [input, submit]));
+  root.appendChild(feedback);
+  root.appendChild(h('div', { class: 'type-answer__row' }, [fallback]));
+  setTimeout(() => input.focus?.(), 50);
+  return root;
 }
 
 /**
@@ -249,13 +387,54 @@ export function buildVisualSearchActivity(lesson, onBack) {
       actions.appendChild(next);
     }
 
+    // 目標字獨立放大、上色（CF 2026-10-03）：原本只寫在題目句子裡，和字陣同樣大小，
+    // 學生要一直回頭看題目才記得在找哪個字。先讓目標字留在眼前，視覺搜尋才練得到。
+    container.appendChild(h('div', { class: 'vsearch__target', 'aria-hidden': 'true' }, [
+      h('span', { class: 'vsearch__target-label' }, '找這個字'),
+      h('span', { class: 'vsearch__target-glyph' }, round.target),
+    ]));
     container.appendChild(status);
     container.appendChild(grid);
     container.appendChild(actions);
   }
 
   // ── 遮罩補全 ────────────────────────────────────
+  const mode = recallMode(level);
+  const MASK_HINT = '看看露出來的那一半，想想哪一個字有這個部分。';
+
   function renderMask() {
+    if (!mode.typed) { renderMaskChoice(); return; }
+    let index = 0;
+    function showOne() {
+      clear(container);
+      if (index >= maskItems.length) { nextStep(); return; }
+      const item = maskItems[index];
+      container.appendChild(TaskBanner({
+        label: '字被遮住一半了，把整個字寫出來。',
+        step: `第 ${stepIndex + 1}／${steps.length} 步 ・ 第 ${index + 1}／${maskItems.length} 題`,
+      }));
+      container.appendChild(h('div', { class: 'glyph-quiz' }, [
+        h('span', { class: `glyph-mask glyph-mask--${item.side.key}` }, item.char),
+        h('span', { class: 'glyph-quiz__hint' }, item.side.label),
+      ]));
+      const next = h('div', { class: 'quiz-option-row' });
+      container.appendChild(TypeAnswer({
+        item: { stem: `${item.side.label}，這是哪一個字？`, options: item.options, answer: item.answer },
+        hint: MASK_HINT,
+        onResolved: () => {
+          stats.rounds += 1;
+          const btn = h('button', { class: 'btn btn--primary', type: 'button' },
+            index < maskItems.length - 1 ? '下一題' : '繼續：閃一下就不見');
+          btn.addEventListener('click', () => { index += 1; showOne(); });
+          next.appendChild(btn);
+        },
+      }));
+      container.appendChild(next);
+    }
+    showOne();
+  }
+
+  function renderMaskChoice() {
     const items = maskItems.map((item) => ({
       id: `mask:${item.char}:${item.side.key}`,
       stem: `${item.side.label}，這是哪一個字？`,
@@ -266,7 +445,7 @@ export function buildVisualSearchActivity(lesson, onBack) {
       options: item.options,
       answer: item.answer,
       explanation: `答案是「${item.answer}」。`,
-      hints: ['看看露出來的那一半，想想哪一個字有這個部分。'],
+      hints: [MASK_HINT],
     }));
     container.appendChild(TaskBanner({
       label: '字被遮住一半了，猜猜看是哪一個字。',
@@ -299,7 +478,9 @@ export function buildVisualSearchActivity(lesson, onBack) {
       }
       const item = flashItems[index];
       container.appendChild(TaskBanner({
-        label: '看清楚這個字，記住了就按下面的按鈕，字會蓋起來。',
+        label: mode.autoHideMs
+          ? '看清楚這個字，5 秒後會蓋起來，再把它寫出來。'
+          : '看清楚這個字，記住了就按下面的按鈕，字會蓋起來。',
         step: `第 ${stepIndex + 1}／${steps.length} 步 ・ 第 ${index + 1}／${flashItems.length} 題`,
       }));
 
@@ -310,15 +491,34 @@ export function buildVisualSearchActivity(lesson, onBack) {
       container.appendChild(stage);
       container.appendChild(slot);
 
-      // 由學生自己按「我記住了」才蓋掉，不用倒數計時。
-      // 計時對 ADHD 學生是額外的焦慮來源，而焦慮正是記憶的敵人；
-      // 讓他自己決定看多久，願意多看幾次也沒關係——這一項練的是
-      // 「把字存進腦中」，不是「在幾秒內存進腦中」。
+      // 中、低組由學生自己按「我記住了」才蓋掉，不倒數計時：
+      // 計時對 ADHD 學生是額外的焦慮來源，而焦慮正是記憶的敵人。
+      // 高組才限時 5 秒（CF 2026-10-03）——對已經掌握字形的學生，
+      // 縮短觀看時間才有挑戰，練的是快速建立心理圖像。
       const ready = h('button', { class: 'btn btn--primary', type: 'button' }, '我記住了');
-      ready.addEventListener('click', () => {
+      let hidden = false;
+      const hide = () => {
+        if (hidden) return;
+        hidden = true;
         clear(stage);
         stage.appendChild(h('span', { class: 'glyph-flash glyph-flash--gone' }, '？'));
         ready.remove();
+        if (mode.typed) {
+          const next = h('div', { class: 'quiz-option-row' });
+          slot.appendChild(TypeAnswer({
+            item: { stem: '剛剛看到的是哪一個字？', options: item.options, answer: item.answer },
+            hint: '想想它的部首在左邊還是上面。',
+            onResolved: () => {
+              stats.rounds += 1;
+              const btn = h('button', { class: 'btn btn--primary', type: 'button' },
+                index < flashItems.length - 1 ? '下一題' : '看結果');
+              btn.addEventListener('click', () => { index += 1; showOne(); });
+              next.appendChild(btn);
+            },
+          }));
+          slot.appendChild(next);
+          return;
+        }
         slot.appendChild(ChoiceQuiz({
           items: [{
             id: `flash:${item.char}:${index}`,
@@ -333,8 +533,14 @@ export function buildVisualSearchActivity(lesson, onBack) {
           onContinue: () => { index += 1; showOne(); },
           continueLabel: index < flashItems.length - 1 ? '下一題' : '看結果',
         }));
-      });
-      container.appendChild(h('div', { class: 'quiz-option-row' }, [ready]));
+      };
+      ready.addEventListener('click', hide);
+      if (mode.autoHideMs) {
+        stage.appendChild(h('span', { class: 'glyph-flash__timer', style: `--flash-ms:${mode.autoHideMs}ms` }));
+        setTimeout(hide, mode.autoHideMs);
+      } else {
+        container.appendChild(h('div', { class: 'quiz-option-row' }, [ready]));
+      }
     }
 
     showOne();

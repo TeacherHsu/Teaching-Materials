@@ -17,6 +17,7 @@ import { ZhuyinKeyboard, KEY_MAP } from '../components/ZhuyinKeyboard.js';
 import { splitSyllables, syllablesMatchWord } from '../utils/zhuyin.js';
 import { getScaffoldLevel } from '../utils/deviceSettings.js';
 import { recordOutcome } from '../utils/scoreSession.js';
+import { speak } from '../utils/speech.js';
 import { missingContentNotice } from './engine.js';
 import { filterByStatus } from '../utils/preview.js';
 
@@ -97,7 +98,6 @@ export function buildZhuyinTypingActivity(lesson, onModuleDone) {
 
     let slot = 0;                 // 目前在打第幾個字
     let typed = '';               // 這個字已經打的符號
-    let hintLevel = 0;
     let usedHelp = false;         // 用過提示（不扣星，只是不算 firstTry）
     let wrongOnce = false;
 
@@ -154,7 +154,6 @@ export function buildZhuyinTypingActivity(lesson, onModuleDone) {
           if (c === chars[slot]) {
             slot += 1;
             typed = '';
-            hintLevel = 0;
             clear(chooserEl);
             renderSlots();
             if (slot >= chars.length) finishItem();
@@ -177,6 +176,7 @@ export function buildZhuyinTypingActivity(lesson, onModuleDone) {
       const attempt = typed + symbol;
       if (target.startsWith(attempt)) {
         typed = attempt;
+        keyboard.unmark();
         clear(feedbackEl);
         renderSlots();
         if (typed === target) askForCharacter();
@@ -214,14 +214,18 @@ export function buildZhuyinTypingActivity(lesson, onModuleDone) {
     if (canListen) window.addEventListener('keydown', onPhysicalKey);
     container.__cleanup = () => { if (canListen) window.removeEventListener('keydown', onPhysicalKey); };
 
+    // 提示：把「下一個該按的符號」在鍵盤上標紅並念出來，不再顯示文字。
+    // 原本是一行「這個字的注音是『ㄗ⋯』」，學生要先讀完這句、再到鍵盤上找，
+    // 多了一層轉換；直接標在鍵上、同時聽到那個音，才是把注意力引到答案上。
     const hintBtn = h('button', { class: 'btn', type: 'button' }, '提示');
     hintBtn.addEventListener('click', () => {
-      usedHelp = true;
-      hintLevel += 1;
       const target = syllables[slot] || '';
-      const shown = target.slice(0, Math.min(hintLevel, target.length));
+      const symbol = target[typed.length];
+      if (!symbol || chooserEl.childElementCount > 0) return;
+      usedHelp = true;
       clear(feedbackEl);
-      feedbackEl.appendChild(HintPanel({ message: `這個字的注音是「${shown}⋯」` }));
+      keyboard.mark(symbol);
+      speak(symbol);
     });
 
     const skipBtn = h('button', { class: 'btn', type: 'button' }, '跳過這一題');

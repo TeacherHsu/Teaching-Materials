@@ -243,6 +243,14 @@ function driveOneGenericStep(container) {
     return true;
   }
 
+  // 字感訓練高、中組要自己寫出目標字；驅動器不會打字，改走「改用選的」，
+  // 一樣會進到 ChoiceQuiz 記分，星星覆蓋照樣驗得到。
+  const typeFallback = enabledButtons(container).find((b) => b.textContent.trim() === '我寫不出來，改用選的');
+  if (typeFallback) {
+    typeFallback.dispatch('click');
+    return true;
+  }
+
   const advanceBtn = findAdvanceButton(container);
   if (advanceBtn) {
     advanceBtn.dispatch('click');

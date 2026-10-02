@@ -49,8 +49,10 @@ export function ZhuyinKeyboard({ onKey, onBackspace }) {
         'data-symbol': symbol,
         'aria-label': `${KIND_LABEL[kind] || ''}${symbol}`,
       }, [
+        // 只顯示注音符號本身。原本還有實體鍵位字母（Q、1……）和上方的
+        // 聲母／介音／韻母／聲調標籤，對學生是非必要的視覺干擾（CF 2026-10-03）。
+        // 分類仍留在 aria-label 給螢幕報讀，畫面上不顯示。
         h('span', { class: 'zk__symbol' }, symbol),
-        h('span', { class: 'zk__hint', 'aria-hidden': 'true' }, row.keys[i].toUpperCase()),
       ]);
       btn.addEventListener('click', () => onKey(symbol));
       buttons.set(symbol, btn);
@@ -61,19 +63,33 @@ export function ZhuyinKeyboard({ onKey, onBackspace }) {
   const backspace = h('button', { class: 'zk__key zk__key--wide', type: 'button', 'aria-label': '刪除上一個符號' }, '⌫ 刪除');
   backspace.addEventListener('click', () => onBackspace());
 
-  const legend = h('div', { class: 'zk__legend', 'aria-hidden': 'true' }, Object.entries(KIND_LABEL).map(
-    ([kind, label]) => h('span', { class: `zk__legend-item zk__legend-item--${kind}` }, label),
-  ));
-
   const el = h('div', { class: 'zk', role: 'group', 'aria-label': '注音鍵盤' }, [
-    legend,
     // 鍵盤自己可以橫向捲動，這樣按鍵維持 44px 觸控下限、排列也不必改
     h('div', { class: 'zk__keys' }, [h('div', { class: 'zk__keys-inner' }, rows)]),
     h('div', { class: 'zk__row zk__row--actions' }, [backspace]),
   ]);
 
+  let marked = null;
+
   return {
     el,
+    /**
+     * 提示：在正確的鍵上用紅色直接標出來（CF 2026-10-03）。
+     * 比文字提示「這個字的注音是……」直接——學生不用先讀懂一句話、
+     * 再去鍵盤上找那個符號，眼睛直接看到要按哪一顆。
+     */
+    mark(symbol) {
+      if (marked) marked.classList.remove('zk__key--hinted');
+      marked = buttons.get(symbol) || null;
+      if (marked) {
+        marked.classList.add('zk__key--hinted');
+        marked.scrollIntoView?.({ block: 'nearest', inline: 'center' });
+      }
+    },
+    unmark() {
+      if (marked) marked.classList.remove('zk__key--hinted');
+      marked = null;
+    },
     /** 實體鍵盤輸入時，讓畫面上對應的鍵閃一下，幫學生把兩者連起來。 */
     flash(symbol) {
       const btn = buttons.get(symbol);

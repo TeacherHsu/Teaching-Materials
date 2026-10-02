@@ -23,6 +23,8 @@ import { splitSentences } from '../utils/readingUnits.js';
  * 「這句話出現在什麼地方」，又不會把課名、作者這些無關的字一起拉進來。
  */
 const CONTEXT_SENTENCES = 1;
+// 中文刪節號是兩個「…」共六點（CF 2026-10-03 提醒），不是英文的三點。
+const ELLIPSIS = '……';
 
 /** 把一課的課文切成「每段一組句子」，索引和 tools/reading_evidence.mjs 一致。 */
 function paragraphSentences(lessonId) {
@@ -65,7 +67,7 @@ export function EvidencePanel({ lessonId, spots, label = '課文裡是這樣寫�
     const last = Math.min(sentences.length - 1, wanted[wanted.length - 1] + CONTEXT_SENTENCES);
 
     const line = h('p', { class: 'evidence__text', lang: 'zh-TW' });
-    if (first > 0) line.appendChild(h('span', { class: 'evidence__ellipsis', 'aria-label': '前面還有' }, '…'));
+    if (first > 0) line.appendChild(h('span', { class: 'evidence__ellipsis', 'aria-label': '前面還有' }, ELLIPSIS));
     for (let index = first; index <= last; index += 1) {
       const text = sentences[index];
       if (wanted.includes(index)) {
@@ -78,7 +80,7 @@ export function EvidencePanel({ lessonId, spots, label = '課文裡是這樣寫�
       }
     }
     if (last < sentences.length - 1) {
-      line.appendChild(h('span', { class: 'evidence__ellipsis', 'aria-label': '後面還有' }, '…'));
+      line.appendChild(h('span', { class: 'evidence__ellipsis', 'aria-label': '後面還有' }, ELLIPSIS));
     }
 
     blocks.push(h('div', { class: 'evidence__para' }, [
