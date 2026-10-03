@@ -58,7 +58,7 @@ def doc_paragraphs(lesson_id):
         txt = subprocess.run(['textutil', '-convert', 'txt', '-stdout', f'{d}/{f}'], capture_output=True, text=True).stdout
         paras = [m.group(2) for m in (re.match(rf'^([{CN}]+)[　 ]+(.*)$', l.strip()) for l in txt.splitlines()) if m]
         return paras or None
-    rel = {'115AG6H': '115AG6H/raw/大補帖/1.備課資料/01課文word檔', '115AG2H': '115AG2H/raw/大補帖/1.備課資料/01課文word檔'}[vol]
+    rel = {'115AG6H': '115AG6H/raw/大補帖/1.備課資料/01課文word檔', '115AG2H': '115AG2H/raw/大補帖/1.備課資料/01課文word檔', '115AG3H': '115AG3H/raw/大補帖/1.備課資料/01課文word檔'}[vol]
     xml = zipfile.ZipFile(glob.glob(f'{BASE}/{rel}/*.docx')[0]).read('word/document.xml').decode()
     cur, paras = None, []
     for p in re.findall(r'<w:p\b.*?</w:p>', xml, re.S):
@@ -118,6 +118,11 @@ def spots_of(items):
 
 # ── 人工標的句子範圍：{課次: [每筆大意的 [(段, 起句, 迄句), ...]]}，依大意順序
 MANUAL = {
+    '115AG3H01': [[(1, 0, 3)], [(2, 0, 4)], [(3, 0, 5)], [(4, 0, 2)], [(5, 0, 2)]],
+    '115AG3H06': [[(1, 0, 1)], [(2, 0, 3)], [(4, 0, 6)], [(5, 0, 11)], [(7, 0, 4)], [(8, 0, 4)], [(9, 0, 2)]],
+    '115AG3H07': [[(1, 0, 3)], [(2, 0, 3)], [(3, 0, 3)], [(4, 0, 3)], [(5, 0, 3)]],
+    '115AG3H08': [[(p, 0, 9) for p in range(5, 15)], [(p, 0, 9) for p in range(20, 32)], [(p, 0, 9) for p in range(37, 45)]],
+    '115AG3H10': [[(1, 0, 0), (2, 0, 6)], [(3, 0, 9)], [(4, 0, 8)], [(5, 0, 11)], [(6, 0, 2)]],
     '115AG2H06': [[(2, 0, 9)], [(3, 0, 7)], [(4, 0, 6)]],
     '115AG2H11': [[(1, 1, 4)], [(2, 0, 5), (3, 0, 7), (4, 0, 2)], [(4, 3, 4)]],
     '115AG2H12': [[(1, 1, 8)], [(1, 9, 10)], [(2, 0, 6)], [(3, 0, 10)], [(3, 11, 12)]],
@@ -136,7 +141,7 @@ READING_OFFSET = {'115AG4K10': 1}
 
 def main():
     report = []
-    for f in sorted(glob.glob('public/data/115AG[246]*/lesson*.json')):
+    for f in sorted(glob.glob('public/data/115AG[2346]*/lesson*.json')):
         lesson = json.load(open(f))
         lid = lesson['lesson_id']
         entries = lesson.get('paragraph_summary') or []

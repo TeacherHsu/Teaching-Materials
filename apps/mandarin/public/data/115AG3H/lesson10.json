@@ -886,7 +886,39 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "婚禮的高潮",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            0
+          ],
+          "sha": [
+            "8f34a2c6"
+          ]
+        },
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "49c8a2d5",
+            "fa627ad2",
+            "f3deb2fd",
+            "23a81668",
+            "42a86f73",
+            "67cb51ec",
+            "41a50361"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:3H10:02",
@@ -895,7 +927,36 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "新奇的婚禮",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "sha": [
+            "8a3a6b52",
+            "36fdebaf",
+            "ef8abf15",
+            "cdc5afbc",
+            "66302324",
+            "0d0ec33b",
+            "acc2cdf0",
+            "b7869f9b",
+            "335762a4",
+            "6ead1281"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:3H10:03",
@@ -904,7 +965,34 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "新奇的婚禮",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 4,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "sha": [
+            "c9cfb419",
+            "cdb61c1f",
+            "8f923bbb",
+            "8fae5de6",
+            "a75ef812",
+            "a453af92",
+            "f50e2ea1",
+            "d1392ac2",
+            "90646e26"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:3H10:04",
@@ -913,7 +1001,40 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "新奇的婚禮",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 5,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "sha": [
+            "4794d31e",
+            "5f99d3e1",
+            "5da562eb",
+            "18b4ad2a",
+            "67b0c131",
+            "0b1234fb",
+            "35ea026a",
+            "6830b249",
+            "83442813",
+            "6ed9a4aa",
+            "4c02a9bc",
+            "7ebe0b64"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:3H10:05",
@@ -922,7 +1043,22 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "婚禮的結束",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 6,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "0598ccb3",
+            "cf21b22f",
+            "65f4236f"
+          ]
+        }
+      ]
     }
   ],
   "main_idea": {
@@ -962,9 +1098,8 @@
       "answer": "引起好奇，帶出盪秋千",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -977,9 +1112,18 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            0
+          ],
+          "sha": [
+            "8f34a2c6"
+          ]
         }
       ]
     },
@@ -995,9 +1139,8 @@
       "answer": "新娘",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -1010,9 +1153,20 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "fa627ad2",
+            "f3deb2fd"
+          ]
         }
       ]
     },
@@ -1028,9 +1182,8 @@
       "answer": "表示兩人永結同心",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -1043,9 +1196,18 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 4,
+          "sentences": [
+            1
+          ],
+          "sha": [
+            "cdb61c1f"
+          ]
         }
       ]
     },
@@ -1061,9 +1223,8 @@
       "answer": "更珍惜新娘",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "詮釋整合",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -1076,9 +1237,26 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 5,
+          "sentences": [
+            3,
+            4,
+            5,
+            8,
+            9
+          ],
+          "sha": [
+            "18b4ad2a",
+            "67b0c131",
+            "0b1234fb",
+            "83442813",
+            "6ed9a4aa"
+          ]
         }
       ]
     }
@@ -1512,10 +1690,11 @@
         "兩個分開的玻璃杯",
         "裝滿果汁的大木桶"
       ],
-      "answer": "用一整塊木材雕刻成的並排雙人共飲酒杯。",
+      "answer": "用一整塊木材雕刻成的並排雙人共飲酒杯",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第10課）",
-      "passage": "故人具雞黍，邀我至田家。"
+      "passage": "故人具雞黍，邀我至田家。",
+      "explanation": "用一整塊木材雕刻成的並排雙人共飲酒杯。"
     },
     {
       "id": "listening:115AG3H10:0002",
@@ -1526,10 +1705,11 @@
         "表示比賽誰喝得最快",
         "表示婚禮即將結束"
       ],
-      "answer": "表示永結同心、相敬如賓。",
+      "answer": "表示永結同心、相敬如賓",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第10課）",
-      "passage": "綠樹村邊合，青山郭外斜。"
+      "passage": "綠樹村邊合，青山郭外斜。",
+      "explanation": "表示永結同心、相敬如賓。"
     },
     {
       "id": "listening:115AG3H10:0003",
@@ -1540,10 +1720,11 @@
         "只有新郎獨自完成所有活動",
         "婚禮中大家都保持安靜不互動"
       ],
-      "answer": "親友一起祝福並共同參與藏新娘、找新娘等活動。",
+      "answer": "親友一起祝福並共同參與藏新娘、找新娘等活動",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第10課）",
-      "passage": "開軒面場圃，把酒話桑麻。"
+      "passage": "開軒面場圃，把酒話桑麻。",
+      "explanation": "親友一起祝福並共同參與藏新娘、找新娘等活動。"
     }
   ],
   "review_words": {

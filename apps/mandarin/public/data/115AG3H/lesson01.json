@@ -1168,7 +1168,24 @@
       "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）",
       "paragraph_no": 1,
       "structure_block": "分說",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "07765132",
+            "e64bb5e1",
+            "a2998f2f",
+            "4e235e8e"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph_summary:115AG3H01:c38d232d",
@@ -1178,7 +1195,26 @@
       "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）",
       "paragraph_no": 2,
       "structure_block": "分說",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "5756adef",
+            "9795859a",
+            "d71d9488",
+            "4cd2f593",
+            "16adddae"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph_summary:115AG3H01:58f54316",
@@ -1188,7 +1224,28 @@
       "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）",
       "paragraph_no": 3,
       "structure_block": "分說",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "sha": [
+            "2fa9ce84",
+            "0e4055e1",
+            "c79ce5d5",
+            "bdb5cac0",
+            "b245e07e",
+            "1d04e7f6"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph_summary:115AG3H01:d8f60335",
@@ -1198,7 +1255,22 @@
       "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）",
       "paragraph_no": 4,
       "structure_block": "分說",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 4,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "ac18fbd6",
+            "ebd3b640",
+            "f13323be"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph_summary:115AG3H01:16af90d4",
@@ -1208,7 +1280,22 @@
       "source": "dabutie:12主旨、課文大意、段落大意（115 國語3上主旨、課文大意、段落大意.docx）",
       "paragraph_no": 5,
       "structure_block": "總說",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 5,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "f0421686",
+            "9a88ae36",
+            "4a9fbc9f"
+          ]
+        }
+      ]
     }
   ],
   "main_idea": {
@@ -1249,9 +1336,8 @@
       "answer": "爬得很慢",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -1264,9 +1350,22 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "07765132",
+            "e64bb5e1",
+            "a2998f2f"
+          ]
         }
       ]
     },
@@ -1282,9 +1381,8 @@
       "answer": "時間過得很快",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -1297,9 +1395,22 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1,
+            4
+          ],
+          "sha": [
+            "5756adef",
+            "9795859a",
+            "16adddae"
+          ]
         }
       ]
     },
@@ -1315,9 +1426,8 @@
       "answer": "蝸牛、斑馬、彈簧、流水",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -1330,9 +1440,45 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1
+          ],
+          "sha": [
+            "e64bb5e1"
+          ]
+        },
+        {
+          "para": 2,
+          "sentences": [
+            1
+          ],
+          "sha": [
+            "9795859a"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            1
+          ],
+          "sha": [
+            "0e4055e1"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            1
+          ],
+          "sha": [
+            "ebd3b640"
+          ]
         }
       ]
     },
@@ -1348,9 +1494,8 @@
       "answer": "還是不知道",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -1363,9 +1508,20 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 5,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "9a88ae36",
+            "4a9fbc9f"
+          ]
         }
       ]
     }

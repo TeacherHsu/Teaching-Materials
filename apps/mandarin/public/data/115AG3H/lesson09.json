@@ -928,7 +928,24 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "原因",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "5bf0f68d",
+            "26253f92",
+            "f679ae2e",
+            "8d242ccb"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:3H09:02",
@@ -937,7 +954,44 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "經過",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "sha": [
+            "395434ee",
+            "d51f0c47",
+            "9622e114",
+            "7e9e025f",
+            "b557c412",
+            "32eb7aa4",
+            "32605509",
+            "4c19ab31",
+            "598715cf",
+            "95aff9c7",
+            "85e3e144",
+            "8a68d76f",
+            "28145e01",
+            "4c25d560"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:3H09:03",
@@ -946,7 +1000,54 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "經過",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          "sha": [
+            "e4bc5e6e",
+            "f0f1d02e",
+            "d9fca26f",
+            "825651e1",
+            "55214f8e",
+            "732d4ecb",
+            "3fb8071a",
+            "3101fcd3",
+            "430383ee",
+            "94916f31",
+            "27d7adf9",
+            "552dd821",
+            "44621546",
+            "d03cd07a",
+            "eeada6cc",
+            "4ff770cb",
+            "e71fbc8d",
+            "c891f484",
+            "f6def692"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:3H09:04",
@@ -955,7 +1056,24 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "結果",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 4,
+          "sentences": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "34a8e6b8",
+            "46b4a922",
+            "6a8bbaf0",
+            "5086bd43"
+          ]
+        }
+      ]
     }
   ],
   "main_idea": {
@@ -995,9 +1113,8 @@
       "answer": "弟弟把林投果看成鳳梨",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -1010,9 +1127,24 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            4,
+            5,
+            6,
+            10
+          ],
+          "sha": [
+            "b557c412",
+            "32eb7aa4",
+            "32605509",
+            "85e3e144"
+          ]
         }
       ]
     },
@@ -1028,9 +1160,8 @@
       "answer": "還有木棧道可以走",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -1043,9 +1174,20 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            12,
+            13
+          ],
+          "sha": [
+            "28145e01",
+            "4c25d560"
+          ]
         }
       ]
     },
@@ -1061,9 +1203,8 @@
       "answer": "從天邊深藍變成岸邊淺藍",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -1076,9 +1217,20 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "d9fca26f",
+            "825651e1"
+          ]
         }
       ]
     },
@@ -1094,9 +1246,8 @@
       "answer": "美石和美景才能留得長久",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -1109,9 +1260,22 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            16,
+            17,
+            18
+          ],
+          "sha": [
+            "e71fbc8d",
+            "c891f484",
+            "f6def692"
+          ]
         }
       ]
     }
@@ -1569,10 +1733,33 @@
         "弟弟不想走木棧道",
         "導遊找不到回家的路"
       ],
-      "answer": "因為弟弟把林投樹的果實誤認為鳳梨。",
+      "answer": "弟弟把林投樹的果實誤認為鳳梨",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第9課）",
-      "passage": "弟弟指著前方的樹叢，高興的大喊：「你們看，有鳳梨！」導遊笑著搖搖頭，我也覺得很奇怪，那會是什麼呢？"
+      "explanation": "因為弟弟把林投樹的果實誤認為鳳梨。",
+      "passage_ref": [
+        {
+          "para": 2,
+          "sentences": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "sha": [
+            "9622e114",
+            "7e9e025f",
+            "b557c412",
+            "32eb7aa4",
+            "32605509",
+            "4c19ab31",
+            "598715cf"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG3H09:0002",
@@ -1583,10 +1770,23 @@
         "海水變成鮮紅色",
         "天空完全被烏雲遮住"
       ],
-      "answer": "海水的顏色由天邊深深的藍，慢慢變成岸邊淺淺的藍。",
+      "answer": "海水由天邊深藍慢慢變成岸邊淺藍",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第9課）",
-      "passage": "海水的顏色由天邊深深的藍，慢慢變成岸邊淺淺的藍。"
+      "explanation": "海水的顏色由天邊深深的藍，慢慢變成岸邊淺淺的藍。",
+      "passage_ref": [
+        {
+          "para": 3,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "d9fca26f",
+            "825651e1"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG3H09:0003",
@@ -1597,10 +1797,25 @@
         "南田石太重不能搬動",
         "因為相機比石頭更有趣"
       ],
-      "answer": "這樣美石和美景才能長久保留。",
+      "answer": "這樣美石和美景才能長久保留",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第9課）",
-      "passage": "只能拍照，不能帶走，美石、美景才能長久。"
+      "explanation": "這樣美石和美景才能長久保留。",
+      "passage_ref": [
+        {
+          "para": 3,
+          "sentences": [
+            16,
+            17,
+            18
+          ],
+          "sha": [
+            "e71fbc8d",
+            "c891f484",
+            "f6def692"
+          ]
+        }
+      ]
     }
   ],
   "review_words": {

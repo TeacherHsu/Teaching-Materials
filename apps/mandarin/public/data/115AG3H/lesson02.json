@@ -811,7 +811,34 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "起因",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "sha": [
+            "935b030e",
+            "f0642ba9",
+            "cb57514d",
+            "da7652e2",
+            "d749af6b",
+            "2a961d05",
+            "9b59f598",
+            "faed2708",
+            "b69f9667"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:3H02:02",
@@ -820,7 +847,36 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "經過",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "sha": [
+            "d6f23cbf",
+            "f29da9b7",
+            "e72dd35e",
+            "37280970",
+            "22aec81d",
+            "f5c098ca",
+            "64fec3bd",
+            "a3e85dac",
+            "74a995a3",
+            "9e20ad81"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:3H02:03",
@@ -829,7 +885,32 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "結果",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "sha": [
+            "54f8624c",
+            "5c5d3970",
+            "4c4806ed",
+            "506b1934",
+            "666e50f9",
+            "85cf8ca9",
+            "bfdd027e",
+            "212c92fe"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:3H02:04",
@@ -838,7 +919,28 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "結果",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 4,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "sha": [
+            "e2c258e7",
+            "6cab8d7b",
+            "5e743bce",
+            "29c72a45",
+            "2894372e",
+            "5c5d20c9"
+          ]
+        }
+      ]
     }
   ],
   "main_idea": {
@@ -879,9 +981,8 @@
       "answer": "做事慢，常常忘東忘西",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -894,9 +995,20 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "f0642ba9",
+            "cb57514d"
+          ]
         }
       ]
     },
@@ -912,9 +1024,8 @@
       "answer": "把要做的事寫在便利貼上",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -927,9 +1038,22 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            5,
+            6,
+            7
+          ],
+          "sha": [
+            "2a961d05",
+            "9b59f598",
+            "faed2708"
+          ]
         }
       ]
     },
@@ -945,9 +1069,8 @@
       "answer": "小真照便利貼一件件做完",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -960,9 +1083,24 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            4,
+            5,
+            6,
+            9
+          ],
+          "sha": [
+            "22aec81d",
+            "f5c098ca",
+            "64fec3bd",
+            "9e20ad81"
+          ]
         }
       ]
     },
@@ -978,9 +1116,8 @@
       "answer": "小真改掉壞習慣，還提醒他",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -993,9 +1130,37 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            5,
+            6,
+            7
+          ],
+          "sha": [
+            "85cf8ca9",
+            "bfdd027e",
+            "212c92fe"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "sha": [
+            "5e743bce",
+            "29c72a45",
+            "2894372e",
+            "5c5d20c9"
+          ]
         }
       ]
     }
@@ -1610,7 +1775,23 @@
       "answer": "提醒自己要做的事",
       "status": "approved",
       "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教師自撰聆聽題）",
-      "passage": "爸爸告訴小真可以使用「便利貼」，記下什麼時間要完成什麼事情，貼在明顯的地方，時時刻刻提醒自己。"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "sha": [
+            "2a961d05",
+            "9b59f598",
+            "faed2708",
+            "b69f9667"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG3H02:0002",
@@ -1624,7 +1805,21 @@
       "answer": "依照次序完成",
       "status": "approved",
       "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教師自撰聆聽題）",
-      "passage": "漸漸的，她做事變得有次序，而且都能按時完成計畫。"
+      "passage_ref": [
+        {
+          "para": 3,
+          "sentences": [
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "4c4806ed",
+            "506b1934",
+            "666e50f9"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG3H02:0003",
@@ -1638,7 +1833,19 @@
       "answer": "打勾",
       "status": "approved",
       "source": "115G3A／翰林三上第2課官方教材與教師確認資料（教師自撰聆聽題）",
-      "passage": "只要完成一件事就打個勾，睡覺前還先設定好鬧鐘。"
+      "passage_ref": [
+        {
+          "para": 2,
+          "sentences": [
+            6,
+            7
+          ],
+          "sha": [
+            "64fec3bd",
+            "a3e85dac"
+          ]
+        }
+      ]
     }
   ],
   "review_words": {

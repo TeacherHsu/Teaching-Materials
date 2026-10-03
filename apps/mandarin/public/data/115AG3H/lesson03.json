@@ -816,7 +816,38 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "事情的背景",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "sha": [
+            "cb791a1e",
+            "f20e068a",
+            "9f25061e",
+            "08657bb1",
+            "e68b1b14",
+            "6c9db8f4",
+            "134d1568",
+            "d628bcd9",
+            "398af03f",
+            "182fda83",
+            "b21fba9c"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:3H03:02",
@@ -825,7 +856,42 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "做事匆忙的實例",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "sha": [
+            "98d89459",
+            "1fcb7521",
+            "a650b28b",
+            "e9f26bd6",
+            "e1d24009",
+            "15aab96e",
+            "6b0a3cd5",
+            "9b736234",
+            "545f334f",
+            "a6c8636e",
+            "21b0a6cf",
+            "21985c5e",
+            "b3fab116"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:3H03:03",
@@ -834,7 +900,26 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "指導的事項",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 4,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "fe8bf767",
+            "a60e609d",
+            "6f7aec07",
+            "e32fe01e",
+            "653ecef2"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:3H03:04",
@@ -843,7 +928,44 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "指導的事項",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 5,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "sha": [
+            "7ec13c91",
+            "e4e12cff",
+            "ffd40224",
+            "b5cfab2e",
+            "785d8930",
+            "9594ef28",
+            "d6c17092",
+            "2934a7a8",
+            "9dd88a3b",
+            "529f676e",
+            "153b7133",
+            "4a4556e7",
+            "8df9c008",
+            "0d4a2e01"
+          ]
+        }
+      ]
     }
   ],
   "main_idea": {
@@ -884,9 +1006,8 @@
       "answer": "四樣",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -899,9 +1020,20 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "f20e068a",
+            "9f25061e"
+          ]
         }
       ]
     },
@@ -917,9 +1049,8 @@
       "answer": "做事太匆忙",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -932,9 +1063,20 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            9,
+            10
+          ],
+          "sha": [
+            "182fda83",
+            "b21fba9c"
+          ]
         }
       ]
     },
@@ -950,9 +1092,8 @@
       "answer": "做事前不先計畫",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -965,9 +1106,22 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 4,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "fe8bf767",
+            "a60e609d",
+            "6f7aec07"
+          ]
         }
       ]
     },
@@ -983,9 +1137,8 @@
       "answer": "先計畫，再提早五分鐘開始",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "詮釋整合",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -998,9 +1151,26 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 5,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "7ec13c91",
+            "e4e12cff",
+            "ffd40224",
+            "b5cfab2e",
+            "785d8930"
+          ]
         }
       ]
     }
@@ -1399,7 +1569,19 @@
       "answer": "因為她常常來不及找到用品",
       "status": "approved",
       "source": "115G3A／翰林三上第3課官方教材與教師確認資料（教師自撰聆聽題）",
-      "passage": "會發生這些情況，都是因為「匆忙」。"
+      "passage_ref": [
+        {
+          "para": 2,
+          "sentences": [
+            9,
+            10
+          ],
+          "sha": [
+            "182fda83",
+            "b21fba9c"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG3H03:2",
@@ -1413,7 +1595,21 @@
       "answer": "先想好步驟並提早開始",
       "status": "approved",
       "source": "115G3A／翰林三上第3課官方教材與教師確認資料（教師自撰聆聽題）",
-      "passage": "做的時候，又喜歡「提早五分鐘」開始，讓時間足夠、有餘。"
+      "passage_ref": [
+        {
+          "para": 5,
+          "sentences": [
+            3,
+            4,
+            5
+          ],
+          "sha": [
+            "b5cfab2e",
+            "785d8930",
+            "9594ef28"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG3H03:3",
@@ -1427,7 +1623,21 @@
       "answer": "有時間處理遺漏",
       "status": "approved",
       "source": "115G3A／翰林三上第3課官方教材與教師確認資料（教師自撰聆聽題）",
-      "passage": "因為我上班總是提早出門，所以如果忘了帶東西，都有足夠的時間回來拿。"
+      "passage_ref": [
+        {
+          "para": 5,
+          "sentences": [
+            6,
+            7,
+            8
+          ],
+          "sha": [
+            "d6c17092",
+            "2934a7a8",
+            "9dd88a3b"
+          ]
+        }
+      ]
     }
   ],
   "review_words": {

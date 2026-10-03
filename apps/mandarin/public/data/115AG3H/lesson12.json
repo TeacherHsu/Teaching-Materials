@@ -869,7 +869,49 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "前往爺爺家",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "26eed227",
+            "fa0fbb2d",
+            "3c775138",
+            "16bc8286",
+            "66baa5dd"
+          ]
+        },
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "sha": [
+            "e54ad6ef",
+            "949174ae",
+            "a0502ec0",
+            "c51bcd35",
+            "eddc6eb2",
+            "a516ce89",
+            "b5b1af6c",
+            "c75c040c"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:3H12:02",
@@ -882,7 +924,45 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "視訊問候嬸嬸",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "1920242a",
+            "7bd485cb",
+            "cb8b0913"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "sha": [
+            "d6c500ee",
+            "2b86fe35",
+            "8070685c",
+            "55486485",
+            "84356e88",
+            "a09ff2da",
+            "6fb81330",
+            "3b4e1c39"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:3H12:03",
@@ -895,7 +975,45 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "視訊問候嬸嬸",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 5,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "02daeb29",
+            "18e8727a",
+            "c40f728c",
+            "e2f1a2a1",
+            "910e0f96",
+            "ae6625dc",
+            "cb894461"
+          ]
+        },
+        {
+          "para": 6,
+          "sentences": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "c732e0d4",
+            "6977784e",
+            "939473c2",
+            "c9f67a69"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:3H12:04",
@@ -904,7 +1022,22 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "全家團圓",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 7,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "b1d8c053",
+            "a06323d8",
+            "69ba74c3"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:3H12:05",
@@ -913,7 +1046,26 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "全家團圓",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 8,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "87d1bdf6",
+            "ad7d5384",
+            "c73f1e78",
+            "1b1cd080",
+            "818ef784"
+          ]
+        }
+      ]
     }
   ],
   "main_idea": {
@@ -953,9 +1105,8 @@
       "answer": "著急，想快點見到嬸嬸",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -968,9 +1119,20 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            3,
+            4
+          ],
+          "sha": [
+            "16bc8286",
+            "66baa5dd"
+          ]
         }
       ]
     },
@@ -986,9 +1148,8 @@
       "answer": "除夕夜，大家都回家團圓了",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -1001,9 +1162,29 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1
+          ],
+          "sha": [
+            "fa0fbb2d"
+          ]
+        },
+        {
+          "para": 2,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "a0502ec0",
+            "c51bcd35"
+          ]
         }
       ]
     },
@@ -1019,9 +1200,8 @@
       "answer": "讓剛生寶寶的嬸嬸休息",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -1034,9 +1214,20 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "7bd485cb",
+            "cb8b0913"
+          ]
         }
       ]
     },
@@ -1052,9 +1243,8 @@
       "answer": "家人在哪裡，家就在那裡",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "比較評估",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -1067,9 +1257,22 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 8,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "87d1bdf6",
+            "ad7d5384",
+            "c73f1e78"
+          ]
         }
       ]
     }
@@ -1393,10 +1596,29 @@
         "非常生氣，不想見家人",
         "覺得旅程無聊而想回家"
       ],
-      "answer": "有些著急，擔心來不及探望嬸嬸。",
+      "answer": "有些著急，擔心來不及探望嬸嬸",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第12課）",
-      "passage": "長長的雨絲落在車窗上，除夕夜的路上，好像只剩下我們一家人。我默默看著時間，心裡只想著要趕快看到嬸嬸。"
+      "explanation": "有些著急，擔心來不及探望嬸嬸。",
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "26eed227",
+            "fa0fbb2d",
+            "3c775138",
+            "16bc8286",
+            "66baa5dd"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG3H12:0002",
@@ -1407,10 +1629,23 @@
         "因為家裡沒有電話",
         "因為大家不想和家人見面"
       ],
-      "answer": "因為嬸嬸剛生小寶寶，需要在月子中心好好休息。",
+      "answer": "因為嬸嬸剛生小寶寶，需要在月子中心好好休息",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第12課）",
-      "passage": "為了讓嬸嬸能在月子中心好好休息，我們改用視訊問候叔叔、嬸嬸吧！"
+      "explanation": "因為嬸嬸剛生小寶寶，需要在月子中心好好休息。",
+      "passage_ref": [
+        {
+          "para": 3,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "7bd485cb",
+            "cb8b0913"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG3H12:0003",
@@ -1421,10 +1656,23 @@
         "下雨天不要出門",
         "地下室只有腳步聲"
       ],
-      "answer": "家人在哪裡，家就在那裡。",
+      "answer": "家人在哪裡，家就在那裡",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第12課）",
-      "passage": "家人在哪裡，家就在那裡。"
+      "explanation": "家人在哪裡，家就在那裡。",
+      "passage_ref": [
+        {
+          "para": 8,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "ad7d5384",
+            "c73f1e78"
+          ]
+        }
+      ]
     }
   ],
   "review_words": {

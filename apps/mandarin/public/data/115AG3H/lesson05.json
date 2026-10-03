@@ -724,7 +724,44 @@
       "source": "115G3A／翰林三上第5課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）",
       "paragraph_no": 1,
       "structure_block": "起因",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "sha": [
+            "8052b5ae",
+            "01c83749",
+            "34e25cd5",
+            "862cdccd",
+            "78283687",
+            "c9c4b1bc",
+            "06d84fe5",
+            "011e16bf",
+            "b8caac26",
+            "53152f74",
+            "2343460e",
+            "c34a58f0",
+            "fd75f010",
+            "b9faa3aa"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph_summary:115AG3H05:2",
@@ -734,7 +771,38 @@
       "source": "115G3A／翰林三上第5課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）",
       "paragraph_no": 2,
       "structure_block": "經過",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "sha": [
+            "ebf316ce",
+            "f4d12e8b",
+            "b689e251",
+            "284402d0",
+            "3f5e770c",
+            "03672f38",
+            "de9d884b",
+            "d9e43a35",
+            "7b59582c",
+            "1f9c90e0",
+            "f47f2969"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph_summary:115AG3H05:3",
@@ -744,7 +812,40 @@
       "source": "115G3A／翰林三上第5課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）",
       "paragraph_no": 3,
       "structure_block": "經過",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "sha": [
+            "8e1ee9f3",
+            "0d060f9f",
+            "6ac7dde7",
+            "46a99bd9",
+            "34e25cd5",
+            "b38d0efe",
+            "d000e47f",
+            "851c571a",
+            "d749af6b",
+            "29d5d32e",
+            "41c3750f",
+            "9bb50bb1"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph_summary:115AG3H05:4",
@@ -754,7 +855,30 @@
       "source": "115G3A／翰林三上第5課官方教材與教師確認資料（12、13段落大意與課文結構表，重述版）",
       "paragraph_no": 4,
       "structure_block": "結果",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 4,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "a68f48df",
+            "cd072ea7",
+            "429d4a33",
+            "51ba757c",
+            "4f673c45",
+            "308f856e",
+            "fe1b47d8"
+          ]
+        }
+      ]
     }
   ],
   "main_idea": {
@@ -795,9 +919,8 @@
       "answer": "宜蘭三星鄉",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -810,9 +933,18 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            0
+          ],
+          "sha": [
+            "8052b5ae"
+          ]
         }
       ]
     },
@@ -828,9 +960,8 @@
       "answer": "開花時常下雨，梨花會腐爛",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -843,9 +974,24 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "862cdccd",
+            "78283687",
+            "c9c4b1bc",
+            "06d84fe5"
+          ]
         }
       ]
     },
@@ -861,9 +1007,8 @@
       "answer": "泡麵的空碗和竹筷子",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -876,9 +1021,24 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "f4d12e8b",
+            "b689e251",
+            "284402d0",
+            "3f5e770c"
+          ]
         }
       ]
     },
@@ -894,9 +1054,8 @@
       "answer": "撐傘的梨樹結果比較多",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -909,9 +1068,35 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            8,
+            9,
+            10
+          ],
+          "sha": [
+            "7b59582c",
+            "1f9c90e0",
+            "f47f2969"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "8e1ee9f3",
+            "0d060f9f",
+            "6ac7dde7"
+          ]
         }
       ]
     }
@@ -1149,7 +1334,19 @@
       "answer": "梨花因下雨受傷",
       "status": "approved",
       "source": "115G3A／翰林三上第5課官方教材與教師確認資料（教師自撰聆聽題）",
-      "passage": "很多梨花因為淋雨而腐爛，結不成果子。"
+      "passage_ref": [
+        {
+          "para": 1,
+          "sentences": [
+            5,
+            6
+          ],
+          "sha": [
+            "c9c4b1bc",
+            "06d84fe5"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG3H05:2",
@@ -1163,7 +1360,25 @@
       "answer": "夾子",
       "status": "approved",
       "source": "115G3A／翰林三上第5課官方教材與教師確認資料（教師自撰聆聽題）",
-      "passage": "這個方法不只要貼膠帶，還要綁線，實在很花時間。於是，又有梨農改良成帶有夾子的小雨傘。"
+      "passage_ref": [
+        {
+          "para": 3,
+          "sentences": [
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "sha": [
+            "b38d0efe",
+            "d000e47f",
+            "851c571a",
+            "d749af6b",
+            "29d5d32e"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG3H05:3",
@@ -1177,7 +1392,21 @@
       "answer": "梨園有穩定收成",
       "status": "approved",
       "source": "115G3A／翰林三上第5課官方教材與教師確認資料（教師自撰聆聽題）",
-      "passage": "結果，那一年有「撐傘」的梨樹，結出的果實果然比其他梨樹還要多。"
+      "passage_ref": [
+        {
+          "para": 2,
+          "sentences": [
+            8,
+            9,
+            10
+          ],
+          "sha": [
+            "7b59582c",
+            "1f9c90e0",
+            "f47f2969"
+          ]
+        }
+      ]
     }
   ],
   "review_words": {

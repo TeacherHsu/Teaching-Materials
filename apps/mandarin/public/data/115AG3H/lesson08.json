@@ -846,7 +846,153 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "第一幕",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 5,
+          "sentences": [
+            0,
+            1
+          ],
+          "sha": [
+            "fd8a7d57",
+            "37d2a958"
+          ]
+        },
+        {
+          "para": 6,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "cd149e3a",
+            "d468acd0",
+            "f913e170"
+          ]
+        },
+        {
+          "para": 7,
+          "sentences": [
+            0,
+            1
+          ],
+          "sha": [
+            "b376be19",
+            "7f8db830"
+          ]
+        },
+        {
+          "para": 8,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "8a60a040",
+            "0e498473",
+            "4271d3c0"
+          ]
+        },
+        {
+          "para": 9,
+          "sentences": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "b376be19",
+            "e58e2784",
+            "4c77503c",
+            "4c77503c"
+          ]
+        },
+        {
+          "para": 10,
+          "sentences": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "8a60a040",
+            "96d4e517",
+            "e63f690f",
+            "6e4fa984"
+          ]
+        },
+        {
+          "para": 11,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "b376be19",
+            "d6a87100",
+            "7a4db1f7",
+            "4db45556",
+            "e083fb49"
+          ]
+        },
+        {
+          "para": 12,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "8a60a040",
+            "16a1de4d",
+            "17749385"
+          ]
+        },
+        {
+          "para": 13,
+          "sentences": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "b376be19",
+            "87c12677",
+            "d7538e16",
+            "f5698833"
+          ]
+        },
+        {
+          "para": 14,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "8a60a040",
+            "3d1d2eda",
+            "4844416c",
+            "6497d1d2",
+            "96eac2ad",
+            "e372edd7",
+            "84b0fd20"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:3H08:02",
@@ -855,7 +1001,175 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "第二幕",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 20,
+          "sentences": [
+            0,
+            1
+          ],
+          "sha": [
+            "fd8a7d57",
+            "5718fb3e"
+          ]
+        },
+        {
+          "para": 21,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "cd149e3a",
+            "7fe1e57c",
+            "ed3704c6"
+          ]
+        },
+        {
+          "para": 22,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "520ef3ec",
+            "2b7eb8ab",
+            "9fd34b61"
+          ]
+        },
+        {
+          "para": 23,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "d54ce9e2",
+            "5c7e001a",
+            "15aef91e",
+            "f027ef46",
+            "f90d32ce"
+          ]
+        },
+        {
+          "para": 24,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "d54ce9e2",
+            "5fb4cf35",
+            "8619b7a3"
+          ]
+        },
+        {
+          "para": 25,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "520ef3ec",
+            "acbd7126",
+            "1620c48b"
+          ]
+        },
+        {
+          "para": 26,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "e1aaf4a4",
+            "b470c0ea",
+            "606bd4e1",
+            "4883e404",
+            "c8f42cca"
+          ]
+        },
+        {
+          "para": 27,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "520ef3ec",
+            "7cc3342f",
+            "fd1c5285"
+          ]
+        },
+        {
+          "para": 28,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "d54ce9e2",
+            "6b28882a",
+            "6aed38e4"
+          ]
+        },
+        {
+          "para": 29,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "e1aaf4a4",
+            "8d483cf6",
+            "e59ec908",
+            "269b79af",
+            "66bde809"
+          ]
+        },
+        {
+          "para": 30,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "d54ce9e2",
+            "6155be7d",
+            "c0778cb8"
+          ]
+        },
+        {
+          "para": 31,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "e1aaf4a4",
+            "558e90cc",
+            "1a52a9ee"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:3H08:03",
@@ -864,7 +1178,115 @@
       "status": "draft",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "第三幕",
-      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）"
+      "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
+      "text_spots": [
+        {
+          "para": 37,
+          "sentences": [
+            0,
+            1
+          ],
+          "sha": [
+            "fd8a7d57",
+            "4871d6fe"
+          ]
+        },
+        {
+          "para": 38,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "cd149e3a",
+            "139324c7",
+            "f27934c3"
+          ]
+        },
+        {
+          "para": 39,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "b376be19",
+            "85d8218c",
+            "385800fe"
+          ]
+        },
+        {
+          "para": 40,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "8a60a040",
+            "226d0c4f",
+            "6515a342"
+          ]
+        },
+        {
+          "para": 41,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "b376be19",
+            "a25b076d",
+            "e856efcd"
+          ]
+        },
+        {
+          "para": 42,
+          "sentences": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "8a60a040",
+            "73c24967",
+            "89f97d6d",
+            "943a7ff6"
+          ]
+        },
+        {
+          "para": 43,
+          "sentences": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "b376be19",
+            "dceedda8",
+            "b44c210f",
+            "564d6dc4"
+          ]
+        },
+        {
+          "para": 44,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "8a60a040",
+            "81933232",
+            "16e6263f"
+          ]
+        }
+      ]
     }
   ],
   "main_idea": {
@@ -904,9 +1326,8 @@
       "answer": "海灘上的貝殼被人撿走了",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -919,9 +1340,20 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 12,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "16a1de4d",
+            "17749385"
+          ]
         }
       ]
     },
@@ -937,9 +1369,8 @@
       "answer": "垃圾越來越多，住不下去",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -952,9 +1383,22 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 14,
+          "sentences": [
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "96eac2ad",
+            "e372edd7",
+            "84b0fd20"
+          ]
         }
       ]
     },
@@ -970,9 +1414,8 @@
       "answer": "撿垃圾，宣導保護海洋",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -985,9 +1428,31 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 21,
+          "sentences": [
+            2
+          ],
+          "sha": [
+            "ed3704c6"
+          ]
+        },
+        {
+          "para": 29,
+          "sentences": [
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "e59ec908",
+            "269b79af",
+            "66bde809"
+          ]
         }
       ]
     },
@@ -1003,9 +1468,8 @@
       "answer": "從害怕，變成希望人類幫忙",
       "status": "draft",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
-      "answer_source": "authored:依官方參考答案改寫（課文補上後再標證據）",
+      "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "詮釋整合",
-      "evidence_pending": true,
       "hints": [
         {
           "level": 1,
@@ -1018,9 +1482,33 @@
         },
         {
           "level": 3,
-          "type": "evidence",
-          "eliminate": 2,
-          "text": "先把兩個不對的刪掉，再從剩下的兩個選。"
+          "type": "evidence"
+        }
+      ],
+      "evidence": [
+        {
+          "para": 41,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "a25b076d",
+            "e856efcd"
+          ]
+        },
+        {
+          "para": 43,
+          "sentences": [
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "dceedda8",
+            "b44c210f",
+            "564d6dc4"
+          ]
         }
       ]
     }
@@ -1449,10 +1937,23 @@
         "瓶蓋比貝殼更漂亮",
         "牠想收集各種瓶蓋"
       ],
-      "answer": "因為沙灘上的貝殼被人類撿走，牠沒有殼可以換。",
+      "answer": "沙灘上的貝殼被人類撿走",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第8課）",
-      "passage": "殼都被人類撿走了，我只好找個瓶蓋住進去。"
+      "explanation": "因為沙灘上的貝殼被人類撿走，牠沒有殼可以換。",
+      "passage_ref": [
+        {
+          "para": 12,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "16a1de4d",
+            "17749385"
+          ]
+        }
+      ]
     },
     {
       "id": "listening:115AG3H08:0002",
@@ -1463,10 +1964,11 @@
         "到海邊販賣飲料",
         "替寄居蟹製作新房子"
       ],
-      "answer": "在海灘撿垃圾，並宣導保護海洋的觀念。",
+      "answer": "在海灘撿垃圾，並宣導保護海洋的觀念",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第8課）",
-      "passage": "第二天早上，友友和美美跟著淨灘志工來到海灘；所以，我們希望大家以後能把垃圾帶走，留下貝殼，還給寄居蟹。"
+      "passage": "第二天早上，友友和美美跟著淨灘志工來到海灘；所以，我們希望大家以後能把垃圾帶走，留下貝殼，還給寄居蟹。",
+      "explanation": "在海灘撿垃圾，並宣導保護海洋的觀念。"
     },
     {
       "id": "listening:115AG3H08:0003",
@@ -1477,10 +1979,23 @@
         "海灘垃圾可以直接丟進海裡",
         "只有寄居蟹需要整理住處"
       ],
-      "answer": "海洋垃圾問題很嚴重，需要大家一起努力處理。",
+      "answer": "海洋垃圾問題很嚴重，需要大家一起努力處理",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第8課）",
-      "passage": "啊！從海上漂來這麼多寶特瓶，讓海灘變成垃圾場了。"
+      "explanation": "海洋垃圾問題很嚴重，需要大家一起努力處理。",
+      "passage_ref": [
+        {
+          "para": 22,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "2b7eb8ab",
+            "9fd34b61"
+          ]
+        }
+      ]
     }
   ],
   "review_words": {
