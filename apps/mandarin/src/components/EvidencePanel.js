@@ -23,6 +23,54 @@ import { splitSentences } from '../utils/readingUnits.js';
  * 「這句話出現在什麼地方」，又不會把課名、作者這些無關的字一起拉進來。
  */
 const CONTEXT_SENTENCES = 1;
+// 第 3 層要「直接看到對應段落」（CF 2026-10-04）：段落不長就整段給，太長才只留前後兩句
+const FULL_PARAGRAPH_MAX = 8;
+const LONG_PARAGRAPH_CONTEXT = 2;
+
+const FUNCTION_CHARS = /[和與跟的了是在也就都還又著把被]/u;
+const han = (t) => String(t || '').replace(/[^\u3400-\u9fff]/gu, '');
+
+/**
+ * 在證據句裡找出「關鍵資訊」：和答案（及參考答案）共有、至少兩個字的片段。
+ * 回傳 [start, end) 區間（以句子字元位置計），已合併相鄰區間。
+ */
+export function keySpans(sentence, keys, exclude = '') {
+  const keyText = (keys || []).map(han).join('｜');
+  if (!keyText) return [];
+  // 題目裡已經出現的詞（「南瓜蒂」）不算關鍵資訊：學生本來就看得到，畫了只是雜訊
+  const skip = han(exclude);
+  const flags = new Array(sentence.length).fill(false);
+  for (let i = 0; i < sentence.length - 1; i += 1) {
+    const bi = sentence.slice(i, i + 2);
+    // 含虛詞的雙字（「和南」「蒂和」）多半是跨詞拼出來的，不當關鍵詞的起點
+    if (han(bi).length === 2 && keyText.includes(bi) && !skip.includes(bi) && !FUNCTION_CHARS.test(bi)) { flags[i] = true; flags[i + 1] = true; }
+  }
+  const spans = [];
+  for (let i = 0; i < flags.length; i += 1) {
+    if (!flags[i]) continue;
+    let j = i;
+    while (j + 1 < flags.length && flags[j + 1]) j += 1;
+    spans.push([i, j + 1]);
+    i = j;
+  }
+  return spans;
+}
+
+function markedSentence(text, keys, exclude, wholeIfNone) {
+  const spans = keySpans(text, keys, exclude);
+  // 推論題常常整段都沒有字面相同的詞：那就整句上螢光筆；
+  // 但只要別的線索句有關鍵詞，這句就只畫底線，免得滿版都是黃色
+  if (!spans.length) return wholeIfNone ? [h('mark', { class: 'evidence__key' }, text)] : [text];
+  const out = [];
+  let at = 0;
+  for (const [a, b] of spans) {
+    if (a > at) out.push(text.slice(at, a));
+    out.push(h('mark', { class: 'evidence__key' }, text.slice(a, b)));
+    at = b;
+  }
+  if (at < text.length) out.push(text.slice(at));
+  return out;
+}
 // 中文刪節號是兩個「…」共六點（CF 2026-10-03 提醒），不是英文的三點。
 const ELLIPSIS = '……';
 
@@ -46,13 +94,16 @@ function paragraphSentences(lessonId) {
  * }} opts
  * @returns {{el: HTMLElement, highlight: () => void}|null} 課文沒解鎖時回 null
  */
-export function EvidencePanel({ lessonId, spots, label = '課文裡是這樣寫的' }) {
+export function EvidencePanel({ lessonId, spots, label = '課文裡是這樣寫的', keys = null, exclude = '' }) {
   if (!isUnlocked() || !Array.isArray(spots) || !spots.length) return null;
   const byPara = paragraphSentences(lessonId);
   if (!byPara) return null;
 
   const marks = [];
   const blocks = [];
+  // 整個面板有沒有任何一句找得到關鍵詞（決定沒有關鍵詞的線索句要不要整句畫）
+  const anyKey = Boolean(keys) && spots.some((spot) => (byPara.get(spot.para - 1) || [])
+    .some((t, i) => spot.sentences.includes(i) && keySpans(t, keys, exclude).length));
 
   for (const spot of spots) {
     const sentences = byPara.get(spot.para - 1);
@@ -63,14 +114,21 @@ export function EvidencePanel({ lessonId, spots, label = '課文裡是這樣寫�
     // CF 指出：證據是「我們在游泳池游呀游，游成自由的魚……」時，
     // 前面的「水陸小高手。游泳。謝安通。」（課名、詩名、作者）是多餘的，
     // 對要找答案的學生只是干擾。多出來的字會讓閱讀困難的學生先累了才讀到重點。
-    const first = Math.max(0, wanted[0] - CONTEXT_SENTENCES);
-    const last = Math.min(sentences.length - 1, wanted[wanted.length - 1] + CONTEXT_SENTENCES);
+    // keys 有給（第 3 層用法）：段落不長就整段呈現，長段落留前後兩句
+    const ctx = keys ? (sentences.length <= FULL_PARAGRAPH_MAX ? sentences.length : LONG_PARAGRAPH_CONTEXT) : CONTEXT_SENTENCES;
+    const first = Math.max(0, wanted[0] - ctx);
+    const last = Math.min(sentences.length - 1, wanted[wanted.length - 1] + ctx);
 
     const line = h('p', { class: 'evidence__text', lang: 'zh-TW' });
     if (first > 0) line.appendChild(h('span', { class: 'evidence__ellipsis', 'aria-label': '前面還有' }, ELLIPSIS));
     for (let index = first; index <= last; index += 1) {
       const text = sentences[index];
-      if (wanted.includes(index)) {
+      if (wanted.includes(index) && keys) {
+        // 線索句淡淡畫底線，句中的關鍵資訊（和答案相同的詞）上螢光筆
+        const sent = h('span', { class: 'evidence__sentence' }, markedSentence(text, keys, exclude, !anyKey));
+        marks.push(sent);
+        line.appendChild(sent);
+      } else if (wanted.includes(index)) {
         // 用 <mark> 而不是只上背景色：語意正確，螢幕閱讀器會念出「標記」
         const mk = h('mark', { class: 'evidence__key' }, text);
         marks.push(mk);

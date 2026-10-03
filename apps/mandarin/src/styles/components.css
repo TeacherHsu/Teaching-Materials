@@ -3533,3 +3533,11 @@
 .stroke-anim__controls { display: flex; gap: var(--space-2); flex-wrap: wrap; justify-content: center; }
 .stroke-anim__credit { text-align: center; }
 .character-card__stroke-btn[hidden] { display: none; }
+/* 第 3 層：線索句淡底線、句中關鍵資訊上螢光筆（CF 2026-10-04） */
+.evidence--marked .evidence__sentence {
+  text-decoration: underline;
+  text-decoration-color: var(--color-highlight-line);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+.evidence__lock-note { margin: var(--space-2) 0; }

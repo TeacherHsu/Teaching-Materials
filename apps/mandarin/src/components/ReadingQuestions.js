@@ -31,41 +31,44 @@ function buildScaffoldedItem(lessonId, item) {
   const written = Array.isArray(item.hints)
     ? item.hints.filter((hint) => hint && typeof hint.text === 'string')
     : [];
-  const panel = lessonId && item.evidence
-    ? EvidencePanel({ lessonId, spots: item.evidence })
-    : null;
-
-  if (!panel) {
-    const fallback = written.map((hint) => hint.text);
-    return {
-      ...item,
-      hints: fallback.length ? fallback : (item.scaffold ? [item.scaffold] : undefined),
-    };
-  }
-
-  // 證據面板先掛在題目下方但隱藏，第 2 層提示才打開。
-  // 第 2 層是「教怎麼找」那一層：課次若標了區塊（例如「找『練習』那一塊」），
-  // 就說出範圍；沒標就退回通用句。通用句幾乎沒給資訊，但勝過印出
-  // 「第4段重點」這種匯入殘留的空殼標籤。
-  panel.el.hidden = true;
   const byLevel = (level) => written.find((hint) => hint.level === level);
-  const layers = [];
   const first = byLevel(1) || written[0];
-  if (first) layers.push({ text: first.text });
-  layers.push({
-    text: byLevel(2)?.text || '答案就在下面這一段裡，讀讀看。',
-    on: () => { panel.el.hidden = false; },
-  });
-  layers.push({
-    // 只有「提取訊息」題的答案會直接寫在句子裡；推論、詮釋、比較題畫的是線索，
-    // 說「畫起來的就是答案」會教錯方法（2026-10-03 審查建議）。
-    text: byLevel(3)?.text || (item.strategy_tag === '提取訊息' || !item.strategy_tag
-      ? '用螢光筆畫起來的句子裡有答案，找找看是哪幾個字。'
-      : '畫起來的是線索，不是答案本身：讀完想一想，這些句子讓你知道了什麼？'),
-    on: () => { panel.el.hidden = false; panel.highlight(); },
-  });
 
-  return { ...item, hints: layers, extra: panel.el };
+  // 第 1、2 層是文字（策略 → 找位置）；第 3 層才把課文段落直接放到題目上方，
+  // 段落中的線索句畫底線、關鍵資訊上螢光筆（CF 2026-10-04）。
+  // 面板在按到第 3 層「當下」才建立：學生做題中途老師才輸入密碼，也看得到。
+  const slot = h('div', { class: 'evidence-slot' });
+  slot.hidden = true;
+  const layers = [];
+  if (first) layers.push({ text: first.text });
+  layers.push({ text: byLevel(2)?.text || '答案在課文的哪一部分？先想想題目問的是誰、在做什麼。' });
+  if (!item.evidence) {
+    // 沒有證據索引的題目（或舊資料）：維持文字提示
+    const fallback = written.map((hint) => hint.text);
+    return { ...item, hints: fallback.length ? fallback : (item.scaffold ? [item.scaffold] : undefined) };
+  }
+  const extract = item.strategy_tag === '提取訊息' || !item.strategy_tag;
+  layers.push({
+    text: byLevel(3)?.text || (extract
+      ? '看上面的課文：螢光筆畫的就是答案的關鍵字，和選項對照看看。'
+      : '看上面的課文：畫線的句子是線索，螢光筆是重要的詞。想一想它們讓你知道了什麼？'),
+    on: () => {
+      const panel = EvidencePanel({
+        lessonId,
+        spots: item.evidence,
+        label: '課文裡的這一段',
+        keys: [item.answer, item.answer_hint, item.explanation].filter(Boolean),
+        exclude: item.stem,
+      });
+      clear(slot);
+      slot.appendChild(panel
+        ? panel.el
+        : h('p', { class: 'meta evidence__lock-note' }, '這一層要看課文：請老師先在「課文點讀」輸入教室密碼。'));
+      slot.hidden = false;
+      if (panel) panel.highlight();
+    },
+  });
+  return { ...item, hints: layers, extra: slot };
 }
 
 export function ReadingQuestions({ lessonId, items, onBack, backLabel = '本課先完成', onContinue, continueLabel = '加練下一組' }) {
@@ -150,7 +153,9 @@ export function ReadingQuestions({ lessonId, items, onBack, backLabel = '本課�
     // 有證據句（且課文已解鎖）時，鷹架落在課文上：第 1 層打開那一段、
     // 第 2 層把線索句畫起來、第 3 層才給參考答案。沒有證據（看圖題、開放思考題）
     // 維持原本的文字提示。
-    const panel = lessonId && item.evidence ? EvidencePanel({ lessonId, spots: item.evidence, label: '課文裡的這一段' }) : null;
+    const panel = lessonId && item.evidence
+      ? EvidencePanel({ lessonId, spots: item.evidence, label: '課文裡的這一段', keys: [item.answer_hint].filter(Boolean), exclude: item.stem })
+      : null;
     if (panel) {
       panel.el.hidden = true;
       root.appendChild(panel.el);
