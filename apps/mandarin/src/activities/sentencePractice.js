@@ -343,6 +343,7 @@ export function buildConnectiveItems(lesson, optionCount = 3, shuffleImpl = shuf
     const readable = parts.reduce((acc, part, i) => acc + part + (i < pair.words.length ? '（空格）' : ''), '');
     items.push({
       id: `connective:${lesson.lesson_id}:${pattern.id || pattern.head}`,
+      skill: 'sentence:connective',
       stem: '空格要填哪一組關聯詞？',
       readAllStem: `${readable}${/[。！？]$/u.test(readable) ? '' : '。'}空格要填哪一組關聯詞？`,
       stemContent: h('div', { class: 'connective-quiz' }, [

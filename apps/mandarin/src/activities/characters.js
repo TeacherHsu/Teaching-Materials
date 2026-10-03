@@ -11,7 +11,8 @@ import { filterByStatus } from '../utils/preview.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { DragToSlot } from '../components/DragToSlot.js';
 import { RadicalGlyph } from '../components/HanziCompare.js';
-import { loadHanziParts } from '../utils/hanziParts.js';
+import { loadHanziParts, hanziPartsIfReady } from '../utils/hanziParts.js';
+import { radicalStrategyLesson, pickRadicalChars } from './strategyLessons.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { buildExtensionLinks } from '../components/ExtensionLinks.js';
 import { PronunciationNotice } from '../components/PronunciationNotice.js';
@@ -122,6 +123,7 @@ function buildRadicalDragItems(round, allCharacters, volume) {
     };
     return {
       id: `radical-item:${c.char}`,
+      skill: 'char:radical',
       context: h('div', { class: 'idiom-builder__card' }, [
         h('p', { class: 'quiz-stem' }, `「${c.char}」的部首是？`),
         glyphSlot,
@@ -164,6 +166,11 @@ export function buildCharactersActivity(lesson, onBack) {
   const steps = [];
   if (characters.length > 0) steps.push('cards');
   if (choiceRounds.length > 0) steps.push('choice');
+  // 試做：找部首之前先「學方法」（示範＋一起做），之後的部首題算遷移題
+  const learnChars = radicalRounds.length > 0
+    ? pickRadicalChars(characters, hanziPartsIfReady(String(lesson.lesson_id || '').slice(0, 7)))
+    : [];
+  if (learnChars.length === 2) steps.push('learn-radical');
   if (radicalRounds.length > 0) steps.push('radical');
 
   const container = h('div', {});
@@ -279,6 +286,12 @@ export function buildCharactersActivity(lesson, onBack) {
           },
         }),
       );
+    } else if (step === 'learn-radical') {
+      container.appendChild(radicalStrategyLesson(learnChars, hanziPartsIfReady(String(lesson.lesson_id || '').slice(0, 7)), () => {
+        stepIndex += 1;
+        roundIndex = 0;
+        renderStep();
+      }));
     } else if (step === 'radical') {
       const isLastRound = roundIndex === radicalRounds.length - 1;
       container.appendChild(
@@ -286,7 +299,9 @@ export function buildCharactersActivity(lesson, onBack) {
       );
       container.appendChild(
         DragToSlot({
-          items: buildRadicalDragItems(radicalRounds[roundIndex], characters, String(lesson.lesson_id || '').slice(0, 7)),
+          items: buildRadicalDragItems(radicalRounds[roundIndex], characters, String(lesson.lesson_id || '').slice(0, 7))
+            // 學過方法之後，示範、一起做以外的字都是新材料＝遷移題
+            .map((it) => ({ ...it, transfer: steps.includes('learn-radical') && !learnChars.some((c) => it.id === `radical-item:${c.char}`) })),
           backLabel: isLastRound ? '回課程首頁' : '本課先完成',
           onContinue: isLastRound ? null : () => {
             roundIndex += 1;

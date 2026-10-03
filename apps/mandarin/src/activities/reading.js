@@ -17,6 +17,7 @@ import { MatchingGame } from '../components/MatchingGame.js';
 import { resolveSpots } from '../components/EvidencePanel.js';
 import { shuffle } from '../utils/shuffle.js';
 import { getScaffoldLevel } from '../utils/deviceSettings.js';
+import { clueStrategyLesson } from './strategyLessons.js';
 
 const CN_NUM = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
 function cnNumber(n) {
@@ -197,7 +198,12 @@ export function buildReadingActivity(lesson, onBack) {
       else if (!paraMap.has(ep)) paraMap.set(ep, no);
     });
   }
-  const questionRounds = chunkRounds(questions.map((q) => ({ ...q, _paraMap: paraMap })));
+  const questionRounds = chunkRounds(questions.map((q) => ({
+    ...q,
+    _paraMap: paraMap,
+    // 學過「找線索」後，本課的提取訊息題就是換新材料的遷移題
+    transfer: q.strategy_tag === '提取訊息' && Array.isArray(q.options) && q.options.length > 0,
+  })));
 
   const activity = filterByStatus(lesson.genre_activity ? [lesson.genre_activity] : [])[0] || null;
   const classifyItems = activity?.type === 'classify' ? buildClassifyItems(activity) : [];
@@ -217,6 +223,9 @@ export function buildReadingActivity(lesson, onBack) {
   if (classifyItems.length >= 3) steps.push('classify');
   else if (decodePairs.length >= 2) steps.push('decode');
   else if (paragraphs.length >= 3) steps.push('order');
+  // 試做：有「提取訊息」選擇題的課，在讀題之前先學「找線索」；之後的提取訊息題算遷移題
+  const hasClueQuestions = questions.some((q) => q.strategy_tag === '提取訊息' && Array.isArray(q.options) && q.options.length);
+  if (questionRounds.length >= 1 && hasClueQuestions) steps.push('learn-clue');
   if (questionRounds.length >= 1) steps.push('questions');
 
   const container = h('div', {});
@@ -347,6 +356,8 @@ export function buildReadingActivity(lesson, onBack) {
           },
         }),
       );
+    } else if (step === 'learn-clue') {
+      container.appendChild(clueStrategyLesson(() => { stepIndex += 1; roundIndex = 0; renderStep(); }));
     } else if (step === 'questions') {
       const isLastRound = roundIndex === questionRounds.length - 1;
       container.appendChild(TaskBanner({

@@ -7,9 +7,14 @@
 // 時呼叫 recordOutcome()；活動全部完成、使用者按下「回課程首頁」時，
 // ModulePage 呼叫 endScoreSession() 取得整個大項的彙總數據來換算星星。
 
-let session = null;
+import { recordSkill } from './records.js';
 
-export function startScoreSession() {
+let session = null;
+let defaultSkill = null;
+
+/** @param {string} [skill] 這個大項題目預設的技能標籤（題目自己有 skill 時以題目為準） */
+export function startScoreSession(skill = null) {
+  defaultSkill = skill;
   session = { total: 0, firstTryCount: 0, hintedCount: 0, revealedCount: 0 };
 }
 
@@ -18,7 +23,10 @@ export function startScoreSession() {
  *   firstTry：這一題／這一回合第一次作答就答對，未看提示、未被揭曉正解。
  *   revealed：這一題／這一回合用盡重試次數，最後是被系統揭曉正解（不是自己答對）。
  */
-export function recordOutcome({ firstTry, revealed }) {
+export function recordOutcome({ firstTry, revealed, skill = null, transfer = false }) {
+  // 技能紀錄：依技能（而不是依關卡）累積，遷移題（換新材料）另外計
+  const tag = skill || defaultSkill;
+  if (tag) recordSkill(tag, { firstTry, revealed, transfer });
   if (!session) return; // 沒有 startScoreSession 時（例如舊測試直接建元件）安靜忽略，不影響操作
   session.total += 1;
   if (firstTry) session.firstTryCount += 1;

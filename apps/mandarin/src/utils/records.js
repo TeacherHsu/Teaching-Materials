@@ -233,3 +233,57 @@ export function levelAdvice(grade, levelKey, { days = 21, minItems = 20, now = D
   if (rate >= 0.8 && levelKey !== 'challenge') advice = 'up';
   return { items: total, rate, advice, minItems };
 }
+
+// ── 技能紀錄（2026-10-04：題目技能標籤＋遷移題）────────────────────
+// 依「學生代碼 → 技能」累積：一般題與遷移題（換新材料、少一層支持）分開算。
+// 和 IEP 目標代碼無關（那要個案化，CF 決定先不做）；只是讓老師看得到
+// 「這個方法，換了新材料還會不會用」。
+const SKILL_KEY = 'mandarin:skills:v1';
+
+export const SKILL_LABELS = {
+  'reading:提取訊息': '閱讀：找出課文寫到的訊息',
+  'reading:推論訊息': '閱讀：從線索推論',
+  'reading:詮釋整合': '閱讀：整合段落意思',
+  'reading:比較評估': '閱讀：比較與評估',
+  'reading:段落理解': '閱讀：段落與結構',
+  'char:pronunciation': '生字：讀音',
+  'char:radical': '生字：找部首',
+  'word:meaning': '語詞：詞義',
+  'idiom': '成語',
+  'sentence:connective': '句型：選關聯詞',
+  'sentence:order': '句型：排句子',
+  'main-idea': '抓重點',
+  'zhuyin': '注音拼寫',
+  'polysemy': '一字多義',
+  'polyphone': '一字多音',
+  'lookalike': '形似字',
+  'listening': '聽力理解',
+  'rhetoric': '修辭',
+  'visual-search': '字形辨識（字感）',
+  'review': '舊字新詞',
+};
+
+function readSkills() {
+  try { return JSON.parse(window.localStorage.getItem(SKILL_KEY) || '{}') || {}; } catch { return {}; }
+}
+
+export function recordSkill(skill, { firstTry, revealed, transfer = false }, at = new Date().toISOString(), student = getStudentCode()) {
+  const all = readSkills();
+  const who = all[student || ''] || (all[student || ''] = {});
+  const row = who[skill] || (who[skill] = { total: 0, firstTry: 0, hinted: 0, revealed: 0, tTotal: 0, tFirstTry: 0 });
+  row.total += 1;
+  if (firstTry) row.firstTry += 1;
+  else if (revealed) row.revealed += 1;
+  else row.hinted += 1;
+  if (transfer) { row.tTotal += 1; if (firstTry) row.tFirstTry += 1; }
+  row.last = at;
+  try { window.localStorage.setItem(SKILL_KEY, JSON.stringify(all)); } catch { /* 存不了就算了 */ }
+}
+
+/** 某個學生代碼的技能紀錄，依最近作答排序。 */
+export function listSkills(student = getStudentCode()) {
+  const who = readSkills()[student || ''] || {};
+  return Object.entries(who)
+    .map(([skill, r]) => ({ skill, label: SKILL_LABELS[skill] || skill, ...r }))
+    .sort((a, b) => String(b.last).localeCompare(String(a.last)));
+}

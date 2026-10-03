@@ -287,7 +287,7 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
       if (isCorrect) {
         answered = true;
         correctCount += 1;
-        recordOutcome({ firstTry: attempts === 1 && !hintUsed, revealed: false });
+        recordOutcome({ firstTry: attempts === 1 && !hintUsed, revealed: false, skill: item.skill, transfer: item.transfer });
         celebrateCorrect(slot, 'var(--module-color)', { firstTry: attempts === 1 && !hintUsed });
         slot.classList.add('quiz-option--correct');
         clear(feedbackSlot);
@@ -332,7 +332,7 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
       } else {
         // 第 2 次答錯：揭曉正解，鎖題
         answered = true;
-        recordOutcome({ firstTry: false, revealed: true });
+        recordOutcome({ firstTry: false, revealed: true, skill: item.skill, transfer: item.transfer });
         const answerOpt = options.find((o) => o.id === item.answerId);
         slot.textContent = answerOpt
           ? (item.slotValue ? item.slotValue(answerOpt.label) : answerOpt.label)

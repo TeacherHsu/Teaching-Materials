@@ -61,7 +61,7 @@ const BUILDERS = {
 };
 
 // ---- 通用互動驅動器：純看 DOM 狀態決定下一步，不需要事先知道任何一題的正解 ----
-const ADVANCE_RE = /^(下一題|下一組|加練下一組|看結果|回課程首頁|繼續|再來一組|完成|我看懂了)|^我記住了$/;
+const ADVANCE_RE = /^(下一步|換我試試看|用這個方法|下一題|下一組|加練下一組|看結果|回課程首頁|繼續|再來一組|完成|我看懂了)|^我記住了$/;
 
 /** fake-dom 的 h() 對 `disabled: 'disabled'` 這種初始屬性只會寫進 attrs，不會同步
  * FakeElement.disabled 這個屬性（那個屬性只有元件之後手動 `el.disabled = true` 才會更新）。
@@ -266,6 +266,12 @@ function driveOneGenericStep(container) {
   const revealBtn = enabledButtons(container).find((b) => /^(看提示|找哪段／哪張圖|指出關鍵詞|看答案提示|看課文哪一段|畫出線索句|看參考答案)$/.test(b.textContent.trim()));
   if (revealBtn) {
     revealBtn.dispatch('click');
+    return true;
+  }
+  // 學方法的「一起做」：逐一點，點錯的會停用，最後一定點到對的
+  const tap = enabledButtons(container, (n) => n.hasClass('strategy-tap__item'))[0];
+  if (tap) {
+    tap.dispatch('click');
     return true;
   }
   const chip = enabledButtons(container, (n) => n.hasClass('sentence-chip') && !n.hasClass('drag-to-slot__slot'))[0];

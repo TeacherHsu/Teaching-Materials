@@ -141,7 +141,7 @@ export function ChoiceQuiz({
           correctCount += 1;
           // 用過提示才答對，不算獨立答對：照樣收進錯題盒，之後再練一次。
           const firstTry = attempts === 1 && !hintUsed;
-          recordOutcome({ firstTry, revealed: false });
+          recordOutcome({ firstTry, revealed: false, skill: item.skill, transfer: item.transfer });
           // 第一次沒答對就收進錯題盒（和「正確率＝第一次答對率」同一個判準）。
           // 在複習模式下則是把這一題往上推一格（連對夠多次就學會、移除）。
           if (item._mistakeId) gradeMistake(item._mistakeId, firstTry);
@@ -220,7 +220,7 @@ export function ChoiceQuiz({
             item.hints.slice(hintLevel).forEach((l) => { if (l && typeof l === 'object' && typeof l.on === 'function') l.on(); });
             revealExtra();
           }
-          recordOutcome({ firstTry: false, revealed: true });
+          recordOutcome({ firstTry: false, revealed: true, skill: item.skill, transfer: item.transfer });
           if (item._mistakeId) gradeMistake(item._mistakeId, false);
           else noteMistake(item);
           if (onItemResolved) onItemResolved({ item, firstTry: false, revealed: true });

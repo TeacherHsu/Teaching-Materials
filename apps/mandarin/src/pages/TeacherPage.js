@@ -7,7 +7,7 @@ import { h, clear } from '../utils/dom.js';
 import { findModuleEntry } from '../activities/moduleRegistry.js';
 import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel, setDeviceLabel, getSheetUrl, setSheetUrl, getScaffoldLevel, getOverride, setOverride, getShowEarlyExit, setShowEarlyExit, DETAIL_SPECS, getLastGrade, hasGradeLevel, getStudentCode, setStudentCode } from '../utils/deviceSettings.js';
 import { makeTeacherChallenge, verifyTeacherChallenge } from '../utils/teacherGate.js';
-import { listRecords, recordsAsTsv, clearRecords, unsyncedAttempts, syncRecords, levelAdvice } from '../utils/records.js';
+import { listRecords, recordsAsTsv, clearRecords, unsyncedAttempts, syncRecords, levelAdvice, listSkills } from '../utils/records.js';
 import { allMistakes, clearMistakes } from '../utils/mistakes.js';
 import { listSentences, markSentence, pendingSentences, clearSentences, MARKS } from '../utils/madeSentences.js';
 import { reciteLessons, reciteSummary, clearRecite } from '../utils/reciteRecords.js';
@@ -23,6 +23,22 @@ function percent(value) {
 }
 
 const GRADE_NAMES = { 1: '一年級', 2: '二年級', 3: '三年級', 4: '四年級', 5: '五年級', 6: '六年級' };
+
+/** 技能紀錄：依技能（不是依關卡）看獨立答對、提示後答對、看答案，以及換新材料的遷移題。 */
+function buildSkillsTable() {
+  const rows = listSkills();
+  if (!rows.length) return h('p', { class: 'meta' }, '這個學生代碼還沒有技能紀錄。');
+  const head = h('tr', {}, ['技能', '題數', '自己答對', '提示後答對', '看了答案', '遷移題（新材料）自己答對'].map((t) => h('th', { scope: 'col' }, t)));
+  const body = rows.map((r) => h('tr', {}, [
+    h('td', {}, r.label),
+    h('td', {}, String(r.total)),
+    h('td', {}, String(r.firstTry)),
+    h('td', {}, String(r.hinted)),
+    h('td', {}, String(r.revealed)),
+    h('td', {}, r.tTotal ? `${r.tFirstTry}／${r.tTotal}` : '–'),
+  ]));
+  return h('div', { class: 'teacher-table-wrap' }, [h('table', { class: 'teacher-table' }, [h('thead', {}, [head]), h('tbody', {}, body)])]);
+}
 
 function buildRecordsTable() {
   const rows = listRecords();
@@ -272,6 +288,9 @@ function buildPanel(root) {
   root.appendChild(h('h2', {}, '作答紀錄'));
   root.appendChild(h('p', { class: 'meta' }, '正確率＝第一次作答就答對的比率。學生答錯後會得到提示並再試，最後都會通過，所以只有第一次的判斷有診斷價值。'));
   root.appendChild(buildRecordsTable());
+  root.appendChild(h('h3', {}, `技能紀錄${getStudentCode() ? `（${getStudentCode()}）` : '（未填代碼）'}`));
+  root.appendChild(h('p', { class: 'meta' }, '同一個方法在不同關卡、不同課都算在同一列。「遷移題」是學生學完方法後，換新材料、少一層幫忙時自己答對的情形；只能當教學參考，不是 IEP 進展證據。'));
+  root.appendChild(buildSkillsTable());
 
   const exportBox = h('textarea', { class: 'teacher-export', rows: '6', readonly: 'readonly', 'aria-label': '可貼進試算表的紀錄' });
   const exportBtn = h('button', { class: 'btn', type: 'button' }, '產生可貼進試算表的內容');

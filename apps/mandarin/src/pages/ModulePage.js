@@ -55,6 +55,14 @@ function availableModuleKeys(lesson) {
   }).map((entry) => entry.key);
 }
 
+// 每個大項題目預設的技能標籤；題目自己帶 skill（讀懂課文依提問策略、找部首、選關聯詞）時以題目為準
+const MODULE_SKILL = {
+  characters: 'char:pronunciation', vocabulary: 'word:meaning', idiom_builder: 'idiom',
+  sentence_practice: 'sentence:order', reading: 'reading:段落理解', main_idea: 'main-idea',
+  zhuyin_typing: 'zhuyin', polysemy: 'polysemy', polyphones: 'polyphone', lookalikes: 'lookalike',
+  listening: 'listening', rhetoric: 'rhetoric', review: 'review', visual_search: 'visual-search',
+};
+
 export function ModulePage(lesson, moduleKey) {
   const entry = findModuleEntry(moduleKey);
   const mod = lesson.modules[moduleKey];
@@ -111,7 +119,7 @@ export function ModulePage(lesson, moduleKey) {
 
   const builder = ACTIVITY_BUILDERS[moduleKey];
   if (builder) {
-    startScoreSession();
+    startScoreSession(MODULE_SKILL[moduleKey] || null);
     // 錯題盒要知道這一題是哪一課哪一大項的（和 scoreSession 同一個模式）
     startMistakeContext(lesson.lesson_id, moduleKey);
     const onModuleDone = () => {

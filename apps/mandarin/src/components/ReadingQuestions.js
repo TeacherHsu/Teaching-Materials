@@ -81,7 +81,7 @@ function buildScaffoldedItem(lessonId, item) {
       if (panel) panel.highlight();
     },
   });
-  return { ...item, hints: layers, extra: slot };
+  return { ...item, hints: layers, extra: slot, skill: item.skill || (item.strategy_tag ? `reading:${item.strategy_tag}` : null) };
 }
 
 export function ReadingQuestions({ lessonId, items, onBack, backLabel = '本課先完成', onContinue, continueLabel = '加練下一組' }) {
