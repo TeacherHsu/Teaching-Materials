@@ -1,3 +1,4 @@
+import { buildWordReadingActivity } from '../activities/wordReading.js';
 import { h, clear } from '../utils/dom.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 import { missingContentNotice } from '../activities/engine.js';
@@ -45,6 +46,7 @@ const ACTIVITY_BUILDERS = {
   lookalikes: buildLookalikesActivity,
   review: buildReviewActivity,
   visual_search: buildVisualSearchActivity,
+  word_reading: buildWordReadingActivity,
 };
 
 /** 可開始的大項清單，用來算「本課星星 N／最高 M」的分母（M = 這些大項數 × 3）。 */
@@ -61,6 +63,7 @@ const MODULE_SKILL = {
   sentence_practice: 'sentence:order', reading: 'reading:段落理解', main_idea: 'main-idea',
   zhuyin_typing: 'zhuyin', polysemy: 'polysemy', polyphones: 'polyphone', lookalikes: 'lookalike',
   listening: 'listening', rhetoric: 'rhetoric', review: 'review', visual_search: 'visual-search',
+  word_reading: 'reading-aloud:word',
 };
 
 export function ModulePage(lesson, moduleKey) {

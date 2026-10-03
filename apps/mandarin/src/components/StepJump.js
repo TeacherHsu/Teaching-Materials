@@ -11,6 +11,7 @@ export const STEP_LABELS = {
   map: '課文地圖', paragraphs: '一段一段讀', classify: '分類', decode: '詩句解碼', order: '排順序',
   'learn-clue': '學找線索', questions: '讀題找線索',
   search: '找字', mask: '遮蔽字', flash: '閃現',
+  'read-chars': '念生字', 'read-words': '念語詞',
 };
 
 /** 各關卡的同名步驟在不同關卡意思不同時，用這裡覆寫。 */

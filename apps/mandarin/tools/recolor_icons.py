@@ -24,7 +24,7 @@ ICON_COLOR = {  # 圖檔 → 主題色（moduleRegistry 的 color）
     'characters': 'blue', 'vocabulary': 'teal', 'idiom_builder': 'purple', 'sentence_practice': 'terracotta',
     'reading': 'rose', 'main_idea': 'blue', 'zhuyin_typing': 'terracotta', 'polysemy': 'olive',
     'polyphones': 'blue', 'lookalikes': 'teal', 'listening': 'teal', 'rhetoric': 'purple',
-    'review': 'terracotta', 'visual_search': 'olive',
+    'review': 'terracotta', 'visual_search': 'olive', 'word_reading': 'rose',
 }
 
 

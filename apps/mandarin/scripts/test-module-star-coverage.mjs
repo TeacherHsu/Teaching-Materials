@@ -37,6 +37,7 @@ const { buildIdiomBuilderActivity } = await import('../src/components/IdiomBuild
 const { buildReadingActivity } = await import('../src/activities/reading.js');
 const { buildMainIdeaActivity } = await import('../src/activities/mainIdea.js');
 const { buildZhuyinTypingActivity } = await import('../src/activities/zhuyinTyping.js');
+const { buildWordReadingActivity } = await import('../src/activities/wordReading.js');
 const { buildPolysemyActivity } = await import('../src/activities/polysemy.js');
 const { buildListeningActivity } = await import('../src/activities/listening.js');
 const { buildRhetoricActivity } = await import('../src/activities/rhetoric.js');
@@ -53,6 +54,7 @@ const BUILDERS = {
   reading: buildReadingActivity,
   main_idea: buildMainIdeaActivity,
   zhuyin_typing: buildZhuyinTypingActivity,
+  word_reading: buildWordReadingActivity,
   polysemy: buildPolysemyActivity,
   polyphones: buildPolyphonesActivity,
   lookalikes: buildLookalikesActivity,
@@ -61,7 +63,7 @@ const BUILDERS = {
 };
 
 // ---- 通用互動驅動器：純看 DOM 狀態決定下一步，不需要事先知道任何一題的正解 ----
-const ADVANCE_RE = /^(下一步|換我試試看|用這個方法|下一題|下一組|加練下一組|看結果|回課程首頁|繼續|再來一組|完成|我看懂了)|^我記住了$/;
+const ADVANCE_RE = /^(念對了|再念一組|下一步|換我試試看|用這個方法|下一題|下一組|加練下一組|看結果|回課程首頁|繼續|再來一組|完成|我看懂了)|^我記住了$/;
 
 /** fake-dom 的 h() 對 `disabled: 'disabled'` 這種初始屬性只會寫進 attrs，不會同步
  * FakeElement.disabled 這個屬性（那個屬性只有元件之後手動 `el.disabled = true` 才會更新）。

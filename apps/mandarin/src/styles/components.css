@@ -3592,3 +3592,20 @@
   background: var(--color-surface); color: var(--text-primary); font-size: var(--font-size-meta); cursor: pointer; }
 .step-jump__btn:hover, .step-jump__btn:focus-visible { background: var(--module-color-tint, var(--color-surface-muted)); }
 .step-jump__btn--current { background: var(--module-color-tint, var(--color-surface-muted)); border-color: var(--module-color, var(--color-primary)); font-weight: 700; cursor: default; }
+
+/* 念讀字詞 */
+.word-reading { display: grid; gap: var(--space-3); justify-items: center; text-align: center; }
+.word-reading__target { margin: 0; font-weight: 700; line-height: 1.2; letter-spacing: 0.08em; }
+.word-reading__target--char { font-size: 112px; }
+.word-reading__target--word { font-size: 72px; }
+.word-reading__controls { justify-content: center; }
+.word-reading__mic { min-width: 12em; }
+.word-reading__status { min-height: 1.5em; font-size: var(--font-size-body); }
+.word-reading__summary { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; }
+.word-reading__summary li { display: grid; gap: 2px; justify-items: center; padding: var(--space-2) var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); }
+.word-reading__summary-word { font-size: 32px; font-weight: 700; }
+.word-reading__badge { font-size: var(--font-size-meta); padding: 0 var(--space-2); border-radius: 999px; }
+.word-reading__badge--first { background: var(--color-success-surface, #e7f5ec); }
+.word-reading__badge--helped { background: var(--module-color-tint, var(--color-surface-muted)); }
+.word-reading__badge--revealed { background: var(--color-surface-muted); }
+@media (max-width: 640px) { .word-reading__target--char { font-size: 88px; } .word-reading__target--word { font-size: 52px; } }

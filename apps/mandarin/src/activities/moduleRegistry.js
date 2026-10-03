@@ -7,6 +7,7 @@ import { canStartPolyphones } from './polyphones.js';
 import { buildPronunciationItems } from './pronunciationQuestions.js';
 import { canStartMainIdea } from './mainIdea.js';
 import { canStartZhuyinTyping } from './zhuyinTyping.js';
+import { canStartWordReading } from './wordReading.js';
 import { canStartVisualSearch } from './visualSearch.js';
 
 const ROUND_MIN = 3;
@@ -178,6 +179,17 @@ export const MODULE_REGISTRY = [
     implemented: true,
     ready(lesson) {
       return canStartZhuyinTyping(lesson);
+    },
+  },
+  {
+    key: 'word_reading',
+    label: '念讀字詞',
+    icon: 'word_reading',
+    color: 'rose',
+    description: '把本課生字、語詞念出來',
+    implemented: true,
+    ready(lesson) {
+      return canStartWordReading(lesson);
     },
   },
   {

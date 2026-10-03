@@ -254,6 +254,7 @@ export const SKILL_LABELS = {
   'sentence:order': '句型：排句子',
   'main-idea': '抓重點',
   'zhuyin': '注音拼寫',
+  'reading-aloud:word': '念讀字詞',
   'polysemy': '一字多義',
   'polyphone': '一字多音',
   'lookalike': '形似字',
