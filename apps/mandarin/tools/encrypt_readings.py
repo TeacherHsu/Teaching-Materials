@@ -253,7 +253,7 @@ def encrypt(payload: dict, password: str) -> dict:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description="把課文全文加密成公開站可放的密文")
-    ap.add_argument("--password", required=True, help="教室密碼")
+    ap.add_argument("--password", help="教室密碼（不給就讀 ~/mandarin-work/.classroom-password，避免密碼留在指令紀錄）")
     ap.add_argument("--src", type=Path, default=DEFAULT_SRC, help=f"明碼課文目錄（預設 {DEFAULT_SRC}）")
     ap.add_argument(
         "--index",
@@ -284,6 +284,12 @@ def main() -> int:
         default=Path(__file__).resolve().parent.parent / "public" / "data" / "readings.enc.json",
     )
     args = ap.parse_args()
+    if not args.password:
+        pw_file = Path.home() / "mandarin-work" / ".classroom-password"
+        if not pw_file.is_file() or not pw_file.read_text(encoding="utf-8").strip():
+            print(f"沒有給 --password，也找不到 {pw_file}", file=sys.stderr)
+            return 1
+        args.password = pw_file.read_text(encoding="utf-8").strip()
 
     if not args.src.is_dir():
         print(f"找不到明碼課文目錄：{args.src}", file=sys.stderr)

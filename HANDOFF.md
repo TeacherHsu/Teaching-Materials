@@ -1,7 +1,7 @@
 # 交接紀錄（最新的寫在最上面）
 
-## 2026-10-04（深夜）｜家中 Mac｜Claude Code｜狀態：✅ 已推送；⚠️ 教室密碼待更換
-- 教室密碼原本寫死在 4 個公開檔案（自 65a2391 起），已改從 `CLASSROOM_PASSWORD` 或 `~/mandarin-work/.classroom-password` 讀取。**密碼仍在 git 歷史中，建議 CF 換新密碼並重新加密**（`python3 tools/encrypt_readings.py --password <新密碼>`，再更新 .classroom-password）。另一台電腦要跑解密工具，需自行建立該檔。
+## 2026-10-04（深夜）｜家中 Mac｜Claude Code｜狀態：✅ 已推送；教室密碼已於 2026-10-04 更換
+- 教室密碼原本寫死在 4 個公開檔案（自 65a2391 起），已改從 `CLASSROOM_PASSWORD` 或 `~/mandarin-work/.classroom-password` 讀取。舊密碼雖仍在 git 歷史，但**已換新密碼並重新加密（舊密碼解不開）**。加密器不帶 --password 時讀本機密碼檔（`python3 tools/encrypt_readings.py --password <新密碼>`，再更新 .classroom-password）。另一台電腦要跑解密工具，需自行建立該檔。
 - 讀懂課文第 3 層：當下建立面板、段落整段（≤8 句）、關鍵詞螢光筆（只畫和答案相同、題目沒有的詞）。
 - 字感訓練：干擾項全為形似字（hanzi/<冊>.json 的 similar）；遮蔽字依部件遮共同的那半（mask_side）。
 - 部件拼字移到字感訓練下、無圖示；練習句子圖示重繪（tools/draw_sentence_icon.py）。
