@@ -1,5 +1,11 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-10-04｜家中 Mac｜Claude Code＋Codex｜狀態：✅ 版面視覺第一輪已合併
+- Codex（gpt-5.5，sandbox 內不能寫 .git，所以只改檔、由 Claude 驗收後 commit）改了 tokens.css／base.css／components.css：狀態色改 token、窄螢幕卡片格線可縮、提示面板加左側色條、句子詞塊 ≥44px、iPad 寬模組兩欄。報告：`apps/mandarin/docs/codex-visual-report-20261004.md`。
+- Claude 補：手機頁首原本直排三列（187px）改成一列（72px）。
+- 驗收：全部測試、build、check-dist 通過；375px 與 1024px 無橫向捲動，最小字 18px、可點元素皆 ≥44px。
+- 之後派 Codex：`~/.codex/config.toml` 的 model 仍是 gpt-5.4（ChatGPT 帳號不能用），要在 Codex 裡 /model 換 gpt-5.5；在 worktree 裡不要叫它跑 git。
+
 ## 2026-10-04｜家中 Mac｜Claude Code｜狀態：✅ 已推送（優化清單大致完成）
 - 學生代碼（CF 決定：先只記代碼）：教師頁設定，英數 8 碼內；紀錄、匯出、試算表同步都帶代碼。教師手冊 Apps Script 多兩欄，已部署的需重新部署新版本。
 - 讀懂課文鷹架：三上／四上／六上選擇題都有證據＋三層提示＋錯因；四上干擾項重寫。一上／二上開放題 82 題有證據（打開段落→畫線索→參考答案），看圖題 35、開放思考題 31 維持文字提示。

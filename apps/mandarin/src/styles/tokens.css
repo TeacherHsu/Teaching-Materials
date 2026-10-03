@@ -30,6 +30,19 @@
   --text-secondary: #5f594f;
   --text-on-primary: #ffffff;
 
+  --color-success-surface: #e4f3ea;
+  --color-success-strong-surface: #b9e6c8;
+  --color-danger-surface: #fbe9e7;
+  --color-danger-strong-surface: #f7c6c2;
+  --color-warning-surface: #fff8ec;
+  --color-warning-border: #d9a729;
+  --color-highlight-surface: #ffe9a3;
+  --color-highlight-line: #b87900;
+  --color-voice-surface: #fff6e0;
+  --color-voice-border: #d6ac32;
+  --text-on-light-status: #1f1b16;
+  --text-footer: #777064;
+
   /* Typography（依需求下限設定，行高皆 >=1.5） */
   --font-family-base: -apple-system, BlinkMacSystemFont, "PingFang TC",
     "Microsoft JhengHei", "Heiti TC", system-ui, sans-serif;
