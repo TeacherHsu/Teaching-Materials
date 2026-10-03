@@ -3,7 +3,7 @@ import { h } from '../utils/dom.js';
 const NS = 'http://www.w3.org/2000/svg';
 
 /** 用筆畫資料畫一個字；diff 裡的筆畫上色，其他筆畫淡灰。 */
-function glyph(strokes, diff) {
+export function glyph(strokes, diff) {
   const svg = document.createElementNS(NS, 'svg');
   svg.setAttribute('viewBox', '0 0 1024 1024');
   svg.setAttribute('class', 'hanzi-compare__glyph');
@@ -33,6 +33,17 @@ export function HanziCompare({ chars, data, diff }) {
     h('div', { class: 'hanzi-compare__row' }, usable.map((c) => h('figure', { class: 'hanzi-compare__item' }, [
       glyph(data.chars[c].s, diff[c]),
     ]))),
+    h('p', { class: 'meta hanzi-compare__credit' }, '字形：Make Me a Hanzi（Arphic PL）'),
+  ]);
+}
+
+/** 單一個字，部首的筆畫上色（生字「找部首」第 2 層提示）。 */
+export function RadicalGlyph({ char, data }) {
+  const strokes = data?.chars?.[char]?.s;
+  const marked = data?.radical_strokes?.[char];
+  if (!strokes || !marked) return null;
+  return h('div', { class: 'hanzi-compare', role: 'img', 'aria-label': `「${char}」上色的部分就是部首` }, [
+    h('div', { class: 'hanzi-compare__row' }, [h('figure', { class: 'hanzi-compare__item' }, [glyph(strokes, marked)])]),
     h('p', { class: 'meta hanzi-compare__credit' }, '字形：Make Me a Hanzi（Arphic PL）'),
   ]);
 }

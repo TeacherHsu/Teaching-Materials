@@ -1,5 +1,12 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-10-04（晚）｜家中 Mac｜Claude Code｜狀態：✅ 生字／形似字部件鷹架上線
+- 資料：Make Me a Hanzi（`~/mandarin-work/_vendor/makemeahanzi/`，不進 repo），`tools/build_hanzi_parts.py` 產生 `public/data/_index/hanzi/<冊>.json`（筆畫路徑、形似字差異筆畫、生字部首筆畫），授權全文在同目錄 LICENSES/。
+- 形似字：第 2 層提示同組字並排、不同部件上色；CF 已確認三上 74 組標色。標錯的組加進 build 腳本的 EXCLUDE。
+- 生字找部首：第 2 層把字畫出來、部首筆畫上色（各冊 57–192 字可標，約九成）；第 3 層說明部首變形（手→扌）。部首本身成字（口、牛）或資料拆不出的字只有文字提示。
+- DragToSlot 支援 layer.on，挑戰層也有看提示。
+- 換資料或新增課次後要重跑：`python3 tools/build_hanzi_parts.py`。
+
 ## 2026-10-04｜家中 Mac｜Claude Code＋Codex｜狀態：✅ 版面視覺第一輪已合併
 - Codex（gpt-5.5，sandbox 內不能寫 .git，所以只改檔、由 Claude 驗收後 commit）改了 tokens.css／base.css／components.css：狀態色改 token、窄螢幕卡片格線可縮、提示面板加左側色條、句子詞塊 ≥44px、iPad 寬模組兩欄。報告：`apps/mandarin/docs/codex-visual-report-20261004.md`。
 - Claude 補：手機頁首原本直排三列（187px）改成一列（72px）。

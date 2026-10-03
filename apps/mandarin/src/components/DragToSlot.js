@@ -388,7 +388,8 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
     let hintUsed = false;
     let hintLevel = 0;
     const layers = Array.isArray(item.hints) ? item.hints : [];
-    const hintBtn = layers.length && getScaffoldLevel().key !== 'challenge'
+    // 每一層都可以主動看提示（2026-10-03 起，和 ChoiceQuiz 一致）
+    const hintBtn = layers.length
       ? h('button', { class: 'btn btn--ghost quiz-hint-button', type: 'button', style: 'margin:12px 0 0 8px' }, `看提示（1／${layers.length}）`)
       : null;
     if (hintBtn) {
@@ -397,6 +398,7 @@ export function DragToSlot({ items, onComplete, onBack, backLabel = '回課程�
         const layer = layers[hintLevel];
         hintLevel += 1;
         hintUsed = true;
+        if (typeof layer.on === 'function') layer.on();
         if (layer.eliminate) {
           const wrong = options.filter((o) => o.id !== item.answerId && o.id !== placed)
             .map((o) => chipById.get(o.id)).filter((c) => c && !c.disabled);

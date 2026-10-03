@@ -10,6 +10,8 @@ import { CardWalkthrough } from '../components/CardWalkthrough.js';
 import { filterByStatus } from '../utils/preview.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { DragToSlot } from '../components/DragToSlot.js';
+import { RadicalGlyph } from '../components/HanziCompare.js';
+import { loadHanziParts } from '../utils/hanziParts.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { buildExtensionLinks } from '../components/ExtensionLinks.js';
 import { PronunciationNotice } from '../components/PronunciationNotice.js';
@@ -78,33 +80,58 @@ function pickDistractorRadicals(all, excludeRadicals, n) {
  *   2 縮小：部首常在左邊或上面，並劃掉一個錯誤選項（只剩兩個選項時不劃）
  *   3 示範：列出本課同部首的其他字——看得出共同的部分，就知道部首是哪個
  */
+// 部首在字裡常變形：選項寫「手」，字裡長成「扌」。第 3 層要說清楚，不然學生找不到「手」。
+const RADICAL_VARIANTS = {
+  水: '氵', 手: '扌', 心: '忄', 人: '亻', 犬: '犭', 衣: '衤', 刀: '刂', 火: '灬', 艸: '艹', 辵: '辶',
+  邑: '阝（右邊）', 阜: '阝（左邊）', 玉: '王', 肉: '月', 金: '釒', 糸: '糹', 言: '訁', 食: '飠', 示: '礻',
+  竹: '⺮', 网: '罒', 老: '耂', 足: '⻊', 牛: '牜', 攴: '攵',
+};
+
 export function radicalHints(c, allCharacters, optionCount) {
   const same = (allCharacters || []).filter((o) => o.char !== c.char && o.radical === c.radical).map((o) => o.char);
+  const plain = String(c.radical || '').normalize('NFKC');
+  const variant = RADICAL_VARIANTS[plain];
+  const variantNote = variant ? `「${plain}」當部首時常寫成「${variant}」。` : '';
   return [
     { text: `部首常常和字的意思有關。想一想「${c.char}」的意思和什麼有關？` },
     { text: '部首常在字的左邊或上面，先看那裡。', eliminate: optionCount >= 3 ? 1 : 0 },
     same.length
-      ? { text: `這幾個字的部首都一樣：「${same.slice(0, 3).join('」「')}」。它們共同的部分就是部首。` }
-      : { text: `把「${c.char}」拆成兩半，看哪一半和選項長得一樣。` },
+      ? { text: `${variantNote}這幾個字的部首都一樣：「${same.slice(0, 3).join('」「')}」。它們共同的部分就是部首。` }
+      : { text: `${variantNote}把「${c.char}」拆成兩半，看哪一半和選項長得一樣。` },
   ];
 }
 
-function buildRadicalDragItems(round, allCharacters) {
+function buildRadicalDragItems(round, allCharacters, volume) {
   const roundRadicals = new Set(round.map((c) => c.radical));
   return round.map((c) => {
     const distractors = pickDistractorRadicals(allCharacters, roundRadicals, Math.max(1, getScaffoldLevel().optionCount - 1));
     const options = shuffled([c.radical, ...distractors]).map((r) => ({ id: `radical:${r}`, label: r }));
+    // 第 2 層提示：把字畫出來、部首那幾筆上色（資料載不到就只有文字提示）
+    const glyphSlot = h('div', { class: 'hanzi-compare-slot' });
+    glyphSlot.hidden = true;
+    const hints = radicalHints(c, allCharacters, options.length);
+    hints[1] = {
+      ...hints[1],
+      text: `${hints[1].text} 看看上色的地方。`,
+      on: () => loadHanziParts(volume).then((data) => {
+        const el = RadicalGlyph({ char: c.char, data });
+        if (!el) return;
+        glyphSlot.replaceChildren(el);
+        glyphSlot.hidden = false;
+      }),
+    };
     return {
       id: `radical-item:${c.char}`,
       context: h('div', { class: 'idiom-builder__card' }, [
         h('p', { class: 'quiz-stem' }, `「${c.char}」的部首是？`),
+        glyphSlot,
       ]),
       speakText: `「${c.char}」的部首是？`,
       slotLabel: '？',
       options,
       answerId: `radical:${c.radical}`,
       hint: '想一想這個字拆開來看，哪一部分是部首？',
-      hints: radicalHints(c, allCharacters, options.length),
+      hints,
       explanation: `「${c.char}」的部首是「${c.radical}」。`,
     };
   });
@@ -259,7 +286,7 @@ export function buildCharactersActivity(lesson, onBack) {
       );
       container.appendChild(
         DragToSlot({
-          items: buildRadicalDragItems(radicalRounds[roundIndex], characters),
+          items: buildRadicalDragItems(radicalRounds[roundIndex], characters, String(lesson.lesson_id || '').slice(0, 7)),
           backLabel: isLastRound ? '回課程首頁' : '本課先完成',
           onContinue: isLastRound ? null : () => {
             roundIndex += 1;

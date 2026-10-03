@@ -10,6 +10,7 @@
 import glob
 import json
 import os
+import unicodedata
 
 VENDOR = os.path.expanduser('~/mandarin-work/_vendor/makemeahanzi')
 OUT = 'public/data/_index/hanzi'
@@ -38,6 +39,40 @@ def parse(ids):
         kids.append(ids[i:j])
         i = j
     return ids[0], kids
+
+
+# 部首的變形寫法：課本部首寫「水」，字裡長成「氵」
+RADICAL_FORMS = {
+    '水': '氵氺', '手': '扌', '心': '忄㣺', '人': '亻', '犬': '犭', '衣': '衤', '刀': '刂', '火': '灬',
+    '艸': '艹', '辵': '辶⻌', '邑': '阝', '阜': '阝', '玉': '王', '肉': '月⺼', '金': '釒钅', '糸': '糹纟',
+    '言': '訁讠', '食': '飠饣', '示': '礻', '竹': '⺮', '网': '罒', '老': '耂', '足': '⻊', '牛': '牜',
+    '羊': '⺶', '爪': '爫', '攴': '攵', '歹': '歺', '冫': '冫', '彳': '彳', '目': '目', '頁': '页',
+}
+
+
+def component_at(ids, path):
+    """沿著 matches 的路徑，回傳經過的每一層部件字串。"""
+    chain, cur = [], ids
+    for k in path:
+        op, kids = parse(cur)
+        if not kids or k >= len(kids):
+            break
+        cur = kids[k]
+        chain.append(cur)
+    return chain
+
+
+def radical_strokes(char, radical, D):
+    me = D.get(char)
+    if not me or not radical or not me.get('matches'):
+        return None
+    radical = unicodedata.normalize('NFKC', radical)  # 康熙部首「⼤」→「大」
+    forms = {radical, *RADICAL_FORMS.get(radical, '')}
+    hits = [i for i, m in enumerate(me['matches'])
+            if m and any(comp in forms for comp in component_at(me['decomposition'], m))]
+    if not hits or len(hits) == len(me['matches']):
+        return None  # 找不到，或整個字就是部首（例：「口」部的「口」），不標
+    return hits
 
 
 def diff_strokes(char, group, D):
@@ -78,7 +113,7 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     for vol_dir in sorted(glob.glob('public/data/115AG*')):
         vol = os.path.basename(vol_dir)
-        need, diffs = set(), {}
+        need, diffs, radicals = set(), {}, {}
         for path in sorted(glob.glob(f'{vol_dir}/lesson*.json')):
             lesson = json.load(open(path))
             for g in lesson.get('lookalikes', []):
@@ -94,12 +129,16 @@ def main():
                 ch = c.get('char') or c.get('character')
                 if ch:
                     need.add(ch)
+                    r = radical_strokes(ch, c.get('radical'), D)
+                    if r:
+                        radicals[ch] = r
         chars = {c: {'s': G[c], 'd': D[c].get('decomposition', '')} for c in sorted(need) if c in G and c in D}
         out = {'source': 'Make Me a Hanzi（dictionary: LGPL-3.0；graphics: Arphic Public License）',
-               'chars': chars, 'lookalike_diff': diffs}
+               'chars': chars, 'lookalike_diff': diffs, 'radical_strokes': radicals}
         with open(f'{OUT}/{vol}.json', 'w') as f:
             json.dump(out, f, ensure_ascii=False, separators=(',', ':'))
-        print(vol, len(chars), '字；有部件差異的形似字組', len(diffs), f'{os.path.getsize(f"{OUT}/{vol}.json") // 1024}KB')
+        n_chars = sum(1 for p in glob.glob(f'{vol_dir}/lesson*.json') for c in json.load(open(p)).get('characters', []))
+        print(vol, len(chars), '字；有部件差異的形似字組', len(diffs), f'；部首可標 {len(radicals)}/{n_chars}', f'{os.path.getsize(f"{OUT}/{vol}.json") // 1024}KB')
 
 
 if __name__ == '__main__':
