@@ -16,6 +16,8 @@ VENDOR = os.path.expanduser('~/mandarin-work/_vendor/makemeahanzi')
 OUT = 'public/data/_index/hanzi'
 # CF 核對後標「有誤」的形似字組 id，放這裡就不標色（例：'lookalike:115AG3H06:1'）
 EXCLUDE = set()
+# CF 核對後筆順有誤的生字，放這裡就不給動畫（卡片仍有外部筆順連結）
+STROKE_EXCLUDE = set()
 ARITY = {'⿰': 2, '⿱': 2, '⿲': 3, '⿳': 3, '⿴': 2, '⿵': 2, '⿶': 2, '⿷': 2, '⿸': 2, '⿹': 2, '⿺': 2, '⿻': 2}
 
 
@@ -109,11 +111,11 @@ def main():
     G = {}
     for line in open(f'{VENDOR}/graphics.txt'):
         x = json.loads(line)
-        G[x['character']] = x['strokes']
+        G[x['character']] = x
     os.makedirs(OUT, exist_ok=True)
     for vol_dir in sorted(glob.glob('public/data/115AG*')):
         vol = os.path.basename(vol_dir)
-        need, diffs, radicals = set(), {}, {}
+        need, diffs, radicals, stroke_counts = set(), {}, {}, {}
         for path in sorted(glob.glob(f'{vol_dir}/lesson*.json')):
             lesson = json.load(open(path))
             for g in lesson.get('lookalikes', []):
@@ -129,14 +131,25 @@ def main():
                 ch = c.get('char') or c.get('character')
                 if ch:
                     need.add(ch)
+                    stroke_counts[ch] = c.get('stroke_count')
                     r = radical_strokes(ch, c.get('radical'), D)
                     if r:
                         radicals[ch] = r
-        chars = {c: {'s': G[c], 'd': D[c].get('decomposition', '')} for c in sorted(need) if c in G and c in D}
+        chars = {c: {'s': G[c]['strokes'], 'd': D[c].get('decomposition', '')} for c in sorted(need) if c in G and c in D}
+        # 筆順動畫只給生字：筆畫中線（medians）；筆畫數和課本不同的字不給，免得教錯筆順
+        mismatch = []
+        for c, n in stroke_counts.items():
+            if c in chars and n:
+                if len(G[c]['medians']) == n and c not in STROKE_EXCLUDE:
+                    chars[c]['m'] = [[[round(v) for v in pt] for pt in med] for med in G[c]['medians']]
+                else:
+                    mismatch.append(c)
         out = {'source': 'Make Me a Hanzi（dictionary: LGPL-3.0；graphics: Arphic Public License）',
                'chars': chars, 'lookalike_diff': diffs, 'radical_strokes': radicals}
         with open(f'{OUT}/{vol}.json', 'w') as f:
             json.dump(out, f, ensure_ascii=False, separators=(',', ':'))
+        anim = sum(1 for c in chars.values() if 'm' in c)
+        print(f'  筆順動畫 {anim} 字；筆畫數對不上或排除 {len(mismatch)} 字：{"".join(sorted(mismatch))}')
         n_chars = sum(1 for p in glob.glob(f'{vol_dir}/lesson*.json') for c in json.load(open(p)).get('characters', []))
         print(vol, len(chars), '字；有部件差異的形似字組', len(diffs), f'；部首可標 {len(radicals)}/{n_chars}', f'{os.path.getsize(f"{OUT}/{vol}.json") // 1024}KB')
 

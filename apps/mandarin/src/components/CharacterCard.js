@@ -2,6 +2,12 @@ import { h } from '../utils/dom.js';
 import { SpeakButton } from './SpeakButton.js';
 import { ImageFrame } from './ImageFrame.js';
 import { hasCharacterStory } from '../pages/CharacterStoryPage.js';
+import { StrokeAnimation } from './StrokeAnimation.js';
+import { loadHanziParts } from '../utils/hanziParts.js';
+import { isPreview } from '../utils/preview.js';
+
+// 筆順動畫：CF 核對完「生字筆順-待確認」清單之前，只在預覽模式出現。核對完改成 true。
+const STROKE_ANIMATION_APPROVED = false;
 
 const EXTERNAL_LINK_ICON = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:4px;vertical-align:-2px"><path d="M14 5h5v5"/><path d="M19 5l-8 8"/><path d="M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>`;
 
@@ -61,5 +67,25 @@ export function CharacterCard(character, originExtension = null, lessonId = '') 
         )
       : null,
   ]);
+  // 站內筆順動畫：資料載到、而且這個字有筆順（筆畫數和課本一致）才出現按鈕。
+  // 沒有的字照舊用上面的外部「筆順與解釋」。
+  if (lessonId && typeof document !== 'undefined' && (STROKE_ANIMATION_APPROVED || isPreview())) {
+    const slot = h('div', { class: 'character-card__stroke' });
+    const toggle = h('button', { class: 'btn btn--secondary character-card__stroke-btn', type: 'button', hidden: true }, '看筆順');
+    let open = false;
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      open = !open;
+      toggle.textContent = open ? '收起筆順' : '看筆順';
+      if (!open) { slot.replaceChildren(); return; }
+      loadHanziParts(lessonId.slice(0, 7)).then((data) => {
+        const d = data?.chars?.[char];
+        if (d?.m) slot.replaceChildren(StrokeAnimation({ char, strokes: d.s, medians: d.m }));
+      });
+    });
+    loadHanziParts(lessonId.slice(0, 7)).then((data) => { if (data?.chars?.[char]?.m) toggle.hidden = false; });
+    card.insertBefore(slot, card.children[2] || null);
+    card.insertBefore(toggle, slot);
+  }
   return card;
 }

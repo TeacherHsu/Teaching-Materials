@@ -1,5 +1,10 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-10-04（夜）｜家中 Mac｜Claude Code｜狀態：🔄 筆順動畫待 CF 核對
+- 生字卡新增「看筆順」（站內動畫：播放／下一筆／重來；reduced-motion 時不描繪、一筆一筆出現）。
+- 資料：hanzi/<冊>.json 加 medians（`m`）。**筆畫數和課本不同的字自動不給**（艹、辶、阝等兩岸寫法不同），共排除 61 字，這些字只保留外部筆順連結。
+- 上線閘門：`src/components/CharacterCard.js` 的 `STROKE_ANIMATION_APPROVED = false`，目前只在 `?preview=1` 出現。CF 核對 `~/mandarin-work/生字筆順-待確認.html`（808 字）後：有誤的字加進 `tools/build_hanzi_parts.py` 的 STROKE_EXCLUDE 重跑，再把開關改 true。
+
 ## 2026-10-04（晚）｜家中 Mac｜Claude Code｜狀態：✅ 生字／形似字部件鷹架上線
 - 資料：Make Me a Hanzi（`~/mandarin-work/_vendor/makemeahanzi/`，不進 repo），`tools/build_hanzi_parts.py` 產生 `public/data/_index/hanzi/<冊>.json`（筆畫路徑、形似字差異筆畫、生字部首筆畫），授權全文在同目錄 LICENSES/。
 - 形似字：第 2 層提示同組字並排、不同部件上色；CF 已確認三上 74 組標色。標錯的組加進 build 腳本的 EXCLUDE。

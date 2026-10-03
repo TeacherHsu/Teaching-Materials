@@ -3522,3 +3522,14 @@
 .hanzi-compare__stroke { fill: color-mix(in srgb, var(--text-secondary) 35%, transparent); }
 .hanzi-compare__stroke--diff { fill: var(--module-color, var(--color-primary)); }
 .hanzi-compare__credit { text-align: center; margin-top: var(--space-1); }
+
+/* 站內筆順動畫 */
+.stroke-anim { display: flex; flex-direction: column; align-items: center; gap: var(--space-1); margin-top: var(--space-2); }
+.stroke-anim__svg { width: 200px; height: 200px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md);
+  background-image: linear-gradient(var(--color-border) 1px, transparent 1px), linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: 100px 100px; background-position: 0 0; }
+.stroke-anim__ghost { fill: color-mix(in srgb, var(--text-secondary) 18%, transparent); }
+.stroke-anim__ink { fill: none; stroke: var(--module-color, var(--color-primary)); stroke-width: 128; stroke-linecap: round; stroke-linejoin: round; }
+.stroke-anim__controls { display: flex; gap: var(--space-2); flex-wrap: wrap; justify-content: center; }
+.stroke-anim__credit { text-align: center; }
+.character-card__stroke-btn[hidden] { display: none; }
