@@ -39,6 +39,7 @@ import { recordOutcome } from '../utils/scoreSession.js';
 import { celebrateCorrect } from '../utils/celebrate.js';
 import { noteMistake } from '../utils/mistakes.js';
 import { HintPanel } from '../components/HintPanel.js';
+import { hanziPartsIfReady } from '../utils/hanziParts.js';
 
 // 非字干擾：用 Unicode 既有符號，不需要美術資源。
 // 刻意挑「筆畫感」接近漢字但明顯不是字的形狀。
@@ -47,8 +48,9 @@ const NON_CHARS = ['◌', '☺', '♪', '✦', '❖', '⌘', '✺', '◍', '❂'
 // 字陣大小依鷹架：支持層小一點，挑戰層大一點。
 const GRID = {
   support: { cols: 3, rows: 3, targets: 2, nonChars: 3 },
-  standard: { cols: 4, rows: 4, targets: 3, nonChars: 3 },
-  challenge: { cols: 5, rows: 5, targets: 4, nonChars: 2 },
+  // 標準、挑戰層不放非字符號：干擾項全部是形似字（CF 2026-10-04）
+  standard: { cols: 4, rows: 4, targets: 3, nonChars: 0 },
+  challenge: { cols: 5, rows: 5, targets: 4, nonChars: 0 },
 };
 
 /** 可用的形近字組：每組至少要有兩個字才構成「辨識」。 */
@@ -69,12 +71,13 @@ export function canStartVisualSearch(lesson) {
  * 組一輪字陣。
  * @returns {{target:string, cells:Array<{text:string, kind:'target'|'lookalike'|'symbol'}>}}
  */
-export function buildRound(group, level, shuffleImpl = shuffle) {
+export function buildRound(group, level, shuffleImpl = shuffle, similar = {}) {
   const config = GRID[level] || GRID.standard;
   const size = config.cols * config.rows;
   const chars = shuffleImpl(group.chars);
   const target = chars[0];
-  const distractors = chars.slice(1);
+  // 同組形似字優先，再補全站字庫裡和目標字共用部件的字（例：根 → 很、恨、狠）
+  const distractors = [...chars.slice(1), ...(similar[target] || []).filter((c) => !chars.includes(c))];
 
   const cells = [];
   for (let i = 0; i < config.targets; i += 1) cells.push({ text: target, kind: 'target' });
@@ -95,8 +98,12 @@ export function buildRound(group, level, shuffleImpl = shuffle) {
  * 不能先把整組洗牌再取前四個：一組超過四個字時（六上 L05「戴載截裁栽」），
  * 正解有機會被切掉，題目就沒有正確答案（CF 2026-10-03 回報）。
  */
-export function optionsWithAnswer(answer, chars, shuffleImpl = shuffle, max = 4) {
-  const others = shuffleImpl(chars.filter((c) => c !== answer)).slice(0, max - 1);
+export function optionsWithAnswer(answer, chars, shuffleImpl = shuffle, max = 4, extra = []) {
+  // 同組形似字先放，不夠四個再用補充的形似字
+  const others = [
+    ...shuffleImpl(chars.filter((c) => c !== answer)),
+    ...extra.filter((c) => c !== answer && !chars.includes(c)),
+  ].slice(0, max - 1);
   return shuffleImpl([answer, ...others]);
 }
 
@@ -111,17 +118,20 @@ const MASK_SIDES = [
  * 遮罩補全：顯示被遮掉一半的字，從同組形近字裡選出正確的。
  * 形近字當選項是刻意的——它們的另一半長得很像，學生必須看懂露出來的部件。
  */
-export function buildMaskItems(groups, shuffleImpl = shuffle) {
+export function buildMaskItems(groups, shuffleImpl = shuffle, parts = null) {
   const items = [];
   for (const group of groups) {
     for (const char of group.chars) {
       const others = group.chars.filter((c) => c !== char);
       if (!others.length) continue;
-      const side = shuffleImpl(MASK_SIDES)[0];
+      // 遮「共同的那半」、露出不同的部件（墨／黑 遮下半部就兩個都剩「黑」，沒有正解）。
+      // 部件資料算不出方向的字才隨機。
+      const planned = parts?.mask_side?.[group.id]?.[char];
+      const side = MASK_SIDES.find((m) => m.key === planned) || shuffleImpl(MASK_SIDES)[0];
       items.push({
         char,
         side,
-        options: optionsWithAnswer(char, group.chars, shuffleImpl),
+        options: optionsWithAnswer(char, group.chars, shuffleImpl, 4, parts?.similar?.[char] || []),
         answer: char,
       });
     }
@@ -133,14 +143,14 @@ export function buildMaskItems(groups, shuffleImpl = shuffle) {
  * 閃現後寫出：字出現兩秒就消失，再從形近字裡選出剛剛看到的那個。
  * 看得到字的時候不能作答，看不到的時候才能選——這樣才是考記憶不是考比對。
  */
-export function buildFlashItems(groups, shuffleImpl = shuffle) {
+export function buildFlashItems(groups, shuffleImpl = shuffle, parts = null) {
   const items = [];
   for (const group of groups) {
     if (group.chars.length < 2) continue;
     for (const char of group.chars) {
       items.push({
         char,
-        options: optionsWithAnswer(char, group.chars, shuffleImpl),
+        options: optionsWithAnswer(char, group.chars, shuffleImpl, 4, parts?.similar?.[char] || []),
         answer: char,
       });
     }
@@ -274,6 +284,11 @@ function TypeAnswer({ item, hint, onResolved }) {
  * @param {() => void} onBack
  */
 export function buildVisualSearchActivity(lesson, onBack) {
+  // 部件資料（補充形似字、遮蔽方向）在課次首頁就先載好；還沒載到就用原本的形似字組。
+  return buildVisualSearchWithParts(lesson, onBack, hanziPartsIfReady(String(lesson.lesson_id || '').slice(0, 7)));
+}
+
+function buildVisualSearchWithParts(lesson, onBack, parts) {
   const groups = usableLookalikeGroups(lesson);
   const container = h('div', {});
 
@@ -286,8 +301,8 @@ export function buildVisualSearchActivity(lesson, onBack) {
   const level = getScaffoldLevelKey();
 
   // 三個步驟依序進行：找字 → 遮罩補全 → 閃現後寫出，由易到難。
-  const maskItems = buildMaskItems(groups).slice(0, GRID[level]?.targets ? 4 : 4);
-  const flashItems = buildFlashItems(groups).slice(0, 4);
+  const maskItems = buildMaskItems(groups, shuffle, parts).slice(0, 4);
+  const flashItems = buildFlashItems(groups, shuffle, parts).slice(0, 4);
   const steps = ['search'];
   if (maskItems.length) steps.push('mask');
   if (flashItems.length) steps.push('flash');
@@ -318,7 +333,7 @@ export function buildVisualSearchActivity(lesson, onBack) {
       return;
     }
 
-    const round = buildRound(groups[roundIndex], level);
+    const round = buildRound(groups[roundIndex], level, shuffle, parts?.similar || {});
     const found = new Set();
     const wanted = round.cells.filter((c) => c.kind === 'target').length;
     let misses = 0;

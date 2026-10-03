@@ -103,6 +103,48 @@ def diff_strokes(char, group, D):
     return strokes
 
 
+def stroke_center(strokes_median, idx):
+    pts = [pt for i in idx for pt in strokes_median[i]]
+    if not pts:
+        return None
+    # graphics 座標 y 軸朝上（900 在上）
+    return sum(p[0] for p in pts) / len(pts), sum(p[1] for p in pts) / len(pts)
+
+
+def mask_side(char, diff, G):
+    """遮蔽字要遮「共同的那半」，讓不同的部件露出來；回傳要遮的方向。"""
+    if not diff or char not in G:
+        return None
+    c = stroke_center(G[char]['medians'], diff)
+    if not c:
+        return None
+    dx, dy = c[0] - 512, c[1] - 388
+    if abs(dx) >= abs(dy):
+        return 'right' if dx < 0 else 'left'   # 差異在左 → 遮右
+    return 'bottom' if dy > 0 else 'top'       # 差異在上 → 遮下
+
+
+def similar_chars(char, pool, D, limit=4):
+    """同結構、共用至少一個部件的字（從全站字庫找），當字感訓練的形似字干擾項。"""
+    op, kids = parse(D.get(char, {}).get('decomposition', ''))
+    # 拆不乾淨（含「？」）或交疊結構（⿻）的字，部件不可靠，不找
+    if not kids or op == '⿻' or any('？' in k for k in kids):
+        return []
+    scored = []
+    for o in pool:
+        if o == char or o not in D:
+            continue
+        o_op, o_kids = parse(D[o]['decomposition'])
+        if o_op != op or len(o_kids) != len(kids) or any('？' in k for k in o_kids):
+            continue
+        same = [a for a, b in zip(kids, o_kids) if a == b]
+        # 只共用部首（欄／村都是木部）看起來不像；要共用部首以外的部件（欄／攔共用「闌」）才算形似
+        radical_forms = {D[char].get('radical', '')} | set(RADICAL_FORMS.get(D[char].get('radical', ''), ''))
+        if same and len(same) < len(kids) and any(x not in radical_forms for x in same):
+            scored.append((-len(same), o))
+    return [o for _, o in sorted(scored)[:limit]]
+
+
 def main():
     D = {}
     for line in open(f'{VENDOR}/dictionary.txt'):
@@ -113,9 +155,16 @@ def main():
         x = json.loads(line)
         G[x['character']] = x
     os.makedirs(OUT, exist_ok=True)
+    pool = set()
+    for path in glob.glob('public/data/115AG*/lesson*.json'):
+        lesson = json.load(open(path))
+        for g in lesson.get('lookalikes', []):
+            pool.update(c['char'] for c in g.get('chars', []) if c.get('char'))
+        pool.update(c.get('char') for c in lesson.get('characters', []) if c.get('char'))
     for vol_dir in sorted(glob.glob('public/data/115AG*')):
         vol = os.path.basename(vol_dir)
         need, diffs, radicals, stroke_counts = set(), {}, {}, {}
+        masks, similar = {}, {}
         for path in sorted(glob.glob(f'{vol_dir}/lesson*.json')):
             lesson = json.load(open(path))
             for g in lesson.get('lookalikes', []):
@@ -127,6 +176,12 @@ def main():
                     s = diff_strokes(c, chars, D)
                     if s:
                         diffs.setdefault(g['id'], {})[c] = s
+                        side = mask_side(c, s, G)
+                        if side:
+                            masks.setdefault(g['id'], {})[c] = side
+                    extra = [o for o in similar_chars(c, pool, D) if o not in chars]
+                    if extra:
+                        similar[c] = extra  # 只當文字干擾項用，不需要筆畫資料
             for c in lesson.get('characters', []):
                 ch = c.get('char') or c.get('character')
                 if ch:
@@ -145,7 +200,8 @@ def main():
                 else:
                     mismatch.append(c)
         out = {'source': 'Make Me a Hanzi（dictionary: LGPL-3.0；graphics: Arphic Public License）',
-               'chars': chars, 'lookalike_diff': diffs, 'radical_strokes': radicals}
+               'chars': chars, 'lookalike_diff': diffs, 'radical_strokes': radicals,
+               'mask_side': masks, 'similar': similar}
         with open(f'{OUT}/{vol}.json', 'w') as f:
             json.dump(out, f, ensure_ascii=False, separators=(',', ':'))
         anim = sum(1 for c in chars.values() if 'm' in c)

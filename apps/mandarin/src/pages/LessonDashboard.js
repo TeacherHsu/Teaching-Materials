@@ -12,6 +12,7 @@ import { dueCount } from '../utils/mistakes.js';
 import { redoSentences } from '../utils/madeSentences.js';
 import { mistakeEntry } from './MistakePage.js';
 import { partdleUrl } from '../utils/partdle.js';
+import { loadHanziParts } from '../utils/hanziParts.js';
 import { quizEntry } from './QuizPage.js';
 
 const STATUS_CLASS = {
@@ -29,6 +30,9 @@ const STATUS_BUTTON_LABEL = {
 const CORE_MODULES = new Set(['characters', 'vocabulary', 'sentence_practice', 'reading']);
 
 export function LessonDashboard(lesson) {
+  // 先在背景載入這冊的字形／部件資料：字感訓練、形似字、生字部首、筆順都會用到，
+  // 學生點進活動時就已經有了。
+  if (typeof fetch === 'function') loadHanziParts(String(lesson.lesson_id || '').slice(0, 7)).catch?.(() => {});
   const root = h('div', { class: 'container' });
   root.appendChild(
     h('p', { class: 'breadcrumb' }, [
@@ -225,7 +229,7 @@ export function LessonDashboard(lesson) {
   if (visualCard && challengeGrid.children[0] !== visualCard) {
     challengeGrid.insertBefore(visualCard, challengeGrid.children[0]);
   }
-  // 雄老師部件拼字放在字感訓練上方（CF 2026-10-03）：兩者都是在練字形，
+  // 雄老師部件拼字放在字感訓練**下方**、不放圖示（CF 2026-10-04）：兩者都是在練字形，
   // 先在站內做字感，再到外站拼部件。外連另開分頁，學生關掉就回到這裡。
   const partdle = partdleUrl(lesson);
   if (partdle) {
@@ -236,13 +240,13 @@ export function LessonDashboard(lesson) {
       rel: 'noopener noreferrer',
       'data-module-key': 'partdle',
     }, [
-      h('span', { class: 'entry-card__icon', 'aria-hidden': 'true', html: uiIconMarkup('pencil') }),
       h('span', { class: 'entry-card__body' }, [
         h('span', { class: 'entry-card__title' }, '部件拼字'),
         h('span', { class: 'entry-card__desc' }, '雄老師的部件拼一拼（另開新分頁）。'),
       ]),
     ]);
-    challengeGrid.insertBefore(partdleCard, challengeGrid.children[0] || null);
+    const afterVisual = visualCard && visualCard.parentNode === challengeGrid ? visualCard.nextSibling : challengeGrid.children[0];
+    challengeGrid.insertBefore(partdleCard, afterVisual || null);
   }
   if (reviewCard && reviewCard.parentNode === challengeGrid) challengeGrid.removeChild(reviewCard);
   if (mistakes) challengeGrid.appendChild(mistakes);

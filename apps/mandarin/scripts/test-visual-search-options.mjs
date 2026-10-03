@@ -17,3 +17,17 @@ for (let round = 0; round < 2000; round += 1) {
   }
 }
 console.log('✅ 字感訓練選項：2000 輪都含正解、不重複、最多四個');
+
+// 2026-10-04：遮蔽方向用部件資料（遮共同的那半）、兩字組也補足形似字選項
+{
+  const parts = {
+    mask_side: { g1: { 墨: 'top' } },
+    similar: { 墨: ['默', '點'], 黑: ['默'] },
+  };
+  const items = buildMaskItems([{ id: 'g1', chars: ['墨', '黑'] }], (a) => [...a], parts);
+  const mo = items.find((i) => i.char === '墨');
+  assert.equal(mo.side.key, 'top', '依部件資料遮上半部，露出「土」');
+  assert.ok(mo.options.includes('墨') && mo.options.includes('黑'), '同組形似字一定在選項裡');
+  assert.equal(mo.options.length, 4, '兩字組補足到四個形似字選項');
+  console.log('✅ 遮蔽方向依部件、選項補足形似字');
+}
