@@ -1132,7 +1132,7 @@
       "id": "paragraph:12:01",
       "paragraph_no": 1,
       "summary": "羅達的農夫靠著本事克服當地不利的條件，種出又多又好的南瓜。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "背景",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1166,7 +1166,9 @@
             "0d118adc"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:12:02",
@@ -1176,7 +1178,7 @@
         3
       ],
       "summary": "布大爺忍痛割捨四十顆心愛的大南瓜。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "開端",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1230,13 +1232,15 @@
             "e78268fa"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:12:03",
       "paragraph_no": 4,
       "summary": "打算採收的那天早上，他發現南瓜被偷走了。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "發展",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1256,7 +1260,9 @@
             "05290588"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:12:04",
@@ -1266,7 +1272,7 @@
         15
       ],
       "summary": "他在市場認出自己種的南瓜，和菜販起了爭執；警察要他拿出證據。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "發展",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1396,7 +1402,9 @@
             "16f869cd"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:12:05",
@@ -1406,7 +1414,7 @@
         20
       ],
       "summary": "弗大叔卻一口咬定，自己才是南瓜的主人。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "發展",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1456,7 +1464,9 @@
             "14c53733"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:12:06",
@@ -1466,7 +1476,7 @@
         23
       ],
       "summary": "布大爺拿出新鮮的南瓜蒂，一一接回南瓜上，絲毫不差，證明南瓜是他的。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "高潮",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1514,7 +1524,9 @@
             "fc6f2f9b"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:12:07",
@@ -1524,7 +1536,7 @@
         25
       ],
       "summary": "他拿回賣南瓜的錢，幸虧當初留下了「存根」，南瓜才能失而復得。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "結尾",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1554,7 +1566,9 @@
             "90a5efe4"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -1592,7 +1606,7 @@
         "弗大叔家就住在加迪斯的市場旁"
       ],
       "answer": "南瓜留在羅達，一定會被他認出來",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1635,7 +1649,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:12:02",
@@ -1647,7 +1663,7 @@
         "布大爺沒有帶身分證，無法證明"
       ],
       "answer": "光說認得，在法律上不能當證據",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "比較評估",
@@ -1686,7 +1702,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:12:03",
@@ -1698,7 +1716,7 @@
         "只有布大爺叫得出每一顆南瓜的名字"
       ],
       "answer": "南瓜蒂和南瓜原本相連，能剛好接回去",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1739,7 +1757,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:12:04",
@@ -1751,7 +1771,7 @@
         "法官的判決書；吵架時要相信法律"
       ],
       "answer": "留下的南瓜蒂；遇事要冷靜，留下證據",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "詮釋整合",
@@ -1788,7 +1808,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "polysemy": [

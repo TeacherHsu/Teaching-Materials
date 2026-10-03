@@ -866,7 +866,7 @@
         2
       ],
       "summary": "除夕夜，我們一家人趕到爺爺家，客廳裡擠滿了親戚。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "前往爺爺家",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -911,7 +911,9 @@
             "c75c040c"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H12:02",
@@ -921,7 +923,7 @@
         4
       ],
       "summary": "為了讓嬸嬸好好休息，我們透過視訊問候叔叔和嬸嬸。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "視訊問候嬸嬸",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -962,7 +964,9 @@
             "3b4e1c39"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H12:03",
@@ -972,7 +976,7 @@
         6
       ],
       "summary": "大家從鏡頭裡看到剛出生的小堂妹，奶奶還拿出壓歲錢要送給小娃娃。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "視訊問候嬸嬸",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1013,13 +1017,15 @@
             "c9f67a69"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H12:04",
       "paragraph_no": 7,
       "summary": "爺爺說，透過視訊，全家人有了不一樣的團圓。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "全家團圓",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1037,13 +1043,15 @@
             "69ba74c3"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H12:05",
       "paragraph_no": 8,
       "summary": "叔叔說：「家人在哪裡，家就在那裡。」大家臉上都是幸福的笑容。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "全家團圓",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1065,7 +1073,9 @@
             "818ef784"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -1103,7 +1113,7 @@
         "很無聊，一直看手機"
       ],
       "answer": "著急，想快點見到嬸嬸",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1134,7 +1144,9 @@
             "66baa5dd"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:12:02",
@@ -1146,7 +1158,7 @@
         "停車場實在太大太空曠"
       ],
       "answer": "除夕夜，大家都回家團圓了",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1186,7 +1198,9 @@
             "c51bcd35"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:12:03",
@@ -1198,7 +1212,7 @@
         "嬸嬸不喜歡有客人來訪"
       ],
       "answer": "讓剛生寶寶的嬸嬸休息",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -1229,7 +1243,9 @@
             "cb8b0913"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:12:04",
@@ -1241,7 +1257,7 @@
         "奶奶拿出壓歲錢"
       ],
       "answer": "家人在哪裡，家就在那裡",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "比較評估",
@@ -1274,7 +1290,9 @@
             "c73f1e78"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "polysemy": [
@@ -1592,11 +1610,12 @@
       "stem": "從長長的雨絲和匆匆忙忙的腳步聲，可以感受到作者有些著急。",
       "question": "作者一家人在除夕夜趕路時，心情可能如何？",
       "options": [
-        "有些著急，擔心來不及探望嬸嬸",
-        "非常生氣，不想見家人",
-        "覺得旅程無聊而想回家"
+        "著急，想快點到家",
+        "生氣，不想去爺爺家",
+        "無聊，一直想睡覺",
+        "害怕，不敢坐車子"
       ],
-      "answer": "有些著急，擔心來不及探望嬸嬸",
+      "answer": "著急，想快點到家",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第12課）",
       "explanation": "有些著急，擔心來不及探望嬸嬸。",
@@ -1618,18 +1637,20 @@
             "66baa5dd"
           ]
         }
-      ]
+      ],
+      "options_revised_on": "2026-10-03"
     },
     {
       "id": "listening:115AG3H12:0002",
       "stem": "家人為了讓嬸嬸安心休息，改用視訊表達關懷與祝福。",
       "question": "為什麼改用視訊問候叔叔和嬸嬸？",
       "options": [
-        "因為嬸嬸剛生小寶寶，需要在月子中心好好休息",
-        "因為家裡沒有電話",
-        "因為大家不想和家人見面"
+        "讓坐月子的嬸嬸休息",
+        "叔叔一家住在國外",
+        "爺爺家沒有網路可用",
+        "嬸嬸不喜歡有客人來"
       ],
-      "answer": "因為嬸嬸剛生小寶寶，需要在月子中心好好休息",
+      "answer": "讓坐月子的嬸嬸休息",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第12課）",
       "explanation": "因為嬸嬸剛生小寶寶，需要在月子中心好好休息。",
@@ -1645,7 +1666,8 @@
             "cb8b0913"
           ]
         }
-      ]
+      ],
+      "options_revised_on": "2026-10-03"
     },
     {
       "id": "listening:115AG3H12:0003",
@@ -1653,8 +1675,9 @@
       "question": "最能代表本課主題的是哪一句話？",
       "options": [
         "家人在哪裡，家就在那裡",
-        "下雨天不要出門",
-        "地下室只有腳步聲"
+        "小小的客廳擠滿親人",
+        "長長的雨絲落在車窗上",
+        "奶奶拿出一個紅包"
       ],
       "answer": "家人在哪裡，家就在那裡",
       "status": "approved",
@@ -1672,7 +1695,8 @@
             "c73f1e78"
           ]
         }
-      ]
+      ],
+      "options_revised_on": "2026-10-03"
     }
   ],
   "review_words": {

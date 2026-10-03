@@ -724,7 +724,7 @@
       "id": "paragraph:3H06:01",
       "paragraph_no": 1,
       "summary": "課本和作業本上，到處都有用鉛筆寫的字。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "簡介鉛筆",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -740,13 +740,15 @@
             "77fc1a92"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H06:02",
       "paragraph_no": 2,
       "summary": "鉛筆是用石墨、黏土和木頭製成的。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "簡介鉛筆",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -766,13 +768,15 @@
             "7d5c640c"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H06:03",
       "paragraph_no": 3,
       "summary": "石墨和黏土做成筆芯，但筆芯容易斷裂，也容易弄髒手。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "鉛筆的製作",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -798,13 +802,15 @@
             "d4309fd1"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H06:04",
       "paragraph_no": 4,
       "summary": "把筆芯放入木板的凹槽，再經過機器切開、上色，就成了鉛筆。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "鉛筆的製作",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -840,13 +846,15 @@
             "f899f849"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H06:05",
       "paragraph_no": 5,
       "summary": "自動鉛筆不用削鉛筆機削，就能一直寫下去。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "多樣的鉛筆",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -868,13 +876,15 @@
             "d14ced35"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H06:06",
       "paragraph_no": 6,
       "summary": "色鉛筆的筆芯沒有石墨，可以畫出各種顏色。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "多樣的鉛筆",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -896,13 +906,15 @@
             "eac56423"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H06:07",
       "paragraph_no": 7,
       "summary": "好好使用鉛筆，記下生活中的點點滴滴。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "鉛筆的使用",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -920,7 +932,9 @@
             "2eab2e28"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -959,7 +973,7 @@
         "鐵片、黏土和木頭"
       ],
       "answer": "石墨、黏土和木頭",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -988,7 +1002,9 @@
             "3987eaeb"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:06:02",
@@ -1000,7 +1016,7 @@
         "筆芯會越寫越長變粗"
       ],
       "answer": "容易斷，也會弄髒手",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -1033,7 +1049,9 @@
             "d4309fd1"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:06:03",
@@ -1045,7 +1063,7 @@
         "鉛筆的形狀是三角形的"
       ],
       "answer": "筆芯夾在兩片木板中間",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1076,7 +1094,9 @@
             "40720bf1"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:06:04",
@@ -1088,7 +1108,7 @@
         "色鉛筆的木頭比較硬一點"
       ],
       "answer": "筆芯沒有石墨，畫得出顏色",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "比較評估",
@@ -1123,7 +1143,9 @@
             "eac56423"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "polysemy": [

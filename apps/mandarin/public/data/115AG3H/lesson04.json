@@ -755,7 +755,7 @@
       "id": "paragraph:3H04:01",
       "paragraph_no": 1,
       "summary": "山腳下有一間食堂，由師傅和徒弟兩個人負責。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "故事背景",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -785,13 +785,15 @@
             "67a25863"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H04:02",
       "paragraph_no": 2,
       "summary": "徒弟康康看到鍋子裡的水沸騰了，就舀起熱水再倒回去，想讓水不再滾，這就是揚湯止沸。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "解決問題的過程",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -827,13 +829,15 @@
             "28206697"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H04:03",
       "paragraph_no": 3,
       "summary": "師傅先請康康想一想，再把灶裡的柴抽出來，這就是釜底抽薪。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "解決問題的過程",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -873,13 +877,15 @@
             "76a9cbe3"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H04:04",
       "paragraph_no": 4,
       "summary": "師傅告訴康康，要找到問題的根本，才能真正解決。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "學會解決問題",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -911,7 +917,9 @@
             "bf1a4eee"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -950,7 +958,7 @@
         "師傅招呼客人，康康做菜"
       ],
       "answer": "師傅燒水做菜，康康撿柴",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -983,7 +991,9 @@
             "67a25863"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:04:02",
@@ -995,7 +1005,7 @@
         "趴在灶前用力把火吹熄"
       ],
       "answer": "把熱水舀起來再倒回去",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -1030,7 +1040,9 @@
             "3e55eae9"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:04:03",
@@ -1042,7 +1054,7 @@
         "師傅偷偷又加了一把柴"
       ],
       "answer": "鍋子底下的柴火還在燒",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1082,7 +1094,9 @@
             "6bfb1d3a"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:04:04",
@@ -1094,7 +1108,7 @@
         "師傅請客人一起來幫忙"
       ],
       "answer": "師傅抽掉柴火，從根本解決",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "比較評估",
@@ -1146,7 +1160,9 @@
             "c72efd44"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "polysemy": [

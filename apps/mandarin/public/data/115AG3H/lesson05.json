@@ -917,7 +917,7 @@
         "南投埔里"
       ],
       "answer": "宜蘭三星鄉",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -946,7 +946,9 @@
             "8052b5ae"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:05:02",
@@ -958,7 +960,7 @@
         "風太大了，梨花被吹走了"
       ],
       "answer": "開花時常下雨，梨花會腐爛",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -993,7 +995,9 @@
             "06d84fe5"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:05:03",
@@ -1005,7 +1009,7 @@
         "雨傘布和細細的鐵絲"
       ],
       "answer": "泡麵的空碗和竹筷子",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -1040,7 +1044,9 @@
             "3f5e770c"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:05:04",
@@ -1052,7 +1058,7 @@
         "小雨傘看起來非常漂亮"
       ],
       "answer": "撐傘的梨樹結果比較多",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1098,7 +1104,9 @@
             "6ac7dde7"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "polysemy": [

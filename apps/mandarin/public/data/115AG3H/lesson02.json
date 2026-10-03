@@ -808,7 +808,7 @@
       "id": "paragraph:3H02:01",
       "paragraph_no": 1,
       "summary": "小真常常忘東忘西，爸爸教她用便利貼提醒自己。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "起因",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -838,13 +838,15 @@
             "b69f9667"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H02:02",
       "paragraph_no": 2,
       "summary": "媽媽隔天要開會，小真把要做的事寫在便利貼上，做完一件就打勾，全家準時在七點前出門。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "經過",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -876,13 +878,15 @@
             "9e20ad81"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H02:03",
       "paragraph_no": 3,
       "summary": "小真做事變得有次序，會安排時間，還用便利貼提醒家人。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "結果",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -910,13 +914,15 @@
             "212c92fe"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H02:04",
       "paragraph_no": 4,
       "summary": "小真在冰箱貼上便條，提醒爸爸帶她去檢查視力。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "結果",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -940,7 +946,9 @@
             "5c5d20c9"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -979,7 +987,7 @@
         "早上起不來，常常遲到"
       ],
       "answer": "做事慢，常常忘東忘西",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -1010,7 +1018,9 @@
             "cb57514d"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:02:02",
@@ -1022,7 +1032,7 @@
         "每天睡前寫一篇日記"
       ],
       "answer": "把要做的事寫在便利貼上",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -1055,7 +1065,9 @@
             "faed2708"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:02:03",
@@ -1067,7 +1079,7 @@
         "那天全家人都起得特別早"
       ],
       "answer": "小真照便利貼一件件做完",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1102,7 +1114,9 @@
             "9e20ad81"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:02:04",
@@ -1114,7 +1128,7 @@
         "小真寫錯了要買的東西"
       ],
       "answer": "小真改掉壞習慣，還提醒他",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1162,7 +1176,9 @@
             "5c5d20c9"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "polysemy": [

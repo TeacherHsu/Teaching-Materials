@@ -1458,7 +1458,7 @@
       "id": "paragraph_summary:115AG2H03:01",
       "para_no": 1,
       "summary": "這位國王只要有新衣服穿就開心，沒有就悶悶不樂。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "起因",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
@@ -1480,13 +1480,15 @@
             "23af9f5c"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph_summary:115AG2H03:02",
       "para_no": 2,
       "summary": "大臣想了辦法，把舊衣服重新做過，國王看了很喜歡。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "經過",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
@@ -1516,13 +1518,15 @@
             "32020c68"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph_summary:115AG2H03:03",
       "para_no": 3,
       "summary": "後來國王自己動手改衣服，愈做愈有興趣，迷上了設計。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "經過",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
@@ -1552,13 +1556,15 @@
             "6862571b"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph_summary:115AG2H03:04",
       "para_no": 4,
       "summary": "國王不再執著於買新衣，他找到別的方法讓自己快樂，也把這份快樂分給別人。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "結果",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
@@ -1580,7 +1586,9 @@
             "c8c221b9"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {

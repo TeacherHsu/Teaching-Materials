@@ -931,7 +931,7 @@
       "id": "paragraph:04:01",
       "paragraph_no": 1,
       "summary": "大自然的萬物藏著奧妙，是人類發明的靈感來源。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "主題概說",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -971,13 +971,15 @@
             "6f51a1f6"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:04:02",
       "paragraph_no": 2,
       "summary": "科學家觀察蚊子叮人的口針，設計出不會痛的針頭。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "舉例說明",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1037,13 +1039,15 @@
             "74176fc0"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:04:03",
       "paragraph_no": 3,
       "summary": "蓮葉表面的奈米結構，啟發了馬桶的抗汙塗層和汽車玻璃鍍膜，讓表面不容易髒。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "舉例說明",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1091,13 +1095,15 @@
             "ccb214c1"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:04:04",
       "paragraph_no": 4,
       "summary": "草原鵰翅膀末端上翹的羽毛能減少阻力，人類照著改良巨型客機的機翼，載運更有效率。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "舉例說明",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1147,13 +1153,15 @@
             "fc11ec59"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:04:05",
       "paragraph_no": 5,
       "summary": "向大自然學習，也許能找到讓生活更好的答案。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "綜合結論",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1179,7 +1187,9 @@
             "40590740"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -1217,7 +1227,7 @@
         "只在人睡著時叮咬，所以感覺不到"
       ],
       "answer": "先用鋸齒狀刺針劃破皮膚，少碰到神經",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -1256,7 +1266,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:04:02",
@@ -1268,7 +1280,7 @@
         "蓮葉長得又高又大，雨水很快流走"
       ],
       "answer": "葉面的奈米結構讓水珠滾落",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -1307,7 +1319,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:04:03",
@@ -1319,7 +1333,7 @@
         "機翼加長會讓上升力變得更小"
       ],
       "answer": "機翼加長會超過機場的安全規定",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1352,7 +1366,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:04:04",
@@ -1364,7 +1380,7 @@
         "只有昆蟲和鳥類的身體值得研究"
       ],
       "answer": "觀察大自然，能幫人類解決問題",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "詮釋整合",
@@ -1405,7 +1421,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "polysemy": [
@@ -2417,7 +2435,7 @@
   "genre_activity": {
     "id": "genre_activity:115AG6H04",
     "type": "classify",
-    "status": "draft",
+    "status": "approved",
     "source": "原創設計（CF 2026-10-03 委託；依文體的閱讀活動，細節與白話意思為改寫）",
     "categories": [
       "蚊子",
@@ -2454,6 +2472,8 @@
         "answer": "草原鵰"
       }
     ],
-    "hint": "想一想，這件事是在介紹哪一種生物的時候提到的？"
+    "hint": "想一想，這件事是在介紹哪一種生物的時候提到的？",
+    "approved_by": "CF",
+    "approved_on": "2026-10-03"
   }
 }

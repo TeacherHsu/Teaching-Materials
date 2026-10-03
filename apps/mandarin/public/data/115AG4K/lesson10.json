@@ -849,7 +849,7 @@
       "id": "paragraph:4K10:01",
       "paragraph_no": 1,
       "summary": "一千零一夜的故事穿過空間，傳到世界各地。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -867,13 +867,15 @@
             "d9213029"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K10:02",
       "paragraph_no": 2,
       "summary": "飛天魔毯一轉眼就能把人載到千山萬水外的地方。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -903,13 +905,15 @@
             "b1c3606b"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K10:03",
       "paragraph_no": 3,
       "summary": "黃金洞穴一聽到暗語，就會打開洞門。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -941,13 +945,15 @@
             "4328b726"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K10:04",
       "paragraph_no": 4,
       "summary": "揉一揉神燈，巨人就會出現，幫人實現願望。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -981,13 +987,15 @@
             "748ffd72"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K10:05",
       "paragraph_no": 5,
       "summary": "這些奇幻的故事沒有隨時間消失，一直流傳到今天。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1005,7 +1013,9 @@
             "d753d338"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -2660,7 +2670,7 @@
   "genre_activity": {
     "id": "genre_activity:115AG4K10",
     "type": "decode",
-    "status": "draft",
+    "status": "approved",
     "source": "原創設計（CF 2026-10-03 委託；依文體的閱讀活動，細節與白話意思為改寫）",
     "pairs": [
       {
@@ -2737,6 +2747,8 @@
         },
         "meaning": "遙遠的中東故事，現在大家都聽過了"
       }
-    ]
+    ],
+    "approved_by": "CF",
+    "approved_on": "2026-10-03"
   }
 }

@@ -925,7 +925,7 @@
       "id": "paragraph:3H09:01",
       "paragraph_no": 1,
       "summary": "作者和弟弟跟著爸爸，一起挑戰有名的阿塱壹古道。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "原因",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -945,13 +945,15 @@
             "8d242ccb"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H09:02",
       "paragraph_no": 2,
       "summary": "他們隨著導遊走山路，看到路旁的林投樹，再沿著木棧道下山。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "經過",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -991,13 +993,15 @@
             "4c25d560"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H09:03",
       "paragraph_no": 3,
       "summary": "古道的特色是海岸的美景，還有岸邊的南田石。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "經過",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1047,13 +1051,15 @@
             "f6def692"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H09:04",
       "paragraph_no": 4,
       "summary": "作者覺得一邊是山、一邊是海的阿塱壹古道，很值得挑戰。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "結果",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1073,7 +1079,9 @@
             "5086bd43"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -1111,7 +1119,7 @@
         "弟弟在步道上跌倒了"
       ],
       "answer": "弟弟把林投果看成鳳梨",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1146,7 +1154,9 @@
             "85e3e144"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:09:02",
@@ -1158,7 +1168,7 @@
         "只能原路走回去"
       ],
       "answer": "還有木棧道可以走",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -1189,7 +1199,9 @@
             "4c25d560"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:09:03",
@@ -1201,7 +1213,7 @@
         "海水是透明的沒有顏色"
       ],
       "answer": "從天邊深藍變成岸邊淺藍",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -1232,7 +1244,9 @@
             "825651e1"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:09:04",
@@ -1244,7 +1258,7 @@
         "帶走石頭會被導遊罵"
       ],
       "answer": "美石和美景才能留得長久",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1277,7 +1291,9 @@
             "f6def692"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "polysemy": [
@@ -1729,11 +1745,12 @@
       "stem": "弟弟看見林投樹的果實，以為是鳳梨，所以導遊笑著搖搖頭。",
       "question": "導遊為什麼笑著搖搖頭？",
       "options": [
-        "弟弟把林投樹的果實誤認為鳳梨",
-        "弟弟不想走木棧道",
-        "導遊找不到回家的路"
+        "弟弟把林投果看成鳳梨",
+        "弟弟想摘鳳梨來吃",
+        "弟弟走錯路迷路了",
+        "弟弟不想走木棧道了"
       ],
-      "answer": "弟弟把林投樹的果實誤認為鳳梨",
+      "answer": "弟弟把林投果看成鳳梨",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第9課）",
       "explanation": "因為弟弟把林投樹的果實誤認為鳳梨。",
@@ -1759,18 +1776,20 @@
             "598715cf"
           ]
         }
-      ]
+      ],
+      "options_revised_on": "2026-10-03"
     },
     {
       "id": "listening:115AG3H09:0002",
       "stem": "作者用藍色深淺的變化，寫出海天一色的美景。",
       "question": "課文如何描寫海天一色？",
       "options": [
-        "海水由天邊深藍慢慢變成岸邊淺藍",
-        "海水變成鮮紅色",
-        "天空完全被烏雲遮住"
+        "天邊深藍，岸邊淺藍",
+        "天邊淺藍，岸邊深藍",
+        "整片海都是深藍色",
+        "海水是淺淺的綠色"
       ],
-      "answer": "海水由天邊深藍慢慢變成岸邊淺藍",
+      "answer": "天邊深藍，岸邊淺藍",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第9課）",
       "explanation": "海水的顏色由天邊深深的藍，慢慢變成岸邊淺淺的藍。",
@@ -1786,18 +1805,20 @@
             "825651e1"
           ]
         }
-      ]
+      ],
+      "options_revised_on": "2026-10-03"
     },
     {
       "id": "listening:115AG3H09:0003",
       "stem": "不帶走南田石，才能讓自然景觀繼續留給後來的人欣賞。",
       "question": "南田石為什麼只能拍照不能帶走？",
       "options": [
-        "這樣美石和美景才能長久保留",
-        "南田石太重不能搬動",
-        "因為相機比石頭更有趣"
+        "美石、美景才能長久",
+        "南田石太重搬不動",
+        "南田石可以賣很多錢",
+        "帶走石頭會被罰錢"
       ],
-      "answer": "這樣美石和美景才能長久保留",
+      "answer": "美石、美景才能長久",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第9課）",
       "explanation": "這樣美石和美景才能長久保留。",
@@ -1815,7 +1836,8 @@
             "f6def692"
           ]
         }
-      ]
+      ],
+      "options_revised_on": "2026-10-03"
     }
   ],
   "review_words": {

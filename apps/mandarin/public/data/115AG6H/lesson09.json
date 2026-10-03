@@ -915,7 +915,7 @@
       "id": "paragraph:09:01",
       "paragraph_no": 1,
       "summary": "我們為了完成藝術課的報告，到明華園採訪孫翠鳳。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "原因",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -967,7 +967,9 @@
             "42b42cde"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:09:02",
@@ -977,7 +979,7 @@
         3
       ],
       "summary": "入行緣起：孫阿姨說起自己進入明華園、接觸歌仔戲的經過。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "經過",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1061,7 +1063,9 @@
             "8e8fb1b5"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:09:03",
@@ -1071,7 +1075,7 @@
         5
       ],
       "summary": "角色和穿著：角色分成生、旦、淨、丑四類，依角色穿不同的戲服。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "經過",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1157,13 +1161,15 @@
             "397e493f"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:09:04",
       "paragraph_no": 6,
       "summary": "加入創新元素：結合科技特效，帶來不一樣的視覺感受。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "經過",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1213,13 +1219,15 @@
             "60386613"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:09:05",
       "paragraph_no": 7,
       "summary": "歌仔戲教學：我們跟著孫阿姨一邊唱，一邊走臺步、比蘭花指。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "經過",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1263,13 +1271,15 @@
             "d44c34eb"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:09:06",
       "paragraph_no": 8,
       "summary": "這趟不但完成了作業，還見到孫翠鳳、學了一小段歌仔戲，真是不虛此行。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "感想",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1293,7 +1303,9 @@
             "98c3bdfd"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -1331,7 +1343,7 @@
         "參加歌唱比賽得獎，被明華園邀請"
       ],
       "answer": "劇團臨時缺個丫鬟，她被推上臺演出",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -1370,7 +1382,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:09:02",
@@ -1382,7 +1396,7 @@
         "很快就放棄了劈腿下腰"
       ],
       "answer": "不怕困難，願意加倍努力",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1439,7 +1453,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:09:03",
@@ -1451,7 +1467,7 @@
         "淨"
       ],
       "answer": "丑",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -1490,7 +1506,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:09:04",
@@ -1502,7 +1520,7 @@
         "政府規定傳統戲劇都一定要用特效"
       ],
       "answer": "擔心歌仔戲沒落，想用創新吸引觀眾",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1547,7 +1565,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "polysemy": [

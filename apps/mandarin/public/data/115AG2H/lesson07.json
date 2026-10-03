@@ -1666,7 +1666,7 @@
       "id": "paragraph_summary:115AG2H07:01",
       "para_no": 1,
       "summary": "到郊外活動那天，明光看見小星帶了竹筒，好奇的問他原因。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "起因",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
@@ -1688,13 +1688,15 @@
             "b5383225"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph_summary:115AG2H07:02",
       "para_no": 2,
       "summary": "小星打開竹筒說，裡面裝的是竹筒飯，藏著奶奶的心意，也連著祖先傳下來的故事。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "經過",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
@@ -1720,13 +1722,15 @@
             "479e44eb"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph_summary:115AG2H07:03",
       "para_no": 3,
       "summary": "小花接著介紹客家的艾粄，說它好吃，還有保平安的意思。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "經過",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
@@ -1758,13 +1762,15 @@
             "4ec0e28a"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph_summary:115AG2H07:04",
       "para_no": 4,
       "summary": "明光也約好下星期請家人到學校，講越南春捲的由來。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "結果",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
@@ -1782,7 +1788,9 @@
             "aaabe165"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {

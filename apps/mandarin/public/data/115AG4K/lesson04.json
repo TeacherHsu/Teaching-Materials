@@ -861,7 +861,7 @@
       "id": "paragraph:4K04:01",
       "paragraph_no": 1,
       "summary": "馬偕自願到海外傳福音，一來到臺灣就決定留下來幫助人民。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -883,13 +883,15 @@
             "c6d0ef0c"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K04:02",
       "paragraph_no": 2,
       "summary": "當時臺灣醫療衛生落後，馬偕陪居民清理環境、說明居家衛生的重要，還協助大家治病。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -917,13 +919,15 @@
             "02b4f232"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K04:03",
       "paragraph_no": 3,
       "summary": "馬偕得到善心人士捐錢，在北臺灣興建醫院、創辦學堂。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -963,13 +967,15 @@
             "cd91252f"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K04:04",
       "paragraph_no": 4,
       "summary": "馬偕的善行和奉獻，永遠留在人們心中。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1003,7 +1009,9 @@
             "04324cbf"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {

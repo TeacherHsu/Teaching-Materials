@@ -866,7 +866,7 @@
       "id": "paragraph:10:01",
       "paragraph_no": 1,
       "summary": "詩人和好友在田園裡相聚，一起暢談，心情愉快。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "引言",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -892,13 +892,15 @@
             "9a2a6ff7"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:10:02",
       "paragraph_no": 2,
       "summary": "這一段是〈過故人莊〉全詩：詩人應邀到農家作客，沿途看田園風光，和朋友把酒閒聊，臨走還約好重陽再來。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "內容",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -928,13 +930,15 @@
             "b9c93dcc"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:10:03",
       "paragraph_no": 3,
       "summary": "最後分析這首詩的內容與寫作技巧。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "賞析",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -984,7 +988,9 @@
             "3a21e521"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -1022,7 +1028,7 @@
         "一盆菊花"
       ],
       "answer": "家常飯菜",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -1066,7 +1072,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:10:02",
@@ -1078,7 +1086,7 @@
         "在晒穀場上擺酒，邊喝邊賞菊花"
       ],
       "answer": "開窗對著田園，邊喝酒邊聊農作物",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "詮釋整合",
@@ -1113,7 +1121,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:10:03",
@@ -1125,7 +1135,7 @@
         "想念自己的家人，急著想要回家去"
       ],
       "answer": "玩得盡興捨不得走，期待再次相聚",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1171,7 +1181,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:10:04",
@@ -1183,7 +1195,7 @@
         "冷清寂寞、四周看不到人"
       ],
       "answer": "恬靜閒適、充滿朋友的情意",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "詮釋整合",
@@ -1220,7 +1232,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "polysemy": [
@@ -2350,7 +2364,7 @@
   "genre_activity": {
     "id": "genre_activity:115AG6H10",
     "type": "decode",
-    "status": "draft",
+    "status": "approved",
     "source": "原創設計（CF 2026-10-03 委託；依文體的閱讀活動，細節與白話意思為改寫）",
     "pairs": [
       {
@@ -2409,6 +2423,8 @@
         },
         "meaning": "約好重陽節那天，還要再來一起賞菊花"
       }
-    ]
+    ],
+    "approved_by": "CF",
+    "approved_on": "2026-10-03"
   }
 }

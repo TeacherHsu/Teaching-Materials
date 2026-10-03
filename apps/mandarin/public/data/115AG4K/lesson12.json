@@ -922,7 +922,7 @@
       "id": "paragraph:4K12:01",
       "paragraph_no": 1,
       "summary": "很久以前，鞋匠和妻子開了一家鞋店，生意一直很好。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -946,7 +946,9 @@
             "57d8b84a"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K12:02",
@@ -956,7 +958,7 @@
         3
       ],
       "summary": "幾十年後，老鞋匠做鞋變慢，收入變少，最後只剩下一張皮革。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -994,13 +996,15 @@
             "aaee2c15"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K12:03",
       "paragraph_no": 4,
       "summary": "第二天早上，剪好的皮革竟然變成新鞋，客人付了雙倍的錢，老鞋匠喜出望外。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1028,13 +1032,15 @@
             "740a1cd7"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K12:04",
       "paragraph_no": 5,
       "summary": "從此皮革每晚都會變成新鞋，生意好轉，可是誰做的仍是一個謎團。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1058,7 +1064,9 @@
             "e8e80602"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K12:05",
@@ -1068,7 +1076,7 @@
         8
       ],
       "summary": "老鞋匠夫婦躲起來看，發現是兩個小精靈在做鞋，決定做新衣和新鞋謝謝他們。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1152,7 +1160,9 @@
             "713a1e7c"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K12:06",
@@ -1162,7 +1172,7 @@
         11
       ],
       "summary": "第二天午夜，小精靈發現桌上沒有皮革，卻有合身的衣裳和鞋子。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1192,7 +1202,9 @@
             "93aafdda"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K12:07",
@@ -1202,7 +1214,7 @@
         13
       ],
       "summary": "小精靈穿上新衣新鞋，手舞足蹈的跳出店門，老鞋匠夫婦內心充滿幸福。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1230,7 +1242,9 @@
             "8474d959"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {

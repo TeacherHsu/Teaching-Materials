@@ -879,7 +879,7 @@
       "id": "paragraph:4K05:01",
       "paragraph_no": 1,
       "summary": "「我」認為失明、失聰幾天是值得珍惜的機會，能讓人更懂得光明和聲音的可貴。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -899,13 +899,15 @@
             "5168b6ad"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K05:02",
       "paragraph_no": 2,
       "summary": "朋友說在森林裡沒看見什麼，「我」很驚訝，因為「我」單憑觸覺就能發現很多有趣的事。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -935,13 +937,15 @@
             "1e7f2240"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K05:03",
       "paragraph_no": 3,
       "summary": "「我」用手觸摸，感受到世界的溫暖和動人。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -979,13 +983,15 @@
             "e4dd5180"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K05:04",
       "paragraph_no": 4,
       "summary": "「我」不明白，看得見的人怎麼會對五彩繽紛的美景視而不見。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1017,13 +1023,15 @@
             "44775f67"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K05:05",
       "paragraph_no": 5,
       "summary": "「我」希望能有三天光明，盡力去看看這個世界。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1043,7 +1051,9 @@
             "7af60847"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {

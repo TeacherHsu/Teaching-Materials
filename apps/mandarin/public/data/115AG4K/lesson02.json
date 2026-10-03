@@ -828,7 +828,7 @@
       "id": "paragraph:4K02:01",
       "paragraph_no": 1,
       "summary": "一放學，作者就飛也似的跑回家。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -842,13 +842,15 @@
             "32c3ecee"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K02:02",
       "paragraph_no": 2,
       "summary": "回到家，作者先吃美味的點心，再寫功課。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -880,13 +882,15 @@
             "ccb21689"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K02:03",
       "paragraph_no": 3,
       "summary": "對作者來說，放學後最快樂的事，是讀國語日報這份精神食糧。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -920,13 +924,15 @@
             "6b9e8d04"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K02:04",
       "paragraph_no": 4,
       "summary": "寫完功課，作者和同學玩警察抓小偷、比賽跳繩。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -962,13 +968,15 @@
             "6e7fd55d"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K02:05",
       "paragraph_no": 5,
       "summary": "作者覺得放學後的時光很幸福，過得特別快，真希望時間能暫停。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -990,7 +998,9 @@
             "85ce9721"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {

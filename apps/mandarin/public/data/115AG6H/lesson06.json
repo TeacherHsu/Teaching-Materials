@@ -918,7 +918,7 @@
         2
       ],
       "summary": "文章先指出，最高明的幽默就是拿自己開玩笑的自嘲。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "提出論點",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -968,13 +968,15 @@
             "54d232dd"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:06:02",
       "paragraph_no": 3,
       "summary": "林肯面對道格拉斯「雙面人」的批判，用自嘲來回應。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "論據一",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1018,13 +1020,15 @@
             "e85f88f3"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:06:03",
       "paragraph_no": 4,
       "summary": "倘若林肯沒有這樣回應，可能就錯過扭轉頹勢、為自己加分的機會。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "論據一",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1056,13 +1060,15 @@
             "a4d4a6ae"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:06:04",
       "paragraph_no": 5,
       "summary": "自嘲要懂得拿捏分寸，說的也該是自己的缺點或弱點。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "論據二",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1084,7 +1090,9 @@
             "218d4a86"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:06:05",
@@ -1094,7 +1102,7 @@
         7
       ],
       "summary": "餐廳裡久等餐點的男人，自嘲就用得不合適。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "論據二",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1132,13 +1140,15 @@
             "6af75310"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:06:06",
       "paragraph_no": 8,
       "summary": "善用幽默，能讓溝通更順利。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "綜合結論",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1180,7 +1190,9 @@
             "8cd37f80"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -1218,7 +1230,7 @@
         "故意做出誇張動作的表演"
       ],
       "answer": "拿自己的短處開玩笑的自嘲",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -1259,7 +1271,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:06:02",
@@ -1271,7 +1285,7 @@
         "真心希望能換一張更好看的臉來見人"
       ],
       "answer": "笑自己長得醜，巧妙否認是雙面人",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1318,7 +1332,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:06:03",
@@ -1330,7 +1346,7 @@
         "他講話太大聲，吵到別的客人"
       ],
       "answer": "表面笑自己，其實貶低了乞丐",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "比較評估",
@@ -1369,7 +1385,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:06:04",
@@ -1381,7 +1399,7 @@
         "常常取笑身邊的朋友，讓氣氛熱絡"
       ],
       "answer": "有自信、坦然面對缺點，並拿捏分寸",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "詮釋整合",
@@ -1430,7 +1448,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "polysemy": [

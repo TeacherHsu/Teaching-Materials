@@ -1229,7 +1229,7 @@
       "id": "paragraph_summary:115AG2H10:01",
       "para_no": 1,
       "summary": "表弟來家裡玩，主角和姐姐想到可以一起猜字謎。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "起因",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
@@ -1253,13 +1253,15 @@
             "67725210"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph_summary:115AG2H10:02",
       "para_no": 2,
       "summary": "主角用加一筆、減一筆的方式出題，表弟聽了直說這根本是數學題。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "經過",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
@@ -1309,13 +1311,15 @@
             "104501bc"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph_summary:115AG2H10:03",
       "para_no": 3,
       "summary": "等表弟摸清楚規則，一口氣答對，笑得合不攏嘴。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "結果",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
@@ -1345,7 +1349,9 @@
             "c5575a04"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {

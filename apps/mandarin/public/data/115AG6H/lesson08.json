@@ -1095,7 +1095,7 @@
         3
       ],
       "summary": "卓別林造型的街頭藝術家站在石墩上，表演有靜有動，咧開嘴的模樣十分精彩。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "巴黎的街頭藝術",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1155,7 +1155,9 @@
             "48aa4bd1"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:08:02",
@@ -1165,7 +1167,7 @@
         6
       ],
       "summary": "巴黎是個浪漫不羈的藝術之都，表演水準直接影響觀眾的反應。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "巴黎的街頭藝術",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1245,7 +1247,9 @@
             "9602bce5"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:08:03",
@@ -1255,7 +1259,7 @@
         8
       ],
       "summary": "歐洲的街頭藝術家不見得都是業餘的，儼然專業水準的弦樂演出就在街頭，令人稱羨。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "歐洲的街頭藝術",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1293,13 +1297,15 @@
             "3d0860b4"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:08:04",
       "paragraph_no": 9,
       "summary": "臺灣街頭的演出地點與種類都很多元，讓觀眾感受到不同的藝術氣氛。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "臺灣的街頭藝術",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1333,7 +1339,9 @@
             "90410bf5"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -1371,7 +1379,7 @@
         "他站在錄音機旁，身上接著電線"
       ],
       "answer": "他把臉塗白站在石墩上，一動也不動",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1410,7 +1418,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:08:02",
@@ -1422,7 +1432,7 @@
         "表演地點不同，一個在車廂一個在月臺"
       ],
       "answer": "表演水準不同，拉提琴的比吹喇叭的好",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "比較評估",
@@ -1475,7 +1485,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:08:03",
@@ -1487,7 +1499,7 @@
         "原以為街頭表演都免費，其實也要收錢"
       ],
       "answer": "原以為街頭藝術家多是業餘，其實也有專業",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -1524,7 +1536,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:08:04",
@@ -1536,7 +1550,7 @@
         "請他們去劇院表演，因為街頭不夠正式"
       ],
       "answer": "停下來欣賞鼓勵，因為他們帶來活力",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "詮釋整合",
@@ -1577,7 +1591,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "polysemy": [
@@ -2739,7 +2755,7 @@
   "genre_activity": {
     "id": "genre_activity:115AG6H08",
     "type": "classify",
-    "status": "draft",
+    "status": "approved",
     "source": "原創設計（CF 2026-10-03 委託；依文體的閱讀活動，細節與白話意思為改寫）",
     "categories": [
       "巴黎",
@@ -2768,6 +2784,8 @@
         "answer": "臺灣"
       }
     ],
-    "hint": "想一想，作者是在哪裡看到這個表演的？"
+    "hint": "想一想，作者是在哪裡看到這個表演的？",
+    "approved_by": "CF",
+    "approved_on": "2026-10-03"
   }
 }

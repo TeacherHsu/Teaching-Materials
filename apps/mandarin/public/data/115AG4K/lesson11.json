@@ -900,7 +900,7 @@
       "id": "paragraph:4K11:01",
       "paragraph_no": 1,
       "summary": "愛麗絲為了追穿著背心、拿著懷錶的兔子先生，掉進了兔子洞。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -930,13 +930,15 @@
             "b2353f86"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K11:02",
       "paragraph_no": 2,
       "summary": "門都上鎖了，三腳桌告訴愛麗絲，拿到鑰匙就能開門。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1000,13 +1002,15 @@
             "01e4553d"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K11:03",
       "paragraph_no": 3,
       "summary": "門太小進不去，愛麗絲喝下果汁，身體就縮小了。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1056,13 +1060,15 @@
             "cd149e3a"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K11:04",
       "paragraph_no": 4,
       "summary": "門又鎖上了，鑰匙卻在桌上，愛麗絲吃下蛋糕，變得像巨人一樣高。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1158,13 +1164,15 @@
             "365cca36"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K11:05",
       "paragraph_no": 5,
       "summary": "愛麗絲撿起兔子先生掉的扇子，揮一揮就變回原形，又追著兔子先生出發了。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1222,7 +1230,9 @@
             "df80ecb6"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {

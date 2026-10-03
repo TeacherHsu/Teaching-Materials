@@ -958,7 +958,7 @@
       "id": "paragraph:01:01",
       "paragraph_no": 1,
       "summary": "水面的漣漪照出自己的樣子，詩人藉這個倒影回想自己和別人的相處。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "觀察自己",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -984,13 +984,15 @@
             "e8280868"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:01:02",
       "paragraph_no": 2,
       "summary": "他一一檢視：對朋友夠不夠真摯？學習夠不夠認真？提醒自己要繼續成長。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "探索自己",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1020,13 +1022,15 @@
             "b20226c9"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:01:03",
       "paragraph_no": 3,
       "summary": "最後勉勵自己誠懇的奔赴那道像彩虹一樣的未來。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "期勉自己",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1050,13 +1054,15 @@
             "3802c9e8"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:01:04",
       "section": "賞析",
       "summary": "賞析說明詩人希望學子在成長路上多認識自己，並祝福他們的將來。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "賞析",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1104,7 +1110,9 @@
             "1a7429f5"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -1142,7 +1150,7 @@
         "雨後路上的積水倒影"
       ],
       "answer": "被風吹起漣漪的池水裡",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -1173,7 +1181,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:01:02",
@@ -1185,7 +1195,7 @@
         "陽光在水面映出的光點"
       ],
       "answer": "家人、師長和同學的關心",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1218,7 +1228,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:01:03",
@@ -1230,7 +1242,7 @@
         "友情、旅行、天氣的變化"
       ],
       "answer": "交朋友、學習、自己的優缺點",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "詮釋整合",
@@ -1283,7 +1295,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:01:04",
@@ -1295,7 +1309,7 @@
         "從討厭池水，到喜歡在池邊看小魚"
       ],
       "answer": "從看不清自己，到真誠面對、迎向光明",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "比較評估",
@@ -1335,7 +1349,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "polysemy": [
@@ -2212,7 +2228,7 @@
   "genre_activity": {
     "id": "genre_activity:115AG6H01",
     "type": "decode",
-    "status": "draft",
+    "status": "approved",
     "source": "原創設計（CF 2026-10-03 委託；依文體的閱讀活動，細節與白話意思為改寫）",
     "pairs": [
       {
@@ -2285,6 +2301,8 @@
         },
         "meaning": "摘一片白雲，把真誠的心擦得亮亮的"
       }
-    ]
+    ],
+    "approved_by": "CF",
+    "approved_on": "2026-10-03"
   }
 }

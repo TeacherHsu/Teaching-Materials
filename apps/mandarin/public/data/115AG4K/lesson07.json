@@ -921,8 +921,23 @@
       "id": "paragraph:4K07:01",
       "paragraph_no": 1,
       "summary": "巧文姐姐來班上，分享旅行時吃到的美食見聞。",
-      "status": "draft",
-      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03"
+      "status": "approved",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "approved_by": "CF",
+      "approved_on": "2026-10-03",
+      "text_spots": [
+        {
+          "para": 1,
+          "sentences": [
+            0,
+            1
+          ],
+          "sha": [
+            "1a283a08",
+            "aeae66c2"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:4K07:02",
@@ -932,8 +947,105 @@
         4
       ],
       "summary": "她介紹了印度甩餅、各式各樣的義大利麵條，最後帶大家動手做壽司。",
-      "status": "draft",
-      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03"
+      "status": "approved",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "approved_by": "CF",
+      "approved_on": "2026-10-03",
+      "text_spots": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "sha": [
+            "c7faad5e",
+            "83b74ad0",
+            "c08d2367",
+            "90d326d9",
+            "ef4bb329",
+            "ecc4de6d",
+            "4314f9d9",
+            "90f56fd2",
+            "c1a19098",
+            "7e4f3e62",
+            "606d58a7",
+            "6f5e43f0"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "sha": [
+            "8fae5de6",
+            "698c4d64",
+            "b71fc004",
+            "bc23868e",
+            "25972e15",
+            "0c6787cb",
+            "4b2604cc",
+            "3b07fee8",
+            "bcd9ca43",
+            "a72f81d4",
+            "f134b9a6",
+            "cb1aa502",
+            "252ab72d",
+            "2f51989d",
+            "42c3a0f0",
+            "5cf01efa",
+            "fc02cd2c"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "b0ae7278",
+            "0ca4f7a1",
+            "01f910e1",
+            "13546237",
+            "a9cbe7b9",
+            "e4e092fb",
+            "3a804188"
+          ]
+        }
+      ]
     },
     {
       "id": "paragraph:4K07:03",
@@ -943,12 +1055,48 @@
         6
       ],
       "summary": "主角認識了各地的美食文化，覺得這是一堂讓人念念不忘的課。",
-      "status": "draft",
-      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03"
+      "status": "approved",
+      "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
+      "approved_by": "CF",
+      "approved_on": "2026-10-03",
+      "text_spots": [
+        {
+          "para": 5,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "38570d5a",
+            "58be13bf",
+            "feeaf77f",
+            "8a020a31",
+            "3212c48e"
+          ]
+        },
+        {
+          "para": 6,
+          "sentences": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "13f9ccd9",
+            "69c9e7d5",
+            "f379eb03",
+            "d6a5593c"
+          ]
+        }
+      ]
     }
   ],
   "main_idea": {
-    "gist": "美食作家先介紹印度甩餅，師傅把餅皮拍打並向空中拋，使原本小小的麵皮逐漸變得又大又薄。",
+    "gist": "美食作家巧文姐姐到班上分享印度甩餅、義大利麵等各國美食，還帶大家動手做壽司，讓我們認識各地的美食文化。",
     "theme": "閱讀理解",
     "status": "approved",
     "source": "康軒官方教材來源整理（14 課文大意、段落大意）",
@@ -964,12 +1112,13 @@
       {
         "id": "main_idea_distractor:115AG4K07:offtopic",
         "type": "offtopic",
-        "text": "課文介紹印度的飲食文化，還有他們做菜常用哪些香料。",
+        "text": "課文介紹印度甩餅的做法，說明餅皮怎麼變得又大又薄。",
         "status": "approved",
         "approved_by": "CF",
         "approved_on": "2026-09-30"
       }
-    ]
+    ],
+    "gist_revised_on": "2026-10-03（原句只寫到第二段的甩餅，不是全課大意）"
   },
   "reading_questions": [
     {
@@ -978,14 +1127,42 @@
       "question": "誰來班上分享旅行時的美食經驗？",
       "options": [
         "巧文姐姐",
-        "校長",
-        "體育老師",
-        "同學的弟弟"
+        "班上的老師",
+        "印度的廚師",
+        "義大利導遊"
       ],
       "answer": "巧文姐姐",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "options_revised_on": "2026-10-03",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1
+          ],
+          "sha": [
+            "aeae66c2"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一段，老師請誰到班上？"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「老師請……到班上」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K07:02",
@@ -993,14 +1170,53 @@
       "question": "巧文姐姐介紹了哪些異國美食？",
       "options": [
         "印度甩餅和義大利麵",
-        "包子和水餃",
-        "漢堡和薯條",
-        "粥和饅頭"
+        "印度甩餅和法國麵包",
+        "日本拉麵和義大利麵",
+        "越南春捲和印度甩餅"
       ],
       "answer": "印度甩餅和義大利麵",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "options_revised_on": "2026-10-03",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            8
+          ],
+          "sha": [
+            "c1a19098"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            1,
+            3
+          ],
+          "sha": [
+            "698c4d64",
+            "bc23868e"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "巧文姐姐先放影片，接著又分享哪一國的見聞？"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "第二段找「有名的『……』」，第三段找「在哪一國旅遊」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K07:03",
@@ -1010,12 +1226,43 @@
         "日本壽司",
         "印度甩餅",
         "義大利麵",
-        "法國麵包"
+        "越南春捲"
       ],
-      "answer": "印度甩餅",
+      "answer": "日本壽司",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "options_revised_on": "2026-10-03",
+      "answer_fix": "2026-10-03 原答案「印度甩餅」與課文不符（課文：帶我們動手做日本的國民美食──壽司），改為「日本壽司」",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 4,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "0ca4f7a1",
+            "01f910e1"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第四段的「最後」。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「她帶著我們動手做……」後面那個破折號後的食物。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
       "id": "question:115AG4K07:04",
@@ -1023,14 +1270,44 @@
       "question": "主角從這堂課得到什麼收穫？",
       "options": [
         "認識各地的美食文化",
-        "學會快速跑步",
-        "認識高樓建築",
-        "學會種樹"
+        "學會做印度甩餅",
+        "知道義大利麵的做法",
+        "學會拍攝美食影片"
       ],
       "answer": "認識各地的美食文化",
       "status": "approved",
       "source": "康軒官方教材來源整理（15 閱讀理解提問；保留官方選項）",
-      "answer_source": "derived:reviewed-reading-question-context"
+      "answer_source": "derived:reviewed-reading-question-context",
+      "options_revised_on": "2026-10-03",
+      "strategy_tag": "詮釋整合",
+      "evidence": [
+        {
+          "para": 6,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "f379eb03",
+            "d6a5593c"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "看最後一段，作者說「我們也……」。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找「認識」後面接了什麼。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -2139,42 +2416,51 @@
       "stem": "「美味的一堂課」是誰來分享？為什麼會有這堂課？",
       "question": "「美味的一堂課」是誰來分享？為什麼會有這堂課？",
       "options": [
-        "巧文姐姐分享；老師邀請她來。",
-        "壽司是日本的美食",
-        "介紹了許多國家的美食。"
+        "巧文姐姐；老師請她來分享",
+        "老師；他到印度旅行回來",
+        "同學的媽媽；她會做壽司",
+        "巧文姐姐；她要開餐廳"
       ],
-      "answer": "巧文姐姐分享；老師邀請她來。",
+      "answer": "巧文姐姐；老師請她來分享",
       "status": "approved",
       "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
-      "passage": "星期二下午，老師請美食作家巧文姐姐到班上和大家分享旅行時難忘的見聞。"
+      "passage": "星期二下午，老師請美食作家巧文姐姐到班上和大家分享旅行時難忘的見聞。",
+      "explanation": "巧文姐姐分享；老師邀請她來。",
+      "options_revised_on": "2026-10-03"
     },
     {
       "id": "listening:07:02",
       "stem": "為什麼主角會用「特技表演」來形容印度甩餅的製作過程？",
       "question": "為什麼主角會用「特技表演」來形容印度甩餅的製作過程？",
       "options": [
-        "壽司是日本的美食",
-        "介紹了許多國家的美食。",
-        "甩餅變大變薄，動作像特技表演。"
+        "拋餅皮的動作像特技一樣",
+        "影片裡有人在表演跳舞",
+        "甩餅可以拋到天花板上",
+        "吃甩餅前要先看表演"
       ],
-      "answer": "甩餅變大變薄，動作像特技表演。",
+      "answer": "拋餅皮的動作像特技一樣",
       "status": "approved",
       "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
-      "passage": "只見影片中的人先將餅皮一邊在桌面拍打，一邊向空中拋，小小的餅皮漸漸變得又大又薄。"
+      "passage": "只見影片中的人先將餅皮一邊在桌面拍打，一邊向空中拋，小小的餅皮漸漸變得又大又薄。",
+      "explanation": "甩餅變大變薄，動作像特技表演。",
+      "options_revised_on": "2026-10-03"
     },
     {
       "id": "listening:07:03",
       "stem": "本文主要介紹義大利麵的哪些特色？",
       "question": "本文主要介紹義大利麵的哪些特色？",
       "options": [
-        "介紹了許多國家的美食。",
-        "介紹義大利麵的麵條有各式各樣的造型，以及能搭配各種不同的醬汁食用",
-        "壽司是日本的美食"
+        "麵條造型多，醬料也不同",
+        "麵條都很長，只有一種醬",
+        "義大利麵要配咖哩吃",
+        "麵條是用米做成的"
       ],
-      "answer": "介紹義大利麵的麵條有各式各樣的造型，以及能搭配各種不同的醬汁食用",
+      "answer": "麵條造型多，醬料也不同",
       "status": "approved",
       "source": "康軒四上官方教材（15 閱讀理解；官方問答抽取）",
-      "passage": "義大利麵條，竟然有各式各樣的造型；我還吃到不同醬料的義大利麵，紅醬的酸甜，白醬的濃郁，青醬的香氣。"
+      "passage": "義大利麵條，竟然有各式各樣的造型；我還吃到不同醬料的義大利麵，紅醬的酸甜，白醬的濃郁，青醬的香氣。",
+      "explanation": "介紹義大利麵的麵條有各式各樣的造型，以及能搭配各種不同的醬汁食用",
+      "options_revised_on": "2026-10-03"
     }
   ],
   "review_words": {
@@ -2386,6 +2672,5 @@
       "activity": "review"
     }
   },
-  "genre": "narrative",
-  "reading_issue": "CF 2026-10-02 已對照課本裁定：本課題目與衍生內容全部正確，錯的是課文檔 ~/mandarin-work/reading-tool-lessons/115KG4A07.json —— 它裝的是二上翰林第 7 課〈不一樣的美食〉（竹筒飯、艾粄、越南春捲）的課文，與 115AG2H07 一字不差，顯然是同為「第 07 課」又同為美食主題而複製錯冊別。待 Reading-Tool 做好〈美味的一堂課〉正本的注音校訂、存回 mandarin-work，再重跑 encrypt_readings.py（去掉 --skip 115KG4A07）即可。在那之前課文已從密文排除，點讀與朗讀入口不會出現，閱讀證據也還不能標。"
+  "genre": "narrative"
 }

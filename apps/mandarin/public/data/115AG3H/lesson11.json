@@ -1019,7 +1019,7 @@
         2
       ],
       "summary": "除夕這天，我們一家人要回南部過年。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "起因",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1058,13 +1058,15 @@
             "8f9fb243"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H11:02",
       "paragraph_no": 3,
       "summary": "車子發出怪聲，爸爸只好把車停在路邊。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "起因",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1088,7 +1090,9 @@
             "2d5b235b"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H11:03",
@@ -1098,7 +1102,7 @@
         5
       ],
       "summary": "媽媽看見一家修車廠，師傅正要關門吃年夜飯，爸爸請他幫忙，師傅答應幫忙檢查。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "經過",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1141,7 +1145,9 @@
             "8355e91d"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H11:04",
@@ -1151,7 +1157,7 @@
         7
       ],
       "summary": "媽媽覺得打擾師傅吃年夜飯很不好意思，師傅卻說要把車修好，我們才能回家。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "經過",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1194,13 +1200,15 @@
             "3ef8dd7b"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H11:05",
       "paragraph_no": 8,
       "summary": "幸好只是一個小零件壞了，很快就修好了。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "結果",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1220,7 +1228,9 @@
             "f9be14c2"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H11:06",
@@ -1230,7 +1240,7 @@
         10
       ],
       "summary": "我們感謝師傅一家人，祝他們新年快樂，他們也祝我們一路平安。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "結果",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1259,7 +1269,9 @@
             "f2cefafe"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -1297,7 +1309,7 @@
         "要去市場買一些年貨"
       ],
       "answer": "要回南部過年、探望家人",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -1330,7 +1342,9 @@
             "ed4f17ee"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:11:02",
@@ -1342,7 +1356,7 @@
         "他們迷路，找不到方向"
       ],
       "answer": "車子發出怪聲，可能壞了",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1373,7 +1387,9 @@
             "c74140e6"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:11:03",
@@ -1385,7 +1401,7 @@
         "只想多賺一點修車錢"
       ],
       "answer": "熱心，放下年夜飯來幫忙",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "詮釋整合",
@@ -1442,7 +1458,9 @@
             "7a4ff705"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:11:04",
@@ -1454,7 +1472,7 @@
         "請他們明年過年再來玩"
       ],
       "answer": "祝他們平安到家團聚",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "詮釋整合",
@@ -1485,7 +1503,9 @@
             "f2cefafe"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "polysemy": [
@@ -1824,11 +1844,12 @@
       "stem": "作者一家人要回南部過年，除了拜訪爺爺奶奶，也要探望嬸嬸。",
       "question": "除夕夜作者一家人為什麼還在路上？",
       "options": [
-        "因為要回南部過年，拜訪家人",
-        "因為要去海邊玩水",
-        "因為要參加運動比賽"
+        "要回南部過年、看家人",
+        "要去海邊看跨年煙火",
+        "要開車去修車廠修車",
+        "要去市場買一些年貨"
       ],
-      "answer": "因為要回南部過年，拜訪家人",
+      "answer": "要回南部過年、看家人",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第11課）",
       "explanation": "因為他們要回南部過年，拜訪家人。",
@@ -1848,18 +1869,20 @@
             "ed4f17ee"
           ]
         }
-      ]
+      ],
+      "options_revised_on": "2026-10-03"
     },
     {
       "id": "listening:115AG3H11:0002",
       "stem": "車子發出怪聲，爸爸猜想車子有問題，所以先停下來找人修理。",
       "question": "爸爸為什麼把車子停在路邊？",
       "options": [
-        "因為車子突然發出怪聲，可能出了問題",
-        "因為大家要下車放煙火",
-        "因為爸爸想把車子送人"
+        "車子發出奇怪的聲音",
+        "大家想下車放煙火",
+        "車子的油已經用完了",
+        "他們在路上迷路了"
       ],
-      "answer": "因為車子突然發出怪聲，可能出了問題",
+      "answer": "車子發出奇怪的聲音",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第11課）",
       "explanation": "因為車子突然發出怪聲，可能出了問題。",
@@ -1875,22 +1898,25 @@
             "c74140e6"
           ]
         }
-      ]
+      ],
+      "options_revised_on": "2026-10-03"
     },
     {
       "id": "listening:115AG3H11:0003",
       "stem": "修車師傅一家本來要吃年夜飯，仍願意幫忙修車，顯示他們善良又熱情。",
       "question": "修車師傅一家人是怎麼樣的人？",
       "options": [
-        "善良、熱情，願意在除夕夜幫忙修車",
-        "冷漠、不願意和人說話",
-        "只想趕快離開家裡"
+        "熱心，除夕夜還幫忙修車",
+        "很兇，一點也不想幫忙",
+        "很忙，沒有空理他們",
+        "只想趕快去吃年夜飯"
       ],
-      "answer": "善良、熱情，願意在除夕夜幫忙修車",
+      "answer": "熱心，除夕夜還幫忙修車",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第11課）",
       "passage": "「可以呀！」",
-      "explanation": "善良、熱情，願意在除夕夜幫忙修車。"
+      "explanation": "善良、熱情，願意在除夕夜幫忙修車。",
+      "options_revised_on": "2026-10-03"
     }
   ],
   "review_words": {

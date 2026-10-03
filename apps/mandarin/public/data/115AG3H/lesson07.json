@@ -668,7 +668,7 @@
       "id": "paragraph:3H07:01",
       "paragraph_no": 1,
       "summary": "沒有人知道風去了哪裡，只有「我」知道。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "總說",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -688,13 +688,15 @@
             "54673ea5"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H07:02",
       "paragraph_no": 2,
       "summary": "風身上有淡淡的鹹味，原來他剛從蔚藍的大海回航。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "分說",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -714,13 +716,15 @@
             "4d3229ee"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H07:03",
       "paragraph_no": 3,
       "summary": "風身上有冰涼的雪花，原來他剛從山坡滑下來。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "分說",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -740,13 +744,15 @@
             "f34c25f8"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H07:04",
       "paragraph_no": 4,
       "summary": "風身上有清新的草香，原來他剛在原野打滾。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "分說",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -766,13 +772,15 @@
             "3a576b29"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H07:05",
       "paragraph_no": 5,
       "summary": "閉上眼睛深呼吸，風去了哪裡，「我」都知道。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "總結",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -792,7 +800,9 @@
             "474141ff"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -830,7 +840,7 @@
         "學校、公園和原野"
       ],
       "answer": "大海、山坡和原野",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -877,7 +887,9 @@
             "3a576b29"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:07:02",
@@ -889,7 +901,7 @@
         "濃濃的花香"
       ],
       "answer": "淡淡的鹹味",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -920,7 +932,9 @@
             "4d3229ee"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:07:03",
@@ -932,7 +946,7 @@
         "問問路上遇到的每個人"
       ],
       "answer": "閉上眼睛聞風的味道",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -967,7 +981,9 @@
             "474141ff"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:07:04",
@@ -979,7 +995,7 @@
         "風剛從大海回來"
       ],
       "answer": "原野上長滿了草",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1010,7 +1026,9 @@
             "3a576b29"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "polysemy": [
@@ -1403,11 +1421,12 @@
       "stem": "作者閉上眼深呼吸，聞聞風的味道，再判斷風到底去過何處。",
       "question": "作者用什麼方法發現風去過哪些地方？",
       "options": [
-        "作者閉上眼深呼吸，聞風的味道",
-        "問路人風去了哪裡",
-        "追著風一路奔跑"
+        "閉上眼睛聞風的味道",
+        "看看風吹動哪些樹葉",
+        "跟著風一路往前跑",
+        "仔細聽風吹過的聲音"
       ],
-      "answer": "作者閉上眼深呼吸，聞風的味道",
+      "answer": "閉上眼睛聞風的味道",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第7課）",
       "explanation": "作者閉上眼深呼吸，聞聞風的味道，再判斷風去過哪裡。",
@@ -1427,18 +1446,20 @@
             "474141ff"
           ]
         }
-      ]
+      ],
+      "options_revised_on": "2026-10-03"
     },
     {
       "id": "listening:115AG3H07:0002",
       "stem": "課文寫到風身上的鹹味、雪花和草香，分別讓作者想到大海、高山與原野。",
       "question": "風到過哪些地方？",
       "options": [
-        "大海、覆滿白雪的高山和綠油油的原野",
-        "城市、校園和市場",
-        "沙漠、河流和森林"
+        "大海、雪白的山坡和原野",
+        "大海、熱鬧的城市和原野",
+        "沙灘、雪白的山坡和森林",
+        "河流、高高的山坡和花園"
       ],
-      "answer": "大海、覆滿白雪的高山和綠油油的原野",
+      "answer": "大海、雪白的山坡和原野",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第7課）",
       "explanation": "大海、覆滿白雪的高山和綠油油的原野。",
@@ -1470,18 +1491,20 @@
             "3a576b29"
           ]
         }
-      ]
+      ],
+      "options_revised_on": "2026-10-03"
     },
     {
       "id": "listening:115AG3H07:0003",
       "stem": "只要用心觀察與體會，就能發現大自然的奧祕。",
       "question": "作者想告訴我們什麼道理？",
       "options": [
-        "只要用心體會，就能發現大自然的奧祕",
-        "大自然只有在遠方才值得觀察",
-        "風永遠沒有任何味道"
+        "用心體會，就能發現大自然",
+        "只要跑得快，就能追上風",
+        "走得越遠，看見的風景越多",
+        "要問別人，才會知道答案"
       ],
-      "answer": "只要用心體會，就能發現大自然的奧祕",
+      "answer": "用心體會，就能發現大自然",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第7課）",
       "explanation": "只要用心體會，就能發現大自然的奧祕。",
@@ -1501,7 +1524,8 @@
             "474141ff"
           ]
         }
-      ]
+      ],
+      "options_revised_on": "2026-10-03"
     }
   ],
   "review_words": {

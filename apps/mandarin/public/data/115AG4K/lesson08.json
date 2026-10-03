@@ -902,7 +902,7 @@
       "id": "paragraph:4K08:01",
       "paragraph_no": 1,
       "summary": "居高臨下的大樓，就像建築界的長頸鹿。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -924,13 +924,15 @@
             "24a198c9"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K08:02",
       "paragraph_no": 2,
       "summary": "台北一○一的外形像一節節的竹子，代表經濟節節高升，也是金融中心。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -962,13 +964,15 @@
             "c3d6e779"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K08:03",
       "paragraph_no": 3,
       "summary": "東京晴空塔底部是三角形、往上變圓，原本是為了改善通訊而蓋，後來帶來可觀的商機。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1002,13 +1006,15 @@
             "d41c022c"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K08:04",
       "paragraph_no": 4,
       "summary": "吉隆坡雙峰塔中間有連通橋，方便人們往來，也是大型商場。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1034,13 +1040,15 @@
             "bb4ebb43"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K08:05",
       "paragraph_no": 5,
       "summary": "這些有特色的大樓吸引四面八方的人，讓人留下難忘的印象。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1064,7 +1072,9 @@
             "0b0f2f34"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -2695,7 +2705,7 @@
   "genre_activity": {
     "id": "genre_activity:115AG4K08",
     "type": "classify",
-    "status": "draft",
+    "status": "approved",
     "source": "原創設計（CF 2026-10-03 委託；依文體的閱讀活動，細節與白話意思為改寫）",
     "categories": [
       "台北一○一",
@@ -2736,6 +2746,8 @@
         "answer": "吉隆坡雙峰塔"
       }
     ],
-    "hint": "想一想，課文是在介紹哪一棟建築的時候提到這件事？"
+    "hint": "想一想，課文是在介紹哪一棟建築的時候提到這件事？",
+    "approved_by": "CF",
+    "approved_on": "2026-10-03"
   }
 }

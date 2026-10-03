@@ -343,7 +343,9 @@ export function buildReadingActivity(lesson, onBack) {
         ReadingQuestions({
           lessonId: lesson.lesson_id,
           items: questionRounds[roundIndex],
-          backLabel: '本課先完成',
+          // 最後一輪的出口要是「回課程首頁」：「本課先完成」預設隱藏（教師設定），
+          // 用它當唯一出口，學生做完會卡在結果畫面。
+          backLabel: isLastRound ? '回課程首頁' : '本課先完成',
           onBack: () => onBack(),
           onContinue: isLastRound ? null : () => {
             roundIndex += 1;

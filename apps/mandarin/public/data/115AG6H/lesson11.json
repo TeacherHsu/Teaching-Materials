@@ -840,7 +840,7 @@
       "id": "paragraph:11:01",
       "paragraph_no": 1,
       "summary": "說明羹湯為什麼讓人覺得暖，以及宜蘭人愛吃羹的原因。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "羹湯溫暖的特點",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -880,7 +880,9 @@
             "89176627"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:11:02",
@@ -890,7 +892,7 @@
         3
       ],
       "summary": "從前母親常在冬天做肉羹湯，從挑食材、攪拌到起鍋都很用心，我在旁邊幫忙，廚房滿是香氣。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "母親料理羹湯的情形",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -978,13 +980,15 @@
             "b903b182"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:11:03",
       "paragraph_no": 4,
       "summary": "母親煮肉羹的時候，我蹲在一旁偷吃的情景。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "母親料理羹湯的情形",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1016,13 +1020,15 @@
             "a2289c1f"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:11:04",
       "paragraph_no": 5,
       "summary": "現在母親會為孩子上街買回肉羹，再加點變化，做成自家的味道。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "母親料理羹湯的情形",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1074,13 +1080,15 @@
             "4395e28b"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:11:05",
       "paragraph_no": 6,
       "summary": "我愛喝羹湯，其實是因為能向母親撒嬌，那裡頭裝著滿滿的幸福。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G6A／翰林六上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "羹湯裡的母愛",
       "structure_source": "115G6A／翰林六上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1104,7 +1112,9 @@
             "3eea442e"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -1142,7 +1152,7 @@
         "宜蘭天氣熱，大家喜歡吃涼羹湯"
       ],
       "answer": "宜蘭多雨溼冷，羹湯保溫能祛寒",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -1183,7 +1193,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:11:02",
@@ -1195,7 +1207,7 @@
         "讓「我」自己端大鍋，還教我煮羹湯"
       ],
       "answer": "讓「我」拿筷子亂攪，還問要吃麵或粄條",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1242,7 +1254,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:11:03",
@@ -1254,7 +1268,7 @@
         "母親先盛了一大碗羹湯讓「我」試味道"
       ],
       "answer": "趁母親忙著顧羹湯，偷夾了好幾塊肉來吃",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1301,7 +1315,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:11:04",
@@ -1313,7 +1329,7 @@
         "因為母親煮的羹比外面賣的好吃"
       ],
       "answer": "因為可以跟母親撒嬌，感受到幸福",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依六上課文證據句設計）",
       "answer_source": "authored:依課文證據句布題（證據見 evidence 欄）",
       "strategy_tag": "詮釋整合",
@@ -1352,7 +1368,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "polysemy": [

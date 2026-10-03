@@ -883,7 +883,7 @@
         2
       ],
       "summary": "新娘站在秋千上，由新郎來回拉動。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "婚禮的高潮",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -918,13 +918,15 @@
             "41a50361"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H10:02",
       "paragraph_no": 3,
       "summary": "作者第一次參加魯凱族的婚禮，覺得很新奇。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "新奇的婚禮",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -956,13 +958,15 @@
             "6ead1281"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H10:03",
       "paragraph_no": 4,
       "summary": "親友唱歌跳舞，一起祝福新人。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "新奇的婚禮",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -992,13 +996,15 @@
             "90646e26"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H10:04",
       "paragraph_no": 5,
       "summary": "婚禮中還有「藏新娘」的習俗，非常熱鬧。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "新奇的婚禮",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1034,13 +1040,15 @@
             "7ebe0b64"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:3H10:05",
       "paragraph_no": 6,
       "summary": "一直到深夜，婚禮才結束。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上官方教材 12主旨、課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "structure_block": "婚禮的結束",
       "structure_source": "115G3A／翰林三上官方教材 13課文結構表（PDF 轉圖判讀，2026-10-03）",
@@ -1058,7 +1066,9 @@
             "65f4236f"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -1096,7 +1106,7 @@
         "介紹魯凱族很久的歷史"
       ],
       "answer": "引起好奇，帶出盪秋千",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1125,7 +1135,9 @@
             "8f34a2c6"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:10:02",
@@ -1137,7 +1149,7 @@
         "親友"
       ],
       "answer": "新娘",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "提取訊息",
@@ -1168,7 +1180,9 @@
             "f3deb2fd"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:10:03",
@@ -1180,7 +1194,7 @@
         "因為酒非常好喝"
       ],
       "answer": "表示兩人永結同心",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "推論訊息",
@@ -1209,7 +1223,9 @@
             "cdb61c1f"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "reading_question:10:04",
@@ -1221,7 +1237,7 @@
         "認識親友"
       ],
       "answer": "更珍惜新娘",
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-03 委託，依翰林三上官方「15閱讀理解提問」參考答案改寫）",
       "answer_source": "authored:依官方參考答案改寫（證據見 evidence 欄）",
       "strategy_tag": "詮釋整合",
@@ -1258,7 +1274,9 @@
             "6ed9a4aa"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "polysemy": [
@@ -1686,45 +1704,51 @@
       "stem": "課文與圖片說明，連杯酒是用一整塊木材雕成的並排雙人共飲酒杯。",
       "question": "什麼是連杯酒？",
       "options": [
-        "用一整塊木材雕刻成的並排雙人共飲酒杯",
-        "兩個分開的玻璃杯",
-        "裝滿果汁的大木桶"
+        "雙人並排共飲的木杯",
+        "一人一個的玻璃杯",
+        "裝滿小米酒的大桶",
+        "新娘頭上的木頭飾品"
       ],
-      "answer": "用一整塊木材雕刻成的並排雙人共飲酒杯",
+      "answer": "雙人並排共飲的木杯",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第10課）",
       "passage": "故人具雞黍，邀我至田家。",
-      "explanation": "用一整塊木材雕刻成的並排雙人共飲酒杯。"
+      "explanation": "用一整塊木材雕刻成的並排雙人共飲酒杯。",
+      "options_revised_on": "2026-10-03"
     },
     {
       "id": "listening:115AG3H10:0002",
       "stem": "新人一起喝連杯酒，象徵兩人同心，也表達彼此尊重。",
       "question": "新人為什麼要喝連杯酒？",
       "options": [
-        "表示永結同心、相敬如賓",
-        "表示比賽誰喝得最快",
-        "表示婚禮即將結束"
+        "表示永結同心",
+        "表示比賽誰喝得快",
+        "表示婚禮要結束了",
+        "表示歡迎遠方客人"
       ],
-      "answer": "表示永結同心、相敬如賓",
+      "answer": "表示永結同心",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第10課）",
       "passage": "綠樹村邊合，青山郭外斜。",
-      "explanation": "表示永結同心、相敬如賓。"
+      "explanation": "表示永結同心、相敬如賓。",
+      "options_revised_on": "2026-10-03"
     },
     {
       "id": "listening:115AG3H10:0003",
       "stem": "藏新娘、找新娘與祝福活動都由族人親友共同參與，展現愛家與互助。",
       "question": "魯凱族婚禮如何表現愛家、互助的精神？",
       "options": [
-        "親友一起祝福並共同參與藏新娘、找新娘等活動",
-        "只有新郎獨自完成所有活動",
-        "婚禮中大家都保持安靜不互動"
+        "親友一起祝福、找新娘",
+        "只有新郎自己完成活動",
+        "大家安靜坐著觀禮",
+        "新娘獨自一人盪秋千"
       ],
-      "answer": "親友一起祝福並共同參與藏新娘、找新娘等活動",
+      "answer": "親友一起祝福、找新娘",
       "status": "approved",
       "source": "115G3A／翰林官方教材（15閱讀理解提問：第10課）",
       "passage": "開軒面場圃，把酒話桑麻。",
-      "explanation": "親友一起祝福並共同參與藏新娘、找新娘等活動。"
+      "explanation": "親友一起祝福並共同參與藏新娘、找新娘等活動。",
+      "options_revised_on": "2026-10-03"
     }
   ],
   "review_words": {

@@ -1036,7 +1036,7 @@
       "paragraph_no": 1,
       "section": "游泳",
       "summary": "大家在游泳池裡游呀游，想像自己變成魚、青蛙和蝴蝶。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1058,14 +1058,16 @@
             "f000f0d4"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K01:02",
       "paragraph_no": 2,
       "section": "游泳",
       "summary": "笑聲一陣接一陣，晶亮的水珠也一串串飛起來。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1083,14 +1085,16 @@
             "3fca68d7"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K01:03",
       "paragraph_no": 3,
       "section": "游泳",
       "summary": "游泳讓我們游出自信和壯志，也游出多采多姿的人生。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1108,14 +1112,16 @@
             "4020b5b8"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K01:04",
       "paragraph_no": 1,
       "section": "溜直排輪",
       "summary": "踩上直排輪加速滑行，風吹過耳邊，我想像自己是一隻飛鷹，在天地間遨遊。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1145,14 +1151,16 @@
             "72caf16a"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K01:05",
       "paragraph_no": 2,
       "section": "溜直排輪",
       "summary": "轉身跳躍時，陽光晃動、汗水滴落，我想像自己是一顆陀螺。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1178,14 +1186,16 @@
             "4d5091be"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K01:06",
       "paragraph_no": 3,
       "section": "溜直排輪",
       "summary": "所有的煩惱都被風吹走，只剩下快樂跟著我。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -1207,7 +1217,9 @@
             "447f7816"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -2458,7 +2470,7 @@
   "genre_activity": {
     "id": "genre_activity:115AG4K01",
     "type": "decode",
-    "status": "draft",
+    "status": "approved",
     "source": "原創設計（CF 2026-10-03 委託；依文體的閱讀活動，細節與白話意思為改寫）",
     "pairs": [
       {
@@ -2537,6 +2549,8 @@
         },
         "meaning": "一溜起直排輪，煩惱都不見了"
       }
-    ]
+    ],
+    "approved_by": "CF",
+    "approved_on": "2026-10-03"
   }
 }

@@ -769,7 +769,7 @@
       "id": "paragraph:4K09:01",
       "paragraph_no": 1,
       "summary": "泰國到處都是華麗的廟，男人要出家當和尚一段時間，水上市場也很熱鬧。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -807,13 +807,15 @@
             "0e9d9ca2"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K09:02",
       "paragraph_no": 2,
       "summary": "埃及有五千年的古老文化，金字塔世界聞名。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -847,13 +849,15 @@
             "0e9d9ca2"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K09:03",
       "paragraph_no": 3,
       "summary": "荷蘭地勢低窪，要築堤防潮、用風車排水，鬱金香和水仙是有名的特產。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -887,13 +891,15 @@
             "0e9d9ca2"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph:4K09:04",
       "paragraph_no": 4,
       "summary": "奧地利是音樂的國度，大家都愛音樂，到處充滿歡樂的氣息。",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材 14課文大意、段落大意（語意來源）；教師核准前不公開。改寫 2026-10-03",
       "text_spots": [
         {
@@ -929,7 +935,9 @@
             "0e9d9ca2"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
@@ -2516,7 +2524,7 @@
   "genre_activity": {
     "id": "genre_activity:115AG4K09",
     "type": "classify",
-    "status": "draft",
+    "status": "approved",
     "source": "原創設計（CF 2026-10-03 委託；依文體的閱讀活動，細節與白話意思為改寫）",
     "categories": [
       "泰國",
@@ -2558,6 +2566,8 @@
         "answer": "奧地利"
       }
     ],
-    "hint": "想一想，課文是在介紹哪一個國家的時候提到這件事？"
+    "hint": "想一想，課文是在介紹哪一個國家的時候提到這件事？",
+    "approved_by": "CF",
+    "approved_on": "2026-10-03"
   }
 }

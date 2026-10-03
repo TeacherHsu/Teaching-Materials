@@ -1276,7 +1276,7 @@
       "id": "paragraph_summary:115AG2H09:01",
       "para_no": 1,
       "summary": "媽媽把食材洗乾淨，水嘩啦啦的流，食材像在玩水一樣。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "分說",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
@@ -1298,13 +1298,15 @@
             "5240ec24"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph_summary:115AG2H09:02",
       "para_no": 2,
       "summary": "爸爸淘米煮飯，米粒在水裡滾動，像泡在熱呼呼的澡盆裡。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "分說",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
@@ -1326,13 +1328,15 @@
             "d3c34605"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph_summary:115AG2H09:03",
       "para_no": 3,
       "summary": "主角把食材一樣一樣排好，就像老師點名一樣。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "分說",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
@@ -1356,13 +1360,15 @@
             "7849abea"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     },
     {
       "id": "paragraph_summary:115AG2H09:04",
       "para_no": 4,
       "summary": "全家人一起動手，把食材捲成一道餐點，裡面包的是全家人的心意。",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材 08課文結構表（語意來源）；教師核准前不公開。改寫 2026-10-02",
       "structure_block": "總說",
       "structure_source": "115G2A／翰林二上官方教材 08課文結構表（PDF 轉圖判讀，2026-10-02）",
@@ -1386,7 +1392,9 @@
             "3913d57a"
           ]
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-03"
     }
   ],
   "main_idea": {
