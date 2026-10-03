@@ -1,5 +1,11 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-10-04（深夜）｜家中 Mac｜Claude Code｜狀態：✅ 已推送；⚠️ 教室密碼待更換
+- 教室密碼原本寫死在 4 個公開檔案（自 65a2391 起），已改從 `CLASSROOM_PASSWORD` 或 `~/mandarin-work/.classroom-password` 讀取。**密碼仍在 git 歷史中，建議 CF 換新密碼並重新加密**（`python3 tools/encrypt_readings.py --password <新密碼>`，再更新 .classroom-password）。另一台電腦要跑解密工具，需自行建立該檔。
+- 讀懂課文第 3 層：當下建立面板、段落整段（≤8 句）、關鍵詞螢光筆（只畫和答案相同、題目沒有的詞）。
+- 字感訓練：干擾項全為形似字（hanzi/<冊>.json 的 similar）；遮蔽字依部件遮共同的那半（mask_side）。
+- 部件拼字移到字感訓練下、無圖示；練習句子圖示重繪（tools/draw_sentence_icon.py）。
+
 ## 2026-10-04（夜）｜家中 Mac｜Claude Code｜狀態：✅ 筆順動畫已上線（CF 2026-10-04 核對 808 字 OK，開關已改 true）
 - 生字卡新增「看筆順」（站內動畫：播放／下一筆／重來；reduced-motion 時不描繪、一筆一筆出現）。
 - 資料：hanzi/<冊>.json 加 medians（`m`）。**筆畫數和課本不同的字自動不給**（艹、辶、阝等兩岸寫法不同），共排除 61 字，這些字只保留外部筆順連結。
