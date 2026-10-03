@@ -5,7 +5,7 @@
 // 頁面不顯示、也不儲存任何學生姓名；紀錄只有課次代號、大項代號與正確率。
 import { h, clear } from '../utils/dom.js';
 import { findModuleEntry } from '../activities/moduleRegistry.js';
-import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel, setDeviceLabel, getSheetUrl, setSheetUrl, getScaffoldLevel, getOverride, setOverride, getShowEarlyExit, setShowEarlyExit, getLastGrade, hasGradeLevel } from '../utils/deviceSettings.js';
+import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel, setDeviceLabel, getSheetUrl, setSheetUrl, getScaffoldLevel, getOverride, setOverride, getShowEarlyExit, setShowEarlyExit, getLastGrade, hasGradeLevel, getStudentCode, setStudentCode } from '../utils/deviceSettings.js';
 import { makeTeacherChallenge, verifyTeacherChallenge } from '../utils/teacherGate.js';
 import { listRecords, recordsAsTsv, clearRecords, unsyncedAttempts, syncRecords, levelAdvice } from '../utils/records.js';
 import { allMistakes, clearMistakes } from '../utils/mistakes.js';
@@ -29,8 +29,9 @@ function buildRecordsTable() {
   if (rows.length === 0) {
     return h('p', { class: 'meta' }, '這台載具還沒有作答紀錄。');
   }
-  const head = h('tr', {}, ['課次', '大項', '最近日期', '最近正確率', '最近一次：自己／提示後／揭曉', '最佳', '次數'].map((t) => h('th', { scope: 'col' }, t)));
+  const head = h('tr', {}, ['學生', '課次', '大項', '最近日期', '最近正確率', '最近一次：自己／提示後／揭曉', '最佳', '次數'].map((t) => h('th', { scope: 'col' }, t)));
   const body = rows.map((r) => h('tr', {}, [
+    h('td', {}, r.student || '（未填）'),
     h('td', {}, r.lessonId),
     h('td', {}, moduleLabel(r.moduleKey)),
     h('td', {}, String(r.latest.at).slice(0, 10)),
@@ -64,6 +65,25 @@ function buildPanel(root) {
   });
   root.appendChild(labelInput);
   root.appendChild(labelNote);
+
+  // ---- 學生代碼 ----
+  // 共用載具換人時，老師在這裡改代碼；之後的作答紀錄都記在這個代碼下。
+  root.appendChild(h('h2', {}, '目前使用的學生代碼'));
+  const codeInput = h('input', {
+    class: 'teacher-input', type: 'text', maxlength: '8', autocomplete: 'off',
+    value: getStudentCode(), placeholder: '例如：S03',
+    'aria-label': '學生代碼',
+  });
+  const codeNote = h('p', { class: 'meta' }, '只能填英文字母、數字與「-」，最多 8 碼；請勿填姓名。代碼與姓名的對照表請老師自行保管。');
+  codeInput.addEventListener('change', () => {
+    const ok = setStudentCode(codeInput.value);
+    codeNote.textContent = ok
+      ? (getStudentCode() ? `已儲存：之後的作答都記在 ${getStudentCode()}。` : '已清除：之後的作答不記學生代碼。')
+      : '格式不對：只能用英文字母、數字與「-」，最多 8 碼。';
+    if (ok) codeInput.value = getStudentCode();
+  });
+  root.appendChild(codeInput);
+  root.appendChild(codeNote);
 
   // ---- 鷹架厚度 ----
   root.appendChild(h('h2', {}, '挑戰難易度'));

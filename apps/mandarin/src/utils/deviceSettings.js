@@ -259,3 +259,20 @@ export function getDeviceLabel() {
 export function setDeviceLabel(label) {
   return write({ ...read(), deviceLabel: String(label || '').slice(0, 30) });
 }
+
+/**
+ * 目前使用這台載具的學生代碼（CF 2026-10-03：作答紀錄先記學生代碼即可）。
+ * 只收英數與連字號、最多 8 碼（例如 S03、3A-07）——刻意擋掉中文，
+ * 避免有人順手填成學生姓名。代碼和姓名的對照表由老師另外保管，不進網站。
+ */
+export const STUDENT_CODE_PATTERN = /^[A-Za-z0-9-]{1,8}$/;
+
+export function getStudentCode() {
+  return read().studentCode || '';
+}
+
+export function setStudentCode(code) {
+  const value = String(code || '').trim().toUpperCase();
+  if (value && !STUDENT_CODE_PATTERN.test(value)) return false;
+  return write({ ...read(), studentCode: value });
+}

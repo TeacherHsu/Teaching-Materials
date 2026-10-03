@@ -28,9 +28,9 @@ recordAttempt('115AG3H03', 'reading', { total: 0, firstTryCount: 0, revealedCoun
 assert.equal(listRecords().length, before, '沒有可判定題目時不記錄');
 
 const tsv = recordsAsTsv(listRecords(), '三年級1號機');
-assert.match(tsv, /載具\t課次\t大項/, 'TSV 有表頭');
+assert.match(tsv, /載具\t學生代碼\t課次\t大項/, 'TSV 有表頭');
 assert.match(tsv, /三年級1號機/, '帶入載具標記');
-assert.ok(!/姓名|學生/.test(tsv), '匯出內容不得含姓名欄位');
+assert.ok(!/姓名/.test(tsv), '匯出內容不得含姓名欄位（學生代碼可以，CF 2026-10-03 同意）');
 
 clearRecords();
 assert.equal(listRecords().length, 0, '清除後沒有紀錄');

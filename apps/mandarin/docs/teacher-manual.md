@@ -106,17 +106,21 @@
 function doPost(e) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
   if (sheet.getLastRow() === 0) {
-    sheet.appendRow(['載具', '課次', '大項', '作答時間', '正確率', '題數', '一次就對', '被揭曉']);
+    sheet.appendRow(['載具', '課次', '大項', '作答時間', '正確率', '題數', '一次就對', '被揭曉', '學生代碼', '提示後答對']);
   }
   var payload = JSON.parse(e.postData.contents);
   (payload.rows || []).forEach(function (r) {
-    sheet.appendRow([r.device, r.lessonId, r.moduleKey, r.at, r.accuracy, r.total, r.firstTry, r.revealed]);
+    sheet.appendRow([r.device, r.lessonId, r.moduleKey, r.at, r.accuracy, r.total, r.firstTry, r.revealed, r.student || '', r.hinted]);
   });
   return ContentService
     .createTextOutput(JSON.stringify({ ok: true }))
     .setMimeType(ContentService.MimeType.JSON);
 }
 ```
+
+   （2026-10-03 起多送「學生代碼」「提示後答對」兩欄，接在最後面，舊試算表不用重建；
+   已部署過的老師只要把這段貼上、再「管理部署作業」→ 編輯 → 新版本即可。
+   試算表第一列若已有表頭，請手動在 I1、J1 補上「學生代碼」「提示後答對」。）
 
 4. 點右上角「**部署**」→「**新增部署作業**」。
 5. 齒輪圖示選「**網頁應用程式**」。

@@ -10,7 +10,8 @@
 //   正確率（教師看）— 診斷用，記錄第一次判斷的正確比例。
 // 兩者混在一起就會回到「用提示要扣分」的老問題。
 //
-// 本檔不存任何學生姓名或個人資料，只存課次代號、大項代號與作答結果。
+// 本檔不存任何學生姓名，只存學生代碼（老師自訂、英數 8 碼內）、課次代號、大項代號與作答結果。
+import { getStudentCode } from './deviceSettings.js';
 const KEY = 'mandarin:records:v1';
 const MAX_ATTEMPTS_PER_MODULE = 20;
 
@@ -46,7 +47,7 @@ export function accuracyOf({ total, firstTryCount }) {
  * @param {string} [at] ISO 時間字串，預設為現在（測試可注入固定值）
  * @returns {{accuracy:number|null, saved:boolean}}
  */
-export function recordAttempt(lessonId, moduleKey, session, at) {
+export function recordAttempt(lessonId, moduleKey, session, at, student = getStudentCode()) {
   const accuracy = accuracyOf(session);
   if (accuracy === null) return { accuracy: null, saved: false };
   const all = read();
@@ -54,13 +55,16 @@ export function recordAttempt(lessonId, moduleKey, session, at) {
   const list = lesson[moduleKey] || (lesson[moduleKey] = []);
   list.push({
     at: at || new Date().toISOString(),
+    student: student || '',
     total: session.total,
     firstTry: session.firstTryCount,
     hinted: session.hintedCount ?? Math.max(0, session.total - session.firstTryCount - session.revealedCount),
     revealed: session.revealedCount,
     accuracy: Math.round(accuracy * 100) / 100,
   });
-  if (list.length > MAX_ATTEMPTS_PER_MODULE) list.splice(0, list.length - MAX_ATTEMPTS_PER_MODULE);
+  // 每個學生各留最近 MAX 筆：多人共用一台時，不會因為別人練得多就把你的紀錄擠掉
+  const mine = list.filter((a) => (a.student || '') === (student || ''));
+  if (mine.length > MAX_ATTEMPTS_PER_MODULE) list.splice(list.indexOf(mine[0]), 1);
   return { accuracy, saved: write(all) };
 }
 
@@ -74,9 +78,18 @@ export function listRecords() {
   for (const [lessonId, modules] of Object.entries(all)) {
     for (const [moduleKey, list] of Object.entries(modules)) {
       if (!Array.isArray(list) || list.length === 0) continue;
-      const latest = list[list.length - 1];
-      const best = list.reduce((m, a) => Math.max(m, a.accuracy || 0), 0);
-      rows.push({ lessonId, moduleKey, attempts: list.length, latest, best });
+      // 同一台載具會給好幾個學生用：依學生代碼分開算（沒填代碼的歸在空白）
+      const byStudent = new Map();
+      for (const a of list) {
+        const key = a.student || '';
+        if (!byStudent.has(key)) byStudent.set(key, []);
+        byStudent.get(key).push(a);
+      }
+      for (const [student, attempts] of byStudent) {
+        const latest = attempts[attempts.length - 1];
+        const best = attempts.reduce((m, a) => Math.max(m, a.accuracy || 0), 0);
+        rows.push({ student, lessonId, moduleKey, attempts: attempts.length, latest, best });
+      }
     }
   }
   rows.sort((a, b) => String(b.latest.at).localeCompare(String(a.latest.at)));
@@ -85,9 +98,10 @@ export function listRecords() {
 
 /** 匯出成可貼進試算表的 TSV（不含個人資料）。 */
 export function recordsAsTsv(rows, deviceLabel = '') {
-  const header = ['載具', '課次', '大項', '最近日期', '最近正確率', '最佳正確率', '練習次數', '最近題數', '獨立答對', '提示後答對', '揭曉答案'].join('\t');
+  const header = ['載具', '學生代碼', '課次', '大項', '最近日期', '最近正確率', '最佳正確率', '練習次數', '最近題數', '獨立答對', '提示後答對', '揭曉答案'].join('\t');
   const lines = rows.map((r) => [
     deviceLabel,
+    r.student || '',
     r.lessonId,
     r.moduleKey,
     String(r.latest.at).slice(0, 10),
@@ -148,12 +162,14 @@ export async function syncRecords(url, deviceLabel, fetchImpl = globalThis.fetch
 
   const rows = pending.map((a) => ({
     device: deviceLabel || '',
+    student: a.student || '',
     lessonId: a.lessonId,
     moduleKey: a.moduleKey,
     at: a.at,
     accuracy: a.accuracy,
     total: a.total,
     firstTry: a.firstTry,
+    hinted: a.hinted,
     revealed: a.revealed,
   }));
 
