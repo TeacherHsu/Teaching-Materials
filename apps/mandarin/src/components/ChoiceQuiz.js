@@ -179,9 +179,9 @@ export function ChoiceQuiz({
           btn.disabled = true;
           clear(feedbackSlot);
           const layers = Array.isArray(item.hints) ? item.hints : [];
-          // 支持層第一次錯就給「最強」的那層（中間層的動作一併做完），讓學生
-          // 帶著明確線索自己再選一次；其他層一次往下一層。
-          const target = scaffold.key === 'support' ? layers.length - 1 : hintLevel;
+          // 每次答錯只往下一層（2026-10-03 第二版審查：支持層原本第一次錯就跳到最強層，
+          // 最強層可能已接近給答案，學生沒有機會靠較少的提示自己判斷）。
+          const target = hintLevel;
           let layer = layers[Math.min(hintLevel, layers.length - 1)];
           // 提示可以「做事」：第 2 層展開段落、第 3 層畫螢光筆。
           // 對閱讀困難的學生，「回到課文找線索」這句話沒有作用——

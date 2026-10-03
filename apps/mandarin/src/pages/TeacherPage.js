@@ -5,7 +5,7 @@
 // 頁面不顯示、也不儲存任何學生姓名；紀錄只有課次代號、大項代號與正確率。
 import { h, clear } from '../utils/dom.js';
 import { findModuleEntry } from '../activities/moduleRegistry.js';
-import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel, setDeviceLabel, getSheetUrl, setSheetUrl, getScaffoldLevel, getOverride, setOverride, getShowEarlyExit, setShowEarlyExit, getLastGrade, hasGradeLevel, getStudentCode, setStudentCode } from '../utils/deviceSettings.js';
+import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel, setDeviceLabel, getSheetUrl, setSheetUrl, getScaffoldLevel, getOverride, setOverride, getShowEarlyExit, setShowEarlyExit, getFlashTimed, setFlashTimed, getLastGrade, hasGradeLevel, getStudentCode, setStudentCode } from '../utils/deviceSettings.js';
 import { makeTeacherChallenge, verifyTeacherChallenge } from '../utils/teacherGate.js';
 import { listRecords, recordsAsTsv, clearRecords, unsyncedAttempts, syncRecords, levelAdvice } from '../utils/records.js';
 import { allMistakes, clearMistakes } from '../utils/mistakes.js';
@@ -113,18 +113,20 @@ function buildPanel(root) {
   // 升降級建議：依這個年級最近的獨立答對率（不用提示、第一次就答對）
   if (gradeNow) {
     const advice = levelAdvice(gradeNow, current);
+    const who = getStudentCode() ? `學生代碼 ${getStudentCode()}：` : '（未填學生代碼的作答）';
     const order = ['support', 'standard', 'challenge'];
     const idx = order.indexOf(current);
     let text;
     if (advice.rate === null) {
-      text = `最近三週這個年級只有 ${advice.items} 題作答紀錄，滿 ${advice.minItems} 題後會給升降級建議。`;
+      text = `${who}最近三週在「${SCAFFOLD_LEVELS[current].label}」只有 ${advice.items} 題作答紀錄，滿 ${advice.minItems} 題後會給升降級建議。`;
     } else {
       const pct = Math.round(advice.rate * 100);
       const target = advice.advice === 'up' ? order[idx + 1] : advice.advice === 'down' ? order[idx - 1] : null;
-      text = `最近三週 ${advice.items} 題，獨立答對 ${pct}%。`
+      text = `${who}最近三週在「${SCAFFOLD_LEVELS[current].label}」${advice.items} 題，獨立答對 ${pct}%。`
         + (target ? `建議${advice.advice === 'up' ? '升' : '降'}到「${SCAFFOLD_LEVELS[target].label}」。` : '建議維持目前等級。')
         + '（低於 5 成降一級、5～8 成維持、8 成以上升一級）';
     }
+    text += '　這只是調整練習難度的參考，題目難度、讀題語音、選項數都會影響答對率，不能直接當作 IEP 目標的進展證據。';
     root.appendChild(h('p', { class: `teacher-advice teacher-advice--${advice.advice || 'none'}` }, text));
   }
 
@@ -198,7 +200,21 @@ function buildPanel(root) {
     ]),
     h('p', { class: 'meta' }, `目前：${earlyOn ? '會顯示' : '不顯示'}`),
   ]);
+  const flashOn = getFlashTimed();
+  const flashRow = h('div', { class: 'card teacher-override' }, [
+    h('p', { class: 'teacher-override__label' }, '字感訓練「閃現」限時 5 秒'),
+    h('p', { class: 'meta' }, '預設關閉（不限時，學生自己按「我記住了」）。只有在練習目標就是視覺記憶速度時才打開。'),
+    h('div', { class: 'quiz-option-row' }, [
+      ...[['關', false], ['開', true]].map(([label, value]) => {
+        const on = flashOn === value;
+        const btn = h('button', { class: `btn${on ? ' btn--primary' : ''}`, type: 'button', 'aria-pressed': String(on) }, label);
+        btn.addEventListener('click', () => { setFlashTimed(value); buildPanel(root); });
+        return btn;
+      }),
+    ]),
+  ]);
   root.appendChild(earlyRow);
+  root.appendChild(flashRow);
 
   // ---- 教室密碼 ----
   // 解鎖後金鑰會記在這台載具（學生不必每次輸入），所以一定要給老師一個

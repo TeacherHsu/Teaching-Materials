@@ -38,7 +38,8 @@ const ch = { char: '社', zhuyin: 'ㄕㄜˋ', radical: '⽰', examples: ['報社
 const ph = pronunciationHints(ch, 3);
 checkLayers('生字讀音', ph, ch.zhuyin);
 assert.match(ph[0].text, /報社/, '第 1 層從已知語詞找讀音');
-assert.equal(ph[2].speak, '報社', '第 3 層念出那個語詞（示範）');
+assert.equal(ph[2].speak, undefined, '第 3 層不念出語詞（念出來等於給答案）');
+assert.match(ph[2].text, /聲/, '第 3 層給聲調線索');
 assert.equal(pronunciationHints(ch, 2)[1].eliminate, 0, '只剩兩個選項時不劃，免得直接變答案');
 checkLayers('部首', radicalHints(ch, [ch, { char: '祝', radical: '⽰' }], 3), ch.radical);
 assert.match(radicalHints(ch, [ch, { char: '祝', radical: '⽰' }], 3)[2].text, /祝/, '第 3 層列同部首的字');

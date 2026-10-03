@@ -34,7 +34,7 @@ import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { missingContentNotice } from './engine.js';
 import { filterByStatus } from '../utils/preview.js';
 import { shuffle } from '../utils/shuffle.js';
-import { getScaffoldLevelKey } from '../utils/deviceSettings.js';
+import { getScaffoldLevelKey, getFlashTimed } from '../utils/deviceSettings.js';
 import { recordOutcome } from '../utils/scoreSession.js';
 import { celebrateCorrect } from '../utils/celebrate.js';
 import { noteMistake } from '../utils/mistakes.js';
@@ -162,7 +162,8 @@ export function buildFlashItems(groups, shuffleImpl = shuffle, parts = null) {
 export function recallMode(levelKey) {
   return {
     typed: levelKey === 'standard' || levelKey === 'challenge',
-    autoHideMs: levelKey === 'challenge' ? 5000 : 0,
+    // 限時由教師在設定頁開關，不再綁挑戰層（2026-10-03 第二版審查）
+    autoHideMs: getFlashTimed() ? 5000 : 0,
   };
 }
 

@@ -11,7 +11,7 @@
 // 兩者混在一起就會回到「用提示要扣分」的老問題。
 //
 // 本檔不存任何學生姓名，只存學生代碼（老師自訂、英數 8 碼內）、課次代號、大項代號與作答結果。
-import { getStudentCode } from './deviceSettings.js';
+import { getStudentCode, getScaffoldLevelKey } from './deviceSettings.js';
 const KEY = 'mandarin:records:v1';
 const MAX_ATTEMPTS_PER_MODULE = 20;
 
@@ -56,6 +56,8 @@ export function recordAttempt(lessonId, moduleKey, session, at, student = getStu
   list.push({
     at: at || new Date().toISOString(),
     student: student || '',
+    // 作答當時的鷹架層：升降級建議只能拿同一層的資料比（不同層選項數、提示都不同）
+    level: safeLevel(),
     total: session.total,
     firstTry: session.firstTryCount,
     hinted: session.hintedCount ?? Math.max(0, session.total - session.firstTryCount - session.revealedCount),
@@ -201,7 +203,11 @@ export async function syncRecords(url, deviceLabel, fetchImpl = globalThis.fetch
  * @param {string} levelKey 目前等級
  * @returns {{items:number, rate:number|null, advice:'up'|'down'|'stay'|null, minItems:number}}
  */
-export function levelAdvice(grade, levelKey, { days = 21, minItems = 20, now = Date.now() } = {}) {
+function safeLevel() {
+  try { return getScaffoldLevelKey(); } catch { return ''; }
+}
+
+export function levelAdvice(grade, levelKey, { days = 21, minItems = 20, now = Date.now(), student = getStudentCode() } = {}) {
   const since = now - days * 24 * 60 * 60 * 1000;
   let total = 0;
   let firstTry = 0;
@@ -211,6 +217,10 @@ export function levelAdvice(grade, levelKey, { days = 21, minItems = 20, now = D
       if (!Array.isArray(list)) continue;
       for (const attempt of list) {
         if (Date.parse(attempt.at) < since) continue;
+        // 只算「目前這位學生代碼」在「目前這一層」的作答（2026-10-03 第二版審查：
+        // 原本合併同年級所有人、所有層，共用平板時建議不能代表任何一個學生）
+        if ((attempt.student || '') !== (student || '')) continue;
+        if (attempt.level && attempt.level !== levelKey) continue;
         total += attempt.total || 0;
         firstTry += attempt.firstTry || 0;
       }

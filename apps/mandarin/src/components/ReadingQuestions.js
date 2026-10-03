@@ -27,6 +27,19 @@ import { isPreview } from '../utils/preview.js';
  * 證據句不在 item 裡（lesson JSON 不存課文明碼），由 EvidencePanel 在渲染時
  * 從解密後的課文取。課文沒解鎖就沒有第 2、3 層——這是刻意的。
  */
+/**
+ * 沒有解鎖課文時的第 3 層：不顯示課文（版權），但告訴學生翻課本看第幾段，
+ * 學生仍然拿得到「去哪裡找」這個線索（2026-10-03 第二版審查）。
+ */
+function lockedHint(evidence, paraMap) {
+  // 密文的段號不一定等於課本段號（課名、稱呼、故事便利貼也算一段）：
+  // 只用段落大意對得上的課本段號；有任何一段對不上就不說段號，免得指錯地方
+  const mapped = (evidence || []).map((e) => paraMap?.get(e.para));
+  const paras = mapped.every(Boolean) ? [...new Set(mapped)].sort((a, b) => a - b) : [];
+  const where = paras.length ? `打開課本，讀第 ${paras.join('、')} 段，找找和題目有關的句子。` : '打開課本找找看。';
+  return `${where}（老師在「課文點讀」輸入教室密碼後，這裡會直接顯示那一段並畫出重點。）`;
+}
+
 function buildScaffoldedItem(lessonId, item) {
   const written = Array.isArray(item.hints)
     ? item.hints.filter((hint) => hint && typeof hint.text === 'string')
@@ -63,7 +76,7 @@ function buildScaffoldedItem(lessonId, item) {
       clear(slot);
       slot.appendChild(panel
         ? panel.el
-        : h('p', { class: 'meta evidence__lock-note' }, '這一層要看課文：請老師先在「課文點讀」輸入教室密碼。'));
+        : h('p', { class: 'meta evidence__lock-note' }, lockedHint(item.evidence, item._paraMap)));
       slot.hidden = false;
       if (panel) panel.highlight();
     },
@@ -103,7 +116,8 @@ export function ReadingQuestions({ lessonId, items, onBack, backLabel = '本課�
   function render() {
     clear(root);
     if (index >= items.length) {
-      root.appendChild(CompletionFeedback({ correct: items.length, total: items.length, onBack, backLabel, onContinue, continueLabel }));
+      // 開放問答：學生是口頭或在紙上回答，網站沒有收到答案——只說「看完了」，不顯示答對數、不記分
+      root.appendChild(CompletionFeedback({ total: items.length, reviewedOnly: true, onBack, backLabel, onContinue, continueLabel }));
       return;
     }
     const item = items[index];

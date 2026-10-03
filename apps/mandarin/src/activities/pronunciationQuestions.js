@@ -64,15 +64,22 @@ export function pickPronunciationDistractors(answer, pool, n) {
  *   3 示範：把那個語詞念給他聽
  * 沒有例詞的字，第 1、3 層退回通用說法。
  */
+const TONE_TEXT = { 'ˊ': '第二聲（聲音往上揚）', 'ˇ': '第三聲（先降再升）', 'ˋ': '第四聲（聲音往下降）', '˙': '輕聲（又輕又短）' };
+function toneHint(zhuyin) {
+  const z = String(zhuyin || '');
+  const tone = z.startsWith('˙') ? '˙' : [...z].find((ch) => TONE_TEXT[ch]);
+  return `這個字在這裡念${tone ? TONE_TEXT[tone] : '第一聲（聲音平平的）'}，再比一比剩下的選項。`;
+}
+
 export function pronunciationHints(c, optionCount) {
   const word = (c.examples || []).find((w) => w && w.includes(c.char) && w.length >= 2);
   const first = String(c.zhuyin || '').replace(/^˙/u, '').charAt(0);
   return [
     { text: word ? `想一想「${word}」這個語詞怎麼念。` : '先想想這個字在課文的語詞裡怎麼念。' },
     { text: first ? `第一個注音符號是「${first}」。` : '再比較看看聲調。', eliminate: optionCount >= 3 ? 1 : 0 },
-    word
-      ? { text: `聽一聽「${word}」，注意「${c.char}」的音。`, speak: word }
-      : { text: '注意聲調：一聲平、二聲往上、三聲先下再上、四聲往下。' },
+    // 第 3 層不念出語詞：念出來就等於告訴他讀音（2026-10-03 第二版審查）。
+    // 改給聲調線索＋再刪一個錯的；學生仍要自己判斷，正確讀音在作答後才念。
+    { text: toneHint(c.zhuyin), eliminate: 1 },
   ];
 }
 

@@ -38,7 +38,7 @@ function usableGroups(lesson) {
 /**
  * 三層提示（2026-10-03 審查建議：「比較部首或發音」沒指出這題的差異）。
  * 1. 讀整個詞、想意思；2. 用「別的字」的例詞做對照——看到錯的字用在哪裡，
- *    學生自己排除，不會直接看到答案；3. 念出完整語詞（字音不同的形似字靠聽就分得出）。
+ *    學生自己排除，不會直接看到答案；3. 把每個字放進詞裡自己念念看（不替他念：念出來等於給答案）。
  */
 export function lookalikeHints(group, target, blanked, example) {
   const others = group.chars
@@ -49,7 +49,8 @@ export function lookalikeHints(group, target, blanked, example) {
     others.length
       ? { text: `比一比：${others.join('；')}。這個詞的意思和它們一樣嗎？` }
       : { text: '看看每個字不一樣的那一半：和意思有關的部首是哪一個？' },
-    { text: '聽聽整個語詞，再選一次。', speak: example },
+    // 不念出語詞：形似字讀音多半不同，念出來就等於說出答案（2026-10-03 第二版審查）
+    { text: `把每個字放進「${blanked}」念念看，哪一個和這個詞的意思有關？` },
   ];
 }
 

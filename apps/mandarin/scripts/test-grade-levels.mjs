@@ -34,12 +34,17 @@ assert.equal(S.getScaffoldLevelKey(), 'support', '升級前的整台設定要繼
 // ── 升降級建議
 const now = Date.parse('2026-10-03T12:00:00Z');
 const at = new Date(now - 24 * 3600 * 1000).toISOString();
+S.setScaffoldLevel('standard'); // 紀錄會帶作答當時的鷹架層
 R.recordAttempt('115AG6H01', 'reading', { total: 20, firstTryCount: 18, revealedCount: 0 }, at); // 六年級 90%
 R.recordAttempt('115AG2H01', 'reading', { total: 20, firstTryCount: 6, revealedCount: 4 }, at);  // 二年級 30%
 
 const g6 = R.levelAdvice('6', 'standard', { now });
 assert.equal(g6.advice, 'up', '獨立答對 8 成以上建議升級');
-assert.equal(R.levelAdvice('6', 'challenge', { now }).advice, 'stay', '已經最高級就維持');
+assert.equal(R.levelAdvice('6', 'challenge', { now }).advice, null, '只拿同一層的作答比：挑戰層沒有紀錄就不給建議');
+// 共用平板：只算目前這位學生代碼的作答
+R.recordAttempt('115AG6H02', 'reading', { total: 20, firstTryCount: 2, revealedCount: 10 }, at, 'S09');
+assert.equal(R.levelAdvice('6', 'standard', { now }).advice, 'up', '別的代碼的低分不影響這位學生');
+assert.equal(R.levelAdvice('6', 'standard', { now, student: 'S09' }).advice, 'down', '依代碼分開算');
 const g2 = R.levelAdvice('2', 'standard', { now });
 assert.equal(g2.advice, 'down', '低於 5 成建議降級');
 assert.equal(Math.round(g2.rate * 100), 30, '只算二年級的題目，不混入六年級');

@@ -43,7 +43,7 @@ export const SCAFFOLD_LEVELS = {
     reciteModel: true,
     unlockMemory: false,
     prefill: 1,
-    note: '選項少、題數少；答錯先給明確提示，再錯才揭曉答案；題目會自動念出來；朗讀一次一句、可先聽範讀。',
+    note: '選擇題 2 個選項、每輪 3 題；題目自動念出來；答錯先給提示、再錯才公布答案；朗讀挑戰一次念到逗號、可先聽範讀。',
   },
   standard: {
     key: 'standard',
@@ -56,7 +56,7 @@ export const SCAFFOLD_LEVELS = {
     reciteModel: true,
     unlockMemory: false,
     prefill: 0,
-    note: '一般難度。答錯先給提示，再錯才揭曉答案；朗讀一次一句、可先聽範讀。',
+    note: '選擇題 3 個選項、每輪 5 題；答錯先給提示、再錯才公布答案；朗讀挑戰一次一句、可先聽範讀。',
   },
   challenge: {
     key: 'challenge',
@@ -67,9 +67,9 @@ export const SCAFFOLD_LEVELS = {
     autoRead: false,
     reciteUnit: 'paragraph',
     reciteModel: false,
-    unlockMemory: true,
+    unlockMemory: false, // 2026-10-04：翻牌記憶遊戲會加重工作記憶負荷，不再取代核心配對（第二版審查）
     prefill: 0,
-    note: '選項多。答錯先給提示，再錯才揭曉答案；朗讀一次一整段、沒有範讀。',
+    note: '選擇題 4 個選項、每輪 5 題；答錯先給提示、再錯才公布答案；朗讀挑戰一次一整段、不先範讀。提示、朗讀、放大等支持在每一層都可以用。',
   },
 };
 
@@ -111,6 +111,15 @@ export function getShowEarlyExit() {
 
 export function setShowEarlyExit(on) {
   return write({ ...read(), showEarlyExit: Boolean(on) });
+}
+
+/** 字感訓練閃現題要不要 5 秒自動蓋起來。預設關（不限時）：速度不該決定字形辨識的成績。 */
+export function getFlashTimed() {
+  return read().flashTimed === true;
+}
+
+export function setFlashTimed(on) {
+  return write({ ...read(), flashTimed: Boolean(on) });
 }
 
 /**

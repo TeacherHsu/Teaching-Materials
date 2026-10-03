@@ -183,7 +183,21 @@ export function buildReadingQuizItems(lesson) {
 export function buildReadingActivity(lesson, onBack) {
   const paragraphs = filterByStatus(lesson.paragraph_summary || []).filter((p) => p.summary);
   const questions = filterByStatus(lesson.reading_questions || []).filter((q) => q.stem);
-  const questionRounds = chunkRounds(questions);
+  // 密文段號 → 課本段號（由段落大意的 text_spots 對應），給沒解鎖時的第 3 層提示用
+  const paraMap = new Map();
+  for (const p of filterByStatus(lesson.paragraph_summary || [])) {
+    const [from, to = from] = p.paragraph_span || [p.paragraph_no];
+    const encParas = [...new Set((p.text_spots || []).map((spot) => spot.para))].sort((a, b) => a - b);
+    // 跨段大意（第 2～4 段）：密文段數剛好等於課本段數才逐段對應，否則都算起始段
+    encParas.forEach((ep, i) => {
+      if (!from) return;
+      const no = encParas.length === to - from + 1 ? from + i : from;
+      // 同一個密文段對到兩個以上的課本段（整課只有一段的密文）→ 段號不可靠，標 0 不用
+      if (paraMap.has(ep) && paraMap.get(ep) !== no) paraMap.set(ep, 0);
+      else if (!paraMap.has(ep)) paraMap.set(ep, no);
+    });
+  }
+  const questionRounds = chunkRounds(questions.map((q) => ({ ...q, _paraMap: paraMap })));
 
   const activity = filterByStatus(lesson.genre_activity ? [lesson.genre_activity] : [])[0] || null;
   const classifyItems = activity?.type === 'classify' ? buildClassifyItems(activity) : [];
