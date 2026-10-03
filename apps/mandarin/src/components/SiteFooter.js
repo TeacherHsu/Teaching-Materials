@@ -20,6 +20,12 @@ export function SiteFooter() {
     { class: 'site-footer' },
     [
       ...FOOTER_LINES.map((line) => h('p', { class: 'site-footer__line' }, line)),
+      // 給其他老師的操作指引、完整的版權與資料來源（CF 2026-10-04）
+      h('p', { class: 'site-footer__links' }, [
+        h('a', { href: '#/guide' }, '老師操作指引'),
+        h('span', { 'aria-hidden': 'true' }, '・'),
+        h('a', { href: '#/credits' }, '版權與資料來源'),
+      ]),
       // 教師設定入口已移到每一頁右上角的齒輪（CF 2026-10-01 指定統一入口），
       // 不再放在頁尾——頁尾的入口在長頁面要捲到底才找得到。
     ],

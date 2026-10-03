@@ -232,6 +232,16 @@ route(/^\/lesson\/(?<lessonId>[^/]+)\/char\/(?<char>[^/]+)$/, async ({ lessonId,
   mount(CharacterStoryPage(lesson, decodeURIComponent(char)));
 });
 
+route(/^\/guide$/, async () => {
+  const { GuidePage } = await import('./pages/InfoPages.js');
+  mount(GuidePage());
+});
+
+route(/^\/credits$/, async () => {
+  const { CreditsPage } = await import('./pages/InfoPages.js');
+  mount(CreditsPage());
+});
+
 route(/^\/teacher$/, async () => {
   const { TeacherPage } = await import('./pages/TeacherPage.js');
   mount(TeacherPage());

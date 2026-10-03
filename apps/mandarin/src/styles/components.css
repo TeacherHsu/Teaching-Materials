@@ -3541,3 +3541,14 @@
   text-underline-offset: 6px;
 }
 .evidence__lock-note { margin: var(--space-2) 0; }
+
+/* 頁尾說明頁連結與說明頁 */
+.site-footer__links { display: flex; gap: var(--space-2); justify-content: center; flex-wrap: wrap; margin-top: var(--space-2); }
+.site-footer__links a { display: inline-flex; align-items: center; min-height: var(--tap-target-min); padding: 0 var(--space-2); color: var(--text-secondary); }
+.info-page { max-width: 760px; }
+.info-page__intro { color: var(--text-secondary); }
+.info-page__section { margin-top: var(--space-4); }
+.info-page__list { padding-inline-start: 1.4em; line-height: var(--line-height-loose); }
+.info-page__list li + li { margin-top: var(--space-1); }
+.info-page__table-wrap { overflow-x: auto; margin-top: var(--space-2); }
+.info-page .teacher-table { width: 100%; min-width: 0; } .info-page .teacher-table th, .info-page .teacher-table td { white-space: normal; }
