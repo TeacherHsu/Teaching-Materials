@@ -3513,3 +3513,12 @@
   gap: 8px;
   margin-top: 8px;
 }
+
+/* 形似字部件比較：共同部件淡灰，不一樣的部件上色 */
+.hanzi-compare { margin: var(--space-2) 0; }
+.hanzi-compare__row { display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: center; }
+.hanzi-compare__item { margin: 0; padding: var(--space-2); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+.hanzi-compare__glyph { width: 112px; height: 112px; display: block; }
+.hanzi-compare__stroke { fill: color-mix(in srgb, var(--text-secondary) 35%, transparent); }
+.hanzi-compare__stroke--diff { fill: var(--module-color, var(--color-primary)); }
+.hanzi-compare__credit { text-align: center; margin-top: var(--space-1); }

@@ -8,6 +8,8 @@ import { missingContentNotice } from './engine.js';
 import { filterByStatus } from '../utils/preview.js';
 import { chunkRounds } from '../utils/chunk.js';
 import { shuffle } from '../utils/shuffle.js';
+import { loadHanziParts } from '../utils/hanziParts.js';
+import { HanziCompare } from '../components/HanziCompare.js';
 
 function splitExamples(example) {
   return String(example)
@@ -50,7 +52,36 @@ export function lookalikeHints(group, target, blanked, example) {
   ];
 }
 
-function buildChoiceItems(group, target) {
+/**
+ * 第 2 層加上「部件上色」：把同組字並排，只標出彼此不一樣的部件（Make Me a Hanzi）。
+ * 面板先藏著，學生要到第 2 層才看到；資料載不到就維持純文字提示。
+ */
+function withPartsPanel(item, group, volume) {
+  if (typeof document === 'undefined') return item;
+  const panel = h('div', { class: 'hanzi-compare-slot' });
+  panel.hidden = true;
+  const layer = item.hints[1];
+  item.extra = panel;
+  item.hints[1] = {
+    ...layer,
+    text: `${layer.text} 也看看上色的部分：這幾個字就差在那裡。`,
+    on: () => {
+      loadHanziParts(volume).then((data) => {
+        const el = data && HanziCompare({
+          chars: group.chars.map((c) => c.char),
+          data,
+          diff: data.lookalike_diff?.[group.id] || {},
+        });
+        if (!el) return;
+        panel.replaceChildren(el);
+        panel.hidden = false;
+      });
+    },
+  };
+  return item;
+}
+
+function buildChoiceItems(group, target, volume) {
   return splitExamples(target.example).flatMap((example, exampleIndex) => {
     const blanked = blankTarget(example, target.char);
     if (!blanked) return [];
@@ -64,7 +95,7 @@ function buildChoiceItems(group, target) {
       answer: target.char,
       explanation: `正確答案是「${target.char}」：${example}`,
       hints: lookalikeHints(group, target, blanked, example),
-    }];
+    }].map((item) => (volume ? withPartsPanel(item, group, volume) : item));
   });
 }
 
@@ -73,12 +104,13 @@ function buildChoiceItems(group, target) {
  * @param {object} lesson
  * @returns {Array<object>}
  */
-export function buildLookalikeQuestionItems(lesson) {
+export function buildLookalikeQuestionItems(lesson, { withParts = false } = {}) {
   const groups = usableGroups(lesson);
+  const volume = withParts ? String(lesson.lesson_id || '').slice(0, 7) : null;
   const items = [];
   for (const group of groups) {
     for (const target of group.chars) {
-      items.push(...buildChoiceItems(group, target));
+      items.push(...buildChoiceItems(group, target, volume));
     }
   }
   return items;
@@ -89,7 +121,7 @@ export function buildLookalikeQuestionItems(lesson) {
  * @param {() => void} onBack
  */
 export function buildLookalikesActivity(lesson, onBack) {
-  const items = buildLookalikeQuestionItems(lesson);
+  const items = buildLookalikeQuestionItems(lesson, { withParts: true });
   const rounds = chunkRounds(items);
 
   const container = h('div', {});
