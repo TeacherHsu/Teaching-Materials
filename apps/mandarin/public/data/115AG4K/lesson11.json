@@ -2492,8 +2492,9 @@
       "group_no": "3",
       "chars": [
         {
-          "char": "門",
-          "example": "門鎖、鎖住"
+          "char": "鎖",
+          "example": "門鎖、鎖住",
+          "char_original": "門"
         },
         {
           "char": "瑣",
@@ -2508,8 +2509,9 @@
       "group_no": "4",
       "chars": [
         {
-          "char": "果",
-          "example": "果汁、汁液"
+          "char": "汁",
+          "example": "果汁、汁液",
+          "char_original": "果"
         },
         {
           "char": "汗",
@@ -2524,8 +2526,9 @@
       "group_no": "5",
       "chars": [
         {
-          "char": "表",
-          "example": "表示、示意"
+          "char": "示",
+          "example": "表示、示意",
+          "char_original": "表"
         },
         {
           "char": "末",
@@ -2548,8 +2551,9 @@
           "example": "迫近、急迫"
         },
         {
-          "char": "停",
-          "example": "停泊、泊車"
+          "char": "泊",
+          "example": "停泊、泊車",
+          "char_original": "停"
         },
         {
           "char": "柏",
@@ -2588,8 +2592,9 @@
           "example": "盛飯、盛開"
         },
         {
-          "char": "花",
-          "example": "花盆、盆地"
+          "char": "盆",
+          "example": "花盆、盆地",
+          "char_original": "花"
         }
       ],
       "status": "ready",

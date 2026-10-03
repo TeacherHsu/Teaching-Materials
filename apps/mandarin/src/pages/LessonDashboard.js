@@ -11,7 +11,6 @@ import { reciteSummary } from '../utils/reciteRecords.js';
 import { dueCount } from '../utils/mistakes.js';
 import { redoSentences } from '../utils/madeSentences.js';
 import { mistakeEntry } from './MistakePage.js';
-import { partdleUrl } from '../utils/partdle.js';
 import { loadHanziParts } from '../utils/hanziParts.js';
 import { quizEntry } from './QuizPage.js';
 
@@ -229,25 +228,7 @@ export function LessonDashboard(lesson) {
   if (visualCard && challengeGrid.children[0] !== visualCard) {
     challengeGrid.insertBefore(visualCard, challengeGrid.children[0]);
   }
-  // 雄老師部件拼字放在字感訓練**下方**、不放圖示（CF 2026-10-04）：兩者都是在練字形，
-  // 先在站內做字感，再到外站拼部件。外連另開分頁，學生關掉就回到這裡。
-  const partdle = partdleUrl(lesson);
-  if (partdle) {
-    const partdleCard = h('a', {
-      class: 'entry-card entry-card--external',
-      href: partdle,
-      target: '_blank',
-      rel: 'noopener noreferrer',
-      'data-module-key': 'partdle',
-    }, [
-      h('span', { class: 'entry-card__body' }, [
-        h('span', { class: 'entry-card__title' }, '部件拼字'),
-        h('span', { class: 'entry-card__desc' }, '雄老師的部件拼一拼（另開新分頁）。'),
-      ]),
-    ]);
-    const afterVisual = visualCard && visualCard.parentNode === challengeGrid ? visualCard.nextSibling : challengeGrid.children[0];
-    challengeGrid.insertBefore(partdleCard, afterVisual || null);
-  }
+  // 部件拼字改放在字感訓練頁最上方（CF 2026-10-04），課次首頁不再放卡片
   if (reviewCard && reviewCard.parentNode === challengeGrid) challengeGrid.removeChild(reviewCard);
   if (mistakes) challengeGrid.appendChild(mistakes);
   challengeGrid.appendChild(reciteSlot);

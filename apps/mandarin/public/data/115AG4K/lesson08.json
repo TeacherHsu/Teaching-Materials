@@ -2318,8 +2318,9 @@
           "example": "代替、代表"
         },
         {
-          "char": "砍",
-          "example": "砍伐、伐木"
+          "char": "伐",
+          "example": "砍伐、伐木",
+          "char_original": "砍"
         }
       ],
       "status": "ready",
@@ -2334,16 +2335,19 @@
           "example": "濟南、救濟"
         },
         {
-          "char": "整",
-          "example": "整齊、齊全"
+          "char": "齊",
+          "example": "整齊、齊全",
+          "char_original": "整"
         },
         {
-          "char": "擁",
-          "example": "擁擠、擠滿"
+          "char": "擠",
+          "example": "擁擠、擠滿",
+          "char_original": "擁"
         },
         {
-          "char": "藥",
-          "example": "藥劑、劑量"
+          "char": "劑",
+          "example": "藥劑、劑量",
+          "char_original": "藥"
         }
       ],
       "status": "ready",
@@ -2390,8 +2394,9 @@
       "group_no": "6",
       "chars": [
         {
-          "char": "北",
-          "example": "北京、京城"
+          "char": "京",
+          "example": "北京、京城",
+          "char_original": "北"
         },
         {
           "char": "鯨",
@@ -2426,8 +2431,9 @@
       "group_no": "8",
       "chars": [
         {
-          "char": "音",
-          "example": "音訊、資訊"
+          "char": "訊",
+          "example": "音訊、資訊",
+          "char_original": "音"
         },
         {
           "char": "迅",

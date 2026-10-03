@@ -2138,16 +2138,18 @@
       "group_no": "1",
       "chars": [
         {
-          "char": "游",
-          "example": "游泳、泳衣"
+          "char": "泳",
+          "example": "游泳、泳衣",
+          "char_original": "游"
         },
         {
           "char": "永",
           "example": "永遠、永久"
         },
         {
-          "char": "歌",
-          "example": "歌詠、吟詠"
+          "char": "詠",
+          "example": "歌詠、吟詠",
+          "char_original": "歌"
         }
       ],
       "status": "ready",
@@ -2158,16 +2160,18 @@
       "group_no": "2",
       "chars": [
         {
-          "char": "一",
-          "example": "一般、百般"
+          "char": "般",
+          "example": "一般、百般",
+          "char_original": "一"
         },
         {
           "char": "搬",
           "example": "搬動、搬開"
         },
         {
-          "char": "帆",
-          "example": "帆船、船員"
+          "char": "船",
+          "example": "帆船、船員",
+          "char_original": "帆"
         }
       ],
       "status": "ready",
@@ -2214,8 +2218,9 @@
       "group_no": "5",
       "chars": [
         {
-          "char": "老",
-          "example": "老鷹、鷹架"
+          "char": "鷹",
+          "example": "老鷹、鷹架",
+          "char_original": "老"
         },
         {
           "char": "應",
@@ -2258,8 +2263,9 @@
           "example": "騾子、騾車"
         },
         {
-          "char": "勞",
-          "example": "勞累、疲累"
+          "char": "累",
+          "example": "勞累、疲累",
+          "char_original": "勞"
         }
       ],
       "status": "ready",
@@ -2270,12 +2276,14 @@
       "group_no": "8",
       "chars": [
         {
-          "char": "跳",
-          "example": "跳躍、活躍"
+          "char": "躍",
+          "example": "跳躍、活躍",
+          "char_original": "跳"
         },
         {
-          "char": "閃",
-          "example": "閃耀、照耀"
+          "char": "耀",
+          "example": "閃耀、照耀",
+          "char_original": "閃"
         }
       ],
       "status": "ready",

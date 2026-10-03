@@ -257,7 +257,7 @@ export const MODULE_REGISTRY = [
   {
     key: 'visual_search',
     label: '字感訓練',
-    icon: 'lookalikes',
+    icon: 'visual_search',
     color: 'olive',
     description: '在字陣裡找出目標字',
     implemented: true,

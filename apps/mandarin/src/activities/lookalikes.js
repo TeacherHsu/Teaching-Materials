@@ -26,6 +26,7 @@ function blankTarget(example, char) {
 
 function usableGroups(lesson) {
   return filterByStatus(lesson.lookalikes || [])
+    .filter((g) => !g.not_shape_similar) // 字形不像的組不出題（CF 2026-10-04）
     .map((g) => ({
       ...g,
       // 官方教材多半只在正確字上提供例詞；其餘形似字仍是必要的選項。
@@ -86,6 +87,7 @@ function buildChoiceItems(group, target, volume) {
     const blanked = blankTarget(example, target.char);
     if (!blanked) return [];
 
+    // 選項只用官方核對過的同組形似字（CF 2026-10-04），不另外補字
     const options = shuffle(group.chars.map((c) => c.char));
     return [{
       id: `${group.id}:${target.char}:${exampleIndex}`,

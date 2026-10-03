@@ -179,9 +179,6 @@ def main():
                         side = mask_side(c, s, G)
                         if side:
                             masks.setdefault(g['id'], {})[c] = side
-                    extra = [o for o in similar_chars(c, pool, D) if o not in chars]
-                    if extra:
-                        similar[c] = extra  # 只當文字干擾項用，不需要筆畫資料
             for c in lesson.get('characters', []):
                 ch = c.get('char') or c.get('character')
                 if ch:
@@ -201,7 +198,7 @@ def main():
                     mismatch.append(c)
         out = {'source': 'Make Me a Hanzi（dictionary: LGPL-3.0；graphics: Arphic Public License）',
                'chars': chars, 'lookalike_diff': diffs, 'radical_strokes': radicals,
-               'mask_side': masks, 'similar': similar}
+               'mask_side': masks}
         with open(f'{OUT}/{vol}.json', 'w') as f:
             json.dump(out, f, ensure_ascii=False, separators=(',', ':'))
         anim = sum(1 for c in chars.values() if 'm' in c)

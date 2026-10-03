@@ -2318,8 +2318,9 @@
           "example": "薄片、薄荷"
         },
         {
-          "char": "書",
-          "example": "書簿、簿子"
+          "char": "簿",
+          "example": "書簿、簿子",
+          "char_original": "書"
         }
       ],
       "status": "ready",
@@ -2334,8 +2335,9 @@
           "example": "烙印、烙餅"
         },
         {
-          "char": "網",
-          "example": "網絡、絡繹"
+          "char": "絡",
+          "example": "網絡、絡繹",
+          "char_original": "網"
         },
         {
           "char": "格",
@@ -2386,8 +2388,9 @@
           "example": "甩開、甩手"
         },
         {
-          "char": "作",
-          "example": "作用、用心"
+          "char": "用",
+          "example": "作用、用心",
+          "char_original": "作"
         }
       ],
       "status": "ready",
@@ -2418,8 +2421,9 @@
           "example": "醬油、果醬"
         },
         {
-          "char": "米",
-          "example": "米漿、豆漿"
+          "char": "漿",
+          "example": "米漿、豆漿",
+          "char_original": "米"
         },
         {
           "char": "獎",

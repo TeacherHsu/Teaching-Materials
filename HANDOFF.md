@@ -1,5 +1,12 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-10-04（夜 2）｜家中 Mac｜Claude Code｜狀態：✅ 已推送
+- **四上形似字資料修正 61＋3 筆**：康軒匯入把 char 誤取成「第一個例詞的第一個字」（應為秀／誘，存成秀／引）。`tools/fix_lookalike_chars.py` 已修並保留 `char_original`。**日後重新匯入四上後要重跑這支**（根源在匯入器，尚未修）。三上 L08 垃→圾 同步更新 docs/lookalike-approved-groups.json。
+- 4 組字形不像（一上 L03 火活、心星×2；三上 L06 分部）標 `not_shape_similar`，形似字與字感訓練不出題，待 CF 確認原始資料。
+- 形似字、字感訓練選項只用官方同組形似字（撤回自行補字）；遮蔽字仍依部件遮共同的那半。
+- 大項圖示依主題色重新上色（`tools/recolor_icons.py`，原圖在 `~/mandarin-work/_vendor/icons-original/`）；字感訓練改用自己的放大鏡圖示。
+- 部件拼字連結移到字感訓練頁最上方（課次首頁不再有卡片）。
+
 ## 2026-10-04（深夜）｜家中 Mac｜Claude Code｜狀態：✅ 已推送；教室密碼已於 2026-10-04 更換
 - 教室密碼原本寫死在 4 個公開檔案（自 65a2391 起），已改從 `CLASSROOM_PASSWORD` 或 `~/mandarin-work/.classroom-password` 讀取。舊密碼雖仍在 git 歷史，但**已換新密碼並重新加密（舊密碼解不開）**。加密器不帶 --password 時讀本機密碼檔（`python3 tools/encrypt_readings.py --password <新密碼>`，再更新 .classroom-password）。另一台電腦要跑解密工具，需自行建立該檔。
 - 讀懂課文第 3 層：當下建立面板、段落整段（≤8 句）、關鍵詞螢光筆（只畫和答案相同、題目沒有的詞）。

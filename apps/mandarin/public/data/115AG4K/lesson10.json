@@ -2235,12 +2235,14 @@
       "group_no": "3",
       "chars": [
         {
-          "char": "實",
-          "example": "實驗、驗收"
+          "char": "驗",
+          "example": "實驗、驗收",
+          "char_original": "實"
         },
         {
-          "char": "危",
-          "example": "危險、險路"
+          "char": "險",
+          "example": "危險、險路",
+          "char_original": "危"
         },
         {
           "char": "檢",
@@ -2259,8 +2261,9 @@
           "example": "牙齒、牙刷"
         },
         {
-          "char": "發",
-          "example": "發芽、嫩芽"
+          "char": "芽",
+          "example": "發芽、嫩芽",
+          "char_original": "發"
         }
       ],
       "status": "ready",
@@ -2315,8 +2318,9 @@
           "example": "籠子、鳥籠"
         },
         {
-          "char": "朦",
-          "example": "朦朧、朧月"
+          "char": "朧",
+          "example": "朦朧、朧月",
+          "char_original": "朦"
         }
       ],
       "status": "ready",
@@ -2327,8 +2331,9 @@
       "group_no": "8",
       "chars": [
         {
-          "char": "光",
-          "example": "光榮、榮耀"
+          "char": "榮",
+          "example": "光榮、榮耀",
+          "char_original": "光"
         },
         {
           "char": "營",
@@ -2339,8 +2344,9 @@
           "example": "螢火蟲、螢光"
         },
         {
-          "char": "晶",
-          "example": "晶瑩、瑩白"
+          "char": "瑩",
+          "example": "晶瑩、瑩白",
+          "char_original": "晶"
         }
       ],
       "status": "ready",

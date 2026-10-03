@@ -2277,8 +2277,9 @@
           "example": "秀麗、優秀"
         },
         {
-          "char": "引",
-          "example": "引誘、誘人"
+          "char": "誘",
+          "example": "引誘、誘人",
+          "char_original": "引"
         }
       ],
       "status": "ready",
@@ -2289,12 +2290,14 @@
       "group_no": "2",
       "chars": [
         {
-          "char": "明",
-          "example": "明朗、朗讀"
+          "char": "朗",
+          "example": "明朗、朗讀",
+          "char_original": "明"
         },
         {
-          "char": "新",
-          "example": "新郎、郎中"
+          "char": "郎",
+          "example": "新郎、郎中",
+          "char_original": "新"
         }
       ],
       "status": "ready",
@@ -2309,8 +2312,9 @@
           "example": "登山、登記"
         },
         {
-          "char": "電",
-          "example": "電燈、燈光"
+          "char": "燈",
+          "example": "電燈、燈光",
+          "char_original": "電"
         }
       ],
       "status": "ready",
@@ -2325,8 +2329,9 @@
           "example": "瑪瑙、瑪麗"
         },
         {
-          "char": "號",
-          "example": "號碼、碼頭"
+          "char": "碼",
+          "example": "號碼、碼頭",
+          "char_original": "號"
         },
         {
           "char": "螞",
@@ -2341,16 +2346,18 @@
       "group_no": "5",
       "chars": [
         {
-          "char": "山",
-          "example": "山峰、高峰"
+          "char": "峰",
+          "example": "山峰、高峰",
+          "char_original": "山"
         },
         {
           "char": "鋒",
           "example": "鋒利、刀鋒"
         },
         {
-          "char": "蜜",
-          "example": "蜜蜂、蜂蜜"
+          "char": "蜂",
+          "example": "蜜蜂、蜂蜜",
+          "char_original": "蜜"
         }
       ],
       "status": "ready",

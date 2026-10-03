@@ -2363,8 +2363,9 @@
       "group_no": "2",
       "chars": [
         {
-          "char": "買",
-          "example": "買賣、售賣"
+          "char": "賣",
+          "example": "買賣、售賣",
+          "char_original": "買"
         },
         {
           "char": "買",
@@ -2379,8 +2380,9 @@
       "group_no": "3",
       "chars": [
         {
-          "char": "加",
-          "example": "加倍、倍數"
+          "char": "倍",
+          "example": "加倍、倍數",
+          "char_original": "加"
         },
         {
           "char": "陪",
@@ -2415,8 +2417,9 @@
       "group_no": "5",
       "chars": [
         {
-          "char": "時",
-          "example": "時鐘、鐘聲"
+          "char": "鐘",
+          "example": "時鐘、鐘聲",
+          "char_original": "時"
         },
         {
           "char": "鍾",
@@ -2435,8 +2438,9 @@
           "example": "嘖嘖、嘖聲"
         },
         {
-          "char": "污",
-          "example": "污漬、漬水"
+          "char": "漬",
+          "example": "污漬、漬水",
+          "char_original": "污"
         },
         {
           "char": "責",
@@ -2451,8 +2455,9 @@
       "group_no": "7",
       "chars": [
         {
-          "char": "舞",
-          "example": "舞蹈、蹈步"
+          "char": "蹈",
+          "example": "舞蹈、蹈步",
+          "char_original": "舞"
         },
         {
           "char": "滔",

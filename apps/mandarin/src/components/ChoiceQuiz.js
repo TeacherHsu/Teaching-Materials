@@ -355,6 +355,9 @@ export function ChoiceQuiz({
 export function trimOptions(item, max) {
   const all = Array.isArray(item?.options) ? item.options : [];
   if (item?.fixedOptions || !Number.isFinite(max) || all.length <= max || !all.includes(item.answer)) return all;
-  const others = shuffle(all.filter((o) => o !== item.answer)).slice(0, max - 1);
+  // item.keepOrder：資料順序就是優先順序（形似字：同組的字先，補充的形似字後），
+  // 裁切時照順序留，不隨機——免得把真正的形似字裁掉、留下補充的字
+  const pool = all.filter((o) => o !== item.answer);
+  const others = (item.keepOrder ? pool : shuffle(pool)).slice(0, max - 1);
   return [item.answer, ...others];
 }

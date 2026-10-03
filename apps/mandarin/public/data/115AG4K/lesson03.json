@@ -2534,8 +2534,9 @@
           "example": "搖頭、搖動"
         },
         {
-          "char": "歌",
-          "example": "歌謠、民謠"
+          "char": "謠",
+          "example": "歌謠、民謠",
+          "char_original": "歌"
         }
       ],
       "status": "ready",
@@ -2562,8 +2563,9 @@
       "group_no": "5",
       "chars": [
         {
-          "char": "成",
-          "example": "成熟、熟悉"
+          "char": "熟",
+          "example": "成熟、熟悉",
+          "char_original": "成"
         },
         {
           "char": "熱",
@@ -2606,8 +2608,9 @@
           "example": "蟬鳴、蟬翼"
         },
         {
-          "char": "無",
-          "example": "無所忌憚、肆無忌憚"
+          "char": "憚",
+          "example": "無所忌憚、肆無忌憚",
+          "char_original": "無"
         }
       ],
       "status": "ready",
@@ -2622,8 +2625,9 @@
           "example": "曾經、未曾"
         },
         {
-          "char": "樓",
-          "example": "樓層、層次"
+          "char": "層",
+          "example": "樓層、層次",
+          "char_original": "樓"
         },
         {
           "char": "增",

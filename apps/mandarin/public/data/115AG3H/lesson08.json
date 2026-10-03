@@ -1929,9 +1929,10 @@
           "example": "班級、年級"
         },
         {
-          "char": "垃",
+          "char": "圾",
           "zhuyin": null,
-          "example": "垃圾車、垃圾桶"
+          "example": "垃圾車、垃圾桶",
+          "char_original": "垃"
         }
       ],
       "status": "ready",

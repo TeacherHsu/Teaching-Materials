@@ -28,6 +28,6 @@ console.log('✅ 字感訓練選項：2000 輪都含正解、不重複、最多�
   const mo = items.find((i) => i.char === '墨');
   assert.equal(mo.side.key, 'top', '依部件資料遮上半部，露出「土」');
   assert.ok(mo.options.includes('墨') && mo.options.includes('黑'), '同組形似字一定在選項裡');
-  assert.equal(mo.options.length, 4, '兩字組補足到四個形似字選項');
-  console.log('✅ 遮蔽方向依部件、選項補足形似字');
+  assert.deepEqual([...mo.options].sort(), ['墨', '黑'].sort(), '選項只用官方同組形似字，不補字');
+  console.log('✅ 遮蔽方向依部件、選項只用官方形似字');
 }

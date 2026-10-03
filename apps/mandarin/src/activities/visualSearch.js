@@ -40,6 +40,8 @@ import { celebrateCorrect } from '../utils/celebrate.js';
 import { noteMistake } from '../utils/mistakes.js';
 import { HintPanel } from '../components/HintPanel.js';
 import { hanziPartsIfReady } from '../utils/hanziParts.js';
+import { buildExtensionLinks } from '../components/ExtensionLinks.js';
+import { partdleUrl } from '../utils/partdle.js';
 
 // 非字干擾：用 Unicode 既有符號，不需要美術資源。
 // 刻意挑「筆畫感」接近漢字但明顯不是字的形狀。
@@ -56,6 +58,8 @@ const GRID = {
 /** 可用的形近字組：每組至少要有兩個字才構成「辨識」。 */
 export function usableLookalikeGroups(lesson) {
   return filterByStatus(lesson.lookalikes || [])
+    // 標了「字形不像」的組（同音字或誤植）不出題（CF 2026-10-04：沒有形似字就不要硬出題）
+    .filter((group) => !group.not_shape_similar)
     .map((group) => ({
       id: group.id,
       chars: (group.chars || []).map((c) => c.char).filter(Boolean),
@@ -71,13 +75,13 @@ export function canStartVisualSearch(lesson) {
  * 組一輪字陣。
  * @returns {{target:string, cells:Array<{text:string, kind:'target'|'lookalike'|'symbol'}>}}
  */
-export function buildRound(group, level, shuffleImpl = shuffle, similar = {}) {
+export function buildRound(group, level, shuffleImpl = shuffle) {
   const config = GRID[level] || GRID.standard;
   const size = config.cols * config.rows;
   const chars = shuffleImpl(group.chars);
   const target = chars[0];
-  // 同組形似字優先，再補全站字庫裡和目標字共用部件的字（例：根 → 很、恨、狠）
-  const distractors = [...chars.slice(1), ...(similar[target] || []).filter((c) => !chars.includes(c))];
+  // 干擾項只用官方核對過的同組形似字（CF 2026-10-04：不自行補字）
+  const distractors = chars.slice(1);
 
   const cells = [];
   for (let i = 0; i < config.targets; i += 1) cells.push({ text: target, kind: 'target' });
@@ -98,12 +102,8 @@ export function buildRound(group, level, shuffleImpl = shuffle, similar = {}) {
  * 不能先把整組洗牌再取前四個：一組超過四個字時（六上 L05「戴載截裁栽」），
  * 正解有機會被切掉，題目就沒有正確答案（CF 2026-10-03 回報）。
  */
-export function optionsWithAnswer(answer, chars, shuffleImpl = shuffle, max = 4, extra = []) {
-  // 同組形似字先放，不夠四個再用補充的形似字
-  const others = [
-    ...shuffleImpl(chars.filter((c) => c !== answer)),
-    ...extra.filter((c) => c !== answer && !chars.includes(c)),
-  ].slice(0, max - 1);
+export function optionsWithAnswer(answer, chars, shuffleImpl = shuffle, max = 4) {
+  const others = shuffleImpl(chars.filter((c) => c !== answer)).slice(0, max - 1);
   return shuffleImpl([answer, ...others]);
 }
 
@@ -131,7 +131,7 @@ export function buildMaskItems(groups, shuffleImpl = shuffle, parts = null) {
       items.push({
         char,
         side,
-        options: optionsWithAnswer(char, group.chars, shuffleImpl, 4, parts?.similar?.[char] || []),
+        options: optionsWithAnswer(char, group.chars, shuffleImpl),
         answer: char,
       });
     }
@@ -150,7 +150,7 @@ export function buildFlashItems(groups, shuffleImpl = shuffle, parts = null) {
     for (const char of group.chars) {
       items.push({
         char,
-        options: optionsWithAnswer(char, group.chars, shuffleImpl, 4, parts?.similar?.[char] || []),
+        options: optionsWithAnswer(char, group.chars, shuffleImpl),
         answer: char,
       });
     }
@@ -284,8 +284,14 @@ function TypeAnswer({ item, hint, onResolved }) {
  * @param {() => void} onBack
  */
 export function buildVisualSearchActivity(lesson, onBack) {
-  // 部件資料（補充形似字、遮蔽方向）在課次首頁就先載好；還沒載到就用原本的形似字組。
-  return buildVisualSearchWithParts(lesson, onBack, hanziPartsIfReady(String(lesson.lesson_id || '').slice(0, 7)));
+  // 部件資料（遮蔽方向）在課次首頁就先載好；還沒載到就隨機遮。
+  const activity = buildVisualSearchWithParts(lesson, onBack, hanziPartsIfReady(String(lesson.lesson_id || '').slice(0, 7)));
+  // 雄老師部件拼字放在字感訓練頁最上方（CF 2026-10-04），和生字頁的雄筆順同一種連結列
+  const url = partdleUrl(lesson);
+  const link = url && buildExtensionLinks({ extensions: [{
+    module: 'visual_search', type: 'game', title: '部件拼字(雄老師)', url, provider: '雄老師', compact: true, status: 'approved',
+  }] }, 'visual_search', { collapsible: false });
+  return link ? h('div', {}, [link, activity]) : activity;
 }
 
 function buildVisualSearchWithParts(lesson, onBack, parts) {
@@ -333,7 +339,7 @@ function buildVisualSearchWithParts(lesson, onBack, parts) {
       return;
     }
 
-    const round = buildRound(groups[roundIndex], level, shuffle, parts?.similar || {});
+    const round = buildRound(groups[roundIndex], level, shuffle);
     const found = new Set();
     const wanted = round.cells.filter((c) => c.kind === 'target').length;
     let misses = 0;

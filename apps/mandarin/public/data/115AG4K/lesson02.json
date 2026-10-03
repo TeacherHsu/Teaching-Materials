@@ -2595,12 +2595,14 @@
       "group_no": "2",
       "chars": [
         {
-          "char": "熱",
-          "example": "熱湯、湯匙"
+          "char": "湯",
+          "example": "熱湯、湯匙",
+          "char_original": "熱"
         },
         {
-          "char": "飛",
-          "example": "飛揚、揚起"
+          "char": "揚",
+          "example": "飛揚、揚起",
+          "char_original": "飛"
         },
         {
           "char": "陽",

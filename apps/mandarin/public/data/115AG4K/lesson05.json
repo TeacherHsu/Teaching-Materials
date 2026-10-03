@@ -2177,12 +2177,14 @@
       "group_no": "2",
       "chars": [
         {
-          "char": "鼓",
-          "example": "鼓勵、勵志"
+          "char": "勵",
+          "example": "鼓勵、勵志",
+          "char_original": "鼓"
         },
         {
-          "char": "嚴",
-          "example": "嚴厲、厲害"
+          "char": "厲",
+          "example": "嚴厲、厲害",
+          "char_original": "嚴"
         }
       ],
       "status": "ready",
@@ -2193,8 +2195,9 @@
       "group_no": "3",
       "chars": [
         {
-          "char": "重",
-          "example": "重視、視力"
+          "char": "視",
+          "example": "重視、視力",
+          "char_original": "重"
         },
         {
           "char": "現",
@@ -2257,8 +2260,9 @@
           "example": "蓓蕾、蓓蓓"
         },
         {
-          "char": "加",
-          "example": "加倍、倍數"
+          "char": "倍",
+          "example": "加倍、倍數",
+          "char_original": "加"
         },
         {
           "char": "陪",
@@ -2273,8 +2277,9 @@
       "group_no": "7",
       "chars": [
         {
-          "char": "花",
-          "example": "花蕾、蓓蕾"
+          "char": "蕾",
+          "example": "花蕾、蓓蕾",
+          "char_original": "花"
         },
         {
           "char": "雷",
@@ -2289,8 +2294,9 @@
       "group_no": "8",
       "chars": [
         {
-          "char": "如",
-          "example": "如何、任何"
+          "char": "何",
+          "example": "如何、任何",
+          "char_original": "如"
         },
         {
           "char": "可",

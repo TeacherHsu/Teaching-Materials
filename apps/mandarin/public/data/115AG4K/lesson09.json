@@ -2099,8 +2099,9 @@
           "example": "奉茶、奉獻"
         },
         {
-          "char": "演",
-          "example": "演奏、奏樂"
+          "char": "奏",
+          "example": "演奏、奏樂",
+          "char_original": "演"
         }
       ],
       "status": "ready",
@@ -2115,8 +2116,9 @@
           "example": "逛街、逛逛"
         },
         {
-          "char": "瘋",
-          "example": "瘋狂、狂風"
+          "char": "狂",
+          "example": "瘋狂、狂風",
+          "char_original": "瘋"
         }
       ],
       "status": "ready",
@@ -2127,8 +2129,9 @@
       "group_no": "4",
       "chars": [
         {
-          "char": "塵",
-          "example": "塵埃、埃及"
+          "char": "埃",
+          "example": "塵埃、埃及",
+          "char_original": "塵"
         },
         {
           "char": "唉",
@@ -2147,8 +2150,9 @@
       "group_no": "5",
       "chars": [
         {
-          "char": "氣",
-          "example": "氣勢、勢力"
+          "char": "勢",
+          "example": "氣勢、勢力",
+          "char_original": "氣"
         },
         {
           "char": "熱",

@@ -2628,8 +2628,9 @@
           "example": "奉茶、奉獻"
         },
         {
-          "char": "演",
-          "example": "演奏、奏樂"
+          "char": "奏",
+          "example": "演奏、奏樂",
+          "char_original": "演"
         }
       ],
       "status": "ready",
@@ -2640,8 +2641,9 @@
       "group_no": "3",
       "chars": [
         {
-          "char": "治",
-          "example": "治療、醫療"
+          "char": "療",
+          "example": "治療、醫療",
+          "char_original": "治"
         },
         {
           "char": "寮",
@@ -2652,8 +2654,9 @@
           "example": "遼闊、遼遠"
         },
         {
-          "char": "同",
-          "example": "同僚、僚機"
+          "char": "僚",
+          "example": "同僚、僚機",
+          "char_original": "同"
         }
       ],
       "status": "ready",
@@ -2680,8 +2683,9 @@
       "group_no": "5",
       "chars": [
         {
-          "char": "山",
-          "example": "山嶺、嶺南"
+          "char": "嶺",
+          "example": "山嶺、嶺南",
+          "char_original": "山"
         },
         {
           "char": "領",
@@ -2728,12 +2732,14 @@
       "group_no": "8",
       "chars": [
         {
-          "char": "課",
-          "example": "課堂、堂前"
+          "char": "堂",
+          "example": "課堂、堂前",
+          "char_original": "課"
         },
         {
-          "char": "海",
-          "example": "海棠、棠梨"
+          "char": "棠",
+          "example": "海棠、棠梨",
+          "char_original": "海"
         }
       ],
       "status": "ready",
