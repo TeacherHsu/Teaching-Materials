@@ -2,6 +2,7 @@
 // 元件本身完全不含教材內容，只吃資料。新增一課不需要碰這支檔案。
 
 import { h, clear } from '../utils/dom.js';
+import { StepJump } from '../components/StepJump.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { MatchingGame } from '../components/MatchingGame.js';
 import { MemoryGame } from '../components/MemoryGame.js';
@@ -22,6 +23,7 @@ export function buildChallengeActivity(lesson, onBack) {
   const matchingRounds = chunkRounds(matchingItem?.pairs || []);
 
   const steps = [];
+  let jump = null;
   if (choiceRounds.length > 0) steps.push('choice');
   if (matchingRounds.length > 0) steps.push('matching');
 
@@ -32,6 +34,7 @@ export function buildChallengeActivity(lesson, onBack) {
 
   function renderStep() {
     clear(container);
+    jump?.update(stepIndex);
     if (steps.length === 0) {
       container.appendChild(missingContentNotice());
       return;
@@ -80,8 +83,10 @@ export function buildChallengeActivity(lesson, onBack) {
     }
   }
 
+  // 題組跳轉列放在 container 外面：各步驟會 clear(container)，列不能跟著被清掉
+  jump = StepJump({ steps, moduleKey: '', onJump: (i) => { stepIndex = i; roundIndex = 0; renderStep(); } });
   renderStep();
-  return container;
+  return h('div', {}, [jump.el, container]);
 }
 
 export function missingContentNotice(text = '此部分教材待補') {

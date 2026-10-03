@@ -3583,3 +3583,12 @@
 .strategy-part svg { width: 96px; height: 96px; display: block; }
 .strategy-tap__feedback { min-height: 1.5em; }
 .strategy-lesson .btn[hidden] { display: none; }
+
+/* 題組跳轉列 */
+.step-jump { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1); margin: 0 0 var(--space-3); }
+.step-jump[hidden] { display: none; }
+.step-jump__label { font-size: var(--font-size-meta); color: var(--text-secondary); margin-inline-end: var(--space-1); }
+.step-jump__btn { min-height: var(--tap-target-min); padding: 0 var(--space-3); border-radius: 999px; border: 1px solid var(--color-border);
+  background: var(--color-surface); color: var(--text-primary); font-size: var(--font-size-meta); cursor: pointer; }
+.step-jump__btn:hover, .step-jump__btn:focus-visible { background: var(--module-color-tint, var(--color-surface-muted)); }
+.step-jump__btn--current { background: var(--module-color-tint, var(--color-surface-muted)); border-color: var(--module-color, var(--color-primary)); font-weight: 700; cursor: default; }

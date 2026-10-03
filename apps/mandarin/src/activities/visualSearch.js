@@ -27,6 +27,7 @@
 // 刻意**不計時**（和站上其他活動一致），但記錄花了多久給教師看。
 // 計時會讓 ADHD 學生更焦慮，而焦慮正是注意力的敵人。
 import { h, clear } from '../utils/dom.js';
+import { StepJump } from '../components/StepJump.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 import { CompletionFeedback } from '../components/CompletionFeedback.js';
@@ -311,6 +312,7 @@ function buildVisualSearchWithParts(lesson, onBack, parts) {
   const maskItems = buildMaskItems(groups, shuffle, parts).slice(0, 4);
   const flashItems = buildFlashItems(groups, shuffle, parts).slice(0, 4);
   const steps = ['search'];
+  let jump = null;
   if (maskItems.length) steps.push('mask');
   if (flashItems.length) steps.push('flash');
   let stepIndex = 0;
@@ -326,6 +328,7 @@ function buildVisualSearchWithParts(lesson, onBack, parts) {
 
   function render() {
     clear(container);
+    jump?.update(stepIndex);
     if (steps[stepIndex] === 'mask') { renderMask(); return; }
     if (steps[stepIndex] === 'flash') { renderFlash(); return; }
     if (roundIndex >= groups.length) {
@@ -568,6 +571,8 @@ function buildVisualSearchWithParts(lesson, onBack, parts) {
     showOne();
   }
 
+  // 題組跳轉列放在 container 外面：各步驟會 clear(container)，列不能跟著被清掉
+  jump = StepJump({ steps, moduleKey: 'visual_search', onJump: (i) => { stepIndex = i; roundIndex = 0; render(); } });
   render();
-  return container;
+  return h('div', {}, [jump.el, container]);
 }

@@ -34,7 +34,7 @@ const KEY = 'mandarin:device-settings:v1';
 export const SCAFFOLD_LEVELS = {
   support: {
     key: 'support',
-    label: '低組',
+    label: '支持',
     optionCount: 2,
     roundSize: 3,
     wrongLimit: 2,
@@ -48,7 +48,7 @@ export const SCAFFOLD_LEVELS = {
   },
   standard: {
     key: 'standard',
-    label: '中組',
+    label: '標準',
     optionCount: 3,
     roundSize: 5,
     wrongLimit: 2,
@@ -62,7 +62,7 @@ export const SCAFFOLD_LEVELS = {
   },
   challenge: {
     key: 'challenge',
-    label: '高組',
+    label: '挑戰',
     optionCount: 4,
     roundSize: 5,
     wrongLimit: 2,
@@ -114,6 +114,15 @@ export function getShowEarlyExit() {
 
 export function setShowEarlyExit(on) {
   return write({ ...read(), showEarlyExit: Boolean(on) });
+}
+
+/** 關卡上方的「題組」跳轉列。預設顯示（CF 2026-10-04 要用）；教師可關。 */
+export function getShowStepJump() {
+  return read().showStepJump !== false;
+}
+
+export function setShowStepJump(on) {
+  return write({ ...read(), showStepJump: Boolean(on) });
 }
 
 /** 字感訓練閃現題要不要 5 秒自動蓋起來。預設關（不限時）：速度不該決定字形辨識的成績。 */

@@ -5,7 +5,7 @@
 // 頁面不顯示、也不儲存任何學生姓名；紀錄只有課次代號、大項代號與正確率。
 import { h, clear } from '../utils/dom.js';
 import { findModuleEntry } from '../activities/moduleRegistry.js';
-import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel, setDeviceLabel, getSheetUrl, setSheetUrl, getScaffoldLevel, getOverride, setOverride, getShowEarlyExit, setShowEarlyExit, DETAIL_SPECS, getLastGrade, hasGradeLevel, getStudentCode, setStudentCode } from '../utils/deviceSettings.js';
+import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel, setDeviceLabel, getSheetUrl, setSheetUrl, getScaffoldLevel, getOverride, setOverride, getShowEarlyExit, setShowEarlyExit, getShowStepJump, setShowStepJump, DETAIL_SPECS, getLastGrade, hasGradeLevel, getStudentCode, setStudentCode } from '../utils/deviceSettings.js';
 import { makeTeacherChallenge, verifyTeacherChallenge } from '../utils/teacherGate.js';
 import { listRecords, recordsAsTsv, clearRecords, unsyncedAttempts, syncRecords, levelAdvice, listSkills } from '../utils/records.js';
 import { allMistakes, clearMistakes } from '../utils/mistakes.js';
@@ -101,13 +101,13 @@ function buildPanel(root) {
   root.appendChild(codeInput);
   root.appendChild(codeNote);
 
-  // ---- 能力分組（CF 2026-10-04：每個個案設定一次，細項跟著走，需要時再單獨改）----
-  root.appendChild(h('h2', {}, '能力分組'));
+  // ---- 支持程度（CF 2026-10-04：每個個案設定一次，細項跟著走，需要時再單獨改）----
+  root.appendChild(h('h2', {}, '支持程度'));
   const code = getStudentCode();
   const current = getScaffoldLevelKey();
   const gradeNow = getLastGrade();
   root.appendChild(h('p', { class: 'teacher-grade-scope' }, code
-    ? `正在設定：學生代碼 ${code} 的能力分組（換人時先在上面改代碼）`
+    ? `正在設定：學生代碼 ${code} 的支持程度（換人時先在上面改代碼）`
     : (gradeNow
       ? `還沒填學生代碼：正在設定${GRADE_NAMES[gradeNow] || `${gradeNow} 年級`}的預設分組`
       : '還沒填學生代碼：正在設定這台載具的預設分組')));
@@ -190,6 +190,18 @@ function buildPanel(root) {
     h('p', { class: 'meta' }, `目前：${earlyOn ? '會顯示' : '不顯示'}`),
   ]);
   root.appendChild(earlyRow);
+  const jumpOn = getShowStepJump();
+  root.appendChild(h('div', { class: 'card teacher-override' }, [
+    h('p', { class: 'teacher-override__label' }, '關卡上方的「題組」跳轉列'),
+    h('p', { class: 'meta' }, '一個關卡有好幾組題目時（例如認識生字：生字卡／字音／找部首），可以直接跳到想練的那一組。'
+      + '學生會為了拿星星而跳過練習時，可以先關掉。'),
+    h('div', { class: 'quiz-option-row' }, [['顯示', true], ['不顯示', false]].map(([label, value]) => {
+      const on = jumpOn === value;
+      const btn = h('button', { class: `btn${on ? ' btn--primary' : ''}`, type: 'button', 'aria-pressed': String(on) }, label);
+      btn.addEventListener('click', () => { setShowStepJump(value); buildPanel(root); });
+      return btn;
+    })),
+  ]));
 
   // ---- 教室密碼 ----
   // 解鎖後金鑰會記在這台載具（學生不必每次輸入），所以一定要給老師一個

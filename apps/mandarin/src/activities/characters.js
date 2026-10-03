@@ -3,6 +3,7 @@
 // 2. 看字選音（ChoiceQuiz，3–5 題一組，多組依序進行）
 // 3. 部首分類（DragToSlot，同一組內部首不重複）
 import { h, clear } from '../utils/dom.js';
+import { StepJump } from '../components/StepJump.js';
 import { shuffle as shuffled } from '../utils/shuffle.js';
 import { chunkRounds } from '../utils/chunk.js';
 import { CharacterCard } from '../components/CharacterCard.js';
@@ -164,6 +165,7 @@ export function buildCharactersActivity(lesson, onBack) {
   const cardRounds = chunkRounds(characters, { max: 6 });   // 字卡一次最多 6 張，和題目的節奏不同
 
   const steps = [];
+  let jump = null;
   if (characters.length > 0) steps.push('cards');
   if (choiceRounds.length > 0) steps.push('choice');
   // 試做：找部首之前先「學方法」（示範＋一起做），之後的部首題算遷移題
@@ -180,6 +182,7 @@ export function buildCharactersActivity(lesson, onBack) {
 
   function renderStep() {
     clear(container);
+    jump?.update(stepIndex);
     if (steps.length === 0) {
       container.appendChild(missingContentNotice('認識生字：教材審核中'));
       return;
@@ -319,6 +322,8 @@ export function buildCharactersActivity(lesson, onBack) {
     }
   }
 
+  // 題組跳轉列放在 container 外面：各步驟會 clear(container)，列不能跟著被清掉
+  jump = StepJump({ steps, moduleKey: 'characters', onJump: (i) => { stepIndex = i; roundIndex = 0; cardRoundIndex = 0; renderStep(); } });
   renderStep();
-  return container;
+  return h('div', {}, [jump.el, container]);
 }

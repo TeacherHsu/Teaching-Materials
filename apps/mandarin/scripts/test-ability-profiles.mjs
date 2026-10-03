@@ -1,4 +1,4 @@
-// 能力分組依個案（學生代碼）記：組別一次設定、細項跟著走、單獨改過的不被蓋掉
+// 支持程度依個案（學生代碼）記：組別一次設定、細項跟著走、單獨改過的不被蓋掉
 import assert from 'node:assert/strict';
 import { installFakeDom } from './fake-dom.mjs';
 installFakeDom();
@@ -6,7 +6,7 @@ const D = await import('../src/utils/deviceSettings.js');
 
 D.setStudentCode('S01');
 D.setScaffoldLevel('support');
-assert.equal(D.getScaffoldLevel().label, '低組');
+assert.equal(D.getScaffoldLevel().label, '支持');
 assert.equal(D.getScaffoldLevel().optionCount, 2, '低組細項跟著組別');
 assert.equal(D.setOverride('roundSize', 8), true);
 assert.equal(D.setOverride('optionCount', 99), false, '清單外的值不收');
@@ -27,4 +27,4 @@ D.setFlashTimed(true);
 assert.equal(D.getFlashTimed(), true, '閃現限時也是個案細項');
 D.setStudentCode('S02');
 assert.equal(D.getFlashTimed(), false);
-console.log('✅ 能力分組依個案記、細項跟著組別、單獨調整保留');
+console.log('✅ 支持程度依個案記、細項跟著組別、單獨調整保留');

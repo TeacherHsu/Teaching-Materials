@@ -4,6 +4,7 @@
 // 回答問題時要回哪一塊找（第 2 層提示說的「找『經過』那一塊」就是指這裡）。
 // 參考站同樣把它放在讀懂課文的第一步，而不是獨立選單（CF 2026-10-03）。
 import { h, clear } from '../utils/dom.js';
+import { StepJump } from '../components/StepJump.js';
 import { SentenceOrdering } from '../components/SentenceOrdering.js';
 import { ReadingQuestions } from '../components/ReadingQuestions.js';
 import { TaskBanner } from '../components/TaskBanner.js';
@@ -212,6 +213,7 @@ export function buildReadingActivity(lesson, onBack) {
   const paragraphItems = buildParagraphItems(lesson.lesson_id, paragraphs, Math.max(2, getScaffoldLevel().optionCount));
 
   const steps = [];
+  let jump = null;
   if (paragraphs.length >= 3) {
     // 有課文地圖就不再做「兩段比較」暖身：學生剛看過全篇骨架，
     // 直接排全篇就是一次回想練習。
@@ -234,6 +236,7 @@ export function buildReadingActivity(lesson, onBack) {
 
   function renderStep() {
     clear(container);
+    jump?.update(stepIndex);
     if (steps.length === 0) {
       container.appendChild(missingContentNotice('讀懂課文：教材審核中（段落大意／提問尚未核准）'));
       return;
@@ -381,6 +384,8 @@ export function buildReadingActivity(lesson, onBack) {
     }
   }
 
+  // 題組跳轉列放在 container 外面：各步驟會 clear(container)，列不能跟著被清掉
+  jump = StepJump({ steps, moduleKey: 'reading', onJump: (i) => { stepIndex = i; roundIndex = 0; renderStep(); } });
   renderStep();
-  return container;
+  return h('div', {}, [jump.el, container]);
 }

@@ -7,6 +7,7 @@
 // 的 sentence_patterns.examples；若可用例句不足，該步驟略過（不會整個模組壞掉，
 // 但 moduleRegistry 會在題數不足時把整個模組標「教材審核中」）。
 import { h, clear } from '../utils/dom.js';
+import { StepJump } from '../components/StepJump.js';
 import { MatchingGame } from '../components/MatchingGame.js';
 import { SentenceOrdering } from '../components/SentenceOrdering.js';
 import { SentenceBuilder } from '../components/SentenceBuilder.js';
@@ -507,6 +508,7 @@ export function buildSentencePracticeActivity(lesson, onBack) {
 
   const patternCards = readyPatternCards(lesson);
   const steps = [];
+  let jump = null;
   if (patternCards.length > 0) steps.push('patterns');
   if (matchingRounds.length > 0) steps.push('matching');
   if (orderingRounds.length > 0) steps.push('ordering');
@@ -533,6 +535,7 @@ export function buildSentencePracticeActivity(lesson, onBack) {
 
   function renderStep() {
     clear(container);
+    jump?.update(stepIndex);
     if (steps.length === 0) {
       container.appendChild(missingContentNotice('句型練習：教材審核中（例句尚未核准）'));
       return;
@@ -694,6 +697,8 @@ export function buildSentencePracticeActivity(lesson, onBack) {
     }
   }
 
+  // 題組跳轉列放在 container 外面：各步驟會 clear(container)，列不能跟著被清掉
+  jump = StepJump({ steps, moduleKey: 'sentence_practice', onJump: (i) => { stepIndex = i; roundIndex = 0; itemIndex = 0; renderStep(); } });
   renderStep();
-  return container;
+  return h('div', {}, [jump.el, container]);
 }

@@ -4,6 +4,7 @@
 // 3. 看義選詞（ChoiceQuiz，3–5 題一組，多組依序進行）
 // 基礎／挑戰：以 word.level 欄位分層，缺欄位時依字數（≥3 字視為挑戰層）。
 import { h, clear } from '../utils/dom.js';
+import { StepJump } from '../components/StepJump.js';
 import { shuffle as shuffled } from '../utils/shuffle.js';
 import { VocabularyCard } from '../components/VocabularyCard.js';
 import { MatchingGame } from '../components/MatchingGame.js';
@@ -81,6 +82,7 @@ export function buildVocabularyActivity(lesson, onBack) {
   const choiceRounds = chunkRounds(basicFirst).map((round) => round.map((w) => buildChoiceItem(w, words)));
 
   const steps = [];
+  let jump = null;
   if (recognitionRounds.length > 0) steps.push('recognition');
   if (matchingRounds.length > 0) steps.push('matching');
   if (choiceRounds.length > 0) steps.push('choice');
@@ -91,6 +93,7 @@ export function buildVocabularyActivity(lesson, onBack) {
 
   function renderStep() {
     clear(container);
+    jump?.update(stepIndex);
     if (steps.length === 0) {
       container.appendChild(missingContentNotice('學會語詞：教材審核中'));
       return;
@@ -187,6 +190,8 @@ export function buildVocabularyActivity(lesson, onBack) {
     }
   }
 
+  // 題組跳轉列放在 container 外面：各步驟會 clear(container)，列不能跟著被清掉
+  jump = StepJump({ steps, moduleKey: 'vocabulary', onJump: (i) => { stepIndex = i; roundIndex = 0; renderStep(); } });
   renderStep();
-  return container;
+  return h('div', {}, [jump.el, container]);
 }
