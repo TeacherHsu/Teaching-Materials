@@ -1,4 +1,4 @@
-// 頁尾連到的兩個說明頁：「老師操作指引」與「版權與資料來源」。
+// 頁尾連到的兩個說明頁：「教師操作指引」與「版權與資料來源」。
 // 對象是大人（其他老師、家長、權利人），不是學生，所以不加朗讀鈕。
 // 刻意不寫學校名稱與教室密碼（CF 指定）。
 import { h } from '../utils/dom.js';
@@ -25,7 +25,7 @@ function page(title, intro, sections) {
 export function GuidePage() {
   const modules = MODULE_REGISTRY.filter((m) => m.implemented !== false);
   const levels = Object.values(SCAFFOLD_LEVELS);
-  return page('老師操作指引', '給想在課堂或補救教學使用本站的老師。不需要帳號、不需要安裝，用瀏覽器開啟即可（建議 iPad 或筆電）。', [
+  return page('教師操作指引', '給想在課堂或補救教學使用本站的老師。不需要帳號、不需要安裝，用瀏覽器開啟即可（建議 iPad 或筆電）。', [
     section('一、這個網站是什麼', [
       p('依翰林、康軒國語課本課次設計的練習網站，適合特殊教育資源班與補救教學。每一課有十多個「關卡」，從生字、語詞、句子到讀懂課文，學生自己操作、自己聽題目。'),
       p('設計重點：一個畫面只做一件事；所有題目都能點喇叭聽；答錯先給提示、第二次才公布答案；提示分三層，學生需要時自己按「看提示」。'),
@@ -117,9 +117,6 @@ export function CreditsPage() {
     ]),
     section('隱私', [
       p('本站不需帳號、不收集姓名。作答紀錄只存在使用的載具上；學生代碼由老師自訂。老師若自行設定同步到 Google 試算表，資料會送到該老師自己的試算表。'),
-    ]),
-    section('權利人聯絡', [
-      p('若您是相關內容的權利人，認為本站使用方式不當，請透過 GitHub 專案 TeacherHsu/Teaching-Materials 提出，我們會儘速確認並移除或修正。'),
     ]),
   ]);
 }

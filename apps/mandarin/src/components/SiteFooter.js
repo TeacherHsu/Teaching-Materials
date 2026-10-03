@@ -22,7 +22,7 @@ export function SiteFooter() {
       ...FOOTER_LINES.map((line) => h('p', { class: 'site-footer__line' }, line)),
       // 給其他老師的操作指引、完整的版權與資料來源（CF 2026-10-04）
       h('p', { class: 'site-footer__links' }, [
-        h('a', { href: '#/guide' }, '老師操作指引'),
+        h('a', { href: '#/guide' }, '教師操作指引'),
         h('span', { 'aria-hidden': 'true' }, '・'),
         h('a', { href: '#/credits' }, '版權與資料來源'),
       ]),

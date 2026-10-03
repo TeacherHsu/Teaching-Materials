@@ -7,6 +7,18 @@ import { loadHanziParts } from '../utils/hanziParts.js';
 import { isPreview } from '../utils/preview.js';
 
 // 筆順動畫：CF 核對完「生字筆順-待確認」清單之前，只在預覽模式出現。核對完改成 true。
+// 鉛筆插畫（和大項插圖同一種淡雅風格：主題色描邊、無黑線）
+const PENCIL_ILLUSTRATION = `<svg viewBox="0 0 64 64" width="40" height="40" aria-hidden="true">
+  <g transform="rotate(-40 32 32)" stroke="var(--module-color, #3a7cc0)" stroke-opacity="0.55" stroke-width="2.5" stroke-linejoin="round">
+    <rect x="14" y="25" width="30" height="14" rx="2" fill="#f7d77e"/>
+    <rect x="44" y="25" width="7" height="14" fill="#cfd8e6"/>
+    <rect x="51" y="25" width="6" height="14" rx="3" fill="#f2a7b5"/>
+    <path d="M14 25 L4 32 L14 39 Z" fill="#f6e3c6"/>
+    <path d="M7.5 29.6 L4 32 L7.5 34.4 Z" fill="var(--module-color, #3a7cc0)" stroke="none" opacity="0.8"/>
+    <line x1="16" y1="32" x2="42" y2="32" stroke-opacity="0.3"/>
+  </g>
+</svg>`;
+
 const STROKE_ANIMATION_APPROVED = true; // CF 2026-10-04 核對 808 字筆順 OK
 
 const EXTERNAL_LINK_ICON = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:4px;vertical-align:-2px"><path d="M14 5h5v5"/><path d="M19 5l-8 8"/><path d="M18 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>`;
@@ -71,12 +83,18 @@ export function CharacterCard(character, originExtension = null, lessonId = '') 
   // 沒有的字照舊用上面的外部「筆順與解釋」。
   if (lessonId && typeof document !== 'undefined' && (STROKE_ANIMATION_APPROVED || isPreview())) {
     const slot = h('div', { class: 'character-card__stroke' });
-    const toggle = h('button', { class: 'btn btn--secondary character-card__stroke-btn', type: 'button', hidden: true }, '看筆順');
+    // 只放鉛筆插畫、不寫字（CF 2026-10-04：卡片上已有外部「筆順與解釋」，避免「筆順」重複出現）
+    const toggle = h('button', {
+      class: 'character-card__stroke-btn', type: 'button', hidden: true,
+      'aria-label': '看筆順動畫', 'aria-expanded': 'false', title: '看筆順動畫', html: PENCIL_ILLUSTRATION,
+    });
     let open = false;
     toggle.addEventListener('click', (e) => {
       e.stopPropagation();
       open = !open;
-      toggle.textContent = open ? '收起筆順' : '看筆順';
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? '收起筆順動畫' : '看筆順動畫');
+      toggle.classList.toggle('character-card__stroke-btn--open', open);
       if (!open) { slot.replaceChildren(); return; }
       loadHanziParts(lessonId.slice(0, 7)).then((data) => {
         const d = data?.chars?.[char];
