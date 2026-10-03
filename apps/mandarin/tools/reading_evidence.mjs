@@ -29,7 +29,9 @@ globalThis.btoa = (s) => Buffer.from(s, 'binary').toString('base64');
 const ENC = path.join(ROOT, 'public/data/readings.enc.json');
 globalThis.fetch = async () => ({ ok: true, status: 200, json: async () => JSON.parse(readFileSync(ENC, 'utf8')) });
 
-const PASSWORD = process.env.CLASSROOM_PASSWORD || '3939889';
+import { classroomPassword } from '../scripts/classroom-password.mjs';
+const PASSWORD = classroomPassword();
+if (!PASSWORD) throw new Error('需要教室密碼：設 CLASSROOM_PASSWORD 或建立 ~/mandarin-work/.classroom-password');
 
 /** 句子的雜湊：只取前 8 碼，夠驗證又不會變成另一種形式的明碼。 */
 export function sentenceHash(text) {

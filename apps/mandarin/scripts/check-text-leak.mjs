@@ -33,7 +33,9 @@ const envelope = JSON.parse(readFileSync(ENC, 'utf8'));
 globalThis.fetch = async () => ({ ok: true, status: 200, json: async () => envelope });
 
 const K = await import('../src/utils/classroomKey.js');
-await K.unlockWithPassword(process.env.CLASSROOM_PASSWORD || '3939889');
+const { classroomPassword } = await import('./classroom-password.mjs');
+if (!classroomPassword()) { console.log('⏭  沒有教室密碼（本機檔或環境變數），略過課文外洩檢查'); process.exit(0); }
+await K.unlockWithPassword(classroomPassword());
 const { splitSentences } = await import('../src/utils/readingUnits.js');
 
 const PER_LESSON_MAX = 60;

@@ -12,8 +12,8 @@
 要改課文請改那裡，然後重跑本程式。
 
 用法：
-    python3 tools/encrypt_readings.py --password 078451
-    python3 tools/encrypt_readings.py --password 078451 --src ~/mandarin-work/reading-tool-lessons
+    python3 tools/encrypt_readings.py --password <教室密碼>
+    python3 tools/encrypt_readings.py --password <教室密碼> --src ~/mandarin-work/reading-tool-lessons
 
 輸出：public/data/readings.enc.json
 """

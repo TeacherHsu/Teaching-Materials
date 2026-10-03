@@ -11,7 +11,9 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const ENC_PATH = path.join(ROOT, 'public', 'data', 'readings.enc.json');
-const PASSWORD = '3939889';
+import { classroomPassword } from './classroom-password.mjs';
+const PASSWORD = classroomPassword();
+if (!PASSWORD) { console.log('⏭  沒有教室密碼，略過'); process.exit(0); }
 
 if (!fs.existsSync(ENC_PATH)) {
   console.log('⚠ 找不到 public/data/readings.enc.json，跳過（這台電腦沒有 mandarin-work）');
