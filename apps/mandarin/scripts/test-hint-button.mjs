@@ -63,13 +63,15 @@ hintButton().dispatch('click');
 assert.deepEqual(fired, [2, 3], '第 3 層要畫螢光筆');
 assert.equal(hintButton().hidden, true, '三層用完按鈕要收起來');
 
-// 支持層 wrongLimit=1 也不受影響：用完提示再作答，答對但不算第一次就答對
+// 用完提示再作答：用完提示再作答，答對但不算第一次就答對
 const answer = find(root, (n) => String(n.tagName).toLowerCase() === 'button' && text(n) === '家常飯菜');
 answer.dispatch('click');
 assert.equal(allMistakes().length, 1, '用過提示才答對，要收進錯題盒之後再練');
 
-// 一般題目（沒有分層提示）不出現這顆按鈕
+// 一般字串提示也能主動取用（2026-10-03 起）；完全沒有提示的題目才不出現按鈕
 const plain = ChoiceQuiz({ items: [{ stem: 'x', options: ['a', 'b'], answer: 'a', hints: ['想一想'] }], onBack() {} });
-assert.equal(find(plain, (n) => String(n.tagName).toLowerCase() === 'button' && /^看提示/.test(text(n))), null, '一般題目不出現看提示');
+assert.ok(find(plain, (n) => String(n.tagName).toLowerCase() === 'button' && /^看提示/.test(text(n))), '字串提示也要能主動看');
+const bare = ChoiceQuiz({ items: [{ stem: 'x', options: ['a', 'b'], answer: 'a' }], onBack() {} });
+assert.equal(find(bare, (n) => String(n.tagName).toLowerCase() === 'button' && /^看提示/.test(text(n))), null, '沒有提示的題目不出現看提示');
 
 console.log('✅ 看提示：三層可主動逐層取用、用完收起、用過提示不算獨立答對、一般題目不受影響');

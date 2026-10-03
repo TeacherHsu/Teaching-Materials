@@ -9,6 +9,7 @@ import { missingContentNotice } from './engine.js';
 import { filterByStatus } from '../utils/preview.js';
 import { speechSupported } from '../utils/speech.js';
 import { chunkRounds } from '../utils/chunk.js';
+import { hasPlayableAnswer } from '../utils/answerGate.js';
 
 /**
  * @param {object} lesson
@@ -19,19 +20,19 @@ import { chunkRounds } from '../utils/chunk.js';
 // 注意：不帶 extra（音檔播放列）——小考是混題測驗，不重播音檔。
 export function buildListeningQuizItems(lesson) {
   return filterByStatus(lesson.listening || [])
-    .filter((l) => l.stem && l.question)
+    .filter((l) => l.stem && l.question && hasPlayableAnswer(l))
     .map((entry) => ({
       id: entry.id,
       stem: entry.question,
       options: entry.options,
       answer: entry.answer,
-      explanation: `對照內容：${entry.stem}`,
+      explanation: entry.explanation || `對照內容：${entry.stem}`,
       hints: ['再想一想，注意誰做了什麼事。'],
     }));
 }
 
 export function buildListeningActivity(lesson, onBack) {
-  const items = filterByStatus(lesson.listening || []).filter((l) => l.stem && l.question);
+  const items = filterByStatus(lesson.listening || []).filter((l) => l.stem && l.question && hasPlayableAnswer(l));
   const rounds = chunkRounds(items);
   let roundIndex = 0;
 
@@ -53,8 +54,11 @@ export function buildListeningActivity(lesson, onBack) {
       // 聽聽看要念的那段話就是課文：不存明碼，改存索引參照，這裡從解密後的
       // 課文取回來。沒解鎖就沒有短文——這和課文點讀、朗讀挑戰一致。
       const passage = entry.passage
-        || resolveSpots(lesson.lesson_id, entry.passage_ref)
-        || entry.stem;
+        || resolveSpots(lesson.lesson_id, entry.passage_ref);
+      // 沒有段落就明說，不拿題目 stem 頂替——那會變成「聽題目」而不是「聽課文」。
+      if (!passage) {
+        return h('p', { class: 'meta listening-audio' }, '這段要聽的課文還沒備妥：請老師先輸入教室密碼解鎖課文。');
+      }
       if (speechSupported()) {
         row.appendChild(
           SpeakButton({
@@ -87,7 +91,7 @@ export function buildListeningActivity(lesson, onBack) {
           stem: entry.question,
           options: entry.options,
           answer: entry.answer,
-          explanation: `對照內容：${entry.stem}`,
+          explanation: entry.explanation || `對照內容：${entry.stem}`,
           hints: ['再聽一次（或看看文字），注意誰做了什麼事。'],
           extra: buildAudioRow(entry),
         })),

@@ -11,8 +11,10 @@ const KEY = 'mandarin:device-settings:v1';
  * - optionCount：選擇題的選項數（含正解）
  * - roundSize：每一輪最多幾題
  * - wrongLimit：答錯幾次之後直接揭曉正解。
- *     支持層設 1＝**答錯一次就告訴他答案**，不讓學生在錯誤裡反覆打轉
- *     （近似零錯誤學習）。標準／挑戰層設 2＝先給提示，再錯才揭曉。
+ *     三層都設 2＝先給提示、再錯才揭曉（apps/mandarin/AGENTS.md 的設計底線）。
+ *     支持層原本設 1（答錯一次就揭曉，近似零錯誤學習），但這樣最需要鷹架的
+ *     學生一次修正機會都沒有（2026-10-03 審查建議）。改成第一次錯給「最強」
+ *     的提示，學生自己再選一次。
  * - autoRead：題目出現時自動念一次。支持層預設開——閱讀困難的學生
  *     要先聽到題目才讀得下去，不該每題都得自己按喇叭。
  * - reciteUnit：朗讀挑戰一次念多少（CF 2026-10-02 指定的三段）：
@@ -35,13 +37,13 @@ export const SCAFFOLD_LEVELS = {
     label: '支持',
     optionCount: 2,
     roundSize: 3,
-    wrongLimit: 1,
+    wrongLimit: 2,
     autoRead: true,
     reciteUnit: 'clause',
     reciteModel: true,
     unlockMemory: false,
     prefill: 1,
-    note: '選項少、題數少；答錯一次就直接告訴他答案；題目會自動念出來；朗讀一次一句、可先聽範讀。',
+    note: '選項少、題數少；答錯先給明確提示，再錯才揭曉答案；題目會自動念出來；朗讀一次一句、可先聽範讀。',
   },
   standard: {
     key: 'standard',

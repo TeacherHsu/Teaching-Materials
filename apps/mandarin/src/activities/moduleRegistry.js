@@ -1,6 +1,7 @@
 // 9 大項模組註冊表：狀態由資料＋是否已實作決定，不寫死於元件／頁面。
 // 規格 docs/specs/2026-09-25-mandarin-dabutie-importer.md §4。
 import { filterByStatus } from '../utils/preview.js';
+import { hasPlayableAnswer } from '../utils/answerGate.js';
 import { isModuleComplete } from '../utils/storage.js';
 import { canStartPolyphones } from './polyphones.js';
 import { buildPronunciationItems } from './pronunciationQuestions.js';
@@ -66,7 +67,7 @@ function readyPolysemy(lesson) {
 }
 
 function readyListening(lesson) {
-  return filterByStatus(lesson.listening || []).filter((l) => l.stem && l.question);
+  return filterByStatus(lesson.listening || []).filter((l) => l.stem && l.question && hasPlayableAnswer(l));
 }
 
 function readyRhetoric(lesson) {

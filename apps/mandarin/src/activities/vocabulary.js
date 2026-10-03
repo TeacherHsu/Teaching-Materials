@@ -47,12 +47,16 @@ function buildChoiceItem(word, all) {
  * 共有的字是從資料算的，沒有就只劃選項。
  */
 export function vocabularyHints(word, optionCount) {
-  const shared = [...new Set([...String(word.word)])].filter((ch) => /\p{Script=Han}/u.test(ch) && String(word.meaning).includes(ch));
+  // 第 2 層原本是「意思裡有『X』這個字，找哪個語詞也有」——等於指著答案
+  // （2026-10-03 審查建議）。改成「放進句子比一比」：學生要自己代換、自己判斷。
+  // 例句裡把目標詞挖空，才不會直接露出答案。
+  const example = word.example_status === 'ready' || word.example_status === 'approved' ? String(word.example_sentence || '') : '';
+  const blanked = example && example.includes(word.word) ? example.split(word.word).join('＿＿') : '';
   return [
     { text: '先找意思裡最重要的那幾個字。' },
-    shared.length
-      ? { text: `意思裡有「${shared[0]}」這個字，找找看哪個語詞也有。`, eliminate: optionCount >= 3 ? 1 : 0 }
-      : { text: '先把意思明顯不一樣的劃掉。', eliminate: optionCount >= 3 ? 1 : 0 },
+    blanked
+      ? { text: `放進句子比一比：「${blanked}」哪個語詞放進去最通順？`, eliminate: optionCount >= 3 ? 1 : 0 }
+      : { text: '把每個語詞放進這個意思裡念念看，念起來不通的先劃掉。', eliminate: optionCount >= 3 ? 1 : 0 },
     { text: `聽一聽意思：「${word.meaning}」，把剩下的語詞放進去說說看。`, speak: word.meaning },
   ];
 }

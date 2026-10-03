@@ -18,7 +18,7 @@ window.matchMedia = () => ({ matches: false });
 const D = await import('../src/utils/deviceSettings.js');
 
 // ── 1. 三層的新欄位 ───────────────────────────────
-assert.equal(D.SCAFFOLD_LEVELS.support.wrongLimit, 1, '支持層答錯一次就揭曉');
+assert.equal(D.SCAFFOLD_LEVELS.support.wrongLimit, 2, '支持層也先給提示、再錯才揭曉（AGENTS.md 底線）');
 assert.equal(D.SCAFFOLD_LEVELS.standard.wrongLimit, 2);
 assert.equal(D.SCAFFOLD_LEVELS.challenge.wrongLimit, 2);
 assert.equal(D.SCAFFOLD_LEVELS.support.autoRead, true, '支持層預設自動念題');
@@ -76,18 +76,18 @@ function firstWrongThen(root) {
 }
 
 store.clear();
-D.setScaffoldLevel('support');            // wrongLimit 1
-let r = firstWrongThen(ChoiceQuiz({ items: [makeItem()], onBack() {}, onComplete() {} }));
-assert.equal(r.揭曉了, true, '支持層：答錯一次就該揭曉正解');
-assert.equal(r.有提示, false, '支持層：直接揭曉就不該再給提示');
+D.setScaffoldLevel('support');            // wrongLimit 2（2026-10-03 起）
+let r = firstWrongThen(ChoiceQuiz({ items: [makeItem()], optionCount: 3, onBack() {}, onComplete() {} }));
+assert.equal(r.揭曉了, false, '支持層：第一次答錯先給提示，不揭曉');
+assert.equal(r.有提示, true, '支持層：第一次答錯要給提示');
 
 D.setScaffoldLevel('standard');           // wrongLimit 2
-r = firstWrongThen(ChoiceQuiz({ items: [makeItem()], onBack() {}, onComplete() {} }));
+r = firstWrongThen(ChoiceQuiz({ items: [makeItem()], optionCount: 3, onBack() {}, onComplete() {} }));
 assert.equal(r.揭曉了, false, '標準層：第一次答錯不該揭曉');
 assert.equal(r.有提示, true, '標準層：第一次答錯要給提示');
 
 // 呼叫端覆寫（單課小考用）要蓋過教師設定
-r = firstWrongThen(ChoiceQuiz({ items: [makeItem()], wrongLimit: 1, onBack() {}, onComplete() {} }));
+r = firstWrongThen(ChoiceQuiz({ items: [makeItem()], wrongLimit: 1, optionCount: 3, onBack() {}, onComplete() {} }));
 assert.equal(r.揭曉了, true, '小考傳 wrongLimit:1 應蓋過教師設定');
 
 console.log('✅ 鷹架：wrongLimit／autoRead 生效、切等級不蓋掉教師手調、白名單外不可覆寫、小考可強制覆寫');

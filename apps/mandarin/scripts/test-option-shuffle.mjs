@@ -18,6 +18,7 @@ Math.random = () => 0;
 try {
   const root = ChoiceQuiz({
     items: [{ stem: '請選出正確答案', options: original, answer: '甲' }],
+    optionCount: 4,
   });
   const buttons = root.findAll((node) => node.tagName === 'button' && node.hasClass('quiz-option'));
   assert.deepEqual(

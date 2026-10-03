@@ -42,11 +42,17 @@ export function ChoiceQuiz({
   continueLabel = '加練下一組',
   wrongLimit,
   autoRead,
+  optionCount,
 }) {
   // 預設跟著這台載具的鷹架設定；呼叫端可以覆寫（單課小考固定 wrongLimit 1）。
   const scaffold = getScaffoldLevel();
   const limit = Number.isFinite(wrongLimit) && wrongLimit > 0 ? wrongLimit : scaffold.wrongLimit;
   const readAloud = autoRead === undefined ? scaffold.autoRead : autoRead;
+  // 選項數跟著鷹架層（支持 2／標準 3／挑戰 4）。原本只有少數活動自己讀設定，
+  // 共用元件不裁，教師在設定頁選「支持」卻看到四個選項。資料選項比設定多時，
+  // 留正解、隨機留其他；比設定少就照資料（不會無中生有）。
+  // item.fixedOptions 的題目（例如「是／不是」）不裁。
+  const maxOptions = Number.isFinite(optionCount) && optionCount >= 2 ? optionCount : scaffold.optionCount;
   const root = h('div', { class: 'quiz-panel' });
   let index = 0;
   let correctCount = 0;
@@ -75,7 +81,7 @@ export function ChoiceQuiz({
     const item = items[index];
     // 題庫資料保留內容順序；學生畫面每次重繪都重新亂數排列選項。
     // ReadAllButton 也使用這份畫面順序，朗讀順序與視覺順序一致。
-    const options = shuffle(item.options || []);
+    const options = shuffle(trimOptions(item, maxOptions));
     const stemText = item.stemText || item.stem;
     const stemContent = item.stemContent || stemText;
     let answered = false; // 題目鎖定（答對，或第 2 次答錯揭曉正解）
@@ -170,16 +176,21 @@ export function ChoiceQuiz({
 
         if (attempts < limit) {
           // 還沒到揭曉次數：不揭曉正解，該選項停用，其餘選項仍可選。
-          // 支持層 limit=1，所以這一段不會執行——答錯一次就直接揭曉（零錯誤學習）。
           btn.disabled = true;
           clear(feedbackSlot);
           const layers = Array.isArray(item.hints) ? item.hints : [];
-          const layer = layers[Math.min(hintLevel, layers.length - 1)];
-          hintLevel += 1;
+          // 支持層第一次錯就給「最強」的那層（中間層的動作一併做完），讓學生
+          // 帶著明確線索自己再選一次；其他層一次往下一層。
+          const target = scaffold.key === 'support' ? layers.length - 1 : hintLevel;
+          let layer = layers[Math.min(hintLevel, layers.length - 1)];
           // 提示可以「做事」：第 2 層展開段落、第 3 層畫螢光筆。
           // 對閱讀困難的學生，「回到課文找線索」這句話沒有作用——
           // 他不知道回到哪裡、找什麼。要把動作做給他看。
-          applyLayer(layer);
+          do {
+            layer = layers[Math.min(hintLevel, layers.length - 1)];
+            applyLayer(layer);
+            hintLevel += 1;
+          } while (hintLevel <= target && hintLevel < layers.length);
           refreshHintButton();
           revealExtra();
           const hintText = (layer && (layer.text || layer)) || item.hint || DEFAULT_HINT;
@@ -195,6 +206,9 @@ export function ChoiceQuiz({
               SpeakButton({ text: '再試一次', label: '聽', variant: 'speak-button--option' }),
             ]),
           );
+          // 錯因回饋：資料若寫了「這個選項為什麼不對」，先指出錯在哪，再給下一步提示。
+          const why = item.why && item.why[opt];
+          if (why) feedbackSlot.appendChild(h('p', { class: 'meta quiz-why' }, why));
           feedbackSlot.appendChild(HintPanel({ message: hintText }));
         } else {
           // 達到揭曉次數：揭曉正解，鎖題
@@ -267,10 +281,10 @@ export function ChoiceQuiz({
     // 的學生一層提示都拿不到；標準／挑戰層答錯兩次揭曉，第 2 層也永遠跳過。
     // 零錯誤學習本來就該「先給提示再作答」，所以提示改成也能主動取用。
     // 只有分層提示（閱讀理解）才出現；一般題目沒有這顆按鈕。
-    // 挑戰層不給主動提示（參考站等級 3 也沒有 💡）：這一層要練的是獨立作答；
-    // 答錯時照樣會推進提示層數，不會卡死。
-    const layered = scaffold.key !== 'challenge'
-      && Array.isArray(item.hints) && item.hints.some((l) => l && typeof l === 'object');
+    // 每一層都有（2026-10-03 審查建議）：挑戰層練的是獨立，但「需要時自己叫得
+    // 出提示」本身就是獨立學習者的能力；用了提示照樣不算獨立答對，紀錄分得開。
+    // 一般字串提示也一樣可以主動取用，不必等答錯。
+    const layered = Array.isArray(item.hints) && item.hints.some((l) => l && (typeof l === 'object' || typeof l === 'string'));
     const hintButton = layered
       ? h('button', { class: 'btn btn--ghost quiz-hint-button', type: 'button' })
       : null;
@@ -285,7 +299,8 @@ export function ChoiceQuiz({
       if (typeof layer.on === 'function') layer.on();
       if (layer.eliminate) {
         const wrong = optionButtons.filter((b) => !b.disabled && b.textContent.trim() !== item.answer);
-        shuffle(wrong).slice(0, layer.eliminate).forEach((b) => {
+        // 至少留一個錯誤選項：刪到只剩正解，提示就等於直接給答案。
+        shuffle(wrong).slice(0, Math.min(layer.eliminate, wrong.length - 1)).forEach((b) => {
           b.disabled = true;
           b.classList.add('quiz-option--eliminated');
           b.setAttribute('aria-label', `${b.textContent.trim()}（提示：不是這個）`);
@@ -315,7 +330,7 @@ export function ChoiceQuiz({
         hintUsed = true;
         applyLayer(layer);
         clear(feedbackSlot);
-        feedbackSlot.appendChild(HintPanel({ message: (layer && layer.text) || DEFAULT_HINT }));
+        feedbackSlot.appendChild(HintPanel({ message: (typeof layer === 'string' ? layer : layer && layer.text) || DEFAULT_HINT }));
         refreshHintButton();
         // 證據面板在題目上方，提示在選項下方；面板一打開，學生的視線還停在下面，
         // 常常沒注意到上面多了課文。打開時把面板捲進畫面。
@@ -331,4 +346,15 @@ export function ChoiceQuiz({
 
   render();
   return root;
+}
+
+/**
+ * 依鷹架層裁選項：正解一定留著，其餘隨機留到 max 個。
+ * 資料選項不多於 max、或題目標了 fixedOptions，就原樣回傳。
+ */
+export function trimOptions(item, max) {
+  const all = Array.isArray(item?.options) ? item.options : [];
+  if (item?.fixedOptions || !Number.isFinite(max) || all.length <= max || !all.includes(item.answer)) return all;
+  const others = shuffle(all.filter((o) => o !== item.answer)).slice(0, max - 1);
+  return [item.answer, ...others];
 }

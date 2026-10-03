@@ -70,7 +70,7 @@ const find = (n, p) => (p(n) ? n : (n.children || []).reduce((acc, c) => acc || 
 const findAll = (n, p, out = []) => { if (p(n)) out.push(n); (n.children || []).forEach((c) => findAll(c, p, out)); return out; };
 for (let t = 0; t < 30; t += 1) {
   const quiz = ChoiceQuiz({ items: [{ stem: 's', options: ['對', '錯一', '錯二', '錯三'], answer: '對',
-    hints: [{ text: '一' }, { text: '二', eliminate: 2 }, { text: '三' }] }], onBack() {} });
+    hints: [{ text: '一' }, { text: '二', eliminate: 2 }, { text: '三' }] }], optionCount: 4, onBack() {} });
   const btn = () => find(quiz, (n) => String(n.tagName).toLowerCase() === 'button' && /^看提示/.test(n.textContent || ''));
   btn().dispatch('click'); btn().dispatch('click');
   const opts = findAll(quiz, (n) => n.hasClass && n.hasClass('quiz-option'));
@@ -93,3 +93,15 @@ assert.equal(lit[0].textContent, '雖然', '標亮的是第 1 格該放的詞塊
 // 真實資料：四上 L03 的讀音題都帶三層
 for (const it of buildPronunciationItems(lesson.characters, lesson.characters, 3)) checkLayers(`四上L03「${it.character}」`, it.hints, it.answer);
 console.log('✅ 三層鷹架：生字讀音、部首、語詞、選關聯詞、一段一段讀、分類都有三層；不寫出答案；劃選項不劃正解；排句子逐塊標亮');
+
+// 選項數跟著鷹架層：正解一定留著；fixedOptions 不裁；刪選項至少留一個錯的
+const { trimOptions } = await import('../src/components/ChoiceQuiz.js');
+for (let t = 0; t < 30; t += 1) {
+  const two = trimOptions({ options: ['對', '錯一', '錯二', '錯三'], answer: '對' }, 2);
+  assert.equal(two.length, 2); assert.ok(two.includes('對'), '裁選項不能裁掉正解');
+}
+assert.equal(trimOptions({ options: ['是', '不是', '不一定'], answer: '是', fixedOptions: true }, 2).length, 3);
+const tiny = ChoiceQuiz({ items: [{ stem: 's', options: ['對', '錯'], answer: '對', hints: [{ text: '一', eliminate: 2 }] }], onBack() {} });
+find(tiny, (n) => String(n.tagName).toLowerCase() === 'button' && /^看提示/.test(n.textContent || '')).dispatch('click');
+assert.equal(findAll(tiny, (n) => n.hasClass && n.hasClass('quiz-option--eliminated')).length, 0, '只剩兩個選項時不能刪到只剩正解');
+console.log('✅ 選項數依鷹架層裁切、刪選項不洩答案');

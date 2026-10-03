@@ -27,7 +27,8 @@
     "check-dist": "node scripts/check-dist.mjs && npm run check-assets",
     "build-char-index": "node scripts/build-char-index.mjs",
     "check-text-leak": "node scripts/check-text-leak.mjs",
-    "review": "vite --open '/?preview=1#/'"
+    "review": "vite --open '/?preview=1#/'",
+    "check-evidence": "node scripts/check-all-evidence.mjs"
   },
   "devDependencies": {
     "ajv": "^8.17.1",
