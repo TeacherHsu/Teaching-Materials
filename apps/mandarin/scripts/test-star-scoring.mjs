@@ -37,13 +37,13 @@ recordOutcome({ firstTry: true, revealed: false });
 recordOutcome({ firstTry: true, revealed: false });
 recordOutcome({ firstTry: false, revealed: true });
 const meta = endScoreSession();
-assert.deepEqual(meta, { total: 3, firstTryCount: 2, revealedCount: 1 });
+assert.deepEqual(meta, { total: 3, firstTryCount: 2, hintedCount: 0, revealedCount: 1 });
 assert.equal(computeModuleStars(meta), 2, '一題被揭曉 → 2 顆星');
 
 // 沒有 startScoreSession 就呼叫 recordOutcome：安靜忽略，不丟例外
 assert.doesNotThrow(() => recordOutcome({ firstTry: true, revealed: false }));
 const emptyMeta = endScoreSession();
-assert.deepEqual(emptyMeta, { total: 0, firstTryCount: 0, revealedCount: 0 });
+assert.deepEqual(emptyMeta, { total: 0, firstTryCount: 0, hintedCount: 0, revealedCount: 0 });
 
 // ---- starsMarkup：文字替代（aria-label），不是只靠顏色 ----
 const markup2of3 = starsMarkup({ earned: 2, max: 3 });

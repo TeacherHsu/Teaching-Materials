@@ -34,7 +34,8 @@ export function usablePolyphoneEntries(lesson) {
     for (const reading of readings) {
       const example = reading.examples[0];
       if (!example) continue;
-      out.push({ char: entry.char, example, zhuyin: reading.zhuyin, allZhuyin: [...distinctZhuyin] });
+      out.push({ char: entry.char, example, zhuyin: reading.zhuyin, allZhuyin: [...distinctZhuyin],
+        readings: readings.map((r) => ({ zhuyin: r.zhuyin, examples: r.examples })) });
     }
   }
   return out;
@@ -42,6 +43,25 @@ export function usablePolyphoneEntries(lesson) {
 
 export function canStartPolyphones(lesson) {
   return usablePolyphoneEntries(lesson).length >= 2;
+}
+
+/**
+ * 三層提示（2026-10-03 審查建議：「想詞義」太抽象）。
+ * 第 2 層列出每個讀音的**其他**例詞（排除本題這個詞），學生拿熟悉的詞類推；
+ * 不念出本題語詞——語音合成的多音字未必讀對，念錯反而誤導。
+ */
+export function polyphoneHints(item) {
+  const contrast = (item.readings || [])
+    .map((r) => ({ zhuyin: r.zhuyin, words: r.examples.filter((w) => w !== item.example).slice(0, 2) }))
+    .filter((r) => r.words.length)
+    .map((r) => `讀 ${r.zhuyin}：${r.words.join('、')}`);
+  return [
+    { text: `先想想「${item.example}」是什麼意思。` },
+    contrast.length
+      ? { text: `用學過的詞比一比——${contrast.join('；')}。「${item.example}」的意思比較像哪一組？` }
+      : { text: '把每個讀音放進詞裡念念看，哪一個是你平常聽到的說法？' },
+    { text: '注意聲調：把兩個讀音都放進詞裡小聲念，挑你聽過的那一個。' },
+  ];
 }
 
 function buildChoiceItem(item) {
@@ -53,7 +73,7 @@ function buildChoiceItem(item) {
     options,
     answer: item.zhuyin,
     explanation: `「${item.example}」的「${item.char}」讀作 ${item.zhuyin}。`,
-    hints: ['同一個字的不同讀音，意思通常也不一樣，想想這個詞的意思是什麼。'],
+    hints: polyphoneHints(item),
   };
 }
 

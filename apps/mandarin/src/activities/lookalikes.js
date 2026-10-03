@@ -32,6 +32,24 @@ function usableGroups(lesson) {
     .filter((g) => g.chars.length >= 2);
 }
 
+/**
+ * 三層提示（2026-10-03 審查建議：「比較部首或發音」沒指出這題的差異）。
+ * 1. 讀整個詞、想意思；2. 用「別的字」的例詞做對照——看到錯的字用在哪裡，
+ *    學生自己排除，不會直接看到答案；3. 念出完整語詞（字音不同的形似字靠聽就分得出）。
+ */
+export function lookalikeHints(group, target, blanked, example) {
+  const others = group.chars
+    .filter((c) => c.char !== target.char && c.example)
+    .map((c) => `「${c.char}」用在「${splitExamples(c.example)[0]}」`);
+  return [
+    { text: `先把「${blanked}」整個讀一讀，想想這個詞在說什麼。` },
+    others.length
+      ? { text: `比一比：${others.join('；')}。這個詞的意思和它們一樣嗎？` }
+      : { text: '看看每個字不一樣的那一半：和意思有關的部首是哪一個？' },
+    { text: '聽聽整個語詞，再選一次。', speak: example },
+  ];
+}
+
 function buildChoiceItems(group, target) {
   return splitExamples(target.example).flatMap((example, exampleIndex) => {
     const blanked = blankTarget(example, target.char);
@@ -45,7 +63,7 @@ function buildChoiceItems(group, target) {
       options,
       answer: target.char,
       explanation: `正確答案是「${target.char}」：${example}`,
-      hints: [`這幾個字長得很像，比較一下部首或發音，想想哪一個字才對。`],
+      hints: lookalikeHints(group, target, blanked, example),
     }];
   });
 }

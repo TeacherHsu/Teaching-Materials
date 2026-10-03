@@ -79,7 +79,11 @@ function buildChoiceItem(entry) {
     answer: entry.definition,
     explanation: `${where}「${entry.char}」是：${entry.definition}`,
     // 一字多義最實用的策略是「代入」：把每個意思放回去讀，通順的就是。
-    hints: ['把每個意思放進去讀讀看，哪一個最通順？'],
+    hints: [
+      { text: '把每個意思放進去讀讀看，哪一個最通順？' },
+      { text: '先劃掉一個放進去明顯不通的意思，再比剩下的。', eliminate: options.length >= 3 ? 1 : 0 },
+      { text: `聽整句再判斷：「${entry.char}」前後的字在說什麼？`, speak: card.clean },
+    ],
   };
 }
 

@@ -10,7 +10,7 @@
 let session = null;
 
 export function startScoreSession() {
-  session = { total: 0, firstTryCount: 0, revealedCount: 0 };
+  session = { total: 0, firstTryCount: 0, hintedCount: 0, revealedCount: 0 };
 }
 
 /**
@@ -23,11 +23,14 @@ export function recordOutcome({ firstTry, revealed }) {
   session.total += 1;
   if (firstTry) session.firstTryCount += 1;
   if (revealed) session.revealedCount += 1;
+  // 有幫助才答對（看過提示或答錯後重選）：和「獨立答對」「揭曉答案」分開記，
+  // 教師才看得出學生是靠鷹架完成，還是被直接告知（2026-10-03 審查建議）。
+  if (!firstTry && !revealed) session.hintedCount += 1;
 }
 
 /** 結束本次作答並回傳彙總，之後 session 歸零，避免下一個大項誤繼承。 */
 export function endScoreSession() {
-  const result = session || { total: 0, firstTryCount: 0, revealedCount: 0 };
+  const result = session || { total: 0, firstTryCount: 0, hintedCount: 0, revealedCount: 0 };
   session = null;
   return result;
 }

@@ -56,6 +56,7 @@ export function recordAttempt(lessonId, moduleKey, session, at) {
     at: at || new Date().toISOString(),
     total: session.total,
     firstTry: session.firstTryCount,
+    hinted: session.hintedCount ?? Math.max(0, session.total - session.firstTryCount - session.revealedCount),
     revealed: session.revealedCount,
     accuracy: Math.round(accuracy * 100) / 100,
   });
@@ -84,7 +85,7 @@ export function listRecords() {
 
 /** 匯出成可貼進試算表的 TSV（不含個人資料）。 */
 export function recordsAsTsv(rows, deviceLabel = '') {
-  const header = ['載具', '課次', '大項', '最近日期', '最近正確率', '最佳正確率', '練習次數'].join('\t');
+  const header = ['載具', '課次', '大項', '最近日期', '最近正確率', '最佳正確率', '練習次數', '最近題數', '獨立答對', '提示後答對', '揭曉答案'].join('\t');
   const lines = rows.map((r) => [
     deviceLabel,
     r.lessonId,
@@ -93,6 +94,10 @@ export function recordsAsTsv(rows, deviceLabel = '') {
     `${Math.round((r.latest.accuracy || 0) * 100)}%`,
     `${Math.round(r.best * 100)}%`,
     r.attempts,
+    r.latest.total ?? '',
+    r.latest.firstTry ?? '',
+    r.latest.hinted ?? '',
+    r.latest.revealed ?? '',
   ].join('\t'));
   return [header, ...lines].join('\n');
 }

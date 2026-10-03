@@ -73,6 +73,31 @@ function buildRhetoricStem(example, highlightTerms = []) {
   ];
 }
 
+// 每種修辭「看得到的特徵」：第 2 層給特徵，學生自己對到名稱。
+// 原本提示直接用 child_note，而 child_note 開頭就是「譬喻：……」——等於把答案念出來
+// （2026-10-03 審查時發現）。
+const FIGURE_CUES = {
+  類疊: '同一個字或詞，是不是一直重複出現？',
+  設問: '句子是不是先提出一個問題（有時自己再回答）？',
+  摹寫: '是不是把看到、聽到、聞到、摸到的感覺寫得很清楚？',
+  映襯: '是不是把兩種相反的情況放在一起比？',
+  轉化: '是不是把東西寫得像人一樣，會說話、有心情？',
+  譬喻: '是不是用「像、好像、彷彿」把兩樣不同的東西比在一起？',
+  頂真: '上一句的最後幾個字，是不是就是下一句的開頭？',
+  感嘆: '是不是用「啊、呀、多麼」和驚嘆號，表達很強的感情？',
+  排比: '是不是有三句以上、句型很像的句子排在一起？',
+  借代: '是不是沒有直接說出那樣東西，而是用它的一部分或特徵來代替？',
+  雙關: '一個詞是不是同時有兩種意思？',
+};
+
+export function rhetoricHints(entry, optionCount = 3) {
+  return [
+    { text: '先看畫線的地方，再和「直接說」比一比：這句話哪裡寫得不一樣？' },
+    { text: FIGURE_CUES[entry.figure] || '找找看這句話特別的地方，是重複、比較，還是提問？', eliminate: optionCount >= 3 ? 1 : 0 },
+    { text: '把畫線的部分改成直接說，念念看少了什麼感覺？再找哪個選項說的就是這個特點。' },
+  ];
+}
+
 function buildChoiceItem(entry, all) {
   const availableFigures = [
     ...all.filter((r) => r.figure !== entry.figure).map((r) => r.figure),
@@ -89,7 +114,7 @@ function buildChoiceItem(entry, all) {
     options,
     answer: entry.figure,
     explanation: `${entry.figure}：${entry.child_note || entry.note}`,
-    hints: [entry.child_note || '再想一想這句話的寫法特別在哪裡。'],
+    hints: rhetoricHints(entry, options.length),
   };
 }
 

@@ -29,12 +29,14 @@ function buildRecordsTable() {
   if (rows.length === 0) {
     return h('p', { class: 'meta' }, '這台載具還沒有作答紀錄。');
   }
-  const head = h('tr', {}, ['課次', '大項', '最近日期', '最近正確率', '最佳', '次數'].map((t) => h('th', { scope: 'col' }, t)));
+  const head = h('tr', {}, ['課次', '大項', '最近日期', '最近正確率', '最近一次：自己／提示後／揭曉', '最佳', '次數'].map((t) => h('th', { scope: 'col' }, t)));
   const body = rows.map((r) => h('tr', {}, [
     h('td', {}, r.lessonId),
     h('td', {}, moduleLabel(r.moduleKey)),
     h('td', {}, String(r.latest.at).slice(0, 10)),
     h('td', {}, percent(r.latest.accuracy)),
+    // 「最近正確率」只算獨立答對；拆開看才知道其餘是靠提示完成，還是被直接告知答案
+    h('td', {}, r.latest.total ? `${r.latest.firstTry ?? '–'}／${r.latest.hinted ?? '–'}／${r.latest.revealed ?? '–'}（共 ${r.latest.total} 題）` : '–'),
     h('td', {}, percent(r.best)),
     h('td', {}, String(r.attempts)),
   ]));
