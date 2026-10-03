@@ -17,6 +17,11 @@ for (const vol of fs.readdirSync(dataRoot).filter((n) => /^115AG\d/.test(n))) {
         if (!Array.isArray(q.options) || q.options.length === 0) continue; // 開放問答不在此限
         checked += 1;
         if (!hasPlayableAnswer(q)) bad.push(`${lesson.lesson_id} ${field} ${q.id}`);
+        // 錯因回饋只能掛在錯誤選項上，而且不能把正解說出來
+        for (const [opt, why] of Object.entries(q.why || {})) {
+          if (!q.options.includes(opt) || opt === q.answer) bad.push(`${lesson.lesson_id} ${q.id} why 掛在非錯誤選項「${opt}」`);
+          if (why.includes(q.answer)) bad.push(`${lesson.lesson_id} ${q.id} why 洩漏正解`);
+        }
       }
     }
   }

@@ -57,7 +57,11 @@ function buildScaffoldedItem(lessonId, item) {
     on: () => { panel.el.hidden = false; },
   });
   layers.push({
-    text: byLevel(3)?.text || '用螢光筆畫起來的那一句，就是答案。',
+    // 只有「提取訊息」題的答案會直接寫在句子裡；推論、詮釋、比較題畫的是線索，
+    // 說「畫起來的就是答案」會教錯方法（2026-10-03 審查建議）。
+    text: byLevel(3)?.text || (item.strategy_tag === '提取訊息' || !item.strategy_tag
+      ? '用螢光筆畫起來的句子裡有答案，找找看是哪幾個字。'
+      : '畫起來的是線索，不是答案本身：讀完想一想，這些句子讓你知道了什麼？'),
     on: () => { panel.el.hidden = false; panel.highlight(); },
   });
 
