@@ -570,7 +570,21 @@
       "answer_hint": "「你」和「我」。因為你和我一起向前走。",
       "strategy_tag": "提取訊息",
       "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            7,
+            8
+          ],
+          "sha": [
+            "1380c795",
+            "07d4d427"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03"
     },
     {
       "id": "reading-question:115AG1H01:03",
@@ -578,7 +592,29 @@
       "answer_hint": "因為他們的腳被綁在一起了，如果不一起走，腳會被拉扯，就沒辦法前進。",
       "strategy_tag": "推論訊息",
       "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "29ce85a4",
+            "f6e094e5",
+            "29ce85a4",
+            "6e8639cc",
+            "bba8da05",
+            "d01812f9"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading-question:115AG1H01:04",

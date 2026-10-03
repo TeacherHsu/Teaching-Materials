@@ -1624,7 +1624,23 @@
       "answer_hint": "穿新衣。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "55a1f570",
+            "c0a66bc2",
+            "19551c92"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H03:02",
@@ -1633,7 +1649,21 @@
       "answer_hint": "國王穿新衣就會高興，不穿新衣就會心情不好。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            5
+          ],
+          "sha": [
+            "55a1f570",
+            "23af9f5c"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H03:03",
@@ -1651,7 +1681,28 @@
       "answer_hint": "大臣。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            4
+          ],
+          "sha": [
+            "70bb68d3"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            0
+          ],
+          "sha": [
+            "3ba275b4"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H03:05",
@@ -1660,7 +1711,23 @@
       "answer_hint": "因為大臣覺得自己找到了好方法，可以讓國王天天穿新衣。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            2,
+            4,
+            7
+          ],
+          "sha": [
+            "d64d3ca5",
+            "70bb68d3",
+            "a8393c3a"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H03:06",
@@ -1669,7 +1736,19 @@
       "answer_hint": "大臣找出國王穿過的舊衣服，改變了袖子，增加了領子，就變成另一件新衣服。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            0
+          ],
+          "sha": [
+            "3ba275b4"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H03:07",
@@ -1678,7 +1757,23 @@
       "answer_hint": "國王發現只要簡單修改，就可以讓一件衣服有全新的面貌，他也開始動手修改，甚至自己設計衣服，享受設計衣服的樂趣。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            7,
+            8
+          ],
+          "sha": [
+            "3ba275b4",
+            "28635b13",
+            "6862571b"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H03:08",
@@ -1696,7 +1791,32 @@
       "answer_hint": "相同：都喜歡穿新衣。不同：以前的國王，會因為沒有新衣服穿而心情不好；但後來的國王，發現動手創造及設計衣服，做自己喜歡的事，可以讓心情變得很好，而且還能把快樂分享出去。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1
+          ],
+          "sha": [
+            "55a1f570"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "31995966",
+            "a419371e",
+            "b0df0625"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H03:10",

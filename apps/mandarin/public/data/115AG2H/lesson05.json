@@ -1475,7 +1475,19 @@
       "answer_hint": "因為退潮時，海水會離岸邊比較遠，讓沙灘看起來很大。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            3
+          ],
+          "sha": [
+            "3dd38164"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H05:02",
@@ -1484,7 +1496,21 @@
       "answer_hint": "因為是螃蟹的家。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "280fc27c",
+            "6084fa93"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H05:03",
@@ -1493,7 +1519,19 @@
       "answer_hint": "傍晚夕陽西下時。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 5,
+          "sentences": [
+            0
+          ],
+          "sha": [
+            "4e8f1c84"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H05:04",
@@ -1502,7 +1540,19 @@
       "answer_hint": "要學螃蟹走路。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 4,
+          "sentences": [
+            2
+          ],
+          "sha": [
+            "962f544d"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H05:05",
@@ -1511,7 +1561,23 @@
       "answer_hint": "因為小真一家有大人也有小孩，每個人的腳大小不同。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 5,
+          "sentences": [
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "db51b826",
+            "d1948250",
+            "39ab1d73"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H05:06",
@@ -1520,7 +1586,25 @@
       "answer_hint": "這幅畫是大自然和人類合作而成的天然畫作，美麗但無法永久保存，卻可以永遠留在家人心中。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 6,
+          "sentences": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "5e8c31f4",
+            "1779635d",
+            "ff576e93",
+            "827697e1"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H05:07",

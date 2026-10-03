@@ -1590,7 +1590,46 @@
       "answer_hint": "害怕、生氣、難過和開心。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1
+          ],
+          "sha": [
+            "927d7255"
+          ]
+        },
+        {
+          "para": 2,
+          "sentences": [
+            0
+          ],
+          "sha": [
+            "d5e2cce9"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            0
+          ],
+          "sha": [
+            "c7a931d2"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            0
+          ],
+          "sha": [
+            "d3a62409"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H01:02",
@@ -1608,7 +1647,19 @@
       "answer_hint": "心裡像是颳冷風，想躲起來。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            3
+          ],
+          "sha": [
+            "9bcdabbc"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H01:04",
@@ -1626,7 +1677,21 @@
       "answer_hint": "心裡像是閃電、打雷，想叫出來。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            1,
+            3
+          ],
+          "sha": [
+            "b6482fe4",
+            "87bc4cdb"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H01:06",
@@ -1635,7 +1700,19 @@
       "answer_hint": "閃電發出的光，還有雷聲轟隆隆的，很大聲，就像人生氣的時候，可能會大聲的說話，很嚇人，作者用這樣的寫法，讓人比較能了解。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            0
+          ],
+          "sha": [
+            "d5e2cce9"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H01:07",
@@ -1662,7 +1739,50 @@
       "answer_hint": "作者都用大自然的現象，如冷風、打雷、下雨、陽光來描述情緒。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            2
+          ],
+          "sha": [
+            "7b3a7014"
+          ]
+        },
+        {
+          "para": 2,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "b6482fe4",
+            "b97feca4"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "106e6f3c",
+            "7e6981ea"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            1
+          ],
+          "sha": [
+            "5558bbc8"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H01:10",
@@ -1671,7 +1791,23 @@
       "answer_hint": "作者用彩虹來表示，即使心情有變化，有好的，也有不好的，但最後都能變好。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 5,
+          "sentences": [
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "34e25cd5",
+            "cfb622e5",
+            "32f4f344"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     }
   ],
   "lookalikes": [

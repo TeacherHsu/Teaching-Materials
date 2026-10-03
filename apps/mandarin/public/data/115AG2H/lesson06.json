@@ -1527,7 +1527,23 @@
       "answer_hint": "螢火蟲。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "e5783cc3",
+            "60834a3a",
+            "8f0382e2"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H06:02",
@@ -1572,7 +1588,21 @@
       "answer_hint": "必須先寫日期、星期和天氣，再把特別的事記錄下來。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "5be52449",
+            "6379ede5"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H06:07",

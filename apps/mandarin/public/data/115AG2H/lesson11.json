@@ -1558,7 +1558,21 @@
       "answer_hint": "閃，因為門裡面有人就是﹁閃﹂。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1
+          ],
+          "sha": [
+            "24f5b64e",
+            "c5b4f029"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H11:04",
@@ -1567,7 +1581,43 @@
       "answer_hint": "閃、閒、闖、聞、間、問。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            1,
+            3,
+            5
+          ],
+          "sha": [
+            "c5b4f029",
+            "5f65c4d3",
+            "68c837a0"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            4,
+            7
+          ],
+          "sha": [
+            "98538904",
+            "461b04fa"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            1
+          ],
+          "sha": [
+            "f81fa8a0"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H11:05",
@@ -1576,7 +1626,47 @@
       "answer_hint": "跑到門裡的有人、月亮、馬和耳朵。太陽則是卡在門中間，嘴巴是站在門口。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            2,
+            4
+          ],
+          "sha": [
+            "24f5b64e",
+            "e2b564df",
+            "ea4f6268"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            2,
+            5,
+            6,
+            7
+          ],
+          "sha": [
+            "d8321d43",
+            "8459bae3",
+            "27129196",
+            "461b04fa"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            0
+          ],
+          "sha": [
+            "c202305a"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H11:06",
@@ -1585,7 +1675,43 @@
       "answer_hint": "因為這些東西和﹁門﹂字組在一起就變成了新字：閃、閒、闖、聞、間、問。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            1,
+            3,
+            5
+          ],
+          "sha": [
+            "c5b4f029",
+            "5f65c4d3",
+            "68c837a0"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            4,
+            7
+          ],
+          "sha": [
+            "98538904",
+            "461b04fa"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            1
+          ],
+          "sha": [
+            "f81fa8a0"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H11:07",
@@ -1603,7 +1729,32 @@
       "answer_hint": "因為跑進門的東西都變得和原本的不太一樣，超乎主角的想像，所以主角認為這一定是妖怪所變的法術。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            1,
+            3,
+            5
+          ],
+          "sha": [
+            "c5b4f029",
+            "5f65c4d3",
+            "68c837a0"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            4
+          ],
+          "sha": [
+            "bb64fa2d"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H11:09",

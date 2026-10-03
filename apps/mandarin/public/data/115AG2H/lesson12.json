@@ -1893,7 +1893,19 @@
       "answer_hint": "我覺得是在讚嘆鵝，所以連寫了三次鵝；也像是在形容鵝的叫聲，連三次鵝、鵝、鵝，很像是鵝在叫。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            5
+          ],
+          "sha": [
+            "96be48d9"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H12:03",
@@ -1902,7 +1914,21 @@
       "answer_hint": "白鵝伸長了脖子，對著天空唱歌。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "cd7a8c7e",
+            "bec21f8d"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H12:04",
@@ -1911,7 +1937,31 @@
       "answer_hint": "可從課文中姐姐指著水面說的話。因為姐姐說眼前所看到的，和駱賓王寫的詩一樣。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "a3aa036e",
+            "07da4eaa",
+            "cd7a8c7e",
+            "bec21f8d",
+            "3cf52222",
+            "69dfb0ef",
+            "61c13343"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H12:05",

@@ -742,7 +742,21 @@
       "answer_hint": "小火車和山洞。",
       "strategy_tag": "提取訊息",
       "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            6,
+            8
+          ],
+          "sha": [
+            "2617c870",
+            "5065f18c"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading-question:115AG1H03:03",
@@ -758,7 +772,21 @@
       "answer_hint": "邀請別的小朋友一起來玩。",
       "strategy_tag": "推論訊息",
       "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "ecb46f39",
+            "3d31a6ab"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading-question:115AG1H03:05",
@@ -766,7 +794,23 @@
       "answer_hint": "一個個積木。",
       "strategy_tag": "推論訊息",
       "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            3,
+            4,
+            5
+          ],
+          "sha": [
+            "c51b18b5",
+            "c429e578",
+            "c6a43c22"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading-question:115AG1H03:06",
@@ -774,7 +818,21 @@
       "answer_hint": "是形容火車行進間所發出的聲音。",
       "strategy_tag": "推論訊息",
       "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1
+          ],
+          "sha": [
+            "3b7dccbb",
+            "6fedea7c"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading-question:115AG1H03:07",
@@ -782,7 +840,28 @@
       "answer_hint": "因為玩遊戲就是要大家一起來玩，才會比較好玩。",
       "strategy_tag": "詮釋整合",
       "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            2
+          ],
+          "sha": [
+            "3d31a6ab"
+          ]
+        },
+        {
+          "para": 2,
+          "sentences": [
+            2
+          ],
+          "sha": [
+            "2f840579"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading-question:115AG1H03:08",

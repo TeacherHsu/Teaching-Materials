@@ -1844,7 +1844,23 @@
       "answer_hint": "竹子的香味，奶奶的愛心和祖先的故事。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "9e284a73",
+            "ab567cd9",
+            "479e44eb"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H07:04",
@@ -1853,7 +1869,23 @@
       "answer_hint": "除了好吃，還能夠保平安。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            3,
+            4,
+            5
+          ],
+          "sha": [
+            "9a917d82",
+            "620f2bc1",
+            "c85bb5ac"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H07:05",

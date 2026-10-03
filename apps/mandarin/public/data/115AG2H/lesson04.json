@@ -1448,7 +1448,21 @@
       "answer_hint": "因為小青蛙躲在池塘的某一處，只能聽到聲音，卻看不見他在哪裡。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            3
+          ],
+          "sha": [
+            "bba348c4",
+            "fcd6bce6"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H04:05",
@@ -1466,7 +1480,29 @@
       "answer_hint": "﹁頂呱呱﹂是指最好的、極佳的，因為小男孩能夠有耐心的等待青蛙，沒有動手抓，所以稱讚他﹁頂呱呱﹂。另外，﹁呱呱﹂是青蛙的叫聲，而青蛙跳到小男孩的﹁頭頂上呱呱叫﹂，也可以想成是﹁頂呱呱﹂。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "sha": [
+            "000fcb69",
+            "a0019b4c",
+            "a6ecfffe",
+            "28ec1033",
+            "1e46605a",
+            "7e1806e7"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H04:07",
@@ -1475,7 +1511,23 @@
       "answer_hint": "在野外觀察時，要仔細聆聽，耐心等待與觀察，不要急著亂找、亂摸，就能成為一個頂呱呱的觀察者。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            1,
+            2
+          ],
+          "sha": [
+            "000fcb69",
+            "a0019b4c",
+            "a6ecfffe"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     }
   ],
   "lookalikes": [

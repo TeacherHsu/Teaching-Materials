@@ -589,7 +589,21 @@
       "answer_hint": "彩虹。",
       "strategy_tag": "推論訊息",
       "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "5258bb50",
+            "24f26bdd"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading-question:115AG1H05:04",
@@ -597,7 +611,19 @@
       "answer_hint": "高高的天上。",
       "strategy_tag": "提取訊息",
       "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            2
+          ],
+          "sha": [
+            "24f26bdd"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading-question:115AG1H05:05",
@@ -605,7 +631,23 @@
       "answer_hint": "好想爬上去，看一看有沒有棉花糖？好想滑下去，看一看有沒有泡泡池？",
       "strategy_tag": "提取訊息",
       "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            3,
+            5,
+            8
+          ],
+          "sha": [
+            "a5c61789",
+            "6f70cde2",
+            "51bdbcb6"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03"
     },
     {
       "id": "reading-question:115AG1H05:06",
@@ -613,7 +655,19 @@
       "answer_hint": "雲朵。",
       "strategy_tag": "推論訊息",
       "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            5
+          ],
+          "sha": [
+            "6f70cde2"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading-question:115AG1H05:07",
@@ -629,7 +683,25 @@
       "answer_hint": "因為彩虹有七種顏色，出現在天空時，我們看到彎彎的形狀，就像一個很大的滑梯，可以從天空滑到地面。",
       "strategy_tag": "詮釋整合",
       "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2,
+            3,
+            6
+          ],
+          "sha": [
+            "5258bb50",
+            "24f26bdd",
+            "a5c61789",
+            "ec9863c4"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading-question:115AG1H05:09",

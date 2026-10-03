@@ -147,15 +147,31 @@ export function ReadingQuestions({ lessonId, items, onBack, backLabel = '本課�
 
     const revealSlot = h('div', { role: 'status', 'aria-live': 'polite' });
     let revealStage = 0;
-    const revealBtn = h('button', { class: 'btn btn--secondary', type: 'button', style: 'margin-top:12px' }, '找哪段／哪張圖');
+    // 有證據句（且課文已解鎖）時，鷹架落在課文上：第 1 層打開那一段、
+    // 第 2 層把線索句畫起來、第 3 層才給參考答案。沒有證據（看圖題、開放思考題）
+    // 維持原本的文字提示。
+    const panel = lessonId && item.evidence ? EvidencePanel({ lessonId, spots: item.evidence, label: '課文裡的這一段' }) : null;
+    if (panel) {
+      panel.el.hidden = true;
+      root.appendChild(panel.el);
+    }
+    const revealBtn = h('button', { class: 'btn btn--secondary', type: 'button', style: 'margin-top:12px' }, panel ? '看課文哪一段' : '找哪段／哪張圖');
     revealBtn.addEventListener('click', () => {
       clear(revealSlot);
-      const stages = [
-        item.scaffold || '回到課文，找出和題目有關的段落或插圖。',
-        '先圈出題目中的關鍵詞，再回到課文或插圖找線索。',
-        item.answer_hint || '想一想，說說看你的答案。',
-      ];
-      const labels = ['指出關鍵詞', '看答案提示'];
+      if (panel && revealStage === 0) panel.el.hidden = false;
+      if (panel && revealStage === 1) panel.highlight();
+      const stages = panel
+        ? [
+          '答案的線索在這一段裡，先讀一讀。',
+          '畫起來的句子是線索。用自己的話說說看答案。',
+          `老師的參考答案：${item.answer_hint || '說說看你的想法。'}`,
+        ]
+        : [
+          item.scaffold || '回到課文，找出和題目有關的段落或插圖。',
+          '先圈出題目中的關鍵詞，再回到課文或插圖找線索。',
+          item.answer_hint || '想一想，說說看你的答案。',
+        ];
+      const labels = panel ? ['畫出線索句', '看參考答案'] : ['指出關鍵詞', '看答案提示'];
       const hintText = stages[revealStage];
       revealSlot.appendChild(
         h('div', { class: 'quiz-option-row audio-control-group audio-control-group--hint' }, [

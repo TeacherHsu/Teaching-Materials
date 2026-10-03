@@ -1439,7 +1439,21 @@
       "answer_hint": "這應該是主角急著想要包壽司，才會覺得食材很急。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            4,
+            5
+          ],
+          "sha": [
+            "6f847ecf",
+            "5240ec24"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H09:03",
@@ -1457,7 +1471,23 @@
       "answer_hint": "是米粒被煮成飯了。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "a3550b6f",
+            "17084e4d",
+            "d3c34605"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H09:05",
@@ -1466,7 +1496,25 @@
       "answer_hint": "因為捲壽司的材料很多種，主角把食材排好，像在點名一樣，然後再把食材用海苔和米飯捲在一起。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "sha": [
+            "4ee099d8",
+            "40877990",
+            "0813f094",
+            "7849abea"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H09:06",
@@ -1484,7 +1532,50 @@
       "answer_hint": "先洗好小黃瓜和紅蘿蔔，再煮一鍋白米飯，最後用海苔把米飯、蛋皮、紅蘿蔔和小黃瓜捲起來，就能做出一條好吃的壽司。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            3
+          ],
+          "sha": [
+            "ec711358"
+          ]
+        },
+        {
+          "para": 2,
+          "sentences": [
+            2,
+            4
+          ],
+          "sha": [
+            "a3550b6f",
+            "d3c34605"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            3,
+            4
+          ],
+          "sha": [
+            "40877990",
+            "0813f094"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            2
+          ],
+          "sha": [
+            "362a121b"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H09:08",

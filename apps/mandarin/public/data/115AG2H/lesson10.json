@@ -1387,7 +1387,21 @@
       "answer_hint": "因為他覺得自己認識了很多字，所以應該能夠猜出來。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "4938361f",
+            "0513a207"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H10:02",
@@ -1396,7 +1410,36 @@
       "answer_hint": "﹁一加一﹂是王、﹁一減一﹂是三。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "sha": [
+            "9e05bc04",
+            "a7fdca0b",
+            "2135d653",
+            "a7fdca0b"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "f938a12f",
+            "47ed2ffd"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H10:03",
@@ -1405,7 +1448,27 @@
       "answer_hint": "因為主角的姐姐把答案寫在紙上，讓表弟能夠領悟到原來答案和數學無關，和字的結構有關。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "sha": [
+            "f938a12f",
+            "47ed2ffd",
+            "d51f0c47",
+            "9e05225a",
+            "48976b37"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H10:04",
@@ -1414,7 +1477,19 @@
       "answer_hint": "根據上下文推斷。﹁異口同聲﹂是指兩個人同時說一樣的話，因為主角和姐姐都說：﹁答對了！﹂。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            6
+          ],
+          "sha": [
+            "f1051b30"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H10:05",
@@ -1423,7 +1498,19 @@
       "answer_hint": "表弟﹁抓抓頭﹂，表示有點疑惑，不知道該怎麼辦。﹁嘟著嘴﹂，表示表弟有點撒嬌、生氣的感覺。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            10
+          ],
+          "sha": [
+            "b7a4a4ae"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H10:06",

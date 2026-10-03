@@ -575,7 +575,23 @@
       "answer_hint": "山谷。",
       "strategy_tag": "提取訊息",
       "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "82932ddf",
+            "abb71d39",
+            "23617982"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading-question:115AG1H07:03",
@@ -583,7 +599,25 @@
       "answer_hint": "聽到有人也回應他：「你好！」",
       "strategy_tag": "提取訊息",
       "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "23617982",
+            "00dafea9",
+            "fe35a190",
+            "00dafea9"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading-question:115AG1H07:04",
@@ -599,7 +633,25 @@
       "answer_hint": "因為想再確定是否還會有回音。",
       "strategy_tag": "推論訊息",
       "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "sha": [
+            "fe35a190",
+            "00dafea9",
+            "79c6f6a5",
+            "f36c12d8"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading-question:115AG1H07:06",
@@ -615,7 +667,21 @@
       "answer_hint": "因為在山谷，當主角笑的時候，就會傳回笑聲。",
       "strategy_tag": "推論訊息",
       "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            11,
+            12
+          ],
+          "sha": [
+            "8a18d76e",
+            "086a6606"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading-question:115AG1H07:08",
@@ -623,7 +689,27 @@
       "answer_hint": "因為不論他喊什麼，都會傳回同樣的聲音，好像有人和他互動一樣，令人感覺驚喜。",
       "strategy_tag": "詮釋整合",
       "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "sha": [
+            "f763daa1",
+            "f36c12d8",
+            "8a18d76e",
+            "086a6606",
+            "a11a3cbc"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading-question:115AG1H07:09",

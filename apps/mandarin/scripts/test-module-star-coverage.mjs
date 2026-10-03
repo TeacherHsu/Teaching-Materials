@@ -263,7 +263,7 @@ function driveOneGenericStep(container) {
     return true;
   }
   // ReadingQuestions：依「找哪段／哪張圖 → 指出關鍵詞 → 看答案提示」逐步揭露。
-  const revealBtn = enabledButtons(container).find((b) => /^(看提示|找哪段／哪張圖|指出關鍵詞|看答案提示)$/.test(b.textContent.trim()));
+  const revealBtn = enabledButtons(container).find((b) => /^(看提示|找哪段／哪張圖|指出關鍵詞|看答案提示|看課文哪一段|畫出線索句|看參考答案)$/.test(b.textContent.trim()));
   if (revealBtn) {
     revealBtn.dispatch('click');
     return true;

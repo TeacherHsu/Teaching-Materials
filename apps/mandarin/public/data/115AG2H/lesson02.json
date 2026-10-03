@@ -1403,7 +1403,19 @@
       "answer_hint": "請大家寫開學新希望。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            3
+          ],
+          "sha": [
+            "c603c305"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H02:02",
@@ -1430,7 +1442,19 @@
       "answer_hint": "因為他剛轉學到學校，沒有認識的人可以問問題，他不知道該怎麼寫自己的新希望，感到很緊張又擔心。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            4
+          ],
+          "sha": [
+            "c3d30700"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H02:05",
@@ -1439,7 +1463,21 @@
       "answer_hint": "因為下課後班長跑來告訴他新希望，同學們也紛紛主動和他說話，所以心情好多了。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "cba4b713",
+            "41baaf1a"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H02:06",
@@ -1448,7 +1486,19 @@
       "answer_hint": "想要和同學一起快樂學習。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            6
+          ],
+          "sha": [
+            "4af58665"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H02:07",
@@ -1466,7 +1516,39 @@
       "answer_hint": "小男孩轉學的第一天，和大家不熟，找不到人問，所以很緊張。幸好，下課後，同學們主動來找他說話，所以心情變得快樂起來。",
       "scaffold": "回到課文或插圖找線索。",
       "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            1
+          ],
+          "sha": [
+            "4075db82"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            3,
+            4
+          ],
+          "sha": [
+            "aed82bec",
+            "19f9ae0f"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            3
+          ],
+          "sha": [
+            "f4e849a1"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03"
     },
     {
       "id": "reading_question:115AG2H02:09",
