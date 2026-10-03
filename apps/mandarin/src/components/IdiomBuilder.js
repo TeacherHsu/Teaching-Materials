@@ -1,4 +1,5 @@
 import { h, clear } from '../utils/dom.js';
+import { StepJump } from './StepJump.js';
 import { DragToSlot } from './DragToSlot.js';
 import { ImageFrame } from './ImageFrame.js';
 import { TaskBanner } from './TaskBanner.js';
@@ -145,8 +146,12 @@ export function buildIdiomBuilderActivity(lesson, onBack) {
   const container = h('div', {});
   let roundIndex = 0;
 
+  // 題組跳轉列（第一關／第二關）
+  const jump = StepJump({ steps: rounds.map((r) => r.key), moduleKey: 'idiom_builder', onJump: (i) => { roundIndex = i; renderRound(); } });
+
   function renderRound() {
     clear(container);
+    jump.update(roundIndex);
     if (rounds.length === 0) {
       container.appendChild(missingContentNotice('生字變成語：教材審核中（成語例句尚未核准）'));
       return;
@@ -175,5 +180,5 @@ export function buildIdiomBuilderActivity(lesson, onBack) {
   }
 
   renderRound();
-  return container;
+  return h('div', {}, [jump.el, container]);
 }

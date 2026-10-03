@@ -226,7 +226,8 @@ export function buildReadingActivity(lesson, onBack) {
   else if (decodePairs.length >= 2) steps.push('decode');
   else if (paragraphs.length >= 3) steps.push('order');
   // 試做：有「提取訊息」選擇題的課，在讀題之前先學「找線索」；之後的提取訊息題算遷移題
-  const hasClueQuestions = questions.some((q) => q.strategy_tag === '提取訊息' && Array.isArray(q.options) && q.options.length);
+  // 一上、二上的開放題也有提取訊息題（2026-10-04 起一併適用；示範用原創短文，低年級也讀得懂）
+  const hasClueQuestions = questions.some((q) => q.strategy_tag === '提取訊息');
   if (questionRounds.length >= 1 && hasClueQuestions) steps.push('learn-clue');
   if (questionRounds.length >= 1) steps.push('questions');
 

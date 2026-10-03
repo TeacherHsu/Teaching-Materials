@@ -12,6 +12,8 @@ export const STEP_LABELS = {
   'learn-clue': '學找線索', questions: '讀題找線索',
   search: '找字', mask: '遮蔽字', flash: '閃現',
   'read-chars': '念生字', 'read-words': '念語詞',
+  summaries: '讀段落大意', gist: '選主旨',
+  round1: '生字變成語', round2: '成語填句子',
 };
 
 /** 各關卡的同名步驟在不同關卡意思不同時，用這裡覆寫。 */

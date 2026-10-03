@@ -7,6 +7,7 @@
 //   offtopic 偏離：與主題相關但不是本課內容
 // 規格 docs/specs/2026-09-30-main-idea-module.md。
 import { h, clear } from '../utils/dom.js';
+import { StepJump } from '../components/StepJump.js';
 import { shuffle as shuffled } from '../utils/shuffle.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { TaskBanner } from '../components/TaskBanner.js';
@@ -88,8 +89,11 @@ export function buildMainIdeaActivity(lesson, onBack) {
     return container;
   }
 
+  // 題組跳轉列（讀段落大意／選主旨）
+  const jump = StepJump({ steps: ['summaries', 'gist'], moduleKey: 'main_idea', onJump: (i) => (i === 0 ? showReading() : showQuiz()) });
   const showQuiz = () => {
     clear(container);
+    jump.update(1);
     container.appendChild(TaskBanner({ label: '哪一句最能說出整課在講什麼？', step: '第 2 步／共 2 步' }));
     container.appendChild(
       ChoiceQuiz({
@@ -102,6 +106,7 @@ export function buildMainIdeaActivity(lesson, onBack) {
 
   const showReading = () => {
     clear(container);
+    jump.update(0);
     const list = h('ol', { class: 'main-idea__summaries' }, paragraphs.map((p, i) => h(
       'li',
       { class: 'main-idea__summary' },
@@ -120,5 +125,5 @@ export function buildMainIdeaActivity(lesson, onBack) {
   };
 
   showReading();
-  return container;
+  return h('div', {}, [jump.el, container]);
 }

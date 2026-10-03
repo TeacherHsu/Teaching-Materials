@@ -152,7 +152,7 @@ export function LessonDashboard(lesson) {
       card.appendChild(
         h(
           'a',
-          { class: `btn module-card__cta${entry.key === nextKey ? ' btn--primary' : ''}`, href: `#/lesson/${lesson.lesson_id}/module/${entry.key}` },
+          { class: 'btn module-card__cta', href: `#/lesson/${lesson.lesson_id}/module/${entry.key}` },
           [
             h('span', {}, STATUS_BUTTON_LABEL[status.code] || '開始'),
             h('span', { 'aria-hidden': 'true', html: STATUS_ICONS.arrow }),

@@ -169,11 +169,22 @@ export function buildCharactersActivity(lesson, onBack) {
   if (characters.length > 0) steps.push('cards');
   if (choiceRounds.length > 0) steps.push('choice');
   // 試做：找部首之前先「學方法」（示範＋一起做），之後的部首題算遷移題
-  const learnChars = radicalRounds.length > 0
-    ? pickRadicalChars(characters, hanziPartsIfReady(String(lesson.lesson_id || '').slice(0, 7)))
-    : [];
+  const volume = String(lesson.lesson_id || '').slice(0, 7);
+  let learnChars = radicalRounds.length > 0 ? pickRadicalChars(characters, hanziPartsIfReady(volume)) : [];
   if (learnChars.length === 2) steps.push('learn-radical');
   if (radicalRounds.length > 0) steps.push('radical');
+  // 直接從網址進來、字形資料還沒載好時：載好後再把「學找部首」補進步驟（學生還沒走到部首題才補）
+  if (radicalRounds.length > 0 && learnChars.length < 2) {
+    loadHanziParts(volume).then((parts) => {
+      const picked = pickRadicalChars(characters, parts);
+      const at = steps.indexOf('radical');
+      if (picked.length === 2 && !steps.includes('learn-radical') && stepIndex < at) {
+        learnChars = picked;
+        steps.splice(at, 0, 'learn-radical');
+        jump?.update(stepIndex);
+      }
+    });
+  }
 
   const container = h('div', {});
   let stepIndex = 0;
@@ -290,7 +301,7 @@ export function buildCharactersActivity(lesson, onBack) {
         }),
       );
     } else if (step === 'learn-radical') {
-      container.appendChild(radicalStrategyLesson(learnChars, hanziPartsIfReady(String(lesson.lesson_id || '').slice(0, 7)), () => {
+      container.appendChild(radicalStrategyLesson(learnChars, hanziPartsIfReady(volume), () => {
         stepIndex += 1;
         roundIndex = 0;
         renderStep();
