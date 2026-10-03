@@ -3127,16 +3127,17 @@
   background: transparent;
   border: none;
   box-shadow: none;
-  width: 88px;
-  height: 88px;
+  /* CF 2026-10-04：縮小、降低視覺干擾（88→64px；插圖本身也已淡化、去黑線） */
+  width: 64px;
+  height: 64px;
   margin-bottom: calc(var(--space-1) * -1);
 }
 .entry-card__icon:has(img) {
   background: transparent;
   border: none;
   box-shadow: none;
-  width: 64px;
-  height: 64px;
+  width: 52px;
+  height: 52px;
 }
 .module-card__icon img,
 .entry-card__icon img { padding: 0; }

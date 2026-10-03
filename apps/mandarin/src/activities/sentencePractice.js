@@ -23,7 +23,7 @@ import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { shuffle } from '../utils/shuffle.js';
 import { getScaffoldLevel } from '../utils/deviceSettings.js';
 import {
-  connectivesInStructure, matchPair, blankConnectives, connectiveDistractors, pairLabel,
+  connectivesInStructure, matchPair, blankConnectives, connectiveDistractors, pairLabel, CONNECTIVE_PAIRS,
 } from '../utils/connectives.js';
 
 const PUNCT_RE = /[，。！？、]/u;
@@ -222,7 +222,22 @@ function readyMatchingPairs(lesson) {
     .filter((p) => !SENTENCE_PUNCT_RE.test(p.head))
     .filter((p) => p.head.length <= MAX_PHRASE_LEN)
     .filter((p) => !isAbstractPattern(p))
-    .map((p) => ({ left: p.head, right: p.description }));
+    // 「依照句型寫一句……」是造句指示，不是意思；「動作＋數量＋……」是結構標籤：都配不起來
+    .filter((p) => !/^依照句型/u.test(p.description) && !/[＋+]/u.test(p.head))
+    .map((p) => ({ left: p.head, right: plainDescription(p.description) }))
+    // 換成白話後兩題可能同一句（都是「並列」），右邊一樣就配不出唯一答案：只留第一題
+    .filter((pair, i, all) => pair.right && all.findIndex((x) => x.right === pair.right) === i);
+}
+
+/**
+ * 「並列複句，表示幾種事物……彼此關係是平行的」這種術語解釋，換成白話
+ * （CF 2026-10-04：第一組仍出現並列複句的定義）。找不到對應白話就不出這一題。
+ */
+export function plainDescription(description) {
+  const text = String(description || '');
+  if (!/複句|分句/u.test(text)) return text;
+  const m = text.match(/^(\S{2})複句/u);
+  return (m && PATTERN_MEANINGS[m[1]]) || '';
 }
 
 /**
@@ -242,17 +257,48 @@ export function connectivesOf(structure) {
     .filter((w) => w && w.length <= 3 && !/情況|結果|行動|原因|狀態|事情|動作/u.test(w));
 }
 
-/** 句型卡資料：句型名、關聯詞、一句例句（要有核准例句才出卡）。 */
-function readyPatternCards(lesson) {
-  const withExamples = new Map(
-    filterByStatus(lesson.sentence_patterns || [], { statusKey: 'examples_status' })
-      .filter((p) => p.examples && p.examples.length)
-      .map((p) => [p.id || p.head, p.examples[0]]),
-  );
-  return filterByStatus(lesson.sentence_patterns || [])
-    .filter((p) => p.head && isAbstractPattern(p))
-    .map((p) => ({ head: p.head, structure: p.structure || '', example: withExamples.get(p.id || p.head) }))
-    .filter((card) => card.example);
+/**
+ * 句型卡資料。卡片標題用**看得見的關聯詞框架**（「一會兒……一會兒……」），
+ * 不用術語（「並列複句」）：CF 2026-10-04 指出第一組仍出現「並列複句的定義」這種
+ * 抽象內容。術語總表的項目只用來找出這課有哪幾種句型，畫面上不出現術語。
+ *   - 從每個句型的 structure（沒有就從例句）找出關聯詞組；找不到就不出卡。
+ *   - 意思用 PATTERN_MEANINGS 的白話說法；例句優先用課文句（head 是整句時）。
+ */
+/** 關聯詞依序出現在句子裡（「一會兒……一會兒……」要真的出現兩次）。 */
+function inOrder(sentence, words) {
+  let at = 0;
+  for (const w of words) {
+    const i = sentence.indexOf(w, at);
+    if (i < 0) return false;
+    at = i + w.length;
+  }
+  return true;
+}
+
+export function readyPatternCards(lesson) {
+  const patterns = filterByStatus(lesson.sentence_patterns || [], { statusKey: 'examples_status' })
+    .filter((p) => p.status !== 'draft' || isPreview())
+    .filter((p) => (p.examples && p.examples.length) || SENTENCE_PUNCT_RE.test(p.head || ''));
+  const cards = new Map();
+  for (const p of patterns) {
+    let pair = matchPair(connectivesInStructure(p.structure));
+    // 只收真正的句子：「除了……，還……」這種框架本身不算例句
+    const sentences = [p.head, ...(p.examples || [])]
+      .filter((x) => x && SENTENCE_PUNCT_RE.test(x) && !x.includes('……') && (x.match(/[\u3400-\u9fff]/gu) || []).length >= 8);
+    if (!pair) {
+      // 結構只寫術語（「並列複句」）時，從例句裡找關聯詞組
+      // 單字關聯詞（「一……就……」）在一般句子裡太容易誤判（「一面」「就已經」），只在結構裡明寫才算
+      for (const c of CONNECTIVE_PAIRS.filter((x) => x.words.every((w) => w.length >= 2))) {
+        if (sentences.some((x) => inOrder(x, c.words))) { pair = c; break; }
+      }
+    }
+    if (!pair) continue;
+    const frame = `${pair.words.join('……')}……`;
+    const example = sentences.find((x) => inOrder(x, pair.words));
+    if (!example || cards.has(frame)) continue;
+    cards.set(frame, { head: frame, type: pair.type, words: pair.words, example });
+  }
+  return [...cards.values()];
 }
 
 // ── 選關聯詞（參考站句型練習的第 3 步） ─────────────────────
@@ -364,11 +410,10 @@ function highlightConnectives(sentence, words) {
 
 function PatternCard(card, index) {
   const hue = CARD_HUES[index % CARD_HUES.length];
-  const words = connectivesOf(card.structure);
-  const meaning = patternMeaning(card.head);
+  const words = card.words || connectivesOf(card.structure);
+  const meaning = PATTERN_MEANINGS[card.type] || patternMeaning(card.head);
   return h('div', { class: `pattern-card pattern-card--${hue}` }, [
     h('p', { class: 'pattern-card__name' }, card.head),
-    words.length ? h('p', { class: 'pattern-card__frame' }, words.join(' …… ')) : null,
     meaning ? h('p', { class: 'pattern-card__meaning' }, meaning) : null,
     h('p', { class: 'pattern-card__example' }, highlightConnectives(card.example, words)),
   ].filter(Boolean));
@@ -504,7 +549,7 @@ export function buildSentencePracticeActivity(lesson, onBack) {
           const el = PatternCard(card, i);
           // 點卡片就念出來：句型名稱＋例句。學生先聽到句型「用起來」的樣子，
           // 而不是先背術語。
-          el.addEventListener('click', () => speak(`${card.head}。${patternMeaning(card.head)}例如：${card.example}`));
+          el.addEventListener('click', () => speak(`${card.words.join('，')}。${PATTERN_MEANINGS[card.type] || ''}例如：${card.example}`));
           return { el, key: `${card.head}:${i}` };
         }),
         label: '點一下卡片，會念給你聽',
