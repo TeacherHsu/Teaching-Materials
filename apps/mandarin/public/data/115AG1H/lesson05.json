@@ -637,17 +637,23 @@
           "para": 1,
           "sentences": [
             3,
+            4,
             5,
+            6,
+            7,
             8
           ],
           "sha": [
             "a5c61789",
+            "ada9f189",
             "6f70cde2",
+            "ec9863c4",
+            "ada9f189",
             "51bdbcb6"
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "evidence_method": "manual 2026-10-04（抽查補齊）"
     },
     {
       "id": "reading-question:115AG1H05:06",

@@ -1447,14 +1447,20 @@
         {
           "para": 2,
           "sentences": [
+            1,
+            2,
+            3,
             4
           ],
           "sha": [
+            "4075db82",
+            "582d1d24",
+            "32982184",
             "c3d30700"
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "evidence_method": "manual 2026-10-04（抽查補齊）"
     },
     {
       "id": "reading_question:115AG2H02:05",
