@@ -5,7 +5,7 @@
 // 頁面不顯示、也不儲存任何學生姓名；紀錄只有課次代號、大項代號與正確率。
 import { h, clear } from '../utils/dom.js';
 import { findModuleEntry } from '../activities/moduleRegistry.js';
-import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel, setDeviceLabel, getSheetUrl, setSheetUrl, getScaffoldLevel, getOverride, setOverride, getShowEarlyExit, setShowEarlyExit, getFlashTimed, setFlashTimed, getLastGrade, hasGradeLevel, getStudentCode, setStudentCode } from '../utils/deviceSettings.js';
+import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel, setDeviceLabel, getSheetUrl, setSheetUrl, getScaffoldLevel, getOverride, setOverride, getShowEarlyExit, setShowEarlyExit, DETAIL_SPECS, getLastGrade, hasGradeLevel, getStudentCode, setStudentCode } from '../utils/deviceSettings.js';
 import { makeTeacherChallenge, verifyTeacherChallenge } from '../utils/teacherGate.js';
 import { listRecords, recordsAsTsv, clearRecords, unsyncedAttempts, syncRecords, levelAdvice } from '../utils/records.js';
 import { allMistakes, clearMistakes } from '../utils/mistakes.js';
@@ -85,30 +85,25 @@ function buildPanel(root) {
   root.appendChild(codeInput);
   root.appendChild(codeNote);
 
-  // ---- 鷹架厚度 ----
-  root.appendChild(h('h2', {}, '挑戰難易度'));
-  root.appendChild(h('p', { class: 'meta' }, '題目內容完全相同，只調整支持的多寡。'));
+  // ---- 能力分組（CF 2026-10-04：每個個案設定一次，細項跟著走，需要時再單獨改）----
+  root.appendChild(h('h2', {}, '能力分組'));
+  const code = getStudentCode();
   const current = getScaffoldLevelKey();
   const gradeNow = getLastGrade();
-  // 等級依年級記：同一台平板給不同年級用時，各年級互不影響
-  root.appendChild(h('p', { class: 'teacher-grade-scope' }, gradeNow
-    ? `正在調整：${GRADE_NAMES[gradeNow] || `${gradeNow} 年級`}的等級（其他年級不受影響）`
-    : '正在調整：整台預設等級（還沒有個別設定的年級會用這個）'));
-  const levelStatus = h('p', { class: 'meta' }, `目前：${SCAFFOLD_LEVELS[current].label}${gradeNow && !hasGradeLevel(gradeNow) ? '（跟著整台預設）' : ''}`);
-  const levelRow = h('div', { class: 'card-grid' }, Object.values(SCAFFOLD_LEVELS).map((level) => {
-    const btn = h('button', {
-      class: `btn${level.key === current ? ' btn--primary' : ''}`,
-      type: 'button',
-      'aria-pressed': String(level.key === current),
-    }, `${level.label}：${level.note}`);
-    btn.addEventListener('click', () => {
-      setScaffoldLevel(level.key);
-      buildPanel(root);
-    });
+  root.appendChild(h('p', { class: 'teacher-grade-scope' }, code
+    ? `正在設定：學生代碼 ${code} 的能力分組（換人時先在上面改代碼）`
+    : (gradeNow
+      ? `還沒填學生代碼：正在設定${GRADE_NAMES[gradeNow] || `${gradeNow} 年級`}的預設分組`
+      : '還沒填學生代碼：正在設定這台載具的預設分組')));
+  root.appendChild(h('p', { class: 'meta' }, '題目內容完全相同，只調整支持的多寡。選好組別，下面的細項會跟著改；個案需要時再單獨調整某一項。'));
+  const levelRow = h('div', { class: 'quiz-option-row' }, Object.values(SCAFFOLD_LEVELS).map((lv) => {
+    const on = lv.key === current;
+    const btn = h('button', { class: `btn${on ? ' btn--primary' : ''}`, type: 'button', 'aria-pressed': String(on) }, lv.label);
+    btn.addEventListener('click', () => { setScaffoldLevel(lv.key); buildPanel(root); });
     return btn;
   }));
   root.appendChild(levelRow);
-  root.appendChild(levelStatus);
+  root.appendChild(h('p', { class: 'meta' }, `${SCAFFOLD_LEVELS[current].label}：${SCAFFOLD_LEVELS[current].note}${!code && gradeNow && !hasGradeLevel(gradeNow) ? '（跟著整台預設）' : ''}`));
 
   // 升降級建議：依這個年級最近的獨立答對率（不用提示、第一次就答對）
   if (gradeNow) {
@@ -130,53 +125,31 @@ function buildPanel(root) {
     root.appendChild(h('p', { class: `teacher-advice teacher-advice--${advice.advice || 'none'}` }, text));
   }
 
-  // ---- 個別調整 ----
-  // null＝跟隨等級。教師手動調過的項目，之後切換等級**不會**被蓋掉；
-  // 要恢復成跟著等級走，必須明確按「跟隨等級」。沒有這個區分的話，
-  // 教師每次換等級都要重調一次。
+  // ---- 細項（全部列出；沒改過的跟著組別）----
   const level = getScaffoldLevel();
-  root.appendChild(h('h3', {}, '個別調整'));
-  root.appendChild(
-    h('p', { class: 'meta' }, '沒有調整的項目會跟著上面的難易度走；調整過的項目換難易度時不會被蓋掉。'),
-  );
-
-  const OVERRIDE_UI = [
-    {
-      name: 'autoRead',
-      label: '題目自動念出來',
-      note: '閱讀困難的學生要先聽到題目才讀得下去。關掉之後喇叭鈕仍然在。',
-    },
-  ];
-
-  for (const spec of OVERRIDE_UI) {
+  root.appendChild(h('h3', {}, '細項'));
+  root.appendChild(h('p', { class: 'meta' }, '「跟著組別」的項目換組別時會自動改；單獨改過的項目換組別時不會被蓋掉，要恢復請按「跟著組別」。'));
+  const fmt = (spec, v) => (spec.choices.find(([x]) => x === v) || [v, String(v)])[1];
+  const detailTable = h('div', { class: 'teacher-details' }, DETAIL_SPECS.map((spec) => {
     const override = getOverride(spec.name);
-    const effective = level[spec.name];
     const following = override === null;
-    const choices = [
-      { value: null, text: `跟隨等級（目前${SCAFFOLD_LEVELS[current][spec.name] ? '開' : '關'}）` },
-      { value: true, text: '開' },
-      { value: false, text: '關' },
-    ];
-    const row = h('div', { class: 'card teacher-override' }, [
-      h('p', { class: 'teacher-override__label' }, spec.label),
-      h('p', { class: 'meta' }, spec.note),
-      h('div', { class: 'quiz-option-row' }, choices.map((choice) => {
-        const on = choice.value === null ? following : (!following && override === choice.value);
-        const btn = h('button', {
-          class: `btn${on ? ' btn--primary' : ''}`,
-          type: 'button',
-          'aria-pressed': String(on),
-        }, choice.text);
-        btn.addEventListener('click', () => {
-          setOverride(spec.name, choice.value);
-          buildPanel(root);
-        });
-        return btn;
-      })),
-      h('p', { class: 'meta' }, `目前生效：${effective ? '開' : '關'}${following ? '' : '（已個別設定）'}`),
+    const groupValue = SCAFFOLD_LEVELS[current][spec.name];
+    const select = h('select', { class: 'teacher-input', 'aria-label': spec.label }, [
+      h('option', { value: '__follow' }, `跟著組別（${fmt(spec, groupValue)}）`),
+      ...spec.choices.map(([v, text]) => h('option', { value: JSON.stringify(v) }, text)),
     ]);
-    root.appendChild(row);
-  }
+    select.value = following ? '__follow' : JSON.stringify(override);
+    select.addEventListener('change', () => {
+      setOverride(spec.name, select.value === '__follow' ? null : JSON.parse(select.value));
+      buildPanel(root);
+    });
+    return h('div', { class: 'teacher-detail-row' }, [
+      h('span', { class: 'teacher-detail-row__label' }, spec.label),
+      select,
+      h('span', { class: 'meta' }, following ? '' : `已單獨調整（目前 ${fmt(spec, level[spec.name])}）`),
+    ]);
+  }));
+  root.appendChild(detailTable);
 
   // ---- 課堂控制 ----
   root.appendChild(h('h3', {}, '課堂控制'));
@@ -200,21 +173,7 @@ function buildPanel(root) {
     ]),
     h('p', { class: 'meta' }, `目前：${earlyOn ? '會顯示' : '不顯示'}`),
   ]);
-  const flashOn = getFlashTimed();
-  const flashRow = h('div', { class: 'card teacher-override' }, [
-    h('p', { class: 'teacher-override__label' }, '字感訓練「閃現」限時 5 秒'),
-    h('p', { class: 'meta' }, '預設關閉（不限時，學生自己按「我記住了」）。只有在練習目標就是視覺記憶速度時才打開。'),
-    h('div', { class: 'quiz-option-row' }, [
-      ...[['關', false], ['開', true]].map(([label, value]) => {
-        const on = flashOn === value;
-        const btn = h('button', { class: `btn${on ? ' btn--primary' : ''}`, type: 'button', 'aria-pressed': String(on) }, label);
-        btn.addEventListener('click', () => { setFlashTimed(value); buildPanel(root); });
-        return btn;
-      }),
-    ]),
-  ]);
   root.appendChild(earlyRow);
-  root.appendChild(flashRow);
 
   // ---- 教室密碼 ----
   // 解鎖後金鑰會記在這台載具（學生不必每次輸入），所以一定要給老師一個

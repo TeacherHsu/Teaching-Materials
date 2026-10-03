@@ -12,7 +12,9 @@
 import { h, clear } from '../utils/dom.js';
 import { uiIconMarkup } from './icons.js';
 import { SpeakButton } from './SpeakButton.js';
-import { checkSentence, missingKeywords, saveSentence } from '../utils/madeSentences.js';
+import { checkSentence, missingKeywords, saveSentence, patternKeywords } from '../utils/madeSentences.js';
+import { getScaffoldLevel } from '../utils/deviceSettings.js';
+import { plainDescription } from '../activities/sentencePractice.js';
 
 function recognitionSupported() {
   return Boolean(window.SpeechRecognition || window.webkitSpeechRecognition);
@@ -28,6 +30,19 @@ function recognitionSupported() {
  *   backLabel?: string,
  * }} opts
  */
+/**
+ * 造句預填（支持組預設 1）：句型若以關聯詞開頭（「雖然……卻……」），先幫他填好
+ * 開頭的前 n 個必用詞，降低起頭與在句中插字的負擔。句型以「誰／什麼情況」開頭的不填，
+ * 免得預填的位置不對、反而要刪。
+ */
+export function prefillText(pattern, n) {
+  if (!n || n < 1) return '';
+  const words = patternKeywords(pattern && pattern.structure);
+  const structure = String((pattern && pattern.structure) || '').replace(/\s/g, '');
+  if (!words.length || !structure.startsWith(words[0])) return '';
+  return words[0];
+}
+
 export function SentenceWriter({ lessonId, pattern, previous = '', onDone, onBack, backLabel = '回課程首頁' }) {
   const root = h('div', { class: 'writer' });
 
@@ -43,7 +58,8 @@ export function SentenceWriter({ lessonId, pattern, previous = '', onDone, onBac
   // 重寫時只拿得到句型本身（錯題盒不存整課資料），說明和例句可能是空的——
   // 這時候不要畫出一個空的鷹架框。
   const scaffoldParts = [
-    pattern.description ? h('p', { class: 'writer__desc' }, pattern.description) : null,
+    pattern.description && plainDescription(pattern.description)
+      ? h('p', { class: 'writer__desc' }, plainDescription(pattern.description)) : null,
     (pattern.examples || []).length
       ? h('div', {}, [
           h('p', { class: 'writer__examples-label' }, '例句'),
@@ -66,8 +82,12 @@ export function SentenceWriter({ lessonId, pattern, previous = '', onDone, onBac
     placeholder: '在這裡寫一句話…',
     spellcheck: 'false',
   });
-  input.value = previous || '';
+  input.value = previous || prefillText(pattern, getScaffoldLevel().prefill);
   root.appendChild(input);
+  // 預填時游標放在最後：學生只要往後寫，不用在句子中間插字
+  if (input.value && typeof input.setSelectionRange === 'function') {
+    setTimeout(() => { try { input.setSelectionRange(input.value.length, input.value.length); } catch { /* 不支援就算了 */ } }, 0);
+  }
 
   const message = h('p', { class: 'writer__message', role: 'status', 'aria-live': 'polite' }, '');
 

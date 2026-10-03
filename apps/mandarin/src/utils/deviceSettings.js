@@ -34,7 +34,7 @@ const KEY = 'mandarin:device-settings:v1';
 export const SCAFFOLD_LEVELS = {
   support: {
     key: 'support',
-    label: '支持',
+    label: '低組',
     optionCount: 2,
     roundSize: 3,
     wrongLimit: 2,
@@ -43,11 +43,12 @@ export const SCAFFOLD_LEVELS = {
     reciteModel: true,
     unlockMemory: false,
     prefill: 1,
+    flashTimed: false,
     note: '選擇題 2 個選項、每輪 3 題；題目自動念出來；答錯先給提示、再錯才公布答案；朗讀挑戰一次念到逗號、可先聽範讀。',
   },
   standard: {
     key: 'standard',
-    label: '標準',
+    label: '中組',
     optionCount: 3,
     roundSize: 5,
     wrongLimit: 2,
@@ -56,11 +57,12 @@ export const SCAFFOLD_LEVELS = {
     reciteModel: true,
     unlockMemory: false,
     prefill: 0,
+    flashTimed: false,
     note: '選擇題 3 個選項、每輪 5 題；答錯先給提示、再錯才公布答案；朗讀挑戰一次一句、可先聽範讀。',
   },
   challenge: {
     key: 'challenge',
-    label: '挑戰',
+    label: '高組',
     optionCount: 4,
     roundSize: 5,
     wrongLimit: 2,
@@ -69,6 +71,7 @@ export const SCAFFOLD_LEVELS = {
     reciteModel: false,
     unlockMemory: false, // 2026-10-04：翻牌記憶遊戲會加重工作記憶負荷，不再取代核心配對（第二版審查）
     prefill: 0,
+    flashTimed: false,
     note: '選擇題 4 個選項、每輪 5 題；答錯先給提示、再錯才公布答案；朗讀挑戰一次一整段、不先範讀。提示、朗讀、放大等支持在每一層都可以用。',
   },
 };
@@ -115,11 +118,12 @@ export function setShowEarlyExit(on) {
 
 /** 字感訓練閃現題要不要 5 秒自動蓋起來。預設關（不限時）：速度不該決定字形辨識的成績。 */
 export function getFlashTimed() {
-  return read().flashTimed === true;
+  // 舊版是整台的開關；沒填代碼時沿用，有代碼就看個案設定
+  return getScaffoldLevel().flashTimed === true || (!getStudentCode() && read().flashTimed === true);
 }
 
 export function setFlashTimed(on) {
-  return write({ ...read(), flashTimed: Boolean(on) });
+  return setOverride('flashTimed', Boolean(on));
 }
 
 /**
@@ -127,7 +131,34 @@ export function setFlashTimed(on) {
  * 教師手動調過的項目，之後切換等級**不會**被蓋掉；要恢復成跟著等級走，
  * 必須明確按「跟隨等級」。沒有這個區分的話，教師每次換等級都要重調一次。
  */
-export const OVERRIDABLE = ['autoRead'];
+export const OVERRIDABLE = ['optionCount', 'roundSize', 'autoRead', 'prefill', 'reciteUnit', 'reciteModel', 'flashTimed'];
+
+/**
+ * 能力分組底下的細項（CF 2026-10-04）：老師只要選一次組別，細項跟著組別走；
+ * 全部細項都列出來，個案有需要時才單獨改某一項。
+ */
+export const DETAIL_SPECS = [
+  { name: 'optionCount', label: '選擇題選項數', choices: [[2, '2 個'], [3, '3 個'], [4, '4 個']] },
+  { name: 'roundSize', label: '每輪題數', choices: [[3, '3 題'], [5, '5 題'], [8, '8 題']] },
+  { name: 'autoRead', label: '題目自動念出來', choices: [[true, '開'], [false, '關']] },
+  { name: 'prefill', label: '造句先填好開頭的關聯詞', choices: [[1, '開'], [0, '關']] },
+  { name: 'reciteUnit', label: '朗讀挑戰一次念多少', choices: [['clause', '到逗號'], ['sentence', '一句'], ['paragraph', '一段']] },
+  { name: 'reciteModel', label: '朗讀前可先聽範讀', choices: [[true, '可以'], [false, '不先範讀']] },
+  { name: 'flashTimed', label: '字感閃現限時 5 秒', choices: [[false, '不限時'], [true, '限時']] },
+];
+
+/** 目前這個個案（學生代碼）的設定；沒填代碼回 null。 */
+function profileOf(settings) {
+  const code = settings.studentCode || '';
+  return code ? ((settings.profiles || {})[code] || {}) : null;
+}
+
+function writeProfile(settings, patch) {
+  const code = settings.studentCode || '';
+  const profiles = { ...(settings.profiles || {}) };
+  profiles[code] = { ...(profiles[code] || {}), ...patch };
+  return write({ ...settings, profiles });
+}
 
 function read() {
   try {
@@ -158,6 +189,9 @@ function write(next) {
  */
 export function getScaffoldLevelKey() {
   const settings = read();
+  // 有學生代碼：用這個個案的能力分組（CF 2026-10-04：老師為每個個案設定一次）
+  const profile = profileOf(settings);
+  if (profile && SCAFFOLD_LEVELS[profile.level]) return profile.level;
   const grade = settings.lastGrade;
   const byGrade = grade && settings.gradeLevels ? settings.gradeLevels[grade] : null;
   if (SCAFFOLD_LEVELS[byGrade]) return byGrade;
@@ -177,7 +211,9 @@ export function hasGradeLevel(grade = read().lastGrade) {
  */
 export function getScaffoldLevel() {
   const base = SCAFFOLD_LEVELS[getScaffoldLevelKey()];
-  const overrides = read().overrides || {};
+  const settings = read();
+  const profile = profileOf(settings);
+  const overrides = profile ? (profile.overrides || {}) : (settings.overrides || {});
   const merged = { ...base };
   for (const name of OVERRIDABLE) {
     if (overrides[name] !== null && overrides[name] !== undefined) merged[name] = overrides[name];
@@ -194,6 +230,7 @@ export function getScaffoldLevel() {
 export function setScaffoldLevel(levelKey, grade = read().lastGrade) {
   if (!SCAFFOLD_LEVELS[levelKey]) return false;
   const settings = read();
+  if (profileOf(settings)) return writeProfile(settings, { level: levelKey });
   if (!grade) return write({ ...settings, scaffoldLevel: levelKey });
   return write({ ...settings, gradeLevels: { ...(settings.gradeLevels || {}), [grade]: levelKey } });
 }
@@ -204,7 +241,9 @@ export function setScaffoldLevel(levelKey, grade = read().lastGrade) {
  */
 export function getOverride(name) {
   if (!OVERRIDABLE.includes(name)) return null;
-  const value = (read().overrides || {})[name];
+  const settings = read();
+  const profile = profileOf(settings);
+  const value = ((profile ? profile.overrides : settings.overrides) || {})[name];
   return value === undefined ? null : value;
 }
 
@@ -213,11 +252,15 @@ export function getOverride(name) {
  */
 export function setOverride(name, value) {
   if (!OVERRIDABLE.includes(name)) return false;
+  // 只收清單裡列出的值（例如選項數只能 2／3／4），其他一律拒絕
+  const spec = DETAIL_SPECS.find((d) => d.name === name);
+  if (value !== null && spec && !spec.choices.some(([v]) => v === value)) return false;
   const state = read();
-  const overrides = { ...(state.overrides || {}) };
+  const profile = profileOf(state);
+  const overrides = { ...((profile ? profile.overrides : state.overrides) || {}) };
   if (value === null) delete overrides[name];
-  else overrides[name] = Boolean(value);
-  return write({ ...state, overrides });
+  else overrides[name] = value;
+  return profile ? writeProfile(state, { overrides }) : write({ ...state, overrides });
 }
 
 /**
