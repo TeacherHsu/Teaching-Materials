@@ -1,5 +1,15 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-10-03（晚）｜家中 Mac｜Claude Code｜狀態：✅ 已推送——**其他電腦拉下來後先讀這段**
+- **密文已是 55 課**（含三上 12 課、四上 L07 正本）。之後重產 `readings.enc.json` **不要再加 `--skip 115KG4A07`**；也只能在有 `~/mandarin-work/reading-tool-lessons/` 的家中 Mac 產，學校 Win 不要重產。
+- **草稿全數核准**（CF 2026-10-03）：二上／三上／四上／六上的段落大意、三上與六上新編閱讀題、文體活動共 323 筆改 approved（`approved_by: CF`）。目前全站沒有 draft。
+- 一上 L01 第 5 題、L02 第 4 題已刪（CF 裁定）。三上 L07–L12 聽力 18 題選項重寫。四上 L07 第 3 題答案原為「印度甩餅」是錯的，已改「日本壽司」，全課大意也重寫。
+- 新閘門：`scripts/test-answer-in-options.mjs`（選擇題答案必須逐字等於選項）、`npm run check-evidence`（逐課驗證據句雜湊，需本機有密文密碼）。
+- 鷹架行為改了：支持層 wrongLimit=2、「看提示」各層都有、選項數依鷹架層裁切（`trimOptions`，`fixedOptions` 不裁）。
+- 私人資料位置：三上交接包 `~/mandarin-work/115AG3H/_private-reading-g3-20261003/`；四上 L07 產生檔 `~/mandarin-work/115AG4K/_private-reading-L07-20261003/`（含抓錯冊別的舊檔備份）。
+- 四上 L07 注音是用與三上相同的引擎（pronunciation-rules＋pinyin-pro 3.27.0）產生，多音字已逐一對上下文核過；**仍請 CF 在 Reading-Tool 抽聽一次**。
+- 還沒做：14 關逐關的畫面流程重設計（進行中，見下一筆）、學生作答紀錄／IEP 欄位（需 CF 先決定欄位、權限、保存期限，未動手）。
+
 ## 2026-10-03｜家中 Mac｜Claude Code｜狀態：✅ 三上課文加密已完成並推送（學校 Win 的同項工作可停）
 - 三上 12 課（教師已覆核讀音，來源 docx SHA-256 c215c6a5… 與 manifest 相符）併入 54 課密文，`--skip 115KG4A07` 照舊；密碼沿用現行教室密碼，驗證 42 課舊課可解。明碼留在 `~/mandarin-work/reading-tool-lessons/`，交接包存 `~/mandarin-work/115AG3H/_private-reading-g3-20261003/`。
 - 接續：三上 48 題閱讀題補 evidence、44 則大意補 text_spots；L07–L12 聽力 18 題 answer∉options 已修，並加前後端閘門。
