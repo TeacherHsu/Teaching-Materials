@@ -3411,3 +3411,11 @@
   outline-offset: 3px;
   background: #fff4e8;
 }
+
+/* 聽聽看：分句重播按鈕列 */
+.listening-replay {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}

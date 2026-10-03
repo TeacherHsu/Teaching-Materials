@@ -31,6 +31,17 @@ export function buildListeningQuizItems(lesson) {
     }));
 }
 
+/** 依句號、問號、驚嘆號、分號切句；太短的併到前一句。 */
+export function splitForReplay(passage) {
+  const raw = String(passage || '').match(/[^。！？；!?;]+[。！？；!?;」』]*/g) || [];
+  const out = [];
+  for (const piece of raw.map((x) => x.trim()).filter(Boolean)) {
+    if (out.length && piece.replace(/[^\u3400-\u9fff]/g, '').length < 4) out[out.length - 1] += piece;
+    else out.push(piece);
+  }
+  return out;
+}
+
 export function buildListeningActivity(lesson, onBack) {
   const items = filterByStatus(lesson.listening || []).filter((l) => l.stem && l.question && hasPlayableAnswer(l));
   const rounds = chunkRounds(items);
@@ -68,6 +79,19 @@ export function buildListeningActivity(lesson, onBack) {
             ariaLabel: '先聽一聽：課文段落',
           }),
         );
+        // 分句重播（2026-10-03 審查建議）：整段聽完記不住的學生，可以只重聽某一句。
+        // 只給「第 N 句」按鈕、不顯示文字——這一關練的是聽，不是讀。
+        const parts = splitForReplay(passage);
+        if (parts.length >= 2) {
+          row.appendChild(h('div', { class: 'listening-replay', role: 'group', 'aria-label': '分句重播' },
+            parts.map((text, i) => SpeakButton({
+              text,
+              label: `第 ${i + 1} 句`,
+              showLabel: true,
+              ariaLabel: `重聽第 ${i + 1} 句`,
+              variant: 'speak-button--option speak-button--audio-label',
+            }))));
+        }
       } else {
         row.appendChild(h('p', { class: 'meta' }, '此裝置不支援朗讀'));
         const textEl = h('p', { class: 'quiz-stem', style: 'display:none' }, passage);

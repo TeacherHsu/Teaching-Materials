@@ -75,6 +75,43 @@ export function pickCandidates(answerChar, answerSyllable, index, count) {
  * @param {object} lesson
  * @param {() => void} onModuleDone
  */
+const INITIALS = 'ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙ';
+const MEDIALS = 'ㄧㄨㄩ';
+const TONES = 'ˊˇˋ';
+
+/** 符號屬於哪一部分：聲母／介音／韻母／聲調／輕聲。 */
+export function zhuyinPart(symbol) {
+  if (INITIALS.includes(symbol)) return 'initial';
+  if (MEDIALS.includes(symbol)) return 'medial';
+  if (TONES.includes(symbol)) return 'tone';
+  if (symbol === '˙') return 'neutral';
+  return 'final';
+}
+
+/**
+ * 打錯時指出「錯在哪一部分」（2026-10-03 審查建議）。
+ * 原本只有一句「注意第一個音」，學生不知道是開頭、中間、尾巴還是聲調錯了。
+ */
+export function zhuyinFeedback(expected, pressed) {
+  const want = zhuyinPart(expected);
+  const got = zhuyinPart(pressed);
+  if (want === 'neutral') return '這個字念得又輕又短，是輕聲：先打「˙」。';
+  if (want === 'initial') {
+    return got === 'initial'
+      ? `開頭的音（聲母）不對：再聽一次，嘴巴一開始是怎麼動的？`
+      : '先打開頭的音（聲母），再打後面的音。';
+  }
+  if (want === 'medial') return '中間還有一個短短的音（ㄧ、ㄨ 或 ㄩ），聽聽看是哪一個。';
+  if (want === 'tone') {
+    return got === 'tone'
+      ? '聲音都對了，只差聲調：聲音是往上揚（ˊ）、先降再升（ˇ），還是往下降（ˋ）？'
+      : '前面的音都打完了，最後要打聲調。';
+  }
+  // 韻母
+  if (got === 'tone') return '還沒打完喔：聲調前面還少了後面的音（韻母）。';
+  return '後面的音（韻母）不對：把這個字念長一點，聽聽尾巴拖的是什麼聲音。';
+}
+
 export function buildZhuyinTypingActivity(lesson, onModuleDone) {
   const container = h('div', {});
   const level = getScaffoldLevel();
@@ -100,6 +137,7 @@ export function buildZhuyinTypingActivity(lesson, onModuleDone) {
     let typed = '';               // 這個字已經打的符號
     let usedHelp = false;         // 用過提示（不扣星，只是不算 firstTry）
     let wrongOnce = false;
+    let missesHere = 0;           // 目前這個符號位置錯了幾次
 
     const speakText = word.word;
     const image = word.image
@@ -176,14 +214,19 @@ export function buildZhuyinTypingActivity(lesson, onModuleDone) {
       const attempt = typed + symbol;
       if (target.startsWith(attempt)) {
         typed = attempt;
+        missesHere = 0;
         keyboard.unmark();
         clear(feedbackEl);
         renderSlots();
         if (typed === target) askForCharacter();
       } else {
         wrongOnce = true;
+        missesHere += 1;
         clear(feedbackEl);
-        feedbackEl.appendChild(HintPanel({ message: '這個符號不對，再聽一次語詞，注意第一個音。' }));
+        const expected = target[typed.length];
+        feedbackEl.appendChild(HintPanel({ message: zhuyinFeedback(expected, symbol) }));
+        // 同一個位置錯兩次：直接把該按的鍵標紅（算用過提示），不讓學生卡在鍵盤上亂試
+        if (missesHere >= 2) { usedHelp = true; keyboard.mark(expected); }
       }
     }
 

@@ -336,6 +336,10 @@ export function SentenceOrdering({ prompt, parts, solution, onBack, backLabel = 
     }
 
     mistakes += 1;
+    // 退回前先記下學生排的句子：讓他「聽自己排的」，自己發現哪裡接不起來
+    // （2026-10-03 審查建議：不要只說「找句子開頭」）。
+    const attemptText = slotsState.map((id) => (id ? itemById.get(id).word : '')).join('');
+    const firstWrong = slotsState.findIndex((id, i) => id && itemById.get(id).word !== solution[i]);
     const wrongIds = [];
     slotsState.forEach((itemId, index) => {
       if (!itemId) return;
@@ -356,13 +360,19 @@ export function SentenceOrdering({ prompt, parts, solution, onBack, backLabel = 
     renderBank();
     returning = false;
     if (wrongIds.length > 0) {
-      status.textContent = `紅色詞塊位置不正確，已退回候選區；請再次拖曳到正確序位。${isComplete ? '' : '尚有空位未完成。'}`;
+      const where = firstWrong >= 0 ? `從第 ${firstWrong + 1} 格開始接不起來。` : '';
+      status.textContent = `${where}紅色詞塊已退回候選區；先聽聽你剛才排的句子，哪裡念起來怪怪的？${isComplete ? '' : '尚有空位未完成。'}`;
+      if (attemptText) {
+        clear(attemptSlot);
+        attemptSlot.appendChild(SpeakButton({ text: attemptText, label: '聽我排的句子', showLabel: true, variant: 'speak-button--option speak-button--audio-label' }));
+      }
     } else {
       status.textContent = '已排列的詞塊位置正確，請把剩下的詞塊拖到空位。';
     }
   });
 
   resetBtn.addEventListener('click', () => {
+    clear(attemptSlot);
     slotsState.fill(null);
     lockedIds.clear();
     bank.forEach((item) => { item.incorrect = false; });
@@ -378,6 +388,8 @@ export function SentenceOrdering({ prompt, parts, solution, onBack, backLabel = 
   root.appendChild(slots);
   root.appendChild(bankWrap);
   root.appendChild(status);
+  const attemptSlot = h('div', { class: 'sentence-ordering__attempt' });
+  root.appendChild(attemptSlot);
   const actions = h('div', {});
   actions.appendChild(checkBtn);
   actions.appendChild(resetBtn);
