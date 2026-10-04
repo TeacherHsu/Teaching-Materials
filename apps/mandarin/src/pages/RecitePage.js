@@ -19,7 +19,7 @@ import { SpeakButton } from '../components/SpeakButton.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { ZhuyinText } from '../components/ZhuyinText.js';
 import { volumeLabel } from '../utils/volumeLabel.js';
-import { getScaffoldLevel } from '../utils/deviceSettings.js';
+import { getScaffoldLevel, reciteZhuyinOn } from '../utils/deviceSettings.js';
 import { speak, cancelSpeaking, speechSupported } from '../utils/speech.js';
 import { cryptoAvailable, getReading, isUnlocked, unlockWithPassword } from '../utils/classroomKey.js';
 import { splitSentences, groupByUnit } from '../utils/readingUnits.js';
@@ -136,7 +136,8 @@ function renderChallenge(lesson, reading, backHref) {
 
   const wrap = h('div', {});
   let index = 0;
-  let showZhuyin = true;
+  // 注音由教師頁細項決定，學生端不能切換（CF 2026-10-04）
+  const showZhuyin = reciteZhuyinOn(lesson.volume?.grade ?? Number(String(lessonId).charAt(5)));
   let recognition = null;
   let startedAt = 0;
 
@@ -220,18 +221,7 @@ function renderChallenge(lesson, reading, backHref) {
       });
     }
 
-    const zhuyinToggle = h('button', {
-      class: `btn toggle${showZhuyin ? ' toggle--on' : ''}`, type: 'button', 'aria-pressed': String(showZhuyin),
-    }, showZhuyin ? '注音：顯示' : '注音：隱藏');
-    zhuyinToggle.addEventListener('click', () => {
-      showZhuyin = !showZhuyin;
-      textBox.classList.toggle('lesson-text--no-zhuyin', !showZhuyin);
-      zhuyinToggle.textContent = showZhuyin ? '注音：顯示' : '注音：隱藏';
-      zhuyinToggle.setAttribute('aria-pressed', String(showZhuyin));
-      zhuyinToggle.classList.toggle('toggle--on', showZhuyin);
-    });
-
-    const tools = [zhuyinToggle];
+    const tools = [];
     if (scaffold.reciteModel && speechSupported()) {
       const model = h('button', { class: 'btn', type: 'button' }, '先聽一次');
       model.addEventListener('click', () => speak(unit.say || unit.text));
@@ -239,9 +229,9 @@ function renderChallenge(lesson, reading, backHref) {
     }
 
     wrap.appendChild(h('div', { class: 'card' }, [
-      h('div', { class: 'lesson-toolbar' }, tools),
+      tools.length ? h('div', { class: 'lesson-toolbar' }, tools) : null,
       textBox,
-    ]));
+    ].filter(Boolean)));
 
     const status = h('p', { class: 'recite__status', role: 'status', 'aria-live': 'polite' }, '');
     const result = h('div', {});

@@ -45,6 +45,7 @@ export const SCAFFOLD_LEVELS = {
     prefill: 1,
     flashTimed: false,
     autoStrategy: true,
+    reciteZhuyin: 'auto',
     note: '選擇題 2 個選項、每輪 3 題；題目自動念出來；第一次進關卡先看「學方法」示範（可跳過）；答錯先給提示、再錯才公布答案；朗讀挑戰一次念到逗號、可先聽範讀。',
   },
   standard: {
@@ -60,6 +61,7 @@ export const SCAFFOLD_LEVELS = {
     prefill: 0,
     flashTimed: false,
     autoStrategy: false,
+    reciteZhuyin: 'auto',
     note: '選擇題 3 個選項、每輪 5 題；答錯先給提示、再錯才公布答案；朗讀挑戰一次一句、可先聽範讀。',
   },
   challenge: {
@@ -75,6 +77,7 @@ export const SCAFFOLD_LEVELS = {
     prefill: 0,
     flashTimed: false,
     autoStrategy: false,
+    reciteZhuyin: 'auto',
     note: '選擇題 4 個選項、每輪 5 題；答錯先給提示、再錯才公布答案；朗讀挑戰一次一整段、不先範讀。提示、朗讀、放大等支持在每一層都可以用。',
   },
 };
@@ -143,7 +146,7 @@ export function setFlashTimed(on) {
  * 教師手動調過的項目，之後切換等級**不會**被蓋掉；要恢復成跟著等級走，
  * 必須明確按「跟隨等級」。沒有這個區分的話，教師每次換等級都要重調一次。
  */
-export const OVERRIDABLE = ['optionCount', 'roundSize', 'autoRead', 'prefill', 'reciteUnit', 'reciteModel', 'flashTimed', 'autoStrategy'];
+export const OVERRIDABLE = ['optionCount', 'roundSize', 'autoRead', 'prefill', 'reciteUnit', 'reciteModel', 'flashTimed', 'autoStrategy', 'reciteZhuyin'];
 
 /**
  * 能力分組底下的細項（CF 2026-10-04）：老師只要選一次組別，細項跟著組別走；
@@ -157,6 +160,7 @@ export const DETAIL_SPECS = [
   { name: 'reciteUnit', label: '朗讀挑戰一次念多少', choices: [['clause', '到逗號'], ['sentence', '一句'], ['paragraph', '一段']] },
   { name: 'reciteModel', label: '朗讀前可先聽範讀', choices: [[true, '可以'], [false, '不先範讀']] },
   { name: 'flashTimed', label: '字感閃現限時 5 秒', choices: [[false, '不限時'], [true, '限時']] },
+  { name: 'reciteZhuyin', label: '朗讀挑戰顯示注音', choices: [['auto', '依年級（一二年級開；三年級以上支持組開、標準挑戰關）'], [true, '開'], [false, '關']] },
   { name: 'autoStrategy', label: '第一次進關卡自動示範「學方法」', choices: [[true, '開（可跳過）'], [false, '關（自己點）']] },
 ];
 
@@ -354,4 +358,14 @@ export function markStrategySeen(moduleKey) {
   const who = s.studentCode || '';
   all[who] = { ...(all[who] || {}), [moduleKey]: true };
   return write({ ...s, strategySeen: all });
+}
+
+/**
+ * 朗讀挑戰要不要顯示注音（CF 2026-10-04）：學生端不能切換，由教師頁細項決定。
+ * 預設 auto：一、二年級開；三年級以上支持組開，標準、挑戰組關。
+ */
+export function reciteZhuyinOn(grade) {
+  const level = getScaffoldLevel();
+  if (level.reciteZhuyin === true || level.reciteZhuyin === false) return level.reciteZhuyin;
+  return Number(grade) <= 2 || getScaffoldLevelKey() === 'support';
 }
