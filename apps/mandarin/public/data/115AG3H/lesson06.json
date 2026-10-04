@@ -1321,14 +1321,21 @@
           "example": "分數、分開"
         },
         {
-          "char": "部",
-          "example": "部分、部門"
+          "char": "份",
+          "example": "一份、份量"
+        },
+        {
+          "char": "粉",
+          "example": "粉筆、麵粉"
         }
       ],
       "status": "ready",
       "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：形似字）",
-      "not_shape_similar": true,
-      "flag_note": "2026-10-04：組內字沒有共同部件、字形不像（疑為同音字或資料誤植），字感訓練與形似字暫不出題，待 CF 確認"
+      "chars_original": [
+        "分",
+        "部"
+      ],
+      "corrected": "2026-10-04 CF 對照課本確認更正（原組字形不像）"
     },
     {
       "id": "lookalike:115AG3H06:4",

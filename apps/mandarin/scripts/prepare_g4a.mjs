@@ -181,6 +181,27 @@ function loadParagraphPrep(lessonNo) {
   return { file, data };
 }
 
+/**
+ * 形似字組裡的「字」＝每個例詞都有的那個字。
+ * 2026-10-04 修正：原本取「第一個例詞的第一個字」，例詞「引誘、誘人」被存成「引」（應為「誘」），
+ * 四上整批錯 64 筆。共有字剛好一個才採用；不只一個（「蜜蜂、蜂蜜」）就印警告、
+ * 先取第二個例詞的第一個字之外的那個，請人工確認。
+ */
+function lookalikeCharOf(examples, term, lessonNo) {
+  const han = (w) => [...w].filter((ch) => /[\u3400-\u9fff]/u.test(ch));
+  if (examples.length < 2) return han(examples[0] || term)[0];
+  let common = new Set(han(examples[0]));
+  for (const w of examples.slice(1)) common = new Set(han(w).filter((ch) => common.has(ch)));
+  const list = [...common];
+  if (list.length === 1) return list[0];
+  if (list.length === 0) {
+    console.warn(`[WARN] 第 ${lessonNo} 課形似字「${term}」例詞沒有共同字，暫取第一個字，請人工確認`);
+    return han(examples[0])[0];
+  }
+  console.warn(`[WARN] 第 ${lessonNo} 課形似字「${term}」例詞共有 ${list.join('、')}，請人工確認是哪一個`);
+  return list[0];
+}
+
 function loadLookalikes(lessonNo) {
   const file = path.join(derivedRoot, '形似字', `${lessonCode(lessonNo)}_形似字.json`);
   if (!fs.existsSync(file)) return { file: null, groups: [] };
@@ -194,7 +215,7 @@ function loadLookalikes(lessonNo) {
       group_no: String(index + 1),
       chars: normalizedTerms.map((term) => {
         const examples = term.split(/[、,，]/gu).map((item) => item.trim()).filter(Boolean);
-        return { char: [...(examples[0] || term)][0], example: examples.join('、') || term };
+        return { char: lookalikeCharOf(examples, term, lessonNo), example: examples.join('、') || term };
       }),
       status: 'ready',
       source: sourceLabel('06 字音字形：形似字辨別'),

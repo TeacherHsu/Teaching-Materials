@@ -928,15 +928,23 @@
           "example": "火車"
         },
         {
-          "char": "活",
+          "char": "大",
           "zhuyin": null,
-          "example": ""
+          "example": "大山洞"
+        },
+        {
+          "char": "烤",
+          "zhuyin": null,
+          "example": "烤肉"
         }
       ],
       "status": "ready",
       "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）",
-      "not_shape_similar": true,
-      "flag_note": "2026-10-04：組內字沒有共同部件、字形不像（疑為同音字或資料誤植），字感訓練與形似字暫不出題，待 CF 確認"
+      "chars_original": [
+        "火",
+        "活"
+      ],
+      "corrected": "2026-10-04 CF 對照課本確認更正（原組字形不像）"
     },
     {
       "id": "lookalike:115AG1H03:02",
@@ -1090,15 +1098,18 @@
           "example": "開開心心"
         },
         {
-          "char": "星",
+          "char": "芯",
           "zhuyin": null,
-          "example": ""
+          "example": "燈芯"
         }
       ],
       "status": "ready",
       "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）",
-      "not_shape_similar": true,
-      "flag_note": "2026-10-04：組內字沒有共同部件、字形不像（疑為同音字或資料誤植），字感訓練與形似字暫不出題，待 CF 確認"
+      "chars_original": [
+        "心",
+        "星"
+      ],
+      "corrected": "2026-10-04 CF 對照課本確認更正（原組字形不像）"
     },
     {
       "id": "lookalike:115AG1H03:10",
@@ -1107,9 +1118,9 @@
       "answer": "心",
       "chars": [
         {
-          "char": "星",
+          "char": "芯",
           "zhuyin": null,
-          "example": ""
+          "example": "燈芯"
         },
         {
           "char": "心",
@@ -1119,8 +1130,11 @@
       ],
       "status": "ready",
       "source": "115G1A／翰林一年上官方教材（04形音輕鬆學（含語詞解釋）；形似字辨別；私有題庫逐題核對）",
-      "not_shape_similar": true,
-      "flag_note": "2026-10-04：組內字沒有共同部件、字形不像（疑為同音字或資料誤植），字感訓練與形似字暫不出題，待 CF 確認"
+      "chars_original": [
+        "星",
+        "心"
+      ],
+      "corrected": "2026-10-04 CF 對照課本確認更正（原組字形不像）"
     }
   ],
   "listening": [
