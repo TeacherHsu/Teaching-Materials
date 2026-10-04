@@ -568,28 +568,24 @@
   },
   "reading_questions": [
     {
-      "id": "reading-question:115AG1H05:01",
-      "stem": "仔細觀察第44頁課文插圖，小朋友們正在哪裡？做什麼事情？",
-      "answer_hint": "有兩個小孩，正站在七彩滑梯上，女孩手上拿著一團團粉紅色的東西，正張開嘴巴要吃；小男孩則是左手拿著一根棒子，踮起腳尖，好像要拿什麼東西。另外還有一個小女孩正扶著樓梯往上爬。",
-      "strategy_tag": "提取訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H05:02",
-      "stem": "仔細觀察第45頁課文插圖，小朋友們正在哪裡？做什麼事情？",
-      "answer_hint": "有一個小男孩滑進一個很大的泡泡池裡，和一隻小狗一起很開心的樣子；另外小女孩正順著七彩滑梯，就要滑下來。",
-      "strategy_tag": "提取訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H05:03",
-      "stem": "課文中「七彩的滑梯」是指什麼東西？",
-      "answer_hint": "彩虹。",
+      "id": "reading_question:115AG1H05:c01",
+      "stem": "「七彩的滑梯」是指什麼？",
+      "options": [
+        "彩虹",
+        "公園的溜滑梯",
+        "白白的雲",
+        "天上的星星"
+      ],
+      "answer": "彩虹",
+      "why": {
+        "公園的溜滑梯": "它「高高在天上」，不在公園。",
+        "白白的雲": "雲沒有七種顏色。",
+        "天上的星星": "星星不是彎彎的。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 1,
@@ -603,15 +599,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading-question:115AG1H05:03",
+      "answer_hint": "彩虹。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "「七彩」是有七種顏色。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "什麼東西有七種顏色、彎彎的、高高在天上？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading-question:115AG1H05:04",
-      "stem": "「七彩的滑梯」會出現在哪裡呢？",
-      "answer_hint": "高高的天上。",
+      "id": "reading_question:115AG1H05:c02",
+      "stem": "「七彩的滑梯」在哪裡？",
+      "options": [
+        "高高的天上",
+        "學校的操場",
+        "家裡的客廳",
+        "小河的旁邊"
+      ],
+      "answer": "高高的天上",
+      "why": {
+        "學校的操場": "課文說它「高高在＿上」。",
+        "家裡的客廳": "再看第二句。",
+        "小河的旁邊": "課文沒有寫到小河。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 1,
@@ -623,15 +647,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading-question:115AG1H05:04",
+      "answer_hint": "高高的天上。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第二句。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「高高在＿＿」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading-question:115AG1H05:05",
-      "stem": "作者看到「七彩的滑梯」後，想要問的問題是什麼？",
-      "answer_hint": "好想爬上去，看一看有沒有棉花糖？好想滑下去，看一看有沒有泡泡池？",
+      "id": "reading_question:115AG1H05:c03",
+      "stem": "作者想知道什麼？",
+      "options": [
+        "有沒有棉花糖和泡泡池",
+        "有沒有冰淇淋和汽水",
+        "滑梯有多長多高",
+        "彩虹什麼時候出來"
+      ],
+      "answer": "有沒有棉花糖和泡泡池",
+      "why": {
+        "有沒有冰淇淋和汽水": "課文沒有寫冰淇淋。",
+        "滑梯有多長多高": "作者問的是「有沒有……」。",
+        "彩虹什麼時候出來": "作者問的是上面和下面有什麼。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 1,
@@ -653,15 +705,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-04（抽查補齊）"
+      "from_open_question": "reading-question:115AG1H05:05",
+      "answer_hint": "好想爬上去，看一看有沒有棉花糖？好想滑下去，看一看有沒有泡泡池？",
+      "hints": [
+        {
+          "level": 1,
+          "text": "找課文裡的兩個問題。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「有沒有＿＿＿？有沒有＿＿＿？」"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading-question:115AG1H05:06",
-      "stem": "課文中的「棉花糖」是指什麼東西？",
-      "answer_hint": "雲朵。",
+      "id": "reading_question:115AG1H05:c04",
+      "stem": "「棉花糖」是指什麼？",
+      "options": [
+        "白白的雲朵",
+        "真的棉花糖",
+        "天上的星星",
+        "下雨的雨滴"
+      ],
+      "answer": "白白的雲朵",
+      "why": {
+        "真的棉花糖": "天上不會有真的棉花糖。",
+        "天上的星星": "星星不是白白軟軟的。",
+        "下雨的雨滴": "雨滴不像棉花糖。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 1,
@@ -673,23 +753,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading-question:115AG1H05:06",
+      "answer_hint": "雲朵。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "爬上滑梯，會看到天上的什麼？"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "天上什麼東西白白的、軟軟的、像棉花糖？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading-question:115AG1H05:07",
-      "stem": "畫家用什麼方式來表現「高高在天上」這句話呢？",
-      "answer_hint": "畫家畫出臺北一○一大樓和雲朵，展現「七彩的滑梯」在很高的地方。",
-      "strategy_tag": "推論訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H05:08",
-      "stem": "為什麼會將彩虹形容成「七彩的滑梯」？",
-      "answer_hint": "因為彩虹有七種顏色，出現在天空時，我們看到彎彎的形狀，就像一個很大的滑梯，可以從天空滑到地面。",
+      "id": "reading_question:115AG1H05:c05",
+      "stem": "為什麼彩虹像「七彩的滑梯」？",
+      "options": [
+        "有七種顏色又彎彎的",
+        "因為它很好吃",
+        "因為它在公園裡",
+        "因為它會發出聲音"
+      ],
+      "answer": "有七種顏色又彎彎的",
+      "why": {
+        "因為它很好吃": "彩虹不能吃。",
+        "因為它在公園裡": "彩虹在天上。",
+        "因為它會發出聲音": "彩虹不會發出聲音。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "詮釋整合",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 1,
@@ -707,23 +807,23 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
-    },
-    {
-      "id": "reading-question:115AG1H05:09",
-      "stem": "如果是你，你會把彩虹想像成什麼？",
-      "answer_hint": "學生自由回答。如：彩色的橋、彩色的緞帶……",
-      "strategy_tag": "比較評估",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H05:10",
-      "stem": "你還會把什麼自然現象，想像成什麼呢？",
-      "answer_hint": "學生自由回答。如：把下雨想像成蓮蓬頭灑水，把颱風想像成發脾氣的小孩……",
-      "strategy_tag": "比較評估",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "from_open_question": "reading-question:115AG1H05:08",
+      "answer_hint": "因為彩虹有七種顏色，出現在天空時，我們看到彎彎的形狀，就像一個很大的滑梯，可以從天空滑到地面。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "想想彩虹的顏色和形狀。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "滑梯是什麼形狀？彩虹有幾種顏色？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -1362,5 +1462,175 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "discussion_questions": [
+    {
+      "id": "reading-question:115AG1H05:01",
+      "stem": "仔細觀察第44頁課文插圖，小朋友們正在哪裡？做什麼事情？",
+      "answer_hint": "有兩個小孩，正站在七彩滑梯上，女孩手上拿著一團團粉紅色的東西，正張開嘴巴要吃；小男孩則是左手拿著一根棒子，踮起腳尖，好像要拿什麼東西。另外還有一個小女孩正扶著樓梯往上爬。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H05:02",
+      "stem": "仔細觀察第45頁課文插圖，小朋友們正在哪裡？做什麼事情？",
+      "answer_hint": "有一個小男孩滑進一個很大的泡泡池裡，和一隻小狗一起很開心的樣子；另外小女孩正順著七彩滑梯，就要滑下來。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H05:03",
+      "stem": "課文中「七彩的滑梯」是指什麼東西？",
+      "answer_hint": "彩虹。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "5258bb50",
+            "24f26bdd"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H05:04",
+      "stem": "「七彩的滑梯」會出現在哪裡呢？",
+      "answer_hint": "高高的天上。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            2
+          ],
+          "sha": [
+            "24f26bdd"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H05:05",
+      "stem": "作者看到「七彩的滑梯」後，想要問的問題是什麼？",
+      "answer_hint": "好想爬上去，看一看有沒有棉花糖？好想滑下去，看一看有沒有泡泡池？",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "sha": [
+            "a5c61789",
+            "ada9f189",
+            "6f70cde2",
+            "ec9863c4",
+            "ada9f189",
+            "51bdbcb6"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-04（抽查補齊）",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H05:06",
+      "stem": "課文中的「棉花糖」是指什麼東西？",
+      "answer_hint": "雲朵。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            5
+          ],
+          "sha": [
+            "6f70cde2"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H05:07",
+      "stem": "畫家用什麼方式來表現「高高在天上」這句話呢？",
+      "answer_hint": "畫家畫出臺北一○一大樓和雲朵，展現「七彩的滑梯」在很高的地方。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H05:08",
+      "stem": "為什麼會將彩虹形容成「七彩的滑梯」？",
+      "answer_hint": "因為彩虹有七種顏色，出現在天空時，我們看到彎彎的形狀，就像一個很大的滑梯，可以從天空滑到地面。",
+      "strategy_tag": "詮釋整合",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2,
+            3,
+            6
+          ],
+          "sha": [
+            "5258bb50",
+            "24f26bdd",
+            "a5c61789",
+            "ec9863c4"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H05:09",
+      "stem": "如果是你，你會把彩虹想像成什麼？",
+      "answer_hint": "學生自由回答。如：彩色的橋、彩色的緞帶……",
+      "strategy_tag": "比較評估",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H05:10",
+      "stem": "你還會把什麼自然現象，想像成什麼呢？",
+      "answer_hint": "學生自由回答。如：把下雨想像成蓮蓬頭灑水，把颱風想像成發脾氣的小孩……",
+      "strategy_tag": "比較評估",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    }
+  ]
 }

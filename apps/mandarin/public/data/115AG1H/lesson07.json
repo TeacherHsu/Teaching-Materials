@@ -562,20 +562,24 @@
   },
   "reading_questions": [
     {
-      "id": "reading-question:115AG1H07:01",
-      "stem": "仔細觀察課文插圖，主角和家人一起做什麼事情？",
-      "answer_hint": "和家人一起爬山。",
+      "id": "reading_question:115AG1H07:c01",
+      "stem": "主角走到哪裡才大喊？",
+      "options": [
+        "山谷",
+        "山頂",
+        "海邊",
+        "家門口"
+      ],
+      "answer": "山谷",
+      "why": {
+        "山頂": "爬上高山以後，又「來到」哪裡？",
+        "海邊": "課文沒有寫到海。",
+        "家門口": "課文是在山上。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H07:02",
-      "stem": "主角爬山爬到哪裡，才開始大喊呢？",
-      "answer_hint": "山谷。",
-      "strategy_tag": "提取訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 1,
@@ -591,15 +595,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading-question:115AG1H07:02",
+      "answer_hint": "山谷。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看「我大叫」前面那一句。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「爬上高山，來到＿＿」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading-question:115AG1H07:03",
-      "stem": "當主角大叫：「你好！」發生了什麼事？",
-      "answer_hint": "聽到有人也回應他：「你好！」",
+      "id": "reading_question:115AG1H07:c02",
+      "stem": "主角大叫「你好！」後，發生什麼事？",
+      "options": [
+        "聽到有人回「你好！」",
+        "有人回「再見！」",
+        "大叫以後什麼聲音都沒有",
+        "小鳥飛了過來"
+      ],
+      "answer": "聽到有人回「你好！」",
+      "why": {
+        "有人回「再見！」": "回的話和他說的一樣。",
+        "大叫以後什麼聲音都沒有": "課文說「有人回」。",
+        "小鳥飛了過來": "課文沒有寫到小鳥。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 1,
@@ -617,23 +649,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading-question:115AG1H07:03",
+      "answer_hint": "聽到有人也回應他：「你好！」",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看「我大叫」的後面一句。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「有人回：＿＿＿」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading-question:115AG1H07:04",
-      "stem": "「我大叫：『你好！』有人回：『你好！』」課文中的「有人」是指誰？",
-      "answer_hint": "我看課本第57頁插圖，覺得是山谷，因為山谷上有一張張的笑臉；我覺得因為課文是在講「回音」，所以「有人」就是主角自己傳回來的聲音。",
+      "id": "reading_question:115AG1H07:c03",
+      "stem": "主角為什麼又問「你開心嗎？」",
+      "options": [
+        "想再聽聽有沒有回答",
+        "他覺得很生氣，想罵人",
+        "他想要回家了",
+        "他在問媽媽"
+      ],
+      "answer": "想再聽聽有沒有回答",
+      "why": {
+        "他覺得很生氣，想罵人": "課文最後大家哈哈大笑。",
+        "他想要回家了": "課文沒有說要回家。",
+        "他在問媽媽": "山谷裡只有他和回聲。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H07:05",
-      "stem": "為什麼主角會再大叫一聲：「你開心嗎？」",
-      "answer_hint": "因為想再確定是否還會有回音。",
-      "strategy_tag": "推論訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 1,
@@ -651,23 +703,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading-question:115AG1H07:05",
+      "answer_hint": "因為想再確定是否還會有回音。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "剛才喊「你好」有人回，他想再試試看。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "他問了以後，「他也問」——他想聽到什麼？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading-question:115AG1H07:06",
-      "stem": "你覺得課文中「有人」和「他」是同一人嗎？為什麼？",
-      "answer_hint": "我覺得是同一人，都是指山谷的回音。",
-      "strategy_tag": "比較評估",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H07:07",
-      "stem": "為什麼「我笑，他也笑」呢？",
-      "answer_hint": "因為在山谷，當主角笑的時候，就會傳回笑聲。",
+      "id": "reading_question:115AG1H07:c04",
+      "stem": "為什麼「我笑，他也笑」？",
+      "options": [
+        "山谷傳回笑聲（回音）",
+        "有一個小朋友在旁邊",
+        "他看到好笑的事",
+        "他被嚇到了"
+      ],
+      "answer": "山谷傳回笑聲（回音）",
+      "why": {
+        "有一個小朋友在旁邊": "整課的「他」說的話都和我一樣。",
+        "他看到好笑的事": "課文沒有寫到好笑的事。",
+        "他被嚇到了": "大家是一起哈哈大笑。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 1,
@@ -681,15 +753,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading-question:115AG1H07:07",
+      "answer_hint": "因為在山谷，當主角笑的時候，就會傳回笑聲。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "想想課名是什麼。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "在山谷裡大叫，聲音會怎麼樣？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading-question:115AG1H07:08",
-      "stem": "最後主角為什麼會笑了？",
-      "answer_hint": "因為不論他喊什麼，都會傳回同樣的聲音，好像有人和他互動一樣，令人感覺驚喜。",
+      "id": "reading_question:115AG1H07:c05",
+      "stem": "最後主角為什麼笑了？",
+      "options": [
+        "回音一直學他，很好玩",
+        "他跌倒了",
+        "他找到好朋友一起回家",
+        "他看到小動物"
+      ],
+      "answer": "回音一直學他，很好玩",
+      "why": {
+        "他跌倒了": "課文沒有寫到跌倒。",
+        "他找到好朋友一起回家": "課文沒有說回家。",
+        "他看到小動物": "課文沒有寫到小動物。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "詮釋整合",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 1,
@@ -709,23 +809,23 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
-    },
-    {
-      "id": "reading-question:115AG1H07:09",
-      "stem": "根據課文和插圖，再請你說說看什麼是「回音」？",
-      "answer_hint": "「回音」就是當人的聲音碰到山或牆壁，會再傳回來。",
-      "strategy_tag": "詮釋整合",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H07:10",
-      "stem": "想一想，生活中哪些地方也容易產生回音？和課本中產生回音的原因有什麼相同之處？",
-      "answer_hint": "生活中容易產生回音的地方有教室、禮堂、山洞等，都是空曠但是有圍起來的牆壁或山壁的地方。",
-      "strategy_tag": "比較評估",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "from_open_question": "reading-question:115AG1H07:08",
+      "answer_hint": "因為不論他喊什麼，都會傳回同樣的聲音，好像有人和他互動一樣，令人感覺驚喜。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看最後一句。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "他說什麼，「他」就說什麼——這種感覺好不好玩？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [],
@@ -1212,5 +1312,183 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "discussion_questions": [
+    {
+      "id": "reading-question:115AG1H07:01",
+      "stem": "仔細觀察課文插圖，主角和家人一起做什麼事情？",
+      "answer_hint": "和家人一起爬山。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H07:02",
+      "stem": "主角爬山爬到哪裡，才開始大喊呢？",
+      "answer_hint": "山谷。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "82932ddf",
+            "abb71d39",
+            "23617982"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H07:03",
+      "stem": "當主角大叫：「你好！」發生了什麼事？",
+      "answer_hint": "聽到有人也回應他：「你好！」",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "23617982",
+            "00dafea9",
+            "fe35a190",
+            "00dafea9"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H07:04",
+      "stem": "「我大叫：『你好！』有人回：『你好！』」課文中的「有人」是指誰？",
+      "answer_hint": "我看課本第57頁插圖，覺得是山谷，因為山谷上有一張張的笑臉；我覺得因為課文是在講「回音」，所以「有人」就是主角自己傳回來的聲音。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H07:05",
+      "stem": "為什麼主角會再大叫一聲：「你開心嗎？」",
+      "answer_hint": "因為想再確定是否還會有回音。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "sha": [
+            "fe35a190",
+            "00dafea9",
+            "79c6f6a5",
+            "f36c12d8"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H07:06",
+      "stem": "你覺得課文中「有人」和「他」是同一人嗎？為什麼？",
+      "answer_hint": "我覺得是同一人，都是指山谷的回音。",
+      "strategy_tag": "比較評估",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H07:07",
+      "stem": "為什麼「我笑，他也笑」呢？",
+      "answer_hint": "因為在山谷，當主角笑的時候，就會傳回笑聲。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            11,
+            12
+          ],
+          "sha": [
+            "8a18d76e",
+            "086a6606"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H07:08",
+      "stem": "最後主角為什麼會笑了？",
+      "answer_hint": "因為不論他喊什麼，都會傳回同樣的聲音，好像有人和他互動一樣，令人感覺驚喜。",
+      "strategy_tag": "詮釋整合",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "sha": [
+            "f763daa1",
+            "f36c12d8",
+            "8a18d76e",
+            "086a6606",
+            "a11a3cbc"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H07:09",
+      "stem": "根據課文和插圖，再請你說說看什麼是「回音」？",
+      "answer_hint": "「回音」就是當人的聲音碰到山或牆壁，會再傳回來。",
+      "strategy_tag": "詮釋整合",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H07:10",
+      "stem": "想一想，生活中哪些地方也容易產生回音？和課本中產生回音的原因有什麼相同之處？",
+      "answer_hint": "生活中容易產生回音的地方有教室、禮堂、山洞等，都是空曠但是有圍起來的牆壁或山壁的地方。",
+      "strategy_tag": "比較評估",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    }
+  ]
 }

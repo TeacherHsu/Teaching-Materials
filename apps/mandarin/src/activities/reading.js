@@ -230,6 +230,12 @@ export function buildReadingActivity(lesson, onBack) {
   const hasClueQuestions = questions.some((q) => q.strategy_tag === '提取訊息');
   if (questionRounds.length >= 1 && hasClueQuestions) steps.push('learn-clue');
   if (questionRounds.length >= 1) steps.push('questions');
+  // 說說看：看圖題、開放思考題（沒有單一正解，和老師討論、不計分）。
+  // 已改成選擇題、而且選擇題已上線的原題不再重複出現。
+  const liveChoiceFrom = new Set(questions.map((q) => q.from_open_question).filter(Boolean));
+  const discussion = filterByStatus(lesson.discussion_questions || [])
+    .filter((q) => q.stem && !(q.converted_to_choice && liveChoiceFrom.has(q.id)));
+  if (discussion.length) steps.push('discuss');
 
   const container = h('div', {});
   let stepIndex = 0;
@@ -360,6 +366,16 @@ export function buildReadingActivity(lesson, onBack) {
           },
         }),
       );
+    } else if (step === 'discuss') {
+      container.appendChild(TaskBanner({ label: '說說看：和老師一起討論（沒有標準答案）', step: stepLabel }));
+      container.appendChild(ReadingQuestions({
+        lessonId: lesson.lesson_id,
+        items: discussion,
+        backLabel: isLast ? '回課程首頁' : '本課先完成',
+        onBack,
+        onContinue: isLast ? null : () => { stepIndex += 1; roundIndex = 0; renderStep(); },
+        continueLabel: '繼續',
+      }));
     } else if (step === 'learn-clue') {
       container.appendChild(clueStrategyLesson(() => { stepIndex += 1; roundIndex = 0; renderStep(); }));
     } else if (step === 'questions') {

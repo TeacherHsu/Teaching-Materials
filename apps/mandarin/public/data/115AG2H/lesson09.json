@@ -1424,22 +1424,24 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG2H09:01",
-      "stem": "觀察課文圖片，說說看，第一段中敘述小黃瓜在洗澡，紅蘿蔔急著想玩水，是指什麼意思呢？",
-      "strategy_tag": "提取訊息",
-      "answer_hint": "指媽媽正在廚房裡清洗蔬菜。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H09:02",
-      "stem": "媽媽沖洗食材時，食材為什麼「急著想玩水」？",
+      "id": "reading_question:115AG2H09:c01",
+      "stem": "「紅蘿蔔急著想玩水」是什麼意思？",
+      "options": [
+        "紅蘿蔔排著等被沖洗",
+        "紅蘿蔔掉進水裡",
+        "紅蘿蔔真的會說話",
+        "紅蘿蔔不想被洗"
+      ],
+      "answer": "紅蘿蔔排著等被沖洗",
+      "why": {
+        "紅蘿蔔掉進水裡": "課文說它「等在後面」。",
+        "紅蘿蔔真的會說話": "這是把紅蘿蔔寫得像人一樣。",
+        "紅蘿蔔不想被洗": "它是「急著想」玩水。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "這應該是主角急著想要包壽司，才會覺得食材很急。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 1,
@@ -1453,25 +1455,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading_question:115AG2H09:02",
+      "answer_hint": "這應該是主角急著想要包壽司，才會覺得食材很急。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看前一句：媽媽在幫誰沖澡？"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "小黃瓜正在被沖洗，等在後面的紅蘿蔔呢？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H09:03",
-      "stem": "觀察課文圖片，爸爸把米粒送進發熱的浴室，﹁發熱的浴室﹂是指什麼東西？",
-      "strategy_tag": "提取訊息",
-      "answer_hint": "電鍋。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H09:04",
-      "stem": "﹁米粒蒸得白又胖﹂是什麼意思？",
+      "id": "reading_question:115AG2H09:c02",
+      "stem": "「米粒蒸得白又胖」是什麼意思？",
+      "options": [
+        "米煮成了飯",
+        "米粒變成麵包",
+        "米粒掉到地上",
+        "米粒被洗乾淨"
+      ],
+      "answer": "米煮成了飯",
+      "why": {
+        "米粒變成麵包": "課文說的是蒸米。",
+        "米粒掉到地上": "課文說送進「發熱的浴室」。",
+        "米粒被洗乾淨": "洗是泡澡，蒸了以後呢？"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "是米粒被煮成飯了。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 2,
@@ -1487,16 +1507,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading_question:115AG2H09:04",
+      "answer_hint": "是米粒被煮成飯了。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "「發熱的浴室」是指什麼？"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "米放進電鍋蒸熟，會變成什麼？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H09:05",
-      "stem": "主角為什麼要﹁點名﹂食材呢？",
+      "id": "reading_question:115AG2H09:c03",
+      "stem": "主角為什麼要「點名」食材？",
+      "options": [
+        "把要捲的材料排好",
+        "看誰沒有來上學",
+        "食材會跑走",
+        "數數看吃幾個"
+      ],
+      "answer": "把要捲的材料排好",
+      "why": {
+        "看誰沒有來上學": "食材不是同學。",
+        "食材會跑走": "這是把食材寫得像人。",
+        "數數看吃幾個": "點名後，「食材通通在一起」。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "因為捲壽司的材料很多種，主角把食材排好，像在點名一樣，然後再把食材用海苔和米飯捲在一起。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 3,
@@ -1514,25 +1561,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading_question:115AG2H09:05",
+      "answer_hint": "因為捲壽司的材料很多種，主角把食材排好，像在點名一樣，然後再把食材用海苔和米飯捲在一起。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看「我來點點名」後面兩句。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "海苔、米飯、蛋皮、蔬菜都到齊了，接著要做什麼？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H09:06",
-      "stem": "你覺得主角所嘗到的好味道是什麼食物？",
-      "strategy_tag": "推論訊息",
-      "answer_hint": "壽司。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H09:07",
-      "stem": "請說出製作壽司的過程？",
+      "id": "reading_question:115AG2H09:c04",
+      "stem": "做壽司的順序是什麼？",
+      "options": [
+        "洗菜→蒸飯→排食材→捲",
+        "捲→洗菜→蒸飯→排食材",
+        "蒸飯→捲→洗菜→排食材",
+        "排食材→洗菜→捲"
+      ],
+      "answer": "洗菜→蒸飯→排食材→捲",
+      "why": {
+        "捲→洗菜→蒸飯→排食材": "要先準備好材料才能捲。",
+        "蒸飯→捲→洗菜→排食材": "菜要先洗。",
+        "排食材→洗菜→捲": "一段一段看順序。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "詮釋整合",
-      "answer_hint": "先洗好小黃瓜和紅蘿蔔，再煮一鍋白米飯，最後用海苔把米飯、蛋皮、紅蘿蔔和小黃瓜捲起來，就能做出一條好吃的壽司。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 1,
@@ -1575,25 +1640,23 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
-    },
-    {
-      "id": "reading_question:115AG2H09:08",
-      "stem": "說一說，是什麼東西把全家人緊緊的黏在一起呢？",
-      "strategy_tag": "詮釋整合",
-      "answer_hint": "一起製作美食時的快樂，或是家人之間的感情、愛心，讓全家人緊緊的黏在一起。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H09:09",
-      "stem": "主角把清洗小黃瓜，敘述成小黃瓜在洗澡；把煮飯的過程，寫成白米在浴室泡澡。想一想，說一說，主角為什麼要這樣寫？",
-      "strategy_tag": "比較評估",
-      "answer_hint": "把蔬菜比喻成人、把煮飯寫成米粒在電鍋裡泡澡，這樣讓人在閱讀的時候覺得很有趣，很有想像力。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "from_open_question": "reading_question:115AG2H09:07",
+      "answer_hint": "先洗好小黃瓜和紅蘿蔔，再煮一鍋白米飯，最後用海苔把米飯、蛋皮、紅蘿蔔和小黃瓜捲起來，就能做出一條好吃的壽司。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "一段一段看：每一段在做什麼？"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "第一段洗、第二段蒸、第三段點名、第四段……"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "lookalikes": [
@@ -2076,5 +2139,188 @@
         "淡"
       ]
     }
-  }
+  },
+  "discussion_questions": [
+    {
+      "id": "reading_question:115AG2H09:01",
+      "stem": "觀察課文圖片，說說看，第一段中敘述小黃瓜在洗澡，紅蘿蔔急著想玩水，是指什麼意思呢？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "指媽媽正在廚房裡清洗蔬菜。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H09:02",
+      "stem": "媽媽沖洗食材時，食材為什麼「急著想玩水」？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "這應該是主角急著想要包壽司，才會覺得食材很急。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            4,
+            5
+          ],
+          "sha": [
+            "6f847ecf",
+            "5240ec24"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H09:03",
+      "stem": "觀察課文圖片，爸爸把米粒送進發熱的浴室，﹁發熱的浴室﹂是指什麼東西？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "電鍋。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H09:04",
+      "stem": "﹁米粒蒸得白又胖﹂是什麼意思？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "是米粒被煮成飯了。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "a3550b6f",
+            "17084e4d",
+            "d3c34605"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H09:05",
+      "stem": "主角為什麼要﹁點名﹂食材呢？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為捲壽司的材料很多種，主角把食材排好，像在點名一樣，然後再把食材用海苔和米飯捲在一起。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "sha": [
+            "4ee099d8",
+            "40877990",
+            "0813f094",
+            "7849abea"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H09:06",
+      "stem": "你覺得主角所嘗到的好味道是什麼食物？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "壽司。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H09:07",
+      "stem": "請說出製作壽司的過程？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "先洗好小黃瓜和紅蘿蔔，再煮一鍋白米飯，最後用海苔把米飯、蛋皮、紅蘿蔔和小黃瓜捲起來，就能做出一條好吃的壽司。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            3
+          ],
+          "sha": [
+            "ec711358"
+          ]
+        },
+        {
+          "para": 2,
+          "sentences": [
+            2,
+            4
+          ],
+          "sha": [
+            "a3550b6f",
+            "d3c34605"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            3,
+            4
+          ],
+          "sha": [
+            "40877990",
+            "0813f094"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            2
+          ],
+          "sha": [
+            "362a121b"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H09:08",
+      "stem": "說一說，是什麼東西把全家人緊緊的黏在一起呢？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "一起製作美食時的快樂，或是家人之間的感情、愛心，讓全家人緊緊的黏在一起。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H09:09",
+      "stem": "主角把清洗小黃瓜，敘述成小黃瓜在洗澡；把煮飯的過程，寫成白米在浴室泡澡。想一想，說一說，主角為什麼要這樣寫？",
+      "strategy_tag": "比較評估",
+      "answer_hint": "把蔬菜比喻成人、把煮飯寫成米粒在電鍋裡泡澡，這樣讓人在閱讀的時候覺得很有趣，很有想像力。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    }
+  ]
 }

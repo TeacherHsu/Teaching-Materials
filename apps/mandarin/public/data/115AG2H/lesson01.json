@@ -1584,13 +1584,24 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG2H01:01",
-      "stem": "這篇課文裡，寫了哪些心情？",
+      "id": "reading_question:115AG2H01:c01",
+      "stem": "課文寫了哪些心情？",
+      "options": [
+        "害怕、生氣、難過、開心",
+        "害怕、生氣、無聊、開心",
+        "緊張、生氣、難過、開心",
+        "害怕、驚訝、難過、開心"
+      ],
+      "answer": "害怕、生氣、難過、開心",
+      "why": {
+        "害怕、生氣、無聊、開心": "課文沒有寫到無聊。",
+        "緊張、生氣、難過、開心": "課文沒有寫到緊張。",
+        "害怕、驚訝、難過、開心": "課文沒有寫到驚訝。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "害怕、生氣、難過和開心。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 1,
@@ -1629,25 +1640,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading_question:115AG2H01:01",
+      "answer_hint": "害怕、生氣、難過和開心。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "每一段開頭都寫「＿＿的時候」。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "一段一段看：第一段到第四段各寫了什麼心情？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H01:02",
-      "stem": "觀察課本第8頁的圖，主角的表情、動作是什麼？你覺得她的心情怎麼樣？",
-      "strategy_tag": "推論訊息",
-      "answer_hint": "主角皺眉，動作像是在發抖、躲起來，心情有可能在害怕。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H01:03",
-      "stem": "課文中提到主角害怕的時候，心裡的感覺像什麼？又有什麼樣的動作？",
+      "id": "reading_question:115AG2H01:c02",
+      "stem": "害怕的時候，主角想做什麼？",
+      "options": [
+        "想躲起來",
+        "想叫出來",
+        "忍不住哭出來",
+        "忍不住笑出來"
+      ],
+      "answer": "想躲起來",
+      "why": {
+        "想叫出來": "這是生氣的時候。",
+        "忍不住哭出來": "這是難過的時候。",
+        "忍不住笑出來": "這是開心的時候。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "心裡像是颳冷風，想躲起來。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 1,
@@ -1659,25 +1688,43 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "from_open_question": "reading_question:115AG2H01:03",
+      "answer_hint": "心裡像是颳冷風，想躲起來。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看寫「害怕的時候」那一段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「我好想＿＿＿＿」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H01:04",
-      "stem": "觀察課本第9頁的圖，主角的動作是什麼？你覺得她的心情怎麼樣？",
-      "strategy_tag": "推論訊息",
-      "answer_hint": "主角眉毛上揚，雙手交叉，心情有可能在生氣。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H01:05",
-      "stem": "課文中提到主角生氣的時候，心裡的感覺像什麼？又有什麼樣的動作？",
+      "id": "reading_question:115AG2H01:c03",
+      "stem": "生氣的時候，心裡像什麼？",
+      "options": [
+        "閃電和打雷",
+        "冷冷的風",
+        "烏雲和大雨",
+        "溫暖的陽光"
+      ],
+      "answer": "閃電和打雷",
+      "why": {
+        "冷冷的風": "這是害怕的時候。",
+        "烏雲和大雨": "這是難過的時候。",
+        "溫暖的陽光": "這是開心的時候。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "心裡像是閃電、打雷，想叫出來。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 2,
@@ -1691,16 +1738,43 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "from_open_question": "reading_question:115AG2H01:05",
+      "answer_hint": "心裡像是閃電、打雷，想叫出來。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看寫「生氣的時候」那一段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「心裡一會兒＿＿，一會兒＿＿」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H01:06",
-      "stem": "為什麼作者寫主角生氣的時候，心裡一會兒閃電，一會兒打雷？",
+      "id": "reading_question:115AG2H01:c04",
+      "stem": "為什麼生氣像閃電和打雷？",
+      "options": [
+        "又大聲又嚇人",
+        "又溫暖又舒服",
+        "又安靜又輕柔",
+        "又冷又想躲"
+      ],
+      "answer": "又大聲又嚇人",
+      "why": {
+        "又溫暖又舒服": "這比較像陽光。",
+        "又安靜又輕柔": "打雷不安靜。",
+        "又冷又想躲": "這比較像害怕。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "閃電發出的光，還有雷聲轟隆隆的，很大聲，就像人生氣的時候，可能會大聲的說話，很嚇人，作者用這樣的寫法，讓人比較能了解。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 2,
@@ -1712,34 +1786,43 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "from_open_question": "reading_question:115AG2H01:06",
+      "answer_hint": "閃電發出的光，還有雷聲轟隆隆的，很大聲，就像人生氣的時候，可能會大聲的說話，很嚇人，作者用這樣的寫法，讓人比較能了解。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "想想打雷的時候是什麼感覺。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "人生氣的時候，說話大不大聲？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H01:07",
-      "stem": "觀察課文圖片第8、9、10頁的插圖，說說看插圖和課文描述的角色有什麼不同？",
-      "strategy_tag": "比較評估",
-      "answer_hint": "文中只有提到﹁我﹂，但是插圖中都有出現一個兔子小布偶陪伴著主角。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H01:08",
-      "stem": "你覺得為什麼插畫家要畫這隻小兔子？",
-      "strategy_tag": "推論訊息",
-      "answer_hint": "我覺得小兔子都在陪伴主角，感受主角的情緒，也透過這隻兔子凸顯出主角的喜怒哀樂。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H01:09",
-      "stem": "作者都用什麼事物來描述心情？",
+      "id": "reading_question:115AG2H01:c05",
+      "stem": "作者用什麼來形容心情？",
+      "options": [
+        "天氣",
+        "動物",
+        "食物",
+        "顏色"
+      ],
+      "answer": "天氣",
+      "why": {
+        "動物": "課文沒有用動物。",
+        "食物": "課文沒有用食物。",
+        "顏色": "課文寫的是風、雷、雨、陽光。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "詮釋整合",
-      "answer_hint": "作者都用大自然的現象，如冷風、打雷、下雨、陽光來描述情緒。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 1,
@@ -1782,16 +1865,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading_question:115AG2H01:09",
+      "answer_hint": "作者都用大自然的現象，如冷風、打雷、下雨、陽光來描述情緒。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看每一段心裡出現了什麼。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "風、閃電、雨、陽光，都是什麼？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H01:10",
-      "stem": "課文最後﹁雨後放晴，會出現美麗的彩虹。﹂是什麼意思？",
+      "id": "reading_question:115AG2H01:c06",
+      "stem": "「雨後放晴會出現彩虹」是什麼意思？",
+      "options": [
+        "不好的心情也會變好",
+        "下雨天一定會有彩虹",
+        "心情永遠不會改變",
+        "作者喜歡看彩虹"
+      ],
+      "answer": "不好的心情也會變好",
+      "why": {
+        "下雨天一定會有彩虹": "這句話是在比喻心情。",
+        "心情永遠不會改變": "課文說心情像天氣，會變。",
+        "作者喜歡看彩虹": "這句話不是在說喜好。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "詮釋整合",
-      "answer_hint": "作者用彩虹來表示，即使心情有變化，有好的，也有不好的，但最後都能變好。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 5,
@@ -1807,7 +1917,23 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading_question:115AG2H01:10",
+      "answer_hint": "作者用彩虹來表示，即使心情有變化，有好的，也有不好的，但最後都能變好。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "第一句說「我的心情像天氣」。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "下雨像什麼心情？放晴、彩虹又像什麼？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "lookalikes": [
@@ -2131,5 +2257,243 @@
         "虹"
       ]
     }
-  }
+  },
+  "discussion_questions": [
+    {
+      "id": "reading_question:115AG2H01:01",
+      "stem": "這篇課文裡，寫了哪些心情？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "害怕、生氣、難過和開心。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1
+          ],
+          "sha": [
+            "927d7255"
+          ]
+        },
+        {
+          "para": 2,
+          "sentences": [
+            0
+          ],
+          "sha": [
+            "d5e2cce9"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            0
+          ],
+          "sha": [
+            "c7a931d2"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            0
+          ],
+          "sha": [
+            "d3a62409"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H01:02",
+      "stem": "觀察課本第8頁的圖，主角的表情、動作是什麼？你覺得她的心情怎麼樣？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "主角皺眉，動作像是在發抖、躲起來，心情有可能在害怕。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H01:03",
+      "stem": "課文中提到主角害怕的時候，心裡的感覺像什麼？又有什麼樣的動作？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "心裡像是颳冷風，想躲起來。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            3
+          ],
+          "sha": [
+            "9bcdabbc"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H01:04",
+      "stem": "觀察課本第9頁的圖，主角的動作是什麼？你覺得她的心情怎麼樣？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "主角眉毛上揚，雙手交叉，心情有可能在生氣。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H01:05",
+      "stem": "課文中提到主角生氣的時候，心裡的感覺像什麼？又有什麼樣的動作？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "心裡像是閃電、打雷，想叫出來。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            1,
+            3
+          ],
+          "sha": [
+            "b6482fe4",
+            "87bc4cdb"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H01:06",
+      "stem": "為什麼作者寫主角生氣的時候，心裡一會兒閃電，一會兒打雷？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "閃電發出的光，還有雷聲轟隆隆的，很大聲，就像人生氣的時候，可能會大聲的說話，很嚇人，作者用這樣的寫法，讓人比較能了解。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            0
+          ],
+          "sha": [
+            "d5e2cce9"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H01:07",
+      "stem": "觀察課文圖片第8、9、10頁的插圖，說說看插圖和課文描述的角色有什麼不同？",
+      "strategy_tag": "比較評估",
+      "answer_hint": "文中只有提到﹁我﹂，但是插圖中都有出現一個兔子小布偶陪伴著主角。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H01:08",
+      "stem": "你覺得為什麼插畫家要畫這隻小兔子？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "我覺得小兔子都在陪伴主角，感受主角的情緒，也透過這隻兔子凸顯出主角的喜怒哀樂。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H01:09",
+      "stem": "作者都用什麼事物來描述心情？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "作者都用大自然的現象，如冷風、打雷、下雨、陽光來描述情緒。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            2
+          ],
+          "sha": [
+            "7b3a7014"
+          ]
+        },
+        {
+          "para": 2,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "b6482fe4",
+            "b97feca4"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "106e6f3c",
+            "7e6981ea"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            1
+          ],
+          "sha": [
+            "5558bbc8"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H01:10",
+      "stem": "課文最後﹁雨後放晴，會出現美麗的彩虹。﹂是什麼意思？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "作者用彩虹來表示，即使心情有變化，有好的，也有不好的，但最後都能變好。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 5,
+          "sentences": [
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "34e25cd5",
+            "cfb622e5",
+            "32f4f344"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    }
+  ]
 }

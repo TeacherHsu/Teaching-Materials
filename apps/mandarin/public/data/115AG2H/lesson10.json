@@ -1381,13 +1381,24 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG2H10:01",
-      "stem": "為什麼表弟願意接受猜字謎的挑戰？",
+      "id": "reading_question:115AG2H10:c01",
+      "stem": "表弟為什麼想玩猜字謎？",
+      "options": [
+        "他覺得自己認識很多字",
+        "他很會算數學",
+        "姐姐叫他一定要來玩",
+        "他想要拿獎品"
+      ],
+      "answer": "他覺得自己認識很多字",
+      "why": {
+        "他很會算數學": "表弟後來說「都問數學題」。",
+        "姐姐叫他一定要來玩": "是「我和姐姐問他」要不要玩。",
+        "他想要拿獎品": "課文沒有獎品。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "因為他覺得自己認識了很多字，所以應該能夠猜出來。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 1,
@@ -1401,16 +1412,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading_question:115AG2H10:01",
+      "answer_hint": "因為他覺得自己認識了很多字，所以應該能夠猜出來。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一段表弟說了什麼。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「上學讀書真好玩，認識了＿＿＿」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H10:02",
-      "stem": "「一加一」，是什麼字？「一減一」，又是什麼字呢？",
+      "id": "reading_question:115AG2H10:c02",
+      "stem": "「一加一」的字謎答案是什麼？",
+      "options": [
+        "王",
+        "二",
+        "三",
+        "白"
+      ],
+      "answer": "王",
+      "why": {
+        "二": "表弟答「二」，但「我」搖搖頭。",
+        "三": "三是「一減一」的答案。",
+        "白": "白是「一百減一」的答案。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "﹁一加一﹂是王、﹁一減一﹂是三。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 2,
@@ -1439,16 +1477,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading_question:115AG2H10:02",
+      "answer_hint": "﹁一加一﹂是王、﹁一減一﹂是三。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看姐姐寫下的字。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "姐姐先寫下「＿」，又寫下「三」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H10:03",
-      "stem": "表弟最後為什麼能夠猜出正確答案？",
+      "id": "reading_question:115AG2H10:c03",
+      "stem": "表弟最後為什麼猜對了？",
+      "options": [
+        "看到姐姐寫的字，想通了",
+        "他偷偷看了答案卷",
+        "他算數學很快",
+        "媽媽告訴他"
+      ],
+      "answer": "看到姐姐寫的字，想通了",
+      "why": {
+        "他偷偷看了答案卷": "課文沒有答案卷。",
+        "他算數學很快": "這不是數學題。",
+        "媽媽告訴他": "課文沒有寫到媽媽。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "因為主角的姐姐把答案寫在紙上，讓表弟能夠領悟到原來答案和數學無關，和字的結構有關。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 3,
@@ -1468,16 +1533,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading_question:115AG2H10:03",
+      "answer_hint": "因為主角的姐姐把答案寫在紙上，讓表弟能夠領悟到原來答案和數學無關，和字的結構有關。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第三段「這時」發生什麼事。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "姐姐寫下「王」和「三」，表弟「突然」怎麼了？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H10:04",
-      "stem": "主角和姐姐「異口同聲」的說：「答對了！」請問「異口同聲」是什麼意思？你是根據什麼方法知道的？",
+      "id": "reading_question:115AG2H10:c04",
+      "stem": "「異口同聲」是什麼意思？",
+      "options": [
+        "兩個人同時說一樣的話",
+        "兩個人說不一樣的話",
+        "一個人說很大聲",
+        "兩個人都不說話"
+      ],
+      "answer": "兩個人同時說一樣的話",
+      "why": {
+        "兩個人說不一樣的話": "他們都說「答對了！」。",
+        "一個人說很大聲": "「異口」是兩張嘴。",
+        "兩個人都不說話": "他們說了「答對了！」。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "根據上下文推斷。﹁異口同聲﹂是指兩個人同時說一樣的話，因為主角和姐姐都說：﹁答對了！﹂。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 3,
@@ -1489,16 +1581,43 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "from_open_question": "reading_question:115AG2H10:04",
+      "answer_hint": "根據上下文推斷。﹁異口同聲﹂是指兩個人同時說一樣的話，因為主角和姐姐都說：﹁答對了！﹂。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看「我和姐姐異口同聲的說」後面說了什麼。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "我說「答對了」，姐姐也說「答對了」——是同時說的。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H10:05",
-      "stem": "課文中有許多描寫動作的語詞，表弟「抓抓頭」、表弟「嘟著嘴」分別代表什麼情緒？",
+      "id": "reading_question:115AG2H10:c05",
+      "stem": "表弟「抓抓頭」是什麼心情？",
+      "options": [
+        "想不出來",
+        "很開心",
+        "很害怕",
+        "很想睡覺"
+      ],
+      "answer": "想不出來",
+      "why": {
+        "很開心": "他是想不出答案時抓頭。",
+        "很害怕": "課文沒有讓他害怕的事。",
+        "很想睡覺": "課文沒有寫到睡覺。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "表弟﹁抓抓頭﹂，表示有點疑惑，不知道該怎麼辦。﹁嘟著嘴﹂，表示表弟有點撒嬌、生氣的感覺。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 2,
@@ -1510,34 +1629,23 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
-    },
-    {
-      "id": "reading_question:115AG2H10:06",
-      "stem": "想一想，說一說，根據課文，你覺得想要猜中字謎，需要運用什麼方法？",
-      "strategy_tag": "詮釋整合",
-      "answer_hint": "必須要先將字謎中所出現的部件都寫出來，再根據字謎的說明，去做部件加加減減的推想。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H10:07",
-      "stem": "說一說，表弟玩猜字謎過程時的心情起伏如何？",
-      "strategy_tag": "比較評估",
-      "answer_hint": "從一開始願意參加猜字謎時的自信，到中間猜不出字謎時的沮喪和生氣，最後在主角姐姐的提示下，猜出字謎時的高興。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H10:08",
-      "stem": "想一想，說一說，這一課為什麼要取名為「加加減減」？",
-      "strategy_tag": "詮釋整合",
-      "answer_hint": "猜字謎雖然看似和數學題無關，但其實也是需要透過加減字的部件，才能設計出和猜出字謎。因此取名為﹁加加減減﹂。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "from_open_question": "reading_question:115AG2H10:05",
+      "answer_hint": "表弟﹁抓抓頭﹂，表示有點疑惑，不知道該怎麼辦。﹁嘟著嘴﹂，表示表弟有點撒嬌、生氣的感覺。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "表弟什麼時候抓抓頭？"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "聽到「一減一是什麼字」，他回答得出來嗎？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "lookalikes": [
@@ -2025,5 +2133,174 @@
         "對"
       ]
     }
-  }
+  },
+  "discussion_questions": [
+    {
+      "id": "reading_question:115AG2H10:01",
+      "stem": "為什麼表弟願意接受猜字謎的挑戰？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "因為他覺得自己認識了很多字，所以應該能夠猜出來。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "4938361f",
+            "0513a207"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H10:02",
+      "stem": "「一加一」，是什麼字？「一減一」，又是什麼字呢？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "﹁一加一﹂是王、﹁一減一﹂是三。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "sha": [
+            "9e05bc04",
+            "a7fdca0b",
+            "2135d653",
+            "a7fdca0b"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "f938a12f",
+            "47ed2ffd"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H10:03",
+      "stem": "表弟最後為什麼能夠猜出正確答案？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為主角的姐姐把答案寫在紙上，讓表弟能夠領悟到原來答案和數學無關，和字的結構有關。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "sha": [
+            "f938a12f",
+            "47ed2ffd",
+            "d51f0c47",
+            "9e05225a",
+            "48976b37"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H10:04",
+      "stem": "主角和姐姐「異口同聲」的說：「答對了！」請問「異口同聲」是什麼意思？你是根據什麼方法知道的？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "根據上下文推斷。﹁異口同聲﹂是指兩個人同時說一樣的話，因為主角和姐姐都說：﹁答對了！﹂。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            6
+          ],
+          "sha": [
+            "f1051b30"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H10:05",
+      "stem": "課文中有許多描寫動作的語詞，表弟「抓抓頭」、表弟「嘟著嘴」分別代表什麼情緒？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "表弟﹁抓抓頭﹂，表示有點疑惑，不知道該怎麼辦。﹁嘟著嘴﹂，表示表弟有點撒嬌、生氣的感覺。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            10
+          ],
+          "sha": [
+            "b7a4a4ae"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H10:06",
+      "stem": "想一想，說一說，根據課文，你覺得想要猜中字謎，需要運用什麼方法？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "必須要先將字謎中所出現的部件都寫出來，再根據字謎的說明，去做部件加加減減的推想。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H10:07",
+      "stem": "說一說，表弟玩猜字謎過程時的心情起伏如何？",
+      "strategy_tag": "比較評估",
+      "answer_hint": "從一開始願意參加猜字謎時的自信，到中間猜不出字謎時的沮喪和生氣，最後在主角姐姐的提示下，猜出字謎時的高興。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H10:08",
+      "stem": "想一想，說一說，這一課為什麼要取名為「加加減減」？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "猜字謎雖然看似和數學題無關，但其實也是需要透過加減字的部件，才能設計出和猜出字謎。因此取名為﹁加加減減﹂。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    }
+  ]
 }

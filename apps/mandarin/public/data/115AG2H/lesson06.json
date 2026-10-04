@@ -1521,13 +1521,24 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG2H06:01",
-      "stem": "草叢裡的小星星是指什麼呢？",
+      "id": "reading_question:115AG2H06:c01",
+      "stem": "草叢裡的「小星星」是什麼？",
+      "options": [
+        "螢火蟲",
+        "天上的星星",
+        "路燈",
+        "手電筒"
+      ],
+      "answer": "螢火蟲",
+      "why": {
+        "天上的星星": "它們在草叢裡、小溪旁。",
+        "路燈": "路燈不會一下子這邊亮、一下子那邊亮。",
+        "手電筒": "課文沒有寫手電筒。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "螢火蟲。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 3,
@@ -1543,52 +1554,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading_question:115AG2H06:01",
+      "answer_hint": "螢火蟲。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "它在草叢裡一下子這邊亮、一下子那邊亮。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "晚上在小溪旁會一閃一閃發光的小動物是什麼？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H06:02",
-      "stem": "觀察課文插圖，說說看奶奶家附近的環境有什麼？",
-      "strategy_tag": "提取訊息",
-      "answer_hint": "奶奶家應該是在山上，附近有竹林、茂密的草叢和小溪。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H06:03",
-      "stem": "仔細觀察課文插圖，為什麼第54頁的螢火蟲不會發亮，而第56、57頁的螢火蟲會發亮呢？這兩頁畫的環境有哪裡不同？",
-      "strategy_tag": "推論訊息",
-      "answer_hint": "因為第54頁有月亮，而且比較靠近房子，所以不容易看到螢火蟲發光。而第56、57頁因為走進樹林裡比較暗，所以容易看見螢火蟲。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H06:04",
-      "stem": "閱讀課文及觀察插圖，說說看為什麼小星星在小溪旁，聚成一朵又一朵發光的雲？",
-      "strategy_tag": "推論訊息",
-      "answer_hint": "因為發光的螢火蟲圍在一起，一團又一團，看起來像是許多發光的雲。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H06:05",
-      "stem": "觀察課文插圖，妹妹的﹁新朋友﹂是誰？",
-      "strategy_tag": "提取訊息",
-      "answer_hint": "妹妹的新朋友是螢火蟲。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H06:06",
-      "stem": "書寫一篇日記，需要有哪些重點？",
+      "id": "reading_question:115AG2H06:c02",
+      "stem": "寫日記開頭要先寫什麼？",
+      "options": [
+        "日期、星期和天氣",
+        "作者的名字",
+        "最好的朋友",
+        "明天要做的事和地點"
+      ],
+      "answer": "日期、星期和天氣",
+      "why": {
+        "作者的名字": "看第一段寫了什麼。",
+        "最好的朋友": "看第一段寫了什麼。",
+        "明天要做的事和地點": "日記寫的是今天的事。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "詮釋整合",
-      "answer_hint": "必須先寫日期、星期和天氣，再把特別的事記錄下來。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 1,
@@ -1602,25 +1604,23 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
-    },
-    {
-      "id": "reading_question:115AG2H06:07",
-      "stem": "從這一篇課文來看，說一說螢火蟲的生長環境及生活習性有什麼？",
-      "strategy_tag": "詮釋整合",
-      "answer_hint": "螢火蟲多半會在竹林、草叢附近，如果旁邊有小溪，潮溼的環境會更好。太亮的地方不會有螢火蟲，因為牠不會一直發亮。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H06:08",
-      "stem": "想一想，為什麼本課草叢裡的星星會飛到妹妹頭上和她做朋友，和第四課水草下的呱呱裡的小男孩，有什麼相同的地方？",
-      "strategy_tag": "比較評估",
-      "answer_hint": "當妹妹和小男孩安靜不動時，青蛙和螢火蟲就願意和人們做朋友了。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "from_open_question": "reading_question:115AG2H06:06",
+      "answer_hint": "必須先寫日期、星期和天氣，再把特別的事記錄下來。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看課文第一段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「O月O日星期五天氣：晴」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "lookalikes": [
@@ -2058,5 +2058,117 @@
         "顆"
       ]
     }
-  }
+  },
+  "discussion_questions": [
+    {
+      "id": "reading_question:115AG2H06:01",
+      "stem": "草叢裡的小星星是指什麼呢？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "螢火蟲。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "e5783cc3",
+            "60834a3a",
+            "8f0382e2"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H06:02",
+      "stem": "觀察課文插圖，說說看奶奶家附近的環境有什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "奶奶家應該是在山上，附近有竹林、茂密的草叢和小溪。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H06:03",
+      "stem": "仔細觀察課文插圖，為什麼第54頁的螢火蟲不會發亮，而第56、57頁的螢火蟲會發亮呢？這兩頁畫的環境有哪裡不同？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為第54頁有月亮，而且比較靠近房子，所以不容易看到螢火蟲發光。而第56、57頁因為走進樹林裡比較暗，所以容易看見螢火蟲。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H06:04",
+      "stem": "閱讀課文及觀察插圖，說說看為什麼小星星在小溪旁，聚成一朵又一朵發光的雲？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為發光的螢火蟲圍在一起，一團又一團，看起來像是許多發光的雲。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H06:05",
+      "stem": "觀察課文插圖，妹妹的﹁新朋友﹂是誰？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "妹妹的新朋友是螢火蟲。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H06:06",
+      "stem": "書寫一篇日記，需要有哪些重點？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "必須先寫日期、星期和天氣，再把特別的事記錄下來。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "5be52449",
+            "6379ede5"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H06:07",
+      "stem": "從這一篇課文來看，說一說螢火蟲的生長環境及生活習性有什麼？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "螢火蟲多半會在竹林、草叢附近，如果旁邊有小溪，潮溼的環境會更好。太亮的地方不會有螢火蟲，因為牠不會一直發亮。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H06:08",
+      "stem": "想一想，為什麼本課草叢裡的星星會飛到妹妹頭上和她做朋友，和第四課水草下的呱呱裡的小男孩，有什麼相同的地方？",
+      "strategy_tag": "比較評估",
+      "answer_hint": "當妹妹和小男孩安靜不動時，青蛙和螢火蟲就願意和人們做朋友了。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    }
+  ]
 }

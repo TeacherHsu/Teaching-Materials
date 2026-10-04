@@ -1878,43 +1878,24 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG2H12:01",
-      "stem": "觀察課本圖片，池裡的鵝正在做什麼？",
-      "strategy_tag": "提取訊息",
-      "answer_hint": "池裡有幾隻鵝在游泳，其中一隻張開嘴巴像在唱歌；另一隻鵝站在池塘邊伸長脖子。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H12:02",
-      "stem": "駱賓王詠鵝第一句是「鵝、鵝、鵝」，是什麼意思？",
-      "strategy_tag": "推論訊息",
-      "answer_hint": "我覺得是在讚嘆鵝，所以連寫了三次鵝；也像是在形容鵝的叫聲，連三次鵝、鵝、鵝，很像是鵝在叫。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
-      "evidence": [
-        {
-          "para": 1,
-          "sentences": [
-            5
-          ],
-          "sha": [
-            "96be48d9"
-          ]
-        }
+      "id": "reading_question:115AG2H12:c01",
+      "stem": "「曲項向天歌」是什麼意思？",
+      "options": [
+        "白鵝伸長脖子對天唱歌",
+        "白鵝在水裡游泳",
+        "白鵝用腳掌撥水",
+        "白鵝在水裡翻一個跟頭"
       ],
-      "evidence_method": "manual 2026-10-03"
-    },
-    {
-      "id": "reading_question:115AG2H12:03",
-      "stem": "詠鵝中的「曲項向天歌」，是什麼意思？",
+      "answer": "白鵝伸長脖子對天唱歌",
+      "why": {
+        "白鵝在水裡游泳": "這是「白毛浮綠水」。",
+        "白鵝用腳掌撥水": "這是「紅掌撥清波」。",
+        "白鵝在水裡翻一個跟頭": "這是姐姐寫的詩。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "白鵝伸長了脖子，對著天空唱歌。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 2,
@@ -1928,16 +1909,43 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "from_open_question": "reading_question:115AG2H12:03",
+      "answer_hint": "白鵝伸長了脖子，對著天空唱歌。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看姐姐指著水面說的話。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "姐姐說的第一句，對應的就是「曲項向天歌」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H12:04",
-      "stem": "如果想知道駱賓王寫的詠鵝整首詩的意思，可以從課文哪裡找到？",
+      "id": "reading_question:115AG2H12:c02",
+      "stem": "想知道整首詩的意思，可以看哪裡？",
+      "options": [
+        "姐姐指著水面說的話",
+        "媽媽說的話",
+        "姐姐自己寫的新詩",
+        "課名"
+      ],
+      "answer": "姐姐指著水面說的話",
+      "why": {
+        "媽媽說的話": "媽媽說的是駱賓王幾歲。",
+        "姐姐自己寫的新詩": "那是姐姐自己的詩。",
+        "課名": "課名只有兩個字。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "可從課文中姐姐指著水面說的話。因為姐姐說眼前所看到的，和駱賓王寫的詩一樣。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 2,
@@ -1961,34 +1969,23 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
-    },
-    {
-      "id": "reading_question:115AG2H12:05",
-      "stem": "課文中提到有一隻鵝在水裡「翻跟頭」。觀察課文圖片，說一說，「翻跟頭」是什麼意思？",
-      "strategy_tag": "提取訊息",
-      "answer_hint": "我看到圖片中有兩隻鵝，頭鑽進水中，腳在水面上，這就是翻跟頭。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H12:06",
-      "stem": "想一想，說一說，駱賓王是一個怎麼樣的人？請從課文中找出答案。",
-      "strategy_tag": "比較評估",
-      "answer_hint": "駱賓王應該是個很聰明的人，因為他才七歲就寫出這麼有名的詩，而且只用短短的文句，就生動的描寫了鵝的樣貌。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H12:07",
-      "stem": "想一想，說一說，為什麼媽媽說姐姐也是個小詩人呢？",
-      "strategy_tag": "詮釋整合",
-      "answer_hint": "因為姐姐一聽到駱賓王的詠鵝詩，能夠和眼前所觀察到池邊白鵝的樣子，產生了連結，發現駱賓王這首詩就是在生動描寫鵝的樣貌。然後當她看到白鵝一翻跟頭，馬上又能產生聯想，創作出另一首詩，所以媽媽說她是個小詩人。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "from_open_question": "reading_question:115AG2H12:04",
+      "answer_hint": "可從課文中姐姐指著水面說的話。因為姐姐說眼前所看到的，和駱賓王寫的詩一樣。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "有人把詩用白話說了一遍。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "誰說「真的和駱賓王的詠鵝詩一樣」？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "lookalikes": [
@@ -2556,5 +2553,127 @@
         "肚"
       ]
     }
-  }
+  },
+  "discussion_questions": [
+    {
+      "id": "reading_question:115AG2H12:01",
+      "stem": "觀察課本圖片，池裡的鵝正在做什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "池裡有幾隻鵝在游泳，其中一隻張開嘴巴像在唱歌；另一隻鵝站在池塘邊伸長脖子。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H12:02",
+      "stem": "駱賓王詠鵝第一句是「鵝、鵝、鵝」，是什麼意思？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "我覺得是在讚嘆鵝，所以連寫了三次鵝；也像是在形容鵝的叫聲，連三次鵝、鵝、鵝，很像是鵝在叫。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            5
+          ],
+          "sha": [
+            "96be48d9"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H12:03",
+      "stem": "詠鵝中的「曲項向天歌」，是什麼意思？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "白鵝伸長了脖子，對著天空唱歌。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "cd7a8c7e",
+            "bec21f8d"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H12:04",
+      "stem": "如果想知道駱賓王寫的詠鵝整首詩的意思，可以從課文哪裡找到？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "可從課文中姐姐指著水面說的話。因為姐姐說眼前所看到的，和駱賓王寫的詩一樣。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "a3aa036e",
+            "07da4eaa",
+            "cd7a8c7e",
+            "bec21f8d",
+            "3cf52222",
+            "69dfb0ef",
+            "61c13343"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H12:05",
+      "stem": "課文中提到有一隻鵝在水裡「翻跟頭」。觀察課文圖片，說一說，「翻跟頭」是什麼意思？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "我看到圖片中有兩隻鵝，頭鑽進水中，腳在水面上，這就是翻跟頭。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H12:06",
+      "stem": "想一想，說一說，駱賓王是一個怎麼樣的人？請從課文中找出答案。",
+      "strategy_tag": "比較評估",
+      "answer_hint": "駱賓王應該是個很聰明的人，因為他才七歲就寫出這麼有名的詩，而且只用短短的文句，就生動的描寫了鵝的樣貌。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H12:07",
+      "stem": "想一想，說一說，為什麼媽媽說姐姐也是個小詩人呢？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "因為姐姐一聽到駱賓王的詠鵝詩，能夠和眼前所觀察到池邊白鵝的樣子，產生了連結，發現駱賓王這首詩就是在生動描寫鵝的樣貌。然後當她看到白鵝一翻跟頭，馬上又能產生聯想，創作出另一首詩，所以媽媽說她是個小詩人。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    }
+  ]
 }

@@ -1605,13 +1605,24 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG2H08:01",
-      "stem": "明光的媽媽是哪裡人？",
+      "id": "reading_question:115AG2H08:c01",
+      "stem": "明光的媽媽可能是哪裡人？",
+      "options": [
+        "越南人",
+        "日本人",
+        "美國人",
+        "客家人"
+      ],
+      "answer": "越南人",
+      "why": {
+        "日本人": "她介紹的是越南春捲。",
+        "美國人": "課文沒有寫到美國。",
+        "客家人": "客家人吃的是艾粄。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "越南人。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 1,
@@ -1632,16 +1643,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading_question:115AG2H08:01",
+      "answer_hint": "越南人。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "明光的媽媽來介紹哪裡的食物？"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "她做的是越南春捲，又說小時候的生活。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H08:02",
-      "stem": "說說看越南春捲的材料及作法？",
+      "id": "reading_question:115AG2H08:c02",
+      "stem": "越南春捲是怎麼做的？",
+      "options": [
+        "米紙泡軟，包進蝦子和青菜",
+        "用竹筒裝飯去烤",
+        "用海苔把飯和蛋皮捲起來",
+        "用麵粉做成麵包"
+      ],
+      "answer": "米紙泡軟，包進蝦子和青菜",
+      "why": {
+        "用竹筒裝飯去烤": "這是竹筒飯。",
+        "用海苔把飯和蛋皮捲起來": "這是壽司。",
+        "用麵粉做成麵包": "課文沒有寫麵包。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "材料有米紙、蝦子、米線和各種青菜。先將米紙泡軟，然後再將食材都包進去，就可以吃了。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 2,
@@ -1653,16 +1691,43 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "from_open_question": "reading_question:115AG2H08:02",
+      "answer_hint": "材料有米紙、蝦子、米線和各種青菜。先將米紙泡軟，然後再將食材都包進去，就可以吃了。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第二段明光媽媽怎麼做。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "米紙要先怎麼樣？再放進什麼？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H08:03",
-      "stem": "圓形的「白紙」是什麼？有什麼功用？",
+      "id": "reading_question:115AG2H08:c03",
+      "stem": "圓形的「白紙」是什麼？",
+      "options": [
+        "米紙",
+        "寫字的紙",
+        "盤子",
+        "衛生紙"
+      ],
+      "answer": "米紙",
+      "why": {
+        "寫字的紙": "這張紙泡水會變軟，可以包食物。",
+        "盤子": "它可以包食材。",
+        "衛生紙": "課文說它叫什麼？"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "米紙。可以用來包蔬菜和蝦子成為越南春捲。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 2,
@@ -1680,16 +1745,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading_question:115AG2H08:03",
+      "answer_hint": "米紙。可以用來包蔬菜和蝦子成為越南春捲。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看明光說的話。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「這是＿＿，只要泡一下水就會變軟」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H08:04",
-      "stem": "說說看，明光班上的美食分享日是怎麼進行的？",
+      "id": "reading_question:115AG2H08:c04",
+      "stem": "美食分享日是怎麼進行的？",
+      "options": [
+        "家長示範，大家邊吃邊聽故事",
+        "同學比賽誰吃得最多最快",
+        "老師一個人做菜",
+        "大家去餐廳吃飯"
+      ],
+      "answer": "家長示範，大家邊吃邊聽故事",
+      "why": {
+        "同學比賽誰吃得最多最快": "課文沒有比賽。",
+        "老師一個人做菜": "是明光的媽媽來介紹。",
+        "大家去餐廳吃飯": "是在班上進行。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "詮釋整合",
-      "answer_hint": "老師邀請同學們的家長到班上分享家鄉美食的做法，並實際操作給同學們看，最後大家可以一邊吃美食，一邊聽家長分享家鄉的故事。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 3,
@@ -1705,16 +1797,43 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "from_open_question": "reading_question:115AG2H08:04",
+      "answer_hint": "老師邀請同學們的家長到班上分享家鄉美食的做法，並實際操作給同學們看，最後大家可以一邊吃美食，一邊聽家長分享家鄉的故事。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一段和第三段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "誰來介紹？大家一邊吃、一邊做什麼？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H08:05",
-      "stem": "小花說：﹁有故事好好吃。﹂為什麼她會這樣說？",
+      "id": "reading_question:115AG2H08:c05",
+      "stem": "小花為什麼說「有故事好好吃」？",
+      "options": [
+        "邊吃邊聽故事，覺得更好吃",
+        "春捲裡面包著一本故事書",
+        "她肚子很餓",
+        "她不喜歡吃春捲"
+      ],
+      "answer": "邊吃邊聽故事，覺得更好吃",
+      "why": {
+        "春捲裡面包著一本故事書": "「故事」是明光媽媽說的話。",
+        "她肚子很餓": "她說的是故事。",
+        "她不喜歡吃春捲": "她說「好好吃」。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "因為大家一邊吃春捲，一邊聽明光的媽媽說小時候的生活。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 3,
@@ -1726,41 +1845,23 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
-    },
-    {
-      "id": "reading_question:115AG2H08:06",
-      "stem": "小花說：「有故事好好吃。」老師說：「是有了故事，春捲更美味了。」這兩句話有什麼相同和不同呢？",
-      "strategy_tag": "比較評估",
-      "answer_hint": "小花想要表達邊吃美食邊聽故事，讓食物變得更好吃。老師說的和小花相近，只是老師說得比較完整。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
-      "evidence": [
+      "from_open_question": "reading_question:115AG2H08:05",
+      "answer_hint": "因為大家一邊吃春捲，一邊聽明光的媽媽說小時候的生活。",
+      "hints": [
         {
-          "para": 4,
-          "sentences": [
-            1,
-            3,
-            4
-          ],
-          "sha": [
-            "78f97749",
-            "4857edbc",
-            "76bad011"
-          ]
+          "level": 1,
+          "text": "看第三段大家在做什麼。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「一邊吃，一邊聽……」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
         }
-      ],
-      "evidence_method": "manual 2026-10-03"
-    },
-    {
-      "id": "reading_question:115AG2H08:07",
-      "stem": "想一想，說一說，為什麼老師要舉辦美食分享日呢？",
-      "strategy_tag": "詮釋整合",
-      "answer_hint": "為了讓班上的同學們能夠認識不一樣的食物，並且了解其他國家或族群的風土民情，還能讓同學們與家長之間增加感情。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      ]
     }
   ],
   "lookalikes": [
@@ -2213,5 +2314,172 @@
         "更"
       ]
     }
-  }
+  },
+  "discussion_questions": [
+    {
+      "id": "reading_question:115AG2H08:01",
+      "stem": "明光的媽媽是哪裡人？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "越南人。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            2
+          ],
+          "sha": [
+            "8260a104"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            3
+          ],
+          "sha": [
+            "21f0161d"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H08:02",
+      "stem": "說說看越南春捲的材料及作法？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "材料有米紙、蝦子、米線和各種青菜。先將米紙泡軟，然後再將食材都包進去，就可以吃了。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            9
+          ],
+          "sha": [
+            "bbeef321"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H08:03",
+      "stem": "圓形的「白紙」是什麼？有什麼功用？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "米紙。可以用來包蔬菜和蝦子成為越南春捲。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            1,
+            2,
+            6
+          ],
+          "sha": [
+            "c223de62",
+            "e19c78f8",
+            "e2b925a1",
+            "eb49ae86"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H08:04",
+      "stem": "說說看，明光班上的美食分享日是怎麼進行的？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "老師邀請同學們的家長到班上分享家鄉美食的做法，並實際操作給同學們看，最後大家可以一邊吃美食，一邊聽家長分享家鄉的故事。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "75600530",
+            "21f0161d",
+            "cb7daa88"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H08:05",
+      "stem": "小花說：﹁有故事好好吃。﹂為什麼她會這樣說？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為大家一邊吃春捲，一邊聽明光的媽媽說小時候的生活。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            3
+          ],
+          "sha": [
+            "21f0161d"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H08:06",
+      "stem": "小花說：「有故事好好吃。」老師說：「是有了故事，春捲更美味了。」這兩句話有什麼相同和不同呢？",
+      "strategy_tag": "比較評估",
+      "answer_hint": "小花想要表達邊吃美食邊聽故事，讓食物變得更好吃。老師說的和小花相近，只是老師說得比較完整。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 4,
+          "sentences": [
+            1,
+            3,
+            4
+          ],
+          "sha": [
+            "78f97749",
+            "4857edbc",
+            "76bad011"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H08:07",
+      "stem": "想一想，說一說，為什麼老師要舉辦美食分享日呢？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "為了讓班上的同學們能夠認識不一樣的食物，並且了解其他國家或族群的風土民情，還能讓同學們與家長之間增加感情。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    }
+  ]
 }

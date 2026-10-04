@@ -1820,31 +1820,24 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG2H07:01",
-      "stem": "觀察課文圖片，說一說，明光班上到郊外活動時，午餐的方式是什麼？",
+      "id": "reading_question:115AG2H07:c01",
+      "stem": "竹筒飯裡除了飯還有什麼？",
+      "options": [
+        "竹子香味、奶奶的愛心、祖先的故事",
+        "竹子香味、媽媽的愛心、老師的故事",
+        "蝦子、米線、青菜",
+        "艾草、糯米、紅豆"
+      ],
+      "answer": "竹子香味、奶奶的愛心、祖先的故事",
+      "why": {
+        "竹子香味、媽媽的愛心、老師的故事": "再看是誰的愛心、誰的故事。",
+        "蝦子、米線、青菜": "這是越南春捲的材料。",
+        "艾草、糯米、紅豆": "這是別的食物。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "每個人帶自己的午餐，在戶外野餐。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H07:02",
-      "stem": "觀察第75頁的圖片，裡面的小朋友哪一個是小星、明光和小花？為什麼？",
-      "strategy_tag": "推論訊息",
-      "answer_hint": "藍色野餐墊上，拿著竹筒飯的是小星，因為課文裡有提到小星帶竹筒，所以右邊的男生是小星。小花帶客家艾粄，她也是唯一的女生。剩下的中間那一個男孩就是明光。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H07:03",
-      "stem": "說說看，小星的竹筒飯裡除了包著飯，還有什麼呢？",
-      "strategy_tag": "提取訊息",
-      "answer_hint": "竹子的香味，奶奶的愛心和祖先的故事。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 2,
@@ -1860,16 +1853,43 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "from_open_question": "reading_question:115AG2H07:03",
+      "answer_hint": "竹子的香味，奶奶的愛心和祖先的故事。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看小星說的話。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「有＿＿的香味，有＿＿的愛心，還有＿＿的故事」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H07:04",
-      "stem": "為什麼在清明節，客家人要吃艾粄？",
+      "id": "reading_question:115AG2H07:c02",
+      "stem": "客家人為什麼清明節吃艾粄？",
+      "options": [
+        "好吃又保平安",
+        "因為很便宜",
+        "因為是奶奶做的",
+        "因為要去郊遊"
+      ],
+      "answer": "好吃又保平安",
+      "why": {
+        "因為很便宜": "課文沒有說便宜。",
+        "因為是奶奶做的": "課文說的是吃艾粄的原因。",
+        "因為要去郊遊": "課文沒有這樣說。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "除了好吃，還能夠保平安。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 3,
@@ -1885,34 +1905,23 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
-    },
-    {
-      "id": "reading_question:115AG2H07:05",
-      "stem": "說一說，小星班上可能會有哪些族群的人呢？",
-      "strategy_tag": "推論訊息",
-      "answer_hint": "原住民、客家人和越南人。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H07:06",
-      "stem": "從小星說的話裡，你覺得小星是一個怎麼樣的人，為什麼？",
-      "strategy_tag": "比較評估",
-      "answer_hint": "小星是個很細心的人，因為他能感受到竹筒飯的意義。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H07:07",
-      "stem": "想一想，為什麼美食會不一樣呢？",
-      "strategy_tag": "詮釋整合",
-      "answer_hint": "因為班上每個同學的家人，都來自於不同的地區，每個族群都有自己的生活方式、飲食習慣，所以有不一樣的美食。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "from_open_question": "reading_question:115AG2H07:04",
+      "answer_hint": "除了好吃，還能夠保平安。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看小花媽媽說的話。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「不但＿＿，還可以＿＿＿」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "lookalikes": [
@@ -2360,5 +2369,109 @@
         "南"
       ]
     }
-  }
+  },
+  "discussion_questions": [
+    {
+      "id": "reading_question:115AG2H07:01",
+      "stem": "觀察課文圖片，說一說，明光班上到郊外活動時，午餐的方式是什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "每個人帶自己的午餐，在戶外野餐。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H07:02",
+      "stem": "觀察第75頁的圖片，裡面的小朋友哪一個是小星、明光和小花？為什麼？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "藍色野餐墊上，拿著竹筒飯的是小星，因為課文裡有提到小星帶竹筒，所以右邊的男生是小星。小花帶客家艾粄，她也是唯一的女生。剩下的中間那一個男孩就是明光。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H07:03",
+      "stem": "說說看，小星的竹筒飯裡除了包著飯，還有什麼呢？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "竹子的香味，奶奶的愛心和祖先的故事。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "9e284a73",
+            "ab567cd9",
+            "479e44eb"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H07:04",
+      "stem": "為什麼在清明節，客家人要吃艾粄？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "除了好吃，還能夠保平安。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            3,
+            4,
+            5
+          ],
+          "sha": [
+            "9a917d82",
+            "620f2bc1",
+            "c85bb5ac"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H07:05",
+      "stem": "說一說，小星班上可能會有哪些族群的人呢？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "原住民、客家人和越南人。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H07:06",
+      "stem": "從小星說的話裡，你覺得小星是一個怎麼樣的人，為什麼？",
+      "strategy_tag": "比較評估",
+      "answer_hint": "小星是個很細心的人，因為他能感受到竹筒飯的意義。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H07:07",
+      "stem": "想一想，為什麼美食會不一樣呢？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "因為班上每個同學的家人，都來自於不同的地區，每個族群都有自己的生活方式、飲食習慣，所以有不一樣的美食。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    }
+  ]
 }

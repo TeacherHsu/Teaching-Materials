@@ -557,20 +557,24 @@
   },
   "reading_questions": [
     {
-      "id": "reading-question:115AG1H01:01",
-      "stem": "仔細觀察課文插圖，圖中有幾個人？分別是誰？他們正在哪裡？",
-      "answer_hint": "課文插圖裡有七個人，分別是一個老師和六個小朋友，他們正在操場上。",
+      "id": "reading_question:115AG1H01:c01",
+      "stem": "課文裡一起走路的是誰？",
+      "options": [
+        "你和我",
+        "老師和我",
+        "爸爸和我",
+        "一群小鳥"
+      ],
+      "answer": "你和我",
+      "why": {
+        "老師和我": "課文裡沒有寫到老師。",
+        "爸爸和我": "課文裡沒有寫到爸爸。",
+        "一群小鳥": "走路的是人，不是小鳥。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H01:02",
-      "stem": "根據這篇課文，走路的人分別是誰？",
-      "answer_hint": "「你」和「我」。因為你和我一起向前走。",
-      "strategy_tag": "提取訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 1,
@@ -584,15 +588,43 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "from_open_question": "reading-question:115AG1H01:02",
+      "answer_hint": "「你」和「我」。因為你和我一起向前走。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "找找課文裡「一起向前走」的是誰。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "看最後兩句：「＿和＿，一起向前走」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading-question:115AG1H01:03",
-      "stem": "根據課文，「你在左，我在右」，為什麼他們不分開走，一定要緊緊靠在一起前進？",
-      "answer_hint": "因為他們的腳被綁在一起了，如果不一起走，腳會被拉扯，就沒辦法前進。",
+      "id": "reading_question:115AG1H01:c02",
+      "stem": "為什麼他們要靠在一起走？",
+      "options": [
+        "兩人三腳，要一起走",
+        "他們怕跌倒在地上",
+        "他們要跑到教室去",
+        "他們在比誰走得快"
+      ],
+      "answer": "兩人三腳，要一起走",
+      "why": {
+        "他們怕跌倒在地上": "課文說的是「一二一」一起走，不是怕跌倒。",
+        "他們要跑到教室去": "課文沒有說要去教室。",
+        "他們在比誰走得快": "重點是兩個人要一起走。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 1,
@@ -614,23 +646,23 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
-    },
-    {
-      "id": "reading-question:115AG1H01:04",
-      "stem": "課文最後說「你和我，一起向前走」。你認為要做到「一起向前走」，最重要的是什麼？",
-      "answer_hint": "最重要的是「默契」，因為腳步要一樣、動作要同步。",
-      "strategy_tag": "詮釋整合",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H01:06",
-      "stem": "閱讀課文，你覺得「兩人三腳」這個遊戲，要獲得勝利的方法是什麼？",
-      "answer_hint": "需要兩個人互相合作，步伐要相同，一起向前走。",
-      "strategy_tag": "詮釋整合",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "from_open_question": "reading-question:115AG1H01:03",
+      "answer_hint": "因為他們的腳被綁在一起了，如果不一起走，腳會被拉扯，就沒辦法前進。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "想想「一二一」是什麼時候會喊的口令。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "一個在左、一個在右，還要「一起走」，他們在玩什麼遊戲？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -1052,5 +1084,88 @@
       "activity": "review",
       "note": "第 1 課沒有前課資料。"
     }
-  }
+  },
+  "discussion_questions": [
+    {
+      "id": "reading-question:115AG1H01:01",
+      "stem": "仔細觀察課文插圖，圖中有幾個人？分別是誰？他們正在哪裡？",
+      "answer_hint": "課文插圖裡有七個人，分別是一個老師和六個小朋友，他們正在操場上。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H01:02",
+      "stem": "根據這篇課文，走路的人分別是誰？",
+      "answer_hint": "「你」和「我」。因為你和我一起向前走。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            7,
+            8
+          ],
+          "sha": [
+            "1380c795",
+            "07d4d427"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H01:03",
+      "stem": "根據課文，「你在左，我在右」，為什麼他們不分開走，一定要緊緊靠在一起前進？",
+      "answer_hint": "因為他們的腳被綁在一起了，如果不一起走，腳會被拉扯，就沒辦法前進。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "29ce85a4",
+            "f6e094e5",
+            "29ce85a4",
+            "6e8639cc",
+            "bba8da05",
+            "d01812f9"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H01:04",
+      "stem": "課文最後說「你和我，一起向前走」。你認為要做到「一起向前走」，最重要的是什麼？",
+      "answer_hint": "最重要的是「默契」，因為腳步要一樣、動作要同步。",
+      "strategy_tag": "詮釋整合",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H01:06",
+      "stem": "閱讀課文，你覺得「兩人三腳」這個遊戲，要獲得勝利的方法是什麼？",
+      "answer_hint": "需要兩個人互相合作，步伐要相同，一起向前走。",
+      "strategy_tag": "詮釋整合",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    }
+  ]
 }

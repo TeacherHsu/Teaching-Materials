@@ -1618,13 +1618,24 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG2H03:01",
-      "stem": "故事中的國王最喜歡做什麼事情？",
+      "id": "reading_question:115AG2H03:c01",
+      "stem": "國王最喜歡做什麼？",
+      "options": [
+        "穿新衣",
+        "吃大餐",
+        "看書",
+        "畫畫"
+      ],
+      "answer": "穿新衣",
+      "why": {
+        "吃大餐": "課文沒有寫吃東西。",
+        "看書": "課文沒有寫看書。",
+        "畫畫": "國王後來喜歡的是「設計」衣服。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "穿新衣。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 1,
@@ -1640,16 +1651,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading_question:115AG2H03:01",
+      "answer_hint": "穿新衣。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一段第一句。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「國王喜歡＿＿＿」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H03:02",
-      "stem": "穿不穿新衣對國王的影響是什麼？",
+      "id": "reading_question:115AG2H03:c02",
+      "stem": "沒有新衣穿，國王會怎樣？",
+      "options": [
+        "心情不好",
+        "很高興",
+        "去睡覺",
+        "自己做衣服"
+      ],
+      "answer": "心情不好",
+      "why": {
+        "很高興": "穿上新衣才會高興。",
+        "去睡覺": "課文沒有寫睡覺。",
+        "自己做衣服": "那是後來的事。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "國王穿新衣就會高興，不穿新衣就會心情不好。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 1,
@@ -1663,25 +1701,43 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "from_open_question": "reading_question:115AG2H03:02",
+      "answer_hint": "國王穿新衣就會高興，不穿新衣就會心情不好。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一段最後一句。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「沒有新衣穿，就會＿＿＿＿」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H03:03",
-      "stem": "觀察課文插圖，哪一張插圖最能看出國王很喜歡穿新衣？",
-      "strategy_tag": "推論訊息",
-      "answer_hint": "第25頁，可以看到國王有滿滿衣櫥的衣服，各式各樣的衣服，衣服多到放不進衣櫃。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H03:04",
-      "stem": "誰解決了國王天天穿新衣的問題？",
+      "id": "reading_question:115AG2H03:c03",
+      "stem": "誰解決了國王的問題？",
+      "options": [
+        "大臣",
+        "國王的女兒",
+        "裁縫師",
+        "小朋友"
+      ],
+      "answer": "大臣",
+      "why": {
+        "國王的女兒": "課文沒有寫到女兒。",
+        "裁縫師": "課文沒有寫到裁縫師。",
+        "小朋友": "課文沒有寫到小朋友。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "大臣。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 2,
@@ -1702,16 +1758,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading_question:115AG2H03:04",
+      "answer_hint": "大臣。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第二段是誰送國王新衣。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「＿＿送國王一件新衣」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H03:05",
-      "stem": "大臣為什麼會得意的說：「國王想穿新衣，一點都不難！」？",
+      "id": "reading_question:115AG2H03:c04",
+      "stem": "大臣為什麼很得意？",
+      "options": [
+        "他想到讓國王天天有新衣",
+        "國王送他很多錢",
+        "他自己也有新衣",
+        "他做衣服做得最快"
+      ],
+      "answer": "他想到讓國王天天有新衣",
+      "why": {
+        "國王送他很多錢": "課文沒有寫到錢。",
+        "他自己也有新衣": "新衣是送給國王的。",
+        "他做衣服做得最快": "重點是他想到了方法。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "因為大臣覺得自己找到了好方法，可以讓國王天天穿新衣。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 2,
@@ -1727,16 +1810,43 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "from_open_question": "reading_question:115AG2H03:05",
+      "answer_hint": "因為大臣覺得自己找到了好方法，可以讓國王天天穿新衣。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "前面說「要怎麼做，國王才能天天有新衣穿呢？」"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "他說「一點都不難」，表示他找到了什麼？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H03:06",
-      "stem": "大臣用什麼方法解決了國王的問題？",
+      "id": "reading_question:115AG2H03:c05",
+      "stem": "大臣用什麼方法？",
+      "options": [
+        "把舊衣服改成新樣子",
+        "每天去買一件新衣",
+        "請別人借衣服給國王",
+        "叫國王不要穿新衣"
+      ],
+      "answer": "把舊衣服改成新樣子",
+      "why": {
+        "每天去買一件新衣": "大臣找出的是國王「穿過的」衣服。",
+        "請別人借衣服給國王": "課文沒有借衣服。",
+        "叫國王不要穿新衣": "大臣是讓國王有新衣穿。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "大臣找出國王穿過的舊衣服，改變了袖子，增加了領子，就變成另一件新衣服。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 3,
@@ -1748,16 +1858,43 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "from_open_question": "reading_question:115AG2H03:06",
+      "answer_hint": "大臣找出國王穿過的舊衣服，改變了袖子，增加了領子，就變成另一件新衣服。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第三段第一句。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找出穿過的衣服，又改＿＿、又加＿＿。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H03:07",
-      "stem": "大臣的做法，讓國王有了什麼改變？",
+      "id": "reading_question:115AG2H03:c06",
+      "stem": "後來國王有什麼改變？",
+      "options": [
+        "喜歡上自己設計衣服",
+        "不再穿衣服",
+        "每天都更生氣",
+        "把所有的衣服都丟掉"
+      ],
+      "answer": "喜歡上自己設計衣服",
+      "why": {
+        "不再穿衣服": "國王還是穿衣服，只是不一定要新的。",
+        "每天都更生氣": "國王後來很開心。",
+        "把所有的衣服都丟掉": "國王把做好的衣服送給大家。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "國王發現只要簡單修改，就可以讓一件衣服有全新的面貌，他也開始動手修改，甚至自己設計衣服，享受設計衣服的樂趣。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 3,
@@ -1773,25 +1910,43 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "from_open_question": "reading_question:115AG2H03:07",
+      "answer_hint": "國王發現只要簡單修改，就可以讓一件衣服有全新的面貌，他也開始動手修改，甚至自己設計衣服，享受設計衣服的樂趣。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第三段最後兩句。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「國王喜歡上＿＿衣服」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H03:08",
-      "stem": "課本第27頁的插圖中，有哪些人在做什麼事？",
-      "strategy_tag": "提取訊息",
-      "answer_hint": "有國王、大臣，和一般人民，大臣在送衣服給人民，國王開心的揮手。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H03:09",
-      "stem": "故事裡的國王，一開始和最後有什麼相同和不同的地方？",
+      "id": "reading_question:115AG2H03:c07",
+      "stem": "國王最後和一開始有什麼不同？",
+      "options": [
+        "開心不必靠穿新衣",
+        "變得不喜歡衣服",
+        "一樣只想穿新衣",
+        "變得不愛分享"
+      ],
+      "answer": "開心不必靠穿新衣",
+      "why": {
+        "變得不喜歡衣服": "他還是喜歡衣服，還自己設計。",
+        "一樣只想穿新衣": "最後一段說「不再想著要穿新衣」。",
+        "變得不愛分享": "他把衣服送給大家。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "比較評估",
-      "answer_hint": "相同：都喜歡穿新衣。不同：以前的國王，會因為沒有新衣服穿而心情不好；但後來的國王，發現動手創造及設計衣服，做自己喜歡的事，可以讓心情變得很好，而且還能把快樂分享出去。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 1,
@@ -1816,16 +1971,23 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
-    },
-    {
-      "id": "reading_question:115AG2H03:10",
-      "stem": "想一想，你覺得國王是一個怎麼樣的人？",
-      "strategy_tag": "詮釋整合",
-      "answer_hint": "我覺得國王是一個願意嘗試新事情的人，原本他只想穿新衣服，看到大臣改衣服之後，也試著一起動手做。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "from_open_question": "reading_question:115AG2H03:09",
+      "answer_hint": "相同：都喜歡穿新衣。不同：以前的國王，會因為沒有新衣服穿而心情不好；但後來的國王，發現動手創造及設計衣服，做自己喜歡的事，可以讓心情變得很好，而且還能把快樂分享出去。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "比一比第一段和最後一段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "最後他發現有不同的方法可以讓自己＿＿。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "lookalikes": [
@@ -2198,5 +2360,227 @@
         "享"
       ]
     }
-  }
+  },
+  "discussion_questions": [
+    {
+      "id": "reading_question:115AG2H03:01",
+      "stem": "故事中的國王最喜歡做什麼事情？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "穿新衣。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "55a1f570",
+            "c0a66bc2",
+            "19551c92"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H03:02",
+      "stem": "穿不穿新衣對國王的影響是什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "國王穿新衣就會高興，不穿新衣就會心情不好。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            5
+          ],
+          "sha": [
+            "55a1f570",
+            "23af9f5c"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H03:03",
+      "stem": "觀察課文插圖，哪一張插圖最能看出國王很喜歡穿新衣？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "第25頁，可以看到國王有滿滿衣櫥的衣服，各式各樣的衣服，衣服多到放不進衣櫃。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H03:04",
+      "stem": "誰解決了國王天天穿新衣的問題？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "大臣。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            4
+          ],
+          "sha": [
+            "70bb68d3"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            0
+          ],
+          "sha": [
+            "3ba275b4"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H03:05",
+      "stem": "大臣為什麼會得意的說：「國王想穿新衣，一點都不難！」？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為大臣覺得自己找到了好方法，可以讓國王天天穿新衣。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            2,
+            4,
+            7
+          ],
+          "sha": [
+            "d64d3ca5",
+            "70bb68d3",
+            "a8393c3a"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H03:06",
+      "stem": "大臣用什麼方法解決了國王的問題？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "大臣找出國王穿過的舊衣服，改變了袖子，增加了領子，就變成另一件新衣服。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            0
+          ],
+          "sha": [
+            "3ba275b4"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H03:07",
+      "stem": "大臣的做法，讓國王有了什麼改變？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "國王發現只要簡單修改，就可以讓一件衣服有全新的面貌，他也開始動手修改，甚至自己設計衣服，享受設計衣服的樂趣。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            0,
+            7,
+            8
+          ],
+          "sha": [
+            "3ba275b4",
+            "28635b13",
+            "6862571b"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H03:08",
+      "stem": "課本第27頁的插圖中，有哪些人在做什麼事？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "有國王、大臣，和一般人民，大臣在送衣服給人民，國王開心的揮手。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H03:09",
+      "stem": "故事裡的國王，一開始和最後有什麼相同和不同的地方？",
+      "strategy_tag": "比較評估",
+      "answer_hint": "相同：都喜歡穿新衣。不同：以前的國王，會因為沒有新衣服穿而心情不好；但後來的國王，發現動手創造及設計衣服，做自己喜歡的事，可以讓心情變得很好，而且還能把快樂分享出去。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1
+          ],
+          "sha": [
+            "55a1f570"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "31995966",
+            "a419371e",
+            "b0df0625"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H03:10",
+      "stem": "想一想，你覺得國王是一個怎麼樣的人？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "我覺得國王是一個願意嘗試新事情的人，原本他只想穿新衣服，看到大臣改衣服之後，也試著一起動手做。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    }
+  ]
 }

@@ -655,36 +655,24 @@
   },
   "reading_questions": [
     {
-      "id": "reading-question:115AG1H06:01",
-      "stem": "仔細觀察課文插圖，是誰在盪秋千？",
-      "answer_hint": "小女孩和小男孩。",
-      "strategy_tag": "提取訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H06:02",
-      "stem": "觀察課文插圖，是誰陪著秋千，向天空說早？",
-      "answer_hint": "小女孩和小鳥。",
-      "strategy_tag": "提取訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H06:03",
-      "stem": "觀察課文插圖，是誰陪著秋千，向小草問好？",
-      "answer_hint": "小男孩和風。",
-      "strategy_tag": "提取訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H06:04",
-      "stem": "為什麼秋千可以「一下子高，和天空說早」、「一下子低，向小草問好」？",
-      "answer_hint": "因為秋千擺盪到最高的地方，看起來和天空最靠近，所以可以和天空說早；擺盪到低的地方，微風輕動，可以向小草問好。",
+      "id": "reading_question:115AG1H06:c01",
+      "stem": "秋千為什麼能「和天空說早」？",
+      "options": [
+        "盪到最高，靠近天空",
+        "因為早上才能盪",
+        "因為天空會說話",
+        "因為秋千在屋頂上"
+      ],
+      "answer": "盪到最高，靠近天空",
+      "why": {
+        "因為早上才能盪": "「說早」是說早安，不是時間。",
+        "因為天空會說話": "秋千是盪高了才「靠近」天空。",
+        "因為秋千在屋頂上": "秋千是一下子高、一下子低。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 1,
@@ -698,15 +686,43 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "from_open_question": "reading-question:115AG1H06:04",
+      "answer_hint": "因為秋千擺盪到最高的地方，看起來和天空最靠近，所以可以和天空說早；擺盪到低的地方，微風輕動，可以向小草問好。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看「和天空說早」前面那一句。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "秋千「一下子高」的時候，離誰最近？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading-question:115AG1H06:05",
-      "stem": "為什麼秋千會一下子高，一下子低呢？",
-      "answer_hint": "因為小朋友盪秋千時會推動秋千，或是風吹動秋千。",
+      "id": "reading_question:115AG1H06:c02",
+      "stem": "秋千為什麼一下子高、一下子低？",
+      "options": [
+        "有人在盪它",
+        "因為它壞掉了",
+        "因為它在睡覺",
+        "因為下大雨了"
+      ],
+      "answer": "有人在盪它",
+      "why": {
+        "因為它壞掉了": "秋千會上下擺動是正常的。",
+        "因為它在睡覺": "秋千不會睡覺。",
+        "因為下大雨了": "課文沒有寫到下雨。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 1,
@@ -720,15 +736,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading-question:115AG1H06:05",
+      "answer_hint": "因為小朋友盪秋千時會推動秋千，或是風吹動秋千。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "想想秋千怎樣才會動起來。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "課文最後說「是誰陪他上上下下」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading-question:115AG1H06:06",
-      "stem": "秋千的問題是什麼？",
-      "answer_hint": "想知道是誰陪他上上下下？",
+      "id": "reading_question:115AG1H06:c03",
+      "stem": "秋千想知道什麼？",
+      "options": [
+        "是誰陪他上上下下",
+        "小草叫什麼名字",
+        "天空有多高",
+        "花田在哪裡"
+      ],
+      "answer": "是誰陪他上上下下",
+      "why": {
+        "小草叫什麼名字": "秋千是向小草問好。",
+        "天空有多高": "秋千是和天空說早。",
+        "花田在哪裡": "花田是他要去問的地方。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 2,
@@ -740,15 +784,43 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "from_open_question": "reading-question:115AG1H06:06",
+      "answer_hint": "想知道是誰陪他上上下下？",
+      "hints": [
+        {
+          "level": 1,
+          "text": "找課文最後的「？」。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「是＿陪他上上下下？」"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading-question:115AG1H06:07",
-      "stem": "秋千解決問題的方式是什麼？",
-      "answer_hint": "秋千自己去花田問、去天上找，來得到答案。",
+      "id": "reading_question:115AG1H06:c04",
+      "stem": "秋千用什麼方法找答案？",
+      "options": [
+        "去花田問、去天上找",
+        "坐在家裡一直想一想",
+        "打電話問朋友",
+        "去河邊、去山上看一看"
+      ],
+      "answer": "去花田問、去天上找",
+      "why": {
+        "坐在家裡一直想一想": "課文說他「去」問、「去」找。",
+        "打電話問朋友": "課文沒有寫到電話。",
+        "去河邊、去山上看一看": "課文沒有河邊。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "詮釋整合",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 2,
@@ -762,15 +834,43 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "from_open_question": "reading-question:115AG1H06:07",
+      "answer_hint": "秋千自己去花田問、去天上找，來得到答案。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第二段的「去……」。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「去＿＿問一問，去＿＿找一找」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading-question:115AG1H06:08",
-      "stem": "課文最後一句「是誰陪他上上下下」，句中的「他」是指誰？",
-      "answer_hint": "秋千。",
+      "id": "reading_question:115AG1H06:c05",
+      "stem": "「是誰陪他上上下下」的「他」是誰？",
+      "options": [
+        "秋千",
+        "小草",
+        "天空",
+        "作者"
+      ],
+      "answer": "秋千",
+      "why": {
+        "小草": "小草是被問好的那一個，不是上上下下的那一個。",
+        "天空": "天空是被說早的那一個。",
+        "作者": "整課都在寫誰一下子高、一下子低？"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 2,
@@ -786,15 +886,23 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
-    },
-    {
-      "id": "reading-question:115AG1H06:09",
-      "stem": "觀察課文插圖，小女孩和小男孩盪秋千有什麼不同？",
-      "answer_hint": "小女孩盪得比較高，和小鳥及雲朵在一起；小男孩盪得比較低，靠近花田，還有風在他背後幫忙推呢！",
-      "strategy_tag": "比較評估",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "from_open_question": "reading-question:115AG1H06:08",
+      "answer_hint": "秋千。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "誰會一下子高、一下子低？"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "把「他」換成每個選項念念看。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -1355,5 +1463,158 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "discussion_questions": [
+    {
+      "id": "reading-question:115AG1H06:01",
+      "stem": "仔細觀察課文插圖，是誰在盪秋千？",
+      "answer_hint": "小女孩和小男孩。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H06:02",
+      "stem": "觀察課文插圖，是誰陪著秋千，向天空說早？",
+      "answer_hint": "小女孩和小鳥。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H06:03",
+      "stem": "觀察課文插圖，是誰陪著秋千，向小草問好？",
+      "answer_hint": "小男孩和風。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H06:04",
+      "stem": "為什麼秋千可以「一下子高，和天空說早」、「一下子低，向小草問好」？",
+      "answer_hint": "因為秋千擺盪到最高的地方，看起來和天空最靠近，所以可以和天空說早；擺盪到低的地方，微風輕動，可以向小草問好。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            2,
+            4
+          ],
+          "sha": [
+            "7eae79ed",
+            "6a73bb21"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H06:05",
+      "stem": "為什麼秋千會一下子高，一下子低呢？",
+      "answer_hint": "因為小朋友盪秋千時會推動秋千，或是風吹動秋千。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            3
+          ],
+          "sha": [
+            "784c685b",
+            "26b29a88"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H06:06",
+      "stem": "秋千的問題是什麼？",
+      "answer_hint": "想知道是誰陪他上上下下？",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            4
+          ],
+          "sha": [
+            "5d5ff5e8"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H06:07",
+      "stem": "秋千解決問題的方式是什麼？",
+      "answer_hint": "秋千自己去花田問、去天上找，來得到答案。",
+      "strategy_tag": "詮釋整合",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "3b55ee93",
+            "d58b85a0"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H06:08",
+      "stem": "課文最後一句「是誰陪他上上下下」，句中的「他」是指誰？",
+      "answer_hint": "秋千。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            0,
+            3,
+            4
+          ],
+          "sha": [
+            "88ba1427",
+            "816d6fb1",
+            "5d5ff5e8"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H06:09",
+      "stem": "觀察課文插圖，小女孩和小男孩盪秋千有什麼不同？",
+      "answer_hint": "小女孩盪得比較高，和小鳥及雲朵在一起；小男孩盪得比較低，靠近花田，還有風在他背後幫忙推呢！",
+      "strategy_tag": "比較評估",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    }
+  ]
 }

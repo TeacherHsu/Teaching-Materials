@@ -554,20 +554,24 @@
   },
   "reading_questions": [
     {
-      "id": "reading-question:115AG1H02:01",
-      "stem": "仔細觀察課文插圖中，有幾個人？有幾張椅子？他們正在哪裡？",
-      "answer_hint": "課文插圖中總共有五個小朋友、四張椅子。他們正在教室裡。",
+      "id": "reading_question:115AG1H02:c01",
+      "stem": "小朋友在教室裡做什麼？",
+      "options": [
+        "玩大風吹",
+        "上國語課",
+        "看圖畫書",
+        "掃地拖地"
+      ],
+      "answer": "玩大風吹",
+      "why": {
+        "上國語課": "課文說「我們來玩……」。",
+        "看圖畫書": "課文說的是跑來跑去的遊戲。",
+        "掃地拖地": "課文說的是在玩遊戲。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H02:02",
-      "stem": "這些小朋友正在教室裡做什麼？你是怎麼知道的？",
-      "answer_hint": "他們正在玩遊戲。從插畫及課文中可以看得出來。",
-      "strategy_tag": "提取訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 1,
@@ -590,39 +594,23 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
-    },
-    {
-      "id": "reading-question:115AG1H02:03",
-      "stem": "圖片裡有四張椅子和五個小朋友，最後會剩下幾個小朋友沒有椅子坐？",
-      "answer_hint": "會剩下一個小朋友沒有椅子坐。",
-      "strategy_tag": "推論訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H02:05",
-      "stem": "根據課文和插圖，「我們不停的跑」，插圖裡的小朋友看起來很緊張、跑得很快，他們是為了要做什麼事？",
-      "answer_hint": "為了要找椅子坐下來，或是為了搶位子。",
-      "strategy_tag": "推論訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H02:06",
-      "stem": "你覺得為什麼這個遊戲要叫大風吹？",
-      "answer_hint": "這個遊戲就像大風吹過一樣，只要有人喊口令，大家就要趕快離開座位、換一個新位置，風一吹過，東西都可能會換位子，所以才叫大風吹。",
-      "strategy_tag": "詮釋整合",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H02:07",
-      "stem": "這一課玩「大風吹」和第一課玩「兩人三腳」，這兩種遊戲有什麼不同的地方？",
-      "answer_hint": "兩人三腳一定要兩個人一組，團結合作才能走得快；大風吹是很多小朋友一起玩，每個人都要自己跑，不用跟別人綁在一起。",
-      "strategy_tag": "比較評估",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "from_open_question": "reading-question:115AG1H02:02",
+      "answer_hint": "他們正在玩遊戲。從插畫及課文中可以看得出來。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一段「我們來玩……」。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "找課名和第一段一樣的那三個字。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "polysemy": [
@@ -1109,5 +1097,84 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "discussion_questions": [
+    {
+      "id": "reading-question:115AG1H02:01",
+      "stem": "仔細觀察課文插圖中，有幾個人？有幾張椅子？他們正在哪裡？",
+      "answer_hint": "課文插圖中總共有五個小朋友、四張椅子。他們正在教室裡。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H02:02",
+      "stem": "這些小朋友正在教室裡做什麼？你是怎麼知道的？",
+      "answer_hint": "他們正在玩遊戲。從插畫及課文中可以看得出來。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            3
+          ],
+          "sha": [
+            "1853fdbb"
+          ]
+        },
+        {
+          "para": 2,
+          "sentences": [
+            2,
+            3
+          ],
+          "sha": [
+            "0a53e834",
+            "11ecd84e"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H02:03",
+      "stem": "圖片裡有四張椅子和五個小朋友，最後會剩下幾個小朋友沒有椅子坐？",
+      "answer_hint": "會剩下一個小朋友沒有椅子坐。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H02:05",
+      "stem": "根據課文和插圖，「我們不停的跑」，插圖裡的小朋友看起來很緊張、跑得很快，他們是為了要做什麼事？",
+      "answer_hint": "為了要找椅子坐下來，或是為了搶位子。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H02:06",
+      "stem": "你覺得為什麼這個遊戲要叫大風吹？",
+      "answer_hint": "這個遊戲就像大風吹過一樣，只要有人喊口令，大家就要趕快離開座位、換一個新位置，風一吹過，東西都可能會換位子，所以才叫大風吹。",
+      "strategy_tag": "詮釋整合",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H02:07",
+      "stem": "這一課玩「大風吹」和第一課玩「兩人三腳」，這兩種遊戲有什麼不同的地方？",
+      "answer_hint": "兩人三腳一定要兩個人一組，團結合作才能走得快；大風吹是很多小朋友一起玩，每個人都要自己跑，不用跟別人綁在一起。",
+      "strategy_tag": "比較評估",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    }
+  ]
 }

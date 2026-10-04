@@ -13,7 +13,7 @@ export const STEP_LABELS = {
   search: '找字', mask: '遮蔽字', flash: '閃現',
   'read-chars': '念生字', 'read-words': '念語詞',
   summaries: '讀段落大意', gist: '選主旨',
-  round1: '生字變成語', round2: '成語填句子',
+  round1: '生字變成語', round2: '成語填句子', discuss: '說說看',
 };
 
 /** 各關卡的同名步驟在不同關卡意思不同時，用這裡覆寫。 */

@@ -809,20 +809,24 @@
   },
   "reading_questions": [
     {
-      "id": "reading-question:115AG1H04:01",
-      "stem": "觀察課文插圖，問問題的人是誰？",
-      "answer_hint": "右邊的小女孩，左邊的小男孩。",
+      "id": "reading_question:115AG1H04:c01",
+      "stem": "他們向誰問問題？",
+      "options": [
+        "小草",
+        "小花",
+        "小鳥",
+        "太陽"
+      ],
+      "answer": "小草",
+      "why": {
+        "小花": "課文叫的是「小＿，小＿」。",
+        "小鳥": "課文沒有寫到小鳥。",
+        "太陽": "太陽是問題裡的東西，不是問的對象。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H04:02",
-      "stem": "小男孩和小女孩向誰問問題？",
-      "answer_hint": "小草。",
-      "strategy_tag": "提取訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 1,
@@ -838,15 +842,95 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
+      "from_open_question": "reading-question:115AG1H04:02",
+      "answer_hint": "小草。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看每一段的第一句。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「＿＿，＿＿，請問你」——他們叫了誰的名字？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading-question:115AG1H04:03",
-      "stem": "小女孩問了幾個問題？",
+      "id": "reading_question:115AG1H04:c02",
+      "stem": "第一段一共問了幾個問題？",
+      "options": [
+        "三個",
+        "一個",
+        "兩個",
+        "四個"
+      ],
+      "answer": "三個",
+      "why": {
+        "一個": "數一數問號有幾個。",
+        "兩個": "再數一次問號。",
+        "四個": "「小草，小草」不是問題。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
+      "strategy_tag": "提取訊息",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "9fee8e56",
+            "3c15cf52",
+            "61bd56a8"
+          ]
+        }
+      ],
+      "from_open_question": "reading-question:115AG1H04:03",
       "answer_hint": "小女孩問了三個問題。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "問題的後面會有「？」。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "數一數第一段有幾個「？」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
+    },
+    {
+      "id": "reading_question:115AG1H04:c03",
+      "stem": "第一段問了哪些問題？",
+      "options": [
+        "天多大、山多高、星星多少",
+        "天多大、海多深、雲多少",
+        "山多高、樹多高、花多少",
+        "小水珠跑哪去"
+      ],
+      "answer": "天多大、山多高、星星多少",
+      "why": {
+        "天多大、海多深、雲多少": "課文沒有問海和雲。",
+        "山多高、樹多高、花多少": "課文沒有問樹和花。",
+        "小水珠跑哪去": "這是第二段的問題。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 1,
@@ -862,105 +946,73 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
-    },
-    {
-      "id": "reading-question:115AG1H04:04",
-      "stem": "小女孩問了哪些問題？",
+      "from_open_question": "reading-question:115AG1H04:04",
       "answer_hint": "天有多大？山有多高？星星有多少？",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一段的三個「？」。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "天有多＿？山有多＿？星星有多＿？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
+    },
+    {
+      "id": "reading_question:115AG1H04:c04",
+      "stem": "第二段問的問題是什麼？",
+      "options": [
+        "小水珠跑哪去",
+        "天有多大",
+        "星星有多少",
+        "小草有多高"
+      ],
+      "answer": "小水珠跑哪去",
+      "why": {
+        "天有多大": "這是第一段的問題。",
+        "星星有多少": "這是第一段的問題。",
+        "小草有多高": "課文沒有問小草有多高。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "evidence": [
         {
           "para": 1,
           "sentences": [
-            4,
-            5,
-            6
+            10,
+            11
           ],
           "sha": [
-            "9fee8e56",
-            "3c15cf52",
-            "61bd56a8"
+            "8488b6d7",
+            "56ef0a46"
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
-    },
-    {
-      "id": "reading-question:115AG1H04:05",
-      "stem": "小男孩的問題是什麼呢？",
+      "from_open_question": "reading-question:115AG1H04:05",
       "answer_hint": "太陽出來了，小水珠跑哪去？",
-      "strategy_tag": "提取訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
-      "evidence": [
+      "hints": [
         {
-          "para": 1,
-          "sentences": [
-            10,
-            11
-          ],
-          "sha": [
-            "8488b6d7",
-            "56ef0a46"
-          ]
-        }
-      ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
-    },
-    {
-      "id": "reading-question:115AG1H04:06",
-      "stem": "想一想，小男孩的問題：「太陽出來了，小水珠跑哪去？」小水珠一開始可能會是在哪裡呢？後來跑去哪裡呢？",
-      "answer_hint": "我覺得小水珠一開始可能在小草上，所以小男孩才會問這個問題。後來小水珠被太陽蒸發了。",
-      "strategy_tag": "推論訊息",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H04:07",
-      "stem": "小男孩和小女孩問的問題有什麼相同處？",
-      "answer_hint": "學生自由回答。如：都和大自然有關係。",
-      "strategy_tag": "比較評估",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
-      "evidence": [
+          "level": 1,
+          "text": "看第二段的「？」。"
+        },
         {
-          "para": 1,
-          "sentences": [
-            4,
-            5,
-            6,
-            10,
-            11
-          ],
-          "sha": [
-            "9fee8e56",
-            "3c15cf52",
-            "61bd56a8",
-            "8488b6d7",
-            "56ef0a46"
-          ]
+          "level": 2,
+          "type": "locate",
+          "text": "「太陽出來了，＿＿＿跑哪去？」"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
         }
-      ],
-      "evidence_method": "manual 2026-10-03"
-    },
-    {
-      "id": "reading-question:115AG1H04:08",
-      "stem": "說一說，你對大自然的事物，有什麼問題想問呢？",
-      "answer_hint": "學生自由回答。如：為什麼會下雨呢？為什麼冬天這麼冷呢？",
-      "strategy_tag": "詮釋整合",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
-    },
-    {
-      "id": "reading-question:115AG1H04:09",
-      "stem": "想一想，對於小男孩的問題：「太陽出來了，小水珠跑哪去？」你也想知道答案的時候，該怎麼辦？",
-      "answer_hint": "學生自由回答。如：我可以先觀察，找答案；或者是問老師、家人；也可以到圖書館找書，解決我的疑問。",
-      "strategy_tag": "詮釋整合",
-      "status": "approved",
-      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      ]
     }
   ],
   "polysemy": [
@@ -1482,5 +1534,170 @@
       "status": "available",
       "activity": "review"
     }
-  }
+  },
+  "discussion_questions": [
+    {
+      "id": "reading-question:115AG1H04:01",
+      "stem": "觀察課文插圖，問問題的人是誰？",
+      "answer_hint": "右邊的小女孩，左邊的小男孩。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H04:02",
+      "stem": "小男孩和小女孩向誰問問題？",
+      "answer_hint": "小草。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            1,
+            2,
+            3
+          ],
+          "sha": [
+            "63970141",
+            "63970141",
+            "bbfdeecb"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H04:03",
+      "stem": "小女孩問了幾個問題？",
+      "answer_hint": "小女孩問了三個問題。",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "9fee8e56",
+            "3c15cf52",
+            "61bd56a8"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H04:04",
+      "stem": "小女孩問了哪些問題？",
+      "answer_hint": "天有多大？山有多高？星星有多少？",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            4,
+            5,
+            6
+          ],
+          "sha": [
+            "9fee8e56",
+            "3c15cf52",
+            "61bd56a8"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H04:05",
+      "stem": "小男孩的問題是什麼呢？",
+      "answer_hint": "太陽出來了，小水珠跑哪去？",
+      "strategy_tag": "提取訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            10,
+            11
+          ],
+          "sha": [
+            "8488b6d7",
+            "56ef0a46"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading-question:115AG1H04:06",
+      "stem": "想一想，小男孩的問題：「太陽出來了，小水珠跑哪去？」小水珠一開始可能會是在哪裡呢？後來跑去哪裡呢？",
+      "answer_hint": "我覺得小水珠一開始可能在小草上，所以小男孩才會問這個問題。後來小水珠被太陽蒸發了。",
+      "strategy_tag": "推論訊息",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H04:07",
+      "stem": "小男孩和小女孩問的問題有什麼相同處？",
+      "answer_hint": "學生自由回答。如：都和大自然有關係。",
+      "strategy_tag": "比較評估",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            4,
+            5,
+            6,
+            10,
+            11
+          ],
+          "sha": [
+            "9fee8e56",
+            "3c15cf52",
+            "61bd56a8",
+            "8488b6d7",
+            "56ef0a46"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H04:08",
+      "stem": "說一說，你對大自然的事物，有什麼問題想問呢？",
+      "answer_hint": "學生自由回答。如：為什麼會下雨呢？為什麼冬天這麼冷呢？",
+      "strategy_tag": "詮釋整合",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading-question:115AG1H04:09",
+      "stem": "想一想，對於小男孩的問題：「太陽出來了，小水珠跑哪去？」你也想知道答案的時候，該怎麼辦？",
+      "answer_hint": "學生自由回答。如：我可以先觀察，找答案；或者是問老師、家人；也可以到圖書館找書，解決我的疑問。",
+      "strategy_tag": "詮釋整合",
+      "status": "approved",
+      "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "converted_to_choice": false
+    }
+  ]
 }

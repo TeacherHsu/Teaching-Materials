@@ -1397,13 +1397,24 @@
   },
   "reading_questions": [
     {
-      "id": "reading_question:115AG2H02:01",
-      "stem": "老師給大家小雲朵卡片做什麼？",
+      "id": "reading_question:115AG2H02:c01",
+      "stem": "老師給小雲朵卡片做什麼？",
+      "options": [
+        "寫開學新希望",
+        "畫一朵雲",
+        "送給爸爸媽媽",
+        "當作考試卷"
+      ],
+      "answer": "寫開學新希望",
+      "why": {
+        "畫一朵雲": "卡片是要「寫上」東西。",
+        "送給爸爸媽媽": "課文說要大家寫上什麼。",
+        "當作考試卷": "課文沒有考試。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "請大家寫開學新希望。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 1,
@@ -1415,34 +1426,43 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "from_open_question": "reading_question:115AG2H02:01",
+      "answer_hint": "請大家寫開學新希望。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第一段老師說了什麼。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「要大家寫上＿＿＿＿＿」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H02:02",
-      "stem": "你覺得課文故事是發生在什麼時候？",
-      "strategy_tag": "推論訊息",
-      "answer_hint": "應該是開學的第一天。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H02:03",
-      "stem": "觀察課本第17頁插圖，插圖中的小男孩︵主角︶，心情如何？",
-      "strategy_tag": "推論訊息",
-      "answer_hint": "他的頭髮看起來很亂，皺著眉頭還冒著汗，抓著頭髮的樣子，感覺心情很不好。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H02:04",
-      "stem": "為什麼小男孩會緊張？",
+      "id": "reading_question:115AG2H02:c02",
+      "stem": "小男孩為什麼緊張？",
+      "options": [
+        "剛轉學，不知道問誰",
+        "他忘了帶卡片",
+        "老師對他很兇，一直罵他",
+        "他不想寫功課"
+      ],
+      "answer": "剛轉學，不知道問誰",
+      "why": {
+        "他忘了帶卡片": "課文沒有說忘了帶。",
+        "老師對他很兇，一直罵他": "課文沒有寫老師兇。",
+        "他不想寫功課": "課文說的是寫新希望。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "因為他剛轉學到學校，沒有認識的人可以問問題，他不知道該怎麼寫自己的新希望，感到很緊張又擔心。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 2,
@@ -1460,16 +1480,43 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-04（抽查補齊）"
+      "from_open_question": "reading_question:115AG2H02:04",
+      "answer_hint": "因為他剛轉學到學校，沒有認識的人可以問問題，他不知道該怎麼寫自己的新希望，感到很緊張又擔心。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第二段「因為……」。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「因為我是＿＿＿，和同學還不熟」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H02:05",
-      "stem": "改變小男孩緊張情緒的重要原因是什麼？",
+      "id": "reading_question:115AG2H02:c03",
+      "stem": "小男孩為什麼不緊張了？",
+      "options": [
+        "同學主動來和他說話",
+        "老師幫他寫好卡片",
+        "下課可以回家了",
+        "他找到以前的朋友"
+      ],
+      "answer": "同學主動來和他說話",
+      "why": {
+        "老師幫他寫好卡片": "卡片是他自己寫的。",
+        "下課可以回家了": "課文沒有說回家。",
+        "他找到以前的朋友": "他是轉學生，同學是新認識的。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
-      "answer_hint": "因為下課後班長跑來告訴他新希望，同學們也紛紛主動和他說話，所以心情好多了。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 3,
@@ -1483,16 +1530,43 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "from_open_question": "reading_question:115AG2H02:05",
+      "answer_hint": "因為下課後班長跑來告訴他新希望，同學們也紛紛主動和他說話，所以心情好多了。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "看第三段下課以後發生什麼事。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "誰跑來跟他說話？"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H02:06",
-      "stem": "小男孩的開學新希望是什麼？",
+      "id": "reading_question:115AG2H02:c04",
+      "stem": "小男孩的新希望是什麼？",
+      "options": [
+        "和同學一起快樂學習",
+        "考試考一百分",
+        "交到一個最好的朋友",
+        "每天都不遲到"
+      ],
+      "answer": "和同學一起快樂學習",
+      "why": {
+        "考試考一百分": "課文沒有寫考試。",
+        "交到一個最好的朋友": "再看他寫在卡片上的那句話。",
+        "每天都不遲到": "課文沒有寫到遲到。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
-      "answer_hint": "想要和同學一起快樂學習。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 3,
@@ -1504,25 +1578,43 @@
           ]
         }
       ],
-      "evidence_method": "auto:bigram-overlap 2026-10-03"
+      "from_open_question": "reading_question:115AG2H02:06",
+      "answer_hint": "想要和同學一起快樂學習。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "找引號裡他寫的那句話。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "「我要跟同學一起＿＿＿＿」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     },
     {
-      "id": "reading_question:115AG2H02:07",
-      "stem": "觀察課文插圖，小男孩前後兩頁有什麼不同，代表什麼意思？",
-      "strategy_tag": "比較評估",
-      "answer_hint": "小男孩的頭髮變得比較整齊，且有了笑容，看得出來心情變好了，因為同學們的善意，讓他的緊張消失了。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
-    },
-    {
-      "id": "reading_question:115AG2H02:08",
-      "stem": "試著將小男孩的心情變化過程整理出來。",
+      "id": "reading_question:115AG2H02:c05",
+      "stem": "小男孩的心情怎麼變？",
+      "options": [
+        "從緊張變成快樂",
+        "從快樂變成緊張",
+        "一直都很緊張",
+        "從生氣變成難過"
+      ],
+      "answer": "從緊張變成快樂",
+      "why": {
+        "從快樂變成緊張": "方向相反，看最後一段。",
+        "一直都很緊張": "第三段說緊張的心情消失了。",
+        "從生氣變成難過": "課文沒有寫生氣、難過。"
+      },
+      "status": "draft",
+      "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
+      "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "詮釋整合",
-      "answer_hint": "小男孩轉學的第一天，和大家不熟，找不到人問，所以很緊張。幸好，下課後，同學們主動來找他說話，所以心情變得快樂起來。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "evidence": [
         {
           "para": 2,
@@ -1554,16 +1646,23 @@
           ]
         }
       ],
-      "evidence_method": "manual 2026-10-03"
-    },
-    {
-      "id": "reading_question:115AG2H02:09",
-      "stem": "課文名稱「彩色的天空」，在這一課代表的意思是什麼？",
-      "strategy_tag": "詮釋整合",
-      "answer_hint": "我覺得有兩個意思，一個是老師把彩色小卡片掛在教室的後面，布告欄是藍色的，看起來就像是彩色的天空。另一個是形容主角的緊張的心情消失了，彩色天空是形容愉快的心情。",
-      "scaffold": "回到課文或插圖找線索。",
-      "status": "approved",
-      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）"
+      "from_open_question": "reading_question:115AG2H02:08",
+      "answer_hint": "小男孩轉學的第一天，和大家不熟，找不到人問，所以很緊張。幸好，下課後，同學們主動來找他說話，所以心情變得快樂起來。",
+      "hints": [
+        {
+          "level": 1,
+          "text": "先找第二段的心情，再找最後一段。"
+        },
+        {
+          "level": 2,
+          "type": "locate",
+          "text": "開始「好緊張」，最後「快樂得跳起舞來」。"
+        },
+        {
+          "level": 3,
+          "type": "evidence"
+        }
+      ]
     }
   ],
   "lookalikes": [
@@ -1896,5 +1995,185 @@
         "掛"
       ]
     }
-  }
+  },
+  "discussion_questions": [
+    {
+      "id": "reading_question:115AG2H02:01",
+      "stem": "老師給大家小雲朵卡片做什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "請大家寫開學新希望。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 1,
+          "sentences": [
+            3
+          ],
+          "sha": [
+            "c603c305"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H02:02",
+      "stem": "你覺得課文故事是發生在什麼時候？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "應該是開學的第一天。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H02:03",
+      "stem": "觀察課本第17頁插圖，插圖中的小男孩︵主角︶，心情如何？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "他的頭髮看起來很亂，皺著眉頭還冒著汗，抓著頭髮的樣子，感覺心情很不好。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H02:04",
+      "stem": "為什麼小男孩會緊張？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "因為他剛轉學到學校，沒有認識的人可以問問題，他不知道該怎麼寫自己的新希望，感到很緊張又擔心。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "sha": [
+            "4075db82",
+            "582d1d24",
+            "32982184",
+            "c3d30700"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-04（抽查補齊）",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H02:05",
+      "stem": "改變小男孩緊張情緒的重要原因是什麼？",
+      "strategy_tag": "推論訊息",
+      "answer_hint": "因為下課後班長跑來告訴他新希望，同學們也紛紛主動和他說話，所以心情好多了。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            1,
+            2
+          ],
+          "sha": [
+            "cba4b713",
+            "41baaf1a"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H02:06",
+      "stem": "小男孩的開學新希望是什麼？",
+      "strategy_tag": "提取訊息",
+      "answer_hint": "想要和同學一起快樂學習。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 3,
+          "sentences": [
+            6
+          ],
+          "sha": [
+            "4af58665"
+          ]
+        }
+      ],
+      "evidence_method": "auto:bigram-overlap 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H02:07",
+      "stem": "觀察課文插圖，小男孩前後兩頁有什麼不同，代表什麼意思？",
+      "strategy_tag": "比較評估",
+      "answer_hint": "小男孩的頭髮變得比較整齊，且有了笑容，看得出來心情變好了，因為同學們的善意，讓他的緊張消失了。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    },
+    {
+      "id": "reading_question:115AG2H02:08",
+      "stem": "試著將小男孩的心情變化過程整理出來。",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "小男孩轉學的第一天，和大家不熟，找不到人問，所以很緊張。幸好，下課後，同學們主動來找他說話，所以心情變得快樂起來。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "evidence": [
+        {
+          "para": 2,
+          "sentences": [
+            1
+          ],
+          "sha": [
+            "4075db82"
+          ]
+        },
+        {
+          "para": 3,
+          "sentences": [
+            3,
+            4
+          ],
+          "sha": [
+            "aed82bec",
+            "19f9ae0f"
+          ]
+        },
+        {
+          "para": 4,
+          "sentences": [
+            3
+          ],
+          "sha": [
+            "f4e849a1"
+          ]
+        }
+      ],
+      "evidence_method": "manual 2026-10-03",
+      "converted_to_choice": true
+    },
+    {
+      "id": "reading_question:115AG2H02:09",
+      "stem": "課文名稱「彩色的天空」，在這一課代表的意思是什麼？",
+      "strategy_tag": "詮釋整合",
+      "answer_hint": "我覺得有兩個意思，一個是老師把彩色小卡片掛在教室的後面，布告欄是藍色的，看起來就像是彩色的天空。另一個是形容主角的緊張的心情消失了，彩色天空是形容愉快的心情。",
+      "scaffold": "回到課文或插圖找線索。",
+      "status": "approved",
+      "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
+      "converted_to_choice": false
+    }
+  ]
 }
