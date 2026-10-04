@@ -10,7 +10,7 @@ function markLine(line, mark) {
   return [line.slice(0, i), h('mark', { class: 'evidence__key strategy-mark' }, mark), line.slice(i + mark.length)];
 }
 
-export function LibraryStrategy(key, onDone) {
+export function LibraryStrategy(key, onDone, onSkip = onDone) {
   const spec = STRATEGY_LIBRARY[key];
   if (!spec) return null;
   return StrategyLesson({
@@ -41,6 +41,7 @@ export function LibraryStrategy(key, onDone) {
       ]);
     },
     onDone,
+    onSkip,
     doneLabel: '開始練習',
   });
 }

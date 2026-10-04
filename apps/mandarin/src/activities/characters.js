@@ -308,7 +308,7 @@ export function buildCharactersActivity(lesson, onBack) {
         stepIndex += 1;
         roundIndex = 0;
         renderStep();
-      }));
+      }, () => { stepIndex += 1; roundIndex = 0; renderStep(); }));
     } else if (step === 'learn-radical') {
       container.appendChild(radicalStrategyLesson(learnChars, hanziPartsIfReady(volume), () => {
         stepIndex += 1;

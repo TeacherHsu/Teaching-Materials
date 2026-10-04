@@ -3680,3 +3680,6 @@
 .keyword-stem__word:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 1px; }
 .keyword-stem__word--on { background: var(--color-highlight-surface); box-shadow: inset 0 -3px 0 var(--color-highlight-line); }
 .keyword-stem__tip { display: block; font-size: var(--font-size-meta); color: var(--text-secondary); font-weight: 400; margin-top: var(--space-1); }
+
+/* 學方法：標題旁的「跳過，直接做題」 */
+.strategy-lesson__title-row { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); flex-wrap: wrap; }

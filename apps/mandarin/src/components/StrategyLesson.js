@@ -18,7 +18,8 @@ import { speak } from '../utils/speech.js';
  *   doneLabel?: string,
  * }} opts
  */
-export function StrategyLesson({ title, goal, frames, guided, onDone, doneLabel = '用這個方法做本課的題目' }) {
+// CF 2026-10-04：學方法不強制，每個畫面都可以「跳過，直接做題」（onSkip 預設同 onDone）
+export function StrategyLesson({ title, goal, frames, guided, onDone, onSkip = onDone, doneLabel = '用這個方法做本課的題目' }) {
   const root = h('div', { class: 'strategy-lesson' });
   let stage = 'demo';
   let index = 0;
@@ -26,7 +27,10 @@ export function StrategyLesson({ title, goal, frames, guided, onDone, doneLabel 
   function header(stepText) {
     return h('div', { class: 'strategy-lesson__head' }, [
       h('p', { class: 'strategy-lesson__stage' }, stepText),
-      h('h2', { class: 'strategy-lesson__title' }, title),
+      h('div', { class: 'strategy-lesson__title-row' }, [
+        h('h2', { class: 'strategy-lesson__title' }, title),
+        Object.assign(h('button', { class: 'btn btn--ghost strategy-lesson__skip', type: 'button' }, '跳過，直接做題'), { onclick: () => onSkip() }),
+      ]),
       h('div', { class: 'quiz-option-row' }, [
         h('p', { class: 'strategy-lesson__goal' }, goal),
         SpeakButton({ text: goal, label: '聽', variant: 'speak-button--option' }),

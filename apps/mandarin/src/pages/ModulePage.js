@@ -149,7 +149,9 @@ export function ModulePage(lesson, moduleKey) {
       clear(activitySlot);
       if (strategyCard) strategyCard.hidden = false;
       if (strategyKey) {
-        const again = h('button', { class: 'btn btn--ghost strategy-again', type: 'button' }, '再看一次方法');
+        // 不強制：第一次進來直接做題，方法鈕放在上面，想看再點
+        const seen = strategySeen(moduleKey);
+        const again = h('button', { class: `btn ${seen ? 'btn--ghost' : 'btn--secondary'} strategy-again`, type: 'button' }, seen ? '再看一次方法' : '先看這關的方法');
         again.addEventListener('click', showStrategy);
         activitySlot.appendChild(h('div', { class: 'strategy-again-row' }, [again]));
       }
@@ -162,10 +164,9 @@ export function ModulePage(lesson, moduleKey) {
         markStrategySeen(moduleKey);
         setTransferMode(true);
         mountActivity();
-      }));
+      }, () => mountActivity()));
     };
-    if (strategyKey && !strategySeen(moduleKey)) showStrategy();
-    else mountActivity();
+    mountActivity();
   } else {
     activitySlot.appendChild(missingContentNotice());
   }
