@@ -44,9 +44,12 @@ function toBase64(buffer) {
 }
 
 /** 讀密文檔（只讀一次，之後共用同一個 promise）。 */
-function loadEnvelope(base = import.meta.env?.BASE_URL || '/') {
+// 換密碼後要重新加密：載具若還留著舊的密文（瀏覽器快取），新密碼會一直被說「不對」。
+// 所以一律向伺服器確認（no-cache）；解密失敗時再強制重抓一次（reload）才判定密碼錯。
+function loadEnvelope(base = import.meta.env?.BASE_URL || '/', fresh = false) {
+  if (fresh) encPromise = null;
   if (!encPromise) {
-    encPromise = fetch(`${base.replace(/\/$/, '')}/${ENC_URL}`)
+    encPromise = fetch(`${base.replace(/\/$/, '')}/${ENC_URL}`, { cache: fresh ? 'reload' : 'no-cache' })
       .then((res) => {
         if (!res.ok) throw new Error(`readings.enc.json 讀取失敗（HTTP ${res.status}）`);
         return res.json();
@@ -99,9 +102,18 @@ async function decryptWith(key, env) {
  * 用教室密碼解鎖，成功後把金鑰記在這台載具。
  * @returns {Promise<void>} 密碼不對會 reject（AES-GCM 驗證失敗）。
  */
-export async function unlockWithPassword(password) {
+export async function unlockWithPassword(rawPassword) {
   if (!cryptoAvailable()) throw new Error('這個瀏覽器不支援解鎖');
-  const env = await loadEnvelope();
+  // 中文輸入法可能打出全形數字（１２３４），先轉成半形
+  const password = String(rawPassword).normalize('NFKC').trim();
+  try {
+    await unlockOnce(password, await loadEnvelope());
+  } catch {
+    await unlockOnce(password, await loadEnvelope(undefined, true));
+  }
+}
+
+async function unlockOnce(password, env) {
   const base = await crypto.subtle.importKey(
     'raw',
     new TextEncoder().encode(password),
