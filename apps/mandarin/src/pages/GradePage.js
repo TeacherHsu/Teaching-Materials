@@ -1,6 +1,7 @@
 import { MODULE_COLOR_KEYS, moduleColorVars } from '../activities/moduleRegistry.js';
 import { h } from '../utils/dom.js';
 import { SpeakButton } from '../components/SpeakButton.js';
+import { getLastLesson } from '../utils/deviceSettings.js';
 
 export function GradePage(courseIndex, gradeNo) {
   const grade = courseIndex.grades.find((g) => String(g.grade) === String(gradeNo));
@@ -18,6 +19,14 @@ export function GradePage(courseIndex, gradeNo) {
       ]),
     ]),
   );
+  // 繼續學習：只顯示這個年級（＋學生代碼）的上次進度
+  const last = getLastLesson(grade.grade);
+  if (last?.lessonId) {
+    root.appendChild(h('div', { class: 'continue-card quiz-option-row' }, [
+      h('a', { class: 'btn btn--primary continue-card__btn', href: `#/lesson/${last.lessonId}` }, `繼續學習：${last.label}`),
+      SpeakButton({ text: `繼續學習：${last.label}`, label: '聽', variant: 'speak-button--option' }),
+    ]));
+  }
   const lessons = [];
   for (const volume of grade.volumes) {
     for (const unit of volume.units) {

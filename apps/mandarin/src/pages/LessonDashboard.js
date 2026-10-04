@@ -96,7 +96,7 @@ export function LessonDashboard(lesson) {
     ].filter(Boolean)),
   ]);
   root.appendChild(hero);
-  setLastLesson(lesson.lesson_id, `${volumeLabel(lesson.volume)} 第 ${lesson.lesson_no} 課〈${lesson.title}〉`);
+  setLastLesson(lesson.lesson_id, `第 ${lesson.lesson_no} 課〈${lesson.title}〉`, lesson.volume.grade);
   { const path = learningPath(lesson, coreKeys); if (path) root.appendChild(path); }
   { const tip = SpeakTip(); if (tip) root.appendChild(tip); }
 

@@ -1,7 +1,6 @@
 import { h } from '../utils/dom.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 import { MODULE_COLOR_KEYS, moduleColorVars } from '../activities/moduleRegistry.js';
-import { getLastLesson } from '../utils/deviceSettings.js';
 
 export function HomePage(courseIndex) {
   const root = h('div', { class: 'container' }, [
@@ -13,14 +12,8 @@ export function HomePage(courseIndex) {
       h('p', { class: 'meta' }, '選擇課本開始學習'),
     ]),
   ]);
-  // 繼續學習：回到這位學生（學生代碼）上次的課，不必再找一次
-  const last = getLastLesson();
-  if (last?.lessonId) {
-    root.appendChild(h('div', { class: 'continue-card quiz-option-row' }, [
-      h('a', { class: 'btn btn--primary continue-card__btn', href: `#/lesson/${last.lessonId}` }, `繼續學習：${last.label}`),
-      SpeakButton({ text: `繼續學習：${last.label}`, label: '聽', variant: 'speak-button--option' }),
-    ]));
-  }
+  // 「繼續學習」不放首頁（CF 2026-10-04）：一台平板不同年級共用，首頁不分年級會帶錯課；
+  // 改放在各年級頁，只顯示該年級的上次進度。
   const grid = h('div', { class: 'card-grid' });
   courseIndex.grades.forEach((grade, i) => {
     const colorKey = MODULE_COLOR_KEYS[i % MODULE_COLOR_KEYS.length];

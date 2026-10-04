@@ -370,16 +370,18 @@ export function reciteZhuyinOn(grade) {
   return Number(grade) <= 2 || getScaffoldLevelKey() === 'support';
 }
 
-// 「繼續學習」（2026-10-04 UX 優化 P0）：記最後進入的課，依學生代碼分開
-// （同一台平板給不同學生用時，不會看到別人的課）。只存課次代碼與顯示名稱。
-const LAST_KEY = 'mandarin.lastLesson';
-export function setLastLesson(lessonId, label) {
+// 「繼續學習」（2026-10-04 UX 優化 P0）：記最後進入的課，依「年級＋學生代碼」分開。
+// 同一台平板給不同年級共用（CF 2026-10-04）：只在該年級的頁面顯示該年級的課，
+// 首頁（跨年級）不顯示，避免六年級學生被帶到二年級的課。只存課次代碼與顯示名稱。
+const LAST_KEY = 'mandarin.lastLessonByGrade';
+const lastSlot = (grade) => `${grade}|${getStudentCode() || ''}`;
+export function setLastLesson(lessonId, label, grade) {
   try {
     const all = JSON.parse(localStorage.getItem(LAST_KEY) || '{}');
-    all[getStudentCode() || ''] = { lessonId, label };
+    all[lastSlot(grade)] = { lessonId, label };
     localStorage.setItem(LAST_KEY, JSON.stringify(all));
   } catch { /* 無痕模式 */ }
 }
-export function getLastLesson() {
-  try { return JSON.parse(localStorage.getItem(LAST_KEY) || '{}')[getStudentCode() || ''] || null; } catch { return null; }
+export function getLastLesson(grade) {
+  try { return JSON.parse(localStorage.getItem(LAST_KEY) || '{}')[lastSlot(grade)] || null; } catch { return null; }
 }

@@ -157,7 +157,7 @@ npm run build && npm run check-dist
 ## 2026-10-04 UX／特教易用性／無障礙規則（詳見 `docs/review/2026-10-04-ux-a11y-audit.md`）
 
 - **建議學習順序**：課程首頁核心 4 項顯示「✓ 做完／現在／還沒」＋●○ 小目標＋「繼續學習」鈕；只是建議，不鎖流程。新增核心大項時順序跟 `MODULE_REGISTRY`。
-- **繼續學習**：首頁顯示上次的課，依學生代碼分開（`setLastLesson`／`getLastLesson`，key `mandarin.lastLesson`）。
+- **繼續學習**：不放首頁（一台平板多年級共用）；只在各年級頁顯示該年級＋學生代碼的上次課（`setLastLesson`／`getLastLesson`，key `mandarin.lastLessonByGrade`）。
 - **上課模式**：只用 `html.present-mode` 切 CSS，不另做頁面；新增全站導覽、次要提示類元件時，要補進上課模式的隱藏清單。Esc／「離開上課模式」退出。
 - **答對回饋**：答對時顯示資料既有 `explanation`；不要求補資料，沒有就只說答對了。
 - **無障礙底線**（每次改版跑一次 axe：wcag2a、wcag2aa、best-practice，目標 0 違規）：
