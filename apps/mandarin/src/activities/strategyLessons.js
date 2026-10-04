@@ -35,15 +35,23 @@ function passageView(sentences, { clue = -1, key = '' } = {}) {
 }
 
 export function clueStrategyLesson(onDone) {
-  const q = (mark) => h('p', { class: 'quiz-stem' }, mark ? markWord(DEMO.question, DEMO.key) : DEMO.question);
+  // 示範框裡的題目與短文都要能聽（設計底線：學生會讀的字都有喇叭）
+  const q = (mark) => h('div', { class: 'quiz-option-row' }, [
+    h('p', { class: 'quiz-stem strategy-question' }, mark ? markWord(DEMO.question, DEMO.key) : DEMO.question),
+    SpeakButton({ text: DEMO.question, label: '聽題目', variant: 'speak-button--option' }),
+  ]);
+  const demoPassage = (opts) => h('div', { class: 'quiz-option-row' }, [
+    passageView(DEMO.passage, opts),
+    SpeakButton({ text: DEMO.passage.join(''), label: '聽短文', variant: 'speak-button--option' }),
+  ]);
   return StrategyLesson({
     title: '學方法：找線索',
     goal: '先找題目裡的關鍵詞，再到文章裡找一樣的詞，答案就在那一句。',
     frames: [
-      { render: () => h('div', {}, [q(false), passageView(DEMO.passage)]), say: '先讀題目，再看短文。' },
-      { render: () => h('div', {}, [q(true), passageView(DEMO.passage)]), say: `我先找題目裡比較特別的詞：「${DEMO.key}」。` },
-      { render: () => h('div', {}, [q(true), passageView(DEMO.passage, { clue: DEMO.clue, key: DEMO.key })]), say: `再到短文裡找「${DEMO.key}」，在這一句。` },
-      { render: () => h('div', {}, [q(true), passageView(DEMO.passage, { clue: DEMO.clue, key: DEMO.answer.slice(1) })]), say: `讀這一句：「${DEMO.passage[DEMO.clue].replace(/[，。]$/u, '')}」，所以答案是「${DEMO.answer}」。` },
+      { render: () => h('div', {}, [q(false), demoPassage()]), say: '先讀題目，再看短文。' },
+      { render: () => h('div', {}, [q(true), demoPassage()]), say: `我先找題目裡比較特別的詞：「${DEMO.key}」。` },
+      { render: () => h('div', {}, [q(true), demoPassage({ clue: DEMO.clue, key: DEMO.key })]), say: `再到短文裡找「${DEMO.key}」，在這一句。` },
+      { render: () => h('div', {}, [q(true), demoPassage({ clue: DEMO.clue, key: DEMO.answer.slice(1) })]), say: `讀這一句：「${DEMO.passage[DEMO.clue].replace(/[，。]$/u, '')}」，所以答案是「${DEMO.answer}」。` },
     ],
     guided: (done) => {
       const box = h('div', {});

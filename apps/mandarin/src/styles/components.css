@@ -3628,3 +3628,6 @@
 /* 念讀字詞：念對的正向回饋 */
 .word-reading__status--right { color: var(--color-success, #1b7f3b); font-weight: 700; font-size: var(--font-size-body); }
 .word-reading__praise { font-size: var(--font-size-body); font-weight: 700; }
+
+/* 學方法：題目用深藍色，和下面的短文區分 */
+.strategy-question { color: #1f3a68; font-weight: 700; }
