@@ -2447,22 +2447,10 @@
 /* ── 朗讀挑戰 ──────────────────────────────────── */
 /* 評分結果的標示。顏色不是唯一線索：同音字加雙底線、漏字加刪除線，
    結果區另有文字摘要，螢幕閱讀器也讀得到。 */
-.lesson-text__ch--homophone {
-  text-decoration: underline;
-  text-decoration-style: double;
-  text-decoration-color: var(--module-teal);
-  text-underline-offset: 0.15em;
-}
-.lesson-text__ch--wrong {
-  background: var(--module-rose-tint);
-  box-shadow: inset 0 -3px 0 var(--module-rose);
-}
-.lesson-text__ch--missed {
-  color: var(--text-secondary);
-  text-decoration: line-through;
-  text-decoration-color: var(--module-rose);
-  opacity: 0.7;
-}
+/* 只用底色（CF 2026-10-04）：紅底＝念得不一樣、黃底＝漏掉了；同音字不標示。
+   顏色以外的線索：圖例文字說明、可點來聽、螢幕閱讀器讀 aria-label。 */
+.lesson-text__ch--wrong { background: var(--module-rose-tint); border-radius: 4px; }
+.lesson-text__ch--missed { background: var(--color-highlight-surface); border-radius: 4px; }
 .recite__mic { min-height: calc(var(--tap-target-min) + 4px); font-size: var(--font-size-button); }
 .recite__mic--on { background: var(--module-rose); color: var(--text-on-primary); }
 .recite__status { min-height: 1.6em; margin: var(--space-1) 0; color: var(--text-secondary); }

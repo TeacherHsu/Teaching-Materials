@@ -37,11 +37,10 @@ function recognitionSupported() {
 // 每一項都放一個和課文同樣標示的「字」當樣本，再用白話說明可以怎麼做。
 const LEGEND_TEXT = {
   wrong: '紅底的字：念得不一樣。點一下那個字，聽聽看怎麼念。',
-  missed: '畫一條線的字：漏掉了，沒有念到。點一下聽聽看。',
-  homophone: '兩條底線的字：電腦聽成同音的字，也算念對。',
+  missed: '黃底的字：漏掉了，沒有念到。點一下聽聽看。',
 };
 function MarkLegend(counts) {
-  const keys = ['wrong', 'missed', 'homophone'].filter((k) => counts[k]);
+  const keys = ['wrong', 'missed'].filter((k) => counts[k]);
   if (!keys.length) return null;
   const sayAll = keys.map((k) => LEGEND_TEXT[k]).join('');
   return h('div', { class: 'recite-legend' }, [
@@ -265,7 +264,12 @@ function renderChallenge(lesson, reading, backHref) {
       if (recognition) { stopRecognition(); return; }
       cancelSpeaking();
       clear(result);
-      charEls.forEach((el) => el.classList.remove('lesson-text__ch--ok', 'lesson-text__ch--homophone', 'lesson-text__ch--wrong', 'lesson-text__ch--missed'));
+      charEls.forEach((el) => {
+        el.classList.remove('lesson-text__ch--ok', 'lesson-text__ch--homophone', 'lesson-text__ch--wrong', 'lesson-text__ch--missed');
+        // 重念時把上一次「可點來聽」也清掉
+        ['role', 'tabindex', 'aria-label'].forEach((n) => el.removeAttribute(n));
+        el.onclick = null; el.onkeydown = null;
+      });
       const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
       recognition = new Recognition();
       recognition.lang = 'zh-TW';
@@ -305,6 +309,8 @@ function renderChallenge(lesson, reading, backHref) {
       score.marks.forEach((mark, i) => {
         const el = charEls[i];
         if (!el) return;
+        // 同音字算念對、不標示（CF 2026-10-04：避免增加負擔）
+        if (mark === 'homophone' || mark === 'ok') return;
         el.classList.add(`lesson-text__ch--${mark}`);
         if (mark === 'wrong' || mark === 'missed') {
           const ch = el.dataset.ch;
