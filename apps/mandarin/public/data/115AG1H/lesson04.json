@@ -823,7 +823,7 @@
         "小鳥": "課文沒有寫到小鳥。",
         "太陽": "太陽是問題裡的東西，不是問的對象。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
@@ -858,7 +858,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     },
     {
       "id": "reading_question:115AG1H04:c02",
@@ -875,7 +877,7 @@
         "兩個": "再數一次問號。",
         "四個": "「小草，小草」不是問題。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
@@ -910,7 +912,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     },
     {
       "id": "reading_question:115AG1H04:c03",
@@ -927,7 +931,7 @@
         "山多高、樹多高、花多少": "課文沒有問樹和花。",
         "小水珠跑哪去": "這是第二段的問題。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
@@ -962,7 +966,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     },
     {
       "id": "reading_question:115AG1H04:c04",
@@ -979,7 +985,7 @@
         "星星有多少": "這是第一段的問題。",
         "小草有多高": "課文沒有問小草有多高。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
@@ -1012,7 +1018,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     }
   ],
   "polysemy": [

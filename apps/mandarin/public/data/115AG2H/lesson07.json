@@ -1834,7 +1834,7 @@
         "蝦子、米線、青菜": "這是越南春捲的材料。",
         "艾草、糯米、紅豆": "這是別的食物。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
@@ -1869,7 +1869,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     },
     {
       "id": "reading_question:115AG2H07:c02",
@@ -1886,7 +1888,7 @@
         "因為是奶奶做的": "課文說的是吃艾粄的原因。",
         "因為要去郊遊": "課文沒有這樣說。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
@@ -1921,7 +1923,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     }
   ],
   "lookalikes": [

@@ -576,7 +576,7 @@
         "海邊": "課文沒有寫到海。",
         "家門口": "課文是在山上。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
@@ -611,7 +611,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     },
     {
       "id": "reading_question:115AG1H07:c02",
@@ -628,7 +630,7 @@
         "大叫以後什麼聲音都沒有": "課文說「有人回」。",
         "小鳥飛了過來": "課文沒有寫到小鳥。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
@@ -665,7 +667,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     },
     {
       "id": "reading_question:115AG1H07:c03",
@@ -682,7 +686,7 @@
         "他想要回家了": "課文沒有說要回家。",
         "他在問媽媽": "山谷裡只有他和回聲。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
@@ -719,7 +723,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     },
     {
       "id": "reading_question:115AG1H07:c04",
@@ -736,7 +742,7 @@
         "他看到好笑的事": "課文沒有寫到好笑的事。",
         "他被嚇到了": "大家是一起哈哈大笑。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
@@ -769,7 +775,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     },
     {
       "id": "reading_question:115AG1H07:c05",
@@ -786,7 +794,7 @@
         "他找到好朋友一起回家": "課文沒有說回家。",
         "他看到小動物": "課文沒有寫到小動物。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "詮釋整合",
@@ -825,7 +833,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     }
   ],
   "polysemy": [],

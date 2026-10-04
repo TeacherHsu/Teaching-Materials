@@ -1,3 +1,4 @@
+import { withEntrySpeak } from '../components/EntrySpeak.js';
 import { h } from '../utils/dom.js';
 import { MODULE_REGISTRY, getModuleStatus, moduleColorVars } from '../activities/moduleRegistry.js';
 import { buildExtensionLinks } from '../components/ExtensionLinks.js';
@@ -196,7 +197,7 @@ export function LessonDashboard(lesson) {
     .then((available) => {
       if (!available) return;
       const summary = reciteSummary(lesson.lesson_id);
-      reciteSlot.appendChild(
+      reciteSlot.appendChild(withEntrySpeak(
         h('a', { class: 'entry-card entry-card--recite', href: `#/lesson/${lesson.lesson_id}/recite` }, [
           h('span', { class: 'entry-card__icon', 'aria-hidden': 'true', html: isUnlocked() ? uiIconMarkup('mic') : STATUS_ICONS.lock }),
           h('span', { class: 'entry-card__body' }, [
@@ -208,7 +209,7 @@ export function LessonDashboard(lesson) {
               : null,
           ].filter(Boolean)),
         ]),
-      );
+      ));
     })
     .catch(() => { /* 讀不到密文檔就不顯示入口 */ });
 
@@ -251,7 +252,7 @@ export function LessonDashboard(lesson) {
     const reviewEntryDef = MODULE_REGISTRY.find((m) => m.key === 'review');
     const reviewStatus = getModuleStatus(lesson, reviewEntryDef);
     const playable = reviewStatus.code === 'available' || reviewStatus.code === 'done';
-    root.appendChild(h(
+    root.appendChild(withEntrySpeak(h(
       playable ? 'a' : 'div',
       {
         class: `entry-card entry-card--wide entry-card--dashed entry-card--review${playable ? '' : ' entry-card--locked'}`,
@@ -265,7 +266,7 @@ export function LessonDashboard(lesson) {
         ]),
         playable ? h('span', { class: 'entry-card__arrow', 'aria-hidden': 'true', html: STATUS_ICONS.arrow }) : null,
       ].filter(Boolean),
-    ));
+    )));
   }
 
   const extensionLinks = buildExtensionLinks(lesson, 'lesson', { title: '本課延伸資源' });
@@ -281,7 +282,7 @@ function readerEntry(lesson) {
     .then((available) => {
       if (!available) return;
       const unlocked = isUnlocked();
-      slot.appendChild(
+      slot.appendChild(withEntrySpeak(
         h('a', { class: 'entry-card entry-card--wide entry-card--reader', href: `#/lesson/${lesson.lesson_id}/reader` }, [
           h('span', { class: 'entry-card__icon', 'aria-hidden': 'true', html: unlocked ? uiIconMarkup('book') : STATUS_ICONS.lock }),
           h('span', { class: 'entry-card__body' }, [
@@ -294,7 +295,7 @@ function readerEntry(lesson) {
           ]),
           h('span', { class: 'entry-card__arrow', 'aria-hidden': 'true', html: STATUS_ICONS.arrow }),
         ]),
-      );
+      ));
     })
     .catch(() => {
       /* 讀不到密文檔就不顯示入口，其他大項照常 */

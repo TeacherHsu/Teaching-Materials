@@ -669,7 +669,7 @@
         "因為天空會說話": "秋千是盪高了才「靠近」天空。",
         "因為秋千在屋頂上": "秋千是一下子高、一下子低。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
@@ -702,7 +702,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     },
     {
       "id": "reading_question:115AG1H06:c02",
@@ -719,7 +721,7 @@
         "因為它在睡覺": "秋千不會睡覺。",
         "因為下大雨了": "課文沒有寫到下雨。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
@@ -752,7 +754,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     },
     {
       "id": "reading_question:115AG1H06:c03",
@@ -769,7 +773,7 @@
         "天空有多高": "秋千是和天空說早。",
         "花田在哪裡": "花田是他要去問的地方。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
@@ -800,7 +804,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     },
     {
       "id": "reading_question:115AG1H06:c04",
@@ -817,7 +823,7 @@
         "打電話問朋友": "課文沒有寫到電話。",
         "去河邊、去山上看一看": "課文沒有河邊。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "詮釋整合",
@@ -850,7 +856,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     },
     {
       "id": "reading_question:115AG1H06:c05",
@@ -867,7 +875,7 @@
         "天空": "天空是被說早的那一個。",
         "作者": "整課都在寫誰一下子高、一下子低？"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
@@ -902,7 +910,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     }
   ],
   "polysemy": [

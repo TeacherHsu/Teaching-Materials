@@ -1632,7 +1632,7 @@
         "看書": "課文沒有寫看書。",
         "畫畫": "國王後來喜歡的是「設計」衣服。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
@@ -1667,7 +1667,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     },
     {
       "id": "reading_question:115AG2H03:c02",
@@ -1684,7 +1686,7 @@
         "去睡覺": "課文沒有寫睡覺。",
         "自己做衣服": "那是後來的事。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
@@ -1717,7 +1719,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     },
     {
       "id": "reading_question:115AG2H03:c03",
@@ -1734,7 +1738,7 @@
         "裁縫師": "課文沒有寫到裁縫師。",
         "小朋友": "課文沒有寫到小朋友。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
@@ -1774,7 +1778,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     },
     {
       "id": "reading_question:115AG2H03:c04",
@@ -1791,7 +1797,7 @@
         "他自己也有新衣": "新衣是送給國王的。",
         "他做衣服做得最快": "重點是他想到了方法。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
@@ -1826,7 +1832,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     },
     {
       "id": "reading_question:115AG2H03:c05",
@@ -1843,7 +1851,7 @@
         "請別人借衣服給國王": "課文沒有借衣服。",
         "叫國王不要穿新衣": "大臣是讓國王有新衣穿。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "提取訊息",
@@ -1874,7 +1882,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     },
     {
       "id": "reading_question:115AG2H03:c06",
@@ -1891,7 +1901,7 @@
         "每天都更生氣": "國王後來很開心。",
         "把所有的衣服都丟掉": "國王把做好的衣服送給大家。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "推論訊息",
@@ -1926,7 +1936,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     },
     {
       "id": "reading_question:115AG2H03:c07",
@@ -1943,7 +1955,7 @@
         "一樣只想穿新衣": "最後一段說「不再想著要穿新衣」。",
         "變得不愛分享": "他把衣服送給大家。"
       },
-      "status": "draft",
+      "status": "approved",
       "source": "原創布題（CF 2026-10-04 委託：一上、二上開放題改為可自行點選的選擇題，依官方參考答案與課文改寫）",
       "answer_source": "authored:依官方參考答案改寫為選擇題（證據沿用原題）",
       "strategy_tag": "比較評估",
@@ -1987,7 +1999,9 @@
           "level": 3,
           "type": "evidence"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_on": "2026-10-04"
     }
   ],
   "lookalikes": [

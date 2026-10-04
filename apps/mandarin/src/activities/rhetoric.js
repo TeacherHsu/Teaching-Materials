@@ -10,7 +10,8 @@ import { filterByStatus } from '../utils/preview.js';
 
 // 官方修辭解析會用「﹁﹂」框出關鍵字；同時接受既有資料常見的「」與『』標記。
 // 標記只供教材資料保存，不直接顯示在學生題幹中。
-const RHETORIC_MARKUP = /﹁([^﹂]*)﹂|「([^」]*)」|『([^』]*)』/g;
+// 只有「﹁﹂」是標重點的記號；「」『』是課文本來的引號（四上「晴空塔白」「芝麻芝麻請開門！」曾被誤標成重點）
+const RHETORIC_MARKUP = /﹁([^﹂]*)﹂/g;
 const FALLBACK_FIGURES = ['譬喻', '擬人', '類疊', '排比', '設問', '感嘆', '摹寫', '轉化', '引用', '對偶'];
 
 function highlightPlainText(text, highlightTerms) {

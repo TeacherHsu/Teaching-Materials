@@ -1,7 +1,8 @@
 // 兩個試做的「學方法」內容（2026-10-04）。
 // 找線索用本站自寫的短文（原創，不是課文），所以不用教室密碼也能做。
 import { h } from '../utils/dom.js';
-import { StrategyLesson, TapChoices } from '../components/StrategyLesson.js';
+import { StrategyLesson, TapChoices, AskLine } from '../components/StrategyLesson.js';
+import { SpeakButton } from '../components/SpeakButton.js';
 import { glyph } from '../components/HanziCompare.js';
 
 // ── 讀懂課文：找線索（提取訊息）────────────────────────────
@@ -47,8 +48,13 @@ export function clueStrategyLesson(onDone) {
     guided: (done) => {
       const box = h('div', {});
       const stepText = h('p', { class: 'strategy-lesson__ask' }, '第 1 步：點一下題目裡比較特別的關鍵詞。');
-      const passage = h('div', {}, [passageView(GUIDED.passage)]);
-      box.appendChild(stepText);
+      // 這一行會隨步驟改變，喇叭念「當下」的文字
+      const sayStep = SpeakButton({ text: () => stepText.textContent, ariaLabel: '聽這一步要做什麼', variant: 'speak-button--option' });
+      const passage = h('div', { class: 'quiz-option-row' }, [
+        passageView(GUIDED.passage),
+        SpeakButton({ text: GUIDED.passage.join(''), label: '聽短文', variant: 'speak-button--option' }),
+      ]);
+      box.appendChild(h('div', { class: 'quiz-option-row strategy-lesson__ask-row' }, [stepText, sayStep]));
       box.appendChild(TapChoices({
         label: '題目的詞',
         items: GUIDED.question.map((t) => ({ text: t })),
@@ -123,7 +129,7 @@ export function radicalStrategyLesson(chars, parts, onDone) {
       const rest = s.map((_, i) => i).filter((i) => !rad.includes(i));
       const msg = h('p', { class: 'strategy-lesson__ask', role: 'status', 'aria-live': 'polite' });
       return h('div', {}, [
-        h('p', { class: 'strategy-lesson__ask' }, `「${try1.char}」拆成兩部分。點一下，哪一部分是部首？`),
+        AskLine(`「${try1.char}」拆成兩部分。點一下，哪一部分是部首？`),
         big(try1, false),
         TapChoices({
           label: '字的兩部分',

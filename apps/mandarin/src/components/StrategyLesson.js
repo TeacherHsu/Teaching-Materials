@@ -72,6 +72,8 @@ export function TapChoices({ items, isRight, onRight, why, label }) {
   const feedback = h('p', { class: 'strategy-tap__feedback', role: 'status', 'aria-live': 'polite' });
   items.forEach((item, i) => {
     const btn = h('button', { class: 'strategy-tap__item', type: 'button' }, item.render ? item.render() : item.text);
+    // 文字選項旁邊都有喇叭（圖形選項另用 aria-label）——學生會讀的字都要能聽（設計底線）
+    const speakBtn = item.text ? SpeakButton({ text: item.text, label: '聽', variant: 'speak-button--option' }) : null;
     if (item.aria) btn.setAttribute('aria-label', item.aria);
     btn.addEventListener('click', () => {
       if (isRight(item, i)) {
@@ -86,7 +88,15 @@ export function TapChoices({ items, isRight, onRight, why, label }) {
         speak(feedback.textContent);
       }
     });
-    wrap.appendChild(btn);
+    wrap.appendChild(speakBtn ? h('span', { class: 'strategy-tap__pair' }, [btn, speakBtn]) : btn);
   });
   return h('div', {}, [wrap, feedback]);
+}
+
+/** 一行「要學生做的事」＋喇叭。 */
+export function AskLine(text, extraClass = '') {
+  return h('div', { class: `quiz-option-row strategy-lesson__ask-row ${extraClass}` }, [
+    h('p', { class: 'strategy-lesson__ask' }, text),
+    SpeakButton({ text, label: '聽', variant: 'speak-button--option' }),
+  ]);
 }

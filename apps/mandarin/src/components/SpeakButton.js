@@ -42,7 +42,7 @@ export function SpeakButton({
   const btn = h('button', {
     class: `speak-button ${showLabel ? 'speak-button--with-label' : ''} ${variant}`.trim(),
     type: 'button',
-    'aria-label': ariaLabel || `朗讀：${truncate(text)}`,
+    'aria-label': ariaLabel || `朗讀：${truncate(typeof text === 'function' ? '' : text)}`,
     'aria-pressed': 'false',
   });
   if (showLabel) btn.appendChild(h('span', { class: 'speak-button__label' }, label));
@@ -64,7 +64,8 @@ export function SpeakButton({
       return;
     }
     setSpeaking(true);
-    speak(text, { audioUrl, overrides, rate }).finally(() => setSpeaking(false));
+    // text 可以是函式：畫面上的字會變時（逐步提示），念「按下當下」的內容
+    speak(typeof text === 'function' ? text() : text, { audioUrl, overrides, rate }).finally(() => setSpeaking(false));
   });
   return btn;
 }

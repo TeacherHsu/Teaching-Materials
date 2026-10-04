@@ -8,7 +8,8 @@ import { splitRhetoricExample, stripRhetoricMarkup, buildRhetoricActivity } from
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));
 const dataRoot = resolve(scriptDir, '../public/data');
-const supportedMarkup = /﹁([^﹂]+)﹂|「([^」]+)」|『([^』]+)』/g;
+// 只有「﹁﹂」是重點標記；「」『』是課文引號（2026-10-04）
+const supportedMarkup = /﹁([^﹂]+)﹂/g;
 const activeStatuses = new Set(['ready', 'approved']);
 let scannedEntries = 0;
 
@@ -20,7 +21,7 @@ for (const grade of ['115AG1H', '115AG3H', '115AG4K', '115AG6H']) {
       if (!activeStatuses.has(entry.status)) continue;
       scannedEntries += 1;
       if (grade === '115AG4K') {
-        assert.ok(Array.isArray(entry.highlight_terms), `${grade}/${file} ${entry.id} 缺少保守關鍵詞欄位`);
+        assert.ok(Array.isArray(entry.highlight_terms) && entry.highlight_terms.length, `${grade}/${file} ${entry.id} 缺少要變色的關鍵詞`);
         for (const term of entry.highlight_terms) {
           assert.ok(String(entry.example).includes(term), `${grade}/${file} ${entry.id} 關鍵詞不在官方例句中`);
         }
@@ -48,16 +49,13 @@ for (const grade of ['115AG1H', '115AG3H', '115AG4K', '115AG6H']) {
 const css = readFileSync(resolve(scriptDir, '../src/styles/components.css'), 'utf8');
 assert.match(css, /\.rhetoric-highlight\s*\{/, '找不到修辭關鍵字變色樣式');
 
-const segments = splitRhetoricExample('甲﹁乙﹂丙「丁」戊『己』');
+const segments = splitRhetoricExample('甲﹁乙﹂丙「丁」戊');
 assert.deepEqual(segments, [
   { text: '甲', highlighted: false },
   { text: '乙', highlighted: true },
-  { text: '丙', highlighted: false },
-  { text: '丁', highlighted: true },
-  { text: '戊', highlighted: false },
-  { text: '己', highlighted: true },
-]);
-assert.equal(stripRhetoricMarkup('甲﹁乙﹂丙「丁」戊『己』'), '甲乙丙丁戊己');
+  { text: '丙「丁」戊', highlighted: false },
+], '「」是引號，照原樣保留、不變色');
+assert.equal(stripRhetoricMarkup('甲﹁乙﹂丙「丁」戊'), '甲乙丙「丁」戊');
 assert.deepEqual(splitRhetoricExample('甲乙丙乙', ['乙']), [
   { text: '甲', highlighted: false },
   { text: '乙', highlighted: true },

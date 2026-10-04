@@ -6,6 +6,7 @@
 // 也讓教師看得出「混題之後還會不會」。
 //
 // 答錯的題目會自動進錯題盒（ChoiceQuiz 已經接好），考完可以直接去複習。
+import { withEntrySpeak } from '../components/EntrySpeak.js';
 import { h, clear } from '../utils/dom.js';
 import { uiIconMarkup } from '../components/icons.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
@@ -182,11 +183,11 @@ export function QuizPage(lesson) {
 export function quizEntry(lesson) {
   const bank = collectQuizBank(lesson);
   if (!Object.keys(bank).length) return null;
-  return h('a', { class: 'entry-card entry-card--wide entry-card--dashed entry-card--quiz', href: `#/lesson/${lesson.lesson_id}/quiz` }, [
+  return withEntrySpeak(h('a', { class: 'entry-card entry-card--wide entry-card--dashed entry-card--quiz', href: `#/lesson/${lesson.lesson_id}/quiz` }, [
     h('span', { class: 'entry-card__icon', 'aria-hidden': 'true', html: uiIconMarkup('quiz') }),
     h('span', { class: 'entry-card__body' }, [
       h('span', { class: 'entry-card__title' }, '單課小考'),
       h('span', { class: 'entry-card__desc' }, '各站的題目混在一起考，沒有提示。'),
     ]),
-  ]);
+  ]));
 }

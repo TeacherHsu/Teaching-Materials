@@ -3,6 +3,7 @@ import { StepJump } from './StepJump.js';
 import { DragToSlot } from './DragToSlot.js';
 import { ImageFrame } from './ImageFrame.js';
 import { TaskBanner } from './TaskBanner.js';
+import { SpeakButton } from './SpeakButton.js';
 import { missingContentNotice } from '../activities/engine.js';
 import { filterByStatus, isPreview } from '../utils/preview.js';
 import { shuffle } from '../utils/shuffle.js';
@@ -51,7 +52,11 @@ function buildRound1(idioms, assetBase) {
           inlineSlotWrap,
           h('span', {}, suffix),
         ]),
-        h('p', { class: 'meta' }, idm.definition),
+        // 空格念成「什麼」，不洩漏答案字
+        h('div', { class: 'quiz-option-row' }, [
+          h('p', { class: 'meta' }, idm.definition),
+          SpeakButton({ text: `成語：${prefix}什麼${suffix}。意思是：${idm.definition}`, label: '聽', variant: 'speak-button--option' }),
+        ]),
       ]);
       const distractorChars = pickDistractors(
         usable,

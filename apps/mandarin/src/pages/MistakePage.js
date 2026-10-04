@@ -5,6 +5,7 @@
 //
 // 一次只出一批（不超過一輪題數 + 2 題）：一次面對一整牆錯題會讓學生放棄，
 // 這和站上「一個畫面只放一個任務」的底線是同一個理由。
+import { withEntrySpeak } from '../components/EntrySpeak.js';
 import { h, clear } from '../utils/dom.js';
 import { uiIconMarkup } from '../components/icons.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
@@ -206,12 +207,12 @@ function emptyState(lessonId, backHref, backLabel) {
 export function mistakeEntry(lessonId, count) {
   if (!count) return null;
   const href = lessonId ? `#/mistakes/${lessonId}` : '#/mistakes';
-  return h('a', { class: 'entry-card entry-card--accent entry-card--mistake', href }, [
+  return withEntrySpeak(h('a', { class: 'entry-card entry-card--accent entry-card--mistake', href }, [
     h('span', { class: 'entry-card__icon', 'aria-hidden': 'true', html: uiIconMarkup('redo') }),
     h('span', { class: 'entry-card__body' }, [
       h('span', { class: 'entry-card__title' }, '錯題複習'),
       h('span', { class: 'entry-card__desc' }, '把這一冊答錯的題目再做一次。'),
     ]),
     h('span', { class: 'entry-card__badge', 'aria-label': `${count} 題待複習` }, String(count)),
-  ]);
+  ]));
 }

@@ -18,6 +18,11 @@ import { speak, cancelSpeaking } from '../utils/speech.js';
 import { splitSyllables } from '../utils/zhuyin.js';
 import { ensureCharReadings, scoreReading } from '../utils/readingScore.js';
 import { recordOutcome } from '../utils/scoreSession.js';
+import { celebrateCorrect } from '../utils/celebrate.js';
+
+// 念對時的稱讚輪流換，避免每次都一樣變成背景音
+const PRAISE_FIRST = ['念對了！好棒！', '太棒了，念得很清楚！', '答對了！你好厲害！', '很好！繼續加油！'];
+const PRAISE_HELPED = ['念對了！多練一次就會了！', '有進步！念對了！', '做到了！再接再厲！'];
 
 const HAN = /[㐀-鿿]/u;
 
@@ -100,14 +105,18 @@ export function buildWordReadingActivity(lesson, onBack) {
       label: step === 'read-chars' ? '念念看：把生字念出來' : '念念看：把語詞念出來',
       step: rounds.length > 1 ? `第 ${roundIndex + 1}／${rounds.length} 組` : '',
     }));
+    const modeText = teacherMode ? '老師判讀：學生念完，老師按「念對了」或「再練習」。' : '按麥克風，念完會自動判斷（不比聲調，念清楚就好）。';
     const modeRow = h('p', { class: 'meta word-reading__mode' }, [
-      teacherMode ? '老師判讀：學生念完，老師按「念對了」或「再練習」。' : '按麥克風，念完會自動判斷（不比聲調，念清楚就好）。',
+      SpeakButton({ text: modeText, label: '聽', variant: 'speak-button--option' }),
+      ' ',
+      modeText,
       ' ',
       recognitionSupported() ? Object.assign(h('button', { class: 'btn btn--ghost', type: 'button' }, teacherMode ? '改用自動判斷' : '改由老師判讀'),
         { onclick: () => { teacherMode = !teacherMode; renderStep(); } }) : null,
     ]);
     container.appendChild(modeRow);
     let i = 0;
+    let streak = 0;
     const stage = h('div', { class: 'word-reading' });
     container.appendChild(stage);
 
@@ -117,6 +126,12 @@ export function buildWordReadingActivity(lesson, onBack) {
       clear(stage);
       const roundLog = log.slice(-round.length);
       const ok = roundLog.filter((x) => x.result !== 'revealed').length;
+      const cheer = ok === round.length ? `這一組全部念對了！你真的很棒！` : ok > 0 ? `念對了 ${ok} 個，很努力！再念一組會更熟。` : '謝謝你認真念，多聽多念就會進步！';
+      stage.appendChild(h('div', { class: 'quiz-option-row word-reading__cheer' }, [
+        h('p', { class: 'word-reading__praise' }, cheer),
+        SpeakButton({ text: cheer, label: '聽', variant: 'speak-button--option' }),
+      ]));
+      speak(cheer);
       stage.appendChild(h('ul', { class: 'word-reading__summary' }, roundLog.map((x) => h('li', {}, [
         h('span', { class: 'word-reading__summary-word' }, x.text),
         h('span', { class: `word-reading__badge word-reading__badge--${x.result}` },
@@ -143,7 +158,8 @@ export function buildWordReadingActivity(lesson, onBack) {
       let heardModel = false;
       const status = h('p', { class: 'word-reading__status', role: 'status', 'aria-live': 'polite' });
       stage.appendChild(h('p', { class: 'meta' }, `第 ${i + 1}／${round.length} 個`));
-      stage.appendChild(h('p', { class: `word-reading__target word-reading__target--${item.kind}`, lang: 'zh-TW' }, item.text));
+      const target = h('p', { class: `word-reading__target word-reading__target--${item.kind}`, lang: 'zh-TW' }, item.text);
+      stage.appendChild(target);
 
       function settle(correct) {
         tries += 1;
@@ -151,12 +167,26 @@ export function buildWordReadingActivity(lesson, onBack) {
           const result = tries === 1 && !heardModel ? 'first' : 'helped';
           log.push({ text: item.text, result });
           recordOutcome({ firstTry: result === 'first', revealed: false, skill: 'reading-aloud:word' });
-          status.textContent = '念對了！';
-          // 老師判讀時老師已經確認過，直接下一個；自動判斷停一下讓學生看到「念對了」
-          if (teacherMode) next(); else setTimeout(next, 700);
+          streak += 1;
+          const pool = result === 'first' ? PRAISE_FIRST : PRAISE_HELPED;
+          const praise = pool[(log.length - 1) % pool.length];
+          const more = streak >= 3 ? `已經連續念對 ${streak} 個了！` : '';
+          status.textContent = `${praise}${more}`;
+          status.classList.add('word-reading__status--right');
+          try { celebrateCorrect(target, undefined, { firstTry: result === 'first' }); } catch { /* 測試環境 */ }
+          speak(praise);
+          // 停一下讓學生看到、聽到稱讚，再到下一個（老師判讀也一樣）
+          while (controls.firstChild) controls.removeChild(controls.firstChild);
+          let moved = false;
+          const goOn = () => { if (!moved) { moved = true; next(); } };
+          const go = h('button', { class: 'btn btn--primary', type: 'button' }, '下一個');
+          go.addEventListener('click', goOn);
+          controls.appendChild(go);
+          setTimeout(goOn, 2500);
         } else if (tries < 2) {
           status.textContent = '再念一次，慢慢念清楚。';
         } else {
+          streak = 0;
           log.push({ text: item.text, result: 'revealed' });
           recordOutcome({ firstTry: false, revealed: true, skill: 'reading-aloud:word' });
           status.textContent = `聽聽看：「${item.text}」。`;
