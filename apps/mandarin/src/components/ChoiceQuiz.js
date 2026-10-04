@@ -5,6 +5,7 @@ import { CompletionFeedback } from './CompletionFeedback.js';
 import { SpeakButton } from './SpeakButton.js';
 import { ReadAllButton } from './ReadAllButton.js';
 import { recordOutcome } from '../utils/scoreSession.js';
+import { noteFirstAttempt } from '../utils/strategyNudge.js';
 import { noteMistake, gradeMistake } from '../utils/mistakes.js';
 import { celebrateCorrect } from '../utils/celebrate.js';
 import { shuffle } from '../utils/shuffle.js';
@@ -141,6 +142,7 @@ export function ChoiceQuiz({
           correctCount += 1;
           // 用過提示才答對，不算獨立答對：照樣收進錯題盒，之後再練一次。
           const firstTry = attempts === 1 && !hintUsed;
+          if (attempts === 1) noteFirstAttempt(true);
           recordOutcome({ firstTry, revealed: false, skill: item.skill, transfer: item.transfer });
           // 第一次沒答對就收進錯題盒（和「正確率＝第一次答對率」同一個判準）。
           // 在複習模式下則是把這一題往上推一格（連對夠多次就學會、移除）。
@@ -170,6 +172,7 @@ export function ChoiceQuiz({
 
         // 答錯
         attempts += 1;
+        if (attempts === 1) noteFirstAttempt(false);
         btn.classList.add('quiz-option--incorrect');
         btn.setAttribute('aria-pressed', 'true');
         btn.innerHTML = `${CROSS_ICON}<span>${opt}</span>`;

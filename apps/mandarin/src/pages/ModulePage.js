@@ -1,6 +1,7 @@
 import { LibraryStrategy } from '../components/LibraryStrategy.js';
 import { MODULE_STRATEGY } from '../activities/strategyLibrary.js';
-import { strategySeen, markStrategySeen } from '../utils/deviceSettings.js';
+import { strategySeen, markStrategySeen, getScaffoldLevel } from '../utils/deviceSettings.js';
+import { onStrategyNudge } from '../utils/strategyNudge.js';
 import { buildWordReadingActivity } from '../activities/wordReading.js';
 import { h, clear } from '../utils/dom.js';
 import { SpeakButton, SpeakTip } from '../components/SpeakButton.js';
@@ -166,7 +167,25 @@ export function ModulePage(lesson, moduleKey) {
         mountActivity();
       }, () => mountActivity()));
     };
-    mountActivity();
+    // 支持組（或老師個別打開）：第一次自動示範，可跳過；其他組直接做題
+    if (strategyKey && !strategySeen(moduleKey) && getScaffoldLevel().autoStrategy) showStrategy();
+    else mountActivity();
+    // 連續 2 題第一次就答錯、還沒看過方法 → 提醒一次
+    onStrategyNudge(strategyKey ? () => {
+      if (strategySeen(moduleKey) || activitySlot.querySelector?.('.strategy-nudge')) return;
+      const go = h('button', { class: 'btn btn--secondary', type: 'button' }, '看看方法');
+      const no = h('button', { class: 'btn btn--ghost', type: 'button' }, '不用了');
+      const text = '這幾題有點難，要不要看看這關的方法？';
+      const box = h('div', { class: 'strategy-nudge quiz-option-row', role: 'status' }, [
+        h('p', { class: 'strategy-nudge__text' }, text),
+        SpeakButton({ text, label: '聽', variant: 'speak-button--option' }),
+        go, no,
+      ]);
+      go.addEventListener('click', showStrategy);
+      no.addEventListener('click', () => box.remove?.() ?? box.parentNode?.removeChild(box));
+      activitySlot.insertBefore(box, activitySlot.firstChild);
+      box.scrollIntoView?.({ block: 'nearest' });
+    } : null);
   } else {
     activitySlot.appendChild(missingContentNotice());
   }

@@ -44,7 +44,8 @@ export const SCAFFOLD_LEVELS = {
     unlockMemory: false,
     prefill: 1,
     flashTimed: false,
-    note: '選擇題 2 個選項、每輪 3 題；題目自動念出來；答錯先給提示、再錯才公布答案；朗讀挑戰一次念到逗號、可先聽範讀。',
+    autoStrategy: true,
+    note: '選擇題 2 個選項、每輪 3 題；題目自動念出來；第一次進關卡先看「學方法」示範（可跳過）；答錯先給提示、再錯才公布答案；朗讀挑戰一次念到逗號、可先聽範讀。',
   },
   standard: {
     key: 'standard',
@@ -58,6 +59,7 @@ export const SCAFFOLD_LEVELS = {
     unlockMemory: false,
     prefill: 0,
     flashTimed: false,
+    autoStrategy: false,
     note: '選擇題 3 個選項、每輪 5 題；答錯先給提示、再錯才公布答案；朗讀挑戰一次一句、可先聽範讀。',
   },
   challenge: {
@@ -72,6 +74,7 @@ export const SCAFFOLD_LEVELS = {
     unlockMemory: false, // 2026-10-04：翻牌記憶遊戲會加重工作記憶負荷，不再取代核心配對（第二版審查）
     prefill: 0,
     flashTimed: false,
+    autoStrategy: false,
     note: '選擇題 4 個選項、每輪 5 題；答錯先給提示、再錯才公布答案；朗讀挑戰一次一整段、不先範讀。提示、朗讀、放大等支持在每一層都可以用。',
   },
 };
@@ -140,7 +143,7 @@ export function setFlashTimed(on) {
  * 教師手動調過的項目，之後切換等級**不會**被蓋掉；要恢復成跟著等級走，
  * 必須明確按「跟隨等級」。沒有這個區分的話，教師每次換等級都要重調一次。
  */
-export const OVERRIDABLE = ['optionCount', 'roundSize', 'autoRead', 'prefill', 'reciteUnit', 'reciteModel', 'flashTimed'];
+export const OVERRIDABLE = ['optionCount', 'roundSize', 'autoRead', 'prefill', 'reciteUnit', 'reciteModel', 'flashTimed', 'autoStrategy'];
 
 /**
  * 能力分組底下的細項（CF 2026-10-04）：老師只要選一次組別，細項跟著組別走；
@@ -154,6 +157,7 @@ export const DETAIL_SPECS = [
   { name: 'reciteUnit', label: '朗讀挑戰一次念多少', choices: [['clause', '到逗號'], ['sentence', '一句'], ['paragraph', '一段']] },
   { name: 'reciteModel', label: '朗讀前可先聽範讀', choices: [[true, '可以'], [false, '不先範讀']] },
   { name: 'flashTimed', label: '字感閃現限時 5 秒', choices: [[false, '不限時'], [true, '限時']] },
+  { name: 'autoStrategy', label: '第一次進關卡自動示範「學方法」', choices: [[true, '開（可跳過）'], [false, '關（自己點）']] },
 ];
 
 /** 目前這個個案（學生代碼）的設定；沒填代碼回 null。 */
