@@ -19,7 +19,8 @@ export function LibraryStrategy(key, onDone) {
     frames: spec.frames.map((f) => ({
       say: f.say,
       render: () => h('div', { class: 'strategy-lines' }, f.lines.map((line) => h('div', { class: 'quiz-option-row' }, [
-        h('p', { class: 'strategy-passage' }, markLine(line, f.mark)),
+        // 問句（題目）用深藍色，和示範的短文區分
+        h('p', { class: /[？?]\s*$/u.test(line) || /^題目/u.test(line) ? 'strategy-passage strategy-question' : 'strategy-passage' }, markLine(line, f.mark)),
         SpeakButton({ text: line, label: '聽', variant: 'speak-button--option' }),
       ]))),
     })),

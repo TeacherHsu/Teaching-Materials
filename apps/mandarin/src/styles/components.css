@@ -3631,3 +3631,6 @@
 
 /* 學方法：題目用深藍色，和下面的短文區分 */
 .strategy-question { color: #1f3a68; font-weight: 700; }
+
+/* 學方法「一起做」的題目也用深藍色（回饋訊息不套用） */
+.strategy-lesson__ask-row .strategy-lesson__ask { color: #1f3a68; font-weight: 700; }
