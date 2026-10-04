@@ -14,6 +14,8 @@ import { DragToSlot } from '../components/DragToSlot.js';
 import { RadicalGlyph } from '../components/HanziCompare.js';
 import { loadHanziParts, hanziPartsIfReady } from '../utils/hanziParts.js';
 import { radicalStrategyLesson, pickRadicalChars } from './strategyLessons.js';
+import { LibraryStrategy } from '../components/LibraryStrategy.js';
+import { setTransferMode } from '../utils/scoreSession.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { buildExtensionLinks } from '../components/ExtensionLinks.js';
 import { PronunciationNotice } from '../components/PronunciationNotice.js';
@@ -167,7 +169,7 @@ export function buildCharactersActivity(lesson, onBack) {
   const steps = [];
   let jump = null;
   if (characters.length > 0) steps.push('cards');
-  if (choiceRounds.length > 0) steps.push('choice');
+  if (choiceRounds.length > 0) steps.push('learn-sound', 'choice');
   // 試做：找部首之前先「學方法」（示範＋一起做），之後的部首題算遷移題
   const volume = String(lesson.lesson_id || '').slice(0, 7);
   let learnChars = radicalRounds.length > 0 ? pickRadicalChars(characters, hanziPartsIfReady(volume)) : [];
@@ -300,6 +302,13 @@ export function buildCharactersActivity(lesson, onBack) {
           },
         }),
       );
+    } else if (step === 'learn-sound') {
+      container.appendChild(LibraryStrategy('char-sound', () => {
+        setTransferMode(true);
+        stepIndex += 1;
+        roundIndex = 0;
+        renderStep();
+      }));
     } else if (step === 'learn-radical') {
       container.appendChild(radicalStrategyLesson(learnChars, hanziPartsIfReady(volume), () => {
         stepIndex += 1;

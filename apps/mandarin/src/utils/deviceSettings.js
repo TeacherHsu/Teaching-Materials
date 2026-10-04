@@ -337,3 +337,17 @@ export function setStudentCode(code) {
   if (value && !STUDENT_CODE_PATTERN.test(value)) return false;
   return write({ ...read(), studentCode: value });
 }
+
+/** 這位學生代碼看過哪些關卡的「學方法」（看過就不再自動出現，可按「再看一次方法」）。 */
+export function strategySeen(moduleKey) {
+  const s = read();
+  return Boolean(((s.strategySeen || {})[s.studentCode || ''] || {})[moduleKey]);
+}
+
+export function markStrategySeen(moduleKey) {
+  const s = read();
+  const all = { ...(s.strategySeen || {}) };
+  const who = s.studentCode || '';
+  all[who] = { ...(all[who] || {}), [moduleKey]: true };
+  return write({ ...s, strategySeen: all });
+}

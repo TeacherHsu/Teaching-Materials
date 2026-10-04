@@ -11,10 +11,17 @@ import { recordSkill } from './records.js';
 
 let session = null;
 let defaultSkill = null;
+let transferMode = false;
+
+/** 學完方法之後的作答都算遷移題（換新材料用剛學的方法）。 */
+export function setTransferMode(on) {
+  transferMode = Boolean(on);
+}
 
 /** @param {string} [skill] 這個大項題目預設的技能標籤（題目自己有 skill 時以題目為準） */
 export function startScoreSession(skill = null) {
   defaultSkill = skill;
+  transferMode = false;
   session = { total: 0, firstTryCount: 0, hintedCount: 0, revealedCount: 0 };
 }
 
@@ -26,7 +33,7 @@ export function startScoreSession(skill = null) {
 export function recordOutcome({ firstTry, revealed, skill = null, transfer = false }) {
   // 技能紀錄：依技能（而不是依關卡）累積，遷移題（換新材料）另外計
   const tag = skill || defaultSkill;
-  if (tag) recordSkill(tag, { firstTry, revealed, transfer });
+  if (tag) recordSkill(tag, { firstTry, revealed, transfer: transfer || transferMode });
   if (!session) return; // 沒有 startScoreSession 時（例如舊測試直接建元件）安靜忽略，不影響操作
   session.total += 1;
   if (firstTry) session.firstTryCount += 1;

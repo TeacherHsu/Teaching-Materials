@@ -3609,3 +3609,5 @@
 .word-reading__badge--helped { background: var(--module-color-tint, var(--color-surface-muted)); }
 .word-reading__badge--revealed { background: var(--color-surface-muted); }
 @media (max-width: 640px) { .word-reading__target--char { font-size: 88px; } .word-reading__target--word { font-size: 52px; } }
+.strategy-again-row { display: flex; justify-content: flex-end; margin-bottom: var(--space-2); }
+.strategy-lines { display: grid; gap: var(--space-1); }

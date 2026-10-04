@@ -1,3 +1,6 @@
+import { LibraryStrategy } from '../components/LibraryStrategy.js';
+import { MODULE_STRATEGY } from '../activities/strategyLibrary.js';
+import { strategySeen, markStrategySeen } from '../utils/deviceSettings.js';
 import { buildWordReadingActivity } from '../activities/wordReading.js';
 import { h, clear } from '../utils/dom.js';
 import { SpeakButton } from '../components/SpeakButton.js';
@@ -22,7 +25,7 @@ import { StrategyCard } from '../components/StrategyCard.js';
 import { recordAttempt } from '../utils/records.js';
 import { strategyFor } from '../activities/strategyCards.js';
 import { saveModuleComplete, saveModuleStars, getLessonStars } from '../utils/storage.js';
-import { startScoreSession, endScoreSession } from '../utils/scoreSession.js';
+import { startScoreSession, endScoreSession, setTransferMode } from '../utils/scoreSession.js';
 import { startMistakeContext, endMistakeContext } from '../utils/mistakes.js';
 import { computeModuleStars, starsMarkup } from '../utils/scoring.js';
 import { celebrateComplete } from '../utils/celebrate.js';
@@ -136,7 +139,28 @@ export function ModulePage(lesson, moduleKey) {
       clear(activitySlot);
       activitySlot.appendChild(renderModuleCompleteSummary({ lesson, stars, bestStars, isNewRecord, onBack }));
     };
-    activitySlot.appendChild(builder(lesson, onModuleDone));
+    // 學方法（CF 2026-10-04）：每個學生代碼第一次進這個關卡先看示範、一起做一步；
+    // 之後顯示「再看一次方法」。學完方法後的題目記為遷移題。
+    const strategyKey = MODULE_STRATEGY[moduleKey];
+    const mountActivity = () => {
+      clear(activitySlot);
+      if (strategyKey) {
+        const again = h('button', { class: 'btn btn--ghost strategy-again', type: 'button' }, '再看一次方法');
+        again.addEventListener('click', showStrategy);
+        activitySlot.appendChild(h('div', { class: 'strategy-again-row' }, [again]));
+      }
+      activitySlot.appendChild(builder(lesson, onModuleDone));
+    };
+    const showStrategy = () => {
+      clear(activitySlot);
+      activitySlot.appendChild(LibraryStrategy(strategyKey, () => {
+        markStrategySeen(moduleKey);
+        setTransferMode(true);
+        mountActivity();
+      }));
+    };
+    if (strategyKey && !strategySeen(moduleKey)) showStrategy();
+    else mountActivity();
   } else {
     activitySlot.appendChild(missingContentNotice());
   }
