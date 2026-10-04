@@ -3687,3 +3687,11 @@
 /* 連錯兩題時的「看看方法」提醒 */
 .strategy-nudge { background: var(--color-highlight-surface); border-radius: var(--radius-md, 12px); padding: var(--space-2) var(--space-3); margin-bottom: var(--space-2); flex-wrap: wrap; }
 .strategy-nudge__text { margin: 0; font-weight: 700; font-size: var(--font-size-body); }
+
+/* 朗讀挑戰圖例：樣本字＋白話說明，放在分數下面 */
+.recite-legend { text-align: start; background: var(--color-surface-muted); border-radius: var(--radius-md); padding: var(--space-2) var(--space-3); margin: var(--space-2) 0; }
+.recite-legend__title { margin: 0; font-weight: 700; font-size: var(--font-size-body); }
+.recite-legend__list { list-style: none; margin: var(--space-1) 0 0; padding: 0; display: grid; gap: var(--space-2); }
+.recite-legend__item { display: flex; align-items: center; gap: var(--space-2); font-size: var(--font-size-body); color: var(--text-primary); }
+.recite-legend__sample { font-size: 1.4em; flex: none; padding: 0 4px; }
+.lesson-text__ch--wrong[role="button"], .lesson-text__ch--missed[role="button"] { cursor: pointer; }

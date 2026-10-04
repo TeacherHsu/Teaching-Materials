@@ -33,6 +33,29 @@ function recognitionSupported() {
   return Boolean(window.SpeechRecognition || window.webkitSpeechRecognition);
 }
 
+// 學生看得懂的圖例（CF 2026-10-04：紅色不知道代表什麼）：
+// 每一項都放一個和課文同樣標示的「字」當樣本，再用白話說明可以怎麼做。
+const LEGEND_TEXT = {
+  wrong: '紅底的字：念得不一樣。點一下那個字，聽聽看怎麼念。',
+  missed: '畫一條線的字：漏掉了，沒有念到。點一下聽聽看。',
+  homophone: '兩條底線的字：電腦聽成同音的字，也算念對。',
+};
+function MarkLegend(counts) {
+  const keys = ['wrong', 'missed', 'homophone'].filter((k) => counts[k]);
+  if (!keys.length) return null;
+  const sayAll = keys.map((k) => LEGEND_TEXT[k]).join('');
+  return h('div', { class: 'recite-legend' }, [
+    h('div', { class: 'quiz-option-row' }, [
+      h('p', { class: 'recite-legend__title' }, '標示是什麼意思？'),
+      SpeakButton({ text: sayAll, label: '聽', variant: 'speak-button--option' }),
+    ]),
+    h('ul', { class: 'recite-legend__list' }, keys.map((k) => h('li', { class: 'recite-legend__item' }, [
+      h('span', { class: `lesson-text__ch lesson-text__ch--${k} recite-legend__sample`, 'aria-hidden': 'true' }, '字'),
+      h('span', {}, `${LEGEND_TEXT[k]}（${counts[k]} 個）`),
+    ]))),
+  ]);
+}
+
 const MARK_LABEL = {
   ok: '念對了',
   homophone: '念對了（辨識成同音字）',
@@ -215,6 +238,7 @@ function renderChallenge(lesson, reading, backHref) {
       [...text].forEach((ch, i) => {
         const zhuyin = zs[i] || '';
         const el = h('span', { class: zhuyin ? 'lesson-text__ch' : 'lesson-text__ch lesson-text__ch--punct' });
+        el.dataset.ch = ch;
         el.appendChild(ZhuyinText(ch, zhuyin));
         if (zhuyin) charEls.push(el);
         textBox.appendChild(el);
@@ -277,9 +301,20 @@ function renderChallenge(lesson, reading, backHref) {
       const speed = fluency(score.total, elapsed);
 
       // 上色
+      // 念錯、漏掉的字可以點：念給學生聽，讓標示變成「下一步可以做什麼」
       score.marks.forEach((mark, i) => {
         const el = charEls[i];
-        if (el) el.classList.add(`lesson-text__ch--${mark}`);
+        if (!el) return;
+        el.classList.add(`lesson-text__ch--${mark}`);
+        if (mark === 'wrong' || mark === 'missed') {
+          const ch = el.dataset.ch;
+          el.setAttribute('role', 'button');
+          el.setAttribute('tabindex', '0');
+          el.setAttribute('aria-label', `${ch}，${MARK_LABEL[mark]}，點一下聽怎麼念`);
+          const hear = () => { speak(ch); status.textContent = `「${ch}」這樣念，跟著念一次。`; };
+          el.onclick = hear;
+          el.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault?.(); hear(); } };
+        }
       });
 
       const previous = best ? best.charsPerMinute : null;
@@ -289,7 +324,8 @@ function renderChallenge(lesson, reading, backHref) {
         total: score.total,
       });
 
-      status.textContent = '';
+      status.textContent = score.marks.some((m) => m === 'wrong' || m === 'missed')
+        ? '有標記的字再練習一下，點一下那個字可以聽怎麼念。' : '';
       clear(result);
       result.appendChild(renderResult(score, speed, previous, unitLabel));
 
@@ -358,14 +394,9 @@ function renderResult(score, speed, previous, unitLabel) {
       SpeakButton({ text: `${summary}${trendText}`, label: '聽', variant: 'speak-button--option' }),
     ]),
     h('p', { class: 'outcome__summary' }, summary),
+    MarkLegend(counts),
     speed.charsPerMinute
       ? h('p', { class: 'meta' }, `每分鐘 ${speed.charsPerMinute} 個字。${trendText}`)
       : null,
-    // 圖例：每一種狀態都要有顏色以外的線索
-    h('ul', { class: 'outcome__legend' }, [
-      ['homophone', MARK_LABEL.homophone],
-      ['wrong', MARK_LABEL.wrong],
-      ['missed', MARK_LABEL.missed],
-    ].filter(([key]) => counts[key]).map(([key, label]) => h('li', { class: `outcome__legend-item outcome__legend-item--${key}` }, `${label}：${counts[key]} 個`))),
   ].filter(Boolean));
 }
