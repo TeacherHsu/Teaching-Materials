@@ -27,13 +27,18 @@ export function CardWalkthrough({ cards, label = '點一下卡片，看過的會
 
   const grid = h('div', { class: 'card-grid walkthrough' });
 
-  cards.forEach(({ el, key }) => {
+  // 讀屏名稱用卡片索引＋可見內容（原本用 seen.size + 1，建立時都是 0，四張都報成「第 1 張」）
+  const nameOf = (el, i, done) => {
+    const text = (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 30);
+    return `第 ${i + 1} 格${text ? `，${text}` : ''}，${done ? '已看過' : '還沒看'}`;
+  };
+  cards.forEach(({ el, key, name }, i) => {
     const wrap = h('div', {
       class: 'walkthrough__item',
       role: 'button',
       tabindex: '0',
       'aria-pressed': 'false',
-      'aria-label': `第 ${seen.size + 1} 張卡片，點一下表示看過了`,
+      'aria-label': name ? `第 ${i + 1} 格，${name}，還沒看` : nameOf(el, i, false),
     }, [el]);
 
     const mark = () => {
@@ -41,6 +46,7 @@ export function CardWalkthrough({ cards, label = '點一下卡片，看過的會
       seen.add(key);
       wrap.classList.add('walkthrough__item--seen');
       wrap.setAttribute('aria-pressed', 'true');
+      wrap.setAttribute('aria-label', name ? `第 ${i + 1} 格，${name}，已看過` : nameOf(el, i, true));
       status.textContent = `${label}（看過 ${seen.size}／${total}）`;
       if (seen.size === total && onAllSeen) onAllSeen();
     };

@@ -22,3 +22,20 @@ export function StrategyCard({ text }) {
     ]),
   ]);
 }
+
+/**
+ * 收合版（2026-10-04 第二版審查 A4／A5）：手機首屏先給任務，方法收成一行「本關小方法」，
+ * 想看再點開；完整的方法教學在「學方法」示範裡，不在題目上方重複印一次。
+ */
+export function StrategyCardCompact({ text }) {
+  return h('details', { class: 'strategy-card strategy-card--compact' }, [
+    h('summary', { class: 'strategy-card__summary' }, [
+      h('span', { class: 'strategy-card__tag' }, '本關小方法'),
+      h('span', {}, '點開看'),
+    ]),
+    h('div', { class: 'strategy-card__body quiz-option-row' }, [
+      h('p', { class: 'strategy-card__text' }, text),
+      SpeakButton({ text, label: '聽', variant: 'speak-button--option' }),
+    ]),
+  ]);
+}

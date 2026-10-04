@@ -15,6 +15,7 @@ import { SpeakButton } from '../components/SpeakButton.js';
 import { missingContentNotice } from './engine.js';
 import { filterByStatus, isPreview } from '../utils/preview.js';
 import { getScaffoldLevel } from '../utils/deviceSettings.js';
+import { gradeParagraphs, textMapBand, lessonGrade } from './reading.js';
 
 function approvedMainIdea(lesson) {
   const mainIdea = lesson.main_idea;
@@ -30,7 +31,8 @@ function approvedDistractors(mainIdea) {
 }
 
 export function readyParagraphSummaries(lesson) {
-  return filterByStatus(lesson.paragraph_summary || []).filter((p) => p.summary);
+  // 低年級拿掉「起：」這類結構術語前綴（和課文地圖同一規則）
+  return gradeParagraphs(filterByStatus(lesson.paragraph_summary || []).filter((p) => p.summary), textMapBand(lessonGrade(lesson.lesson_id)));
 }
 
 

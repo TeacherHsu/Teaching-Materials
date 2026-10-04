@@ -60,7 +60,7 @@ const mapItems = container.findAll((n) => n.hasClass && n.hasClass('walkthrough_
 assert.equal(mapItems.length, paragraphs.length, '沒有結構區塊時，課文地圖一段一格');
 mapItems.forEach((item) => item.dispatch('click'));
 const continueButton = container.findAll((n) => n.tagName === 'button')
-  .find((n) => n.textContent.trim() === '我看懂了，繼續');
+  .find((n) => n.textContent.trim() === '看完地圖，繼續');
 assert.ok(continueButton, '課文地圖每格都點過後應可繼續');
 continueButton.dispatch('click');
 

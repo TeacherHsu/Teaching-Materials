@@ -868,8 +868,11 @@
   margin-bottom: var(--space-3);
 }
 
-.rhetoric-highlight {
-  color: var(--module-color-dark, var(--color-primary));
+/* 修辭線索：和證據面板同一支黃色螢光筆；沒有 --marked 時看起來就是一般文字（挑戰組先自己找） */
+.rhetoric-highlight { background: transparent; color: inherit; padding: 0 2px; border-radius: var(--radius-sm); }
+.rhetoric-stem--marked .rhetoric-highlight {
+  background: var(--color-highlight-surface);
+  box-shadow: inset 0 -2px 0 var(--color-highlight-line);
   font-weight: 700;
 }
 
@@ -2842,7 +2845,7 @@
 .walkthrough__item:hover { transform: translateY(-2px); }
 .walkthrough__item:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
 /* 看過的：打勾＋降低明度，剩幾張一目了然（不只靠顏色） */
-.walkthrough__item--seen { opacity: 0.6; cursor: default; }
+.walkthrough__item--seen { opacity: 0.8; cursor: default; } /* 0.6 會讓 22px 正文對比低於 4.5:1（C3 量測） */
 .walkthrough__item--seen:hover { transform: none; }
 .walkthrough__item--seen::after {
   content: '✓';
@@ -3634,3 +3637,46 @@
 
 /* 學方法「一起做」的題目也用深藍色（回饋訊息不套用） */
 .strategy-lesson__ask-row .strategy-lesson__ask { color: #1f3a68; font-weight: 700; }
+
+/* 中年級課文地圖：比較表（一列一部分：左邊白話標籤＋段落，右邊在說什麼） */
+.text-map--mid { grid-template-columns: 1fr; }
+.text-map--mid .text-map__node { display: grid; grid-template-columns: minmax(8em, 30%) 1fr; gap: var(--space-3); align-items: start; }
+.text-map--mid .text-map__head { flex-direction: column; align-items: flex-start; }
+@media (max-width: 480px) {
+  .text-map--mid .text-map__node { grid-template-columns: 1fr; }
+}
+
+/* 課程首頁：加練（選做）另列，字較小、不搶核心進度 */
+.lesson-hero__extra-label { font-size: var(--font-size-secondary, 18px); color: var(--text-secondary); margin: var(--space-1) 0 0; }
+.lesson-hero__core-done { font-weight: 700; color: var(--color-success, #1b7f3b); margin: var(--space-1) 0 0; }
+
+/* 題組列：一列「第 n／N 組」＋換題組；展開才列全部 */
+.step-jump { flex-direction: column; align-items: stretch; }
+.step-jump__bar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); flex-wrap: nowrap; }
+.step-jump__now { font-weight: 700; color: var(--text-primary); }
+.step-jump__toggle { min-height: var(--tap-target-min); padding: 0 var(--space-3); border-radius: 999px; border: 1px solid var(--color-border); background: var(--color-surface); font: inherit; cursor: pointer; flex: none; }
+.step-jump__list { display: flex; flex-wrap: wrap; gap: var(--space-1); margin-top: var(--space-2); }
+.step-jump__btn--past { color: var(--text-secondary); }
+/* 本關小方法：收合成一行 */
+.strategy-card--compact { padding-block: var(--space-2); }
+.strategy-card--compact[hidden] { display: none; }
+.strategy-card__summary { cursor: pointer; min-height: var(--tap-target-min); display: flex; align-items: center; gap: var(--space-2); }
+/* 手機：裝飾色帶與麵包屑縮小，首屏留給任務 */
+@media (max-width: 480px) {
+  .module-page-strip { display: none; }
+}
+.word-reading__badge--after-model { background: var(--module-color-tint, var(--color-surface-muted)); }
+.word-reading__badge--modeled, .word-reading__badge--skipped { background: var(--color-surface-muted); }
+
+/* 第一次的喇叭提示 */
+.speak-tip { display: inline-flex; align-items: center; gap: var(--space-1); padding: var(--space-1) var(--space-3); border-radius: 999px;
+  background: var(--color-highlight-surface); color: var(--text-primary); font-size: var(--font-size-body); font-weight: 700; margin: 0 0 var(--space-2); }
+.speak-tip__icon { display: inline-flex; }
+
+/* 讀懂課文：學生自己圈題目關鍵詞（點一下上螢光筆） */
+.keyword-stem__line { display: block; }
+.keyword-stem__word { display: inline-block; min-height: var(--tap-target-min); line-height: var(--tap-target-min); padding: 0 2px;
+  border-radius: var(--radius-sm); cursor: pointer; }
+.keyword-stem__word:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 1px; }
+.keyword-stem__word--on { background: var(--color-highlight-surface); box-shadow: inset 0 -3px 0 var(--color-highlight-line); }
+.keyword-stem__tip { display: block; font-size: var(--font-size-meta); color: var(--text-secondary); font-weight: 400; margin-top: var(--space-1); }

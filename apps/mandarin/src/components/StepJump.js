@@ -30,21 +30,36 @@ const MODULE_OVERRIDES = {
 export function StepJump({ steps, onJump, moduleKey = '' }) {
   const el = h('nav', { class: 'step-jump', 'aria-label': '題組' });
   const labels = { ...STEP_LABELS, ...(MODULE_OVERRIDES[moduleKey] || {}) };
+  // 手機版面（2026-10-04 第二版審查 A5）：只佔一列——「第 2／5 組：讀音」＋「換題組」；
+  // 按「換題組」才展開全部題組。展開後用文字＋形狀分出已做過（✓）、現在（▶）、還沒做。
+  let open = false;
+  let current = 0;
   function update(index) {
+    current = index;
     while (el.firstChild) el.removeChild(el.firstChild);
     el.hidden = steps.length < 2 || !getShowStepJump();
     if (el.hidden) return;
-    el.appendChild(h('span', { class: 'step-jump__label' }, '題組：'));
+    const toggle = h('button', { class: 'step-jump__toggle', type: 'button', 'aria-expanded': String(open) }, open ? '收起' : '換題組');
+    toggle.addEventListener('click', () => { open = !open; update(current); });
+    el.appendChild(h('div', { class: 'step-jump__bar' }, [
+      h('span', { class: 'step-jump__now' }, `第 ${index + 1}／${steps.length} 組：${labels[steps[index]] || steps[index]}`),
+      toggle,
+    ]));
+    if (!open) return;
+    const list = h('div', { class: 'step-jump__list' });
     steps.forEach((step, i) => {
-      const current = i === index;
+      const isCurrent = i === index;
+      const state = isCurrent ? '▶ ' : i < index ? '✓ ' : '';
       const btn = h('button', {
-        class: `step-jump__btn${current ? ' step-jump__btn--current' : ''}`,
+        class: `step-jump__btn${isCurrent ? ' step-jump__btn--current' : ''}${i < index ? ' step-jump__btn--past' : ''}`,
         type: 'button',
-        'aria-current': current ? 'step' : 'false',
-      }, labels[step] || step);
-      if (!current) btn.addEventListener('click', () => onJump(i));
-      el.appendChild(btn);
+        'aria-current': isCurrent ? 'step' : 'false',
+        'aria-label': `${labels[step] || step}${isCurrent ? '（現在）' : i < index ? '（做過了）' : ''}`,
+      }, `${state}${labels[step] || step}`);
+      if (!isCurrent) btn.addEventListener('click', () => { open = false; onJump(i); });
+      list.appendChild(btn);
     });
+    el.appendChild(list);
   }
   return { el, update };
 }

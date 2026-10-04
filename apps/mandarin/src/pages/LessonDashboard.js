@@ -2,7 +2,7 @@ import { withEntrySpeak } from '../components/EntrySpeak.js';
 import { h } from '../utils/dom.js';
 import { MODULE_REGISTRY, getModuleStatus, moduleColorVars } from '../activities/moduleRegistry.js';
 import { buildExtensionLinks } from '../components/ExtensionLinks.js';
-import { SpeakButton } from '../components/SpeakButton.js';
+import { SpeakButton, SpeakTip } from '../components/SpeakButton.js';
 import { moduleIconMarkup, STATUS_ICONS, uiIconMarkup } from '../components/icons.js';
 import { getModuleStars, getLessonStars } from '../utils/storage.js';
 import { starsMarkup } from '../utils/scoring.js';
@@ -43,7 +43,6 @@ export function LessonDashboard(lesson) {
   );
 
   const lessonTitle = `第 ${lesson.lesson_no} 課：${lesson.title}`;
-  const doneCount = MODULE_REGISTRY.filter((entry) => getModuleStatus(lesson, entry).code === 'done').length;
   // 分母只算「可開始的大項」（code==='available'|'done'）：排除鎖住的（例如舊字
   // 新詞第 2 課起才開放）與教材審核中的（資料不足時，例如一字多音第 1 課），
   // 不然學生第 1 課永遠湊不滿分母，見規格 §2。跟下面 availableKeys／
@@ -52,10 +51,16 @@ export function LessonDashboard(lesson) {
     const s = getModuleStatus(lesson, entry);
     return s.code === 'available' || s.code === 'done';
   }).map((entry) => entry.key);
-  const totalCount = availableKeys.length;
-  const pct = totalCount > 0 ? Math.round((doneCount / totalCount) * 100) : 0;
-  const lessonStars = getLessonStars(lesson.lesson_id, availableKeys);
-  const lessonStarsMax = availableKeys.length * 3;
+  // 核心必做與加練選做分帳（2026-10-04 第二版審查 A3）：進度環只算核心，
+  // 未開任何挑戰也能到 100%；加練的項目與星星另外列，標明「選做」。
+  const isDone = (key) => getModuleStatus(lesson, MODULE_REGISTRY.find((e) => e.key === key)).code === 'done';
+  const coreKeys = availableKeys.filter((k) => CORE_MODULES.has(k));
+  const extraKeys = availableKeys.filter((k) => !CORE_MODULES.has(k));
+  const coreDone = coreKeys.filter(isDone).length;
+  const extraDone = extraKeys.filter(isDone).length;
+  const pct = coreKeys.length > 0 ? Math.round((coreDone / coreKeys.length) * 100) : 0;
+  const coreStars = getLessonStars(lesson.lesson_id, coreKeys);
+  const extraStars = getLessonStars(lesson.lesson_id, extraKeys);
 
   const hero = h('div', { class: 'lesson-hero' }, [
     h('div', { class: 'lesson-hero__text' }, [
@@ -76,20 +81,22 @@ export function LessonDashboard(lesson) {
     ].filter(Boolean)),
     h('div', { class: 'lesson-hero__progress', role: 'status', 'aria-live': 'polite' }, [
       ringSvg(pct),
-      h('p', { class: 'lesson-hero__progress-label' }, `已完成 ${doneCount} ／ ${totalCount} 項`),
-      lessonStarsMax > 0
-        ? h(
-            'p',
-            { class: 'lesson-hero__stars-label', role: 'img', 'aria-label': `本課星星，最高 ${lessonStarsMax} 顆中得到 ${lessonStars} 顆` },
-            [
-              h('span', { 'aria-hidden': 'true', html: STATUS_ICONS.star }),
-              ` 本課星星 ${lessonStars} ／ ${lessonStarsMax}`,
-            ],
-          )
+      h('p', { class: 'lesson-hero__progress-label' }, `核心學習 ${coreDone} ／ ${coreKeys.length} 項`),
+      coreKeys.length > 0
+        ? h('p', { class: 'lesson-hero__stars-label', role: 'img', 'aria-label': `核心星星，最高 ${coreKeys.length * 3} 顆中得到 ${coreStars} 顆` }, [
+            h('span', { 'aria-hidden': 'true', html: STATUS_ICONS.star }),
+            ` 核心星星 ${coreStars} ／ ${coreKeys.length * 3}`,
+          ])
+        : null,
+      pct === 100 ? h('p', { class: 'lesson-hero__core-done' }, '核心學習完成！加練是額外的練習。') : null,
+      extraKeys.length > 0
+        ? h('p', { class: 'lesson-hero__extra-label' }, `加練挑戰（選做）${extraDone} ／ ${extraKeys.length} 項・加練星星 ${extraStars}`)
         : null,
     ].filter(Boolean)),
   ]);
   root.appendChild(hero);
+  { const tip = SpeakTip(); if (tip) root.appendChild(tip); }
+
 
   // 「下一步」：核心大項裡第一個還沒完成的（參考站的做法）。
   // 對執行功能弱的學生，「接下來做哪一個」本身就是一個要決定的負擔；

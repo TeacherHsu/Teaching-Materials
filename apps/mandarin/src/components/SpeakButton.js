@@ -56,6 +56,7 @@ export function SpeakButton({
   }
 
   btn.addEventListener('click', (e) => {
+    markSpeakTipSeen();
     // 卡片本身可能也有點擊互動（例如 VocabularyCard 翻面）：朗讀鈕不應誤觸該互動
     e.stopPropagation();
     if (speaking) {
@@ -72,3 +73,21 @@ export function SpeakButton({
 
 // 向下相容：AudioButton 併入 SpeakButton，舊名稱仍可用。
 export const AudioButton = SpeakButton;
+
+// 第一次用的提示（第二版審查 C3）：低年級未必一看就懂喇叭能按。
+// 這台裝置還沒按過任何喇叭時，在頁首顯示一句「點喇叭可以聽」；按過一次就不再出現。
+const TIP_KEY = 'mandarin.speakTipSeen';
+function tipSeen() {
+  try { return localStorage.getItem(TIP_KEY) === '1'; } catch { return false; }
+}
+export function markSpeakTipSeen() {
+  try { localStorage.setItem(TIP_KEY, '1'); } catch { /* 無痕模式 */ }
+  document.querySelectorAll?.('.speak-tip').forEach((el) => el.remove?.());
+}
+export function SpeakTip() {
+  if (tipSeen() || !speechSupported()) return null;
+  return h('p', { class: 'speak-tip', role: 'note' }, [
+    h('span', { class: 'speak-button__icon speak-tip__icon', html: ICON }),
+    '點喇叭可以聽',
+  ]);
+}

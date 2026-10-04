@@ -40,6 +40,36 @@ function lockedHint(evidence, paraMap) {
   return `${where}（老師在「課文點讀」輸入教室密碼後，這裡會直接顯示那一段並畫出重點。）`;
 }
 
+// 畫重點試做（第二版審查 B2，CF 2026-10-04 同意先在讀懂課文試）：
+// 題目可以一個詞一個詞點，點了上黃色螢光筆、再點取消——學生自己圈關鍵詞。
+// 不評分（題目資料沒有標準關鍵詞），只是讓「找關鍵詞」變成手上的動作；第 1 層提示會引導去用它。
+function splitWords(text) {
+  try {
+    if (typeof Intl !== 'undefined' && Intl.Segmenter) {
+      return [...new Intl.Segmenter('zh-TW', { granularity: 'word' }).segment(text)].map((x) => x.segment);
+    }
+  } catch { /* 舊瀏覽器 */ }
+  return [...text];
+}
+export function KeywordStem(text) {
+  const words = splitWords(String(text));
+  const line = h('span', { class: 'keyword-stem__line' }, words.map((w) => {
+    if (!/[\p{Script=Han}A-Za-z0-9]/u.test(w)) return w;
+    const tok = h('span', { class: 'keyword-stem__word', role: 'button', tabindex: '0', 'aria-pressed': 'false' }, w);
+    const toggle = () => {
+      const on = tok.classList.toggle('keyword-stem__word--on');
+      tok.setAttribute('aria-pressed', String(on));
+    };
+    tok.addEventListener('click', toggle);
+    tok.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault?.(); toggle(); } });
+    return tok;
+  }));
+  return h('span', { class: 'keyword-stem' }, [
+    line,
+    h('span', { class: 'keyword-stem__tip' }, '可以先點題目裡重要的詞，用螢光筆圈起來。'),
+  ]);
+}
+
 function buildScaffoldedItem(lessonId, item) {
   const written = Array.isArray(item.hints)
     ? item.hints.filter((hint) => hint && typeof hint.text === 'string')
@@ -81,7 +111,8 @@ function buildScaffoldedItem(lessonId, item) {
       if (panel) panel.highlight();
     },
   });
-  return { ...item, hints: layers, extra: slot, skill: item.skill || (item.strategy_tag ? `reading:${item.strategy_tag}` : null) };
+  layers[0] = { ...layers[0], text: `先圈關鍵詞：點題目裡最重要的詞。${layers[0].text}` };
+  return { ...item, stemContent: KeywordStem(item.stem), hints: layers, extra: slot, skill: item.skill || (item.strategy_tag ? `reading:${item.strategy_tag}` : null) };
 }
 
 export function ReadingQuestions({ lessonId, items, onBack, backLabel = '本課先完成', onContinue, continueLabel = '加練下一組' }) {

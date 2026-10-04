@@ -125,7 +125,7 @@ export function buildWordReadingActivity(lesson, onBack) {
       if (i < round.length) { showItem(); return; }
       clear(stage);
       const roundLog = log.slice(-round.length);
-      const ok = roundLog.filter((x) => x.result !== 'revealed').length;
+      const ok = roundLog.filter((x) => ['first', 'helped', 'after-model'].includes(x.result)).length;
       const cheer = ok === round.length ? `這一組全部念對了！你真的很棒！` : ok > 0 ? `念對了 ${ok} 個，很努力！再念一組會更熟。` : '謝謝你認真念，多聽多念就會進步！';
       stage.appendChild(h('div', { class: 'quiz-option-row word-reading__cheer' }, [
         h('p', { class: 'word-reading__praise' }, cheer),
@@ -135,7 +135,7 @@ export function buildWordReadingActivity(lesson, onBack) {
       stage.appendChild(h('ul', { class: 'word-reading__summary' }, roundLog.map((x) => h('li', {}, [
         h('span', { class: 'word-reading__summary-word' }, x.text),
         h('span', { class: `word-reading__badge word-reading__badge--${x.result}` },
-          x.result === 'first' ? '自己念對' : x.result === 'helped' ? '練習後念對' : '再多練習'),
+          ({ first: '自己念對', helped: '自己改正', 'after-model': '跟讀後自己念對', modeled: '跟讀練習', skipped: '先跳過' })[x.result] || '再多練習'),
       ]))));
       stage.appendChild(CompletionFeedback({
         correct: ok,
@@ -160,12 +160,42 @@ export function buildWordReadingActivity(lesson, onBack) {
       stage.appendChild(h('p', { class: 'meta' }, `第 ${i + 1}／${round.length} 個`));
       const target = h('p', { class: `word-reading__target word-reading__target--${item.kind}`, lang: 'zh-TW' }, item.text);
       stage.appendChild(target);
+      const controls = h('div', { class: 'quiz-option-row word-reading__controls' });
 
-      function settle(correct) {
-        tries += 1;
-        if (correct) {
-          const result = tries === 1 && !heardModel ? 'first' : 'helped';
-          log.push({ text: item.text, result });
+      const btn = (text, onClick, cls = 'btn') => {
+        const b = h('button', { class: cls, type: 'button' }, text);
+        b.addEventListener('click', onClick);
+        return b;
+      };
+      const setControls = (...nodes) => {
+        while (controls.firstChild) controls.removeChild(controls.firstChild);
+        nodes.filter(Boolean).forEach((n) => controls.appendChild(n));
+      };
+      // 念一次：自動判斷用麥克風；老師判讀由老師按。辨識失敗（沒聽到、權限）不算念錯。
+      const attempt = (label, onJudged, okText = '念對了', noText = '再練習') => {
+        if (teacherMode) {
+          return [btn(okText, () => onJudged(true), 'btn btn--primary'), btn(noText, () => onJudged(false))];
+        }
+        const mic = btn(label, () => {
+          cancelSpeaking();
+          mic.disabled = true;
+          status.textContent = '正在聽……';
+          listenOnce(({ heard, error }) => {
+            mic.disabled = false;
+            if (error) { status.textContent = error; return; }
+            onJudged(judge(item.expected, heard));
+          });
+        }, 'btn btn--primary word-reading__mic');
+        return [mic];
+      };
+      const listenBtn = (text = '先聽一次') => btn(text, () => { heardModel = true; speak(item.text); }, 'btn btn--secondary');
+      const skipBtn = () => btn('先跳過／請老師幫忙', () => finish('skipped'), 'btn btn--ghost');
+
+      // 結果分開記（第二版審查 A6）：只有第一次就自己念對才算獨立；
+      // 跟讀念對不算答對，跟讀後自己再念對＝提示後念對；略過不算念錯。
+      function finish(result) {
+        log.push({ text: item.text, result });
+        if (result === 'first' || result === 'helped' || result === 'after-model') {
           recordOutcome({ firstTry: result === 'first', revealed: false, skill: 'reading-aloud:word' });
           streak += 1;
           const pool = result === 'first' ? PRAISE_FIRST : PRAISE_HELPED;
@@ -175,56 +205,46 @@ export function buildWordReadingActivity(lesson, onBack) {
           status.classList.add('word-reading__status--right');
           try { celebrateCorrect(target, undefined, { firstTry: result === 'first' }); } catch { /* 測試環境 */ }
           speak(praise);
-          // 停一下讓學生看到、聽到稱讚，再到下一個（老師判讀也一樣）
-          while (controls.firstChild) controls.removeChild(controls.firstChild);
-          let moved = false;
-          const goOn = () => { if (!moved) { moved = true; next(); } };
-          const go = h('button', { class: 'btn btn--primary', type: 'button' }, '下一個');
-          go.addEventListener('click', goOn);
-          controls.appendChild(go);
-          setTimeout(goOn, 2500);
-        } else if (tries < 2) {
-          status.textContent = '再念一次，慢慢念清楚。';
         } else {
+          // modeled（跟讀過、自己還沒念出來）或 skipped：記為看答案，不扣星以外的東西
+          if (result === 'modeled') recordOutcome({ firstTry: false, revealed: true, skill: 'reading-aloud:word' });
           streak = 0;
-          log.push({ text: item.text, result: 'revealed' });
-          recordOutcome({ firstTry: false, revealed: true, skill: 'reading-aloud:word' });
-          status.textContent = `聽聽看：「${item.text}」。`;
-          speak(item.text);
-          while (controls.firstChild) controls.removeChild(controls.firstChild);
-          const go = h('button', { class: 'btn btn--primary', type: 'button' }, '下一個');
-          go.addEventListener('click', next);
-          controls.appendChild(go);
+          status.textContent = result === 'skipped' ? '沒關係，先練下一個。' : '你跟著念了，很好！下次再自己試試看。';
         }
+        let moved = false;
+        const goOn = () => { if (!moved) { moved = true; next(); } };
+        setControls(btn('下一個', goOn, 'btn btn--primary'));
+        if (result !== 'skipped') setTimeout(goOn, 2500);
       }
 
-      const controls = h('div', { class: 'quiz-option-row word-reading__controls' });
-      if (getScaffoldLevel().reciteModel) {
-        const model = h('button', { class: 'btn btn--secondary', type: 'button' }, '先聽一次');
-        model.addEventListener('click', () => { heardModel = true; speak(item.text); });
-        controls.appendChild(model);
+      // 第三段：跟讀之後，不看示範、自己再念一次
+      function selfRetry() {
+        status.textContent = '跟讀練習完成！現在不聽範讀，自己再念一次。';
+        speak('現在自己再念一次');
+        setControls(...attempt('自己念一次', (ok) => finish(ok ? 'after-model' : 'modeled'), '自己念對了', '還沒念出來'), skipBtn());
       }
-      if (teacherMode) {
-        const okBtn = h('button', { class: 'btn btn--primary', type: 'button' }, '念對了');
-        const noBtn = h('button', { class: 'btn', type: 'button' }, '再練習');
-        okBtn.addEventListener('click', () => settle(true));
-        noBtn.addEventListener('click', () => settle(false));
-        controls.appendChild(okBtn);
-        controls.appendChild(noBtn);
-      } else {
-        const mic = h('button', { class: 'btn btn--primary word-reading__mic', type: 'button' }, '按這裡開始念');
-        mic.addEventListener('click', () => {
-          cancelSpeaking();
-          mic.disabled = true;
-          status.textContent = '正在聽……';
-          listenOnce(({ heard, error }) => {
-            mic.disabled = false;
-            if (error) { status.textContent = error; return; }
-            settle(judge(item.expected, heard));
-          });
-        });
-        controls.appendChild(mic);
+      // 第二段：聽一次示範 → 跟著念
+      function modelAndEcho() {
+        status.textContent = '聽一次，再跟著念。';
+        heardModel = true;
+        speak(item.text);
+        setControls(listenBtn('再聽一次'), ...attempt('跟著念', (ok) => {
+          if (ok) selfRetry();
+          else { status.textContent = '沒關係，再聽一次，慢慢跟著念。'; }
+        }, '跟著念了', '還要再聽'), skipBtn());
       }
+
+      function settle(correct) {
+        tries += 1;
+        if (correct) finish(tries === 1 && !heardModel ? 'first' : 'helped');
+        else if (tries < 2) {
+          // 第一段：留一次自己改正的機會，給可以做的提示，並把「先聽一次」放到明顯的位置
+          status.textContent = '再念一次：看著字，一個字一個字念。想不起來可以按「先聽一次」。';
+          setControls(listenBtn(), ...attempt('再念一次', settle));
+        } else modelAndEcho();
+      }
+
+      setControls(getScaffoldLevel().reciteModel ? listenBtn() : null, ...attempt('按這裡開始念', settle));
       stage.appendChild(controls);
       stage.appendChild(status);
     }

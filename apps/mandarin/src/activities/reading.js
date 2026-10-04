@@ -32,6 +32,34 @@ function cnNumber(n) {
  * 有結構區塊（起因、經過、結果……）就把同一塊的大意合成一格；沒有就一段一格。
  * 段號只在資料有的時候才顯示（二上的大意對應結構表節點，不是自然段，沒有段號）。
  */
+// 課文地圖依年級調整用語（CF 2026-10-04）：
+//   低年級（一、二）：刪掉結構術語（起承轉合、分說／總說……），只留「這部分在說什麼」
+//   中年級（三、四）：術語換成白話動詞標籤，版面改成比較表（一列一部分）
+//   高年級（六）：保留正式術語
+const PLAIN_LABELS = {
+  分說: '分開說', 總說: '合起來說', 起因: '事情怎麼開始', 經過: '後來發生什麼', 結果: '最後怎麼了',
+  總結: '最後整理', 原因: '為什麼', 開端: '故事開始', 發展: '事情發展', 高潮: '最緊張的地方', 結尾: '最後',
+};
+export function lessonGrade(lessonId = '') {
+  const m = /^115AG(\d)/.exec(String(lessonId));
+  return m ? Number(m[1]) : 6;
+}
+export function textMapBand(grade) {
+  return grade <= 2 ? 'low' : grade <= 4 ? 'mid' : 'high';
+}
+/** 段落大意前面的結構術語前綴（例：「起：」）在低、中年級拿掉。 */
+export function plainSummary(summary, band) {
+  return band === 'high' ? summary : String(summary).replace(/^[起承轉合]：/u, '');
+}
+export function gradeParagraphs(paragraphs, band) {
+  if (band === 'high') return paragraphs;
+  return paragraphs.map((p) => ({
+    ...p,
+    summary: plainSummary(p.summary, band),
+    structure_block: band === 'low' ? '' : (PLAIN_LABELS[p.structure_block] || p.structure_block || ''),
+  }));
+}
+
 export function buildTextMap(paragraphs) {
   const nodes = [];
   for (const p of paragraphs) {
@@ -183,7 +211,8 @@ export function buildReadingQuizItems(lesson) {
 }
 
 export function buildReadingActivity(lesson, onBack) {
-  const paragraphs = filterByStatus(lesson.paragraph_summary || []).filter((p) => p.summary);
+  const mapBand = textMapBand(lessonGrade(lesson.lesson_id));
+  const paragraphs = gradeParagraphs(filterByStatus(lesson.paragraph_summary || []).filter((p) => p.summary), mapBand);
   const questions = filterByStatus(lesson.reading_questions || []).filter((q) => q.stem);
   // 密文段號 → 課本段號（由段落大意的 text_spots 對應），給沒解鎖時的第 3 層提示用
   const paraMap = new Map();
@@ -264,16 +293,16 @@ export function buildReadingActivity(lesson, onBack) {
         cards: nodes.map((node, i) => {
           const el = TextMapCard(node);
           el.addEventListener('click', () => speak([node.label, node.range, node.gists.join('')].filter(Boolean).join('，')));
-          return { el, key: `map:${i}` };
+          return { el, key: `map:${i}`, name: [node.label, node.range].filter(Boolean).join('，') || node.gists.join('').slice(0, 20) };
         }),
         label: '點一下每一格，會念給你聽',
         onAllSeen: () => {
           next.disabled = false;
           next.removeAttribute('aria-disabled');
-          next.textContent = isLast ? '回課程首頁' : '我看懂了，繼續';
+          next.textContent = isLast ? '回課程首頁' : '看完地圖，繼續';
         },
       });
-      walkthrough.grid.classList.add('text-map');
+      walkthrough.grid.classList.add('text-map', `text-map--${mapBand}`);
       next.addEventListener('click', () => {
         if (next.disabled) return;
         if (isLast) { onBack(); return; }

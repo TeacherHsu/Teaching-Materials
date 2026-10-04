@@ -3,7 +3,7 @@ import { MODULE_STRATEGY } from '../activities/strategyLibrary.js';
 import { strategySeen, markStrategySeen } from '../utils/deviceSettings.js';
 import { buildWordReadingActivity } from '../activities/wordReading.js';
 import { h, clear } from '../utils/dom.js';
-import { SpeakButton } from '../components/SpeakButton.js';
+import { SpeakButton, SpeakTip } from '../components/SpeakButton.js';
 import { missingContentNotice } from '../activities/engine.js';
 import { buildIdiomBuilderActivity } from '../components/IdiomBuilder.js';
 import { buildMainIdeaActivity } from '../activities/mainIdea.js';
@@ -21,7 +21,7 @@ import { buildPolyphonesActivity } from '../activities/polyphones.js';
 import { buildLookalikesActivity } from '../activities/lookalikes.js';
 import { buildExtensionLinks } from '../components/ExtensionLinks.js';
 import { findModuleEntry, getModuleStatus, MODULE_REGISTRY, moduleColorVars } from '../activities/moduleRegistry.js';
-import { StrategyCard } from '../components/StrategyCard.js';
+import { StrategyCardCompact } from '../components/StrategyCard.js';
 import { recordAttempt } from '../utils/records.js';
 import { strategyFor } from '../activities/strategyCards.js';
 import { saveModuleComplete, saveModuleStars, getLessonStars } from '../utils/storage.js';
@@ -111,13 +111,16 @@ export function ModulePage(lesson, moduleKey) {
       SpeakButton({ text: label, label: '聽', variant: 'speak-button--option' }),
     ]),
   );
+  { const tip = SpeakTip(); if (tip) root.appendChild(tip); }
   if (isPreview()) {
     root.appendChild(h('p', { class: 'meta' }, '預覽模式：待審（draft）內容會顯示並加「待審」標籤，正式上線不會出現。'));
   }
 
   // 學習策略先講一次，不只在答錯時才出現（見 activities/strategyCards.js）。
+  // 收成一行「本關小方法」：首屏留給任務；第一次看「學方法」示範時整個藏起來，不重複
   const strategy = strategyFor(moduleKey);
-  if (strategy) root.appendChild(StrategyCard({ text: strategy }));
+  const strategyCard = strategy ? StrategyCardCompact({ text: strategy }) : null;
+  if (strategyCard) root.appendChild(strategyCard);
 
   const onBack = () => navigate(`/lesson/${lesson.lesson_id}`);
   const activitySlot = h('div', {});
@@ -144,6 +147,7 @@ export function ModulePage(lesson, moduleKey) {
     const strategyKey = MODULE_STRATEGY[moduleKey];
     const mountActivity = () => {
       clear(activitySlot);
+      if (strategyCard) strategyCard.hidden = false;
       if (strategyKey) {
         const again = h('button', { class: 'btn btn--ghost strategy-again', type: 'button' }, '再看一次方法');
         again.addEventListener('click', showStrategy);
@@ -153,6 +157,7 @@ export function ModulePage(lesson, moduleKey) {
     };
     const showStrategy = () => {
       clear(activitySlot);
+      if (strategyCard) strategyCard.hidden = true;
       activitySlot.appendChild(LibraryStrategy(strategyKey, () => {
         markStrategySeen(moduleKey);
         setTransferMode(true);

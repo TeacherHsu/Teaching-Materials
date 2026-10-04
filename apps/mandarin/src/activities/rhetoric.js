@@ -6,6 +6,7 @@ import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
 import { TaskBanner } from '../components/TaskBanner.js';
 import { missingContentNotice } from './engine.js';
 import { filterByStatus } from '../utils/preview.js';
+import { getScaffoldLevelKey } from '../utils/deviceSettings.js';
 
 
 // 官方修辭解析會用「﹁﹂」框出關鍵字；同時接受既有資料常見的「」與『』標記。
@@ -64,14 +65,20 @@ export function stripRhetoricMarkup(value = '') {
     .join('');
 }
 
-function buildRhetoricStem(example, highlightTerms = []) {
-  return [
+// 線索用和證據面板同一支黃色螢光筆（<mark>）。CF 2026-10-04 決定：
+// 支持、標準組一開始就標好；挑戰組一開始不標，先自己找，第 2 層提示才標出來。
+export function premarkRhetoric(levelKey = getScaffoldLevelKey()) {
+  return levelKey !== 'challenge';
+}
+
+function buildRhetoricStem(example, highlightTerms = [], marked = true) {
+  return h('span', { class: `rhetoric-stem${marked ? ' rhetoric-stem--marked' : ''}` }, [
     '這句話用了什麼修辭？「',
     ...splitRhetoricExample(example, highlightTerms).map(({ text, highlighted }) =>
-      highlighted ? h('span', { class: 'rhetoric-highlight' }, text) : text,
+      highlighted ? h('mark', { class: 'rhetoric-highlight' }, text) : text,
     ),
     '」',
-  ];
+  ]);
 }
 
 // 每種修辭「看得到的特徵」：第 2 層給特徵，學生自己對到名稱。
@@ -91,11 +98,17 @@ const FIGURE_CUES = {
   雙關: '一個詞是不是同時有兩種意思？',
 };
 
-export function rhetoricHints(entry, optionCount = 3) {
+export function rhetoricHints(entry, optionCount = 3, { marked = true, stem = null } = {}) {
+  const cue = FIGURE_CUES[entry.figure] || '找找看這句話特別的地方，是重複、比較，還是提問？';
+  const showMarks = () => stem?.classList?.add('rhetoric-stem--marked');
   return [
-    { text: '先看畫線的地方，再和「直接說」比一比：這句話哪裡寫得不一樣？' },
-    { text: FIGURE_CUES[entry.figure] || '找找看這句話特別的地方，是重複、比較，還是提問？', eliminate: optionCount >= 3 ? 1 : 0 },
-    { text: '把畫線的部分改成直接說，念念看少了什麼感覺？再找哪個選項說的就是這個特點。' },
+    marked
+      ? { text: '看螢光筆標出的地方，再和「直接說」比一比：這句話哪裡寫得不一樣？' }
+      : { text: '先自己找：這句話哪幾個字最特別？再和「直接說」比一比。' },
+    marked
+      ? { text: cue, eliminate: optionCount >= 3 ? 1 : 0 }
+      : { text: `螢光筆標出了特別的地方。${cue}`, eliminate: optionCount >= 3 ? 1 : 0, on: showMarks },
+    { text: '把螢光筆標出的部分改成直接說，念念看少了什麼感覺？再找哪個選項說的就是這個特點。', on: showMarks },
   ];
 }
 
@@ -107,15 +120,17 @@ function buildChoiceItem(entry, all) {
   const distractors = [...new Set(shuffled(availableFigures))].slice(0, 2);
   const options = shuffled([...new Set([entry.figure, ...distractors])]);
   const stemText = `這句話用了什麼修辭？「${stripRhetoricMarkup(entry.example)}」`;
+  const marked = premarkRhetoric();
+  const stem = buildRhetoricStem(entry.example, entry.highlight_terms, marked);
   return {
     id: entry.id,
     stem: stemText,
     stemText,
-    stemContent: buildRhetoricStem(entry.example, entry.highlight_terms),
+    stemContent: stem,
     options,
     answer: entry.figure,
     explanation: `${entry.figure}：${entry.child_note || entry.note}`,
-    hints: rhetoricHints(entry, options.length),
+    hints: rhetoricHints(entry, options.length, { marked, stem }),
   };
 }
 
