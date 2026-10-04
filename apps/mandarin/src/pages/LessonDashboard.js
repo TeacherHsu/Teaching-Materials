@@ -1,3 +1,4 @@
+import { setLastLesson } from '../utils/deviceSettings.js';
 import { withEntrySpeak } from '../components/EntrySpeak.js';
 import { h } from '../utils/dom.js';
 import { MODULE_REGISTRY, getModuleStatus, moduleColorVars } from '../activities/moduleRegistry.js';
@@ -95,6 +96,8 @@ export function LessonDashboard(lesson) {
     ].filter(Boolean)),
   ]);
   root.appendChild(hero);
+  setLastLesson(lesson.lesson_id, `${volumeLabel(lesson.volume)} 第 ${lesson.lesson_no} 課〈${lesson.title}〉`);
+  { const path = learningPath(lesson, coreKeys); if (path) root.appendChild(path); }
   { const tip = SpeakTip(); if (tip) root.appendChild(tip); }
 
 
@@ -328,4 +331,46 @@ function ringSvg(pct) {
     <text x="36" y="41" text-anchor="middle" font-size="18" font-weight="700" fill="var(--text-primary)">${pct}%</text>
   </svg>`;
   return h('div', { class: 'progress-ring', html: svgMarkup });
+}
+
+/**
+ * 建議學習路徑＋繼續學習（2026-10-04 UX 優化 P0）：
+ * 核心四項照建議順序排成一列，做過的打勾、下一個標「→ 現在」，旁邊一個大按鈕直接進去。
+ * 只是建議，不鎖：下面的卡片照樣可以任選、跳過。
+ */
+function learningPath(lesson, coreKeys) {
+  const entries = MODULE_REGISTRY.filter((e) => coreKeys.includes(e.key));
+  if (entries.length < 2) return null;
+  const done = entries.map((e) => getModuleStatus(lesson, e).code === 'done');
+  const nextIndex = done.indexOf(false);
+  const labelOf = (e) => (lesson.modules[e.key] && lesson.modules[e.key].label) || e.label;
+  const left = done.filter((d) => !d).length;
+  const goalText = left === 0 ? '核心學習都完成了！可以去加練挑戰。' : `再完成 ${left} 個，就完成本課核心學習。`;
+  const steps = h('ol', { class: 'learning-path__steps' }, entries.map((e, i) => {
+    const state = done[i] ? 'done' : i === nextIndex ? 'now' : 'todo';
+    return h('li', { class: `learning-path__step learning-path__step--${state}` }, [
+      h('a', { href: `#/lesson/${lesson.lesson_id}/module/${e.key}`, 'aria-label': `第 ${i + 1} 步，${labelOf(e)}，${state === 'done' ? '做完了' : state === 'now' ? '現在做這個' : '還沒做'}` }, [
+        h('span', { class: 'learning-path__num', 'aria-hidden': 'true' }, state === 'done' ? '✓' : String(i + 1)),
+        h('span', { class: 'learning-path__icon', 'aria-hidden': 'true', html: moduleIconMarkup(e.icon) }),
+        h('span', { class: 'learning-path__label' }, labelOf(e)),
+      ]),
+    ]);
+  }));
+  const next = entries[nextIndex];
+  return h('section', { class: 'learning-path', 'aria-labelledby': 'learning-path-title' }, [
+    h('div', { class: 'quiz-option-row learning-path__head' }, [
+      h('h2', { id: 'learning-path-title', class: 'learning-path__title' }, '建議的學習順序'),
+      SpeakButton({ text: `建議的學習順序：${entries.map(labelOf).join('、')}。${goalText}`, label: '聽', variant: 'speak-button--option' }),
+    ]),
+    steps,
+    h('p', { class: 'learning-path__goal' }, [
+      h('span', { class: 'learning-path__dots', 'aria-hidden': 'true' }, done.map((d) => (d ? '●' : '○')).join(' ')),
+      ' ', goalText,
+    ]),
+    next ? h('a', { class: 'btn btn--primary learning-path__continue', href: `#/lesson/${lesson.lesson_id}/module/${next.key}` }, [
+      h('span', {}, `繼續學習：${labelOf(next)}`),
+      h('span', { 'aria-hidden': 'true', html: STATUS_ICONS.arrow }),
+    ]) : null,
+    h('p', { class: 'meta learning-path__note' }, '這是建議的順序，也可以從下面選任何一個。'),
+  ].filter(Boolean));
 }

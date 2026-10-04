@@ -369,3 +369,17 @@ export function reciteZhuyinOn(grade) {
   if (level.reciteZhuyin === true || level.reciteZhuyin === false) return level.reciteZhuyin;
   return Number(grade) <= 2 || getScaffoldLevelKey() === 'support';
 }
+
+// 「繼續學習」（2026-10-04 UX 優化 P0）：記最後進入的課，依學生代碼分開
+// （同一台平板給不同學生用時，不會看到別人的課）。只存課次代碼與顯示名稱。
+const LAST_KEY = 'mandarin.lastLesson';
+export function setLastLesson(lessonId, label) {
+  try {
+    const all = JSON.parse(localStorage.getItem(LAST_KEY) || '{}');
+    all[getStudentCode() || ''] = { lessonId, label };
+    localStorage.setItem(LAST_KEY, JSON.stringify(all));
+  } catch { /* 無痕模式 */ }
+}
+export function getLastLesson() {
+  try { return JSON.parse(localStorage.getItem(LAST_KEY) || '{}')[getStudentCode() || ''] || null; } catch { return null; }
+}

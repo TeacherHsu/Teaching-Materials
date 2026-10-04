@@ -97,9 +97,44 @@ function renderTeacherButton() {
   });
 }
 
+// 上課投影模式（2026-10-04 UX 優化 P0）：同一套頁面，只切 <html> 的 class——
+// 藏掉全站導覽與次要資訊、字和按鈕放大，並嘗試全螢幕。Esc 離開全螢幕時一起離開。
+// 只存在這次瀏覽（sessionStorage），重新開網站回到一般模式。
+const PRESENT_KEY = 'mandarin.presentMode';
+function setPresentMode(on) {
+  document.documentElement.classList.toggle('present-mode', on);
+  try { sessionStorage.setItem(PRESENT_KEY, on ? '1' : ''); } catch { /* 無痕 */ }
+  if (on && document.documentElement.requestFullscreen && !document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(() => {});
+  }
+  if (!on && document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
+}
+try { if (sessionStorage.getItem(PRESENT_KEY) === '1') document.documentElement.classList.add('present-mode'); } catch { /* 無痕 */ }
+document.addEventListener('fullscreenchange', () => {
+  if (!document.fullscreenElement && document.documentElement.classList.contains('present-mode')) setPresentMode(false);
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && document.documentElement.classList.contains('present-mode')) setPresentMode(false);
+});
+const PRESENT_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M12 16v4M8 20h8"/></svg>`;
+function renderPresentButton() {
+  const btn = h('button', { class: 'app-header__present', type: 'button', 'aria-label': '上課模式（投影用）', title: '上課模式（投影用）' }, [
+    h('span', { 'aria-hidden': 'true', html: PRESENT_ICON }),
+    h('span', { class: 'app-header__present-label' }, '上課模式'),
+  ]);
+  btn.addEventListener('click', () => setPresentMode(true));
+  return btn;
+}
+function renderPresentExit() {
+  const btn = h('button', { class: 'present-exit', type: 'button' }, '離開上課模式（Esc）');
+  btn.addEventListener('click', () => setPresentMode(false));
+  return btn;
+}
+
 function renderHeader() {
   const header = h('header', { class: 'app-header' }, [
     h('a', { href: '#/', class: 'app-header__brand' }, '國語課文樂園'),
+    renderPresentButton(),
     renderMuteButton(),
     renderTeacherButton(),
   ]);
@@ -132,7 +167,9 @@ function mount(pageEl) {
   clear(app);
   app.appendChild(renderHeader());
   app.appendChild(VoiceWarningBanner());
-  app.appendChild(pageEl);
+  // header／footer 不能包在 main 裡（axe：landmark-*-is-top-level）
+  app.appendChild(renderPresentExit());
+  app.appendChild(h('main', { id: 'main-content' }, [pageEl]));
   app.appendChild(SiteFooter());
 }
 

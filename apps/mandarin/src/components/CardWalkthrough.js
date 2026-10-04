@@ -33,11 +33,14 @@ export function CardWalkthrough({ cards, label = '點一下卡片，看過的會
     return `第 ${i + 1} 格${text ? `，${text}` : ''}，${done ? '已看過' : '還沒看'}`;
   };
   cards.forEach(({ el, key, name }, i) => {
+    // 卡片裡已經有按鈕（喇叭、翻面）時，外框不當按鈕（避免巢狀互動元件），
+    // 點裡面的按鈕會冒泡到外框，一樣算看過；沒有按鈕的卡片（課文地圖）外框才是按鈕。
+    const nested = Boolean(el.querySelector?.('button, a, [tabindex]'));
     const wrap = h('div', {
       class: 'walkthrough__item',
-      role: 'button',
-      tabindex: '0',
-      'aria-pressed': 'false',
+      role: nested ? 'group' : 'button',
+      tabindex: nested ? null : '0',
+      'aria-pressed': nested ? null : 'false',
       'aria-label': name ? `第 ${i + 1} 格，${name}，還沒看` : nameOf(el, i, false),
     }, [el]);
 
@@ -45,7 +48,7 @@ export function CardWalkthrough({ cards, label = '點一下卡片，看過的會
       if (seen.has(key)) return;
       seen.add(key);
       wrap.classList.add('walkthrough__item--seen');
-      wrap.setAttribute('aria-pressed', 'true');
+      if (!nested) wrap.setAttribute('aria-pressed', 'true');
       wrap.setAttribute('aria-label', name ? `第 ${i + 1} 格，${name}，已看過` : nameOf(el, i, true));
       status.textContent = `${label}（看過 ${seen.size}／${total}）`;
       if (seen.size === total && onAllSeen) onAllSeen();

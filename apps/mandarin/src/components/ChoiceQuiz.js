@@ -166,6 +166,15 @@ export function ChoiceQuiz({
               SpeakButton({ text: '答對了！', label: '聽', variant: 'speak-button--option' }),
             ]),
           );
+          // 答對也給學習線索（2026-10-04 UX P1）：資料本來就有 explanation 就順便說「為什麼對」；
+          // 沒有就只說答對了，不另外要求教材補資料。
+          const why = item.explanation ? String(item.explanation).replace(/^正確答案是/u, '') : '';
+          if (why) {
+            feedbackSlot.appendChild(h('div', { class: 'quiz-option-row quiz-why' }, [
+              h('p', { class: 'quiz-why__text' }, why),
+              SpeakButton({ text: why, label: '聽', variant: 'speak-button--option' }),
+            ]));
+          }
           appendNextButton();
           return;
         }

@@ -165,7 +165,8 @@ function assertCoverage(root, label) {
   assert.equal(card.findAll((n) => n.hasClass('speak-button')).length, 1, 'VocabularyCard 初始應有一個語詞朗讀鈕');
   assert.equal(card.findAll((n) => n.hasClass('image-frame')).length, 1, 'VocabularyCard 應顯示圖片框');
   assert.equal(card.findAll((n) => n.hasClass('character-card__zhuyin')).length, 0, 'VocabularyCard 不應在語詞下方重複顯示注音');
-  assert.equal(card.getAttribute('role'), 'button', 'VocabularyCard 應可點選查看詞義');
+  // 2026-10-04 無障礙：翻面改用卡片內的真正 <button>（外框不再是 role=button，避免巢狀互動元件）
+  assert.ok(card.findAll((n) => n.hasClass('vocabulary-card__term') && n.tagName?.toLowerCase() === 'button').length === 1, 'VocabularyCard 應可用按鈕查看詞義');
   card.dispatch('click');
   assert.ok(card.textContent.includes('心情很好'), 'VocabularyCard 點選後應顯示詞義');
   assert.equal(card.findAll((n) => n.hasClass('speak-button')).length, 1, '顯示詞義時仍應只有一個朗讀鈕');

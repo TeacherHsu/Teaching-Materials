@@ -1865,7 +1865,8 @@
 .strategy-card__tag {
   padding: 1px 8px;
   border-radius: 999px;
-  background: var(--color-accent);
+  /* #d4723f 配白字只有 3.4:1；加深到 #a8501f（約 5.6:1） */
+  background: #a8501f;
   color: var(--text-on-primary);
   font-size: 0.9375rem;
 }
@@ -2655,7 +2656,7 @@
 .app-header__teacher:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
 /* 頁首有兩個按鈕（靜音、教師設定）：一起推到右邊，
    不然 space-between 會把靜音鈕丟到正中間。 */
-.app-header__mute { margin-inline-start: auto; }
+.app-header__present { margin-inline-start: auto; }
 @media (prefers-reduced-motion: reduce) { .app-header__teacher { transition: none; } }
 
 /* 造句區塊的外層容器 */
@@ -3413,7 +3414,7 @@
   gap: 4px;
   padding: 4px 12px;
   border-radius: 999px;
-  background: var(--module-color, var(--color-accent));
+  background: var(--module-color-dark, #a8501f); /* 白字要 ≥4.5:1（axe 2026-10-04） */
   color: var(--text-on-primary);
   font-size: var(--font-size-meta);
   font-weight: 700;
@@ -3683,3 +3684,62 @@
 .recite-legend__item { display: flex; align-items: center; gap: var(--space-2); font-size: var(--font-size-body); color: var(--text-primary); }
 .recite-legend__sample { font-size: 1.4em; flex: none; padding: 0 4px; }
 .lesson-text__ch--wrong[role="button"], .lesson-text__ch--missed[role="button"] { cursor: pointer; }
+
+/* 語詞卡翻面鈕：外觀維持原本的大字，只是改成真正的按鈕 */
+button.vocabulary-card__term { background: none; border: 0; padding: 0; font: inherit; color: inherit; width: 100%; min-height: var(--tap-target-min); cursor: pointer; text-align: center; }
+button.vocabulary-card__term:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; border-radius: var(--radius-sm); }
+
+/* ── 建議學習路徑／繼續學習（2026-10-04 UX P0）──────────────── */
+.learning-path { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg, 16px); padding: var(--space-3); margin: 0 0 var(--space-4); }
+.learning-path__title { font-size: var(--font-size-body); margin: 0; }
+.learning-path__steps { list-style: none; margin: var(--space-2) 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2); counter-reset: none; }
+.learning-path__step a { display: inline-flex; align-items: center; gap: var(--space-1); min-height: var(--tap-target-min); padding: 0 var(--space-3) 0 var(--space-1); border-radius: 999px; border: 2px solid var(--color-border); color: var(--text-primary); text-decoration: none; background: var(--color-surface); }
+.learning-path__num { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--color-surface-muted); font-weight: 700; }
+.learning-path__icon { display: inline-flex; width: 28px; height: 28px; }
+.learning-path__icon { flex: none; overflow: hidden; }
+.learning-path__icon svg, .learning-path__icon img { width: 100%; height: 100%; object-fit: contain; }
+.learning-path__step--done a { color: var(--text-secondary); }
+.learning-path__step--done .learning-path__num { background: var(--color-success-surface, #e7f5ec); color: var(--color-success, #1b7f3b); }
+.learning-path__step--now a { border-color: var(--color-primary); font-weight: 700; }
+.learning-path__step--now .learning-path__num { background: var(--color-primary); color: var(--text-on-primary); }
+.learning-path__step a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+.learning-path__goal { margin: 0 0 var(--space-2); font-size: var(--font-size-body); }
+.learning-path__dots { letter-spacing: 2px; color: var(--color-primary); }
+.learning-path__continue { display: inline-flex; gap: var(--space-1); align-items: center; }
+.learning-path__note { margin: var(--space-2) 0 0; }
+.continue-card { margin: 0 0 var(--space-4); }
+.continue-card__btn { font-size: var(--font-size-body); }
+
+/* ── 上課投影模式（2026-10-04 UX P0）───────────────────────
+   不是等比例放大整頁：藏掉全站導覽與次要資訊，字、題目、選項、按鈕放大，
+   讓最後一排也看得到「現在的任務」。同一套頁面，只靠 html.present-mode 切換。 */
+.app-header__present { display: inline-flex; align-items: center; gap: 6px; min-height: var(--tap-target-min); padding: 0 var(--space-2);
+  border-radius: var(--radius-md); border: 1px solid var(--color-border); background: var(--color-surface); color: var(--text-primary); font: inherit; font-size: var(--font-size-meta); cursor: pointer; }
+.app-header__present:focus-visible, .present-exit:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+@media (max-width: 480px) { .app-header__present-label { display: none; } }
+.present-exit { display: none; }
+html.present-mode {
+  --font-size-page-title: 52px;
+  --font-size-section: 44px;
+  --font-size-body: 36px;
+  --font-size-button: 32px;
+  --font-size-meta: 26px;
+  --tap-target-min: 64px;
+}
+html.present-mode .app-header,
+html.present-mode .site-footer,
+html.present-mode .breadcrumb,
+html.present-mode .speak-tip,
+html.present-mode .module-page-strip,
+html.present-mode .strategy-card--compact,
+html.present-mode .learning-path__note,
+html.present-mode .voice-warning { display: none !important; }
+html.present-mode .container { max-width: min(1600px, 96vw); }
+html.present-mode .present-exit { display: block; position: fixed; top: 8px; right: 8px; z-index: 50; min-height: 44px; padding: 0 var(--space-3);
+  font-size: 18px; border-radius: 999px; border: 1px solid var(--color-border); background: var(--color-surface); color: var(--text-secondary); opacity: 0.85; cursor: pointer; }
+html.present-mode .quiz-stem { font-size: var(--font-size-section); }
+html.present-mode .image-frame img { max-height: 42vh; }
+
+/* 答對時的學習線索 */
+.quiz-why { margin-top: var(--space-1); }
+.quiz-why__text { margin: 0; font-size: var(--font-size-body); color: var(--text-primary); }
