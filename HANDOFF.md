@@ -763,3 +763,7 @@
 - 待 CF：C2 低年級學習重點改寫草稿（`apps/mandarin/docs/review/2026-10-04-C2-low-grade-blurbs-draft.md`）。
 - B2 尚未做：選段落、點證據句兩步（需每題標準關鍵詞／證據句資料）；主旨、句型、聆聽的筆記互動未動。
 - 確定沒有五年級（CF 2026-10-04）。
+
+## 2026-10-04（UX／無障礙優化）
+- 完成：建議學習順序、繼續學習、上課投影模式、答對線索、axe 10 頁 0 違規。報告：`apps/mandarin/docs/review/2026-10-04-ux-a11y-audit.md`；規則已列入 `apps/mandarin/docs/optimization-workflow.md`。
+- 待辦：Lighthouse、VoiceOver 實機、200% 縮放細查；教師／學生雙模式觀察兩週後再決定；形似字深化（P2）未動。
