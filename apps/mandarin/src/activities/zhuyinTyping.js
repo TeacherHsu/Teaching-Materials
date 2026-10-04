@@ -29,7 +29,7 @@ let charIndexCache = null;
 async function loadCharIndex(base = '') {
   if (charIndexCache) return charIndexCache;
   try {
-    const res = await fetch(`${base}data/_index/char-index.json`, { cache: 'force-cache' });
+    const res = await fetch(`${base}data/_index/char-index.json`, { cache: 'no-cache' }); // 同 hanziParts：資料更新後不要被舊快取卡住
     charIndexCache = res.ok ? await res.json() : { chars: {} };
   } catch {
     charIndexCache = { chars: {} };

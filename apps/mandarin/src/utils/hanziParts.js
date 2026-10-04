@@ -5,7 +5,8 @@ const ready = new Map(); // 已載完的資料，給需要同步取用的活動�
 
 export function loadHanziParts(volume) {
   if (!cache.has(volume)) {
-    cache.set(volume, fetch(`data/_index/hanzi/${volume}.json`, { cache: 'force-cache' })
+    cache.set(volume, // 不用 force-cache：資料更新（例如 10/4 加入筆順軌跡）後，舊快取會讓鉛筆鈕永遠不出現；no-cache 會向伺服器確認、沒變就用快取
+      fetch(`data/_index/hanzi/${volume}.json`, { cache: 'no-cache' })
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => { ready.set(volume, data); return data; })
       .catch(() => null));
