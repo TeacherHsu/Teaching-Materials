@@ -65,7 +65,7 @@ function chunkRow(chunks, slots, { showLabels = true } = {}) {
 //   ① 認識積木：課本短語一塊一塊放聲思考，最後「換你試試」換一塊（零壓力）
 //   ② 一起想：第一張圖，每一格配一個引導問題（slots[i].ask），格子標籤看得到
 //   ③ 看圖自己想：之後的圖，不給問題與標籤（第 2 級提示再打開）
-const STAGES = ['認識積木', '一起想', '看圖自己想'];
+const STAGES = ['認識積木', '一起想', '看圖自己想', '自己造一個'];
 
 function stageBar(active) {
   return h('ol', { class: 'phrase-stages', 'aria-label': '照樣造短語的步驟' }, STAGES.map((name, i) => h('li', {
@@ -98,6 +98,7 @@ export function buildPhraseBuilderActivity(lesson, onBack) {
 
     function finishRound() {
       if (roundIndex + 1 < spec.rounds.length) { roundIndex += 1; stage = 'build'; renderStage(); return; }
+      if (stage !== 'create') { stage = 'create'; renderStage(); return; }
       if (specIndex + 1 < specs.length) { specIndex += 1; renderSpec(); return; }
       clear(container);
       container.appendChild(CompletionFeedback({ correct, total, onBack, backLabel: '回課程首頁' }));
@@ -145,14 +146,53 @@ export function buildPhraseBuilderActivity(lesson, onBack) {
           speak(lines[k].text);
           next.textContent = k + 1 < lines.length ? `下一塊（${k + 2}／${lines.length}）` : '換你試試';
         };
+        // 學習策略：照樣造短語的核心＝「不變的照抄、可以換的換同一類、念念看通不通」。
+        // 示範完先請學生自己點出「不變的字」（找出句型骨架），再換一塊試試。
+        const hasFixed = spec.slots.some((s) => s.fixed);
+        function findFixed(then) {
+          clear(tryBox);
+          tryBox.appendChild(sayRow('先找一找：哪幾塊照抄、不用換？點出來。'));
+          const picked = new Set();
+          const fb = h('div', {});
+          const tiles = h('div', { class: 'phrase-bank' }, spec.example.chunks.map((c, i) => {
+            const b = h('button', { class: 'phrase-tile', type: 'button', 'aria-pressed': 'false' }, c);
+            b.addEventListener('click', () => {
+              clear(fb);
+              if (spec.slots[i].fixed) {
+                picked.add(i); b.classList.add('phrase-tile--right'); b.setAttribute('aria-pressed', 'true'); b.disabled = true;
+                const all = spec.slots.map((s, j) => (s.fixed ? j : -1)).filter((j) => j >= 0);
+                if (all.every((j) => picked.has(j))) {
+                  fb.appendChild(sayRow(`✓ 對！${all.map((j) => `「${spec.slots[j].fixed}」`).join('')}照抄。其他的格子可以換。`, 'phrase-feedback--right'));
+                  then();
+                } else fb.appendChild(sayRow('對！還有別的照抄的字嗎？', 'phrase-feedback--right'));
+              } else {
+                fb.appendChild(sayRow(`「${c}」是可以換的那一塊，換掉還是同一種說法。再找找看。`, 'phrase-feedback--try'));
+              }
+            });
+            return b;
+          }));
+          tryBox.appendChild(tiles);
+          tryBox.appendChild(fb);
+        }
         next.addEventListener('click', () => {
           if (k + 1 < lines.length) { k += 1; drawDemo(); return; }
           next.hidden = true;
+          if (hasFixed) {
+            findFixed(() => {
+              const go = h('button', { class: 'btn btn--secondary', type: 'button' }, '換你試試');
+              go.addEventListener('click', () => { go.remove?.(); trySwap(); });
+              tryBox.appendChild(h('div', { class: 'quiz-option-row' }, [go]));
+            });
+          } else trySwap();
+        });
+        function trySwap() {
           // 換你試試：換第一塊可以換的積木，選什麼都不扣分
           const at = spec.slots.findIndex(isFree);
           const slot = spec.slots[at];
-          clear(tryBox);
-          tryBox.appendChild(sayRow(`換你試試：換一塊「${slot.label}」，看看變成什麼短語。`));
+          if (!hasFixed) clear(tryBox);
+          const swapBox = h('div', {});
+          tryBox.appendChild(swapBox);
+          swapBox.appendChild(sayRow(`換你試試：換一塊「${slot.label}」，看看變成什麼短語。`));
           const out = h('div', {});
           const choices = h('div', { class: 'phrase-bank' }, spec.bank.filter((b) => b.role === slot.role).map((b) => {
             const btn = h('button', { class: 'phrase-tile', type: 'button' }, b.text);
@@ -166,9 +206,9 @@ export function buildPhraseBuilderActivity(lesson, onBack) {
             });
             return btn;
           }));
-          tryBox.appendChild(choices);
-          tryBox.appendChild(out);
-        });
+          swapBox.appendChild(choices);
+          swapBox.appendChild(out);
+        }
         const start = h('button', { class: 'btn btn--primary', type: 'button' }, '我知道了，開始練習');
         start.addEventListener('click', () => { stage = 'build'; renderStage(); });
         container.appendChild(row);
@@ -202,19 +242,22 @@ export function buildPhraseBuilderActivity(lesson, onBack) {
         let showAsks = guided;
         let hidden = new Set();
         const answerRow = h('div', { class: 'phrase-answer', 'aria-label': '你的短語' });
-        const askBox = h('ol', { class: 'phrase-asks' });
+        const askBox = h('div', { class: 'quiz-option-row phrase-asks' });
         const bankRow = h('div', { class: 'phrase-bank', role: 'group', 'aria-label': '積木' });
         const feedback = h('div', { class: 'phrase-feedback', role: 'status', 'aria-live': 'polite' });
 
+        // 一次只問一個問題（工作記憶負荷低）：只顯示「現在這一格」的引導問題，放滿了就不顯示
         function drawAsks() {
           clear(askBox);
-          const asks = spec.slots.map((s, i) => ({ s, i })).filter(({ s }) => isFree(s) && s.ask);
-          askBox.hidden = !showAsks || !asks.length;
           const now = firstEmpty();
-          asks.forEach(({ s, i }) => askBox.appendChild(h('li', { class: `phrase-asks__item${i === now ? ' phrase-asks__item--now' : ''}` }, [
-            h('span', {}, `${s.ask}（「${s.label}」）`),
-            SpeakButton({ text: s.ask, label: '聽', variant: 'speak-button--option' }),
-          ])));
+          const slot = now >= 0 ? spec.slots[now] : null;
+          askBox.hidden = !showAsks || !slot?.ask;
+          if (askBox.hidden) return;
+          askBox.appendChild(h('p', { class: 'phrase-ask-now' }, [
+            h('span', { class: 'phrase-ask-now__tag' }, '現在想'),
+            h('span', {}, `${slot.ask}（放進「${slot.label}」）`),
+          ]));
+          askBox.appendChild(SpeakButton({ text: slot.ask, label: '聽', variant: 'speak-button--option' }));
         }
         function drawAnswer() {
           clear(answerRow);
@@ -254,7 +297,27 @@ export function buildPhraseBuilderActivity(lesson, onBack) {
             bankRow.appendChild(b);
           });
         }
-        function redraw() { drawAnswer(); drawAsks(); drawBank(); clear(feedback); }
+        // 策略自我檢核（三步驟）：① 不變的照抄 ② 換上同一類的詞 ③ 念念看通不通
+        let readAloud = false;
+        const stepsBox = h('ol', { class: 'phrase-steps', 'aria-label': '照樣造短語三步驟' });
+        function drawSteps() {
+          clear(stepsBox);
+          const filled = firstEmpty() < 0;
+          const items = [
+            [spec.slots.some((x) => x.fixed) ? '不變的字照抄（虛線框已經放好）' : '看清楚有幾格', true],
+            ['每一格換上同一類的詞', filled],
+            ['念念看，通不通？', filled && readAloud],
+          ];
+          items.forEach(([text, done]) => stepsBox.appendChild(h('li', { class: `phrase-steps__item${done ? ' phrase-steps__item--done' : ''}` }, `${done ? '✓ ' : ''}${text}`)));
+        }
+        const sayIt = h('button', { class: 'btn btn--secondary', type: 'button' }, '念念看');
+        sayIt.addEventListener('click', () => {
+          const full = spec.slots.map((x, i) => (x.copy_of !== undefined ? picked[x.copy_of] : picked[i]) || '').join('');
+          if (firstEmpty() >= 0) { say('先把格子放滿，再念念看。', 'phrase-feedback--info'); return; }
+          speak(full); readAloud = true; drawSteps();
+          say(`聽聽看：「${full}」。通順嗎？覺得可以就按「檢查」。`, 'phrase-feedback--info');
+        });
+        function redraw() { readAloud = false; drawAnswer(); drawAsks(); drawBank(); drawSteps(); clear(feedback); }
 
         const check = h('button', { class: 'btn btn--primary', type: 'button' }, '檢查');
         const reset = h('button', { class: 'btn', type: 'button' }, '重新開始');
@@ -276,14 +339,18 @@ export function buildPhraseBuilderActivity(lesson, onBack) {
               ? `✓ 很好！「${phrase}」這樣說很合理。`
               : `✓ 「${phrase}」也說得通！圖片裡的是「${round.answer.join('')}」，這樣說也可以。`, 'phrase-feedback--right');
             speak(`很好！${phrase}`);
-            [check, reset, hintBtn].forEach((b) => { b.hidden = true; b.disabled = true; });
+            [sayIt, check, reset, hintBtn].forEach((b) => { b.hidden = true; b.disabled = true; });
             const go = h('button', { class: 'btn btn--primary', type: 'button' }, '下一步');
             go.addEventListener('click', () => { stage = 'check'; renderStage(); });
             feedback.appendChild(h('div', { class: 'quiz-option-row' }, [go]));
             return;
           }
           if (r.kind === 'semantic') say(r.feedback, 'phrase-feedback--try');
-          else { showLabels = true; drawAnswer(); say(`看看例子：${spec.explain}`, 'phrase-feedback--try'); }
+          else {
+            showLabels = true; drawAnswer();
+            say(`位置放錯了。對照課本的例子：${spec.explain}`, 'phrase-feedback--try');
+            feedback.appendChild(chunkRow(spec.example.chunks, spec.slots));
+          }
         });
 
         hintBtn.addEventListener('click', () => {
@@ -314,11 +381,66 @@ export function buildPhraseBuilderActivity(lesson, onBack) {
         });
 
         redraw();
-        container.appendChild(answerRow);
+        container.appendChild(stepsBox);
         container.appendChild(askBox);
+        container.appendChild(answerRow);
         container.appendChild(bankRow);
-        container.appendChild(h('div', { class: 'quiz-option-row phrase-actions' }, [check, reset, hintBtn]));
+        container.appendChild(h('div', { class: 'quiz-option-row phrase-actions' }, [sayIt, check, reset, hintBtn]));
         container.appendChild(feedback);
+        return;
+      }
+
+      if (stage === 'create') {
+        // ④ 自己造一個：沒有圖、沒有標準答案，用學過的方法自己組一個說得通的新短語（遷移，不計分）
+        container.appendChild(stageBar(3));
+        container.appendChild(TaskBanner({ label: '自己造一個：用同樣的方法，組一個你自己的短語' }));
+        container.appendChild(sayRow('不變的照抄，可以換的格子換上你想到的詞，念念看通不通。'));
+        const picked = spec.slots.map((x) => x.fixed || null);
+        const sync = () => spec.slots.forEach((x, i) => { if (x.copy_of !== undefined) picked[i] = picked[x.copy_of]; });
+        const firstEmpty = () => picked.findIndex((p, i) => !p && isFree(spec.slots[i]));
+        const answerRow = h('div', { class: 'phrase-answer' });
+        const bankRow = h('div', { class: 'phrase-bank', role: 'group', 'aria-label': '積木' });
+        const fb = h('div', { class: 'phrase-feedback', role: 'status', 'aria-live': 'polite' });
+        const draw = () => {
+          clear(answerRow); clear(bankRow); clear(fb);
+          spec.slots.forEach((slot, i) => {
+            if (!isFree(slot)) { answerRow.appendChild(h('span', { class: 'phrase-slot phrase-slot--fixed' }, [h('span', { class: 'phrase-slot__text' }, picked[i] || '＿')])); return; }
+            const b = h('button', { class: `phrase-slot phrase-slot--${slot.role}${picked[i] ? ' phrase-slot--filled' : ''}`, type: 'button' }, [
+              h('span', { class: 'phrase-chunk__label' }, slot.label), h('span', { class: 'phrase-slot__text' }, picked[i] || '＿＿'),
+            ]);
+            b.addEventListener('click', () => { if (picked[i]) { picked[i] = null; sync(); draw(); } });
+            answerRow.appendChild(b);
+          });
+          spec.bank.forEach((c) => {
+            const used = spec.slots.some((x, i) => isFree(x) && picked[i] === c.text);
+            const b = h('button', { class: `phrase-tile${used ? ' phrase-tile--used' : ''}`, type: 'button', disabled: used ? 'disabled' : null }, c.text);
+            b.addEventListener('click', () => { const at = firstEmpty(); if (at < 0) return; picked[at] = c.text; sync(); draw(); });
+            bankRow.appendChild(b);
+          });
+        };
+        const check = h('button', { class: 'btn btn--primary', type: 'button' }, '檢查');
+        check.addEventListener('click', () => {
+          const r = judgePhrase(spec, { answer: [] }, picked);
+          clear(fb);
+          if (r.kind === 'incomplete') { fb.appendChild(sayRow('還有空格，先把格子放滿。', 'phrase-feedback--info')); return; }
+          if (r.kind === 'ok-other' || r.kind === 'fit') {
+            const phrase = picked.join('');
+            fb.appendChild(sayRow(`✓ 你自己造出「${phrase}」！這就是照樣造短語。`, 'phrase-feedback--right'));
+            speak(phrase);
+            check.hidden = true; check.disabled = true;
+            const go = h('button', { class: 'btn btn--primary', type: 'button' }, '下一步');
+            go.addEventListener('click', finishRound);
+            fb.appendChild(h('div', { class: 'quiz-option-row' }, [go]));
+          } else if (r.kind === 'semantic') fb.appendChild(sayRow(r.feedback, 'phrase-feedback--try'));
+          else { fb.appendChild(sayRow(`位置放錯了。對照課本的例子：${spec.explain}`, 'phrase-feedback--try')); fb.appendChild(chunkRow(spec.example.chunks, spec.slots)); }
+        });
+        const skip = h('button', { class: 'btn btn--ghost', type: 'button' }, '先跳過');
+        skip.addEventListener('click', finishRound);
+        draw();
+        container.appendChild(answerRow);
+        container.appendChild(bankRow);
+        container.appendChild(h('div', { class: 'quiz-option-row phrase-actions' }, [check, skip]));
+        container.appendChild(fb);
         return;
       }
 

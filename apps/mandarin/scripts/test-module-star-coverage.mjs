@@ -309,8 +309,12 @@ function drivePhraseBuilderIfPresent(container) {
   if (!check || !lesson.phrase_builders) return false;
   const sceneEl = container.find((n) => n.hasClass?.('phrase-scene'));
   const scene = sceneEl?.textContent.trim() || '';
+  const tiles = enabledButtons(container, (n) => n.hasClass('phrase-tile')).map((n) => n.textContent);
   for (const spec of lesson.phrase_builders) {
-    const round = spec.rounds.find((r) => scene.startsWith((r.scene || r.image?.alt || '').slice(0, 8)));
+    // 「自己造一個」沒有情境句：用 accepted 的第一組
+    const round = scene
+      ? spec.rounds.find((r) => scene.startsWith((r.scene || r.image?.alt || '').slice(0, 8)))
+      : (spec.bank.every((b) => tiles.includes(b.text)) ? { answer: spec.accepted[0] } : null);
     if (!round) continue;
     spec.slots.forEach((slot, i) => {
       if (slot.fixed || slot.copy_of !== undefined) return;
