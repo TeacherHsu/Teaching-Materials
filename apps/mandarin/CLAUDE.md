@@ -39,6 +39,8 @@ python3 -m pytest tools/dabutie/tests -q   # 有動到 tools/dabutie 時
 
 有改畫面的話，另外用 `npm run build:preview && npm run preview:draft` 開起來看一次。手機寬度（375px）下不可以出現橫向捲動。
 
+**已上線課次的優化、校對、維護流程**（鷹架規則、形似字與字形資料、派 Codex、密碼、完工檢查）見 [docs/optimization-workflow.md](docs/optimization-workflow.md)。
+
 ## 設計底線（CF 已確認，不要改回去）
 
 - 對象是國小中年級，包含 ADHD、閱讀困難、學障的學生：
@@ -53,3 +55,8 @@ python3 -m pytest tools/dabutie/tests -q   # 有動到 tools/dabutie 時
 - 圖片是加分項目：缺圖不能壞版，檔名由資料明確指定，不猜檔名。
 - 語詞來源：翰林版的目標語詞從大補帖「05 形音輕鬆學」的語詞解釋抽取；06 字義分析的造詞不算目標語詞。
 - 一字多義、一字多音、形似字是三個獨立大項。
+- 提示三層、每一層都可主動取用，提示不可洩漏答案；選項數跟著鷹架層（2／3／4）。（2026-10-03）
+- 形似字與字感訓練的選項只用官方核對過的同組形似字，沒有形似字就不出題。（2026-10-04）
+- 大項圖示用該大項主題色、不用黑線。（2026-10-04）
+- 教室密碼不得出現在任何 repo 檔案中。（2026-10-04）
+- **產圖規格（CF 2026-10-06，所有新產的教材圖片一律遵守，不必等 CF 提醒）**：960×960 正方形 WebP、單張 ≤300 KiB、主體與線索完整容納在畫面內並留邊（不得靠 `cover` 裁切）；畫面用正方形圖框 `object-fit: contain`；資料標 `layout: square-native`。白底、低彩度、一圖一重點、無文字。生圖用 Codex（`tools/gen_phrase_images.py` 的流程：生 1024 正方形 → 轉 960 WebP → 超過 300 KiB 自動降品質），產完自己做縮圖總覽抽查再交付。
