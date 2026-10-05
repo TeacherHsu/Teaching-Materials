@@ -1739,17 +1739,13 @@
         [
           "美麗的",
           "花朵"
+        ],
+        [
+          "七彩的",
+          "小鳥"
         ]
       ],
-      "semantic_rejects": [
-        {
-          "chunks": [
-            "七彩的",
-            "小鳥"
-          ],
-          "feedback": "順序對了。小鳥通常不會同時有七種顏色，這樣形容合適嗎？"
-        }
-      ],
+      "semantic_rejects": [],
       "rounds": [
         {
           "image": {
@@ -1943,6 +1939,204 @@
       ],
       "approved_by": "CF",
       "approved_at": "2026-10-05"
+    },
+    {
+      "id": "phrase-builder:115AG1H05:03",
+      "pattern_ref": "sentence-pattern:115AG1H05:03",
+      "status": "draft",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "official": {
+        "head": "桌子上有沒有棉花糖？",
+        "examples": [
+          "公園裡有沒有秋千？",
+          "教室裡有沒有電腦？",
+          "校門口有沒有導護老師？"
+        ],
+        "structure": null
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。CF 2026-10-05 第四輪指示：官方短語／短句只要適合生活情境就不跳過。 地點整塊當一個積木（含「上／裡」），不拆開。",
+      "slots": [
+        {
+          "role": "place",
+          "label": "什麼地方",
+          "ask": "圖裡是什麼地方？"
+        },
+        {
+          "fixed": "有沒有"
+        },
+        {
+          "role": "thing",
+          "label": "有沒有什麼東西",
+          "ask": "要問的東西是什麼？"
+        },
+        {
+          "fixed": "？"
+        }
+      ],
+      "explain": "第一格放地方，第三格放要問的東西，「有沒有」和「？」不用換。",
+      "example": {
+        "chunks": [
+          "桌子上",
+          "有沒有",
+          "棉花糖",
+          "？"
+        ]
+      },
+      "bank": [
+        {
+          "text": "桌子上",
+          "role": "place"
+        },
+        {
+          "text": "公園裡",
+          "role": "place"
+        },
+        {
+          "text": "教室裡",
+          "role": "place"
+        },
+        {
+          "text": "棉花糖",
+          "role": "thing"
+        },
+        {
+          "text": "秋千",
+          "role": "thing"
+        },
+        {
+          "text": "電腦",
+          "role": "thing"
+        }
+      ],
+      "accepted": [
+        [
+          "桌子上",
+          "有沒有",
+          "棉花糖",
+          "？"
+        ],
+        [
+          "桌子上",
+          "有沒有",
+          "電腦",
+          "？"
+        ],
+        [
+          "公園裡",
+          "有沒有",
+          "棉花糖",
+          "？"
+        ],
+        [
+          "公園裡",
+          "有沒有",
+          "秋千",
+          "？"
+        ],
+        [
+          "教室裡",
+          "有沒有",
+          "棉花糖",
+          "？"
+        ],
+        [
+          "教室裡",
+          "有沒有",
+          "電腦",
+          "？"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "桌子上",
+            "有沒有",
+            "秋千",
+            "？"
+          ],
+          "feedback": "順序對了。秋千又大又重，會放在桌子上嗎？"
+        },
+        {
+          "chunks": [
+            "公園裡",
+            "有沒有",
+            "電腦",
+            "？"
+          ],
+          "feedback": "順序對了。公園是戶外的地方，會有電腦嗎？"
+        },
+        {
+          "chunks": [
+            "教室裡",
+            "有沒有",
+            "秋千",
+            "？"
+          ],
+          "feedback": "順序對了。教室裡的空間擺得下一個秋千嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H05-table-candy.webp",
+            "alt": "桌上放著一包棉花糖",
+            "prompt": "a bag of cotton candy sitting on a table at home"
+          },
+          "image_hint": "看圖：桌上有什麼？",
+          "answer": [
+            "桌子上",
+            "有沒有",
+            "棉花糖",
+            "？"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "桌子上有沒有棉花糖？",
+                "correct": true,
+                "feedback": "對！媽媽在桌上放了棉花糖。"
+              },
+              {
+                "text": "桌子上有沒有秋千？",
+                "correct": false,
+                "feedback": "秋千那麼大，不會放在桌子上。"
+              }
+            ]
+          },
+          "scene": "媽媽在桌上放了一包棉花糖，妹妹想知道桌上到底有沒有。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H05-park-swing.webp",
+            "alt": "公園裡有一座鞦韆",
+            "prompt": "a swing set in a park, outdoors"
+          },
+          "image_hint": "看圖：這是什麼地方？這裡有什麼？",
+          "answer": [
+            "公園裡",
+            "有沒有",
+            "秋千",
+            "？"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "公園裡有沒有秋千？",
+                "correct": true,
+                "feedback": "對！公園裡有鞦韆可以玩。"
+              },
+              {
+                "text": "教室裡有沒有秋千？",
+                "correct": false,
+                "feedback": "教室裡放不下一個秋千，圖片裡是公園。"
+              }
+            ]
+          },
+          "scene": "哥哥想去公園玩，問爸爸公園裡有沒有秋千。"
+        }
+      ]
     }
   ]
 }

@@ -1837,6 +1837,579 @@
       ],
       "approved_by": "CF",
       "approved_at": "2026-10-05"
+    },
+    {
+      "id": "phrase-builder:115AG1H04:02",
+      "pattern_ref": "sentence-pattern:115AG1H04:02",
+      "status": "draft",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "official": {
+        "head": "天有多大？",
+        "examples": [
+          "姐姐有多高？",
+          "螞蟻有多小？",
+          "這條路有多長？"
+        ],
+        "structure": "名詞（人或物）＋有多＋形容詞（怎麼樣）？"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。CF 2026-10-05 第四輪指示：官方短語／短句只要適合生活情境就不跳過。",
+      "slots": [
+        {
+          "role": "noun",
+          "label": "誰或什麼",
+          "ask": "圖裡的是什麼？"
+        },
+        {
+          "fixed": "有多"
+        },
+        {
+          "role": "adj",
+          "label": "哪一種樣子",
+          "ask": "它給你的感覺是大、高，還是長？"
+        },
+        {
+          "fixed": "？"
+        }
+      ],
+      "explain": "前面放東西，後面放形容它的詞，中間的「有多」和最後的「？」不用換。",
+      "example": {
+        "chunks": [
+          "天",
+          "有多",
+          "大",
+          "？"
+        ]
+      },
+      "bank": [
+        {
+          "text": "天",
+          "role": "noun"
+        },
+        {
+          "text": "姐姐",
+          "role": "noun"
+        },
+        {
+          "text": "這條路",
+          "role": "noun"
+        },
+        {
+          "text": "大",
+          "role": "adj"
+        },
+        {
+          "text": "高",
+          "role": "adj"
+        },
+        {
+          "text": "長",
+          "role": "adj"
+        }
+      ],
+      "accepted": [
+        [
+          "天",
+          "有多",
+          "大",
+          "？"
+        ],
+        [
+          "天",
+          "有多",
+          "高",
+          "？"
+        ],
+        [
+          "姐姐",
+          "有多",
+          "大",
+          "？"
+        ],
+        [
+          "姐姐",
+          "有多",
+          "高",
+          "？"
+        ],
+        [
+          "這條路",
+          "有多",
+          "長",
+          "？"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "天",
+            "有多",
+            "長",
+            "？"
+          ],
+          "feedback": "順序對了。天是說它大不大、高不高，會問『天有多長？』嗎？"
+        },
+        {
+          "chunks": [
+            "姐姐",
+            "有多",
+            "長",
+            "？"
+          ],
+          "feedback": "順序對了。人通常說『高』不說『長』，會問『姐姐有多長？』嗎？"
+        },
+        {
+          "chunks": [
+            "這條路",
+            "有多",
+            "大",
+            "？"
+          ],
+          "feedback": "順序對了。路通常說長短或寬窄，會問『這條路有多大？』嗎？"
+        },
+        {
+          "chunks": [
+            "這條路",
+            "有多",
+            "高",
+            "？"
+          ],
+          "feedback": "順序對了。路是平的，會問『這條路有多高？』嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H04-sky.webp",
+            "alt": "一大片藍天，小朋友躺在草地上看著天空",
+            "prompt": "a child lying on grass looking up at a vast blue sky"
+          },
+          "image_hint": "看圖：天空給你的感覺是大、是高，還是長？",
+          "answer": [
+            "天",
+            "有多",
+            "大",
+            "？"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "天有多大？",
+                "correct": true,
+                "feedback": "對！天空讓人覺得好大。"
+              },
+              {
+                "text": "天有多長？",
+                "correct": false,
+                "feedback": "天不是用『長』來形容的，會這樣問嗎？"
+              }
+            ]
+          },
+          "scene": "小朋友躺在草地上看著天空，覺得天空好大好大。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H04-sister.webp",
+            "alt": "妹妹抬頭看著站得很高的姐姐",
+            "prompt": "a little sister looking up at her tall older sister standing beside her"
+          },
+          "image_hint": "看圖：妹妹想知道姐姐的什麼？",
+          "answer": [
+            "姐姐",
+            "有多",
+            "高",
+            "？"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "姐姐有多高？",
+                "correct": true,
+                "feedback": "對！妹妹想知道姐姐有多高。"
+              },
+              {
+                "text": "姐姐有多長？",
+                "correct": false,
+                "feedback": "說人的時候通常說『高』，會說『姐姐有多長？』嗎？"
+              }
+            ]
+          },
+          "scene": "妹妹抬頭看著姐姐，很好奇姐姐到底有多高。"
+        }
+      ]
+    },
+    {
+      "id": "phrase-builder:115AG1H04:03",
+      "pattern_ref": "sentence-pattern:115AG1H04:03",
+      "status": "draft",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "official": {
+        "head": "小水珠跑哪去？",
+        "examples": [
+          "鉛筆盒放哪去？",
+          "小偷往哪去？",
+          "球丟哪去？"
+        ],
+        "structure": "名詞（人或物）＋動詞（什麼動作）＋哪去？"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。CF 2026-10-05 第四輪指示：官方短語／短句只要適合生活情境就不跳過。",
+      "slots": [
+        {
+          "role": "noun",
+          "label": "什麼東西",
+          "ask": "圖裡不見了的是什麼？"
+        },
+        {
+          "role": "verb",
+          "label": "怎麼不見的",
+          "ask": "它是怎麼不見的？"
+        },
+        {
+          "fixed": "哪去？"
+        }
+      ],
+      "explain": "前面放東西，後面放動作，最後「哪去？」不用換。",
+      "example": {
+        "chunks": [
+          "小水珠",
+          "跑",
+          "哪去？"
+        ]
+      },
+      "bank": [
+        {
+          "text": "小水珠",
+          "role": "noun"
+        },
+        {
+          "text": "鉛筆盒",
+          "role": "noun"
+        },
+        {
+          "text": "球",
+          "role": "noun"
+        },
+        {
+          "text": "跑",
+          "role": "verb"
+        },
+        {
+          "text": "放",
+          "role": "verb"
+        },
+        {
+          "text": "丟",
+          "role": "verb"
+        }
+      ],
+      "accepted": [
+        [
+          "小水珠",
+          "跑",
+          "哪去？"
+        ],
+        [
+          "鉛筆盒",
+          "跑",
+          "哪去？"
+        ],
+        [
+          "鉛筆盒",
+          "放",
+          "哪去？"
+        ],
+        [
+          "鉛筆盒",
+          "丟",
+          "哪去？"
+        ],
+        [
+          "球",
+          "跑",
+          "哪去？"
+        ],
+        [
+          "球",
+          "放",
+          "哪去？"
+        ],
+        [
+          "球",
+          "丟",
+          "哪去？"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "小水珠",
+            "放",
+            "哪去？"
+          ],
+          "feedback": "順序對了。水珠那麼小，又會自己流動，有人會特別把它『放』在哪裡嗎？"
+        },
+        {
+          "chunks": [
+            "小水珠",
+            "丟",
+            "哪去？"
+          ],
+          "feedback": "順序對了。水珠不是拿在手上的東西，會把它『丟』出去嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H04-waterdrop.webp",
+            "alt": "葉子上的小水珠滑落不見了",
+            "prompt": "a small water droplet sliding off a leaf and disappearing"
+          },
+          "image_hint": "看圖：葉子上的水珠怎麼不見了？",
+          "answer": [
+            "小水珠",
+            "跑",
+            "哪去？"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "小水珠跑哪去？",
+                "correct": true,
+                "feedback": "對！水珠一下子就不見了，好像自己跑走了。"
+              },
+              {
+                "text": "小水珠丟哪去？",
+                "correct": false,
+                "feedback": "水珠不是被人拿去丟的，不會說『丟哪去』。"
+              }
+            ]
+          },
+          "scene": "下雨後，葉子上的小水珠一下子就不見了，到底跑去哪裡了呢？"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H04-pencilcase.webp",
+            "alt": "小朋友翻找書包，找不到鉛筆盒",
+            "prompt": "a child searching a school bag, unable to find a pencil case"
+          },
+          "image_hint": "看圖：小朋友在找什麼東西？",
+          "answer": [
+            "鉛筆盒",
+            "放",
+            "哪去？"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "鉛筆盒放哪去？",
+                "correct": true,
+                "feedback": "對！他要寫作業，卻找不到鉛筆盒放在哪裡。"
+              },
+              {
+                "text": "小水珠放哪去？",
+                "correct": false,
+                "feedback": "圖片裡找的是鉛筆盒，不是水珠。"
+              }
+            ]
+          },
+          "scene": "小朋友要寫作業，找不到鉛筆盒，到底放去哪裡了？"
+        }
+      ]
+    },
+    {
+      "id": "phrase-builder:115AG1H04:04",
+      "pattern_ref": "sentence-pattern:115AG1H04:04",
+      "status": "draft",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "official": {
+        "head": "小草，請問你，天有多大？",
+        "examples": [
+          "哥哥，請問你，這個字怎麼念？",
+          "小光，請問你可以借我鉛筆嗎？",
+          "警衛伯伯，請問您，有人撿到我的便當袋嗎？"
+        ],
+        "structure": null
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。CF 2026-10-05 第四輪指示：官方短語／短句只要適合生活情境就不跳過。 「，請問你，」與句末「？」固定不換；稱呼與問題內容依生活情境可換。",
+      "slots": [
+        {
+          "role": "addressee",
+          "label": "問誰",
+          "ask": "圖裡要問的是誰？"
+        },
+        {
+          "fixed": "，請問你，"
+        },
+        {
+          "role": "question",
+          "label": "問什麼",
+          "ask": "要問的問題是什麼？"
+        },
+        {
+          "fixed": "？"
+        }
+      ],
+      "explain": "第一格放要問的人（或物），第三格放想問的問題，「，請問你，」和句末「？」都不用換。",
+      "example": {
+        "chunks": [
+          "小草",
+          "，請問你，",
+          "天有多大",
+          "？"
+        ]
+      },
+      "bank": [
+        {
+          "text": "小草",
+          "role": "addressee"
+        },
+        {
+          "text": "哥哥",
+          "role": "addressee"
+        },
+        {
+          "text": "小光",
+          "role": "addressee"
+        },
+        {
+          "text": "天有多大",
+          "role": "question"
+        },
+        {
+          "text": "這個字怎麼念",
+          "role": "question"
+        },
+        {
+          "text": "可以借我鉛筆嗎",
+          "role": "question"
+        }
+      ],
+      "accepted": [
+        [
+          "小草",
+          "，請問你，",
+          "天有多大",
+          "？"
+        ],
+        [
+          "小草",
+          "，請問你，",
+          "這個字怎麼念",
+          "？"
+        ],
+        [
+          "哥哥",
+          "，請問你，",
+          "天有多大",
+          "？"
+        ],
+        [
+          "哥哥",
+          "，請問你，",
+          "這個字怎麼念",
+          "？"
+        ],
+        [
+          "哥哥",
+          "，請問你，",
+          "可以借我鉛筆嗎",
+          "？"
+        ],
+        [
+          "小光",
+          "，請問你，",
+          "天有多大",
+          "？"
+        ],
+        [
+          "小光",
+          "，請問你，",
+          "這個字怎麼念",
+          "？"
+        ],
+        [
+          "小光",
+          "，請問你，",
+          "可以借我鉛筆嗎",
+          "？"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "小草",
+            "，請問你，",
+            "可以借我鉛筆嗎",
+            "？"
+          ],
+          "feedback": "順序對了。小草又沒有鉛筆，可以跟它借嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H04-ask-grass.webp",
+            "alt": "小朋友坐在草地上，好奇地看著天空和小草",
+            "prompt": "a child sitting on grass, curiously looking up at the sky, speaking to the grass"
+          },
+          "image_hint": "看圖：小朋友坐在哪裡，好奇地想問什麼？",
+          "answer": [
+            "小草",
+            "，請問你，",
+            "天有多大",
+            "？"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "小草，請問你，天有多大？",
+                "correct": true,
+                "feedback": "對！小朋友好奇地問小草，天到底有多大。"
+              },
+              {
+                "text": "小草，請問你，可以借我鉛筆嗎？",
+                "correct": false,
+                "feedback": "小草沒有鉛筆，不會被問這個問題。"
+              }
+            ]
+          },
+          "scene": "小朋友坐在草地上，好奇地問小草，天到底有多大。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H04-ask-brother.webp",
+            "alt": "妹妹指著課本上的字，問哥哥怎麼念",
+            "prompt": "a little girl pointing at a word in a book, asking her older brother how to read it"
+          },
+          "image_hint": "看圖：妹妹在問哥哥什麼？",
+          "answer": [
+            "哥哥",
+            "，請問你，",
+            "這個字怎麼念",
+            "？"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "哥哥，請問你，這個字怎麼念？",
+                "correct": true,
+                "feedback": "對！妹妹禮貌地問哥哥這個字怎麼念。"
+              },
+              {
+                "text": "小草，請問你，可以借我鉛筆嗎？",
+                "correct": false,
+                "feedback": "圖片裡問的是哥哥，不是小草。"
+              }
+            ]
+          },
+          "scene": "妹妹看到一個不認識的字，禮貌地問哥哥這個字怎麼念。"
+        }
+      ]
     }
   ]
 }

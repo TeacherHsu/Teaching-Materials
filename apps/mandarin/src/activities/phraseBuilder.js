@@ -266,12 +266,15 @@ export function buildPhraseBuilderActivity(lesson, onBack) {
           const r = judgePhrase(spec, round, picked);
           if (r.kind === 'incomplete') { say('還有空格，先把格子放滿。', 'phrase-feedback--info'); return; }
           attempts += 1;
-          if (r.kind === 'fit') {
+          // CF 2026-10-05：只要語境合理、結構正確就給過（不一定要和圖片一模一樣）
+          if (r.kind === 'fit' || r.kind === 'ok-other') {
             const firstTry = attempts === 1 && !hintUsed;
             total += 1; if (firstTry) correct += 1;
             recordOutcome({ firstTry, revealed: false, skill: 'phrase:pattern' });
             const phrase = picked.join('');
-            say(`✓ 很好！「${phrase}」這樣說很合理。`, 'phrase-feedback--right');
+            say(r.kind === 'fit'
+              ? `✓ 很好！「${phrase}」這樣說很合理。`
+              : `✓ 「${phrase}」也說得通！圖片裡的是「${round.answer.join('')}」，這樣說也可以。`, 'phrase-feedback--right');
             speak(`很好！${phrase}`);
             [check, reset, hintBtn].forEach((b) => { b.hidden = true; b.disabled = true; });
             const go = h('button', { class: 'btn btn--primary', type: 'button' }, '下一步');
@@ -279,8 +282,7 @@ export function buildPhraseBuilderActivity(lesson, onBack) {
             feedback.appendChild(h('div', { class: 'quiz-option-row' }, [go]));
             return;
           }
-          if (r.kind === 'ok-other') say('這樣說也通順，但和圖片的意思不一樣。再看一次圖片。', 'phrase-feedback--try');
-          else if (r.kind === 'semantic') say(r.feedback, 'phrase-feedback--try');
+          if (r.kind === 'semantic') say(r.feedback, 'phrase-feedback--try');
           else { showLabels = true; drawAnswer(); say(`看看例子：${spec.explain}`, 'phrase-feedback--try'); }
         });
 
