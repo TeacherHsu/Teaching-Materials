@@ -116,6 +116,21 @@ export function CreditsPage() {
     section('外部連結', [
       p('雄老師（筆順練習、部件拼字、HTML5 FUN）、教育部《異體字字典》《成語典》、教育雲「教育百科」、中華語文知識庫「漢字說故事」、Wordwall、YouTube 等資源皆以另開新視窗連結，不嵌入本站；內容著作權屬各原網站。'),
     ]),
+    // CF 2026-10-06：感謝靈感來源（連結去掉追蹤參數）
+    section('感謝靈感來源', [
+      p('本站許多設計受到以下老師與社群的啟發，謹此致謝：'),
+      h('ul', {}, [
+        ['花蓮胡志翔老師', 'https://xiulin-mandarin-2026.web.app/'],
+        ['雄老師', 'https://gsyan888.github.io/html5_fun/'],
+        ['米克師', 'https://spedmix.pages.dev/'],
+        ['特工365', 'https://www.facebook.com/share/1CFCnVnori/'],
+        ['特教老師的好點子', 'https://www.facebook.com/share/1CSoxLQ7Yg/'],
+        ['特殊教育多媒體教材交流社團', 'https://facebook.com/groups/1494494560599892/'],
+      ].map(([name, url]) => h('li', {}, [
+        h('a', { href: url, target: '_blank', rel: 'noopener noreferrer' }, name),
+        h('span', { class: 'visually-hidden' }, '（另開新視窗）'),
+      ]))),
+    ]),
     section('隱私', [
       p('本站不需帳號、不收集姓名。作答紀錄只存在使用的載具上；學生代碼由老師自訂。老師若自行設定同步到 Google 試算表，資料會送到該老師自己的試算表。'),
     ]),
