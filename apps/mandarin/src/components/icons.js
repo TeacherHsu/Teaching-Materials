@@ -6,6 +6,10 @@ const wrap = (paths) =>
   `<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
 
 export const MODULE_ICONS = {
+  // 照樣造短語：兩塊詞塊接在一起
+  phrase_builder: wrap(
+    '<rect x="2.5" y="8" width="9" height="8" rx="1.5"/><rect x="12.5" y="8" width="9" height="8" rx="1.5"/><path d="M5.5 12h3M15.5 12h3"/>',
+  ),
   // 認識生字：放大鏡＋字形方框
   characters: wrap(
     '<rect x="3" y="3" width="9" height="9" rx="1.5"/><path d="M6.5 6.5h2M6.5 9h2"/><circle cx="16.5" cy="16.5" r="4.5"/><path d="M19.8 19.8L22 22"/>',

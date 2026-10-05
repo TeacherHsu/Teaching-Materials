@@ -93,6 +93,8 @@ function filterLesson(lesson) {
 
   l.reading_questions = (l.reading_questions || []).filter((q) => isPublic(q.status));
   l.rhetoric = (l.rhetoric || []).filter((r) => isPublic(r.status));
+  // 照樣造短語：詞塊拆分與語意判定是本站編寫，教師核准前不進正式站（2026-10-05）
+  l.phrase_builders = (l.phrase_builders || []).filter((p) => isPublic(p.status));
   l.listening = (l.listening || []).filter((item) => isPublic(item.status));
   l.polysemy = (l.polysemy || []).filter((p) => isPublic(p.status));
   l.extensions = (l.extensions || []).filter((e) => isPublic(e.status));

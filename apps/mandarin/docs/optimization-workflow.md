@@ -167,3 +167,11 @@ npm run build && npm run check-dist
   - 圖片旁已有同樣文字時 alt 留空。
 - **版面驗收尺寸**：375×812、768×1024、1024×768、1280×720、上課模式；不得有橫向捲動。
 - **不做**：不加後端／帳號、不加第四級提示或組別、不加無教學目的動畫、不另做第二套圖示。教師／學生雙模式列為下一階段（先觀察兩週）。
+
+## 2026-10-05 基本練習、照樣造短語、課文點讀字級
+
+- **基本練習區**：課程首頁核心之後、不收合；順序＝念讀字詞 → 照樣造短語（`BASIC_MODULES`）。沒有已核准短語的課，學生畫面不顯示照樣造短語卡。
+- **照樣造短語資料**（`lesson.phrase_builders[]`）：`pattern_ref` 必須指向官方 `sentence_patterns`，`example.chunks` 拼起來必須等於課本短語；`slots`（role＋學生看得懂的 label）、`bank`、`accepted`、`semantic_rejects`（附回饋）、`rounds`（圖片、`image_hint`、`answer`、`check` 小確認題）。結構正確的每一種組合都要有判定（`test-phrase-builder.mjs` 檢查）。
+- **編寫內容一律 draft**：詞塊拆分、語意判定、圖片描述是本站編寫；`filter-build-data` 會擋掉 draft，教師確認後改 `approved` 才上線。確認清單放 `docs/review/`。
+- **不批次產生**：一課一課做、一課一課給老師確認；沒有官方短語的課不做。
+- **課文點讀字級**：三級「標準｜大字｜特大」＝1／1.25／1.5，基準 `clamp(30px, 2vw + 16px, 42px)`；舊設定 small／medium→標準。

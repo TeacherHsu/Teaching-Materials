@@ -346,7 +346,7 @@ function renderReader(lesson, reading) {
   }
 
   // 字級：學生的視力、閱讀距離、要不要投影差很多，現場直接調。
-  const fontGroup = segGroup('字體大小', READER_FONT_SCALES, getReaderFontKey(), (option) => {
+  const fontGroup = segGroup('文字大小', READER_FONT_SCALES, getReaderFontKey(), (option) => {
     setReaderFont(option.key);
     textBox.style.setProperty('--reader-font-scale', String(option.scale));
   });
@@ -401,7 +401,7 @@ function renderReader(lesson, reading) {
       speechSupported() ? readAll : null,
     ].filter(Boolean)),
     h('div', { class: 'lesson-toolbar lesson-toolbar--secondary' }, [
-      h('span', { class: 'lesson-toolbar__label' }, '字體'),
+      h('span', { class: 'lesson-toolbar__label' }, '文字大小'),
       fontGroup,
       speechSupported() ? h('span', { class: 'lesson-toolbar__label' }, '語速') : null,
       speechSupported() ? rateGroup : null,

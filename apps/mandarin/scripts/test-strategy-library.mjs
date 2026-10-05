@@ -6,7 +6,8 @@ const { STRATEGY_LIBRARY, MODULE_STRATEGY } = await import('../src/activities/st
 const { LibraryStrategy } = await import('../src/components/LibraryStrategy.js');
 const { MODULE_REGISTRY } = await import('../src/activities/moduleRegistry.js');
 
-const covered = new Set([...Object.keys(MODULE_STRATEGY), 'reading', 'characters', 'review']);
+// phrase_builder 的「看課本的例子＋拆詞塊」本身就是示範步驟（2026-10-05）
+const covered = new Set([...Object.keys(MODULE_STRATEGY), 'reading', 'characters', 'review', 'phrase_builder']);
 for (const m of MODULE_REGISTRY) assert.ok(covered.has(m.key), `${m.label}（${m.key}）還沒有學方法`);
 for (const [key, s] of Object.entries(STRATEGY_LIBRARY)) {
   assert.ok(s.title && s.goal, `${key} 要有標題和一句話方法`);

@@ -8,6 +8,7 @@ import { buildPronunciationItems } from './pronunciationQuestions.js';
 import { canStartMainIdea } from './mainIdea.js';
 import { canStartZhuyinTyping } from './zhuyinTyping.js';
 import { canStartWordReading } from './wordReading.js';
+import { canStartPhraseBuilder } from './phraseBuilder.js';
 import { canStartVisualSearch } from './visualSearch.js';
 
 const ROUND_MIN = 3;
@@ -193,6 +194,21 @@ export const MODULE_REGISTRY = [
     },
   },
   {
+    key: 'phrase_builder',
+    label: '照樣造短語',
+    icon: 'phrase_builder',
+    color: 'teal',
+    description: '看圖，照課本的例子組短語',
+    implemented: true,
+    // 這一課還沒建立任何短語資料：顯示「本課尚未建立」，不算進進度
+    missing(lesson) {
+      return !(lesson.phrase_builders || []).length;
+    },
+    ready(lesson) {
+      return canStartPhraseBuilder(lesson);
+    },
+  },
+  {
     key: 'polysemy',
     label: '一字多義',
     icon: 'polysemy',
@@ -290,6 +306,9 @@ export function getModuleStatus(lesson, entry) {
   }
   if (entry.key === 'rhetoric' && Number(lesson.volume?.grade) <= 2) {
     return { code: 'coming_soon', text: '本冊未安排' };
+  }
+  if (entry.missing?.(lesson)) {
+    return { code: 'coming_soon', text: '本課尚未建立' };
   }
   if (lesson.modules?.[entry.key]?.status === 'unavailable') {
     return { code: 'coming_soon', text: lesson.modules[entry.key].note || '目前無此資料' };

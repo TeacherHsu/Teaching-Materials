@@ -1,3 +1,4 @@
+import { isPreview } from '../utils/preview.js';
 import { setLastLesson } from '../utils/deviceSettings.js';
 import { withEntrySpeak } from '../components/EntrySpeak.js';
 import { h } from '../utils/dom.js';
@@ -29,6 +30,9 @@ const STATUS_BUTTON_LABEL = {
   available: '開始',
 };
 const CORE_MODULES = new Set(['characters', 'vocabulary', 'sentence_practice', 'reading']);
+// 基本練習（2026-10-05）：先練讀（念讀字詞）→ 再練短語（照樣造短語）。
+// 不收合、排在核心之後；照樣造短語還沒有教師確認的課，學生畫面不顯示這張卡（預覽模式才看得到）。
+const BASIC_MODULES = ['word_reading', 'phrase_builder'];
 
 export function LessonDashboard(lesson) {
   // 先在背景載入這冊的字形／部件資料：字感訓練、形似字、生字部首、筆順都會用到，
@@ -109,6 +113,7 @@ export function LessonDashboard(lesson) {
 
   const coreGrid = h('div', { class: 'module-grid' });
   const challengeGrid = h('div', { class: 'module-grid' });
+  const basicGrid = h('div', { class: 'module-grid' });
   let reviewCard = null;   // 「舊字新詞」卡片，錯題複習要插在它前面
   for (const entry of MODULE_REGISTRY) {
     const status = getModuleStatus(lesson, entry);
@@ -174,7 +179,9 @@ export function LessonDashboard(lesson) {
       card.appendChild(h('button', { class: 'btn module-card__cta', type: 'button', disabled: 'disabled' }, status.text));
     }
     card.setAttribute('data-module-key', entry.key);
-    (CORE_MODULES.has(entry.key) ? coreGrid : challengeGrid).appendChild(card);
+    if (BASIC_MODULES.includes(entry.key)) {
+      if (playable || isPreview()) basicGrid.appendChild(card);
+    } else (CORE_MODULES.has(entry.key) ? coreGrid : challengeGrid).appendChild(card);
     if (entry.key === 'review') reviewCard = card;
   }
   // 課文點讀放在所有大項之前：對閱讀困難的學生，先把課文聽過一遍再做練習
@@ -194,6 +201,18 @@ export function LessonDashboard(lesson) {
       // 螢幕閱讀器使用（section 仍以 aria-labelledby 指向它），只是視覺上隱藏。
       h('h2', { id: 'core-modules-heading', class: 'lesson-module-section__title visually-hidden' }, '本課先完成'),
       coreGrid,
+    ]));
+  }
+  if (basicGrid.childElementCount) {
+    // 照 BASIC_MODULES 的順序排（念讀在前）
+    const order = (el) => BASIC_MODULES.indexOf(el.getAttribute?.('data-module-key'));
+    [...basicGrid.children].sort((a, b) => order(a) - order(b)).forEach((el) => basicGrid.appendChild(el));
+    root.appendChild(h('section', { class: 'lesson-module-section lesson-basic', 'aria-labelledby': 'basic-modules-heading' }, [
+      h('div', { class: 'quiz-option-row' }, [
+        h('h2', { id: 'basic-modules-heading', class: 'lesson-basic__title' }, '基本練習：先練讀，再練短語'),
+        SpeakButton({ text: '基本練習：先練讀，再練短語', label: '聽', variant: 'speak-button--option' }),
+      ]),
+      basicGrid,
     ]));
   }
   // 錯題複習放在「加練挑戰」裡、舊字新詞之前（CF 2026-10-01 指定）：

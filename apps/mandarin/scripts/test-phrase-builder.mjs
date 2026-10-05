@@ -1,0 +1,41 @@
+// 照樣造短語：判定資料化、能分「結構錯」「意思怪」「合理但不是這張圖」「符合圖片」；
+// 每一課的資料都要能追溯到官方短語（pattern_ref）、每種結構正確的組合都有判定。
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { installFakeDom } from './fake-dom.mjs';
+installFakeDom();
+const { judgePhrase } = await import('../src/activities/phraseBuilder.js');
+
+const root = new URL('../public/data/', import.meta.url).pathname;
+let n = 0;
+for (const vol of fs.readdirSync(root).filter((d) => d.startsWith('115AG'))) {
+  for (const f of fs.readdirSync(path.join(root, vol)).filter((x) => /^lesson\d+\.json$/.test(x))) {
+    const lesson = JSON.parse(fs.readFileSync(path.join(root, vol, f), 'utf8'));
+    for (const spec of lesson.phrase_builders || []) {
+      n += 1;
+      const ref = (lesson.sentence_patterns || []).find((p) => p.id === spec.pattern_ref);
+      assert.ok(ref, `${spec.id} 要對應到官方短語（sentence_patterns）`);
+      assert.equal(spec.example.chunks.join(''), ref.head, `${spec.id} 示範必須是課本的短語`);
+      assert.ok(spec.source, `${spec.id} 要標來源`);
+      const byRole = spec.slots.map((s) => spec.bank.filter((b) => b.role === s.role).map((b) => b.text));
+      const combos = byRole.reduce((acc, list) => acc.flatMap((a) => list.map((x) => [...a, x])), [[]]);
+      for (const c of combos) {
+        const known = (spec.accepted || []).some((a) => a.join() === c.join()) || (spec.semantic_rejects || []).some((r) => r.chunks.join() === c.join());
+        assert.ok(known, `${spec.id}「${c.join('')}」沒有判定（要放進 accepted 或 semantic_rejects）`);
+      }
+      for (const r of spec.rounds) {
+        assert.ok((spec.accepted || []).some((a) => a.join() === r.answer.join()), `${spec.id} 每張圖的答案要在 accepted 裡`);
+        assert.equal(judgePhrase(spec, r, r.answer).kind, 'fit');
+        assert.equal(judgePhrase(spec, r, [...r.answer].reverse()).kind, 'structure');
+        assert.equal(judgePhrase(spec, r, [r.answer[0], null]).kind, 'incomplete');
+        if (r.check) assert.equal(r.check.options.filter((o) => o.correct).length, 1, `${spec.id} 小確認題只能有一個正解`);
+      }
+      const rej = spec.semantic_rejects[0];
+      assert.equal(judgePhrase(spec, spec.rounds[0], rej.chunks).kind, 'semantic');
+      assert.equal(judgePhrase(spec, spec.rounds[0], rej.chunks).feedback, rej.feedback);
+    }
+  }
+}
+assert.ok(n >= 1, '至少要有一課照樣造短語');
+console.log(`✅ 照樣造短語：${n} 個句型，判定與官方來源檢查通過`);

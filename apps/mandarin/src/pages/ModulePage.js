@@ -1,3 +1,4 @@
+import { buildPhraseBuilderActivity } from '../activities/phraseBuilder.js';
 import { LibraryStrategy } from '../components/LibraryStrategy.js';
 import { MODULE_STRATEGY } from '../activities/strategyLibrary.js';
 import { strategySeen, markStrategySeen, getScaffoldLevel } from '../utils/deviceSettings.js';
@@ -51,6 +52,7 @@ const ACTIVITY_BUILDERS = {
   review: buildReviewActivity,
   visual_search: buildVisualSearchActivity,
   word_reading: buildWordReadingActivity,
+  phrase_builder: buildPhraseBuilderActivity,
 };
 
 /** 可開始的大項清單，用來算「本課星星 N／最高 M」的分母（M = 這些大項數 × 3）。 */
@@ -68,6 +70,7 @@ const MODULE_SKILL = {
   zhuyin_typing: 'zhuyin', polysemy: 'polysemy', polyphones: 'polyphone', lookalikes: 'lookalike',
   listening: 'listening', rhetoric: 'rhetoric', review: 'review', visual_search: 'visual-search',
   word_reading: 'reading-aloud:word',
+  phrase_builder: 'phrase:pattern',
 };
 
 export function ModulePage(lesson, moduleKey) {

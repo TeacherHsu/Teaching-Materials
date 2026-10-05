@@ -2689,10 +2689,16 @@
 }
 @media (prefers-reduced-motion: reduce) { .toggle::before { transition: none; } }
 
-/* 課文字級可由現場調整（--reader-font-scale 由 ReaderPage 注入） */
+/* 課文字級可由現場調整（--reader-font-scale 由 ReaderPage 注入）。
+   2026-10-05 基準放大：手機 30px、平板約 31～37px、電腦／投影 42px 封頂（原本 26～34px）；
+   三級 1／1.25／1.5，特大在手機是 45px、投影 63px。行高 2.4 留給右側注音，字距略加寬。 */
 .lesson-text {
-  font-size: calc(clamp(26px, 2.6vw, 34px) * var(--reader-font-scale, 1));
+  font-size: calc(clamp(30px, 2vw + 16px, 42px) * var(--reader-font-scale, 1));
+  line-height: 2.4;
+  letter-spacing: 0.06em;
+  overflow-wrap: anywhere;
 }
+.lesson-text .lesson-text__para + .lesson-text__para { margin-top: 0.8em; }
 /* 第二列工具（字體、語速、注音）比主工具列低一階 */
 .lesson-toolbar--secondary {
   padding-bottom: 0;
@@ -3743,3 +3749,33 @@ html.present-mode .image-frame img { max-height: 42vh; }
 /* 答對時的學習線索 */
 .quiz-why { margin-top: var(--space-1); }
 .quiz-why__text { margin: 0; font-size: var(--font-size-body); color: var(--text-primary); }
+
+/* ── 基本練習區（2026-10-05）── */
+.lesson-basic { margin-top: var(--space-4); }
+.lesson-basic__title { font-size: var(--font-size-section); margin: 0; }
+
+/* ── 照樣造短語（2026-10-05）──────────────────────────
+   詞塊靠「位置＋邊框樣式＋標籤」辨認角色，顏色只是輔助：
+   描述（怎麼樣的）＝實線框，東西（什麼東西）＝雙線框。 */
+.phrase-image { max-width: 420px; margin: 0 auto var(--space-3); border-radius: var(--radius-md); }
+.phrase-image--small { max-width: 280px; }
+.phrase-image--focus { outline: 4px solid var(--color-highlight-line); outline-offset: 4px; }
+.phrase-caption, .phrase-demo__explain { margin: 0; font-size: var(--font-size-body); }
+.phrase-demo__head { margin: 0; font-size: var(--font-size-section); font-weight: 700; }
+.phrase-chunks, .phrase-answer { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-3) 0; }
+.phrase-chunk, .phrase-slot { display: inline-flex; flex-direction: column; align-items: center; gap: 2px; min-width: 5.5em; min-height: 64px; padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-md); background: var(--color-surface); font-size: var(--font-size-section); color: var(--text-primary); font-family: inherit; }
+.phrase-chunk--describe, .phrase-slot--describe { border: 3px solid var(--module-teal); background: var(--module-teal-tint); }
+.phrase-chunk--thing, .phrase-slot--thing { border: 4px double var(--module-blue); background: var(--module-blue-tint); }
+.phrase-chunk__label { font-size: var(--font-size-meta); color: var(--text-secondary); font-weight: 700; }
+.phrase-slot { cursor: pointer; }
+.phrase-slot:not(.phrase-slot--filled) .phrase-slot__text { color: var(--text-secondary); }
+.phrase-bank { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-2) 0 var(--space-3); }
+.phrase-tile { min-height: 56px; min-width: 4em; padding: 0 var(--space-3); border-radius: var(--radius-md); border: 2px solid var(--color-border);
+  background: var(--color-surface); font: inherit; font-size: var(--font-size-body); cursor: pointer; }
+.phrase-tile--used { opacity: 0.45; cursor: default; }
+.phrase-tile:focus-visible, .phrase-slot:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+.phrase-feedback__row p { margin: 0; font-size: var(--font-size-body); font-weight: 700; }
+.phrase-feedback--right p { color: var(--color-success, #1b7f3b); }
+.phrase-feedback--try p { color: var(--text-primary); }
+.phrase-feedback--try { background: var(--color-highlight-surface); border-radius: var(--radius-md); padding: var(--space-2) var(--space-3); }

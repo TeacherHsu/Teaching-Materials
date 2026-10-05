@@ -767,3 +767,8 @@
 ## 2026-10-04（UX／無障礙優化）
 - 完成：建議學習順序、繼續學習、上課投影模式、答對線索、axe 10 頁 0 違規。報告：`apps/mandarin/docs/review/2026-10-04-ux-a11y-audit.md`；規則已列入 `apps/mandarin/docs/optimization-workflow.md`。
 - 待辦：Lighthouse、VoiceOver 實機、200% 縮放細查；教師／學生雙模式觀察兩週後再決定；形似字深化（P2）未動。
+
+## 2026-10-05（基本練習／照樣造短語／點讀字級）
+- 新增基本練習區（念讀字詞＋照樣造短語）；照樣造短語完成二上 L09 一課（draft，待 CF 確認：`apps/mandarin/docs/review/2026-10-05-phrase-builder-115AG2H09-confirm.md`）。
+- 課文點讀字級改三級、基準放大。
+- 待辦：L09 確認後再逐課擴充（34 課有官方短語、21 課沒有）；短語圖片素材。

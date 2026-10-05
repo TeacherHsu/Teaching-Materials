@@ -1946,6 +1946,9 @@
       "label": "舊字新詞",
       "status": "available",
       "activity": "review"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
   "extensions": [
@@ -2329,6 +2332,175 @@
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "converted_to_choice": false
+    }
+  ],
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG2H09:01",
+      "pattern_ref": "sentence-pattern:115AG2H09:01",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
+      "official": {
+        "head": "淡淡的香氣",
+        "examples": [
+          "香香的麵包",
+          "硬硬的石頭"
+        ],
+        "structure": "疊字形容詞＋的＋名詞（什麼事物）"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認後改 status 為 approved。",
+      "slots": [
+        {
+          "role": "describe",
+          "label": "怎麼樣的"
+        },
+        {
+          "role": "thing",
+          "label": "什麼東西"
+        }
+      ],
+      "explain": "前面說「怎麼樣」，後面放「東西」。",
+      "example": {
+        "chunks": [
+          "淡淡的",
+          "香氣"
+        ]
+      },
+      "bank": [
+        {
+          "text": "香香的",
+          "role": "describe"
+        },
+        {
+          "text": "硬硬的",
+          "role": "describe"
+        },
+        {
+          "text": "淡淡的",
+          "role": "describe"
+        },
+        {
+          "text": "麵包",
+          "role": "thing"
+        },
+        {
+          "text": "石頭",
+          "role": "thing"
+        },
+        {
+          "text": "香氣",
+          "role": "thing"
+        }
+      ],
+      "accepted": [
+        [
+          "淡淡的",
+          "香氣"
+        ],
+        [
+          "香香的",
+          "麵包"
+        ],
+        [
+          "硬硬的",
+          "石頭"
+        ],
+        [
+          "硬硬的",
+          "麵包"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "香香的",
+            "石頭"
+          ],
+          "feedback": "順序對了。想一想：石頭平常聞起來會香香的嗎？"
+        },
+        {
+          "chunks": [
+            "淡淡的",
+            "石頭"
+          ],
+          "feedback": "順序對了。「淡淡的」常用來說味道或顏色，石頭摸起來是什麼感覺？"
+        },
+        {
+          "chunks": [
+            "硬硬的",
+            "香氣"
+          ],
+          "feedback": "順序對了。香氣是用鼻子聞的，摸不到，會「硬硬的」嗎？"
+        },
+        {
+          "chunks": [
+            "香香的",
+            "香氣"
+          ],
+          "feedback": "順序對了。香氣本來就是香的，再說「香香的」就重複了。"
+        },
+        {
+          "chunks": [
+            "淡淡的",
+            "麵包"
+          ],
+          "feedback": "順序對了。「淡淡的」常用來說味道或顏色，平常會說「淡淡的麵包」嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H09-bread.webp",
+            "alt": "一個剛烤好的麵包，冒著熱氣"
+          },
+          "image_hint": "看圖：剛烤好的麵包，聞起來怎麼樣？",
+          "answer": [
+            "香香的",
+            "麵包"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "香香的麵包",
+                "correct": true,
+                "feedback": "對！剛烤好的麵包聞起來香香的。"
+              },
+              {
+                "text": "香香的石頭",
+                "correct": false,
+                "feedback": "石頭平常不會香香的，圖片裡是麵包。"
+              }
+            ]
+          }
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H09-stone.webp",
+            "alt": "河邊一顆灰色的大石頭"
+          },
+          "image_hint": "看圖：石頭摸起來是什麼感覺？",
+          "answer": [
+            "硬硬的",
+            "石頭"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "硬硬的石頭",
+                "correct": true,
+                "feedback": "對！石頭摸起來硬硬的。"
+              },
+              {
+                "text": "硬硬的香氣",
+                "correct": false,
+                "feedback": "香氣是聞的，摸不到，不會硬硬的。"
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }

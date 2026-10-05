@@ -284,20 +284,22 @@ export function setOverride(name, value) {
  * 課文點讀／朗讀的字級。學生的視力、閱讀距離、投影與否差很多，
  * 讓現場可以直接調，不必改程式。數值是 --font-size 的倍率。
  */
+// 2026-10-05：改成三級「標準｜大字｜特大」，基準字級也一起放大（見 components.css .lesson-text）。
+// 原本四級 0.85／1／1.25／1.5，預設「中」在手機只有 26px，相鄰兩級差 15～25%，現場看不太出差別。
+// 舊設定對應：small／medium → 標準，large → 大字，xlarge → 特大。
 export const READER_FONT_SCALES = [
-  { key: 'small', label: '小', scale: 0.85 },
-  { key: 'medium', label: '中', scale: 1 },
-  { key: 'large', label: '大', scale: 1.25 },
+  { key: 'medium', label: '標準', scale: 1 },
+  { key: 'large', label: '大字', scale: 1.25 },
   { key: 'xlarge', label: '特大', scale: 1.5 },
 ];
 
 export function getReaderFontKey() {
-  const key = read().readerFont;
+  const key = read().readerFont === 'small' ? 'medium' : read().readerFont;
   return READER_FONT_SCALES.some((f) => f.key === key) ? key : 'medium';
 }
 
 export function getReaderFontScale() {
-  return (READER_FONT_SCALES.find((f) => f.key === getReaderFontKey()) || READER_FONT_SCALES[1]).scale;
+  return (READER_FONT_SCALES.find((f) => f.key === getReaderFontKey()) || READER_FONT_SCALES[0]).scale;
 }
 
 export function setReaderFont(key) {
