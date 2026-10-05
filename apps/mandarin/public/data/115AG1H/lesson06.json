@@ -1472,6 +1472,9 @@
       "label": "舊字新詞",
       "status": "available",
       "activity": "review"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
   "discussion_questions": [
@@ -1625,6 +1628,215 @@
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "converted_to_choice": false
+    }
+  ],
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG1H06:01",
+      "pattern_ref": "sentence-pattern:115AG1H06:01",
+      "status": "draft",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "official": {
+        "head": "上上下下",
+        "examples": [
+          "來來去去",
+          "進進出出",
+          "跑跑跳跳"
+        ],
+        "structure": "疊字動詞（什麼動作）"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。CF 2026-10-05 指示：用 copy_of 做成「上」「下」兩個相反字各疊一次，練「高高低低」「大大小小」這類相反詞疊字，和官方例詞（來來去去等同一動詞疊字）方向不同，請老師確認這個改法是否可以。",
+      "slots": [
+        {
+          "role": "first",
+          "label": "先怎麼樣",
+          "ask": "你看到的東西，先往哪裡動？"
+        },
+        {
+          "copy_of": 0
+        },
+        {
+          "role": "second",
+          "label": "接著怎麼樣",
+          "ask": "接著又往哪裡動？"
+        },
+        {
+          "copy_of": 2
+        }
+      ],
+      "explain": "前面和後面要配成一對相反的意思，前面疊一次、後面疊一次。",
+      "example": {
+        "chunks": [
+          "上",
+          "上",
+          "下",
+          "下"
+        ]
+      },
+      "bank": [
+        {
+          "text": "上",
+          "role": "first"
+        },
+        {
+          "text": "高",
+          "role": "first"
+        },
+        {
+          "text": "大",
+          "role": "first"
+        },
+        {
+          "text": "下",
+          "role": "second"
+        },
+        {
+          "text": "低",
+          "role": "second"
+        },
+        {
+          "text": "小",
+          "role": "second"
+        }
+      ],
+      "accepted": [
+        [
+          "上",
+          "上",
+          "下",
+          "下"
+        ],
+        [
+          "高",
+          "高",
+          "低",
+          "低"
+        ],
+        [
+          "大",
+          "大",
+          "小",
+          "小"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "上",
+            "上",
+            "低",
+            "低"
+          ],
+          "feedback": "順序對了。「上」和「低」配得起來嗎？「上」的相反是「下」，不是「低」。"
+        },
+        {
+          "chunks": [
+            "上",
+            "上",
+            "小",
+            "小"
+          ],
+          "feedback": "順序對了。「上」是說位置，「小」是說大小，這兩個不是一對相反的意思。"
+        },
+        {
+          "chunks": [
+            "高",
+            "高",
+            "下",
+            "下"
+          ],
+          "feedback": "順序對了。「高」的相反是「低」，「下」配得起來嗎？"
+        },
+        {
+          "chunks": [
+            "高",
+            "高",
+            "小",
+            "小"
+          ],
+          "feedback": "順序對了。「高」是說高度，「小」是說大小，這兩個不是一對的，再想一想。"
+        },
+        {
+          "chunks": [
+            "大",
+            "大",
+            "下",
+            "下"
+          ],
+          "feedback": "順序對了。「大」是說大小，「下」是說位置，這兩個不是一對的。"
+        },
+        {
+          "chunks": [
+            "大",
+            "大",
+            "低",
+            "低"
+          ],
+          "feedback": "順序對了。「大」的相反是「小」，「低」配得起來嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H06-seesaw.webp",
+            "alt": "小朋友坐著翹翹板，一會兒在上面，一會兒在下面",
+            "prompt": "a child playing on a seesaw, going up and down repeatedly on a playground"
+          },
+          "image_hint": "看圖：翹翹板一會兒在哪裡，一會兒又在哪裡？",
+          "answer": [
+            "上",
+            "上",
+            "下",
+            "下"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "上上下下",
+                "correct": true,
+                "feedback": "對！翹翹板一會兒上面，一會兒下面。"
+              },
+              {
+                "text": "高高低低",
+                "correct": false,
+                "feedback": "翹翹板是上下動，不是在說山坡的高低，圖片裡是翹翹板。"
+              }
+            ]
+          },
+          "scene": "操場上，翹翹板上上下下動，小朋友坐在上面好開心。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H06-hills.webp",
+            "alt": "連綿的山坡，一邊高一邊低",
+            "prompt": "a row of rolling green hills, some tall and some short, side by side"
+          },
+          "image_hint": "看圖：這些山坡，有的怎麼樣，有的又怎麼樣？",
+          "answer": [
+            "高",
+            "高",
+            "低",
+            "低"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "高高低低",
+                "correct": true,
+                "feedback": "對！這些山坡有的高，有的低。"
+              },
+              {
+                "text": "上上下下",
+                "correct": false,
+                "feedback": "山坡是固定在那裡的，不是一直上下動，圖片裡是山坡高高低低。"
+              }
+            ]
+          },
+          "scene": "遠遠看過去，一座一座的山坡高高低低。"
+        }
+      ]
     }
   ]
 }

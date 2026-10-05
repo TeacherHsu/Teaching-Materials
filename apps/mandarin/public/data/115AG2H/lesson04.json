@@ -2312,6 +2312,210 @@
       ],
       "approved_by": "CF",
       "approved_at": "2026-10-05"
+    },
+    {
+      "id": "phrase-builder:115AG2H04:02",
+      "pattern_ref": "sentence-pattern:115AG2H04:02",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
+      "official": {
+        "head": "不只想看，還想要抓",
+        "examples": [
+          "不只想打籃球，還想要參加比賽",
+          "不只會游泳，還會做體操"
+        ],
+        "structure": "不只＋動詞（第一件事），還＋動詞（第二件事）"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。先前因逗點＋兩個分句像整句造句而跳過，CF 2026-10-05 指示改用「不只」「，還想要」固定字，兩個動作格要有「更進一步」的關係，依此重做。",
+      "slots": [
+        {
+          "fixed": "不只"
+        },
+        {
+          "role": "action1",
+          "label": "已經想做什麼",
+          "ask": "他已經在做（或想做）什麼事？"
+        },
+        {
+          "fixed": "，還想要"
+        },
+        {
+          "role": "action2",
+          "label": "還想要再做什麼（更進一步）",
+          "ask": "接下來他還想要做什麼，比前面更進一步？"
+        }
+      ],
+      "explain": "前面說已經想做的事，後面說還想要再做、更進一步的事，兩件事要接得起來。",
+      "example": {
+        "chunks": [
+          "不只",
+          "想看",
+          "，還想要",
+          "抓"
+        ]
+      },
+      "bank": [
+        {
+          "text": "想看",
+          "role": "action1"
+        },
+        {
+          "text": "想吃",
+          "role": "action1"
+        },
+        {
+          "text": "想打籃球",
+          "role": "action1"
+        },
+        {
+          "text": "摸",
+          "role": "action2"
+        },
+        {
+          "text": "帶回家",
+          "role": "action2"
+        },
+        {
+          "text": "參加比賽",
+          "role": "action2"
+        }
+      ],
+      "accepted": [
+        [
+          "不只",
+          "想看",
+          "，還想要",
+          "摸"
+        ],
+        [
+          "不只",
+          "想吃",
+          "，還想要",
+          "帶回家"
+        ],
+        [
+          "不只",
+          "想打籃球",
+          "，還想要",
+          "參加比賽"
+        ],
+        [
+          "不只",
+          "想看",
+          "，還想要",
+          "帶回家"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "不只",
+            "想看",
+            "，還想要",
+            "參加比賽"
+          ],
+          "feedback": "順序對了。光是「看」一下，就能直接去「參加比賽」嗎？中間少了準備或練習，想一想接下來更合理的是什麼。"
+        },
+        {
+          "chunks": [
+            "不只",
+            "想吃",
+            "，還想要",
+            "摸"
+          ],
+          "feedback": "順序對了。「想吃」的東西，通常不會想「摸」它，想一想吃東西之後，更進一步會想做什麼。"
+        },
+        {
+          "chunks": [
+            "不只",
+            "想吃",
+            "，還想要",
+            "參加比賽"
+          ],
+          "feedback": "順序對了。「想吃」和「參加比賽」沒有關係，這兩件事接不起來。"
+        },
+        {
+          "chunks": [
+            "不只",
+            "想打籃球",
+            "，還想要",
+            "摸"
+          ],
+          "feedback": "順序對了。已經在打籃球了，還只想「摸」一下，這樣是退回去，不是更進一步。"
+        },
+        {
+          "chunks": [
+            "不只",
+            "想打籃球",
+            "，還想要",
+            "帶回家"
+          ],
+          "feedback": "順序對了。籃球比賽不能「帶回家」，這兩件事接不起來，再想一想。"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H04b-basketball.webp",
+            "alt": "小朋友在球場上打籃球，旁邊貼著比賽報名表",
+            "prompt": "a child playing basketball on an outdoor court, with a competition sign-up poster on the fence nearby"
+          },
+          "image_hint": "看圖：他已經在做什麼？牆上還貼著什麼？",
+          "answer": [
+            "不只",
+            "想打籃球",
+            "，還想要",
+            "參加比賽"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "不只想打籃球，還想要參加比賽",
+                "correct": true,
+                "feedback": "對！他不只想打球，還想要報名比賽。"
+              },
+              {
+                "text": "不只想看，還想要摸",
+                "correct": false,
+                "feedback": "圖片裡是他自己在打球，不是在看東西。"
+              }
+            ]
+          },
+          "scene": "他每天都練習打籃球，看到牆上的比賽報名表，心裡好想參加。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H04b-puppy.webp",
+            "alt": "小朋友看著寵物店櫥窗裡的小狗，伸手想摸",
+            "prompt": "a child looking through a pet shop window at a puppy, reaching a hand toward the glass"
+          },
+          "image_hint": "看圖：他正在看什麼？他的手在做什麼？",
+          "answer": [
+            "不只",
+            "想看",
+            "，還想要",
+            "摸"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "不只想看，還想要摸",
+                "correct": true,
+                "feedback": "對！他看著小狗，還伸手想摸摸牠。"
+              },
+              {
+                "text": "不只想打籃球，還想要參加比賽",
+                "correct": false,
+                "feedback": "圖片裡是在看小狗，不是在打籃球。"
+              }
+            ]
+          },
+          "scene": "他趴在寵物店的櫥窗前看小狗，看著看著，手就伸出去想摸摸牠。",
+          "adapted": true
+        }
+      ]
     }
   ]
 }
