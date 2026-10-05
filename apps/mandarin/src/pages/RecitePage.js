@@ -235,6 +235,8 @@ function renderChallenge(lesson, reading, backHref) {
     // 課文（可切注音）
     const textBox = h('div', { class: `lesson-text${showZhuyin ? '' : ' lesson-text--no-zhuyin'}` });
     const charEls = [];
+    // 標示說明緊貼在課文下面（CF 2026-10-06：放在成績卡裡學生看不到紅底／黃底的意思）
+    const legendSlot = h('div', { class: 'recite-legend-slot', 'aria-live': 'polite' });
     for (const [text, zhuyinText] of unit.tokens) {
       const zs = zhuyinText ? zhuyinText.split(' ') : [];
       [...text].forEach((ch, i) => {
@@ -257,6 +259,7 @@ function renderChallenge(lesson, reading, backHref) {
     wrap.appendChild(h('div', { class: 'card' }, [
       tools.length ? h('div', { class: 'lesson-toolbar' }, tools) : null,
       textBox,
+      legendSlot,
     ].filter(Boolean)));
 
     const status = h('p', { class: 'recite__status', role: 'status', 'aria-live': 'polite' }, '');
@@ -270,6 +273,7 @@ function renderChallenge(lesson, reading, backHref) {
       cancelSpeaking();
       heardLine.textContent = '';
       clear(result);
+      clear(legendSlot);
       charEls.forEach((el) => {
         el.classList.remove('lesson-text__ch--ok', 'lesson-text__ch--homophone', 'lesson-text__ch--wrong', 'lesson-text__ch--missed');
         // 重念時把上一次「可點來聽」也清掉
@@ -328,6 +332,10 @@ function renderChallenge(lesson, reading, backHref) {
         total: score.total,
       });
 
+      const marksCount = score.marks.reduce((acc, m) => { acc[m] = (acc[m] || 0) + 1; return acc; }, {});
+      clear(legendSlot);
+      const legend = MarkLegend(marksCount);
+      if (legend) legendSlot.appendChild(legend);
       status.textContent = score.marks.some((m) => m === 'wrong' || m === 'missed')
         ? '有標記的字再練習一下，點一下那個字可以聽怎麼念。' : '';
       clear(result);
@@ -399,7 +407,6 @@ function renderResult(score, speed, previous, unitLabel) {
       SpeakButton({ text: `${summary}${trendText}`, label: '聽', variant: 'speak-button--option' }),
     ]),
     h('p', { class: 'outcome__summary' }, summary),
-    MarkLegend(counts),
     speed.charsPerMinute
       ? h('p', { class: 'meta' }, `每分鐘 ${speed.charsPerMinute} 個字。${trendText}`)
       : null,
