@@ -18,7 +18,7 @@ for (const vol of fs.readdirSync(root).filter((d) => d.startsWith('115AG'))) {
       assert.ok(ref, `${spec.id} 要對應到官方短語（sentence_patterns）`);
       assert.equal(spec.example.chunks.join(''), ref.head, `${spec.id} 示範必須是課本的短語`);
       assert.ok(spec.source, `${spec.id} 要標來源`);
-      const byRole = spec.slots.map((s) => spec.bank.filter((b) => b.role === s.role).map((b) => b.text));
+      const byRole = spec.slots.map((s) => (s.fixed ? [s.fixed] : spec.bank.filter((b) => b.role === s.role).map((b) => b.text)));
       const combos = byRole.reduce((acc, list) => acc.flatMap((a) => list.map((x) => [...a, x])), [[]]);
       for (const c of combos) {
         const known = (spec.accepted || []).some((a) => a.join() === c.join()) || (spec.semantic_rejects || []).some((r) => r.chunks.join() === c.join());
@@ -27,8 +27,13 @@ for (const vol of fs.readdirSync(root).filter((d) => d.startsWith('115AG'))) {
       for (const r of spec.rounds) {
         assert.ok((spec.accepted || []).some((a) => a.join() === r.answer.join()), `${spec.id} 每張圖的答案要在 accepted 裡`);
         assert.equal(judgePhrase(spec, r, r.answer).kind, 'fit');
-        assert.equal(judgePhrase(spec, r, [...r.answer].reverse()).kind, 'structure');
-        assert.equal(judgePhrase(spec, r, [r.answer[0], null]).kind, 'incomplete');
+        const free = spec.slots.map((s, i) => (s.fixed ? null : i)).filter((i) => i !== null);
+        if (free.length >= 2 && spec.slots[free[0]].role !== spec.slots[free[free.length - 1]].role) {
+          const swapped = [...r.answer]; [swapped[free[0]], swapped[free[free.length - 1]]] = [swapped[free[free.length - 1]], swapped[free[0]]];
+          assert.equal(judgePhrase(spec, r, swapped).kind, 'structure', `${spec.id} 位置放錯要判成結構錯`);
+        }
+        const partial = [...r.answer]; partial[free[free.length - 1]] = null;
+        assert.equal(judgePhrase(spec, r, partial).kind, 'incomplete');
         if (r.check) assert.equal(r.check.options.filter((o) => o.correct).length, 1, `${spec.id} 小確認題只能有一個正解`);
       }
       const rej = spec.semantic_rejects[0];

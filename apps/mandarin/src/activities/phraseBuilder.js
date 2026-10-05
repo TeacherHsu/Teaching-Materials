@@ -39,9 +39,11 @@ export function canStartPhraseBuilder(lesson) {
  *   'incomplete' 還沒放滿
  */
 export function judgePhrase(spec, round, chunks) {
+  // 固定字的格子（slots[i].fixed，例如「越」「的」「又」）自動補上，學生只放可換的格子
+  chunks = spec.slots.map((s, i) => (s.fixed ? s.fixed : chunks[i]));
   if (chunks.length < spec.slots.length || chunks.some((c) => !c)) return { kind: 'incomplete' };
   const roleOf = (text) => spec.bank.find((b) => b.text === text)?.role;
-  if (!chunks.every((c, i) => roleOf(c) === spec.slots[i].role)) return { kind: 'structure' };
+  if (!chunks.every((c, i) => spec.slots[i].fixed || roleOf(c) === spec.slots[i].role)) return { kind: 'structure' };
   if (same(chunks, round.answer)) return { kind: 'fit' };
   if ((spec.accepted || []).some((a) => same(a, chunks))) return { kind: 'ok-other' };
   const reject = (spec.semantic_rejects || []).find((r) => same(r.chunks, chunks));
@@ -49,8 +51,8 @@ export function judgePhrase(spec, round, chunks) {
 }
 
 function chunkRow(chunks, slots, { showLabels = true } = {}) {
-  return h('div', { class: 'phrase-chunks' }, chunks.map((c, i) => h('span', { class: `phrase-chunk phrase-chunk--${slots[i]?.role || ''}` }, [
-    showLabels && slots[i] ? h('span', { class: 'phrase-chunk__label' }, slots[i].label) : null,
+  return h('div', { class: 'phrase-chunks' }, chunks.map((c, i) => h('span', { class: `phrase-chunk phrase-chunk--${slots[i]?.fixed ? 'fixed' : (slots[i]?.role || '')}` }, [
+    showLabels && slots[i] && !slots[i].fixed ? h('span', { class: 'phrase-chunk__label' }, slots[i].label) : null,
     h('span', { class: 'phrase-chunk__text' }, c),
   ].filter(Boolean))));
 }
@@ -119,7 +121,8 @@ export function buildPhraseBuilderActivity(lesson, onBack) {
         container.appendChild(TaskBanner({ label: '照樣造短語：照著例子，組出和圖片一樣意思的短語', step: roundLabel }));
         const imageBox = h('div', { class: 'phrase-image phrase-image--small' }, [ImageFrame({ src: round.image?.src || null, alt: round.image?.alt || '' })]);
         container.appendChild(imageBox);
-        const picked = spec.slots.map(() => null);
+        const picked = spec.slots.map((s) => s.fixed || null);
+        const firstEmpty = () => picked.findIndex((p, i) => !p && !spec.slots[i].fixed);
         let attempts = 0;
         let hintLevel = 0;
         let hintUsed = false;
@@ -133,6 +136,13 @@ export function buildPhraseBuilderActivity(lesson, onBack) {
           clear(answerRow);
           spec.slots.forEach((slot, i) => {
             const filled = picked[i];
+            if (slot.fixed) {
+              // 固定字：不能動，用虛線框和一般字色表示「這裡不用換」
+              answerRow.appendChild(h('span', { class: 'phrase-slot phrase-slot--fixed', 'aria-label': `固定的字：${slot.fixed}` }, [
+                h('span', { class: 'phrase-slot__text' }, slot.fixed),
+              ]));
+              return;
+            }
             const b = h('button', {
               class: `phrase-slot phrase-slot--${slot.role}${filled ? ' phrase-slot--filled' : ''}`,
               type: 'button',
@@ -151,7 +161,7 @@ export function buildPhraseBuilderActivity(lesson, onBack) {
             const used = picked.includes(c.text);
             const b = h('button', { class: `phrase-tile${used ? ' phrase-tile--used' : ''}`, type: 'button', disabled: used ? 'disabled' : null }, c.text);
             b.addEventListener('click', () => {
-              const at = picked.indexOf(null);
+              const at = firstEmpty();
               if (at < 0 || used) return;
               picked[at] = c.text;
               redraw();
@@ -164,7 +174,7 @@ export function buildPhraseBuilderActivity(lesson, onBack) {
         const check = h('button', { class: 'btn btn--primary', type: 'button' }, '檢查');
         const reset = h('button', { class: 'btn', type: 'button' }, '重新開始');
         const hintBtn = h('button', { class: 'btn btn--ghost', type: 'button' }, '看提示（1／3）');
-        reset.addEventListener('click', () => { picked.fill(null); redraw(); });
+        reset.addEventListener('click', () => { spec.slots.forEach((s, i) => { picked[i] = s.fixed || null; }); redraw(); });
 
         const say = (text, cls) => {
           clear(feedback);
@@ -208,16 +218,16 @@ export function buildPhraseBuilderActivity(lesson, onBack) {
             text = round.image_hint || '再看一次圖片，圖片裡最重要的是什麼？';
           } else if (hintLevel === 2) {
             showLabels = true; drawAnswer();
-            text = `看格子上的字：${spec.slots.map((s) => `「${s.label}」`).join('＋')}。`;
+            text = `看格子上的字：${spec.slots.map((s) => `「${s.fixed || s.label}」`).join('＋')}。`;
           } else {
             // 只留這張圖的答案，加每一格一個別的詞塊（不直接給答案）
             const keep = new Set(round.answer);
-            spec.slots.forEach((slot) => {
+            spec.slots.filter((s) => !s.fixed).forEach((slot) => {
               const extra = spec.bank.find((c) => c.role === slot.role && !keep.has(c.text));
               if (extra) keep.add(extra.text);
             });
             hidden = new Set(spec.bank.map((c) => c.text).filter((t) => !keep.has(t)));
-            picked.forEach((t, i) => { if (t && hidden.has(t)) picked[i] = null; });
+            picked.forEach((t, i) => { if (t && !spec.slots[i].fixed && hidden.has(t)) picked[i] = null; });
             drawAnswer(); drawBank();
             text = '拿掉了一些用不到的詞塊，在剩下的裡面選。';
           }

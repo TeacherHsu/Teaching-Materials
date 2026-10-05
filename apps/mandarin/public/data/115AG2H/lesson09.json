@@ -2338,7 +2338,7 @@
     {
       "id": "phrase-builder:115AG2H09:01",
       "pattern_ref": "sentence-pattern:115AG2H09:01",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
       "official": {
         "head": "淡淡的香氣",
@@ -2348,7 +2348,7 @@
         ],
         "structure": "疊字形容詞＋的＋名詞（什麼事物）"
       },
-      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認後改 status 為 approved。",
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），CF 2026-10-05 確認。",
       "slots": [
         {
           "role": "describe",
@@ -2451,7 +2451,8 @@
         {
           "image": {
             "src": "/assets/phrases/115AG2H09-bread.webp",
-            "alt": "一個剛烤好的麵包，冒著熱氣"
+            "alt": "一個剛烤好的麵包，冒著熱氣",
+            "prompt": "one freshly baked round bread loaf with gentle steam rising"
           },
           "image_hint": "看圖：剛烤好的麵包，聞起來怎麼樣？",
           "answer": [
@@ -2477,7 +2478,8 @@
         {
           "image": {
             "src": "/assets/phrases/115AG2H09-stone.webp",
-            "alt": "河邊一顆灰色的大石頭"
+            "alt": "一顆灰色的大石頭",
+            "prompt": "one grey river stone, smooth and hard, resting alone"
           },
           "image_hint": "看圖：石頭摸起來是什麼感覺？",
           "answer": [
@@ -2500,7 +2502,9 @@
             ]
           }
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     }
   ]
 }
