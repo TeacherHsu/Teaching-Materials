@@ -2310,7 +2310,7 @@
     {
       "id": "phrase-builder:115AG2H04:02",
       "pattern_ref": "sentence-pattern:115AG2H04:02",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
       "official": {
         "head": "不只想看，還想要抓",
@@ -2509,7 +2509,9 @@
           "scene": "他趴在寵物店的櫥窗前看小狗，看著看著，手就伸出去想摸摸牠。",
           "adapted": true
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     }
   ]
 }

@@ -494,3 +494,5 @@ lesson12 第 1 題與一上其他跳過項目，只有「其實是短語、只�
 ### 驗證
 `node scripts/test-phrase-builder.mjs`、`npm run validate` 皆通過（45 個句型，55 份課次資料）。本輪未執行
 任何 git 指令。
+
+**CF 2026-10-05 第四輪全部核准上線。**

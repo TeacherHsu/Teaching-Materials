@@ -1634,7 +1634,7 @@
     {
       "id": "phrase-builder:115AG1H06:01",
       "pattern_ref": "sentence-pattern:115AG1H06:01",
-      "status": "draft",
+      "status": "approved",
       "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "official": {
         "head": "上上下下",
@@ -1904,12 +1904,14 @@
           },
           "scene": "弟弟在玩遊戲，一直跑進房間，又跑出房間，進進出出好幾次。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     },
     {
       "id": "phrase-builder:115AG1H06:02",
       "pattern_ref": "sentence-pattern:115AG1H06:02",
-      "status": "draft",
+      "status": "approved",
       "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "official": {
         "head": "秋千一下子高，一下子低，向小草問好。",
@@ -2141,7 +2143,9 @@
           },
           "scene": "風吹過來，鞦韆一下子盪到左邊，一下子盪到右邊。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     }
   ]
 }

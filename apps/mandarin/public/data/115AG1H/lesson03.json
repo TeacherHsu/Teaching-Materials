@@ -1955,7 +1955,7 @@
     {
       "id": "phrase-builder:115AG1H03:04",
       "pattern_ref": "sentence-pattern:115AG1H03:04",
-      "status": "draft",
+      "status": "approved",
       "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "official": {
         "head": "我們開開心心一起玩。",
@@ -2365,7 +2365,9 @@
           },
           "scene": "姐姐坐在房間裡，一個人安安靜靜地看書。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     }
   ]
 }

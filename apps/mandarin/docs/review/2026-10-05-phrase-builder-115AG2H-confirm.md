@@ -347,3 +347,5 @@ L09 已核准，不在本次範圍。以下每課皆為 `status: "draft"`，確�
 `node scripts/test-phrase-builder.mjs` → 通過（52 個句型，含 1H／2H 全冊）。
 `npm run validate` → 通過（55 份課次資料、1 份課程索引；課文明碼比例 14.7%，在上限內）。
 全程沒有執行任何 git 指令。
+
+**CF 2026-10-05 第四輪全部核准上線。**

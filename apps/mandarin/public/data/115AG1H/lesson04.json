@@ -1841,7 +1841,7 @@
     {
       "id": "phrase-builder:115AG1H04:02",
       "pattern_ref": "sentence-pattern:115AG1H04:02",
-      "status": "draft",
+      "status": "approved",
       "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "official": {
         "head": "天有多大？",
@@ -2037,12 +2037,14 @@
           },
           "scene": "妹妹抬頭看著姐姐，很好奇姐姐到底有多高。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     },
     {
       "id": "phrase-builder:115AG1H04:03",
       "pattern_ref": "sentence-pattern:115AG1H04:03",
-      "status": "draft",
+      "status": "approved",
       "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "official": {
         "head": "小水珠跑哪去？",
@@ -2217,12 +2219,14 @@
           },
           "scene": "小朋友要寫作業，找不到鉛筆盒，到底放去哪裡了？"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     },
     {
       "id": "phrase-builder:115AG1H04:04",
       "pattern_ref": "sentence-pattern:115AG1H04:04",
-      "status": "draft",
+      "status": "approved",
       "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "official": {
         "head": "小草，請問你，天有多大？",
@@ -2409,7 +2413,9 @@
           },
           "scene": "妹妹看到一個不認識的字，禮貌地問哥哥這個字怎麼念。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     }
   ]
 }
