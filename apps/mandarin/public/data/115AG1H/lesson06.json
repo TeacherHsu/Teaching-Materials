@@ -1848,7 +1848,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H06-seesaw.webp",
             "alt": "小朋友坐著翹翹板，一會兒在上面，一會兒在下面",
-            "prompt": "a child playing on a seesaw, going up and down repeatedly on a playground"
+            "prompt": "a child playing on a seesaw, going up and down repeatedly on a playground",
+            "layout": "square-native"
           },
           "image_hint": "看圖：翹翹板一會兒在哪裡，一會兒又在哪裡？",
           "answer": [
@@ -1878,7 +1879,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H06-inout.webp",
             "alt": "小朋友跑進房間，又跑出房間，進進出出好幾次",
-            "prompt": "a child running in and out of a doorway repeatedly, playful motion, at a home entrance"
+            "prompt": "a child running in and out of a doorway repeatedly, playful motion, at a home entrance",
+            "layout": "square-native"
           },
           "image_hint": "看圖：弟弟一直在門口做什麼動作？",
           "answer": [
@@ -2083,7 +2085,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H06-swing-updown.webp",
             "alt": "鞦韆一下子盪得很高，一下子又盪得很低",
-            "prompt": "a swing on a playground, one moment high in the air, one moment low near the ground"
+            "prompt": "a swing on a playground, one moment high in the air, one moment low near the ground",
+            "layout": "square-native"
           },
           "image_hint": "看圖：鞦韆盪的時候，一下子怎麼樣，一下子又怎麼樣？",
           "answer": [
@@ -2115,7 +2118,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H06-swing-leftright.webp",
             "alt": "鞦韆一下子盪到左邊，一下子盪到右邊",
-            "prompt": "a swing on a playground swinging side to side, one moment to the left, one moment to the right"
+            "prompt": "a swing on a playground swinging side to side, one moment to the left, one moment to the right",
+            "layout": "square-native"
           },
           "image_hint": "看圖：鞦韆盪的時候，一下子到哪邊，一下子又到哪邊？",
           "answer": [

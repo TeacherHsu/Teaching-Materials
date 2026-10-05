@@ -1707,7 +1707,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H03-boxes.webp",
             "alt": "桌上排著一個又一個一樣的箱子",
-            "prompt": "a row of identical boxes lined up one after another on a table"
+            "prompt": "a row of identical boxes lined up one after another on a table",
+            "layout": "square-native"
           },
           "image_hint": "看圖：東西是用『個』來算的嗎？",
           "answer": [
@@ -1737,7 +1738,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H03-clothes.webp",
             "alt": "衣架上掛著一件又一件一樣的衣服",
-            "prompt": "a row of identical shirts hanging one after another on hangers"
+            "prompt": "a row of identical shirts hanging one after another on hangers",
+            "layout": "square-native"
           },
           "image_hint": "看圖：東西是用『件』來算的嗎？",
           "answer": [
@@ -1894,7 +1896,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H03-train.webp",
             "alt": "一個小朋友用積木做出一台小火車",
-            "prompt": "a child building a small toy train out of building blocks"
+            "prompt": "a child building a small toy train out of building blocks",
+            "layout": "square-native"
           },
           "image_hint": "看圖：他用積木做出了什麼？",
           "answer": [
@@ -1923,7 +1926,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H03-tiger.webp",
             "alt": "一個小朋友用畫筆畫出一隻大老虎",
-            "prompt": "a child painting a big tiger picture with a paintbrush"
+            "prompt": "a child painting a big tiger picture with a paintbrush",
+            "layout": "square-native"
           },
           "image_hint": "看圖：他用畫筆畫出了什麼？",
           "answer": [
@@ -2311,7 +2315,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H03-play.webp",
             "alt": "一群小朋友開心地一起玩耍",
-            "prompt": "a group of children playing together happily outdoors"
+            "prompt": "a group of children playing together happily outdoors",
+            "layout": "square-native"
           },
           "image_hint": "看圖：大家在做什麼？心情怎麼樣？",
           "answer": [
@@ -2340,7 +2345,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H03-sister-read.webp",
             "alt": "姐姐安靜地坐著看書",
-            "prompt": "an older sister sitting quietly reading a book"
+            "prompt": "an older sister sitting quietly reading a book",
+            "layout": "square-native"
           },
           "image_hint": "看圖：姐姐在做什麼？她的樣子是安靜的，還是吵鬧的？",
           "answer": [

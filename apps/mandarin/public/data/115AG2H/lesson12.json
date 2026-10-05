@@ -2791,7 +2791,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H12-soup.webp",
             "alt": "一個小朋友慢慢地喝著一碗湯",
-            "prompt": "a child slowly sipping a bowl of soup"
+            "prompt": "a child slowly sipping a bowl of soup",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個小朋友怎麼樣地做什麼？",
           "answer": [
@@ -2819,7 +2820,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H12-book.webp",
             "alt": "一個小朋友安安靜靜地坐著看書",
-            "prompt": "a child sitting quietly and calmly reading a book"
+            "prompt": "a child sitting quietly and calmly reading a book",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個小朋友怎麼樣地做什麼？",
           "answer": [

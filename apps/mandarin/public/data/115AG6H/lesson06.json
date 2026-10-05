@@ -2711,7 +2711,8 @@
           "image": {
             "src": "/assets/phrases/115AG6H06-villain.webp",
             "alt": "一個戴著黑色眼罩、表情狡猾的卡通壞人",
-            "prompt": "a cartoon villain character with a sly grin and a black eye mask"
+            "prompt": "a cartoon villain character with a sly grin and a black eye mask",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個角色給人的感覺是好人還是壞人？",
           "answer": [
@@ -2741,7 +2742,8 @@
           "image": {
             "src": "/assets/phrases/115AG6H06-puppy.webp",
             "alt": "一隻在草地上跳來跳去的小狗",
-            "prompt": "a small energetic puppy jumping around on grass"
+            "prompt": "a small energetic puppy jumping around on grass",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這隻小狗安靜不動，還是跳來跳去？",
           "answer": [
@@ -3024,7 +3026,8 @@
           "image": {
             "src": "/assets/phrases/115AG6H06-character.webp",
             "alt": "一個原本面無表情的人，變成在台上說笑逗大家笑的樣子",
-            "prompt": "a once plain-faced person transformed into a lively comedian making people laugh on stage"
+            "prompt": "a once plain-faced person transformed into a lively comedian making people laugh on stage",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個人原本沒表情，後來變成怎麼樣的人？",
           "answer": [
@@ -3054,7 +3057,8 @@
           "image": {
             "src": "/assets/phrases/115AG6H06-soldier.webp",
             "alt": "一個人穿上盔甲，變身成勇敢站在戰場前的士兵",
-            "prompt": "a person putting on armor and transforming into a brave soldier standing at a battlefront"
+            "prompt": "a person putting on armor and transforming into a brave soldier standing at a battlefront",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個人穿上盔甲後，變成什麼身分？",
           "answer": [

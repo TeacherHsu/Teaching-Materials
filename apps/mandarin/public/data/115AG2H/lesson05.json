@@ -2398,7 +2398,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H05-spin.webp",
             "alt": "一隻小動物在原地轉來轉去",
-            "prompt": "a small animal spinning round and round in one spot"
+            "prompt": "a small animal spinning round and round in one spot",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這隻小動物怎麼移動？",
           "answer": [
@@ -2426,7 +2427,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H05-bird.webp",
             "alt": "一隻小鳥飛上飛下",
-            "prompt": "a small bird flying up and down repeatedly"
+            "prompt": "a small bird flying up and down repeatedly",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這隻小鳥怎麼移動？",
           "answer": [
@@ -2573,7 +2575,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H05-road.webp",
             "alt": "一條彎彎曲曲的山路",
-            "prompt": "a winding mountain road curving between hills"
+            "prompt": "a winding mountain road curving between hills",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這條路的形狀是怎麼樣的？",
           "answer": [
@@ -2601,7 +2604,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H05-juice.webp",
             "alt": "一杯冰冰涼涼的果汁，杯外有水滴",
-            "prompt": "a glass of cold juice with condensation droplets on the outside"
+            "prompt": "a glass of cold juice with condensation droplets on the outside",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這杯果汁喝起來感覺怎麼樣？",
           "answer": [

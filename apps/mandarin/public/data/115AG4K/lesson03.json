@@ -3148,7 +3148,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K03-dance.webp",
             "alt": "一位舞者展現優美迷人的舞姿",
-            "prompt": "a dancer performing a graceful captivating pose on stage"
+            "prompt": "a dancer performing a graceful captivating pose on stage",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這位舞者的動作讓你覺得怎麼樣？",
           "answer": [
@@ -3178,7 +3179,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K03-music.webp",
             "alt": "一位音樂家在鋼琴前創作優美的旋律，五線譜上有音符",
-            "prompt": "a musician composing at a piano, sheet music with notes, gentle mood"
+            "prompt": "a musician composing at a piano, sheet music with notes, gentle mood",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這位音樂家正在做什麼？",
           "answer": [

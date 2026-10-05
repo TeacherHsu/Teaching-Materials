@@ -3318,7 +3318,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K07b-pizza.webp",
             "alt": "師傅正在把麵團甩得越來越大、越來越薄，準備做成披薩餅皮",
-            "prompt": "a chef tossing and stretching pizza dough, making it gradually bigger and thinner"
+            "prompt": "a chef tossing and stretching pizza dough, making it gradually bigger and thinner",
+            "layout": "square-native"
           },
           "image_hint": "看圖：師傅手上的麵團，正在怎麼變化？",
           "answer": [
@@ -3350,7 +3351,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K07b-moon.webp",
             "alt": "夜空中的月亮從一小片慢慢變成又圓又亮的滿月",
-            "prompt": "a sequence of the moon slowly changing from a thin crescent into a full, bright round moon in the night sky"
+            "prompt": "a sequence of the moon slowly changing from a thin crescent into a full, bright round moon in the night sky",
+            "layout": "square-native"
           },
           "image_hint": "看圖：月亮這幾天，慢慢變得怎麼樣？",
           "answer": [

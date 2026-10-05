@@ -1908,7 +1908,8 @@
           "image": {
             "src": "/assets/phrases/115AG3H06-pencil.webp",
             "alt": "一枝閃閃發亮的新鉛筆",
-            "prompt": "one shiny new pencil with a glossy sharp tip"
+            "prompt": "one shiny new pencil with a glossy sharp tip",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這枝鉛筆看起來怎麼樣？",
           "answer": [
@@ -1937,7 +1938,8 @@
           "image": {
             "src": "/assets/phrases/115AG3H06-stone.webp",
             "alt": "一顆圓滾滾的大石頭",
-            "prompt": "one round plump smooth stone"
+            "prompt": "one round plump smooth stone",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這顆石頭的形狀像什麼？",
           "answer": [

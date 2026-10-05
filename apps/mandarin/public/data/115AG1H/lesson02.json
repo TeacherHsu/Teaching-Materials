@@ -1306,7 +1306,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H02-wind.webp",
             "alt": "大風把樹葉吹得到處飛",
-            "prompt": "strong wind blowing leaves across an outdoor scene"
+            "prompt": "strong wind blowing leaves across an outdoor scene",
+            "layout": "square-native"
           },
           "image_hint": "看圖：是什麼在用力吹？",
           "answer": [
@@ -1334,7 +1335,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H02-bird.webp",
             "alt": "一隻小鳥站在樹上開口叫",
-            "prompt": "a small bird perched on a branch chirping"
+            "prompt": "a small bird perched on a branch chirping",
+            "layout": "square-native"
           },
           "image_hint": "看圖：是誰在發出聲音？",
           "answer": [
@@ -1432,7 +1434,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H02-running.webp",
             "alt": "一個小朋友在操場上一直跑，不停下來",
-            "prompt": "a child running continuously around a playground track"
+            "prompt": "a child running continuously around a playground track",
+            "layout": "square-native"
           },
           "image_hint": "看圖：他一直在做什麼？",
           "answer": [
@@ -1460,7 +1463,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H02-talking.webp",
             "alt": "一個小朋友嘴巴張開，一直說話",
-            "prompt": "a child talking continuously with an open mouth"
+            "prompt": "a child talking continuously with an open mouth",
+            "layout": "square-native"
           },
           "image_hint": "看圖：他的嘴巴一直在做什麼？",
           "answer": [

@@ -2590,7 +2590,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H06-cloud.webp",
             "alt": "夜空中飄著一朵一朵會發光的雲",
-            "prompt": "night sky with several glowing clouds floating, soft light"
+            "prompt": "night sky with several glowing clouds floating, soft light",
+            "layout": "square-native"
           },
           "image_hint": "看圖：夜空中的雲看起來怎麼樣？",
           "answer": [
@@ -2623,7 +2624,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H06-trees.webp",
             "alt": "公園裡種著一棵一棵高大的樹木",
-            "prompt": "a park with several tall trees standing in a row"
+            "prompt": "a park with several tall trees standing in a row",
+            "layout": "square-native"
           },
           "image_hint": "看圖：公園裡的樹看起來怎麼樣？",
           "answer": [

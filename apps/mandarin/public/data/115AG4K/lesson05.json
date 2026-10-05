@@ -2719,7 +2719,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K05-sun.webp",
             "alt": "溫暖的陽光灑在草地上",
-            "prompt": "warm sunlight shining over green grass, soft glow"
+            "prompt": "warm sunlight shining over green grass, soft glow",
+            "layout": "square-native"
           },
           "image_hint": "看圖：陽光照在身上，感覺怎麼樣？",
           "answer": [
@@ -2749,7 +2750,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K05-dessert.webp",
             "alt": "一盤看起來很美味的甜點",
-            "prompt": "a plate of delicious-looking desserts, cake and fruit"
+            "prompt": "a plate of delicious-looking desserts, cake and fruit",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這盤甜點讓你覺得怎麼樣？",
           "answer": [
@@ -3625,7 +3627,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K05b-water.webp",
             "alt": "清涼的流水從手掌心流過，水花晶亮",
-            "prompt": "clear cool water flowing over an open palm, with sparkling droplets"
+            "prompt": "clear cool water flowing over an open palm, with sparkling droplets",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這是什麼東西，從哪裡流過？",
           "answer": [
@@ -3656,7 +3659,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K05b-breeze.webp",
             "alt": "打開的窗戶，窗簾被微風吹起來",
-            "prompt": "an open window with a light curtain gently blown by a cool breeze, a few green leaves drifting in"
+            "prompt": "an open window with a light curtain gently blown by a cool breeze, a few green leaves drifting in",
+            "layout": "square-native"
           },
           "image_hint": "看圖：窗簾為什麼會飄起來？",
           "answer": [

@@ -55,4 +55,30 @@ for (const vol of fs.readdirSync(root).filter((d) => d.startsWith('115AG'))) {
   }
 }
 assert.ok(n >= 1, '至少要有一課照樣造短語');
+
+// 圖片規格（docs/lesson-generation-workflow.md）：960×960 正方形 WebP、單張 ≤300 KiB、不裁切
+function webpSize(buf) {
+  const kind = buf.toString('ascii', 12, 16);
+  if (kind === 'VP8X') return [1 + buf.readUIntLE(24, 3), 1 + buf.readUIntLE(27, 3)];
+  if (kind === 'VP8L') { const b = buf.readUInt32LE(21); return [(b & 0x3fff) + 1, ((b >> 14) & 0x3fff) + 1]; }
+  return [buf.readUInt16LE(26) & 0x3fff, buf.readUInt16LE(28) & 0x3fff];
+}
+if (process.env.SKIP_PHRASE_IMAGES !== '1') {
+  for (const vol of fs.readdirSync(root).filter((d) => d.startsWith('115AG'))) {
+    for (const f of fs.readdirSync(path.join(root, vol)).filter((x) => /^lesson\d+\.json$/.test(x))) {
+      const lesson = JSON.parse(fs.readFileSync(path.join(root, vol, f), 'utf8'));
+      for (const spec of lesson.phrase_builders || []) {
+        for (const r of spec.rounds) {
+          const file = new URL(`../public${r.image.src}`, import.meta.url).pathname;
+          assert.ok(fs.existsSync(file), `${spec.id} 缺圖：${r.image.src}`);
+          const buf = fs.readFileSync(file);
+          assert.ok(buf.length <= 300 * 1024, `${r.image.src} 超過 300 KiB`);
+          assert.deepEqual(webpSize(buf), [960, 960], `${r.image.src} 要是 960×960`);
+          assert.equal(r.image.layout, 'square-native', `${r.image.src} 要標 image.layout`);
+        }
+      }
+    }
+  }
+  console.log('✅ 照樣造短語圖片：960×960、≤300 KiB');
+}
 console.log(`✅ 照樣造短語：${n} 個句型，判定與官方來源檢查通過`);

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """照樣造短語的圖片：讀各課 phrase_builders[].rounds[].image（src＋prompt），
-缺檔的用 Codex OAuth（codex-ppt 的 image_gen.py）生圖，轉成 512px WebP 放 public/assets/phrases/。
+缺檔的用 Codex OAuth（codex-ppt 的 image_gen.py）生圖，轉成 960×960 WebP（單張 ≤300 KiB，依 docs/lesson-generation-workflow.md 圖片規則）放 public/assets/phrases/。
 風格統一在這裡加，資料裡的 prompt 只寫主體。已存在的圖不重畫（要重畫先刪檔）。
 用法：python3 tools/gen_phrase_images.py [--only 115AG2H09] [--jobs 3] [--dry-run]
 """
@@ -11,7 +11,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GEN = os.path.expanduser('~/.claude/skills/codex-ppt/scripts/image_gen.py')
 STYLE = ('Simple educational illustration for an elementary school Chinese vocabulary card. '
          'Subject: {subject}. Pure white background, soft low-saturation colors, clean flat style with light outlines, '
-         'one clear subject centered, no background clutter, no text, no letters, no numbers, '
+         'one clear subject centered, the WHOLE subject and every clue fully visible inside a square frame '
+         'with a comfortable margin on all sides (nothing cut off at the edges), no background clutter, no text, no letters, no numbers, '
          'calm and respectful, not cartoonish or childish.')
 
 def jobs(only):
@@ -37,8 +38,14 @@ def run(job):
         if r.returncode or not os.path.exists(png):
             return f'FAIL {out}: {r.stderr.strip()[-200:]}'
         os.makedirs(os.path.dirname(out), exist_ok=True)
-        r = subprocess.run(['cwebp', '-quiet', '-q', '78', '-resize', '512', '512', png, '-o', out], capture_output=True, text=True)
-        return f'OK {os.path.relpath(out, ROOT)}' if not r.returncode else f'FAIL webp {out}'
+        # 960×960 正方形；超過 300 KiB 就降品質重壓
+        for q in (82, 74, 66, 58, 50):
+            r = subprocess.run(['cwebp', '-quiet', '-q', str(q), '-resize', '960', '960', png, '-o', out], capture_output=True, text=True)
+            if r.returncode:
+                return f'FAIL webp {out}'
+            if os.path.getsize(out) <= 300 * 1024:
+                return f'OK {os.path.relpath(out, ROOT)} ({os.path.getsize(out)//1024} KiB, q{q})'
+        return f'FAIL 超過 300 KiB {out}'
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()

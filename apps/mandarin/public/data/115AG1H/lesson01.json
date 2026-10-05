@@ -1246,7 +1246,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H01-walk.webp",
             "alt": "兩個小朋友牽著手一起走在路上",
-            "prompt": "two children holding hands walking together outdoors"
+            "prompt": "two children holding hands walking together outdoors",
+            "layout": "square-native"
           },
           "image_hint": "看圖：兩個人在做同一件事，他們在做什麼？",
           "answer": [
@@ -1274,7 +1275,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H01-climb.webp",
             "alt": "兩個小朋友手牽手一起爬上小山丘",
-            "prompt": "two children climbing a small grassy hill together"
+            "prompt": "two children climbing a small grassy hill together",
+            "layout": "square-native"
           },
           "image_hint": "看圖：他們一起往上爬，在做什麼？",
           "answer": [
@@ -1429,7 +1431,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H01-forward.webp",
             "alt": "一個小朋友往前面走",
-            "prompt": "a child walking forward along a path"
+            "prompt": "a child walking forward along a path",
+            "layout": "square-native"
           },
           "image_hint": "看圖：他往哪個方向走？",
           "answer": [
@@ -1458,7 +1461,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H01-upstairs.webp",
             "alt": "一個小朋友往上爬樓梯",
-            "prompt": "a child climbing stairs upward"
+            "prompt": "a child climbing stairs upward",
+            "layout": "square-native"
           },
           "image_hint": "看圖：他往哪個方向爬？",
           "answer": [

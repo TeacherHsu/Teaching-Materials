@@ -2903,7 +2903,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K09-desert.webp",
             "alt": "沙漠地區的氣候又乾又熱，陽光強烈",
-            "prompt": "a dry hot desert landscape, strong sun, cracked ground"
+            "prompt": "a dry hot desert landscape, strong sun, cracked ground",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個地方的氣候感覺怎麼樣？",
           "answer": [
@@ -2934,7 +2935,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K09-player.webp",
             "alt": "一位又高又壯的球員站在球場上",
-            "prompt": "a tall muscular athlete standing on a sports field"
+            "prompt": "a tall muscular athlete standing on a sports field",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這位球員的身材給你什麼感覺？",
           "answer": [

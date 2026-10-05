@@ -1635,7 +1635,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H07-happy.webp",
             "alt": "一個小朋友笑得很開心",
-            "prompt": "a child smiling happily with a bright expression"
+            "prompt": "a child smiling happily with a bright expression",
+            "layout": "square-native"
           },
           "image_hint": "看圖：他的表情看起來怎麼樣？",
           "answer": [
@@ -1664,7 +1665,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H07-homework.webp",
             "alt": "一疊作業紙，上面有很多複雜的題目",
-            "prompt": "a stack of homework worksheets with complicated-looking problems"
+            "prompt": "a stack of homework worksheets with complicated-looking problems",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這些題目看起來怎麼樣？",
           "answer": [
@@ -1846,7 +1848,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H07-climb-mountain.webp",
             "alt": "小朋友揹著背包，一步一步爬上高山",
-            "prompt": "a child with a backpack climbing up a mountain path step by step"
+            "prompt": "a child with a backpack climbing up a mountain path step by step",
+            "layout": "square-native"
           },
           "image_hint": "看圖：小朋友用什麼動作，到了什麼地方？",
           "answer": [
@@ -1874,7 +1877,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H07-run-classroom.webp",
             "alt": "打鐘了，小朋友趕快跑進教室",
-            "prompt": "a child running into a classroom door after the school bell rings"
+            "prompt": "a child running into a classroom door after the school bell rings",
+            "layout": "square-native"
           },
           "image_hint": "看圖：小朋友用什麼動作，到了什麼地方？",
           "answer": [
@@ -2266,7 +2270,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H07-laugh-together.webp",
             "alt": "一個小朋友笑了，旁邊的人也跟著笑了",
-            "prompt": "a child laughing, and another person next to them laughing too"
+            "prompt": "a child laughing, and another person next to them laughing too",
+            "layout": "square-native"
           },
           "image_hint": "看圖：誰先笑了？旁邊還有誰也笑了？",
           "answer": [
@@ -2299,7 +2304,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H07-cry-together.webp",
             "alt": "姐姐哭了，妹妹看到也哭了",
-            "prompt": "an older sister crying, and her little sister starting to cry too"
+            "prompt": "an older sister crying, and her little sister starting to cry too",
+            "layout": "square-native"
           },
           "image_hint": "看圖：誰先哭了？旁邊還有誰也哭了？",
           "answer": [

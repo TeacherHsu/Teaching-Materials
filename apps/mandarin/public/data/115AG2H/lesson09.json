@@ -2448,7 +2448,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H09-bread.webp",
             "alt": "一個剛烤好的麵包，冒著熱氣",
-            "prompt": "one freshly baked round bread loaf with gentle steam rising"
+            "prompt": "one freshly baked round bread loaf with gentle steam rising",
+            "layout": "square-native"
           },
           "image_hint": "看圖：剛烤好的麵包，聞起來怎麼樣？",
           "answer": [
@@ -2476,7 +2477,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H09-stone.webp",
             "alt": "一顆灰色的大石頭",
-            "prompt": "one grey river stone, smooth and hard, resting alone"
+            "prompt": "one grey river stone, smooth and hard, resting alone",
+            "layout": "square-native"
           },
           "image_hint": "看圖：石頭摸起來是什麼感覺？",
           "answer": [

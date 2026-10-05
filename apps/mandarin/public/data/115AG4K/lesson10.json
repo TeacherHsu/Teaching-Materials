@@ -3059,7 +3059,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K10-melody.webp",
             "alt": "一個小朋友閉著眼睛，似乎聽到耳邊傳來奇幻的旋律",
-            "prompt": "a child with eyes closed, listening, magical musical notes floating near the ear"
+            "prompt": "a child with eyes closed, listening, magical musical notes floating near the ear",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這段旋律讓你覺得怎麼樣？在哪裡聽到的？",
           "answer": [
@@ -3089,7 +3090,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K10-treasure.webp",
             "alt": "一個山洞裡放著一件稀奇的寶物，閃閃發光",
-            "prompt": "a rare glowing treasure object inside a dark cave"
+            "prompt": "a rare glowing treasure object inside a dark cave",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這件寶物放在什麼地方？",
           "answer": [

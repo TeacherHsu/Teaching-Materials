@@ -3044,7 +3044,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K02-cookie.webp",
             "alt": "一塊剛烤好的奶油餅乾，散發出陣陣香氣",
-            "prompt": "one freshly baked butter cookie with visible aroma lines"
+            "prompt": "one freshly baked butter cookie with visible aroma lines",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這塊餅乾聞起來怎麼樣？",
           "answer": [
@@ -3073,7 +3074,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K02-soup.webp",
             "alt": "一碗熱呼呼、軟綿可口的紅豆湯",
-            "prompt": "a bowl of warm red bean soup, soft and smooth texture"
+            "prompt": "a bowl of warm red bean soup, soft and smooth texture",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這碗紅豆湯吃起來的口感是什麼？",
           "answer": [

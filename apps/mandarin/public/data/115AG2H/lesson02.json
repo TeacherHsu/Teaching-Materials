@@ -2313,7 +2313,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H02-sing.webp",
             "alt": "一個小朋友張大嘴巴開心地唱歌",
-            "prompt": "a child singing happily with a big smile"
+            "prompt": "a child singing happily with a big smile",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個小朋友的心情和動作是什麼？",
           "answer": [
@@ -2342,7 +2343,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H02-cry.webp",
             "alt": "一個小朋友低著頭流下眼淚",
-            "prompt": "a child looking down with tears falling, sad expression"
+            "prompt": "a child looking down with tears falling, sad expression",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個小朋友的心情和動作是什麼？",
           "answer": [

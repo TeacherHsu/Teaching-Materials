@@ -2947,7 +2947,8 @@
           "image": {
             "src": "/assets/phrases/115AG3H01-run.webp",
             "alt": "一個小朋友用力奔跑，衝得飛快",
-            "prompt": "a child running very fast on a track, motion blur on legs"
+            "prompt": "a child running very fast on a track, motion blur on legs",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個小朋友跑步的速度怎麼樣？",
           "answer": [
@@ -2977,7 +2978,8 @@
           "image": {
             "src": "/assets/phrases/115AG3H01-jump.webp",
             "alt": "一個小朋友往上跳，跳得比籬笆還高",
-            "prompt": "a child jumping very high over a low fence, mid-air"
+            "prompt": "a child jumping very high over a low fence, mid-air",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個小朋友跳得多高？",
           "answer": [

@@ -2627,7 +2627,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H07-boardgame.webp",
             "alt": "一個小朋友教外婆玩桌遊",
-            "prompt": "a child teaching a grandmother to play a board game at a table"
+            "prompt": "a child teaching a grandmother to play a board game at a table",
+            "layout": "square-native"
           },
           "image_hint": "看圖：誰在教誰，教什麼？",
           "answer": [
@@ -2656,7 +2657,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H07-basketball.webp",
             "alt": "一個小朋友教妹妹打籃球",
-            "prompt": "a child teaching a younger sister to play basketball on a court"
+            "prompt": "a child teaching a younger sister to play basketball on a court",
+            "layout": "square-native"
           },
           "image_hint": "看圖：誰在教誰，教什麼？",
           "answer": [

@@ -1782,7 +1782,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H04-run.webp",
             "alt": "一個小朋友跑走，只看到背影",
-            "prompt": "a child running away down a path, seen from behind"
+            "prompt": "a child running away down a path, seen from behind",
+            "layout": "square-native"
           },
           "image_hint": "看圖：他用跑的方式去了哪裡？",
           "answer": [
@@ -1810,7 +1811,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H04-ball.webp",
             "alt": "一顆球被丟出去，飛出畫面",
-            "prompt": "a ball being thrown and flying out of the frame"
+            "prompt": "a ball being thrown and flying out of the frame",
+            "layout": "square-native"
           },
           "image_hint": "看圖：球被丟到哪裡去了？",
           "answer": [
@@ -1981,7 +1983,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H04-sky.webp",
             "alt": "一大片藍天，小朋友躺在草地上看著天空",
-            "prompt": "a child lying on grass looking up at a vast blue sky"
+            "prompt": "a child lying on grass looking up at a vast blue sky",
+            "layout": "square-native"
           },
           "image_hint": "看圖：天空給你的感覺是大、是高，還是長？",
           "answer": [
@@ -2011,7 +2014,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H04-sister.webp",
             "alt": "妹妹抬頭看著站得很高的姐姐",
-            "prompt": "a little sister looking up at her tall older sister standing beside her"
+            "prompt": "a little sister looking up at her tall older sister standing beside her",
+            "layout": "square-native"
           },
           "image_hint": "看圖：妹妹想知道姐姐的什麼？",
           "answer": [
@@ -2165,7 +2169,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H04-waterdrop.webp",
             "alt": "葉子上的小水珠滑落不見了",
-            "prompt": "a small water droplet sliding off a leaf and disappearing"
+            "prompt": "a small water droplet sliding off a leaf and disappearing",
+            "layout": "square-native"
           },
           "image_hint": "看圖：葉子上的水珠怎麼不見了？",
           "answer": [
@@ -2194,7 +2199,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H04-pencilcase.webp",
             "alt": "小朋友翻找書包，找不到鉛筆盒",
-            "prompt": "a child searching a school bag, unable to find a pencil case"
+            "prompt": "a child searching a school bag, unable to find a pencil case",
+            "layout": "square-native"
           },
           "image_hint": "看圖：小朋友在找什麼東西？",
           "answer": [
@@ -2357,7 +2363,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H04-ask-grass.webp",
             "alt": "小朋友坐在草地上，好奇地看著天空和小草",
-            "prompt": "a child sitting on grass, curiously looking up at the sky, speaking to the grass"
+            "prompt": "a child sitting on grass, curiously looking up at the sky, speaking to the grass",
+            "layout": "square-native"
           },
           "image_hint": "看圖：小朋友坐在哪裡，好奇地想問什麼？",
           "answer": [
@@ -2387,7 +2394,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H04-ask-brother.webp",
             "alt": "妹妹指著課本上的字，問哥哥怎麼念",
-            "prompt": "a little girl pointing at a word in a book, asking her older brother how to read it"
+            "prompt": "a little girl pointing at a word in a book, asking her older brother how to read it",
+            "layout": "square-native"
           },
           "image_hint": "看圖：妹妹在問哥哥什麼？",
           "answer": [

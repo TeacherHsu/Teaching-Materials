@@ -183,3 +183,4 @@ npm run build && npm run check-dist
 - 下一步評估：iPad 上試 Whisper 小模型（聲音不出載具），用紀錄裡的誤判字詞當測試清單。
 - **錯題複習範圍＝這一課（CF 2026-10-06）**：課程首頁的錯題數、錯題複習頁都只取本課（`lesson.lesson_id`），不再是整冊；副標「把這一課答錯的題目再做一次」。
 - **念讀字詞改名「念讀語詞」**（副標「把本課的語詞念出來」）；照樣造短語有自己的插圖圖示（`assets/icons/phrase_builder.webp`，Codex 依 sentence_practice 圖示風格繪製）。
+- **短語圖片規格（CF 2026-10-06）**：一律 960×960 正方形 WebP、單張 ≤300 KiB、完整容納不裁切（`image.layout: square-native`）；圖框正方形 contain。`tools/gen_phrase_images.py` 自動壓到 300 KiB 內，`test-phrase-builder.mjs` 檢查尺寸與容量。

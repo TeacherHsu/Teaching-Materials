@@ -1751,7 +1751,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H05-slide.webp",
             "alt": "遊樂場裡一座彩虹色的滑梯",
-            "prompt": "a colorful rainbow-colored slide in a playground"
+            "prompt": "a colorful rainbow-colored slide in a playground",
+            "layout": "square-native"
           },
           "image_hint": "看圖：滑梯是什麼顏色？",
           "answer": [
@@ -1779,7 +1780,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H05-bird.webp",
             "alt": "一隻圓滾滾、看起來很可愛的小鳥",
-            "prompt": "a small round cute-looking bird"
+            "prompt": "a small round cute-looking bird",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這隻小鳥看起來怎麼樣？",
           "answer": [
@@ -1882,7 +1884,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H05-look.webp",
             "alt": "一個小朋友瞇著眼睛仔細看一樣東西",
-            "prompt": "a child looking closely at an object with curious eyes"
+            "prompt": "a child looking closely at an object with curious eyes",
+            "layout": "square-native"
           },
           "image_hint": "看圖：他在用眼睛做什麼？",
           "answer": [
@@ -1911,7 +1914,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H05-stroll.webp",
             "alt": "一個小朋友在公園裡慢慢走一走",
-            "prompt": "a child slowly walking along a park path"
+            "prompt": "a child slowly walking along a park path",
+            "layout": "square-native"
           },
           "image_hint": "看圖：他的腳在做什麼？",
           "answer": [
@@ -2080,7 +2084,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H05-table-candy.webp",
             "alt": "桌上放著一包棉花糖",
-            "prompt": "a bag of cotton candy sitting on a table at home"
+            "prompt": "a bag of cotton candy sitting on a table at home",
+            "layout": "square-native"
           },
           "image_hint": "看圖：桌上有什麼？",
           "answer": [
@@ -2110,7 +2115,8 @@
           "image": {
             "src": "/assets/phrases/115AG1H05-park-swing.webp",
             "alt": "公園裡有一座鞦韆",
-            "prompt": "a swing set in a park, outdoors"
+            "prompt": "a swing set in a park, outdoors",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這是什麼地方？這裡有什麼？",
           "answer": [

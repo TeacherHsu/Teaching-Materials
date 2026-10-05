@@ -3075,7 +3075,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K12-shoemaker.webp",
             "alt": "鞋匠在小店裡仔細修鞋，技術純熟",
-            "prompt": "a skilled shoemaker carefully repairing a shoe in a small shop, focused expression"
+            "prompt": "a skilled shoemaker carefully repairing a shoe in a small shop, focused expression",
+            "layout": "square-native"
           },
           "image_hint": "看圖：鞋匠修鞋的手藝怎麼樣？大家都知道嗎？",
           "answer": [
@@ -3103,7 +3104,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K12-hotel-lobby.webp",
             "alt": "飯店大廳的裝潢非常漂亮、金碧輝煌",
-            "prompt": "a grand, beautifully decorated hotel lobby, elegant lighting"
+            "prompt": "a grand, beautifully decorated hotel lobby, elegant lighting",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這間飯店的裝潢看起來怎麼樣？",
           "answer": [
@@ -3387,7 +3389,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K12-hammer.webp",
             "alt": "一個人用力抬起重重的鐵鎚",
-            "prompt": "a person lifting a heavy hammer with effort, strained arms"
+            "prompt": "a person lifting a heavy hammer with effort, strained arms",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這把鐵鎚看起來怎麼樣？",
           "answer": [
@@ -3417,7 +3420,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K12-veil.webp",
             "alt": "一位新娘輕輕掀開薄薄的面紗",
-            "prompt": "a bride gently lifting a thin delicate veil"
+            "prompt": "a bride gently lifting a thin delicate veil",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這片面紗摸起來感覺怎麼樣？",
           "answer": [

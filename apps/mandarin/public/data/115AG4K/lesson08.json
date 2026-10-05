@@ -3060,7 +3060,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K08-star.webp",
             "alt": "一顆星星散發著耀眼的光芒",
-            "prompt": "a bright star radiating dazzling light in night sky"
+            "prompt": "a bright star radiating dazzling light in night sky",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這顆星星發出的光，讓你覺得怎麼樣？",
           "answer": [
@@ -3090,7 +3091,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K08-kitchen.webp",
             "alt": "廚房裡瀰漫著濃郁的香味，鍋子冒著熱氣",
-            "prompt": "a kitchen filled with rich aroma, steam rising from a pot"
+            "prompt": "a kitchen filled with rich aroma, steam rising from a pot",
+            "layout": "square-native"
           },
           "image_hint": "看圖：廚房裡充滿了什麼樣的味道？",
           "answer": [

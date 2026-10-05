@@ -2922,7 +2922,8 @@
           "image": {
             "src": "/assets/phrases/115AG6H09-feeding.webp",
             "alt": "一個大人拿著湯匙，一口一口餵小孩吃飯",
-            "prompt": "an adult feeding a child with a spoon, one small spoonful at a time"
+            "prompt": "an adult feeding a child with a spoon, one small spoonful at a time",
+            "layout": "square-native"
           },
           "image_hint": "看圖：媽媽在做什麼動作？",
           "answer": [
@@ -2955,7 +2956,8 @@
           "image": {
             "src": "/assets/phrases/115AG6H09-windows.webp",
             "alt": "一個人沿著走廊，把一扇一扇的窗戶打開",
-            "prompt": "a person walking along a corridor opening windows one by one"
+            "prompt": "a person walking along a corridor opening windows one by one",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個人沿路在做什麼？",
           "answer": [
@@ -3288,7 +3290,8 @@
           "image": {
             "src": "/assets/phrases/115AG6H09-outdoor.webp",
             "alt": "一群學生背著背包，準備出發去校外教學",
-            "prompt": "a group of students with backpacks getting ready to go on a school field trip"
+            "prompt": "a group of students with backpacks getting ready to go on a school field trip",
+            "layout": "square-native"
           },
           "image_hint": "看圖：學校幫學生安排了什麼活動？",
           "answer": [
@@ -3318,7 +3321,8 @@
           "image": {
             "src": "/assets/phrases/115AG6H09-transport.webp",
             "alt": "一輛造型新穎、方便上下車的公車",
-            "prompt": "a sleek modern bus designed for easy and convenient boarding"
+            "prompt": "a sleek modern bus designed for easy and convenient boarding",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個東西是用來做什麼的？",
           "answer": [

@@ -2619,7 +2619,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H08-sit-read.webp",
             "alt": "一個小朋友坐著認真看書",
-            "prompt": "a child sitting on a chair, reading a book attentively"
+            "prompt": "a child sitting on a chair, reading a book attentively",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個小朋友用什麼姿勢做什麼事？",
           "answer": [
@@ -2648,7 +2649,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H08-kneel-wipe.webp",
             "alt": "一個小朋友跪在地上擦地板",
-            "prompt": "a child kneeling on the floor, wiping it with a cloth"
+            "prompt": "a child kneeling on the floor, wiping it with a cloth",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個小朋友用什麼姿勢做什麼事？",
           "answer": [

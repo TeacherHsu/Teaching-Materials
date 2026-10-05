@@ -2589,7 +2589,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H01-happy.webp",
             "alt": "一個小朋友開心地笑著",
-            "prompt": "a child smiling happily"
+            "prompt": "a child smiling happily",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個小朋友的表情是什麼心情？",
           "answer": [
@@ -2617,7 +2618,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H01-nervous.webp",
             "alt": "一個小朋友皺著眉頭、手心冒汗的樣子",
-            "prompt": "a child looking nervous with a worried frown"
+            "prompt": "a child looking nervous with a worried frown",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個小朋友皺著眉頭，是什麼心情？",
           "answer": [

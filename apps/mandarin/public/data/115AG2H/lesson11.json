@@ -2789,7 +2789,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H11-maze.webp",
             "alt": "小朋友在迷宮裡跑來跑去，找不到出口",
-            "prompt": "a child running back and forth inside a garden maze, unable to find the exit"
+            "prompt": "a child running back and forth inside a garden maze, unable to find the exit",
+            "layout": "square-native"
           },
           "image_hint": "看圖：他一直在迷宮裡做什麼，卻找不到什麼？",
           "answer": [
@@ -2821,7 +2822,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H11-think.webp",
             "alt": "小朋友抓著頭想數學題，怎麼想都想不出答案",
-            "prompt": "a child scratching their head trying to solve a math problem, unable to find the answer"
+            "prompt": "a child scratching their head trying to solve a math problem, unable to find the answer",
+            "layout": "square-native"
           },
           "image_hint": "看圖：他一直在做什麼，卻得不到什麼？",
           "answer": [

@@ -2247,7 +2247,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H04-eat.webp",
             "alt": "一個小朋友只顧著吃飯，湯碗完全沒動",
-            "prompt": "a child eating rice happily, with an untouched bowl of soup beside the plate"
+            "prompt": "a child eating rice happily, with an untouched bowl of soup beside the plate",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個小朋友做了什麼，沒做什麼？",
           "answer": [
@@ -2277,7 +2278,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H04-read.webp",
             "alt": "一個小朋友只顧著看書，筆和紙都放在旁邊沒用",
-            "prompt": "a child reading a book intently, with a pen and blank paper untouched nearby"
+            "prompt": "a child reading a book intently, with a pen and blank paper untouched nearby",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個小朋友做了什麼，沒做什麼？",
           "answer": [
@@ -2452,7 +2454,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H04b-basketball.webp",
             "alt": "小朋友在球場上打籃球，旁邊貼著比賽報名表",
-            "prompt": "a child playing basketball on an outdoor court, with a competition sign-up poster on the fence nearby"
+            "prompt": "a child playing basketball on an outdoor court, with a competition sign-up poster on the fence nearby",
+            "layout": "square-native"
           },
           "image_hint": "看圖：他已經在做什麼？牆上還貼著什麼？",
           "answer": [
@@ -2482,7 +2485,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H04b-puppy.webp",
             "alt": "小朋友看著寵物店櫥窗裡的小狗，伸手想摸",
-            "prompt": "a child looking through a pet shop window at a puppy, reaching a hand toward the glass"
+            "prompt": "a child looking through a pet shop window at a puppy, reaching a hand toward the glass",
+            "layout": "square-native"
           },
           "image_hint": "看圖：他正在看什麼？他的手在做什麼？",
           "answer": [

@@ -3284,7 +3284,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K04-toy.webp",
             "alt": "一個小朋友把玩具轉送給弟弟",
-            "prompt": "a child handing a toy over to a younger sibling"
+            "prompt": "a child handing a toy over to a younger sibling",
+            "layout": "square-native"
           },
           "image_hint": "看圖：誰把什麼東西給了誰？",
           "answer": [
@@ -3316,7 +3317,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K04-cake.webp",
             "alt": "一個小朋友把一片蛋糕分享給同學",
-            "prompt": "a child sharing a slice of cake with a classmate"
+            "prompt": "a child sharing a slice of cake with a classmate",
+            "layout": "square-native"
           },
           "image_hint": "看圖：誰把什麼東西給了誰？",
           "answer": [

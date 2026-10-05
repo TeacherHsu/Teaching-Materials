@@ -3795,3 +3795,8 @@ html.present-mode .image-frame img { max-height: 42vh; }
 .phrase-slot--now { box-shadow: 0 0 0 4px var(--color-highlight-surface), 0 0 0 6px var(--color-highlight-line); }
 .word-reading__heard { margin: var(--space-1) 0 0; font-size: var(--font-size-body); color: var(--text-secondary); min-height: 1.5em; }
 .word-reading__mic--on { background: var(--module-rose); }
+
+/* 照樣造短語圖片：一律 960×960 正方形資產，完整呈現不裁切（依 lesson-generation-workflow 圖片規則；
+   原本沿用 .image-frame 預設 4:3 cover，上下線索被切掉——CF 2026-10-06） */
+.phrase-image .image-frame { aspect-ratio: 1 / 1; background: #fff; border: 1px solid var(--color-border); }
+.phrase-image .image-frame img { object-fit: contain; object-position: center; }

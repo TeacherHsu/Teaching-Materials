@@ -2762,7 +2762,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H03-think-angry.webp",
             "alt": "一個小朋友抱著頭，臉越來越生氣",
-            "prompt": "a child holding their head, looking increasingly angry while thinking"
+            "prompt": "a child holding their head, looking increasingly angry while thinking",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個小朋友越想，表情怎麼變化？",
           "answer": [
@@ -2792,7 +2793,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H03-talk-excited.webp",
             "alt": "一個小朋友邊說話邊露出興奮的表情",
-            "prompt": "a child talking excitedly, eyes lighting up with excitement"
+            "prompt": "a child talking excitedly, eyes lighting up with excitement",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個小朋友越說，表情怎麼變化？",
           "answer": [

@@ -2937,7 +2937,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K06-steps.webp",
             "alt": "一個人拖著沉重的腳步慢慢走路",
-            "prompt": "a person walking slowly with heavy tired steps, dragging feet"
+            "prompt": "a person walking slowly with heavy tired steps, dragging feet",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個人走路的腳步感覺怎麼樣？",
           "answer": [
@@ -2967,7 +2968,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K06-veg.webp",
             "alt": "一個人手裡拿著新鮮的蔬菜",
-            "prompt": "a person holding fresh vegetables, bright colors, crisp look"
+            "prompt": "a person holding fresh vegetables, bright colors, crisp look",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這些蔬菜看起來怎麼樣？",
           "answer": [

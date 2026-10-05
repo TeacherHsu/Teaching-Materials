@@ -2726,7 +2726,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K01-smile.webp",
             "alt": "一個小朋友張開嘴巴，露出燦爛的笑容",
-            "prompt": "a child with a wide bright beaming smile"
+            "prompt": "a child with a wide bright beaming smile",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個小朋友的表情怎麼樣？",
           "answer": [
@@ -2757,7 +2758,8 @@
           "image": {
             "src": "/assets/phrases/115AG4K01-sing.webp",
             "alt": "一個小朋友在台上拿著麥克風大聲唱歌",
-            "prompt": "a child singing loudly on a stage with a microphone"
+            "prompt": "a child singing loudly on a stage with a microphone",
+            "layout": "square-native"
           },
           "image_hint": "看圖：這個小朋友唱歌的聲音怎麼樣？",
           "answer": [

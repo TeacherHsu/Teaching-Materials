@@ -2403,7 +2403,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H10-jump.webp",
             "alt": "小朋友看到朋友在水裡求救，立刻跳下水救人",
-            "prompt": "a child jumping into water without hesitation to help a friend"
+            "prompt": "a child jumping into water without hesitation to help a friend",
+            "layout": "square-native"
           },
           "image_hint": "看圖：他做決定的時候，有沒有先停下來想一想？",
           "answer": [
@@ -2432,7 +2433,8 @@
           "image": {
             "src": "/assets/phrases/115AG2H10-ignore.webp",
             "alt": "媽媽在旁邊叫他吃飯，他低頭一直玩玩具，完全沒反應",
-            "prompt": "a child completely absorbed in playing with toys, ignoring a parent calling from nearby"
+            "prompt": "a child completely absorbed in playing with toys, ignoring a parent calling from nearby",
+            "layout": "square-native"
           },
           "image_hint": "看圖：媽媽在說話，他有沒有抬頭理她？",
           "answer": [
