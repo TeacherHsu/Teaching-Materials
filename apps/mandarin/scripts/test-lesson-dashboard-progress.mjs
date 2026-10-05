@@ -23,7 +23,7 @@ assert.deepEqual(lockedKeys, ['review'], `第 1 課應該只有「舊字新詞�
 const pendingKeys = statuses.filter((s) => s.code === 'pending_review').map((s) => s.key);
 assert.deepEqual(pendingKeys, ['listening'], `第 1 課聽聽看應待重新編題，實際待審：${pendingKeys.join('、') || '無'}`);
 const availableCount = statuses.filter((s) => s.code === 'available' || s.code === 'done').length;
-assert.equal(availableCount, 13, `第 1 課可開始的大項應為 13 項，實際 ${availableCount}`);
+assert.equal(availableCount, 14, `第 1 課可開始的大項應為 14 項（含 2026-10-05 照樣造短語），實際 ${availableCount}`);
 
 // ---- LessonDashboard：hero 分母排除鎖住與待審項目 ----
 const dashboard = LessonDashboard(lesson);
@@ -35,7 +35,7 @@ assert.match(
   `hero 進度只算核心必做 4 項（加練另列），實際：「${progressLabel.textContent}」`,
 );
 const extraLabel = dashboard.find((n) => n.hasClass('lesson-hero__extra-label'));
-assert.ok(extraLabel && /加練挑戰（選做）0 ／ 9 項/.test(extraLabel.textContent), `加練另列，分母排除鎖住與待審（13－4＝9），實際：「${extraLabel?.textContent}」`);
+assert.ok(extraLabel && /加練挑戰（選做）0 ／ 10 項/.test(extraLabel.textContent), `加練另列，分母排除鎖住與待審（14－4＝10），實際：「${extraLabel?.textContent}」`);
 
 // 進度環（progress-ring）文字也要用同一個分母換算百分比，0／10 = 0%
 const ringSvgHtml = dashboard.find((n) => n.hasClass('progress-ring')).innerHTML;

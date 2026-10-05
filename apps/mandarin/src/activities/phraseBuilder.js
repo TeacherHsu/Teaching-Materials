@@ -273,7 +273,7 @@ export function buildPhraseBuilderActivity(lesson, onBack) {
             const phrase = picked.join('');
             say(`✓ 很好！「${phrase}」這樣說很合理。`, 'phrase-feedback--right');
             speak(`很好！${phrase}`);
-            [check, reset, hintBtn].forEach((b) => { b.hidden = true; });
+            [check, reset, hintBtn].forEach((b) => { b.hidden = true; b.disabled = true; });
             const go = h('button', { class: 'btn btn--primary', type: 'button' }, '下一步');
             go.addEventListener('click', () => { stage = 'check'; renderStage(); });
             feedback.appendChild(h('div', { class: 'quiz-option-row' }, [go]));

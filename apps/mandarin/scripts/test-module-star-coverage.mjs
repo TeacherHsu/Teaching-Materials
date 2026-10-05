@@ -6,6 +6,7 @@
 //   - MatchingGame：左右欄逐一嘗試配對，保證有限步內配對完成。
 //   - SentenceOrdering（讀懂課文的段落排序）：用課次資料算出的正解直接排。
 // 用法：node scripts/test-module-star-coverage.mjs
+import { buildPhraseBuilderActivity } from '../src/activities/phraseBuilder.js';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { installFakeDom, FakeElement } from './fake-dom.mjs';
@@ -55,6 +56,7 @@ const BUILDERS = {
   main_idea: buildMainIdeaActivity,
   zhuyin_typing: buildZhuyinTypingActivity,
   word_reading: buildWordReadingActivity,
+  phrase_builder: buildPhraseBuilderActivity,
   polysemy: buildPolysemyActivity,
   polyphones: buildPolyphonesActivity,
   lookalikes: buildLookalikesActivity,
@@ -63,7 +65,7 @@ const BUILDERS = {
 };
 
 // ---- 通用互動驅動器：純看 DOM 狀態決定下一步，不需要事先知道任何一題的正解 ----
-const ADVANCE_RE = /^(開始練習|念對了|下一個|再念一組|下一步|換我試試看|用這個方法|下一題|下一組|加練下一組|看結果|回課程首頁|繼續|再來一組|完成|我看懂了|看完地圖)|^我記住了$/;
+const ADVANCE_RE = /^(開始練習|念對了|下一個|再念一組|下一步|換我試試看|用這個方法|下一題|下一組|加練下一組|看結果|回課程首頁|繼續|再來一組|完成|我看懂了|看完地圖|我知道了)|^我記住了$/;
 
 /** fake-dom 的 h() 對 `disabled: 'disabled'` 這種初始屬性只會寫進 attrs，不會同步
  * FakeElement.disabled 這個屬性（那個屬性只有元件之後手動 `el.disabled = true` 才會更新）。
@@ -301,6 +303,26 @@ function driveOneGenericStep(container) {
   return false;
 }
 
+/** 照樣造短語：從情境句找出這一輪的答案，依序點積木再按「檢查」。 */
+function drivePhraseBuilderIfPresent(container) {
+  const check = enabledButtons(container, (n) => n.textContent.trim() === '檢查')[0];
+  if (!check || !lesson.phrase_builders) return false;
+  const sceneEl = container.find((n) => n.hasClass?.('phrase-scene'));
+  const scene = sceneEl?.textContent.trim() || '';
+  for (const spec of lesson.phrase_builders) {
+    const round = spec.rounds.find((r) => scene.startsWith((r.scene || r.image?.alt || '').slice(0, 8)));
+    if (!round) continue;
+    spec.slots.forEach((slot, i) => {
+      if (slot.fixed || slot.copy_of !== undefined) return;
+      const tile = enabledButtons(container, (n) => n.hasClass('phrase-tile') && n.textContent === round.answer[i])[0];
+      tile?.dispatch('click');
+    });
+    check.dispatch('click');
+    return true;
+  }
+  return false;
+}
+
 function driveActivityToCompletion(container, isFinished, { maxIterations = 3000, readingSolution, sentenceSolutions } = {}) {
   let iterations = 0;
   while (!isFinished() && iterations < maxIterations) {
@@ -308,6 +330,7 @@ function driveActivityToCompletion(container, isFinished, { maxIterations = 3000
     if (readingSolution && driveSentenceOrderingWithSolution(container, readingSolution)) continue;
     if (sentenceSolutions && driveSentenceOrderingWithLessonSolution(container, sentenceSolutions)) continue;
     if (driveMatchingGameIfPresent(container)) continue;
+    if (drivePhraseBuilderIfPresent(container)) continue;
     if (driveSentenceOrderingBruteForce(container)) continue;
     if (driveOneGenericStep(container)) continue;
     throw new Error(`卡住了，第 ${iterations} 次迭代找不到任何可互動的元素，DOM 摘要：${summarize(container)}`);
