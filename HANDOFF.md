@@ -772,3 +772,8 @@
 - 新增基本練習區（念讀字詞＋照樣造短語）；照樣造短語完成二上 L09 一課（draft，待 CF 確認：`apps/mandarin/docs/review/2026-10-05-phrase-builder-115AG2H09-confirm.md`）。
 - 課文點讀字級改三級、基準放大。
 - 待辦：L09 確認後再逐課擴充（34 課有官方短語、21 課沒有）；短語圖片素材。
+
+## 2026-10-05（照樣造短語全冊上線）
+- 52 個句型全部 CF 核准上線（一上～六上，依官方短語）；109 張 Codex 插圖在 `apps/mandarin/public/assets/phrases/`（`tools/gen_phrase_images.py` 只補缺圖）。
+- 規則：`apps/mandarin/docs/specs/2026-10-05-phrase-builder-authoring.md`（四輪修訂：生活化、逐格字數相同、語境合理就給過、動作疊字、四字詞整塊、不跳過官方教材、格數依官方結構）。
+- 確認清單：`apps/mandarin/docs/review/2026-10-05-phrase-builder-115AG*-confirm.md`。
