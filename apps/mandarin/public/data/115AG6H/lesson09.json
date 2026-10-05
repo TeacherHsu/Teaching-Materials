@@ -2742,7 +2742,7 @@
     {
       "id": "phrase-builder:115AG6H09:01",
       "pattern_ref": "sentence_pattern:115AG6H09:pasted:01",
-      "status": "draft",
+      "status": "approved",
       "source": "教師貼文提供之 06各課短語句型練習（2026-09-27）",
       "official": {
         "head": "一次又一次的登臺後",
@@ -2990,12 +2990,14 @@
           },
           "scene": "工人沿著走廊，把一扇一扇的窗戶打開透氣。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     },
     {
       "id": "phrase-builder:115AG6H09:02",
       "pattern_ref": "sentence_pattern:115AG6H09:pasted:02",
-      "status": "draft",
+      "status": "approved",
       "source": "教師貼文提供之 06各課短語句型練習（2026-09-27）",
       "official": {
         "head": "更營造了壯觀的視覺效果",
@@ -3369,7 +3371,9 @@
           },
           "scene": "工程師設計了一輛造型新穎、方便上下車的公車。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     }
   ]
 }

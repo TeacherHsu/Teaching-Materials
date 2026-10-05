@@ -2613,7 +2613,7 @@
     {
       "id": "phrase-builder:115AG4K09:01",
       "pattern_ref": "sentence_pattern:115AG4K09:pasted:01",
-      "status": "draft",
+      "status": "approved",
       "source": "教師提供第九課句型教材（2026-09-27）",
       "official": {
         "head": "氣候又乾又熱",
@@ -2961,7 +2961,9 @@
           },
           "scene": "球場上有一位身材又高又壯的球員正在練球。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     }
   ]
 }

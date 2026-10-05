@@ -2461,7 +2461,7 @@
     {
       "id": "phrase-builder:115AG6H06:01",
       "pattern_ref": "sentence_pattern:115AG6H06:pasted:01",
-      "status": "draft",
+      "status": "approved",
       "source": "教師貼文提供之 06各課短語句型練習（2026-09-27）",
       "official": {
         "head": "敏銳而有智慧的人",
@@ -2831,12 +2831,14 @@
           },
           "scene": "小狗在草地上跳來跳去，一刻都不停下來。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     },
     {
       "id": "phrase-builder:115AG6H06:02",
       "pattern_ref": "sentence_pattern:115AG6H06:pasted:02",
-      "status": "draft",
+      "status": "approved",
       "source": "教師貼文提供之 06各課短語句型練習（2026-09-27）",
       "official": {
         "head": "轉化為幽默的談吐",
@@ -3206,7 +3208,9 @@
           },
           "scene": "他穿上盔甲，站上戰場，像個不怕危險的士兵。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     }
   ]
 }

@@ -1179,7 +1179,7 @@
     {
       "id": "phrase-builder:115AG1H01:01",
       "pattern_ref": "sentence-pattern:115AG1H01:01",
-      "status": "draft",
+      "status": "approved",
       "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "official": {
         "head": "一起走",
@@ -1298,12 +1298,14 @@
           },
           "scene": "兩個小朋友手牽著手，一起爬上小山坡。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     },
     {
       "id": "phrase-builder:115AG1H01:02",
       "pattern_ref": "sentence-pattern:115AG1H01:02",
-      "status": "draft",
+      "status": "approved",
       "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "official": {
         "head": "向前走",
@@ -1481,7 +1483,9 @@
           },
           "scene": "小朋友抓著扶手，一階一階往上爬樓梯。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     }
   ]
 }

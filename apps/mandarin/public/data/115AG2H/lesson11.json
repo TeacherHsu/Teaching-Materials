@@ -2681,7 +2681,7 @@
     {
       "id": "phrase-builder:115AG2H11:01",
       "pattern_ref": "sentence-pattern:115AG2H11:01",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
       "official": {
         "head": "闖來闖去闖不出來",
@@ -2849,7 +2849,9 @@
           },
           "scene": "小朋友抓著頭想數學題，想來想去想不出來。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     }
   ]
 }

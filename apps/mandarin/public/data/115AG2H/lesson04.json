@@ -2108,7 +2108,7 @@
     {
       "id": "phrase-builder:115AG2H04:01",
       "pattern_ref": "sentence-pattern:115AG2H04:01",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
       "official": {
         "head": "只聞聲不見影",
@@ -2309,7 +2309,9 @@
           },
           "scene": "他專心看書，筆和紙放在旁邊沒用到。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     }
   ]
 }

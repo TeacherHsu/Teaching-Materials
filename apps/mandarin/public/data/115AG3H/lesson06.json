@@ -1785,7 +1785,7 @@
     {
       "id": "phrase-builder:115AG3H06:01",
       "pattern_ref": "sentence_pattern:115AG3H06:01",
-      "status": "draft",
+      "status": "approved",
       "source": "115G3A／翰林三上第6課官方教材與教師確認資料（08各課短語句型練習）",
       "official": {
         "head": "閃亮亮的鉛筆",
@@ -1968,7 +1968,9 @@
           },
           "scene": "弟弟在河邊撿到一顆圓滾滾的大石頭。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     }
   ]
 }

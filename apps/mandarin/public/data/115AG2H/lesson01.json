@@ -2515,7 +2515,7 @@
     {
       "id": "phrase-builder:115AG2H01:01",
       "pattern_ref": "sentence-pattern:115AG2H01:01",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
       "official": {
         "head": "害怕的時候",
@@ -2641,7 +2641,9 @@
           },
           "scene": "他皺著眉頭，手心冒著汗。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     }
   ]
 }

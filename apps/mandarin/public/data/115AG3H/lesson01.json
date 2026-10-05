@@ -2815,7 +2815,7 @@
     {
       "id": "phrase-builder:115AG3H01:01",
       "pattern_ref": "sentence_pattern:115AG3H01:2b3e44ae",
-      "status": "draft",
+      "status": "approved",
       "source": "dabutie:08各課短語句型練習（3上L01短語句型造句-時間是什麼.pdf）",
       "official": {
         "head": "跑得實在太快了",
@@ -3006,7 +3006,9 @@
           },
           "scene": "小朋友用力往上跳，跳得比籬笆還高。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     }
   ]
 }

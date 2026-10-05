@@ -2928,7 +2928,7 @@
     {
       "id": "phrase-builder:115AG4K02:01",
       "pattern_ref": "sentence:02:01",
-      "status": "draft",
+      "status": "approved",
       "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）",
       "official": {
         "head": "香氣撲鼻的奶油餅乾",
@@ -3110,7 +3110,9 @@
           },
           "scene": "弟弟吃著一碗熱呼呼的紅豆湯，覺得軟綿可口。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     }
   ]
 }

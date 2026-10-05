@@ -2279,7 +2279,7 @@
     {
       "id": "phrase-builder:115AG2H05:01",
       "pattern_ref": "sentence-pattern:115AG2H05:01",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
       "official": {
         "head": "爬進爬出",
@@ -2450,12 +2450,14 @@
           },
           "scene": "牠在空中飛上飛下。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     },
     {
       "id": "phrase-builder:115AG2H05:02",
       "pattern_ref": "sentence-pattern:115AG2H05:02",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
       "official": {
         "head": "大大小小的腳印",
@@ -2626,7 +2628,9 @@
           },
           "scene": "一杯果汁外面還有水滴，看起來很冰涼。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     }
   ]
 }

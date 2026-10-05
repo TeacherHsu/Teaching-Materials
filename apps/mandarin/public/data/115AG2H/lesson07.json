@@ -2485,7 +2485,7 @@
     {
       "id": "phrase-builder:115AG2H07:01",
       "pattern_ref": "sentence-pattern:115AG2H07:01",
-      "status": "draft",
+      "status": "approved",
       "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
       "official": {
         "head": "教大家做越南春捲",
@@ -2681,7 +2681,9 @@
           },
           "scene": "小朋友在球場上，教妹妹怎麼打籃球。"
         }
-      ]
+      ],
+      "approved_by": "CF",
+      "approved_at": "2026-10-05"
     }
   ]
 }
