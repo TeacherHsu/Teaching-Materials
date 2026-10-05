@@ -1087,6 +1087,9 @@
       "status": "missing",
       "activity": "review",
       "note": "第 1 課沒有前課資料。"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
   "discussion_questions": [
@@ -1170,6 +1173,315 @@
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "converted_to_choice": false
+    }
+  ],
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG1H01:01",
+      "pattern_ref": "sentence-pattern:115AG1H01:01",
+      "status": "draft",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "official": {
+        "head": "一起走",
+        "examples": [
+          "一起吃飯",
+          "一起爬山",
+          "一起唱歌"
+        ],
+        "structure": "一起＋動詞（做什麼事）"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "fixed": "一起"
+        },
+        {
+          "role": "action",
+          "label": "做什麼",
+          "ask": "圖裡的人在一起做什麼事？"
+        }
+      ],
+      "explain": "「一起」後面放一個大家一起做的動作。",
+      "example": {
+        "chunks": [
+          "一起",
+          "走"
+        ]
+      },
+      "bank": [
+        {
+          "text": "走",
+          "role": "action"
+        },
+        {
+          "text": "爬山",
+          "role": "action"
+        },
+        {
+          "text": "下雨",
+          "role": "action"
+        }
+      ],
+      "accepted": [
+        [
+          "一起",
+          "走"
+        ],
+        [
+          "一起",
+          "爬山"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "一起",
+            "下雨"
+          ],
+          "feedback": "順序對了。下雨是天氣自己發生的事，不是我們可以『一起』去做的動作，對嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H01-walk.webp",
+            "alt": "兩個小朋友牽著手一起走在路上",
+            "prompt": "two children holding hands walking together outdoors"
+          },
+          "image_hint": "看圖：兩個人在做同一件事，他們在做什麼？",
+          "answer": [
+            "一起",
+            "走"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "一起走",
+                "correct": true,
+                "feedback": "對！兩個人一起走路。"
+              },
+              {
+                "text": "一起下雨",
+                "correct": false,
+                "feedback": "下雨不是人做的動作，這張圖片是兩人一起走路。"
+              }
+            ]
+          },
+          "scene": "兩個小朋友手牽著手，一起沿著路走。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H01-climb.webp",
+            "alt": "兩個小朋友手牽手一起爬上小山丘",
+            "prompt": "two children climbing a small grassy hill together"
+          },
+          "image_hint": "看圖：他們一起往上爬，在做什麼？",
+          "answer": [
+            "一起",
+            "爬山"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "一起爬山",
+                "correct": true,
+                "feedback": "對！兩個人一起爬山。"
+              },
+              {
+                "text": "一起下雨",
+                "correct": false,
+                "feedback": "下雨不是人做的動作，這張圖片是兩人一起爬山。"
+              }
+            ]
+          },
+          "scene": "兩個小朋友手牽著手，一起爬上小山坡。"
+        }
+      ]
+    },
+    {
+      "id": "phrase-builder:115AG1H01:02",
+      "pattern_ref": "sentence-pattern:115AG1H01:02",
+      "status": "draft",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "official": {
+        "head": "向前走",
+        "examples": [
+          "向上爬",
+          "向右轉",
+          "向後跳"
+        ],
+        "structure": "向＋方向＋動詞（動作）"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "fixed": "向"
+        },
+        {
+          "role": "direction",
+          "label": "往哪裡",
+          "ask": "他往哪個方向移動？"
+        },
+        {
+          "role": "action",
+          "label": "做什麼動作",
+          "ask": "他用什麼方式移動？"
+        }
+      ],
+      "explain": "『向』後面先說往哪個方向，再說做什麼動作。",
+      "example": {
+        "chunks": [
+          "向",
+          "前",
+          "走"
+        ]
+      },
+      "bank": [
+        {
+          "text": "前",
+          "role": "direction"
+        },
+        {
+          "text": "上",
+          "role": "direction"
+        },
+        {
+          "text": "後",
+          "role": "direction"
+        },
+        {
+          "text": "走",
+          "role": "action"
+        },
+        {
+          "text": "爬",
+          "role": "action"
+        },
+        {
+          "text": "笑",
+          "role": "action"
+        }
+      ],
+      "accepted": [
+        [
+          "向",
+          "前",
+          "走"
+        ],
+        [
+          "向",
+          "前",
+          "爬"
+        ],
+        [
+          "向",
+          "上",
+          "走"
+        ],
+        [
+          "向",
+          "上",
+          "爬"
+        ],
+        [
+          "向",
+          "後",
+          "走"
+        ],
+        [
+          "向",
+          "後",
+          "爬"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "向",
+            "前",
+            "笑"
+          ],
+          "feedback": "順序對了。笑是表情，沒有方向，會說『向前笑』嗎？"
+        },
+        {
+          "chunks": [
+            "向",
+            "上",
+            "笑"
+          ],
+          "feedback": "順序對了。笑是表情，沒有方向，會說『向上笑』嗎？"
+        },
+        {
+          "chunks": [
+            "向",
+            "後",
+            "笑"
+          ],
+          "feedback": "順序對了。笑是表情，沒有方向，會說『向後笑』嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H01-forward.webp",
+            "alt": "一個小朋友往前面走",
+            "prompt": "a child walking forward along a path"
+          },
+          "image_hint": "看圖：他往哪個方向走？",
+          "answer": [
+            "向",
+            "前",
+            "走"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "向前走",
+                "correct": true,
+                "feedback": "對！他往前走。"
+              },
+              {
+                "text": "向前笑",
+                "correct": false,
+                "feedback": "笑不是方向性的動作，圖片裡是在走路。"
+              }
+            ]
+          },
+          "scene": "小朋友沿著路往前走。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H01-upstairs.webp",
+            "alt": "一個小朋友往上爬樓梯",
+            "prompt": "a child climbing stairs upward"
+          },
+          "image_hint": "看圖：他往哪個方向爬？",
+          "answer": [
+            "向",
+            "上",
+            "爬"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "向上爬",
+                "correct": true,
+                "feedback": "對！他往上爬樓梯。"
+              },
+              {
+                "text": "向上笑",
+                "correct": false,
+                "feedback": "笑不是方向性的動作，圖片裡是在往上爬。"
+              }
+            ]
+          },
+          "scene": "小朋友抓著扶手，一階一階往上爬樓梯。"
+        }
+      ]
     }
   ]
 }

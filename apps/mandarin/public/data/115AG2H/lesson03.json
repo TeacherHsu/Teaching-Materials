@@ -2293,6 +2293,9 @@
       "label": "舊字新詞",
       "status": "available",
       "activity": "review"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
   "extensions": [
@@ -2595,6 +2598,227 @@
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "converted_to_choice": false
+    }
+  ],
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG2H03:01",
+      "pattern_ref": "sentence-pattern:115AG2H03:01",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
+      "official": {
+        "head": "越做越高興",
+        "examples": [
+          "越想越生氣",
+          "越說越興奮"
+        ],
+        "structure": "越＋動詞（動作）＋越＋怎麼樣"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "fixed": "越"
+        },
+        {
+          "role": "action",
+          "label": "做什麼動作",
+          "ask": "他一直在做什麼？"
+        },
+        {
+          "fixed": "越"
+        },
+        {
+          "role": "feeling",
+          "label": "心情怎麼樣",
+          "ask": "隨著他繼續這樣做，心情怎麼變化？"
+        }
+      ],
+      "explain": "「越」後面各放一個動作或心情。",
+      "example": {
+        "chunks": [
+          "越",
+          "做",
+          "越",
+          "高興"
+        ]
+      },
+      "bank": [
+        {
+          "text": "做",
+          "role": "action"
+        },
+        {
+          "text": "想",
+          "role": "action"
+        },
+        {
+          "text": "說",
+          "role": "action"
+        },
+        {
+          "text": "睡著",
+          "role": "action"
+        },
+        {
+          "text": "高興",
+          "role": "feeling"
+        },
+        {
+          "text": "生氣",
+          "role": "feeling"
+        },
+        {
+          "text": "興奮",
+          "role": "feeling"
+        }
+      ],
+      "accepted": [
+        [
+          "越",
+          "做",
+          "越",
+          "高興"
+        ],
+        [
+          "越",
+          "做",
+          "越",
+          "生氣"
+        ],
+        [
+          "越",
+          "做",
+          "越",
+          "興奮"
+        ],
+        [
+          "越",
+          "想",
+          "越",
+          "高興"
+        ],
+        [
+          "越",
+          "想",
+          "越",
+          "生氣"
+        ],
+        [
+          "越",
+          "想",
+          "越",
+          "興奮"
+        ],
+        [
+          "越",
+          "說",
+          "越",
+          "高興"
+        ],
+        [
+          "越",
+          "說",
+          "越",
+          "生氣"
+        ],
+        [
+          "越",
+          "說",
+          "越",
+          "興奮"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "越",
+            "睡著",
+            "越",
+            "高興"
+          ],
+          "feedback": "順序對了。「睡著」後就不會再更睡著了，不是可以越來越多的動作，想一想可以換成哪個動作？"
+        },
+        {
+          "chunks": [
+            "越",
+            "睡著",
+            "越",
+            "生氣"
+          ],
+          "feedback": "順序對了。「睡著」後就不會再更睡著了，不是可以越來越多的動作，想一想可以換成哪個動作？"
+        },
+        {
+          "chunks": [
+            "越",
+            "睡著",
+            "越",
+            "興奮"
+          ],
+          "feedback": "順序對了。「睡著」後就不會再更睡著了，不是可以越來越多的動作，想一想可以換成哪個動作？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H03-think-angry.webp",
+            "alt": "一個小朋友抱著頭，臉越來越生氣",
+            "prompt": "a child holding their head, looking increasingly angry while thinking"
+          },
+          "image_hint": "看圖：這個小朋友越想，表情怎麼變化？",
+          "answer": [
+            "越",
+            "想",
+            "越",
+            "生氣"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "越想越生氣",
+                "correct": true,
+                "feedback": "對！他越想這件事，越生氣。"
+              },
+              {
+                "text": "越做越生氣",
+                "correct": false,
+                "feedback": "圖片裡的小朋友在想事情，不是在做事情。"
+              }
+            ]
+          },
+          "scene": "他抱著頭想事情，臉色越想越生氣。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H03-talk-excited.webp",
+            "alt": "一個小朋友邊說話邊露出興奮的表情",
+            "prompt": "a child talking excitedly, eyes lighting up with excitement"
+          },
+          "image_hint": "看圖：這個小朋友越說，表情怎麼變化？",
+          "answer": [
+            "越",
+            "說",
+            "越",
+            "興奮"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "越說越興奮",
+                "correct": true,
+                "feedback": "對！他越說這件事，越興奮。"
+              },
+              {
+                "text": "越想越興奮",
+                "correct": false,
+                "feedback": "圖片裡的小朋友在說話，不是在想事情。"
+              }
+            ]
+          },
+          "scene": "他說著說著，眼睛越來越亮，愈說愈興奮。"
+        }
+      ]
     }
   ]
 }

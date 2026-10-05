@@ -2189,6 +2189,9 @@
       "label": "舊字新詞",
       "status": "available",
       "activity": "review"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
   "extensions": [
@@ -2672,6 +2675,181 @@
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "converted_to_choice": false
+    }
+  ],
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG2H11:01",
+      "pattern_ref": "sentence-pattern:115AG2H11:01",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
+      "official": {
+        "head": "闖來闖去闖不出來",
+        "examples": [
+          "跑來跑去跑不出來",
+          "想來想去想不出來"
+        ],
+        "structure": "動詞（動作）＋來＋動詞（動作）＋去＋動詞（動作）＋不出來"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。先前因同一個動詞要重複三次、結構偏長而跳過，本次用 copy_of 讓第二、三格自動跟著第一格，只有一個可換格。",
+      "slots": [
+        {
+          "role": "action",
+          "label": "做什麼動作",
+          "ask": "圖裡的人一直在做什麼，卻做不到什麼？"
+        },
+        {
+          "fixed": "來"
+        },
+        {
+          "role": "action",
+          "copy_of": 0
+        },
+        {
+          "fixed": "去"
+        },
+        {
+          "role": "action",
+          "copy_of": 0
+        },
+        {
+          "fixed": "不出來"
+        }
+      ],
+      "explain": "三個格子要用『同一個』動作，分別接「來」「去」「不出來」，表示一直做卻做不到。",
+      "example": {
+        "chunks": [
+          "闖",
+          "來",
+          "闖",
+          "去",
+          "闖",
+          "不出來"
+        ]
+      },
+      "bank": [
+        {
+          "text": "闖",
+          "role": "action"
+        },
+        {
+          "text": "跑",
+          "role": "action"
+        },
+        {
+          "text": "想",
+          "role": "action"
+        },
+        {
+          "text": "睡",
+          "role": "action"
+        }
+      ],
+      "accepted": [
+        [
+          "闖",
+          "來",
+          "闖",
+          "去",
+          "闖",
+          "不出來"
+        ],
+        [
+          "跑",
+          "來",
+          "跑",
+          "去",
+          "跑",
+          "不出來"
+        ],
+        [
+          "想",
+          "來",
+          "想",
+          "去",
+          "想",
+          "不出來"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "睡",
+            "來",
+            "睡",
+            "去",
+            "睡",
+            "不出來"
+          ],
+          "feedback": "沒有「睡出來」這種說法，「睡」這個動作放進這個句型裡說得通嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H11-maze.webp",
+            "alt": "小朋友在迷宮裡跑來跑去，找不到出口",
+            "prompt": "a child running back and forth inside a garden maze, unable to find the exit"
+          },
+          "image_hint": "看圖：他一直在迷宮裡做什麼，卻找不到什麼？",
+          "answer": [
+            "闖",
+            "來",
+            "闖",
+            "去",
+            "闖",
+            "不出來"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "闖來闖去闖不出來",
+                "correct": true,
+                "feedback": "對！他在迷宮裡闖來闖去，就是找不到出口。"
+              },
+              {
+                "text": "想來想去想不出來",
+                "correct": false,
+                "feedback": "圖片裡是他在迷宮裡跑來跑去，不是在想辦法。"
+              }
+            ]
+          },
+          "scene": "小朋友在花園的迷宮裡闖來闖去，怎麼走都走不出來。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H11-think.webp",
+            "alt": "小朋友抓著頭想數學題，怎麼想都想不出答案",
+            "prompt": "a child scratching their head trying to solve a math problem, unable to find the answer"
+          },
+          "image_hint": "看圖：他一直在做什麼，卻得不到什麼？",
+          "answer": [
+            "想",
+            "來",
+            "想",
+            "去",
+            "想",
+            "不出來"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "想來想去想不出來",
+                "correct": true,
+                "feedback": "對！他想了很久，還是想不出答案。"
+              },
+              {
+                "text": "跑來跑去跑不出來",
+                "correct": false,
+                "feedback": "圖片裡是他在想問題，不是在跑步。"
+              }
+            ]
+          },
+          "scene": "小朋友抓著頭想數學題，想來想去想不出來。"
+        }
+      ]
     }
   ]
 }

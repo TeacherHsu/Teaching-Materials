@@ -1994,6 +1994,9 @@
       "label": "舊字新詞",
       "status": "available",
       "activity": "review"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
   "extensions": [
@@ -2270,6 +2273,360 @@
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "converted_to_choice": false
+    }
+  ],
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG2H05:01",
+      "pattern_ref": "sentence-pattern:115AG2H05:01",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
+      "official": {
+        "head": "爬進爬出",
+        "examples": [
+          "轉來轉去",
+          "飛上飛下"
+        ],
+        "structure": "動詞（相反的兩個動作）"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "role": "move1",
+          "label": "先怎麼移動",
+          "ask": "牠先怎麼移動？"
+        },
+        {
+          "role": "move2",
+          "label": "再怎麼移動",
+          "ask": "牠接著怎麼移動？"
+        }
+      ],
+      "explain": "前後兩個詞塊要用同一種移動方式（都用爬、都用轉、或都用飛）。",
+      "example": {
+        "chunks": [
+          "爬進",
+          "爬出"
+        ]
+      },
+      "bank": [
+        {
+          "text": "爬進",
+          "role": "move1"
+        },
+        {
+          "text": "轉來",
+          "role": "move1"
+        },
+        {
+          "text": "飛上",
+          "role": "move1"
+        },
+        {
+          "text": "爬出",
+          "role": "move2"
+        },
+        {
+          "text": "轉去",
+          "role": "move2"
+        },
+        {
+          "text": "飛下",
+          "role": "move2"
+        }
+      ],
+      "accepted": [
+        [
+          "爬進",
+          "爬出"
+        ],
+        [
+          "轉來",
+          "轉去"
+        ],
+        [
+          "飛上",
+          "飛下"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "爬進",
+            "轉去"
+          ],
+          "feedback": "順序對了。「爬進」和「轉去」是不同的移動方式，想一想可以配成哪一對？"
+        },
+        {
+          "chunks": [
+            "爬進",
+            "飛下"
+          ],
+          "feedback": "順序對了。「爬」和「飛」是不同的移動方式。"
+        },
+        {
+          "chunks": [
+            "轉來",
+            "爬出"
+          ],
+          "feedback": "順序對了。「轉」和「爬」是不同的移動方式。"
+        },
+        {
+          "chunks": [
+            "轉來",
+            "飛下"
+          ],
+          "feedback": "順序對了。「轉」和「飛」是不同的移動方式。"
+        },
+        {
+          "chunks": [
+            "飛上",
+            "爬出"
+          ],
+          "feedback": "順序對了。「飛」和「爬」是不同的移動方式。"
+        },
+        {
+          "chunks": [
+            "飛上",
+            "轉去"
+          ],
+          "feedback": "順序對了。「飛」和「轉」是不同的移動方式。"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H05-spin.webp",
+            "alt": "一隻小動物在原地轉來轉去",
+            "prompt": "a small animal spinning round and round in one spot"
+          },
+          "image_hint": "看圖：這隻小動物怎麼移動？",
+          "answer": [
+            "轉來",
+            "轉去"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "轉來轉去",
+                "correct": true,
+                "feedback": "對！牠轉來轉去。"
+              },
+              {
+                "text": "飛上飛下",
+                "correct": false,
+                "feedback": "圖片裡的動物是在轉，不是在飛。"
+              }
+            ]
+          },
+          "scene": "牠在原地一直轉來轉去。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H05-bird.webp",
+            "alt": "一隻小鳥飛上飛下",
+            "prompt": "a small bird flying up and down repeatedly"
+          },
+          "image_hint": "看圖：這隻小鳥怎麼移動？",
+          "answer": [
+            "飛上",
+            "飛下"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "飛上飛下",
+                "correct": true,
+                "feedback": "對！牠飛上飛下。"
+              },
+              {
+                "text": "轉來轉去",
+                "correct": false,
+                "feedback": "圖片裡的鳥是在飛，不是在轉。"
+              }
+            ]
+          },
+          "scene": "牠在空中飛上飛下。"
+        }
+      ]
+    },
+    {
+      "id": "phrase-builder:115AG2H05:02",
+      "pattern_ref": "sentence-pattern:115AG2H05:02",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
+      "official": {
+        "head": "大大小小的腳印",
+        "examples": [
+          "彎彎曲曲的山路",
+          "冰冰涼涼的果汁"
+        ],
+        "structure": "疊字形容詞（怎麼樣）＋的＋名詞（什麼事物）"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "role": "describe",
+          "label": "怎麼樣的",
+          "ask": "它看起來是什麼樣子？"
+        },
+        {
+          "role": "thing",
+          "label": "什麼東西",
+          "ask": "圖裡的東西是什麼？"
+        }
+      ],
+      "explain": "前面說「怎麼樣」，後面放「東西」。",
+      "example": {
+        "chunks": [
+          "大大小小的",
+          "腳印"
+        ]
+      },
+      "bank": [
+        {
+          "text": "大大小小的",
+          "role": "describe"
+        },
+        {
+          "text": "彎彎曲曲的",
+          "role": "describe"
+        },
+        {
+          "text": "冰冰涼涼的",
+          "role": "describe"
+        },
+        {
+          "text": "腳印",
+          "role": "thing"
+        },
+        {
+          "text": "山路",
+          "role": "thing"
+        },
+        {
+          "text": "果汁",
+          "role": "thing"
+        }
+      ],
+      "accepted": [
+        [
+          "大大小小的",
+          "腳印"
+        ],
+        [
+          "彎彎曲曲的",
+          "山路"
+        ],
+        [
+          "冰冰涼涼的",
+          "果汁"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "大大小小的",
+            "山路"
+          ],
+          "feedback": "順序對了。說山路的樣子，比較常說「彎彎曲曲的」，想一想為什麼？"
+        },
+        {
+          "chunks": [
+            "大大小小的",
+            "果汁"
+          ],
+          "feedback": "順序對了。「大大小小」是形容大小不一樣，果汁可以有大小嗎？"
+        },
+        {
+          "chunks": [
+            "彎彎曲曲的",
+            "腳印"
+          ],
+          "feedback": "順序對了。腳印是一個一個的，會彎彎曲曲嗎？"
+        },
+        {
+          "chunks": [
+            "彎彎曲曲的",
+            "果汁"
+          ],
+          "feedback": "順序對了。果汁裝在杯子裡，和彎彎曲曲有關係嗎？"
+        },
+        {
+          "chunks": [
+            "冰冰涼涼的",
+            "腳印"
+          ],
+          "feedback": "順序對了。「冰冰涼涼」通常形容喝的東西，腳印會冰冰涼涼嗎？"
+        },
+        {
+          "chunks": [
+            "冰冰涼涼的",
+            "山路"
+          ],
+          "feedback": "順序對了。「冰冰涼涼」通常形容喝的東西，山路呢？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H05-road.webp",
+            "alt": "一條彎彎曲曲的山路",
+            "prompt": "a winding mountain road curving between hills"
+          },
+          "image_hint": "看圖：這條路的形狀是怎麼樣的？",
+          "answer": [
+            "彎彎曲曲的",
+            "山路"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "彎彎曲曲的山路",
+                "correct": true,
+                "feedback": "對！這條山路彎彎曲曲。"
+              },
+              {
+                "text": "冰冰涼涼的山路",
+                "correct": false,
+                "feedback": "山路的樣子是彎曲，不是冰涼。"
+              }
+            ]
+          },
+          "scene": "一條山路彎彎曲曲地往遠方延伸。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H05-juice.webp",
+            "alt": "一杯冰冰涼涼的果汁，杯外有水滴",
+            "prompt": "a glass of cold juice with condensation droplets on the outside"
+          },
+          "image_hint": "看圖：這杯果汁喝起來感覺怎麼樣？",
+          "answer": [
+            "冰冰涼涼的",
+            "果汁"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "冰冰涼涼的果汁",
+                "correct": true,
+                "feedback": "對！這杯果汁冰冰涼涼。"
+              },
+              {
+                "text": "彎彎曲曲的果汁",
+                "correct": false,
+                "feedback": "果汁裝在杯子裡，不會彎彎曲曲。"
+              }
+            ]
+          },
+          "scene": "一杯果汁外面還有水滴，看起來很冰涼。"
+        }
+      ]
     }
   ]
 }

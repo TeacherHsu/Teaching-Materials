@@ -1944,6 +1944,9 @@
       "label": "舊字新詞",
       "status": "available",
       "activity": "review"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
   "extensions": [
@@ -2184,6 +2187,193 @@
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "converted_to_choice": false
+    }
+  ],
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG2H02:01",
+      "pattern_ref": "sentence-pattern:115AG2H02:01",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
+      "official": {
+        "head": "快樂得跳起舞來",
+        "examples": [
+          "高興得唱起歌來",
+          "難過得流下淚來"
+        ],
+        "structure": "形容詞（心情）＋得＋怎麼樣"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "role": "mood",
+          "label": "心情",
+          "ask": "他現在是什麼心情？"
+        },
+        {
+          "fixed": "得"
+        },
+        {
+          "role": "action",
+          "label": "接下來做什麼",
+          "ask": "這種心情讓他接下來做了什麼？"
+        }
+      ],
+      "explain": "前面說心情，中間加「得」，後面說心情帶出來的動作。",
+      "example": {
+        "chunks": [
+          "快樂",
+          "得",
+          "跳起舞來"
+        ]
+      },
+      "bank": [
+        {
+          "text": "快樂",
+          "role": "mood"
+        },
+        {
+          "text": "高興",
+          "role": "mood"
+        },
+        {
+          "text": "難過",
+          "role": "mood"
+        },
+        {
+          "text": "跳起舞來",
+          "role": "action"
+        },
+        {
+          "text": "唱起歌來",
+          "role": "action"
+        },
+        {
+          "text": "流下淚來",
+          "role": "action"
+        }
+      ],
+      "accepted": [
+        [
+          "快樂",
+          "得",
+          "跳起舞來"
+        ],
+        [
+          "快樂",
+          "得",
+          "唱起歌來"
+        ],
+        [
+          "高興",
+          "得",
+          "跳起舞來"
+        ],
+        [
+          "高興",
+          "得",
+          "唱起歌來"
+        ],
+        [
+          "難過",
+          "得",
+          "流下淚來"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "快樂",
+            "得",
+            "流下淚來"
+          ],
+          "feedback": "順序對了。快樂的時候會流下淚來嗎？再想想。"
+        },
+        {
+          "chunks": [
+            "高興",
+            "得",
+            "流下淚來"
+          ],
+          "feedback": "順序對了。高興的時候通常會怎麼表現？"
+        },
+        {
+          "chunks": [
+            "難過",
+            "得",
+            "跳起舞來"
+          ],
+          "feedback": "順序對了。難過的時候會想跳舞嗎？"
+        },
+        {
+          "chunks": [
+            "難過",
+            "得",
+            "唱起歌來"
+          ],
+          "feedback": "順序對了。難過的時候會想唱歌嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H02-sing.webp",
+            "alt": "一個小朋友張大嘴巴開心地唱歌",
+            "prompt": "a child singing happily with a big smile"
+          },
+          "image_hint": "看圖：這個小朋友的心情和動作是什麼？",
+          "answer": [
+            "高興",
+            "得",
+            "唱起歌來"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "高興得唱起歌來",
+                "correct": true,
+                "feedback": "對！他很高興，忍不住唱起歌來。"
+              },
+              {
+                "text": "難過得唱起歌來",
+                "correct": false,
+                "feedback": "圖片裡的表情是開心的，不是難過。"
+              }
+            ]
+          },
+          "scene": "他露出笑容，忍不住張口唱起歌來。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H02-cry.webp",
+            "alt": "一個小朋友低著頭流下眼淚",
+            "prompt": "a child looking down with tears falling, sad expression"
+          },
+          "image_hint": "看圖：這個小朋友的心情和動作是什麼？",
+          "answer": [
+            "難過",
+            "得",
+            "流下淚來"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "難過得流下淚來",
+                "correct": true,
+                "feedback": "對！他很難過，流下了眼淚。"
+              },
+              {
+                "text": "快樂得流下淚來",
+                "correct": false,
+                "feedback": "圖片裡的表情是難過的，不是快樂。"
+              }
+            ]
+          },
+          "scene": "他低著頭，眼淚一滴一滴掉下來。"
+        }
+      ]
     }
   ]
 }

@@ -18,8 +18,11 @@ for (const vol of fs.readdirSync(root).filter((d) => d.startsWith('115AG'))) {
       assert.ok(ref, `${spec.id} 要對應到官方短語（sentence_patterns）`);
       assert.equal(spec.example.chunks.join(''), ref.head, `${spec.id} 示範必須是課本的短語`);
       assert.ok(spec.source, `${spec.id} 要標來源`);
-      const byRole = spec.slots.map((s) => (s.fixed ? [s.fixed] : spec.bank.filter((b) => b.role === s.role).map((b) => b.text)));
-      const combos = byRole.reduce((acc, list) => acc.flatMap((a) => list.map((x) => [...a, x])), [[]]);
+      // copy_of 的格子跟著來源格，不是自由選（實際畫面選不出「兩格不一樣」的組合）
+      const byRole = spec.slots.map((s) => (s.fixed ? [s.fixed] : s.copy_of !== undefined ? [null] : spec.bank.filter((b) => b.role === s.role).map((b) => b.text)));
+      const combos = byRole.reduce((acc, list) => acc.flatMap((a) => list.map((x) => [...a, x])), [[]])
+        .map((c) => c.map((x, i) => (spec.slots[i].copy_of !== undefined ? c[spec.slots[i].copy_of] : x)));
+      spec.slots.forEach((s, i) => { if (s.copy_of !== undefined) assert.ok(s.copy_of < i, `${spec.id} copy_of 要指向前面的格子`); });
       for (const c of combos) {
         const known = (spec.accepted || []).some((a) => a.join() === c.join()) || (spec.semantic_rejects || []).some((r) => r.chunks.join() === c.join());
         assert.ok(known, `${spec.id}「${c.join('')}」沒有判定（要放進 accepted 或 semantic_rejects）`);
@@ -27,18 +30,27 @@ for (const vol of fs.readdirSync(root).filter((d) => d.startsWith('115AG'))) {
       for (const r of spec.rounds) {
         assert.ok((spec.accepted || []).some((a) => a.join() === r.answer.join()), `${spec.id} 每張圖的答案要在 accepted 裡`);
         assert.equal(judgePhrase(spec, r, r.answer).kind, 'fit');
-        const free = spec.slots.map((s, i) => (s.fixed ? null : i)).filter((i) => i !== null);
+        const free = spec.slots.map((s, i) => (s.fixed || s.copy_of !== undefined ? null : i)).filter((i) => i !== null);
         if (free.length >= 2 && spec.slots[free[0]].role !== spec.slots[free[free.length - 1]].role) {
           const swapped = [...r.answer]; [swapped[free[0]], swapped[free[free.length - 1]]] = [swapped[free[free.length - 1]], swapped[free[0]]];
           assert.equal(judgePhrase(spec, r, swapped).kind, 'structure', `${spec.id} 位置放錯要判成結構錯`);
         }
         const partial = [...r.answer]; partial[free[free.length - 1]] = null;
         assert.equal(judgePhrase(spec, r, partial).kind, 'incomplete');
+        if (r.adapted) {
+          spec.slots.forEach((slot, i) => {
+            if (slot.fixed || slot.copy_of !== undefined) return;
+            assert.equal([...r.answer[i]].length, [...spec.example.chunks[i]].length,
+              `${spec.id} 改寫的「${r.answer[i]}」字數要和課本同一格「${spec.example.chunks[i]}」一樣（CF 2026-10-05）`);
+          });
+        }
         if (r.check) assert.equal(r.check.options.filter((o) => o.correct).length, 1, `${spec.id} 小確認題只能有一個正解`);
       }
-      const rej = spec.semantic_rejects[0];
+      const rej = (spec.semantic_rejects || [])[0];
+      if (rej) {
       assert.equal(judgePhrase(spec, spec.rounds[0], rej.chunks).kind, 'semantic');
       assert.equal(judgePhrase(spec, spec.rounds[0], rej.chunks).feedback, rej.feedback);
+      }
     }
   }
 }

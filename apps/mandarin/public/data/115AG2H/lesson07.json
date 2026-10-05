@@ -2212,6 +2212,9 @@
       "label": "舊字新詞",
       "status": "available",
       "activity": "review"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
   "extensions": [
@@ -2476,6 +2479,209 @@
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "converted_to_choice": false
+    }
+  ],
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG2H07:01",
+      "pattern_ref": "sentence-pattern:115AG2H07:01",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
+      "official": {
+        "head": "教大家做越南春捲",
+        "examples": [
+          "教外婆玩桌遊",
+          "教妹妹打籃球"
+        ],
+        "structure": "教＋名詞（誰）＋動詞（做什麼事）"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "fixed": "教"
+        },
+        {
+          "role": "who",
+          "label": "教誰",
+          "ask": "圖裡是誰在教誰？"
+        },
+        {
+          "role": "action",
+          "label": "做什麼事",
+          "ask": "他在教對方做什麼事？"
+        }
+      ],
+      "explain": "「教」後面先說教誰，再說教什麼事。",
+      "example": {
+        "chunks": [
+          "教",
+          "大家",
+          "做越南春捲"
+        ]
+      },
+      "bank": [
+        {
+          "text": "大家",
+          "role": "who"
+        },
+        {
+          "text": "外婆",
+          "role": "who"
+        },
+        {
+          "text": "妹妹",
+          "role": "who"
+        },
+        {
+          "text": "小狗",
+          "role": "who"
+        },
+        {
+          "text": "做越南春捲",
+          "role": "action"
+        },
+        {
+          "text": "玩桌遊",
+          "role": "action"
+        },
+        {
+          "text": "打籃球",
+          "role": "action"
+        }
+      ],
+      "accepted": [
+        [
+          "教",
+          "大家",
+          "做越南春捲"
+        ],
+        [
+          "教",
+          "大家",
+          "玩桌遊"
+        ],
+        [
+          "教",
+          "大家",
+          "打籃球"
+        ],
+        [
+          "教",
+          "外婆",
+          "做越南春捲"
+        ],
+        [
+          "教",
+          "外婆",
+          "玩桌遊"
+        ],
+        [
+          "教",
+          "外婆",
+          "打籃球"
+        ],
+        [
+          "教",
+          "妹妹",
+          "做越南春捲"
+        ],
+        [
+          "教",
+          "妹妹",
+          "玩桌遊"
+        ],
+        [
+          "教",
+          "妹妹",
+          "打籃球"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "教",
+            "小狗",
+            "做越南春捲"
+          ],
+          "feedback": "順序對了。小狗做得到這件事嗎？想一想可以換成誰。"
+        },
+        {
+          "chunks": [
+            "教",
+            "小狗",
+            "玩桌遊"
+          ],
+          "feedback": "順序對了。小狗做得到這件事嗎？想一想可以換成誰。"
+        },
+        {
+          "chunks": [
+            "教",
+            "小狗",
+            "打籃球"
+          ],
+          "feedback": "順序對了。小狗做得到這件事嗎？想一想可以換成誰。"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H07-boardgame.webp",
+            "alt": "一個小朋友教外婆玩桌遊",
+            "prompt": "a child teaching a grandmother to play a board game at a table"
+          },
+          "image_hint": "看圖：誰在教誰，教什麼？",
+          "answer": [
+            "教",
+            "外婆",
+            "玩桌遊"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "教外婆玩桌遊",
+                "correct": true,
+                "feedback": "對！小朋友在教外婆玩桌遊。"
+              },
+              {
+                "text": "教妹妹打籃球",
+                "correct": false,
+                "feedback": "圖片裡是教外婆，不是教妹妹；玩的是桌遊，不是籃球。"
+              }
+            ]
+          },
+          "scene": "小朋友坐在桌邊，教外婆怎麼玩桌遊。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H07-basketball.webp",
+            "alt": "一個小朋友教妹妹打籃球",
+            "prompt": "a child teaching a younger sister to play basketball on a court"
+          },
+          "image_hint": "看圖：誰在教誰，教什麼？",
+          "answer": [
+            "教",
+            "妹妹",
+            "打籃球"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "教妹妹打籃球",
+                "correct": true,
+                "feedback": "對！小朋友在教妹妹打籃球。"
+              },
+              {
+                "text": "教外婆玩桌遊",
+                "correct": false,
+                "feedback": "圖片裡是教妹妹打籃球，不是教外婆玩桌遊。"
+              }
+            ]
+          },
+          "scene": "小朋友在球場上，教妹妹怎麼打籃球。"
+        }
+      ]
     }
   ]
 }

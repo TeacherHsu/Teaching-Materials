@@ -1471,6 +1471,9 @@
       "label": "舊字新詞",
       "status": "available",
       "activity": "review"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
   "discussion_questions": [
@@ -1641,6 +1644,301 @@
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "converted_to_choice": false
+    }
+  ],
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG1H05:01",
+      "pattern_ref": "sentence-pattern:115AG1H05:01",
+      "status": "draft",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "official": {
+        "head": "七彩的滑梯",
+        "examples": [
+          "可愛的小鳥",
+          "美麗的花朵",
+          "溫柔的老師"
+        ],
+        "structure": "形容詞（怎麼樣）＋的＋名詞（什麼事物）"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "role": "describe",
+          "label": "怎麼樣的",
+          "ask": "它看起來是什麼樣子？"
+        },
+        {
+          "role": "thing",
+          "label": "什麼東西",
+          "ask": "圖裡的東西是什麼？"
+        }
+      ],
+      "explain": "前面說「怎麼樣」，後面放「東西」。",
+      "example": {
+        "chunks": [
+          "七彩的",
+          "滑梯"
+        ]
+      },
+      "bank": [
+        {
+          "text": "七彩的",
+          "role": "describe"
+        },
+        {
+          "text": "可愛的",
+          "role": "describe"
+        },
+        {
+          "text": "美麗的",
+          "role": "describe"
+        },
+        {
+          "text": "滑梯",
+          "role": "thing"
+        },
+        {
+          "text": "小鳥",
+          "role": "thing"
+        },
+        {
+          "text": "花朵",
+          "role": "thing"
+        }
+      ],
+      "accepted": [
+        [
+          "七彩的",
+          "滑梯"
+        ],
+        [
+          "七彩的",
+          "花朵"
+        ],
+        [
+          "可愛的",
+          "滑梯"
+        ],
+        [
+          "可愛的",
+          "小鳥"
+        ],
+        [
+          "可愛的",
+          "花朵"
+        ],
+        [
+          "美麗的",
+          "滑梯"
+        ],
+        [
+          "美麗的",
+          "小鳥"
+        ],
+        [
+          "美麗的",
+          "花朵"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "七彩的",
+            "小鳥"
+          ],
+          "feedback": "順序對了。小鳥通常不會同時有七種顏色，這樣形容合適嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H05-slide.webp",
+            "alt": "遊樂場裡一座彩虹色的滑梯",
+            "prompt": "a colorful rainbow-colored slide in a playground"
+          },
+          "image_hint": "看圖：滑梯是什麼顏色？",
+          "answer": [
+            "七彩的",
+            "滑梯"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "七彩的滑梯",
+                "correct": true,
+                "feedback": "對！滑梯是彩色的。"
+              },
+              {
+                "text": "七彩的小鳥",
+                "correct": false,
+                "feedback": "圖片裡是彩色的滑梯，不是小鳥。"
+              }
+            ]
+          },
+          "scene": "遊樂場裡有一座彩虹顏色的滑梯。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H05-bird.webp",
+            "alt": "一隻圓滾滾、看起來很可愛的小鳥",
+            "prompt": "a small round cute-looking bird"
+          },
+          "image_hint": "看圖：這隻小鳥看起來怎麼樣？",
+          "answer": [
+            "可愛的",
+            "小鳥"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "可愛的小鳥",
+                "correct": true,
+                "feedback": "對！小鳥看起來很可愛。"
+              },
+              {
+                "text": "七彩的小鳥",
+                "correct": false,
+                "feedback": "圖片裡的小鳥不是七種顏色，牠看起來很可愛。"
+              }
+            ]
+          },
+          "scene": "樹上有一隻圓滾滾、看起來很可愛的小鳥。"
+        }
+      ]
+    },
+    {
+      "id": "phrase-builder:115AG1H05:02",
+      "pattern_ref": "sentence-pattern:115AG1H05:02",
+      "status": "draft",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "official": {
+        "head": "看一看",
+        "examples": [
+          "走一走",
+          "跑一跑",
+          "泡一泡"
+        ],
+        "structure": "動詞（什麼動作）＋一＋動詞（什麼動作）"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "role": "action",
+          "label": "做什麼動作",
+          "ask": "他在用什麼方式稍微做一下？"
+        },
+        {
+          "fixed": "一"
+        },
+        {
+          "role": "action",
+          "label": "做什麼動作",
+          "copy_of": 0
+        }
+      ],
+      "explain": "前後要用『同一個』動作，中間加『一』，表示稍微做一下。",
+      "example": {
+        "chunks": [
+          "看",
+          "一",
+          "看"
+        ]
+      },
+      "bank": [
+        {
+          "text": "看",
+          "role": "action"
+        },
+        {
+          "text": "走",
+          "role": "action"
+        },
+        {
+          "text": "跑",
+          "role": "action"
+        }
+      ],
+      "accepted": [
+        [
+          "看",
+          "一",
+          "看"
+        ],
+        [
+          "走",
+          "一",
+          "走"
+        ],
+        [
+          "跑",
+          "一",
+          "跑"
+        ]
+      ],
+      "semantic_rejects": [],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H05-look.webp",
+            "alt": "一個小朋友瞇著眼睛仔細看一樣東西",
+            "prompt": "a child looking closely at an object with curious eyes"
+          },
+          "image_hint": "看圖：他在用眼睛做什麼？",
+          "answer": [
+            "看",
+            "一",
+            "看"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "看一看",
+                "correct": true,
+                "feedback": "對！他在仔細看。"
+              },
+              {
+                "text": "走一走",
+                "correct": false,
+                "feedback": "圖片裡他在用眼睛看，不是在走路。"
+              }
+            ]
+          },
+          "scene": "他瞇著眼睛，仔細看著桌上的東西。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H05-stroll.webp",
+            "alt": "一個小朋友在公園裡慢慢走一走",
+            "prompt": "a child slowly walking along a park path"
+          },
+          "image_hint": "看圖：他的腳在做什麼？",
+          "answer": [
+            "走",
+            "一",
+            "走"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "走一走",
+                "correct": true,
+                "feedback": "對！他在走路。"
+              },
+              {
+                "text": "看一看",
+                "correct": false,
+                "feedback": "圖片裡他在走路，不只是站著看。"
+              }
+            ]
+          },
+          "scene": "他在公園裡慢慢地走著。"
+        }
+      ]
     }
   ]
 }

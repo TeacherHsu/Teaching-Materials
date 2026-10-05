@@ -2496,6 +2496,9 @@
       "status": "missing",
       "activity": "review",
       "note": "第 1 課沒有前課資料。"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
   "genre": "poetry",
@@ -2584,5 +2587,207 @@
     ],
     "approved_by": "CF",
     "approved_on": "2026-10-03"
-  }
+  },
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG4K01:01",
+      "pattern_ref": "sentence:01:01",
+      "status": "draft",
+      "source": "康軒四上官方教材（07 語句練習；v13 spacing reviewed，排除 REVIEW_REQUIRED 題目）",
+      "official": {
+        "head": "無比堅定的自信",
+        "examples": [
+          "無比雄厚的實力",
+          "無比雀躍的心情",
+          "無比沉重的腳步"
+        ],
+        "structure": "無比（形容詞）的（名詞）"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "fixed": "無比",
+          "ask": "這個表情或聲音讓你覺得怎麼樣？"
+        },
+        {
+          "role": "quality",
+          "label": "怎麼樣的",
+          "ask": "圖裡要形容的是什麼？"
+        },
+        {
+          "fixed": "的"
+        },
+        {
+          "role": "thing",
+          "label": "什麼東西"
+        }
+      ],
+      "explain": "句子裡 「怎麼樣的」、「什麼東西」 可以換成別的詞，其他字不能動。",
+      "example": {
+        "chunks": [
+          "無比",
+          "堅定",
+          "的",
+          "自信"
+        ]
+      },
+      "bank": [
+        {
+          "text": "燦爛",
+          "role": "quality"
+        },
+        {
+          "text": "響亮",
+          "role": "quality"
+        },
+        {
+          "text": "溫暖",
+          "role": "quality"
+        },
+        {
+          "text": "笑容",
+          "role": "thing"
+        },
+        {
+          "text": "歌聲",
+          "role": "thing"
+        },
+        {
+          "text": "陽光",
+          "role": "thing"
+        }
+      ],
+      "accepted": [
+        [
+          "無比",
+          "燦爛",
+          "的",
+          "笑容"
+        ],
+        [
+          "無比",
+          "響亮",
+          "的",
+          "歌聲"
+        ],
+        [
+          "無比",
+          "溫暖",
+          "的",
+          "陽光"
+        ],
+        [
+          "無比",
+          "燦爛",
+          "的",
+          "陽光"
+        ],
+        [
+          "無比",
+          "溫暖",
+          "的",
+          "笑容"
+        ],
+        [
+          "無比",
+          "溫暖",
+          "的",
+          "歌聲"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "無比",
+            "燦爛",
+            "的",
+            "歌聲"
+          ],
+          "feedback": "「燦爛」是用眼睛看的，歌聲是用耳朵聽的，這樣搭合適嗎？"
+        },
+        {
+          "chunks": [
+            "無比",
+            "響亮",
+            "的",
+            "笑容"
+          ],
+          "feedback": "笑容是看到的表情，「響亮」是形容聲音大，兩個搭得起來嗎？"
+        },
+        {
+          "chunks": [
+            "無比",
+            "響亮",
+            "的",
+            "陽光"
+          ],
+          "feedback": "陽光沒有聲音，會說它「響亮」嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG4K01-smile.webp",
+            "alt": "一個小朋友張開嘴巴，露出燦爛的笑容",
+            "prompt": "a child with a wide bright beaming smile"
+          },
+          "image_hint": "看圖：這個小朋友的表情怎麼樣？",
+          "answer": [
+            "無比",
+            "燦爛",
+            "的",
+            "笑容"
+          ],
+          "adapted": true,
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "無比燦爛的笑容",
+                "correct": true,
+                "feedback": "對！他笑得非常開心燦爛。"
+              },
+              {
+                "text": "無比響亮的笑容",
+                "correct": false,
+                "feedback": "笑容是用眼睛看的表情，不是聲音，「響亮」不合適。"
+              }
+            ]
+          },
+          "scene": "小朋友比賽得了第一名，笑得合不攏嘴。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG4K01-sing.webp",
+            "alt": "一個小朋友在台上拿著麥克風大聲唱歌",
+            "prompt": "a child singing loudly on a stage with a microphone"
+          },
+          "image_hint": "看圖：這個小朋友唱歌的聲音怎麼樣？",
+          "answer": [
+            "無比",
+            "響亮",
+            "的",
+            "歌聲"
+          ],
+          "adapted": true,
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "無比響亮的歌聲",
+                "correct": true,
+                "feedback": "對！他唱歌的聲音又大又響亮。"
+              },
+              {
+                "text": "無比燦爛的歌聲",
+                "correct": false,
+                "feedback": "歌聲是用耳朵聽的，看不到「燦爛」，不合適。"
+              }
+            ]
+          },
+          "scene": "小美在才藝表演上唱歌，聲音傳到教室外面。"
+        }
+      ]
+    }
+  ]
 }

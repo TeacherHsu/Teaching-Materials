@@ -1541,6 +1541,9 @@
       "label": "舊字新詞",
       "status": "available",
       "activity": "review"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
   "discussion_questions": [
@@ -1706,6 +1709,132 @@
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "converted_to_choice": false
+    }
+  ],
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG1H04:01",
+      "pattern_ref": "sentence-pattern:115AG1H04:01",
+      "status": "draft",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "official": {
+        "head": "跑哪去",
+        "examples": [
+          "丟哪去",
+          "往哪去",
+          "放哪去"
+        ],
+        "structure": "動詞（什麼動作）＋哪去"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "role": "action",
+          "label": "做什麼動作",
+          "ask": "他用什麼動作讓東西不見了？"
+        },
+        {
+          "fixed": "哪去"
+        }
+      ],
+      "explain": "前面放一個動作，後面接『哪去』，問東西跑到哪裡了。",
+      "example": {
+        "chunks": [
+          "跑",
+          "哪去"
+        ]
+      },
+      "bank": [
+        {
+          "text": "跑",
+          "role": "action"
+        },
+        {
+          "text": "丟",
+          "role": "action"
+        },
+        {
+          "text": "笑",
+          "role": "action"
+        }
+      ],
+      "accepted": [
+        [
+          "跑",
+          "哪去"
+        ],
+        [
+          "丟",
+          "哪去"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "笑",
+            "哪去"
+          ],
+          "feedback": "順序對了。笑是表情，不是要去哪裡的動作，會說『笑哪去』嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H04-run.webp",
+            "alt": "一個小朋友跑走，只看到背影",
+            "prompt": "a child running away down a path, seen from behind"
+          },
+          "image_hint": "看圖：他用跑的方式去了哪裡？",
+          "answer": [
+            "跑",
+            "哪去"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "跑哪去",
+                "correct": true,
+                "feedback": "對！他跑走了。"
+              },
+              {
+                "text": "笑哪去",
+                "correct": false,
+                "feedback": "圖片是他跑走了，不是在笑。"
+              }
+            ]
+          },
+          "scene": "他轉身跑走，只看到背影愈來愈小。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H04-ball.webp",
+            "alt": "一顆球被丟出去，飛出畫面",
+            "prompt": "a ball being thrown and flying out of the frame"
+          },
+          "image_hint": "看圖：球被丟到哪裡去了？",
+          "answer": [
+            "丟",
+            "哪去"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "丟哪去",
+                "correct": true,
+                "feedback": "對！球被丟走了。"
+              },
+              {
+                "text": "笑哪去",
+                "correct": false,
+                "feedback": "圖片是球被丟走了，跟笑沒有關係。"
+              }
+            ]
+          },
+          "scene": "球被用力一丟，飛出了畫面。"
+        }
+      ]
     }
   ]
 }

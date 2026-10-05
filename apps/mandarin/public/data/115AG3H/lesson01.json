@@ -2805,7 +2805,208 @@
       "label": "舊字新詞",
       "status": "missing",
       "note": "第 1 課沒有前課資料。"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
-  "genre": "poetry"
+  "genre": "poetry",
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG3H01:01",
+      "pattern_ref": "sentence_pattern:115AG3H01:2b3e44ae",
+      "status": "draft",
+      "source": "dabutie:08各課短語句型練習（3上L01短語句型造句-時間是什麼.pdf）",
+      "official": {
+        "head": "跑得實在太快了",
+        "examples": [
+          "跳得實在太高了",
+          "畫得實在太美了",
+          "唱得實在太大聲了",
+          "睡得實在太晚了"
+        ],
+        "structure": "動詞（加上動作）＋得＋實在＋形容詞（怎麼樣）"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "role": "action",
+          "label": "做什麼動作",
+          "ask": "這個小朋友正在做什麼動作？"
+        },
+        {
+          "fixed": "得",
+          "ask": "他做得怎麼樣？"
+        },
+        {
+          "fixed": "實在"
+        },
+        {
+          "role": "manner",
+          "label": "怎麼樣"
+        }
+      ],
+      "explain": "句子裡 「做什麼動作」、「覺得怎麼樣」 可以換成別的詞，其他字不能動。",
+      "example": {
+        "chunks": [
+          "跑",
+          "得",
+          "實在",
+          "太快了"
+        ]
+      },
+      "bank": [
+        {
+          "text": "跑",
+          "role": "action"
+        },
+        {
+          "text": "跳",
+          "role": "action"
+        },
+        {
+          "text": "畫",
+          "role": "action"
+        },
+        {
+          "text": "太快了",
+          "role": "manner"
+        },
+        {
+          "text": "太高了",
+          "role": "manner"
+        },
+        {
+          "text": "太美了",
+          "role": "manner"
+        }
+      ],
+      "accepted": [
+        [
+          "跑",
+          "得",
+          "實在",
+          "太快了"
+        ],
+        [
+          "跳",
+          "得",
+          "實在",
+          "太高了"
+        ],
+        [
+          "畫",
+          "得",
+          "實在",
+          "太美了"
+        ],
+        [
+          "跑",
+          "得",
+          "實在",
+          "太美了"
+        ],
+        [
+          "跳",
+          "得",
+          "實在",
+          "太快了"
+        ],
+        [
+          "跳",
+          "得",
+          "實在",
+          "太美了"
+        ],
+        [
+          "畫",
+          "得",
+          "實在",
+          "太快了"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "跑",
+            "得",
+            "實在",
+            "太高了"
+          ],
+          "feedback": "咦，「跑」是在地上前進，「太高了」比較像跳起來的高度，這裡搭得起來嗎？"
+        },
+        {
+          "chunks": [
+            "畫",
+            "得",
+            "實在",
+            "太高了"
+          ],
+          "feedback": "想一想：畫畫是手在動，跟「太高了」有關係嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG3H01-run.webp",
+            "alt": "一個小朋友用力奔跑，衝得飛快",
+            "prompt": "a child running very fast on a track, motion blur on legs"
+          },
+          "image_hint": "看圖：這個小朋友跑步的速度怎麼樣？",
+          "answer": [
+            "跑",
+            "得",
+            "實在",
+            "太快了"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "跑得實在太快了",
+                "correct": true,
+                "feedback": "對！他跑得飛快。"
+              },
+              {
+                "text": "跳得實在太快了",
+                "correct": false,
+                "feedback": "圖片裡是跑步，不是跳，「跳」不合適。"
+              }
+            ]
+          },
+          "scene": "小朋友在操場上奔跑，衝得比誰都快。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG3H01-jump.webp",
+            "alt": "一個小朋友往上跳，跳得比籬笆還高",
+            "prompt": "a child jumping very high over a low fence, mid-air"
+          },
+          "image_hint": "看圖：這個小朋友跳得多高？",
+          "answer": [
+            "跳",
+            "得",
+            "實在",
+            "太高了"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "跳得實在太高了",
+                "correct": true,
+                "feedback": "對！他跳得很高。"
+              },
+              {
+                "text": "畫得實在太高了",
+                "correct": false,
+                "feedback": "圖片裡是跳，不是畫畫，「畫」不合適。"
+              }
+            ]
+          },
+          "scene": "小朋友用力往上跳，跳得比籬笆還高。"
+        }
+      ]
+    }
+  ]
 }

@@ -2296,6 +2296,9 @@
       "label": "舊字新詞",
       "status": "available",
       "activity": "review"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
   "extensions": [
@@ -2678,6 +2681,169 @@
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "converted_to_choice": false
+    }
+  ],
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG2H12:01",
+      "pattern_ref": "sentence-pattern:115AG2H12:01",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
+      "official": {
+        "head": "輕輕撥著水",
+        "examples": [
+          "慢慢喝著湯",
+          "靜靜看著書"
+        ],
+        "structure": "疊字副詞＋動詞（動作）＋著＋名詞（什麼事物）"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "role": "manner",
+          "label": "怎麼樣地",
+          "ask": "他用什麼樣的方式做這件事？"
+        },
+        {
+          "role": "action",
+          "label": "做什麼動作",
+          "ask": "他在做什麼事？"
+        }
+      ],
+      "explain": "前面說怎麼樣地做，後面是「動作＋著＋東西」合在一起的詞塊。",
+      "example": {
+        "chunks": [
+          "輕輕",
+          "撥著水"
+        ]
+      },
+      "bank": [
+        {
+          "text": "輕輕",
+          "role": "manner"
+        },
+        {
+          "text": "慢慢",
+          "role": "manner"
+        },
+        {
+          "text": "靜靜",
+          "role": "manner"
+        },
+        {
+          "text": "撥著水",
+          "role": "action"
+        },
+        {
+          "text": "喝著湯",
+          "role": "action"
+        },
+        {
+          "text": "看著書",
+          "role": "action"
+        }
+      ],
+      "accepted": [
+        [
+          "輕輕",
+          "撥著水"
+        ],
+        [
+          "慢慢",
+          "喝著湯"
+        ],
+        [
+          "靜靜",
+          "看著書"
+        ],
+        [
+          "輕輕",
+          "喝著湯"
+        ],
+        [
+          "慢慢",
+          "撥著水"
+        ],
+        [
+          "慢慢",
+          "看著書"
+        ],
+        [
+          "靜靜",
+          "撥著水"
+        ],
+        [
+          "靜靜",
+          "喝著湯"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "輕輕",
+            "看著書"
+          ],
+          "feedback": "順序對了。「輕輕」常常形容手的動作，看書的時候比較少說「輕輕看」，想一想可以換成哪個詞？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H12-soup.webp",
+            "alt": "一個小朋友慢慢地喝著一碗湯",
+            "prompt": "a child slowly sipping a bowl of soup"
+          },
+          "image_hint": "看圖：這個小朋友怎麼樣地做什麼？",
+          "answer": [
+            "慢慢",
+            "喝著湯"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "慢慢喝著湯",
+                "correct": true,
+                "feedback": "對！他慢慢地喝湯。"
+              },
+              {
+                "text": "靜靜看著書",
+                "correct": false,
+                "feedback": "圖片裡是在喝湯，不是在看書。"
+              }
+            ]
+          },
+          "scene": "他慢慢地喝著一碗湯。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H12-book.webp",
+            "alt": "一個小朋友安安靜靜地坐著看書",
+            "prompt": "a child sitting quietly and calmly reading a book"
+          },
+          "image_hint": "看圖：這個小朋友怎麼樣地做什麼？",
+          "answer": [
+            "靜靜",
+            "看著書"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "靜靜看著書",
+                "correct": true,
+                "feedback": "對！他靜靜地看書。"
+              },
+              {
+                "text": "慢慢喝著湯",
+                "correct": false,
+                "feedback": "圖片裡是在看書，不是在喝湯。"
+              }
+            ]
+          },
+          "scene": "他安安靜靜地坐著看書。"
+        }
+      ]
     }
   ]
 }

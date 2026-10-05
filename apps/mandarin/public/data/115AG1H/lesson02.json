@@ -1098,6 +1098,9 @@
       "label": "舊字新詞",
       "status": "available",
       "activity": "review"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
   "discussion_questions": [
@@ -1177,6 +1180,309 @@
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "converted_to_choice": false
+    }
+  ],
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG1H02:01",
+      "pattern_ref": "sentence-pattern:115AG1H02:01",
+      "status": "draft",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "official": {
+        "head": "大風吹",
+        "examples": [
+          "小鳥叫",
+          "白雲飄",
+          "樹枝搖"
+        ],
+        "structure": "名詞（人或物）＋動詞（做什麼動作）"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "role": "subject",
+          "label": "誰或什麼",
+          "ask": "圖裡是誰或什麼東西？"
+        },
+        {
+          "role": "action",
+          "label": "做什麼動作",
+          "ask": "它在做什麼？"
+        }
+      ],
+      "explain": "前面先說是誰或什麼東西，後面接它會做的動作。",
+      "example": {
+        "chunks": [
+          "大風",
+          "吹"
+        ]
+      },
+      "bank": [
+        {
+          "text": "大風",
+          "role": "subject"
+        },
+        {
+          "text": "小鳥",
+          "role": "subject"
+        },
+        {
+          "text": "白雲",
+          "role": "subject"
+        },
+        {
+          "text": "吹",
+          "role": "action"
+        },
+        {
+          "text": "叫",
+          "role": "action"
+        },
+        {
+          "text": "飄",
+          "role": "action"
+        }
+      ],
+      "accepted": [
+        [
+          "大風",
+          "吹"
+        ],
+        [
+          "小鳥",
+          "叫"
+        ],
+        [
+          "白雲",
+          "飄"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "大風",
+            "叫"
+          ],
+          "feedback": "順序對了。風不是動物，會「叫」嗎？"
+        },
+        {
+          "chunks": [
+            "大風",
+            "飄"
+          ],
+          "feedback": "順序對了。風很有力氣，會輕輕地「飄」嗎？"
+        },
+        {
+          "chunks": [
+            "小鳥",
+            "吹"
+          ],
+          "feedback": "順序對了。吹是風的動作，小鳥會「吹」嗎？"
+        },
+        {
+          "chunks": [
+            "小鳥",
+            "飄"
+          ],
+          "feedback": "順序對了。小鳥會飛，但「飄」通常是說輕輕被風帶著動，小鳥自己會動，合適嗎？"
+        },
+        {
+          "chunks": [
+            "白雲",
+            "吹"
+          ],
+          "feedback": "順序對了。吹是風的動作，雲會自己「吹」嗎？"
+        },
+        {
+          "chunks": [
+            "白雲",
+            "叫"
+          ],
+          "feedback": "順序對了。雲不會發出聲音，會「叫」嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H02-wind.webp",
+            "alt": "大風把樹葉吹得到處飛",
+            "prompt": "strong wind blowing leaves across an outdoor scene"
+          },
+          "image_hint": "看圖：是什麼在用力吹？",
+          "answer": [
+            "大風",
+            "吹"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "大風吹",
+                "correct": true,
+                "feedback": "對！風在用力吹。"
+              },
+              {
+                "text": "大風叫",
+                "correct": false,
+                "feedback": "風不會發出『叫』的聲音，圖片是風在用力吹。"
+              }
+            ]
+          },
+          "scene": "風吹得樹葉到處飛。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H02-bird.webp",
+            "alt": "一隻小鳥站在樹上開口叫",
+            "prompt": "a small bird perched on a branch chirping"
+          },
+          "image_hint": "看圖：是誰在發出聲音？",
+          "answer": [
+            "小鳥",
+            "叫"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "小鳥叫",
+                "correct": true,
+                "feedback": "對！小鳥在叫。"
+              },
+              {
+                "text": "小鳥吹",
+                "correct": false,
+                "feedback": "吹是風的動作，小鳥不會吹，圖片是小鳥在叫。"
+              }
+            ]
+          },
+          "scene": "小鳥站在樹枝上開口叫。"
+        }
+      ]
+    },
+    {
+      "id": "phrase-builder:115AG1H02:02",
+      "pattern_ref": "sentence-pattern:115AG1H02:02",
+      "status": "draft",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "official": {
+        "head": "不停的跑",
+        "examples": [
+          "不停的說",
+          "不停的笑",
+          "不停的揮手"
+        ],
+        "structure": "不停的＋動詞（做什麼動作）"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "fixed": "不停的"
+        },
+        {
+          "role": "action",
+          "label": "做什麼動作",
+          "ask": "他一直在做什麼？"
+        }
+      ],
+      "explain": "『不停的』後面放一個一直重複做的動作。",
+      "example": {
+        "chunks": [
+          "不停的",
+          "跑"
+        ]
+      },
+      "bank": [
+        {
+          "text": "跑",
+          "role": "action"
+        },
+        {
+          "text": "說",
+          "role": "action"
+        },
+        {
+          "text": "睡著",
+          "role": "action"
+        }
+      ],
+      "accepted": [
+        [
+          "不停的",
+          "跑"
+        ],
+        [
+          "不停的",
+          "說"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "不停的",
+            "睡著"
+          ],
+          "feedback": "順序對了。睡著是一下子發生的事，會『不停的』睡著又睡著嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H02-running.webp",
+            "alt": "一個小朋友在操場上一直跑，不停下來",
+            "prompt": "a child running continuously around a playground track"
+          },
+          "image_hint": "看圖：他一直在做什麼？",
+          "answer": [
+            "不停的",
+            "跑"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "不停的跑",
+                "correct": true,
+                "feedback": "對！他一直在跑。"
+              },
+              {
+                "text": "不停的睡著",
+                "correct": false,
+                "feedback": "圖片裡他一直在跑，不是睡著。"
+              }
+            ]
+          },
+          "scene": "下課時間，他在操場上一直跑來跑去，不肯停下來。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H02-talking.webp",
+            "alt": "一個小朋友嘴巴張開，一直說話",
+            "prompt": "a child talking continuously with an open mouth"
+          },
+          "image_hint": "看圖：他的嘴巴一直在做什麼？",
+          "answer": [
+            "不停的",
+            "說"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "不停的說",
+                "correct": true,
+                "feedback": "對！他一直在說話。"
+              },
+              {
+                "text": "不停的睡著",
+                "correct": false,
+                "feedback": "圖片裡他一直在說話，不是睡著。"
+              }
+            ]
+          },
+          "scene": "他很興奮，嘴巴一直說話說不停。"
+        }
+      ]
     }
   ]
 }

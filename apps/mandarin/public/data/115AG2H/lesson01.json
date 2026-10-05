@@ -2228,6 +2228,9 @@
       "status": "missing",
       "activity": "review",
       "note": "第 1 課沒有前課資料。"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
   "extensions": [
@@ -2506,6 +2509,139 @@
       ],
       "evidence_method": "manual 2026-10-03",
       "converted_to_choice": true
+    }
+  ],
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG2H01:01",
+      "pattern_ref": "sentence-pattern:115AG2H01:01",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
+      "official": {
+        "head": "害怕的時候",
+        "examples": [
+          "快樂的時候",
+          "緊張的時候"
+        ],
+        "structure": "形容詞（心情）＋的時候"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "role": "mood",
+          "label": "怎麼樣的心情",
+          "ask": "他現在的表情是什麼心情？"
+        },
+        {
+          "fixed": "的時候"
+        }
+      ],
+      "explain": "前面放一種心情，後面接「的時候」。",
+      "example": {
+        "chunks": [
+          "害怕",
+          "的時候"
+        ]
+      },
+      "bank": [
+        {
+          "text": "害怕",
+          "role": "mood"
+        },
+        {
+          "text": "快樂",
+          "role": "mood"
+        },
+        {
+          "text": "緊張",
+          "role": "mood"
+        },
+        {
+          "text": "圓圓",
+          "role": "mood"
+        }
+      ],
+      "accepted": [
+        [
+          "害怕",
+          "的時候"
+        ],
+        [
+          "快樂",
+          "的時候"
+        ],
+        [
+          "緊張",
+          "的時候"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "圓圓",
+            "的時候"
+          ],
+          "feedback": "順序對了。「圓圓」是形容形狀，不是心情，想一想可以換成哪個心情詞？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H01-happy.webp",
+            "alt": "一個小朋友開心地笑著",
+            "prompt": "a child smiling happily"
+          },
+          "image_hint": "看圖：這個小朋友的表情是什麼心情？",
+          "answer": [
+            "快樂",
+            "的時候"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "快樂的時候",
+                "correct": true,
+                "feedback": "對！他笑得很開心。"
+              },
+              {
+                "text": "緊張的時候",
+                "correct": false,
+                "feedback": "圖片裡的表情是開心的笑容，不是緊張。"
+              }
+            ]
+          },
+          "scene": "他笑得合不攏嘴，看起來很開心。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H01-nervous.webp",
+            "alt": "一個小朋友皺著眉頭、手心冒汗的樣子",
+            "prompt": "a child looking nervous with a worried frown"
+          },
+          "image_hint": "看圖：這個小朋友皺著眉頭，是什麼心情？",
+          "answer": [
+            "緊張",
+            "的時候"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "緊張的時候",
+                "correct": true,
+                "feedback": "對！他皺著眉頭，看起來很緊張。"
+              },
+              {
+                "text": "快樂的時候",
+                "correct": false,
+                "feedback": "圖片裡的表情是緊張的，不是開心。"
+              }
+            ]
+          },
+          "scene": "他皺著眉頭，手心冒著汗。"
+        }
+      ]
     }
   ]
 }

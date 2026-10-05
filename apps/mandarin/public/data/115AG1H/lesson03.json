@@ -1466,6 +1466,9 @@
       "label": "舊字新詞",
       "status": "available",
       "activity": "review"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
   "discussion_questions": [
@@ -1619,6 +1622,331 @@
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "converted_to_choice": false
+    }
+  ],
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG1H03:01",
+      "pattern_ref": "sentence-pattern:115AG1H03:01",
+      "status": "draft",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "official": {
+        "head": "一個又一個",
+        "examples": [
+          "一件又一件",
+          "一片又一片",
+          "一包又一包"
+        ],
+        "structure": "一＋量詞＋又＋一＋量詞"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "fixed": "一"
+        },
+        {
+          "role": "quantifier",
+          "label": "量詞",
+          "ask": "這些東西要用哪個量詞來算？"
+        },
+        {
+          "fixed": "又一"
+        },
+        {
+          "role": "quantifier",
+          "label": "量詞",
+          "copy_of": 1
+        }
+      ],
+      "explain": "前面和後面要用『同一個』量詞，表示有很多一樣的東西。",
+      "example": {
+        "chunks": [
+          "一",
+          "個",
+          "又一",
+          "個"
+        ]
+      },
+      "bank": [
+        {
+          "text": "個",
+          "role": "quantifier"
+        },
+        {
+          "text": "件",
+          "role": "quantifier"
+        },
+        {
+          "text": "片",
+          "role": "quantifier"
+        }
+      ],
+      "accepted": [
+        [
+          "一",
+          "個",
+          "又一",
+          "個"
+        ],
+        [
+          "一",
+          "件",
+          "又一",
+          "件"
+        ],
+        [
+          "一",
+          "片",
+          "又一",
+          "片"
+        ]
+      ],
+      "semantic_rejects": [],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H03-boxes.webp",
+            "alt": "桌上排著一個又一個一樣的箱子",
+            "prompt": "a row of identical boxes lined up one after another on a table"
+          },
+          "image_hint": "看圖：東西是用『個』來算的嗎？",
+          "answer": [
+            "一",
+            "個",
+            "又一",
+            "個"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "一個又一個",
+                "correct": true,
+                "feedback": "對！一個接一個一樣的箱子。"
+              },
+              {
+                "text": "一個又一件",
+                "correct": false,
+                "feedback": "前後量詞要一樣，圖片裡的東西都用『個』來算。"
+              }
+            ]
+          },
+          "scene": "桌上排著一個接一個一樣的箱子。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H03-clothes.webp",
+            "alt": "衣架上掛著一件又一件一樣的衣服",
+            "prompt": "a row of identical shirts hanging one after another on hangers"
+          },
+          "image_hint": "看圖：東西是用『件』來算的嗎？",
+          "answer": [
+            "一",
+            "件",
+            "又一",
+            "件"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "一件又一件",
+                "correct": true,
+                "feedback": "對！一件接一件一樣的衣服。"
+              },
+              {
+                "text": "一件又一個",
+                "correct": false,
+                "feedback": "前後量詞要一樣，圖片裡的東西都用『件』來算。"
+              }
+            ]
+          },
+          "scene": "衣架上掛著一件接一件一樣的衣服。"
+        }
+      ]
+    },
+    {
+      "id": "phrase-builder:115AG1H03:02",
+      "pattern_ref": "sentence-pattern:115AG1H03:02",
+      "status": "draft",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "official": {
+        "head": "做出小火車",
+        "examples": [
+          "寫出國字",
+          "畫出大老虎",
+          "摺出紙飛機"
+        ],
+        "structure": "動詞（什麼動作）＋出＋名詞（什麼事物）"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "role": "action",
+          "label": "做什麼動作",
+          "ask": "他用什麼方式做出東西？"
+        },
+        {
+          "fixed": "出"
+        },
+        {
+          "role": "thing",
+          "label": "什麼東西",
+          "ask": "他做出了什麼？"
+        }
+      ],
+      "explain": "前面說做了什麼動作，『出』後面說做出了什麼東西。",
+      "example": {
+        "chunks": [
+          "做",
+          "出",
+          "小火車"
+        ]
+      },
+      "bank": [
+        {
+          "text": "做",
+          "role": "action"
+        },
+        {
+          "text": "寫",
+          "role": "action"
+        },
+        {
+          "text": "畫",
+          "role": "action"
+        },
+        {
+          "text": "小火車",
+          "role": "thing"
+        },
+        {
+          "text": "國字",
+          "role": "thing"
+        },
+        {
+          "text": "大老虎",
+          "role": "thing"
+        }
+      ],
+      "accepted": [
+        [
+          "做",
+          "出",
+          "小火車"
+        ],
+        [
+          "做",
+          "出",
+          "國字"
+        ],
+        [
+          "做",
+          "出",
+          "大老虎"
+        ],
+        [
+          "寫",
+          "出",
+          "國字"
+        ],
+        [
+          "畫",
+          "出",
+          "小火車"
+        ],
+        [
+          "畫",
+          "出",
+          "大老虎"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "寫",
+            "出",
+            "小火車"
+          ],
+          "feedback": "順序對了。寫是用筆寫字，會「寫」出一台小火車嗎？"
+        },
+        {
+          "chunks": [
+            "寫",
+            "出",
+            "大老虎"
+          ],
+          "feedback": "順序對了。寫是用筆寫字，會「寫」出一隻大老虎嗎？"
+        },
+        {
+          "chunks": [
+            "畫",
+            "出",
+            "國字"
+          ],
+          "feedback": "順序對了。國字通常是用筆「寫」的，會「畫」出國字嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H03-train.webp",
+            "alt": "一個小朋友用積木做出一台小火車",
+            "prompt": "a child building a small toy train out of building blocks"
+          },
+          "image_hint": "看圖：他用積木做出了什麼？",
+          "answer": [
+            "做",
+            "出",
+            "小火車"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "做出小火車",
+                "correct": true,
+                "feedback": "對！他用積木做出小火車。"
+              },
+              {
+                "text": "寫出小火車",
+                "correct": false,
+                "feedback": "小火車是用積木做出來的，不是寫出來的。"
+              }
+            ]
+          },
+          "scene": "他用積木一塊一塊拼出一台小火車。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H03-tiger.webp",
+            "alt": "一個小朋友用畫筆畫出一隻大老虎",
+            "prompt": "a child painting a big tiger picture with a paintbrush"
+          },
+          "image_hint": "看圖：他用畫筆畫出了什麼？",
+          "answer": [
+            "畫",
+            "出",
+            "大老虎"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "畫出大老虎",
+                "correct": true,
+                "feedback": "對！他畫出一隻大老虎。"
+              },
+              {
+                "text": "寫出大老虎",
+                "correct": false,
+                "feedback": "大老虎是畫出來的，不是寫出來的。"
+              }
+            ]
+          },
+          "scene": "他拿著畫筆，在紙上畫出一隻大老虎。"
+        }
+      ]
     }
   ]
 }

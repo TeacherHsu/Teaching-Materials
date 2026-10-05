@@ -2143,6 +2143,9 @@
       "label": "舊字新詞",
       "status": "available",
       "activity": "review"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
   "extensions": [
@@ -2490,6 +2493,190 @@
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "converted_to_choice": false
+    }
+  ],
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG2H08:01",
+      "pattern_ref": "sentence-pattern:115AG2H08:01",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
+      "official": {
+        "head": "搶著舉手",
+        "examples": [
+          "坐著看書",
+          "跪著擦地板"
+        ],
+        "structure": "動詞（動作）＋著＋動詞（做什麼事）"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "role": "action1",
+          "label": "用什麼動作",
+          "ask": "他用什麼姿勢做這件事？"
+        },
+        {
+          "fixed": "著"
+        },
+        {
+          "role": "action2",
+          "label": "做什麼事",
+          "ask": "他正在做什麼事？"
+        }
+      ],
+      "explain": "前面說用什麼姿勢或動作，加上「著」，後面說正在做什麼事。",
+      "example": {
+        "chunks": [
+          "搶",
+          "著",
+          "舉手"
+        ]
+      },
+      "bank": [
+        {
+          "text": "搶",
+          "role": "action1"
+        },
+        {
+          "text": "坐",
+          "role": "action1"
+        },
+        {
+          "text": "跪",
+          "role": "action1"
+        },
+        {
+          "text": "舉手",
+          "role": "action2"
+        },
+        {
+          "text": "看書",
+          "role": "action2"
+        },
+        {
+          "text": "擦地板",
+          "role": "action2"
+        }
+      ],
+      "accepted": [
+        [
+          "搶",
+          "著",
+          "舉手"
+        ],
+        [
+          "坐",
+          "著",
+          "看書"
+        ],
+        [
+          "跪",
+          "著",
+          "擦地板"
+        ],
+        [
+          "坐",
+          "著",
+          "舉手"
+        ],
+        [
+          "搶",
+          "著",
+          "看書"
+        ],
+        [
+          "搶",
+          "著",
+          "擦地板"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "坐",
+            "著",
+            "擦地板"
+          ],
+          "feedback": "順序對了。坐著可以好好擦地板嗎？想一想要用什麼姿勢。"
+        },
+        {
+          "chunks": [
+            "跪",
+            "著",
+            "舉手"
+          ],
+          "feedback": "順序對了。跪著和舉手這兩個動作，平常會一起出現嗎？"
+        },
+        {
+          "chunks": [
+            "跪",
+            "著",
+            "看書"
+          ],
+          "feedback": "順序對了。跪著看書不是教室裡常見的姿勢，再想想。"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H08-sit-read.webp",
+            "alt": "一個小朋友坐著認真看書",
+            "prompt": "a child sitting on a chair, reading a book attentively"
+          },
+          "image_hint": "看圖：這個小朋友用什麼姿勢做什麼事？",
+          "answer": [
+            "坐",
+            "著",
+            "看書"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "坐著看書",
+                "correct": true,
+                "feedback": "對！他坐著看書。"
+              },
+              {
+                "text": "跪著擦地板",
+                "correct": false,
+                "feedback": "圖片裡是坐著看書，不是跪著擦地板。"
+              }
+            ]
+          },
+          "scene": "他坐在椅子上，認真地看書。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H08-kneel-wipe.webp",
+            "alt": "一個小朋友跪在地上擦地板",
+            "prompt": "a child kneeling on the floor, wiping it with a cloth"
+          },
+          "image_hint": "看圖：這個小朋友用什麼姿勢做什麼事？",
+          "answer": [
+            "跪",
+            "著",
+            "擦地板"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "跪著擦地板",
+                "correct": true,
+                "feedback": "對！他跪著擦地板。"
+              },
+              {
+                "text": "坐著看書",
+                "correct": false,
+                "feedback": "圖片裡是跪著擦地板，不是坐著看書。"
+              }
+            ]
+          },
+          "scene": "他跪在地上，用力擦著地板。"
+        }
+      ]
     }
   ]
 }

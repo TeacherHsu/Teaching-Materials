@@ -1321,6 +1321,9 @@
       "label": "舊字新詞",
       "status": "available",
       "activity": "review"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
   "discussion_questions": [
@@ -1499,6 +1502,194 @@
       "status": "approved",
       "source": "115G1A／翰林一年上官方教材（09閱讀理解提問；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
       "converted_to_choice": false
+    }
+  ],
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG1H07:01",
+      "pattern_ref": "sentence-pattern:115AG1H07:02",
+      "status": "draft",
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "official": {
+        "head": "你開心嗎？",
+        "examples": [
+          "叔叔生氣嗎？",
+          "作業困難嗎？",
+          "遊戲有趣嗎？"
+        ],
+        "structure": "名詞（人或物）＋形容詞（怎麼樣）嗎？"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "role": "who",
+          "label": "誰或什麼",
+          "ask": "圖裡是誰或什麼東西？"
+        },
+        {
+          "role": "feel",
+          "label": "心情或樣子",
+          "ask": "他的表情或樣子是什麼感覺？"
+        },
+        {
+          "fixed": "嗎？"
+        }
+      ],
+      "explain": "前面說誰或什麼，中間說心情或樣子，最後加『嗎？』來問。",
+      "example": {
+        "chunks": [
+          "你",
+          "開心",
+          "嗎？"
+        ]
+      },
+      "bank": [
+        {
+          "text": "你",
+          "role": "who"
+        },
+        {
+          "text": "叔叔",
+          "role": "who"
+        },
+        {
+          "text": "作業",
+          "role": "who"
+        },
+        {
+          "text": "開心",
+          "role": "feel"
+        },
+        {
+          "text": "生氣",
+          "role": "feel"
+        },
+        {
+          "text": "困難",
+          "role": "feel"
+        }
+      ],
+      "accepted": [
+        [
+          "你",
+          "開心",
+          "嗎？"
+        ],
+        [
+          "你",
+          "生氣",
+          "嗎？"
+        ],
+        [
+          "叔叔",
+          "開心",
+          "嗎？"
+        ],
+        [
+          "叔叔",
+          "生氣",
+          "嗎？"
+        ],
+        [
+          "作業",
+          "困難",
+          "嗎？"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "你",
+            "困難",
+            "嗎？"
+          ],
+          "feedback": "順序對了。「困難」通常是形容事情，不是形容人的心情，你會說自己『困難』嗎？"
+        },
+        {
+          "chunks": [
+            "叔叔",
+            "困難",
+            "嗎？"
+          ],
+          "feedback": "順序對了。「困難」通常是形容事情，不是形容人的心情，叔叔會『困難』嗎？"
+        },
+        {
+          "chunks": [
+            "作業",
+            "開心",
+            "嗎？"
+          ],
+          "feedback": "順序對了。作業不是人，它會有『開心』的心情嗎？"
+        },
+        {
+          "chunks": [
+            "作業",
+            "生氣",
+            "嗎？"
+          ],
+          "feedback": "順序對了。作業不是人，它會『生氣』嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H07-happy.webp",
+            "alt": "一個小朋友笑得很開心",
+            "prompt": "a child smiling happily with a bright expression"
+          },
+          "image_hint": "看圖：他的表情看起來怎麼樣？",
+          "answer": [
+            "你",
+            "開心",
+            "嗎？"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "你開心嗎？",
+                "correct": true,
+                "feedback": "對！他看起來很開心。"
+              },
+              {
+                "text": "你困難嗎？",
+                "correct": false,
+                "feedback": "困難是形容事情，不是形容人的心情，圖片裡他看起來很開心。"
+              }
+            ]
+          },
+          "scene": "他笑得很開心，眼睛彎彎的。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG1H07-homework.webp",
+            "alt": "一疊作業紙，上面有很多複雜的題目",
+            "prompt": "a stack of homework worksheets with complicated-looking problems"
+          },
+          "image_hint": "看圖：這些題目看起來怎麼樣？",
+          "answer": [
+            "作業",
+            "困難",
+            "嗎？"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "作業困難嗎？",
+                "correct": true,
+                "feedback": "對！這些題目看起來很難。"
+              },
+              {
+                "text": "作業開心嗎？",
+                "correct": false,
+                "feedback": "作業不是人，不會有『開心』的心情，這些題目看起來很難。"
+              }
+            ]
+          },
+          "scene": "一疊作業上有很多複雜的題目。"
+        }
+      ]
     }
   ]
 }

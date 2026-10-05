@@ -1775,7 +1775,200 @@
       "label": "舊字新詞",
       "status": "available",
       "activity": "review"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
-  "genre": "expository"
+  "genre": "expository",
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG3H06:01",
+      "pattern_ref": "sentence_pattern:115AG3H06:01",
+      "status": "draft",
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（08各課短語句型練習）",
+      "official": {
+        "head": "閃亮亮的鉛筆",
+        "examples": [
+          "閃亮亮的鉛筆",
+          "圓滾滾的石頭"
+        ],
+        "structure": "疊字形容詞（怎麼樣）＋的＋名詞（東西）。"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "role": "quality",
+          "label": "怎麼樣的",
+          "ask": "這個東西摸起來或看起來是什麼樣子？"
+        },
+        {
+          "fixed": "的",
+          "ask": "圖裡的東西是什麼？"
+        },
+        {
+          "role": "thing",
+          "label": "什麼東西"
+        }
+      ],
+      "explain": "句子裡 「怎麼樣的」、「什麼東西」 可以換成別的詞，其他字不能動。",
+      "example": {
+        "chunks": [
+          "閃亮亮",
+          "的",
+          "鉛筆"
+        ]
+      },
+      "bank": [
+        {
+          "text": "閃亮亮",
+          "role": "quality"
+        },
+        {
+          "text": "圓滾滾",
+          "role": "quality"
+        },
+        {
+          "text": "毛茸茸",
+          "role": "quality"
+        },
+        {
+          "text": "鉛筆",
+          "role": "thing"
+        },
+        {
+          "text": "石頭",
+          "role": "thing"
+        },
+        {
+          "text": "小狗",
+          "role": "thing"
+        }
+      ],
+      "accepted": [
+        [
+          "閃亮亮",
+          "的",
+          "鉛筆"
+        ],
+        [
+          "圓滾滾",
+          "的",
+          "石頭"
+        ],
+        [
+          "毛茸茸",
+          "的",
+          "小狗"
+        ],
+        [
+          "圓滾滾",
+          "的",
+          "小狗"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "閃亮亮",
+            "的",
+            "石頭"
+          ],
+          "feedback": "再想想：石頭平常放在地上，摸起來、看起來會閃閃發亮嗎？"
+        },
+        {
+          "chunks": [
+            "閃亮亮",
+            "的",
+            "小狗"
+          ],
+          "feedback": "小狗的毛通常是毛茸茸的，會說牠「閃亮亮」嗎？"
+        },
+        {
+          "chunks": [
+            "圓滾滾",
+            "的",
+            "鉛筆"
+          ],
+          "feedback": "鉛筆是細細長長的，跟「圓滾滾」合得起來嗎？"
+        },
+        {
+          "chunks": [
+            "毛茸茸",
+            "的",
+            "鉛筆"
+          ],
+          "feedback": "鉛筆硬硬的、滑滑的，會是「毛茸茸」的嗎？"
+        },
+        {
+          "chunks": [
+            "毛茸茸",
+            "的",
+            "石頭"
+          ],
+          "feedback": "一般的石頭光滑堅硬，會說它「毛茸茸」嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG3H06-pencil.webp",
+            "alt": "一枝閃閃發亮的新鉛筆",
+            "prompt": "one shiny new pencil with a glossy sharp tip"
+          },
+          "image_hint": "看圖：這枝鉛筆看起來怎麼樣？",
+          "answer": [
+            "閃亮亮",
+            "的",
+            "鉛筆"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "閃亮亮的鉛筆",
+                "correct": true,
+                "feedback": "對！鉛筆閃閃發亮。"
+              },
+              {
+                "text": "圓滾滾的鉛筆",
+                "correct": false,
+                "feedback": "鉛筆不是圓滾滾的，再看看圖片。"
+              }
+            ]
+          },
+          "scene": "妹妹打開新的鉛筆盒，拿出一支閃閃發亮的新鉛筆。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG3H06-stone.webp",
+            "alt": "一顆圓滾滾的大石頭",
+            "prompt": "one round plump smooth stone"
+          },
+          "image_hint": "看圖：這顆石頭的形狀像什麼？",
+          "answer": [
+            "圓滾滾",
+            "的",
+            "石頭"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "圓滾滾的石頭",
+                "correct": true,
+                "feedback": "對！石頭圓滾滾的。"
+              },
+              {
+                "text": "毛茸茸的石頭",
+                "correct": false,
+                "feedback": "石頭不是毛茸茸的，再看看圖片。"
+              }
+            ]
+          },
+          "scene": "弟弟在河邊撿到一顆圓滾滾的大石頭。"
+        }
+      ]
+    }
+  ]
 }

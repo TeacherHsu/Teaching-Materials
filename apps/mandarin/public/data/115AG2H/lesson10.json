@@ -1922,6 +1922,9 @@
       "label": "舊字新詞",
       "status": "available",
       "activity": "review"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
   "extensions": [
@@ -2311,6 +2314,150 @@
       "status": "approved",
       "source": "115G2A／翰林二上官方教材（10閱讀理解提問）",
       "converted_to_choice": false
+    }
+  ],
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG2H10:01",
+      "pattern_ref": "sentence-pattern:115AG2H10:01",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
+      "official": {
+        "head": "想也不想",
+        "examples": [
+          "聽也不聽",
+          "找也不找"
+        ],
+        "structure": "動詞（動作）＋也不＋動詞（動作）"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。先前因同一個動詞要用兩次、積木庫一個詞只能選一次而跳過，本次用 copy_of 讓第二格自動跟著第一格，不用再選第二次。",
+      "slots": [
+        {
+          "role": "action"
+        },
+        {
+          "fixed": "也不"
+        },
+        {
+          "role": "action",
+          "label": "做什麼動作",
+          "ask": "圖裡的人做出什麼反應？",
+          "copy_of": 0
+        }
+      ],
+      "explain": "前後要用『同一個』動作，中間加『也不』，表示完全沒有這樣做。",
+      "example": {
+        "chunks": [
+          "想",
+          "也不",
+          "想"
+        ]
+      },
+      "bank": [
+        {
+          "text": "想",
+          "role": "action"
+        },
+        {
+          "text": "聽",
+          "role": "action"
+        },
+        {
+          "text": "找",
+          "role": "action"
+        },
+        {
+          "text": "睡著",
+          "role": "action"
+        }
+      ],
+      "accepted": [
+        [
+          "想",
+          "也不",
+          "想"
+        ],
+        [
+          "聽",
+          "也不",
+          "聽"
+        ],
+        [
+          "找",
+          "也不",
+          "找"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "睡著",
+            "也不",
+            "睡著"
+          ],
+          "feedback": "「睡著」是一下子發生的事，不是能自己選擇要不要做的動作，會說『睡著也不睡著』嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H10-jump.webp",
+            "alt": "小朋友看到朋友在水裡求救，立刻跳下水救人",
+            "prompt": "a child jumping into water without hesitation to help a friend"
+          },
+          "image_hint": "看圖：他做決定的時候，有沒有先停下來想一想？",
+          "answer": [
+            "想",
+            "也不",
+            "想"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "想也不想",
+                "correct": true,
+                "feedback": "對！他完全沒有猶豫，立刻跳下水救人。"
+              },
+              {
+                "text": "聽也不聽",
+                "correct": false,
+                "feedback": "圖片裡是他立刻行動，不是沒在聽別人說話。"
+              }
+            ]
+          },
+          "scene": "朋友在水裡大叫求救，他想也不想，立刻跳下水救人。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H10-ignore.webp",
+            "alt": "媽媽在旁邊叫他吃飯，他低頭一直玩玩具，完全沒反應",
+            "prompt": "a child completely absorbed in playing with toys, ignoring a parent calling from nearby"
+          },
+          "image_hint": "看圖：媽媽在說話，他有沒有抬頭理她？",
+          "answer": [
+            "聽",
+            "也不",
+            "聽"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "聽也不聽",
+                "correct": true,
+                "feedback": "對！媽媽在叫他，他完全沒在聽，繼續玩玩具。"
+              },
+              {
+                "text": "想也不想",
+                "correct": false,
+                "feedback": "圖片裡是他沒在聽，不是立刻做了什麼決定。"
+              }
+            ]
+          },
+          "scene": "媽媽在旁邊叫他吃飯，他聽也不聽，低頭繼續玩玩具。"
+        }
+      ]
     }
   ]
 }

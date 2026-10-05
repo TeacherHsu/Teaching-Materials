@@ -1875,6 +1875,9 @@
       "label": "舊字新詞",
       "status": "available",
       "activity": "review"
+    },
+    "phrase_builder": {
+      "label": "照樣造短語"
     }
   },
   "extensions": [
@@ -2099,6 +2102,214 @@
       ],
       "evidence_method": "manual 2026-10-03",
       "converted_to_choice": true
+    }
+  ],
+  "phrase_builders": [
+    {
+      "id": "phrase-builder:115AG2H04:01",
+      "pattern_ref": "sentence-pattern:115AG2H04:01",
+      "status": "draft",
+      "source": "115G2A／翰林二上官方教材（06各課短語句型練習）",
+      "official": {
+        "head": "只聞聲不見影",
+        "examples": [
+          "只吃飯不喝湯",
+          "只看書不寫字"
+        ],
+        "structure": "只＋動詞（動作）＋不＋動詞（動作）"
+      },
+      "authored_note": "詞塊拆分、圖片描述、語意判定與回饋為本站編寫（非官方教材），需教師確認。",
+      "slots": [
+        {
+          "fixed": "只"
+        },
+        {
+          "role": "action1",
+          "label": "聽到或看到什麼",
+          "ask": "他正在做哪件事？"
+        },
+        {
+          "fixed": "不"
+        },
+        {
+          "role": "action2",
+          "label": "但是沒有什麼",
+          "ask": "他沒有做哪件事？"
+        }
+      ],
+      "explain": "前面說做了哪件事，後面說沒做哪件事，兩件事要配成一對。",
+      "example": {
+        "chunks": [
+          "只",
+          "聞聲",
+          "不",
+          "見影"
+        ]
+      },
+      "bank": [
+        {
+          "text": "聞聲",
+          "role": "action1"
+        },
+        {
+          "text": "吃飯",
+          "role": "action1"
+        },
+        {
+          "text": "看書",
+          "role": "action1"
+        },
+        {
+          "text": "見影",
+          "role": "action2"
+        },
+        {
+          "text": "喝湯",
+          "role": "action2"
+        },
+        {
+          "text": "寫字",
+          "role": "action2"
+        }
+      ],
+      "accepted": [
+        [
+          "只",
+          "聞聲",
+          "不",
+          "見影"
+        ],
+        [
+          "只",
+          "吃飯",
+          "不",
+          "喝湯"
+        ],
+        [
+          "只",
+          "看書",
+          "不",
+          "寫字"
+        ]
+      ],
+      "semantic_rejects": [
+        {
+          "chunks": [
+            "只",
+            "聞聲",
+            "不",
+            "喝湯"
+          ],
+          "feedback": "順序對了。「聞聲」是用耳朵聽，「喝湯」是吃東西，這樣搭配說得通嗎？"
+        },
+        {
+          "chunks": [
+            "只",
+            "聞聲",
+            "不",
+            "寫字"
+          ],
+          "feedback": "順序對了。「聞聲」是聽聲音，和「寫字」有關係嗎？"
+        },
+        {
+          "chunks": [
+            "只",
+            "吃飯",
+            "不",
+            "見影"
+          ],
+          "feedback": "順序對了。「吃飯」和「見影」是不同的事，想一想吃飯通常會搭配什麼？"
+        },
+        {
+          "chunks": [
+            "只",
+            "吃飯",
+            "不",
+            "寫字"
+          ],
+          "feedback": "順序對了。吃飯的時候通常會搭配「喝湯」，和「寫字」有關係嗎？"
+        },
+        {
+          "chunks": [
+            "只",
+            "看書",
+            "不",
+            "見影"
+          ],
+          "feedback": "順序對了。「看書」和「見影」有關係嗎？"
+        },
+        {
+          "chunks": [
+            "只",
+            "看書",
+            "不",
+            "喝湯"
+          ],
+          "feedback": "順序對了。看書通常會搭配「寫字」，和「喝湯」有關係嗎？"
+        }
+      ],
+      "rounds": [
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H04-eat.webp",
+            "alt": "一個小朋友只顧著吃飯，湯碗完全沒動",
+            "prompt": "a child eating rice happily, with an untouched bowl of soup beside the plate"
+          },
+          "image_hint": "看圖：這個小朋友做了什麼，沒做什麼？",
+          "answer": [
+            "只",
+            "吃飯",
+            "不",
+            "喝湯"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "只吃飯不喝湯",
+                "correct": true,
+                "feedback": "對！他只吃飯，沒喝湯。"
+              },
+              {
+                "text": "只看書不寫字",
+                "correct": false,
+                "feedback": "圖片裡是在吃飯，不是看書。"
+              }
+            ]
+          },
+          "scene": "他專心吃飯，旁邊的湯碗完全沒動。"
+        },
+        {
+          "image": {
+            "src": "/assets/phrases/115AG2H04-read.webp",
+            "alt": "一個小朋友只顧著看書，筆和紙都放在旁邊沒用",
+            "prompt": "a child reading a book intently, with a pen and blank paper untouched nearby"
+          },
+          "image_hint": "看圖：這個小朋友做了什麼，沒做什麼？",
+          "answer": [
+            "只",
+            "看書",
+            "不",
+            "寫字"
+          ],
+          "check": {
+            "prompt": "哪一個比較適合這張圖片？",
+            "options": [
+              {
+                "text": "只看書不寫字",
+                "correct": true,
+                "feedback": "對！他只看書，沒寫字。"
+              },
+              {
+                "text": "只吃飯不喝湯",
+                "correct": false,
+                "feedback": "圖片裡是在看書，不是吃飯。"
+              }
+            ]
+          },
+          "scene": "他專心看書，筆和紙放在旁邊沒用到。"
+        }
+      ]
     }
   ]
 }
