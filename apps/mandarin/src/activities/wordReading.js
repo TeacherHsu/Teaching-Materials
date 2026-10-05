@@ -18,6 +18,8 @@ import { speak, cancelSpeaking } from '../utils/speech.js';
 import { splitSyllables } from '../utils/zhuyin.js';
 import { ensureCharReadings, scoreReading } from '../utils/readingScore.js';
 import { recordOutcome } from '../utils/scoreSession.js';
+import { listen, recognitionSupported } from '../utils/listen.js';
+import { logAsr } from '../utils/asrLog.js';
 import { celebrateCorrect } from '../utils/celebrate.js';
 
 // 念對時的稱讚輪流換，避免每次都一樣變成背景音
@@ -26,15 +28,12 @@ const PRAISE_HELPED = ['念對了！多練一次就會了！', '有進步！念�
 
 const HAN = /[㐀-鿿]/u;
 
-export function recognitionSupported() {
-  return typeof window !== 'undefined' && Boolean(window.SpeechRecognition || window.webkitSpeechRecognition);
-}
+export { recognitionSupported } from '../utils/listen.js';
 
-/** 要念的字詞：生字（單字）與語詞，都要有注音且字數對得上才出題。 */
+/** 要念的字詞：只出語詞（CF 2026-10-06 拿掉單字題——辨識器聽單字很不準，誤判多）。
+ * 語詞要有注音且字數對得上才出題。chars 保留空陣列，呼叫端不用改。 */
 export function readingItems(lesson) {
-  const chars = (lesson.characters || [])
-    .filter((c) => (c.status === 'ready' || !c.status) && c.char && c.zhuyin)
-    .map((c) => ({ text: c.char, expected: [{ char: c.char, zhuyin: c.zhuyin }], kind: 'char' }));
+  const chars = [];
   const words = filterByStatus(lesson.words || [])
     .filter((w) => w.word && w.zhuyin)
     .map((w) => {
@@ -49,27 +48,7 @@ export function readingItems(lesson) {
 }
 
 export function canStartWordReading(lesson) {
-  const { chars, words } = readingItems(lesson);
-  return chars.length + words.length >= 3;
-}
-
-/** 一次辨識：回傳聽到的文字（或錯誤訊息）。 */
-function listenOnce(onResult) {
-  const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  const rec = new Recognition();
-  rec.lang = 'zh-TW';
-  rec.interimResults = false;
-  rec.maxAlternatives = 3;
-  let done = false;
-  rec.onresult = (event) => {
-    done = true;
-    const alts = [...(event.results?.[0] || [])].map((a) => a.transcript || '');
-    onResult({ heard: alts });
-  };
-  rec.onerror = (event) => { if (!done) { done = true; onResult({ error: event.error === 'no-speech' ? '沒有聽到聲音，再按一次念念看。' : '聽不清楚，再按一次念念看。' }); } };
-  rec.onend = () => { if (!done) { done = true; onResult({ error: '沒有聽到聲音，再按一次念念看。' }); } };
-  try { rec.start(); } catch { onResult({ error: '這台裝置不能用麥克風，請檢查權限。' }); }
-  return rec;
+  return readingItems(lesson).words.length >= 3;
 }
 
 /** 多個辨識候選裡，任何一個念對就算對（辨識器常把單字聽成別的詞）。 */
@@ -161,6 +140,7 @@ export function buildWordReadingActivity(lesson, onBack) {
       const target = h('p', { class: `word-reading__target word-reading__target--${item.kind}`, lang: 'zh-TW' }, item.text);
       stage.appendChild(target);
       const controls = h('div', { class: 'quiz-option-row word-reading__controls' });
+      const heardLine = h('p', { class: 'word-reading__heard', 'aria-live': 'polite' });
 
       const btn = (text, onClick, cls = 'btn') => {
         const b = h('button', { class: cls, type: 'button' }, text);
@@ -176,14 +156,26 @@ export function buildWordReadingActivity(lesson, onBack) {
         if (teacherMode) {
           return [btn(okText, () => onJudged(true), 'btn btn--primary'), btn(noText, () => onJudged(false))];
         }
+        // 按一下開始、念完再按「念完了」（或安靜 3.5 秒自動結束）；邊念邊顯示電腦聽到什麼
+        let session = null;
         const mic = btn(label, () => {
+          if (session) { session.stop(); return; }
           cancelSpeaking();
-          mic.disabled = true;
-          status.textContent = '正在聽……';
-          listenOnce(({ heard, error }) => {
-            mic.disabled = false;
-            if (error) { status.textContent = error; return; }
-            onJudged(judge(item.expected, heard));
+          mic.textContent = '念完了';
+          mic.classList.add('word-reading__mic--on');
+          status.textContent = '正在聽……念完按「念完了」。';
+          session = listen({
+            onInterim: (t) => { heardLine.textContent = t ? `電腦聽到：「${t}」` : ''; },
+            onDone: ({ heard, error }) => {
+              session = null;
+              mic.textContent = label;
+              mic.classList.remove('word-reading__mic--on');
+              if (error) { status.textContent = error; return; }
+              heardLine.textContent = `電腦聽到：「${heard[0]}」`;
+              const ok = judge(item.expected, heard);
+              logAsr({ lessonId: lesson.lesson_id, module: 'word_reading', target: item.text, heard, ok });
+              onJudged(ok);
+            },
           });
         }, 'btn btn--primary word-reading__mic');
         return [mic];
@@ -246,6 +238,7 @@ export function buildWordReadingActivity(lesson, onBack) {
 
       setControls(getScaffoldLevel().reciteModel ? listenBtn() : null, ...attempt('按這裡開始念', settle));
       stage.appendChild(controls);
+      stage.appendChild(heardLine);
       stage.appendChild(status);
     }
 

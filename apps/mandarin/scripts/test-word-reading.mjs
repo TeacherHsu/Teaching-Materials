@@ -9,7 +9,7 @@ RS.setCharReadings({ 湯: ['ㄊㄤ'], 糖: ['ㄊㄤˊ'], 招: ['ㄓㄠ'], 手: [
 
 const lesson = JSON.parse(fs.readFileSync(new URL('../public/data/115AG4K/lesson02.json', import.meta.url)));
 const { chars, words } = W.readingItems(lesson);
-assert.ok(chars.length >= 3 && words.length >= 3, '生字、語詞都有題目');
+assert.equal(chars.length, 0, '單字題已拿掉（CF 2026-10-06）'); assert.ok(words.length >= 3, '語詞有題目');
 assert.ok(words.every((w) => w.expected.length === [...w.text].length), '語詞每個字都有對應注音');
 assert.equal(W.canStartWordReading(lesson), true);
 
@@ -39,3 +39,11 @@ console.log('✅ 念讀字詞：出題與判讀規則');
   assert.ok(buttons().some((b) => b.textContent.trim() === '下一個'));
 }
 console.log('✅ 念讀字詞：答錯後的示範、跟讀、自己再念');
+
+// 收音：多段結果組合成整句候選（第一個是各段最佳，之後一次只換一段）
+{
+  const { combineAlternatives } = await import('../src/utils/listen.js');
+  assert.deepEqual(combineAlternatives([['熱湯', '熱糖'], ['好喝']]), ['熱湯好喝', '熱糖好喝']);
+  assert.deepEqual(combineAlternatives([]), []);
+  console.log('✅ 收音：候選組合');
+}

@@ -13,6 +13,8 @@
 //
 // 流暢度**不給百分制分數**，只和自己的上一次比——給分數會讓學生把「念快」
 // 當目標，對口吃、構音異常、閱讀困難的學生是有害的誘因。
+import { listen } from '../utils/listen.js';
+import { logAsr } from '../utils/asrLog.js';
 import { h, clear } from '../utils/dom.js';
 import { STATUS_ICONS } from '../components/icons.js';
 import { SpeakButton } from '../components/SpeakButton.js';
@@ -167,9 +169,10 @@ function renderChallenge(lesson, reading, backHref) {
   // 支持層切到逗號，說「句」容易讓學生以為要念到句號；用「小段」比較不會誤會。
   const unitLabel = scaffold.reciteUnit === 'clause' ? '小段' : unitWord;
 
+  // 換頁、換段時才 cancel（丟掉）；學生按「念完了」用 stop（會交出已念的內容）
   function stopRecognition() {
     if (recognition) {
-      try { recognition.abort(); } catch { /* 已經停了 */ }
+      recognition.cancel();
       recognition = null;
     }
   }
@@ -259,10 +262,13 @@ function renderChallenge(lesson, reading, backHref) {
     const status = h('p', { class: 'recite__status', role: 'status', 'aria-live': 'polite' }, '');
     const result = h('div', {});
     const micBtn = h('button', { class: 'btn btn--primary recite__mic', type: 'button' }, '開始念');
+    const heardLine = h('p', { class: 'word-reading__heard', 'aria-live': 'polite' });
 
     micBtn.addEventListener('click', () => {
-      if (recognition) { stopRecognition(); return; }
+      // 正在聽時再按＝念完了：交出結果（不是丟掉）
+      if (recognition) { recognition.stop(); return; }
       cancelSpeaking();
+      heardLine.textContent = '';
       clear(result);
       charEls.forEach((el) => {
         el.classList.remove('lesson-text__ch--ok', 'lesson-text__ch--homophone', 'lesson-text__ch--wrong', 'lesson-text__ch--missed');
@@ -270,38 +276,30 @@ function renderChallenge(lesson, reading, backHref) {
         ['role', 'tabindex', 'aria-label'].forEach((n) => el.removeAttribute(n));
         el.onclick = null; el.onkeydown = null;
       });
-      const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-      recognition = new Recognition();
-      recognition.lang = 'zh-TW';
-      recognition.interimResults = false;
-      recognition.maxAlternatives = 1;
       startedAt = Date.now();
-      micBtn.textContent = '正在聽……（再按一次結束）';
+      micBtn.textContent = '念完了';
       micBtn.classList.add('recite__mic--on');
-      status.textContent = '慢慢念，念完再按一次。';
-      recognition.onresult = (event) => {
-        const heard = event.results?.[0]?.[0]?.transcript || '';
-        finish(heard);
-      };
-      recognition.onerror = (event) => {
-        finish('', event.error === 'no-speech' ? '沒有聽到聲音，再試一次。' : '聽不清楚，再試一次。');
-      };
-      recognition.onend = () => {
-        recognition = null;
-        micBtn.textContent = '再念一次';
-        micBtn.classList.remove('recite__mic--on');
-      };
-      try { recognition.start(); } catch {
-        recognition = null;
-        status.textContent = '這台裝置不能用麥克風，請檢查權限。';
-      }
+      status.textContent = '慢慢念，念完按「念完了」。';
+      const session = listen({
+        onInterim: (t) => { heardLine.textContent = t ? `電腦聽到：「${t}」` : ''; },
+        onDone: ({ heard, error }) => {
+          recognition = null;
+          micBtn.textContent = '再念一次';
+          micBtn.classList.remove('recite__mic--on');
+          finish(heard, error);
+        },
+      });
+      recognition = { cancel: session.cancel, stop: session.stop };
     });
-
-    function finish(heard, errorText) {
+    function finish(heardList, errorText) {
       const elapsed = Date.now() - startedAt;
-      stopRecognition();
       if (errorText) { status.textContent = errorText; return; }
-      const score = scoreReading(expected, heard);
+      // 多個候選挑分數最高的（辨識器常把其中一段聽成同音別字）
+      const scored = heardList.map((t) => ({ t, s: scoreReading(expected, t) }));
+      const best = scored.reduce((a, b) => (b.s.accuracy > a.s.accuracy ? b : a), scored[0]);
+      const score = best.s;
+      heardLine.textContent = `電腦聽到：「${best.t}」`;
+      logAsr({ lessonId, module: 'recite', target: unit.text, heard: heardList, ok: score.accuracy >= 90, accuracy: score.accuracy });
       const speed = fluency(score.total, elapsed);
 
       // 上色
@@ -355,6 +353,7 @@ function renderChallenge(lesson, reading, backHref) {
       micBtn,
       h('a', { class: 'btn', href: backHref }, '回到本課'),
     ]));
+    wrap.appendChild(heardLine);
     wrap.appendChild(status);
     wrap.appendChild(result);
 

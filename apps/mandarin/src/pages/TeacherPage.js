@@ -3,6 +3,7 @@
 // 入口用一道兩位數乘法擋住順手亂點的學生（見 utils/teacherGate.js）——
 // 這不是資訊安全機制，本站沒有帳號也不該有。
 // 頁面不顯示、也不儲存任何學生姓名；紀錄只有課次代號、大項代號與正確率。
+import { readAsrLog, clearAsrLog, asrProblemTargets } from '../utils/asrLog.js';
 import { h, clear } from '../utils/dom.js';
 import { findModuleEntry } from '../activities/moduleRegistry.js';
 import { SCAFFOLD_LEVELS, getScaffoldLevelKey, setScaffoldLevel, getDeviceLabel, setDeviceLabel, getSheetUrl, setSheetUrl, getScaffoldLevel, getOverride, setOverride, getShowEarlyExit, setShowEarlyExit, getShowStepJump, setShowStepJump, DETAIL_SPECS, getLastGrade, hasGradeLevel, getStudentCode, setStudentCode } from '../utils/deviceSettings.js';
@@ -364,6 +365,7 @@ function buildPanel(root) {
     lockReadings();
     buildPanel(root);
   });
+  root.appendChild(asrLogSection(root));
   root.appendChild(h('div', { class: 'quiz-option-row', style: 'margin-top:24px' }, [clearBtn]));
   // 回到老師進來之前的那一冊，不是整站首頁——不然每次調完設定都要重新點三層。
   const lastGrade = getLastGrade();
@@ -413,4 +415,42 @@ export function TeacherPage() {
 
   buildGate();
   return root;
+}
+
+/** 語音辨識紀錄（只有文字，不存聲音）：最常被判錯的字詞＋最近 30 筆，可複製成表格或清除。 */
+function asrLogSection(root) {
+  const log = readAsrLog();
+  const box = h('section', { class: 'card teacher-asr' }, [h('h3', {}, `語音辨識紀錄（${log.length} 筆，只存文字）`)]);
+  if (!log.length) {
+    box.appendChild(h('p', { class: 'meta' }, '還沒有紀錄。學生用念讀字詞、朗讀挑戰的麥克風後，這裡會記下「要念的／電腦聽到的」。'));
+    return box;
+  }
+  const misses = log.filter((e) => !e.ok).length;
+  box.appendChild(h('p', { class: 'meta' }, `判成沒念對：${misses}／${log.length} 筆。常被判錯的字詞可能是辨識器聽不準，不一定是學生念錯。`));
+  const top = asrProblemTargets(log);
+  if (top.length) {
+    box.appendChild(h('div', { class: 'info-page__table-wrap' }, h('table', { class: 'teacher-table' }, [
+      h('thead', {}, h('tr', {}, ['最常判錯', '判錯／次數', '電腦常聽成'].map((t) => h('th', { scope: 'col' }, t)))),
+      h('tbody', {}, top.map((t) => h('tr', {}, [h('td', {}, t.target.slice(0, 20)), h('td', {}, `${t.misses}／${t.tries}`), h('td', {}, t.heard.join('、'))]))),
+    ])));
+  }
+  const recent = log.slice(-30).reverse();
+  box.appendChild(h('details', {}, [
+    h('summary', {}, '最近 30 筆'),
+    h('div', { class: 'info-page__table-wrap' }, h('table', { class: 'teacher-table' }, [
+      h('thead', {}, h('tr', {}, ['時間', '代碼', '課', '要念的', '電腦聽到', '判定'].map((t) => h('th', { scope: 'col' }, t)))),
+      h('tbody', {}, recent.map((e) => h('tr', {}, [e.at, e.code, e.lessonId.slice(5), e.target.slice(0, 20), (e.heard[0] || '').slice(0, 20), e.ok ? '念對' : (e.accuracy != null ? `${e.accuracy} 分` : '沒念對')].map((t) => h('td', {}, t))))),
+    ])),
+  ]));
+  const copy = h('button', { class: 'btn', type: 'button' }, '複製成表格');
+  copy.addEventListener('click', () => {
+    const rows = [['時間', '代碼', '課', '模組', '要念的', '電腦聽到（候選）', '判定', '分數']]
+      .concat(log.map((e) => [e.at, e.code, e.lessonId, e.module, e.target, e.heard.join(' / '), e.ok ? '對' : '錯', e.accuracy ?? '']));
+    navigator.clipboard?.writeText(rows.map((r) => r.join('\t')).join('\n'));
+    copy.textContent = '已複製';
+  });
+  const clearIt = h('button', { class: 'btn btn--ghost', type: 'button' }, '清除辨識紀錄');
+  clearIt.addEventListener('click', () => { clearAsrLog(); buildPanel(root); });
+  box.appendChild(h('div', { class: 'quiz-option-row' }, [copy, clearIt]));
+  return box;
 }
