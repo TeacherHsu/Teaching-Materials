@@ -31,11 +31,11 @@ const progressLabel = dashboard.find((n) => n.hasClass('lesson-hero__progress-la
 assert.ok(progressLabel, '應該要有 lesson-hero__progress-label');
 assert.match(
   progressLabel.textContent,
-  /核心學習 0 ／ 4 項/,
-  `hero 進度只算核心必做 4 項（加練另列），實際：「${progressLabel.textContent}」`,
+  /核心學習 0 ／ 6 項/,
+  `hero 進度只算核心 6 項（2026-10-06 含念讀字詞、照樣造短語；加練另列），實際：「${progressLabel.textContent}」`,
 );
 const extraLabel = dashboard.find((n) => n.hasClass('lesson-hero__extra-label'));
-assert.ok(extraLabel && /加練挑戰（選做）0 ／ 10 項/.test(extraLabel.textContent), `加練另列，分母排除鎖住與待審（14－4＝10），實際：「${extraLabel?.textContent}」`);
+assert.ok(extraLabel && /加練挑戰（選做）0 ／ 8 項/.test(extraLabel.textContent), `加練另列，分母排除鎖住與待審（14－6＝8），實際：「${extraLabel?.textContent}」`);
 
 // 進度環（progress-ring）文字也要用同一個分母換算百分比，0／10 = 0%
 const ringSvgHtml = dashboard.find((n) => n.hasClass('progress-ring')).innerHTML;

@@ -170,7 +170,7 @@ npm run build && npm run check-dist
 
 ## 2026-10-05 基本練習、照樣造短語、課文點讀字級
 
-- **基本練習區**：課程首頁核心之後、不收合；順序＝念讀字詞 → 照樣造短語（`BASIC_MODULES`）。沒有已核准短語的課，學生畫面不顯示照樣造短語卡。
+- **核心學習六項（CF 2026-10-06，取代基本練習區）**：認識生字 → 學會語詞 → 念讀字詞 → 照樣造短語 → 練習句子 → 讀懂課文（`CORE_ORDER`）；沒有照樣造短語資料的課就是五項。課程首頁只有「核心學習」與「加練挑戰」兩區。
 - **照樣造短語資料**（`lesson.phrase_builders[]`）：`pattern_ref` 必須指向官方 `sentence_patterns`，`example.chunks` 拼起來必須等於課本短語；`slots`（role＋學生看得懂的 label）、`bank`、`accepted`、`semantic_rejects`（附回饋）、`rounds`（圖片、`image_hint`、`answer`、`check` 小確認題）。結構正確的每一種組合都要有判定（`test-phrase-builder.mjs` 檢查）。
 - **編寫內容一律 draft**：詞塊拆分、語意判定、圖片描述是本站編寫；`filter-build-data` 會擋掉 draft，教師確認後改 `approved` 才上線。確認清單放 `docs/review/`。
 - **不批次產生**：一課一課做、一課一課給老師確認；沒有官方短語的課不做。

@@ -29,10 +29,12 @@ const STATUS_BUTTON_LABEL = {
   done: '再玩一次',
   available: '開始',
 };
-const CORE_MODULES = new Set(['characters', 'vocabulary', 'sentence_practice', 'reading']);
-// 基本練習（2026-10-05）：先練讀（念讀字詞）→ 再練短語（照樣造短語）。
-// 不收合、排在核心之後；照樣造短語還沒有教師確認的課，學生畫面不顯示這張卡（預覽模式才看得到）。
-const BASIC_MODULES = ['word_reading', 'phrase_builder'];
+// 核心學習＝建議順序（CF 2026-10-06：念讀字詞、照樣造短語併入核心，共六項；不再另設基本練習區）。
+// 順序由字 → 詞 → 念 → 短語 → 句 → 課文，由小到大。
+const CORE_ORDER = ['characters', 'vocabulary', 'word_reading', 'phrase_builder', 'sentence_practice', 'reading'];
+const CORE_MODULES = new Set(CORE_ORDER);
+const coreRank = (key) => CORE_ORDER.indexOf(key);
+
 
 export function LessonDashboard(lesson) {
   // 先在背景載入這冊的字形／部件資料：字感訓練、形似字、生字部首、筆順都會用到，
@@ -108,12 +110,11 @@ export function LessonDashboard(lesson) {
   // 「下一步」：核心大項裡第一個還沒完成的（參考站的做法）。
   // 對執行功能弱的學生，「接下來做哪一個」本身就是一個要決定的負擔；
   // 直接標出來，他不必自己看完全部卡片再判斷。
-  const nextKey = MODULE_REGISTRY.find((entry) => CORE_MODULES.has(entry.key)
+  const nextKey = [...MODULE_REGISTRY].sort((a, b) => coreRank(a.key) - coreRank(b.key)).find((entry) => CORE_MODULES.has(entry.key)
     && getModuleStatus(lesson, entry).code === 'available')?.key || null;
 
   const coreGrid = h('div', { class: 'module-grid' });
   const challengeGrid = h('div', { class: 'module-grid' });
-  const basicGrid = h('div', { class: 'module-grid' });
   let reviewCard = null;   // 「舊字新詞」卡片，錯題複習要插在它前面
   for (const entry of MODULE_REGISTRY) {
     const status = getModuleStatus(lesson, entry);
@@ -179,9 +180,9 @@ export function LessonDashboard(lesson) {
       card.appendChild(h('button', { class: 'btn module-card__cta', type: 'button', disabled: 'disabled' }, status.text));
     }
     card.setAttribute('data-module-key', entry.key);
-    if (BASIC_MODULES.includes(entry.key)) {
-      if (playable || isPreview()) basicGrid.appendChild(card);
-    } else (CORE_MODULES.has(entry.key) ? coreGrid : challengeGrid).appendChild(card);
+    // 照樣造短語還沒有這課的資料時不顯示（不佔核心一格）
+    if (entry.key === 'phrase_builder' && !playable && !isPreview()) continue;
+    (CORE_MODULES.has(entry.key) ? coreGrid : challengeGrid).appendChild(card);
     if (entry.key === 'review') reviewCard = card;
   }
   // 課文點讀放在所有大項之前：對閱讀困難的學生，先把課文聽過一遍再做練習
@@ -195,24 +196,15 @@ export function LessonDashboard(lesson) {
   const quiz = quizEntry(lesson);
   if (quiz) quizSlot.appendChild(quiz);
 
+  // 核心卡片照建議順序排
+  [...coreGrid.children].sort((x, y) => coreRank(x.getAttribute?.('data-module-key')) - coreRank(y.getAttribute?.('data-module-key')))
+    .forEach((el) => coreGrid.appendChild(el));
   if (coreGrid.childElementCount) {
     root.appendChild(h('section', { class: 'lesson-module-section', 'aria-labelledby': 'core-modules-heading' }, [
       // 「本課先完成」對學生是非必要資訊（CF 決定移除，減少視覺干擾）。標題保留給
       // 螢幕閱讀器使用（section 仍以 aria-labelledby 指向它），只是視覺上隱藏。
       h('h2', { id: 'core-modules-heading', class: 'lesson-module-section__title visually-hidden' }, '本課先完成'),
       coreGrid,
-    ]));
-  }
-  if (basicGrid.childElementCount) {
-    // 照 BASIC_MODULES 的順序排（念讀在前）
-    const order = (el) => BASIC_MODULES.indexOf(el.getAttribute?.('data-module-key'));
-    [...basicGrid.children].sort((a, b) => order(a) - order(b)).forEach((el) => basicGrid.appendChild(el));
-    root.appendChild(h('section', { class: 'lesson-module-section lesson-basic', 'aria-labelledby': 'basic-modules-heading' }, [
-      h('div', { class: 'quiz-option-row' }, [
-        h('h2', { id: 'basic-modules-heading', class: 'lesson-basic__title' }, '基本練習：先練讀，再練短語'),
-        SpeakButton({ text: '基本練習：先練讀，再練短語', label: '聽', variant: 'speak-button--option' }),
-      ]),
-      basicGrid,
     ]));
   }
   // 錯題複習放在「加練挑戰」裡、舊字新詞之前（CF 2026-10-01 指定）：
@@ -358,7 +350,7 @@ function ringSvg(pct) {
  * 只是建議，不鎖：下面的卡片照樣可以任選、跳過。
  */
 function learningPath(lesson, coreKeys) {
-  const entries = MODULE_REGISTRY.filter((e) => coreKeys.includes(e.key));
+  const entries = MODULE_REGISTRY.filter((e) => coreKeys.includes(e.key)).sort((a, b) => coreRank(a.key) - coreRank(b.key));
   if (entries.length < 2) return null;
   const done = entries.map((e) => getModuleStatus(lesson, e).code === 'done');
   const nextIndex = done.indexOf(false);
