@@ -201,8 +201,9 @@ export const MODULE_REGISTRY = [
     description: '看圖，照課本的例子組短語',
     implemented: true,
     // 這一課還沒建立任何短語資料：顯示「本課尚未建立」，不算進進度
+    // 草稿只在預覽模式算有：學生端看到的是「還沒有」，不是「審核中」
     missing(lesson) {
-      return !(lesson.phrase_builders || []).length;
+      return !canStartPhraseBuilder(lesson);
     },
     ready(lesson) {
       return canStartPhraseBuilder(lesson);

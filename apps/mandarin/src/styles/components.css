@@ -3780,3 +3780,16 @@ html.present-mode .image-frame img { max-height: 42vh; }
 .phrase-feedback--try p { color: var(--text-primary); }
 .phrase-feedback--try { background: var(--color-highlight-surface); border-radius: var(--radius-md); padding: var(--space-2) var(--space-3); }
 .phrase-chunk--fixed, .phrase-slot--fixed { border: 2px dashed var(--color-border); background: var(--color-surface); color: var(--text-primary); cursor: default; min-width: 2.5em; }
+/* 照樣造短語：三步驟列、放聲思考、引導問題（2026-10-05 參考站分析後） */
+.phrase-stages { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-1); padding: 0; margin: 0 0 var(--space-3); }
+.phrase-stages__item { padding: 6px var(--space-3); border-radius: 999px; border: 2px solid var(--color-border); font-size: var(--font-size-meta); color: var(--text-secondary); background: var(--color-surface); }
+.phrase-stages__item--now { border-color: var(--color-primary); color: var(--text-primary); font-weight: 700; }
+.phrase-stages__item--done { color: var(--color-success, #1b7f3b); }
+.phrase-think { background: var(--color-surface-muted); border-radius: var(--radius-md); padding: var(--space-2) var(--space-3); margin-bottom: var(--space-2); }
+.phrase-think__row p, .phrase-scene p { margin: 0; font-size: var(--font-size-body); }
+.phrase-start { margin-top: var(--space-4); }
+.phrase-asks { margin: 0 0 var(--space-2); padding-inline-start: 1.6em; display: grid; gap: var(--space-1); }
+.phrase-asks__item { font-size: var(--font-size-body); color: var(--text-secondary); }
+.phrase-asks__item > * { vertical-align: middle; }
+.phrase-asks__item--now { color: var(--text-primary); font-weight: 700; }
+.phrase-slot--now { box-shadow: 0 0 0 4px var(--color-highlight-surface), 0 0 0 6px var(--color-highlight-line); }
