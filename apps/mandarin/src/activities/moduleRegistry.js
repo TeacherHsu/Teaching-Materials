@@ -184,10 +184,10 @@ export const MODULE_REGISTRY = [
   },
   {
     key: 'word_reading',
-    label: '念讀字詞',
+    label: '念讀語詞',
     icon: 'word_reading',
     color: 'rose',
-    description: '把本課生字、語詞念出來',
+    description: '把本課的語詞念出來',
     implemented: true,
     ready(lesson) {
       return canStartWordReading(lesson);

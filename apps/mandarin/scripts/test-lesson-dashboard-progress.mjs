@@ -1,6 +1,6 @@
 // 驗證規格 2026-09-25-mandarin-dabutie-importer.md §1／§4：
 // 1. 課次首頁 hero 進度分母只算「可開始的大項」（code==='available'|'done'；鎖住的
-//    舊字新詞與待重新編題的聽聽看都不計入），第 1 課應為 13（含抓重點、注音高手、字感訓練、念讀字詞）。
+//    舊字新詞與待重新編題的聽聽看都不計入），第 1 課應為 13（含抓重點、注音高手、字感訓練、念讀語詞）。
 // 4. 活動頁／課次首頁麵包屑補上課本層（翰林三上），且與 LessonDashboard 共用同一份 volumeLabel。
 // 用法：node scripts/test-lesson-dashboard-progress.mjs
 import assert from 'node:assert/strict';
@@ -32,7 +32,7 @@ assert.ok(progressLabel, '應該要有 lesson-hero__progress-label');
 assert.match(
   progressLabel.textContent,
   /核心學習 0 ／ 6 項/,
-  `hero 進度只算核心 6 項（2026-10-06 含念讀字詞、照樣造短語；加練另列），實際：「${progressLabel.textContent}」`,
+  `hero 進度只算核心 6 項（2026-10-06 含念讀語詞、照樣造短語；加練另列），實際：「${progressLabel.textContent}」`,
 );
 const extraLabel = dashboard.find((n) => n.hasClass('lesson-hero__extra-label'));
 assert.ok(extraLabel && /加練挑戰（選做）0 ／ 8 項/.test(extraLabel.textContent), `加練另列，分母排除鎖住與待審（14－6＝8），實際：「${extraLabel?.textContent}」`);

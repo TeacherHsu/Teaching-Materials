@@ -1,4 +1,4 @@
-// 念讀字詞：出題（生字＋語詞、注音對得上才出）、判讀（不比聲調、任一候選念對就算）
+// 念讀語詞：出題（生字＋語詞、注音對得上才出）、判讀（不比聲調、任一候選念對就算）
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { installFakeDom } from './fake-dom.mjs';
@@ -19,7 +19,7 @@ assert.equal(W.judge(tang, ['糖']), true, '不比聲調：念成同音不同調
 assert.equal(W.judge(tang, ['好', '湯']), true, '任一辨識候選念對就算對');
 assert.equal(W.judge(tang, ['手']), false);
 assert.equal(W.judge([{ char: '招', zhuyin: 'ㄓㄠ' }, { char: '手', zhuyin: 'ㄕㄡˇ' }], ['招']), false, '語詞漏念一個字不算對');
-console.log('✅ 念讀字詞：出題與判讀規則');
+console.log('✅ 念讀語詞：出題與判讀規則');
 
 // 答錯後的修正流程（第二版審查 A6）：自己改一次 → 聽示範跟讀 → 自己再念；結果分開記
 {
@@ -38,7 +38,7 @@ console.log('✅ 念讀字詞：出題與判讀規則');
   assert.ok(act.textContent.includes('念對了') || act.textContent.includes('做到了') || act.textContent.includes('有進步'), '跟讀後自己念對要有稱讚');
   assert.ok(buttons().some((b) => b.textContent.trim() === '下一個'));
 }
-console.log('✅ 念讀字詞：答錯後的示範、跟讀、自己再念');
+console.log('✅ 念讀語詞：答錯後的示範、跟讀、自己再念');
 
 // 收音：多段結果組合成整句候選（第一個是各段最佳，之後一次只換一段）
 {

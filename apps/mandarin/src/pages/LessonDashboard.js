@@ -29,7 +29,7 @@ const STATUS_BUTTON_LABEL = {
   done: '再玩一次',
   available: '開始',
 };
-// 核心學習＝建議順序（CF 2026-10-06：念讀字詞、照樣造短語併入核心，共六項；不再另設基本練習區）。
+// 核心學習＝建議順序（CF 2026-10-06：念讀語詞、照樣造短語併入核心，共六項；不再另設基本練習區）。
 // 順序由字 → 詞 → 念 → 短語 → 句 → 課文，由小到大。
 const CORE_ORDER = ['characters', 'vocabulary', 'word_reading', 'phrase_builder', 'sentence_practice', 'reading'];
 const CORE_MODULES = new Set(CORE_ORDER);
@@ -238,7 +238,7 @@ export function LessonDashboard(lesson) {
   // 不放首頁，免得不同年級的錯題混在一起。
   const mistakes = mistakeEntry(
     lesson.lesson_id,
-    dueCount(lesson.volume.code) + redoSentences(lesson.volume.code).length,
+    dueCount(lesson.lesson_id) + redoSentences(lesson.lesson_id).length,
   );
   // 加練挑戰的順序（CF 2026-10-02 指定）：
   //   字感訓練 → 其餘大項 → 錯題複習 → 朗讀挑戰

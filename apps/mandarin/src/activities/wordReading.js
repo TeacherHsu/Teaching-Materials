@@ -1,4 +1,4 @@
-// 念讀字詞測驗（CF 2026-10-04）：本課生字、語詞一個一個念出來。
+// 念讀語詞測驗（CF 2026-10-04）：本課生字、語詞一個一個念出來。
 //
 // 評分沿用朗讀挑戰的 readingScore：**不比聲調、同音字算對**（構音、聲調不穩在這群學生
 // 很常見，重點是念得出這個字）。每個字詞最多念兩次：
@@ -74,7 +74,7 @@ export function buildWordReadingActivity(lesson, onBack) {
   function renderStep() {
     clear(container);
     jump?.update(stepIndex);
-    if (!steps.length) { container.appendChild(missingContentNotice('念讀字詞：這一課還沒有可以念的字詞')); return; }
+    if (!steps.length) { container.appendChild(missingContentNotice('念讀語詞：這一課還沒有可以念的語詞')); return; }
     const step = steps[stepIndex];
     const rounds = chunkRounds(pools[step]);
     const round = rounds[roundIndex] || [];

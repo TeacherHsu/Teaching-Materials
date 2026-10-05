@@ -111,7 +111,7 @@ export function uiIconMarkup(key) {
 const ILLUSTRATED = new Set([
   'characters', 'vocabulary', 'idiom_builder', 'sentence_practice', 'reading',
   'visual_search', 'lookalikes', 'polysemy', 'polyphones', 'listening',
-  'rhetoric', 'zhuyin_typing', 'main_idea', 'review', 'word_reading',
+  'rhetoric', 'zhuyin_typing', 'main_idea', 'review', 'word_reading', 'phrase_builder',
 ]);
 
 /** 插圖的網址；沒有這個大項的插圖時回 null。 */

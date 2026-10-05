@@ -422,7 +422,7 @@ function asrLogSection(root) {
   const log = readAsrLog();
   const box = h('section', { class: 'card teacher-asr' }, [h('h3', {}, `語音辨識紀錄（${log.length} 筆，只存文字）`)]);
   if (!log.length) {
-    box.appendChild(h('p', { class: 'meta' }, '還沒有紀錄。學生用念讀字詞、朗讀挑戰的麥克風後，這裡會記下「要念的／電腦聽到的」。'));
+    box.appendChild(h('p', { class: 'meta' }, '還沒有紀錄。學生用念讀語詞、朗讀挑戰的麥克風後，這裡會記下「要念的／電腦聽到的」。'));
     return box;
   }
   const misses = log.filter((e) => !e.ok).length;

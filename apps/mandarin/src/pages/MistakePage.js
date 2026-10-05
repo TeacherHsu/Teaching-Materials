@@ -29,9 +29,8 @@ import {
  * @returns {HTMLElement}
  */
 export function MistakePage(lesson) {
-  // 從課次進來時，範圍是「這一冊」而不是只有這一課：
-  // 學生在第 5 課也能複習第 3 課的錯題，但不會看到別的年級的。
-  const lessonId = lesson ? lesson.volume.code : null;
+  // 錯題範圍＝這一課（CF 2026-10-06；原本是整冊）
+  const lessonId = lesson ? lesson.lesson_id : null;
   const root = h('div', { class: 'container' });
 
   const crumbs = [h('a', { href: '#/' }, '首頁')];
@@ -211,7 +210,7 @@ export function mistakeEntry(lessonId, count) {
     h('span', { class: 'entry-card__icon', 'aria-hidden': 'true', html: uiIconMarkup('redo') }),
     h('span', { class: 'entry-card__body' }, [
       h('span', { class: 'entry-card__title' }, '錯題複習'),
-      h('span', { class: 'entry-card__desc' }, '把這一冊答錯的題目再做一次。'),
+      h('span', { class: 'entry-card__desc' }, '把這一課答錯的題目再做一次。'),
     ]),
     h('span', { class: 'entry-card__badge', 'aria-label': `${count} 題待複習` }, String(count)),
   ]));
