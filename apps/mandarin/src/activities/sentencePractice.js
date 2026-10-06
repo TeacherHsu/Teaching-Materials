@@ -21,6 +21,7 @@ import { missingContentNotice } from './engine.js';
 import { chunkRounds } from '../utils/chunk.js';
 import { filterByStatus, isPreview } from '../utils/preview.js';
 import { ChoiceQuiz } from '../components/ChoiceQuiz.js';
+import { ImageFrame } from '../components/ImageFrame.js';
 import { shuffle } from '../utils/shuffle.js';
 import { getScaffoldLevel } from '../utils/deviceSettings.js';
 import {
@@ -428,6 +429,7 @@ const NEXT_STEP_LABEL = {
   ordering: '繼續：句子重組',
   connectives: '繼續：句子合併',
   builder: '繼續：仿寫選填',
+  picture: '繼續：看圖造句',
   write: '繼續：自己寫一句',
 };
 
@@ -568,6 +570,9 @@ export function buildSentencePracticeActivity(lesson, onBack) {
   const connectiveItems = buildConnectiveItems(lesson, Math.max(2, getScaffoldLevel().optionCount), shuffle, { withRelation: true });
   if (connectiveItems.length > 0) steps.push('connectives');
   if (builderRounds.length > 0) steps.push('builder');
+  // 看圖造句（參考站 2026-10 句型更新）：情境圖＋提示詞，照句型把圖裡的事說出來
+  const pictureItems = filterByStatus(lesson.picture_sentences || []).filter((p) => p.words?.length >= 1 && p.image?.src);
+  if (pictureItems.length > 0) steps.push('picture');
   // 最後一步：用句型自己寫一句話，交給老師看。
   // 排在組句之後——先看過句型怎麼用、組過幾句，才有東西可以仿。
   const writablePatterns = filterByStatus(lesson.sentence_patterns || [])
@@ -734,6 +739,50 @@ export function buildSentencePracticeActivity(lesson, onBack) {
         } : null,
         continueLabel: hasNextItem ? '下一題' : '加練下一組',
       }));
+    } else if (step === 'picture') {
+      const item = pictureItems[itemIndex] || pictureItems[0];
+      const frame = item.words.join('……');
+      const isLastItem = itemIndex >= pictureItems.length - 1;
+      container.appendChild(TaskBanner({ label: `看圖造句：看圖和提示，用「${frame}」說出圖裡的事`, step: pictureItems.length > 1 ? `第 ${itemIndex + 1}／${pictureItems.length} 題` : '' }));
+      container.appendChild(h('div', { class: 'phrase-image' }, [ImageFrame({ src: item.image.src, alt: item.image.alt })]));
+      container.appendChild(h('div', { class: 'quiz-option-row' }, [
+        h('p', { class: 'phrase-caption' }, item.image.alt),
+        SpeakButton({ text: item.image.alt, label: '聽', variant: 'speak-button--option' }),
+      ]));
+      container.appendChild(h('ul', { class: 'write-prompt__topics', 'aria-label': '提示' }, item.keywords.map((k) => h('li', {}, `提示：${k}`))));
+      // 句型框：關聯詞固定，學生在空格寫（可打字，也可用 iPad 鍵盤上的麥克風說）
+      const inputs = item.words.map(() => h('input', { class: 'picture-sentence__input', type: 'text', lang: 'zh-TW', 'aria-label': '在這裡寫' }));
+      const line = h('p', { class: 'picture-sentence__frame' }, item.words.flatMap((w, i) => [
+        h('span', { class: 'picture-sentence__word' }, w), inputs[i], i < item.words.length - 1 ? '，' : '。',
+      ]));
+      container.appendChild(line);
+      container.appendChild(h('p', { class: 'meta' }, '在空格裡寫上你的想法。可以打字，也可以按鍵盤上的麥克風用說的。'));
+      const fb = h('div', { class: 'phrase-feedback', role: 'status', 'aria-live': 'polite' });
+      const full = () => item.words.map((w, i) => `${w}${inputs[i].value.trim()}`).join('，') + '。';
+      const pair = matchPair(item.words);
+      const sayRow = (text, cls) => h('div', { class: `quiz-option-row phrase-feedback__row ${cls || ''}` }, [h('p', {}, text), SpeakButton({ text, label: '聽', variant: 'speak-button--option' })]);
+      const readBtn = h('button', { class: 'btn btn--secondary', type: 'button' }, '念念看');
+      readBtn.addEventListener('click', () => speak(full()));
+      const checkBtn = h('button', { class: 'btn btn--primary', type: 'button' }, '檢查我的句子');
+      const exampleBtn = h('button', { class: 'btn btn--ghost', type: 'button' }, '看例句');
+      const next = h('button', { class: 'btn btn--primary', type: 'button', hidden: true }, isLastItem ? (isLastStep ? '回課程首頁' : NEXT_STEP_LABEL[steps[stepIndex + 1]] || '繼續') : '下一題');
+      next.addEventListener('click', () => {
+        if (!isLastItem) { itemIndex += 1; renderStep(); return; }
+        if (isLastStep) { onBack(); return; }
+        stepIndex += 1; roundIndex = 0; itemIndex = 0; renderStep();
+      });
+      checkBtn.addEventListener('click', () => {
+        clear(fb);
+        const han = (t) => (t.match(/[\u3400-\u9fff]/gu) || []).length;
+        if (inputs.some((x) => han(x.value) < 2)) { fb.appendChild(sayRow('每個空格都寫上兩個字以上，句子才完整。', 'phrase-feedback--info')); return; }
+        fb.appendChild(sayRow(`✓ 句子完成了：「${full()}」`, 'phrase-feedback--right'));
+        speak(full());
+        fb.appendChild(sayRow(`問自己：${(pair && TYPE_HINTS[pair.type]) || '念起來通順嗎？'}`, 'phrase-feedback--info'));
+        next.hidden = false;
+      });
+      exampleBtn.addEventListener('click', () => { clear(fb); fb.appendChild(sayRow(`例句：${item.example}`, 'phrase-feedback--info')); next.hidden = false; });
+      container.appendChild(h('div', { class: 'quiz-option-row phrase-actions' }, [readBtn, checkBtn, exampleBtn, next]));
+      container.appendChild(fb);
     } else if (step === 'write') {
       // 一課只寫一句：對特教學生，寫一句好的比趕三句有用。挑第一個句型。
       const pattern = writablePatterns[0];

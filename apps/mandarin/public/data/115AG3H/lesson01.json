@@ -3009,5 +3009,30 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
+  ],
+  "picture_sentences": [
+    {
+      "id": "picture-sentence:115AG3H01:weather",
+      "pattern_ref": "sentence_pattern:115AG3H01:d20d521b",
+      "words": [
+        "一會兒",
+        "一會兒"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG3H01-weather.webp",
+        "alt": "天空一會兒出太陽，一會兒下起雨。",
+        "prompt": "a sky split in two halves, one side sunny with the sun, the other side with a rain cloud and rain, a child with an umbrella below",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "出太陽",
+        "下雨"
+      ],
+      "example": "天空一會兒出太陽，一會兒下起雨來。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    }
   ]
 }

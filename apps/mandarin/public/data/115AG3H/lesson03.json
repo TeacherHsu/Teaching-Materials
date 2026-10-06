@@ -1818,5 +1818,30 @@
       "activity": "review"
     }
   },
-  "genre": "narrative"
+  "genre": "narrative",
+  "picture_sentences": [
+    {
+      "id": "picture-sentence:115AG3H03:umbrella",
+      "pattern_ref": "sentence_pattern:115AG3H03:05",
+      "words": [
+        "因為",
+        "所以"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG3H03-umbrella.webp",
+        "alt": "下大雨了，哥哥沒帶傘，全身都淋濕了。",
+        "prompt": "a boy standing in heavy rain without an umbrella, clothes soaking wet",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "下大雨",
+        "淋濕"
+      ],
+      "example": "因為下大雨，所以哥哥全身都淋濕了。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    }
+  ]
 }

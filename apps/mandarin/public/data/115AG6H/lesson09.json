@@ -3352,5 +3352,30 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
+  ],
+  "picture_sentences": [
+    {
+      "id": "picture-sentence:115AG6H09:read-notes",
+      "pattern_ref": "sentence_pattern:115AG6H09:pasted:04",
+      "words": [
+        "一邊",
+        "一邊"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG6H09-read-notes.webp",
+        "alt": "學生一邊看書，一邊做筆記。",
+        "prompt": "a student reading a book and taking notes in a notebook at a desk",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "看書",
+        "做筆記"
+      ],
+      "example": "他一邊看書，一邊做筆記。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    }
   ]
 }

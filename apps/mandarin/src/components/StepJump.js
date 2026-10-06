@@ -7,7 +7,7 @@ import { getShowStepJump } from '../utils/deviceSettings.js';
 export const STEP_LABELS = {
   cards: '生字卡', choice: '選一選', 'learn-radical': '學找部首', radical: '找部首',
   recognition: '看圖認識', matching: '配對',
-  patterns: '認識句型', ordering: '排句子', connectives: '句子合併', builder: '仿寫', write: '自己寫',
+  patterns: '認識句型', ordering: '排句子', connectives: '句子合併', builder: '仿寫', picture: '看圖造句', write: '自己寫',
   map: '課文地圖', paragraphs: '一段一段讀', classify: '分類', decode: '詩句解碼', order: '排順序',
   'learn-clue': '學找線索', questions: '讀題找線索',
   search: '找字', mask: '遮蔽字', flash: '閃現',

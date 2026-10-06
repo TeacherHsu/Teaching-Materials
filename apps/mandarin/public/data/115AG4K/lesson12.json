@@ -3451,5 +3451,30 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
+  ],
+  "picture_sentences": [
+    {
+      "id": "picture-sentence:115AG4K12:fever",
+      "pattern_ref": "sentence:12:04",
+      "words": [
+        "由於",
+        "因此"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG4K12-fever.webp",
+        "alt": "弟弟發燒躺在床上，額頭貼著退熱貼，沒去上學。",
+        "prompt": "a boy lying in bed with a fever, a cooling patch on forehead, a school bag left by the bed",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "發燒",
+        "請假"
+      ],
+      "example": "由於弟弟發燒，因此今天請假沒去上學。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    }
   ]
 }

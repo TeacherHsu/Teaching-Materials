@@ -1968,5 +1968,53 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
+  ],
+  "picture_sentences": [
+    {
+      "id": "picture-sentence:115AG3H06:singdance",
+      "pattern_ref": "sentence_pattern:115AG3H06:04",
+      "words": [
+        "不但",
+        "還"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG3H06-singdance.webp",
+        "alt": "姐姐在舞台上一邊唱歌一邊跳舞。",
+        "prompt": "a girl on a small school stage singing into a microphone while dancing",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "會唱歌",
+        "會跳舞"
+      ],
+      "example": "姐姐不但會唱歌，還會跳舞。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    },
+    {
+      "id": "picture-sentence:115AG3H06:water-plant",
+      "pattern_ref": "sentence_pattern:115AG3H06:05",
+      "words": [
+        "只要",
+        "就"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG3H06-water-plant.webp",
+        "alt": "小朋友每天幫小花澆水，小花開得很漂亮。",
+        "prompt": "a child watering a flower pot with a small watering can, the flower blooming",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "每天澆水",
+        "花開得漂亮"
+      ],
+      "example": "只要每天澆水，小花就會開得很漂亮。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    }
   ]
 }

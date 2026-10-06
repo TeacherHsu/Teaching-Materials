@@ -2728,5 +2728,30 @@
       "activity": "review"
     }
   },
-  "genre": "essay"
+  "genre": "essay",
+  "picture_sentences": [
+    {
+      "id": "picture-sentence:115AG6H05:scared-shot",
+      "pattern_ref": "sentence_pattern:115AG6H05:pattern:1",
+      "words": [
+        "雖然",
+        "可是"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG6H05-scared-shot.webp",
+        "alt": "妹妹很怕打針，還是勇敢的打完預防針。",
+        "prompt": "a little girl at a clinic looking nervous but brave while a nurse gives a vaccination",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "很怕打針",
+        "勇敢打完"
+      ],
+      "example": "雖然妹妹很怕打針，可是她還是勇敢的打完了。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    }
+  ]
 }

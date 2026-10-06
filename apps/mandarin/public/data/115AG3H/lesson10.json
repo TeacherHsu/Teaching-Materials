@@ -2034,5 +2034,30 @@
       "activity": "review"
     }
   },
-  "genre": "narrative"
+  "genre": "narrative",
+  "picture_sentences": [
+    {
+      "id": "picture-sentence:115AG3H10:wash-hands",
+      "pattern_ref": "sentence_pattern:115AG3H10:bee231c6",
+      "words": [
+        "先",
+        "再"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG3H10-wash-hands.webp",
+        "alt": "小朋友在洗手台洗手，桌上放著午餐。",
+        "prompt": "a child washing hands at a sink, a lunch box waiting on a table nearby",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "洗手",
+        "吃飯"
+      ],
+      "example": "我們先洗手，再吃飯。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    }
+  ]
 }

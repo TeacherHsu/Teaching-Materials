@@ -3210,5 +3210,30 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
+  ],
+  "picture_sentences": [
+    {
+      "id": "picture-sentence:115AG4K03:practice-piano",
+      "pattern_ref": "sentence:03:04",
+      "words": [
+        "只要",
+        "就"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG4K03-practice-piano.webp",
+        "alt": "女孩每天練習彈鋼琴，越彈越好。",
+        "prompt": "a girl practicing piano happily with music sheets",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "每天練習",
+        "彈得更好"
+      ],
+      "example": "只要每天練習，就能彈得更好。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    }
   ]
 }

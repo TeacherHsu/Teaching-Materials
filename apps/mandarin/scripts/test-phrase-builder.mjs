@@ -67,8 +67,10 @@ if (process.env.SKIP_PHRASE_IMAGES !== '1') {
   for (const vol of fs.readdirSync(root).filter((d) => d.startsWith('115AG'))) {
     for (const f of fs.readdirSync(path.join(root, vol)).filter((x) => /^lesson\d+\.json$/.test(x))) {
       const lesson = JSON.parse(fs.readFileSync(path.join(root, vol, f), 'utf8'));
-      for (const spec of lesson.phrase_builders || []) {
-        for (const r of spec.rounds) {
+      const imgs = [...(lesson.phrase_builders || []).flatMap((spec) => spec.rounds.map((r) => ({ spec, r }))),
+        ...(lesson.picture_sentences || []).map((ps) => ({ spec: ps, r: ps }))];
+      for (const { spec, r } of imgs) {
+        {
           const file = new URL(`../public${r.image.src}`, import.meta.url).pathname;
           assert.ok(fs.existsSync(file), `${spec.id} 缺圖：${r.image.src}`);
           const buf = fs.readFileSync(file);
@@ -79,6 +81,6 @@ if (process.env.SKIP_PHRASE_IMAGES !== '1') {
       }
     }
   }
-  console.log('✅ 照樣造短語圖片：960×960、≤300 KiB');
+  console.log('✅ 照樣造短語／看圖造句圖片：960×960、≤300 KiB');
 }
 console.log(`✅ 照樣造短語：${n} 個句型，判定與官方來源檢查通過`);

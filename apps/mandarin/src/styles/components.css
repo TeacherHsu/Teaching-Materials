@@ -3822,3 +3822,8 @@ html.present-mode .image-frame img { max-height: 42vh; }
 .write-prompt__topics { display: flex; flex-wrap: wrap; gap: var(--space-1); list-style: none; padding: 0; margin: var(--space-2) 0; }
 .write-prompt__topics li { padding: 4px var(--space-2); border-radius: 999px; background: var(--color-surface); border: 1px solid var(--color-border); font-size: var(--font-size-meta); }
 .write-prompt__check { font-weight: 700; }
+/* 看圖造句：句型框（關聯詞固定，空格寫自己的話） */
+.picture-sentence__frame { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1); font-size: var(--font-size-body); margin: var(--space-2) 0; }
+.picture-sentence__word { font-weight: 700; color: var(--module-color-dark, var(--color-primary)); }
+.picture-sentence__input { min-height: var(--tap-target-min); min-width: 8em; flex: 1 1 8em; font: inherit; padding: 0 var(--space-2); border: 2px solid var(--color-border); border-radius: var(--radius-md); }
+.picture-sentence__input:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 1px; }

@@ -1616,5 +1616,30 @@
       "activity": "review"
     }
   },
-  "genre": "narrative"
+  "genre": "narrative",
+  "picture_sentences": [
+    {
+      "id": "picture-sentence:115AG3H05:chores",
+      "pattern_ref": "sentence_pattern:115AG3H05:01",
+      "words": [
+        "不只",
+        "還"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG3H05-chores.webp",
+        "alt": "弟弟在掃地，也在幫忙擦桌子。",
+        "prompt": "a boy sweeping the floor with a broom, a wet cloth and a clean table next to him",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "掃地",
+        "擦桌子"
+      ],
+      "example": "弟弟不只掃地，還幫忙擦桌子。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    }
+  ]
 }

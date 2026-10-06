@@ -2223,5 +2223,53 @@
       "activity": "review"
     }
   },
-  "genre": "narrative"
+  "genre": "narrative",
+  "picture_sentences": [
+    {
+      "id": "picture-sentence:115AG3H11:fruits",
+      "pattern_ref": "sentence_pattern:115AG3H11:c709cefa",
+      "words": [
+        "除了",
+        "還"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG3H11-fruits.webp",
+        "alt": "籃子裡有蘋果，也有香蕉和葡萄。",
+        "prompt": "a basket with apples, bananas and grapes",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "蘋果",
+        "香蕉"
+      ],
+      "example": "籃子裡除了蘋果，還有香蕉。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    },
+    {
+      "id": "picture-sentence:115AG3H11:playground",
+      "pattern_ref": "sentence_pattern:115AG3H11:c620e135",
+      "words": [
+        "有人",
+        "有人"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG3H11-playground.webp",
+        "alt": "操場上，有人在跑步，有人在打球。",
+        "prompt": "a school playground where some children are running and others are playing basketball",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "跑步",
+        "打球"
+      ],
+      "example": "操場上有人在跑步，有人在打球。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    }
+  ]
 }

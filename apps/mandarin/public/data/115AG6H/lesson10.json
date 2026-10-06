@@ -2446,5 +2446,53 @@
     ],
     "approved_by": "CF",
     "approved_on": "2026-10-03"
-  }
+  },
+  "picture_sentences": [
+    {
+      "id": "picture-sentence:115AG6H10:homework-play",
+      "pattern_ref": "sentence_pattern:115AG6H10:pattern:1",
+      "words": [
+        "先",
+        "再"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG6H10-homework-play.webp",
+        "alt": "男孩寫完功課，才拿起球出去玩。",
+        "prompt": "a boy finishing homework at a desk with a ball waiting by the door",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "寫功課",
+        "出去玩"
+      ],
+      "example": "我先寫完功課，再出去玩。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    },
+    {
+      "id": "picture-sentence:115AG6H10:pets",
+      "pattern_ref": "sentence_pattern:115AG6H10:pattern:2",
+      "words": [
+        "除了",
+        "也"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG6H10-pets.webp",
+        "alt": "家裡養了小狗，也養了小貓。",
+        "prompt": "a living room with a puppy and a kitten sitting together",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "小狗",
+        "小貓"
+      ],
+      "example": "我家除了養小狗，也養了小貓。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    }
+  ]
 }

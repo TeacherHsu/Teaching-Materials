@@ -2975,5 +2975,30 @@
       "activity": "review"
     }
   },
-  "genre": "script"
+  "genre": "script",
+  "picture_sentences": [
+    {
+      "id": "picture-sentence:115AG4K11:raincoat",
+      "pattern_ref": "sentence:11:04",
+      "words": [
+        "如果",
+        "就"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG4K11-raincoat.webp",
+        "alt": "窗外下著雨，媽媽拿雨衣給孩子穿。",
+        "prompt": "a mother handing a yellow raincoat to a child at the door, rain outside the window",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "下雨",
+        "穿雨衣"
+      ],
+      "example": "如果下雨，就要穿雨衣。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    }
+  ]
 }

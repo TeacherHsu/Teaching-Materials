@@ -20,13 +20,14 @@ def jobs(only):
         d = json.load(open(p))
         if only and not d['lesson_id'].startswith(only):
             continue
-        for pb in d.get('phrase_builders', []):
-            for r in pb.get('rounds', []):
-                img = r.get('image') or {}
-                if img.get('src') and img.get('prompt'):
-                    out = os.path.join(ROOT, 'public', img['src'].lstrip('/'))
-                    if not os.path.exists(out):
-                        yield out, img['prompt']
+        # 照樣造短語每一輪的圖＋句型「看圖造句」的情境圖（2026-10-06）
+        images = [r.get('image') or {} for pb in d.get('phrase_builders', []) for r in pb.get('rounds', [])]
+        images += [ps.get('image') or {} for ps in d.get('picture_sentences', [])]
+        for img in images:
+            if img.get('src') and img.get('prompt'):
+                out = os.path.join(ROOT, 'public', img['src'].lstrip('/'))
+                if not os.path.exists(out):
+                    yield out, img['prompt']
 
 def run(job):
     out, subject = job

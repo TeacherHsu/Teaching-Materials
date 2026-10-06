@@ -2106,5 +2106,30 @@
       "activity": "review"
     }
   },
-  "genre": "narrative"
+  "genre": "narrative",
+  "picture_sentences": [
+    {
+      "id": "picture-sentence:115AG3H09:walk-music",
+      "pattern_ref": "sentence_pattern:115AG3H09:041100a2",
+      "words": [
+        "一邊",
+        "一邊"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG3H09-walk-music.webp",
+        "alt": "哥哥一邊走路，一邊戴著耳機聽音樂。",
+        "prompt": "a boy walking on a sidewalk wearing headphones listening to music",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "走路",
+        "聽音樂"
+      ],
+      "example": "哥哥一邊走路，一邊聽音樂。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    }
+  ]
 }

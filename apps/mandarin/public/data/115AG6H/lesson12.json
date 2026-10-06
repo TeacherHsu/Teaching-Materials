@@ -3297,5 +3297,30 @@
       "activity": "review"
     }
   },
-  "genre": "narrative"
+  "genre": "narrative",
+  "picture_sentences": [
+    {
+      "id": "picture-sentence:115AG6H12:bell",
+      "pattern_ref": "sentence_pattern:115AG6H12:pattern:2",
+      "words": [
+        "一",
+        "就"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG6H12-bell.webp",
+        "alt": "下課鐘一響，同學們就跑到操場。",
+        "prompt": "a school bell ringing and children running out to the playground",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "鐘響",
+        "跑出去"
+      ],
+      "example": "下課鐘一響，同學們就跑到操場。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    }
+  ]
 }

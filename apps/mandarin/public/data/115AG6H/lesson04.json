@@ -2495,5 +2495,30 @@
     "hint": "想一想，這件事是在介紹哪一種生物的時候提到的？",
     "approved_by": "CF",
     "approved_on": "2026-10-03"
-  }
+  },
+  "picture_sentences": [
+    {
+      "id": "picture-sentence:115AG6H04:alarm",
+      "pattern_ref": "sentence_pattern:115AG6H04:pattern:1",
+      "words": [
+        "因為",
+        "所以"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG6H04-alarm.webp",
+        "alt": "鬧鐘沒響，女孩睡過頭，急著出門。",
+        "prompt": "a girl rushing out of bed, an alarm clock showing a late time",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "睡過頭",
+        "遲到"
+      ],
+      "example": "因為睡過頭，所以她上學遲到了。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    }
+  ]
 }

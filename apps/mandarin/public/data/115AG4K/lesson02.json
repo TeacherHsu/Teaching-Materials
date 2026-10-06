@@ -3104,5 +3104,30 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
+  ],
+  "picture_sentences": [
+    {
+      "id": "picture-sentence:115AG4K02:cat",
+      "pattern_ref": "sentence:02:04",
+      "words": [
+        "有時",
+        "有時"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG4K02-cat.webp",
+        "alt": "小貓有時在睡覺，有時在玩毛線球。",
+        "prompt": "a cat sleeping curled up on one side and the same cat playing with a ball of yarn on the other side",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "睡覺",
+        "玩毛線球"
+      ],
+      "example": "小貓有時在睡覺，有時在玩毛線球。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    }
   ]
 }

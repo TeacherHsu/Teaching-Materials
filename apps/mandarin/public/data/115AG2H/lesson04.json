@@ -2517,5 +2517,30 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
+  ],
+  "picture_sentences": [
+    {
+      "id": "picture-sentence:115AG2H04:icecream",
+      "pattern_ref": "sentence-pattern:115AG2H04:02",
+      "words": [
+        "不只",
+        "還"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG2H04-icecream.webp",
+        "alt": "妹妹拿著冰淇淋，還想要再拿一支棒棒糖。",
+        "prompt": "a little girl holding an ice cream cone and reaching for a lollipop on a shelf",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "吃冰淇淋",
+        "拿棒棒糖"
+      ],
+      "example": "妹妹不只想吃冰淇淋，還想要拿棒棒糖。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    }
   ]
 }

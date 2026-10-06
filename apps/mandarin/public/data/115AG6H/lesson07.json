@@ -2430,5 +2430,30 @@
     "hint": "想一想，課文是在介紹哪一件作品的時候提到這件事？",
     "approved_by": "CF",
     "approved_on": "2026-10-03"
-  }
+  },
+  "picture_sentences": [
+    {
+      "id": "picture-sentence:115AG6H07:cook-sing",
+      "pattern_ref": "sentence_pattern:115AG6H07:pattern:1",
+      "words": [
+        "一邊",
+        "一邊"
+      ],
+      "image": {
+        "src": "/assets/picture-sentences/115AG6H07-cook-sing.webp",
+        "alt": "媽媽一邊煮飯，一邊哼著歌。",
+        "prompt": "a mother cooking at the stove while humming a song, music notes floating",
+        "layout": "square-native"
+      },
+      "keywords": [
+        "煮飯",
+        "哼歌"
+      ],
+      "example": "媽媽一邊煮飯，一邊哼歌。",
+      "status": "approved",
+      "approved_by": "CF",
+      "approved_at": "2026-10-06",
+      "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
+    }
+  ]
 }
