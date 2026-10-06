@@ -3809,3 +3809,16 @@ html.present-mode .image-frame img { max-height: 42vh; }
 .phrase-ask-now { margin: 0; font-size: var(--font-size-body); font-weight: 700; }
 .phrase-ask-now__tag { display: inline-block; margin-inline-end: var(--space-1); padding: 0 var(--space-2); border-radius: 999px; background: var(--color-highlight-surface); font-size: var(--font-size-meta); }
 .phrase-tile--right { border-color: var(--color-success, #1b7f3b); background: var(--color-success-surface, #e7f5ec); }
+/* 句子合併：第一件事／第二件事卡片（參考站 2026-10 句型更新） */
+.event-cards { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); margin: 0 0 var(--space-2); }
+@media (max-width: 480px) { .event-cards { grid-template-columns: 1fr; } }
+.event-card { display: flex; flex-direction: column; gap: 4px; padding: var(--space-2) var(--space-3); border-radius: var(--radius-md); border: 2px solid var(--color-border); background: var(--color-surface); }
+.event-card:first-child { border-color: var(--module-blue); }
+.event-card:last-child { border-color: var(--module-teal); border-style: double; border-width: 4px; }
+.event-card__tag { font-size: var(--font-size-meta); color: var(--text-secondary); font-weight: 700; }
+.event-card__text { font-size: var(--font-size-body); }
+.write-prompt { background: var(--color-surface-muted); border-radius: var(--radius-md); padding: var(--space-2) var(--space-3); margin-bottom: var(--space-3); }
+.write-prompt p { margin: 0; font-size: var(--font-size-body); }
+.write-prompt__topics { display: flex; flex-wrap: wrap; gap: var(--space-1); list-style: none; padding: 0; margin: var(--space-2) 0; }
+.write-prompt__topics li { padding: 4px var(--space-2); border-radius: 999px; background: var(--color-surface); border: 1px solid var(--color-border); font-size: var(--font-size-meta); }
+.write-prompt__check { font-weight: 700; }

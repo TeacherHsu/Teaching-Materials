@@ -317,12 +317,42 @@ const TYPE_HINTS = {
   取捨: '是不是先說不是哪個，再說真正是哪個？',
 };
 
+// 句子合併的「問關係」（參考站 2026-10 更新：找兩件事 → 問關係 → 接起來）。
+// 每種關係一個是非題：對的說法／不對的說法。
+const RELATION_QUESTIONS = {
+  轉折: ['後面發生的事，和本來想的一樣嗎？', '不一樣，有轉彎', '一樣'],
+  因果: ['第一件事是不是第二件事的原因？', '是，前面是原因', '不是'],
+  遞進: ['第二件事是不是比第一件事更進一步、說得更多？', '是，更進一步', '不是，差不多'],
+  假設: ['第一件事是「如果發生了」，還是已經發生了？', '如果發生了', '已經發生了'],
+  條件: ['要先做到第一件事，才會有第二件事嗎？', '是，要先做到', '不用'],
+  承接: ['兩件事是一件接著一件發生嗎？', '是，有先後順序', '同時發生'],
+  並列: ['兩件事是同時、一樣重要嗎？', '是，兩件一起', '有先後順序'],
+  讓步: ['就算第一件事這樣，第二件事也不會改變嗎？', '是，不會改變', '會改變'],
+  取捨: ['是不是先說「不是哪個」，再說真正是哪個？', '是', '不是'],
+};
+const clean = (t) => String(t || '').replace(/^[，、。！？\s]+|[，、。！？\s]+$/gu, '');
+
+/** 把例句沿關聯詞切成「第一件事／第二件事」 */
+export function twoEvents(parts) {
+  if (!parts || parts.length < 3) return null;
+  const first = clean(parts.slice(0, -1).join(''));
+  const second = clean(parts[parts.length - 1]);
+  return first && second ? [first, second] : null;
+}
+
+function EventCards(events) {
+  return h('div', { class: 'event-cards' }, events.map((e, i) => h('div', { class: 'event-card' }, [
+    h('span', { class: 'event-card__tag' }, i === 0 ? '第一件事' : '第二件事'),
+    h('span', { class: 'event-card__text' }, e),
+  ])));
+}
+
 /** 同一個句型的另一句例句（關聯詞完整的），當選關聯詞第 3 層的示範。 */
 function modelSentence(pattern, current, pair) {
   return (pattern.examples || []).find((ex) => ex !== current && pair.words.every((w) => ex.includes(w))) || null;
 }
 
-export function buildConnectiveItems(lesson, optionCount = 3, shuffleImpl = shuffle) {
+export function buildConnectiveItems(lesson, optionCount = 3, shuffleImpl = shuffle, { withRelation = false } = {}) {
   const items = [];
   const patterns = filterByStatus(lesson.sentence_patterns || [], { statusKey: 'examples_status' })
     .filter((p) => p.structure && p.examples && p.examples.length);
@@ -341,6 +371,28 @@ export function buildConnectiveItems(lesson, optionCount = 3, shuffleImpl = shuf
     if (!sentence) continue;
     const parts = blankConnectives(sentence, pair.words);
     const answer = pairLabel(pair.words);
+    const events = twoEvents(parts);
+    const rq = RELATION_QUESTIONS[pair.type];
+    // 先問關係（是非題），再選關聯詞：學生不是背關聯詞，而是從兩件事的關係推出該用哪一組
+    if (withRelation && events && rq) {
+      items.push({
+        id: `relation:${lesson.lesson_id}:${pattern.id || pattern.head}`,
+        skill: 'sentence:relation',
+        stem: rq[0],
+        readAllStem: `第一件事：${events[0]}。第二件事：${events[1]}。${rq[0]}`,
+        stemContent: h('div', { class: 'connective-quiz' }, [EventCards(events), h('p', { class: 'quiz-stem' }, rq[0])]),
+        options: shuffleImpl([rq[1], rq[2]]),
+        fixedOptions: true,
+        answer: rq[1],
+        explanation: `這兩件事是「${pair.type}」：${PATTERN_MEANINGS[pair.type] || ''}`,
+        hints: [
+          { text: '把兩件事各念一遍，想想它們怎麼連在一起。' },
+          { text: TYPE_HINTS[pair.type] || '想一想前後兩句是什麼關係。' },
+          // 第 3 層不念出整句（會洩漏下一題的關聯詞），改用白話描述這種關係
+          { text: `這種句子：${PATTERN_MEANINGS[pair.type] || '想想兩件事怎麼連在一起。'}兩件事是這樣嗎？` },
+        ],
+      });
+    }
     const readable = parts.reduce((acc, part, i) => acc + part + (i < pair.words.length ? '（空格）' : ''), '');
     items.push({
       id: `connective:${lesson.lesson_id}:${pattern.id || pattern.head}`,
@@ -348,14 +400,15 @@ export function buildConnectiveItems(lesson, optionCount = 3, shuffleImpl = shuf
       stem: '空格要填哪一組關聯詞？',
       readAllStem: `${readable}${/[。！？]$/u.test(readable) ? '' : '。'}空格要填哪一組關聯詞？`,
       stemContent: h('div', { class: 'connective-quiz' }, [
+        events ? EventCards(events) : null,
         h('p', { class: 'connective-quiz__sentence' }, parts.flatMap((part, i) => (
           i < pair.words.length ? [part, h('span', { class: 'connective-quiz__blank', 'aria-label': '空格' }, '')] : [part]
         ))),
         h('p', { class: 'quiz-stem' }, '空格要填哪一組關聯詞？'),
-      ]),
+      ].filter(Boolean)),
       options: shuffleImpl([answer, ...distractors.map((d) => pairLabel(d.words))]),
       answer,
-      explanation: `答案是「${answer}」。`,
+      explanation: `答案是「${answer}」。接起來念一遍：${sentence}`,
       // 選關聯詞的三層：1 想關係 → 2 劃掉一個 → 3 看同一組關聯詞的另一個例句（示範）
       hints: [
         { text: TYPE_HINTS[pair.type] || '想一想前後兩句是什麼關係。' },
@@ -373,7 +426,7 @@ const NEXT_STEP_LABEL = {
   patterns: '繼續：認識句型',
   matching: '繼續：短語搭配',
   ordering: '繼續：句子重組',
-  connectives: '繼續：選關聯詞',
+  connectives: '繼續：句子合併',
   builder: '繼續：仿寫選填',
   write: '繼續：自己寫一句',
 };
@@ -512,7 +565,7 @@ export function buildSentencePracticeActivity(lesson, onBack) {
   if (patternCards.length > 0) steps.push('patterns');
   if (matchingRounds.length > 0) steps.push('matching');
   if (orderingRounds.length > 0) steps.push('ordering');
-  const connectiveItems = buildConnectiveItems(lesson, Math.max(2, getScaffoldLevel().optionCount));
+  const connectiveItems = buildConnectiveItems(lesson, Math.max(2, getScaffoldLevel().optionCount), shuffle, { withRelation: true });
   if (connectiveItems.length > 0) steps.push('connectives');
   if (builderRounds.length > 0) steps.push('builder');
   // 最後一步：用句型自己寫一句話，交給老師看。
@@ -640,7 +693,7 @@ export function buildSentencePracticeActivity(lesson, onBack) {
         }),
       );
     } else if (step === 'connectives') {
-      container.appendChild(TaskBanner({ label: '選關聯詞：空格要填哪一組？', step: taskLabel }));
+      container.appendChild(TaskBanner({ label: '句子合併：找兩件事 → 問關係 → 選關聯詞接起來', step: taskLabel }));
       container.appendChild(ChoiceQuiz({
         items: connectiveItems,
         backLabel: isLastStep ? '回課程首頁' : '本課先完成',
@@ -684,7 +737,17 @@ export function buildSentencePracticeActivity(lesson, onBack) {
     } else if (step === 'write') {
       // 一課只寫一句：對特教學生，寫一句好的比趕三句有用。挑第一個句型。
       const pattern = writablePatterns[0];
-      container.appendChild(TaskBanner({ label: '自己寫一句話', step: taskLabel }));
+      container.appendChild(TaskBanner({ label: '自己寫一句話：想一件自己的事，先說再寫', step: taskLabel }));
+      // 參考站「自己造句」：用生活主題起頭、寫完用關係問題自我檢核
+      const wpair = matchPair(connectivesInStructure(pattern.structure));
+      const topics = ['下雨的時候', '很累的時候', '寫功課', '吃東西', '和朋友玩', '上學的路上'];
+      const think = `想一想你自己：${topics.join('、')}……有沒有一件可以用「${pattern.head}」說的事？先說給自己聽，再寫下來。`;
+      const check = wpair && TYPE_HINTS[wpair.type] ? `寫完問自己：${TYPE_HINTS[wpair.type]}` : '寫完念一遍，問自己：念起來通順嗎？';
+      container.appendChild(h('div', { class: 'write-prompt' }, [
+        h('div', { class: 'quiz-option-row' }, [h('p', {}, think), SpeakButton({ text: think, label: '聽', variant: 'speak-button--option' })]),
+        h('ul', { class: 'write-prompt__topics' }, topics.map((t) => h('li', {}, t))),
+        h('div', { class: 'quiz-option-row' }, [h('p', { class: 'write-prompt__check' }, check), SpeakButton({ text: check, label: '聽', variant: 'speak-button--option' })]),
+      ]));
       container.appendChild(
         SentenceWriter({
           lessonId: lesson.lesson_id,

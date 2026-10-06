@@ -70,6 +70,23 @@ export const STRATEGY_LIBRARY = {
       done: '對！先放「姐姐」，再放「在餐桌旁吃早餐」。',
     },
   },
+  // 句型：參考站更新後的「找兩件事 → 問關係 → 接起來念一遍」（2026-10-06）
+  'sentence-relation': {
+    title: '學方法：找兩件事、問關係、接起來',
+    goal: '句型是把兩件事接起來。先找出兩件事，再問它們是什麼關係，最後選對的關聯詞接起來念一遍。',
+    frames: [
+      { lines: ['第一件事：天氣很冷。', '第二件事：弟弟還是穿短袖出門。'], say: '先找兩件事：天氣很冷；弟弟還是穿短袖出門。' },
+      { lines: ['天氣很冷 → 本來以為會穿外套', '弟弟卻穿短袖'], mark: '穿短袖', say: '再問關係：後面發生的事，和本來想的一樣嗎？天氣冷應該穿外套，弟弟卻穿短袖，不一樣，有轉彎。' },
+      { lines: ['雖然天氣很冷，可是弟弟還是穿短袖出門。'], mark: '雖然', say: '有轉彎，就用「雖然……可是……」接起來。最後念一遍，念起來很順，完成了！' },
+    ],
+    guided: {
+      ask: '第一件事「我很想睡覺」，第二件事「我還是把功課寫完」。後面發生的事，和本來想的一樣嗎？',
+      choices: ['不一樣，有轉彎', '一樣', '兩件事沒有關係'],
+      answer: 0,
+      why: ['', '想睡覺，本來會去睡，結果還是寫完功課——和想的不一樣喔。', '兩件事都在說今晚的我，有關係。'],
+      done: '對！所以用「雖然……可是……」：雖然我很想睡覺，可是我還是把功課寫完。',
+    },
+  },
   'main-idea': {
     title: '學方法：分清楚「一段」和「整課」',
     goal: '主旨要說到整課的事；只說到一段的，是段落大意。',
@@ -215,7 +232,7 @@ export const STRATEGY_LIBRARY = {
 export const MODULE_STRATEGY = {
   vocabulary: 'word-meaning',
   idiom_builder: 'idiom',
-  sentence_practice: 'sentence-order',
+  sentence_practice: 'sentence-relation',
   main_idea: 'main-idea',
   zhuyin_typing: 'zhuyin',
   polysemy: 'polysemy',
