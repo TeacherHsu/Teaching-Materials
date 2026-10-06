@@ -105,11 +105,45 @@ export function radicalHints(c, allCharacters, optionCount) {
   ];
 }
 
+// 變形部首 → 部首本字（選項顯示字裡看得到的樣子，答案仍是部首本字）
+const VARIANT_TO_RADICAL = {
+  氵: '水', 扌: '手', 忄: '心', 亻: '人', 犭: '犬', 衤: '衣', 刂: '刀', 灬: '火', 艹: '艸', 辶: '辵',
+  王: '玉', 釒: '金', 糹: '糸', 訁: '言', 飠: '食', 礻: '示', '⺮': '竹', 罒: '网', 耂: '老', '⻊': '足', 牜: '牛', 攵: '攴',
+};
+const IDS = /[\u2FF0-\u2FFB]/u;
+
+/**
+ * 部首題以「這個字自己的部件」當選項（CF 2026-10-06：避免學生不假思索從別的部首裡猜）。
+ * 例：初＝衤＋刀 → 選項「衤（衣）」「刀」，要判斷哪一個部件才是部首。
+ * 拆不出兩個以上部件、或部首不在部件裡（如「大」「也」）時，退回原本的跨字選項。
+ */
+export function componentRadicalOptions(c, parts) {
+  const d = parts?.chars?.[c.char]?.d;
+  if (!d) return null;
+  const leaves = [...new Set([...d].filter((x) => !IDS.test(x) && x !== '？'))];
+  if (leaves.length < 2) return null;
+  const radical = String(c.radical || '').normalize('NFKC');
+  const baseOf = (x) => VARIANT_TO_RADICAL[x] || x.normalize('NFKC');
+  // 「阝」左阜右邑、「月」可能是肉：只要部件的本字或字形等於部首就算
+  const isRadical = (x) => baseOf(x) === radical || x.normalize('NFKC') === radical
+    || (x === '阝' && (radical === '阜' || radical === '邑')) || (x === '月' && radical === '肉');
+  const answers = leaves.filter(isRadical);
+  if (answers.length !== 1) return null;
+  const label = (x) => (baseOf(x) !== x ? `${x}（${baseOf(x)}）` : x);
+  return {
+    options: shuffled(leaves.map((x) => ({ id: `part:${x}`, label: label(x) }))),
+    answerId: `part:${answers[0]}`,
+    shown: answers[0],
+  };
+}
+
 function buildRadicalDragItems(round, allCharacters, volume) {
   const roundRadicals = new Set(round.map((c) => c.radical));
+  const parts = hanziPartsIfReady(volume);
   return round.map((c) => {
-    const distractors = pickDistractorRadicals(allCharacters, roundRadicals, Math.max(1, getScaffoldLevel().optionCount - 1));
-    const options = shuffled([c.radical, ...distractors]).map((r) => ({ id: `radical:${r}`, label: r }));
+    const byParts = componentRadicalOptions(c, parts);
+    const distractors = byParts ? [] : pickDistractorRadicals(allCharacters, roundRadicals, Math.max(1, getScaffoldLevel().optionCount - 1));
+    const options = byParts ? byParts.options : shuffled([c.radical, ...distractors]).map((r) => ({ id: `radical:${r}`, label: r }));
     // 第 2 層提示：把字畫出來、部首那幾筆上色（資料載不到就只有文字提示）
     const glyphSlot = h('div', { class: 'hanzi-compare-slot' });
     glyphSlot.hidden = true;
@@ -128,16 +162,18 @@ function buildRadicalDragItems(round, allCharacters, volume) {
       id: `radical-item:${c.char}`,
       skill: 'char:radical',
       context: h('div', { class: 'idiom-builder__card' }, [
-        h('p', { class: 'quiz-stem' }, `「${c.char}」的部首是？`),
+        h('p', { class: 'quiz-stem' }, byParts ? `「${c.char}」可以拆成這幾個部件，哪一個是部首？` : `「${c.char}」的部首是？`),
         glyphSlot,
       ]),
-      speakText: `「${c.char}」的部首是？`,
+      speakText: byParts ? `${c.char}，可以拆成這幾個部件，哪一個是部首？` : `「${c.char}」的部首是？`,
       slotLabel: '？',
       options,
-      answerId: `radical:${c.radical}`,
+      answerId: byParts ? byParts.answerId : `radical:${c.radical}`,
       hint: '想一想這個字拆開來看，哪一部分是部首？',
       hints,
-      explanation: `「${c.char}」的部首是「${c.radical}」。`,
+      explanation: byParts && byParts.shown !== String(c.radical).normalize('NFKC')
+        ? `「${c.char}」的部首是「${String(c.radical).normalize('NFKC')}」，在字裡寫成「${byParts.shown}」。`
+        : `「${c.char}」的部首是「${String(c.radical).normalize('NFKC')}」。`,
     };
   });
 }

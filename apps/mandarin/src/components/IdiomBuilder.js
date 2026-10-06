@@ -38,24 +38,39 @@ function buildRound1(idioms, assetBase) {
   const items = shuffle(usable)
     .slice(0, ROUND_SIZE_MAX)
     .map((idm) => {
-      const [prefix, suffix] = idm.idiom.split(idm.related_char);
+      // 生字在成語裡出現幾次就留幾格（例：侃侃而談＝□□而談，CF 2026-10-06）。
+      // 第一格是可以放字的格子，其餘格子跟著顯示同一個字；其他字照原樣顯示。
+      const parts = idm.idiom.split(idm.related_char);
       const inlineSlot = h('button', {
         class: 'sentence-chip drag-to-slot__slot drag-to-slot__inline-slot',
         type: 'button',
         'aria-label': '成語中的答案空格，可將候選答案拖到這裡；點一下可以取消已放入的字',
       }, '＿');
       const inlineSlotWrap = h('span', { class: 'idiom-builder__inline-slot-wrap' }, [inlineSlot]);
+      const mirrors = [];
+      const lineChildren = [h('span', {}, `成語：${parts[0]}`)];
+      parts.slice(1).forEach((rest, i) => {
+        if (i === 0) lineChildren.push(inlineSlotWrap);
+        else {
+          const m = h('span', { class: 'sentence-chip drag-to-slot__inline-slot idiom-builder__mirror-slot', 'aria-hidden': 'true' }, '＿');
+          mirrors.push(m);
+          lineChildren.push(h('span', { class: 'idiom-builder__inline-slot-wrap' }, [m]));
+        }
+        if (rest) lineChildren.push(h('span', {}, rest));
+      });
+      // 放進第一格的字同步到其他格
+      if (mirrors.length && typeof MutationObserver !== 'undefined') {
+        new MutationObserver(() => { mirrors.forEach((m) => { m.textContent = inlineSlot.textContent; }); })
+          .observe(inlineSlot, { childList: true, characterData: true, subtree: true });
+      }
+      const spoken = idm.idiom.split(idm.related_char).join('什麼');
       const context = h('div', { class: 'idiom-builder__card' }, [
         ImageFrame({ src: idm.image ? `${assetBase}${idm.image}` : null, alt: `「${idm.idiom}」插圖` }),
-        h('p', { class: 'quiz-stem idiom-builder__idiom-line' }, [
-          h('span', {}, `成語：${prefix}`),
-          inlineSlotWrap,
-          h('span', {}, suffix),
-        ]),
+        h('p', { class: 'quiz-stem idiom-builder__idiom-line' }, lineChildren),
         // 空格念成「什麼」，不洩漏答案字
         h('div', { class: 'quiz-option-row' }, [
           h('p', { class: 'meta' }, idm.definition),
-          SpeakButton({ text: `成語：${prefix}什麼${suffix}。意思是：${idm.definition}`, label: '聽', variant: 'speak-button--option' }),
+          SpeakButton({ text: `成語：${spoken}。意思是：${idm.definition}`, label: '聽', variant: 'speak-button--option' }),
         ]),
       ]);
       const distractorChars = pickDistractors(
@@ -73,7 +88,7 @@ function buildRound1(idioms, assetBase) {
         context,
         inlineSlot,
         inlineSlotWrap,
-        speakText: `成語：${idm.idiom.replace(idm.related_char, '＿')}。${idm.definition}`,
+        speakText: `成語：${idm.idiom.split(idm.related_char).join('＿')}。${idm.definition}`,
         slotLabel: '？',
         options: [{ id: `char:${idm.related_char}`, label: idm.related_char }, ...distractorChars],
         answerId: `char:${idm.related_char}`,
