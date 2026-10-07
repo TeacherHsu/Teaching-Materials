@@ -126,7 +126,7 @@ export function CreditsPage() {
         ['特工365', 'https://www.facebook.com/share/1CFCnVnori/'],
         ['特教老師的好點子', 'https://www.facebook.com/share/1CSoxLQ7Yg/'],
         ['特殊教育多媒體教材交流社團', 'https://facebook.com/groups/1494494560599892/'],
-        ['國語五上學習樂園（本站介面與學習流程的主要參考）', 'https://sped-teacher.github.io/Teaching-Materials/mandarin/'],
+        ['國語五上學習樂園', 'https://sped-teacher.github.io/Teaching-Materials/mandarin/'],
       ].map(([name, url]) => h('li', {}, [
         h('a', { href: url, target: '_blank', rel: 'noopener noreferrer' }, name),
         h('span', { class: 'visually-hidden' }, '（另開新視窗）'),
