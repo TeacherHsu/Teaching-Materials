@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>語文蛇梯棋</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="common.css?v=3">
+  <link rel="stylesheet" href="common.css?v=4">
   <style>
     .play { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 16px; align-items: start; }
     @media (max-width: 860px) { .play { grid-template-columns: 1fr; } }
@@ -30,7 +30,7 @@
 <body>
   <main class="wrap" id="app"><p>載入中…</p></main>
   <script src="common.js?v=2"></script>
-  <script src="scene3d.js?v=3"></script>
+  <script src="scene3d.js?v=4"></script>
   <script>
     const { die3d, h, speak, sleep, loadBank, setupPanel, makeDeck, ask, header, token, statsLine, stats, TEAM_COLORS, TEAM_NAMES } = RG;
     const GOAL = 30;
@@ -101,7 +101,7 @@
         const side = h('div', { class: 'side' }, [teamBar, nowPos, die, actBtn, log, goalEl, h('div', { class: 'legend' }, '🪜 答對才能爬｜🐍 答對能躲開｜⭐ 答對多走 1 格')]);
         const boardHost = h('div', {}, h('div', { class: 'tilt' }, h('div', { class: 'sb tilted' }, [grid, svg])));
         app.replaceChildren(header(bank, '語文蛇梯棋'), h('div', { class: 'play' }, [boardHost, side]));
-        const view = window.RG3D?.mount({ kind: 'snakes', host: boardHost, ladders: LADDERS, snakes: visualSnakes,
+        const view = window.RG3D?.mount({ kind: 'snakes', host: boardHost, onMode: (active) => die.classList.toggle('rg3d-result', active), ladders: LADDERS, snakes: visualSnakes,
           cells: Array.from({ length: GOAL }, (_, i) => {
             const n = i + 1, [r, c] = cellRC(n);
             return { id: n, row: r - 1, col: c - 1, label: String(n), direction: n === GOAL ? '🏆' : n % 6 === 0 ? '↑' : Math.floor((n - 1) / 6) % 2 ? '←' : '→',

@@ -150,3 +150,61 @@ for (const fails of [false, true]) test(`泛光遮罩${fails ? '失敗' : '完�
   assert.equal(sprite.visible, true); assert.equal(hiddenSprite.visible, false); assert.equal(target, originalTarget);
   v.root = null; v.composer = null; v.baseTarget = null; v.maskMaterial = null; v.dispose();
 });
+
+test('固定骰序含連續同點數：每次仍完整旋轉，終態回指定面與原位', async () => {
+  const e = environment({ calm: true }), v = e.mount();
+  const rotation = { x: 0, y: 0, z: 0, set(x, y, z) { Object.assign(this, { x, y, z }); }, clone() { return { x: this.x, y: this.y, z: this.z }; } };
+  v.active = true; v.diceHome = { x: 0, y: 1, z: 2 };
+  v.dice = { rotation, position: { copy(p) { Object.assign(this, p); } } };
+  const expected = [[0, 0, 0], [0, 0, 0], [Math.PI, 0, 0], [Math.PI, 0, 0], [0, 0, Math.PI / 2], [-Math.PI / 2, 0, 0], [Math.PI / 2, 0, 0], [0, 0, -Math.PI / 2]];
+  let moving;
+  v.tween = async (_, duration, update) => { update(.5); moving = [rotation.x, rotation.y, rotation.z]; update(1); };
+  for (const [index, n] of [1, 1, 6, 6, 2, 3, 4, 5].entries()) {
+    await v.rollDice(n);
+    assert.deepEqual([rotation.x, rotation.y, rotation.z], expected[index]);
+    assert.ok(moving.some((value, axis) => Math.abs(value - expected[index][axis]) > 1));
+    assert.equal(v.dice.position.y, 1); assert.equal(v.dice.position.x, 0);
+  }
+  v.active = false; v.dispose();
+});
+
+test('2D 擲五點後同步 3D：指定面復原且不重擲', async () => {
+  const e = environment({ calm: true }), v = e.mount(); await v.rollDice(5);
+  let angles, copied;
+  v.renderer = {}; v.diceHome = { y: 1 }; v.dice = { rotation: { set(...a) { angles = a; } }, position: { copy(p) { copied = p; } } };
+  v.sync(); assert.deepEqual(angles, [0, 0, -Math.PI / 2]); assert.equal(copied, v.diceHome);
+  v.renderer = null; v.dispose();
+});
+
+test('陰影品質依連續活躍幀降級，閒置不列入慢幀，終態保留', async () => {
+  const e = environment({ calm: true }), v = e.mount();
+  v.renderer = { shadowMap: {}, setPixelRatio() {} }; v.resize = () => {}; v.draw = () => {};
+  v.active = true; v.warmFrames = 0; v.tokens.set(0, 13);
+  v.tweens.set('test', { update() {}, resolve() {} });
+  let now = 0;
+  for (let k = 0; k < 181; k++) v.sampleFrame(now += 25);
+  assert.equal(v.quality, 'light'); assert.equal(v.renderer.shadowMap.enabled, false);
+  v.tweens.clear(); v.sampleFrame(now += 100000); assert.equal(v.lastActiveFrame, null);
+  v.tweens.set('test', { update() {}, resolve() {} });
+  for (let k = 0; k < 181; k++) v.sampleFrame(now += 32);
+  assert.equal(v.active, false); assert.equal(v.quality, '2d'); assert.equal(v.tokens.get(0), 13);
+  v.renderer = null; v.dispose();
+});
+
+test('overlay 清理不釋放 View 共用紋理，獨有資源去重釋放', () => {
+  const e = environment({ calm: true }), v = e.mount();
+  let sharedDisposed = 0, ownDisposed = 0, geoDisposed = 0, matDisposed = 0;
+  const shared = { dispose() { sharedDisposed++; } }, own = { dispose() { ownDisposed++; } };
+  const geometry = { dispose() { geoDisposed++; } }, material = { map: own, dispose() { matDisposed++; } };
+  v.woodTextures = new Map([['board', shared]]);
+  const group = { traverse(fn) { fn({ geometry, material }); fn({ geometry, material }); fn({ material: { map: shared, dispose() {} } }); }, clear() {} };
+  v.clearGroup(group); assert.equal(sharedDisposed, 0); assert.equal(ownDisposed, 1); assert.equal(geoDisposed, 1); assert.equal(matDisposed, 1);
+  v.dispose(); assert.equal(sharedDisposed, 1);
+});
+
+test('美術視圖不呼叫遊戲的 Math.random', () => {
+  for (const file of ['scene3d.js', 'detective3d.js']) {
+    const code = fs.readFileSync(require('node:path').join(__dirname, '..', file), 'utf8');
+    assert.doesNotMatch(code, /Math\.random\s*\(/, file);
+  }
+});

@@ -256,3 +256,30 @@ body.proj .rg3d-cell-name { font-size: 28px; }
 .rg3d-cell-label { transform: none; }
 .rg3d-snakes .rg3d-cell-label { width: 88px; }
 .duel .stage .card .disc { min-height: 0; }
+
+/* P1: print-like cell anchors, thin paper and restrained surface relief. */
+.rg3d-cell-label, .rg3d-snakes .rg3d-cell-label { width: max-content; max-width: 100px; text-align: left; line-height: 1.05; display: flex; align-items: baseline; flex-wrap: wrap; gap: 1px 3px; }
+.rg3d-cell-name { display: inline; padding: 0 2px; font-size: 22px; border: 0; border-radius: 2px; background: #fff9eced; box-shadow: none; }
+.rg3d-cell-direction { font-size: 16px; color: #59422d; }
+.rg3d-cell-detail { display: none; font-size: 16px; padding: 1px 3px; }
+.rg3d-cell-label.is-current .rg3d-cell-detail:not(:empty) { display: block; flex-basis: 100%; }
+.rg3d-cell-state { font-size: 16px; padding: 1px 2px; }
+.rg3d-snakes .rg3d-cell-name { background: transparent; text-shadow: 0 1px #fff5df; }
+body.proj .rg3d-cell-name { font-size: 22px; }
+.rg3d-monopoly .rg3d-cell-direction { display: none; }
+.rg3d-bingo.is-3d .bgrid .bcell,
+.rg3d-bingo.is-3d .bgrid .bcell.on,
+.rg3d-bingo.is-3d .bgrid .bcell.learned,
+.rg3d-bingo.is-3d .bgrid .bcell.team,
+.rg3d-bingo.is-3d .bgrid .bcell.neutral { transform: none; box-shadow: 0 2px 0 #73533855, 0 4px 7px #62452c18; animation: none; }
+.rg3d-bingo.is-3d .bgrid .bcell.line { box-shadow: 0 0 0 2px #9b6418; }
+.rg3d-line-badge { position: absolute; top: 1px; min-width: 17px; height: 18px; border-radius: 3px; background: #fff0b4; color: #53350b; font: 800 16px/18px sans-serif; text-align: center; pointer-events: none; }
+.rg3d-dobble.is-3d .sym, .rg3d-dobble.is-3d .card .sym.ok { box-shadow: 0 2px 3px #63472720; animation: none; }
+.rg3d-dobble.is-3d .card::before { content: '左卡'; display: block; font-size: 22px; font-weight: 800; color: #704424; }
+.rg3d-dobble.is-3d .card.b::before { content: '右卡'; color: #245c7c; }
+.rg3d-dobble.is-3d > .rg3d-feedback-lines { display: block; position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.rg3d-dobble .rg3d-feedback-line { height: 3px; background: #ba852b; border: 0; box-shadow: none; }
+.die3d.rg3d-result { width: auto; height: auto; perspective: none; }
+.die3d.rg3d-result .cube { display: none; }
+.die3d.rg3d-result::after { content: attr(aria-label); display: block; padding: 8px 14px; border: 1px solid #bca081; border-radius: 12px; background: #fff8ec; color: #3c2819; font-size: 22px; font-weight: 900; }
+.rg3d-cell-number { position: absolute; font-size: 22px; font-weight: 800; line-height: 1; color: #382416; text-shadow: 0 1px #fff1d9; }

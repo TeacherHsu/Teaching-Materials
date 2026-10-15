@@ -4,7 +4,8 @@
 (function () {
   'use strict';
   const THREE_URL = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
-  let loading;
+  let loading, artSeed = 0x61d92;
+  const artRandom = () => { artSeed = (1664525 * artSeed + 1013904223) >>> 0; return artSeed / 4294967296; };
   function loadThree() {
     if (window.THREE) return Promise.resolve();
     if (!loading) loading = new Promise((resolve, reject) => {
@@ -58,6 +59,7 @@
   class Room {
     constructor(host, opts) {
       this.host = host; this.opts = opts; this.theme = THEMES[opts.theme] || THEMES.study;
+      this.quality = 'standard'; this.samples = []; this.warmFrames = 30; this.slowWindows = 0;
       this.items = []; this.meshes = new Map(); this.tweens = []; this.yaw = 0;
       host.classList.add('dt-room');
       this.stage = document.createElement('div'); this.stage.className = 'dt-stage';
@@ -137,17 +139,23 @@
       if (this.disposed || isCalm() || this.opts.force2d || this.failed) return;
       try {
         const T = window.THREE;
-        const touch = matchMedia('(pointer: coarse)').matches;
-        const r = new T.WebGLRenderer({ antialias: !touch, alpha: false, powerPreference: 'low-power' });
-        r.setPixelRatio(Math.min(window.devicePixelRatio || 1, touch ? 1.5 : 2));
-        r.shadowMap.enabled = !touch; r.shadowMap.type = T.PCFSoftShadowMap;
-        r.outputEncoding = T.sRGBEncoding;
+        const r = new T.WebGLRenderer({ antialias: true, alpha: false, powerPreference: 'low-power' });
+        r.setPixelRatio(Math.min(window.devicePixelRatio || 1, this.quality === 'light' ? 1 : 1.25));
+        r.shadowMap.enabled = this.quality !== 'light'; r.shadowMap.autoUpdate = false; r.shadowMap.needsUpdate = true; r.shadowMap.type = T.PCFSoftShadowMap;
+        r.outputEncoding = T.sRGBEncoding; r.toneMapping = T.ACESFilmicToneMapping; r.toneMappingExposure = .98;
         this.renderer = r; this.stage.append(r.domElement);
         r.domElement.addEventListener('webglcontextlost', (e) => { e.preventDefault(); this.failed = true; this.teardown3d(); this.mode2d('立體畫面中斷，改用平面圖'); });
         const scene = new T.Scene(); scene.background = new T.Color(this.theme.sky); this.scene = scene;
+        const env = document.createElement('canvas'); env.width = 256; env.height = 128;
+        const ctx = env.getContext('2d'), gradient = ctx.createLinearGradient(0, 0, 0, 128);
+        gradient.addColorStop(0, '#c1d4e6'); gradient.addColorStop(.45, '#fff4dd'); gradient.addColorStop(1, '#79634f'); ctx.fillStyle = gradient; ctx.fillRect(0, 0, 256, 128);
+        ctx.fillStyle = '#fffaf0'; ctx.fillRect(32, 20, 56, 35);
+        const tex = new T.CanvasTexture(env); tex.encoding = T.sRGBEncoding; tex.mapping = T.EquirectangularReflectionMapping;
+        const pmrem = new T.PMREMGenerator(r);
+        try { this.environmentTarget = pmrem.fromEquirectangular(tex); scene.environment = this.environmentTarget.texture; } finally { tex.dispose(); pmrem.dispose(); }
         this.camera = new T.PerspectiveCamera(34, 1, 0.1, 100);
         scene.add(new T.HemisphereLight(0xffffff, 0xd9c2a0, 0.75));
-        const sun = new T.DirectionalLight(0xfff1dc, 0.85); sun.position.set(6, 12, 8); sun.castShadow = !touch;
+        const sun = new T.DirectionalLight(0xfff1dc, 0.85); sun.position.set(6, 12, 8); sun.castShadow = true;
         sun.shadow.mapSize.set(1024, 1024); Object.assign(sun.shadow.camera, { left: -9, right: 9, top: 9, bottom: -9 });
         scene.add(sun);
         this.group = new T.Group(); scene.add(this.group);
@@ -160,14 +168,31 @@
         this.resize();
       } catch (e) { this.failed = true; this.teardown3d(); this.mode2d('立體畫面無法使用，改用平面圖'); }
     }
-    mat(color, rough = 0.8) { return new window.THREE.MeshStandardMaterial({ color, roughness: rough, metalness: 0.05 }); }
+    mat(color, rough = .8) {
+      const metal = color === 0xf6d16a;
+      const paper = [0xffffff, 0xfffbf0, 0xfffdf2, 0xfff3c4].includes(color);
+      return new window.THREE.MeshStandardMaterial({ color: new window.THREE.Color(color).convertSRGBToLinear(), roughness: metal ? .35 : paper ? .95 : rough, metalness: metal ? .72 : 0 });
+    }
+    sampleFrame(t, busy) {
+      if (!busy || document.hidden) { this.lastActiveFrame = null; return; }
+      if (this.warmFrames > 0) { this.warmFrames--; this.lastActiveFrame = t; return; }
+      if (this.lastActiveFrame != null) this.samples.push(t - this.lastActiveFrame);
+      this.lastActiveFrame = t;
+      if (this.samples.length < 90) return;
+      const p95 = this.samples.sort((a, b) => a - b)[85]; this.samples = [];
+      this.slowWindows = p95 > (this.quality === 'light' ? 28 : 22) ? this.slowWindows + 1 : 0;
+      if (this.slowWindows < 2) return;
+      this.slowWindows = 0;
+      if (this.quality === 'light') { this.failed = true; this.teardown3d(); this.mode2d('裝置改用流暢平面圖，進度保留'); }
+      else { this.quality = 'light'; this.renderer.shadowMap.enabled = false; this.renderer.setPixelRatio(1); this.resize(); }
+    }
     box(w, h, d, color, x, y, z, parent) {
       const T = window.THREE; const m = new T.Mesh(new T.BoxGeometry(w, h, d), this.mat(color));
-      m.position.set(x, y, z); m.castShadow = true; m.receiveShadow = true; (parent || this.group).add(m); return m;
+      m.position.set(x, y, z); m.castShadow = Math.min(w, h, d) > .035; m.receiveShadow = true; (parent || this.group).add(m); return m;
     }
     cyl(rt, rb, h, color, x, y, z, parent, seg = 20) {
       const T = window.THREE; const m = new T.Mesh(new T.CylinderGeometry(rt, rb, h, seg), this.mat(color));
-      m.position.set(x, y, z); m.castShadow = true; (parent || this.group).add(m); return m;
+      m.position.set(x, y, z); m.castShadow = rt > .08; (parent || this.group).add(m); return m;
     }
     buildRoom(T) {
       const th = this.theme; const g = this.group;
@@ -186,7 +211,7 @@
       pc.fillStyle = '#5a2e12'; pc.font = '900 64px "PingFang TC","Microsoft JhengHei","Noto Sans TC",sans-serif'; pc.textAlign = 'center'; pc.textBaseline = 'middle'; pc.fillText('🔍 ' + th.name, 256, 66);
       const tex = new T.CanvasTexture(plate); tex.encoding = T.sRGBEncoding;
       const sign = new T.Mesh(new T.PlaneGeometry(2.4, 0.6), new T.MeshBasicMaterial({ map: tex })); sign.position.set(-1.6, 3.75, -4.45); g.add(sign);
-      const rug = this.cyl(2.6, 2.6, 0.04, th.rug, 0.5, 0.02, 1.8, g, 40); rug.scale.z = 0.62; rug.receiveShadow = true;
+      const rug = this.cyl(2.6, 2.6, 0.04, th.rug, 0.5, 0.02, 1.8, g, 40); rug.scale.z = 0.62; rug.receiveShadow = true; rug.material.roughness = .95; rug.castShadow = false;
       // 書架
       this.box(2.4, 3.4, 0.7, 0x8a5a2b, -4.0, 1.7, -4.15);
       [0.6, 1.5, 2.4, 3.2].forEach((y) => this.box(2.3, 0.08, 0.65, 0x6e4520, -4.0, y, -4.1));
@@ -283,6 +308,8 @@
       let busy = false;
       try {
       this.tweens = this.tweens.filter((tw) => { const k = Math.min(1, (t - (tw.t0 || (tw.t0 = t))) / tw.ms); tw.fn(1 - Math.pow(1 - k, 3)); busy = true; return k < 1; });
+      this.sampleFrame(t, busy); if (!this.renderer) return;
+      this.renderer.shadowMap.needsUpdate = true;
       this.renderer.render(this.scene, this.camera); this.layoutMarkers(); }
       catch (_) { this.failed = true; this.teardown3d(); this.mode2d('立體畫面中斷，請繼續調查'); return; }
       if (busy && !document.hidden) this.kick();
@@ -321,7 +348,7 @@
       }
       sizes.forEach(({ it, rect }) => { if (rect) { it.btn.style.left = `${rect.x}px`; it.btn.style.top = `${rect.y}px`; } });
     }
-    tween(ms, fn) { if (!this.is3d || isCalm()) { fn(1); return; } this.tweens.push({ ms, fn }); this.kick(); }
+    tween(ms, fn) { if (!this.is3d || isCalm()) { fn(1); return; } if (!this.tweens.length) this.lastActiveFrame = null; this.tweens.push({ ms, fn }); this.kick(); }
     // 紙卡從物件升起、翻一圈後消失（找到線索的回饋）
     paper(id) {
       const it = this.items.find((x) => x.id === id); if (!it || !this.is3d || isCalm()) return;
@@ -331,7 +358,7 @@
     confetti(pos) {
       if (!this.is3d || isCalm()) return;
       const T = window.THREE; const cols = [0xe05a4f, 0xf0a030, 0x3fa45b, 0x3b82c4, 0x8b5cc8, 0xffffff];
-      const bits = Array.from({ length: 40 }, (_, k) => { const m = new T.Mesh(new T.BoxGeometry(0.16, 0.03, 0.1), this.mat(cols[k % cols.length])); m.userData.v = [(Math.random() - 0.5) * 5, 4 + Math.random() * 3, (Math.random() - 0.2) * 4]; this.group.add(m); return m; });
+      const bits = Array.from({ length: this.quality === 'light' ? 0 : 8 }, (_, k) => { const m = new T.Mesh(new T.BoxGeometry(0.16, 0.03, 0.1), this.mat(cols[k % cols.length])); m.userData.v = [(artRandom() - 0.5) * 5, 4 + artRandom() * 3, (artRandom() - 0.2) * 4]; this.group.add(m); return m; });
       this.tween(1500, (k) => { bits.forEach((m, i) => { const [vx, vy, vz] = m.userData.v; m.position.set(pos[0] + vx * k, pos[1] + vy * k - 6 * k * k, pos[2] + vz * k); m.rotation.set(k * 12 + i, k * 9, k * 6); }); if (k === 1) bits.forEach((m) => { this.group.remove(m); m.geometry.dispose(); m.material.dispose(); }); });
     }
     // 機關動畫：保險箱開門、抽屜拉出、齒輪轉、門打開
@@ -351,6 +378,7 @@
       cancelAnimationFrame(this.raf); this.raf = 0;
       this.meshes.clear();
       if (this.ro) this.ro.disconnect();
+      this.environmentTarget?.dispose(); this.environmentTarget = null;
       if (this.renderer) {
         const resources = new Set();
         this.scene && this.scene.traverse((o) => {

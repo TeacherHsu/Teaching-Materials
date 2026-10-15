@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>語詞哆寶</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="common.css?v=3">
+  <link rel="stylesheet" href="common.css?v=4">
   <style>
     .stage { display: flex; justify-content: center; gap: 20px; margin: 12px 0; }
     .card { flex: 0 1 440px; display: grid; gap: 8px; justify-items: center; }
@@ -55,7 +55,7 @@
 <body>
   <main class="wrap" id="app"><p>載入中…</p></main>
   <script src="common.js?v=2"></script>
-  <script src="scene3d.js?v=3"></script>
+  <script src="scene3d.js?v=4"></script>
   <script>
     const { h, shuffle, speak, speakBtn, loadBank, setupPanel, header, token } = RG;
     const SIZE = { support: 4, standard: 6, challenge: 8 };
@@ -93,7 +93,7 @@
           h('div', { class: 'stage' }, [h('div', { class: 'card' }, [discA, listen(discA)]), h('div', { class: 'card b' }, [discB, listen(discB)])]),
           reveal, h('div', { class: 'row', style: 'justify-content:center' }, nextBtn));
 
-        soloView = window.RG3D?.mount({ kind: 'dobble', host: discA.closest('.stage') });
+
 
         // 共有字越多越像，優先挑來當干擾，讓學生把每個字都看清楚
         const overlap = (a, b) => [...a].filter((ch) => b.includes(ch)).length;
@@ -272,6 +272,7 @@
           speak(`完成了！今天練了 ${words.length} 個詞`);
         }
         if (modeSel.value !== 'solo') return duel(modeSel.value === 'duel-face');
+        soloView = window.RG3D?.mount({ kind: 'dobble', host: discA.closest('.stage') });
         deal();
       }
     }).catch((e) => { document.getElementById('app').textContent = e.message; });

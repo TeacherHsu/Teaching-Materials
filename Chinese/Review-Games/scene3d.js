@@ -3,6 +3,10 @@
   'use strict';
   const CDN = 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/';
   const instances = new Set();
+  // Independent visual PRNG: never advance question/dice randomness.
+  let artSeed = 0x81b27;
+  const artRandom = () => { artSeed = (1664525 * artSeed + 1013904223) >>> 0; return artSeed / 4294967296; };
+  const dieAngles = (n) => ({ 1: [0, 0, 0], 6: [Math.PI, 0, 0], 2: [0, 0, Math.PI / 2], 5: [0, 0, -Math.PI / 2], 3: [-Math.PI / 2, 0, 0], 4: [Math.PI / 2, 0, 0] }[n]);
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const narrow = matchMedia('(max-width: 760px)');
   const colors = ['#c0362c', '#1f5fa8', '#1f7a43', '#6b3fb0'];
@@ -63,19 +67,22 @@
       this.tokens = new Map(); this.owners = new Map(); this.marks = new Map(); this.lineState = [];
       this.tweens = new Map(); this.labels = []; this.meshCells = new Map(); this.pieces = new Map(); this.flags = new Map();
       this.projection = false; this.active = false; this.disposed = false; this.failed = ''; this.dieValue = 1;
+      this.quality = this.quality === 'high' ? 'high' : 'standard'; this.frameSamples = []; this.slowWindows = 0; this.warmFrames = 30;
       this.overlay = this.kind === 'dobble' || this.kind === 'bingo';
       this.surface = el('div', 'rg3d-surface'); this.surface.setAttribute('aria-hidden', 'true');
       this.host.classList.add('rg3d-host', `rg3d-${this.kind}`); this.host.prepend(this.surface);
-      if (this.kind === 'bingo') { this.feedbackLayer = el('div', 'rg3d-feedback-lines'); this.feedbackLayer.setAttribute('aria-hidden', 'true'); this.host.append(this.feedbackLayer); }
+      if (this.overlay) { this.feedbackLayer = el('div', 'rg3d-feedback-lines'); this.feedbackLayer.setAttribute('aria-hidden', 'true'); this.host.append(this.feedbackLayer); }
       if (!this.overlay && this.cells) {
         this.domLabels = el('div', 'rg3d-dom-labels');
         this.domCells = new Map();
         this.cells.forEach((c) => {
           const box = el('div', 'rg3d-cell-label');
-          const name = el('span', 'rg3d-cell-name'); name.textContent = `${this.kind === 'monopoly' ? c.id + ' ' : ''}${c.label} ${c.direction || ''}`;
+          const name = el('span', 'rg3d-cell-name'); name.textContent = `${this.kind === 'monopoly' ? c.label : c.id}`;
           const detail = el('span', 'rg3d-cell-detail'); detail.textContent = c.detail || '';
           const state = el('span', 'rg3d-cell-state');
-          box.append(name, detail, state); this.domLabels.append(box); this.domCells.set(c.id, { box, state });
+          const direction = el('span', 'rg3d-cell-direction', c.direction || '');
+          box.append(name, direction, detail, state); this.domLabels.append(box); this.domCells.set(c.id, { box, state });
+          if (this.kind === 'monopoly') { const number = el('span', 'rg3d-cell-number', String(c.id)); this.domLabels.append(number); this.domCells.get(c.id).number = number; }
         });
         this.host.append(this.domLabels);
       }
@@ -122,10 +129,10 @@
     init() {
       const T = window.THREE;
       this.renderer = new T.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'low-power' });
-      this.renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 1.6));
+      this.renderer.setPixelRatio(Math.min(devicePixelRatio || 1, this.quality === 'high' && !this.host.closest('.duel') ? 1.5 : 1.25));
       this.renderer.outputEncoding = T.sRGBEncoding;
       this.renderer.toneMapping = T.ACESFilmicToneMapping; this.renderer.toneMappingExposure = .98;
-      this.renderer.shadowMap.enabled = true; this.renderer.shadowMap.type = T.PCFSoftShadowMap;
+      this.renderer.shadowMap.enabled = true; this.renderer.shadowMap.type = T.PCFSoftShadowMap; this.renderer.shadowMap.autoUpdate = false; this.renderer.shadowMap.needsUpdate = true;
       this.surface.append(this.renderer.domElement);
       this.renderer.domElement.addEventListener('webglcontextlost', (e) => {
         e.preventDefault(); if (this.disposed) return; this.failed = 'WebGL 已中斷'; this.mode(false); this.status('2D 模式・WebGL 已中斷，請繼續遊戲');
@@ -137,15 +144,16 @@
       this.camera.position.set(0, 18, 15); this.camera.lookAt(0, 0, 0);
       this.scene.add(new T.HemisphereLight(0xffe9cc, 0x51453e, .42));
       const key = new T.DirectionalLight(0xffdfb0, 1.25); key.position.set(-7, 13, 6); key.castShadow = true;
-      key.shadow.mapSize.set(2048, 2048); Object.assign(key.shadow.camera, { left: -16, right: 16, top: 16, bottom: -16, far: 50 }); key.shadow.camera.updateProjectionMatrix();
+      key.shadow.mapSize.set(1024, 1024); Object.assign(key.shadow.camera, { left: -16, right: 16, top: 16, bottom: -16, far: 50 }); key.shadow.camera.updateProjectionMatrix();
       key.shadow.bias = -.0003; key.shadow.normalBias = .035; key.shadow.radius = 3; this.scene.add(key);
       const rim = new T.DirectionalLight(0xb6d9ff, .7); rim.position.set(6, 7, -9); this.scene.add(rim);
+      this.makeEnvironment();
       this.root = new T.Group(); this.scene.add(this.root);
       const table = this.box(40, .3, 40, '#ffffff'); table.position.y = -1.05;
-      table.material.map = this.woodTexture('table'); table.material.roughness = .92;
+      table.material.map = this.woodTexture('table'); table.material.roughness = .82;
       if (!this.overlay) this.buildBoard();
-      loadEffects().then(() => {
-        if (this.disposed || this.failed) return;
+      if (this.quality === 'high' && !this.host.closest('.duel')) loadEffects().then(() => {
+        if (this.disposed || this.failed || this.quality !== 'high') return;
         try {
           const hdr = this.renderer.capabilities.isWebGL2 ? this.renderer.extensions.has('EXT_color_buffer_float') : this.renderer.extensions.has('EXT_color_buffer_half_float') && this.renderer.extensions.has('OES_texture_half_float_linear');
           if (!hdr) return; // 不支援浮點附件的 GPU 使用一般 3D，不冒黑畫面風險。
@@ -177,12 +185,40 @@
         } catch (_) { this.disposeEffects(); }
       }).catch(() => { /* 後製失敗仍可使用一般 3D。 */ });
     }
+    makeEnvironment() {
+      const c = document.createElement('canvas'); c.width = 256; c.height = 128;
+      const ctx = c.getContext('2d'), g = ctx.createLinearGradient(0, 0, 0, 128);
+      g.addColorStop(0, '#c1d4e6'); g.addColorStop(.45, '#fff4dd'); g.addColorStop(1, '#79634f');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, 256, 128);
+      ctx.fillStyle = '#fffaf0'; ctx.fillRect(32, 20, 56, 35);
+      const texture = new THREE.CanvasTexture(c); texture.encoding = THREE.sRGBEncoding; texture.mapping = THREE.EquirectangularReflectionMapping;
+      const pmrem = new THREE.PMREMGenerator(this.renderer);
+      try { this.environmentTarget = pmrem.fromEquirectangular(texture); this.scene.environment = this.environmentTarget.texture; }
+      finally { texture.dispose(); pmrem.dispose(); }
+    }
+    applyQuality(level) {
+      this.quality = level; this.slowWindows = 0; this.frameSamples = [];
+      if (level === 'light') {
+        this.disposeEffects(); this.renderer.setPixelRatio(1); this.renderer.shadowMap.enabled = false;
+        this.resize(true);
+      } else if (level === '2d') { this.failed = '裝置改用流暢平面圖'; this.mode(false); this.status('2D 模式・保留目前進度'); }
+    }
+    sampleFrame(now) {
+      if (!this.tweens.size || document.hidden) { this.lastActiveFrame = null; return; }
+      if (this.warmFrames > 0) { this.warmFrames--; this.lastActiveFrame = now; return; }
+      if (this.lastActiveFrame != null) this.frameSamples.push(now - this.lastActiveFrame);
+      this.lastActiveFrame = now;
+      if (this.frameSamples.length < 90) return;
+      const samples = this.frameSamples.sort((a, b) => a - b), p95 = samples[85]; this.frameSamples = [];
+      this.slowWindows = p95 > (this.quality === 'light' ? 28 : 22) ? this.slowWindows + 1 : 0;
+      if (this.slowWindows >= 2) this.applyQuality(this.quality === 'light' ? '2d' : 'light');
+    }
     material(color, glow = false) {
       const linear = new THREE.Color(color).convertSRGBToLinear();
-      return new THREE.MeshStandardMaterial({ color: linear, roughness: .6, metalness: .04, emissive: glow ? linear : 0x000000, emissiveIntensity: glow ? 2.4 : 0 });
+      return new THREE.MeshStandardMaterial({ color: linear, roughness: .8, metalness: 0, emissive: glow ? linear : 0x000000, emissiveIntensity: glow ? 2.4 : 0 });
     }
     mesh(geometry, color, parent = this.root) {
-      const m = new THREE.Mesh(geometry, this.material(color)); m.castShadow = true; m.receiveShadow = true; parent.add(m); return m;
+      const m = new THREE.Mesh(geometry, this.material(color)); m.castShadow = geometry.type !== 'SphereGeometry' && geometry.type !== 'TubeGeometry'; m.receiveShadow = true; parent.add(m); return m;
     }
     box(w, h, d, color, parent) { return this.mesh(new THREE.BoxGeometry(w, h, d), color, parent); }
     roundedBox(w, h, d, color, parent, bevel = .07) {
@@ -204,8 +240,8 @@
       const c = canvas.getContext('2d'), gradient = c.createRadialGradient(500, 380, 80, 512, 512, 760);
       gradient.addColorStop(0, kind === 'table' ? '#ead1aa' : '#ba8046'); gradient.addColorStop(1, kind === 'table' ? '#ba8b60' : '#704321');
       c.fillStyle = gradient; c.fillRect(0, 0, 1024, 1024);
-      for (let i = 0; i < 480; i++) {
-        const y = i * 2.2; c.strokeStyle = `rgba(80,42,18,${.025 + (i % 7) * .006})`; c.lineWidth = .6 + i % 3;
+      for (let i = 0; i < 160; i++) {
+        const y = i * 6.5; c.strokeStyle = `rgba(80,42,18,${.012 + (i % 7) * .002})`; c.lineWidth = .6 + i % 3;
         c.beginPath(); c.moveTo(0, y); c.bezierCurveTo(300, y + Math.sin(i) * 9, 700, y + Math.cos(i * .7) * 12, 1024, y); c.stroke();
       }
       const t = new THREE.CanvasTexture(canvas); t.encoding = THREE.sRGBEncoding; t.anisotropy = Math.min(4, this.renderer.capabilities.getMaxAnisotropy());
@@ -228,8 +264,13 @@
     }
     buildBoard() {
       const T = THREE, depth = this.kind === 'snakes' ? 9.5 : 11.4;
+      const shadowCanvas = document.createElement('canvas'); shadowCanvas.width = shadowCanvas.height = 128;
+      const ctx = shadowCanvas.getContext('2d'), gradient = ctx.createRadialGradient(64, 64, 25, 64, 64, 64);
+      gradient.addColorStop(0, '#39231466'); gradient.addColorStop(1, '#39231400'); ctx.fillStyle = gradient; ctx.fillRect(0, 0, 128, 128);
+      const contact = new T.Mesh(new T.PlaneGeometry(13.4, depth + 1.6), new T.MeshBasicMaterial({ map: new T.CanvasTexture(shadowCanvas), transparent: true, depthWrite: false }));
+      contact.rotation.x = -Math.PI / 2; contact.position.y = -.885; this.root.add(contact);
       const plinth = this.roundedBox(11.55, .6, depth, '#ffffff'); plinth.position.y = -.4;
-      plinth.material.map = this.woodTexture('board'); plinth.material.roughness = .46;
+      plinth.material.map = this.woodTexture('board'); plinth.material.roughness = .78;
       const inset = this.roundedBox(11.12, .16, depth - .4, '#593d2b'); inset.position.y = -.06;
       // 金色細邊與雙層底座讓棋盤邊緣、厚度、投影有清楚的層次。
       const foot = this.roundedBox(11.25, .16, depth - .15, '#4d3021'); foot.position.y = -.75;
@@ -239,7 +280,8 @@
         const palette = ['#de5942', '#e5a529', '#52a765', '#3699c5', '#8c69bc', '#cf6b9e'];
         const color = this.kind === 'snakes' ? ((c.row + c.col) % 2 ? '#e2ad67' : '#f4d29b') : lesson ? palette[lesson - 1] : c.label === '綜合複習' ? '#69a5c8' : '#edc580';
         const m = this.roundedBox(1.65, .31, 1.65, color); m.position.copy(p); m.position.y = .13;
-        m.material.roughness = lesson ? .45 : .72;
+        m.material.roughness = .95;
+        if (this.kind === 'snakes' && c.detail && !/蛇|梯/.test(c.detail)) m.material.color.set('#eaca73').convertSRGBToLinear();
         this.meshCells.set(c.id, m);
         const snakes = this.kind === 'snakes';
         if (this.kind === 'monopoly' && !lesson && c.label !== '綜合複習') this.specialProp(c, p);
@@ -248,9 +290,9 @@
         const pad = this.mesh(new T.CylinderGeometry(2.9, 3, .2, 80), '#285e61'); pad.position.y = .06;
         const rim = this.mesh(new T.TorusGeometry(2.88, .045, 8, 80), '#edb95b'); rim.rotation.x = Math.PI / 2; rim.position.y = .2;
         const l = this.label('課文探險', 4.05, .88, '#fff2d1', '#54331f'); l.position.set(0, .5, -1.1); this.root.add(l);
-        for (let k = 0; k < 24; k++) { const a = k / 24 * Math.PI * 2; const tick = this.box(k % 6 ? .05 : .09, .03, k % 6 ? .22 : .36, '#edb95b'); tick.position.set(Math.sin(a) * 2.55, .19, Math.cos(a) * 2.55); tick.rotation.y = a; }
-        [['#de5942', 0], ['#3699c5', .22], ['#e5a529', .44]].forEach(([c, y], k) => { const b = this.roundedBox(1.05, .2, .75, c, undefined, .05); b.position.set(-1.75, .24 + y, .55); b.rotation.y = .25 - k * .2; const page = this.box(.98, .14, .66, '#fff8e8'); page.position.set(-1.68, .24 + y, .55); page.rotation.y = b.rotation.y; });
-        const quill = this.mesh(new T.ConeGeometry(.09, 1.1, 8), '#f6efe2'); quill.position.set(1.75, .55, .7); quill.rotation.z = -.9; quill.rotation.x = .3;
+        // One open, unprinted book and a pencil; leave the centre free for the die.
+        [-1, 1].forEach((side) => { const page = this.roundedBox(.62, .08, .8, '#fff6df', undefined, .025); page.position.set(-1.7 + side * .3, .26, .6); page.rotation.z = side * .08; });
+        const pencil = this.mesh(new T.CylinderGeometry(.035, .035, 1.05, 6), '#d8a649'); pencil.rotation.z = .9; pencil.position.set(-1.6, .3, 1.3);
         this.buildDie(new T.Vector3(0, .85, .65));
       } else {
         this.paths = new Map();
@@ -286,7 +328,7 @@
       m.position.copy(a).add(b).multiplyScalar(.5); m.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize()); return m;
     }
     ladder(a, b) {
-      const start = this.cellPosition(a), end = this.cellPosition(b); start.y = end.y = .32;
+      const start = this.cellPosition(a), end = this.cellPosition(b); start.y = end.y = .34; start.x += .15; end.x += .15;
       const dir = end.clone().sub(start).normalize(); const side = new THREE.Vector3(-dir.z, 0, dir.x).multiplyScalar(.23);
       [-1, 1].forEach((s) => { const rail = this.rod(start.clone().addScaledVector(side, s), end.clone().addScaledVector(side, s), .075, '#e4b46f'); rail.material.map = this.woodTexture('board'); rail.material.roughness = .8; });
       const count = Math.ceil(start.distanceTo(end) / .36);
@@ -294,16 +336,26 @@
       this.paths.set(`ladder:${a}`, new THREE.LineCurve3(start, end));
     }
     snake(a, b) {
-      const start = this.cellPosition(a), end = this.cellPosition(b); start.y = end.y = .48;
+      const start = this.cellPosition(a), end = this.cellPosition(b); start.y = end.y = .48; start.x += .22; end.x += .22;
       const d = end.clone().sub(start); const side = new THREE.Vector3(-d.z, 0, d.x).normalize();
-      const points = Array.from({ length: 13 }, (_, i) => start.clone().lerp(end, i / 12).addScaledVector(side, Math.sin(i / 12 * Math.PI * 4) * .26));
+      const points = Array.from({ length: 13 }, (_, i) => {
+        const p = start.clone().lerp(end, i / 12).addScaledVector(side, Math.sin(i / 12 * Math.PI * 4) * .22);
+        // Keep the top-left number reserve clear in every crossed cell.
+        if (i > 0 && i < 12) for (const c of this.cells) { const cell = this.cellPosition(c.id); if (p.x > cell.x - .83 && p.x < cell.x - .12 && p.z > cell.z - .83 && p.z < cell.z - .25) p.x = cell.x + .02; }
+        return p;
+      });
       const path = new THREE.CatmullRomCurve3(points);
-      const geo = new THREE.TubeGeometry(path, 72, .145, 10, false), attribute = geo.getAttribute('position'), shades = [];
-      for (let i = 0; i < attribute.count; i++) { const shade = new THREE.Color().setHSL(.32 + .05 * i / attribute.count, .7, .26 + .14 * Math.sin(i / attribute.count * Math.PI)); shade.convertSRGBToLinear(); shades.push(shade.r, shade.g, shade.b); }
+      const geo = new THREE.TubeGeometry(path, 40, .11, 8, false), attribute = geo.getAttribute('position'), shades = [];
+      for (let i = 0; i < attribute.count; i++) { const shade = new THREE.Color().setHSL(.33, .55, .29 + .10 * (Math.floor(i / 9) % 6 < 2 ? 1 : 0)); shade.convertSRGBToLinear(); shades.push(shade.r, shade.g, shade.b); }
+      for (let ring = 0; ring <= 40; ring++) {
+        const center = path.getPointAt(ring / 40), taper = 1 - .82 * Math.pow(ring / 40, 3);
+        for (let k = 0; k <= 8; k++) { const index = ring * 9 + k; attribute.setXYZ(index, center.x + (attribute.getX(index) - center.x) * taper, center.y + (attribute.getY(index) - center.y) * taper, center.z + (attribute.getZ(index) - center.z) * taper); }
+      }
+      attribute.needsUpdate = true; geo.computeVertexNormals();
       geo.setAttribute('color', new THREE.Float32BufferAttribute(shades, 3));
       const body = this.mesh(geo, '#ffffff'); body.material.vertexColors = true; body.material.roughness = .4; this.paths.set(`snake:${a}`, path);
-      for (let i = 1; i < 20; i++) { const spot = this.mesh(new THREE.SphereGeometry(.065, 8, 6), '#e0cf59'); spot.scale.y = .3; spot.position.copy(path.getPoint(i / 20)); spot.position.y += .14; }
       const head = this.mesh(new THREE.SphereGeometry(.27, 20, 12), '#459e36'); head.scale.z = 1.3; head.position.copy(start);
+      const tangent = path.getTangent(0); head.rotation.y = Math.atan2(tangent.x, tangent.z);
       [-1, 1].forEach((s) => {
         const eye = this.mesh(new THREE.SphereGeometry(.09, 12, 8), '#fffbe3'); eye.position.copy(start).add(new THREE.Vector3(s * .13, .21, -.08));
         const pupil = this.mesh(new THREE.SphereGeometry(.044, 10, 8), '#18291b'); pupil.position.copy(eye.position).add(new THREE.Vector3(0, .06, .04));
@@ -315,37 +367,38 @@
       const stem = this.mesh(new THREE.CylinderGeometry(.08, .13, .25, 16), '#e6af38', g); stem.position.y = .2;
       const cup = this.mesh(new THREE.CylinderGeometry(.28, .1, .35, 24), '#e6af38', g); cup.position.y = .45;
       [-1, 1].forEach((s) => { const handle = this.mesh(new THREE.TorusGeometry(.18, .035, 8, 20), '#e6af38', g); handle.position.set(s * .26, .48, 0); });
-      g.scale.setScalar(1.35); cup.material.metalness = .55; cup.material.roughness = .23; cup.material.emissive.copy(cup.material.color); cup.material.emissiveIntensity = .4;
+      g.scale.setScalar(1.35); cup.material.metalness = .72; cup.material.roughness = .35; cup.material.emissive.copy(cup.material.color); cup.material.emissiveIntensity = .4;
       const halo = this.mesh(new THREE.TorusGeometry(.42, .035, 8, 32), '#efb73d', g); halo.rotation.x = Math.PI / 2; halo.position.y = .08; halo.material.emissive.copy(halo.material.color); halo.material.emissiveIntensity = 2.4; halo.userData.feedback = 1;
     }
     buildDie(p) {
       const g = new THREE.Group(); g.position.copy(p); this.root.add(g); this.dice = g; this.diceHome = p.clone();
-      const shell = this.roundedBox(.98, .98, .98, '#fff3d8', g, .09); shell.material.roughness = .27;
+      const shell = this.roundedBox(.98, .98, .98, '#fff3d8', g, .09); shell.material.roughness = .4;
       const faces = [[1, [0, 1, 0]], [6, [0, -1, 0]], [2, [1, 0, 0]], [5, [-1, 0, 0]], [3, [0, 0, 1]], [4, [0, 0, -1]]];
       const dots = { 1: [[0, 0]], 2: [[-1, -1], [1, 1]], 3: [[-1, -1], [0, 0], [1, 1]], 4: [[-1, -1], [1, -1], [-1, 1], [1, 1]], 5: [[-1, -1], [1, -1], [0, 0], [-1, 1], [1, 1]], 6: [[-1, -1], [-1, 0], [-1, 1], [1, -1], [1, 0], [1, 1]] };
       faces.forEach(([n, axis]) => {
         const q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 0, 1), new THREE.Vector3(...axis));
         dots[n].forEach(([x, y]) => { const dot = this.mesh(new THREE.SphereGeometry(.073, 12, 8), n === 1 ? '#b73527' : '#30241c', g); dot.scale.z = .22; dot.quaternion.copy(q); dot.position.set(x * .23, y * .23, .496).applyQuaternion(q); });
       });
-      g.scale.setScalar(1.3);
+      g.scale.setScalar(this.kind === 'monopoly' ? 1.04 : 1.3);
     }
     async rollDice(n) {
       this.dieValue = n;
       if (!this.active || !this.dice) return;
       // 六面各有固定點數，最後讓指定面朝上；拋物線加兩次衰減碰跳。
-      const end = { 1: [0, 0, 0], 6: [Math.PI, 0, 0], 2: [0, 0, Math.PI / 2], 5: [0, 0, -Math.PI / 2], 3: [-Math.PI / 2, 0, 0], 4: [Math.PI / 2, 0, 0] }[n];
+      const end = dieAngles(n);
       const from = this.dice.rotation.clone();
       await this.tween('dice', 930, (t) => {
         const ease = 1 - Math.pow(1 - t, 3);
-        this.dice.rotation.set(...end.map((v, i) => from[['x', 'y', 'z'][i]] * (1 - ease) + (v + Math.PI * 4) * ease));
+        this.dice.rotation.set(...end.map((v, i) => from[['x', 'y', 'z'][i]] * (1 - ease) + v * ease + Math.PI * 4 * t));
         this.dice.position.y = this.diceHome.y + Math.abs(Math.sin(t * Math.PI * 3)) * (1 - t) * 1.7;
         this.dice.position.x = this.diceHome.x + Math.sin(t * Math.PI * 2) * (1 - t) * .7;
+        if (t === 1) { this.dice.rotation.set(...end); this.dice.position.copy(this.diceHome); }
       });
     }
     piece(i) {
       const g = new THREE.Group(); this.root.add(g);
       const geo = [() => new THREE.SphereGeometry(.23, 20, 16), () => new THREE.BoxGeometry(.42, .42, .42), () => new THREE.ConeGeometry(.3, .5, 3), () => new THREE.OctahedronGeometry(.31)][i % 4]();
-      const m = this.mesh(geo, colors[i % 4], g); m.position.y = .24;
+      const m = this.mesh(geo, colors[i % 4], g); m.material.roughness = .4; m.position.y = .24;
       const ring = this.mesh(new THREE.CylinderGeometry(.3, .33, .1, 24), '#f3c365', g); ring.position.y = .03;
       const base = this.mesh(new THREE.CylinderGeometry(.34, .36, .09, 24), colors[i % 4], g); base.position.y = -.04;
       const l = this.label(String(i + 1), .34, .32, colors[i % 4], '#ffffff'); l.position.y = .3; g.add(l);
@@ -369,40 +422,30 @@
         const ease = t * t * (3 - 2 * t);
         if (path && options.path === 'ladder') g.position.copy(path.getPoint(ease)).add(new THREE.Vector3((i % 2 ? 1 : -1) * .38, .08 + Math.sin(t * Math.PI * 6) * .045, .2 + Math.floor(i / 2) * .4));
         else if (path && options.path === 'snake') g.position.copy(path.getPoint(ease)).add(new THREE.Vector3(0, .08, .18));
-        else g.position.copy(from).lerp(target, ease).add(new THREE.Vector3(0, Math.sin(t * Math.PI) * (options.path ? .35 : .55), 0));
-        if (t === 1) g.position.copy(target);
+        else g.position.copy(from).lerp(target, ease).add(new THREE.Vector3(0, Math.sin(t * Math.PI) * .30, 0));
+        if (path && options.path) { const tangent = path.getTangent(ease); g.rotation.y = Math.atan2(tangent.x, tangent.z); }
+        if (t === 1) { g.position.copy(target); g.rotation.y = 0; }
       });
     }
     layoutBoardLabels() {
       if (!this.active || !this.domLabels || !this.camera) return;
       const key = [this.host.clientWidth, this.host.clientHeight, this.projection, ...this.tokens, ...this.owners, ...(this.domSteps || [])].join('|');
       if (this.boardLabelKey === key) return; this.boardLabelKey = key;
-      const positions = this.cells.map((c) => {
-        const v = this.cellPosition(c.id); v.y = .55; v.z -= .5; v.project(this.camera);
-        const { box, state } = this.domCells.get(c.id);
+      this.cells.forEach((c) => {
+        // Fixed corner anchors: labels never migrate into adjacent cells.
+        const v = this.cellPosition(c.id); v.y = .32; v.x -= .72; v.z -= .68; v.project(this.camera);
+        const { box, state, number } = this.domCells.get(c.id);
+        if (number) { const n = this.cellPosition(c.id); n.x -= .65; n.z += .52; n.y = .32; n.project(this.camera); number.style.left = `${(n.x + 1) * this.width / 2}px`; number.style.top = `${(1 - n.y) * this.height / 2}px`; }
         const teams = [...this.tokens].filter(([, cell]) => cell === c.id).map(([i]) => `${i + 1}隊`);
-        state.textContent = [this.owners.has(c.id) ? `屋：${this.owners.get(c.id) + 1}隊` : '', teams.join(' '), this.domSteps?.get(c.id) || ''].filter(Boolean).join('・');
-        return { box, x: (v.x + 1) * this.host.clientWidth / 2, y: (1 - v.y) * this.host.clientHeight / 2 };
+        const needed = this.focused?.cell === c.id || teams.length > 0;
+        box.classList.toggle('is-current', needed);
+        state.textContent = [this.owners.has(c.id) ? `屋${this.owners.get(c.id) + 1}` : '', this.domSteps?.get(c.id) || ''].filter(Boolean).join(' ');
+        box.setAttribute('aria-label', [c.id, c.label, c.detail, teams.join(' '), state.textContent].filter(Boolean).join('，'));
+        box.style.left = `${(v.x + 1) * this.width / 2}px`;
+        box.style.top = `${(1 - v.y) * this.height / 2}px`;
       });
-      // 實際矩形避碰；只在尺寸／狀態改變時測量，不在動畫逐幀強制排版。
-      positions.forEach((p) => { p.w = p.box.offsetWidth; p.h = p.box.offsetHeight; });
-      const placed = [], width = this.host.clientWidth, height = this.host.clientHeight;
-      positions.sort((a, b) => a.y - b.y).forEach((p) => {
-        let best, cost = Infinity;
-        const xs = new Set([4, width - p.w - 4, Math.max(4, Math.min(width - p.w - 4, p.x - p.w / 2))]);
-        const ys = new Set([4, height - p.h - 4, Math.max(4, Math.min(height - p.h - 4, p.y - p.h / 2))]);
-        placed.forEach((r) => { xs.add(r.x + r.w + 4); xs.add(r.x - p.w - 4); ys.add(r.y + r.h + 4); ys.add(r.y - p.h - 4); });
-        for (const y of ys) for (const x of xs) {
-          if (x < 4 || y < 4 || x + p.w > width - 4 || y + p.h > height - 4) continue;
-          const d = (x + p.w / 2 - p.x) ** 2 + (y + p.h / 2 - p.y) ** 2;
-          if (d >= cost || placed.some((r) => x < r.x + r.w + 4 && x + p.w + 4 > r.x && y < r.y + r.h + 4 && y + p.h + 4 > r.y)) continue;
-          cost = d; best = { x, y, w: p.w, h: p.h };
-        }
-        p.rect = best || { x: Math.max(4, Math.min(width - p.w - 4, p.x - p.w / 2)), y: Math.max(4, Math.min(height - p.h - 4, p.y - p.h / 2)), w: p.w, h: p.h };
-        placed.push(p.rect);
-      });
-      positions.forEach((p) => { p.box.style.left = `${p.rect.x}px`; p.box.style.top = `${p.rect.y}px`; });
     }
+
     // 逐格足跡：走過的格子鋪上隊伍色，頭上浮出步數 1、2、3…，讓學生看見「骰幾點就走幾格」
     stepMark(i, cell, n) {
       this.domSteps ||= new Map(); this.domSteps.set(cell, `${n}步`);
@@ -422,7 +465,7 @@
       this.stepMarks = []; if (this.active) this.draw();
     }
     focusPlayer(i, cell) {
-      this.focused = { i, cell };
+      this.focused = { i, cell }; this.boardLabelKey = null;
       if (!this.active || this.overlay) return;
       if (!this.highlight) {
         this.highlight = new THREE.Group(); this.root.add(this.highlight);
@@ -444,17 +487,18 @@
     }
     // 慶祝彩紙：一次性往上噴再落下（約 0.9 秒），不循環、不閃爍；減少動態時不出現
     burst(pos, color, count = 16) {
-      if (!this.active || isCalm() || document.hidden) return;
+      if (!this.active || isCalm() || document.hidden || this.quality === 'light') return;
+      count = Math.min(count, this.quality === 'high' ? 16 : 8);
       const palette = [color, '#ffc643', '#ffffff', '#f08a4b'];
       const bits = [];
       for (let k = 0; k < count; k++) {
         const m = this.box(.12, .03, .07, palette[k % palette.length]); m.castShadow = false;
-        const a = k / count * Math.PI * 2 + Math.random() * .4, sp = .9 + Math.random() * .8;
-        m.userData.v = [Math.cos(a) * sp, 2.4 + Math.random() * 1.4, Math.sin(a) * sp]; m.position.copy(pos); m.position.y += .4;
+        const a = k / count * Math.PI * 2 + artRandom() * .4, sp = .9 + artRandom() * .8;
+        m.userData.v = [Math.cos(a) * sp, 2.4 + artRandom() * 1.4, Math.sin(a) * sp]; m.position.copy(pos); m.position.y += .4;
         bits.push(m);
       }
       const start = pos.clone();
-      this.tween(`burst${performance.now()}${Math.random()}`, 900, (t) => {
+      this.tween(`burst${performance.now()}${artRandom()}`, 450, (t) => {
         bits.forEach((m, k) => {
           const [vx, vy, vz] = m.userData.v;
           m.position.set(start.x + vx * t, start.y + .4 + vy * t - 4.2 * t * t, start.z + vz * t);
@@ -465,15 +509,13 @@
     }
     ownerModel(cell, i, animate) {
       if (this.flags.has(cell)) return;
-      const g = new THREE.Group(); g.position.copy(this.cellPosition(cell)); g.position.x += .54; g.position.z += .08; this.root.add(g); this.flags.set(cell, g);
-      this.rod(new THREE.Vector3(0, .1, 0), new THREE.Vector3(0, .95, 0), .025, '#76593e', g);
-      const flag = this.box(.3, .2, .04, colors[i], g); flag.position.set(.15, .82, 0);
-      const house = this.box(.38, .27, .38, '#fff4d9', g); house.position.y = .22;
-      const roof = this.mesh(new THREE.ConeGeometry(.34, .24, 4), colors[i], g); roof.rotation.y = Math.PI / 4; roof.position.y = .47;
-      const num = this.label(String(i + 1), .24, .24, colors[i], '#ffffff'); num.position.set(.14, 1.04, 0); g.add(num);
-      if (animate) this.tween(`owner${cell}`, 950, (t) => {
-        g.scale.y = .05 + .95 * (1 - Math.pow(1 - Math.min(t * 2, 1), 3));
-        [house, roof, flag].forEach((m) => { m.material.emissive.copy(m.material.color); m.material.emissiveIntensity = 3 * Math.sin(Math.PI * t); });
+      const g = new THREE.Group(); g.position.copy(this.cellPosition(cell)); g.position.x += .57; g.position.z -= .03; this.root.add(g); this.flags.set(cell, g);
+      const house = this.box(.38, .27, .38, '#fff4d9', g); house.position.y = .18;
+      const roof = this.mesh(new THREE.ConeGeometry(.31, .20, 4), colors[i], g); roof.rotation.y = Math.PI / 4; roof.position.y = .41;
+      const pages = this.box(.23, .12, .02, '#fffaf0', g); pages.position.set(0, .17, .20);
+      const num = this.label(String(i + 1), .24, .24, colors[i], '#ffffff'); num.position.set(0, .57, 0); g.add(num);
+      if (animate) this.tween(`owner${cell}`, 480, (t) => {
+        g.position.y = this.cellPosition(cell).y + (1 - Math.min(t / .75, 1)) * .18;
         g.userData.feedback = Math.sin(Math.PI * t);
       });
     }
@@ -481,6 +523,7 @@
       if (!this.renderer) return;
       if (this.overlay) this.layoutOverlay();
       else {
+        if (this.dice) { this.dice.rotation.set(...dieAngles(this.dieValue)); this.dice.position.copy(this.diceHome); }
         this.tokens.forEach((cell, i) => { const g = this.pieces.get(i) || this.piece(i); g.position.copy(this.tokenPosition(i, cell)); });
         this.owners.forEach((i, cell) => this.ownerModel(cell, i, false));
         if (this.focused) this.focusPlayer(this.focused.i, this.focused.cell);
@@ -500,7 +543,7 @@
       if (this.baseTarget) this.baseTarget.setSize(Math.round(r.width * this.renderer.getPixelRatio()), Math.round(r.height * this.renderer.getPixelRatio()));
       const aspect = r.width / r.height;
       this.camera.aspect = aspect; this.camera.updateProjectionMatrix();
-      const angle = 50 * Math.PI / 180, direction = new THREE.Vector3(0, Math.sin(angle), Math.cos(angle));
+      const angle = 60 * Math.PI / 180, direction = new THREE.Vector3(0, Math.sin(angle), Math.cos(angle));
       const target = new THREE.Vector3(0, 0, this.kind === 'snakes' ? .55 : 0);
       let distance = this.overlay ? r.height / 100 / (2 * Math.tan(this.camera.fov * Math.PI / 360)) : 21;
       const place = () => { this.camera.position.copy(target).addScaledVector(direction, distance); this.camera.lookAt(target); this.camera.updateMatrixWorld(); };
@@ -528,22 +571,27 @@
     screenTile(node, color, top, thickness, parent = this.overlayRoot, corners = [[.025, .025], [.975, .025], [.975, .975], [.025, .975]]) {
       // 反投影四角，而非用固定 px/世界比例。透視、縮放、面對面旋轉時仍與 DOM 詞槽對齊。
       const center = this.pointAt(node, top), points = corners.map(([u, v]) => this.pointAt(node, top, u, v).sub(center));
-      const positions = []; [0, -thickness].forEach((y) => points.forEach((p) => positions.push(p.x, y, p.z)));
-      const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-      geo.setAttribute('uv', new THREE.Float32BufferAttribute([...corners.flat(), ...corners.flat()], 2));
-      geo.setIndex([0, 2, 1, 0, 3, 2, 4, 5, 6, 4, 6, 7, 0, 1, 5, 0, 5, 4, 1, 2, 6, 1, 6, 5, 2, 3, 7, 2, 7, 6, 3, 0, 4, 3, 4, 7]);
-      const flat = geo.toNonIndexed(); geo.dispose(); flat.computeVertexNormals();
-      const m = this.mesh(flat, color, parent); m.position.copy(center); m.userData.restY = top; return m;
+      const bevel = Math.min(.02, thickness / 4), shape = new THREE.Shape();
+      points.forEach((p, i) => { if (i) shape.lineTo(p.x, -p.z); else shape.moveTo(p.x, -p.z); }); shape.closePath();
+      const geo = new THREE.ExtrudeGeometry(shape, { depth: thickness - bevel * 2, steps: 1, bevelEnabled: true, bevelSize: bevel, bevelThickness: bevel, bevelSegments: 1, curveSegments: 1 });
+      geo.rotateX(-Math.PI / 2); geo.translate(0, -thickness + bevel, 0);
+      const m = this.mesh(geo, color, parent); m.position.copy(center); m.userData.restY = top; return m;
     }
+
     clearGroup(group) {
       if (!group) return;
       const textures = new Set(), geometries = new Set(), materials = new Set();
-      group.traverse((o) => { if (o.geometry) geometries.add(o.geometry); if (o.userData && o.userData.bloomMaterial) materials.add(o.userData.bloomMaterial); [].concat(o.material || []).forEach((m) => { if (m.map) textures.add(m.map); materials.add(m); }); });
+      group.traverse((o) => { if (o.geometry) geometries.add(o.geometry); if (o.userData && o.userData.bloomMaterial) materials.add(o.userData.bloomMaterial); [].concat(o.material || []).forEach((m) => { if (m.map && ![...(this.woodTextures?.values() || [])].includes(m.map)) textures.add(m.map); materials.add(m); }); });
       textures.forEach((t) => t.dispose()); geometries.forEach((g) => g.dispose()); materials.forEach((m) => m.dispose()); group.clear();
     }
     layoutOverlay() {
       if (!this.width || !this.active) return;
+      const nodes = [...this.host.querySelectorAll(this.kind === 'bingo' ? '.bcell' : '.disc')];
+      const layoutKey = [this.width, this.height, ...nodes.flatMap((n) => { const r = n.getBoundingClientRect(); return [r.left, r.top, r.width, r.height]; }), JSON.stringify([...this.marks])].join('|');
+      if (layoutKey === this.overlayLayoutKey) { if (this.kind === 'bingo') this.drawLines(); else if (this.match) this.drawMatch(this.match); return; }
+      this.overlayLayoutKey = layoutKey;
       this.finishTweens();
+      this.matchRoot = null;
       if (this.overlayRoot) { this.clearGroup(this.overlayRoot); this.root.remove(this.overlayRoot); }
       this.overlayRoot = new THREE.Group(); this.root.add(this.overlayRoot); this.meshCells.clear(); this.discs = [];
       if (this.kind === 'bingo') {
@@ -553,61 +601,69 @@
         this.buttons.forEach((b, i) => {
           const marked = this.marks.has(i);
           const mk = this.marks.get(i);
-          const m = this.screenTile(b, marked ? (mk.color || (mk.learned ? '#245c99' : '#af4b16')) : '#f4dbaf', marked ? .38 : .04, marked ? .58 : .24);
+          const m = this.screenTile(b, marked ? (mk.color || (mk.learned ? '#245c99' : '#af4b16')) : '#f4dbaf', marked ? .06 : .04, marked ? .14 : .10);
           this.meshCells.set(i, m);
         });
         this.drawLines();
       } else {
         this.host.querySelectorAll('.disc').forEach((d, i) => {
-          const r = d.getBoundingClientRect(), center = this.pointAt(d, .05);
-          const left = this.pointAt(d, .05, .03, .5), right = this.pointAt(d, .05, .97, .5);
-          const back = this.pointAt(d, .05, .5, .03), front = this.pointAt(d, .05, .5, .97);
-          const w = left.distanceTo(right), depth = back.distanceTo(front);
-          const g = new THREE.Group(); g.position.copy(center); this.overlayRoot.add(g); this.discs.push(g);
-          // 雙人分區較窄時採立體長卡，詞槽仍完整留在 DOM。
-          const tall = r.height > r.width * 1.3;
-          const rim = tall ? this.roundedBox(w, .28, depth, i % 2 ? '#246b9c' : '#bf601e', g)
-            : this.mesh(new THREE.CylinderGeometry(w / 2, w / 2, .28, 80), i % 2 ? '#246b9c' : '#bf601e', g);
-          if (!tall) rim.scale.z = depth / w; rim.position.y = -.22;
-          const face = tall ? this.roundedBox(w * .95, .13, depth * .95, i % 2 ? '#b6dded' : '#f6ce87', g, .04)
-            : this.mesh(new THREE.CylinderGeometry(w * .475, w * .475, .13, 80), i % 2 ? '#b6dded' : '#f6ce87', g);
-          if (!tall) face.scale.z = depth / w; face.position.y = -.05; face.material.roughness = .8;
-          g.rotation.x = -.035; g.rotation.z = i % 2 ? -.025 : .025;
-          d.querySelectorAll('.sym').forEach((b) => this.screenTile(b, '#bb8b50', .06, .13));
+          const face = this.screenTile(d, i % 2 ? '#dcecf3' : '#f8e8cc', .02, .065);
+          face.material.roughness = .95; face.castShadow = false; this.discs.push(face);
         });
         if (this.match) this.drawMatch(this.match);
       }
       this.draw();
     }
     deal() {
-      this.match = null; this.pendingDeal = true;
+      this.match = null; this.pendingDeal = true; this.feedbackLayer?.replaceChildren?.();
+      if (this.matchRoot) { this.clearGroup(this.matchRoot); this.matchRoot.parent?.remove(this.matchRoot); this.matchRoot = null; }
       if (!this.active || !this.width) return;
       this.pendingDeal = false; this.layoutOverlay();
-      this.discs.forEach((g, i) => this.tween(`deal${i}`, 540 + i * 70, (t) => {
-        const e = 1 - Math.pow(1 - t, 3); g.position.y = .05 + (1 - e) * .8; g.rotation.z = (i % 2 ? -1 : 1) * (.025 + (1 - e) * .15);
+      this.discs.forEach((g, i) => this.tween(`deal${i}`, 250, (t) => {
+        g.material.transparent = t < 1; g.material.opacity = t;
       }));
     }
-    markMatch(text) { this.match = text; this.pendingDeal = false; if (this.active) { this.layoutOverlay(); this.draw(); } }
+    markMatch(text) {
+      this.match = text; this.pendingDeal = false;
+      if (this.active) { this.finishTweens(); this.drawMatch(text); this.draw(); }
+    }
     drawMatch(text) {
+      this.feedbackLayer.replaceChildren();
       const nodes = [...this.host.querySelectorAll('.sym')].filter((b) => b.textContent === text);
       if (nodes.length !== 2) return;
-      const points = nodes.map((n) => this.pointAt(n, .28, .5, 1));
-      const mid = points[0].clone().lerp(points[1], .5); mid.z += .35;
-      const path = new THREE.CatmullRomCurve3([points[0], mid, points[1]]);
-      const edge = this.mesh(new THREE.TubeGeometry(path, 40, .095, 8, false), '#96570d', this.overlayRoot); edge.renderOrder = 6; edge.material.depthTest = false;
-      const beam = new THREE.Mesh(new THREE.TubeGeometry(path, 40, .055, 8, false), this.material('#ffc643', true)); beam.renderOrder = 7; beam.material.depthTest = false; beam.userData.feedback = 1; this.overlayRoot.add(beam);
-      points.forEach((p) => { const ring = this.mesh(new THREE.TorusGeometry(.21, .045, 8, 32), '#ffc643', this.overlayRoot); ring.rotation.x = Math.PI / 2; ring.position.copy(p); ring.material.emissive.copy(ring.material.color); ring.material.emissiveIntensity = 2; });
+      const bounds = this.host.getBoundingClientRect(), flipped = !!this.host.closest('.zone.flip');
+      const localRect = (node) => {
+        const r = node.getBoundingClientRect();
+        const left = flipped ? bounds.right - r.right : r.left - bounds.left;
+        const top = flipped ? bounds.bottom - r.bottom : r.top - bounds.top;
+        return { left, top, right: left + r.width, bottom: top + r.height, width: r.width, height: r.height };
+      };
+      const routes = nodes.map((node) => {
+        const r = localRect(node), card = localRect(node.closest('.disc')), x = (r.left + r.right) / 2;
+        const side = x < (card.left + card.right) / 2 ? card.left - 4 : card.right + 4;
+        return [{ x, y: r.bottom + 1 }, { x, y: r.bottom + 6 }, { x: side, y: r.bottom + 6 }, { x: side, y: card.bottom + 8 }];
+      });
+      const route = [...routes[0], ...routes[1].reverse()];
+      for (let i = 1; i < route.length; i++) {
+        const a = route[i - 1], b = route[i], rail = el('span', 'rg3d-feedback-line');
+        Object.assign(rail.style, { left: `${a.x}px`, top: `${a.y}px`, width: `${Math.hypot(b.x - a.x, b.y - a.y)}px`, transform: `translateY(-50%) rotate(${Math.atan2(b.y - a.y, b.x - a.x)}rad)` });
+        this.feedbackLayer.append(rail);
+      }
     }
     // color：對抗模式的隊伍色（沒有就用原本的橘／藍）
     markCell(i, learned, color) {
       this.marks.set(i, { learned, color });
       if (!this.active) return;
       let m = this.meshCells.get(i); if (!m) return;
-      this.finishTweens(); m.geometry.dispose(); m.material.dispose(); this.overlayRoot.remove(m);
-      m = this.screenTile(this.buttons[i], color || (learned ? '#245c99' : '#af4b16'), .38, .58); this.meshCells.set(i, m);
-      if (!learned) { const c = this.pointAt(this.buttons[i], .6); this.burst(c, color || '#af4b16', 10); }
-      this.tween(`mark${i}`, 520, (t) => { m.rotation.x = Math.PI * 2 * (1 - Math.pow(1 - t, 3)); m.position.y = .04 + .34 * t + Math.sin(t * Math.PI) * .2; });
+      this.finishTweens();
+      m.material.color.set(color || (learned ? '#245c99' : '#af4b16')).convertSRGBToLinear();
+      m.scale.y = 1.4; m.position.y = .06;
+      // Material transition only: DOM words and hit areas remain stationary.
+      const destination = m.material.color.clone(); m.material.color.set('#fff3d7').convertSRGBToLinear();
+      const initial = m.material.color.clone();
+      this.tween(`mark${i}`, 260, (t) => { m.material.color.copy(initial).lerp(destination, t); });
     }
+
     setLines(lines) {
       this.lineState = lines.map((l) => l.slice());
       if (this.active && this.kind === 'bingo') { this.drawLines(); this.draw(); }
@@ -616,7 +672,8 @@
       if (this.beams) { this.clearGroup(this.beams); if (this.beams.parent) this.beams.parent.remove(this.beams); }
       this.beams = new THREE.Group(); this.overlayRoot.add(this.beams);
       this.feedbackLayer.replaceChildren();
-      this.lineState.forEach((line) => {
+      this.host.querySelectorAll('.rg3d-line-badge').forEach((n) => n.remove());
+      this.lineState.forEach((line, index) => {
         const first = this.buttons[line[0]], last = this.buttons[line[line.length - 1]];
         const start = this.pointAt(first, .43, .5, .93), end = this.pointAt(last, .43, .5, .93);
         // 光束位於詞塊下緣，不蓋住字。DOM 實線與勾號同時保留。
@@ -625,7 +682,25 @@
         // DOM 成功色會遮住畫布；另畫一道同位置的細光軌，確保每格下緣都看得見連線。
         const firstRect = first.getBoundingClientRect(), lastRect = last.getBoundingClientRect();
         const horizontal = Math.abs(firstRect.top - lastRect.top) < 2, vertical = Math.abs(firstRect.left - lastRect.left) < 2;
-        if (!horizontal && !vertical) return; // 斜線在畫布與格框呈現，不能畫過 DOM 語詞。
+        line.forEach((cell) => {
+          const badge = el('span', 'rg3d-line-badge', `${index + 1}`); badge.setAttribute('aria-label', `第${index + 1}線：${horizontal ? '橫線' : vertical ? '直線' : firstRect.left < lastRect.left ? '左上到右下' : '右上到左下'}`);
+          badge.style.left = `${index * 18 + 3}px`; this.buttons[cell].append(badge);
+        });
+        if (!horizontal && !vertical) {
+          const bounds = this.host.getBoundingClientRect();
+          const segment = (a, b) => {
+            const rail = el('span', 'rg3d-feedback-line');
+            Object.assign(rail.style, { left: `${a.x - bounds.left}px`, top: `${a.y - bounds.top}px`, width: `${Math.hypot(b.x - a.x, b.y - a.y)}px`, transform: `translateY(-50%) rotate(${Math.atan2(b.y - a.y, b.x - a.x)}rad)` });
+            this.feedbackLayer.append(rail);
+          };
+          for (let j = 1; j < line.length; j++) {
+            const a = this.buttons[line[j - 1]].getBoundingClientRect(), b = this.buttons[line[j]].getBoundingClientRect();
+            const right = a.left < b.left, x1 = right ? a.right + 2 : a.left - 2, x2 = right ? b.left - 2 : b.right + 2, y = (a.bottom + b.top) / 2;
+            const route = [{ x: x1, y: a.bottom - 3 }, { x: x1, y }, { x: x2, y }, { x: x2, y: b.top + 3 }];
+            route.slice(1).forEach((p, k) => segment(route[k], p));
+          }
+          return;
+        }
         const bounds = this.host.getBoundingClientRect(), points = [first, last].map((node) => {
           const r = node.getBoundingClientRect(); return { x: r.left + r.width * (vertical ? .985 : .5) - bounds.left, y: r.top + r.height * (horizontal ? .985 : .5) - bounds.top };
         });
@@ -636,6 +711,7 @@
     }
     tween(key, duration, update) {
       if (!this.active || document.hidden) { update(1); this.draw(); return Promise.resolve(); }
+      if (!this.tweens.size) this.lastActiveFrame = null;
       const old = this.tweens.get(key); if (old) { old.update(1); old.resolve(); }
       return new Promise((resolve) => { this.tweens.set(key, { start: performance.now(), duration, update, resolve }); this.draw(); });
     }
@@ -685,8 +761,10 @@
         this.frame = 0;
         try {
           for (const [key, a] of this.tweens) { const t = Math.min(1, Math.max(0, (now - a.start) / a.duration)); a.update(t); if (t === 1) { this.tweens.delete(key); a.resolve(); } }
+          this.sampleFrame(now); if (!this.active) return;
+          this.renderer.shadowMap.needsUpdate = true;
           this.layoutBoardLabels();
-          if (this.composer) {
+          if (this.composer && this.tweens.size) {
             try { this.renderEffects(); } catch (_) { this.disposeEffects(); this.renderer.setRenderTarget(null); this.renderer.render(this.scene, this.camera); }
           } else this.renderer.render(this.scene, this.camera);
           if (this.tweens.size) this.draw();
@@ -698,6 +776,8 @@
       this.disposed = true; this.finishTweens(); cancelAnimationFrame(this.frame); this.resizeObserver.disconnect();
       this.clearGroup(this.root); this.labels = []; this.meshCells.clear(); this.pieces.clear(); this.flags.clear();
       this.disposeEffects();
+      this.woodTextures?.forEach((t) => t.dispose()); this.woodTextures?.clear(); this.environmentTarget?.dispose();
+      this.host.querySelectorAll('.rg3d-line-badge').forEach((n) => n.remove());
       if (this.renderer) { this.renderer.dispose(); this.renderer.forceContextLoss(); }
       if (this.feedbackLayer) this.feedbackLayer.remove();
       this.domLabels?.remove(); this.surface.remove(); instances.delete(this);
