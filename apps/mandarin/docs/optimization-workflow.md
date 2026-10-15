@@ -237,6 +237,8 @@ python3 Chinese/Review-Games/tools/check_data.py   # 全部 ✅ 才算過
   - **視覺驗收**：`node Chinese/Review-Games/tools/qa/cdp.mjs <網址> <截圖.png> Chinese/Review-Games/tools/qa/play-<遊戲>.js`（無頭 Chrome、強制關閉減少動態），四款都要截圖看過；`node --test Chinese/Review-Games/tests/scene3d.test.cjs` 要全過。
   - 語音：大富翁的「地」朗讀時換成同音「弟」（`common.js` speak），畫面文字不變。
 
+- 2026-10-16 補（CF 指定）：**賓果分隊玩法**：分 2 隊以上時可選「合作」（共用一張卡、一起連線，原玩法）或「對抗」：答對的格子塗該隊代表色＋隊號，只有同一隊顏色連成的線才算，可擋住對手；看答案／錯後才答對的格子變灰「一起學過・不能用」，不計分。先連到目標條數的隊伍賓果。3D 由 `markCell(i, learned, color)` 帶隊伍色。
+
 ### 3D 課文偵探密室（第六款，2026-10-16 加入）
 
 - 檔案：`detective.html`（頁面）、`detective.js`（流程與介面）、`detective-core.js`（純邏輯：組局、檢查答案、解鎖、提示、紀錄）、`detective3d.js`（Three.js r128 房間；減少動態／WebGL 失敗改 2D 平面圖）、`detective.css`。網址 `detective.html?g=G1A`。

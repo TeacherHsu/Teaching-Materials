@@ -492,7 +492,8 @@
         const tray = this.screenTile(grid, '#ffffff', -.3, .3, this.overlayRoot, [[-.025, -.03], [1.025, -.03], [1.05, 1.035], [-.05, 1.035]]); tray.material.map = this.woodTexture('board');
         this.buttons.forEach((b, i) => {
           const marked = this.marks.has(i);
-          const m = this.screenTile(b, marked ? (this.marks.get(i) ? '#245c99' : '#af4b16') : '#f4dbaf', marked ? .38 : .04, marked ? .58 : .24);
+          const mk = this.marks.get(i);
+          const m = this.screenTile(b, marked ? (mk.color || (mk.learned ? '#245c99' : '#af4b16')) : '#f4dbaf', marked ? .38 : .04, marked ? .58 : .24);
           this.meshCells.set(i, m);
         });
         this.drawLines();
@@ -537,12 +538,13 @@
       const beam = new THREE.Mesh(new THREE.TubeGeometry(path, 40, .055, 8, false), this.material('#ffc643', true)); beam.renderOrder = 7; beam.material.depthTest = false; beam.userData.feedback = 1; this.overlayRoot.add(beam);
       points.forEach((p) => { const ring = this.mesh(new THREE.TorusGeometry(.21, .045, 8, 32), '#ffc643', this.overlayRoot); ring.rotation.x = Math.PI / 2; ring.position.copy(p); ring.material.emissive.copy(ring.material.color); ring.material.emissiveIntensity = 2; });
     }
-    markCell(i, learned) {
-      this.marks.set(i, learned);
+    // color：對抗模式的隊伍色（沒有就用原本的橘／藍）
+    markCell(i, learned, color) {
+      this.marks.set(i, { learned, color });
       if (!this.active) return;
       let m = this.meshCells.get(i); if (!m) return;
       this.finishTweens(); m.geometry.dispose(); m.material.dispose(); this.overlayRoot.remove(m);
-      m = this.screenTile(this.buttons[i], learned ? '#245c99' : '#af4b16', .38, .58); this.meshCells.set(i, m);
+      m = this.screenTile(this.buttons[i], color || (learned ? '#245c99' : '#af4b16'), .38, .58); this.meshCells.set(i, m);
       this.tween(`mark${i}`, 520, (t) => { m.rotation.x = Math.PI * 2 * (1 - Math.pow(1 - t, 3)); m.position.y = .04 + .34 * t + Math.sin(t * Math.PI) * .2; });
     }
     setLines(lines) {

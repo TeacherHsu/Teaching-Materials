@@ -20,6 +20,12 @@
     .bcell.on::before { content: '✓'; position: absolute; top: 2px; right: 8px; font-size: 1rem; }
     .bcell.learned { background: #dbe8fb; color: var(--ink); border-color: #1f4f8a; }
     .bcell.learned::before { content: '一起學過'; position: absolute; top: 2px; left: 0; right: 0; font-size: .7rem; }
+    /* 對抗模式：各隊佔的格子塗隊伍色＋隊號（色弱也分得出），沒人得分的「一起學過」是灰色、誰都不能用 */
+    .bcell.team { background: var(--tc); color: #fff; border-color: var(--tc); }
+    .bcell.team::before { content: attr(data-team); position: absolute; top: 3px; right: 6px; font-size: .8rem; background: #fff; color: var(--tc); border-radius: 999px; min-width: 1.4em; line-height: 1.4em; }
+    .bcell.neutral { background: #e4ded5; color: #5b4a3a; border-color: #a99a88; }
+    .bcell.neutral::before { content: '一起學過・不能用'; position: absolute; top: 2px; left: 0; right: 0; font-size: .62rem; }
+    .vsrule { background: #fff3e0; border-radius: 14px; padding: 8px 12px; font-weight: 700; }
     .bcell.line { border-style: solid; border-color: var(--ok); border-width: 5px; }
     .bcell.hinted { border: 4px dashed #7a4a0c; }
     .bcell.hinted::after { content: '提示'; position: absolute; bottom: 2px; left: 0; right: 0; font-size: .7rem; color: #7a4a0c; }
@@ -43,14 +49,17 @@
   <script src="common.js"></script>
   <script src="scene3d.js"></script>
   <script>
-    const { h, shuffle, speak, speakBtn, loadBank, setupPanel, header, token, TEAM_NAMES } = RG;
+    const { h, shuffle, speak, speakBtn, loadBank, setupPanel, header, token, TEAM_NAMES, TEAM_COLORS } = RG;
     const SIDE = { support: 3, standard: 4, challenge: 5 };
 
     loadBank().then((bank) => {
       const app = document.getElementById('app');
       const goalSel = h('select', { 'aria-label': '目標' }, [1, 2, 3].map((n) => h('option', { value: n }, `連成 ${n} 條線`)));
-      const modeSel = h('select', { 'aria-label': '模式' }, [h('option', { value: 1 }, '個人練習'), ...[2, 3, 4].map((n) => h('option', { value: n }, `投影分 ${n} 隊輪流點`))]);
-      const { el: panel, settings } = setupPanel(bank, { types: [], howto: [['👂', '聽（看）意思'], ['👆', '點出那個語詞'], ['🎯', '連成一條線就賓果']], levelNote: '支持：3×3｜標準：4×4｜挑戰：5×5（加入成語）。都不限時。', extra: [h('div', { class: 'row' }, [h('strong', {}, '模式'), modeSel, h('strong', {}, '目標'), goalSel])] });
+      const modeSel = h('select', { 'aria-label': '模式', onchange: () => playRow.classList.toggle('hidden', modeSel.value === '1') }, [h('option', { value: 1 }, '個人練習'), ...[2, 3, 4].map((n) => h('option', { value: n }, `投影分 ${n} 隊輪流點`))]);
+      // 分隊時可選合作（共用一張卡）或對抗（各隊佔格，可以擋住對手的線）
+      const playSel = h('select', { 'aria-label': '分隊玩法' }, [h('option', { value: 'coop' }, '合作：大家一起連線'), h('option', { value: 'versus' }, '對抗：各隊佔格、擋對手')]);
+      const playRow = h('div', { class: 'row hidden' }, [h('strong', {}, '分隊玩法'), playSel, h('span', { class: 'note' }, '對抗：答對的格子變成自己隊的顏色，連成自己顏色的線才算；看答案的格子誰都不能用。')]);
+      const { el: panel, settings } = setupPanel(bank, { types: [], howto: [['👂', '聽（看）意思'], ['👆', '點出那個語詞'], ['🎯', '連成一條線就賓果']], levelNote: '支持：3×3｜標準：4×4｜挑戰：5×5（加入成語）。都不限時。', extra: [h('div', { class: 'row' }, [h('strong', {}, '模式'), modeSel, h('strong', {}, '目標'), goalSel]), playRow] });
       const msg = h('p', { class: 'note', role: 'alert' });
       app.replaceChildren(header(bank, '語詞賓果'), panel,
         h('p', { class: 'note' }, '看（聽）語詞的意思，在賓果卡上點出那個語詞。點錯會給線索；橫、直、斜連成一條線就賓果！'),
@@ -60,6 +69,8 @@
         const n = SIDE[settings.level];
         const goal = Number(goalSel.value);
         const nTeams = Number(modeSel.value);
+        const versus = nTeams > 1 && playSel.value === 'versus';
+        const owner = new Map(); // 對抗模式：格子 → 隊伍（-1＝一起學過，誰都不能用）
         const pool = [
           ...bank.words.filter((w) => settings.lessons.has(w.lesson)).map((w) => ({ text: w.word, clue: w.meaning, lesson: w.lesson })),
           ...(settings.level === 'challenge' ? bank.idioms.filter((i) => settings.lessons.has(i.lesson)).map((i) => ({ text: i.idiom, clue: i.definition, lesson: i.lesson })) : []),
@@ -80,17 +91,21 @@
         app.replaceChildren(header(bank, '語詞賓果'), h('div', { class: 'clue' }, [h('span', { style: 'font-size:1.8rem', 'aria-hidden': 'true' }, '💡'), clueTxt, acts]), fb, bar, h('div', { style: 'height:10px' }), h('div', { class: 'bingo-host' }, grid));
         const view = window.RG3D?.mount({ kind: 'bingo', host: grid.parentElement, buttons: btns });
 
-        const lines = () => {
+        const allLines = () => {
           const L = [];
           for (let r = 0; r < n; r++) L.push([...Array(n)].map((_, c) => r * n + c));
           for (let c = 0; c < n; c++) L.push([...Array(n)].map((_, r) => r * n + c));
           L.push([...Array(n)].map((_, i) => i * n + i), [...Array(n)].map((_, i) => i * n + (n - 1 - i)));
-          return L.filter((l) => l.every((i) => marked.has(i)));
+          return L;
         };
+        // 合作：全部已標記的格子；對抗：同一隊的格子才連得成線
+        const teamLines = (k) => allLines().filter((l) => l.every((i) => owner.get(i) === k));
+        const lines = () => (versus ? teamScore.flatMap((_, k) => teamLines(k)) : allLines().filter((l) => l.every((i) => marked.has(i))));
+        const winner = () => (versus ? teamScore.findIndex((_, k) => teamLines(k).length >= goal) : -1);
         function renderBar() {
-          const k = lines().length;
-          bar.replaceChildren(h('span', {}, `已連 ${k} / ${goal} 條線`), h('span', {}, `已練 ${marked.size} / ${n * n} 個詞`),
-            ...(nTeams > 1 ? teamScore.map((s, i) => h('span', { class: i === team ? 'team now' : '' }, [token(i), ` ${TEAM_NAMES[i]} ${s}`])) : []));
+          const k = versus ? Math.max(...teamScore.map((_, t) => teamLines(t).length)) : lines().length;
+          bar.replaceChildren(versus ? h('span', {}, `先連 ${goal} 條自己顏色的線就贏`) : h('span', {}, `已連 ${k} / ${goal} 條線`), h('span', {}, `已練 ${marked.size} / ${n * n} 個詞`),
+            ...(nTeams > 1 ? teamScore.map((s, i) => h('span', { class: i === team ? 'team now' : '' }, [token(i), ` ${TEAM_NAMES[i]} ${s} 格${versus ? `・${teamLines(i).length} 線` : ''}`])) : []));
           return k;
         }
         const clueSpeech = () => `哪個語詞的意思是，${cur.clue}`;
@@ -108,16 +123,23 @@
         }
         const advanceTeam = () => { team = (team + 1) % nTeams; };
         function settle(i, learned) {
-          marked.add(i); btns[i].classList.add(learned ? 'learned' : 'on');
+          marked.add(i);
+          if (versus) {
+            owner.set(i, learned ? -1 : team);
+            if (learned) btns[i].classList.add('neutral');
+            else { btns[i].classList.add('team'); btns[i].style.setProperty('--tc', TEAM_COLORS[team]); btns[i].dataset.team = String(team + 1); btns[i].setAttribute('aria-label', `${cells[i].text}，${TEAM_NAMES[team]}`); }
+          } else btns[i].classList.add(learned ? 'learned' : 'on');
           btns.forEach((b) => b.classList.remove('hinted'));
           lines().flat().forEach((j) => btns[j].classList.add('line'));
-          view?.markCell(i, learned); view?.setLines(lines());
+          view?.markCell(i, learned, versus ? (learned ? '#8f8478' : TEAM_COLORS[team]) : null); view?.setLines(lines());
           fb.className = learned ? 'fb learn' : 'fb ok';
-          fb.textContent = learned ? `一起學：「${cur.text}」＝${cur.clue}` : `✓「${cur.text}」＝${cur.clue}`;
+          fb.textContent = learned ? `一起學：「${cur.text}」＝${cur.clue}${versus ? '（這格誰都不能用）' : ''}` : `✓「${cur.text}」＝${cur.clue}${versus ? `（${TEAM_NAMES[team]}佔下這格）` : ''}`;
           speak(`${cur.text}，${cur.clue}`);
           if (!learned && nTeams > 1) teamScore[team]++;
+          const won = winner();
           advanceTeam();
-          const k = renderBar();
+          const k = versus ? (won >= 0 ? goal : 0) : renderBar();
+          if (versus) renderBar();
           // 停在這裡，讓學生把語詞和意思連起來，按「下一題」才換
           const nextBtn = h('button', { class: 'btn primary', type: 'button', onclick: () => { cur = null; (k >= goal && !bingoShown) ? bingo() : next(); } }, k >= goal && !bingoShown ? '看結果' : '下一題');
           acts.replaceChildren(nextBtn); nextBtn.focus();
@@ -141,18 +163,19 @@
         }
         function bingo() {
           bingoShown = true;
-          clueTxt.textContent = `🎉 賓果！連成 ${lines().length} 條線。`;
+          const w = winner();
+          clueTxt.textContent = w >= 0 ? `🎉 賓果！${TEAM_NAMES[w]}先連成 ${goal} 條線！` : `🎉 賓果！連成 ${lines().length} 條線。`;
           speak('賓果！');
           const left = n * n - marked.size;
           acts.replaceChildren(
             ...(left ? [h('button', { class: 'btn primary', type: 'button', onclick: () => next() }, `繼續收集剩下 ${left} 個詞`)] : []),
             h('button', { class: 'btn', type: 'button', onclick: () => end() }, '結束'));
-          fb.textContent = nTeams > 1 ? teamScore.map((s, i) => `${TEAM_NAMES[i]} ${s} 格`).join('｜') : '';
+          fb.textContent = nTeams > 1 ? teamScore.map((s, i) => `${TEAM_NAMES[i]} ${s} 格${versus ? `、${teamLines(i).length} 線` : ''}`).join('｜') : '';
           acts.querySelector('button').focus();
         }
         function end() {
           cur = null;
-          clueTxt.textContent = `完成！練了 ${marked.size} 個詞。`;
+          clueTxt.textContent = `完成！練了 ${marked.size} 個詞。${versus ? teamScore.map((s, i) => `${TEAM_NAMES[i]} ${s} 格、${teamLines(i).length} 線`).join('｜') : ''}`;
           fb.textContent = '';
           acts.replaceChildren(h('details', { class: 'note' }, [h('summary', {}, '教師詳情'), `出題 ${asked}，點錯 ${misses} 次`]),
             h('button', { class: 'btn primary', type: 'button', onclick: () => location.reload() }, '再玩一次'));

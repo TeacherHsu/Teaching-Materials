@@ -121,7 +121,8 @@ test('CDN 等待期間已找到的詞，不會被延遲的發牌清除', async (
 test('2D 期間的賓果記號、連線會留在同一份視圖狀態', async () => {
   const e = environment({ calm: true }); const v = e.mount({ kind: 'bingo' });
   v.markCell(0, false); v.markCell(1, true); v.markCell(2, false); v.setLines([[0, 1, 2]]);
-  assert.equal(v.marks.get(0), false); assert.equal(v.marks.get(1), true);
+  assert.equal(v.marks.get(0).learned, false); assert.equal(v.marks.get(1).learned, true);
+  v.markCell(3, false, '#c0362c'); assert.equal(v.marks.get(3).color, '#c0362c'); // 對抗模式隊伍色
   assert.equal(JSON.stringify(v.lineState), '[[0,1,2]]'); v.dispose();
 });
 
