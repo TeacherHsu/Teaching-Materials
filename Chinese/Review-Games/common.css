@@ -1,7 +1,7 @@
 /* 綜合複習遊戲共用樣式：投影與平板都要看得清楚（字大、對比高、按鈕 ≥48px） */
 :root {
   --bg: #fdf6ec; --ink: #2b1d12; --muted: #6b5643; --card: #ffffff; --line: #e8d9c4;
-  --brand: #e2702d; --brand-ink: #ffffff; --ok: #1f8a4c; --bad: #c0362c; --focus: #2563eb;
+  --brand: #a84b17; --accent: #f0a030; --brand-ink: #ffffff; --ok: #1f8a4c; --bad: #c0362c; --focus: #2563eb;
   --c1: #e05a4f; --c2: #f0a030; --c3: #3fa45b; --c4: #3b82c4; --c5: #8b5cc8; --c6: #d1559a;
   font-size: 20px;
 }
@@ -40,10 +40,17 @@ select { min-height: 48px; border-radius: 12px; border: 2px solid var(--line); p
 .qopts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 10px; }
 .qopt { min-height: 64px; text-align: left; padding: 10px 16px; border-radius: 16px; border: 3px solid var(--line); background: #fffaf3; font-size: 1.2rem; font-weight: 700; }
 .qopt.ok { border-color: var(--ok); background: #e3f5ea; }
-.qopt.bad { border-color: var(--bad); background: #fbe4e1; text-decoration: line-through; }
+.qopt.bad { border-color: var(--bad); border-style: dashed; background: #fbe4e1; color: #5b2a24; }
+.qno { display: block; font-size: .8rem; font-weight: 800; color: var(--bad); }
+.qopt { color: var(--ink); }
 .qopt.zy { font-size: 1.35rem; letter-spacing: 2px; }
 .qfeed { margin-top: 14px; font-size: 1.15rem; font-weight: 800; min-height: 1.6em; }
-.qfeed.ok { color: var(--ok); } .qfeed.bad { color: var(--bad); }
+.qfeed.ok { color: var(--ok); } .qfeed.bad { color: var(--bad); } .qfeed.hint { color: #7a4a0c; } .qfeed.learn { color: #1f4f8a; }
+.qwhy { font-size: 1rem; font-weight: 700; margin-top: 4px; color: var(--ink); }
+.qtools { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+.qtitle { color: var(--muted); font-weight: 700; margin-top: 6px; }
+.qspk { display: flex; gap: 6px; }
+.qoptrow { display: flex; gap: 6px; min-width: 0; } .qoptrow .qopt { flex: 1; }
 .qtimer { height: 10px; border-radius: 5px; background: var(--line); overflow: hidden; margin-top: 10px; }
 .qtimer i { display: block; height: 100%; background: var(--brand); width: 100%; }
 .qfoot { display: flex; justify-content: flex-end; margin-top: 14px; }
@@ -51,7 +58,9 @@ select { min-height: 48px; border-radius: 12px; border: 2px solid var(--line); p
 /* 計分板 */
 .teams { display: flex; flex-wrap: wrap; gap: 10px; }
 .team { flex: 1 1 160px; border-radius: 16px; padding: 10px 14px; background: var(--card); border: 3px solid var(--line); font-weight: 800; }
-.team.now { border-color: var(--ink); box-shadow: 0 0 0 4px rgba(226,112,45,.35); }
+.team.now { border-color: var(--ink); box-shadow: 0 0 0 4px rgba(168,75,23,.35); }
+.team.now::after { content: '▶ 輪到你'; display: block; font-size: .85rem; color: var(--brand); }
+.token { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.5); color: #fff; font-weight: 900; font-size: 16px; line-height: 1; }
 .team .big { font-size: 1.6rem; }
 .dot { display: inline-block; width: 18px; height: 18px; border-radius: 50%; vertical-align: -2px; margin-right: 6px; }
 .log { color: var(--muted); font-weight: 700; min-height: 1.5em; margin: 8px 0; }
@@ -67,7 +76,16 @@ select { min-height: 48px; border-radius: 12px; border: 2px solid var(--line); p
 .gcard:hover { border-color: var(--brand); }
 .gcard .ico { font-size: 2.6rem; }
 .gcard h2 { margin: 6px 0; font-size: 1.3rem; }
-.gcard p { margin: 0; color: var(--muted); font-size: .9rem; }
+.gcard p { margin: 0 0 8px; color: var(--ink); font-size: 1.05rem; }
+.gcard .who { display: inline-block; font-size: .85rem; font-weight: 800; background: #fff3e0; border-radius: 999px; padding: 2px 10px; }
 .hidden { display: none !important; }
 @media (max-width: 600px) { :root { font-size: 17px; } }
-@media (prefers-reduced-motion: reduce) { .die.roll { animation: none; } * { transition: none !important; } }
+/* 投影模式：遠距離可讀 */
+body.proj { font-size: 26px; }
+body.proj .qbox { width: min(1040px, 96vw); }
+body.proj .qstem { font-size: 38px; line-height: 1.55; }
+body.proj .qopt { font-size: 31px; min-height: 84px; }
+body.proj .token { width: 40px; height: 40px; font-size: 20px; }
+/* 減少動態：系統設定或面板開關 */
+body.calm *, body.calm *::before, body.calm *::after { animation: none !important; transition: none !important; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }

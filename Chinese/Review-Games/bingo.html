@@ -8,52 +8,66 @@
   <link rel="stylesheet" href="common.css">
   <style>
     .clue { background: var(--card); border: 3px solid var(--brand); border-radius: 20px; padding: 14px 18px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 10px 0; }
-    .clue .txt { flex: 1 1 220px; min-width: 0; font-size: 1.35rem; font-weight: 800; }
-    .bgrid { display: grid; gap: 8px; max-width: 640px; margin: 0 auto; }
-    .bcell { aspect-ratio: 1; border-radius: 16px; border: 3px solid var(--line); background: #fffaf3; font-size: 1.35rem; font-weight: 900; padding: 4px; word-break: break-all; }
+    .clue .txt { flex: 1 1 260px; min-width: 0; font-size: 1.4rem; font-weight: 800; }
+    .clue .acts { display: flex; gap: 8px; flex-wrap: wrap; }
+    .fb { font-weight: 800; font-size: 1.15rem; min-height: 1.6em; text-align: center; }
+    .fb.ok { color: var(--ok); } .fb.hint { color: #7a4a0c; } .fb.learn { color: #1f4f8a; }
+    .bgrid { display: grid; gap: 8px; max-width: 680px; margin: 0 auto; }
+    .bcell { position: relative; aspect-ratio: 1; border-radius: 16px; border: 3px solid var(--line); background: #fffaf3; color: var(--ink); font-size: 1.5rem; font-weight: 900; padding: 4px; word-break: keep-all; line-height: 1.25; }
+    .bgrid.n3 .bcell { font-size: 1.9rem; }
+    .bgrid.n5 .bcell { font-size: 1.2rem; }
     .bcell.on { background: var(--brand); color: #fff; border-color: var(--brand); }
-    .bcell.line { box-shadow: 0 0 0 4px var(--ok); }
-    .bcell.bad { animation: shake .35s; }
+    .bcell.on::before { content: '✓'; position: absolute; top: 2px; right: 8px; font-size: 1rem; }
+    .bcell.learned { background: #dbe8fb; color: var(--ink); border-color: #1f4f8a; }
+    .bcell.learned::before { content: '一起學過'; position: absolute; top: 2px; left: 0; right: 0; font-size: .7rem; }
+    .bcell.line { border-style: solid; border-color: var(--ok); border-width: 5px; }
+    .bcell.hinted { border: 4px dashed #7a4a0c; }
+    .bcell.hinted::after { content: '提示'; position: absolute; bottom: 2px; left: 0; right: 0; font-size: .7rem; color: #7a4a0c; }
+    .bcell.bad { animation: shake .35s; border-color: var(--bad); border-style: dashed; }
     @keyframes shake { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
     .bar { display: flex; gap: 20px; justify-content: center; font-weight: 800; flex-wrap: wrap; }
-    @media (max-width: 600px) { .bcell { font-size: .9rem; border-radius: 10px; } .bgrid { gap: 4px; } }
+    @media (max-width: 600px) { .bcell, .bgrid.n3 .bcell, .bgrid.n5 .bcell { font-size: 1rem; border-radius: 10px; } .bgrid { gap: 4px; } }
   </style>
 </head>
 <body>
   <main class="wrap" id="app"><p>載入中…</p></main>
   <script src="common.js"></script>
   <script>
-    const { h, shuffle, speak, speakBtn, loadBank, setupPanel, header, LEVELS } = RG;
+    const { h, shuffle, speak, speakBtn, loadBank, setupPanel, header, token, TEAM_NAMES } = RG;
     const SIDE = { support: 3, standard: 4, challenge: 5 };
 
     loadBank().then((bank) => {
       const app = document.getElementById('app');
       const goalSel = h('select', { 'aria-label': '目標' }, [1, 2, 3].map((n) => h('option', { value: n }, `連成 ${n} 條線`)));
-      const { el: panel, settings } = setupPanel(bank, { types: [], extra: [h('div', { class: 'row' }, [h('strong', {}, '目標'), goalSel])] });
+      const modeSel = h('select', { 'aria-label': '模式' }, [h('option', { value: 1 }, '個人練習'), ...[2, 3, 4].map((n) => h('option', { value: n }, `投影分 ${n} 隊輪流點`))]);
+      const { el: panel, settings } = setupPanel(bank, { types: [], levelNote: '支持：3×3｜標準：4×4｜挑戰：5×5（加入成語）。都不限時。', extra: [h('div', { class: 'row' }, [h('strong', {}, '模式'), modeSel, h('strong', {}, '目標'), goalSel])] });
+      const msg = h('p', { class: 'note', role: 'alert' });
       app.replaceChildren(header(bank, '語詞賓果'), panel,
-        h('p', { class: 'note' }, '看（聽）語詞解釋，在賓果卡上點出那個語詞。點對會亮起來，橫、直、斜連成一條線就賓果！支持 3×3、標準 4×4、挑戰 5×5（加入成語）。全班玩：投影出題，學生在紙上畫 4×4 格子、自己挑語詞填入。'),
-        h('div', { class: 'row' }, h('button', { class: 'btn primary', type: 'button', onclick: () => start() }, '開始遊戲')));
+        h('p', { class: 'note' }, '看（聽）語詞的意思，在賓果卡上點出那個語詞。點錯會給線索；橫、直、斜連成一條線就賓果！'),
+        msg, h('div', { class: 'row' }, h('button', { class: 'btn primary', type: 'button', onclick: () => start() }, '開始遊戲')));
 
       function start() {
         const n = SIDE[settings.level];
         const goal = Number(goalSel.value);
+        const nTeams = Number(modeSel.value);
         const pool = [
           ...bank.words.filter((w) => settings.lessons.has(w.lesson)).map((w) => ({ text: w.word, clue: w.meaning, lesson: w.lesson })),
           ...(settings.level === 'challenge' ? bank.idioms.filter((i) => settings.lessons.has(i.lesson)).map((i) => ({ text: i.idiom, clue: i.definition, lesson: i.lesson })) : []),
         ].filter((x, i, a) => a.findIndex((y) => y.text === x.text || y.clue === x.clue) === i);
-        if (pool.length < n * n) { alert('勾選的課太少，請多選幾課'); return; }
+        if (pool.length < n * n) { msg.textContent = '勾選的課太少，請多選幾課。'; return; }
         const cells = shuffle(pool).slice(0, n * n);
         const queue = shuffle(cells.slice());
         const marked = new Set();
-        let cur = null, misses = 0, asked = 0;
-        const clueTxt = h('div', { class: 'txt', role: 'status', 'aria-live': 'polite' });
-        const clueSpeak = h('span');
-        const skipBtn = h('button', { class: 'btn', type: 'button', onclick: () => { queue.push(cur); next(); } }, '先跳過');
+        const teamScore = Array(nTeams).fill(0);
+        let cur = null, tries = 0, team = 0, misses = 0, asked = 0, bingoShown = false;
+        const clueTxt = h('div', { class: 'txt', id: 'clue' });
+        const acts = h('div', { class: 'acts' });
+        const fb = h('div', { class: 'fb', role: 'status', 'aria-live': 'polite' });
         const bar = h('div', { class: 'bar' });
-        const grid = h('div', { class: 'bgrid', style: `grid-template-columns:repeat(${n},1fr)` });
+        const grid = h('div', { class: `bgrid n${n}`, style: `grid-template-columns:repeat(${n},1fr)` });
         const btns = cells.map((c, i) => h('button', { class: 'bcell', type: 'button', onclick: (e) => tap(i, e.currentTarget) }, c.text));
         grid.append(...btns);
-        app.replaceChildren(header(bank, '語詞賓果'), h('div', { class: 'clue' }, [h('span', { style: 'font-size:1.8rem', 'aria-hidden': 'true' }, '💡'), clueTxt, clueSpeak, skipBtn]), bar, h('div', { style: 'height:10px' }), grid);
+        app.replaceChildren(header(bank, '語詞賓果'), h('div', { class: 'clue' }, [h('span', { style: 'font-size:1.8rem', 'aria-hidden': 'true' }, '💡'), clueTxt, acts]), fb, bar, h('div', { style: 'height:10px' }), grid);
 
         const lines = () => {
           const L = [];
@@ -62,33 +76,74 @@
           L.push([...Array(n)].map((_, i) => i * n + i), [...Array(n)].map((_, i) => i * n + (n - 1 - i)));
           return L.filter((l) => l.every((i) => marked.has(i)));
         };
-        function renderBar() { const k = lines().length; bar.replaceChildren(h('span', {}, `已連 ${k} / ${goal} 條線`), h('span', {}, `出題 ${asked}`), h('span', {}, `點錯 ${misses}`)); return k; }
+        function renderBar() {
+          const k = lines().length;
+          bar.replaceChildren(h('span', {}, `已連 ${k} / ${goal} 條線`), h('span', {}, `已練 ${marked.size} / ${n * n} 個詞`),
+            ...(nTeams > 1 ? teamScore.map((s, i) => h('span', { class: i === team ? 'team now' : '' }, [token(i), ` ${TEAM_NAMES[i]} ${s}`])) : []));
+          return k;
+        }
+        const clueSpeech = () => `哪個語詞的意思是，${cur.clue}`;
         function next() {
-          cur = queue.shift();
-          if (!cur) return;
+          btns.forEach((b) => b.classList.remove('hinted'));
+          cur = queue.shift(); tries = 0; fb.textContent = ''; fb.className = 'fb';
+          if (!cur) return end();
           asked++;
-          clueTxt.textContent = `哪個語詞的意思是：「${cur.clue}」？`;
-          clueSpeak.replaceChildren(speakBtn(`哪個語詞的意思是，${cur.clue}`));
-          if (LEVELS[settings.level].autoSpeak) speak(`哪個語詞的意思是，${cur.clue}`);
+          clueTxt.textContent = `${nTeams > 1 ? `【${TEAM_NAMES[team]}】` : ''}哪個語詞的意思是：「${cur.clue}」？`;
+          acts.replaceChildren(speakBtn(clueSpeech(), '聽意思'),
+            h('button', { class: 'btn', type: 'button', onclick: () => { queue.push(cur); advanceTeam(); next(); } }, '先跳過'),
+            h('button', { class: 'btn', type: 'button', onclick: () => reveal() }, '看答案'));
+          if (settings.autoSpeak) speak(clueSpeech());
           renderBar();
         }
-        function tap(i, btn) {
-          if (!cur || marked.has(i)) return;
-          if (cells[i].text !== cur.text) {
-            misses++; btn.classList.remove('bad'); void btn.offsetWidth; btn.classList.add('bad'); renderBar();
-            if (settings.level === 'support' && misses % 2 === 0) { const j = cells.indexOf(cur); btns[j].classList.add('line'); setTimeout(() => btns[j].classList.remove('line'), 900); }
-            return;
-          }
-          marked.add(i); btn.classList.add('on'); speak(cur.text);
+        const advanceTeam = () => { team = (team + 1) % nTeams; };
+        function settle(i, learned) {
+          marked.add(i); btns[i].classList.add(learned ? 'learned' : 'on');
+          btns.forEach((b) => b.classList.remove('hinted'));
           lines().flat().forEach((j) => btns[j].classList.add('line'));
-          if (renderBar() >= goal || !queue.length) {
-            cur = null; skipBtn.disabled = true;
-            clueTxt.textContent = `🎉 賓果！出了 ${asked} 題，點錯 ${misses} 次。`;
-            clueSpeak.replaceChildren(h('button', { class: 'btn primary', type: 'button', onclick: () => location.reload() }, '再玩一次'));
-            speak('賓果！');
-            return;
+          fb.className = learned ? 'fb learn' : 'fb ok';
+          fb.textContent = learned ? `一起學：「${cur.text}」＝${cur.clue}` : `✓「${cur.text}」＝${cur.clue}`;
+          speak(`${cur.text}，${cur.clue}`);
+          if (!learned && nTeams > 1) teamScore[team]++;
+          advanceTeam();
+          const k = renderBar();
+          // 停在這裡，讓學生把語詞和意思連起來，按「下一題」才換
+          const nextBtn = h('button', { class: 'btn primary', type: 'button', onclick: () => { cur = null; (k >= goal && !bingoShown) ? bingo() : next(); } }, k >= goal && !bingoShown ? '看結果' : '下一題');
+          acts.replaceChildren(nextBtn); nextBtn.focus();
+        }
+        function reveal() { if (!cur) return; settle(cells.indexOf(cur), true); }
+        function tap(i, btn) {
+          if (!cur || marked.has(i) || acts.querySelector('.primary')) return;
+          if (cells[i].text === cur.text) return settle(i, tries > 0);
+          tries++; misses++;
+          btn.classList.remove('bad'); void btn.offsetWidth; btn.classList.add('bad');
+          fb.className = 'fb hint';
+          if (tries === 1) { fb.textContent = '再想想看！把意思再讀一次，找出最重要的詞。'; speak('再想想看，把意思再讀一次'); }
+          else {
+            // 第二次：保留答案和另一格，畫虛線「提示」，直到這題結束
+            const j = cells.indexOf(cur);
+            const other = shuffle(btns.map((_, x) => x).filter((x) => x !== j && !marked.has(x) && x !== i))[0];
+            [j, other].filter((x) => x != null).forEach((x) => btns[x].classList.add('hinted'));
+            fb.textContent = '線索：答案在畫虛線的兩格裡面。';
+            speak('線索，答案在畫虛線的兩格裡面');
           }
-          next();
+        }
+        function bingo() {
+          bingoShown = true;
+          clueTxt.textContent = `🎉 賓果！連成 ${lines().length} 條線。`;
+          speak('賓果！');
+          const left = n * n - marked.size;
+          acts.replaceChildren(
+            ...(left ? [h('button', { class: 'btn primary', type: 'button', onclick: () => next() }, `繼續收集剩下 ${left} 個詞`)] : []),
+            h('button', { class: 'btn', type: 'button', onclick: () => end() }, '結束'));
+          fb.textContent = nTeams > 1 ? teamScore.map((s, i) => `${TEAM_NAMES[i]} ${s} 格`).join('｜') : '';
+          acts.querySelector('button').focus();
+        }
+        function end() {
+          cur = null;
+          clueTxt.textContent = `完成！練了 ${marked.size} 個詞。`;
+          fb.textContent = '';
+          acts.replaceChildren(h('details', { class: 'note' }, [h('summary', {}, '教師詳情'), `出題 ${asked}，點錯 ${misses} 次`]),
+            h('button', { class: 'btn primary', type: 'button', onclick: () => location.reload() }, '再玩一次'));
         }
         next();
       }
