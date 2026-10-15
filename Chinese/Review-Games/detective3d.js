@@ -18,7 +18,7 @@
     return loading;
   }
 
-  // 場景主題：只換顏色、物件名稱與小擺設，共用同一組模型
+  // 場景主題：共用機關，另加符合名稱的主題道具。
   const THEMES = {
     study: { name: '神祕書房', wall: 0xf3e2c7, wall2: 0xe9d3b0, floor: 0xb98352, rug: 0x8a4fa8, accent: 0xa84b17, sky: 0xfff4e2,
       holders: ['書架上的書', '書桌抽屜', '牆上的相框', '盆栽', '地毯一角', '檯燈下', '地球儀', '舊皮箱'] },
@@ -27,7 +27,7 @@
     library: { name: '安靜的圖書館', wall: 0xf1e6d6, wall2: 0xe3d2bb, floor: 0x9c6b43, rug: 0xc0362c, accent: 0x7a3e1d, sky: 0xfff6ea,
       holders: ['借書架', '還書櫃抽屜', '館員留言框', '閱讀區盆栽', '地毯一角', '閱讀燈下', '地球儀', '書車箱子'] },
     forest: { name: '森林小屋', wall: 0xe8dcc0, wall2: 0xd9c8a2, floor: 0x8f6a3e, rug: 0x3fa45b, accent: 0x4c7a2a, sky: 0xf4fbe8,
-      holders: ['木架上的書', '木桌抽屜', '牆上的畫', '蘑菇盆栽', '草編地毯', '油燈下', '松果籃', '木箱'] },
+      holders: ['木架上的書', '木桌抽屜', '牆上的畫', '林間盆栽', '草編地毯', '油燈下', '松果籃', '木箱'] },
     lab: { name: '科學實驗室', wall: 0xe3eef6, wall2: 0xd0e2ef, floor: 0xb8c2cc, rug: 0x3b82c4, accent: 0x1f5fa8, sky: 0xf2f9ff,
       holders: ['資料架', '實驗桌抽屜', '公告照片', '觀察盆栽', '防滑墊', '顯微燈下', '地球儀', '器材箱'] },
     museum: { name: '小小博物館', wall: 0xf4ead8, wall2: 0xe8d8bd, floor: 0xa87a4f, rug: 0xb5382c, accent: 0x8b5cc8, sky: 0xfff6e6,
@@ -155,7 +155,7 @@
         try { this.environmentTarget = pmrem.fromEquirectangular(tex); scene.environment = this.environmentTarget.texture; } finally { tex.dispose(); pmrem.dispose(); }
         this.camera = new T.PerspectiveCamera(34, 1, 0.1, 100);
         scene.add(new T.HemisphereLight(0xffffff, 0xd9c2a0, 0.75));
-        const sun = new T.DirectionalLight(0xfff1dc, 0.85); sun.position.set(6, 12, 8); sun.castShadow = true;
+        const sun = new T.DirectionalLight(0xfff1dc, 0.85); sun.position.set(4.3, 7, -3.8); sun.castShadow = true;
         sun.shadow.mapSize.set(1024, 1024); Object.assign(sun.shadow.camera, { left: -9, right: 9, top: 9, bottom: -9 });
         scene.add(sun);
         this.group = new T.Group(); scene.add(this.group);
@@ -165,13 +165,16 @@
         this.is3d = true; this.host.classList.add('dt-3d'); this.host.classList.remove('dt-2d');
         if (this.opts.onStatus) this.opts.onStatus('立體密室：拖曳可轉動房間，點物件調查');
         this.ro = new ResizeObserver(() => this.resize()); this.ro.observe(this.host);
-        this.resize();
+        this.resize(); this.applyVisualState(this.snapshot); this.enter();
       } catch (e) { this.failed = true; this.teardown3d(); this.mode2d('立體畫面無法使用，改用平面圖'); }
     }
     mat(color, rough = .8) {
+      this.materials ||= new Map();
+      const key = `${color}|${rough}`; if(this.materials.has(key)) return this.materials.get(key);
       const metal = color === 0xf6d16a;
       const paper = [0xffffff, 0xfffbf0, 0xfffdf2, 0xfff3c4].includes(color);
-      return new window.THREE.MeshStandardMaterial({ color: new window.THREE.Color(color).convertSRGBToLinear(), roughness: metal ? .35 : paper ? .95 : rough, metalness: metal ? .72 : 0 });
+      const material = new window.THREE.MeshStandardMaterial({ color: new window.THREE.Color(color).convertSRGBToLinear(), roughness: metal ? .35 : paper ? .95 : rough, metalness: metal ? .72 : 0 });
+      this.materials.set(key,material); return material;
     }
     sampleFrame(t, busy) {
       if (!busy || document.hidden) { this.lastActiveFrame = null; return; }
@@ -202,9 +205,13 @@
       this.box(12, 5, 0.2, th.wall, 0, 2.5, -4.6).castShadow = false;
       this.box(0.2, 5, 9, th.wall2, -6.1, 2.5, 0).castShadow = false;
       this.box(12, 0.3, 0.1, th.accent, 0, 0.15, -4.45); this.box(0.1, 0.3, 9, th.accent, -5.95, 0.15, 0);
-      const win = this.box(2.2, 1.6, 0.06, 0xbfe3ff, 4.3, 3.0, -4.48); win.material.emissive = new T.Color(0x8fcfff); win.material.emissiveIntensity = 0.35;
+      const win = this.box(2.2, 1.6, 0.06, 0xbfe3ff, 4.3, 3.0, -4.48); win.material = win.material.clone(); win.material.emissive = new T.Color(0x8fcfff); win.material.emissiveIntensity = 0.35;
       this.box(2.4, 0.12, 0.2, 0xffffff, 4.3, 2.15, -4.42);
-      const beam = new T.Mesh(new T.PlaneGeometry(2.2, 6), new T.MeshBasicMaterial({ color: 0xfff1c4, transparent: true, opacity: 0.16, depthWrite: false, side: T.DoubleSide }));
+      [3.16, 4.3, 5.44].forEach(x => this.box(.08, 1.8, .14, 0xffffff, x, 3, -4.36));
+      [2.12, 3.88].forEach(y => this.box(2.4, .1, .18, 0xffffff, 4.3, y, -4.36));
+      const beam = new T.Mesh(new T.PlaneGeometry(2.2, 6), new T.MeshBasicMaterial({ color: 0xfff1c4, transparent: true, opacity: 0.09, depthWrite: false, side: T.DoubleSide }));
+      const soft = document.createElement('canvas'); soft.width=64; soft.height=128;
+      const bc=soft.getContext('2d'), fade=bc.createLinearGradient(0,0,64,0); fade.addColorStop(0,'#000'); fade.addColorStop(.3,'#fff'); fade.addColorStop(.7,'#fff'); fade.addColorStop(1,'#000'); bc.fillStyle=fade;bc.fillRect(0,0,64,128); beam.material.alphaMap=new T.CanvasTexture(soft);
       beam.position.set(4.0, 1.6, -2.2); beam.rotation.set(-1.0, 0.15, 0); g.add(beam);
       const plate = document.createElement('canvas'); plate.width = 512; plate.height = 128; const pc = plate.getContext('2d');
       pc.fillStyle = '#7a3e1d'; pc.fillRect(0, 0, 512, 128); pc.fillStyle = '#ffe9b0'; pc.fillRect(8, 8, 496, 112);
@@ -212,26 +219,38 @@
       const tex = new T.CanvasTexture(plate); tex.encoding = T.sRGBEncoding;
       const sign = new T.Mesh(new T.PlaneGeometry(2.4, 0.6), new T.MeshBasicMaterial({ map: tex })); sign.position.set(-1.6, 3.75, -4.45); g.add(sign);
       const rug = this.cyl(2.6, 2.6, 0.04, th.rug, 0.5, 0.02, 1.8, g, 40); rug.scale.z = 0.62; rug.receiveShadow = true; rug.material.roughness = .95; rug.castShadow = false;
+      const contact=document.createElement('canvas');contact.width=64;contact.height=64;
+      const sc=contact.getContext('2d'), falloff=sc.createRadialGradient(32,32,3,32,32,32);falloff.addColorStop(0,'rgba(48,30,18,.2)');falloff.addColorStop(1,'rgba(48,30,18,0)');sc.fillStyle=falloff;sc.fillRect(0,0,64,64);
+      const shadowMat=new T.MeshBasicMaterial({map:new T.CanvasTexture(contact),transparent:true,depthWrite:false});
+      [[-1.9,.9,3,1.8],[3.6,-3.6,2,1.7],[2.2,1.4,2.3,2.3],[5,3.1,1.2,1.2]].forEach(([x,z,w,d])=>{const shadow=new T.Mesh(new T.PlaneGeometry(w,d),shadowMat);shadow.rotation.x=-Math.PI/2;shadow.position.set(x,.012,z);g.add(shadow);});
       // 書架
-      this.box(2.4, 3.4, 0.7, 0x8a5a2b, -4.0, 1.7, -4.15);
+      this.box(2.4, 3.4, 0.08, 0x8a5a2b, -4.0, 1.7, -4.42);
+      [-5.15, -2.85].forEach(x => this.box(.1, 3.4, .7, 0x8a5a2b, x, 1.7, -4.1));
       [0.6, 1.5, 2.4, 3.2].forEach((y) => this.box(2.3, 0.08, 0.65, 0x6e4520, -4.0, y, -4.1));
       const bookC = [0xe05a4f, 0xf0a030, 0x3fa45b, 0x3b82c4, 0x8b5cc8, 0xd1559a];
-      [0.95, 1.85, 2.75].forEach((y, r) => { for (let i = 0; i < 9; i++) this.box(0.18, 0.55 + ((i + r) % 3) * 0.08, 0.45, bookC[(i + r) % 6], -5.0 + i * 0.24, y + 0.06, -4.05); });
+      bookC.forEach((color,c)=>{
+        const books=[]; [0.95,1.85,2.75].forEach((y,r)=>{for(let i=0;i<9;i++) if((i+r)%6===c) books.push([-5+i*.24,y+.06,.55+((i+r)%3)*.08]);});
+        const batch=new T.InstancedMesh(new T.BoxGeometry(1,1,1),this.mat(color),books.length), dummy=new T.Object3D();
+        books.forEach(([x,y,h],i)=>{dummy.position.set(x,y,-4.05);dummy.scale.set(.18,h,.45);dummy.updateMatrix();batch.setMatrixAt(i,dummy.matrix);}); g.add(batch);
+      });
       // 書桌與抽屜、打字機
       const desk = new T.Group(); desk.position.set(-1.9, 0, 0.9); g.add(desk);
       this.box(2.6, 0.12, 1.3, 0xa0703e, 0, 0.95, 0, desk);
       [[-1.2, -0.55], [1.2, -0.55], [-1.2, 0.55], [1.2, 0.55]].forEach(([x, z]) => this.box(0.12, 0.9, 0.12, 0x7a5129, x, 0.45, z, desk));
       const drawer = this.box(1.0, 0.28, 0.9, 0xc08850, 0, 0.72, 0.15, desk); this.drawer = drawer;
-      this.box(0.3, 0.06, 0.06, 0xf6d16a, 0, 0.72, 0.62, desk);
+      this.box(0.3, 0.06, 0.06, 0xf6d16a, 0, 0, 0.47, drawer);
       const tw = new T.Group(); tw.position.set(0, 1.01, -0.15); desk.add(tw);
-      this.box(1.0, 0.22, 0.6, 0x2f3d4f, 0, 0.11, 0, tw); this.box(0.9, 0.35, 0.08, 0xfffbf0, 0, 0.42, -0.2, tw);
+      this.box(1.0, 0.22, 0.6, 0x2f3d4f, 0, 0.11, 0, tw); this.typePaper = this.box(0.9, 0.35, 0.08, 0xfffbf0, 0, 0.42, -0.2, tw);
       for (let i = 0; i < 8; i++) this.cyl(0.04, 0.04, 0.05, 0xf6efe2, -0.35 + i * 0.1, 0.25, 0.15, tw, 8);
       // 布告欄
       this.box(2.4, 1.5, 0.08, 0xc9955c, -1.6, 2.5, -4.46); this.box(2.2, 1.3, 0.04, 0xead2a8, -1.6, 2.5, -4.41);
-      [[-2.3, 2.7], [-1.6, 2.35], [-0.9, 2.75]].forEach(([x, y], i) => { this.box(0.5, 0.4, 0.02, 0xffffff, x, y, -4.38); this.cyl(0.04, 0.04, 0.04, bookC[i], x, y + 0.17, -4.36, g, 8).rotation.x = Math.PI / 2; });
+      this.boardCards = [];
+      [[-2.3, 2.7], [-1.6, 2.35], [-0.9, 2.75]].forEach(([x, y], i) => { this.boardCards.push(this.box(0.5, 0.4, 0.02, 0xffffff, x, y, -4.38)); this.cyl(0.04, 0.04, 0.04, bookC[i], x, y + 0.17, -4.36, g, 8).rotation.x = Math.PI / 2; });
       // 保險箱（門可開）
       const safe = new T.Group(); safe.position.set(3.6, 0, -3.6); g.add(safe);
-      this.box(1.4, 1.5, 1.2, 0x5b6573, 0, 0.75, 0, safe);
+      this.box(1.4, 1.5, .1, 0x303a46, 0, .75, -.55, safe);
+      [-.66,.66].forEach(x=>this.box(.08,1.5,1.2,0x5b6573,x,.75,0,safe));
+      [.05,1.45].forEach(y=>this.box(1.4,.1,1.2,0x5b6573,0,y,0,safe));
       const sdoor = new T.Group(); sdoor.position.set(-0.65, 0.75, 0.61); safe.add(sdoor);
       this.box(1.25, 1.3, 0.08, 0x6f7a89, 0.62, 0, 0, sdoor);
       const dial = this.cyl(0.22, 0.22, 0.08, 0xf6d16a, 0.62, 0.1, 0.06, sdoor, 24); dial.rotation.x = Math.PI / 2; this.safeDial = dial;
@@ -239,7 +258,7 @@
       // 鎖櫃（左牆）
       const cab = new T.Group(); cab.position.set(-5.5, 0, 0.6); g.add(cab);
       this.box(0.9, 2.4, 2.0, 0x9c6b43, 0, 1.2, 0, cab);
-      [-0.5, 0.5].forEach((z) => { this.box(0.06, 1.0, 0.9, 0xb98352, 0.47, 1.6, z, cab); this.box(0.06, 0.18, 0.18, 0xf6d16a, 0.52, 1.6, z * 0.2, cab); });
+      this.cabDoors = [-.95,.95].map((z,i)=>{const pivot=new T.Group();pivot.position.set(.47,1.6,z);cab.add(pivot);const side=i?-1:1;this.box(.06,1,.9,0xb98352,0,0,side*.45,pivot);this.box(.08,.18,.12,0xf6d16a,.05,0,side*.8,pivot);return pivot;});
       // 推理機（左後角，齒輪）
       const mach = new T.Group(); mach.position.set(-5.1, 0, -3.1); g.add(mach); this.mach = mach;
       this.box(1.1, 1.8, 1.0, 0x3b82c4, 0, 0.9, 0, mach);
@@ -247,7 +266,7 @@
       // 放大鏡桌
       const tbl = new T.Group(); tbl.position.set(2.2, 0, 1.4); g.add(tbl);
       this.cyl(0.9, 0.9, 0.1, 0xb07a45, 0, 0.9, 0, tbl, 28); this.cyl(0.12, 0.2, 0.9, 0x7a5129, 0, 0.45, 0, tbl, 12);
-      this.box(0.5, 0.02, 0.6, 0xffffff, -0.3, 0.96, 0.1, tbl).rotation.y = 0.3; this.box(0.5, 0.02, 0.6, 0xfff3c4, 0.3, 0.96, -0.1, tbl).rotation.y = -0.2;
+      this.evidenceCards=[this.box(.5,.02,.6,0xffffff,-.3,.96,.1,tbl),this.box(.5,.02,.6,0xfff3c4,.3,.96,-.1,tbl)]; this.evidenceCards[0].rotation.y=.3;this.evidenceCards[1].rotation.y=-.2;
       const lens = new T.Mesh(new T.TorusGeometry(0.22, 0.04, 8, 24), this.mat(0x2b1d12)); lens.position.set(0.1, 1.05, 0.3); lens.rotation.x = Math.PI / 2; tbl.add(lens);
       // 門（可開）
       const door = new T.Group(); door.position.set(0.55, 0, -4.45); g.add(door); this.door = door;
@@ -255,13 +274,17 @@
       this.box(1.5, 2.9, 0.1, 0xc98b55, 0.75, 1.45, 0.02, door);
       this.cyl(0.07, 0.07, 0.12, 0xf6d16a, 1.3, 1.4, 0.1, door, 10).rotation.x = Math.PI / 2;
       // 小擺設：盆栽、檯燈、地球儀、皮箱、相框
-      this.cyl(0.35, 0.25, 0.6, 0xc0583a, 5.0, 0.3, 3.1); const leaf = new T.Mesh(new T.IcosahedronGeometry(0.6, 0), this.mat(0x3fa45b)); leaf.position.set(5.0, 1.0, 3.1); leaf.castShadow = true; g.add(leaf);
+      this.cyl(0.35, 0.25, 0.6, 0xc0583a, 5.0, 0.3, 3.1);
+      for (let i = 0; i < 5; i++) { const leaf = new T.Mesh(new T.SphereGeometry(.32, 8, 6), this.mat(i % 2 ? 0x397b42 : 0x55934a)); leaf.scale.set(.45, 1.7, .22); leaf.position.set(5 + Math.sin(i * 2.4) * .24, .85 + i * .08, 3.1 + Math.cos(i * 2.4) * .24); leaf.rotation.z = (i - 2) * .38; g.add(leaf); }
       this.cyl(0.5, 0.5, 0.06, 0x7a5129, 4.6, 0.03, -1.0); this.cyl(0.05, 0.05, 1.3, 0x2b1d12, 4.6, 0.7, -1.0, g, 8);
-      const shade = this.cyl(0.2, 0.45, 0.45, 0xffe08a, 4.6, 1.45, -1.0); shade.material.emissive = new T.Color(0xffd36a); shade.material.emissiveIntensity = 0.4;
+      const shade = this.cyl(0.2, 0.45, 0.45, 0xffe08a, 4.6, 1.45, -1.0); shade.material = shade.material.clone(); shade.material.emissive = new T.Color(0xffd36a); shade.material.emissiveIntensity = 0.4;
       const lamp = new T.PointLight(0xffd9a0, 0.5, 6); lamp.position.set(4.6, 1.3, -1.0); g.add(lamp);
-      this.box(0.9, 0.9, 0.7, 0x6e4520, -0.3, 0.45, -3.8); const globe = new T.Mesh(new T.SphereGeometry(0.32, 20, 14), this.mat(0x3b82c4, 0.5)); globe.position.set(-0.3, 1.25, -3.8); globe.castShadow = true; g.add(globe);
+      this.box(0.9, 0.9, 0.7, 0x6e4520, -0.3, 0.45, -3.8); const globe = new T.Mesh(new T.SphereGeometry(0.32, 20, 14), this.mat(0x3b82c4, 0.5)); globe.position.set(-0.3, 1.25, -3.8); globe.castShadow = true; g.add(globe); this.globe = globe;
       this.box(1.2, 0.7, 0.8, 0x8a4f2b, 3.4, 0.35, 3.7); this.box(1.22, 0.08, 0.82, 0xf6d16a, 3.4, 0.55, 3.7);
-      this.box(0.06, 1.0, 1.3, 0xa0703e, -5.98, 2.5, 2.6); this.box(0.04, 0.8, 1.1, 0xbfe3ff, -5.95, 2.5, 2.6);
+      this.box(0.06, 1.0, 1.3, 0xa0703e, -5.98, 2.5, 2.6); this.box(0.04, 0.8, 1.1, 0xbfe3ff, -5.94, 2.5, 2.6);
+      [2.08,3.12].forEach(z=>this.box(.07,.85,.06,0xf6d16a,-5.9,2.5,z));
+      [2.08,2.92].forEach(y=>this.box(.07,.06,1.1,0xf6d16a,-5.9,y,2.6));
+      this.buildTheme(T);
       // 每個互動點：看不見的點擊盒＋發光圈
       for (const it of this.items) {
         const hit = new T.Mesh(new T.BoxGeometry(1.3, 1.3, 1.3), new T.MeshBasicMaterial({ visible: false }));
@@ -272,6 +295,40 @@
         if (it.state) this.setState(it.id, it.state);
       }
     }
+    buildTheme(T) {
+      const key = this.opts.theme;
+      if (key === 'classroom') { this.box(2.3, 1.1, .08, 0x345d4b, -1.6, 4.35, -4.38); this.box(2.4, .08, .2, 0xb58755, -1.6, 3.78, -4.3); }
+      if (key === 'library') { this.box(1.5,.12,.7,0x5a6570,3.8,.4,2.6); this.box(1.5,.12,.7,0x5a6570,3.8,1,2.6); for(let i=0;i<4;i++) this.box(.2,.5,.5,[0x963f36,0x3c6d82][i%2],3.3+i*.3,1.3,2.6); for(const x of [3.2,4.4]) this.cyl(.13,.13,.15,0x303b43,x,.15,2.6).rotation.z=Math.PI/2; }
+      if (key === 'forest') { this.globe.visible=false; this.cyl(.4,.3,.28,0x967044,-.3,1.12,-3.8); for(let i=0;i<3;i++) this.cyl(.04,.13,.32,0x6e4520,-.5+i*.2,1.38,-3.8,undefined,8); this.box(1.5,.16,.9,0x765337,3.4,.78,3.7); }
+      if (key === 'lab') { this.box(1.6,.1,.7,0x758997,3.7,1.1,2.6); for(let i=0;i<3;i++) { this.cyl(.17,.2,.42,[0x5caab8,0x8060ae,0x62a579][i],3.2+i*.5,1.36,2.6); this.cyl(.07,.07,.24,0xd2e5ed,3.2+i*.5,1.66,2.6); } }
+      if (key === 'museum') { this.box(1,.95,1,0xe1d6c4,3.7,.48,2.6); const artifact = new T.Mesh(new T.IcosahedronGeometry(.4,0),this.mat(0xf6d16a)); artifact.position.set(3.7,1.35,2.6); this.group.add(artifact); this.box(1.3,.08,1.3,0x633e29,3.7,.08,2.6); }
+      if (key === 'study') { this.box(.65,.07,.45,0x802f39,-2.5,1.08,1.1); this.box(.57,.04,.42,0xfffbf0,-2.5,1.13,1.1); }
+      const light = new T.Mesh(new T.PlaneGeometry(1.5,4),new T.MeshBasicMaterial({color:0xffefbd,transparent:true,opacity:0,depthWrite:false,side:T.DoubleSide})); light.rotation.x=-Math.PI/2; light.position.set(1.3,.045,-2.3); this.group.add(light); this.exitLight=light;
+    }
+    applyVisualState(snapshot) {
+      if (snapshot) this.snapshot = snapshot;
+      if (!this.group || !this.snapshot) return;
+      const done = new Set(this.snapshot.done), found = new Set(this.snapshot.found);
+      if(this.safeDoor) this.safeDoor.rotation.y = done.has('dial') ? -1.3 : 0;
+      const drawerItem=this.items.find(it=>it.kind==='holder' && it.idx===1);
+      if(this.drawer) this.drawer.position.z=.15+(found.has(drawerItem?.id) ? .35 : 0);
+      this.boardCards?.forEach((card,i)=>{ card.rotation.z=done.has('sort') ? 0 : (i-1)*.15; card.position.y=done.has('sort') ? 2.5 : [2.7,2.35,2.75][i]; });
+      this.gears?.forEach((gear,i)=>{ gear.rotation.x=done.has('cause') ? (i?-1:1)*8 : 0; });
+      this.cabDoors?.forEach((door,i)=>{door.rotation.y=done.has('keys') ? (i?1:-1)*.65 : 0;});
+      if(this.typePaper) {this.typePaper.position.y=done.has('blocks') ? .62 : .42;this.typePaper.scale.y=done.has('blocks') ? 1.6 : 1;}
+      this.evidenceCards?.forEach((card,i)=>{card.rotation.y=done.has('compare') ? 0 : (i?-.2:.3);});
+      if(this.door) this.door.rotation.y=this.snapshot.escaped ? -1.5 : 0;
+      if(this.exitLight) this.exitLight.material.opacity=this.snapshot.escaped ? .35 : 0;
+      this.kick();
+    }
+    enter() {
+      if(this.entered || !this.is3d) return; this.entered=true;
+      const end=this.camera.position.clone(), start=new window.THREE.Vector3(4.3,3.1,-7);
+      const skip=document.createElement('button'); skip.className='dt-skip'; skip.textContent='略過開場'; skip.type='button'; this.host.append(skip);
+      const finish=()=>{ this.camera.position.copy(end); this.camera.lookAt(0,1.7,0); skip.remove(); this.markerKey=null; this.kick(); };
+      skip.onclick=()=>{this.finishTweens();finish();};
+      this.tween(800,k=>{this.camera.position.lerpVectors(start,end,k);this.camera.lookAt(0,1.7,0);this.markerKey=null;if(k===1)finish();});
+    }
     bindPointer() {
       const el = this.renderer.domElement; let down = null;
       el.addEventListener('pointerdown', (e) => { down = { x: e.clientX, y: e.clientY, yaw: this.yaw }; el.setPointerCapture(e.pointerId); });
@@ -280,6 +337,7 @@
         const dx = e.clientX - down.x;
         if (Math.abs(dx) > 6) { this.yaw = Math.max(-0.45, Math.min(0.45, down.yaw - dx / 400)); this.place(); this.kick(); }
       });
+      ['pointercancel', 'lostpointercapture'].forEach(event => el.addEventListener(event, () => { down = null; }));
       el.addEventListener('pointerup', (e) => {
         if (!down) return;
         const moved = Math.hypot(e.clientX - down.x, e.clientY - down.y) > 8; down = null;
@@ -292,10 +350,22 @@
       });
     }
     place() {
-      const d = 14.5, a = 0.62 + this.yaw;
-      this.camera.position.set(Math.sin(a) * d, 11.5, Math.cos(a) * d + 1);
-      this.camera.lookAt(-0.4, 0.9, -0.2);
+      // 依房間角點的實際投影迭代逼近，讓房間（地板＋牆的下 4/5）佔畫面約九成，不留大片空白
+      const T = window.THREE, a = .62 + this.yaw;
+      const target = new T.Vector3(0, 1.4, 0);
+      const direction = new T.Vector3(Math.sin(a), .95, Math.cos(a)).normalize();
+      const corners = [];
+      for (const x of [-6.2, 6.1]) for (const y of [0, 4.2]) for (const z of [-4.7, 4.6]) corners.push(new T.Vector3(x, y, z));
+      let distance = 18;
+      for (let n = 0; n < 14; n++) {
+        this.camera.position.copy(target).addScaledVector(direction, distance); this.camera.lookAt(target); this.camera.updateMatrixWorld(true);
+        let ext = 0; for (const c of corners) { const p = c.clone().project(this.camera); ext = Math.max(ext, Math.abs(p.x), Math.abs(p.y)); }
+        if (ext > .9 && ext < .95) break;
+        distance *= ext / .925;
+      }
+      this.markerKey = null;
     }
+
     resize() {
       if (!this.renderer) return;
       const w = this.host.clientWidth, h = this.host.clientHeight; if (!w || !h) return;
@@ -316,45 +386,45 @@
     }
     layoutMarkers() {
       if (this.disposed) return;
-      const w = this.host.clientWidth, h = this.host.clientHeight - (this.host.clientWidth < 600 ? 80 : 56); if (!w || h <= 0) return;
-      const key = [w, h, this.yaw, this.is3d, document.body.className, ...this.items.map((it) => it.state)].join('|');
+      const w = this.host.clientWidth, h = this.host.clientHeight; if (!w || !h) return;
+      if (this.camera) this.camera.updateMatrixWorld(true);
+      if (this.group) this.group.updateMatrixWorld(true);
+      const key = [w, h, this.yaw, this.is3d, this.camera?.position.toArray(), document.body.className, ...this.items.map(it => it.state)].join('|');
       if (key === this.markerKey) return; this.markerKey = key;
-      // 全名只留目前目標，其餘編號與完整文字清單對照，避免窄版互蓋。
-      const target = this.items.find((it) => it.kind !== 'holder' && it.state === 'next');
-      this.items.forEach((it) => it.btn.classList.toggle('dt-target', it === target));
-      const sizes = this.items.map((it) => ({ it, w: it.btn.offsetWidth, h: it.btn.offsetHeight }));
+      const target = this.items.find(it => it.kind !== 'holder' && it.state === 'next');
+      this.items.forEach(it => { it.btn.classList.toggle('dt-target', it === target); it.btn.classList.remove('dt-dot'); });
+      const sizes = this.items.map(it => ({ it, w: it.btn.offsetWidth, h: it.btn.offsetHeight }));
       const placed = [];
-      for (const entry of sizes.sort((a, b) => Number(b.it === target) - Number(a.it === target))) {
-        const { it } = entry; if (it.state === 'hidden') continue;
+      for (const entry of sizes.sort((a,b) => Number(b.it === target) - Number(a.it === target))) {
+        const {it} = entry; if (it.state === 'hidden') continue;
         let x = w * it.g[0] / 100, y = h * it.g[1] / 100;
-        if (this.is3d && this.camera) {
-          const v = new window.THREE.Vector3(it.pos[0], it.pos[1] + .75, it.pos[2]).applyMatrix4(this.group.matrixWorld).project(this.camera);
-          x = (v.x + 1) * w / 2; y = (1 - v.y) * h / 2;
+        if (this.is3d && this.camera) { const v = new window.THREE.Vector3(...it.pos).applyMatrix4(this.group.matrixWorld).project(this.camera); x = (v.x + 1) * w / 2; y = (1 - v.y) * h / 2; }
+        const bw = Math.min(entry.w, w-24), bh = entry.h;
+        let best;
+        for (const radius of [0, 16, 32, 48]) {
+          for (let i=0; i < (radius ? 12 : 1); i++) {
+            const cx = x + Math.cos(i*Math.PI/6)*radius-bw/2, cy = y + Math.sin(i*Math.PI/6)*radius-bh/2;
+            if (cx<8 || cy<8 || cx+bw>w-8 || cy+bh>h-52 || placed.some(r => cx<r.x+r.w+8 && cx+bw+8>r.x && cy<r.y+r.h+8 && cy+bh+8>r.y)) continue;
+            best={x:cx,y:cy,w:bw,h:bh}; break;
+          }
+          if(best) break;
         }
-        const bw = Math.min(entry.w, w - 24), bh = entry.h;
-        const clamp = (v, max) => Math.max(12, Math.min(max, v));
-        let best, cost = Infinity;
-        const xs = new Set([12, w - bw - 12, clamp(x - bw / 2, w - bw - 12)]);
-        const ys = new Set([12, h - bh - 12, clamp(y - bh / 2, h - bh - 12)]);
-        placed.forEach((r) => { xs.add(r.x + r.w + 8); xs.add(r.x - bw - 8); ys.add(r.y + r.h + 8); ys.add(r.y - bh - 8); });
-        for (const cy of ys) for (const cx of xs) {
-          if (cx < 12 || cy < 12 || cx + bw > w - 12 || cy + bh > h - 12) continue;
-          const d = (cx + bw / 2 - x) ** 2 + (cy + bh / 2 - y) ** 2;
-          if (d >= cost || placed.some((r) => cx < r.x + r.w + 8 && cx + bw + 8 > r.x && cy < r.y + r.h + 8 && cy + bh + 8 > r.y)) continue;
-          cost = d; best = { x: cx, y: cy, w: bw, h: bh };
-        }
-        if (!best) best = { x: clamp(x - bw / 2, w - bw - 12), y: clamp(y - bh / 2, h - bh - 12), w: bw, h: bh };
-        placed.push(best); entry.rect = best;
+        if (!best) { it.btn.classList.add('dt-dot'); best={x:Math.max(4,Math.min(w-24,x-10)), y:Math.max(4,Math.min(h-52,y-10)), w:20,h:20}; }
+        placed.push(best); entry.rect=best;
       }
-      sizes.forEach(({ it, rect }) => { if (rect) { it.btn.style.left = `${rect.x}px`; it.btn.style.top = `${rect.y}px`; } });
+      sizes.forEach(({it,rect}) => { if(rect) { it.btn.style.left=rect.x+'px'; it.btn.style.top=rect.y+'px'; } });
     }
-    tween(ms, fn) { if (!this.is3d || isCalm()) { fn(1); return; } if (!this.tweens.length) this.lastActiveFrame = null; this.tweens.push({ ms, fn }); this.kick(); }
+
+    tween(ms, fn) { if (!this.is3d || isCalm() || document.hidden) { fn(1); return; } if (!this.tweens.length) this.lastActiveFrame = null; this.tweens.push({ ms, fn }); this.kick(); }
     // 紙卡從物件升起、翻一圈後消失（找到線索的回饋）
     paper(id) {
       const it = this.items.find((x) => x.id === id); if (!it || !this.is3d || isCalm()) return;
-      const T = window.THREE; const m = new T.Mesh(new T.BoxGeometry(0.6, 0.02, 0.8), this.mat(0xfffdf2)); this.group.add(m);
-      this.tween(900, (k) => { m.position.set(it.pos[0], it.pos[1] + 0.3 + k * 1.6, it.pos[2]); m.rotation.set(-1.2 * k, k * 6.3, 0); m.scale.setScalar(1 - k * 0.3); if (k === 1) { this.group.remove(m); m.geometry.dispose(); m.material.dispose(); } });
+      const target = document.getElementById('dt-notebook'); if(!target) return;
+      const from=it.btn.getBoundingClientRect(), to=target.getBoundingClientRect();
+      const card=document.createElement('div'); card.className='dt-flying-paper'; card.textContent='線索 → 📓'; document.body.append(card);
+      this.tween(400,k=>{card.style.left=(from.left+(to.left-from.left)*k)+'px';card.style.top=(from.top+(to.top-from.top)*k-40*Math.sin(k*Math.PI))+'px';card.style.transform='rotate('+(-12*k)+'deg) scale('+(1-.5*k)+')';if(k===1)card.remove();});
     }
+
     confetti(pos) {
       if (!this.is3d || isCalm()) return;
       const T = window.THREE; const cols = [0xe05a4f, 0xf0a030, 0x3fa45b, 0x3b82c4, 0x8b5cc8, 0xffffff];
@@ -363,20 +433,23 @@
     }
     // 機關動畫：保險箱開門、抽屜拉出、齒輪轉、門打開
     animate(kind, id) {
-      if (!this.is3d) return;
-      if (kind === 'found') return this.paper(id);
-      if (kind === 'escape') this.confetti([1.3, 1.5, -3.5]);
-      if (['sort', 'dial', 'keys', 'blocks', 'compare', 'cause'].includes(kind)) { const it = this.items.find((x) => x.kind === kind); if (it) this.confetti(it.pos); }
-      if (kind === 'dial' && this.safeDoor) this.tween(900, (k) => { this.safeDoor.rotation.y = -1.6 * k; this.safeDial.rotation.y = 6 * k; });
-      if (kind === 'search' && this.drawer) this.tween(700, (k) => { this.drawer.position.z = 0.15 + 0.5 * Math.sin(k * Math.PI); });
-      if (kind === 'cause' && this.gears) this.tween(1400, (k) => { this.gears.forEach((gg, i) => { gg.rotation.x = (i ? -1 : 1) * k * 8; }); });
-      if (kind === 'escape' && this.door) this.tween(1300, (k) => { this.door.rotation.y = -1.5 * k; });
-      if (kind === 'sort' || kind === 'keys' || kind === 'blocks' || kind === 'compare') this.tween(800, (k) => { this.group.position.y = Math.sin(k * Math.PI) * 0.06; });
+      if (!this.is3d) return Promise.resolve();
+      if (kind === 'found') { this.paper(id); return Promise.resolve(); }
+      this.finishTweens();
+      if (kind === 'search') { const it=this.items.find(x=>x.id===id); if(it?.idx===1) this.tween(350,k=>{this.drawer.position.z=.15+.35*k;}); }
+      if (kind === 'dial') this.tween(650,k=>{this.safeDoor.rotation.y=-1.3*k;});
+      if (kind === 'keys') this.tween(600,k=>{this.cabDoors.forEach((door,i)=>{door.rotation.y=(i?1:-1)*.65*k;});});
+      if (kind === 'blocks') this.tween(500,k=>{this.typePaper.position.y=.42+.2*k;this.typePaper.scale.y=1+.6*k;});
+      if (kind === 'compare') this.tween(500,k=>{this.evidenceCards.forEach((card,i)=>{card.rotation.y=(i?-.2:.3)*(1-k);});});
+      if (kind === 'cause') this.tween(650,k=>{this.gears.forEach((g,i)=>{g.rotation.x=(i?-1:1)*8*k;});});
+      if (kind === 'escape') { this.snapshot={...this.snapshot,escaped:true}; this.tween(700,k=>{this.door.rotation.y=-1.5*k;this.exitLight.material.opacity=.35*k;}); }
+      return new Promise(resolve=>{this.tween(700,k=>{if(k===1)resolve();});});
     }
+
     teardown3d() {
       this.finishTweens(); this.is3d = false;
       cancelAnimationFrame(this.raf); this.raf = 0;
-      this.meshes.clear();
+      this.meshes.clear(); this.materials?.clear();
       if (this.ro) this.ro.disconnect();
       this.environmentTarget?.dispose(); this.environmentTarget = null;
       if (this.renderer) {

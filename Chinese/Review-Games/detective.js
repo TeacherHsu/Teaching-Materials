@@ -11,7 +11,10 @@
   const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) || d; } catch (_) { return d; } };
   const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (_) { /* 無痕模式等 */ } };
   const app = document.getElementById('app');
-  let bank, settings, game, room, modal;
+  let bank, settings, game, room, modal, pendingVisual, escapeTimer;
+  let escaping = false, recorded = false;
+  function cancelExit() { clearTimeout(escapeTimer); escaping = false; pendingVisual = null; }
+  function visualSnapshot() { return { done: game.puzzles.filter(p => game.state.solved[p.id].done).map(p => p.type), found: game.objects.filter(o => game.state.found.includes(o.holds)).map(o => o.id), escaped: escaping }; }
 
   // ---------- 音效（WebAudio 短音，可關） ----------
   let actx;
@@ -49,6 +52,7 @@
 
   // ---------- 設定畫面 ----------
   function setup() {
+    cancelExit();
     stopSpeak(); closeModal(); if (room) { room.dispose(); room = null; }
     const playable = bank.rooms.filter((r) => r.playable);
     if (!playable.some((r) => r.no === settings.lesson)) settings.lesson = playable[0].no;
@@ -105,11 +109,14 @@
   }
 
   function start() {
+    cancelExit(); recorded = false;
     try {
       game = settings.mode === 'cross'
         ? C.makeCross(bank, settings.cross.slice().sort((a, b) => a - b), settings.level, Date.now())
         : C.makeRoom(bank, settings.lesson, settings.level, Date.now());
     } catch (e) { alert(e.message); return; }
+    const qaTheme = new URLSearchParams(location.search).get('qaRoom');
+    if (window.Detective3D.THEMES[qaTheme] && /^(localhost|127\.0\.0\.1)$/.test(location.hostname)) game.theme = qaTheme;
     game.stage = 0;
     briefing();
   }
@@ -171,6 +178,7 @@
     }[p.type];
   }
   function play() {
+    if (room && room.host.isConnected) { rerender(); return; }
     game.stage = Math.max(game.stage, stageOf());
     const task = taskText();
     const list = h('ul', { class: 'dt-list' });
@@ -181,7 +189,7 @@
       h('div', { class: 'dt-task', role: 'status' }, [h('span', { 'aria-hidden': 'true' }, '🎯'), h('b', {}, task), spk(task, '朗讀目前任務')]),
       h('div', { class: 'dt-bar' }, [
         h('label', { class: 'chip' }, [h('input', { type: 'checkbox', checked: !!settings.calm, onchange: (e) => { settings.calm = e.target.checked; applyDisplay(); room.opts.force2d = !!settings.calm; room.refreshMode(); } }), '減少動態（平面圖）']),
-        h('button', { class: 'btn', type: 'button', onclick: notebook }, '📓 偵探筆記本'),
+        h('button', { class: 'btn', type: 'button', id: 'dt-notebook', onclick: notebook }, '📓 偵探筆記本'),
         h('button', { class: 'btn', type: 'button', onclick: () => { if (confirm('要重新開始這間密室嗎？目前進度不會保留。')) start(); } }, '🔄 重新挑戰'),
         h('button', { class: 'btn', type: 'button', onclick: () => { if (confirm('回到設定畫面？目前進度不會保留。')) setup(); } }, '↩ 回到設定'),
       ]),
@@ -215,6 +223,7 @@
         `${state === 'done' ? '✓' : state === 'locked' ? '🔒' : '▶'} ${room.items.findIndex((it) => it.id === p.id) + 1}. ${room.items.find((it) => it.id === p.id)?.label || C.NAMES[p.type]}${p.lesson && game.mode === 'cross' ? `（第${p.lesson}課）` : ''}`)));
     }
     list.replaceChildren(...items);
+    room.applyVisualState(visualSnapshot());
   }
   function rerender() { const list = app.querySelector('.dt-list'); if (list) refreshStates(list); const t = app.querySelector('.dt-task b'); if (t) t.textContent = taskText(); }
 
@@ -235,7 +244,7 @@
     const already = game.state.found.includes(obj.holds);
     const wasDone = game.state.solved.search.done;
     const r = C.investigate(game, obj.id);
-    if (!already) { tone('find'); room.animate('search'); room.animate('found', obj.id); }
+    if (!already) { tone('find'); room.animate('search', obj.id); room.animate('found', obj.id); }
     const body = r.kind === 'clue'
       ? [h('div', { class: 'dt-clue' }, [h('small', {}, `線索卡｜第${game.mode === 'cross' ? game.baseLesson : game.lessons[0]}課`), r.item.text]), spk(r.item.text, '朗讀線索')]
       : [h('div', { class: 'dt-clue decoy' }, [h('small', {}, '可疑紙條（尚未證實，不一定可信）'), r.item.text]), h('p', {}, '偵探提醒：這張紙條不一定可信，先記在筆記本，之後用證據判斷。')];
@@ -250,7 +259,7 @@
   }
 
   // ---------- 視窗 ----------
-  function closeModal() { if (modal) { modal.remove(); modal = null; app.inert = false; stopSpeak(); } }
+  function closeModal() { if (modal) { modal.remove(); modal = null; app.inert = false; stopSpeak(); if (pendingVisual && room) { const kind = pendingVisual; pendingVisual = null; room.applyVisualState(visualSnapshot()); room.animate(kind); } } }
   function frame(title, kids) {
     closeModal();
     modal = h('div', { class: 'qmask', role: 'dialog', 'aria-modal': 'true', 'aria-label': title }, h('div', { class: 'qbox' }, [h('div', { class: 'qhead' }, [h('div', { class: 'qstem' }, title), h('button', { class: 'btn', type: 'button', onclick: closeModal }, '關閉')]), ...kids]));
@@ -450,7 +459,7 @@
       if (r.ok) {
         if (p.type === 'blocks') st.answerText = ans.join('');
         feed.className = 'dt-feed ok'; feed.textContent = st.firstTry ? '✓ 解開了！第一次就成功！' : '✓ 解開了！你用證據找到答案。';
-        tone('ok'); room.animate(p.type); say('解開了');
+        tone('ok'); pendingVisual = p.type; say('解開了');
         actions.replaceChildren(h('button', { class: 'btn primary', type: 'button', onclick: () => { closeModal(); play(); if (p.type === 'final') escapeRoom(); } }, p.type === 'final' ? '打開大門 🚪' : '繼續'));
         actions.querySelector('button').focus();
       } else {
@@ -467,11 +476,14 @@
 
   // ---------- 逃出與成果 ----------
   function escapeRoom() {
-    if (!C.escape(game)) return;
+    if (escaping || recorded || !C.escape(game)) return;
+    escaping = true; const currentGame = game; const currentRoom = room;
     game.stage = 6; tone('open'); if (room) room.animate('escape');
-    setTimeout(results, settings.calm ? 0 : 1300);
+    const finish = () => { if (game === currentGame && room === currentRoom && escaping) results(); };
+    escapeTimer = setTimeout(finish, room && room.is3d && !settings.calm && !matchMedia('(prefers-reduced-motion: reduce)').matches && !document.hidden ? 760 : 0);
   }
   function results() {
+    if (recorded) return; recorded = true; clearTimeout(escapeTimer);
     game.stage = 7; closeModal();
     const s = C.summary(game);
     const key = game.mode === 'cross' ? `X${game.lessons.join('-')}` : `L${game.lessons[0]}`;

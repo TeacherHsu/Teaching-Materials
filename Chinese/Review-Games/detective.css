@@ -99,3 +99,9 @@ body.proj .dt-mark { font-size: 1.05rem; }
 /* 覆蓋舊手機版「所有 next 都展開」規則，只展開當前機關。 */
 .dt-room .dt-mark:not(.dt-target) .dt-lab { display: none; }
 .dt-room .dt-mark.dt-target .dt-lab { display: inline; }
+
+/* 擁擠處維持投影錨點，以小圓點對照下方完整、48px 文字入口。 */
+.dt-room .dt-mark.dt-dot { width:20px; height:20px; min-width:20px; min-height:20px; padding:0; border-width:2px; font-size:11px; box-shadow:0 1px 3px #46342455; }
+.dt-room .dt-mark.dt-dot .dt-lab, .dt-mark.dt-dot::after { display:none; }
+.dt-skip { position:absolute; right:12px; top:12px; min-height:48px; z-index:2; border:2px solid #825a30; border-radius:12px; background:#fffaf0; color:#49321e; padding:8px 14px; font-weight:800; }
+.dt-flying-paper { position:fixed; z-index:101; pointer-events:none; background:#fff9dd; border:2px solid #967047; padding:10px; border-radius:4px; color:#49321e; }
