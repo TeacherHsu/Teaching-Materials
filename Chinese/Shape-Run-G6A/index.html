@@ -98,7 +98,7 @@
     <div class="lbl">正確語詞金幣</div>
     <div class="bignum"><span id="got-n">0</span><small> / 10</small></div>
     <div class="sub"><span id="lv-name">初級</span> • <span id="time">00:00</span></div>
-    <div class="missbar">✖ 吃錯 <span id="miss">0</span></div>
+    <div class="missbar">✖ 吃錯 <span id="miss">0</span> / 6</div>
   </div>
   <div class="hud tr">
     <span class="mode-tag" id="mode-tag">初級模式</span>
@@ -137,6 +137,7 @@
     // 語詞：翰林六上第1～6課生詞；錯字取自該課官方形似字組，並排除換字後仍是《國語辭典簡編本》詞條者
     const DATA = [{"L": 1, "w": "皺巴巴", "x": ["雛巴巴", "鄒巴巴"]}, {"L": 1, "w": "真摯", "x": ["真擊", "真擎"]}, {"L": 1, "w": "註定", "x": ["蛀定", "駐定", "柱定"]}, {"L": 1, "w": "儲存", "x": ["諸存", "藷存"]}, {"L": 1, "w": "邁入", "x": ["厲入"]}, {"L": 1, "w": "詢問", "x": ["殉問", "絢問"]}, {"L": 1, "w": "迷惘", "x": ["迷網"]}, {"L": 2, "w": "眼眶", "x": ["眼誆", "眼框"]}, {"L": 2, "w": "固執", "x": ["固紈", "固孰"]}, {"L": 2, "w": "辯論", "x": ["辮論", "辦論", "瓣論", "辨論"]}, {"L": 2, "w": "雙胞胎", "x": ["雙胞殆", "雙胞跆", "雙胞飴", "雙胞貽"]}, {"L": 2, "w": "暈倒", "x": ["暉倒", "葷倒"]}, {"L": 2, "w": "慘白", "x": ["摻白", "滲白"]}, {"L": 2, "w": "憤慨", "x": ["墳慨", "噴慨", "憤溉", "憤概"]}, {"L": 2, "w": "狠狠的", "x": ["垠狠的", "恨狠的", "很狠的", "狠垠的", "狠恨的", "狠很的"]}, {"L": 2, "w": "鼻涕", "x": ["鼻梯", "鼻悌"]}, {"L": 3, "w": "婆娑", "x": ["婆鯊", "婆裟"]}, {"L": 3, "w": "撫慰", "x": ["蕪慰", "嫵慰"]}, {"L": 3, "w": "杏壇", "x": ["杏顫", "杏羶", "杏檀", "杏擅"]}, {"L": 3, "w": "授徒", "x": ["授徙"]}, {"L": 3, "w": "精鍊", "x": ["精揀", "精諫"]}, {"L": 3, "w": "警惕", "x": ["擎惕", "驚惕", "警錫", "警賜", "警踢"]}, {"L": 3, "w": "智慧", "x": ["智彗"]}, {"L": 4, "w": "奧妙", "x": ["燠妙", "襖妙", "懊妙", "澳妙"]}, {"L": 4, "w": "仿生學", "x": ["彷生學", "妨生學", "坊生學", "防生學"]}, {"L": 4, "w": "從容不迫", "x": ["從容不泊", "從容不拍", "從容不伯"]}, {"L": 4, "w": "組成", "x": ["咀成", "沮成", "阻成", "粗成"]}, {"L": 4, "w": "鋸齒", "x": ["倨齒", "据齒", "踞齒"]}, {"L": 4, "w": "擴張", "x": ["獷張", "曠張", "礦張"]}, {"L": 4, "w": "結構", "x": ["結講", "結購", "結溝"]}, {"L": 4, "w": "巨無霸", "x": ["巨無霹", "巨無霧", "巨無霜", "巨無露", "巨無霞"]}, {"L": 5, "w": "泥濘", "x": ["泥擰", "泥檸", "泥嚀"]}, {"L": 5, "w": "急躁", "x": ["急噪", "急燥", "急操"]}, {"L": 5, "w": "淘氣", "x": ["陶氣"]}, {"L": 5, "w": "道賀", "x": ["道賢", "道資", "道質", "道貿"]}, {"L": 5, "w": "遮陽", "x": ["庶陽", "蔗陽"]}, {"L": 5, "w": "穩重", "x": ["隱重"]}, {"L": 5, "w": "栽種", "x": ["戴種", "載種", "截種", "裁種"]}, {"L": 5, "w": "庇護", "x": ["批護", "疵護"]}, {"L": 6, "w": "自嘲", "x": ["自廟", "自潮"]}, {"L": 6, "w": "揶揄", "x": ["爺揄", "椰揄", "揶喻", "揶偷"]}, {"L": 6, "w": "僵持", "x": ["薑持", "殭持", "韁持", "疆持"]}, {"L": 6, "w": "競選", "x": ["兢選"]}, {"L": 6, "w": "批判", "x": ["批叛"]}, {"L": 6, "w": "倘若", "x": ["趟若", "敞若", "躺若"]}, {"L": 6, "w": "嘲諷", "x": ["廟諷", "潮諷", "嘲瘋", "嘲楓"]}, {"L": 6, "w": "不屑", "x": ["不宵"]}, {"L": 6, "w": "貶低", "x": ["泛低", "眨低"]}, {"L": 6, "w": "口吻", "x": ["口物", "口忽"]}, {"L": 6, "w": "坦然", "x": ["袒然", "但然"]}];
     const GOAL = 10;
+    const MAX_WRONG = 6;   // 錯滿 6 次本局結束，重新開始
     let POOL = DATA;
     const pick = a => a[Math.floor(Math.random() * a.length)];
     function diffChar(w, x) { for (let i = 0; i < w.length; i++) if (w[i] !== x[i]) return [x[i], w[i]]; return ['', '']; }
@@ -557,6 +558,7 @@
         if (navigator.vibrate) navigator.vibrate([60, 40, 60]);
         wrong++; wrongList.push([c.n, c.right]);
         document.getElementById('miss').textContent = wrong;
+        if (wrong >= MAX_WRONG) setTimeout(gameOver, 900);
         makePoop(pos); burst(pos, 0x8b5a2b, 40);
         flash(); shake = 0.4; showPoops();
         const [bad, good] = diffChar(c.right, c.n);
@@ -756,6 +758,23 @@
         if (r.length > 100) r.length = 100;
         localStorage.setItem(KEY, JSON.stringify(r));
       } catch (e) {}
+    }
+
+    function gameOver() {
+      if (!running) return;
+      running = false;
+      clearInterval(clockT);
+      sfx('bad');
+      const fix = wrongList.map(([x, r]) => `<span class="slot poop">${x}→${r}</span>`).join('');
+      center(`
+        <div class="card">
+          <div class="en" style="color:#ff8fa3">TRY AGAIN</div>
+          <h2>吃錯 6 次，這一局結束</h2>
+          <p>先看一看正確的字，再挑戰一次！</p>
+          <div class="chips">${fix}</div>
+          <button class="btn" onclick="start('${modeKey}')">重新開始（${mode.name}）</button>
+          <button class="btn gray" onclick="menu()">回選單</button>
+        </div>`);
     }
 
     function finish() {

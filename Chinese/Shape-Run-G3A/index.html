@@ -98,7 +98,7 @@
     <div class="lbl">正確語詞金幣</div>
     <div class="bignum"><span id="got-n">0</span><small> / 10</small></div>
     <div class="sub"><span id="lv-name">初級</span> • <span id="time">00:00</span></div>
-    <div class="missbar">✖ 吃錯 <span id="miss">0</span></div>
+    <div class="missbar">✖ 吃錯 <span id="miss">0</span> / 6</div>
   </div>
   <div class="hud tr">
     <span class="mode-tag" id="mode-tag">初級模式</span>
@@ -137,6 +137,7 @@
     // 語詞：翰林三上第1～6課生詞；錯字取自該課官方形似字組，並排除換字後仍是《國語辭典簡編本》詞條者
     const DATA = [{"L": 1, "w": "等待", "x": ["等侍"]}, {"L": 1, "w": "蝸牛", "x": ["過牛"]}, {"L": 1, "w": "慢吞吞", "x": ["慢舌吞", "慢吞舌"]}, {"L": 1, "w": "忙碌", "x": ["忙錄", "忙綠"]}, {"L": 1, "w": "縮短", "x": ["縮逗"]}, {"L": 1, "w": "流水", "x": ["流永"]}, {"L": 2, "w": "便利貼", "x": ["使利貼"]}, {"L": 2, "w": "使用", "x": ["便用"]}, {"L": 2, "w": "睡覺", "x": ["垂覺"]}, {"L": 2, "w": "鬧鐘", "x": ["鬧鍾"]}, {"L": 2, "w": "有效", "x": ["有郊"]}, {"L": 2, "w": "而且", "x": ["需且", "而直", "而具"]}, {"L": 2, "w": "冰箱", "x": ["冰相", "冰廂"]}, {"L": 2, "w": "原來", "x": ["源來"]}, {"L": 2, "w": "便條", "x": ["使條"]}, {"L": 3, "w": "統計", "x": ["充計"]}, {"L": 3, "w": "公車票", "x": ["公車栗", "公車粟"]}, {"L": 3, "w": "三角板", "x": ["三角扳"]}, {"L": 3, "w": "情況", "x": ["情祝"]}, {"L": 3, "w": "匆忙", "x": ["勿忙"]}, {"L": 3, "w": "文具", "x": ["蚊具", "紋具", "文真"]}, {"L": 4, "w": "食堂", "x": ["食賞", "食掌", "食當", "食常"]}, {"L": 4, "w": "師徒", "x": ["師徙"]}, {"L": 4, "w": "撿柴", "x": ["驗柴", "檢柴", "儉柴"]}, {"L": 4, "w": "沸騰", "x": ["拂騰", "費騰", "佛騰"]}, {"L": 4, "w": "揚湯止沸", "x": ["陽湯止沸", "湯湯止沸", "場湯止沸", "揚陽止沸", "揚場止沸", "揚揚止沸", "揚湯止拂", "揚湯止費", "揚湯止佛"]}, {"L": 4, "w": "釜底抽薪", "x": ["斧底抽薪"]}, {"L": 5, "w": "梨花", "x": ["犁花"]}, {"L": 5, "w": "甜美", "x": ["添美"]}, {"L": 5, "w": "腐爛", "x": ["腐蘭", "腐欄", "腐攔"]}, {"L": 5, "w": "景色", "x": ["影色"]}, {"L": 6, "w": "石墨", "x": ["石黑"]}, {"L": 6, "w": "部分", "x": ["部粉"]}, {"L": 6, "w": "斷裂", "x": ["繼裂"]}, {"L": 6, "w": "機器", "x": ["幾器"]}, {"L": 6, "w": "凹槽", "x": ["凹糟", "凹遭"]}, {"L": 6, "w": "三明治", "x": ["三明抬"]}, {"L": 6, "w": "筆桿", "x": ["筆趕"]}, {"L": 6, "w": "削鉛筆機", "x": ["削鉛筆幾"]}];
     const GOAL = 10;
+    const MAX_WRONG = 6;   // 錯滿 6 次本局結束，重新開始
     let POOL = DATA;
     const pick = a => a[Math.floor(Math.random() * a.length)];
     function diffChar(w, x) { for (let i = 0; i < w.length; i++) if (w[i] !== x[i]) return [x[i], w[i]]; return ['', '']; }
@@ -557,6 +558,7 @@
         if (navigator.vibrate) navigator.vibrate([60, 40, 60]);
         wrong++; wrongList.push([c.n, c.right]);
         document.getElementById('miss').textContent = wrong;
+        if (wrong >= MAX_WRONG) setTimeout(gameOver, 900);
         makePoop(pos); burst(pos, 0x8b5a2b, 40);
         flash(); shake = 0.4; showPoops();
         const [bad, good] = diffChar(c.right, c.n);
@@ -756,6 +758,23 @@
         if (r.length > 100) r.length = 100;
         localStorage.setItem(KEY, JSON.stringify(r));
       } catch (e) {}
+    }
+
+    function gameOver() {
+      if (!running) return;
+      running = false;
+      clearInterval(clockT);
+      sfx('bad');
+      const fix = wrongList.map(([x, r]) => `<span class="slot poop">${x}→${r}</span>`).join('');
+      center(`
+        <div class="card">
+          <div class="en" style="color:#ff8fa3">TRY AGAIN</div>
+          <h2>吃錯 6 次，這一局結束</h2>
+          <p>先看一看正確的字，再挑戰一次！</p>
+          <div class="chips">${fix}</div>
+          <button class="btn" onclick="start('${modeKey}')">重新開始（${mode.name}）</button>
+          <button class="btn gray" onclick="menu()">回選單</button>
+        </div>`);
     }
 
     function finish() {

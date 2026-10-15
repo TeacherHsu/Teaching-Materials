@@ -98,7 +98,7 @@
     <div class="lbl">正確語詞金幣</div>
     <div class="bignum"><span id="got-n">0</span><small> / 10</small></div>
     <div class="sub"><span id="lv-name">初級</span> • <span id="time">00:00</span></div>
-    <div class="missbar">✖ 吃錯 <span id="miss">0</span></div>
+    <div class="missbar">✖ 吃錯 <span id="miss">0</span> / 6</div>
   </div>
   <div class="hud tr">
     <span class="mode-tag" id="mode-tag">初級模式</span>
@@ -137,6 +137,7 @@
     // 語詞：康軒四上第1～6課生詞；錯字取自該課官方形似字組，並排除換字後仍是《國語辭典簡編本》詞條者
     const DATA = [{"L": 1, "w": "游泳", "x": ["游永", "游詠"]}, {"L": 1, "w": "一般", "x": ["一搬", "一船"]}, {"L": 1, "w": "多采多姿", "x": ["多采多資"]}, {"L": 1, "w": "緩緩", "x": ["暖緩", "援緩", "緩暖", "緩援"]}, {"L": 1, "w": "陀螺", "x": ["陀騾", "陀累"]}, {"L": 2, "w": "招招手", "x": ["昭招手", "招昭手"]}, {"L": 2, "w": "爭吵", "x": ["掙吵"]}, {"L": 2, "w": "警察", "x": ["驚察"]}, {"L": 2, "w": "小偷", "x": ["小愉"]}, {"L": 2, "w": "依依不捨", "x": ["依依不拾"]}, {"L": 2, "w": "幸福", "x": ["辛福"]}, {"L": 3, "w": "邀約", "x": ["激約", "繳約"]}, {"L": 3, "w": "遙不可及", "x": ["搖不可及", "謠不可及"]}, {"L": 3, "w": "熟能生巧", "x": ["熱能生巧", "熟能生朽"]}, {"L": 3, "w": "反彈", "x": ["反禪", "反蟬", "反憚"]}, {"L": 3, "w": "不曾", "x": ["不層", "不增"]}, {"L": 4, "w": "馬偕", "x": ["馬楷", "馬階", "馬諧"]}, {"L": 4, "w": "奉獻", "x": ["奏獻"]}, {"L": 4, "w": "醫療", "x": ["醫寮", "醫遼", "醫僚"]}, {"L": 4, "w": "治病", "x": ["冶病"]}, {"L": 4, "w": "翻山越嶺", "x": ["翻山越領"]}, {"L": 4, "w": "捐錢", "x": ["損錢"]}, {"L": 4, "w": "學堂", "x": ["學棠"]}, {"L": 4, "w": "濃濃", "x": ["農濃", "濃農"]}, {"L": 5, "w": "勵志", "x": ["厲志"]}, {"L": 5, "w": "視力", "x": ["現力", "規力"]}, {"L": 5, "w": "注意", "x": ["住意", "柱意"]}, {"L": 5, "w": "單憑", "x": ["單馮"]}, {"L": 5, "w": "蓓蕾", "x": ["倍蕾", "陪蕾", "蓓雷"]}, {"L": 5, "w": "任何", "x": ["任可"]}, {"L": 6, "w": "開朗", "x": ["開郎"]}, {"L": 6, "w": "珠穆朗瑪峰", "x": ["珠穆郎瑪峰", "珠穆朗碼峰", "珠穆朗螞峰", "珠穆朗瑪鋒", "珠穆朗瑪蜂"]}, {"L": 6, "w": "母親", "x": ["每親"]}, {"L": 6, "w": "冷酷", "x": ["冷皓"]}, {"L": 6, "w": "磨練", "x": ["摩練"]}, {"L": 6, "w": "攀登", "x": ["攀燈"]}];
     const GOAL = 10;
+    const MAX_WRONG = 6;   // 錯滿 6 次本局結束，重新開始
     let POOL = DATA;
     const pick = a => a[Math.floor(Math.random() * a.length)];
     function diffChar(w, x) { for (let i = 0; i < w.length; i++) if (w[i] !== x[i]) return [x[i], w[i]]; return ['', '']; }
@@ -557,6 +558,7 @@
         if (navigator.vibrate) navigator.vibrate([60, 40, 60]);
         wrong++; wrongList.push([c.n, c.right]);
         document.getElementById('miss').textContent = wrong;
+        if (wrong >= MAX_WRONG) setTimeout(gameOver, 900);
         makePoop(pos); burst(pos, 0x8b5a2b, 40);
         flash(); shake = 0.4; showPoops();
         const [bad, good] = diffChar(c.right, c.n);
@@ -756,6 +758,23 @@
         if (r.length > 100) r.length = 100;
         localStorage.setItem(KEY, JSON.stringify(r));
       } catch (e) {}
+    }
+
+    function gameOver() {
+      if (!running) return;
+      running = false;
+      clearInterval(clockT);
+      sfx('bad');
+      const fix = wrongList.map(([x, r]) => `<span class="slot poop">${x}→${r}</span>`).join('');
+      center(`
+        <div class="card">
+          <div class="en" style="color:#ff8fa3">TRY AGAIN</div>
+          <h2>吃錯 6 次，這一局結束</h2>
+          <p>先看一看正確的字，再挑戰一次！</p>
+          <div class="chips">${fix}</div>
+          <button class="btn" onclick="start('${modeKey}')">重新開始（${mode.name}）</button>
+          <button class="btn gray" onclick="menu()">回選單</button>
+        </div>`);
     }
 
     function finish() {
