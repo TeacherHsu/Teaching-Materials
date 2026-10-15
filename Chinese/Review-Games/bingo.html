@@ -41,6 +41,7 @@
 <body>
   <main class="wrap" id="app"><p>載入中…</p></main>
   <script src="common.js"></script>
+  <script src="scene3d.js"></script>
   <script>
     const { h, shuffle, speak, speakBtn, loadBank, setupPanel, header, token, TEAM_NAMES } = RG;
     const SIDE = { support: 3, standard: 4, challenge: 5 };
@@ -76,7 +77,8 @@
         const grid = h('div', { class: `bgrid n${n}`, style: `grid-template-columns:repeat(${n},1fr)` });
         const btns = cells.map((c, i) => h('button', { class: 'bcell', type: 'button', onclick: (e) => tap(i, e.currentTarget) }, c.text));
         grid.append(...btns);
-        app.replaceChildren(header(bank, '語詞賓果'), h('div', { class: 'clue' }, [h('span', { style: 'font-size:1.8rem', 'aria-hidden': 'true' }, '💡'), clueTxt, acts]), fb, bar, h('div', { style: 'height:10px' }), grid);
+        app.replaceChildren(header(bank, '語詞賓果'), h('div', { class: 'clue' }, [h('span', { style: 'font-size:1.8rem', 'aria-hidden': 'true' }, '💡'), clueTxt, acts]), fb, bar, h('div', { style: 'height:10px' }), h('div', { class: 'bingo-host' }, grid));
+        const view = window.RG3D?.mount({ kind: 'bingo', host: grid.parentElement, buttons: btns });
 
         const lines = () => {
           const L = [];
@@ -109,6 +111,7 @@
           marked.add(i); btns[i].classList.add(learned ? 'learned' : 'on');
           btns.forEach((b) => b.classList.remove('hinted'));
           lines().flat().forEach((j) => btns[j].classList.add('line'));
+          view?.markCell(i, learned); view?.setLines(lines());
           fb.className = learned ? 'fb learn' : 'fb ok';
           fb.textContent = learned ? `一起學：「${cur.text}」＝${cur.clue}` : `✓「${cur.text}」＝${cur.clue}`;
           speak(`${cur.text}，${cur.clue}`);

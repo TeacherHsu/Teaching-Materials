@@ -53,7 +53,8 @@
   const speak = (text) => {
     if (!('speechSynthesis' in window) || !text) return;
     speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
+    // 語音引擎常把「的地」念成ㄉㄜ˙；只在朗讀時換成同音「弟」，畫面文字不變
+    const u = new SpeechSynthesisUtterance(text.replace(/的地/g, '的弟').replace(/塊地/g, '塊弟').replace(/買地/g, '買弟'));
     u.lang = 'zh-TW'; u.rate = 0.9;
     if (voice) u.voice = voice;
     speechSynthesis.speak(u);

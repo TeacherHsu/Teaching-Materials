@@ -23,6 +23,8 @@ GRADES = {
 }
 LESSONS = range(1, 7)
 OK = {'ready', 'approved'}
+# 每題存 7 個干擾項候選；遊戲每次出題時再隨機抽 2～3 個，選項組合每次不同，避免學生記答案
+POOL = 7
 
 lexicon = {}
 if LEXICON.exists():
@@ -95,25 +97,25 @@ def build(code, label, publisher, lessons_range=range(1, 7)):
     titles = [l['title'] for l in lessons]
     for q in questions:
         if q['type'] == 'gist':
-            q['options'] = [q['answer']] + pick(titles, q['answer'], 3, rng=rng)
+            q['options'] = [q['answer']] + pick(titles, q['answer'], len(titles) - 1, rng=rng)
     for w in words:
         same_len = [x for x in words if x['zhuyin'] and len(x['zhuyin'].split()) == len(w['zhuyin'].split())]
-        zy = pick(same_len, w['zhuyin'], 3, key=lambda x: x['zhuyin'], rng=rng) if w['zhuyin'] else []
-        if len(zy) == 3:
+        zy = pick(same_len, w['zhuyin'], POOL, key=lambda x: x['zhuyin'], rng=rng) if w['zhuyin'] else []
+        if len(zy) >= 3:
             questions.append({'lesson': w['lesson'], 'type': 'zhuyin', 'stem': f'「{w["word"]}」的注音是哪一個？',
                               'speak': f'{w["word"]}，怎麼念？', 'noSpeakOptions': True,
                               'options': [w['zhuyin']] + zy, 'answer': w['zhuyin']})
         # 干擾項：優先同字數；不夠再用其他語詞補；排除意思相同的詞，避免兩個都對
         others = [x for x in words if x['meaning'] != w['meaning']]
         same = [x for x in others if len(x['word']) == len(w['word'])]
-        ws = pick(same, w['word'], 3, key=lambda x: x['word'], rng=rng)
-        if len(ws) < 3:
-            ws += pick([x for x in others if x['word'] not in ws], w['word'], 3 - len(ws), key=lambda x: x['word'], rng=rng)
+        ws = pick(same, w['word'], POOL, key=lambda x: x['word'], rng=rng)
+        if len(ws) < POOL:
+            ws += pick([x for x in others if x['word'] not in ws], w['word'], POOL - len(ws), key=lambda x: x['word'], rng=rng)
         questions.append({'lesson': w['lesson'], 'type': 'meaning', 'stem': f'哪個語詞的意思是「{w["meaning"]}」？',
                           'options': [w['word']] + ws, 'answer': w['word']})
     for i in idioms:
-        ids = pick([x for x in idioms if x['definition'] != i['definition']], i['idiom'], 3, key=lambda x: x['idiom'], rng=rng)
-        if len(ids) == 3:
+        ids = pick([x for x in idioms if x['definition'] != i['definition']], i['idiom'], POOL, key=lambda x: x['idiom'], rng=rng)
+        if len(ids) >= 3:
             questions.append({'lesson': i['lesson'], 'type': 'idiom', 'stem': f'哪個成語的意思是「{i["definition"]}」？',
                               'options': [i['idiom']] + ids, 'answer': i['idiom']})
     return {'grade': label, 'publisher': publisher, 'code': code, 'lessons': lessons,

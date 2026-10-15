@@ -139,3 +139,76 @@ body { background: radial-gradient(ellipse at 50% -10%, #fff4dc 0%, var(--bg) 55
 body.calm .tilt > .tilted { transform: none; }
 body.calm .cube { transform: none; }
 @media (prefers-reduced-motion: reduce) { .tilt > .tilted { transform: none; } }
+
+/* Three.js 視圖：教學文字與可操作元件仍在 DOM；沒有 is-3d 就沿用原版。 */
+.rg3d-tools { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 20px; padding: 8px 14px; margin-bottom: 12px; border: 2px solid var(--line); border-radius: 16px; background: #fffaf3; }
+.rg3d-status { font-size: 16px; font-weight: 800; color: var(--muted); margin-right: auto; }
+.rg3d-switch { display: inline-flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 800; min-height: 48px; cursor: pointer; }
+.rg3d-switch input { width: 24px; height: 24px; accent-color: var(--brand); }
+.rg3d-host { position: relative; min-width: 0; }
+.rg3d-surface { display: none; pointer-events: none; overflow: hidden; border-radius: 24px; }
+.is-3d > .rg3d-surface { display: block; }
+.rg3d-surface canvas { display: block; width: 100%; height: 100%; }
+.rg3d-monopoly.is-3d > .rg3d-surface, .rg3d-snakes.is-3d > .rg3d-surface { height: auto; aspect-ratio: 6 / 5; min-height: 490px; max-height: 680px; background: #cfab7c; border: 1px solid #b98856; box-shadow: 0 14px 32px #68412326; }
+/* 原棋盤留給輔助科技讀取，控制項在 3D 模式移至側欄。 */
+.rg3d-monopoly.is-3d > .tilt, .rg3d-snakes.is-3d > .tilt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); pointer-events: none; }
+.side > .rg3d-console { grid-column: 1; grid-row: auto; width: 100%; min-width: 0; padding: 16px 12px; gap: 12px; background: #fff8ed; border: 2px solid #d6b389; border-radius: 20px; box-shadow: 0 6px 0 #e3c7a4; }
+.play:has(> .rg3d-host.is-3d) > .side { grid-template-columns: minmax(0, 1fr); min-width: 260px; width: 100%; }
+.play:has(> .rg3d-host.is-3d) .side .teams { width: 100%; min-width: 0; }
+.play:has(> .rg3d-host.is-3d) .side .team { flex: 0 0 auto; width: 100%; min-height: 80px; padding: 12px 16px; }
+.play:has(> .rg3d-host.is-3d) .side .team > div:first-child { white-space: nowrap; }
+.play:has(> .rg3d-host.is-3d) .side .team.now { border-color: #9b4b20; box-shadow: 0 0 0 3px #d9984b42, 0 5px 12px #6d49251a; }
+.rg3d-console .where { font-size: 22px; }
+.rg3d-console .log { font-size: 20px; }
+.rg3d-dobble.is-3d > .rg3d-surface, .rg3d-bingo.is-3d > .rg3d-surface { position: absolute; inset: -12px; z-index: 0; background: #d8b486; border: 1px solid #c99c67; box-shadow: 0 10px 26px #6841231f; }
+.rg3d-dobble.is-3d > .card, .rg3d-bingo.is-3d > .bgrid { position: relative; z-index: 1; }
+.rg3d-dobble.is-3d { isolation: isolate; perspective: none; }
+.rg3d-dobble.is-3d .disc { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; align-content: center; gap: 12px; padding: 32px 18px; min-height: 340px; width: 100%; border-color: transparent; background: transparent; box-shadow: none; animation: none; }
+.rg3d-dobble.is-3d .sym { position: relative; left: auto !important; top: auto !important; transform: none !important; min-width: 0; min-height: 64px; font-size: 28px !important; white-space: normal; word-break: keep-all; overflow-wrap: anywhere; line-height: 1.35; border: 2px solid #cdb28d; box-shadow: 0 4px 8px #63472726; background: #fffaf3; }
+.rg3d-dobble.is-3d .sym.ok { border: 4px solid var(--ok); background: #e3f5ea; box-shadow: 0 0 0 4px #e8c06b; }
+.rg3d-dobble.is-3d .card.b .sym { border-color: #77a7bd; background: #f4fbff; }
+.rg3d-dobble.is-3d .card .sym.ok { border-color: #216d43; background: #dcf2dd; box-shadow: 0 0 0 4px #efba3b, 0 5px 0 #a17725; }
+.rg3d-dobble.is-3d { padding: 12px 14px; gap: 24px; }
+.rg3d-dobble.is-3d .card > .btn { background: #fffaf3; border-color: #be9567; }
+.duel .rg3d-dobble.is-3d .disc { min-height: 0; padding: 16px 6px; }
+.duel .rg3d-dobble.is-3d .sym { font-size: 24px !important; }
+@media (min-width: 901px) and (max-width: 1300px) { .duel .rg3d-dobble.is-3d .disc { grid-template-columns: 1fr !important; } }
+.rg3d-bingo { max-width: 720px; margin: 0 auto; padding: 12px; }
+.rg3d-bingo.is-3d { max-width: 600px; margin: 12px auto 24px; padding: 18px; }
+.rg3d-bingo.is-3d > .rg3d-surface { inset: -24px; }
+.rg3d-bingo.is-3d .bgrid { perspective: none; }
+.rg3d-bingo.is-3d .bgrid .bcell { background: transparent; border-color: #a77d4b; border-width: 2px; border-radius: 12px; box-shadow: 0 6px 0 #735038, 0 10px 12px #50351e26; animation: none; transform: none; min-height: 64px; font-size: 28px; overflow-wrap: anywhere; }
+/* P0：狀態色由 DOM 同時保證，不受光照、後製或載入時間影響。 */
+.rg3d-bingo.is-3d .bgrid .bcell.on { background: linear-gradient(145deg, #b95119, #963909); border-color: #ffdd8f; color: #fff; box-shadow: 0 9px 0 #6d2b10, 0 15px 18px #55321a4d; transform: translateY(-5px); }
+.rg3d-bingo.is-3d .bgrid .bcell.on::before { font-size: 28px; top: 5px; right: 9px; color: #fff4c9; }
+.rg3d-bingo.is-3d .bgrid .bcell.learned { background: linear-gradient(145deg, #29679e, #194674); border-color: #b6dbff; color: #fff; box-shadow: 0 9px 0 #143657, 0 15px 18px #253c5540; transform: translateY(-5px); }
+.rg3d-bingo.is-3d .bgrid .bcell.learned::before { font-size: 16px; padding: 4px; }
+.rg3d-bingo.is-3d .bgrid .bcell.line { border: 4px solid #ffe282; box-shadow: 0 0 0 3px #b47713, 0 9px 0 #6d2b10, 0 0 22px #edc25780; }
+.rg3d-bingo.is-3d .bgrid.n5 .bcell { font-size: 24px; }
+.rg3d-bingo.is-3d .bgrid.n5 .bcell.on::before { font-size: 22px; }
+.rg3d-bingo.is-3d .bgrid.n5 .bcell.learned::before { font-size: 13px; }
+.rg3d-bingo.is-3d .bgrid .bcell.hinted { border: 4px dashed #704106; }
+.rg3d-bingo.is-3d .bgrid .bcell:focus-visible, .rg3d-dobble.is-3d .sym:focus-visible { outline: 4px solid #143e68; outline-offset: 4px; }
+.rg3d-feedback-lines { display: none; }
+.rg3d-bingo.is-3d > .rg3d-feedback-lines { display: block; position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.rg3d-feedback-line { position: absolute; height: 6px; transform-origin: 0 50%; border: 1px solid #9b6418; border-radius: 8px; background: #ffe38b; box-shadow: 0 0 8px #ffc446; }
+@media (min-width: 901px) { .play:has(> .rg3d-host.is-3d) { grid-template-columns: minmax(0, 1fr) minmax(260px, 280px); gap: 20px; } }
+@media (max-width: 900px) { .play:has(> .rg3d-host.is-3d) { grid-template-columns: minmax(0, 1fr); } }
+/* 答錯用靜態虛線，不以震動懲罰；不影響原有線索與重試。 */
+.sym.bad, .bcell.bad { animation: none !important; }
+body.proj .rg3d-status { font-size: 20px; }
+body.proj .rg3d-host .sym { font-size: 32px !important; min-height: 72px; }
+body.proj .rg3d-bingo.is-3d { max-width: 720px; }
+body.proj .rg3d-bingo.is-3d .bgrid .bcell { font-size: 32px; }
+body.proj .rg3d-console .where { font-size: 28px; }
+body.proj .rg3d-console .log { font-size: 24px; }
+@media (max-width: 760px) { .rg3d-tools { gap: 4px 12px; } .rg3d-status { flex-basis: 100%; } .rg3d-bingo { padding: 0; } }
+body.proj .clue .txt, body.proj .reveal { font-size: 36px; }
+body.proj .duel-info, body.proj .now-pos { font-size: 30px; }
+
+body.proj .duel .rg3d-dobble.is-3d .sym { font-size: 32px !important; }
+.rg3d-dobble.is-3d .card .disc { border-color: transparent !important; border-radius: 20px; }
+
+/* 逐格足跡（2D 版）：走過的格子框上隊伍色，右上角顯示步數 */
+.trail { box-shadow: inset 0 0 0 5px var(--tc), 0 6px 0 #dcc6a6 !important; }
+.trail::after { content: attr(data-step); position: absolute; top: 2px; right: 4px; z-index: 6; min-width: 28px; height: 28px; border-radius: 50%; background: var(--tc); color: #fff; font-weight: 900; font-size: 18px; display: flex; align-items: center; justify-content: center; }

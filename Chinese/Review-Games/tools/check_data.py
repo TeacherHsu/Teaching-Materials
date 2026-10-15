@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """檢查綜合複習遊戲題庫（data/*.js）是否正確。重產題庫後必跑；有錯誤時結束碼為 1。
 
-檢查項目：課次數、每題答案在選項內、選項不重複、選項數、題幹非空、
+檢查項目：課次數、隨機出題的干擾項候選數、每題答案在選項內、選項不重複、選項數、題幹非空、
 注音題答案與語詞資料一致、形似字題只有一個空格、語詞／成語不重複、題目只屬於有效課次。
 
 用法：python3 Chinese/Review-Games/tools/check_data.py
@@ -53,6 +53,12 @@ def check(key, bank):
         if q['type'] == 'lookalike' and q['stem'].count('＿') != 1:
             errors.append(f'{tag} 空格數不是 1')
     counts = {t: sum(1 for q in bank['questions'] if q['type'] == t) for t in TYPES}
+    # 隨機出題：語詞意思／注音／成語題要有足夠干擾項候選（≥5 個選項），遊戲每次才能抽出不同組合
+    for t in ('meaning', 'zhuyin', 'idiom'):
+        qs = [q for q in bank['questions'] if q['type'] == t]
+        rich = sum(1 for q in qs if len(q['options']) >= 5)
+        if qs and rich / len(qs) < 0.9:
+            errors.append(f'{t} 題只有 {rich}/{len(qs)} 題有 ≥5 個選項候選，無法每次隨機換選項')
     for n in nos:
         if not any(q['lesson'] == n for q in bank['questions']):
             errors.append(f'第{n}課沒有任何題目')

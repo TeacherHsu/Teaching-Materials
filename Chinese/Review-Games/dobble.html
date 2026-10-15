@@ -55,6 +55,7 @@
 <body>
   <main class="wrap" id="app"><p>載入中…</p></main>
   <script src="common.js"></script>
+  <script src="scene3d.js"></script>
   <script>
     const { h, shuffle, speak, speakBtn, loadBank, setupPanel, header, token } = RG;
     const SIZE = { support: 4, standard: 6, challenge: 8 };
@@ -85,11 +86,14 @@
         const discB = h('div', { class: 'disc', role: 'group', 'aria-label': '右邊卡片' });
         const listen = (disc) => h('button', { class: 'btn', type: 'button', onclick: () => speak([...disc.querySelectorAll('.sym')].map((s) => s.textContent).join('，')) }, '🔊 聽這張卡');
         const status = h('div', { class: 'bar' });
+        let soloView;
         const reveal = h('div', { class: 'reveal', role: 'status', 'aria-live': 'polite' });
         const nextBtn = h('button', { class: 'btn primary hidden', type: 'button', onclick: () => deal() }, '下一回');
         app.replaceChildren(header(bank, '語詞哆寶'), status,
           h('div', { class: 'stage' }, [h('div', { class: 'card' }, [discA, listen(discA)]), h('div', { class: 'card b' }, [discB, listen(discB)])]),
           reveal, h('div', { class: 'row', style: 'justify-content:center' }, nextBtn));
+
+        soloView = window.RG3D?.mount({ kind: 'dobble', host: discA.closest('.stage') });
 
         // 共有字越多越像，優先挑來當干擾，讓學生把每個字都看清楚
         const overlap = (a, b) => [...a].filter((ch) => b.includes(ch)).length;
@@ -129,6 +133,7 @@
           round++; locked = false; roundMiss = 0; nextBtn.classList.add('hidden'); reveal.replaceChildren();
           current = pickRound();
           layout(discA, current.a); layout(discB, current.b);
+          soloView?.deal();
           renderStatus();
           if (settings.autoSpeak) speak('找一找，兩張卡片哪個語詞一樣？');
           discA.querySelector('.sym').focus();
@@ -144,6 +149,7 @@
           }
           locked = true;
           document.querySelectorAll('.sym').forEach((s) => { if (s.textContent === it.text) s.classList.add('ok'); });
+          soloView?.markMatch(it.text);
           meaningCheck(it);
         }
         // 找到相同語詞後，再從兩個意思中選一個：確認懂詞義，不只是找相同字
@@ -186,6 +192,7 @@
           });
           const center = h('div', { class: 'duel-center' });
           app.replaceChildren(header(bank, '語詞哆寶・雙人對戰'), h('div', { class: `duel${face ? ' face' : ''}` }, [P[0].zone, center, P[1].zone]));
+          P.forEach((p) => { p.view = window.RG3D?.mount({ kind: 'dobble', host: p.discA.closest('.stage') }); });
           const setScore = () => P.forEach((p, i) => { p.head.querySelector('.duel-score').textContent = `${score[i]} 分`; });
           function deal() {
             rounds++;
@@ -197,6 +204,7 @@
               p.zone.classList.remove('won', 'out');
               layout(p.discA, shuffle(r.a), (it, btn) => tap(i, it, btn));
               layout(p.discB, shuffle(r.b), (it, btn) => tap(i, it, btn));
+              p.view?.deal();
             });
             if (settings.autoSpeak) speak('預備，開始！');
           }
@@ -210,6 +218,7 @@
               return;
             }
             p.state = 'meaning';
+            p.view?.markMatch(it.text);
             [p.discA, p.discB].forEach((d) => d.querySelectorAll('.sym').forEach((s) => { if (s.textContent === it.text) s.classList.add('ok'); }));
             const other = shuffle(items.filter((x) => x.meaning !== it.meaning))[0];
             p.info.textContent = `找到「${it.text}」！它的意思是？`;
@@ -253,7 +262,7 @@
         function finish() {
           const words = [...new Set(practiced)];
           const redo = [...new Set(toPractice)];
-          discA.replaceChildren(); discB.replaceChildren();
+          discA.replaceChildren(); discB.replaceChildren(); soloView?.deal();
           reveal.replaceChildren(
             h('div', {}, `🎉 完成 ${ROUNDS} 回！今天練過：${words.join('、')}`),
             ...(redo.length ? [h('div', {}, `還想再練：${redo.join('、')}`)] : []),

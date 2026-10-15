@@ -38,6 +38,7 @@
 <body>
   <main class="wrap" id="app"><p>載入中…</p></main>
   <script src="common.js"></script>
+  <script src="scene3d.js"></script>
   <script>
     const { die3d, h, speak, sleep, loadBank, setupPanel, makeDeck, ask, header, token, statsLine, TEAM_COLORS, TEAM_NAMES } = RG;
     const PRICE = 200, TOLL = 100, PASS_GO = 200, START_CASH = 1000;
@@ -95,7 +96,25 @@
         const center = h('div', { class: 'center' }, [roundEl, die, rollBtn, where, log]);
         const board = h('div', { class: 'board tilted' }, [...tiles.map((t) => t.el), center]);
         const teamBar = h('div', { class: 'teams' });
-        app.replaceChildren(header(bank, '課文大富翁'), h('div', { class: 'play' }, [h('div', { class: 'tilt' }, board), h('div', { class: 'side' }, [teamBar])]));
+        const side = h('div', { class: 'side' }, [teamBar]);
+        const boardHost = h('div', {}, h('div', { class: 'tilt' }, board));
+        app.replaceChildren(header(bank, '課文大富翁'), h('div', { class: 'play' }, [boardHost, side]));
+        const view = window.RG3D?.mount({ kind: 'monopoly', host: boardHost,
+          cells: LAYOUT.map((t, i) => {
+            const [r, c] = pos(i), kind = kindOf(t);
+            return { id: i, row: r - 1, col: c - 1,
+              label: kind === 'review' ? '綜合複習' : typeof t === 'number' ? `第${t}課` : { start: '起點', chance: '機會', fate: '命運', rest: '休息站' }[t],
+              color: kind === 'review' ? '#e3edfc' : typeof t === 'number' ? '#fffaf3' : '#ffe6b7',
+              band: typeof kind === 'number' ? getComputedStyle(document.body).getPropertyValue(`--c${t}`).trim() : null };
+          }),
+          onMode: (active) => {
+            const focused = document.activeElement;
+            center.classList.toggle('rg3d-console', active);
+            if (active) side.append(center); else board.append(center);
+            if (focused && center.contains(focused)) focused.focus({ preventScroll: true });
+          }
+        });
+        teams.forEach((t, i) => view?.moveToken(i, t.at, { instant: true }));
 
         const propCount = (ti) => Object.values(owner).filter((o) => o === ti).length;
         function tileName(i) {
@@ -121,6 +140,13 @@
           });
         }
         const say = (m) => { log.textContent = m; speak(m); };
+        // 2D 與 3D 同步顯示足跡與步數，並念出 1、2、3…
+        const trail = [];
+        function markStep(i, cell, k) {
+          const el = tiles[cell].el; el.style.setProperty('--tc', TEAM_COLORS[i]); el.dataset.step = k; el.classList.add('trail'); trail.push(el);
+          view?.stepMark(i, cell, k); speak(String(k));
+        }
+        function clearTrail() { trail.splice(0).forEach((el) => { el.classList.remove('trail'); delete el.dataset.step; }); view?.clearMarks(); }
         const quiz = async (team, pref, t) => {
           const r = await ask(deck.draw(pref), settings, { title: t, deck });
           if (r.correct) team.stamps++;
@@ -131,13 +157,19 @@
           if (busy) return; busy = true; rollBtn.disabled = true;
           const team = teams[turn];
           const n = 1 + Math.floor(Math.random() * 6);
-          await die.roll(n);
+          await Promise.all([die.roll(n), view?.rollDice(n)]);
           mover = turn;
+          clearTrail();
+          say(`${team.name}擲出 ${n} 點，往前走 ${n} 格！`);
+          await sleep(1200);
           for (let k = 0; k < n; k++) {
             team.at = (team.at + 1) % LAYOUT.length;
             if (team.at === 0) team.cash += PASS_GO;
-            render(); await sleep(300);
+            render(); view?.focusPlayer(turn, team.at);
+            markStep(turn, team.at, k + 1);
+            await Promise.all([sleep(560), view?.moveToken(turn, team.at)]);
           }
+          await sleep(500);
           mover = -1;
           const t = LAYOUT[team.at];
           const kind = kindOf(t);
@@ -149,7 +181,7 @@
             if (o == null) {
               const canBuy = team.cash >= PRICE;
               const r = await quiz(team, pref, canBuy ? `${team.name}：答對就能用 ${PRICE} 元買下「第${t}課」這塊地` : `${team.name}：錢不夠買地，答對一樣得學習章`);
-              if (r.correct && canBuy) { team.cash -= PRICE; owner[team.at] = turn; say(`${team.name}買下第${t}課的地！`); } else say(r.correct ? '得到學習章！' : '一起學過了，這次先不買。');
+              if (r.correct && canBuy) { team.cash -= PRICE; owner[team.at] = turn; view?.setOwner(team.at, turn); say(`${team.name}買下第${t}課的地！`); } else say(r.correct ? '得到學習章！' : '一起學過了，這次先不買。');
             } else if (o === turn) {
               if ((await quiz(team, pref, `${team.name}回到自己的地，答對得複習獎金 50 元`)).correct) { team.cash += 50; say('複習獎金 50 元！'); } else say('一起學過了！');
             } else {
@@ -170,6 +202,7 @@
           if (turn === 0) round++;
           render();
           if (round > maxRounds) return finish();
+          view?.focusPlayer(turn, teams[turn].at);
           busy = false; rollBtn.disabled = false; rollBtn.focus();
         }
 
@@ -187,7 +220,7 @@
           );
           speak(`遊戲結束，${scores.filter((s) => s.total === best).map((s) => s.name).join('和')}財富最多！大家一起學了好多語詞。`);
         }
-        render();
+        render(); view?.focusPlayer(turn, teams[turn].at);
         rollBtn.focus();
       }
     }).catch((e) => { document.getElementById('app').textContent = e.message; });
