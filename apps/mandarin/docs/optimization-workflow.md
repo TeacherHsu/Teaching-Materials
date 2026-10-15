@@ -122,6 +122,13 @@ npm run check-evidence    # 逐課驗證據句雜湊（需本機密碼）
 npm run build && npm run check-dist
 ```
 
+**改到課次資料（`public/data/115AG*`）時，綜合複習遊戲要跟著重產並檢查**（見下方「綜合複習遊戲」）：
+
+```bash
+python3 Chinese/Review-Games/tools/build_data.py   # 在 repo 根目錄跑
+python3 Chinese/Review-Games/tools/check_data.py   # 全部 ✅ 才算過
+```
+
 外加：
 - 瀏覽器實際走一次改到的關卡（`npm run dev`，或 `npm run review` 看草稿）。
 - 新增資料閘門要寫成測試（例：`test-answer-in-options`、`test-hint-no-leak`、`test-evidence-keys`、`test-student-code`）。
@@ -204,3 +211,12 @@ npm run build && npm run check-dist
 - 「選關聯詞」改為「句子合併」：例句沿關聯詞切成「第一件事／第二件事」卡片；每題先答「問關係」是非題（`RELATION_QUESTIONS`），再選關聯詞，答對後念整句。第 3 層提示不念整句，避免洩漏下一題關聯詞。
 - 自己寫一句：先給生活主題（下雨、很累、寫功課……）「先說再寫」，寫完用該關係的判斷問題自我檢核。
 - **看圖造句（2026-10-06）**：句型練習在「仿寫」之後加「看圖造句」：情境圖＋兩個提示詞＋句型框（關聯詞固定、空格自己寫，可用 iPad 鍵盤麥克風），檢查只看是否寫完整，之後用關係問題自我檢核、可看例句。資料 `lesson.picture_sentences[]`（28 題，本站編寫、CF 授權上線），圖由 `tools/gen_phrase_images.py` 依產圖規格產生。
+
+## 2026-10-16 綜合複習遊戲（`Chinese/Review-Games/`）
+
+- 範圍：一上 1–7 課、二上／三上／四上／六上 1–6 課；年級頁「綜合複習」卡片由 `course-index.json` 的 `volume.reviews` 決定（一年級不分組，接在課次後面）。網址 `../Chinese/Review-Games/?g=G1A`。
+- 遊戲：課文大富翁、語文蛇梯棋、語詞哆寶、語詞賓果；三上、四上、六上另有形似字跑酷（`Chinese/Shape-Run-G*`）。
+- 題庫正本是課次資料，`data/G*.js` 是產物，**不可手改**；只收 `ready`／`approved` 項目，不含課文全文。形似字題用簡編本離線詞庫剔除「換字仍成詞」的選項（本機沒有詞庫時會警告）。
+- 新增年級或課次範圍：改 `tools/build_data.py` 的 `GRADES` 與 `tools/check_data.py` 的 `EXPECT`，再在 `course-index.json` 加 `reviews`。
+- 必過檢查：`check_data.py` 全 ✅（答案在選項內、選項不重複、選項數、注音一致、形似字單一空格、每課都有題）；瀏覽器把五個年級的選單與四款遊戲各開一次，看主控台沒有錯誤。
+- 設計規則（依 `Chinese/Review-Games/REVIEW-codex.md`）：答錯先給線索再試，不直接公布；錯題隔 3 題再出；學習紀錄分「自己答對／看線索後答對／一起學過」；計時預設關、按「我準備好了」才開始；遊戲勝負（骰運、財富）與學習紀錄分開列；不加排行榜、閃爍、背景音樂。

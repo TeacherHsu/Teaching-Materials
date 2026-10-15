@@ -58,6 +58,19 @@
                 }
               ]
             }
+          ],
+          "reviews": [
+            {
+              "from": 1,
+              "to": 7,
+              "items": [
+                {
+                  "title": "綜合複習遊戲",
+                  "description": "大富翁、蛇梯棋、哆寶、賓果：語詞、注音、形似字、成語、閱讀理解一起複習",
+                  "url": "../Chinese/Review-Games/?g=G1A"
+                }
+              ]
+            }
           ]
         }
       ]
@@ -147,6 +160,19 @@
                   "lesson_no": 12,
                   "title": "詠鵝",
                   "data": "data/115AG2H/lesson12.json"
+                }
+              ]
+            }
+          ],
+          "reviews": [
+            {
+              "from": 1,
+              "to": 6,
+              "items": [
+                {
+                  "title": "綜合複習遊戲",
+                  "description": "大富翁、蛇梯棋、哆寶、賓果：語詞、注音、形似字、成語、閱讀理解一起複習",
+                  "url": "../Chinese/Review-Games/?g=G2A"
                 }
               ]
             }

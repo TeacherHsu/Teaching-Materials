@@ -40,7 +40,7 @@
       const app = document.getElementById('app');
       const goalSel = h('select', { 'aria-label': '目標' }, [1, 2, 3].map((n) => h('option', { value: n }, `連成 ${n} 條線`)));
       const modeSel = h('select', { 'aria-label': '模式' }, [h('option', { value: 1 }, '個人練習'), ...[2, 3, 4].map((n) => h('option', { value: n }, `投影分 ${n} 隊輪流點`))]);
-      const { el: panel, settings } = setupPanel(bank, { types: [], levelNote: '支持：3×3｜標準：4×4｜挑戰：5×5（加入成語）。都不限時。', extra: [h('div', { class: 'row' }, [h('strong', {}, '模式'), modeSel, h('strong', {}, '目標'), goalSel])] });
+      const { el: panel, settings } = setupPanel(bank, { types: [], howto: [['👂', '聽（看）意思'], ['👆', '點出那個語詞'], ['🎯', '連成一條線就賓果']], levelNote: '支持：3×3｜標準：4×4｜挑戰：5×5（加入成語）。都不限時。', extra: [h('div', { class: 'row' }, [h('strong', {}, '模式'), modeSel, h('strong', {}, '目標'), goalSel])] });
       const msg = h('p', { class: 'note', role: 'alert' });
       app.replaceChildren(header(bank, '語詞賓果'), panel,
         h('p', { class: 'note' }, '看（聽）語詞的意思，在賓果卡上點出那個語詞。點錯會給線索；橫、直、斜連成一條線就賓果！'),

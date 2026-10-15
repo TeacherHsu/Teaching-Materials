@@ -56,7 +56,7 @@
       const app = document.getElementById('app');
       const teamsSel = h('select', { 'aria-label': '隊伍數' }, [2, 3, 4].map((n) => h('option', { value: n }, `${n} 隊`)));
       const roundsSel = h('select', { 'aria-label': '回合數' }, [4, 6, 8, 10].map((n) => h('option', { value: n, selected: n === 6 }, `${n} 回合`)));
-      const { el: panel, settings } = setupPanel(bank, { extra: [h('div', { class: 'row' }, [h('strong', {}, '隊伍'), teamsSel, h('strong', {}, '長度'), roundsSel])] });
+      const { el: panel, settings } = setupPanel(bank, { howto: [['🎲', '擲骰子，走到格子上'], ['❓', '回答一題'], ['🏠', '答對就買地、得學習章']], extra: [h('div', { class: 'row' }, [h('strong', {}, '隊伍'), teamsSel, h('strong', {}, '長度'), roundsSel])] });
       const msg = h('p', { class: 'note', role: 'alert' });
       const rules = h('details', {}, [h('summary', { style: 'font-weight:800;cursor:pointer' }, '玩法說明（教師）'),
         h('p', { class: 'note' }, `每隊起始 ${START_CASH} 元。踩到沒人買的課次地：答對（含看線索後答對）就能用 ${PRICE} 元買下；錢不夠也一樣要答題，答對得學習章。踩到別隊的地：答對免付過路費 ${TOLL} 元（同一課兩塊都買下加倍）。藍色「綜合複習」格是沒勾選的課，答對得 50 元。機會格答對得 150 元。結束時分開列出「財富」與「學習紀錄」。`)]);

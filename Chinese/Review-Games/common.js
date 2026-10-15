@@ -1,7 +1,7 @@
 // 綜合複習遊戲共用引擎：載入題庫、設定面板、出題視窗（含逐步線索）、錯題再出、朗讀、投影與減少動態。
 // 題庫由 tools/build_data.py 產生（data/G3A.js 等），網址用 ?g=G3A 指定年級。
 (function () {
-  const GRADES = { G3A: '三上', G4A: '四上', G6A: '六上' };
+  const GRADES = { G1A: '一上', G2A: '二上', G3A: '三上', G4A: '四上', G6A: '六上' };
   const TYPES = {
     meaning: '語詞意思', zhuyin: '注音讀音', lookalike: '形似字', idiom: '成語',
     reading: '閱讀理解', gist: '課文大意',
@@ -77,9 +77,9 @@
     document.head.appendChild(s);
   });
 
-  const STORE = 'review-games-settings';
-  const loadSaved = () => { try { return JSON.parse(localStorage.getItem(STORE)) || {}; } catch { return {}; } };
-  const save = (s) => { try { localStorage.setItem(STORE, JSON.stringify({ ...loadSaved(), ...s })); } catch { /* 無痕模式 */ } };
+  const STORE = () => `review-games-settings-${gradeKey()}`;
+  const loadSaved = () => { try { return JSON.parse(localStorage.getItem(STORE())) || {}; } catch { return {}; } };
+  const save = (s) => { try { localStorage.setItem(STORE(), JSON.stringify({ ...loadSaved(), ...s })); } catch { /* 無痕模式 */ } };
   const applyDisplay = (s) => {
     document.body.classList.toggle('proj', !!s.proj);
     document.body.classList.toggle('calm', !!s.calm);
@@ -87,13 +87,13 @@
 
   // 設定面板：課次、題型、支持程度、朗讀、計時、投影、減少動態。
   // levelNote：各遊戲自己的程度說明；types 為空表示此遊戲不出選擇題（不顯示題型與計時）。
-  function setupPanel(bank, { types = Object.keys(TYPES), extra = [], levelNote = QUESTION_NOTE } = {}) {
+  function setupPanel(bank, { types = Object.keys(TYPES), extra = [], levelNote = QUESTION_NOTE, howto = [] } = {}) {
     const saved = loadSaved();
     const settings = {
       lessons: new Set(saved.lessons || bank.lessons.map((l) => l.no)),
       types: new Set((saved.types || types).filter((t) => types.includes(t))),
       level: saved.level in LEVELS ? saved.level : 'standard',
-      autoSpeak: saved.autoSpeak ?? false,
+      autoSpeak: saved.autoSpeak ?? ['G1A', 'G2A'].includes(gradeKey()),
       timer: [0, 30, 60].includes(saved.timer) ? saved.timer : 0,
       proj: !!saved.proj,
       calm: !!saved.calm,
@@ -111,7 +111,7 @@
     const select = (label, key, opts) => h('label', { class: 'row', style: 'gap:8px' }, [h('strong', {}, label),
       h('select', { onchange: (e) => { settings[key] = /^\d+$/.test(e.target.value) ? Number(e.target.value) : e.target.value; persist(); } },
         opts.map(([v, t]) => h('option', { value: v, selected: v === settings[key] }, t)))]);
-    const el = h('section', { class: 'setup', 'aria-label': '遊戲設定' }, [
+    const body = h('div', { class: 'setup-body' }, [
       h('h2', {}, '複習哪幾課？'),
       h('div', { class: 'chips' }, bank.lessons.map((l) => chip(`第${l.no}課 ${l.title}`, settings.lessons.has(l.no), toggle(settings.lessons, l.no)))),
       types.length > 1 ? h('h2', {}, '題目類型') : null,
@@ -125,6 +125,24 @@
       ]),
       ...extra,
     ]);
+    const summary = h('span', { class: 'setup-sum' });
+    const refresh = () => {
+      const ls = [...settings.lessons].sort((a, b) => a - b);
+      const lessonText = ls.length === bank.lessons.length ? `第1～${bank.lessons.length}課` : `第${ls.join('、')}課`;
+      summary.textContent = [lessonText, types.length > 1 ? `${settings.types.size} 種題型` : null, LEVELS[settings.level].label,
+        types.length ? (settings.timer ? `${settings.timer} 秒` : '不限時') : null, settings.autoSpeak ? '自動朗讀' : null].filter(Boolean).join('・');
+    };
+    body.addEventListener('change', refresh); refresh();
+    const details = h('details', { class: 'setup-more', open: !Object.keys(saved).length }, [h('summary', {}, '調整設定（教師）'), body]);
+    const voiceNote = h('p', { class: 'note hidden', role: 'note' }, '這台裝置找不到中文語音，🔊 可能沒有聲音；看字一樣可以作答。');
+    setTimeout(() => { if (!('speechSynthesis' in window) || !speechSynthesis.getVoices().some((v) => /^zh/i.test(v.lang))) voiceNote.classList.remove('hidden'); }, 1200);
+    const steps = howto.length ? h('ol', { class: 'howto' }, howto.map(([ico, text], i) => h('li', {}, [h('span', { class: 'howto-ico', 'aria-hidden': 'true' }, ico), h('span', {}, `${i + 1}. ${text}`)]))) : null;
+    const practice = types.length ? h('button', { class: 'btn', type: 'button', onclick: () => {
+      const q = makeDeck(bank, settings).draw();
+      if (q) ask(q, settings, { title: '試玩一題（不計分）', practice: true });
+    } }, '先試玩一題（不計分）') : null;
+    const el = h('section', { class: 'setup', 'aria-label': '遊戲設定' }, [
+      steps, h('div', { class: 'row' }, [h('strong', {}, '目前設定：'), summary]), details, voiceNote, practice ? h('div', { class: 'row' }, practice) : null]);
     return { el, settings };
   }
 
@@ -163,7 +181,7 @@
 
   // 出題視窗。回傳 Promise<{correct, independent, attempts, usedHint, revealed, timedOut}>。
   // 流程：選錯→標「這個不符合」→給一條線索→再試；用完次數或按「看答案」才揭曉並說明。
-  function ask(q, settings, { title, deck } = {}) {
+  function ask(q, settings, { title, deck, practice = false } = {}) {
     const lv = LEVELS[settings.level];
     const wrong = q.options.filter((o) => o !== q.answer);
     const opts = shuffle([q.answer, ...shuffle(wrong).slice(0, lv.options - 1)]);
@@ -183,9 +201,10 @@
       const close = () => {
         clearInterval(timer); stopSpeak(); mask.remove();
         if (app) app.inert = false;
-        record(res); if (deck) deck.report(q, res);
-        if (opener && opener.isConnected) opener.focus();
-        resolve(res);
+        if (!practice) { record(res); if (deck) deck.report(q, res); }
+        const total = stats.independent + stats.helped + stats.learned;
+        if (!practice && total && total % 6 === 0) restBreak(total).then(() => { if (opener && opener.isConnected) opener.focus(); resolve(res); });
+        else { if (opener && opener.isConnected) opener.focus(); resolve(res); }
       };
       const finish = (ok) => {
         if (done) return; done = true; clearInterval(timer);
@@ -276,12 +295,29 @@
     const g = gradeKey();
     return h('div', { class: 'topbar' }, [
       h('a', { class: 'back', href: `./?g=${g}` }, '← 遊戲選單'),
-      h('h1', {}, `${bank.grade}第1～6課｜${gameTitle}`),
+      h('h1', {}, `${bank.grade}第1～${bank.lessons.length}課｜${gameTitle}`),
     ]);
   }
 
-  // 隊伍棋子：顏色＋編號，不只靠顏色辨識
-  const token = (i, extraClass = '') => h('span', { class: `token ${extraClass}`, style: `background:${TEAM_COLORS[i]}`, title: TEAM_NAMES[i] }, String(i + 1));
+  // 隊伍棋子：顏色＋形狀＋編號（圓、方、三角、菱形），色弱也分得出來
+  const SHAPES = ['circle', 'square', 'tri', 'diamond'];
+  const token = (i, extraClass = '') => h('span', { class: `token shape-${SHAPES[i]} ${extraClass}`, style: `--tc:${TEAM_COLORS[i]}`, title: TEAM_NAMES[i], 'aria-label': TEAM_NAMES[i] }, h('b', {}, String(i + 1)));
+
+  // 每 6 題一次休息站：短暫停下來，完成一個段落
+  function restBreak(total) {
+    return new Promise((resolve) => {
+      const app = document.getElementById('app');
+      const go = h('button', { class: 'btn primary', type: 'button', onclick: () => { mask.remove(); if (app) app.inert = false; resolve(); } }, '休息好了，繼續');
+      const mask = h('div', { class: 'qmask', role: 'dialog', 'aria-modal': 'true', 'aria-label': '休息站' }, h('div', { class: 'qbox rest badge-in' }, [
+        h('div', { class: 'rest-ico', 'aria-hidden': 'true' }, '🌱'),
+        h('div', { class: 'qstem' }, `休息站：已經完成 ${total} 題！`),
+        h('p', {}, '站起來伸展一下、喝口水，準備好再繼續。'),
+        h('p', { class: 'note' }, statsLine()), go]));
+      if (app) app.inert = true;
+      document.body.append(mask); go.focus();
+      speak(`休息站，已經完成 ${total} 題`);
+    });
+  }
 
   window.RG = { h, shuffle, speak, stopSpeak, speakBtn, sleep, calm, loadBank, setupPanel, makeDeck, ask, header, gradeKey, token, stats, statsLine, TYPES, LEVELS, TEAM_COLORS, TEAM_NAMES };
 })();

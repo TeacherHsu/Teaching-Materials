@@ -122,6 +122,11 @@ export function GradePage(courseIndex, gradeNo) {
     if (otherLessons.length) root.appendChild(makeGrid(otherLessons));
   } else {
     root.appendChild(makeGrid(lessons));
+    // 一年級不分組：綜合複習接在課次後面
+    for (const r of grade.volumes.flatMap((v) => v.reviews || [])) {
+      const review = makeReview(r.from, r.to);
+      if (review) root.appendChild(review);
+    }
   }
   return root;
 }

@@ -15,6 +15,8 @@ DATA = ROOT / 'apps/mandarin/public/data'
 OUT = Path(__file__).resolve().parents[1] / 'data'
 LEXICON = Path.home() / 'mandarin-work/moe-dict/concised_lexicon_2014_20260929.json'
 GRADES = {
+    'G1A': ('115AG1H', '一上', '翰林', range(1, 8)),
+    'G2A': ('115AG2H', '二上', '翰林', range(1, 7)),
     'G3A': ('115AG3H', '三上', '翰林'),
     'G4A': ('115AG4K', '四上', '康軒'),
     'G6A': ('115AG6H', '六上', '翰林'),
@@ -48,11 +50,11 @@ def pick(pool, answer, n, key=lambda x: x, rng=None):
     return out
 
 
-def build(code, label, publisher):
+def build(code, label, publisher, lessons_range=range(1, 7)):
     rng = random.Random(code)
     lessons = []
     words, idioms, questions = [], [], []
-    for n in LESSONS:
+    for n in lessons_range:
         d = json.loads((DATA / code / f'lesson{n:02d}.json').read_text(encoding='utf-8'))
         lessons.append({'no': n, 'title': d['title']})
         for w in d['words']:
@@ -83,7 +85,8 @@ def build(code, label, publisher):
                 questions.append({'lesson': n, 'type': 'lookalike',
                                   'stem': f'哪個字可以填進「{blank}」？',
                                   'speak': f'哪個字可以填進，{ex}的空格？',
-                                  'options': opts[:4], 'answer': c['char'], 'explain': ex})
+                                  'options': [c['char']] + [x for x in opts if x != c['char']][:3],
+                                  'answer': c['char'], 'explain': ex})
         mi = d.get('main_idea') or {}
         if ok(mi) and mi.get('gist'):
             questions.append({'lesson': n, 'type': 'gist', 'stem': f'哪一課的大意是：「{mi["gist"]}」',
@@ -100,12 +103,16 @@ def build(code, label, publisher):
             questions.append({'lesson': w['lesson'], 'type': 'zhuyin', 'stem': f'「{w["word"]}」的注音是哪一個？',
                               'speak': f'{w["word"]}，怎麼念？', 'noSpeakOptions': True,
                               'options': [w['zhuyin']] + zy, 'answer': w['zhuyin']})
-        pool = [x for x in words if len(x['word']) == len(w['word'])] or words
-        ws = pick(pool, w['word'], 3, key=lambda x: x['word'], rng=rng)
+        # 干擾項：優先同字數；不夠再用其他語詞補；排除意思相同的詞，避免兩個都對
+        others = [x for x in words if x['meaning'] != w['meaning']]
+        same = [x for x in others if len(x['word']) == len(w['word'])]
+        ws = pick(same, w['word'], 3, key=lambda x: x['word'], rng=rng)
+        if len(ws) < 3:
+            ws += pick([x for x in others if x['word'] not in ws], w['word'], 3 - len(ws), key=lambda x: x['word'], rng=rng)
         questions.append({'lesson': w['lesson'], 'type': 'meaning', 'stem': f'哪個語詞的意思是「{w["meaning"]}」？',
                           'options': [w['word']] + ws, 'answer': w['word']})
     for i in idioms:
-        ids = pick(idioms, i['idiom'], 3, key=lambda x: x['idiom'], rng=rng)
+        ids = pick([x for x in idioms if x['definition'] != i['definition']], i['idiom'], 3, key=lambda x: x['idiom'], rng=rng)
         if len(ids) == 3:
             questions.append({'lesson': i['lesson'], 'type': 'idiom', 'stem': f'哪個成語的意思是「{i["definition"]}」？',
                               'options': [i['idiom']] + ids, 'answer': i['idiom']})
@@ -115,11 +122,11 @@ def build(code, label, publisher):
 
 def main():
     OUT.mkdir(exist_ok=True)
-    for key, (code, label, pub) in GRADES.items():
-        bank = build(code, label, pub)
+    for key, (code, label, pub, *rng) in GRADES.items():
+        bank = build(code, label, pub, *rng)
         body = json.dumps(bank, ensure_ascii=False, separators=(',', ':'))
         (OUT / f'{key}.js').write_text(
-            f'// 由 tools/build_data.py 產生，請勿手改。來源：apps/mandarin/public/data/{code}/lesson01-06\n'
+            f'// 由 tools/build_data.py 產生，請勿手改。來源：apps/mandarin/public/data/{code}/\n'
             f'window.REVIEW_BANK = {body};\n', encoding='utf-8')
         counts = {}
         for q in bank['questions']:

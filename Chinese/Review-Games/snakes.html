@@ -42,7 +42,8 @@
       const app = document.getElementById('app');
       const nSel = h('select', { 'aria-label': '玩家數' }, [1, 2, 3, 4].map((n) => h('option', { value: n, selected: n === 2 }, n === 1 ? '1 人練習' : `${n} 隊`)));
       const slideSel = h('select', { 'aria-label': '蛇的規則' }, [h('option', { value: 3 }, '最多退 3 格（建議）'), h('option', { value: 99 }, '滑到蛇尾（一般規則）')]);
-      const { el: panel, settings } = setupPanel(bank, { extra: [h('div', { class: 'row' }, [h('strong', {}, '玩家'), nSel, h('strong', {}, '踩到蛇'), slideSel])] });
+      const capSel = h('select', { 'aria-label': '長度' }, [h('option', { value: 0 }, '走到終點為止'), h('option', { value: 5 }, '每隊 5 回合'), h('option', { value: 8 }, '每隊 8 回合')]);
+      const { el: panel, settings } = setupPanel(bank, { howto: [['❓', '先答一題'], ['🎲', '再擲骰子'], ['🪜', '答對能爬梯子、躲開蛇']], extra: [h('div', { class: 'row' }, [h('strong', {}, '玩家'), nSel, h('strong', {}, '踩到蛇'), slideSel, h('strong', {}, '長度'), capSel])] });
       const msg = h('p', { class: 'note', role: 'alert' });
       app.replaceChildren(header(bank, '語文蛇梯棋'), panel,
         h('p', { class: 'note' }, '每回合先答一題，再擲骰子。答對：踩到梯子往上爬、踩到星星多走 1 格、踩到蛇頭能躲開。沒答對：梯子不能爬、蛇會讓你往回走。'),
@@ -52,6 +53,7 @@
         const deck = makeDeck(bank, settings);
         if (!deck.size()) { msg.textContent = '請至少勾選一課和一種題目類型。'; panel.querySelector('input').focus(); return; }
         const maxSlide = Number(slideSel.value);
+        const cap = Number(capSel.value); let roundNo = 1;
         const solo = Number(nSel.value) === 1;
         const players = Array.from({ length: Number(nSel.value) }, (_, i) => ({ name: solo ? '我' : TEAM_NAMES[i], at: 1, right: 0, asked: 0 }));
         let turn = 0, busy = false;
@@ -101,7 +103,7 @@
           const p = players[turn];
           teamBar.replaceChildren(...players.map((pl, i) => h('div', { class: `team${i === turn ? ' now' : ''}` }, [
             token(i), ` ${pl.name}：第 ${pl.at} 格`])));
-          nowPos.textContent = `${p.name}在第 ${p.at} 格`;
+          nowPos.textContent = `${cap ? `第 ${roundNo} / ${cap} 回合｜` : ''}${p.name}在第 ${p.at} 格`;
           for (let n = 1; n <= GOAL; n++) {
             cells[n].el.classList.toggle('here', p.at === n);
             cells[n].tokens.replaceChildren(...players.map((pl, i) => pl.at === n ? token(i) : null).filter(Boolean));
@@ -127,13 +129,15 @@
           } else if (STARS.has(p.at) && r.correct) { await walk(p, p.at + 1); say('星星格，多走 1 格！'); }
           else say(`${p.name}走到第 ${p.at} 格。`);
           render();
-          if (p.at >= GOAL) {
-            say(`🏆 ${p.name}抵達終點！`);
+          const timeUp = cap && turn === players.length - 1 && roundNo >= cap;
+          if (p.at >= GOAL || timeUp) {
+            const best = Math.max(...players.map((x) => x.at));
+            say(p.at >= GOAL ? `🏆 ${p.name}抵達終點！` : `回合結束！走最遠的是${players.filter((x) => x.at === best).map((x) => x.name).join('和')}。`);
             side.append(h('div', { class: 'where', style: 'font-weight:800' }, `📒 學習紀錄：${statsLine()}`),
               h('button', { class: 'btn primary', type: 'button', onclick: () => location.reload() }, '再玩一次'));
             return;
           }
-          turn = (turn + 1) % players.length; render();
+          turn = (turn + 1) % players.length; if (turn === 0) roundNo++; render();
           busy = false; actBtn.disabled = false; actBtn.focus();
         }
         render(); actBtn.focus();

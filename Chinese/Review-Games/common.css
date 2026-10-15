@@ -60,7 +60,14 @@ select { min-height: 48px; border-radius: 12px; border: 2px solid var(--line); p
 .team { flex: 1 1 160px; border-radius: 16px; padding: 10px 14px; background: var(--card); border: 3px solid var(--line); font-weight: 800; }
 .team.now { border-color: var(--ink); box-shadow: 0 0 0 4px rgba(168,75,23,.35); }
 .team.now::after { content: '▶ 輪到你'; display: block; font-size: .85rem; color: var(--brand); }
-.token { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.5); color: #fff; font-weight: 900; font-size: 16px; line-height: 1; }
+.token { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; color: #fff; font-weight: 900; font-size: 16px; line-height: 1; filter: drop-shadow(0 1px 2px rgba(0,0,0,.6)); }
+.token::before { content: ''; position: absolute; inset: 0; background: var(--tc); border: 3px solid #fff; }
+.token b { position: relative; }
+.token.shape-circle::before { border-radius: 50%; }
+.token.shape-square::before { border-radius: 6px; inset: 2px; }
+.token.shape-tri::before { clip-path: polygon(50% 0, 100% 100%, 0 100%); border: none; }
+.token.shape-tri b { top: 5px; }
+.token.shape-diamond::before { inset: 5px; transform: rotate(45deg); border-radius: 3px; }
 .team .big { font-size: 1.6rem; }
 .dot { display: inline-block; width: 18px; height: 18px; border-radius: 50%; vertical-align: -2px; margin-right: 6px; }
 .log { color: var(--muted); font-weight: 700; min-height: 1.5em; margin: 8px 0; }
@@ -85,7 +92,20 @@ body.proj { font-size: 26px; }
 body.proj .qbox { width: min(1040px, 96vw); }
 body.proj .qstem { font-size: 38px; line-height: 1.55; }
 body.proj .qopt { font-size: 31px; min-height: 84px; }
-body.proj .token { width: 40px; height: 40px; font-size: 20px; }
+body.proj .token { width: 42px; height: 42px; font-size: 20px; }
 /* 減少動態：系統設定或面板開關 */
 body.calm *, body.calm *::before, body.calm *::after { animation: none !important; transition: none !important; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* 設定摘要、玩法步驟、休息站 */
+.setup-sum { font-weight: 800; color: var(--brand); }
+.setup-more > summary { font-weight: 800; cursor: pointer; min-height: 44px; display: flex; align-items: center; }
+.setup-body { display: grid; gap: 14px; margin-top: 8px; }
+.howto { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+.howto li { display: flex; gap: 10px; align-items: center; background: #fff3e0; border-radius: 16px; padding: 10px 14px; font-weight: 800; font-size: 1.05rem; }
+.howto-ico { font-size: 2rem; }
+.rest { text-align: center; display: grid; gap: 8px; justify-items: center; }
+.rest-ico { font-size: 3rem; }
+.badge-in { animation: badgeIn .4s ease-out; }
+@keyframes badgeIn { from { opacity: 0; transform: scale(.92); } to { opacity: 1; transform: none; } }
+.progress { font-weight: 800; }

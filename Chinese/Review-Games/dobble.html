@@ -40,8 +40,8 @@
 
     loadBank().then((bank) => {
       const app = document.getElementById('app');
-      const roundsSel = h('select', { 'aria-label': '回數' }, [5, 10].map((n) => h('option', { value: n }, `${n} 回`)));
-      const { el: panel, settings } = setupPanel(bank, { types: [], levelNote: '支持：每張 4 個詞、不旋轉｜標準：6 個詞｜挑戰：8 個詞（加入成語）。都不限時。', extra: [h('div', { class: 'row' }, [h('strong', {}, '長度'), roundsSel])] });
+      const roundsSel = h('select', { 'aria-label': '回數' }, [3, 5, 10].map((n) => h('option', { value: n, selected: n === 5 }, `${n} 回`)));
+      const { el: panel, settings } = setupPanel(bank, { types: [], howto: [['👀', '看兩張卡'], ['👆', '點出一樣的語詞'], ['💬', '選出它的意思']], levelNote: '支持：每張 4 個詞、不旋轉｜標準：6 個詞｜挑戰：8 個詞（加入成語）。都不限時。', extra: [h('div', { class: 'row' }, [h('strong', {}, '長度'), roundsSel])] });
       const msg = h('p', { class: 'note', role: 'alert' });
       app.replaceChildren(header(bank, '語詞哆寶'), panel,
         h('p', { class: 'note' }, '兩張卡上只有「一個」語詞完全相同，看到就點它，然後想一想它的意思。小心每個字都要看清楚！'),
