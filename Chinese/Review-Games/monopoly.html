@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>課文大富翁</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="common.css?v=2">
   <style>
     .play { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 14px; align-items: start; }
     @media (max-width: 900px) { .play { grid-template-columns: 1fr; } }
@@ -37,8 +37,8 @@
 </head>
 <body>
   <main class="wrap" id="app"><p>載入中…</p></main>
-  <script src="common.js"></script>
-  <script src="scene3d.js"></script>
+  <script src="common.js?v=2"></script>
+  <script src="scene3d.js?v=2"></script>
   <script>
     const { die3d, h, speak, sleep, loadBank, setupPanel, makeDeck, ask, header, token, statsLine, TEAM_COLORS, TEAM_NAMES } = RG;
     const PRICE = 200, TOLL = 100, PASS_GO = 200, START_CASH = 1000;

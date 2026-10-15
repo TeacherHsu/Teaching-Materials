@@ -243,6 +243,9 @@
         const pad = this.mesh(new T.CylinderGeometry(2.9, 3, .2, 80), '#285e61'); pad.position.y = .06;
         const rim = this.mesh(new T.TorusGeometry(2.88, .045, 8, 80), '#edb95b'); rim.rotation.x = Math.PI / 2; rim.position.y = .2;
         const l = this.label('課文探險', 4.05, .88, '#fff2d1', '#54331f'); l.position.set(0, .5, -1.1); this.root.add(l);
+        for (let k = 0; k < 24; k++) { const a = k / 24 * Math.PI * 2; const tick = this.box(k % 6 ? .05 : .09, .03, k % 6 ? .22 : .36, '#edb95b'); tick.position.set(Math.sin(a) * 2.55, .19, Math.cos(a) * 2.55); tick.rotation.y = a; }
+        [['#de5942', 0], ['#3699c5', .22], ['#e5a529', .44]].forEach(([c, y], k) => { const b = this.roundedBox(1.05, .2, .75, c, undefined, .05); b.position.set(-1.75, .24 + y, .55); b.rotation.y = .25 - k * .2; const page = this.box(.98, .14, .66, '#fff8e8'); page.position.set(-1.68, .24 + y, .55); page.rotation.y = b.rotation.y; });
+        const quill = this.mesh(new T.ConeGeometry(.09, 1.1, 8), '#f6efe2'); quill.position.set(1.75, .55, .7); quill.rotation.z = -.9; quill.rotation.x = .3;
         this.buildDie(new T.Vector3(0, .85, .65));
       } else {
         this.paths = new Map();
@@ -373,8 +376,8 @@
       const p = this.cellPosition(cell);
       const disc = this.mesh(new THREE.CylinderGeometry(.66, .66, .05, 32), colors[i % 4]);
       disc.material.transparent = true; disc.material.opacity = .62; disc.position.copy(p); disc.position.y = .32;
-      const l = this.label(String(n), .62, .62, colors[i % 4], '#ffffff'); l.renderOrder = 8;
-      l.position.copy(p); l.position.y = 1.2; this.root.add(l);
+      const l = this.label(String(n), .5, .5, colors[i % 4], '#ffffff'); l.renderOrder = 8;
+      l.position.copy(p); l.position.y = .62; l.position.z += .5; l.position.x += .45; this.root.add(l);
       this.stepMarks.push(disc, l); this.draw();
     }
     clearMarks() {
@@ -402,6 +405,28 @@
       this.owners.set(cell, i);
       if (!this.active) return;
       this.ownerModel(cell, i, true);
+      this.burst(this.cellPosition(cell), colors[i]);
+    }
+    // 慶祝彩紙：一次性往上噴再落下（約 0.9 秒），不循環、不閃爍；減少動態時不出現
+    burst(pos, color, count = 16) {
+      if (!this.active || isCalm() || document.hidden) return;
+      const palette = [color, '#ffc643', '#ffffff', '#f08a4b'];
+      const bits = [];
+      for (let k = 0; k < count; k++) {
+        const m = this.box(.12, .03, .07, palette[k % palette.length]); m.castShadow = false;
+        const a = k / count * Math.PI * 2 + Math.random() * .4, sp = .9 + Math.random() * .8;
+        m.userData.v = [Math.cos(a) * sp, 2.4 + Math.random() * 1.4, Math.sin(a) * sp]; m.position.copy(pos); m.position.y += .4;
+        bits.push(m);
+      }
+      const start = pos.clone();
+      this.tween(`burst${performance.now()}${Math.random()}`, 900, (t) => {
+        bits.forEach((m, k) => {
+          const [vx, vy, vz] = m.userData.v;
+          m.position.set(start.x + vx * t, start.y + .4 + vy * t - 4.2 * t * t, start.z + vz * t);
+          m.rotation.set(t * 9 + k, t * 7, t * 5); m.scale.setScalar(1 - t * .5);
+        });
+        if (t === 1) bits.forEach((m) => { m.parent?.remove(m); m.geometry.dispose(); m.material.dispose(); });
+      });
     }
     ownerModel(cell, i, animate) {
       if (this.flags.has(cell)) return;
@@ -449,10 +474,10 @@
         // 同時計入標籤、放大棋子、骰子最高彈跳與前方托盤。保留 10% 安全邊界。
         for (let attempt = 0; attempt < 12; attempt++) {
           let extent = 0;
-          for (const x of [-5.95, 5.95]) for (const y of [-.85, 2.65]) for (const z of [-5.85, this.kind === 'snakes' ? 6.45 : 5.85]) {
+          for (const x of [-5.95, 5.95]) for (const y of [-.85, 1.6]) for (const z of [-5.85, this.kind === 'snakes' ? 6.45 : 5.85]) {
             const p = new THREE.Vector3(x, y, z).project(this.camera); extent = Math.max(extent, Math.abs(p.x), Math.abs(p.y));
           }
-          if (extent <= .9) break; distance *= Math.max(1.015, extent / .89); place();
+          if (extent <= .95 && extent >= .9) break; distance *= extent / .93; place();
         }
       }
       if (this.overlay) this.layoutOverlay(); this.draw();
@@ -545,6 +570,7 @@
       let m = this.meshCells.get(i); if (!m) return;
       this.finishTweens(); m.geometry.dispose(); m.material.dispose(); this.overlayRoot.remove(m);
       m = this.screenTile(this.buttons[i], color || (learned ? '#245c99' : '#af4b16'), .38, .58); this.meshCells.set(i, m);
+      if (!learned) { const c = this.pointAt(this.buttons[i], .6); this.burst(c, color || '#af4b16', 10); }
       this.tween(`mark${i}`, 520, (t) => { m.rotation.x = Math.PI * 2 * (1 - Math.pow(1 - t, 3)); m.position.y = .04 + .34 * t + Math.sin(t * Math.PI) * .2; });
     }
     setLines(lines) {

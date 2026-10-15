@@ -231,7 +231,7 @@
     const already = game.state.found.includes(obj.holds);
     const wasDone = game.state.solved.search.done;
     const r = C.investigate(game, obj.id);
-    if (!already) { tone('find'); room.animate('search'); }
+    if (!already) { tone('find'); room.animate('search'); room.animate('found', obj.id); }
     const body = r.kind === 'clue'
       ? [h('div', { class: 'dt-clue' }, [h('small', {}, `線索卡｜第${game.mode === 'cross' ? game.baseLesson : game.lessons[0]}課`), r.item.text]), spk(r.item.text, '朗讀線索')]
       : [h('div', { class: 'dt-clue decoy' }, [h('small', {}, '可疑紙條（尚未證實，不一定可信）'), r.item.text]), h('p', {}, '偵探提醒：這張紙條不一定可信，先記在筆記本，之後用證據判斷。')];

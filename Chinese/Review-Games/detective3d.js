@@ -95,7 +95,12 @@
       it.btn.setAttribute('aria-label', `${it.label}，${text || ''}`);
       it.btn.querySelector('.dt-st').textContent = { locked: '🔒', done: '✓', found: '✓', next: '!' }[state] || '';
       const m = this.meshes.get(id);
-      if (m && m.userData.glow) { m.userData.glow.visible = state === 'open' || state === 'next'; this.kick(); }
+      if (m && m.userData.glow) {
+        const ring = m.userData.glow; ring.visible = state === 'open' || state === 'next' || state === 'done' || state === 'found';
+        ring.material.color.setHex(state === 'done' || state === 'found' ? 0x3fbf6a : 0xffc94d); ring.userData.calm = state === 'done' || state === 'found';
+        if (ring.userData.calm) ring.scale.setScalar(1);
+        this.kick();
+      }
     }
     mode2d(msg) {
       this.is3d = false; this.host.classList.add('dt-2d'); this.host.classList.remove('dt-3d');
@@ -150,6 +155,13 @@
       this.box(12, 0.3, 0.1, th.accent, 0, 0.15, -4.45); this.box(0.1, 0.3, 9, th.accent, -5.95, 0.15, 0);
       const win = this.box(2.2, 1.6, 0.06, 0xbfe3ff, 4.3, 3.0, -4.48); win.material.emissive = new T.Color(0x8fcfff); win.material.emissiveIntensity = 0.35;
       this.box(2.4, 0.12, 0.2, 0xffffff, 4.3, 2.15, -4.42);
+      const beam = new T.Mesh(new T.PlaneGeometry(2.2, 6), new T.MeshBasicMaterial({ color: 0xfff1c4, transparent: true, opacity: 0.16, depthWrite: false, side: T.DoubleSide }));
+      beam.position.set(4.0, 1.6, -2.2); beam.rotation.set(-1.0, 0.15, 0); g.add(beam);
+      const plate = document.createElement('canvas'); plate.width = 512; plate.height = 128; const pc = plate.getContext('2d');
+      pc.fillStyle = '#7a3e1d'; pc.fillRect(0, 0, 512, 128); pc.fillStyle = '#ffe9b0'; pc.fillRect(8, 8, 496, 112);
+      pc.fillStyle = '#5a2e12'; pc.font = '900 64px "PingFang TC","Microsoft JhengHei","Noto Sans TC",sans-serif'; pc.textAlign = 'center'; pc.textBaseline = 'middle'; pc.fillText('🔍 ' + th.name, 256, 66);
+      const tex = new T.CanvasTexture(plate); tex.encoding = T.sRGBEncoding;
+      const sign = new T.Mesh(new T.PlaneGeometry(2.4, 0.6), new T.MeshBasicMaterial({ map: tex })); sign.position.set(-1.6, 3.75, -4.45); g.add(sign);
       const rug = this.cyl(2.6, 2.6, 0.04, th.rug, 0.5, 0.02, 1.8, g, 40); rug.scale.z = 0.62; rug.receiveShadow = true;
       // 書架
       this.box(2.4, 3.4, 0.7, 0x8a5a2b, -4.0, 1.7, -4.15);
@@ -247,7 +259,7 @@
       let busy = false;
       this.tweens = this.tweens.filter((tw) => { const k = Math.min(1, (t - (tw.t0 || (tw.t0 = t))) / tw.ms); tw.fn(1 - Math.pow(1 - k, 3)); busy = true; return k < 1; });
       const pulse = 1 + Math.sin(t / 260) * 0.08;
-      for (const m of this.meshes.values()) if (m.userData.glow.visible) { m.userData.glow.scale.setScalar(pulse); busy = true; }
+      for (const m of this.meshes.values()) if (m.userData.glow.visible && !m.userData.glow.userData.calm && !isCalm()) { m.userData.glow.scale.setScalar(pulse); busy = true; }
       this.renderer.render(this.scene, this.camera);
       // DOM 標記跟著物件位置
       const T = window.THREE; const v = new T.Vector3(); const w = this.host.clientWidth, h = this.host.clientHeight;
@@ -259,9 +271,24 @@
       if (busy && !document.hidden) this.kick();
     }
     tween(ms, fn) { if (!this.is3d || isCalm()) { fn(1); return; } this.tweens.push({ ms, fn }); this.kick(); }
+    // 紙卡從物件升起、翻一圈後消失（找到線索的回饋）
+    paper(id) {
+      const it = this.items.find((x) => x.id === id); if (!it || !this.is3d || isCalm()) return;
+      const T = window.THREE; const m = new T.Mesh(new T.BoxGeometry(0.6, 0.02, 0.8), this.mat(0xfffdf2)); this.group.add(m);
+      this.tween(900, (k) => { m.position.set(it.pos[0], it.pos[1] + 0.3 + k * 1.6, it.pos[2]); m.rotation.set(-1.2 * k, k * 6.3, 0); m.scale.setScalar(1 - k * 0.3); if (k === 1) { this.group.remove(m); m.geometry.dispose(); m.material.dispose(); } });
+    }
+    confetti(pos) {
+      if (!this.is3d || isCalm()) return;
+      const T = window.THREE; const cols = [0xe05a4f, 0xf0a030, 0x3fa45b, 0x3b82c4, 0x8b5cc8, 0xffffff];
+      const bits = Array.from({ length: 40 }, (_, k) => { const m = new T.Mesh(new T.BoxGeometry(0.16, 0.03, 0.1), this.mat(cols[k % cols.length])); m.userData.v = [(Math.random() - 0.5) * 5, 4 + Math.random() * 3, (Math.random() - 0.2) * 4]; this.group.add(m); return m; });
+      this.tween(1500, (k) => { bits.forEach((m, i) => { const [vx, vy, vz] = m.userData.v; m.position.set(pos[0] + vx * k, pos[1] + vy * k - 6 * k * k, pos[2] + vz * k); m.rotation.set(k * 12 + i, k * 9, k * 6); }); if (k === 1) bits.forEach((m) => { this.group.remove(m); m.geometry.dispose(); m.material.dispose(); }); });
+    }
     // 機關動畫：保險箱開門、抽屜拉出、齒輪轉、門打開
-    animate(kind) {
+    animate(kind, id) {
       if (!this.is3d) return;
+      if (kind === 'found') return this.paper(id);
+      if (kind === 'escape') this.confetti([1.3, 1.5, -3.5]);
+      if (['sort', 'dial', 'keys', 'blocks', 'compare', 'cause'].includes(kind)) { const it = this.items.find((x) => x.kind === kind); if (it) this.confetti(it.pos); }
       if (kind === 'dial' && this.safeDoor) this.tween(900, (k) => { this.safeDoor.rotation.y = -1.6 * k; this.safeDial.rotation.y = 6 * k; });
       if (kind === 'search' && this.drawer) this.tween(700, (k) => { this.drawer.position.z = 0.15 + 0.5 * Math.sin(k * Math.PI); });
       if (kind === 'cause' && this.gears) this.tween(1400, (k) => { this.gears.forEach((gg, i) => { gg.rotation.x = (i ? -1 : 1) * k * 8; }); });
