@@ -29,7 +29,6 @@
       .tile.special .nm, .tile.review .nm { display: none; }
       .tile .nm { font-size: 12px; }
       .center { gap: 4px; padding: 2px; }
-      .center .die { width: 44px; height: 44px; font-size: 1.4rem; }
       .center .btn { min-height: 44px; padding: 4px 12px; }
       .where, .center .log { font-size: .75rem; padding: 2px 6px; }
       .center strong { font-size: .8rem; }
@@ -40,7 +39,7 @@
   <main class="wrap" id="app"><p>載入中…</p></main>
   <script src="common.js"></script>
   <script>
-    const { h, speak, sleep, loadBank, setupPanel, makeDeck, ask, header, token, statsLine, TEAM_COLORS, TEAM_NAMES } = RG;
+    const { die3d, h, speak, sleep, loadBank, setupPanel, makeDeck, ask, header, token, statsLine, TEAM_COLORS, TEAM_NAMES } = RG;
     const PRICE = 200, TOLL = 100, PASS_GO = 200, START_CASH = 1000;
     const LESSON_COLORS = ['var(--c1)', 'var(--c2)', 'var(--c3)', 'var(--c4)', 'var(--c5)', 'var(--c6)'];
     // 20 格：起點、6 課各 2 塊地、機會 4、命運 2、休息站 1。沒勾選的課，地改成「綜合複習」格。
@@ -88,15 +87,15 @@
           const el = h('div', { class: 'tile special', style: `grid-row:${r};grid-column:${c}` }, [h('div', { class: 'big', 'aria-hidden': 'true' }, label[0]), h('div', { class: 'nm' }, label[1]), tokens]);
           return { el, tokens };
         });
-        const die = h('div', { class: 'die', 'aria-label': '骰子' }, '🎲');
+        const die = die3d(); let mover = -1;
         const log = h('div', { class: 'log', role: 'status', 'aria-live': 'polite' }, '');
         const where = h('div', { class: 'where' });
         const rollBtn = h('button', { class: 'btn primary', type: 'button', onclick: () => play() }, '擲骰子');
         const roundEl = h('strong', {});
         const center = h('div', { class: 'center' }, [roundEl, die, rollBtn, where, log]);
-        const board = h('div', { class: 'board' }, [...tiles.map((t) => t.el), center]);
+        const board = h('div', { class: 'board tilted' }, [...tiles.map((t) => t.el), center]);
         const teamBar = h('div', { class: 'teams' });
-        app.replaceChildren(header(bank, '課文大富翁'), h('div', { class: 'play' }, [board, h('div', { class: 'side' }, [teamBar])]));
+        app.replaceChildren(header(bank, '課文大富翁'), h('div', { class: 'play' }, [h('div', { class: 'tilt' }, board), h('div', { class: 'side' }, [teamBar])]));
 
         const propCount = (ti) => Object.values(owner).filter((o) => o === ti).length;
         function tileName(i) {
@@ -113,7 +112,7 @@
             h('div', { class: 'big' }, `${t.cash} 元`), h('div', { class: 'note' }, `地產 ${propCount(i)} 塊｜學習章 ${t.stamps}`)])));
           tiles.forEach((t, i) => {
             t.el.classList.toggle('here', teams[turn].at === i);
-            t.tokens.replaceChildren(...teams.map((tm, k) => tm.at === i ? token(k) : null).filter(Boolean));
+            t.tokens.replaceChildren(...teams.map((tm, k) => tm.at === i ? token(k, k === mover ? 'hop' : '') : null).filter(Boolean));
             if (t.own) {
               const o = owner[i];
               t.own.classList.toggle('hidden', o == null);
@@ -131,16 +130,15 @@
         async function play() {
           if (busy) return; busy = true; rollBtn.disabled = true;
           const team = teams[turn];
-          die.classList.add('roll');
-          await sleep(700);
-          die.classList.remove('roll');
           const n = 1 + Math.floor(Math.random() * 6);
-          die.textContent = n;
+          await die.roll(n);
+          mover = turn;
           for (let k = 0; k < n; k++) {
             team.at = (team.at + 1) % LAYOUT.length;
             if (team.at === 0) team.cash += PASS_GO;
-            render(); await sleep(220);
+            render(); await sleep(300);
           }
+          mover = -1;
           const t = LAYOUT[team.at];
           const kind = kindOf(t);
           if (kind === 'review') {

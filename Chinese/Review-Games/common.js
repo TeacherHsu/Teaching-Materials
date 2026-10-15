@@ -303,6 +303,25 @@
   const SHAPES = ['circle', 'square', 'tri', 'diamond'];
   const token = (i, extraClass = '') => h('span', { class: `token shape-${SHAPES[i]} ${extraClass}`, style: `--tc:${TEAM_COLORS[i]}`, title: TEAM_NAMES[i], 'aria-label': TEAM_NAMES[i] }, h('b', {}, String(i + 1)));
 
+
+  // 3D 骰子：真的六面立方體，擲出時翻滾到該點數。減少動態時直接顯示結果。
+  const PIPS = { 1: [5], 2: [1, 9], 3: [1, 5, 9], 4: [1, 3, 7, 9], 5: [1, 3, 5, 7, 9], 6: [1, 3, 4, 6, 7, 9] };
+  const FACE_ROT = { 1: [0, 0], 6: [0, 180], 2: [0, -90], 5: [0, 90], 3: [-90, 0], 4: [90, 0] };
+  function die3d() {
+    const cube = h('div', { class: 'cube' }, [1, 2, 3, 4, 5, 6].map((n) => h('div', { class: `face f${n}` },
+      [1, 2, 3, 4, 5, 6, 7, 8, 9].map((k) => h('i', { class: PIPS[n].includes(k) ? 'pip' : '' })))));
+    const wrap = h('div', { class: 'die3d', role: 'img', 'aria-label': '骰子' }, cube);
+    let spins = 0;
+    wrap.roll = async (n) => {
+      spins += 2;
+      const [rx, ry] = FACE_ROT[n];
+      cube.style.transform = `rotateX(${rx + (calm() ? 0 : spins * 360)}deg) rotateY(${ry + (calm() ? 0 : spins * 360)}deg)`;
+      wrap.setAttribute('aria-label', `骰子 ${n} 點`);
+      await sleep(950);
+    };
+    return wrap;
+  }
+
   // 每 6 題一次休息站：短暫停下來，完成一個段落
   function restBreak(total) {
     return new Promise((resolve) => {
@@ -319,5 +338,5 @@
     });
   }
 
-  window.RG = { h, shuffle, speak, stopSpeak, speakBtn, sleep, calm, loadBank, setupPanel, makeDeck, ask, header, gradeKey, token, stats, statsLine, TYPES, LEVELS, TEAM_COLORS, TEAM_NAMES };
+  window.RG = { die3d, h, shuffle, speak, stopSpeak, speakBtn, sleep, calm, loadBank, setupPanel, makeDeck, ask, header, gradeKey, token, stats, statsLine, TYPES, LEVELS, TEAM_COLORS, TEAM_NAMES };
 })();

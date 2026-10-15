@@ -31,7 +31,7 @@
   <main class="wrap" id="app"><p>載入中…</p></main>
   <script src="common.js"></script>
   <script>
-    const { h, speak, sleep, loadBank, setupPanel, makeDeck, ask, header, token, statsLine, stats, TEAM_COLORS, TEAM_NAMES } = RG;
+    const { die3d, h, speak, sleep, loadBank, setupPanel, makeDeck, ask, header, token, statsLine, stats, TEAM_COLORS, TEAM_NAMES } = RG;
     const GOAL = 30;
     const LADDERS = { 3: 11, 8: 16, 14: 22, 19: 27 };
     const SNAKES = { 13: 5, 21: 9, 25: 17, 29: 18 };
@@ -90,14 +90,14 @@
           el('circle', { cx: x1, cy: y1, r: 13, fill: '#2f8a4c', opacity: .85 });
           el('circle', { cx: x1 - 4, cy: y1 - 3, r: 2.5, fill: '#fff' }); el('circle', { cx: x1 + 4, cy: y1 - 3, r: 2.5, fill: '#fff' });
         });
-        const die = h('div', { class: 'die', 'aria-label': '骰子' }, '🎲');
+        const die = die3d(); let mover = -1;
         const actBtn = h('button', { class: 'btn primary', type: 'button', onclick: () => play() }, '答題，再擲骰子');
         const nowPos = h('div', { class: 'now-pos' });
         const log = h('div', { class: 'log', role: 'status', 'aria-live': 'polite' });
         const teamBar = h('div', { class: 'teams' });
         const goalEl = h('div', { class: 'note' });
         const side = h('div', { class: 'side' }, [teamBar, nowPos, die, actBtn, log, goalEl, h('div', { class: 'legend' }, '🪜 答對才能爬｜🐍 答對能躲開｜⭐ 答對多走 1 格')]);
-        app.replaceChildren(header(bank, '語文蛇梯棋'), h('div', { class: 'play' }, [h('div', { class: 'sb' }, [grid, svg]), side]));
+        app.replaceChildren(header(bank, '語文蛇梯棋'), h('div', { class: 'play' }, [h('div', { class: 'tilt' }, h('div', { class: 'sb tilted' }, [grid, svg])), side]));
 
         function render() {
           const p = players[turn];
@@ -106,20 +106,20 @@
           nowPos.textContent = `${cap ? `第 ${roundNo} / ${cap} 回合｜` : ''}${p.name}在第 ${p.at} 格`;
           for (let n = 1; n <= GOAL; n++) {
             cells[n].el.classList.toggle('here', p.at === n);
-            cells[n].tokens.replaceChildren(...players.map((pl, i) => pl.at === n ? token(i) : null).filter(Boolean));
+            cells[n].tokens.replaceChildren(...players.map((pl, i) => pl.at === n ? token(i, i === mover ? 'hop' : '') : null).filter(Boolean));
           }
           goalEl.textContent = `全班合作目標：一起完成 ${Math.max(8, players.length * 4)} 題（已完成 ${stats.independent + stats.helped + stats.learned} 題）`;
         }
         const say = (m) => { log.textContent = m; speak(m); };
-        const walk = async (p, to) => { const step = to > p.at ? 1 : -1; while (p.at !== to) { p.at += step; render(); await sleep(170); } };
+        const walk = async (p, to) => { mover = players.indexOf(p); const step = to > p.at ? 1 : -1; while (p.at !== to) { p.at += step; render(); await sleep(230); } mover = -1; };
 
         async function play() {
           if (busy) return; busy = true; actBtn.disabled = true;
           const p = players[turn];
           const r = await ask(deck.draw(), settings, { title: `${p.name}：先答題，再擲骰子`, deck });
           p.asked++; if (r.correct) p.right++;
-          die.classList.add('roll'); await sleep(650); die.classList.remove('roll');
-          const n = 1 + Math.floor(Math.random() * 6); die.textContent = n;
+          const n = 1 + Math.floor(Math.random() * 6); await die.roll(n);
+          mover = turn;
           await walk(p, Math.min(GOAL, p.at + n));
           if (LADDERS[p.at]) {
             if (r.correct) { await walk(p, LADDERS[p.at]); say(`剛剛答對，${p.name}爬上梯子到第 ${p.at} 格！`); } else say('梯子要答對才能爬，下次就可以！');

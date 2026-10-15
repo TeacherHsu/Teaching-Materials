@@ -27,13 +27,36 @@
     .reveal { text-align: center; min-height: 3.4em; font-size: 1.15rem; font-weight: 800; display: grid; gap: 10px; justify-items: center; }
     .mcq { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
     .mcq .qopt { max-width: 420px; }
+    .duel { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: start; }
+    .duel .zone { border: 4px solid var(--line); border-radius: 22px; padding: 10px; background: var(--card); display: grid; gap: 8px; }
+    .duel .zone.won { border-color: var(--ok); box-shadow: 0 0 0 5px rgba(31,138,76,.25); }
+    .duel .zone.out { opacity: .6; }
+    .duel .disc { width: 100%; border-radius: 20px; aspect-ratio: auto; display: grid; gap: 6px; padding: 8px; border-width: 4px; }
+    .duel .card { flex: 1 1 0; min-width: 0; }
+    .duel .stage { gap: 8px; margin: 0; }
+    .duel .sym { position: static; transform: none !important; white-space: normal; font-size: 1.15rem !important; min-width: 0; min-height: 52px; padding: 2px 6px; }
+    .duel-head { display: flex; align-items: center; gap: 6px; font-weight: 900; font-size: 1.2rem; }
+    .duel-score { margin-left: auto; color: var(--brand); }
+    .duel-info { font-weight: 800; min-height: 2.6em; text-align: center; }
+    .duel-center { display: grid; gap: 10px; justify-items: center; align-content: center; min-width: 120px; text-align: center; }
+    .duel.face { grid-template-columns: 1fr; }
+    .duel.face .zone.flip { transform: rotate(180deg); }
+    @media (max-width: 900px) { .duel { grid-template-columns: 1fr; } .duel .disc { width: 100%; } }
+    /* 3D：每回合卡片翻轉發牌，詞塊浮起 */
+    .stage { perspective: 1200px; }
+    .disc.deal { animation: deal3d .6s ease-out; }
+    .card.b .disc.deal { animation-delay: .12s; animation-fill-mode: backwards; }
+    @keyframes deal3d { from { opacity: 0; transform: rotateY(-100deg) scale(.85); } to { opacity: 1; transform: none; } }
+    .sym { box-shadow: 0 4px 0 #e2c9a5, 0 6px 10px rgba(80,50,20,.15); }
+    @media (min-width: 761px) { .stage:not(.duel .stage) .sym.ok { animation: lift .5s ease-out; } }
+    @keyframes lift { 0% { transform: translate(-50%, -50%) rotate(var(--r)) scale(1); } 50% { transform: translate(-50%, -50%) rotate(var(--r)) scale(1.25); } 100% { transform: translate(-50%, -50%) rotate(var(--r)) scale(1.1); } }
   </style>
 </head>
 <body>
   <main class="wrap" id="app"><p>載入中…</p></main>
   <script src="common.js"></script>
   <script>
-    const { h, shuffle, speak, speakBtn, loadBank, setupPanel, header } = RG;
+    const { h, shuffle, speak, speakBtn, loadBank, setupPanel, header, token } = RG;
     const SIZE = { support: 4, standard: 6, challenge: 8 };
     const ROT = { support: 0, standard: 10, challenge: 25 };
     const FONT = { support: 1.6, standard: 1.4, challenge: 1.25 };
@@ -41,7 +64,8 @@
     loadBank().then((bank) => {
       const app = document.getElementById('app');
       const roundsSel = h('select', { 'aria-label': '回數' }, [3, 5, 10].map((n) => h('option', { value: n, selected: n === 5 }, `${n} 回`)));
-      const { el: panel, settings } = setupPanel(bank, { types: [], howto: [['👀', '看兩張卡'], ['👆', '點出一樣的語詞'], ['💬', '選出它的意思']], levelNote: '支持：每張 4 個詞、不旋轉｜標準：6 個詞｜挑戰：8 個詞（加入成語）。都不限時。', extra: [h('div', { class: 'row' }, [h('strong', {}, '長度'), roundsSel])] });
+      const modeSel = h('select', { 'aria-label': '模式' }, [h('option', { value: 'solo' }, '1 人練習'), h('option', { value: 'duel' }, '雙人對戰'), h('option', { value: 'duel-face' }, '雙人對戰（iPad 平放、面對面）')]);
+      const { el: panel, settings } = setupPanel(bank, { types: [], howto: [['👀', '看兩張卡'], ['👆', '點出一樣的語詞'], ['💬', '選出它的意思']], levelNote: '支持：每張 4 個詞、不旋轉｜標準：6 個詞｜挑戰：8 個詞（加入成語）。都不限時。', extra: [h('div', { class: 'row' }, [h('strong', {}, '模式'), modeSel, h('strong', {}, '長度'), roundsSel])] });
       const msg = h('p', { class: 'note', role: 'alert' });
       app.replaceChildren(header(bank, '語詞哆寶'), panel,
         h('p', { class: 'note' }, '兩張卡上只有「一個」語詞完全相同，看到就點它，然後想一想它的意思。小心每個字都要看清楚！'),
@@ -88,15 +112,16 @@
           const ring = n - 1;
           return [[50, 50], ...Array.from({ length: ring }, (_, i) => { const a = -Math.PI / 2 + (2 * Math.PI * i) / ring; return [50 + 33 * Math.cos(a), 50 + 33 * Math.sin(a)]; })];
         }
-        function layout(disc, list) {
+        function layout(disc, list, onPick = pick) {
           disc.replaceChildren();
+          disc.classList.remove('deal'); void disc.offsetWidth; disc.classList.add('deal');
           disc.style.gridTemplateColumns = list.length > 4 ? '1fr 1fr' : '1fr';
           const pos = slots(list.length);
           const rot = ROT[settings.level];
           list.forEach((it, i) => {
             const [x, y] = pos[i];
             const fs = FONT[settings.level] * (it.text.length >= 4 ? 0.85 : 1);
-            disc.append(h('button', { class: 'sym', type: 'button', style: `left:${x}%;top:${y}%;--r:${rot ? Math.round(Math.random() * rot * 2 - rot) : 0}deg;font-size:${fs.toFixed(2)}rem`, onclick: (e) => pick(it, e.currentTarget) }, it.text));
+            disc.append(h('button', { class: 'sym', type: 'button', style: `left:${x}%;top:${y}%;--r:${rot ? Math.round(Math.random() * rot * 2 - rot) : 0}deg;font-size:${fs.toFixed(2)}rem`, onclick: (e) => onPick(it, e.currentTarget) }, it.text));
           });
         }
         function deal() {
@@ -142,6 +167,89 @@
           if (settings.autoSpeak) speak(`找到了，${it.text}。它的意思是哪一個？`);
           btns[0].focus();
         }
+
+        // 雙人對戰：兩人各有一組相同的卡。先點對相同語詞、再選對意思的人得 1 分。
+        // 點錯語詞停 2 秒；選錯意思這回合出局，另一人還能搶。先得 ROUNDS 分（或打完 ROUNDS×2 回）結束。
+        function duel(face) {
+          const WIN = ROUNDS;
+          const score = [0, 0];
+          let rounds = 0;
+          const P = [0, 1].map((i) => {
+            const discA = h('div', { class: 'disc', role: 'group', 'aria-label': `第${i + 1}位的左卡` });
+            const discB = h('div', { class: 'disc', role: 'group', 'aria-label': `第${i + 1}位的右卡` });
+            const info = h('div', { class: 'duel-info', role: 'status' });
+            const mcq = h('div', { class: 'mcq' });
+            const head = h('div', { class: 'duel-head' }, [token(i), h('span', {}, ` 第${i + 1}位`), h('span', { class: 'duel-score' }, '0 分')]);
+            const zone = h('section', { class: `zone p${i + 1}${face && i === 0 ? ' flip' : ''}`, 'aria-label': `第${i + 1}位` }, [head,
+              h('div', { class: 'stage' }, [h('div', { class: 'card' }, discA), h('div', { class: 'card b' }, discB)]), info, mcq]);
+            return { discA, discB, info, mcq, head, zone, state: 'find', frozen: false };
+          });
+          const center = h('div', { class: 'duel-center' });
+          app.replaceChildren(header(bank, '語詞哆寶・雙人對戰'), h('div', { class: `duel${face ? ' face' : ''}` }, [P[0].zone, center, P[1].zone]));
+          const setScore = () => P.forEach((p, i) => { p.head.querySelector('.duel-score').textContent = `${score[i]} 分`; });
+          function deal() {
+            rounds++;
+            const r = pickRound();
+            current = r;
+            center.replaceChildren(h('strong', {}, `第 ${rounds} 回｜先得 ${WIN} 分獲勝`));
+            P.forEach((p, i) => {
+              p.state = 'find'; p.frozen = false; p.mcq.replaceChildren(); p.info.textContent = '找出兩張卡一樣的語詞！';
+              p.zone.classList.remove('won', 'out');
+              layout(p.discA, shuffle(r.a), (it, btn) => tap(i, it, btn));
+              layout(p.discB, shuffle(r.b), (it, btn) => tap(i, it, btn));
+            });
+            if (settings.autoSpeak) speak('預備，開始！');
+          }
+          function tap(i, it, btn) {
+            const p = P[i];
+            if (p.state !== 'find' || p.frozen) return;
+            if (it.text !== current.target.text) {
+              btn.classList.remove('bad'); void btn.offsetWidth; btn.classList.add('bad');
+              p.frozen = true; p.info.textContent = '不一樣喔，停 2 秒再找！';
+              setTimeout(() => { p.frozen = false; if (p.state === 'find') p.info.textContent = '再找找看！'; }, 2000);
+              return;
+            }
+            p.state = 'meaning';
+            [p.discA, p.discB].forEach((d) => d.querySelectorAll('.sym').forEach((s) => { if (s.textContent === it.text) s.classList.add('ok'); }));
+            const other = shuffle(items.filter((x) => x.meaning !== it.meaning))[0];
+            p.info.textContent = `找到「${it.text}」！它的意思是？`;
+            p.mcq.replaceChildren(...shuffle([it.meaning, other.meaning]).map((m) => h('button', { class: 'qopt', type: 'button', onclick: (e) => meaning(i, it, m === it.meaning, e.currentTarget) }, m)));
+          }
+          function meaning(i, it, ok, btn) {
+            const p = P[i];
+            if (p.state !== 'meaning') return;
+            if (!ok) {
+              btn.classList.add('bad'); p.state = 'out'; p.zone.classList.add('out');
+              p.info.textContent = '意思選錯了，這回合先休息。';
+              if (!toPractice.includes(it.text)) toPractice.push(it.text);
+              if (P.every((x) => x.state === 'out')) return endRound(-1, it);
+              return;
+            }
+            endRound(i, it);
+          }
+          function endRound(winner, it) {
+            P.forEach((p) => { p.state = 'done'; });
+            if (winner >= 0) { score[winner]++; P[winner].zone.classList.add('won'); }
+            practiced.push(it.text);
+            setScore();
+            const msgText = winner >= 0 ? `第${winner + 1}位得分！「${it.text}」：${it.meaning}` : `兩位都再想想：「${it.text}」的意思是「${it.meaning}」`;
+            P.forEach((p) => { p.info.textContent = msgText; p.mcq.replaceChildren(); });
+            speak(`${it.text}，${it.meaning}`);
+            const done = score.some((x) => x >= WIN) || rounds >= WIN * 2;
+            const btn = h('button', { class: 'btn primary', type: 'button', onclick: () => (done ? finishDuel() : deal()) }, done ? '看結果' : '下一回');
+            center.replaceChildren(btn); btn.focus();
+          }
+          function finishDuel() {
+            const best = Math.max(...score);
+            const winners = [0, 1].filter((i) => score[i] === best);
+            center.replaceChildren(
+              h('strong', { style: 'font-size:1.3rem' }, winners.length === 2 ? `🤝 平手！${best}：${best}` : `🏆 第${winners[0] + 1}位獲勝！${score[0]}：${score[1]}`),
+              h('div', {}, `一起練過：${[...new Set(practiced)].join('、')}`),
+              h('button', { class: 'btn primary', type: 'button', onclick: () => location.reload() }, '再玩一次'));
+            speak(winners.length === 2 ? '平手！' : `第${winners[0] + 1}位獲勝！`);
+          }
+          setScore(); deal();
+        }
         function finish() {
           const words = [...new Set(practiced)];
           const redo = [...new Set(toPractice)];
@@ -153,6 +261,7 @@
           nextBtn.textContent = '再玩一次'; nextBtn.onclick = () => location.reload(); nextBtn.classList.remove('hidden');
           speak(`完成了！今天練了 ${words.length} 個詞`);
         }
+        if (modeSel.value !== 'solo') return duel(modeSel.value === 'duel-face');
         deal();
       }
     }).catch((e) => { document.getElementById('app').textContent = e.message; });

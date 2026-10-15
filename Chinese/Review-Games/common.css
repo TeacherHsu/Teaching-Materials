@@ -109,3 +109,33 @@ body.calm *, body.calm *::before, body.calm *::after { animation: none !importan
 .badge-in { animation: badgeIn .4s ease-out; }
 @keyframes badgeIn { from { opacity: 0; transform: scale(.92); } to { opacity: 1; transform: none; } }
 .progress { font-weight: 800; }
+
+/* ===== 3D 動態（減少動態時全部停用，見 body.calm） ===== */
+body { background: radial-gradient(ellipse at 50% -10%, #fff4dc 0%, var(--bg) 55%, #f6e7d2 100%) fixed; }
+.die3d { width: 84px; height: 84px; perspective: 500px; }
+.cube { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .9s cubic-bezier(.2,.7,.3,1); transform: rotateX(-20deg) rotateY(25deg); }
+.face { position: absolute; inset: 0; background: linear-gradient(145deg, #ffffff, #f1e6d6); border: 3px solid #2b1d12; border-radius: 16px; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); padding: 10px; backface-visibility: hidden; }
+.face i { display: block; margin: auto; width: 13px; height: 13px; border-radius: 50%; }
+.face i.pip { background: #2b1d12; }
+.face.f1 i.pip { background: var(--bad); width: 18px; height: 18px; }
+.f1 { transform: translateZ(42px); } .f6 { transform: rotateY(180deg) translateZ(42px); }
+.f2 { transform: rotateY(90deg) translateZ(42px); } .f5 { transform: rotateY(-90deg) translateZ(42px); }
+.f3 { transform: rotateX(90deg) translateZ(42px); } .f4 { transform: rotateX(-90deg) translateZ(42px); }
+@media (max-width: 600px) { .die3d { width: 56px; height: 56px; } .face { padding: 6px; border-radius: 10px; } .face i { width: 8px; height: 8px; } .face.f1 i.pip { width: 12px; height: 12px; }
+  .f1 { transform: translateZ(28px); } .f6 { transform: rotateY(180deg) translateZ(28px); } .f2 { transform: rotateY(90deg) translateZ(28px); } .f5 { transform: rotateY(-90deg) translateZ(28px); } .f3 { transform: rotateX(90deg) translateZ(28px); } .f4 { transform: rotateX(-90deg) translateZ(28px); } }
+
+/* 傾斜的立體棋盤：格子有厚度，棋子會跳 */
+.tilt { perspective: 1600px; perspective-origin: 50% 20%; }
+.tilt > .tilted { transform: rotateX(18deg); transform-origin: 50% 100%; transition: transform .6s; }
+.tile, .cell { box-shadow: 0 6px 0 #dcc6a6, 0 10px 14px rgba(80,50,20,.18); }
+.token { transition: transform .15s; }
+.token.hop { animation: hop .32s ease-out; }
+@keyframes hop { 0% { transform: translateY(0) scale(1); } 45% { transform: translateY(-16px) scale(1.12); } 100% { transform: translateY(0) scale(1); } }
+.qbox { animation: pop3d .32s ease-out; transform-origin: 50% 0; }
+@keyframes pop3d { from { opacity: 0; transform: perspective(900px) rotateX(-18deg) scale(.94); } to { opacity: 1; transform: none; } }
+.gcard { transition: transform .2s, box-shadow .2s; box-shadow: 0 6px 0 #e8d9c4; }
+.gcard:hover, .gcard:focus-visible { transform: translateY(-4px) perspective(800px) rotateX(4deg); box-shadow: 0 12px 0 #e2c9a5, 0 18px 24px rgba(80,50,20,.18); }
+@media (max-width: 700px) { .tilt > .tilted { transform: none; } }
+body.calm .tilt > .tilted { transform: none; }
+body.calm .cube { transform: none; }
+@media (prefers-reduced-motion: reduce) { .tilt > .tilted { transform: none; } }

@@ -27,6 +27,15 @@
     @keyframes shake { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
     .bar { display: flex; gap: 20px; justify-content: center; font-weight: 800; flex-wrap: wrap; }
     @media (max-width: 600px) { .bcell, .bgrid.n3 .bcell, .bgrid.n5 .bcell { font-size: 1rem; border-radius: 10px; } .bgrid { gap: 4px; } }
+    /* 3D：格子有厚度，點對時翻面，連線時亮起 */
+    .bgrid { perspective: 900px; }
+    .bcell { box-shadow: 0 6px 0 #dcc6a6, 0 10px 14px rgba(80,50,20,.15); transition: transform .15s; }
+    .bcell:active { transform: translateY(4px); box-shadow: 0 2px 0 #dcc6a6; }
+    .bcell.on, .bcell.learned { animation: flip3d .55s ease-out; }
+    .bcell.on { box-shadow: 0 6px 0 #6e300d, 0 10px 14px rgba(80,50,20,.25); }
+    .bcell.line { animation: glow 1.2s ease-out; }
+    @keyframes flip3d { from { transform: rotateY(180deg); } to { transform: rotateY(0); } }
+    @keyframes glow { 0% { transform: translateY(0); } 30% { transform: translateY(-8px); } 100% { transform: translateY(0); } }
   </style>
 </head>
 <body>
