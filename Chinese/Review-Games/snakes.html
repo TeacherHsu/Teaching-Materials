@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>語文蛇梯棋</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .play { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 16px; align-items: start; }
+    @media (max-width: 860px) { .play { grid-template-columns: 1fr; } }
+    .sb { position: relative; max-width: 760px; width: 100%; margin: 0 auto; aspect-ratio: 6 / 5; }
+    .grid { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(5, 1fr); gap: 4px; }
+    .cell { position: relative; border-radius: 10px; background: var(--card); border: 2px solid var(--line); font-weight: 900; font-size: 1rem; padding: 4px 6px; color: var(--muted); }
+    .cell:nth-child(odd) { background: #fff8ee; }
+    .cell.star { background: #fff1c2; }
+    .cell.goal { background: #ffe0b8; color: var(--ink); }
+    .cell .mark { position: absolute; top: 4px; right: 6px; font-size: 1.1rem; }
+    .cell .tokens { position: absolute; left: 4px; bottom: 4px; display: flex; gap: 2px; z-index: 3; }
+    .token { width: 24px; height: 24px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.45); }
+    svg.links { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
+    .side { display: grid; gap: 12px; justify-items: center; text-align: center; }
+    .legend { font-size: .85rem; color: var(--muted); text-align: left; }
+  </style>
+</head>
+<body>
+  <main class="wrap" id="app"><p>載入中…</p></main>
+  <script src="common.js"></script>
+  <script>
+    const { h, speak, loadBank, setupPanel, makeDeck, ask, header, TEAM_COLORS, TEAM_NAMES } = RG;
+    const GOAL = 30;
+    const LADDERS = { 3: 11, 8: 16, 14: 22, 19: 27 };
+    const SNAKES = { 13: 5, 21: 9, 25: 17, 29: 18 };
+    const STARS = new Set([6, 10, 17, 24]);
+    const cellRC = (n) => { const r = Math.floor((n - 1) / 6); const c = (n - 1) % 6; return [5 - r, r % 2 ? 6 - c : c + 1]; };
+
+    loadBank().then((bank) => {
+      const app = document.getElementById('app');
+      const nSel = h('select', { 'aria-label': '玩家數' }, [1, 2, 3, 4].map((n) => h('option', { value: n, selected: n === 2 }, n === 1 ? '1 人練習' : `${n} 隊`)));
+      const { el: panel, settings } = setupPanel(bank, { extra: [h('div', { class: 'row' }, [h('strong', {}, '玩家'), nSel])] });
+      app.replaceChildren(header(bank, '語文蛇梯棋'), panel,
+        h('p', { class: 'note' }, '🪜 踩到梯子腳：答對才能往上爬。🐍 踩到蛇頭：答對就躲開，答錯滑下去。⭐ 星星格：答對多走 1 格。先到 30 格獲勝！'),
+        h('div', { class: 'row' }, h('button', { class: 'btn primary', type: 'button', onclick: () => start() }, '開始遊戲')));
+
+      function start() {
+        const deck = makeDeck(bank, settings);
+        if (!deck.size()) { alert('請至少勾選一課和一種題目類型'); return; }
+        const players = Array.from({ length: Number(nSel.value) }, (_, i) => ({ name: Number(nSel.value) === 1 ? '我' : TEAM_NAMES[i], color: TEAM_COLORS[i], at: 1, right: 0, asked: 0 }));
+        let turn = 0, busy = false;
+        const cells = {};
+        const grid = h('div', { class: 'grid' });
+        for (let n = 1; n <= GOAL; n++) {
+          const [r, c] = cellRC(n);
+          const mark = LADDERS[n] ? '🪜' : SNAKES[n] ? '🐍' : STARS.has(n) ? '⭐' : n === GOAL ? '🏆' : '';
+          const tokens = h('div', { class: 'tokens' });
+          cells[n] = { tokens, el: h('div', { class: `cell${STARS.has(n) ? ' star' : ''}${n === GOAL ? ' goal' : ''}`, style: `grid-row:${r};grid-column:${c}` }, [String(n), mark ? h('span', { class: 'mark', 'aria-hidden': 'true' }, mark) : null, tokens]) };
+          grid.append(cells[n].el);
+        }
+        const NS = 'http://www.w3.org/2000/svg';
+        const svg = document.createElementNS(NS, 'svg');
+        svg.setAttribute('class', 'links'); svg.setAttribute('viewBox', '0 0 600 500'); svg.setAttribute('aria-hidden', 'true');
+        const ctr = (n) => { const [r, c] = cellRC(n); return [(c - 0.5) * 100, (r - 0.5) * 100]; };
+        const line = (a, b, color, w, dash) => {
+          const [x1, y1] = ctr(a), [x2, y2] = ctr(b);
+          const p = document.createElementNS(NS, 'path');
+          const mx = (x1 + x2) / 2 + (dash ? 0 : 30), my = (y1 + y2) / 2;
+          p.setAttribute('d', dash ? `M${x1} ${y1} L${x2} ${y2}` : `M${x1} ${y1} Q${mx} ${my} ${x2} ${y2}`);
+          p.setAttribute('stroke', color); p.setAttribute('stroke-width', w); p.setAttribute('fill', 'none');
+          p.setAttribute('stroke-linecap', 'round'); p.setAttribute('opacity', '.7');
+          if (dash) p.setAttribute('stroke-dasharray', '4 14');
+          svg.append(p);
+        };
+        Object.entries(LADDERS).forEach(([a, b]) => { line(+a, +b, '#8a5a2b', 16, true); line(+a, +b, '#c58b4a', 6, false); });
+        Object.entries(SNAKES).forEach(([a, b]) => line(+a, +b, '#3fa45b', 12, false));
+        const die = h('div', { class: 'die', 'aria-label': '骰子' }, '🎲');
+        const rollBtn = h('button', { class: 'btn primary', type: 'button', onclick: () => play() }, '擲骰子');
+        const log = h('div', { class: 'log', role: 'status', 'aria-live': 'polite' });
+        const teamBar = h('div', { class: 'teams', style: 'flex-direction:column;width:100%' });
+        const side = h('div', { class: 'side' }, [teamBar, die, rollBtn, log, h('div', { class: 'legend' }, '🪜 梯子：答對往上爬｜🐍 蛇：答錯滑下去｜⭐ 答對多走 1 格')]);
+        app.replaceChildren(header(bank, '語文蛇梯棋'), h('div', { class: 'play' }, [h('div', { class: 'sb' }, [grid, svg]), side]));
+
+        function render() {
+          teamBar.replaceChildren(...players.map((p, i) => h('div', { class: `team${i === turn ? ' now' : ''}` }, [
+            h('span', { class: 'dot', style: `background:${p.color}` }), `${p.name}：第 ${p.at} 格`, h('div', { class: 'note' }, `答對 ${p.right} / ${p.asked} 題`)])));
+          for (let n = 1; n <= GOAL; n++) cells[n].tokens.replaceChildren(...players.filter((p) => p.at === n).map((p) => h('span', { class: 'token', style: `background:${p.color}` })));
+        }
+        const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+        const say = (m) => { log.textContent = m; speak(m); };
+        const quiz = async (p, title) => { const ok = await ask(deck.draw(), settings, { title }); p.asked++; if (ok) p.right++; return ok; };
+        const walk = async (p, to) => { const step = to > p.at ? 1 : -1; while (p.at !== to) { p.at += step; render(); await sleep(170); } };
+
+        async function play() {
+          if (busy) return; busy = true; rollBtn.disabled = true;
+          const p = players[turn];
+          die.classList.add('roll'); await sleep(650); die.classList.remove('roll');
+          const n = 1 + Math.floor(Math.random() * 6); die.textContent = n;
+          await walk(p, Math.min(GOAL, p.at + n));
+          if (LADDERS[p.at]) {
+            if (await quiz(p, `${p.name}踩到梯子！答對就爬到第 ${LADDERS[p.at]} 格`)) { await walk(p, LADDERS[p.at]); say(`${p.name}爬上梯子！`); } else say('沒答對，留在原地。');
+          } else if (SNAKES[p.at]) {
+            if (await quiz(p, `${p.name}踩到蛇頭！答對就能躲開`)) say('躲開了！'); else { const to = SNAKES[p.at]; await walk(p, to); say(`滑到第 ${to} 格。`); }
+          } else if (STARS.has(p.at)) {
+            if (await quiz(p, `${p.name}踩到星星！答對多走 1 格`)) { await walk(p, p.at + 1); say('多走 1 格！'); } else say('再接再厲！');
+          } else say(`${p.name}走到第 ${p.at} 格。`);
+          render();
+          if (p.at >= GOAL) {
+            say(`🏆 ${p.name}抵達終點，獲勝！`);
+            side.append(h('button', { class: 'btn primary', type: 'button', onclick: () => location.reload() }, '再玩一次'));
+            return;
+          }
+          turn = (turn + 1) % players.length; render();
+          busy = false; rollBtn.disabled = false; rollBtn.focus();
+        }
+        render(); rollBtn.focus();
+      }
+    }).catch((e) => { document.getElementById('app').textContent = e.message; });
+  </script>
+</body>
+</html>

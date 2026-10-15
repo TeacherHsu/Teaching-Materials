@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>綜合複習遊戲</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="common.css">
+</head>
+<body>
+  <main class="wrap" id="app"><p>載入中…</p></main>
+  <script src="common.js"></script>
+  <script>
+    const { h, loadBank, gradeKey } = RG;
+    const GAMES = [
+      { file: 'monopoly.html', ico: '🏦', title: '課文大富翁', desc: '2～4 隊輪流擲骰。踩到課次地產先答題才能買下；踩到別隊的地，答對就免付過路費。' },
+      { file: 'snakes.html', ico: '🐍', title: '語文蛇梯棋', desc: '踩到梯子答對就往上爬；踩到蛇頭答對就能躲開，答錯滑下去。' },
+      { file: 'dobble.html', ico: '👀', title: '語詞哆寶', desc: '兩張圓卡只有一個語詞一樣，誰先找到？練眼明手快、分辨形似字。' },
+      { file: 'bingo.html', ico: '🎯', title: '語詞賓果', desc: '聽解釋、找語詞，連成一條線就賓果！可個人練習或全班一起玩。' },
+    ];
+    loadBank().then((bank) => {
+      const app = document.getElementById('app');
+      app.replaceChildren(
+        h('div', { class: 'topbar' }, [
+          h('a', { class: 'back', href: '../../mandarin/' }, '← 課文樂園'),
+          h('h1', {}, `${bank.grade}（${bank.publisher}）第1～6課 綜合複習遊戲`),
+        ]),
+        h('p', { class: 'note' }, `題庫：${bank.words.length} 個語詞、${bank.idioms.length} 個成語、${bank.questions.length} 題（語詞意思、注音、形似字、成語、閱讀理解、課文大意）。進遊戲後可選課次、題型與支持程度。`),
+        h('div', { class: 'games' }, GAMES.map((g) => h('a', { class: 'gcard', href: `${g.file}?g=${gradeKey()}` }, [
+          h('div', { class: 'ico', 'aria-hidden': 'true' }, g.ico), h('h2', {}, g.title), h('p', {}, g.desc)]))),
+      );
+    }).catch((e) => { document.getElementById('app').textContent = e.message; });
+  </script>
+</body>
+</html>

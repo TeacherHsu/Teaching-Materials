@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>課文大富翁</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .board { display: grid; grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(6, minmax(78px, 1fr)); gap: 6px; aspect-ratio: 1; max-width: min(820px, 100%, calc(100vh - 190px)); min-width: min(100%, 560px); margin: 0 auto; }
+    .tile { position: relative; border-radius: 12px; background: var(--card); border: 3px solid var(--line); padding: 4px 6px; font-size: .78rem; font-weight: 800; display: flex; flex-direction: column; overflow: hidden; }
+    .tile .band { height: 10px; border-radius: 5px; margin-bottom: 3px; }
+    .tile .nm { line-height: 1.25; }
+    .tile .own { margin-top: auto; font-size: .72rem; color: #fff; border-radius: 6px; padding: 0 4px; align-self: flex-start; }
+    .tile.special { background: #fff3e0; text-align: center; justify-content: center; font-size: .9rem; }
+    .tile.special .big { font-size: 1.6rem; line-height: 1; }
+    .tokens { position: absolute; right: 4px; bottom: 4px; display: flex; gap: 2px; }
+    .token { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 1px 3px rgba(0,0,0,.4); }
+    .center { grid-column: 2 / 6; grid-row: 2 / 6; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; padding: 8px; }
+    .center .log { font-size: 1.05rem; color: var(--ink); }
+    @media (max-width: 600px) { .tile { font-size: .6rem; } .tile .nm { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; } .board { grid-template-rows: repeat(6, minmax(56px, 1fr)); } .die { width: 64px; height: 64px; font-size: 2rem; } }
+  </style>
+</head>
+<body>
+  <main class="wrap" id="app"><p>載入中…</p></main>
+  <script src="common.js"></script>
+  <script>
+    const { h, shuffle, speak, loadBank, setupPanel, makeDeck, ask, header, TEAM_COLORS, TEAM_NAMES } = RG;
+    const PRICE = 200, TOLL = 100, PASS_GO = 200, START_CASH = 1000;
+    const LESSON_COLORS = ['var(--c1)', 'var(--c2)', 'var(--c3)', 'var(--c4)', 'var(--c5)', 'var(--c6)'];
+    // 20 格：起點、6 課各 2 塊地、機會 4、命運 2、休息站 1
+    const LAYOUT = ['start', 1, 1, 'chance', 2, 2, 'fate', 3, 3, 'chance', 'rest', 4, 4, 'chance', 5, 5, 'fate', 6, 6, 'chance'];
+    const FATE = [
+      ['幫同學撿起掉落的鉛筆，獲得', 100], ['整理好書包，獲得', 100], ['準時交作業，獲得', 150],
+      ['上課分享好點子，獲得', 120], ['忘了帶課本，付出', -50], ['水壺打翻了，付出', -80],
+    ];
+    const pos = (i) => i <= 5 ? [1, i + 1] : i <= 10 ? [i - 4, 6] : i <= 15 ? [6, 16 - i] : [21 - i, 1];
+
+    loadBank().then((bank) => {
+      const app = document.getElementById('app');
+      const teamsSel = h('select', { 'aria-label': '隊伍數' }, [2, 3, 4].map((n) => h('option', { value: n }, `${n} 隊`)));
+      const roundsSel = h('select', { 'aria-label': '回合數' }, [6, 8, 10, 12].map((n) => h('option', { value: n, selected: n === 8 }, `${n} 回合`)));
+      const { el: panel, settings } = setupPanel(bank, { extra: [h('div', { class: 'row' }, [h('strong', {}, '隊伍'), teamsSel, h('strong', {}, '長度'), roundsSel])] });
+      const startBtn = h('button', { class: 'btn primary', type: 'button', onclick: () => start() }, '開始遊戲');
+      const rules = h('p', { class: 'note' }, `每隊起始 ${START_CASH} 元。踩到沒人買的課次地：答對就能用 ${PRICE} 元買下。踩到別隊的地：答對免費通過，答錯付過路費 ${TOLL} 元（同一課兩塊都買下加倍）。機會格答對得 150 元。經過起點得 ${PASS_GO} 元。結束時現金＋每塊地 ${PRICE} 元，總分最高獲勝。`);
+      app.replaceChildren(header(bank, '課文大富翁'), panel, rules, h('div', { class: 'row' }, startBtn));
+
+      function start() {
+        const deck = makeDeck(bank, settings);
+        if (!deck.size()) { alert('請至少勾選一課和一種題目類型'); return; }
+        const nTeams = Number(teamsSel.value);
+        const maxRounds = Number(roundsSel.value);
+        const teams = Array.from({ length: nTeams }, (_, i) => ({ name: TEAM_NAMES[i], color: TEAM_COLORS[i], cash: START_CASH, at: 0 }));
+        const owner = {};
+        let turn = 0, round = 1, busy = false;
+        const title = (l) => bank.lessons[l - 1].title;
+        const tiles = LAYOUT.map((t, i) => {
+          const [r, c] = pos(i);
+          const tokens = h('div', { class: 'tokens' });
+          let body;
+          if (typeof t === 'number') {
+            const own = h('span', { class: 'own hidden' });
+            body = [h('div', { class: 'band', style: `background:${LESSON_COLORS[t - 1]}` }), h('div', { class: 'nm' }, `第${t}課 ${title(t)}`), own];
+            const el = h('div', { class: 'tile', style: `grid-row:${r};grid-column:${c}` }, [...body, tokens]);
+            return { el, tokens, own };
+          }
+          const label = { start: ['🏁', '起點'], chance: ['❓', '機會'], fate: ['🎲', '命運'], rest: ['☕', '休息站'] }[t];
+          const el = h('div', { class: 'tile special', style: `grid-row:${r};grid-column:${c}` }, [h('div', { class: 'big', 'aria-hidden': 'true' }, label[0]), h('div', {}, label[1]), tokens]);
+          return { el, tokens };
+        });
+        const die = h('div', { class: 'die', 'aria-label': '骰子' }, '🎲');
+        const log = h('div', { class: 'log', role: 'status', 'aria-live': 'polite' }, '');
+        const rollBtn = h('button', { class: 'btn primary', type: 'button', onclick: () => play() }, '擲骰子');
+        const roundEl = h('strong', {});
+        const center = h('div', { class: 'center' }, [roundEl, die, rollBtn, log]);
+        const board = h('div', { class: 'board' }, [...tiles.map((t) => t.el), center]);
+        const teamBar = h('div', { class: 'teams' });
+        app.replaceChildren(header(bank, '課文大富翁'), teamBar, h('div', { style: 'height:12px' }), board);
+
+        const propCount = (ti) => Object.values(owner).filter((o) => o === ti).length;
+        function render() {
+          roundEl.textContent = `第 ${round} / ${maxRounds} 回合｜輪到 ${teams[turn].name}`;
+          teamBar.replaceChildren(...teams.map((t, i) => h('div', { class: `team${i === turn ? ' now' : ''}` }, [
+            h('div', {}, [h('span', { class: 'dot', style: `background:${t.color}` }), t.name]),
+            h('div', { class: 'big' }, `${t.cash} 元`), h('div', { class: 'note' }, `地產 ${propCount(i)} 塊`)])));
+          tiles.forEach((t, i) => {
+            t.tokens.replaceChildren(...teams.filter((tm) => tm.at === i).map((tm) => h('span', { class: 'token', style: `background:${tm.color}`, title: tm.name })));
+            if (t.own) {
+              const o = owner[i];
+              t.own.classList.toggle('hidden', o == null);
+              if (o != null) { t.own.textContent = teams[o].name; t.own.style.background = teams[o].color; }
+            }
+          });
+        }
+        const say = (msg) => { log.textContent = msg; speak(msg); };
+        const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+        async function play() {
+          if (busy) return; busy = true; rollBtn.disabled = true;
+          const team = teams[turn];
+          die.classList.add('roll');
+          await sleep(700);
+          die.classList.remove('roll');
+          const n = 1 + Math.floor(Math.random() * 6);
+          die.textContent = n;
+          for (let k = 0; k < n; k++) {
+            team.at = (team.at + 1) % LAYOUT.length;
+            if (team.at === 0) team.cash += PASS_GO;
+            render(); await sleep(220);
+          }
+          const t = LAYOUT[team.at];
+          if (typeof t === 'number') {
+            const o = owner[team.at];
+            const q = deck.draw((x) => x.lesson === t);
+            if (o == null) {
+              if (team.cash < PRICE) say(`${team.name}的錢不夠買地，下次再來。`);
+              else if (await ask(q, settings, { title: `${team.name}：答對就能用 ${PRICE} 元買下「第${t}課」這塊地` })) {
+                team.cash -= PRICE; owner[team.at] = turn; say(`${team.name}買下第${t}課的地！`);
+              } else say('沒答對，這次先不買。');
+            } else if (o === turn) {
+              if (await ask(q, settings, { title: `${team.name}回到自己的地，答對得複習獎金 50 元` })) { team.cash += 50; say('複習獎金 50 元！'); } else say('再加油！');
+            } else {
+              const pair = LAYOUT.map((x, i) => x === t ? i : -1).filter((i) => i >= 0);
+              const toll = pair.every((i) => owner[i] === o) ? TOLL * 2 : TOLL;
+              if (await ask(q, settings, { title: `這是${teams[o].name}的地。答對免付過路費，答錯付 ${toll} 元` })) say('答對了，免費通過！');
+              else { const pay = Math.min(toll, team.cash); team.cash -= pay; teams[o].cash += pay; say(`付給${teams[o].name} ${pay} 元。`); }
+            }
+          } else if (t === 'chance') {
+            const q = deck.draw();
+            if (await ask(q, settings, { title: `${team.name}抽到機會：答對得 150 元` })) { team.cash += 150; say('得到 150 元！'); } else say('沒關係，下次加油！');
+          } else if (t === 'fate') {
+            const [msg, amt] = FATE[Math.floor(Math.random() * FATE.length)];
+            team.cash = Math.max(0, team.cash + amt);
+            say(`命運：${msg} ${Math.abs(amt)} 元。`);
+          } else if (t === 'rest') say(`${team.name}在休息站喝口水。`);
+          else say(`${team.name}回到起點！`);
+          turn = (turn + 1) % teams.length;
+          if (turn === 0) round++;
+          render();
+          if (round > maxRounds) return finish();
+          busy = false; rollBtn.disabled = false; rollBtn.focus();
+        }
+
+        function finish() {
+          const scores = teams.map((t, i) => ({ ...t, total: t.cash + propCount(i) * PRICE, props: propCount(i) })).sort((a, b) => b.total - a.total);
+          const best = scores[0].total;
+          center.replaceChildren(
+            h('strong', { style: 'font-size:1.4rem' }, '🎉 遊戲結束'),
+            ...scores.map((s) => h('div', { style: 'font-weight:800' }, `${s.total === best ? '🏆 ' : ''}${s.name}：現金 ${s.cash}＋地產 ${s.props} 塊 ＝ ${s.total}`)),
+            h('button', { class: 'btn primary', type: 'button', onclick: () => location.reload() }, '再玩一次'),
+          );
+          speak(`遊戲結束，${scores.filter((s) => s.total === best).map((s) => s.name).join('和')}獲勝！`);
+        }
+        render();
+        rollBtn.focus();
+      }
+    }).catch((e) => { document.getElementById('app').textContent = e.message; });
+  </script>
+</body>
+</html>

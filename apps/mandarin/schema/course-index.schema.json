@@ -59,8 +59,8 @@
                             },
                             "url": {
                               "type": "string",
-                              "pattern": "^\\.\\./[A-Za-z0-9_./-]+/$",
-                              "description": "站內相對路徑（相對於 /mandarin/），例如 ../Chinese/Shape-Run-G6A/"
+                              "pattern": "^\\.\\./[A-Za-z0-9_./-]+/(\\?[A-Za-z0-9=&_-]+)?$",
+                              "description": "站內相對路徑（相對於 /mandarin/），例如 ../Chinese/Shape-Run-G6A/ 或 ../Chinese/Review-Games/?g=G6A"
                             }
                           }
                         }
