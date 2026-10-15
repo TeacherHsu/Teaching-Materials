@@ -1,5 +1,8 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-10-16（六）｜家中 Mac｜Claude Code｜狀態：🚧 施工中
+- 新增第六款複習遊戲「3D 課文偵探密室」：動 `Chinese/Review-Games/`（新檔 detective*）、`course-index.json` reviews、optimization-workflow。其他人請勿同時修改這些檔案。
+
 ## 2026-10-16（五）｜家中 Mac｜Claude Code＋Codex｜狀態：✅ 已推送
 - 四款棋盤遊戲 Three.js 3D（Codex 兩輪＋Claude 修正與截圖驗收）：木紋桌面、立體棋盤、3D 骰子、課次色地產與房子、蛇梯模型、賓果翻面橘／藍、哆寶立體雙卡與金色連線；減少動態／窄螢幕／WebGL 失敗自動回 2D。
 - 大富翁、蛇梯棋逐格跳＋隊伍色足跡與步數朗讀、梯子／蛇先說明再移動（CF 要求，特教理解規則）。
