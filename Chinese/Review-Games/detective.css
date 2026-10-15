@@ -1,0 +1,85 @@
+/* 課文偵探密室：沿用 common.css 的色票與按鈕；這裡只放密室專用樣式 */
+.dt-steps { display: flex; gap: 4px; flex-wrap: wrap; list-style: none; padding: 0; margin: 0 0 10px; }
+.dt-steps li { flex: 1 1 90px; text-align: center; font-size: .78rem; font-weight: 800; padding: 6px 4px; border-radius: 10px; background: #f1e6d6; color: var(--muted); }
+.dt-steps li.done { background: #d8efe0; color: #1d5c37; }
+.dt-steps li.now { background: var(--brand); color: #fff; }
+.dt-task { display: flex; gap: 10px; align-items: center; background: #fffaf0; border: 3px solid var(--accent); border-radius: 18px; padding: 10px 14px; margin-bottom: 10px; }
+.dt-task b { font-size: 1.15rem; flex: 1; }
+.dt-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.dt-layout { display: grid; grid-template-columns: minmax(0, 1fr) 270px; gap: 12px; }
+@media (max-width: 900px) { .dt-layout { grid-template-columns: 1fr; } }
+.dt-room { position: relative; height: min(64vh, 620px); min-height: 380px; border-radius: 22px; overflow: hidden; border: 3px solid var(--line); background: #fff4e2; }
+.dt-stage, .dt-stage canvas { position: absolute; inset: 0; width: 100% !important; height: 100% !important; display: block; touch-action: none; }
+.dt-2d .dt-stage { background:
+  linear-gradient(180deg, #f3e2c7 0 26%, #c99a68 26% 27%, #e2c49b 27% 100%);
+}
+.dt-2d .dt-stage::after { content: ''; position: absolute; left: 30%; right: 22%; top: 62%; height: 26%; border-radius: 50%; background: rgba(138, 79, 168, .22); }
+.dt-markers { position: absolute; inset: 0; pointer-events: none; }
+.dt-mark { position: absolute; transform: translate(-50%, -50%); pointer-events: auto; display: inline-flex; align-items: center; gap: 4px; min-height: 48px; padding: 4px 12px 4px 8px; border-radius: 999px; border: 3px solid #fff; background: rgba(255, 255, 255, .94); color: var(--ink); font-weight: 800; font-size: .9rem; box-shadow: 0 4px 12px rgba(43, 29, 18, .25); white-space: nowrap; }
+.dt-mark .dt-ico { font-size: 1.3rem; }
+.dt-3d .dt-mark { font-size: .8rem; min-height: 44px; padding: 2px 10px 2px 6px; }
+.dt-3d .dt-mark[data-state="locked"] .dt-lab { display: none; }
+.dt-mark .dt-st { min-width: 1em; font-weight: 900; }
+.dt-mark[data-state="locked"] { background: #e9e4dc; color: #6b5643; }
+.dt-mark[data-state="open"], .dt-mark[data-state="next"] { border-color: var(--accent); background: #fff3c4; }
+.dt-mark[data-state="next"] { box-shadow: 0 0 0 5px rgba(240, 160, 48, .55), 0 4px 12px rgba(43, 29, 18, .25); }
+.dt-mark[data-state="done"], .dt-mark[data-state="found"] { background: #d8efe0; border-color: #1f8a4c; }
+.dt-mark[data-state="hidden"] { display: none; }
+.dt-room.dt-calm-lab .dt-lab { display: inline; }
+.dt-status { position: absolute; left: 10px; bottom: 8px; font-size: .78rem; font-weight: 700; background: rgba(255, 255, 255, .85); border-radius: 999px; padding: 2px 10px; color: var(--muted); pointer-events: none; }
+.dt-side { display: grid; gap: 8px; align-content: start; }
+.dt-side h2 { font-size: 1.05rem; margin: 0; }
+.dt-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.dt-list button { width: 100%; text-align: left; min-height: 48px; border-radius: 14px; border: 2px solid var(--line); background: #fff; font-weight: 800; padding: 6px 10px; color: var(--ink); }
+.dt-list button:disabled { background: #f1ece4; color: #8a7764; }
+.dt-list button.done { background: #e3f5ea; border-color: #1f8a4c; }
+.dt-list button.next { border-color: var(--accent); background: #fff3c4; }
+.dt-story { background: #fff; border: 2px dashed var(--accent); border-radius: 18px; padding: 14px 16px; }
+.dt-story .tag { display: inline-block; font-size: .78rem; font-weight: 800; background: #ede4ff; color: #4b2a85; border-radius: 999px; padding: 2px 10px; }
+.dt-clue { background: #fffdf5; border: 2px solid #e8d9c4; border-left: 8px solid var(--accent); border-radius: 12px; padding: 8px 12px; font-weight: 700; font-size: 1.05rem; }
+.dt-clue.decoy { border-left-color: #8a7764; background: #f6f2ec; }
+.dt-clue small { display: block; color: var(--muted); font-weight: 700; font-size: .78rem; }
+.dt-pool, .dt-slots { display: flex; flex-wrap: wrap; gap: 8px; min-height: 60px; padding: 8px; border-radius: 14px; }
+.dt-pool { background: #f6efe4; }
+.dt-slots { background: #eef6ff; flex-direction: column; }
+.dt-slots.row { flex-direction: row; }
+.dt-slot { display: flex; align-items: center; gap: 8px; min-height: 56px; border: 3px dashed #9fb8d6; border-radius: 12px; padding: 4px 8px; background: #fff; flex: 1 1 auto; }
+.dt-slot > .lab { font-size: .8rem; font-weight: 800; color: #1f4f8a; white-space: nowrap; }
+.dt-slot.bad { border-color: var(--bad); background: #fbe4e1; }
+.dt-slot.drop { border-color: var(--accent); background: #fff3c4; }
+.dt-chip { min-height: 52px; padding: 6px 14px; border-radius: 12px; border: 3px solid #c9a77c; background: linear-gradient(180deg, #fffdf8, #f3e4cc); box-shadow: 0 4px 0 #c9a77c; font-weight: 800; font-size: 1.1rem; color: var(--ink); touch-action: none; user-select: none; text-align: left; }
+.dt-chip.sel { border-color: var(--focus); box-shadow: 0 0 0 3px rgba(37, 99, 235, .35), 0 4px 0 #c9a77c; }
+.dt-chip.ghost { position: fixed; z-index: 99; pointer-events: none; opacity: .9; transform: translate(-50%, -50%) rotate(-2deg); }
+.dt-chip.key::before { content: '🗝️ '; }
+.dt-dials { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+.dt-dial { display: grid; justify-items: center; gap: 6px; background: #2f3d4f; color: #fff; border-radius: 18px; padding: 10px 14px; }
+.dt-dial .word { font-size: 1.6rem; font-weight: 900; letter-spacing: 4px; }
+.dt-dial .word i { font-style: normal; display: inline-block; min-width: 1.5em; text-align: center; background: #f6d16a; color: #2b1d12; border-radius: 8px; transition: transform .35s; }
+.dt-dial.bad { outline: 4px solid #ff8f84; }
+.dt-dial .spin i { transform: rotateX(360deg); }
+.dt-dial button { min-width: 64px; min-height: 48px; border-radius: 12px; border: 0; font-weight: 900; font-size: 1.1rem; }
+.dt-choice { display: grid; gap: 8px; }
+.dt-choice button { min-height: 60px; text-align: left; padding: 8px 14px; border-radius: 14px; border: 3px solid var(--line); background: #fffaf3; font-weight: 800; font-size: 1.08rem; color: var(--ink); }
+.dt-choice button[aria-pressed="true"] { border-color: var(--focus); background: #e8f0ff; }
+.dt-ev { display: grid; gap: 6px; }
+.dt-ev label { display: flex; gap: 8px; align-items: flex-start; }
+.dt-ev input { width: 24px; height: 24px; flex: none; margin-top: 6px; }
+.dt-hint { background: #fff3e0; border-radius: 12px; padding: 8px 12px; font-weight: 800; color: #7a4a0c; }
+.dt-feed { min-height: 1.6em; font-weight: 800; font-size: 1.1rem; }
+.dt-feed.ok { color: var(--ok); } .dt-feed.bad { color: var(--bad); }
+.dt-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+.dt-note h3 { margin: 12px 0 6px; font-size: 1.05rem; }
+.dt-note section { display: grid; gap: 6px; }
+.dt-res table { border-collapse: collapse; width: 100%; }
+.dt-res th, .dt-res td { border-bottom: 2px solid var(--line); padding: 6px 8px; text-align: left; }
+.dt-big { font-size: 1.3rem; font-weight: 900; }
+.dt-escape { text-align: center; font-size: 1.5rem; font-weight: 900; color: var(--ok); }
+.dt-source { font-size: .78rem; color: var(--muted); }
+body.proj .dt-mark { font-size: 1.05rem; }
+/* 手機：標記只留圖示（名稱見機關清單），目前任務的物件才顯示名稱 */
+@media (max-width: 600px) {
+  .dt-mark { padding: 2px 6px; font-size: .78rem; }
+  .dt-mark .dt-lab { display: none; }
+  .dt-mark[data-state="next"] .dt-lab { display: inline; }
+  .dt-room { min-height: 340px; height: 56vh; }
+}

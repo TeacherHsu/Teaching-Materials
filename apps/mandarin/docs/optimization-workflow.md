@@ -215,7 +215,7 @@ python3 Chinese/Review-Games/tools/check_data.py   # 全部 ✅ 才算過
 ## 2026-10-16 綜合複習遊戲（`Chinese/Review-Games/`）
 
 - 範圍：一上 1–7 課、二上／三上／四上／六上 1–6 課；年級頁「綜合複習」卡片由 `course-index.json` 的 `volume.reviews` 決定（一年級不分組，接在課次後面）。網址 `../Chinese/Review-Games/?g=G1A`。
-- 遊戲：課文大富翁、語文蛇梯棋、語詞哆寶、語詞賓果、形似字跑酷（`Chinese/Shape-Run-G*`），五個年級都有。年級頁「綜合複習」把五款**平行直接列出**（每款一筆 `reviews.items`，網址帶 `?g=`），不再只放一張「綜合複習遊戲」總入口。
+- 遊戲：課文大富翁、語文蛇梯棋、語詞哆寶、語詞賓果、形似字跑酷（`Chinese/Shape-Run-G*`）、3D課文偵探密室，五個年級都有（共六款）。年級頁「綜合複習」把五款**平行直接列出**（每款一筆 `reviews.items`，網址帶 `?g=`），不再只放一張「綜合複習遊戲」總入口。
 - 形似字跑酷：
   - 程式只有一份，`Shape-Run-G6A/index.html` 是母版；其他年級由工具複製母版、只換 DATA 與標題。**改遊戲只改 G6A，再跑工具同步**，不要分別手改五份。
   - 題庫：多字語詞中屬於官方形似字組的字，換成同組其他字當錯字；換字後仍是簡編本詞條的剔除，另有人工剔除清單（異體、真詞、人名）寫在工具的 `EXCLUDE_WRONG`／`EXCLUDE_WORD`。單字詞不出題。高級只出「有兩個以上錯字」的詞，三枚都同一個詞，不補別詞的錯字。
@@ -236,3 +236,19 @@ python3 Chinese/Review-Games/tools/check_data.py   # 全部 ✅ 才算過
   - **Three.js 3D**：`scene3d.js` 為共用視圖層（Codex 實作，報告見 `CODEX-3D-REPORT.md`）；題目與教學文字留在 DOM。系統「減少動態」、面板減少動態、寬度 ≤760px、WebGL 或 CDN 失敗時自動用 2D。CF 的家用 Mac 開著系統減少動態，在那台只會看到 2D。
   - **視覺驗收**：`node Chinese/Review-Games/tools/qa/cdp.mjs <網址> <截圖.png> Chinese/Review-Games/tools/qa/play-<遊戲>.js`（無頭 Chrome、強制關閉減少動態），四款都要截圖看過；`node --test Chinese/Review-Games/tests/scene3d.test.cjs` 要全過。
   - 語音：大富翁的「地」朗讀時換成同音「弟」（`common.js` speak），畫面文字不變。
+
+### 3D 課文偵探密室（第六款，2026-10-16 加入）
+
+- 檔案：`detective.html`（頁面）、`detective.js`（流程與介面）、`detective-core.js`（純邏輯：組局、檢查答案、解鎖、提示、紀錄）、`detective3d.js`（Three.js r128 房間；減少動態／WebGL 失敗改 2D 平面圖）、`detective.css`。網址 `detective.html?g=G1A`。
+- 關卡資料 `data/detective-G*.js` 由 `tools/build_detective.py` 從課次資料產生，**不可手改**；每課一間密室，只用 ready／approved 欄位：段落大意（線索卡＋事件排序）、形似字（國字保險箱，簡編本剔除換字仍成詞）、語詞意思（語詞鑰匙）、句型例句／短語積木（詞塊打字機：依句型槽位判斷，合理的另一種排法也接受）、閱讀理解題（證詞比對、原因推理）、主旨＋已核准干擾敘述（最終推理；干擾敘述也當「可疑紙條」）。偵探故事、物件名稱是遊戲包裝，畫面標示「不是課文內容」。
+- 資料不足的課不產生空殼：工具輸出待補清單，遊戲設定頁「教師資訊」也列出（目前四上第1課、六上第5課段落大意編號重複，暫不開放）。
+- 三級沿用支持／標準／挑戰（引導型／獨立型／推理型偵探）：差在線索數、干擾紙條、機關數、選項數、是否要選證據，**不限時、不縮字**。支持級一次只開一個任務、提示 1 自動出現。
+- 防亂點：機關有依賴（搜查 → 排序 → 機關 → 最終推理 → 大門），未解鎖不能作答；選擇題答錯要先按「先看證據」才能再交；錯兩次自動送下一級提示。紀錄分「第一次完成／用提示／試幾次」，存本機 localStorage（不記姓名）。
+- 跨課綜合案件：教師勾選已教過的課（至少兩課，不預設全選），機關輪流取自各課，最終推理是「主旨配對課名」。
+- 指令：
+  ```bash
+  python3 Chinese/Review-Games/tools/build_detective.py         # 重產五個年級、列出待補
+  node --test Chinese/Review-Games/tests/detective.test.cjs      # 全過才能 commit（每課×三級×5 局自動解題、不可跳關、多解、干擾證據）
+  node Chinese/Review-Games/tools/qa/cdp.mjs "http://localhost:5191/Chinese/Review-Games/detective.html?g=G3A" out.png Chinese/Review-Games/tools/qa/play-detective.js   # 3D 截圖
+  ```
+- 改過 detective*.js／css 後把 `detective.html` 的 `?v=` 加 1，避免瀏覽器快取舊檔。
