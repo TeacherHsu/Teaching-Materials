@@ -69,6 +69,41 @@ export function GradePage(courseIndex, gradeNo) {
     return grid;
   };
 
+  // 跨課統整複習（course-index 的 volume.reviews）：放在對應課次區塊的最後，
+  // 之後同範圍的統整教材只要在資料裡加一筆，不必改程式。
+  const makeReview = (start, end) => {
+    const items = grade.volumes.flatMap((v) => (v.reviews || [])
+      .filter((r) => r.from === start && r.to === end)
+      .flatMap((r) => r.items));
+    if (!items.length) return null;
+    const heading = `第 ${start}～${end} 課綜合複習`;
+    const grid = h('div', { class: 'card-grid' });
+    for (const item of items) {
+      const speakText = item.description ? `${item.title}：${item.description}` : item.title;
+      grid.appendChild(h('div', { class: 'quiz-option-row' }, [
+        h('a', {
+          class: 'nav-card nav-card--review',
+          href: item.url,
+          'aria-label': `${heading}：${item.title}`,
+        }, [
+          h('span', { class: 'nav-card__no', 'aria-hidden': 'true' }, '★'),
+          h('div', { class: 'nav-card__body' }, [
+            h('div', { class: 'nav-card__title' }, item.title),
+            item.description ? h('div', { class: 'nav-card__meta' }, item.description) : null,
+          ].filter(Boolean)),
+        ]),
+        SpeakButton({ text: speakText, label: '聽', variant: 'speak-button--option' }),
+      ]));
+    }
+    return h('section', { class: 'course-review', 'aria-label': heading }, [
+      h('div', { class: 'quiz-option-row course-review__head' }, [
+        h('h2', { class: 'course-review__title' }, heading),
+        SpeakButton({ text: heading, label: '聽', variant: 'speak-button--option' }),
+      ]),
+      grid,
+    ]);
+  };
+
   if (Number(grade.grade) >= 2 && Number(grade.grade) <= 6) {
     for (const [start, end] of [[1, 6], [7, 12]]) {
       const group = lessons.filter(({ lesson }) => lesson.lesson_no >= start && lesson.lesson_no <= end);
@@ -79,6 +114,8 @@ export function GradePage(courseIndex, gradeNo) {
         h('span', { class: 'course-group__count' }, `${group.length} 課`),
       ]));
       details.appendChild(makeGrid(group));
+      const review = makeReview(start, end);
+      if (review) details.appendChild(review);
       root.appendChild(details);
     }
     const otherLessons = lessons.filter(({ lesson }) => lesson.lesson_no < 1 || lesson.lesson_no > 12);

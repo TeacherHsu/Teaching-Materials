@@ -22,6 +22,52 @@
                 "publisher": { "type": "string" },
                 "term": { "type": "string", "enum": ["上", "下"] },
                 "label": { "type": "string" },
+                "reviews": {
+                  "type": "array",
+                  "description": "跨課統整複習（例：第 1～6 課綜合複習），掛在年級頁對應的課次區塊內",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "from",
+                      "to",
+                      "items"
+                    ],
+                    "properties": {
+                      "from": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "to": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "title",
+                            "url"
+                          ],
+                          "properties": {
+                            "title": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "description": {
+                              "type": "string"
+                            },
+                            "url": {
+                              "type": "string",
+                              "pattern": "^\\.\\./[A-Za-z0-9_./-]+/$",
+                              "description": "站內相對路徑（相對於 /mandarin/），例如 ../Chinese/Shape-Run-G6A/"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
                 "units": {
                   "type": "array",
                   "items": {

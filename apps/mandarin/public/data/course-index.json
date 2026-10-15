@@ -242,6 +242,19 @@
                 }
               ]
             }
+          ],
+          "reviews": [
+            {
+              "from": 1,
+              "to": 6,
+              "items": [
+                {
+                  "title": "形似字跑酷",
+                  "description": "3D 跑酷：只吃用字正確的語詞，閃開錯別字（初級／中級／高級）",
+                  "url": "../Chinese/Shape-Run-G3A/"
+                }
+              ]
+            }
           ]
         }
       ]
@@ -334,6 +347,19 @@
                 }
               ]
             }
+          ],
+          "reviews": [
+            {
+              "from": 1,
+              "to": 6,
+              "items": [
+                {
+                  "title": "形似字跑酷",
+                  "description": "3D 跑酷：只吃用字正確的語詞，閃開錯別字（初級／中級／高級）",
+                  "url": "../Chinese/Shape-Run-G4A/"
+                }
+              ]
+            }
           ]
         }
       ]
@@ -423,6 +449,19 @@
                   "lesson_no": 12,
                   "title": "存根",
                   "data": "data/115AG6H/lesson12.json"
+                }
+              ]
+            }
+          ],
+          "reviews": [
+            {
+              "from": 1,
+              "to": 6,
+              "items": [
+                {
+                  "title": "形似字跑酷",
+                  "description": "3D 跑酷：只吃用字正確的語詞，閃開錯別字（初級／中級／高級）",
+                  "url": "../Chinese/Shape-Run-G6A/"
                 }
               ]
             }
