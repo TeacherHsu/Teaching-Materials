@@ -24,7 +24,27 @@
 
     /* ===== 遊戲中 HUD（簡潔，左上大字） ===== */
     .hud { position: fixed; z-index: 5; pointer-events: none; text-shadow: 0 2px 8px rgba(0,0,0,.45); }
-    .hud.tl { top: 14px; left: 18px; }
+    .hud.tl { top: 12px; left: 12px; }
+    .hud.panel { background: rgba(20,14,30,.78); border: 1px solid rgba(255,255,255,.14); border-radius: 14px; padding: 8px 14px; text-shadow: none; }
+    .pause-btn { pointer-events: auto; min-height: 48px; padding: 4px 14px; border-radius: 14px; border: 1px solid rgba(255,255,255,.4); background: rgba(20,14,30,.78); color: #fff4e3; font-size: 18px; font-weight: 700; font-family: inherit; cursor: pointer; }
+    .tut { position: fixed; left: 16px; right: 16px; bottom: 160px; z-index: 8; max-width: 600px; margin: 0 auto; background: rgba(20,14,30,.9); border: 2px solid #7dd3fc; border-radius: 18px; padding: 14px 16px; font-size: 22px; line-height: 1.6; font-weight: 700; color: #fff4e3; }
+    .tut.hidden { display: none; }
+    .tut.low { bottom: 16px; }
+    .tut .step { color: #7dd3fc; font-size: 18px; }
+    .tut .row-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+    .tut .btn { width: auto; flex: 1 1 120px; margin-top: 0; }
+    .nice { position: fixed; left: 50%; bottom: 76px; transform: translateX(-50%); z-index: 6; pointer-events: none; font-size: 20px; font-weight: 700; color: #bbf7d0; background: rgba(20,14,30,.8); border-radius: 12px; padding: 4px 14px; opacity: 0; transition: opacity .15s; white-space: nowrap; }
+    .nice.show { opacity: 1; }
+    /* 複習模式 */
+    .rv-q { font-size: 22px; margin: 6px 0 12px; }
+    .rv-opts { display: grid; gap: 12px; margin: 10px 0; }
+    .rv-opt { min-height: 72px; font-size: 34px; font-weight: 900; font-family: inherit; border-radius: 16px; border: 3px solid #c27a0e; background: #fff4d0; color: #1f0e00; cursor: pointer; letter-spacing: 4px; }
+    .rv-opt[disabled] { opacity: .45; text-decoration: line-through; cursor: default; }
+    .rv-opt.right { background: #bbf7d0; border-color: #15803d; opacity: 1; text-decoration: none; }
+    .rv-hint { font-size: 22px; color: #fde68a; min-height: 36px; }
+    .rv-hint mark { background: #fde68a; color: #1f0e00; border-radius: 6px; padding: 0 4px; }
+    .menu-extra { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 16px; }
+    .menu-extra .btn { width: auto; flex: 1 1 200px; margin-top: 0; }
     .hud .lbl { font-size: 18px; font-weight: 700; color: #f3dfcf; opacity: .85; }
     .hud .bignum { font-size: clamp(40px, 7vw, 64px); font-weight: 900; line-height: 1; color: #fff7ec; }
     .hud .bignum small { font-size: .45em; color: #f3dfcf; }
@@ -43,9 +63,10 @@
     .settings select { padding: 4px 10px; background: #fff4e3; color: #2b1606; border: none; font-weight: 700; }
     .settings label { display: inline-flex; align-items: center; gap: 8px; }
     .settings input { width: 22px; height: 22px; accent-color: #f6ad37; }
+    .tts-reset { min-height: 44px; padding: 4px 14px; border-radius: 12px; border: 1px dashed rgba(255,255,255,.4); background: transparent; color: #f3dfcf; font-size: 18px; font-family: inherit; cursor: pointer; }
     .tts { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 48px; min-width: 48px; padding: 6px 16px; border-radius: 14px; border: 1px solid rgba(255,255,255,.35); background: rgba(255,255,255,.1); color: #fff4e3; font-size: 20px; font-weight: 700; font-family: inherit; cursor: pointer; }
     .tts[disabled] { opacity: .55; cursor: not-allowed; font-size: 18px; }
-    @media (max-width: 600px) { .hud.tr .coins-row { display: none; } }
+
     .lessons input { accent-color: #f6ad37; }
     .slot.got { background: radial-gradient(circle at 35% 30%, #fff7cc, #facc15 55%, #b45309); border: 2px solid #fde68a; color: #4a2504; box-shadow: 0 0 12px rgba(250,204,21,.8); animation: pop .45s cubic-bezier(.175,.885,.32,1.275); }
     @keyframes pop { 0% { transform: scale(.3); } 100% { transform: scale(1); } }
@@ -127,16 +148,18 @@
   <canvas id="game"></canvas>
 
   <!-- 遊戲中 HUD -->
-  <div class="hud tl">
-    <div class="lbl">正確語詞金幣</div>
+  <div class="hud tl panel">
+    <div class="lbl">正確語詞</div>
     <div class="bignum"><span id="got-n">0</span><small> / <span id="goal-n">10</span></small></div>
-    <div class="sub"><span id="lv-name">初級</span> • <span id="time">00:00</span></div>
     <div class="missbar">✖ 吃錯 <span id="miss">0</span> / 6</div>
   </div>
   <div class="hud tr">
-    <span class="mode-tag" id="mode-tag">初級模式</span>
-    <div class="coins-row" id="slots"></div>
+    <span class="mode-tag" id="mode-tag">初級</span>
+    <button class="pause-btn" id="pause-btn" type="button" onclick="pauseGame()">⏸ 暫停</button>
   </div>
+  <div hidden><span id="slots"></span><span id="time"></span><span id="lv-name"></span></div>
+  <div class="tut hidden" id="tut" aria-live="polite"></div>
+  <div class="nice" id="nice"></div>
   <div class="hint">選用字正確的語詞</div>
   <div class="strip hidden" id="strip" aria-live="polite">
     <div class="strip-cols" id="strip-cols"></div>
@@ -151,17 +174,24 @@
   <div class="menu" id="menu">
     <div class="tag en">WORD RUN • 形似字跑酷</div>
     <div class="title-row"><h1>小黑</h1><span class="badge">六上形似字跑酷</span></div>
-    <p class="desc">每一排語詞會先停下來讓你看清楚，再左右換道，<b>只吃用字完全正確的語詞金幣</b>，錯別字要閃開！<br>吃到錯別字，金幣會變成 💩。收集 <b><span id="goal-desc">10</span> 個不同的正確語詞</b>就過關！（翰林六上第 1～6 課）</p>
+    <p class="desc">每一排語詞會先停下來讓你看清楚，再左右換道，<b>只吃用字完全正確的語詞金幣</b>，錯別字要閃開！<br><span id="fun-desc">吃到錯別字，會先停下來看正確的字。</span>收集 <b><span id="goal-desc">10</span> 個不同的正確語詞</b>就過關！（翰林六上第 1～6 課）</p>
     <div class="lessons" id="lessons">課次：</div>
     <div class="settings">
       <label>看字時間 <select id="read-sec"><option value="3">3 秒</option><option value="4" selected>4 秒</option><option value="5">5 秒</option><option value="0">看好了再按</option></select></label>
       <label><input type="checkbox" id="rm-box"> 減少畫面動態</label>
+      <label><input type="checkbox" id="fun-box"> 趣味模式（吃錯變 💩）</label>
+      <label>朗讀速度 <select id="tts-rate"><option value="0.75">慢</option><option value="0.85" selected>標準</option><option value="1">快</option></select></label>
+      <button class="tts-reset" type="button" onclick="resetSettings()">還原預設</button>
       <button class="tts" type="button" id="tts-rules" onclick="speak(RULES_TEXT)">🔊 聽規則</button>
+    </div>
+    <div class="menu-extra">
+      <button class="btn gray" type="button" onclick="startTutorial()">📖 玩法說明（先練習）</button>
+      <button class="btn gray" type="button" onclick="startReview()">📝 複習模式（不計時）</button>
     </div>
     <div class="modes">
       <button class="mode e" type="button" onclick="start('easy')"><h3>初級</h3><p>一次一枚：看清楚對不對，再決定吃不吃。</p></button>
       <button class="mode m" type="button" onclick="start('medium')"><h3>中級</h3><p>一次兩枚：同一個語詞的正字和錯字，選出正確那一枚。</p></button>
-      <button class="mode h" type="button" onclick="start('hard')"><h3>高級</h3><p>一次三枚，只有一枚用字完全正確。</p></button>
+      <button class="mode h" type="button" onclick="start('hard')"><h3>高級</h3><p>一次三枚：同一個語詞的正字和兩個錯字，只有一枚正確。</p></button>
     </div>
     <div class="keys">
       <div class="k"><kbd>←</kbd><kbd>→</kbd> / <kbd>A</kbd><kbd>D</kbd></div><div>換跑道</div>
@@ -175,7 +205,7 @@
     // =====================================================================
     //  遊戲規則
     // =====================================================================
-    // 語詞：翰林六上第1～6課生詞；錯字取自該課官方形似字組，並排除換字後仍是《國語辭典簡編本》詞條者
+    // 語詞：翰林六上第1～6課生詞（各年級版只換 DATA 與標題，程式相同）；錯字取自該課官方形似字組，並排除換字後仍是《國語辭典簡編本》詞條者
     const DATA = [{"L": 1, "w": "皺巴巴", "x": ["雛巴巴", "鄒巴巴"]}, {"L": 1, "w": "真摯", "x": ["真擊", "真擎"]}, {"L": 1, "w": "註定", "x": ["蛀定", "駐定", "柱定"]}, {"L": 1, "w": "儲存", "x": ["諸存", "藷存"]}, {"L": 1, "w": "邁入", "x": ["厲入"]}, {"L": 1, "w": "詢問", "x": ["殉問", "絢問"]}, {"L": 1, "w": "迷惘", "x": ["迷網"]}, {"L": 2, "w": "眼眶", "x": ["眼誆", "眼框"]}, {"L": 2, "w": "固執", "x": ["固紈", "固孰"]}, {"L": 2, "w": "辯論", "x": ["辮論", "辦論", "瓣論", "辨論"]}, {"L": 2, "w": "雙胞胎", "x": ["雙胞殆", "雙胞跆", "雙胞飴", "雙胞貽"]}, {"L": 2, "w": "暈倒", "x": ["暉倒", "葷倒"]}, {"L": 2, "w": "慘白", "x": ["摻白", "滲白"]}, {"L": 2, "w": "憤慨", "x": ["墳慨", "噴慨", "憤溉", "憤概"]}, {"L": 2, "w": "狠狠的", "x": ["垠狠的", "恨狠的", "很狠的", "狠垠的", "狠恨的", "狠很的"]}, {"L": 2, "w": "鼻涕", "x": ["鼻梯", "鼻悌"]}, {"L": 3, "w": "婆娑", "x": ["婆鯊", "婆裟"]}, {"L": 3, "w": "撫慰", "x": ["蕪慰", "嫵慰"]}, {"L": 3, "w": "杏壇", "x": ["杏顫", "杏羶", "杏檀", "杏擅"]}, {"L": 3, "w": "授徒", "x": ["授徙"]}, {"L": 3, "w": "精鍊", "x": ["精揀", "精諫"]}, {"L": 3, "w": "警惕", "x": ["擎惕", "驚惕", "警錫", "警賜", "警踢"]}, {"L": 3, "w": "智慧", "x": ["智彗"]}, {"L": 4, "w": "奧妙", "x": ["燠妙", "襖妙", "懊妙", "澳妙"]}, {"L": 4, "w": "仿生學", "x": ["彷生學", "妨生學", "坊生學", "防生學"]}, {"L": 4, "w": "從容不迫", "x": ["從容不泊", "從容不拍", "從容不伯"]}, {"L": 4, "w": "組成", "x": ["咀成", "沮成", "阻成", "粗成"]}, {"L": 4, "w": "鋸齒", "x": ["倨齒", "据齒", "踞齒"]}, {"L": 4, "w": "擴張", "x": ["獷張", "曠張", "礦張"]}, {"L": 4, "w": "結構", "x": ["結講", "結購", "結溝"]}, {"L": 4, "w": "巨無霸", "x": ["巨無霹", "巨無霧", "巨無霜", "巨無露", "巨無霞"]}, {"L": 5, "w": "泥濘", "x": ["泥擰", "泥檸", "泥嚀"]}, {"L": 5, "w": "急躁", "x": ["急噪", "急燥", "急操"]}, {"L": 5, "w": "淘氣", "x": ["陶氣"]}, {"L": 5, "w": "道賀", "x": ["道賢", "道資", "道質", "道貿"]}, {"L": 5, "w": "遮陽", "x": ["庶陽", "蔗陽"]}, {"L": 5, "w": "穩重", "x": ["隱重"]}, {"L": 5, "w": "栽種", "x": ["戴種", "載種", "截種", "裁種"]}, {"L": 5, "w": "庇護", "x": ["批護", "疵護"]}, {"L": 6, "w": "自嘲", "x": ["自廟", "自潮"]}, {"L": 6, "w": "揶揄", "x": ["爺揄", "椰揄", "揶喻", "揶偷"]}, {"L": 6, "w": "僵持", "x": ["薑持", "殭持", "韁持", "疆持"]}, {"L": 6, "w": "競選", "x": ["兢選"]}, {"L": 6, "w": "批判", "x": ["批叛"]}, {"L": 6, "w": "倘若", "x": ["趟若", "敞若", "躺若"]}, {"L": 6, "w": "嘲諷", "x": ["廟諷", "潮諷", "嘲瘋", "嘲楓"]}, {"L": 6, "w": "不屑", "x": ["不宵"]}, {"L": 6, "w": "貶低", "x": ["泛低", "眨低"]}, {"L": 6, "w": "口吻", "x": ["口物", "口忽"]}, {"L": 6, "w": "坦然", "x": ["袒然", "但然"]}];
     const GOAL_MAX = 10;
     let GOAL = 10;          // 當局目標＝min(10, 所選課次的不重複正詞數)
@@ -198,6 +228,7 @@
     let lane = 1, sinceRow = 0;
     // phase：run＝道路前進；read＝當排停下讓學生看字；fix＝答錯訂正（全部暫停，學生按繼續）
     let phase = 'off', readLeft = 0, readTotal = 4, rowSeq = 0;
+    let FUN = false, tutorial = 0, pausedFrom = null;
     const rows = [];
     const READ_Z = -16;     // 當排語詞抵達這裡時停下判讀
     const RM_QUERY = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
@@ -221,7 +252,7 @@
       if (!ttsVoice || !text) return;
       speechSynthesis.cancel();   // 停掉上一段，避免語音排隊
       const u = new SpeechSynthesisUtterance(text);
-      u.voice = ttsVoice; u.lang = ttsVoice.lang || 'zh-TW'; u.rate = 0.85;
+      u.voice = ttsVoice; u.lang = ttsVoice.lang || 'zh-TW'; u.rate = +document.getElementById('tts-rate').value || 0.85;
       speechSynthesis.speak(u);
     }
     function ttsBtn(text, label) { return `<button class="tts" type="button" data-t="${text}" onclick="speak(this.dataset.t)">${label}</button>`; }
@@ -361,7 +392,7 @@
       g.fillStyle = WALL[seed % WALL.length]; g.fillRect(0, 0, 256, 512);
       const cols = 6, rows = 14, pw = 256 / cols, ph = 512 / rows;
       for (let r = 0; r < rows; r++) for (let q = 0; q < cols; q++) {
-        const lit = Math.random() < 0.5;
+        const lit = Math.random() < 0.15;   // 亮窗少一點，不和語詞搶注意力
         g.fillStyle = lit ? WIN[Math.floor(Math.random() * WIN.length)] : '#17141f';
         g.fillRect(q * pw + pw * 0.22, r * ph + ph * 0.2, pw * 0.56, ph * 0.62);
       }
@@ -390,7 +421,7 @@
       map.needsUpdate = emi.needsUpdate = true;
       map.repeat.set(Math.max(1, Math.round(d / 9)), Math.max(1, Math.round(h / 16)));
       emi.repeat.copy(map.repeat);
-      const face = new THREE.MeshStandardMaterial({ map, emissive: 0xffffff, emissiveMap: emi, emissiveIntensity: 0.85, roughness: 0.75, metalness: 0.1 });
+      const face = new THREE.MeshStandardMaterial({ map, emissive: 0xffffff, emissiveMap: emi, emissiveIntensity: 0.2, roughness: 0.75, metalness: 0.1 });
       const b = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), [face, face, roofMat, roofMat, face, face]);
       b.position.set(side * (8.6 + w / 2 + Math.random() * 3), h / 2 - 16, z);
       b.castShadow = true; b.receiveShadow = true;
@@ -453,7 +484,7 @@
     for (let i = 0; i < DUST; i++) { dustPos[i * 3] = (Math.random() - .5) * 30; dustPos[i * 3 + 1] = Math.random() * 10; dustPos[i * 3 + 2] = -Math.random() * 150 + 10; }
     dustGeo.setAttribute('position', new THREE.BufferAttribute(dustPos, 3));
     const dust = new THREE.Points(dustGeo, new THREE.PointsMaterial({ size: 0.22, map: dotTex, color: 0xffc98a, transparent: true, opacity: 0.8, blending: THREE.AdditiveBlending, depthWrite: false }));
-    scene.add(dust);
+    dust.visible = false;   // 飄浮光塵關閉（P1-1）
 
     // =====================================================================
     //  主角：黑狗小黑（四足奔跑、搖尾巴、紅項圈）
@@ -533,15 +564,15 @@
       [[0.75, 0], [0.55, 0.42], [0.34, 0.78]].forEach(([r, y]) => { const t = new THREE.Mesh(new THREE.TorusGeometry(r * 0.75, r * 0.38, 12, 24), poopMat); t.rotation.x = Math.PI / 2; t.position.y = y; g.add(t); });
       const tip = new THREE.Mesh(new THREE.ConeGeometry(0.2, 0.4, 12), poopMat); tip.position.y = 1.08; g.add(tip);
       [-0.2, 0.2].forEach(x => { const e = new THREE.Mesh(new THREE.SphereGeometry(0.12, 10, 8), eyeW); e.position.set(x, 0.5, 0.48); const p = new THREE.Mesh(new THREE.SphereGeometry(0.06, 8, 6), eyeB); p.position.set(x, 0.5, 0.58); g.add(e, p); });
-      g.position.copy(pos); g.position.z -= 1.5;
-      scene.add(g); poops.push({ g, vy: RM ? 0 : 5, life: 1.6 });
+      g.position.copy(pos); g.position.z -= 3; g.position.y = 2.6; g.scale.setScalar(0.6);   // 縮小、放在角色前上方，不遮住小黑
+      scene.add(g); poops.push({ g, vy: RM ? 0 : 2, life: 0.8 });
     }
 
     // =====================================================================
     //  特效：粒子爆發、擴散光環
     // =====================================================================
     const bursts = [];
-    function burst(pos, color, count = 60) {
+    function burst(pos, color, count = 60, life = 0.9) {
       if (RM) return;
       const geo = new THREE.BufferGeometry();
       const p = new Float32Array(count * 3), v = [];
@@ -553,7 +584,7 @@
       geo.setAttribute('position', new THREE.BufferAttribute(p, 3));
       const pts = new THREE.Points(geo, new THREE.PointsMaterial({ size: 0.45, map: dotTex, color, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false }));
       scene.add(pts);
-      bursts.push({ pts, v, life: 0.9, max: 0.9 });
+      bursts.push({ pts, v, life, max: life });
     }
     const rings = [];
     function ring(pos, color) {
@@ -571,7 +602,7 @@
     try {
       composer = new THREE.EffectComposer(renderer);
       composer.addPass(new THREE.RenderPass(scene, camera));
-      bloom = new THREE.UnrealBloomPass(new THREE.Vector2(512, 512), 0.55, 0.5, 0.82);
+      bloom = new THREE.UnrealBloomPass(new THREE.Vector2(512, 512), 0.15, 0.5, 0.82);
       composer.addPass(bloom);
       composer.addPass(new THREE.ShaderPass(THREE.GammaCorrectionShader));   // 後製流程最後轉回 sRGB，否則畫面會偏暗
     } catch (e) { composer = null; }
@@ -597,7 +628,6 @@
       const items = [{ text: e.w, ok: true, right: e.w }];
       const wrongs = e.x.slice().sort(() => Math.random() - 0.5);
       for (const x of wrongs) if (items.length < mode.perRow) items.push({ text: x, ok: false, right: e.w });
-      while (items.length < mode.perRow) { const o = pick(POOL); const x = pick(o.x); if (!items.some(i => i.text === x)) items.push({ text: x, ok: false, right: o.w }); }
       items.forEach((n, i) => makeCoin(n, order[i], row));
     }
 
@@ -644,6 +674,7 @@
       row.read = true;
       row.coins.forEach(c => { c.face.map = numTexture(c.n); c.face.needsUpdate = true; });
       phase = 'read'; readLeft = readTotal;
+      row.danger = row.coins.some(c => c.lane === lane && !c.ok);   // 開始看字時小黑正對著錯字
       showStrip(row); setReadUI(true);
       document.getElementById('strip-fill').style.width = '100%';
     }
@@ -652,6 +683,11 @@
       row.done = true;
       row.coins.forEach(c => { if (!c.done) { c.done = true; scene.remove(c.grp); } });
       if (stripRow === row) hideStrip();
+    }
+    let niceT = null;
+    function nice(text) {
+      const n = document.getElementById('nice'); n.textContent = text; n.classList.add('show');
+      clearTimeout(niceT); niceT = setTimeout(() => n.classList.remove('show'), 600);
     }
     function showFix(c) {
       phase = 'fix';
@@ -669,10 +705,20 @@
       document.querySelectorAll('#center .tts').forEach(syncTtsBtn);
       speak(say);
     }
+    function pauseGame() {
+      if (!running || phase === 'pause' || phase === 'fix') return;
+      pausedFrom = phase; phase = 'pause';
+      if ('speechSynthesis' in window) speechSynthesis.cancel();
+      center(`<div class="card" role="dialog" aria-label="暫停"><h2>暫停中</h2>
+        <button class="btn" type="button" onclick="resumeGame()">繼續 ▶</button>
+        <button class="btn gray" type="button" onclick="menu()">回選單</button></div>`);
+    }
+    function resumeGame() { if (phase !== 'pause') return; hideCenter(); phase = pausedFrom || 'run'; }
     function endFix() {
       if (phase !== 'fix') return;
-      speechSynthesis && speechSynthesis.cancel && speechSynthesis.cancel();
+      if ('speechSynthesis' in window) speechSynthesis.cancel();
       hideCenter();
+      if (tutorial) { tutStep(4); return; }
       if (wrong >= MAX_WRONG) { gameOver(); return; }
       phase = 'run';
     }
@@ -682,6 +728,8 @@
       const pos = c.grp.position.clone();
       scene.remove(c.grp);
       resolveRow(c.row);   // 同排其他候選一併退場，不會連續誤吃
+      if (tutorial && c.ok) { sfx('coin'); burst(pos, 0xffd166, 12); tutStep(4, 'ok'); return; }
+      if (tutorial) { sfx('bad'); if (FUN) makePoop(pos); showFix(c); return; }
       if (c.ok) {
         sfx('coin');
         hits++;
@@ -696,7 +744,7 @@
         sfx('bad');
         wrong++; wrongList.push([c.n, c.right]);
         document.getElementById('miss').textContent = wrong;
-        makePoop(pos); showPoops();
+        if (FUN) makePoop(pos);
         showFix(c);
       }
     }
@@ -708,13 +756,15 @@
     // =====================================================================
     let lean = 0;
     function move(d) {
-      if (!running || phase === 'fix') return;
+      if (!running || phase === 'fix' || phase === 'pause') return;
       const nl = Math.max(0, Math.min(2, lane + d));
-      if (nl !== lane) { lane = nl; lean = d; sfx('move'); markLane(); }
+      if (nl !== lane) { lane = nl; lean = d; sfx('move'); markLane(); if (tutorial) tutCheck(); }
     }
     window.addEventListener('keydown', e => {
+      if (e.repeat && /Arrow|^[aAdD]$/.test(e.key)) { e.preventDefault(); return; }   // 按住不放只換一道
       if (['ArrowLeft', 'a', 'A'].includes(e.key)) { move(-1); e.preventDefault(); }
       if (['ArrowRight', 'd', 'D'].includes(e.key)) { move(1); e.preventDefault(); }
+      if (e.key === 'Escape') { if (phase === 'pause') resumeGame(); else pauseGame(); }
       if (e.key === 'Enter' || e.key === ' ') {
         if (phase === 'read') { endRead(); e.preventDefault(); }
         else if (phase === 'fix' && document.getElementById('fix-go')) { endFix(); e.preventDefault(); }
@@ -784,7 +834,7 @@
       // 金幣
       if (running) {
         sinceRow += sp * dt;
-        if (sinceRow >= mode.gap) { sinceRow -= mode.gap; spawnRow(SPAWN_Z); }
+        if (!tutorial && sinceRow >= mode.gap) { sinceRow -= mode.gap; spawnRow(SPAWN_Z); }
         // 判讀期倒數；0＝「看好了再按」
         if (phase === 'read' && readTotal > 0) {
           readLeft -= dt;
@@ -803,7 +853,11 @@
         const z = c.grp.position.z;
         if (running && phase === 'run' && z > -0.9 && z < 0.7 && Math.abs(c.grp.position.x - dog.position.x) < 0.9) collect(c);   // 判定寬度：換道途中不易誤吃隔壁道
       }
-      for (const r of rows) if (!r.done && r.z >= 0.7) resolveRow(r);   // 過線就退場，不再衝向鏡頭
+      for (const r of rows) if (!r.done && r.z >= 0.7) {   // 過線就退場，不再衝向鏡頭
+        resolveRow(r);
+        if (tutorial) { tutStep(3, 'miss'); continue; }
+        if (r.danger && !r.coins.some(c => c.lane === lane && !c.ok)) nice('閃開錯字，很好！');
+      }
       for (let i = rows.length - 1; i >= 0; i--) if (rows[i].done) rows.splice(i, 1);
       for (let i = coins.length - 1; i >= 0; i--) if (coins[i].done) coins.splice(i, 1);
 
@@ -817,7 +871,7 @@
       }
       for (let i = poops.length - 1; i >= 0; i--) {
         const p = poops[i]; p.life -= dt; p.vy -= 12 * dt;
-        if (!RM) { p.g.position.y = Math.max(0.1, p.g.position.y + p.vy * dt); p.g.rotation.y += dt * 4; }
+        if (!RM) { p.g.position.y = Math.max(1.6, p.g.position.y + p.vy * dt); p.g.rotation.y += dt * 4; }
       p.g.position.z += sp * dt * 0.5;
         if (p.life <= 0) { scene.remove(p.g); poops.splice(i, 1); }
       }
@@ -839,7 +893,7 @@
       sunLight.position.x = dog.position.x + 4; sunLight.target.position.set(dog.position.x, 0, 0);
 
       if (composer) {
-        bloom.strength = 0.55;
+        bloom.strength = 0.15;
         composer.render();
       } else renderer.render(scene, camera);
       requestAnimationFrame(loop);
@@ -860,7 +914,8 @@
     function hideCenter() { document.getElementById('center').classList.add('hidden'); }
 
     function menu() {
-      running = false; menuOn = true; phase = 'off';
+      running = false; menuOn = true; phase = 'off'; tutorial = 0;
+      document.getElementById('tut').classList.add('hidden');
       if ('speechSynthesis' in window) speechSynthesis.cancel();
       clearCoins(); hideCenter(); setHud(false);
       lane = 1;
@@ -872,6 +927,7 @@
       const sel = [...document.querySelectorAll('#lessons input:checked')].map(i => +i.value);
       if (!sel.length) { alert('請至少勾選一課'); return; }
       POOL = DATA.filter(e => sel.includes(e.L)); lastWord = '';
+      if (key === 'hard') { const hp = POOL.filter(e => e.x.length >= 2); if (hp.length) POOL = hp; }   // 高級只出有兩個以上官方錯字的詞
       GOAL = poolGoal(POOL);
       readTotal = +document.getElementById('read-sec').value;
       phase = 'off';
@@ -880,7 +936,7 @@
       document.getElementById('menu').classList.add('hidden');
       menuOn = false; setHud(true);
       document.getElementById('lv-name').textContent = mode.name;
-      document.getElementById('mode-tag').textContent = mode.name + '模式';
+      document.getElementById('mode-tag').textContent = mode.name;
       got = new Set(); hits = 0; wrong = 0; wrongList = []; seconds = 0; recorded = false; lane = 1;
       document.getElementById('miss').textContent = '0';
       document.getElementById('time').textContent = '00:00';
@@ -919,12 +975,14 @@
       if (!running) return;
       running = false; phase = 'off'; hideStrip();
       clearInterval(clockT);
+      saveLastWrong();
       const fix = fixList();
       center(`
         <div class="card">
           <div class="en" style="color:#ff8fa3">TRY AGAIN</div>
           <h2>吃錯 6 次，這一局結束</h2>
-          <button class="btn" onclick="start('${modeKey}')">重新開始（${mode.name}）</button>
+          <button class="btn" onclick="startReview(true)">📝 先複習這幾個字</button>
+          <button class="btn gray" onclick="start('${modeKey}')">重新開始（${mode.name}）</button>
           <button class="btn gray" onclick="menu()">回選單</button>
           <p>先看一看正確的字，再挑戰一次！</p>
           ${fix}
@@ -945,7 +1003,8 @@
       running = false; phase = 'off'; hideStrip();
       clearInterval(clockT);
       sfx('win');
-      burst(new THREE.Vector3(dog.position.x, 3, -4), 0xffd166, 24);   // 只播一次、短暫
+      saveLastWrong();
+      burst(new THREE.Vector3(dog.position.x, 3, -4), 0xffd166, 24, 0.6);   // 停止作答後只播一次、0.6 秒內結束
       const score = hits + wrong === 0 ? 100 : Math.round(hits / (hits + wrong) * 100);
       const stars = wrong === 0 ? 3 : wrong <= 2 ? 2 : 1;
       if (!recorded) { recorded = true; record(score); }
@@ -958,18 +1017,156 @@
           <h2>${mode.name}過關！</h2>
           <div class="stars">${'⭐'.repeat(stars)}${'☆'.repeat(3 - stars)}</div>
           <div class="score-box"><div>吃錯<b>${wrong}</b></div><div>時間<b>${fmt(seconds)}</b></div></div>
-          ${next ? `<button class="btn" onclick="start('${next}')">挑戰${MODES[next].name} ➜</button>` : ''}
+          ${wrongList.length ? `<button class="btn" onclick="startReview(true)">📝 先複習吃錯的字</button>` : ''}
+          ${next ? `<button class="btn${wrongList.length ? ' gray' : ''}" onclick="start('${next}')">挑戰${MODES[next].name} ➜</button>` : ''}
           <button class="btn gray" onclick="menu()">回選單</button>
           <p>收集到的 ${got.size} 個正確語詞：</p>
           <div class="chips">${chips}</div>${fix}
         </div>`); document.querySelectorAll('#center .tts').forEach(syncTtsBtn); }, 700);
     }
 
-    document.getElementById('lessons').insertAdjacentHTML('beforeend', [1,2,3,4,5,6].map(n => `<label><input type="checkbox" value="${n}" checked> 第${n}課</label>`).join(''));
+    // =====================================================================
+    //  P1-5 玩法說明：一步一個任務，學生做到了才進下一步
+    // =====================================================================
+    const TUT = {
+      1: '按鍵盤 ←（或左下的 ◀ 按鈕），讓小黑往左換一條跑道。',
+      2: '很好！現在按 →（或 ▶）兩次，讓小黑跑到最右邊。',
+      3: '上面三格是三條跑道的語詞。換到用字完全正確的那一格，再按「看好了」。',
+      4: '吃錯的話，路會停下來給你看正確的字，看完按「繼續」。吃錯 6 次，這一局就結束。準備好了嗎？',
+    };
+    function tutPanel(n, extra = '', btns = '') {
+      const t = document.getElementById('tut');
+      t.innerHTML = `<div class="step">玩法說明 ${n} / 4</div>${extra}${TUT[n]}<div class="row-btns">${ttsBtn(TUT[n], '🔊 聽')}${btns}</div>`;
+      t.classList.remove('hidden');
+      t.classList.toggle('low', n === 3);
+      document.querySelectorAll('.ctrl').forEach(el => el.style.display = n === 3 ? 'none' : '');   // 第 3 步把換道鈕收進說明框，不擋字卡
+      t.querySelectorAll('.tts').forEach(syncTtsBtn);
+    }
+    function startTutorial() {
+      if (ac && ac.state === 'suspended') ac.resume();
+      const sel = [...document.querySelectorAll('#lessons input:checked')].map(i => +i.value);
+      POOL = sel.length ? DATA.filter(e => sel.includes(e.L)) : DATA;
+      mode = MODES.medium; modeKey = 'medium'; readTotal = 0; GOAL = 99;
+      document.getElementById('menu').classList.add('hidden');
+      menuOn = false; setHud(false);
+      document.querySelectorAll('.ctrl').forEach(el => el.style.display = '');
+      clearCoins(); lane = 1; running = true; tutorial = 1; phase = 'tut';
+      document.getElementById('center').classList.add('hidden');
+      tutStep(1);
+    }
+    function tutStep(n, how) {
+      tutorial = n;
+      if (n === 3) {
+        phase = 'tut';
+        clearCoins();
+        const row = (spawnRow(READ_Z), rows[rows.length - 1]);
+        beginRead(row);
+        tutPanel(3, how === 'miss' ? '這一排沒吃到，再試一次！<br>' : '', `<button class="btn gray" type="button" onclick="move(-1)">◀ 往左</button><button class="btn gray" type="button" onclick="move(1)">往右 ▶</button>`);
+      } else if (n === 4) {
+        phase = 'tut'; clearCoins();
+        tutPanel(4, how === 'ok' ? '答對了！<br>' : '', `<button class="btn" type="button" onclick="tutStep(3)">再練一次</button><button class="btn gray" type="button" onclick="menu()">我準備好了，回選單</button>`);
+      } else tutPanel(n);
+    }
+    function tutCheck() {
+      if (tutorial === 1 && lane === 0) tutStep(2);
+      else if (tutorial === 2 && lane === 2) tutStep(3);
+    }
+
+    // =====================================================================
+    //  P1-8 複習模式：一次一詞、不計時；答錯先給提示，第二次才揭曉
+    // =====================================================================
+    const LAST_KEY = 'shape_run_last_wrong:' + document.title;
+    function saveLastWrong() { try { localStorage.setItem(LAST_KEY, JSON.stringify([...new Set(wrongList.map(w => w[1]))])); } catch (e) {} }
+    let rv = null;
+    function startReview(fromGame) {
+      if ('speechSynthesis' in window) speechSynthesis.cancel();
+      let words = [], src = '';
+      if (fromGame && wrongList.length) { words = [...new Set(wrongList.map(w => w[1]))]; src = '這一局吃錯的字'; }
+      else {
+        try { words = JSON.parse(localStorage.getItem(LAST_KEY) || '[]'); } catch (e) {}
+        if (words.length) src = '上一局吃錯的字';
+        else {
+          const sel = [...document.querySelectorAll('#lessons input:checked')].map(i => +i.value);
+          words = DATA.filter(e => sel.includes(e.L)).map(e => e.w).sort(() => Math.random() - .5).slice(0, 10);
+          src = '勾選課次的語詞';
+        }
+      }
+      words = words.filter(w => DATA.some(e => e.w === w));
+      if (!words.length) { alert('請至少勾選一課'); return; }
+      running = false; phase = 'off'; clearInterval(clockT); hideStrip();
+      document.getElementById('menu').classList.add('hidden'); setHud(false);
+      rv = { words, i: 0, src, tries: 0 };
+      rvShow();
+    }
+    function rvShow() {
+      const w = rv.words[rv.i], e = DATA.find(d => d.w === w);
+      const opts = [w, ...e.x.slice().sort(() => Math.random() - .5).slice(0, 2)].sort(() => Math.random() - .5);
+      rv.tries = 0;
+      center(`<div class="card" role="dialog" aria-label="複習模式">
+        <div class="en" style="color:#7dd3fc">REVIEW</div>
+        <p>複習：${rv.src}（${rv.i + 1} / ${rv.words.length}）</p>
+        <p class="rv-q">哪一個用字完全正確？</p>
+        <div class="rv-opts">${opts.map(o => `<button class="rv-opt" type="button" data-w="${o}" onclick="rvPick(this)">${o}</button>`).join('')}</div>
+        <div class="rv-hint" id="rv-hint"></div>
+        <div id="rv-next"></div>
+        <button class="btn gray" type="button" onclick="menu()">回選單</button>
+      </div>`);
+    }
+    function rvPick(b) {
+      const w = rv.words[rv.i];
+      const hintEl = document.getElementById('rv-hint');
+      if (b.dataset.w !== w) {
+        rv.tries++; b.disabled = true; sfx('bad');
+        const [bad, good] = diffChar(w, b.dataset.w);
+        const pos = [...w].findIndex((ch, k) => ch !== b.dataset.w[k]);
+        if (rv.tries < 2) { hintEl.innerHTML = `提示：仔細看第 ${pos + 1} 個字。`; return; }
+        hintEl.innerHTML = `「${b.dataset.w}」的 <mark>${bad}</mark> 要改成 <mark>${good}</mark>。`;
+      } else { sfx('coin'); hintEl.innerHTML = '正確！'; }
+      document.querySelectorAll('.rv-opt').forEach(o => { o.disabled = true; if (o.dataset.w === w) o.classList.add('right'); });
+      const say = `正確寫法是${w}`;
+      const last = rv.i >= rv.words.length - 1;
+      document.getElementById('rv-next').innerHTML = `<div class="row-btns">${ttsBtn(say, '🔊 聽正確寫法')}</div><button class="btn" type="button" onclick="${last ? 'rvDone()' : 'rv.i++; rvShow()'}">${last ? '完成' : '下一個 ▶'}</button>`;
+      document.querySelectorAll('#rv-next .tts').forEach(syncTtsBtn);
+    }
+    function rvDone() {
+      center(`<div class="card"><h2>複習完成！</h2><p>一共複習了 ${rv.words.length} 個語詞。</p>
+        <button class="btn" type="button" onclick="rv.i = 0; rvShow()">再複習一次</button>
+        <button class="btn gray" type="button" onclick="menu()">回選單</button></div>`);
+    }
+
+    // =====================================================================
+    //  P2-1 記住這台裝置的設定（看字時間、減少動態、趣味模式、朗讀速度）；老師可還原預設
+    // =====================================================================
+    const SET_KEY = 'shape_run_settings:' + document.title;
+    function saveSettings() {
+      try { localStorage.setItem(SET_KEY, JSON.stringify({ readSec: document.getElementById('read-sec').value, rm: RM, fun: FUN, rate: document.getElementById('tts-rate').value })); } catch (e) {}
+    }
+    function applyFun() { document.getElementById('fun-desc').textContent = FUN ? '吃到錯別字，金幣會變成 💩，也會停下來看正確的字。' : '吃到錯別字，會先停下來看正確的字。'; }
+    function setRM(v) { RM = v; document.getElementById('rm-box').checked = v; document.body.classList.toggle('rm', v); }
+    function loadSettings() {
+      let s = null; try { s = JSON.parse(localStorage.getItem(SET_KEY) || 'null'); } catch (e) {}
+      if (!s) return;
+      if (s.readSec != null) document.getElementById('read-sec').value = s.readSec;
+      if (s.rate) document.getElementById('tts-rate').value = s.rate;
+      if (typeof s.rm === 'boolean') setRM(s.rm);
+      FUN = !!s.fun; document.getElementById('fun-box').checked = FUN; applyFun();
+    }
+    function resetSettings() {
+      try { localStorage.removeItem(SET_KEY); } catch (e) {}
+      document.getElementById('read-sec').value = '4'; document.getElementById('tts-rate').value = '0.85';
+      setRM(!!(RM_QUERY && RM_QUERY.matches));
+      FUN = false; document.getElementById('fun-box').checked = false; applyFun();
+    }
+
+    document.getElementById('lessons').insertAdjacentHTML('beforeend', [...new Set(DATA.map(e => e.L))].sort((x, y) => x - y).map(n => `<label><input type="checkbox" value="${n}" checked> 第${n}課</label>`).join(''));
     document.querySelectorAll('#lessons input').forEach(i => i.addEventListener('change', updateGoalDesc));
     const rmBox = document.getElementById('rm-box');
     rmBox.checked = RM; document.body.classList.toggle('rm', RM);
-    rmBox.addEventListener('change', () => { RM = rmBox.checked; document.body.classList.toggle('rm', RM); });
+    rmBox.addEventListener('change', () => { setRM(rmBox.checked); saveSettings(); });
+    document.getElementById('fun-box').addEventListener('change', e => { FUN = e.target.checked; applyFun(); saveSettings(); });
+    document.getElementById('read-sec').addEventListener('change', saveSettings);
+    document.getElementById('tts-rate').addEventListener('change', saveSettings);
+    loadSettings();
     if (RM_QUERY && RM_QUERY.addEventListener) RM_QUERY.addEventListener('change', e => { RM = e.matches; rmBox.checked = RM; document.body.classList.toggle('rm', RM); });
     updateGoalDesc();
     buildSlots();

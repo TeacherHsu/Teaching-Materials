@@ -215,7 +215,16 @@ python3 Chinese/Review-Games/tools/check_data.py   # 全部 ✅ 才算過
 ## 2026-10-16 綜合複習遊戲（`Chinese/Review-Games/`）
 
 - 範圍：一上 1–7 課、二上／三上／四上／六上 1–6 課；年級頁「綜合複習」卡片由 `course-index.json` 的 `volume.reviews` 決定（一年級不分組，接在課次後面）。網址 `../Chinese/Review-Games/?g=G1A`。
-- 遊戲：課文大富翁、語文蛇梯棋、語詞哆寶、語詞賓果；三上、四上、六上另有形似字跑酷（`Chinese/Shape-Run-G*`）。
+- 遊戲：課文大富翁、語文蛇梯棋、語詞哆寶、語詞賓果、形似字跑酷（`Chinese/Shape-Run-G*`），五個年級都有。年級頁「綜合複習」把五款**平行直接列出**（每款一筆 `reviews.items`，網址帶 `?g=`），不再只放一張「綜合複習遊戲」總入口。
+- 形似字跑酷：
+  - 程式只有一份，`Shape-Run-G6A/index.html` 是母版；其他年級由工具複製母版、只換 DATA 與標題。**改遊戲只改 G6A，再跑工具同步**，不要分別手改五份。
+  - 題庫：多字語詞中屬於官方形似字組的字，換成同組其他字當錯字；換字後仍是簡編本詞條的剔除，另有人工剔除清單（異體、真詞、人名）寫在工具的 `EXCLUDE_WRONG`／`EXCLUDE_WORD`。單字詞不出題。高級只出「有兩個以上錯字」的詞，三枚都同一個詞，不補別詞的錯字。
+  - 指令（需本機簡編本詞庫，只有家裡 Mac 有）：
+    ```bash
+    python3 Chinese/Review-Games/tools/build_shape_run.py          # 重產五個年級
+    python3 Chinese/Review-Games/tools/build_shape_run.py --check  # 全部 ✅ 才能 commit
+    ```
+  - 設計規則（依 Codex 審查 `~/Desktop/WORK/教材產出/形似字跑酷/codex-review/REVIEW.md` 的 P0／P1／P2）：每排停下判讀（3／4／5 秒或看好了再按），固定螢幕字卡對應三條跑道；答錯進訂正卡、學生按繼續；錯 6 次本局結束；目標＝min(10, 所選課次語詞數)；三級只差候選數、速度相同；大便是「趣味模式」選項、預設關；有玩法說明（四步、做到才進下一步）與複習模式（一次一詞、不計時、答錯先提示第幾個字）；設定記在本機、可還原預設；只用 zh-TW 語音。
 - 題庫正本是課次資料，`data/G*.js` 是產物，**不可手改**；只收 `ready`／`approved` 項目，不含課文全文。形似字題用簡編本離線詞庫剔除「換字仍成詞」的選項（本機沒有詞庫時會警告）。
 - 新增年級或課次範圍：改 `tools/build_data.py` 的 `GRADES` 與 `tools/check_data.py` 的 `EXPECT`，再在 `course-index.json` 加 `reviews`。
 - 必過檢查：`check_data.py` 全 ✅（答案在選項內、選項不重複、選項數、注音一致、形似字單一空格、每課都有題）；瀏覽器把五個年級的選單與四款遊戲各開一次，看主控台沒有錯誤。

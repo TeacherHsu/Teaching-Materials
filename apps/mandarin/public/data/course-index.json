@@ -65,9 +65,29 @@
               "to": 7,
               "items": [
                 {
-                  "title": "綜合複習遊戲",
-                  "description": "大富翁、蛇梯棋、哆寶、賓果：語詞、注音、形似字、成語、閱讀理解一起複習",
-                  "url": "../Chinese/Review-Games/?g=G1A"
+                  "title": "課文大富翁",
+                  "description": "答對題目就能買下課次的地（2～4 隊）",
+                  "url": "../Chinese/Review-Games/monopoly.html?g=G1A"
+                },
+                {
+                  "title": "語文蛇梯棋",
+                  "description": "先答題再擲骰，答對就能爬梯子、躲開蛇（1 人或分隊）",
+                  "url": "../Chinese/Review-Games/snakes.html?g=G1A"
+                },
+                {
+                  "title": "語詞哆寶",
+                  "description": "找出兩張卡一樣的語詞，再想想它的意思（1 人）",
+                  "url": "../Chinese/Review-Games/dobble.html?g=G1A"
+                },
+                {
+                  "title": "語詞賓果",
+                  "description": "聽意思，點語詞，連成一條線就賓果（1 人或分隊）",
+                  "url": "../Chinese/Review-Games/bingo.html?g=G1A"
+                },
+                {
+                  "title": "形似字跑酷",
+                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
+                  "url": "../Chinese/Shape-Run-G1A/"
                 }
               ]
             }
@@ -170,9 +190,29 @@
               "to": 6,
               "items": [
                 {
-                  "title": "綜合複習遊戲",
-                  "description": "大富翁、蛇梯棋、哆寶、賓果：語詞、注音、形似字、成語、閱讀理解一起複習",
-                  "url": "../Chinese/Review-Games/?g=G2A"
+                  "title": "課文大富翁",
+                  "description": "答對題目就能買下課次的地（2～4 隊）",
+                  "url": "../Chinese/Review-Games/monopoly.html?g=G2A"
+                },
+                {
+                  "title": "語文蛇梯棋",
+                  "description": "先答題再擲骰，答對就能爬梯子、躲開蛇（1 人或分隊）",
+                  "url": "../Chinese/Review-Games/snakes.html?g=G2A"
+                },
+                {
+                  "title": "語詞哆寶",
+                  "description": "找出兩張卡一樣的語詞，再想想它的意思（1 人）",
+                  "url": "../Chinese/Review-Games/dobble.html?g=G2A"
+                },
+                {
+                  "title": "語詞賓果",
+                  "description": "聽意思，點語詞，連成一條線就賓果（1 人或分隊）",
+                  "url": "../Chinese/Review-Games/bingo.html?g=G2A"
+                },
+                {
+                  "title": "形似字跑酷",
+                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
+                  "url": "../Chinese/Shape-Run-G2A/"
                 }
               ]
             }
@@ -275,14 +315,29 @@
               "to": 6,
               "items": [
                 {
-                  "title": "形似字跑酷",
-                  "description": "3D 跑酷：只吃用字正確的語詞，閃開錯別字（初級／中級／高級）",
-                  "url": "../Chinese/Shape-Run-G3A/"
+                  "title": "課文大富翁",
+                  "description": "答對題目就能買下課次的地（2～4 隊）",
+                  "url": "../Chinese/Review-Games/monopoly.html?g=G3A"
                 },
                 {
-                  "title": "綜合複習遊戲",
-                  "description": "大富翁、蛇梯棋、哆寶、賓果、形似字跑酷：語詞、注音、形似字、成語、閱讀理解一起複習",
-                  "url": "../Chinese/Review-Games/?g=G3A"
+                  "title": "語文蛇梯棋",
+                  "description": "先答題再擲骰，答對就能爬梯子、躲開蛇（1 人或分隊）",
+                  "url": "../Chinese/Review-Games/snakes.html?g=G3A"
+                },
+                {
+                  "title": "語詞哆寶",
+                  "description": "找出兩張卡一樣的語詞，再想想它的意思（1 人）",
+                  "url": "../Chinese/Review-Games/dobble.html?g=G3A"
+                },
+                {
+                  "title": "語詞賓果",
+                  "description": "聽意思，點語詞，連成一條線就賓果（1 人或分隊）",
+                  "url": "../Chinese/Review-Games/bingo.html?g=G3A"
+                },
+                {
+                  "title": "形似字跑酷",
+                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
+                  "url": "../Chinese/Shape-Run-G3A/"
                 }
               ]
             }
@@ -385,14 +440,29 @@
               "to": 6,
               "items": [
                 {
-                  "title": "形似字跑酷",
-                  "description": "3D 跑酷：只吃用字正確的語詞，閃開錯別字（初級／中級／高級）",
-                  "url": "../Chinese/Shape-Run-G4A/"
+                  "title": "課文大富翁",
+                  "description": "答對題目就能買下課次的地（2～4 隊）",
+                  "url": "../Chinese/Review-Games/monopoly.html?g=G4A"
                 },
                 {
-                  "title": "綜合複習遊戲",
-                  "description": "大富翁、蛇梯棋、哆寶、賓果、形似字跑酷：語詞、注音、形似字、成語、閱讀理解一起複習",
-                  "url": "../Chinese/Review-Games/?g=G4A"
+                  "title": "語文蛇梯棋",
+                  "description": "先答題再擲骰，答對就能爬梯子、躲開蛇（1 人或分隊）",
+                  "url": "../Chinese/Review-Games/snakes.html?g=G4A"
+                },
+                {
+                  "title": "語詞哆寶",
+                  "description": "找出兩張卡一樣的語詞，再想想它的意思（1 人）",
+                  "url": "../Chinese/Review-Games/dobble.html?g=G4A"
+                },
+                {
+                  "title": "語詞賓果",
+                  "description": "聽意思，點語詞，連成一條線就賓果（1 人或分隊）",
+                  "url": "../Chinese/Review-Games/bingo.html?g=G4A"
+                },
+                {
+                  "title": "形似字跑酷",
+                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
+                  "url": "../Chinese/Shape-Run-G4A/"
                 }
               ]
             }
@@ -495,14 +565,29 @@
               "to": 6,
               "items": [
                 {
-                  "title": "形似字跑酷",
-                  "description": "3D 跑酷：只吃用字正確的語詞，閃開錯別字（初級／中級／高級）",
-                  "url": "../Chinese/Shape-Run-G6A/"
+                  "title": "課文大富翁",
+                  "description": "答對題目就能買下課次的地（2～4 隊）",
+                  "url": "../Chinese/Review-Games/monopoly.html?g=G6A"
                 },
                 {
-                  "title": "綜合複習遊戲",
-                  "description": "大富翁、蛇梯棋、哆寶、賓果、形似字跑酷：語詞、注音、形似字、成語、閱讀理解一起複習",
-                  "url": "../Chinese/Review-Games/?g=G6A"
+                  "title": "語文蛇梯棋",
+                  "description": "先答題再擲骰，答對就能爬梯子、躲開蛇（1 人或分隊）",
+                  "url": "../Chinese/Review-Games/snakes.html?g=G6A"
+                },
+                {
+                  "title": "語詞哆寶",
+                  "description": "找出兩張卡一樣的語詞，再想想它的意思（1 人）",
+                  "url": "../Chinese/Review-Games/dobble.html?g=G6A"
+                },
+                {
+                  "title": "語詞賓果",
+                  "description": "聽意思，點語詞，連成一條線就賓果（1 人或分隊）",
+                  "url": "../Chinese/Review-Games/bingo.html?g=G6A"
+                },
+                {
+                  "title": "形似字跑酷",
+                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
+                  "url": "../Chinese/Shape-Run-G6A/"
                 }
               ]
             }
