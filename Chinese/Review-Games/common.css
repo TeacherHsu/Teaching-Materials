@@ -214,3 +214,45 @@ body.proj .duel .rg3d-dobble.is-3d .sym { font-size: 32px !important; }
 /* 逐格足跡（2D 版）：走過的格子框上隊伍色，右上角顯示步數 */
 .trail { box-shadow: inset 0 0 0 5px var(--tc), 0 6px 0 #dcc6a6 !important; }
 .trail::after { content: attr(data-step); position: absolute; top: 2px; right: 4px; z-index: 6; min-width: 28px; height: 28px; border-radius: 50%; background: var(--tc); color: #fff; font-weight: 900; font-size: 18px; display: flex; align-items: center; justify-content: center; }
+
+/* P0：必要資訊為可見 DOM，模型只負責桌面與路線。 */
+.rg3d-dom-labels { display: none; }
+.is-3d > .rg3d-dom-labels { display: block; position: absolute; inset: 0; pointer-events: none; }
+.rg3d-cell-label { position: absolute; transform: translate(-50%, -50%); width: 128px; text-align: center; line-height: 1.15; color: #2b1d12; }
+.rg3d-cell-name { display: block; background: #fffaf3; border: 1px solid #79522c; border-radius: 6px; font-size: 22px; font-weight: 900; padding: 2px; }
+.rg3d-cell-detail, .rg3d-cell-state { display: block; font-size: 18px; font-weight: 800; background: #fffaf3ed; border-radius: 4px; }
+.rg3d-cell-detail:empty, .rg3d-cell-state:empty { display: none; }
+body.proj .rg3d-cell-name { font-size: 28px; }
+.bingo-layout { display: grid; gap: 24px; align-items: start; min-width: 0; }
+.bingo-task { min-width: 0; }
+.bingo-layout .bar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; font-size: 18px; }
+.bingo-layout .bar .team { padding: 6px; margin: 0; min-width: 0; border: 2px solid var(--line); }
+.bingo-layout .bar .team.now { border-color: var(--brand); }
+.bingo-layout .clue { margin-top: 0; }
+.bingo-layout .bingo-host { width: 100%; min-width: 0; margin: 12px auto 24px; }
+.bingo-legend { font-size: 18px; }
+.bingo-layout .bcell { aspect-ratio: auto; min-height: 76px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4px; overflow-wrap: anywhere; word-break: normal; }
+.bingo-layout .bcell::before { content: none !important; }
+.bstate { font-size: 20px; line-height: 1.1; }
+.bstate:empty { display: none; }
+.bingo-layout .rg3d-bingo.is-3d { padding: 12px; max-width: 680px; }
+.bingo-layout .rg3d-bingo.is-3d > .rg3d-surface { inset: -12px; }
+.bingo-layout .rg3d-bingo.is-3d .bcell { transform: none; }
+@media (min-width: 1024px) {
+  .bingo-layout { grid-template-columns: 300px minmax(0, 1fr); }
+  .bingo-layout .bgrid { width: min(100%, calc(100vh - 175px)); }
+  .bingo-layout .bcell { min-height: 72px; aspect-ratio: 1; }
+}
+/* 找詞區尺寸穩定，詞義獨立排版，不蓋住卡片。 */
+.stage .card { min-width: 0; flex: 1; }
+.stage .disc, .rg3d-dobble.is-3d .card .disc { display: grid; align-content: center; width: 100%; aspect-ratio: auto; min-height: 300px; padding: 14px; gap: 10px; border-radius: 20px; }
+.stage .disc .sym { position: relative; left: auto !important; top: auto !important; transform: none !important; min-width: 0; min-height: 64px; font-size: 28px !important; white-space: normal; overflow-wrap: anywhere; }
+.reveal { min-height: 120px; scroll-margin: 16px; }
+.mcq { align-items: stretch; }
+.mcq .qopt { flex: 1 1 260px; max-width: none; white-space: normal; overflow-wrap: anywhere; }
+.duel .stage .disc { padding: 8px; }
+.duel .stage .sym { font-size: 24px !important; }
+@media (max-width: 760px) { .stage { align-items: stretch; } .stage .disc { padding: 6px; } .stage .disc .sym { font-size: 24px !important; } }
+.rg3d-cell-label { transform: none; }
+.rg3d-snakes .rg3d-cell-label { width: 88px; }
+.duel .stage .card .disc { min-height: 0; }

@@ -64,11 +64,34 @@
       this.layer = document.createElement('div'); this.layer.className = 'dt-markers';
       host.append(this.stage, this.layer);
       this.buildItems();
+      this.refreshListener = () => this.refreshMode();
+      this.visibilityListener = () => this.visibility();
+      reduced.addEventListener('change', this.refreshListener);
+      document.addEventListener('visibilitychange', this.visibilityListener);
+      this.modeObserver = new MutationObserver(this.refreshListener);
+      this.modeObserver.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+      this.markerObserver = new ResizeObserver(() => this.layoutMarkers()); this.markerObserver.observe(host);
       this.mode2d('準備中');
-      if (!isCalm() && webgl() && !opts.force2d) {
-        loadThree().then(() => this.init3d()).catch(() => this.mode2d('無法載入立體畫面，改用平面圖'));
-      } else this.mode2d(isCalm() ? '減少動態：平面圖，玩法相同' : '這台裝置不支援立體畫面，改用平面圖');
+      this.refreshMode();
     }
+    refreshMode() {
+      if (this.disposed) return;
+      if (isCalm() || this.opts.force2d || this.failed) {
+        this.teardown3d(); this.mode2d('平面圖：玩法與目前進度相同'); return;
+      }
+      if (this.renderer || this.loading) return;
+      if (!webgl()) { this.failed = true; this.mode2d('這台裝置改用平面圖，玩法相同'); return; }
+      this.loading = true;
+      loadThree().then(() => { if (!this.disposed && !isCalm() && !this.opts.force2d && !this.failed) this.init3d(); })
+        .catch(() => { this.failed = true; if (!this.disposed) this.mode2d('無法載入立體畫面，改用平面圖'); })
+        .finally(() => { this.loading = false; });
+    }
+    finishTweens() { const pending = this.tweens.splice(0); for (const tw of pending) { try { tw.fn(1); } catch (_) {} } }
+    visibility() {
+      if (document.hidden) { this.finishTweens(); cancelAnimationFrame(this.raf); this.raf = 0; }
+      else { this.layoutMarkers(); this.kick(); }
+    }
+
     buildItems() {
       const { objects, puzzles } = this.opts;
       objects.forEach((o, i) => {
@@ -81,7 +104,7 @@
       });
       for (const it of this.items) {
         const b = document.createElement('button');
-        b.type = 'button'; b.className = 'dt-mark'; b.dataset.id = it.id;
+        b.type = 'button'; b.className = 'dt-mark'; b.dataset.id = it.id; b.dataset.number = String(this.items.indexOf(it) + 1);
         b.innerHTML = `<span class="dt-ico" aria-hidden="true">${it.icon}</span><span class="dt-lab">${it.label}</span><span class="dt-st" aria-hidden="true"></span>`;
         b.addEventListener('click', () => this.opts.onPick(it.id));
         it.btn = b; this.layer.append(b);
@@ -94,6 +117,7 @@
       it.btn.dataset.state = state;
       it.btn.setAttribute('aria-label', `${it.label}，${text || ''}`);
       it.btn.querySelector('.dt-st').textContent = { locked: '🔒', done: '✓', found: '✓', next: '!' }[state] || '';
+      if (!this.markerRaf) this.markerRaf = requestAnimationFrame(() => { this.markerRaf = 0; this.layoutMarkers(); });
       const m = this.meshes.get(id);
       if (m && m.userData.glow) {
         const ring = m.userData.glow; ring.visible = state === 'open' || state === 'next' || state === 'done' || state === 'found';
@@ -107,10 +131,10 @@
       this.status = msg;
       if (this.opts.onStatus) this.opts.onStatus(msg);
       // 平面圖：標記不可超出邊界（按鈕以中心定位）
-      for (const it of this.items) { it.btn.style.left = Math.max(14, Math.min(86, it.g[0])) + '%'; it.btn.style.top = Math.max(8, Math.min(92, it.g[1])) + '%'; }
+      this.layoutMarkers();
     }
     init3d() {
-      if (this.disposed) return;
+      if (this.disposed || isCalm() || this.opts.force2d || this.failed) return;
       try {
         const T = window.THREE;
         const touch = matchMedia('(pointer: coarse)').matches;
@@ -119,7 +143,7 @@
         r.shadowMap.enabled = !touch; r.shadowMap.type = T.PCFSoftShadowMap;
         r.outputEncoding = T.sRGBEncoding;
         this.renderer = r; this.stage.append(r.domElement);
-        r.domElement.addEventListener('webglcontextlost', (e) => { e.preventDefault(); this.teardown3d(); this.mode2d('立體畫面中斷，改用平面圖'); });
+        r.domElement.addEventListener('webglcontextlost', (e) => { e.preventDefault(); this.failed = true; this.teardown3d(); this.mode2d('立體畫面中斷，改用平面圖'); });
         const scene = new T.Scene(); scene.background = new T.Color(this.theme.sky); this.scene = scene;
         this.camera = new T.PerspectiveCamera(34, 1, 0.1, 100);
         scene.add(new T.HemisphereLight(0xffffff, 0xd9c2a0, 0.75));
@@ -134,7 +158,7 @@
         if (this.opts.onStatus) this.opts.onStatus('立體密室：拖曳可轉動房間，點物件調查');
         this.ro = new ResizeObserver(() => this.resize()); this.ro.observe(this.host);
         this.resize();
-      } catch (e) { this.teardown3d(); this.mode2d('立體畫面無法使用，改用平面圖'); }
+      } catch (e) { this.failed = true; this.teardown3d(); this.mode2d('立體畫面無法使用，改用平面圖'); }
     }
     mat(color, rough = 0.8) { return new window.THREE.MeshStandardMaterial({ color, roughness: rough, metalness: 0.05 }); }
     box(w, h, d, color, x, y, z, parent) {
@@ -257,18 +281,45 @@
     frame(t) {
       this.raf = 0; if (this.disposed || !this.renderer) return;
       let busy = false;
+      try {
       this.tweens = this.tweens.filter((tw) => { const k = Math.min(1, (t - (tw.t0 || (tw.t0 = t))) / tw.ms); tw.fn(1 - Math.pow(1 - k, 3)); busy = true; return k < 1; });
-      const pulse = 1 + Math.sin(t / 260) * 0.08;
-      for (const m of this.meshes.values()) if (m.userData.glow.visible && !m.userData.glow.userData.calm && !isCalm()) { m.userData.glow.scale.setScalar(pulse); busy = true; }
-      this.renderer.render(this.scene, this.camera);
-      // DOM 標記跟著物件位置
-      const T = window.THREE; const v = new T.Vector3(); const w = this.host.clientWidth, h = this.host.clientHeight;
-      for (const it of this.items) {
-        v.set(it.pos[0], it.pos[1] + 0.75, it.pos[2]).applyMatrix4(this.group.matrixWorld).project(this.camera);
-        it.btn.style.left = `${Math.max(9, Math.min(91, ((v.x + 1) / 2) * 100))}%`; it.btn.style.top = `${Math.max(6, Math.min(94, ((1 - v.y) / 2) * 100))}%`;
-      }
-      void w; void h;
+      this.renderer.render(this.scene, this.camera); this.layoutMarkers(); }
+      catch (_) { this.failed = true; this.teardown3d(); this.mode2d('立體畫面中斷，請繼續調查'); return; }
       if (busy && !document.hidden) this.kick();
+    }
+    layoutMarkers() {
+      if (this.disposed) return;
+      const w = this.host.clientWidth, h = this.host.clientHeight - (this.host.clientWidth < 600 ? 80 : 56); if (!w || h <= 0) return;
+      const key = [w, h, this.yaw, this.is3d, document.body.className, ...this.items.map((it) => it.state)].join('|');
+      if (key === this.markerKey) return; this.markerKey = key;
+      // 全名只留目前目標，其餘編號與完整文字清單對照，避免窄版互蓋。
+      const target = this.items.find((it) => it.kind !== 'holder' && it.state === 'next');
+      this.items.forEach((it) => it.btn.classList.toggle('dt-target', it === target));
+      const sizes = this.items.map((it) => ({ it, w: it.btn.offsetWidth, h: it.btn.offsetHeight }));
+      const placed = [];
+      for (const entry of sizes.sort((a, b) => Number(b.it === target) - Number(a.it === target))) {
+        const { it } = entry; if (it.state === 'hidden') continue;
+        let x = w * it.g[0] / 100, y = h * it.g[1] / 100;
+        if (this.is3d && this.camera) {
+          const v = new window.THREE.Vector3(it.pos[0], it.pos[1] + .75, it.pos[2]).applyMatrix4(this.group.matrixWorld).project(this.camera);
+          x = (v.x + 1) * w / 2; y = (1 - v.y) * h / 2;
+        }
+        const bw = Math.min(entry.w, w - 24), bh = entry.h;
+        const clamp = (v, max) => Math.max(12, Math.min(max, v));
+        let best, cost = Infinity;
+        const xs = new Set([12, w - bw - 12, clamp(x - bw / 2, w - bw - 12)]);
+        const ys = new Set([12, h - bh - 12, clamp(y - bh / 2, h - bh - 12)]);
+        placed.forEach((r) => { xs.add(r.x + r.w + 8); xs.add(r.x - bw - 8); ys.add(r.y + r.h + 8); ys.add(r.y - bh - 8); });
+        for (const cy of ys) for (const cx of xs) {
+          if (cx < 12 || cy < 12 || cx + bw > w - 12 || cy + bh > h - 12) continue;
+          const d = (cx + bw / 2 - x) ** 2 + (cy + bh / 2 - y) ** 2;
+          if (d >= cost || placed.some((r) => cx < r.x + r.w + 8 && cx + bw + 8 > r.x && cy < r.y + r.h + 8 && cy + bh + 8 > r.y)) continue;
+          cost = d; best = { x: cx, y: cy, w: bw, h: bh };
+        }
+        if (!best) best = { x: clamp(x - bw / 2, w - bw - 12), y: clamp(y - bh / 2, h - bh - 12), w: bw, h: bh };
+        placed.push(best); entry.rect = best;
+      }
+      sizes.forEach(({ it, rect }) => { if (rect) { it.btn.style.left = `${rect.x}px`; it.btn.style.top = `${rect.y}px`; } });
     }
     tween(ms, fn) { if (!this.is3d || isCalm()) { fn(1); return; } this.tweens.push({ ms, fn }); this.kick(); }
     // 紙卡從物件升起、翻一圈後消失（找到線索的回饋）
@@ -296,14 +347,21 @@
       if (kind === 'sort' || kind === 'keys' || kind === 'blocks' || kind === 'compare') this.tween(800, (k) => { this.group.position.y = Math.sin(k * Math.PI) * 0.06; });
     }
     teardown3d() {
+      this.finishTweens(); this.is3d = false;
       cancelAnimationFrame(this.raf); this.raf = 0;
+      this.meshes.clear();
       if (this.ro) this.ro.disconnect();
       if (this.renderer) {
-        this.scene && this.scene.traverse((o) => { if (o.geometry) o.geometry.dispose(); if (o.material) o.material.dispose(); });
+        const resources = new Set();
+        this.scene && this.scene.traverse((o) => {
+          if (o.geometry) resources.add(o.geometry);
+          for (const m of (Array.isArray(o.material) ? o.material : [o.material])) if (m) { resources.add(m); for (const v of Object.values(m)) if (v && v.isTexture) resources.add(v); }
+        });
+        resources.forEach((r) => r.dispose());
         this.renderer.dispose(); this.renderer.domElement.remove(); this.renderer = null;
       }
     }
-    dispose() { this.disposed = true; this.teardown3d(); this.host.replaceChildren(); }
+    dispose() { this.disposed = true; reduced.removeEventListener('change', this.refreshListener); document.removeEventListener('visibilitychange', this.visibilityListener); this.modeObserver.disconnect(); this.markerObserver.disconnect(); cancelAnimationFrame(this.markerRaf); this.teardown3d(); this.host.replaceChildren(); }
   }
 
   window.Detective3D = { mount: (host, opts) => new Room(host, opts), THEMES };

@@ -180,6 +180,7 @@
       topbar(`課文偵探密室｜${game.title}`), stepper(),
       h('div', { class: 'dt-task', role: 'status' }, [h('span', { 'aria-hidden': 'true' }, '🎯'), h('b', {}, task), spk(task, '朗讀目前任務')]),
       h('div', { class: 'dt-bar' }, [
+        h('label', { class: 'chip' }, [h('input', { type: 'checkbox', checked: !!settings.calm, onchange: (e) => { settings.calm = e.target.checked; applyDisplay(); room.opts.force2d = !!settings.calm; room.refreshMode(); } }), '減少動態（平面圖）']),
         h('button', { class: 'btn', type: 'button', onclick: notebook }, '📓 偵探筆記本'),
         h('button', { class: 'btn', type: 'button', onclick: () => { if (confirm('要重新開始這間密室嗎？目前進度不會保留。')) start(); } }, '🔄 重新挑戰'),
         h('button', { class: 'btn', type: 'button', onclick: () => { if (confirm('回到設定畫面？目前進度不會保留。')) setup(); } }, '↩ 回到設定'),
@@ -199,7 +200,10 @@
       const found = game.state.found.includes(o.holds);
       room.setState(o.id, found ? 'found' : (game.L.autoHint ? 'next' : 'open'), found ? '已調查' : '還沒調查');
     }
-    const items = [];
+    const items = game.objects.map((o) => {
+      const it = room.items.find((x) => x.id === o.id), found = game.state.found.includes(o.holds);
+      return h('li', {}, h('button', { type: 'button', class: found ? 'done' : '', onclick: () => pick(o.id) }, `${room.items.indexOf(it) + 1}. ${it.label}・${found ? '已調查' : '調查'}`));
+    });
     const real = game.clues.filter((c) => game.state.found.includes(c.id)).length;
     items.push(h('li', {}, h('button', { type: 'button', class: game.state.solved.search.done ? 'done' : 'next', onclick: notebook }, `${game.state.solved.search.done ? '✓' : '🔍'} 搜查現場（${real}/${game.clues.length}）`)));
     for (const p of stationPuzzles()) {
@@ -208,7 +212,7 @@
       if (game.L.oneAtATime && !st.done && open && p !== next) state = 'locked';
       room.setState(p.id, state, st.done ? '已完成' : state === 'locked' ? '還鎖著' : '可以調查');
       items.push(h('li', {}, h('button', { type: 'button', class: state === 'done' ? 'done' : state === 'next' ? 'next' : '', disabled: state === 'locked', onclick: () => pick(p.id) },
-        `${state === 'done' ? '✓' : state === 'locked' ? '🔒' : '▶'} ${C.NAMES[p.type]}${p.lesson && game.mode === 'cross' ? `（第${p.lesson}課）` : ''}`)));
+        `${state === 'done' ? '✓' : state === 'locked' ? '🔒' : '▶'} ${room.items.findIndex((it) => it.id === p.id) + 1}. ${room.items.find((it) => it.id === p.id)?.label || C.NAMES[p.type]}${p.lesson && game.mode === 'cross' ? `（第${p.lesson}課）` : ''}`)));
     }
     list.replaceChildren(...items);
   }
@@ -455,7 +459,7 @@
         if (st.tries >= 2 && st.hints < 3) hintBtn.click();
       }
     };
-    frame(`${C.NAMES[p.type]}${p.lesson && game.mode === 'cross' ? `（第${p.lesson}課）` : ''}`, [
+    frame(`${room.items.findIndex((it) => it.id === p.id) + 1}. ${room.items.find((it) => it.id === p.id)?.label || C.NAMES[p.type]}${p.lesson && game.mode === 'cross' ? `（第${p.lesson}課）` : ''}`, [
       h('div', { class: 'qhead' }, [h('div', {}, intro), spk(intro + (p.stem || ''), '朗讀說明')]), hint, ...body, evidencePanel, feed, actions,
     ]);
     say(intro + (p.stem || ''));

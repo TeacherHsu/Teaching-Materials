@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>語文蛇梯棋</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="common.css?v=2">
+  <link rel="stylesheet" href="common.css?v=3">
   <style>
     .play { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 16px; align-items: start; }
     @media (max-width: 860px) { .play { grid-template-columns: 1fr; } }
@@ -30,7 +30,7 @@
 <body>
   <main class="wrap" id="app"><p>載入中…</p></main>
   <script src="common.js?v=2"></script>
-  <script src="scene3d.js?v=2"></script>
+  <script src="scene3d.js?v=3"></script>
   <script>
     const { die3d, h, speak, sleep, loadBank, setupPanel, makeDeck, ask, header, token, statsLine, stats, TEAM_COLORS, TEAM_NAMES } = RG;
     const GOAL = 30;
@@ -54,6 +54,7 @@
         const deck = makeDeck(bank, settings);
         if (!deck.size()) { msg.textContent = '請至少勾選一課和一種題目類型。'; panel.querySelector('input').focus(); return; }
         const maxSlide = Number(slideSel.value);
+        const visualSnakes = Object.fromEntries(Object.entries(SNAKES).map(([a, b]) => [a, Math.max(b, Number(a) - maxSlide)]));
         const cap = Number(capSel.value); let roundNo = 1;
         const solo = Number(nSel.value) === 1;
         const players = Array.from({ length: Number(nSel.value) }, (_, i) => ({ name: solo ? '我' : TEAM_NAMES[i], at: 1, right: 0, asked: 0 }));
@@ -63,7 +64,7 @@
         for (let n = 1; n <= GOAL; n++) {
           const [r, c] = cellRC(n);
           const row = Math.floor((n - 1) / 6);
-          const mark = LADDERS[n] ? `🪜→${LADDERS[n]}` : SNAKES[n] ? `🐍→${SNAKES[n]}` : STARS.has(n) ? '⭐+1' : n === GOAL ? '🏆' : '';
+          const mark = LADDERS[n] ? `🪜→${LADDERS[n]}` : SNAKES[n] ? `🐍→${visualSnakes[n]}` : STARS.has(n) ? '⭐+1' : n === GOAL ? '🏆' : '';
           const dir = (n - 1) % 6 === 0 && n !== 1 ? '↑' : n % 6 === 0 ? '' : row % 2 ? '←' : '→';
           const tokens = h('div', { class: 'tokens' });
           cells[n] = { tokens, el: h('div', { class: `cell${STARS.has(n) ? ' star' : ''}${n === GOAL ? ' goal' : ''}`, style: `grid-row:${r};grid-column:${c}` }, [
@@ -84,7 +85,7 @@
           const k = Math.floor(len / 28);
           for (let i = 1; i < k; i++) { const t = i / k; const x = x1 + (x2 - x1) * t, y = y1 + (y2 - y1) * t; el('line', { x1: x + nx, y1: y + ny, x2: x - nx, y2: y - ny, stroke: '#b07a3c', 'stroke-width': 5, opacity: .75 }); }
         });
-        Object.entries(SNAKES).forEach(([a, b]) => {
+        Object.entries(visualSnakes).forEach(([a, b]) => {
           const [x1, y1] = ctr(+a), [x2, y2] = ctr(+b);
           const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
           el('path', { d: `M${x1} ${y1} Q${mx + 40} ${my - 20} ${mx} ${my} T${x2} ${y2}`, stroke: '#2f8a4c', 'stroke-width': 12, fill: 'none', 'stroke-linecap': 'round', opacity: .7 });
@@ -100,12 +101,12 @@
         const side = h('div', { class: 'side' }, [teamBar, nowPos, die, actBtn, log, goalEl, h('div', { class: 'legend' }, '🪜 答對才能爬｜🐍 答對能躲開｜⭐ 答對多走 1 格')]);
         const boardHost = h('div', {}, h('div', { class: 'tilt' }, h('div', { class: 'sb tilted' }, [grid, svg])));
         app.replaceChildren(header(bank, '語文蛇梯棋'), h('div', { class: 'play' }, [boardHost, side]));
-        const view = window.RG3D?.mount({ kind: 'snakes', host: boardHost, ladders: LADDERS, snakes: SNAKES,
+        const view = window.RG3D?.mount({ kind: 'snakes', host: boardHost, ladders: LADDERS, snakes: visualSnakes,
           cells: Array.from({ length: GOAL }, (_, i) => {
             const n = i + 1, [r, c] = cellRC(n);
-            return { id: n, row: r - 1, col: c - 1, label: String(n),
+            return { id: n, row: r - 1, col: c - 1, label: String(n), direction: n === GOAL ? '🏆' : n % 6 === 0 ? '↑' : Math.floor((n - 1) / 6) % 2 ? '←' : '→',
               color: n === GOAL ? '#ffe0a1' : STARS.has(n) ? '#fff1c2' : n % 2 ? '#fffaf3' : '#f3e8d3',
-              detail: LADDERS[n] ? `梯 → ${LADDERS[n]}` : SNAKES[n] ? `蛇 → ${SNAKES[n]}` : STARS.has(n) ? '多走1格' : null };
+              detail: LADDERS[n] ? `梯 → ${LADDERS[n]}` : SNAKES[n] ? `蛇 → ${visualSnakes[n]}` : STARS.has(n) ? '多走1格' : null };
           })
         });
         players.forEach((p, i) => view?.moveToken(i, p.at, { instant: true }));

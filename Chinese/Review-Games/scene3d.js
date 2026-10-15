@@ -67,6 +67,18 @@
       this.surface = el('div', 'rg3d-surface'); this.surface.setAttribute('aria-hidden', 'true');
       this.host.classList.add('rg3d-host', `rg3d-${this.kind}`); this.host.prepend(this.surface);
       if (this.kind === 'bingo') { this.feedbackLayer = el('div', 'rg3d-feedback-lines'); this.feedbackLayer.setAttribute('aria-hidden', 'true'); this.host.append(this.feedbackLayer); }
+      if (!this.overlay && this.cells) {
+        this.domLabels = el('div', 'rg3d-dom-labels');
+        this.domCells = new Map();
+        this.cells.forEach((c) => {
+          const box = el('div', 'rg3d-cell-label');
+          const name = el('span', 'rg3d-cell-name'); name.textContent = `${this.kind === 'monopoly' ? c.id + ' ' : ''}${c.label} ${c.direction || ''}`;
+          const detail = el('span', 'rg3d-cell-detail'); detail.textContent = c.detail || '';
+          const state = el('span', 'rg3d-cell-state');
+          box.append(name, detail, state); this.domLabels.append(box); this.domCells.set(c.id, { box, state });
+        });
+        this.host.append(this.domLabels);
+      }
       controls(); instances.add(this);
       this.resizeObserver = new ResizeObserver(() => { if (this.active) { try { this.resize(); } catch (_) { this.failed = '立體視圖無法使用'; this.mode(false); } } }); this.resizeObserver.observe(this.host);
       this.refresh();
@@ -101,7 +113,9 @@
       if (this.active === on) return;
       this.active = on;
       if (!on) { this.finishTweens(); cancelAnimationFrame(this.frame); this.frame = 0; }
+      this.boardLabelKey = null;
       this.host.classList.toggle('is-3d', on);
+      const original = this.host.querySelector('.tilt'); if (original) original.setAttribute('aria-hidden', String(on));
       if (this.onMode) this.onMode(on);
       if (on) { this.sync(); this.draw(); }
     }
@@ -228,15 +242,6 @@
         m.material.roughness = lesson ? .45 : .72;
         this.meshCells.set(c.id, m);
         const snakes = this.kind === 'snakes';
-        const l = this.label(c.label, snakes ? .8 : 1.65, snakes ? .5 : .68, '#fffdf5');
-        l.position.copy(p); l.position.y = .46; l.position.z -= snakes ? .5 : .65; this.root.add(l);
-        if (c.detail) {
-          // 特殊格說明畫在數字之上（renderOrder 較高），並依種類上色，避免被下一排的數字蓋住
-          const text = c.detail.replace(/\s/g, '').replace('梯→', '梯↑').replace('蛇→', '蛇↓');
-          const bg = /蛇/.test(text) ? '#2f8a4c' : /梯/.test(text) ? '#8a5a2b' : '#d99523';
-          const s = this.label(text, 1.3, .42, bg, '#ffffff'); s.renderOrder = 6;
-          s.position.copy(p); s.position.y = .5; s.position.z += .42; this.root.add(s);
-        }
         if (this.kind === 'monopoly' && !lesson && c.label !== '綜合複習') this.specialProp(c, p);
       });
       if (this.kind === 'monopoly') {
@@ -368,19 +373,49 @@
         if (t === 1) g.position.copy(target);
       });
     }
+    layoutBoardLabels() {
+      if (!this.active || !this.domLabels || !this.camera) return;
+      const key = [this.host.clientWidth, this.host.clientHeight, this.projection, ...this.tokens, ...this.owners, ...(this.domSteps || [])].join('|');
+      if (this.boardLabelKey === key) return; this.boardLabelKey = key;
+      const positions = this.cells.map((c) => {
+        const v = this.cellPosition(c.id); v.y = .55; v.z -= .5; v.project(this.camera);
+        const { box, state } = this.domCells.get(c.id);
+        const teams = [...this.tokens].filter(([, cell]) => cell === c.id).map(([i]) => `${i + 1}隊`);
+        state.textContent = [this.owners.has(c.id) ? `屋：${this.owners.get(c.id) + 1}隊` : '', teams.join(' '), this.domSteps?.get(c.id) || ''].filter(Boolean).join('・');
+        return { box, x: (v.x + 1) * this.host.clientWidth / 2, y: (1 - v.y) * this.host.clientHeight / 2 };
+      });
+      // 實際矩形避碰；只在尺寸／狀態改變時測量，不在動畫逐幀強制排版。
+      positions.forEach((p) => { p.w = p.box.offsetWidth; p.h = p.box.offsetHeight; });
+      const placed = [], width = this.host.clientWidth, height = this.host.clientHeight;
+      positions.sort((a, b) => a.y - b.y).forEach((p) => {
+        let best, cost = Infinity;
+        const xs = new Set([4, width - p.w - 4, Math.max(4, Math.min(width - p.w - 4, p.x - p.w / 2))]);
+        const ys = new Set([4, height - p.h - 4, Math.max(4, Math.min(height - p.h - 4, p.y - p.h / 2))]);
+        placed.forEach((r) => { xs.add(r.x + r.w + 4); xs.add(r.x - p.w - 4); ys.add(r.y + r.h + 4); ys.add(r.y - p.h - 4); });
+        for (const y of ys) for (const x of xs) {
+          if (x < 4 || y < 4 || x + p.w > width - 4 || y + p.h > height - 4) continue;
+          const d = (x + p.w / 2 - p.x) ** 2 + (y + p.h / 2 - p.y) ** 2;
+          if (d >= cost || placed.some((r) => x < r.x + r.w + 4 && x + p.w + 4 > r.x && y < r.y + r.h + 4 && y + p.h + 4 > r.y)) continue;
+          cost = d; best = { x, y, w: p.w, h: p.h };
+        }
+        p.rect = best || { x: Math.max(4, Math.min(width - p.w - 4, p.x - p.w / 2)), y: Math.max(4, Math.min(height - p.h - 4, p.y - p.h / 2)), w: p.w, h: p.h };
+        placed.push(p.rect);
+      });
+      positions.forEach((p) => { p.box.style.left = `${p.rect.x}px`; p.box.style.top = `${p.rect.y}px`; });
+    }
     // 逐格足跡：走過的格子鋪上隊伍色，頭上浮出步數 1、2、3…，讓學生看見「骰幾點就走幾格」
     stepMark(i, cell, n) {
+      this.domSteps ||= new Map(); this.domSteps.set(cell, `${n}步`);
       if (!this.active) return;
       const colors = ['#c0362c', '#1f5fa8', '#1f7a43', '#6b3fb0'];
       this.stepMarks = this.stepMarks || [];
       const p = this.cellPosition(cell);
-      const disc = this.mesh(new THREE.CylinderGeometry(.66, .66, .05, 32), colors[i % 4]);
-      disc.material.transparent = true; disc.material.opacity = .62; disc.position.copy(p); disc.position.y = .32;
-      const l = this.label(String(n), .5, .5, colors[i % 4], '#ffffff'); l.renderOrder = 8;
-      l.position.copy(p); l.position.y = .62; l.position.z += .5; l.position.x += .45; this.root.add(l);
-      this.stepMarks.push(disc, l); this.draw();
+      const disc = this.mesh(new THREE.TorusGeometry(.72, .025, 6, 32), colors[i % 4]);
+      disc.rotation.x = Math.PI / 2; disc.material.transparent = true; disc.material.opacity = .62; disc.position.copy(p); disc.position.y = .32;
+      this.stepMarks.push(disc); this.draw();
     }
     clearMarks() {
+      this.domSteps?.clear(); this.layoutBoardLabels();
       if (!this.stepMarks) return;
       this.stepMarks.forEach((m) => { m.parent?.remove(m); m.geometry?.dispose?.(); m.material?.map?.dispose?.(); m.material?.dispose?.(); });
       this.labels = this.labels.filter((l) => !this.stepMarks.includes(l));
@@ -650,6 +685,7 @@
         this.frame = 0;
         try {
           for (const [key, a] of this.tweens) { const t = Math.min(1, Math.max(0, (now - a.start) / a.duration)); a.update(t); if (t === 1) { this.tweens.delete(key); a.resolve(); } }
+          this.layoutBoardLabels();
           if (this.composer) {
             try { this.renderEffects(); } catch (_) { this.disposeEffects(); this.renderer.setRenderTarget(null); this.renderer.render(this.scene, this.camera); }
           } else this.renderer.render(this.scene, this.camera);
@@ -664,7 +700,7 @@
       this.disposeEffects();
       if (this.renderer) { this.renderer.dispose(); this.renderer.forceContextLoss(); }
       if (this.feedbackLayer) this.feedbackLayer.remove();
-      this.surface.remove(); instances.delete(this);
+      this.domLabels?.remove(); this.surface.remove(); instances.delete(this);
     }
   }
   window.RG3D = { mount: (options) => {

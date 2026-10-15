@@ -83,3 +83,19 @@ body.proj .dt-mark { font-size: 1.05rem; }
   .dt-mark[data-state="next"] .dt-lab { display: inline; }
   .dt-room { min-height: 340px; height: 56vh; }
 }
+
+/* 編號與文字清單共用身份；碰撞排版以實際按鈕尺寸計算。 */
+.dt-mark, .dt-3d .dt-mark { transform: none; min-width: 48px; min-height: 48px; padding: 4px 8px; font-size: 18px; }
+.dt-mark::before { content: attr(data-number); font-weight: 900; }
+.dt-mark .dt-ico, .dt-mark .dt-lab, .dt-mark .dt-st { display: none; }
+.dt-mark.dt-target .dt-lab { display: inline; }
+.dt-mark.dt-target { max-width: calc(100% - 24px); white-space: normal; }
+.dt-mark[data-state='done']::after, .dt-mark[data-state='found']::after { content: '✓'; }
+.dt-mark[data-state='locked']::after { content: '🔒'; }
+.dt-side { min-width: 0; }
+.dt-list button { overflow-wrap: anywhere; }
+.dt-room .dt-status { pointer-events: none; }
+.dt-status { max-width: calc(100% - 20px); font-size: 18px; }
+/* 覆蓋舊手機版「所有 next 都展開」規則，只展開當前機關。 */
+.dt-room .dt-mark:not(.dt-target) .dt-lab { display: none; }
+.dt-room .dt-mark.dt-target .dt-lab { display: inline; }

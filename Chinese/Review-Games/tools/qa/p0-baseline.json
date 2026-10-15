@@ -1,0 +1,64 @@
+{
+  "beforeSHA256": {
+    "monopoly.html": "cb89fbcf3351c30c64de0077cc2bbc4acb1b22680de6cbdcdd1dedfa0b5197c2",
+    "snakes.html": "29e29fb7369d0999f136ebc22ae8aab9f999bdf8b5d6636a0bd6c621f50857fb",
+    "dobble.html": "6ad2cd251f1dc0e87d4b5e4865a358fc0c6774a7168f44f2399514b47f8eee28",
+    "bingo.html": "9cf9f01ee528d3c672ed6cb898a2b667305e66b1880c4d27fa7e194af3b72367",
+    "detective.js": "62a18f5b5d436468d4c7bfdb966b50f76613f193c3c9b2e379b9f5de008a1ed7",
+    "detective-core.js": "c259cd0d32bfbb7a65f693a0446398b35e6ccdd488c00519d9364923c832619c"
+  },
+  "seed": 271828,
+  "dice": [
+    1,
+    1,
+    6,
+    6,
+    2,
+    3,
+    4,
+    5
+  ],
+  "sameCellTeams": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "snakeHeads": [
+    13,
+    21,
+    25,
+    29
+  ],
+  "slideModes": [
+    3,
+    99
+  ],
+  "dobbleWords": [
+    4,
+    6,
+    8
+  ],
+  "bingoSides": [
+    3,
+    4,
+    5
+  ],
+  "detective": [
+    "last-clue",
+    "final-door"
+  ],
+  "timer": 0,
+  "dataSHA256": {
+    "data/G1A.js": "15fd1e1e0b36894c3ec8189a3c711b365e51460dc7406b9aac5ef8d3f8349192",
+    "data/G2A.js": "40fc4bb21e3ed692903e966f7478b514e54f5b2090c083f71192f63a490f3c25",
+    "data/G3A.js": "d2ae88a9cc601c49e39b18a02c66e65324d45fc883b15970cec89f2a12041817",
+    "data/G4A.js": "2c90251e29aed022f09bf12a1ca055918f3e101f54d47c3a792def2cdabfd668",
+    "data/G6A.js": "3a138351889f4fa40cedd20574c06cd60f0a266103f53bad7dbb5d8cdbd961cc",
+    "data/detective-G1A.js": "e31325254e1a7b257033c92fc70e9a8a2e03b72c58840baa0356bc19c0b5db37",
+    "data/detective-G2A.js": "b7761fdafaa6d1b2e64d3c7856789b1da7fbb6336435fc4b5757deaea96f1ca5",
+    "data/detective-G3A.js": "0b1fac4994b7c71160c4ba6b4294059e45604ef37ec1a9aaafb5407a2eb7348e",
+    "data/detective-G4A.js": "1fd5b49c048e2cc4c0e8ab54530da3b679e21672a5d46b01767bb2ff53433ea5",
+    "data/detective-G6A.js": "450a94948bb5c262dec9da2b8bb4fdc37c38c792e58ecadfee45281dfafc8c49"
+  }
+}
