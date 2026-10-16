@@ -283,3 +283,42 @@ body.proj .rg3d-cell-name { font-size: 22px; }
 .die3d.rg3d-result .cube { display: none; }
 .die3d.rg3d-result::after { content: attr(aria-label); display: block; padding: 8px 14px; border: 1px solid #bca081; border-radius: 12px; background: #fff8ec; color: #3c2819; font-size: 22px; font-weight: 900; }
 .rg3d-cell-number { position: absolute; font-size: 22px; font-weight: 800; line-height: 1; color: #382416; text-shadow: 0 1px #fff1d9; }
+
+/* T16: one quiet reading workshop; environment never intercepts a game action. */
+.rg3d-tools { display: block; width: fit-content; max-width: 100%; padding: 0 12px; margin: 0 0 8px auto; border: 1px solid #cdbba6; border-radius: 10px; background: #fffaf3; }
+.rg3d-tools summary { cursor: pointer; min-height: 48px; align-content: center; font-size: 18px; font-weight: 700; }
+.rg3d-tools[open] { padding-bottom: 8px; }
+.rg3d-tools .rg3d-status { display: block; }
+.rg3d-tools .rg3d-switch { margin-right: 16px; }
+.rg3d-mission { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; color: #503b2b; font-size: 20px; font-weight: 700; padding: 8px 4px; }
+.rg3d-skip { min-height: 48px; padding: 4px 14px; border: 1px solid #907456; border-radius: 10px; background: #fff9ef; color: #493522; font: inherit; cursor: pointer; }
+.rg3d-host { isolation: isolate; }
+.rg3d-workshop { position: absolute; inset: 0; overflow: hidden; border-radius: 24px; pointer-events: none; z-index: -1; background: radial-gradient(ellipse at 16% 12%, #fff4d9 0, #f0e1c8 22%, transparent 55%), linear-gradient(170deg, #c4d0d1, #e8dfcd 35%, #cfb28d 63%, #a88766); }
+.rg3d-host > .rg3d-surface { position: relative; z-index: 0; background: transparent; }
+.rg3d-dobble.is-3d > .rg3d-surface, .rg3d-bingo.is-3d > .rg3d-surface { position: absolute; background: transparent; }
+.rg3d-window { position: absolute; top: 2%; left: 4%; width: 20%; height: 17%; opacity: .3; border: 6px solid #f9efdb; background: linear-gradient(90deg, transparent 47%, #f9efdb 48% 52%, transparent 53%), linear-gradient(0deg, transparent 45%, #f9efdb 46% 52%, transparent 53%), #d6e6e7; box-shadow: 25px 26px 45px #fff5d080; transform: skewY(-6deg); }
+.rg3d-books { position: absolute; right: 2%; top: 5%; width: 14%; height: 4%; border-radius: 3px; background: #958b78; border-bottom: 8px solid #e9ddc5; box-shadow: 4px 10px 0 #a6afb1, 1px 17px 0 #dfd1b6, 5px 22px 8px #5c493322; transform: rotate(7deg); opacity: .65; }
+.rg3d-lamp { position: absolute; right: -4%; bottom: 2%; width: 16%; height: 30%; border-right: 5px solid #8b806c; border-radius: 50%; background: radial-gradient(ellipse at 50% 25%, #ffebbb75, transparent 70%); opacity: .6; }
+.rg3d-lamp::before { content: ''; position: absolute; top: 0; left: 8%; width: 70%; height: 26%; border-radius: 50% 50% 10% 10%; background: #9a9c8b; box-shadow: 0 16px 30px #ffe8af70; }
+.rg3d-cell-step { position: absolute; font-size: 18px; line-height: 1; font-weight: 900; color: #402a16; background: #fff1c9; border: 1px solid #9c7539; border-radius: 4px; padding: 1px 3px; transform: translate(-50%, -50%); }
+.rg3d-cell-step:empty { display: none; }
+/* Rotate the physical DOM card as a whole, so its word slots and paper stay together. */
+.rg3d-dobble.is-3d .card { transform: rotate(-.7deg); }
+.rg3d-dobble.is-3d .card.b { transform: rotate(.7deg); }
+.rg3d-dobble.is-3d .card .disc { border: 3px solid #c98043 !important; background: repeating-linear-gradient(0deg, #fff8e9 0 3px, #fcf3e3 3px 4px); box-shadow: 0 3px 0 #e6d7bd, 0 6px 0 #c98043, 2px 12px 15px #51372238; }
+.rg3d-dobble.is-3d .card.b .disc { border-color: #73abc2 !important; box-shadow: 0 3px 0 #e6ded0, 0 6px 0 #73abc2, 2px 12px 15px #51372238; }
+.rg3d-keepsake { position: relative; z-index: 3; width: fit-content; max-width: 100%; margin: 16px auto; padding: 14px 18px 14px 76px; min-height: 70px; color: #49321e; background: #fff3d7; border: 2px solid #ac8951; border-radius: 10px; font-size: 20px; font-weight: 800; box-shadow: 0 5px 0 #b89a70, 0 10px 18px #53382225; }
+.rg3d-keepsake[hidden], .rg3d-skip[hidden] { display: none; }
+.rg3d-keepsake::before { content: ''; position: absolute; left: 15px; top: 14px; width: 42px; height: 36px; }
+.rg3d-keepsake-monopoly::before { background: linear-gradient(90deg, transparent 22%, #ffdc78 23% 43%, transparent 44% 58%, #ffdc78 59% 79%, transparent 80%), #a97848; border-top: 9px solid #79553b; box-shadow: 0 0 16px #e9b34e55; border-radius: 7px 7px 2px 2px; }
+.rg3d-keepsake-snakes::before { border-left: 4px solid #6c5b43; background: linear-gradient(150deg, #b66132 0 45%, transparent 46%); }
+.rg3d-keepsake-dobble::before { border: 3px solid #8c603b; border-radius: 4px; background: repeating-linear-gradient(0deg, #ead8b5 0 5px, #fff3db 6px 8px); box-shadow: 0 5px 0 #a97946; transform: rotate(-5deg); }
+.rg3d-keepsake-bingo::before { content: '✓'; border: 3px double #85603a; border-radius: 50%; color: #77522f; text-align: center; font-size: 28px; line-height: 34px; transform: rotate(-12deg); }
+@keyframes rg3d-desk-entry { from { transform: translateY(6px) scale(.97); } to { transform: none; } }
+.rg3d-enter { animation: rg3d-desk-entry 450ms ease-out both; transform-origin: center; }
+body.calm .rg3d-enter { animation: none; }
+@media (prefers-reduced-motion: reduce) { .rg3d-enter { animation: none; } }
+.stage.rg3d-completed { flex-wrap: wrap; }
+.stage.rg3d-completed > .rg3d-keepsake { flex: 0 1 100%; }
+/* 畫布填滿外框寬度（高度上限造成的 aspect-ratio 縮寬會露出外框底色） */
+.rg3d-monopoly.is-3d > .rg3d-surface, .rg3d-snakes.is-3d > .rg3d-surface { width: 100%; aspect-ratio: auto; height: clamp(490px, 72vh, 680px); }

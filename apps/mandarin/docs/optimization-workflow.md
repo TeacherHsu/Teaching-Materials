@@ -241,6 +241,8 @@ python3 Chinese/Review-Games/tools/check_data.py   # 全部 ✅ 才算過
 
 - 2026-10-16 補（視覺與動態審查）：3D 取景改為雙向逼近，棋盤約佔畫面九成（原本只會拉遠、四周留大片空桌）；足跡步數移到格子右下角，不蓋課名；大富翁中央加羅盤刻度、書堆、羽毛筆；買地、賓果答對格會噴一次彩紙（約 0.9 秒、不循環，減少動態時不出現）。密室加牆上主題名牌、窗戶光束、找到線索紙卡飛起、機關解開與逃出彩紙、完成的物件改綠色靜態光圈。改 scene3d／common 後把各 HTML 的 `?v=` 加 1（避免快取舊檔）；無頭截圖前刪 `$TMPDIR/rg-cdp-profile`。
 
+- 2026-10-17 補（CF 指定跑酷級視覺）：依 Codex 嚴格審查 `Chinese/Review-Games/codex/VISUAL-REVIEW.md`（18 項任務）分四批重整，實作紀錄 `codex/IMPL-LOG.md`。重點規則：棋盤格號／課名／方向／步數是**可見 DOM**（不只畫在 3D 材質）；蛇的圖形與「最多退 3 格」實際落點一致；閱讀時場景靜止、不可有循環脈動；入場鏡頭 ≤1.2 秒可略過、減少動態直接到位；回饋粒子只在成功物件局部一次。改 3D 時驗收用 `tools/qa/p0-fixture.js`（網址參數見 IMPL-LOG）。Codex 沙盒無法啟動 Chrome，截圖驗收由 Claude 做。
+
 ### 課文偵探密室（第六款，2026-10-16 加入）
 
 - 檔案：`detective.html`（頁面）、`detective.js`（流程與介面）、`detective-core.js`（純邏輯：組局、檢查答案、解鎖、提示、紀錄）、`detective3d.js`（Three.js r128 房間；減少動態／WebGL 失敗改 2D 平面圖）、`detective.css`。網址 `detective.html?g=G1A`。

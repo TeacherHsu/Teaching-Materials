@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>語文蛇梯棋</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="common.css?v=4">
+  <link rel="stylesheet" href="common.css?v=6">
   <style>
     .play { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 16px; align-items: start; }
     @media (max-width: 860px) { .play { grid-template-columns: 1fr; } }
@@ -30,7 +30,7 @@
 <body>
   <main class="wrap" id="app"><p>載入中…</p></main>
   <script src="common.js?v=2"></script>
-  <script src="scene3d.js?v=4"></script>
+  <script src="scene3d.js?v=5"></script>
   <script>
     const { die3d, h, speak, sleep, loadBank, setupPanel, makeDeck, ask, header, token, statsLine, stats, TEAM_COLORS, TEAM_NAMES } = RG;
     const GOAL = 30;
@@ -164,6 +164,7 @@
           render();
           const timeUp = cap && turn === players.length - 1 && roundNo >= cap;
           if (p.at >= GOAL || timeUp) {
+            view?.presentFinish();
             const best = Math.max(...players.map((x) => x.at));
             say(p.at >= GOAL ? `🏆 ${p.name}抵達終點！` : `回合結束！走最遠的是${players.filter((x) => x.at === best).map((x) => x.name).join('和')}。`);
             side.append(h('div', { class: 'where', style: 'font-weight:800' }, `📒 學習紀錄：${statsLine()}`),

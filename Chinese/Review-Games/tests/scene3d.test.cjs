@@ -208,3 +208,28 @@ test('美術視圖不呼叫遊戲的 Math.random', () => {
     assert.doesNotMatch(code, /Math\.random\s*\(/, file);
   }
 });
+
+test('T16：四款 2D 降級仍保留任務與完成物件，重複完成不改棋子狀態', () => {
+  for (const kind of ['monopoly', 'snakes', 'dobble', 'bingo']) {
+    const e = environment({ calm: true, three: false });
+    const v = e.mount({ kind });
+    v.tokens.set(0, 5); v.presentFinish(); v.presentFinish();
+    assert.equal(v.completed, true); assert.equal(v.keepsake.hidden, false);
+    assert.ok(v.keepsake.textContent.length > 0);
+    assert.ok(v.mission.children[0].textContent.length > 0);
+    assert.equal(v.tokens.get(0), 5); assert.equal(e.scripts.length, 0);
+    v.dispose();
+  }
+});
+
+test('T16：overlay 入場限 450ms，略過立即到位且不重播', async () => {
+  const e = environment(); const v = e.mount({ kind: 'dobble' });
+  drawingSubstitute(v); await settle();
+  v.camera = {}; v.width = 800; v.presentIntro();
+  assert.equal(v.tweens.get('intro').duration, 450);
+  assert.equal(v.skipIntro.hidden, false);
+  v.cancelIntro();
+  assert.equal(v.tweens.size, 0); assert.equal(v.skipIntro.hidden, true);
+  assert.equal(v.host.classList.contains('rg3d-enter'), false);
+  v.presentIntro(); assert.equal(v.tweens.size, 0); v.dispose();
+});

@@ -56,11 +56,17 @@ test('背景頁完成補間，返回只要求目前狀態的一幀', () => {
 test('密室 15 個標記：390／768／1024／1366、左右 yaw，矩形間隔至少 8px 且不越界', () => {
   for (const width of [390, 768, 1024, 1366]) for (const yaw of [-.45, 0, .45]) {
     const { room: r } = roomEnv();
-    r.host.clientWidth = width; r.yaw = yaw; r.is3d = true; r.camera = {}; r.group = { matrixWorld: {} };
-    r.items = Array.from({ length: 15 }, (_, i) => ({ kind: i < 8 ? 'holder' : 'dial', state: i === 8 ? 'next' : 'open', pos: [(i % 5 - 2) * 2 + yaw, Math.floor(i / 5), 1], g: [50, 50], btn: { classList: { toggle() {} }, offsetWidth: i === 8 ? 200 : 64, offsetHeight: 48, style: {} } }));
+    r.host.clientWidth = width; r.yaw = yaw; r.is3d = true; r.camera = { updateMatrixWorld() {}, position: { toArray: () => [] } }; r.group = { matrixWorld: {}, updateMatrixWorld() {} };
+    r.items = Array.from({ length: 15 }, (_, i) => ({ kind: i < 8 ? 'holder' : 'dial', state: i === 8 ? 'next' : 'open', pos: [(i % 5 - 2) * 2 + yaw, Math.floor(i / 5), 1], g: [50, 50], btn: { dot: false, classList: { toggle() {}, remove() { this.owner.dot=false; }, add() { this.owner.dot=true; } }, offsetWidth: i === 8 ? 200 : 64, offsetHeight: 48, style: {} } }));
+    r.items.forEach(it => { it.btn.classList.owner=it.btn; });
     r.layoutMarkers();
-    const rects = r.items.map(it => ({ x: parseFloat(it.btn.style.left), y: parseFloat(it.btn.style.top), w: it.btn.offsetWidth, h: it.btn.offsetHeight }));
-    for (const a of rects) { assert.ok(a.x >= 12 && a.y >= 12 && a.x + a.w <= width - 12 && a.y + a.h <= 460); }
+    for (const it of r.items.filter(it => it.btn.dot)) {
+      const x=(it.pos[0]/8+1)*width/2, y=(1-it.pos[1]/5)*472/2;
+      assert.ok(Math.abs(parseFloat(it.btn.style.left)+10-x)<=14);
+      assert.ok(Math.abs(parseFloat(it.btn.style.top)+10-y)<=14);
+    }
+    const rects = r.items.filter(it => !it.btn.dot).map(it => ({ x: parseFloat(it.btn.style.left), y: parseFloat(it.btn.style.top), w: it.btn.offsetWidth, h: it.btn.offsetHeight }));
+    for (const a of rects) { assert.ok(a.x >= 8 && a.y >= 8 && a.x + a.w <= width - 8 && a.y + a.h <= 460); }
     rects.forEach((a, i) => rects.slice(i + 1).forEach(b => assert.ok(a.x + a.w + 8 <= b.x || b.x + b.w + 8 <= a.x || a.y + a.h + 8 <= b.y || b.y + b.h + 8 <= a.y)));
   }
 });
@@ -85,4 +91,18 @@ test('全部題庫產物與基線 SHA256 相同', () => {
   const crypto = require('node:crypto');
   const b = JSON.parse(fs.readFileSync(path.join(root, 'tools/qa/p0-baseline.json')));
   for (const [file, hash] of Object.entries(b.dataSHA256)) assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root, file))).digest('hex'), hash, file);
+});
+test('密室 snapshot 在重建模型後還原箱門、抽屜、布告欄、齒輪與出口', () => {
+  const { room: r } = roomEnv(); r.kick=()=>{};
+  r.items=[{kind:'holder',idx:1,id:'drawer'}];
+  const models=()=>{ r.group={}; r.safeDoor={rotation:{}}; r.drawer={position:{}}; r.boardCards=[{rotation:{},position:{}}]; r.gears=[{rotation:{}}]; r.door={rotation:{}}; r.exitLight={material:{}}; };
+  const snapshot={done:['dial','sort','cause'],found:['drawer'],escaped:true};
+  r.applyVisualState(snapshot); // WebGL 還沒回來時先保存
+  for(let i=0;i<2;i++) {
+    models(); r.applyVisualState();
+    assert.equal(r.safeDoor.rotation.y,-1.3); assert.equal(r.drawer.position.z,.5);
+    assert.equal(r.boardCards[0].rotation.z,0); assert.equal(r.gears[0].rotation.x,8);
+    assert.equal(r.door.rotation.y,-1.5); assert.equal(r.exitLight.material.opacity,.35);
+  }
+  assert.deepEqual(snapshot,{done:['dial','sort','cause'],found:['drawer'],escaped:true});
 });

@@ -82,3 +82,42 @@
 ### 尚未簽收／偏離
 
 沒有新產出的 `/tmp/rg-shots/after-*.png`，未宣稱看過修改後畫面；只檢視了使用者提供的 b1-snakes／b1-monopoly。格面覆蓋、相機構圖、蛇梯避數字、配對線避字、角標避長詞等均待 Claude 實際截圖。薄卡／薄格新增 .02 單段倒角，幾何對位仍待實際截圖；投影格牌 22px（依本批密集棋盤要求）；特殊移動保留 1400ms。資源重用已改善牌面／木紋／賓果格，但未建立全場共享幾何池；實機資源預算與效能未量測、密室輕量接觸陰影與靜態家具合併未做。T08–T13 不標為完整視覺驗收完成，詳見 VISUAL-REVIEW 附錄。
+
+## 2026-10-16｜Codex｜視覺第 3 批 T14／T15／T17
+
+- 修改 detective.html、detective.js、detective3d.js、detective.css、tests/p0-visual.test.cjs；報告附錄記錄格式變更與偏離。未執行 git，未改棋盤、核心、題庫、build 工具或 repo 根目錄交接。
+- 同局 room 保留、唯讀快照還原、解題關窗後演出、出口兩條路共用 guard 與一次紀錄、離開取消 timer。鏡頭矩陣先更新再投影，取景按房間角點與長寬比計算；標記只就近搜尋，放不下保留編號小圓點＋DOM 清單。
+- 可略過窗外推入；400ms 紙卡飛入筆記本；700ms 開門與漸亮地面光；無新增循環動畫。抽屜只對抽屜物件動作。書櫃、六色批次書本、抽屜把手、保險箱內部、窗框、相框、植物葉片；教室黑板、圖書館書車、森林松果籃與木箱、實驗器材、博物館展示座、書房桌上書。
+- 檢查：node --check detective.js、detective3d.js、tests/p0-visual.test.cjs 通過；detective.html 無 inline JS（已抽取檢查）；node --test tests/*.cjs：45/45 通過；python3 tools/check_data.py：五年級全 ✅。HTML 三個改動引用版本各 +1。
+- 截圖：依派工沙盒限制未啟動 Chrome，沒有產出或檢視截圖；以下請 Claude 執行，輸出 /tmp/rg-shots/after-det-*.png。qaRoom 僅 localhost／127.0.0.1 生效，需按「開始偵探任務」與「進入密室」；qaWidth 由既有 cdp.mjs 設定視窗。
+- 網址（共同前綴 http://localhost:5191/Chinese/Review-Games/detective.html?g=G3A）：
+  - &qaRoom=study&qaWidth=390&qaHeight=844：開場／略過後標記須貼近物件，不能整批堆左下；清單全部可用。
+  - &qaRoom=study&qaWidth=1366&qaHeight=900：預設及左右拖曳極限、書脊外露、抽屜把手同步、方向窗光。
+  - &qaRoom=classroom&qaWidth=768&qaHeight=1024：黑板與窗框；直向取景。
+  - &qaRoom=library&qaWidth=1024&qaHeight=768：書車、閱讀區；橫向取景。
+  - &qaRoom=forest&qaWidth=390&qaHeight=844：松果籃不能仍是地球儀、葉片與小圓點。
+  - &qaRoom=lab&qaWidth=1366&qaHeight=900：器材架與三組容器。
+  - &qaRoom=museum&qaWidth=1366&qaHeight=900：展示座與金色展品。
+- 每主題檢查：開場略過、idle 10 秒無循環動畫；收線索紙卡飛往筆記本；解保險箱後繼續／筆記本／2D→3D 仍開著；布告欄排整齊、齒輪停完成位置；最後題按開門及關窗後再次點出口均先開門照光再到成果；中途回設定／重開不得被舊 timer 蓋頁；calm／WebGL 失敗可完整玩。
+- 未完成：未量測 draw calls／實機 FPS，未視覺驗收；柔邊光束、程序接觸陰影及 keys／blocks／compare 完成模型已補上，仍需 Claude 實際看圖；詳 VISUAL-REVIEW 附錄。不得將本批視為全部視覺驗收通過。
+
+## 2026-10-16｜視覺重整第 4 批：T16＋四棋盤情境（Codex）
+
+- 範圍：`scene3d.js`、`common.css`、`monopoly.html`、`snakes.html`、`dobble.html`、`bingo.html`、`tests/scene3d.test.cjs`、本紀錄與 `VISUAL-REVIEW.md` 附錄。未執行 git，未改 detective*、common.js、題庫、出題／計分／學習紀錄或遊戲亂數。
+- 四款 DOM 任務短句、450ms 單次入場、略過按鈕／pointerdown／keydown 取消；大富翁與蛇梯使用距離變化 4% 鏡頭，overlay 兩款整體桌面移入以保留字卡對位。減少動態直接到位並保留 2D 保底。
+- 靜態工作室中遠景：窗格／窗光、書堆、檯燈、漸層背景，實體桌面縮為 15×15 顯露桌緣；無循環環境動畫。
+- 完成：大富翁亮窗書屋、蛇梯 360ms 升旗；DOM 實體造型標記留下書屋亮燈／旅程旗／整理卡盒／收藏蓋章，包含 2D 降級。哆寶雙人兩邊均接線；賓果達標與結束均保留完成章。
+- 哆寶紙卡加厚、接觸陰影、紙紋、暖橘／天藍邊與 ±.7° 全卡傾斜；文字仍為 DOM 按鈕。步數移到近端獨立錨點。畫面設定改可鍵盤展開的 details，移除大型 3D 宣告。
+- 驗證：`node --check scene3d.js`、`node --check tests/scene3d.test.cjs`、四份 HTML inline script 抽至 `/tmp/rg-b4-*.js` 後 `node --check` 全通過；`node --test Chinese/Review-Games/tests/*.cjs` 47/47 pass；`python3 Chinese/Review-Games/tools/check_data.py` 五年級全 ✅。新增測試驗證四款 2D 任務／完成保留、450ms 入場可取消且不重播；未改既有斷言。
+- 截圖：本批未啟動 Chrome、未產生或檢視截圖（依派工交 Claude），以下皆為**請求輸出路徑，尚不存在本批驗收證據**。
+
+請 Claude 使用 `http://localhost:5191/Chinese/Review-Games/` 以下網址，開始遊戲後截圖：
+
+| URL（接上上述根網址） | 請輸出 | 重點 |
+|---|---|---|
+| `monopoly.html?g=G6A` | `/tmp/rg-shots/after-monopoly.png`、`after-monopoly-finish.png` | 入場 ≤450ms／略過與按擲骰可取消；第 5 格「1步」不碰課名；桌緣及窗光；結尾書屋亮窗常駐 |
+| `snakes.html?g=G6A` | `/tmp/rg-shots/after-snakes.png`、`after-snakes-finish.png` | 入場取消；數字與步數分區；自然到終點與回合上限兩種結束升旗，文字不誤稱到終點 |
+| `dobble.html?g=G6A` | `/tmp/rg-shots/after-dobble.png`、`after-dobble-finish.png` | 左橘右藍、紙層／陰影；DOM 與卡對位；單人與雙人並排／面對面；結尾卡盒，無第三欄擠壓 |
+| `bingo.html?g=G6A` | `/tmp/rg-shots/after-bingo.png`、`after-bingo-finish.png` | 任務不擠原題目欄；收藏盤周圍低對比情境；達標後與繼續收集保留完成章 |
+
+另請測 1366×900、1024px、390px、投影、系統 reduce、畫面設定 calm、WebGL/CDN 失敗；確認 2D 任務／完成物件、設定入口鍵盤可用，讀題期間鏡頭固定。瀏覽器未測，尤其整卡傾斜後的配對連線與 resize 對位、桌緣取景及 DOM 字碰撞仍待 Claude 判讀。偏離報告與快取版本範圍例外詳見 VISUAL-REVIEW.md 第 4 批附錄。未 commit／push，依本批「不要跑任何 git」指示。

@@ -39,7 +39,8 @@
   }
   function controls() {
     if (toolbar && toolbar.isConnected) return;
-    toolbar = el('div', 'rg3d-tools'); toolbar.setAttribute('aria-label', '畫面設定');
+    toolbar = el('details', 'rg3d-tools');
+    toolbar.append(el('summary', '', '畫面設定')); toolbar.setAttribute('aria-label', '畫面設定');
     const status = el('span', 'rg3d-status', '正在準備立體視圖，已可開始操作'); status.setAttribute('role', 'status');
     toolbar.append(status);
     [['calm', '減少動態'], ['proj', '投影模式']].forEach(([key, text]) => {
@@ -80,15 +81,77 @@
           const name = el('span', 'rg3d-cell-name'); name.textContent = `${this.kind === 'monopoly' ? c.label : c.id}`;
           const detail = el('span', 'rg3d-cell-detail'); detail.textContent = c.detail || '';
           const state = el('span', 'rg3d-cell-state');
+          const step = el('span', 'rg3d-cell-step'); this.domLabels.append(step);
           const direction = el('span', 'rg3d-cell-direction', c.direction || '');
-          box.append(name, direction, detail, state); this.domLabels.append(box); this.domCells.set(c.id, { box, state });
+          box.append(name, direction, detail, state); this.domLabels.append(box); this.domCells.set(c.id, { box, state, step });
           if (this.kind === 'monopoly') { const number = el('span', 'rg3d-cell-number', String(c.id)); this.domLabels.append(number); this.domCells.get(c.id).number = number; }
         });
         this.host.append(this.domLabels);
       }
+      this.mission = el('div', 'rg3d-mission');
+      this.mission.append(el('span', '', ({ monopoly: '走訪課次站，答題收集學習章。', snakes: '沿閱讀小徑前進，一起走向終點。', dobble: '找出相同語詞，把閱讀卡整理成一盒。', bingo: '讀懂意思，把語詞收進收藏盤。' })[this.kind]));
+      this.skipIntro = el('button', 'rg3d-skip', '略過入場'); this.skipIntro.type = 'button'; this.skipIntro.hidden = true;
+      this.skipIntro.addEventListener('click', () => this.cancelIntro()); this.mission.append(this.skipIntro);
+      (this.host.closest?.('.play') || this.host.closest?.('.bingo-layout') || this.host).before?.(this.mission);
+      this.workshop = el('div', 'rg3d-workshop'); this.workshop.setAttribute('aria-hidden', 'true');
+      this.workshop.append(el('i', 'rg3d-window'), el('i', 'rg3d-books'), el('i', 'rg3d-lamp'));
+      this.host.prepend(this.workshop);
+      this.keepsake = el('div', `rg3d-keepsake rg3d-keepsake-${this.kind}`); this.keepsake.hidden = true;
+      this.host.append(this.keepsake);
+      this.host.addEventListener('pointerdown', () => this.cancelIntro());
+      this.host.addEventListener('keydown', () => this.cancelIntro());
       controls(); instances.add(this);
       this.resizeObserver = new ResizeObserver(() => { if (this.active) { try { this.resize(); } catch (_) { this.failed = '立體視圖無法使用'; this.mode(false); } } }); this.resizeObserver.observe(this.host);
       this.refresh();
+    }
+    cancelIntro() {
+      const a = this.tweens.get('intro');
+      if (a) { a.update(1); a.resolve(); this.tweens.delete('intro'); }
+      if (this.skipIntro) this.skipIntro.hidden = true;
+      this.introDone = true;
+    }
+    presentIntro() {
+      if (this.introDone || !this.camera || !this.width) return;
+      this.introDone = true;
+      if (isCalm() || this.overlay) {
+        // Overlay cards must keep their DOM projection fixed. Move the complete desk together.
+        if (!isCalm()) { this.host.classList.add('rg3d-enter'); this.skipIntro.hidden = false;
+          this.tween('intro', 450, (t) => { if (t === 1) { this.host.classList.remove('rg3d-enter'); this.skipIntro.hidden = true; } }); }
+        return;
+      }
+      const end = this.camera.position.clone(); this.skipIntro.hidden = false;
+      this.tween('intro', 450, (t) => {
+        const k = 1 - t * t * (3 - 2 * t);
+        this.camera.position.copy(end).multiplyScalar(1 + .04 * k);
+        this.camera.lookAt(0, 0, this.kind === 'snakes' ? .55 : 0); this.camera.updateMatrixWorld();
+        this.boardLabelKey = null;
+        if (t === 1) this.skipIntro.hidden = true;
+      });
+    }
+    presentFinish() {
+      this.cancelIntro(); this.completed = true;
+      this.host.classList.add('rg3d-completed');
+      this.keepsake.hidden = false;
+      this.keepsake.textContent = ({ monopoly: '書屋亮燈・學習章已收藏', snakes: '⚑ 終點旗已升起・本次旅程完成', dobble: '閱讀卡盒・已整理', bingo: '✓ 語詞收藏盤・完成章' })[this.kind];
+      this.finishModel(); this.draw();
+    }
+    finishModel() {
+      if (!this.active || !this.root || this.overlay || this.finishRoot) return;
+      const g = this.finishRoot = new THREE.Group(); this.root.add(g);
+      g.position.set(2.1, .1, 0);
+      if (this.kind === 'monopoly') {
+        const house = this.box(1.1, .65, .8, '#ac794b', g); house.position.y = .34;
+        const roof = this.box(1.28, .13, 1, '#795338', g); roof.position.y = .75;
+        for (const x of [-.27, .27]) {
+          const pane = this.box(.22, .26, .025, '#ffdf84', g); pane.position.set(x, .42, .415);
+          pane.material.emissive.set('#ffcb64').convertSRGBToLinear(); pane.material.emissiveIntensity = .5;
+        }
+      } else {
+        this.rod(new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 1.5, 0), .035, '#79634c', g);
+        const flag = this.box(.65, .38, .045, '#ba6837', g); flag.position.set(.34, 1.18, 0);
+        this.tween('finishFlag', 360, (t) => { flag.position.y = .55 + .63 * t; });
+      }
+      this.draw();
     }
     status(text) { if (toolbar && toolbar.isConnected) toolbar.querySelector('.rg3d-status').textContent = text; }
     async refresh() {
@@ -113,7 +176,7 @@
       const proj = document.body.classList.contains('proj');
       const changed = this.projection !== proj;
       if (changed) { this.projection = proj; this.updateProjection(); }
-      try { this.resize(changed); if (this.pendingDeal) this.deal(); this.status('3D 立體視圖・題目與操作保留大字'); }
+      try { this.resize(changed); if (this.pendingDeal) this.deal(); this.status('立體桌面'); this.presentIntro(); if (this.completed) this.finishModel(); }
       catch (_) { this.failed = '立體視圖無法使用'; this.mode(false); }
     }
     mode(on) {
@@ -139,7 +202,7 @@
       });
       this.scene = new T.Scene();
       // 後製以暖色底合成，避免透明畫布在泛光後出現黑底。
-      this.scene.background = new T.Color('#bd8b62').convertSRGBToLinear();
+      this.scene.background = null;
       this.camera = new T.PerspectiveCamera(36, 1, .1, 120);
       this.camera.position.set(0, 18, 15); this.camera.lookAt(0, 0, 0);
       this.scene.add(new T.HemisphereLight(0xffe9cc, 0x51453e, .42));
@@ -149,7 +212,7 @@
       const rim = new T.DirectionalLight(0xb6d9ff, .7); rim.position.set(6, 7, -9); this.scene.add(rim);
       this.makeEnvironment();
       this.root = new T.Group(); this.scene.add(this.root);
-      const table = this.box(40, .3, 40, '#ffffff'); table.position.y = -1.05;
+      const table = this.box(15, .3, 15, '#ffffff'); table.position.y = -1.05;
       table.material.map = this.woodTexture('table'); table.material.roughness = .82;
       if (!this.overlay) this.buildBoard();
       if (this.quality === 'high' && !this.host.closest('.duel')) loadEffects().then(() => {
@@ -434,12 +497,15 @@
       this.cells.forEach((c) => {
         // Fixed corner anchors: labels never migrate into adjacent cells.
         const v = this.cellPosition(c.id); v.y = .32; v.x -= .72; v.z -= .68; v.project(this.camera);
-        const { box, state, number } = this.domCells.get(c.id);
+        const { box, state, number, step } = this.domCells.get(c.id);
         if (number) { const n = this.cellPosition(c.id); n.x -= .65; n.z += .52; n.y = .32; n.project(this.camera); number.style.left = `${(n.x + 1) * this.width / 2}px`; number.style.top = `${(1 - n.y) * this.height / 2}px`; }
         const teams = [...this.tokens].filter(([, cell]) => cell === c.id).map(([i]) => `${i + 1}隊`);
         const needed = this.focused?.cell === c.id || teams.length > 0;
         box.classList.toggle('is-current', needed);
-        state.textContent = [this.owners.has(c.id) ? `屋${this.owners.get(c.id) + 1}` : '', this.domSteps?.get(c.id) || ''].filter(Boolean).join(' ');
+        state.textContent = this.owners.has(c.id) ? `屋${this.owners.get(c.id) + 1}` : '';
+        step.textContent = this.domSteps?.get(c.id) || '';
+        const sp = this.cellPosition(c.id); sp.x += .18; sp.z += .57; sp.project(this.camera);
+        step.style.left = `${(sp.x + 1) * this.width / 2}px`; step.style.top = `${(1 - sp.y) * this.height / 2}px`;
         box.setAttribute('aria-label', [c.id, c.label, c.detail, teams.join(' '), state.textContent].filter(Boolean).join('，'));
         box.style.left = `${(v.x + 1) * this.width / 2}px`;
         box.style.top = `${(1 - v.y) * this.height / 2}px`;
@@ -607,8 +673,10 @@
         this.drawLines();
       } else {
         this.host.querySelectorAll('.disc').forEach((d, i) => {
-          const face = this.screenTile(d, i % 2 ? '#dcecf3' : '#f8e8cc', .02, .065);
-          face.material.roughness = .95; face.castShadow = false; this.discs.push(face);
+          const rim = this.screenTile(d, i % 2 ? '#73abc2' : '#c98043', -.015, .17);
+          rim.material.roughness = .85;
+          const face = this.screenTile(d, '#fff7e5', .025, .10, this.overlayRoot, [[.04,.035],[.96,.035],[.96,.965],[.04,.965]]);
+          face.material.roughness = .98; face.castShadow = true; this.discs.push(face);
         });
         if (this.match) this.drawMatch(this.match);
       }
@@ -773,7 +841,7 @@
     }
     visibility() { if (document.hidden) { this.finishTweens(); cancelAnimationFrame(this.frame); this.frame = 0; } else { this.sync(); this.draw(); } }
     dispose() {
-      this.disposed = true; this.finishTweens(); cancelAnimationFrame(this.frame); this.resizeObserver.disconnect();
+      this.disposed = true; this.mission?.remove(); this.workshop?.remove(); this.keepsake?.remove(); this.finishTweens(); cancelAnimationFrame(this.frame); this.resizeObserver.disconnect();
       this.clearGroup(this.root); this.labels = []; this.meshCells.clear(); this.pieces.clear(); this.flags.clear();
       this.disposeEffects();
       this.woodTextures?.forEach((t) => t.dispose()); this.woodTextures?.clear(); this.environmentTarget?.dispose();
