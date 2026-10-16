@@ -42,13 +42,18 @@
       return { id: `r${i + 1}`, stem: c.stem, witnesses, evidence: c.evidence.slice(), hints: c.hints || [], truth: c.truth };
     });
     const must = rounds.flatMap((x) => x.evidence);
-    // 線索卡：必含開頭、結尾、對質要用的證據段落
-    let clues = room.clues;
-    if (clues.length > L.clues) {
-      const keep = new Set([clues[0].id, clues[clues.length - 1].id, ...must]);
-      for (const c of clues) { if (keep.size >= L.clues) break; keep.add(c.id); }
-      clues = clues.filter((c) => keep.has(c.id));
-    }
+    // 線索卡：每一篇都必含開頭與結尾，再補對質要用的證據段落；一課兩篇時每篇至少 2 張
+    const strandNos = [...new Set(room.clues.map((c) => c.strand || 1))];
+    const target = Math.max(L.clues, strandNos.length * 2);
+    const keep = new Set();
+    strandNos.forEach((k) => { const cs = room.clues.filter((c) => (c.strand || 1) === k); keep.add(cs[0].id); keep.add(cs[cs.length - 1].id); });
+    // 每一輪對質至少保留一張它的證據段落（不受張數上限限制）
+    rounds.forEach((x) => { if (x.evidence.length && !x.evidence.some((id) => keep.has(id))) keep.add(x.evidence[0]); });
+    for (const c of room.clues) { if (keep.size >= target) break; keep.add(c.id); }
+    const clues = room.clues.filter((c) => keep.has(c.id));
+    rounds.forEach((x) => { x.evidence = x.evidence.filter((id) => keep.has(id)); });
+    // 時間線：每一篇一條
+    const strands = strandNos.map((k) => clues.filter((c) => (c.strand || 1) === k).map((c) => c.id));
     // 撕破的卡：用形似字補字；沒有形似字就用語詞意思二選一
     const frags = shuffle(A.fragments, r);
     const torn = {};
@@ -87,7 +92,7 @@
     const claim = { answer: A.claim.answer, short: A.claim.theme || A.claim.answer, choices: shuffle([A.claim.answer, ...A.claim.options], r) };
     const game = {
       v: 2, grade: bank.grade, lesson: room.no, title: `第${room.no}課 ${room.title}`, theme: room.sceneTheme, caseType: A.caseType,
-      question: A.question, level: levelKey, L, seed, clues, torn, decoys, bags, rounds, claim, sourceRefs: room.sourceRefs,
+      question: A.question, level: levelKey, L, seed, clues, strands, torn, decoys, bags, rounds, claim, sourceRefs: room.sourceRefs,
     };
     game.state = fresh(game);
     return game;
@@ -110,7 +115,7 @@
   function evidencePool(game) {
     const s = game.state;
     const pool = game.clues.filter((c) => s.fixed.includes(c.id)).map((c) => ({ id: c.id, text: c.text, kind: 'clue', star: s.stars.includes(c.id), order: c.order }));
-    if (s.rec.timeline.done) pool.unshift({ id: 'ev-timeline', text: '時間線：' + game.clues.map((c) => c.text).join(' → '), kind: 'timeline' });
+    if (s.rec.timeline.done) pool.unshift({ id: 'ev-timeline', text: '時間線：' + game.strands.map((ids, k) => (game.strands.length > 1 ? `第${k + 1}篇：` : '') + ids.map((id) => game.clues.find((c) => c.id === id).text).join(' → ')).join('　'), kind: 'timeline' });
     s.extra.forEach((e) => pool.push(e));
     game.decoys.filter((d) => s.found.includes(d.id)).forEach((d) => pool.push({ id: d.id, text: d.text, kind: 'decoy', decoy: true }));
     return pool;
@@ -142,12 +147,20 @@
     return res;
   }
   const searchDone = (game) => game.clues.every((c) => game.state.fixed.includes(c.id));
-  function placeTimeline(game, order) {
+  // orders：每一篇一個陣列（只有一篇時也可直接傳一個陣列）
+  function placeTimeline(game, orders) {
     if (!searchDone(game)) return { blocked: true };
-    const wrongAt = order.findIndex((id, i) => id !== game.clues[i].id);
-    const res = settle(game, 'timeline', order.length === game.clues.length && wrongAt < 0);
+    const rows = Array.isArray(orders[0]) ? orders : [orders];
+    let wrong = null;
+    game.strands.forEach((ans, k) => {
+      if (wrong) return;
+      const row = rows[k] || [];
+      const at = ans.findIndex((id, i) => row[i] !== id);
+      if (at >= 0 || row.length !== ans.length) wrong = { strand: k, at: at < 0 ? ans.length : at };
+    });
+    const res = settle(game, 'timeline', rows.length === game.strands.length && !wrong);
     if (game.state.rec.timeline.done) game.state.act = Math.max(game.state.act, 2);
-    return Object.assign(res, { wrongAt });
+    return Object.assign(res, { wrong, wrongAt: wrong ? wrong.at : -1 });
   }
 
   // ---------- 第二幕 ----------

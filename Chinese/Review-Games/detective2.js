@@ -176,28 +176,42 @@
   }
   function timelineModal() {
     const blocks = [...new Set(game.clues.map((c) => c.block).filter(Boolean))];
-    const ord = orderer(D.shuffle(game.clues, Math.random).map((c) => ({ id: c.id, text: c.text })), game.clues.map((_, k) => (k === 0 ? '最先' : k === game.clues.length - 1 ? '最後' : `第${k + 1}`)));
+    const multi = game.strands.length > 1;
+    // 一課兩篇：每一篇一條時間線，各排各的
+    const lines = game.strands.map((ids) => {
+      const cs = ids.map((id) => game.clues.find((c) => c.id === id));
+      return orderer(D.shuffle(cs, Math.random).map((c) => ({ id: c.id, text: c.text })), cs.map((_, k) => (k === 0 ? '最先' : k === cs.length - 1 ? '最後' : `第${k + 1}`)));
+    });
     const feed = h('div', { class: 'dt-feed', role: 'status' });
     const hintBox = h('div', { class: 'dt-hint hidden' });
-    const hints = ['先找「故事一開始」的那一張：誰、在哪裡？', blocks.length > 1 ? `課文結構是：${blocks.join(' → ')}。比較兩張卡，哪件事要先發生？` : '比較兩張卡：哪件事發生了，另一件事才會發生？', `最先的是：「${game.clues[0].text}」`];
+    const first = game.strands.map((ids) => game.clues.find((c) => c.id === ids[0]).text);
+    const hints = [multi ? '這一課有兩篇，每一篇各排一條。先找每一篇「一開始」的那一張。' : '先找「故事一開始」的那一張：誰、在哪裡？',
+      blocks.length > 1 ? `課文結構是：${blocks.join(' → ')}。比較兩張卡，哪件事要先發生？` : '比較兩張卡：哪件事發生了，另一件事才會發生？',
+      multi ? first.map((t, k) => `第${k + 1}篇最先的是「${t}」`).join('；') : `最先的是：「${first[0]}」`];
     const showHint = (n) => { hintBox.classList.remove('hidden'); hintBox.replaceChildren(...hints.slice(0, n).map((t, i) => h('div', {}, `💡 ${BOSS}提示 ${i + 1}：${t}`))); };
     if (game.L.autoHint) showHint(1);
     const actions = h('div', { class: 'dt-actions' }, [
       h('button', { class: 'btn', type: 'button', onclick: () => showHint(D.hint(game, 'timeline')) }, '💡 提示'),
       h('button', { class: 'btn primary', type: 'button', onclick: () => {
-        if (!ord.full()) { feed.textContent = '還有空格沒有放卡片。'; return; }
-        const res = D.placeTimeline(game, ord.value());
+        if (!lines.every((l) => l.full())) { feed.textContent = '還有空格沒有放卡片。'; return; }
+        const res = D.placeTimeline(game, lines.map((l) => l.value()));
         if (res.ok || res.learned) {
           tone(res.ok ? 'open' : 'ok'); feed.className = 'dt-feed ok';
-          feed.textContent = res.ok ? '✓ 時間線完成！得到證物「時間線」。' : '一起學：正確的順序就是上面這樣。得到證物「時間線」。';
-          if (res.learned) game.clues.forEach((c, k) => { ord.value()[k] = c.id; });
+          feed.textContent = res.ok ? '✓ 時間線完成！得到證物「時間線」。' : '一起學：正確的順序請看筆記本的時間線。得到證物「時間線」。';
           if (room) room.applyVisualState({ done: ['sort'], found: game.state.found, escaped: false });
           persist();
           actions.replaceChildren(h('button', { class: 'btn primary', type: 'button', onclick: () => { closeModal(); interlude(1); } }, '第一幕完成 ▶'));
-        } else { tone('bad'); ord.mark(res.wrongAt); feed.className = 'dt-feed bad'; feed.textContent = `從「${res.wrongAt === 0 ? '最先' : `第${res.wrongAt + 1}`}」這一格開始不對。再讀一次卡片。`; showHint(res.tries + 1 > 3 ? 3 : res.tries); }
+        } else {
+          tone('bad'); lines.forEach((l, k) => l.mark(res.wrong && res.wrong.strand === k ? res.wrong.at : -1));
+          feed.className = 'dt-feed bad';
+          const where = res.wrongAt === 0 ? '最先' : `第${res.wrongAt + 1}`;
+          feed.textContent = `${multi ? `第${res.wrong.strand + 1}篇` : ''}從「${where}」這一格開始不對。再讀一次卡片。`;
+          showHint(Math.min(3, res.tries));
+        }
       } }, '📌 掛好了，檢查'),
     ]);
-    frame('📌 案件布告欄：排時間線', [boss('把線索卡排成事情發生的順序，最上面是最先發生的事。'), hintBox, ord.el, feed, actions]);
+    const body = lines.map((l, k) => (multi ? h('div', {}, [h('h3', {}, `第${k + 1}篇`), l.el]) : l.el));
+    frame('📌 案件布告欄：排時間線', [boss(multi ? '這一課有兩篇。把每一篇的線索卡各自排成順序，最上面是最先的。' : '把線索卡排成事情發生的順序，最上面是最先發生的事。'), hintBox, ...body, feed, actions]);
   }
   function interlude(n) {
     if (room) { room.dispose(); room = null; }

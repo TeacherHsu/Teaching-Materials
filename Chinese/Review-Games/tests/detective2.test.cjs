@@ -18,13 +18,13 @@ const perms = (a) => (a.length <= 1 ? [a] : a.flatMap((x, i) => perms([...a.slic
 
 function play(game) {
   // 跳關都要被擋
-  assert.equal(D.placeTimeline(game, game.clues.map((c) => c.id)).blocked, true);
+  assert.equal(D.placeTimeline(game, game.strands).blocked, true);
   assert.equal(D.openBag(game, game.bags[0].id, []).blocked, true);
   assert.equal(D.chooseClaim(game, game.claim.answer).blocked, true);
   for (const c of game.clues) { D.investigate(game, c.id); if (game.torn[c.id]) assert.equal(D.fixFragment(game, c.id, game.torn[c.id].answer).ok, true); }
   game.decoys.forEach((d) => D.investigate(game, d.id));
   assert.equal(D.searchDone(game), true);
-  assert.equal(D.placeTimeline(game, game.clues.map((c) => c.id)).ok, true);
+  assert.equal(D.placeTimeline(game, game.strands).ok, true);
   assert.equal(game.state.act, 2);
   assert.equal(D.confront(game, game.rounds[0].id, { liar: 0 }).blocked, true, '證物袋沒開完就能對質');
   for (const b of game.bags) {
@@ -107,4 +107,21 @@ test('存檔後重新載入，題目與進度一致', () => {
   assert.equal(back.state.act, 2);
   assert.deepEqual(back.bags.map((b) => b.type), game.bags.map((b) => b.type));
   assert.deepEqual(back.rounds.map((r) => r.witnesses.map((w) => w.text)), game.rounds.map((r) => r.witnesses.map((w) => w.text)));
+});
+
+test('一課兩篇（四上〈水陸小高手〉、六上〈樹的聯想〉）：時間線分兩條，各自判定', () => {
+  for (const [g, n] of [['G4A', 1], ['G6A', 5]]) {
+    for (const lv of Object.keys(D.LEVELS)) {
+      const game = D.build(banks[g], n, lv, 21);
+      assert.equal(game.strands.length, 2, `${g} 第${n}課應有兩條時間線`);
+      game.strands.forEach((ids) => assert.ok(ids.length >= 2, '每條至少兩張'));
+      for (const c of game.clues) { D.investigate(game, c.id); if (game.torn[c.id]) D.fixFragment(game, c.id, game.torn[c.id].answer); }
+      const flat = game.strands.flat();
+      const r1 = D.placeTimeline(game, flat);
+      assert.equal(r1.ok, false, '兩篇接成一條不算對');
+      const r2 = D.placeTimeline(game, [game.strands[0], [...game.strands[1]].reverse()]);
+      assert.equal(r2.ok, false); assert.equal(r2.wrong.strand, 1, '應指出第二篇排錯');
+      assert.equal(D.placeTimeline(game, game.strands).ok, true);
+    }
+  }
 });

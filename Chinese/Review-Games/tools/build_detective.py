@@ -60,7 +60,9 @@ def strip_p(s):
 
 
 def clues_of(d):
-    out = []
+    """段落大意 → 線索卡。一課兩篇（如兩首詩）時段落編號會從 1 重新數：
+    依資料順序，編號沒有變大就視為下一篇（strand），每篇各自排一條時間線。"""
+    out, strand, last = [], 1, None
     for p in d.get('paragraph_summary', []):
         if not ok(p) or not p.get('summary'):
             continue
@@ -68,12 +70,17 @@ def clues_of(d):
         no = p.get('paragraph_no', p.get('para_no'))
         if no is None:
             continue
-        out.append({'id': f"c{no}", 'order': no, 'text': p['summary'],
-                    'block': p.get('structure_block') or '', 'paras': paras, 'ref': p.get('id', '')})
-    out.sort(key=lambda c: c['order'])
-    # 段落編號必須互不相同，排序才有唯一答案
-    if len({c['order'] for c in out}) != len(out):
-        return []
+        if last is not None and no <= last:
+            strand += 1
+        last = no
+        out.append({'id': f"c{no}" if strand == 1 else f"c{strand}-{no}", 'no': no, 'strand': strand,
+                    'text': p['summary'], 'block': p.get('structure_block') or '', 'paras': paras, 'ref': p.get('id', '')})
+    out.sort(key=lambda c: (c['strand'], c['no']))
+    # 每篇至少 2 段才排得出順序；order 是全課唯一的先後（第一篇在前）
+    if any(sum(1 for c in out if c['strand'] == k) < 2 for k in {c['strand'] for c in out}):
+        out = [c for c in out if sum(1 for x in out if x['strand'] == c['strand']) >= 2]
+    for i, c in enumerate(out, 1):
+        c['order'] = i
     return out
 
 
