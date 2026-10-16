@@ -40,7 +40,7 @@ h1 { margin: 0; font-size: 1.6rem; } .eyebrow { color: var(--ink-2); font-size: 
 </div>
 <p id="status" role="status">正在準備元件</p>
 </main>
-<script src="../../common.js"></script><script src="../../rg3d-kit.js"></script>
+<script src="../../common.js"></script><script src="../../rg3d-kit.js"></script><script src="../../scene3d-monopoly.js"></script>
 <script>
 (function () {
   'use strict';
@@ -53,6 +53,28 @@ h1 { margin: 0; font-size: 1.6rem; } .eyebrow { color: var(--ink-2); font-size: 
     if (!stage?.scene || builtScene === stage.scene) return;
     builtScene = stage.scene; const T = window.THREE;
     const table = new T.Mesh(K.roundedBox(17, .20, 10, .12), K.MAT.wood); table.position.y = -.11; table.receiveShadow = true; stage.scene.add(table);
+    if (shot === 'buildings') {
+      document.querySelector('h1').textContent = '六種課次建築';
+      document.querySelector('main > p').textContent = '書本屋、文具店、小學堂、圖書館、故事小屋、閱讀塔；隊伍依序為 1、2、3、4、1、2。';
+      document.querySelector('.controls').hidden = true;
+      document.querySelectorAll('.labels').forEach(n => { n.hidden = true; });
+      const canvas = document.createElement('canvas'); canvas.width = 512; canvas.height = 896;
+      const ctx = canvas.getContext('2d'); ctx.fillStyle = '#2b1d12'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.font = '900 100px sans-serif';
+      ['1','2','3','4','?','課文探險','起跑'].forEach((t,i) => ctx.fillText(t,256,i*128+64));
+      const map = new T.CanvasTexture(canvas); map.encoding = T.sRGBEncoding;
+      const signs = K.material('showcase-building-signs', '#ffffff', .9, 0, { map, transparent:true });
+      const buildings = [0,1,2,3,0,1].map((team,i) => {
+        const model = window.RG3DMonopoly.building(i+1,team,signs); model.position.set((i-2.5)*1.25,0,0); stage.scene.add(model); return model;
+      });
+      // 單列模型各約 60px 高；只有建築，沒有棋子／材質球／骰子。
+      const fit = () => {
+        const r = host.getBoundingClientRect(); stage.camera.aspect = r.width/r.height;
+        const dist = .84 / (2 * Math.tan(stage.camera.fov * Math.PI / 360) * (60/r.height));
+        stage.camera.position.set(0, .38 + dist*.45, dist*.893); stage.camera.lookAt(0,.38,0); stage.camera.updateProjectionMatrix();
+      };
+      const resize = stage.resize; stage.resize = () => { fit(); resize(); }; fit();
+      window.__buildings = buildings; stage.draw(); return;
+    }
     pieces = [0, 1, 2, 3].map((i) => { const p = K.piece(i); p.position.set((i - 1.5) * 1.6, 0, -.55); stage.scene.add(p); return p; });
     if (shot === 'silhouette') pieces.forEach((p) => p.scale.setScalar(.45));
     [K.MAT.wood, K.MAT.woodDark, K.MAT.plastic(K.TOKENS.teams[0]), K.MAT.paper, K.MAT.felt, K.MAT.gold].forEach((mat, i) => {

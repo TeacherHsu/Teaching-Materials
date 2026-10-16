@@ -26,6 +26,18 @@ async function shotMonopoly() {
     });
     const start = await until(() => [...document.querySelectorAll('button')].find(b => b.textContent.trim() === '開始遊戲'), '開始遊戲'); start.click();
     if (view) await view.ready;
+    const ownAll = new URLSearchParams(location.search).get('qaOwnAll') === '1';
+    if (ownAll) {
+      if (!view) throw Error('QA 建築全滿需要 view API');
+      const plots = view.cells.filter(c => c.band);
+      if (plots.length !== 12) throw Error('QA 建築全滿需要 12 塊課次地');
+      for (const [i, cell] of plots.entries()) await view.setOwner(cell.id, i % 4);
+      // 只改 view 的顯示資料；沒有購地、作答、改 owner/cash/turn 或呼叫遊戲 render。
+      const state = { fixture: 'T1B-all-buildings-view-only', active3d: view.active, viewport: [innerWidth, innerHeight],
+        overflowX: document.documentElement.scrollWidth > innerWidth, owners: [...view.owners], tokens: [...view.tokens], stats: view.stats(),
+        teams: [...document.querySelectorAll('.side .team')].map(n => n.textContent) };
+      window.RG_T1B_QA = { view, state }; return state;
+    }
     const results = [];
     for (const n of [1, 4, 2]) {
       const roll = await until(() => [...document.querySelectorAll('button')].find(b => b.textContent === '擲骰子' && !b.disabled), '擲骰子');

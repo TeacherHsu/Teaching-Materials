@@ -92,11 +92,11 @@ test('dispose 解除等待中的逐格 hop、骰子及購地，所有後續方�
   await v.moveToken(0,5); await v.rollDice(2); await v.stepMark(0,1,1); await v.clearMarks(); await v.focusPlayer(0,1); await v.setOwner(4,0); await v.presentFinish();
   assert.equal(e.frames.size,0); assert.equal(v.stage.tweens.size,0);
 });
-test('四隊同格世界座標距離至少 .5，且只為當前隊伍播放 idle', async () => {
+test('四隊同格維持獨立中央槽，且只為當前隊伍播放 idle', async () => {
   const e=environment(),v=await mount(e),T=e.c.THREE;
   for(let i=0;i<4;i++) await v.moveToken(i,1,{instant:true});
   v.root.updateMatrixWorld(true); const ps=[...v.pieces.values()].map(p=>p.getWorldPosition(new T.Vector3()));
-  for(let i=0;i<4;i++) for(let j=i+1;j<4;j++) assert.ok(ps[i].distanceTo(ps[j])>=.5);
+  for(let i=0;i<4;i++) for(let j=i+1;j<4;j++) assert.ok(ps[i].distanceTo(ps[j])>=.32-1e-9);
   await complete(e,v.focusPlayer(1,1)); assert.equal([...v.stage.tweens.keys()].filter(k=>k.endsWith(':idle')).length,1);
   await complete(e,v.focusPlayer(3,1)); assert.equal([...v.stage.tweens.keys()].filter(k=>k.endsWith(':idle')).length,1);
   await v.dispose();
@@ -150,12 +150,52 @@ test('Resize／標籤 DOM 更新不會遞迴觸發 stage.refresh', async () => {
 test('斜俯視相機在各驗收寬度維持完整外框與水平留白', async () => {
   const e=environment(),v=await mount(e),T=e.c.THREE;
   for(const width of [620,800,1024,1366,1920]) {
-    v.surface.getBoundingClientRect=()=>({width,height:width/1.22}); v.fit();
-    const corners=[-5.54,5.54].flatMap(x=>[-5.54,5.54].flatMap(z=>[-.55,1.22].map(y=>new T.Vector3(x,y,z).project(v.camera))));
+    v.surface.getBoundingClientRect=()=>({width,height:width/Number(v.surface.style.aspectRatio || 1.22)}); v.stage.resize();
+    const corners=[-5.54,5.54].flatMap(x=>[-5.54,5.54].flatMap(z=>[-.55,0].map(y=>new T.Vector3(x,y,z).project(v.camera))));
     const extent=Math.max(...corners.map(p=>Math.abs(p.x)));
     console.log('T1B 相機外框投影',width,extent);
     assert.ok(extent>=.88&&extent<=.92,`左右邊界 ${extent}`);
     assert.ok(corners.every(p=>Math.abs(p.y)<=.901));
     assert.equal(v.camera.fov,32); assert.equal(v.camera.position.x,0);
+  } await v.dispose();
+});
+
+// 包圍盒取真實模型幾何，忽略透明接觸陰影；檢查世界座標 XZ 投影。
+function footprint(T, model) {
+  model.updateMatrixWorld(true); const result = new T.Box3();
+  model.traverse(o => { if (!o.isMesh || o.material.transparent) return;
+    o.geometry.computeBoundingBox(); result.union(o.geometry.boundingBox.clone().applyMatrix4(o.matrixWorld));
+  }); return result;
+}
+function overlapsXZ(a,b) { return a.min.x < b.max.x-1e-6 && a.max.x > b.min.x+1e-6 && a.min.z < b.max.z-1e-6 && a.max.z > b.min.z+1e-6; }
+test('十二地四隊同格：實際建築、四角色、內緣標籤 XZ AABB 不重疊', async () => {
+  const e=environment(),v=await mount(e),T=e.c.THREE;
+  for(const c of cells.filter(c=>c.band)) {
+    await complete(e,v.setOwner(c.id,1));
+    const building=footprint(T,v.buildings.get(c.id)), d=v.inward(c.id), p=v.labelPosition(c.id);
+    // 保守保留 1.1 × .80 的牌面區，涵蓋 16px 字與 padding（含左右側橫排牌）。
+    const label=new T.Box3(new T.Vector3(p.x-(d[0]?.40:.55),0,p.z-(d[1]?.40:.55)),new T.Vector3(p.x+(d[0]?.40:.55),1,p.z+(d[1]?.40:.55)));
+    const occupied=[building,label]; assert.equal(overlapsXZ(building,label),false,`格 ${c.id} 建築/標籤`);
+    for(let i=0;i<4;i++) {
+      await v.moveToken(i,c.id,{instant:true}); const piece=footprint(T,v.pieces.get(i));
+      occupied.forEach((b,j)=>assert.equal(overlapsXZ(piece,b),false,`格 ${c.id} 隊 ${i} / 物件 ${j}`)); occupied.push(piece);
+    }
+    // 外側 35% 的徑向範圍 [-.81,-.243]。
+    const center=v.cellPosition(c.id), coords=[building.min,building.max].map(q=>(q.x-center.x)*d[0]+(q.z-center.z)*d[1]);
+    assert.ok(Math.min(...coords)>=-.811 && Math.max(...coords)<=-.243,`格 ${c.id} 建築外側區 ${coords}`);
+  }
+  await v.dispose();
+});
+test('中央靜態擺設高度、主景尺寸與木牌字高',async()=>{
+  const e=environment(),v=await mount(e),T=e.c.THREE;
+  const lib=footprint(T,v.library),size=lib.getSize(new T.Vector3());
+  console.log('R1 library',size.toArray());
+  assert.ok(size.x>=1.5&&size.x<=1.7); assert.ok(size.z>=.9&&size.z<=1.1); assert.ok(lib.max.y<=.87);
+  for(const width of [690,850,1100]) {
+    v.surface.getBoundingClientRect=()=>({width,height:width/Number(v.surface.style.aspectRatio||1.22)}); v.stage.resize();
+    v.root.updateMatrixWorld(true);
+    const a=new T.Vector3(0,-.1875,0).applyMatrix4(v.plaque.matrixWorld).project(v.camera);
+    const b=new T.Vector3(0,.1875,0).applyMatrix4(v.plaque.matrixWorld).project(v.camera);
+    assert.ok(Math.abs(a.y-b.y)*width/v.fitAspect/2>=14,'課文探險字高至少 14px');
   } await v.dispose();
 });
