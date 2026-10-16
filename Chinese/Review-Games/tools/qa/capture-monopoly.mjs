@@ -4,8 +4,8 @@ import { dirname } from 'node:path';
 import { tmpdir } from 'node:os';
 import { setTimeout as delay } from 'node:timers/promises';
 
-const [url, output, widthArg = '1266', heightArg = '700', fullPageArg = 'false', mobileArg = 'auto'] = process.argv.slice(2);
-if (!url || !output) throw new Error('Usage: node capture-monopoly.mjs <url> <out.png> [width] [height] [fullPage] [mobileEmulation]');
+const [url, output, widthArg = '1266', heightArg = '700', fullPageArg = 'false', mobileArg = 'auto', ownerFixtureArg = 'false'] = process.argv.slice(2);
+if (!url || !output) throw new Error('Usage: node capture-monopoly.mjs <url> <out.png> [width] [height] [fullPage] [mobileEmulation] [ownerFixture]');
 
 const width = Number(widthArg), height = Number(heightArg), mobile = mobileArg === 'false' ? false : mobileArg === 'true' ? true : width <= 760;
 const port = 9400 + (process.pid % 500);
@@ -68,7 +68,7 @@ try {
   let started = false, setupText = '';
   for (let attempt = 0; attempt < 50 && !started; attempt++) {
     const result = await send('Runtime.evaluate', {
-      expression: `(() => { const button = [...document.querySelectorAll('button')].find((item) => item.textContent.trim() === '開始遊戲'); if (!button) return { started: false, text: document.body.innerText.slice(0, 160), scripts: [...document.scripts].map(s => s.src), ready: document.readyState, rg: !!window.RG, bank: !!window.REVIEW_BANK, app: document.querySelector('#app')?.innerHTML.slice(0, 180), data: performance.getEntriesByType('resource').filter(r => r.name.includes('data/G3A')).map(r => ({ name: r.name, duration: r.duration, size: r.transferSize })) }; button.click(); return { started: true, text: '', scripts: [] }; })()`,
+      expression: `(() => { const button = [...document.querySelectorAll('button')].find((item) => item.textContent.trim() === '開始遊戲'); if (!button) return { started: false, text: document.body.innerText.slice(0, 160), scripts: [...document.scripts].map(s => s.src), ready: document.readyState, rg: !!window.RG, bank: !!window.REVIEW_BANK, app: document.querySelector('#app')?.innerHTML.slice(0, 180), data: performance.getEntriesByType('resource').filter(r => r.name.includes('data/G3A')).map(r => ({ name: r.name, duration: r.duration, size: r.transferSize })) }; if (window.RG3D && !window.__qaMonopolyWrapped) { const mount = window.RG3D.mount; window.RG3D.mount = (options) => { const view = mount(options); if (options.kind === 'monopoly') window.__qaMonopolyView = view; return view; }; window.__qaMonopolyWrapped = true; } button.click(); return { started: true, text: '', scripts: [] }; })()`,
       returnByValue: true,
     });
     started = result.result?.result?.value?.started || false;
@@ -77,6 +77,16 @@ try {
   }
   if (!started) throw new Error(`Could not start Monopoly from the setup screen: ${setupText}; errors=${JSON.stringify(errors)}; paused=${JSON.stringify(pausedRequests)}; failed=${JSON.stringify(failedRequests)}`);
   await delay(7000);
+  let ownerFixture = null;
+  if (ownerFixtureArg === 'true') {
+    const fixture = await send('Runtime.evaluate', {
+      expression: `(() => { const view = window.__qaMonopolyView; if (!view || !view.active) return { applied: false }; view.setOwner(7, 0); view.draw(); return { applied: true, owner: view.owners.get(7), ownerCount: view.owners.size }; })()`,
+      returnByValue: true,
+    });
+    ownerFixture = fixture.result?.result?.value;
+    if (!ownerFixture?.applied) throw new Error('Owner screenshot fixture could not reach the active Monopoly view');
+    await delay(650);
+  }
   const state = await send('Runtime.evaluate', {
     expression: `({ canvas: !!document.querySelector('canvas'), mode: document.querySelector('.rg3d-status')?.textContent || '', active3d: !!document.querySelector('.rg3d-monopoly.is-3d'), viewport: [innerWidth, innerHeight], overflowX: document.documentElement.scrollWidth > innerWidth })`,
     returnByValue: true,
@@ -91,7 +101,7 @@ try {
   const screenshot = await send('Page.captureScreenshot', screenshotOptions);
   mkdirSync(dirname(output), { recursive: true });
   writeFileSync(output, Buffer.from(screenshot.result.data, 'base64'));
-  console.log(JSON.stringify({ output, state: state.result.result.value, errors, pausedRequests, failedRequests }));
+  console.log(JSON.stringify({ output, state: state.result.result.value, ownerFixture, errors, pausedRequests, failedRequests }));
 } finally {
   ws?.close();
   if (process.platform === 'win32' && chrome.pid) spawnSync('taskkill.exe', ['/PID', String(chrome.pid), '/T', '/F'], { stdio: 'ignore' });

@@ -10,6 +10,7 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const narrow = matchMedia('(max-width: 760px)');
   const colors = ['#c0362c', '#1f5fa8', '#1f7a43', '#6b3fb0'];
+  const ownerSurfaceColors = ['#d88980', '#8ea9cb', '#91b49a', '#a18fbd'];
   let library, effects, toolbar;
   const el = (tag, cls, text) => { const n = document.createElement(tag); n.className = cls || ''; if (text) n.textContent = text; return n; };
   const isCalm = () => reduced.matches || document.body.classList.contains('calm');
@@ -124,9 +125,13 @@
         return;
       }
       const end = this.camera.position.clone(); this.skipIntro.hidden = false;
+      if (this.kind === 'monopoly' && this.camera.isOrthographicCamera) this.camera.zoom = .96;
       this.tween('intro', 450, (t) => {
         const k = 1 - t * t * (3 - 2 * t);
-        this.camera.position.copy(end).multiplyScalar(1 + .04 * k);
+        if (this.kind === 'monopoly' && this.camera.isOrthographicCamera) {
+          this.camera.zoom = 1 - .04 * k; this.camera.updateProjectionMatrix();
+          this.camera.position.copy(end);
+        } else this.camera.position.copy(end).multiplyScalar(1 + .04 * k);
         this.camera.lookAt(0, 0, this.kind === 'snakes' ? .55 : 0); this.camera.updateMatrixWorld();
         this.boardLabelKey = null;
         if (t === 1) this.skipIntro.hidden = true;
@@ -213,8 +218,13 @@
       this.scene = new T.Scene();
       // 後製以暖色底合成，避免透明畫布在泛光後出現黑底。
       this.scene.background = null;
-      this.camera = new T.PerspectiveCamera(36, 1, .1, 120);
-      this.camera.position.set(0, 18, 15); this.camera.lookAt(0, 0, 0);
+      this.camera = this.kind === 'monopoly'
+        ? new T.OrthographicCamera(-6.7, 6.7, 6.7, -6.7, .1, 120)
+        : new T.PerspectiveCamera(36, 1, .1, 120);
+      if (this.kind === 'monopoly') {
+        // 正上方搭配正交投影，避免遠近透視讓棋盤上方課次看起來較窄。
+        this.camera.up.set(0, 0, -1); this.camera.position.set(0, 22, 0); this.camera.lookAt(0, 0, 0);
+      } else { this.camera.position.set(0, 18, 15); this.camera.lookAt(0, 0, 0); }
       const monopoly = this.kind === 'monopoly';
       this.scene.add(new T.HemisphereLight(0xfff0dc, 0x51453e, monopoly ? .5 : .42));
       const key = new T.DirectionalLight(0xffe7cc, monopoly ? 1.02 : 1.25); key.position.set(-7, 13, 6); key.castShadow = !lightMode;
@@ -344,7 +354,9 @@
       c.fillStyle = ink; c.textAlign = 'center'; c.textBaseline = 'middle';
       // 使用裝置正體中文字型；不把注音或教學文字搬進材質。
       c.font = `900 ${Math.min(canvas.height * .72, canvas.width / Math.max([...text].length, 2) * .88)}px "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif`;
-      if (bg === 'transparent') { c.lineJoin = 'round'; c.lineWidth = canvas.height * .055; c.strokeStyle = 'rgba(35,59,51,.68)'; c.strokeText(text, canvas.width / 2, canvas.height / 2); }
+      if (text === '課文探險') {
+        c.shadowColor = 'rgba(28,48,42,.44)'; c.shadowBlur = canvas.height * .1; c.shadowOffsetY = canvas.height * .025;
+      }
       c.fillText(text, canvas.width / 2, canvas.height / 2);
       const texture = new THREE.CanvasTexture(canvas); texture.encoding = THREE.sRGBEncoding;
       const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: texture, depthTest: false, depthWrite: false, toneMapped: false }));
@@ -392,6 +404,7 @@
         const color = this.kind === 'snakes' ? ((c.row + c.col) % 2 ? '#e2ad67' : '#f4d29b') : lesson ? palette[lesson - 1] : c.label === '綜合複習' ? '#69a5c8' : '#edc580';
         const m = this.roundedBox(1.65, .31, 1.65, color); m.position.copy(p); m.position.y = .13;
         m.material.roughness = .95;
+        if (this.kind === 'monopoly') m.userData.unownedColor = new T.Color(color).convertSRGBToLinear();
         if (this.kind === 'snakes' && c.detail && !/蛇|梯/.test(c.detail)) m.material.color.set('#eaca73').convertSRGBToLinear();
         this.meshCells.set(c.id, m);
         const snakes = this.kind === 'snakes';
@@ -401,7 +414,7 @@
         const pad = this.mesh(new T.CylinderGeometry(2.9, 3, .2, 80), '#ffffff'); pad.position.y = .23; pad.material.map = this.woodTexture('felt'); pad.material.roughness = .98;
         const rim = this.mesh(new T.TorusGeometry(2.88, .045, 8, 80), '#c5a15f'); rim.rotation.x = Math.PI / 2; rim.position.y = .34; rim.material.roughness = .5; rim.material.metalness = .24;
         const innerRim = this.mesh(new T.TorusGeometry(2.7, .018, 6, 64), '#e5cf9c'); innerRim.rotation.x = Math.PI / 2; innerRim.position.y = .335; innerRim.material.roughness = .62;
-        const l = this.label('課文探險', 4.05, .88, 'transparent', '#fffdf6'); l.position.set(0, .52, -1.1); this.root.add(l);
+        const l = this.label('課文探險', 4.55, .98, 'transparent', '#fffdf6'); l.position.set(0, .52, -1.1); this.root.add(l);
         // A hand-built open book, brass pencil, and reading lamp make the felt center read as a tiny study nook.
         const bookCover = this.roundedBox(1.02, .08, .82, '#8c4e3b', undefined, .035); bookCover.position.set(-1.62, .37, .62); bookCover.rotation.y = -.08; bookCover.material.roughness = .82;
         [-1, 1].forEach((side) => {
@@ -627,11 +640,12 @@
         const destination = this.kind === 'monopoly' && this.domDestination === c.id;
         box.classList.toggle('is-passed', this.kind === 'monopoly' && this.domSteps?.has(c.id) && !destination);
         box.classList.toggle('is-destination', destination);
-        state.textContent = this.owners.has(c.id) ? `屋${this.owners.get(c.id) + 1}` : '';
+        state.textContent = this.kind === 'monopoly' ? '' : this.owners.has(c.id) ? `屋${this.owners.get(c.id) + 1}` : '';
         step.textContent = this.domSteps?.get(c.id) || '';
         const sp = this.cellPosition(c.id); sp.x += .18; sp.z += .57; sp.project(this.camera);
         step.style.left = `${(sp.x + 1) * this.width / 2}px`; step.style.top = `${(1 - sp.y) * this.height / 2}px`;
-        box.setAttribute('aria-label', [c.id, c.label, c.detail, teams.join(' '), state.textContent].filter(Boolean).join('，'));
+        const ownership = this.kind === 'monopoly' && this.owners.has(c.id) ? `${this.owners.get(c.id) + 1}隊擁有` : state.textContent;
+        box.setAttribute('aria-label', [c.id, c.label, c.detail, teams.join(' '), ownership].filter(Boolean).join('，'));
         box.style.left = `${(v.x + 1) * this.width / 2}px`;
         box.style.top = `${(1 - v.y) * this.height / 2}px`;
       });
@@ -702,12 +716,24 @@
       });
     }
     ownerModel(cell, i, animate) {
+      const tile = this.meshCells.get(cell);
+      if (this.kind === 'monopoly' && tile) tile.material.color.copy(new THREE.Color(ownerSurfaceColors[i] || ownerSurfaceColors[0]).convertSRGBToLinear());
       if (this.flags.has(cell)) return;
-      const g = new THREE.Group(); g.position.copy(this.cellPosition(cell)); g.position.x += .57; g.position.z -= .03; this.root.add(g); this.flags.set(cell, g);
-      const house = this.box(.38, .27, .38, '#fff4d9', g); house.position.y = .18;
-      const roof = this.mesh(new THREE.ConeGeometry(.31, .20, 4), colors[i], g); roof.rotation.y = Math.PI / 4; roof.position.y = .41;
-      const pages = this.box(.23, .12, .02, '#fffaf0', g); pages.position.set(0, .17, .20);
-      const num = this.label(String(i + 1), .24, .24, colors[i], '#ffffff'); num.position.set(0, .57, 0); g.add(num);
+      const g = new THREE.Group(); g.position.copy(this.cellPosition(cell)); g.position.x += .48; g.position.z -= .03; g.scale.setScalar(1.15); this.root.add(g); this.flags.set(cell, g);
+      const base = this.roundedBox(.5, .055, .48, '#b88e63', g, .02); base.position.y = .035; base.material.roughness = .82;
+      const house = this.roundedBox(.35, .3, .34, '#fff5e3', g, .02); house.position.y = .2; house.material.roughness = .9;
+      const gableShape = new THREE.Shape(); gableShape.moveTo(-.17, 0); gableShape.lineTo(0, .15); gableShape.lineTo(.17, 0); gableShape.closePath();
+      const gable = this.mesh(new THREE.ShapeGeometry(gableShape), '#fff5e3', g); gable.position.set(0, .34, .176); gable.material.roughness = .92;
+      const roof = this.box(.39, .055, .48, colors[i] || colors[0], g); roof.position.set(-.115, .505, 0); roof.rotation.z = Math.PI / 4; roof.material.roughness = .78;
+      const roofRight = this.box(.39, .055, .48, colors[i] || colors[0], g); roofRight.position.set(.115, .505, 0); roofRight.rotation.z = -Math.PI / 4; roofRight.material.roughness = .78;
+      const ridge = this.box(.045, .04, .5, colors[i] || colors[0], g); ridge.position.set(0, .645, 0); ridge.material.roughness = .78;
+      const eave = this.box(.06, .035, .5, colors[i] || colors[0], g); eave.position.set(0, .34, 0); eave.material.roughness = .82;
+      const door = this.roundedBox(.09, .17, .018, '#80543d', g, .006); door.position.set(0, .13, .181); door.material.roughness = .86;
+      const knob = this.mesh(new THREE.SphereGeometry(.018, 8, 6), '#c7a15d', g); knob.position.set(.025, .13, .198); knob.material.roughness = .5; knob.material.metalness = .12;
+      [-1, 1].forEach((side) => {
+        const window = this.roundedBox(.09, .075, .016, '#9bc4c1', g, .005); window.position.set(side * .105, .24, .181); window.material.roughness = .48;
+        const mullion = this.box(.012, .075, .019, '#f4e8d2', g); mullion.position.set(side * .105, .24, .191);
+      });
       if (animate) this.tween(`owner${cell}`, 480, (t) => {
         g.position.y = this.cellPosition(cell).y + (1 - Math.min(t / .75, 1)) * .18;
         g.userData.feedback = Math.sin(Math.PI * t);
@@ -736,9 +762,20 @@
       if (this.composer) this.composer.setSize(r.width, r.height);
       if (this.baseTarget) this.baseTarget.setSize(Math.round(r.width * this.renderer.getPixelRatio()), Math.round(r.height * this.renderer.getPixelRatio()));
       const aspect = r.width / r.height;
-      this.camera.aspect = aspect; this.camera.updateProjectionMatrix();
+      const overhead = this.kind === 'monopoly' && this.camera.isOrthographicCamera;
+      if (overhead) {
+        // 以棋盤最外緣和約 8% 留白計算可視範圍，手機直向也不裁棋盤。
+        const viewSize = 6.15 * 2 + 1.0, viewHeight = Math.max(viewSize, viewSize / aspect), viewWidth = viewHeight * aspect;
+        this.camera.left = -viewWidth / 2; this.camera.right = viewWidth / 2;
+        this.camera.top = viewHeight / 2; this.camera.bottom = -viewHeight / 2;
+        this.camera.up.set(0, 0, -1); this.camera.position.set(0, 22, 0);
+        this.camera.lookAt(0, 0, 0); this.camera.updateProjectionMatrix();
+      } else { this.camera.aspect = aspect; this.camera.updateProjectionMatrix(); }
       const angle = 60 * Math.PI / 180, direction = new THREE.Vector3(0, Math.sin(angle), Math.cos(angle));
       const target = new THREE.Vector3(0, 0, this.kind === 'snakes' ? .55 : 0);
+      if (overhead) {
+        if (this.overlay) this.layoutOverlay(); this.draw(); return;
+      }
       let distance = this.overlay ? r.height / 100 / (2 * Math.tan(this.camera.fov * Math.PI / 360)) : 21;
       const place = () => { this.camera.position.copy(target).addScaledVector(direction, distance); this.camera.lookAt(target); this.camera.updateMatrixWorld(); };
       place();
