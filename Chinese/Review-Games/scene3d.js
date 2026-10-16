@@ -78,14 +78,17 @@
         this.domCells = new Map();
         this.cells.forEach((c) => {
           const box = el('div', 'rg3d-cell-label');
+          if (this.kind === 'monopoly') box.dataset.cell = c.id;
           const name = el('span', 'rg3d-cell-name'); name.textContent = `${this.kind === 'monopoly' ? c.label : c.id}`;
-          if (this.kind === 'monopoly') name.setAttribute('data-compact', c.label.replace(/^第(\d)課$/, '$1課').replace('綜合複習', '複習').replace('休息站', '休息'));
+          if (this.kind === 'monopoly') {
+            name.setAttribute('data-compact', c.label.replace(/^第(\d)課$/, '$1課').replace('綜合複習', '複習').replace('休息站', '休息'));
+            name.setAttribute('data-full', c.label);
+          }
           const detail = el('span', 'rg3d-cell-detail'); detail.textContent = c.detail || '';
           const state = el('span', 'rg3d-cell-state');
           const step = el('span', 'rg3d-cell-step'); this.domLabels.append(step);
-          const direction = el('span', 'rg3d-cell-direction', c.direction || '');
+          const direction = el('span', 'rg3d-cell-direction', this.kind === 'monopoly' && c.id === 0 ? '→' : c.direction || '');
           box.append(name, direction, detail, state); this.domLabels.append(box); this.domCells.set(c.id, { box, state, step });
-          if (this.kind === 'monopoly') { const number = el('span', 'rg3d-cell-number', String(c.id)); this.domLabels.append(number); this.domCells.get(c.id).number = number; }
         });
         this.host.append(this.domLabels);
       }
@@ -336,10 +339,12 @@
     }
     label(text, width = 1.4, height = .48, bg = '#fffaf3', ink = '#2b1d12') {
       const canvas = document.createElement('canvas'); canvas.width = 768; canvas.height = Math.round(768 * height / width);
-      const c = canvas.getContext('2d'); c.fillStyle = bg; c.fillRect(0, 0, canvas.width, canvas.height);
+      const c = canvas.getContext('2d');
+      if (bg !== 'transparent') { c.fillStyle = bg; c.fillRect(0, 0, canvas.width, canvas.height); }
       c.fillStyle = ink; c.textAlign = 'center'; c.textBaseline = 'middle';
       // 使用裝置正體中文字型；不把注音或教學文字搬進材質。
       c.font = `900 ${Math.min(canvas.height * .72, canvas.width / Math.max([...text].length, 2) * .88)}px "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif`;
+      if (bg === 'transparent') { c.lineJoin = 'round'; c.lineWidth = canvas.height * .055; c.strokeStyle = 'rgba(35,59,51,.68)'; c.strokeText(text, canvas.width / 2, canvas.height / 2); }
       c.fillText(text, canvas.width / 2, canvas.height / 2);
       const texture = new THREE.CanvasTexture(canvas); texture.encoding = THREE.sRGBEncoding;
       const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: texture, depthTest: false, depthWrite: false, toneMapped: false }));
@@ -396,7 +401,7 @@
         const pad = this.mesh(new T.CylinderGeometry(2.9, 3, .2, 80), '#ffffff'); pad.position.y = .23; pad.material.map = this.woodTexture('felt'); pad.material.roughness = .98;
         const rim = this.mesh(new T.TorusGeometry(2.88, .045, 8, 80), '#c5a15f'); rim.rotation.x = Math.PI / 2; rim.position.y = .34; rim.material.roughness = .5; rim.material.metalness = .24;
         const innerRim = this.mesh(new T.TorusGeometry(2.7, .018, 6, 64), '#e5cf9c'); innerRim.rotation.x = Math.PI / 2; innerRim.position.y = .335; innerRim.material.roughness = .62;
-        const l = this.label('課文探險', 4.05, .88, '#f6e5c4', '#4a3021'); l.position.set(0, .52, -1.1); this.root.add(l);
+        const l = this.label('課文探險', 4.05, .88, 'transparent', '#fffdf6'); l.position.set(0, .52, -1.1); this.root.add(l);
         // A hand-built open book, brass pencil, and reading lamp make the felt center read as a tiny study nook.
         const bookCover = this.roundedBox(1.02, .08, .82, '#8c4e3b', undefined, .035); bookCover.position.set(-1.62, .37, .62); bookCover.rotation.y = -.08; bookCover.material.roughness = .82;
         [-1, 1].forEach((side) => {
@@ -599,7 +604,7 @@
     }
     layoutBoardLabels() {
       if (!this.active || !this.domLabels || !this.camera) return;
-      const key = [this.host.clientWidth, this.host.clientHeight, this.projection, ...this.tokens, ...this.owners, ...(this.domSteps || [])].join('|');
+      const key = [this.host.clientWidth, this.host.clientHeight, this.projection, this.domDestination, ...this.tokens, ...this.owners, ...(this.domSteps || [])].join('|');
       if (this.boardLabelKey === key) return; this.boardLabelKey = key;
       const centers = this.cells.map((cell) => {
         const center = this.cellPosition(cell.id); center.y = .32; center.project(this.camera);
@@ -608,7 +613,7 @@
       this.cells.forEach((c) => {
         // Fixed corner anchors: labels never migrate into adjacent cells.
         const v = this.cellPosition(c.id); v.y = .32; v.x -= .72; v.z -= .68; v.project(this.camera);
-        const { box, state, number, step } = this.domCells.get(c.id);
+        const { box, state, step } = this.domCells.get(c.id);
         if (this.kind === 'monopoly') {
           const index = this.cells.indexOf(c), next = centers[(index + 1) % centers.length];
           const spacing = Math.hypot(centers[index].x - next.x, centers[index].y - next.y);
@@ -616,10 +621,12 @@
           box.style.width = `${labelWidth}px`;
           box.style.setProperty('--rg3d-cell-label-font', `${Math.max(11, Math.min(16, labelWidth * .36))}px`);
         }
-        if (number) { const n = this.cellPosition(c.id); n.x -= .65; n.z += .52; n.y = .32; n.project(this.camera); number.style.left = `${(n.x + 1) * this.width / 2}px`; number.style.top = `${(1 - n.y) * this.height / 2}px`; }
         const teams = [...this.tokens].filter(([, cell]) => cell === c.id).map(([i]) => `${i + 1}隊`);
         const needed = this.focused?.cell === c.id || teams.length > 0;
         box.classList.toggle('is-current', needed);
+        const destination = this.kind === 'monopoly' && this.domDestination === c.id;
+        box.classList.toggle('is-passed', this.kind === 'monopoly' && this.domSteps?.has(c.id) && !destination);
+        box.classList.toggle('is-destination', destination);
         state.textContent = this.owners.has(c.id) ? `屋${this.owners.get(c.id) + 1}` : '';
         step.textContent = this.domSteps?.get(c.id) || '';
         const sp = this.cellPosition(c.id); sp.x += .18; sp.z += .57; sp.project(this.camera);
@@ -632,9 +639,12 @@
 
     // 逐格足跡：走過的格子鋪上隊伍色，頭上浮出步數 1、2、3…，讓學生看見「骰幾點就走幾格」
     stepMark(i, cell, n) {
-      this.domSteps ||= new Map(); this.domSteps.set(cell, `${n}步`);
+      this.domSteps ||= new Map(); this.domSteps.set(cell, this.kind === 'monopoly' ? String(n) : `${n}步`);
+      if (this.kind === 'monopoly') this.domDestination = cell;
       if (!this.active) return;
       const colors = ['#c0362c', '#1f5fa8', '#1f7a43', '#6b3fb0'];
+      const step = this.domCells.get(cell)?.step;
+      if (this.kind === 'monopoly' && step) step.style.setProperty('--rg3d-step-color', colors[i % colors.length]);
       this.stepMarks = this.stepMarks || [];
       const p = this.cellPosition(cell);
       const disc = this.mesh(new THREE.TorusGeometry(.72, .025, 6, 32), colors[i % 4]);
@@ -642,7 +652,7 @@
       this.stepMarks.push(disc); this.draw();
     }
     clearMarks() {
-      this.domSteps?.clear(); this.layoutBoardLabels();
+      this.domSteps?.clear(); this.domDestination = null; this.boardLabelKey = null; this.layoutBoardLabels();
       if (!this.stepMarks) return;
       this.stepMarks.forEach((m) => { m.parent?.remove(m); m.geometry?.dispose?.(); m.material?.map?.dispose?.(); m.material?.dispose?.(); });
       this.labels = this.labels.filter((l) => !this.stepMarks.includes(l));

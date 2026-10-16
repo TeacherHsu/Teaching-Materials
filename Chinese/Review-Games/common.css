@@ -329,9 +329,13 @@ body.calm .rg3d-enter { animation: none; }
 .rg3d-monopoly.is-3d .rg3d-cell-detail, .rg3d-monopoly.is-3d .rg3d-cell-state { background: #fffaf2f2; box-shadow: 0 1px 2px #55402718; }
 .rg3d-monopoly.is-3d .rg3d-cell-label { max-width: none; justify-content: center; align-items: center; text-align: center; gap: 2px; }
 .rg3d-monopoly.is-3d .rg3d-cell-name { display: inline-block; padding: 1px 2px; font-size: 0; white-space: nowrap; }
-.rg3d-monopoly.is-3d .rg3d-cell-name::before { content: attr(data-compact); font-size: var(--rg3d-cell-label-font, 14px); line-height: 1.1; }
-.rg3d-monopoly.is-3d .rg3d-cell-number { font-size: 16px; }
-.rg3d-monopoly.is-3d .rg3d-cell-step { font-size: 13px; padding: 1px 2px; border-radius: 5px; }
+.rg3d-monopoly.is-3d .rg3d-cell-name { color: #777a76; background: transparent; border: 0; box-shadow: none; font-weight: 650; }
+.rg3d-monopoly.is-3d .rg3d-cell-name::before { content: attr(data-compact); color: #777a76; font-size: var(--rg3d-cell-label-font, 14px); line-height: 1.1; font-weight: 650; text-shadow: 0 1px 1px #fff8ebaa; }
+.rg3d-monopoly.is-3d .rg3d-cell-label.is-passed .rg3d-cell-name { visibility: hidden; }
+.rg3d-monopoly.is-3d .rg3d-cell-label.is-destination .rg3d-cell-name { visibility: visible; color: #201d19; font-weight: 900; }
+.rg3d-monopoly.is-3d .rg3d-cell-label.is-destination .rg3d-cell-name::before { content: attr(data-full); color: #201d19; font-size: max(10px, calc(var(--rg3d-cell-label-font, 14px) - 1px)); font-weight: 900; text-shadow: 0 1px 1px #fff8ebaa; }
+.rg3d-monopoly.is-3d .rg3d-cell-label[data-cell="0"] .rg3d-cell-direction { display: block; position: absolute; top: -17px; left: 0; width: 100%; color: #52675a; font-size: 18px; line-height: 1; font-weight: 900; text-align: center; }
+.rg3d-monopoly.is-3d .rg3d-cell-step { min-width: 18px; height: 18px; padding: 0 3px; border-radius: 50%; border-color: var(--rg3d-step-color, #c3ac88); background: var(--rg3d-step-color, #fffaf0ed); color: #fff; box-shadow: 0 1px 3px #47372330; font-size: 12px; text-align: center; }
 .rg3d-monopoly.is-3d .rg3d-cell-state { font-size: 12px; }
 .rg3d-monopoly.is-3d .rg3d-cell-detail { font-size: 12px; }
 .rg3d-monopoly.is-3d > .rg3d-surface, .rg3d-monopoly.is-3d > .rg3d-surface canvas { touch-action: pan-y; }
@@ -342,8 +346,9 @@ body.calm .rg3d-enter { animation: none; }
   .rg3d-monopoly.is-3d .rg3d-cell-label { max-width: none; }
   .rg3d-monopoly.is-3d .rg3d-cell-name { width: auto; }
   .rg3d-monopoly.is-3d .rg3d-cell-name::before { font-size: var(--rg3d-cell-label-font, 13px); }
-  .rg3d-monopoly.is-3d .rg3d-cell-number { font-size: 14px; }
-  .rg3d-monopoly.is-3d .rg3d-cell-step { font-size: 11px; }
+  .rg3d-monopoly.is-3d .rg3d-cell-label.is-destination .rg3d-cell-name::before { font-size: max(10px, calc(var(--rg3d-cell-label-font, 13px) - 1px)); }
+  .rg3d-monopoly.is-3d .rg3d-cell-label[data-cell="0"] .rg3d-cell-direction { top: -14px; font-size: 15px; }
+  .rg3d-monopoly.is-3d .rg3d-cell-step { min-width: 15px; height: 15px; font-size: 10px; }
   .play:has(> .rg3d-monopoly.is-3d) > .side { min-width: 0; }
   .play:has(> .rg3d-monopoly.is-3d) .side > .rg3d-console { order: -1; padding: 12px; }
   .play:has(> .rg3d-monopoly.is-3d) .side .team { min-height: 68px; }
