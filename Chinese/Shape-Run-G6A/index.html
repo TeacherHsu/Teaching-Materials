@@ -77,6 +77,8 @@
     .strip.hidden { display: none; }
     .strip-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
     .strip .col { position: relative; min-height: 76px; display: flex; align-items: center; justify-content: center; padding: 8px; border-radius: 16px; background: #fff4d0; color: #1f0e00; font-weight: 900; white-space: nowrap; border: 3px solid #c27a0e; box-shadow: 0 6px 18px rgba(0,0,0,.35); }
+    .strip .col:not(.empty) { cursor: pointer; touch-action: manipulation; }
+    .strip .col:not(.empty):active { transform: translateY(2px); }
     .strip .col.empty { background: rgba(36,26,51,.45); border: 2px dashed rgba(255,255,255,.3); box-shadow: none; }
     .strip .col.here { outline: 4px solid #7dd3fc; outline-offset: 3px; }
     .strip .col.here::after { content: '小黑在這'; position: absolute; bottom: -34px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: 700; color: #7dd3fc; text-shadow: 0 2px 6px rgba(0,0,0,.6); white-space: nowrap; }
@@ -177,7 +179,7 @@
     <p class="desc">每一排語詞會先停下來讓你看清楚，再左右換道，<b>只吃用字完全正確的語詞金幣</b>，錯別字要閃開！<br><span id="fun-desc">吃到錯別字，會先停下來看正確的字。</span>收集 <b><span id="goal-desc">10</span> 個不同的正確語詞</b>就過關！（翰林六上第 1～6 課）</p>
     <div class="lessons" id="lessons">課次：</div>
     <div class="settings">
-      <label>看字時間 <select id="read-sec"><option value="3">3 秒</option><option value="4" selected>4 秒</option><option value="5">5 秒</option><option value="0">看好了再按</option></select></label>
+      <label>看字時間 <select id="read-sec"><option value="1">1 秒</option><option value="2">2 秒</option><option value="3">3 秒</option><option value="4" selected>4 秒</option><option value="5">5 秒</option><option value="0">看好了再按</option></select></label>
       <label><input type="checkbox" id="rm-box"> 減少畫面動態</label>
       <label><input type="checkbox" id="fun-box"> 趣味模式（吃錯變 💩）</label>
       <label>朗讀速度 <select id="tts-rate"><option value="0.75">慢</option><option value="0.85" selected>標準</option><option value="1">快</option></select></label>
@@ -657,7 +659,7 @@
       stripRow = row;
       const cols = [0, 1, 2].map(l => {
         const c = row.coins.find(k => k.lane === l && !k.done);
-        return c ? `<div class="col" data-lane="${l}" style="font-size:${wordPx(c.n)}px">${c.n}</div>` : `<div class="col empty" data-lane="${l}"></div>`;
+        return c ? `<div class="col" data-lane="${l}" role="button" tabindex="0" aria-label="換到這條跑道：${c.n}" style="font-size:${wordPx(c.n)}px">${c.n}</div>` : `<div class="col empty" data-lane="${l}"></div>`;
       });
       document.getElementById('strip-cols').innerHTML = cols.join('');
       document.getElementById('strip').classList.remove('hidden');
@@ -758,7 +760,7 @@
     function move(d) {
       if (!running || phase === 'fix' || phase === 'pause') return;
       const nl = Math.max(0, Math.min(2, lane + d));
-      if (nl !== lane) { lane = nl; lean = d; sfx('move'); markLane(); if (tutorial) tutCheck(); }
+      if (nl !== lane) { lane = nl; lean = Math.sign(d); sfx('move'); markLane(); if (tutorial) tutCheck(); }
     }
     window.addEventListener('keydown', e => {
       if (e.repeat && /Arrow|^[aAdD]$/.test(e.key)) { e.preventDefault(); return; }   // 按住不放只換一道
@@ -770,6 +772,14 @@
         else if (phase === 'fix' && document.getElementById('fix-go')) { endFix(); e.preventDefault(); }
       }
     });
+    // 題目（上方三格語詞）出現時，也可以直接點那一格，小黑就換到那條跑道（一次換到位，不必連按）
+    function pickLane(el) {
+      if (!el || el.classList.contains('empty') || !stripRow) return;
+      const target = +el.dataset.lane, d = target - lane;
+      if (d) move(d);
+    }
+    document.getElementById('strip-cols').addEventListener('pointerdown', e => { const el = e.target.closest('.col'); if (el) { e.preventDefault(); pickLane(el); } });
+    document.getElementById('strip-cols').addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { const el = e.target.closest('.col'); if (el) { e.preventDefault(); e.stopPropagation(); pickLane(el); } } });
     document.getElementById('btn-l').addEventListener('pointerdown', e => { e.preventDefault(); move(-1); });
     document.getElementById('btn-r').addEventListener('pointerdown', e => { e.preventDefault(); move(1); });
     let sx = null;
@@ -1031,7 +1041,7 @@
     const TUT = {
       1: '按鍵盤 ←（或左下的 ◀ 按鈕），讓小黑往左換一條跑道。',
       2: '很好！現在按 →（或 ▶）兩次，讓小黑跑到最右邊。',
-      3: '上面三格是三條跑道的語詞。換到用字完全正確的那一格，再按「看好了」。',
+      3: '上面三格是三條跑道的語詞。換到用字完全正確的那一格（可以按方向鍵，也可以直接點那一格），再按「看好了」。',
       4: '吃錯的話，路會停下來給你看正確的字，看完按「繼續」。吃錯 6 次，這一局就結束。準備好了嗎？',
     };
     function tutPanel(n, extra = '', btns = '') {
