@@ -9,6 +9,8 @@ const [url, out, scriptFile] = process.argv.slice(2);
 const qaURL = new URL(url);
 const width = Number(qaURL.searchParams.get('qaWidth')) || 1366;
 const height = Number(qaURL.searchParams.get('qaHeight')) || 900;
+// 埠被殘留的 Chrome 占住時，新開的 Chrome 綁不到埠，會連到舊實例（舊 localStorage／模擬設定），一律先擋下。
+try { await fetch('http://127.0.0.1:9333/json/version'); throw new Error('PORT_BUSY'); } catch (e) { if (e.message === 'PORT_BUSY') throw new Error('9333 埠已有殘留的 Chrome，請先 pkill -f remote-debugging-port=9333'); }
 const chrome = spawn('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', ['--headless=new', '--remote-debugging-port=9333', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', `--window-size=${width},${height}`, `--user-data-dir=${tmpdir()}/rg-cdp-profile`, 'about:blank'], { stdio: 'ignore' });
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 let targets;
@@ -32,4 +34,4 @@ console.log('RESULT', JSON.stringify(r.result?.result?.value ?? r.result?.except
 const shot = await send('Page.captureScreenshot', { format: 'png' });
 writeFileSync(out, Buffer.from(shot.result.data, 'base64'));
 console.log(logs.join('\n'));
-ws.close(); chrome.kill();
+ws.close(); chrome.kill('SIGKILL'); await sleep(300);

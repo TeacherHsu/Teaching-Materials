@@ -133,7 +133,7 @@
     } else if (team === 1) {
       box(toy, .43, .36, .31, color, 0, .32, 0, .08); box(toy, .49, .30, .33, color, 0, .65, 0, .08);
       box(toy, .39, .13, .04, MAT.ink, 0, .67, .18, .035);
-      mesh(new t.CylinderGeometry(.022, .022, .13, 10), MAT.ink, toy, 0, .85, 0); ball(toy, 0, .94, 0, .045, MAT.gold);
+      mesh(new t.CylinderGeometry(.022, .022, .13, 10), MAT.ink, toy, 0, .85, 0); ball(toy, 0, .94, 0, .045, color);
       for (const x of [-.29, .29]) box(toy, .10, .25, .13, color, x, .32, 0);
     } else if (team === 2) {
       ball(toy, 0, .40, 0, .25, color, [1, 1.15, .9]); ball(toy, 0, .69, .085, .21, color, [1, .9, 1.05]);
@@ -155,17 +155,22 @@
       ball(toy, x * 1.55, eyeY - .065, front - .015, .037, MAT.plastic('#eaa599'), [1, .5, .35]);
     }
     root.idle = (options = {}) => {
-      if (calmNow(options.calm) || !options.active) { toy.position.y = 0; return Promise.resolve(); }
+      if (calmNow(options.calm) || !options.active) {
+        let parent = root, stage = options.stage;
+        while (parent && !stage) { stage = parent.userData?.stage; parent = parent.parent; }
+        stage?.cancelTween?.(root.uuid + ':idle'); toy.position.y = 0; return Promise.resolve();
+      }
       return animate(root, 'idle', 2400, (p) => { toy.position.y = .019 * Math.sin(p * Math.PI * 2); }, options);
     };
     root.hop = (from, to, options = {}) => {
       const calm = calmNow(options.calm), dx = to.x - from.x, dz = to.z - from.z;
       if (dx || dz) toy.rotation.y = Math.atan2(dx, dz);
       return animate(root, 'hop', calm ? 80 : TOKENS.select, (p) => {
-        root.position.set(from.x + dx * p, from.y + (to.y - from.y) * p + (calm ? 0 : .35 * Math.sin(Math.PI * p)), from.z + dz * p);
+        const travel = calm ? p : Math.min(1, p / .8), height = calm ? 0 : .35 * Math.sin(Math.PI * travel);
+        root.position.set(from.x + dx * travel, from.y + (to.y - from.y) * travel + height, from.z + dz * travel);
         toy.scale.y = calm ? 1 : 1 - .06 * Math.sin(Math.PI * Math.max(0, (p - .8) / .2));
         if (p === 1) toy.scale.y = 1;
-        shadow.position.y = .002 - (calm ? 0 : .35 * Math.sin(Math.PI * p));
+        shadow.position.y = .002 - height;
       }, options);
     };
     root.cheer = (options = {}) => {
@@ -227,6 +232,27 @@
       }, options);
     }; return root;
   }
+  let toolbar;
+  function controls() {
+    if (toolbar?.isConnected) return toolbar;
+    const el = (tag, cls, text) => { const n = document.createElement(tag); n.className = cls || ''; if (text) n.textContent = text; return n; };
+    toolbar = el('details', 'rg3d-tools'); toolbar.setAttribute('aria-label', '畫面設定');
+    toolbar.append(el('summary', '', '畫面設定'));
+    const status = el('span', 'rg3d-status', '正在準備立體視圖，已可開始操作'); status.setAttribute('role', 'status'); toolbar.append(status);
+    const switches = [];
+    for (const [key, text] of [['calm', '減少動態'], ['proj', '投影模式']]) {
+      const label = el('label', 'rg3d-switch'), input = el('input'); input.type = 'checkbox';
+      input.checked = document.body.classList.contains(key);
+      input.addEventListener('change', () => document.body.classList.toggle(key, input.checked));
+      label.append(input, document.createTextNode(text)); toolbar.append(label); switches.push([key, input]);
+    }
+    const force = window.RG?.force3dToggle?.(); if (force) toolbar.append(force);
+    const observer = new MutationObserver(() => {
+      if (!toolbar.isConnected) { observer.disconnect(); return; }
+      switches.forEach(([key, input]) => { input.checked = document.body.classList.contains(key); });
+    }); observer.observe(document.body, { attributes: true, attributeFilter: ['class'], childList: true, subtree: true });
+    document.querySelector('#app .topbar')?.after(toolbar); return toolbar;
+  }
   function createStage({ host, quality = 'standard', onMode = () => {} }) {
     if (!host) throw new TypeError('createStage 需要 host');
     const stage = { host, quality: qualityOf(quality), scene: null, camera: null, renderer: null,
@@ -280,6 +306,7 @@
       stage.draw();
       if (stage.tweens.size && stage.active) stage.frame = requestAnimationFrame(frame); else last = null;
     }
+    stage.cancelTween = (name) => { finish(name); };
     stage.tween = (name, ms, fn) => {
       try { finish(name); } catch (_) { /* 同名替換也解除舊 Promise */ }
       if (!stage.active || stage.disposed || document.hidden || calmNow() || ms <= 0) { fn(1); stage.draw(); return Promise.resolve(); }
@@ -327,10 +354,12 @@
     };
     const refresh = () => { if (host.isConnected === false) stage.dispose(); else stage.refresh(); };
     resizeObserver = new ResizeObserver(() => { stage.refresh(); }); resizeObserver.observe(host);
-    observer = new MutationObserver(refresh); observer.observe(document.body, { attributes: true, attributeFilter: ['class'], childList: true, subtree: true });
+    observer = new MutationObserver((records) => {
+      if (host.isConnected === false || records.some(r => r.type === 'attributes' && r.target === document.body)) refresh();
+    }); observer.observe(document.body, { attributes: true, attributeFilter: ['class'], childList: true, subtree: true });
     reduced.addEventListener('change', refresh); narrow.addEventListener('change', refresh);
     document.addEventListener('visibilitychange', stage.visibility); window.addEventListener('pagehide', stage.dispose);
     stage.ready = stage.refresh().then(() => stage); return stage;
   }
-  window.RG3DKit = { load, TOKENS, LIGHT, MAT, roundedBox, blobShadow, createRenderer, addStudioLights, piece, dice, createStage };
+  window.RG3DKit = { load, TOKENS, LIGHT, MAT, material, releaseMaterial: (key) => { materials.get(key)?.dispose(); materials.delete(key); }, controls, roundedBox, blobShadow, createRenderer, addStudioLights, piece, dice, createStage };
 })();

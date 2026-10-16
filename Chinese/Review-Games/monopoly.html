@@ -33,12 +33,25 @@
       .where, .center .log { font-size: .75rem; padding: 2px 6px; }
       .center strong { font-size: .8rem; }
     }
+    /* T1B：側邊隊伍卡；保留遊戲 DOM 與按鈕行為。 */
+    .side .team { --team-accent: var(--team-1); }
+    .side .team:nth-child(2) { --team-accent: var(--team-2); }
+    .side .team:nth-child(3) { --team-accent: var(--team-3); }
+    .side .team:nth-child(4) { --team-accent: var(--team-4); }
+    .play .side .team.now { border-left: 6px solid var(--team-accent); box-shadow: var(--shadow-toy); }
+    .side .team > div:first-child::before { content: ""; display: inline-block; width: 34px; height: 40px; margin-right: 8px; vertical-align: middle; background: center / contain no-repeat var(--character); }
+    .side .team:nth-child(1) { --character: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2052%22%3E%3Cellipse%20cx%3D%2224%22%20cy%3D%2237%22%20rx%3D%2211%22%20ry%3D%2213%22%20fill%3D%22%23c0362c%22%2F%3E%3Ccircle%20cx%3D%2224%22%20cy%3D%2222%22%20r%3D%2210%22%20fill%3D%22%23f1c59f%22%2F%3E%3Cellipse%20cx%3D%2224%22%20cy%3D%2214%22%20rx%3D%2216%22%20ry%3D%224%22%20fill%3D%22%23e8d4aa%22%2F%3E%3Cpath%20d%3D%22M14%2013Q15%200%2024%203Q34%200%2034%2013%22%20fill%3D%22%23e8d4aa%22%2F%3E%3Crect%20x%3D%228%22%20y%3D%2229%22%20width%3D%227%22%20height%3D%2215%22%20rx%3D%222%22%20fill%3D%22%238a5a33%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2222%22%20r%3D%221.6%22%20fill%3D%22%232b1d12%22%2F%3E%3Ccircle%20cx%3D%2228%22%20cy%3D%2222%22%20r%3D%221.6%22%20fill%3D%22%232b1d12%22%2F%3E%3C%2Fsvg%3E"); }
+    .side .team:nth-child(2) { --character: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2052%22%3E%3Crect%20x%3D%2212%22%20y%3D%2227%22%20width%3D%2224%22%20height%3D%2220%22%20rx%3D%225%22%20fill%3D%22%231f5fa8%22%2F%3E%3Crect%20x%3D%229%22%20y%3D%2212%22%20width%3D%2230%22%20height%3D%2219%22%20rx%3D%225%22%20fill%3D%22%231f5fa8%22%2F%3E%3Crect%20x%3D%2213%22%20y%3D%2218%22%20width%3D%2222%22%20height%3D%228%22%20rx%3D%223%22%20fill%3D%22%232b1d12%22%2F%3E%3Cpath%20d%3D%22M24%2012V5%22%20stroke%3D%22%232b1d12%22%20stroke-width%3D%222%22%2F%3E%3Ccircle%20cx%3D%2224%22%20cy%3D%224%22%20r%3D%223%22%20fill%3D%22%231f5fa8%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2222%22%20r%3D%221.6%22%20fill%3D%22%23fbf3e4%22%2F%3E%3Ccircle%20cx%3D%2228%22%20cy%3D%2222%22%20r%3D%221.6%22%20fill%3D%22%23fbf3e4%22%2F%3E%3C%2Fsvg%3E"); }
+    .side .team:nth-child(3) { --character: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2052%22%3E%3Cpath%20d%3D%22M15%2038L3%2045L12%2027L6%2028L11%2022L6%2018L14%2015L14%209L21%2012%22%20fill%3D%22%23fbf3e4%22%2F%3E%3Cellipse%20cx%3D%2224%22%20cy%3D%2233%22%20rx%3D%2212%22%20ry%3D%2215%22%20fill%3D%22%231f7a43%22%2F%3E%3Cellipse%20cx%3D%2225%22%20cy%3D%2219%22%20rx%3D%2212%22%20ry%3D%2211%22%20fill%3D%22%231f7a43%22%2F%3E%3Cellipse%20cx%3D%2226%22%20cy%3D%2225%22%20rx%3D%2210%22%20ry%3D%225%22%20fill%3D%22%231f7a43%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2222%22%20r%3D%221.6%22%20fill%3D%22%232b1d12%22%2F%3E%3Ccircle%20cx%3D%2228%22%20cy%3D%2222%22%20r%3D%221.6%22%20fill%3D%22%232b1d12%22%2F%3E%3C%2Fsvg%3E"); }
+    .side .team:nth-child(4) { --character: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2052%22%3E%3Cpath%20d%3D%22M23%2020L4%2013L5%2038L23%2044L43%2037L44%2013L25%2020%22%20fill%3D%22%23fbf3e4%22%20stroke%3D%22%236b3fb0%22%20stroke-width%3D%223%22%2F%3E%3Cellipse%20cx%3D%2224%22%20cy%3D%2233%22%20rx%3D%2210%22%20ry%3D%2213%22%20fill%3D%22%236b3fb0%22%2F%3E%3Ccircle%20cx%3D%2224%22%20cy%3D%2220%22%20r%3D%229%22%20fill%3D%22%236b3fb0%22%2F%3E%3Cpath%20d%3D%22M24%201L26%206L31%206L27%2010L28%2015L24%2012L20%2015L21%2010L17%206L22%206%22%20fill%3D%22%23d9a441%22%2F%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2222%22%20r%3D%221.6%22%20fill%3D%22%232b1d12%22%2F%3E%3Ccircle%20cx%3D%2228%22%20cy%3D%2222%22%20r%3D%221.6%22%20fill%3D%22%232b1d12%22%2F%3E%3C%2Fsvg%3E"); }
+    .side .btn:not(.primary) { background: var(--surface-1); color: var(--ink); }
   </style>
 </head>
 <body>
   <main class="wrap" id="app"><p>載入中…</p></main>
   <script src="common.js?v=3"></script>
-  <script src="scene3d.js?v=13"></script>
+  <script src="rg3d-kit.js?v=1"></script>
+  <script src="scene3d-monopoly.js?v=1"></script>
   <script>
     const { die3d, h, speak, sleep, loadBank, setupPanel, makeDeck, ask, header, token, statsLine, TEAM_COLORS, TEAM_NAMES } = RG;
     const PRICE = 200, TOLL = 100, PASS_GO = 200, START_CASH = 1000;
@@ -99,7 +112,7 @@
         const side = h('div', { class: 'side' }, [teamBar]);
         const boardHost = h('div', {}, h('div', { class: 'tilt' }, board));
         app.replaceChildren(header(bank, '課文大富翁'), h('div', { class: 'play' }, [boardHost, side]));
-        const view = window.RG3D?.mount({ kind: 'monopoly', host: boardHost,
+        const view = window.RG3DMonopoly?.mount({ host: boardHost,
           cells: LAYOUT.map((t, i) => {
             const [r, c] = pos(i), [nr, nc] = pos((i + 1) % LAYOUT.length), kind = kindOf(t);
             return { id: i, row: r - 1, col: c - 1, direction: nr > r ? '↓' : nr < r ? '↑' : nc > c ? '→' : '←',
