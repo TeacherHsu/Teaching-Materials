@@ -7,8 +7,9 @@
 .rg3d-monopoly.is-3d>.rg3d-surface{background:transparent;border:0;box-shadow:none;border-radius:20px;min-height:0;max-height:none;width:100%;height:auto;aspect-ratio:1.22}
 .rg3d-monopoly>.rg3d-surface{position:relative}
 .rg3d-monopoly>.rg3d-surface canvas{position:absolute;inset:0;width:100%!important;height:100%!important;mask-image:linear-gradient(to right,transparent,#000 4%,#000 96%,transparent),linear-gradient(to bottom,transparent,#000 4%,#000 96%,transparent);mask-composite:intersect}
+.rg3d-monopoly.is-3d>.rg3d-dom-labels{z-index:3}
 .rg3d-monopoly.is-3d .rg3d-cell-label{transform:translate(-50%,-50%);display:block;max-width:none;width:max-content;line-height:1.1}
-.rg3d-monopoly.is-3d .rg3d-cell-name{font-size:0!important;background:#fffaf3ed;border:1px solid #d7c4a6;border-radius:6px;padding:3px 5px;box-shadow:0 2px 3px #51381e18;color:var(--ink);visibility:visible!important}
+.rg3d-monopoly.is-3d .rg3d-cell-name{font-size:0!important;background:#fffaf3;border:1px solid #d7c4a6;border-radius:6px;padding:3px 5px;box-shadow:0 2px 3px #51381e18;color:var(--ink);visibility:visible!important}
 .rg3d-monopoly.is-3d .rg3d-cell-name::before{content:attr(data-compact);font-size:16px!important;font-weight:800;color:#2b1d12;text-shadow:none}
 .rg3d-monopoly.is-3d .rg3d-cell-label.is-destination .rg3d-cell-name::before{content:attr(data-compact)}
 .rg3d-monopoly .rg3d-cell-name::after{content:'';display:inline-block;width:6px;height:6px;margin-left:3px;border-radius:50%;background:var(--lesson-color,#7aa38f)}
@@ -81,8 +82,10 @@
     inward(id) { const p = this.cellPosition(id); return Math.abs(p.z) >= Math.abs(p.x) ? [0, -Math.sign(p.z)] : [-Math.sign(p.x), 0]; }
     anchor(id, inward) { const p = this.cellPosition(id), d = this.inward(id); p.x += d[0] * inward; p.z += d[1] * inward; return p; }
     labelPosition(id) { return this.anchor(id, .82); }
-    orientPlot(g, id) {
-      const d = this.inward(id); g.rotation.y = Math.atan2(d[0], d[1]); g.scale.z = .65;
+    orientPlot(g, id, tilt = false) {
+      const d = this.inward(id);
+      // +Z 是建築正面；朝盤外後繞世界 X 軸 -18°，抬起朝鏡頭的牆面。
+      g.rotation.set(tilt ? -18 * Math.PI / 180 : 0, Math.atan2(-d[0], -d[1]), 0); g.scale.z = .65;
     }
     box(g, w, h, d, mat, x = 0, y = 0, z = 0, r = .03) { return this.mesh(g, K.roundedBox(w, h, d, r, 1), mat, x, y, z); }
     mesh(g, geo, mat, x = 0, y = 0, z = 0) { const m = new window.THREE.Mesh(geo, mat); m.position.set(x, y, z); m.castShadow = m.receiveShadow = true; g.add(m); return m; }
@@ -157,7 +160,7 @@
       this.box(fixed, 6.3, .045, 6.3, K.material('monopoly-felt:' + this.root.uuid, '#5f8f78', 1, 0, { map: this.feltMap() }), 0, .14, 0, .08);
       this.cells.forEach(c => {
         const g = new T.Group(), p = this.cellPosition(c.id), d = this.inward(c.id); g.position.set(p.x, .15, p.z); fixed.add(g);
-        const tint = c.band ? new T.Color('#fbf3e4').lerp(new T.Color(c.band), .15).getStyle() : '#fff0cd';
+        const tint = c.band ? new T.Color('#fbf3e4').lerp(new T.Color(c.band), .30).getStyle() : '#fff0cd';
         this.box(g, 1.62, .2, 1.62, K.material('monopoly-tile:' + tint, tint, .9), 0, 0, 0, .07);
         if (c.band) {
           const band = this.box(g, d[0] ? .42 : 1.62, .04, d[1] ? .42 : 1.62, K.MAT.plastic(c.band), d[0] * .60, .12, d[1] * .60); this.plots.set(c.id, { band });
@@ -215,8 +218,10 @@
     fit() {
       if (!this.camera || !this.root) return;
       const T = window.THREE, cam = this.camera;
-      const angle = 54 * Math.PI / 180;
+      const angle = 48 * Math.PI / 180;
       const corners = [-5.54, 5.54].flatMap(x => [-5.54, 5.54].flatMap(z => [-.55, 0].map(y => new T.Vector3(x, y, z))));
+      // 遠端那排的棋子與建築高約 1.1，也要納入取景，否則頭會被畫布上緣切掉。
+      corners.push(new T.Vector3(-4.7, 1.15, -4.7), new T.Vector3(4.7, 1.15, -4.7));
       // 先求左右各 5% 的距離，再迭代畫布比例及垂直中心，避免高度 fit 把棋盤縮小。
       let aspect = 1.22, targetY = 0, distance;
       for (let pass = 0; pass < 8; pass++) {
@@ -251,13 +256,37 @@
       });
     }
     position(i, cell) {
-      const p = this.cellPosition(cell), d = this.inward(cell), radial = i < 2 ? -.14 : .18, tangent = i % 2 ? .30 : -.30;
+      const p = this.cellPosition(cell);
+      if ([...this.tokens.values()].filter(id => id === cell).length <= 1) return p;
+      const d = this.inward(cell), radial = i < 2 ? -.40 : .40, tangent = i % 2 ? .40 : -.40;
       p.x += d[0] * radial + d[1] * tangent; p.z += d[1] * radial - d[0] * tangent; return p;
     }
-    ensurePiece(i) { if (!this.pieces.has(i)) { const piece = K.piece(i); piece.scale.setScalar(.30); batch(piece.children[0]); this.pieces.set(i, piece); this.root.add(piece); } return this.pieces.get(i); }
+    ensurePiece(i) {
+      if (!this.pieces.has(i)) {
+        const piece = K.piece(i), toy = piece.children[0], T = window.THREE;
+        const height = new T.Box3().setFromObject(toy).getSize(new T.Vector3()).y;
+        // 統一到原 kit 最高角色約 1.05 × .95 的高度，避免恐龍明顯矮一截。
+        piece.scale.set(.95, 1.0 / height, .95);
+        const badge = toy.children.find(o => o.material?.map === piece.userData.base.userData.numberTexture);
+        toy.remove(badge); batch(toy); toy.add(badge);
+        badge.position.set(0, .15, .28); badge.rotation.x = -.85;
+        // 號碼為棋子辨識標記，最後繪製；不讓前排角色遮住後排底座號碼。
+        badge.material = badge.material.clone(); badge.material.depthTest = false; badge.material.depthWrite = false;
+        badge.renderOrder = 2; badge.userData.ownedMaterial = true;
+        piece.userData.monopolyBadge = badge;
+        this.pieces.set(i, piece); this.root.add(piece);
+      }
+      return this.pieces.get(i);
+    }
+    placePiece(i, cell) {
+      const piece = this.ensurePiece(i), target = this.position(i, cell);
+      // 號牌略朝上、偏向槽位外緣，讓後排號碼露出前排角色的側邊。
+      piece.userData.monopolyBadge.position.x = Math.sign(target.x - this.cellPosition(cell).x) * .14;
+      return target;
+    }
     sync() {
       if (!this.root) return;
-      for (const [i, cell] of this.tokens) this.ensurePiece(i).position.copy(this.position(i, cell));
+      for (const [i, cell] of this.tokens) this.ensurePiece(i).position.copy(this.placePiece(i, cell));
       for (const [cell, team] of this.owners) if (!this.buildings.has(cell)) this.ownerModel(cell, team);
       if (this.die && this.die.userData.value !== this.dieValue) this.die.roll(this.dieValue, { calm: true });
       this.updatePennants();
@@ -273,7 +302,12 @@
     moveToken(i, cell, { instant = false } = {}) {
       if (this.disposed) return done(); this.tokens.set(i, cell);
       if (!this.active || !this.root) return done();
-      const p = this.ensurePiece(i), target = this.position(i, cell); this.stopIdle();
+      const p = this.ensurePiece(i), target = this.placePiece(i, cell); this.stopIdle();
+      // 到達格展開槽位，離開格剩一隊時復位中央；只移動呈現層。
+      for (const [other, at] of this.tokens) if (other !== i) {
+        const piece = this.ensurePiece(other); this.stage.cancelTween(piece.uuid + ':hop');
+        piece.position.copy(this.placePiece(other, at));
+      }
       if (instant) this.stage.cancelTween(p.uuid + ':hop');
       const promise = instant ? (p.position.copy(target), done()) : p.hop(p.position.clone(), target, { stage: this.stage });
       this.draw(); return promise.then(() => { this.startIdle(); });
@@ -290,7 +324,14 @@
     ownerModel(cell, team) {
       const c = this.cells.find(c => c.id === cell); if (!c?.band) return null;
       const model = this.building(Number(c.label.match(/\d+/)?.[0]) || 1, team), p = this.anchor(cell, -.54);
-      model.position.set(p.x, .26, p.z); this.orientPlot(model, cell); this.root.add(model); this.buildings.set(cell, model); this.plots.get(cell).foundation.visible = false; return model;
+      model.position.set(p.x, .26, p.z); this.orientPlot(model, cell, true);
+      // 傾斜後讓最低實體點仍接觸格面，避免牆腳陷入格子。
+      model.updateMatrixWorld(true); let bottom = Infinity;
+      model.traverse(o => { if (!o.isMesh || o.material.transparent) return;
+        o.geometry.computeBoundingBox(); bottom = Math.min(bottom, o.geometry.boundingBox.clone().applyMatrix4(o.matrixWorld).min.y);
+      });
+      model.position.y += .26 - bottom;
+      this.root.add(model); this.buildings.set(cell, model); this.plots.get(cell).foundation.visible = false; return model;
     }
     updatePennants() {
       if (!this.root) return;

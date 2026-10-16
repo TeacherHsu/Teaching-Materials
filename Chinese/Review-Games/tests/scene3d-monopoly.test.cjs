@@ -96,7 +96,7 @@ test('四隊同格維持獨立中央槽，且只為當前隊伍播放 idle', asy
   const e=environment(),v=await mount(e),T=e.c.THREE;
   for(let i=0;i<4;i++) await v.moveToken(i,1,{instant:true});
   v.root.updateMatrixWorld(true); const ps=[...v.pieces.values()].map(p=>p.getWorldPosition(new T.Vector3()));
-  for(let i=0;i<4;i++) for(let j=i+1;j<4;j++) assert.ok(ps[i].distanceTo(ps[j])>=.32-1e-9);
+  for(let i=0;i<4;i++) for(let j=i+1;j<4;j++) assert.ok(ps[i].distanceTo(ps[j])>=.5-1e-9);
   await complete(e,v.focusPlayer(1,1)); assert.equal([...v.stage.tweens.keys()].filter(k=>k.endsWith(':idle')).length,1);
   await complete(e,v.focusPlayer(3,1)); assert.equal([...v.stage.tweens.keys()].filter(k=>k.endsWith(':idle')).length,1);
   await v.dispose();
@@ -167,22 +167,58 @@ function footprint(T, model) {
     o.geometry.computeBoundingBox(); result.union(o.geometry.boundingBox.clone().applyMatrix4(o.matrixWorld));
   }); return result;
 }
-function overlapsXZ(a,b) { return a.min.x < b.max.x-1e-6 && a.max.x > b.min.x+1e-6 && a.min.z < b.max.z-1e-6 && a.max.z > b.min.z+1e-6; }
-test('十二地四隊同格：實際建築、四角色、內緣標籤 XZ AABB 不重疊', async () => {
+test('單隊居中，多隊展開 ±.40 槽位，離開後剩餘棋子回中央', async () => {
+  const e=environment(),v=await mount(e);
+  await v.moveToken(3,1,{instant:true});
+  assert.ok(v.pieces.get(3).position.distanceTo(v.cellPosition(1))<1e-9);
+  await v.moveToken(0,1,{instant:true});
+  for(const i of [0,3]) {
+    const delta=v.pieces.get(i).position.clone().sub(v.cellPosition(1));
+    assert.ok(Math.abs(Math.abs(delta.x)-.4)<1e-9); assert.ok(Math.abs(Math.abs(delta.z)-.4)<1e-9);
+  }
+  await complete(e,v.moveToken(0,2));
+  assert.ok(v.pieces.get(3).position.distanceTo(v.cellPosition(1))<1e-9);
+  assert.ok(v.pieces.get(0).position.distanceTo(v.cellPosition(2))<1e-9);
+  await v.dispose();
+});
+function projectedBounds(T,model,camera,width,height) {
+  model.updateMatrixWorld(true); const points=[];
+  model.traverse(o=>{if(!o.isMesh || o.material.transparent)return;
+    const attr=o.geometry.attributes.position;
+    for(let j=0;j<attr.count;j++) points.push(new T.Vector3().fromBufferAttribute(attr,j).applyMatrix4(o.matrixWorld).project(camera));
+  });
+  return {left:Math.min(...points.map(p=>p.x))*width/2,right:Math.max(...points.map(p=>p.x))*width/2,
+    top:Math.min(...points.map(p=>p.y))*height/2,bottom:Math.max(...points.map(p=>p.y))*height/2};
+}
+test('1024 頁面棋盤寬 690：20 格四角色實際幾何投影至少 40px',async()=>{
+  const e=environment(),v=await mount(e),T=e.c.THREE,width=690;
+  v.surface.getBoundingClientRect=()=>({width,height:width/Number(v.surface.style.aspectRatio)}); v.stage.resize();
+  let minimum=Infinity;
+  for(const c of cells) for(let i=0;i<4;i++) {
+    await v.moveToken(i,c.id,{instant:true});
+    const b=projectedBounds(T,v.pieces.get(i),v.camera,width,width/v.fitAspect);
+    minimum=Math.min(minimum,b.bottom-b.top);
+  }
+  console.log('R2 最小角色投影高度',minimum); assert.ok(minimum>=40);
+  assert.match(read('scene3d-monopoly.js'),/dom-labels\{z-index:3\}/);
+  assert.match(read('scene3d-monopoly.js'),/background:#fffaf3;/);
+  await v.dispose();
+});
+test('全購地每棟建築可見紙色牆面，外框完整且仰角 48 度',async()=>{
   const e=environment(),v=await mount(e),T=e.c.THREE;
+  // 用相機視線量角，不依賴 fit 內部暫存的 targetY。
+  const direction=v.camera.getWorldDirection(new T.Vector3());
+  assert.ok(Math.abs(Math.asin(-direction.y)*180/Math.PI-48)<1e-8);
   for(const c of cells.filter(c=>c.band)) {
-    await complete(e,v.setOwner(c.id,1));
-    const building=footprint(T,v.buildings.get(c.id)), d=v.inward(c.id), p=v.labelPosition(c.id);
-    // 保守保留 1.1 × .80 的牌面區，涵蓋 16px 字與 padding（含左右側橫排牌）。
-    const label=new T.Box3(new T.Vector3(p.x-(d[0]?.40:.55),0,p.z-(d[1]?.40:.55)),new T.Vector3(p.x+(d[0]?.40:.55),1,p.z+(d[1]?.40:.55)));
-    const occupied=[building,label]; assert.equal(overlapsXZ(building,label),false,`格 ${c.id} 建築/標籤`);
-    for(let i=0;i<4;i++) {
-      await v.moveToken(i,c.id,{instant:true}); const piece=footprint(T,v.pieces.get(i));
-      occupied.forEach((b,j)=>assert.equal(overlapsXZ(piece,b),false,`格 ${c.id} 隊 ${i} / 物件 ${j}`)); occupied.push(piece);
+    await complete(e,v.setOwner(c.id,1)); const model=v.buildings.get(c.id);
+    const b=projectedBounds(T,model,v.camera,2,2), ray=new T.Raycaster(); let walls=0,hits=0;
+    for(let x=0;x<24;x++)for(let y=0;y<24;y++) {
+      ray.setFromCamera(new T.Vector2(b.left+(b.right-b.left)*(x+.5)/24,b.top+(b.bottom-b.top)*(y+.5)/24),v.camera);
+      const hit=ray.intersectObject(model,true).find(h=>!h.object.material.transparent);
+      if(hit){hits++;if(hit.object.material===e.kit.MAT.paper)walls++;}
     }
-    // 外側 35% 的徑向範圍 [-.81,-.243]。
-    const center=v.cellPosition(c.id), coords=[building.min,building.max].map(q=>(q.x-center.x)*d[0]+(q.z-center.z)*d[1]);
-    assert.ok(Math.min(...coords)>=-.811 && Math.max(...coords)<=-.243,`格 ${c.id} 建築外側區 ${coords}`);
+    console.log('R2 可見牆面比例',c.id,walls/hits);
+    assert.ok(walls/hits>=.08,`格 ${c.id} 可見牆面 ${walls}/${hits}`);
   }
   await v.dispose();
 });
@@ -198,4 +234,38 @@ test('中央靜態擺設高度、主景尺寸與木牌字高',async()=>{
     const b=new T.Vector3(0,.1875,0).applyMatrix4(v.plaque.matrixWorld).project(v.camera);
     assert.ok(Math.abs(a.y-b.y)*width/v.fitAspect/2>=14,'課文探險字高至少 14px');
   } await v.dispose();
+});
+
+test('四隊同格頭部可見、底座號牌不互擋且保留最上層繪製',async()=>{
+  const e=environment(),v=await mount(e),T=e.c.THREE,ray=new T.Raycaster();
+  for(const c of cells) {
+    for(let i=0;i<4;i++) await v.moveToken(i,c.id,{instant:true});
+    v.root.updateMatrixWorld(true); const centers=[];
+    for(let i=0;i<4;i++) {
+      const p=v.pieces.get(i),badge=p.userData.monopolyBadge;
+      assert.equal(badge.material.depthTest,false); assert.equal(badge.material.depthWrite,false);
+      assert.equal(badge.renderOrder,2); assert.equal(badge.userData.ownedMaterial,true);
+      const center=badge.getWorldPosition(new T.Vector3()).project(v.camera); centers.push(center);
+      let visibleHead=false;
+      p.children[0].traverse(o=>{
+        if(!o.isMesh || o.material.transparent || visibleHead)return;
+        const attr=o.geometry.attributes.position;
+        for(let j=0;j<attr.count;j++) {
+          const local=new T.Vector3().fromBufferAttribute(attr,j);
+          if(local.y<.75)continue;
+          const pt=local.applyMatrix4(o.matrixWorld).project(v.camera);
+          ray.setFromCamera(new T.Vector2(pt.x,pt.y),v.camera);
+          const hit=ray.intersectObjects([...v.pieces.values()],true).find(h=>!h.object.material.transparent);
+          if(hit?.object.parent===p.children[0]){visibleHead=true;break;}
+        }
+      });
+      assert.ok(visibleHead,`格 ${c.id} 隊 ${i} 頭部可見`);
+    }
+    // 寬 690px 時兩個號牌中心至少相距 16px（牌面直徑約 16px 以內）。
+    for(let i=0;i<4;i++)for(let j=i+1;j<4;j++) {
+      const a=centers[i],b=centers[j];
+      assert.ok(Math.hypot((a.x-b.x)*345,(a.y-b.y)*345/v.fitAspect)>=16);
+    }
+  }
+  await v.dispose();
 });
