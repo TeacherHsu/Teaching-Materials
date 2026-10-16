@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>綜合複習遊戲</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="common.css?v=4">
+  <link rel="stylesheet" href="common.css?v=6">
   <style>
     .gcard { display: grid; gap: 6px; }
-    .gcard svg { width: 100%; height: auto; border-radius: 14px; background: #fff8ee; }
+    .gcard svg, .gcard .thumb { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; border-radius: var(--r-md, 14px); background: #fff8ee; }
+    .gcard { box-shadow: var(--shadow-toy); border-color: transparent; transition: transform var(--dur-select, .2s) var(--ease-soft, ease), box-shadow var(--dur-select, .2s); }
+    .gcard:hover, .gcard:focus-visible { transform: translateY(-4px); box-shadow: 0 3px 0 #e3cfb3, 0 16px 28px rgba(80,50,20,.2); border-color: var(--action, #a84b17); }
+    @media (hover: none) { .gcard:hover { transform: none; } }
+    body.calm .gcard:hover, body.calm .gcard:focus-visible { transform: none; }
     .gcard h2 { font-size: 1.4rem; }
     .grades { display: flex; gap: 8px; flex-wrap: wrap; }
     .grades a { min-height: 48px; display: inline-flex; align-items: center; padding: 4px 16px; border-radius: 999px; border: 2px solid var(--line); background: var(--card); color: var(--ink); font-weight: 800; text-decoration: none; }
-    .grades a[aria-current] { background: var(--brand); color: #fff; border-color: var(--brand); }
+    .grades a[aria-current] { background: var(--action, #a84b17); color: #fff; border-color: var(--action, #a84b17); }
+    .grades a[aria-current]::before { content: '✓ '; }
   </style>
 </head>
 <body>
@@ -52,7 +57,9 @@
         h('div', { style: 'height:14px' }),
         h('div', { class: 'games' }, games.map((x) => {
           const card = h('a', { class: 'gcard', href: x.href ? x.href(g) : `${x.file}?g=${g}` }, [h('h2', {}, x.title), h('p', {}, x.desc), h('span', { class: 'who' }, x.who)]);
-          card.insertAdjacentHTML('afterbegin', THUMB[x.thumb]);
+          // 縮圖：升級後的實際遊戲畫面（img/hub/*.webp）；跑酷維持原本深色 SVG（決策 e：跑酷保留原風格）。
+          if (x.thumb === 'run') card.insertAdjacentHTML('afterbegin', THUMB[x.thumb]);
+          else card.prepend(h('img', { class: 'thumb', src: `img/hub/${x.thumb}.webp?v=1`, alt: '', width: '960', height: '600', loading: 'lazy', decoding: 'async' }));
           return card;
         })),
         h('details', { class: 'note', style: 'margin-top:16px' }, [h('summary', {}, '教師資訊'),
