@@ -144,3 +144,40 @@ body.calm .dt-clue::after { animation: none; }
 @media(prefers-reduced-motion:reduce) { .dt-clue::after { animation: none; } .dt-room .dt-mark { transition: none; } }
 
 .dt-room .dt-mark.dt-dot:not(.dt-target) { transform: translate(-14px,-14px); }
+
+/* T4a R1：昏暗桌面、22px 鎖章；透明 padding 保留 48px 觸控區。 */
+.dt-room.dt-3d { background: linear-gradient(145deg, #3b2a1e, #5b4231); aspect-ratio: 1.2; height: auto; min-height: 340px; align-self: start; }
+.dt-room.dt-3d[data-marker-mode='standard'] .dt-mark[data-state='locked']:not(.dt-target) {
+  box-sizing: border-box; display: inline-flex; justify-content: center; gap: 0;
+  width: 48px; height: 48px; min-width: 48px; min-height: 48px; padding: 13px;
+  border: 0; background: transparent; box-shadow: none;
+}
+.dt-room.dt-3d[data-marker-mode='standard'] .dt-mark[data-state='locked']:not(.dt-target)::after,
+.dt-room.dt-3d[data-marker-mode='standard'] .dt-mark[data-state='locked']:not(.dt-target)::before { display: none; }
+.dt-room.dt-3d[data-marker-mode='standard'] .dt-mark[data-state='locked']:not(.dt-target) .dt-st {
+  position: relative; display: block; flex: 0 0 22px; width: 22px; height: 22px;
+  min-width: 22px; border-radius: 50%; background: #211a15b8; font-size: 0; color: #fff;
+}
+/* CSS 鎖形避免彩色 emoji 變成黃鎖或白色大圓。 */
+.dt-room.dt-3d[data-marker-mode='standard'] .dt-mark[data-state='locked']:not(.dt-target) .dt-st::before {
+  content: ''; position: absolute; box-sizing: border-box; left: 7px; top: 4px;
+  width: 8px; height: 8px; border: 2px solid #fff; border-radius: 5px 5px 0 0;
+}
+.dt-room.dt-3d[data-marker-mode='standard'] .dt-mark[data-state='locked']:not(.dt-target) .dt-st::after {
+  content: ''; position: absolute; left: 6px; top: 10px; width: 10px; height: 8px;
+  border-radius: 2px; background: #fff;
+}
+.dt-room .dt-mark.dt-target { width: auto; height: auto; min-height: 48px; padding: 6px 10px; transform: none; }
+.dt-room .dt-mark.dt-target .dt-ico, .dt-room .dt-mark.dt-target .dt-lab { display: inline; }
+/* high 在手機也維持完整名稱，不被舊的窄螢幕小圓點規則蓋掉。 */
+.dt-room[data-marker-mode='high'] .dt-mark:not([data-state='hidden']) {
+  width: auto; height: auto; padding: 4px 8px; border: 3px solid #fff;
+  background: #fffaf3; box-shadow: 0 2px 6px #211a1544;
+}
+.dt-room[data-marker-mode='high'] .dt-mark::before,
+.dt-room[data-marker-mode='high'] .dt-mark .dt-ico,
+.dt-room[data-marker-mode='high'] .dt-mark .dt-lab,
+.dt-room[data-marker-mode='high'] .dt-mark .dt-st { display: inline; }
+.dt-room[data-marker-mode='high'] .dt-mark::after { display: none; }
+.dt-room[data-marker-mode='high'] .dt-mark:is([data-state='done'],[data-state='found']) { background: #d8efe0; border-color: #1f8a4c; }
+.dt-room[data-marker-mode='high'] .dt-mark:is([data-state='next'],[data-state='open']) { background: #fff3c4; border-color: var(--accent); }

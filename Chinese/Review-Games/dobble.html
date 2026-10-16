@@ -20,7 +20,7 @@
       .stage { gap: 10px; }
       .card { flex: 1 1 0; min-width: 0; }
       .disc { width: 100%; aspect-ratio: auto; border-radius: 20px; display: grid; gap: 8px; padding: 10px; }
-      .sym { position: static; transform: none !important; white-space: normal; font-size: 1.15rem !important; min-width: 0; padding: 4px 6px; }
+      .sym { position: static; transform: none !important; white-space: normal; font-size: 1.15rem !important; min-width: 64px; padding: 4px 6px; }
       .disc { border-width: 4px; padding: 6px; }
     }
     .bar { display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; }
@@ -34,7 +34,7 @@
     .duel .disc { width: 100%; border-radius: 20px; aspect-ratio: auto; display: grid; gap: 6px; padding: 8px; border-width: 4px; }
     .duel .card { flex: 1 1 0; min-width: 0; }
     .duel .stage { gap: 8px; margin: 0; }
-    .duel .sym { position: static; transform: none !important; white-space: normal; font-size: 1.15rem !important; min-width: 0; min-height: 52px; padding: 2px 6px; }
+    .duel .sym { position: static; transform: none !important; white-space: normal; font-size: 1.15rem !important; min-width: 64px; min-height: 52px; padding: 2px 6px; }
     .duel-head { display: flex; align-items: center; gap: 6px; font-weight: 900; font-size: 1.2rem; }
     .duel-score { margin-left: auto; color: var(--brand); }
     .duel-info { font-weight: 800; min-height: 2.6em; text-align: center; }
@@ -42,14 +42,30 @@
     .duel.face { grid-template-columns: 1fr; }
     .duel.face .zone.flip { transform: rotate(180deg); }
     @media (max-width: 900px) { .duel { grid-template-columns: 1fr; } .duel .disc { width: 100%; } }
-    /* 3D：每回合卡片翻轉發牌，詞塊浮起 */
-    .stage { perspective: 1200px; }
-    .disc.deal { animation: deal3d .6s ease-out; }
-    .card.b .disc.deal { animation-delay: .12s; animation-fill-mode: backwards; }
-    @keyframes deal3d { from { opacity: 0; transform: rotateY(-100deg) scale(.85); } to { opacity: 1; transform: none; } }
-    .sym { box-shadow: 0 4px 0 #e2c9a5, 0 6px 10px rgba(80,50,20,.15); }
-    @media (min-width: 761px) { .stage:not(.duel .stage) .sym.ok { animation: lift .5s ease-out; } }
-    @keyframes lift { 0% { transform: translate(-50%, -50%) rotate(var(--r)) scale(1); } 50% { transform: translate(-50%, -50%) rotate(var(--r)) scale(1.25); } 100% { transform: translate(-50%, -50%) rotate(var(--r)) scale(1.1); } }
+    /* T5：紙卡厚度與清楚的詞槽，保留既有位置／旋轉運算。 */
+    #app .stage { position: relative; isolation: isolate; gap: 24px; padding-top: 32px; }
+    #app .stage .card { gap: 20px; transform: none; align-content: start; }
+    #app .stage .card .disc { border: 3px solid #b94b42 !important; border-radius: var(--r-lg); background: #fff; box-shadow: 0 3px 0 #eee4d6, 0 6px 0 #cba9a0, 0 12px 20px #50321426; }
+    #app .stage .card.b .disc { border-color: #356fa5 !important; box-shadow: 0 3px 0 #e5eaf0, 0 6px 0 #a2b8cb, 0 12px 20px #50321426; }
+    #app .stage .disc .sym { min-width: 64px; min-height: 52px; color: var(--ink); background: var(--surface-1); border: 2px solid #cdb28d; border-radius: var(--r-sm); box-shadow: var(--shadow-toy); transition: box-shadow var(--dur-press), background var(--dur-press); }
+    #app .stage .disc .sym:active { box-shadow: inset 0 3px 5px #50321426; background: var(--surface-2); }
+    #app .stage .disc .sym.ok { background: #dcf2dd; border: 4px solid var(--success); box-shadow: 0 0 0 2px #d9a441; }
+    #app .stage .card > .btn { margin-top: 4px; position: relative; z-index: 4; }
+    #app .stage > .rg3d-feedback-lines { display: none; }
+    /* 設計總監 2026-10-16：連線無論怎麼繞，都會穿過其他詞塊，造成「別的詞也配對」的誤讀。改為只用雙綠框＋徽章表示配對。 */
+    #app .stage > .match-link { display: none !important; }
+    #app .stage > .match-link-unused { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 3; overflow: visible; }
+    .match-link path { fill: none; stroke: var(--success); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; animation: match-draw 400ms var(--ease-soft) both; }
+    .match-badge { position: absolute; z-index: 4; top: 0; left: 50%; translate: -50% 0; padding: 4px 12px; border: 2px solid #805711; border-radius: 999px; background: var(--reward); color: var(--ink); font-weight: 900; white-space: nowrap; pointer-events: none; animation: match-badge 400ms var(--ease-pop) 400ms both; }
+    @keyframes match-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+    @keyframes match-badge { from { opacity: 0; scale: .8; } to { opacity: 1; scale: 1; } }
+    #app .duel .zone:has(.mcq .qopt):not(.out):not(.won) { border: 5px solid var(--action); box-shadow: var(--shadow-toy); }
+    #app .duel .zone:has(.mcq .qopt):not(.out):not(.won) .disc { border-width: 5px !important; }
+    #app .duel .zone:has(.mcq .qopt):not(.out):not(.won) .duel-head::after { content: '正在作答'; font-size: 18px; color: var(--action); }
+    #app .duel-head .token { flex-shrink: 0; }
+    @media (max-width: 760px) { #app .stage { gap: 12px; } #app .stage .disc { grid-template-columns: minmax(64px,1fr) !important; } }
+    body.calm *, body.calm *::before, body.calm *::after { animation-duration: 0ms !important; animation-delay: 0ms !important; transition-duration: 0ms !important; transition-delay: 0ms !important; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0ms !important; animation-delay: 0ms !important; transition-duration: 0ms !important; transition-delay: 0ms !important; } }
   </style>
 </head>
 <body>
@@ -117,6 +133,7 @@
           return [[50, 50], ...Array.from({ length: ring }, (_, i) => { const a = -Math.PI / 2 + (2 * Math.PI * i) / ring; return [50 + 33 * Math.cos(a), 50 + 33 * Math.sin(a)]; })];
         }
         function layout(disc, list, onPick = pick) {
+          clearMatch(disc.closest('.stage'));
           disc.replaceChildren();
           disc.classList.remove('deal'); void disc.offsetWidth; disc.classList.add('deal');
           disc.style.gridTemplateColumns = list.length > 4 ? '1fr 1fr' : '1fr';
@@ -127,6 +144,58 @@
             const fs = FONT[settings.level] * (it.text.length >= 4 ? 0.85 : 1);
             disc.append(h('button', { class: 'sym', type: 'button', style: `left:${x}%;top:${y}%;--r:${rot ? Math.round(Math.random() * rot * 2 - rot) : 0}deg;font-size:${fs.toFixed(2)}rem`, onclick: (e) => onPick(it, e.currentTarget) }, it.text));
           });
+        }
+        function clearMatch(stage) {
+          stage.querySelectorAll('.match-link,.match-badge').forEach((el) => el.remove());
+          stage.matchResize?.disconnect();
+        }
+        function showMatch(discA, discB) {
+          const stage = discA.closest('.stage');
+          clearMatch(stage);
+          const a = discA.querySelector('.sym.ok'), b = discB.querySelector('.sym.ok');
+          if (!a || !b) return;
+          const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+          svg.classList.add('match-link'); svg.setAttribute('aria-hidden', 'true');
+          const path = document.createElementNS(svg.namespaceURI, 'path');
+          path.setAttribute('pathLength', '1');
+          // 遮罩保護每個詞塊與朗讀按鈕，曲線不會覆蓋任何字。
+          const mask = document.createElementNS(svg.namespaceURI, 'mask');
+          const maskId = `match-mask-${showMatch.sequence = (showMatch.sequence || 0) + 1}`;
+          mask.id = maskId; mask.setAttribute('maskUnits', 'userSpaceOnUse');
+          const defs = document.createElementNS(svg.namespaceURI, 'defs'); defs.append(mask);
+          path.setAttribute('mask', `url(#${maskId})`); svg.append(defs, path);
+          const badge = h('div', { class: 'match-badge', role: 'status' }, '✓ 配對成功');
+          stage.append(svg, badge);
+          function draw() {
+            const box = stage.getBoundingClientRect();
+            const ar = a.getBoundingClientRect(), br = b.getBoundingClientRect();
+            // 從兩個詞塊底部出發、繞到卡牌下方再相連（U 形），不穿過其他詞塊，避免誤以為別的詞也配對。
+            const cards = [...stage.querySelectorAll('.card')].map((n) => n.getBoundingClientRect());
+            const cardBottom = Math.max(ar.bottom, br.bottom, ...cards.map((r) => r.bottom));
+            let x1 = ar.left + ar.width / 2 - box.left, x2 = br.left + br.width / 2 - box.left;
+            let y1 = ar.bottom - box.top, y2 = br.bottom - box.top, dip = Math.min(cardBottom - box.top + 14, box.height - 6);
+            if (stage.closest('.zone.flip')) {
+              x1 = box.width - x1; x2 = box.width - x2;
+              y1 = box.height - y1; y2 = box.height - y2; dip = box.height - dip;
+            }
+            svg.setAttribute('viewBox', `0 0 ${box.width} ${box.height}`);
+            mask.replaceChildren();
+            const maskRect = (x, y, width, height, fill) => {
+              const rect = document.createElementNS(svg.namespaceURI, 'rect');
+              Object.entries({ x, y, width, height, fill }).forEach(([key, value]) => rect.setAttribute(key, value));
+              mask.append(rect);
+            };
+            maskRect(0, 0, box.width, box.height, 'white');
+            stage.querySelectorAll('.sym,.card > .btn').forEach((node) => {
+              const r = node.getBoundingClientRect();
+              const x = stage.closest('.zone.flip') ? box.right - r.right : r.left - box.left;
+              const y = stage.closest('.zone.flip') ? box.bottom - r.bottom : r.top - box.top;
+              maskRect(x - 2, y - 2, r.width + 4, r.height + 4, 'black');
+            });
+            path.setAttribute('d', `M ${x1} ${y1} C ${x1} ${dip}, ${x2} ${dip}, ${x2} ${y2}`);
+          }
+          draw();
+          stage.matchResize = new ResizeObserver(draw); stage.matchResize.observe(stage);
         }
         function deal() {
           if (round >= ROUNDS) return finish();
@@ -149,6 +218,7 @@
           }
           locked = true;
           document.querySelectorAll('.sym').forEach((s) => { if (s.textContent === it.text) s.classList.add('ok'); });
+          showMatch(discA, discB);
           soloView?.markMatch(it.text);
           meaningCheck(it);
         }
@@ -220,6 +290,7 @@
             p.state = 'meaning';
             p.view?.markMatch(it.text);
             [p.discA, p.discB].forEach((d) => d.querySelectorAll('.sym').forEach((s) => { if (s.textContent === it.text) s.classList.add('ok'); }));
+            showMatch(p.discA, p.discB);
             const other = shuffle(items.filter((x) => x.meaning !== it.meaning))[0];
             p.info.textContent = `找到「${it.text}」！它的意思是？`;
             p.mcq.replaceChildren(...shuffle([it.meaning, other.meaning]).map((m) => h('button', { class: 'qopt', type: 'button', onclick: (e) => meaning(i, it, m === it.meaning, e.currentTarget) }, m)));
@@ -264,6 +335,7 @@
         function finish() {
           const words = [...new Set(practiced)];
           const redo = [...new Set(toPractice)];
+          clearMatch(discA.closest('.stage'));
           discA.replaceChildren(); discB.replaceChildren(); soloView?.deal(); soloView?.presentFinish();
           reveal.replaceChildren(
             h('div', {}, `🎉 完成 ${ROUNDS} 回！今天練過：${words.join('、')}`),

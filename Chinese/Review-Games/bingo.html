@@ -33,15 +33,29 @@
     @keyframes shake { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
     .bar { display: flex; gap: 20px; justify-content: center; font-weight: 800; flex-wrap: wrap; }
     @media (max-width: 600px) { .bcell, .bgrid.n3 .bcell, .bgrid.n5 .bcell { font-size: 1rem; border-radius: 10px; } .bgrid { gap: 4px; } }
-    /* 3D：格子有厚度，點對時翻面，連線時亮起 */
-    .bgrid { perspective: 900px; }
-    .bcell { box-shadow: 0 6px 0 #dcc6a6, 0 10px 14px rgba(80,50,20,.15); transition: transform .15s; }
-    .bcell:active { transform: translateY(4px); box-shadow: 0 2px 0 #dcc6a6; }
-    .bcell.on, .bcell.learned { animation: flip3d .55s ease-out; }
-    .bcell.on { box-shadow: 0 6px 0 #6e300d, 0 10px 14px rgba(80,50,20,.25); }
-    .bcell.line { animation: glow 1.2s ease-out; }
-    @keyframes flip3d { from { transform: rotateY(180deg); } to { transform: rotateY(0); } }
-    @keyframes glow { 0% { transform: translateY(0); } 30% { transform: translateY(-8px); } 100% { transform: translateY(0); } }
+    /* T5：詞字留在紙面，狀態與厚度由 DOM 呈現。 */
+    .bingo-layout .clue { min-height: 240px; display: grid; grid-template-rows: minmax(0,1fr) auto; align-content: start; box-shadow: var(--shadow-toy); }
+    .bingo-layout .clue .txt { overflow: visible; overflow-wrap: anywhere; line-height: 1.55; }
+    .bingo-layout .bgrid { gap: 12px; }
+    .bingo-layout .bgrid .bcell { background: var(--surface-1); border-radius: var(--r-md); border-top: 2px solid #fff; box-shadow: var(--shadow-toy); transition: transform var(--dur-press) var(--ease-soft), box-shadow var(--dur-press); padding: 12px 6px; }
+    .bingo-layout .bgrid .bcell:active { transform: translateY(3px); box-shadow: var(--shadow-press); }
+    .bingo-layout .bgrid .bcell.on { background: var(--action); border-color: var(--action); color: #fff; }
+    .bingo-layout .bgrid .bcell.team { background: var(--tc); border-color: var(--tc); color: #fff; }
+    .bingo-layout .bgrid .bcell.learned { background: #dbe8fb; color: var(--ink); border-color: #1f4f87; }
+    .bingo-layout .bgrid .bcell.neutral { background: #e4ded5; color: #3d3024; border-color: #a99a88; }
+    .bingo-layout .bgrid .bcell:is(.on,.team,.learned,.neutral) { transform: translateY(4px); box-shadow: var(--shadow-press); }
+    .bingo-layout .bgrid .bcell[data-stamp] { padding-top: 42px; }
+    .bingo-layout .bgrid .bcell[data-stamp]::after { content: attr(data-stamp); position: absolute; top: 4px; right: 5px; min-width: 32px; height: 32px; padding: 0 4px; display: grid; place-items: center; border-radius: 50%; background: var(--stamp-color); color: #fff; border: 2px solid #fff; font-size: 16px; line-height: 1; box-shadow: 0 2px 3px #2b1d1233; animation: stamp-in var(--dur-select) var(--ease-pop); }
+    .bingo-layout .bgrid .bcell.line { border: 3px solid var(--reward); outline: 2px solid #805711; outline-offset: 1px; }
+    .bingo-layout .bgrid .bcell.line-lit { animation: line-light var(--dur-correct) var(--ease-soft); }
+    #app .bingo-host > .rg3d-feedback-lines, #app .bingo-host .rg3d-line-badge { display: none; }
+    .bingo-banner { min-height: 52px; margin: 0 0 12px; padding: 6px 12px; text-align: center; border-radius: var(--r-md); background: var(--reward); color: var(--ink); font-size: 28px; font-weight: 900; visibility: hidden; }
+    .bingo-banner.visible { visibility: visible; animation: stamp-in var(--dur-select) var(--ease-pop); }
+    @keyframes stamp-in { from { opacity: 0; scale: .75; } to { opacity: 1; scale: 1; } }
+    @keyframes line-light { 50% { box-shadow: 0 0 0 5px #d9a44188; } }
+    @media (max-width: 760px) { .bingo-layout { grid-template-columns: minmax(0,1fr); } .bingo-task { order: -1; } .bingo-layout .clue { min-height: 180px; } .bingo-layout .bgrid .bcell { font-size: 1.2rem; } .bingo-layout .bgrid.n3 .bcell { font-size: 1.4rem; } }
+    body.calm *, body.calm *::before, body.calm *::after { animation-duration: 0ms !important; animation-delay: 0ms !important; transition-duration: 0ms !important; transition-delay: 0ms !important; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0ms !important; animation-delay: 0ms !important; transition-duration: 0ms !important; transition-delay: 0ms !important; } }
   </style>
 </head>
 <body>
@@ -91,6 +105,50 @@
         app.replaceChildren(header(bank, '語詞賓果'), h('div', { class: 'bingo-layout' }, [h('section', { class: 'bingo-task' }, [h('div', { class: 'clue' }, [clueTxt, acts]), fb, bar, h('p', { class: 'bingo-legend' }, '共學 ×：一起學過・對抗時不能用；✓：已答對；隊號：佔格隊伍。')]), h('div', { class: 'bingo-host' }, grid)]));
         const view = window.RG3D?.mount({ kind: 'bingo', host: grid.parentElement, buttons: btns });
 
+        // 只讀取已判定的連線，所有鎖與等待均為呈現狀態。
+        const layout = grid.closest('.bingo-layout');
+        const banner = h('div', { class: 'bingo-banner', role: 'status', 'aria-live': 'polite' });
+        grid.before(banner);
+        let lineAnimating = false;
+        const shownLines = new Set();
+        layout.addEventListener('click', (e) => {
+          if (lineAnimating) { e.preventDefault(); e.stopImmediatePropagation(); }
+        }, true);
+        function animateConfirmedLines(confirmed) {
+          const fresh = confirmed.filter((line) => !shownLines.has(line.join(',')));
+          if (!fresh.length) return;
+          fresh.forEach((line) => shownLines.add(line.join(',')));
+          lineAnimating = true;
+          grid.inert = true; acts.inert = true;
+          const reduced = () => document.body.classList.contains('calm') || matchMedia('(prefers-reduced-motion: reduce)').matches;
+          const timers = [];
+          let finished = false;
+          const media = matchMedia('(prefers-reduced-motion: reduce)');
+          const finish = () => {
+            if (finished) return;
+            finished = true;
+            timers.forEach(clearTimeout);
+            fresh.flat().forEach((j) => btns[j].classList.add('line', 'line-lit'));
+            banner.textContent = 'BINGO!'; banner.classList.add('visible');
+            grid.inert = false; acts.inert = false; lineAnimating = false;
+            acts.querySelector('.primary')?.focus();
+            observer.disconnect(); media.removeEventListener('change', onMotion);
+          };
+          const onMotion = () => { if (reduced()) finish(); };
+          const observer = new MutationObserver(onMotion);
+          observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+          media.addEventListener('change', onMotion);
+          if (reduced()) { finish(); return; }
+          let step = 0;
+          fresh.forEach((line) => line.forEach((j) => {
+            timers.push(setTimeout(() => btns[j].classList.add('line', 'line-lit'), step++ * 120));
+          }));
+          timers.push(setTimeout(() => {
+            banner.textContent = 'BINGO!'; banner.classList.add('visible');
+          }, step * 120));
+          timers.push(setTimeout(() => { finish(); banner.classList.remove('visible'); }, step * 120 + 1200));
+        }
+
         const allLines = () => {
           const L = [];
           for (let r = 0; r < n; r++) L.push([...Array(n)].map((_, c) => r * n + c));
@@ -110,6 +168,7 @@
         }
         const clueSpeech = () => `哪個語詞的意思是，${cur.clue}`;
         function next() {
+          banner.classList.remove('visible');
           btns.forEach((b) => b.classList.remove('hinted'));
           cur = queue.shift(); tries = 0; fb.textContent = ''; fb.className = 'fb';
           if (!cur) return end();
@@ -133,7 +192,12 @@
             else { btns[i].classList.add('team'); btns[i].style.setProperty('--tc', TEAM_COLORS[team]); btns[i].dataset.team = String(team + 1); }
           } else btns[i].classList.add(learned ? 'learned' : 'on');
           btns.forEach((b) => b.classList.remove('hinted'));
-          lines().flat().forEach((j) => btns[j].classList.add('line'));
+          if (!learned) {
+            btns[i].dataset.stamp = `${team + 1}${['●', '◆', '▲', '★'][team]}`;
+            btns[i].style.setProperty('--stamp-color', TEAM_COLORS[team]);
+          }
+          const confirmedLines = lines();
+          animateConfirmedLines(confirmedLines);
           view?.markCell(i, learned, versus ? (learned ? '#8f8478' : TEAM_COLORS[team]) : null); view?.setLines(lines());
           fb.className = learned ? 'fb learn' : 'fb ok';
           fb.textContent = learned ? `一起學：「${cur.text}」＝${cur.clue}${versus ? '（這格誰都不能用）' : ''}` : `✓「${cur.text}」＝${cur.clue}${versus ? `（${TEAM_NAMES[team]}佔下這格）` : ''}`;

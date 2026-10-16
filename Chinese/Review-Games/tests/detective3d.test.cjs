@@ -19,7 +19,7 @@ function environment({ calm = false, narrow = false, reduced = false, three = tr
       replaceChildren(...children) { this.children=children; },
       clientWidth:1200, clientHeight:650, offsetWidth:120, offsetHeight:48,
       prepend(n) { this.children.unshift(n); }, after() {}, querySelector() { return {textContent:''}; }, querySelectorAll() { return []; }, remove() { this.isConnected = false; }, getBoundingClientRect() { return { width: 1200, height: 580 }; },
-      getContext() { return new Proxy({ fillText(t) { texts.push(t); }, createLinearGradient() { return {addColorStop(){}}; }, createRadialGradient() { return { addColorStop() {} }; } },
+      getContext() { const canvas=this; canvas.paintCalls ||= []; return new Proxy({ fillRect(...args) { canvas.paintCalls.push([this.fillStyle,...args]); }, fillText(t) { texts.push(t); }, createLinearGradient() { return {addColorStop(){}}; }, createRadialGradient() { return { addColorStop() {} }; } },
         { get(o, k) { return k in o ? o[k] : () => {}; }, set(o, k, v) { o[k] = v; return true; } }); }
     };
   }
@@ -97,4 +97,87 @@ test('固定視角阻止滾輪與拖曳；低動態動畫直接到終態',async(
  const env=environment(),room=mount(env);await settle();room.finishTweens();room.setFixedView(true);
  const el=room.renderer.domElement;el.events.get('wheel')({deltaY:400,preventDefault(){}});assert.equal(room.zoom,1);
  env.c.document.body.classList.add('calm');await room.animate('dial');assert.ok(Math.abs(room.safeDoor.rotation.y+room.safeDoorFace.rotation.y+Math.PI*100/180)<1e-8);room.dispose();
+});
+
+test('R1 所有實例屬性均不遮蔽方法，動畫幀確實能渲染',async()=>{
+ const env=environment(),room=mount(env);await settle();room.finishTweens();
+ for(const name of Object.getOwnPropertyNames(Object.getPrototypeOf(room))) {
+  if(name!=='constructor' && typeof Object.getPrototypeOf(room)[name]==='function') assert.equal(Object.hasOwn(room,name),false,name);
+ }
+ env.step();assert.equal(room.is3d,true);assert.ok(env.renderCount>0);room.dispose();
+});
+
+test('R1 搜查 open 也有完整的下一步目標，搜查後依序移往未調查物件及機關',async()=>{
+ const env=environment(),room=mount(env);await settle();room.finishTweens();
+ room.items.forEach(it=>room.setState(it.id,it.kind==='holder'?'open':'locked'));
+ room.layoutMarkers();const target=()=>room.items.filter(it=>it.btn.classList.contains('dt-target'));
+ assert.equal(target().length,1);assert.equal(target()[0].id,'holder0');assert.ok(!target()[0].btn.classList.contains('dt-dot'));
+ room.setState('holder0','found');room.layoutMarkers();assert.equal(target()[0].id,'holder1');
+ room.setState('dial','next');room.layoutMarkers();assert.equal(target()[0].id,'dial');
+ room.raycaster.intersectObjects=()=>[{distance:0}];room.updateOcclusion();assert.ok(!target()[0].btn.classList.contains('dt-occluded'));
+ room.dispose();
+});
+
+function projectedBox(env,room,object) {
+ const T=env.c.THREE;room.group.updateMatrixWorld(true);const box=new T.Box3().setFromObject(object),points=[];
+ for(const x of [box.min.x,box.max.x])for(const y of [box.min.y,box.max.y])for(const z of [box.min.z,box.max.z])points.push(new T.Vector3(x,y,z).project(room.camera));
+ return {left:Math.min(...points.map(p=>p.x)),right:Math.max(...points.map(p=>p.x)),top:Math.max(...points.map(p=>p.y)),bottom:Math.min(...points.map(p=>p.y))};
+}
+test('R1 實際畫布比例下底座占 88–92%，牆頂與底座均完整入鏡',async()=>{
+ const env=environment(),room=mount(env);await settle();room.finishTweens();const T=env.c.THREE;
+ // CSS 桌機 aspect-ratio=1.2；手機保留最小高度 340。
+ for(const [w,h] of [[860,717],[700,584],[350,340],[1200,1000]]) {
+  room.host.clientWidth=w;room.host.clientHeight=h;room.resize();
+  const base=[];for(const x of [-6.3,6.3])for(const y of [-.57,-.19])for(const z of [-4.8,4.8])base.push(new T.Vector3(x,y,z).project(room.camera));
+  const span=Math.max(Math.max(...base.map(p=>p.x))-Math.min(...base.map(p=>p.x)),Math.max(...base.map(p=>p.y))-Math.min(...base.map(p=>p.y)))/2;
+  assert.ok(span>=.88&&span<=.92,`${w}x${h}: ${span}`);
+  for(const p of [...base,...[[-6.25,5,-4.75],[6.125,5,-4.75],[-6.25,5,4.625]].map(p=>new T.Vector3(...p).project(room.camera))]) assert.ok(Math.abs(p.x)<1&&Math.abs(p.y)<1,`${w}x${h}: ${p.toArray()}`);
+ }room.dispose();
+});
+
+test('R1 六主題壁紙在室內側，配色不同，3–5 組專屬道具從預設鏡頭入鏡',async()=>{
+ const expected={study:['armchair','globe-meridian','letter-and-ink'],classroom:['chalkboard','school-desk-chair','lectern'],library:['full-wall-bookshelves','book-cart','reading-stack'],forest:['pinecone-basket','hanging-lantern','stump-stool'],lab:['lab-bench','beaker-rack','microscope'],museum:['glass-statue-case','red-rope-stanchions','gilded-gallery']};
+ const palettes=new Set(),patterns=new Set();
+ for(const [theme,names] of Object.entries(expected)) {
+  const env=environment(),room=mount(env,theme);await settle();room.finishTweens();room.host.clientWidth=860;room.host.clientHeight=717;room.resize();
+  palettes.add(room.theme.wall);assert.ok(room.themeProps.length>=3&&room.themeProps.length<=5);
+  for(const name of names)assert.ok(room.themeProps.some(o=>o.name===name),`${theme}: ${name}`);
+  for(const o of room.themeProps) {const r=projectedBox(env,room,o);assert.ok(r.left>-1&&r.right<1&&r.bottom>-1&&r.top<1,`${theme}/${o.name}: ${JSON.stringify(r)}`);}
+  for(const wall of room.wallSurfaces) {
+   assert.ok(wall.material.map?.isCanvasTexture);assert.equal(wall.material.envMapIntensity,.18);
+   const paint=wall.material.map.image.paintCalls;
+   assert.equal(paint[0][0],'#'+room.theme.wall.toString(16).padStart(6,'0'));patterns.add(JSON.stringify(paint));
+   assert.ok(wall.position.z>-4.495 || wall.position.x>-5.995);
+  }
+  assert.ok(room.roomLights.hemi.intensity<=.3&&room.roomLights.fill.intensity<=.2);
+  room.dispose();
+ }
+ assert.equal(palettes.size,6);assert.equal(patterns.size,6);
+});
+
+test('R1 前景預設有局部入鏡，旋轉／縮放／手機均不遮標記及投影錨點',async()=>{
+ const env=environment(),room=mount(env);await settle();room.finishTweens();const T=env.c.THREE;
+ room.items.forEach(it=>room.setState(it.id,it.kind==='holder'?'open':'locked'));
+ const overlap=(a,b)=>a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y;
+ let visibleCount=0;
+ for(const [w,h] of [[860,717],[350,340]])for(const [yaw,zoom] of [[0,1],[-.9,1],[.9,1],[0,.72],[0,1.2]]) {
+  room.host.clientWidth=w;room.host.clientHeight=h;room.yaw=yaw;room.zoom=zoom;room.resize();room.layoutMarkers();
+  if(yaw===0&&zoom===1)assert.equal(room.foreground.visible,true,`default ${w}`);
+  if(!room.foreground.visible)continue;visibleCount++;
+  const r=room.foregroundRect;assert.ok(r.x<0||r.x+r.w>w||r.y+r.h>h,'前景只露出一部分');
+  for(const rect of room.markerRects)assert.ok(!overlap(r,rect),`hit area: ${w}/${yaw}/${zoom}`);
+  for(const it of room.items){const p=new T.Vector3(...it.pos).project(room.camera);assert.ok(!overlap(r,{x:(p.x+1)*w/2-24,y:(1-p.y)*h/2-24,w:48,h:48}),`anchor ${it.id}`);}
+ }
+ assert.ok(visibleCount>=2);room.dispose();
+});
+
+
+test('R1 打字機只有 24 個按鍵下壓，紙捲與滾軸不被按鍵動畫移位',async()=>{
+ const env=environment(),room=mount(env);await settle();room.finishTweens();
+ assert.equal(room.typeKeys.length,24);assert.equal(room.cabDoors.length,6);
+ assert.ok(room.gears.every(g=>g.children.length>=14));assert.ok(room.lens.children.length>=2);
+ const rollers=room.typePaper.parent.children.filter(o=>o.geometry?.type==='CylinderGeometry'&&!o.userData.typewriterKey);
+ const before=rollers.map(o=>o.position.toArray());assert.equal(rollers.length,2);
+ env.c.document.body.classList.add('calm');await room.animate('blocks');
+ assert.deepEqual(rollers.map(o=>o.position.toArray()),before);room.dispose();
 });
