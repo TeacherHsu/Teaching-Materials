@@ -105,3 +105,42 @@ body.proj .dt-mark { font-size: 1.05rem; }
 .dt-room .dt-mark.dt-dot .dt-lab, .dt-mark.dt-dot::after { display:none; }
 .dt-skip { position:absolute; right:12px; top:12px; min-height:48px; z-index:2; border:2px solid #825a30; border-radius:12px; background:#fffaf0; color:#49321e; padding:8px 14px; font-weight:800; }
 .dt-flying-paper { position:fixed; z-index:101; pointer-events:none; background:#fff9dd; border:2px solid #967047; padding:10px; border-radius:4px; color:#49321e; }
+
+/* T4a：標記保留完整的 DOM 名稱與 48px 觸控區。 */
+.dt-room { background: var(--surface-0, #fdf6ec); }
+.dt-room .dt-mark { transition: opacity 180ms; }
+.dt-room .dt-mark::after { content: none; }
+.dt-room .dt-mark .dt-st { display: inline; }
+.dt-room[data-marker-mode='high'] .dt-mark .dt-ico,
+.dt-room[data-marker-mode='high'] .dt-mark .dt-lab,
+.dt-room .dt-mark.dt-target .dt-ico,
+.dt-room .dt-mark.dt-target .dt-lab { display: inline; }
+.dt-room[data-marker-mode='standard'] .dt-mark:not(.dt-target)::before { content: none; }
+.dt-room[data-marker-mode='standard'] .dt-mark[data-state='locked']:not(.dt-target) .dt-ico { display: none; }
+.dt-room[data-marker-mode='standard'] .dt-mark[data-state='locked']:not(.dt-target) .dt-st { display: inline; }
+.dt-room[data-marker-mode='standard'] .dt-mark[data-kind='holder']:is([data-state='open'],[data-state='next']):not(.dt-target),
+.dt-room .dt-mark.dt-dot:not(.dt-target) { width: 48px; height: 48px; min-width: 48px; min-height: 48px; padding: 12px; border: 0; background: transparent; box-shadow: none; }
+.dt-room[data-marker-mode='standard'] .dt-mark[data-kind='holder']:is([data-state='open'],[data-state='next']):not(.dt-target)::after,
+.dt-room .dt-mark.dt-dot:not(.dt-target)::after { content: ''; display: block; width: 18px; height: 18px; border-radius: 50%; background: #ffe09a; border: 2px solid #80511c; box-shadow: 0 0 8px #ffc94dbb; }
+.dt-room[data-marker-mode='standard'] .dt-mark[data-kind='holder']:is([data-state='open'],[data-state='next']):not(.dt-target) > *,
+.dt-room .dt-mark.dt-dot:not(.dt-target) > *, .dt-room .dt-mark.dt-dot:not(.dt-target)::before { display: none; }
+.dt-room[data-marker-mode='standard'] .dt-mark[data-kind='holder']:is([data-state='open'],[data-state='next']):is(:hover,:focus-visible):not(.dt-target) { width: auto; background: #fffaf3; border: 2px solid #80511c; }
+.dt-room[data-marker-mode='standard'] .dt-mark[data-kind='holder']:is([data-state='open'],[data-state='next']):is(:hover,:focus-visible):not(.dt-target) .dt-ico,
+.dt-room[data-marker-mode='standard'] .dt-mark[data-kind='holder']:is([data-state='open'],[data-state='next']):is(:hover,:focus-visible):not(.dt-target) .dt-lab { display: inline; }
+.dt-room .dt-mark.dt-occluded:not(.dt-target):not(:hover):not(:focus-visible) { opacity: .2; }
+.dt-room .dt-mark.dt-target { opacity: 1; z-index: 2; }
+.dt-reset-view { position: absolute; bottom: 42px; left: 12px; z-index: 3; min-height: 48px; padding: 8px 12px; background: #fffaf3; color: #49321e; border: 2px solid #825a30; border-radius: 12px; font-weight: 800; }
+.dt-2d .dt-reset-view { display: none; }
+.dt-view-toggle { min-height: 48px; display: inline-flex; align-items: center; gap: 8px; }
+.dt-view-toggle select { min-height: 48px; font: inherit; color: #49321e; background: #fffaf3; }
+.dt-clue:not(.decoy)::after { content: '已蒐證'; display: inline-block; margin-left: 10px; border: 2px solid #1f7a43; border-radius: 4px; color: #1f7a43; font-size: 14px; padding: 1px 5px; transform: rotate(-7deg); animation: dt-evidence-stamp 400ms both; }
+@keyframes dt-evidence-stamp { from { opacity: 0; transform: scale(1.5) rotate(-7deg); } to { opacity: 1; transform: scale(1) rotate(-7deg); } }
+@media(max-width:600px) {
+  .dt-room.dt-3d .dt-mark:not(.dt-target) { width: 48px; height: 48px; min-width: 48px; min-height: 48px; padding: 12px; background: transparent; border: 0; box-shadow: none; }
+  .dt-room.dt-3d .dt-mark:not(.dt-target) > *, .dt-room.dt-3d .dt-mark:not(.dt-target)::before { display: none; }
+  .dt-room.dt-3d .dt-mark:not(.dt-target)::after { content: ''; display: block; width: 18px; height: 18px; border-radius: 50%; background: #ffe09a; border: 2px solid #80511c; }
+}
+body.calm .dt-clue::after { animation: none; }
+@media(prefers-reduced-motion:reduce) { .dt-clue::after { animation: none; } .dt-room .dt-mark { transition: none; } }
+
+.dt-room .dt-mark.dt-dot:not(.dt-target) { transform: translate(-14px,-14px); }

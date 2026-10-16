@@ -188,6 +188,8 @@
       topbar(`課文偵探密室｜${game.title}`), stepper(),
       h('div', { class: 'dt-task', role: 'status' }, [h('span', { 'aria-hidden': 'true' }, '🎯'), h('b', {}, task), spk(task, '朗讀目前任務')]),
       h('div', { class: 'dt-bar' }, [
+        h('label', { class: 'chip dt-view-toggle' }, ['標記：', h('select', { 'aria-label': '標記模式', onchange: e => room.setMarkerMode(e.target.value) }, [h('option', { value: 'standard', selected: (() => { try { return localStorage.getItem('dt-marker-mode'); } catch (_) { return null; } })() !== 'high' }, '探索'), h('option', { value: 'high', selected: (() => { try { return localStorage.getItem('dt-marker-mode'); } catch (_) { return null; } })() === 'high' }, '全部顯示')])]),
+        h('label', { class: 'chip dt-view-toggle' }, [h('input', { type: 'checkbox', checked: (() => { try { return localStorage.getItem('dt-fixed-view'); } catch (_) { return null; } })() === 'true', onchange: e => room.setFixedView(e.target.checked) }), '固定視角']),
         h('label', { class: 'chip' }, [h('input', { type: 'checkbox', checked: !!settings.calm, onchange: (e) => { settings.calm = e.target.checked; applyDisplay(); room.opts.force2d = !!settings.calm; room.refreshMode(); } }), '減少動態（平面圖）']),
         ...(() => { const t = window.RG && RG.force3dToggle && RG.force3dToggle(); if (t) t.classList.add('chip'); return t ? [t] : []; })(),
         h('button', { class: 'btn', type: 'button', id: 'dt-notebook', onclick: notebook }, '📓 偵探筆記本'),
