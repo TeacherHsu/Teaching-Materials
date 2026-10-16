@@ -1,5 +1,8 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-10-17（二）｜家中 Mac｜Claude Code｜狀態：🚧 施工中
+- 依官方大補帖主旨改寫各課 `main_idea.theme`、修 4 課 gist：動 `apps/mandarin/public/data/115AG*/lesson*.json` 的 main_idea 與 Review-Games 題庫產物。請勿同時修改。
+
 ## 2026-10-17｜家中 Mac｜Claude Code｜狀態：✅ 已推送
 - 課文偵探密室 2.0 完整遊戲腳本：`Chinese/Review-Games/DETECTIVE-REDESIGN.md`（三幕 CER 推理、逐場腳本 S0–S18、書蟲探長台詞庫、四種案件類型、判定總表、資料品質盤點、五課範例、給 Codex 的分鏡需求）。**視覺由 CF 另派 Codex 設計**。
 - 三幕邏輯原型：`detective2.html`（暫用畫面，試玩版，尚未掛到年級頁）、`detective2-core.js`、`tests/detective2.test.cjs`；`build_detective.py` 產生 `acts`。一課兩篇（四上第1課、六上第5課）時間線分兩條；五個年級全部課次可玩。
