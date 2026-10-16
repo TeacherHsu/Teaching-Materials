@@ -1,0 +1,157 @@
+# 課文樂園複習遊戲視覺升級：Phase 0 稽核與任務看板
+
+- 日期：2026-10-16
+- 稽核範圍：`~/Teaching-Materials/Chinese/Review-Games/`、`Chinese/Shape-Run-G*A/`
+- 基準版本：main `c06009e`，工作樹乾淨
+- 本階段只做讀取與無頭 Chrome 截圖，沒有修改任何檔案。
+- 基準截圖：`docs/visual-upgrade/p0-baseline/`，三上 G3A，1366×900，已強制關閉「減少動態」。
+
+---
+
+## 1. 技術盤點
+
+| 項目 | 現況 | 依據 |
+|---|---|---|
+| 建置 | 無。純靜態 HTML／JS，用 `<script src>` 載入，Pages workflow 以 rsync 原樣上線 | `.github/workflows/pages.yml` |
+| 3D 引擎 | Three.js **r128**，從 cdnjs 載入（未放進 repo）；後製效果走 jsdelivr；逾時 6.5 秒 | `scene3d.js:4,20,28,35-41` |
+| 棋盤類 3D 層 | `window.RG3D.mount({kind,host})`：單一檔案 1025 行，同時負責大富翁、蛇梯、賓果、哆寶 | `scene3d.js:1021` |
+| 密室 3D 層 | 另一套 `detective3d.js`（469 行），v1 與 v2 共用 | `detective3d.js:6` |
+| 跑酷 | 單檔 Three.js 加 Bloom，每個年級 1186 行。只改母版 G6A，再用 `build_shape_run.py` 同步 | `Shape-Run-G6A/index.html`、`tools/build_shape_run.py:23` |
+| 規則與呈現 | **分離得很乾淨**。擲骰用 `Math.random` 在遊戲內決定，3D 只播放結果；密室 core 不碰 DOM | monopoly:160、snakes:150、`detective-core.js:1` |
+| 作答元件 | 一律是 DOM `<button>`；3D canvas 設 `aria-hidden`，不攔截觸控 | — |
+| 降回 2D 的條件 | 系統「減少動態」、`body.calm`、寬度 ≤760px、CDN 或 WebGL 失敗、context lost、密室幀率過慢 | `scene3d.js:10-16,62`、`detective3d.js:53,85,186` |
+| 共用 UI | `common.css`（355 行，token 在 2-5 行）、`common.js`（343 行：ask、token、die3d、speak、setupPanel、TEAM_COLORS） | — |
+| 年級 | G1A、G2A、G3A、G4A、G6A（沒有五上）。題庫 `data/*.js` 由 `build_data.py` 產生，不可手改 | — |
+| 測試 | `tests/` 共 4 支 node test，其中 `scene3d.test.cjs` 用繪圖替身；`check_data.py`；`tools/qa/cdp.mjs` 用無頭 Chrome 截圖；`p0-baseline.json` 以固定 seed 271828 驗證規則 | — |
+
+**既有 3D 成果：** Codex 已做過兩輪棋盤 3D、四批密室 3D。兩輪都因 Codex 沙盒無法啟動 Chrome，**沒有實機視覺驗收**（`CODEX-3D-REPORT.md` 自己也這樣寫）。所以這次升級的起點並非「從 2D 改成 3D」，而是「已有 3D，但品質還停在幾何圖形堆疊」。
+
+## 2. 視覺現況（看截圖後的判斷）
+
+| 遊戲 | 現況 | 最大落差 |
+|---|---|---|
+| 大廳 | 6 張卡，縮圖是扁平 SVG 示意圖 | 預覽圖跟實際遊戲畫面不像；跑酷卡的深色縮圖跳出整體色系 |
+| **大富翁** | 幾乎是正俯視。格子是粉彩平面色塊，中央是綠絨圓盤加幾個小道具；棋子小，兩隊擠在起點；畫布左右各留一條空的木色寬邊 | **讀起來是 2D**：沒有地產建築、沒有景深，棋子也不像角色。這正是 CF 擔心的「只是把格子做得更立體」 |
+| 蛇梯 | 已有透視，蛇和梯子都是立體的，整體品質比大富翁好 | 標籤互相擋（「多走1格」蓋住 17／18 格），箭頭、步數牌和光圈太雜；圖層優先順序沒有整理 |
+| 賓果 | DOM 木盤加 3D 背景，字大，可讀性佳 | 格子厚度與按壓感不足；題目欄長度會撐動版面 |
+| 哆寶 | 左右卡牌對照，字清楚 | 卡牌質感偏平；「聽這張卡」按鈕壓在卡牌邊框上 |
+| **密室 v1** | 等角娃娃屋，家具是方塊；12 個編號圓點加鎖頭散在房間各處；右側機關清單很長，要捲動才看得完 | **像家具擺設圖，不像要解謎的房間**：沒有光影氣氛，沒有前後景，標記太密；沒有縮放和重設視角，水平只能轉 ±0.45 |
+| 跑酷 | 深色夜城加泛光，獨立的美術語言 | 跟奶油暖色系完全不同。計畫書只要求輕量處理，建議 Phase 6 再決定要不要統一 |
+
+## 3. 不得破壞清單（Gate 驗收時逐條核對）
+
+1. 擲骰、出題、計分、學習紀錄只能由遊戲本身或 `common.js` 決定；3D 層只負責呈現。
+2. `p0-baseline.json` 固定 seed 下的結果不變：骰序、蛇頭 13／21／25／29、賓果 3–5 格、密室最後線索與最後一道門。
+3. 作答元件維持真 DOM 按鈕；canvas 維持 `aria-hidden`；焦點順序與 aria 屬性不變。
+4. 所有降回 2D 的路徑都要保留，2D 模式同樣必須能完整玩完一局。
+5. `?g=` 五個年級、`window.REVIEW_BANK`、`RG.*` API、各遊戲網址不變。
+6. localStorage 鍵不變：`review-games-settings-<g>`、密室存檔、`shape_run_settings:`、`shape_run_records`。
+7. 隊伍辨識維持「形狀＋編號＋顏色」三重。
+8. 尺寸與對比下限：哆寶詞塊至少 64×52px，密室標記至少 48px，`--brand #a84b17` 配白字的對比。
+9. 跑酷：看字區維持 DOM（`#strip`），保留看字時間與暫停、三級同速；只改母版。
+10. 題庫 `data/*.js` 只能由 build 腳本產生。
+11. 2026-10-16 CF 的兩項要求：每次開啟都重新亂數出題；大富翁與蛇梯逐格跳並顯示足跡步數。
+
+## 4. 並行衝突熱點
+
+| 檔案 | 誰會改 | 處理方式 |
+|---|---|---|
+| `scene3d.js`（單檔管四款遊戲） | B、D | **先拆檔**：共用核心＋每款一檔（T1.0），拆完才能並行 |
+| `common.css`／`common.js` | A，也會影響密室 | 由 A 獨占；Token 定版後其他人只能讀 |
+| `detective.css`／`detective3d.js` | C | v1 與 v2 共用，改了會兩邊連動 |
+| `index.html`、`?v=` 快取字串、HANDOFF.md | 全部 | 由 Claude 在整合時統一改，Codex 不碰 |
+| `tests/p0-visual.test.cjs` | 全部 | 外觀大改可能讓它失敗；改測試需要 Claude 批准 |
+
+**Codex 實務限制**（過去踩過的坑）：沙盒不能啟動 Chrome，所以截圖驗收一律由 Claude 做；在 worktree 裡不能跑 git，所以 commit 與合併由 Claude 負責。因此真正能並行的上限大約是兩個 Codex。
+
+---
+
+## 5. 任務看板
+
+優先度：P0＝不做就無法往下；P1＝黃金樣板；P2＝推廣到其他遊戲；P3＝收尾。
+執行欄寫「Codex」的，都由 Claude 撰寫派工單、截圖驗收、commit；寫「Claude」的由 Claude 自己做。
+
+### Phase 0｜稽核（本文件）
+| ID | 任務 | 狀態 |
+|---|---|---|
+| T0.1 | 程式碼與網站盤點、基準截圖 | ✅ 完成 |
+| T0.2 | CF 決定第 6 節的四件事 | ⏳ 等 CF |
+| T0.3 | 把本報告與看板 commit 進 `Review-Games/VISUAL-UPGRADE.md`，作為 Codex 的派工依據 | 等 T0.2 |
+
+### Phase 1｜基礎建設＋大富翁黃金樣板（Gate 1）
+| ID | 任務 | 前置 | 相關檔案 | 執行 | 驗收 | 風險 |
+|---|---|---|---|---|---|---|
+| T1.0 | 拆 `scene3d.js`：核心（renderer、燈光、材質、降級、生命週期）加 `scene3d-monopoly/snakes/bingo/dobble.js`。**行為零變更** | T0.3 | scene3d*.js、4 個 html 的 script 標籤、tests | Codex（主力款） | 既有 4 支 test 全綠；p0 baseline 不變；Claude 截圖逐像素比對前後 | 純重構卻改到行為 → 用截圖 diff 擋 |
+| T1.1 | 設計 Token 定版：色彩角色、字級、陰影、圓角、動畫時長；3D 材質參數（木頭、霧面塑膠、紙、金屬）與燈光預設 | T0.3 | 新增 `design-tokens.css`、`scene3d-core` 的 MAT／LIGHT 表 | **Claude 設計**，Codex 落檔 | 色票對比全部 ≥4.5:1（以工具量測）；token 有文件 | Token 改了會影響全部遊戲 |
+| T1.2 | （可選，看決策 b）把 Three.js r128 放進 repo，解除 CDN 單點 | T0.3 | `vendor/three/` | Codex（輕量款） | 斷網後 3D 仍能載入 | repo 增加約 600KB |
+| T1.3 | 共用玩具元件：圓角方塊（RoundedBox）、接觸陰影、角色棋子 v2（紅探險家／藍機器人／綠…，含待機、移動、慶祝動作）、立體骰子 | T1.0、T1.1 | `scene3d-core` 或 `scene3d-kit.js` | Codex（主力款） | Claude 做元件陳列頁截圖審查；元件縮小時仍分得出隊伍 | 多邊形數 → 規定面數上限 |
+| T1.4 | **大富翁黃金樣板**：改用斜俯視鏡頭、木製厚棋盤、格子分層、中央低矮微縮城鎮（書本屋、圖書館、鉛筆路燈）、地產建築系統（購地後建築升起）、同格棋子錯位、骰子落地陰影；同時處理左右空白木邊 | T1.3 | `scene3d-monopoly.js`、monopoly.html 版面 | Codex（主力款，可能需升級款） | 見下方「Gate 1 標準」 | 最大的品質關卡 |
+| T1.5 | 標準與低動態設定示範：讓 CF 在開了減少動態的 Mac 上也能看到 3D（見決策 c） | T1.4 | `common.js` 設定列 | Codex（輕量款） | 兩種模式都能玩完一局 | — |
+| T1.6 | Gate 1 驗收包：前後對照截圖、操作錄影（GIF）、效能數據（無頭 FPS 加 CF 學校電腦實測）、不得破壞清單逐條核對 | T1.4、T1.5 | — | Claude | CF 看過後批准 | 無頭 swiftshader 的 FPS 不代表真實 GPU，需要 CF 用實機確認 |
+
+**Gate 1 標準（回應 CF 的要求：「不能只是把格子做得更立體」）**：靜態截圖要一眼看出以下四點，缺一就退回：
+1. 有材質：木紋與塑膠是不同表面。
+2. 有燈光：主光、補光、接觸陰影都在。
+3. 有建築：至少 6 種課次建築，購地時有升起動畫。
+4. 有角色：棋子是看得出正面和側面的角色，不是圓柱體。
+並列同角度的 Before／After 截圖，請 CF 判定。
+
+### Phase 2｜大富翁精修（Gate 2）
+| ID | 任務 | 前置 | 執行 |
+|---|---|---|---|
+| T2.1 | 玩家資訊面板：凸顯目前隊伍，同一時間只有一個主要按鈕 | Gate 1 | Codex |
+| T2.2 | 平板與手機版面（≤760px 目前是 2D，評估是否要維持） | Gate 1 | Codex |
+| T2.3 | 用 fixture 跑完整一局：結果與 2D 一致 | T2.1、T2.2 | Claude |
+
+### Phase 3｜蛇梯（Gate 3）：可以和 Phase 4 並行
+| T3.1 | 玩具蛇、梯子換成黃金樣板材質，套用共用棋子 | Gate 1、T1.0 | Codex B |
+| T3.2 | 圖層優先順序：格號 ＞ 棋子 ＞ 事件標籤 ＞ 蛇梯 ＞ 裝飾；解決「多走1格」擋住格號的問題 | T3.1 | Codex B |
+| T3.3 | 驗證蛇梯位置、方向、終點與 baseline 完全一致 | T3.2 | Claude |
+
+### Phase 4｜密室黃金樣板（Gate 4）：在 Gate 1 通過後啟動，與 Phase 3 並行
+| ID | 任務 | 前置 | 執行 |
+|---|---|---|---|
+| T4.0 | 密室設計稿：房間格局、光源（窗光、檯燈）、前後景、氣氛；標記改成「標準模式只顯示小點，聚焦後才放大／高辨識模式全部顯示」 | 決策 a、Gate 1 的材質系統 | **Claude 設計** |
+| T4.1 | `detective3d.js` 拆成場景、標記、鏡頭三支 | T4.0 | Codex C |
+| T4.2 | 房間重製：材質、燈光、主題模組（貼圖、道具、牆面） | T4.1 | Codex C |
+| T4.3 | 鏡頭：縮放範圍、重設視角、點物件聚焦、固定視角模式 | T4.1 | Codex C |
+| T4.4 | 物件互動動畫：抽屜、書本、鎖頭、保險箱、開門；並與 core 狀態同步 | T4.2 | Codex C |
+| T4.5 | 任務手冊改版：右側清單改成「目前任務／線索／可調查／未解鎖／已完成」，可收合 | T4.0 | Codex C |
+| T4.6 | Gate 4：用 play-detective 腳本跑完整流程；平面圖模式也能完成 | 全部 | Claude |
+
+**Gate 4 標準（回應 CF 的要求：「要有探索房間的感覺」）**：
+- 房間有光源方向與陰影，有前景遮擋物（例如門框、桌角）。
+- 一開場不能把 12 個標記全部擺在眼前，學生要靠轉動或聚焦才發現物件。
+- 但高辨識模式和平面圖必須保底，確保每個學生都找得到線索。
+
+### Phase 5｜哆寶、賓果（Gate 5）：Codex D，可與 Phase 4 後半並行
+| T5.1 | 賓果：方塊厚度、按壓下沉、連線依序點亮、題目欄固定高度 | Gate 1、T1.0 | Codex D |
+| T5.2 | 哆寶：卡牌厚度與陰影、配對連結效果、修正按鈕壓到卡牌的問題 | Gate 1、T1.0 | Codex D |
+
+### Phase 6｜跑酷、大廳（Gate 6）
+| T6.1 | 大廳縮圖改用實際遊戲截圖（Claude 截圖後轉成 WebP） | Gate 4、Gate 5 | Claude＋Codex |
+| ~~T6.2~~ | 取消：跑酷維持原風格（決策 e） | — | — |
+
+### Phase 7｜全站回歸
+| T7.1 | 5 個年級 × 6 款遊戲的截圖矩陣、`check_data`、全部 test、多人模式、2D fallback、斷網情境 | 全部 | Claude（無頭）＋ CF（實機） |
+| T7.2 | 問題分級、修正、文件、部署（需要 CF 授權才 push） | T7.1 | Claude |
+
+## 6. CF 決策紀錄（2026-10-16）
+
+| # | 決策 | 結果 |
+|---|---|---|
+| a | 密室改哪一版 | 改 v1／v2 共用的 `detective3d.js`、`detective.css`，用 v1 驗收；2.0 是否取代另案 |
+| b | Three.js 是否 vendor | 是，放 `vendor/three-r128/`，維持 r128 |
+| c | 減少動態的 Mac 怎麼驗收 | 遊戲設定加「顯示 3D（覆蓋系統設定）」，預設仍尊重系統 |
+| d | 並行程度 | Phase 1 序列；Gate 1 後最多兩個 Codex 並行，Claude 依序整合 |
+| e | 跑酷 | **維持原有設計風格，不納入本次改造**（T6.2 取消；Shape-Run-* 不動） |
+| f | 執行授權 | 一路做到完成；遇額度上限等重置後繼續；全部完成、回歸通過後 push main |
+
+## 7. 計畫調整（Claude，2026-10-16）
+
+T1.0 原定「拆 scene3d.js、行為零變更」。實際檢視後發現四款遊戲的 `kind` 分支交錯在同一個 View 類別（50+ 處 `this.kind === ...`），硬拆的回歸風險高、收益低。改為：
+
+- `scene3d.js` **凍結**：蛇梯、賓果、哆寶在搬遷前照舊使用，除了「顯示 3D」開關外不改它。
+- 新增 `rg3d-kit.js`：共用材質、燈光、圓角幾何、接觸陰影、角色棋子、骰子（設計系統的 3D 部分）。
+- 新增 `scene3d-monopoly.js`：大富翁黃金樣板，實作與舊 View 相同的公開 API（mount 回傳物件的 moveToken／rollDice／setOwner／focusPlayer…），monopoly.html 改載入它。
+- 之後蛇梯（Phase 3）、賓果／哆寶（Phase 5）逐款從 scene3d.js 搬到 kit；最後一款搬完即可刪除 scene3d.js。
