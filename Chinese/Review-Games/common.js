@@ -63,7 +63,20 @@
   const speakBtn = (text, label = '朗讀') => h('button', { class: 'speak', type: 'button', 'aria-label': label, title: label, onclick: () => speak(text) }, '🔊');
 
   // 減少動態：系統設定或面板開關任一開啟即生效
-  const calm = () => document.body.classList.contains('calm') || matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // 「顯示 3D」：系統開了減少動態的電腦（例如老師的 Mac）可手動覆蓋，預設仍尊重系統。
+  const FORCE3D_KEY = 'rg3d-force-3d';
+  const osReduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const force3d = () => { try { return localStorage.getItem(FORCE3D_KEY) === '1'; } catch (_) { return false; } };
+  const systemReduced = () => osReduced() && !force3d();
+  function force3dToggle() {
+    if (!osReduced()) return null;
+    const label = document.createElement('label'); label.className = 'rg3d-switch rg-force3d';
+    const input = document.createElement('input'); input.type = 'checkbox'; input.checked = force3d();
+    input.addEventListener('change', () => { try { localStorage.setItem(FORCE3D_KEY, input.checked ? '1' : '0'); } catch (_) {} location.reload(); });
+    label.append(input, document.createTextNode('顯示 3D（覆蓋系統的減少動態）'));
+    return label;
+  }
+  const calm = () => document.body.classList.contains('calm') || systemReduced();
   const sleep = (ms) => new Promise((r) => setTimeout(r, calm() ? 0 : ms));
 
   const gradeKey = () => {
@@ -339,5 +352,5 @@
     });
   }
 
-  window.RG = { die3d, h, shuffle, speak, stopSpeak, speakBtn, sleep, calm, loadBank, setupPanel, makeDeck, ask, header, gradeKey, token, stats, statsLine, TYPES, LEVELS, TEAM_COLORS, TEAM_NAMES };
+  window.RG = { systemReduced, force3dToggle, die3d, h, shuffle, speak, stopSpeak, speakBtn, sleep, calm, loadBank, setupPanel, makeDeck, ask, header, gradeKey, token, stats, statsLine, TYPES, LEVELS, TEAM_COLORS, TEAM_NAMES };
 })();

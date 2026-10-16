@@ -189,6 +189,7 @@
       h('div', { class: 'dt-task', role: 'status' }, [h('span', { 'aria-hidden': 'true' }, '🎯'), h('b', {}, task), spk(task, '朗讀目前任務')]),
       h('div', { class: 'dt-bar' }, [
         h('label', { class: 'chip' }, [h('input', { type: 'checkbox', checked: !!settings.calm, onchange: (e) => { settings.calm = e.target.checked; applyDisplay(); room.opts.force2d = !!settings.calm; room.refreshMode(); } }), '減少動態（平面圖）']),
+        ...(() => { const t = window.RG && RG.force3dToggle && RG.force3dToggle(); if (t) t.classList.add('chip'); return t ? [t] : []; })(),
         h('button', { class: 'btn', type: 'button', id: 'dt-notebook', onclick: notebook }, '📓 偵探筆記本'),
         h('button', { class: 'btn', type: 'button', onclick: () => { if (confirm('要重新開始這間密室嗎？目前進度不會保留。')) start(); } }, '🔄 重新挑戰'),
         h('button', { class: 'btn', type: 'button', onclick: () => { if (confirm('回到設定畫面？目前進度不會保留。')) setup(); } }, '↩ 回到設定'),
@@ -480,7 +481,7 @@
     escaping = true; const currentGame = game; const currentRoom = room;
     game.stage = 6; tone('open'); if (room) room.animate('escape');
     const finish = () => { if (game === currentGame && room === currentRoom && escaping) results(); };
-    escapeTimer = setTimeout(finish, room && room.is3d && !settings.calm && !matchMedia('(prefers-reduced-motion: reduce)').matches && !document.hidden ? 760 : 0);
+    escapeTimer = setTimeout(finish, room && room.is3d && !settings.calm && !(window.RG && RG.systemReduced ? RG.systemReduced() : matchMedia('(prefers-reduced-motion: reduce)').matches) && !document.hidden ? 760 : 0);
   }
   function results() {
     if (recorded) return; recorded = true; clearTimeout(escapeTimer);

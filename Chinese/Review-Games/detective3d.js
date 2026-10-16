@@ -3,7 +3,7 @@
    物件標記一律是 DOM 按鈕（鍵盤、讀屏、觸控都能用）；3D 失敗、減少動態或 WebGL 不可用時改成 2D 平面圖，玩法相同。 */
 (function () {
   'use strict';
-  const THREE_URL = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+  const THREE_URL = ((document.currentScript && document.currentScript.src) || '').replace(/[^/]*$/, '') + 'vendor/three-r128/three.min.js';
   let loading, artSeed = 0x61d92;
   const artRandom = () => { artSeed = (1664525 * artSeed + 1013904223) >>> 0; return artSeed / 4294967296; };
   function loadThree() {
@@ -51,7 +51,7 @@
   ];
 
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const isCalm = () => reduced.matches || document.body.classList.contains('calm');
+  const isCalm = () => (window.RG && RG.systemReduced ? RG.systemReduced() : reduced.matches) || document.body.classList.contains('calm');
   function webgl() {
     try { const c = document.createElement('canvas'); return !!(window.WebGLRenderingContext && (c.getContext('webgl') || c.getContext('experimental-webgl'))); } catch (_) { return false; }
   }

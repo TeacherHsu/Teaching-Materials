@@ -1,7 +1,9 @@
 /* 綜合複習 3D 視圖：狀態由各遊戲傳入，這裡不出題、不計分、不改學習紀錄。 */
 (function () {
   'use strict';
-  const CDN = 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/';
+  // Three.js r128 已放進 repo（vendor/three-r128），教室斷網也能載入 3D。
+  const VENDOR = ((document.currentScript && document.currentScript.src) || '').replace(/[^/]*$/, '') + 'vendor/three-r128/';
+  const CDN = VENDOR + 'examples/js/';
   const instances = new Set();
   // Independent visual PRNG: never advance question/dice randomness.
   let artSeed = 0x81b27;
@@ -13,7 +15,8 @@
   const ownerSurfaceColors = ['#d88980', '#8ea9cb', '#91b49a', '#a18fbd'];
   let library, effects, toolbar;
   const el = (tag, cls, text) => { const n = document.createElement(tag); n.className = cls || ''; if (text) n.textContent = text; return n; };
-  const isCalm = () => reduced.matches || document.body.classList.contains('calm');
+  const sysReduced = () => (window.RG && RG.systemReduced ? RG.systemReduced() : reduced.matches);
+  const isCalm = () => sysReduced() || document.body.classList.contains('calm');
   function script(src) {
     return new Promise((resolve, reject) => {
       const s = document.createElement('script');
@@ -25,7 +28,7 @@
   }
   function loadThree() {
     if (window.THREE) return Promise.resolve();
-    if (!library) library = script('https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js');
+    if (!library) library = script(VENDOR + 'three.min.js');
     return library;
   }
   // 後製可獨立失敗；泛光只照亮成功標記，文字維持深色、高對比。
@@ -50,6 +53,7 @@
       input.addEventListener('change', () => document.body.classList.toggle(key, input.checked));
       label.append(input, document.createTextNode(text)); toolbar.append(label);
     });
+    const force = window.RG && RG.force3dToggle && RG.force3dToggle(); if (force) toolbar.append(force);
     const heading = document.querySelector('#app .topbar');
     if (heading) heading.after(toolbar);
   }

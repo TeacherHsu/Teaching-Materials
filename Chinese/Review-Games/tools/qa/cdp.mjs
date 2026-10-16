@@ -1,5 +1,6 @@
 // 用 DevTools 協定開頁、執行操作腳本、截圖。用法：node cdp.mjs <url> <out.png> <script.js>
 // QA 截圖工具：用無頭 Chrome 開遊戲、模擬遊玩、截圖（強制關閉減少動態，才看得到 3D）。
+// RM=reduce 可模擬系統「減少動態」。
 // 用法：node tools/qa/cdp.mjs <url> <out.png> tools/qa/play-monopoly.js（需本機 http://localhost:5190 靜態伺服器）
 import { spawn } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -20,8 +21,10 @@ let id = 0; const pending = {}; const logs = [];
 ws.onmessage = (m) => { const d = JSON.parse(m.data); if (d.id && pending[d.id]) { pending[d.id](d); delete pending[d.id]; } if (d.method === 'Runtime.exceptionThrown') logs.push('EXC ' + d.params.exceptionDetails.exception?.description?.slice(0, 200)); if (d.method === 'Runtime.consoleAPICalled' && d.params.type === 'error') logs.push('ERR ' + JSON.stringify(d.params.args.map(a => a.value ?? a.description)).slice(0, 200)); };
 const send = (method, params = {}) => new Promise((r) => { const i = ++id; pending[i] = r; ws.send(JSON.stringify({ id: i, method, params })); });
 await send('Runtime.enable'); await send('Page.enable');
+// 停用快取：profile 目錄會沿用，不關快取會截到改版前的舊檔。
+await send('Network.enable'); await send('Network.setCacheDisabled', { cacheDisabled: true });
 await send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: false });
-await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'no-preference' }] });
+await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: process.env.RM || 'no-preference' }] });
 await send('Page.navigate', { url }); await sleep(4000);
 const script = scriptFile ? readFileSync(scriptFile, 'utf8') : '1';
 const r = await send('Runtime.evaluate', { expression: `(async()=>{${script}})()`, awaitPromise: true, returnByValue: true });
