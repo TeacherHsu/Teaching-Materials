@@ -41,14 +41,21 @@ function drawingSubstitute(v) {
   v.resize = () => {}; v.draw = () => {}; v.updateProjection = () => {};
 }
 
-test('減少動態與窄螢幕不載入 CDN，仍保留棋子與地產狀態', async () => {
-  for (const settings of [{ calm: true }, { narrow: true }]) {
-    const e = environment({ ...settings, three: false }); const v = e.mount();
+test('減少動態與其他遊戲的窄螢幕不載入 CDN，仍保留棋子與地產狀態', async () => {
+  for (const settings of [{ calm: true }, { narrow: true, kind: 'snakes' }]) {
+    const e = environment({ ...settings, three: false }); const v = e.mount({ kind: settings.kind || 'monopoly' });
     await v.moveToken(2, 17); v.setOwner(17, 2); await v.rollDice(5);
     assert.equal(v.active, false); assert.equal(e.scripts.length, 0);
     assert.equal(v.tokens.get(2), 17); assert.equal(v.owners.get(17), 2); assert.equal(v.dieValue, 5);
     v.dispose();
   }
+});
+
+test('大富翁手機版用低成本 3D 呈現完整棋盤', async () => {
+  const e = environment({ narrow: true }); const v = e.mount(); drawingSubstitute(v); await settle();
+  assert.equal(v.active, true); assert.equal(v.quality, 'light'); assert.equal(v.failed, '');
+  v.tokens.set(0, 4); v.sync(); assert.equal(v.tokens.get(0), 4);
+  v.dispose();
 });
 
 test('切換減少動態會完成補間並解除等待；恢復時重建目前狀態', async () => {

@@ -66,9 +66,9 @@
     constructor(options) {
       Object.assign(this, options);
       this.tokens = new Map(); this.owners = new Map(); this.marks = new Map(); this.lineState = [];
-      this.tweens = new Map(); this.labels = []; this.meshCells = new Map(); this.pieces = new Map(); this.flags = new Map();
+      this.tweens = new Map(); this.labels = []; this.meshCells = new Map(); this.pieces = new Map(); this.pieceShadows = new Map(); this.flags = new Map();
       this.projection = false; this.active = false; this.disposed = false; this.failed = ''; this.dieValue = 1;
-      this.quality = this.quality === 'high' ? 'high' : 'standard'; this.frameSamples = []; this.slowWindows = 0; this.warmFrames = 30;
+      this.quality = ['high', 'light'].includes(this.quality) ? this.quality : 'standard'; this.frameSamples = []; this.slowWindows = 0; this.warmFrames = 30;
       this.overlay = this.kind === 'dobble' || this.kind === 'bingo';
       this.surface = el('div', 'rg3d-surface'); this.surface.setAttribute('aria-hidden', 'true');
       this.host.classList.add('rg3d-host', `rg3d-${this.kind}`); this.host.prepend(this.surface);
@@ -79,6 +79,7 @@
         this.cells.forEach((c) => {
           const box = el('div', 'rg3d-cell-label');
           const name = el('span', 'rg3d-cell-name'); name.textContent = `${this.kind === 'monopoly' ? c.label : c.id}`;
+          if (this.kind === 'monopoly') name.setAttribute('data-compact', c.label.replace(/^第(\d)課$/, '$1課').replace('綜合複習', '複習').replace('休息站', '休息'));
           const detail = el('span', 'rg3d-cell-detail'); detail.textContent = c.detail || '';
           const state = el('span', 'rg3d-cell-state');
           const step = el('span', 'rg3d-cell-step'); this.domLabels.append(step);
@@ -156,7 +157,12 @@
     status(text) { if (toolbar && toolbar.isConnected) toolbar.querySelector('.rg3d-status').textContent = text; }
     async refresh() {
       if (this.disposed) return;
-      const reason = isCalm() ? '減少動態' : narrow.matches ? '窄螢幕' : this.failed;
+      if (narrow.matches && this.kind === 'monopoly' && this.quality !== 'light') {
+        if (this.renderer) this.applyQuality('light');
+        else { this.quality = 'light'; this.frameSamples = []; this.slowWindows = 0; }
+      }
+      const smallScreen2d = narrow.matches && !(this.kind === 'monopoly' && this.quality === 'light');
+      const reason = isCalm() ? '減少動態' : smallScreen2d ? '窄螢幕' : this.failed;
       if (reason) { this.mode(false); this.status(`2D 模式・${reason}，玩法相同`); return; }
       if (this.loading) return;
       if (!this.renderer) {
@@ -164,14 +170,14 @@
         try {
           await loadThree();
           if (this.disposed) return;
-          if (isCalm() || narrow.matches) return;
+          if (isCalm() || (narrow.matches && !(this.kind === 'monopoly' && this.quality === 'light'))) return;
           this.init();
         } catch (_) { this.failed = '立體視圖無法使用'; }
         finally { this.loading = false; }
         if (!this.renderer || this.failed) { this.mode(false); this.status('2D 模式・立體視圖無法使用，玩法相同'); return; }
       }
       // 等待 CDN 時切換顯示設定，也必須以當下設定為準。
-      if (isCalm() || narrow.matches) { this.mode(false); return; }
+      if (isCalm() || (narrow.matches && !(this.kind === 'monopoly' && this.quality === 'light'))) { this.mode(false); return; }
       try { this.mode(true); } catch (_) { this.failed = '立體視圖無法使用'; this.mode(false); return; }
       const proj = document.body.classList.contains('proj');
       const changed = this.projection !== proj;
@@ -191,11 +197,12 @@
     }
     init() {
       const T = window.THREE;
+      const lightMode = this.quality === 'light';
       this.renderer = new T.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'low-power' });
-      this.renderer.setPixelRatio(Math.min(devicePixelRatio || 1, this.quality === 'high' && !this.host.closest('.duel') ? 1.5 : 1.25));
+      this.renderer.setPixelRatio(Math.min(devicePixelRatio || 1, lightMode ? 1 : this.quality === 'high' && !this.host.closest('.duel') ? 1.5 : 1.25));
       this.renderer.outputEncoding = T.sRGBEncoding;
       this.renderer.toneMapping = T.ACESFilmicToneMapping; this.renderer.toneMappingExposure = .98;
-      this.renderer.shadowMap.enabled = true; this.renderer.shadowMap.type = T.PCFSoftShadowMap; this.renderer.shadowMap.autoUpdate = false; this.renderer.shadowMap.needsUpdate = true;
+      this.renderer.shadowMap.enabled = !lightMode; this.renderer.shadowMap.type = T.PCFSoftShadowMap; this.renderer.shadowMap.autoUpdate = false; this.renderer.shadowMap.needsUpdate = true;
       this.surface.append(this.renderer.domElement);
       this.renderer.domElement.addEventListener('webglcontextlost', (e) => {
         e.preventDefault(); if (this.disposed) return; this.failed = 'WebGL 已中斷'; this.mode(false); this.status('2D 模式・WebGL 已中斷，請繼續遊戲');
@@ -205,12 +212,13 @@
       this.scene.background = null;
       this.camera = new T.PerspectiveCamera(36, 1, .1, 120);
       this.camera.position.set(0, 18, 15); this.camera.lookAt(0, 0, 0);
-      this.scene.add(new T.HemisphereLight(0xffe9cc, 0x51453e, .42));
-      const key = new T.DirectionalLight(0xffdfb0, 1.25); key.position.set(-7, 13, 6); key.castShadow = true;
-      key.shadow.mapSize.set(1024, 1024); Object.assign(key.shadow.camera, { left: -16, right: 16, top: 16, bottom: -16, far: 50 }); key.shadow.camera.updateProjectionMatrix();
+      const monopoly = this.kind === 'monopoly';
+      this.scene.add(new T.HemisphereLight(0xfff0dc, 0x51453e, monopoly ? .5 : .42));
+      const key = new T.DirectionalLight(0xffe7cc, monopoly ? 1.02 : 1.25); key.position.set(-7, 13, 6); key.castShadow = !lightMode;
+      key.shadow.mapSize.set(lightMode ? 512 : 1024, lightMode ? 512 : 1024); Object.assign(key.shadow.camera, { left: -16, right: 16, top: 16, bottom: -16, far: 50 }); key.shadow.camera.updateProjectionMatrix();
       key.shadow.bias = -.0003; key.shadow.normalBias = .035; key.shadow.radius = 3; this.scene.add(key);
-      const rim = new T.DirectionalLight(0xb6d9ff, .7); rim.position.set(6, 7, -9); this.scene.add(rim);
-      this.makeEnvironment();
+      const rim = new T.DirectionalLight(monopoly ? 0xd9d0bc : 0xb6d9ff, monopoly ? .42 : .7); rim.position.set(6, 7, -9); this.scene.add(rim);
+      if (!lightMode) this.makeEnvironment();
       this.root = new T.Group(); this.scene.add(this.root);
       const table = this.box(15, .3, 15, '#ffffff'); table.position.y = -1.05;
       table.material.map = this.woodTexture('table'); table.material.roughness = .82;
@@ -299,13 +307,29 @@
     }
     woodTexture(kind) {
       this.woodTextures ||= new Map(); if (this.woodTextures.has(kind)) return this.woodTextures.get(kind);
-      const canvas = document.createElement('canvas'); canvas.width = canvas.height = 1024;
-      const c = canvas.getContext('2d'), gradient = c.createRadialGradient(500, 380, 80, 512, 512, 760);
-      gradient.addColorStop(0, kind === 'table' ? '#ead1aa' : '#ba8046'); gradient.addColorStop(1, kind === 'table' ? '#ba8b60' : '#704321');
-      c.fillStyle = gradient; c.fillRect(0, 0, 1024, 1024);
-      for (let i = 0; i < 160; i++) {
-        const y = i * 6.5; c.strokeStyle = `rgba(80,42,18,${.012 + (i % 7) * .002})`; c.lineWidth = .6 + i % 3;
-        c.beginPath(); c.moveTo(0, y); c.bezierCurveTo(300, y + Math.sin(i) * 9, 700, y + Math.cos(i * .7) * 12, 1024, y); c.stroke();
+      const resolution = this.quality === 'light' ? 512 : 1024;
+      const canvas = document.createElement('canvas'); canvas.width = canvas.height = resolution;
+      const c = canvas.getContext('2d');
+      if (kind === 'felt' || kind === 'linen') {
+        c.fillStyle = kind === 'felt' ? '#52756b' : '#e7d7b9'; c.fillRect(0, 0, resolution, resolution);
+        for (let i = 0; i < resolution * 2; i++) {
+          const x = artRandom() * resolution, y = artRandom() * resolution;
+          if (kind === 'felt') {
+            c.strokeStyle = i % 3 ? 'rgba(232,222,194,.045)' : 'rgba(22,48,42,.07)'; c.lineWidth = .5 + artRandom() * .6;
+            c.beginPath(); c.moveTo(x, y); c.lineTo(x + 3 + artRandom() * 8, y + .5 + artRandom() * 2); c.stroke();
+          } else {
+            c.fillStyle = i % 2 ? 'rgba(255,250,235,.18)' : 'rgba(125,93,57,.08)';
+            c.fillRect(x, y, .8, resolution * .015);
+          }
+        }
+      } else {
+        const gradient = c.createRadialGradient(resolution * .49, resolution * .37, resolution * .08, resolution / 2, resolution / 2, resolution * .74);
+        gradient.addColorStop(0, kind === 'table' ? '#ead1aa' : '#ba8046'); gradient.addColorStop(1, kind === 'table' ? '#ba8b60' : '#704321');
+        c.fillStyle = gradient; c.fillRect(0, 0, resolution, resolution);
+        for (let i = 0; i < resolution / 6.5; i++) {
+          const y = i * 6.5; c.strokeStyle = `rgba(80,42,18,${.012 + (i % 7) * .002})`; c.lineWidth = (.6 + i % 3) * resolution / 1024;
+          c.beginPath(); c.moveTo(0, y); c.bezierCurveTo(resolution * .29, y + Math.sin(i) * 9 * resolution / 1024, resolution * .68, y + Math.cos(i * .7) * 12 * resolution / 1024, resolution, y); c.stroke();
+        }
       }
       const t = new THREE.CanvasTexture(canvas); t.encoding = THREE.sRGBEncoding; t.anisotropy = Math.min(4, this.renderer.capabilities.getMaxAnisotropy());
       this.woodTextures.set(kind, t); return t;
@@ -330,13 +354,32 @@
       const shadowCanvas = document.createElement('canvas'); shadowCanvas.width = shadowCanvas.height = 128;
       const ctx = shadowCanvas.getContext('2d'), gradient = ctx.createRadialGradient(64, 64, 25, 64, 64, 64);
       gradient.addColorStop(0, '#39231466'); gradient.addColorStop(1, '#39231400'); ctx.fillStyle = gradient; ctx.fillRect(0, 0, 128, 128);
-      const contact = new T.Mesh(new T.PlaneGeometry(13.4, depth + 1.6), new T.MeshBasicMaterial({ map: new T.CanvasTexture(shadowCanvas), transparent: true, depthWrite: false }));
+      const shadowTexture = new T.CanvasTexture(shadowCanvas);
+      if (this.kind === 'monopoly') {
+        shadowTexture.encoding = T.sRGBEncoding;
+        this.woodTextures ||= new Map(); this.woodTextures.set('contact', shadowTexture);
+        this.contactShadowMap = shadowTexture;
+      }
+      const contact = new T.Mesh(new T.PlaneGeometry(13.4, depth + 1.6), new T.MeshBasicMaterial({ map: shadowTexture, transparent: true, depthWrite: false, ...(this.kind === 'monopoly' ? { toneMapped: false } : {}) }));
       contact.rotation.x = -Math.PI / 2; contact.position.y = -.885; this.root.add(contact);
       const plinth = this.roundedBox(11.55, .6, depth, '#ffffff'); plinth.position.y = -.4;
       plinth.material.map = this.woodTexture('board'); plinth.material.roughness = .78;
       const inset = this.roundedBox(11.12, .16, depth - .4, '#593d2b'); inset.position.y = -.06;
       // 金色細邊與雙層底座讓棋盤邊緣、厚度、投影有清楚的層次。
       const foot = this.roundedBox(11.25, .16, depth - .15, '#4d3021'); foot.position.y = -.75;
+      if (this.kind === 'monopoly') {
+        // A brass pinstripe and woven board cloth separate the playing surface from the deep wooden edge.
+        const trim = this.roundedBox(11.1, .1, depth - .5, '#b08a54', undefined, .055); trim.position.y = .055; trim.material.roughness = .56; trim.material.metalness = .22;
+        const cloth = this.roundedBox(10.88, .08, depth - .7, '#ffffff', undefined, .045); cloth.position.y = .13; cloth.material.map = this.woodTexture('linen'); cloth.material.roughness = .96;
+        const center = this.roundedBox(6.95, .12, 6.95, '#96744d', undefined, .06); center.position.y = .18; center.material.roughness = .83;
+        const centerFelt = this.roundedBox(6.77, .065, 6.77, '#ffffff', undefined, .035); centerFelt.position.y = .265; centerFelt.material.map = this.woodTexture('felt'); centerFelt.material.roughness = .99;
+        // Four small brass pins make the stitched-looking inner field read as a separate table insert.
+        for (const x of [-3.23, 3.23]) for (const z of [-3.23, 3.23]) {
+          const pin = this.mesh(new T.SphereGeometry(.055, 12, 8), '#c9a66a'); pin.position.set(x, .31, z); pin.material.roughness = .42; pin.material.metalness = .32;
+        }
+        // A subtle paper grain around the felt makes the center read like a stitched game mat.
+        const seam = this.roundedBox(6.91, .018, 6.91, '#eadabd', undefined, .07); seam.position.y = .249; seam.material.roughness = 1;
+      }
       this.cells.forEach((c) => {
         const p = this.cellPosition(c.id);
         const lesson = Number((c.label.match(/^第(\d)課$/) || [])[1]);
@@ -350,13 +393,14 @@
         if (this.kind === 'monopoly' && !lesson && c.label !== '綜合複習') this.specialProp(c, p);
       });
       if (this.kind === 'monopoly') {
-        const pad = this.mesh(new T.CylinderGeometry(2.9, 3, .2, 80), '#285e61'); pad.position.y = .06;
-        const rim = this.mesh(new T.TorusGeometry(2.88, .045, 8, 80), '#edb95b'); rim.rotation.x = Math.PI / 2; rim.position.y = .2;
-        const l = this.label('課文探險', 4.05, .88, '#fff2d1', '#54331f'); l.position.set(0, .5, -1.1); this.root.add(l);
-        // One open, unprinted book and a pencil; leave the centre free for the die.
-        [-1, 1].forEach((side) => { const page = this.roundedBox(.62, .08, .8, '#fff6df', undefined, .025); page.position.set(-1.7 + side * .3, .26, .6); page.rotation.z = side * .08; });
-        const pencil = this.mesh(new T.CylinderGeometry(.035, .035, 1.05, 6), '#d8a649'); pencil.rotation.z = .9; pencil.position.set(-1.6, .3, 1.3);
-        this.buildDie(new T.Vector3(0, .85, .65));
+        const pad = this.mesh(new T.CylinderGeometry(2.9, 3, .2, 80), '#ffffff'); pad.position.y = .23; pad.material.map = this.woodTexture('felt'); pad.material.roughness = .98;
+        const rim = this.mesh(new T.TorusGeometry(2.88, .045, 8, 80), '#c5a15f'); rim.rotation.x = Math.PI / 2; rim.position.y = .34; rim.material.roughness = .5; rim.material.metalness = .24;
+        const innerRim = this.mesh(new T.TorusGeometry(2.7, .018, 6, 64), '#e5cf9c'); innerRim.rotation.x = Math.PI / 2; innerRim.position.y = .335; innerRim.material.roughness = .62;
+        const l = this.label('課文探險', 4.05, .88, '#f6e5c4', '#4a3021'); l.position.set(0, .52, -1.1); this.root.add(l);
+        // A small open reading book and brass pencil share the central felt with the toy die.
+        [-1, 1].forEach((side) => { const page = this.roundedBox(.62, .08, .8, '#fff5de', undefined, .025); page.position.set(-1.7 + side * .3, .39, .6); page.rotation.z = side * .08; page.material.roughness = .92; });
+        const pencil = this.mesh(new T.CylinderGeometry(.035, .035, 1.05, 6), '#c5974c'); pencil.rotation.z = .9; pencil.position.set(-1.6, .43, 1.3); pencil.material.roughness = .7; pencil.material.metalness = .12;
+        this.buildDie(new T.Vector3(0, .84, .65));
       } else {
         this.paths = new Map();
         Object.entries(this.ladders).forEach(([a, b]) => this.ladder(+a, b));
@@ -377,9 +421,27 @@
         const coin = this.mesh(new THREE.CylinderGeometry(.35, .35, .18, 32), '#d99523', g); coin.position.y = .15;
         const q = this.label('?', .47, .5, '#d99523', '#3c2517'); q.position.y = .47; g.add(q);
       } else if (c.label === '休息站') {
-        const cup = this.mesh(new THREE.CylinderGeometry(.25, .19, .44, 32), '#31889c', g); cup.position.y = .28;
-        const drink = this.mesh(new THREE.CylinderGeometry(.215, .215, .025, 32), '#5b321e', g); drink.position.y = .51;
-        const handle = this.mesh(new THREE.TorusGeometry(.16, .055, 8, 20), '#31889c', g); handle.position.set(.26, .3, 0);
+        // Hand-built miniature reading kiosk: timber plinth, plaster walls, striped canopy, window, books and a tea cup.
+        const plinth = this.roundedBox(.96, .1, .82, '#765033', g, .04); plinth.position.y = .065; plinth.material.map = this.woodTexture('board'); plinth.material.roughness = .82;
+        const body = this.roundedBox(.7, .56, .52, '#dfc79e', g, .035); body.position.set(0, .39, -.045); body.material.roughness = .92;
+        const fascia = this.box(.74, .1, .58, '#855a35', g); fascia.position.set(0, .72, -.04); fascia.material.roughness = .8;
+        const roofA = this.roundedBox(.47, .1, .66, '#a85039', g, .025); roofA.position.set(-.16, .86, -.04); roofA.rotation.z = -.45;
+        const roofB = this.roundedBox(.47, .1, .66, '#a85039', g, .025); roofB.position.set(.16, .86, -.04); roofB.rotation.z = .45;
+        // Front faces the camera on the near edge of the board.
+        const windowFrame = this.box(.31, .27, .035, '#8c633d', g); windowFrame.position.set(-.18, .43, .225);
+        const window = this.box(.23, .19, .025, '#b9d5d3', g); window.position.set(-.18, .44, .25); window.material.roughness = .35;
+        const door = this.roundedBox(.17, .39, .035, '#745239', g, .018); door.position.set(.2, .315, .23);
+        const knob = this.mesh(new THREE.SphereGeometry(.025, 10, 8), '#d0a85d', g); knob.position.set(.145, .32, .26); knob.material.metalness = .28;
+        const awning = this.box(.86, .08, .29, '#f2dfbd', g); awning.position.set(0, .63, .35); awning.rotation.x = -.08;
+        for (let x = -.36; x <= .37; x += .24) { const stripe = this.box(.12, .085, .3, '#b85d42', g); stripe.position.set(x, .64, .35); stripe.rotation.x = -.08; }
+        const sign = this.label('閱讀小屋', .72, .23, '#f8edda', '#533a25'); sign.position.set(0, .75, .27); g.add(sign);
+        const counter = this.roundedBox(.91, .09, .24, '#a37a4c', g, .025); counter.position.set(0, .22, .42);
+        const book = this.roundedBox(.21, .055, .16, '#3e7580', g, .012); book.position.set(-.25, .295, .4); book.rotation.y = -.12;
+        const cup = this.mesh(new THREE.CylinderGeometry(.075, .062, .14, 16), '#f6ead2', g); cup.position.set(.23, .33, .39);
+        const tea = this.mesh(new THREE.CylinderGeometry(.061, .061, .009, 16), '#80502d', g); tea.position.set(.23, .405, .39);
+        const handle = this.mesh(new THREE.TorusGeometry(.052, .018, 6, 14), '#f6ead2', g); handle.position.set(.31, .33, .39);
+        for (const x of [-.29, .29]) { const post = this.box(.045, .15, .045, '#765033', g); post.position.set(x, .16, .25); }
+        g.position.x += .18; g.position.z += .08; g.scale.setScalar(1.14);
       } else {
         const die = this.roundedBox(.56, .56, .56, '#ffedd0', g, .06); die.position.y = .29; die.rotation.y = .3;
         [-1, 1].forEach((s) => { const dot = this.mesh(new THREE.SphereGeometry(.06, 10, 8), '#704224', g); dot.position.set(s * .12, .4 + s * .12, .3); });
@@ -461,11 +523,28 @@
     piece(i) {
       const g = new THREE.Group(); this.root.add(g);
       const geo = [() => new THREE.SphereGeometry(.23, 20, 16), () => new THREE.BoxGeometry(.42, .42, .42), () => new THREE.ConeGeometry(.3, .5, 3), () => new THREE.OctahedronGeometry(.31)][i % 4]();
-      const m = this.mesh(geo, colors[i % 4], g); m.material.roughness = .4; m.position.y = .24;
-      const ring = this.mesh(new THREE.CylinderGeometry(.3, .33, .1, 24), '#f3c365', g); ring.position.y = .03;
-      const base = this.mesh(new THREE.CylinderGeometry(.34, .36, .09, 24), colors[i % 4], g); base.position.y = -.04;
-      const l = this.label(String(i + 1), .34, .32, colors[i % 4], '#ffffff'); l.position.y = .3; g.add(l);
+      if (this.kind === 'monopoly') {
+        const foot = this.roundedBox(.66, .075, .66, '#65472f', g, .045); foot.position.y = .04; foot.material.roughness = .72;
+        const ring = this.mesh(new THREE.CylinderGeometry(.3, .33, .055, 32), '#d1aa63', g); ring.position.y = .105; ring.material.roughness = .48; ring.material.metalness = .2;
+        const base = this.mesh(new THREE.CylinderGeometry(.29, .32, .09, 32), colors[i % 4], g); base.position.y = .17; base.material.roughness = .58;
+        const m = this.mesh(geo, colors[i % 4], g); m.material.roughness = .48; m.position.y = .42;
+        const crest = this.mesh(new THREE.SphereGeometry(.065, 14, 10), '#f3d58d', g); crest.position.y = i % 2 ? .68 : .66; crest.material.roughness = .45;
+        const l = this.label(String(i + 1), .32, .3, colors[i % 4], '#ffffff'); l.position.y = .31; g.add(l);
+        const shadow = new THREE.Mesh(new THREE.PlaneGeometry(.76, .82), new THREE.MeshBasicMaterial({ map: this.contactShadowMap, transparent: true, opacity: .3, depthWrite: false, toneMapped: false }));
+        shadow.rotation.x = -Math.PI / 2; shadow.position.y = .296; this.root.add(shadow); this.pieceShadows.set(i, shadow);
+      } else {
+        const m = this.mesh(geo, colors[i % 4], g); m.material.roughness = .4; m.position.y = .24;
+        const ring = this.mesh(new THREE.CylinderGeometry(.3, .33, .1, 24), '#f3c365', g); ring.position.y = .03;
+        const base = this.mesh(new THREE.CylinderGeometry(.34, .36, .09, 24), colors[i % 4], g); base.position.y = -.04;
+        const l = this.label(String(i + 1), .34, .32, colors[i % 4], '#ffffff'); l.position.y = .3; g.add(l);
+      }
       this.pieces.set(i, g); this.updateProjection(); return g;
+    }
+    updatePieceShadow(i, position, lift = 0) {
+      const shadow = this.pieceShadows.get(i); if (!shadow) return;
+      const spread = 1 + Math.min(.5, Math.max(0, lift)) * .7;
+      shadow.position.set(position.x, .296, position.z); shadow.scale.set(spread, spread, 1);
+      shadow.material.opacity = .3 - Math.min(.45, Math.max(0, lift)) * .28;
     }
     tokenPosition(i, cell) {
       return this.cellPosition(cell).add(new THREE.Vector3((i % 2 ? 1 : -1) * .38, .02, .2 + Math.floor(i / 2) * .4));
@@ -474,8 +553,9 @@
       const previous = this.tokens.get(i); this.tokens.set(i, cell);
       if (!this.active) return Promise.resolve();
       const g = this.pieces.get(i) || this.piece(i), target = this.tokenPosition(i, cell);
-      if (previous == null || options.instant) { g.position.copy(target); this.draw(); return Promise.resolve(); }
+      if (previous == null || options.instant) { g.position.copy(target); this.updatePieceShadow(i, target); this.draw(); return Promise.resolve(); }
       const from = g.position.clone(); let path = options.path && this.paths && this.paths.get(`${options.path}:${previous}`);
+      const restingScale = this.kind === 'monopoly' ? (g.scale.y || 1.15) : null;
       if (options.path === 'snake' && path && path.getPoint(1).distanceTo(this.cellPosition(cell)) >= .5) {
         // 最多退三格時保留實際落點，以短彎曲滑道呈現，不改蛇的遊戲規則。
         const direction = target.clone().sub(from), side = new THREE.Vector3(-direction.z, 0, direction.x).normalize();
@@ -483,11 +563,21 @@
       }
       return this.tween(`token${i}`, options.path ? 1400 : 420, (t) => {
         const ease = t * t * (3 - 2 * t);
-        if (path && options.path === 'ladder') g.position.copy(path.getPoint(ease)).add(new THREE.Vector3((i % 2 ? 1 : -1) * .38, .08 + Math.sin(t * Math.PI * 6) * .045, .2 + Math.floor(i / 2) * .4));
+        if (this.kind === 'monopoly') {
+          if (path && options.path === 'ladder') g.position.copy(path.getPoint(ease)).add(new THREE.Vector3((i % 2 ? 1 : -1) * .38, .08 + Math.sin(t * Math.PI * 6) * .045, .2 + Math.floor(i / 2) * .4));
+          else if (path && options.path === 'snake') g.position.copy(path.getPoint(ease)).add(new THREE.Vector3(0, .08, .18));
+          else g.position.copy(from).lerp(target, ease);
+          const hop = Math.sin(Math.PI * ease) * .34;
+          const settleT = Math.max(0, (t - .8) / .2), settle = settleT ? Math.sin(settleT * Math.PI * 2) * (1 - settleT) * .11 : 0;
+          g.position.y += path ? .08 + hop * .28 : hop + settle;
+          this.updatePieceShadow(i, g.position, Math.max(0, g.position.y - target.y));
+          const squash = settleT ? Math.sin(settleT * Math.PI) * .12 : 0;
+          g.scale.y = restingScale * (1 - squash + Math.max(0, hop) * .08);
+        } else if (path && options.path === 'ladder') g.position.copy(path.getPoint(ease)).add(new THREE.Vector3((i % 2 ? 1 : -1) * .38, .08 + Math.sin(t * Math.PI * 6) * .045, .2 + Math.floor(i / 2) * .4));
         else if (path && options.path === 'snake') g.position.copy(path.getPoint(ease)).add(new THREE.Vector3(0, .08, .18));
         else g.position.copy(from).lerp(target, ease).add(new THREE.Vector3(0, Math.sin(t * Math.PI) * .30, 0));
         if (path && options.path) { const tangent = path.getTangent(ease); g.rotation.y = Math.atan2(tangent.x, tangent.z); }
-        if (t === 1) { g.position.copy(target); g.rotation.y = 0; }
+        if (t === 1) { g.position.copy(target); g.rotation.y = 0; if (this.kind === 'monopoly') { g.scale.y = restingScale; this.updatePieceShadow(i, target); } }
       });
     }
     layoutBoardLabels() {
@@ -590,7 +680,7 @@
       if (this.overlay) this.layoutOverlay();
       else {
         if (this.dice) { this.dice.rotation.set(...dieAngles(this.dieValue)); this.dice.position.copy(this.diceHome); }
-        this.tokens.forEach((cell, i) => { const g = this.pieces.get(i) || this.piece(i); g.position.copy(this.tokenPosition(i, cell)); });
+        this.tokens.forEach((cell, i) => { const g = this.pieces.get(i) || this.piece(i), position = this.tokenPosition(i, cell); g.position.copy(position); if (this.kind === 'monopoly') this.updatePieceShadow(i, position); });
         this.owners.forEach((i, cell) => this.ownerModel(cell, i, false));
         if (this.focused) this.focusPlayer(this.focused.i, this.focused.cell);
       }
@@ -842,7 +932,7 @@
     visibility() { if (document.hidden) { this.finishTweens(); cancelAnimationFrame(this.frame); this.frame = 0; } else { this.sync(); this.draw(); } }
     dispose() {
       this.disposed = true; this.mission?.remove(); this.workshop?.remove(); this.keepsake?.remove(); this.finishTweens(); cancelAnimationFrame(this.frame); this.resizeObserver.disconnect();
-      this.clearGroup(this.root); this.labels = []; this.meshCells.clear(); this.pieces.clear(); this.flags.clear();
+      this.clearGroup(this.root); this.labels = []; this.meshCells.clear(); this.pieces.clear(); this.pieceShadows.clear(); this.flags.clear();
       this.disposeEffects();
       this.woodTextures?.forEach((t) => t.dispose()); this.woodTextures?.clear(); this.environmentTarget?.dispose();
       this.host.querySelectorAll('.rg3d-line-badge').forEach((n) => n.remove());

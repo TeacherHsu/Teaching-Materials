@@ -322,3 +322,21 @@ body.calm .rg3d-enter { animation: none; }
 .stage.rg3d-completed > .rg3d-keepsake { flex: 0 1 100%; }
 /* 畫布填滿外框寬度（高度上限造成的 aspect-ratio 縮寬會露出外框底色） */
 .rg3d-monopoly.is-3d > .rg3d-surface, .rg3d-snakes.is-3d > .rg3d-surface { width: 100%; aspect-ratio: auto; height: clamp(490px, 72vh, 680px); }
+.rg3d-monopoly.is-3d > .rg3d-surface { background: linear-gradient(150deg, #d9c5a1, #b69067); border: 1px solid #9f7651; border-radius: 22px; box-shadow: 0 12px 26px #53382030, inset 0 1px #fff4dd; }
+.rg3d-monopoly.is-3d .rg3d-cell-number { font-size: 18px; color: #473522; }
+.rg3d-monopoly.is-3d .rg3d-cell-label { max-width: 94px; }
+.rg3d-monopoly.is-3d .rg3d-cell-name { padding: 2px 4px; border-radius: 4px; background: #fff9ecf2; box-shadow: 0 1px 2px #55402724; }
+.rg3d-monopoly.is-3d .rg3d-cell-detail, .rg3d-monopoly.is-3d .rg3d-cell-state { background: #fffaf2f2; box-shadow: 0 1px 2px #55402718; }
+.rg3d-monopoly.is-3d > .rg3d-surface, .rg3d-monopoly.is-3d > .rg3d-surface canvas { touch-action: pan-y; }
+@media (max-width: 760px) {
+  .play:has(> .rg3d-monopoly.is-3d) { gap: 12px; }
+  .rg3d-monopoly.is-3d > .rg3d-surface { height: clamp(390px, 48svh, 420px); min-height: 390px; max-height: 420px; border-radius: 18px; }
+  .rg3d-monopoly.is-3d .rg3d-cell-label { max-width: 82px; line-height: 1.08; }
+  .rg3d-monopoly.is-3d .rg3d-cell-label { width: 44px; max-width: 44px; justify-content: center; }
+  .rg3d-monopoly.is-3d .rg3d-cell-name { display: inline-block; width: 100%; font-size: 0; text-align: center; }
+  .rg3d-monopoly.is-3d .rg3d-cell-name::before { content: attr(data-compact); font-size: 18px; }
+  .rg3d-monopoly.is-3d .rg3d-cell-number { font-size: 18px; }
+  .play:has(> .rg3d-monopoly.is-3d) > .side { min-width: 0; }
+  .play:has(> .rg3d-monopoly.is-3d) .side > .rg3d-console { order: -1; padding: 12px; }
+  .play:has(> .rg3d-monopoly.is-3d) .side .team { min-height: 68px; }
+}
