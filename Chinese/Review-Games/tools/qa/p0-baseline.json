@@ -55,10 +55,11 @@
     "data/G3A.js": "d2ae88a9cc601c49e39b18a02c66e65324d45fc883b15970cec89f2a12041817",
     "data/G4A.js": "2c90251e29aed022f09bf12a1ca055918f3e101f54d47c3a792def2cdabfd668",
     "data/G6A.js": "3a138351889f4fa40cedd20574c06cd60f0a266103f53bad7dbb5d8cdbd961cc",
-    "data/detective-G1A.js": "e31325254e1a7b257033c92fc70e9a8a2e03b72c58840baa0356bc19c0b5db37",
-    "data/detective-G2A.js": "b7761fdafaa6d1b2e64d3c7856789b1da7fbb6336435fc4b5757deaea96f1ca5",
-    "data/detective-G3A.js": "0b1fac4994b7c71160c4ba6b4294059e45604ef37ec1a9aaafb5407a2eb7348e",
-    "data/detective-G4A.js": "1fd5b49c048e2cc4c0e8ab54530da3b679e21672a5d46b01767bb2ff53433ea5",
-    "data/detective-G6A.js": "450a94948bb5c262dec9da2b8bb4fdc37c38c792e58ecadfee45281dfafc8c49"
-  }
+    "data/detective-G1A.js": "2cac4112943f4f579de4c72921ccca2fd02b8fb2fba1df612ddb4930ee94e724",
+    "data/detective-G2A.js": "20064af06ccdec046af0feb5743f4e3b8de13efa9e7fa16e6a9a238681577ebf",
+    "data/detective-G3A.js": "b1791ad38a0f304dd6bac0b63603e2dfd34ac5ca4e8761df4d8ebe6eb6c4ec73",
+    "data/detective-G4A.js": "b6e96a965a76271f36791a925213b46061b1bb25e935e9006a71bfdbca518213",
+    "data/detective-G6A.js": "5d10e77f8ec8f20e96292e0404a3fb97b6b577777ba44c1cd0112355d1d6b6b7"
+  },
+  "dataNote": "2026-10-17：detective-*.js 新增 2.0 三幕欄位（acts、actGaps）；形似字換字加人工剔除清單（重現等），1.x 國字密碼鎖選項因此少了真詞干擾，屬刻意修正。"
 }

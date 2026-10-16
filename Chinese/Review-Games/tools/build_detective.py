@@ -36,6 +36,16 @@ OK = {'ready', 'approved'}
 THEMES = ['study', 'classroom', 'library', 'forest', 'lab', 'museum']
 PUNCT = '。，、！？；：「」『』﹁﹂…—'
 
+# 簡編本沒收、但其實是真詞的換字結果（會造成兩個正解）；另沿用形似字跑酷已核定的剔除清單
+EXCLUDE_WRONG = {'重現'}
+try:
+    import importlib.util as _u
+    _spec = _u.spec_from_file_location('shape_run', Path(__file__).with_name('build_shape_run.py'))
+    _m = _u.module_from_spec(_spec); _spec.loader.exec_module(_m)
+    EXCLUDE_WRONG |= set(_m.EXCLUDE_WRONG)
+except Exception:  # 讀不到就只用本檔清單
+    pass
+
 lexicon = {}
 if LEXICON.exists():
     lexicon = json.loads(LEXICON.read_text(encoding='utf-8'))['words']
@@ -93,7 +103,8 @@ def dials_of(d):
                 if len(ex) < 2 or ex.count(c['char']) != 1:
                     continue
                 # 其他字換進去若仍是真詞，就不能當干擾項（避免多解）
-                wrong = [x for x in chars if x != c['char'] and (not lexicon or ex.replace(c['char'], x) not in lexicon)]
+                wrong = [x for x in chars if x != c['char'] and ex.replace(c['char'], x) not in EXCLUDE_WRONG
+                         and (not lexicon or ex.replace(c['char'], x) not in lexicon)]
                 if len(wrong) < 1:
                     continue
                 out.append({'word': ex, 'answer': c['char'], 'wrong': wrong[:4],
@@ -260,12 +271,80 @@ def room_of(code, n, d):
         gaps.append('未達可玩門檻（需線索搜尋、事件排序、最終推理＋至少兩種機關）')
     refs = sorted({v.get('ref') for v in puzzles.values() if v.get('ref')} | {c['ref'] for c in clues}
                   | {i['ref'] for p in puzzles.values() for i in p.get('items', []) if i.get('ref')})
+    acts, act_gaps = acts_of(d, clues, dials, keys, blocks, rqs, mi, decoys)
     return {
         'lessonId': d['lesson_id'], 'no': n, 'title': d['title'],
         'roomId': f"{d['lesson_id']}-room", 'sceneTheme': THEMES[(n - 1) % len(THEMES)],
         'sourceRefs': refs, 'clues': clues, 'puzzles': puzzles if playable else {},
         'playable': playable, 'gaps': gaps,
+        'acts': acts, 'actGaps': act_gaps,
     }
+
+
+# ---------- 2.0 三幕案件（DETECTIVE-REDESIGN.md）----------
+# 案件問題依體裁用固定句型，不自編課文內容；一、二上沒有 genre 一律當事件案。
+CASE_TYPES = {
+    'narrative': ('event', '〈{t}〉這個故事發生了什麼事？它想告訴我們什麼？'),
+    'script': ('event', '〈{t}〉這個故事發生了什麼事？它想告訴我們什麼？'),
+    'expository': ('museum', '〈{t}〉這篇文章想讓我們知道什麼？'),
+    'interview': ('museum', '〈{t}〉這篇文章想讓我們知道什麼？'),
+    'poetry': ('poem', '〈{t}〉的作者看見什麼、感覺到什麼？'),
+    'classical': ('poem', '〈{t}〉的作者看見什麼、感覺到什麼？'),
+    'argument': ('court', '〈{t}〉作者的主張是什麼？理由是什麼？'),
+    'essay': ('court', '〈{t}〉作者想表達什麼想法？'),
+}
+
+
+PLACEHOLDER_THEMES = {'', '閱讀理解', '課文理解'}
+
+
+def acts_of(d, clues, dials, keys, blocks, rqs, mi, decoys):
+    gaps = []
+    # 段落大意全部標成同一段（資料待修）時，證據對應不可信：對質改為免附證物
+    spots_ok = len({tuple(c['paras']) for c in clues}) == len(clues)
+    kind, q = CASE_TYPES.get(d.get('genre') or 'narrative', CASE_TYPES['narrative'])
+    # 錄音證詞要有「敘述」：題幹和問題相同的聆聽題沒有證詞，不放進錄音袋
+    listen = [x for x in d.get('listening', []) if ok(x) and x.get('answer') in x.get('options', []) and x.get('stem') != x.get('question')]
+    # 證人對質：閱讀題的 evidence 要對得到線索卡，才能「拿證物證明」
+    confront = []
+    for rq in sorted(rqs, key=lambda r: 0 if linked(r, clues) else 1):
+        ev = linked(rq, clues) if spots_ok else []
+        wrong = [o for o in rq['options'] if o != rq['answer']]
+        if wrong:  # 對不到線索卡（如一上沒有段落位置）就只指出誰說錯，不必附證物
+            confront.append({'id': rq['id'], 'stem': rq['stem'], 'truth': rq['answer'], 'wrong': wrong,
+                             'evidence': ev, 'tag': rq.get('strategy_tag', ''),
+                             'hints': [h.get('text') for h in rq.get('hints', []) if h.get('text')]})
+    bags = []
+    if len(keys) >= 3:
+        bags.append({'type': 'words', 'items': keys})
+    if blocks:
+        bags.append({'type': 'sentence', 'items': blocks})
+    if listen:
+        bags.append({'type': 'listen', 'items': [{'id': x['id'], 'stem': x['stem'], 'question': x['question'],
+                                                  'options': x['options'], 'answer': x['answer']} for x in listen]})
+    # 字義放大鏡袋：一字多義（句子裡的《字》是哪個意思）；兩個選項都要是已核准的釋義
+    poly = [x for x in d.get('polysemy', []) if ok(x) and x.get('definition') in (x.get('options') or []) and len(set(x['options'])) >= 2 and x.get('sentence')]
+    if poly:
+        bags.append({'type': 'meaning', 'items': [{'id': x['id'], 'char': x['char'], 'sentence': x['sentence'], 'answer': x['definition'], 'options': x['options']} for x in poly]})
+    if len(clues) < 3:
+        gaps.append('段落大意少於 3 段（第一幕無法還原經過）')
+    if not confront:
+        gaps.append('沒有可用的閱讀題（第二幕無法證人對質）')
+    if len(bags) < 2:
+        gaps.append('證物袋少於兩種（詞語／句子／錄音／字義）')
+    if not (ok(mi) and mi.get('gist') and len(decoys) >= 2):
+        gaps.append('主旨或已核准的干擾敘述不足（第三幕無法選結論）')
+    if gaps:
+        return None, gaps
+    return {
+        'caseType': kind, 'question': q.format(t=d['title']),
+        'fragments': [{'word': x['word'], 'blank': x['blank'], 'answer': x['answer'], 'wrong': x['wrong']} for x in dials],
+        'fragWords': [{'word': k['word'], 'meaning': k['meaning']} for k in keys],
+        'bags': bags, 'confront': confront, 'evidenceReliable': spots_ok,
+        'claim': {'answer': mi['gist'], 'options': decoys,
+                  # 主旨短句：佔位字（閱讀理解、課文理解）不可用，留空由畫面改用完整主旨
+                  'theme': '' if (mi.get('theme') or '') in PLACEHOLDER_THEMES else mi.get('theme')},
+    }, []
 
 
 def main():
