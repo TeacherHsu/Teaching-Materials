@@ -15,7 +15,42 @@ python3 Chinese/Review-Games/tools/build_shape_run.py --check  # 全部 ✅ 才�
 
 `data/*.js` 是產物，不要手改。完整規則見 `apps/mandarin/docs/optimization-workflow.md` 的「綜合複習遊戲」一節；設計依據見 `REVIEW-codex.md`。
 
-## 四款棋盤遊戲的 Three.js 3D 視圖
+## 3D 視覺架構（2026-10 視覺升級後）
+
+設計正本是 `docs/visual-upgrade/ART-SPEC.md`；任務看板、決策與各 Gate 驗收紀錄在 `VISUAL-UPGRADE.md`。
+
+| 檔案 | 用途 | 使用者 |
+|---|---|---|
+| `vendor/three-r128/` | Three.js r128 與用到的 examples，放進 repo，斷網也能載入 | 全部 3D |
+| `rg3d-kit.js` | 共用玩具元件庫：材質、燈光、圓角幾何、接觸陰影、四隊角色、骰子、stage 生命週期、畫面設定列 | 大富翁、蛇梯、密室 |
+| `scene3d-monopoly.js` | 大富翁黃金樣板（`RG3DMonopoly.mount`） | monopoly.html |
+| `scene3d-snakes.js` | 蛇梯（`RG3DSnakes.mount`） | snakes.html |
+| `scene3d.js` | 舊版共用 3D；**凍結**，只剩賓果、哆寶的 3D 背景在用 | bingo、dobble |
+| `detective3d.js` | 密室剖面微縮屋，六個主題、探索鏡頭、兩種標記模式 | detective、detective2 |
+| `common.css` `:root` | 設計 token（`--surface-*`、`--action`、`--team-*`、`--dur-*` 等） | 全部 |
+
+規則：
+- 3D 層只負責呈現：骰點、出題、計分都由遊戲決定。所有 Promise 在 2D、dispose 或跳過動畫時都會立刻 resolve。
+- 降回 2D 的條件：系統減少動態（可用「顯示 3D」覆蓋，`RG.systemReduced()`）、`body.calm`、寬度 ≤760px、載入失敗、WebGL 失敗、context lost。
+- 新增材質一律走 `RG3DKit.MAT` 或 `material()`，它會把 sRGB hex 轉成線性色彩；直接 `new MeshStandardMaterial({color:'#..'})` 會褪色。
+- 物件屬性不可以和方法同名（曾經把 `this.frame` 相框蓋掉渲染迴圈 `frame()`）。
+- 改了 css／js 之後，要把各 html 的 `?v=` 一起升版。
+
+QA 截圖：
+
+```bash
+cd ~/Teaching-Materials && python3 -m http.server 5190
+node Chinese/Review-Games/tools/qa/cdp.mjs 'http://localhost:5190/Chinese/Review-Games/monopoly.html?g=G3A&qaOwnAll=1' out.png Chinese/Review-Games/tools/qa/shot-monopoly.js
+RM=reduce node Chinese/Review-Games/tools/qa/cdp.mjs '<url>' out.png <script>   # 模擬系統減少動態
+```
+
+- `cdp.mjs` 預設使用 swiftshader 軟體繪圖，每幀約 1 秒，**不要拿來量效能**。量效能時把參數改成 `--use-angle=metal --enable-gpu`。
+- 9333 埠被殘留的 Chrome 佔住時，`cdp.mjs` 會直接報錯，先執行 `pkill -f remote-debugging-port=9333`。
+- Codex 的沙盒不能開 Chrome，也不能開埠，視覺驗收一律由 Claude 截圖完成。
+
+## 舊版 scene3d.js 說明（賓果、哆寶仍在使用）
+
+> 以下是視覺升級前的歷史說明。「四款共用」「走 CDN」這兩點已不再成立，現況以上一節為準。
 
 四款棋盤遊戲共用 `scene3d.js`，以 `RG3D.mount()` 建立視圖。遊戲只傳棋盤格資料，並在原流程呼叫 `moveToken()`、`rollDice()`、`setOwner()`、`focusPlayer()`、`deal()`、`markMatch()`、`markCell()`、`setLines()`；出題、計分與學習紀錄仍由原遊戲及 `common.js` 負責。
 
