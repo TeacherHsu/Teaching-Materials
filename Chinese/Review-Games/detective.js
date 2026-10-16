@@ -181,7 +181,7 @@
     if (room && room.host.isConnected) { rerender(); return; }
     game.stage = Math.max(game.stage, stageOf());
     const task = taskText();
-    const list = h('ul', { class: 'dt-list' });
+    const list = h('div', { class: 'dt-manual' });
     const roomHost = h('div', {});
     const status = h('div', { class: 'dt-status', role: 'status' });
     app.replaceChildren(
@@ -196,7 +196,7 @@
         h('button', { class: 'btn', type: 'button', onclick: () => { if (confirm('要重新開始這間密室嗎？目前進度不會保留。')) start(); } }, '🔄 重新挑戰'),
         h('button', { class: 'btn', type: 'button', onclick: () => { if (confirm('回到設定畫面？目前進度不會保留。')) setup(); } }, '↩ 回到設定'),
       ]),
-      h('div', { class: 'dt-layout' }, [roomHost, h('aside', { class: 'dt-side' }, [h('h2', {}, '機關清單'), list,
+      h('div', { class: 'dt-layout' }, [roomHost, h('aside', { class: 'dt-side' }, [h('h2', {}, '偵探任務手冊'), list,
         h('p', { class: 'note' }, '可以點房間裡的物件，也可以點這份清單。')])]),
     );
     if (room) room.dispose();
@@ -211,24 +211,53 @@
       const found = game.state.found.includes(o.holds);
       room.setState(o.id, found ? 'found' : (game.L.autoHint ? 'next' : 'open'), found ? '已調查' : '還沒調查');
     }
-    const items = game.objects.map((o) => {
+    const groups = { available: [], locked: [], done: [] };
+    // T4a 在 .dt-side 捕獲 click，依 data-id 呼叫 room.focus(id)，再執行下方 pick。
+    const entry = (id, label, state) => h('li', {}, h('button', {
+      type: 'button', 'data-id': id, class: state === 'done' ? 'done' : state === 'next' ? 'next' : '',
+      onclick: () => pick(id),
+    }, label));
+    for (const o of game.objects) {
       const it = room.items.find((x) => x.id === o.id), found = game.state.found.includes(o.holds);
-      return h('li', {}, h('button', { type: 'button', class: found ? 'done' : '', onclick: () => pick(o.id) }, `${room.items.indexOf(it) + 1}. ${it.label}・${found ? '已調查' : '調查'}`));
-    });
+      groups[found ? 'done' : 'available'].push(entry(o.id,
+        `${room.items.indexOf(it) + 1}. ${it.label}・${found ? '已調查' : '調查'}`, found ? 'done' : 'open'));
+    }
     const real = game.clues.filter((c) => game.state.found.includes(c.id)).length;
-    items.push(h('li', {}, h('button', { type: 'button', class: game.state.solved.search.done ? 'done' : 'next', onclick: notebook }, `${game.state.solved.search.done ? '✓' : '🔍'} 搜查現場（${real}/${game.clues.length}）`)));
     for (const p of stationPuzzles()) {
       const st = game.state.solved[p.id]; const open = C.isOpen(game, p.id);
       let state = st.done ? 'done' : !open ? 'locked' : (p === next ? 'next' : 'open');
       if (game.L.oneAtATime && !st.done && open && p !== next) state = 'locked';
       room.setState(p.id, state, st.done ? '已完成' : state === 'locked' ? '還鎖著' : '可以調查');
-      items.push(h('li', {}, h('button', { type: 'button', class: state === 'done' ? 'done' : state === 'next' ? 'next' : '', disabled: state === 'locked', onclick: () => pick(p.id) },
-        `${state === 'done' ? '✓' : state === 'locked' ? '🔒' : '▶'} ${room.items.findIndex((it) => it.id === p.id) + 1}. ${room.items.find((it) => it.id === p.id)?.label || C.NAMES[p.type]}${p.lesson && game.mode === 'cross' ? `（第${p.lesson}課）` : ''}`)));
+      groups[state === 'done' ? 'done' : state === 'locked' ? 'locked' : 'available'].push(entry(p.id,
+        `${state === 'done' ? '✓' : state === 'locked' ? '🔒' : '▶'} ${room.items.findIndex((it) => it.id === p.id) + 1}. ${room.items.find((it) => it.id === p.id)?.label || C.NAMES[p.type]}${p.lesson && game.mode === 'cross' ? `（第${p.lesson}課）` : ''}`, state));
     }
-    list.replaceChildren(...items);
+    const target = game.state.solved.final.done ? 'final' : !game.state.solved.search.done
+      ? game.objects.find(o => !game.state.found.includes(o.holds) && game.clues.some(c => c.id === o.holds))?.id
+      : next?.id;
+    const section = (title, items, collapsible, key) => {
+      const old = list.querySelector(`[data-group="${key}"]`);
+      return h(collapsible ? 'details' : 'section', {
+        'data-group': key, ...(collapsible && old?.open ? { open: true } : {}),
+      }, [h(collapsible ? 'summary' : 'h3', {}, `${title}（${items.length}）`),
+        h('ul', { class: 'dt-list' }, items.length ? items : [h('li', { class: 'note' }, '目前沒有項目')])]);
+    };
+    list.replaceChildren(
+      h('section', { class: 'dt-current-task' }, [h('h3', {}, '目前任務'), h('p', { class: 'dt-manual-task' }, taskText()),
+        h('button', { class: 'btn primary', type: 'button', 'data-id': target, disabled: !target, onclick: () => pick(target) }, '前往')]),
+      h('section', { class: 'dt-manual-clues' }, [h('h3', {}, `線索 ${real}/${game.clues.length}`),
+        h('div', { class: 'dt-clue-track' }, game.clues.map((c, i) => {
+          const found = game.state.found.includes(c.id);
+          return h('button', { type: 'button', class: `dt-clue-icon${found ? ' found' : ''}`,
+            'aria-label': `線索 ${i + 1}：${found ? '已找到' : '尚未找到'}，開啟偵探筆記本`, onclick: notebook },
+          h('span', { 'aria-hidden': 'true' }, found ? '▣' : '▢'));
+        }))]),
+      section('可以調查', groups.available, false, 'available'),
+      section('尚未解鎖', groups.locked, true, 'locked'),
+      section('已完成', groups.done, true, 'done'),
+    );
     room.applyVisualState(visualSnapshot());
   }
-  function rerender() { const list = app.querySelector('.dt-list'); if (list) refreshStates(list); const t = app.querySelector('.dt-task b'); if (t) t.textContent = taskText(); }
+  function rerender() { const list = app.querySelector('.dt-manual'); if (list) refreshStates(list); const t = app.querySelector('.dt-task b'); if (t) t.textContent = taskText(); }
 
   function pick(id) {
     const obj = game.objects.find((o) => o.id === id);
@@ -249,7 +278,7 @@
     const r = C.investigate(game, obj.id);
     if (!already) { tone('find'); room.animate('search', obj.id); room.animate('found', obj.id); }
     const body = r.kind === 'clue'
-      ? [h('div', { class: 'dt-clue' }, [h('small', {}, `線索卡｜第${game.mode === 'cross' ? game.baseLesson : game.lessons[0]}課`), r.item.text]), spk(r.item.text, '朗讀線索')]
+      ? [h('div', { class: 'dt-clue dt-evidence' }, [h('small', {}, `線索卡｜第${game.mode === 'cross' ? game.baseLesson : game.lessons[0]}課`), r.item.text]), spk(r.item.text, '朗讀線索')]
       : [h('div', { class: 'dt-clue decoy' }, [h('small', {}, '可疑紙條（尚未證實，不一定可信）'), r.item.text]), h('p', {}, '偵探提醒：這張紙條不一定可信，先記在筆記本，之後用證據判斷。')];
     if (r.kind === 'clue') say(r.item.text);
     if (!wasDone && game.state.solved.search.done) {
@@ -283,7 +312,7 @@
     frame('📓 偵探筆記本', [h('div', { class: 'dt-note' }, [
       h('h3', {}, '🎯 目前任務'), h('p', {}, taskText()),
       h('h3', {}, sorted ? '✅ 已確認的事實（依事件順序）' : `🔍 已發現的線索（${found.length}/${game.clues.length}）`),
-      h('section', {}, found.length ? (sorted ? game.clues : found).map((c, i) => h('div', { class: 'dt-clue' }, [h('small', {}, sorted ? `第 ${i + 1} 件事` : '線索卡'), c.text, ' ', spk(c.text)])) : [h('p', {}, '還沒找到線索。點房間裡有 🔍 的物件。')]),
+      h('section', {}, found.length ? (sorted ? game.clues : found).map((c, i) => h('div', { class: 'dt-clue dt-evidence' }, [h('small', {}, sorted ? `第 ${i + 1} 件事` : '線索卡'), c.text, ' ', spk(c.text)])) : [h('p', {}, '還沒找到線索。點房間裡有 🔍 的物件。')]),
       game.decoys.length ? h('h3', {}, '❓ 尚未證實的推測（可疑紙條）') : null,
       game.decoys.length ? h('section', {}, decoys.length ? decoys.map((d) => h('div', { class: 'dt-clue decoy' }, d.text)) : [h('p', { class: 'note' }, '還沒找到。')]) : null,
       h('h3', {}, '🧩 已完成的謎題（可回顧解題資訊）'),
@@ -482,10 +511,13 @@
     if (escaping || recorded || !C.escape(game)) return;
     escaping = true; const currentGame = game; const currentRoom = room;
     game.stage = 6; tone('open'); if (room) room.animate('escape');
-    const finish = () => { if (game === currentGame && room === currentRoom && escaping) results(); };
-    escapeTimer = setTimeout(finish, room && room.is3d && !settings.calm && !(window.RG && RG.systemReduced ? RG.systemReduced() : matchMedia('(prefers-reduced-motion: reduce)').matches) && !document.hidden ? 760 : 0);
+    const reduced = settings.calm || (window.RG && RG.systemReduced ? RG.systemReduced() : matchMedia('(prefers-reduced-motion: reduce)').matches) || document.hidden;
+    const finish = (animate) => { if (game === currentGame && room === currentRoom && escaping) results(animate); };
+    if (reduced) { finish(false); return; }
+    app.append(h('button', { class: 'btn dt-exit-skip', type: 'button', onclick: () => finish(false) }, '略過動畫'));
+    escapeTimer = setTimeout(() => finish(true), 700);
   }
-  function results() {
+  function results(animate = false) {
     if (recorded) return; recorded = true; clearTimeout(escapeTimer);
     game.stage = 7; closeModal();
     const s = C.summary(game);
@@ -498,7 +530,16 @@
     app.replaceChildren(
       topbar('課文偵探密室｜複習成果'), stepper(),
       h('div', { class: 'setup dt-res' }, [
-        h('div', { class: 'dt-escape' }, '🎉 成功逃出密室！'),
+        h('section', { class: `dt-case-closed${animate ? ' dt-reveal' : ''}`, 'aria-label': '案件破解' }, [
+          h('div', { class: 'dt-case-light', 'aria-hidden': 'true' }),
+          h('div', { class: 'dt-case-seal' }, '案件破解'),
+          h('div', { class: 'dt-detective-badge', 'aria-label': '偵探徽章' }, '🕵️'),
+          h('div', { class: 'dt-case-summary' }, [h('div', { class: 'dt-escape' }, '🎉 成功逃出密室！'),
+            h('p', {}, `找到 ${game.clues.filter(c => game.state.found.includes(c.id)).length} 張線索、解開 ${stationPuzzles().filter(p => game.state.solved[p.id].done).length} 個機關`)]),
+          animate ? h('button', { class: 'btn dt-reveal-skip', type: 'button', onclick: (e) => {
+            e.currentTarget.closest('.dt-case-closed').classList.remove('dt-reveal'); e.currentTarget.remove();
+          } }, '略過動畫') : null,
+        ]),
         h('p', { class: 'dt-big' }, `${game.title}｜${game.L.label}（${game.L.role}）`),
         h('p', {}, `第一次就完成 ${s.first}／${s.total} 個謎題，一共使用 ${s.hints} 次提示。`),
         h('table', {}, [h('thead', {}, h('tr', {}, ['謎題', '練習能力', '完成情形'].map((t) => h('th', {}, t)))),
