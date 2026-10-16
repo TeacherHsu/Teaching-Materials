@@ -55,11 +55,11 @@
     "data/G3A.js": "d2ae88a9cc601c49e39b18a02c66e65324d45fc883b15970cec89f2a12041817",
     "data/G4A.js": "2c90251e29aed022f09bf12a1ca055918f3e101f54d47c3a792def2cdabfd668",
     "data/G6A.js": "3a138351889f4fa40cedd20574c06cd60f0a266103f53bad7dbb5d8cdbd961cc",
-    "data/detective-G1A.js": "5960da6b8ba76e7c69488f3ed36f4a0acdc763c7366d5a9215670ea5bff56190",
-    "data/detective-G2A.js": "4ff1bb7195d1f0a55f7593e149be758224eedaf1bd3541c5642f4ca7932ee4e2",
-    "data/detective-G3A.js": "1eb1a1c07431ea81568e679ec261e84aa273413c7a71d2ee3eda03c345aad17c",
-    "data/detective-G4A.js": "2d6892d6322ab555550ec7feb1f495588643f87db9f49485122a7e593ac16717",
-    "data/detective-G6A.js": "659be1ffb5181b1122efa8e144b5ca4499be22a80989bc4870eaf59a700bf85c"
+    "data/detective-G1A.js": "9e1f7ba3037b8d5abdddb4702b24d02ee96503b452ff13758a6fbded50241326",
+    "data/detective-G2A.js": "745d8599444920ce63217956847fe71f9b727f5e8f5f7103a1044167c2dfa854",
+    "data/detective-G3A.js": "b32b28bccbcbb412db0f3375e80986d0792377228a6674407796d3b367c7d561",
+    "data/detective-G4A.js": "a6768d6f39f8de7c609f57e4a9d93ddd76fa36d8827c929c29e99a3899cc8eed",
+    "data/detective-G6A.js": "a49120b581e4339e18bc861643a8de13ded73cb9abf583de480403a373c48a52"
   },
-  "dataNote": "2026-10-17：detective-*.js 新增 2.0 三幕欄位（acts、actGaps）；形似字換字加人工剔除清單（重現等），1.x 國字密碼鎖選項因此少了真詞干擾，屬刻意修正。 線索卡加 strand／no（一課兩篇分兩條時間線），四上第1課、六上第5課因此開放。"
+  "dataNote": "2026-10-17：detective-*.js 新增 2.0 三幕欄位（acts、actGaps）；形似字換字加人工剔除清單（重現等），1.x 國字密碼鎖選項因此少了真詞干擾，屬刻意修正。 線索卡加 strand／no（一課兩篇分兩條時間線），四上第1課、六上第5課因此開放。 2026-10-17 主旨短句（theme）依官方改寫、4 課 gist 依官方課文大意修正，密室資料隨之更新。"
 }

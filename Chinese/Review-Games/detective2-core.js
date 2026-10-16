@@ -223,7 +223,8 @@
   }
   function sentenceOf(game) {
     const cards = reasoningCards(game);
-    const plain = (t) => String(t).replace(/^(時間線|錄音證詞)：/, '').replace(/[。．]$/, '');
+    // 去掉證物標題與一上段落大意的「起：承：轉：合：」，句子才通順
+    const plain = (t) => String(t).replace(/^(時間線|錄音證詞)：/, '').replace(/^[起承轉合]：/, '').replace(/[。．]$/, '');
     const parts = cards.slice(1).map((c) => plain(c.text));
     return `我認為${plain(cards[0].text)}，因為${parts[0] || ''}${parts[1] ? `，而且${parts[1]}` : ''}。`;
   }

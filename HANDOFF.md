@@ -1,7 +1,10 @@
 # 交接紀錄（最新的寫在最上面）
 
-## 2026-10-17（二）｜家中 Mac｜Claude Code｜狀態：🚧 施工中
-- 依官方大補帖主旨改寫各課 `main_idea.theme`、修 4 課 gist：動 `apps/mandarin/public/data/115AG*/lesson*.json` 的 main_idea 與 Review-Games 題庫產物。請勿同時修改。
+## 2026-10-17（二）｜家中 Mac｜Claude Code｜狀態：✅ 已推送
+- CF 指示依官方大補帖修改主旨：各課 `main_idea.theme` 改為依官方主旨改寫的 ≤20 字短句（一上 7、二上第 5–12 課、三上第 1、7–12 課、四上 12、六上 12，共 46 課）；`theme_source` 註明來源。官方原文不進 repo（對照表在 `~/mandarin-work/main-idea-theme-draft.md`）。
+- 4 課 `gist` 與段落大意不一致，依官方課文大意改寫：三上〈一路平安〉〈不一樣的團圓〉、四上〈請到我的家鄉來〉〈老鞋匠和小精靈〉；原句保留在 `gist_previous`。四上〈假如給我三天光明〉經比對與官方大意一致，未改。
+- 網站只用 gist（主旨練習）；theme 目前供密室推理句。重產密室資料；綜合複習題庫（第 1～6 課範圍）無變動。
+- 驗證：validate、check_data、build_shape_run --check、58 項測試全過。
 
 ## 2026-10-17｜家中 Mac｜Claude Code｜狀態：✅ 已推送
 - 課文偵探密室 2.0 完整遊戲腳本：`Chinese/Review-Games/DETECTIVE-REDESIGN.md`（三幕 CER 推理、逐場腳本 S0–S18、書蟲探長台詞庫、四種案件類型、判定總表、資料品質盤點、五課範例、給 Codex 的分鏡需求）。**視覺由 CF 另派 Codex 設計**。

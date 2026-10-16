@@ -1086,7 +1086,7 @@
   ],
   "main_idea": {
     "gist": "作者全家一起挑戰古道阿塱壹，爸爸說這條路過去是屏東與臺東之間的重要交通要道，具有歷史意義。",
-    "theme": "閱讀理解",
+    "theme": "走訪古道，欣賞大自然的美景。",
     "status": "approved",
     "source": "derived:official-paragraph-summary",
     "distractors": [
@@ -1106,7 +1106,8 @@
         "approved_by": "CF",
         "approved_on": "2026-09-30"
       }
-    ]
+    ],
+    "theme_source": "改寫自官方大補帖主旨（翰林：主旨、課文大意、段落大意；康軒：課文導讀含主旨），CF 2026-10-17 指示依官方修改"
   },
   "reading_questions": [
     {

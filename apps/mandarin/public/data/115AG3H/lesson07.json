@@ -807,7 +807,7 @@
   ],
   "main_idea": {
     "gist": "風四處流浪，沒有人知道他去過哪裡，詩中的我卻能從風帶來的味道和感覺，推想一路經過的自然景色。",
-    "theme": "閱讀理解",
+    "theme": "聞到風的味道，聯想到大自然的美景。",
     "status": "approved",
     "source": "derived:official-paragraph-summary",
     "distractors": [
@@ -827,7 +827,8 @@
         "approved_by": "CF",
         "approved_on": "2026-09-30"
       }
-    ]
+    ],
+    "theme_source": "改寫自官方大補帖主旨（翰林：主旨、課文大意、段落大意；康軒：課文導讀含主旨），CF 2026-10-17 指示依官方修改"
   },
   "reading_questions": [
     {
