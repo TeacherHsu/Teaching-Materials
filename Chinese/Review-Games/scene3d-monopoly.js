@@ -249,7 +249,8 @@
       const r = this.surface.getBoundingClientRect(), point = (p, node) => { p.project(this.camera); node.style.left = `${(p.x + 1) * r.width / 2}px`; node.style.top = `${(1 - p.y) * r.height / 2}px`; };
       this.cells.forEach(c => {
         const { box, state, step } = this.domCells.get(c.id), p = this.labelPosition(c.id); p.y = .30; point(p, box);
-        const q = this.anchor(c.id, -.02); q.y = .30; q.x += .58; point(q, step);
+        // 足跡步數貼在標籤左側，不疊在課名上（原本固定 x+.58，左右兩欄會蓋住「命運」「機會」等字）。
+        step.style.left = `${parseFloat(box.style.left) - box.offsetWidth / 2 - 14}px`; step.style.top = box.style.top;
         box.classList.toggle('is-current', this.focused?.cell === c.id); box.classList.toggle('is-destination', this.destination === c.id);
         const n = this.domSteps.get(c.id)?.n || ''; if (step.textContent !== n) step.textContent = n; step.style.setProperty('--rg3d-step-color', K.TOKENS.teams[this.domSteps.get(c.id)?.team || 0]);
         if (state.textContent) state.textContent = ''; box.setAttribute('aria-label', [c.label, this.owners.has(c.id) ? `${this.owners.get(c.id) + 1}隊擁有` : '', ...[...this.tokens].filter(([, cell]) => cell === c.id).map(([i]) => `${i + 1}隊`)].filter(Boolean).join('，'));
