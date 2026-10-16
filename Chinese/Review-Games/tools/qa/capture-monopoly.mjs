@@ -33,13 +33,21 @@ try {
   let nextId = 0;
   const pending = new Map();
   const errors = [];
+  const failedRequests = [];
+  const pausedRequests = [];
+  const networkUrls = new Map();
   ws.onmessage = ({ data }) => {
     const message = JSON.parse(data);
     if (message.id) { pending.get(message.id)?.resolve(message); pending.delete(message.id); }
-    if (message.method === 'Fetch.requestPaused') send('Fetch.fulfillRequest', {
-      requestId: message.params.requestId, responseCode: 200,
-      responseHeaders: [{ name: 'Content-Type', value: 'application/javascript; charset=utf-8' }], body: localG3ABank,
-    });
+    if (message.method === 'Network.requestWillBeSent') networkUrls.set(message.params.requestId, message.params.request.url);
+    if (message.method === 'Fetch.requestPaused') {
+      pausedRequests.push(message.params.request.url);
+      send('Fetch.fulfillRequest', {
+        requestId: message.params.requestId, responseCode: 200,
+        responseHeaders: [{ name: 'Content-Type', value: 'application/javascript; charset=utf-8' }], body: localG3ABank,
+      });
+    }
+    if (message.method === 'Network.loadingFailed') failedRequests.push({ url: networkUrls.get(message.params.requestId), error: message.params.errorText });
     if (message.method === 'Runtime.exceptionThrown') errors.push(message.params.exceptionDetails.exception?.description || 'page exception');
     if (message.method === 'Runtime.consoleAPICalled' && message.params.type === 'error') errors.push(message.params.args.map((arg) => arg.value || arg.description).join(' '));
   };
@@ -51,7 +59,8 @@ try {
 
   await send('Runtime.enable');
   await send('Page.enable');
-  await send('Fetch.enable', { patterns: [{ urlPattern: '*data/G3A.js*', resourceType: 'Script', requestStage: 'Request' }] });
+  await send('Network.enable');
+  await send('Fetch.enable', { patterns: [{ urlPattern: '*G3A.js*', requestStage: 'Request' }] });
   await send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile });
   await send('Emulation.setTouchEmulationEnabled', { enabled: mobile, maxTouchPoints: mobile ? 5 : 1 });
   await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'no-preference' }] });
@@ -66,7 +75,7 @@ try {
     setupText = JSON.stringify(result.result?.result?.value || {});
     if (!started) await delay(250);
   }
-  if (!started) throw new Error(`Could not start Monopoly from the setup screen: ${setupText}; errors=${JSON.stringify(errors)}`);
+  if (!started) throw new Error(`Could not start Monopoly from the setup screen: ${setupText}; errors=${JSON.stringify(errors)}; paused=${JSON.stringify(pausedRequests)}; failed=${JSON.stringify(failedRequests)}`);
   await delay(7000);
   const state = await send('Runtime.evaluate', {
     expression: `({ canvas: !!document.querySelector('canvas'), mode: document.querySelector('.rg3d-status')?.textContent || '', active3d: !!document.querySelector('.rg3d-monopoly.is-3d'), viewport: [innerWidth, innerHeight], overflowX: document.documentElement.scrollWidth > innerWidth })`,
@@ -82,7 +91,7 @@ try {
   const screenshot = await send('Page.captureScreenshot', screenshotOptions);
   mkdirSync(dirname(output), { recursive: true });
   writeFileSync(output, Buffer.from(screenshot.result.data, 'base64'));
-  console.log(JSON.stringify({ output, state: state.result.result.value, errors }));
+  console.log(JSON.stringify({ output, state: state.result.result.value, errors, pausedRequests, failedRequests }));
 } finally {
   ws?.close();
   if (process.platform === 'win32' && chrome.pid) spawnSync('taskkill.exe', ['/PID', String(chrome.pid), '/T', '/F'], { stdio: 'ignore' });

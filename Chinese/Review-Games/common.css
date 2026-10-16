@@ -327,15 +327,23 @@ body.calm .rg3d-enter { animation: none; }
 .rg3d-monopoly.is-3d .rg3d-cell-label { max-width: 94px; }
 .rg3d-monopoly.is-3d .rg3d-cell-name { padding: 2px 4px; border-radius: 4px; background: #fff9ecf2; box-shadow: 0 1px 2px #55402724; }
 .rg3d-monopoly.is-3d .rg3d-cell-detail, .rg3d-monopoly.is-3d .rg3d-cell-state { background: #fffaf2f2; box-shadow: 0 1px 2px #55402718; }
+.rg3d-monopoly.is-3d .rg3d-cell-label { max-width: none; justify-content: center; align-items: center; text-align: center; gap: 2px; }
+.rg3d-monopoly.is-3d .rg3d-cell-name { display: inline-block; padding: 1px 2px; font-size: 0; white-space: nowrap; }
+.rg3d-monopoly.is-3d .rg3d-cell-name::before { content: attr(data-compact); font-size: var(--rg3d-cell-label-font, 14px); line-height: 1.1; }
+.rg3d-monopoly.is-3d .rg3d-cell-number { font-size: 16px; }
+.rg3d-monopoly.is-3d .rg3d-cell-step { font-size: 13px; padding: 1px 2px; border-radius: 5px; }
+.rg3d-monopoly.is-3d .rg3d-cell-state { font-size: 12px; }
+.rg3d-monopoly.is-3d .rg3d-cell-detail { font-size: 12px; }
 .rg3d-monopoly.is-3d > .rg3d-surface, .rg3d-monopoly.is-3d > .rg3d-surface canvas { touch-action: pan-y; }
 @media (max-width: 760px) {
   .play:has(> .rg3d-monopoly.is-3d) { gap: 12px; }
   .rg3d-monopoly.is-3d > .rg3d-surface { height: clamp(390px, 48svh, 420px); min-height: 390px; max-height: 420px; border-radius: 18px; }
   .rg3d-monopoly.is-3d .rg3d-cell-label { max-width: 82px; line-height: 1.08; }
-  .rg3d-monopoly.is-3d .rg3d-cell-label { width: 44px; max-width: 44px; justify-content: center; }
-  .rg3d-monopoly.is-3d .rg3d-cell-name { display: inline-block; width: 100%; font-size: 0; text-align: center; }
-  .rg3d-monopoly.is-3d .rg3d-cell-name::before { content: attr(data-compact); font-size: 18px; }
-  .rg3d-monopoly.is-3d .rg3d-cell-number { font-size: 18px; }
+  .rg3d-monopoly.is-3d .rg3d-cell-label { max-width: none; }
+  .rg3d-monopoly.is-3d .rg3d-cell-name { width: auto; }
+  .rg3d-monopoly.is-3d .rg3d-cell-name::before { font-size: var(--rg3d-cell-label-font, 13px); }
+  .rg3d-monopoly.is-3d .rg3d-cell-number { font-size: 14px; }
+  .rg3d-monopoly.is-3d .rg3d-cell-step { font-size: 11px; }
   .play:has(> .rg3d-monopoly.is-3d) > .side { min-width: 0; }
   .play:has(> .rg3d-monopoly.is-3d) .side > .rg3d-console { order: -1; padding: 12px; }
   .play:has(> .rg3d-monopoly.is-3d) .side .team { min-height: 68px; }

@@ -397,9 +397,26 @@
         const rim = this.mesh(new T.TorusGeometry(2.88, .045, 8, 80), '#c5a15f'); rim.rotation.x = Math.PI / 2; rim.position.y = .34; rim.material.roughness = .5; rim.material.metalness = .24;
         const innerRim = this.mesh(new T.TorusGeometry(2.7, .018, 6, 64), '#e5cf9c'); innerRim.rotation.x = Math.PI / 2; innerRim.position.y = .335; innerRim.material.roughness = .62;
         const l = this.label('課文探險', 4.05, .88, '#f6e5c4', '#4a3021'); l.position.set(0, .52, -1.1); this.root.add(l);
-        // A small open reading book and brass pencil share the central felt with the toy die.
-        [-1, 1].forEach((side) => { const page = this.roundedBox(.62, .08, .8, '#fff5de', undefined, .025); page.position.set(-1.7 + side * .3, .39, .6); page.rotation.z = side * .08; page.material.roughness = .92; });
-        const pencil = this.mesh(new T.CylinderGeometry(.035, .035, 1.05, 6), '#c5974c'); pencil.rotation.z = .9; pencil.position.set(-1.6, .43, 1.3); pencil.material.roughness = .7; pencil.material.metalness = .12;
+        // A hand-built open book, brass pencil, and reading lamp make the felt center read as a tiny study nook.
+        const bookCover = this.roundedBox(1.02, .08, .82, '#8c4e3b', undefined, .035); bookCover.position.set(-1.62, .37, .62); bookCover.rotation.y = -.08; bookCover.material.roughness = .82;
+        [-1, 1].forEach((side) => {
+          const page = this.roundedBox(.46, .045, .68, '#fff5de', undefined, .02); page.position.set(-1.62 + side * .24, .43, .6); page.rotation.y = -.08; page.rotation.z = side * .035; page.material.roughness = .96;
+          for (let line = 0; line < 3; line++) {
+            const rule = this.box(.27, .008, .012, '#d9c6a5'); rule.position.set(-1.62 + side * .24, .456, .43 + line * .12); rule.rotation.y = -.08;
+          }
+        });
+        const bookmark = this.box(.055, .018, .32, '#bd6247'); bookmark.position.set(-1.16, .46, .96); bookmark.rotation.y = -.08;
+        const pencil = this.mesh(new T.CylinderGeometry(.035, .035, 1.05, 6), '#c5974c'); pencil.rotation.z = .9; pencil.position.set(-1.72, .43, 1.42); pencil.material.roughness = .7; pencil.material.metalness = .12;
+        const lampX = 1.55, lampZ = .52;
+        const lampBase = this.mesh(new T.CylinderGeometry(.2, .23, .08, 20), '#8e6844'); lampBase.position.set(lampX, .4, lampZ); lampBase.material.roughness = .62;
+        this.rod(new T.Vector3(lampX, .44, lampZ), new T.Vector3(lampX, .88, lampZ), .035, '#bd9558');
+        const lampShade = this.mesh(new T.ConeGeometry(.27, .32, 20), '#d9ad63'); lampShade.position.set(lampX, .94, lampZ); lampShade.material.roughness = .78;
+        const lampRim = this.mesh(new T.TorusGeometry(.25, .018, 6, 20), '#b98e50'); lampRim.rotation.x = Math.PI / 2; lampRim.position.set(lampX, .79, lampZ); lampRim.material.roughness = .58; lampRim.material.metalness = .18;
+        const bookStack = [[.62, .42, '#4f7b78'], [.72, .54, '#bd694b'], [.58, .66, '#d0a54f']];
+        bookStack.forEach(([width, y, color], index) => {
+          const cover = this.roundedBox(width, .11, .46, color, undefined, .025); cover.position.set(2.05 + (index % 2) * .06, y, 1.35); cover.rotation.y = index % 2 ? .06 : -.05; cover.material.roughness = .82;
+          const pages = this.roundedBox(width - .1, .035, .38, '#f5e8cd', undefined, .012); pages.position.set(cover.position.x, y + .04, 1.35); pages.material.roughness = .96;
+        });
         this.buildDie(new T.Vector3(0, .84, .65));
       } else {
         this.paths = new Map();
@@ -584,10 +601,21 @@
       if (!this.active || !this.domLabels || !this.camera) return;
       const key = [this.host.clientWidth, this.host.clientHeight, this.projection, ...this.tokens, ...this.owners, ...(this.domSteps || [])].join('|');
       if (this.boardLabelKey === key) return; this.boardLabelKey = key;
+      const centers = this.cells.map((cell) => {
+        const center = this.cellPosition(cell.id); center.y = .32; center.project(this.camera);
+        return { x: (center.x + 1) * this.width / 2, y: (1 - center.y) * this.height / 2 };
+      });
       this.cells.forEach((c) => {
         // Fixed corner anchors: labels never migrate into adjacent cells.
         const v = this.cellPosition(c.id); v.y = .32; v.x -= .72; v.z -= .68; v.project(this.camera);
         const { box, state, number, step } = this.domCells.get(c.id);
+        if (this.kind === 'monopoly') {
+          const index = this.cells.indexOf(c), next = centers[(index + 1) % centers.length];
+          const spacing = Math.hypot(centers[index].x - next.x, centers[index].y - next.y);
+          const labelWidth = Math.max(28, Math.min(68, spacing * .82));
+          box.style.width = `${labelWidth}px`;
+          box.style.setProperty('--rg3d-cell-label-font', `${Math.max(11, Math.min(16, labelWidth * .36))}px`);
+        }
         if (number) { const n = this.cellPosition(c.id); n.x -= .65; n.z += .52; n.y = .32; n.project(this.camera); number.style.left = `${(n.x + 1) * this.width / 2}px`; number.style.top = `${(1 - n.y) * this.height / 2}px`; }
         const teams = [...this.tokens].filter(([, cell]) => cell === c.id).map(([i]) => `${i + 1}隊`);
         const needed = this.focused?.cell === c.id || teams.length > 0;
@@ -714,6 +742,8 @@
           if (extent <= .95 && extent >= .9) break; distance *= extent / .93; place();
         }
       }
+      // 手機直向畫布的寬度先限制取景；略微放大填滿桌面，橫向與桌面視角則沿用完整安全框。
+      if (this.kind === 'monopoly' && aspect < 1.1) { distance *= .9; place(); }
       if (this.overlay) this.layoutOverlay(); this.draw();
     }
     pointAt(node, y = 0, u = .5, v = .5) {

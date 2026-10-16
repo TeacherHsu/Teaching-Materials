@@ -2,7 +2,7 @@
 
 ## 2026-10-16｜Windows 本機｜Codex｜狀態：✅ 本機驗收，尚未推送（依指示）
 - 只改 `Chinese/Review-Games/monopoly.html`、大富翁限定的 `common.css`／`scene3d.js` 分支、生命週期測試與 QA 截圖工具；題庫、規則和其他遊戲未改。
-- 加入木框／布面／毛氈層次、閱讀小屋、分層棋子、柔化接觸陰影、落地彈跳與手機低成本取景。手機縮短格名視覺文字，完整名稱保留於可讀標籤。
+- 加入木框／布面／毛氈層次、中央閱讀角、閱讀小屋、分層棋子、柔化接觸陰影與落地彈跳。格名依投影後的格距縮放並使用短標籤，完整名稱保留於可讀標籤。
 - 前後桌面與 390 × 844 手機截圖：`deliverables/monopoly-3d-golden-20261016/`。375 × 812 與 390 × 844 實測無水平溢出；瀏覽器實際走完擲骰、2D 題目、答對買地與下一隊。
 - Review-Games 48 項測試、`check_data.py`、國語網站 `validate`／`build`／`check-dist` 通過；80 支應用測試中 78 支原生通過，另 2 支用暫存 Windows URL 路徑相容 shim 通過。`npm ci` audit 回報 1 moderate、2 high，沒有改依賴。
 - 本機 commit 後保留未推送，不部署；獨立日期 clone：`Teaching-Materials-latest-20261016`。
