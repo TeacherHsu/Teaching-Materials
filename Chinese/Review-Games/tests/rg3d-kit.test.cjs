@@ -112,7 +112,15 @@ test('閒置不排 rAF；同名替換、頁面隱藏均解除等待', async () =
   await s.tween('hidden', 500, (t) => assert.equal(t, 1)); s.dispose();
 });
 
-for (const setting of ['calm', 'reduced', 'narrow']) test(setting + ' 初始降級不載入引擎，切換後可恢復', async () => {
+// 2026-10-16 規則修正：只有「減少動態（平面圖）」body.calm 才切 2D；系統減少動態＝靜態 3D（補間立即完成），窄螢幕＝輕量畫質 3D。
+test('系統減少動態：維持 3D，補間立即完成', async () => {
+  const e = environment({ reduced: true }), s = e.stage(); await s.ready; await s.refresh(); assert.equal(s.active, true);
+  let k = 0; await s.tween('move', 1000, (t) => { k = t; }); assert.equal(k, 1); s.dispose();
+});
+test('窄螢幕：維持 3D，改用 light 畫質', async () => {
+  const e = environment({ narrow: true }), s = e.stage(); await s.ready; await s.refresh(); assert.equal(s.active, true); assert.equal(s.quality, 'light'); s.dispose();
+});
+for (const setting of ['calm']) test(setting + ' 初始降級不載入引擎，切換後可恢復', async () => {
   const e = environment({ [setting]: true }), s = e.stage(); await s.ready; assert.equal(s.active, false);
   e.c.document.body.classList.remove('calm'); for (const media of e.media.values()) media.matches = false;
   await s.refresh(); assert.equal(s.active, true);

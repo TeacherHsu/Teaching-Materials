@@ -64,7 +64,8 @@ const mount = async e => { const v = e.c.RG3DMonopoly.mount({ host:e.host, cells
 async function complete(e, promise) { for(let i=0;i<110;i++) { e.step(16); await Promise.resolve(); } await promise; }
 
 test('載入失敗及 2D 模式：所有方法立即完成，保留呈現狀態', async () => {
-  for(const opts of [{rendererFails:true},{calm:true},{narrow:true}]) {
+  // 窄螢幕不再降 2D（2026-10-16），改由下一個測試驗證輕量 3D。
+  for(const opts of [{rendererFails:true},{calm:true}]) {
     const e=environment(opts), modes=[];
     const v=e.c.RG3DMonopoly.mount({host:e.host,cells,onMode:on=>modes.push(on)}); await v.ready;
     assert.equal(v.active,false);
@@ -73,6 +74,9 @@ test('載入失敗及 2D 模式：所有方法立即完成，保留呈現狀態'
     assert.equal(v.tokens.get(0),1); assert.equal(v.owners.get(1),0);
   }
   assert.equal(environment().c.RG3DMonopoly.mount({}),null);
+});
+test('窄螢幕與系統減少動態仍顯示 3D', async () => {
+  for (const opts of [{narrow:true},{reduced:true}]) { const e=environment(opts), v=await mount(e); assert.equal(v.active,true, JSON.stringify(opts)+v.failed); await v.dispose(); }
 });
 test('真實幾何初始化、未售只有地基，購地後六種建築出現；相同課旗串', async () => {
   const e=environment(), v=await mount(e); assert.equal(v.active,true, v.failed);

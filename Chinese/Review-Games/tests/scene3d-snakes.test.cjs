@@ -106,14 +106,15 @@ test('爬梯每階120ms；滑蛇先眨眼點頭再沿曲線滑900ms，最後到�
   assert.ok(v.pieces.get(0).position.distanceTo(v.position(0,5))<1e-9);assert.equal(v.snakeModels.get(13).userData.eyes[0].scale.y,1);await v.dispose();
 });
 test('低動態、窄螢幕與 WebGL 失敗：所有 API 立即 resolve，2D 狀態可恢復',async()=>{
-  for(const opts of [{calm:true},{narrow:true},{reduced:true},{rendererFails:true}]){
+  // 2026-10-16：窄螢幕與系統減少動態不再降 2D（改為輕量／靜態 3D），只剩 calm 與 WebGL 失敗。
+  for(const opts of [{calm:true},{rendererFails:true}]){
     const e=environment(opts),modes=[],v=await mount(e,{onMode:on=>modes.push(on)});assert.equal(v.active,false);
     await v.moveToken(0,13,{instant:true});await v.moveToken(0,5,{path:'snake'});await v.stepMark(0,5,1);await v.rollDice(4);await v.focusPlayer(0,5);await v.presentFinish();assert.equal(v.keepsake.hidden,false);await v.clearMarks();
     assert.equal(v.tokens.get(0),5);assert.equal(e.frames.size,0);assert.ok(modes.includes(false));await v.dispose();
   }
 });
 test('降級、隱藏與 context lost 解除等待者；重新啟用同步最後位置',async()=>{
-  for(const mode of ['calm','hidden','context','narrow']){
+  for(const mode of ['calm','hidden','context']){
     const e=environment(),v=await mount(e);await v.moveToken(0,13,{instant:true});const promise=v.moveToken(0,5,{path:'snake'});
     if(mode==='calm'){e.c.document.body.classList.add('calm');await v.stage.refresh();}
     if(mode==='hidden'){e.c.document.hidden=true;e.documentEvents.get('visibilitychange')();}
@@ -123,6 +124,9 @@ test('降級、隱藏與 context lost 解除等待者；重新啟用同步最後
     if(mode==='calm'){e.c.document.body.classList.remove('calm');await v.stage.refresh();assert.equal(v.active,true);}
     await v.dispose();
   }
+});
+test('窄螢幕與系統減少動態仍顯示 3D',async()=>{
+  for(const opts of [{narrow:true},{reduced:true}]){const e=environment(opts),v=await mount(e);assert.equal(v.active,true,JSON.stringify(opts));await v.dispose();}
 });
 test('格號、事件小標與步數各自投影；事件有步數時往底邊讓位',async()=>{
   const e=environment(),v=await mount(e),d=v.domCells.get(6);v.draw();const before=parseFloat(d.detail.style.top);

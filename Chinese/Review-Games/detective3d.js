@@ -45,6 +45,8 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   // 標記按鈕的 class 查詢；替身環境（舊 p0 測試）的 classList 沒有 contains，退回讀 dot 旗標。
   const hasClass = (el, c) => (el.classList && el.classList.contains) ? el.classList.contains(c) : (c === 'dt-dot' ? !!el.dot : false);
+  // 系統減少動態只關動畫（靜態 3D）；只有「減少動態（平面圖）」（body.calm）或 force2d 才切平面圖。
+  const flat2d = () => document.body.classList.contains('calm');
   const isCalm = () => (window.RG && RG.systemReduced ? RG.systemReduced() : reduced.matches) || document.body.classList.contains('calm');
   function webgl() {
     try { const c = document.createElement('canvas'); return !!(window.WebGLRenderingContext && (c.getContext('webgl') || c.getContext('experimental-webgl'))); } catch (_) { return false; }
@@ -84,13 +86,13 @@
     }
     refreshMode() {
       if (this.disposed) return;
-      if (isCalm() || this.opts.force2d || this.failed) {
+      if (flat2d() || this.opts.force2d || this.failed) {
         this.teardown3d(); this.mode2d('平面圖：玩法與目前進度相同'); return;
       }
       if (this.renderer || this.loading) return;
       if (!webgl()) { this.failed = true; this.mode2d('這台裝置改用平面圖，玩法相同'); return; }
       this.loading = true;
-      loadThree().then(() => { if (!this.disposed && !isCalm() && !this.opts.force2d && !this.failed) this.init3d(); })
+      loadThree().then(() => { if (!this.disposed && !flat2d() && !this.opts.force2d && !this.failed) this.init3d(); })
         .catch(() => { this.failed = true; if (!this.disposed) this.mode2d('無法載入立體畫面，改用平面圖'); })
         .finally(() => { this.loading = false; });
     }
@@ -142,7 +144,7 @@
       this.layoutMarkers();
     }
     init3d() {
-      if (this.disposed || isCalm() || this.opts.force2d || this.failed) return;
+      if (this.disposed || flat2d() || this.opts.force2d || this.failed) return;
       try {
         const T = window.THREE;
         const r = kit().createRenderer(this.quality); r.toneMappingExposure = .92;

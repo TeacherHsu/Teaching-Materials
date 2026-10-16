@@ -16,6 +16,8 @@
   let library, effects, toolbar;
   const el = (tag, cls, text) => { const n = document.createElement(tag); n.className = cls || ''; if (text) n.textContent = text; return n; };
   const sysReduced = () => (window.RG && RG.systemReduced ? RG.systemReduced() : reduced.matches);
+  // 系統減少動態只關動畫；只有 body.calm（減少動態／平面圖）才切 2D。
+  const flat2d = () => document.body.classList.contains('calm');
   const isCalm = () => sysReduced() || document.body.classList.contains('calm');
   function script(src) {
     return new Promise((resolve, reject) => {
@@ -174,7 +176,7 @@
         else { this.quality = 'light'; this.frameSamples = []; this.slowWindows = 0; }
       }
       const smallScreen2d = narrow.matches && !(this.kind === 'monopoly' && this.quality === 'light');
-      const reason = isCalm() ? '減少動態' : smallScreen2d ? '窄螢幕' : this.failed;
+      const reason = flat2d() ? '減少動態' : smallScreen2d ? '窄螢幕' : this.failed;
       if (reason) { this.mode(false); this.status(`2D 模式・${reason}，玩法相同`); return; }
       if (this.loading) return;
       if (!this.renderer) {
@@ -182,14 +184,14 @@
         try {
           await loadThree();
           if (this.disposed) return;
-          if (isCalm() || (narrow.matches && !(this.kind === 'monopoly' && this.quality === 'light'))) return;
+          if (flat2d() || (narrow.matches && !(this.kind === 'monopoly' && this.quality === 'light'))) return;
           this.init();
         } catch (_) { this.failed = '立體視圖無法使用'; }
         finally { this.loading = false; }
         if (!this.renderer || this.failed) { this.mode(false); this.status('2D 模式・立體視圖無法使用，玩法相同'); return; }
       }
       // 等待 CDN 時切換顯示設定，也必須以當下設定為準。
-      if (isCalm() || (narrow.matches && !(this.kind === 'monopoly' && this.quality === 'light'))) { this.mode(false); return; }
+      if (flat2d() || (narrow.matches && !(this.kind === 'monopoly' && this.quality === 'light'))) { this.mode(false); return; }
       try { this.mode(true); } catch (_) { this.failed = '立體視圖無法使用'; this.mode(false); return; }
       const proj = document.body.classList.contains('proj');
       const changed = this.projection !== proj;

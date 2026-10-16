@@ -71,12 +71,15 @@ test('切換減少動態會完成補間並解除等待；恢復時重建目前�
   assert.ok(v.syncCount >= 2); assert.deepEqual(modes, [true, false, true]); v.dispose();
 });
 
-test('系統動態設定優先於面板，變更投影不會重設遊戲狀態', async () => {
+// 2026-10-16：系統減少動態改為靜態 3D，不再降 2D；以畫面設定的「減少動態（平面圖）」body.calm 驗證降級與恢復。
+test('平面圖設定優先於面板，變更投影不會重設遊戲狀態', async () => {
   const e = environment(); const v = e.mount(); drawingSubstitute(v); await settle();
   e.media.get('(prefers-reduced-motion: reduce)').matches = true; await v.refresh();
+  assert.equal(v.active, true);
+  e.document.body.classList.add('calm'); await v.refresh();
   assert.equal(v.active, false);
   await v.moveToken(3, 8);
-  e.media.get('(prefers-reduced-motion: reduce)').matches = false;
+  e.media.get('(prefers-reduced-motion: reduce)').matches = false; e.document.body.classList.remove('calm');
   e.document.body.classList.add('proj'); await v.refresh();
   assert.equal(v.active, true); assert.equal(v.projection, true); assert.equal(v.tokens.get(3), 8); v.dispose();
 });

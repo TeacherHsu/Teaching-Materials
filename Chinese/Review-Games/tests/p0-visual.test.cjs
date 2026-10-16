@@ -19,8 +19,9 @@ function roomEnv() {
   Object.assign(room, { opts: {}, items: [], meshes: new Map(), tweens: [], host: { clientWidth: 390, clientHeight: 472, classList: { add() {}, remove() {} } } });
   return { room, media, classes, document, context };
 }
-test('密室中途 calm／系統 reduce 保留同一份狀態並完成待等動畫', () => {
-  for (const mode of ['calm', 'reduce', 'force2d']) {
+// 2026-10-16：系統減少動態改為靜態 3D（CF 的 Mac 與手機都看不到升級畫面），只剩 calm／force2d 會切平面圖。
+test('密室中途 calm／force2d 保留同一份狀態並完成待等動畫', () => {
+  for (const mode of ['calm', 'force2d']) {
     const e = roomEnv(); const r = e.room; let end = 0;
     r.items = [{ id: 'clue', state: 'found', btn: {} }];
     r.tweens.push({ fn: k => { end = k; } });

@@ -13,6 +13,7 @@
 .rg3d-snakes.is-3d .rg3d-cell-direction{position:absolute;font-size:12px;color:#76736e;line-height:1;transform:translate(-50%,-50%)}
 .rg3d-snakes.is-3d .rg3d-cell-detail{position:absolute;display:block;font-size:12px;line-height:1.1;white-space:nowrap;padding:2px 3px;transform:translate(-50%,-50%);color:#5c4633;background:#fffaf3;border-radius:4px}
 .rg3d-snakes.is-3d .rg3d-cell-detail:empty{display:none}
+@media (max-width:760px){.rg3d-snakes.is-3d .rg3d-cell-name{font-size:12px!important;padding:1px 2px}.rg3d-snakes.is-3d .rg3d-cell-detail,.rg3d-snakes.is-3d .rg3d-cell-direction{display:none!important}}
 .rg3d-snakes.is-3d .rg3d-cell-step{font-size:18px;line-height:22px;height:24px;min-width:24px;text-align:center;padding:0 3px;background:var(--rg3d-step-color);color:white;border:1px solid white;z-index:2}
 `;
   // 合併相同材質：保留 group 的移動/縮放，靜態零件不各佔一個 draw call。
@@ -148,7 +149,7 @@
     fit() {
       if (!this.camera || !this.root) return;
       const T = window.THREE, cam = this.camera;
-      const angle = 54 * Math.PI / 180;
+      const angle = (matchMedia('(max-width: 760px)').matches ? 66 : 54) * Math.PI / 180;
       const corners = [-5.54, 5.54].flatMap(x => [-4.70, 4.70].flatMap(z => [-.55, 0].map(y => new T.Vector3(x, y, z))));
       // 遠端那排的棋子高約 1.1，也要納入取景，否則頭會被畫布上緣切掉。
       corners.push(new T.Vector3(-4.7, 1.15, -3.86), new T.Vector3(4.7, 1.15, -3.86));

@@ -7,6 +7,8 @@
   const LIGHT = Object.freeze({ hemisphere: Object.freeze({ sky: '#fff4e2', ground: '#b98d62', intensity: .55 }),
     key: Object.freeze({ color: '#fff1dc', intensity: 1.55, position: Object.freeze([-6, 12, 7]), radius: 4, bias: -.0004, normalBias: .02 }),
     fill: Object.freeze({ color: '#dfe8ff', intensity: .35, position: Object.freeze([7, 6, -4]) }) });
+  // 2026-10-16 修正：系統「減少動態」只關動畫（靜態 3D），不再整個退回 2D；只有遊戲內「減少動態（平面圖）」開關（body.calm）才切 2D。
+  const flat2d = () => document.body.classList.contains('calm');
   const calmNow = (calm = false) => !!calm || document.body.classList.contains('calm') || !!window.RG?.systemReduced();
   const qualityOf = (q) => ['high', 'light'].includes(q) ? q : 'standard';
   const scripts = new Map(); let library, effects;
@@ -240,7 +242,7 @@
     toolbar.append(el('summary', '', '畫面設定'));
     const status = el('span', 'rg3d-status', '正在準備立體視圖，已可開始操作'); status.setAttribute('role', 'status'); toolbar.append(status);
     const switches = [];
-    for (const [key, text] of [['calm', '減少動態'], ['proj', '投影模式']]) {
+    for (const [key, text] of [['calm', '減少動態（平面圖）'], ['proj', '投影模式']]) {
       const label = el('label', 'rg3d-switch'), input = el('input'); input.type = 'checkbox';
       input.checked = document.body.classList.contains(key);
       input.addEventListener('change', () => document.body.classList.toggle(key, input.checked));
@@ -296,7 +298,7 @@
       stage.frame = 0;
       if (!stage.active || stage.disposed || document.hidden) { finishAll(); return; }
       // rAF 期間仍檢查設定，避免 MutationObserver 尚未送達時多播動畫。
-      if (calmNow() || narrow.matches) { stage.refresh(); return; }
+      if (flat2d()) { stage.refresh(); return; }
       sample(now);
       for (const [name, a] of [...stage.tweens]) {
         const p = Math.min(1, Math.max(0, (now - a.start) / a.ms));
@@ -319,7 +321,7 @@
     const lost = (event) => { event.preventDefault(); stage.failed = 'WebGL context lost'; mode(false, stage.failed); };
     stage.refresh = async () => {
       if (stage.disposed) return;
-      const reason = calmNow() ? '減少動態' : narrow.matches ? '窄螢幕' : stage.failed;
+      const reason = flat2d() ? '平面圖' : stage.failed;
       if (reason) { mode(false, reason); return; }
       if (stage.renderer) { mode(true); stage.resize(); return; }
       if (loading) return loading;
@@ -327,7 +329,9 @@
       loading = (async () => {
         try {
           await load();
-          if (stage.disposed || generation !== stage.generation || calmNow() || narrow.matches) return;
+          if (stage.disposed || generation !== stage.generation || flat2d()) return;
+          // 手機寬度也顯示 3D，改用輕量畫質（pixelRatio 1、不開陰影貼圖，只用接觸陰影）。
+          if (narrow.matches) stage.quality = 'light';
           const t = T(); stage.scene = new t.Scene(); stage.scene.userData.stage = stage;
           stage.camera = new t.PerspectiveCamera(32, 1, .1, 100); stage.camera.position.set(0, 7.8, 9.8); stage.camera.lookAt(0, .2, 0);
           stage.renderer = createRenderer(stage.quality); stage.renderer.domElement.addEventListener('webglcontextlost', lost);

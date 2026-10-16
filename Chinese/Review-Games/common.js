@@ -69,6 +69,7 @@
   const force3d = () => { try { return localStorage.getItem(FORCE3D_KEY) === '1'; } catch (_) { return false; } };
   const systemReduced = () => osReduced() && !force3d();
   function force3dToggle() {
+    return null; // 2026-10-16：系統減少動態改為顯示靜態 3D，不再需要覆蓋開關。
     if (!osReduced()) return null;
     const label = document.createElement('label'); label.className = 'rg3d-switch rg-force3d';
     const input = document.createElement('input'); input.type = 'checkbox'; input.checked = force3d();

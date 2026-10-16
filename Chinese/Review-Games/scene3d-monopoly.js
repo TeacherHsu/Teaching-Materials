@@ -12,6 +12,7 @@
 .rg3d-monopoly.is-3d .rg3d-cell-name{font-size:0!important;background:#fffaf3;border:1px solid #d7c4a6;border-radius:6px;padding:3px 5px;box-shadow:0 2px 3px #51381e18;color:var(--ink);visibility:visible!important}
 .rg3d-monopoly.is-3d .rg3d-cell-name::before{content:attr(data-compact);font-size:16px!important;font-weight:800;color:#2b1d12;text-shadow:none}
 .rg3d-monopoly.is-3d .rg3d-cell-label.is-destination .rg3d-cell-name::before{content:attr(data-compact)}
+@media (max-width:760px){.rg3d-monopoly.is-3d .rg3d-cell-name{padding:1px 3px;border-radius:4px}.rg3d-monopoly.is-3d .rg3d-cell-name::before{font-size:11px!important}.rg3d-monopoly.is-3d .rg3d-cell-name::after{display:none}.rg3d-monopoly.is-3d .rg3d-cell-step{font-size:11px;min-width:16px;height:16px;line-height:14px}}
 .rg3d-monopoly .rg3d-cell-name::after{content:'';display:inline-block;width:6px;height:6px;margin-left:3px;border-radius:50%;background:var(--lesson-color,#7aa38f)}
 .rg3d-monopoly.is-3d .rg3d-cell-step{font-size:16px;min-width:22px;height:22px;line-height:20px;z-index:2}
 .rg3d-monopoly.is-3d .rg3d-cell-direction{display:none!important}
@@ -218,7 +219,8 @@
     fit() {
       if (!this.camera || !this.root) return;
       const T = window.THREE, cam = this.camera;
-      const angle = 48 * Math.PI / 180;
+      // 手機直立：俯角拉高，棋盤接近正方形、填滿寬度；桌機維持 48°（建築看得到正面）。
+      const angle = (matchMedia('(max-width: 760px)').matches ? 64 : 48) * Math.PI / 180;
       const corners = [-5.54, 5.54].flatMap(x => [-5.54, 5.54].flatMap(z => [-.55, 0].map(y => new T.Vector3(x, y, z))));
       // 遠端那排的棋子與建築高約 1.1，也要納入取景，否則頭會被畫布上緣切掉。
       corners.push(new T.Vector3(-4.7, 1.15, -4.7), new T.Vector3(4.7, 1.15, -4.7));
