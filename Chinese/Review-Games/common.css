@@ -337,7 +337,7 @@ body.calm .rg3d-enter { animation: none; }
 .rg3d-monopoly.is-3d > .rg3d-surface, .rg3d-monopoly.is-3d > .rg3d-surface canvas { touch-action: pan-y; }
 @media (max-width: 760px) {
   .play:has(> .rg3d-monopoly.is-3d) { gap: 12px; }
-  .rg3d-monopoly.is-3d > .rg3d-surface { height: clamp(390px, 48svh, 420px); min-height: 390px; max-height: 420px; border-radius: 18px; }
+  .rg3d-monopoly.is-3d > .rg3d-surface { height: clamp(350px, 42svh, 360px); min-height: 350px; max-height: 360px; border-radius: 18px; }
   .rg3d-monopoly.is-3d .rg3d-cell-label { max-width: 82px; line-height: 1.08; }
   .rg3d-monopoly.is-3d .rg3d-cell-label { max-width: none; }
   .rg3d-monopoly.is-3d .rg3d-cell-name { width: auto; }
