@@ -5,7 +5,7 @@
 3. 只新增 `src/data/situationLessons/<lessonId>.js`，default export 課次物件，依下例填資料。不要複製 `cooking-*` profile、不要修改路由／Dashboard／登記表。新檔會由 Vite 自動收集，既有課次頁即顯示「課文情境探索」。開發測試的純 Node 相容 getter 只含舊課；實際 Vite 自動收集另有整合測試。
 4. 將素材放 `public/assets/situation/<lessonId>/`，明列底圖／狀態圖／sprite檔名與座標。設定 `assetBase` 並給每幕相同值。新課預設960×960 WebP、單張≤300 KiB、`aspect:[960,960]`，透明物件建議≤120 KiB；舊課2400×1024橫幅是既有例外，不重新裁切。正方形素材在情境探索 cover 幾何中仍需測横／直向取景，人物與操作線索放在安全範圍，勿靠邊；不直接改既有主站圖片規範。
 5. 畫風：白底／低彩度、柔和一致筆觸、每圖一重點、無文字、無多餘線索。人物衣著／位置／光向一致；狀態圖同尺寸、同構圖，只改操作結果，避免切換跳動。sprite透明留邊、無白框；每個提示、對話、題卡皆保留朗讀與≥44px觸控範圍。
-6. 先選六種型別之一：observe、dragToTarget、scoopGesture、toolGrab、chooseCard、orderCards。拖放／工具需 target 區域，舀取需 water 區域，工具物件設 tool:true，完成吸附設 destination。`steps` 是事件，`collect` 可任意順序、不可重複的物件；量表每個事件有一項，連開場共 steps.length+1。量表名稱逐字使用原文，解鎖驗證會拒絕不存在的詞；教師仍須核對該詞是否真的描述指定人物。
+6. 先選共用型別：observe、dragToTarget、scoopGesture、toolGrab、chooseCard、orderCards、tracePath（沿線操作）。複合手勢、每步對焦與狀態圖見模板「老鞋匠擴充」。拖放／工具需 target 區域，舀取需 water 區域，工具物件設 tool:true，完成吸附設 destination。`steps` 是事件，`collect` 可任意順序、不可重複的物件；量表每個事件有一項，連開場共 steps.length+1。量表名稱逐字使用原文，解鎖驗證會拒絕不存在的詞；教師仍須核對該詞是否真的描述指定人物。
 7. 題卡用改寫問題、完整錯因與三級提示；依據只存索引＋hash。排序題 answer 與 initialOrder 都必須完整排列，表情圖片放sprites目錄。結尾卡不限成語，可用事件比較或閱讀策略；不預告尚未讀到的解法。
 8. 執行 `npm run validate`、`for f in scripts/test-*.mjs; do node "$f" || exit 1; done`、`npm run build`、`npm run check-dist`。新增設定會被 `test-situation-schema.mjs` 自動掃描；Vite自動入口由 `test-situation-registry.mjs` 驗證。靜態測試檢查全文覆蓋、hash格式／相互一致、量表、型別與座標；實際原文hash與來源詞必須在正常解鎖後驗證。
 9. 交 Claude 以1366×900、820×1180、375×812實玩每拍：先看字幕→可操作→結果鏡頭→讀文→作答。確認觸控／滑鼠／Tab/Enter、錯放／取消／重複操作、吸附／計數／量表、手機無橫捲、字及人物不被遮、音效開關、三種動畫設定、重玩／重載／已讀回顧。通過前不宣稱瀏覽器驗收完成；提交與發布依當次授權辦理。

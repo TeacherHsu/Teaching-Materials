@@ -16,3 +16,14 @@ try {
   assert.equal(getSituationLesson('next-lesson').lessonId,'next-lesson');assert.equal(getSituationLesson('missing'),null);
 } finally {await server?.close();await rm(root,{recursive:true,force:true});}
 console.log('PASS: actual Vite glob discovers a new lesson file without registry/route edits');
+
+// Verify the real lesson file reaches the unchanged public getter as well.
+const appRoot=new URL('../',import.meta.url).pathname;
+const appHttpServer=createHttpServer();
+const app=await createServer({root:appRoot,configFile:false,server:{middlewareMode:true,hmr:{server:appHttpServer}},optimizeDeps:{noDiscovery:true,include:[]},appType:'custom'});
+try {
+ const {getFirstPersonLesson}=await app.ssrLoadModule('/src/data/firstPersonLesson.js');
+ assert.equal(getFirstPersonLesson('115AG4K12').scenes.length,4);
+ assert.equal(getFirstPersonLesson('115AG3H04').sentenceCount,45);
+}finally{await app.close();}
+console.log('PASS: real Vite getter exposes shoemaker and retains the cooking lesson');
