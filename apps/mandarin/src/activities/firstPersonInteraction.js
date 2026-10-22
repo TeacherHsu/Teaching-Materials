@@ -8,7 +8,7 @@ export function operationState(scene, raw = {}) {
   const step = Number.isInteger(raw.step) ? Math.max(0, Math.min(max, raw.step)) : 0;
   const validWood = scene.operation.collect || [];
   const collected = [...new Set((Array.isArray(raw.collected) ? raw.collected : scene.operation.steps.slice(0,step)).filter(x=>validWood.includes(x)))];
-  return { step, ...(raw.demoSeen === true ? {demoSeen:true} : {}), ...(scene.act===4 && raw.tongsDemoSeen === true ? {tongsDemoSeen:true} : {}), ...(scene.act===1 && raw.woodDemoSeen === true ? {woodDemoSeen:true} : {}), ...(collected.length ? { collected } : {}) };
+  return { step, ...(Number.isInteger(raw.rhythmAttempts) && raw.rhythmAttempts>=0 ? {rhythmAttempts:raw.rhythmAttempts} : {}), ...(raw.demoSeen === true ? {demoSeen:true} : {}), ...(scene.act===4 && raw.tongsDemoSeen === true ? {tongsDemoSeen:true} : {}), ...(scene.act===1 && raw.woodDemoSeen === true ? {woodDemoSeen:true} : {}), ...(collected.length ? { collected } : {}) };
 }
 export function operate(scene, state, action) {
   const expected = scene.operation.steps[state.step];
@@ -25,9 +25,9 @@ export const operationComplete = (scene, state) => state.step === scene.operatio
 export const heatFor = (scene, state) => scene.operation.heat?.[state.step] ?? 1;
 
 // Source-image coordinates remain valid while the illustration pans or resizes.
-export function mountOperation(plane, { scene, state, changed, heat, demonstrate, chime, focus, reduced = () => false, saveDemo = () => {} }) {
-  if (!scene.operation.profile) return mountConfiguredOperation(plane, {scene,state,changed,heat,demonstrate,focus,reduced,saveDemo}, {operate:action=>operate(scene,state,action),complete:()=>operationComplete(scene,state)});
-  if(scene.operation.type==='toolGrab')return mountTongs(plane,{scene,state,changed,heat,demonstrate,focus,reduced,saveDemo},{operate:action=>operate(scene,state,action),complete:()=>operationComplete(scene,state),heatFor:()=>heatFor(scene,state)});
+export function mountOperation(plane, { scene, state, changed, heat, demonstrate, chime, focus, reduced = () => false, saveDemo = () => {}, quiet = () => {} }) {
+  if (!scene.operation.profile) return mountConfiguredOperation(plane, {scene,state,changed,heat,demonstrate,focus,reduced,saveDemo,quiet}, {operate:action=>operate(scene,state,action),complete:()=>operationComplete(scene,state)});
+  if(scene.operation.type==='toolGrab')return mountTongs(plane,{scene,state,changed,heat,demonstrate,focus,reduced,saveDemo,quiet},{operate:action=>operate(scene,state,action),complete:()=>operationComplete(scene,state),heatFor:()=>heatFor(scene,state)});
   const base = `${(import.meta.env?.BASE_URL || '/')}${scene.assetBase}sprites/`;
   const layer = document.createElement('div'); layer.className = `fp-operation fp-act-${scene.act}`; plane.append(layer);
   let paused = true, idleTimer, demoTimer, demoAnimations = [], reminders = 0, demoActive = false;

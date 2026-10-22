@@ -1,3 +1,4 @@
+import { mountSportsOperation } from './sportsOperations.js';
 import { SpeakButton } from '../../components/SpeakButton.js';
 import { createCardOrder } from '../firstPersonPresentation.js';
 
@@ -44,9 +45,10 @@ export const orderCards = initial => createCardOrder(initial);
 export function mountConfiguredOperation(plane, options, api) {
   const {scene,state,changed,reduced=()=>false,saveDemo=()=>{},focus}=options;
   const config=scene.operation;
+  if(['rhythmTap','aimShot','holdBreath'].includes(config.type))return mountSportsOperation(plane,options,api);
   const gesture=o=>o.gesture || config.type;
   const available=o=>state.step>=(o.fromStep ?? 0) && state.step<=(o.toStep ?? config.steps.length);
-  let committing=false;
+  let committing=false, motionBusy=false;
   let traceProgress=0, lastStep=state.step;
   const base=`${import.meta.env?.BASE_URL || '/'}${scene.assetBase}sprites/`;
   const layer=document.createElement('div');layer.className=`fp-operation fp-generic-operation${config.keepCompleted?' fp-keep-completed':''}`;plane.append(layer);
@@ -72,7 +74,7 @@ export function mountConfiguredOperation(plane, options, api) {
   const point=e=>{const r=plane.getBoundingClientRect();return {x:(e.clientX-r.left)/r.width*100,y:(e.clientY-r.top)/r.height*100};};
   const snap=o=>{const el=elements.get(o.action);el.style.width=`${state.collected?.includes(o.action) && o.destinationWidth ? o.destinationWidth : o.width}%`;pos(el,...(state.collected?.includes(o.action) && o.destination ? o.destination : [o.x,o.y]));};
   function render(){
-    for(const o of config.objects){const el=elements.get(o.action);const used=Boolean(o.consumedBy && state.collected?.includes(o.consumedBy) || o.usedFade && state.collected?.includes(o.action));el.classList.toggle('fp-used',used);el.hidden=!available(o);el.style.pointerEvents=o.passive?'none':'';el.disabled=Boolean(paused || used || o.passive || api.complete() || !available(o) || state.collected?.includes(o.action));el.setAttribute('aria-pressed',String(selected===o || gripped===o));if(!drag)snap(o);}
+    for(const o of config.objects){const el=elements.get(o.action);const used=Boolean(o.consumedBy && state.collected?.includes(o.consumedBy) || o.usedFade && state.collected?.includes(o.action));el.classList.toggle('fp-used',used);el.hidden=!available(o);el.style.pointerEvents=o.passive?'none':'';el.disabled=Boolean(paused || motionBusy || used || o.passive || api.complete() || !available(o) || state.collected?.includes(o.action));el.setAttribute('aria-pressed',String(selected===o || gripped===o));if(!drag)snap(o);}
     status.classList.toggle('fp-operation-complete',api.complete());layer.classList.toggle('fp-operation-complete',api.complete());
     tell(config.prompts?.[state.step] || scene.goal);const group=config.groups?.find(g=>state.step>=g.from && state.step<g.to) || config.groups?.at(-1);counter.textContent=group?`${Math.min(group.to-group.from,Math.max(0,state.step-group.from))}／${group.to-group.from}`:`${state.step}／${config.steps.length}`;
     if(lastStep!==state.step){lastStep=state.step;focus?.(config.focus?.[state.step] ?? config.objects.find(o=>o.action===config.steps[state.step])?.x ?? config.objects[0].x);}
@@ -94,6 +96,13 @@ export function mountConfiguredOperation(plane, options, api) {
     }finally{committing=false;}
   }
   function observe(o){
+    if(o.viewMotion && !reduced()){
+      motionBusy=true;render();
+      const pose=o.viewMotion==='lookUp'?'scale(1.035) translateY(8px)':'scale(1.05)';
+      animation=plane.parentElement.animate([{transform:'scale(1)'},{transform:pose,offset:.65},{transform:'scale(1)'}],{duration:750,easing:'ease-in-out'});
+      animation.onfinish=()=>{motionBusy=false;if(!paused && !disposed)commit(o.action);};return;
+    }
+
     if(config.silentObserve || o.observation===''){commit(o.action);return;}
     bubble?.remove();bubble=document.createElement('div');bubble.className='fp-object-bubble';pos(bubble,o.x,o.y-8);
     const text=o.observation ?? o.label;if(!text){commit(o.action);return;}bubble.append(document.createTextNode(text),SpeakButton({text}));layer.append(bubble);
@@ -189,5 +198,5 @@ export function mountConfiguredOperation(plane, options, api) {
     tell(config.demoPrompt || scene.goal);return true;
   }
   render();
-  return {startDemo(){showWoodDemo();},showWoodDemo,get dragging(){return Boolean(drag);},setPaused(value){const was=paused;paused=value;render();if(value){traceProgress=0;animation?.cancel();handAnimation?.cancel();hand.hidden=true;clearTimeout(demoTimer);if(drag){snap(drag.o);drag=null;}}else if(was){render();focus?.(config.focus?.[state.step] ?? scene.art.orientationFocus?.[innerWidth/innerHeight>=1.4?'landscape':'portrait'] ?? config.objects[0].x);if(scene.beats.act.demo)showWoodDemo();}},dispose(){disposed=true;clearTimeout(timer);clearTimeout(demoTimer);animation?.cancel();handAnimation?.cancel();bubble?.remove();status.remove();layer.remove();}};
+  return {startDemo(){showWoodDemo();},showWoodDemo,get dragging(){return Boolean(drag);},setPaused(value){const was=paused;paused=value;render();if(value){motionBusy=false;traceProgress=0;animation?.cancel();handAnimation?.cancel();hand.hidden=true;clearTimeout(demoTimer);if(drag){snap(drag.o);drag=null;}}else if(was){render();focus?.(config.focus?.[state.step] ?? scene.art.orientationFocus?.[innerWidth/innerHeight>=1.4?'landscape':'portrait'] ?? config.objects[0].x);if(scene.beats.act.demo)showWoodDemo();}},dispose(){disposed=true;clearTimeout(timer);clearTimeout(demoTimer);animation?.cancel();handAnimation?.cancel();bubble?.remove();status.remove();layer.remove();}};
 }

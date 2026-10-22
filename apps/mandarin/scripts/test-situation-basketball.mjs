@@ -1,0 +1,35 @@
+import assert from 'node:assert/strict';
+import {readFileSync,statSync,existsSync} from 'node:fs';import {webcrypto} from 'node:crypto';import {homedir} from 'node:os';
+import lesson from '../src/data/situationLessons/115AG4K03.js';
+import {validateSituationLesson,validateUnlockedLesson,storyUnitKeys} from '../src/data/situationLessons/schema.js';
+import {splitSentences} from '../src/utils/readingUnits.js';import {classroomPassword} from './classroom-password.mjs';
+import {rhythmAttempt,breathProgress,breathScale,assistedShot} from '../src/activities/situation/sportsOperations.js';
+import {operationState,mountOperation,operationComplete} from '../src/activities/firstPersonInteraction.js';
+validateSituationLesson(lesson);assert.deepEqual(lesson.paragraphCounts,[7,8,9,14,13,4]);assert.equal(storyUnitKeys(lesson).length,53);
+assert.deepEqual(lesson.meter.states,['害怕','不曾放棄','喜悅','興奮不已','緊張','相信自己做得到','成就感']);assert.equal(lesson.ui.character,'我');
+assert.deepEqual(lesson.scenes.map(s=>s.questions.length),[1,1,1,1]);assert.ok(lesson.scenes.every(s=>s.questions[0].type==='summaryCard'));
+assert.equal(lesson.scenes[3].strategies[0].revealOnResult,true);
+assert.ok(lesson.scenes[3].timeline.findIndex(e=>e.kind==='strategy')<lesson.scenes[3].timeline.findLastIndex(e=>e.kind==='act'));
+for(const s of lesson.scenes){for(const t of s.timeline.filter(t=>t.kind==='intro'))assert.ok(t.refs.reduce((n,r)=>n+r.sentences.length,0)<=8);for(const f of s.art.images)assert.ok(statSync(new URL(`../public/${lesson.assetBase}${f}`,import.meta.url)).size<=400*1024);}
+let attempts=0;for(let i=1;i<=7;i++){const r=rhythmAttempt(attempts,1);attempts=r.attempts;assert.equal(r.success,i>=5);if(i>1)assert.ok(r.window>=rhythmAttempt(attempts-2).window);}
+assert.ok(breathProgress(2999)<1);assert.equal(breathProgress(3000),1);assert.equal(breathScale(0),1);assert.equal(breathScale(.5),1.65);assert.ok(Math.abs(breathScale(1)-1)<1e-10);
+assert.equal(assistedShot({x:50,y:72},{x:55,y:40},[50,24]),true);assert.equal(assistedShot({x:50,y:72},{x:90,y:99},[50,24]),false);assert.equal(assistedShot({x:50,y:72},{x:90,y:99},[50,24],true),true);
+const password=classroomPassword();
+if(password){
+const e=JSON.parse(readFileSync(new URL('../public/data/readings.enc.json',import.meta.url)));const raw=await webcrypto.subtle.importKey('raw',new TextEncoder().encode(password),'PBKDF2',false,['deriveKey']);const key=await webcrypto.subtle.deriveKey({name:'PBKDF2',salt:Buffer.from(e.salt,'base64'),iterations:e.iter,hash:'SHA-256'},raw,{name:'AES-GCM',length:256},false,['decrypt']);const readings=JSON.parse(new TextDecoder().decode(await webcrypto.subtle.decrypt({name:'AES-GCM',iv:Buffer.from(e.iv,'base64')},key,Buffer.from(e.data,'base64'))));
+const paragraphs=new Map();for(const u of splitSentences(readings[lesson.lessonId].paras)){const p=u.paraIndex+1;if(!paragraphs.has(p))paragraphs.set(p,[]);paragraphs.get(p).push(u.text);}await validateUnlockedLesson(lesson,paragraphs);
+const sourceFile=homedir()+'/Library/CloudStorage/OneDrive-個人/mandarin-work/reading-tool-lessons/115KG4A03.json';
+if(existsSync(sourceFile)){const source=JSON.parse(readFileSync(sourceFile)).text.replace(/[|\s]/g,'');assert.ok(source===[...paragraphs.values()].flat().join('').replace(/\s/g,''),'local source equals official encrypted units');}
+
+}else console.log('SKIP: no local classroom password; source hash unavailable');
+class Element{constructor(){this.children=[];this.style={setProperty(k,v){this[k]=v;}};this.dataset={};this.classList={add(){},remove(){},toggle(){}};}append(...xs){for(const x of xs){x.parentElement=this;this.children.push(x);}}setAttribute(){}remove(){}setPointerCapture(){}getBoundingClientRect(){return {left:0,top:0,width:100,height:100};}}
+const names=['document','Image','performance','requestAnimationFrame','cancelAnimationFrame'];const saved=Object.fromEntries(names.map(n=>[n,globalThis[n]]));let now=0,raf=null;
+globalThis.document={createElement:()=>new Element(),createElementNS:()=>new Element()};globalThis.Image=Element;globalThis.performance={now:()=>now};globalThis.requestAnimationFrame=fn=>(raf=fn,1);globalThis.cancelAnimationFrame=()=>{raf=null;};
+const event=(x=50,y=72,extra={})=>({button:0,pointerId:1,clientX:x,clientY:y,detail:0,preventDefault(){},...extra});
+function setup(scene){const state=operationState(scene),outer=new Element(),host=new Element(),plane=new Element();outer.append(host);host.append(plane);let changes=0,reenter;const quiet=[];const c=mountOperation(plane,{scene,state,reduced:()=>true,quiet:v=>quiet.push(v),changed(){changes++;reenter?.();}});c.setPaused(false);return {state,c,find:id=>plane.children[0].children.find(x=>x.dataset.action===id),setReenter:fn=>{reenter=fn;},get changes(){return changes;},quiet};}
+try{
+ const r=setup(lesson.scenes[1]),ball=r.find('ball');for(let i=0;i<4;i++){now+=700;ball.onclick(event());assert.equal(r.state.step,0);}assert.equal(r.state.rhythmAttempts,4);assert.equal(operationState(lesson.scenes[1],r.state).rhythmAttempts,4);ball.onclick(event());assert.equal(r.state.rhythmAttempts,4,'rapid click ignored');r.setReenter(()=>ball.onclick(event()));for(let i=0;i<3;i++){now+=700;ball.onclick(event());assert.equal(r.state.step,i+1);}assert.equal(r.changes,3);assert.ok(operationComplete(lesson.scenes[1],r.state));now+=1000;ball.onclick(event());assert.equal(r.changes,3);r.c.dispose();
+ const shot=setup(lesson.scenes[2]),sball=shot.find('ball');sball.onpointerdown(event());sball.onpointerup(event(90,99));assert.equal(shot.state.step,0);sball.onpointerdown(event());sball.onpointercancel();assert.equal(shot.state.step,0);sball.onpointerdown(event());sball.onpointerup(event(55,35));assert.equal(shot.state.step,1);await new Promise(resolve=>setTimeout(resolve,1));sball.onclick(event());assert.equal(shot.state.step,2);assert.equal(shot.changes,2);shot.c.dispose();
+ const b=setup(lesson.scenes[3]),breath=b.find('breath');breath.onpointerdown(event());now+=2999;raf(now);assert.equal(b.state.step,0);breath.onpointercancel();assert.equal(b.state.step,0);breath.onkeydown(event(0,0,{key:' ',repeat:false}));now+=1500;raf(now);b.c.setPaused(true);assert.equal(b.state.step,0);assert.equal(raf,null);b.c.setPaused(false);breath.onkeydown(event(0,0,{key:' ',repeat:false}));now+=3000;raf(now);assert.equal(b.state.step,1);assert.equal(b.quiet.at(-1),1);breath.onkeyup(event(0,0,{key:' '}));assert.equal(b.state.step,1);breath.onkeydown(event(0,0,{key:' ',repeat:false}));assert.equal(raf,null,'stale breath cannot start after checkpoint');const final=b.find('ball');final.onpointerdown(event());final.onpointerup(event(95,95));assert.equal(b.state.step,2,'final shot guaranteed');final.onclick(event());assert.equal(b.changes,2);b.c.dispose();assert.equal(raf,null);assert.equal(b.quiet.at(-1),0);
+}finally{Object.assign(globalThis,saved);}
+console.log('PASS: basketball ordered 53 units/hash/source words, summaries/assets/openings; production rhythm/reentry/restore, aim/cancel/keyboard, hold/pause/quiet/final shot');

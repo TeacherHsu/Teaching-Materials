@@ -1,4 +1,4 @@
-export const operationTypes = ['observe','dragToTarget','scoopGesture','toolGrab','chooseCard','orderCards','tracePath'];
+export const operationTypes = ['observe','dragToTarget','scoopGesture','toolGrab','chooseCard','orderCards','tracePath','rhythmTap','aimShot','holdBreath'];
 export const strategyTypes = ['predict','emotionClue','causeEffect','summaryCard'];
 const fail = message => { throw new Error(`Situation lesson: ${message}`); };
 const check = (condition, message) => { if (!condition) fail(message); };
@@ -63,7 +63,7 @@ export function validateSituationLesson(lesson) {
     for(const value of Object.values(s.art.views))check(Number.isFinite(value) && value>=0 && value<=1,'view focus');
     for(const points of Object.values(s.art.focus || {}))for(const [x,y] of Object.entries(points))check(percent(Number(x)) && percent(y), 'orientation focus');
     check(s.operation.objects?.length>0, 'objects');
-    for(const o of s.operation.objects){check(text(o.label) && text(o.action),'object identity');check([o.x,o.y,o.width].every(percent) && o.width>0 && Number.isFinite(o.ratio) && o.ratio>0 && Number.isFinite(o.angle),'object geometry');check(!o.sprite || /^[\w-]+$/.test(o.sprite),'sprite');if(o.minHitSize!==undefined)check(Number.isFinite(o.minHitSize) && o.minHitSize>=44,'hit size');if(o.gesture)check(['tap','observe','dragToTarget','tracePath'].includes(o.gesture),'object gesture');if(o.gesture==='tracePath' || s.operation.type==='tracePath' && !o.passive && !o.target)check(o.path?.length>=2 && o.path.every(p=>p.length===2 && p.every(percent)) && Number.isFinite(o.tolerance) && o.tolerance>0,'trace path');if(o.destinationWidth!==undefined)check(percent(o.destinationWidth) && o.destinationWidth>0 && o.destination,'destination width');if(o.destination)check(o.destination.length===2 && o.destination.every(percent),'destination');}
+    for(const o of s.operation.objects){check(text(o.label) && text(o.action),'object identity');check([o.x,o.y,o.width].every(percent) && o.width>0 && Number.isFinite(o.ratio) && o.ratio>0 && Number.isFinite(o.angle),'object geometry');check(!o.sprite || /^[\w-]+$/.test(o.sprite),'sprite');if(o.minHitSize!==undefined)check(Number.isFinite(o.minHitSize) && o.minHitSize>=44,'hit size');if(o.viewMotion)check(['lookUp','approach'].includes(o.viewMotion),'observation view motion');if(o.gesture)check(['tap','observe','dragToTarget','tracePath','rhythmTap','aimShot','holdBreath'].includes(o.gesture),'object gesture');if(o.gesture==='tracePath' || s.operation.type==='tracePath' && !o.passive && !o.target)check(o.path?.length>=2 && o.path.every(p=>p.length===2 && p.every(percent)) && Number.isFinite(o.tolerance) && o.tolerance>0,'trace path');if(o.destinationWidth!==undefined)check(percent(o.destinationWidth) && o.destinationWidth>0 && o.destination,'destination width');if(o.destination)check(o.destination.length===2 && o.destination.every(percent),'destination');}
     for(const region of Object.values(s.operation.regions || {}))check(['left','right','top','bottom'].every(k=>percent(region[k])) && region.left<region.right && region.top<region.bottom,'region');
     check(s.meter?.length===s.operation.steps.length+1, 'meter event count');
     for(const event of s.meter)check(Number.isInteger(event.state) && text(lesson.meter.states[event.state]) && percent(event.level) && event.level<=3,'meter event');
@@ -72,6 +72,9 @@ export function validateSituationLesson(lesson) {
     }
     check(Number.isFinite(s.beats.result.duration) && s.beats.result.duration>=0 && s.art.views[s.beats.result.view]!==undefined,'result');
     if(['dragToTarget','toolGrab'].includes(s.operation.type) && !s.operation.profile)check(s.operation.regions?.target,'target region');
+    if(s.operation.hoop)check(s.operation.hoop.length===2 && s.operation.hoop.every(percent),'shot hoop');
+    if(s.operation.guaranteed!==undefined)check(typeof s.operation.guaranteed==='boolean','guaranteed shot');
+    if(['rhythmTap','aimShot','holdBreath'].includes(s.operation.type))check(!s.operation.collect && s.operation.objects.every(o=>!o.passive && !o.target),'sports ordered steps');
     if(s.operation.groups){let end=0;for(const g of s.operation.groups){check(g.from===end && Number.isInteger(g.to) && g.to>g.from && g.to<=s.operation.steps.length,'operation group');end=g.to;}check(end===s.operation.steps.length,'group coverage');}
     if(s.operation.guide===false)check(s.operation.type==='dragToTarget','unguided drag');
     if(s.art.portraitFrame){const f=s.art.portraitFrame;check(percent(f.left) && percent(f.right) && f.right>f.left && [f.top,f.bottom].every(n=>Number.isFinite(n) && n>=0),'portrait evidence frame');}
@@ -96,6 +99,7 @@ export function validateSituationLesson(lesson) {
     for(const t of s.strategies || []){
       check(strategyTypes.includes(t.type) && text(t.id) && text(t.prompt),'strategy identity');refs(t.refs);check(t.refs.length>0,'strategy evidence');
       check(t.options?.length>=1 && t.options.length<=3,'strategy option count');
+      if(t.revealOnResult)check(t.type==='predict' && text(t.resultReminder),'result prediction reminder');
       if(t.type==='predict'){check(t.options.length>=2 && t.options.every(text) && t.options.includes('我不確定') && t.answer===undefined,'prediction ungraded');check(t.revealAt && t.refs.some(r=>r.para===t.revealAt.para && r.sentences.includes(t.revealAt.n)),'prediction reveal');}
       else {check(Array.isArray(t.answer) && t.answer.length>0 && t.answer.every(n=>Number.isInteger(n) && t.options[n]),'strategy answer');for(const o of t.options){check(text(o.label) && percent(o.x) && percent(o.y),'strategy hotspot');refs(o.refs);check(o.refs.length>0,'hotspot evidence');if(o.face){check(percent(o.face.width) && percent(o.face.height),'face halo');check(o.markerOffset?.length===2 && o.markerOffset.every(Number.isFinite),'face marker offset');}for(const state of o.states || [])check(text(lesson.meter.states[state]),'strategy meter word');}if(t.type==='emotionClue')check(t.answer.length<=2,'emotion clue count');if(t.type==='causeEffect')check(t.result?.length===2 && t.result.every(percent) && text(t.explanation),'cause result');}
     }
