@@ -38,9 +38,9 @@ for(const mutate of [
  l=>l.scenes[3].strategies[0].options[0].x=101,
  l=>l.scenes[0].questions[0].options.push('第四張'),
 ]){const copy=structuredClone(lesson);mutate(copy);assert.throws(()=>validateSituationLesson(copy));}
-for(const old of [water,shoes]){assert.equal(old.scenes.some(s=>s.timeline || s.strategies),false);validateSituationLesson(old);}
+for(const old of [water,shoes]){assert.ok(old.scenes.every(s=>s.timeline));validateSituationLesson(old);}
 const page=readFileSync(new URL('../src/pages/FirstPersonPage.js',import.meta.url),'utf8');assert.match(page,/if\(scene.timeline\)runTimeline\(\);else setBeat\('intro'\)/);assert.ok(d.timeline.slice(0,6).every(t=>t.hideOperations && t.imageIndex===0));assert.equal(d.timeline[6].hideOperations,undefined);
-console.log('PASS: four strategies, ungraded prediction, duplicate/multiple clues, retry, four summaries, all intro <=8, 4a/4b evidence order, 141 unique ordered units, source/schema rejection, legacy opt-out');
+console.log('PASS: four strategies, ungraded prediction, duplicate/multiple clues, retry, four summaries, all intro <=8, 4a/4b evidence order, 141 unique ordered units, source/schema rejection, backfilled schemas and cover');
 
 // Run actual strategy DOM click handlers; native buttons provide Enter/Space activation.
 const {mountStrategy}=await import('../src/activities/situation/strategies.js');
@@ -80,3 +80,23 @@ try{
  }
 }finally{globalThis.document=previousDocument;}
 console.log('PASS: bag drag/native click, cancel/retry, no revealed contents, explicit continue and cleanup');
+
+// Backfilled lessons use the same mounted handlers. A queued double click must
+// never finish twice or mutate evidence after advancing to the next beat.
+globalThis.document={createElement:tag=>new Element(tag),createTextNode:text=>({textContent:text})};
+try{
+ for(const config of [water,shoes])for(const scene of config.scenes)for(const strategy of scene.strategies || []){
+  const panel=new Element(),plane=new Element(),stage=new Element();let done=0;
+  const dispose=mountStrategy({strategy,panel,plane,stage,states:config.meter.states,onWords(){},onDone(){done++;},focus(){}});
+  let next;
+  if(strategy.type==='predict')next=panel.children.at(-1).children[2].children[0];
+  else{
+   for(const i of strategy.answer){const target=plane.children.find(n=>n.tagName==='button' && n.attrs['aria-label']===strategy.options[i].label);for(let n=0;n<5;n++)target.click();}
+   next=panel.querySelector('[data-strategy-next]');assert.ok(next);assert.equal(done,0);
+  }
+  for(let n=0;n<10;n++)next.click();assert.equal(done,1);
+  const count=plane.children.length;for(const node of plane.children.filter(n=>n.tagName==='button'))node.click();assert.equal(plane.children.length,count);
+  dispose();next.click();assert.equal(done,1);
+ }
+}finally{globalThis.document=previousDocument;}
+console.log('PASS: both backfilled lessons mounted emotion/cause/predict handlers, repeated target/continue/prediction clicks and disposed callbacks advance exactly once');

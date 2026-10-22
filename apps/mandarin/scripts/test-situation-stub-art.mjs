@@ -26,6 +26,6 @@ for(const [w,h] of [[1366,900],[820,1180],[375,812]]){
  assert.ok(238<h*.74-12);
 
 }
-for(const old of [water,shoes])assert.ok(old.scenes.every(s=>!s.art.portraitFrame && !s.strategies && !s.timeline));
+for(const old of [water,shoes])assert.ok(old.scenes.every(s=>!s.art.portraitFrame));
 const css=readFileSync(new URL('../src/styles/first-person.css',import.meta.url),'utf8');assert.match(css,/\.fp-face-ring\{[^}]*pointer-events:none[^}]*background:transparent/);assert.match(css,/\.fp-strategy-bag\.is-open::after\{height:13%\}/);
-console.log('PASS: expression source timing, unobscured face markers, 2.1x grounded pumpkins, consumed pairs, actor/bag/evidence framing, prediction vs subtitle and legacy opt-out');
+console.log('PASS: expression source timing, unobscured face markers, 2.1x grounded pumpkins, consumed pairs, actor/bag/evidence framing, prediction vs subtitle and backfilled schemas and cover');

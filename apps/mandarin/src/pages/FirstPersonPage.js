@@ -133,7 +133,7 @@ export function FirstPersonPage(lesson) {
     clearTimeout(beatTimer); clearTimeout(observationTimer); clearTimeout(idleTimer); actionQuestion = null; destroyWorld(); modal?.close(); modal?.remove(); modal = null; clear(rootBody);
     subtitle?.remove(); subtitle=null; subtitleQueue=[]; clearTimeout(subtitleTimer);
     scene = config.scenes[progress.current]; state = replay || progress.scenes[progress.current]; currentView = scene.view;
-    timelineIndex=0;predictions={};
+    timelineIndex=0;
     beat = 'intro'; root.dataset.beat=beat; playback=createPlayback();
     lastClue = null; feedback = ''; wrong = false;
     const stage = h('div', { class: `fp-world fp-world--${scene.id}`, tabindex: '0', role: 'group', 'aria-label': '第一人稱場景。拖曳環顧，左右鍵轉頭；Tab尋找物件，Enter操作。' });
@@ -174,7 +174,7 @@ export function FirstPersonPage(lesson) {
 
       const panel=h('section',{class:'fp-strategy-panel','aria-label':strategy.prompt});rootBody.append(panel);
       disposeStrategy=mountStrategy({strategy,panel,plane:world.strategyPlane,stage:root.querySelector('.fp-world'),states:config.meter.states,focus:x=>world.focusPoint(x),onWords(words,target){
-        if(!target){const option=strategy.options.find(o=>(o.states || []).some(i=>words.includes(config.meter.states[i])));const event=config.meter.events.find(e=>e.state===option?.states?.[0]);if(event)updateMood(false,null,event);}
+        if(!target){const option=strategy.options.find(o=>(o.states || []).some(i=>words.includes(config.meter.states[i])));const event=config.meter.events?.find(e=>e.state===option?.states?.[0]);if(event)updateMood(false,null,event);}
         const node=root.querySelector('.fp-mood');node.querySelector('.fp-meter-clue')?.remove();const clue=say((target?target+'：':'')+words.join('、'),'span',{class:'fp-clue-words'});clue.classList.add('fp-meter-clue');node.append(clue);
       },onDone(result){if(strategy.type==='predict')predictions[strategy.id]=result.selected[0];finishBeat('strategy');}});
     }else if(entry.kind==='openBag'){
@@ -212,7 +212,7 @@ export function FirstPersonPage(lesson) {
     const ref=subtitleQueue.shift();
     if(!ref) {const done=subtitleAfter;subtitleAfter=null;done?.();return;}
     recordRead(ref);
-    for(const strategy of scene.strategies || [])if(strategy.type==='predict' && strategy.revealAt.para===ref.para && strategy.revealAt.n===ref.n && predictions[strategy.id]!==undefined){
+    for(const strategy of config.scenes.flatMap(s=>s.strategies || []))if(strategy.type==='predict' && strategy.revealAt.para===ref.para && strategy.revealAt.n===ref.n && predictions[strategy.id]!==undefined){
       root.querySelector('.fp-prediction-reminder')?.remove();rootBody.append(h('aside',{class:'fp-prediction-reminder'},[say(predictionReminder(strategy,predictions[strategy.id]))]));
     }
     const readingView=scene.readViews?.[`${ref.para}:${ref.n}`];if(readingView)world?.setView(readingView,{immediate:true});

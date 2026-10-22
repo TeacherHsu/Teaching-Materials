@@ -15,8 +15,8 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   let moodLabel = '', reading = false, currentBeat='intro', resultReady=false, resultArtTimer;
   function stateArt(){
     plane.classList.toggle('fp-result-hide-completed',Boolean(art.hideCompletedOnResult && (['read','question'].includes(currentBeat) || currentBeat==='result' && resultReady)));
-    if(!art.stepImages)return;
-    const index=imageOverride ?? ((['read','question'].includes(currentBeat) || currentBeat==='result' && resultReady) && art.resultImage!==undefined ? art.resultImage : art.stepImages[Math.min(operation.step,art.stepImages.length-1)]);
+    if(!art.stepImages && imageOverride===undefined)return;
+    const index=imageOverride ?? ((['read','question'].includes(currentBeat) || currentBeat==='result' && resultReady) && art.resultImage!==undefined ? art.resultImage : art.stepImages?.[Math.min(operation.step,art.stepImages.length-1)] ?? 0);
     images.forEach((img,i)=>{img.style.opacity=i===index?'1':'0';img.style.transition=calm?'none':'opacity .35s ease';});
   }
   let disposed = false, paused = true, frame = 0, previous = 0, pan = art.views[phase.view] ?? .5, target = pan;
@@ -83,7 +83,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     else wind?.updateMotion();
     interaction.setPaused(paused || document.hidden);
     effects.classList.toggle('fp-art-still', reduced() || paused || document.hidden);
-    if (reduced()) { pan = target; if (art.freezeFirstFrame) images.forEach((img, i) => { img.style.opacity = i ? '0' : '1'; });  }
+    if (reduced()) { pan = target; if (art.freezeFirstFrame && imageOverride===undefined) images.forEach((img, i) => { img.style.opacity = i ? '0' : '1'; });  }
     render(); if (!paused && !document.hidden) frame = requestAnimationFrame(tick);
   }
   plane.addEventListener('focusin', event => { let x=parseFloat(event.target.closest('.fp-object')?.style.left); if(event.target.matches(':focus-visible') && !interaction.dragging && Number.isFinite(x) && imageWidth>width) { target=Math.max(0,Math.min(1,(imageWidth*x/100-width/2)/(imageWidth-width))); resume(); } });
@@ -98,7 +98,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     setView(view, { immediate = false } = {}) { target = art.views[view] ?? .5; if(immediate)pan=target; resume(); },
     look(dx) { if(interaction.dragging) return; target = Math.max(0, Math.min(1, target - dx * 2)); resume(); },
     observeAction() { resume(); },
-    setOptions(options) { imageOverride=options.imageIndex;hideOperations=Boolean(options.hideOperations);plane.classList.toggle('fp-hide-operations',hideOperations); if(options.mood!==undefined)moodLabel=options.mood;if(options.beat && options.beat!==currentBeat){currentBeat=options.beat;clearTimeout(resultArtTimer);resultReady=false;if(currentBeat==='result'){resultArtTimer=setTimeout(()=>{resultReady=true;if(art.resultView){target=art.views[art.resultView] ?? target;pan=target;render();}stateArt();},art.resultDelay || 0);}}stateArt();reading=art.readingZoom!==false && Boolean(options.reading) && !(currentBeat==='result' && art.resultZoom===false); calm = Boolean(options.calm); paused = Boolean(options.paused); lockBeatObjects(plane,Boolean(options.locked));
+    setOptions(options) { if(imageOverride!==undefined && options.imageIndex===undefined && !art.stepImages)images.forEach((img,i)=>{img.style.opacity=i?'0':'1';});imageOverride=options.imageIndex;hideOperations=Boolean(options.hideOperations);plane.classList.toggle('fp-hide-operations',hideOperations); if(options.mood!==undefined)moodLabel=options.mood;if(options.beat && options.beat!==currentBeat){currentBeat=options.beat;clearTimeout(resultArtTimer);resultReady=false;if(currentBeat==='result'){resultArtTimer=setTimeout(()=>{resultReady=true;if(art.resultView){target=art.views[art.resultView] ?? target;pan=target;render();}stateArt();},art.resultDelay || 0);}}stateArt();reading=art.readingZoom!==false && Boolean(options.reading) && !(currentBeat==='result' && art.resultZoom===false); calm = Boolean(options.calm); paused = Boolean(options.paused); lockBeatObjects(plane,Boolean(options.locked));
       plane.inert=paused || Boolean(options.locked);
       resume(); },
     dispose() {

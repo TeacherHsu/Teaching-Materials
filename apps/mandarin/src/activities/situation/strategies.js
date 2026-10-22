@@ -16,13 +16,14 @@ export function storySummary(config, states) {
 }
 
 export function mountStrategy({strategy, panel, plane, stage, states, onWords, onDone, focus}) {
-  let selected=[],result=null,disposed=false;
+  let selected=[],result=null,disposed=false,finished=false;
   const nodes=[],timers=[];
   const say=text=>h('div',{class:'fp-spoken'},[h('p',{},text),SpeakButton({text})]);
   panel.append(say(strategy.prompt));
   const status=h('div',{role:'status','aria-live':'polite'});panel.append(status);
   function message(text){status.replaceChildren(say(text));}
   function choose(index,button){
+    if(disposed || finished)return;
     result=chooseStrategy(strategy,index,selected);if(!result)return;
     selected=result.selected;
     if(strategy.type==='predict'){finish();return;}
@@ -42,7 +43,7 @@ export function mountStrategy({strategy, panel, plane, stage, states, onWords, o
     }
     if(result.complete && !panel.querySelector('[data-strategy-next]'))panel.append(h('button',{type:'button','data-strategy-next':'true',class:'fp-button',onclick:finish},'繼續'));
   }
-  function finish(){if(!disposed)onDone(result);}
+  function finish(){if(disposed || finished)return;finished=true;onDone(result);}
   const wrong=e=>{if(!e.target.closest('button'))message(strategy.hint);};
   if(strategy.type==='predict'){
     const row=h('div',{class:'fp-card-row'});panel.append(row);
