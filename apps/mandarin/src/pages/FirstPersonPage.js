@@ -6,7 +6,7 @@ import { h, clear } from '../utils/dom.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 import { getReading, unlockWithPassword, cryptoAvailable } from '../utils/classroomKey.js';
 import { splitSentences } from '../utils/readingUnits.js';
-import { cancelSpeaking } from '../utils/speech.js';
+import { cancelSpeaking, speak, speechSupported } from '../utils/speech.js';
 import { getFirstPersonLesson, clueRefs } from '../data/firstPersonLesson.js';
 import { answerScene, canAnswer, readProgress, saveProgress, reward } from '../activities/firstPersonCore.js';
 import { mountFirstPersonScene } from '../activities/firstPersonIllustrated.js';
@@ -28,7 +28,7 @@ export function FirstPersonPage(lesson) {
   try { const s = JSON.parse(localStorage.getItem(PREF_KEY)); prefs = { sound: s?.sound === true, animation: ['system','on','off'].includes(s?.animation) ? s.animation : s?.calm ? 'off' : 'system' }; } catch { /* 預設 */ }
   let world, generation = 0, disposed = false, replay = null, lastClue = null, feedback = '', wrong = false, readingVisible = false;
   let subtitle = null, subtitleTimer, subtitleAfter, subtitleQueue = [];
-  let beat = 'intro', beatTimer, playback = createPlayback();
+  let beat = 'intro', beatTimer, playback = createPlayback(), narrationToken = 0;
   let chimeUntil = 0, chimeTimer;
   let stopChime, saved = true, audio, ambientGain, ambientSource, modal, observationTimer;
   let scene, state, sources, currentView, idleTimer, teacherAccess = false, actionQuestion = null;
@@ -100,7 +100,8 @@ export function FirstPersonPage(lesson) {
       gate.append(form, h('a', { href: `#/lesson/${lesson.lesson_id}` }, '← 回到本課')); rootBody.append(gate); return;
     }
     const paragraphs = new Map();
-    for (const s of splitSentences(reading.paras)) { if (!paragraphs.has(s.paraIndex + 1)) paragraphs.set(s.paraIndex + 1, []); paragraphs.get(s.paraIndex + 1).push(s.text); }
+    const sayTexts = new Map();
+    for (const s of splitSentences(reading.paras)) { if (!paragraphs.has(s.paraIndex + 1)) paragraphs.set(s.paraIndex + 1, []); sayTexts.set(`${s.paraIndex + 1}:${paragraphs.get(s.paraIndex + 1).length}`, s.say); paragraphs.get(s.paraIndex + 1).push(s.text); }
     sources = new Map();
     for (const [para, texts] of paragraphs) {
       let speaker = '';
@@ -108,6 +109,7 @@ export function FirstPersonPage(lesson) {
         if(text.startsWith('」')) speaker='';
         if(text.includes('「')) speaker = '師傅';
         sources.set(`sentence:${para}:${n}`, speaker ? `${speaker}：${text}` : text);
+        sources.set(`say:${para}:${n}`, sayTexts.get(`${para}:${n}`) || text);
         if(text.includes('」')) speaker='';
       });
     }
@@ -195,15 +197,30 @@ export function FirstPersonPage(lesson) {
     const controls=[];
     if(beat==='intro')controls.push(button('略過',()=>{subtitleQueue.forEach(recordRead);subtitleQueue=[];nextSubtitle();}));
     else {
-      controls.push(button(playback.automatic?'切換手動':'自動播放',()=>{playback.toggle();clearTimeout(subtitleTimer);if(playback.automatic)subtitleTimer=setTimeout(nextSubtitle,subtitleDuration(line));controls[0].textContent=playback.automatic?'切換手動':'自動播放';}));
+      const autoLabel=()=>playback.automatic?'自動播放：開':'自動播放：關';
+      controls.push(button(autoLabel(),()=>{playback.toggle();clearTimeout(subtitleTimer);controls[0].textContent=autoLabel();controls[0].setAttribute('aria-pressed',String(playback.automatic));if(playback.automatic)narrate();else cancelSpeaking();},{'aria-pressed':String(playback.automatic)}));
       controls.push(button('下一句',nextSubtitle));
     }
     subtitle=h('div',{class:'fp-cinema',role:'group','aria-label':'場景原句'},[
       say(line,'p'),...controls]);
     rootBody.append(subtitle);updateMotion();
-    subtitle.querySelector('.speak-button')?.addEventListener('click',()=>{clearTimeout(subtitleTimer);if(beat==='intro' || playback.automatic)subtitleTimer=setTimeout(nextSubtitle,subtitleDuration(line));});
-    const delay=beat==='intro'?subtitleDuration(line):playback.delay(line);
-    if(delay!==null)subtitleTimer=setTimeout(()=>{if(beat==='intro' && subtitle){subtitle.style.opacity='0';beatTimer=setTimeout(nextSubtitle,calm()?0:200);}else nextSubtitle();},delay);
+    // 自動播放：先用台灣國語把這句念完，再停一下換下一句；沒有語音時退回依字數計時。
+    const token=++narrationToken;
+    const advanceLater=(ms)=>{subtitleTimer=setTimeout(()=>{if(token!==narrationToken)return;if(beat==='intro' && subtitle){subtitle.style.opacity='0';beatTimer=setTimeout(nextSubtitle,calm()?0:200);}else nextSubtitle();},ms);};
+    function narrate(){
+      if(!(beat==='intro' || playback.automatic))return;
+      if(!speechSupported()){advanceLater(subtitleDuration(line));return;}
+      const started=Date.now();
+      // 保險：部分瀏覽器（分頁在背景、語音卡住）不會觸發念完事件，超時就照字數計時前進。
+      const guard=setTimeout(()=>{if(token===narrationToken){narrationToken++;cancelSpeaking();const t=narrationToken;subtitleTimer=setTimeout(()=>{if(t===narrationToken)nextSubtitle();},300);}},subtitleDuration(line)*2+2000);
+      let finished=false;
+      const done=()=>{if(finished)return;finished=true;clearTimeout(guard);clearInterval(watch);if(token!==narrationToken)return;const spoken=Date.now()-started;advanceLater(spoken<300?subtitleDuration(line):600);};
+      speak(sources.get(`say:${ref.para}:${ref.n}`)||line).then(done);
+      // 有些瀏覽器念完不觸發 onend：直接看朗讀狀態，念完就前進。
+      const watch=setInterval(()=>{if(token!==narrationToken){clearInterval(watch);return;}if(Date.now()-started>500 && !window.speechSynthesis.speaking && !window.speechSynthesis.pending)done();},200);
+    }
+    subtitle.querySelector('.speak-button')?.addEventListener('click',()=>{clearTimeout(subtitleTimer);const t=++narrationToken;if(beat==='intro' || playback.automatic)subtitleTimer=setTimeout(()=>{if(t===narrationToken)nextSubtitle();},subtitleDuration(line)+1500);});
+    narrate();
   }
   function reviewReading() {
     const content = h('div', { class: 'fp-sheet-content' });
