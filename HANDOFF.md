@@ -1,5 +1,28 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-10-22｜家中 Mac｜Codex｜老鞋匠修正單1：待 Claude 三尺寸實玩／提交
+- 依本單全程未執行任何 git、未開 Chrome、未提交／推送／部署；只改檔，Claude 接手實玩。
+- 老鞋匠 version 2，排除課前0–6單位，故事7–99共93單位依序唯一覆蓋；新增逐句說話者，字幕顯示人物名、朗讀不念人名。仍驗解密100單位結構、故事hash與原文六詞，原文／密碼不入repo，密文未改。
+- 第1、2幕關閉本課讀文放大上移，第1幕保留剪後皮革並調整臉／皮革同框，第2幕調交鞋焦點。第4幕禮物1.6倍、亮桌面、64px最小熱區與上層點擊，放好後保留至離開鏡頭。
+- night／night-unlit各1次表情編輯（共2次、追加重生0次），新增兩張2400×1024透明無損局部圖層，各<100KiB；原底圖不重壓。PNG、預覽與遮罩程式在repo外first-person-samples/4A12；預覽遮罩外像素差異0。第4幕不套悲傷圖層。
+- 最終 validate、全部96支scripts/test-*.mjs（0失敗）、build、check-dist／assets、build:preview全部通過。未改水滾了設定／素材，原師傅字幕與舊閱讀幾何回歸通過；不宣稱已完成瀏覽器視覺／實機驗收。
+- apps/mandarin/docs/first-person-IMPL-LOG.md「老鞋匠修正單1」列逐檔修改、生成計數與Claude1366×900／820×1180／375×812的字幕、朗讀、疊圖、剪裁、同框、禮物點擊／拖曳／鍵盤及水滾了回歸步驟。
+
+## 2026-10-22｜家中 Mac｜Codex｜老鞋匠：待 Claude 瀏覽器驗收／提交
+- 依本單全程未執行任何git、未開Chrome、未commit／push／合併／部署；Claude接手瀏覽器與提交。
+- 新增115AG4K12四幕情境探索、四題與六個老鞋匠量表詞；正式教室密碼可解現有密文且與本機來源一致。實際密文1段18行100朗讀單位，含課前導讀，依序唯一覆蓋且雜湊全通過；沒有改密文、原文或密碼。
+- 共用操作新增沿線剪裁、同幕分步手勢／顯隱／目標／對焦、狀態圖與延遲結果鏡頭；保留滿版cover、原有字幕／zh-TW自動朗讀與題卡。入口由Vite模板自動發現，不另改路由／Dashboard。
+- 新增10張2400×1024場景WebP（實際皆≤300KiB）及10張透明sprite（≤120KiB）；19次成功生成／8次品質重生，原始PNG與未選版本留repo外first-person-samples/4A12。
+- validate、全部94支scripts/test-*.mjs、build、check-dist／assets、build:preview通過；本課含正式解密100句／量表詞、153次三尺寸物件／介面交集及各步同框、實際handler流程。末次小幅皮革定位後另做針對驗證與最終建置，見實作紀錄。
+- apps/mandarin/docs/first-person-IMPL-LOG.md「老鞋匠」已列句索引、逐檔改動、完整素材／重生清單與Claude三尺寸逐幕實玩步驟。需實玩剪裁／熄燭拉簾／兩次交易／禮物到離開鏡頭、全句朗讀、排序與錯因提示、進度與舊課回歸；沒有聲稱瀏覽器／美術／實機教學驗收完成。
+
+## 2026-10-22｜家中 Mac｜Codex｜情境探索模板化：待 Claude 瀏覽器驗收／提交
+- 依本單只改檔，全程未執行git、未開Chrome、未提交／推送／合併／部署；Claude接手，合併需CF同意。
+- 新增situationLessons課次設定／自動發現／schema、六種共用操作；素材、四拍45句與hash、量表事件、題卡、結尾及橫直向對焦改讀設定。新課只加設定與素材，不需改路由／Dashboard。
+- 為保留〈水滾了〉v9玩家行為，舊操作時序與部分幾何仍用cooking相容配置；既有量表強度標籤保留，新課才強制解鎖後查原文用字。完整相容界線見docs/situation-explore-template.md，未宣稱所有單課特殊程式已消除。
+- validate、93支scripts/test-*.mjs（含既有10支first-person與新增3支）、build、check-dist／assets、build:preview全通過；未增加原句、官方檔、密碼或素材。
+- 新課步驟與無原文範例：apps/mandarin/docs/situation-explore-new-lesson.md。逐檔改動及Claude三尺寸／逐幕／四拍回歸清單：apps/mandarin/docs/first-person-IMPL-LOG.md「模板化」。手機第4幕康康等既有待辦未宣稱修復。
+
 ## 2026-10-22｜Mac｜Claude Code｜狀態：已發布 main（CF 明確同意「合併 推上去」）
 - 課文情境探索〈水滾了〉（原第一人稱探索試作）與斷句後引號修正已合併 main（29682e8）並部署 GitHub Pages 成功。
 - 先前「只備份試作分支、不合併 main」的限制已由 CF 解除；後續修改照一般 main 流程。

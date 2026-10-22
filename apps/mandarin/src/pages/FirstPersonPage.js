@@ -1,6 +1,8 @@
+import { chooseCard, orderCards } from '../activities/situation/operations.js';
+import { meterFor, validateUnlockedLesson } from '../data/situationLessons/schema.js';
 import { animationReduced } from '../activities/firstPersonPreferences.js';
 import { playChime } from '../activities/firstPersonChime.js';
-import { moodFor, subtitlePlan, beatLines, subtitleDuration, nextBeat, createPlayback, createCardOrder } from '../activities/firstPersonPresentation.js';
+import { sentenceSources, moodFor, subtitlePlan, beatLines, subtitleDuration, nextBeat, createPlayback, createCardOrder } from '../activities/firstPersonPresentation.js';
 import { operationComplete } from '../activities/firstPersonInteraction.js';
 import { h, clear } from '../utils/dom.js';
 import { SpeakButton } from '../components/SpeakButton.js';
@@ -58,7 +60,7 @@ export function FirstPersonPage(lesson) {
     if (!AC) return null;
     return audio ||= new AC();
   }); }
-  function updateMotion() { root.classList.toggle('fp-calm', calm()); root.classList.toggle('fp-motion-on', prefs.animation === 'on'); world?.setOptions?.({ calm: calm(), reading: ['result','read'].includes(beat), locked: beat !== 'act' || (scene?.act===4 && state?.operation.step===0), paused: Boolean(Date.now()<chimeUntil || modal?.open || subtitle || root.querySelector('.fp-question-cards')) }); sound(); }
+  function updateMotion() { root.classList.toggle('fp-calm', calm()); root.classList.toggle('fp-motion-on', prefs.animation === 'on'); world?.setOptions?.({ beat, calm: calm(), reading: ['result','read'].includes(beat), locked: beat !== 'act' || (scene?.operation.profile==='cooking-toolGrab' && state?.operation.step===0), paused: Boolean(Date.now()<chimeUntil || modal?.open || subtitle || root.querySelector('.fp-question-cards')) }); sound(); }
   function destroyWorld() { generation++; world?.dispose(); world = null; }
   function close() {
     if (disposed) return; disposed = true; clearTimeout(beatTimer); clearTimeout(chimeTimer); clearTimeout(subtitleTimer); clearTimeout(observationTimer); clearTimeout(idleTimer); destroyWorld(); cancelSpeaking(); audio?.close().catch(() => {});
@@ -89,7 +91,7 @@ export function FirstPersonPage(lesson) {
       const gate = h('section', { class: 'fp-gate' }, [h('p', { class: 'fp-kicker' }, '課文樂園・課文情境探索'), h('h1', {}, config.gateTitle), say(config.introduction)]);
       const input = h('input', { type: 'password', id: 'fp-password', autocomplete: 'off', required: true });
       const status = h('p', { role: 'status' });
-      const submit = button('打開課文，進入食堂', null, { type: 'submit', class: 'fp-button fp-primary' });
+      const submit = button(config.ui.enter, null, { type: 'submit', class: 'fp-button fp-primary' });
       const form = h('form', {}, [h('label', { for: 'fp-password' }, '請老師輸入教室密碼'), input, submit, status]);
       form.addEventListener('submit', async (event) => {
         event.preventDefault(); submit.disabled = true;
@@ -102,19 +104,10 @@ export function FirstPersonPage(lesson) {
     const paragraphs = new Map();
     const sayTexts = new Map();
     for (const s of splitSentences(reading.paras)) { if (!paragraphs.has(s.paraIndex + 1)) paragraphs.set(s.paraIndex + 1, []); sayTexts.set(`${s.paraIndex + 1}:${paragraphs.get(s.paraIndex + 1).length}`, s.say); paragraphs.get(s.paraIndex + 1).push(s.text); }
-    sources = new Map();
-    for (const [para, texts] of paragraphs) {
-      let speaker = '';
-      texts.forEach((text,n) => {
-        if(text.startsWith('」')) speaker='';
-        if(text.includes('「')) speaker = '師傅';
-        sources.set(`sentence:${para}:${n}`, speaker ? `${speaker}：${text}` : text);
-        sources.set(`say:${para}:${n}`, sayTexts.get(`${para}:${n}`) || text);
-        if(text.includes('」')) speaker='';
-      });
-    }
+    sources = sentenceSources(config, paragraphs, sayTexts);
     try {
-      for (const sc of config.scenes) for (const clue of [...sc.clues, ...sc.questions.map(q => ({ id: `question-${q.id}`, refs: q.refs })), ...(sc.act === 4 ? [{ id: 'idiom', refs: config.idiomRefs }] : [])]) {
+      await validateUnlockedLesson(config, paragraphs);
+      for (const sc of config.scenes) for (const clue of [...sc.clues, ...sc.questions.map(q => ({ id: `question-${q.id}`, refs: q.refs })), ...(sc === config.scenes.at(-1) && config.ending.refs?.length ? [{ id: 'idiom', refs: config.ending.refs }] : [])]) {
         const refs = clueRefs(clue, sc, lesson); if (!refs?.length) throw new Error('missing');
         const blocks = [];
         for (const ref of refs) {
@@ -140,7 +133,7 @@ export function FirstPersonPage(lesson) {
     beat = 'intro'; root.dataset.beat=beat; playback=createPlayback();
     lastClue = null; feedback = ''; wrong = false;
     const stage = h('div', { class: `fp-world fp-world--${scene.id}`, tabindex: '0', role: 'group', 'aria-label': '第一人稱場景。拖曳環顧，左右鍵轉頭；Tab尋找物件，Enter操作。' });
-    stage.append(h('div', { class: 'fp-flat', 'aria-hidden': 'true', html: flatScene(scene.id.replace(/^story-/, '')) }));
+    stage.append(h('div', { class: 'fp-flat', 'aria-hidden': 'true', html: scene.art.fallback==='cooking' ? flatScene(scene.id.replace(/^story-/, '')) : '' }));
     const top = h('header', { class: 'fp-topbar' }, [h('a', { href: `#/lesson/${lesson.lesson_id}`, class: 'fp-home', 'aria-label': '回到本課' }, '←'), h('span', {}, `第${scene.act}幕`)]);
     const mood = h('div', { class: 'fp-mood', 'aria-live': 'polite' });
     const controls = h('div', { class: 'fp-controls' }, [mood, button('⚙', showSettings, { 'aria-label': '設定', class: 'fp-gear fp-button' })]);
@@ -153,15 +146,15 @@ export function FirstPersonPage(lesson) {
     stage.addEventListener('pointerup', () => { pointer = null; }); stage.addEventListener('pointercancel', () => { pointer = null; });
     stage.addEventListener('keydown', (e) => { if (e.target !== stage) return; if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) { e.preventDefault(); world?.look(e.key === 'ArrowLeft' ? .08 : e.key === 'ArrowRight' ? -.08 : 0, e.key === 'ArrowUp' ? .05 : e.key === 'ArrowDown' ? -.05 : 0); } });
     const version = generation;
-    mountFirstPersonScene(stage, { phase: { ...scene, id: scene.id.replace(/^story-/, "") }, calm: calm(), operation: state.operation, onChime: chime, onDemoSeen: () => { if(!replay)save(); }, onOperation: () => { if (!replay) save(); updateMood(); if(beat==='act' && operationComplete(scene,state.operation)) setBeat(nextBeat(beat)); else updateMotion(); }, onMode: (label) => { if (version === generation) { mode.textContent = label; mode.hidden = label.startsWith('第一人稱'); } } }).then((controller) => { if (disposed || version !== generation) controller.dispose(); else { world = controller; setBeat('intro'); } });
+    mountFirstPersonScene(stage, { phase: { ...scene, nextImages: config.scenes[progress.current+1]?.art.images, id: scene.id.replace(/^story-/, "") }, calm: calm(), operation: state.operation, onChime: chime, onDemoSeen: () => { if(!replay)save(); }, onOperation: () => { if (!replay) save(); updateMood(); if(beat==='act' && operationComplete(scene,state.operation)) setBeat(nextBeat(beat)); else updateMotion(); }, onMode: (label) => { if (version === generation) { mode.textContent = label; mode.hidden = label.startsWith('第一人稱'); } } }).then((controller) => { if (disposed || version !== generation) controller.dispose(); else { world = controller; setBeat('intro'); } });
     updateMotion(); sound();
   }
 
   function updateMood(remembered = false) {
     const node = root.querySelector('.fp-mood'); if (!node) return;
-    const m = moodFor(scene.act, state.operation.step, remembered);
+    const m = meterFor(config, scene, state.operation.step, remembered);
     clear(node); node.dataset.level = String(m.level);
-    node.append(h('span', {}, m.label), h('span', { class: 'fp-mood-face', 'aria-hidden': 'true' }, m.face), h('i', { style: `--mood:${m.level / 3 * 100}%`, 'aria-hidden': 'true' }), h('span', { class: 'fp-sr' }, `康康：${m.label}`));
+    node.append(h('span', {}, m.label), h('span', { class: 'fp-mood-face', 'aria-hidden': 'true' }, m.face), h('i', { style: `--mood:${m.level / 3 * 100}%`, 'aria-hidden': 'true' }), h('span', { class: 'fp-sr' }, `${config.ui.character}：${m.label}`));
   }
   function setBeat(value) {
     clearTimeout(beatTimer); clearTimeout(subtitleTimer);
@@ -193,7 +186,7 @@ export function FirstPersonPage(lesson) {
     if(!ref) {const done=subtitleAfter;subtitleAfter=null;done?.();return;}
     recordRead(ref);
     const line=sources.get(`sentence:${ref.para}:${ref.n}`);
-    if(ref.para===4 && ref.n===7)updateMood(true);
+    if(ref.para===config.meter.read?.para && ref.n===config.meter.read?.n)updateMood(true);
     const controls=[];
     if(beat==='intro')controls.push(button('略過',()=>{subtitleQueue.forEach(recordRead);subtitleQueue=[];nextSubtitle();}));
     else {
@@ -248,12 +241,12 @@ export function FirstPersonPage(lesson) {
     if(state.done) {
       content.append(say('💧 ' + q.explanation));
       if(progress.current < config.scenes.length-1) content.append(button('下一幕', advance));
-      else { content.append(say('釜底抽薪', 'h3')); config.review.forEach(([title,text])=>content.append(say(`${title}${text}`))); content.append(button('完成・關卡一覽', showScenes)); }
+      else { content.append(say(config.ending.title, 'h3')); config.review.forEach(([title,text])=>content.append(say(`${title}${text}`))); content.append(button('完成・關卡一覽', showScenes)); }
     } else {
       content.append(say(q.stem));
       const choices = h('div', { class: 'fp-card-row' });
       const orderStatus = h('p', {class:'fp-sr', 'aria-live':'polite'}); content.append(orderStatus);
-      const cardOrder = createCardOrder(Array.isArray(q.answer) ? [2,0,1] : q.options.map((_,i)=>i));
+      const cardOrder = orderCards(q.initialOrder || q.options.map((_,i)=>i));
       let dragged = null, suppressClick = false;
       function renderCards() {
         clear(choices);
@@ -262,10 +255,10 @@ export function FirstPersonPage(lesson) {
           const pick = button(q.options[index], () => {
             if(suppressClick) return;
             if(Array.isArray(q.answer)) { cardOrder.toggle(index); renderCards(); }
-            else submitAnswer(index);
+            else submitAnswer(chooseCard(q,index));
           }, { 'data-answer': index, draggable: Array.isArray(q.answer), 'aria-label': Array.isArray(q.answer) ? `${q.options[index]}，點選編號，再點取消；也可拖曳排列` : q.options[index] });
           if(Array.isArray(q.answer)) { const place=cardOrder.selected.indexOf(index); pick.setAttribute('aria-pressed',String(place>=0)); if(place>=0)pick.prepend(h('span',{class:'fp-order-number'},String(place+1))); }
-          if(q.type==='emotion') pick.prepend(h('img', { class:'fp-emotion', src:`${import.meta.env.BASE_URL}assets/first-person/115AG3H04/sprites/${q.images[index]}.webp`, alt:'' }));
+          if(q.type==='emotion') pick.prepend(h('img', { class:'fp-emotion', src:`${import.meta.env.BASE_URL}${config.assetBase}sprites/${q.images[index]}.webp`, alt:'' }));
           pick.ondragstart = () => { dragged=index; };
           pick.ondragover = e => e.preventDefault();
           pick.ondrop = e => { e.preventDefault(); if(dragged===null)return; cardOrder.move(dragged,index); dragged=null; renderCards(); };
@@ -277,7 +270,7 @@ export function FirstPersonPage(lesson) {
         });
       }
       renderCards(); content.append(choices);
-      if(Array.isArray(q.answer)) content.append(button('重新排列',()=>{cardOrder.reset();renderCards();}),button('確認次序',()=>{if(cardOrder.selected.length===q.options.length)submitAnswer(cardOrder.selected);else {orderStatus.textContent='請依序點選三張卡片。';}}));
+      if(Array.isArray(q.answer)) content.append(button('重新排列',()=>{cardOrder.reset();renderCards();}),button('確認次序',()=>{if(cardOrder.selected.length===q.options.length)submitAnswer(cardOrder.selected);else {orderStatus.textContent=`請依序點選${q.options.length===3?'三':q.options.length}張卡片。`;}}));
       if(feedback) content.append(say(feedback,'p',{role:'status',class:'fp-card-feedback'}));
       if(wrong) content.classList.add('fp-wrong');
     }
@@ -313,7 +306,7 @@ export function FirstPersonPage(lesson) {
     for(const [value,label] of [['system','跟隨系統'],['on','開'],['off','關']]) animation.append(h('option',{value,selected:prefs.animation===value},label));
     animation.addEventListener('change',()=>{prefs.animation=animation.value;savePrefs();updateMotion();});
     content.append(h('label',{class:'fp-setting'},['動畫：',animation]));
-    content.append(say('動畫關閉時保留靜態線索；選擇開可供課堂播放所有動畫。', 'p', { class: 'fp-small' }), say('人物、擺設和聲音為閱讀示意。你是跟著康康一起試的小幫手；文字明說的心情才當作事實。', 'p', { class: 'fp-small' }), h('details', {}, [h('summary', {}, '教師資訊與教材依據'), h('p', { class: 'fp-small' }, `${config.source.text}；${config.source.questions}；${config.source.strategy}。核對：${config.source.checked}。`), h('p', { class: 'fp-small' }, '不計時、不扣分；不記學生姓名，不納入原有成績。場景不要求實際操作火或熱水。')]), button('回到食堂', () => modal.close(), { class: 'fp-button fp-primary' }));
+    content.append(say('動畫關閉時保留靜態線索；選擇開可供課堂播放所有動畫。', 'p', { class: 'fp-small' }), say(config.ui.context, 'p', { class: 'fp-small' }), h('details', {}, [h('summary', {}, '教師資訊與教材依據'), h('p', { class: 'fp-small' }, `${config.source.text}；${config.source.questions}；${config.source.strategy}。核對：${config.source.checked}。`), h('p', { class: 'fp-small' }, config.ui.safety)]), button(config.ui.return, () => modal.close(), { class: 'fp-button fp-primary' }));
     sheet('畫面與聲音', content);
   }
   start(); return root;

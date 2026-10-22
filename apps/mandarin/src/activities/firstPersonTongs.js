@@ -17,10 +17,10 @@ export function tongsAction(tool,action,point){
   return false;
 }
 export function mountTongs(plane, options, api){
-  const {state,changed,heat,demonstrate,focus,reduced=()=>false,saveDemo=()=>{}}=options;
+  const {scene,state,changed,heat,demonstrate,focus,reduced=()=>false,saveDemo=()=>{}}=options;
   const {operate,complete,heatFor}=api;
   const layer=document.createElement('div');layer.className='fp-operation fp-act-4 fp-tongs-operation';plane.append(layer);
-  const base=`${import.meta.env?.BASE_URL || '/'}assets/first-person/115AG3H04/sprites/`;
+  const base=`${import.meta.env?.BASE_URL || '/'}${scene.assetBase}sprites/`;
   const status=document.createElement('div');status.className='fp-operation-status';status.setAttribute('role','status');
   const message=document.createElement('span');status.append(message,SpeakButton({text:()=>message.textContent}));plane.parentElement.parentElement.append(status);
   const tool=tongsState(), logs=[];let paused=true,disposed=false,drag=null,demoTimer,idleTimer,handTimer,animations=[],suppress=false;

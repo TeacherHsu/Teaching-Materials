@@ -18,6 +18,6 @@ assert.match(page,/value==='intro' \|\| value==='read'/,'only reading beats crea
 assert.match(page,/subtitleQueue=\[\];nextSubtitle\(\)/,'skip finishes opening queue');
 assert.match(page,/playback.toggle\(\);clearTimeout\(subtitleTimer\)/,'manual switch cancels autoplay');
 assert.match(page,/subtitle\?\.remove\(\); subtitle=null; beat=value/,'act and result remove subtitle DOM');
-assert.match(page,/ref.para===4 && ref.n===7/,'remember state is indexed, not substring dependent');
+assert.match(page,/ref.para===config.meter.read\?\.para && ref.n===config.meter.read\?\.n/,'remember state is indexed, not substring dependent');
 assert.deepEqual(lesson.scenes[2].beats.intro,[]);
 console.log('PASS: four beats, ordered 45-clause coverage, timings, skip/manual wiring, real object lock/restore, subtitle exclusion');
