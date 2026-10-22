@@ -194,13 +194,14 @@ export function LessonDashboard(lesson) {
   root.appendChild(readerEntry(lesson));
   if (getFirstPersonLesson(lesson.lesson_id)) {
     root.appendChild(withEntrySpeak(h('a', {
-      class: 'entry-card entry-card--recite', href: `#/lesson/${lesson.lesson_id}/explore`,
+      class: 'entry-card entry-card--wide entry-card--recite entry-card--explore', href: `#/lesson/${lesson.lesson_id}/explore`,
     }, [
       h('span', { class: 'entry-card__icon', 'aria-hidden': 'true', html: uiIconMarkup('target') }),
       h('span', { class: 'entry-card__body' }, [
-        h('span', { class: 'entry-card__title' }, '第一人稱課文探索・單課試作'),
-        h('span', { class: 'entry-card__desc' }, '走進食堂，找線索、讀原句，想想解決問題的方法。'),
+        h('span', { class: 'entry-card__title' }, '課文情境探索'),
+        h('span', { class: 'entry-card__desc' }, '走進課文場景，動手試一試。'),
       ]),
+      h('span', { class: 'entry-card__arrow', 'aria-hidden': 'true', html: STATUS_ICONS.arrow }),
     ])));
   }
 

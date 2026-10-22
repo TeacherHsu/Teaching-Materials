@@ -20,7 +20,7 @@ const emptyState = () => ({ operation: { step: 0 }, found: [], done: false, hint
 export function FirstPersonPage(lesson) {
   const config = getFirstPersonLesson(lesson.lesson_id);
   const root = h('div', { class: 'fp-page' });
-  if (!config) { root.append(say('這一課還沒有第一人稱探索試作。')); return root; }
+  if (!config) { root.append(say('這一課還沒有課文情境探索。')); return root; }
   document.body.classList.add('fp-immersive');
   let progress;
   try { progress = readProgress(config, localStorage); } catch { progress = readProgress(config, null); }
@@ -85,7 +85,7 @@ export function FirstPersonPage(lesson) {
     clear(rootBody);
     const reading = getReading(lesson.lesson_id);
     if (!reading) {
-      const gate = h('section', { class: 'fp-gate' }, [h('p', { class: 'fp-kicker' }, '課文樂園・第一人稱探索'), h('h1', {}, config.gateTitle), say(config.introduction)]);
+      const gate = h('section', { class: 'fp-gate' }, [h('p', { class: 'fp-kicker' }, '課文樂園・課文情境探索'), h('h1', {}, config.gateTitle), say(config.introduction)]);
       const input = h('input', { type: 'password', id: 'fp-password', autocomplete: 'off', required: true });
       const status = h('p', { role: 'status' });
       const submit = button('打開課文，進入食堂', null, { type: 'submit', class: 'fp-button fp-primary' });
