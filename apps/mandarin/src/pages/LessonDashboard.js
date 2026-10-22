@@ -16,6 +16,7 @@ import { redoSentences } from '../utils/madeSentences.js';
 import { mistakeEntry } from './MistakePage.js';
 import { loadHanziParts } from '../utils/hanziParts.js';
 import { quizEntry } from './QuizPage.js';
+import { getFirstPersonLesson } from '../data/firstPersonLesson.js';
 
 const STATUS_CLASS = {
   done: 'module-card__status--done',
@@ -191,6 +192,17 @@ export function LessonDashboard(lesson) {
   const quizSlot = h('div', {});
 
   root.appendChild(readerEntry(lesson));
+  if (getFirstPersonLesson(lesson.lesson_id)) {
+    root.appendChild(withEntrySpeak(h('a', {
+      class: 'entry-card entry-card--recite', href: `#/lesson/${lesson.lesson_id}/explore`,
+    }, [
+      h('span', { class: 'entry-card__icon', 'aria-hidden': 'true', html: uiIconMarkup('target') }),
+      h('span', { class: 'entry-card__body' }, [
+        h('span', { class: 'entry-card__title' }, '第一人稱課文探索・單課試作'),
+        h('span', { class: 'entry-card__desc' }, '走進食堂，找線索、讀原句，想想解決問題的方法。'),
+      ]),
+    ])));
+  }
 
   // 小考放在所有大項之後：先練完各站，再混在一起考。
   const quiz = quizEntry(lesson);
