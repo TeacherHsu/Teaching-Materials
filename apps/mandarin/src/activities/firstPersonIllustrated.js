@@ -1,6 +1,6 @@
 import { lockBeatObjects } from './firstPersonPresentation.js';
 import { mountChimeWind } from './firstPersonChime.js';
-import { illustrationLayout } from './firstPersonLayout.js';
+import { illustrationLayout, sceneIllustrationLayout } from './firstPersonLayout.js';
 import { mountOperation } from './firstPersonInteraction.js';
 import { FIRST_PERSON_ILLUSTRATIONS } from '../data/firstPersonLesson.js';
 
@@ -13,6 +13,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   host.classList.add('is-illustrated');
   let reading = false, currentBeat='intro', resultReady=false, resultArtTimer;
   function stateArt(){
+    plane.classList.toggle('fp-result-hide-completed',Boolean(art.hideCompletedOnResult && (['read','question'].includes(currentBeat) || currentBeat==='result' && resultReady)));
     if(!art.stepImages)return;
     const index=(['read','question'].includes(currentBeat) || currentBeat==='result' && resultReady) && art.resultImage!==undefined ? art.resultImage : art.stepImages[Math.min(operation.step,art.stepImages.length-1)];
     images.forEach((img,i)=>{img.style.opacity=i===index?'1':'0';img.style.transition=calm?'none':'opacity .35s ease';});
@@ -25,6 +26,15 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     img.onload = () => { if (!disposed) { host.classList.remove('fp-image-failed'); onMode?.('第一人稱・插畫探索'); render(); } };
     img.onerror = () => { if (!disposed && i === 0) { host.classList.add('fp-image-failed'); onMode?.('圖片暫時無法載入，仍可用下方線索讀文與闖關。'); } };
     img.src = base + file; plane.append(img); return img;
+  });
+  // Sparse expression overlays share their base frame's geometry and opacity.
+  // All pixels outside the face/shoulder masks keep the original base image.
+  const expressionOverlays=images.flatMap((baseImage,i)=>{
+    const file=art.expressionOverlays?.[art.images[i]];
+    if(!file)return [];
+    const img=new Image();img.alt='';img.draggable=false;img.className='fp-illustration-frame';img.setAttribute('aria-hidden','true');
+    img.src=base+file;img.style.opacity=baseImage.style.opacity;plane.append(img);
+    return [{img,baseImage}];
   });
   const effects = document.createElement('div'); effects.style.zIndex = '2'; effects.className = 'fp-illustration-effects'; plane.append(effects);
   for (const [kind, point] of Object.entries(art.effects || {})) {
@@ -41,10 +51,10 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   function render() {
     if (disposed) return;
     width = host.clientWidth;
-    const geometry=illustrationLayout(width,host.clientHeight * (reading ? 1.3 : 1),pan,art.aspect);
+    const geometry=sceneIllustrationLayout(width,host.clientHeight,pan,art,reading);
     ({imageHeight,imageWidth,top}=geometry);
-    if(reading)top-=host.clientHeight*.3;
     const left=geometry.left;
+    for(const {img,baseImage} of expressionOverlays){img.style.opacity=baseImage.style.opacity;img.style.transition=baseImage.style.transition;}
     layer.style.top = `${top}px`; layer.style.height = `${imageHeight}px`;
     plane.style.width = `${imageWidth}px`; plane.style.transform = `translateX(${left}px)`;
     const points = {};
@@ -83,12 +93,12 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     setView(view) { target = art.views[view] ?? .5; resume(); },
     look(dx) { if(interaction.dragging) return; target = Math.max(0, Math.min(1, target - dx * 2)); resume(); },
     observeAction() { resume(); },
-    setOptions(options) { if(options.beat && options.beat!==currentBeat){currentBeat=options.beat;clearTimeout(resultArtTimer);resultReady=false;if(currentBeat==='result'){resultArtTimer=setTimeout(()=>{resultReady=true;if(art.resultView){target=art.views[art.resultView] ?? target;pan=target;render();}stateArt();},art.resultDelay || 0);}}stateArt();reading=Boolean(options.reading) && !(currentBeat==='result' && art.resultZoom===false); calm = Boolean(options.calm); paused = Boolean(options.paused); lockBeatObjects(plane,Boolean(options.locked));
+    setOptions(options) { if(options.beat && options.beat!==currentBeat){currentBeat=options.beat;clearTimeout(resultArtTimer);resultReady=false;if(currentBeat==='result'){resultArtTimer=setTimeout(()=>{resultReady=true;if(art.resultView){target=art.views[art.resultView] ?? target;pan=target;render();}stateArt();},art.resultDelay || 0);}}stateArt();reading=art.readingZoom!==false && Boolean(options.reading) && !(currentBeat==='result' && art.resultZoom===false); calm = Boolean(options.calm); paused = Boolean(options.paused); lockBeatObjects(plane,Boolean(options.locked));
       plane.inert=paused || Boolean(options.locked);
       resume(); },
     dispose() {
       disposed = true;clearTimeout(resultArtTimer); wind?.dispose(); interaction.dispose(); cancelAnimationFrame(frame); resize.disconnect(); media.removeEventListener('change', resume); document.removeEventListener('visibilitychange', resume);
-      [...images, ...preloads].forEach(img => { img.onload = img.onerror = null; img.removeAttribute('src'); }); layer.remove(); host.classList.remove('is-illustrated', 'fp-image-failed');
+      [...images, ...preloads,...expressionOverlays.map(o=>o.img)].forEach(img => { img.onload = img.onerror = null; img.removeAttribute('src'); }); layer.remove(); host.classList.remove('is-illustrated', 'fp-image-failed');
     },
   };
 }

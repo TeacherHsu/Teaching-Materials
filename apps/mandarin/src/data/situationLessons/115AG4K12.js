@@ -2,7 +2,7 @@
 export default {
   "schemaVersion": 1,
   "lessonId": "115AG4K12",
-  "version": 1,
+  "version": 2,
   "title": "鞋店裡的閱讀線索",
   "gateTitle": "老鞋匠和小精靈",
   "introduction": "跟著老鞋匠一起試。先動手、看結果，再讀原句找線索。",
@@ -20,7 +20,7 @@ export default {
   "ui": {
     "enter": "走進鞋店",
     "return": "回到鞋店",
-    "speaker": "故事中的人物",
+    "speaker": "",
     "character": "老鞋匠",
     "context": "插畫為閱讀示意；情緒詞只採課文對老鞋匠的描述。",
     "safety": "只操作畫面中的物件。"
@@ -56,6 +56,7 @@ export default {
         "images": [
           "night.webp"
         ],
+        "expressionOverlays": {"night.webp": "night-expression.webp"},
         "aspect": [
           2400,
           1024
@@ -63,12 +64,13 @@ export default {
         "hotspots": {},
         "effects": {},
         "views": {
-          "work": 0.5
+          "work": 0.34
         },
         "orientationFocus": {
-          "landscape": 50,
-          "portrait": 50
-        }
+          "landscape": 41,
+          "portrait": 40
+        },
+        "readingZoom": false
       },
       "operation": {
         "type": "tracePath",
@@ -79,9 +81,9 @@ export default {
           {
             "action": "leather",
             "label": "最後的皮革",
-            "x": 50,
+            "x": 40,
             "y": 65,
-            "width": 18,
+            "width": 13,
             "ratio": 0.6,
             "angle": 0,
             "sprite": "leather",
@@ -91,7 +93,7 @@ export default {
           {
             "action": "cut",
             "label": "沿虛線剪裁；鍵盤可連按五次逐步剪",
-            "x": 43,
+            "x": 33,
             "y": 65,
             "width": 5.5,
             "ratio": 1,
@@ -99,23 +101,23 @@ export default {
             "sprite": "scissors",
             "path": [
               [
-                43,
+                33,
                 65
               ],
               [
-                46.5,
+                36.5,
                 65
               ],
               [
-                50,
+                40,
                 65
               ],
               [
-                53.5,
+                43.5,
                 65
               ],
               [
-                57,
+                47,
                 65
               ]
             ],
@@ -125,9 +127,9 @@ export default {
           {
             "action": "cut-piece",
             "label": "剪好的皮革上半部",
-            "x": 50,
+            "x": 40,
             "y": 63,
-            "width": 18,
+            "width": 13,
             "ratio": 0.28,
             "angle": 0,
             "sprite": "leather-top",
@@ -137,9 +139,9 @@ export default {
           {
             "action": "cut-off",
             "label": "剪下並脫離的皮革",
-            "x": 50,
-            "y": 70,
-            "width": 18,
+            "x": 40,
+            "y": 68,
+            "width": 13,
             "ratio": 0.28,
             "angle": 0,
             "sprite": "leather-bottom",
@@ -153,7 +155,12 @@ export default {
         "prompts": [
           "按住剪刀沿虛線剪。",
           "皮革已剪好。"
-        ]
+        ],
+        "focus": [
+          40,
+          40
+        ],
+        "keepCompleted": true
       },
       "meter": [
         {
@@ -170,13 +177,6 @@ export default {
           {
             "para": 1,
             "sentences": [
-              0,
-              1,
-              2,
-              3,
-              4,
-              5,
-              6,
               7,
               8,
               9,
@@ -194,13 +194,6 @@ export default {
               21
             ],
             "sha": [
-              "fb5d242b",
-              "1ebc4278",
-              "6440dec9",
-              "ec206b0d",
-              "9b1eb304",
-              "c65db568",
-              "ed7a5803",
               "08ae9469",
               "929eb995",
               "0b7be14c",
@@ -258,13 +251,6 @@ export default {
             {
               "para": 1,
               "sentences": [
-                0,
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
                 7,
                 8,
                 9,
@@ -288,13 +274,6 @@ export default {
                 27
               ],
               "sha": [
-                "fb5d242b",
-                "1ebc4278",
-                "6440dec9",
-                "ec206b0d",
-                "9b1eb304",
-                "c65db568",
-                "ed7a5803",
                 "08ae9469",
                 "929eb995",
                 "0b7be14c",
@@ -389,17 +368,18 @@ export default {
         "hotspots": {},
         "effects": {},
         "views": {
-          "work": 0.5
+          "work": 0.65
         },
         "orientationFocus": {
-          "landscape": 61.5,
-          "portrait": 61.5
+          "landscape": 62,
+          "portrait": 62
         },
         "stepImages": [
           0,
           0,
           1
-        ]
+        ],
+        "readingZoom": false
       },
       "operation": {
         "type": "dragToTarget",
@@ -480,7 +460,7 @@ export default {
           }
         },
         "focus": [
-          61.5,
+          62,
           69.5,
           69.5
         ],
@@ -678,6 +658,7 @@ export default {
           "midnight-shoes.webp",
           "midnight-finished.webp"
         ],
+        "expressionOverlays": {"night-unlit.webp": "night-unlit-expression.webp"},
         "aspect": [
           2400,
           1024
@@ -1120,11 +1101,12 @@ export default {
         "stepImages": [
           0,
           0,
-          1
+          0
         ],
         "resultImage": 2,
         "resultDelay": 1800,
-        "resultView": "depart"
+        "resultView": "depart",
+        "hideCompletedOnResult": true
       },
       "operation": {
         "type": "dragToTarget",
@@ -1136,32 +1118,32 @@ export default {
           {
             "action": "clothes",
             "label": "把小衣裳放到桌上",
-            "x": 44,
-            "y": 71,
-            "width": 6,
+            "x": 45,
+            "y": 63,
+            "width": 9.6,
             "ratio": 0.6,
             "angle": 0,
             "sprite": "clothes",
-            "toStep": 1,
             "destination": [
-              49,
-              64
-            ]
+              45,
+              63
+            ],
+            "minHitSize": 64
           },
           {
             "action": "little-shoes",
             "label": "把小鞋子放到桌上",
-            "x": 56,
-            "y": 71,
-            "width": 6,
+            "x": 55,
+            "y": 63,
+            "width": 9.6,
             "ratio": 0.6,
             "angle": 0,
             "sprite": "little-shoes",
-            "toStep": 1,
             "destination": [
-              53,
-              64
-            ]
+              55,
+              63
+            ],
+            "minHitSize": 64
           },
           {
             "action": "table",
@@ -1186,9 +1168,9 @@ export default {
         ],
         "regions": {
           "target": {
-            "left": 46,
-            "right": 56,
-            "top": 59,
+            "left": 39,
+            "right": 61,
+            "top": 56,
             "bottom": 69
           }
         },
@@ -1196,7 +1178,8 @@ export default {
           "擺上兩份禮物。",
           "擺上另一份禮物。",
           "禮物都擺好了。"
-        ]
+        ],
+        "keepCompleted": true
       },
       "meter": [
         {
@@ -1493,5 +1476,115 @@ export default {
       "回應善意：",
       "說說夫妻倆用哪些行動答謝幫手。"
     ]
-  ]
+  ],
+  "excludedUnits": [
+    {
+      "para": 1,
+      "sentences": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "storySentenceCount": 93,
+  "speakers": {
+    "1:7": "",
+    "1:8": "",
+    "1:9": "",
+    "1:10": "",
+    "1:11": "",
+    "1:12": "",
+    "1:13": "",
+    "1:14": "",
+    "1:15": "",
+    "1:16": "",
+    "1:17": "",
+    "1:18": "",
+    "1:19": "",
+    "1:20": "",
+    "1:21": "",
+    "1:22": "",
+    "1:23": "",
+    "1:24": "",
+    "1:25": "老鞋匠",
+    "1:26": "老鞋匠",
+    "1:27": "老鞋匠",
+    "1:28": "",
+    "1:29": "",
+    "1:30": "",
+    "1:31": "",
+    "1:32": "",
+    "1:33": "顧客",
+    "1:34": "顧客",
+    "1:35": "",
+    "1:36": "",
+    "1:37": "",
+    "1:38": "",
+    "1:39": "",
+    "1:40": "",
+    "1:41": "",
+    "1:42": "",
+    "1:43": "",
+    "1:44": "",
+    "1:45": "",
+    "1:46": "",
+    "1:47": "老鞋匠",
+    "1:48": "",
+    "1:49": "妻子",
+    "1:50": "妻子",
+    "1:51": "",
+    "1:52": "",
+    "1:53": "",
+    "1:54": "小精靈",
+    "1:55": "小精靈",
+    "1:56": "小精靈",
+    "1:57": "",
+    "1:58": "",
+    "1:59": "",
+    "1:60": "",
+    "1:61": "",
+    "1:62": "",
+    "1:63": "",
+    "1:64": "",
+    "1:65": "",
+    "1:66": "",
+    "1:67": "",
+    "1:68": "",
+    "1:69": "",
+    "1:70": "",
+    "1:71": "",
+    "1:72": "",
+    "1:73": "",
+    "1:74": "",
+    "1:75": "老鞋匠",
+    "1:76": "老鞋匠",
+    "1:77": "",
+    "1:78": "妻子",
+    "1:79": "妻子",
+    "1:80": "妻子",
+    "1:81": "",
+    "1:82": "",
+    "1:83": "",
+    "1:84": "",
+    "1:85": "小精靈",
+    "1:86": "小精靈",
+    "1:87": "小精靈",
+    "1:88": "小精靈",
+    "1:89": "小精靈",
+    "1:90": "小精靈",
+    "1:91": "",
+    "1:92": "",
+    "1:93": "",
+    "1:94": "小精靈",
+    "1:95": "小精靈",
+    "1:96": "",
+    "1:97": "",
+    "1:98": "",
+    "1:99": ""
+  }
 };

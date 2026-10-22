@@ -1,3 +1,4 @@
+import { isStoryUnit } from '../data/situationLessons/schema.js';
 // Only event-backed states; intermediate positions describe intensity, not new emotions.
 export function moodFor(act, step, remembered = false) {
   const level = act === 1 ? 0 : act === 2 ? Math.min(3, 1 + step) : act === 3 ? 3 : [3, 3, 2, 1, 0][Math.min(4, step)];
@@ -39,4 +40,22 @@ export function lockBeatObjects(plane, locked) {
     if(locked) { if(!el.hasAttribute('data-beat-disabled'))el.dataset.beatDisabled=String(el.disabled); el.disabled=true; }
     else if(el.hasAttribute('data-beat-disabled')) { el.disabled=el.dataset.beatDisabled==='true';delete el.dataset.beatDisabled; }
   }
+}
+
+// Source text remains in memory after the normal classroom gate. Labels are display-only.
+export function sentenceSources(config, paragraphs, sayTexts) {
+  const sources=new Map();
+  for(const [para,texts] of paragraphs){
+    let speaker='';
+    texts.forEach((text,n)=>{
+      if(!isStoryUnit(config,para,n))return;
+      if(text.startsWith('」'))speaker='';
+      if(text.includes('「'))speaker=config.ui.speaker;
+      const label=config.speakers ? config.speakers[`${para}:${n}`] : speaker;
+      sources.set(`sentence:${para}:${n}`,label ? `${label}：${text}` : text);
+      sources.set(`say:${para}:${n}`,sayTexts.get(`${para}:${n}`) || text);
+      if(text.includes('」'))speaker='';
+    });
+  }
+  return sources;
 }

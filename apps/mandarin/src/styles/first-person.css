@@ -313,3 +313,11 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 
 /* Keep progress visible even when a narrow task line needs an ellipsis. */
 .fp-page .fp-operation-status>.fp-operation-count { flex:0 0 auto;overflow:visible;white-space:nowrap;min-width:36px; }
+
+/* Opt-in lesson setting: retain completed physical objects on the illustrated table. */
+.fp-page .fp-keep-completed.fp-operation-complete { opacity:1; border:0; box-shadow:none; pointer-events:none; }
+.fp-result-hide-completed .fp-keep-completed.fp-operation-complete { visibility:hidden; }
+.fp-generic-operation .fp-object::before { min-width:var(--fp-hit-size,44px); min-height:var(--fp-hit-size,44px); }
+
+/* Completed-object lessons keep the gifts above their tabletop drop target. */
+.fp-keep-completed .fp-object:not(.fp-drop-target) { z-index:1; }

@@ -48,7 +48,7 @@ export function mountConfiguredOperation(plane, options, api) {
   const available=o=>state.step>=(o.fromStep ?? 0) && state.step<=(o.toStep ?? config.steps.length);
   let traceProgress=0, lastStep=state.step;
   const base=`${import.meta.env?.BASE_URL || '/'}${scene.assetBase}sprites/`;
-  const layer=document.createElement('div');layer.className='fp-operation fp-generic-operation';plane.append(layer);
+  const layer=document.createElement('div');layer.className=`fp-operation fp-generic-operation${config.keepCompleted?' fp-keep-completed':''}`;plane.append(layer);
   const status=document.createElement('div');status.className='fp-operation-status';status.setAttribute('role','status');
   const message=document.createElement('span'),counter=document.createElement('span');counter.className='fp-operation-count';status.append(message,counter,SpeakButton({text:()=>`${message.textContent}（${state.step}／${config.steps.length}）`}));plane.parentElement.parentElement.append(status);
   let paused=true,disposed=false,selected=null,drag=null,suppress=false,timer,demoTimer,animation,handAnimation,bubble,toolReady=false,gripped=null;
@@ -123,6 +123,7 @@ export function mountConfiguredOperation(plane, options, api) {
   }
   for(const o of config.objects){
     const el=document.createElement('button');el.type='button';el.className=`fp-object ${o.target?'fp-drop-target fp-glow':''}`;el.dataset.action=o.action;el.setAttribute('aria-label',o.label);
+    if(o.minHitSize)el.style.setProperty('--fp-hit-size',`${o.minHitSize}px`);
     el.style.width=`${o.width}%`;el.style.aspectRatio=String(1/o.ratio);el.style.rotate=`${o.angle}deg`;pos(el,o.x,o.y);
     if(o.sprite){const img=new Image();img.src=base+o.sprite+'.webp';img.alt='';img.draggable=false;el.append(img);}else if(!o.target && !o.hotspot)el.textContent=o.label;
     if(o.hotspot)el.classList.add('fp-glow');

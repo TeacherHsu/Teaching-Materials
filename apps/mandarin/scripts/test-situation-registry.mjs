@@ -27,3 +27,13 @@ try {
  assert.equal(getFirstPersonLesson('115AG3H04').sentenceCount,45);
 }finally{await app.close();}
 console.log('PASS: real Vite getter exposes shoemaker and retains the cooking lesson');
+const {default:shoemaker}=await import('../src/data/situationLessons/115AG4K12.js');
+const {default:cooking}=await import('../src/data/situationLessons/115AG3H04.js');
+const {storyUnitKeys}=await import('../src/data/situationLessons/schema.js');
+assert.equal(storyUnitKeys(shoemaker).length,93);
+assert.equal(storyUnitKeys(shoemaker)[0],'1:7');
+assert.equal(storyUnitKeys(cooking).length,45);
+assert.equal(cooking.ui.speaker,'師傅');
+assert.equal(cooking.excludedUnits,undefined);
+assert.ok(cooking.scenes.every(s=>s.art.readingZoom===undefined));
+console.log('PASS: registry lessons retain independent story boundaries, speakers and framing defaults');

@@ -8,7 +8,7 @@ for(const file of await readdir(directory)){
   const {default:lesson}=await import(new URL(file,directory));validateSituationLesson(lesson);count++;
   assert.equal(file,`${lesson.lessonId}.js`);
   for(const scene of lesson.scenes){
-    const assets=[...scene.art.images,...scene.operation.objects.filter(o=>o.sprite).map(o=>`sprites/${o.sprite}.webp`),...scene.questions.flatMap(q=>(q.images || []).map(f=>`sprites/${f}.webp`))];
+    const assets=[...scene.art.images,...Object.values(scene.art.expressionOverlays || {}),...scene.operation.objects.filter(o=>o.sprite).map(o=>`sprites/${o.sprite}.webp`),...scene.questions.flatMap(q=>(q.images || []).map(f=>`sprites/${f}.webp`))];
     for(const file of assets){const info=await stat(new URL(`../public/${lesson.assetBase}${file}`,import.meta.url));assert.ok(info.size>0 && info.size<=300*1024,`asset limit: ${file}`);}
   }
   const mutate=fn=>{const copy=structuredClone(lesson);fn(copy);assert.throws(()=>validateSituationLesson(copy));};
@@ -42,3 +42,15 @@ await validateUnlockedLesson(synthetic,paragraphs);
 synthetic.meter.states[0]='absent';await assert.rejects(()=>validateUnlockedLesson(synthetic,paragraphs),/meter source word/);
 synthetic.meter.states[0]='fixture';paragraphs.get(1)[0]='changed';await assert.rejects(()=>validateUnlockedLesson(synthetic,paragraphs),/unlocked hash/);
 console.log(`PASS: ${count} lesson schemas; full coverage, hashes, meter terms/events, types, coordinates; unlocked hash and source-word rejection`);
+
+const {default:shoemaker}=await import('../src/data/situationLessons/115AG4K12.js');
+for(const change of [
+ l=>l.excludedUnits[0].sentences.push(0),
+ l=>l.excludedUnits[0].sentences.push(100),
+ l=>l.storySentenceCount=100,
+ l=>delete l.speakers['1:25'],
+ l=>l.speakers['1:25']='故事中的人物',
+ l=>{l.scenes[0].beats.intro[0].sentences.unshift(0);l.scenes[0].beats.intro[0].sha.unshift('fb5d242b');},
+ l=>l.scenes[3].operation.objects[0].minHitSize=32,
+]){const copy=structuredClone(shoemaker);change(copy);assert.throws(()=>validateSituationLesson(copy));}
+console.log('PASS: story-only coverage rejects excluded refs, invalid exclusions/count, missing speakers and undersized hit regions');

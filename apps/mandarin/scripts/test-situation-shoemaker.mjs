@@ -13,7 +13,7 @@ import { freshProgress, restoreProgress, answerScene } from '../src/activities/f
 validateSituationLesson(lesson);
 assert.deepEqual(lesson.scenes.map(s=>s.questions[0].answer).slice(0,3),[0,1,2]);
 assert.deepEqual(lesson.meter.states,['嘆口氣','驚訝','喜出望外','百思不解','嘖嘖稱奇','幸福與喜悅']);
-assert.deepEqual(lesson.scenes.flatMap(s=>beatLines([...s.beats.intro,...s.beats.read]).map(r=>r.n)),Array.from({length:100},(_,i)=>i));
+assert.deepEqual(lesson.scenes.flatMap(s=>beatLines([...s.beats.intro,...s.beats.read]).map(r=>r.n)),Array.from({length:93},(_,i)=>i+7));
 let beat='intro';const beats=[];while(beat){beats.push(beat);beat=nextBeat(beat);}assert.deepEqual(beats,['intro','act','result','read','question']);
 for(const s of lesson.scenes){
  const q=s.questions[0];assert.equal(q.hints.length,3);assert.equal(q.why.length,q.options.length);
@@ -35,7 +35,7 @@ else {
  const configText=readFileSync(new URL('../src/data/situationLessons/115AG4K12.js',import.meta.url),'utf8').replace(/\s/g,'');
  for(let i=0;i<=plain.length-18;i++)assert.equal(configText.includes(plain.slice(i,i+18)),false,'no continuous 18-character source passage in config');
  for(const scene of lesson.scenes)for(const q of scene.questions)assert.ok(q.refs.every(r=>r.sentences.every((n,i)=>scene.clues.flatMap(c=>c.refs).some(c=>c.para===r.para && c.sentences.some((v,j)=>v===n && c.sha[j]===r.sha[i])))) || scene.act===4);
- console.log('PASS: official encrypted 100 units, ordered unique coverage, all SHA-256 refs and six source meter words');
+ console.log('PASS: official encrypted 100 units, 93 story units ordered unique coverage, all SHA-256 refs and six source meter words');
 }
 // Numeric cover rectangles are not a browser layout claim.
 let checks=0;
@@ -62,7 +62,7 @@ for(const [width,height] of [[1366,900],[820,1180],[375,812]])for(const scene of
 }
 // Exercise production event handlers with the actual lesson configuration.
 class Element {
- constructor(){this.children=[];this.style={};this.dataset={};this.attrs={};this.classList={add(){},remove(){},toggle(){}};}
+ constructor(){this.children=[];this.style={setProperty(k,v){this[k]=v;}};this.dataset={};this.attrs={};this.classList={add(){},remove(){},toggle(){}};}
  append(...xs){for(const x of xs){x.parentElement=this;this.children.push(x);}}
  setAttribute(k,v){this.attrs[k]=v;}
  remove(){} getBoundingClientRect(){return {left:0,top:0,width:100,height:100};}
@@ -75,9 +75,9 @@ function setup(scene){const outer=new Element(),host=new Element(),plane=new Ele
 const tick=()=>new Promise(r=>setTimeout(r,1));
 try{
  const cut=setup(lesson.scenes[0]),scissors=cut.find('cut');
- scissors.onpointerdown(event(43,65));scissors.onpointerup(event(57,80));assert.equal(cut.state.step,0,'off-line path rejected');await tick();
- scissors.onpointerdown(event(43,65));scissors.onpointermove(event(50,65));scissors.onpointercancel();assert.equal(cut.state.step,0,'cancel leaves leather intact');
- scissors.onpointerdown(event(43,65));scissors.onpointerup(event(57,65));assert.equal(cut.state.step,1,'coalesced straight sweep visits the dashed route');assert.equal(cut.changes(),1);assert.equal(scissors.hidden,true);cut.controller.dispose();await tick();
+ scissors.onpointerdown(event(33,65));scissors.onpointerup(event(47,80));assert.equal(cut.state.step,0,'off-line path rejected');await tick();
+ scissors.onpointerdown(event(33,65));scissors.onpointermove(event(40,65));scissors.onpointercancel();assert.equal(cut.state.step,0,'cancel leaves leather intact');
+ scissors.onpointerdown(event(33,65));scissors.onpointerup(event(47,65));assert.equal(cut.state.step,1,'coalesced straight sweep visits the dashed route');assert.equal(cut.changes(),1);assert.equal(scissors.hidden,true);cut.controller.dispose();await tick();
  const keyboard=setup(lesson.scenes[0]);for(let i=0;i<4;i++)keyboard.find('cut').onclick();assert.equal(keyboard.state.step,0);keyboard.find('cut').onclick();assert.equal(keyboard.state.step,1);keyboard.controller.dispose();
  const morning=setup(lesson.scenes[1]);assert.equal(morning.find('buy').hidden,true);
  morning.find('sell').onpointerdown(event(58,64));morning.find('sell').onpointerup(event(75,51));assert.equal(morning.state.step,0,'shoe must go to customer, not rack');await tick();
@@ -86,7 +86,7 @@ try{
  const midnight=setup(lesson.scenes[2]);midnight.find('hammer').onclick();assert.equal(midnight.state.step,0);midnight.find('blow').onclick();assert.equal(midnight.state.step,1);
  midnight.find('hide').onpointerdown(event(8,44));midnight.find('hide').onpointerup(event(19,44));assert.equal(midnight.state.step,2);await tick();
  for(const action of ['sew','hammer','arrange'])midnight.find(action).onclick();assert.equal(midnight.state.step,5);assert.equal(midnight.changes(),5);midnight.controller.dispose();
- const gifts=setup(lesson.scenes[3]);for(const action of ['little-shoes','clothes']){gifts.find(action).onclick();gifts.find('table').onclick();}assert.equal(gifts.state.step,2);assert.ok(gifts.find('clothes').hidden && gifts.find('little-shoes').hidden,'sprites yield to gift state image');gifts.find('table').onclick();assert.equal(gifts.changes(),2);
+ const gifts=setup(lesson.scenes[3]);for(const action of ['little-shoes','clothes']){gifts.find(action).onclick();gifts.find('table').onclick();}assert.equal(gifts.state.step,2);assert.ok(!gifts.find('clothes').hidden && !gifts.find('little-shoes').hidden,'enlarged sprites remain on the table until departure');gifts.find('table').onclick();assert.equal(gifts.changes(),2);
  const progress=freshProgress(lesson);progress.scenes[3].operation=gifts.state;gifts.controller.dispose();
  for(const scene of lesson.scenes){const state={operation:operationState(scene,{step:scene.operation.steps.length}),found:scene.clues.map(c=>c.id),questionIndex:0,done:false};assert.ok(operationComplete(scene,state.operation));const result=answerScene(scene,state,scene.questions[0].answer);assert.equal(result.correct,true);assert.equal(state.done,true);}
  const restored=freshProgress(lesson);restored.scenes[0].operation=operationState(lesson.scenes[0],{step:1});assert.equal(restoreProgress(lesson,restored).scenes[0].operation.step,1);

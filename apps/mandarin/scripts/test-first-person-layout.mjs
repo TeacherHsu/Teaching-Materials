@@ -60,3 +60,29 @@ for(const [width,height] of [[1366,900],[820,1180],[375,812]]) {
  }
 }
 console.log('PASS: shared wood/pile camera at 1366x900, 820x1180, 375x812, floor/figure and task clearance');
+
+const {default:shoemaker}=await import('../src/data/situationLessons/115AG4K12.js');
+const {sceneIllustrationLayout}=await import('../src/activities/firstPersonLayout.js');
+const inFrame=(g,box,width,height)=>{
+ const [x,y,w,h]=box;
+ return g.left+g.imageWidth*(x-w/2)/100>=0 && g.left+g.imageWidth*(x+w/2)/100<=width && g.top+g.imageHeight*(y-h/2)/100>=0 && g.top+g.imageHeight*(y+h/2)/100<=height;
+};
+for(const [width,height] of [[1366,900],[820,1180],[375,812]]){
+ const scene=shoemaker.scenes[0];
+ for(const reading of [false,true]){
+  const g=sceneIllustrationLayout(width,height,scene.art.views.work,scene.art,reading);
+  assert.ok(g.imageWidth>=width && g.imageHeight>=height,'full bleed');
+  assert.ok(inFrame(g,[37.5,20,9,22],width,height),'shoemaker full head remains inside result/read frame');
+  for(const o of scene.operation.objects.filter(o=>o.fromStep===1))assert.ok(inFrame(g,[o.x,o.y,o.width,o.width*o.ratio*2400/1024],width,height),'both leather pieces remain with his head');
+ }
+ const sale=shoemaker.scenes[1],initial=illustrationLayout(width,height,.5,sale.art.aspect),center=sale.operation.focus[0];
+ const pan=Math.max(0,Math.min(1,(initial.imageWidth*center/100-width/2)/(initial.imageWidth-width)));
+ const g=sceneIllustrationLayout(width,height,pan,sale.art,false);
+ assert.ok(inFrame(g,[58,64,9,15],width,height),'new shoes');
+ assert.ok(inFrame(g,[66,22,11,27],width,height),'customer full head');
+ if(width/height>=1.4)assert.ok(inFrame(g,[37.5,20,9,22],width,height),'landscape shoemaker in same frame');
+ else {const faceLeft=g.left+g.imageWidth*33/100,faceRight=g.left+g.imageWidth*42/100;assert.ok(faceRight<=0 || faceLeft>=0 && faceRight<=width,'portrait never shows half a shoemaker face');}
+ const old=sceneIllustrationLayout(width,height,.5,{aspect:[2400,1024]},true),legacy=illustrationLayout(width,height*1.3,.5);
+ assert.deepEqual(old,{...legacy,top:legacy.top-height*.3});
+}
+console.log('PASS: shoemaker head/leather result+read, sale framing at three sizes, legacy reading geometry unchanged');

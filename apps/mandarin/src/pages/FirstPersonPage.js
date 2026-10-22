@@ -2,7 +2,7 @@ import { chooseCard, orderCards } from '../activities/situation/operations.js';
 import { meterFor, validateUnlockedLesson } from '../data/situationLessons/schema.js';
 import { animationReduced } from '../activities/firstPersonPreferences.js';
 import { playChime } from '../activities/firstPersonChime.js';
-import { moodFor, subtitlePlan, beatLines, subtitleDuration, nextBeat, createPlayback, createCardOrder } from '../activities/firstPersonPresentation.js';
+import { sentenceSources, moodFor, subtitlePlan, beatLines, subtitleDuration, nextBeat, createPlayback, createCardOrder } from '../activities/firstPersonPresentation.js';
 import { operationComplete } from '../activities/firstPersonInteraction.js';
 import { h, clear } from '../utils/dom.js';
 import { SpeakButton } from '../components/SpeakButton.js';
@@ -104,17 +104,7 @@ export function FirstPersonPage(lesson) {
     const paragraphs = new Map();
     const sayTexts = new Map();
     for (const s of splitSentences(reading.paras)) { if (!paragraphs.has(s.paraIndex + 1)) paragraphs.set(s.paraIndex + 1, []); sayTexts.set(`${s.paraIndex + 1}:${paragraphs.get(s.paraIndex + 1).length}`, s.say); paragraphs.get(s.paraIndex + 1).push(s.text); }
-    sources = new Map();
-    for (const [para, texts] of paragraphs) {
-      let speaker = '';
-      texts.forEach((text,n) => {
-        if(text.startsWith('」')) speaker='';
-        if(text.includes('「')) speaker = config.ui.speaker;
-        sources.set(`sentence:${para}:${n}`, speaker ? `${speaker}：${text}` : text);
-        sources.set(`say:${para}:${n}`, sayTexts.get(`${para}:${n}`) || text);
-        if(text.includes('」')) speaker='';
-      });
-    }
+    sources = sentenceSources(config, paragraphs, sayTexts);
     try {
       await validateUnlockedLesson(config, paragraphs);
       for (const sc of config.scenes) for (const clue of [...sc.clues, ...sc.questions.map(q => ({ id: `question-${q.id}`, refs: q.refs })), ...(sc === config.scenes.at(-1) && config.ending.refs?.length ? [{ id: 'idiom', refs: config.ending.refs }] : [])]) {
