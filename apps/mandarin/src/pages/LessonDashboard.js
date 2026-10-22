@@ -16,6 +16,7 @@ import { redoSentences } from '../utils/madeSentences.js';
 import { mistakeEntry } from './MistakePage.js';
 import { loadHanziParts } from '../utils/hanziParts.js';
 import { quizEntry } from './QuizPage.js';
+import { getFirstPersonLesson } from '../data/firstPersonLesson.js';
 
 const STATUS_CLASS = {
   done: 'module-card__status--done',
@@ -191,6 +192,18 @@ export function LessonDashboard(lesson) {
   const quizSlot = h('div', {});
 
   root.appendChild(readerEntry(lesson));
+  if (getFirstPersonLesson(lesson.lesson_id)) {
+    root.appendChild(withEntrySpeak(h('a', {
+      class: 'entry-card entry-card--wide entry-card--recite entry-card--explore', href: `#/lesson/${lesson.lesson_id}/explore`,
+    }, [
+      h('span', { class: 'entry-card__icon', 'aria-hidden': 'true', html: uiIconMarkup('target') }),
+      h('span', { class: 'entry-card__body' }, [
+        h('span', { class: 'entry-card__title' }, '課文情境探索'),
+        h('span', { class: 'entry-card__desc' }, '走進課文場景，動手試一試。'),
+      ]),
+      h('span', { class: 'entry-card__arrow', 'aria-hidden': 'true', html: STATUS_ICONS.arrow }),
+    ])));
+  }
 
   // 小考放在所有大項之後：先練完各站，再混在一起考。
   const quiz = quizEntry(lesson);

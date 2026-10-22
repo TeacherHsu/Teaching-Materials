@@ -7,6 +7,7 @@ import { LessonDashboard } from './pages/LessonDashboard.js';
 import { ModulePage } from './pages/ModulePage.js';
 import { PendingReviewPage } from './pages/PendingReviewPage.js';
 import { ReaderPage } from './pages/ReaderPage.js';
+import { FirstPersonPage } from './pages/FirstPersonPage.js';
 import { MistakePage } from './pages/MistakePage.js';
 import { QuizPage } from './pages/QuizPage.js';
 import { RecitePage } from './pages/RecitePage.js';
@@ -224,6 +225,15 @@ route(/^\/lesson\/(?<lessonId>[^/]+)\/recite$/, async ({ lessonId }) => {
     return;
   }
   mount(RecitePage(lesson));
+});
+
+route(/^\/lesson\/(?<lessonId>[^/]+)\/explore$/, async ({ lessonId }) => {
+  const lesson = await loadLesson(lessonId);
+  if (!lesson) {
+    mount(h('div', { class: 'container' }, '找不到這一課的資料。'));
+    return;
+  }
+  mount(FirstPersonPage(lesson));
 });
 
 route(/^\/lesson\/(?<lessonId>[^/]+)\/reader$/, async ({ lessonId }) => {

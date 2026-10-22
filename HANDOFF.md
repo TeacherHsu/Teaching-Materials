@@ -1,5 +1,79 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-10-22｜家中 Mac｜Codex｜四拍節奏 v9：待 Claude 實玩確認
+- 依本單只改檔，未執行任何 git、未開 Chrome、未提交／推送／部署。
+- 每幕資料驅動 intro→act→result→read→題卡；45句按順序唯一分配、字幕自動／手動／略過／重聽、操作鎖定、上方任務及第3幕物件對話框、結果鏡頭與已讀回顧。保留題目、cover、極簡結構、量表及既有風鈴／木柴／舀水／火鉗動作。內容version 9。
+- validate、10支first-person測試、全站scripts/test-*.mjs、build、check-dist／assets、build:preview通過；最終程式另重跑first-person與完整建置，保留成功dist。
+- 索引表、逐檔改動及Claude三尺寸清單見 apps/mandarin/docs/first-person-IMPL-LOG.md「四拍節奏」；需確認字幕／鏡頭遮擋、開場與示範時序、四拍轉移、自動／手動／略過、計數量表與手勢回歸。未宣稱瀏覽器驗收完成。
+
+
+## 2026-10-22｜家中 Mac｜Codex｜火鉗：待 Claude 實玩確認
+- 依本單只改檔，未執行任何git、未開Chrome、未提交／推送／部署。內容version 8不變。
+- 第4幕獨立火鉗流程：拿鉗→夾柴→拉到爐外放手；點擊／鍵盤同流程，64px錯開熱區、虛線發亮地面、復位提示、逐根計數／既有heat與mood、地上柴與小火星、一次手勢／提示重播／8秒提醒。保留cover、極簡介面、第1–3幕、量表／字幕機制與結局小火。
+- validate、9支first-person測試、全站89支測試、build、check-dist／assets、build:preview通過。
+- 詳見 apps/mandarin/docs/first-person-IMPL-LOG.md「火鉗」；Claude需三尺寸確認鉗尖錨點、地面位置、拖曳／點擊／鍵盤、放錯與取消、動畫三選一及其他幕回歸。未宣稱瀏覽器視覺驗收完成。
+
+## 2026-10-22｜家中 Mac｜Codex｜木柴引導：待 Claude 實玩確認
+- 遵照本單只改檔，未執行任何 git 指令、未開 Chrome、未提交／推送／部署；不發布 main。
+- 第一幕新增只自動播一次／提示重播的 SVG 手勢、直向灶旁地面木柴與同框視角、虛線空柴堆、拖曳箭頭與接近光暈、具體任務／逐根計數、8秒及12秒閒置提醒（最多三次）。減少動態使用依序亮起／靜態線索。
+- 設定新增動畫跟隨系統／開／關並本機保存；開可覆蓋系統減少動態。保留 cover、極簡結構、風鈴效果參數及其他幕內容／位置，version 8 不變。
+- validate、全站 scripts/test-*.mjs、最終8支first-person測試、build、check-dist／assets、build:preview通過；未做瀏覽器驗收。
+- 詳見 apps/mandarin/docs/first-person-IMPL-LOG.md「木柴引導」。Claude需三尺寸確認同框／人物遮擋、手勢／重載／提示、拖曳與鍵盤、計數、閒置上限、系統減少動態下三種動畫選項及其他幕回歸。
+
+## 2026-10-22｜家中 Mac｜Codex｜風鈴：待 Claude 實玩確認
+- 遵照本單只改檔，未執行任何 git 指令、未開Chrome、未提交／推送／部署。
+- 第一幕底圖局部移除陶瓷風鈴並補天空／遠山（290.7KiB），原畫透明裁切chime.webp（29.2KiB）原位置疊回；原圖備份與PNG存repo外first-person-samples/final。舊竹管bell.webp不再使用。
+- 點風鈴觸發2.5秒左向右風痕、局部葉片輕動、吊繩頂端阻尼擺動與鈴舌延遲；WebAudio三敲陶瓷鈴及輕風聲，遵守音效開關／首次手勢resume；減少動態用短光暈，aria-live提示。保留cover、極簡介面、其他幕位置／行為與內容version 8。
+- validate、8支first-person測試、全站88支測試（0失敗）、build、check-dist／assets、build:preview通過。
+- 詳見apps/mandarin/docs/first-person-IMPL-LOG.md「風鈴」。Claude仍須三尺寸確認擺動自然度、鈴聲、風痕、靜止位置與邊緣吻合、減少動態／靜音／鍵盤及其他幕回歸；沒有宣稱瀏覽器視覺或音色驗收通過。不發布main。
+
+## 2026-10-22｜家中 Mac｜Codex｜修正單2 v8：待 Claude 實玩確認
+- 本單覆蓋git流程：只改檔，全程未執行git、未開Chrome、未提交／推送／部署。
+- 只改apps/mandarin第一人稱探索、相關測試／文件與本交接。修正地面柴堆／單風鈴／勺子避臉、爐內三柴角度大小與爐外保留、逐根降量表及用心記住狀態、排序編號取消重排、完整回饋、不預告解說、快速拖曳端點／路徑判定、小火底圖與最低火焰。內容version 8。
+- 保留滿版cover、極簡介面、字幕流程、量表結構、密文及正常密碼門。原始PNG在repo外first-person-samples/final/act4-small-fire-fix2.png。
+- validate、87支測試0失敗、build、check-dist／assets、build:preview通過；最後視角引導改動後另跑7支本課測試與建置。詳細結果與Claude三尺寸清單見apps/mandarin/docs/first-person-IMPL-LOG.md「修正單2」。
+- 待確認：Chrome／觸控／鍵盤／火勢／遮擋。直向cover無法讓相距甚遠的康康、師傅與爐口同時入鏡，本輪先看康康、示範後轉爐口；未宣稱全尺寸同框達成。仍待CF確認，不發布main。
+
+## 2026-10-22｜家中 Mac｜Codex｜方向A v7：待 CF 試玩確認
+- 依本單只改檔，沒有執行任何 git、開 Chrome、提交／推送／部署；Claude接手實玩。
+- 本課插畫恢復滿版cover、垂直置中與左右環顧；常駐介面縮為返回／幕次、心情量表／齒輪、一行任務。工具收進設定，45句解密原文改每次操作後的逐句電影字幕；每幕1題底部選項卡，幕2表情卡、幕4拖曳排序。
+- 保留修正單1連續舀水、拖柴出爐、小火末態、柴堆累加、竹管風鈴、細柴。沒有改其他課、密文或密碼流程，沒有原文／密碼入repo，沒有外連。
+- 第一輪validate、87支測試、build、check-dist／assets、build:preview全部通過。最終補強字幕矩形後，360次三尺寸版面交集與量表／45句字幕測試通過；最後指令結果見實作紀錄「方向A」。數值模型不代表瀏覽器實際矩形已驗收。
+- Claude請依 apps/mandarin/docs/first-person-IMPL-LOG.md「方向A」逐幕驗證1366×900、820×1180、375×812：滿版／遮擋、字幕朗讀與暫停、連續舀水與量表、抽柴小火末態、觸控／鍵盤排序、設定／回顧／進度／降級；CF驗實機與教學成效。
+
+## 2026-10-22｜家中 Mac｜Codex｜互動改版 v5：待 CF 試玩確認
+- 依本單未執行任何 git 指令；僅改檔，commit／push 由 Claude 處理，未部署。
+- 本課改為四幕各一題：風鈴／撿柴、三輪舀水與表情卡、偵探觀察與推論、師傅示範後抽柴／排序／解密成語卡。保留45句全文覆蓋、密碼流程及v5進度保存。
+- 新增9張透明WebP圖層及2張乾淨／平靜底圖；PNG在repo外first-person-samples/final。只動本課資料／互動／頁面／樣式／測試與文件。
+- 驗證與Claude逐幕實玩清單見 apps/mandarin/docs/first-person-IMPL-LOG.md「互動改版」。手機、iPad、鍵盤、拖曳／點擊、物件遮擋、音效與淡入尚待瀏覽器驗收；沒有宣稱視覺或教學驗收通過。
+
+## 2026-10-22｜家中 Mac｜Codex｜插畫版：待 CF 試玩確認
+- 依本單未執行任何git，未提交／推送／部署；Claude接手試作分支commit／push與瀏覽器實玩。
+- 第一人稱畫面改為本地七張2400×1024 WebP（每張≤300KiB），新firstPersonIllustrated controller；舊3D與motion測試保留，頁面不再載入Three.js。八站、題目、提示、進度、導引、關卡一覽、密碼流程保留；未加入原句、密碼、官方檔案、測試解鎖入口或外部素材。
+- 原始PNG在repo外 ~/mandarin-work/first-person-samples/final/；詳見apps/mandarin/docs/first-person-IMPL-LOG.md「插畫版」的改動、指令與Claude網址／驗收步驟。
+- 待確認：幕2同構圖仍有衣褶等細微差異，嚴格背景一致尚未驗收；瀏覽器畫面帶／熱點遮擋、淡入雙影、觸控、降級與完整八站實玩皆由Claude補驗。未宣稱全部美術要求合格。
+- 最終validate、單課／motion／插畫測試、build、check-dist／assets、build:preview通過；全套83支0失敗。初次check-assets的300KiB超限已壓縮修正。狀態維持待CF試玩確認，不發布main。
+
+## 2026-10-22｜家中 Mac｜Codex｜狀態：待 CF 試玩確認（只改檔，Claude 接手提交）
+- 依本單覆蓋規則，未執行任何 git 指令，未提交／推送／部署；只改 apps/mandarin 第一人稱探索與本交接，不發布 main。
+- 四幕八站（每段全文劇情站＋兩題關卡），全文45句均有站點引用；新增排序、配對、看圖、場景動作作答、PIRLS與逐題原句依據。選擇類正解位置各兩題；提示累計換1–3水滴，結尾四項回顧。
+- 增加關卡一覽、正常classroomKey教師解鎖跳關、重玩、10秒閒置提示、畫面外箭頭、側面定點與包柄指節。原文／密碼未入repo；沒有測試解鎖入口，沒有改密文。
+- 驗證：validate（含正式密碼外洩檢查）、單課測試（含45句完整覆蓋及所有引用雜湊）、1601姿勢測試、82支測試、build、check-dist／assets、build:preview通過。git diff --check依禁令未執行，Claude提交前補跑。
+- Claude必讀 apps/mandarin/docs/first-person-IMPL-LOG.md：逐檔依據、指令結果、桌機／手機／平板完整流程、正面／側面舀水截圖與主控台／網路／溢出檢查。瀏覽器驗收未執行，不可宣稱視覺合格。
+- 待CF：實機iPad／教室電腦、臺灣國語朗讀與音量、美感與學生成效；仍為「待 CF 試玩確認」。
+
+## 2026-10-22｜Windows 本機｜Codex｜狀態：獨立試作分支備份，暫不部署
+- 接手者先讀 `apps/mandarin/docs/first-person-exploration.md` 的「使用者的目標與尚未確認的品質」與接手清單：已完整補記第一人稱沉浸、透過遊玩理解主角經歷與情緒、文字不可遮住動作、鍋／人比例與手臂穿湯問題，以及合理性／流暢性／美感要求。**使用者尚未確認滿意；已有修正與測試不等於視覺或教學驗收完成。**
+- 最新授權僅備份試作分支。未經使用者另行明確同意，不合併／推送 main、不手動部署、不改工作流發布分支；其他文件的一般 main 流程不能覆蓋此限制。後續可能由 Claude Code 接續，尚未委派或傳訊給其他協作者。
+- 新增單課第一人稱探索：三上第4課〈水滾了〉，路由 `#/lesson/115AG3H04/explore`，入口在課文點讀下方。只改本課入口及新增資料／引擎／介面，未改其他教材、題庫或遊戲規則。
+- 教師提供官方原文 Word、官方理解題及策略教學；43筆線索雜湊與原文一致。公開檔只存段句索引；沿用正常教室密碼及 AES-GCM，未存原文或教室密碼、未改密文。
+- 依 CF 回饋改成全畫面近距離第一人稱、可拖曳環顧、小圓點標記、按需展開原文。加入康康慌張造型、冒泡／蒸氣、舀水回倒與抽出部分柴火；四場閱讀任務涵蓋分工、心情、因果、比較統整，另有不計分的同理討論。動畫與環境音可關，減少動態保留靜態線索。
+- 驗證：validate、build、build:preview、preview:draft、check-dist／assets、單課測試、語法與 diff --check。81支測試中77正常通過，2支缺正式教室密碼略過；另2支既有Windows file URL路徑錯誤，以暫存shim重跑通過，未改測試。check-text-leak因無密碼略過；本課另驗329個連續18字視窗未有原句外洩。
+- Chrome桌機、手機、平板模擬四場全流程，正常情況無JS／資源錯誤或外部請求、無水平溢出；最終水面動畫與減少動畫靜態截圖驗證；3D載入失敗及context lost仍可讀文作答，離頁釋放音訊與沉浸式頁面狀態。
+- 最新畫面修正：降低鍋灶至人物腰部、改中空鍋壁與勺碗、手掌固定勺柄、兩節手臂連動；舀起／抬高／傾倒／回位循環連續。1601個幾何姿勢與桌機／手機逐段截圖檢查通過；重複地板與氣泡改合併繪製。
+- 待教師：實機iPad／教室電腦效能、環境音量與臺灣國語朗讀；情緒造型、題目難度及實際教學成效。沒有宣稱模擬驗收等同實機或學習成效。
+- 維護說明：`apps/mandarin/docs/first-person-exploration.md`。截圖與完整報告在本次Codex工作階段outputs，未放入repo。依使用者最新指示提交並推送到 `codex/first-person-reading-prototype-20261022`；不合併、不推送main、不手動部署。本機預覽埠4175。
+
 ## 2026-10-17（三）｜家中 Mac｜Claude Code｜狀態：✅ 已推送
 - 形似字跑酷（改母版 Shape-Run-G6A，工具同步五個年級）：看字時間加 1 秒、2 秒選項；題目出現時可直接點上方語詞格換跑道（可一次跨兩道，鍵盤 Enter 亦可），點選只換道不代替「看好了」；玩法說明第 3 步同步改字。
 - 注意：判讀倒數依畫面幀計算（每幀上限 0.05 秒），低幀率裝置會比設定秒數長（只會多給時間）。

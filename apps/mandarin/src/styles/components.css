@@ -2237,6 +2237,7 @@
 .entry-card:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
 .entry-card:active { transform: translateY(0); }
 .entry-card--wide { flex-direction: row; align-items: center; gap: var(--space-3); }
+.entry-card--explore { margin-top: var(--space-4); }
 .entry-card--accent { border-color: var(--color-accent); }
 .entry-card--dashed { border-style: dashed; }
 .entry-card__icon { font-size: var(--font-size-section); line-height: 1; }
