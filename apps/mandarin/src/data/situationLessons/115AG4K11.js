@@ -1404,6 +1404,9 @@ export default {
           "small.webp",
           "cry.webp"
         ],
+        "expressionOverlays": {
+          "cry.webp": "cry-expression.webp"
+        },
         "aspect": [
           2400,
           1024

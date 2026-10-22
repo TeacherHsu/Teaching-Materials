@@ -9,6 +9,11 @@ import {sentenceSources} from '../src/activities/firstPersonPresentation.js';
 import {classroomPassword} from './classroom-password.mjs';
 import {operationState,mountOperation,operate,operationComplete} from '../src/activities/firstPersonInteraction.js';
 validateSituationLesson(lesson);
+const crying=lesson.scenes[2].art;
+assert.equal(crying.images[crying.resultImage],'cry.webp');
+assert.deepEqual(crying.expressionOverlays,{'cry.webp':'cry-expression.webp'});
+assert.ok(crying.stepImages.every(i=>crying.images[i]!=='cry.webp'),'no crying overlay during jumping');
+assert.ok(statSync(new URL('../public/assets/situation/115AG4K11/cry-expression.webp',import.meta.url)).size<120*1024);
 assert.equal(lesson.scenes.length,5);assert.deepEqual(lesson.paragraphCounts,[6,124]);assert.equal(storyUnitKeys(lesson).length,120);
 assert.deepEqual(lesson.scenes.map(s=>[...s.beats.intro,...s.beats.read].flatMap(r=>r.sentences).length),[40,16,15,40,9]);
 assert.ok(lesson.scenes.every(s=>s.questions[0].operationType==='summaryCard'));
@@ -65,6 +70,37 @@ try{
    assert.equal(p.state.step,i+1);for(let j=0;j<30;j++)node.onclick();assert.equal(p.state.step,i+1,'completed item no-op');
   }
   assert.ok(operationComplete(scene,p.state));assert.equal(p.changes,scene.operation.steps.length);p.ctl.setPaused(true);p.ctl.setPaused(false);assert.equal(operate(scene,p.state,scene.operation.steps[0]),false);p.ctl.dispose();
+ }
+ // Exercise pointer capture/move/up (not the pure state helper), both directions,
+ // wrong target and outside drops, cancellation, compatibility click, consumed cards.
+ for(const mode of ['click','drag']){
+  const scene=lesson.scenes[3],p=setup(scene);
+  const message=()=>p.host.parentElement.children.find(e=>e.className==='fp-operation-status').children[0].textContent;
+  const event=(x,y)=>({button:0,pointerId:7,clientX:x,clientY:y,stopPropagation(){}});
+  async function release(){await new Promise(resolve=>setTimeout(resolve,0));}
+  function drag(id,x,y){const n=p.find(id),o=scene.operation.objects.find(o=>o.action===id);n.onpointerdown(event(o.x,o.y));n.onpointermove(event(x,y));n.onpointerup(event(x,y));n.onclick();}
+  for(const [i,id,target,wrong] of [[0,'big','key-plan','gap-plan'],[1,'small','gap-plan','key-plan']]){
+   const node=p.find(id),o=scene.operation.objects.find(o=>o.action===id),t=scene.operation.objects.find(o=>o.action===target),w=scene.operation.objects.find(o=>o.action===wrong);
+   if(mode==='click'){node.onclick();p.find(wrong).onclick();}
+   else drag(id,w.x,w.y);
+   assert.equal(p.state.step,i);assert.equal(p.changes,i);assert.equal(message(),scene.operation.retry);
+   assert.equal(node.style.left,`${o.x}%`);assert.equal(node.style.top,`${o.y}%`,'wrong match snaps back');
+   await release();
+   if(mode==='drag'){
+    drag(id,2,2);assert.equal(p.state.step,i);assert.equal(message(),scene.operation.retry);await release();
+    node.onpointerdown(event(o.x,o.y));node.onpointermove(event(t.x,t.y));node.onpointercancel();
+    assert.equal(p.state.step,i);assert.equal(p.ctl.dragging,false);assert.equal(node.style.top,`${o.y}%`);
+    drag(id,t.x,t.y);
+   }else{node.onclick();p.find(target).onclick();}
+   assert.equal(p.state.step,i+1);assert.equal(p.changes,i+1);
+   assert.equal(node.disabled,true);
+   await release();
+   if(i===0)p.find('small').onclick(); // a completed card must not replace this selection
+   const before=message();
+   for(let j=0;j<20;j++){node.onclick();node.onpointerdown(event(o.x,o.y));}
+   assert.equal(p.state.step,i+1);assert.equal(p.changes,i+1);assert.equal(message(),before);assert.equal(p.ctl.dragging,false);
+  }
+  assert.ok(operationComplete(scene,p.state));p.ctl.dispose();
  }
  for(const [index,id] of [[1,'turn'],[2,'jump-1'],[4,'wave-1']]){
   const p=setup(lesson.scenes[index],false);if(index===4)p.find('pick').onclick();const before=p.state.step,node=p.find(id);node.onclick();for(let j=0;j<20;j++)node.onclick();assert.equal(p.state.step,before,'animation gates rapid clicks');const a=(index===2?p.host:node).animation;if(index===2){assert.equal(a.frames[1].transform,'scale(1.08) translateY(14px)');for(const h of [900,1180,812])assert.ok((1.08-1)*h/2>=1.08*14,'jump camera never exposes an unpainted edge');}a.onfinish();assert.equal(p.state.step,before+1);node.onclick();assert.equal(p.state.step,before+1);p.ctl.dispose();
