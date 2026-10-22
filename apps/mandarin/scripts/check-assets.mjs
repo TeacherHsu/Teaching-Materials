@@ -1,5 +1,5 @@
 // 公開資產容量閘門：避免批次加入圖片後超過 GitHub Pages 可維護範圍。
-// - 單張圖片：最多 300 KiB
+// - 單張圖片：最多 300 KiB；115AG6H12 教師指定橫幅400 KiB，sprite／表情圖120 KiB
 // - 單課圖片：最多 4 MiB
 // - public/assets：600 MiB 警告，700 MiB 失敗
 // - 公開網站不接受未壓縮的 PNG/JPEG/GIF 圖片；請先轉成 WebP 或 AVIF。
@@ -66,9 +66,12 @@ for (const file of allFiles) {
 }
 
 for (const file of imageFiles) {
-  if (file.bytes > MAX_IMAGE_BYTES) {
+  const rel=relative(assetsDir,file.path).split(sep).join('/');
+  const stub=rel.startsWith('situation/115AG6H12/');
+  const limit=stub ? (rel.includes('/sprites/') || rel.endsWith('-expression.webp') ? 120*1024 : 400*1024) : MAX_IMAGE_BYTES;
+  if (file.bytes > limit) {
     failed = true;
-    console.error(`[FAIL] 單張圖片超過 300 KiB：${relative(assetsDir, file.path)}（${Math.round(file.bytes / 1024)} KiB）`);
+    console.error(`[FAIL] 單張圖片超過 ${limit/1024} KiB：${relative(assetsDir, file.path)}（${Math.round(file.bytes / 1024)} KiB）`);
   }
 }
 

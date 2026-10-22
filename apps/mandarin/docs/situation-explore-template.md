@@ -47,3 +47,37 @@
 - `art.stepImages` 的長度為 steps+1，值為 `art.images` 的索引。每步切換狀態圖，不把完成物件留成重複的 sprite。`resultImage` 在結果拍切換；`resultDelay` 毫秒讓完成狀態先停留（例如先看桌上禮物），再切結果；`resultView` 可指定同時轉到另一個 `art.views`。`resultZoom:false` 保留結果拍正常 cover 尺度，避免尚未看清的禮物先被讀文鏡頭裁掉。離頁清除結果計時器；減少動態時不淡入。
 - 本單指定 115AG4K12 使用 **2400×1024** WebP 底圖≤400KiB、透明物件≤120KiB，優先於一般新課960方圖建議；實際所有底圖也低於既有300KiB檢查上限。滿版 cover 不改為 contain。
 - 本課正式密文是1個資料段、18行、100個朗讀單位，含標題／作者／課前導讀。教師設計單的正文段號不拿來重編現有密文；設定使用真正的 `para:1` 與0起算句索引，細目見實作紀錄。來源明文與密碼沒有加入 repo。
+
+## 存根擴充（2026-10-23）
+
+- **形狀配對沿用 `dragToTarget`，沒有新增操作型別。** 每個蒂用不同 `object.region` 對應 `operation.regions` 的蒂口；點選物件再點目標與拖放走同一個判定。錯配彈回、不增加計數，`retry` 提醒觀察粗細形狀。`guide:false` 關閉通往正解的箭頭與單一目標虛框，三個實際目標按鈕仍保留；`destinationWidth` 僅在成功吸附後調整物件尺寸，熱區仍至少44px。
+- `operation.groups:[{from:0,to:3},{from:3,to:6}]` 是連續、不重疊、完整覆蓋 steps 的半開區間。每組重新從0／3計數；collect 僅接受目前組的動作，搭配物件 `fromStep/toStep` 避免提前收集。混合 observe／dragToTarget 的目標框僅在拖放組顯示。操作清單仍用原本的完整 step 保存／恢復。
+- `object.observation:''` 明確表示不產生名牌／氣泡；未設定才使用 label。〈存根〉第三顆南瓜不自編名字，前兩顆只使用教師核定的文中小名。
+- `meter.events:[{para,n,state,level},…]` 按閱讀順序列出原文狀態事件；每句取不晚於該句的最後事件，動手時仍取 scene.meter。`meter.caption` 可在原量表內標示主語。本課caption為布大爺的心情，既有課次不加此行。
+- `art.expressionStates:{狀態詞:{底圖檔名:局部透明圖檔}}`：沿用老鞋匠全尺寸稀疏疊圖，只在對應量表詞顯示，跟隨底圖的透明度與cover幾何。此功能與原本 `expressionOverlays` 相容，非臉部遮罩區域保留原底圖。設定／暫停恢復仍保留目前狀態。
+- `scene.readViews:{'段:句索引':viewName}` 在指定讀句切換已宣告鏡頭；不用原文作key。本課在讀到接蒂說明時保留證據鏡頭，在欣慰事件轉回布大爺；開場先看人物，動手回中央操作區，結果看回家／警察／證據。
+- 本單指定115AG6H12場景2400×1024 WebP≤400KiB，sprite／局部表情圖≤120KiB，優先於一般方圖建議。資產容量檢查只對此課路徑套此上限；其他主站圖片仍維持300KiB。schema素材測試對既有2400寬情境圖依400KiB檢查，沒有改成contain、縮小滿版場景或裁掉線索來通過測試。
+
+## 存根修正單1：共用閱讀策略與插入拍
+
+四種策略為 `predict`、`emotionClue`、`causeEffect`、`summaryCard`，只由課次設定啟用。本輪僅〈存根〉使用，兩舊課繼續使用既有四拍，不增加策略或題目。
+
+- `scene.strategies`：`id/type/prompt/options/refs/hint`。`refs` 必須包含解密資料段號 `para`、零起算句號 `sentences`、SHA-256 前8碼 `sha`；選擇式預測外，每個場景選項亦帶自己的 `refs`。
+- `predict`：2–3個字串選項，必含「我不確定」，禁止 `answer`；`revealAt:{para,n}` 必須位於依據內。在揭曉句顯示 `你猜的是：○○，課文怎麼說？`，不計正誤或獎勵。
+- `emotionClue`：`answer` 為1–2個正確選項索引；選項帶 `label/x/y/refs`，`states` 指向量表既有原文詞。其他人物可用 `words` 與 `meterTarget`，正常解鎖時逐字核對其指定原句，不新增布大爺的量表狀態。點錯使用「再看看他的臉／動作」，可繼續找。
+- `causeEffect`：同樣使用場景選項及 `answer`，`result:[x,y]` 是結果位置，`explanation` 是改寫的因果回饋。點中後發亮並在相同插畫座標畫柔和曲線，不自動跳走，按繼續後前進；答錯可再試。
+- `summaryCard`：放在 `questions`，`type` 與 `operationType` 均設為此值，恰好三個 `options`、`summaryImages`、`why`、一個正解索引及原句 `refs`；取代原題。圖片明確指定本幕場景或本地 `sprites/*.webp`。錯因指出細節與重點差別。最後用已完成各幕的正確選卡串成一句，保留朗讀。它沿用題卡進度、錯因與重玩，不另加題。
+
+需要插入策略或動手點時，加 `scene.timeline`；不加就保留舊四拍。每項 `kind` 為 `intro/read/act/result/strategy/openBag/question`；`intro/read` 使用獨立 `refs`，展開後須與 `beats.intro + beats.read` 完全一致並依序唯一覆蓋全文。每段 `intro` 最多8單位；例外必須寫 `lengthException` 理由。`act.untilStep` 可在既有操作完成指定步後先讀下一段，再接續剩餘動手；不重算／重置計數。
+
+`strategy.id` 引用本幕策略。`imageIndex` 指定該拍底圖，`hideOperations:true` 隱藏既有操作物件，避免未揭曉道具外露。`openBag` 以 `object:{x,y,width,sprite}` 設背包，支援拉開、點擊及 Enter／Space；只改開口視覺，不出現包內物。它有自己的原句依據，不另計分或加題。
+
+策略熱點與線條使用獨立插畫平面，繼承滿版 cover 的縮放／環顧，主操作保持鎖定；Tab聚焦會將熱點移進畫面。提示、卡片與回饋都有喇叭。`test-situation-strategies.mjs` 驗證四型別、原句引用、開場長度、重試、預測無正誤、摘要題數及全文時序；視覺仍需 Claude 實玩。
+
+### 臉部線索與場景物件（存根修正單2）
+
+`emotionClue`／`causeEffect` 的人物臉部選項必須設定 `face: {width, height}`（原圖百分比），並設定 `markerOffset: [dx, dy]`。`x/y` 仍代表臉的中心與因果連線起點；按鈕放在偏移處，保留至少44px點擊範圍。柔和橢圓光圈只畫外緣，中心透明、不攔截事件；命中短暫加亮650ms，離開拍時清除計時器。不得將實心標記蓋在五官上。
+
+場景中的容器使用透明sprite與接觸陰影，不用白卡。`openBag` 只透過袋體透視變形與袋口暗橢圓呈現開啟，不渲染任何內容；減少動態時直接切末態。配對目標可用 `consumedBy` 指向消耗它的物件action，已用物件可設定 `usedFade`：配對完成立刻停用、移除光暈，保留接合物件本體。`grounded` 物件無漂浮動畫。
+
+極窄直向若動作者與證據無法在cover中同框，可明確設定 `art.portraitFrame: {left,right,top,bottom}`，以原圖百分比界定同框範圍、像素保留上下介面空間；主畫面等比例縮放，後方仍以同場景模糊cover滿版，所有熱區共用同一幾何。此設定為單課選用，未設定的課保持原cover與閱讀縮放。必須驗證動作者、全部證據、操作熱區與字幕的實際可見範圍。

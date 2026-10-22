@@ -46,11 +46,12 @@ export function mountConfiguredOperation(plane, options, api) {
   const config=scene.operation;
   const gesture=o=>o.gesture || config.type;
   const available=o=>state.step>=(o.fromStep ?? 0) && state.step<=(o.toStep ?? config.steps.length);
+  let committing=false;
   let traceProgress=0, lastStep=state.step;
   const base=`${import.meta.env?.BASE_URL || '/'}${scene.assetBase}sprites/`;
   const layer=document.createElement('div');layer.className=`fp-operation fp-generic-operation${config.keepCompleted?' fp-keep-completed':''}`;plane.append(layer);
   const status=document.createElement('div');status.className='fp-operation-status';status.setAttribute('role','status');
-  const message=document.createElement('span'),counter=document.createElement('span');counter.className='fp-operation-count';status.append(message,counter,SpeakButton({text:()=>`${message.textContent}（${state.step}／${config.steps.length}）`}));plane.parentElement.parentElement.append(status);
+  const message=document.createElement('span'),counter=document.createElement('span');counter.className='fp-operation-count';status.append(message,counter,SpeakButton({text:()=>`${message.textContent}（${counter.textContent}）`}));plane.parentElement.parentElement.append(status);
   let paused=true,disposed=false,selected=null,drag=null,suppress=false,timer,demoTimer,animation,handAnimation,bubble,toolReady=false,gripped=null;
   const elements=new Map();
   const hand=document.createElement('span');hand.className='fp-tongs-hand';hand.textContent='☝';hand.hidden=true;hand.setAttribute('aria-hidden','true');layer.append(hand);
@@ -63,27 +64,39 @@ export function mountConfiguredOperation(plane, options, api) {
     const arrow=document.createElementNS('http://www.w3.org/2000/svg','svg');arrow.classList.add('fp-wood-arrow');arrow.setAttribute('viewBox','0 0 100 100');arrow.setAttribute('preserveAspectRatio','none');arrow.setAttribute('aria-hidden','true');
     arrowPath=document.createElementNS('http://www.w3.org/2000/svg','path');arrow.append(arrowPath);layer.append(arrow);
   }
-  function guide(p){const active=selected || config.objects.find(o=>o.action===config.steps[state.step]);const r=config.regions?.[active?.region || 'target'];if(!arrowPath || !r)return;const x=(r.left+r.right)/2,y=(r.top+r.bottom)/2;arrowPath.setAttribute('d',`M${p.x} ${p.y} L${x} ${y} m-2 -1 L${x} ${y} l-1 -2`);}
+  function guide(p){if(config.guide===false)return;const active=selected || config.objects.find(o=>o.action===config.steps[state.step]);const r=config.regions?.[active?.region || 'target'];if(!arrowPath || !r)return;if(!['dragToTarget','toolGrab'].includes(gesture(active || {}))){arrowPath.setAttribute('d','');return;}const x=(r.left+r.right)/2,y=(r.top+r.bottom)/2;arrowPath.setAttribute('d',`M${p.x} ${p.y} L${x} ${y} m-2 -1 L${x} ${y} l-1 -2`);}
   guide(config.objects[0]);
   const cards = ['chooseCard','orderCards'].includes(config.type) ? orderCards(config.initialOrder || config.objects.map((_,i)=>i)) : null;
   const pos=(el,x,y)=>{el.style.left=`${x}%`;el.style.top=`${y}%`;};
   const tell=text=>{message.textContent=text;};
   const point=e=>{const r=plane.getBoundingClientRect();return {x:(e.clientX-r.left)/r.width*100,y:(e.clientY-r.top)/r.height*100};};
-  const snap=o=>{const el=elements.get(o.action);pos(el,...(state.collected?.includes(o.action) && o.destination ? o.destination : [o.x,o.y]));};
+  const snap=o=>{const el=elements.get(o.action);el.style.width=`${state.collected?.includes(o.action) && o.destinationWidth ? o.destinationWidth : o.width}%`;pos(el,...(state.collected?.includes(o.action) && o.destination ? o.destination : [o.x,o.y]));};
   function render(){
-    for(const o of config.objects){const el=elements.get(o.action);el.hidden=!available(o);el.style.pointerEvents=o.passive?'none':'';el.disabled=Boolean(paused || o.passive || api.complete() || !available(o) || state.collected?.includes(o.action));el.setAttribute('aria-pressed',String(selected===o || gripped===o));if(!drag)snap(o);}
+    for(const o of config.objects){const el=elements.get(o.action);const used=Boolean(o.consumedBy && state.collected?.includes(o.consumedBy) || o.usedFade && state.collected?.includes(o.action));el.classList.toggle('fp-used',used);el.hidden=!available(o);el.style.pointerEvents=o.passive?'none':'';el.disabled=Boolean(paused || used || o.passive || api.complete() || !available(o) || state.collected?.includes(o.action));el.setAttribute('aria-pressed',String(selected===o || gripped===o));if(!drag)snap(o);}
     status.classList.toggle('fp-operation-complete',api.complete());layer.classList.toggle('fp-operation-complete',api.complete());
-    tell(config.prompts?.[state.step] || scene.goal);counter.textContent=`${state.step}／${config.steps.length}`;
+    tell(config.prompts?.[state.step] || scene.goal);const group=config.groups?.find(g=>state.step>=g.from && state.step<g.to) || config.groups?.at(-1);counter.textContent=group?`${Math.min(group.to-group.from,Math.max(0,state.step-group.from))}／${group.to-group.from}`:`${state.step}／${config.steps.length}`;
     if(lastStep!==state.step){lastStep=state.step;focus?.(config.focus?.[state.step] ?? config.objects.find(o=>o.action===config.steps[state.step])?.x ?? config.objects[0].x);}
-    for(const marker of layer.children){if(marker.dataset?.region)marker.hidden=marker.dataset.region!==(config.objects.find(o=>o.action===config.steps[state.step])?.region || 'target') || api.complete();}
+    for(const marker of layer.children){if(marker.dataset?.dragGuide)marker.hidden=!['dragToTarget','toolGrab'].includes(gesture(config.objects.find(o=>o.action===config.steps[state.step]) || {})) || api.complete();if(marker.dataset?.region)marker.hidden=marker.dataset.region!==(config.objects.find(o=>o.action===config.steps[state.step])?.region || 'target') || api.complete();}
     guide(config.objects.find(o=>o.action===config.steps[state.step]) || config.objects[0]);
     options.heat?.(config.heat?.[state.step] ?? 1);
   }
-  function commit(action){if(!api.operate(action))return false;render();changed();return true;}
+  function commit(action){
+    if(paused || disposed || committing || api.complete())return false;
+    const spec=config.objects.find(o=>o.action===action);
+    if(spec && !available(spec))return false;
+    committing=true;
+    animation?.cancel();handAnimation?.cancel();hand.hidden=true;clearTimeout(demoTimer);
+    try{
+      if(!api.operate(action))return false;
+      changed();
+      render();
+      return true;
+    }finally{committing=false;}
+  }
   function observe(o){
-    if(config.silentObserve){commit(o.action);return;}
+    if(config.silentObserve || o.observation===''){commit(o.action);return;}
     bubble?.remove();bubble=document.createElement('div');bubble.className='fp-object-bubble';pos(bubble,o.x,o.y-8);
-    const text=o.observation || o.label;bubble.append(document.createTextNode(text),SpeakButton({text}));layer.append(bubble);
+    const text=o.observation ?? o.label;if(!text){commit(o.action);return;}bubble.append(document.createTextNode(text),SpeakButton({text}));layer.append(bubble);
     clearTimeout(timer);timer=setTimeout(()=>bubble?.remove(),config.bubbleDuration || 2000);commit(o.action);
   }
   function targetFor(o,p){const r=config.regions?.[o.region || 'target'];return containsPoint(r,p);}
@@ -126,11 +139,11 @@ export function mountConfiguredOperation(plane, options, api) {
     if(o.minHitSize)el.style.setProperty('--fp-hit-size',`${o.minHitSize}px`);
     el.style.width=`${o.width}%`;el.style.aspectRatio=String(1/o.ratio);el.style.rotate=`${o.angle}deg`;pos(el,o.x,o.y);
     if(o.sprite){const img=new Image();img.src=base+o.sprite+'.webp';img.alt='';img.draggable=false;el.append(img);}else if(!o.target && !o.hotspot)el.textContent=o.label;
-    if(o.hotspot)el.classList.add('fp-glow');
+    if(o.hotspot)el.classList.add('fp-glow');if(o.grounded)el.classList.add('fp-grounded');
     layer.append(el);elements.set(o.action,el);el.onclick=()=>{if(!suppress)select(o);};
     if(o.target || ['tap','observe','chooseCard','orderCards'].includes(gesture(o)))continue;
     el.onpointerdown=e=>{
-      if(e.button!==0 || paused || disposed || el.disabled)return;e.stopPropagation();animation?.cancel();
+      if(e.button!==0 || paused || disposed || committing || drag || el.disabled)return;e.stopPropagation();animation?.cancel();
       if(config.type==='toolGrab')select(o);else selected=o;
       traceProgress=0;
       if(gesture(o)==='tracePath')traceProgress=advanceTrace(0,null,point(e),o.path,o.tolerance);
@@ -163,15 +176,15 @@ export function mountConfiguredOperation(plane, options, api) {
     status.append(confirm);
   }
   // Static dashed destination and guide; source art remains unchanged.
-  if(['dragToTarget','toolGrab'].includes(config.type) || config.objects.some(o=>o.gesture==='dragToTarget')){
-    const r=config.regions.target,guide=document.createElement('div');guide.className='fp-generic-target';
+  if(config.guide!==false && (['dragToTarget','toolGrab'].includes(config.type) || config.objects.some(o=>o.gesture==='dragToTarget'))){
+    const r=config.regions.target,guide=document.createElement('div');guide.dataset.dragGuide='true';guide.className='fp-generic-target';
     guide.style.left=`${r.left}%`;guide.style.top=`${r.top}%`;guide.style.width=`${r.right-r.left}%`;guide.style.height=`${r.bottom-r.top}%`;layer.append(guide);
   }
   function showWoodDemo(force=false){
     if(paused || api.complete() || state.demoSeen && !force)return false;
-    const o=config.objects.find(o=>!o.target && !o.tool && !state.collected?.includes(o.action));if(!o)return false;
+    const o=config.objects.find(o=>!o.target && !o.tool && !o.passive && available(o) && !state.collected?.includes(o.action));if(!o)return false;
     state.demoSeen=true;saveDemo();animation?.cancel();handAnimation?.cancel();clearTimeout(demoTimer);
-    const r=config.regions?.target || config.regions?.water;
+    const r=config.regions?.[o.region || 'target'] || config.regions?.water;
     if(r && !reduced()){hand.hidden=false;hand.style.left=`${o.x}%`;hand.style.top=`${o.y}%`;const frames=[{left:`${o.x}%`,top:`${o.y}%`},{left:`${(r.left+r.right)/2}%`,top:`${(r.top+r.bottom)/2}%`},{left:`${o.x}%`,top:`${o.y}%`}];animation=elements.get(o.action).animate(frames,{duration:1800});handAnimation=hand.animate(frames,{duration:1800});demoTimer=setTimeout(()=>{hand.hidden=true;},1800);}else {elements.get(o.action).classList.add('fp-demo-lit');demoTimer=setTimeout(()=>elements.get(o.action).classList.remove('fp-demo-lit'),1800);}
     tell(config.demoPrompt || scene.goal);return true;
   }
