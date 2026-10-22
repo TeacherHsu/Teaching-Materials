@@ -2,6 +2,7 @@
 import assert from 'node:assert/strict';
 import { mountOperation, operationState } from '../src/activities/firstPersonInteraction.js';
 import { FIRST_PERSON_LESSON } from '../src/data/firstPersonLesson.js';
+import { outsidePile } from '../src/activities/firstPersonLayout.js';
 class Element {
  constructor(){this.children=[];this.style={};this.dataset={};this.attrs={};const classes=new Set();this.classList={add(...names){names.forEach(n=>classes.add(n));},remove(...names){names.forEach(n=>classes.delete(n));},toggle(n,on){if(on)classes.add(n);else classes.delete(n);},contains(n){return classes.has(n);}};}
  append(...items){for(const x of items){x.parentElement=this;this.children.push(x);}}
@@ -47,7 +48,7 @@ try {
  for(const n of [1,2,3])fourth.find(`wood-${n}`).tongsHit=true;
  tong.onpointerdown(event(620,660));tong.onpointermove(event(660,750));tong.onpointerup(event(730,750));advance(1);assert.equal(fourth.state.step,1,'inside drop rebounds');
  tong.onpointerdown(event(620,660));tong.onpointermove(event(660,750));tong.onpointerup(event(580,840));advance(1);assert.equal(fourth.state.step,2);
- assert.equal(log.disabled,true);assert.equal(log.style.top,'80%');
+ assert.equal(log.disabled,true);assert.equal(log.style.top,`${outsidePile[0][1]}%`);
  tong.onclick();fourth.find('wood-2').onclick();fourth.find('wood-3').onclick();fourth.find('outside').onclick();assert.equal(fourth.state.step,3,'other wood cannot replace gripped wood');
  tong.onclick();fourth.find('wood-3').onclick();fourth.find('outside').onclick();assert.equal(fourth.state.step,4);fourth.api.dispose();
 

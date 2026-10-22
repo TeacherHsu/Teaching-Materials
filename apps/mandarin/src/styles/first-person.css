@@ -274,6 +274,7 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 .fp-page .fp-tongs-operation .fp-tongs-ground { left:60%; top:84%; width:22%; height:17%; border:2px dashed #ffe8a0; border-radius:40%; background:#ffe8a029; box-shadow:0 0 20px #ffe8a066; font-size:18px; color:#fff5cc; animation:none; }
 .fp-tongs-operation .fp-object { transition:none!important; animation:none; }
 .fp-tongs-operation .fp-extracted::after { content:'✦'; position:absolute; right:10%; top:10%; color:#ffb74e; font-size:16px; }
+.fp-tongs-operation .fp-extracted img { filter:brightness(.82) saturate(.85); }
 .fp-tongs-hand { position:absolute; transform:translate(-50%,-50%); font-size:42px; pointer-events:none; z-index:8; }
 .fp-tongs-operation .fp-wood-arrow { z-index:1; }
 .fp-tongs-operation [data-action="tongs"]::after { content:'拿起火鉗'; position:absolute; left:0; right:0; top:100%; font-size:18px; color:#fff4cc; text-shadow:0 1px 3px #23190c; }

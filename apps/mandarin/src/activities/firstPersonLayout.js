@@ -7,7 +7,7 @@ export function illustrationLayout(width, height, pan = .5) {
   return { top, left, imageWidth, imageHeight };
 }
 export const groundPile = [[59,80],[62,81],[60.5,78.5]];
-export const outsidePile = [[56,80],[60,81],[64,80]];
+export const outsidePile = [[54,79],[58,81.5],[62,78.5]];
 export const operationObjects = {
   1: [['風鈴',null,29.5,17,'bell',5,1],
     ['第1根木柴','wood',24,79,'wood-1',9,.24],

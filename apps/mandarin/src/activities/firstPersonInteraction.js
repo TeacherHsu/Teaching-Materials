@@ -68,7 +68,7 @@ export function mountOperation(plane, { scene, state, changed, heat, demonstrate
   }
   function reset(o){ o.el.style.left=`${o.x}%`; o.el.style.top=`${o.y}%`; }
   function feedback(text){ message.textContent=text; }
-  function commit(action){ if(!operate(scene,state,action)){ feedback('慢慢來，先完成目前的步驟。'); return false; } selected=null; if(scene.act===1 && operationComplete(scene,state))focus?.(61); if(scene.act===4 && action==='demo')focus?.(innerWidth/innerHeight>=1.4?52:73); heat(heatFor(scene,state)); changed(); render(); return true; }
+  function commit(action){ if(!operate(scene,state,action)){ feedback('慢慢來，先完成目前的步驟。'); return false; } selected=null; if(scene.act===1 && operationComplete(scene,state))focus?.(61); if(scene.act===4 && action==='demo')focus?.(innerWidth/innerHeight>=1.4?46:73); heat(heatFor(scene,state)); changed(); render(); return true; }
   function select(o){
     if(scene.act===1)stopDemo();
     if(scene.act===1 && o.action.startsWith('wood-') && state.step===0)return;
