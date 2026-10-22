@@ -31,6 +31,7 @@ const VIEWS = {
   entrance: [[-1.1, 2.1, 2.4], [-1.8, 1.65, -1.5]],
   work: [[-1.1, 1.65, 1.9], [-2.6, .7, -1]],
   pot: [[.1, 1.88, 2.05], [1.05, 1.1, -1.2]],
+  side: [[3.5, 1.72, 1.15], [1.05, 1.18, -1.12]],
   ladle: [[.35, 1.82, 1.9], [1.15, 1.18, -1.1]],
   fire: [[.25, 1.18, 1.8], [.65, .58, -1.05]],
   tool: [[.1, 1.8, 2.15], [1.1, 1.05, -1.2]],
@@ -362,6 +363,11 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     const palm = new T.Group(); scene.add(palm);
     const palmMesh = new T.Mesh(new T.SphereGeometry(ARM.handRadius, 20, 14), skin); palmMesh.scale.set(1, .85, .8); palm.add(palmMesh);
     const thumb = new T.Mesh(new T.SphereGeometry(.025, 14, 10), skin); thumb.position.set(-.025, -.015, .04); palm.add(thumb);
+    // 指節包住勺柄兩側，握點仍由 motion 共用尺寸決定。
+    for (let i = 0; i < 3; i++) {
+      const finger = new T.Mesh(new T.TorusGeometry(.027, .011, 6, 12, Math.PI * 1.5), skin);
+      finger.rotation.y = Math.PI / 2; finger.position.set(-.028 + i * .026, -.004, 0); palm.add(finger);
+    }
     for (const mesh of [upperArm, forearm, elbowJoint, palm]) { mesh.visible = holding || smaller; mesh.castShadow = false; }
     const extraction = new T.Group(); scene.add(extraction); extraction.visible = false;
     const extractedLog = new T.Mesh(new T.CylinderGeometry(.085, .1, .65, 18), mat.woodDark); extractedLog.rotation.x = Math.PI / 2; extraction.add(extractedLog);

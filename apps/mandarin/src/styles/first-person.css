@@ -84,3 +84,13 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 @media(max-height:600px) and (min-width:650px) { .fp-topbar { top:10px; } .fp-topbar h1 { font-size:22px; } .fp-mission { top:82px; max-width:460px; } .fp-view-status { display:none; } .fp-bottom { bottom:18px; width:650px; } .fp-caption p { font-size:20px; } .fp-toolbar { top:84px; bottom:auto; } .fp-mode { display:none; } }
 .fp-calm * { animation:none!important; transition:none!important; scroll-behavior:auto!important; }
 @media(prefers-reduced-motion:reduce) { .fp-page * { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+
+/* 目標只保留細環；文字與操作留在畫面邊緣。 */
+.fp-marker--target { border:2px solid #fff1c1; box-shadow:0 0 0 8px #fff1c125,0 0 22px #fff1c140; }
+.fp-marker--offscreen { background:#fff7e8; color:#54371e; font-size:28px; }
+.fp-picture { display:block; flex-shrink:0; }
+.fp-scene-actions { position:absolute; z-index:7; right:20px; top:30%; display:grid; gap:12px; max-width:calc(100% - 40px); }
+.fp-return-answer { position:absolute; z-index:7; right:20px; top:30%; }
+.fp-sheet input[type=password] { width:100%; min-height:48px; font-size:22px; }
+@media(min-width:951px) { .fp-mission { max-width:calc(100% - 380px); } }
+@media(max-width:600px) { .fp-scene-actions { top:29%; right:14px; max-width:calc(100% - 28px); } .fp-scene-actions .fp-button { font-size:20px; } }
