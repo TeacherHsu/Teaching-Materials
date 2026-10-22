@@ -29,6 +29,8 @@ export function validateSituationLesson(lesson) {
     check(Object.values(lesson.speakers).every(v=>v==='' || text(v) && v!=='故事中的人物'),'speaker names');
   }
   check(lesson.meter?.states?.length > 0 && lesson.meter.states.every(text), 'meter terms');
+  for(const key of ['title','subject'])if(lesson.meter[key]!==undefined)check(text(lesson.meter[key]),`meter ${key}`);
+  if(lesson.meter.labels)check(lesson.meter.stateEvidence && lesson.meter.labels.length===lesson.meter.states.length && lesson.meter.labels.every(text),'meter display labels');
   for(const key of ['enter','return','character','context','safety'])check(text(lesson.ui?.[key]), `ui ${key}`);
   check(lesson.speakers || text(lesson.ui.speaker),'speaker configuration');
   check(text(lesson.gateTitle) && text(lesson.introduction) && lesson.source && Array.isArray(lesson.review),'lesson presentation');
@@ -48,6 +50,10 @@ export function validateSituationLesson(lesson) {
     }
   }
   refs(refsOf(lesson));
+  if(lesson.meter.stateEvidence){
+    check(lesson.meter.stateEvidence.length===lesson.meter.states.length,'meter evidence count');
+    for(const e of lesson.meter.stateEvidence){refs(e.refs);check(e.refs.length>0 && e.parts?.length>0 && e.parts.every(text),'meter evidence');}
+  }
   const coverage=[];
   for(const s of lesson.scenes) {
     check(s.assetBase===lesson.assetBase, 'scene assetBase');
@@ -60,10 +66,11 @@ export function validateSituationLesson(lesson) {
     check(s.art.aspect?.length===2 && s.art.aspect.every(n=>Number.isFinite(n) && n>0), 'image aspect');
     for(const point of Object.values({...s.art.hotspots,...s.art.effects}))check(point.length===2 && point.every(percent), 'art coordinates');
     for(const value of Object.values(s.art.orientationFocus || {}))check(percent(value),'orientation focus');
+    for(const [view,scale] of Object.entries(s.art.viewScales || {}))check(s.art.views[view]!==undefined && Number.isFinite(scale) && scale>=1 && scale<=1.5,'view cover scale');
     for(const value of Object.values(s.art.views))check(Number.isFinite(value) && value>=0 && value<=1,'view focus');
     for(const points of Object.values(s.art.focus || {}))for(const [x,y] of Object.entries(points))check(percent(Number(x)) && percent(y), 'orientation focus');
     check(s.operation.objects?.length>0, 'objects');
-    for(const o of s.operation.objects){check(text(o.label) && text(o.action),'object identity');check([o.x,o.y,o.width].every(percent) && o.width>0 && Number.isFinite(o.ratio) && o.ratio>0 && Number.isFinite(o.angle),'object geometry');check(!o.sprite || /^[\w-]+$/.test(o.sprite),'sprite');if(o.minHitSize!==undefined)check(Number.isFinite(o.minHitSize) && o.minHitSize>=44,'hit size');if(o.viewMotion)check(['lookUp','approach'].includes(o.viewMotion),'observation view motion');if(o.gesture)check(['tap','observe','dragToTarget','tracePath','rhythmTap','aimShot','holdBreath'].includes(o.gesture),'object gesture');if(o.gesture==='tracePath' || s.operation.type==='tracePath' && !o.passive && !o.target)check(o.path?.length>=2 && o.path.every(p=>p.length===2 && p.every(percent)) && Number.isFinite(o.tolerance) && o.tolerance>0,'trace path');if(o.destinationWidth!==undefined)check(percent(o.destinationWidth) && o.destinationWidth>0 && o.destination,'destination width');if(o.destination)check(o.destination.length===2 && o.destination.every(percent),'destination');}
+    for(const o of s.operation.objects){check(text(o.label) && text(o.action),'object identity');check([o.x,o.y,o.width].every(percent) && o.width>0 && Number.isFinite(o.ratio) && o.ratio>0 && Number.isFinite(o.angle),'object geometry');check(!o.sprite || /^[\w-]+$/.test(o.sprite),'sprite');if(o.completedSprite!==undefined)check(/^[\w-]+$/.test(o.completedSprite) && o.sprite,'completed sprite');if(o.minHitSize!==undefined)check(Number.isFinite(o.minHitSize) && o.minHitSize>=44,'hit size');if(o.viewMotion)check(['lookUp','approach'].includes(o.viewMotion),'observation view motion');if(o.gesture)check(['tap','observe','dragToTarget','tracePath','rhythmTap','aimShot','holdBreath'].includes(o.gesture),'object gesture');if(o.gesture==='tracePath' || s.operation.type==='tracePath' && !o.passive && !o.target)check(o.path?.length>=2 && o.path.every(p=>p.length===2 && p.every(percent)) && Number.isFinite(o.tolerance) && o.tolerance>0,'trace path');if(o.destinationWidth!==undefined)check(percent(o.destinationWidth) && o.destinationWidth>0 && o.destination,'destination width');if(o.destination)check(o.destination.length===2 && o.destination.every(percent),'destination');}
     for(const region of Object.values(s.operation.regions || {}))check(['left','right','top','bottom'].every(k=>percent(region[k])) && region.left<region.right && region.top<region.bottom,'region');
     check(s.meter?.length===s.operation.steps.length+1, 'meter event count');
     for(const event of s.meter)check(Number.isInteger(event.state) && text(lesson.meter.states[event.state]) && percent(event.level) && event.level<=3,'meter event');
@@ -101,7 +108,7 @@ export function validateSituationLesson(lesson) {
       check(t.options?.length>=1 && t.options.length<=3,'strategy option count');
       if(t.revealOnResult)check(t.type==='predict' && text(t.resultReminder),'result prediction reminder');
       if(t.type==='predict'){check(t.options.length>=2 && t.options.every(text) && t.options.includes('我不確定') && t.answer===undefined,'prediction ungraded');check(t.revealAt && t.refs.some(r=>r.para===t.revealAt.para && r.sentences.includes(t.revealAt.n)),'prediction reveal');}
-      else {check(Array.isArray(t.answer) && t.answer.length>0 && t.answer.every(n=>Number.isInteger(n) && t.options[n]),'strategy answer');for(const o of t.options){check(text(o.label) && percent(o.x) && percent(o.y),'strategy hotspot');refs(o.refs);check(o.refs.length>0,'hotspot evidence');if(o.face){check(percent(o.face.width) && percent(o.face.height),'face halo');check(o.markerOffset?.length===2 && o.markerOffset.every(Number.isFinite),'face marker offset');}for(const state of o.states || [])check(text(lesson.meter.states[state]),'strategy meter word');}if(t.type==='emotionClue')check(t.answer.length<=2,'emotion clue count');if(t.type==='causeEffect')check(t.result?.length===2 && t.result.every(percent) && text(t.explanation),'cause result');}
+      else {check(Array.isArray(t.answer) && t.answer.length>0 && t.answer.every(n=>Number.isInteger(n) && t.options[n]),'strategy answer');for(const o of t.options){check(text(o.label) && percent(o.x) && percent(o.y),'strategy hotspot');refs(o.refs);check(o.refs.length>0,'hotspot evidence');if(o.sprite)check(/^[\w-]+$/.test(o.sprite) && (o.width===undefined || percent(o.width) && o.width>0),'strategy sprite');if(o.face){check(percent(o.face.width) && percent(o.face.height),'face halo');check(o.markerOffset?.length===2 && o.markerOffset.every(Number.isFinite),'face marker offset');}for(const state of o.states || [])check(text(lesson.meter.states[state]),'strategy meter word');}if(t.type==='emotionClue')check(t.answer.length<=2,'emotion clue count');if(t.type==='causeEffect')check(t.result?.length===2 && t.result.every(percent) && text(t.explanation),'cause result');}
     }
     check(s.questions?.length>0,'questions');
     for(const q of s.questions){
@@ -125,7 +132,7 @@ export function validateSituationLesson(lesson) {
 export function meterFor(lesson, scene, step, remembered=false, readRef=null) {
   const event=readRef && lesson.meter.events?.filter(r=>r.para<readRef.para || r.para===readRef.para && r.n<=readRef.n).at(-1);
   const entry=event || (remembered && lesson.meter.read ? lesson.meter.read : scene.meter[Math.min(step,scene.meter.length-1)]);
-  return {level:entry.level,label:lesson.meter.states[entry.state],face:lesson.meter.faces?.[entry.state] || '🙂'};
+  return {level:entry.level,sourceLabel:lesson.meter.states[entry.state],label:lesson.meter.labels?.[entry.state] || lesson.meter.states[entry.state],face:lesson.meter.faces?.[entry.state] || '🙂'};
 }
 // Called only after the existing classroom gate. No text is persisted or logged.
 export async function validateUnlockedLesson(lesson, paragraphs) {
@@ -143,5 +150,10 @@ export async function validateUnlockedLesson(lesson, paragraphs) {
   const full=[...paragraphs].flatMap(([p,lines])=>lines.filter((_,n)=>isStoryUnit(lesson,p,n))).join('');
   for(const s of lesson.scenes)for(const t of s.strategies || [])for(const o of t.options)if(typeof o==='object')for(const word of o.words || [])check(o.refs.map(r=>r.sentences.map(n=>paragraphs.get(r.para)[n]).join('')).join('').includes(word),'strategy source word');
   for(const state of lesson.meter.states)check(full.includes(state),'meter source word');
+  for(const [i,e] of (lesson.meter.stateEvidence || []).entries()){
+    const source=e.refs.flatMap(r=>r.sentences.map(n=>paragraphs.get(r.para)[n])).join('');
+    check(source.includes(lesson.meter.states[i]),'meter evidence state');
+    let end=0;for(const part of e.parts){const at=source.indexOf(part,end);check(at>=0,'meter evidence source part');end=at+part.length;}
+  }
   return true;
 }

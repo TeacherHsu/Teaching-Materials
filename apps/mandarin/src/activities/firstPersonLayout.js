@@ -36,9 +36,11 @@ export function woodLayout(width, height) {
 }
 
 // Optional lesson framing keeps faces visible during result/read without changing legacy zoom.
-export function sceneIllustrationLayout(width,height,pan,art,reading=false) {
+export function sceneIllustrationLayout(width,height,pan,art,reading=false,view) {
   const zoom=reading && art.readingZoom!==false;
-  const geometry=illustrationLayout(width,height*(zoom?1.3:1),pan,art.aspect);
+  const scale=art.viewScales?.[view] || 1;
+  const geometry=illustrationLayout(width,height*(zoom?1.3:1)*scale,pan,art.aspect);
   if(zoom)geometry.top-=height*.3;
+  if(scale>1)geometry.top-=height*(scale-1)/2;
   return geometry;
 }
