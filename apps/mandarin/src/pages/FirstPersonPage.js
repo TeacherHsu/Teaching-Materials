@@ -190,7 +190,10 @@ export function FirstPersonPage(lesson) {
     const ref=subtitleQueue.shift();
     if(!ref) {const done=subtitleAfter;subtitleAfter=null;done?.();return;}
     recordRead(ref);
-    const line=sources.get(`sentence:${ref.para}:${ref.n}`);
+    // 斷句會把「……。」的後引號切到下一句開頭；顯示時把它還給前一句。
+    const raw=sources.get(`sentence:${ref.para}:${ref.n}`)||'';
+    const following=sources.get(`sentence:${ref.para}:${ref.n+1}`)||'';
+    const line=raw.replace(/^[」』]+/,'')+(following.match(/^[」』]+/)?.[0]||'');
     if(ref.para===4 && ref.n===7)updateMood(true);
     const controls=[];
     if(beat==='intro')controls.push(button('略過',()=>{subtitleQueue.forEach(recordRead);subtitleQueue=[];nextSubtitle();}));
@@ -199,7 +202,7 @@ export function FirstPersonPage(lesson) {
       controls.push(button('下一句',nextSubtitle));
     }
     subtitle=h('div',{class:'fp-cinema',role:'group','aria-label':'場景原句'},[
-      ...(beat==='read'?[h('span',{class:'fp-read-label'},'原來課文是這樣寫的')]:[]),say(line,'p'),...controls]);
+      say(line,'p'),...controls]);
     rootBody.append(subtitle);updateMotion();
     subtitle.querySelector('.speak-button')?.addEventListener('click',()=>{clearTimeout(subtitleTimer);if(beat==='intro' || playback.automatic)subtitleTimer=setTimeout(nextSubtitle,subtitleDuration(line));});
     const delay=beat==='intro'?subtitleDuration(line):playback.delay(line);
