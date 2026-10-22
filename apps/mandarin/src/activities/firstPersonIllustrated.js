@@ -40,7 +40,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     const points = {};
     for (const [key, [x, y]] of Object.entries(art.hotspots)) {
       const px = imageWidth * x / 100 + left;
-      points[key] = { x: px / width * 100, y: (top + imageHeight * y / 100) / height * 100, visible: px >= 28 && px <= width - 28 };
+      points[key] = { x: px / width * 100, y: (top + imageHeight * y / 100) / host.clientHeight * 100, visible: px >= 28 && px <= width - 28 };
     }
     onProject?.(points);
   }
@@ -68,7 +68,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     setView(view) { target = art.views[view] ?? .5; resume(); },
     look(dx) { if(interaction.dragging) return; target = Math.max(0, Math.min(1, target - dx * 2)); resume(); },
     observeAction() { resume(); },
-    setOptions(options) { calm = Boolean(options.calm); paused = Boolean(options.paused); resume(); },
+    setOptions(options) { calm = Boolean(options.calm); paused = Boolean(options.paused); plane.inert = paused; resume(); },
     dispose() {
       disposed = true; interaction.dispose(); cancelAnimationFrame(frame); resize.disconnect(); media.removeEventListener('change', resume); document.removeEventListener('visibilitychange', resume);
       [...images, ...preloads].forEach(img => { img.onload = img.onerror = null; img.removeAttribute('src'); }); layer.remove(); host.classList.remove('is-illustrated', 'fp-image-failed');

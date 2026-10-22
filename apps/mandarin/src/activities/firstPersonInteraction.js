@@ -60,7 +60,7 @@ export function mountOperation(plane, { scene, state, changed, heat, demonstrate
     return obj;
   }
   function reset(o){ o.el.style.left=`${o.x}%`; o.el.style.top=`${o.y}%`; }
-  function feedback(text){ message.textContent=text; }
+  function feedback(text){ message.textContent=[...text].slice(0,14).join(''); }
   function commit(action){ if(!operate(scene,state,action)){ feedback('慢慢來，先完成目前的步驟。'); return false; } selected=null; if(scene.act===1)focus?.(47.5); heat(heatFor(scene,state)); changed(); render(); return true; }
   function select(o){
     if(busy || operationComplete(scene,state))return;
@@ -100,7 +100,7 @@ export function mountOperation(plane, { scene, state, changed, heat, demonstrate
     if(scene.act===1)objects.filter(o=>o.action.startsWith('wood-') && state.collected?.includes(o.action)).forEach((o,i)=>{o.el.hidden=false;o.el.disabled=true;o.el.style.left='64%';o.el.style.top=`${60-i*2}%`;o.el.classList.add('fp-stacked');});
     targets.forEach(t=>{ t.el.hidden=operationComplete(scene,state); });
     status.classList.toggle('fp-operation-complete', operationComplete(scene,state));
-    feedback(operationComplete(scene,state)?(scene.act===2?'水還在滾……好像沒有用？':'💧 完成操作！解鎖原句吧。'):scene.act===2?`第 ${Math.min(3,state.step+1)} 次：按住勺子往下舀，再往上拉；也可以點勺子。`:scene.act===3?({pot:'先看看水面：水還在冒泡。',ladle:'再看看勺子：剛才舀了也沒有用。',fire:'找找鍋下燒得火紅的木柴。'}[expected]):scene.act===4 && state.step===0?'點火鉗，先看師傅示範。':scene.act===4?'把爐口裡的柴往外拖，也可以點柴。':'點風鈴，再把木柴拖到柴堆，也可以點木柴再點柴堆。');
+    feedback(operationComplete(scene,state)?'操作完成':scene.act===2?'拿起勺子試試看':scene.act===3?({pot:'看看水面',ladle:'再看看勺子',fire:'找找鍋下木柴'}[expected]):scene.act===4 && state.step===0?'先看師傅示範':scene.act===4?'把柴拖出爐口':'點風鈴，再把柴移到柴堆');
     heat(heatFor(scene,state));
   }
   render();

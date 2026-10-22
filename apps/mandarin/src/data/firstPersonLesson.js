@@ -1,7 +1,7 @@
 // 公開資料只保留原句索引與雜湊；原文由 classroomKey 解密。
 export const FIRST_PERSON_LESSON = {
   "lessonId": "115AG3H04",
-  "version": 6,
+  "version": 7,
   "title": "食堂裡的閱讀線索",
   "source": {
     "text": "翰林115三上官方課文Word，第4課〈水滾了〉，王宗仁",

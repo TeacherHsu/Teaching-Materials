@@ -168,3 +168,47 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 @media(prefers-reduced-motion:reduce) { .fp-pouring::before { animation:none; } }
 
 .fp-page .fp-view-buttons { top:auto; bottom:256px; }
+
+/* Direction A: full-bleed illustration and small, independently bounded controls. */
+.fp-shell::after { background:linear-gradient(#201b1320,transparent 16%); }
+.fp-page .fp-topbar { left:12px; top:12px; right:auto; height:44px; gap:8px; font-size:18px; }
+.fp-page .fp-home { width:44px; height:44px; min-width:44px; min-height:44px; }
+.fp-controls { position:absolute; z-index:6; right:12px; top:12px; height:72px; display:flex; align-items:flex-start; gap:8px; }
+.fp-page .fp-gear { width:44px; height:44px; min-height:44px; padding:0; }
+.fp-mood { box-sizing:border-box; width:160px; height:72px; padding:4px 8px; border-radius:12px; background:#241d19b8; color:white; display:grid; grid-template-columns:1fr 28px; align-items:center; font-size:18px; }
+.fp-mood i { grid-column:1 / 3; display:block; height:8px; border-radius:8px; background:linear-gradient(90deg,#86ba99 var(--mood),#d9c9b3 var(--mood)); }
+.fp-mood[data-level="3"] i { background:#dc8b69; }
+.fp-sr { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+.fp-page .fp-operation-status { left:12px; bottom:12px; transform:none; width:max-content; max-width:calc(100% - 24px); height:44px; padding:0 8px; border:0; box-shadow:none; border-radius:8px; background:#241d19a8; color:white; font-size:18px; white-space:nowrap; overflow:hidden; transition:opacity .4s; }
+.fp-page .fp-operation-status .speak-button { width:44px; min-width:44px; height:44px; }
+.fp-page .fp-operation-complete { opacity:0; pointer-events:none; }
+.fp-page .fp-cinema { position:absolute; z-index:8; left:50%; bottom:12px; transform:translateX(-50%); box-sizing:border-box; width:min(760px,calc(100% - 24px)); max-height:28%; overflow:auto; padding:12px; border-radius:10px; background:#171512dc; color:white; display:flex; align-items:center; gap:8px; }
+.fp-cinema p { font-size:24px; line-height:1.5; }
+.fp-cinema>.fp-spoken { flex:1; }
+.fp-cinema .speak-button { flex-shrink:0; }
+.fp-question-cards { position:absolute; z-index:8; bottom:12px; left:50%; transform:translateX(-50%); width:min(800px,calc(100% - 24px)); max-height:38%; overflow:auto; padding:10px; box-sizing:border-box; border-radius:12px; background:#231d17d9; color:#fff; }
+.fp-card-row { display:flex; gap:8px; }
+.fp-card-row>.fp-answer-row { flex:1; min-width:0; flex-direction:column; }
+.fp-card-row .fp-button { width:100%; font-size:22px; padding:8px; touch-action:none; display:flex; flex-direction:column; }
+.fp-page .fp-emotion { width:80px; height:80px; }
+.fp-card-feedback { font-size:18px!important; }
+.fp-wrong .fp-card-row { animation:fp-card-shake .25s; }
+@keyframes fp-card-shake { 25% {translate:-3px;} 75% {translate:3px;} }
+.fp-object:not(:disabled) { animation:fp-object-float 3s ease-in-out infinite; }
+.fp-operation.is-dragging .fp-object { animation:none; }
+@keyframes fp-object-float { 50% {margin-top:-3px;} }
+@media(max-width:600px) { .fp-page .fp-topbar { gap:4px; } .fp-mood { width:148px; } .fp-controls { gap:4px; } .fp-cinema { flex-wrap:wrap; } .fp-cinema p {font-size:22px;} .fp-card-row .fp-button {font-size:22px;} }
+
+.fp-page .fp-topbar>span { width:54px; }
+.fp-page .fp-operation-status { width:320px; }
+.fp-page .fp-operation-status>span { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; }
+.fp-page .fp-cinema { max-height:96px; }
+.fp-mood[data-level="0"] i { background:#86ba99; }
+.fp-mood[data-level="1"] i { background:linear-gradient(90deg,#d9bd70 33%,#d9c9b3 33%); }
+.fp-mood[data-level="2"] i { background:linear-gradient(90deg,#daa16e 67%,#d9c9b3 67%); }
+.fp-mood i { transition:background .3s; }
+
+.fp-card-feedback { white-space:nowrap; overflow:auto; }
+.fp-reward-drop { position:absolute; z-index:9; left:50%; top:42%; font-size:44px; pointer-events:none; animation:fp-drop-flight 1.2s ease-out forwards; }
+@keyframes fp-drop-flight { to { translate:100px -180px; opacity:0; } }
+.fp-calm .fp-reward-drop { animation:none; }

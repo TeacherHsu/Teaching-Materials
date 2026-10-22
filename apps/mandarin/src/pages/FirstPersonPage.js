@@ -1,3 +1,4 @@
+import { moodFor, subtitlePlan, subtitlesForStep } from '../activities/firstPersonPresentation.js';
 import { operationComplete } from '../activities/firstPersonInteraction.js';
 import { h, clear } from '../utils/dom.js';
 import { SpeakButton } from '../components/SpeakButton.js';
@@ -24,6 +25,7 @@ export function FirstPersonPage(lesson) {
   let prefs = { sound: false, calm: false };
   try { const s = JSON.parse(localStorage.getItem(PREF_KEY)); prefs = { sound: s?.sound === true, calm: s?.calm === true }; } catch { /* 預設 */ }
   let world, generation = 0, disposed = false, replay = null, lastClue = null, feedback = '', wrong = false, readingVisible = false;
+  let subtitle = null, subtitleTimer, subtitleAfter, subtitleQueue = [];
   let saved = true, audio, ambientGain, ambientSource, modal, observationTimer;
   let scene, state, sources, currentView, idleTimer, teacherAccess = false, actionQuestion = null;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
@@ -48,10 +50,10 @@ export function FirstPersonPage(lesson) {
     } catch { /* 音訊不影響學習 */ }
   }
   function chime() { if (!prefs.sound) return; try { const AC=window.AudioContext || window.webkitAudioContext; audio ||= new AC(); audio.resume().catch(()=>{}); const osc=audio.createOscillator(), gain=audio.createGain(); osc.frequency.value=1320; gain.gain.setValueAtTime(.035,audio.currentTime); gain.gain.exponentialRampToValueAtTime(.001,audio.currentTime+.7); osc.connect(gain); gain.connect(audio.destination); osc.start(); osc.stop(audio.currentTime+.7); } catch {} }
-  function updateMotion() { root.classList.toggle('fp-calm', calm()); world?.setOptions?.({ calm: calm(), paused: Boolean(modal?.open) }); sound(); }
+  function updateMotion() { root.classList.toggle('fp-calm', calm()); world?.setOptions?.({ calm: calm(), paused: Boolean(modal?.open || subtitle || root.querySelector('.fp-question-cards')) }); sound(); }
   function destroyWorld() { generation++; world?.dispose(); world = null; }
   function close() {
-    if (disposed) return; disposed = true; clearTimeout(observationTimer); clearTimeout(idleTimer); destroyWorld(); cancelSpeaking(); audio?.close().catch(() => {});
+    if (disposed) return; disposed = true; clearTimeout(subtitleTimer); clearTimeout(observationTimer); clearTimeout(idleTimer); destroyWorld(); cancelSpeaking(); audio?.close().catch(() => {});
     modal?.close(); modal?.remove(); document.body.classList.remove('fp-immersive');
     reduce.removeEventListener('change', updateMotion); document.removeEventListener('visibilitychange', sound);
     window.removeEventListener('hashchange', close); window.removeEventListener('pagehide', close);
@@ -60,6 +62,7 @@ export function FirstPersonPage(lesson) {
   reduce.addEventListener('change', updateMotion); document.addEventListener('visibilitychange', sound);
 
   function sheet(title, content, focus) {
+    clearTimeout(subtitleTimer);
     modal?.close(); modal?.remove();
     const dialog = h('dialog', { class: 'fp-sheet', 'aria-labelledby': 'fp-sheet-title' });
     dialog.append(h('div', { class: 'fp-sheet-header' }, [h('h2', { id: 'fp-sheet-title' }, title), button('✕', () => dialog.close(), { 'aria-label': '回到場景', class: 'fp-close' })]), content);
@@ -91,6 +94,14 @@ export function FirstPersonPage(lesson) {
     const paragraphs = new Map();
     for (const s of splitSentences(reading.paras)) { if (!paragraphs.has(s.paraIndex + 1)) paragraphs.set(s.paraIndex + 1, []); paragraphs.get(s.paraIndex + 1).push(s.text); }
     sources = new Map();
+    for (const [para, texts] of paragraphs) {
+      let speaker = '';
+      texts.forEach((text,n) => {
+        if(text.includes('「')) speaker = '師傅';
+        sources.set(`sentence:${para}:${n}`, speaker ? `${speaker}：${text}` : text);
+        if(text.includes('」')) speaker='';
+      });
+    }
     try {
       for (const sc of config.scenes) for (const clue of [...sc.clues, ...sc.questions.map(q => ({ id: `question-${q.id}`, refs: q.refs })), ...(sc.act === 4 ? [{ id: 'idiom', refs: config.idiomRefs }] : [])]) {
         const refs = clueRefs(clue, sc, lesson); if (!refs?.length) throw new Error('missing');
@@ -113,33 +124,16 @@ export function FirstPersonPage(lesson) {
 
   function enterScene() {
     clearTimeout(observationTimer); clearTimeout(idleTimer); actionQuestion = null; destroyWorld(); modal?.close(); modal?.remove(); modal = null; clear(rootBody);
+    subtitle?.remove(); subtitle=null; subtitleQueue=[]; clearTimeout(subtitleTimer);
     scene = config.scenes[progress.current]; state = replay || progress.scenes[progress.current]; currentView = scene.view;
     lastClue = null; feedback = ''; wrong = false;
-    const completed = progress.scenes.filter((s) => s.done).length;
-    const stage = h('div', { class: `fp-world fp-world--${scene.id}`, tabindex: '0', role: 'group', 'aria-label': '第一人稱場景。拖曳環顧，左右鍵轉頭；也能用下方線索按鈕。' });
+    const stage = h('div', { class: `fp-world fp-world--${scene.id}`, tabindex: '0', role: 'group', 'aria-label': '第一人稱場景。拖曳環顧，左右鍵轉頭；Tab尋找物件，Enter操作。' });
     stage.append(h('div', { class: 'fp-flat', 'aria-hidden': 'true', html: flatScene(scene.id.replace(/^story-/, '')) }));
-    const top = h('header', { class: 'fp-topbar' }, [h('a', { href: `#/lesson/${lesson.lesson_id}`, class: 'fp-home', 'aria-label': '離開探索，回到本課' }, '←'), h('div', {}, [h('p', { class: 'fp-kicker' }, `第${scene.act}幕・${scene.stationType === "story" ? "劇情站" : "關卡"}`), h('h1', {}, scene.title)]), button(`${progress.current + 1} / ${config.scenes.length}`, showScenes, { class: 'fp-stage-number', 'aria-label': `場景 ${progress.current + 1}，已完成 ${completed} 個。查看進度` })]);
-    const mission = h('div', { class: 'fp-mission' }, [h('span', { class: 'fp-mission-dot', 'aria-hidden': 'true' }), h('p', { id: 'fp-goal' }, scene.experience.reflection), SpeakButton({ text: `${scene.goal}${scene.experience.reflection}` })]);
-    const markers = h('div', { class: 'fp-markers' }), markerMap = {};
-    [].forEach((clue, i) => {
-      const mark = button(String(i + 1), () => observe(clue), { class: 'fp-marker', 'data-hotspot': clue.id, 'aria-label': `觀察${clue.label}`, title: clue.label });
-      markerMap[clue.object] = mark; markers.append(mark);
-    });
-    stage.append(markers);
-    const viewStatus = h('p', { class: 'fp-view-status', role: 'status' }, '拖曳環顧，或點小圓點觀察');
-    const captionText = h('p', { id: 'fp-caption' }, scene.experience.caption);
-    const caption = h('div', { class: 'fp-spoken fp-caption' }, [captionText, SpeakButton({ text: () => captionText.textContent })]);
-    const viewButtons = h('div', { class: 'fp-view-buttons' }, [button('↶', () => { currentView = scene.view; world?.setView(currentView); }, { 'aria-label': '看起始位置' }), button('↷', () => { currentView = scene.alternateView; world?.setView(currentView); }, { 'aria-label': scene.viewLabel })]);
-    viewButtons.append(button('側', () => world?.setView('side'), { 'aria-label': '側面觀察握勺與舀水動作' }));
-    const readingButton = button('解鎖原句', () => (canAnswer(scene, state) ? finishClues() : showReading()), { class: 'fp-button fp-primary', 'data-read': 'true' });
-    const actionButton = button('操作說明', () => { viewStatus.textContent = scene.goal; }, { class: 'fp-button fp-observe', 'data-observe': 'true' });
-    const clueButtons = h('div', { class: 'fp-clue-dock' });
-    [].forEach((clue, i) => clueButtons.append(button(`${i + 1} ${clue.label}`, () => observe(clue), { 'data-clue': clue.id, class: 'fp-clue-chip', 'aria-pressed': String(state.found.includes(clue.id)) })));
-    const bottom = h('div', { class: 'fp-bottom' }, [caption, h('div', { class: 'fp-action-row' }, [actionButton, readingButton]), clueButtons]);
-    const toolbar = h('nav', { class: 'fp-toolbar', 'aria-label': '閱讀工具' }, [button('重看課文', () => { if (state.found.length) showReading(); else { const prior = config.scenes[progress.current - 1]; if (prior) { const content = h('div', { class: 'fp-sheet-content' }); for (const block of sources.get(`${prior.id}:paragraph`) || []) content.append(say(block.text, 'blockquote', { class: 'fp-excerpt' })); sheet('重看已解鎖課文', content); } else showReading(); } }), button('提示', showHints), button('重玩', () => { replay = emptyState(); enterScene(); }), button('設定', showSettings), button('關卡一覽', showScenes)]);
-    rootBody.append(stage, top, mission, viewStatus, viewButtons, bottom, toolbar);
-    readingButton.disabled = !operationComplete(scene, state.operation);
-    syncPrimary();
+    const top = h('header', { class: 'fp-topbar' }, [h('a', { href: `#/lesson/${lesson.lesson_id}`, class: 'fp-home', 'aria-label': '回到本課' }, '←'), h('span', {}, `第${scene.act}幕`)]);
+    const mood = h('div', { class: 'fp-mood', 'aria-live': 'polite' });
+    const controls = h('div', { class: 'fp-controls' }, [mood, button('⚙', showSettings, { 'aria-label': '設定', class: 'fp-gear fp-button' })]);
+    rootBody.append(stage, top, controls);
+    updateMood();
     const mode = h('span', { class: 'fp-mode' }, '載入場景…'); rootBody.append(mode);
     let pointer;
     stage.addEventListener('pointerdown', (e) => { if (e.target.closest('button')) return; pointer = { x: e.clientX, y: e.clientY }; stage.setPointerCapture(e.pointerId); });
@@ -147,77 +141,44 @@ export function FirstPersonPage(lesson) {
     stage.addEventListener('pointerup', () => { pointer = null; }); stage.addEventListener('pointercancel', () => { pointer = null; });
     stage.addEventListener('keydown', (e) => { if (e.target !== stage) return; if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) { e.preventDefault(); world?.look(e.key === 'ArrowLeft' ? .08 : e.key === 'ArrowRight' ? -.08 : 0, e.key === 'ArrowUp' ? .05 : e.key === 'ArrowDown' ? -.05 : 0); } });
     const version = generation;
-    mountFirstPersonScene(stage, { phase: { ...scene, id: scene.id.replace(/^story-/, "") }, calm: calm(), operation: state.operation, onChime: chime, onOperation: () => { if (!replay) save(); readingButton.disabled = !operationComplete(scene, state.operation); if (readingButton.disabled) return; captionText.textContent = scene.act === 2 ? '水還在滾……好像沒有用？' : '完成了！你可以解鎖原句。'; if ([2,3].includes(scene.act)) { if(scene.act===3) world?.setView('fire'); clearTimeout(observationTimer); observationTimer=setTimeout(() => { if(!disposed && scene.act===progress.current+1) showQuestion(); }, 1200); } else showReading(); }, onMode: (label) => { if (version === generation) { mode.textContent = label; mode.hidden = label.startsWith('第一人稱'); } }, onProject: (points) => {
-      for (const [object, marker] of Object.entries(markerMap)) {
-        const p = points?.[object]; marker.hidden = false;
-        const off = p && !p.visible;
-        marker.classList.toggle('fp-marker--offscreen', Boolean(off));
-        marker.textContent = off ? (Math.abs(p.y - 50) > Math.abs(p.x - 50) ? (p.y < 50 ? '↑' : '↓') : (p.x < 50 ? '←' : '→')) : String(scene.clues.findIndex(c => c.object === object) + 1);
-        marker.classList.toggle('fp-marker--target', !state.found.includes(scene.clues.find(c => c.object === object)?.id));
-        if (p) { marker.style.left = `${Math.max(7, Math.min(93, p.x))}%`; marker.style.top = `${Math.max(7, Math.min(93, p.y))}%`; }
-      }
-    } }).then((controller) => { if (disposed || version !== generation) controller.dispose(); else { world = controller; updateMotion(); } });
+    mountFirstPersonScene(stage, { phase: { ...scene, id: scene.id.replace(/^story-/, "") }, calm: calm(), operation: state.operation, onChime: chime, onOperation: () => { if (!replay) save(); updateMood(); showOperationSubtitles(); }, onMode: (label) => { if (version === generation) { mode.textContent = label; mode.hidden = label.startsWith('第一人稱'); } } }).then((controller) => { if (disposed || version !== generation) controller.dispose(); else { world = controller; updateMotion(); } });
+    if(operationComplete(scene,state.operation)) showReading();
+    else if(state.operation.step) showOperationSubtitles();
     updateMotion(); sound();
-    function resetIdle() {
-      clearTimeout(idleTimer);
-      idleTimer = setTimeout(() => { if (!disposed && !modal?.open) viewStatus.textContent = '慢慢找就好。點下方定點按鈕，就能找到線索。'; }, 10000);
-    }
-    rootBody.onpointerdown = resetIdle; rootBody.onkeydown = resetIdle; resetIdle();
-
-    function observe(clue) {
-      lastClue = clue;
-      currentView = clue === scene.clues[1] ? scene.alternateView : scene.view;
-      world?.setView(currentView);
-      if (['ladle', 'cause', 'root'].includes(scene.id.replace(/^story-/, ''))) playObservation();
-      const text = scene.experience.observeCaption || clue.note;
-      caption.querySelector('p').textContent = text;
-      readingButton.textContent = `讀${clue.label}的原文`;
-      viewStatus.textContent = `正在觀察：${clue.label}`;
-      sound();
-    }
-    function playObservation() {
-      clearTimeout(observationTimer); world?.observeAction(); sound();
-      if (scene.id.endsWith('root')) { currentView = 'fire'; world?.setView('fire'); }
-      captionText.textContent = scene.experience.caption;
-      const observing = scene.id;
-      if (scene.experience.afterCaption) observationTimer = setTimeout(() => {
-        if (!disposed && scene.id === observing) captionText.textContent = scene.experience.afterCaption;
-      }, 8200);
-    }
   }
 
-  // 線索讀完後，場景主按鈕直接帶往挑戰或下一站，關掉閱讀面板也不會卡住。
-  function finishClues() {
-    const last = progress.current >= config.scenes.length - 1;
-    if (scene.stationType === 'story') { state.done = true; if (!replay) save(); advance(); }
-    else if (state.done && !last) advance();
-    else showQuestion();
+  function updateMood() {
+    const node = root.querySelector('.fp-mood'); if (!node) return;
+    const m = moodFor(scene.act, state.operation.step);
+    clear(node); node.dataset.level = String(m.level);
+    node.append(h('span', {}, '康康的心情'), h('span', { class: 'fp-mood-face', 'aria-hidden': 'true' }, m.face), h('i', { style: `--mood:${m.level / 3 * 100}%`, 'aria-hidden': 'true' }), h('span', { class: 'fp-sr' }, `康康：${m.label}`));
   }
-  function syncPrimary() {
-    const primary = root.querySelector('[data-read]');
-    if (!primary || !canAnswer(scene, state)) return;
-    const last = progress.current >= config.scenes.length - 1;
-    primary.textContent = scene.stationType === 'story' ? '前往關卡 →' : !state.done ? '開始挑戰 →' : last ? '看回顧' : '前往下一站 →';
+  function showOperationSubtitles() {
+    if(subtitle) return;
+    subtitleQueue = subtitlesForStep(scene, state.operation.step).map(({para,n})=>sources.get(`sentence:${para}:${n}`));
+    subtitleAfter = () => { if(operationComplete(scene,state.operation)) { state.found=scene.clues.map(c=>c.id); if(!replay)save(); showQuestion(); } };
+    nextSubtitle();
   }
   function showReading() {
-    if ([2,3].includes(scene.act) && !state.done && operationComplete(scene, state.operation)) { showQuestion(); return; }
-    if (!operationComplete(scene, state.operation)) { root.querySelector('.fp-view-status').textContent = '先試試目前的操作，就能解鎖這一段。'; return; }
-    readingVisible = true;
-    const clue = lastClue || scene.clues.find((c) => !state.found.includes(c.id)) || scene.clues[0];
-    lastClue = clue;
-    if (!state.found.includes(clue.id)) state.found.push(clue.id);
-    root.querySelector(`[data-clue="${clue.id}"]`)?.setAttribute('aria-pressed', 'true');
-    if (!replay) save();
-    syncPrimary();
+    if (!operationComplete(scene, state.operation) || subtitle) return;
+    subtitleQueue = subtitlePlan(scene).flatMap(ref => ref.sentences.map(n => sources.get(`sentence:${ref.para}:${n}`)));
+    subtitleAfter = () => { state.found = scene.clues.map(c => c.id); if (!replay) save(); showQuestion(); };
+    nextSubtitle();
+  }
+  function nextSubtitle() {
+    clearTimeout(subtitleTimer); subtitle?.remove(); subtitle = null; cancelSpeaking();
+    const line = subtitleQueue.shift();
+    if (!line) { updateMotion(); const done = subtitleAfter; subtitleAfter = null; done?.(); return; }
+    subtitle = h('div', { class: 'fp-cinema', role: 'group', 'aria-label': '場景原句' }, [say(line, 'p'), button('下一句', nextSubtitle)]);
+    rootBody.append(subtitle); updateMotion();
+    subtitle.querySelector('.speak-button')?.addEventListener('click', () => clearTimeout(subtitleTimer));
+    // Manual advance is always available; reading duration scales with the actual sentence.
+    subtitleTimer = setTimeout(nextSubtitle, Math.max(7000, line.length * 450));
+  }
+  function reviewReading() {
     const content = h('div', { class: 'fp-sheet-content' });
-    content.append(say(clue.note, 'p', { class: 'fp-small' }));
-    for (const block of sources.get(`${scene.id}:${clue.id}`)) content.append(h('p', { class: 'fp-source' }, `課文第 ${block.para} 段・原句`), say(block.text, 'blockquote', { class: 'fp-excerpt' }));
-    content.append(h('p', { class: 'fp-small fp-count' }, `已讀線索 ${state.found.length} / ${scene.clues.length}`));
-    const next = scene.clues.find((c) => !state.found.includes(c.id));
-    if (next) content.append(button(`回到場景，觀察${next.label}`, () => { modal.close(); lastClue = next; currentView = scene.alternateView; world?.setView(currentView); root.querySelector('[data-read]').textContent = `讀${next.label}的原文`; }, { class: 'fp-button fp-primary' }));
-    else if (scene.stationType === 'story') content.append(button('已讀本段，前往關卡 →', () => { state.done = true; if (!replay) save(); advance(); }, { class: 'fp-button fp-primary' }));
-    else content.append(button(state.done ? '查看完成回顧' : '想一想他的經歷 →', showQuestion, { class: 'fp-button fp-primary', 'data-challenge': 'true' }));
-    sheet(clue.label, content);
+    for (let i=0;i<=progress.current;i++) if(progress.scenes[i].found.length) for(const ref of subtitlePlan(config.scenes[i])) for(const n of ref.sentences) content.append(say(sources.get(`sentence:${ref.para}:${n}`)));
+    sheet('重看原句', content);
   }
 
   function advance() { modal?.close(); progress.current = Math.min(config.scenes.length - 1, progress.current + 1); replay = null; save(); enterScene(); }
@@ -226,62 +187,55 @@ export function FirstPersonPage(lesson) {
     feedback = result.feedback; wrong = !result.correct;
     if (replay && state.done && !progress.scenes[progress.current].done) progress.scenes[progress.current] = { ...state, found: [...state.found] };
     if (!replay || state.done) save();
-    if (result.correct && !state.done) {
-      sheet('找到依據了', h('div', { class: 'fp-sheet-content' }, [say(feedback), button('下一題', () => { feedback = ''; showQuestion(); }, { class: 'fp-button fp-primary' })]));
-    } else if ([2,3].includes(scene.act) && result.correct) showReading(); else showQuestion();
+    if(result.correct) {
+      const drop=h('span',{class:'fp-reward-drop','aria-hidden':'true'},'💧'); rootBody.append(drop);
+      clearTimeout(observationTimer); observationTimer=setTimeout(()=>drop.remove(),1200);
+    }
+    showQuestion();
   }
   function showQuestion() {
-    if (!canAnswer(scene, state) && !([2,3].includes(scene.act) && operationComplete(scene, state.operation))) { showReading(); return; }
+    if (!canAnswer(scene, state)) return;
+    root.querySelector('.fp-question-cards')?.remove();
     const q = scene.questions[Math.min(state.questionIndex || 0, scene.questions.length - 1)];
-    const content = h('div', { class: 'fp-sheet-content' });
-    content.append(h('p', { class: 'fp-kicker' }, `${q.kind}・PIRLS ${q.pirls}`), say(q.stem, 'h3', { id: 'fp-question', tabindex: '-1' }));
-    if (!state.done) {
-      if (q.type === 'action') content.append(button('到場景操作', () => {
-        modal.close(); actionQuestion?.remove();
-        actionQuestion = h('div', { class: 'fp-scene-actions', role: 'group', 'aria-label': q.stem });
-        q.options.forEach((label, i) => actionQuestion.append(button(label, () => { actionQuestion.remove(); actionQuestion = null; if (i === q.answer) { world?.observeAction(); const next = button('觀察後回到題目', () => { next.remove(); submitAnswer(i); }, { class: 'fp-button fp-return-answer' }); rootBody.append(next); } else submitAnswer(i); })));
-        rootBody.append(actionQuestion);
-      }, { class: 'fp-button fp-primary' }));
-      else {
-        const choices = h('div', { class: 'fp-answers' }), selected = [];
-        const status = h('p', { role: 'status' });
-        q.options.forEach((option, index) => {
-          const pick = button(option, () => {
-            if (!Array.isArray(q.answer)) { submitAnswer(index); return; }
-            if (selected.includes(index)) return;
-            selected.push(index); pick.disabled = true;
-            status.textContent = selected.map(i => q.options[i]).join(' → ');
-          }, { 'data-answer': index });
-          if (q.type === 'emotion') pick.prepend(h('img', { class: 'fp-emotion', src: `${import.meta.env.BASE_URL}assets/first-person/115AG3H04/sprites/${q.images[index]}.webp`, alt: '' }));
-          if (q.type === 'picture') pick.prepend(h('span', { class: 'fp-picture', 'aria-hidden': 'true', html: picture(q.images[index]) }));
-          choices.append(h('div', { class: 'fp-answer-row' }, [pick, SpeakButton({ text: option })]));
+    const content = h('section', { class: 'fp-question-cards', 'aria-label': q.stem });
+    if(state.done) {
+      content.append(say('💧 ' + q.explanation));
+      if(progress.current < config.scenes.length-1) content.append(button('下一幕', advance));
+      else { content.append(say('釜底抽薪', 'h3')); config.review.forEach(([title,text])=>content.append(say(`${title}${text}`))); content.append(button('完成・關卡一覽', showScenes)); }
+    } else {
+      content.append(say(q.stem));
+      const choices = h('div', { class: 'fp-card-row' });
+      const orderStatus = h('p', {class:'fp-sr', 'aria-live':'polite'}); content.append(orderStatus);
+      const order = Array.isArray(q.answer) ? [2,0,1] : q.options.map((_,i)=>i);
+      let dragged = null, suppressClick = false;
+      function renderCards() {
+        clear(choices);
+        if(Array.isArray(q.answer)) orderStatus.textContent=order.map(i=>q.options[i]).join(' → ');
+        order.forEach(index => {
+          const pick = button(q.options[index], () => {
+            if(suppressClick) return;
+            if(Array.isArray(q.answer)) { const from=order.indexOf(index), to=(from+1)%order.length; order.splice(from,1); order.splice(to,0,index); renderCards(); }
+            else submitAnswer(index);
+          }, { 'data-answer': index, draggable: Array.isArray(q.answer), 'aria-label': Array.isArray(q.answer) ? `${q.options[index]}，拖曳排列；點選向後移一格` : q.options[index] });
+          if(q.type==='emotion') pick.prepend(h('img', { class:'fp-emotion', src:`${import.meta.env.BASE_URL}assets/first-person/115AG3H04/sprites/${q.images[index]}.webp`, alt:'' }));
+          pick.ondragstart = () => { dragged=index; };
+          pick.ondragover = e => e.preventDefault();
+          pick.ondrop = e => { e.preventDefault(); if(dragged===null)return; const from=order.indexOf(dragged), to=order.indexOf(index); order.splice(from,1); order.splice(to,0,dragged); dragged=null; renderCards(); };
+          // Pointer dragging supports touch without native HTML drag support.
+          let origin;
+          pick.onpointerdown = e => { if(Array.isArray(q.answer)) { origin={x:e.clientX,y:e.clientY}; if(e.pointerType!=='mouse') pick.setPointerCapture(e.pointerId); } };
+          pick.onpointerup = e => { if(!origin || Math.hypot(e.clientX-origin.x,e.clientY-origin.y)<12)return; suppressClick=true; setTimeout(()=>suppressClick=false,0); const target=document.elementFromPoint(e.clientX,e.clientY)?.closest('[data-answer]'); if(target){ const to=order.indexOf(Number(target.dataset.answer)); order.splice(order.indexOf(index),1); order.splice(to,0,index); renderCards(); } origin=null; };
+          choices.append(h('div', { class:'fp-answer-row' }, [pick, SpeakButton({text:q.options[index]})]));
         });
-        content.append(choices);
-        if (Array.isArray(q.answer)) content.append(status, button('重新排列', showQuestion), button('確認', () => { if (selected.length === q.answer.length) submitAnswer(selected); else status.textContent = `請選${q.answer.length}張卡片。`; }));
       }
+      renderCards(); content.append(choices);
+      if(Array.isArray(q.answer)) content.append(button('確認次序',()=>submitAnswer([...order])));
+      if(feedback) content.append(say([...feedback].slice(0,18).join(''),'p',{role:'status',class:'fp-card-feedback'}));
+      if(wrong) content.classList.add('fp-wrong');
     }
-    if (feedback) content.append(say(feedback, 'p', { role: 'status', class: 'fp-feedback' }));
-    if (state.hints) content.append(say(q.hints[state.hints - 1], 'p', { class: 'fp-hint' }));
-    content.append(h('div', { class: 'fp-inline-tools' }, [button('重看課文', () => showEvidence(q)), button('查看提示', () => { state.hints = Math.min(3, state.hints + 1); state.hintUses++; if (!replay) save(); showQuestion(); })]));
-    if (state.done) {
-      syncPrimary();
-      content.append(say(`收集到 ${reward(state)} 顆水滴 💧。你可以隨時重玩。`));
-      if (progress.current < config.scenes.length - 1) content.append(button('前往下一站 →', advance, { class: 'fp-button fp-primary', 'data-next': 'true' }));
-      else {
-        content.append(say('釜底抽薪', 'h3'));
-        for (const block of sources.get(`${scene.id}:idiom`) || []) content.append(say(block.text, 'blockquote', { class: 'fp-excerpt' }));
-        config.review.forEach(([title, text]) => content.append(say(title, 'h3'), say(text)));
-        content.append(button('回關卡一覽重玩', showScenes), h('a', { class: 'fp-button', href: `#/lesson/${lesson.lesson_id}` }, '回到本課'));
-      }
-    }
-    sheet('讀懂經歷，也讀懂心情', content, '#fp-question');
+    rootBody.append(content); world?.setOptions({calm:calm(),paused:true});
   }
 
-  function showEvidence(q) {
-    const content = h('div', { class: 'fp-sheet-content' });
-    for (const block of sources.get(`${scene.id}:question-${q.id}`) || []) content.append(say(`第 ${block.para} 段・原句`, 'p', { class: 'fp-source' }), say(block.text, 'blockquote', { class: 'fp-excerpt' }));
-    content.append(button('回到題目', showQuestion)); sheet('回原句找依據', content);
-  }
   function showHints() {
     state.hints = Math.min(3, state.hints + 1); state.hintUses++; if (!replay) save();
     sheet('慢慢觀察，不用著急', h('div', { class: 'fp-sheet-content' }, [say(scene.goal), say((scene.questions[state.questionIndex || 0]?.hints || ['先觀察動作。', '點定點按鈕找線索。', '讀完本段原句再前進。'])[state.hints - 1], 'p', { class: 'fp-hint' }), button('回到場景', () => modal.close(), { class: 'fp-button fp-primary' })]));
@@ -300,6 +254,7 @@ export function FirstPersonPage(lesson) {
   }
   function showSettings() {
     const content = h('div', { class: 'fp-sheet-content' });
+    content.append(button('重看原句', reviewReading), button('提示', showHints), button('關卡一覽', showScenes), button('重玩', () => { modal.close(); replay=emptyState(); enterScene(); }));
     for (const [key, label] of [['sound', '環境音效'], ['calm', '減少動畫']]) {
       const input = h('input', { type: 'checkbox', checked: prefs[key] });
       input.addEventListener('change', () => { prefs[key] = input.checked; savePrefs(); updateMotion(); });
