@@ -9,7 +9,7 @@ class Element {
  remove(){}
  getBoundingClientRect(){return {left:0,top:0,width:100,height:100};}
  setPointerCapture(){}
- animate(){return {cancel(){}};}
+ animate(){const a={cancel(){a.oncancel?.();}};this.animation=a;return a;}
 }
 const saved={document:globalThis.document,Image:globalThis.Image,innerWidth:globalThis.innerWidth,innerHeight:globalThis.innerHeight};
 globalThis.document={createElement:()=>new Element(),createElementNS:()=>new Element(),createTextNode:text=>({textContent:text})};globalThis.Image=Element;globalThis.innerWidth=100;globalThis.innerHeight=100;
@@ -47,6 +47,7 @@ try{
    if(type==='toolGrab')fixture.find('tool').onclick();
    fixture.find(a).onclick();
    if(['dragToTarget','toolGrab'].includes(type))fixture.find('target').onclick();
+   if(!['scoopGesture','orderCards'].includes(type)){const before=fixture.state.step;for(let i=0;i<3;i++)fixture.find(a).onclick();assert.equal(fixture.state.step,before,`${type}: completed item is no-op`);}
   }
   if(type==='orderCards')fixture.layer.parentElement.parentElement.parentElement.children[1].children.at(-1).onclick();
   assert.ok(performance.now()-start<200,`${type}: rapid activation`);
@@ -55,6 +56,15 @@ try{
   fixture.find('a').onclick();assert.equal(fixture.state.step,steps.length);
   fixture.controller.dispose();
  }
+
+ // Ordered observe regression: real camera animation, stale clicks and cancellation.
+ const camera=setup('observe',[obj('hoop',50,10,{viewMotion:'lookUp',observation:''}),obj('senior',65,48,{fromStep:1,viewMotion:'approach',observation:''})],['hoop','senior']);
+ const world=camera.layer.parentElement.parentElement;
+ camera.find('hoop').onclick();for(let i=0;i<3;i++)camera.find('hoop').onclick();assert.equal(camera.state.step,0);
+ world.animation.onfinish();assert.equal(camera.state.step,1);
+ for(let i=0;i<3;i++)camera.find('hoop').onclick();assert.equal(camera.state.step,1);assert.equal(camera.find('senior').disabled,false);
+ camera.find('senior').onclick();world.animation.cancel();assert.equal(camera.find('senior').disabled,false);
+ camera.find('senior').onclick();world.animation.onfinish();assert.ok(operationComplete(camera.scene,camera.state));camera.controller.dispose();
  assert.equal(chooseCard({options:['a','b']},3),null);const cards=orderCards([1,0]);cards.toggle(0);cards.toggle(0);assert.deepEqual(cards.selected,[]);cards.move(0,1);assert.deepEqual(cards.selected,[0,1]);
  assert.equal(crossesRegion({x:0,y:0},{x:100,y:100},target),true);assert.equal(advanceScoop({}, {x:0,y:0},target).dipped,false);
 }finally{Object.assign(globalThis,saved);}

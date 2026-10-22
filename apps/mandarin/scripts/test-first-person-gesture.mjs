@@ -26,6 +26,7 @@ function setup(act,reduced=()=>false){
  const scene=FIRST_PERSON_LESSON.scenes.find(s=>s.act===act),state=operationState(scene);
  const outer=new Element(),host=new Element(),plane=new Element();outer.append(host);host.append(plane);
  const api=mountOperation(plane,{scene,state,reduced,changed(){},heat(){},demonstrate(){},chime(){}});
+ if(act!==4)api.setPaused(false);
  const layer=plane.children[0];return {state,api,layer,find:action=>layer.children.find(x=>x.dataset.action===action)};
 }
 const event=(x,y)=>({button:0,pointerId:1,clientX:x,clientY:y,stopPropagation(){}});
@@ -59,7 +60,7 @@ try {
  fast.api.dispose();
  const collect=setup(1);collect.find('bell').onclick();const stick=collect.find('wood-2');
  stick.onpointerdown(event(350,830));stick.onpointerup(event(610,800));assert.equal(collect.state.step,2,'no pointermove collection');assert.equal(stick.style.top,'81%');collect.api.dispose();
- const guided=setup(1);guided.find('bell').onclick();guided.api.setPaused(false);
+ const guided=setup(1);guided.find('bell').onclick();guided.api.setPaused(true);guided.api.setPaused(false);
  assert.equal(guided.state.woodDemoSeen,true);advance(1800);
  assert.equal(guided.api.showWoodDemo(false),false,'automatic demonstration only once');
  assert.equal(operationState(FIRST_PERSON_LESSON.scenes[0],guided.state).woodDemoSeen,true,'demonstration flag survives restore');
@@ -71,7 +72,7 @@ try {
  advance(1);guided.find('wood-2').onclick();guided.find('pile').onclick();assert.match(status.children[0].textContent,/（2／3）/);
  advance(1);guided.find('wood-3').onclick();guided.find('pile').onclick();assert.equal(guided.state.collected.length,3);assert.match(status.children[0].textContent,/（3／3）/);
  guided.api.dispose();
- const still=setup(1,()=>true);still.find('bell').onclick();still.api.setPaused(false);
+ const still=setup(1,()=>true);still.find('bell').onclick();still.api.setPaused(true);still.api.setPaused(false);
  assert.ok(still.find('wood-1').classList.contains('fp-demo-lit'));advance(900);
  assert.ok(still.find('pile').classList.contains('fp-demo-lit'));advance(900);
  advance(6200);assert.ok(still.layer.classList.contains('fp-wood-static'),'8 second static idle cue');

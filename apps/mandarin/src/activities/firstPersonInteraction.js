@@ -8,7 +8,7 @@ export function operationState(scene, raw = {}) {
   const step = Number.isInteger(raw.step) ? Math.max(0, Math.min(max, raw.step)) : 0;
   const validWood = scene.operation.collect || [];
   const collected = [...new Set((Array.isArray(raw.collected) ? raw.collected : scene.operation.steps.slice(0,step)).filter(x=>validWood.includes(x)))];
-  return { step, ...(raw.demoSeen === true ? {demoSeen:true} : {}), ...(scene.act===4 && raw.tongsDemoSeen === true ? {tongsDemoSeen:true} : {}), ...(scene.act===1 && raw.woodDemoSeen === true ? {woodDemoSeen:true} : {}), ...(collected.length ? { collected } : {}) };
+  return { step, ...(Number.isInteger(raw.rhythmAttempts) && raw.rhythmAttempts>=0 ? {rhythmAttempts:raw.rhythmAttempts} : {}), ...(raw.demoSeen === true ? {demoSeen:true} : {}), ...(scene.act===4 && raw.tongsDemoSeen === true ? {tongsDemoSeen:true} : {}), ...(scene.act===1 && raw.woodDemoSeen === true ? {woodDemoSeen:true} : {}), ...(collected.length ? { collected } : {}) };
 }
 export function operate(scene, state, action) {
   const expected = scene.operation.steps[state.step];
@@ -25,9 +25,9 @@ export const operationComplete = (scene, state) => state.step === scene.operatio
 export const heatFor = (scene, state) => scene.operation.heat?.[state.step] ?? 1;
 
 // Source-image coordinates remain valid while the illustration pans or resizes.
-export function mountOperation(plane, { scene, state, changed, heat, demonstrate, chime, focus, reduced = () => false, saveDemo = () => {} }) {
-  if (!scene.operation.profile) return mountConfiguredOperation(plane, {scene,state,changed,heat,demonstrate,focus,reduced,saveDemo}, {operate:action=>operate(scene,state,action),complete:()=>operationComplete(scene,state)});
-  if(scene.operation.type==='toolGrab')return mountTongs(plane,{scene,state,changed,heat,demonstrate,focus,reduced,saveDemo},{operate:action=>operate(scene,state,action),complete:()=>operationComplete(scene,state),heatFor:()=>heatFor(scene,state)});
+export function mountOperation(plane, { scene, state, changed, heat, demonstrate, chime, focus, reduced = () => false, saveDemo = () => {}, quiet = () => {} }) {
+  if (!scene.operation.profile) return mountConfiguredOperation(plane, {scene,state,changed,heat,demonstrate,focus,reduced,saveDemo,quiet}, {operate:action=>operate(scene,state,action),complete:()=>operationComplete(scene,state)});
+  if(scene.operation.type==='toolGrab')return mountTongs(plane,{scene,state,changed,heat,demonstrate,focus,reduced,saveDemo,quiet},{operate:action=>operate(scene,state,action),complete:()=>operationComplete(scene,state),heatFor:()=>heatFor(scene,state)});
   const base = `${(import.meta.env?.BASE_URL || '/')}${scene.assetBase}sprites/`;
   const layer = document.createElement('div'); layer.className = `fp-operation fp-act-${scene.act}`; plane.append(layer);
   let paused = true, idleTimer, demoTimer, demoAnimations = [], reminders = 0, demoActive = false;
@@ -43,7 +43,7 @@ export function mountOperation(plane, { scene, state, changed, heat, demonstrate
     layer.append(el); const obj={el,x,y,action,label}; (target?targets:objects).push(obj);
     el.onclick=()=>{ if(suppress) return; if(target) drop(obj); else select(obj); };
     if(!target && action !== 'bell') {
-      el.onpointerdown=e=>{ if(e.button!==0) return; if(busy || el.disabled || dragging)return; e.stopPropagation(); stopDemo(); dragging={obj,id:e.pointerId,x:e.clientX,y:e.clientY,moved:false,...scoopGesture({}, {x:(e.clientX-plane.getBoundingClientRect().left)/plane.getBoundingClientRect().width*100,y:(e.clientY-plane.getBoundingClientRect().top)/plane.getBoundingClientRect().height*100})}; el.setPointerCapture(e.pointerId); layer.classList.add('is-dragging'); guideArrow({x:obj.x,y:obj.y}); if(scene.act===2 && dragging.dipped)setSprite(obj,'ladle-full'); };
+      el.onpointerdown=e=>{ if(e.button!==0) return; if(paused || disposed || busy || el.disabled || dragging)return; e.stopPropagation(); stopDemo(); dragging={obj,id:e.pointerId,x:e.clientX,y:e.clientY,moved:false,...scoopGesture({}, {x:(e.clientX-plane.getBoundingClientRect().left)/plane.getBoundingClientRect().width*100,y:(e.clientY-plane.getBoundingClientRect().top)/plane.getBoundingClientRect().height*100})}; el.setPointerCapture(e.pointerId); layer.classList.add('is-dragging'); guideArrow({x:obj.x,y:obj.y}); if(scene.act===2 && dragging.dipped)setSprite(obj,'ladle-full'); };
       el.onpointermove=e=>{
         if(!dragging || dragging.id!==e.pointerId)return;
         const r=plane.getBoundingClientRect(), point={x:(e.clientX-r.left)/r.width*100,y:(e.clientY-r.top)/r.height*100};
@@ -74,6 +74,7 @@ export function mountOperation(plane, { scene, state, changed, heat, demonstrate
   function feedback(text){ status.setAttribute('aria-label',text); message.textContent=scene.act===1 ? (state.step===0?'點一下風鈴':`搬木柴到柴堆（${state.collected?.length || 0}／3）`) : scene.act===2 ? `舀起倒回（${state.step}／3）` : text; }
   function commit(action){ if(!operate(scene,state,action)){ feedback('慢慢來，先完成目前的步驟。'); return false; } selected=null; if(scene.act===1 && operationComplete(scene,state))focus?.(61); if(scene.act===4 && action==='demo')focus?.(innerWidth/innerHeight>=1.4?46:73); heat(heatFor(scene,state)); changed(); render(); return true; }
   function select(o){
+    if(paused || disposed || busy || o.el.disabled || state.collected?.includes(o.action) || scene.operation.steps.slice(0,state.step).includes(o.action) && !scene.operation.steps.slice(state.step).includes(o.action))return;
     if(scene.act===1)stopDemo();
     if(scene.act===1 && o.action.startsWith('wood-') && state.step===0)return;
     if(scene.act===1 && o.action==='bell'){ chime(); if(state.step===0) commit('bell'); feedback(`把地上的木柴搬到灶旁的柴堆（${state.collected?.length || 0}／3）`); return; }

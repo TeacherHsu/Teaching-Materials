@@ -30,7 +30,7 @@ export function FirstPersonPage(lesson) {
   let prefs = { sound: false, animation: 'system' };
   try { const s = JSON.parse(localStorage.getItem(PREF_KEY)); prefs = { sound: s?.sound === true, animation: ['system','on','off'].includes(s?.animation) ? s.animation : s?.calm ? 'off' : 'system' }; } catch { /* 預設 */ }
   let world, generation = 0, disposed = false, replay = null, lastClue = null, feedback = '', wrong = false, readingVisible = false;
-  let moodLabel = '';
+  let moodLabel = '', quietProgress=0;
   let subtitle = null, subtitleTimer, subtitleAfter, subtitleQueue = [];
   let timelineIndex=0, disposeStrategy, predictions={};
   let beat = 'intro', beatTimer, playback = createPlayback(), narrationToken = 0;
@@ -55,7 +55,7 @@ export function FirstPersonPage(lesson) {
         const filter = audio.createBiquadFilter(); filter.type = 'lowpass'; filter.frequency.value = 700;
         ambientGain = audio.createGain(); ambientGain.gain.value = 0; ambientSource.connect(filter); filter.connect(ambientGain); ambientGain.connect(audio.destination); ambientSource.start();
       }
-      ambientGain.gain.setTargetAtTime(scene?.id === 'root' ? .008 : scene?.id === 'welcome' ? .005 : .022, audio.currentTime, .5);
+      ambientGain.gain.setTargetAtTime((scene?.id === 'root' ? .008 : scene?.id === 'welcome' ? .005 : .022) * (1-quietProgress), audio.currentTime, .5);
     } catch { /* 音訊不影響學習 */ }
   }
   function chime() { chimeUntil=Date.now()+2500;clearTimeout(chimeTimer);chimeTimer=setTimeout(updateMotion,2500); stopChime?.(); stopChime = playChime(prefs.sound, () => {
@@ -150,7 +150,7 @@ export function FirstPersonPage(lesson) {
     stage.addEventListener('pointerup', () => { pointer = null; }); stage.addEventListener('pointercancel', () => { pointer = null; });
     stage.addEventListener('keydown', (e) => { if (e.target !== stage) return; if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) { e.preventDefault(); world?.look(e.key === 'ArrowLeft' ? .08 : e.key === 'ArrowRight' ? -.08 : 0, e.key === 'ArrowUp' ? .05 : e.key === 'ArrowDown' ? -.05 : 0); } });
     const version = generation;
-    mountFirstPersonScene(stage, { phase: { ...scene, nextImages: config.scenes[progress.current+1]?.art.images, id: scene.id.replace(/^story-/, "") }, calm: calm(), operation: state.operation, onChime: chime, onDemoSeen: () => { if(!replay)save(); }, onOperation: () => { if (!replay) save(); updateMood(); if(beat==='act' && (operationComplete(scene,state.operation) || scene.timeline?.[timelineIndex]?.untilStep<=state.operation.step)) finishBeat('act'); else updateMotion(); }, onMode: (label) => { if (version === generation) { mode.textContent = label; mode.hidden = label.startsWith('第一人稱'); } } }).then((controller) => { if (disposed || version !== generation) controller.dispose(); else { world = controller; if(scene.timeline)runTimeline();else setBeat('intro'); } });
+    mountFirstPersonScene(stage, { phase: { ...scene, nextImages: config.scenes[progress.current+1]?.art.images, id: scene.id.replace(/^story-/, "") }, calm: calm(), operation: state.operation, onQuiet: value => { quietProgress=value; sound(); }, onChime: chime, onDemoSeen: () => { if(!replay)save(); }, onOperation: () => { if (!replay) save(); updateMood(); if(beat==='act' && (operationComplete(scene,state.operation) || scene.timeline?.[timelineIndex]?.untilStep<=state.operation.step)) finishBeat('act'); else updateMotion(); }, onMode: (label) => { if (version === generation) { mode.textContent = label; mode.hidden = label.startsWith('第一人稱'); } } }).then((controller) => { if (disposed || version !== generation) controller.dispose(); else { world = controller; if(scene.timeline)runTimeline();else setBeat('intro'); } });
     updateMotion(); sound();
   }
 
@@ -194,6 +194,10 @@ export function FirstPersonPage(lesson) {
       if(operationComplete(scene,state.operation) || scene.timeline?.[timelineIndex]?.untilStep<=state.operation.step) finishBeat(value);
       else if(scene.beats.act.demo && state.operation.step===0) world?.startDemo();
     } else if(value==='result') {
+      for(const strategy of scene.strategies || [])if(strategy.type==='predict' && strategy.revealOnResult && predictions[strategy.id]!==undefined){
+        root.querySelector('.fp-prediction-reminder')?.remove();
+        rootBody.append(h('aside',{class:'fp-prediction-reminder'},[say(`你猜的是：${strategy.options[predictions[strategy.id]]}。${strategy.resultReminder}`)]));
+      }
       world?.setView(scene.beats.result.view);
       beatTimer=setTimeout(()=>finishBeat(value),scene.beats.result.duration);
     } else {
