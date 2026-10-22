@@ -1,3 +1,4 @@
+import { lockBeatObjects } from './firstPersonPresentation.js';
 import { mountChimeWind } from './firstPersonChime.js';
 import { illustrationLayout } from './firstPersonLayout.js';
 import { mountOperation } from './firstPersonInteraction.js';
@@ -10,6 +11,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   const layer = document.createElement('div'); layer.className = 'fp-illustration';
   const plane = document.createElement('div'); plane.className = 'fp-illustration-plane'; layer.append(plane); host.prepend(layer);
   host.classList.add('is-illustrated');
+  let reading = false;
   let disposed = false, paused = true, frame = 0, previous = 0, pan = art.views[phase.view] ?? .5, target = pan;
   let width = 0, imageWidth = 0, imageHeight = 0, top = 0;
   const base = `${import.meta.env.BASE_URL}assets/first-person/115AG3H04/`;
@@ -34,8 +36,9 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   function render() {
     if (disposed) return;
     width = host.clientWidth;
-    const geometry=illustrationLayout(width,host.clientHeight,pan);
+    const geometry=illustrationLayout(width,host.clientHeight * (reading ? 1.3 : 1),pan);
     ({imageHeight,imageWidth,top}=geometry);
+    if(reading)top-=host.clientHeight*.3;
     const left=geometry.left;
     layer.style.top = `${top}px`; layer.style.height = `${imageHeight}px`;
     plane.style.width = `${imageWidth}px`; plane.style.transform = `translateX(${left}px)`;
@@ -70,11 +73,14 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   media.addEventListener('change', resume); document.addEventListener('visibilitychange', resume);
   resume();
   return {
+    startDemo() { interaction.startDemo?.(); },
     showWoodDemo() { return interaction.showWoodDemo(true); },
     setView(view) { target = art.views[view] ?? .5; resume(); },
     look(dx) { if(interaction.dragging) return; target = Math.max(0, Math.min(1, target - dx * 2)); resume(); },
     observeAction() { resume(); },
-    setOptions(options) { calm = Boolean(options.calm); paused = Boolean(options.paused); plane.inert = paused; resume(); },
+    setOptions(options) { reading=Boolean(options.reading); calm = Boolean(options.calm); paused = Boolean(options.paused); lockBeatObjects(plane,Boolean(options.locked));
+      plane.inert=paused || Boolean(options.locked);
+      resume(); },
     dispose() {
       disposed = true; wind?.dispose(); interaction.dispose(); cancelAnimationFrame(frame); resize.disconnect(); media.removeEventListener('change', resume); document.removeEventListener('visibilitychange', resume);
       [...images, ...preloads].forEach(img => { img.onload = img.onerror = null; img.removeAttribute('src'); }); layer.remove(); host.classList.remove('is-illustrated', 'fp-image-failed');

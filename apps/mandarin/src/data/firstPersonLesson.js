@@ -1,7 +1,7 @@
 // 公開資料只保留原句索引與雜湊；原文由 classroomKey 解密。
 export const FIRST_PERSON_LESSON = {
   "lessonId": "115AG3H04",
-  "version": 8,
+  "version": 9,
   "title": "食堂裡的閱讀線索",
   "source": {
     "text": "翰林115三上官方課文Word，第4課〈水滾了〉，王宗仁",
@@ -62,6 +62,7 @@ export const FIRST_PERSON_LESSON = {
         }
       ],
       "act": 1,
+      "beats": {"intro": [{"para": 1, "sentences": [0, 1, 2, 3]}], "act": {"demo": false}, "result": {"duration": 1800, "view": "work"}, "read": [{"para": 1, "sentences": [4, 5, 6, 7, 8]}]},
       "stationType": "challenge",
       "questions": [
         {
@@ -190,6 +191,7 @@ export const FIRST_PERSON_LESSON = {
         }
       ],
       "act": 2,
+      "beats": {"intro": [{"para": 2, "sentences": [0, 1, 2, 3]}], "act": {"demo": false}, "result": {"duration": 1800, "view": "pot"}, "read": [{"para": 2, "sentences": [4, 5, 6, 7, 8, 9, 10, 11]}]},
       "stationType": "challenge",
       "questions": [
         {
@@ -352,6 +354,7 @@ export const FIRST_PERSON_LESSON = {
         }
       ],
       "act": 3,
+      "beats": {"intro": [], "act": {"demo": false}, "result": {"duration": 1800, "view": "fire"}, "read": [{"para": 3, "sentences": [0, 1, 2, 3, 4, 5, 6, 7, 8]}]},
       "stationType": "challenge",
       "questions": [
         {
@@ -488,6 +491,7 @@ export const FIRST_PERSON_LESSON = {
         }
       ],
       "act": 4,
+      "beats": {"intro": [{"para": 3, "sentences": [9, 10]}], "act": {"demo": true}, "result": {"duration": 1800, "view": "pot"}, "read": [{"para": 3, "sentences": [11, 12, 13]}, {"para": 4, "sentences": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]}]},
       "stationType": "challenge",
       "questions": [
         {

@@ -1,5 +1,12 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-10-22｜家中 Mac｜Codex｜四拍節奏 v9：待 Claude 實玩確認
+- 依本單只改檔，未執行任何 git、未開 Chrome、未提交／推送／部署。
+- 每幕資料驅動 intro→act→result→read→題卡；45句按順序唯一分配、字幕自動／手動／略過／重聽、操作鎖定、上方任務及第3幕物件對話框、結果鏡頭與已讀回顧。保留題目、cover、極簡結構、量表及既有風鈴／木柴／舀水／火鉗動作。內容version 9。
+- validate、10支first-person測試、全站scripts/test-*.mjs、build、check-dist／assets、build:preview通過；最終程式另重跑first-person與完整建置，保留成功dist。
+- 索引表、逐檔改動及Claude三尺寸清單見 apps/mandarin/docs/first-person-IMPL-LOG.md「四拍節奏」；需確認字幕／鏡頭遮擋、開場與示範時序、四拍轉移、自動／手動／略過、計數量表與手勢回歸。未宣稱瀏覽器驗收完成。
+
+
 ## 2026-10-22｜家中 Mac｜Codex｜火鉗：待 Claude 實玩確認
 - 依本單只改檔，未執行任何git、未開Chrome、未提交／推送／部署。內容version 8不變。
 - 第4幕獨立火鉗流程：拿鉗→夾柴→拉到爐外放手；點擊／鍵盤同流程，64px錯開熱區、虛線發亮地面、復位提示、逐根計數／既有heat與mood、地上柴與小火星、一次手勢／提示重播／8秒提醒。保留cover、極簡介面、第1–3幕、量表／字幕機制與結局小火。

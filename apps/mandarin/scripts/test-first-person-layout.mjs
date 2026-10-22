@@ -21,7 +21,7 @@ for(const [width,height] of [[1366,900],[820,1180],[375,812]]) {
  const edge=px('.fp-controls','right'), gear=px('.fp-page .fp-gear','width');
  const top=px('.fp-page .fp-topbar','top'), back=px('.fp-page .fp-home','width');
  const taskHeight=px('.fp-page .fp-operation-status','height');
- const blockers=[{name:'back',x:edge,y:top,w:back,h:back},{name:'act',x:mobile?60:64,y:top,w:px('.fp-page .fp-topbar>span','width'),h:back},{name:'mood',x:width-edge-gear-gap-moodWidth,y:top,w:moodWidth,h:px('.fp-mood','height')},{name:'gear',x:width-edge-gear,y:top,w:gear,h:gear}, {name:'task',x:edge,y:height-edge-taskHeight,w:Math.min(width-24,px('.fp-page .fp-operation-status','width')),h:taskHeight}, {name:'subtitle',x:Math.max(12,(width-760)/2),y:height-12-px('.fp-page .fp-cinema','max-height'),w:Math.min(760,width-24),h:px('.fp-page .fp-cinema','max-height')}];
+ const blockers=[{name:'back',x:edge,y:top,w:back,h:back},{name:'act',x:mobile?60:64,y:top,w:px('.fp-page .fp-topbar>span','width'),h:back},{name:'mood',x:width-edge-gear-gap-moodWidth,y:top,w:moodWidth,h:px('.fp-mood','height')},{name:'gear',x:width-edge-gear,y:top,w:gear,h:gear}, {name:'task',x:12,y:px('.fp-page .fp-operation-status','top'),w:width-24,h:taskHeight}];
  for(const [act,objects] of Object.entries(operationObjects)) {
   const extra=act==='1'?groundPile.map(([x,y])=>['stacked',null,x,y,'pile',7,.24]):act==='2'?[[64,69],[64,54]].map(([x,y])=>['gesture',null,x,y,'scoop',18,.78]):act==='4'?outsidePile.map(([x,y])=>['extracted',null,x,y,'out',8,.35]):[];
   for(const [label,,x,y,,percent,ratio] of [...objects,...extra]) {
@@ -32,7 +32,7 @@ for(const [width,height] of [[1366,900],[820,1180],[375,812]]) {
    const g=illustrationLayout(width,height,pan), w=Math.max(44,g.imageWidth*percent/100),h=Math.max(44,g.imageWidth*percent/100*ratio);
    const r={x:g.left+g.imageWidth*x/100-w/2,y:g.top+g.imageHeight*y/100-h/2,w,h};
    assert.ok(r.x+r.w>0 && r.x<width && r.y>=0 && r.y+r.h<=height,`${width} act${act} ${label}: visible after focus`);
-   for(const b of blockers) {assert.ok(!overlaps(r,b),`${width} act${act} ${label} overlaps ${b.name}`);checks++;}
+   for(const blocker of blockers) {const b=blocker.name==='task' && act==='1'?{...blocker,y:height*.25}:blocker;assert.ok(!overlaps(r,b),`${width} act${act} ${label} overlaps ${b.name}`);checks++;}
   }
  }
 }

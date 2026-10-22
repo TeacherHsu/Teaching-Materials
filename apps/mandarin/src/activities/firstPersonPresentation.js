@@ -5,10 +5,12 @@ export function moodFor(act, step, remembered = false) {
 }
 export const subtitlePlan = scene => scene.clues.flatMap(c => c.refs || []);
 
-export function subtitlesForStep(scene, step) {
-  const all = subtitlePlan(scene).flatMap(ref => ref.sentences.map(n => ({para:ref.para, n})));
-  const count = scene.operation.steps.length;
-  return all.slice(Math.floor(all.length * (step-1) / count), Math.floor(all.length * step / count));
+export const beatLines = refs => refs.flatMap(ref => ref.sentences.map(n => ({para:ref.para,n})));
+export const subtitleDuration = text => Math.max(2500, [...text].length * 180);
+export const nextBeat = beat => ({intro:'act', act:'result', result:'read', read:'question'})[beat];
+export function createPlayback() {
+  let automatic = true;
+  return { get automatic(){return automatic;}, toggle(){automatic=!automatic;return automatic;}, delay(text){return automatic ? subtitleDuration(text) : null;} };
 }
 
 // A card can be selected once, then tapped again to cancel its numbered place.
@@ -28,4 +30,13 @@ export function createCardOrder(initial) {
     move(from,to){order=reorderCards(order,from,to);selected=[...order];},
     reset(){order=[...initial];selected=[];},
   };
+}
+
+export function lockBeatObjects(plane, locked) {
+  plane.inert=locked;
+  plane.classList.toggle('fp-locked',locked);
+  for(const el of plane.querySelectorAll('button')) {
+    if(locked) { if(!el.hasAttribute('data-beat-disabled'))el.dataset.beatDisabled=String(el.disabled); el.disabled=true; }
+    else if(el.hasAttribute('data-beat-disabled')) { el.disabled=el.dataset.beatDisabled==='true';delete el.dataset.beatDisabled; }
+  }
 }

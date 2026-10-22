@@ -281,3 +281,20 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 .fp-tongs-operation [data-action="tongs"][aria-pressed="true"]::after,.fp-tongs-operation [data-action="tongs"]:disabled::after { content:none; }
 /* Sprite 440x372: midpoint of the jaws (402,307) maps to the button center. */
 .fp-tongs-operation [data-action="tongs"] img { position:absolute; width:150px; height:127px; left:-62px; top:-73px; transform:none; }
+/* Four beats: action instruction stays above the illustration, reading stays below its focus. */
+.fp-page .fp-operation-status { top:68px; bottom:auto; left:50%; transform:translateX(-50%); width:max-content; max-width:calc(100% - 24px); }
+.fp-page:not([data-beat="act"]) .fp-operation-status { display:none; }
+.fp-locked .fp-glow,.fp-locked .fp-drop-target,.fp-locked .fp-tongs-ground { visibility:hidden; }
+.fp-locked .fp-object { animation:none!important; filter:none!important; box-shadow:none!important; }
+.fp-object-bubble { position:absolute; z-index:9; transform:translate(-50%,-100%); width:200px; padding:8px; border-radius:12px; background:#fff8e9; color:#463523; font-size:20px; pointer-events:auto; }
+.fp-read-label { font-size:18px; }
+.fp-page .fp-cinema { flex-wrap:wrap; max-height:26%; }
+.fp-cinema>.fp-spoken { min-width:60%; }
+.fp-page[data-beat="read"] .fp-art-plane { transform-origin:50% 0; }
+.fp-page[data-beat="act"]:has(.fp-world--welcome) .fp-operation-status { top:25%; }
+.fp-page .fp-cinema { transition:opacity .2s; }
+.fp-page.fp-calm .fp-cinema { transition:none; }
+.fp-page .fp-operation-status,.fp-page .fp-operation-status>span { white-space:nowrap; }
+.fp-page .fp-operation-status>span { overflow:hidden; text-overflow:ellipsis; }
+/* 示範手只在動手拍顯示；結果、讀原文、題目時一律收起。 */
+.fp-page:not([data-beat="act"]) .fp-wood-hand, .fp-page:not([data-beat="act"]) .fp-tongs-hand { display:none; }

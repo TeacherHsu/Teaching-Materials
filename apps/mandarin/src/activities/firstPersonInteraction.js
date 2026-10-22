@@ -67,7 +67,7 @@ export function mountOperation(plane, { scene, state, changed, heat, demonstrate
     return obj;
   }
   function reset(o){ o.el.style.left=`${o.x}%`; o.el.style.top=`${o.y}%`; }
-  function feedback(text){ message.textContent=text; }
+  function feedback(text){ status.setAttribute('aria-label',text); message.textContent=scene.act===1 ? (state.step===0?'點一下風鈴':`搬木柴到柴堆（${state.collected?.length || 0}／3）`) : scene.act===2 ? `舀起倒回（${state.step}／3）` : text; }
   function commit(action){ if(!operate(scene,state,action)){ feedback('慢慢來，先完成目前的步驟。'); return false; } selected=null; if(scene.act===1 && operationComplete(scene,state))focus?.(61); if(scene.act===4 && action==='demo')focus?.(innerWidth/innerHeight>=1.4?46:73); heat(heatFor(scene,state)); changed(); render(); return true; }
   function select(o){
     if(scene.act===1)stopDemo();
@@ -75,7 +75,7 @@ export function mountOperation(plane, { scene, state, changed, heat, demonstrate
     if(scene.act===1 && o.action==='bell'){ chime(); if(state.step===0) commit('bell'); feedback(`把地上的木柴搬到灶旁的柴堆（${state.collected?.length || 0}／3）`); return; }
     if(busy || operationComplete(scene,state))return;
     if(scene.act===2){ scoopAnimation(o); return; }
-    if(scene.act===3){ if(o.action==='pot') feedback('水面還在冒泡。'); if(o.action==='ladle') feedback('你剛才用勺子舀了，水仍在滾。'); if(commit(o.action) && o.action==='fire') { layer.classList.add('fp-discovery'); feedback('你找到了鍋下的線索。'); } return; }
+    if(scene.act===3){ if(['pot','ladle'].includes(o.action)) {const bubble=document.createElement('div');bubble.className='fp-object-bubble';bubble.style.left=o.x+'%';bubble.style.top=(o.y-8)+'%';const text=o.action==='pot'?'水面還在冒泡。':'你剛才用勺子舀了，水仍在滾。';bubble.append(document.createTextNode(text),SpeakButton({text}));layer.append(bubble);setTimeout(()=>bubble.remove(),2000);} if(commit(o.action) && o.action==='fire') { layer.classList.add('fp-discovery'); feedback('你找到了鍋下的線索。'); } return; }
     if(scene.act===4 && state.step===0){
       if(timer) return; demonstrate(true); feedback('先看師傅使用工具，再換你試試。');
       timer=setTimeout(()=>{ timer=null; if(disposed)return; demonstrate(false); commit('demo'); },2400); return;

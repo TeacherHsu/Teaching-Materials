@@ -41,7 +41,7 @@ try {
  ladle.onclick();ladle.onclick();advance(1600);assert.equal(state.step,2);
  ladle.onclick();advance(1600);assert.equal(state.step,3);api.dispose();
  const first=setup(1);assert.equal(first.find('bell').onpointerdown,undefined,'chime stays anchored');first.find('bell').onclick();first.find('bell').onclick();assert.equal(first.state.step,1,'replaying wind does not advance progress');const branch=first.find('wood-1');branch.onpointerdown(event(300,580));branch.onpointermove(event(640,620));branch.onpointerup(event(640,620));assert.equal(branch.style.left,'59%');assert.equal(branch.hidden,false);assert.equal(branch.disabled,true);first.api.dispose();
- const fourth=setup(4);assert.equal(fourth.find('wood-1').disabled,true);advance(2400);assert.equal(fourth.state.step,1);
+ const fourth=setup(4);assert.equal(fourth.find('wood-1').disabled,true);advance(2400);assert.equal(fourth.state.step,0,'intro never starts demonstration');fourth.api.startDemo();advance(2400);assert.equal(fourth.state.step,1);
  fourth.api.setPaused(false);
  fourth.find('wood-1').onclick();assert.equal(fourth.state.step,1,'wood requires tool');
  const tong=fourth.find('tongs'),log=fourth.find('wood-1');

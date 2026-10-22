@@ -50,6 +50,6 @@ export function mountTongs(plane, options, api){
   layer.addEventListener('pointerdown',idle);layer.addEventListener('keydown',idle);
   const observer=new ResizeObserver(arrange);observer.observe(plane);
   render();focus?.(state.step===0?49:69);
-  if(state.step===0){demonstrate(true);demoTimer=setTimeout(()=>{if(disposed)return;demonstrate(false);operate('demo');changed();focus?.(69);render();showWoodDemo();},2400);}
-  return {showWoodDemo,get dragging(){return Boolean(drag);},setPaused(value){if(reduced() && animations.length)stopDemo();paused=value;if(value){stopDemo();clearTimeout(idleTimer);}else{showWoodDemo();idle();}},dispose(){disposed=true;clearTimeout(demoTimer);clearTimeout(idleTimer);stopDemo();observer.disconnect();layer.remove();status.remove();}};
+  function startDemo(){if(state.step!==0 || demoTimer)return;demonstrate(true);demoTimer=setTimeout(()=>{if(disposed)return;demonstrate(false);operate('demo');changed();focus?.(69);render();showWoodDemo();},2400);}
+  return {startDemo,showWoodDemo,get dragging(){return Boolean(drag);},setPaused(value){if(reduced() && animations.length)stopDemo();paused=value;if(value){stopDemo();clearTimeout(idleTimer);}else{showWoodDemo();idle();}},dispose(){disposed=true;clearTimeout(demoTimer);clearTimeout(idleTimer);stopDemo();observer.disconnect();layer.remove();status.remove();}};
 }
