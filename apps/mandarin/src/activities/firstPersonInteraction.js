@@ -1,3 +1,4 @@
+import { mountConfiguredOperation } from './situation/operations.js';
 import { mountTongs } from './firstPersonTongs.js';
 import { operationObjects, scoopGesture, woodOutside, groundPile, outsidePile, woodAngle, woodLayout } from './firstPersonLayout.js';
 import { SpeakButton } from '../components/SpeakButton.js';
@@ -5,26 +6,27 @@ import { SpeakButton } from '../components/SpeakButton.js';
 export function operationState(scene, raw = {}) {
   const max = scene.operation.steps.length;
   const step = Number.isInteger(raw.step) ? Math.max(0, Math.min(max, raw.step)) : 0;
-  const validWood = ['wood-1','wood-2','wood-3'];
+  const validWood = scene.operation.collect || [];
   const collected = [...new Set((Array.isArray(raw.collected) ? raw.collected : scene.operation.steps.slice(0,step)).filter(x=>validWood.includes(x)))];
-  return { step, ...(scene.act===4 && raw.tongsDemoSeen === true ? {tongsDemoSeen:true} : {}), ...(scene.act===1 && raw.woodDemoSeen === true ? {woodDemoSeen:true} : {}), ...(collected.length ? { collected } : {}) };
+  return { step, ...(raw.demoSeen === true ? {demoSeen:true} : {}), ...(scene.act===4 && raw.tongsDemoSeen === true ? {tongsDemoSeen:true} : {}), ...(scene.act===1 && raw.woodDemoSeen === true ? {woodDemoSeen:true} : {}), ...(collected.length ? { collected } : {}) };
 }
 export function operate(scene, state, action) {
   const expected = scene.operation.steps[state.step];
   if (!expected) return false;
-  if (expected?.startsWith('wood-')) {
-    if (!['wood-1','wood-2','wood-3'].includes(action) || state.collected?.includes(action)) return false;
+  if (scene.operation.collect?.includes(expected)) {
+    if (!scene.operation.collect.includes(action) || state.collected?.includes(action)) return false;
     state.collected = [...(state.collected || []), action];
   } else if (expected !== action) return false;
   state.step++; return true;
 }
 export const operationComplete = (scene, state) => state.step === scene.operation.steps.length;
-export const heatFor = (scene, state) => scene.act === 4 ? 1 - Math.max(0, state.step - 1) / 3 : 1;
+export const heatFor = (scene, state) => scene.operation.heat?.[state.step] ?? 1;
 
 // Source-image coordinates remain valid while the illustration pans or resizes.
 export function mountOperation(plane, { scene, state, changed, heat, demonstrate, chime, focus, reduced = () => false, saveDemo = () => {} }) {
-  if(scene.act===4)return mountTongs(plane,{scene,state,changed,heat,demonstrate,focus,reduced,saveDemo},{operate:action=>operate(scene,state,action),complete:()=>operationComplete(scene,state),heatFor:()=>heatFor(scene,state)});
-  const base = `${(import.meta.env?.BASE_URL || '/')}assets/first-person/115AG3H04/sprites/`;
+  if (!scene.operation.profile) return mountConfiguredOperation(plane, {scene,state,changed,heat,demonstrate,focus,reduced,saveDemo}, {operate:action=>operate(scene,state,action),complete:()=>operationComplete(scene,state)});
+  if(scene.operation.type==='toolGrab')return mountTongs(plane,{scene,state,changed,heat,demonstrate,focus,reduced,saveDemo},{operate:action=>operate(scene,state,action),complete:()=>operationComplete(scene,state),heatFor:()=>heatFor(scene,state)});
+  const base = `${(import.meta.env?.BASE_URL || '/')}${scene.assetBase}sprites/`;
   const layer = document.createElement('div'); layer.className = `fp-operation fp-act-${scene.act}`; plane.append(layer);
   let paused = true, idleTimer, demoTimer, demoAnimations = [], reminders = 0, demoActive = false;
   let selected = null, dragging = null, suppress = false, timer, busy = false, disposed = false;
@@ -90,7 +92,7 @@ export function mountOperation(plane, { scene, state, changed, heat, demonstrate
     if(t.action!=='pile' || !action.startsWith('wood-'))return;
     if(commit(action)) {  feedback(operationComplete(scene,state)?(scene.act===1?'把地上的木柴搬到灶旁的柴堆（3／3）':scene.act===2?'水還在滾……好像沒有用？':'完成了！你可以解鎖這一段原句。'):`把地上的木柴搬到灶旁的柴堆（${state.collected?.length || 0}／3）`); }
   }
-  for(const spec of operationObjects[scene.act]) item(...spec);
+  for(const o of scene.operation.objects) item(o.label,o.sprite,o.x,o.y,o.action,o.width,o.ratio,o.target);
   const woodObjects=objects.filter(o=>o.action.startsWith('wood-'));
   const pile=targets.find(o=>o.action==='pile');
   const svgNS='http://www.w3.org/2000/svg';

@@ -439,3 +439,43 @@ Claude實玩步驟（正常密碼進入 `#/lesson/115AG3H04/explore`）：
 5. 設定開關動畫三選一／靜音、設定開啟時播放停止、關閉後恢復；重看原句只列本機已讀／略過的開場索引；重載／重玩／舊v8進度重置、鍵盤與觸控；檢查主控台、網路、水平溢出與離頁計時器釋放。
 
 沒有宣稱瀏覽器、音色、美感或教學成效驗收完成。依本單未commit／push，交由Claude後續處理。
+
+## 模板化（2026-10-22）
+
+狀態：只改檔；待 Claude 瀏覽器驗收。依本單未執行任何 git 指令、Chrome、commit、push、合併或部署。使用現有工作區，不確認或切換分支；提交／推送由 Claude 處理，合併仍需 CF 同意。
+
+### 檔案與設計
+
+- 新增 `src/data/situationLessons/115AG3H04.js`：搬入原課資料、底圖／狀態圖、素材根路徑、操作物與角度、逐步熱度／量表、45句分配與四拍hash、題卡型別、結尾與對焦。保留version 9及localStorage key。
+- 新增 `src/data/situationLessons/index.js`：Vite自動發現課次；既有 `getFirstPersonLesson` 轉接，Dashboard與FirstPersonPage共用判斷，新課不改路由。Node-only舊測試相容入口仍只含原課，自動註冊由真實Vite轉換測試涵蓋。
+- 新增 `src/data/situationLessons/schema.js`：全文按順序唯一覆蓋、hash格式／重複引用一致性、量表詞／事件、型別、座標；解鎖後再核對全文實際句數、hash及新課量表詞。
+- `src/data/firstPersonLesson.js` 改為相容匯出；`firstPersonLayout.js`保留幾何／手勢API、由課次匯出舊物件座標，cover支援素材長寬比。
+- 新增 `src/activities/situation/operations.js`：共用observe／dragToTarget／scoopGesture／toolGrab／chooseCard／orderCards，含觀察泡泡、拖放區、虛線箭頭、示範手勢、吸附／計數、工具順序、稀疏舀水路徑、點選／鍵盤替代、排序狀態及清理。
+- `firstPersonInteraction.js` 分派共用型別，原課保留cooking相容配置；`firstPersonTongs.js`素材路徑改讀設定；`firstPersonIllustrated.js`改讀art、狀態圖、比例、下一幕預載、橫直向對焦與風鈴外掛。
+- `FirstPersonPage.js`改讀設定內的門面文字、說話角色、量表事件、題卡與結尾；解鎖前不讀原句，失配仍走既有版本提示。`first-person.css`僅追加共用型別樣式。
+- `scripts/test-first-person-beats.mjs` 將固定記住句索引的source斷言改為設定事件；新增 `test-situation-schema.mjs`、`test-situation-operations.mjs`、`test-situation-registry.mjs`。
+- 新增 `docs/situation-explore-template.md`（盤點／schema／相容界線）與 `docs/situation-explore-new-lesson.md`（新增步驟／不含原文範例／素材畫風／紅線），更新本檔及 `HANDOFF.md`。
+
+相容界線：為遵守〈水滾了〉玩家行為不變，舊搬柴／舀水／觀察／火鉗的專用手勢時序、提示、64px熱區及部分幾何仍在原controller，由 `cooking-*` 配置選用；沒有宣稱所有單課程式皆已消除。新課使用共用型別、不複製cooking程式，只增加設定與素材即可。舊量表強度標籤維持既有五詞，是原文用字規則的相容例外；新課狀態詞在解鎖後逐字驗證。新課超出六種操作的全新動作仍需新增效果／型別。
+
+### 驗證結果
+
+- `npm run validate`：通過，55課；既有明碼比例14.7%，未新增原句／官方檔／密碼。
+- 全部 `scripts/test-*.mjs`：**93支全通過**，包含原有10支 `test-first-person*.mjs`。原課正式密文45句依據雜湊核對仍通過。
+- 新增schema測試：自動掃課次、全文順序唯一覆蓋／hash格式及一致性／非空量表詞與事件／六型別／百分比座標；拒絕錯誤變體；實際素材存在及≤300KiB；虛構字串測試解鎖hash／來源詞失配。
+- 新增共用操作測試：執行production DOM handlers，六型別、錯放不計數、吸附及保存恢復、合併pointer事件舀水、取消、工具先後、卡片／排序及暫停輸入。
+- 自動登記測試：在repo外暫存目錄新增虛構第二課，用真實Vite glob轉換確認不改入口即可取得設定；沒有開Chrome或HTTP監聽埠。
+- `npm run build`、`npm run check-dist`：通過；1300筆資產引用完整、1626個資產通過。既有CharacterStoryPage混合匯入提示仍存在。
+- `npm run build:preview`：通過；保留dist及dist-preview供Claude驗收。
+- 未執行 `git diff --check`（本單禁止git），不宣稱瀏覽器視覺／音訊驗收。
+
+### Claude 瀏覽器驗收：〈水滾了〉行為未變
+
+1. 用既有正常預覽服務進入 `#/lesson/115AG3H04` →「課文情境探索」，網址 `#/lesson/115AG3H04/explore`（以站內實際入口為準）。確認其他沒有設定的課無入口。透過原教室密碼門解鎖；不得寫密碼到repo或建立測試解鎖捷徑。
+2. 各以1366×900、820×1180、375×812完整重玩四幕，與上一棒v9比較同一拍截圖；沒有新文案、角色移位、縮放、遮擋或手機橫捲。特別確認既有待辦：手機第4幕康康入鏡與第3、4幕逐拍取景；本輪未宣稱解決原有待辦。
+3. 第一幕：intro→點固定風鈴（重點只重播，不再計數）→三根柴任意順序搬入柴堆，拖曳／點選／鍵盤、重複／錯放／取消；示範手勢、虛線箭頭、吸附、逐根計數、8秒／12秒提醒上限不變。檢查風痕／風鈴與原鈴聲。
+4. 第二幕：三輪按住入水再上提／快速滑過水面／放手端點／取消／點選替代；滿勺、倒回時序與完成判定不變，量表逐輪不變，表情卡圖片及反饋不變。
+5. 第三幕：按原順序觀察水面／勺子／鍋底；小對話框位置、存續與朗讀不變；原問題與錯因／提示不變。
+6. 第四幕：intro後師傅示範才開放，拿鉗→夾柴→拉到爐外；錯放回彈、pointercancel、重複夾取、三根任意順序、地面木柴保留、火勢逐根降低與小火末態、量表及讀到記住句的狀態不變。三張排序卡點選編號／再點取消／拖曳／重排／確認與結尾成語卡不變。
+7. 四拍每幕確認：intro略過、操作鎖定、result鏡頭與1800ms、read自動／手動／下一句／重聽、45句依序不重複、題卡出現時機。重載既有v9進度仍接續，回顧只含已讀句；重玩／教師任意幕預覽不污染其他幕完成度。
+8. 朗讀仍為台灣國語；音效開／關、動畫跟隨系統／開／關、減少動態、離頁重進與隱藏分頁皆無殘留音訊、動畫或主控台錯誤。缺圖時仍可操作／作答。不要把瀏覽器結果誤列為本輪Codex已驗收。

@@ -6,7 +6,7 @@ import { FIRST_PERSON_ILLUSTRATIONS } from '../data/firstPersonLesson.js';
 
 // Same controller contract as the retained Three.js scene; no renderer dependencies.
 export async function mountFirstPersonScene(host, { phase, onProject, onMode, calm = false, operation, onOperation, onChime, onDemoSeen }) {
-  const art = FIRST_PERSON_ILLUSTRATIONS[phase.act];
+  const art = phase.art || FIRST_PERSON_ILLUSTRATIONS[phase.act];
   const media = matchMedia('(prefers-reduced-motion: reduce)');
   const layer = document.createElement('div'); layer.className = 'fp-illustration';
   const plane = document.createElement('div'); plane.className = 'fp-illustration-plane'; layer.append(plane); host.prepend(layer);
@@ -14,7 +14,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   let reading = false;
   let disposed = false, paused = true, frame = 0, previous = 0, pan = art.views[phase.view] ?? .5, target = pan;
   let width = 0, imageWidth = 0, imageHeight = 0, top = 0;
-  const base = `${import.meta.env.BASE_URL}assets/first-person/115AG3H04/`;
+  const base = `${import.meta.env.BASE_URL}${phase.assetBase}`;
   const images = art.images.map((file, i) => {
     const img = new Image(); img.alt = ''; img.setAttribute('aria-hidden','true'); img.draggable = false; img.className = 'fp-illustration-frame'; img.style.opacity = i ? '0' : '1';
     img.onload = () => { if (!disposed) { host.classList.remove('fp-image-failed'); onMode?.('第一人稱・插畫探索'); render(); } };
@@ -28,15 +28,15 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
       p.style.left = `${point[0] + (kind === 'fire' ? 0 : i - 2) * 1.1}%`; p.style.top = `${point[1]}%`; p.style.animationDelay = `${-i * .51}s`; effects.append(p);
     }
   }
-  const wind = phase.act === 1 ? mountChimeWind(plane, base, () => calm) : null;
-  const interaction = mountOperation(plane, { scene: phase, state: operation, changed: onOperation, saveDemo: onDemoSeen, reduced: () => calm, chime() { wind?.blow(); onChime?.(); }, focus(x) { if(phase.act===4 && (x===49||x===69) && host.clientWidth/host.clientHeight>=1.4)x=46; else if(phase.act===4 && x===49)x=30; const iw=illustrationLayout(host.clientWidth,host.clientHeight).imageWidth; if(iw>host.clientWidth) { target=Math.max(0,Math.min(1,(iw*x/100-host.clientWidth/2)/(iw-host.clientWidth))); pan=target; render(); } }, heat(value) { effects.style.opacity = '1'; effects.style.setProperty('--heat', value); [...effects.children].forEach((el,i) => { const fire=el.classList.contains('fp-art-fire'); el.style.visibility = !fire && (value === 0 || (el.classList.contains('fp-art-bubble') && i % 5 >= Math.ceil(value * 5))) ? 'hidden' : ''; el.style.opacity=String(fire?Math.max(1/3,value):value); if(fire) el.style.scale=String(Math.max(1/3,value)); }); if(phase.act === 4) { images[0].style.opacity=String(value); images[1].style.opacity=String(1-value); images[0].style.transition=images[1].style.transition=(calm)?'none':'opacity .8s ease'; } }, demonstrate(active) { images[0].style.opacity=active?'0':'1'; images[1].style.opacity=active?'1':'0'; } });
+  const wind = art.plugins?.includes('chimeWind') ? mountChimeWind(plane, base, () => calm) : null;
+  const interaction = mountOperation(plane, { scene: phase, state: operation, changed: onOperation, saveDemo: onDemoSeen, reduced: () => calm, chime() { wind?.blow(); onChime?.(); }, focus(x) { x=art.focus?.[host.clientWidth/host.clientHeight>=1.4?'landscape':'portrait']?.[x] ?? x; const iw=illustrationLayout(host.clientWidth,host.clientHeight,.5,art.aspect).imageWidth; if(iw>host.clientWidth) { target=Math.max(0,Math.min(1,(iw*x/100-host.clientWidth/2)/(iw-host.clientWidth))); pan=target; render(); } }, heat(value) { effects.style.opacity = '1'; effects.style.setProperty('--heat', value); [...effects.children].forEach((el,i) => { const fire=el.classList.contains('fp-art-fire'); el.style.visibility = !fire && (value === 0 || (el.classList.contains('fp-art-bubble') && i % 5 >= Math.ceil(value * 5))) ? 'hidden' : ''; el.style.opacity=String(fire?Math.max(1/3,value):value); if(fire) el.style.scale=String(Math.max(1/3,value)); }); if(art.stateImages) { images[0].style.opacity=String(value); images[1].style.opacity=String(1-value); images[0].style.transition=images[1].style.transition=(calm)?'none':'opacity .8s ease'; } }, demonstrate(active) { images[0].style.opacity=active?'0':'1'; images[1].style.opacity=active?'1':'0'; } });
   // Only the next act is warmed. No global cache that keeps all four acts alive.
-  const preloads = (FIRST_PERSON_ILLUSTRATIONS[phase.act + 1]?.images || []).map(file => { const img = new Image(); img.src = base + file; return img; });
+  const preloads = (phase.nextImages || []).map(file => { const img = new Image(); img.src = base + file; return img; });
   const reduced = () => calm;
   function render() {
     if (disposed) return;
     width = host.clientWidth;
-    const geometry=illustrationLayout(width,host.clientHeight * (reading ? 1.3 : 1),pan);
+    const geometry=illustrationLayout(width,host.clientHeight * (reading ? 1.3 : 1),pan,art.aspect);
     ({imageHeight,imageWidth,top}=geometry);
     if(reading)top-=host.clientHeight*.3;
     const left=geometry.left;
@@ -65,7 +65,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     else wind?.updateMotion();
     interaction.setPaused(paused || document.hidden);
     effects.classList.toggle('fp-art-still', reduced() || paused || document.hidden);
-    if (reduced()) { pan = target; if (phase.act === 2) images.forEach((img, i) => { img.style.opacity = i ? '0' : '1'; });  }
+    if (reduced()) { pan = target; if (art.freezeFirstFrame) images.forEach((img, i) => { img.style.opacity = i ? '0' : '1'; });  }
     render(); if (!paused && !document.hidden) frame = requestAnimationFrame(tick);
   }
   plane.addEventListener('focusin', event => { const x=parseFloat(event.target.closest('.fp-object')?.style.left); if(event.target.matches(':focus-visible') && !interaction.dragging && Number.isFinite(x) && imageWidth>width) { target=Math.max(0,Math.min(1,(imageWidth*x/100-width/2)/(imageWidth-width))); resume(); } });

@@ -1,27 +1,12 @@
 // One geometry model for runtime and numeric viewport checks (source art 2400×1024).
-export function illustrationLayout(width, height, pan = .5) {
-  const imageHeight = Math.max(height, width * 1024 / 2400);
+export function illustrationLayout(width, height, pan = .5, aspect = [2400, 1024]) {
+  const imageHeight = Math.max(height, width * aspect[1] / aspect[0]);
   const top = (height - imageHeight) / 2;
-  const imageWidth = imageHeight * 2400 / 1024;
+  const imageWidth = imageHeight * aspect[0] / aspect[1];
   const left = imageWidth <= width ? (width-imageWidth)/2 : -(imageWidth-width)*pan;
   return { top, left, imageWidth, imageHeight };
 }
-export const groundPile = [[59,80],[62,81],[60.5,78.5]];
-export const outsidePile = [[54,79],[58,81.5],[62,78.5]];
-export const operationObjects = {
-  1: [['風鈴',null,29.5,17,'bell',5,1],
-    ['第1根木柴','wood',24,79,'wood-1',9,.24],
-    ['第2根木柴','wood',31,81,'wood-2',10,.24],
-    ['第3根木柴','wood',35,77,'wood-3',8.5,.24],
-    ['柴堆',null,61,80,'pile',9,.3,true]],
-  2: [['勺子','ladle-empty',59,67,'ladle',18,.78], ['水面',null,64,69,'water',20,.22,true]],
-  3: [['水面',null,62,30,'pot',15,.3], ['勺子','ladle-empty',77,43,'ladle',12,.78], ['火紅木柴','wood-burning',59,68,'fire',12,.35]],
-  4: [['師傅示範','tongs',51,59,'demo',16,.3],
-    ['第1根柴火','wood-burning',71,71,'wood-1',7,.35],
-    ['第2根柴火','wood-burning',74,76,'wood-2',8,.35],
-    ['第3根柴火','wood-burning',72,79,'wood-3',6.5,.35]],
-};
-export const woodAngle = (act, index) => (act === 1 ? [-14,11,-6] : [-19,22,-9])[index];
+export { groundPile, outsidePile, operationObjects, woodAngle } from '../data/situationLessons/115AG3H04.js';
 // Slab intersection also handles a sparse path whose endpoints straddle the water.
 function crossesWater(start, end) {
   if(!start)return false;

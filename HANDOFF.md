@@ -1,5 +1,12 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-10-22｜家中 Mac｜Codex｜情境探索模板化：待 Claude 瀏覽器驗收／提交
+- 依本單只改檔，全程未執行git、未開Chrome、未提交／推送／合併／部署；Claude接手，合併需CF同意。
+- 新增situationLessons課次設定／自動發現／schema、六種共用操作；素材、四拍45句與hash、量表事件、題卡、結尾及橫直向對焦改讀設定。新課只加設定與素材，不需改路由／Dashboard。
+- 為保留〈水滾了〉v9玩家行為，舊操作時序與部分幾何仍用cooking相容配置；既有量表強度標籤保留，新課才強制解鎖後查原文用字。完整相容界線見docs/situation-explore-template.md，未宣稱所有單課特殊程式已消除。
+- validate、93支scripts/test-*.mjs（含既有10支first-person與新增3支）、build、check-dist／assets、build:preview全通過；未增加原句、官方檔、密碼或素材。
+- 新課步驟與無原文範例：apps/mandarin/docs/situation-explore-new-lesson.md。逐檔改動及Claude三尺寸／逐幕／四拍回歸清單：apps/mandarin/docs/first-person-IMPL-LOG.md「模板化」。手機第4幕康康等既有待辦未宣稱修復。
+
 ## 2026-10-22｜Mac｜Claude Code｜狀態：已發布 main（CF 明確同意「合併 推上去」）
 - 課文情境探索〈水滾了〉（原第一人稱探索試作）與斷句後引號修正已合併 main（29682e8）並部署 GitHub Pages 成功。
 - 先前「只備份試作分支、不合併 main」的限制已由 CF 解除；後續修改照一般 main 流程。
