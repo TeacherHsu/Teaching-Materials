@@ -17,6 +17,8 @@ const CLAUSE_MAX_CHARS = 20;
 const SENTENCE_END = CLAUSE_END;
 /** 只有這些符號的「句子」不成句（例如單獨的下引號）。 */
 const PUNCT_ONLY = /^[「」『』（）\s，。、；：？！…─—]*$/;
+/** 緊跟在句末標點後的下引號／下括號，屬於前一句。 */
+const CLOSING = /[」』）]/;
 
 /**
  * @typedef {[string, string, string|null]} Token 詞：[文字, "注音 注音", 朗讀用字|null]
@@ -38,6 +40,8 @@ export function splitSentences(paras) {
     let current = { paraIndex, text: '', say: '', tokens: [] };
     // 正在累積的「子詞」：一個詞可能被句點切成兩半，注音與朗讀用字要跟著切。
     let buf = { text: '', zhuyin: [], say: '', dirty: false };
+    // 句末標點之後先不切：若緊接著下引號（「……？」康康……），引號要留在這一句。
+    let pending = false;
 
     const flushToken = () => {
       if (!buf.text) return;
@@ -48,6 +52,7 @@ export function splitSentences(paras) {
     };
 
     const close = () => {
+      pending = false;
       flushToken();
       if (current.text) {
         const previous = out[out.length - 1];
@@ -73,6 +78,7 @@ export function splitSentences(paras) {
         const sayChars = say && [...say].length === chars.length ? [...say] : null;
 
         chars.forEach((ch, i) => {
+          if (pending && !CLOSING.test(ch)) close();
           const sayCh = sayChars ? sayChars[i] : ch;
           buf.text += ch;
           buf.zhuyin.push(zs[i] || '');
@@ -84,7 +90,7 @@ export function splitSentences(paras) {
           // （曾經出現 500 字的「一句」）。
           if (SENTENCE_END.test(ch)) {
             flushToken();
-            if (current.text.replace(/[「」『』（）\s]/g, '').length > 2) close();
+            if (current.text.replace(/[「」『』（）\s]/g, '').length > 2) pending = true;
           }
         });
         flushToken();

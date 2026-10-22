@@ -340,8 +340,8 @@ export const FIRST_PERSON_LESSON = {
                 "f3c2eb87",
                 "6620976f",
                 "3869c3b1",
-                "8c66f4e0",
-                "6bfb1d3a",
+                "b60df79a",
+                "ba3883c3",
                 "aba0dc99",
                 "4258a71a",
                 "532f8b5b",
@@ -420,8 +420,8 @@ export const FIRST_PERSON_LESSON = {
                 "f3c2eb87",
                 "6620976f",
                 "3869c3b1",
-                "8c66f4e0",
-                "6bfb1d3a",
+                "b60df79a",
+                "ba3883c3",
                 "aba0dc99"
               ]
             }
@@ -480,8 +480,8 @@ export const FIRST_PERSON_LESSON = {
                 "16d6282e",
                 "c9418dd2",
                 "cbf41dca",
-                "c72efd44",
-                "ee27c5bc",
+                "7e3d6777",
+                "f52f4492",
                 "abd01276",
                 "05823090",
                 "bf1a4eee"
@@ -578,8 +578,8 @@ export const FIRST_PERSON_LESSON = {
                 "f3c2eb87",
                 "6620976f",
                 "3869c3b1",
-                "8c66f4e0",
-                "6bfb1d3a",
+                "b60df79a",
+                "ba3883c3",
                 "aba0dc99",
                 "4258a71a",
                 "532f8b5b",
@@ -608,8 +608,8 @@ export const FIRST_PERSON_LESSON = {
                 "16d6282e",
                 "c9418dd2",
                 "cbf41dca",
-                "c72efd44",
-                "ee27c5bc",
+                "7e3d6777",
+                "f52f4492",
                 "abd01276",
                 "05823090",
                 "bf1a4eee"
@@ -664,7 +664,7 @@ export const FIRST_PERSON_LESSON = {
         "16d6282e",
         "c9418dd2",
         "cbf41dca",
-        "c72efd44"
+        "7e3d6777"
       ]
     }
   ]

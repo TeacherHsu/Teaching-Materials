@@ -190,10 +190,7 @@ export function FirstPersonPage(lesson) {
     const ref=subtitleQueue.shift();
     if(!ref) {const done=subtitleAfter;subtitleAfter=null;done?.();return;}
     recordRead(ref);
-    // 斷句會把「……。」的後引號切到下一句開頭；顯示時把它還給前一句。
-    const raw=sources.get(`sentence:${ref.para}:${ref.n}`)||'';
-    const following=sources.get(`sentence:${ref.para}:${ref.n+1}`)||'';
-    const line=raw.replace(/^[」』]+/,'')+(following.match(/^[」』]+/)?.[0]||'');
+    const line=sources.get(`sentence:${ref.para}:${ref.n}`);
     if(ref.para===4 && ref.n===7)updateMood(true);
     const controls=[];
     if(beat==='intro')controls.push(button('略過',()=>{subtitleQueue.forEach(recordRead);subtitleQueue=[];nextSubtitle();}));
