@@ -156,11 +156,12 @@ export function FirstPersonPage(lesson) {
 
   function updateMood(remembered = false, readRef = null, meterEvent = null) {
     const node = root.querySelector('.fp-mood'); if (!node) return;
-    const m = meterEvent ? {level:meterEvent.level,label:config.meter.states[meterEvent.state],face:config.meter.faces?.[meterEvent.state] || '🙂'} : meterFor(config, scene, state.operation.step, remembered, readRef);
-    moodLabel=m.label;
-    clear(node); node.dataset.level = String(m.level);
-    if(config.meter.caption)node.append(h('span',{class:'fp-mood-caption'},config.meter.caption));
-    node.append(h('span', {}, m.label), h('span', { class: 'fp-mood-face', 'aria-hidden': 'true' }, m.face), h('i', { style: `--mood:${m.level / 3 * 100}%`, 'aria-hidden': 'true' }), h('span', { class: 'fp-sr' }, `${config.ui.character}：${m.label}`));
+    const m = meterEvent ? {level:meterEvent.level,sourceLabel:config.meter.states[meterEvent.state],label:config.meter.labels?.[meterEvent.state] || config.meter.states[meterEvent.state],face:config.meter.faces?.[meterEvent.state] || '🙂'} : meterFor(config, scene, state.operation.step, remembered, readRef);
+    moodLabel=m.sourceLabel || m.label;
+    clear(node); node.dataset.level = String(m.level);node.classList.toggle('fp-status-meter',Boolean(config.meter.title));
+    if(config.meter.title || config.meter.caption)node.append(h('span',{class:'fp-mood-caption'},config.meter.title || config.meter.caption));
+    node.append(h('span', {}, m.label), h('span', { class: 'fp-mood-face', 'aria-hidden': 'true' }, m.face), h('i', { style: `--mood:${m.level / 3 * 100}%`, 'aria-hidden': 'true' }), h('span', { class: 'fp-sr' }, `${config.meter.subject || config.ui.character}：${m.label}`));
+    if(config.meter.title)node.append(h('div',{class:'fp-meter-audio'},[SpeakButton({text:`${config.meter.title}，${config.meter.subject || config.ui.character}：${m.label}`})]));
   }
   function finishBeat(value){
     if(scene.timeline){timelineIndex++;runTimeline();}else setBeat(nextBeat(value));
@@ -173,7 +174,7 @@ export function FirstPersonPage(lesson) {
       const strategy=scene.strategies.find(t=>t.id===entry.id);
 
       const panel=h('section',{class:'fp-strategy-panel','aria-label':strategy.prompt});rootBody.append(panel);
-      disposeStrategy=mountStrategy({strategy,panel,plane:world.strategyPlane,stage:root.querySelector('.fp-world'),states:config.meter.states,focus:x=>world.focusPoint(x),onWords(words,target){
+      disposeStrategy=mountStrategy({strategy,panel,assetBase:`${import.meta.env?.BASE_URL || '/'}${scene.assetBase}`,plane:world.strategyPlane,stage:root.querySelector('.fp-world'),states:config.meter.states,focus:x=>world.focusPoint(x),onWords(words,target){
         if(!target){const option=strategy.options.find(o=>(o.states || []).some(i=>words.includes(config.meter.states[i])));const event=config.meter.events?.find(e=>e.state===option?.states?.[0]);if(event)updateMood(false,null,event);}
         const node=root.querySelector('.fp-mood');node.querySelector('.fp-meter-clue')?.remove();const clue=say((target?target+'：':'')+words.join('、'),'span',{class:'fp-clue-words'});clue.classList.add('fp-meter-clue');node.append(clue);
       },onDone(result){if(strategy.type==='predict')predictions[strategy.id]=result.selected[0];finishBeat('strategy');}});

@@ -15,7 +15,7 @@ export function storySummary(config, states) {
   return config.scenes.filter((s,i)=>states[i]?.done && s.questions[0]?.operationType==='summaryCard').map(s=>s.questions[0].options[s.questions[0].answer].replace(/[。！]$/,'')).join('，')+'。';
 }
 
-export function mountStrategy({strategy, panel, plane, stage, states, onWords, onDone, focus}) {
+export function mountStrategy({strategy, panel, plane, stage, states, onWords, onDone, focus, assetBase=''}) {
   let selected=[],result=null,disposed=false,finished=false;
   const nodes=[],timers=[];
   const say=text=>h('div',{class:'fp-spoken'},[h('p',{},text),SpeakButton({text})]);
@@ -50,6 +50,10 @@ export function mountStrategy({strategy, panel, plane, stage, states, onWords, o
     strategy.options.forEach((label,i)=>row.append(h('div',{class:'fp-answer-row'},[h('button',{type:'button',class:'fp-button',onclick:()=>choose(i)},label),SpeakButton({text:label})])));
   }else{
     strategy.options.forEach((option,i)=>{
+      if(option.sprite){
+        const art=h('img',{src:`${assetBase}sprites/${option.sprite}.webp`,alt:'','aria-hidden':'true',class:'fp-strategy-evidence',style:`left:${option.x}%;top:${option.y}%;width:${option.width || 10}%`});
+        plane.append(art);nodes.push(art);
+      }
       const [dx,dy]=option.markerOffset || [0,0];
       const button=h('button',{type:'button',class:`fp-strategy-target${option.face?' fp-face-marker':''}`,'aria-label':option.label,style:`left:${option.x+dx}%;top:${option.y+dy}%`,onclick:()=>choose(i,button)},'◉');
       button.addEventListener('focus',()=>focus(option.x));

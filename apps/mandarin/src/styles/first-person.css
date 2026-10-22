@@ -388,3 +388,14 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 @keyframes fp-breathe-idle{0%,100%{scale:1}50%{scale:1.12}}
 @media(prefers-reduced-motion:reduce){.fp-breath-circle{animation:none}}
 .fp-page .fp-sports-status>span{white-space:normal;overflow:visible}
+
+.fp-strategy-evidence{position:absolute;transform:translate(-50%,-50%);pointer-events:none;object-fit:contain;filter:drop-shadow(0 3px 3px #263c302b)}
+
+.fp-mood.fp-status-meter{width:clamp(180px,55vw,280px);height:auto;min-height:84px;grid-template-rows:auto auto 8px;line-height:22px}
+.fp-mood.fp-status-meter>span:not(.fp-mood-caption):not(.fp-mood-face):not(.fp-sr){white-space:normal;overflow-wrap:anywhere}
+
+.fp-mood.fp-status-meter{grid-template-columns:1fr 44px}
+.fp-status-meter .fp-mood-face{display:none}
+.fp-meter-audio{grid-column:2;grid-row:2;align-self:center}
+.fp-page:has(.fp-status-meter) .fp-operation-status{top:112px}
+.fp-status-meter>.fp-meter-clue{top:calc(100% + 4px)}

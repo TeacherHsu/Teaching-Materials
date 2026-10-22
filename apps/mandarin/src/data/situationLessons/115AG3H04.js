@@ -1293,12 +1293,31 @@ const strategyBackfill = {
         {
           "id": "heat-source",
           "type": "causeEffect",
+          "hint": "冒泡是結果；找找讓水一直滾的原因。",
           "prompt": "水為什麼一直滾？點出原因。",
           "options": [
             {
               "label": "灶下燒得火紅的木柴",
               "x": 59,
               "y": 68,
+              "refs": [
+                {
+                  "para": 3,
+                  "sentences": [
+                    7,
+                    8
+                  ],
+                  "sha": [
+                    "ba3883c3",
+                    "aba0dc99"
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "鍋裡冒泡的水面",
+              "x": 62,
+              "y": 30,
               "refs": [
                 {
                   "para": 3,

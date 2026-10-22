@@ -11,7 +11,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   const layer = document.createElement('div'); layer.className = 'fp-illustration';
   const plane = document.createElement('div'); plane.className = 'fp-illustration-plane'; layer.append(plane); host.prepend(layer);
   host.classList.add('is-illustrated');
-  let imageOverride, hideOperations=false;
+  let imageOverride, hideOperations=false, currentView=phase.view, viewAnimation;
   let moodLabel = '', reading = false, currentBeat='intro', resultReady=false, resultArtTimer;
   function stateArt(){
     plane.classList.toggle('fp-result-hide-completed',Boolean(art.hideCompletedOnResult && (['read','question'].includes(currentBeat) || currentBeat==='result' && resultReady)));
@@ -46,14 +46,14 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     }
   }
   const wind = art.plugins?.includes('chimeWind') ? mountChimeWind(plane, base, () => calm) : null;
-  const interaction = mountOperation(plane, { scene: phase, state: operation, quiet:onQuiet, changed: onOperation, saveDemo: onDemoSeen, reduced: () => calm, chime() { wind?.blow(); onChime?.(); }, focus(x) { x=art.focus?.[host.clientWidth/host.clientHeight>=1.4?'landscape':'portrait']?.[x] ?? x; const iw=sceneIllustrationLayout(host.clientWidth,host.clientHeight,.5,art,reading).imageWidth; if(iw>host.clientWidth) { target=Math.max(0,Math.min(1,(iw*x/100-host.clientWidth/2)/(iw-host.clientWidth))); pan=target; render(); } }, heat(value) { stateArt(); effects.style.opacity = '1'; effects.style.setProperty('--heat', value); [...effects.children].forEach((el,i) => { const fire=el.classList.contains('fp-art-fire'); el.style.visibility = !fire && (value === 0 || (el.classList.contains('fp-art-bubble') && i % 5 >= Math.ceil(value * 5))) ? 'hidden' : ''; el.style.opacity=String(fire?Math.max(1/3,value):value); if(fire) el.style.scale=String(Math.max(1/3,value)); }); if(art.stateImages) { images[0].style.opacity=String(value); images[1].style.opacity=String(1-value); images[0].style.transition=images[1].style.transition=(calm)?'none':'opacity .8s ease'; } }, demonstrate(active) { images[0].style.opacity=active?'0':'1'; images[1].style.opacity=active?'1':'0'; } });
+  const interaction = mountOperation(plane, { scene: phase, state: operation, quiet:onQuiet, changed: onOperation, saveDemo: onDemoSeen, reduced: () => calm, chime() { wind?.blow(); onChime?.(); }, focus(x) { x=art.focus?.[host.clientWidth/host.clientHeight>=1.4?'landscape':'portrait']?.[x] ?? x; const iw=sceneIllustrationLayout(host.clientWidth,host.clientHeight,.5,art,reading,currentView).imageWidth; if(iw>host.clientWidth) { target=Math.max(0,Math.min(1,(iw*x/100-host.clientWidth/2)/(iw-host.clientWidth))); pan=target; render(); } }, heat(value) { stateArt(); effects.style.opacity = '1'; effects.style.setProperty('--heat', value); [...effects.children].forEach((el,i) => { const fire=el.classList.contains('fp-art-fire'); el.style.visibility = !fire && (value === 0 || (el.classList.contains('fp-art-bubble') && i % 5 >= Math.ceil(value * 5))) ? 'hidden' : ''; el.style.opacity=String(fire?Math.max(1/3,value):value); if(fire) el.style.scale=String(Math.max(1/3,value)); }); if(art.stateImages) { images[0].style.opacity=String(value); images[1].style.opacity=String(1-value); images[0].style.transition=images[1].style.transition=(calm)?'none':'opacity .8s ease'; } }, demonstrate(active) { images[0].style.opacity=active?'0':'1'; images[1].style.opacity=active?'1':'0'; } });
   // Only the next act is warmed. No global cache that keeps all four acts alive.
   const preloads = (phase.nextImages || []).map(file => { const img = new Image(); img.src = base + file; return img; });
   const reduced = () => calm;
   function render() {
     if (disposed) return;
     width = host.clientWidth;
-    const geometry=sceneIllustrationLayout(width,host.clientHeight,pan,art,reading);
+    const geometry=sceneIllustrationLayout(width,host.clientHeight,pan,art,reading,currentView);
     ({imageHeight,imageWidth,top}=geometry);
     const left=geometry.left;
     for(const {img,baseImage,state} of expressionOverlays){const replaced=!state && expressionOverlays.some(o=>o.baseImage===baseImage && o.state===moodLabel);img.style.opacity=replaced || state && state!==moodLabel ? '0' : baseImage.style.opacity;img.style.transition=baseImage.style.transition;}
@@ -95,14 +95,14 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     focusPoint(x){target=Math.max(0,Math.min(1,(imageWidth*x/100-host.clientWidth/2)/(imageWidth-host.clientWidth || 1)));pan=target;render();},
     startDemo() { interaction.startDemo?.(); },
     showWoodDemo() { return interaction.showWoodDemo(true); },
-    setView(view, { immediate = false } = {}) { target = art.views[view] ?? .5; if(immediate)pan=target; resume(); },
+    setView(view, { immediate = false } = {}) { const previousScale=art.viewScales?.[currentView] || 1;currentView=view;target = art.views[view] ?? .5; if(immediate)pan=target; resume();viewAnimation?.cancel();const scale=art.viewScales?.[view] || 1;if(previousScale>scale && !calm)viewAnimation=layer.animate([{transform:`scale(${previousScale/scale})`},{transform:'scale(1)'}],{duration:1000,easing:'ease-out'}); },
     look(dx) { if(interaction.dragging) return; target = Math.max(0, Math.min(1, target - dx * 2)); resume(); },
     observeAction() { resume(); },
-    setOptions(options) { if(imageOverride!==undefined && options.imageIndex===undefined && !art.stepImages)images.forEach((img,i)=>{img.style.opacity=i?'0':'1';});imageOverride=options.imageIndex;hideOperations=Boolean(options.hideOperations);plane.classList.toggle('fp-hide-operations',hideOperations); if(options.mood!==undefined)moodLabel=options.mood;if(options.beat && options.beat!==currentBeat){currentBeat=options.beat;clearTimeout(resultArtTimer);resultReady=false;if(currentBeat==='result'){resultArtTimer=setTimeout(()=>{resultReady=true;if(art.resultView){target=art.views[art.resultView] ?? target;pan=target;render();}stateArt();},art.resultDelay || 0);}}stateArt();reading=art.readingZoom!==false && Boolean(options.reading) && !(currentBeat==='result' && art.resultZoom===false); calm = Boolean(options.calm); paused = Boolean(options.paused); lockBeatObjects(plane,Boolean(options.locked));
+    setOptions(options) { if(imageOverride!==undefined && options.imageIndex===undefined && !art.stepImages)images.forEach((img,i)=>{img.style.opacity=i?'0':'1';});imageOverride=options.imageIndex;hideOperations=Boolean(options.hideOperations);plane.classList.toggle('fp-hide-operations',hideOperations); if(options.mood!==undefined)moodLabel=options.mood;if(options.beat && options.beat!==currentBeat){currentBeat=options.beat;clearTimeout(resultArtTimer);resultReady=false;if(currentBeat==='result'){resultArtTimer=setTimeout(()=>{resultReady=true;if(art.resultView){currentView=art.resultView;target=art.views[art.resultView] ?? target;pan=target;render();}stateArt();},art.resultDelay || 0);}}stateArt();reading=art.readingZoom!==false && Boolean(options.reading) && !(currentBeat==='result' && art.resultZoom===false); calm = Boolean(options.calm); paused = Boolean(options.paused); lockBeatObjects(plane,Boolean(options.locked));
       plane.inert=paused || Boolean(options.locked);
       resume(); },
     dispose() {
-      disposed = true;clearTimeout(resultArtTimer); wind?.dispose(); interaction.dispose(); cancelAnimationFrame(frame); resize.disconnect(); media.removeEventListener('change', resume); document.removeEventListener('visibilitychange', resume);
+      disposed = true;viewAnimation?.cancel();clearTimeout(resultArtTimer); wind?.dispose(); interaction.dispose(); cancelAnimationFrame(frame); resize.disconnect(); media.removeEventListener('change', resume); document.removeEventListener('visibilitychange', resume);
       [...images, ...preloads,...expressionOverlays.map(o=>o.img)].forEach(img => { img.onload = img.onerror = null; img.removeAttribute('src'); }); layer.remove(); host.classList.remove('is-illustrated', 'fp-image-failed','fp-portrait-evidence');host.style.removeProperty('--fp-evidence-backdrop');
     },
   };
