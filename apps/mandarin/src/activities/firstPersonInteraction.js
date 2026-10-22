@@ -43,7 +43,7 @@ export function mountOperation(plane, { scene, state, changed, heat, demonstrate
     layer.append(el); const obj={el,x,y,action,label}; (target?targets:objects).push(obj);
     el.onclick=()=>{ if(suppress) return; if(target) drop(obj); else select(obj); };
     if(!target && action !== 'bell') {
-      el.onpointerdown=e=>{ if(e.button!==0) return; if(busy || el.disabled || dragging)return; e.stopPropagation(); stopDemo(); dragging={obj,id:e.pointerId,x:e.clientX,y:e.clientY,moved:false,...scoopGesture({}, {x:(e.clientX-plane.getBoundingClientRect().left)/plane.getBoundingClientRect().width*100,y:(e.clientY-plane.getBoundingClientRect().top)/plane.getBoundingClientRect().height*100})}; el.setPointerCapture(e.pointerId); layer.classList.add('is-dragging'); guideArrow({x:obj.x,y:obj.y}); if(scene.act===2 && dragging.dipped)setSprite(obj,'ladle-full'); };
+      el.onpointerdown=e=>{ if(e.button!==0) return; if(paused || disposed || busy || el.disabled || dragging)return; e.stopPropagation(); stopDemo(); dragging={obj,id:e.pointerId,x:e.clientX,y:e.clientY,moved:false,...scoopGesture({}, {x:(e.clientX-plane.getBoundingClientRect().left)/plane.getBoundingClientRect().width*100,y:(e.clientY-plane.getBoundingClientRect().top)/plane.getBoundingClientRect().height*100})}; el.setPointerCapture(e.pointerId); layer.classList.add('is-dragging'); guideArrow({x:obj.x,y:obj.y}); if(scene.act===2 && dragging.dipped)setSprite(obj,'ladle-full'); };
       el.onpointermove=e=>{
         if(!dragging || dragging.id!==e.pointerId)return;
         const r=plane.getBoundingClientRect(), point={x:(e.clientX-r.left)/r.width*100,y:(e.clientY-r.top)/r.height*100};
@@ -74,6 +74,7 @@ export function mountOperation(plane, { scene, state, changed, heat, demonstrate
   function feedback(text){ status.setAttribute('aria-label',text); message.textContent=scene.act===1 ? (state.step===0?'點一下風鈴':`搬木柴到柴堆（${state.collected?.length || 0}／3）`) : scene.act===2 ? `舀起倒回（${state.step}／3）` : text; }
   function commit(action){ if(!operate(scene,state,action)){ feedback('慢慢來，先完成目前的步驟。'); return false; } selected=null; if(scene.act===1 && operationComplete(scene,state))focus?.(61); if(scene.act===4 && action==='demo')focus?.(innerWidth/innerHeight>=1.4?46:73); heat(heatFor(scene,state)); changed(); render(); return true; }
   function select(o){
+    if(paused || disposed || busy || o.el.disabled || state.collected?.includes(o.action) || scene.operation.steps.slice(0,state.step).includes(o.action) && !scene.operation.steps.slice(state.step).includes(o.action))return;
     if(scene.act===1)stopDemo();
     if(scene.act===1 && o.action.startsWith('wood-') && state.step===0)return;
     if(scene.act===1 && o.action==='bell'){ chime(); if(state.step===0) commit('bell'); feedback(`把地上的木柴搬到灶旁的柴堆（${state.collected?.length || 0}／3）`); return; }

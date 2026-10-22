@@ -4,6 +4,41 @@
 
 
 
+## 籃球夢修正單1
+
+日期：2026-10-23。只改檔，未執行任何 git 指令，未開 Chrome、未提交／推送／部署；瀏覽器實玩與提交由 Claude 接手。維持滿版 cover、原文量表詞、state 完成判定；原文／密文／注音不變。
+
+### 改動
+
+- `src/activities/situation/operations.js`：共用八種操作防重入／已完成項目 no-op；順序操作依已走過且未來不再使用的 action，收集操作只依 collected（保留任意順序）；鏡頭完成、取消、暫停後重算 disabled，拒絕操作亦 render，避免 busy 殘留。舀水等需重複使用的工具仍可繼續操作，不把工具當已完成項目。orderCards 在確認前仍可切換選取。
+- `src/activities/firstPersonInteraction.js`：〈水滾了〉保留相容操作，也加上已完成／停用／暫停／卸載防護；〈老鞋匠〉、〈存根〉直接共用上述修正。
+- `src/activities/situation/sportsOperations.js`：投籃動畫完成／取消均釋放 busy；球隨拖曳離手，放錯／取消回原位；雙手透明 sprite 留在前景。呼吸圓有「吸氣…吐氣」、待機脈動與長按放大／放開縮回；保留三秒 state 判定、pointer capture、取消／失焦／暫停復位，阻止長按選取與右鍵選單。
+- 新增 `src/activities/situation/promptLayout.js`、`scripts/test-situation-sports-layout.mjs`：運動提示縮成 216×88px 內的小列，依投影後物件、籃框與人物臉矩形尋找空位，ResizeObserver／MutationObserver 隨鏡頭平移／視窗重算。三尺寸、全平移位置驗證保護區不相交；極端無空位時隱藏視覺列，保留操作按鈕 accessible label。
+- `src/data/situationLessons/115AG4K03.js` version 2：第3幕使用獨立 `holding-court.webp` 與雙手；第2幕原圖保留。第4幕圓圈移至中央空白地面；補人物保護區。移除倒敘 para1/n6 的成就感事件，第1幕初始為害怕；最後投進後才由末步 meter 進成就感。
+- `src/styles/first-person.css`：透明手、呼吸圈對比與脈動、觸控長按樣式；減少動態設定停用待機脈動。
+- `scripts/test-situation-operations.mjs`、`scripts/test-situation-basketball.mjs`（舊手勢 fixture 同步先解除暫停）：各共用型別完成後重複點三次／繼續其餘項目；鏡頭中連點、動畫取消再試、投籃中連點／暫停、觸控 capture 三秒與空白鍵三秒、取消／錯放／重入、量表時序。既有三課 handler 測試一併回歸。
+
+### 素材
+
+第3幕原 practice 圖底部已有雙手，直接疊手會出現四手，因此新增去手背景；原 practice 未覆寫。draw 技能指定的本機腳本缺失，改用內建 imagegen 編輯（參考原圖）；共兩次生成：去手背景一次、透明水彩雙手一次，均未重生。背景輸出轉為 2400×1024 WebP，手圖縮為 960px 寬透明 WebP（≤120KiB），仍用 cover。生成原始 PNG 留在 repo 外的 generated_images。人物、構圖／籃框已檢視，瀏覽器視覺仍待 Claude。
+
+### 自動驗證
+
+`npm run validate`、全部104支 `scripts/test-*.mjs`、`npm run build`、`npm run check-dist`（含 assets）全部通過。新增三尺寸／全平移籃框、物件及臉部保護區測試；既有1680組全課全拍 cover 數值檢查通過。末次平移 observer 更新後另重跑運動 handler／layout 與 build／check-dist。未做 Chrome 實玩。
+
+### Claude 實玩步驟
+
+在 1366×900、820×1180、375×812，正常解鎖 `#/lesson/115AG4K03/explore`：
+
+1. 第1幕開場倒敘不顯示成就感，從害怕開始。抬頭動作中連點；完成後再點原熱區三次，學長仍可點、結果／讀文能繼續。鏡頭中開關暫停／提示後亦能續玩。
+2. 第3、4幕左右環顧與縮放，提示不得蓋籃框、操作物或人物臉；手機確認提示文字、喇叭、計數可用，維持滿版、無橫向捲動。
+3. 第3幕只有一雙手捧球，風格與其他幕一致；拖曳球確實離手，放錯、取消回手，兩次成功後能進下一拍。投籃動畫中連點及暫停再繼續不鎖死。
+4. 第4幕未按圓圈前已有慢脈動與吸氣…吐氣字；長按放大、提早放開縮小且不計完成。觸控按滿三秒、空白鍵按滿三秒各完整重玩一次；移出圈仍可計時，pointercancel／失焦／暫停可重試，不出選字或選單。系統減少動態時可靜止但仍能完成。
+5. 最後一球投進後才有成就感；緊張→相信自己做得到→成就感順序、量表原文詞、臺灣國語與每幕摘要均確認。
+6. 完整回歸〈水滾了〉風鈴／木柴／舀水／觀察／火鉗、〈老鞋匠〉剪裁／交易／觀察／任意順序兩份禮物、〈存根〉清點／三組配對。每個已完成物件重點三次再做其餘項目；可重複工具仍正常，不殘留 disabled／busy。
+
+不將數值／handler 測試當作 Chrome、觸控或教學驗收通過。
+
 ## 存根修正單1
 
 日期：2026-10-23。狀態：只改檔，待 Claude 三尺寸實玩。全程未執行任何 git 指令，未開 Chrome、未提交／推送／部署。原文、官方題本內容與密碼未入 repo，密文與素材不變，插畫維持滿版 cover；〈水滾了〉、〈老鞋匠〉未啟用本單策略或改課次資料。

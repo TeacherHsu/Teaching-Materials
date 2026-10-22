@@ -2,7 +2,7 @@
 export default {
   "schemaVersion": 1,
   "lessonId": "115AG4K03",
-  "version": 1,
+  "version": 2,
   "title": "我的籃球夢",
   "gateTitle": "我的籃球夢",
   "introduction": "你就是故事中的「我」。一起走進球場，動手，再讀課文。",
@@ -116,12 +116,6 @@ export default {
       "😊"
     ],
     "events": [
-      {
-        "para": 1,
-        "n": 6,
-        "state": 6,
-        "level": 2
-      },
       {
         "para": 3,
         "n": 2,
@@ -806,7 +800,7 @@ export default {
       "id": "basketball-2",
       "act": 2,
       "title": "學運球",
-      "goal": "球回到手邊時點一下，或按空白鍵。",
+      "goal": "球回來時點一下。",
       "view": "work",
       "stationType": "challenge",
       "assetBase": "assets/situation/115AG4K03/",
@@ -832,6 +826,7 @@ export default {
       },
       "operation": {
         "type": "rhythmTap",
+        "protectedRegions": [{"x":7,"y":25,"width":5,"ratio":1.5},{"x":24.5,"y":34,"width":7,"ratio":1.1},{"x":75.5,"y":23,"width":8,"ratio":1.2}],
         "steps": [
           "bounce-1",
           "bounce-2",
@@ -1039,7 +1034,7 @@ export default {
             {
               "label": "最早到球場練習",
               "x": 50,
-              "y": 65,
+              "y": 51,
               "refs": [
                 {
                   "para": 4,
@@ -1178,14 +1173,15 @@ export default {
       "id": "basketball-3",
       "act": 3,
       "title": "練投籃",
-      "goal": "從球往籃框拖出弧線再放開；鍵盤聚焦球後按空白鍵。",
+      "goal": "把球投進籃框。",
       "view": "work",
       "stationType": "challenge",
       "assetBase": "assets/situation/115AG4K03/",
       "art": {
         "images": [
-          "practice.webp",
-          "swish.webp"
+          "holding-court.webp",
+          "swish.webp",
+          "practice.webp"
         ],
         "aspect": [
           2400,
@@ -1211,6 +1207,8 @@ export default {
       },
       "operation": {
         "type": "aimShot",
+        "heldHands": true,
+        "protectedRegions": [{"x":7,"y":25,"width":5,"ratio":1.5},{"x":24.5,"y":34,"width":7,"ratio":1.1},{"x":75.5,"y":23,"width":8,"ratio":1.2}],
         "steps": [
           "shot-1",
           "shot-2"
@@ -1371,7 +1369,7 @@ export default {
       "id": "basketball-4",
       "act": 4,
       "title": "最後五秒",
-      "goal": "按住呼吸圓圈三秒，再投出最後一球。",
+      "goal": "吸一口氣，再投最後一球。",
       "view": "work",
       "stationType": "challenge",
       "assetBase": "assets/situation/115AG4K03/",
@@ -1404,6 +1402,7 @@ export default {
       },
       "operation": {
         "type": "holdBreath",
+        "protectedRegions": [{"x":36.5,"y":29,"width":7,"ratio":1.2},{"x":62,"y":24,"width":8,"ratio":1.2},{"x":50,"y":26,"width":65,"ratio":0.12}],
         "steps": [
           "breathe",
           "final-shot"
@@ -1414,7 +1413,7 @@ export default {
             "label": "按住三秒，吸氣再吐氣；可長按空白鍵",
             "x": 50,
             "y": 65,
-            "width": 7,
+            "width": 9,
             "ratio": 1,
             "angle": 0,
             "gesture": "holdBreath",
@@ -1441,7 +1440,7 @@ export default {
           15.5
         ],
         "prompts": [
-          "按住圓圈或長按空白鍵三秒，跟著圓圈吸氣、吐氣。",
+          "按住圓圈，吸氣、吐氣。",
           "從球往籃框拖出弧線，放開投出。"
         ]
       },
