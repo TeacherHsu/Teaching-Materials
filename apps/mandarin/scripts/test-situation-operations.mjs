@@ -35,6 +35,26 @@ try{
  tool.find('log').onclick();tool.find('target').onclick();assert.equal(tool.state.step,0,'tool required');tool.find('tool').onclick();tool.find('log').onclick();tool.find('target').onclick();assert.equal(tool.state.step,1);tool.controller.dispose();
  const choose=setup('chooseCard',[obj('yes',10,10),obj('no',30,10)],['yes']);choose.find('no').onclick();assert.equal(choose.state.step,0);choose.find('yes').onclick();assert.equal(choose.state.step,1);choose.controller.dispose();
  const order=setup('orderCards',[obj('a',10,10),obj('b',30,10)],['sorted'],{answer:[1,0]});order.find('b').onclick();order.find('a').onclick();order.controller.setPaused(true);const status=order.layer.parentElement.parentElement.parentElement.children[1];const confirm=status.children.at(-1);confirm.onclick();assert.equal(order.state.step,0);order.controller.setPaused(false);confirm.onclick();assert.equal(order.state.step,1);order.controller.dispose();
+ // Three activations with no wait (well within 200 ms), plus stale/repeated input.
+ for(const type of ['tap','observe','dragToTarget','scoopGesture','toolGrab','chooseCard','orderCards','tracePath']){
+  const objects=['a','b','c'].map((a,i)=>obj(a,10+i*15,20,type==='tracePath'?{path:[[10+i*15,20]]}:{}));
+  if(type==='toolGrab')objects.push(obj('tool',5,5,{tool:true}));
+  if(['dragToTarget','toolGrab'].includes(type))objects.push(obj('target',70,70,{target:true}));
+  const steps=type==='orderCards'?['sorted']:type==='scoopGesture'?['scoop','scoop','scoop']:['a','b','c'];
+  const fixture=setup(type,objects,steps,{collect:['tap','observe','dragToTarget','toolGrab'].includes(type)?steps:undefined,regions:{target,water:target},answer:[0,1,2]});
+  const start=performance.now();
+  for(const a of ['a','b','c']){
+   if(type==='toolGrab')fixture.find('tool').onclick();
+   fixture.find(a).onclick();
+   if(['dragToTarget','toolGrab'].includes(type))fixture.find('target').onclick();
+  }
+  if(type==='orderCards')fixture.layer.parentElement.parentElement.parentElement.children[1].children.at(-1).onclick();
+  assert.ok(performance.now()-start<200,`${type}: rapid activation`);
+  assert.ok(operationComplete(fixture.scene,fixture.state),`${type}: completion from state`);
+  assert.equal(fixture.changes,steps.length,`${type}: one notification per commit`);
+  fixture.find('a').onclick();assert.equal(fixture.state.step,steps.length);
+  fixture.controller.dispose();
+ }
  assert.equal(chooseCard({options:['a','b']},3),null);const cards=orderCards([1,0]);cards.toggle(0);cards.toggle(0);assert.deepEqual(cards.selected,[]);cards.move(0,1);assert.deepEqual(cards.selected,[0,1]);
  assert.equal(crossesRegion({x:0,y:0},{x:100,y:100},target),true);assert.equal(advanceScoop({}, {x:0,y:0},target).dipped,false);
 }finally{Object.assign(globalThis,saved);}

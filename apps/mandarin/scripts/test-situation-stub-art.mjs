@@ -16,9 +16,15 @@ for(const i of [1,2,3]){const pumpkin=d.operation.objects.find(o=>o.action===`pu
 const bag=d.timeline.find(t=>t.kind==='openBag').object;assert.ok(bag.x<40 && bag.y>=80);
 for(const [w,h] of [[1366,900],[820,1180],[375,812]]){
  const g0=sceneIllustrationLayout(w,h,.5,d.art);const center=40;const pan=Math.max(0,Math.min(1,(g0.imageWidth*center/100-w/2)/(g0.imageWidth-w || 1)));const g=sceneIllustrationLayout(w,h,pan,d.art);
- // Main actor and all evidence occupy one frame, independent of moving focus.
- for(const x of [18.5,25,44,53,66])assert.ok(g.left+g.imageWidth*x/100>=0 && g.left+g.imageWidth*x/100<=w,`${w}: actor/bag/evidence ${x}`);
- const cinemaTop=h*.74-12;const reminderBottom=w/h<1.4?h*.74-24:238;assert.ok(reminderBottom<cinemaTop,`${w}: reminder clears maximum subtitles`);
+ // Cover remains full height; every subject can be reached by panning.
+ assert.ok(g.imageHeight>=h && g.imageWidth>=w);
+ for(const x of [18.5,25,44,53,66]){
+  const pan=Math.max(0,Math.min(1,(g0.imageWidth*x/100-w/2)/(g0.imageWidth-w || 1)));
+  const view=sceneIllustrationLayout(w,h,pan,d.art);
+  assert.ok(view.left+view.imageWidth*x/100>=0 && view.left+view.imageWidth*x/100<=w);
+ }
+ assert.ok(238<h*.74-12);
+
 }
 for(const old of [water,shoes])assert.ok(old.scenes.every(s=>!s.art.portraitFrame && !s.strategies && !s.timeline));
 const css=readFileSync(new URL('../src/styles/first-person.css',import.meta.url),'utf8');assert.match(css,/\.fp-face-ring\{[^}]*pointer-events:none[^}]*background:transparent/);assert.match(css,/\.fp-strategy-bag\.is-open::after\{height:13%\}/);

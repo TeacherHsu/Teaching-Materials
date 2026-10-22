@@ -22,7 +22,6 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   let disposed = false, paused = true, frame = 0, previous = 0, pan = art.views[phase.view] ?? .5, target = pan;
   let width = 0, imageWidth = 0, imageHeight = 0, top = 0;
   const base = `${import.meta.env.BASE_URL}${phase.assetBase}`;
-  if(art.portraitFrame){host.classList.add('fp-portrait-evidence');host.style.setProperty('--fp-evidence-backdrop',`url("${base+art.images[0]}")`);}
   const images = art.images.map((file, i) => {
     const img = new Image(); img.alt = ''; img.setAttribute('aria-hidden','true'); img.draggable = false; img.className = 'fp-illustration-frame'; img.style.opacity = i ? '0' : '1';
     img.onload = () => { if (!disposed) { host.classList.remove('fp-image-failed'); onMode?.('第一人稱・插畫探索'); render(); } };
@@ -87,7 +86,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     if (reduced()) { pan = target; if (art.freezeFirstFrame) images.forEach((img, i) => { img.style.opacity = i ? '0' : '1'; });  }
     render(); if (!paused && !document.hidden) frame = requestAnimationFrame(tick);
   }
-  plane.addEventListener('focusin', event => { let x=parseFloat(event.target.closest('.fp-object')?.style.left); if(art.portraitFrame && currentBeat==='act')x=(art.portraitFrame.left+art.portraitFrame.right)/2;if(event.target.matches(':focus-visible') && !interaction.dragging && Number.isFinite(x) && imageWidth>width) { target=Math.max(0,Math.min(1,(imageWidth*x/100-width/2)/(imageWidth-width))); resume(); } });
+  plane.addEventListener('focusin', event => { let x=parseFloat(event.target.closest('.fp-object')?.style.left); if(event.target.matches(':focus-visible') && !interaction.dragging && Number.isFinite(x) && imageWidth>width) { target=Math.max(0,Math.min(1,(imageWidth*x/100-width/2)/(imageWidth-width))); resume(); } });
   const resize = new ResizeObserver(render); resize.observe(host);
   media.addEventListener('change', resume); document.addEventListener('visibilitychange', resume);
   resume();
@@ -97,7 +96,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     startDemo() { interaction.startDemo?.(); },
     showWoodDemo() { return interaction.showWoodDemo(true); },
     setView(view, { immediate = false } = {}) { target = art.views[view] ?? .5; if(immediate)pan=target; resume(); },
-    look(dx) { if(interaction.dragging || art.portraitFrame && currentBeat==='act') return; target = Math.max(0, Math.min(1, target - dx * 2)); resume(); },
+    look(dx) { if(interaction.dragging) return; target = Math.max(0, Math.min(1, target - dx * 2)); resume(); },
     observeAction() { resume(); },
     setOptions(options) { imageOverride=options.imageIndex;hideOperations=Boolean(options.hideOperations);plane.classList.toggle('fp-hide-operations',hideOperations); if(options.mood!==undefined)moodLabel=options.mood;if(options.beat && options.beat!==currentBeat){currentBeat=options.beat;clearTimeout(resultArtTimer);resultReady=false;if(currentBeat==='result'){resultArtTimer=setTimeout(()=>{resultReady=true;if(art.resultView){target=art.views[art.resultView] ?? target;pan=target;render();}stateArt();},art.resultDelay || 0);}}stateArt();reading=art.readingZoom!==false && Boolean(options.reading) && !(currentBeat==='result' && art.resultZoom===false); calm = Boolean(options.calm); paused = Boolean(options.paused); lockBeatObjects(plane,Boolean(options.locked));
       plane.inert=paused || Boolean(options.locked);

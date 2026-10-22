@@ -1,5 +1,12 @@
 # 交接紀錄（最新的寫在最上面）
 
+
+## 2026-10-23｜家中 Mac｜Codex｜存根修正單3：待 Claude 三尺寸實玩
+- 本單只改檔，未執行任何git、未開Chrome、未commit／push／部署。
+- 移除第4幕portraitFrame縮圖／模糊補邊／中央鎖鏡，恢復各拍滿版cover與平移對焦；揭曉卡改量表下方216×56px小卡。
+- 共用操作commit先保存／檢查state完成與轉拍，再render；增加重入／暫停／完成／雙pointer保護並取消示範動畫。新增全課全拍三尺寸cover、遮擋及各共用型別200ms連點測試。
+- validate、全部101支scripts/test-*.mjs、build、check-dist（含資產檢查）全部通過。驗證結果及Claude逐步清單見apps/mandarin/docs/first-person-IMPL-LOG.md「存根修正單3」；未改原文／密文／注音／素材。Claude需三尺寸逐拍檢查cover、平移配對、小卡遮擋、第3幕連點立即3／3與結果，以及兩舊課回歸。
+
 ## 2026-10-23｜家中 Mac｜Codex｜存根修正單2：待 Claude 三尺寸實玩
 - 依本單全程未執行任何 git、未開 Chrome、未 commit／push／部署；只改檔，Claude 接手實玩及提交。
 - 僅調存根美術呈現：五次表情編輯／七張局部疊圖，前3幕遮罩外像素差異0；清晨索引37、市場72／85依讀句切換。臉旁44px標記＋透明中心光圈／命中短亮，規則已寫模板。

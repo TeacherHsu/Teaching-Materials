@@ -46,6 +46,7 @@ export function mountConfiguredOperation(plane, options, api) {
   const config=scene.operation;
   const gesture=o=>o.gesture || config.type;
   const available=o=>state.step>=(o.fromStep ?? 0) && state.step<=(o.toStep ?? config.steps.length);
+  let committing=false;
   let traceProgress=0, lastStep=state.step;
   const base=`${import.meta.env?.BASE_URL || '/'}${scene.assetBase}sprites/`;
   const layer=document.createElement('div');layer.className=`fp-operation fp-generic-operation${config.keepCompleted?' fp-keep-completed':''}`;plane.append(layer);
@@ -79,7 +80,19 @@ export function mountConfiguredOperation(plane, options, api) {
     guide(config.objects.find(o=>o.action===config.steps[state.step]) || config.objects[0]);
     options.heat?.(config.heat?.[state.step] ?? 1);
   }
-  function commit(action){const spec=config.objects.find(o=>o.action===action);if(spec && !available(spec))return false;if(!api.operate(action))return false;render();changed();return true;}
+  function commit(action){
+    if(paused || disposed || committing || api.complete())return false;
+    const spec=config.objects.find(o=>o.action===action);
+    if(spec && !available(spec))return false;
+    committing=true;
+    animation?.cancel();handAnimation?.cancel();hand.hidden=true;clearTimeout(demoTimer);
+    try{
+      if(!api.operate(action))return false;
+      changed();
+      render();
+      return true;
+    }finally{committing=false;}
+  }
   function observe(o){
     if(config.silentObserve || o.observation===''){commit(o.action);return;}
     bubble?.remove();bubble=document.createElement('div');bubble.className='fp-object-bubble';pos(bubble,o.x,o.y-8);
@@ -130,7 +143,7 @@ export function mountConfiguredOperation(plane, options, api) {
     layer.append(el);elements.set(o.action,el);el.onclick=()=>{if(!suppress)select(o);};
     if(o.target || ['tap','observe','chooseCard','orderCards'].includes(gesture(o)))continue;
     el.onpointerdown=e=>{
-      if(e.button!==0 || paused || disposed || el.disabled)return;e.stopPropagation();animation?.cancel();
+      if(e.button!==0 || paused || disposed || committing || drag || el.disabled)return;e.stopPropagation();animation?.cancel();
       if(config.type==='toolGrab')select(o);else selected=o;
       traceProgress=0;
       if(gesture(o)==='tracePath')traceProgress=advanceTrace(0,null,point(e),o.path,o.tolerance);

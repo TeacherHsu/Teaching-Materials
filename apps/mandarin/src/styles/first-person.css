@@ -359,8 +359,8 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 .fp-strategy-bag.is-open::after{height:13%}
 .fp-generic-operation .fp-used{pointer-events:none!important;box-shadow:none!important;background:transparent!important;filter:none!important;animation:none!important;transition:box-shadow .3s,filter .3s}
 .fp-generic-operation .fp-grounded{filter:drop-shadow(0 5px 2px #35220fc0);animation:none}
-.fp-portrait-evidence::before{content:'';position:absolute;inset:-16px;background-image:var(--fp-evidence-backdrop);background-size:cover;background-position:center;filter:blur(12px) brightness(.65);pointer-events:none}
 @media(prefers-reduced-motion:reduce){.fp-face-ring,.fp-strategy-bag img,.fp-strategy-bag::after{transition:none}}
 .fp-calm .fp-face-ring,.fp-calm .fp-strategy-bag img,.fp-calm .fp-strategy-bag::after{transition:none}
 .fp-prediction-reminder{max-height:120px;overflow:auto;box-sizing:border-box}
-@media(max-aspect-ratio:7/5){.fp-page:has(.fp-portrait-evidence) .fp-prediction-reminder{top:auto;bottom:calc(26% + 24px)}}
+
+.fp-prediction-reminder{top:112px;right:12px;width:216px;max-width:calc(100% - 24px);height:56px;max-height:56px;line-height:22px}

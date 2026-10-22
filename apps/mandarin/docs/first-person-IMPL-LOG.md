@@ -808,3 +808,22 @@ Claude請用正常教室密碼，由 `#/lesson/115AG4K12` 的「課文情境探�
 7. 回歸原策略順序、141句、摘要與進度；〈水滾了〉風鈴／木柴／舀水／火鉗、〈老鞋匠〉剪裁／交易／熄燭／禮物與表情皆實玩。不得將本輪數值通過寫成兩舊課瀏覽器行為已驗收。
 
 最終結果：末次弗大叔標記偏移加大後，`npm run validate`、全部 **99支** `scripts/test-*.mjs`、`npm run build`、`npm run check-dist`（含check-assets）、`npm run build:preview`皆exit 0。正式dist保留；24張WebP合計3.398MiB，尺寸與單張容量再次檢查通過。未執行`preview:draft`瀏覽器實玩，依本單由Claude開Chrome驗收。全部驗證日誌存repo外6A12供接棒查閱；未執行任何git指令。
+
+
+## 存根修正單3（2026-10-23，Codex；待 Claude 實玩）
+
+- 本單只改檔，未執行任何 git、未開 Chrome、未提交／推送／部署。未改密文、教材原文、注音或新增素材。
+- `firstPersonLayout.js` 移除 portraitFrame 縮圖分支，所有課／幕／拍統一 cover；`115AG6H12.js` 移除該設定。`firstPersonIllustrated.js` 移除模糊補邊與強制中央鎖鏡，直向可左右平移及用鍵盤焦點查看背包／人物／各組配對，不以縮小插畫求同框。
+- `first-person.css` 預測揭曉改右上角量表／任務下方小卡（right 12、top 112、216×56px，內容可捲動並保留朗讀）。固定高度避開人物臉與結果，移除直向移到底部的規則。
+- `situation/operations.js` commit 先通知保存／state 完成判定與拍轉換，再做 render／focus；加入 commit 重入、paused／disposed／complete 檢查，提交時取消示範動畫，阻擋同時第二個 pointer 接管拖曳。保留可在短時間內依序提交不同物件，不以動畫延遲計數。
+- 新增 `test-situation-cover.mjs`：三課四幕、七種拍、三尺寸及五個 pan，共1260次 cover／四邊覆蓋檢查。新增 `test-situation-prediction-layout.mjs`：三尺寸、101個平移位置的小卡與可操作物／南瓜結果／已標記人物臉／量表／字幕交集。`test-situation-operations.mjs` 增加 tap、observe、dragToTarget、scoopGesture、toolGrab、chooseCard、orderCards、tracePath 的200ms內三次操作、state完成與通知數／重複點擊檢查。存根測試另驗第3幕3／3，原縮圖同框斷言改為滿版與可平移到達。
+
+Claude 請在1366×900、820×1180、375×812：
+1. 第4幕從開背包→預測→三組配對→結果→讀原文逐拍確認滿版、上下無灰邊；左右拖曳及 Tab 對焦可看布大爺、背包與每組南瓜，配對正／錯放與鍵盤均可完成。
+2. 預測揭曉小卡位於右上量表下方；各種選項、長文字、朗讀、捲動及左右環顧時，不蓋臉／南瓜／接蒂結果，字幕仍完整。
+3. 第3幕在200ms內點三顆不同南瓜，立即顯示3／3並自動進結果，不需重整；重複點同一顆不得多算。動畫開／關／系統減少動態各試一次，含重新整理後狀態。
+4. 各共用操作試快速點擊、拖曳、取消、雙指與Tab／Enter，確認沒有重複、漏算或重複轉拍；水滾了及老鞋匠四幕回歸。
+
+數值／handler測試不能取代Chrome實際矩形、觸控與視覺驗收。本單不宣稱瀏覽器驗收完成。
+
+驗證結果：`npm run validate`、全部101支 `scripts/test-*.mjs`、`npm run build`、`npm run check-dist`（含check-assets）最終整輪全部通過。未開Chrome；實玩由Claude接手。

@@ -2045,12 +2045,6 @@ export default {
           "心滿意足": {
             "market.webp": "market-relief-expression.webp"
           }
-        },
-        "portraitFrame": {
-          "left": 12,
-          "right": 68,
-          "top": 118,
-          "bottom": 180
         }
       },
       "operation": {
