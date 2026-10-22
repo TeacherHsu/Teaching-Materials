@@ -50,6 +50,7 @@ export function mountConfiguredOperation(plane, options, api) {
   const available=o=>state.step>=(o.fromStep ?? 0) && state.step<=(o.toStep ?? config.steps.length);
   const completed=o=>Boolean(state.collected?.includes(o.action) || !config.collect?.includes(o.action) && config.steps.slice(0,state.step).includes(o.action) && !config.steps.slice(state.step).includes(o.action));
   let committing=false, motionBusy=false;
+  const objectAudio=new Map();
   let traceProgress=0, lastStep=state.step;
   const base=`${import.meta.env?.BASE_URL || '/'}${scene.assetBase}sprites/`;
   const layer=document.createElement('div');layer.className=`fp-operation fp-generic-operation${config.keepCompleted?' fp-keep-completed':''}`;plane.append(layer);
@@ -75,6 +76,7 @@ export function mountConfiguredOperation(plane, options, api) {
   const point=e=>{const r=plane.getBoundingClientRect();return {x:(e.clientX-r.left)/r.width*100,y:(e.clientY-r.top)/r.height*100};};
   const snap=o=>{const el=elements.get(o.action);el.style.width=`${state.collected?.includes(o.action) && o.destinationWidth ? o.destinationWidth : o.width}%`;pos(el,...(state.collected?.includes(o.action) && o.destination ? o.destination : [o.x,o.y]));};
   function render(){
+    for(const o of config.objects){const audio=objectAudio.get(o.action);if(audio){audio.hidden=paused || !available(o) || completed(o) || api.complete();}}
     for(const o of config.objects){const el=elements.get(o.action);const used=Boolean(o.consumedBy && state.collected?.includes(o.consumedBy) || o.usedFade && state.collected?.includes(o.action));el.classList.toggle('fp-used',used);if(o.completedSprite){const img=el.querySelector('img');if(img)img.src=base+(completed(o)?o.completedSprite:o.sprite)+'.webp';}el.hidden=!available(o);el.style.pointerEvents=o.passive?'none':'';el.disabled=Boolean(paused || motionBusy || used || o.passive || api.complete() || !available(o) || completed(o));el.setAttribute('aria-pressed',String(selected===o || gripped===o));if(!drag)snap(o);}
     status.classList.toggle('fp-operation-complete',api.complete());layer.classList.toggle('fp-operation-complete',api.complete());
     tell(config.prompts?.[state.step] || scene.goal);const group=config.groups?.find(g=>state.step>=g.from && state.step<g.to) || config.groups?.at(-1);counter.textContent=group?`${Math.min(group.to-group.from,Math.max(0,state.step-group.from))}／${group.to-group.from}`:`${state.step}／${config.steps.length}`;
@@ -100,8 +102,9 @@ export function mountConfiguredOperation(plane, options, api) {
     if(motionBusy || completed(o))return;
     if(o.viewMotion && !reduced()){
       motionBusy=true;render();
-      const pose=o.viewMotion==='lookUp'?'scale(1.035) translateY(8px)':'scale(1.05)';
-      animation=plane.parentElement.animate([{transform:'scale(1)'},{transform:pose,offset:.65},{transform:'scale(1)'}],{duration:750,easing:'ease-in-out'});
+      const local=['turn','fan'].includes(o.viewMotion);
+      const pose=({lookUp:'scale(1.035) translateY(8px)',approach:'scale(1.05)',turn:'rotateY(360deg)',jump:'scale(1.08) translateY(14px)',fan:'rotate(35deg)'})[o.viewMotion];
+      animation=(local?elements.get(o.action):plane.parentElement).animate([{transform:'none'},{transform:pose,offset:.65},{transform:'none'}],{duration:750,easing:'ease-in-out'});
       animation.onfinish=()=>{animation=null;motionBusy=false;if(!paused && !disposed)commit(o.action);render();};
       animation.oncancel=()=>{motionBusy=false;if(!disposed)render();};return;
     }
@@ -151,8 +154,10 @@ export function mountConfiguredOperation(plane, options, api) {
     if(o.minHitSize)el.style.setProperty('--fp-hit-size',`${o.minHitSize}px`);
     el.style.width=`${o.width}%`;el.style.aspectRatio=String(1/o.ratio);el.style.rotate=`${o.angle}deg`;pos(el,o.x,o.y);
     if(o.sprite){const img=new Image();img.src=base+o.sprite+'.webp';img.alt='';img.draggable=false;el.append(img);}else if(!o.target && !o.hotspot)el.textContent=o.label;
+    if(o.cardLabel){const caption=document.createElement('span');caption.className='fp-object-caption';caption.textContent=o.cardLabel;el.append(caption);}
     if(o.hotspot)el.classList.add('fp-glow');if(o.grounded)el.classList.add('fp-grounded');
     layer.append(el);elements.set(o.action,el);el.onclick=()=>{if(!suppress)select(o);};
+    if(o.cardLabel){const audio=document.createElement('div');audio.className='fp-object-audio';pos(audio,o.x+4,o.y);audio.append(SpeakButton({text:o.cardLabel}));layer.append(audio);objectAudio.set(o.action,audio);}
     if(o.target || ['tap','observe','chooseCard','orderCards'].includes(gesture(o)))continue;
     el.onpointerdown=e=>{
       if(e.button!==0 || paused || disposed || committing || drag || el.disabled)return;e.stopPropagation();animation?.cancel();
@@ -189,8 +194,10 @@ export function mountConfiguredOperation(plane, options, api) {
   }
   // Static dashed destination and guide; source art remains unchanged.
   if(config.guide!==false && (['dragToTarget','toolGrab'].includes(config.type) || config.objects.some(o=>o.gesture==='dragToTarget'))){
-    const r=config.regions.target,guide=document.createElement('div');guide.dataset.dragGuide='true';guide.className='fp-generic-target';
-    guide.style.left=`${r.left}%`;guide.style.top=`${r.top}%`;guide.style.width=`${r.right-r.left}%`;guide.style.height=`${r.bottom-r.top}%`;layer.append(guide);
+    for(const [name,r] of Object.entries(config.regions)){
+      const guide=document.createElement('div');guide.dataset.region=name;guide.className='fp-generic-target';
+      guide.style.left=`${r.left}%`;guide.style.top=`${r.top}%`;guide.style.width=`${r.right-r.left}%`;guide.style.height=`${r.bottom-r.top}%`;layer.append(guide);
+    }
   }
   function showWoodDemo(force=false){
     if(paused || api.complete() || state.demoSeen && !force)return false;

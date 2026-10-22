@@ -399,3 +399,11 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 .fp-meter-audio{grid-column:2;grid-row:2;align-self:center}
 .fp-page:has(.fp-status-meter) .fp-operation-status{top:112px}
 .fp-status-meter>.fp-meter-clue{top:calc(100% + 4px)}
+
+/* 劇本舞臺指示僅顯示，朗讀文字由解鎖後的來源另行組成。 */
+.fp-stage-direction { font-size: .82em; font-style: italic; line-height: 1.5; }
+.fp-script-speaker { font-weight: 700; }
+.fp-safety-reminder { position: absolute; z-index: 12; bottom: max(20px, env(safe-area-inset-bottom)); left: 3%; right: 3%; padding: 8px 12px; border-radius: 14px; background: #fff9edee; color: #493721; font-size: 18px; }
+.fp-safety-reminder p { margin: 0; font-size: 18px; }
+.fp-object-caption { display: block; position: absolute; left: 50%; top: 85%; transform: translateX(-50%); white-space: nowrap; font-size: 22px; padding: 3px 6px; border-radius: 8px; color: #493721; background: #fff9edee; }
+.fp-object-audio { pointer-events: auto; position: absolute; z-index: 4; transform: translate(-50%,-50%); }

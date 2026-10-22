@@ -23,7 +23,7 @@ export function mountStrategy({strategy, panel, plane, stage, states, onWords, o
   const status=h('div',{role:'status','aria-live':'polite'});panel.append(status);
   function message(text){status.replaceChildren(say(text));}
   function choose(index,button){
-    if(disposed || finished)return;
+    if(disposed || finished || selected.includes(index))return;
     result=chooseStrategy(strategy,index,selected);if(!result)return;
     selected=result.selected;
     if(strategy.type==='predict'){finish();return;}

@@ -47,8 +47,20 @@ export function sentenceSources(config, paragraphs, sayTexts) {
   const sources=new Map();
   for(const [para,texts] of paragraphs){
     let speaker='';
+    let inStage=false;
     texts.forEach((text,n)=>{
       if(!isStoryUnit(config,para,n))return;
+      if(config.script){
+        const label=config.speakers[`${para}:${n}`];
+        const body=text===`${label}：`?'':text.replace(new RegExp(`^${label}：`),'');
+        const spokenBody=(sayTexts.get(`${para}:${n}`) || text).replace(new RegExp(`^${label}：`),'');
+        const split=(value,initial)=>{let stage=initial;const parts=[];for(const ch of value){if(ch==='（' || ch==='(')stage=true;const last=parts.at(-1);if(last?.stage===stage)last.text+=ch;else parts.push({stage,text:ch});if(ch==='）' || ch===')')stage=false;}return {parts,stage};};
+        const display=split(body,inStage),speech=split(spokenBody,inStage);inStage=display.stage;
+        sources.set(`script:${para}:${n}`,{speaker:label,parts:display.parts});
+        sources.set(`sentence:${para}:${n}`,`${label}：${body}`);
+        sources.set(`say:${para}:${n}`,speech.parts.filter(p=>!p.stage).map(p=>p.text).join(''));
+        return;
+      }
       if(text.startsWith('」'))speaker='';
       if(text.includes('「'))speaker=config.ui.speaker;
       const label=config.speakers ? config.speakers[`${para}:${n}`] : speaker;
