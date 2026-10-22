@@ -55,13 +55,14 @@ export function validateSituationLesson(lesson) {
     check(s.operation.profile===undefined || s.operation.profile===`cooking-${s.operation.type}` && lesson.lessonId==='115AG3H04', 'reserved effect profile');
     check(s.art?.images?.length>0 && s.art.images.every(f=>/^[\w/-]+\.webp$/.test(f) && !f.includes('..')), 'images');
     for(const [base,file] of Object.entries(s.art.expressionOverlays || {}))check(s.art.images.includes(base) && /^[\w-]+\.webp$/.test(file),'expression overlay');
+    for(const [state,files] of Object.entries(s.art.expressionStates || {})){check(lesson.meter.states.includes(state),'expression state');for(const [base,file] of Object.entries(files))check(s.art.images.includes(base) && /^[\w-]+\.webp$/.test(file),'state overlay');}
     check(s.art.aspect?.length===2 && s.art.aspect.every(n=>Number.isFinite(n) && n>0), 'image aspect');
     for(const point of Object.values({...s.art.hotspots,...s.art.effects}))check(point.length===2 && point.every(percent), 'art coordinates');
     for(const value of Object.values(s.art.orientationFocus || {}))check(percent(value),'orientation focus');
     for(const value of Object.values(s.art.views))check(Number.isFinite(value) && value>=0 && value<=1,'view focus');
     for(const points of Object.values(s.art.focus || {}))for(const [x,y] of Object.entries(points))check(percent(Number(x)) && percent(y), 'orientation focus');
     check(s.operation.objects?.length>0, 'objects');
-    for(const o of s.operation.objects){check(text(o.label) && text(o.action),'object identity');check([o.x,o.y,o.width].every(percent) && o.width>0 && Number.isFinite(o.ratio) && o.ratio>0 && Number.isFinite(o.angle),'object geometry');check(!o.sprite || /^[\w-]+$/.test(o.sprite),'sprite');if(o.minHitSize!==undefined)check(Number.isFinite(o.minHitSize) && o.minHitSize>=44,'hit size');if(o.gesture)check(['tap','observe','dragToTarget','tracePath'].includes(o.gesture),'object gesture');if(o.gesture==='tracePath' || s.operation.type==='tracePath' && !o.passive && !o.target)check(o.path?.length>=2 && o.path.every(p=>p.length===2 && p.every(percent)) && Number.isFinite(o.tolerance) && o.tolerance>0,'trace path');if(o.destination)check(o.destination.length===2 && o.destination.every(percent),'destination');}
+    for(const o of s.operation.objects){check(text(o.label) && text(o.action),'object identity');check([o.x,o.y,o.width].every(percent) && o.width>0 && Number.isFinite(o.ratio) && o.ratio>0 && Number.isFinite(o.angle),'object geometry');check(!o.sprite || /^[\w-]+$/.test(o.sprite),'sprite');if(o.minHitSize!==undefined)check(Number.isFinite(o.minHitSize) && o.minHitSize>=44,'hit size');if(o.gesture)check(['tap','observe','dragToTarget','tracePath'].includes(o.gesture),'object gesture');if(o.gesture==='tracePath' || s.operation.type==='tracePath' && !o.passive && !o.target)check(o.path?.length>=2 && o.path.every(p=>p.length===2 && p.every(percent)) && Number.isFinite(o.tolerance) && o.tolerance>0,'trace path');if(o.destinationWidth!==undefined)check(percent(o.destinationWidth) && o.destinationWidth>0 && o.destination,'destination width');if(o.destination)check(o.destination.length===2 && o.destination.every(percent),'destination');}
     for(const region of Object.values(s.operation.regions || {}))check(['left','right','top','bottom'].every(k=>percent(region[k])) && region.left<region.right && region.top<region.bottom,'region');
     check(s.meter?.length===s.operation.steps.length+1, 'meter event count');
     for(const event of s.meter)check(Number.isInteger(event.state) && text(lesson.meter.states[event.state]) && percent(event.level) && event.level<=3,'meter event');
@@ -70,11 +71,14 @@ export function validateSituationLesson(lesson) {
     }
     check(Number.isFinite(s.beats.result.duration) && s.beats.result.duration>=0 && s.art.views[s.beats.result.view]!==undefined,'result');
     if(['dragToTarget','toolGrab'].includes(s.operation.type) && !s.operation.profile)check(s.operation.regions?.target,'target region');
+    if(s.operation.groups){let end=0;for(const g of s.operation.groups){check(g.from===end && Number.isInteger(g.to) && g.to>g.from && g.to<=s.operation.steps.length,'operation group');end=g.to;}check(end===s.operation.steps.length,'group coverage');}
+    if(s.operation.guide===false)check(s.operation.type==='dragToTarget','unguided drag');
     if(s.art.stepImages)check(s.art.stepImages.length===s.operation.steps.length+1 && s.art.stepImages.every(n=>Number.isInteger(n) && n>=0 && n<s.art.images.length),'step images');
     if(s.art.resultImage!==undefined)check(Number.isInteger(s.art.resultImage) && s.art.resultImage>=0 && s.art.resultImage<s.art.images.length,'result image');
     if(s.operation.type==='scoopGesture' && !s.operation.profile)check(s.operation.regions?.water,'water region');
     if(s.operation.type==='toolGrab' && !s.operation.profile)check(s.operation.objects.some(o=>o.tool),'tool object');
     if(s.operation.type==='orderCards')check(Array.isArray(s.operation.answer) && s.operation.answer.length===s.operation.objects.length && new Set(s.operation.answer).size===s.operation.objects.length && s.operation.answer.every(i=>Number.isInteger(i) && i>=0 && i<s.operation.objects.length),'operation order answer');
+    for(const [key,view] of Object.entries(s.readViews || {}))check(s.beats.read.some(r=>r.sentences.some(n=>`${r.para}:${n}`===key)) && s.art.views[view]!==undefined,'reading view');
     check(s.questions?.length>0,'questions');
     for(const q of s.questions){
       check(['chooseCard','orderCards'].includes(q.operationType), 'card type');refs(q.refs);
@@ -87,13 +91,15 @@ export function validateSituationLesson(lesson) {
   check(JSON.stringify(coverage)===JSON.stringify(storyExpected),'full ordered story coverage');
   check(storyExpected.every(key=>hashes.has(key)), 'full hashes');
   refs(lesson.ending.refs || []);
+  for(const r of lesson.meter.events || [])check(storyExpected.includes(`${r.para}:${r.n}`) && text(lesson.meter.states[r.state]) && Number.isInteger(r.level) && r.level>=0 && r.level<=3,'meter read event');
   if(lesson.meter.read){const r=lesson.meter.read;check(expected.includes(`${r.para}:${r.n}`) && text(lesson.meter.states[r.state]),'meter read trigger');}
   check(text(lesson.ending.title),'ending');
   return true;
 }
 
-export function meterFor(lesson, scene, step, remembered=false) {
-  const entry=remembered && lesson.meter.read ? lesson.meter.read : scene.meter[Math.min(step,scene.meter.length-1)];
+export function meterFor(lesson, scene, step, remembered=false, readRef=null) {
+  const event=readRef && lesson.meter.events?.filter(r=>r.para<readRef.para || r.para===readRef.para && r.n<=readRef.n).at(-1);
+  const entry=event || (remembered && lesson.meter.read ? lesson.meter.read : scene.meter[Math.min(step,scene.meter.length-1)]);
   return {level:entry.level,label:lesson.meter.states[entry.state],face:lesson.meter.faces?.[entry.state] || '🙂'};
 }
 // Called only after the existing classroom gate. No text is persisted or logged.

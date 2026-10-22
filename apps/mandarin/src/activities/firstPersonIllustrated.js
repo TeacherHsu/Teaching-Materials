@@ -11,7 +11,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   const layer = document.createElement('div'); layer.className = 'fp-illustration';
   const plane = document.createElement('div'); plane.className = 'fp-illustration-plane'; layer.append(plane); host.prepend(layer);
   host.classList.add('is-illustrated');
-  let reading = false, currentBeat='intro', resultReady=false, resultArtTimer;
+  let moodLabel = '', reading = false, currentBeat='intro', resultReady=false, resultArtTimer;
   function stateArt(){
     plane.classList.toggle('fp-result-hide-completed',Boolean(art.hideCompletedOnResult && (['read','question'].includes(currentBeat) || currentBeat==='result' && resultReady)));
     if(!art.stepImages)return;
@@ -30,11 +30,11 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   // Sparse expression overlays share their base frame's geometry and opacity.
   // All pixels outside the face/shoulder masks keep the original base image.
   const expressionOverlays=images.flatMap((baseImage,i)=>{
-    const file=art.expressionOverlays?.[art.images[i]];
-    if(!file)return [];
-    const img=new Image();img.alt='';img.draggable=false;img.className='fp-illustration-frame';img.setAttribute('aria-hidden','true');
-    img.src=base+file;img.style.opacity=baseImage.style.opacity;plane.append(img);
-    return [{img,baseImage}];
+    const entries=[[null,art.expressionOverlays?.[art.images[i]]],...Object.entries(art.expressionStates || {}).map(([state,files])=>[state,files[art.images[i]]])];
+    return entries.filter(([,file])=>file).map(([state,file])=>{
+      const img=new Image();img.alt='';img.draggable=false;img.className='fp-illustration-frame';img.setAttribute('aria-hidden','true');
+      img.src=base+file;img.style.opacity='0';plane.append(img);return {img,baseImage,state};
+    });
   });
   const effects = document.createElement('div'); effects.style.zIndex = '2'; effects.className = 'fp-illustration-effects'; plane.append(effects);
   for (const [kind, point] of Object.entries(art.effects || {})) {
@@ -54,7 +54,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     const geometry=sceneIllustrationLayout(width,host.clientHeight,pan,art,reading);
     ({imageHeight,imageWidth,top}=geometry);
     const left=geometry.left;
-    for(const {img,baseImage} of expressionOverlays){img.style.opacity=baseImage.style.opacity;img.style.transition=baseImage.style.transition;}
+    for(const {img,baseImage,state} of expressionOverlays){img.style.opacity=state && state!==moodLabel ? '0' : baseImage.style.opacity;img.style.transition=baseImage.style.transition;}
     layer.style.top = `${top}px`; layer.style.height = `${imageHeight}px`;
     plane.style.width = `${imageWidth}px`; plane.style.transform = `translateX(${left}px)`;
     const points = {};
@@ -90,10 +90,10 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   return {
     startDemo() { interaction.startDemo?.(); },
     showWoodDemo() { return interaction.showWoodDemo(true); },
-    setView(view) { target = art.views[view] ?? .5; resume(); },
+    setView(view, { immediate = false } = {}) { target = art.views[view] ?? .5; if(immediate)pan=target; resume(); },
     look(dx) { if(interaction.dragging) return; target = Math.max(0, Math.min(1, target - dx * 2)); resume(); },
     observeAction() { resume(); },
-    setOptions(options) { if(options.beat && options.beat!==currentBeat){currentBeat=options.beat;clearTimeout(resultArtTimer);resultReady=false;if(currentBeat==='result'){resultArtTimer=setTimeout(()=>{resultReady=true;if(art.resultView){target=art.views[art.resultView] ?? target;pan=target;render();}stateArt();},art.resultDelay || 0);}}stateArt();reading=art.readingZoom!==false && Boolean(options.reading) && !(currentBeat==='result' && art.resultZoom===false); calm = Boolean(options.calm); paused = Boolean(options.paused); lockBeatObjects(plane,Boolean(options.locked));
+    setOptions(options) { if(options.mood!==undefined)moodLabel=options.mood;if(options.beat && options.beat!==currentBeat){currentBeat=options.beat;clearTimeout(resultArtTimer);resultReady=false;if(currentBeat==='result'){resultArtTimer=setTimeout(()=>{resultReady=true;if(art.resultView){target=art.views[art.resultView] ?? target;pan=target;render();}stateArt();},art.resultDelay || 0);}}stateArt();reading=art.readingZoom!==false && Boolean(options.reading) && !(currentBeat==='result' && art.resultZoom===false); calm = Boolean(options.calm); paused = Boolean(options.paused); lockBeatObjects(plane,Boolean(options.locked));
       plane.inert=paused || Boolean(options.locked);
       resume(); },
     dispose() {

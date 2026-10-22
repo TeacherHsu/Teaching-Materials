@@ -29,6 +29,7 @@ export function FirstPersonPage(lesson) {
   let prefs = { sound: false, animation: 'system' };
   try { const s = JSON.parse(localStorage.getItem(PREF_KEY)); prefs = { sound: s?.sound === true, animation: ['system','on','off'].includes(s?.animation) ? s.animation : s?.calm ? 'off' : 'system' }; } catch { /* 預設 */ }
   let world, generation = 0, disposed = false, replay = null, lastClue = null, feedback = '', wrong = false, readingVisible = false;
+  let moodLabel = '';
   let subtitle = null, subtitleTimer, subtitleAfter, subtitleQueue = [];
   let beat = 'intro', beatTimer, playback = createPlayback(), narrationToken = 0;
   let chimeUntil = 0, chimeTimer;
@@ -60,7 +61,7 @@ export function FirstPersonPage(lesson) {
     if (!AC) return null;
     return audio ||= new AC();
   }); }
-  function updateMotion() { root.classList.toggle('fp-calm', calm()); root.classList.toggle('fp-motion-on', prefs.animation === 'on'); world?.setOptions?.({ beat, calm: calm(), reading: ['result','read'].includes(beat), locked: beat !== 'act' || (scene?.operation.profile==='cooking-toolGrab' && state?.operation.step===0), paused: Boolean(Date.now()<chimeUntil || modal?.open || subtitle || root.querySelector('.fp-question-cards')) }); sound(); }
+  function updateMotion() { root.classList.toggle('fp-calm', calm()); root.classList.toggle('fp-motion-on', prefs.animation === 'on'); world?.setOptions?.({ beat, mood: moodLabel, calm: calm(), reading: ['result','read'].includes(beat), locked: beat !== 'act' || (scene?.operation.profile==='cooking-toolGrab' && state?.operation.step===0), paused: Boolean(Date.now()<chimeUntil || modal?.open || subtitle || root.querySelector('.fp-question-cards')) }); sound(); }
   function destroyWorld() { generation++; world?.dispose(); world = null; }
   function close() {
     if (disposed) return; disposed = true; clearTimeout(beatTimer); clearTimeout(chimeTimer); clearTimeout(subtitleTimer); clearTimeout(observationTimer); clearTimeout(idleTimer); destroyWorld(); cancelSpeaking(); audio?.close().catch(() => {});
@@ -150,10 +151,12 @@ export function FirstPersonPage(lesson) {
     updateMotion(); sound();
   }
 
-  function updateMood(remembered = false) {
+  function updateMood(remembered = false, readRef = null) {
     const node = root.querySelector('.fp-mood'); if (!node) return;
-    const m = meterFor(config, scene, state.operation.step, remembered);
+    const m = meterFor(config, scene, state.operation.step, remembered, readRef);
+    moodLabel=m.label;
     clear(node); node.dataset.level = String(m.level);
+    if(config.meter.caption)node.append(h('span',{class:'fp-mood-caption'},config.meter.caption));
     node.append(h('span', {}, m.label), h('span', { class: 'fp-mood-face', 'aria-hidden': 'true' }, m.face), h('i', { style: `--mood:${m.level / 3 * 100}%`, 'aria-hidden': 'true' }), h('span', { class: 'fp-sr' }, `${config.ui.character}：${m.label}`));
   }
   function setBeat(value) {
@@ -185,7 +188,9 @@ export function FirstPersonPage(lesson) {
     const ref=subtitleQueue.shift();
     if(!ref) {const done=subtitleAfter;subtitleAfter=null;done?.();return;}
     recordRead(ref);
+    const readingView=scene.readViews?.[`${ref.para}:${ref.n}`];if(readingView)world?.setView(readingView,{immediate:true});
     const line=sources.get(`sentence:${ref.para}:${ref.n}`);
+    if(config.meter.events)updateMood(false,ref);
     if(ref.para===config.meter.read?.para && ref.n===config.meter.read?.n)updateMood(true);
     const controls=[];
     if(beat==='intro')controls.push(button('略過',()=>{subtitleQueue.forEach(recordRead);subtitleQueue=[];nextSubtitle();}));

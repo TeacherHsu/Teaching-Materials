@@ -24,6 +24,7 @@ const app=await createServer({root:appRoot,configFile:false,server:{middlewareMo
 try {
  const {getFirstPersonLesson}=await app.ssrLoadModule('/src/data/firstPersonLesson.js');
  assert.equal(getFirstPersonLesson('115AG4K12').scenes.length,4);
+ assert.equal(getFirstPersonLesson('115AG6H12').scenes.length,4);
  assert.equal(getFirstPersonLesson('115AG3H04').sentenceCount,45);
 }finally{await app.close();}
 console.log('PASS: real Vite getter exposes shoemaker and retains the cooking lesson');

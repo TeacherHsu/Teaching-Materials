@@ -8,8 +8,8 @@ for(const file of await readdir(directory)){
   const {default:lesson}=await import(new URL(file,directory));validateSituationLesson(lesson);count++;
   assert.equal(file,`${lesson.lessonId}.js`);
   for(const scene of lesson.scenes){
-    const assets=[...scene.art.images,...Object.values(scene.art.expressionOverlays || {}),...scene.operation.objects.filter(o=>o.sprite).map(o=>`sprites/${o.sprite}.webp`),...scene.questions.flatMap(q=>(q.images || []).map(f=>`sprites/${f}.webp`))];
-    for(const file of assets){const info=await stat(new URL(`../public/${lesson.assetBase}${file}`,import.meta.url));assert.ok(info.size>0 && info.size<=300*1024,`asset limit: ${file}`);}
+    const assets=[...scene.art.images,...Object.values(scene.art.expressionOverlays || {}),...Object.values(scene.art.expressionStates || {}).flatMap(Object.values),...scene.operation.objects.filter(o=>o.sprite).map(o=>`sprites/${o.sprite}.webp`),...scene.questions.flatMap(q=>(q.images || []).map(f=>`sprites/${f}.webp`))];
+    for(const file of assets){const info=await stat(new URL(`../public/${lesson.assetBase}${file}`,import.meta.url));assert.ok(info.size>0 && info.size<=(scene.art.aspect[0]===2400 && !file.startsWith('sprites/')?400:300)*1024,`asset limit: ${file}`);}
   }
   const mutate=fn=>{const copy=structuredClone(lesson);fn(copy);assert.throws(()=>validateSituationLesson(copy));};
   mutate(l=>l.scenes[0].operation.type='unknown');

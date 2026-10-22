@@ -47,3 +47,13 @@
 - `art.stepImages` 的長度為 steps+1，值為 `art.images` 的索引。每步切換狀態圖，不把完成物件留成重複的 sprite。`resultImage` 在結果拍切換；`resultDelay` 毫秒讓完成狀態先停留（例如先看桌上禮物），再切結果；`resultView` 可指定同時轉到另一個 `art.views`。`resultZoom:false` 保留結果拍正常 cover 尺度，避免尚未看清的禮物先被讀文鏡頭裁掉。離頁清除結果計時器；減少動態時不淡入。
 - 本單指定 115AG4K12 使用 **2400×1024** WebP 底圖≤400KiB、透明物件≤120KiB，優先於一般新課960方圖建議；實際所有底圖也低於既有300KiB檢查上限。滿版 cover 不改為 contain。
 - 本課正式密文是1個資料段、18行、100個朗讀單位，含標題／作者／課前導讀。教師設計單的正文段號不拿來重編現有密文；設定使用真正的 `para:1` 與0起算句索引，細目見實作紀錄。來源明文與密碼沒有加入 repo。
+
+## 存根擴充（2026-10-23）
+
+- **形狀配對沿用 `dragToTarget`，沒有新增操作型別。** 每個蒂用不同 `object.region` 對應 `operation.regions` 的蒂口；點選物件再點目標與拖放走同一個判定。錯配彈回、不增加計數，`retry` 提醒觀察粗細形狀。`guide:false` 關閉通往正解的箭頭與單一目標虛框，三個實際目標按鈕仍保留；`destinationWidth` 僅在成功吸附後調整物件尺寸，熱區仍至少44px。
+- `operation.groups:[{from:0,to:3},{from:3,to:6}]` 是連續、不重疊、完整覆蓋 steps 的半開區間。每組重新從0／3計數；collect 僅接受目前組的動作，搭配物件 `fromStep/toStep` 避免提前收集。混合 observe／dragToTarget 的目標框僅在拖放組顯示。操作清單仍用原本的完整 step 保存／恢復。
+- `object.observation:''` 明確表示不產生名牌／氣泡；未設定才使用 label。〈存根〉第三顆南瓜不自編名字，前兩顆只使用教師核定的文中小名。
+- `meter.events:[{para,n,state,level},…]` 按閱讀順序列出原文狀態事件；每句取不晚於該句的最後事件，動手時仍取 scene.meter。`meter.caption` 可在原量表內標示主語。本課caption為布大爺的心情，既有課次不加此行。
+- `art.expressionStates:{狀態詞:{底圖檔名:局部透明圖檔}}`：沿用老鞋匠全尺寸稀疏疊圖，只在對應量表詞顯示，跟隨底圖的透明度與cover幾何。此功能與原本 `expressionOverlays` 相容，非臉部遮罩區域保留原底圖。設定／暫停恢復仍保留目前狀態。
+- `scene.readViews:{'段:句索引':viewName}` 在指定讀句切換已宣告鏡頭；不用原文作key。本課在讀到接蒂說明時保留證據鏡頭，在欣慰事件轉回布大爺；開場先看人物，動手回中央操作區，結果看回家／警察／證據。
+- 本單指定115AG6H12場景2400×1024 WebP≤400KiB，sprite／局部表情圖≤120KiB，優先於一般方圖建議。資產容量檢查只對此課路徑套此上限；其他主站圖片仍維持300KiB。schema素材測試對既有2400寬情境圖依400KiB檢查，沒有改成contain、縮小滿版場景或裁掉線索來通過測試。

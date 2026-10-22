@@ -15,6 +15,8 @@ export function operate(scene, state, action) {
   if (!expected) return false;
   if (scene.operation.collect?.includes(expected)) {
     if (!scene.operation.collect.includes(action) || state.collected?.includes(action)) return false;
+    const group=scene.operation.groups?.find(g=>state.step>=g.from && state.step<g.to);
+    if(group && !scene.operation.steps.slice(group.from,group.to).includes(action))return false;
     state.collected = [...(state.collected || []), action];
   } else if (expected !== action) return false;
   state.step++; return true;
