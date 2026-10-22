@@ -1,5 +1,12 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-10-22｜家中 Mac｜Codex｜風鈴：待 Claude 實玩確認
+- 遵照本單只改檔，未執行任何 git 指令、未開Chrome、未提交／推送／部署。
+- 第一幕底圖局部移除陶瓷風鈴並補天空／遠山（290.7KiB），原畫透明裁切chime.webp（29.2KiB）原位置疊回；原圖備份與PNG存repo外first-person-samples/final。舊竹管bell.webp不再使用。
+- 點風鈴觸發2.5秒左向右風痕、局部葉片輕動、吊繩頂端阻尼擺動與鈴舌延遲；WebAudio三敲陶瓷鈴及輕風聲，遵守音效開關／首次手勢resume；減少動態用短光暈，aria-live提示。保留cover、極簡介面、其他幕位置／行為與內容version 8。
+- validate、8支first-person測試、全站88支測試（0失敗）、build、check-dist／assets、build:preview通過。
+- 詳見apps/mandarin/docs/first-person-IMPL-LOG.md「風鈴」。Claude仍須三尺寸確認擺動自然度、鈴聲、風痕、靜止位置與邊緣吻合、減少動態／靜音／鍵盤及其他幕回歸；沒有宣稱瀏覽器視覺或音色驗收通過。不發布main。
+
 ## 2026-10-22｜家中 Mac｜Codex｜修正單2 v8：待 Claude 實玩確認
 - 本單覆蓋git流程：只改檔，全程未執行git、未開Chrome、未提交／推送／部署。
 - 只改apps/mandarin第一人稱探索、相關測試／文件與本交接。修正地面柴堆／單風鈴／勺子避臉、爐內三柴角度大小與爐外保留、逐根降量表及用心記住狀態、排序編號取消重排、完整回饋、不預告解說、快速拖曳端點／路徑判定、小火底圖與最低火焰。內容version 8。

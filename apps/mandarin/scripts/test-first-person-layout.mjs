@@ -39,7 +39,7 @@ for(const [width,height] of [[1366,900],[820,1180],[375,812]]) {
 let g=scoopGesture({dipped:false,lifted:false},{x:64,y:70}); assert.ok(g.dipped);assert.ok(scoopGesture(g,{x:64,y:54}).lifted);assert.ok(woodOutside({x:58,y:75}));
 console.log(`PASS: cover geometry and ${checks} focused object/UI rectangle checks at three viewport sizes`);
 
-assert.equal(operationObjects[1][0][1],null,'only the painted bell is visible');
+assert.equal(operationObjects[1][0][1],null,'invisible hotspot keeps its geometry; wind module supplies the ceramic sprite');
 for(const o of operationObjects[1].filter(o=>o[4].startsWith('wood-'))) { assert.ok(o[3]>=75 && o[3]<=85); assert.ok(o[2]+o[5]/2<40,'clear of door posts and people'); }
 assert.ok(groundPile.every(([x,y])=>x>57 && x<65 && y>=78),'pile on floor beside stove');
 assert.ok(operationObjects[3].find(o=>o[4]==='ladle')[2]>70,'ladle away from face');

@@ -25,17 +25,17 @@ export function mountOperation(plane, { scene, state, changed, heat, demonstrate
   const base = `${(import.meta.env?.BASE_URL || '/')}assets/first-person/115AG3H04/sprites/`;
   const layer = document.createElement('div'); layer.className = 'fp-operation'; plane.append(layer);
   let selected = null, dragging = null, suppress = false, timer, busy = false, disposed = false;
-  const status = document.createElement('div'); status.className = 'fp-operation-status'; status.setAttribute('role','status');
+  const status = document.createElement('div'); status.className = 'fp-operation-status'; status.setAttribute('role','status'); status.setAttribute('aria-live','polite');
   const message = document.createElement('span'); status.append(message, SpeakButton({text:()=>message.textContent})); plane.parentElement.parentElement.append(status);
   const objects = [], targets = [];
   function item(label, sprite, x, y, action, width = 10, ratio = .5, target = false) {
     const el = document.createElement('button'); el.type='button'; el.className=`fp-object ${target ? 'fp-drop-target' : ''}`; el.setAttribute('aria-label',label); el.dataset.action=action;
     el.style.width=`${width}%`; el.style.aspectRatio=String(1/ratio); el.style.left=`${x}%`; el.style.top=`${y}%`;
-    if(sprite) { const img=new Image(); img.src=base+sprite+'.webp'; img.alt=''; img.draggable=false; img.onerror=()=>{ img.remove(); el.textContent=label; }; el.append(img); } else el.classList.add('fp-glow');
+    if(sprite) { const img=new Image(); img.src=base+sprite+'.webp'; img.alt=''; img.draggable=false; img.onerror=()=>{ img.remove(); el.textContent=label; }; el.append(img); } else if(action !== 'bell') el.classList.add('fp-glow');
     if(action.startsWith('wood-')) el.style.rotate=`${woodAngle(scene.act,Number(action.slice(-1))-1)}deg`;
     layer.append(el); const obj={el,x,y,action,label}; (target?targets:objects).push(obj);
     el.onclick=()=>{ if(suppress) return; if(target) drop(obj); else select(obj); };
-    if(!target) {
+    if(!target && action !== 'bell') {
       el.onpointerdown=e=>{ if(e.button!==0) return; if(busy || el.disabled || dragging)return; e.stopPropagation(); dragging={obj,id:e.pointerId,x:e.clientX,y:e.clientY,moved:false,...scoopGesture({}, {x:(e.clientX-plane.getBoundingClientRect().left)/plane.getBoundingClientRect().width*100,y:(e.clientY-plane.getBoundingClientRect().top)/plane.getBoundingClientRect().height*100})}; el.setPointerCapture(e.pointerId); layer.classList.add('is-dragging'); if(scene.act===2 && dragging.dipped)setSprite(obj,'ladle-full'); };
       el.onpointermove=e=>{
         if(!dragging || dragging.id!==e.pointerId)return;
@@ -66,9 +66,9 @@ export function mountOperation(plane, { scene, state, changed, heat, demonstrate
   function feedback(text){ message.textContent=text; }
   function commit(action){ if(!operate(scene,state,action)){ feedback('慢慢來，先完成目前的步驟。'); return false; } selected=null; if(scene.act===1)focus?.(operationComplete(scene,state)?61:33); if(scene.act===4 && action==='demo')focus?.(innerWidth/innerHeight>=1.4?52:73); heat(heatFor(scene,state)); changed(); render(); return true; }
   function select(o){
+    if(scene.act===1 && o.action==='bell'){ chime(); if(state.step===0) commit('bell'); feedback('風吹過，風鈴響了'); return; }
     if(busy || operationComplete(scene,state))return;
     if(scene.act===2){ scoopAnimation(o); return; }
-    if(scene.act===1 && o.action==='bell'){ chime(); o.el.classList.remove('fp-swing'); void o.el.offsetWidth; o.el.classList.add('fp-swing'); if(state.step===0) commit('bell'); else feedback('風鈴輕輕擺動。'); return; }
     if(scene.act===3){ if(o.action==='pot') feedback('水面還在冒泡。'); if(o.action==='ladle') feedback('你剛才用勺子舀了，水仍在滾。'); if(commit(o.action) && o.action==='fire') { layer.classList.add('fp-discovery'); feedback('你找到了鍋下的線索。'); } return; }
     if(scene.act===4 && state.step===0){
       if(timer) return; demonstrate(true); feedback('先看師傅使用工具，再換你試試。');

@@ -12,7 +12,7 @@ for(const scene of config.scenes){
  const raw=freshProgress(config); raw.scenes[0].found=['paragraph']; assert.equal(canAnswer(config.scenes[0],raw.scenes[0]),false);
  assert.deepEqual(restoreProgress(config,raw).scenes[0].found,[]);
 }
-for(const name of ['ladle-empty','ladle-full','wood','wood-burning','tongs','bell','anxious','relaxed','relieved']){
+for(const name of ['ladle-empty','ladle-full','wood','wood-burning','tongs','chime','anxious','relaxed','relieved']){
  const url=new URL(`../public/assets/first-person/115AG3H04/sprites/${name}.webp`,import.meta.url);
  assert.ok((await stat(url)).size<=120*1024,name); const bytes=await readFile(url); assert.equal(bytes.toString('ascii',8,12),'WEBP'); assert.ok(bytes.includes(Buffer.from('ALPH')) || (bytes.toString('ascii',12,16)==='VP8L'),'alpha required');
 }

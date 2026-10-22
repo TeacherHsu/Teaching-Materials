@@ -1,3 +1,4 @@
+import { playChime } from '../activities/firstPersonChime.js';
 import { moodFor, subtitlePlan, subtitlesForStep, createCardOrder } from '../activities/firstPersonPresentation.js';
 import { operationComplete } from '../activities/firstPersonInteraction.js';
 import { h, clear } from '../utils/dom.js';
@@ -26,7 +27,7 @@ export function FirstPersonPage(lesson) {
   try { const s = JSON.parse(localStorage.getItem(PREF_KEY)); prefs = { sound: s?.sound === true, calm: s?.calm === true }; } catch { /* 預設 */ }
   let world, generation = 0, disposed = false, replay = null, lastClue = null, feedback = '', wrong = false, readingVisible = false;
   let subtitle = null, subtitleTimer, subtitleAfter, subtitleQueue = [];
-  let saved = true, audio, ambientGain, ambientSource, modal, observationTimer;
+  let stopChime, saved = true, audio, ambientGain, ambientSource, modal, observationTimer;
   let scene, state, sources, currentView, idleTimer, teacherAccess = false, actionQuestion = null;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   const rootBody = h('div', { class: 'fp-shell' }); root.append(rootBody);
@@ -35,7 +36,7 @@ export function FirstPersonPage(lesson) {
   function savePrefs() { try { localStorage.setItem(PREF_KEY, JSON.stringify(prefs)); } catch { /* 這次仍生效 */ } }
   function sound() {
     const enabled = prefs.sound && !document.hidden && !modal?.open;
-    if (!enabled) { if (ambientGain && audio) ambientGain.gain.setTargetAtTime(0, audio.currentTime, .15); return; }
+    if (!enabled) { stopChime?.(); stopChime = null; if (ambientGain && audio) ambientGain.gain.setTargetAtTime(0, audio.currentTime, .15); return; }
     try {
       const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return;
       audio ||= new AC(); audio.resume().catch(() => {});
@@ -49,7 +50,11 @@ export function FirstPersonPage(lesson) {
       ambientGain.gain.setTargetAtTime(scene?.id === 'root' ? .008 : scene?.id === 'welcome' ? .005 : .022, audio.currentTime, .5);
     } catch { /* 音訊不影響學習 */ }
   }
-  function chime() { if (!prefs.sound) return; try { const AC=window.AudioContext || window.webkitAudioContext; audio ||= new AC(); audio.resume().catch(()=>{}); const osc=audio.createOscillator(), gain=audio.createGain(); osc.frequency.value=1320; gain.gain.setValueAtTime(.035,audio.currentTime); gain.gain.exponentialRampToValueAtTime(.001,audio.currentTime+.7); osc.connect(gain); gain.connect(audio.destination); osc.start(); osc.stop(audio.currentTime+.7); } catch {} }
+  function chime() { stopChime?.(); stopChime = playChime(prefs.sound, () => {
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return null;
+    return audio ||= new AC();
+  }); }
   function updateMotion() { root.classList.toggle('fp-calm', calm()); world?.setOptions?.({ calm: calm(), paused: Boolean(modal?.open || subtitle || root.querySelector('.fp-question-cards')) }); sound(); }
   function destroyWorld() { generation++; world?.dispose(); world = null; }
   function close() {

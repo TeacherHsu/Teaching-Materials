@@ -36,7 +36,7 @@ try {
  ladle.onpointerdown(event(590,670));ladle.onpointermove(event(640,700));ladle.onpointercancel();advance(1000);assert.equal(state.step,1);
  ladle.onclick();ladle.onclick();advance(1600);assert.equal(state.step,2);
  ladle.onclick();advance(1600);assert.equal(state.step,3);api.dispose();
- const first=setup(1);first.find('bell').onclick();const branch=first.find('wood-1');branch.onpointerdown(event(300,580));branch.onpointermove(event(640,620));branch.onpointerup(event(640,620));assert.equal(branch.style.left,'59%');assert.equal(branch.hidden,false);assert.equal(branch.disabled,true);first.api.dispose();
+ const first=setup(1);assert.equal(first.find('bell').onpointerdown,undefined,'chime stays anchored');first.find('bell').onclick();first.find('bell').onclick();assert.equal(first.state.step,1,'replaying wind does not advance progress');const branch=first.find('wood-1');branch.onpointerdown(event(300,580));branch.onpointermove(event(640,620));branch.onpointerup(event(640,620));assert.equal(branch.style.left,'59%');assert.equal(branch.hidden,false);assert.equal(branch.disabled,true);first.api.dispose();
  const fourth=setup(4);assert.equal(fourth.find('wood-1').disabled,true);advance(2400);assert.equal(fourth.state.step,1);
  const log=fourth.find('wood-1');log.onpointerdown(event(690,730));log.onpointermove(event(650,730));log.onpointerup(event(650,730));advance(1);assert.equal(fourth.state.step,1);
  log.onpointerdown(event(690,730));log.onpointermove(event(580,750));log.onpointerup(event(580,750));advance(1);assert.equal(fourth.state.step,2);

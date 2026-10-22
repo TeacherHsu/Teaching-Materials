@@ -1,3 +1,4 @@
+import { mountChimeWind } from './firstPersonChime.js';
 import { illustrationLayout } from './firstPersonLayout.js';
 import { mountOperation } from './firstPersonInteraction.js';
 import { FIRST_PERSON_ILLUSTRATIONS } from '../data/firstPersonLesson.js';
@@ -25,7 +26,8 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
       p.style.left = `${point[0] + (kind === 'fire' ? 0 : i - 2) * 1.1}%`; p.style.top = `${point[1]}%`; p.style.animationDelay = `${-i * .51}s`; effects.append(p);
     }
   }
-  const interaction = mountOperation(plane, { scene: phase, state: operation, changed: onOperation, chime: onChime, focus(x) { if(phase.act===4 && x===49)x=host.clientWidth/host.clientHeight<1.4?30:52; const iw=illustrationLayout(host.clientWidth,host.clientHeight).imageWidth; if(iw>host.clientWidth) { target=Math.max(0,Math.min(1,(iw*x/100-host.clientWidth/2)/(iw-host.clientWidth))); pan=target; render(); } }, heat(value) { effects.style.opacity = '1'; effects.style.setProperty('--heat', value); [...effects.children].forEach((el,i) => { const fire=el.classList.contains('fp-art-fire'); el.style.visibility = !fire && (value === 0 || (el.classList.contains('fp-art-bubble') && i % 5 >= Math.ceil(value * 5))) ? 'hidden' : ''; el.style.opacity=String(fire?Math.max(1/3,value):value); if(fire) el.style.scale=String(Math.max(1/3,value)); }); if(phase.act === 4) { images[0].style.opacity=String(value); images[1].style.opacity=String(1-value); images[0].style.transition=images[1].style.transition=(calm || media.matches)?'none':'opacity .8s ease'; } }, demonstrate(active) { images[0].style.opacity=active?'0':'1'; images[1].style.opacity=active?'1':'0'; } });
+  const wind = phase.act === 1 ? mountChimeWind(plane, base, () => calm || media.matches) : null;
+  const interaction = mountOperation(plane, { scene: phase, state: operation, changed: onOperation, chime() { wind?.blow(); onChime?.(); }, focus(x) { if(phase.act===4 && x===49)x=host.clientWidth/host.clientHeight<1.4?30:52; const iw=illustrationLayout(host.clientWidth,host.clientHeight).imageWidth; if(iw>host.clientWidth) { target=Math.max(0,Math.min(1,(iw*x/100-host.clientWidth/2)/(iw-host.clientWidth))); pan=target; render(); } }, heat(value) { effects.style.opacity = '1'; effects.style.setProperty('--heat', value); [...effects.children].forEach((el,i) => { const fire=el.classList.contains('fp-art-fire'); el.style.visibility = !fire && (value === 0 || (el.classList.contains('fp-art-bubble') && i % 5 >= Math.ceil(value * 5))) ? 'hidden' : ''; el.style.opacity=String(fire?Math.max(1/3,value):value); if(fire) el.style.scale=String(Math.max(1/3,value)); }); if(phase.act === 4) { images[0].style.opacity=String(value); images[1].style.opacity=String(1-value); images[0].style.transition=images[1].style.transition=(calm || media.matches)?'none':'opacity .8s ease'; } }, demonstrate(active) { images[0].style.opacity=active?'0':'1'; images[1].style.opacity=active?'1':'0'; } });
   // Only the next act is warmed. No global cache that keeps all four acts alive.
   const preloads = (FIRST_PERSON_ILLUSTRATIONS[phase.act + 1]?.images || []).map(file => { const img = new Image(); img.src = base + file; return img; });
   const reduced = () => calm || media.matches;
@@ -56,6 +58,8 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   }
   function resume() {
     cancelAnimationFrame(frame); previous = 0;
+    if (document.hidden) wind?.stop();
+    else wind?.updateMotion();
     effects.classList.toggle('fp-art-still', reduced() || paused || document.hidden);
     if (reduced()) { pan = target; if (phase.act === 2) images.forEach((img, i) => { img.style.opacity = i ? '0' : '1'; });  }
     render(); if (!paused && !document.hidden) frame = requestAnimationFrame(tick);
@@ -70,7 +74,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     observeAction() { resume(); },
     setOptions(options) { calm = Boolean(options.calm); paused = Boolean(options.paused); plane.inert = paused; resume(); },
     dispose() {
-      disposed = true; interaction.dispose(); cancelAnimationFrame(frame); resize.disconnect(); media.removeEventListener('change', resume); document.removeEventListener('visibilitychange', resume);
+      disposed = true; wind?.dispose(); interaction.dispose(); cancelAnimationFrame(frame); resize.disconnect(); media.removeEventListener('change', resume); document.removeEventListener('visibilitychange', resume);
       [...images, ...preloads].forEach(img => { img.onload = img.onerror = null; img.removeAttribute('src'); }); layer.remove(); host.classList.remove('is-illustrated', 'fp-image-failed');
     },
   };
