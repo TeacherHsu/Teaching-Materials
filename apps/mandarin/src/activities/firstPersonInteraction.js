@@ -1,3 +1,4 @@
+import { mountTongs } from './firstPersonTongs.js';
 import { operationObjects, scoopGesture, woodOutside, groundPile, outsidePile, woodAngle, woodLayout } from './firstPersonLayout.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 // Serializable operation state; wrong drops never change progress or rewards.
@@ -6,7 +7,7 @@ export function operationState(scene, raw = {}) {
   const step = Number.isInteger(raw.step) ? Math.max(0, Math.min(max, raw.step)) : 0;
   const validWood = ['wood-1','wood-2','wood-3'];
   const collected = [...new Set((Array.isArray(raw.collected) ? raw.collected : scene.operation.steps.slice(0,step)).filter(x=>validWood.includes(x)))];
-  return { step, ...(scene.act===1 && raw.woodDemoSeen === true ? {woodDemoSeen:true} : {}), ...(collected.length ? { collected } : {}) };
+  return { step, ...(scene.act===4 && raw.tongsDemoSeen === true ? {tongsDemoSeen:true} : {}), ...(scene.act===1 && raw.woodDemoSeen === true ? {woodDemoSeen:true} : {}), ...(collected.length ? { collected } : {}) };
 }
 export function operate(scene, state, action) {
   const expected = scene.operation.steps[state.step];
@@ -22,6 +23,7 @@ export const heatFor = (scene, state) => scene.act === 4 ? 1 - Math.max(0, state
 
 // Source-image coordinates remain valid while the illustration pans or resizes.
 export function mountOperation(plane, { scene, state, changed, heat, demonstrate, chime, focus, reduced = () => false, saveDemo = () => {} }) {
+  if(scene.act===4)return mountTongs(plane,{scene,state,changed,heat,demonstrate,focus,reduced,saveDemo},{operate:action=>operate(scene,state,action),complete:()=>operationComplete(scene,state),heatFor:()=>heatFor(scene,state)});
   const base = `${(import.meta.env?.BASE_URL || '/')}assets/first-person/115AG3H04/sprites/`;
   const layer = document.createElement('div'); layer.className = `fp-operation fp-act-${scene.act}`; plane.append(layer);
   let paused = true, idleTimer, demoTimer, demoAnimations = [], reminders = 0, demoActive = false;
@@ -149,7 +151,7 @@ export function mountOperation(plane, { scene, state, changed, heat, demonstrate
   function render(){
     const expected=scene.operation.steps[state.step];
     objects.forEach(o=>{ o.el.hidden=false; if(scene.act===1 && o.action.startsWith('wood-'))o.el.disabled=state.step===0 || Boolean(state.collected?.includes(o.action)); if(scene.act===4)o.el.disabled=state.step===0 ? o.action!=='demo' : o.action==='demo'; });
-    if([1,4].includes(scene.act))objects.filter(o=>o.action.startsWith('wood-') && state.collected?.includes(o.action)).forEach(o=>{const i=Number(o.action.slice(-1))-1,[x,y]=(scene.act===1?groundPile:outsidePile)[i];o.el.disabled=true;o.el.style.left=`${x}%`;o.el.style.top=`${y}%`;if(scene.act===4)setSprite(o,'wood');o.el.classList.add('fp-stacked');});
+    if([1,4].includes(scene.act))objects.filter(o=>o.action.startsWith('wood-') && state.collected?.includes(o.action)).forEach(o=>{const i=Number(o.action.slice(-1))-1,[x,y]=(scene.act===1?groundPile:outsidePile)[i];o.el.disabled=true;o.el.style.left=`${x}%`;o.el.style.top=`${y}%`;o.el.classList.add('fp-stacked');});
     targets.forEach(t=>{ t.el.hidden=operationComplete(scene,state); });
     status.classList.toggle('fp-operation-complete', operationComplete(scene,state));
     feedback(operationComplete(scene,state)?'操作完成':scene.act===2?'拿起勺子試試看':scene.act===3?({pot:'看看水面',ladle:'再看看勺子',fire:'找找鍋下木柴'}[expected]):scene.act===4 && state.step===0?'先看師傅示範':scene.act===4?'把柴拖出爐口':(state.step===0?'點一下門口的風鈴':`把地上的木柴搬到灶旁的柴堆（${state.collected?.length || 0}／3）`));

@@ -246,7 +246,7 @@ export function FirstPersonPage(lesson) {
   }
 
   function showHints() {
-    if(scene.act===1 && state.operation.step>0 && !operationComplete(scene,state.operation)){modal?.close();world?.showWoodDemo();return;}
+    if([1,4].includes(scene.act) && state.operation.step>0 && !operationComplete(scene,state.operation)){modal?.close();world?.showWoodDemo();return;}
     state.hints = Math.min(3, state.hints + 1); state.hintUses++; if (!replay) save();
     sheet('慢慢觀察，不用著急', h('div', { class: 'fp-sheet-content' }, [say(scene.goal), say((scene.questions[state.questionIndex || 0]?.hints || ['先觀察動作。', '點定點按鈕找線索。', '讀完本段原句再前進。'])[state.hints - 1], 'p', { class: 'fp-hint' }), button('回到場景', () => modal.close(), { class: 'fp-button fp-primary' })]));
   }

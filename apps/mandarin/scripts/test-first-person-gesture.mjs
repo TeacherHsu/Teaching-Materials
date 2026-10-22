@@ -10,7 +10,7 @@ class Element {
  addEventListener(){}
  animate(){return {cancel(){}};}
  setPointerCapture(){}
- getBoundingClientRect(){return {left:0,top:0,width:1000,height:1000,right:1000,bottom:1000};}
+ getBoundingClientRect(){if(this.tongsHit){const x=parseFloat(this.style.left)*10,y=parseFloat(this.style.top)*10;return {left:x-32,right:x+32,top:y-32,bottom:y+32,width:64,height:64};}return {left:0,top:0,width:1000,height:1000,right:1000,bottom:1000};}
  querySelector(tag){return this.children.find(x=>tag==='img' && x instanceof Image);}
  remove(){}
 }
@@ -41,19 +41,21 @@ try {
  ladle.onclick();advance(1600);assert.equal(state.step,3);api.dispose();
  const first=setup(1);assert.equal(first.find('bell').onpointerdown,undefined,'chime stays anchored');first.find('bell').onclick();first.find('bell').onclick();assert.equal(first.state.step,1,'replaying wind does not advance progress');const branch=first.find('wood-1');branch.onpointerdown(event(300,580));branch.onpointermove(event(640,620));branch.onpointerup(event(640,620));assert.equal(branch.style.left,'59%');assert.equal(branch.hidden,false);assert.equal(branch.disabled,true);first.api.dispose();
  const fourth=setup(4);assert.equal(fourth.find('wood-1').disabled,true);advance(2400);assert.equal(fourth.state.step,1);
- const log=fourth.find('wood-1');log.onpointerdown(event(690,730));log.onpointermove(event(650,730));log.onpointerup(event(650,730));advance(1);assert.equal(fourth.state.step,1);
- log.onpointerdown(event(690,730));log.onpointermove(event(580,750));log.onpointerup(event(580,750));advance(1);assert.equal(fourth.state.step,2);
- fourth.find('wood-2').onclick();advance(450);assert.equal(fourth.state.step,3);
- fourth.find('wood-3').onclick();fourth.api.dispose();advance(1000);assert.equal(fourth.state.step,3,'leaving cancels pending extraction');
+ fourth.api.setPaused(false);
+ fourth.find('wood-1').onclick();assert.equal(fourth.state.step,1,'wood requires tool');
+ const tong=fourth.find('tongs'),log=fourth.find('wood-1');
+ for(const n of [1,2,3])fourth.find(`wood-${n}`).tongsHit=true;
+ tong.onpointerdown(event(620,660));tong.onpointermove(event(660,750));tong.onpointerup(event(730,750));advance(1);assert.equal(fourth.state.step,1,'inside drop rebounds');
+ tong.onpointerdown(event(620,660));tong.onpointermove(event(660,750));tong.onpointerup(event(580,840));advance(1);assert.equal(fourth.state.step,2);
+ assert.equal(log.disabled,true);assert.equal(log.style.top,'80%');
+ tong.onclick();fourth.find('wood-2').onclick();fourth.find('wood-3').onclick();fourth.find('outside').onclick();assert.equal(fourth.state.step,3,'other wood cannot replace gripped wood');
+ tong.onclick();fourth.find('wood-3').onclick();fourth.find('outside').onclick();assert.equal(fourth.state.step,4);fourth.api.dispose();
 
  // Pointer-up alone supplies the final position and a path crossing the water.
  const fast=setup(2), spoon=fast.find('ladle');
  spoon.onpointerdown(event(640,810));spoon.onpointerup(event(640,540));advance(850);assert.equal(fast.state.step,1);
  spoon.onpointerdown(event(640,700));spoon.onpointermove(event(640,540));spoon.onpointerup(event(900,540));advance(850);assert.equal(fast.state.step,1,'release must still be above water');
  fast.api.dispose();
- const quick=setup(4);advance(2400);const quickLog=quick.find('wood-1');
- quickLog.onpointerdown(event(710,710));quickLog.onpointerup(event(570,800));
- assert.equal(quick.state.step,2,'no pointermove extraction');assert.equal(quickLog.hidden,false);assert.equal(quickLog.disabled,true);assert.equal(quickLog.style.top,'80%');quick.api.dispose();
  const collect=setup(1);collect.find('bell').onclick();const stick=collect.find('wood-2');
  stick.onpointerdown(event(350,830));stick.onpointerup(event(610,800));assert.equal(collect.state.step,2,'no pointermove collection');assert.equal(stick.style.top,'81%');collect.api.dispose();
  const guided=setup(1);guided.find('bell').onclick();guided.api.setPaused(false);
