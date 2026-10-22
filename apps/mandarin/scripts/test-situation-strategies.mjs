@@ -61,7 +61,7 @@ try{
   }else{
    stage.events.click[0]({target:new Element()});assert.equal(completed,0);
    if(strategy.type==='causeEffect'){plane.children.find(n=>n.tagName==='button' && n.attrs['aria-label']==='南瓜').click();assert.equal(completed,0);plane.children[0].click();assert.ok(plane.children.at(-1).innerHTML.includes('<path'));}
-   else{plane.children[0].click();assert.equal(panel.querySelector('[data-strategy-next]'),undefined);plane.children.find(n=>n.tagName==='button' && n.attrs['aria-label']==='布大爺的表情').click();assert.deepEqual(words,['震驚','憤怒又絕望']);assert.ok(plane.children.find(n=>n.dataset.faceIndex==='1').classes.has('is-bright'),'face halo briefly brightens on hit');}
+   else{plane.children[0].click();const countBeforeRepeat=plane.children.length;for(let i=0;i<12;i++)plane.children[0].click();assert.equal(plane.children.length,countBeforeRepeat,'completed clue adds no duplicate nodes');assert.deepEqual(words,['震驚'],'completed clue has no repeated meter callback');assert.equal(panel.querySelector('[data-strategy-next]'),undefined);plane.children.find(n=>n.tagName==='button' && n.attrs['aria-label']==='布大爺的表情').click();assert.deepEqual(words,['震驚','憤怒又絕望']);assert.ok(plane.children.find(n=>n.dataset.faceIndex==='1').classes.has('is-bright'),'face halo briefly brightens on hit');}
    assert.equal(completed,0);panel.querySelector('[data-strategy-next]').click();assert.equal(completed,1);assert.equal(focused,strategy.options[0].x);
   }
   dispose();assert.equal(plane.children.length,0);assert.equal((stage.events.click || []).length,0);

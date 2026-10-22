@@ -32,7 +32,7 @@ export function FirstPersonPage(lesson) {
   let world, generation = 0, disposed = false, replay = null, lastClue = null, feedback = '', wrong = false, readingVisible = false;
   let moodLabel = '', quietProgress=0;
   let subtitle = null, subtitleTimer, subtitleAfter, subtitleQueue = [];
-  let timelineIndex=0, disposeStrategy, predictions={};
+  let timelineIndex=0, disposeStrategy, predictions={}, resultWarningShown=false;
   let beat = 'intro', beatTimer, playback = createPlayback(), narrationToken = 0;
   let chimeUntil = 0, chimeTimer;
   let stopChime, saved = true, audio, ambientGain, ambientSource, modal, observationTimer;
@@ -63,7 +63,7 @@ export function FirstPersonPage(lesson) {
     if (!AC) return null;
     return audio ||= new AC();
   }); }
-  function updateMotion() { root.classList.toggle('fp-calm', calm()); root.classList.toggle('fp-motion-on', prefs.animation === 'on'); world?.setOptions?.({ imageIndex: scene?.timeline?.[timelineIndex]?.imageIndex, hideOperations: Boolean(scene?.timeline && (beat==='strategy' || scene.timeline[timelineIndex]?.hideOperations)), beat, mood: moodLabel, calm: calm(), reading: ['result','read'].includes(beat), locked: beat !== 'act' || (scene?.operation.profile==='cooking-toolGrab' && state?.operation.step===0), paused: Boolean(Date.now()<chimeUntil || modal?.open || subtitle || root.querySelector('.fp-question-cards')) }); sound(); }
+  function updateMotion() { root.classList.toggle('fp-calm', calm()); root.classList.toggle('fp-motion-on', prefs.animation === 'on'); world?.setOptions?.({ imageIndex: scene?.timeline?.[timelineIndex]?.imageIndex, hideOperations: Boolean(scene?.operation.hideOnResult && ['result','read','question'].includes(beat) || scene?.timeline && (beat==='strategy' || scene.timeline[timelineIndex]?.hideOperations)), beat, mood: moodLabel, calm: calm(), reading: ['result','read'].includes(beat), locked: beat !== 'act' || (scene?.operation.profile==='cooking-toolGrab' && state?.operation.step===0), paused: Boolean(Date.now()<chimeUntil || modal?.open || subtitle || root.querySelector('.fp-question-cards')) }); sound(); }
   function destroyWorld() { disposeStrategy?.();disposeStrategy=null; generation++; world?.dispose(); world = null; }
   function close() {
     if (disposed) return; disposed = true; clearTimeout(beatTimer); clearTimeout(chimeTimer); clearTimeout(subtitleTimer); clearTimeout(observationTimer); clearTimeout(idleTimer); destroyWorld(); cancelSpeaking(); audio?.close().catch(() => {});
@@ -80,7 +80,7 @@ export function FirstPersonPage(lesson) {
     const dialog = h('dialog', { class: 'fp-sheet', 'aria-labelledby': 'fp-sheet-title' });
     dialog.append(h('div', { class: 'fp-sheet-header' }, [h('h2', { id: 'fp-sheet-title' }, title), button('✕', () => dialog.close(), { 'aria-label': '回到場景', class: 'fp-close' })]), content);
     root.append(dialog); modal = dialog;
-    dialog.addEventListener('close', () => { readingVisible = false; cancelSpeaking(); updateMotion(); if(beat==='result')beatTimer=setTimeout(()=>finishBeat('result'),scene.beats.result.duration); if(subtitle)subtitle.style.opacity='1'; if(subtitle && (beat==='intro' || playback.automatic))subtitleTimer=setTimeout(nextSubtitle,subtitleDuration(subtitle.querySelector('p')?.textContent || '')); });
+    dialog.addEventListener('close', () => { readingVisible = false; cancelSpeaking(); updateMotion(); if(beat==='result')scheduleResult(); if(subtitle)subtitle.style.opacity='1'; if(subtitle && (beat==='intro' || playback.automatic))subtitleTimer=setTimeout(nextSubtitle,subtitleDuration(subtitle.querySelector('p')?.textContent || '')); });
     dialog.addEventListener('click', (event) => { if (event.target === dialog && event.clientX < dialog.getBoundingClientRect().left) dialog.close(); });
     dialog.showModal(); updateMotion();
     if (focus) content.querySelector(focus)?.focus();
@@ -184,9 +184,21 @@ export function FirstPersonPage(lesson) {
       disposeStrategy=mountBag({entry,panel,plane:world.strategyPlane,assetBase:`${import.meta.env.BASE_URL}${config.assetBase}`,onDone:()=>finishBeat('openBag')});
     }else setBeat(entry.kind);
   }
+  function scheduleResult(){
+    const r=scene.beats.result;
+    if(r.safetyReminder && !resultWarningShown){
+      beatTimer=setTimeout(()=>{
+        if(disposed || beat!=='result')return;
+        resultWarningShown=true;
+        rootBody.append(h('aside',{class:'fp-safety-reminder',role:'note'},[say(r.safetyReminder)]));
+        beatTimer=setTimeout(()=>finishBeat('result'),r.duration-r.safetyDelay);
+      },r.safetyDelay);
+    }else beatTimer=setTimeout(()=>finishBeat('result'),r.duration-(resultWarningShown?(r.safetyDelay || 0):0));
+  }
   function setBeat(value) {
     clearTimeout(beatTimer); clearTimeout(subtitleTimer);
     subtitle?.remove(); subtitle=null; beat=value; root.dataset.beat=beat;
+    root.querySelector('.fp-safety-reminder')?.remove();
     if(value==='intro' || value==='read') {
       if(scene.timeline)subtitleQueue=beatLines(scene.timeline[timelineIndex].refs);else subtitleQueue=beatLines(scene.beats[value]);
       subtitleAfter=()=>finishBeat(value);
@@ -200,7 +212,7 @@ export function FirstPersonPage(lesson) {
         rootBody.append(h('aside',{class:'fp-prediction-reminder'},[say(`你猜的是：${strategy.options[predictions[strategy.id]]}。${strategy.resultReminder}`)]));
       }
       world?.setView(scene.beats.result.view);
-      beatTimer=setTimeout(()=>finishBeat(value),scene.beats.result.duration);
+      resultWarningShown=false;scheduleResult();
     } else {
       state.found=scene.clues.map(c=>c.id); if(!replay)save(); showQuestion();
     }
@@ -212,15 +224,25 @@ export function FirstPersonPage(lesson) {
     if(!state.read.includes(key))state.read.push(key);
     if(!replay)save();
   }
+  function sourceLine(ref){
+    const key=`${ref.para}:${ref.n}`,script=sources.get(`script:${key}`);
+    if(!script)return say(sources.get(`sentence:${key}`));
+    const p=h('p',{},[h('span',{class:'fp-script-speaker'},script.speaker+'：'),...script.parts.map(part=>h(part.stage?'em':'span',part.stage?{class:'fp-stage-direction'}:{},part.text))]);
+    const text=sources.get(`say:${key}`);
+    return h('div',{class:'fp-spoken'},[p,...(text?[SpeakButton({text})]:[])]);
+  }
   function nextSubtitle() {
     clearTimeout(subtitleTimer); subtitle?.remove(); subtitle=null; cancelSpeaking();
     const ref=subtitleQueue.shift();
     if(!ref) {const done=subtitleAfter;subtitleAfter=null;done?.();return;}
     recordRead(ref);
+    if(config.script && sources.get(`script:${ref.para}:${ref.n}`)?.parts.length===0){nextSubtitle();return;}
     for(const strategy of config.scenes.flatMap(s=>s.strategies || []))if(strategy.type==='predict' && strategy.revealAt.para===ref.para && strategy.revealAt.n===ref.n && predictions[strategy.id]!==undefined){
       root.querySelector('.fp-prediction-reminder')?.remove();rootBody.append(h('aside',{class:'fp-prediction-reminder'},[say(predictionReminder(strategy,predictions[strategy.id]))]));
     }
     const readingView=scene.readViews?.[`${ref.para}:${ref.n}`];if(readingView)world?.setView(readingView,{immediate:true});
+    const scriptSpeaker=sources.get(`script:${ref.para}:${ref.n}`)?.speaker;
+    if(scriptSpeaker && scene.art.speakerFocus?.[scriptSpeaker]!==undefined)world?.focusPoint(scene.art.speakerFocus[scriptSpeaker]);
     const line=sources.get(`sentence:${ref.para}:${ref.n}`);
     if(config.meter.events)updateMood(false,ref);
     if(ref.para===config.meter.read?.para && ref.n===config.meter.read?.n)updateMood(true);
@@ -232,7 +254,7 @@ export function FirstPersonPage(lesson) {
       controls.push(button('下一句',nextSubtitle));
     }
     subtitle=h('div',{class:'fp-cinema',role:'group','aria-label':'場景原句'},[
-      say(line,'p'),...controls]);
+      sourceLine(ref),...controls]);
     rootBody.append(subtitle);updateMotion();
     // 自動播放：先用台灣國語把這句念完，再停一下換下一句；沒有語音時退回依字數計時。
     const token=++narrationToken;
@@ -245,7 +267,9 @@ export function FirstPersonPage(lesson) {
       const guard=setTimeout(()=>{if(token===narrationToken){narrationToken++;cancelSpeaking();const t=narrationToken;subtitleTimer=setTimeout(()=>{if(t===narrationToken)nextSubtitle();},300);}},subtitleDuration(line)*2+2000);
       let finished=false;
       const done=()=>{if(finished)return;finished=true;clearTimeout(guard);clearInterval(watch);if(token!==narrationToken)return;const spoken=Date.now()-started;advanceLater(spoken<300?subtitleDuration(line):600);};
-      speak(sources.get(`say:${ref.para}:${ref.n}`)||line).then(done);
+      const spoken=sources.get(`say:${ref.para}:${ref.n}`) ?? line;
+      if(!spoken){clearTimeout(guard);advanceLater(800);return;}
+      speak(spoken).then(done);
       // 有些瀏覽器念完不觸發 onend：直接看朗讀狀態，念完就前進。
       const watch=setInterval(()=>{if(token!==narrationToken){clearInterval(watch);return;}if(Date.now()-started>500 && !window.speechSynthesis.speaking && !window.speechSynthesis.pending)done();},200);
     }
@@ -254,7 +278,7 @@ export function FirstPersonPage(lesson) {
   }
   function reviewReading() {
     const content = h('div', { class: 'fp-sheet-content' });
-    for(let i=0;i<=progress.current;i++) for(const key of progress.scenes[i].read || []) content.append(say(sources.get(`sentence:${key}`)));
+    for(let i=0;i<=progress.current;i++) for(const key of progress.scenes[i].read || []) {const [para,n]=key.split(':').map(Number);content.append(sourceLine({para,n}));}
     sheet('重看原句', content);
   }
 

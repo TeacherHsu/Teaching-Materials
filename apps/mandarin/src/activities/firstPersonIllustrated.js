@@ -16,7 +16,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   function stateArt(){
     plane.classList.toggle('fp-result-hide-completed',Boolean(art.hideCompletedOnResult && (['read','question'].includes(currentBeat) || currentBeat==='result' && resultReady)));
     if(!art.stepImages && imageOverride===undefined)return;
-    const index=imageOverride ?? ((['read','question'].includes(currentBeat) || currentBeat==='result' && resultReady) && art.resultImage!==undefined ? art.resultImage : art.stepImages?.[Math.min(operation.step,art.stepImages.length-1)] ?? 0);
+    const index=imageOverride ?? (currentBeat==='result' && !resultReady && art.resultStartImage!==undefined ? art.resultStartImage : ((['read','question'].includes(currentBeat) || currentBeat==='result' && resultReady) && art.resultImage!==undefined ? art.resultImage : art.stepImages?.[Math.min(operation.step,art.stepImages.length-1)] ?? 0));
     images.forEach((img,i)=>{img.style.opacity=i===index?'1':'0';img.style.transition=calm?'none':'opacity .35s ease';});
   }
   let disposed = false, paused = true, frame = 0, previous = 0, pan = art.views[phase.view] ?? .5, target = pan;

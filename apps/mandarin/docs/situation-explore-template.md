@@ -105,3 +105,12 @@
 - 策略場景選項可設 `sprite`／`width`，由 `assetBase` 載入本地透明素材，與熱點共用 cover 平面；用於回看膠帶和線。策略結束即清除素材。
 - `art.viewScales:{viewName:1..1.5}` 是選用的 cover 放大比例；`readViews` 可在讀到指定句時從近景切回1倍。只做額外放大，不縮小至 cover 以下。梨花第4幕到美景句才拉遠，減少動態時直接切換；舊課沒有此欄位，幾何保持原值。
 - 本單指定2400×1024橫幅（優先於一般新課方圖建議）；五張場景 frame 均≤300KiB，一張全尺寸稀疏表情圖與九張透明 sprite 均≤120KiB。全部保持滿版 cover；不使用 contain 場景或模糊補邊。
+
+## 兔子先生：劇本與安全演出（2026-10-23）
+
+- 課次可設定 `script:{stageDirectionStyle:'small-italic',speakStageDirections:false}`，搭配完整 `speakers` 索引表。括號內容只在正常解鎖後由來源解析，以較小斜體顯示在對白前；跨朗讀單位的括號也持續辨識。字幕、手動喇叭、自動播放與已讀回顧共用不念舞臺指示的語音來源，保留既有教師讀音覆寫。純說話者標頭仍算原文覆蓋與閱讀進度，字幕不獨立停留，說話者會顯示於接續的對白前。
+- `art.speakerFocus:{說話者:水平百分比}` 可依對白對焦角色，鏡頭仍維持 cover。`operation.hideOnResult:true` 隱藏讀文／結果／題目中的操作層，避免 sprite 疊在角色演出上。
+- `art.resultStartImage` 在結果拍先顯示角色動作圖，經既有 `resultDelay` 切到 `resultImage`。本課角色自行吃喝，學生只檢查標籤與配對結果／辦法卡。
+- `beats.result.safetyReminder` 為教師核定的一則提醒，`safetyDelay` 必須在角色狀態切換之後、結果拍結束之前；`safetyReminderCount` 驗證整課出現次數。每次結果拍只掛一個提醒區塊，開關設定後仍保留提醒排程；只在本課第2、4幕設定。
+- 觀察物件另支援 `viewMotion:'turn'|'jump'|'fan'`：轉瓶、視角跳躍、搖扇。動畫期間停用操作，完成才提交 state；暫停取消不計數，減少動態直接提交。`cardLabel` 提供結果／辦法卡短標籤與獨立喇叭，配對沿用多個 `regions`、拖放與選卡→點目標的鍵盤替代。完成項目保持 no-op。
+- 本單指定2400×1024滿版場景；本課9張場景均≤300KiB、10張物件／卡片均≤120KiB。原始 PNG、縮圖總覽與產圖記錄放 repo 外 `first-person-samples/4A11/`，不加入原文或官方題本。

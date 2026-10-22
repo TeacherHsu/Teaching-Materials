@@ -23,6 +23,11 @@ export function validateSituationLesson(lesson) {
   }
   check(new Set(omitted).size===omitted.length && omitted.length<expected.length,'excluded duplicates/all');
   const storyExpected=storyUnitKeys(lesson);
+  if(lesson.script){
+    check(lesson.script.stageDirectionStyle==='small-italic' && lesson.script.speakStageDirections===false,'script stage directions');
+    check(lesson.speakers,'script speakers');
+  }
+  if(lesson.safetyReminderCount!==undefined)check(Number.isInteger(lesson.safetyReminderCount) && lesson.safetyReminderCount>=0 && lesson.scenes.filter(s=>s.beats.result.safetyReminder).length===lesson.safetyReminderCount,'safety reminder count');
   if(lesson.storySentenceCount!==undefined)check(lesson.storySentenceCount===storyExpected.length,'storySentenceCount');
   if(lesson.speakers){
     check(Object.keys(lesson.speakers).length===storyExpected.length && storyExpected.every(k=>Object.hasOwn(lesson.speakers,k)),'speaker coverage');
@@ -66,11 +71,13 @@ export function validateSituationLesson(lesson) {
     check(s.art.aspect?.length===2 && s.art.aspect.every(n=>Number.isFinite(n) && n>0), 'image aspect');
     for(const point of Object.values({...s.art.hotspots,...s.art.effects}))check(point.length===2 && point.every(percent), 'art coordinates');
     for(const value of Object.values(s.art.orientationFocus || {}))check(percent(value),'orientation focus');
+    for(const value of Object.values(s.art.speakerFocus || {}))check(percent(value),'speaker focus');
+    if(s.operation.hideOnResult!==undefined)check(typeof s.operation.hideOnResult==='boolean','result operation visibility');
     for(const [view,scale] of Object.entries(s.art.viewScales || {}))check(s.art.views[view]!==undefined && Number.isFinite(scale) && scale>=1 && scale<=1.5,'view cover scale');
     for(const value of Object.values(s.art.views))check(Number.isFinite(value) && value>=0 && value<=1,'view focus');
     for(const points of Object.values(s.art.focus || {}))for(const [x,y] of Object.entries(points))check(percent(Number(x)) && percent(y), 'orientation focus');
     check(s.operation.objects?.length>0, 'objects');
-    for(const o of s.operation.objects){check(text(o.label) && text(o.action),'object identity');check([o.x,o.y,o.width].every(percent) && o.width>0 && Number.isFinite(o.ratio) && o.ratio>0 && Number.isFinite(o.angle),'object geometry');check(!o.sprite || /^[\w-]+$/.test(o.sprite),'sprite');if(o.completedSprite!==undefined)check(/^[\w-]+$/.test(o.completedSprite) && o.sprite,'completed sprite');if(o.minHitSize!==undefined)check(Number.isFinite(o.minHitSize) && o.minHitSize>=44,'hit size');if(o.viewMotion)check(['lookUp','approach'].includes(o.viewMotion),'observation view motion');if(o.gesture)check(['tap','observe','dragToTarget','tracePath','rhythmTap','aimShot','holdBreath'].includes(o.gesture),'object gesture');if(o.gesture==='tracePath' || s.operation.type==='tracePath' && !o.passive && !o.target)check(o.path?.length>=2 && o.path.every(p=>p.length===2 && p.every(percent)) && Number.isFinite(o.tolerance) && o.tolerance>0,'trace path');if(o.destinationWidth!==undefined)check(percent(o.destinationWidth) && o.destinationWidth>0 && o.destination,'destination width');if(o.destination)check(o.destination.length===2 && o.destination.every(percent),'destination');}
+    for(const o of s.operation.objects){check(text(o.label) && text(o.action),'object identity');check([o.x,o.y,o.width].every(percent) && o.width>0 && Number.isFinite(o.ratio) && o.ratio>0 && Number.isFinite(o.angle),'object geometry');check(!o.sprite || /^[\w-]+$/.test(o.sprite),'sprite');if(o.completedSprite!==undefined)check(/^[\w-]+$/.test(o.completedSprite) && o.sprite,'completed sprite');if(o.minHitSize!==undefined)check(Number.isFinite(o.minHitSize) && o.minHitSize>=44,'hit size');if(o.viewMotion)check(['lookUp','approach','turn','jump','fan'].includes(o.viewMotion),'observation view motion');if(o.gesture)check(['tap','observe','dragToTarget','tracePath','rhythmTap','aimShot','holdBreath'].includes(o.gesture),'object gesture');if(o.gesture==='tracePath' || s.operation.type==='tracePath' && !o.passive && !o.target)check(o.path?.length>=2 && o.path.every(p=>p.length===2 && p.every(percent)) && Number.isFinite(o.tolerance) && o.tolerance>0,'trace path');if(o.destinationWidth!==undefined)check(percent(o.destinationWidth) && o.destinationWidth>0 && o.destination,'destination width');if(o.destination)check(o.destination.length===2 && o.destination.every(percent),'destination');}
     for(const region of Object.values(s.operation.regions || {}))check(['left','right','top','bottom'].every(k=>percent(region[k])) && region.left<region.right && region.top<region.bottom,'region');
     check(s.meter?.length===s.operation.steps.length+1, 'meter event count');
     for(const event of s.meter)check(Number.isInteger(event.state) && text(lesson.meter.states[event.state]) && percent(event.level) && event.level<=3,'meter event');
@@ -87,6 +94,8 @@ export function validateSituationLesson(lesson) {
     if(s.art.portraitFrame){const f=s.art.portraitFrame;check(percent(f.left) && percent(f.right) && f.right>f.left && [f.top,f.bottom].every(n=>Number.isFinite(n) && n>=0),'portrait evidence frame');}
     if(s.art.stepImages)check(s.art.stepImages.length===s.operation.steps.length+1 && s.art.stepImages.every(n=>Number.isInteger(n) && n>=0 && n<s.art.images.length),'step images');
     if(s.art.resultImage!==undefined)check(Number.isInteger(s.art.resultImage) && s.art.resultImage>=0 && s.art.resultImage<s.art.images.length,'result image');
+    if(s.art.resultStartImage!==undefined)check(Number.isInteger(s.art.resultStartImage) && s.art.images[s.art.resultStartImage] && Number.isFinite(s.art.resultDelay) && s.art.resultDelay>0,'result start image');
+    if(s.beats.result.safetyReminder!==undefined)check(text(s.beats.result.safetyReminder) && Number.isFinite(s.beats.result.safetyDelay) && s.beats.result.safetyDelay>=(s.art.resultDelay || 0) && s.beats.result.safetyDelay<s.beats.result.duration,'safety reminder timing');
     if(s.operation.type==='scoopGesture' && !s.operation.profile)check(s.operation.regions?.water,'water region');
     if(s.operation.type==='toolGrab' && !s.operation.profile)check(s.operation.objects.some(o=>o.tool),'tool object');
     if(s.operation.type==='orderCards')check(Array.isArray(s.operation.answer) && s.operation.answer.length===s.operation.objects.length && new Set(s.operation.answer).size===s.operation.objects.length && s.operation.answer.every(i=>Number.isInteger(i) && i>=0 && i<s.operation.objects.length),'operation order answer');
