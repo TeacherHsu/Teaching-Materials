@@ -1,3 +1,4 @@
+import { mountStrategy, mountBag, predictionReminder, storySummary } from '../activities/situation/strategies.js';
 import { chooseCard, orderCards } from '../activities/situation/operations.js';
 import { meterFor, validateUnlockedLesson } from '../data/situationLessons/schema.js';
 import { animationReduced } from '../activities/firstPersonPreferences.js';
@@ -31,6 +32,7 @@ export function FirstPersonPage(lesson) {
   let world, generation = 0, disposed = false, replay = null, lastClue = null, feedback = '', wrong = false, readingVisible = false;
   let moodLabel = '';
   let subtitle = null, subtitleTimer, subtitleAfter, subtitleQueue = [];
+  let timelineIndex=0, disposeStrategy, predictions={};
   let beat = 'intro', beatTimer, playback = createPlayback(), narrationToken = 0;
   let chimeUntil = 0, chimeTimer;
   let stopChime, saved = true, audio, ambientGain, ambientSource, modal, observationTimer;
@@ -61,8 +63,8 @@ export function FirstPersonPage(lesson) {
     if (!AC) return null;
     return audio ||= new AC();
   }); }
-  function updateMotion() { root.classList.toggle('fp-calm', calm()); root.classList.toggle('fp-motion-on', prefs.animation === 'on'); world?.setOptions?.({ beat, mood: moodLabel, calm: calm(), reading: ['result','read'].includes(beat), locked: beat !== 'act' || (scene?.operation.profile==='cooking-toolGrab' && state?.operation.step===0), paused: Boolean(Date.now()<chimeUntil || modal?.open || subtitle || root.querySelector('.fp-question-cards')) }); sound(); }
-  function destroyWorld() { generation++; world?.dispose(); world = null; }
+  function updateMotion() { root.classList.toggle('fp-calm', calm()); root.classList.toggle('fp-motion-on', prefs.animation === 'on'); world?.setOptions?.({ imageIndex: scene?.timeline?.[timelineIndex]?.imageIndex, hideOperations: Boolean(scene?.timeline && (beat==='strategy' || scene.timeline[timelineIndex]?.hideOperations)), beat, mood: moodLabel, calm: calm(), reading: ['result','read'].includes(beat), locked: beat !== 'act' || (scene?.operation.profile==='cooking-toolGrab' && state?.operation.step===0), paused: Boolean(Date.now()<chimeUntil || modal?.open || subtitle || root.querySelector('.fp-question-cards')) }); sound(); }
+  function destroyWorld() { disposeStrategy?.();disposeStrategy=null; generation++; world?.dispose(); world = null; }
   function close() {
     if (disposed) return; disposed = true; clearTimeout(beatTimer); clearTimeout(chimeTimer); clearTimeout(subtitleTimer); clearTimeout(observationTimer); clearTimeout(idleTimer); destroyWorld(); cancelSpeaking(); audio?.close().catch(() => {});
     modal?.close(); modal?.remove(); document.body.classList.remove('fp-immersive');
@@ -78,7 +80,7 @@ export function FirstPersonPage(lesson) {
     const dialog = h('dialog', { class: 'fp-sheet', 'aria-labelledby': 'fp-sheet-title' });
     dialog.append(h('div', { class: 'fp-sheet-header' }, [h('h2', { id: 'fp-sheet-title' }, title), button('✕', () => dialog.close(), { 'aria-label': '回到場景', class: 'fp-close' })]), content);
     root.append(dialog); modal = dialog;
-    dialog.addEventListener('close', () => { readingVisible = false; cancelSpeaking(); updateMotion(); if(beat==='result')beatTimer=setTimeout(()=>setBeat('read'),scene.beats.result.duration); if(subtitle)subtitle.style.opacity='1'; if(subtitle && (beat==='intro' || playback.automatic))subtitleTimer=setTimeout(nextSubtitle,subtitleDuration(subtitle.querySelector('p')?.textContent || '')); });
+    dialog.addEventListener('close', () => { readingVisible = false; cancelSpeaking(); updateMotion(); if(beat==='result')beatTimer=setTimeout(()=>finishBeat('result'),scene.beats.result.duration); if(subtitle)subtitle.style.opacity='1'; if(subtitle && (beat==='intro' || playback.automatic))subtitleTimer=setTimeout(nextSubtitle,subtitleDuration(subtitle.querySelector('p')?.textContent || '')); });
     dialog.addEventListener('click', (event) => { if (event.target === dialog && event.clientX < dialog.getBoundingClientRect().left) dialog.close(); });
     dialog.showModal(); updateMotion();
     if (focus) content.querySelector(focus)?.focus();
@@ -131,6 +133,7 @@ export function FirstPersonPage(lesson) {
     clearTimeout(beatTimer); clearTimeout(observationTimer); clearTimeout(idleTimer); actionQuestion = null; destroyWorld(); modal?.close(); modal?.remove(); modal = null; clear(rootBody);
     subtitle?.remove(); subtitle=null; subtitleQueue=[]; clearTimeout(subtitleTimer);
     scene = config.scenes[progress.current]; state = replay || progress.scenes[progress.current]; currentView = scene.view;
+    timelineIndex=0;predictions={};
     beat = 'intro'; root.dataset.beat=beat; playback=createPlayback();
     lastClue = null; feedback = ''; wrong = false;
     const stage = h('div', { class: `fp-world fp-world--${scene.id}`, tabindex: '0', role: 'group', 'aria-label': '第一人稱場景。拖曳環顧，左右鍵轉頭；Tab尋找物件，Enter操作。' });
@@ -147,31 +150,51 @@ export function FirstPersonPage(lesson) {
     stage.addEventListener('pointerup', () => { pointer = null; }); stage.addEventListener('pointercancel', () => { pointer = null; });
     stage.addEventListener('keydown', (e) => { if (e.target !== stage) return; if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) { e.preventDefault(); world?.look(e.key === 'ArrowLeft' ? .08 : e.key === 'ArrowRight' ? -.08 : 0, e.key === 'ArrowUp' ? .05 : e.key === 'ArrowDown' ? -.05 : 0); } });
     const version = generation;
-    mountFirstPersonScene(stage, { phase: { ...scene, nextImages: config.scenes[progress.current+1]?.art.images, id: scene.id.replace(/^story-/, "") }, calm: calm(), operation: state.operation, onChime: chime, onDemoSeen: () => { if(!replay)save(); }, onOperation: () => { if (!replay) save(); updateMood(); if(beat==='act' && operationComplete(scene,state.operation)) setBeat(nextBeat(beat)); else updateMotion(); }, onMode: (label) => { if (version === generation) { mode.textContent = label; mode.hidden = label.startsWith('第一人稱'); } } }).then((controller) => { if (disposed || version !== generation) controller.dispose(); else { world = controller; setBeat('intro'); } });
+    mountFirstPersonScene(stage, { phase: { ...scene, nextImages: config.scenes[progress.current+1]?.art.images, id: scene.id.replace(/^story-/, "") }, calm: calm(), operation: state.operation, onChime: chime, onDemoSeen: () => { if(!replay)save(); }, onOperation: () => { if (!replay) save(); updateMood(); if(beat==='act' && (operationComplete(scene,state.operation) || scene.timeline?.[timelineIndex]?.untilStep<=state.operation.step)) finishBeat('act'); else updateMotion(); }, onMode: (label) => { if (version === generation) { mode.textContent = label; mode.hidden = label.startsWith('第一人稱'); } } }).then((controller) => { if (disposed || version !== generation) controller.dispose(); else { world = controller; if(scene.timeline)runTimeline();else setBeat('intro'); } });
     updateMotion(); sound();
   }
 
-  function updateMood(remembered = false, readRef = null) {
+  function updateMood(remembered = false, readRef = null, meterEvent = null) {
     const node = root.querySelector('.fp-mood'); if (!node) return;
-    const m = meterFor(config, scene, state.operation.step, remembered, readRef);
+    const m = meterEvent ? {level:meterEvent.level,label:config.meter.states[meterEvent.state],face:config.meter.faces?.[meterEvent.state] || '🙂'} : meterFor(config, scene, state.operation.step, remembered, readRef);
     moodLabel=m.label;
     clear(node); node.dataset.level = String(m.level);
     if(config.meter.caption)node.append(h('span',{class:'fp-mood-caption'},config.meter.caption));
     node.append(h('span', {}, m.label), h('span', { class: 'fp-mood-face', 'aria-hidden': 'true' }, m.face), h('i', { style: `--mood:${m.level / 3 * 100}%`, 'aria-hidden': 'true' }), h('span', { class: 'fp-sr' }, `${config.ui.character}：${m.label}`));
   }
+  function finishBeat(value){
+    if(scene.timeline){timelineIndex++;runTimeline();}else setBeat(nextBeat(value));
+  }
+  function runTimeline(){
+    disposeStrategy?.();disposeStrategy=null;
+    const entry=scene.timeline[timelineIndex];if(!entry)return;
+    if(entry.kind==='strategy'){
+      beat='strategy';root.dataset.beat=beat;updateMotion();
+      const strategy=scene.strategies.find(t=>t.id===entry.id);
+      const panel=h('section',{class:'fp-strategy-panel','aria-label':strategy.prompt});rootBody.append(panel);
+      disposeStrategy=mountStrategy({strategy,panel,plane:world.strategyPlane,stage:root.querySelector('.fp-world'),states:config.meter.states,focus:x=>world.focusPoint(x),onWords(words,target){
+        if(!target){const option=strategy.options.find(o=>(o.states || []).some(i=>words.includes(config.meter.states[i])));const event=config.meter.events.find(e=>e.state===option?.states?.[0]);if(event)updateMood(false,null,event);}
+        const node=root.querySelector('.fp-mood');node.querySelector('.fp-meter-clue')?.remove();const clue=say((target?target+'：':'')+words.join('、'),'span',{class:'fp-clue-words'});clue.classList.add('fp-meter-clue');node.append(clue);
+      },onDone(result){if(strategy.type==='predict')predictions[strategy.id]=result.selected[0];finishBeat('strategy');}});
+    }else if(entry.kind==='openBag'){
+      beat='openBag';root.dataset.beat=beat;updateMotion();world.focusPoint(entry.object.x);
+      const panel=h('section',{class:'fp-strategy-panel'});rootBody.append(panel);
+      disposeStrategy=mountBag({entry,panel,plane:world.strategyPlane,assetBase:`${import.meta.env.BASE_URL}${config.assetBase}`,onDone:()=>finishBeat('openBag')});
+    }else setBeat(entry.kind);
+  }
   function setBeat(value) {
     clearTimeout(beatTimer); clearTimeout(subtitleTimer);
     subtitle?.remove(); subtitle=null; beat=value; root.dataset.beat=beat;
     if(value==='intro' || value==='read') {
-      subtitleQueue=beatLines(scene.beats[value]);
-      subtitleAfter=()=>setBeat(nextBeat(value));
+      if(scene.timeline)subtitleQueue=beatLines(scene.timeline[timelineIndex].refs);else subtitleQueue=beatLines(scene.beats[value]);
+      subtitleAfter=()=>finishBeat(value);
       nextSubtitle();
     } else if(value==='act') {
-      if(operationComplete(scene,state.operation)) setBeat(nextBeat(value));
+      if(operationComplete(scene,state.operation) || scene.timeline?.[timelineIndex]?.untilStep<=state.operation.step) finishBeat(value);
       else if(scene.beats.act.demo && state.operation.step===0) world?.startDemo();
     } else if(value==='result') {
       world?.setView(scene.beats.result.view);
-      beatTimer=setTimeout(()=>setBeat(nextBeat(value)),scene.beats.result.duration);
+      beatTimer=setTimeout(()=>finishBeat(value),scene.beats.result.duration);
     } else {
       state.found=scene.clues.map(c=>c.id); if(!replay)save(); showQuestion();
     }
@@ -188,6 +211,9 @@ export function FirstPersonPage(lesson) {
     const ref=subtitleQueue.shift();
     if(!ref) {const done=subtitleAfter;subtitleAfter=null;done?.();return;}
     recordRead(ref);
+    for(const strategy of scene.strategies || [])if(strategy.type==='predict' && strategy.revealAt.para===ref.para && strategy.revealAt.n===ref.n && predictions[strategy.id]!==undefined){
+      root.querySelector('.fp-prediction-reminder')?.remove();rootBody.append(h('aside',{class:'fp-prediction-reminder'},[say(predictionReminder(strategy,predictions[strategy.id]))]));
+    }
     const readingView=scene.readViews?.[`${ref.para}:${ref.n}`];if(readingView)world?.setView(readingView,{immediate:true});
     const line=sources.get(`sentence:${ref.para}:${ref.n}`);
     if(config.meter.events)updateMood(false,ref);
@@ -246,7 +272,7 @@ export function FirstPersonPage(lesson) {
     if(state.done) {
       content.append(say('💧 ' + q.explanation));
       if(progress.current < config.scenes.length-1) content.append(button('下一幕', advance));
-      else { content.append(say(config.ending.title, 'h3')); config.review.forEach(([title,text])=>content.append(say(`${title}${text}`))); content.append(button('完成・關卡一覽', showScenes)); }
+      else { if(q.operationType==='summaryCard')content.append(say(storySummary(config,progress.scenes)));content.append(say(config.ending.title, 'h3')); config.review.forEach(([title,text])=>content.append(say(`${title}${text}`))); content.append(button('完成・關卡一覽', showScenes)); }
     } else {
       content.append(say(q.stem));
       const choices = h('div', { class: 'fp-card-row' });
@@ -263,6 +289,7 @@ export function FirstPersonPage(lesson) {
             else submitAnswer(chooseCard(q,index));
           }, { 'data-answer': index, draggable: Array.isArray(q.answer), 'aria-label': Array.isArray(q.answer) ? `${q.options[index]}，點選編號，再點取消；也可拖曳排列` : q.options[index] });
           if(Array.isArray(q.answer)) { const place=cardOrder.selected.indexOf(index); pick.setAttribute('aria-pressed',String(place>=0)); if(place>=0)pick.prepend(h('span',{class:'fp-order-number'},String(place+1))); }
+          if(q.operationType==='summaryCard')pick.prepend(h('img',{class:'fp-summary-image',src:`${import.meta.env.BASE_URL}${config.assetBase}${q.summaryImages[index]}`,alt:''}));
           if(q.type==='emotion') pick.prepend(h('img', { class:'fp-emotion', src:`${import.meta.env.BASE_URL}${config.assetBase}sprites/${q.images[index]}.webp`, alt:'' }));
           pick.ondragstart = () => { dragged=index; };
           pick.ondragover = e => e.preventDefault();

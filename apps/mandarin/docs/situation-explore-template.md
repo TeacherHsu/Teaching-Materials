@@ -57,3 +57,19 @@
 - `art.expressionStates:{狀態詞:{底圖檔名:局部透明圖檔}}`：沿用老鞋匠全尺寸稀疏疊圖，只在對應量表詞顯示，跟隨底圖的透明度與cover幾何。此功能與原本 `expressionOverlays` 相容，非臉部遮罩區域保留原底圖。設定／暫停恢復仍保留目前狀態。
 - `scene.readViews:{'段:句索引':viewName}` 在指定讀句切換已宣告鏡頭；不用原文作key。本課在讀到接蒂說明時保留證據鏡頭，在欣慰事件轉回布大爺；開場先看人物，動手回中央操作區，結果看回家／警察／證據。
 - 本單指定115AG6H12場景2400×1024 WebP≤400KiB，sprite／局部表情圖≤120KiB，優先於一般方圖建議。資產容量檢查只對此課路徑套此上限；其他主站圖片仍維持300KiB。schema素材測試對既有2400寬情境圖依400KiB檢查，沒有改成contain、縮小滿版場景或裁掉線索來通過測試。
+
+## 存根修正單1：共用閱讀策略與插入拍
+
+四種策略為 `predict`、`emotionClue`、`causeEffect`、`summaryCard`，只由課次設定啟用。本輪僅〈存根〉使用，兩舊課繼續使用既有四拍，不增加策略或題目。
+
+- `scene.strategies`：`id/type/prompt/options/refs/hint`。`refs` 必須包含解密資料段號 `para`、零起算句號 `sentences`、SHA-256 前8碼 `sha`；選擇式預測外，每個場景選項亦帶自己的 `refs`。
+- `predict`：2–3個字串選項，必含「我不確定」，禁止 `answer`；`revealAt:{para,n}` 必須位於依據內。在揭曉句顯示 `你猜的是：○○，課文怎麼說？`，不計正誤或獎勵。
+- `emotionClue`：`answer` 為1–2個正確選項索引；選項帶 `label/x/y/refs`，`states` 指向量表既有原文詞。其他人物可用 `words` 與 `meterTarget`，正常解鎖時逐字核對其指定原句，不新增布大爺的量表狀態。點錯使用「再看看他的臉／動作」，可繼續找。
+- `causeEffect`：同樣使用場景選項及 `answer`，`result:[x,y]` 是結果位置，`explanation` 是改寫的因果回饋。點中後發亮並在相同插畫座標畫柔和曲線，不自動跳走，按繼續後前進；答錯可再試。
+- `summaryCard`：放在 `questions`，`type` 與 `operationType` 均設為此值，恰好三個 `options`、`summaryImages`、`why`、一個正解索引及原句 `refs`；取代原題。圖片明確指定本幕場景或本地 `sprites/*.webp`。錯因指出細節與重點差別。最後用已完成各幕的正確選卡串成一句，保留朗讀。它沿用題卡進度、錯因與重玩，不另加題。
+
+需要插入策略或動手點時，加 `scene.timeline`；不加就保留舊四拍。每項 `kind` 為 `intro/read/act/result/strategy/openBag/question`；`intro/read` 使用獨立 `refs`，展開後須與 `beats.intro + beats.read` 完全一致並依序唯一覆蓋全文。每段 `intro` 最多8單位；例外必須寫 `lengthException` 理由。`act.untilStep` 可在既有操作完成指定步後先讀下一段，再接續剩餘動手；不重算／重置計數。
+
+`strategy.id` 引用本幕策略。`imageIndex` 指定該拍底圖，`hideOperations:true` 隱藏既有操作物件，避免未揭曉道具外露。`openBag` 以 `object:{x,y,width,sprite}` 設背包，支援拉開、點擊及 Enter／Space；只改開口視覺，不出現包內物。它有自己的原句依據，不另計分或加題。
+
+策略熱點與線條使用獨立插畫平面，繼承滿版 cover 的縮放／環顧，主操作保持鎖定；Tab聚焦會將熱點移進畫面。提示、卡片與回饋都有喇叭。`test-situation-strategies.mjs` 驗證四型別、原句引用、開場長度、重試、預測無正誤、摘要題數及全文時序；視覺仍需 Claude 實玩。

@@ -1,5 +1,12 @@
 # 交接紀錄（最新的寫在最上面）
 
+
+## 2026-10-23｜家中 Mac｜Codex｜存根修正單1：待 Claude 三尺寸實玩
+- 依本單全程未執行任何 git、未開 Chrome、未 commit／push／部署；只改檔，Claude接手實玩及提交。
+- 四種共用策略＋timeline插入拍只在存根version 2啟用；四幕四題改摘要卡，4a先開包／看弗大叔、4b預測後才接蒂。各段開場≤8，141正文依序唯一覆蓋、原句hash及量表原文詞驗證。
+- 官方doc以textutil讀取，未改來源／未存轉出文字，題號對應與句索引／Claude七項實玩清單見apps/mandarin/docs/first-person-IMPL-LOG.md「存根修正單1」。原文／密碼不入repo，素材與密文不變，保留cover；兩舊課不啟用策略。
+- validate、全部98支測試、build、check-dist／assets與build:preview通過；正式密文／逐句量表詞及策略handler通過，詳見實作紀錄。本輪不宣稱已完成Chrome、三尺寸視覺、觸控、臺灣國語或實機教學驗收。
+
 ## 2026-10-23｜家中 Mac｜Codex｜存根：待 Claude 三尺寸實玩／提交
 - 依本單全程未執行git、未開Chrome、未提交／推送／合併／部署；Claude接手瀏覽器與提交。
 - 新增115AG6H12四幕與四題，Vite自動顯示課次入口。正式密碼已確認可解現有密文且與本機來源一致；142單位排除課名0，正文1–141依序唯一覆蓋、hash全核對。第4幕intro89–114涵蓋正文15–20段，動手後才read115–141。

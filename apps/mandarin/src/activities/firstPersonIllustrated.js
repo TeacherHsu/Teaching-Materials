@@ -11,11 +11,12 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   const layer = document.createElement('div'); layer.className = 'fp-illustration';
   const plane = document.createElement('div'); plane.className = 'fp-illustration-plane'; layer.append(plane); host.prepend(layer);
   host.classList.add('is-illustrated');
+  let imageOverride, hideOperations=false;
   let moodLabel = '', reading = false, currentBeat='intro', resultReady=false, resultArtTimer;
   function stateArt(){
     plane.classList.toggle('fp-result-hide-completed',Boolean(art.hideCompletedOnResult && (['read','question'].includes(currentBeat) || currentBeat==='result' && resultReady)));
     if(!art.stepImages)return;
-    const index=(['read','question'].includes(currentBeat) || currentBeat==='result' && resultReady) && art.resultImage!==undefined ? art.resultImage : art.stepImages[Math.min(operation.step,art.stepImages.length-1)];
+    const index=imageOverride ?? ((['read','question'].includes(currentBeat) || currentBeat==='result' && resultReady) && art.resultImage!==undefined ? art.resultImage : art.stepImages[Math.min(operation.step,art.stepImages.length-1)]);
     images.forEach((img,i)=>{img.style.opacity=i===index?'1':'0';img.style.transition=calm?'none':'opacity .35s ease';});
   }
   let disposed = false, paused = true, frame = 0, previous = 0, pan = art.views[phase.view] ?? .5, target = pan;
@@ -36,6 +37,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
       img.src=base+file;img.style.opacity='0';plane.append(img);return {img,baseImage,state};
     });
   });
+  const strategyPlane=document.createElement('div');strategyPlane.className='fp-strategy-plane';layer.append(strategyPlane);
   const effects = document.createElement('div'); effects.style.zIndex = '2'; effects.className = 'fp-illustration-effects'; plane.append(effects);
   for (const [kind, point] of Object.entries(art.effects || {})) {
     for (let i = 0; i < (kind === 'fire' ? 1 : 5); i++) {
@@ -57,6 +59,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     for(const {img,baseImage,state} of expressionOverlays){img.style.opacity=state && state!==moodLabel ? '0' : baseImage.style.opacity;img.style.transition=baseImage.style.transition;}
     layer.style.top = `${top}px`; layer.style.height = `${imageHeight}px`;
     plane.style.width = `${imageWidth}px`; plane.style.transform = `translateX(${left}px)`;
+    strategyPlane.style.width=`${imageWidth}px`;strategyPlane.style.transform=`translateX(${left}px)`;
     const points = {};
     for (const [key, [x, y]] of Object.entries(art.hotspots)) {
       const px = imageWidth * x / 100 + left;
@@ -88,12 +91,14 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   media.addEventListener('change', resume); document.addEventListener('visibilitychange', resume);
   resume();
   return {
+    strategyPlane,
+    focusPoint(x){target=Math.max(0,Math.min(1,(imageWidth*x/100-host.clientWidth/2)/(imageWidth-host.clientWidth || 1)));pan=target;render();},
     startDemo() { interaction.startDemo?.(); },
     showWoodDemo() { return interaction.showWoodDemo(true); },
     setView(view, { immediate = false } = {}) { target = art.views[view] ?? .5; if(immediate)pan=target; resume(); },
     look(dx) { if(interaction.dragging) return; target = Math.max(0, Math.min(1, target - dx * 2)); resume(); },
     observeAction() { resume(); },
-    setOptions(options) { if(options.mood!==undefined)moodLabel=options.mood;if(options.beat && options.beat!==currentBeat){currentBeat=options.beat;clearTimeout(resultArtTimer);resultReady=false;if(currentBeat==='result'){resultArtTimer=setTimeout(()=>{resultReady=true;if(art.resultView){target=art.views[art.resultView] ?? target;pan=target;render();}stateArt();},art.resultDelay || 0);}}stateArt();reading=art.readingZoom!==false && Boolean(options.reading) && !(currentBeat==='result' && art.resultZoom===false); calm = Boolean(options.calm); paused = Boolean(options.paused); lockBeatObjects(plane,Boolean(options.locked));
+    setOptions(options) { imageOverride=options.imageIndex;hideOperations=Boolean(options.hideOperations);plane.classList.toggle('fp-hide-operations',hideOperations); if(options.mood!==undefined)moodLabel=options.mood;if(options.beat && options.beat!==currentBeat){currentBeat=options.beat;clearTimeout(resultArtTimer);resultReady=false;if(currentBeat==='result'){resultArtTimer=setTimeout(()=>{resultReady=true;if(art.resultView){target=art.views[art.resultView] ?? target;pan=target;render();}stateArt();},art.resultDelay || 0);}}stateArt();reading=art.readingZoom!==false && Boolean(options.reading) && !(currentBeat==='result' && art.resultZoom===false); calm = Boolean(options.calm); paused = Boolean(options.paused); lockBeatObjects(plane,Boolean(options.locked));
       plane.inert=paused || Boolean(options.locked);
       resume(); },
     dispose() {

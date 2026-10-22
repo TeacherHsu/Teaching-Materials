@@ -1,4 +1,5 @@
 export const operationTypes = ['observe','dragToTarget','scoopGesture','toolGrab','chooseCard','orderCards','tracePath'];
+export const strategyTypes = ['predict','emotionClue','causeEffect','summaryCard'];
 const fail = message => { throw new Error(`Situation lesson: ${message}`); };
 const check = (condition, message) => { if (!condition) fail(message); };
 const percent = n => Number.isFinite(n) && n >= 0 && n <= 100;
@@ -67,7 +68,7 @@ export function validateSituationLesson(lesson) {
     check(s.meter?.length===s.operation.steps.length+1, 'meter event count');
     for(const event of s.meter)check(Number.isInteger(event.state) && text(lesson.meter.states[event.state]) && percent(event.level) && event.level<=3,'meter event');
     for(const name of ['intro','read']){
-      refs(s.beats[name]);for(const r of s.beats[name])for(const n of r.sentences)coverage.push(`${r.para}:${n}`);
+      refs(s.beats[name]);if(!s.timeline)for(const r of s.beats[name])for(const n of r.sentences)coverage.push(`${r.para}:${n}`);
     }
     check(Number.isFinite(s.beats.result.duration) && s.beats.result.duration>=0 && s.art.views[s.beats.result.view]!==undefined,'result');
     if(['dragToTarget','toolGrab'].includes(s.operation.type) && !s.operation.profile)check(s.operation.regions?.target,'target region');
@@ -79,9 +80,28 @@ export function validateSituationLesson(lesson) {
     if(s.operation.type==='toolGrab' && !s.operation.profile)check(s.operation.objects.some(o=>o.tool),'tool object');
     if(s.operation.type==='orderCards')check(Array.isArray(s.operation.answer) && s.operation.answer.length===s.operation.objects.length && new Set(s.operation.answer).size===s.operation.objects.length && s.operation.answer.every(i=>Number.isInteger(i) && i>=0 && i<s.operation.objects.length),'operation order answer');
     for(const [key,view] of Object.entries(s.readViews || {}))check(s.beats.read.some(r=>r.sentences.some(n=>`${r.para}:${n}`===key)) && s.art.views[view]!==undefined,'reading view');
+    if(s.timeline){
+      check(s.timeline.length>0,'timeline');
+      for(const entry of s.timeline){
+        if(entry.imageIndex!==undefined)check(Number.isInteger(entry.imageIndex) && entry.imageIndex>=0 && entry.imageIndex<s.art.images.length,'timeline image');
+        check(['intro','read','act','result','strategy','openBag','question'].includes(entry.kind),'timeline kind');
+        if(['intro','read'].includes(entry.kind)){refs(entry.refs);for(const r of entry.refs)for(const n of r.sentences)coverage.push(`${r.para}:${n}`);if(entry.kind==='intro')check(entry.refs.reduce((n,r)=>n+r.sentences.length,0)<=8 || text(entry.lengthException),'opening length');}
+        if(entry.kind==='act' && entry.untilStep!==undefined)check(Number.isInteger(entry.untilStep) && entry.untilStep>0 && entry.untilStep<s.operation.steps.length,'timeline operation checkpoint');
+        if(entry.kind==='openBag'){refs(entry.refs);check(text(entry.prompt) && text(entry.label) && text(entry.openedMessage),'bag presentation');check(entry.object && [entry.object.x,entry.object.y,entry.object.width].every(percent) && /^[\w-]+$/.test(entry.object.sprite),'bag checkpoint');}
+        if(entry.kind==='strategy')check(s.strategies?.some(t=>t.id===entry.id),'timeline strategy');
+      }
+      check(JSON.stringify(s.timeline.filter(e=>['intro','read'].includes(e.kind)).flatMap(e=>e.refs.flatMap(r=>r.sentences.map(n=>`${r.para}:${n}`))))===JSON.stringify([...s.beats.intro,...s.beats.read].flatMap(r=>r.sentences.map(n=>`${r.para}:${n}`))),'timeline beat alignment');
+    }
+    for(const t of s.strategies || []){
+      check(strategyTypes.includes(t.type) && text(t.id) && text(t.prompt),'strategy identity');refs(t.refs);check(t.refs.length>0,'strategy evidence');
+      check(t.options?.length>=1 && t.options.length<=3,'strategy option count');
+      if(t.type==='predict'){check(t.options.length>=2 && t.options.every(text) && t.options.includes('我不確定') && t.answer===undefined,'prediction ungraded');check(t.revealAt && t.refs.some(r=>r.para===t.revealAt.para && r.sentences.includes(t.revealAt.n)),'prediction reveal');}
+      else {check(Array.isArray(t.answer) && t.answer.length>0 && t.answer.every(n=>Number.isInteger(n) && t.options[n]),'strategy answer');for(const o of t.options){check(text(o.label) && percent(o.x) && percent(o.y),'strategy hotspot');refs(o.refs);check(o.refs.length>0,'hotspot evidence');for(const state of o.states || [])check(text(lesson.meter.states[state]),'strategy meter word');}if(t.type==='emotionClue')check(t.answer.length<=2,'emotion clue count');if(t.type==='causeEffect')check(t.result?.length===2 && t.result.every(percent) && text(t.explanation),'cause result');}
+    }
     check(s.questions?.length>0,'questions');
     for(const q of s.questions){
-      check(['chooseCard','orderCards'].includes(q.operationType), 'card type');refs(q.refs);
+      check(['chooseCard','orderCards','summaryCard'].includes(q.operationType), 'card type');refs(q.refs);
+      if(q.operationType==='summaryCard')check(q.options?.length===3 && q.summaryImages?.length===3 && q.summaryImages.every(f=>s.art.images.includes(f) || /^sprites\/[\w-]+\.webp$/.test(f)) && q.refs.length>0,'summary cards');
       check(text(q.stem) && q.options?.length>=2 && q.options.every(text),'question');
       const answer=Array.isArray(q.answer)?q.answer:[q.answer];check(answer.every(i=>Number.isInteger(i) && i>=0 && i<q.options.length),'answer');
       if(q.operationType==='orderCards')check(answer.length===q.options.length && new Set(answer).size===answer.length,'order answer');
@@ -113,8 +133,10 @@ export async function validateUnlockedLesson(lesson, paragraphs) {
     const hash=[...new Uint8Array(digest)].map(v=>v.toString(16).padStart(2,'0')).join('').slice(0,8);
     check(hashes.get(`${para}:${n}`)===hash,'unlocked hash');
   }
+  if(lesson.scenes.some(s=>s.timeline))for(const e of lesson.meter.events || [])check(paragraphs.get(e.para)?.[e.n]?.includes(lesson.meter.states[e.state]),'meter event source sentence');
   // Only source words may label a meter; approved legacy intensity suffixes remain unchanged.
   const full=[...paragraphs].flatMap(([p,lines])=>lines.filter((_,n)=>isStoryUnit(lesson,p,n))).join('');
+  for(const s of lesson.scenes)for(const t of s.strategies || [])for(const o of t.options)if(typeof o==='object')for(const word of o.words || [])check(o.refs.map(r=>r.sentences.map(n=>paragraphs.get(r.para)[n]).join('')).join('').includes(word),'strategy source word');
   if(lesson.lessonId!=='115AG3H04')for(const state of lesson.meter.states)check(full.includes(state),'meter source word');
   return true;
 }

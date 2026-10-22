@@ -12,9 +12,9 @@ import {freshProgress,restoreProgress,answerScene} from '../src/activities/first
 validateSituationLesson(lesson);
 assert.equal(lesson.sentenceCount,142);assert.equal(storyUnitKeys(lesson).length,141);
 assert.deepEqual(lesson.excludedUnits,[{para:1,sentences:[0]}]);
-assert.deepEqual(lesson.scenes.map(s=>[s.beats.intro[0].sentences[0],s.beats.intro[0].sentences.at(-1),s.beats.read[0].sentences[0],s.beats.read[0].sentences.at(-1)]),[[1,19,20,32],[33,36,37,49],[50,62,63,88],[89,114,115,141]]);
+assert.deepEqual(lesson.scenes.map(s=>[s.beats.intro[0].sentences[0],s.beats.intro[0].sentences.at(-1),s.beats.read[0].sentences[0],s.beats.read[0].sentences.at(-1)]),[[1,14,15,32],[33,36,37,49],[50,56,57,88],[89,91,92,141]]);
 assert.deepEqual(lesson.scenes.flatMap(s=>beatLines([...s.beats.intro,...s.beats.read]).map(r=>r.n)),Array.from({length:141},(_,i)=>i+1));
-assert.deepEqual(lesson.scenes.slice(0,3).map(s=>s.questions[0].answer),[0,1,2]);assert.equal(lesson.scenes[3].questions[0].answer[0],3);
+assert.deepEqual(lesson.scenes.map(s=>s.questions[0].answer),[0,0,0,0]);assert.ok(lesson.scenes.every(s=>s.questions[0].operationType==='summaryCard'));
 assert.deepEqual(lesson.meter.states,['感傷','難過','震驚','憤怒又絕望','冷靜','氣惱','悲從中來','不慌不忙','欣慰','心滿意足']);
 for(const [n,word] of [[30,'難過'],[36,'憤怒又絕望'],[37,'冷靜'],[85,'悲從中來'],[93,'不慌不忙'],[133,'欣慰'],[138,'心滿意足']])assert.equal(meterFor(lesson,lesson.scenes[0],0,false,{para:1,n}).label,word);
 let b='intro';const beats=[];while(b){beats.push(b);b=nextBeat(b);}assert.deepEqual(beats,['intro','act','result','read','question']);
