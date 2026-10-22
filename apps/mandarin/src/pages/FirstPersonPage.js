@@ -1,4 +1,4 @@
-import { moodFor, subtitlePlan, subtitlesForStep } from '../activities/firstPersonPresentation.js';
+import { moodFor, subtitlePlan, subtitlesForStep, createCardOrder } from '../activities/firstPersonPresentation.js';
 import { operationComplete } from '../activities/firstPersonInteraction.js';
 import { h, clear } from '../utils/dom.js';
 import { SpeakButton } from '../components/SpeakButton.js';
@@ -147,11 +147,11 @@ export function FirstPersonPage(lesson) {
     updateMotion(); sound();
   }
 
-  function updateMood() {
+  function updateMood(remembered = false) {
     const node = root.querySelector('.fp-mood'); if (!node) return;
-    const m = moodFor(scene.act, state.operation.step);
+    const m = moodFor(scene.act, state.operation.step, remembered);
     clear(node); node.dataset.level = String(m.level);
-    node.append(h('span', {}, '康康的心情'), h('span', { class: 'fp-mood-face', 'aria-hidden': 'true' }, m.face), h('i', { style: `--mood:${m.level / 3 * 100}%`, 'aria-hidden': 'true' }), h('span', { class: 'fp-sr' }, `康康：${m.label}`));
+    node.append(h('span', {}, m.label), h('span', { class: 'fp-mood-face', 'aria-hidden': 'true' }, m.face), h('i', { style: `--mood:${m.level / 3 * 100}%`, 'aria-hidden': 'true' }), h('span', { class: 'fp-sr' }, `康康：${m.label}`));
   }
   function showOperationSubtitles() {
     if(subtitle) return;
@@ -169,6 +169,7 @@ export function FirstPersonPage(lesson) {
     clearTimeout(subtitleTimer); subtitle?.remove(); subtitle = null; cancelSpeaking();
     const line = subtitleQueue.shift();
     if (!line) { updateMotion(); const done = subtitleAfter; subtitleAfter = null; done?.(); return; }
+    if(scene.act===4 && line.includes('用心記住')) updateMood(true);
     subtitle = h('div', { class: 'fp-cinema', role: 'group', 'aria-label': '場景原句' }, [say(line, 'p'), button('下一句', nextSubtitle)]);
     rootBody.append(subtitle); updateMotion();
     subtitle.querySelector('.speak-button')?.addEventListener('click', () => clearTimeout(subtitleTimer));
@@ -206,31 +207,32 @@ export function FirstPersonPage(lesson) {
       content.append(say(q.stem));
       const choices = h('div', { class: 'fp-card-row' });
       const orderStatus = h('p', {class:'fp-sr', 'aria-live':'polite'}); content.append(orderStatus);
-      const order = Array.isArray(q.answer) ? [2,0,1] : q.options.map((_,i)=>i);
+      const cardOrder = createCardOrder(Array.isArray(q.answer) ? [2,0,1] : q.options.map((_,i)=>i));
       let dragged = null, suppressClick = false;
       function renderCards() {
         clear(choices);
-        if(Array.isArray(q.answer)) orderStatus.textContent=order.map(i=>q.options[i]).join(' → ');
-        order.forEach(index => {
+        if(Array.isArray(q.answer)) orderStatus.textContent=cardOrder.selected.map((i,n)=>`${n+1}：${q.options[i]}`).join(' → ');
+        cardOrder.order.forEach(index => {
           const pick = button(q.options[index], () => {
             if(suppressClick) return;
-            if(Array.isArray(q.answer)) { const from=order.indexOf(index), to=(from+1)%order.length; order.splice(from,1); order.splice(to,0,index); renderCards(); }
+            if(Array.isArray(q.answer)) { cardOrder.toggle(index); renderCards(); }
             else submitAnswer(index);
-          }, { 'data-answer': index, draggable: Array.isArray(q.answer), 'aria-label': Array.isArray(q.answer) ? `${q.options[index]}，拖曳排列；點選向後移一格` : q.options[index] });
+          }, { 'data-answer': index, draggable: Array.isArray(q.answer), 'aria-label': Array.isArray(q.answer) ? `${q.options[index]}，點選編號，再點取消；也可拖曳排列` : q.options[index] });
+          if(Array.isArray(q.answer)) { const place=cardOrder.selected.indexOf(index); pick.setAttribute('aria-pressed',String(place>=0)); if(place>=0)pick.prepend(h('span',{class:'fp-order-number'},String(place+1))); }
           if(q.type==='emotion') pick.prepend(h('img', { class:'fp-emotion', src:`${import.meta.env.BASE_URL}assets/first-person/115AG3H04/sprites/${q.images[index]}.webp`, alt:'' }));
           pick.ondragstart = () => { dragged=index; };
           pick.ondragover = e => e.preventDefault();
-          pick.ondrop = e => { e.preventDefault(); if(dragged===null)return; const from=order.indexOf(dragged), to=order.indexOf(index); order.splice(from,1); order.splice(to,0,dragged); dragged=null; renderCards(); };
+          pick.ondrop = e => { e.preventDefault(); if(dragged===null)return; cardOrder.move(dragged,index); dragged=null; renderCards(); };
           // Pointer dragging supports touch without native HTML drag support.
           let origin;
           pick.onpointerdown = e => { if(Array.isArray(q.answer)) { origin={x:e.clientX,y:e.clientY}; if(e.pointerType!=='mouse') pick.setPointerCapture(e.pointerId); } };
-          pick.onpointerup = e => { if(!origin || Math.hypot(e.clientX-origin.x,e.clientY-origin.y)<12)return; suppressClick=true; setTimeout(()=>suppressClick=false,0); const target=document.elementFromPoint(e.clientX,e.clientY)?.closest('[data-answer]'); if(target){ const to=order.indexOf(Number(target.dataset.answer)); order.splice(order.indexOf(index),1); order.splice(to,0,index); renderCards(); } origin=null; };
+          pick.onpointerup = e => { if(!origin || Math.hypot(e.clientX-origin.x,e.clientY-origin.y)<12)return; suppressClick=true; setTimeout(()=>suppressClick=false,0); const target=document.elementFromPoint(e.clientX,e.clientY)?.closest('[data-answer]'); if(target){ cardOrder.move(index,Number(target.dataset.answer)); renderCards(); } origin=null; };
           choices.append(h('div', { class:'fp-answer-row' }, [pick, SpeakButton({text:q.options[index]})]));
         });
       }
       renderCards(); content.append(choices);
-      if(Array.isArray(q.answer)) content.append(button('確認次序',()=>submitAnswer([...order])));
-      if(feedback) content.append(say([...feedback].slice(0,18).join(''),'p',{role:'status',class:'fp-card-feedback'}));
+      if(Array.isArray(q.answer)) content.append(button('重新排列',()=>{cardOrder.reset();renderCards();}),button('確認次序',()=>{if(cardOrder.selected.length===q.options.length)submitAnswer(cardOrder.selected);else {orderStatus.textContent='請依序點選三張卡片。';}}));
+      if(feedback) content.append(say(feedback,'p',{role:'status',class:'fp-card-feedback'}));
       if(wrong) content.classList.add('fp-wrong');
     }
     rootBody.append(content); world?.setOptions({calm:calm(),paused:true});

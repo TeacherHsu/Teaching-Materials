@@ -1,7 +1,7 @@
 // 公開資料只保留原句索引與雜湊；原文由 classroomKey 解密。
 export const FIRST_PERSON_LESSON = {
   "lessonId": "115AG3H04",
-  "version": 7,
+  "version": 8,
   "title": "食堂裡的閱讀線索",
   "source": {
     "text": "翰林115三上官方課文Word，第4課〈水滾了〉，王宗仁",
@@ -87,7 +87,7 @@ export const FIRST_PERSON_LESSON = {
             "把「師傅」和「徒弟康康」分開看，各找一個動作。",
             "重看標記的分工句，逐項核對選項中的人物與動作。"
           ],
-          "explanation": "第1段清楚交代兩人的工作；這也幫助我們理解後來康康為什麼要自己想辦法。",
+          "explanation": "你找對了：師傅燒水做菜，康康撿柴。",
           "type": "choice",
           "pirls": "擷取",
           "refs": [

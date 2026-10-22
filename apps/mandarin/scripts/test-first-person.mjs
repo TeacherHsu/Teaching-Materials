@@ -7,7 +7,7 @@ import { freshProgress, restoreProgress, canAnswer, answerScene, readProgress, s
 const lesson = JSON.parse(readFileSync(new URL('../public/data/115AG3H/lesson04.json', import.meta.url), 'utf8'));
 assert.equal(getFirstPersonLesson('115AG3H01'), null, '其他課次不開放試作');
 assert.equal(config.scenes.length, 4);
-assert.equal(config.version, 7);
+assert.equal(config.version, 8);
 const covered = new Set();
 const distribution = [0, 0, 0];
 const state = freshProgress(config);

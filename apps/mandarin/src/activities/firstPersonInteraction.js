@@ -1,4 +1,4 @@
-import { operationObjects, scoopGesture, woodOutside } from './firstPersonLayout.js';
+import { operationObjects, scoopGesture, woodOutside, groundPile, outsidePile, woodAngle } from './firstPersonLayout.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 // Serializable operation state; wrong drops never change progress or rewards.
 export function operationState(scene, raw = {}) {
@@ -32,10 +32,11 @@ export function mountOperation(plane, { scene, state, changed, heat, demonstrate
     const el = document.createElement('button'); el.type='button'; el.className=`fp-object ${target ? 'fp-drop-target' : ''}`; el.setAttribute('aria-label',label); el.dataset.action=action;
     el.style.width=`${width}%`; el.style.aspectRatio=String(1/ratio); el.style.left=`${x}%`; el.style.top=`${y}%`;
     if(sprite) { const img=new Image(); img.src=base+sprite+'.webp'; img.alt=''; img.draggable=false; img.onerror=()=>{ img.remove(); el.textContent=label; }; el.append(img); } else el.classList.add('fp-glow');
+    if(action.startsWith('wood-')) el.style.rotate=`${woodAngle(scene.act,Number(action.slice(-1))-1)}deg`;
     layer.append(el); const obj={el,x,y,action,label}; (target?targets:objects).push(obj);
     el.onclick=()=>{ if(suppress) return; if(target) drop(obj); else select(obj); };
     if(!target) {
-      el.onpointerdown=e=>{ if(e.button!==0) return; if(busy || el.disabled || dragging)return; e.stopPropagation(); dragging={obj,id:e.pointerId,x:e.clientX,y:e.clientY,moved:false,dipped:false,lifted:false}; el.setPointerCapture(e.pointerId); layer.classList.add('is-dragging'); };
+      el.onpointerdown=e=>{ if(e.button!==0) return; if(busy || el.disabled || dragging)return; e.stopPropagation(); dragging={obj,id:e.pointerId,x:e.clientX,y:e.clientY,moved:false,...scoopGesture({}, {x:(e.clientX-plane.getBoundingClientRect().left)/plane.getBoundingClientRect().width*100,y:(e.clientY-plane.getBoundingClientRect().top)/plane.getBoundingClientRect().height*100})}; el.setPointerCapture(e.pointerId); layer.classList.add('is-dragging'); if(scene.act===2 && dragging.dipped)setSprite(obj,'ladle-full'); };
       el.onpointermove=e=>{
         if(!dragging || dragging.id!==e.pointerId)return;
         const r=plane.getBoundingClientRect(), point={x:(e.clientX-r.left)/r.width*100,y:(e.clientY-r.top)/r.height*100};
@@ -44,7 +45,9 @@ export function mountOperation(plane, { scene, state, changed, heat, demonstrate
         if(scene.act===2){ const next=scoopGesture(dragging,point); if(next.dipped && !dragging.dipped){ setSprite(obj,'ladle-full'); splash(); } Object.assign(dragging,next); }
       };
       el.onpointerup=e=>{
-        if(!dragging)return;
+        if(!dragging || dragging.id!==e.pointerId)return;
+        // Process the release endpoint even when the browser coalesces all moves.
+        el.onpointermove(e);
         const gesture=dragging; dragging=null; layer.classList.remove('is-dragging');
         if(gesture.moved){
           selected=obj;
@@ -53,15 +56,15 @@ export function mountOperation(plane, { scene, state, changed, heat, demonstrate
           else { const dest=targets.find(t=>{const r=t.el.getBoundingClientRect();return e.clientX>=r.left-20 && e.clientX<=r.right+20 && e.clientY>=r.top-20 && e.clientY<=r.bottom+20;});if(dest)drop(dest); }
           suppress=true;setTimeout(()=>suppress=false,0);
         }
-        if(!(scene.act===1 && state.collected?.includes(obj.action)))reset(obj);
+        if(!([1,4].includes(scene.act) && state.collected?.includes(obj.action)))reset(obj);
       };
       el.onpointercancel=()=>{ dragging=null; layer.classList.remove('is-dragging'); reset(obj); if(scene.act===2)setSprite(obj,'ladle-empty'); feedback('慢慢來，可以改用點選。'); };
     }
     return obj;
   }
   function reset(o){ o.el.style.left=`${o.x}%`; o.el.style.top=`${o.y}%`; }
-  function feedback(text){ message.textContent=[...text].slice(0,14).join(''); }
-  function commit(action){ if(!operate(scene,state,action)){ feedback('慢慢來，先完成目前的步驟。'); return false; } selected=null; if(scene.act===1)focus?.(47.5); heat(heatFor(scene,state)); changed(); render(); return true; }
+  function feedback(text){ message.textContent=text; }
+  function commit(action){ if(!operate(scene,state,action)){ feedback('慢慢來，先完成目前的步驟。'); return false; } selected=null; if(scene.act===1)focus?.(operationComplete(scene,state)?61:33); if(scene.act===4 && action==='demo')focus?.(innerWidth/innerHeight>=1.4?52:73); heat(heatFor(scene,state)); changed(); render(); return true; }
   function select(o){
     if(busy || operationComplete(scene,state))return;
     if(scene.act===2){ scoopAnimation(o); return; }
@@ -71,8 +74,8 @@ export function mountOperation(plane, { scene, state, changed, heat, demonstrate
       if(timer) return; demonstrate(true); feedback('先看師傅使用工具，再換你試試。');
       timer=setTimeout(()=>{ timer=null; if(disposed)return; demonstrate(false); commit('demo'); },2400); return;
     }
-    if(scene.act===4){ busy=true; o.el.style.left='58%'; o.el.style.top='78%'; later(()=>{busy=false;commit(o.action);},450); return; }
-    selected=o; feedback(`你選了${o.label}，再點光暈。`); objects.forEach(x=>x.el.setAttribute('aria-pressed',String(x===o)));
+    if(scene.act===4){ busy=true; const [x,y]=outsidePile[Number(o.action.slice(-1))-1]; o.el.style.left=`${x}%`; o.el.style.top=`${y}%`; later(()=>{busy=false;commit(o.action);},450); return; }
+    selected=o; if(scene.act===1 && o.action.startsWith('wood-'))focus?.(61); feedback(`你選了${o.label}，再點光暈。`); objects.forEach(x=>x.el.setAttribute('aria-pressed',String(x===o)));
   }
   function drop(t){
     if(!selected){ feedback('先拿起物件，再點光暈。'); return; }
@@ -96,15 +99,15 @@ export function mountOperation(plane, { scene, state, changed, heat, demonstrate
   }
   function render(){
     const expected=scene.operation.steps[state.step];
-    objects.forEach(o=>{ o.el.hidden=(scene.act===1 || scene.act===4) && o.action.startsWith('wood-') && (state.collected || scene.operation.steps.slice(0,state.step)).includes(o.action); if(scene.act===4)o.el.disabled=state.step===0 ? o.action!=='demo' : o.action==='demo'; });
-    if(scene.act===1)objects.filter(o=>o.action.startsWith('wood-') && state.collected?.includes(o.action)).forEach((o,i)=>{o.el.hidden=false;o.el.disabled=true;o.el.style.left='64%';o.el.style.top=`${60-i*2}%`;o.el.classList.add('fp-stacked');});
+    objects.forEach(o=>{ o.el.hidden=false; if(scene.act===4)o.el.disabled=state.step===0 ? o.action!=='demo' : o.action==='demo'; });
+    if([1,4].includes(scene.act))objects.filter(o=>o.action.startsWith('wood-') && state.collected?.includes(o.action)).forEach(o=>{const i=Number(o.action.slice(-1))-1,[x,y]=(scene.act===1?groundPile:outsidePile)[i];o.el.disabled=true;o.el.style.left=`${x}%`;o.el.style.top=`${y}%`;if(scene.act===4)setSprite(o,'wood');o.el.classList.add('fp-stacked');});
     targets.forEach(t=>{ t.el.hidden=operationComplete(scene,state); });
     status.classList.toggle('fp-operation-complete', operationComplete(scene,state));
     feedback(operationComplete(scene,state)?'操作完成':scene.act===2?'拿起勺子試試看':scene.act===3?({pot:'看看水面',ladle:'再看看勺子',fire:'找找鍋下木柴'}[expected]):scene.act===4 && state.step===0?'先看師傅示範':scene.act===4?'把柴拖出爐口':'點風鈴，再把柴移到柴堆');
     heat(heatFor(scene,state));
   }
   render();
-  focus?.(scene.act===1 ? (state.step===0?29:47.5) : scene.act===2?61:scene.act===4?64:55);
+  focus?.(scene.act===1 ? (state.step===0?29:operationComplete(scene,state)?61:33) : scene.act===2?61:scene.act===4?49:55);
   if(scene.act===4 && state.step===0) select(objects[0]);
   return { get dragging(){return Boolean(dragging);}, dispose(){disposed=true;clearTimeout(timer);status.remove();layer.remove();} };
 }

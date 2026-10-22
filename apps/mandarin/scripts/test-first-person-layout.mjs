@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { illustrationLayout, operationObjects, scoopGesture, woodOutside } from '../src/activities/firstPersonLayout.js';
+import { illustrationLayout, operationObjects, scoopGesture, woodOutside, groundPile, outsidePile, woodAngle } from '../src/activities/firstPersonLayout.js';
 const css=await readFile(new URL('../src/styles/first-person.css',import.meta.url),'utf8');
 // The final CSS declarations define each box independently. These are visible UI
 // rectangles, never full-width reserved bands. Browser font/layout QA is separate.
@@ -23,7 +23,7 @@ for(const [width,height] of [[1366,900],[820,1180],[375,812]]) {
  const taskHeight=px('.fp-page .fp-operation-status','height');
  const blockers=[{name:'back',x:edge,y:top,w:back,h:back},{name:'act',x:mobile?60:64,y:top,w:px('.fp-page .fp-topbar>span','width'),h:back},{name:'mood',x:width-edge-gear-gap-moodWidth,y:top,w:moodWidth,h:px('.fp-mood','height')},{name:'gear',x:width-edge-gear,y:top,w:gear,h:gear}, {name:'task',x:edge,y:height-edge-taskHeight,w:Math.min(width-24,px('.fp-page .fp-operation-status','width')),h:taskHeight}, {name:'subtitle',x:Math.max(12,(width-760)/2),y:height-12-px('.fp-page .fp-cinema','max-height'),w:Math.min(760,width-24),h:px('.fp-page .fp-cinema','max-height')}];
  for(const [act,objects] of Object.entries(operationObjects)) {
-  const extra=act==='1'?[0,1,2].map(i=>['stacked',null,64,60-i*2,'pile',9,.24]):act==='2'?[[64,69],[64,54]].map(([x,y])=>['gesture',null,x,y,'scoop',18,.78]):act==='4'?[['extracted',null,58,78,'out',12,.35]]:[];
+  const extra=act==='1'?groundPile.map(([x,y])=>['stacked',null,x,y,'pile',7,.24]):act==='2'?[[64,69],[64,54]].map(([x,y])=>['gesture',null,x,y,'scoop',18,.78]):act==='4'?outsidePile.map(([x,y])=>['extracted',null,x,y,'out',8,.35]):[];
   for(const [label,,x,y,,percent,ratio] of [...objects,...extra]) {
    const initial=illustrationLayout(width,height);
    assert.ok(initial.imageWidth>=width && initial.imageHeight>=height);
@@ -38,3 +38,9 @@ for(const [width,height] of [[1366,900],[820,1180],[375,812]]) {
 }
 let g=scoopGesture({dipped:false,lifted:false},{x:64,y:70}); assert.ok(g.dipped);assert.ok(scoopGesture(g,{x:64,y:54}).lifted);assert.ok(woodOutside({x:58,y:75}));
 console.log(`PASS: cover geometry and ${checks} focused object/UI rectangle checks at three viewport sizes`);
+
+assert.equal(operationObjects[1][0][1],null,'only the painted bell is visible');
+for(const o of operationObjects[1].filter(o=>o[4].startsWith('wood-'))) { assert.ok(o[3]>=75 && o[3]<=85); assert.ok(o[2]+o[5]/2<40,'clear of door posts and people'); }
+assert.ok(groundPile.every(([x,y])=>x>57 && x<65 && y>=78),'pile on floor beside stove');
+assert.ok(operationObjects[3].find(o=>o[4]==='ladle')[2]>70,'ladle away from face');
+assert.equal(new Set([0,1,2].map(i=>woodAngle(4,i))).size,3);

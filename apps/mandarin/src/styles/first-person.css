@@ -196,7 +196,7 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 @keyframes fp-card-shake { 25% {translate:-3px;} 75% {translate:3px;} }
 .fp-object:not(:disabled) { animation:fp-object-float 3s ease-in-out infinite; }
 .fp-operation.is-dragging .fp-object { animation:none; }
-@keyframes fp-object-float { 50% {margin-top:-3px;} }
+@keyframes fp-object-float { 50% {margin-top:-3px; filter:drop-shadow(0 0 14px #ffe682) drop-shadow(0 0 4px #fff8d0) drop-shadow(0 4px 6px #2a1d1080);} }
 @media(max-width:600px) { .fp-page .fp-topbar { gap:4px; } .fp-mood { width:148px; } .fp-controls { gap:4px; } .fp-cinema { flex-wrap:wrap; } .fp-cinema p {font-size:22px;} .fp-card-row .fp-button {font-size:22px;} }
 
 .fp-page .fp-topbar>span { width:54px; }
@@ -212,3 +212,10 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 .fp-reward-drop { position:absolute; z-index:9; left:50%; top:42%; font-size:44px; pointer-events:none; animation:fp-drop-flight 1.2s ease-out forwards; }
 @keyframes fp-drop-flight { to { translate:100px -180px; opacity:0; } }
 .fp-calm .fp-reward-drop { animation:none; }
+
+/* Fix sheet 2: ground objects stay still; feedback wraps in the existing panel. */
+.fp-operation .fp-object[data-action^="wood-"] { animation:none; }
+.fp-order-number { display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:50%; background:#fff0bd; color:#382819; font-weight:bold; }
+.fp-card-feedback { white-space:normal; overflow-wrap:anywhere; }
+.fp-page .fp-operation-status { height:44px; min-height:44px; white-space:normal; overflow:auto; }
+.fp-page .fp-operation-status>span { overflow:visible; white-space:normal; }
