@@ -1,5 +1,11 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-10-22｜家中 Mac｜Codex｜互動改版 v5：待 CF 試玩確認
+- 依本單未執行任何 git 指令；僅改檔，commit／push 由 Claude 處理，未部署。
+- 本課改為四幕各一題：風鈴／撿柴、三輪舀水與表情卡、偵探觀察與推論、師傅示範後抽柴／排序／解密成語卡。保留45句全文覆蓋、密碼流程及v5進度保存。
+- 新增9張透明WebP圖層及2張乾淨／平靜底圖；PNG在repo外first-person-samples/final。只動本課資料／互動／頁面／樣式／測試與文件。
+- 驗證與Claude逐幕實玩清單見 apps/mandarin/docs/first-person-IMPL-LOG.md「互動改版」。手機、iPad、鍵盤、拖曳／點擊、物件遮擋、音效與淡入尚待瀏覽器驗收；沒有宣稱視覺或教學驗收通過。
+
 ## 2026-10-22｜家中 Mac｜Codex｜插畫版：待 CF 試玩確認
 - 依本單未執行任何git，未提交／推送／部署；Claude接手試作分支commit／push與瀏覽器實玩。
 - 第一人稱畫面改為本地七張2400×1024 WebP（每張≤300KiB），新firstPersonIllustrated controller；舊3D與motion測試保留，頁面不再載入Three.js。八站、題目、提示、進度、導引、關卡一覽、密碼流程保留；未加入原句、密碼、官方檔案、測試解鎖入口或外部素材。

@@ -1,17 +1,18 @@
+import { mountOperation } from './firstPersonInteraction.js';
 import { FIRST_PERSON_ILLUSTRATIONS } from '../data/firstPersonLesson.js';
 
 // Same controller contract as the retained Three.js scene; no renderer dependencies.
-export async function mountFirstPersonScene(host, { phase, onProject, onMode, calm = false }) {
+export async function mountFirstPersonScene(host, { phase, onProject, onMode, calm = false, operation, onOperation, onChime }) {
   const art = FIRST_PERSON_ILLUSTRATIONS[phase.act];
   const media = matchMedia('(prefers-reduced-motion: reduce)');
-  const layer = document.createElement('div'); layer.className = 'fp-illustration'; layer.setAttribute('aria-hidden', 'true');
+  const layer = document.createElement('div'); layer.className = 'fp-illustration';
   const plane = document.createElement('div'); plane.className = 'fp-illustration-plane'; layer.append(plane); host.prepend(layer);
   host.classList.add('is-illustrated');
-  let disposed = false, paused = false, frame = 0, previous = 0, elapsed = 0, pan = art.views[phase.view] ?? .5, target = pan, after = false;
+  let disposed = false, paused = false, frame = 0, previous = 0, pan = art.views[phase.view] ?? .5, target = pan;
   let width = 0, imageWidth = 0, imageHeight = 0, top = 0;
   const base = `${import.meta.env.BASE_URL}assets/first-person/115AG3H04/`;
   const images = art.images.map((file, i) => {
-    const img = new Image(); img.alt = ''; img.draggable = false; img.className = 'fp-illustration-frame'; img.style.opacity = i ? '0' : '1';
+    const img = new Image(); img.alt = ''; img.setAttribute('aria-hidden','true'); img.draggable = false; img.className = 'fp-illustration-frame'; img.style.opacity = i ? '0' : '1';
     img.onload = () => { if (!disposed) { host.classList.remove('fp-image-failed'); onMode?.('第一人稱・插畫探索'); render(); } };
     img.onerror = () => { if (!disposed && i === 0) { host.classList.add('fp-image-failed'); onMode?.('圖片暫時無法載入，仍可用下方線索讀文與闖關。'); } };
     img.src = base + file; plane.append(img); return img;
@@ -23,6 +24,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
       p.style.left = `${point[0] + (i - 2) * 1.1}%`; p.style.top = `${point[1]}%`; p.style.animationDelay = `${-i * .51}s`; effects.append(p);
     }
   }
+  const interaction = mountOperation(plane, { scene: phase, state: operation, changed: onOperation, chime: onChime, focus(x) { const iw=Math.max(host.clientHeight,host.clientWidth*1024/2400)*2400/1024; if(iw>host.clientWidth) { target=Math.max(0,Math.min(1,(iw*x/100-host.clientWidth/2)/(iw-host.clientWidth))); pan=target; render(); } }, heat(value) { effects.style.opacity = String(value); effects.style.setProperty('--heat', value); [...effects.children].forEach((el,i) => { el.style.visibility = value === 0 || (el.classList.contains('fp-art-bubble') && i % 5 >= Math.ceil(value * 5)) ? 'hidden' : ''; if(el.classList.contains('fp-art-fire')) el.style.scale=String(value); }); if(phase.act === 4) { images[0].style.opacity=String(value); images[1].style.opacity=String(1-value); images[0].style.transition=images[1].style.transition=(calm || media.matches)?'none':'opacity .8s ease'; } }, demonstrate(active) { images[0].style.opacity=active?'0':'1'; images[1].style.opacity=active?'1':'0'; } });
   // Only the next act is warmed. No global cache that keeps all four acts alive.
   const preloads = (FIRST_PERSON_ILLUSTRATIONS[phase.act + 1]?.images || []).map(file => { const img = new Image(); img.src = base + file; return img; });
   const reduced = () => calm || media.matches;
@@ -44,43 +46,33 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     }
     onProject?.(points);
   }
-  function showFrames() {
-    if (phase.act === 2) {
-      const t = elapsed / 1.2, index = Math.floor(t) % images.length, mix = t % 1;
-      images.forEach((img, i) => { const next = i === (index + 1) % images.length; img.style.opacity = String(i === index ? 1 : next ? mix : 0); img.style.zIndex = next ? '1' : '0'; });
-    } else if (phase.act === 4) {
-      const mix = after ? Math.min(1, elapsed / 1.2) : 0;
-      images[0].style.opacity = String(1 - mix); images[1].style.opacity = String(mix);
-      effects.classList.toggle('fp-art-after', after);
-    }
-  }
   function tick(now) {
     frame = 0; if (disposed) return;
     const dt = previous ? Math.min(.05, (now - previous) / 1000) : 0; previous = now;
     if (!paused && !document.hidden) {
-      if (!reduced()) elapsed += dt;
-      pan += (target - pan) * (reduced() ? 1 : Math.min(1, dt * 9));
+      if (!interaction.dragging) pan += (target - pan) * (reduced() ? 1 : Math.min(1, dt * 9));
       if (Math.abs(target - pan) < .001) pan = target;
-      if (!reduced()) showFrames(); render();
+      render();
     }
     if (!paused && !document.hidden && (!reduced() || pan !== target)) frame = requestAnimationFrame(tick);
   }
   function resume() {
     cancelAnimationFrame(frame); previous = 0;
     effects.classList.toggle('fp-art-still', reduced() || paused || document.hidden);
-    if (reduced()) { pan = target; if (phase.act === 2) images.forEach((img, i) => { img.style.opacity = i ? '0' : '1'; }); if (phase.act === 4) { elapsed = after ? 1.2 : 0; showFrames(); } }
+    if (reduced()) { pan = target; if (phase.act === 2) images.forEach((img, i) => { img.style.opacity = i ? '0' : '1'; });  }
     render(); if (!paused && !document.hidden) frame = requestAnimationFrame(tick);
   }
+  plane.addEventListener('focusin', event => { const x=parseFloat(event.target.closest('.fp-object')?.style.left); if(event.target.matches(':focus-visible') && !interaction.dragging && Number.isFinite(x) && imageWidth>width) { target=Math.max(0,Math.min(1,(imageWidth*x/100-width/2)/(imageWidth-width))); resume(); } });
   const resize = new ResizeObserver(render); resize.observe(host);
   media.addEventListener('change', resume); document.addEventListener('visibilitychange', resume);
   resume();
   return {
     setView(view) { target = art.views[view] ?? .5; resume(); },
-    look(dx) { target = Math.max(0, Math.min(1, target - dx * 2)); resume(); },
-    observeAction() { if (phase.act === 4) { after = true; elapsed = 0; } resume(); },
+    look(dx) { if(interaction.dragging) return; target = Math.max(0, Math.min(1, target - dx * 2)); resume(); },
+    observeAction() { resume(); },
     setOptions(options) { calm = Boolean(options.calm); paused = Boolean(options.paused); resume(); },
     dispose() {
-      disposed = true; cancelAnimationFrame(frame); resize.disconnect(); media.removeEventListener('change', resume); document.removeEventListener('visibilitychange', resume);
+      disposed = true; interaction.dispose(); cancelAnimationFrame(frame); resize.disconnect(); media.removeEventListener('change', resume); document.removeEventListener('visibilitychange', resume);
       [...images, ...preloads].forEach(img => { img.onload = img.onerror = null; img.removeAttribute('src'); }); layer.remove(); host.classList.remove('is-illustrated', 'fp-image-failed');
     },
   };

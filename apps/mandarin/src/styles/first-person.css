@@ -93,7 +93,7 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 .fp-scene-actions { position:absolute; z-index:7; right:20px; top:30%; display:grid; gap:12px; max-width:calc(100% - 40px); }
 .fp-return-answer { position:absolute; z-index:7; right:20px; top:30%; }
 .fp-sheet input[type=password] { width:100%; min-height:48px; font-size:22px; }
-@media(min-width:951px) { .fp-mission { max-width:calc(100% - 380px); } }
+@media(min-width:951px) { .fp-mission { max-width:calc(100% - 380px); left:auto; right:24px; } }
 @media(max-width:600px) { .fp-scene-actions { top:29%; right:14px; max-width:calc(100% - 28px); } .fp-scene-actions .fp-button { font-size:20px; } }
 
 /* The picture band reserves clear space above/below for the unchanged reading tools. */
@@ -114,3 +114,30 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 @keyframes fp-art-steam { from { opacity:0; transform:translateY(0); } 35% { opacity:.55; } to { opacity:0; transform:translateY(-35px); } }
 @keyframes fp-art-fire { from { opacity:.35; } to { opacity:.65; } }
 @media(prefers-reduced-motion:reduce) { .fp-illustration-effects i { animation:none; visibility:hidden; } }
+/* 操作層與底圖共用來源百分比；不受環顧偏移影響。 */
+.fp-operation { position:absolute; inset:0; z-index:3; pointer-events:none; }
+.fp-object { position:absolute; width:clamp(54px,8vw,120px); min-width:44px; min-height:54px; padding:4px; border:0; border-radius:16px; background:transparent; filter:drop-shadow(0 0 6px #fff3b8) drop-shadow(0 4px 6px #2a1d1080); transform:translate(-50%,-50%); pointer-events:auto; touch-action:none; cursor:grab; }
+.fp-object img { width:100%; max-height:100px; object-fit:contain; pointer-events:none; }
+.fp-object:focus-visible,.fp-object[aria-pressed=true] { outline:5px solid #ffe682; }
+.fp-drop-target { width:auto; max-width:170px; padding:12px; font-size:22px; background:#fff8e9eb; border:3px dashed #94713c; }
+.fp-operation-status { position:fixed; bottom:150px; left:50%; transform:translateX(-50%); width:min(560px,80vw); background:#fff8e9ed; color:#463523; padding:8px 14px; border-radius:12px; font-size:22px; text-align:center; }
+.fp-emotion { width:120px; height:120px; object-fit:contain; }
+.fp-swing { animation:fp-swing .7s ease-in-out; transform-origin:top; }
+@keyframes fp-swing { 25% { rotate:14deg; } 75% { rotate:-14deg; } }
+.fp-discovery { filter:drop-shadow(0 0 12px #ffe58d); }
+.fp-operation.is-dragging .fp-object { cursor:grabbing; }
+.fp-page .fp-caption,.fp-page .fp-clue-dock { display:none; }
+.fp-page .fp-bottom { bottom:72px; }
+.fp-page .fp-toolbar { top:auto; bottom:12px; flex-wrap:wrap; justify-content:center; }
+.fp-page .fp-mission { max-width:calc(100% - 48px); }
+.fp-page .fp-view-status { display:none; }
+@media(max-width:600px) { .fp-operation-status { bottom:185px; font-size:18px; } .fp-page .fp-bottom { bottom:100px; } .fp-page .fp-toolbar { left:8px; right:8px; } .fp-object { width:64px; } .fp-drop-target { width:90px; font-size:18px; } }
+.fp-calm .fp-swing { animation:none; outline:4px solid #ffe58d; }
+@media(prefers-reduced-motion:reduce) { .fp-swing { animation:none; outline:4px solid #ffe58d; } }
+.fp-operation-status { position:absolute; z-index:5; pointer-events:none; }
+.fp-page .fp-illustration { pointer-events:auto; }
+.fp-page .fp-world { touch-action:none; }
+.fp-operation-complete { border:3px solid #68aeb7; box-shadow:0 0 20px #d7fbff; }
+.fp-operation-status button { pointer-events:auto; }
+.fp-image-failed .fp-illustration { visibility:visible; background:transparent; }
+.fp-image-failed .fp-illustration-frame { visibility:hidden; }

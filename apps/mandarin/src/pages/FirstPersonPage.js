@@ -1,3 +1,4 @@
+import { operationComplete } from '../activities/firstPersonInteraction.js';
 import { h, clear } from '../utils/dom.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 import { getReading, unlockWithPassword, cryptoAvailable } from '../utils/classroomKey.js';
@@ -11,7 +12,7 @@ import '../styles/first-person.css';
 const button = (text, action, attrs = {}) => h('button', { type: 'button', class: 'fp-button', onclick: action, ...attrs }, text);
 const say = (text, tag = 'p', attrs = {}) => h('div', { class: 'fp-spoken' }, [h(tag, attrs, text), SpeakButton({ text })]);
 const PREF_KEY = 'mandarin:explore:settings';
-const emptyState = () => ({ found: [], done: false, hints: 0, attempts: 0, questionIndex: 0, hintUses: 0 });
+const emptyState = () => ({ operation: { step: 0 }, found: [], done: false, hints: 0, attempts: 0, questionIndex: 0, hintUses: 0 });
 
 export function FirstPersonPage(lesson) {
   const config = getFirstPersonLesson(lesson.lesson_id);
@@ -46,6 +47,7 @@ export function FirstPersonPage(lesson) {
       ambientGain.gain.setTargetAtTime(scene?.id === 'root' ? .008 : scene?.id === 'welcome' ? .005 : .022, audio.currentTime, .5);
     } catch { /* 音訊不影響學習 */ }
   }
+  function chime() { if (!prefs.sound) return; try { const AC=window.AudioContext || window.webkitAudioContext; audio ||= new AC(); audio.resume().catch(()=>{}); const osc=audio.createOscillator(), gain=audio.createGain(); osc.frequency.value=1320; gain.gain.setValueAtTime(.035,audio.currentTime); gain.gain.exponentialRampToValueAtTime(.001,audio.currentTime+.7); osc.connect(gain); gain.connect(audio.destination); osc.start(); osc.stop(audio.currentTime+.7); } catch {} }
   function updateMotion() { root.classList.toggle('fp-calm', calm()); world?.setOptions?.({ calm: calm(), paused: Boolean(modal?.open) }); sound(); }
   function destroyWorld() { generation++; world?.dispose(); world = null; }
   function close() {
@@ -90,7 +92,7 @@ export function FirstPersonPage(lesson) {
     for (const s of splitSentences(reading.paras)) { if (!paragraphs.has(s.paraIndex + 1)) paragraphs.set(s.paraIndex + 1, []); paragraphs.get(s.paraIndex + 1).push(s.text); }
     sources = new Map();
     try {
-      for (const sc of config.scenes) for (const clue of [...sc.clues, ...sc.questions.map(q => ({ id: `question-${q.id}`, refs: q.refs }))]) {
+      for (const sc of config.scenes) for (const clue of [...sc.clues, ...sc.questions.map(q => ({ id: `question-${q.id}`, refs: q.refs })), ...(sc.act === 4 ? [{ id: 'idiom', refs: config.idiomRefs }] : [])]) {
         const refs = clueRefs(clue, sc, lesson); if (!refs?.length) throw new Error('missing');
         const blocks = [];
         for (const ref of refs) {
@@ -119,7 +121,7 @@ export function FirstPersonPage(lesson) {
     const top = h('header', { class: 'fp-topbar' }, [h('a', { href: `#/lesson/${lesson.lesson_id}`, class: 'fp-home', 'aria-label': '離開探索，回到本課' }, '←'), h('div', {}, [h('p', { class: 'fp-kicker' }, `第${scene.act}幕・${scene.stationType === "story" ? "劇情站" : "關卡"}`), h('h1', {}, scene.title)]), button(`${progress.current + 1} / ${config.scenes.length}`, showScenes, { class: 'fp-stage-number', 'aria-label': `場景 ${progress.current + 1}，已完成 ${completed} 個。查看進度` })]);
     const mission = h('div', { class: 'fp-mission' }, [h('span', { class: 'fp-mission-dot', 'aria-hidden': 'true' }), h('p', { id: 'fp-goal' }, scene.experience.reflection), SpeakButton({ text: `${scene.goal}${scene.experience.reflection}` })]);
     const markers = h('div', { class: 'fp-markers' }), markerMap = {};
-    scene.clues.forEach((clue, i) => {
+    [].forEach((clue, i) => {
       const mark = button(String(i + 1), () => observe(clue), { class: 'fp-marker', 'data-hotspot': clue.id, 'aria-label': `觀察${clue.label}`, title: clue.label });
       markerMap[clue.object] = mark; markers.append(mark);
     });
@@ -129,13 +131,14 @@ export function FirstPersonPage(lesson) {
     const caption = h('div', { class: 'fp-spoken fp-caption' }, [captionText, SpeakButton({ text: () => captionText.textContent })]);
     const viewButtons = h('div', { class: 'fp-view-buttons' }, [button('↶', () => { currentView = scene.view; world?.setView(currentView); }, { 'aria-label': '看起始位置' }), button('↷', () => { currentView = scene.alternateView; world?.setView(currentView); }, { 'aria-label': scene.viewLabel })]);
     viewButtons.append(button('側', () => world?.setView('side'), { 'aria-label': '側面觀察握勺與舀水動作' }));
-    const readingButton = button('讀課文', () => (canAnswer(scene, state) ? finishClues() : showReading()), { class: 'fp-button fp-primary', 'data-read': 'true' });
-    const actionButton = button(scene.experience.action, playObservation, { class: 'fp-button fp-observe', 'data-observe': 'true' });
+    const readingButton = button('解鎖原句', () => (canAnswer(scene, state) ? finishClues() : showReading()), { class: 'fp-button fp-primary', 'data-read': 'true' });
+    const actionButton = button('操作說明', () => { viewStatus.textContent = scene.goal; }, { class: 'fp-button fp-observe', 'data-observe': 'true' });
     const clueButtons = h('div', { class: 'fp-clue-dock' });
-    scene.clues.forEach((clue, i) => clueButtons.append(button(`${i + 1} ${clue.label}`, () => observe(clue), { 'data-clue': clue.id, class: 'fp-clue-chip', 'aria-pressed': String(state.found.includes(clue.id)) })));
+    [].forEach((clue, i) => clueButtons.append(button(`${i + 1} ${clue.label}`, () => observe(clue), { 'data-clue': clue.id, class: 'fp-clue-chip', 'aria-pressed': String(state.found.includes(clue.id)) })));
     const bottom = h('div', { class: 'fp-bottom' }, [caption, h('div', { class: 'fp-action-row' }, [actionButton, readingButton]), clueButtons]);
-    const toolbar = h('nav', { class: 'fp-toolbar', 'aria-label': '閱讀工具' }, [button('提示', showHints), button('重玩', () => { replay = emptyState(); enterScene(); }), button('設定', showSettings), button('關卡一覽', showScenes)]);
+    const toolbar = h('nav', { class: 'fp-toolbar', 'aria-label': '閱讀工具' }, [button('重看課文', () => { if (state.found.length) showReading(); else { const prior = config.scenes[progress.current - 1]; if (prior) { const content = h('div', { class: 'fp-sheet-content' }); for (const block of sources.get(`${prior.id}:paragraph`) || []) content.append(say(block.text, 'blockquote', { class: 'fp-excerpt' })); sheet('重看已解鎖課文', content); } else showReading(); } }), button('提示', showHints), button('重玩', () => { replay = emptyState(); enterScene(); }), button('設定', showSettings), button('關卡一覽', showScenes)]);
     rootBody.append(stage, top, mission, viewStatus, viewButtons, bottom, toolbar);
+    readingButton.disabled = !operationComplete(scene, state.operation);
     syncPrimary();
     const mode = h('span', { class: 'fp-mode' }, '載入場景…'); rootBody.append(mode);
     let pointer;
@@ -144,7 +147,7 @@ export function FirstPersonPage(lesson) {
     stage.addEventListener('pointerup', () => { pointer = null; }); stage.addEventListener('pointercancel', () => { pointer = null; });
     stage.addEventListener('keydown', (e) => { if (e.target !== stage) return; if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) { e.preventDefault(); world?.look(e.key === 'ArrowLeft' ? .08 : e.key === 'ArrowRight' ? -.08 : 0, e.key === 'ArrowUp' ? .05 : e.key === 'ArrowDown' ? -.05 : 0); } });
     const version = generation;
-    mountFirstPersonScene(stage, { phase: { ...scene, id: scene.id.replace(/^story-/, "") }, calm: calm(), onMode: (label) => { if (version === generation) { mode.textContent = label; mode.hidden = label.startsWith('第一人稱'); } }, onProject: (points) => {
+    mountFirstPersonScene(stage, { phase: { ...scene, id: scene.id.replace(/^story-/, "") }, calm: calm(), operation: state.operation, onChime: chime, onOperation: () => { if (!replay) save(); readingButton.disabled = !operationComplete(scene, state.operation); if (readingButton.disabled) return; captionText.textContent = scene.act === 2 ? '水還在滾……好像沒有用？' : '完成了！你可以解鎖原句。'; if ([2,3].includes(scene.act)) { if(scene.act===3) world?.setView('fire'); clearTimeout(observationTimer); observationTimer=setTimeout(() => { if(!disposed && scene.act===progress.current+1) showQuestion(); }, 1200); } else showReading(); }, onMode: (label) => { if (version === generation) { mode.textContent = label; mode.hidden = label.startsWith('第一人稱'); } }, onProject: (points) => {
       for (const [object, marker] of Object.entries(markerMap)) {
         const p = points?.[object]; marker.hidden = false;
         const off = p && !p.visible;
@@ -197,6 +200,8 @@ export function FirstPersonPage(lesson) {
     primary.textContent = scene.stationType === 'story' ? '前往關卡 →' : !state.done ? '開始挑戰 →' : last ? '看回顧' : '前往下一站 →';
   }
   function showReading() {
+    if ([2,3].includes(scene.act) && !state.done && operationComplete(scene, state.operation)) { showQuestion(); return; }
+    if (!operationComplete(scene, state.operation)) { root.querySelector('.fp-view-status').textContent = '先試試目前的操作，就能解鎖這一段。'; return; }
     readingVisible = true;
     const clue = lastClue || scene.clues.find((c) => !state.found.includes(c.id)) || scene.clues[0];
     lastClue = clue;
@@ -211,7 +216,7 @@ export function FirstPersonPage(lesson) {
     const next = scene.clues.find((c) => !state.found.includes(c.id));
     if (next) content.append(button(`回到場景，觀察${next.label}`, () => { modal.close(); lastClue = next; currentView = scene.alternateView; world?.setView(currentView); root.querySelector('[data-read]').textContent = `讀${next.label}的原文`; }, { class: 'fp-button fp-primary' }));
     else if (scene.stationType === 'story') content.append(button('已讀本段，前往關卡 →', () => { state.done = true; if (!replay) save(); advance(); }, { class: 'fp-button fp-primary' }));
-    else content.append(button('想一想他的經歷 →', showQuestion, { class: 'fp-button fp-primary', 'data-challenge': 'true' }));
+    else content.append(button(state.done ? '查看完成回顧' : '想一想他的經歷 →', showQuestion, { class: 'fp-button fp-primary', 'data-challenge': 'true' }));
     sheet(clue.label, content);
   }
 
@@ -223,10 +228,10 @@ export function FirstPersonPage(lesson) {
     if (!replay || state.done) save();
     if (result.correct && !state.done) {
       sheet('找到依據了', h('div', { class: 'fp-sheet-content' }, [say(feedback), button('下一題', () => { feedback = ''; showQuestion(); }, { class: 'fp-button fp-primary' })]));
-    } else showQuestion();
+    } else if ([2,3].includes(scene.act) && result.correct) showReading(); else showQuestion();
   }
   function showQuestion() {
-    if (!canAnswer(scene, state)) { showReading(); return; }
+    if (!canAnswer(scene, state) && !([2,3].includes(scene.act) && operationComplete(scene, state.operation))) { showReading(); return; }
     const q = scene.questions[Math.min(state.questionIndex || 0, scene.questions.length - 1)];
     const content = h('div', { class: 'fp-sheet-content' });
     content.append(h('p', { class: 'fp-kicker' }, `${q.kind}・PIRLS ${q.pirls}`), say(q.stem, 'h3', { id: 'fp-question', tabindex: '-1' }));
@@ -247,6 +252,7 @@ export function FirstPersonPage(lesson) {
             selected.push(index); pick.disabled = true;
             status.textContent = selected.map(i => q.options[i]).join(' → ');
           }, { 'data-answer': index });
+          if (q.type === 'emotion') pick.prepend(h('img', { class: 'fp-emotion', src: `${import.meta.env.BASE_URL}assets/first-person/115AG3H04/sprites/${q.images[index]}.webp`, alt: '' }));
           if (q.type === 'picture') pick.prepend(h('span', { class: 'fp-picture', 'aria-hidden': 'true', html: picture(q.images[index]) }));
           choices.append(h('div', { class: 'fp-answer-row' }, [pick, SpeakButton({ text: option })]));
         });
@@ -262,6 +268,8 @@ export function FirstPersonPage(lesson) {
       content.append(say(`收集到 ${reward(state)} 顆水滴 💧。你可以隨時重玩。`));
       if (progress.current < config.scenes.length - 1) content.append(button('前往下一站 →', advance, { class: 'fp-button fp-primary', 'data-next': 'true' }));
       else {
+        content.append(say('釜底抽薪', 'h3'));
+        for (const block of sources.get(`${scene.id}:idiom`) || []) content.append(say(block.text, 'blockquote', { class: 'fp-excerpt' }));
         config.review.forEach(([title, text]) => content.append(say(title, 'h3'), say(text)));
         content.append(button('回關卡一覽重玩', showScenes), h('a', { class: 'fp-button', href: `#/lesson/${lesson.lesson_id}` }, '回到本課'));
       }
@@ -297,7 +305,7 @@ export function FirstPersonPage(lesson) {
       input.addEventListener('change', () => { prefs[key] = input.checked; savePrefs(); updateMotion(); });
       content.append(h('label', { class: 'fp-setting' }, [input, label]));
     }
-    content.append(say('減少動畫會保留靜態線索；也會遵守系統的減少動態設定。', 'p', { class: 'fp-small' }), say('人物、擺設和聲音為閱讀示意。玩家是課文探索者；文字明說的心情才當作事實。', 'p', { class: 'fp-small' }), h('details', {}, [h('summary', {}, '教師資訊與教材依據'), h('p', { class: 'fp-small' }, `${config.source.text}；${config.source.questions}；${config.source.strategy}。核對：${config.source.checked}。`), h('p', { class: 'fp-small' }, '不計時、不扣分；不記學生姓名，不納入原有成績。場景不要求實際操作火或熱水。')]), button('回到食堂', () => modal.close(), { class: 'fp-button fp-primary' }));
+    content.append(say('減少動畫會保留靜態線索；也會遵守系統的減少動態設定。', 'p', { class: 'fp-small' }), say('人物、擺設和聲音為閱讀示意。你是跟著康康一起試的小幫手；文字明說的心情才當作事實。', 'p', { class: 'fp-small' }), h('details', {}, [h('summary', {}, '教師資訊與教材依據'), h('p', { class: 'fp-small' }, `${config.source.text}；${config.source.questions}；${config.source.strategy}。核對：${config.source.checked}。`), h('p', { class: 'fp-small' }, '不計時、不扣分；不記學生姓名，不納入原有成績。場景不要求實際操作火或熱水。')]), button('回到食堂', () => modal.close(), { class: 'fp-button fp-primary' }));
     sheet('畫面與聲音', content);
   }
   start(); return root;

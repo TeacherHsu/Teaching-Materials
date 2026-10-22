@@ -1,16 +1,19 @@
 import assert from 'node:assert/strict';
+import { operate } from '../src/activities/firstPersonInteraction.js';
 import { readFileSync } from 'node:fs';
 import { FIRST_PERSON_LESSON as config, getFirstPersonLesson, clueRefs } from '../src/data/firstPersonLesson.js';
 import { freshProgress, restoreProgress, canAnswer, answerScene, readProgress, saveProgress } from '../src/activities/firstPersonCore.js';
 
 const lesson = JSON.parse(readFileSync(new URL('../public/data/115AG3H/lesson04.json', import.meta.url), 'utf8'));
 assert.equal(getFirstPersonLesson('115AG3H01'), null, '其他課次不開放試作');
-assert.equal(config.scenes.length, 8);
+assert.equal(config.scenes.length, 4);
+assert.equal(config.version, 5);
 const covered = new Set();
 const distribution = [0, 0, 0];
 const state = freshProgress(config);
 for (const [index, scene] of config.scenes.entries()) {
   const current = state.scenes[index];
+  for (const action of scene.operation.steps) assert.ok(operate(scene, current.operation, action));
   for (const clue of scene.clues) {
     for (const r of clueRefs(clue, scene, lesson)) {
       assert.equal(r.sha.length, r.sentences.length);
@@ -20,7 +23,7 @@ for (const [index, scene] of config.scenes.entries()) {
   }
   assert.ok(canAnswer(scene, current));
   if (scene.stationType === 'story') { assert.equal(scene.questions.length, 0); current.done = true; continue; }
-  assert.ok(scene.questions.length >= 2 && scene.questions.length <= 3);
+  assert.ok(scene.questions.length === 1);
   for (const q of scene.questions) {
     assert.ok(['擷取', '推論', '詮釋', '統整'].includes(q.pirls));
     assert.equal(q.why.length, q.options.length);
@@ -41,10 +44,10 @@ for (const [index, scene] of config.scenes.entries()) {
   assert.equal(answerScene(scene, current, 0), null);
 }
 assert.ok(state.scenes.every(s => s.done));
-assert.ok(Math.max(...distribution) - Math.min(...distribution) <= 1, '選擇正解分布應平均');
+assert.equal(covered.size, 45);
 // 每段全文站為完整連續索引；正式原文的句數另以本機密碼測試核對。
 for (let para = 1; para <= 4; para++) {
- const r = config.scenes.find(s => s.stationType === 'story' && s.act === para).clues[0].refs[0];
+ const r = config.scenes.find(s => s.act === para).clues[0].refs[0];
  assert.deepEqual(r.sentences, Array.from({ length: r.sentences.length }, (_, i) => i));
  assert.ok(r.sentences.every(n => covered.has(`${para}:${n}`)));
 }
@@ -77,7 +80,7 @@ else {
     hashes.set(`${para}:${n}`, createHash('sha256').update(u.text).digest('hex').slice(0, 8)); counts.set(para, n + 1);
   }
   for (const s of config.scenes) {
-    const refs = [...s.clues.flatMap(c => clueRefs(c, s, lesson)), ...s.questions.flatMap(q => q.refs)];
+    const refs = [...s.clues.flatMap(c => clueRefs(c, s, lesson)), ...s.questions.flatMap(q => q.refs), ...(s.act === 4 ? config.idiomRefs : [])];
     for (const r of refs) r.sentences.forEach((n, i) => assert.equal(r.sha[i], hashes.get(`${r.para}:${n}`), '索引或雜湊與正式教材不符'));
   }
   assert.equal(covered.size, units.length);
