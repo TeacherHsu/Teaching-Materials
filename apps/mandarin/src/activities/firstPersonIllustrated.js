@@ -4,13 +4,13 @@ import { mountOperation } from './firstPersonInteraction.js';
 import { FIRST_PERSON_ILLUSTRATIONS } from '../data/firstPersonLesson.js';
 
 // Same controller contract as the retained Three.js scene; no renderer dependencies.
-export async function mountFirstPersonScene(host, { phase, onProject, onMode, calm = false, operation, onOperation, onChime }) {
+export async function mountFirstPersonScene(host, { phase, onProject, onMode, calm = false, operation, onOperation, onChime, onDemoSeen }) {
   const art = FIRST_PERSON_ILLUSTRATIONS[phase.act];
   const media = matchMedia('(prefers-reduced-motion: reduce)');
   const layer = document.createElement('div'); layer.className = 'fp-illustration';
   const plane = document.createElement('div'); plane.className = 'fp-illustration-plane'; layer.append(plane); host.prepend(layer);
   host.classList.add('is-illustrated');
-  let disposed = false, paused = false, frame = 0, previous = 0, pan = art.views[phase.view] ?? .5, target = pan;
+  let disposed = false, paused = true, frame = 0, previous = 0, pan = art.views[phase.view] ?? .5, target = pan;
   let width = 0, imageWidth = 0, imageHeight = 0, top = 0;
   const base = `${import.meta.env.BASE_URL}assets/first-person/115AG3H04/`;
   const images = art.images.map((file, i) => {
@@ -26,11 +26,11 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
       p.style.left = `${point[0] + (kind === 'fire' ? 0 : i - 2) * 1.1}%`; p.style.top = `${point[1]}%`; p.style.animationDelay = `${-i * .51}s`; effects.append(p);
     }
   }
-  const wind = phase.act === 1 ? mountChimeWind(plane, base, () => calm || media.matches) : null;
-  const interaction = mountOperation(plane, { scene: phase, state: operation, changed: onOperation, chime() { wind?.blow(); onChime?.(); }, focus(x) { if(phase.act===4 && x===49)x=host.clientWidth/host.clientHeight<1.4?30:52; const iw=illustrationLayout(host.clientWidth,host.clientHeight).imageWidth; if(iw>host.clientWidth) { target=Math.max(0,Math.min(1,(iw*x/100-host.clientWidth/2)/(iw-host.clientWidth))); pan=target; render(); } }, heat(value) { effects.style.opacity = '1'; effects.style.setProperty('--heat', value); [...effects.children].forEach((el,i) => { const fire=el.classList.contains('fp-art-fire'); el.style.visibility = !fire && (value === 0 || (el.classList.contains('fp-art-bubble') && i % 5 >= Math.ceil(value * 5))) ? 'hidden' : ''; el.style.opacity=String(fire?Math.max(1/3,value):value); if(fire) el.style.scale=String(Math.max(1/3,value)); }); if(phase.act === 4) { images[0].style.opacity=String(value); images[1].style.opacity=String(1-value); images[0].style.transition=images[1].style.transition=(calm || media.matches)?'none':'opacity .8s ease'; } }, demonstrate(active) { images[0].style.opacity=active?'0':'1'; images[1].style.opacity=active?'1':'0'; } });
+  const wind = phase.act === 1 ? mountChimeWind(plane, base, () => calm) : null;
+  const interaction = mountOperation(plane, { scene: phase, state: operation, changed: onOperation, saveDemo: onDemoSeen, reduced: () => calm, chime() { wind?.blow(); onChime?.(); }, focus(x) { if(phase.act===4 && x===49)x=host.clientWidth/host.clientHeight<1.4?30:52; const iw=illustrationLayout(host.clientWidth,host.clientHeight).imageWidth; if(iw>host.clientWidth) { target=Math.max(0,Math.min(1,(iw*x/100-host.clientWidth/2)/(iw-host.clientWidth))); pan=target; render(); } }, heat(value) { effects.style.opacity = '1'; effects.style.setProperty('--heat', value); [...effects.children].forEach((el,i) => { const fire=el.classList.contains('fp-art-fire'); el.style.visibility = !fire && (value === 0 || (el.classList.contains('fp-art-bubble') && i % 5 >= Math.ceil(value * 5))) ? 'hidden' : ''; el.style.opacity=String(fire?Math.max(1/3,value):value); if(fire) el.style.scale=String(Math.max(1/3,value)); }); if(phase.act === 4) { images[0].style.opacity=String(value); images[1].style.opacity=String(1-value); images[0].style.transition=images[1].style.transition=(calm)?'none':'opacity .8s ease'; } }, demonstrate(active) { images[0].style.opacity=active?'0':'1'; images[1].style.opacity=active?'1':'0'; } });
   // Only the next act is warmed. No global cache that keeps all four acts alive.
   const preloads = (FIRST_PERSON_ILLUSTRATIONS[phase.act + 1]?.images || []).map(file => { const img = new Image(); img.src = base + file; return img; });
-  const reduced = () => calm || media.matches;
+  const reduced = () => calm;
   function render() {
     if (disposed) return;
     width = host.clientWidth;
@@ -60,6 +60,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     cancelAnimationFrame(frame); previous = 0;
     if (document.hidden) wind?.stop();
     else wind?.updateMotion();
+    interaction.setPaused(paused || document.hidden);
     effects.classList.toggle('fp-art-still', reduced() || paused || document.hidden);
     if (reduced()) { pan = target; if (phase.act === 2) images.forEach((img, i) => { img.style.opacity = i ? '0' : '1'; });  }
     render(); if (!paused && !document.hidden) frame = requestAnimationFrame(tick);
@@ -69,6 +70,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   media.addEventListener('change', resume); document.addEventListener('visibilitychange', resume);
   resume();
   return {
+    showWoodDemo() { return interaction.showWoodDemo(true); },
     setView(view) { target = art.views[view] ?? .5; resume(); },
     look(dx) { if(interaction.dragging) return; target = Math.max(0, Math.min(1, target - dx * 2)); resume(); },
     observeAction() { resume(); },

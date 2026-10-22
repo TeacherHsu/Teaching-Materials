@@ -1,3 +1,4 @@
+import { animationReduced } from '../src/activities/firstPersonPreferences.js';
 import assert from 'node:assert/strict';
 import {stat,readFile} from 'node:fs/promises';
 import { FIRST_PERSON_LESSON as config } from '../src/data/firstPersonLesson.js';
@@ -34,3 +35,10 @@ for(const scene of config.scenes.filter(s=>[1,4].includes(s.act))){
  assert.ok(operate(scene,state,'wood-1')); assert.ok(operate(scene,state,'wood-2'));
  assert.ok(operationComplete(scene,state)); assert.deepEqual(operationState(scene,state),state);
 }
+
+for(const system of [true,false]) {
+ assert.equal(animationReduced('on',system),false);
+ assert.equal(animationReduced('off',system),true);
+ assert.equal(animationReduced('system',system),system);
+}
+console.log('PASS: explicit animation preference overrides both system motion states');

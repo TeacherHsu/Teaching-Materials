@@ -1,3 +1,4 @@
+import { animationReduced } from '../activities/firstPersonPreferences.js';
 import { playChime } from '../activities/firstPersonChime.js';
 import { moodFor, subtitlePlan, subtitlesForStep, createCardOrder } from '../activities/firstPersonPresentation.js';
 import { operationComplete } from '../activities/firstPersonInteraction.js';
@@ -23,15 +24,16 @@ export function FirstPersonPage(lesson) {
   document.body.classList.add('fp-immersive');
   let progress;
   try { progress = readProgress(config, localStorage); } catch { progress = readProgress(config, null); }
-  let prefs = { sound: false, calm: false };
-  try { const s = JSON.parse(localStorage.getItem(PREF_KEY)); prefs = { sound: s?.sound === true, calm: s?.calm === true }; } catch { /* 預設 */ }
+  let prefs = { sound: false, animation: 'system' };
+  try { const s = JSON.parse(localStorage.getItem(PREF_KEY)); prefs = { sound: s?.sound === true, animation: ['system','on','off'].includes(s?.animation) ? s.animation : s?.calm ? 'off' : 'system' }; } catch { /* 預設 */ }
   let world, generation = 0, disposed = false, replay = null, lastClue = null, feedback = '', wrong = false, readingVisible = false;
   let subtitle = null, subtitleTimer, subtitleAfter, subtitleQueue = [];
+  let chimeUntil = 0, chimeTimer;
   let stopChime, saved = true, audio, ambientGain, ambientSource, modal, observationTimer;
   let scene, state, sources, currentView, idleTimer, teacherAccess = false, actionQuestion = null;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   const rootBody = h('div', { class: 'fp-shell' }); root.append(rootBody);
-  const calm = () => prefs.calm || reduce.matches;
+  const calm = () => animationReduced(prefs.animation, reduce.matches);
   function save() { try { saved = saveProgress(config, progress, localStorage); } catch { saved = false; } }
   function savePrefs() { try { localStorage.setItem(PREF_KEY, JSON.stringify(prefs)); } catch { /* 這次仍生效 */ } }
   function sound() {
@@ -50,15 +52,15 @@ export function FirstPersonPage(lesson) {
       ambientGain.gain.setTargetAtTime(scene?.id === 'root' ? .008 : scene?.id === 'welcome' ? .005 : .022, audio.currentTime, .5);
     } catch { /* 音訊不影響學習 */ }
   }
-  function chime() { stopChime?.(); stopChime = playChime(prefs.sound, () => {
+  function chime() { chimeUntil=Date.now()+2500;clearTimeout(chimeTimer);chimeTimer=setTimeout(updateMotion,2500); stopChime?.(); stopChime = playChime(prefs.sound, () => {
     const AC = window.AudioContext || window.webkitAudioContext;
     if (!AC) return null;
     return audio ||= new AC();
   }); }
-  function updateMotion() { root.classList.toggle('fp-calm', calm()); world?.setOptions?.({ calm: calm(), paused: Boolean(modal?.open || subtitle || root.querySelector('.fp-question-cards')) }); sound(); }
+  function updateMotion() { root.classList.toggle('fp-calm', calm()); root.classList.toggle('fp-motion-on', prefs.animation === 'on'); world?.setOptions?.({ calm: calm(), paused: Boolean(Date.now()<chimeUntil || modal?.open || subtitle || root.querySelector('.fp-question-cards')) }); sound(); }
   function destroyWorld() { generation++; world?.dispose(); world = null; }
   function close() {
-    if (disposed) return; disposed = true; clearTimeout(subtitleTimer); clearTimeout(observationTimer); clearTimeout(idleTimer); destroyWorld(); cancelSpeaking(); audio?.close().catch(() => {});
+    if (disposed) return; disposed = true; clearTimeout(chimeTimer); clearTimeout(subtitleTimer); clearTimeout(observationTimer); clearTimeout(idleTimer); destroyWorld(); cancelSpeaking(); audio?.close().catch(() => {});
     modal?.close(); modal?.remove(); document.body.classList.remove('fp-immersive');
     reduce.removeEventListener('change', updateMotion); document.removeEventListener('visibilitychange', sound);
     window.removeEventListener('hashchange', close); window.removeEventListener('pagehide', close);
@@ -146,7 +148,7 @@ export function FirstPersonPage(lesson) {
     stage.addEventListener('pointerup', () => { pointer = null; }); stage.addEventListener('pointercancel', () => { pointer = null; });
     stage.addEventListener('keydown', (e) => { if (e.target !== stage) return; if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) { e.preventDefault(); world?.look(e.key === 'ArrowLeft' ? .08 : e.key === 'ArrowRight' ? -.08 : 0, e.key === 'ArrowUp' ? .05 : e.key === 'ArrowDown' ? -.05 : 0); } });
     const version = generation;
-    mountFirstPersonScene(stage, { phase: { ...scene, id: scene.id.replace(/^story-/, "") }, calm: calm(), operation: state.operation, onChime: chime, onOperation: () => { if (!replay) save(); updateMood(); showOperationSubtitles(); }, onMode: (label) => { if (version === generation) { mode.textContent = label; mode.hidden = label.startsWith('第一人稱'); } } }).then((controller) => { if (disposed || version !== generation) controller.dispose(); else { world = controller; updateMotion(); } });
+    mountFirstPersonScene(stage, { phase: { ...scene, id: scene.id.replace(/^story-/, "") }, calm: calm(), operation: state.operation, onChime: chime, onDemoSeen: () => { if(!replay)save(); }, onOperation: () => { if (!replay) save(); updateMood(); showOperationSubtitles(); }, onMode: (label) => { if (version === generation) { mode.textContent = label; mode.hidden = label.startsWith('第一人稱'); } } }).then((controller) => { if (disposed || version !== generation) controller.dispose(); else { world = controller; updateMotion(); } });
     if(operationComplete(scene,state.operation)) showReading();
     else if(state.operation.step) showOperationSubtitles();
     updateMotion(); sound();
@@ -244,6 +246,7 @@ export function FirstPersonPage(lesson) {
   }
 
   function showHints() {
+    if(scene.act===1 && state.operation.step>0 && !operationComplete(scene,state.operation)){modal?.close();world?.showWoodDemo();return;}
     state.hints = Math.min(3, state.hints + 1); state.hintUses++; if (!replay) save();
     sheet('慢慢觀察，不用著急', h('div', { class: 'fp-sheet-content' }, [say(scene.goal), say((scene.questions[state.questionIndex || 0]?.hints || ['先觀察動作。', '點定點按鈕找線索。', '讀完本段原句再前進。'])[state.hints - 1], 'p', { class: 'fp-hint' }), button('回到場景', () => modal.close(), { class: 'fp-button fp-primary' })]));
   }
@@ -262,12 +265,16 @@ export function FirstPersonPage(lesson) {
   function showSettings() {
     const content = h('div', { class: 'fp-sheet-content' });
     content.append(button('重看原句', reviewReading), button('提示', showHints), button('關卡一覽', showScenes), button('重玩', () => { modal.close(); replay=emptyState(); enterScene(); }));
-    for (const [key, label] of [['sound', '環境音效'], ['calm', '減少動畫']]) {
+    for (const [key, label] of [['sound', '環境音效']]) {
       const input = h('input', { type: 'checkbox', checked: prefs[key] });
       input.addEventListener('change', () => { prefs[key] = input.checked; savePrefs(); updateMotion(); });
       content.append(h('label', { class: 'fp-setting' }, [input, label]));
     }
-    content.append(say('減少動畫會保留靜態線索；也會遵守系統的減少動態設定。', 'p', { class: 'fp-small' }), say('人物、擺設和聲音為閱讀示意。你是跟著康康一起試的小幫手；文字明說的心情才當作事實。', 'p', { class: 'fp-small' }), h('details', {}, [h('summary', {}, '教師資訊與教材依據'), h('p', { class: 'fp-small' }, `${config.source.text}；${config.source.questions}；${config.source.strategy}。核對：${config.source.checked}。`), h('p', { class: 'fp-small' }, '不計時、不扣分；不記學生姓名，不納入原有成績。場景不要求實際操作火或熱水。')]), button('回到食堂', () => modal.close(), { class: 'fp-button fp-primary' }));
+    const animation = h('select', { 'aria-label':'動畫' });
+    for(const [value,label] of [['system','跟隨系統'],['on','開'],['off','關']]) animation.append(h('option',{value,selected:prefs.animation===value},label));
+    animation.addEventListener('change',()=>{prefs.animation=animation.value;savePrefs();updateMotion();});
+    content.append(h('label',{class:'fp-setting'},['動畫：',animation]));
+    content.append(say('動畫關閉時保留靜態線索；選擇開可供課堂播放所有動畫。', 'p', { class: 'fp-small' }), say('人物、擺設和聲音為閱讀示意。你是跟著康康一起試的小幫手；文字明說的心情才當作事實。', 'p', { class: 'fp-small' }), h('details', {}, [h('summary', {}, '教師資訊與教材依據'), h('p', { class: 'fp-small' }, `${config.source.text}；${config.source.questions}；${config.source.strategy}。核對：${config.source.checked}。`), h('p', { class: 'fp-small' }, '不計時、不扣分；不記學生姓名，不納入原有成績。場景不要求實際操作火或熱水。')]), button('回到食堂', () => modal.close(), { class: 'fp-button fp-primary' }));
     sheet('畫面與聲音', content);
   }
   start(); return root;

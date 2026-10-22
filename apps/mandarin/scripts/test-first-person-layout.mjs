@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { illustrationLayout, operationObjects, scoopGesture, woodOutside, groundPile, outsidePile, woodAngle } from '../src/activities/firstPersonLayout.js';
+import { illustrationLayout, operationObjects, scoopGesture, woodOutside, groundPile, outsidePile, woodAngle, woodLayout } from '../src/activities/firstPersonLayout.js';
 const css=await readFile(new URL('../src/styles/first-person.css',import.meta.url),'utf8');
 // The final CSS declarations define each box independently. These are visible UI
 // rectangles, never full-width reserved bands. Browser font/layout QA is separate.
@@ -44,3 +44,19 @@ for(const o of operationObjects[1].filter(o=>o[4].startsWith('wood-'))) { assert
 assert.ok(groundPile.every(([x,y])=>x>57 && x<65 && y>=78),'pile on floor beside stove');
 assert.ok(operationObjects[3].find(o=>o[4]==='ladle')[2]>70,'ladle away from face');
 assert.equal(new Set([0,1,2].map(i=>woodAngle(4,i))).size,3);
+
+for(const [width,height] of [[1366,900],[820,1180],[375,812]]) {
+ const layout=woodLayout(width,height), initial=illustrationLayout(width,height);
+ const pan=Math.max(0,Math.min(1,(initial.imageWidth*layout.center/100-width/2)/(initial.imageWidth-width)));
+ const g=illustrationLayout(width,height,pan);
+ const specs=[...layout.woods.map(([x,y],i)=>[x,y,layout.width || operationObjects[1][i+1][5],.24]),[61,80,9,.3]];
+ const people=[{x:40,y:38,w:12,h:35},{x:72,y:39,w:15,h:35}];
+ for(const [x,y,w,ratio] of specs){
+  const pw=Math.max(44,g.imageWidth*w/100),ph=Math.max(44,g.imageWidth*w/100*ratio);
+  const box={x:g.left+g.imageWidth*x/100-pw/2,y:g.top+g.imageHeight*y/100-ph/2,w:pw,h:ph};
+  assert.ok(box.x>=12 && box.x+box.w<=width-12,`${width}: all wood and pile fully in same frame`);
+  assert.ok(box.y>74 && box.y+box.h<height-60,`${width}: clear of task bar`);
+  for(const p of people) assert.ok(y-Math.max(ph/g.imageHeight*100,0)/2>=p.y+p.h,'floor objects below figures');
+ }
+}
+console.log('PASS: shared wood/pile camera at 1366x900, 820x1180, 375x812, floor/figure and task clearance');

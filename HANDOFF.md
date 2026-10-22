@@ -1,5 +1,12 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-10-22｜家中 Mac｜Codex｜木柴引導：待 Claude 實玩確認
+- 遵照本單只改檔，未執行任何 git 指令、未開 Chrome、未提交／推送／部署；不發布 main。
+- 第一幕新增只自動播一次／提示重播的 SVG 手勢、直向灶旁地面木柴與同框視角、虛線空柴堆、拖曳箭頭與接近光暈、具體任務／逐根計數、8秒及12秒閒置提醒（最多三次）。減少動態使用依序亮起／靜態線索。
+- 設定新增動畫跟隨系統／開／關並本機保存；開可覆蓋系統減少動態。保留 cover、極簡結構、風鈴效果參數及其他幕內容／位置，version 8 不變。
+- validate、全站 scripts/test-*.mjs、最終8支first-person測試、build、check-dist／assets、build:preview通過；未做瀏覽器驗收。
+- 詳見 apps/mandarin/docs/first-person-IMPL-LOG.md「木柴引導」。Claude需三尺寸確認同框／人物遮擋、手勢／重載／提示、拖曳與鍵盤、計數、閒置上限、系統減少動態下三種動畫選項及其他幕回歸。
+
 ## 2026-10-22｜家中 Mac｜Codex｜風鈴：待 Claude 實玩確認
 - 遵照本單只改檔，未執行任何 git 指令、未開Chrome、未提交／推送／部署。
 - 第一幕底圖局部移除陶瓷風鈴並補天空／遠山（290.7KiB），原畫透明裁切chime.webp（29.2KiB）原位置疊回；原圖備份與PNG存repo外first-person-samples/final。舊竹管bell.webp不再使用。

@@ -84,7 +84,8 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 @media(max-width:600px) { .fp-topbar { left:14px; right:14px; top:max(12px,env(safe-area-inset-top)); gap:10px; } .fp-topbar h1 { font-size:22px; } .fp-topbar .fp-kicker { font-size:18px; letter-spacing:0; } .fp-home { min-width:44px; min-height:44px; } .fp-stage-number { padding:7px 10px; font-size:18px; min-width:60px; } .fp-mission { top:100px; left:14px; max-width:calc(100% - 28px); padding:8px 10px; } .fp-mission p { font-size:18px; } .fp-view-status { top:195px; left:18px; right:18px; font-size:18px!important; } .fp-bottom { bottom:74px; width:calc(100% - 28px); } .fp-caption { margin-bottom:12px; } .fp-caption p { font-size:20px; } .fp-action-row { gap:8px; } .fp-action-row .fp-button { min-width:0; flex:1; font-size:20px; padding:9px 10px; } .fp-clue-chip { font-size:18px; padding:5px 11px; } .fp-toolbar { right:14px; bottom:max(14px,env(safe-area-inset-bottom)); } .fp-mode { left:16px; bottom:26px; font-size:18px; max-width:105px; } .fp-view-buttons { left:10px; right:10px; top:43%; } .fp-view-buttons .fp-button { width:44px; height:44px; min-height:44px; } .fp-sheet { left:8px; right:8px; top:8px; bottom:8px; width:calc(100vw - 16px); height:calc(100dvh - 16px); border-radius:20px; } .fp-sheet-header { padding:16px; } .fp-sheet-header h2 { font-size:24px; } .fp-sheet-content { padding:20px 16px; gap:18px; } .fp-excerpt { padding:12px; } .fp-sheet .fp-button { font-size:22px; } }
 @media(max-height:600px) and (min-width:650px) { .fp-topbar { top:10px; } .fp-topbar h1 { font-size:22px; } .fp-mission { top:82px; max-width:460px; } .fp-view-status { display:none; } .fp-bottom { bottom:18px; width:650px; } .fp-caption p { font-size:20px; } .fp-toolbar { top:84px; bottom:auto; } .fp-mode { display:none; } }
 .fp-calm * { animation:none!important; transition:none!important; scroll-behavior:auto!important; }
-@media(prefers-reduced-motion:reduce) { .fp-page * { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+@media(prefers-reduced-motion:reduce) { .fp-page:not(.fp-motion-on) * { animation:none!important; transition:none!important; scroll-behavior:auto!important; 
+} }
 
 /* 目標只保留細環；文字與操作留在畫面邊緣。 */
 .fp-marker--target { border:2px solid #fff1c1; box-shadow:0 0 0 8px #fff1c125,0 0 22px #fff1c140; }
@@ -113,7 +114,8 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 @keyframes fp-art-bubble { from { opacity:0; transform:scale(.5); } 40% { opacity:.7; } to { opacity:0; transform:scale(1.5); } }
 @keyframes fp-art-steam { from { opacity:0; transform:translateY(0); } 35% { opacity:.55; } to { opacity:0; transform:translateY(-35px); } }
 @keyframes fp-art-fire { from { opacity:.35; } to { opacity:.65; } }
-@media(prefers-reduced-motion:reduce) { .fp-illustration-effects i { animation:none; visibility:hidden; } }
+@media(prefers-reduced-motion:reduce) { .fp-page:not(.fp-motion-on) .fp-illustration-effects i { animation:none; visibility:hidden; 
+} }
 /* 操作層與底圖共用來源百分比；不受環顧偏移影響。 */
 .fp-operation { position:absolute; inset:0; z-index:3; pointer-events:none; }
 .fp-object { position:absolute; width:10%; min-width:0; min-height:0; padding:0; border:0; border-radius:16px; background:transparent; filter:drop-shadow(0 0 6px #fff3b8) drop-shadow(0 4px 6px #2a1d1080); transform:translate(-50%,-50%); pointer-events:auto; touch-action:none; cursor:grab; }
@@ -133,7 +135,8 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 .fp-page .fp-view-status { display:none; }
 @media(max-width:600px) { .fp-operation-status { bottom:185px; font-size:18px; } .fp-page .fp-bottom { bottom:100px; } .fp-page .fp-toolbar { left:8px; right:8px; } }
 .fp-calm .fp-swing { animation:none; outline:4px solid #ffe58d; }
-@media(prefers-reduced-motion:reduce) { .fp-swing { animation:none; outline:4px solid #ffe58d; } }
+@media(prefers-reduced-motion:reduce) { .fp-page:not(.fp-motion-on) .fp-swing { animation:none; outline:4px solid #ffe58d; 
+} }
 .fp-operation-status { position:absolute; z-index:5; pointer-events:none; }
 .fp-page .fp-illustration { pointer-events:auto; }
 .fp-page .fp-world { touch-action:none; }
@@ -165,7 +168,8 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 @keyframes fp-splash { 15% {opacity:.9;} to {opacity:0;scale:1.7;} }
 @keyframes fp-water-stream { from {scale:1 0;} 30%,75% {scale:1 1;} to {scale:1 0;opacity:0;} }
 .fp-calm .fp-pouring::before { animation:none; }
-@media(prefers-reduced-motion:reduce) { .fp-pouring::before { animation:none; } }
+@media(prefers-reduced-motion:reduce) { .fp-page:not(.fp-motion-on) .fp-pouring::before { animation:none; 
+} }
 
 .fp-page .fp-view-buttons { top:auto; bottom:256px; }
 
@@ -240,9 +244,24 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 .fp-chime-glow .fp-ceramic-chime { animation:fp-chime-flash .65s ease-out; }
 @keyframes fp-chime-flash { 30% { filter:drop-shadow(0 0 12px #fff0ab); } 100% { filter:none; } }
 /* The existing calm blanket disables animations; a static brief glow still appears. */
-.fp-calm .fp-chime-glow .fp-ceramic-chime { filter:drop-shadow(0 0 12px #fff0ab); }
+.fp-calm .fp-page:not(.fp-motion-on) .fp-chime-glow .fp-ceramic-chime { filter:drop-shadow(0 0 12px #fff0ab); }
 @media(prefers-reduced-motion:reduce) {
- .fp-chime-weather .fp-wind-streak,.fp-chime-weather .fp-wind-foliage { display:none; }
- .fp-chime-weather .fp-ceramic-chime,.fp-chime-weather .fp-chime-clapper { animation:none; }
- .fp-chime-glow .fp-ceramic-chime { filter:drop-shadow(0 0 12px #fff0ab); }
+ .fp-page:not(.fp-motion-on) .fp-chime-weather .fp-wind-streak,.fp-page:not(.fp-motion-on) .fp-chime-weather .fp-wind-foliage { display:none; 
 }
+ .fp-page:not(.fp-motion-on) .fp-chime-weather .fp-ceramic-chime,.fp-page:not(.fp-motion-on) .fp-chime-weather .fp-chime-clapper { animation:none; }
+ .fp-page:not(.fp-motion-on) .fp-chime-glow .fp-ceramic-chime { filter:drop-shadow(0 0 12px #fff0ab); }
+}
+
+/* First-act wood guidance; source-art positions remain shared with layout checks. */
+.fp-act-1 .fp-object[data-action^="wood-"]:not(:disabled) { filter:drop-shadow(0 0 7px #fff1aa) drop-shadow(0 0 15px #f8d477); }
+.fp-operation .fp-object[data-action="pile"] { border:2px dashed #ffedb4; border-radius:40%; background:#ffedb415; box-shadow:0 0 16px 5px #ffe09d55; }
+.fp-operation .fp-object[data-action="pile"].fp-near,.fp-demo-lit,.fp-wood-static .fp-object:not(:disabled),.fp-wood-reminder .fp-object:not(:disabled) { filter:drop-shadow(0 0 12px #fff2ac)!important; box-shadow:0 0 22px 8px #ffe7a580; }
+.fp-wood-reminder .fp-object:not(:disabled) { animation:fp-wood-flash 1s ease-in-out; }
+@keyframes fp-wood-flash { 0%,100% { opacity:1; } 50% { filter:brightness(1.4); } }
+.fp-wood-arrow { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:visible; }
+.fp-wood-arrow path { fill:none; stroke:#fff0b9; stroke-width:.23; stroke-dasharray:1 .65; opacity:.8; }
+.fp-wood-hand { position:absolute; width:48px; height:56px; transform:translate(-25%,-15%); fill:#fff9e6; stroke:#765d40; stroke-width:2; opacity:.65; pointer-events:none; z-index:8; }
+.fp-wood-hand[hidden],.fp-wood-arrow[hidden] { display:none; }
+.fp-setting select { min-height:44px; font-size:20px; }
+
+.fp-pile-outline { width:100%; height:100%; fill:none; stroke:#fff0b8; stroke-width:1.8; stroke-dasharray:4 3; pointer-events:none; }

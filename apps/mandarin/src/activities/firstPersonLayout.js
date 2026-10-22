@@ -41,3 +41,11 @@ export function scoopGesture(previous, point) {
   return { point, dipped, lifted: dipped && point.x>=54 && point.x<=77 && point.y<65 };
 }
 export const woodOutside = p => p.x < 61 && p.y >= 58 && p.y <= 88;
+
+// Compact floor arrangement for portrait cover, clear of the figures above y=74.
+export function woodLayout(width, height) {
+  const portrait = width / height < 1.4;
+  return { center: portrait ? 59 : 44,
+    woods: portrait ? [[55.5,85],[59,87],[62.5,85]] : [[24,79],[31,81],[35,77]],
+    width: portrait ? 3.4 : null };
+}

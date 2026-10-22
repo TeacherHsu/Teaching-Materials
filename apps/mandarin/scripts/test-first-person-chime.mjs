@@ -46,7 +46,7 @@ for (const file of ['act1-entrance.webp','sprites/chime.webp']) {
  if(file.startsWith('sprites/'))assert.ok(bytes.includes(Buffer.from('ALPH')) || bytes.toString('ascii',12,16)==='VP8L');
 }
 const interaction=await readFile(new URL('../src/activities/firstPersonInteraction.js',import.meta.url),'utf8');
-assert.ok(interaction.includes('風吹過，風鈴響了'));assert.ok(interaction.includes("status.setAttribute('aria-live','polite')"));
+assert.ok(interaction.includes('把地上的木柴搬到灶旁的柴堆'));assert.ok(interaction.includes("status.setAttribute('aria-live','polite')"));
 const css=await readFile(new URL('../src/styles/first-person.css',import.meta.url),'utf8');
 assert.match(css,/@media\(prefers-reduced-motion:reduce\)[\s\S]*?\.fp-chime-weather \.fp-wind-streak[\s\S]*?display:none/);
 console.log('PASS: chime assets, silent lazy context, synchronous resume, 3 damped strikes, wind noise, reduced-motion branch and cleanup');
