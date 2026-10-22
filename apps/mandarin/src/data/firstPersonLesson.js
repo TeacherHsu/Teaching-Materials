@@ -1,7 +1,7 @@
 // 公開資料只保留原句索引與雜湊；原文由 classroomKey 解密。
 export const FIRST_PERSON_LESSON = {
   "lessonId": "115AG3H04",
-  "version": 5,
+  "version": 6,
   "title": "食堂裡的閱讀線索",
   "source": {
     "text": "翰林115三上官方課文Word，第4課〈水滾了〉，王宗仁",
@@ -287,20 +287,7 @@ export const FIRST_PERSON_LESSON = {
       ],
       "operation": {
         "kind": "scoop",
-        "steps": [
-          "dip",
-          "lift",
-          "above",
-          "pour",
-          "dip",
-          "lift",
-          "above",
-          "pour",
-          "dip",
-          "lift",
-          "above",
-          "pour"
-        ]
+        "steps": ["scoop", "scoop", "scoop"]
       }
     },
     {
@@ -451,7 +438,7 @@ export const FIRST_PERSON_LESSON = {
       "id": "root",
       "title": "找出解決的關鍵",
       "place": "工具旁 → 閱讀筆記",
-      "goal": "先看示範，再用火鉗抽出三根柴。",
+      "goal": "先看師傅示範，再把爐口裡的三根柴往外拖。",
       "view": "tool",
       "alternateView": "notes",
       "viewLabel": "看閱讀筆記",
@@ -459,7 +446,7 @@ export const FIRST_PERSON_LESSON = {
         "mood": "用心理解",
         "caption": "你是跟著康康一起試的小幫手。",
         "action": "觀察師傅的方法",
-        "reflection": "先看示範，再用火鉗抽出三根柴。",
+        "reflection": "先看師傅示範，再把爐口裡的三根柴往外拖。",
         "observeCaption": null,
         "afterCaption": null
       },
@@ -688,7 +675,7 @@ export function clueRefs(clue, scene, lesson) {
 // Illustration positions in source-image percent. Keep dots beside evidence, away from faces/hands.
 export const FIRST_PERSON_ILLUSTRATIONS = {
   1: { images: ['act1-entrance.webp'], hotspots: { bell: [29, 16], wood: [49, 52] }, views: { entrance: .52, work: .65, side: .80 } },
-  2: { images: ['act2-clean.webp'], hotspots: { pot: [72, 85], ladle: [65, 50] }, views: { pot: .65, ladle: .30, side: .15 }, effects: { bubble: [65, 68], steam: [70, 54] } },
+  2: { images: ['act2-clean.webp'], hotspots: { pot: [64, 69], ladle: [59, 67] }, views: { pot: .65, ladle: .30, side: .15 }, effects: { bubble: [65, 68], steam: [70, 54] } },
   3: { images: ['act3-looking-down.webp'], hotspots: { pot: [62, 30], fire: [59, 68] }, views: { pot: .55, fire: .80, side: .20 }, effects: { fire: [59, 66] } },
-  4: { images: ['act4-draw-wood.webp', 'act4-calm.webp'], hotspots: { tool: [51, 69], notes: [31, 41], fire: [73, 66], master: [37, 54], wood: [62, 80], pot: [74, 41] }, views: { tool: .55, notes: .20, fire: .70, master: .35, work: .35, pot: .70, side: .15 }, effects: { fire: [74, 70], steam: [75, 35], bubble: [74, 41] } },
+  4: { images: ['act4-draw-wood.webp', 'act4-small-fire.webp'], hotspots: { tool: [51, 69], notes: [31, 41], fire: [73, 66], master: [37, 54], wood: [62, 80], pot: [74, 41] }, views: { tool: .55, notes: .20, fire: .70, master: .35, work: .35, pot: .70, side: .15 }, effects: { fire: [74, 70], steam: [75, 35], bubble: [74, 41] } },
 };

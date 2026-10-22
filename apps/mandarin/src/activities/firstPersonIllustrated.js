@@ -1,3 +1,4 @@
+import { illustrationLayout } from './firstPersonLayout.js';
 import { mountOperation } from './firstPersonInteraction.js';
 import { FIRST_PERSON_ILLUSTRATIONS } from '../data/firstPersonLesson.js';
 
@@ -21,22 +22,19 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   for (const [kind, point] of Object.entries(art.effects || {})) {
     for (let i = 0; i < (kind === 'fire' ? 1 : 5); i++) {
       const p = document.createElement('i'); p.className = `fp-art-${kind}`;
-      p.style.left = `${point[0] + (i - 2) * 1.1}%`; p.style.top = `${point[1]}%`; p.style.animationDelay = `${-i * .51}s`; effects.append(p);
+      p.style.left = `${point[0] + (kind === 'fire' ? 0 : i - 2) * 1.1}%`; p.style.top = `${point[1]}%`; p.style.animationDelay = `${-i * .51}s`; effects.append(p);
     }
   }
-  const interaction = mountOperation(plane, { scene: phase, state: operation, changed: onOperation, chime: onChime, focus(x) { const iw=Math.max(host.clientHeight,host.clientWidth*1024/2400)*2400/1024; if(iw>host.clientWidth) { target=Math.max(0,Math.min(1,(iw*x/100-host.clientWidth/2)/(iw-host.clientWidth))); pan=target; render(); } }, heat(value) { effects.style.opacity = String(value); effects.style.setProperty('--heat', value); [...effects.children].forEach((el,i) => { el.style.visibility = value === 0 || (el.classList.contains('fp-art-bubble') && i % 5 >= Math.ceil(value * 5)) ? 'hidden' : ''; if(el.classList.contains('fp-art-fire')) el.style.scale=String(value); }); if(phase.act === 4) { images[0].style.opacity=String(value); images[1].style.opacity=String(1-value); images[0].style.transition=images[1].style.transition=(calm || media.matches)?'none':'opacity .8s ease'; } }, demonstrate(active) { images[0].style.opacity=active?'0':'1'; images[1].style.opacity=active?'1':'0'; } });
+  const interaction = mountOperation(plane, { scene: phase, state: operation, changed: onOperation, chime: onChime, focus(x) { const iw=illustrationLayout(host.clientWidth,host.clientHeight).imageWidth; if(iw>host.clientWidth) { target=Math.max(0,Math.min(1,(iw*x/100-host.clientWidth/2)/(iw-host.clientWidth))); pan=target; render(); } }, heat(value) { effects.style.opacity = String(value); effects.style.setProperty('--heat', value); [...effects.children].forEach((el,i) => { el.style.visibility = value === 0 || (el.classList.contains('fp-art-bubble') && i % 5 >= Math.ceil(value * 5)) ? 'hidden' : ''; if(el.classList.contains('fp-art-fire')) el.style.scale=String(value); }); if(phase.act === 4) { images[0].style.opacity=String(value); images[1].style.opacity=String(1-value); images[0].style.transition=images[1].style.transition=(calm || media.matches)?'none':'opacity .8s ease'; } }, demonstrate(active) { images[0].style.opacity=active?'0':'1'; images[1].style.opacity=active?'1':'0'; } });
   // Only the next act is warmed. No global cache that keeps all four acts alive.
   const preloads = (FIRST_PERSON_ILLUSTRATIONS[phase.act + 1]?.images || []).map(file => { const img = new Image(); img.src = base + file; return img; });
   const reduced = () => calm || media.matches;
   function render() {
     if (disposed) return;
     width = host.clientWidth;
-    // Full-bleed cover: the illustration fills the viewport; controls float above it.
-    const height = host.clientHeight;
-    imageHeight = Math.max(height, width * 1024 / 2400);
-    top = (height - imageHeight) / 2;
-    imageWidth = imageHeight * 2400 / 1024;
-    const left = Math.max(0, (width - imageWidth) / 2) - Math.max(0, imageWidth - width) * pan;
+    const geometry=illustrationLayout(width,host.clientHeight,pan);
+    ({imageHeight,imageWidth,top}=geometry);
+    const left=geometry.left;
     layer.style.top = `${top}px`; layer.style.height = `${imageHeight}px`;
     plane.style.width = `${imageWidth}px`; plane.style.transform = `translateX(${left}px)`;
     const points = {};

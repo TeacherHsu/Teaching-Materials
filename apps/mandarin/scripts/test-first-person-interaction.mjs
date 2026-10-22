@@ -16,7 +16,7 @@ for(const name of ['ladle-empty','ladle-full','wood','wood-burning','tongs','bel
  const url=new URL(`../public/assets/first-person/115AG3H04/sprites/${name}.webp`,import.meta.url);
  assert.ok((await stat(url)).size<=120*1024,name); const bytes=await readFile(url); assert.equal(bytes.toString('ascii',8,12),'WEBP'); assert.ok(bytes.includes(Buffer.from('ALPH')) || (bytes.toString('ascii',12,16)==='VP8L'),'alpha required');
 }
-assert.deepEqual(config.scenes.map(s=>s.operation.steps.length),[4,12,3,4]);
+assert.deepEqual(config.scenes.map(s=>s.operation.steps.length),[4,3,3,4]);
 assert.equal(config.idiomRefs[0].para,4);
 console.log('PASS: ordered operations, wrong action unchanged, heat, read gate, alpha sprites and limits');
 // Partial operations survive v5 restoration; a completed operation alone never

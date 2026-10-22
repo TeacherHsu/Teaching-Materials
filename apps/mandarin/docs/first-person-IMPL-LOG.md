@@ -177,3 +177,72 @@ CF試玩、實機效能／朗讀／音量、瀏覽器截圖與學生理解成效
 最終補記：全套 **84支測試、0失敗**；validate／build／check-dist／build:preview均通過。另執行 `npm run check-workflow`、`npm run check-evidence`、`npm run check:polyphones-availability`、`node scripts/check-contrast.mjs`，全部通過（55課依據雜湊、41組對比檢查）。測試輸出「缺欄位時正確略過」是測試案例說明，並非略過整支測試；本輪沒有因缺密碼略過正式密文檢查。
 
 最後靜態檢查補強：手機舀水每步取景涵蓋勺子與下一目標，拖曳期間停止鏡頭插值；木柴可以任選順序，重複選同根不累計。增加任選木柴與還原進度測試；原本測試用直接指定步數，和新增收集清單不一致而失敗，已改為實際呼叫操作流程建立完成存檔，再重跑通過。相關四支單課測試及建置／資產／預覽重跑通過。材質裁切修正後九張WebP均約15–51KiB，詳細大小由自動測試檢查，不以概略值代替上限判定。
+
+
+## 修正單1
+
+2026-10-22，內容版本 **6**，狀態：**待 Claude 實玩與 CF 確認**。本段取代上方 v5 的十二步舀水、爐外文字框及無火末態。依本單沒有執行任何 git 指令、提交、推送或部署；未開 Chrome。沒有修改其他課、原文密文或密碼流程，沒有新增外連。原文只在本機 `~/mandarin-work/reading-tool-lessons/115HG3A04.json` 核對，未寫入 repo。
+
+### 實作
+
+- **第2幕**：三個 `scoop` 操作，取代十二個文字目標步驟。勺子在康康身旁鍋沿，寬為插畫的18%（鍋口約36%，勺長約其一半）。按住往水面拖入即換盛水圖／水花；往上拉離水面再放開，播放回流水柱及落水漣漪，動畫結束才計一次；沸騰不減弱。點勺子會自動播放完整一次；忙碌期間不重複計數。三次完成才出現無效回饋，之後沿用原表情題。取消拖曳不計次並還原空勺。
+- **第4幕**：先播師傅示範，2.4秒後才開放學生操作。直接拖灶口內燃燒柴至爐口左外側，或點柴自動抽出；沒有「抽到爐外」文字框，也不再要求學生先點火鉗。每根抽完才降熱、縮小火光／減少泡泡／蒸氣，逐步淡入 `act4-small-fire.webp`。結束圖水面平靜、灶口仍有明顯小火；原 `act4-calm.webp` 保留但不再使用。
+- **第1幕**：保留 Claude 調整過的木柴與柴堆座標，換細長自然柴枝和竹管風鈴。柴放到柴堆後停留並逐根疊高、停止接受操作；不會憑空消失。保留透明背景、drop-shadow，沒有改回米色方框。
+- **第3幕**：勺子移到鍋左緣，與插畫一起縮放，取消固定像素寬度。其餘操作及題目不變。
+- **版面**：`firstPersonLayout.js` 共用2400×1024來源座標、物件寬度／比例和版面公式；插畫位於 y=200 至螢幕高−270 的保留區，寬不足時可環顧，較寬桌機置中。保留桌機任務框右上。任務、狀態、底部行動、工具及環顧按鈕均有明確的保留區。所有 sprite 不再使用像素 clamp；至少44px點擊區由透明偽元素提供。初始取景帶到當幕物件，幕1點風鈴後把視野移到木柴與柴堆之間。
+- **存檔**：版本升為6；v5十二步進度不會套成v6三次操作，舊版會從頭開始，v6可正常保存。
+
+修改範圍：`src/data/firstPersonLesson.js`、`src/activities/firstPersonInteraction.js`／`firstPersonIllustrated.js`／新增 `firstPersonLayout.js`、`src/styles/first-person.css`、本課三個素材及第一人稱測試、本文件。`FirstPersonPage.js` 與其他課資料未改。
+
+### 素材與目視
+
+使用 draw／imagegen 技能；draw指定的 `~/.Codex/skills/draw/draw.py` 不存在，改用內建 imagegen，沒有使用API金鑰腳本。生成兩組，各1次、無生圖重試：細柴枝＋竹管風鈴透明圖，以及在既有平靜圖中加入小火的局部編輯。原PNG／裁切PNG在 repo 外 `first-person-samples/final/`（本單指定 OneDrive 實際路徑）。
+
+- `sprites/wood.webp`：577×59、透明、細長柴枝。
+- `sprites/bell.webp`：289×588、透明、竹管風鈴，沒有短冊。
+- `act4-small-fire.webp`：2400×1024、303766 bytes（小於300KiB），水面平靜、爐內小火仍在。
+
+新素材已逐張開啟檢查；當幕五張背景與九張sprite亦已目視（sprite總覽逐格檢查）。首輪裁切發現風鈴混入柴枝碎片，修正分界；再以alpha通道裁掉透明留白後逐張重看，最終無相鄰物件碎片。未把裁切錯誤版當成完成品。插畫合成後的比例、火光淡入時人物／背景細微差異及操作手感仍須Claude確認。
+
+最終生成提示詞：
+
+1. `Create a transparent sprite sheet with exactly TWO separate objects, generous transparent gap. Left: one long slender rough brown firewood branch, horizontal, aspect ratio 6:1, not a rectangular block. Right: a Taiwanese common bamboo tube wind chime with five hanging bamboo tubes, plain wooden top, no paper strips, no Japanese furin bell. Warm painterly children's story illustration matching rustic Taiwan kitchen. No text, no shadow backdrop. Each object complete and isolated.`
+2. `Edit target image only: add a clearly visible SMALL LOW orange flame still burning around one slender log INSIDE the dark stove opening (around x73%,y72%). The fire must be much smaller than a roaring stove fire, but visibly alive. Preserve calm flat water surface, all people, pot, kitchen, colors, composition, aspect ratio exactly. Do not change anything else. No text.`
+
+### 數值版面與事件驗證
+
+`node scripts/test-first-person-layout.mjs` 計算三種尺寸、四幕、101個環顧位置，共30300次不重疊檢查。包含44px點擊區、額外12px邊緣緩衝、堆疊後柴枝、舀水入水／舉高及抽柴完成位置；對照 `.fp-mission`、`.fp-bottom`、`.fp-toolbar`，另檢查狀態與環顧按鈕。測試會印出各幕初始取景的螢幕中心與物件框大小；超出視窗者標示需環顧。幕1風鈴後自動取景改為47.5%，讓木柴與柴堆同時在視野內。這是數值檢查，不是瀏覽器排版驗收。
+
+初始取景中心座標（px；順序對應各物件）：
+
+| 尺寸 | 幕1：風鈴／柴1／柴2／柴3／柴堆 | 幕2：勺／水面 | 幕3：水面／勺／柴 | 幕4：示範工具／柴1／柴2／柴3 |
+|---|---|---|---|---|
+|1366×900|(471,269)／(481,449)／(562,458)／(643,467)／(824,467)|(774,488)／(824,497)|(804,329)／(643,338)／(774,492)|(693,454)／(874,514)／(905,518)／(935,523)|
+|820×1180|(410,314)／(427,612)／(560,626)／(693,640)／(992,640，初始需環顧)|(377,676)／(460,690)|(526,413)／(260,427)／(477,683)|(194,619)／(493,718)／(543,725)／(593,733)|
+|375×812|(188,255)／(196,398)／(260,405)／(324,412)／(468,412，初始需環顧)|(171,429)／(212,436)|(244,303)／(115,309)／(220,433)|(83,402)／(228,450)／(252,453)／(276,457)|
+
+新增 `test-first-person-gesture.mjs`，以輕量DOM及可控計時器呼叫正式Pointer Event處理器，不啟動瀏覽器：驗證未入水上拉不計次、入水換盛水圖、上拉放手後回流才計次、取消復原、快速連點只完成一次、三次完成、柴枝拖放後留在柴堆、示範前不能抽柴、留在爐內不計次、拖出爐外才完成、點擊抽柴及離頁取消未完成動畫。此測試曾抓到sprite函式被參數遮蔽的執行錯誤，已改名修正後重跑；亦補上拖放結束不得把已堆疊柴枝重設回原位。
+
+### 驗證結果
+
+工作目錄 `apps/mandarin`：
+
+- `npm run validate`：通過，含正式密文／原文外洩檢查，未略過密碼檢查。
+- 所有 `scripts/test-first-person*.mjs`：6支通過，含新增版面與實際事件測試、全文45句／雜湊及舊1601姿勢測試。
+- `npm run build`：通過；僅既有CharacterStoryPage匯入提示。
+- 全套 `scripts/test-*.mjs`：86支、0失敗，各支獨立檢查退出碼。
+- `npm run check-dist`（含check-assets）、`npm run build:preview`：通過。
+- 另以Pillow確認素材尺寸／alpha／檔案上限。完整終端紀錄在本機 `/tmp/first-v6-*`，不進repo。
+
+少數暫存指令因工作目錄多寫一層而找不到檔案，已修正後重跑；未將失敗結果當通過。`phase2_workspace_diff.md` 在指定常見位置未找到，未引用其內容；無權限的父目錄搜尋已中止。所有git、Chrome、實機與教學成效檢查均未執行，不宣稱通過。
+
+### Claude 實玩清單
+
+以 `npm run build:preview` 後的 `npm run preview:draft -- --host 127.0.0.1 --port 4176` 本機網址，加 `#/lesson/115AG3H04/explore`。使用正常密碼門；含原文截圖放repo外。1366×900、820×1180、375×812各做：
+
+1. 幕1看竹管風鈴、細柴比例；風鈴後自動環顧，任選三根柴拖到柴堆，每次應留下一根。再用點柴→點柴堆重做，確認任務框仍在桌機右上、透明drop-shadow仍保留。
+2. 幕2看勺子是否靠康康／鍋沿、長約半個鍋口；一次按住下拖入水→上拉→放手應只有一次回流，水花、水柱與沸騰同時可辨識。不要操作四個文字框。取消、拖錯、快速連點均不多計次；點勺子可完整自動舀一次。第三次才出無效回饋及表情題。
+3. 幕3確認勺子靠鍋緣、比例合理，依序水面／勺子／柴火後仍可完成原推論題。
+4. 幕4先看示範、不能提前抽柴；拖任一灶口燃燒柴往左出爐即完成，三次逐漸火小／泡少；另用點柴替代。末態必須保留小火、水靜，檢查淡入有無人物雙影或背景跳動。
+5. 三種尺寸環顧、鍵盤Tab／Enter、觸控拖曳及文字朗讀；實際檢查任務、字幕、狀態、按鈕沒有壓住物件或光暈、無水平捲動。確認無外部請求／主控台錯誤，操作途中不被鏡頭帶走。
+6. 減少動態、關音效、阻擋圖片／sprite、操作中途重新整理／重玩／離頁，確認仍能完成與保存；v5存檔會因版本6重設。實機iPad及美感／手勢自然程度由Claude／CF補驗。
