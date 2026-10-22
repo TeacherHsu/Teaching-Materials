@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { FIRST_PERSON_LESSON as config } from '../src/data/firstPersonLesson.js';
 import { moodFor, beatLines, toggleOrder, reorderCards, createCardOrder } from '../src/activities/firstPersonPresentation.js';
-assert.equal(config.version,9);
+assert.equal(config.version,10);
 assert.deepEqual([0,1,2,3].map(n=>moodFor(2,n).level),[1,2,3,3]);
 assert.equal(moodFor(1,4).level,0);
 assert.equal(moodFor(3,3).level,3);
@@ -28,5 +28,5 @@ cards.toggle(2);assert.deepEqual(cards.selected,[0]);assert.equal(cards.selected
 cards.move(2,1);assert.deepEqual(cards.order,[0,2,1]);assert.deepEqual(cards.selected,cards.order);
 cards.reset();assert.deepEqual(cards.selected,[]);assert.deepEqual(cards.order,[2,0,1]);
 for(const i of [0,1,2])cards.toggle(i);
-assert.deepEqual(cards.selected,config.scenes[3].questions[0].answer);
+assert.deepEqual(cards.selected,[0,1,2]); // Generic order controller remains supported; lesson now uses summary cards.
 for(const i of cards.order)assert.deepEqual(reorderCards(cards.order,i,i),cards.order,'drop on itself');

@@ -138,6 +138,6 @@ export async function validateUnlockedLesson(lesson, paragraphs) {
   // Only source words may label a meter; approved legacy intensity suffixes remain unchanged.
   const full=[...paragraphs].flatMap(([p,lines])=>lines.filter((_,n)=>isStoryUnit(lesson,p,n))).join('');
   for(const s of lesson.scenes)for(const t of s.strategies || [])for(const o of t.options)if(typeof o==='object')for(const word of o.words || [])check(o.refs.map(r=>r.sentences.map(n=>paragraphs.get(r.para)[n]).join('')).join('').includes(word),'strategy source word');
-  if(lesson.lessonId!=='115AG3H04')for(const state of lesson.meter.states)check(full.includes(state),'meter source word');
+  for(const state of lesson.meter.states)check(full.includes(state),'meter source word');
   return true;
 }

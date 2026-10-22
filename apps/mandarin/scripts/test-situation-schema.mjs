@@ -24,7 +24,7 @@ for(const file of await readdir(directory)){
   if(lesson.lessonId==='115AG3H04'){
     assert.equal(lesson.sentenceCount,45);
     assert.deepEqual([0,1,2,3,4].map(n=>meterFor(lesson,lesson.scenes[3],n).level),[3,3,2,1,0]);
-    assert.equal(meterFor(lesson,lesson.scenes[3],4,true).label,'用心記住');
+    assert.equal(meterFor(lesson,lesson.scenes[3],4,true).label,'用心的記住');
   }
 }
 assert.ok(count>0);
@@ -33,7 +33,7 @@ const {default:original}=await import('../src/data/situationLessons/115AG3H04.js
 const synthetic=structuredClone(original);synthetic.lessonId='synthetic';
 const paragraphs=new Map(synthetic.paragraphCounts.map((n,i)=>[i+1,Array.from({length:n},(_,j)=>`fixture-${i}-${j}`)]));
 const hash=async text=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text)))].map(v=>v.toString(16).padStart(2,'0')).join('').slice(0,8);
-for(const s of synthetic.scenes){delete s.operation.profile;s.operation.type='observe';
+for(const s of synthetic.scenes){delete s.operation.profile;s.operation.type='observe';delete s.timeline;delete s.strategies;
   for(const r of [...s.clues.flatMap(c=>c.refs),...s.questions.flatMap(q=>q.refs),...s.beats.intro,...s.beats.read])r.sha=await Promise.all(r.sentences.map(n=>hash(paragraphs.get(r.para)[n])));
 }
 for(const r of synthetic.ending.refs)r.sha=await Promise.all(r.sentences.map(n=>hash(paragraphs.get(r.para)[n])));

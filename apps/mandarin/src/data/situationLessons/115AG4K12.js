@@ -1,8 +1,8 @@
-// 原句僅由正式密碼門解密；此檔只存索引與 SHA-256 前8碼。
+// 公開設定僅存索引、雜湊與教學提示；原文由既有密碼門解密。
 export default {
   "schemaVersion": 1,
   "lessonId": "115AG4K12",
-  "version": 2,
+  "version": 3,
   "title": "鞋店裡的閱讀線索",
   "gateTitle": "老鞋匠和小精靈",
   "introduction": "跟著老鞋匠一起試。先動手、看結果，再讀原句找線索。",
@@ -56,7 +56,9 @@ export default {
         "images": [
           "night.webp"
         ],
-        "expressionOverlays": {"night.webp": "night-expression.webp"},
+        "expressionOverlays": {
+          "night.webp": "night-expression.webp"
+        },
         "aspect": [
           2400,
           1024
@@ -184,14 +186,7 @@ export default {
               11,
               12,
               13,
-              14,
-              15,
-              16,
-              17,
-              18,
-              19,
-              20,
-              21
+              14
             ],
             "sha": [
               "08ae9469",
@@ -201,14 +196,7 @@ export default {
               "4146aa9c",
               "3db7c474",
               "57d8b84a",
-              "76139fe8",
-              "e95b213a",
-              "f7afbb83",
-              "653402e4",
-              "4567620d",
-              "00814054",
-              "b26bcdcc",
-              "d5da0629"
+              "76139fe8"
             ]
           }
         ],
@@ -223,6 +211,13 @@ export default {
           {
             "para": 1,
             "sentences": [
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
               22,
               23,
               24,
@@ -231,6 +226,13 @@ export default {
               27
             ],
             "sha": [
+              "e95b213a",
+              "f7afbb83",
+              "653402e4",
+              "4567620d",
+              "00814054",
+              "b26bcdcc",
+              "d5da0629",
               "bbfade9f",
               "17a8a749",
               "ca737ca8",
@@ -303,31 +305,67 @@ export default {
       "questions": [
         {
           "id": "resources",
-          "type": "choice",
-          "operationType": "chooseCard",
-          "kind": "理解與推論",
-          "stem": "老鞋匠為什麼沒辦法再添購皮革？",
+          "type": "summaryCard",
+          "operationType": "summaryCard",
+          "kind": "摘要",
+          "pirls": "統整",
+          "stem": "這一幕最重要的事是什麼？",
           "options": [
-            "賣鞋所得只夠買食物。",
-            "顧客把所有皮革拿走了。",
-            "妻子禁止他繼續做鞋。"
+            "鞋店收入變少，老鞋匠只剩最後的皮革",
+            "妻子親切招呼客人",
+            "老鞋匠準備休息"
           ],
           "answer": 0,
+          "summaryImages": [
+            "night.webp",
+            "night.webp",
+            "night.webp"
+          ],
           "why": [
-            "先維持吃飯所需，就沒有餘錢買材料。",
-            "課文沒有說顧客拿走皮革。",
-            "妻子沒有禁止他做鞋；要找收入與支出的線索。"
+            "把這一幕的事情和結果連起來，就是重點。",
+            "這是細節，不是最重要的事；再想想整幕發生什麼。",
+            "這是細節，不是最重要的事；再想想整幕發生什麼。"
           ],
           "hints": [
-            "找找賣鞋之後的錢用在哪裡。",
-            "比較食物和做鞋材料這兩項支出。",
-            "回讀本幕最後的話，確認錢能支付什麼。"
+            "回想這一幕的困難或任務。",
+            "找出做了什麼，以及結果如何。",
+            "選能把事情和結果連起來的圖卡。"
           ],
-          "explanation": "收入不足，買食物後就無法補充做鞋材料。",
+          "explanation": "把這一幕的事情和結果連起來，就是重點。",
           "refs": [
             {
               "para": 1,
               "sentences": [
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ],
+              "sha": [
+                "08ae9469",
+                "929eb995",
+                "0b7be14c",
+                "3ea3b566",
+                "4146aa9c",
+                "3db7c474",
+                "57d8b84a",
+                "76139fe8"
+              ]
+            },
+            {
+              "para": 1,
+              "sentences": [
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
                 22,
                 23,
                 24,
@@ -336,6 +374,13 @@ export default {
                 27
               ],
               "sha": [
+                "e95b213a",
+                "f7afbb83",
+                "653402e4",
+                "4567620d",
+                "00814054",
+                "b26bcdcc",
+                "d5da0629",
                 "bbfade9f",
                 "17a8a749",
                 "ca737ca8",
@@ -345,6 +390,83 @@ export default {
               ]
             }
           ]
+        }
+      ],
+      "timeline": [
+        {
+          "kind": "intro",
+          "refs": [
+            {
+              "para": 1,
+              "sentences": [
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14
+              ],
+              "sha": [
+                "08ae9469",
+                "929eb995",
+                "0b7be14c",
+                "3ea3b566",
+                "4146aa9c",
+                "3db7c474",
+                "57d8b84a",
+                "76139fe8"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "act"
+        },
+        {
+          "kind": "result"
+        },
+        {
+          "kind": "read",
+          "refs": [
+            {
+              "para": 1,
+              "sentences": [
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27
+              ],
+              "sha": [
+                "e95b213a",
+                "f7afbb83",
+                "653402e4",
+                "4567620d",
+                "00814054",
+                "b26bcdcc",
+                "d5da0629",
+                "bbfade9f",
+                "17a8a749",
+                "ca737ca8",
+                "19b20960",
+                "02b59544",
+                "aaee2c15"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "question"
         }
       ]
     },
@@ -595,31 +717,56 @@ export default {
       "questions": [
         {
           "id": "mystery",
-          "type": "choice",
-          "operationType": "chooseCard",
-          "kind": "理解與推論",
-          "stem": "生意好轉後，夫妻倆還想弄清楚什麼事？",
+          "type": "summaryCard",
+          "operationType": "summaryCard",
+          "kind": "摘要",
+          "pirls": "統整",
+          "stem": "這一幕最重要的事是什麼？",
           "options": [
-            "顧客為什麼喜歡逛鞋店？",
-            "夜裡是誰把皮革做成鞋？",
-            "鞋店開在哪一座城鎮？"
+            "顧客來店裡買鞋",
+            "新鞋接連出現，鞋店生意好轉",
+            "老鞋匠拿錢買皮革"
           ],
           "answer": 1,
+          "summaryImages": [
+            "morning.webp",
+            "morning-full.webp",
+            "morning-full.webp"
+          ],
           "why": [
-            "顧客買鞋不是夫妻倆仍未解開的疑問。",
-            "他們看見新鞋，卻還沒看見製鞋的人。",
-            "城鎮地點不是這裡要追查的事。"
+            "這是細節，不是最重要的事；再想想整幕發生什麼。",
+            "把這一幕的事情和結果連起來，就是重點。",
+            "這是細節，不是最重要的事；再想想整幕發生什麼。"
           ],
           "hints": [
-            "找生意好轉之後，還沒有答案的事。",
-            "注意皮革和新鞋在夜裡發生的變化。",
-            "回讀本幕結尾的疑問，把想知道的人或事圈出來。"
+            "回想這一幕的困難或任務。",
+            "找出做了什麼，以及結果如何。",
+            "選能把事情和結果連起來的圖卡。"
           ],
-          "explanation": "謎團關係到夜裡幫忙做鞋的人。",
+          "explanation": "把這一幕的事情和結果連起來，就是重點。",
           "refs": [
             {
               "para": 1,
               "sentences": [
+                28,
+                29,
+                30
+              ],
+              "sha": [
+                "7fe1e57c",
+                "7b136897",
+                "190763dd"
+              ]
+            },
+            {
+              "para": 1,
+              "sentences": [
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
                 37,
                 38,
                 39,
@@ -629,6 +776,12 @@ export default {
                 43
               ],
               "sha": [
+                "3c7fd038",
+                "b265c7fd",
+                "f88876a7",
+                "d82d42e5",
+                "db6e1487",
+                "740a1cd7",
                 "e838fba2",
                 "1af97ef4",
                 "0ff2835a",
@@ -639,6 +792,117 @@ export default {
               ]
             }
           ]
+        }
+      ],
+      "timeline": [
+        {
+          "kind": "intro",
+          "refs": [
+            {
+              "para": 1,
+              "sentences": [
+                28,
+                29,
+                30
+              ],
+              "sha": [
+                "7fe1e57c",
+                "7b136897",
+                "190763dd"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "act"
+        },
+        {
+          "kind": "strategy",
+          "id": "maker-predict",
+          "hideOperations": true
+        },
+        {
+          "kind": "result"
+        },
+        {
+          "kind": "read",
+          "refs": [
+            {
+              "para": 1,
+              "sentences": [
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43
+              ],
+              "sha": [
+                "3c7fd038",
+                "b265c7fd",
+                "f88876a7",
+                "d82d42e5",
+                "db6e1487",
+                "740a1cd7",
+                "e838fba2",
+                "1af97ef4",
+                "0ff2835a",
+                "e5b19108",
+                "1c332cbd",
+                "deb4dc59",
+                "e8e80602"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "question"
+        }
+      ],
+      "strategies": [
+        {
+          "id": "maker-predict",
+          "type": "predict",
+          "prompt": "鞋子是誰做的？",
+          "options": [
+            "店裡的人",
+            "路過的人",
+            "我不確定"
+          ],
+          "refs": [
+            {
+              "para": 1,
+              "sentences": [
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59
+              ],
+              "sha": [
+                "6a134a04",
+                "32bbcc6d",
+                "cfa93bd6",
+                "ad42b9e4",
+                "bcd61149",
+                "f81259c6",
+                "35284c51"
+              ]
+            }
+          ],
+          "revealAt": {
+            "para": 1,
+            "n": 58
+          }
         }
       ]
     },
@@ -658,7 +922,9 @@ export default {
           "midnight-shoes.webp",
           "midnight-finished.webp"
         ],
-        "expressionOverlays": {"night-unlit.webp": "night-unlit-expression.webp"},
+        "expressionOverlays": {
+          "night-unlit.webp": "night-unlit-expression.webp"
+        },
         "aspect": [
           2400,
           1024
@@ -1003,31 +1269,65 @@ export default {
       "questions": [
         {
           "id": "skill",
-          "type": "choice",
-          "operationType": "chooseCard",
-          "kind": "理解與推論",
-          "stem": "哪一項最符合小精靈做鞋的表現？",
+          "type": "summaryCard",
+          "operationType": "summaryCard",
+          "kind": "摘要",
+          "pirls": "統整",
+          "stem": "這一幕最重要的事是什麼？",
           "options": [
-            "動作笨拙，需要老鞋匠協助。",
-            "身材高大，一次就能搬走整張桌子。",
-            "個子雖小，手藝靈巧，還能合作。"
+            "小精靈把鞋子擺好",
+            "夫婦吹熄蠟燭",
+            "夫婦躲起來，發現小精靈合作做鞋"
           ],
           "answer": 2,
+          "summaryImages": [
+            "night-unlit.webp",
+            "midnight-sew.webp",
+            "midnight-finished.webp"
+          ],
           "why": [
-            "他們能自己完成工作；文中沒有老鞋匠幫忙做鞋的情節。",
-            "他們很小，沒有搬桌子的情節。",
-            "縫製、合力敲打和完成鞋子的線索都支持這一項。"
+            "這是細節，不是最重要的事；再想想整幕發生什麼。",
+            "這是細節，不是最重要的事；再想想整幕發生什麼。",
+            "把這一幕的事情和結果連起來，就是重點。"
           ],
           "hints": [
-            "依序回想縫製、敲打、擺放三個動作。",
-            "比較他們的身材和完成工作的表現。",
-            "回讀描述手藝、合作和完成速度的句子，再逐項核對。"
+            "回想這一幕的困難或任務。",
+            "找出做了什麼，以及結果如何。",
+            "選能把事情和結果連起來的圖卡。"
           ],
-          "explanation": "從細小的身材、熟練的動作和合力做事，能看出他們的手藝。",
+          "explanation": "把這一幕的事情和結果連起來，就是重點。",
           "refs": [
             {
               "para": 1,
               "sentences": [
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50,
+                51,
+                52
+              ],
+              "sha": [
+                "ebf316ce",
+                "9e4973ef",
+                "18c4de8f",
+                "1c64835d",
+                "4a13f023",
+                "de85ff03",
+                "9afb96e1",
+                "d749af6b",
+                "c7fea3f3"
+              ]
+            },
+            {
+              "para": 1,
+              "sentences": [
+                53,
+                54,
+                55,
                 56,
                 57,
                 58,
@@ -1044,9 +1344,16 @@ export default {
                 69,
                 70,
                 71,
-                72
+                72,
+                73,
+                74,
+                75,
+                76
               ],
               "sha": [
+                "6a134a04",
+                "32bbcc6d",
+                "cfa93bd6",
                 "ad42b9e4",
                 "bcd61149",
                 "f81259c6",
@@ -1063,10 +1370,216 @@ export default {
                 "5f3f91f8",
                 "1bb28443",
                 "2991f645",
-                "92380b85"
+                "92380b85",
+                "f26438a0",
+                "4f1b4a2d",
+                "aef229cd",
+                "539614fd"
               ]
             }
           ]
+        }
+      ],
+      "timeline": [
+        {
+          "kind": "intro",
+          "refs": [
+            {
+              "para": 1,
+              "sentences": [
+                44,
+                45,
+                46,
+                47,
+                48,
+                49,
+                50
+              ],
+              "sha": [
+                "ebf316ce",
+                "9e4973ef",
+                "18c4de8f",
+                "1c64835d",
+                "4a13f023",
+                "de85ff03",
+                "9afb96e1"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "act",
+          "untilStep": 1
+        },
+        {
+          "kind": "intro",
+          "refs": [
+            {
+              "para": 1,
+              "sentences": [
+                51,
+                52
+              ],
+              "sha": [
+                "d749af6b",
+                "c7fea3f3"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "act"
+        },
+        {
+          "kind": "result"
+        },
+        {
+          "kind": "read",
+          "refs": [
+            {
+              "para": 1,
+              "sentences": [
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                67,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                76
+              ],
+              "sha": [
+                "6a134a04",
+                "32bbcc6d",
+                "cfa93bd6",
+                "ad42b9e4",
+                "bcd61149",
+                "f81259c6",
+                "35284c51",
+                "11aa9dd5",
+                "e85e1d5d",
+                "01ac5126",
+                "5e3f124e",
+                "cfef2e5f",
+                "75f8c881",
+                "d0825b6f",
+                "053b7c62",
+                "183c5df6",
+                "5f3f91f8",
+                "1bb28443",
+                "2991f645",
+                "92380b85",
+                "f26438a0",
+                "4f1b4a2d",
+                "aef229cd",
+                "539614fd"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "strategy",
+          "id": "wonder-clues",
+          "hideOperations": true,
+          "imageIndex": 1
+        },
+        {
+          "kind": "question"
+        }
+      ],
+      "strategies": [
+        {
+          "id": "wonder-clues",
+          "type": "emotionClue",
+          "prompt": "點老鞋匠夫婦的表情，找心情線索。",
+          "options": [
+            {
+              "label": "老鞋匠的表情",
+              "x": 43.9,
+              "y": 34.5,
+              "face": {
+                "width": 1.8,
+                "height": 4.5
+              },
+              "markerOffset": [
+                -3,
+                0
+              ],
+              "states": [
+                4
+              ],
+              "refs": [
+                {
+                  "para": 1,
+                  "sentences": [
+                    73
+                  ],
+                  "sha": [
+                    "f26438a0"
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "妻子的表情",
+              "x": 46.8,
+              "y": 35.5,
+              "face": {
+                "width": 1.8,
+                "height": 4.5
+              },
+              "markerOffset": [
+                3,
+                0
+              ],
+              "states": [
+                4
+              ],
+              "refs": [
+                {
+                  "para": 1,
+                  "sentences": [
+                    73
+                  ],
+                  "sha": [
+                    "f26438a0"
+                  ]
+                }
+              ]
+            }
+          ],
+          "answer": [
+            0,
+            1
+          ],
+          "refs": [
+            {
+              "para": 1,
+              "sentences": [
+                73
+              ],
+              "sha": [
+                "f26438a0"
+              ]
+            }
+          ],
+          "hint": "再看看窗後兩人的臉。"
         }
       ]
     },
@@ -1082,7 +1595,8 @@ export default {
         "images": [
           "night.webp",
           "gifts.webp",
-          "depart.webp"
+          "depart.webp",
+          "midnight-hammer.webp"
         ],
         "aspect": [
           2400,
@@ -1334,115 +1848,246 @@ export default {
       "questions": [
         {
           "id": "story-order",
-          "type": "order",
-          "operationType": "orderCards",
-          "kind": "統整事件",
-          "stem": "依故事發生的先後排列四件事。",
+          "type": "summaryCard",
+          "operationType": "summaryCard",
+          "kind": "摘要",
+          "pirls": "統整",
+          "stem": "這一幕最重要的事是什麼？",
           "options": [
-            "送上答謝的禮物",
-            "清晨看到做好的新鞋",
-            "裁剪最後的皮革",
-            "藏起來觀察夜裡的工作"
+            "夫婦送衣鞋答謝，小精靈快樂離開",
+            "桌上沒有放皮革",
+            "小精靈看見桌上的禮物"
           ],
-          "initialOrder": [
-            0,
-            1,
-            2,
-            3
-          ],
-          "answer": [
-            2,
-            1,
-            3,
-            0
+          "answer": 0,
+          "summaryImages": [
+            "night.webp",
+            "gifts.webp",
+            "midnight-hammer.webp"
           ],
           "why": [
-            "送禮是知道幫手身分之後的答謝，不能排在觀察之前。",
-            "新鞋是在裁剪皮革之後才出現；發現新鞋時還不知道是誰幫忙。",
-            "最後的皮革是夜裡幫忙的故事開始前就剪好的。",
-            "先有未解的疑問，才躲起來觀察；送禮要排在這之後。"
+            "把這一幕的事情和結果連起來，就是重點。",
+            "這是細節，不是最重要的事；再想想整幕發生什麼。",
+            "這是細節，不是最重要的事；再想想整幕發生什麼。"
           ],
           "hints": [
-            "先找故事開始時，老鞋匠遇到的困難。",
-            "分清楚看到新鞋和看到製鞋的人，哪一件先發生。",
-            "把四幕各自的操作與結果連起來，再檢查前後因果。"
+            "回想這一幕的困難或任務。",
+            "找出做了什麼，以及結果如何。",
+            "選能把事情和結果連起來的圖卡。"
           ],
-          "explanation": "先遇到材料用盡的困難，再發現新鞋、觀察幫手，最後準備禮物答謝。",
+          "explanation": "把這一幕的事情和結果連起來，就是重點。",
           "refs": [
-            {
-              "para": 1,
-              "sentences": [
-                22,
-                23,
-                24,
-                25,
-                26,
-                27,
-                28,
-                29,
-                30
-              ],
-              "sha": [
-                "bbfade9f",
-                "17a8a749",
-                "ca737ca8",
-                "19b20960",
-                "02b59544",
-                "aaee2c15",
-                "7fe1e57c",
-                "7b136897",
-                "190763dd"
-              ]
-            },
-            {
-              "para": 1,
-              "sentences": [
-                44,
-                45,
-                46,
-                47,
-                48,
-                49,
-                50,
-                51,
-                52
-              ],
-              "sha": [
-                "ebf316ce",
-                "9e4973ef",
-                "18c4de8f",
-                "1c64835d",
-                "4a13f023",
-                "de85ff03",
-                "9afb96e1",
-                "d749af6b",
-                "c7fea3f3"
-              ]
-            },
             {
               "para": 1,
               "sentences": [
                 77,
                 78,
                 79,
-                80,
-                81,
-                82,
-                83,
-                84
+                80
               ],
               "sha": [
                 "ee13c3c0",
                 "0f67fad1",
                 "373718d9",
-                "713a1e7c",
+                "713a1e7c"
+              ]
+            },
+            {
+              "para": 1,
+              "sentences": [
+                81,
+                82,
+                83,
+                84,
+                85,
+                86,
+                87,
+                88,
+                89,
+                90,
+                91,
+                92,
+                93,
+                94,
+                95,
+                96,
+                97,
+                98,
+                99
+              ],
+              "sha": [
                 "737a1d8c",
                 "f89bb6ac",
                 "fb1d01b3",
-                "d59f5093"
+                "d59f5093",
+                "3f6e2d1e",
+                "85c0eac3",
+                "c55e590e",
+                "20b736e5",
+                "a7a0e78c",
+                "93aafdda",
+                "bc990002",
+                "d5be3bd6",
+                "a09ff2da",
+                "5bfce826",
+                "1ca76ac5",
+                "ecc4de6d",
+                "81b3b283",
+                "18ef0f65",
+                "8474d959"
               ]
             }
           ]
+        }
+      ],
+      "timeline": [
+        {
+          "kind": "intro",
+          "refs": [
+            {
+              "para": 1,
+              "sentences": [
+                77,
+                78,
+                79,
+                80
+              ],
+              "sha": [
+                "ee13c3c0",
+                "0f67fad1",
+                "373718d9",
+                "713a1e7c"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "strategy",
+          "id": "gift-reason",
+          "hideOperations": true,
+          "imageIndex": 3
+        },
+        {
+          "kind": "act"
+        },
+        {
+          "kind": "result"
+        },
+        {
+          "kind": "read",
+          "refs": [
+            {
+              "para": 1,
+              "sentences": [
+                81,
+                82,
+                83,
+                84,
+                85,
+                86,
+                87,
+                88,
+                89,
+                90,
+                91,
+                92,
+                93,
+                94,
+                95,
+                96,
+                97,
+                98,
+                99
+              ],
+              "sha": [
+                "737a1d8c",
+                "f89bb6ac",
+                "fb1d01b3",
+                "d59f5093",
+                "3f6e2d1e",
+                "85c0eac3",
+                "c55e590e",
+                "20b736e5",
+                "a7a0e78c",
+                "93aafdda",
+                "bc990002",
+                "d5be3bd6",
+                "a09ff2da",
+                "5bfce826",
+                "1ca76ac5",
+                "ecc4de6d",
+                "81b3b283",
+                "18ef0f65",
+                "8474d959"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "question"
+        }
+      ],
+      "strategies": [
+        {
+          "id": "gift-reason",
+          "type": "causeEffect",
+          "prompt": "夫婦為什麼要做新衣新鞋？點回想畫面中的兩個線索。",
+          "options": [
+            {
+              "label": "小精靈的破衣",
+              "x": 43,
+              "y": 58.5,
+              "refs": [
+                {
+                  "para": 1,
+                  "sentences": [
+                    58
+                  ],
+                  "sha": [
+                    "f81259c6"
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "小精靈的光腳",
+              "x": 42,
+              "y": 61.5,
+              "refs": [
+                {
+                  "para": 1,
+                  "sentences": [
+                    59
+                  ],
+                  "sha": [
+                    "35284c51"
+                  ]
+                }
+              ]
+            }
+          ],
+          "answer": [
+            0,
+            1
+          ],
+          "refs": [
+            {
+              "para": 1,
+              "sentences": [
+                58,
+                59
+              ],
+              "sha": [
+                "f81259c6",
+                "35284c51"
+              ]
+            }
+          ],
+          "result": [
+            50,
+            64
+          ],
+          "hint": "再看看小精靈身上和腳上少了什麼。",
+          "explanation": "夫婦看見破衣與光腳，準備適合小精靈的衣服和鞋子。"
         }
       ]
     }

@@ -737,4 +737,948 @@ for (const scene of FIRST_PERSON_LESSON.scenes) {
     ref.sha = ref.sentences.map(n => refs.find(r => r.para === ref.para && r.sentences.includes(n)).sha[refs.find(r => r.para === ref.para && r.sentences.includes(n)).sentences.indexOf(n)]);
   }
 }
+// 回補策略：原句仍只用索引與雜湊；保留既有 cooking 操作與素材。
+const strategyBackfill = {
+  "version": 10,
+  "meter": {
+    "states": [
+      "分工合作",
+      "十分慌張",
+      "十分慌張",
+      "十分慌張",
+      "用心的記住"
+    ],
+    "faces": [
+      "🙂",
+      "😟",
+      "😟",
+      "😟",
+      "🙂"
+    ],
+    "read": {
+      "para": 4,
+      "n": 7,
+      "state": 4,
+      "level": 0
+    }
+  },
+  "scenes": [
+    {
+      "beats": {
+        "intro": [
+          {
+            "para": 1,
+            "sentences": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "sha": [
+              "2761b05e",
+              "0a3f5625",
+              "6233f9bb",
+              "47a06f75"
+            ]
+          }
+        ],
+        "act": {
+          "demo": false
+        },
+        "result": {
+          "duration": 1800,
+          "view": "work"
+        },
+        "read": [
+          {
+            "para": 1,
+            "sentences": [
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "sha": [
+              "fd92befa",
+              "f9fb8a47",
+              "59ee1d82",
+              "5df00739",
+              "67a25863"
+            ]
+          }
+        ]
+      },
+      "timeline": [
+        {
+          "kind": "intro",
+          "refs": [
+            {
+              "para": 1,
+              "sentences": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "sha": [
+                "2761b05e",
+                "0a3f5625",
+                "6233f9bb",
+                "47a06f75"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "act"
+        },
+        {
+          "kind": "result"
+        },
+        {
+          "kind": "read",
+          "refs": [
+            {
+              "para": 1,
+              "sentences": [
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "sha": [
+                "fd92befa",
+                "f9fb8a47",
+                "59ee1d82",
+                "5df00739",
+                "67a25863"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "question"
+        }
+      ],
+      "questions": [
+        {
+          "id": "division",
+          "type": "summaryCard",
+          "operationType": "summaryCard",
+          "kind": "摘要",
+          "pirls": "統整",
+          "stem": "這一幕最重要的事是什麼？",
+          "options": [
+            "師徒分工，康康負責撿柴",
+            "門口掛著風鈴",
+            "樹林是青綠色的"
+          ],
+          "answer": 0,
+          "summaryImages": [
+            "act1-entrance.webp",
+            "act1-entrance.webp",
+            "act1-entrance.webp"
+          ],
+          "why": [
+            "把這一幕的事情和結果連起來，就是重點。",
+            "這是細節，不是最重要的事；再想想整幕發生什麼。",
+            "這是細節，不是最重要的事；再想想整幕發生什麼。"
+          ],
+          "hints": [
+            "回想這一幕的困難或任務。",
+            "找出做了什麼，以及結果如何。",
+            "選能把事情和結果連起來的圖卡。"
+          ],
+          "explanation": "把這一幕的事情和結果連起來，就是重點。",
+          "refs": [
+            {
+              "para": 1,
+              "sentences": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "sha": [
+                "2761b05e",
+                "0a3f5625",
+                "6233f9bb",
+                "47a06f75"
+              ]
+            },
+            {
+              "para": 1,
+              "sentences": [
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "sha": [
+                "fd92befa",
+                "f9fb8a47",
+                "59ee1d82",
+                "5df00739",
+                "67a25863"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "beats": {
+        "intro": [
+          {
+            "para": 2,
+            "sentences": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "sha": [
+              "c667349f",
+              "4e11e7ab",
+              "50b80674",
+              "04ccac9e"
+            ]
+          }
+        ],
+        "act": {
+          "demo": false
+        },
+        "result": {
+          "duration": 1800,
+          "view": "pot"
+        },
+        "read": [
+          {
+            "para": 2,
+            "sentences": [
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "sha": [
+              "5e3c1a28",
+              "6979bde3",
+              "30f9c9f4",
+              "2dc7dca3",
+              "0e9d1562",
+              "3e55eae9",
+              "0f2390f2",
+              "28206697"
+            ]
+          }
+        ]
+      },
+      "timeline": [
+        {
+          "kind": "intro",
+          "refs": [
+            {
+              "para": 2,
+              "sentences": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "sha": [
+                "c667349f",
+                "4e11e7ab",
+                "50b80674",
+                "04ccac9e"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "act"
+        },
+        {
+          "kind": "result"
+        },
+        {
+          "kind": "read",
+          "refs": [
+            {
+              "para": 2,
+              "sentences": [
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ],
+              "sha": [
+                "5e3c1a28",
+                "6979bde3",
+                "30f9c9f4",
+                "2dc7dca3",
+                "0e9d1562",
+                "3e55eae9",
+                "0f2390f2",
+                "28206697"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "strategy",
+          "id": "panic-clues",
+          "hideOperations": true
+        },
+        {
+          "kind": "question"
+        }
+      ],
+      "strategies": [
+        {
+          "id": "panic-clues",
+          "type": "emotionClue",
+          "prompt": "點康康的臉與舀水動作，找心情線索。",
+          "options": [
+            {
+              "label": "康康的臉",
+              "x": 45,
+              "y": 35,
+              "face": {
+                "width": 9,
+                "height": 24
+              },
+              "markerOffset": [
+                7,
+                0
+              ],
+              "states": [
+                3
+              ],
+              "refs": [
+                {
+                  "para": 2,
+                  "sentences": [
+                    5
+                  ],
+                  "sha": [
+                    "6979bde3"
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "舀水的勺子",
+              "x": 59,
+              "y": 67,
+              "states": [
+                3
+              ],
+              "refs": [
+                {
+                  "para": 2,
+                  "sentences": [
+                    5,
+                    6,
+                    7,
+                    8,
+                    9
+                  ],
+                  "sha": [
+                    "6979bde3",
+                    "30f9c9f4",
+                    "2dc7dca3",
+                    "0e9d1562",
+                    "3e55eae9"
+                  ]
+                }
+              ]
+            }
+          ],
+          "answer": [
+            0,
+            1
+          ],
+          "refs": [
+            {
+              "para": 2,
+              "sentences": [
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "sha": [
+                "6979bde3",
+                "30f9c9f4",
+                "2dc7dca3",
+                "0e9d1562",
+                "3e55eae9"
+              ]
+            }
+          ],
+          "hint": "再看看康康的臉和舀水的動作。"
+        }
+      ],
+      "questions": [
+        {
+          "id": "action",
+          "type": "summaryCard",
+          "operationType": "summaryCard",
+          "kind": "摘要",
+          "pirls": "統整",
+          "stem": "這一幕最重要的事是什麼？",
+          "options": [
+            "康康反覆舀水，水仍在滾",
+            "康康背著木柴回來",
+            "師傅在接待客人"
+          ],
+          "answer": 0,
+          "summaryImages": [
+            "act2-clean.webp",
+            "act2-clean.webp",
+            "act2-clean.webp"
+          ],
+          "why": [
+            "把這一幕的事情和結果連起來，就是重點。",
+            "這是細節，不是最重要的事；再想想整幕發生什麼。",
+            "這是細節，不是最重要的事；再想想整幕發生什麼。"
+          ],
+          "hints": [
+            "回想這一幕的困難或任務。",
+            "找出做了什麼，以及結果如何。",
+            "選能把事情和結果連起來的圖卡。"
+          ],
+          "explanation": "把這一幕的事情和結果連起來，就是重點。",
+          "refs": [
+            {
+              "para": 2,
+              "sentences": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "sha": [
+                "c667349f",
+                "4e11e7ab",
+                "50b80674",
+                "04ccac9e"
+              ]
+            },
+            {
+              "para": 2,
+              "sentences": [
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ],
+              "sha": [
+                "5e3c1a28",
+                "6979bde3",
+                "30f9c9f4",
+                "2dc7dca3",
+                "0e9d1562",
+                "3e55eae9",
+                "0f2390f2",
+                "28206697"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "beats": {
+        "intro": [],
+        "act": {
+          "demo": false
+        },
+        "result": {
+          "duration": 1800,
+          "view": "fire"
+        },
+        "read": [
+          {
+            "para": 3,
+            "sentences": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "sha": [
+              "44cffcd0",
+              "a64002b2",
+              "a36ea753",
+              "f3c2eb87",
+              "6620976f",
+              "3869c3b1",
+              "b60df79a",
+              "ba3883c3",
+              "aba0dc99"
+            ]
+          }
+        ]
+      },
+      "timeline": [
+        {
+          "kind": "act"
+        },
+        {
+          "kind": "result"
+        },
+        {
+          "kind": "read",
+          "refs": [
+            {
+              "para": 3,
+              "sentences": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "sha": [
+                "44cffcd0",
+                "a64002b2",
+                "a36ea753",
+                "f3c2eb87",
+                "6620976f",
+                "3869c3b1",
+                "b60df79a",
+                "ba3883c3",
+                "aba0dc99"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "strategy",
+          "id": "heat-source",
+          "hideOperations": true
+        },
+        {
+          "kind": "question"
+        }
+      ],
+      "strategies": [
+        {
+          "id": "heat-source",
+          "type": "causeEffect",
+          "prompt": "水為什麼一直滾？點出原因。",
+          "options": [
+            {
+              "label": "灶下燒得火紅的木柴",
+              "x": 59,
+              "y": 68,
+              "refs": [
+                {
+                  "para": 3,
+                  "sentences": [
+                    7,
+                    8
+                  ],
+                  "sha": [
+                    "ba3883c3",
+                    "aba0dc99"
+                  ]
+                }
+              ]
+            }
+          ],
+          "answer": [
+            0
+          ],
+          "refs": [
+            {
+              "para": 3,
+              "sentences": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "sha": [
+                "f3c2eb87",
+                "6620976f",
+                "3869c3b1",
+                "b60df79a",
+                "ba3883c3",
+                "aba0dc99"
+              ]
+            }
+          ],
+          "result": [
+            62,
+            30
+          ],
+          "hint": "再看看鍋子下面。",
+          "explanation": "柴火繼續燃燒，水就繼續受熱。"
+        }
+      ],
+      "questions": [
+        {
+          "id": "cause",
+          "type": "summaryCard",
+          "operationType": "summaryCard",
+          "kind": "摘要",
+          "pirls": "統整",
+          "stem": "這一幕最重要的事是什麼？",
+          "options": [
+            "師傅笑著說話",
+            "師傅走回鍋邊",
+            "康康觀察灶下，找到持續加熱的柴火"
+          ],
+          "answer": 2,
+          "summaryImages": [
+            "act3-looking-down.webp",
+            "act3-looking-down.webp",
+            "act3-looking-down.webp"
+          ],
+          "why": [
+            "這是細節，不是最重要的事；再想想整幕發生什麼。",
+            "這是細節，不是最重要的事；再想想整幕發生什麼。",
+            "把這一幕的事情和結果連起來，就是重點。"
+          ],
+          "hints": [
+            "回想這一幕的困難或任務。",
+            "找出做了什麼，以及結果如何。",
+            "選能把事情和結果連起來的圖卡。"
+          ],
+          "explanation": "把這一幕的事情和結果連起來，就是重點。",
+          "refs": [
+            {
+              "para": 3,
+              "sentences": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "sha": [
+                "44cffcd0",
+                "a64002b2",
+                "a36ea753",
+                "f3c2eb87",
+                "6620976f",
+                "3869c3b1",
+                "b60df79a",
+                "ba3883c3",
+                "aba0dc99"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "beats": {
+        "intro": [
+          {
+            "para": 3,
+            "sentences": [
+              9
+            ],
+            "sha": [
+              "4258a71a"
+            ]
+          }
+        ],
+        "act": {
+          "demo": true
+        },
+        "result": {
+          "duration": 1800,
+          "view": "pot"
+        },
+        "read": [
+          {
+            "para": 3,
+            "sentences": [
+              10,
+              11,
+              12,
+              13
+            ],
+            "sha": [
+              "532f8b5b",
+              "4c4806ed",
+              "e1ffefc2",
+              "76a9cbe3"
+            ]
+          },
+          {
+            "para": 4,
+            "sentences": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "sha": [
+              "edd44301",
+              "a3d24398",
+              "16d6282e",
+              "c9418dd2",
+              "cbf41dca",
+              "7e3d6777",
+              "f52f4492",
+              "abd01276",
+              "05823090",
+              "bf1a4eee"
+            ]
+          }
+        ]
+      },
+      "timeline": [
+        {
+          "kind": "intro",
+          "refs": [
+            {
+              "para": 3,
+              "sentences": [
+                9
+              ],
+              "sha": [
+                "4258a71a"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "strategy",
+          "id": "master-predict",
+          "hideOperations": true
+        },
+        {
+          "kind": "act"
+        },
+        {
+          "kind": "result"
+        },
+        {
+          "kind": "read",
+          "refs": [
+            {
+              "para": 3,
+              "sentences": [
+                10,
+                11,
+                12,
+                13
+              ],
+              "sha": [
+                "532f8b5b",
+                "4c4806ed",
+                "e1ffefc2",
+                "76a9cbe3"
+              ]
+            },
+            {
+              "para": 4,
+              "sentences": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "sha": [
+                "edd44301",
+                "a3d24398",
+                "16d6282e",
+                "c9418dd2",
+                "cbf41dca",
+                "7e3d6777",
+                "f52f4492",
+                "abd01276",
+                "05823090",
+                "bf1a4eee"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "question"
+        }
+      ],
+      "strategies": [
+        {
+          "id": "master-predict",
+          "type": "predict",
+          "prompt": "師傅會怎麼做？",
+          "options": [
+            "先看看鍋裡的水",
+            "先問康康剛才做了什麼",
+            "我不確定"
+          ],
+          "refs": [
+            {
+              "para": 3,
+              "sentences": [
+                10,
+                11,
+                12,
+                13
+              ],
+              "sha": [
+                "532f8b5b",
+                "4c4806ed",
+                "e1ffefc2",
+                "76a9cbe3"
+              ]
+            }
+          ],
+          "revealAt": {
+            "para": 3,
+            "n": 10
+          }
+        }
+      ],
+      "questions": [
+        {
+          "id": "sequence",
+          "type": "summaryCard",
+          "operationType": "summaryCard",
+          "kind": "摘要",
+          "pirls": "統整",
+          "stem": "這一幕最重要的事是什麼？",
+          "options": [
+            "師傅移開柴火，康康學會找問題根本",
+            "師傅拍拍康康的背",
+            "康康點點頭"
+          ],
+          "answer": 0,
+          "summaryImages": [
+            "act4-draw-wood.webp",
+            "act4-small-fire.webp",
+            "act4-small-fire.webp"
+          ],
+          "why": [
+            "把這一幕的事情和結果連起來，就是重點。",
+            "這是細節，不是最重要的事；再想想整幕發生什麼。",
+            "這是細節，不是最重要的事；再想想整幕發生什麼。"
+          ],
+          "hints": [
+            "回想這一幕的困難或任務。",
+            "找出做了什麼，以及結果如何。",
+            "選能把事情和結果連起來的圖卡。"
+          ],
+          "explanation": "把這一幕的事情和結果連起來，就是重點。",
+          "refs": [
+            {
+              "para": 3,
+              "sentences": [
+                9
+              ],
+              "sha": [
+                "4258a71a"
+              ]
+            },
+            {
+              "para": 3,
+              "sentences": [
+                10,
+                11,
+                12,
+                13
+              ],
+              "sha": [
+                "532f8b5b",
+                "4c4806ed",
+                "e1ffefc2",
+                "76a9cbe3"
+              ]
+            },
+            {
+              "para": 4,
+              "sentences": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "sha": [
+                "edd44301",
+                "a3d24398",
+                "16d6282e",
+                "c9418dd2",
+                "cbf41dca",
+                "7e3d6777",
+                "f52f4492",
+                "abd01276",
+                "05823090",
+                "bf1a4eee"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+FIRST_PERSON_LESSON.version = strategyBackfill.version;
+FIRST_PERSON_LESSON.meter = strategyBackfill.meter;
+FIRST_PERSON_LESSON.scenes.forEach((scene, i) => Object.assign(scene, strategyBackfill.scenes[i]));
+// Reuse the existing full-bleed scooping frame for visual evidence; no new artwork.
+FIRST_PERSON_LESSON.scenes[1].art.images.push('act2-scoop-3.webp');
+FIRST_PERSON_LESSON.scenes[1].timeline.find(e => e.id === 'panic-clues').imageIndex = 1;
+Object.assign(FIRST_PERSON_LESSON.scenes[1].strategies[0].options[1], {x:59,y:54});
+FIRST_PERSON_LESSON.scenes.forEach(scene => {
+  const q = scene.questions[0];
+  q.summaryImages = ['sprites/chime.webp', 'sprites/wood.webp', 'sprites/ladle-empty.webp'];
+  q.summaryImages[q.answer] = scene.art.images[0];
+});
 export default FIRST_PERSON_LESSON;
