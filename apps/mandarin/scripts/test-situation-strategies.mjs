@@ -45,8 +45,8 @@ console.log('PASS: four strategies, ungraded prediction, duplicate/multiple clue
 // Run actual strategy DOM click handlers; native buttons provide Enter/Space activation.
 const {mountStrategy}=await import('../src/activities/situation/strategies.js');
 class Element {
- constructor(tag='div'){this.tagName=tag;this.children=[];this.attrs={};this.events={};this.classes=new Set();this.classList={add:n=>this.classes.add(n),remove:n=>this.classes.delete(n),toggle(){}};}
- append(...xs){for(const x of xs){this.children.push(x);x.parent=this;}}appendChild(x){this.append(x);}setAttribute(k,v){this.attrs[k]=v;}addEventListener(k,f){(this.events[k] ||= []).push(f);}removeEventListener(k,f){this.events[k]=(this.events[k] || []).filter(fn=>fn!==f);}
+ constructor(tag='div'){this.dataset={};this.tagName=tag;this.children=[];this.attrs={};this.events={};this.classes=new Set();this.classList={add:n=>this.classes.add(n),remove:n=>this.classes.delete(n),toggle(){}};}
+ append(...xs){for(const x of xs){this.children.push(x);x.parent=this;}}appendChild(x){this.append(x);}setAttribute(k,v){this.attrs[k]=v;if(k.startsWith('data-'))this.dataset[k.slice(5).replace(/-([a-z])/g,(_,c)=>c.toUpperCase())]=v;}addEventListener(k,f){(this.events[k] ||= []).push(f);}removeEventListener(k,f){this.events[k]=(this.events[k] || []).filter(fn=>fn!==f);}
  replaceChildren(...xs){this.children=[];this.append(...xs);}remove(){if(this.parent)this.parent.children=this.parent.children.filter(x=>x!==this);}
  querySelector(selector){return this.children.find(x=>selector==='[data-strategy-next]' && x.attrs?.['data-strategy-next']) || this.children.map(x=>x.querySelector?.(selector)).find(Boolean);}
  click(){for(const f of this.events.click || [])f({target:this});}closest(selector){return selector==='button' && this.tagName==='button'?this:null;}
@@ -60,8 +60,8 @@ try{
    const row=panel.children.at(-1);row.children[2].children[0].click();assert.equal(completed,1);
   }else{
    stage.events.click[0]({target:new Element()});assert.equal(completed,0);
-   if(strategy.type==='causeEffect'){plane.children[1].click();assert.equal(completed,0);assert.equal(plane.children.length,2);plane.children[0].click();assert.equal(plane.children.length,3);assert.ok(plane.children[2].innerHTML.includes('<path'));}
-   else{plane.children[0].click();assert.equal(panel.querySelector('[data-strategy-next]'),undefined);plane.children[1].click();assert.deepEqual(words,['震驚','憤怒又絕望']);}
+   if(strategy.type==='causeEffect'){plane.children.find(n=>n.tagName==='button' && n.attrs['aria-label']==='南瓜').click();assert.equal(completed,0);plane.children[0].click();assert.ok(plane.children.at(-1).innerHTML.includes('<path'));}
+   else{plane.children[0].click();assert.equal(panel.querySelector('[data-strategy-next]'),undefined);plane.children.find(n=>n.tagName==='button' && n.attrs['aria-label']==='布大爺的表情').click();assert.deepEqual(words,['震驚','憤怒又絕望']);assert.ok(plane.children.find(n=>n.dataset.faceIndex==='1').classes.has('is-bright'),'face halo briefly brightens on hit');}
    assert.equal(completed,0);panel.querySelector('[data-strategy-next]').click();assert.equal(completed,1);assert.equal(focused,strategy.options[0].x);
   }
   dispose();assert.equal(plane.children.length,0);assert.equal((stage.events.click || []).length,0);

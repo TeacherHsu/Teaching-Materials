@@ -1,6 +1,6 @@
 import { lockBeatObjects } from './firstPersonPresentation.js';
 import { mountChimeWind } from './firstPersonChime.js';
-import { illustrationLayout, sceneIllustrationLayout } from './firstPersonLayout.js';
+import { sceneIllustrationLayout } from './firstPersonLayout.js';
 import { mountOperation } from './firstPersonInteraction.js';
 import { FIRST_PERSON_ILLUSTRATIONS } from '../data/firstPersonLesson.js';
 
@@ -22,6 +22,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   let disposed = false, paused = true, frame = 0, previous = 0, pan = art.views[phase.view] ?? .5, target = pan;
   let width = 0, imageWidth = 0, imageHeight = 0, top = 0;
   const base = `${import.meta.env.BASE_URL}${phase.assetBase}`;
+  if(art.portraitFrame){host.classList.add('fp-portrait-evidence');host.style.setProperty('--fp-evidence-backdrop',`url("${base+art.images[0]}")`);}
   const images = art.images.map((file, i) => {
     const img = new Image(); img.alt = ''; img.setAttribute('aria-hidden','true'); img.draggable = false; img.className = 'fp-illustration-frame'; img.style.opacity = i ? '0' : '1';
     img.onload = () => { if (!disposed) { host.classList.remove('fp-image-failed'); onMode?.('第一人稱・插畫探索'); render(); } };
@@ -46,7 +47,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     }
   }
   const wind = art.plugins?.includes('chimeWind') ? mountChimeWind(plane, base, () => calm) : null;
-  const interaction = mountOperation(plane, { scene: phase, state: operation, changed: onOperation, saveDemo: onDemoSeen, reduced: () => calm, chime() { wind?.blow(); onChime?.(); }, focus(x) { x=art.focus?.[host.clientWidth/host.clientHeight>=1.4?'landscape':'portrait']?.[x] ?? x; const iw=illustrationLayout(host.clientWidth,host.clientHeight,.5,art.aspect).imageWidth; if(iw>host.clientWidth) { target=Math.max(0,Math.min(1,(iw*x/100-host.clientWidth/2)/(iw-host.clientWidth))); pan=target; render(); } }, heat(value) { stateArt(); effects.style.opacity = '1'; effects.style.setProperty('--heat', value); [...effects.children].forEach((el,i) => { const fire=el.classList.contains('fp-art-fire'); el.style.visibility = !fire && (value === 0 || (el.classList.contains('fp-art-bubble') && i % 5 >= Math.ceil(value * 5))) ? 'hidden' : ''; el.style.opacity=String(fire?Math.max(1/3,value):value); if(fire) el.style.scale=String(Math.max(1/3,value)); }); if(art.stateImages) { images[0].style.opacity=String(value); images[1].style.opacity=String(1-value); images[0].style.transition=images[1].style.transition=(calm)?'none':'opacity .8s ease'; } }, demonstrate(active) { images[0].style.opacity=active?'0':'1'; images[1].style.opacity=active?'1':'0'; } });
+  const interaction = mountOperation(plane, { scene: phase, state: operation, changed: onOperation, saveDemo: onDemoSeen, reduced: () => calm, chime() { wind?.blow(); onChime?.(); }, focus(x) { x=art.focus?.[host.clientWidth/host.clientHeight>=1.4?'landscape':'portrait']?.[x] ?? x; const iw=sceneIllustrationLayout(host.clientWidth,host.clientHeight,.5,art,reading).imageWidth; if(iw>host.clientWidth) { target=Math.max(0,Math.min(1,(iw*x/100-host.clientWidth/2)/(iw-host.clientWidth))); pan=target; render(); } }, heat(value) { stateArt(); effects.style.opacity = '1'; effects.style.setProperty('--heat', value); [...effects.children].forEach((el,i) => { const fire=el.classList.contains('fp-art-fire'); el.style.visibility = !fire && (value === 0 || (el.classList.contains('fp-art-bubble') && i % 5 >= Math.ceil(value * 5))) ? 'hidden' : ''; el.style.opacity=String(fire?Math.max(1/3,value):value); if(fire) el.style.scale=String(Math.max(1/3,value)); }); if(art.stateImages) { images[0].style.opacity=String(value); images[1].style.opacity=String(1-value); images[0].style.transition=images[1].style.transition=(calm)?'none':'opacity .8s ease'; } }, demonstrate(active) { images[0].style.opacity=active?'0':'1'; images[1].style.opacity=active?'1':'0'; } });
   // Only the next act is warmed. No global cache that keeps all four acts alive.
   const preloads = (phase.nextImages || []).map(file => { const img = new Image(); img.src = base + file; return img; });
   const reduced = () => calm;
@@ -56,7 +57,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     const geometry=sceneIllustrationLayout(width,host.clientHeight,pan,art,reading);
     ({imageHeight,imageWidth,top}=geometry);
     const left=geometry.left;
-    for(const {img,baseImage,state} of expressionOverlays){img.style.opacity=state && state!==moodLabel ? '0' : baseImage.style.opacity;img.style.transition=baseImage.style.transition;}
+    for(const {img,baseImage,state} of expressionOverlays){const replaced=!state && expressionOverlays.some(o=>o.baseImage===baseImage && o.state===moodLabel);img.style.opacity=replaced || state && state!==moodLabel ? '0' : baseImage.style.opacity;img.style.transition=baseImage.style.transition;}
     layer.style.top = `${top}px`; layer.style.height = `${imageHeight}px`;
     plane.style.width = `${imageWidth}px`; plane.style.transform = `translateX(${left}px)`;
     strategyPlane.style.width=`${imageWidth}px`;strategyPlane.style.transform=`translateX(${left}px)`;
@@ -86,7 +87,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     if (reduced()) { pan = target; if (art.freezeFirstFrame) images.forEach((img, i) => { img.style.opacity = i ? '0' : '1'; });  }
     render(); if (!paused && !document.hidden) frame = requestAnimationFrame(tick);
   }
-  plane.addEventListener('focusin', event => { const x=parseFloat(event.target.closest('.fp-object')?.style.left); if(event.target.matches(':focus-visible') && !interaction.dragging && Number.isFinite(x) && imageWidth>width) { target=Math.max(0,Math.min(1,(imageWidth*x/100-width/2)/(imageWidth-width))); resume(); } });
+  plane.addEventListener('focusin', event => { let x=parseFloat(event.target.closest('.fp-object')?.style.left); if(art.portraitFrame && currentBeat==='act')x=(art.portraitFrame.left+art.portraitFrame.right)/2;if(event.target.matches(':focus-visible') && !interaction.dragging && Number.isFinite(x) && imageWidth>width) { target=Math.max(0,Math.min(1,(imageWidth*x/100-width/2)/(imageWidth-width))); resume(); } });
   const resize = new ResizeObserver(render); resize.observe(host);
   media.addEventListener('change', resume); document.addEventListener('visibilitychange', resume);
   resume();
@@ -96,14 +97,14 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     startDemo() { interaction.startDemo?.(); },
     showWoodDemo() { return interaction.showWoodDemo(true); },
     setView(view, { immediate = false } = {}) { target = art.views[view] ?? .5; if(immediate)pan=target; resume(); },
-    look(dx) { if(interaction.dragging) return; target = Math.max(0, Math.min(1, target - dx * 2)); resume(); },
+    look(dx) { if(interaction.dragging || art.portraitFrame && currentBeat==='act') return; target = Math.max(0, Math.min(1, target - dx * 2)); resume(); },
     observeAction() { resume(); },
     setOptions(options) { imageOverride=options.imageIndex;hideOperations=Boolean(options.hideOperations);plane.classList.toggle('fp-hide-operations',hideOperations); if(options.mood!==undefined)moodLabel=options.mood;if(options.beat && options.beat!==currentBeat){currentBeat=options.beat;clearTimeout(resultArtTimer);resultReady=false;if(currentBeat==='result'){resultArtTimer=setTimeout(()=>{resultReady=true;if(art.resultView){target=art.views[art.resultView] ?? target;pan=target;render();}stateArt();},art.resultDelay || 0);}}stateArt();reading=art.readingZoom!==false && Boolean(options.reading) && !(currentBeat==='result' && art.resultZoom===false); calm = Boolean(options.calm); paused = Boolean(options.paused); lockBeatObjects(plane,Boolean(options.locked));
       plane.inert=paused || Boolean(options.locked);
       resume(); },
     dispose() {
       disposed = true;clearTimeout(resultArtTimer); wind?.dispose(); interaction.dispose(); cancelAnimationFrame(frame); resize.disconnect(); media.removeEventListener('change', resume); document.removeEventListener('visibilitychange', resume);
-      [...images, ...preloads,...expressionOverlays.map(o=>o.img)].forEach(img => { img.onload = img.onerror = null; img.removeAttribute('src'); }); layer.remove(); host.classList.remove('is-illustrated', 'fp-image-failed');
+      [...images, ...preloads,...expressionOverlays.map(o=>o.img)].forEach(img => { img.onload = img.onerror = null; img.removeAttribute('src'); }); layer.remove(); host.classList.remove('is-illustrated', 'fp-image-failed','fp-portrait-evidence');host.style.removeProperty('--fp-evidence-backdrop');
     },
   };
 }

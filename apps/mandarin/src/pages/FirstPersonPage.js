@@ -171,6 +171,7 @@ export function FirstPersonPage(lesson) {
     if(entry.kind==='strategy'){
       beat='strategy';root.dataset.beat=beat;updateMotion();
       const strategy=scene.strategies.find(t=>t.id===entry.id);
+      if(strategy.type==='predict' && scene.art.portraitFrame)world.focusPoint((scene.art.portraitFrame.left+scene.art.portraitFrame.right)/2);
       const panel=h('section',{class:'fp-strategy-panel','aria-label':strategy.prompt});rootBody.append(panel);
       disposeStrategy=mountStrategy({strategy,panel,plane:world.strategyPlane,stage:root.querySelector('.fp-world'),states:config.meter.states,focus:x=>world.focusPoint(x),onWords(words,target){
         if(!target){const option=strategy.options.find(o=>(o.states || []).some(i=>words.includes(config.meter.states[i])));const event=config.meter.events.find(e=>e.state===option?.states?.[0]);if(event)updateMood(false,null,event);}

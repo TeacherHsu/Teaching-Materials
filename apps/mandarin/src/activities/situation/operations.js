@@ -71,7 +71,7 @@ export function mountConfiguredOperation(plane, options, api) {
   const point=e=>{const r=plane.getBoundingClientRect();return {x:(e.clientX-r.left)/r.width*100,y:(e.clientY-r.top)/r.height*100};};
   const snap=o=>{const el=elements.get(o.action);el.style.width=`${state.collected?.includes(o.action) && o.destinationWidth ? o.destinationWidth : o.width}%`;pos(el,...(state.collected?.includes(o.action) && o.destination ? o.destination : [o.x,o.y]));};
   function render(){
-    for(const o of config.objects){const el=elements.get(o.action);el.hidden=!available(o);el.style.pointerEvents=o.passive?'none':'';el.disabled=Boolean(paused || o.passive || api.complete() || !available(o) || state.collected?.includes(o.action));el.setAttribute('aria-pressed',String(selected===o || gripped===o));if(!drag)snap(o);}
+    for(const o of config.objects){const el=elements.get(o.action);const used=Boolean(o.consumedBy && state.collected?.includes(o.consumedBy) || o.usedFade && state.collected?.includes(o.action));el.classList.toggle('fp-used',used);el.hidden=!available(o);el.style.pointerEvents=o.passive?'none':'';el.disabled=Boolean(paused || used || o.passive || api.complete() || !available(o) || state.collected?.includes(o.action));el.setAttribute('aria-pressed',String(selected===o || gripped===o));if(!drag)snap(o);}
     status.classList.toggle('fp-operation-complete',api.complete());layer.classList.toggle('fp-operation-complete',api.complete());
     tell(config.prompts?.[state.step] || scene.goal);const group=config.groups?.find(g=>state.step>=g.from && state.step<g.to) || config.groups?.at(-1);counter.textContent=group?`${Math.min(group.to-group.from,Math.max(0,state.step-group.from))}／${group.to-group.from}`:`${state.step}／${config.steps.length}`;
     if(lastStep!==state.step){lastStep=state.step;focus?.(config.focus?.[state.step] ?? config.objects.find(o=>o.action===config.steps[state.step])?.x ?? config.objects[0].x);}
@@ -126,7 +126,7 @@ export function mountConfiguredOperation(plane, options, api) {
     if(o.minHitSize)el.style.setProperty('--fp-hit-size',`${o.minHitSize}px`);
     el.style.width=`${o.width}%`;el.style.aspectRatio=String(1/o.ratio);el.style.rotate=`${o.angle}deg`;pos(el,o.x,o.y);
     if(o.sprite){const img=new Image();img.src=base+o.sprite+'.webp';img.alt='';img.draggable=false;el.append(img);}else if(!o.target && !o.hotspot)el.textContent=o.label;
-    if(o.hotspot)el.classList.add('fp-glow');
+    if(o.hotspot)el.classList.add('fp-glow');if(o.grounded)el.classList.add('fp-grounded');
     layer.append(el);elements.set(o.action,el);el.onclick=()=>{if(!suppress)select(o);};
     if(o.target || ['tap','observe','chooseCard','orderCards'].includes(gesture(o)))continue;
     el.onpointerdown=e=>{

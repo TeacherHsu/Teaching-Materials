@@ -300,7 +300,11 @@ export default {
           0,
           0
         ],
-        "resultImage": 1
+        "resultImage": 1,
+        "expressionOverlays": {
+          "sunset.webp": "sunset-sad-expression.webp",
+          "homeward.webp": "homeward-sad-expression.webp"
+        }
       },
       "operation": {
         "type": "observe",
@@ -809,6 +813,9 @@ export default {
           "冷靜": {
             "morning.webp": "morning-calm-expression.webp"
           }
+        },
+        "expressionOverlays": {
+          "morning.webp": "morning-shock-expression.webp"
         }
       },
       "operation": {
@@ -1310,6 +1317,14 @@ export default {
                     "05290588"
                   ]
                 }
+              ],
+              "face": {
+                "width": 6,
+                "height": 17
+              },
+              "markerOffset": [
+                6,
+                2
               ]
             }
           ],
@@ -1372,7 +1387,17 @@ export default {
           0,
           0
         ],
-        "resultImage": 1
+        "resultImage": 1,
+        "expressionStates": {
+          "氣惱": {
+            "market-before.webp": "market-before-angry-expression.webp",
+            "market-crowd.webp": "market-crowd-angry-expression.webp"
+          },
+          "悲從中來": {
+            "market-before.webp": "market-before-sad-expression.webp",
+            "market-crowd.webp": "market-crowd-sad-expression.webp"
+          }
+        }
       },
       "operation": {
         "type": "observe",
@@ -1908,6 +1933,14 @@ export default {
                     "32a8469c"
                   ]
                 }
+              ],
+              "face": {
+                "width": 6,
+                "height": 17
+              },
+              "markerOffset": [
+                -6,
+                2
               ]
             },
             {
@@ -1988,9 +2021,9 @@ export default {
         "hotspots": {},
         "effects": {},
         "views": {
-          "work": 0.226,
-          "proof": 0.5,
-          "farmer": 0.226
+          "work": 0.33,
+          "proof": 0.33,
+          "farmer": 0.33
         },
         "orientationFocus": {
           "landscape": 50,
@@ -2007,13 +2040,17 @@ export default {
         "hideCompletedOnResult": true,
         "expressionStates": {
           "欣慰": {
-            "market.webp": "market-relief-expression.webp",
-            "evidence.webp": "market-relief-expression.webp"
+            "market.webp": "market-relief-expression.webp"
           },
           "心滿意足": {
-            "market.webp": "market-relief-expression.webp",
-            "evidence.webp": "market-relief-expression.webp"
+            "market.webp": "market-relief-expression.webp"
           }
+        },
+        "portraitFrame": {
+          "left": 12,
+          "right": 68,
+          "top": 118,
+          "bottom": 180
         }
       },
       "operation": {
@@ -2032,9 +2069,9 @@ export default {
           {
             "action": "backpack",
             "label": "背包",
-            "x": 50,
-            "y": 83,
-            "width": 8,
+            "x": 18.5,
+            "y": 88,
+            "width": 6,
             "ratio": 1.3520518358531317,
             "angle": 0,
             "sprite": "backpack",
@@ -2043,148 +2080,157 @@ export default {
           {
             "action": "pumpkin-1",
             "label": "南瓜的蒂口",
-            "x": 46,
-            "y": 70,
-            "width": 4,
+            "x": 44,
+            "y": 69.28404748908297,
+            "width": 8.4,
             "ratio": 0.7838427947598253,
             "angle": 0,
             "sprite": "pumpkin-1",
-            "passive": true
+            "passive": true,
+            "grounded": true
           },
           {
             "action": "pumpkin-2",
             "label": "南瓜的蒂口",
-            "x": 50,
-            "y": 70,
-            "width": 4,
+            "x": 53,
+            "y": 62.30783582089552,
+            "width": 8.4,
             "ratio": 1.492537313432836,
             "angle": 0,
             "sprite": "pumpkin-2",
-            "passive": true
+            "passive": true,
+            "grounded": true
           },
           {
             "action": "pumpkin-3",
             "label": "南瓜的蒂口",
-            "x": 54,
-            "y": 70,
-            "width": 4,
+            "x": 62,
+            "y": 67.34926470588235,
+            "width": 8.4,
             "ratio": 0.9803921568627451,
             "angle": 0,
             "sprite": "pumpkin-3",
-            "passive": true
+            "passive": true,
+            "grounded": true
           },
           {
             "action": "socket-1",
             "label": "接回星形蒂口",
-            "x": 46,
-            "y": 68.6,
-            "width": 3,
+            "x": 44.0,
+            "y": 66.34404748908295,
+            "width": 4,
             "ratio": 0.7,
             "angle": 0,
-            "target": true
+            "target": true,
+            "consumedBy": "match-1"
           },
           {
             "action": "socket-2",
             "label": "接回細圓蒂口",
-            "x": 50,
-            "y": 64.2,
-            "width": 3,
+            "x": 53.0,
+            "y": 50.12783582089553,
+            "width": 4,
             "ratio": 0.7,
             "angle": 0,
-            "target": true
+            "target": true,
+            "consumedBy": "match-2"
           },
           {
             "action": "socket-3",
             "label": "接回斜橢圓蒂口",
-            "x": 54,
-            "y": 66.8,
-            "width": 3,
+            "x": 62.0,
+            "y": 60.62926470588234,
+            "width": 4,
             "ratio": 0.7,
             "angle": 0,
-            "target": true
+            "target": true,
+            "consumedBy": "match-3"
           },
           {
             "action": "match-1",
             "label": "從背包取出粗直南瓜蒂",
-            "x": 46,
-            "y": 78,
+            "x": 44,
+            "y": 87,
             "width": 2.7,
             "ratio": 1,
             "angle": 0,
             "sprite": "stem-1",
             "region": "shape-1",
             "destination": [
-              46,
-              67.4
+              44.0,
+              63.82404748908298
             ],
-            "destinationWidth": 1.7
+            "destinationWidth": 3.57,
+            "usedFade": true
           },
           {
             "action": "match-2",
             "label": "從背包取出細彎南瓜蒂",
-            "x": 50,
-            "y": 78,
+            "x": 53,
+            "y": 87,
             "width": 2.7,
             "ratio": 1.9285714285714286,
             "angle": 0,
             "sprite": "stem-2",
             "region": "shape-2",
             "destination": [
-              50,
-              62.65
+              53.0,
+              46.87283582089552
             ],
-            "destinationWidth": 0.9
+            "destinationWidth": 1.8900000000000001,
+            "usedFade": true
           },
           {
             "action": "match-3",
             "label": "從背包取出彎肘南瓜蒂",
-            "x": 54,
-            "y": 78,
+            "x": 62,
+            "y": 87,
             "width": 2.7,
             "ratio": 0.8359621451104101,
             "angle": 0,
             "sprite": "stem-3",
             "region": "shape-3",
             "destination": [
-              54.5,
-              66.25
+              63.05,
+              59.47426470588235
             ],
-            "destinationWidth": 1.5
+            "destinationWidth": 3.1500000000000004,
+            "usedFade": true
           }
         ],
         "regions": {
           "target": {
-            "left": 44.5,
-            "right": 47.5,
-            "top": 66.1,
-            "bottom": 71.1
+            "left": 42.0,
+            "right": 46.0,
+            "top": 63.34404748908295,
+            "bottom": 69.34404748908295
           },
           "shape-1": {
-            "left": 44.5,
-            "right": 47.5,
-            "top": 66.1,
-            "bottom": 71.1
+            "left": 42.0,
+            "right": 46.0,
+            "top": 63.34404748908295,
+            "bottom": 69.34404748908295
           },
           "shape-2": {
-            "left": 48.5,
-            "right": 51.5,
-            "top": 61.7,
-            "bottom": 66.7
+            "left": 51.0,
+            "right": 55.0,
+            "top": 47.12783582089553,
+            "bottom": 53.12783582089553
           },
           "shape-3": {
-            "left": 52.5,
-            "right": 55.5,
-            "top": 64.3,
-            "bottom": 69.3
+            "left": 60.0,
+            "right": 64.0,
+            "top": 57.62926470588234,
+            "bottom": 63.62926470588234
           }
         },
         "guide": false,
         "retry": "看看蒂的粗細和形狀",
         "focus": [
-          50,
-          50,
-          50,
-          50
+          40,
+          40,
+          40,
+          40
         ],
         "keepCompleted": true
       },
@@ -2651,9 +2697,9 @@ export default {
             }
           ],
           "object": {
-            "x": 50,
-            "y": 76,
-            "width": 8,
+            "x": 18.5,
+            "y": 88,
+            "width": 6,
             "sprite": "backpack"
           },
           "imageIndex": 0,
@@ -2853,6 +2899,14 @@ export default {
                     "f3e2888b"
                   ]
                 }
+              ],
+              "face": {
+                "width": 7,
+                "height": 17
+              },
+              "markerOffset": [
+                -9,
+                2
               ]
             }
           ],

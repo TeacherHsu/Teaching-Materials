@@ -6,7 +6,7 @@ import {validateSituationLesson,validateUnlockedLesson,meterFor,storyUnitKeys} f
 import {classroomPassword} from './classroom-password.mjs';
 import {splitSentences} from '../src/utils/readingUnits.js';
 import {mountOperation,operationState,operationComplete,operate} from '../src/activities/firstPersonInteraction.js';
-import {illustrationLayout} from '../src/activities/firstPersonLayout.js';
+import {illustrationLayout,sceneIllustrationLayout} from '../src/activities/firstPersonLayout.js';
 import {beatLines,nextBeat} from '../src/activities/firstPersonPresentation.js';
 import {freshProgress,restoreProgress,answerScene} from '../src/activities/firstPersonCore.js';
 validateSituationLesson(lesson);
@@ -40,8 +40,8 @@ else{
 // Numeric full-bleed cover and UI rectangles; not browser verification.
 let checks=0;const overlap=(a,b)=>a.x<b.x+b.w && a.x+a.w>b.x && a.y<b.y+b.h && a.y+a.h>b.y;
 for(const [width,height] of [[1366,900],[820,1180],[375,812]])for(const s of lesson.scenes)for(let step=0;step<s.operation.steps.length;step++){
- const initial=illustrationLayout(width,height,.5,s.art.aspect);assert.ok(initial.imageWidth>=width && initial.imageHeight>=height);
- const focus=s.operation.focus[step];const pan=Math.max(0,Math.min(1,(initial.imageWidth*focus/100-width/2)/(initial.imageWidth-width || 1)));const g=illustrationLayout(width,height,pan,s.art.aspect);
+ const initial=sceneIllustrationLayout(width,height,.5,s.art);assert.ok(initial.imageWidth>=width);if(!s.art.portraitFrame)assert.ok(initial.imageHeight>=height);
+ const focus=s.operation.focus[step];const pan=Math.max(0,Math.min(1,(initial.imageWidth*focus/100-width/2)/(initial.imageWidth-width || 1)));const g=sceneIllustrationLayout(width,height,pan,s.art);
  for(const o of s.operation.objects.filter(o=>!o.passive && step>=(o.fromStep??0) && step<=(o.toStep??99))){
   const w=Math.max(44,g.imageWidth*o.width/100),h=Math.max(44,g.imageWidth*o.width/100*o.ratio),box={x:g.left+g.imageWidth*o.x/100-w/2,y:g.top+g.imageHeight*o.y/100-h/2,w,h};
   assert.ok(box.x>=0 && box.x+box.w<=width,`${width} ${s.id}/${o.action}: same action frame`);assert.ok(box.y>110 && box.y+box.h<height-12,`${width} ${s.id}/${o.action}: clear task and footer`);
@@ -64,8 +64,8 @@ try{
  for(const a of ['stem-3','stem-1','stem-2']){garden.find(a).onclick();garden.find('bag').onclick();}assert.equal(garden.count(),'3／3');assert.equal(garden.state.step,6);garden.controller.dispose();
  const market=setup(lesson.scenes[2]);for(const a of ['recognize-2','recognize-3','recognize-1'])market.find(a).onclick();assert.equal(market.state.step,3);market.controller.dispose();
  const match=setup(lesson.scenes[3]);assert.equal(match.scene.operation.guide,false,'no arrow revealing matching answer');
- match.find('match-1').onclick();match.find('socket-2').onclick();assert.equal(match.state.step,0,'wrong shape rejected');assert.equal(match.find('match-1').style.left,'46%');
- for(const i of [3,1,2]){const o=match.scene.operation.objects.find(o=>o.action==='match-'+i),button=match.find(o.action);button.onpointerdown(e(o.x,o.y));button.onpointerup(e(o.x,match.find('socket-'+i).style.top.replace('%','')*1));await tick();assert.equal(button.style.width,`${o.destinationWidth}%`);assert.equal(button.style.top,`${o.destination[1]}%`);}
+ match.find('match-1').onclick();match.find('socket-2').onclick();assert.equal(match.state.step,0,'wrong shape rejected');assert.equal(match.find('match-1').style.left,'44%');
+ for(const i of [3,1,2]){const o=match.scene.operation.objects.find(o=>o.action==='match-'+i),button=match.find(o.action);button.onpointerdown(e(o.x,o.y));const target=match.scene.operation.objects.find(t=>t.action==='socket-'+i);button.onpointerup(e(target.x,target.y));await tick();assert.equal(button.disabled,true);assert.equal(match.find('socket-'+i).disabled,true);assert.equal(button.style.width,`${o.destinationWidth}%`);assert.equal(button.style.top,`${o.destination[1]}%`);}
  assert.equal(match.count(),'3／3');assert.equal(match.changes(),3);assert.ok(operationComplete(match.scene,match.state));match.find('socket-1').onclick();assert.equal(match.changes(),3);
  const progress=freshProgress(lesson);progress.current=3;for(let i=0;i<3;i++)Object.assign(progress.scenes[i],{operation:operationState(lesson.scenes[i],{step:lesson.scenes[i].operation.steps.length}),found:lesson.scenes[i].clues.map(c=>c.id),done:true,questionIndex:1});progress.scenes[3].operation=match.state;assert.deepEqual(restoreProgress(lesson,progress).scenes[3].operation,match.state);match.controller.dispose();
  const keyboard=setup(lesson.scenes[3]);for(const i of [2,3,1]){keyboard.find('match-'+i).onclick();keyboard.find('socket-'+i).onclick();}assert.equal(keyboard.state.step,3);keyboard.controller.dispose();

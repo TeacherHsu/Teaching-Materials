@@ -346,3 +346,21 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 .fp-prediction-reminder p{margin:0}
 .fp-hide-operations .fp-operation{visibility:hidden!important;pointer-events:none!important}
 .fp-mood>.fp-meter-clue{position:absolute;right:0;top:76px;display:flex;align-items:center;gap:4px;width:max-content;max-width:min(280px,calc(100vw - 24px));padding:4px;border-radius:8px;background:#fff4ce;color:#654d29;white-space:normal}
+
+/* Face clues keep their centre transparent; only the adjacent marker receives input. */
+.fp-face-ring{position:absolute;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;border:2px solid #ffe5a066;background:transparent;box-shadow:0 0 12px 5px #ffe8ac44;transition:box-shadow .25s,border-color .25s}
+.fp-face-ring.is-bright{border-color:#fff3b8;box-shadow:0 0 18px 8px #ffe4a099}
+.fp-face-marker{font-size:18px;width:44px;height:44px;padding:0}
+.fp-strategy-bag{border:0;background:transparent;border-radius:0;filter:drop-shadow(0 5px 3px #38291899)}
+.fp-strategy-bag img{max-height:none;transform-origin:50% 30%;transition:transform .6s ease,filter .6s ease}
+.fp-strategy-bag.is-open{border:0;background:transparent;transform:translate(-50%,-50%)}
+.fp-strategy-bag.is-open img{opacity:1;transform:perspective(300px) rotateX(-14deg) scaleX(1.13) scaleY(.93);filter:brightness(.9)}
+.fp-strategy-bag::after{content:'';position:absolute;left:23%;right:23%;top:24%;height:0;border-radius:50%;background:#352b22;transition:height .6s ease;pointer-events:none}
+.fp-strategy-bag.is-open::after{height:13%}
+.fp-generic-operation .fp-used{pointer-events:none!important;box-shadow:none!important;background:transparent!important;filter:none!important;animation:none!important;transition:box-shadow .3s,filter .3s}
+.fp-generic-operation .fp-grounded{filter:drop-shadow(0 5px 2px #35220fc0);animation:none}
+.fp-portrait-evidence::before{content:'';position:absolute;inset:-16px;background-image:var(--fp-evidence-backdrop);background-size:cover;background-position:center;filter:blur(12px) brightness(.65);pointer-events:none}
+@media(prefers-reduced-motion:reduce){.fp-face-ring,.fp-strategy-bag img,.fp-strategy-bag::after{transition:none}}
+.fp-calm .fp-face-ring,.fp-calm .fp-strategy-bag img,.fp-calm .fp-strategy-bag::after{transition:none}
+.fp-prediction-reminder{max-height:120px;overflow:auto;box-sizing:border-box}
+@media(max-aspect-ratio:7/5){.fp-page:has(.fp-portrait-evidence) .fp-prediction-reminder{top:auto;bottom:calc(26% + 24px)}}

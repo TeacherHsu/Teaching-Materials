@@ -74,6 +74,7 @@ export function validateSituationLesson(lesson) {
     if(['dragToTarget','toolGrab'].includes(s.operation.type) && !s.operation.profile)check(s.operation.regions?.target,'target region');
     if(s.operation.groups){let end=0;for(const g of s.operation.groups){check(g.from===end && Number.isInteger(g.to) && g.to>g.from && g.to<=s.operation.steps.length,'operation group');end=g.to;}check(end===s.operation.steps.length,'group coverage');}
     if(s.operation.guide===false)check(s.operation.type==='dragToTarget','unguided drag');
+    if(s.art.portraitFrame){const f=s.art.portraitFrame;check(percent(f.left) && percent(f.right) && f.right>f.left && [f.top,f.bottom].every(n=>Number.isFinite(n) && n>=0),'portrait evidence frame');}
     if(s.art.stepImages)check(s.art.stepImages.length===s.operation.steps.length+1 && s.art.stepImages.every(n=>Number.isInteger(n) && n>=0 && n<s.art.images.length),'step images');
     if(s.art.resultImage!==undefined)check(Number.isInteger(s.art.resultImage) && s.art.resultImage>=0 && s.art.resultImage<s.art.images.length,'result image');
     if(s.operation.type==='scoopGesture' && !s.operation.profile)check(s.operation.regions?.water,'water region');
@@ -96,7 +97,7 @@ export function validateSituationLesson(lesson) {
       check(strategyTypes.includes(t.type) && text(t.id) && text(t.prompt),'strategy identity');refs(t.refs);check(t.refs.length>0,'strategy evidence');
       check(t.options?.length>=1 && t.options.length<=3,'strategy option count');
       if(t.type==='predict'){check(t.options.length>=2 && t.options.every(text) && t.options.includes('我不確定') && t.answer===undefined,'prediction ungraded');check(t.revealAt && t.refs.some(r=>r.para===t.revealAt.para && r.sentences.includes(t.revealAt.n)),'prediction reveal');}
-      else {check(Array.isArray(t.answer) && t.answer.length>0 && t.answer.every(n=>Number.isInteger(n) && t.options[n]),'strategy answer');for(const o of t.options){check(text(o.label) && percent(o.x) && percent(o.y),'strategy hotspot');refs(o.refs);check(o.refs.length>0,'hotspot evidence');for(const state of o.states || [])check(text(lesson.meter.states[state]),'strategy meter word');}if(t.type==='emotionClue')check(t.answer.length<=2,'emotion clue count');if(t.type==='causeEffect')check(t.result?.length===2 && t.result.every(percent) && text(t.explanation),'cause result');}
+      else {check(Array.isArray(t.answer) && t.answer.length>0 && t.answer.every(n=>Number.isInteger(n) && t.options[n]),'strategy answer');for(const o of t.options){check(text(o.label) && percent(o.x) && percent(o.y),'strategy hotspot');refs(o.refs);check(o.refs.length>0,'hotspot evidence');if(o.face){check(percent(o.face.width) && percent(o.face.height),'face halo');check(o.markerOffset?.length===2 && o.markerOffset.every(Number.isFinite),'face marker offset');}for(const state of o.states || [])check(text(lesson.meter.states[state]),'strategy meter word');}if(t.type==='emotionClue')check(t.answer.length<=2,'emotion clue count');if(t.type==='causeEffect')check(t.result?.length===2 && t.result.every(percent) && text(t.explanation),'cause result');}
     }
     check(s.questions?.length>0,'questions');
     for(const q of s.questions){

@@ -17,7 +17,7 @@ export function storySummary(config, states) {
 
 export function mountStrategy({strategy, panel, plane, stage, states, onWords, onDone, focus}) {
   let selected=[],result=null,disposed=false;
-  const nodes=[];
+  const nodes=[],timers=[];
   const say=text=>h('div',{class:'fp-spoken'},[h('p',{},text),SpeakButton({text})]);
   panel.append(say(strategy.prompt));
   const status=h('div',{role:'status','aria-live':'polite'});panel.append(status);
@@ -29,6 +29,7 @@ export function mountStrategy({strategy, panel, plane, stage, states, onWords, o
     if(!strategy.answer.includes(index)){message(result.feedback);return;}
     button.classList.add('fp-strategy-hit');button.setAttribute('aria-pressed','true');
     const option=strategy.options[index];
+    const ring=nodes.find(n=>n.dataset?.faceIndex===String(index));if(ring){ring.classList.add('is-bright');timers.push(setTimeout(()=>ring.classList.remove('is-bright'),650));}
     if(strategy.type==='emotionClue'){
       const words=(option.states || []).map(i=>states[i]).concat(option.words || []);
       onWords(words,strategy.meterTarget);message(words.join('、'));
@@ -48,14 +49,16 @@ export function mountStrategy({strategy, panel, plane, stage, states, onWords, o
     strategy.options.forEach((label,i)=>row.append(h('div',{class:'fp-answer-row'},[h('button',{type:'button',class:'fp-button',onclick:()=>choose(i)},label),SpeakButton({text:label})])));
   }else{
     strategy.options.forEach((option,i)=>{
-      const button=h('button',{type:'button',class:'fp-strategy-target','aria-label':option.label,style:`left:${option.x}%;top:${option.y}%`,onclick:()=>choose(i,button)},'◉');
+      const [dx,dy]=option.markerOffset || [0,0];
+      const button=h('button',{type:'button',class:`fp-strategy-target${option.face?' fp-face-marker':''}`,'aria-label':option.label,style:`left:${option.x+dx}%;top:${option.y+dy}%`,onclick:()=>choose(i,button)},'◉');
       button.addEventListener('focus',()=>focus(option.x));
       plane.append(button);nodes.push(button);
+      if(option.face){const ring=h('span',{class:'fp-face-ring','data-face-index':String(i),'aria-hidden':'true',style:`left:${option.x}%;top:${option.y}%;width:${option.face.width}%;height:${option.face.height}%`});plane.append(ring);nodes.push(ring);}
       panel.append(h('div',{class:'fp-spoken'},[h('span',{},option.label),SpeakButton({text:option.label})]));
     });
     stage.addEventListener('click',wrong);focus(strategy.options[0].x);
   }
-  return ()=>{disposed=true;nodes.forEach(n=>n.remove());stage.removeEventListener('click',wrong);panel.remove();};
+  return ()=>{disposed=true;timers.forEach(clearTimeout);nodes.forEach(n=>n.remove());stage.removeEventListener('click',wrong);panel.remove();};
 }
 
 // A reusable interlude with no contents rendered inside the opened container.
