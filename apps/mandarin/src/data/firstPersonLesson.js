@@ -1184,3 +1184,12 @@ export function clueRefs(clue, scene, lesson) {
  if (!clue.questionEvidence) return clue.refs;
  return [...(scene.questions[0].extraEvidence || []), ...scene.questions[0].basis.flatMap(id => lesson.reading_questions.find(q => q.id === id)?.evidence || [])];
 }
+
+
+// Illustration positions in source-image percent. Keep dots beside evidence, away from faces/hands.
+export const FIRST_PERSON_ILLUSTRATIONS = {
+  1: { images: ['act1-entrance.webp'], hotspots: { bell: [29, 16], wood: [49, 52] }, views: { entrance: .52, work: .65, side: .80 } },
+  2: { images: ['act2-scoop-1.webp', 'act2-scoop-2.webp', 'act2-scoop-3.webp'], hotspots: { pot: [72, 85], ladle: [65, 50] }, views: { pot: .65, ladle: .30, side: .15 }, effects: { bubble: [65, 68], steam: [70, 54] } },
+  3: { images: ['act3-looking-down.webp'], hotspots: { pot: [62, 30], fire: [59, 68] }, views: { pot: .55, fire: .80, side: .20 }, effects: { fire: [59, 66] } },
+  4: { images: ['act4-draw-wood.webp', 'act4-after.webp'], hotspots: { tool: [51, 69], notes: [31, 41], fire: [73, 66], master: [37, 54], wood: [62, 80], pot: [74, 41] }, views: { tool: .55, notes: .20, fire: .70, master: .35, work: .35, pot: .70, side: .15 }, effects: { fire: [74, 70], steam: [75, 35] } },
+};

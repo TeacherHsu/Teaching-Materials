@@ -1,5 +1,12 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-10-22｜家中 Mac｜Codex｜插畫版：待 CF 試玩確認
+- 依本單未執行任何git，未提交／推送／部署；Claude接手試作分支commit／push與瀏覽器實玩。
+- 第一人稱畫面改為本地七張2400×1024 WebP（每張≤300KiB），新firstPersonIllustrated controller；舊3D與motion測試保留，頁面不再載入Three.js。八站、題目、提示、進度、導引、關卡一覽、密碼流程保留；未加入原句、密碼、官方檔案、測試解鎖入口或外部素材。
+- 原始PNG在repo外 ~/mandarin-work/first-person-samples/final/；詳見apps/mandarin/docs/first-person-IMPL-LOG.md「插畫版」的改動、指令與Claude網址／驗收步驟。
+- 待確認：幕2同構圖仍有衣褶等細微差異，嚴格背景一致尚未驗收；瀏覽器畫面帶／熱點遮擋、淡入雙影、觸控、降級與完整八站實玩皆由Claude補驗。未宣稱全部美術要求合格。
+- 最終validate、單課／motion／插畫測試、build、check-dist／assets、build:preview通過；全套83支0失敗。初次check-assets的300KiB超限已壓縮修正。狀態維持待CF試玩確認，不發布main。
+
 ## 2026-10-22｜家中 Mac｜Codex｜狀態：待 CF 試玩確認（只改檔，Claude 接手提交）
 - 依本單覆蓋規則，未執行任何 git 指令，未提交／推送／部署；只改 apps/mandarin 第一人稱探索與本交接，不發布 main。
 - 四幕八站（每段全文劇情站＋兩題關卡），全文45句均有站點引用；新增排序、配對、看圖、場景動作作答、PIRLS與逐題原句依據。選擇類正解位置各兩題；提示累計換1–3水滴，結尾四項回顧。

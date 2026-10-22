@@ -5,7 +5,7 @@ import { splitSentences } from '../utils/readingUnits.js';
 import { cancelSpeaking } from '../utils/speech.js';
 import { getFirstPersonLesson, clueRefs } from '../data/firstPersonLesson.js';
 import { answerScene, canAnswer, readProgress, saveProgress, reward } from '../activities/firstPersonCore.js';
-import { mountFirstPersonScene } from '../activities/firstPersonScene.js';
+import { mountFirstPersonScene } from '../activities/firstPersonIllustrated.js';
 import '../styles/first-person.css';
 
 const button = (text, action, attrs = {}) => h('button', { type: 'button', class: 'fp-button', onclick: action, ...attrs }, text);
@@ -139,7 +139,7 @@ export function FirstPersonPage(lesson) {
     const mode = h('span', { class: 'fp-mode' }, '載入場景…'); rootBody.append(mode);
     let pointer;
     stage.addEventListener('pointerdown', (e) => { if (e.target.closest('button')) return; pointer = { x: e.clientX, y: e.clientY }; stage.setPointerCapture(e.pointerId); });
-    stage.addEventListener('pointermove', (e) => { if (!pointer) return; world?.look((pointer.x - e.clientX) * .002, (pointer.y - e.clientY) * .0015); pointer = { x: e.clientX, y: e.clientY }; });
+    stage.addEventListener('pointermove', (e) => { if (!pointer) return; world?.look((e.clientX - pointer.x) * .002, (pointer.y - e.clientY) * .0015); pointer = { x: e.clientX, y: e.clientY }; });
     stage.addEventListener('pointerup', () => { pointer = null; }); stage.addEventListener('pointercancel', () => { pointer = null; });
     stage.addEventListener('keydown', (e) => { if (e.target !== stage) return; if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) { e.preventDefault(); world?.look(e.key === 'ArrowLeft' ? .08 : e.key === 'ArrowRight' ? -.08 : 0, e.key === 'ArrowUp' ? .05 : e.key === 'ArrowDown' ? -.05 : 0); } });
     const version = generation;
@@ -150,7 +150,7 @@ export function FirstPersonPage(lesson) {
         marker.classList.toggle('fp-marker--offscreen', Boolean(off));
         marker.textContent = off ? (Math.abs(p.y - 50) > Math.abs(p.x - 50) ? (p.y < 50 ? '↑' : '↓') : (p.x < 50 ? '←' : '→')) : String(scene.clues.findIndex(c => c.object === object) + 1);
         marker.classList.toggle('fp-marker--target', !state.found.includes(scene.clues.find(c => c.object === object)?.id));
-        if (p) { marker.style.left = `${Math.max(7, Math.min(93, p.x))}%`; marker.style.top = `${Math.max(32, Math.min(62, p.y))}%`; }
+        if (p) { marker.style.left = `${Math.max(7, Math.min(93, p.x))}%`; marker.style.top = `${Math.max(7, Math.min(93, p.y))}%`; }
       }
     } }).then((controller) => { if (disposed || version !== generation) controller.dispose(); else { world = controller; updateMotion(); } });
     updateMotion(); sound();

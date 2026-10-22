@@ -56,3 +56,65 @@
 ## 仍未驗收
 
 Claude 的桌機／手機／平板瀏覽器完整實玩、正面／側面截圖、主控台、外部請求、水平溢出與連續動作目視皆尚待執行。實機 iPad、教室電腦效能、臺灣國語朗讀與音量、CF 美感確認、學生理解成效亦尚未驗收。不得把本輪標成已可正式發布的黃金樣本。
+
+## 插畫版（2026-10-22）
+
+狀態：**待 CF 試玩確認**。本段取代上方 3D 畫面驗收項目；八站、題目、提示、進度、導引、關卡一覽與正常密碼流程沿用。全程未執行 git，未開 Chrome、未部署；commit／push 由 Claude 處理。
+
+### 改動與依據
+
+- 新增 `src/activities/firstPersonIllustrated.js`，沿用 `mountFirstPersonScene` controller 契約；頁面換 import，舊 Three.js 場景與 motion 測試保留。新增百分比熱點／定點與七張圖清單在 `firstPersonLesson.js`，教材 version 不變，避免清除既有閱讀進度。
+- 水彩／不透明水彩插畫依本機核可 `s1-entrance.png`、`s2-pot.png`、新版 `s3-fire.png`；本機 `~/mandarin-work/reading-tool-lessons/115HG3A04.json` 僅讀取核對，未複製原句或官方檔案。玩家仍是探索者眼睛，無觀看者的手，無新原文動作、噴湯、倒數或驚嚇。
+- 幕1改背柴與無日式短冊的陶瓷風鈴；幕2縮鍋、舀起／抬高／倒回三格；幕3跟著康康看灶下；幕4工具抽柴與火小、水靜的之後狀態。四幕人物維持白髮米衣棕圍裙／黑髮橘紅衣。
+- 圖片置於獨立畫面帶，等比例顯示；窄視窗可拖曳／觸控／方向鍵水平環顧，夾在圖內。當整幅已放得下時置中，沒有額外平移空間；定點在可平移時平滑移動。拖曳方向配合插畫移動修正，圓點保留方向箭頭並取消舊 3D 的垂直32–62%夾限。
+- CSS 水泡／蒸氣／微弱火光；幕2每格約1.2秒交叉淡入（完整循環約3.6秒），幕4按原有觀察／正確動作後淡入之後狀態。設定、系統減少動態、面板與背景分頁皆可停止動畫；減少動態仍可直接顯示幕4結果。只載入當幕與下一幕，離頁清除 RAF、ResizeObserver、media／visibility 監聽及圖片 handler。
+- 主圖失敗則純色底與原有線索／讀文／作答流程；沒有測試解鎖入口、外部素材網址、新依賴或密碼變動。
+
+### 產圖與逐張自檢
+
+使用內建 imagegen；讀取 draw 與 imagegen 技能，依 imagegen 的優先規則使用內建工具，未呼叫 API CLI。提示組合為「核可樣圖人物／畫風＋2400×1024橫幅＋本單各幕動作＋無字／無觀看者手／正確握持／無方格紋」；幕2後兩格與幕4之後狀態以主圖定向改圖，要求背景與人物位置鎖定。原始生成尺寸約1920×819，交付 WebP 經 Pillow 等比例規格化為2400×1024；不是原生2400像素細節。原始PNG保存在 repo 外 `~/mandarin-work/first-person-samples/final/`（本機對應 OneDrive 同一路徑）。
+
+七張均已打開原始圖及第一版WebP逐張看；背柴／陶鈴、舀起／抬高／倒回、望火、工具握持、火小水靜可辨識，未見馬賽克或方格像素紋，無文字與觀看者手。手指有自然遮蔽，沒有把遮蔽處當作可數清五指的證據。幕3為低視線透視，鍋在前景顯大，比例美感仍請CF確認。
+
+| 圖片 | 最終 bytes | 重生次數／原因 |
+|---|---:|---|
+| act1-entrance.webp | 306290 | 0；首次依s1重繪即修正背柴／風鈴 |
+| act2-scoop-1.webp | 266054 | 0 |
+| act2-scoop-2.webp | 250638 | 0；從第1格定向改抬高，不計作失敗重生 |
+| act2-scoop-3.webp | 247728 | 0；從第1格定向改倒回 |
+| act3-looking-down.webp | 299442 | 0 |
+| act4-draw-wood.webp | 289458 | 0 |
+| act4-after.webp | 292516 | 0；從抽柴圖定向改結果 |
+
+**尚未通過的嚴格品質項目：**幕2三格構圖接近，但生成改圖仍可見衣褶等非手臂區域細微差異，未能保證「僅手臂、勺、水流不同、背景完全一致」。不能將這項列為已驗收；Claude應連續播放檢查背景呼吸感，若仍有漂移需固定底圖局部合成或再製，不以測試通過取代這條品質要求。所有瀏覽器動作流暢、遮擋、美感亦尚未驗收。
+
+### 本輪指令
+
+- `npm run validate`：通過，含正式密文外洩檢查，未略過密碼檢查。
+- `node scripts/test-first-person.mjs`：通過，含正式45句覆蓋與引用雜湊。
+- `node scripts/test-first-person-motion.mjs`：通過，舊檔保留。
+- 新增 `node scripts/test-first-person-illustrated.mjs`：通過；四幕圖檔存在、WebP、≤400KiB、所有線索有座標且0–100%、頁面相依圖無Three.js；建置後另掃描 emitted JS 無Three.js renderer／loader。
+- Python/Pillow：規格化尺寸、WebP壓縮與尺寸檢查；七張2400×1024，皆≤300KiB（亦符合本單400KiB）。第一輪check-dist的check-assets因既有300KiB上限失敗，已再壓縮，不放寬檢查器。
+- Python subprocess逐支執行 `scripts/test-*.mjs`：83支、0失敗。
+- `npm run build`、`npm run check-dist`、`npm run build:preview`：最終結果見後續補記。
+- 早期一次 `npm run validate` 誤在repo根目錄執行，因無package.json失敗；已在apps/mandarin重跑通過。尋找phase2_workspace_diff.md未找到，擴大至父目錄搜尋遇權限限制；未以未讀內容為依據。
+- `git diff --check`、瀏覽器／截圖／實機測試：依本單未執行，不算通過。
+
+### Claude 接手的網址與步驟（尚未執行）
+
+在 `apps/mandarin` 執行 `npm run preview -- --host 127.0.0.1 --port 4175`，開啟 `http://127.0.0.1:4175/#/lesson/115AG3H04/explore`；若Vite有base前綴，沿Local網址接同一hash。draft用 `npm run preview:draft -- --host 127.0.0.1 --port 4176`。不要部署。
+
+1. 正常教室密碼門進入，不輸出密碼；桌機1366×900、手機375×812、平板820×1180，逐幕截整體與細節。確認畫面帶大小、構圖、上下文字與圓點不遮臉／手／鍋口；特別檢查幕3前景鍋比例。寬畫面整幅放得下不應硬移到圖外。
+2. 各幕拖曳／左右鍵／觸控滑動到兩端，點起始、另一線索、側面定點；插畫的側面按鈕是同一幅圖的另一水平位置，不是新3D視角。確認離屏箭頭與線索按鈕都能帶回觀察位置。十秒閒置導引仍在。
+3. 幕2播放至少12秒，核對舀起→抬高→倒回的1.2秒淡入與循環接點；聚焦背景、衣褶、手、勺和水流有無漂移／雙影。背景完全一致尚未驗收，不可直接勾選通過。幕4觀察前後與場景動作題，核對火小、水靜與工具握持。
+4. 實玩完整八站八題，包含所有錯答、三級提示、原句、排序／配對／看圖／場景動作、進度保存、重玩、關卡一覽與正常教師解鎖；既有教材規則不得改動。
+5. 關動畫、開系統reduce、開閱讀面板、切背景分頁，再返回；無動畫仍可看到幕4結果並完成八站。阻擋本地 `assets/first-person/115AG3H04/` 所有圖片，確認純色降級仍能完成；再單獨阻擋一張關鍵格檢查可理解性。
+6. Network確認只有當幕與下一幕圖、無Three.js請求與外部素材；離頁返回無重複RAF／監聽／音效、console無錯、各尺寸無水平溢出。含原文截圖存repo外。
+
+CF試玩、實機效能／朗讀／音量、瀏覽器截圖與學生理解成效仍未驗收。
+
+### 插畫版最終重跑結果
+
+最終在 `apps/mandarin` 依序重跑 validate、test-first-person、test-first-person-motion、build、test-first-person-illustrated、check-dist、build:preview，全部exit 0。check-dist與check-assets皆通過；正式與preview建置皆只有既有CharacterStoryPage靜態／動態匯入提示。新增測試已檢查正式產出JS無Three.js renderer／loader。文字修改檔以Python檢查行尾空白／衝突標記通過；這不等同執行git diff --check。
+
+目前可交Claude進行本機驗收，但不算整單品質驗收完成：嚴格幕2局部變更／背景一致與瀏覽器實玩仍待處理。沒有commit／push，請Claude在指定試作分支接手，不能推到main。
