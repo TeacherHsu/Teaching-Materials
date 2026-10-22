@@ -8,7 +8,7 @@ export function operationState(scene, raw = {}) {
   const step = Number.isInteger(raw.step) ? Math.max(0, Math.min(max, raw.step)) : 0;
   const validWood = scene.operation.collect || [];
   const collected = [...new Set((Array.isArray(raw.collected) ? raw.collected : scene.operation.steps.slice(0,step)).filter(x=>validWood.includes(x)))];
-  return { step, ...(Number.isInteger(raw.rhythmAttempts) && raw.rhythmAttempts>=0 ? {rhythmAttempts:raw.rhythmAttempts} : {}), ...(raw.demoSeen === true ? {demoSeen:true} : {}), ...(scene.act===4 && raw.tongsDemoSeen === true ? {tongsDemoSeen:true} : {}), ...(scene.act===1 && raw.woodDemoSeen === true ? {woodDemoSeen:true} : {}), ...(collected.length ? { collected } : {}) };
+  return { step, ...(Number.isInteger(raw.clockMinutes) && raw.clockMinutes>=0 && raw.clockMinutes<720 ? {clockMinutes:raw.clockMinutes} : {}), ...(Number.isInteger(raw.rhythmAttempts) && raw.rhythmAttempts>=0 ? {rhythmAttempts:raw.rhythmAttempts} : {}), ...(raw.demoSeen === true ? {demoSeen:true} : {}), ...(scene.act===4 && raw.tongsDemoSeen === true ? {tongsDemoSeen:true} : {}), ...(scene.act===1 && raw.woodDemoSeen === true ? {woodDemoSeen:true} : {}), ...(collected.length ? { collected } : {}) };
 }
 export function operate(scene, state, action) {
   const expected = scene.operation.steps[state.step];
