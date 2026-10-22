@@ -129,13 +129,14 @@ export function FirstPersonPage(lesson) {
     const caption = h('div', { class: 'fp-spoken fp-caption' }, [captionText, SpeakButton({ text: () => captionText.textContent })]);
     const viewButtons = h('div', { class: 'fp-view-buttons' }, [button('↶', () => { currentView = scene.view; world?.setView(currentView); }, { 'aria-label': '看起始位置' }), button('↷', () => { currentView = scene.alternateView; world?.setView(currentView); }, { 'aria-label': scene.viewLabel })]);
     viewButtons.append(button('側', () => world?.setView('side'), { 'aria-label': '側面觀察握勺與舀水動作' }));
-    const readingButton = button('讀課文', showReading, { class: 'fp-button fp-primary', 'data-read': 'true' });
+    const readingButton = button('讀課文', () => (canAnswer(scene, state) ? finishClues() : showReading()), { class: 'fp-button fp-primary', 'data-read': 'true' });
     const actionButton = button(scene.experience.action, playObservation, { class: 'fp-button fp-observe', 'data-observe': 'true' });
     const clueButtons = h('div', { class: 'fp-clue-dock' });
     scene.clues.forEach((clue, i) => clueButtons.append(button(`${i + 1} ${clue.label}`, () => observe(clue), { 'data-clue': clue.id, class: 'fp-clue-chip', 'aria-pressed': String(state.found.includes(clue.id)) })));
     const bottom = h('div', { class: 'fp-bottom' }, [caption, h('div', { class: 'fp-action-row' }, [actionButton, readingButton]), clueButtons]);
     const toolbar = h('nav', { class: 'fp-toolbar', 'aria-label': '閱讀工具' }, [button('提示', showHints), button('重玩', () => { replay = emptyState(); enterScene(); }), button('設定', showSettings), button('關卡一覽', showScenes)]);
     rootBody.append(stage, top, mission, viewStatus, viewButtons, bottom, toolbar);
+    syncPrimary();
     const mode = h('span', { class: 'fp-mode' }, '載入場景…'); rootBody.append(mode);
     let pointer;
     stage.addEventListener('pointerdown', (e) => { if (e.target.closest('button')) return; pointer = { x: e.clientX, y: e.clientY }; stage.setPointerCapture(e.pointerId); });
@@ -182,6 +183,19 @@ export function FirstPersonPage(lesson) {
     }
   }
 
+  // 線索讀完後，場景主按鈕直接帶往挑戰或下一站，關掉閱讀面板也不會卡住。
+  function finishClues() {
+    const last = progress.current >= config.scenes.length - 1;
+    if (scene.stationType === 'story') { state.done = true; if (!replay) save(); advance(); }
+    else if (state.done && !last) advance();
+    else showQuestion();
+  }
+  function syncPrimary() {
+    const primary = root.querySelector('[data-read]');
+    if (!primary || !canAnswer(scene, state)) return;
+    const last = progress.current >= config.scenes.length - 1;
+    primary.textContent = scene.stationType === 'story' ? '前往關卡 →' : !state.done ? '開始挑戰 →' : last ? '看回顧' : '前往下一站 →';
+  }
   function showReading() {
     readingVisible = true;
     const clue = lastClue || scene.clues.find((c) => !state.found.includes(c.id)) || scene.clues[0];
@@ -189,6 +203,7 @@ export function FirstPersonPage(lesson) {
     if (!state.found.includes(clue.id)) state.found.push(clue.id);
     root.querySelector(`[data-clue="${clue.id}"]`)?.setAttribute('aria-pressed', 'true');
     if (!replay) save();
+    syncPrimary();
     const content = h('div', { class: 'fp-sheet-content' });
     content.append(say(clue.note, 'p', { class: 'fp-small' }));
     for (const block of sources.get(`${scene.id}:${clue.id}`)) content.append(h('p', { class: 'fp-source' }, `課文第 ${block.para} 段・原句`), say(block.text, 'blockquote', { class: 'fp-excerpt' }));
@@ -243,6 +258,7 @@ export function FirstPersonPage(lesson) {
     if (state.hints) content.append(say(q.hints[state.hints - 1], 'p', { class: 'fp-hint' }));
     content.append(h('div', { class: 'fp-inline-tools' }, [button('重看課文', () => showEvidence(q)), button('查看提示', () => { state.hints = Math.min(3, state.hints + 1); state.hintUses++; if (!replay) save(); showQuestion(); })]));
     if (state.done) {
+      syncPrimary();
       content.append(say(`收集到 ${reward(state)} 顆水滴 💧。你可以隨時重玩。`));
       if (progress.current < config.scenes.length - 1) content.append(button('前往下一站 →', advance, { class: 'fp-button fp-primary', 'data-next': 'true' }));
       else {
