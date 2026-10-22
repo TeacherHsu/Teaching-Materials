@@ -3,6 +3,7 @@ const FIRST_PERSON_LESSON = {
   "lessonId": "115AG3H04",
   "version": 9,
   "title": "食堂裡的閱讀線索",
+  "rewardIcon": "💧",
   "source": {
     "text": "翰林115三上官方課文Word，第4課〈水滾了〉，王宗仁",
     "questions": "官方15閱讀理解提問：第1、3、4、6、7題",

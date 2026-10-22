@@ -46,6 +46,8 @@ export function mountConfiguredOperation(plane, options, api) {
   const {scene,state,changed,reduced=()=>false,saveDemo=()=>{},focus}=options;
   const config=scene.operation;
   if(['rhythmTap','aimShot','holdBreath'].includes(config.type))return mountSportsOperation(plane,options,api);
+  const clockHands=new Map();
+  let clockDragged=false;
   const gesture=o=>o.gesture || config.type;
   const available=o=>state.step>=(o.fromStep ?? 0) && state.step<=(o.toStep ?? config.steps.length);
   const completed=o=>Boolean(state.collected?.includes(o.action) || !config.collect?.includes(o.action) && config.steps.slice(0,state.step).includes(o.action) && !config.steps.slice(state.step).includes(o.action));
@@ -68,13 +70,13 @@ export function mountConfiguredOperation(plane, options, api) {
     const arrow=document.createElementNS('http://www.w3.org/2000/svg','svg');arrow.classList.add('fp-wood-arrow');arrow.setAttribute('viewBox','0 0 100 100');arrow.setAttribute('preserveAspectRatio','none');arrow.setAttribute('aria-hidden','true');
     arrowPath=document.createElementNS('http://www.w3.org/2000/svg','path');arrow.append(arrowPath);layer.append(arrow);
   }
-  function guide(p){if(config.guide===false)return;const active=selected || config.objects.find(o=>o.action===config.steps[state.step]);const r=config.regions?.[active?.region || 'target'];if(!arrowPath || !r)return;if(!['dragToTarget','toolGrab'].includes(gesture(active || {}))){arrowPath.setAttribute('d','');return;}const x=(r.left+r.right)/2,y=(r.top+r.bottom)/2;arrowPath.setAttribute('d',`M${p.x} ${p.y} L${x} ${y} m-2 -1 L${x} ${y} l-1 -2`);}
+  function guide(p){if(config.guide===false)return;if(state.step>=config.steps.length){arrowPath?.setAttribute('d','');return;}const active=selected || config.objects.find(o=>o.action===config.steps[state.step]);const r=config.regions?.[active?.region || 'target'];if(!arrowPath || !r)return;if(!['dragToTarget','toolGrab'].includes(gesture(active || {}))){arrowPath.setAttribute('d','');return;}const x=(r.left+r.right)/2,y=(r.top+r.bottom)/2;arrowPath.setAttribute('d',`M${p.x} ${p.y} L${x} ${y} m-2 -1 L${x} ${y} l-1 -2`);}
   guide(config.objects[0]);
   const cards = ['chooseCard','orderCards'].includes(config.type) ? orderCards(config.initialOrder || config.objects.map((_,i)=>i)) : null;
   const pos=(el,x,y)=>{el.style.left=`${x}%`;el.style.top=`${y}%`;};
   const tell=text=>{message.textContent=text;};
   const point=e=>{const r=plane.getBoundingClientRect();return {x:(e.clientX-r.left)/r.width*100,y:(e.clientY-r.top)/r.height*100};};
-  const snap=o=>{const el=elements.get(o.action);el.style.width=`${state.collected?.includes(o.action) && o.destinationWidth ? o.destinationWidth : o.width}%`;pos(el,...(state.collected?.includes(o.action) && o.destination ? o.destination : [o.x,o.y]));};
+  const snap=o=>{const el=elements.get(o.action);el.style.width=`${completed(o) && o.destinationWidth ? o.destinationWidth : o.width}%`;pos(el,...(completed(o) && o.destination ? o.destination : [o.x,o.y]));};
   function render(){
     for(const o of config.objects){const audio=objectAudio.get(o.action);if(audio){audio.hidden=paused || !available(o) || completed(o) || api.complete();}}
     for(const o of config.objects){const el=elements.get(o.action);const used=Boolean(o.consumedBy && state.collected?.includes(o.consumedBy) || o.usedFade && state.collected?.includes(o.action));el.classList.toggle('fp-used',used);if(o.completedSprite){const img=el.querySelector('img');if(img)img.src=base+(completed(o)?o.completedSprite:o.sprite)+'.webp';}el.hidden=!available(o);el.style.pointerEvents=o.passive?'none':'';el.disabled=Boolean(paused || motionBusy || used || o.passive || api.complete() || !available(o) || completed(o));el.setAttribute('aria-pressed',String(selected===o || gripped===o));if(!drag)snap(o);}
@@ -135,6 +137,15 @@ export function mountConfiguredOperation(plane, options, api) {
       }
       return;
     }
+    if(gesture(o)==='rotateClock'){
+      // 點一下（非拖曳）＝替小真設定好鬧鐘：指針自動轉到六點半。拖曳者仍需撥到七點前的合理時間。
+      if(!clockDragged){state.clockMinutes=390;clockHands.get(o.action)?.();commit(o.action);return;}
+      clockDragged=false;
+      const minutes=state.clockMinutes ?? 180;
+      if(minutes>=300 && minutes<=405)commit(o.action);
+      else tell('撥到七點以前，或點一下鬧鐘。');
+      return;
+    }
     if(gesture(o)==='tap'){commit(o.action);return;}
     if(gesture(o)==='observe'){observe(o);return;}
     if(gesture(o)==='tracePath'){
@@ -154,6 +165,13 @@ export function mountConfiguredOperation(plane, options, api) {
     if(o.minHitSize)el.style.setProperty('--fp-hit-size',`${o.minHitSize}px`);
     el.style.width=`${o.width}%`;el.style.aspectRatio=String(1/o.ratio);el.style.rotate=`${o.angle}deg`;pos(el,o.x,o.y);
     if(o.sprite){const img=new Image();img.src=base+o.sprite+'.webp';img.alt='';img.draggable=false;el.append(img);}else if(!o.target && !o.hotspot)el.textContent=o.label;
+    if(gesture(o)==='rotateClock'){
+      const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 100 100');svg.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none';
+      const minute=document.createElementNS('http://www.w3.org/2000/svg','path');minute.setAttribute('d','M50 50 L50 12');minute.setAttribute('stroke','#403c36');minute.setAttribute('stroke-width','3');svg.append(minute);
+      const hand=document.createElementNS('http://www.w3.org/2000/svg','path');hand.setAttribute('d','M50 50 L50 25');hand.setAttribute('stroke','#403c36');hand.setAttribute('stroke-width','4');svg.append(hand);el.append(svg);
+      const update=()=>{minute.setAttribute('transform',`rotate(${((state.clockMinutes ?? 180)%60)*6} 50 50)`);hand.setAttribute('transform',`rotate(${(state.clockMinutes ?? 180)/2} 50 50)`);el.setAttribute('aria-valuetext',`${Math.floor((state.clockMinutes ?? 180)/60)}點${(state.clockMinutes ?? 180)%60}分`);};clockHands.set(o.action,update);update();
+      el.onkeydown=e=>{if(paused || el.disabled || !['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))return;e.preventDefault();clockDragged=true;state.clockMinutes=((state.clockMinutes ?? 180)+(['ArrowLeft','ArrowDown'].includes(e.key)?-15:15)+720)%720;update();saveDemo();};
+    }
     if(o.cardLabel){const caption=document.createElement('span');caption.className='fp-object-caption';caption.textContent=o.cardLabel;el.append(caption);}
     if(o.hotspot)el.classList.add('fp-glow');if(o.grounded)el.classList.add('fp-grounded');
     layer.append(el);elements.set(o.action,el);el.onclick=()=>{if(!suppress)select(o);};
@@ -170,6 +188,9 @@ export function mountConfiguredOperation(plane, options, api) {
       if(!drag || drag.id!==e.pointerId)return;const p=point(e);drag.moved ||= Math.hypot(p.x-drag.start.x,p.y-drag.start.y)>1;
       if(gesture(o)==='tracePath' && traceProgress>=0)traceProgress=advanceTrace(traceProgress,drag.point,p,o.path,o.tolerance);
       if(config.type==='scoopGesture')Object.assign(drag,advanceScoop(drag,p,config.regions.water));else drag.point=p;
+      if(gesture(o)==='rotateClock'){
+        const a=Math.atan2(p.x-o.x,-(p.y-o.y))*180/Math.PI;state.clockMinutes=Math.round(((a+360)%360)*2);clockHands.get(o.action)?.();return;
+      }
       pos(el,p.x,p.y);guide(p);
       if(config.type==='toolGrab'){
         if(o.tool && toolReady && !gripped){const found=config.objects.find(other=>!other.tool && !other.target && !state.collected?.includes(other.action) && containsPoint({left:other.x-other.width/2,right:other.x+other.width/2,top:other.y-other.width*other.ratio/2,bottom:other.y+other.width*other.ratio/2},p));if(found){gripped=found;selected=found;}}
@@ -179,7 +200,8 @@ export function mountConfiguredOperation(plane, options, api) {
     el.onpointerup=e=>{
       if(!drag || drag.id!==e.pointerId)return;el.onpointermove(e);const gesture=drag;drag=null;
       if(gesture.moved){suppress=true;setTimeout(()=>suppress=false,0);
-        if(config.type==='tracePath' || o.gesture==='tracePath'){if(traceProgress===o.path.length)commit(o.action);else tell(config.retry || '按住剪刀，從虛線起點慢慢剪到終點。');traceProgress=0;}
+        if(o.gesture==='rotateClock'){clockDragged=true;select(o);saveDemo();}
+        else if(config.type==='tracePath' || o.gesture==='tracePath'){if(traceProgress===o.path.length)commit(o.action);else tell(config.retry || '按住剪刀，從虛線起點慢慢剪到終點。');traceProgress=0;}
         else if(config.type==='scoopGesture'){if(gesture.lifted)commit(config.steps[state.step]);else tell(config.retry || '拖入區域，再往上拉出。');}
         else drop(o,point(e));
       }

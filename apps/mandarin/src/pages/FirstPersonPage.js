@@ -63,7 +63,7 @@ export function FirstPersonPage(lesson) {
     if (!AC) return null;
     return audio ||= new AC();
   }); }
-  function updateMotion() { root.classList.toggle('fp-calm', calm()); root.classList.toggle('fp-motion-on', prefs.animation === 'on'); world?.setOptions?.({ imageIndex: scene?.timeline?.[timelineIndex]?.imageIndex, hideOperations: Boolean(scene?.operation.hideOnResult && ['result','read','question'].includes(beat) || scene?.timeline && (beat==='strategy' || scene.timeline[timelineIndex]?.hideOperations)), beat, mood: moodLabel, calm: calm(), reading: ['result','read'].includes(beat), locked: beat !== 'act' || (scene?.operation.profile==='cooking-toolGrab' && state?.operation.step===0), paused: Boolean(Date.now()<chimeUntil || modal?.open || subtitle || root.querySelector('.fp-question-cards')) }); sound(); }
+  function updateMotion() { root.classList.toggle('fp-calm', calm()); root.classList.toggle('fp-motion-on', prefs.animation === 'on'); world?.setOptions?.({ imageIndex: scene?.timeline?.[timelineIndex]?.imageIndex, hideOperations: Boolean(scene?.operation.hideOnResult && ['result','read','question'].includes(beat) || scene?.timeline && (beat==='strategy' && !scene.operation.showOnStrategy || scene.timeline[timelineIndex]?.hideOperations)), beat, mood: moodLabel, calm: calm(), reading: ['result','read'].includes(beat), locked: beat !== 'act' || (scene?.operation.profile==='cooking-toolGrab' && state?.operation.step===0), paused: Boolean(Date.now()<chimeUntil || modal?.open || subtitle || root.querySelector('.fp-question-cards')) }); sound(); }
   function destroyWorld() { disposeStrategy?.();disposeStrategy=null; generation++; world?.dispose(); world = null; }
   function close() {
     if (disposed) return; disposed = true; clearTimeout(beatTimer); clearTimeout(chimeTimer); clearTimeout(subtitleTimer); clearTimeout(observationTimer); clearTimeout(idleTimer); destroyWorld(); cancelSpeaking(); audio?.close().catch(() => {});
@@ -289,7 +289,7 @@ export function FirstPersonPage(lesson) {
     if (replay && state.done && !progress.scenes[progress.current].done) progress.scenes[progress.current] = { ...state, found: [...state.found] };
     if (!replay || state.done) save();
     if(result.correct) {
-      const drop=h('span',{class:'fp-reward-drop','aria-hidden':'true'},'💧'); rootBody.append(drop);
+      const drop=h('span',{class:'fp-reward-drop','aria-hidden':'true'},config.rewardIcon || '⭐'); rootBody.append(drop);
       clearTimeout(observationTimer); observationTimer=setTimeout(()=>drop.remove(),1200);
     }
     showQuestion();
@@ -300,7 +300,7 @@ export function FirstPersonPage(lesson) {
     const q = scene.questions[Math.min(state.questionIndex || 0, scene.questions.length - 1)];
     const content = h('section', { class: 'fp-question-cards', 'aria-label': q.stem });
     if(state.done) {
-      content.append(say('💧 ' + q.explanation));
+      content.append(say(q.explanation));
       if(progress.current < config.scenes.length-1) content.append(button('下一幕', advance));
       else { if(q.operationType==='summaryCard')content.append(say(storySummary(config,progress.scenes)));content.append(say(config.ending.title, 'h3')); config.review.forEach(([title,text])=>content.append(say(`${title}${text}`))); content.append(button('完成・關卡一覽', showScenes)); }
     } else {

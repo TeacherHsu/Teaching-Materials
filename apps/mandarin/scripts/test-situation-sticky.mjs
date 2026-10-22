@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';
+import {readFileSync,statSync,existsSync} from 'node:fs';import {webcrypto} from 'node:crypto';import {homedir} from 'node:os';
+import lesson from '../src/data/situationLessons/115AG3H02.js';
+import {validateSituationLesson,validateUnlockedLesson,storyUnitKeys,meterFor} from '../src/data/situationLessons/schema.js';
+import {splitSentences} from '../src/utils/readingUnits.js';import {classroomPassword} from './classroom-password.mjs';
+import {operationState,mountOperation,operationComplete,operate} from '../src/activities/firstPersonInteraction.js';
+validateSituationLesson(lesson);assert.deepEqual(lesson.paragraphCounts,[9,10,8,6]);assert.equal(storyUnitKeys(lesson).length,33);
+for(const s of lesson.scenes){assert.ok(s.goal.length<=12);for(const p of s.operation.prompts || [])assert.ok(p.length<=12);for(const b of s.timeline.filter(b=>b.kind==='intro'))assert.ok(b.refs.flatMap(r=>r.sentences).length<=8);}
+const password=classroomPassword();if(password){
+const e=JSON.parse(readFileSync(new URL('../public/data/readings.enc.json',import.meta.url)));const raw=await webcrypto.subtle.importKey('raw',new TextEncoder().encode(password),'PBKDF2',false,['deriveKey']);const key=await webcrypto.subtle.deriveKey({name:'PBKDF2',salt:Buffer.from(e.salt,'base64'),iterations:e.iter,hash:'SHA-256'},raw,{name:'AES-GCM',length:256},false,['decrypt']);const readings=JSON.parse(new TextDecoder().decode(await webcrypto.subtle.decrypt({name:'AES-GCM',iv:Buffer.from(e.iv,'base64')},key,Buffer.from(e.data,'base64'))));
+const paragraphs=new Map();for(const u of splitSentences(readings[lesson.lessonId].paras)){const p=u.paraIndex+1;if(!paragraphs.has(p))paragraphs.set(p,[]);paragraphs.get(p).push(u.text);}await validateUnlockedLesson(lesson,paragraphs);
+const sourceFile=homedir()+'/Library/CloudStorage/OneDrive-個人/mandarin-work/reading-tool-lessons/115HG3A02.json';if(existsSync(sourceFile)){const source=JSON.parse(readFileSync(sourceFile)).text.replace(/[|\s]/g,'');assert.ok(source===[...paragraphs.values()].flat().join('').replace(/\s/g,''),'local source matches encrypted units');}
+const bad=structuredClone(lesson);bad.meter.stateEvidence[0].parts=['不存在的來源詞'];await assert.rejects(()=>validateUnlockedLesson(bad,paragraphs));
+}else console.log('SKIP: no local classroom password; official pear hash/source unavailable');
+// Actual mounted handlers, including synchronous reentry and 200ms repeat taps.
+class Element{constructor(tag='div'){this.tagName=tag;this.children=[];this.style={setProperty(k,v){this[k]=v;}};this.dataset={};this.classList={add(){},remove(){},toggle(){}};}append(...xs){for(const x of xs){x.parentElement=this;this.children.push(x);}}setAttribute(){}querySelector(s){return this.children.find(x=>s==='img' && x.tagName==='img') || null;}remove(){}setPointerCapture(){}getBoundingClientRect(){return {left:0,top:0,width:100,height:100};}}
+const saved={document:globalThis.document,Image:globalThis.Image};globalThis.document={createElement:t=>new Element(t),createElementNS:(_,t)=>new Element(t)};globalThis.Image=class extends Element{constructor(){super('img');}};
+function setup(scene,raw){const state=operationState(scene,raw),outer=new Element(),host=new Element(),plane=new Element();outer.append(host);host.append(plane);let changes=0,reenter;const ctl=mountOperation(plane,{scene,state,reduced:()=>true,changed(){changes++;reenter?.();}});ctl.setPaused(false);return {state,ctl,find:id=>plane.children[0].children.find(x=>x.dataset.action===id),setReenter:f=>reenter=f,get changes(){return changes;},status:outer.children.at(-1)};}
+try{
+ const p=setup(lesson.scenes[0]);for(const id of ['bottle','homework','bag']){const n=p.find(id);p.setReenter(()=>n.onclick());n.onclick();for(let j=0;j<25;j++)n.onclick();}assert.equal(p.state.step,3);assert.equal(p.changes,3);p.ctl.dispose();
+ const s=setup(lesson.scenes[1]);const target=id=>s.find(id).onclick();s.find('bag').onclick();target('target-bag');assert.equal(s.state.step,0);
+ for(const id of ['brush','uniform','bag']){s.find(id).onclick();target('target-'+id);const step=s.state.step;for(let j=0;j<20;j++)s.find(id).onclick();assert.equal(s.state.step,step);}
+ assert.equal(s.state.step,3);s.find('sheet').onclick();target('wall-target');assert.equal(s.state.step,4);
+ const clock=s.find('alarm');for(let i=0;i<8;i++)clock.onkeydown({key:'ArrowRight',preventDefault(){}});assert.equal(s.state.clockMinutes,300);clock.onclick();assert.equal(s.state.step,5);clock.onclick();assert.equal(s.changes,5);assert.equal(operationState(lesson.scenes[1],s.state).clockMinutes,300);s.ctl.dispose();
+{const tap=setup(lesson.scenes[1],{step:4});tap.find('alarm').onclick();assert.equal(tap.state.step,5,'tap sets alarm');assert.equal(tap.state.clockMinutes,390);tap.ctl.dispose();}
+ const m=setup(lesson.scenes[2]);m.find('bag').onclick();assert.equal(m.state.step,0);for(const id of ['brush','uniform','bag']){const n=m.find(id);n.onclick();assert.match(n.querySelector('img').src,/-checked.webp$/);for(let j=0;j<20;j++)n.onclick();}assert.equal(m.state.step,3);m.ctl.dispose();
+ const f=setup(lesson.scenes[3]);f.find('note').onclick();f.find('fridge-target').onclick();for(let i=0;i<20;i++)f.find('note').onclick();assert.equal(f.state.step,1);assert.equal(f.changes,1);f.ctl.dispose();
+ const drag=setup(lesson.scenes[1]);const card=drag.find('brush');const ev=(x,y)=>({button:0,pointerId:1,clientX:x,clientY:y,stopPropagation(){}});card.onpointerdown(ev(38,76));card.onpointerup(ev(10,10));assert.equal(drag.state.step,0,'wrong drop stays');card.onpointerdown(ev(38,76));card.onpointercancel();assert.equal(drag.state.step,0,'cancel stays');card.onpointerdown(ev(38,76));card.onpointerup(ev(43,48));assert.equal(drag.state.step,1,'correct drag');drag.ctl.dispose();
+ const dial=setup(lesson.scenes[1],{step:4});const hand=dial.find('alarm');hand.onpointerdown(ev(50,60));hand.onpointerup(ev(50,75));assert.equal(dial.state.step,5,'wide six oclock drag');hand.onclick();assert.equal(dial.changes,1);dial.ctl.dispose();
+ const paused=setup(lesson.scenes[2]);paused.ctl.setPaused(true);paused.find('brush').onclick();assert.equal(paused.state.step,0);paused.ctl.dispose();
+}finally{Object.assign(globalThis,saved);}
+const {sceneIllustrationLayout}=await import('../src/activities/firstPersonLayout.js');for(const s of lesson.scenes)for(const [w,h] of [[1366,900],[820,1180],[375,812]]){const g=sceneIllustrationLayout(w,h,.5,s.art);assert.ok(g.left<=0 && g.top<=0 && g.left+g.imageWidth>=w && g.top+g.imageHeight>=h,'full cover');}
+console.log('PASS: sticky schema, official 33 units/hash/source, mounted order/clock/checkmarks, repeat/reentry/pause/restore and cover');
