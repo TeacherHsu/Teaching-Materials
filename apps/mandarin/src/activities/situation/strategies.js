@@ -50,13 +50,14 @@ export function mountStrategy({strategy, panel, plane, stage, states, onWords, o
     strategy.options.forEach((label,i)=>row.append(h('div',{class:'fp-answer-row'},[h('button',{type:'button',class:'fp-button',onclick:()=>choose(i)},label),SpeakButton({text:label})])));
   }else{
     strategy.options.forEach((option,i)=>{
-      if(option.sprite){
+      if(option.sprite && option.presentation!=='picture'){
         const art=h('img',{src:`${assetBase}sprites/${option.sprite}.webp`,alt:'','aria-hidden':'true',class:'fp-strategy-evidence',style:`left:${option.x}%;top:${option.y}%;width:${option.width || 10}%`});
         plane.append(art);nodes.push(art);
       }
       const [dx,dy]=option.markerOffset || [0,0];
-      const button=h('button',{type:'button',class:`fp-strategy-target${option.face?' fp-face-marker':''}`,'aria-label':option.label,style:`left:${option.x+dx}%;top:${option.y+dy}%`,onclick:()=>choose(i,button)},'◉');
+      const button=h('button',{type:'button',class:`fp-strategy-target${option.face?' fp-face-marker':''}${option.presentation==='picture'?' fp-strategy-picture':''}`,'aria-label':option.label,style:`left:${option.x+dx}%;top:${option.y+dy}%`,onclick:()=>choose(i,button)},'◉');
       button.addEventListener('focus',()=>focus(strategy.focus ?? option.x));
+      if(option.presentation==='picture'){button.style.width=`${option.width}%`;button.replaceChildren(h('img',{src:`${assetBase}sprites/${option.sprite}.webp`,alt:''}));}
       plane.append(button);nodes.push(button);
       if(option.face){const ring=h('span',{class:'fp-face-ring','data-face-index':String(i),'aria-hidden':'true',style:`left:${option.x}%;top:${option.y}%;width:${option.face.width}%;height:${option.face.height}%`});plane.append(ring);nodes.push(ring);}
       panel.append(h('div',{class:'fp-spoken'},[h('span',{},option.label),SpeakButton({text:option.label})]));
@@ -81,4 +82,12 @@ export function mountBag({entry,panel,plane,assetBase,onDone}) {
   bag.onpointerup=e=>{if(origin && Math.hypot(e.clientX-origin[0],e.clientY-origin[1])>=20)open();origin=null;};
   bag.onpointercancel=()=>{origin=null;};
   return ()=>{disposed=true;bag.remove();panel.remove();};
+}
+
+// A support note is shown only after a completed order question, once per page session.
+export function appendOrderSupport({question, done, shown, host}) {
+  if(!done || question.operationType!=='orderCards' || !question.afterOrderSupport || shown.has(question.id))return false;
+  shown.add(question.id);
+  host.append(h('aside',{class:'fp-support-card',role:'note'},[h('p',{},question.afterOrderSupport),SpeakButton({text:question.afterOrderSupport})]));
+  return true;
 }

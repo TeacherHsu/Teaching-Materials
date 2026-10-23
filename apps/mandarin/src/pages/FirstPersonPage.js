@@ -1,4 +1,4 @@
-import { mountStrategy, mountBag, predictionReminder, storySummary } from '../activities/situation/strategies.js';
+import { mountStrategy, mountBag, predictionReminder, storySummary, appendOrderSupport } from '../activities/situation/strategies.js';
 import { chooseCard, orderCards } from '../activities/situation/operations.js';
 import { meterFor, validateUnlockedLesson } from '../data/situationLessons/schema.js';
 import { animationReduced } from '../activities/firstPersonPreferences.js';
@@ -34,6 +34,7 @@ export function FirstPersonPage(lesson) {
   let subtitle = null, subtitleTimer, subtitleAfter, subtitleQueue = [];
   let timelineIndex=0, disposeStrategy, predictions={}, resultWarningShown=false;
   const safetyRemindersShown=new Set();
+  const orderSupportShown=new Set();
   let beat = 'intro', beatTimer, playback = createPlayback(), narrationToken = 0;
   let chimeUntil = 0, chimeTimer;
   let stopChime, saved = true, audio, ambientGain, ambientSource, modal, observationTimer;
@@ -303,6 +304,7 @@ export function FirstPersonPage(lesson) {
     const q = scene.questions[Math.min(state.questionIndex || 0, scene.questions.length - 1)];
     const content = h('section', { class: 'fp-question-cards', 'aria-label': q.stem });
     if(state.done) {
+      appendOrderSupport({question:q,done:state.done,shown:orderSupportShown,host:content});
       content.append(say(q.explanation));
       if(progress.current < config.scenes.length-1) content.append(button('下一幕', advance));
       else { if(q.operationType==='summaryCard')content.append(say(storySummary(config,progress.scenes)));content.append(say(config.ending.title, 'h3')); config.review.forEach(([title,text])=>content.append(say(`${title}${text}`))); content.append(button('完成・關卡一覽', showScenes)); }
