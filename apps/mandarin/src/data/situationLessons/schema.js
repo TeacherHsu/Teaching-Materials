@@ -120,7 +120,7 @@ export function validateSituationLesson(lesson) {
       check(t.options?.length>=1 && t.options.length<=3,'strategy option count');
       if(t.revealOnResult)check(t.type==='predict' && text(t.resultReminder),'result prediction reminder');
       if(t.type==='predict'){check(t.options.length>=2 && t.options.every(text) && t.options.includes('我不確定') && t.answer===undefined,'prediction ungraded');check(t.revealAt && t.refs.some(r=>r.para===t.revealAt.para && r.sentences.includes(t.revealAt.n)),'prediction reveal');}
-      else {check(Array.isArray(t.answer) && t.answer.length>0 && t.answer.every(n=>Number.isInteger(n) && t.options[n]),'strategy answer');for(const o of t.options){check(text(o.label) && percent(o.x) && percent(o.y),'strategy hotspot');refs(o.refs);check(o.refs.length>0,'hotspot evidence');if(o.sprite)check(/^[\w-]+$/.test(o.sprite) && (o.width===undefined || percent(o.width) && o.width>0),'strategy sprite');if(o.face){check(percent(o.face.width) && percent(o.face.height),'face halo');check(o.markerOffset?.length===2 && o.markerOffset.every(Number.isFinite),'face marker offset');}for(const state of o.states || [])check(text(lesson.meter.states[state]),'strategy meter word');}if(t.type==='emotionClue')check(t.answer.length<=2,'emotion clue count');if(t.type==='causeEffect')check(t.result?.length===2 && t.result.every(percent) && text(t.explanation),'cause result');}
+      else {check(Array.isArray(t.answer) && t.answer.length>0 && t.answer.every(n=>Number.isInteger(n) && t.options[n]),'strategy answer');for(const o of t.options){check(text(o.label) && percent(o.x) && percent(o.y),'strategy hotspot');refs(o.refs);check(o.refs.length>0,'hotspot evidence');if(o.presentation!==undefined)check(o.presentation==='picture' && text(o.sprite) && percent(o.width) && o.width>0 && t.type==='emotionClue','picture clue');if(o.sprite)check(/^[\w-]+$/.test(o.sprite) && (o.width===undefined || percent(o.width) && o.width>0),'strategy sprite');if(o.face){check(percent(o.face.width) && percent(o.face.height),'face halo');check(o.markerOffset?.length===2 && o.markerOffset.every(Number.isFinite),'face marker offset');}for(const state of o.states || [])check(text(lesson.meter.states[state]),'strategy meter word');}if(t.type==='emotionClue')check(t.answer.length<=2,'emotion clue count');if(t.type==='causeEffect')check(t.result?.length===2 && t.result.every(percent) && text(t.explanation),'cause result');}
     }
     check(s.questions?.length>0,'questions');
     for(const q of s.questions){
@@ -128,6 +128,7 @@ export function validateSituationLesson(lesson) {
       if(q.operationType==='summaryCard')check(q.options?.length===(lesson.summaryCardCount || 3) && q.summaryImages?.length===q.options.length && q.summaryImages.every(f=>s.art.images.includes(f) || /^sprites\/[\w-]+\.webp$/.test(f)) && q.refs.length>0,'summary cards');
       check(text(q.stem) && q.options?.length>=2 && q.options.every(text),'question');
       const answer=Array.isArray(q.answer)?q.answer:[q.answer];check(answer.every(i=>Number.isInteger(i) && i>=0 && i<q.options.length),'answer');
+      if(q.afterOrderSupport!==undefined)check(q.operationType==='orderCards' && s===lesson.scenes.at(-1) && text(q.afterOrderSupport),'order support placement');
       if(q.operationType==='orderCards')check(answer.length===q.options.length && new Set(answer).size===answer.length,'order answer');
       if(q.initialOrder)check(q.initialOrder.length===q.options.length && new Set(q.initialOrder).size===q.options.length && q.initialOrder.every(i=>Number.isInteger(i) && i>=0 && i<q.options.length),'initial order');
     }
@@ -137,6 +138,7 @@ export function validateSituationLesson(lesson) {
   refs(lesson.ending.refs || []);
   for(const r of lesson.meter.events || [])check(storyExpected.includes(`${r.para}:${r.n}`) && text(lesson.meter.states[r.state]) && Number.isInteger(r.level) && r.level>=0 && r.level<=3,'meter read event');
   if(lesson.meter.read){const r=lesson.meter.read;check(expected.includes(`${r.para}:${r.n}`) && text(lesson.meter.states[r.state]),'meter read trigger');}
+  check(lesson.scenes.flatMap(s=>s.questions).filter(q=>q.afterOrderSupport).length<=1,'single order support');
   check(text(lesson.ending.title),'ending');
   return true;
 }
