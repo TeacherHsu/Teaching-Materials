@@ -147,3 +147,9 @@
 設定 `mandarin:explore:settings` 的 `dialogue:'tap'|'auto'`，預設tap；未設scriptTap的課不套用。下一句在等待時等同點角色。自動播放不越過對白等待；切auto回既有播放器。設定／提示暫停、返回同單位續讀，換幕清除token與標記。
 
 本課另選用 `object.viewMotion:'sandSearch'|'nod'|'hideInSand'` 與 `idleMotion:'wiggle'`；動作結束才提交state，取消不完成。藏身為沙堆遮罩、點頭使用既有底圖局部，不是抓動物。19步包含六組新增短操作的11個子步；同一課的timeline每個read拍≤8原始單位，跨相鄰read拍有聲單位同樣≤8（純角色標頭與舞臺指示不發聲）。
+
+## 羹湯：同一事件的選擇與大人烹飪（2026-10-23）
+
+- `object.event` 可將兩個不同 `action` 對應到同一個 `steps` 事件，用於「選麵或粄條」等不改劇情的選擇；限非 collect 的點擊／觀察。任一選項完成後，兩個物件都由 state 判定完成並停用；重點、連點、重入不再前進。
+- `object.viewMotion:'adultCook'` 搭配 `motionImage`（須列於 `art.images`）與 `cookMotion:'drop'|'scoop'|'stir'|'pour'|'thicken'`。只以母親操作熱鍋的無學生手插畫交叉淡入，1400ms 動作完成才提交 state；動畫中忽略連點，暫停／離頁取消不計步，減少動態直接切到 state 對應圖。未使用本欄位的課不套用。
+- 本課各幕使用2400×1024滿版 cover；清水、下肉、撈肉、炒料、倒水、完成與白飯淋羹前後分圖。中途 read 拍明訂 imageIndex，完成前不使用成果圖。操作 focus 包含完成格；四尺寸包含678×771，策略所有正誤標記及臉部光圈均驗上方74%安全區。
