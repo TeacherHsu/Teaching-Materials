@@ -343,7 +343,7 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 .fp-clue-words{border-radius:8px;background:#ffe7a0;padding:4px;font-size:18px}
 .fp-summary-image{display:block;width:100%;height:72px;object-fit:cover;border-radius:8px;margin-bottom:6px}
 .fp-prediction-reminder{position:absolute;z-index:21;right:12px;top:118px;max-width:min(320px,calc(100% - 24px));padding:6px;background:#fff9eddd;border-radius:10px;font-size:18px}
-.fp-prediction-reminder p{margin:0}
+.fp-prediction-reminder p{margin:0;font-size:17px;line-height:22px}
 .fp-hide-operations .fp-operation{visibility:hidden!important;pointer-events:none!important}
 .fp-mood>.fp-meter-clue{position:absolute;right:0;top:76px;display:flex;align-items:center;gap:4px;width:max-content;max-width:min(280px,calc(100vw - 24px));padding:4px;border-radius:8px;background:#fff4ce;color:#654d29;white-space:normal}
 
@@ -407,3 +407,7 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 .fp-safety-reminder p { margin: 0; font-size: 18px; }
 .fp-object-caption { display: block; position: absolute; left: 50%; top: 85%; transform: translateX(-50%); white-space: nowrap; font-size: 22px; padding: 3px 6px; border-radius: 8px; color: #493721; background: #fff9edee; }
 .fp-object-audio { pointer-events: auto; position: absolute; z-index: 4; transform: translate(-50%,-50%); }
+
+/* Source writing stays on its physical cloud card, never in the action subtitles. */
+.fp-source-caption { position:absolute; inset:20% 27%; display:flex; align-items:center; justify-content:center; color:#24445a; font-size:clamp(16px, 1.6vw, 26px); line-height:1.3; white-space:normal; text-align:center; pointer-events:none; }
+.fp-source-caption[hidden] { display:none; }

@@ -108,6 +108,7 @@ export function FirstPersonPage(lesson) {
     const sayTexts = new Map();
     for (const s of splitSentences(reading.paras)) { if (!paragraphs.has(s.paraIndex + 1)) paragraphs.set(s.paraIndex + 1, []); sayTexts.set(`${s.paraIndex + 1}:${paragraphs.get(s.paraIndex + 1).length}`, s.say); paragraphs.get(s.paraIndex + 1).push(s.text); }
     sources = sentenceSources(config, paragraphs, sayTexts);
+    for(const [para,lines] of paragraphs)lines.forEach((text,n)=>sources.set(`source:${para}:${n}`,text));
     try {
       await validateUnlockedLesson(config, paragraphs);
       for (const sc of config.scenes) for (const clue of [...sc.clues, ...sc.questions.map(q => ({ id: `question-${q.id}`, refs: q.refs })), ...(sc === config.scenes.at(-1) && config.ending.refs?.length ? [{ id: 'idiom', refs: config.ending.refs }] : [])]) {
@@ -150,7 +151,7 @@ export function FirstPersonPage(lesson) {
     stage.addEventListener('pointerup', () => { pointer = null; }); stage.addEventListener('pointercancel', () => { pointer = null; });
     stage.addEventListener('keydown', (e) => { if (e.target !== stage) return; if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) { e.preventDefault(); world?.look(e.key === 'ArrowLeft' ? .08 : e.key === 'ArrowRight' ? -.08 : 0, e.key === 'ArrowUp' ? .05 : e.key === 'ArrowDown' ? -.05 : 0); } });
     const version = generation;
-    mountFirstPersonScene(stage, { phase: { ...scene, nextImages: config.scenes[progress.current+1]?.art.images, id: scene.id.replace(/^story-/, "") }, calm: calm(), operation: state.operation, onQuiet: value => { quietProgress=value; sound(); }, onChime: chime, onDemoSeen: () => { if(!replay)save(); }, onOperation: () => { if (!replay) save(); updateMood(); if(beat==='act' && (operationComplete(scene,state.operation) || scene.timeline?.[timelineIndex]?.untilStep<=state.operation.step)) finishBeat('act'); else updateMotion(); }, onMode: (label) => { if (version === generation) { mode.textContent = label; mode.hidden = label.startsWith('第一人稱'); } } }).then((controller) => { if (disposed || version !== generation) controller.dispose(); else { world = controller; if(scene.timeline)runTimeline();else setBeat('intro'); } });
+    mountFirstPersonScene(stage, { sourceText: ref => sources.get(`source:${ref.para}:${ref.n}`), phase: { ...scene, nextImages: config.scenes[progress.current+1]?.art.images, id: scene.id.replace(/^story-/, "") }, calm: calm(), operation: state.operation, onQuiet: value => { quietProgress=value; sound(); }, onChime: chime, onDemoSeen: () => { if(!replay)save(); }, onOperation: () => { if (!replay) save(); updateMood(); if(beat==='act' && (operationComplete(scene,state.operation) || scene.timeline?.[timelineIndex]?.untilStep<=state.operation.step)) finishBeat('act'); else updateMotion(); }, onMode: (label) => { if (version === generation) { mode.textContent = label; mode.hidden = label.startsWith('第一人稱'); } } }).then((controller) => { if (disposed || version !== generation) controller.dispose(); else { world = controller; if(scene.timeline)runTimeline();else setBeat('intro'); } });
     updateMotion(); sound();
   }
 
@@ -209,7 +210,7 @@ export function FirstPersonPage(lesson) {
     } else if(value==='result') {
       for(const strategy of scene.strategies || [])if(strategy.type==='predict' && strategy.revealOnResult && predictions[strategy.id]!==undefined){
         root.querySelector('.fp-prediction-reminder')?.remove();
-        rootBody.append(h('aside',{class:'fp-prediction-reminder'},[say(`你猜的是：${strategy.options[predictions[strategy.id]]}。${strategy.resultReminder}`)]));
+        rootBody.append(h('aside',{class:'fp-prediction-reminder'},[say(`你猜：${strategy.options[predictions[strategy.id]]}。${strategy.resultReminder}`)]));
       }
       world?.setView(scene.beats.result.view);
       resultWarningShown=false;scheduleResult();

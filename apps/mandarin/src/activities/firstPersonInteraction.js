@@ -25,8 +25,8 @@ export const operationComplete = (scene, state) => state.step === scene.operatio
 export const heatFor = (scene, state) => scene.operation.heat?.[state.step] ?? 1;
 
 // Source-image coordinates remain valid while the illustration pans or resizes.
-export function mountOperation(plane, { scene, state, changed, heat, demonstrate, chime, focus, reduced = () => false, saveDemo = () => {}, quiet = () => {} }) {
-  if (!scene.operation.profile) return mountConfiguredOperation(plane, {scene,state,changed,heat,demonstrate,focus,reduced,saveDemo,quiet}, {operate:action=>operate(scene,state,action),complete:()=>operationComplete(scene,state)});
+export function mountOperation(plane, { scene, state, changed, heat, demonstrate, chime, focus, reduced = () => false, saveDemo = () => {}, quiet = () => {}, sourceText }) {
+  if (!scene.operation.profile) return mountConfiguredOperation(plane, {sourceText,scene,state,changed,heat,demonstrate,focus,reduced,saveDemo,quiet}, {operate:action=>operate(scene,state,action),complete:()=>operationComplete(scene,state)});
   if(scene.operation.type==='toolGrab')return mountTongs(plane,{scene,state,changed,heat,demonstrate,focus,reduced,saveDemo,quiet},{operate:action=>operate(scene,state,action),complete:()=>operationComplete(scene,state),heatFor:()=>heatFor(scene,state)});
   const base = `${(import.meta.env?.BASE_URL || '/')}${scene.assetBase}sprites/`;
   const layer = document.createElement('div'); layer.className = `fp-operation fp-act-${scene.act}`; plane.append(layer);
