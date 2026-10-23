@@ -1,5 +1,12 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-10-23｜家中 Mac｜Codex｜羹湯修正單1：完成改檔，待 Claude 實玩／提交
+- 依本單只改檔，全程未執行任何 git，未 commit／push／合併／部署。保留 Claude 的 strategies.js 臉旁起線／無 result 不畫線邏輯，該檔未修改。
+- 10張有窗場景局部雪→宜蘭細雨／溼屋瓦；爐臺六張、盛湯前後各共用雨窗。table、完成stove、stove-pour、serve／serve-before及羹碗sprite內容改魚漿裹肉條、筍絲／木耳／白菜、半透明濃羹；淋羹前保留白飯。另同步5張摘要，共17件WebP；整課4,036,972 bytes，低於4MiB。
+- 第1幕雨卡靠窗、硬幣在碗右桌面，圖下markerOffset，四尺寸均可見且不碰碗；result移碗後緣，曲線不入湯。第4幕markerOffset=[8.25,0]避臉並刪result；schema接受省略result，有設時仍驗值。更新test-situation-soup.mjs：148項四尺寸可見、卡／標記避碗、整個44px標記避臉與選正解無線。
+- 內建編輯8次成功，逐張自看接縫／色調與縮圖；原圖PNG、生成PNG、遮罩、無損合成、兩輪窗格遮罩修正、像素稽核／腳本／總覽留 ~/mandarin-work/first-person-samples/6A11/fix1/。PNG遮罩外差異0；網頁WebP為容量限制有損重編碼，無法保證其餘像素完全相同，限制已記錄。
+- 最終validate、全部115支測試、build、check-dist／assets、build:preview全通過。預覽伺服器listen EPERM，內建瀏覽器執行工具不可用；仍待Claude四尺寸實玩雨窗切圖、肉羹／白飯前後、因果小圖與主旨臉旁標記。詳見first-person-IMPL-LOG.md本課「修正單1」。
+
 ## 2026-10-23｜家中 Mac｜Codex｜來一碗溫暖的羹湯：待 Claude 四尺寸實玩／提交
 - 依本單只改檔，全程未執行任何git、未開Chrome、未commit／push／合併／部署；分支、提交與瀏覽器驗收交Claude。
 - 新增115AG6H11四幕，四組三圖摘要＋第3幕六步製作排序；89單位排除課名0，88正文按14／16／22／36依序唯一覆蓋。正式密文／本機來源與hash核對；母親對白只標1:29–30，其餘speakers空，不啟用scriptTap。

@@ -50,6 +50,20 @@
   8. 觸控／滑鼠／Tab與Enter、喇叭／自動朗讀、音效與三種動畫設定、重玩／重載／已讀回顧；五舊課至少回歸水滾了、老鞋匠、存根、小鉛筆、寄居蟹，確認新選用欄位未改其操作。
 
 
+### 修正單1（2026-10-23）
+- 依本單只改檔；未執行任何 git 指令、未 commit／push／合併／部署。保留 Claude 在 `strategies.js` 已完成的「臉旁標記起線／省略 result 不畫線」實作，本次未修改該檔。
+- **窗外雪→細雨**：`kitchen.webp` 背景窗、`stove.webp`／`stove-clear.webp`／`stove-drop.webp`／`stove-scoop.webp`／`stove-fry.webp`／`stove-pour.webp` 左窗、`serve.webp`／`serve-before.webp` 背景窗、`door.webp` 客廳及右側廚房窗；只取內建編輯的窗格區域，灰藍天、雨絲、溼深色屋瓦。爐臺六張共用同一雨窗，盛湯前後共用同一雨窗；室內與人物不作全圖重畫。
+- **肉羹內容**：`table.webp` 碗內、`stove.webp` 鍋／勺內、`stove-pour.webp` 勾芡中的鍋內、`serve.webp` 大鍋／勺／羹流／飯上羹料、`serve-before.webp` 大鍋／勺、`sprites/soup.webp` 碗內。統一為淡色粗糙魚漿裹肉條、筍絲／木耳／白菜、半透明濃稠湯汁；不再用排骨塊／蘿蔔清湯。較早的清水、下肉、撈肉、炒料仍維持程序狀態；淋羹前的飯保持白飯，湯勺／鍋緣／木匙／澱粉水流與人物保留。
+- **摘要同步**：`sprites/summary-warm.webp`／`summary-mix.webp`／`summary-cook.webp`／`summary-taste.webp`／`summary-care.webp` 從修正場景重裁相同720×300。共改17件WebP（11場景、1羹碗、5摘要）；bike、雨窗選項小圖及summary-bike保留。
+- **第1幕因果版面**：rain=(51.5,22)、coins=(66,50)、width=4、focus=58.75，markerOffset均為[0,12]；雨卡靠窗、硬幣在碗右的桌面，卡片／44px標記彼此分離、不碰碗。result=[50.5,46]落在碗後緣，既有二次曲線全段位於湯面上方。
+- **第4幕主旨**：母親選項markerOffset改[8.25,0]，完整44px標記避開臉框；刪該題result以免曲線穿臉。`schema.js`同步允許causeEffect省略result，有設時仍驗座標與explanation，不改其他題的連線。
+- **測試更新**：`scripts/test-situation-soup.mjs`補第1幕卡片與標記不碰碗／彼此分開、四尺寸完整可見、標記在圖正下方、終點在碗後緣與曲線不入湯；第4幕整個44px標記在臉框外、選正解後不產生連線、非法result仍拒絕。可見性由132增至148項，四尺寸含678×771與375×812。
+- **素材紀錄**：內建image_gen編輯8次成功，未走draw／API腳本；原始輸出、原圖解碼PNG、精確遮罩、無損合成、兩輪窗格遮罩修正、最終總覽／縮圖、像素稽核及合成腳本均在 `~/mandarin-work/first-person-samples/6A11/fix1/`。逐張自看窗緣／窗框、接縫、色調及肉羹外觀；初版暖色排除造成外牆／舊雪色塊已退件，改精確窗格多邊形並修斜窗臺與內層格框。
+- **像素限制如實記錄**：12張局部合成PNG（含羹碗sprite）遮罩外差異為0；sprite原始alpha保留。網頁WebP依每圖與整課4MiB上限有損重編碼，不能保證遮罩外逐像素不變；`pixel-audit.json`分列無損PNG與交付WebP差異。
+- **驗證**：`npm run validate`、全部115支 `scripts/test-*.mjs`、`npm run build`、`npm run check-dist`／assets、`npm run build:preview`均通過；最終本課148項四尺寸可見性通過。初次check-assets發現單課4.25MiB，已壓至4,036,972 bytes（低於4MiB），再跑全部115支測試與建置／dist檢查通過。僅既有bundle／動態匯入提示。
+- **Claude實玩**：四尺寸查看第1幕雨卡／右桌硬幣與圖下標記、碗後緣連線；第4幕臉旁標記與選正解無線；爐臺連續切圖窗外一致、清水到勾芡的程序、盛湯前白飯／盛湯後肉羹與所有摘要一致。預覽啟動遭環境 `listen EPERM 127.0.0.1:4173`；本回合沒有可用的內建瀏覽器執行工具，未宣稱瀏覽器／教學驗收完成。
+
+
 ## 2026-10-23｜寄居蟹找新家｜115AG3H08｜待 Claude 四尺寸實玩
 
 ### 修改範圍與適切引導

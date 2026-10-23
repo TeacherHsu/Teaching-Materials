@@ -70,6 +70,35 @@ for(const s of lesson.scenes)for(const[w,h]of sizes){
   for(let i=0;i<active.length;i++)for(let j=i+1;j<active.length;j++){const a=box(active[i]),b=box(active[j]);assert.ok(Math.abs(a.x-b.x)>=a.rx+b.rx || Math.abs(a.y-b.y)>=a.ry+b.ry,`${s.id} ${active[i].action}/${active[j].action} overlap at ${w}x${h}`);}
  }
 }
+// Fix 1: actual bowl silhouette in table.webp, in source-image percentages.
+// Upper part covers soup/rim; the lower part covers ceramic bowl, clear of hands.
+const bowlParts=[{left:35.3,right:62.7,top:45,bottom:67},{left:39,right:60,top:67,bottom:85}];
+const weather=lesson.scenes[0].strategies.find(t=>t.id==='soup-weather');
+const theme=lesson.scenes[3].strategies.find(t=>t.id==='soup-theme');
+assert.equal(theme.result,undefined,'theme uses no link across mother');
+assert.ok(weather.result[0]>=48 && weather.result[0]<=53 && weather.result[1]>=45 && weather.result[1]<=47,'weather link ends at bowl rear rim before soup surface');
+const apart=(a,b)=>a.right<=b.left || b.right<=a.left || a.bottom<=b.top || b.bottom<=a.top;
+// The existing quadratic link stays above the soup surface for its entire path.
+for(let i=0;i<=100;i++){const t=i/100,sy=weather.options[0].y,ey=weather.result[1];const y=(1-t)**2*sy+2*(1-t)*t*ey+t*t*ey;assert.ok(y<=47,'weather curve never enters soup');}
+for(const [w,h]of sizes){
+ const g=sceneIllustrationLayout(w,h,.5,lesson.scenes[0].art);
+ const boxes=weather.options.map(o=>({left:o.x-o.width/2,right:o.x+o.width/2,top:o.y-o.width*g.imageWidth/g.imageHeight/2,bottom:o.y+o.width*g.imageWidth/g.imageHeight/2}));
+ for(const [i,o]of weather.options.entries()){
+  visible(lesson.scenes[0],w,h,o,weather.focus,true);
+  const marker={x:o.x+o.markerOffset[0],y:o.y+o.markerOffset[1]};
+  visible(lesson.scenes[0],w,h,marker,weather.focus,true);
+  const mb={left:marker.x-22/g.imageWidth*100,right:marker.x+22/g.imageWidth*100,top:marker.y-22/g.imageHeight*100,bottom:marker.y+22/g.imageHeight*100};
+  assert.equal(o.markerOffset[0],0,'marker directly below card');
+  assert.ok(mb.top>boxes[i].bottom,'44px marker clears card');
+  for(const bowl of bowlParts){assert.ok(apart(boxes[i],bowl),'picture outside bowl');assert.ok(apart(mb,bowl),'marker outside bowl');}
+ }
+ assert.ok(apart(...boxes),'weather cards separate');
+ const o=theme.options[0],mx=o.x+o.markerOffset[0],my=o.y+o.markerOffset[1];
+ const fg=sceneIllustrationLayout(w,h,.5,lesson.scenes[3].art);
+ const marker={left:mx-22/fg.imageWidth*100,right:mx+22/fg.imageWidth*100,top:my-22/fg.imageHeight*100,bottom:my+22/fg.imageHeight*100};
+ assert.ok(apart(marker,{left:o.x-o.face.width/2,right:o.x+o.face.width/2,top:o.y-o.face.height/2,bottom:o.y+o.face.height/2}),'whole theme marker clears face');
+}
+const invalidResult=structuredClone(lesson);invalidResult.scenes[3].strategies[0].result=[101,60];assert.throws(()=>validateSituationLesson(invalidResult),/cause result/);
 const animations=[];
 class Element{
  constructor(tag='div'){this.tagName=tag;this.children=[];this.style={setProperty(k,v){this[k]=v;}};this.dataset={};this.attrs={};this.events={};this.classes=new Set();this.classList={add:n=>this.classes.add(n),remove:n=>this.classes.delete(n),toggle:(n,v)=>v?this.classes.add(n):this.classes.delete(n)};}
@@ -98,7 +127,7 @@ try{
  }
  for(const s of lesson.scenes)for(const t of s.strategies){
   const plane=new Element(),panel=new Element(),stage=new Element();let done=0;const dispose=mountStrategy({strategy:t,panel,plane,stage,states:lesson.meter.states,onWords(){},onDone:()=>done++,focus(){}});
-  plane.children.find(n=>n.attrs?.['aria-label']===t.options[1].label).click();assert.equal(done,0);const n=plane.children.find(n=>n.attrs?.['aria-label']===t.options[0].label);n.click();const count=plane.children.length;for(let i=0;i<30;i++)n.click();assert.equal(plane.children.length,count);const next=panel.querySelector('[data-strategy-next]');for(let i=0;i<20;i++)next.click();assert.equal(done,1);dispose();assert.equal(plane.children.length,0);
+  plane.children.find(n=>n.attrs?.['aria-label']===t.options[1].label).click();assert.equal(done,0);const n=plane.children.find(n=>n.attrs?.['aria-label']===t.options[0].label);n.click();if(t.id==='soup-theme')assert.ok(!plane.children.some(n=>n.className==='fp-strategy-link'),'no theme link after correct answer');const count=plane.children.length;for(let i=0;i<30;i++)n.click();assert.equal(plane.children.length,count);const next=panel.querySelector('[data-strategy-next]');for(let i=0;i<20;i++)next.click();assert.equal(done,1);dispose();assert.equal(plane.children.length,0);
  }
 }finally{Object.assign(globalThis,saved);}
 const page=readFileSync(new URL('../src/pages/FirstPersonPage.js',import.meta.url),'utf8');assert.match(page,/pick.disabled=place>=0/);assert.match(page,/第\$\{place\+1\}排序格已填好/);assert.match(page,/safetyRemindersShown.has\(scene.id\)/);assert.match(page,/safetyRemindersShown.add\(scene.id\)/);

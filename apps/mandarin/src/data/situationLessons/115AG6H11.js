@@ -450,17 +450,17 @@ export default {
           "type": "causeEffect",
           "prompt": "宜蘭人為什麼特別愛吃羹？",
           "hint": "連起天氣和羹的特性。",
-          "focus": 50,
+          "focus": 58.75,
           "options": [
             {
               "label": "多雨溼冷，羹湯保溫祛寒",
-              "x": 46,
-              "y": 40,
+              "x": 51.5,
+              "y": 22,
               "sprite": "rain",
               "width": 4,
               "markerOffset": [
                 0,
-                14
+                12
               ],
               "refs": [
                 {
@@ -482,13 +482,13 @@ export default {
             },
             {
               "label": "羹湯比較便宜",
-              "x": 54,
-              "y": 40,
+              "x": 66,
+              "y": 50,
               "sprite": "coins",
               "width": 4,
               "markerOffset": [
                 0,
-                14
+                12
               ],
               "refs": [
                 {
@@ -519,8 +519,8 @@ export default {
             0
           ],
           "result": [
-            50,
-            61
+            50.5,
+            46
           ],
           "explanation": "多雨溼冷的天氣，配上能保溫的羹湯，滿足祛寒的需要。",
           "refs": [
@@ -2625,7 +2625,7 @@ export default {
                 "height": 24
               },
               "markerOffset": [
-                8,
+                8.25,
                 0
               ],
               "refs": [
@@ -2669,10 +2669,6 @@ export default {
           ],
           "answer": [
             0
-          ],
-          "result": [
-            50,
-            60
           ],
           "explanation": "作者看重與母親相處、撒嬌的幸福，將羹湯的溫度連到親情。",
           "refs": [
