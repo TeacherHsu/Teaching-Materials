@@ -450,3 +450,6 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 @media(prefers-reduced-motion:reduce){.fp-cap-wiggle{animation:none}}
 
 .fp-action-sandPuff[hidden]{display:none}
+
+/* Only the illustrated adult performs hot cooking; the frame is transient. */
+.fp-adult-cook-frame{position:absolute;inset:0;background-size:100% 100%;background-repeat:no-repeat;pointer-events:none;z-index:3}

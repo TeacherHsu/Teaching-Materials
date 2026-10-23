@@ -11,6 +11,11 @@ export function operationState(scene, raw = {}) {
   return { step, ...(Number.isInteger(raw.clockMinutes) && raw.clockMinutes>=0 && raw.clockMinutes<720 ? {clockMinutes:raw.clockMinutes} : {}), ...(Number.isInteger(raw.rhythmAttempts) && raw.rhythmAttempts>=0 ? {rhythmAttempts:raw.rhythmAttempts} : {}), ...(raw.demoSeen === true ? {demoSeen:true} : {}), ...(scene.act===4 && raw.tongsDemoSeen === true ? {tongsDemoSeen:true} : {}), ...(scene.act===1 && raw.woodDemoSeen === true ? {woodDemoSeen:true} : {}), ...(collected.length ? { collected } : {}) };
 }
 export function operate(scene, state, action) {
+  const option=scene.operation.objects?.find(o=>o.action===action);
+  if(option?.event){
+    if(state.step<(option.fromStep ?? 0) || state.step>(option.toStep ?? scene.operation.steps.length))return false;
+    action=option.event;
+  }
   const expected = scene.operation.steps[state.step];
   if (!expected) return false;
   if (scene.operation.collect?.includes(expected)) {

@@ -59,7 +59,7 @@ export function mountConfiguredOperation(plane, options, api) {
   let clockDragged=false;
   const gesture=o=>o.gesture || config.type;
   const available=o=>state.step>=(o.fromStep ?? 0) && state.step<=(o.toStep ?? config.steps.length);
-  const completed=o=>Boolean(state.collected?.includes(o.action) || !config.collect?.includes(o.action) && config.steps.slice(0,state.step).includes(o.action) && !config.steps.slice(state.step).includes(o.action));
+  const completed=o=>Boolean(state.collected?.includes(o.action) || !config.collect?.includes(o.action) && config.steps.slice(0,state.step).includes(o.event || o.action) && !config.steps.slice(state.step).includes(o.event || o.action));
   let committing=false, motionBusy=false;
   const objectAudio=new Map();
   const sourceCaptions=new Map();
@@ -118,9 +118,19 @@ export function mountConfiguredOperation(plane, options, api) {
   }
   function observe(o){
     if(motionBusy || completed(o))return;
-    if(['machineProcess','machineCut'].includes(o.viewMotion) && state.step!==config.steps.indexOf(o.action)){
-      tell(retryText() || '先完成前一步。');return;
+    // A teacher-selected checkpoint asks the illustrated adult to cook. Only
+    // her cooking illustration changes; no student hand approaches the stove.
+    if(o.viewMotion==='adultCook'){
+      if(state.step!==config.steps.indexOf(o.action))return;
+      const effect=document.createElement('span');effect.className='fp-adult-cook-frame';effect.setAttribute('aria-hidden','true');
+      effect.style.backgroundImage=`url(${import.meta.env?.BASE_URL || '/'}${scene.assetBase}${o.motionImage})`;
+      layer.append(effect);
+      const finish=()=>{animation=null;motionBusy=false;effect.remove();if(!paused && !disposed)commit(o.action);render();};
+      if(reduced()){finish();return;}
+      motionBusy=true;render();animation=effect.animate([{opacity:0},{opacity:1,offset:.2},{opacity:1,offset:.85},{opacity:0}],{duration:1400,easing:'ease-in-out'});
+      animation.onfinish=finish;animation.oncancel=()=>{effect.remove();motionBusy=false;if(!disposed)render();};return;
     }
+
     if(['sandSearch','nod','hideInSand','sandPuff'].includes(o.viewMotion)){
       if(state.step!==config.steps.indexOf(o.action))return;
       const effect=document.createElement('span');effect.className=`fp-action-${o.viewMotion==='hideInSand'?'sandPuff':o.viewMotion}`;effect.setAttribute('aria-hidden','true');pos(effect,o.x,o.y);
