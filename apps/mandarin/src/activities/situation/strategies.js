@@ -36,10 +36,15 @@ export function mountStrategy({strategy, panel, plane, stage, states, onWords, o
       onWords(words,strategy.meterTarget);message(words.join('、'));
     }else{
       message(result.feedback);
-      const svg=h('div',{class:'fp-strategy-link','aria-hidden':'true'});
-      // Coordinates live in the same full-bleed image plane as both targets.
-      svg.innerHTML=`<svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M ${option.x} ${option.y} Q ${option.x} ${strategy.result[1]} ${strategy.result[0]} ${strategy.result[1]}"/></svg>`;
-      plane.append(svg);nodes.push(svg);
+      // 沒設 result 就不畫因果連線；選項在人臉上時從臉旁的標記出發，不畫過臉。
+      if(strategy.result){
+        const [dx,dy]=option.face ? (option.markerOffset || [0,0]) : [0,0];
+        const sx=option.x+dx,sy=option.y+dy;
+        const svg=h('div',{class:'fp-strategy-link','aria-hidden':'true'});
+        // Coordinates live in the same full-bleed image plane as both targets.
+        svg.innerHTML=`<svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M ${sx} ${sy} Q ${sx} ${strategy.result[1]} ${strategy.result[0]} ${strategy.result[1]}"/></svg>`;
+        plane.append(svg);nodes.push(svg);
+      }
     }
     if(result.complete && !panel.querySelector('[data-strategy-next]'))panel.append(h('button',{type:'button','data-strategy-next':'true',class:'fp-button',onclick:finish},'繼續'));
   }
