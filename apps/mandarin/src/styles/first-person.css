@@ -453,3 +453,10 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 
 /* Only the illustrated adult performs hot cooking; the frame is transient. */
 .fp-adult-cook-frame{position:absolute;inset:0;background-size:100% 100%;background-repeat:no-repeat;pointer-events:none;z-index:3}
+
+/* Optional coastal actions: effects are finite and removed on pause/dispose. */
+.fp-action-cameraFlash,.fp-action-coastalWave,.fp-action-number{position:absolute;pointer-events:none;transform:translate(-50%,-50%);z-index:4}
+.fp-action-cameraFlash{width:18%;aspect-ratio:1;background:radial-gradient(circle,#fff 0 12%,#fff9 25%,transparent 65%);border-radius:50%}
+.fp-action-coastalWave{width:15%;height:7%;border-top:5px solid #fff;border-bottom:3px solid #d4f5ff;border-radius:50%;filter:drop-shadow(0 0 5px #fff)}
+.fp-action-number{font-size:clamp(24px,3vw,40px);font-weight:800;color:#fff;text-shadow:0 1px 4px #214651;background:#214651cc;border-radius:50%;min-width:1.5em;text-align:center}
+.fp-action-number[hidden],.fp-action-cameraFlash[hidden],.fp-action-coastalWave[hidden]{display:none}

@@ -1,5 +1,8 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-10-23｜家中 Mac｜Codex｜施工中：阿塱壹古道
+- 範圍：apps/mandarin 課次115AG3H09、必要共用操作擴充／測試／實作紀錄。依本單不執行任何git；Claude負責瀏覽器驗收與提交。
+
 ## 2026-10-23｜家中 Mac｜Codex｜羹湯修正單1：完成改檔，待 Claude 實玩／提交
 - 依本單只改檔，全程未執行任何 git，未 commit／push／合併／部署。保留 Claude 的 strategies.js 臉旁起線／無 result 不畫線邏輯，該檔未修改。
 - 10張有窗場景局部雪→宜蘭細雨／溼屋瓦；爐臺六張、盛湯前後各共用雨窗。table、完成stove、stove-pour、serve／serve-before及羹碗sprite內容改魚漿裹肉條、筍絲／木耳／白菜、半透明濃羹；淋羹前保留白飯。另同步5張摘要，共17件WebP；整課4,036,972 bytes，低於4MiB。

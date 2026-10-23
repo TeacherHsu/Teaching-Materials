@@ -61,6 +61,8 @@ export function mountConfiguredOperation(plane, options, api) {
   const available=o=>state.step>=(o.fromStep ?? 0) && state.step<=(o.toStep ?? config.steps.length);
   const completed=o=>Boolean(state.collected?.includes(o.action) || !config.collect?.includes(o.action) && config.steps.slice(0,state.step).includes(o.event || o.action) && !config.steps.slice(state.step).includes(o.event || o.action));
   let committing=false, motionBusy=false;
+  const lastActivation=new Map();
+  let waveAudio;
   const objectAudio=new Map();
   const sourceCaptions=new Map();
   let traceProgress=0, lastStep=state.step;
@@ -109,15 +111,32 @@ export function mountConfiguredOperation(plane, options, api) {
     animation?.cancel();handAnimation?.cancel();hand.hidden=true;clearTimeout(demoTimer);
     try{
       if(!api.operate(action)){render();tell(retryText() || '先完成目前這一步。');return false;}
+      if(spec?.intervalGroup)lastActivation.set(spec.intervalGroup,performance.now());
       // Optional dialogue uses the unlocked source in memory, without an action subtitle.
       if(spec?.sourceSpeech){const text=sourceCaptionText(spec.sourceSpeech,options.sourceText);if(text)speak(text);}
       changed();
       render();
+      if(spec?.successCount){
+        const number=document.createElement('span');number.className='fp-action-number';number.textContent=String(spec.successCount);number.setAttribute('aria-hidden','true');pos(number,...(spec.destination || [spec.x,spec.y]));layer.append(number);
+        sceneEffects.push({node:number,step:state.step});
+        if(!reduced())number.animate([{opacity:1,transform:'translate(-50%,-50%)'},{opacity:0,transform:'translate(-50%,-120%)'}],{duration:900,fill:'forwards'});
+      }
       return true;
     }finally{committing=false;}
   }
   function observe(o){
     if(motionBusy || completed(o))return;
+    if(o.viewMotion==='cameraFlash' || o.viewMotion==='coastalWave'){
+      const effect=document.createElement('span');effect.className=`fp-action-${o.viewMotion}`;effect.setAttribute('aria-hidden','true');pos(effect,o.x,o.y);layer.append(effect);sceneEffects.push({node:effect,step:state.step+1});
+      if(o.viewMotion==='coastalWave' && options.soundEnabled?.()===true){
+        // Short, locally synthesized surf; no external audio or speech accent.
+        const Audio=globalThis.AudioContext || globalThis.webkitAudioContext;
+        if(Audio)try{waveAudio?.close();waveAudio=new Audio();const buffer=waveAudio.createBuffer(1,waveAudio.sampleRate*1.2,waveAudio.sampleRate),data=buffer.getChannelData(0);for(let i=0;i<data.length;i++)data[i]=(Math.random()*2-1)*Math.sin(Math.PI*i/data.length)*.16;const source=waveAudio.createBufferSource(),filter=waveAudio.createBiquadFilter();filter.type='lowpass';filter.frequency.value=1000;source.buffer=buffer;source.connect(filter);filter.connect(waveAudio.destination);source.start();}catch{/* audio is optional */}
+      }
+      const finish=()=>{animation=null;motionBusy=false;effect.remove();if(!paused && !disposed)commit(o.action);render();};
+      if(reduced()){finish();return;}
+      motionBusy=true;render();animation=effect.animate([{opacity:0,transform:'translate(-50%,-50%) scale(.7)'},{opacity:.75,offset:.3},{opacity:0,transform:'translate(-50%,-50%) scale(1.4)'}],{duration:o.viewMotion==='cameraFlash'?450:1200,fill:'forwards'});animation.onfinish=finish;animation.oncancel=()=>{effect.remove();waveAudio?.close();motionBusy=false;if(!disposed)render();};return;
+    }
     // A teacher-selected checkpoint asks the illustrated adult to cook. Only
     // her cooking illustration changes; no student hand approaches the stove.
     if(o.viewMotion==='adultCook'){
@@ -189,6 +208,8 @@ export function mountConfiguredOperation(plane, options, api) {
   }
   function select(o){
     if(paused || disposed || committing || motionBusy || completed(o) || elements.get(o.action).disabled)return;
+    if(o.returnOnTap){selected=null;snap(o);tell(o.returnOnTap);return;}
+    if(o.minIntervalMs && performance.now()-(lastActivation.get(o.intervalGroup) ?? -Infinity)<o.minIntervalMs){tell(o.gentlePrompt);return;}
     if(o.target){if(selected)drop(selected,{x:o.x,y:o.y});return;}
     if(config.type==='chooseCard'){commit(o.action);return;}
     if(config.type==='orderCards'){
@@ -295,5 +316,5 @@ export function mountConfiguredOperation(plane, options, api) {
     tell(config.demoPrompt || scene.goal);return true;
   }
   render();
-  return {startDemo(){showWoodDemo();},showWoodDemo,get dragging(){return Boolean(drag);},setPaused(value){const was=paused;paused=value;if(value){motionBusy=false;traceProgress=0;animation?.cancel();handAnimation?.cancel();hand.hidden=true;clearTimeout(demoTimer);if(drag){snap(drag.o);drag=null;}}render();if(!value && was){focus?.(config.focus?.[state.step] ?? scene.art.orientationFocus?.[innerWidth/innerHeight>=1.4?'landscape':'portrait'] ?? config.objects[0].x);if(scene.beats.act.demo)showWoodDemo();}},dispose(){for(const {node} of sceneEffects)node.remove();disposed=true;promptResize?.disconnect();clearTimeout(timer);clearTimeout(demoTimer);animation?.cancel();handAnimation?.cancel();bubble?.remove();status.remove();layer.remove();}};
+  return {startDemo(){showWoodDemo();},showWoodDemo,get dragging(){return Boolean(drag);},setPaused(value){const was=paused;paused=value;if(value){waveAudio?.close();motionBusy=false;traceProgress=0;animation?.cancel();handAnimation?.cancel();hand.hidden=true;clearTimeout(demoTimer);if(drag){snap(drag.o);drag=null;}}render();if(!value && was){focus?.(config.focus?.[state.step] ?? scene.art.orientationFocus?.[innerWidth/innerHeight>=1.4?'landscape':'portrait'] ?? config.objects[0].x);if(scene.beats.act.demo)showWoodDemo();}},dispose(){waveAudio?.close();for(const {node} of sceneEffects)node.remove();disposed=true;promptResize?.disconnect();clearTimeout(timer);clearTimeout(demoTimer);animation?.cancel();handAnimation?.cancel();bubble?.remove();status.remove();layer.remove();}};
 }
