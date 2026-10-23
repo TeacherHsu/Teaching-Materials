@@ -1,4 +1,5 @@
 import { mountSportsOperation } from './sportsOperations.js';
+import { placePrompt } from './promptLayout.js';
 import { SpeakButton } from '../../components/SpeakButton.js';
 import { createCardOrder } from '../firstPersonPresentation.js';
 
@@ -41,6 +42,11 @@ export function advanceTrace(progress, previous, point, path, tolerance = 3) {
 export const chooseCard = (q,index) => Number.isInteger(index) && index>=0 && index<q.options.length ? index : null;
 export const orderCards = initial => createCardOrder(initial);
 
+// Resolve only in memory after the classroom gate; never put source text in data or progress.
+export function sourceCaptionText(spec, resolve) {
+  return (spec?.refs || []).flatMap(r=>r.sentences.map(n=>resolve?.({para:r.para,n}) || '')).join('').replace(/^[「『]|[」』]$/g,'');
+}
+
 // All coordinates are percentages of the source image; all buttons also support Tab/Enter.
 export function mountConfiguredOperation(plane, options, api) {
   const {scene,state,changed,reduced=()=>false,saveDemo=()=>{},focus}=options;
@@ -53,11 +59,14 @@ export function mountConfiguredOperation(plane, options, api) {
   const completed=o=>Boolean(state.collected?.includes(o.action) || !config.collect?.includes(o.action) && config.steps.slice(0,state.step).includes(o.action) && !config.steps.slice(state.step).includes(o.action));
   let committing=false, motionBusy=false;
   const objectAudio=new Map();
+  const sourceCaptions=new Map();
   let traceProgress=0, lastStep=state.step;
   const base=`${import.meta.env?.BASE_URL || '/'}${scene.assetBase}sprites/`;
   const layer=document.createElement('div');layer.className=`fp-operation fp-generic-operation${config.keepCompleted?' fp-keep-completed':''}`;plane.append(layer);
   const status=document.createElement('div');status.className='fp-operation-status';status.setAttribute('role','status');
   const message=document.createElement('span'),counter=document.createElement('span');counter.className='fp-operation-count';status.append(message,counter,SpeakButton({text:()=>`${message.textContent}（${counter.textContent}）`}));plane.parentElement.parentElement.append(status);
+  // 有設保護區（例如人臉）時，提示框改用運動類的避讓排版，不蓋住保護區。
+  const promptLayout=config.protectedRegions?()=>placePrompt(status,plane,scene):null;const promptResize=promptLayout && typeof ResizeObserver!=='undefined'?new ResizeObserver(promptLayout):null;promptResize?.observe(plane);
   let paused=true,disposed=false,selected=null,drag=null,suppress=false,timer,demoTimer,animation,handAnimation,bubble,toolReady=false,gripped=null;
   const elements=new Map();
   const hand=document.createElement('span');hand.className='fp-tongs-hand';hand.textContent='☝';hand.hidden=true;hand.setAttribute('aria-hidden','true');layer.append(hand);
@@ -78,6 +87,7 @@ export function mountConfiguredOperation(plane, options, api) {
   const point=e=>{const r=plane.getBoundingClientRect();return {x:(e.clientX-r.left)/r.width*100,y:(e.clientY-r.top)/r.height*100};};
   const snap=o=>{const el=elements.get(o.action);el.style.width=`${completed(o) && o.destinationWidth ? o.destinationWidth : o.width}%`;pos(el,...(completed(o) && o.destination ? o.destination : [o.x,o.y]));};
   function render(){
+    for(const o of config.objects){const caption=sourceCaptions.get(o.action);if(caption)caption.hidden=Boolean(o.sourceCaption.afterAction && !config.steps.slice(0,state.step).includes(o.sourceCaption.afterAction));}
     for(const o of config.objects){const audio=objectAudio.get(o.action);if(audio){audio.hidden=paused || !available(o) || completed(o) || api.complete();}}
     for(const o of config.objects){const el=elements.get(o.action);const used=Boolean(o.consumedBy && state.collected?.includes(o.consumedBy) || o.usedFade && state.collected?.includes(o.action));el.classList.toggle('fp-used',used);if(o.completedSprite){const img=el.querySelector('img');if(img)img.src=base+(completed(o)?o.completedSprite:o.sprite)+'.webp';}el.hidden=!available(o);el.style.pointerEvents=o.passive?'none':'';el.disabled=Boolean(paused || motionBusy || used || o.passive || api.complete() || !available(o) || completed(o));el.setAttribute('aria-pressed',String(selected===o || gripped===o));if(!drag)snap(o);}
     status.classList.toggle('fp-operation-complete',api.complete());layer.classList.toggle('fp-operation-complete',api.complete());
@@ -173,6 +183,7 @@ export function mountConfiguredOperation(plane, options, api) {
       el.onkeydown=e=>{if(paused || el.disabled || !['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))return;e.preventDefault();clockDragged=true;state.clockMinutes=((state.clockMinutes ?? 180)+(['ArrowLeft','ArrowDown'].includes(e.key)?-15:15)+720)%720;update();saveDemo();};
     }
     if(o.cardLabel){const caption=document.createElement('span');caption.className='fp-object-caption';caption.textContent=o.cardLabel;el.append(caption);}
+    if(o.sourceCaption){const caption=document.createElement('span');caption.className='fp-source-caption';caption.textContent=sourceCaptionText(o.sourceCaption,options.sourceText);el.append(caption);sourceCaptions.set(o.action,caption);}
     if(o.hotspot)el.classList.add('fp-glow');if(o.grounded)el.classList.add('fp-grounded');
     layer.append(el);elements.set(o.action,el);el.onclick=()=>{if(!suppress)select(o);};
     if(o.cardLabel){const audio=document.createElement('div');audio.className='fp-object-audio';pos(audio,o.x+4,o.y);audio.append(SpeakButton({text:o.cardLabel}));layer.append(audio);objectAudio.set(o.action,audio);}
@@ -230,5 +241,5 @@ export function mountConfiguredOperation(plane, options, api) {
     tell(config.demoPrompt || scene.goal);return true;
   }
   render();
-  return {startDemo(){showWoodDemo();},showWoodDemo,get dragging(){return Boolean(drag);},setPaused(value){const was=paused;paused=value;if(value){motionBusy=false;traceProgress=0;animation?.cancel();handAnimation?.cancel();hand.hidden=true;clearTimeout(demoTimer);if(drag){snap(drag.o);drag=null;}}render();if(!value && was){focus?.(config.focus?.[state.step] ?? scene.art.orientationFocus?.[innerWidth/innerHeight>=1.4?'landscape':'portrait'] ?? config.objects[0].x);if(scene.beats.act.demo)showWoodDemo();}},dispose(){disposed=true;clearTimeout(timer);clearTimeout(demoTimer);animation?.cancel();handAnimation?.cancel();bubble?.remove();status.remove();layer.remove();}};
+  return {startDemo(){showWoodDemo();},showWoodDemo,get dragging(){return Boolean(drag);},setPaused(value){const was=paused;paused=value;if(value){motionBusy=false;traceProgress=0;animation?.cancel();handAnimation?.cancel();hand.hidden=true;clearTimeout(demoTimer);if(drag){snap(drag.o);drag=null;}}render();if(!value && was){focus?.(config.focus?.[state.step] ?? scene.art.orientationFocus?.[innerWidth/innerHeight>=1.4?'landscape':'portrait'] ?? config.objects[0].x);if(scene.beats.act.demo)showWoodDemo();}},dispose(){disposed=true;promptResize?.disconnect();clearTimeout(timer);clearTimeout(demoTimer);animation?.cancel();handAnimation?.cancel();bubble?.remove();status.remove();layer.remove();}};
 }

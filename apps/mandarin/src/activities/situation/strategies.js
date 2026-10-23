@@ -10,7 +10,7 @@ export function chooseStrategy(strategy, index, selected = []) {
   const next=[...new Set([...selected,index])];
   return {selected:next,complete:strategy.answer.every(i=>next.includes(i)),feedback:strategy.explanation || ''};
 }
-export const predictionReminder = (strategy, index) => `你猜的是：${strategy.options[index]}，課文怎麼說？`;
+export const predictionReminder = (strategy, index) => `你猜：${strategy.options[index]}`;
 export function storySummary(config, states) {
   return config.scenes.filter((s,i)=>states[i]?.done && s.questions[0]?.operationType==='summaryCard').map(s=>s.questions[0].options[s.questions[0].answer].replace(/[。！]$/,'')).join('，')+'。';
 }
@@ -32,7 +32,7 @@ export function mountStrategy({strategy, panel, plane, stage, states, onWords, o
     const option=strategy.options[index];
     const ring=nodes.find(n=>n.dataset?.faceIndex===String(index));if(ring){ring.classList.add('is-bright');timers.push(setTimeout(()=>ring.classList.remove('is-bright'),650));}
     if(strategy.type==='emotionClue'){
-      const words=(option.states || []).map(i=>states[i]).concat(option.words || []);
+      const words=[...new Set((option.states || []).map(i=>states[i]).concat(option.words || []))];
       onWords(words,strategy.meterTarget);message(words.join('、'));
     }else{
       message(result.feedback);
