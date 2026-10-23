@@ -794,17 +794,51 @@ export default {
         "resultZoom": false,
         "stepImages": [
           0,
+          0,
+          1,
+          1,
+          1,
           1,
           1
         ],
-        "resultImage": 1
+        "resultImage": 1,
+        "speakerSpots": {
+          "小螃蟹": {
+            "x": 43.5,
+            "y": 52,
+            "face": {
+              "width": 6,
+              "height": 7
+            },
+            "markerOffset": [
+              0,
+              8
+            ]
+          },
+          "寄居蟹": {
+            "x": 56,
+            "y": 52,
+            "face": {
+              "width": 7,
+              "height": 7
+            },
+            "markerOffset": [
+              0,
+              8
+            ]
+          }
+        }
       },
       "operation": {
         "type": "dragToTarget",
         "silentObserve": true,
         "steps": [
           "look",
-          "cup"
+          "cup",
+          "search-1",
+          "search-2",
+          "search-3",
+          "moon"
         ],
         "objects": [
           {
@@ -852,17 +886,91 @@ export default {
             "angle": 0,
             "grounded": true,
             "observation": "",
-            "target": true
+            "target": true,
+            "fromStep": 1,
+            "toStep": 1
+          },
+          {
+            "action": "search-1",
+            "label": "找找第1處沙灘",
+            "x": 43,
+            "y": 65,
+            "width": 3,
+            "ratio": 1,
+            "angle": 0,
+            "grounded": true,
+            "observation": "",
+            "hotspot": true,
+            "gesture": "observe",
+            "fromStep": 2,
+            "toStep": 2,
+            "viewMotion": "sandSearch"
+          },
+          {
+            "action": "search-2",
+            "label": "找找第2處沙灘",
+            "x": 50,
+            "y": 65,
+            "width": 3,
+            "ratio": 1,
+            "angle": 0,
+            "grounded": true,
+            "observation": "",
+            "hotspot": true,
+            "gesture": "observe",
+            "fromStep": 3,
+            "toStep": 3,
+            "viewMotion": "sandSearch"
+          },
+          {
+            "action": "search-3",
+            "label": "找找第3處沙灘",
+            "x": 57,
+            "y": 65,
+            "width": 3,
+            "ratio": 1,
+            "angle": 0,
+            "grounded": true,
+            "observation": "",
+            "hotspot": true,
+            "gesture": "observe",
+            "fromStep": 4,
+            "toStep": 4,
+            "viewMotion": "sandSearch"
+          },
+          {
+            "action": "moon",
+            "label": "轉向月光海面",
+            "x": 67,
+            "y": 14,
+            "width": 3,
+            "ratio": 1,
+            "angle": 0,
+            "grounded": true,
+            "observation": "",
+            "hotspot": true,
+            "gesture": "observe",
+            "fromStep": 5,
+            "toStep": 5,
+            "viewMotion": "lookUp"
           }
         ],
         "focus": [
           48.5,
           48.5,
-          50
+          50,
+          50,
+          50,
+          67,
+          67
         ],
         "prompts": [
           "點紙杯看一看",
-          "輕輕移開紙杯"
+          "輕輕移開紙杯",
+          "點沙灘找貝殼",
+          "再找一處沙灘",
+          "再找一處沙灘",
+          "點月光看看海"
         ],
         "protectedRegions": [
           {
@@ -890,6 +998,22 @@ export default {
         "hideOnResult": true
       },
       "meter": [
+        {
+          "state": 0,
+          "level": 0
+        },
+        {
+          "state": 0,
+          "level": 0
+        },
+        {
+          "state": 0,
+          "level": 0
+        },
+        {
+          "state": 0,
+          "level": 0
+        },
         {
           "state": 0,
           "level": 0
@@ -1583,51 +1707,72 @@ export default {
             {
               "para": 8,
               "sentences": [
-                0,
-                1,
+                0
+              ],
+              "sha": [
+                "8a60a040"
+              ]
+            },
+            {
+              "para": 8,
+              "sentences": [
+                1
+              ],
+              "sha": [
+                "0e498473"
+              ]
+            },
+            {
+              "para": 8,
+              "sentences": [
                 2
               ],
               "sha": [
-                "8a60a040",
-                "0e498473",
                 "4271d3c0"
               ]
             },
             {
               "para": 9,
               "sentences": [
-                0,
-                1,
-                2,
-                3
+                0
               ],
               "sha": [
-                "b376be19",
-                "e58e2784",
-                "4c77503c",
+                "b376be19"
+              ]
+            },
+            {
+              "para": 9,
+              "sentences": [
+                1
+              ],
+              "sha": [
+                "e58e2784"
+              ]
+            },
+            {
+              "para": 9,
+              "sentences": [
+                2
+              ],
+              "sha": [
                 "4c77503c"
               ]
             },
             {
-              "para": 10,
+              "para": 9,
               "sentences": [
-                0,
-                1,
-                2,
                 3
               ],
               "sha": [
-                "8a60a040",
-                "96d4e517",
-                "e63f690f",
-                "6e4fa984"
+                "4c77503c"
               ]
             }
           ],
           "imageIndex": 0
         },
         {
-          "kind": "act"
+          "kind": "act",
+          "untilStep": 2
         },
         {
           "kind": "result"
@@ -1636,32 +1781,116 @@ export default {
           "kind": "read",
           "refs": [
             {
+              "para": 10,
+              "sentences": [
+                0
+              ],
+              "sha": [
+                "8a60a040"
+              ]
+            },
+            {
+              "para": 10,
+              "sentences": [
+                1
+              ],
+              "sha": [
+                "96d4e517"
+              ]
+            },
+            {
+              "para": 10,
+              "sentences": [
+                2
+              ],
+              "sha": [
+                "e63f690f"
+              ]
+            },
+            {
+              "para": 10,
+              "sentences": [
+                3
+              ],
+              "sha": [
+                "6e4fa984"
+              ]
+            }
+          ],
+          "imageIndex": 1
+        },
+        {
+          "kind": "read",
+          "refs": [
+            {
               "para": 11,
               "sentences": [
-                0,
-                1,
-                2,
-                3,
+                0
+              ],
+              "sha": [
+                "b376be19"
+              ]
+            },
+            {
+              "para": 11,
+              "sentences": [
+                1
+              ],
+              "sha": [
+                "d6a87100"
+              ]
+            },
+            {
+              "para": 11,
+              "sentences": [
+                2
+              ],
+              "sha": [
+                "7a4db1f7"
+              ]
+            },
+            {
+              "para": 11,
+              "sentences": [
+                3
+              ],
+              "sha": [
+                "4db45556"
+              ]
+            },
+            {
+              "para": 11,
+              "sentences": [
                 4
               ],
               "sha": [
-                "b376be19",
-                "d6a87100",
-                "7a4db1f7",
-                "4db45556",
                 "e083fb49"
               ]
             },
             {
               "para": 12,
               "sentences": [
-                0,
-                1,
+                0
+              ],
+              "sha": [
+                "8a60a040"
+              ]
+            },
+            {
+              "para": 12,
+              "sentences": [
+                1
+              ],
+              "sha": [
+                "16a1de4d"
+              ]
+            },
+            {
+              "para": 12,
+              "sentences": [
                 2
               ],
               "sha": [
-                "8a60a040",
-                "16a1de4d",
                 "17749385"
               ]
             }
@@ -1673,41 +1902,119 @@ export default {
           "id": "cap-cause"
         },
         {
+          "kind": "act",
+          "untilStep": 5,
+          "imageIndex": 1
+        },
+        {
           "kind": "read",
           "refs": [
             {
               "para": 13,
               "sentences": [
-                0,
-                1,
-                2,
+                0
+              ],
+              "sha": [
+                "b376be19"
+              ]
+            },
+            {
+              "para": 13,
+              "sentences": [
+                1
+              ],
+              "sha": [
+                "87c12677"
+              ]
+            },
+            {
+              "para": 13,
+              "sentences": [
+                2
+              ],
+              "sha": [
+                "d7538e16"
+              ]
+            },
+            {
+              "para": 13,
+              "sentences": [
                 3
               ],
               "sha": [
-                "b376be19",
-                "87c12677",
-                "d7538e16",
                 "f5698833"
+              ]
+            }
+          ],
+          "imageIndex": 1
+        },
+        {
+          "kind": "act",
+          "imageIndex": 1
+        },
+        {
+          "kind": "read",
+          "refs": [
+            {
+              "para": 14,
+              "sentences": [
+                0
+              ],
+              "sha": [
+                "8a60a040"
               ]
             },
             {
               "para": 14,
               "sentences": [
-                0,
-                1,
-                2,
-                3,
-                4,
-                5,
+                1
+              ],
+              "sha": [
+                "3d1d2eda"
+              ]
+            },
+            {
+              "para": 14,
+              "sentences": [
+                2
+              ],
+              "sha": [
+                "4844416c"
+              ]
+            },
+            {
+              "para": 14,
+              "sentences": [
+                3
+              ],
+              "sha": [
+                "6497d1d2"
+              ]
+            },
+            {
+              "para": 14,
+              "sentences": [
+                4
+              ],
+              "sha": [
+                "96eac2ad"
+              ]
+            },
+            {
+              "para": 14,
+              "sentences": [
+                5
+              ],
+              "sha": [
+                "e372edd7"
+              ]
+            },
+            {
+              "para": 14,
+              "sentences": [
                 6
               ],
               "sha": [
-                "8a60a040",
-                "3d1d2eda",
-                "4844416c",
-                "6497d1d2",
-                "96eac2ad",
-                "e372edd7",
                 "84b0fd20"
               ]
             },
@@ -1763,100 +2070,51 @@ export default {
           0,
           0,
           0,
-          0
+          0,
+          1
         ],
-        "resultImage": 1
+        "resultImage": 1,
+        "speakerSpots": {
+          "友友": {
+            "x": 40,
+            "y": 18,
+            "face": {
+              "width": 7,
+              "height": 12
+            },
+            "markerOffset": [
+              0,
+              12
+            ]
+          },
+          "美美": {
+            "x": 59,
+            "y": 21,
+            "face": {
+              "width": 7,
+              "height": 12
+            },
+            "markerOffset": [
+              0,
+              12
+            ]
+          },
+          "淨灘志工": {
+            "x": 69,
+            "y": 15,
+            "face": {
+              "width": 7,
+              "height": 12
+            },
+            "markerOffset": [
+              0,
+              12
+            ]
+          }
+        }
       },
       "operation": {
         "type": "dragToTarget",
-        "protectedRegions": [{"x": 39.7, "y": 16.5, "width": 7, "ratio": 1.2}, {"x": 58.9, "y": 18.7, "width": 7, "ratio": 1.2}, {"x": 66.9, "y": 8, "width": 7, "ratio": 1.2}],
-        "silentObserve": true,
-        "steps": [
-          "bottle",
-          "cup",
-          "cap"
-        ],
-        "objects": [
-          {
-            "action": "bottle",
-            "label": "撿寶特瓶",
-            "x": 43,
-            "y": 60,
-            "width": 4,
-            "ratio": 0.8091397849462365,
-            "angle": 0,
-            "grounded": true,
-            "observation": "",
-            "usedFade": true,
-            "hideWhenCompleted": true,
-            "sprite": "bottle"
-          },
-          {
-            "action": "cup",
-            "label": "撿紙杯",
-            "x": 49,
-            "y": 62,
-            "width": 4,
-            "ratio": 0.8324175824175825,
-            "angle": 0,
-            "grounded": true,
-            "observation": "",
-            "usedFade": true,
-            "hideWhenCompleted": true,
-            "sprite": "cup"
-          },
-          {
-            "action": "cap",
-            "label": "撿空瓶蓋",
-            "x": 43,
-            "y": 69,
-            "width": 3,
-            "ratio": 0.8588235294117647,
-            "angle": 0,
-            "grounded": true,
-            "observation": "",
-            "usedFade": true,
-            "hideWhenCompleted": true,
-            "sprite": "cap"
-          },
-          {
-            "action": "shell",
-            "label": "貝殼留在沙灘",
-            "x": 52,
-            "y": 69,
-            "width": 3,
-            "ratio": 0.8494318181818182,
-            "angle": 0,
-            "grounded": true,
-            "observation": "",
-            "returnOnDrop": "貝殼要留給寄居蟹",
-            "sprite": "shell-cream"
-          },
-          {
-            "action": "bag",
-            "label": "垃圾袋",
-            "x": 57,
-            "y": 63,
-            "width": 5,
-            "ratio": 1.119891008174387,
-            "angle": 0,
-            "grounded": true,
-            "observation": "",
-            "target": true,
-            "sprite": "bag"
-          }
-        ],
-        "focus": [
-          50,
-          50,
-          50,
-          50
-        ],
-        "prompts": [
-          "把安全垃圾放進袋子",
-          "再找一件安全垃圾",
-          "再找一件安全垃圾"
-        ],
         "protectedRegions": [
           {
             "x": 40,
@@ -1877,6 +2135,119 @@ export default {
             "ratio": 0.7
           }
         ],
+        "silentObserve": true,
+        "steps": [
+          "bottle",
+          "cup",
+          "cap",
+          "moving-cap"
+        ],
+        "objects": [
+          {
+            "action": "bottle",
+            "label": "撿寶特瓶",
+            "x": 43,
+            "y": 60,
+            "width": 4,
+            "ratio": 0.8091397849462365,
+            "angle": 0,
+            "grounded": true,
+            "observation": "",
+            "usedFade": true,
+            "hideWhenCompleted": true,
+            "sprite": "bottle",
+            "toStep": 2
+          },
+          {
+            "action": "cup",
+            "label": "撿紙杯",
+            "x": 49,
+            "y": 62,
+            "width": 4,
+            "ratio": 0.8324175824175825,
+            "angle": 0,
+            "grounded": true,
+            "observation": "",
+            "usedFade": true,
+            "hideWhenCompleted": true,
+            "sprite": "cup",
+            "toStep": 2
+          },
+          {
+            "action": "cap",
+            "label": "撿空瓶蓋",
+            "x": 43,
+            "y": 69,
+            "width": 3,
+            "ratio": 0.8588235294117647,
+            "angle": 0,
+            "grounded": true,
+            "observation": "",
+            "usedFade": true,
+            "hideWhenCompleted": true,
+            "sprite": "cap",
+            "toStep": 2
+          },
+          {
+            "action": "shell",
+            "label": "貝殼留在沙灘",
+            "x": 52,
+            "y": 69,
+            "width": 3,
+            "ratio": 0.8494318181818182,
+            "angle": 0,
+            "grounded": true,
+            "observation": "",
+            "returnOnDrop": "貝殼要留給寄居蟹",
+            "sprite": "shell-cream",
+            "toStep": 2
+          },
+          {
+            "action": "bag",
+            "label": "垃圾袋",
+            "x": 57,
+            "y": 63,
+            "width": 5,
+            "ratio": 1.119891008174387,
+            "angle": 0,
+            "grounded": true,
+            "observation": "",
+            "target": true,
+            "sprite": "bag",
+            "toStep": 2
+          },
+          {
+            "action": "moving-cap",
+            "label": "找出會動的瓶蓋",
+            "x": 54,
+            "y": 54,
+            "width": 3,
+            "ratio": 1,
+            "angle": 0,
+            "grounded": true,
+            "observation": "",
+            "hotspot": false,
+            "gesture": "observe",
+            "fromStep": 3,
+            "toStep": 3,
+            "sprite": "cap",
+            "viewMotion": "fan",
+            "idleMotion": "wiggle"
+          }
+        ],
+        "focus": [
+          50,
+          50,
+          50,
+          54,
+          54
+        ],
+        "prompts": [
+          "把安全垃圾放進袋子",
+          "再找一件安全垃圾",
+          "再找一件安全垃圾",
+          "找出會動的瓶蓋"
+        ],
         "collect": [
           "bottle",
           "cup",
@@ -1891,9 +2262,23 @@ export default {
           }
         },
         "hideOnResult": true,
-        "retry": "把垃圾放進垃圾袋"
+        "retry": "把垃圾放進垃圾袋",
+        "groups": [
+          {
+            "from": 0,
+            "to": 3
+          },
+          {
+            "from": 3,
+            "to": 4
+          }
+        ]
       },
       "meter": [
+        {
+          "state": 0,
+          "level": 0
+        },
         {
           "state": 0,
           "level": 0
@@ -2460,6 +2845,88 @@ export default {
           "imageIndex": 0
         },
         {
+          "kind": "act",
+          "untilStep": 3
+        },
+        {
+          "kind": "read",
+          "refs": [
+            {
+              "para": 22,
+              "sentences": [
+                0
+              ],
+              "sha": [
+                "520ef3ec"
+              ]
+            },
+            {
+              "para": 22,
+              "sentences": [
+                1
+              ],
+              "sha": [
+                "2b7eb8ab"
+              ]
+            },
+            {
+              "para": 22,
+              "sentences": [
+                2
+              ],
+              "sha": [
+                "9fd34b61"
+              ]
+            },
+            {
+              "para": 23,
+              "sentences": [
+                0
+              ],
+              "sha": [
+                "d54ce9e2"
+              ]
+            },
+            {
+              "para": 23,
+              "sentences": [
+                1
+              ],
+              "sha": [
+                "5c7e001a"
+              ]
+            },
+            {
+              "para": 23,
+              "sentences": [
+                2
+              ],
+              "sha": [
+                "15aef91e"
+              ]
+            },
+            {
+              "para": 23,
+              "sentences": [
+                3
+              ],
+              "sha": [
+                "f027ef46"
+              ]
+            },
+            {
+              "para": 23,
+              "sentences": [
+                4
+              ],
+              "sha": [
+                "f90d32ce"
+              ]
+            }
+          ],
+          "imageIndex": 0
+        },
+        {
           "kind": "act"
         },
         {
@@ -2469,58 +2936,56 @@ export default {
           "kind": "read",
           "refs": [
             {
-              "para": 22,
+              "para": 24,
               "sentences": [
-                0,
-                1,
-                2
+                0
               ],
               "sha": [
-                "520ef3ec",
-                "2b7eb8ab",
-                "9fd34b61"
-              ]
-            },
-            {
-              "para": 23,
-              "sentences": [
-                0,
-                1,
-                2,
-                3,
-                4
-              ],
-              "sha": [
-                "d54ce9e2",
-                "5c7e001a",
-                "15aef91e",
-                "f027ef46",
-                "f90d32ce"
+                "d54ce9e2"
               ]
             },
             {
               "para": 24,
               "sentences": [
-                0,
-                1,
+                1
+              ],
+              "sha": [
+                "5fb4cf35"
+              ]
+            },
+            {
+              "para": 24,
+              "sentences": [
                 2
               ],
               "sha": [
-                "d54ce9e2",
-                "5fb4cf35",
                 "8619b7a3"
               ]
             },
             {
               "para": 25,
               "sentences": [
-                0,
-                1,
+                0
+              ],
+              "sha": [
+                "520ef3ec"
+              ]
+            },
+            {
+              "para": 25,
+              "sentences": [
+                1
+              ],
+              "sha": [
+                "acbd7126"
+              ]
+            },
+            {
+              "para": 25,
+              "sentences": [
                 2
               ],
               "sha": [
-                "520ef3ec",
-                "acbd7126",
                 "1620c48b"
               ]
             }
@@ -2533,17 +2998,45 @@ export default {
             {
               "para": 26,
               "sentences": [
-                0,
-                1,
-                2,
-                3,
+                0
+              ],
+              "sha": [
+                "e1aaf4a4"
+              ]
+            },
+            {
+              "para": 26,
+              "sentences": [
+                1
+              ],
+              "sha": [
+                "b470c0ea"
+              ]
+            },
+            {
+              "para": 26,
+              "sentences": [
+                2
+              ],
+              "sha": [
+                "606bd4e1"
+              ]
+            },
+            {
+              "para": 26,
+              "sentences": [
+                3
+              ],
+              "sha": [
+                "4883e404"
+              ]
+            },
+            {
+              "para": 26,
+              "sentences": [
                 4
               ],
               "sha": [
-                "e1aaf4a4",
-                "b470c0ea",
-                "606bd4e1",
-                "4883e404",
                 "c8f42cca"
               ]
             }
@@ -2561,26 +3054,54 @@ export default {
             {
               "para": 27,
               "sentences": [
-                0,
-                1,
+                0
+              ],
+              "sha": [
+                "520ef3ec"
+              ]
+            },
+            {
+              "para": 27,
+              "sentences": [
+                1
+              ],
+              "sha": [
+                "7cc3342f"
+              ]
+            },
+            {
+              "para": 27,
+              "sentences": [
                 2
               ],
               "sha": [
-                "520ef3ec",
-                "7cc3342f",
                 "fd1c5285"
               ]
             },
             {
               "para": 28,
               "sentences": [
-                0,
-                1,
+                0
+              ],
+              "sha": [
+                "d54ce9e2"
+              ]
+            },
+            {
+              "para": 28,
+              "sentences": [
+                1
+              ],
+              "sha": [
+                "6b28882a"
+              ]
+            },
+            {
+              "para": 28,
+              "sentences": [
                 2
               ],
               "sha": [
-                "d54ce9e2",
-                "6b28882a",
                 "6aed38e4"
               ]
             }
@@ -2625,17 +3146,78 @@ export default {
         "stepImages": [
           0,
           0,
-          0
+          1,
+          1,
+          1
         ],
-        "resultImage": 1
+        "resultImage": 1,
+        "speakerSpots": {
+          "友友": {
+            "x": 41,
+            "y": 28,
+            "face": {
+              "width": 7,
+              "height": 12
+            },
+            "markerOffset": [
+              0,
+              12
+            ]
+          },
+          "美美": {
+            "x": 56,
+            "y": 29,
+            "face": {
+              "width": 7,
+              "height": 12
+            },
+            "markerOffset": [
+              0,
+              12
+            ]
+          },
+          "淨灘志工": {
+            "x": 69,
+            "y": 15,
+            "face": {
+              "width": 7,
+              "height": 12
+            },
+            "markerOffset": [
+              0,
+              12
+            ]
+          }
+        }
       },
       "operation": {
         "type": "dragToTarget",
-        "protectedRegions": [{"x": 40, "y": 33, "width": 7, "ratio": 1.2}, {"x": 55, "y": 38, "width": 7, "ratio": 1.2}, {"x": 70, "y": 11, "width": 7, "ratio": 1.2}],
+        "protectedRegions": [
+          {
+            "x": 40,
+            "y": 18,
+            "width": 8,
+            "ratio": 0.7
+          },
+          {
+            "x": 59,
+            "y": 21,
+            "width": 8,
+            "ratio": 0.7
+          },
+          {
+            "x": 69,
+            "y": 15,
+            "width": 8,
+            "ratio": 0.7
+          }
+        ],
         "silentObserve": true,
         "steps": [
           "shell-1",
-          "shell-2"
+          "shell-2",
+          "nod-youyou",
+          "nod-meimei"
         ],
         "objects": [
           {
@@ -2649,7 +3231,7 @@ export default {
             "grounded": true,
             "observation": "",
             "fromStep": 0,
-            "toStep": 2,
+            "toStep": 1,
             "destination": [
               44,
               67
@@ -2667,7 +3249,7 @@ export default {
             "grounded": true,
             "observation": "",
             "fromStep": 1,
-            "toStep": 2,
+            "toStep": 1,
             "region": "second",
             "destination": [
               55,
@@ -2702,36 +3284,52 @@ export default {
             "target": true,
             "fromStep": 1,
             "toStep": 1
+          },
+          {
+            "action": "nod-youyou",
+            "label": "友友點點頭",
+            "x": 41,
+            "y": 28,
+            "width": 3,
+            "ratio": 1,
+            "angle": 0,
+            "grounded": true,
+            "observation": "",
+            "hotspot": true,
+            "gesture": "observe",
+            "fromStep": 2,
+            "toStep": 2,
+            "viewMotion": "nod"
+          },
+          {
+            "action": "nod-meimei",
+            "label": "美美點點頭",
+            "x": 56,
+            "y": 29,
+            "width": 3,
+            "ratio": 1,
+            "angle": 0,
+            "grounded": true,
+            "observation": "",
+            "hotspot": true,
+            "gesture": "observe",
+            "fromStep": 3,
+            "toStep": 3,
+            "viewMotion": "nod"
           }
         ],
         "focus": [
           50,
           50,
-          50
+          41,
+          56,
+          56
         ],
         "prompts": [
           "把第一個貝殼放回去",
-          "把第二個貝殼放回去"
-        ],
-        "protectedRegions": [
-          {
-            "x": 40,
-            "y": 18,
-            "width": 8,
-            "ratio": 0.7
-          },
-          {
-            "x": 59,
-            "y": 21,
-            "width": 8,
-            "ratio": 0.7
-          },
-          {
-            "x": 69,
-            "y": 15,
-            "width": 8,
-            "ratio": 0.7
-          }
+          "把第二個貝殼放回去",
+          "點友友點頭",
+          "點美美點頭"
         ],
         "keepCompleted": true,
         "hideOnResult": true,
@@ -2752,6 +3350,14 @@ export default {
         "retry": "放到發亮的沙灘"
       },
       "meter": [
+        {
+          "state": 1,
+          "level": 1
+        },
+        {
+          "state": 1,
+          "level": 1
+        },
         {
           "state": 1,
           "level": 1
@@ -3002,7 +3608,8 @@ export default {
           "imageIndex": 0
         },
         {
-          "kind": "act"
+          "kind": "act",
+          "untilStep": 2
         },
         {
           "kind": "result"
@@ -3013,37 +3620,81 @@ export default {
             {
               "para": 30,
               "sentences": [
-                0,
-                1,
+                0
+              ],
+              "sha": [
+                "d54ce9e2"
+              ]
+            },
+            {
+              "para": 30,
+              "sentences": [
+                1
+              ],
+              "sha": [
+                "6155be7d"
+              ]
+            },
+            {
+              "para": 30,
+              "sentences": [
                 2
               ],
               "sha": [
-                "d54ce9e2",
-                "6155be7d",
                 "c0778cb8"
               ]
             },
             {
               "para": 31,
               "sentences": [
-                0,
-                1,
+                0
+              ],
+              "sha": [
+                "e1aaf4a4"
+              ]
+            },
+            {
+              "para": 31,
+              "sentences": [
+                1
+              ],
+              "sha": [
+                "558e90cc"
+              ]
+            },
+            {
+              "para": 31,
+              "sentences": [
                 2
               ],
               "sha": [
-                "e1aaf4a4",
-                "558e90cc",
                 "1a52a9ee"
+              ]
+            }
+          ],
+          "imageIndex": 1
+        },
+        {
+          "kind": "act"
+        },
+        {
+          "kind": "read",
+          "refs": [
+            {
+              "para": 32,
+              "sentences": [
+                0
+              ],
+              "sha": [
+                "6d6a349a"
               ]
             },
             {
               "para": 32,
               "sentences": [
-                0,
                 1
               ],
               "sha": [
-                "6d6a349a",
                 "491c51d0"
               ]
             }
@@ -3068,7 +3719,8 @@ export default {
       "art": {
         "images": [
           "mound.webp",
-          "night.webp"
+          "night.webp",
+          "day-empty.webp"
         ],
         "aspect": [
           2400,
@@ -3084,13 +3736,54 @@ export default {
           "portrait": 50
         },
         "readingZoom": false,
-        "resultZoom": false
+        "resultZoom": false,
+        "stepImages": [
+          0,
+          0,
+          0,
+          2,
+          2,
+          2
+        ],
+        "speakerSpots": {
+          "小螃蟹": {
+            "x": 43.5,
+            "y": 52,
+            "face": {
+              "width": 6,
+              "height": 7
+            },
+            "markerOffset": [
+              0,
+              8
+            ]
+          },
+          "寄居蟹": {
+            "x": 56,
+            "y": 52,
+            "face": {
+              "width": 7,
+              "height": 7
+            },
+            "markerOffset": [
+              0,
+              8
+            ],
+            "hiddenSteps": [
+              2
+            ]
+          }
+        }
       },
       "operation": {
         "type": "observe",
         "silentObserve": true,
         "steps": [
-          "listen"
+          "listen",
+          "hide",
+          "recall-volunteer",
+          "recall-youyou",
+          "recall-meimei"
         ],
         "objects": [
           {
@@ -3103,15 +3796,86 @@ export default {
             "angle": 0,
             "grounded": true,
             "observation": "",
-            "hotspot": true
+            "hotspot": true,
+            "fromStep": 0,
+            "toStep": 0
+          },
+          {
+            "action": "hide",
+            "label": "點沙堆讓寄居蟹躲好",
+            "x": 55,
+            "y": 54,
+            "width": 3,
+            "ratio": 1,
+            "angle": 0,
+            "grounded": true,
+            "observation": "",
+            "hotspot": true,
+            "gesture": "observe",
+            "fromStep": 1,
+            "toStep": 1,
+            "viewMotion": "hideInSand"
+          },
+          {
+            "action": "recall-volunteer",
+            "label": "回想淨灘志工",
+            "x": 69,
+            "y": 15,
+            "width": 3,
+            "ratio": 1,
+            "angle": 0,
+            "grounded": true,
+            "observation": "",
+            "hotspot": true,
+            "gesture": "observe",
+            "fromStep": 2,
+            "toStep": 2
+          },
+          {
+            "action": "recall-youyou",
+            "label": "回想友友",
+            "x": 40,
+            "y": 18,
+            "width": 3,
+            "ratio": 1,
+            "angle": 0,
+            "grounded": true,
+            "observation": "",
+            "hotspot": true,
+            "gesture": "observe",
+            "fromStep": 3,
+            "toStep": 3
+          },
+          {
+            "action": "recall-meimei",
+            "label": "回想美美",
+            "x": 59,
+            "y": 21,
+            "width": 3,
+            "ratio": 1,
+            "angle": 0,
+            "grounded": true,
+            "observation": "",
+            "hotspot": true,
+            "gesture": "observe",
+            "fromStep": 4,
+            "toStep": 4
           }
         ],
         "focus": [
           50,
-          50
+          55,
+          69,
+          40,
+          59,
+          59
         ],
         "prompts": [
-          "點光圈聽寄居蟹說"
+          "點光圈聽寄居蟹說",
+          "點沙堆躲起來",
+          "點出淨灘志工",
+          "點出友友",
+          "點出美美"
         ],
         "protectedRegions": [
           {
@@ -3126,9 +3890,26 @@ export default {
             "width": 8,
             "ratio": 0.7
           }
-        ]
+        ],
+        "hideOnResult": true
       },
       "meter": [
+        {
+          "state": 1,
+          "level": 1
+        },
+        {
+          "state": 1,
+          "level": 1
+        },
+        {
+          "state": 1,
+          "level": 1
+        },
+        {
+          "state": 1,
+          "level": 1
+        },
         {
           "state": 1,
           "level": 1
@@ -4117,7 +4898,9 @@ export default {
           "id": "meet-people"
         },
         {
-          "kind": "act"
+          "kind": "act",
+          "untilStep": 1,
+          "imageIndex": 0
         },
         {
           "kind": "result"
@@ -4128,106 +4911,252 @@ export default {
             {
               "para": 37,
               "sentences": [
-                0,
+                0
+              ],
+              "sha": [
+                "fd8a7d57"
+              ]
+            },
+            {
+              "para": 37,
+              "sentences": [
                 1
               ],
               "sha": [
-                "fd8a7d57",
                 "4871d6fe"
               ]
             },
             {
               "para": 38,
               "sentences": [
-                0,
-                1,
+                0
+              ],
+              "sha": [
+                "cd149e3a"
+              ]
+            },
+            {
+              "para": 38,
+              "sentences": [
+                1
+              ],
+              "sha": [
+                "139324c7"
+              ]
+            },
+            {
+              "para": 38,
+              "sentences": [
                 2
               ],
               "sha": [
-                "cd149e3a",
-                "139324c7",
                 "f27934c3"
               ]
             },
             {
               "para": 39,
               "sentences": [
-                0,
-                1,
+                0
+              ],
+              "sha": [
+                "b376be19"
+              ]
+            },
+            {
+              "para": 39,
+              "sentences": [
+                1
+              ],
+              "sha": [
+                "85d8218c"
+              ]
+            },
+            {
+              "para": 39,
+              "sentences": [
                 2
               ],
               "sha": [
-                "b376be19",
-                "85d8218c",
                 "385800fe"
+              ]
+            }
+          ],
+          "imageIndex": 0
+        },
+        {
+          "kind": "read",
+          "refs": [
+            {
+              "para": 40,
+              "sentences": [
+                0
+              ],
+              "sha": [
+                "8a60a040"
               ]
             },
             {
               "para": 40,
               "sentences": [
-                0,
-                1,
+                1
+              ],
+              "sha": [
+                "226d0c4f"
+              ]
+            },
+            {
+              "para": 40,
+              "sentences": [
                 2
               ],
               "sha": [
-                "8a60a040",
-                "226d0c4f",
                 "6515a342"
               ]
             },
             {
               "para": 41,
               "sentences": [
-                0,
-                1,
+                0
+              ],
+              "sha": [
+                "b376be19"
+              ]
+            },
+            {
+              "para": 41,
+              "sentences": [
+                1
+              ],
+              "sha": [
+                "a25b076d"
+              ]
+            },
+            {
+              "para": 41,
+              "sentences": [
                 2
               ],
               "sha": [
-                "b376be19",
-                "a25b076d",
                 "e856efcd"
+              ]
+            }
+          ],
+          "imageIndex": 0
+        },
+        {
+          "kind": "act",
+          "untilStep": 2,
+          "imageIndex": 0
+        },
+        {
+          "kind": "read",
+          "refs": [
+            {
+              "para": 42,
+              "sentences": [
+                0
+              ],
+              "sha": [
+                "8a60a040"
               ]
             },
             {
               "para": 42,
               "sentences": [
-                0,
-                1,
-                2,
+                1
+              ],
+              "sha": [
+                "73c24967"
+              ]
+            },
+            {
+              "para": 42,
+              "sentences": [
+                2
+              ],
+              "sha": [
+                "89f97d6d"
+              ]
+            },
+            {
+              "para": 42,
+              "sentences": [
                 3
               ],
               "sha": [
-                "8a60a040",
-                "73c24967",
-                "89f97d6d",
                 "943a7ff6"
+              ]
+            }
+          ],
+          "imageIndex": 0
+        },
+        {
+          "kind": "act",
+          "imageIndex": 2
+        },
+        {
+          "kind": "read",
+          "refs": [
+            {
+              "para": 43,
+              "sentences": [
+                0
+              ],
+              "sha": [
+                "b376be19"
               ]
             },
             {
               "para": 43,
               "sentences": [
-                0,
-                1,
-                2,
+                1
+              ],
+              "sha": [
+                "dceedda8"
+              ]
+            },
+            {
+              "para": 43,
+              "sentences": [
+                2
+              ],
+              "sha": [
+                "b44c210f"
+              ]
+            },
+            {
+              "para": 43,
+              "sentences": [
                 3
               ],
               "sha": [
-                "b376be19",
-                "dceedda8",
-                "b44c210f",
                 "564d6dc4"
               ]
             },
             {
               "para": 44,
               "sentences": [
-                0,
-                1,
+                0
+              ],
+              "sha": [
+                "8a60a040"
+              ]
+            },
+            {
+              "para": 44,
+              "sentences": [
+                1
+              ],
+              "sha": [
+                "81933232"
+              ]
+            },
+            {
+              "para": 44,
+              "sentences": [
                 2
               ],
               "sha": [
-                "8a60a040",
-                "81933232",
                 "16e6263f"
               ]
             },
@@ -4248,5 +5177,6 @@ export default {
         }
       ]
     }
-  ]
+  ],
+  "scriptTap": true
 };

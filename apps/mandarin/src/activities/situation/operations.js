@@ -55,6 +55,7 @@ export function mountConfiguredOperation(plane, options, api) {
   const retryText=()=>config.retryByStep?.[state.step] || config.retry;
   if(['rhythmTap','aimShot','holdBreath'].includes(config.type))return mountSportsOperation(plane,options,api);
   const clockHands=new Map();
+  const sceneEffects=[];
   let clockDragged=false;
   const gesture=o=>o.gesture || config.type;
   const available=o=>state.step>=(o.fromStep ?? 0) && state.step<=(o.toStep ?? config.steps.length);
@@ -88,7 +89,11 @@ export function mountConfiguredOperation(plane, options, api) {
   const tell=text=>{message.textContent=text;};
   const point=e=>{const r=plane.getBoundingClientRect();return {x:(e.clientX-r.left)/r.width*100,y:(e.clientY-r.top)/r.height*100};};
   const snap=o=>{const el=elements.get(o.action);el.style.width=`${completed(o) && o.destinationWidth ? o.destinationWidth : o.width}%`;pos(el,...(completed(o) && o.destination ? o.destination : [o.x,o.y]));};
+  for(const o of config.objects.filter(o=>o.viewMotion==='hideInSand' && state.step===config.steps.indexOf(o.action)+1)){
+    const node=document.createElement('span');node.className='fp-action-hideInSand';node.setAttribute('aria-hidden','true');pos(node,o.x,o.y);plane.append(node);sceneEffects.push({node,step:state.step});
+  }
   function render(){
+    for(const {node,step} of sceneEffects)node.hidden=state.step!==step && !(motionBusy && state.step===step-1);
     for(const o of config.objects){const caption=sourceCaptions.get(o.action);if(caption)caption.hidden=Boolean(o.sourceCaption.afterAction && !config.steps.slice(0,state.step).includes(o.sourceCaption.afterAction));}
     for(const o of config.objects){const audio=objectAudio.get(o.action);if(audio){audio.hidden=paused || !available(o) || completed(o) || api.complete();}}
     for(const o of config.objects){const el=elements.get(o.action);const used=Boolean(o.consumedBy && state.collected?.includes(o.consumedBy) || o.usedFade && state.collected?.includes(o.action));el.classList.toggle('fp-used',used);if(o.completedSprite){const img=el.querySelector('img');if(img)img.src=base+(completed(o)?o.completedSprite:o.sprite)+'.webp';}el.hidden=!available(o) || Boolean(o.hideWhenCompleted && completed(o));el.style.pointerEvents=o.passive?'none':'';el.disabled=Boolean(paused || motionBusy || used || o.passive || api.complete() || !available(o) || completed(o));el.setAttribute('aria-pressed',String(selected===o || gripped===o));if(!drag)snap(o);}
@@ -118,6 +123,23 @@ export function mountConfiguredOperation(plane, options, api) {
     if(motionBusy || completed(o))return;
     if(['machineProcess','machineCut'].includes(o.viewMotion) && state.step!==config.steps.indexOf(o.action)){
       tell(retryText() || '先完成前一步。');return;
+    }
+    if(['sandSearch','nod','hideInSand'].includes(o.viewMotion)){
+      if(state.step!==config.steps.indexOf(o.action))return;
+      const effect=document.createElement('span');effect.className=`fp-action-${o.viewMotion}`;effect.setAttribute('aria-hidden','true');pos(effect,o.x,o.y);
+      if(o.viewMotion==='hideInSand'){plane.append(effect);sceneEffects.push({node:effect,step:state.step+1});}else layer.append(effect);
+      if(o.viewMotion==='nod'){
+        const width=6,height=10,index=scene.art.stepImages?.[state.step] ?? 0;
+        effect.style.backgroundImage=`url(${import.meta.env?.BASE_URL || '/'}${scene.assetBase}${scene.art.images[index]})`;
+        effect.style.backgroundSize=`${10000/width}% ${10000/height}%`;
+        effect.style.backgroundPosition=`${(o.x-width/2)/(100-width)*100}% ${(o.y-height/2)/(100-height)*100}%`;
+      }
+      if(o.viewMotion==='sandSearch')for(let i=0;i<7;i++){const grain=document.createElement('i');grain.style.setProperty('--grain',i);effect.append(grain);}
+      const frames=o.viewMotion==='hideInSand'?[{opacity:0,transform:'translate(-50%,-25%) scale(.5)'},{opacity:1,transform:'translate(-50%,-50%) scale(1)'}]:o.viewMotion==='nod'?[{transform:'translate(-50%,-50%)'},{transform:'translate(-50%,-47%) scaleY(.94)',offset:.5},{transform:'translate(-50%,-50%)'}]:[{opacity:0},{opacity:1,offset:.4},{opacity:0}];
+      const finish=()=>{animation=null;motionBusy=false;if(!paused && !disposed)commit(o.action);if(o.viewMotion!=='hideInSand')effect.remove();render();};
+      if(reduced()){finish();return;}
+      motionBusy=true;render();animation=effect.animate(frames,{duration:650,easing:'ease-out',fill:'forwards'});
+      animation.onfinish=finish;animation.oncancel=()=>{effect.remove();motionBusy=false;if(!disposed)render();};return;
     }
     if(o.viewMotion && !reduced()){
       motionBusy=true;render();
@@ -197,6 +219,7 @@ export function mountConfiguredOperation(plane, options, api) {
     const el=document.createElement('button');el.type='button';el.className=`fp-object ${o.target?'fp-drop-target fp-glow':''}`;el.dataset.action=o.action;el.setAttribute('aria-label',o.label);
     if(o.minHitSize)el.style.setProperty('--fp-hit-size',`${o.minHitSize}px`);
     el.style.width=`${o.width}%`;el.style.aspectRatio=String(1/o.ratio);el.style.rotate=`${o.angle}deg`;pos(el,o.x,o.y);
+    if(o.idleMotion==='wiggle')el.classList.add('fp-cap-wiggle');
     if(o.sprite){const img=new Image();img.src=base+o.sprite+'.webp';img.alt='';img.draggable=false;el.append(img);}else if(!o.target && !o.hotspot)el.textContent=o.label;
     if(gesture(o)==='rotateClock'){
       const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 100 100');svg.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none';
@@ -265,5 +288,5 @@ export function mountConfiguredOperation(plane, options, api) {
     tell(config.demoPrompt || scene.goal);return true;
   }
   render();
-  return {startDemo(){showWoodDemo();},showWoodDemo,get dragging(){return Boolean(drag);},setPaused(value){const was=paused;paused=value;if(value){motionBusy=false;traceProgress=0;animation?.cancel();handAnimation?.cancel();hand.hidden=true;clearTimeout(demoTimer);if(drag){snap(drag.o);drag=null;}}render();if(!value && was){focus?.(config.focus?.[state.step] ?? scene.art.orientationFocus?.[innerWidth/innerHeight>=1.4?'landscape':'portrait'] ?? config.objects[0].x);if(scene.beats.act.demo)showWoodDemo();}},dispose(){disposed=true;promptResize?.disconnect();clearTimeout(timer);clearTimeout(demoTimer);animation?.cancel();handAnimation?.cancel();bubble?.remove();status.remove();layer.remove();}};
+  return {startDemo(){showWoodDemo();},showWoodDemo,get dragging(){return Boolean(drag);},setPaused(value){const was=paused;paused=value;if(value){motionBusy=false;traceProgress=0;animation?.cancel();handAnimation?.cancel();hand.hidden=true;clearTimeout(demoTimer);if(drag){snap(drag.o);drag=null;}}render();if(!value && was){focus?.(config.focus?.[state.step] ?? scene.art.orientationFocus?.[innerWidth/innerHeight>=1.4?'landscape':'portrait'] ?? config.objects[0].x);if(scene.beats.act.demo)showWoodDemo();}},dispose(){for(const {node} of sceneEffects)node.remove();disposed=true;promptResize?.disconnect();clearTimeout(timer);clearTimeout(demoTimer);animation?.cancel();handAnimation?.cancel();bubble?.remove();status.remove();layer.remove();}};
 }

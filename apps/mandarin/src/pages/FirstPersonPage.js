@@ -1,3 +1,4 @@
+import { createScriptTapPlayback, mountSpeakerTap } from '../activities/situation/scriptTap.js';
 import { mountStrategy, mountBag, predictionReminder, storySummary, appendOrderSupport } from '../activities/situation/strategies.js';
 import { chooseCard, orderCards } from '../activities/situation/operations.js';
 import { meterFor, validateUnlockedLesson } from '../data/situationLessons/schema.js';
@@ -27,11 +28,12 @@ export function FirstPersonPage(lesson) {
   document.body.classList.add('fp-immersive');
   let progress;
   try { progress = readProgress(config, localStorage); } catch { progress = readProgress(config, null); }
-  let prefs = { sound: false, animation: 'system' };
-  try { const s = JSON.parse(localStorage.getItem(PREF_KEY)); prefs = { sound: s?.sound === true, animation: ['system','on','off'].includes(s?.animation) ? s.animation : s?.calm ? 'off' : 'system' }; } catch { /* 預設 */ }
+  let prefs = { sound: false, animation: 'system', dialogue: 'tap' };
+  try { const s = JSON.parse(localStorage.getItem(PREF_KEY)); prefs = { sound: s?.sound === true, dialogue: s?.dialogue === 'auto' ? 'auto' : 'tap', animation: ['system','on','off'].includes(s?.animation) ? s.animation : s?.calm ? 'off' : 'system' }; } catch { /* 預設 */ }
   let world, generation = 0, disposed = false, replay = null, lastClue = null, feedback = '', wrong = false, readingVisible = false;
   let moodLabel = '', quietProgress=0;
   let subtitle = null, subtitleTimer, subtitleAfter, subtitleQueue = [];
+  let scriptPlayback, disposeSpeaker, currentSubtitleRef, restartDialogue=false;
   let timelineIndex=0, disposeStrategy, predictions={}, resultWarningShown=false;
   const safetyRemindersShown=new Set();
   const orderSupportShown=new Set();
@@ -66,7 +68,8 @@ export function FirstPersonPage(lesson) {
     return audio ||= new AC();
   }); }
   function updateMotion() { root.classList.toggle('fp-calm', calm()); root.classList.toggle('fp-motion-on', prefs.animation === 'on'); world?.setOptions?.({ imageIndex: scene?.timeline?.[timelineIndex]?.imageIndex, hideOperations: Boolean(scene?.operation.hideOnResult && ['result','read','question'].includes(beat) || scene?.timeline && (beat==='strategy' && !scene.operation.showOnStrategy || scene.timeline[timelineIndex]?.hideOperations)), beat, mood: moodLabel, calm: calm(), reading: ['result','read'].includes(beat), locked: beat !== 'act' || (scene?.operation.profile==='cooking-toolGrab' && state?.operation.step===0), paused: Boolean(Date.now()<chimeUntil || modal?.open || subtitle || root.querySelector('.fp-question-cards')) }); sound(); }
-  function destroyWorld() { disposeStrategy?.();disposeStrategy=null; generation++; world?.dispose(); world = null; }
+  function clearScriptPlayback(){narrationToken++;scriptPlayback?.dispose();scriptPlayback=null;disposeSpeaker?.();disposeSpeaker=null;}
+  function destroyWorld() { clearScriptPlayback(); disposeStrategy?.();disposeStrategy=null; generation++; world?.dispose(); world = null; }
   function close() {
     if (disposed) return; disposed = true; clearTimeout(beatTimer); clearTimeout(chimeTimer); clearTimeout(subtitleTimer); clearTimeout(observationTimer); clearTimeout(idleTimer); destroyWorld(); cancelSpeaking(); audio?.close().catch(() => {});
     modal?.close(); modal?.remove(); document.body.classList.remove('fp-immersive');
@@ -78,11 +81,13 @@ export function FirstPersonPage(lesson) {
 
   function sheet(title, content, focus) {
     clearTimeout(beatTimer); clearTimeout(subtitleTimer);
+    scriptPlayback?.pause();
+    if(config.scriptTap){narrationToken++;cancelSpeaking();}
     modal?.close(); modal?.remove();
     const dialog = h('dialog', { class: 'fp-sheet', 'aria-labelledby': 'fp-sheet-title' });
     dialog.append(h('div', { class: 'fp-sheet-header' }, [h('h2', { id: 'fp-sheet-title' }, title), button('✕', () => dialog.close(), { 'aria-label': '回到場景', class: 'fp-close' })]), content);
     root.append(dialog); modal = dialog;
-    dialog.addEventListener('close', () => { readingVisible = false; cancelSpeaking(); updateMotion(); if(beat==='result')scheduleResult(); if(subtitle)subtitle.style.opacity='1'; if(subtitle && (beat==='intro' || playback.automatic))subtitleTimer=setTimeout(nextSubtitle,subtitleDuration(subtitle.querySelector('p')?.textContent || '')); });
+    dialog.addEventListener('close', () => { readingVisible = false; cancelSpeaking(); updateMotion(); if(beat==='result')scheduleResult(); if(subtitle)subtitle.style.opacity='1'; if(restartDialogue && beat==='read'){restartDialogue=false;subtitleQueue=scriptPlayback?.remaining() || [...(currentSubtitleRef?[currentSubtitleRef]:[]),...subtitleQueue];clearScriptPlayback();nextSubtitle();}else if(scriptPlayback)scriptPlayback.resume();else if(subtitle && (beat==='intro' || playback.automatic))subtitleTimer=setTimeout(nextSubtitle,subtitleDuration(subtitle.querySelector('p')?.textContent || '')); });
     dialog.addEventListener('click', (event) => { if (event.target === dialog && event.clientX < dialog.getBoundingClientRect().left) dialog.close(); });
     dialog.showModal(); updateMotion();
     if (focus) content.querySelector(focus)?.focus();
@@ -156,7 +161,11 @@ export function FirstPersonPage(lesson) {
     stage.addEventListener('pointerup', () => { pointer = null; }); stage.addEventListener('pointercancel', () => { pointer = null; });
     stage.addEventListener('keydown', (e) => { if (e.target !== stage) return; if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) { e.preventDefault(); world?.look(e.key === 'ArrowLeft' ? .08 : e.key === 'ArrowRight' ? -.08 : 0, e.key === 'ArrowUp' ? .05 : e.key === 'ArrowDown' ? -.05 : 0); } });
     const version = generation;
-    mountFirstPersonScene(stage, { sourceText: ref => sources.get(`source:${ref.para}:${ref.n}`), phase: { ...scene, nextImages: config.scenes[progress.current+1]?.art.images, id: scene.id.replace(/^story-/, "") }, calm: calm(), operation: state.operation, onQuiet: value => { quietProgress=value; sound(); }, onChime: chime, onDemoSeen: () => { if(!replay)save(); }, onOperation: () => { if (!replay) save(); updateMood(); if(beat==='act' && (operationComplete(scene,state.operation) || scene.timeline?.[timelineIndex]?.untilStep<=state.operation.step)) finishBeat('act'); else updateMotion(); }, onMode: (label) => { if (version === generation) { mode.textContent = label; mode.hidden = label.startsWith('第一人稱'); } } }).then((controller) => { if (disposed || version !== generation) controller.dispose(); else { world = controller; if(scene.timeline)runTimeline();else setBeat('intro'); } });
+    mountFirstPersonScene(stage, { sourceText: ref => sources.get(`source:${ref.para}:${ref.n}`), phase: { ...scene, nextImages: config.scenes[progress.current+1]?.art.images, id: scene.id.replace(/^story-/, "") }, calm: calm(), operation: state.operation, onQuiet: value => { quietProgress=value; sound(); }, onChime: chime, onDemoSeen: () => { if(!replay)save(); }, onOperation: () => { if (!replay) save(); updateMood(); if(beat==='act' && (operationComplete(scene,state.operation) || scene.timeline?.[timelineIndex]?.untilStep<=state.operation.step)) {
+      // Commit the operation's completion focus before focusing a dialogue marker.
+      if(config.scriptTap){const at=timelineIndex,version=generation;queueMicrotask(()=>{if(!disposed && version===generation && beat==='act' && at===timelineIndex)finishBeat('act');});}
+      else finishBeat('act');
+    } else updateMotion(); }, onMode: (label) => { if (version === generation) { mode.textContent = label; mode.hidden = label.startsWith('第一人稱'); } } }).then((controller) => { if (disposed || version !== generation) controller.dispose(); else { world = controller; if(scene.timeline)runTimeline();else setBeat('intro'); } });
     updateMotion(); sound();
   }
 
@@ -205,6 +214,7 @@ export function FirstPersonPage(lesson) {
     }else beatTimer=setTimeout(()=>finishBeat('result'),r.duration-(resultWarningShown?(r.safetyDelay || 0):0));
   }
   function setBeat(value) {
+    clearScriptPlayback();
     clearTimeout(beatTimer); clearTimeout(subtitleTimer);
     subtitle?.remove(); subtitle=null; beat=value; root.dataset.beat=beat;
     root.querySelector('.fp-safety-reminder')?.remove();
@@ -240,18 +250,57 @@ export function FirstPersonPage(lesson) {
     const text=sources.get(`say:${key}`);
     return h('div',{class:'fp-spoken'},[p,...(text?[SpeakButton({text})]:[])]);
   }
-  function nextSubtitle() {
-    clearTimeout(subtitleTimer); subtitle?.remove(); subtitle=null; cancelSpeaking();
-    const ref=subtitleQueue.shift();
-    if(!ref) {const done=subtitleAfter;subtitleAfter=null;done?.();return;}
-    recordRead(ref);
-    if(config.script && sources.get(`script:${ref.para}:${ref.n}`)?.parts.length===0){nextSubtitle();return;}
+  function updateReadContext(ref){
     for(const strategy of config.scenes.flatMap(s=>s.strategies || []))if(strategy.type==='predict' && strategy.revealAt.para===ref.para && strategy.revealAt.n===ref.n && predictions[strategy.id]!==undefined){
       root.querySelector('.fp-prediction-reminder')?.remove();rootBody.append(h('aside',{class:'fp-prediction-reminder'},[say(predictionReminder(strategy,predictions[strategy.id]))]));
     }
     const readingView=scene.readViews?.[`${ref.para}:${ref.n}`];if(readingView)world?.setView(readingView,{immediate:true});
     const scriptSpeaker=sources.get(`script:${ref.para}:${ref.n}`)?.speaker;
     if(scriptSpeaker && scene.art.speakerFocus?.[scriptSpeaker]!==undefined)world?.focusPoint(scene.art.speakerFocus[scriptSpeaker]);
+  }
+  function startScriptPlayback() {
+    const lines=subtitleQueue;subtitleQueue=[];
+    const render=(content,waiting=false)=>{
+      subtitle?.remove();
+      subtitle=h('div',{class:'fp-cinema',role:'group','aria-label':waiting?'點角色聽台詞':'場景原句'},[
+        content,button(playback.automatic?'自動播放：開':'自動播放：關',()=>{playback.toggle();render(content,waiting);},{'aria-pressed':String(playback.automatic)}),button('下一句',()=>scriptPlayback?.next())
+      ]);
+      rootBody.append(subtitle);updateMotion();
+    };
+    let speechGuard;
+    scriptPlayback=createScriptTapPlayback({config,scene,lines,mode:prefs.dialogue,operationStep:state.operation.step,imageIndex:scene.timeline?.[timelineIndex]?.imageIndex,
+      cancel(){clearTimeout(speechGuard);cancelSpeaking();},
+      onWait(group,spot){
+        disposeSpeaker?.();
+        render(say(`點${group.speaker}聽台詞`),true);
+        disposeSpeaker=mountSpeakerTap({plane:world.strategyPlane,speaker:group.speaker,spot,focus:x=>world.focusPoint(x),activate:()=>!modal?.open && scriptPlayback.activate()});
+      },
+      onLine(ref){
+        disposeSpeaker?.();disposeSpeaker=null;
+        currentSubtitleRef=ref;recordRead(ref);updateReadContext(ref);if(config.meter.events)updateMood(false,ref);
+        render(sourceLine(ref));
+      },
+      read(ref){
+        const key=`${ref.para}:${ref.n}`,text=sources.get(`say:${key}`) || '';
+        if(!text)return Promise.resolve();
+        return new Promise(resolve=>{
+          let done=false;const finish=()=>{if(done)return;done=true;clearTimeout(timer);if(speechGuard===timer)speechGuard=undefined;resolve();};
+          const timer=setTimeout(finish,speechSupported()?subtitleDuration(text)*2+2000:subtitleDuration(text));speechGuard=timer;
+          if(speechSupported())speak(text).then(finish);
+        });
+      },
+      onDone(){currentSubtitleRef=null;disposeSpeaker?.();disposeSpeaker=null;scriptPlayback=null;subtitle?.remove();subtitle=null;const done=subtitleAfter;subtitleAfter=null;done?.();}
+    });
+    scriptPlayback.start();
+  }
+  function nextSubtitle() {
+    if(config.scriptTap && prefs.dialogue!=='auto' && beat==='read' && subtitleQueue.length){startScriptPlayback();return;}
+    clearTimeout(subtitleTimer); subtitle?.remove(); subtitle=null; cancelSpeaking();
+    const ref=subtitleQueue.shift();currentSubtitleRef=ref;
+    if(!ref) {const done=subtitleAfter;subtitleAfter=null;done?.();return;}
+    recordRead(ref);
+    if(config.script && sources.get(`script:${ref.para}:${ref.n}`)?.parts.length===0){nextSubtitle();return;}
+    updateReadContext(ref);
     const line=sources.get(`sentence:${ref.para}:${ref.n}`);
     if(config.meter.events)updateMood(false,ref);
     if(ref.para===config.meter.read?.para && ref.n===config.meter.read?.n)updateMood(true);
@@ -378,6 +427,12 @@ export function FirstPersonPage(lesson) {
     for(const [value,label] of [['system','跟隨系統'],['on','開'],['off','關']]) animation.append(h('option',{value,selected:prefs.animation===value},label));
     animation.addEventListener('change',()=>{prefs.animation=animation.value;savePrefs();updateMotion();});
     content.append(h('label',{class:'fp-setting'},['動畫：',animation]));
+    if(config.scriptTap){
+      const dialogue=h('select',{'aria-label':'對白'});
+      for(const [value,label] of [['tap','點角色'],['auto','自動']])dialogue.append(h('option',{value,selected:prefs.dialogue===value},label));
+      dialogue.addEventListener('change',()=>{prefs.dialogue=dialogue.value;savePrefs();restartDialogue=beat==='read';});
+      content.append(h('label',{class:'fp-setting'},['對白：',dialogue]));
+    }
     content.append(say('動畫關閉時保留靜態線索；選擇開可供課堂播放所有動畫。', 'p', { class: 'fp-small' }), say(config.ui.context, 'p', { class: 'fp-small' }), h('details', {}, [h('summary', {}, '教師資訊與教材依據'), h('p', { class: 'fp-small' }, `${config.source.text}；${config.source.questions}；${config.source.strategy}。核對：${config.source.checked}。`), h('p', { class: 'fp-small' }, config.ui.safety)]), button(config.ui.return, () => modal.close(), { class: 'fp-button fp-primary' }));
     sheet('畫面與聲音', content);
   }

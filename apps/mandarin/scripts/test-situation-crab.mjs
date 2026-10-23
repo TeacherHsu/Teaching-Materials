@@ -18,7 +18,7 @@ assert.deepEqual(covered,storyUnitKeys(lesson));assert.equal(new Set(covered).si
 assert.deepEqual([...new Set(Object.values(lesson.speakers))].sort(),['旁白','小螃蟹','寄居蟹','友友','美美','淨灘志工'].sort());
 for(const s of lesson.scenes){
  assert.ok(s.goal.length<=12);assert.ok(s.operation.prompts.every(t=>t.length<=12));assert.equal(s.operation.silentObserve,true);
- assert.equal(s.operation.focus.length,s.operation.steps.length+1);assert.equal(s.operation.focus.at(-1),50);
+ assert.equal(s.operation.focus.length,s.operation.steps.length+1);assert.ok(Number.isFinite(s.operation.focus.at(-1)));
  assert.ok(s.roleIntro);assert.ok(s.settingLabel);assert.ok(s.operation.protectedRegions.every(o=>o.width>0 && o.ratio>0));
  assert.equal(s.questions[0].operationType,'summaryCard');assert.equal(s.questions[0].summaryImages.length,2);assert.notEqual(...s.questions[0].summaryImages);
  for(const t of s.timeline.filter(t=>t.kind==='intro'))assert.ok(t.refs.flatMap(r=>r.sentences).length<=8);
@@ -40,16 +40,27 @@ if(password){
  const resolved=sentenceSources(lesson,ps,sayTexts);assert.equal([...resolved.keys()].filter(k=>k.startsWith('sentence:')).length,107);
  for(const r of lesson.excludedUnits)for(const n of r.sentences)assert.ok(!resolved.has(`say:${r.para}:${n}`),'headers never spoken');
  for(const key of covered){const [para,n]=key.split(':').map(Number),script=resolved.get(`script:${key}`);assert.equal(script.speaker,lesson.speakers[key]);assert.equal(script.parts.map(p=>p.text).join(''),ps.get(para)[n].replace(new RegExp('^'+script.speaker+'：'),''));assert.ok(!/[（）【】]/.test(resolved.get(`say:${key}`)));}
+ // Count consecutive audible units across adjacent timeline read entries too:
+ // speaker-only headers and unspoken stage directions never start speech.
+ for(const scene of lesson.scenes){let run=0;for(const t of scene.timeline){if(['act','strategy','question'].includes(t.kind)){run=0;continue;}if(['intro','read'].includes(t.kind))for(const r of t.refs)for(const n of r.sentences){if(resolved.get(`say:${r.para}:${n}`)?.trim())run++;assert.ok(run<=8,`${scene.id} uninterrupted audible run exceeds 8`);}}}
  assert.equal(resolved.get('say:26:4'),'');assert.equal(resolved.get('say:45:0'),'');assert.equal(resolved.get('say:5:0'),'');assert.equal(resolved.get('say:5:1'),'');
  const source=readFileSync(new URL('../src/data/situationLessons/115AG3H08.js',import.meta.url),'utf8');for(const ts of ps.values())for(const t of ts)if(t.length>=12 && !lesson.meter.states.some(w=>t.includes(w)))assert.ok(!source.includes(t),'no source sentences in config');
  const bad=structuredClone(lesson);bad.scenes[0].clues[0].refs[0].sha[0]='00000000';await assert.rejects(()=>validateUnlockedLesson(bad,ps));
  const wrongTerm=structuredClone(lesson);wrongTerm.meter.states[0]='不存在的原料';await assert.rejects(()=>validateUnlockedLesson(wrongTerm,ps));
 }else console.log('SKIP: local classroom password unavailable; encrypted/source checks not run');
+assert.ok(lesson.scenes.reduce((n,s)=>n+s.operation.steps.length,0)>=14);
+for(const s of lesson.scenes)for(const t of s.timeline.filter(t=>['intro','read'].includes(t.kind)))assert.ok(t.refs.reduce((n,r)=>n+r.sentences.length,0)<=8,'reading chunk <=8');
 let visibilityChecks=0;
 const sizes=[[1366,900],[820,1180],[375,812],[678,771]];
 const panFor=(w,iw,x)=>Math.max(0,Math.min(1,(iw*x/100-w/2)/(iw-w || 1)));
 function visible(s,w,h,o,focus,panel=true){const iw=sceneIllustrationLayout(w,h,.5,s.art).imageWidth,g=sceneIllustrationLayout(w,h,panFor(w,iw,focus),s.art),x=g.left+g.imageWidth*o.x/100,y=g.top+g.imageHeight*o.y/100;const rx=Math.max(22,g.imageWidth*(o.width || 0)/200),ry=Math.max(22,g.imageWidth*(o.width || 0)*(o.ratio || 1)/200);assert.ok(x-rx>=-1e-8 && x+rx<=w+1e-8,`${s.id} ${o.action || o.label}: x at ${w}x${h}`);assert.ok(y-ry>=0 && y+ry<=h*(panel?.74:1),`${s.id} ${o.action || o.label}: y at ${w}x${h}`);visibilityChecks++;}
 for(const s of lesson.scenes)for(const[w,h]of sizes){
+ for(const spot of Object.values(s.art.speakerSpots || {})){
+  const [dx,dy]=spot.markerOffset;visible(s,w,h,{x:spot.x+dx,y:spot.y+dy,width:0},spot.x+dx/2);
+  visible(s,w,h,{x:spot.x,y:spot.y,width:spot.face.width,ratio:spot.face.height/spot.face.width*1024/2400},spot.x+dx/2);
+  const g=sceneIllustrationLayout(w,h,.5,s.art);
+  assert.ok(Math.abs(dy)*g.imageHeight/100>=22+spot.face.height*g.imageHeight/200,'marker outside face');
+ }
  for(const read of [false,true])for(const pan of [0,.5,1]){const g=sceneIllustrationLayout(w,h,pan,s.art,read);assert.ok(g.left<=0 && g.top<=0 && g.left+g.imageWidth>=w-1e-8 && g.top+g.imageHeight>=h,'full cover');}
  for(let step=0;step<s.operation.steps.length;step++)for(const o of s.operation.objects.filter(o=>!o.passive && step>=(o.fromStep ?? 0) && step<=(o.toStep ?? s.operation.steps.length) && !s.operation.steps.slice(0,step).includes(o.action)))visible(s,w,h,o,s.operation.focus[step]);
  for(const t of s.strategies || [])if(t.type!=='predict')for(const o of t.options){if(o.sprite)visible(s,w,h,o,t.focus);visible(s,w,h,{...o,x:o.x+(o.markerOffset?.[0] || 0),y:o.y+(o.markerOffset?.[1] || 0),width:0,ratio:1},t.focus);}
@@ -82,6 +93,13 @@ try{
   for(const n of p.plane.children[0].children){if(n.classes?.has('fp-wood-arrow'))assert.equal(n.children[0].attrs.d,'');if(n.dataset.region)assert.equal(n.hidden,true);}
   p.ctl.dispose();
  }
+ // New motion commits only at animation completion, supports cancellation, and
+ // reconstructs the hidden animal's result from state on remount.
+ for(const [sceneIndex,step,action] of [[0,2,'search-1'],[2,2,'nod-youyou'],[3,1,'hide']]){
+  const p=setup(lesson.scenes[sceneIndex],false,{step});p.ctl.setPaused(false);p.activate(action);const a=animations.at(-1);assert.equal(p.state.step,step);p.activate(action);assert.equal(p.state.step,step);a.onfinish();assert.equal(p.state.step,step+1);p.ctl.dispose();
+  const q=setup(lesson.scenes[sceneIndex],false,{step});q.ctl.setPaused(false);q.activate(action);q.ctl.setPaused(true);assert.equal(q.state.step,step);q.ctl.dispose();
+ }
+ {const p=setup(lesson.scenes[3],true,{step:2});assert.ok(p.plane.children.some(n=>n.className==='fp-action-hideInSand' && !n.hidden));p.ctl.dispose();assert.ok(!p.plane.children.some(n=>n.className==='fp-action-hideInSand'));}
  // Shell is a non-scoring distractor, returns for click and pointer alternatives.
  {const p=setup(lesson.scenes[1]);p.ctl.setPaused(false);p.activate('shell');assert.equal(p.state.step,0);assert.equal(p.changes,0);assert.equal(p.find('shell').style.left,'52%');assert.equal(p.outer.children[1].children[0].textContent,'貝殼要留給寄居蟹');
  const n=p.find('shell');n.onpointerdown({button:0,pointerId:1,clientX:52,clientY:69,stopPropagation(){}});n.onpointerup({pointerId:1,clientX:57,clientY:63});assert.equal(p.state.step,0);assert.equal(n.style.left,'52%');p.ctl.dispose();}
