@@ -62,6 +62,7 @@ export function mountConfiguredOperation(plane, options, api) {
   const completed=o=>Boolean(state.collected?.includes(o.action) || !config.collect?.includes(o.action) && config.steps.slice(0,state.step).includes(o.event || o.action) && !config.steps.slice(state.step).includes(o.event || o.action));
   let committing=false, motionBusy=false;
   const lastActivation=new Map();
+  const activationTimes=new Map();
   let waveAudio;
   const objectAudio=new Map();
   const sourceCaptions=new Map();
@@ -111,13 +112,13 @@ export function mountConfiguredOperation(plane, options, api) {
     animation?.cancel();handAnimation?.cancel();hand.hidden=true;clearTimeout(demoTimer);
     try{
       if(!api.operate(action)){render();tell(retryText() || '先完成目前這一步。');return false;}
-      if(spec?.intervalGroup)lastActivation.set(spec.intervalGroup,performance.now());
+      if(spec?.intervalGroup)lastActivation.set(spec.intervalGroup,activationTimes.get(action) ?? performance.now());
       // Optional dialogue uses the unlocked source in memory, without an action subtitle.
       if(spec?.sourceSpeech){const text=sourceCaptionText(spec.sourceSpeech,options.sourceText);if(text)speak(text);}
       changed();
       render();
       if(spec?.successCount){
-        const number=document.createElement('span');number.className='fp-action-number';number.textContent=String(spec.successCount);number.setAttribute('aria-hidden','true');pos(number,...(spec.destination || [spec.x,spec.y]));layer.append(number);
+        const number=document.createElement('span');number.className='fp-action-number';number.textContent=spec.successText || String(spec.successCount);number.setAttribute('aria-hidden','true');pos(number,...(spec.destination || [spec.x,spec.y]));layer.append(number);
         sceneEffects.push({node:number,step:state.step});
         if(!reduced())number.animate([{opacity:1,transform:'translate(-50%,-50%)'},{opacity:0,transform:'translate(-50%,-120%)'}],{duration:900,fill:'forwards'});
       }
@@ -184,7 +185,7 @@ export function mountConfiguredOperation(plane, options, api) {
       }
       const local=['turn','fan'].includes(o.viewMotion);
       const pose=({lookUp:'scale(1.035) translateY(8px)',approach:'scale(1.05)',turn:'rotateY(360deg)',jump:'scale(1.08) translateY(14px)',fan:'rotate(35deg)'})[o.viewMotion];
-      animation=(local?elements.get(o.action):plane.parentElement).animate([{transform:'none'},{transform:pose,offset:.65},{transform:'none'}],{duration:750,easing:'ease-in-out'});
+      animation=(local?elements.get(o.action):plane.parentElement).animate([{transform:'none'},{transform:pose,offset:.65},{transform:'none'}],{duration:o.minIntervalMs?250:750,easing:'ease-in-out'});
       animation.onfinish=()=>{animation=null;motionBusy=false;if(!paused && !disposed)commit(o.action);render();};
       animation.oncancel=()=>{motionBusy=false;if(!disposed)render();};return;
     }
@@ -210,6 +211,7 @@ export function mountConfiguredOperation(plane, options, api) {
     if(paused || disposed || committing || motionBusy || completed(o) || elements.get(o.action).disabled)return;
     if(o.returnOnTap){selected=null;snap(o);tell(o.returnOnTap);return;}
     if(o.minIntervalMs && performance.now()-(lastActivation.get(o.intervalGroup) ?? -Infinity)<o.minIntervalMs){tell(o.gentlePrompt);return;}
+    if(o.minIntervalMs)activationTimes.set(o.action,performance.now());
     if(o.target){if(selected)drop(selected,{x:o.x,y:o.y});return;}
     if(config.type==='chooseCard'){commit(o.action);return;}
     if(config.type==='orderCards'){

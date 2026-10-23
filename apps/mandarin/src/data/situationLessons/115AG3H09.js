@@ -275,23 +275,35 @@ export default {
           "點樹叢果實"
         ],
         "focus": [
-          50,
-          50,
-          50,
-          50,
-          50
+          48,
+          55,
+          59,
+          49,
+          49
         ],
         "protectedRegions": [
           {
-            "x": 43,
-            "y": 28,
-            "width": 6,
+            "x": 26,
+            "y": 17,
+            "width": 5,
             "ratio": 1
           },
           {
-            "x": 57,
-            "y": 28,
-            "width": 6,
+            "x": 32,
+            "y": 25,
+            "width": 5,
+            "ratio": 1
+          },
+          {
+            "x": 40,
+            "y": 36,
+            "width": 4,
+            "ratio": 1
+          },
+          {
+            "x": 52,
+            "y": 23,
+            "width": 5,
             "ratio": 1
           }
         ]
@@ -731,7 +743,7 @@ export default {
             "action": "stair-1",
             "label": "走木棧道第1階",
             "x": 50,
-            "y": 48,
+            "y": 80,
             "width": 7,
             "ratio": 0.32,
             "angle": 0,
@@ -749,8 +761,8 @@ export default {
           {
             "action": "stair-2",
             "label": "走木棧道第2階",
-            "x": 50,
-            "y": 55,
+            "x": 47,
+            "y": 71,
             "width": 7,
             "ratio": 0.32,
             "angle": 0,
@@ -768,8 +780,8 @@ export default {
           {
             "action": "stair-3",
             "label": "走木棧道第3階",
-            "x": 50,
-            "y": 62,
+            "x": 45,
+            "y": 64,
             "width": 7,
             "ratio": 0.32,
             "angle": 0,
@@ -787,8 +799,8 @@ export default {
           {
             "action": "stair-4",
             "label": "走木棧道第4階",
-            "x": 50,
-            "y": 69,
+            "x": 43,
+            "y": 57,
             "width": 7,
             "ratio": 0.32,
             "angle": 0,
@@ -806,8 +818,8 @@ export default {
           {
             "action": "stair-5",
             "label": "走木棧道第5階",
-            "x": 50,
-            "y": 76,
+            "x": 41,
+            "y": 51,
             "width": 7,
             "ratio": 0.32,
             "angle": 0,
@@ -836,23 +848,35 @@ export default {
         "focus": [
           50,
           50,
-          50,
-          50,
-          50,
-          50,
+          47,
+          45,
+          43,
+          41,
           50
         ],
         "protectedRegions": [
           {
-            "x": 43,
-            "y": 28,
-            "width": 6,
+            "x": 27,
+            "y": 24,
+            "width": 3,
             "ratio": 1
           },
           {
-            "x": 57,
+            "x": 32,
             "y": 28,
-            "width": 6,
+            "width": 3,
+            "ratio": 1
+          },
+          {
+            "x": 36,
+            "y": 34,
+            "width": 3,
+            "ratio": 1
+          },
+          {
+            "x": 40,
+            "y": 30,
+            "width": 3,
             "ratio": 1
           }
         ]
@@ -1141,9 +1165,9 @@ export default {
           {
             "action": "blue-1",
             "label": "第1張色卡：最深藍",
-            "x": 54,
-            "y": 63,
-            "width": 3.2,
+            "x": 53,
+            "y": 94,
+            "width": 2.5,
             "ratio": 0.65,
             "angle": 0,
             "grounded": true,
@@ -1155,18 +1179,18 @@ export default {
             "sprite": "blue-1",
             "viewMotion": "approach",
             "destination": [
-              42,
-              46
+              44,
+              83
             ],
-            "destinationWidth": 3,
+            "destinationWidth": 2.3,
             "successCount": 1
           },
           {
             "action": "blue-2",
             "label": "第2張色卡：深藍",
-            "x": 46,
-            "y": 63,
-            "width": 3.2,
+            "x": 47,
+            "y": 94,
+            "width": 2.5,
             "ratio": 0.65,
             "angle": 0,
             "grounded": true,
@@ -1178,18 +1202,18 @@ export default {
             "sprite": "blue-2",
             "viewMotion": "approach",
             "destination": [
-              46,
-              46
+              47,
+              83
             ],
-            "destinationWidth": 3,
+            "destinationWidth": 2.3,
             "successCount": 2
           },
           {
             "action": "blue-3",
             "label": "第3張色卡：中藍",
-            "x": 58,
-            "y": 63,
-            "width": 3.2,
+            "x": 56,
+            "y": 94,
+            "width": 2.5,
             "ratio": 0.65,
             "angle": 0,
             "grounded": true,
@@ -1202,17 +1226,17 @@ export default {
             "viewMotion": "approach",
             "destination": [
               50,
-              46
+              83
             ],
-            "destinationWidth": 3,
+            "destinationWidth": 2.3,
             "successCount": 3
           },
           {
             "action": "blue-4",
             "label": "第4張色卡：淺藍",
             "x": 50,
-            "y": 63,
-            "width": 3.2,
+            "y": 94,
+            "width": 2.5,
             "ratio": 0.65,
             "angle": 0,
             "grounded": true,
@@ -1224,18 +1248,18 @@ export default {
             "sprite": "blue-4",
             "viewMotion": "approach",
             "destination": [
-              54,
-              46
+              53,
+              83
             ],
-            "destinationWidth": 3,
+            "destinationWidth": 2.3,
             "successCount": 4
           },
           {
             "action": "blue-5",
             "label": "第5張色卡：最淺藍",
-            "x": 42,
-            "y": 63,
-            "width": 3.2,
+            "x": 44,
+            "y": 94,
+            "width": 2.5,
             "ratio": 0.65,
             "angle": 0,
             "grounded": true,
@@ -1247,10 +1271,10 @@ export default {
             "sprite": "blue-5",
             "viewMotion": "approach",
             "destination": [
-              58,
-              46
+              56,
+              83
             ],
-            "destinationWidth": 3,
+            "destinationWidth": 2.3,
             "successCount": 5
           },
           {
@@ -1291,15 +1315,27 @@ export default {
         ],
         "protectedRegions": [
           {
-            "x": 43,
-            "y": 28,
-            "width": 6,
+            "x": 15,
+            "y": 40,
+            "width": 4,
             "ratio": 1
           },
           {
-            "x": 57,
-            "y": 28,
-            "width": 6,
+            "x": 19,
+            "y": 45,
+            "width": 4,
+            "ratio": 1
+          },
+          {
+            "x": 22,
+            "y": 55,
+            "width": 3,
+            "ratio": 1
+          },
+          {
+            "x": 27,
+            "y": 44,
+            "width": 4,
             "ratio": 1
           }
         ],
@@ -1571,7 +1607,8 @@ export default {
       "assetBase": "assets/situation/115AG3H09/",
       "art": {
         "images": [
-          "stones.webp"
+          "stones.webp",
+          "stones-photo.webp"
         ],
         "aspect": [
           2400,
@@ -1597,7 +1634,8 @@ export default {
           0,
           0,
           0
-        ]
+        ],
+        "resultImage": 1
       },
       "operation": {
         "type": "observe",
@@ -1632,7 +1670,8 @@ export default {
               84
             ],
             "viewMotion": "approach",
-            "successCount": 1
+            "successCount": 1,
+            "successText": "一"
           },
           {
             "action": "stone-2",
@@ -1654,7 +1693,8 @@ export default {
               79.5
             ],
             "viewMotion": "approach",
-            "successCount": 2
+            "successCount": 2,
+            "successText": "二"
           },
           {
             "action": "stone-3",
@@ -1676,7 +1716,8 @@ export default {
               75
             ],
             "viewMotion": "approach",
-            "successCount": 3
+            "successCount": 3,
+            "successText": "三"
           },
           {
             "action": "stone-4",
@@ -1698,7 +1739,8 @@ export default {
               70.5
             ],
             "viewMotion": "approach",
-            "successCount": 4
+            "successCount": 4,
+            "successText": "四"
           },
           {
             "action": "stone-5",
@@ -1720,7 +1762,8 @@ export default {
               66
             ],
             "viewMotion": "approach",
-            "successCount": 5
+            "successCount": 5,
+            "successText": "五"
           },
           {
             "action": "stone-6",
@@ -1742,7 +1785,8 @@ export default {
               61.5
             ],
             "viewMotion": "approach",
-            "successCount": 6
+            "successCount": 6,
+            "successText": "六"
           },
           {
             "action": "stone-7",
@@ -1764,13 +1808,14 @@ export default {
               57
             ],
             "viewMotion": "approach",
-            "successCount": 7
+            "successCount": 7,
+            "successText": "七"
           },
           {
             "action": "photo",
             "label": "選擇拍照留下美景",
-            "x": 43,
-            "y": 72,
+            "x": 44,
+            "y": 94,
             "width": 5,
             "ratio": 0.8,
             "angle": 0,
@@ -1786,8 +1831,8 @@ export default {
           {
             "action": "take-home",
             "label": "選擇把南田石帶回家",
-            "x": 59,
-            "y": 72,
+            "x": 56,
+            "y": 94,
             "width": 5,
             "ratio": 0.5,
             "angle": 0,
@@ -1826,15 +1871,27 @@ export default {
         ],
         "protectedRegions": [
           {
-            "x": 43,
+            "x": 29,
             "y": 28,
+            "width": 7,
+            "ratio": 1
+          },
+          {
+            "x": 38,
+            "y": 34,
+            "width": 7,
+            "ratio": 1
+          },
+          {
+            "x": 58,
+            "y": 47,
             "width": 6,
             "ratio": 1
           },
           {
-            "x": 57,
-            "y": 28,
-            "width": 6,
+            "x": 65,
+            "y": 31,
+            "width": 7,
             "ratio": 1
           }
         ]
@@ -2216,8 +2273,8 @@ export default {
           "options": [
             {
               "label": "美石、美景才能長久",
-              "x": 44,
-              "y": 40,
+              "x": 45,
+              "y": 30,
               "sprite": "coast-card",
               "width": 6,
               "markerOffset": [
@@ -2246,8 +2303,8 @@ export default {
             },
             {
               "label": "石頭太重拿不動",
-              "x": 56,
-              "y": 40,
+              "x": 53,
+              "y": 30,
               "sprite": "heavy-card",
               "width": 6,
               "markerOffset": [
@@ -2377,11 +2434,14 @@ export default {
               ]
             }
           ],
-          "imageIndex": 0
+          "imageIndex": 1,
+          "hideOperations": true
         },
         {
           "kind": "strategy",
-          "id": "stone-care"
+          "id": "stone-care",
+          "imageIndex": 1,
+          "hideOperations": true
         },
         {
           "kind": "read",
@@ -2402,13 +2462,18 @@ export default {
               ]
             }
           ],
-          "imageIndex": 0
+          "imageIndex": 1,
+          "hideOperations": true
         },
         {
-          "kind": "result"
+          "kind": "result",
+          "imageIndex": 1,
+          "hideOperations": true
         },
         {
-          "kind": "question"
+          "kind": "question",
+          "imageIndex": 1,
+          "hideOperations": true
         }
       ],
       "meterRevealAt": {

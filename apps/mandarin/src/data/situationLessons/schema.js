@@ -94,6 +94,7 @@ export function validateSituationLesson(lesson) {
       if(o.minIntervalMs!==undefined)check(Number.isFinite(o.minIntervalMs) && o.minIntervalMs>0 && text(o.intervalGroup) && text(o.gentlePrompt) && ['tap','observe'].includes(o.gesture || s.operation.type),'gentle interval');
       if(o.returnOnTap!==undefined)check(text(o.returnOnTap) && !s.operation.steps.includes(o.action) && !s.operation.collect?.includes(o.action) && ['tap','observe'].includes(o.gesture || s.operation.type),'non-scoring tap return');
       if(o.successCount!==undefined)check(Number.isInteger(o.successCount) && o.successCount>0 && s.operation.steps.includes(o.action),'success count');
+      if(o.successText!==undefined)check(text(o.successText) && o.successCount!==undefined,'success text');
       if(o.minDragMs!==undefined)check(Number.isFinite(o.minDragMs) && o.minDragMs>0 && (o.gesture || s.operation.type)==='dragToTarget' && text(o.gentlePrompt),'gentle drag');
       if(o.returnOnDrop!==undefined)check(text(o.returnOnDrop) && !s.operation.steps.includes(o.action) && !s.operation.collect?.includes(o.action) && (o.gesture || s.operation.type)==='dragToTarget','non-scoring return');
       if(o.hideWhenCompleted!==undefined)check(typeof o.hideWhenCompleted==='boolean','completed visibility');

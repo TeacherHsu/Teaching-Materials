@@ -53,6 +53,14 @@ for(const s of lesson.scenes)for(const[w,h]of sizes){
  }
  for(const t of s.strategies.filter(t=>t.type!=='predict'))for(const o of t.options){visible(s,w,h,o,t.focus,true);visible(s,w,h,{...o,x:o.x+o.markerOffset[0],y:o.y+o.markerOffset[1],width:0},t.focus,true);const g=geometry(s,w,h,t.focus);assert.ok(o.markerOffset[1]*g.imageHeight/100>g.imageWidth*o.width/200+22,'marker below illustration');}
 }
+// Full 44px strategy markers and illustrations clear all protected faces.
+for(const [w,h]of sizes){const scene=lesson.scenes[3],t=scene.strategies[0],g=geometry(scene,w,h,t.focus);
+ const apart=(a,b)=>Math.abs(a.x-b.x)>=a.rx+b.rx || Math.abs(a.y-b.y)>=a.ry+b.ry;
+ for(const o of t.options){const card=box(g,{...o,ratio:1}),marker=box(g,{x:o.x+o.markerOffset[0],y:o.y+o.markerOffset[1],width:0});
+  assert.ok(apart(card,marker));for(const face of scene.operation.protectedRegions){assert.ok(apart(card,box(g,face)),'strategy card clears faces');assert.ok(apart(marker,box(g,face)),'44px marker clears faces');}
+ }
+ assert.ok(apart(...t.options.map(o=>box(g,o))),'strategy pictures do not overlap');
+}
 // No premature outcome on the interleaved reading beats.
 assert.deepEqual(lesson.scenes[1].timeline.filter(t=>['intro','read'].includes(t.kind)).map(t=>t.imageIndex),[0,1,2]);
 assert.equal(lesson.scenes[0].art.images[lesson.scenes[0].timeline.find(t=>t.kind==='read').imageIndex],'fruit.webp');
@@ -66,5 +74,56 @@ class Element{
  closest(s){return s==='button' && this.tagName==='button'?this:null;}click(){this.onclick?.();for(const f of this.events.click || [])f({target:this});}
  animate(){const a={cancel(){this.oncancel?.();}};animations.push(a);return a;}
 }
-const saved={document:globalThis.document,Image:globalThis.Image};globalThis.document={createElement:t=>new Element(t),createElementNS:(_,t)=>new Element(t),createTextNode:t=>({textContent:t})};globalThis.Image=class extends Element{constructor(){super('img');}};
+const saved={document:globalThis.document,Image:globalThis.Image,performance:globalThis.performance};let now=1000;globalThis.performance={now:()=>now};globalThis.document={createElement:t=>new Element(t),createElementNS:(_,t)=>new Element(t),createTextNode:t=>({textContent:t})};globalThis.Image=class extends Element{constructor(){super('img');}};
 function setup(s,reduced=true,raw){const state=operationState(s,raw),outer=new Element(),host=new Element(),plane=new Element();outer.append(host);host.append(plane);let changes=0,reenter;const ctl=mountOperation(plane,{scene:s,state,reduced:()=>reduced,changed(){changes++;reenter?.();}});const find=id=>plane.children[0].children.find(n=>n.dataset.action===id);return {state,ctl,find,plane,outer,setReenter:fn=>reenter=fn,get changes(){return changes;}};}
+
+try{
+ for(const scene of lesson.scenes){
+  const p=setup(scene);const first=p.find(scene.operation.steps[0]);first.onclick();assert.equal(p.state.step,0);p.ctl.setPaused(false);
+  for(const [i,id]of scene.operation.steps.entries()){
+   now+=700;const n=p.find(id);p.setReenter(()=>n.onclick());n.onclick();assert.equal(p.state.step,i+1,`${scene.id} ${id}`);
+   for(let k=0;k<30;k++)n.onclick();assert.equal(p.state.step,i+1);assert.equal(n.disabled,true);
+  }
+  assert.ok(operationComplete(scene,p.state));assert.equal(p.changes,scene.operation.steps.length);assert.ok(!p.plane.children[0].children.some(n=>n.className==='fp-generic-target' && !n.hidden || n.className==='fp-wood-arrow'),'tap-only lessons leave no placement guides');assert.equal(operationState(scene,p.state).step,scene.operation.steps.length);
+  p.ctl.dispose();
+ }
+ // Too-fast stair taps gently wait; no score/state change. Exactly 600ms passes.
+ const stairs=setup(lesson.scenes[1]);stairs.ctl.setPaused(false);stairs.find('gap').onclick();stairs.find('stair-1').onclick();assert.equal(stairs.state.step,2);
+ for(let k=0;k<20;k++)stairs.find('stair-2').onclick();assert.equal(stairs.state.step,2);
+ assert.equal(stairs.outer.children[1].children[0].textContent,'小心，一步一步走');now+=599;stairs.find('stair-2').onclick();assert.equal(stairs.state.step,2);now++;stairs.find('stair-2').onclick();assert.equal(stairs.state.step,3);stairs.ctl.dispose();
+ // The interval starts at the accepted tap, not the end of its animation.
+ const timed=setup(lesson.scenes[1],false,{step:1});timed.ctl.setPaused(false);now=10000;timed.find('stair-1').onclick();const firstAnimation=animations.at(-1);now+=250;firstAnimation.onfinish();assert.equal(timed.state.step,2);
+ now=10599;timed.find('stair-2').onclick();assert.equal(timed.state.step,2);now=10600;timed.find('stair-2').onclick();now+=250;animations.at(-1).onfinish();assert.equal(timed.state.step,3);timed.ctl.dispose();
+ // Non-scoring conservation choice returns the stone, keeps the camera available.
+ const take=setup(lesson.scenes[3],true,{step:7});take.ctl.setPaused(false);
+ for(let k=0;k<30;k++)take.find('take-home').onclick();assert.equal(take.state.step,7);assert.equal(take.changes,0);
+ assert.equal(take.outer.children[1].children[0].textContent,'導遊說：只能拍照，不能帶走');assert.equal(take.find('photo').disabled,false);
+ take.find('photo').onclick();assert.equal(take.state.step,8);assert.equal(take.changes,1);take.find('take-home').onclick();assert.equal(take.changes,1);take.ctl.dispose();
+ // Wrong color is a meaningful retry, never a shortcut through the order.
+ const colors=setup(lesson.scenes[2]);colors.ctl.setPaused(false);colors.find('blue-5').onclick();assert.equal(colors.state.step,0);assert.equal(colors.changes,0);colors.ctl.dispose();
+ // Every non-reduced motion waits for completion. Pause/dispose cancels cleanly.
+ for(const scene of lesson.scenes)for(const spec of scene.operation.objects.filter(o=>o.viewMotion)){
+  const step=scene.operation.steps.indexOf(spec.action),p=setup(scene,false,{step});p.ctl.setPaused(false);const n=p.find(spec.action);n.onclick();const a=animations.at(-1);
+  for(let k=0;k<20;k++)n.onclick();assert.equal(p.state.step,step);a.onfinish();assert.equal(p.state.step,step+1);assert.equal(p.changes,1);p.ctl.dispose();
+  for(const mode of ['pause','dispose']){const q=setup(scene,false,{step});q.ctl.setPaused(false);q.find(spec.action).onclick();if(mode==='pause')q.ctl.setPaused(true);else q.ctl.dispose();assert.equal(q.state.step,step);q.ctl.dispose();}
+ }
+ const stones=setup(lesson.scenes[3]);stones.ctl.setPaused(false);
+ for(let i=0;i<7;i++){stones.find(`stone-${i+1}`).onclick();assert.equal(stones.plane.children[0].children.at(-1).textContent,'一二三四五六七'[i]);}stones.ctl.dispose();
+ const scene=lesson.scenes[3],strategy=scene.strategies[0],plane=new Element(),panel=new Element(),stage=new Element();let done=0;
+ const dispose=mountStrategy({strategy,panel,plane,stage,states:lesson.meter.states,onWords(){},onDone:()=>done++,focus(){}});
+ plane.children.find(n=>n.attrs?.['aria-label']===strategy.options[1].label).click();assert.equal(done,0);
+ const n=plane.children.find(n=>n.attrs?.['aria-label']===strategy.options[0].label);n.click();const count=plane.children.length;for(let k=0;k<20;k++)n.click();assert.equal(plane.children.length,count);
+ for(let k=0;k<20;k++)panel.querySelector('[data-strategy-next]').click();assert.equal(done,1);dispose();assert.equal(plane.children.length,0);
+}finally{Object.assign(globalThis,saved);}
+const page=readFileSync(new URL('../src/pages/FirstPersonPage.js',import.meta.url),'utf8');assert.match(page,/pick.disabled=place>=0/);assert.match(page,/第\$\{place\+1\}排序格已填好/);
+assert.match(readFileSync(new URL('../src/utils/speech.js',import.meta.url),'utf8'),/utter.lang = 'zh-TW'/);
+const opSource=readFileSync(new URL('../src/activities/situation/operations.js',import.meta.url),'utf8');assert.match(opSource,/if\(state.step>=config.steps.length\)\{arrowPath\?\.setAttribute\('d',''\)/);
+const files=new Set(lesson.scenes.flatMap(s=>[...s.art.images,...s.questions.flatMap(q=>q.summaryImages || []),...s.operation.objects.filter(o=>o.sprite).map(o=>'sprites/'+o.sprite+'.webp'),...s.strategies.flatMap(t=>t.options.filter(o=>o.sprite).map(o=>'sprites/'+o.sprite+'.webp'))]));
+for(const f of files){const path=new URL('../public/'+lesson.assetBase+f,import.meta.url);assert.ok(existsSync(path),f);assert.ok(statSync(path).size>0 && statSync(path).size<=(f.startsWith('sprites/')?120:300)*1024,f);}
+function dimensions(b){assert.equal(b.toString('ascii',0,4),'RIFF');assert.equal(b.toString('ascii',8,12),'WEBP');const tag=b.toString('ascii',12,16);if(tag==='VP8X')return [1+b.readUIntLE(24,3),1+b.readUIntLE(27,3)];if(tag==='VP8 ')return [b.readUInt16LE(26)&16383,b.readUInt16LE(28)&16383];if(tag==='VP8L'){const v=b.readUInt32LE(21);return [(v&16383)+1,((v>>>14)&16383)+1];}throw Error('unsupported WebP header');}
+const assetURL=new URL('../public/'+lesson.assetBase,import.meta.url);
+for(const f of readdirSync(assetURL).filter(f=>f.endsWith('.webp')))assert.deepEqual(dimensions(readFileSync(new URL(f,assetURL))),[2400,1024]);
+for(const f of readdirSync(new URL('sprites/',assetURL)).filter(f=>f.startsWith('summary-')))assert.deepEqual(dimensions(readFileSync(new URL('sprites/'+f,assetURL))),[720,300]);
+const configSource=readFileSync(new URL('../src/data/situationLessons/115AG3H09.js',import.meta.url),'utf8');
+for(const ts of ps.values())for(const t of ts)if(t.length>=12 && !lesson.meter.states.some(w=>t.includes(w)))assert.ok(!configSource.includes(t),'no original prose in config');
+console.log(`PASS: alangyi 41 ordered units/hash, 24 state steps, cover, ${visibilityChecks} four-size visibility checks, nonoverlap, rapid/repeated taps, gentle conservation/stair prompts, animation completion/cancellation and final focus`);

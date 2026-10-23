@@ -153,3 +153,11 @@
 - `object.event` 可將兩個不同 `action` 對應到同一個 `steps` 事件，用於「選麵或粄條」等不改劇情的選擇；限非 collect 的點擊／觀察。任一選項完成後，兩個物件都由 state 判定完成並停用；重點、連點、重入不再前進。
 - `object.viewMotion:'adultCook'` 搭配 `motionImage`（須列於 `art.images`）與 `cookMotion:'drop'|'scoop'|'stir'|'pour'|'thicken'`。只以母親操作熱鍋的無學生手插畫交叉淡入，1400ms 動作完成才提交 state；動畫中忽略連點，暫停／離頁取消不計步，減少動態直接切到 state 對應圖。未使用本欄位的課不套用。
 - 本課各幕使用2400×1024滿版 cover；清水、下肉、撈肉、炒料、倒水、完成與白飯淋羹前後分圖。中途 read 拍明訂 imageIndex，完成前不使用成果圖。操作 focus 包含完成格；四尺寸包含678×771，策略所有正誤標記及臉部光圈均驗上方74%安全區。
+
+## 阿塱壹古道：逐階節奏與保育試選（2026-10-23）
+
+- 點擊／observe物件可選 `minIntervalMs`、`intervalGroup`、`gentlePrompt`：同組上次成功的接受點擊起算，間隔不足只提示、不提交state。該類靠近動畫250ms，避免動畫結束後又多等一次間隔；暫停／離頁取消不計步。未配置的課保持原時序。
+- `returnOnTap` 是不在steps／collect中的試選：回原位、提示，不扣分、不計步，正確選項保持可用。可用於先試選「帶回家」，再選拍照的保育體驗；不產生搬走或丟擲演出。
+- `viewMotion:'cameraFlash'|'coastalWave'` 是有限閃光／浪花，動畫完成才提交state；暫停／離頁取消，減少動態直接提交。浪聲為本機合成，透過既有soundEnabled遵守音效開關，無音效也可完成。
+- `successCount` 指定成功次數，`successText` 可覆寫浮現標籤（例如一到七），只作短暫回應，不取代state。完成物件仍依自己的action判定no-op。
+- 本課四幕24步，所有focus為steps+1；色卡依序點選，不加拖放虛框。讀文拍指定imageIndex；拍照完成後才換成果圖，並用hideOperations避免重複石堆。教師指定2400×1024滿版cover，四尺寸含678×771，策略標記在圖下並檢查上方74%安全區與人臉。
