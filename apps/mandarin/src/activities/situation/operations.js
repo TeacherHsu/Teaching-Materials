@@ -183,8 +183,8 @@ export function mountConfiguredOperation(plane, options, api) {
         animation.onfinish=()=>{animation=null;cycle.remove();motionBusy=false;if(!paused && !disposed)commit(o.action);render();};
         animation.oncancel=()=>{cycle.remove();motionBusy=false;if(!disposed)render();};return;
       }
-      const local=['turn','fan'].includes(o.viewMotion);
-      const pose=({lookUp:'scale(1.035) translateY(8px)',approach:'scale(1.05)',turn:'rotateY(360deg)',jump:'scale(1.08) translateY(14px)',fan:'rotate(35deg)'})[o.viewMotion];
+      const local=['turn','fan','doughPat','doughToss'].includes(o.viewMotion);
+      const pose=({lookUp:'scale(1.035) translateY(8px)',approach:'scale(1.05)',turn:'rotateY(360deg)',jump:'scale(1.08) translateY(14px)',fan:'rotate(35deg)',doughPat:'translateY(12px) scale(1.12,.83)',doughToss:'translateY(-90px) rotate(160deg)'})[o.viewMotion];
       animation=(local?elements.get(o.action):plane.parentElement).animate([{transform:'none'},{transform:pose,offset:.65},{transform:'none'}],{duration:o.minIntervalMs?250:750,easing:'ease-in-out'});
       animation.onfinish=()=>{animation=null;motionBusy=false;if(!paused && !disposed)commit(o.action);render();};
       animation.oncancel=()=>{motionBusy=false;if(!disposed)render();};return;
