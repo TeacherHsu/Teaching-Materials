@@ -33,6 +33,7 @@ export function FirstPersonPage(lesson) {
   let moodLabel = '', quietProgress=0;
   let subtitle = null, subtitleTimer, subtitleAfter, subtitleQueue = [];
   let timelineIndex=0, disposeStrategy, predictions={}, resultWarningShown=false;
+  const safetyRemindersShown=new Set();
   let beat = 'intro', beatTimer, playback = createPlayback(), narrationToken = 0;
   let chimeUntil = 0, chimeTimer;
   let stopChime, saved = true, audio, ambientGain, ambientSource, modal, observationTimer;
@@ -191,6 +192,7 @@ export function FirstPersonPage(lesson) {
       beatTimer=setTimeout(()=>{
         if(disposed || beat!=='result')return;
         resultWarningShown=true;
+        safetyRemindersShown.add(scene.id);
         rootBody.append(h('aside',{class:'fp-safety-reminder',role:'note'},[say(r.safetyReminder)]));
         beatTimer=setTimeout(()=>finishBeat('result'),r.duration-r.safetyDelay);
       },r.safetyDelay);
@@ -213,7 +215,7 @@ export function FirstPersonPage(lesson) {
         rootBody.append(h('aside',{class:'fp-prediction-reminder'},[say(`你猜：${strategy.options[predictions[strategy.id]]}。${strategy.resultReminder}`)]));
       }
       world?.setView(scene.beats.result.view);
-      resultWarningShown=false;scheduleResult();
+      resultWarningShown=safetyRemindersShown.has(scene.id);scheduleResult();
     } else {
       state.found=scene.clues.map(c=>c.id); if(!replay)save(); showQuestion();
     }

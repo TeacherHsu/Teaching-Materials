@@ -80,7 +80,7 @@ export function validateSituationLesson(lesson) {
     check(s.operation.objects?.length>0, 'objects');
     for(const o of s.operation.objects){check(text(o.label) && text(o.action),'object identity');check([o.x,o.y,o.width].every(percent) && o.width>0 && Number.isFinite(o.ratio) && o.ratio>0 && Number.isFinite(o.angle),'object geometry');check(!o.sprite || /^[\w-]+$/.test(o.sprite),'sprite');if(o.completedSprite!==undefined)check(/^[\w-]+$/.test(o.completedSprite) && o.sprite,'completed sprite');if(o.minHitSize!==undefined)check(Number.isFinite(o.minHitSize) && o.minHitSize>=44,'hit size');if(o.viewMotion)check(['lookUp','approach','turn','jump','fan'].includes(o.viewMotion),'observation view motion');if(o.gesture)check(['tap','observe','dragToTarget','tracePath','rhythmTap','aimShot','holdBreath','rotateClock'].includes(o.gesture),'object gesture');if(o.gesture==='tracePath' || s.operation.type==='tracePath' && !o.passive && !o.target)check(o.path?.length>=2 && o.path.every(p=>p.length===2 && p.every(percent)) && Number.isFinite(o.tolerance) && o.tolerance>0,'trace path');if(o.destinationWidth!==undefined)check(percent(o.destinationWidth) && o.destinationWidth>0 && o.destination,'destination width');if(o.destination)check(o.destination.length===2 && o.destination.every(percent),'destination');}
     for(const region of Object.values(s.operation.regions || {}))check(['left','right','top','bottom'].every(k=>percent(region[k])) && region.left<region.right && region.top<region.bottom,'region');
-    for(const o of s.operation.objects)if(o.sourceCaption){refs(o.sourceCaption.refs);check(o.sourceCaption.refs.length>0,'source caption evidence');if(o.sourceCaption.afterAction)check(s.operation.steps.includes(o.sourceCaption.afterAction),'source caption action');}
+    for(const o of s.operation.objects){if(o.sourceCaption){refs(o.sourceCaption.refs);check(o.sourceCaption.refs.length>0,'source caption evidence');if(o.sourceCaption.afterAction)check(s.operation.steps.includes(o.sourceCaption.afterAction),'source caption action');}if(o.sourceSpeech){refs(o.sourceSpeech.refs);check(o.sourceSpeech.refs.length>0,'source speech evidence');}}
     check(s.meter?.length===s.operation.steps.length+1, 'meter event count');
     for(const event of s.meter)check(Number.isInteger(event.state) && text(lesson.meter.states[event.state]) && percent(event.level) && event.level<=3,'meter event');
     for(const name of ['intro','read']){
@@ -115,6 +115,7 @@ export function validateSituationLesson(lesson) {
       check(JSON.stringify(s.timeline.filter(e=>['intro','read'].includes(e.kind)).flatMap(e=>e.refs.flatMap(r=>r.sentences.map(n=>`${r.para}:${n}`))))===JSON.stringify([...s.beats.intro,...s.beats.read].flatMap(r=>r.sentences.map(n=>`${r.para}:${n}`))),'timeline beat alignment');
     }
     for(const t of s.strategies || []){
+      if(t.focus!==undefined)check(percent(t.focus),'strategy focus');
       check(strategyTypes.includes(t.type) && text(t.id) && text(t.prompt),'strategy identity');refs(t.refs);check(t.refs.length>0,'strategy evidence');
       check(t.options?.length>=1 && t.options.length<=3,'strategy option count');
       if(t.revealOnResult)check(t.type==='predict' && text(t.resultReminder),'result prediction reminder');
