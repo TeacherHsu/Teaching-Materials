@@ -176,7 +176,7 @@ export function FirstPersonPage(lesson) {
       const panel=h('section',{class:'fp-strategy-panel','aria-label':strategy.prompt});rootBody.append(panel);
       disposeStrategy=mountStrategy({strategy,panel,assetBase:`${import.meta.env?.BASE_URL || '/'}${scene.assetBase}`,plane:world.strategyPlane,stage:root.querySelector('.fp-world'),states:config.meter.states,focus:x=>world.focusPoint(x),onWords(words,target){
         if(!target){const option=strategy.options.find(o=>(o.states || []).some(i=>words.includes(config.meter.states[i])));const event=config.meter.events?.find(e=>e.state===option?.states?.[0]);if(event)updateMood(false,null,event);}
-        const node=root.querySelector('.fp-mood');node.querySelector('.fp-meter-clue')?.remove();const clue=say((target?target+'：':'')+words.join('、'),'span',{class:'fp-clue-words'});clue.classList.add('fp-meter-clue');node.append(clue);
+        const node=root.querySelector('.fp-mood');node.querySelector('.fp-meter-clue')?.remove();const clue=say((target?target+'：':'')+[...new Set(words)].join('、'),'span',{class:'fp-clue-words'});clue.classList.add('fp-meter-clue');node.append(clue);
       },onDone(result){if(strategy.type==='predict')predictions[strategy.id]=result.selected[0];finishBeat('strategy');}});
     }else if(entry.kind==='openBag'){
       beat='openBag';root.dataset.beat=beat;updateMotion();world.focusPoint(entry.object.x);
@@ -314,19 +314,19 @@ export function FirstPersonPage(lesson) {
         if(Array.isArray(q.answer)) orderStatus.textContent=cardOrder.selected.map((i,n)=>`${n+1}：${q.options[i]}`).join(' → ');
         cardOrder.order.forEach(index => {
           const pick = button(q.options[index], () => {
-            if(suppressClick) return;
+            if(suppressClick || q.lockOrderSelections && cardOrder.selected.includes(index)) return;
             if(Array.isArray(q.answer)) { cardOrder.toggle(index); renderCards(); }
             else submitAnswer(chooseCard(q,index));
           }, { 'data-answer': index, draggable: Array.isArray(q.answer), 'aria-label': Array.isArray(q.answer) ? `${q.options[index]}，點選編號，再點取消；也可拖曳排列` : q.options[index] });
-          if(Array.isArray(q.answer)) { const place=cardOrder.selected.indexOf(index); pick.setAttribute('aria-pressed',String(place>=0)); if(place>=0)pick.prepend(h('span',{class:'fp-order-number'},String(place+1))); }
+          if(Array.isArray(q.answer)) { const place=cardOrder.selected.indexOf(index); pick.setAttribute('aria-pressed',String(place>=0)); if(place>=0)pick.prepend(h('span',{class:'fp-order-number'},String(place+1))); if(q.lockOrderSelections){pick.disabled=place>=0;pick.draggable=false;pick.setAttribute('aria-label',`${q.options[index]}，${place>=0?`第${place+1}排序格已填好`:'點選排入下一格'}`);} }
           if(q.operationType==='summaryCard')pick.prepend(h('img',{class:'fp-summary-image',src:`${import.meta.env.BASE_URL}${config.assetBase}${q.summaryImages[index]}`,alt:''}));
           if(q.type==='emotion') pick.prepend(h('img', { class:'fp-emotion', src:`${import.meta.env.BASE_URL}${config.assetBase}sprites/${q.images[index]}.webp`, alt:'' }));
-          pick.ondragstart = () => { dragged=index; };
+          pick.ondragstart = e => { if(q.lockOrderSelections){e.preventDefault();return;} dragged=index; };
           pick.ondragover = e => e.preventDefault();
           pick.ondrop = e => { e.preventDefault(); if(dragged===null)return; cardOrder.move(dragged,index); dragged=null; renderCards(); };
           // Pointer dragging supports touch without native HTML drag support.
           let origin;
-          pick.onpointerdown = e => { if(Array.isArray(q.answer)) { origin={x:e.clientX,y:e.clientY}; if(e.pointerType!=='mouse') pick.setPointerCapture(e.pointerId); } };
+          pick.onpointerdown = e => { if(Array.isArray(q.answer) && !q.lockOrderSelections) { origin={x:e.clientX,y:e.clientY}; if(e.pointerType!=='mouse') pick.setPointerCapture(e.pointerId); } };
           pick.onpointerup = e => { if(!origin || Math.hypot(e.clientX-origin.x,e.clientY-origin.y)<12)return; suppressClick=true; setTimeout(()=>suppressClick=false,0); const target=document.elementFromPoint(e.clientX,e.clientY)?.closest('[data-answer]'); if(target){ cardOrder.move(index,Number(target.dataset.answer)); renderCards(); } origin=null; };
           choices.append(h('div', { class:'fp-answer-row' }, [pick, SpeakButton({text:q.options[index]})]));
         });

@@ -9,6 +9,7 @@ export const isStoryUnit = (lesson, para, n) => !(lesson.excludedUnits || []).so
 export const storyUnitKeys = lesson => lesson.paragraphCounts.flatMap((count,i)=>Array.from({length:count},(_,n)=>n).filter(n=>isStoryUnit(lesson,i+1,n)).map(n=>`${i+1}:${n}`));
 export function validateSituationLesson(lesson) {
   check(lesson.schemaVersion === 1, 'schemaVersion');
+  if(lesson.summaryCardCount!==undefined)check([2,3].includes(lesson.summaryCardCount),'summary card count');
   check(text(lesson.lessonId) && Number.isInteger(lesson.version), 'identity/version');
   check(/^assets\/[\w/-]+\/$/.test(lesson.assetBase) && !lesson.assetBase.includes('..'), 'local assetBase');
   check(lesson.paragraphCounts?.length > 0 && lesson.paragraphCounts.every(n=>Number.isInteger(n) && n>0), 'paragraphCounts');
@@ -122,7 +123,7 @@ export function validateSituationLesson(lesson) {
     check(s.questions?.length>0,'questions');
     for(const q of s.questions){
       check(['chooseCard','orderCards','summaryCard'].includes(q.operationType), 'card type');refs(q.refs);
-      if(q.operationType==='summaryCard')check(q.options?.length===3 && q.summaryImages?.length===3 && q.summaryImages.every(f=>s.art.images.includes(f) || /^sprites\/[\w-]+\.webp$/.test(f)) && q.refs.length>0,'summary cards');
+      if(q.operationType==='summaryCard')check(q.options?.length===(lesson.summaryCardCount || 3) && q.summaryImages?.length===q.options.length && q.summaryImages.every(f=>s.art.images.includes(f) || /^sprites\/[\w-]+\.webp$/.test(f)) && q.refs.length>0,'summary cards');
       check(text(q.stem) && q.options?.length>=2 && q.options.every(text),'question');
       const answer=Array.isArray(q.answer)?q.answer:[q.answer];check(answer.every(i=>Number.isInteger(i) && i>=0 && i<q.options.length),'answer');
       if(q.operationType==='orderCards')check(answer.length===q.options.length && new Set(answer).size===answer.length,'order answer');
