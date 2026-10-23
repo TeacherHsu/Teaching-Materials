@@ -91,6 +91,18 @@ Claude 實玩（上述四尺寸各跑一次）：
 8. 實玩兔子先生、小鉛筆、老鞋匠、便利貼、炒米粉等未啟用scriptTap課次，確認原有字幕／自動播放／操作行為不變。
 
 
+### 追加修正｜藏身插畫與揚沙（2026-10-23）
+- 全程只改檔，未執行任何 git 指令；分支、提交、推送由 Claude 接手。
+- 新增 `public/assets/situation/115AG3H08/mound-hidden.webp`：2400×1024、275876 bytes（269.4 KiB），原圖同構圖，只露藍色瓶蓋邊緣。內建圖片編輯 1 次成功、0 品質退件／重生；自看原始生成、回貼局部與最終 WebP，無腳／眼睛／觸角／文字，接縫、沙色與瓶蓋藍色可接受。
+- 原始工具輸出 `mound-hidden-generated-01.png`（1920×819）、遮罩回貼成果 `mound-hidden.png`（2400×1024）與 `mound-hidden-generation-record.md` 已留 `~/mandarin-work/first-person-samples/3A08/`。回貼遮罩限制 x1160–1459／y420–649，PNG 區域外差異像素0；lossless WebP 2141044 bytes 超標，改有損壓縮達≤300 KiB，WebP 重新編碼不能宣稱區域外解碼像素完全相同。未覆寫 mound.webp。
+- `115AG3H08.js` 第4幕 images 追加 index3；stepImages 改 `[0,0,3,2,2,3]`，hide 完成 step2 藏身、三人回想 act 明訂 day-empty(index2)、回想後第43–45段與摘要回到藏身圖。第42段讀文同為 index3。原文後續無重新現身動作，故維持到收幕；不設全幕 resultImage，避免初次 listen 成果提前隱藏。
+- 寄居蟹 speakerSpots 調至瓶蓋旁 x57／y53，hiddenSteps 擴為 `[2,3,4,5]`；藏身後第42、44段依既有不可見角色規則自動朗讀，無須點看不到的臉。
+- `operations.js`／`first-person.css` 新增 `sandPuff`：7顆小沙粒往上散開淡出，600ms 完成才提交 state／切圖，連點無效，暫停／離頁取消且不計數，減少動態立即完成。移除持久色塊的建立、重建與 `.fp-action-hideInSand` CSS；舊 viewMotion 名稱保留為短暫粒子別名。`schema.js` 接受新欄位值。
+- `test-situation-crab.mjs` 新驗藏身圖存在／預算、step2 與最終圖片、所有藏身讀文／回想拍、初次 listen 不提前隱藏、不可見角色自動朗讀、7粒子／完成清除與舊別名；既有動畫取消／連點／重入與232項四尺寸幾何檢查保留。`test-situation-script-tap.mjs` 更新回想後仍藏身之斷言。
+- 最終驗證：`npm run validate`、全部114支 `scripts/test-*.mjs`（0失敗／0略過）、`npm run build`、`npm run check-dist`／assets、`npm run build:preview` 全通過。Vite 僅保留既有 chunk 大小／靜動態匯入提示。
+- `build:preview` 通過；啟動 `preview:draft -- --host 127.0.0.1` 遭環境拒絕監聽（listen EPERM），本次未完成瀏覽器實玩。Claude 請於四尺寸檢查：初次 listen 仍露寄居蟹 → 點沙堆揚沙後藏身 → 第42段自動朗讀 → 三人回想 day-empty → 第43／44段返回藏身且寄居蟹自動朗讀 → 摘要維持藏身；另測減少動態、動畫中暫停／離幕、刷新與連點。
+
+
 ## 2026-10-23｜小鉛筆大學問｜115AG3H06｜待 Claude 三尺寸實玩
 
 ### 修改範圍與設計判斷

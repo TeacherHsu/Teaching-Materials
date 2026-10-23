@@ -9,6 +9,7 @@ import {classroomPassword} from './classroom-password.mjs';
 import {sceneIllustrationLayout} from '../src/activities/firstPersonLayout.js';
 import {operationState,mountOperation,operationComplete,operate} from '../src/activities/firstPersonInteraction.js';
 import {meterRevealed,sentenceSources} from '../src/activities/firstPersonPresentation.js';
+import {speakerSpot,needsScriptTap} from '../src/activities/situation/scriptTap.js';
 import {mountStrategy,chooseStrategy} from '../src/activities/situation/strategies.js';
 validateSituationLesson(lesson);
 assert.equal(lesson.sentenceCount,128);assert.equal(lesson.storySentenceCount,107);
@@ -95,12 +96,26 @@ try{
   p.ctl.dispose();
  }
  // New motion commits only at animation completion, supports cancellation, and
- // reconstructs the hidden animal's result from state on remount.
+ // restores the hidden illustration from state on remount.
  for(const [sceneIndex,step,action] of [[0,2,'search-1'],[2,2,'nod-youyou'],[3,1,'hide']]){
   const p=setup(lesson.scenes[sceneIndex],false,{step});p.ctl.setPaused(false);p.activate(action);const a=animations.at(-1);assert.equal(p.state.step,step);p.activate(action);assert.equal(p.state.step,step);a.onfinish();assert.equal(p.state.step,step+1);p.ctl.dispose();
   const q=setup(lesson.scenes[sceneIndex],false,{step});q.ctl.setPaused(false);q.activate(action);q.ctl.setPaused(true);assert.equal(q.state.step,step);q.ctl.dispose();
  }
- {const p=setup(lesson.scenes[3],true,{step:2});assert.ok(p.plane.children.some(n=>n.className==='fp-action-hideInSand' && !n.hidden));p.ctl.dispose();assert.ok(!p.plane.children.some(n=>n.className==='fp-action-hideInSand'));}
+ {const scene=lesson.scenes[3],p=setup(scene,true,{step:2});
+  assert.equal(scene.art.images[scene.art.stepImages[p.state.step]],'mound-hidden.webp');
+  assert.equal(scene.art.resultImage,undefined,'initial listen result must not hide the crab early');
+  assert.equal(scene.art.images[scene.art.stepImages.at(-1)],'mound-hidden.webp');
+  assert.equal(scene.operation.objects.find(o=>o.action==='hide').viewMotion,'sandPuff');
+  assert.ok(!p.plane.children.some(n=>n.className==='fp-action-hideInSand'));p.ctl.dispose();
+  let afterHide=false;
+  for(const beat of scene.timeline){if(beat.kind==='act' && beat.untilStep===2){afterHide=true;continue;}if(afterHide && beat.kind==='read')assert.equal(scene.art.images[beat.imageIndex],'mound-hidden.webp');if(afterHide && beat.kind==='act')assert.equal(scene.art.images[beat.imageIndex],'day-empty.webp');}
+  for(const step of [2,3,4,5]){assert.equal(speakerSpot(scene,'寄居蟹',3,step),null);assert.equal(needsScriptTap(lesson,'tap',{speaker:'寄居蟹'},scene,3,step),false);}
+  const css=readFileSync(new URL('../src/styles/first-person.css',import.meta.url),'utf8');assert.ok(!css.includes('.fp-action-hideInSand'));assert.match(css,/@keyframes fp-sand-puff/);
+  assert.ok(existsSync(new URL('../public/'+lesson.assetBase+'mound-hidden.webp',import.meta.url)));
+ }
+ {const p=setup(lesson.scenes[3],false,{step:1});p.ctl.setPaused(false);p.activate('hide');const effect=p.plane.children[0].children.find(n=>n.className==='fp-action-sandPuff');assert.equal(effect.children.length,7);assert.equal(p.state.step,1);animations.at(-1).onfinish();assert.equal(p.state.step,2);assert.ok(!p.plane.children[0].children.includes(effect));p.ctl.dispose();}
+ // The old motion name remains an alias for the same transient effect.
+ {const scene=structuredClone(lesson.scenes[3]);scene.operation.objects.find(o=>o.action==='hide').viewMotion='hideInSand';const p=setup(scene,false,{step:1});p.ctl.setPaused(false);p.activate('hide');assert.equal(p.state.step,1);animations.at(-1).onfinish();assert.equal(p.state.step,2);p.ctl.dispose();}
  // Shell is a non-scoring distractor, returns for click and pointer alternatives.
  {const p=setup(lesson.scenes[1]);p.ctl.setPaused(false);p.activate('shell');assert.equal(p.state.step,0);assert.equal(p.changes,0);assert.equal(p.find('shell').style.left,'52%');assert.equal(p.outer.children[1].children[0].textContent,'貝殼要留給寄居蟹');
  const n=p.find('shell');n.onpointerdown({button:0,pointerId:1,clientX:52,clientY:69,stopPropagation(){}});n.onpointerup({pointerId:1,clientX:57,clientY:63});assert.equal(p.state.step,0);assert.equal(n.style.left,'52%');p.ctl.dispose();}

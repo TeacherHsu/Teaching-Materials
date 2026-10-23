@@ -3720,7 +3720,8 @@ export default {
         "images": [
           "mound.webp",
           "night.webp",
-          "day-empty.webp"
+          "day-empty.webp",
+          "mound-hidden.webp"
         ],
         "aspect": [
           2400,
@@ -3740,10 +3741,10 @@ export default {
         "stepImages": [
           0,
           0,
-          0,
+          3,
           2,
           2,
-          2
+          3
         ],
         "speakerSpots": {
           "小螃蟹": {
@@ -3759,8 +3760,8 @@ export default {
             ]
           },
           "寄居蟹": {
-            "x": 56,
-            "y": 52,
+            "x": 57,
+            "y": 53,
             "face": {
               "width": 7,
               "height": 7
@@ -3770,7 +3771,10 @@ export default {
               8
             ],
             "hiddenSteps": [
-              2
+              2,
+              3,
+              4,
+              5
             ]
           }
         }
@@ -3814,7 +3818,7 @@ export default {
             "gesture": "observe",
             "fromStep": 1,
             "toStep": 1,
-            "viewMotion": "hideInSand"
+            "viewMotion": "sandPuff"
           },
           {
             "action": "recall-volunteer",
@@ -5088,7 +5092,7 @@ export default {
               ]
             }
           ],
-          "imageIndex": 0
+          "imageIndex": 3
         },
         {
           "kind": "act",
@@ -5170,7 +5174,7 @@ export default {
               ]
             }
           ],
-          "imageIndex": 0
+          "imageIndex": 3
         },
         {
           "kind": "question"

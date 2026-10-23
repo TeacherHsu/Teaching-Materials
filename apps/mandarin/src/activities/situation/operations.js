@@ -89,9 +89,6 @@ export function mountConfiguredOperation(plane, options, api) {
   const tell=text=>{message.textContent=text;};
   const point=e=>{const r=plane.getBoundingClientRect();return {x:(e.clientX-r.left)/r.width*100,y:(e.clientY-r.top)/r.height*100};};
   const snap=o=>{const el=elements.get(o.action);el.style.width=`${completed(o) && o.destinationWidth ? o.destinationWidth : o.width}%`;pos(el,...(completed(o) && o.destination ? o.destination : [o.x,o.y]));};
-  for(const o of config.objects.filter(o=>o.viewMotion==='hideInSand' && state.step===config.steps.indexOf(o.action)+1)){
-    const node=document.createElement('span');node.className='fp-action-hideInSand';node.setAttribute('aria-hidden','true');pos(node,o.x,o.y);plane.append(node);sceneEffects.push({node,step:state.step});
-  }
   function render(){
     for(const {node,step} of sceneEffects)node.hidden=state.step!==step && !(motionBusy && state.step===step-1);
     for(const o of config.objects){const caption=sourceCaptions.get(o.action);if(caption)caption.hidden=Boolean(o.sourceCaption.afterAction && !config.steps.slice(0,state.step).includes(o.sourceCaption.afterAction));}
@@ -124,21 +121,21 @@ export function mountConfiguredOperation(plane, options, api) {
     if(['machineProcess','machineCut'].includes(o.viewMotion) && state.step!==config.steps.indexOf(o.action)){
       tell(retryText() || '先完成前一步。');return;
     }
-    if(['sandSearch','nod','hideInSand'].includes(o.viewMotion)){
+    if(['sandSearch','nod','hideInSand','sandPuff'].includes(o.viewMotion)){
       if(state.step!==config.steps.indexOf(o.action))return;
-      const effect=document.createElement('span');effect.className=`fp-action-${o.viewMotion}`;effect.setAttribute('aria-hidden','true');pos(effect,o.x,o.y);
-      if(o.viewMotion==='hideInSand'){plane.append(effect);sceneEffects.push({node:effect,step:state.step+1});}else layer.append(effect);
+      const effect=document.createElement('span');effect.className=`fp-action-${o.viewMotion==='hideInSand'?'sandPuff':o.viewMotion}`;effect.setAttribute('aria-hidden','true');pos(effect,o.x,o.y);
+      layer.append(effect);
       if(o.viewMotion==='nod'){
         const width=6,height=10,index=scene.art.stepImages?.[state.step] ?? 0;
         effect.style.backgroundImage=`url(${import.meta.env?.BASE_URL || '/'}${scene.assetBase}${scene.art.images[index]})`;
         effect.style.backgroundSize=`${10000/width}% ${10000/height}%`;
         effect.style.backgroundPosition=`${(o.x-width/2)/(100-width)*100}% ${(o.y-height/2)/(100-height)*100}%`;
       }
-      if(o.viewMotion==='sandSearch')for(let i=0;i<7;i++){const grain=document.createElement('i');grain.style.setProperty('--grain',i);effect.append(grain);}
-      const frames=o.viewMotion==='hideInSand'?[{opacity:0,transform:'translate(-50%,-25%) scale(.5)'},{opacity:1,transform:'translate(-50%,-50%) scale(1)'}]:o.viewMotion==='nod'?[{transform:'translate(-50%,-50%)'},{transform:'translate(-50%,-47%) scaleY(.94)',offset:.5},{transform:'translate(-50%,-50%)'}]:[{opacity:0},{opacity:1,offset:.4},{opacity:0}];
-      const finish=()=>{animation=null;motionBusy=false;if(!paused && !disposed)commit(o.action);if(o.viewMotion!=='hideInSand')effect.remove();render();};
+      if(['sandSearch','sandPuff','hideInSand'].includes(o.viewMotion))for(let i=0;i<7;i++){const grain=document.createElement('i');grain.style.setProperty('--grain',i);effect.append(grain);}
+      const frames=o.viewMotion==='nod'?[{transform:'translate(-50%,-50%)'},{transform:'translate(-50%,-47%) scaleY(.94)',offset:.5},{transform:'translate(-50%,-50%)'}]:[{opacity:0},{opacity:1,offset:.4},{opacity:0}];
+      const finish=()=>{animation=null;motionBusy=false;if(!paused && !disposed)commit(o.action);effect.remove();render();};
       if(reduced()){finish();return;}
-      motionBusy=true;render();animation=effect.animate(frames,{duration:650,easing:'ease-out',fill:'forwards'});
+      motionBusy=true;render();animation=effect.animate(frames,{duration:['sandPuff','hideInSand'].includes(o.viewMotion)?600:650,easing:'ease-out',fill:'forwards'});
       animation.onfinish=finish;animation.oncancel=()=>{effect.remove();motionBusy=false;if(!disposed)render();};return;
     }
     if(o.viewMotion && !reduced()){

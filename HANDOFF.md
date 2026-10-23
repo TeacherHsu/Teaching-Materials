@@ -1,5 +1,12 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-10-23｜家中 Mac｜Codex｜寄居蟹藏沙修正：完成改檔，待 Claude 實玩／提交
+- 依本單全程未執行任何 git 指令，未 commit／push／部署；分支、提交與推送由 Claude 接手。
+- 新增 mound-hidden.webp（2400×1024，275876 bytes／269.4 KiB）：內建局部編輯1次、0退件／重生，只露藍瓶蓋邊緣，無腳眼觸角。原始PNG／2400成果PNG／生成自檢紀錄留 ~/mandarin-work/first-person-samples/3A08/；PNG遮罩外差異0，WebP有損重新編碼不能保證逐像素相同。
+- 第4幕 hide 後、回想後對話及摘要均維持藏身；回想三人仍 day-empty，初次 listen 不提前藏身。寄居蟹隱藏步2–5自動朗讀；共用600ms揚沙7粒子取代持久色塊，舊hideInSand名保留別名，減少動態立即切圖、取消不計數。
+- validate、114支測試（0失敗／0略過）、build、check-dist／assets、build:preview通過；本課與script-tap測試已更新。preview:draft啟動遭環境listen EPERM，未完成瀏覽器驗收；Claude請四尺寸檢查藏身／回想返回／朗讀／暫停取消及手機取景。
+- 詳細逐檔修改、圖像遮罩與壓縮限制、生成自檢與實玩清單見 docs/first-person-IMPL-LOG.md「寄居蟹找新家」追加修正。
+
 
 ## 2026-10-23｜家中 Mac｜Codex｜寄居蟹互動加強：待 Claude 四尺寸實玩／提交
 - 依本單只改檔，未執行任何git、未開Chrome、未commit／push／合併／部署；Claude接手既備分支與提交。
