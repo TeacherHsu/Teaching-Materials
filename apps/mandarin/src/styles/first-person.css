@@ -361,6 +361,12 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 .fp-strategy-bag.fp-bag-no-opening::after{display:none}
 .fp-generic-operation .fp-used{pointer-events:none!important;box-shadow:none!important;background:transparent!important;filter:none!important;animation:none!important;transition:box-shadow .3s,filter .3s}
 .fp-generic-operation .fp-grounded{filter:drop-shadow(0 5px 2px #35220fc0);animation:none}
+.fp-scene-context{position:absolute;z-index:5;top:58px;left:12px;width:max-content;max-width:min(360px,calc(100% - 270px));min-width:120px;box-sizing:border-box;padding:4px 6px;border-radius:12px;background:#fff9ebed;color:#3b342d;font-size:18px;line-height:1.35}
+.fp-scene-context>div:first-child{display:flex;align-items:center;gap:6px}
+/* 角色提示只在每幕開始時出現 4 秒，之後淡出，避免遮住人物的臉。 */
+.fp-scene-context{animation:fp-context-out .5s ease 4s forwards}
+@keyframes fp-context-out{to{opacity:0;visibility:hidden}}
+@media(prefers-reduced-motion:reduce){.fp-scene-context{animation-duration:.01s}}
 @media(prefers-reduced-motion:reduce){.fp-face-ring,.fp-strategy-bag img,.fp-strategy-bag::after{transition:none}}
 .fp-calm .fp-face-ring,.fp-calm .fp-strategy-bag img,.fp-calm .fp-strategy-bag::after{transition:none}
 .fp-prediction-reminder{max-height:120px;overflow:auto;box-sizing:border-box}

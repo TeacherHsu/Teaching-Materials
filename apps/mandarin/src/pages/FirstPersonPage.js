@@ -145,6 +145,9 @@ export function FirstPersonPage(lesson) {
     const mood = h('div', { class: 'fp-mood', 'aria-live': 'polite' });
     const controls = h('div', { class: 'fp-controls' }, [mood, button('⚙', showSettings, { 'aria-label': '設定', class: 'fp-gear fp-button' })]);
     rootBody.append(stage, top, controls);
+    if(scene.roleIntro)rootBody.append(h('aside',{class:'fp-scene-context'},[
+      say(scene.roleIntro,'div'),h('div',{class:'fp-small'},scene.settingLabel || '')
+    ]));
     updateMood();
     const mode = h('span', { class: 'fp-mode' }, '載入場景…'); rootBody.append(mode);
     let pointer;

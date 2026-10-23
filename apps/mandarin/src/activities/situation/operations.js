@@ -91,7 +91,7 @@ export function mountConfiguredOperation(plane, options, api) {
   function render(){
     for(const o of config.objects){const caption=sourceCaptions.get(o.action);if(caption)caption.hidden=Boolean(o.sourceCaption.afterAction && !config.steps.slice(0,state.step).includes(o.sourceCaption.afterAction));}
     for(const o of config.objects){const audio=objectAudio.get(o.action);if(audio){audio.hidden=paused || !available(o) || completed(o) || api.complete();}}
-    for(const o of config.objects){const el=elements.get(o.action);const used=Boolean(o.consumedBy && state.collected?.includes(o.consumedBy) || o.usedFade && state.collected?.includes(o.action));el.classList.toggle('fp-used',used);if(o.completedSprite){const img=el.querySelector('img');if(img)img.src=base+(completed(o)?o.completedSprite:o.sprite)+'.webp';}el.hidden=!available(o);el.style.pointerEvents=o.passive?'none':'';el.disabled=Boolean(paused || motionBusy || used || o.passive || api.complete() || !available(o) || completed(o));el.setAttribute('aria-pressed',String(selected===o || gripped===o));if(!drag)snap(o);}
+    for(const o of config.objects){const el=elements.get(o.action);const used=Boolean(o.consumedBy && state.collected?.includes(o.consumedBy) || o.usedFade && state.collected?.includes(o.action));el.classList.toggle('fp-used',used);if(o.completedSprite){const img=el.querySelector('img');if(img)img.src=base+(completed(o)?o.completedSprite:o.sprite)+'.webp';}el.hidden=!available(o) || Boolean(o.hideWhenCompleted && completed(o));el.style.pointerEvents=o.passive?'none':'';el.disabled=Boolean(paused || motionBusy || used || o.passive || api.complete() || !available(o) || completed(o));el.setAttribute('aria-pressed',String(selected===o || gripped===o));if(!drag)snap(o);}
     status.classList.toggle('fp-operation-complete',api.complete());layer.classList.toggle('fp-operation-complete',api.complete());
     tell(config.prompts?.[state.step] || scene.goal);const group=config.groups?.find(g=>state.step>=g.from && state.step<g.to) || config.groups?.at(-1);counter.textContent=group?`${Math.min(group.to-group.from,Math.max(0,state.step-group.from))}／${group.to-group.from}`:`${state.step}／${config.steps.length}`;
     if(lastStep!==state.step){lastStep=state.step;focus?.(config.focus?.[state.step] ?? config.objects.find(o=>o.action===config.steps[state.step])?.x ?? config.objects[0].x);}
@@ -149,7 +149,10 @@ export function mountConfiguredOperation(plane, options, api) {
   function targetFor(o,p){const r=config.regions?.[o.region || 'target'];return containsPoint(r,p);}
   function drop(o,p){
     if(gesture(o)==='dragToTarget'){
-      if(targetFor(o,p)){commit(o.action);selected=null;}else tell(retryText() || '移到發亮的目標區，再放開。');
+      if(targetFor(o,p)){
+        if(o.returnOnDrop){selected=null;tell(o.returnOnDrop);}
+        else {commit(o.action);selected=null;}
+      }else tell(retryText() || '移到發亮的目標區，再放開。');
     }else if(config.type==='toolGrab'){
       if(gripped && targetFor(gripped,p)){commit(gripped.action);gripped=null;toolReady=false;selected=null;}else tell(retryText() || '先拿工具、選物件，再放到目標區。');
     }
@@ -213,7 +216,7 @@ export function mountConfiguredOperation(plane, options, api) {
       if(config.type==='toolGrab')select(o);else selected=o;
       traceProgress=0;
       if(gesture(o)==='tracePath')traceProgress=advanceTrace(0,null,point(e),o.path,o.tolerance);
-      drag={id:e.pointerId,o,start:point(e),point:point(e),dipped:false,moved:false};el.setPointerCapture(e.pointerId);
+      drag={id:e.pointerId,o,start:point(e),point:point(e),startedAt:performance.now(),dipped:false,moved:false};el.setPointerCapture(e.pointerId);
     };
     el.onpointermove=e=>{
       if(!drag || drag.id!==e.pointerId)return;const p=point(e);drag.moved ||= Math.hypot(p.x-drag.start.x,p.y-drag.start.y)>1;
@@ -231,7 +234,8 @@ export function mountConfiguredOperation(plane, options, api) {
     el.onpointerup=e=>{
       if(!drag || drag.id!==e.pointerId)return;el.onpointermove(e);const gesture=drag;drag=null;
       if(gesture.moved){suppress=true;setTimeout(()=>suppress=false,0);
-        if(o.gesture==='rotateClock'){clockDragged=true;select(o);saveDemo();}
+        if(o.minDragMs && performance.now()-gesture.startedAt<o.minDragMs){selected=null;tell(o.gentlePrompt || '輕輕的');}
+        else if(o.gesture==='rotateClock'){clockDragged=true;select(o);saveDemo();}
         else if(config.type==='tracePath' || o.gesture==='tracePath'){if(traceProgress===o.path.length)commit(o.action);else tell(retryText() || '按住剪刀，從虛線起點慢慢剪到終點。');traceProgress=0;}
         else if(config.type==='scoopGesture'){if(gesture.lifted)commit(config.steps[state.step]);else tell(retryText() || '拖入區域，再往上拉出。');}
         else drop(o,point(e));

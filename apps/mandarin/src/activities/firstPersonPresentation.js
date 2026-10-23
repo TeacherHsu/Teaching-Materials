@@ -56,7 +56,7 @@ export function sentenceSources(config, paragraphs, sayTexts) {
         const label=config.speakers[`${para}:${n}`];
         const body=text===`${label}：`?'':text.replace(new RegExp(`^${label}：`),'');
         const spokenBody=(sayTexts.get(`${para}:${n}`) || text).replace(new RegExp(`^${label}：`),'');
-        const split=(value,initial)=>{let stage=initial;const parts=[];for(const ch of value){if(ch==='（' || ch==='(')stage=true;const last=parts.at(-1);if(last?.stage===stage)last.text+=ch;else parts.push({stage,text:ch});if(ch==='）' || ch===')')stage=false;}return {parts,stage};};
+        const split=(value,initial)=>{let stage=initial;const parts=[];for(const ch of value){if(ch==='（' || ch==='(' || ch==='【')stage=true;const last=parts.at(-1);if(last?.stage===stage)last.text+=ch;else parts.push({stage,text:ch});if(ch==='）' || ch===')' || ch==='】')stage=false;}return {parts,stage};};
         const display=split(body,inStage),speech=split(spokenBody,inStage);inStage=display.stage;
         sources.set(`script:${para}:${n}`,{speaker:label,parts:display.parts});
         sources.set(`sentence:${para}:${n}`,`${label}：${body}`);
