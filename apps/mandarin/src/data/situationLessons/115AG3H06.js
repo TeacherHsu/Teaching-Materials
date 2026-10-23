@@ -1284,7 +1284,7 @@ export default {
             "x": 50,
             "y": 65,
             "width": 16,
-            "ratio": 0.3129973474801061,
+            "ratio": 0.2493368700265252,
             "angle": 0,
             "grounded": true,
             "observation": "",
