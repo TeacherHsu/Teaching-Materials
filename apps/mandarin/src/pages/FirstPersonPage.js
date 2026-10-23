@@ -260,7 +260,7 @@ export function FirstPersonPage(lesson) {
     if(scriptSpeaker && scene.art.speakerFocus?.[scriptSpeaker]!==undefined)world?.focusPoint(scene.art.speakerFocus[scriptSpeaker]);
   }
   function startScriptPlayback() {
-    const lines=subtitleQueue;subtitleQueue=[];
+    const lines=subtitleQueue;subtitleQueue=[];updateMotion();
     const render=(content,waiting=false)=>{
       subtitle?.remove();
       subtitle=h('div',{class:'fp-cinema',role:'group','aria-label':waiting?'點角色聽台詞':'場景原句'},[
@@ -269,7 +269,7 @@ export function FirstPersonPage(lesson) {
       rootBody.append(subtitle);updateMotion();
     };
     let speechGuard;
-    scriptPlayback=createScriptTapPlayback({config,scene,lines,mode:prefs.dialogue,operationStep:state.operation.step,imageIndex:scene.timeline?.[timelineIndex]?.imageIndex,
+    scriptPlayback=createScriptTapPlayback({config,scene,lines,mode:prefs.dialogue,operationStep:state.operation.step,imageIndex:()=>scene.timeline?.[timelineIndex]?.imageIndex ?? world?.imageIndex ?? 0,
       cancel(){clearTimeout(speechGuard);cancelSpeaking();},
       onWait(group,spot){
         disposeSpeaker?.();

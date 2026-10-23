@@ -2,6 +2,7 @@
 export default {
   "schemaVersion": 1,
   "lessonId": "115AG4K11",
+  "scriptTap": true,
   "version": 1,
   "title": "兔子先生等等我",
   "gateTitle": "走進兔子洞",
@@ -295,6 +296,104 @@ export default {
       "stationType": "challenge",
       "assetBase": "assets/situation/115AG4K11/",
       "art": {
+        "speakerSpots": {
+          "愛麗絲": [
+            {
+              "x": 46,
+              "y": 28,
+              "face": {
+                "width": 5,
+                "height": 9
+              },
+              "markerOffset": [
+                0,
+                -11
+              ],
+              "imageIndices": [
+                0
+              ]
+            },
+            {
+              "x": 49,
+              "y": 30,
+              "face": {
+                "width": 5,
+                "height": 9
+              },
+              "markerOffset": [
+                0,
+                -11
+              ],
+              "imageIndices": [
+                1
+              ]
+            }
+          ],
+          "小門": [
+            {
+              "x": 53,
+              "y": 45,
+              "face": {
+                "width": 6,
+                "height": 10
+              },
+              "markerOffset": [
+                7,
+                0
+              ],
+              "imageIndices": [
+                0
+              ]
+            },
+            {
+              "x": 54,
+              "y": 43,
+              "face": {
+                "width": 6,
+                "height": 10
+              },
+              "markerOffset": [
+                7,
+                0
+              ],
+              "imageIndices": [
+                1
+              ]
+            }
+          ],
+          "三腳桌": [
+            {
+              "x": 66,
+              "y": 58,
+              "face": {
+                "width": 7,
+                "height": 8
+              },
+              "markerOffset": [
+                8,
+                0
+              ],
+              "imageIndices": [
+                0
+              ]
+            },
+            {
+              "x": 66,
+              "y": 60,
+              "face": {
+                "width": 7,
+                "height": 8
+              },
+              "markerOffset": [
+                8,
+                0
+              ],
+              "imageIndices": [
+                1
+              ]
+            }
+          ]
+        },
         "images": [
           "corridor-closed.webp",
           "corridor.webp"
@@ -854,11 +953,13 @@ export default {
                 "12f93856"
               ]
             }
-          ]
+          ],
+          "imageIndex": 0
         },
         {
           "kind": "strategy",
-          "id": "door-clue"
+          "id": "door-clue",
+          "imageIndex": 0
         },
         {
           "kind": "read",
@@ -886,7 +987,8 @@ export default {
                 "d73691a8"
               ]
             }
-          ]
+          ],
+          "imageIndex": 0
         },
         {
           "kind": "act",
@@ -920,7 +1022,8 @@ export default {
                 "01e4553d"
               ]
             }
-          ]
+          ],
+          "imageIndex": 0
         },
         {
           "kind": "act"
@@ -968,6 +1071,149 @@ export default {
       "stationType": "challenge",
       "assetBase": "assets/situation/115AG4K11/",
       "art": {
+        "speakerSpots": {
+          "愛麗絲": [
+            {
+              "x": 48,
+              "y": 30,
+              "face": {
+                "width": 5,
+                "height": 9
+              },
+              "markerOffset": [
+                0,
+                -11
+              ],
+              "imageIndices": [
+                0
+              ]
+            },
+            {
+              "x": 43,
+              "y": 16,
+              "face": {
+                "width": 5,
+                "height": 9
+              },
+              "markerOffset": [
+                0,
+                -11
+              ],
+              "imageIndices": [
+                1
+              ]
+            },
+            {
+              "x": 42,
+              "y": 37,
+              "face": {
+                "width": 5,
+                "height": 9
+              },
+              "markerOffset": [
+                0,
+                -11
+              ],
+              "imageIndices": [
+                2
+              ]
+            }
+          ],
+          "小門": [
+            {
+              "x": 53,
+              "y": 46,
+              "face": {
+                "width": 6,
+                "height": 10
+              },
+              "markerOffset": [
+                7,
+                0
+              ],
+              "imageIndices": [
+                0
+              ]
+            },
+            {
+              "x": 52,
+              "y": 48,
+              "face": {
+                "width": 6,
+                "height": 10
+              },
+              "markerOffset": [
+                7,
+                0
+              ],
+              "imageIndices": [
+                1
+              ]
+            },
+            {
+              "x": 33,
+              "y": 57,
+              "face": {
+                "width": 6,
+                "height": 10
+              },
+              "markerOffset": [
+                7,
+                0
+              ],
+              "imageIndices": [
+                2
+              ]
+            }
+          ],
+          "三腳桌": [
+            {
+              "x": 65,
+              "y": 58,
+              "face": {
+                "width": 7,
+                "height": 8
+              },
+              "markerOffset": [
+                8,
+                0
+              ],
+              "imageIndices": [
+                0
+              ]
+            },
+            {
+              "x": 65,
+              "y": 58,
+              "face": {
+                "width": 7,
+                "height": 8
+              },
+              "markerOffset": [
+                8,
+                0
+              ],
+              "imageIndices": [
+                1
+              ]
+            },
+            {
+              "x": 57,
+              "y": 30,
+              "face": {
+                "width": 7,
+                "height": 8
+              },
+              "markerOffset": [
+                8,
+                0
+              ],
+              "imageIndices": [
+                2
+              ]
+            }
+          ]
+        },
         "images": [
           "corridor-key.webp",
           "drink.webp",
@@ -1400,6 +1646,104 @@ export default {
       "stationType": "challenge",
       "assetBase": "assets/situation/115AG4K11/",
       "art": {
+        "speakerSpots": {
+          "愛麗絲": [
+            {
+              "x": 42,
+              "y": 37,
+              "face": {
+                "width": 5,
+                "height": 9
+              },
+              "markerOffset": [
+                0,
+                -11
+              ],
+              "imageIndices": [
+                0
+              ]
+            },
+            {
+              "x": 43,
+              "y": 43,
+              "face": {
+                "width": 5,
+                "height": 9
+              },
+              "markerOffset": [
+                0,
+                -11
+              ],
+              "imageIndices": [
+                1
+              ]
+            }
+          ],
+          "小門": [
+            {
+              "x": 33,
+              "y": 57,
+              "face": {
+                "width": 6,
+                "height": 10
+              },
+              "markerOffset": [
+                7,
+                0
+              ],
+              "imageIndices": [
+                0
+              ]
+            },
+            {
+              "x": 32,
+              "y": 59,
+              "face": {
+                "width": 6,
+                "height": 10
+              },
+              "markerOffset": [
+                7,
+                0
+              ],
+              "imageIndices": [
+                1
+              ]
+            }
+          ],
+          "三腳桌": [
+            {
+              "x": 57,
+              "y": 30,
+              "face": {
+                "width": 7,
+                "height": 8
+              },
+              "markerOffset": [
+                8,
+                0
+              ],
+              "imageIndices": [
+                0
+              ]
+            },
+            {
+              "x": 57,
+              "y": 33,
+              "face": {
+                "width": 7,
+                "height": 8
+              },
+              "markerOffset": [
+                8,
+                0
+              ],
+              "imageIndices": [
+                1
+              ]
+            }
+          ]
+        },
         "images": [
           "small.webp",
           "cry.webp"
@@ -1695,8 +2039,8 @@ export default {
         {
           "id": "tears-company",
           "type": "emotionClue",
-          "prompt": "找眼淚與陪伴",
-          "hint": "看看眼淚與三腳桌。",
+          "prompt": "誰靜靜的陪著愛麗絲？",
+          "hint": "再讀讀旁白的最後一句。",
           "refs": [
             {
               "para": 2,
@@ -1713,41 +2057,37 @@ export default {
             }
           ],
           "answer": [
-            0,
             1
           ],
           "options": [
             {
-              "label": "愛麗絲的眼淚",
-              "x": 46,
-              "y": 42,
+              "label": "得意守著入口的小門",
+              "x": 32,
+              "y": 57,
               "refs": [
                 {
                   "para": 2,
                   "sentences": [
-                    72
+                    74
                   ],
                   "sha": [
-                    "76dc4853"
+                    "a43a29de"
                   ]
                 }
               ],
-              "states": [
-                4
-              ],
               "face": {
-                "width": 6,
+                "width": 7,
                 "height": 14
               },
               "markerOffset": [
-                -5,
+                4.5,
                 0
               ]
             },
             {
-              "label": "三腳桌在旁陪伴",
-              "x": 60,
-              "y": 28,
+              "label": "在旁邊的三腳桌",
+              "x": 57,
+              "y": 27,
               "refs": [
                 {
                   "para": 2,
@@ -1869,6 +2209,166 @@ export default {
       "stationType": "challenge",
       "assetBase": "assets/situation/115AG4K11/",
       "art": {
+        "speakerSpots": {
+          "愛麗絲": [
+            {
+              "x": 42,
+              "y": 37,
+              "face": {
+                "width": 5,
+                "height": 9
+              },
+              "markerOffset": [
+                0,
+                -11
+              ],
+              "imageIndices": [
+                0
+              ]
+            },
+            {
+              "x": 41,
+              "y": 40,
+              "face": {
+                "width": 5,
+                "height": 9
+              },
+              "markerOffset": [
+                0,
+                -11
+              ],
+              "imageIndices": [
+                1
+              ]
+            },
+            {
+              "x": 45,
+              "y": 17,
+              "face": {
+                "width": 5,
+                "height": 9
+              },
+              "markerOffset": [
+                0,
+                -11
+              ],
+              "imageIndices": [
+                2
+              ]
+            }
+          ],
+          "小門": [
+            {
+              "x": 33,
+              "y": 57,
+              "face": {
+                "width": 6,
+                "height": 10
+              },
+              "markerOffset": [
+                7,
+                0
+              ],
+              "imageIndices": [
+                0
+              ]
+            },
+            {
+              "x": 86,
+              "y": 42,
+              "face": {
+                "width": 6,
+                "height": 10
+              },
+              "markerOffset": [
+                7,
+                0
+              ],
+              "imageIndices": [
+                1
+              ]
+            },
+            {
+              "x": 45,
+              "y": 72,
+              "face": {
+                "width": 6,
+                "height": 10
+              },
+              "markerOffset": [
+                7,
+                0
+              ],
+              "imageIndices": [
+                2
+              ]
+            }
+          ],
+          "三腳桌": [
+            {
+              "x": 57,
+              "y": 30,
+              "face": {
+                "width": 7,
+                "height": 8
+              },
+              "markerOffset": [
+                8,
+                0
+              ],
+              "imageIndices": [
+                0
+              ]
+            },
+            {
+              "x": 58,
+              "y": 30,
+              "face": {
+                "width": 7,
+                "height": 8
+              },
+              "markerOffset": [
+                8,
+                0
+              ],
+              "imageIndices": [
+                1
+              ]
+            },
+            {
+              "x": 76,
+              "y": 74,
+              "face": {
+                "width": 7,
+                "height": 8
+              },
+              "markerOffset": [
+                8,
+                0
+              ],
+              "imageIndices": [
+                2
+              ]
+            }
+          ],
+          "兔子先生": [
+            {
+              "x": 63,
+              "y": 58,
+              "face": {
+                "width": 4,
+                "height": 7
+              },
+              "markerOffset": [
+                5,
+                0
+              ],
+              "imageIndices": [
+                2
+              ]
+            }
+          ]
+        },
         "images": [
           "small.webp",
           "eat.webp",
@@ -1915,23 +2415,23 @@ export default {
           "small"
         ],
         "prompts": [
-          "變大能用哪個辦法",
-          "變小能用哪個辦法",
+          "變大了，可以怎麼做？",
+          "變小了，可以怎麼做？",
           "兩種辦法都想好了"
         ],
-        "retry": "比較大小與需要的辦法",
+        "retry": "變大搆得到，變小鑽得過",
         "regions": {
           "target": {
-            "left": 46,
-            "right": 54,
-            "top": 38,
-            "bottom": 50
+            "left": 43,
+            "right": 51,
+            "top": 8,
+            "bottom": 28
           },
           "gap": {
-            "left": 46,
-            "right": 54,
-            "top": 65,
-            "bottom": 77
+            "left": 32,
+            "right": 40,
+            "top": 8,
+            "bottom": 28
           }
         },
         "objects": [
@@ -1939,15 +2439,15 @@ export default {
             "action": "big",
             "label": "變大結果卡",
             "sprite": "result-big",
-            "x": 46,
-            "y": 57,
+            "x": 61,
+            "y": 52,
             "width": 9,
             "ratio": 1.1333333333333333,
             "angle": 0,
             "region": "target",
             "destination": [
-              50,
-              44
+              47,
+              18
             ],
             "cardLabel": "變大",
             "usedFade": true,
@@ -1958,15 +2458,15 @@ export default {
             "action": "small",
             "label": "變小結果卡",
             "sprite": "result-small",
-            "x": 54,
-            "y": 57,
+            "x": 61,
+            "y": 52,
             "width": 9,
             "ratio": 1.1333333333333333,
             "angle": 0,
             "region": "gap",
             "destination": [
-              50,
-              71
+              36,
+              18
             ],
             "cardLabel": "變小",
             "usedFade": true,
@@ -1977,8 +2477,8 @@ export default {
             "action": "key-plan",
             "label": "拿到鑰匙辦法卡",
             "sprite": "plan-key",
-            "x": 50,
-            "y": 44,
+            "x": 47,
+            "y": 18,
             "width": 9,
             "ratio": 1.2628726287262872,
             "angle": 0,
@@ -1989,8 +2489,8 @@ export default {
             "action": "gap-plan",
             "label": "鑽過門縫辦法卡",
             "sprite": "plan-gap",
-            "x": 50,
-            "y": 71,
+            "x": 36,
+            "y": 18,
             "width": 9,
             "ratio": 1.1333333333333333,
             "angle": 0,
@@ -2346,7 +2846,7 @@ export default {
         {
           "id": "cake-reason",
           "type": "causeEffect",
-          "prompt": "為什麼敢吃蛋糕？",
+          "prompt": "愛麗絲為什麼敢吃蛋糕？",
           "hint": "想想她先想好的辦法。",
           "refs": [
             {
@@ -2383,9 +2883,9 @@ export default {
           "explanation": "她先想過兩種可能，也分別想好了辦法；這是故事裡的決定。",
           "options": [
             {
-              "label": "已配好兩種結果與辦法",
-              "x": 48,
-              "y": 74,
+              "label": "先想好變大、變小的辦法",
+              "x": 61,
+              "y": 52,
               "refs": [
                 {
                   "para": 2,
@@ -2409,7 +2909,7 @@ export default {
               "width": 6
             },
             {
-              "label": "盒子裡的蛋糕很好看",
+              "label": "蛋糕看起來很好吃",
               "x": 60,
               "y": 76,
               "refs": [
@@ -2582,8 +3082,74 @@ export default {
       "stationType": "challenge",
       "assetBase": "assets/situation/115AG4K11/",
       "art": {
+        "speakerSpots": {
+          "愛麗絲": [
+            {
+              "x": 45,
+              "y": 17,
+              "face": {
+                "width": 5,
+                "height": 9
+              },
+              "markerOffset": [
+                0,
+                -11
+              ],
+              "imageIndices": [
+                0
+              ]
+            },
+            {
+              "x": 45,
+              "y": 35,
+              "face": {
+                "width": 5,
+                "height": 9
+              },
+              "markerOffset": [
+                0,
+                -11
+              ],
+              "imageIndices": [
+                1
+              ]
+            }
+          ],
+          "兔子先生": [
+            {
+              "x": 63,
+              "y": 58,
+              "face": {
+                "width": 4,
+                "height": 7
+              },
+              "markerOffset": [
+                5,
+                0
+              ],
+              "imageIndices": [
+                0
+              ]
+            },
+            {
+              "x": 66,
+              "y": 50,
+              "face": {
+                "width": 4,
+                "height": 7
+              },
+              "markerOffset": [
+                5,
+                0
+              ],
+              "imageIndices": [
+                1
+              ]
+            }
+          ]
+        },
         "images": [
-          "tall.webp",
+          "tall-dropped.webp",
           "depart.webp"
         ],
         "aspect": [
@@ -2637,9 +3203,9 @@ export default {
             "action": "pick",
             "label": "撿起扇子",
             "sprite": "fan",
-            "x": 50,
-            "y": 70,
-            "width": 9,
+            "x": 66,
+            "y": 89,
+            "width": 6,
             "ratio": 0.7686567164179104,
             "angle": 0,
             "fromStep": 0,

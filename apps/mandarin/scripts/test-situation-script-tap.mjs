@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {groupScriptLines,needsScriptTap,createScriptTapPlayback,mountSpeakerTap,speakerSpot} from '../src/activities/situation/scriptTap.js';
 import lesson from '../src/data/situationLessons/115AG3H08.js';
+import rabbit from '../src/data/situationLessons/115AG4K11.js';
 const lines=Array.from({length:8},(_,n)=>({para:1,n}));
 const config={scriptTap:true,speakers:{'1:0':'旁白','1:1':'小螃蟹','1:2':'小螃蟹','1:3':'寄居蟹','1:4':'寄居蟹','1:5':'旁白','1:6':'畫外音','1:7':''}};
 const scene=lesson.scenes[0];
@@ -57,4 +58,8 @@ for(const s of lesson.scenes)for(let i=1;i<s.timeline.length;i++){
 }
 const page=readFileSync(new URL('../src/pages/FirstPersonPage.js',import.meta.url),'utf8');
 assert.match(page,/config.scriptTap && prefs.dialogue!=='auto' && beat==='read'/);assert.match(page,/mandarin:explore:settings/);assert.match(page,/scriptPlayback\?\.pause\(\)/);assert.match(page,/scriptPlayback\.resume\(\)/);assert.match(page,/restartDialogue=beat==='read'/);
+// 同一角色在不同插畫的位置不同：speakerSpots 可為陣列，依 imageIndices 選位置；該插畫沒有此角色則自動朗讀。
+{const act4=rabbit.scenes.find(s=>s.act===4);assert.equal(rabbit.scriptTap,true);
+ assert.equal(speakerSpot(act4,'愛麗絲',0,0).x,42);assert.equal(speakerSpot(act4,'愛麗絲',2,0).x,45);
+ assert.equal(speakerSpot(act4,'兔子先生',0,0),null);assert.equal(speakerSpot(act4,'兔子先生',2,0).x,63);}
 console.log('PASS: script tap grouping, click gate, ordered speech, narrator/invisible/empty auto, automatic/legacy, next, keyboard, no-op, pause/dispose and mode-switch queue');

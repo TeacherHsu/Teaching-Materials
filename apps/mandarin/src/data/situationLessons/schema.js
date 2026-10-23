@@ -75,7 +75,7 @@ export function validateSituationLesson(lesson) {
     for(const point of Object.values({...s.art.hotspots,...s.art.effects}))check(point.length===2 && point.every(percent), 'art coordinates');
     for(const value of Object.values(s.art.orientationFocus || {}))check(percent(value),'orientation focus');
     for(const value of Object.values(s.art.speakerFocus || {}))check(percent(value),'speaker focus');
-    for(const [name,spot] of Object.entries(s.art.speakerSpots || {})){
+    for(const [name,entry] of Object.entries(s.art.speakerSpots || {}))for(const spot of Array.isArray(entry)?entry:[entry]){
       check(Object.values(lesson.speakers || {}).includes(name) && name!=='旁白','speaker spot name');
       check([spot.x,spot.y,spot.face?.width,spot.face?.height].every(percent) && spot.face.width>0 && spot.face.height>0,'speaker spot geometry');
       if(spot.markerOffset)check(spot.markerOffset.length===2 && spot.markerOffset.every(Number.isFinite),'speaker marker offset');
