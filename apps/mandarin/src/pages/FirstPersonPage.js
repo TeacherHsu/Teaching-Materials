@@ -10,6 +10,7 @@ import { h, clear } from '../utils/dom.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 import { getReading, unlockWithPassword, cryptoAvailable } from '../utils/classroomKey.js';
 import { splitSentences } from '../utils/readingUnits.js';
+import { seededOrder } from '../utils/shuffle.js';
 import { cancelSpeaking, speak, speechSupported } from '../utils/speech.js';
 import { getFirstPersonLesson, clueRefs } from '../data/firstPersonLesson.js';
 import { answerScene, canAnswer, readProgress, saveProgress, reward } from '../activities/firstPersonCore.js';
@@ -366,7 +367,8 @@ export function FirstPersonPage(lesson) {
       content.append(say(q.stem));
       const choices = h('div', { class: 'fp-card-row' });
       const orderStatus = h('p', {class:'fp-sr', 'aria-live':'polite'}); content.append(orderStatus);
-      const cardOrder = orderCards(q.initialOrder || q.options.map((_,i)=>i));
+      // 單選題的選項顯示順序依題目打亂（固定種子），避免正解總在最左邊；排序題沿用自己的 initialOrder。
+      const cardOrder = orderCards(q.initialOrder || seededOrder(q.options.length, `${config.lessonId}:${q.id}`));
       let dragged = null, suppressClick = false;
       function renderCards() {
         clear(choices);
