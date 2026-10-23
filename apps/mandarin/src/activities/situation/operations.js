@@ -2,6 +2,7 @@ import { mountSportsOperation } from './sportsOperations.js';
 import { placePrompt } from './promptLayout.js';
 import { SpeakButton } from '../../components/SpeakButton.js';
 import { createCardOrder } from '../firstPersonPresentation.js';
+import { speak } from '../../utils/speech.js';
 
 export const containsPoint = (r,p) => Boolean(r && p.x>=r.left && p.x<=r.right && p.y>=r.top && p.y<=r.bottom);
 // Segment/rectangle intersection handles coalesced pointer events.
@@ -105,6 +106,8 @@ export function mountConfiguredOperation(plane, options, api) {
     animation?.cancel();handAnimation?.cancel();hand.hidden=true;clearTimeout(demoTimer);
     try{
       if(!api.operate(action)){render();tell(config.retry || '先完成目前這一步。');return false;}
+      // Optional dialogue uses the unlocked source in memory, without an action subtitle.
+      if(spec?.sourceSpeech){const text=sourceCaptionText(spec.sourceSpeech,options.sourceText);if(text)speak(text);}
       changed();
       render();
       return true;

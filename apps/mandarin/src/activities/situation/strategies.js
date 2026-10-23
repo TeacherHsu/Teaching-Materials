@@ -56,12 +56,12 @@ export function mountStrategy({strategy, panel, plane, stage, states, onWords, o
       }
       const [dx,dy]=option.markerOffset || [0,0];
       const button=h('button',{type:'button',class:`fp-strategy-target${option.face?' fp-face-marker':''}`,'aria-label':option.label,style:`left:${option.x+dx}%;top:${option.y+dy}%`,onclick:()=>choose(i,button)},'◉');
-      button.addEventListener('focus',()=>focus(option.x));
+      button.addEventListener('focus',()=>focus(strategy.focus ?? option.x));
       plane.append(button);nodes.push(button);
       if(option.face){const ring=h('span',{class:'fp-face-ring','data-face-index':String(i),'aria-hidden':'true',style:`left:${option.x}%;top:${option.y}%;width:${option.face.width}%;height:${option.face.height}%`});plane.append(ring);nodes.push(ring);}
       panel.append(h('div',{class:'fp-spoken'},[h('span',{},option.label),SpeakButton({text:option.label})]));
     });
-    stage.addEventListener('click',wrong);focus(strategy.options[0].x);
+    stage.addEventListener('click',wrong);focus(strategy.focus ?? strategy.options[0].x);
   }
   return ()=>{disposed=true;timers.forEach(clearTimeout);nodes.forEach(n=>n.remove());stage.removeEventListener('click',wrong);panel.remove();};
 }
