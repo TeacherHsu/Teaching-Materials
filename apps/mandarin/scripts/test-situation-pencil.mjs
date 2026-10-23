@@ -75,7 +75,8 @@ try{
  // Both materials may be collected in either order, but processing waits for both.
  {const s=lesson.scenes[1],state=operationState(s);assert.equal(operate(s,state,'mix'),false);assert.equal(operate(s,state,'clay'),true);assert.equal(operate(s,state,'clay'),false);assert.equal(operate(s,state,'graphite'),true);assert.equal(operate(s,state,'mix'),true);}
  // Wrong assembly order gives state-dependent gentle help, without scoring.
- {const s=lesson.scenes[2],p=setup(s);p.ctl.setPaused(false);p.activate('insert');assert.equal(p.state.step,0);assert.equal(p.outer.children.at(-1).children[0].textContent,s.operation.retryByStep[0]);p.activate('groove');p.activate('glue');assert.equal(p.state.step,1);assert.equal(p.outer.children.at(-1).children[0].textContent,s.operation.retryByStep[1]);assert.equal(p.changes,1);p.ctl.dispose();}
+ {// 材料逐步出現：凹槽刻好前沒有筆芯、筆芯放好前沒有上蓋木板，因此不會發生錯序。
+ const s=lesson.scenes[2],p=setup(s);p.ctl.setPaused(false);p.activate('insert');assert.equal(p.state.step,0,'core unavailable before grooving');p.activate('glue');assert.equal(p.state.step,0,'lid unavailable before grooving');p.activate('groove');assert.equal(p.state.step,1);p.activate('glue');assert.equal(p.state.step,1,'lid unavailable before core');assert.equal(p.changes,1);p.ctl.dispose();}
  // Cutting and mixing advance only on animation completion; rapid clicks,
  // pause/cancel and restoring a completed machine never run another cycle.
  for(const s of [lesson.scenes[1],lesson.scenes[3]]){

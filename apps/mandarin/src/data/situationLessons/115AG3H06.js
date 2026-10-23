@@ -1045,6 +1045,10 @@ export default {
               "y": 48,
               "sprite": "broken-core",
               "width": 5,
+              "markerOffset": [
+                0,
+                10
+              ],
               "refs": [
                 {
                   "para": 4,
@@ -1065,6 +1069,10 @@ export default {
               "y": 48,
               "sprite": "dirty-hand",
               "width": 5,
+              "markerOffset": [
+                0,
+                10
+              ],
               "refs": [
                 {
                   "para": 4,
@@ -1087,6 +1095,10 @@ export default {
               "y": 48,
               "sprite": "perfume",
               "width": 5,
+              "markerOffset": [
+                0,
+                10
+              ],
               "refs": [
                 {
                   "para": 4,
@@ -1173,7 +1185,8 @@ export default {
           {
             "action": "insert",
             "label": "把筆芯放入凹槽",
-            "x": 44,
+            "fromStep": 1,
+            "x": 39,
             "y": 65,
             "width": 6,
             "ratio": 0.4265129682997118,
@@ -1191,7 +1204,8 @@ export default {
           {
             "action": "glue",
             "label": "蓋上另一片木板黏合",
-            "x": 56,
+            "fromStep": 2,
+            "x": 61,
             "y": 65,
             "width": 6,
             "ratio": 0.4371584699453552,
@@ -1225,7 +1239,7 @@ export default {
             "label": "未刻槽的木板",
             "x": 50,
             "y": 65,
-            "width": 14,
+            "width": 10,
             "ratio": 0.4371584699453552,
             "angle": 0,
             "grounded": true,
@@ -1239,7 +1253,7 @@ export default {
             "label": "刻槽後的木板",
             "x": 50,
             "y": 65,
-            "width": 14,
+            "width": 10,
             "ratio": 0.4861878453038674,
             "angle": 0,
             "grounded": true,
@@ -1254,7 +1268,7 @@ export default {
             "label": "凹槽中的筆芯",
             "x": 50,
             "y": 64,
-            "width": 12,
+            "width": 9,
             "ratio": 0.4265129682997118,
             "angle": 0,
             "grounded": true,
@@ -1295,7 +1309,8 @@ export default {
         ],
         "focus": [
           50,
-          50,
+          45,
+          55,
           50
         ],
         "regions": {
@@ -1548,8 +1563,8 @@ export default {
           {
             "action": "paint",
             "label": "選紅色替筆桿上色",
-            "x": 46,
-            "y": 65,
+            "x": 57,
+            "y": 66,
             "width": 6,
             "ratio": 0.7146814404432132,
             "angle": 0,
@@ -1563,9 +1578,9 @@ export default {
           {
             "action": "erase",
             "label": "替其中一枝加橡皮擦",
-            "x": 56,
-            "y": 65,
-            "width": 5,
+            "x": 44,
+            "y": 70,
+            "width": 4,
             "ratio": 0.6404109589041096,
             "angle": 0,
             "grounded": true,
@@ -1574,16 +1589,13 @@ export default {
             "gesture": "dragToTarget",
             "fromStep": 2,
             "toStep": 2,
-            "destination": [
-              54,
-              59
-            ]
+            "destination": [56, 66]
           },
           {
             "action": "eraser-slot",
             "label": "其中一枝鉛筆的尾端",
-            "x": 54,
-            "y": 59,
+            "x": 56,
+            "y": 66,
             "width": 5,
             "ratio": 0.35,
             "angle": 0,
@@ -1597,9 +1609,9 @@ export default {
           {
             "action": "barrels",
             "label": "切割後的筆桿",
-            "x": 50,
-            "y": 59,
-            "width": 14,
+            "x": 47,
+            "y": 66,
+            "width": 8,
             "ratio": 0.6339522546419099,
             "angle": 0,
             "grounded": true,
@@ -1613,7 +1625,7 @@ export default {
             "action": "painted-pencil",
             "label": "上色完成的鉛筆",
             "x": 50,
-            "y": 59,
+            "y": 66,
             "width": 14,
             "ratio": 0.1144578313253012,
             "angle": 0,
@@ -1627,9 +1639,9 @@ export default {
           {
             "action": "pencil-final",
             "label": "加上橡皮擦的紅鉛筆",
-            "x": 50,
-            "y": 59,
-            "width": 14,
+            "x": 46,
+            "y": 66,
+            "width": 9,
             "ratio": 0.11746987951807229,
             "angle": 0,
             "grounded": true,
@@ -1639,25 +1651,11 @@ export default {
             "fromStep": 3
           },
           {
-            "action": "ordinary-view",
-            "label": "一般鉛筆",
-            "x": 50,
-            "y": 30,
-            "width": 10,
-            "ratio": 0.18032786885245902,
-            "angle": 0,
-            "grounded": true,
-            "observation": "",
-            "sprite": "natural-pencil",
-            "passive": true,
-            "fromStep": 3
-          },
-          {
             "action": "mechanical-view",
             "label": "自動鉛筆",
-            "x": 44,
-            "y": 42,
-            "width": 10,
+            "x": 54,
+            "y": 66,
+            "width": 6,
             "ratio": 0.22506393861892582,
             "angle": 0,
             "grounded": true,
@@ -1669,9 +1667,9 @@ export default {
           {
             "action": "colored-view",
             "label": "色鉛筆",
-            "x": 56,
-            "y": 42,
-            "width": 10,
+            "x": 60,
+            "y": 66,
+            "width": 5,
             "ratio": 0.5057803468208093,
             "angle": 0,
             "grounded": true,
@@ -1683,15 +1681,16 @@ export default {
         ],
         "focus": [
           40,
+          52,
           50,
-          50
+          53
         ],
         "regions": {
           "target": {
-            "left": 51,
-            "right": 57,
-            "top": 54,
-            "bottom": 64
+            "left": 53,
+            "right": 59,
+            "top": 61,
+            "bottom": 71
           }
         },
         "prompts": [
@@ -1711,7 +1710,7 @@ export default {
           "level": 0
         },
         {
-          "state": 4,
+          "state": 3,
           "level": 0
         },
         {
