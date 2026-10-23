@@ -10,9 +10,11 @@ export function groupScriptLines(lines, speakers = {}) {
   }
   return groups;
 }
+// speakerSpots[說話者] 可以是單一位置，或依插畫分開的位置陣列（每筆用 imageIndices 指定適用的插畫）。
 export function speakerSpot(scene, speaker, imageIndex, operationStep) {
-  const spot=scene.art.speakerSpots?.[speaker];
-  return spot && !spot.hiddenSteps?.includes(operationStep) && (!spot.imageIndices || spot.imageIndices.includes(imageIndex)) ? spot : null;
+  const entry=scene.art.speakerSpots?.[speaker];
+  const spots=Array.isArray(entry) ? entry : entry ? [entry] : [];
+  return spots.find(spot=>!spot.hiddenSteps?.includes(operationStep) && (!spot.imageIndices || spot.imageIndices.includes(imageIndex))) || null;
 }
 export function needsScriptTap(config, mode, group, scene, imageIndex, operationStep) {
   return Boolean(config.scriptTap && mode!=='auto' && group.speaker && group.speaker!=='旁白' && speakerSpot(scene,group.speaker,imageIndex,operationStep));
@@ -26,8 +28,10 @@ export function createScriptTapPlayback({config,scene,lines,mode='tap',imageInde
     if(paused || disposed)return;
     const group=groups[groupIndex];
     if(!group){disposed=true;onDone();return;}
-    if(!started && needsScriptTap(config,mode,group,scene,imageIndex,operationStep)){
-      waiting=true;onWait(group,speakerSpot(scene,group.speaker,imageIndex,operationStep));return;
+    // imageIndex 可傳函式：輪到這句時才讀「當下畫面上的插畫」，避免開場前就取到舊插畫。
+    const shown=typeof imageIndex==='function' ? imageIndex() : imageIndex;
+    if(!started && needsScriptTap(config,mode,group,scene,shown,operationStep)){
+      waiting=true;onWait(group,speakerSpot(scene,group.speaker,shown,operationStep));return;
     }
     started=true;waiting=false;
     if(lineIndex>=group.lines.length){groupIndex++;lineIndex=0;started=false;run();return;}

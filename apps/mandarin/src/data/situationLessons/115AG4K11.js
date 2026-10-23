@@ -2,6 +2,7 @@
 export default {
   "schemaVersion": 1,
   "lessonId": "115AG4K11",
+  "scriptTap": true,
   "version": 1,
   "title": "兔子先生等等我",
   "gateTitle": "走進兔子洞",
@@ -295,6 +296,7 @@ export default {
       "stationType": "challenge",
       "assetBase": "assets/situation/115AG4K11/",
       "art": {
+        "speakerSpots": {"愛麗絲": [{"x": 46, "y": 28, "face": {"width": 5, "height": 9}, "markerOffset": [0, -11], "imageIndices": [0]}, {"x": 49, "y": 30, "face": {"width": 5, "height": 9}, "markerOffset": [0, -11], "imageIndices": [1]}], "小門": [{"x": 53, "y": 45, "face": {"width": 6, "height": 10}, "markerOffset": [7, 0], "imageIndices": [0]}, {"x": 54, "y": 43, "face": {"width": 6, "height": 10}, "markerOffset": [7, 0], "imageIndices": [1]}], "三腳桌": [{"x": 66, "y": 58, "face": {"width": 7, "height": 8}, "markerOffset": [8, 0], "imageIndices": [0]}, {"x": 66, "y": 60, "face": {"width": 7, "height": 8}, "markerOffset": [8, 0], "imageIndices": [1]}]},
         "images": [
           "corridor-closed.webp",
           "corridor.webp"
@@ -968,6 +970,7 @@ export default {
       "stationType": "challenge",
       "assetBase": "assets/situation/115AG4K11/",
       "art": {
+        "speakerSpots": {"愛麗絲": [{"x": 48, "y": 30, "face": {"width": 5, "height": 9}, "markerOffset": [0, -11], "imageIndices": [0]}, {"x": 43, "y": 16, "face": {"width": 5, "height": 9}, "markerOffset": [0, -11], "imageIndices": [1]}, {"x": 42, "y": 37, "face": {"width": 5, "height": 9}, "markerOffset": [0, -11], "imageIndices": [2]}], "小門": [{"x": 53, "y": 46, "face": {"width": 6, "height": 10}, "markerOffset": [7, 0], "imageIndices": [0]}, {"x": 52, "y": 48, "face": {"width": 6, "height": 10}, "markerOffset": [7, 0], "imageIndices": [1]}, {"x": 33, "y": 57, "face": {"width": 6, "height": 10}, "markerOffset": [7, 0], "imageIndices": [2]}], "三腳桌": [{"x": 65, "y": 58, "face": {"width": 7, "height": 8}, "markerOffset": [8, 0], "imageIndices": [0]}, {"x": 65, "y": 58, "face": {"width": 7, "height": 8}, "markerOffset": [8, 0], "imageIndices": [1]}, {"x": 57, "y": 30, "face": {"width": 7, "height": 8}, "markerOffset": [8, 0], "imageIndices": [2]}]},
         "images": [
           "corridor-key.webp",
           "drink.webp",
@@ -1400,6 +1403,7 @@ export default {
       "stationType": "challenge",
       "assetBase": "assets/situation/115AG4K11/",
       "art": {
+        "speakerSpots": {"愛麗絲": [{"x": 42, "y": 37, "face": {"width": 5, "height": 9}, "markerOffset": [0, -11], "imageIndices": [0]}, {"x": 43, "y": 43, "face": {"width": 5, "height": 9}, "markerOffset": [0, -11], "imageIndices": [1]}], "小門": [{"x": 33, "y": 57, "face": {"width": 6, "height": 10}, "markerOffset": [7, 0], "imageIndices": [0]}, {"x": 32, "y": 59, "face": {"width": 6, "height": 10}, "markerOffset": [7, 0], "imageIndices": [1]}], "三腳桌": [{"x": 57, "y": 30, "face": {"width": 7, "height": 8}, "markerOffset": [8, 0], "imageIndices": [0]}, {"x": 57, "y": 33, "face": {"width": 7, "height": 8}, "markerOffset": [8, 0], "imageIndices": [1]}]},
         "images": [
           "small.webp",
           "cry.webp"
@@ -1869,6 +1873,7 @@ export default {
       "stationType": "challenge",
       "assetBase": "assets/situation/115AG4K11/",
       "art": {
+        "speakerSpots": {"愛麗絲": [{"x": 42, "y": 37, "face": {"width": 5, "height": 9}, "markerOffset": [0, -11], "imageIndices": [0]}, {"x": 41, "y": 40, "face": {"width": 5, "height": 9}, "markerOffset": [0, -11], "imageIndices": [1]}, {"x": 45, "y": 17, "face": {"width": 5, "height": 9}, "markerOffset": [0, -11], "imageIndices": [2]}], "小門": [{"x": 33, "y": 57, "face": {"width": 6, "height": 10}, "markerOffset": [7, 0], "imageIndices": [0]}, {"x": 86, "y": 42, "face": {"width": 6, "height": 10}, "markerOffset": [7, 0], "imageIndices": [1]}, {"x": 45, "y": 72, "face": {"width": 6, "height": 10}, "markerOffset": [7, 0], "imageIndices": [2]}], "三腳桌": [{"x": 57, "y": 30, "face": {"width": 7, "height": 8}, "markerOffset": [8, 0], "imageIndices": [0]}, {"x": 58, "y": 30, "face": {"width": 7, "height": 8}, "markerOffset": [8, 0], "imageIndices": [1]}, {"x": 76, "y": 74, "face": {"width": 7, "height": 8}, "markerOffset": [8, 0], "imageIndices": [2]}], "兔子先生": [{"x": 63, "y": 58, "face": {"width": 4, "height": 7}, "markerOffset": [5, 0], "imageIndices": [2]}]},
         "images": [
           "small.webp",
           "eat.webp",
@@ -2582,6 +2587,7 @@ export default {
       "stationType": "challenge",
       "assetBase": "assets/situation/115AG4K11/",
       "art": {
+        "speakerSpots": {"愛麗絲": [{"x": 45, "y": 17, "face": {"width": 5, "height": 9}, "markerOffset": [0, -11], "imageIndices": [0]}, {"x": 45, "y": 35, "face": {"width": 5, "height": 9}, "markerOffset": [0, -11], "imageIndices": [1]}], "兔子先生": [{"x": 63, "y": 58, "face": {"width": 4, "height": 7}, "markerOffset": [5, 0], "imageIndices": [0]}, {"x": 66, "y": 50, "face": {"width": 4, "height": 7}, "markerOffset": [5, 0], "imageIndices": [1]}]},
         "images": [
           "tall.webp",
           "depart.webp"

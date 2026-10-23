@@ -11,12 +11,13 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   const layer = document.createElement('div'); layer.className = 'fp-illustration';
   const plane = document.createElement('div'); plane.className = 'fp-illustration-plane'; layer.append(plane); host.prepend(layer);
   host.classList.add('is-illustrated');
-  let imageOverride, hideOperations=false, currentView=phase.view, viewAnimation;
+  let shownImageIndex=0, imageOverride, hideOperations=false, currentView=phase.view, viewAnimation;
   let moodLabel = '', reading = false, currentBeat='intro', resultReady=false, resultArtTimer;
   function stateArt(){
     plane.classList.toggle('fp-result-hide-completed',Boolean(art.hideCompletedOnResult && (['read','question'].includes(currentBeat) || currentBeat==='result' && resultReady)));
     if(!art.stepImages && imageOverride===undefined)return;
     const index=imageOverride ?? (currentBeat==='result' && !resultReady && art.resultStartImage!==undefined ? art.resultStartImage : ((['read','question'].includes(currentBeat) || currentBeat==='result' && resultReady) && art.resultImage!==undefined ? art.resultImage : art.stepImages?.[Math.min(operation.step,art.stepImages.length-1)] ?? 0));
+    shownImageIndex=index;
     images.forEach((img,i)=>{img.style.opacity=i===index?'1':'0';img.style.transition=calm?'none':'opacity .35s ease';});
   }
   let disposed = false, paused = true, frame = 0, previous = 0, pan = art.views[phase.view] ?? .5, target = pan;
@@ -46,7 +47,7 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
     }
   }
   const wind = art.plugins?.includes('chimeWind') ? mountChimeWind(plane, base, () => calm) : null;
-  const interaction = mountOperation(plane, { soundEnabled, sourceText, scene: phase, state: operation, quiet:onQuiet, changed: onOperation, saveDemo: onDemoSeen, reduced: () => calm, chime() { wind?.blow(); onChime?.(); }, focus(x) { x=art.focus?.[host.clientWidth/host.clientHeight>=1.4?'landscape':'portrait']?.[x] ?? x; const iw=sceneIllustrationLayout(host.clientWidth,host.clientHeight,.5,art,reading,currentView).imageWidth; if(iw>host.clientWidth) { target=Math.max(0,Math.min(1,(iw*x/100-host.clientWidth/2)/(iw-host.clientWidth))); pan=target; render(); } }, heat(value) { stateArt(); effects.style.opacity = '1'; effects.style.setProperty('--heat', value); [...effects.children].forEach((el,i) => { const fire=el.classList.contains('fp-art-fire'); el.style.visibility = !fire && (value === 0 || (el.classList.contains('fp-art-bubble') && i % 5 >= Math.ceil(value * 5))) ? 'hidden' : ''; el.style.opacity=String(fire?Math.max(1/3,value):value); if(fire) el.style.scale=String(Math.max(1/3,value)); }); if(art.stateImages) { images[0].style.opacity=String(value); images[1].style.opacity=String(1-value); images[0].style.transition=images[1].style.transition=(calm)?'none':'opacity .8s ease'; } }, demonstrate(active) { images[0].style.opacity=active?'0':'1'; images[1].style.opacity=active?'1':'0'; } });
+  const interaction = mountOperation(plane, { soundEnabled, sourceText, scene: phase, state: operation, quiet:onQuiet, changed: onOperation, saveDemo: onDemoSeen, reduced: () => calm, chime() { wind?.blow(); onChime?.(); }, focus(x) { x=art.focus?.[host.clientWidth/host.clientHeight>=1.4?'landscape':'portrait']?.[x] ?? x; const iw=sceneIllustrationLayout(host.clientWidth,host.clientHeight,.5,art,reading,currentView).imageWidth; if(iw>host.clientWidth) { target=Math.max(0,Math.min(1,(iw*x/100-host.clientWidth/2)/(iw-host.clientWidth))); pan=target; render(); } }, heat(value) { stateArt(); effects.style.opacity = '1'; effects.style.setProperty('--heat', value); [...effects.children].forEach((el,i) => { const fire=el.classList.contains('fp-art-fire'); el.style.visibility = !fire && (value === 0 || (el.classList.contains('fp-art-bubble') && i % 5 >= Math.ceil(value * 5))) ? 'hidden' : ''; el.style.opacity=String(fire?Math.max(1/3,value):value); if(fire) el.style.scale=String(Math.max(1/3,value)); }); if(art.stateImages) { shownImageIndex=value<.5?1:0; images[0].style.opacity=String(value); images[1].style.opacity=String(1-value); images[0].style.transition=images[1].style.transition=(calm)?'none':'opacity .8s ease'; } }, demonstrate(active) { shownImageIndex=active?1:0; images[0].style.opacity=active?'0':'1'; images[1].style.opacity=active?'1':'0'; } });
   // Only the next act is warmed. No global cache that keeps all four acts alive.
   const preloads = (phase.nextImages || []).map(file => { const img = new Image(); img.src = base + file; return img; });
   const reduced = () => calm;
@@ -91,6 +92,8 @@ export async function mountFirstPersonScene(host, { phase, onProject, onMode, ca
   media.addEventListener('change', resume); document.addEventListener('visibilitychange', resume);
   resume();
   return {
+    // 目前畫面上顯示的是第幾張插畫（點角色聽台詞依此找角色位置）。
+    get imageIndex(){ return shownImageIndex; },
     strategyPlane,
     focusPoint(x){target=Math.max(0,Math.min(1,(imageWidth*x/100-host.clientWidth/2)/(imageWidth-host.clientWidth || 1)));pan=target;render();},
     startDemo() { interaction.startDemo?.(); },
