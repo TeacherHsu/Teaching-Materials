@@ -3,7 +3,7 @@ import { chooseCard, orderCards } from '../activities/situation/operations.js';
 import { meterFor, validateUnlockedLesson } from '../data/situationLessons/schema.js';
 import { animationReduced } from '../activities/firstPersonPreferences.js';
 import { playChime } from '../activities/firstPersonChime.js';
-import { sentenceSources, moodFor, subtitlePlan, beatLines, subtitleDuration, nextBeat, createPlayback, createCardOrder } from '../activities/firstPersonPresentation.js';
+import { sentenceSources, meterRevealed, moodFor, subtitlePlan, beatLines, subtitleDuration, nextBeat, createPlayback, createCardOrder } from '../activities/firstPersonPresentation.js';
 import { operationComplete } from '../activities/firstPersonInteraction.js';
 import { h, clear } from '../utils/dom.js';
 import { SpeakButton } from '../components/SpeakButton.js';
@@ -159,6 +159,8 @@ export function FirstPersonPage(lesson) {
 
   function updateMood(remembered = false, readRef = null, meterEvent = null) {
     const node = root.querySelector('.fp-mood'); if (!node) return;
+    node.hidden=!meterRevealed(scene,state.read);
+    if(node.hidden){clear(node);moodLabel='';return;}
     const m = meterEvent ? {level:meterEvent.level,sourceLabel:config.meter.states[meterEvent.state],label:config.meter.labels?.[meterEvent.state] || config.meter.states[meterEvent.state],face:config.meter.faces?.[meterEvent.state] || '🙂'} : meterFor(config, scene, state.operation.step, remembered, readRef);
     moodLabel=m.sourceLabel || m.label;
     clear(node); node.dataset.level = String(m.level);node.classList.toggle('fp-status-meter',Boolean(config.meter.title));
