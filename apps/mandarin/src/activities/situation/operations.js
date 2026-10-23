@@ -52,6 +52,7 @@ export function sourceCaptionText(spec, resolve) {
 export function mountConfiguredOperation(plane, options, api) {
   const {scene,state,changed,reduced=()=>false,saveDemo=()=>{},focus}=options;
   const config=scene.operation;
+  const retryText=()=>config.retryByStep?.[state.step] || config.retry;
   if(['rhythmTap','aimShot','holdBreath'].includes(config.type))return mountSportsOperation(plane,options,api);
   const clockHands=new Map();
   let clockDragged=false;
@@ -105,7 +106,7 @@ export function mountConfiguredOperation(plane, options, api) {
     committing=true;
     animation?.cancel();handAnimation?.cancel();hand.hidden=true;clearTimeout(demoTimer);
     try{
-      if(!api.operate(action)){render();tell(config.retry || '先完成目前這一步。');return false;}
+      if(!api.operate(action)){render();tell(retryText() || '先完成目前這一步。');return false;}
       // Optional dialogue uses the unlocked source in memory, without an action subtitle.
       if(spec?.sourceSpeech){const text=sourceCaptionText(spec.sourceSpeech,options.sourceText);if(text)speak(text);}
       changed();
@@ -115,8 +116,24 @@ export function mountConfiguredOperation(plane, options, api) {
   }
   function observe(o){
     if(motionBusy || completed(o))return;
+    if(['machineProcess','machineCut'].includes(o.viewMotion) && state.step!==config.steps.indexOf(o.action)){
+      tell(retryText() || '先完成前一步。');return;
+    }
     if(o.viewMotion && !reduced()){
       motionBusy=true;render();
+      if(['machineProcess','machineCut'].includes(o.viewMotion)){
+        // A guarded machine cycle, never a hand or exposed cutting tool. The
+        // state advances only after the cycle, and pause/dispose cancels it.
+        const cycle=document.createElement('span');cycle.className='fp-machine-cycle';
+        cycle.setAttribute('aria-hidden','true');const region=o.machineRegion || {x:50,y:47,width:12,height:18};pos(cycle,region.x,region.y);cycle.style.width=`${region.width}%`;cycle.style.height=`${region.height}%`;layer.append(cycle);
+        const band=document.createElement('i');cycle.append(band);
+        animation=band.animate(o.viewMotion==='machineCut'
+          ? [{transform:'translateY(-100%)'},{transform:'translateY(100%)'},{transform:'translateY(-100%)'}]
+          : [{transform:'translateX(-65%)'},{transform:'translateX(65%)'},{transform:'translateX(-65%)'}],
+          {duration:1000,easing:'ease-in-out'});
+        animation.onfinish=()=>{animation=null;cycle.remove();motionBusy=false;if(!paused && !disposed)commit(o.action);render();};
+        animation.oncancel=()=>{cycle.remove();motionBusy=false;if(!disposed)render();};return;
+      }
       const local=['turn','fan'].includes(o.viewMotion);
       const pose=({lookUp:'scale(1.035) translateY(8px)',approach:'scale(1.05)',turn:'rotateY(360deg)',jump:'scale(1.08) translateY(14px)',fan:'rotate(35deg)'})[o.viewMotion];
       animation=(local?elements.get(o.action):plane.parentElement).animate([{transform:'none'},{transform:pose,offset:.65},{transform:'none'}],{duration:750,easing:'ease-in-out'});
@@ -132,9 +149,9 @@ export function mountConfiguredOperation(plane, options, api) {
   function targetFor(o,p){const r=config.regions?.[o.region || 'target'];return containsPoint(r,p);}
   function drop(o,p){
     if(gesture(o)==='dragToTarget'){
-      if(targetFor(o,p)){commit(o.action);selected=null;}else tell(config.retry || '移到發亮的目標區，再放開。');
+      if(targetFor(o,p)){commit(o.action);selected=null;}else tell(retryText() || '移到發亮的目標區，再放開。');
     }else if(config.type==='toolGrab'){
-      if(gripped && targetFor(gripped,p)){commit(gripped.action);gripped=null;toolReady=false;selected=null;}else tell(config.retry || '先拿工具、選物件，再放到目標區。');
+      if(gripped && targetFor(gripped,p)){commit(gripped.action);gripped=null;toolReady=false;selected=null;}else tell(retryText() || '先拿工具、選物件，再放到目標區。');
     }
     snap(o);
   }
@@ -215,8 +232,8 @@ export function mountConfiguredOperation(plane, options, api) {
       if(!drag || drag.id!==e.pointerId)return;el.onpointermove(e);const gesture=drag;drag=null;
       if(gesture.moved){suppress=true;setTimeout(()=>suppress=false,0);
         if(o.gesture==='rotateClock'){clockDragged=true;select(o);saveDemo();}
-        else if(config.type==='tracePath' || o.gesture==='tracePath'){if(traceProgress===o.path.length)commit(o.action);else tell(config.retry || '按住剪刀，從虛線起點慢慢剪到終點。');traceProgress=0;}
-        else if(config.type==='scoopGesture'){if(gesture.lifted)commit(config.steps[state.step]);else tell(config.retry || '拖入區域，再往上拉出。');}
+        else if(config.type==='tracePath' || o.gesture==='tracePath'){if(traceProgress===o.path.length)commit(o.action);else tell(retryText() || '按住剪刀，從虛線起點慢慢剪到終點。');traceProgress=0;}
+        else if(config.type==='scoopGesture'){if(gesture.lifted)commit(config.steps[state.step]);else tell(retryText() || '拖入區域，再往上拉出。');}
         else drop(o,point(e));
       }
       snap(o);if(gripped)snap(gripped);
@@ -225,7 +242,7 @@ export function mountConfiguredOperation(plane, options, api) {
   }
   if(config.type==='orderCards'){
     const confirm=document.createElement('button');confirm.type='button';confirm.className='fp-button';confirm.textContent='確認次序';
-    confirm.onclick=()=>{if(paused)return;if(cards.selected.length===config.objects.length && cards.selected.every((n,i)=>n===config.answer[i]))commit(config.steps[state.step]);else tell(config.retry || '再核對次序。');};
+    confirm.onclick=()=>{if(paused)return;if(cards.selected.length===config.objects.length && cards.selected.every((n,i)=>n===config.answer[i]))commit(config.steps[state.step]);else tell(retryText() || '再核對次序。');};
     status.append(confirm);
   }
   // Static dashed destination and guide; source art remains unchanged.

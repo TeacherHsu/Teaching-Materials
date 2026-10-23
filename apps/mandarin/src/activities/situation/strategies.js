@@ -71,7 +71,7 @@ export function mountStrategy({strategy, panel, plane, stage, states, onWords, o
 export function mountBag({entry,panel,plane,assetBase,onDone}) {
   const say=text=>h('div',{class:'fp-spoken'},[h('p',{},text),SpeakButton({text})]);
   panel.append(say(entry.prompt));
-  const bag=h('button',{type:'button',class:'fp-strategy-bag',style:`left:${entry.object.x}%;top:${entry.object.y}%;width:${entry.object.width}%`,'aria-label':entry.label},[h('img',{src:`${assetBase}sprites/${entry.object.sprite}.webp`,alt:''})]);plane.append(bag);
+  const bag=h('button',{type:'button',class:`fp-strategy-bag${entry.object.opening===false?' fp-bag-no-opening':''}`,style:`left:${entry.object.x}%;top:${entry.object.y}%;width:${entry.object.width}%`,'aria-label':entry.label},[h('img',{src:`${assetBase}sprites/${entry.object.sprite}.webp`,alt:''})]);plane.append(bag);
   let opened=false,origin=null,disposed=false;
   const open=()=>{
     if(opened || disposed)return;opened=true;bag.classList.add('is-open');bag.setAttribute('aria-label',entry.openedMessage);

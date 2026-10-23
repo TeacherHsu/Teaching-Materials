@@ -5,6 +5,8 @@ export function moodFor(act, step, remembered = false) {
   return { level, label: act === 4 && remembered ? '用心記住' : level === 0 ? '平靜' : level === 1 ? '有點慌張' : level === 2 ? '慌張' : '十分慌張', face: level === 0 ? '🙂' : '😟' };
 }
 export const subtitlePlan = scene => scene.clues.flatMap(c => c.refs || []);
+// Hide a source-backed progress label until its evidence has actually been read.
+export const meterRevealed = (scene, read = []) => !scene.meterRevealAt || read.includes(`${scene.meterRevealAt.para}:${scene.meterRevealAt.n}`);
 
 export const beatLines = refs => refs.flatMap(ref => ref.sentences.map(n => ({para:ref.para,n})));
 export const subtitleDuration = text => Math.max(2500, [...text].length * 180);

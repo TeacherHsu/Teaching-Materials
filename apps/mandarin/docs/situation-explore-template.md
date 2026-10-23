@@ -124,3 +124,10 @@
 - `emotionClue.options[].presentation: 'picture'` 必須搭配 `sprite`、`width`：以插畫本身作為可點擊按鈕，畫面不另放文字或實心標記。保留具體 `label` 作為無障礙名稱與獨立喇叭；可用1–2張正解圖卡，仍以 `states`／`refs` 連到原文情緒詞。圖片、按鈕與原圖共用 cover 幾何，離開策略清除；未設定時沿用既有臉旁標記。
 - 最後一幕的 `orderCards` 題可選 `afterOrderSupport`，全課最多一則。僅在排序答對、該幕完成後顯示，附手動朗讀鈕，不自動命令式朗讀。頁面 session 以題目 ID 記錄已顯示，重繪、回看／重玩不重複插入；重新載入頁面是新的閱讀 session。
 - 〈為什麼大家不理我？〉使用教師指定2400×1024橫幅場景，滿版 cover；圖卡、操作物與正誤標記另驗1366×900、820×1180、375×812及678×771，策略展開時保留畫面上方74%的可操作範圍。
+
+## 小鉛筆：說明文程序與封閉機器（2026-10-23）
+
+- 非人物量表沿用 `meter.title/subject/labels/stateEvidence`。可選 `scene.meterRevealAt:{para,n}`：讀到依據前整個量表隱藏（包含朗讀與無障礙文字），搭配既有 `meter.read` 在該句刷新；避免開場量表洩漏預測答案。該索引必須存在於本幕線索，其他課預設一直顯示。
+- `operation.retryByStep` 為與 steps 等長的溫和提示陣列，錯序／錯放以目前 state.step 取提示；沒設定時沿用 retry。只提示、不扣分。
+- `object.viewMotion:'machineProcess'|'machineCut'` 是安全機器工作窗動畫，選用 `machineRegion:{x,y,width,height}` 指定原圖百分比矩形；不畫手或外露刀具。動畫完成才提交一次 state，連點忽略，暫停／離頁取消，減少動態直接完成。兩者限依序的操作步驟，不供 collect 動作使用。
+- 本課使用教師指定2400×1024滿版cover；每幕摘要兩圖，第4幕另有比較與製作排序。動手中穿插讀文時固定 timeline.imageIndex，完成前不顯示結果物件。四尺寸包含678×771，策略正解／干擾與操作熱區皆檢查完整邊界及上方74%安全區。
