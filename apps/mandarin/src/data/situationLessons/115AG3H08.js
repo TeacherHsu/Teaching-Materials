@@ -899,7 +899,7 @@ export default {
             "ratio": 1,
             "angle": 0,
             "grounded": true,
-            "observation": "",
+            "observation": "沒有貝殼。",
             "hotspot": true,
             "gesture": "observe",
             "fromStep": 2,
@@ -915,7 +915,7 @@ export default {
             "ratio": 1,
             "angle": 0,
             "grounded": true,
-            "observation": "",
+            "observation": "這裡也沒有。",
             "hotspot": true,
             "gesture": "observe",
             "fromStep": 3,
@@ -931,7 +931,7 @@ export default {
             "ratio": 1,
             "angle": 0,
             "grounded": true,
-            "observation": "",
+            "observation": "一個都沒有。",
             "hotspot": true,
             "gesture": "observe",
             "fromStep": 4,
@@ -967,9 +967,9 @@ export default {
         "prompts": [
           "點紙杯看一看",
           "輕輕移開紙杯",
-          "點沙灘找貝殼",
-          "再找一處沙灘",
-          "再找一處沙灘",
+          "點發亮的沙找貝殼",
+          "再點另一處發亮的沙",
+          "再點最後一處",
           "點月光看看海"
         ],
         "protectedRegions": [
@@ -1357,8 +1357,8 @@ export default {
         {
           "id": "cap-cause",
           "type": "causeEffect",
-          "prompt": "寄居蟹為什麼只能住在瓶蓋裡？",
-          "hint": "想想牠為什麼找不到殼。",
+          "prompt": "寄居蟹想要住哪裡？",
+          "hint": "想想寄居蟹原本住在哪裡。",
           "refs": [
             {
               "para": 12,
@@ -1397,10 +1397,10 @@ export default {
             54
           ],
           "focus": 50,
-          "explanation": "牠需要換殼，但沙灘上的殼被撿走了。",
+          "explanation": "寄居蟹想住貝殼，但殼都被人類撿走了，只好住瓶蓋。",
           "options": [
             {
-              "label": "殼都被人類撿走了",
+              "label": "貝殼",
               "x": 44,
               "y": 61,
               "refs": [
@@ -1441,7 +1441,7 @@ export default {
               ]
             },
             {
-              "label": "瓶蓋比較漂亮",
+              "label": "瓶蓋",
               "x": 56,
               "y": 61,
               "refs": [

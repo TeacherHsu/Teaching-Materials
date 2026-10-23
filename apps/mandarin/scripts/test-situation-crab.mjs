@@ -25,7 +25,8 @@ for(const s of lesson.scenes){
  for(const [i,t]of s.timeline.entries())if(t.kind==='read' && s.timeline.slice(i+1).some(t=>t.kind==='act'))assert.ok(Number.isInteger(t.imageIndex));
 }
 assert.equal(lesson.script.stageDirectionStyle,'small-italic');assert.equal(lesson.script.speakStageDirections,false);
-const cause=lesson.scenes[0].strategies[0];assert.deepEqual(cause.answer,[0]);assert.equal(cause.options[0].label,'殼都被人類撿走了');assert.equal(cause.options[1].label,'瓶蓋比較漂亮');assert.equal(chooseStrategy(cause,1).complete,false);assert.equal(chooseStrategy(cause,0).complete,true);
+const cause=lesson.scenes[0].strategies[0];assert.deepEqual(cause.answer,[0]);// CF 2026-10-23：選項配圖是貝殼／瓶蓋，題目改問「想要住哪裡」。
+assert.equal(cause.prompt,'寄居蟹想要住哪裡？');assert.equal(cause.options[0].label,'貝殼');assert.equal(cause.options[1].label,'瓶蓋');assert.equal(chooseStrategy(cause,1).complete,false);assert.equal(chooseStrategy(cause,0).complete,true);
 for(const o of cause.options){assert.notEqual(o.label,cause.prompt);assert.ok(o.markerOffset[1]>o.width);}
 assert.equal(lesson.scenes[1].strategies[0].type,'emotionClue');assert.equal(lesson.scenes[3].strategies[0].type,'predict');assert.equal(lesson.scenes[3].strategies[0].answer,undefined);assert.ok(!lesson.scenes[3].strategies[0].options.some(o=>/志工|貝殼|新家/.test(o)));
 assert.equal(lesson.scenes[3].questions[1].lockOrderSelections,true);

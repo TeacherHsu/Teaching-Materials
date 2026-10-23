@@ -100,7 +100,7 @@ export function mountConfiguredOperation(plane, options, api) {
     status.classList.toggle('fp-operation-complete',api.complete());layer.classList.toggle('fp-operation-complete',api.complete());
     tell(config.prompts?.[state.step] || scene.goal);const group=config.groups?.find(g=>state.step>=g.from && state.step<g.to) || config.groups?.at(-1);counter.textContent=group?`${Math.min(group.to-group.from,Math.max(0,state.step-group.from))}／${group.to-group.from}`:`${state.step}／${config.steps.length}`;
     if(lastStep!==state.step){lastStep=state.step;focus?.(config.focus?.[state.step] ?? config.objects.find(o=>o.action===config.steps[state.step])?.x ?? config.objects[0].x);}
-    for(const marker of layer.children){if(marker.dataset?.dragGuide)marker.hidden=!['dragToTarget','toolGrab'].includes(gesture(config.objects.find(o=>o.action===config.steps[state.step]) || {})) || api.complete();if(marker.dataset?.region)marker.hidden=marker.dataset.region!==(config.objects.find(o=>o.action===config.steps[state.step])?.region || 'target') || api.complete();}
+    for(const marker of layer.children){if(marker.dataset?.dragGuide)marker.hidden=!['dragToTarget','toolGrab'].includes(gesture(config.objects.find(o=>o.action===config.steps[state.step]) || {})) || api.complete();if(marker.dataset?.region){const cur=config.objects.find(o=>o.action===config.steps[state.step]);/* 只點一下的步驟不顯示放置虛線框，輪到拖曳時才出現。 */marker.hidden=!cur || (cur.hotspot && !['dragToTarget','toolGrab','scoopGesture','tracePath'].includes(gesture(cur))) || marker.dataset.region!==(cur.region || 'target') || api.complete();}}
     guide(config.objects.find(o=>o.action===config.steps[state.step]) || config.objects[0]);
     options.heat?.(config.heat?.[state.step] ?? 1);
   }
