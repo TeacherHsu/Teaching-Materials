@@ -1,3 +1,4 @@
+import { seededOrder } from '../../utils/shuffle.js';
 import { h } from '../../utils/dom.js';
 import { SpeakButton } from '../../components/SpeakButton.js';
 
@@ -54,6 +55,7 @@ export function mountStrategy({strategy, panel, plane, stage, states, onWords, o
     const row=h('div',{class:'fp-card-row'});panel.append(row);
     strategy.options.forEach((label,i)=>row.append(h('div',{class:'fp-answer-row'},[h('button',{type:'button',class:'fp-button',onclick:()=>choose(i)},label),SpeakButton({text:label})])));
   }else{
+    const panelRows=[];
     strategy.options.forEach((option,i)=>{
       if(option.sprite && option.presentation!=='picture'){
         const art=h('img',{src:`${assetBase}sprites/${option.sprite}.webp`,alt:'','aria-hidden':'true',class:'fp-strategy-evidence',style:`left:${option.x}%;top:${option.y}%;width:${option.width || 10}%`});
@@ -65,8 +67,10 @@ export function mountStrategy({strategy, panel, plane, stage, states, onWords, o
       if(option.presentation==='picture'){button.style.width=`${option.width}%`;button.replaceChildren(h('img',{src:`${assetBase}sprites/${option.sprite}.webp`,alt:''}));}
       plane.append(button);nodes.push(button);
       if(option.face){const ring=h('span',{class:'fp-face-ring','data-face-index':String(i),'aria-hidden':'true',style:`left:${option.x}%;top:${option.y}%;width:${option.face.width}%;height:${option.face.height}%`});plane.append(ring);nodes.push(ring);}
-      panel.append(h('div',{class:'fp-spoken'},[h('span',{},option.label),SpeakButton({text:option.label})]));
+      panelRows[i]=h('div',{class:'fp-spoken'},[h('span',{},option.label),SpeakButton({text:option.label})]);
     });
+    // 圖上標記位置不動；面板中的選項文字依題目打亂，避免正解總排第一。
+    for(const i of seededOrder(panelRows.length,strategy.id || strategy.prompt))panel.append(panelRows[i]);
     stage.addEventListener('click',wrong);focus(strategy.focus ?? strategy.options[0].x);
   }
   return ()=>{disposed=true;timers.forEach(clearTimeout);nodes.forEach(n=>n.remove());stage.removeEventListener('click',wrong);panel.remove();};

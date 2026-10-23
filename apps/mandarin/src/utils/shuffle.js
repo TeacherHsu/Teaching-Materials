@@ -83,3 +83,14 @@ export function shuffleDiffering(items, seed) {
   [result[0], result[1]] = [result[1], result[0]];
   return result;
 }
+
+/**
+ * 選項顯示順序：以 seed 字串決定 0..n-1 的排列，同一題每次相同，不同題各自不同。
+ * 只改「顯示順序」，答案仍用原始索引判定。
+ * @param {number} n
+ * @param {string} seed
+ * @returns {number[]}
+ */
+export function seededOrder(n, seed) {
+  return fisherYates(Array.from({ length: n }, (_, i) => i), mulberry32(hashSeed(String(seed))));
+}

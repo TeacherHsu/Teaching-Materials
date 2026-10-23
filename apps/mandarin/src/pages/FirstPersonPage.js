@@ -10,6 +10,7 @@ import { h, clear } from '../utils/dom.js';
 import { SpeakButton } from '../components/SpeakButton.js';
 import { getReading, unlockWithPassword, cryptoAvailable } from '../utils/classroomKey.js';
 import { splitSentences } from '../utils/readingUnits.js';
+import { seededOrder } from '../utils/shuffle.js';
 import { cancelSpeaking, speak, speechSupported } from '../utils/speech.js';
 import { getFirstPersonLesson, clueRefs } from '../data/firstPersonLesson.js';
 import { answerScene, canAnswer, readProgress, saveProgress, reward } from '../activities/firstPersonCore.js';
@@ -161,7 +162,7 @@ export function FirstPersonPage(lesson) {
     stage.addEventListener('pointerup', () => { pointer = null; }); stage.addEventListener('pointercancel', () => { pointer = null; });
     stage.addEventListener('keydown', (e) => { if (e.target !== stage) return; if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) { e.preventDefault(); world?.look(e.key === 'ArrowLeft' ? .08 : e.key === 'ArrowRight' ? -.08 : 0, e.key === 'ArrowUp' ? .05 : e.key === 'ArrowDown' ? -.05 : 0); } });
     const version = generation;
-    mountFirstPersonScene(stage, { sourceText: ref => sources.get(`source:${ref.para}:${ref.n}`), phase: { ...scene, nextImages: config.scenes[progress.current+1]?.art.images, id: scene.id.replace(/^story-/, "") }, calm: calm(), operation: state.operation, onQuiet: value => { quietProgress=value; sound(); }, onChime: chime, onDemoSeen: () => { if(!replay)save(); }, onOperation: () => { if (!replay) save(); updateMood(); if(beat==='act' && (operationComplete(scene,state.operation) || scene.timeline?.[timelineIndex]?.untilStep<=state.operation.step)) {
+    mountFirstPersonScene(stage, { soundEnabled: () => prefs.sound && !document.hidden && !modal?.open, sourceText: ref => sources.get(`source:${ref.para}:${ref.n}`), phase: { ...scene, nextImages: config.scenes[progress.current+1]?.art.images, id: scene.id.replace(/^story-/, "") }, calm: calm(), operation: state.operation, onQuiet: value => { quietProgress=value; sound(); }, onChime: chime, onDemoSeen: () => { if(!replay)save(); }, onOperation: () => { if (!replay) save(); updateMood(); if(beat==='act' && (operationComplete(scene,state.operation) || scene.timeline?.[timelineIndex]?.untilStep<=state.operation.step)) {
       // Commit the operation's completion focus before focusing a dialogue marker.
       if(config.scriptTap){const at=timelineIndex,version=generation;queueMicrotask(()=>{if(!disposed && version===generation && beat==='act' && at===timelineIndex)finishBeat('act');});}
       else finishBeat('act');
@@ -366,7 +367,8 @@ export function FirstPersonPage(lesson) {
       content.append(say(q.stem));
       const choices = h('div', { class: 'fp-card-row' });
       const orderStatus = h('p', {class:'fp-sr', 'aria-live':'polite'}); content.append(orderStatus);
-      const cardOrder = orderCards(q.initialOrder || q.options.map((_,i)=>i));
+      // 單選題的選項顯示順序依題目打亂（固定種子），避免正解總在最左邊；排序題沿用自己的 initialOrder。
+      const cardOrder = orderCards(q.initialOrder || seededOrder(q.options.length, `${config.lessonId}:${q.id}`));
       let dragged = null, suppressClick = false;
       function renderCards() {
         clear(choices);
