@@ -270,8 +270,13 @@
     const DEI3_FOLLOWERS = new Set(Array.from('走先再去做把從用有靠想等花帶穿等留回上下開'));
     function isDei3At(chars, index) {
         if (chars[index] !== '得') return false;
-        if (!DEI3_FOLLOWERS.has(chars[index + 1] || '')) return false;
-        const previous = chars[index - 1] || '';
+        // 斷詞標記「|」不算鄰字（如「我||得||去」），往外找真正的前後字。
+        let after = index + 1;
+        while (chars[after] === '|') after++;
+        let before = index - 1;
+        while (chars[before] === '|') before--;
+        if (!DEI3_FOLLOWERS.has(chars[after] || '')) return false;
+        const previous = chars[before] || '';
         if (!previous || /[^\u3400-\u9fff]/.test(previous)) return true;
         return DEI3_PRECEDERS.has(previous);
     }
