@@ -55,6 +55,7 @@ export function mountConfiguredOperation(plane, options, api) {
   const retryText=()=>config.retryByStep?.[state.step] || config.retry;
   if(['rhythmTap','aimShot','holdBreath'].includes(config.type))return mountSportsOperation(plane,options,api);
   const clockHands=new Map();
+  const sceneEffects=[];
   let clockDragged=false;
   const gesture=o=>o.gesture || config.type;
   const available=o=>state.step>=(o.fromStep ?? 0) && state.step<=(o.toStep ?? config.steps.length);
@@ -89,13 +90,14 @@ export function mountConfiguredOperation(plane, options, api) {
   const point=e=>{const r=plane.getBoundingClientRect();return {x:(e.clientX-r.left)/r.width*100,y:(e.clientY-r.top)/r.height*100};};
   const snap=o=>{const el=elements.get(o.action);el.style.width=`${completed(o) && o.destinationWidth ? o.destinationWidth : o.width}%`;pos(el,...(completed(o) && o.destination ? o.destination : [o.x,o.y]));};
   function render(){
+    for(const {node,step} of sceneEffects)node.hidden=state.step!==step && !(motionBusy && state.step===step-1);
     for(const o of config.objects){const caption=sourceCaptions.get(o.action);if(caption)caption.hidden=Boolean(o.sourceCaption.afterAction && !config.steps.slice(0,state.step).includes(o.sourceCaption.afterAction));}
     for(const o of config.objects){const audio=objectAudio.get(o.action);if(audio){audio.hidden=paused || !available(o) || completed(o) || api.complete();}}
-    for(const o of config.objects){const el=elements.get(o.action);const used=Boolean(o.consumedBy && state.collected?.includes(o.consumedBy) || o.usedFade && state.collected?.includes(o.action));el.classList.toggle('fp-used',used);if(o.completedSprite){const img=el.querySelector('img');if(img)img.src=base+(completed(o)?o.completedSprite:o.sprite)+'.webp';}el.hidden=!available(o);el.style.pointerEvents=o.passive?'none':'';el.disabled=Boolean(paused || motionBusy || used || o.passive || api.complete() || !available(o) || completed(o));el.setAttribute('aria-pressed',String(selected===o || gripped===o));if(!drag)snap(o);}
+    for(const o of config.objects){const el=elements.get(o.action);const used=Boolean(o.consumedBy && state.collected?.includes(o.consumedBy) || o.usedFade && state.collected?.includes(o.action));el.classList.toggle('fp-used',used);if(o.completedSprite){const img=el.querySelector('img');if(img)img.src=base+(completed(o)?o.completedSprite:o.sprite)+'.webp';}el.hidden=!available(o) || Boolean(o.hideWhenCompleted && completed(o));el.style.pointerEvents=o.passive?'none':'';el.disabled=Boolean(paused || motionBusy || used || o.passive || api.complete() || !available(o) || completed(o));el.setAttribute('aria-pressed',String(selected===o || gripped===o));if(!drag)snap(o);}
     status.classList.toggle('fp-operation-complete',api.complete());layer.classList.toggle('fp-operation-complete',api.complete());
     tell(config.prompts?.[state.step] || scene.goal);const group=config.groups?.find(g=>state.step>=g.from && state.step<g.to) || config.groups?.at(-1);counter.textContent=group?`${Math.min(group.to-group.from,Math.max(0,state.step-group.from))}／${group.to-group.from}`:`${state.step}／${config.steps.length}`;
     if(lastStep!==state.step){lastStep=state.step;focus?.(config.focus?.[state.step] ?? config.objects.find(o=>o.action===config.steps[state.step])?.x ?? config.objects[0].x);}
-    for(const marker of layer.children){if(marker.dataset?.dragGuide)marker.hidden=!['dragToTarget','toolGrab'].includes(gesture(config.objects.find(o=>o.action===config.steps[state.step]) || {})) || api.complete();if(marker.dataset?.region)marker.hidden=marker.dataset.region!==(config.objects.find(o=>o.action===config.steps[state.step])?.region || 'target') || api.complete();}
+    for(const marker of layer.children){if(marker.dataset?.dragGuide)marker.hidden=!['dragToTarget','toolGrab'].includes(gesture(config.objects.find(o=>o.action===config.steps[state.step]) || {})) || api.complete();if(marker.dataset?.region){const cur=config.objects.find(o=>o.action===config.steps[state.step]);/* 只點一下的步驟不顯示放置虛線框，輪到拖曳時才出現。 */marker.hidden=!cur || (cur.hotspot && !['dragToTarget','toolGrab','scoopGesture','tracePath'].includes(gesture(cur))) || marker.dataset.region!==(cur.region || 'target') || api.complete();}}
     guide(config.objects.find(o=>o.action===config.steps[state.step]) || config.objects[0]);
     options.heat?.(config.heat?.[state.step] ?? 1);
   }
@@ -118,6 +120,23 @@ export function mountConfiguredOperation(plane, options, api) {
     if(motionBusy || completed(o))return;
     if(['machineProcess','machineCut'].includes(o.viewMotion) && state.step!==config.steps.indexOf(o.action)){
       tell(retryText() || '先完成前一步。');return;
+    }
+    if(['sandSearch','nod','hideInSand','sandPuff'].includes(o.viewMotion)){
+      if(state.step!==config.steps.indexOf(o.action))return;
+      const effect=document.createElement('span');effect.className=`fp-action-${o.viewMotion==='hideInSand'?'sandPuff':o.viewMotion}`;effect.setAttribute('aria-hidden','true');pos(effect,o.x,o.y);
+      layer.append(effect);
+      if(o.viewMotion==='nod'){
+        const width=6,height=10,index=scene.art.stepImages?.[state.step] ?? 0;
+        effect.style.backgroundImage=`url(${import.meta.env?.BASE_URL || '/'}${scene.assetBase}${scene.art.images[index]})`;
+        effect.style.backgroundSize=`${10000/width}% ${10000/height}%`;
+        effect.style.backgroundPosition=`${(o.x-width/2)/(100-width)*100}% ${(o.y-height/2)/(100-height)*100}%`;
+      }
+      if(['sandSearch','sandPuff','hideInSand'].includes(o.viewMotion))for(let i=0;i<7;i++){const grain=document.createElement('i');grain.style.setProperty('--grain',i);effect.append(grain);}
+      const frames=o.viewMotion==='nod'?[{transform:'translate(-50%,-50%)'},{transform:'translate(-50%,-47%) scaleY(.94)',offset:.5},{transform:'translate(-50%,-50%)'}]:[{opacity:0},{opacity:1,offset:.4},{opacity:0}];
+      const finish=()=>{animation=null;motionBusy=false;if(!paused && !disposed)commit(o.action);effect.remove();render();};
+      if(reduced()){finish();return;}
+      motionBusy=true;render();animation=effect.animate(frames,{duration:['sandPuff','hideInSand'].includes(o.viewMotion)?600:650,easing:'ease-out',fill:'forwards'});
+      animation.onfinish=finish;animation.oncancel=()=>{effect.remove();motionBusy=false;if(!disposed)render();};return;
     }
     if(o.viewMotion && !reduced()){
       motionBusy=true;render();
@@ -149,7 +168,10 @@ export function mountConfiguredOperation(plane, options, api) {
   function targetFor(o,p){const r=config.regions?.[o.region || 'target'];return containsPoint(r,p);}
   function drop(o,p){
     if(gesture(o)==='dragToTarget'){
-      if(targetFor(o,p)){commit(o.action);selected=null;}else tell(retryText() || '移到發亮的目標區，再放開。');
+      if(targetFor(o,p)){
+        if(o.returnOnDrop){selected=null;tell(o.returnOnDrop);}
+        else {commit(o.action);selected=null;}
+      }else tell(retryText() || '移到發亮的目標區，再放開。');
     }else if(config.type==='toolGrab'){
       if(gripped && targetFor(gripped,p)){commit(gripped.action);gripped=null;toolReady=false;selected=null;}else tell(retryText() || '先拿工具、選物件，再放到目標區。');
     }
@@ -194,6 +216,7 @@ export function mountConfiguredOperation(plane, options, api) {
     const el=document.createElement('button');el.type='button';el.className=`fp-object ${o.target?'fp-drop-target fp-glow':''}`;el.dataset.action=o.action;el.setAttribute('aria-label',o.label);
     if(o.minHitSize)el.style.setProperty('--fp-hit-size',`${o.minHitSize}px`);
     el.style.width=`${o.width}%`;el.style.aspectRatio=String(1/o.ratio);el.style.rotate=`${o.angle}deg`;pos(el,o.x,o.y);
+    if(o.idleMotion==='wiggle')el.classList.add('fp-cap-wiggle');
     if(o.sprite){const img=new Image();img.src=base+o.sprite+'.webp';img.alt='';img.draggable=false;el.append(img);}else if(!o.target && !o.hotspot)el.textContent=o.label;
     if(gesture(o)==='rotateClock'){
       const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 100 100');svg.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none';
@@ -213,7 +236,7 @@ export function mountConfiguredOperation(plane, options, api) {
       if(config.type==='toolGrab')select(o);else selected=o;
       traceProgress=0;
       if(gesture(o)==='tracePath')traceProgress=advanceTrace(0,null,point(e),o.path,o.tolerance);
-      drag={id:e.pointerId,o,start:point(e),point:point(e),dipped:false,moved:false};el.setPointerCapture(e.pointerId);
+      drag={id:e.pointerId,o,start:point(e),point:point(e),startedAt:performance.now(),dipped:false,moved:false};el.setPointerCapture(e.pointerId);
     };
     el.onpointermove=e=>{
       if(!drag || drag.id!==e.pointerId)return;const p=point(e);drag.moved ||= Math.hypot(p.x-drag.start.x,p.y-drag.start.y)>1;
@@ -231,7 +254,8 @@ export function mountConfiguredOperation(plane, options, api) {
     el.onpointerup=e=>{
       if(!drag || drag.id!==e.pointerId)return;el.onpointermove(e);const gesture=drag;drag=null;
       if(gesture.moved){suppress=true;setTimeout(()=>suppress=false,0);
-        if(o.gesture==='rotateClock'){clockDragged=true;select(o);saveDemo();}
+        if(o.minDragMs && performance.now()-gesture.startedAt<o.minDragMs){selected=null;tell(o.gentlePrompt || '輕輕的');}
+        else if(o.gesture==='rotateClock'){clockDragged=true;select(o);saveDemo();}
         else if(config.type==='tracePath' || o.gesture==='tracePath'){if(traceProgress===o.path.length)commit(o.action);else tell(retryText() || '按住剪刀，從虛線起點慢慢剪到終點。');traceProgress=0;}
         else if(config.type==='scoopGesture'){if(gesture.lifted)commit(config.steps[state.step]);else tell(retryText() || '拖入區域，再往上拉出。');}
         else drop(o,point(e));
@@ -261,5 +285,5 @@ export function mountConfiguredOperation(plane, options, api) {
     tell(config.demoPrompt || scene.goal);return true;
   }
   render();
-  return {startDemo(){showWoodDemo();},showWoodDemo,get dragging(){return Boolean(drag);},setPaused(value){const was=paused;paused=value;if(value){motionBusy=false;traceProgress=0;animation?.cancel();handAnimation?.cancel();hand.hidden=true;clearTimeout(demoTimer);if(drag){snap(drag.o);drag=null;}}render();if(!value && was){focus?.(config.focus?.[state.step] ?? scene.art.orientationFocus?.[innerWidth/innerHeight>=1.4?'landscape':'portrait'] ?? config.objects[0].x);if(scene.beats.act.demo)showWoodDemo();}},dispose(){disposed=true;promptResize?.disconnect();clearTimeout(timer);clearTimeout(demoTimer);animation?.cancel();handAnimation?.cancel();bubble?.remove();status.remove();layer.remove();}};
+  return {startDemo(){showWoodDemo();},showWoodDemo,get dragging(){return Boolean(drag);},setPaused(value){const was=paused;paused=value;if(value){motionBusy=false;traceProgress=0;animation?.cancel();handAnimation?.cancel();hand.hidden=true;clearTimeout(demoTimer);if(drag){snap(drag.o);drag=null;}}render();if(!value && was){focus?.(config.focus?.[state.step] ?? scene.art.orientationFocus?.[innerWidth/innerHeight>=1.4?'landscape':'portrait'] ?? config.objects[0].x);if(scene.beats.act.demo)showWoodDemo();}},dispose(){for(const {node} of sceneEffects)node.remove();disposed=true;promptResize?.disconnect();clearTimeout(timer);clearTimeout(demoTimer);animation?.cancel();handAnimation?.cancel();bubble?.remove();status.remove();layer.remove();}};
 }

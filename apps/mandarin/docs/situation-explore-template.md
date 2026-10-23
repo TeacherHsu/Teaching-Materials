@@ -131,3 +131,19 @@
 - `operation.retryByStep` 為與 steps 等長的溫和提示陣列，錯序／錯放以目前 state.step 取提示；沒設定時沿用 retry。只提示、不扣分。
 - `object.viewMotion:'machineProcess'|'machineCut'` 是安全機器工作窗動畫，選用 `machineRegion:{x,y,width,height}` 指定原圖百分比矩形；不畫手或外露刀具。動畫完成才提交一次 state，連點忽略，暫停／離頁取消，減少動態直接完成。兩者限依序的操作步驟，不供 collect 動作使用。
 - 本課使用教師指定2400×1024滿版cover；每幕摘要兩圖，第4幕另有比較與製作排序。動手中穿插讀文時固定 timeline.imageIndex，完成前不顯示結果物件。四尺寸包含678×771，策略正解／干擾與操作熱區皆檢查完整邊界及上方74%安全區。
+
+## 寄居蟹：溫和拖曳與分類（2026-10-23）
+
+- `object.minDragMs`／`gentlePrompt`：選用於dragToTarget；pointer從按下到移動放開未達指定毫秒時，回原位並提示、不提交state。點選物件→點目標保留鍵盤替代，不要求鍵盤計時。取消／暫停不算完成。
+- `object.returnOnDrop`：非steps／collect的分類干擾物；放到目標時顯示溫和提示，清除選取並回原位，不扣分、不改進度。`hideWhenCompleted:true` 讓任意收集的垃圾完成後消失，以各物件state判定；舊課未設定時維持原行為。
+- `scene.roleIntro`／`settingLabel`：幕開頭顯示角色視角與時間地點；角色視角有手動朗讀，時間地點只作畫面表頭。劇本解析另辨識【】舞臺收幕標記，和括號一樣小字斜體、不朗讀。
+- 本課四幕、每幕二圖摘要；操作focus陣列一律含完成格。保留cover、zh-TW與動手無原文字幕，所有正誤熱點／sprite逐一驗四尺寸完整邊界及策略上74%安全區。
+
+
+## 寄居蟹互動加強：點角色聽台詞（2026-10-23）
+
+課次選用 `scriptTap:true`；只在read拍啟用。`art.speakerSpots` 以說話者為key，值為 `{x,y,face:{width,height},markerOffset:[dx,dy]}`，均以原圖百分比指定。標記需在臉旁、至少44px且不覆蓋臉部；透明臉部按鈕提供同一操作。未列出的角色自動讀，可用 `imageIndices` 限制出現底圖、`hiddenSteps` 排除藏身的state步。連續同說話者單位合併成一組，旁白／空說話者自動；不可用分割read拍要求同組多點一次。
+
+設定 `mandarin:explore:settings` 的 `dialogue:'tap'|'auto'`，預設tap；未設scriptTap的課不套用。下一句在等待時等同點角色。自動播放不越過對白等待；切auto回既有播放器。設定／提示暫停、返回同單位續讀，換幕清除token與標記。
+
+本課另選用 `object.viewMotion:'sandSearch'|'nod'|'hideInSand'` 與 `idleMotion:'wiggle'`；動作結束才提交state，取消不完成。藏身為沙堆遮罩、點頭使用既有底圖局部，不是抓動物。19步包含六組新增短操作的11個子步；同一課的timeline每個read拍≤8原始單位，跨相鄰read拍有聲單位同樣≤8（純角色標頭與舞臺指示不發聲）。

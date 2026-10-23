@@ -361,6 +361,12 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 .fp-strategy-bag.fp-bag-no-opening::after{display:none}
 .fp-generic-operation .fp-used{pointer-events:none!important;box-shadow:none!important;background:transparent!important;filter:none!important;animation:none!important;transition:box-shadow .3s,filter .3s}
 .fp-generic-operation .fp-grounded{filter:drop-shadow(0 5px 2px #35220fc0);animation:none}
+.fp-scene-context{position:absolute;z-index:5;top:58px;left:12px;width:max-content;max-width:min(360px,calc(100% - 270px));min-width:120px;box-sizing:border-box;padding:4px 6px;border-radius:12px;background:#fff9ebed;color:#3b342d;font-size:18px;line-height:1.35}
+.fp-scene-context>div:first-child{display:flex;align-items:center;gap:6px}
+/* 角色提示只在每幕開始時出現 4 秒，之後淡出，避免遮住人物的臉。 */
+.fp-scene-context{animation:fp-context-out .5s ease 4s forwards}
+@keyframes fp-context-out{to{opacity:0;visibility:hidden}}
+@media(prefers-reduced-motion:reduce){.fp-scene-context{animation-duration:.01s}}
 @media(prefers-reduced-motion:reduce){.fp-face-ring,.fp-strategy-bag img,.fp-strategy-bag::after{transition:none}}
 .fp-calm .fp-face-ring,.fp-calm .fp-strategy-bag img,.fp-calm .fp-strategy-bag::after{transition:none}
 .fp-prediction-reminder{max-height:120px;overflow:auto;box-sizing:border-box}
@@ -425,3 +431,22 @@ body.fp-immersive #main-content { width:100%; max-width:none; margin:0; padding:
 .fp-machine-cycle i { display:block; position:absolute; inset:30% 10%; border-radius:8px; background:repeating-linear-gradient(90deg,#d9b87f 0 12%,#a78355 12% 14%); }
 
 .fp-mood[hidden] { display:none; }
+
+/* Dialogue targets share the strategy plane; the face stays fully transparent. */
+.fp-speaker-face{position:absolute;transform:translate(-50%,-50%);min-width:44px;min-height:44px;pointer-events:auto;background:transparent;border:0;border-radius:50%;touch-action:manipulation}
+.fp-speaker-face:focus-visible{outline:3px solid #ffe6a2;outline-offset:4px}
+.fp-action-sandSearch,.fp-action-nod,.fp-action-sandPuff{position:absolute;pointer-events:none;transform:translate(-50%,-50%)}
+.fp-action-sandSearch{width:6%;height:6%}
+.fp-action-sandSearch i{position:absolute;left:calc(10% + var(--grain)*12%);top:calc(30% + var(--grain)*5%);width:4px;height:3px;border-radius:50%;background:#e6c493;box-shadow:0 -7px 0 #f2dbb1}
+.fp-action-nod{width:6%;height:10%;border:0;border-radius:50%;background-color:transparent;background-repeat:no-repeat}
+.fp-action-sandPuff{width:8%;height:5%;background:transparent}
+.fp-action-sandPuff i{position:absolute;left:calc(12% + var(--grain)*12%);top:70%;width:4px;height:3px;border-radius:50%;background:#d4ad73;animation:fp-sand-puff .6s ease-out both;--drift:calc((var(--grain) - 3)*9px)}
+@keyframes fp-sand-puff{0%{opacity:0;transform:translate(0,0)}20%{opacity:1}100%{opacity:0;transform:translate(var(--drift),calc(-22px - var(--grain)*3px))}}
+.fp-calm .fp-action-sandPuff i{animation:none}
+@media(prefers-reduced-motion:reduce){.fp-action-sandPuff i{animation:none}}
+@keyframes fp-cap-wiggle{0%,80%,100%{rotate:0deg}86%{rotate:-5deg}94%{rotate:5deg}}
+.fp-cap-wiggle{animation:fp-cap-wiggle 2.8s ease-in-out infinite}
+.fp-calm .fp-cap-wiggle{animation:none}
+@media(prefers-reduced-motion:reduce){.fp-cap-wiggle{animation:none}}
+
+.fp-action-sandPuff[hidden]{display:none}
