@@ -114,3 +114,7 @@
 - `beats.result.safetyReminder` 為教師核定的一則提醒，`safetyDelay` 必須在角色狀態切換之後、結果拍結束之前；`safetyReminderCount` 驗證整課出現次數。每次結果拍只掛一個提醒區塊，開關設定後仍保留提醒排程；只在本課第2、4幕設定。
 - 觀察物件另支援 `viewMotion:'turn'|'jump'|'fan'`：轉瓶、視角跳躍、搖扇。動畫期間停用操作，完成才提交 state；暫停取消不計數，減少動態直接提交。`cardLabel` 提供結果／辦法卡短標籤與獨立喇叭，配對沿用多個 `regions`、拖放與選卡→點目標的鍵盤替代。完成項目保持 no-op。
 - 本單指定2400×1024滿版場景；本課9張場景均≤300KiB、10張物件／卡片均≤120KiB。原始 PNG、縮圖總覽與產圖記錄放 repo 外 `first-person-samples/4A11/`，不加入原文或官方題本。
+
+## 二年級摘要卡（2026-10-23）
+
+課次可選 `summaryCardCount: 2`，每幕 `summaryCard` 的 `options` 與 `summaryImages` 各兩項；未設定時維持三項。選項文字可附圖示，圖片維持無文字。排序題可選 `lockOrderSelections: true`：點選即填入下一排序格，已填卡停用並報讀不同格號；可用「重新排列」清空重排。此設定使用點擊／Tab、Enter，避免填好後再次拖動。

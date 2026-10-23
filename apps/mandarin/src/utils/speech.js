@@ -231,7 +231,8 @@ export function speak(text, opts = {}) {
 
 function speakWithSynthesis(text, overrides, rateOverride) {
   if (!speechSupported() || !text) return Promise.resolve();
-  const speakText = applySpeechOverrides(text, overrides);
+  // 表情符號只給眼睛看，不念出來。
+  const speakText = applySpeechOverrides(String(text).replace(/\p{Extended_Pictographic}\uFE0F?/gu, '').trim(), overrides);
   return new Promise((resolve) => {
     try {
       const utter = new SpeechSynthesisUtterance(speakText);
