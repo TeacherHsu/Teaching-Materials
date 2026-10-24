@@ -58,3 +58,8 @@ export default {
 ### 閱讀策略（2026-10-23）
 
 新增課次可依 [模板的策略與插入拍](situation-explore-template.md#存根修正單1共用閱讀策略與插入拍) 使用 `scene.timeline` 及 `scene.strategies`。預測無正誤；情緒只用指定人物的原文明寫詞；因果點場景；每幕三張摘要卡取代原題，題數不得增加。所有正解、場景線索與策略都必須有原文段句索引＋hash。先在repo外用 `textutil -convert txt -stdout` 讀官方題本，設定及實作紀錄只列題號。每段開場≤8單位，長段在原文順序中插入操作／策略；不要刪原文來縮短。新型別與timeline先只在〈存根〉啟用，回補其他舊課須另有任務。
+
+### 現行工作流（2026-10-24）
+
+流程、硬性規則、驗收方法與已上線課次清單的正本在 sped-os：`30-materials/first-person-reading/README.md`。
+注意：本檔第4點的「960×960 正方形」是早期規劃；目前 16 課實際都用 2400×1024 橫幅場景，容量上限為每課 ≤ 4 MB、單檔 ≤ 300 KB（`scripts/test-situation-asset-budget.mjs`）。
