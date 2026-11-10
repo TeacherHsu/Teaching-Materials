@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>嘴巴探險隊｜注音發音位置練習</title>
+<meta name="description" content="拖拉舌頭和嘴唇、點注音符號或輸入國字，看看嘴巴裡面怎麼動，再跟著做做看。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="logo" aria-hidden="true">👄</span>
+    <div>
+      <h1>嘴巴探險隊</h1>
+      <p>看看發音的時候，嘴巴裡面怎麼動</p>
+    </div>
+  </div>
+  <nav class="modes" aria-label="玩法">
+    <button id="modeExplore" class="mode on" aria-pressed="true">🔍 自由探索</button>
+    <button id="modeChallenge" class="mode" aria-pressed="false">🎯 模仿挑戰</button>
+  </nav>
+  <div class="stars" id="stars" aria-live="polite" title="挑戰成功的星星">⭐ <b id="starCount">0</b></div>
+</header>
+
+<main class="layout">
+  <section class="stageCard" aria-label="嘴巴剖面圖">
+    <div class="mission" id="mission" hidden>
+      <span class="missionText">請做出 <b id="missionSym">ㄅ</b> 的嘴型</span>
+      <span class="checks" id="checks"></span>
+    </div>
+    <div class="stageWrap">
+      <svg id="stage" viewBox="40 96 500 504" role="img" aria-label="頭部側面剖面圖，可以拖拉嘴唇、下巴和舌頭">
+        <defs>
+          <radialGradient id="cheek" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ff9aa2" stop-opacity=".55"/><stop offset="1" stop-color="#ff9aa2" stop-opacity="0"/></radialGradient>
+        </defs>
+        <!-- 頭（固定） -->
+        <path class="hair" d="M118 190 C96 120 160 34 286 32 C440 30 540 130 520 270 C514 330 492 380 476 420 L452 410 C470 330 470 250 440 200 C400 130 300 90 200 120 C160 132 138 160 118 190 Z"/>
+        <path class="skin" d="M126 292 L122 268 C104 268 76 264 78 252 C84 236 108 212 120 186 C110 150 150 56 280 50 C420 46 512 134 504 262 C500 340 470 400 468 470 L470 600 L318 600 L310 450 L300 292 Z"/>
+        <ellipse class="eyeW" cx="168" cy="176" rx="13" ry="15"/><circle class="eyeB" cx="164" cy="178" r="7"/><circle cx="162" cy="175" r="2.2" fill="#fff"/>
+        <path class="brow" d="M146 150 Q166 138 188 148"/>
+        <ellipse cx="200" cy="236" rx="34" ry="24" fill="url(#cheek)" style="display:none"/>
+        <path class="ear" d="M392 160 C430 150 440 210 410 226 C398 232 388 220 392 204"/>
+        <!-- 氣道：口腔、咽、鼻腔 -->
+        <path class="air" d="M165 291 L176 290 L184 266 L198 253 L222 239 L250 229 L275 225 L305 226 L338 232 L345 220 L270 206 L180 236 L108 264 L100 256 L110 248 C150 205 240 172 330 182 C380 186 414 205 414 240 L414 600 L374 600 L374 440 L300 400 L165 330 Z"/>
+        <g id="folds"><path class="fold" d="M374 512 L390 520 L374 528 Z"/><path class="fold" d="M414 512 L398 520 L414 528 Z"/></g>
+        <path id="velum" class="velum" d=""/>
+        <path id="tongue" class="tongue" d=""/>
+        <path id="ghostTongue" class="ghost" d="" hidden/>
+        <!-- 下巴（會動） -->
+        <g id="jawG">
+          <path id="jawFlesh" class="skin" d=""/>
+          <path class="tooth" d="M170 323 L190 323 L187 306 L180 296 L174 301 Z"/>
+        </g>
+        <path class="tooth" d="M163 262 L185 262 L179 280 L173 292 L166 288 Z"/>
+        <ellipse id="lipU" class="lip" cx="146" cy="281" rx="17" ry="11"/>
+        <ellipse id="lipL" class="lip" cx="146" cy="304" rx="16" ry="12"/>
+        <ellipse id="ghostLip" class="ghost" cx="0" cy="0" rx="16" ry="12" hidden/>
+        <path id="ghostVelum" class="ghostLine" d="" hidden/>
+        <g id="particles"></g>
+        <g id="labels">
+          <g class="lab"><text x="262" y="201">鼻腔</text></g>
+          <g class="lab"><line x1="290" y1="216" x2="322" y2="150"/><text x="328" y="142">硬顎</text></g>
+          <g class="lab"><line x1="372" y1="238" x2="446" y2="222"/><text x="474" y="226">軟顎</text></g>
+          <g class="lab"><line x1="196" y1="246" x2="150" y2="214"/><text x="142" y="208">上牙齦</text></g>
+          <g class="lab"><line x1="414" y1="520" x2="448" y2="520"/><text x="476" y="526">聲帶</text></g>
+        </g>
+        <g id="voiceWave" hidden><path d="M430 500 q6 -10 12 0 t12 0 t12 0" /><path d="M430 540 q6 -10 12 0 t12 0 t12 0"/></g>
+        <!-- 可以拖的把手 -->
+        <g id="handles">
+          <g class="handle hVel" id="hVel" tabindex="0" role="button" aria-label="軟顎：點一下打開或關上鼻子通道"><circle r="17"/><text y="6">鼻</text></g>
+          <g class="handle hJaw" id="hJaw" tabindex="0" role="slider" aria-label="下巴：上下拖拉"><circle r="19"/><text y="6">下巴</text></g>
+          <g class="handle hLip pin" id="hLip" tabindex="0" role="slider" aria-label="嘴唇：拖拉"><circle class="hit" r="24"/><circle class="core" r="10"/><text x="-40" y="6">嘴唇</text></g>
+          <g class="handle hBody pin" id="hBody" tabindex="0" role="slider" aria-label="舌面：拖拉"><circle class="hit" r="24"/><circle class="core" r="10"/><text x="0" y="34">舌面</text></g>
+          <g class="handle hTip pin" id="hTip" tabindex="0" role="slider" aria-label="舌尖：拖拉"><circle class="hit" r="24"/><circle class="core" r="10"/><text x="4" y="34">舌尖</text></g>
+        </g>
+      </svg>
+      <div class="mirror" id="mirror" hidden>
+        <video id="cam" autoplay playsinline muted></video>
+        <button id="mirrorClose" aria-label="關掉鏡子">✕</button>
+        <span>我的嘴巴</span>
+      </div>
+      <div class="cheer" id="cheer" hidden>🎉 太棒了！</div>
+    </div>
+    <div class="tools">
+      <button id="btnReset">↺ 回到休息</button>
+      <button id="btnNose" aria-pressed="false">👃 鼻子通道：關</button>
+      <button id="btnLabels" aria-pressed="true">🏷️ 部位名稱</button>
+      <button id="btnMirror">🪞 照鏡子</button>
+      <button id="btnHint" hidden aria-pressed="true">💡 提示：開</button>
+      <button id="btnNext" hidden>➡️ 下一題</button>
+    </div>
+    <div class="now" id="now" aria-live="polite">
+      <div class="nowRow"><span class="dot dLip"></span><b>嘴唇</b><span id="nowLip"></span></div>
+      <div class="nowRow"><span class="dot dTip"></span><b>舌尖</b><span id="nowTip"></span></div>
+      <div class="nowRow"><span class="dot dBody"></span><b>舌面</b><span id="nowBody"></span></div>
+      <div class="nowRow"><span class="dot dVel"></span><b>鼻子</b><span id="nowVel"></span></div>
+      <div class="like">這個嘴型像：<span id="likeChips"></span></div>
+    </div>
+  </section>
+
+  <section class="side">
+    <div class="card textCard">
+      <label for="txt">✏️ 輸入國字，看嘴巴怎麼動</label>
+      <div class="txtRow">
+        <input id="txt" type="text" maxlength="12" placeholder="例如：老師好" autocomplete="off" enterkeyhint="go">
+        <button id="btnPlayTxt" class="primary">▶ 播放</button>
+      </div>
+      <div class="syls" id="syls" aria-live="polite"></div>
+    </div>
+
+    <div class="card detail" id="detail">
+      <div class="bigSym" id="bigSym">👋</div>
+      <div class="detailBody">
+        <div class="groupTag" id="groupTag">歡迎！</div>
+        <ol class="steps" id="steps"><li>拖拉圖上的圓圈，動動嘴唇、下巴和舌頭。</li><li>點右下角的注音，看看這個音怎麼發。</li></ol>
+        <div class="badges" id="badges"></div>
+        <p class="tip" id="tip"></p>
+        <div class="detailBtns">
+          <button id="btnReplay" hidden>🔁 再看一次</button>
+          <button id="btnSpeak" hidden>🔊 聽聽看</button>
+          <button id="btnSlow" aria-pressed="false">🐢 慢動作：關</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card kb" aria-label="注音符號鍵盤">
+      <div class="kbTitle">聲符</div>
+      <div class="keys" id="keysC"></div>
+      <div class="kbTitle">介符・韻符</div>
+      <div class="keys" id="keysV"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>字音資料：教育部《重編國語辭典修訂本》（CC BY-ND 3.0 臺灣）。剖面圖是簡化的示意圖，實際發音請以老師、語言治療師的示範為準。鏡子畫面只在這台裝置上顯示，不會錄影或上傳。</p>
+  <p><a href="../../../">← 回教材總覽</a></p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
