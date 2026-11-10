@@ -1,5 +1,8 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-11-10｜雲端 Claude Code｜Claude｜施工中：嘴巴探險隊（發音位置練習遊戲）
+- 施工中，請勿同時修改：`student-support/hearing-support/mouth-explorer/`（新資料夾）、根目錄 `index.html`（只加一張入口卡）。分支 `claude/jolly-newton-r0xer4`，尚未併入 main。
+
 ## 2026-10-23｜家中 Mac｜Codex｜美味的一堂課：完成改檔，待 Claude 四尺寸實玩／提交
 - 依本單只改檔，全程未執行任何git、未開Chrome、未commit／push／合併／部署；Claude負責分支、瀏覽器與提交。
 - 新增115AG4K07四幕19個state子步（5／6／4／4），三醬味道配對、主旨、四組三圖摘要與「首先／接著／最後」分享排序。47正文依14／17／7／9完整依序覆蓋；密文沒有獨立課名故排除清單空，正式密文與指定本機來源／hash核對。speakers只標巧文姐姐引號內介紹／總結，其餘空，不啟用scriptTap。
