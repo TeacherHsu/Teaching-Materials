@@ -50,7 +50,18 @@ h1{margin:0;font-size:1.7rem;letter-spacing:.06em}
 .brow{fill:none;stroke:#5b4636;stroke-width:6;stroke-linecap:round}
 .air{fill:var(--air);stroke:#e2b98f;stroke-width:3;stroke-linejoin:round}
 .velum{fill:none;stroke:#f08a94;stroke-width:17;stroke-linecap:round}
-.tongue{fill:var(--tongue);stroke:var(--tongueLine);stroke-width:3;stroke-linejoin:round}
+.tongue{fill:var(--tongue)}
+.tongueLine{fill:none;stroke:var(--tongueLine);stroke-width:4;stroke-linejoin:round}
+.restLine{fill:rgba(100,116,139,.12);stroke:#475569;stroke-width:2.5;stroke-dasharray:5 5}
+.zone{fill:none;stroke:#22c55e;stroke-width:13;stroke-linecap:round;stroke-linejoin:round;opacity:.6;animation:zone 1s ease-in-out infinite}
+@keyframes zone{50%{opacity:.25}}
+.mark circle{stroke-width:3}
+.mark text{font-size:13px;font-weight:900;text-anchor:middle;pointer-events:none}
+.mark.hit circle{fill:#fde047;stroke:#a16207;animation:hit .7s ease-in-out infinite}
+.mark.hit text{fill:#713f12}
+.mark.slit circle{fill:#fff;stroke:#ea580c;stroke-dasharray:4 3}
+.mark.slit text{fill:#c2410c}
+@keyframes hit{50%{r:15px}}
 .tooth{fill:#fff;stroke:#8d99ae;stroke-width:2.5;stroke-linejoin:round}
 .lip{fill:#ef5a73;stroke:#b8334d;stroke-width:2.5}
 .fold{fill:#f08a94;stroke:#c93a55;stroke-width:1.5}

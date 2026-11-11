@@ -74,7 +74,7 @@ function spline(p) {  // 封閉的 Catmull-Rom 曲線
 const REST_T = [196, 296], REST_B = [305, 262];
 const POSE = {
   rest: { jaw: .1, l: [0, .5], tip: REST_T, body: REST_B },
-  'ㄚ': { jaw: .9, l: [0, .75], tip: [198, 300], body: [325, 292] },
+  'ㄚ': { jaw: .9, l: [0, .75], tip: [198, 300], body: [325, 300] },
   'ㄧ': { jaw: .15, l: [-.25, .45], tip: [196, 297], body: { x: 258, gap: 9 } },
   'ㄩ': { jaw: .15, l: [1, .3], tip: [196, 297], body: { x: 258, gap: 9 } },
   'ㄨ': { jaw: .2, l: [1, .3], tip: [215, 302], body: { x: 352, gap: 9 } },
@@ -91,9 +91,9 @@ const POSE = {
   vel_f:   { jaw: .25, l: [0, .5], tip: [208, 302], body: { x: 356, gap: 6 } },
   pal_c:   { jaw: .12, l: [-.25, .45], tip: [196, 297], body: { x: 250, gap: 0 } },
   pal_f:   { jaw: .12, l: [-.25, .45], tip: [196, 297], body: { x: 250, gap: 5 } },
-  retro_c: { jaw: .18, l: [.2, .5], tip: { x: 226, gap: 0 }, body: [322, 266] },
-  retro_f: { jaw: .18, l: [.2, .5], tip: { x: 226, gap: 5 }, body: [322, 266] },
-  retro_v: { jaw: .22, l: [.2, .5], tip: { x: 226, gap: 10 }, body: [322, 266] },
+  retro_c: { jaw: .18, l: [.2, .5], tip: { x: 231, gap: 0 }, body: [322, 266] },
+  retro_f: { jaw: .18, l: [.2, .5], tip: { x: 231, gap: 5 }, body: [322, 266] },
+  retro_v: { jaw: .22, l: [.2, .5], tip: { x: 231, gap: 10 }, body: [322, 266] },
   dent_c:  { jaw: .08, l: [-.25, .45], tip: { x: 181, gap: 0 }, body: [305, 260] },
   dent_f:  { jaw: .08, l: [-.25, .45], tip: { x: 183, gap: 4 }, body: [305, 260] },
   dent_v:  { jaw: .12, l: [-.25, .45], tip: { x: 185, gap: 9 }, body: [305, 260] },
@@ -225,17 +225,42 @@ let stars = 0;
 try { stars = +localStorage.getItem('mouthExplorerStars') || 0; } catch (e) { /* 沒有儲存空間也能玩 */ }
 
 const el = {};
-['stage', 'velum', 'jawG', 'jawFlesh', 'tongue', 'lipU', 'lipL', 'ghostTongue', 'ghostLip', 'ghostVelum', 'particles', 'labels',
+['stage', 'velum', 'jawG', 'jawFlesh', 'tongue', 'tongueClip', 'tongueLine', 'tintTip', 'tintBody', 'restTongue', 'zone', 'marks', 'lipU', 'lipL', 'ghostTongue', 'ghostLip', 'ghostVelum', 'particles', 'labels',
   'folds', 'voiceWave', 'hVel', 'hJaw', 'hLip', 'hBody', 'hTip'].forEach(k => el[k] = $(k));
 let G = geom(state);
 
+/* 「碰到了」「留一條縫」的記號，和發音部位的綠色提示帶 */
+const MARK = {};
+['lip', 'tip', 'body'].forEach(k => {
+  const g = document.createElementNS('http://www.w3.org/2000/svg', 'g'); g.setAttribute('class', 'mark');
+  g.innerHTML = '<circle r="12"/><text y="5"></text>'; g.setAttribute('hidden', ''); el.marks.appendChild(g); MARK[k] = g;
+});
+function setMark(k, kind, p) {
+  const g = MARK[k]; g.toggleAttribute('hidden', !kind); if (!kind) return;
+  g.setAttribute('class', 'mark ' + kind); g.setAttribute('transform', `translate(${p[0].toFixed(1)} ${p[1].toFixed(1)})`);
+  g.lastChild.textContent = kind === 'hit' ? '碰' : '縫';
+}
+let zonePlace = null;
+const ZONE = { dent: [172, 186], alv: [186, 212], retro: [214, 250], pal: [236, 300], vel: [338, 392] };
+function setZone(place) {
+  zonePlace = place; dirty = true;
+  if (!place) return;
+  let d;
+  if (place === 'lip') d = 'M128 292a17 17 0 1 0 34 0a17 17 0 1 0 -34 0';
+  else if (place === 'teeth') d = 'M150 296a16 12 0 1 0 32 0a16 12 0 1 0 -32 0';
+  else { const [x0, x1] = ZONE[place]; d = ''; for (let i = 0; i <= 8; i++) { const x = lerp(x0, x1, i / 8); d += (i ? 'L' : 'M') + x.toFixed(1) + ' ' + (roofY(x, 0) - 3).toFixed(1); } }
+  el.zone.setAttribute('d', d);
+}
 function render() {
   G = geom(state);
   const deg = -state.jaw * JAW_MAX * 180 / Math.PI;
   el.jawG.setAttribute('transform', `rotate(${deg.toFixed(2)} ${PIV[0]} ${PIV[1]})`);
   const [cx, cy] = G.lipJ;
   el.jawFlesh.setAttribute('d', `M${cx - 18} ${cy + 2}C120 ${cy + 26} 126 356 150 376C190 400 260 405 320 438L334 440C350 420 350 380 330 365L300 352L210 333L192 323L168 323L${cx + 14} ${cy + 2}Z`);
-  el.tongue.setAttribute('d', G.tongue);
+  el.tongue.setAttribute('d', G.tongue); el.tongueClip.setAttribute('d', G.tongue); el.tongueLine.setAttribute('d', G.tongue);
+  el.tintTip.setAttribute('cx', G.T[0] + 6); el.tintTip.setAttribute('cy', G.T[1] + 6);
+  el.tintBody.setAttribute('cx', G.B[0]); el.tintBody.setAttribute('cy', G.B[1] + 12);
+  el.zone.toggleAttribute('hidden', !(zonePlace && (playing || mode === 'challenge')));
   el.velum.setAttribute('d', G.velum);
   setLip(el.lipL, G.lipL, G.round, 16, LIP_RY);
   setLip(el.lipU, G.lipU, G.round, 17, 11);
@@ -289,6 +314,9 @@ function describe() {
     }
     like = bd < 2.2 ? [best] : [];
   }
+  setMark('lip', g.labiodental ? 'slit' : closed ? 'hit' : null, g.labiodental ? [176, 294] : [g.lipU[0] - 2, UP_LIP_BOTTOM]);
+  setMark('tip', tz < 3 && g.gapT < 2.5 ? 'hit' : tNear ? 'slit' : null, [g.T[0] - 3, roofY(g.T[0], s.vel) - 9]);
+  setMark('body', g.gapB < 2.5 ? 'hit' : g.gapB < 8 ? 'slit' : null, [g.B[0], roofY(g.B[0], s.vel) - 10]);
   $('nowLip').textContent = lip; $('nowTip').textContent = tip; $('nowBody').textContent = body;
   $('nowVel').textContent = s.vel > .5 ? '通道打開，氣從鼻子出來' : '通道關著，氣從嘴巴出來';
   const key = like.join('');
@@ -360,7 +388,7 @@ function lerpState(a, b, t) {
 function play(steps, onStep, onDone) {
   stop();
   playing = { steps, i: -1, t0: 0, from: null, onStep, onDone };
-  el.stage.classList.add('playing');
+  el.stage.classList.add('playing'); el.restTongue.toggleAttribute('hidden', mode !== 'explore');
   nextStep(performance.now());
 }
 function nextStep(now) {
@@ -374,12 +402,12 @@ function nextStep(now) {
 }
 function stop() {
   if (!playing) return;
-  playing = null; el.stage.classList.remove('playing');
+  playing = null; el.stage.classList.remove('playing'); el.restTongue.setAttribute('hidden', ''); dirty = true;
   flow.voiced = false; flow.air = 1; flow.lateral = false; setVoice();
 }
 function setVoice() { el.folds.classList.toggle('vib', flow.voiced); el.voiceWave.toggleAttribute('hidden', !flow.voiced); }
 function tickPlay(now) {
-  const p = playing, s = p.steps[p.i], k = slow ? 2.2 : 1.15;
+  const p = playing, s = p.steps[p.i], k = slow ? 2.4 : 1.4;
   const t = (now - p.t0) / (s.move * k);
   if (t < 1) { const e = t * t * (3 - 2 * t); state = lerpState(p.from, s.to, e); dirty = true; }
   else {
@@ -479,6 +507,7 @@ function showDetail(z, li) {
   if (curSym !== z) {
     curSym = z;
     const c = CONS[z];
+    setZone(c ? c[0] : null);
     $('bigSym').textContent = z; $('bigSym').className = 'bigSym ' + keyClass(z);
     $('groupTag').textContent = c ? GROUP[c[0]][1] : 'ㄧㄨㄩ'.includes(z) ? '介符（也可以當韻符）' : 'ㄞㄟㄠㄡ'.includes(z) ? '韻符（嘴巴會滑動）' : 'ㄢㄣㄤㄥ'.includes(z) ? '韻符（最後氣從鼻子出來）' : '韻符';
     $('steps').innerHTML = STEPS[z].map(t => `<li>${t}</li>`).join('');
@@ -647,6 +676,7 @@ $('btnMirror').onclick = openMirror; $('mirrorClose').onclick = closeMirror;
 
 /* ───────── 啟動 ───────── */
 $('starCount').textContent = stars;
+el.restTongue.setAttribute('d', geom(st('rest')).tongue);
 buildKeys(); loadData(); render(); requestAnimationFrame(frame);
 window.__mouth = { get state() { return state; }, set state(v) { state = v; dirty = true; }, get G() { return G; }, st, POSE, CONS, targetPose, buildSteps, parseSyl, geom, describe, get playing() { return !!playing; } };
 })();

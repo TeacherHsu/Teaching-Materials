@@ -30,9 +30,12 @@
       <span class="checks" id="checks"></span>
     </div>
     <div class="stageWrap">
-      <svg id="stage" viewBox="40 96 500 504" role="img" aria-label="頭部側面剖面圖，可以拖拉嘴唇、下巴和舌頭">
+      <svg id="stage" viewBox="56 130 440 384" role="img" aria-label="頭部側面剖面圖，可以拖拉嘴唇、下巴和舌頭">
         <defs>
           <radialGradient id="cheek" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ff9aa2" stop-opacity=".55"/><stop offset="1" stop-color="#ff9aa2" stop-opacity="0"/></radialGradient>
+          <radialGradient id="gTip"><stop offset="0" stop-color="#2563eb" stop-opacity=".75"/><stop offset=".55" stop-color="#2563eb" stop-opacity=".45"/><stop offset="1" stop-color="#2563eb" stop-opacity="0"/></radialGradient>
+          <radialGradient id="gBody"><stop offset="0" stop-color="#9333ea" stop-opacity=".7"/><stop offset=".55" stop-color="#9333ea" stop-opacity=".4"/><stop offset="1" stop-color="#9333ea" stop-opacity="0"/></radialGradient>
+          <clipPath id="tClip"><path id="tongueClip" d=""/></clipPath>
         </defs>
         <!-- 頭（固定） -->
         <path class="hair" d="M118 190 C96 120 160 34 286 32 C440 30 540 130 520 270 C514 330 492 380 476 420 L452 410 C470 330 470 250 440 200 C400 130 300 90 200 120 C160 132 138 160 118 190 Z"/>
@@ -43,9 +46,12 @@
         <path class="ear" d="M392 160 C430 150 440 210 410 226 C398 232 388 220 392 204"/>
         <!-- 氣道：口腔、咽、鼻腔 -->
         <path class="air" d="M165 291 L176 290 L184 266 L198 253 L222 239 L250 229 L275 225 L305 226 L338 232 L345 220 L270 206 L180 236 L108 264 L100 256 L110 248 C150 205 240 172 330 182 C380 186 414 205 414 240 L414 600 L374 600 L374 440 L300 400 L165 330 Z"/>
-        <g id="folds"><path class="fold" d="M374 512 L390 520 L374 528 Z"/><path class="fold" d="M414 512 L398 520 L414 528 Z"/></g>
+        <g id="folds"><path class="fold" d="M374 462 L390 470 L374 478 Z"/><path class="fold" d="M414 462 L398 470 L414 478 Z"/></g>
         <path id="velum" class="velum" d=""/>
         <path id="tongue" class="tongue" d=""/>
+        <g clip-path="url(#tClip)"><circle id="tintBody" r="46" fill="url(#gBody)"/><circle id="tintTip" r="34" fill="url(#gTip)"/></g>
+        <path id="tongueLine" class="tongueLine" d=""/>
+        <path id="restTongue" class="restLine" d="" hidden/>
         <path id="ghostTongue" class="ghost" d="" hidden/>
         <!-- 下巴（會動） -->
         <g id="jawG">
@@ -57,15 +63,17 @@
         <ellipse id="lipL" class="lip" cx="146" cy="304" rx="16" ry="12"/>
         <ellipse id="ghostLip" class="ghost" cx="0" cy="0" rx="16" ry="12" hidden/>
         <path id="ghostVelum" class="ghostLine" d="" hidden/>
+        <path id="zone" class="zone" d="" hidden/>
         <g id="particles"></g>
+        <g id="marks"></g>
         <g id="labels">
           <g class="lab"><text x="262" y="201">鼻腔</text></g>
           <g class="lab"><line x1="290" y1="216" x2="322" y2="150"/><text x="328" y="142">硬顎</text></g>
           <g class="lab"><line x1="372" y1="238" x2="446" y2="222"/><text x="474" y="226">軟顎</text></g>
           <g class="lab"><line x1="196" y1="246" x2="150" y2="214"/><text x="142" y="208">上牙齦</text></g>
-          <g class="lab"><line x1="414" y1="520" x2="448" y2="520"/><text x="476" y="526">聲帶</text></g>
+          <g class="lab"><line x1="414" y1="470" x2="440" y2="470"/><text x="464" y="476">聲帶</text></g>
         </g>
-        <g id="voiceWave" hidden><path d="M430 500 q6 -10 12 0 t12 0 t12 0" /><path d="M430 540 q6 -10 12 0 t12 0 t12 0"/></g>
+        <g id="voiceWave" hidden><path d="M426 452 q6 -10 12 0 t12 0 t12 0"/><path d="M426 496 q6 -10 12 0 t12 0 t12 0"/></g>
         <!-- 可以拖的把手 -->
         <g id="handles">
           <g class="handle hVel" id="hVel" tabindex="0" role="button" aria-label="軟顎：點一下打開或關上鼻子通道"><circle r="17"/><text y="6">鼻</text></g>
