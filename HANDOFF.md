@@ -1,12 +1,29 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-11-15｜家中 Mac｜Claude｜語詞：多義解釋只留第 ⑴ 義、「一」依語流變調、讀音依簡編本更正（2026-11-15 已合併 main 並上線）
+- 分支 `fix/word-meaning-first-sense-yi-sandhi`（未提交）。CF 2026-11-15 裁定兩條通則：
+  - 語詞解釋分 ⑴⑵ 多義者一律只留第 ⑴ 義。寫進 `apps/mandarin/scripts/apply-word-meaning-overrides.mjs`（全冊通則，核准清單有列的以清單為準），原文留在 `meaning_original`。這次改四上 6 則：衛生、蓓蕾、開朗、母親、谷底、防潮。
+  - 語詞的「一」依語流變調（同 sped-os ADR-0028）：四聲前 ㄧˊ、一二三聲前 ㄧˋ，詞尾／序數／數字序列維持本調。函式 `applyYiSandhi` 在 `src/utils/zhuyin.js`，`node scripts/normalize-yi-sandhi.mjs [--write]` 可重跑，`prepare_g4a.mjs` 匯入時就會套；要維持本調的語詞加進 `tools/word-zhuyin-exceptions.json`。這次改 7 則：一上「一個、一下子」，四上「一掃而空、有朝一日、一瞬間、一轉眼、一溜煙」。
+- `validate-data.mjs` 新增兩條檢查（解釋仍有 ⑵、「一」未變調都會 FAIL）。
+- 下游：`Review-Games/data/G1A.js|G4A.js|G4A2.js`、`Read-Aloud/data/G1A.js|G4A2.js` 重產，`p0-baseline.json` 已同步。
+- 已驗（讀音更正後重跑）：`npm run validate` 0 FAIL、`scripts/test-*.mjs` 全過、build＋check-dist 通過、Review-Games 133 支、Read-Aloud 48 支全過；dev server 回讀資料正確、頁面可載入，沒有逐張看卡片畫面。
+- 補缺：二上 20 則、三上 11 則原本留空的語詞注音，依簡編本詞條／子詞與本課生字補齊（同一份 `zhuyin-corrections.json`，from 為 null；只有「艾粄 ㄞˋ ㄅㄢˇ」待 CF 確認）。一上「一個」改 ㄧˊ ˙ㄍㄜ（量詞「個」輕聲，與生字一致）。五冊語詞現在都有注音。
+- 排序：課文樂園年級頁各複習區與複習遊戲大廳，一律「寵物餵食 → 朗讀打怪 → 形似字跑酷 → 其他」（CF 指定）。大廳新增兩張朗讀遊戲卡，縮圖 `Review-Games/img/hub/pet.webp|monster.webp` 用朗讀遊戲既有美術合成。
+- 朗讀遊戲補齊：`Read-Aloud/tools/build_data.py` SETS 新增 `G2A、G3A、G3A2、G4A、G6A、G6A2`，九組都有；`course-index.json` 六個複習區補上兩款連結。實開 G6A、G3A2、G4A（手機寬）、G2A 按開始都能出題。
+- 開啟兩個已有資料卻關著的模組：四上第 9 課「練習句子」（教師 2026-09-27 提供的 3 組句型已核准，舊註記「不足 3 組」過期）；三上第 1 課補上「一字多音」「形似字」入口（資料 3 題、8 組早就在）。兩處都開頁面確認能出題。
+- 草稿待 CF 核准、**未套用**：`apps/mandarin/docs/review/2026-11-15-long-meanings-draft.md`（三上 5、六上 4 則語詞＋四上 5 則成語，解釋超過 40 字）。
+- 「防潮」已對課文句（第 9 課「要築堤防潮」），第 ⑴ 義「防止潮水入侵」正確，不用改。
+- 還沒做、需要內容或 CF 決定：三上第 1 課聽力 3 題與課文不符待重編；語詞例句 731 則空白；「我會應用」43 課關閉；三上單元名稱是佔位字（畫面上本來就不顯示）；多音字模組「稱職 ㄔㄣˋ」與簡編本 ㄔㄥˋ 不同。
+- 讀音更正（CF 2026-11-15「依簡編本全修」）：生字 18 個、語詞 23 個，正本 `apps/mandarin/tools/zhuyin-corrections.json`（每筆記 from／to），`node scripts/apply-zhuyin-corrections.mjs [--write]` 可重跑，重新匯入課次後要重跑。生字：二上 夕識突播、三上 惜息叔、四上 暫熟薄佛堤蹈、六上 儲眶蔭諷樸。語詞含 垃圾、挑戰、擁有、穩重、更迭、暈倒、搖晃、寂寞、從容不迫，以及「不」變調 3 則（念念不忘、絲毫不差 ㄅㄨˊ；不羈 ㄅㄨˋ）。`char-index.json`、Review-Games（G3A2、G4A、G4A2、G6A、G6A2）、Read-Aloud（G2A2 等）已重產。
+- 沒改、留給 CF：多音字模組沿用大補帖的讀音（稱職 ㄔㄣˋ，簡編本 ㄔㄥˋ）；「不」的變調目前靠更正清單逐筆記，沒有像「一」寫成通則與驗證。
+
 ## 2026-11-14｜家中 Mac｜Claude｜四上語詞：注音補空格、29 則解釋改短版（2026-11-15 已合併 main 並上線）
 - 分支 `fix/g4a-word-zhuyin-spacing`（未提交）。康軒四上 183 個語詞注音原本連寫（ㄊㄞˋㄍㄨㄛˊ），已補成一個音節一個空格，只補空格、不改讀音；「東京晴空塔®」注音尾端的 ® 拿掉，「海倫‧凱勒」間隔號保留成獨立一段。
 - 可重跑：`node scripts/normalize-word-zhuyin-spacing.mjs [--write]`（共用函式 `spaceWordZhuyin` 在 `src/utils/zhuyin.js`）；`prepare_g4a.mjs` 匯入時就會補空格；`validate-data.mjs` 新增檢查，連寫會 FAIL。
 - 下游：`Review-Games/data/G4A.js`、`G4A2.js` 重產（注音題選項現在音節數相同，不再用長短猜答案），`p0-baseline.json` 已同步；朗讀遊戲題庫 `--check` 通過、內容不變。
 - 已驗：`npm run validate`、`scripts/test-*.mjs` 全過、Review-Games 133 支、Read-Aloud 48 支全過。沒有開瀏覽器看語詞卡（格式與其他四冊相同）。
 - 語詞解釋：CF 2026-11-14 核准「照草稿套用」，29 則過長的解釋改成短版（埃及 161 字 → 25 字）。正本 `apps/mandarin/tools/word-meaning-overrides/115AG4K.json`，`node scripts/apply-word-meaning-overrides.mjs --write` 可重跑（重新匯入四上後要再跑一次）；原文留在 `meaning_original`。對照表在 `docs/review/2026-11-14-g4a-word-meanings-draft.md`。語詞卡第 9 課「埃及」翻面實看正常。
-- 沒動：6 則較短但仍帶 ⑴⑵ 兩義的解釋（開朗、母親、谷底、防潮、蓓蕾、衛生）；「一」的變調寫法不一致（一般 ㄧˋ／一瞬間 ㄧ）待 CF 裁定。
+- 當時沒動的 6 則 ⑴⑵ 解釋與「一」變調，已於 2026-11-15 依 CF 裁定處理（見上一筆）。
 
 ## 2026-11-14｜家中 Mac｜Claude｜二上、三上、四上第 7～12 課綜合複習遊戲（G2A2、G3A2、G4A2）
 - 分支 `feat/review-games-g234a-l07-12`，做法同六上 `G6A2`。題庫：二上 289 題、三上 343 題、四上 375 題；形似字跑酷 `Chinese/Shape-Run-G2A2|G3A2|G4A2/`（35、34、32 個語詞）；偵探密室沿用整冊資料（連回 `g=G2A|G3A|G4A`）。
