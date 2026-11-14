@@ -137,6 +137,5 @@ footer.credit a { color: inherit; }
   .fighter.boss .face { font-size: 96px; }
   #flash { font-size: 22px; }
 }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-}
+/* 動畫關（body.calm 由 read-aloud.js 依系統設定與畫面上的開關決定） */
+body.calm *, body.calm *::before, body.calm *::after { animation: none !important; transition: none !important; }

@@ -65,7 +65,15 @@
   // ====================== 以下是瀏覽器部分 ======================
   const $ = (id) => document.getElementById(id);
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-  const reduced = () => window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // 動畫開關：預設跟著系統的「減少動態」，但可以在畫面上自己開或關（記在這台裝置）
+  const MOTION_KEY = 'read-aloud:motion';
+  const systemReduced = () => Boolean(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  function motionSetting() { try { return localStorage.getItem(MOTION_KEY); } catch (e) { return null; } }
+  const reduced = () => { const m = motionSetting(); return m === 'off' || (m !== 'on' && systemReduced()); };
+  function paintMotion() {
+    document.body.classList.toggle('calm', reduced());
+    if ($('motion')) $('motion').textContent = reduced() ? '💤 動畫關' : '✨ 動畫開';
+  }
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   function shuffle(a) {
     const b = [...a];
@@ -170,7 +178,8 @@
       // 有語音清單卻沒有台灣國語：寧可不念，也不用其他腔調示範
       if (loaded && !voice) { $('voiceWarn').hidden = false; resolve(false); return; }
       speechSynthesis.cancel();
-      const u = new SpeechSynthesisUtterance(text);
+      // 圖示（emoji）不念：有些語音會把 🍖 念成「帶骨肉」之類的名稱
+      const u = new SpeechSynthesisUtterance(String(text).replace(/[\p{Extended_Pictographic}\uFE0F\u200D]/gu, '').replace(/\s+/g, ' ').trim());
       u.lang = 'zh-TW'; u.rate = rate || 0.8;
       if (voice) u.voice = voice;
       let done = false;
@@ -263,6 +272,8 @@
     $('introTitle').textContent = `${cfg.icon} ${cfg.title}`;
     $('introBody').innerHTML = cfg.introHtml;
     $('sfx').onclick = () => { sfxOn = !sfxOn; $('sfx').textContent = sfxOn ? '🔔 音效開' : '🔕 音效關'; };
+    $('motion').onclick = () => { try { localStorage.setItem(MOTION_KEY, reduced() ? 'on' : 'off'); } catch (e) { /* 不能存就只管這一次 */ } paintMotion(); };
+    paintMotion();
     $('introSpeak').onclick = () => speak($('introBody').textContent.replace(/\s+/g, ' '), 0.9);
 
     // 選課次與內容
