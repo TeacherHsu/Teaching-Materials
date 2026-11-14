@@ -65,6 +65,21 @@
               "to": 7,
               "items": [
                 {
+                  "title": "寵物餵食（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，餵肉肉給寵物蛋，能量滿了就破蛋（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/pet.html?g=G1A"
+                },
+                {
+                  "title": "朗讀打怪（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，用聲波趕跑怪物，最後挑戰大魔王（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/monster.html?g=G1A"
+                },
+                {
+                  "title": "形似字跑酷",
+                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
+                  "url": "../Chinese/Shape-Run-G1A/"
+                },
+                {
                   "title": "課文大富翁",
                   "description": "答對題目就能買下課次的地（2～4 隊）",
                   "url": "../Chinese/Review-Games/monopoly.html?g=G1A"
@@ -85,24 +100,9 @@
                   "url": "../Chinese/Review-Games/bingo.html?g=G1A"
                 },
                 {
-                  "title": "形似字跑酷",
-                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
-                  "url": "../Chinese/Shape-Run-G1A/"
-                },
-                {
                   "title": "課文偵探密室",
                   "description": "找線索、排事件、解機關，用證據破案（1 人或小組；單課／跨課）",
                   "url": "../Chinese/Review-Games/detective.html?g=G1A"
-                },
-                {
-                  "title": "寵物餵食（生字語詞朗讀）",
-                  "description": "大聲念生字和語詞，餵肉肉給寵物蛋，能量滿了就破蛋（1 人；要用麥克風）",
-                  "url": "../Chinese/Read-Aloud/pet.html?g=G1A"
-                },
-                {
-                  "title": "朗讀打怪（生字語詞朗讀）",
-                  "description": "大聲念生字和語詞，用聲波趕跑怪物，最後挑戰大魔王（1 人；要用麥克風）",
-                  "url": "../Chinese/Read-Aloud/monster.html?g=G1A"
                 }
               ]
             }
@@ -205,6 +205,21 @@
               "to": 6,
               "items": [
                 {
+                  "title": "寵物餵食（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，餵肉肉給寵物蛋，能量滿了就破蛋（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/pet.html?g=G2A"
+                },
+                {
+                  "title": "朗讀打怪（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，用聲波趕跑怪物，最後挑戰大魔王（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/monster.html?g=G2A"
+                },
+                {
+                  "title": "形似字跑酷",
+                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
+                  "url": "../Chinese/Shape-Run-G2A/"
+                },
+                {
                   "title": "課文大富翁",
                   "description": "答對題目就能買下課次的地（2～4 隊）",
                   "url": "../Chinese/Review-Games/monopoly.html?g=G2A"
@@ -225,11 +240,6 @@
                   "url": "../Chinese/Review-Games/bingo.html?g=G2A"
                 },
                 {
-                  "title": "形似字跑酷",
-                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
-                  "url": "../Chinese/Shape-Run-G2A/"
-                },
-                {
                   "title": "課文偵探密室",
                   "description": "找線索、排事件、解機關，用證據破案（1 人或小組；單課／跨課）",
                   "url": "../Chinese/Review-Games/detective.html?g=G2A"
@@ -240,6 +250,21 @@
               "from": 7,
               "to": 12,
               "items": [
+                {
+                  "title": "寵物餵食（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，餵肉肉給寵物蛋，能量滿了就破蛋（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/pet.html?g=G2A2"
+                },
+                {
+                  "title": "朗讀打怪（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，用聲波趕跑怪物，最後挑戰大魔王（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/monster.html?g=G2A2"
+                },
+                {
+                  "title": "形似字跑酷",
+                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
+                  "url": "../Chinese/Shape-Run-G2A2/"
+                },
                 {
                   "title": "課文大富翁",
                   "description": "答對題目就能買下課次的地（2～4 隊）",
@@ -261,24 +286,9 @@
                   "url": "../Chinese/Review-Games/bingo.html?g=G2A2"
                 },
                 {
-                  "title": "形似字跑酷",
-                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
-                  "url": "../Chinese/Shape-Run-G2A2/"
-                },
-                {
                   "title": "課文偵探密室",
                   "description": "找線索、排事件、解機關，用證據破案（1 人或小組；單課／跨課）",
                   "url": "../Chinese/Review-Games/detective.html?g=G2A"
-                },
-                {
-                  "title": "寵物餵食（生字語詞朗讀）",
-                  "description": "大聲念生字和語詞，餵肉肉給寵物蛋，能量滿了就破蛋（1 人；要用麥克風）",
-                  "url": "../Chinese/Read-Aloud/pet.html?g=G2A2"
-                },
-                {
-                  "title": "朗讀打怪（生字語詞朗讀）",
-                  "description": "大聲念生字和語詞，用聲波趕跑怪物，最後挑戰大魔王（1 人；要用麥克風）",
-                  "url": "../Chinese/Read-Aloud/monster.html?g=G2A2"
                 }
               ]
             }
@@ -381,6 +391,21 @@
               "to": 6,
               "items": [
                 {
+                  "title": "寵物餵食（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，餵肉肉給寵物蛋，能量滿了就破蛋（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/pet.html?g=G3A"
+                },
+                {
+                  "title": "朗讀打怪（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，用聲波趕跑怪物，最後挑戰大魔王（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/monster.html?g=G3A"
+                },
+                {
+                  "title": "形似字跑酷",
+                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
+                  "url": "../Chinese/Shape-Run-G3A/"
+                },
+                {
                   "title": "課文大富翁",
                   "description": "答對題目就能買下課次的地（2～4 隊）",
                   "url": "../Chinese/Review-Games/monopoly.html?g=G3A"
@@ -401,11 +426,6 @@
                   "url": "../Chinese/Review-Games/bingo.html?g=G3A"
                 },
                 {
-                  "title": "形似字跑酷",
-                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
-                  "url": "../Chinese/Shape-Run-G3A/"
-                },
-                {
                   "title": "課文偵探密室",
                   "description": "找線索、排事件、解機關，用證據破案（1 人或小組；單課／跨課）",
                   "url": "../Chinese/Review-Games/detective.html?g=G3A"
@@ -416,6 +436,21 @@
               "from": 7,
               "to": 12,
               "items": [
+                {
+                  "title": "寵物餵食（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，餵肉肉給寵物蛋，能量滿了就破蛋（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/pet.html?g=G3A2"
+                },
+                {
+                  "title": "朗讀打怪（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，用聲波趕跑怪物，最後挑戰大魔王（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/monster.html?g=G3A2"
+                },
+                {
+                  "title": "形似字跑酷",
+                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
+                  "url": "../Chinese/Shape-Run-G3A2/"
+                },
                 {
                   "title": "課文大富翁",
                   "description": "答對題目就能買下課次的地（2～4 隊）",
@@ -435,11 +470,6 @@
                   "title": "語詞賓果",
                   "description": "聽意思，點語詞，連成一條線就賓果（1 人或分隊）",
                   "url": "../Chinese/Review-Games/bingo.html?g=G3A2"
-                },
-                {
-                  "title": "形似字跑酷",
-                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
-                  "url": "../Chinese/Shape-Run-G3A2/"
                 },
                 {
                   "title": "課文偵探密室",
@@ -547,6 +577,21 @@
               "to": 6,
               "items": [
                 {
+                  "title": "寵物餵食（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，餵肉肉給寵物蛋，能量滿了就破蛋（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/pet.html?g=G4A"
+                },
+                {
+                  "title": "朗讀打怪（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，用聲波趕跑怪物，最後挑戰大魔王（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/monster.html?g=G4A"
+                },
+                {
+                  "title": "形似字跑酷",
+                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
+                  "url": "../Chinese/Shape-Run-G4A/"
+                },
+                {
                   "title": "課文大富翁",
                   "description": "答對題目就能買下課次的地（2～4 隊）",
                   "url": "../Chinese/Review-Games/monopoly.html?g=G4A"
@@ -567,11 +612,6 @@
                   "url": "../Chinese/Review-Games/bingo.html?g=G4A"
                 },
                 {
-                  "title": "形似字跑酷",
-                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
-                  "url": "../Chinese/Shape-Run-G4A/"
-                },
-                {
                   "title": "課文偵探密室",
                   "description": "找線索、排事件、解機關，用證據破案（1 人或小組；單課／跨課）",
                   "url": "../Chinese/Review-Games/detective.html?g=G4A"
@@ -582,6 +622,21 @@
               "from": 7,
               "to": 12,
               "items": [
+                {
+                  "title": "寵物餵食（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，餵肉肉給寵物蛋，能量滿了就破蛋（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/pet.html?g=G4A2"
+                },
+                {
+                  "title": "朗讀打怪（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，用聲波趕跑怪物，最後挑戰大魔王（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/monster.html?g=G4A2"
+                },
+                {
+                  "title": "形似字跑酷",
+                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
+                  "url": "../Chinese/Shape-Run-G4A2/"
+                },
                 {
                   "title": "課文大富翁",
                   "description": "答對題目就能買下課次的地（2～4 隊）",
@@ -603,24 +658,9 @@
                   "url": "../Chinese/Review-Games/bingo.html?g=G4A2"
                 },
                 {
-                  "title": "形似字跑酷",
-                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
-                  "url": "../Chinese/Shape-Run-G4A2/"
-                },
-                {
                   "title": "課文偵探密室",
                   "description": "找線索、排事件、解機關，用證據破案（1 人或小組；單課／跨課）",
                   "url": "../Chinese/Review-Games/detective.html?g=G4A"
-                },
-                {
-                  "title": "寵物餵食（生字語詞朗讀）",
-                  "description": "大聲念生字和語詞，餵肉肉給寵物蛋，能量滿了就破蛋（1 人；要用麥克風）",
-                  "url": "../Chinese/Read-Aloud/pet.html?g=G4A2"
-                },
-                {
-                  "title": "朗讀打怪（生字語詞朗讀）",
-                  "description": "大聲念生字和語詞，用聲波趕跑怪物，最後挑戰大魔王（1 人；要用麥克風）",
-                  "url": "../Chinese/Read-Aloud/monster.html?g=G4A2"
                 }
               ]
             }
@@ -723,6 +763,21 @@
               "to": 6,
               "items": [
                 {
+                  "title": "寵物餵食（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，餵肉肉給寵物蛋，能量滿了就破蛋（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/pet.html?g=G6A"
+                },
+                {
+                  "title": "朗讀打怪（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，用聲波趕跑怪物，最後挑戰大魔王（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/monster.html?g=G6A"
+                },
+                {
+                  "title": "形似字跑酷",
+                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
+                  "url": "../Chinese/Shape-Run-G6A/"
+                },
+                {
                   "title": "課文大富翁",
                   "description": "答對題目就能買下課次的地（2～4 隊）",
                   "url": "../Chinese/Review-Games/monopoly.html?g=G6A"
@@ -743,11 +798,6 @@
                   "url": "../Chinese/Review-Games/bingo.html?g=G6A"
                 },
                 {
-                  "title": "形似字跑酷",
-                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
-                  "url": "../Chinese/Shape-Run-G6A/"
-                },
-                {
                   "title": "課文偵探密室",
                   "description": "找線索、排事件、解機關，用證據破案（1 人或小組；單課／跨課）",
                   "url": "../Chinese/Review-Games/detective.html?g=G6A"
@@ -758,6 +808,21 @@
               "from": 7,
               "to": 12,
               "items": [
+                {
+                  "title": "寵物餵食（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，餵肉肉給寵物蛋，能量滿了就破蛋（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/pet.html?g=G6A2"
+                },
+                {
+                  "title": "朗讀打怪（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，用聲波趕跑怪物，最後挑戰大魔王（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/monster.html?g=G6A2"
+                },
+                {
+                  "title": "形似字跑酷",
+                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
+                  "url": "../Chinese/Shape-Run-G6A2/"
+                },
                 {
                   "title": "課文大富翁",
                   "description": "答對題目就能買下課次的地（2～4 隊）",
@@ -777,11 +842,6 @@
                   "title": "語詞賓果",
                   "description": "聽意思，點語詞，連成一條線就賓果（1 人或分隊）",
                   "url": "../Chinese/Review-Games/bingo.html?g=G6A2"
-                },
-                {
-                  "title": "形似字跑酷",
-                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
-                  "url": "../Chinese/Shape-Run-G6A2/"
                 },
                 {
                   "title": "課文偵探密室",

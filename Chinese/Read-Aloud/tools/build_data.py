@@ -25,8 +25,14 @@ LEXICON = Path.home() / 'mandarin-work/moe-dict/concised_lexicon_2014_20260929.j
 SETS = {
     # taught_only：一年級識字量少，生字的造詞只用「每個字都教過（本冊到這一課為止）」的詞
     'G1A': {'volume': '115AG1H', 'from': 1, 'to': 7, 'label': '翰林一上', 'grade': 1, 'taught_only': True},
+    'G2A': {'volume': '115AG2H', 'from': 1, 'to': 6, 'label': '翰林二上', 'grade': 2},
     'G2A2': {'volume': '115AG2H', 'from': 7, 'to': 12, 'label': '翰林二上', 'grade': 2},
+    'G3A': {'volume': '115AG3H', 'from': 1, 'to': 6, 'label': '翰林三上', 'grade': 3},
+    'G3A2': {'volume': '115AG3H', 'from': 7, 'to': 12, 'label': '翰林三上', 'grade': 3},
+    'G4A': {'volume': '115AG4K', 'from': 1, 'to': 6, 'label': '康軒四上', 'grade': 4},
     'G4A2': {'volume': '115AG4K', 'from': 7, 'to': 12, 'label': '康軒四上', 'grade': 4},
+    'G6A': {'volume': '115AG6H', 'from': 1, 'to': 6, 'label': '翰林六上', 'grade': 6},
+    'G6A2': {'volume': '115AG6H', 'from': 7, 'to': 12, 'label': '翰林六上', 'grade': 6},
 }
 
 TONE = re.compile('[ˊˇˋ˙]')

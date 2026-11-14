@@ -1,0 +1,575 @@
+{
+  "note": "生字與語詞讀音依教育部《國語辭典簡編本》更正（原資料混入非臺灣讀音）；「不」依語流變調（四聲前 ㄅㄨˊ）。由 scripts/apply-zhuyin-corrections.mjs 套用，重新匯入課次後要重跑。 另含原本留空的語詞注音補缺（from 為 null）。",
+  "approved_by": "CF",
+  "approved_on": "2026-11-15",
+  "characters": [
+    {
+      "volume": "115AG2H",
+      "lesson": 5,
+      "char": "夕",
+      "from": "ㄒㄧ",
+      "to": "ㄒㄧˋ"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 10,
+      "char": "識",
+      "from": "ㄕˊ",
+      "to": "ㄕˋ"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 10,
+      "char": "突",
+      "from": "ㄊㄨ",
+      "to": "ㄊㄨˊ"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 11,
+      "char": "播",
+      "from": "ㄅㄛ",
+      "to": "ㄅㄛˋ"
+    },
+    {
+      "volume": "115AG3H",
+      "lesson": 10,
+      "char": "惜",
+      "from": "ㄒㄧ",
+      "to": "ㄒㄧˊ"
+    },
+    {
+      "volume": "115AG3H",
+      "lesson": 11,
+      "char": "息",
+      "from": "ㄒㄧ",
+      "to": "ㄒㄧˊ"
+    },
+    {
+      "volume": "115AG3H",
+      "lesson": 12,
+      "char": "叔",
+      "from": "ㄕㄨ",
+      "to": "ㄕㄨˊ"
+    },
+    {
+      "volume": "115AG4K",
+      "lesson": 2,
+      "char": "暫",
+      "from": "ㄗㄢˋ",
+      "to": "ㄓㄢˋ"
+    },
+    {
+      "volume": "115AG4K",
+      "lesson": 3,
+      "char": "熟",
+      "from": "ㄕㄨˊ",
+      "to": "ㄕㄡˊ"
+    },
+    {
+      "volume": "115AG4K",
+      "lesson": 7,
+      "char": "薄",
+      "from": "ㄅㄠˊ",
+      "to": "ㄅㄛˊ"
+    },
+    {
+      "volume": "115AG4K",
+      "lesson": 9,
+      "char": "佛",
+      "from": "ㄈㄨˊ",
+      "to": "ㄈㄛˊ"
+    },
+    {
+      "volume": "115AG4K",
+      "lesson": 9,
+      "char": "堤",
+      "from": "ㄉㄧ",
+      "to": "ㄊㄧˊ"
+    },
+    {
+      "volume": "115AG4K",
+      "lesson": 12,
+      "char": "蹈",
+      "from": "ㄉㄠˇ",
+      "to": "ㄉㄠˋ"
+    },
+    {
+      "volume": "115AG6H",
+      "lesson": 1,
+      "char": "儲",
+      "from": "ㄔㄨˇ",
+      "to": "ㄔㄨˊ"
+    },
+    {
+      "volume": "115AG6H",
+      "lesson": 2,
+      "char": "眶",
+      "from": "ㄎㄨㄤˋ",
+      "to": "ㄎㄨㄤ"
+    },
+    {
+      "volume": "115AG6H",
+      "lesson": 5,
+      "char": "蔭",
+      "from": "ㄧㄣ",
+      "to": "ㄧㄣˋ"
+    },
+    {
+      "volume": "115AG6H",
+      "lesson": 6,
+      "char": "諷",
+      "from": "ㄈㄥˇ",
+      "to": "ㄈㄥˋ"
+    },
+    {
+      "volume": "115AG6H",
+      "lesson": 10,
+      "char": "樸",
+      "from": "ㄆㄨˇ",
+      "to": "ㄆㄨˊ"
+    }
+  ],
+  "words": [
+    {
+      "volume": "115AG3H",
+      "lesson": 8,
+      "word": "垃圾",
+      "from": "ㄌㄚ ㄐㄧ",
+      "to": "ㄌㄜˋ ㄙㄜˋ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG3H",
+      "lesson": 9,
+      "word": "挑戰",
+      "from": "ㄊㄧㄠ ㄓㄢˋ",
+      "to": "ㄊㄧㄠˇ ㄓㄢˋ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG4K",
+      "lesson": 2,
+      "word": "暫停",
+      "from": "ㄗㄢˋ ㄊㄧㄥˊ",
+      "to": "ㄓㄢˋ ㄊㄧㄥˊ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG4K",
+      "lesson": 3,
+      "word": "熟能生巧",
+      "from": "ㄕㄨˊ ㄋㄥˊ ㄕㄥ ㄑㄧㄠˇ",
+      "to": "ㄕㄡˊ ㄋㄥˊ ㄕㄥ ㄑㄧㄠˇ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG4K",
+      "lesson": 6,
+      "word": "擁有",
+      "from": "ㄩㄥ ㄧㄡˇ",
+      "to": "ㄩㄥˇ ㄧㄡˇ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG4K",
+      "lesson": 7,
+      "word": "壽司",
+      "from": "ㄕㄡˋ ˙ㄙ",
+      "to": "ㄕㄡˋ ㄙ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG4K",
+      "lesson": 7,
+      "word": "念念不忘",
+      "from": "ㄋㄧㄢˋ ㄋㄧㄢˋ ㄅㄨˋ ㄨㄤˋ",
+      "to": "ㄋㄧㄢˋ ㄋㄧㄢˋ ㄅㄨˊ ㄨㄤˋ",
+      "basis": "不變調"
+    },
+    {
+      "volume": "115AG4K",
+      "lesson": 9,
+      "word": "築堤",
+      "from": "ㄓㄨˋ ㄉㄧ",
+      "to": "ㄓㄨˊ ㄊㄧˊ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG4K",
+      "lesson": 9,
+      "word": "氣息",
+      "from": "ㄑㄧˋ ㄒㄧ",
+      "to": "ㄑㄧˋ ㄒㄧˊ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG4K",
+      "lesson": 12,
+      "word": "手舞足蹈",
+      "from": "ㄕㄡˇ ㄨˇ ㄗㄨˊ ㄉㄠˇ",
+      "to": "ㄕㄡˇ ㄨˇ ㄗㄨˊ ㄉㄠˋ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG6H",
+      "lesson": 1,
+      "word": "搖晃",
+      "from": "ㄧㄠˊ ㄏㄨㄤˇ",
+      "to": "ㄧㄠˊ ㄏㄨㄤˋ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG6H",
+      "lesson": 1,
+      "word": "儲存",
+      "from": "ㄔㄨˇ ㄘㄨㄣˊ",
+      "to": "ㄔㄨˊ ㄘㄨㄣˊ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG6H",
+      "lesson": 2,
+      "word": "眼眶",
+      "from": "ㄧㄢˇ ㄎㄨㄤˋ",
+      "to": "ㄧㄢˇ ㄎㄨㄤ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG6H",
+      "lesson": 2,
+      "word": "暈倒",
+      "from": "ㄩㄣ ㄉㄠˋ",
+      "to": "ㄩㄣ ㄉㄠˇ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG6H",
+      "lesson": 2,
+      "word": "寂寞",
+      "from": "ㄐㄧˋ ㄇㄛˋ",
+      "to": "ㄐㄧˊ ㄇㄛˋ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG6H",
+      "lesson": 4,
+      "word": "從容不迫",
+      "from": "ㄘㄨㄥˊ ㄖㄨㄥˊ ㄅㄨˊ ㄆㄛˋ",
+      "to": "ㄘㄨㄥ ㄖㄨㄥˊ ㄅㄨˊ ㄆㄛˋ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG6H",
+      "lesson": 5,
+      "word": "樹蔭",
+      "from": "ㄕㄨˋ ㄧㄣ",
+      "to": "ㄕㄨˋ ㄧㄣˋ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG6H",
+      "lesson": 5,
+      "word": "穩重",
+      "from": "ㄨㄣˇ ㄔㄨㄥˊ",
+      "to": "ㄨㄣˇ ㄓㄨㄥˋ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG6H",
+      "lesson": 6,
+      "word": "嘲諷",
+      "from": "ㄔㄠˊ ㄈㄥˇ",
+      "to": "ㄔㄠˊ ㄈㄥˋ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG6H",
+      "lesson": 7,
+      "word": "更迭",
+      "from": "ㄍㄥˋ ㄉㄧㄝˊ",
+      "to": "ㄍㄥ ㄉㄧㄝˊ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG6H",
+      "lesson": 8,
+      "word": "不羈",
+      "from": "ㄅㄨˊ ㄐㄧ",
+      "to": "ㄅㄨˋ ㄐㄧ",
+      "basis": "不變調"
+    },
+    {
+      "volume": "115AG6H",
+      "lesson": 10,
+      "word": "樸實",
+      "from": "ㄆㄨˇ ㄕˊ",
+      "to": "ㄆㄨˊ ㄕˊ",
+      "basis": "簡編本詞條"
+    },
+    {
+      "volume": "115AG6H",
+      "lesson": 12,
+      "word": "絲毫不差",
+      "from": "ㄙ ㄏㄠˊ ㄅㄨˋ ㄔㄚˋ",
+      "to": "ㄙ ㄏㄠˊ ㄅㄨˊ ㄔㄚˋ",
+      "basis": "不變調"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 2,
+      "word": "不熟",
+      "from": null,
+      "to": "ㄅㄨˋ ㄕㄡˊ",
+      "basis": "補缺：簡編本詞條"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 2,
+      "word": "轉學生",
+      "from": null,
+      "to": "ㄓㄨㄢˇ ㄒㄩㄝˊ ㄕㄥ",
+      "basis": "補缺：簡編本「轉學」「學生」"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 3,
+      "word": "一點",
+      "from": null,
+      "to": "ㄧˋ ㄉㄧㄢˇ",
+      "basis": "補缺：簡編本詞條＋「一」變調"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 4,
+      "word": "蝦蟆",
+      "from": null,
+      "to": "ㄏㄚˊ ㄇㄚˊ",
+      "basis": "補缺：簡編本詞條"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 5,
+      "word": "腳丫",
+      "from": null,
+      "to": "ㄐㄧㄠˇ ㄧㄚ",
+      "basis": "補缺：兩字皆為本課生字"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 6,
+      "word": "那邊",
+      "from": null,
+      "to": "ㄋㄚˋ ㄅㄧㄢ",
+      "basis": "補缺：那為本課生字；邊為單一讀音字"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 7,
+      "word": "便當盒",
+      "from": null,
+      "to": "ㄅㄧㄢˋ ㄉㄤ ㄏㄜˊ",
+      "basis": "補缺：三字皆為第七課生字，讀音同課次生字資料"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 7,
+      "word": "不一樣",
+      "from": null,
+      "to": "ㄅㄨˋ ㄧˊ ㄧㄤˋ",
+      "basis": "補缺：簡編本「不一樣」＋教師規則（一在四聲前變調），與複習卷注音版一致"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 7,
+      "word": "越南春捲",
+      "from": null,
+      "to": "ㄩㄝˋ ㄋㄢˊ ㄔㄨㄣ ㄐㄩㄢˇ",
+      "basis": "補缺：簡編本「春捲」；南為第七課生字；越為單一讀音字"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 7,
+      "word": "保平安",
+      "from": null,
+      "to": "ㄅㄠˇ ㄆㄧㄥˊ ㄢ",
+      "basis": "補缺：簡編本「平安」；保為第七課生字"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 7,
+      "word": "艾粄",
+      "from": null,
+      "to": "ㄞˋ ㄅㄢˇ",
+      "basis": "補缺：注音字型讀音表第一讀音（艾為多音字）（待 CF 確認）"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 8,
+      "word": "米紙",
+      "from": null,
+      "to": "ㄇㄧˇ ㄓˇ",
+      "basis": "補缺：兩字皆為第八課生字"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 9,
+      "word": "沖澡",
+      "from": null,
+      "to": "ㄔㄨㄥ ㄗㄠˇ",
+      "basis": "補缺：兩字皆為第九課生字"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 9,
+      "word": "小黃瓜",
+      "from": null,
+      "to": "ㄒㄧㄠˇ ㄏㄨㄤˊ ㄍㄨㄚ",
+      "basis": "補缺：簡編本「黃瓜」；小為單一讀音字"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 9,
+      "word": "紅蘿蔔",
+      "from": null,
+      "to": "ㄏㄨㄥˊ ㄌㄨㄛˊ ㄅㄛˊ",
+      "basis": "補缺：簡編本「蘿蔔」；蘿、蔔為第九課生字"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 10,
+      "word": "嘟著嘴",
+      "from": null,
+      "to": "ㄉㄨ ˙ㄓㄜ ㄗㄨㄟˇ",
+      "basis": "補缺：教師規則（動詞後的「著」讀輕聲，同第八課「接著」）；嘴為第十課生字"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 10,
+      "word": "搖搖頭",
+      "from": null,
+      "to": "ㄧㄠˊ ㄧㄠˊ ㄊㄡˊ",
+      "basis": "補缺：簡編本「搖頭」；搖為第十課生字"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 10,
+      "word": "認識",
+      "from": null,
+      "to": "ㄖㄣˋ ㄕˋ",
+      "basis": "補缺：簡編本「認識」。注意：第十課生字資料的「識」標ㄕˊ，兩者不一致"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 11,
+      "word": "耳朵",
+      "from": null,
+      "to": "ㄦˇ ㄉㄨㄛˇ",
+      "basis": "補缺：簡編本「耳朵」"
+    },
+    {
+      "volume": "115AG2H",
+      "lesson": 12,
+      "word": "詠鵝",
+      "from": null,
+      "to": "ㄩㄥˇ ㄜˊ",
+      "basis": "補缺：兩字皆為單一讀音字（注音字型讀音表）"
+    },
+    {
+      "volume": "115AG3H",
+      "lesson": 2,
+      "word": "便利貼",
+      "from": null,
+      "to": "ㄅㄧㄢˋ ㄌㄧˋ ㄊㄧㄝ",
+      "basis": "補缺：簡編本「便利」；貼為本課生字"
+    },
+    {
+      "volume": "115AG3H",
+      "lesson": 2,
+      "word": "睡覺",
+      "from": null,
+      "to": "ㄕㄨㄟˋ ㄐㄧㄠˋ",
+      "basis": "補缺：簡編本詞條（睡眠義）"
+    },
+    {
+      "volume": "115AG3H",
+      "lesson": 3,
+      "word": "作業本",
+      "from": null,
+      "to": "ㄗㄨㄛˋ ㄧㄝˋ ㄅㄣˇ",
+      "basis": "補缺：簡編本「作業」；本為本課生字"
+    },
+    {
+      "volume": "115AG3H",
+      "lesson": 8,
+      "word": "紙杯",
+      "from": null,
+      "to": "ㄓˇ ㄅㄟ",
+      "basis": "補缺：杯為本課生字；紙為單一讀音字"
+    },
+    {
+      "volume": "115AG3H",
+      "lesson": 8,
+      "word": "瓶蓋",
+      "from": null,
+      "to": "ㄆㄧㄥˊ ㄍㄞˋ",
+      "basis": "補缺：兩字皆為本課生字"
+    },
+    {
+      "volume": "115AG3H",
+      "lesson": 9,
+      "word": "林投樹",
+      "from": null,
+      "to": "ㄌㄧㄣˊ ㄊㄡˊ ㄕㄨˋ",
+      "basis": "補缺：投為本課生字；林、樹為單一讀音字"
+    },
+    {
+      "volume": "115AG3H",
+      "lesson": 9,
+      "word": "木棧道",
+      "from": null,
+      "to": "ㄇㄨˋ ㄓㄢˋ ㄉㄠˋ",
+      "basis": "補缺：簡編本「棧道」"
+    },
+    {
+      "volume": "115AG3H",
+      "lesson": 9,
+      "word": "一般",
+      "from": null,
+      "to": "ㄧˋ ㄅㄢ",
+      "basis": "補缺：簡編本詞條＋「一」變調"
+    },
+    {
+      "volume": "115AG3H",
+      "lesson": 10,
+      "word": "藏新娘",
+      "from": null,
+      "to": "ㄘㄤˊ ㄒㄧㄣ ㄋㄧㄤˊ",
+      "basis": "補缺：藏為本課生字；簡編本「新娘」"
+    },
+    {
+      "volume": "115AG3H",
+      "lesson": 11,
+      "word": "修車廠",
+      "from": null,
+      "to": "ㄒㄧㄡ ㄔㄜ ㄔㄤˇ",
+      "basis": "補缺：簡編本「車廠」；修為本課生字"
+    },
+    {
+      "volume": "115AG3H",
+      "lesson": 12,
+      "word": "剩下",
+      "from": null,
+      "to": "ㄕㄥˋ ㄒㄧㄚˋ",
+      "basis": "補缺：簡編本詞條"
+    },
+    {
+      "volume": "115AG1H",
+      "lesson": 3,
+      "word": "一個",
+      "from": "ㄧˊ ㄍㄜˋ",
+      "to": "ㄧˊ ˙ㄍㄜ",
+      "basis": "量詞「個」讀輕聲（Reading Tool 教師規則），與本課生字「個 ˙ㄍㄜ」一致"
+    }
+  ]
+}

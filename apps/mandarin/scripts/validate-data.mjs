@@ -4,9 +4,11 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import Ajv from 'ajv';
 import { isAllowedLinkUrl } from '../src/config/linkDomains.js';
+import { applyYiSandhi } from '../src/utils/zhuyin.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
+const YI_EXCEPTIONS = new Set(JSON.parse(readFileSync(join(root, 'tools/word-zhuyin-exceptions.json'), 'utf-8')).yi_base_tone);
 
 const ajv = new Ajv({ allErrors: true, strict: false });
 const courseIndexSchema = JSON.parse(readFileSync(join(root, 'schema/course-index.schema.json'), 'utf-8'));
@@ -71,6 +73,23 @@ function checkWordZhuyinSpacing(file, data) {
   return true;
 }
 
+function checkWordRules(file, data) {
+  let ok = true;
+  for (const w of data.words || []) {
+    if (typeof w.meaning === 'string' && /⑵/u.test(w.meaning)) {
+      console.error(`[FAIL] ${file} 語詞「${w.word}」解釋仍分 ⑴⑵ 多義（一律只留第 ⑴ 義）`);
+      console.error('  修正：node scripts/apply-word-meaning-overrides.mjs --write');
+      ok = false;
+    }
+    if (typeof w.zhuyin === 'string' && !YI_EXCEPTIONS.has(w.word) && applyYiSandhi(w.word, w.zhuyin) !== w.zhuyin) {
+      console.error(`[FAIL] ${file} 語詞「${w.word}」的「一」沒有依語流變調：${w.zhuyin} → ${applyYiSandhi(w.word, w.zhuyin)}`);
+      console.error('  修正：node scripts/normalize-yi-sandhi.mjs --write（要維持本調就加進 tools/word-zhuyin-exceptions.json）');
+      ok = false;
+    }
+  }
+  return ok;
+}
+
 function checkNeutralTone(file, data) {
   const bad = [];
   const visit = (node, path) => {
@@ -121,6 +140,7 @@ for (const file of lessonFiles) {
   const data = JSON.parse(readFileSync(file, 'utf-8'));
   if (!checkNeutralTone(file, data)) failed = true;
   if (!checkWordZhuyinSpacing(file, data)) failed = true;
+  if (!checkWordRules(file, data)) failed = true;
   if (!validateLesson(data)) {
     failed = true;
     console.error(`[FAIL] ${file}`);

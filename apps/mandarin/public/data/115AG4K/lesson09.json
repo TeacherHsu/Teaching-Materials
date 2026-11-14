@@ -84,7 +84,7 @@
   "characters": [
     {
       "char": "佛",
-      "zhuyin": "ㄈㄨˊ",
+      "zhuyin": "ㄈㄛˊ",
       "zhuyin_source": "pypinyin_0.55.0_derivation",
       "stroke_count": 7,
       "radical": "⼈",
@@ -284,7 +284,7 @@
     },
     {
       "char": "堤",
-      "zhuyin": "ㄉㄧ",
+      "zhuyin": "ㄊㄧˊ",
       "zhuyin_source": "wordwall_source_manifest",
       "stroke_count": 12,
       "radical": "⼟",
@@ -492,7 +492,7 @@
     {
       "id": "word:115AG4K09:09",
       "word": "築堤",
-      "zhuyin": "ㄓㄨˋ ㄉㄧ",
+      "zhuyin": "ㄓㄨˊ ㄊㄧˊ",
       "meaning": "建築堤防。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -505,13 +505,16 @@
       "id": "word:115AG4K09:10",
       "word": "防潮",
       "zhuyin": "ㄈㄤˊ ㄔㄠˊ",
-      "meaning": "⑴防止潮水入侵。⑵防止潮溼。",
+      "meaning": "防止潮水入侵。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson09/vocabulary/l09-10.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "⑴防止潮水入侵。⑵防止潮溼。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K09:11",
@@ -555,7 +558,7 @@
     {
       "id": "word:115AG4K09:14",
       "word": "氣息",
-      "zhuyin": "ㄑㄧˋ ㄒㄧ",
+      "zhuyin": "ㄑㄧˋ ㄒㄧˊ",
       "meaning": "在一定環境中，給人某種強烈感覺的精神表現或景象。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -2520,9 +2523,8 @@
     },
     "sentence_practice": {
       "label": "練習句子",
-      "status": "missing",
-      "activity": "sentence-practice",
-      "note": "官方核准句型不足 3 組。"
+      "status": "available",
+      "activity": "sentence-practice"
     },
     "application": {
       "label": "我會應用",

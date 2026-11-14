@@ -84,7 +84,7 @@
   "characters": [
     {
       "char": "薄",
-      "zhuyin": "ㄅㄠˊ",
+      "zhuyin": "ㄅㄛˊ",
       "zhuyin_source": "pypinyin_0.55.0_derivation",
       "stroke_count": 17,
       "radical": "⾋",
@@ -495,7 +495,7 @@
     {
       "id": "word:115AG4K07:09",
       "word": "壽司",
-      "zhuyin": "ㄕㄡˋ ˙ㄙ",
+      "zhuyin": "ㄕㄡˋ ㄙ",
       "meaning": "一種日本料理。把拌了醋的飯和生魚片、炒蛋等食品，用海苔捲緊後切成小塊食用。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -570,7 +570,7 @@
     {
       "id": "word:115AG4K07:15",
       "word": "念念不忘",
-      "zhuyin": "ㄋㄧㄢˋ ㄋㄧㄢˋ ㄅㄨˋ ㄨㄤˋ",
+      "zhuyin": "ㄋㄧㄢˋ ㄋㄧㄢˋ ㄅㄨˊ ㄨㄤˋ",
       "meaning": "心中常常惦記著，不曾忘記。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
