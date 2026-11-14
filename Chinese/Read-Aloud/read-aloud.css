@@ -139,3 +139,103 @@ footer.credit a { color: inherit; }
 }
 /* 動畫關（body.calm 由 read-aloud.js 依系統設定與畫面上的開關決定） */
 body.calm *, body.calm *::before, body.calm *::after { animation: none !important; transition: none !important; }
+
+/* 原創貼紙插圖：img 失敗時顯示同尺寸 fallback，背景失敗保留漸層。 */
+.art { display: inline-grid; place-items: center; width: 100%; height: 100%; vertical-align: middle; }
+.art > img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.art-fallback { display: grid; place-items: center; width: 100%; height: 100%; font-size: inherit; line-height: 1; }
+.art-fallback svg { width: 100%; height: 100%; }
+.stage { height: clamp(280px, 38vh, 380px); isolation: isolate; }
+.stage-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; pointer-events: none; }
+.bubble { top: 6px; font-size: 18px; line-height: 1.5; padding: 3px 12px; }
+.cells { bottom: 5px; z-index: 3; }
+.slot > .art { width: 100%; height: 100%; }
+.egg-wrap { width: 230px; height: 230px; margin-top: 18px; transform-origin: 50% 60%; transition: transform .16s ease-out; }
+.egg-wrap::before { content: ''; position: absolute; width: 90%; height: 88%; border-radius: 50%; background: radial-gradient(ellipse, #fff9c9 0%, #ffd77966 45%, transparent 72%); opacity: var(--glow, .2); z-index: -1; }
+.egg-wrap::after { content: ''; position: absolute; width: 115px; height: 15px; bottom: 14px; background: #5a3d2833; filter: blur(3px); border-radius: 50%; z-index: -1; }
+.egg-wrap .pet { width: 100%; height: 100%; display: block; animation: none; }
+.egg-wrap > .art, .egg-wrap > .pet { font-size: 150px; }
+.egg-wrap.wobble > .egg-art { animation: sticker-wobble 2.8s ease-in-out infinite; transform-origin: 50% 88%; }
+.egg-wrap.wobble svg { animation: none; }
+.shell { position: absolute; inset: 0; }
+.hatch-light { position: absolute; inset: 0; background: radial-gradient(circle, #fff 0 20%, #fff9dc88 50%, transparent 75%); opacity: 0; pointer-events: none; z-index: 4; }
+.stage.battle { align-items: end; justify-content: space-between; padding: 40px 8% 34px; }
+.stage.boss-stage { height: clamp(330px, 42vh, 380px); }
+.fighter { position: relative; width: 40%; display: flex; flex-direction: column; align-items: center; flex: 0 0 40%; transition: none; }
+.fighter::before { content: ''; width: 105px; height: 14px; border-radius: 50%; background: #5a3d282c; filter: blur(3px); position: absolute; bottom: 29px; z-index: -1; }
+.fighter .face { width: 178px; height: 178px; display: block; font-size: 130px; line-height: 1; transform-origin: 50% 90%; }
+.fighter .tag { display: block; white-space: nowrap; font-size: 18px; line-height: 1.5; padding: 0 6px; }
+#heroFace > .art { animation: breathe 3s ease-in-out infinite; }
+#foe:not(.boss) .face > .art { animation: float-foe 2.8s ease-in-out infinite; }
+.fighter.boss .face { width: 260px; height: 260px; font-size: 170px; }
+.hp { display: inline-block; }
+.boss-veil { position: absolute; inset: 0; background: #5a3d28; opacity: 0; z-index: 4; pointer-events: none; }
+.visual-fx { position: absolute; pointer-events: none; }
+.projectile { width: 64px; height: 64px; font-size: 42px; }
+.projectile.wave { width: 86px; height: 86px; }
+.projectile.star { width: 44px; height: 44px; }
+.particle { width: 25px; height: 25px; color: #f08a5d; font-size: 25px; line-height: 1; }
+.impact-ring { width: 65px; height: 65px; border: 6px solid #fff; border-radius: 50%; box-shadow: 0 0 0 2px #f2a93baa; }
+.gain-label { color: #a26312; font-size: 28px; font-weight: 700; text-shadow: 0 2px #fff, 2px 0 #fff; }
+.level-arrow { color: #4f9a68; font-size: 50px; }
+.crumb { display: block; background: #f2a93b; border: 2px solid #fff6e5; border-radius: 35%; width: 10px; height: 12px; }
+.music-note { display: block; position: relative; height: 22px; width: 5px; background: #b79ae0; border-radius: 3px; }
+.music-note::before { content: ''; position: absolute; bottom: -2px; right: 0; width: 14px; height: 10px; border-radius: 50%; background: #b79ae0; }
+.music-note::after { content: ''; position: absolute; top: 0; width: 12px; height: 4px; background: #b79ae0; transform: rotate(20deg); transform-origin: left; }
+.fin-stage { gap: 4px; }
+.fin-stage > .photo-pet { flex: 0 1 104px; width: 104px; height: 130px; animation: none; }
+.fin-stage > .photo-hero { width: 200px; height: 200px; animation: none; }
+.fin-stage > .photo-star { width: 85px; height: 85px; animation: none; align-self: center; }
+.fin-stage > .photo-trophy { align-self: center; animation: none; }
+.fin-stage .art, .fin-stage .art-fallback { animation: none; }
+.overlay.show .photo-pet { animation: photo-hop .55s ease-in-out 2; animation-delay: var(--delay, 0s); }
+.overlay.show .photo-hero { animation: photo-hop .55s ease-in-out 2; }
+button.chip { min-height: 56px; }
+@keyframes sticker-wobble { 0%,100% { rotate: -2deg; } 50% { rotate: 2deg; } }
+@keyframes breathe { 0%,100% { translate: 0 0; } 50% { translate: 0 -3px; } }
+@keyframes float-foe { 0%,100% { translate: 0 0; rotate: -2deg; } 50% { translate: 0 -5px; rotate: 2deg; } }
+@keyframes photo-hop { 0%,100% { translate: 0 0; } 50% { translate: 0 -12px; } }
+/* iPad 橫向縮留白，字卡與注音規則原樣保留。 */
+@media (min-width: 700px) and (max-height: 850px) {
+  .top { padding: 4px 16px; gap: 6px; }
+  .strip { min-height: 32px; gap: 3px; margin-bottom: 4px; }
+  .strip .slot { width: 32px; height: 32px; border-radius: 9px; }
+  .card { margin-top: 6px; padding: 4px 12px 6px; }
+  .btns { margin-top: 4px; gap: 8px; }
+  .btn { padding-top: 6px; padding-bottom: 6px; }
+  .feedback { margin-top: 4px; }
+  .meter { margin-top: 4px; }
+}
+@media (max-width: 520px) {
+  main { padding-left: 10px; padding-right: 10px; }
+  .strip .slot { width: 32px; height: 32px; }
+  .stage.battle { padding-left: 4px; padding-right: 4px; }
+  .fighter { width: 47%; flex-basis: 47%; }
+  .fighter .face { width: 148px; height: 158px; }
+  .fighter.boss .face { width: 184px; height: 240px; }
+  .fighter .tag { font-size: 15px; padding: 0 2px; }
+  .fighter .hp { font-size: 14px; }
+  .bubble { font-size: 16px; max-width: calc(100% - 10px); }
+  .cells { max-width: calc(100% - 8px); gap: 3px; padding: 4px 8px; }
+  .cell { width: 14px; height: 14px; flex-shrink: 0; }
+  .card { padding-left: 6px; padding-right: 6px; }
+  .btns { gap: 6px; }
+  #flash { white-space: normal; text-align: center; max-width: 94vw; }
+}
+body.calm .visual-fx { display: none; }
+/* 名稱放在角色腳下，不佔插圖高度；大魔王蓄力格放在勇士上方的空白處。 */
+.fighter .tag { position: absolute; bottom: -25px; }
+.stage.battle .cells { top: 48px; bottom: auto; left: 25%; }
+.shell-top { translate: 0 -38px; scale: .84; }
+.shell-bottom { translate: 0 48px; scale: .84; }
+.fin-stage { flex-wrap: nowrap; }
+.fin-stage > .photo-pet { min-width: 0; }
+
+/* Claude 驗收後調整：勇士是全身像、留白比怪物多，放大到和怪物看起來一樣高；肉肉與聲波放大，後排也看得到 */
+@media (min-width: 521px) {
+  #hero .face { width: 216px; height: 216px; margin-top: -38px; }
+}
+.projectile { width: 84px; height: 84px; }
+.projectile.wave { width: 112px; height: 112px; }
+.projectile.star { width: 48px; height: 48px; }
+.strip .crack { display: none; }

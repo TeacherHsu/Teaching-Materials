@@ -5,6 +5,7 @@
 - 改編自「步步練」spedmixteaching.pages.dev，原作者米克師 spedmix2025（CF 說已取得授權）；玩法參考、程式與美術另寫，頁尾有出處，不要拿掉。原站打怪是 3D 走路版，這裡改成不用走路的 2D 對戰（低年級與平板好操作）。
 - 評分同「念讀語詞」：不比聲調、同音字算對；規則與題庫更新方式看 `Chinese/Read-Aloud/README.md`。重產題庫要家中 Mac（注音字型讀音表＋簡編本離線詞庫）。
 - 已驗：`build_data.py --check` ✅、`grade.test.cjs` 6 項全過、`npm run validate`／`build`／`check-dist`、118 支 scripts 測試全過、L0 檢查通過（姓名掃描未啟用）；內建瀏覽器用 `__readAloud.judge()` 模擬念讀，兩個模式各玩完一局（含破蛋、大魔王、結算、再玩一次）、375 寬無橫向捲動、年級頁入口，主控台無錯誤。
+- 2026-11-14 追加（CF 試玩後）：示範朗讀濾掉 emoji 不念；右上加「動畫開／關」（預設跟系統減少動態，CF 的 Mac 有開，所以第一次試玩沒看到特效）。視覺升級由 Codex 依 `Chinese/Read-Aloud/docs/VISUAL-BRIEF.md` 做：33 張原創插圖（`img/`，共 1.15 MiB；原始 PNG 與總覽在 repo 外 `mandarin-work/read-aloud-art/`）、餵食／破蛋／三連擊聲波／大魔王演出，缺圖退回 emoji。Claude 在 1024×768 與 375 寬實玩兩個模式（動畫開、動畫關、缺圖退回、大魔王、結算），46 項 node 測試全過；另把勇士、肉肉、聲波放大。Codex 的紀錄在 `docs/VISUAL-IMPL-LOG.md`。
 - **還沒驗**：真實麥克風與 zh-TW 語音辨識（無頭環境沒有麥克風）、學校電腦與 iPad 實機。單字辨識準確度要實測後才知道要不要調。
 - 待 CF 確認的讀音（`tools/zhuyin-supplement.json` 標「待確認」）：「艾粄」用字型第一讀音ㄞˋ ㄅㄢˇ；「認識」照簡編本標ㄕˋ，但第十課生字資料「識」是ㄕˊ。另外課次資料本身「播」ㄅㄛ／「播報、主播」ㄅㄛˋ、「突」ㄊㄨ／「突然」ㄊㄨˊ 不一致，這次沒有動。
 

@@ -163,6 +163,87 @@
     clearTimeout(flashT); flashT = setTimeout(() => f.classList.remove('show'), 1500);
   }
 
+  // 插圖與新演出工具；既有流程與特效函式維持原簽名。
+  function art(name, fallback, label = '', cls = '') {
+    return `<span class="art ${esc(cls)}" role="img" aria-label="${esc(label)}"><img src="img/${esc(name)}.webp?v=20261114e" alt="" draggable="false" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="art-fallback" hidden>${fallback}</span></span>`;
+  }
+  function backdrop(name) {
+    return `<img class="stage-bg" src="img/${esc(name)}.webp?v=20261114e" alt="" draggable="false" onerror="this.remove()">`;
+  }
+  const visualJobs = new Set();
+  let visualObserver;
+  function watchVisuals() {
+    if (visualObserver) return;
+    visualObserver = new MutationObserver(() => {
+      if (reduced()) for (const stop of [...visualJobs]) stop();
+    });
+    visualObserver.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+  }
+  function motion(el, frames, duration = 300, extra = {}) {
+    if (!el || reduced()) return Promise.resolve();
+    watchVisuals();
+    return new Promise((resolve) => {
+      const animation = el.animate(frames, { duration, easing: 'ease-out', ...extra });
+      const stop = () => animation.cancel();
+      const end = () => { visualJobs.delete(stop); resolve(); };
+      visualJobs.add(stop); animation.onfinish = end; animation.oncancel = end;
+    });
+  }
+  function visualSleep(ms) {
+    if (reduced()) return Promise.resolve();
+    watchVisuals();
+    return new Promise((resolve) => {
+      const done = () => { clearTimeout(timer); visualJobs.delete(done); resolve(); };
+      const timer = setTimeout(done, ms); visualJobs.add(done);
+    });
+  }
+  // 新演出的粒子／投射物共用 60 個上限；不呼叫舊版圓點 burst。
+  function effectNode(html, cls, x, y) {
+    const fx = $('fx');
+    if (reduced() || fx.childElementCount >= 60) return null;
+    const node = document.createElement('div'); node.className = `visual-fx ${cls}`;
+    node.innerHTML = html; node.style.left = `${x}px`; node.style.top = `${y}px`; fx.appendChild(node);
+    return node;
+  }
+  const center = (el) => { const r = el.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; };
+  async function particles(el, kind = 'star', count = 8, spread = 75) {
+    if (reduced()) return;
+    const p = center(el);
+    await Promise.all(Array.from({ length: count }, async (_, i) => {
+      const html = kind === 'star' ? art('star', '⭐') : kind === 'note' ? '<i class="music-note"></i>' : kind === 'crumb' ? '<i class="crumb"></i>' : '♥';
+      const node = effectNode(html, `particle ${kind}`, p.x, p.y); if (!node) return;
+      const a = i / count * Math.PI * 2; const d = spread * (.65 + Math.random() * .35);
+      try { await motion(node, [{ transform: 'translate(-50%,-50%) scale(.6)', opacity: 1 }, { transform: `translate(calc(-50% + ${Math.cos(a) * d}px),calc(-50% + ${Math.sin(a) * d}px)) scale(1.1) rotate(${i * 34}deg)`, opacity: 0 }], 420); }
+      finally { node.remove(); }
+    }));
+  }
+  async function impact(el, large = false) {
+    if (reduced()) return;
+    const p = center(el); const node = effectNode('', 'impact-ring', p.x, p.y); if (!node) return;
+    try { await motion(node, [{ transform: 'translate(-50%,-50%) scale(.2)', opacity: 1 }, { transform: `translate(-50%,-50%) scale(${large ? 3 : 2})`, opacity: 0 }], 260); }
+    finally { node.remove(); }
+  }
+  async function floatLabel(el, text, cls = '') {
+    if (reduced()) return;
+    const p = center(el); const node = effectNode(esc(text), `gain-label ${cls}`, p.x, p.y - 30); if (!node) return;
+    try { await motion(node, [{ transform: 'translate(-50%,-50%)', opacity: 1 }, { transform: 'translate(-50%,-100%)', opacity: 0 }], 400); }
+    finally { node.remove(); }
+  }
+  async function projectile(name, fallback, from, to, { arc = 0, duration = 260, large = false, target = null, source = null } = {}) {
+    const a = source || center(from); const b = target || center(to);
+    if (reduced()) return b;
+    const node = effectNode(art(name, fallback), `projectile ${name}`, a.x, a.y); if (!node) return b;
+    const dx = b.x - a.x, dy = b.y - a.y;
+    try {
+      await motion(node, [
+        { transform: 'translate(-50%,-50%) scale(.6)' },
+        { transform: `translate(calc(-50% + ${dx / 2}px),calc(-50% + ${dy / 2 - arc}px)) scale(${large ? 1.6 : .9})`, offset: .5 },
+        { transform: `translate(calc(-50% + ${dx}px),calc(-50% + ${dy}px)) scale(${large ? 2.5 : 1.2})` },
+      ], duration, { easing: 'linear' });
+    } finally { node.remove(); }
+    return b;
+  }
+
   // ---------- 朗讀示範：只用台灣國語語音 ----------
   function twVoice() {
     const all = window.speechSynthesis ? speechSynthesis.getVoices() : [];
@@ -436,7 +517,7 @@
       const b = $('mic'); if (b && !b.disabled) { e.preventDefault(); toggleMic(); }
     });
 
-    const api = { $, sleep, reduced, burst, popText, fly, flash, beep, waitButton, feedback, zhuyinHtml, shuffle, groupSizes, FULL, state: S };
+    const api = { $, sleep, reduced, burst, popText, fly, flash, beep, waitButton, feedback, zhuyinHtml, shuffle, groupSizes, FULL, state: S, art, backdrop, motion, visualSleep, particles, impact, floatLabel, projectile };
     // 測試與教師示範用：不經麥克風直接給分
     root.__readAloud = { S, judge, score100, begin, data };
     return api;

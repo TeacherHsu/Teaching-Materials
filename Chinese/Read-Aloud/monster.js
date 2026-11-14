@@ -5,32 +5,69 @@
   const BOSS = ['🐲', '無聲大魔王'];
   let lv = 1; let bossTasks = [];
 
-  const hearts = (n, max) => '💛'.repeat(n) + '🤍'.repeat(Math.max(0, max - n));
+  let visualApi;
+  const foeFile = (foe) => foe === BOSS ? 'boss' : 'mon-' + (MONS.indexOf(foe) + 1);
+  const hearts = (n, max) => Array.from({ length: max }, (_, k) => `<span class="hp ${k < n ? 'full' : ''}">${k < n ? '💛' : '🤍'}</span>`).join('');
   function paintStrip(tasks, curTask) {
     const main = tasks.filter((t) => t.phase !== 'bonus');
     document.getElementById('strip').innerHTML = main.map((t) =>
-      `<span class="slot ${t.done ? 'done' : ''} ${t === curTask ? 'cur' : ''}">${t.done ? '⭐' : t.mon[0]}</span>`).join('')
-      + (bossTasks.length ? `<span class="slot ${curTask && curTask.phase === 'bonus' ? 'cur' : ''} ${bossTasks.every((t) => t.done) ? 'done' : ''}">${bossTasks.every((t) => t.done) ? '🏆' : BOSS[0]}</span>` : '');
+      `<span class="slot ${t.done ? 'done' : ''} ${t === curTask ? 'cur' : ''}">${visualApi.art(t.done ? 'star' : foeFile(t.mon), t.done ? '⭐' : t.mon[0])}</span>`).join('')
+      + (bossTasks.length ? `<span class="slot ${curTask && curTask.phase === 'bonus' ? 'cur' : ''} ${bossTasks.every((t) => t.done) ? 'done' : ''}">${visualApi.art(bossTasks.every((t) => t.done) ? 'star' : 'boss', bossTasks.every((t) => t.done) ? '🏆' : BOSS[0])}</span>` : '');
+  }
+  function heroPose(api, pose) {
+    api.$('heroFace').innerHTML = api.art('hero-' + pose, '🦸', '聲波小勇士');
   }
   function mount(api, foe, cls) {
-    api.$('stage').className = 'stage battle';
-    api.$('stage').innerHTML = `<div class="bubble" id="bubble"></div>
-      <div class="fighter" id="hero" style="transform:scale(${Math.min(1.15, 0.9 + lv * 0.02)})"><span class="face" role="img" aria-label="聲波小勇士">🦸</span><br><span class="tag" id="heroTag">聲波小勇士 LV ${lv}</span></div>
-      <div class="fighter ${cls || ''}" id="foe"><span class="face" role="img" aria-label="${foe[1]}">${foe[0]}</span><br><span class="tag" id="foeTag"></span></div>
+    api.$('stage').className = 'stage battle' + (cls ? ' boss-stage' : '');
+    api.$('stage').innerHTML = `${api.backdrop('bg-forest')}<div class="bubble" id="bubble"></div>
+      <div class="fighter" id="hero"><span class="face" id="heroFace">${api.art('hero-idle', '🦸', '聲波小勇士')}</span><span class="tag" id="heroTag">聲波小勇士 LV ${lv}</span></div>
+      <div class="fighter ${cls || ''}" id="foe"><span class="face" id="foeFace">${api.art(foeFile(foe), foe[0], foe[1])}</span><span class="tag" id="foeTag"></span></div>
       <div class="cells" id="cells"></div>`;
   }
   function paintFoe(t, api) {
     if (t.phase === 'bonus') {
       const left = bossTasks.filter((x) => !x.done).length;
-      api.$('foeTag').textContent = `${BOSS[1]} ${hearts(left, bossTasks.length)}`;
-      api.$('foe').style.transform = `scale(${0.7 + 0.3 * (left / bossTasks.length)})`;
+      api.$('foeTag').innerHTML = `${BOSS[1]} ${hearts(left, bossTasks.length)}`;
+      api.$('foeFace').style.transform = `scale(${0.7 + 0.3 * (left / bossTasks.length)})`;
       api.$('bubble').textContent = `👑 ${BOSS[1]}：「這個字你一定不會念！」`;
       api.$('cells').innerHTML = '🔊 蓄力 ' + Array.from({ length: api.FULL }, (_, k) => `<span class="cell ${k < t.got ? 'on' : ''}"></span>`).join('');
     } else {
-      api.$('foeTag').textContent = `${t.mon[1]} ${hearts(api.FULL - t.got, api.FULL)}`;
+      api.$('foeTag').innerHTML = `${t.mon[1]} ${hearts(api.FULL - t.got, api.FULL)}`;
       api.$('bubble').textContent = `${t.mon[0]} ${t.mon[1]}把這個字的聲音偷走了！`;
       api.$('cells').innerHTML = '';
     }
+  }
+  function enter(api, boss = false) {
+    if (api.reduced()) return Promise.resolve();
+    if (boss) {
+      const veil = document.createElement('div'); veil.className = 'boss-veil'; api.$('stage').appendChild(veil);
+      api.motion(veil, [{ opacity: 0 }, { opacity: .22, offset: .4 }, { opacity: 0 }], 480).finally(() => veil.remove());
+    }
+    return api.motion(api.$('foe'), boss ? [
+      { translate: '0 -180px', opacity: 0 }, { translate: '0 5px', opacity: 1, offset: .75 }, { translate: '0 0', opacity: 1 },
+    ] : [
+      { translate: '180px 0', opacity: 0 }, { translate: '0 -8px', opacity: 1, offset: .7 }, { translate: '0 0', opacity: 1 },
+    ], 450);
+  }
+  function microphone(api) {
+    const r = api.$('heroFace').getBoundingClientRect();
+    return { x: r.left + r.width * .64, y: r.top + r.height * .36 };
+  }
+  async function hit(api, large = false) {
+    const face = api.$('foeFace');
+    api.impact(face, large); api.particles(face, 'star', large ? 12 : 6, large ? 100 : 65);
+    api.floatLabel(face, '-1');
+    api.motion(api.$('stage'), [{ translate: '0 0' }, { translate: '4px 0', offset: .25 }, { translate: '-4px 0', offset: .65 }, { translate: '0 0' }], 180);
+    await api.motion(face.firstElementChild, [
+      { transform: 'rotate(0) scale(1)', filter: 'brightness(1)' },
+      { transform: 'rotate(12deg) scale(.84,1.1)', filter: 'brightness(1.8)', offset: .4 },
+      { transform: 'rotate(0) scale(1)', filter: 'brightness(1)' },
+    ], 160);
+  }
+  async function breakHeart(api, index) {
+    const hp = api.$('foeTag').querySelectorAll('.hp')[index]; if (!hp) return;
+    await api.motion(hp, [{ translate: '0 0', rotate: '0deg', opacity: 1 }, { translate: '18px -30px', rotate: '35deg', opacity: 0 }], 160);
+    hp.textContent = '🤍'; hp.classList.remove('full');
   }
 
   window.ReadAloud.start({
@@ -42,6 +79,7 @@
     againText: (r) => `再 ${r} 道聲波就成功了！`,
     finishText: (n) => `你念了 ${n} 題，升到 LV ${lv}，還打敗了${BOSS[1]}！`,
     setup(tasks, api) {
+      visualApi = api;
       const order = api.shuffle(MONS);
       tasks.forEach((t, i) => { t.mon = order[i % order.length]; });
       lv = 1; bossTasks = [];
@@ -49,52 +87,64 @@
     showTask(t, api) {
       if (t.phase === 'bonus') mount(api, BOSS, 'boss'); else mount(api, t.mon);
       paintFoe(t, api); paintStrip(api.state.tasks, t);
+      enter(api, t.phase === 'bonus');
     },
     async onGain(t, gain, api) {
-      const foe = api.$('foe');
       const before = t.got - gain;
-      await Promise.all(Array.from({ length: gain }, async (_, k) => {
-        await api.sleep(k * 300);
-        const p = await api.fly('🔊', api.$('hero'), foe, { arc: 30, dur: 420, spin: false });
-        foe.classList.remove('shake'); void foe.offsetWidth; foe.classList.add('shake');
-        api.burst(p.x, p.y, ['#ffd24d', '#bfe3f2', '#ffffff', '#9be26a'], 9, 70);
-        api.beep([300 + (before + k) * 90], 0.08, 'square');
+      for (let k = 0; k < gain; k += 1) {
+        heroPose(api, 'shout');
+        api.motion(api.$('heroFace'), [{ translate: '0 0' }, { translate: '6px 0', offset: .4 }, { translate: '0 0' }], 160);
         if (t.phase === 'bonus') {
-          api.$('cells').querySelectorAll('.cell')[before + k]?.classList.add('on');
+          const cell = api.$('cells').querySelectorAll('.cell')[before + k];
+          cell?.classList.add('on');
+          await api.motion(cell, [{ scale: 1 }, { scale: 1.5, offset: .5 }, { scale: 1 }], 180);
         } else {
-          api.popText(p.x, p.y - 50, '💥');
-          api.$('foeTag').textContent = `${t.mon[1]} ${hearts(api.FULL - (before + k + 1), api.FULL)}`;
+          await api.projectile('wave', '🔊', api.$('heroFace'), api.$('foeFace'), { duration: 250, large: k === gain - 1, source: microphone(api) });
+          await Promise.all([hit(api, k === gain - 1), breakHeart(api, api.FULL - before - k - 1)]);
         }
-      }));
-      await api.sleep(350);
+        api.beep([300 + (before + k) * 90], .08, 'triangle');
+      }
+      heroPose(api, 'idle');
     },
     async onTaskDone(t, api) {
-      const foe = api.$('foe'); const r = foe.getBoundingClientRect();
+      const foe = api.$('foe');
       if (t.phase === 'bonus') {
         const left = bossTasks.filter((x) => !x.done).length;
-        api.burst(r.left + r.width / 2, r.top + r.height / 2, ['#ffd24d', '#b79ae0', '#fff'], 26, 130);
-        api.beep([392, 523, 659], 0.1, 'sine');
+        heroPose(api, 'shout');
+        await api.projectile('wave', '🔊', api.$('heroFace'), api.$('foeFace'), { duration: 330, large: true, source: microphone(api) });
+        await Promise.all([hit(api, true), breakHeart(api, left)]);
+        api.beep([392, 523, 659], .1, 'sine');
         paintFoe(t, api);
-        if (left === 0) { foe.classList.add('gone'); api.flash(`🏆 ${BOSS[1]}被你打敗了！`); }
-        else api.flash(`💥 ${BOSS[1]}中招！還剩 ${left} 招`);
-        paintStrip(api.state.tasks, t);
-        await api.sleep(1100);
+        if (left === 0) {
+          api.$('foeFace').innerHTML = api.art('boss-dizzy', BOSS[0], '頭暈的無聲大魔王');
+          api.particles(foe, 'star', 14, 115); api.particles(foe, 'note', 10, 100);
+          await api.visualSleep(200);
+          await api.motion(foe, [{ opacity: 1 }, { opacity: 0 }], 400);
+          foe.style.opacity = '0';
+          api.$('bubble').textContent = '🏆 無聲大魔王被你打敗了！';
+        } else api.$('bubble').textContent = `💥 大魔王中招！還剩 ${left} 招`;
+        heroPose(api, 'idle'); paintStrip(api.state.tasks, t);
         return;
       }
-      foe.classList.add('gone'); lv += 1;
-      api.burst(r.left + r.width / 2, r.top + r.height / 2, ['#ffd24d', '#7fe0c0', '#fff'], 22, 120);
-      api.beep([523, 659, 784], 0.09, 'sine');
-      api.$('heroTag').textContent = `聲波小勇士 LV ${lv}`;
-      api.flash(`⭐ 趕跑${t.mon[1]}！升到 LV ${lv}`);
+      await api.motion(foe, [{ transform: 'translate(0,0) rotate(0) scale(1)', opacity: 1 }, { transform: 'translate(70px,-90px) rotate(300deg) scale(.1)', opacity: 0 }], 320);
+      const source = api.$('foeFace');
+      foe.style.visibility = 'hidden';
+      const targetSlot = api.$('strip').querySelectorAll('.slot')[api.state.tasks.filter((x) => x.phase !== 'bonus').indexOf(t)];
+      const rect = source.getBoundingClientRect();
+      await api.projectile('star', '⭐', source, targetSlot || api.$('strip'), { arc: 40, duration: 300, source: { x: rect.left + rect.width / 2 + 70, y: rect.top + rect.height / 2 - 90 } });
+      lv += 1; api.$('heroTag').textContent = `聲波小勇士 LV ${lv}`;
+      api.beep([523, 659, 784], .09, 'sine');
+      api.floatLabel(api.$('heroFace'), '⬆', 'level-arrow');
+      await api.motion(api.$('hero'), [{ translate: '0 0' }, { translate: '0 -18px', offset: .5 }, { translate: '0 0' }], 280);
       paintStrip(api.state.tasks, t);
-      await api.sleep(1000);
     },
     // 大魔王考第一次念得最不熟的 3 題（分數一樣時，照原本的順序）
     bonus: (rows) => rows.map((r, i) => ({ ...r, i })).sort((a, b) => a.first - b.first || a.i - b.i).slice(0, 3).map((r) => r.task),
     async onBonusStart(tasks, api) {
       bossTasks = tasks;
       mount(api, BOSS, 'boss');
-      api.$('foeTag').textContent = `${BOSS[1]} ${hearts(tasks.length, tasks.length)}`;
+      api.$('foeTag').innerHTML = `${BOSS[1]} ${hearts(tasks.length, tasks.length)}`;
+      enter(api, true);
       api.$('bubble').textContent = `👑 ${BOSS[1]}出現了！`;
       paintStrip(api.state.tasks, null);
       api.$('wordBig').innerHTML = ''; api.$('wordEx').hidden = true; api.$('counter').textContent = '';
@@ -103,11 +153,7 @@
       await api.waitButton('挑戰大魔王 ▶');
     },
     async onFinish(api) {
-      api.$('finStage').innerHTML = '<span role="img" aria-label="聲波小勇士">🦸</span><span>🏆</span><span>⭐</span>';
-      if (!api.reduced()) for (let k = 0; k < 4; k += 1) {
-        setTimeout(() => api.burst(innerWidth * (0.2 + Math.random() * 0.6), innerHeight * (0.25 + Math.random() * 0.4), ['#ffd24d', '#7fe0c0', '#b79ae0', '#fff'], 28, 160), k * 420);
-      }
-      await api.sleep(600);
+      api.$('finStage').innerHTML = `<span class="photo-hero">${api.art('hero-cheer', '🦸', '聲波小勇士歡呼')}</span><span class="photo-trophy">🏆</span><span class="photo-star">${api.art('star', '⭐', '星星')}</span>`;
     },
   });
 })();

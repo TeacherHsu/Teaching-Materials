@@ -43,3 +43,35 @@ node --test Chinese/Read-Aloud/tests/grade.test.cjs
 ## 驗收
 
 無頭瀏覽器沒有麥克風，可在主控台用 `__readAloud.judge(3)`（3／2／1）模擬念讀結果。真實麥克風與語音辨識要在教室的電腦或 iPad 上試。
+
+## 插圖與演出
+
+素材為本遊戲原創的暖色童書貼紙插圖，全部存於 `img/`，遊戲執行時只載入本機素材，不使用 CDN、外部字型、圖片服務或新增函式庫。
+
+| 用途 | 檔案 |
+|---|---|
+| 蛋的三個階段 | `egg-0.webp`、`egg-1.webp`、`egg-2.webp` |
+| 破蛋與餵食 | `shell-top.webp`、`shell-bottom.webp`、`meat.webp` |
+| 寵物寶寶 | `pet-dog.webp`、`pet-cat.webp`、`pet-rabbit.webp`、`pet-hamster.webp`、`pet-chick.webp`、`pet-penguin.webp`、`pet-fox.webp`、`pet-panda.webp`、`pet-koala.webp`、`pet-turtle.webp`、`pet-hedgehog.webp`、`pet-frog.webp` |
+| 小勇士 | `hero-idle.webp`、`hero-shout.webp`、`hero-cheer.webp` |
+| 小怪物 | `mon-1.webp`～`mon-6.webp`（安靜怪、悄悄鬼、摀耳蝙蝠、吸音章魚、靜音機器人、小聲龍） |
+| 大魔王 | `boss.webp`、`boss-dizzy.webp` |
+| 特效 | `wave.webp`、`star.webp` |
+| 舞台背景 | `bg-hatchery.webp`、`bg-forest.webp` |
+
+31 張角色／物件均為 512×512、有 alpha 的透明 WebP，單張不超過 120 KiB；2 張背景為 1600×640、不透明 WebP，單張不超過 220 KiB，`img/` 合計不超過 3.5 MiB。角色透過 `<img>` 呈現；每張都有 `onerror`，載入失敗即在相同容器顯示既有 emoji（蛋顯示原 SVG）。背景載入失敗即移除圖片，保留舞台漸層。
+
+寵物每口肉肉依序拋向蛋，命中時擠壓回彈、加能量、冒愛心與碎屑；蛋到門檻換裂痕，滿能量後約 1.43 秒破蛋。打怪每道聲波依序命中，有衝擊環、星星、HP 彈走與短震動；大魔王先蓄力，滿格後發出特大聲波。結算使用寵物合照或歡呼勇士。新演出共用最多 60 個特效節點，用完移除；關閉動畫時立即完成視覺狀態，中途關閉也會取消尚未結束的演出。
+
+原始 PNG、退件、`contact-sheet.png`、`generation-record.md` 與重產提示集合 `prompts.md` 留在 repo 外：
+
+`/Users/hsuchiafang/Library/CloudStorage/OneDrive-個人/mandarin-work/read-aloud-art/`
+
+重產時依提示集合以內建生圖逐張生成；蛋、勇士與大魔王姿勢使用原圖編輯以維持一致。將選定 PNG 放進該資料夾的 `originals/`，再執行外部的 `export-assets.py` 做透明邊整理、共同座標對齊及 WebP 輸出；原始 PNG、總覽與退件不要放回 repo。程式與素材引用版本同步為 `20261114e`。
+
+```bash
+node --test Chinese/Read-Aloud/tests/
+python3 Chinese/Read-Aloud/tools/build_data.py --check
+```
+
+`visual.test.cjs` 用 Node VM／DOM 替身檢查缺圖處理、動畫關、粒子上限、取消清理與兩模式狀態；不代表瀏覽器驗收。實玩與裝置驗收清單見 `docs/VISUAL-IMPL-LOG.md`。
