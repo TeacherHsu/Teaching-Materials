@@ -1,5 +1,13 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-11-14｜家中 Mac｜Claude｜二上第 7～12 課朗讀遊戲（寵物餵食、朗讀打怪）：已 commit 在分支，未合併、未推送
+- 分支 `feat/read-aloud-games-g2a-l07-12`。新增 `Chinese/Read-Aloud/`：`pet.html`（念對 → 餵肉肉 → 能量滿了破蛋）、`monster.html`（聲波打怪＋大魔王考最不熟的 3 題），共用 `read-aloud.js`／`read-aloud.css`，題庫 `data/G2A2.js`（108 個生字、103 個語詞）。二上年級頁「第 7～12 課綜合複習」兩個入口已加進 `course-index.json`。
+- 改編自「步步練」spedmixteaching.pages.dev，原作者米克師 spedmix2025（CF 說已取得授權）；玩法參考、程式與美術另寫，頁尾有出處，不要拿掉。原站打怪是 3D 走路版，這裡改成不用走路的 2D 對戰（低年級與平板好操作）。
+- 評分同「念讀語詞」：不比聲調、同音字算對；規則與題庫更新方式看 `Chinese/Read-Aloud/README.md`。重產題庫要家中 Mac（注音字型讀音表＋簡編本離線詞庫）。
+- 已驗：`build_data.py --check` ✅、`grade.test.cjs` 6 項全過、`npm run validate`／`build`／`check-dist`、118 支 scripts 測試全過、L0 檢查通過（姓名掃描未啟用）；內建瀏覽器用 `__readAloud.judge()` 模擬念讀，兩個模式各玩完一局（含破蛋、大魔王、結算、再玩一次）、375 寬無橫向捲動、年級頁入口，主控台無錯誤。
+- **還沒驗**：真實麥克風與 zh-TW 語音辨識（無頭環境沒有麥克風）、學校電腦與 iPad 實機。單字辨識準確度要實測後才知道要不要調。
+- 待 CF 確認的讀音（`tools/zhuyin-supplement.json` 標「待確認」）：「艾粄」用字型第一讀音ㄞˋ ㄅㄢˇ；「認識」照簡編本標ㄕˋ，但第十課生字資料「識」是ㄕˊ。另外課次資料本身「播」ㄅㄛ／「播報、主播」ㄅㄛˋ、「突」ㄊㄨ／「突然」ㄊㄨˊ 不一致，這次沒有動。
+
 ## 2026-11-13｜家中 Mac｜Claude｜六上第 7～12 課綜合複習遊戲：已改檔與實玩，尚未 commit
 - 分支 `feat/review-games-g6a-l07-12`（未提交、未推送、未部署）。新增代號 `G6A2`：大富翁、蛇梯棋、哆寶、賓果用 `data/G6A2.js`（480 題），形似字跑酷在 `Chinese/Shape-Run-G6A2/`（44 詞、119 個錯字）；偵探密室沿用整冊的 `detective.html?g=G6A`。年級頁「第 7～12 課綜合複習」六個入口已加進 `course-index.json`。
 - 另一台電腦注意：跑酷重產需要簡編本離線詞庫（只有家中 Mac 有）。`build_data.py` 新增形似字人工剔除清單，三上「車廂」「棉被」兩題少了會兩個都對的選項（刻意修正），`p0-baseline.json` 已同步。

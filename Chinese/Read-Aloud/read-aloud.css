@@ -1,0 +1,142 @@
+/* 朗讀遊戲共用樣式。對象是國小低年級與特教學生：字大、暖色、一個畫面一個任務。 */
+:root {
+  --bg: #fff6e5; --paper: #fffdf7; --ink: #4a3424; --ink-soft: #7c6a58; --line: #e6cfa6;
+  --amber: #f2a93b; --amber-deep: #c9801a; --leaf: #4f9a68; --leaf-soft: #e3f3e6;
+  --sky: #dff0f7; --warn: #a85c1c; --zy: #9a8672;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+  font-size: 22px; line-height: 1.5; color: var(--ink); background: var(--bg);
+  min-height: 100vh; overflow-x: hidden;
+}
+button { font: inherit; color: inherit; cursor: pointer; }
+[hidden] { display: none !important; }
+
+.top { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 10px 16px; }
+.top a.back { color: var(--ink); text-decoration: none; background: var(--paper); border: 2px solid var(--line);
+  border-radius: 999px; padding: 6px 14px; min-height: 44px; display: inline-flex; align-items: center; font-size: 18px; }
+.top h1 { font-size: 22px; margin: 0; flex: 1 1 auto; }
+.chip { background: var(--paper); border: 2px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 18px; min-height: 44px; display: inline-flex; align-items: center; }
+button.chip:hover { border-color: var(--amber); }
+
+main { max-width: 920px; margin: 0 auto; padding: 0 16px 24px; }
+.strip { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; min-height: 44px; margin-bottom: 8px; }
+.strip .slot { width: 40px; height: 40px; border-radius: 12px; background: var(--paper); border: 2px solid var(--line);
+  display: grid; place-items: center; font-size: 22px; }
+.strip .slot.cur { border-color: var(--amber); box-shadow: 0 0 0 3px #f2a93b55; }
+.strip .slot.done { background: var(--leaf-soft); border-color: #a9d3b3; }
+
+.stage { position: relative; height: clamp(200px, 31vh, 300px); border-radius: 24px; border: 3px solid var(--line);
+  background: linear-gradient(#fdf1d6 0 62%, #e8d3a4 62% 100%); overflow: hidden; display: grid; place-items: center; }
+.bubble { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); background: var(--paper); border: 2px solid var(--line);
+  border-radius: 999px; padding: 4px 16px; font-size: 18px; white-space: nowrap; z-index: 2; max-width: calc(100% - 24px); overflow: hidden; text-overflow: ellipsis; }
+.cells { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 4px; align-items: center;
+  background: #fffdf7cc; border-radius: 999px; padding: 4px 12px; font-size: 18px; }
+.cells:empty { display: none; }
+.cell { width: 16px; height: 16px; border-radius: 5px; border: 2px solid #d9bd86; background: #fff; }
+.cell.on { background: var(--amber); border-color: var(--amber-deep); }
+
+.card { margin-top: 12px; background: var(--paper); border: 3px solid var(--line); border-radius: 24px; padding: 14px 16px 16px; text-align: center; }
+.counter { font-size: 18px; color: var(--ink-soft); }
+.word-big { font-size: 96px; line-height: 1.25; font-weight: 700; margin: 2px 0; word-break: keep-all;
+  font-family: "BiauKai", "Kaiti TC", "DFKai-SB", "標楷體", "PingFang TC", serif; }
+.word-big[data-len="3"] { font-size: 80px; }
+.word-big[data-len="4"] { font-size: 64px; }
+.word-ex { font-size: 40px; color: var(--ink-soft); margin-bottom: 4px; }
+.word-ex .zy { font-size: .36em; }
+.zc { display: inline-flex; align-items: center; margin: 0 .03em; }
+.zy { position: relative; display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+  font-size: .3em; line-height: 1.04; width: 1.6em; color: var(--zy); font-weight: 400; font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif; }
+.zyb { writing-mode: vertical-rl; text-orientation: upright; }
+.zyt { position: absolute; left: 1.15em; bottom: .05em; }
+.zyd { line-height: .6; }
+
+.btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 8px; }
+.btn { min-height: 56px; padding: 10px 22px; border-radius: 18px; border: 3px solid transparent; font-size: 24px; font-weight: 700; }
+.btn:disabled { opacity: .5; cursor: default; }
+.btn:focus-visible, .pick:focus-visible, .chip:focus-visible, a:focus-visible { outline: 4px solid #2f6fb5; outline-offset: 2px; }
+.btn-listen { background: var(--sky); border-color: #a9cfe0; }
+.btn-mic { background: var(--amber); border-color: var(--amber-deep); color: #3a2410; }
+.btn-mic.rec { background: #ffe9c2; animation: pulse 1s ease-in-out infinite; }
+.btn-go { background: var(--leaf); border-color: #3b7a50; color: #fff; }
+.btn-sub { background: var(--paper); border-color: var(--line); font-size: 20px; font-weight: 400; }
+.meter { height: 12px; border-radius: 999px; background: #f0e2c4; overflow: hidden; max-width: 320px; margin: 10px auto 0; }
+.meter > div { height: 100%; width: 0; background: var(--leaf); transition: width .08s; }
+.feedback { min-height: 2.6em; margin-top: 10px; font-size: 22px; }
+.feedback[data-tone="good"] { color: #2f6b45; font-weight: 700; }
+.feedback[data-tone="warn"] { color: var(--warn); }
+.feedback small { display: block; font-size: 18px; font-weight: 400; color: var(--ink-soft); }
+.feedback .again { font-size: 20px; font-weight: 400; color: var(--ink); }
+.voice-warn { background: #fff0d6; border: 2px solid var(--amber); border-radius: 14px; padding: 8px 12px; font-size: 18px; margin-top: 10px; }
+
+.overlay { position: fixed; inset: 0; background: #4a342480; display: none; align-items: flex-start; justify-content: center; padding: 16px; overflow-y: auto; z-index: 20; }
+.overlay.show { display: flex; }
+.panel { background: var(--paper); border: 3px solid var(--line); border-radius: 24px; padding: 18px 20px; max-width: 760px; width: 100%; margin: auto; }
+.panel h2 { margin: 0 0 6px; font-size: 28px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.panel p { margin: 6px 0; }
+.panel .rules { background: #fdf1d6; border-radius: 16px; padding: 8px 14px; margin: 10px 0; font-size: 20px; }
+.panel h3 { font-size: 22px; margin: 12px 0 6px; }
+.picks { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.pick { min-height: 56px; border-radius: 16px; border: 3px solid var(--line); background: #fff; padding: 6px 10px; font-size: 22px; font-weight: 700; }
+.pick small { display: block; font-size: 17px; font-weight: 400; color: var(--ink-soft); }
+.pick[aria-pressed="true"] { background: #ffe9c2; border-color: var(--amber-deep); }
+.panel .go { text-align: center; margin-top: 14px; }
+.fin-stage { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; font-size: 56px; margin: 8px 0; }
+.fin-stage span { animation: hop .9s ease-in-out infinite alternate; }
+.fin-score { font-size: 32px; font-weight: 700; text-align: center; }
+
+footer.credit { max-width: 920px; margin: 0 auto; padding: 8px 16px 28px; font-size: 16px; color: var(--ink-soft); text-align: center; }
+footer.credit a { color: inherit; }
+
+#fx { position: fixed; inset: 0; pointer-events: none; z-index: 30; overflow: hidden; }
+.spark { position: absolute; border-radius: 50%; }
+.fly { position: absolute; font-size: 40px; }
+.pop-txt { position: absolute; transform: translate(-50%, -50%); font-size: 26px; font-weight: 700; color: var(--amber-deep);
+  text-shadow: 0 2px 0 #fff; animation: rise .9s ease-out forwards; }
+#flash { position: fixed; top: 22%; left: 50%; transform: translateX(-50%); background: var(--paper); border: 3px solid var(--amber);
+  border-radius: 999px; padding: 8px 24px; font-size: 28px; font-weight: 700; opacity: 0; transition: opacity .25s; pointer-events: none; z-index: 31; white-space: nowrap; }
+#flash.show { opacity: 1; }
+
+/* ---- 寵物餵食 ---- */
+.egg-wrap { position: relative; width: 150px; height: 180px; display: grid; place-items: center; transition: transform .35s cubic-bezier(.3,1.6,.5,1); }
+.egg-wrap svg { width: 100%; height: 100%; filter: drop-shadow(0 8px 6px #b58d4a55); }
+.egg-wrap.wobble svg { animation: wobble 2.2s ease-in-out infinite; transform-origin: 50% 90%; }
+.egg-wrap.squash svg { animation: squash .3s ease-out; }
+.egg-wrap .crack { display: none; fill: none; stroke: #8a6a3a; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.egg-wrap[data-lv="1"] .c1, .egg-wrap[data-lv="2"] .c1, .egg-wrap[data-lv="2"] .c2 { display: block; }
+.egg-wrap .pet { font-size: 120px; line-height: 1; animation: popin .5s cubic-bezier(.3,1.7,.5,1); }
+
+/* ---- 朗讀打怪 ---- */
+.stage.battle { background: linear-gradient(#e6f1e4 0 62%, #cfe0b8 62% 100%); display: flex; align-items: flex-end; justify-content: space-around; padding: 0 6% 46px; }
+.fighter { text-align: center; transition: transform .35s cubic-bezier(.3,1.6,.5,1); }
+.fighter .face { font-size: 96px; line-height: 1.1; display: inline-block; }
+.fighter .tag { font-size: 18px; background: #fffdf7cc; border-radius: 999px; padding: 2px 12px; display: inline-block; }
+.fighter.shake .face { animation: shake .35s; }
+.fighter.gone .face { transform: scale(0) rotate(40deg); opacity: 0; transition: transform .45s, opacity .45s; }
+.fighter.boss .face { font-size: 128px; }
+
+@keyframes wobble { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+@keyframes squash { 0% { transform: scale(1.12, .88); } 100% { transform: scale(1); } }
+@keyframes popin { 0% { transform: scale(.2); } 100% { transform: scale(1); } }
+@keyframes pulse { 50% { transform: scale(1.04); } }
+@keyframes rise { to { transform: translate(-50%, -150%); opacity: 0; } }
+@keyframes hop { to { transform: translateY(-10px); } }
+@keyframes shake { 25% { transform: translateX(-8px); } 75% { transform: translateX(8px); } }
+
+@media (max-width: 520px) {
+  body { font-size: 20px; }
+  .top h1 { flex-basis: 100%; order: 3; font-size: 20px; }
+  .word-big { font-size: 76px; }
+  .word-big[data-len="3"] { font-size: 60px; }
+  .word-big[data-len="4"] { font-size: 48px; }
+  .word-ex { font-size: 34px; }
+  .btn { font-size: 22px; padding: 10px 16px; }
+  .fighter .face { font-size: 72px; }
+  .fighter.boss .face { font-size: 96px; }
+  #flash { font-size: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
