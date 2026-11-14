@@ -1,0 +1,159 @@
+#!/usr/bin/env python3
+"""朗讀遊戲題庫產生器：從課文樂園課次資料抽出生字與語詞，配上注音與同音字表。
+
+用法（在 repo 根目錄）：
+    python3 Chinese/Read-Aloud/tools/build_data.py           # 產生 data/<代號>.js
+    python3 Chinese/Read-Aloud/tools/build_data.py --check   # 只檢查產物是否最新
+
+data/*.js 是產物，不要手改。注音只取自：課次資料 → zhuyin-supplement.json；
+缺讀音就停下來（不猜）。同音字表（辨識結果比對用）需要兩個 repo 外的檔案，
+只有家中 Mac 有：
+    ~/sped-os/30-materials/worksheets/kewen_fuxi/bpmf/phonic_table_v1.500.txt
+    ~/mandarin-work/moe-dict/concised_lexicon_2014_20260929.json
+"""
+import json, re, sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+HERE = Path(__file__).resolve().parent
+OUT_DIR = HERE.parent / 'data'
+LESSON_DIR = ROOT / 'apps/mandarin/public/data'
+PHONIC = Path.home() / 'sped-os/30-materials/worksheets/kewen_fuxi/bpmf/phonic_table_v1.500.txt'
+LEXICON = Path.home() / 'mandarin-work/moe-dict/concised_lexicon_2014_20260929.json'
+
+# 代號 → 冊別、課次範圍、顯示名稱、年級頁網址
+SETS = {
+    'G2A2': {'volume': '115AG2H', 'from': 7, 'to': 12, 'label': '翰林二上', 'grade': 2},
+}
+
+TONE = re.compile('[ˊˇˋ˙]')
+HAN = re.compile('[㐀-鿿]')
+toneless = lambda z: TONE.sub('', z)
+
+# 容易混淆的音：只給「很接近」，不算念對
+INITIAL_PAIRS = [('ㄓ', 'ㄗ'), ('ㄔ', 'ㄘ'), ('ㄕ', 'ㄙ'), ('ㄋ', 'ㄌ'), ('ㄖ', 'ㄌ')]
+FINAL_PAIRS = [('ㄣ', 'ㄥ'), ('ㄢ', 'ㄤ')]
+
+
+def near_syllables(s):
+    out = set()
+    for a, b in INITIAL_PAIRS:
+        for x, y in ((a, b), (b, a)):
+            if s.startswith(x):
+                out.add(y + s[1:])
+    for a, b in FINAL_PAIRS:
+        for x, y in ((a, b), (b, a)):
+            if s.endswith(x):
+                out.add(s[:-1] + y)
+    out.discard(s)
+    return out
+
+
+def die(msg):
+    sys.exit(f'✗ {msg}')
+
+
+def load_tables():
+    if not PHONIC.exists() or not LEXICON.exists():
+        die(f'找不到讀音表或簡編本詞庫（只有家中 Mac 有）：\n  {PHONIC}\n  {LEXICON}')
+    table = {}
+    for line in PHONIC.read_text(encoding='utf-8').split('\n'):
+        f = line.split('\t')
+        if len(f) >= 4:
+            table[f[0]] = [x.strip() for x in f[3:] if x.strip()]
+    lex = json.loads(LEXICON.read_text(encoding='utf-8'))
+    return table, lex
+
+
+def build(code, cfg, table, lex, supplement):
+    lex_words, lex_amb = lex['words'], lex['ambiguous']
+    common = {ch for w in lex_words for ch in w if HAN.match(ch)}
+    lessons, problems = [], []
+    for no in range(cfg['from'], cfg['to'] + 1):
+        L = json.loads((LESSON_DIR / cfg['volume'] / f'lesson{no:02d}.json').read_text(encoding='utf-8'))
+        ok = lambda x: x.get('status') in ('ready', 'approved')
+
+        def word_syl(w, own=None):
+            z = own or (supplement.get(w) or {}).get('zhuyin')
+            if not z and w in lex_words and w not in lex_amb:
+                z = lex_words[w]
+            syl = z.split() if z else []
+            return syl if len(syl) == len(w) else None
+
+        words = []
+        for w in filter(ok, L['words']):
+            syl = word_syl(w['word'], w.get('zhuyin'))
+            if not syl:
+                problems.append(f"第{no}課語詞「{w['word']}」沒有讀音，請補進 zhuyin-supplement.json")
+                continue
+            words.append({'t': w['word'], 'z': syl})
+        lesson_words = {w['t']: w['z'] for w in words}
+
+        chars = []
+        for c in filter(ok, L['characters']):
+            ch, z = c['char'], (c.get('zhuyin') or '').strip()
+            if not z or ' ' in z:
+                problems.append(f'第{no}課生字「{ch}」讀音有問題：{z!r}')
+                continue
+            item = {'t': ch, 'z': [z]}
+            # 造詞：先用本課語詞，再用生字資料的造詞；只收「查得到讀音、而且這個字的讀音和生字一致」的
+            cands = [w for w in lesson_words if len(w) >= 2 and ch in w] + list(c.get('examples') or [])
+            for w in cands:
+                syl = lesson_words.get(w) or word_syl(w)
+                if syl and ch in w and syl[w.index(ch)] == z:
+                    item['ex'], item['exz'] = w, syl
+                    break
+            chars.append(item)
+        lessons.append({'no': no, 'title': L['title'], 'chars': chars, 'words': words})
+    if problems:
+        die('\n  '.join(['資料有缺：'] + problems))
+
+    # 同音字表：辨識器挑了哪個同音字不是學生的錯（同課文樂園「不比聲調、同音字算對」）
+    by_syl = {}
+    for ch, readings in table.items():
+        if ch in common:
+            for r in readings:
+                by_syl.setdefault(toneless(r), set()).add(ch)
+    targets = set()
+    for L in lessons:
+        for it in L['chars'] + L['words']:
+            targets.update(toneless(s) for s in it['z'] + it.get('exz', []))
+    homo = {s: ''.join(sorted(by_syl.get(s, ()))) for s in sorted(targets)}
+    near = {}
+    for s in sorted(targets):
+        chars = set().union(*(by_syl.get(n, set()) for n in near_syllables(s))) - set(homo[s])
+        if chars:
+            near[s] = ''.join(sorted(chars))
+    return {'code': code, 'label': cfg['label'], 'grade': cfg['grade'], 'from': cfg['from'], 'to': cfg['to'],
+            'lessons': lessons, 'homo': homo, 'near': near}
+
+
+def main():
+    check = '--check' in sys.argv
+    table, lex = load_tables()
+    supplement = json.loads((HERE / 'zhuyin-supplement.json').read_text(encoding='utf-8'))['words']
+    bad = False
+    for code, cfg in SETS.items():
+        data = build(code, cfg, table, lex, supplement)
+        text = ('// 產物：由 tools/build_data.py 產生，不要手改。\n'
+                'window.READ_ALOUD_DATA = window.READ_ALOUD_DATA || {};\n'
+                f'window.READ_ALOUD_DATA[{json.dumps(code)}] = '
+                + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';\n')
+        out = OUT_DIR / f'{code}.js'
+        n_c = sum(len(L['chars']) for L in data['lessons'])
+        n_w = sum(len(L['words']) for L in data['lessons'])
+        no_ex = [c['t'] for L in data['lessons'] for c in L['chars'] if 'ex' not in c]
+        if check:
+            same = out.exists() and out.read_text(encoding='utf-8') == text
+            print(f"{'✅' if same else '✗'} {code}：{n_c} 個生字、{n_w} 個語詞" + ('' if same else '（產物不是最新，請重跑 build_data.py）'))
+            bad |= not same
+        else:
+            out.write_text(text, encoding='utf-8')
+            print(f'✅ {code}：{n_c} 個生字、{n_w} 個語詞 → {out.relative_to(ROOT)}（{len(text.encode()) // 1024} KiB）')
+            if no_ex:
+                print(f'   沒有可用造詞的生字（只念單字）：{"".join(no_ex)}')
+    sys.exit(1 if bad else 0)
+
+
+if __name__ == '__main__':
+    main()

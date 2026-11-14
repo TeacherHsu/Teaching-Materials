@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>寵物餵食｜國語課文樂園</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="read-aloud.css?v=20261114g">
+</head>
+<body>
+  <header class="top">
+    <a class="back" id="back" href="../../mandarin/">← 回年級頁</a>
+    <h1 id="title">寵物餵食</h1>
+    <span class="chip" id="score">⭐ 0 分</span>
+    <button type="button" class="chip" id="sfx">🔔 音效開</button>
+    <button type="button" class="chip" id="motion">✨ 動畫開</button>
+  </header>
+  <main>
+    <div class="strip" id="strip" aria-hidden="true"></div>
+    <div class="stage" id="stage"></div>
+    <section class="card" id="card" hidden>
+      <div class="counter" id="counter"></div>
+      <div class="word-big" id="wordBig"></div>
+      <div class="word-ex" id="wordEx" hidden></div>
+      <div class="btns" id="btns"></div>
+      <div class="meter" id="meter" hidden><div id="meterBar"></div></div>
+      <div class="feedback" id="feedback" aria-live="polite"></div>
+      <div class="voice-warn" id="voiceWarn" hidden>這台裝置沒有台灣國語語音，所以不會念示範。請老師念一次給學生聽。</div>
+    </section>
+  </main>
+  <footer class="credit">
+    本遊戲改編自「步步練」（<a href="https://spedmixteaching.pages.dev/" target="_blank" rel="noopener noreferrer">spedmixteaching.pages.dev</a>），原作者：米克師 spedmix2025，經原作者同意仿作。
+  </footer>
+
+  <div class="overlay show" id="intro" role="dialog" aria-modal="true" aria-labelledby="introTitle">
+    <div class="panel">
+      <h2><span id="introTitle"></span><button type="button" class="chip" id="introSpeak" aria-label="念說明給我聽">🔊</button></h2>
+      <div id="introBody"></div>
+      <h3>① 選課次</h3>
+      <div class="picks" id="pickLesson"></div>
+      <h3>② 選內容</h3>
+      <div class="picks" id="pickKind"></div>
+      <p style="font-size:18px;color:var(--ink-soft)">🎤 第一次念的時候，瀏覽器會問能不能用麥克風，請按「允許」。</p>
+      <div class="go"><button type="button" class="btn btn-go" id="startBtn">開始 ▶</button></div>
+    </div>
+  </div>
+  <div class="overlay" id="finale" role="dialog" aria-modal="true" aria-labelledby="finTitle">
+    <div class="panel">
+      <h2 id="finTitle">🎉 完成了！</h2>
+      <div class="fin-stage" id="finStage"></div>
+      <div class="fin-score" id="finScore"></div>
+      <p id="finNote" style="text-align:center"></p>
+      <div class="go"><button type="button" class="btn btn-go" id="again">再玩一次</button></div>
+    </div>
+  </div>
+  <div id="fx"></div>
+  <div id="flash" role="status"></div>
+
+  <script src="data/G2A2.js?v=20261114g"></script>
+  <script src="read-aloud.js?v=20261114g"></script>
+  <script src="pet.js?v=20261114g"></script>
+</body>
+</html>

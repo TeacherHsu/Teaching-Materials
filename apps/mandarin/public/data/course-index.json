@@ -225,6 +225,22 @@
                   "url": "../Chinese/Review-Games/detective.html?g=G2A"
                 }
               ]
+            },
+            {
+              "from": 7,
+              "to": 12,
+              "items": [
+                {
+                  "title": "寵物餵食（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，餵肉肉給寵物蛋，能量滿了就破蛋（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/pet.html?g=G2A2"
+                },
+                {
+                  "title": "朗讀打怪（生字語詞朗讀）",
+                  "description": "大聲念生字和語詞，用聲波趕跑怪物，最後挑戰大魔王（1 人；要用麥克風）",
+                  "url": "../Chinese/Read-Aloud/monster.html?g=G2A2"
+                }
+              ]
             }
           ]
         }
