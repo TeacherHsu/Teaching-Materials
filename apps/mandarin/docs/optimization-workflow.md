@@ -243,6 +243,13 @@ python3 Chinese/Review-Games/tools/check_data.py   # 全部 ✅ 才算過
 
 - 2026-10-17 補（CF 指定跑酷級視覺）：依 Codex 嚴格審查 `Chinese/Review-Games/codex/VISUAL-REVIEW.md`（18 項任務）分四批重整，實作紀錄 `codex/IMPL-LOG.md`。重點規則：棋盤格號／課名／方向／步數是**可見 DOM**（不只畫在 3D 材質）；蛇的圖形與「最多退 3 格」實際落點一致；閱讀時場景靜止、不可有循環脈動；入場鏡頭 ≤1.2 秒可略過、減少動態直接到位；回饋粒子只在成功物件局部一次。改 3D 時驗收用 `tools/qa/p0-fixture.js`（網址參數見 IMPL-LOG）。Codex 沙盒無法啟動 Chrome，截圖驗收由 Claude 做。
 
+- 2026-11-13 補（CF 指定）：**六上第 7～12 課**另成一組，代號 `G6A2`（題庫 `data/G6A2.js`、跑酷 `Chinese/Shape-Run-G6A2/`、網址 `?g=G6A2`）。
+  - 一冊分兩組時代號加 `2`，在 `build_data.py`／`build_shape_run.py` 的 `GRADES` 給課次範圍、`check_data.py` 的 `EXPECT` 給（起、迄）、`common.js` 的 `GRADES` 與 `index.html` 的年級連結各加一筆，再到 `course-index.json` 加一筆 `reviews`（from 7、to 12）。
+  - 畫面上的課次範圍一律用 `RG.lessonRange(bank)`，不可寫死「第1～N課」；大富翁 `LAYOUT` 的數字是「第幾塊地」，實際課次用 `lessonNo()` 對回題庫。
+  - 偵探密室的資料是整冊一份，第 7～12 課這一組直接連 `detective.html?g=G6A`，不另產。
+  - 跑酷的本機紀錄 key 用 `document.title`，所以第二組的標題要帶課次範圍（工具會自動加）。
+  - `build_data.py` 新增形似字題人工剔除清單 `EXCLUDE_WRONG`（簡編本沒收、但換字後是真詞／異體／合理短語，例：車箱、錦被、一副、美鈔）。新增課次範圍後要把形似字題逐題看一次再補清單。改到既有題庫時，同步更新 `tools/qa/p0-baseline.json` 的 `dataSHA256` 與 `dataNote`。
+
 ### 課文偵探密室（第六款，2026-10-16 加入）
 
 - 檔案：`detective.html`（頁面）、`detective.js`（流程與介面）、`detective-core.js`（純邏輯：組局、檢查答案、解鎖、提示、紀錄）、`detective3d.js`（Three.js r128 房間；減少動態／WebGL 失敗改 2D 平面圖）、`detective.css`。網址 `detective.html?g=G1A`。

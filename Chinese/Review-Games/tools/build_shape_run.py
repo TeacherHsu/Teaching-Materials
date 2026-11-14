@@ -9,7 +9,7 @@
 所以改遊戲時只改 G6A，再跑本工具同步。
 
 用法（repo 根目錄）：
-  python3 Chinese/Review-Games/tools/build_shape_run.py          # 重產五個年級
+  python3 Chinese/Review-Games/tools/build_shape_run.py          # 重產各年級
   python3 Chinese/Review-Games/tools/build_shape_run.py --check  # 只檢查，不寫檔
 """
 import json
@@ -31,6 +31,7 @@ GRADES = {
     'G3A': ('115AG3H', '三上', '翰林', range(1, 7)),
     'G4A': ('115AG4K', '四上', '康軒', range(1, 7)),
     'G6A': ('115AG6H', '六上', '翰林', range(1, 7)),
+    'G6A2': ('115AG6H', '六上', '翰林', range(7, 13)),
 }
 
 # 人工剔除：詞庫沒收、但其實是正確寫法／常見異體／真詞的換字結果（2026-10-15、16 逐筆判斷）
@@ -38,6 +39,7 @@ EXCLUDE_WRONG = {
     '精練',                                  # 精鍊的通用寫法
     '部份', '筆心', '註意', '制成', '凸槽',  # 異體或真詞
     '花草', '大車', '一站',                  # 真詞
+    '車箱', '稱善', '青桐',                  # 六上 7～12 課（2026-11-13）：車廂異體、真詞、梧桐別名
 }
 # 人名不出題（換字練習意義不大）
 EXCLUDE_WORD = {'江秀真', '海倫‧凱勒'}
@@ -70,8 +72,10 @@ def build(code, lexicon):
 
 def render(master, code, data):
     _, gr, pub, lessons = GRADES[code]
-    rng = f'1～{lessons[-1]}'
-    h = master.replace('六上形似字跑酷', f'{gr}形似字跑酷').replace('翰林六上', f'{pub}{gr}')
+    rng = f'{lessons[0]}～{lessons[-1]}'
+    # 同一冊分兩組時，標題要帶課次範圍：本機紀錄的 key 用 document.title，不可和第 1～6 課那一份相同
+    name = f'{gr}形似字跑酷' if lessons[0] == 1 else f'{gr}第{rng}課形似字跑酷'
+    h = master.replace('六上形似字跑酷', name).replace('翰林六上', f'{pub}{gr}')
     h = h.replace(f'{pub}{gr}第 1～6 課', f'{pub}{gr}第 {rng} 課').replace(f'{pub}{gr}第1～6課', f'{pub}{gr}第{rng}課')
     return DATA_RE.sub(lambda m: f'const DATA = {json.dumps(data, ensure_ascii=False)};\n', h, count=1)
 

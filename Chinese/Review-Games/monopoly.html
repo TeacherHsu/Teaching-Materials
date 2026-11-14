@@ -61,13 +61,14 @@
 </head>
 <body>
   <main class="wrap" id="app"><p>載入中…</p></main>
-  <script src="common.js?v=20261017"></script>
+  <script src="common.js?v=20261113"></script>
   <script src="rg3d-kit.js?v=20261017"></script>
-  <script src="scene3d-monopoly.js?v=20261017"></script>
+  <script src="scene3d-monopoly.js?v=20261113"></script>
   <script>
     const { die3d, h, speak, sleep, loadBank, setupPanel, makeDeck, ask, header, token, statsLine, TEAM_COLORS, TEAM_NAMES } = RG;
     const PRICE = 200, TOLL = 100, PASS_GO = 200, START_CASH = 1000;
     const LESSON_COLORS = ['var(--c1)', 'var(--c2)', 'var(--c3)', 'var(--c4)', 'var(--c5)', 'var(--c6)'];
+    // LAYOUT 的數字是「第幾塊課次地」（1～6），實際課次用 lessonNo() 對回題庫，第 7～12 課那一組才不會對錯課
     // 20 格：起點、6 課各 2 塊地、機會 4、命運 2、休息站 1。沒勾選的課，地改成「綜合複習」格。
     const LAYOUT = ['start', 1, 1, 'chance', 2, 2, 'fate', 3, 3, 'chance', 'rest', 4, 4, 'chance', 5, 5, 'fate', 6, 6, 'chance'];
     // 命運都是中性或正向事件，不扣錢、不道德化
@@ -93,7 +94,8 @@
         const nTeams = Number(teamsSel.value);
         const maxRounds = Number(roundsSel.value);
         const teams = Array.from({ length: nTeams }, (_, i) => ({ name: TEAM_NAMES[i], color: TEAM_COLORS[i], cash: START_CASH, at: 0, stamps: 0 }));
-        const kindOf = (t) => typeof t === 'number' && !(settings.lessons.has(t) && deck.size((q) => q.lesson === t)) ? 'review' : t;
+        const lessonNo = (t) => (bank.lessons[t - 1] || {}).no;
+        const kindOf = (t) => typeof t === 'number' && !(settings.lessons.has(lessonNo(t)) && deck.size((q) => q.lesson === lessonNo(t))) ? 'review' : t;
         const owner = {};
         let turn = 0, round = 1, busy = false;
         const title = (l) => bank.lessons[l - 1].title;
@@ -106,7 +108,7 @@
           }
           if (typeof t === 'number') {
             const own = h('span', { class: 'own hidden' });
-            const el = h('div', { class: 'tile', style: `grid-row:${r};grid-column:${c}` }, [h('div', { class: 'band', style: `background:${LESSON_COLORS[t - 1]}` }), h('div', { class: 'nm' }, `第${t}課`), own, tokens]);
+            const el = h('div', { class: 'tile', style: `grid-row:${r};grid-column:${c}` }, [h('div', { class: 'band', style: `background:${LESSON_COLORS[t - 1]}` }), h('div', { class: 'nm' }, `第${lessonNo(t)}課`), own, tokens]);
             return { el, tokens, own };
           }
           const label = { start: ['🏁', '起點'], chance: ['❓', '機會'], fate: ['🎲', '命運'], rest: ['☕', '休息站'] }[t];
@@ -128,7 +130,7 @@
           cells: LAYOUT.map((t, i) => {
             const [r, c] = pos(i), [nr, nc] = pos((i + 1) % LAYOUT.length), kind = kindOf(t);
             return { id: i, row: r - 1, col: c - 1, direction: nr > r ? '↓' : nr < r ? '↑' : nc > c ? '→' : '←',
-              label: kind === 'review' ? '綜合複習' : typeof t === 'number' ? `第${t}課` : { start: '起點', chance: '機會', fate: '命運', rest: '休息站' }[t],
+              label: kind === 'review' ? '綜合複習' : typeof t === 'number' ? `第${lessonNo(t)}課` : { start: '起點', chance: '機會', fate: '命運', rest: '休息站' }[t],
               color: kind === 'review' ? '#e3edfc' : typeof t === 'number' ? '#fffaf3' : '#ffe6b7',
               band: typeof kind === 'number' ? getComputedStyle(document.body).getPropertyValue(`--c${t}`).trim() : null };
           }),
@@ -146,7 +148,7 @@
         function tileName(i) {
           const t = LAYOUT[i]; const k = kindOf(t);
           if (k === 'review') return '綜合複習';
-          if (typeof t === 'number') return `第${t}課 ${title(t)}`;
+          if (typeof t === 'number') return `第${lessonNo(t)}課 ${title(t)}`;
           return { start: '起點', chance: '機會', fate: '命運', rest: '休息站' }[t];
         }
         function render() {
@@ -203,11 +205,11 @@
             if ((await quiz(team, null, `${team.name}：綜合複習，答對得 50 元`)).correct) { team.cash += 50; say('得到 50 元！'); } else say('一起學過了，下次就會了！');
           } else if (typeof t === 'number') {
             const o = owner[team.at];
-            const pref = (x) => x.lesson === t;
+            const pref = (x) => x.lesson === lessonNo(t);
             if (o == null) {
               const canBuy = team.cash >= PRICE;
-              const r = await quiz(team, pref, canBuy ? `${team.name}：答對就能用 ${PRICE} 元買下「第${t}課」這塊地` : `${team.name}：錢不夠買地，答對一樣得學習章`);
-              if (r.correct && canBuy) { team.cash -= PRICE; owner[team.at] = turn; view?.setOwner(team.at, turn); say(`${team.name}買下第${t}課的地！`); } else say(r.correct ? '得到學習章！' : '一起學過了，這次先不買。');
+              const r = await quiz(team, pref, canBuy ? `${team.name}：答對就能用 ${PRICE} 元買下「第${lessonNo(t)}課」這塊地` : `${team.name}：錢不夠買地，答對一樣得學習章`);
+              if (r.correct && canBuy) { team.cash -= PRICE; owner[team.at] = turn; view?.setOwner(team.at, turn); say(`${team.name}買下第${lessonNo(t)}課的地！`); } else say(r.correct ? '得到學習章！' : '一起學過了，這次先不買。');
             } else if (o === turn) {
               if ((await quiz(team, pref, `${team.name}回到自己的地，答對得複習獎金 50 元`)).correct) { team.cash += 50; say('複習獎金 50 元！'); } else say('一起學過了！');
             } else {

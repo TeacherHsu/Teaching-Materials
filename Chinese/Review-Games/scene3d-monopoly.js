@@ -326,7 +326,7 @@
     }
     ownerModel(cell, team) {
       const c = this.cells.find(c => c.id === cell); if (!c?.band) return null;
-      const model = this.building(Number(c.label.match(/\d+/)?.[0]) || 1, team), p = this.anchor(cell, -.54);
+      const model = this.building(((Number(c.label.match(/\d+/)?.[0]) || 1) - 1) % 6 + 1, team), p = this.anchor(cell, -.54);
       model.position.set(p.x, .26, p.z); this.orientPlot(model, cell, true);
       // 傾斜後讓最低實體點仍接觸格面，避免牆腳陷入格子。
       model.updateMatrixWorld(true); let bottom = Infinity;

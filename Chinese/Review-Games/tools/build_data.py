@@ -20,11 +20,19 @@ GRADES = {
     'G3A': ('115AG3H', '三上', '翰林'),
     'G4A': ('115AG4K', '四上', '康軒'),
     'G6A': ('115AG6H', '六上', '翰林'),
+    'G6A2': ('115AG6H', '六上', '翰林', range(7, 13)),   # 同一冊的第 7～12 課，另成一組題庫
 }
 LESSONS = range(1, 7)
 OK = {'ready', 'approved'}
 # 每題存 7 個干擾項候選；遊戲每次出題時再隨機抽 2～3 個，選項組合每次不同，避免學生記答案
 POOL = 7
+# 形似字題人工剔除：簡編本沒收、但換字後其實是正確寫法／真詞的選項（會變成兩個答案都對）。
+# 2026-11-13 逐題看過六上第 7～12 課後建立；之後新增課次範圍時照樣逐題看一次再補。
+EXCLUDE_WRONG = {
+    '車箱', '綿被', '綿花',                  # 異體寫法
+    '稱善', '錦被', '醇厚', '美鈔', '冰霜', '炫目', '蓬髮',   # 真詞
+    '一副', '白壁', '叮人', '釘人',          # 合理的短語
+}
 
 lexicon = {}
 if LEXICON.exists():
@@ -80,7 +88,8 @@ def build(code, label, publisher, lessons_range=range(1, 7)):
                 if c['char'] not in ex or len(ex) < 2:
                     continue
                 opts = [x for x in chars if x == c['char']
-                        or not lexicon or ex.replace(c['char'], x) not in lexicon]
+                        or ex.replace(c['char'], x) not in EXCLUDE_WRONG
+                        and (not lexicon or ex.replace(c['char'], x) not in lexicon)]
                 if len(opts) < 2:
                     continue
                 blank = ex.replace(c['char'], '＿', 1)

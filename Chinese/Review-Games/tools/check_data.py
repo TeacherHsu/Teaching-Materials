@@ -11,7 +11,8 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parents[1]
-EXPECT = {'G1A': 7, 'G2A': 6, 'G3A': 6, 'G4A': 6, 'G6A': 6}
+# 代號: (起始課, 結束課)
+EXPECT = {'G1A': (1, 7), 'G2A': (1, 6), 'G3A': (1, 6), 'G4A': (1, 6), 'G6A': (1, 6), 'G6A2': (7, 12)}
 TYPES = {'meaning', 'zhuyin', 'lookalike', 'idiom', 'reading', 'gist'}
 MIN_OPTIONS = {'lookalike': 2}
 
@@ -24,8 +25,9 @@ def load(key):
 def check(key, bank):
     errors, warns = [], []
     nos = [l['no'] for l in bank['lessons']]
-    if nos != list(range(1, EXPECT[key] + 1)):
-        errors.append(f'課次應為 1～{EXPECT[key]}，實際 {nos}')
+    first, last = EXPECT[key]
+    if nos != list(range(first, last + 1)):
+        errors.append(f'課次應為 {first}～{last}，實際 {nos}')
     words = {w['word']: w for w in bank['words']}
     if len(words) != len(bank['words']):
         warns.append('語詞有重複（跨課同詞，遊戲會自動去重）')
