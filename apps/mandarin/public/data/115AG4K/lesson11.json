@@ -409,19 +409,22 @@
     {
       "id": "word:115AG4K11:01",
       "word": "背心",
-      "zhuyin": "ㄅㄟˋㄒㄧㄣ",
-      "meaning": "一種蔽護胸背的無袖上衣，可分兩種：一種是貼身的汗衫，一種是配合其他衣物，套穿於外面。",
+      "zhuyin": "ㄅㄟˋ ㄒㄧㄣ",
+      "meaning": "一種沒有袖子的上衣。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson11/vocabulary/l11-01.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "一種蔽護胸背的無袖上衣，可分兩種：一種是貼身的汗衫，一種是配合其他衣物，套穿於外面。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-14"
     },
     {
       "id": "word:115AG4K11:02",
       "word": "懷錶",
-      "zhuyin": "ㄏㄨㄞˊㄅㄧㄠˇ",
+      "zhuyin": "ㄏㄨㄞˊ ㄅㄧㄠˇ",
       "meaning": "裝在衣袋裡可隨身懷帶的錶。比一般手錶大，錶外加蓋。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -433,7 +436,7 @@
     {
       "id": "word:115AG4K11:03",
       "word": "上鎖",
-      "zhuyin": "ㄕㄤˋㄙㄨㄛˇ",
+      "zhuyin": "ㄕㄤˋ ㄙㄨㄛˇ",
       "meaning": "把門或開關用鎖鎖上。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -445,7 +448,7 @@
     {
       "id": "word:115AG4K11:04",
       "word": "鑰匙",
-      "zhuyin": "ㄧㄠˋ˙ㄕ",
+      "zhuyin": "ㄧㄠˋ ˙ㄕ",
       "meaning": "開鎖的器物。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -457,19 +460,22 @@
     {
       "id": "word:115AG4K11:05",
       "word": "果汁",
-      "zhuyin": "ㄍㄨㄛˇㄓ",
-      "meaning": "用水果擠榨出來的汁液，或以水果汁液做成的飲料。如檸檬汁、葡萄汁等。",
+      "zhuyin": "ㄍㄨㄛˇ ㄓ",
+      "meaning": "用水果擠榨出來的汁液，或用它做成的飲料。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson11/vocabulary/l11-05.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "用水果擠榨出來的汁液，或以水果汁液做成的飲料。如檸檬汁、葡萄汁等。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-14"
     },
     {
       "id": "word:115AG4K11:06",
       "word": "標示",
-      "zhuyin": "ㄅㄧㄠㄕˋ",
+      "zhuyin": "ㄅㄧㄠ ㄕˋ",
       "meaning": "標明、揭示。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -481,7 +487,7 @@
     {
       "id": "word:115AG4K11:07",
       "word": "迫不及待",
-      "zhuyin": "ㄆㄛˋㄅㄨˋㄐㄧˊㄉㄞˋ",
+      "zhuyin": "ㄆㄛˋ ㄅㄨˋ ㄐㄧˊ ㄉㄞˋ",
       "meaning": "比喻情況或時間急切，不能再等。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -493,7 +499,7 @@
     {
       "id": "word:115AG4K11:08",
       "word": "口袋",
-      "zhuyin": "ㄎㄡˇㄉㄞˋ",
+      "zhuyin": "ㄎㄡˇ ㄉㄞˋ",
       "meaning": "縫在衣物上的袋子。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -505,7 +511,7 @@
     {
       "id": "word:115AG4K11:09",
       "word": "盒子",
-      "zhuyin": "ㄏㄜˊ˙ㄗ",
+      "zhuyin": "ㄏㄜˊ ˙ㄗ",
       "meaning": "有底、蓋可相合的盛物器皿。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -517,7 +523,7 @@
     {
       "id": "word:115AG4K11:10",
       "word": "扇子",
-      "zhuyin": "ㄕㄢˋ˙ㄗ",
+      "zhuyin": "ㄕㄢˋ ˙ㄗ",
       "meaning": "一種搖動生風以驅除熱氣的用具。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -529,7 +535,7 @@
     {
       "id": "word:115AG4K11:11",
       "word": "遲到",
-      "zhuyin": "ㄔˊㄉㄠˋ",
+      "zhuyin": "ㄔˊ ㄉㄠˋ",
       "meaning": "到達的時間超過了既定的時限。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -541,7 +547,7 @@
     {
       "id": "word:115AG4K11:12",
       "word": "東張西望",
-      "zhuyin": "ㄉㄨㄥㄓㄤㄒㄧㄨㄤˋ",
+      "zhuyin": "ㄉㄨㄥ ㄓㄤ ㄒㄧ ㄨㄤˋ",
       "meaning": "四處探看、張望。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -553,7 +559,7 @@
     {
       "id": "word:115AG4K11:13",
       "word": "半信半疑",
-      "zhuyin": "ㄅㄢˋㄒㄧㄣˋㄅㄢˋㄧˊ",
+      "zhuyin": "ㄅㄢˋ ㄒㄧㄣˋ ㄅㄢˋ ㄧˊ",
       "meaning": "有點兒相信，也有點兒懷疑。表示對於是非真假無法判定。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -565,7 +571,7 @@
     {
       "id": "word:115AG4K11:14",
       "word": "不由自主",
-      "zhuyin": "ㄅㄨˋㄧㄡˊㄗˋㄓㄨˇ",
+      "zhuyin": "ㄅㄨˋ ㄧㄡˊ ㄗˋ ㄓㄨˇ",
       "meaning": "不能自制、由不得自己。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -577,7 +583,7 @@
     {
       "id": "word:115AG4K11:15",
       "word": "後果",
-      "zhuyin": "ㄏㄡˋㄍㄨㄛˇ",
+      "zhuyin": "ㄏㄡˋ ㄍㄨㄛˇ",
       "meaning": "由於某種原因或行為而產生的結果、影響。",
       "example_sentence": null,
       "example_status": "todo_rewrite",

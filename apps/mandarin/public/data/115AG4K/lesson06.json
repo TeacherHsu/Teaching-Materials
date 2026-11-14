@@ -463,19 +463,22 @@
     {
       "id": "word:115AG4K06:01",
       "word": "江秀真",
-      "zhuyin": "ㄐㄧㄤㄒㄧㄡˋㄓㄣ",
-      "meaning": "西元一九七一年生於新北市 雙溪區。畢業於嘉義大學森林系學士、嘉義大學森林研究所碩士，並於二○一七年拿到臺灣大學大氣所碩士。",
+      "zhuyin": "ㄐㄧㄤ ㄒㄧㄡˋ ㄓㄣ",
+      "meaning": "西元一九七一年生於新北市，是臺灣的登山家。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson06/vocabulary/l06-01.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "西元一九七一年生於新北市 雙溪區。畢業於嘉義大學森林系學士、嘉義大學森林研究所碩士，並於二○一七年拿到臺灣大學大氣所碩士。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-14"
     },
     {
       "id": "word:115AG4K06:02",
       "word": "開朗",
-      "zhuyin": "ㄎㄞㄌㄤˇ",
+      "zhuyin": "ㄎㄞ ㄌㄤˇ",
       "meaning": "⑴豁達、樂觀。⑵明亮、開闊。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -487,7 +490,7 @@
     {
       "id": "word:115AG4K06:03",
       "word": "珠穆朗瑪峰",
-      "zhuyin": "ㄓㄨㄇㄨˋㄌㄤˇㄇㄚˇㄈㄥ",
+      "zhuyin": "ㄓㄨ ㄇㄨˋ ㄌㄤˇ ㄇㄚˇ ㄈㄥ",
       "meaning": "為世界第一高峰，峰頂位於中國與尼泊爾的邊界。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -499,7 +502,7 @@
     {
       "id": "word:115AG4K06:04",
       "word": "母親",
-      "zhuyin": "ㄇㄨˇㄑㄧㄣ",
+      "zhuyin": "ㄇㄨˇ ㄑㄧㄣ",
       "meaning": "⑴稱謂。對媽媽的稱呼。⑵比喻蘊育的根源。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -511,7 +514,7 @@
     {
       "id": "word:115AG4K06:05",
       "word": "冷酷",
-      "zhuyin": "ㄌㄥˇㄎㄨˋ",
+      "zhuyin": "ㄌㄥˇ ㄎㄨˋ",
       "meaning": "對人冷漠、毫無感情。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -523,7 +526,7 @@
     {
       "id": "word:115AG4K06:06",
       "word": "磨練",
-      "zhuyin": "ㄇㄛˊㄌㄧㄢˋ",
+      "zhuyin": "ㄇㄛˊ ㄌㄧㄢˋ",
       "meaning": "鍛鍊、考驗。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -535,7 +538,7 @@
     {
       "id": "word:115AG4K06:07",
       "word": "攀登",
-      "zhuyin": "ㄆㄢㄉㄥ",
+      "zhuyin": "ㄆㄢ ㄉㄥ",
       "meaning": "用手抓住東西往上爬。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -547,19 +550,22 @@
     {
       "id": "word:115AG4K06:08",
       "word": "訓練",
-      "zhuyin": "ㄒㄩㄣˋㄌㄧㄢˋ",
-      "meaning": "經由有計畫、步驟的指導，並實地操作練習，使受訓者具有某種特長或技能。",
+      "zhuyin": "ㄒㄩㄣˋ ㄌㄧㄢˋ",
+      "meaning": "有計畫的指導和練習，使人學會某種技能。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson06/vocabulary/l06-08.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "經由有計畫、步驟的指導，並實地操作練習，使受訓者具有某種特長或技能。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-14"
     },
     {
       "id": "word:115AG4K06:09",
       "word": "谷底",
-      "zhuyin": "ㄍㄨˇㄉㄧˇ",
+      "zhuyin": "ㄍㄨˇ ㄉㄧˇ",
       "meaning": "⑴山谷的底部。⑵比喻事物的底限。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -571,7 +577,7 @@
     {
       "id": "word:115AG4K06:10",
       "word": "擁有",
-      "zhuyin": "ㄩㄥㄧㄡˇ",
+      "zhuyin": "ㄩㄥ ㄧㄡˇ",
       "meaning": "持有、據有。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -583,7 +589,7 @@
     {
       "id": "word:115AG4K06:11",
       "word": "千變萬化",
-      "zhuyin": "ㄑㄧㄢㄅㄧㄢˋㄨㄢˋㄏㄨㄚˋ",
+      "zhuyin": "ㄑㄧㄢ ㄅㄧㄢˋ ㄨㄢˋ ㄏㄨㄚˋ",
       "meaning": "形容變化無窮。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -595,7 +601,7 @@
     {
       "id": "word:115AG4K06:12",
       "word": "不知不覺",
-      "zhuyin": "ㄅㄨˋㄓㄅㄨˋㄐㄩㄝˊ",
+      "zhuyin": "ㄅㄨˋ ㄓ ㄅㄨˋ ㄐㄩㄝˊ",
       "meaning": "不自覺。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -607,7 +613,7 @@
     {
       "id": "word:115AG4K06:13",
       "word": "難關",
-      "zhuyin": "ㄋㄢˊㄍㄨㄢ",
+      "zhuyin": "ㄋㄢˊ ㄍㄨㄢ",
       "meaning": "不易度過的關頭或具有決定性的重要時期。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -619,7 +625,7 @@
     {
       "id": "word:115AG4K06:14",
       "word": "不知所措",
-      "zhuyin": "ㄅㄨˋㄓㄙㄨㄛˇㄘㄨㄛˋ",
+      "zhuyin": "ㄅㄨˋ ㄓ ㄙㄨㄛˇ ㄘㄨㄛˋ",
       "meaning": "不知道怎麼辦才好。",
       "example_sentence": null,
       "example_status": "todo_rewrite",

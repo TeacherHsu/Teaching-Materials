@@ -84,3 +84,18 @@ export function syllablesMatchWord(word, zhuyin) {
   const chars = [...String(word || '')];
   return chars.length > 0 && splitSyllables(zhuyin).length === chars.length;
 }
+
+/**
+ * 語詞注音補成「一個音節一個空格」。已經有空格的原樣回傳；
+ * 連寫的（康軒來源）照結構切開，音節數必須等於語詞裡的國字數，否則回傳 null（不猜）。
+ * 間隔號「‧」保留成獨立一段；商標符號等其他記號不屬於讀音，拿掉。
+ */
+export function spaceWordZhuyin(word, zhuyin) {
+  const raw = String(zhuyin || '').trim();
+  if (!raw || /\s/.test(raw)) return raw;
+  const hanCount = [...String(word || '')].filter((c) => /\p{Script=Han}/u.test(c)).length;
+  if (hanCount <= 1) return raw;
+  const parts = raw.split('‧').map((part) => parseChunk(part));
+  if (parts.reduce((n, part) => n + part.length, 0) !== hanCount) return null;
+  return parts.map((part) => part.join(' ')).join(' ‧ ');
+}

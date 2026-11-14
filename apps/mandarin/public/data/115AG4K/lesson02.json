@@ -387,7 +387,7 @@
     {
       "id": "word:115AG4K02:01",
       "word": "招招手",
-      "zhuyin": "ㄓㄠㄓㄠㄕㄡˇ",
+      "zhuyin": "ㄓㄠ ㄓㄠ ㄕㄡˇ",
       "meaning": "揮動手，表招呼或示意前來。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -399,7 +399,7 @@
     {
       "id": "word:115AG4K02:02",
       "word": "食糧",
-      "zhuyin": "ㄕˊㄌㄧㄤˊ",
+      "zhuyin": "ㄕˊ ㄌㄧㄤˊ",
       "meaning": "泛指一切米穀及食物。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -411,7 +411,7 @@
     {
       "id": "word:115AG4K02:03",
       "word": "姐姐",
-      "zhuyin": "ㄐㄧㄝˇ˙ㄐㄧㄝ",
+      "zhuyin": "ㄐㄧㄝˇ ˙ㄐㄧㄝ",
       "meaning": "稱同父母所生而比自己年長的女性。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -423,7 +423,7 @@
     {
       "id": "word:115AG4K02:04",
       "word": "爭吵",
-      "zhuyin": "ㄓㄥㄔㄠˇ",
+      "zhuyin": "ㄓㄥ ㄔㄠˇ",
       "meaning": "爭鬥吵鬧。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -435,19 +435,22 @@
     {
       "id": "word:115AG4K02:05",
       "word": "警察",
-      "zhuyin": "ㄐㄧㄥˇㄔㄚˊ",
-      "meaning": "依法以維持公共秩序、保護社會安寧、促進人民福利為主要任務的人。",
+      "zhuyin": "ㄐㄧㄥˇ ㄔㄚˊ",
+      "meaning": "依法維持公共秩序、保護大家安全的人。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson02/vocabulary/l02-05.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "依法以維持公共秩序、保護社會安寧、促進人民福利為主要任務的人。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-14"
     },
     {
       "id": "word:115AG4K02:06",
       "word": "小偷",
-      "zhuyin": "ㄒㄧㄠˇㄊㄡ",
+      "zhuyin": "ㄒㄧㄠˇ ㄊㄡ",
       "meaning": "竊賊。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -459,19 +462,22 @@
     {
       "id": "word:115AG4K02:07",
       "word": "跳繩",
-      "zhuyin": "ㄊㄧㄠˋㄕㄥˊ",
-      "meaning": "⑴一種跳過繩子的運動或遊戲。普通是把繩子掄成圓圈，人趁繩子近地時跳過去。有單腳跳、雙腳跳、交叉跳、轉身跳等多種花樣。⑵繩子兩端附有手柄以便掄動，供人跳躍的繩索。",
+      "zhuyin": "ㄊㄧㄠˋ ㄕㄥˊ",
+      "meaning": "一種跳過繩子的運動或遊戲。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson02/vocabulary/l02-07.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "⑴一種跳過繩子的運動或遊戲。普通是把繩子掄成圓圈，人趁繩子近地時跳過去。有單腳跳、雙腳跳、交叉跳、轉身跳等多種花樣。⑵繩子兩端附有手柄以便掄動，供人跳躍的繩索。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-14"
     },
     {
       "id": "word:115AG4K02:08",
       "word": "依依不捨",
-      "zhuyin": "ㄧㄧㄅㄨˋㄕㄜˇ",
+      "zhuyin": "ㄧ ㄧ ㄅㄨˋ ㄕㄜˇ",
       "meaning": "非常留戀、捨不得。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -483,7 +489,7 @@
     {
       "id": "word:115AG4K02:09",
       "word": "結束",
-      "zhuyin": "ㄐㄧㄝˊㄕㄨˋ",
+      "zhuyin": "ㄐㄧㄝˊ ㄕㄨˋ",
       "meaning": "終結、了結。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -495,7 +501,7 @@
     {
       "id": "word:115AG4K02:10",
       "word": "暫停",
-      "zhuyin": "ㄗㄢˋㄊㄧㄥˊ",
+      "zhuyin": "ㄗㄢˋ ㄊㄧㄥˊ",
       "meaning": "進行中作短時間的中止。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -507,7 +513,7 @@
     {
       "id": "word:115AG4K02:11",
       "word": "幸福",
-      "zhuyin": "ㄒㄧㄥˋㄈㄨˊ",
+      "zhuyin": "ㄒㄧㄥˋ ㄈㄨˊ",
       "meaning": "指生活、境遇圓滿愉快。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -519,7 +525,7 @@
     {
       "id": "word:115AG4K02:12",
       "word": "飛也似的",
-      "zhuyin": "ㄈㄟㄧㄝˇㄕˋ˙ㄉㄜ",
+      "zhuyin": "ㄈㄟ ㄧㄝˇ ㄕˋ ˙ㄉㄜ",
       "meaning": "形容行走快速。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -531,7 +537,7 @@
     {
       "id": "word:115AG4K02:13",
       "word": "一掃而空",
-      "zhuyin": "ㄧㄙㄠˇㄦˊㄎㄨㄥ",
+      "zhuyin": "ㄧ ㄙㄠˇ ㄦˊ ㄎㄨㄥ",
       "meaning": "全部清除乾淨。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -543,7 +549,7 @@
     {
       "id": "word:115AG4K02:14",
       "word": "奮勇",
-      "zhuyin": "ㄈㄣˋㄩㄥˇ",
+      "zhuyin": "ㄈㄣˋ ㄩㄥˇ",
       "meaning": "提起勇氣。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -555,7 +561,7 @@
     {
       "id": "word:115AG4K02:15",
       "word": "紛紛",
-      "zhuyin": "ㄈㄣㄈㄣ",
+      "zhuyin": "ㄈㄣ ㄈㄣ",
       "meaning": "接連不斷的樣子。",
       "example_sentence": null,
       "example_status": "todo_rewrite",

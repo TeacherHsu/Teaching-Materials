@@ -386,19 +386,22 @@
     {
       "id": "word:115AG4K05:01",
       "word": "海倫‧凱勒",
-      "zhuyin": "ㄏㄞˇㄌㄨㄣˊ‧ㄎㄞˇㄌㄜˋ",
-      "meaning": "西元一八八○年出生於美國 阿拉巴馬州的女作家，有聾、啞、盲三重障礙，卻能克服困難而成功。",
+      "zhuyin": "ㄏㄞˇ ㄌㄨㄣˊ ‧ ㄎㄞˇ ㄌㄜˋ",
+      "meaning": "美國女作家，有聾、啞、盲三重障礙，卻能克服困難而成功。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson05/vocabulary/l05-01.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "西元一八八○年出生於美國 阿拉巴馬州的女作家，有聾、啞、盲三重障礙，卻能克服困難而成功。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-14"
     },
     {
       "id": "word:115AG4K05:02",
       "word": "學業",
-      "zhuyin": "ㄒㄩㄝˊㄧㄝˋ",
+      "zhuyin": "ㄒㄩㄝˊ ㄧㄝˋ",
       "meaning": "學習的課業。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -410,7 +413,7 @@
     {
       "id": "word:115AG4K05:03",
       "word": "勵志",
-      "zhuyin": "ㄌㄧˋㄓˋ",
+      "zhuyin": "ㄌㄧˋ ㄓˋ",
       "meaning": "激勵奮發向上的心志。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -422,7 +425,7 @@
     {
       "id": "word:115AG4K05:04",
       "word": "寧靜",
-      "zhuyin": "ㄋㄧㄥˊㄐㄧㄥˋ",
+      "zhuyin": "ㄋㄧㄥˊ ㄐㄧㄥˋ",
       "meaning": "安靜、平和。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -434,7 +437,7 @@
     {
       "id": "word:115AG4K05:05",
       "word": "視力",
-      "zhuyin": "ㄕˋㄌㄧˋ",
+      "zhuyin": "ㄕˋ ㄌㄧˋ",
       "meaning": "眼力。常人在一定距離內，眼睛辨識事物的能力。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -446,7 +449,7 @@
     {
       "id": "word:115AG4K05:06",
       "word": "注意",
-      "zhuyin": "ㄓㄨˋㄧˋ",
+      "zhuyin": "ㄓㄨˋ ㄧˋ",
       "meaning": "關注留意。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -458,7 +461,7 @@
     {
       "id": "word:115AG4K05:07",
       "word": "單憑",
-      "zhuyin": "ㄉㄢㄆㄧㄥˊ",
+      "zhuyin": "ㄉㄢ ㄆㄧㄥˊ",
       "meaning": "只憑藉。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -470,7 +473,7 @@
     {
       "id": "word:115AG4K05:08",
       "word": "蓓蕾",
-      "zhuyin": "ㄅㄟˋㄌㄟˇ",
+      "zhuyin": "ㄅㄟˋ ㄌㄟˇ",
       "meaning": "⑴含苞未開的花。⑵比喻事情即將成熟，尚未成熟的階段。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -482,7 +485,7 @@
     {
       "id": "word:115AG4K05:09",
       "word": "任何",
-      "zhuyin": "ㄖㄣˋㄏㄜˊ",
+      "zhuyin": "ㄖㄣˋ ㄏㄜˊ",
       "meaning": "無論什麼。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -494,7 +497,7 @@
     {
       "id": "word:115AG4K05:10",
       "word": "地毯",
-      "zhuyin": "ㄉㄧˋㄊㄢˇ",
+      "zhuyin": "ㄉㄧˋ ㄊㄢˇ",
       "meaning": "鋪在地面上的毯子，多為毛織物。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -506,7 +509,7 @@
     {
       "id": "word:115AG4K05:11",
       "word": "舒適",
-      "zhuyin": "ㄕㄨㄕˋ",
+      "zhuyin": "ㄕㄨ ㄕˋ",
       "meaning": "舒服安適。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -518,7 +521,7 @@
     {
       "id": "word:115AG4K05:12",
       "word": "五彩繽紛",
-      "zhuyin": "ㄨˇㄘㄞˇㄅㄧㄣㄈㄣ",
+      "zhuyin": "ㄨˇ ㄘㄞˇ ㄅㄧㄣ ㄈㄣ",
       "meaning": "形容色彩繁多，鮮豔絢麗。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -530,7 +533,7 @@
     {
       "id": "word:115AG4K05:13",
       "word": "盡力",
-      "zhuyin": "ㄐㄧㄣˋㄌㄧˋ",
+      "zhuyin": "ㄐㄧㄣˋ ㄌㄧˋ",
       "meaning": "竭力。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -542,7 +545,7 @@
     {
       "id": "word:115AG4K05:14",
       "word": "教導",
-      "zhuyin": "ㄐㄧㄠˋㄉㄠˇ",
+      "zhuyin": "ㄐㄧㄠˋ ㄉㄠˇ",
       "meaning": "訓誨指導。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -554,7 +557,7 @@
     {
       "id": "word:115AG4K05:15",
       "word": "失明",
-      "zhuyin": "ㄕㄇㄧㄥˊ",
+      "zhuyin": "ㄕ ㄇㄧㄥˊ",
       "meaning": "眼睛喪失了視力。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -566,7 +569,7 @@
     {
       "id": "word:115AG4K05:16",
       "word": "失聰",
-      "zhuyin": "ㄕㄘㄨㄥ",
+      "zhuyin": "ㄕ ㄘㄨㄥ",
       "meaning": "失去聽力。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -578,7 +581,7 @@
     {
       "id": "word:115AG4K05:17",
       "word": "觸摸",
-      "zhuyin": "ㄔㄨˋㄇㄛ",
+      "zhuyin": "ㄔㄨˋ ㄇㄛ",
       "meaning": "碰觸撫摸。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -590,7 +593,7 @@
     {
       "id": "word:115AG4K05:18",
       "word": "綻放",
-      "zhuyin": "ㄓㄢˋㄈㄤˋ",
+      "zhuyin": "ㄓㄢˋ ㄈㄤˋ",
       "meaning": "開放。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
