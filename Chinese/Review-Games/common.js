@@ -1,7 +1,7 @@
 // 綜合複習遊戲共用引擎：載入題庫、設定面板、出題視窗（含逐步線索）、錯題再出、朗讀、投影與減少動態。
 // 題庫由 tools/build_data.py 產生（data/G3A.js 等），網址用 ?g=G3A 指定年級。
 (function () {
-  const GRADES = { G1A: '一上', G2A: '二上', G3A: '三上', G4A: '四上', G6A: '六上', G6A2: '六上' };
+  const GRADES = { G1A: '一上', G2A: '二上', G3A: '三上', G4A: '四上', G6A: '六上', G2A2: '二上', G3A2: '三上', G4A2: '四上', G6A2: '六上' };
   const TYPES = {
     meaning: '語詞意思', zhuyin: '注音讀音', lookalike: '形似字', idiom: '成語',
     reading: '閱讀理解', gist: '課文大意',

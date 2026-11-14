@@ -20,7 +20,11 @@ GRADES = {
     'G3A': ('115AG3H', '三上', '翰林'),
     'G4A': ('115AG4K', '四上', '康軒'),
     'G6A': ('115AG6H', '六上', '翰林'),
-    'G6A2': ('115AG6H', '六上', '翰林', range(7, 13)),   # 同一冊的第 7～12 課，另成一組題庫
+    # 同一冊的第 7～12 課，另成一組題庫（代號加 2）
+    'G2A2': ('115AG2H', '二上', '翰林', range(7, 13)),
+    'G3A2': ('115AG3H', '三上', '翰林', range(7, 13)),
+    'G4A2': ('115AG4K', '四上', '康軒', range(7, 13)),
+    'G6A2': ('115AG6H', '六上', '翰林', range(7, 13)),
 }
 LESSONS = range(1, 7)
 OK = {'ready', 'approved'}
@@ -32,7 +36,14 @@ EXCLUDE_WRONG = {
     '車箱', '綿被', '綿花',                  # 異體寫法
     '稱善', '錦被', '醇厚', '美鈔', '冰霜', '炫目', '蓬髮',   # 真詞
     '一副', '白壁', '叮人', '釘人',          # 合理的短語
+    # 二三四上第 7～12 課（2026-11-14）
+    '圓型', '收獲',                          # 常見通用寫法
+    '膀子', '名種', '米醋', '陣列', '數次', '網格', '盆子', '汁水', '秦國', '盒飯',   # 真詞
+    '超緊', '錯用',                          # 合理的短語
 }
+
+# 整份題庫統一整理：辭典解釋裡的直式引號改成橫式；商標符號不顯示（例：東京晴空塔®）
+TIDY = str.maketrans({'﹁': '「', '﹂': '」', '﹃': '『', '﹄': '』', '®': None})
 
 lexicon = {}
 if LEXICON.exists():
@@ -135,7 +146,7 @@ def main():
     OUT.mkdir(exist_ok=True)
     for key, (code, label, pub, *rng) in GRADES.items():
         bank = build(code, label, pub, *rng)
-        body = json.dumps(bank, ensure_ascii=False, separators=(',', ':'))
+        body = json.dumps(bank, ensure_ascii=False, separators=(',', ':')).translate(TIDY)
         (OUT / f'{key}.js').write_text(
             f'// 由 tools/build_data.py 產生，請勿手改。來源：apps/mandarin/public/data/{code}/\n'
             f'window.REVIEW_BANK = {body};\n', encoding='utf-8')

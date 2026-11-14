@@ -12,7 +12,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parents[1]
 # 代號: (起始課, 結束課)
-EXPECT = {'G1A': (1, 7), 'G2A': (1, 6), 'G3A': (1, 6), 'G4A': (1, 6), 'G6A': (1, 6), 'G6A2': (7, 12)}
+EXPECT = {'G1A': (1, 7), 'G2A': (1, 6), 'G3A': (1, 6), 'G4A': (1, 6), 'G6A': (1, 6), 'G2A2': (7, 12), 'G3A2': (7, 12), 'G4A2': (7, 12), 'G6A2': (7, 12)}
 TYPES = {'meaning', 'zhuyin', 'lookalike', 'idiom', 'reading', 'gist'}
 MIN_OPTIONS = {'lookalike': 2}
 
