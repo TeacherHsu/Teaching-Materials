@@ -615,6 +615,42 @@
                   "url": "../Chinese/Review-Games/detective.html?g=G6A"
                 }
               ]
+            },
+            {
+              "from": 7,
+              "to": 12,
+              "items": [
+                {
+                  "title": "課文大富翁",
+                  "description": "答對題目就能買下課次的地（2～4 隊）",
+                  "url": "../Chinese/Review-Games/monopoly.html?g=G6A2"
+                },
+                {
+                  "title": "語文蛇梯棋",
+                  "description": "先答題再擲骰，答對就能爬梯子、躲開蛇（1 人或分隊）",
+                  "url": "../Chinese/Review-Games/snakes.html?g=G6A2"
+                },
+                {
+                  "title": "語詞哆寶",
+                  "description": "找出兩張卡一樣的語詞，再想想它的意思（1 人）",
+                  "url": "../Chinese/Review-Games/dobble.html?g=G6A2"
+                },
+                {
+                  "title": "語詞賓果",
+                  "description": "聽意思，點語詞，連成一條線就賓果（1 人或分隊）",
+                  "url": "../Chinese/Review-Games/bingo.html?g=G6A2"
+                },
+                {
+                  "title": "形似字跑酷",
+                  "description": "只吃用字正確的語詞，閃開錯別字（1 人；初級／中級／高級）",
+                  "url": "../Chinese/Shape-Run-G6A2/"
+                },
+                {
+                  "title": "課文偵探密室",
+                  "description": "找線索、排事件、解機關，用證據破案（1 人或小組；單課／跨課）",
+                  "url": "../Chinese/Review-Games/detective.html?g=G6A"
+                }
+              ]
             }
           ]
         }

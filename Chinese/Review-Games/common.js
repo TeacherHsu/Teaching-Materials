@@ -1,7 +1,7 @@
 // 綜合複習遊戲共用引擎：載入題庫、設定面板、出題視窗（含逐步線索）、錯題再出、朗讀、投影與減少動態。
 // 題庫由 tools/build_data.py 產生（data/G3A.js 等），網址用 ?g=G3A 指定年級。
 (function () {
-  const GRADES = { G1A: '一上', G2A: '二上', G3A: '三上', G4A: '四上', G6A: '六上' };
+  const GRADES = { G1A: '一上', G2A: '二上', G3A: '三上', G4A: '四上', G6A: '六上', G6A2: '六上' };
   const TYPES = {
     meaning: '語詞意思', zhuyin: '注音讀音', lookalike: '形似字', idiom: '成語',
     reading: '閱讀理解', gist: '課文大意',
@@ -80,6 +80,8 @@
   const calm = () => document.body.classList.contains('calm') || systemReduced();
   const sleep = (ms) => new Promise((r) => setTimeout(r, calm() ? 0 : ms));
 
+  // 課次範圍文字：一冊可以分成兩組題庫（例：六上 1～6、7～12），不能假設從第 1 課開始
+  const lessonRange = (bank) => `第${bank.lessons[0].no}～${bank.lessons[bank.lessons.length - 1].no}課`;
   const gradeKey = () => {
     const g = new URLSearchParams(location.search).get('g');
     return GRADES[g] ? g : 'G3A';
@@ -143,7 +145,7 @@
     const summary = h('span', { class: 'setup-sum' });
     const refresh = () => {
       const ls = [...settings.lessons].sort((a, b) => a - b);
-      const lessonText = ls.length === bank.lessons.length ? `第1～${bank.lessons.length}課` : `第${ls.join('、')}課`;
+      const lessonText = ls.length === bank.lessons.length ? lessonRange(bank) : `第${ls.join('、')}課`;
       summary.textContent = [lessonText, types.length > 1 ? `${settings.types.size} 種題型` : null, LEVELS[settings.level].label,
         types.length ? (settings.timer ? `${settings.timer} 秒` : '不限時') : null, settings.autoSpeak ? '自動朗讀' : null].filter(Boolean).join('・');
     };
@@ -310,7 +312,7 @@
     const g = gradeKey();
     return h('div', { class: 'topbar' }, [
       h('a', { class: 'back', href: `./?g=${g}` }, '← 遊戲選單'),
-      h('h1', {}, `${bank.grade}第1～${bank.lessons.length}課｜${gameTitle}`),
+      h('h1', {}, `${bank.grade}${lessonRange(bank)}｜${gameTitle}`),
     ]);
   }
 
@@ -353,5 +355,5 @@
     });
   }
 
-  window.RG = { systemReduced, force3dToggle, die3d, h, shuffle, speak, stopSpeak, speakBtn, sleep, calm, loadBank, setupPanel, makeDeck, ask, header, gradeKey, token, stats, statsLine, TYPES, LEVELS, TEAM_COLORS, TEAM_NAMES };
+  window.RG = { systemReduced, force3dToggle, die3d, h, shuffle, speak, stopSpeak, speakBtn, sleep, calm, loadBank, setupPanel, makeDeck, ask, header, gradeKey, lessonRange, token, stats, statsLine, TYPES, LEVELS, TEAM_COLORS, TEAM_NAMES };
 })();

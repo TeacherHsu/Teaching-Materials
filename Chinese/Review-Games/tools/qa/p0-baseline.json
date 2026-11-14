@@ -52,14 +52,15 @@
   "dataSHA256": {
     "data/G1A.js": "15fd1e1e0b36894c3ec8189a3c711b365e51460dc7406b9aac5ef8d3f8349192",
     "data/G2A.js": "40fc4bb21e3ed692903e966f7478b514e54f5b2090c083f71192f63a490f3c25",
-    "data/G3A.js": "d2ae88a9cc601c49e39b18a02c66e65324d45fc883b15970cec89f2a12041817",
+    "data/G3A.js": "0bce2c87f4568865e2544898c9ccb9925d1992a9a6f9f08ad2c1acc183cf8f03",
     "data/G4A.js": "2c90251e29aed022f09bf12a1ca055918f3e101f54d47c3a792def2cdabfd668",
     "data/G6A.js": "3a138351889f4fa40cedd20574c06cd60f0a266103f53bad7dbb5d8cdbd961cc",
     "data/detective-G1A.js": "9e1f7ba3037b8d5abdddb4702b24d02ee96503b452ff13758a6fbded50241326",
     "data/detective-G2A.js": "745d8599444920ce63217956847fe71f9b727f5e8f5f7103a1044167c2dfa854",
     "data/detective-G3A.js": "b32b28bccbcbb412db0f3375e80986d0792377228a6674407796d3b367c7d561",
     "data/detective-G4A.js": "a6768d6f39f8de7c609f57e4a9d93ddd76fa36d8827c929c29e99a3899cc8eed",
-    "data/detective-G6A.js": "a49120b581e4339e18bc861643a8de13ded73cb9abf583de480403a373c48a52"
+    "data/detective-G6A.js": "a49120b581e4339e18bc861643a8de13ded73cb9abf583de480403a373c48a52",
+    "data/G6A2.js": "5d993001711737c4c14df2d244bc5bc0a043c1810af4251642c86d8a3945f5e8"
   },
-  "dataNote": "2026-10-17：detective-*.js 新增 2.0 三幕欄位（acts、actGaps）；形似字換字加人工剔除清單（重現等），1.x 國字密碼鎖選項因此少了真詞干擾，屬刻意修正。 線索卡加 strand／no（一課兩篇分兩條時間線），四上第1課、六上第5課因此開放。 2026-10-17 主旨短句（theme）依官方改寫、4 課 gist 依官方課文大意修正，密室資料隨之更新。"
+  "dataNote": "2026-10-17：detective-*.js 新增 2.0 三幕欄位（acts、actGaps）；形似字換字加人工剔除清單（重現等），1.x 國字密碼鎖選項因此少了真詞干擾，屬刻意修正。 線索卡加 strand／no（一課兩篇分兩條時間線），四上第1課、六上第5課因此開放。 2026-10-17 主旨短句（theme）依官方改寫、4 課 gist 依官方課文大意修正，密室資料隨之更新。 2026-11-13：新增 data/G6A2.js（六上第 7～12 課）；build_data.py 形似字題加人工剔除清單（車箱、錦被、綿被等真詞／異體），三上「車廂」「棉被」兩題因此少了會造成兩個答案都對的選項，屬刻意修正。"
 }
