@@ -4,7 +4,8 @@
 
 - `pet.html`：寵物餵食。念對一題 → 投餵肉肉 → 能量滿了破蛋。約每 3 題孵一顆蛋。
 - `monster.html`：朗讀打怪。念出來的聲音變成聲波趕跑怪物；最後大魔王考第一次念得最不熟的 3 題。
-- 網址 `?g=G2A2`（翰林二上第 7～12 課）。進去先選課次（或大混合）與內容（生字／語詞）。
+- 網址 `?g=` 決定哪一冊，題庫由頁面依代號載入 `data/<代號>.js`：`G1A`（翰林一上第 1～7 課）、`G2A2`（翰林二上第 7～12 課）。進去先選課次（或大混合）與內容（生字／語詞）。
+- 一年級（`taught_only`）生字的造詞只用「每個字都教過」的詞，找不到就只念單字。
 
 本遊戲改編自「步步練」（<https://spedmixteaching.pages.dev/>）的魔法寵物孵化屋與朗讀打怪，原作者：米克師 spedmix2025，經原作者同意仿作。玩法參考原站，程式與美術是另外寫的；頁尾的出處標示請保留。
 
@@ -37,7 +38,7 @@ node --test Chinese/Read-Aloud/tests/grade.test.cjs
 - 課次資料裡沒有讀音的語詞，補在 `tools/zhuyin-supplement.json`（要寫來源；讀音不可憑記憶）。缺讀音時產生器會停下來。
 - 生字的造詞只收「查得到讀音、而且這個字在詞裡的讀音和生字一致」的；找不到就只念單字。
 - 同音字表需要 repo 外的兩個檔（注音字型讀音表、國語辭典簡編本離線詞庫），**只有家中 Mac 能重產**。
-- 新增一冊：在 `build_data.py` 的 `SETS` 加一筆，重產後到 `apps/mandarin/public/data/course-index.json` 的 `reviews` 登記入口。
+- 新增一冊：在 `build_data.py` 的 `SETS` 加一筆（html 不用改），把 `read-aloud.js` 的 `DATA_VERSION` 升版，重產後到 `apps/mandarin/public/data/course-index.json` 的 `reviews` 登記入口。
 - 改了 css／js 之後，把兩個 html 的 `?v=` 一起升版。
 
 ## 驗收

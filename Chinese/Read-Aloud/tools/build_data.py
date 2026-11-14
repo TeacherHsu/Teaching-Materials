@@ -23,6 +23,8 @@ LEXICON = Path.home() / 'mandarin-work/moe-dict/concised_lexicon_2014_20260929.j
 
 # 代號 → 冊別、課次範圍、顯示名稱、年級頁網址
 SETS = {
+    # taught_only：一年級識字量少，生字的造詞只用「每個字都教過（本冊到這一課為止）」的詞
+    'G1A': {'volume': '115AG1H', 'from': 1, 'to': 7, 'label': '翰林一上', 'grade': 1, 'taught_only': True},
     'G2A2': {'volume': '115AG2H', 'from': 7, 'to': 12, 'label': '翰林二上', 'grade': 2},
 }
 
@@ -69,6 +71,7 @@ def build(code, cfg, table, lex, supplement):
     lex_words, lex_amb = lex['words'], lex['ambiguous']
     common = {ch for w in lex_words for ch in w if HAN.match(ch)}
     lessons, problems = [], []
+    taught, set_words = set(), {}
     for no in range(cfg['from'], cfg['to'] + 1):
         L = json.loads((LESSON_DIR / cfg['volume'] / f'lesson{no:02d}.json').read_text(encoding='utf-8'))
         ok = lambda x: x.get('status') in ('ready', 'approved')
@@ -88,6 +91,8 @@ def build(code, cfg, table, lex, supplement):
                 continue
             words.append({'t': w['word'], 'z': syl})
         lesson_words = {w['t']: w['z'] for w in words}
+        set_words.update(lesson_words)
+        taught.update(c['char'] for c in filter(ok, L['characters']))
 
         chars = []
         for c in filter(ok, L['characters']):
@@ -97,10 +102,13 @@ def build(code, cfg, table, lex, supplement):
                 continue
             item = {'t': ch, 'z': [z]}
             # 造詞：先用本課語詞，再用生字資料的造詞；只收「查得到讀音、而且這個字的讀音和生字一致」的
-            cands = [w for w in lesson_words if len(w) >= 2 and ch in w] + list(c.get('examples') or [])
+            cands = [w for w in lesson_words if ch in w] + list(c.get('examples') or [])
+            if cfg.get('taught_only'):
+                cands = ([w for w in lesson_words if ch in w] + [w for w in set_words if ch in w]
+                         + [w for w in (c.get('examples') or []) if all(x in taught for x in w)])
             for w in cands:
-                syl = lesson_words.get(w) or word_syl(w)
-                if syl and ch in w and syl[w.index(ch)] == z:
+                syl = set_words.get(w) or word_syl(w)
+                if len(w) >= 2 and syl and ch in w and syl[w.index(ch)] == z:
                     item['ex'], item['exz'] = w, syl
                     break
             chars.append(item)

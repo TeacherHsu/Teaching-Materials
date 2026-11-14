@@ -336,14 +336,26 @@
   })();
 
   // ---------- 遊戲流程 ----------
+  const DATA_VERSION = '20261114h';   // 題庫重產後跟著升版，平板才不會用到舊檔
   const MAX_TRIES = 3;      // 一題最多念 3 次，第 3 次不論結果都過關，不讓學生卡住
   const FULL = 3;           // 一題最多拿 3 份（肉肉／傷害）
 
+  // 題庫依網址 ?g= 載入（data/<代號>.js）；代號只收英數，避免載到別的路徑
   function start(cfg) {
-    const params = new URLSearchParams(location.search);
-    const code = params.get('g') || cfg.defaultSet;
-    const data = (window.READ_ALOUD_DATA || {})[code];
-    if (!data) { document.body.innerHTML = '<p style="padding:24px;font-size:22px">找不到這一冊的題庫。</p>'; return; }
+    const asked = new URLSearchParams(location.search).get('g') || cfg.defaultSet;
+    const code = /^[A-Za-z0-9]{2,8}$/.test(asked) ? asked : cfg.defaultSet;
+    const missing = () => { document.body.innerHTML = '<p style="padding:24px;font-size:22px">找不到這一冊的題庫。</p>'; };
+    if ((window.READ_ALOUD_DATA || {})[code]) return run(cfg, code);
+    const s = document.createElement('script');
+    s.src = `data/${code}.js?v=${DATA_VERSION}`;
+    s.onload = () => ((window.READ_ALOUD_DATA || {})[code] ? run(cfg, code) : missing());
+    s.onerror = missing;
+    document.head.appendChild(s);
+    return undefined;
+  }
+
+  function run(cfg, code) {
+    const data = window.READ_ALOUD_DATA[code];
     const grade = makeGrader(data);
     const S = { tasks: [], cur: -1, busy: false, misses: 0, firsts: [], pick: { lesson: data.lessons[0].no, kind: 'chars' } };
 
