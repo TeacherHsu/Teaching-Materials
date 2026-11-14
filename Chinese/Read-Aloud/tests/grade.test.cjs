@@ -51,3 +51,22 @@ test('分組：每顆蛋約 3 題，不留 1 題的尾巴', () => {
   assert.deepStrictEqual(groupSizes(1, 3), [1]);
   for (let n = 1; n <= 40; n += 1) assert.strictEqual(groupSizes(n, 3).reduce((a, b) => a + b, 0), n);
 });
+
+test('一上題庫：7 課、讀音與字數相符、造詞只用教過的字', () => {
+  const w = {}; new Function('window', fs.readFileSync(path.join(__dirname, '../data/G1A.js'), 'utf8'))(w);
+  const g1 = w.READ_ALOUD_DATA.G1A;
+  assert.strictEqual(g1.lessons.length, 7);
+  const taught = new Set(); const words = new Set();
+  for (const L of g1.lessons) {
+    L.chars.forEach((c) => taught.add(c.t)); L.words.forEach((x) => words.add(x.t));
+    for (const it of [...L.chars, ...L.words]) {
+      assert.strictEqual(it.z.length, [...it.t].length, it.t);
+      if (it.ex) {
+        assert.ok(it.ex.length >= 2 && it.ex.includes(it.t), it.ex);
+        assert.strictEqual(it.exz[it.ex.indexOf(it.t)], it.z[0], `${it.t}／${it.ex}`);
+        assert.ok(words.has(it.ex) || [...it.ex].every((ch) => taught.has(ch)), `${it.t}／${it.ex}`);
+      }
+    }
+  }
+  assert.strictEqual(makeGrader(g1)(g1.lessons[0].words[0], ['一起']), 3);
+});

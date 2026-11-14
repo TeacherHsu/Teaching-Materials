@@ -270,7 +270,14 @@
       speechSynthesis.speak(u);
     });
   }
-  const sayItem = (item) => speak(item.ex ? `${item.ex}的${item.t}` : item.t);
+  // item.s：語音引擎會念錯的多音字，用同音字代念（畫面不顯示），例如「和」ㄏㄢˋ 用「汗」
+  const sayItem = (item) => speak(item.s || (item.ex ? `${item.ex}的${item.t}` : item.t));
+
+  // 這台裝置記住的偏好：示範語音、注音顯示
+  const pref = {
+    get(key, fallback) { try { return localStorage.getItem(`read-aloud:${key}`) || fallback; } catch (e) { return fallback; } },
+    set(key, value) { try { localStorage.setItem(`read-aloud:${key}`, value); } catch (e) { /* 不能存就只管這一次 */ } },
+  };
 
   // ---------- 收音 ----------
   // 有語音辨識就比對讀音；沒有（或連不上）就退成「有大聲念出來就算」。
@@ -336,14 +343,26 @@
   })();
 
   // ---------- 遊戲流程 ----------
+  const DATA_VERSION = '20261114i';   // 題庫重產後跟著升版，平板才不會用到舊檔
   const MAX_TRIES = 3;      // 一題最多念 3 次，第 3 次不論結果都過關，不讓學生卡住
   const FULL = 3;           // 一題最多拿 3 份（肉肉／傷害）
 
+  // 題庫依網址 ?g= 載入（data/<代號>.js）；代號只收英數，避免載到別的路徑
   function start(cfg) {
-    const params = new URLSearchParams(location.search);
-    const code = params.get('g') || cfg.defaultSet;
-    const data = (window.READ_ALOUD_DATA || {})[code];
-    if (!data) { document.body.innerHTML = '<p style="padding:24px;font-size:22px">找不到這一冊的題庫。</p>'; return; }
+    const asked = new URLSearchParams(location.search).get('g') || cfg.defaultSet;
+    const code = /^[A-Za-z0-9]{2,8}$/.test(asked) ? asked : cfg.defaultSet;
+    const missing = () => { document.body.innerHTML = '<p style="padding:24px;font-size:22px">找不到這一冊的題庫。</p>'; };
+    if ((window.READ_ALOUD_DATA || {})[code]) return run(cfg, code);
+    const s = document.createElement('script');
+    s.src = `data/${code}.js?v=${DATA_VERSION}`;
+    s.onload = () => ((window.READ_ALOUD_DATA || {})[code] ? run(cfg, code) : missing());
+    s.onerror = missing;
+    document.head.appendChild(s);
+    return undefined;
+  }
+
+  function run(cfg, code) {
+    const data = window.READ_ALOUD_DATA[code];
     const grade = makeGrader(data);
     const S = { tasks: [], cur: -1, busy: false, misses: 0, firsts: [], pick: { lesson: data.lessons[0].no, kind: 'chars' } };
 
@@ -366,6 +385,22 @@
       document.querySelectorAll('#pickLesson .pick').forEach((b) => b.setAttribute('aria-pressed', String(+b.dataset.lesson === S.pick.lesson)));
       document.querySelectorAll('#pickKind .pick').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.kind === S.pick.kind)));
     };
+    // 示範語音：開＝每題自動念一次、有「聽一聽」；關＝學生自己先念，念不出來才出現「聽一聽」
+    let demo = pref.get('demo', 'on') === 'on';
+    $('pickDemo').innerHTML = '<button type="button" class="pick" data-demo="on">🔊 要示範<small>每題先念給我聽</small></button>'
+      + '<button type="button" class="pick" data-demo="off">🙊 不要示範<small>我自己先念念看</small></button>';
+    const paintDemo = () => document.querySelectorAll('#pickDemo .pick').forEach((b) => b.setAttribute('aria-pressed', String((b.dataset.demo === 'on') === demo)));
+    $('pickDemo').onclick = (e) => { const b = e.target.closest('.pick'); if (b) { demo = b.dataset.demo === 'on'; pref.set('demo', demo ? 'on' : 'off'); paintDemo(); } };
+    paintDemo();
+    // 注音顯示：遊戲中隨時可以切換
+    const paintZhuyin = () => {
+      const on = pref.get('zhuyin', 'on') === 'on';
+      document.body.classList.toggle('no-zhuyin', !on);
+      $('zhuyin').textContent = on ? 'ㄅ 注音開' : 'ㄅ 注音關';
+      $('zhuyin').setAttribute('aria-pressed', String(on));
+    };
+    $('zhuyin').onclick = () => { pref.set('zhuyin', pref.get('zhuyin', 'on') === 'on' ? 'off' : 'on'); paintZhuyin(); };
+    paintZhuyin();
     $('pickLesson').onclick = (e) => { const b = e.target.closest('.pick'); if (b) { S.pick.lesson = +b.dataset.lesson; paintPick(); } };
     $('pickKind').onclick = (e) => { const b = e.target.closest('.pick'); if (b) { S.pick.kind = b.dataset.kind; paintPick(); } };
     paintPick();
@@ -398,15 +433,15 @@
       $('wordBig').dataset.len = Math.min([...it.t].length, 4);
       $('wordEx').innerHTML = it.ex ? `造詞：${zhuyinHtml(it.ex, it.exz)}` : '';
       $('wordEx').hidden = !it.ex;
-      setButtons('<button type="button" class="btn btn-listen" id="lis" aria-label="聽一聽">🔊 聽一聽</button>'
+      setButtons(`<button type="button" class="btn btn-listen" id="lis" aria-label="聽一聽"${demo ? '' : ' hidden'}>🔊 聽一聽</button>`
         + '<button type="button" class="btn btn-mic" id="mic">🎤 我來念</button>');
       $('lis').onclick = () => sayItem(it);
       $('mic').onclick = toggleMic;
-      feedback(cfg.promptHtml || '先按 🔊 聽一次，再按 🎤 大聲念出來！');
+      feedback(demo ? (cfg.promptHtml || '先按 🔊 聽一次，再按 🎤 大聲念出來！') : '自己念念看：按 🎤 大聲念出來！');
       $('card').hidden = false;
       $('counter').textContent = t.phase === 'bonus' ? cfg.bonusLabel : `第 ${S.tasks.filter((x) => x.phase !== 'bonus').indexOf(t) + 1} 題／共 ${S.firsts.length} 題`;
       cfg.showTask(t, api);
-      setTimeout(() => { if (S.cur === i && !S.busy) sayItem(it); }, 500);
+      if (demo) setTimeout(() => { if (S.cur === i && !S.busy) sayItem(it); }, 500);
     }
 
     function micState(listening) {
@@ -458,8 +493,8 @@
       if (!done) {
         S.busy = false;
         document.querySelectorAll('#btns .btn').forEach((b) => { b.disabled = false; });
-        $('feedback').insertAdjacentHTML('beforeend', `<div class="again">${cfg.againText(FULL - t.got)}　先聽一次，再念念看。</div>`);
-        sayItem(it);
+        $('feedback').insertAdjacentHTML('beforeend', `<div class="again">${cfg.againText(FULL - t.got)}　${demo ? '先聽一次，再念念看。' : '再念一次；需要的話按 🔊 聽一聽。'}</div>`);
+        if (demo) sayItem(it); else if ($('lis')) $('lis').hidden = false;   // 不示範時，念不出來才給提示
         return;
       }
       t.done = true;

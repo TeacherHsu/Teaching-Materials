@@ -239,3 +239,11 @@ body.calm .visual-fx { display: none; }
 .projectile.wave { width: 112px; height: 112px; }
 .projectile.star { width: 48px; height: 48px; }
 .strip .crack { display: none; }
+
+/* 注音關：只藏注音，國字置中 */
+body.no-zhuyin .zy { display: none; }
+/* 開始前的選項：寬螢幕時「選內容」和「示範語音」並排，iPad 橫向不用捲動就按得到開始 */
+@media (min-width: 700px) {
+  .panel .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; }
+  .panel .opts .picks { grid-template-columns: 1fr 1fr; }
+}

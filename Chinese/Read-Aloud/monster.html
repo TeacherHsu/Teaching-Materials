@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>朗讀打怪｜國語課文樂園</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="read-aloud.css?v=20261114g">
+  <link rel="stylesheet" href="read-aloud.css?v=20261114j">
 </head>
 <body>
   <header class="top">
@@ -13,6 +13,7 @@
     <h1 id="title">朗讀打怪</h1>
     <span class="chip" id="score">⭐ 0 分</span>
     <button type="button" class="chip" id="sfx">🔔 音效開</button>
+    <button type="button" class="chip" id="zhuyin">ㄅ 注音開</button>
     <button type="button" class="chip" id="motion">✨ 動畫開</button>
   </header>
   <main>
@@ -38,8 +39,10 @@
       <div id="introBody"></div>
       <h3>① 選課次</h3>
       <div class="picks" id="pickLesson"></div>
-      <h3>② 選內容</h3>
-      <div class="picks" id="pickKind"></div>
+      <div class="opts">
+        <div><h3>② 選內容</h3><div class="picks" id="pickKind"></div></div>
+        <div><h3>③ 示範語音</h3><div class="picks" id="pickDemo"></div></div>
+      </div>
       <p style="font-size:18px;color:var(--ink-soft)">🎤 第一次念的時候，瀏覽器會問能不能用麥克風，請按「允許」。</p>
       <div class="go"><button type="button" class="btn btn-go" id="startBtn">開始 ▶</button></div>
     </div>
@@ -56,8 +59,7 @@
   <div id="fx"></div>
   <div id="flash" role="status"></div>
 
-  <script src="data/G2A2.js?v=20261114g"></script>
-  <script src="read-aloud.js?v=20261114g"></script>
-  <script src="monster.js?v=20261114g"></script>
+  <script src="read-aloud.js?v=20261114j"></script>
+  <script src="monster.js?v=20261114j"></script>
 </body>
 </html>
