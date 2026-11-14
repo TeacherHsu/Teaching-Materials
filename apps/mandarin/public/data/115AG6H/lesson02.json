@@ -17,7 +17,7 @@
   "characters": [
     {
       "char": "眶",
-      "zhuyin": "ㄎㄨㄤˋ",
+      "zhuyin": "ㄎㄨㄤ",
       "stroke_count": 11,
       "radical": "⽬",
       "type": "習寫字",
@@ -362,7 +362,7 @@
     {
       "id": "word:115AG6H02:01",
       "word": "眼眶",
-      "zhuyin": "ㄧㄢˇ ㄎㄨㄤˋ",
+      "zhuyin": "ㄧㄢˇ ㄎㄨㄤ",
       "meaning": "眼窩的四周。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -422,7 +422,7 @@
     {
       "id": "word:115AG6H02:06",
       "word": "暈倒",
-      "zhuyin": "ㄩㄣ ㄉㄠˋ",
+      "zhuyin": "ㄩㄣ ㄉㄠˇ",
       "meaning": "昏倒。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -530,7 +530,7 @@
     {
       "id": "word:115AG6H02:15",
       "word": "寂寞",
-      "zhuyin": "ㄐㄧˋ ㄇㄛˋ",
+      "zhuyin": "ㄐㄧˊ ㄇㄛˋ",
       "meaning": "孤單冷清。",
       "example_sentence": "即使一個人，也可以安排喜歡的事，讓心情不寂寞。",
       "example_status": "approved",

@@ -99,3 +99,39 @@ export function spaceWordZhuyin(word, zhuyin) {
   if (parts.reduce((n, part) => n + part.length, 0) !== hanCount) return null;
   return parts.map((part) => part.join(' ')).join(' ‧ ');
 }
+
+const YI_NUMERIC = '〇零一二三四五六七八九十';
+const YI_ORDINAL_PREV = '第初';
+
+/**
+ * 語詞裡的「一」依語流變調標注（sped-os ADR-0028，CF 裁定）：
+ * 四聲前 ㄧˊ、一二三聲前 ㄧˋ；詞尾、序數、數字序列維持本調 ㄧ。
+ * 量詞「個」不論標四聲或輕聲，前面的「一」都讀 ㄧˊ。
+ * 判斷不了的（音節數對不上、後接其他輕聲、疊字中間的「一」）原樣回傳。
+ */
+export function applyYiSandhi(word, zhuyin) {
+  const raw = String(zhuyin || '').trim();
+  const chars = [...String(word || '')].filter((c) => /\p{Script=Han}/u.test(c));
+  if (!raw || !chars.includes('一')) return raw;
+  const tokens = raw.split(/\s+/);
+  const slots = tokens.map((t, i) => (t === '‧' ? -1 : i)).filter((i) => i >= 0);
+  if (slots.length !== chars.length) return raw;
+  chars.forEach((char, i) => {
+    if (char !== '一' || !/^ㄧ[ˊˋ]?$/.test(tokens[slots[i]])) return;
+    const prev = chars[i - 1];
+    const next = chars[i + 1];
+    let fixed;
+    if (!next || YI_ORDINAL_PREV.includes(prev || ' ') || YI_NUMERIC.includes(next) || YI_NUMERIC.includes(prev || ' ')) {
+      fixed = 'ㄧ';
+    } else if (prev && prev === next) {
+      return; // 看一看：中間的「一」讀輕聲與否交給教師
+    } else {
+      const nextSyllable = tokens[slots[i + 1]];
+      if (nextSyllable.includes('ˋ') || (next === '個' && nextSyllable.startsWith('˙'))) fixed = 'ㄧˊ';
+      else if (nextSyllable.startsWith('˙')) return;
+      else fixed = 'ㄧˋ';
+    }
+    tokens[slots[i]] = fixed;
+  });
+  return tokens.join(' ');
+}

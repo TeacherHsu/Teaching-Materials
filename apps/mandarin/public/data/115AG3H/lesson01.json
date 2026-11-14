@@ -2786,6 +2786,16 @@
       "status": "available",
       "activity": "polysemy-quiz"
     },
+    "polyphones": {
+      "label": "一字多音",
+      "status": "available",
+      "activity": "polyphones"
+    },
+    "lookalikes": {
+      "label": "形似字",
+      "status": "available",
+      "activity": "lookalikes"
+    },
     "structure_map": {
       "label": "課文地圖",
       "status": "available",
