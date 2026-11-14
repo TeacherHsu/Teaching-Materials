@@ -343,7 +343,7 @@
   })();
 
   // ---------- 遊戲流程 ----------
-  const DATA_VERSION = '20261114i';   // 題庫重產後跟著升版，平板才不會用到舊檔
+  const DATA_VERSION = '20261114k';   // 題庫重產後跟著升版，平板才不會用到舊檔
   const MAX_TRIES = 3;      // 一題最多念 3 次，第 3 次不論結果都過關，不讓學生卡住
   const FULL = 3;           // 一題最多拿 3 份（肉肉／傷害）
 
@@ -430,7 +430,7 @@
       S.cur = i; S.misses = 0;
       const t = S.tasks[i]; const it = t.item;
       $('wordBig').innerHTML = zhuyinHtml(it.t, it.z);
-      $('wordBig').dataset.len = Math.min([...it.t].length, 4);
+      $('wordBig').dataset.len = Math.min([...it.t].length, 5);
       $('wordEx').innerHTML = it.ex ? `造詞：${zhuyinHtml(it.ex, it.exz)}` : '';
       $('wordEx').hidden = !it.ex;
       setButtons(`<button type="button" class="btn btn-listen" id="lis" aria-label="聽一聽"${demo ? '' : ' hidden'}>🔊 聽一聽</button>`

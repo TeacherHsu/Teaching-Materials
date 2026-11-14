@@ -26,6 +26,7 @@ SETS = {
     # taught_only：一年級識字量少，生字的造詞只用「每個字都教過（本冊到這一課為止）」的詞
     'G1A': {'volume': '115AG1H', 'from': 1, 'to': 7, 'label': '翰林一上', 'grade': 1, 'taught_only': True},
     'G2A2': {'volume': '115AG2H', 'from': 7, 'to': 12, 'label': '翰林二上', 'grade': 2},
+    'G4A2': {'volume': '115AG4K', 'from': 7, 'to': 12, 'label': '康軒四上', 'grade': 4},
 }
 
 TONE = re.compile('[ˊˇˋ˙]')
@@ -48,6 +49,36 @@ def near_syllables(s):
             if s.endswith(x):
                 out.add(s[:-1] + y)
     out.discard(s)
+    return out
+
+
+INIT, MED, FIN, TONES = 'ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙ', 'ㄧㄨㄩ', 'ㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ', 'ˊˇˋ'
+
+
+def split_syllables(z):
+    """注音串切成音節。有空格就照空格切；沒有（康軒資料）就照聲母／介音／韻母／聲調切。
+    輕聲符號「˙」寫在前面或後面都接受，一律整理成寫在前面。"""
+    z = ''.join(ch for ch in z if ch in INIT + MED + FIN + TONES + '˙ ').strip()   # 去掉 ® 之類的符號
+    if ' ' in z:
+        return z.split()
+    out, i, n = [], 0, len(z)
+    while i < n:
+        light = z[i] == '˙'
+        i += light
+        cur = ''
+        for group in (INIT, MED, FIN):
+            if i < n and z[i] in group:
+                cur += z[i]
+                i += 1
+        if not cur:
+            return []          # 看不懂的字元：交給呼叫端當成「沒有讀音」
+        if i < n and z[i] in TONES:
+            cur += z[i]
+            i += 1
+        elif not light and i < n and z[i] == '˙' and (i + 1 == n or z[i + 1] not in INIT + MED + FIN):
+            light = True       # 輕聲寫在後面（ㄗ˙）
+            i += 1
+        out.append(('˙' if light else '') + cur)
     return out
 
 
@@ -80,16 +111,17 @@ def build(code, cfg, table, lex, supplement, say):
             z = own or (supplement.get(w) or {}).get('zhuyin')
             if not z and w in lex_words and w not in lex_amb:
                 z = lex_words[w]
-            syl = z.split() if z else []
+            syl = split_syllables(z) if z else []
             return syl if len(syl) == len(w) else None
 
         words = []
         for w in filter(ok, L['words']):
-            syl = word_syl(w['word'], w.get('zhuyin'))
+            text = ''.join(ch for ch in w['word'] if HAN.match(ch))   # 去掉 ® 之類的符號，只留要念的字
+            syl = word_syl(text, w.get('zhuyin'))
             if not syl:
                 problems.append(f"第{no}課語詞「{w['word']}」沒有讀音，請補進 zhuyin-supplement.json")
                 continue
-            words.append({'t': w['word'], 'z': syl})
+            words.append({'t': text, 'z': syl})
         lesson_words = {w['t']: w['z'] for w in words}
         set_words.update(lesson_words)
         taught.update(c['char'] for c in filter(ok, L['characters']))
