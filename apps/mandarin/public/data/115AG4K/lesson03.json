@@ -387,7 +387,7 @@
     {
       "id": "word:115AG4K03:01",
       "word": "邀約",
-      "zhuyin": "ㄧㄠㄩㄝ",
+      "zhuyin": "ㄧㄠ ㄩㄝ",
       "meaning": "邀請、約請。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -399,7 +399,7 @@
     {
       "id": "word:115AG4K03:02",
       "word": "遙不可及",
-      "zhuyin": "ㄧㄠˊㄅㄨˋㄎㄜˇㄐㄧˊ",
+      "zhuyin": "ㄧㄠˊ ㄅㄨˋ ㄎㄜˇ ㄐㄧˊ",
       "meaning": "距離遙遠無法到達或形容沒有希望。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -411,7 +411,7 @@
     {
       "id": "word:115AG4K03:03",
       "word": "熟能生巧",
-      "zhuyin": "ㄕㄨˊㄋㄥˊㄕㄥㄑㄧㄠˇ",
+      "zhuyin": "ㄕㄨˊ ㄋㄥˊ ㄕㄥ ㄑㄧㄠˇ",
       "meaning": "熟練了自然能領悟出竅門。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -423,19 +423,22 @@
     {
       "id": "word:115AG4K03:04",
       "word": "反彈",
-      "zhuyin": "ㄈㄢˇㄊㄢˊ",
-      "meaning": "⑴物理學上指作用力施於物體的同一時間，必產生相等而相反的動量，稱為「反彈」。⑵在極度壓迫的情況下突然反撲或突破困境。",
+      "zhuyin": "ㄈㄢˇ ㄊㄢˊ",
+      "meaning": "物體碰到東西後彈回來。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson03/vocabulary/l03-04.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "⑴物理學上指作用力施於物體的同一時間，必產生相等而相反的動量，稱為「反彈」。⑵在極度壓迫的情況下突然反撲或突破困境。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-14"
     },
     {
       "id": "word:115AG4K03:05",
       "word": "不曾",
-      "zhuyin": "ㄅㄨˋㄘㄥˊ",
+      "zhuyin": "ㄅㄨˋ ㄘㄥˊ",
       "meaning": "從不。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -447,19 +450,22 @@
     {
       "id": "word:115AG4K03:06",
       "word": "指揮",
-      "zhuyin": "ㄓˇㄏㄨㄟ",
-      "meaning": "⑴發號施令，指示別人行動。⑵樂隊、合唱團等表演時，以手或指揮棒指示節拍、表情的人。",
+      "zhuyin": "ㄓˇ ㄏㄨㄟ",
+      "meaning": "發號施令，指示別人行動。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson03/vocabulary/l03-06.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "⑴發號施令，指示別人行動。⑵樂隊、合唱團等表演時，以手或指揮棒指示節拍、表情的人。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-14"
     },
     {
       "id": "word:115AG4K03:07",
       "word": "此起彼落",
-      "zhuyin": "ㄘˇㄑㄧˇㄅㄧˇㄌㄨㄛˋ",
+      "zhuyin": "ㄘˇ ㄑㄧˇ ㄅㄧˇ ㄌㄨㄛˋ",
       "meaning": "這裡起來，那裡落下。形容連續不斷。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -471,7 +477,7 @@
     {
       "id": "word:115AG4K03:08",
       "word": "喧鬧",
-      "zhuyin": "ㄒㄩㄢㄋㄠˋ",
+      "zhuyin": "ㄒㄩㄢ ㄋㄠˋ",
       "meaning": "喧譁吵鬧。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -483,7 +489,7 @@
     {
       "id": "word:115AG4K03:09",
       "word": "優美",
-      "zhuyin": "ㄧㄡㄇㄟˇ",
+      "zhuyin": "ㄧㄡ ㄇㄟˇ",
       "meaning": "良好、美妙。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -495,7 +501,7 @@
     {
       "id": "word:115AG4K03:10",
       "word": "弧線",
-      "zhuyin": "ㄏㄨˊㄒㄧㄢˋ",
+      "zhuyin": "ㄏㄨˊ ㄒㄧㄢˋ",
       "meaning": "彎曲如弓的線條。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -507,7 +513,7 @@
     {
       "id": "word:115AG4K03:11",
       "word": "喝采",
-      "zhuyin": "ㄏㄜˋㄘㄞˇ",
+      "zhuyin": "ㄏㄜˋ ㄘㄞˇ",
       "meaning": "大聲叫好。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -519,7 +525,7 @@
     {
       "id": "word:115AG4K03:12",
       "word": "有朝一日",
-      "zhuyin": "ㄧㄡˇㄓㄠㄧㄖˋ",
+      "zhuyin": "ㄧㄡˇ ㄓㄠ ㄧ ㄖˋ",
       "meaning": "將來有一天。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -531,7 +537,7 @@
     {
       "id": "word:115AG4K03:13",
       "word": "風雲人物",
-      "zhuyin": "ㄈㄥㄩㄣˊㄖㄣˊㄨˋ",
+      "zhuyin": "ㄈㄥ ㄩㄣˊ ㄖㄣˊ ㄨˋ",
       "meaning": "表現特出，深具知名度及影響力的人。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -543,7 +549,7 @@
     {
       "id": "word:115AG4K03:14",
       "word": "打氣",
-      "zhuyin": "ㄉㄚˇㄑㄧˋ",
+      "zhuyin": "ㄉㄚˇ ㄑㄧˋ",
       "meaning": "激勵他人使增加信心和勇氣。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -555,7 +561,7 @@
     {
       "id": "word:115AG4K03:15",
       "word": "平分秋色",
-      "zhuyin": "ㄆㄧㄥˊㄈㄣㄑㄧㄡㄙㄜˋ",
+      "zhuyin": "ㄆㄧㄥˊ ㄈㄣ ㄑㄧㄡ ㄙㄜˋ",
       "meaning": "形容兩者一樣出色，不分高下。",
       "example_sentence": null,
       "example_status": "todo_rewrite",

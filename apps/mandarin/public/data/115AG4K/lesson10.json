@@ -387,7 +387,7 @@
     {
       "id": "word:115AG4K10:01",
       "word": "奇幻",
-      "zhuyin": "ㄑㄧˊㄏㄨㄢˋ",
+      "zhuyin": "ㄑㄧˊ ㄏㄨㄢˋ",
       "meaning": "非常神奇，好像夢幻一般。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -399,19 +399,22 @@
     {
       "id": "word:115AG4K10:02",
       "word": "旋律",
-      "zhuyin": "ㄒㄩㄢˊㄌㄩˋ",
-      "meaning": "若干高低、長短、強弱不同的樂音，依節奏上的一定組織關係連續奏出，稱為﹁旋律﹂。是構成音樂的基本要素，可以表現出音樂的內容、風格及體裁。",
+      "zhuyin": "ㄒㄩㄢˊ ㄌㄩˋ",
+      "meaning": "高低、長短、強弱不同的樂音，依照節奏連續奏出。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson10/vocabulary/l10-02.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "若干高低、長短、強弱不同的樂音，依節奏上的一定組織關係連續奏出，稱為﹁旋律﹂。是構成音樂的基本要素，可以表現出音樂的內容、風格及體裁。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-14"
     },
     {
       "id": "word:115AG4K10:03",
       "word": "一瞬間",
-      "zhuyin": "ㄧㄕㄨㄣˋㄐㄧㄢ",
+      "zhuyin": "ㄧ ㄕㄨㄣˋ ㄐㄧㄢ",
       "meaning": "比喻很短的時間。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -423,7 +426,7 @@
     {
       "id": "word:115AG4K10:04",
       "word": "體驗",
-      "zhuyin": "ㄊㄧˇㄧㄢˋ",
+      "zhuyin": "ㄊㄧˇ ㄧㄢˋ",
       "meaning": "親身體會、感受。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -435,19 +438,22 @@
     {
       "id": "word:115AG4K10:05",
       "word": "芝麻",
-      "zhuyin": "ㄓㄇㄚˊ",
-      "meaning": "植物名。莖方形。葉長，對生或互生，呈橢圓形或卵形。花單生於葉腋，表面有毛，向側方下垂，呈白色或雜有淡紅色。果實為長橢圓形的蒴角，熟後縱裂。種子小而扁平，有白色及黑色等數種，可供食用或榨油。大多分布於熱帶地區。",
+      "zhuyin": "ㄓ ㄇㄚˊ",
+      "meaning": "植物名。種子小而扁平，有白色和黑色，可以食用或榨油。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson10/vocabulary/l10-05.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "植物名。莖方形。葉長，對生或互生，呈橢圓形或卵形。花單生於葉腋，表面有毛，向側方下垂，呈白色或雜有淡紅色。果實為長橢圓形的蒴角，熟後縱裂。種子小而扁平，有白色及黑色等數種，可供食用或榨油。大多分布於熱帶地區。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-14"
     },
     {
       "id": "word:115AG4K10:06",
       "word": "大盜",
-      "zhuyin": "ㄉㄚˋㄉㄠˋ",
+      "zhuyin": "ㄉㄚˋ ㄉㄠˋ",
       "meaning": "強行掠奪別人財物的人。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -459,7 +465,7 @@
     {
       "id": "word:115AG4K10:07",
       "word": "邁開",
-      "zhuyin": "ㄇㄞˋㄎㄞ",
+      "zhuyin": "ㄇㄞˋ ㄎㄞ",
       "meaning": "跨出、踏出腳步。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -471,7 +477,7 @@
     {
       "id": "word:115AG4K10:08",
       "word": "臉龐",
-      "zhuyin": "ㄌㄧㄢˇㄆㄤˊ",
+      "zhuyin": "ㄌㄧㄢˇ ㄆㄤˊ",
       "meaning": "面容、臉蛋。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -483,7 +489,7 @@
     {
       "id": "word:115AG4K10:09",
       "word": "榮華富貴",
-      "zhuyin": "ㄖㄨㄥˊㄏㄨㄚˊㄈㄨˋㄍㄨㄟˋ",
+      "zhuyin": "ㄖㄨㄥˊ ㄏㄨㄚˊ ㄈㄨˋ ㄍㄨㄟˋ",
       "meaning": "顯榮發達，財多位尊。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -495,7 +501,7 @@
     {
       "id": "word:115AG4K10:10",
       "word": "天馬行空",
-      "zhuyin": "ㄊㄧㄢㄇㄚˇㄒㄧㄥˊㄎㄨㄥ",
+      "zhuyin": "ㄊㄧㄢ ㄇㄚˇ ㄒㄧㄥˊ ㄎㄨㄥ",
       "meaning": "比喻才思奔放，文筆豪邁。引申有灑脫自由、不著邊際之意。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -507,7 +513,7 @@
     {
       "id": "word:115AG4K10:11",
       "word": "一轉眼",
-      "zhuyin": "ㄧㄓㄨㄢˇㄧㄢˇ",
+      "zhuyin": "ㄧ ㄓㄨㄢˇ ㄧㄢˇ",
       "meaning": "形容極短的時間。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -519,7 +525,7 @@
     {
       "id": "word:115AG4K10:12",
       "word": "千山萬水",
-      "zhuyin": "ㄑㄧㄢㄕㄢㄨㄢˋㄕㄨㄟˇ",
+      "zhuyin": "ㄑㄧㄢ ㄕㄢ ㄨㄢˋ ㄕㄨㄟˇ",
       "meaning": "形容路途遙遠而多險阻。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -531,7 +537,7 @@
     {
       "id": "word:115AG4K10:13",
       "word": "暗語",
-      "zhuyin": "ㄢˋㄩˇ",
+      "zhuyin": "ㄢˋ ㄩˇ",
       "meaning": "用作暗號的祕密語言。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -543,7 +549,7 @@
     {
       "id": "word:115AG4K10:14",
       "word": "山珍海味",
-      "zhuyin": "ㄕㄢㄓㄣㄏㄞˇㄨㄟˋ",
+      "zhuyin": "ㄕㄢ ㄓㄣ ㄏㄞˇ ㄨㄟˋ",
       "meaning": "泛指珍異豐盛的菜肴。",
       "example_sentence": null,
       "example_status": "todo_rewrite",

@@ -1,5 +1,13 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-11-14｜家中 Mac｜Claude｜四上語詞：注音補空格、29 則解釋改短版（已改、未 commit）
+- 分支 `fix/g4a-word-zhuyin-spacing`（未提交）。康軒四上 183 個語詞注音原本連寫（ㄊㄞˋㄍㄨㄛˊ），已補成一個音節一個空格，只補空格、不改讀音；「東京晴空塔®」注音尾端的 ® 拿掉，「海倫‧凱勒」間隔號保留成獨立一段。
+- 可重跑：`node scripts/normalize-word-zhuyin-spacing.mjs [--write]`（共用函式 `spaceWordZhuyin` 在 `src/utils/zhuyin.js`）；`prepare_g4a.mjs` 匯入時就會補空格；`validate-data.mjs` 新增檢查，連寫會 FAIL。
+- 下游：`Review-Games/data/G4A.js`、`G4A2.js` 重產（注音題選項現在音節數相同，不再用長短猜答案），`p0-baseline.json` 已同步；朗讀遊戲題庫 `--check` 通過、內容不變。
+- 已驗：`npm run validate`、`scripts/test-*.mjs` 全過、Review-Games 133 支、Read-Aloud 48 支全過。沒有開瀏覽器看語詞卡（格式與其他四冊相同）。
+- 語詞解釋：CF 2026-11-14 核准「照草稿套用」，29 則過長的解釋改成短版（埃及 161 字 → 25 字）。正本 `apps/mandarin/tools/word-meaning-overrides/115AG4K.json`，`node scripts/apply-word-meaning-overrides.mjs --write` 可重跑（重新匯入四上後要再跑一次）；原文留在 `meaning_original`。對照表在 `docs/review/2026-11-14-g4a-word-meanings-draft.md`。語詞卡第 9 課「埃及」翻面實看正常。
+- 沒動：6 則較短但仍帶 ⑴⑵ 兩義的解釋（開朗、母親、谷底、防潮、蓓蕾、衛生）；「一」的變調寫法不一致（一般 ㄧˋ／一瞬間 ㄧ）待 CF 裁定。
+
 ## 2026-11-14｜家中 Mac｜Claude｜二上、三上、四上第 7～12 課綜合複習遊戲（G2A2、G3A2、G4A2）
 - 分支 `feat/review-games-g234a-l07-12`，做法同六上 `G6A2`。題庫：二上 289 題、三上 343 題、四上 375 題；形似字跑酷 `Chinese/Shape-Run-G2A2|G3A2|G4A2/`（35、34、32 個語詞）；偵探密室沿用整冊資料（連回 `g=G2A|G3A|G4A`）。
 - 年級頁：二上、四上原本就有「第 7～12 課綜合複習」區塊（朗讀遊戲），複習遊戲加在同一塊最前面；三上新開一塊。

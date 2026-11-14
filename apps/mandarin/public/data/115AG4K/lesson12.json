@@ -435,7 +435,7 @@
     {
       "id": "word:115AG4K12:01",
       "word": "妻子",
-      "zhuyin": "ㄑㄧㄗˇ",
+      "zhuyin": "ㄑㄧ ㄗˇ",
       "meaning": "稱男子的配偶。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -447,7 +447,7 @@
     {
       "id": "word:115AG4K12:02",
       "word": "耐心",
-      "zhuyin": "ㄋㄞˋㄒㄧㄣ",
+      "zhuyin": "ㄋㄞˋ ㄒㄧㄣ",
       "meaning": "心情平和而不厭煩、急躁。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -459,7 +459,7 @@
     {
       "id": "word:115AG4K12:03",
       "word": "皮革",
-      "zhuyin": "ㄆㄧˊㄍㄜˊ",
+      "zhuyin": "ㄆㄧˊ ㄍㄜˊ",
       "meaning": "獸皮經過去毛、去脂等處理而製成的熟皮。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -471,7 +471,7 @@
     {
       "id": "word:115AG4K12:04",
       "word": "雙倍",
-      "zhuyin": "ㄕㄨㄤㄅㄟˋ",
+      "zhuyin": "ㄕㄨㄤ ㄅㄟˋ",
       "meaning": "兩倍。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -483,7 +483,7 @@
     {
       "id": "word:115AG4K12:05",
       "word": "謎團",
-      "zhuyin": "ㄇㄧˊㄊㄨㄢˊ",
+      "zhuyin": "ㄇㄧˊ ㄊㄨㄢˊ",
       "meaning": "比喻事物隱晦不清，讓人難以明白、理解。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -495,7 +495,7 @@
     {
       "id": "word:115AG4K12:06",
       "word": "鐘聲",
-      "zhuyin": "ㄓㄨㄥㄕㄥ",
+      "zhuyin": "ㄓㄨㄥ ㄕㄥ",
       "meaning": "敲鐘所發出的聲音。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -507,19 +507,22 @@
     {
       "id": "word:115AG4K12:07",
       "word": "小精靈",
-      "zhuyin": "ㄒㄧㄠˇㄐㄧㄥㄌㄧㄥˊ",
-      "meaning": "⑴北歐神話中的人物。有親切可愛的白精靈和凶惡調皮的黑精靈。⑵年紀輕而聰明調皮的人。",
+      "zhuyin": "ㄒㄧㄠˇ ㄐㄧㄥ ㄌㄧㄥˊ",
+      "meaning": "北歐神話中的人物，有親切可愛的，也有凶惡調皮的。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-07.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "⑴北歐神話中的人物。有親切可愛的白精靈和凶惡調皮的黑精靈。⑵年紀輕而聰明調皮的人。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-14"
     },
     {
       "id": "word:115AG4K12:08",
       "word": "鐵鎚",
-      "zhuyin": "ㄊㄧㄝˇㄔㄨㄟˊ",
+      "zhuyin": "ㄊㄧㄝˇ ㄔㄨㄟˊ",
       "meaning": "鐵製的鎚子。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -531,7 +534,7 @@
     {
       "id": "word:115AG4K12:09",
       "word": "嘖嘖稱奇",
-      "zhuyin": "ㄗㄜˊㄗㄜˊㄔㄥㄑㄧˊ",
+      "zhuyin": "ㄗㄜˊ ㄗㄜˊ ㄔㄥ ㄑㄧˊ",
       "meaning": "對事物的奇妙讚嘆不已。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -543,7 +546,7 @@
     {
       "id": "word:115AG4K12:10",
       "word": "手舞足蹈",
-      "zhuyin": "ㄕㄡˇㄨˇㄗㄨˊㄉㄠˇ",
+      "zhuyin": "ㄕㄡˇ ㄨˇ ㄗㄨˊ ㄉㄠˇ",
       "meaning": "手、腳舞動跳躍。形容非常高興喜悅的樣子。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -555,7 +558,7 @@
     {
       "id": "word:115AG4K12:11",
       "word": "遠近知名",
-      "zhuyin": "ㄩㄢˇㄐㄧㄣˋㄓㄇㄧㄥˊ",
+      "zhuyin": "ㄩㄢˇ ㄐㄧㄣˋ ㄓ ㄇㄧㄥˊ",
       "meaning": "形容名聲響亮，眾人皆知。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -567,7 +570,7 @@
     {
       "id": "word:115AG4K12:12",
       "word": "喜出望外",
-      "zhuyin": "ㄒㄧˇㄔㄨㄨㄤˋㄨㄞˋ",
+      "zhuyin": "ㄒㄧˇ ㄔㄨ ㄨㄤˋ ㄨㄞˋ",
       "meaning": "因意想不到的喜事而特別高興。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -579,7 +582,7 @@
     {
       "id": "word:115AG4K12:13",
       "word": "百思不解",
-      "zhuyin": "ㄅㄞˇㄙㄅㄨˋㄐㄧㄝˇ",
+      "zhuyin": "ㄅㄞˇ ㄙ ㄅㄨˋ ㄐㄧㄝˇ",
       "meaning": "經過反覆思考，仍然無法了解。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -591,7 +594,7 @@
     {
       "id": "word:115AG4K12:14",
       "word": "不明就裡",
-      "zhuyin": "ㄅㄨˋㄇㄧㄥˊㄐㄧㄡˋㄌㄧˇ",
+      "zhuyin": "ㄅㄨˋ ㄇㄧㄥˊ ㄐㄧㄡˋ ㄌㄧˇ",
       "meaning": "不清楚、不了解事件的內情。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -603,7 +606,7 @@
     {
       "id": "word:115AG4K12:15",
       "word": "一溜煙",
-      "zhuyin": "ㄧㄌㄧㄡˋㄧㄢ",
+      "zhuyin": "ㄧ ㄌㄧㄡˋ ㄧㄢ",
       "meaning": "一道煙。形容飛快的樣子。",
       "example_sentence": null,
       "example_status": "todo_rewrite",

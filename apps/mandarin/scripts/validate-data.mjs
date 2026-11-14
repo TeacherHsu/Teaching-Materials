@@ -57,6 +57,20 @@ if (!validateCourseIndex(courseIndex)) {
 // 修正方式：node scripts/normalize-zhuyin-light-tone.mjs --write
 const POSTFIX_NEUTRAL = /[\u3105-\u3129]˙/;
 
+// 語詞注音一個音節一個空格（ㄊㄞˋ ㄍㄨㄛˊ），不可連寫——連寫在語詞卡上擠成一串，
+// 下游的朗讀與複習遊戲也切不準。修正方式：node scripts/normalize-word-zhuyin-spacing.mjs --write
+function checkWordZhuyinSpacing(file, data) {
+  const bad = (data.words || []).filter((w) => typeof w.zhuyin === 'string' && w.zhuyin
+    && [...String(w.word)].filter((c) => /\p{Script=Han}/u.test(c)).length > 1 && !/\s/.test(w.zhuyin));
+  if (bad.length) {
+    console.error(`[FAIL] ${file} 語詞注音沒有用空格分開音節：`);
+    for (const w of bad.slice(0, 5)) console.error(`  ${w.word} = ${w.zhuyin}`);
+    console.error('  修正：node scripts/normalize-word-zhuyin-spacing.mjs --write');
+    return false;
+  }
+  return true;
+}
+
 function checkNeutralTone(file, data) {
   const bad = [];
   const visit = (node, path) => {
@@ -106,6 +120,7 @@ for (const file of readingFiles) {
 for (const file of lessonFiles) {
   const data = JSON.parse(readFileSync(file, 'utf-8'));
   if (!checkNeutralTone(file, data)) failed = true;
+  if (!checkWordZhuyinSpacing(file, data)) failed = true;
   if (!validateLesson(data)) {
     failed = true;
     console.error(`[FAIL] ${file}`);

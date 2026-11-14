@@ -12,6 +12,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { spaceWordZhuyin } from '../src/utils/zhuyin.js';
+
+const spacedZhuyin = (word, zhuyin) => (zhuyin ? (spaceWordZhuyin(word, zhuyin) ?? zhuyin) : null);
 
 const profile = {
   code: '115AG4K',
@@ -339,7 +342,8 @@ function buildLesson(lessonNo, characterManifest) {
   const words = vocabulary.lesson.items.map((item, index) => ({
     id: `word:${profile.code}${String(lessonNo).padStart(2, '0')}:${String(index + 1).padStart(2, '0')}`,
     word: String(item.word).trim(),
-    zhuyin: pronunciation.byWord.get(String(item.word).trim()) || null,
+    // 來源的語詞注音是連寫的，補成一個音節一個空格（和其他各冊一致）；切不準就保留原樣
+    zhuyin: spacedZhuyin(String(item.word).trim(), pronunciation.byWord.get(String(item.word).trim())),
     meaning: String(item.definition || '').trim() || null,
     example_sentence: null,
     example_status: 'todo_rewrite',

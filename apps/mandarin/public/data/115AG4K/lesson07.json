@@ -387,43 +387,52 @@
     {
       "id": "word:115AG4K07:01",
       "word": "咖哩",
-      "zhuyin": "ㄎㄚㄌㄧˇ",
-      "meaning": "用胡椒、薑黃、番椒、茴香、陳皮等粉末製成的調味品。色黃、味香而辛辣，以印度所產的咖哩最著名。",
+      "zhuyin": "ㄎㄚ ㄌㄧˇ",
+      "meaning": "用胡椒、薑黃等粉末製成的調味品，色黃、味香而辛辣。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson07/vocabulary/l07-01.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "用胡椒、薑黃、番椒、茴香、陳皮等粉末製成的調味品。色黃、味香而辛辣，以印度所產的咖哩最著名。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-14"
     },
     {
       "id": "word:115AG4K07:02",
       "word": "印度",
-      "zhuyin": "ㄧㄣˋㄉㄨˋ",
-      "meaning": "國名。位於亞洲南部，介於孟加拉灣與阿拉伯海之間，為世界文明古國之一。首都為新德里。人民信仰的宗教有印度教、基督教等。主要語言為北印度語、英語。原為英國殖民地，西元一九四七年正式獨立。",
+      "zhuyin": "ㄧㄣˋ ㄉㄨˋ",
+      "meaning": "國名。位於亞洲南部，是世界文明古國之一。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson07/vocabulary/l07-02.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "國名。位於亞洲南部，介於孟加拉灣與阿拉伯海之間，為世界文明古國之一。首都為新德里。人民信仰的宗教有印度教、基督教等。主要語言為北印度語、英語。原為英國殖民地，西元一九四七年正式獨立。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-14"
     },
     {
       "id": "word:115AG4K07:03",
       "word": "甩餅",
-      "zhuyin": "ㄕㄨㄞˇㄅㄧㄥˇ",
-      "meaning": "印度甩餅，是馬來西亞 印度裔發明的食物。做法是將和好的小片麵皮，多次旋轉向上拋甩，形成大而薄的圓餅，再放到鍋上烙。",
+      "zhuyin": "ㄕㄨㄞˇ ㄅㄧㄥˇ",
+      "meaning": "把麵皮多次旋轉向上拋甩，做成大而薄的圓餅，再放到鍋上烙。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson07/vocabulary/l07-03.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "印度甩餅，是馬來西亞 印度裔發明的食物。做法是將和好的小片麵皮，多次旋轉向上拋甩，形成大而薄的圓餅，再放到鍋上烙。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-14"
     },
     {
       "id": "word:115AG4K07:04",
       "word": "食材",
-      "zhuyin": "ㄕˊㄘㄞˊ",
+      "zhuyin": "ㄕˊ ㄘㄞˊ",
       "meaning": "食物的原始材料。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -435,7 +444,7 @@
     {
       "id": "word:115AG4K07:05",
       "word": "醬料",
-      "zhuyin": "ㄐㄧㄤˋㄌㄧㄠˋ",
+      "zhuyin": "ㄐㄧㄤˋ ㄌㄧㄠˋ",
       "meaning": "用來醃漬食材或增加食物風味的佐料。多呈糊狀或液態。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -447,19 +456,22 @@
     {
       "id": "word:115AG4K07:06",
       "word": "義大利",
-      "zhuyin": "ㄧˋㄉㄚˋㄌㄧˋ",
-      "meaning": "國名。位於南歐 義大利半島，首都羅馬，人民信仰天主教，主要語言為義大利語。",
+      "zhuyin": "ㄧˋ ㄉㄚˋ ㄌㄧˋ",
+      "meaning": "國名。位於南歐，首都羅馬。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson07/vocabulary/l07-06.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "國名。位於南歐 義大利半島，首都羅馬，人民信仰天主教，主要語言為義大利語。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-14"
     },
     {
       "id": "word:115AG4K07:07",
       "word": "麵條",
-      "zhuyin": "ㄇㄧㄢˋㄊㄧㄠˊ",
+      "zhuyin": "ㄇㄧㄢˋ ㄊㄧㄠˊ",
       "meaning": "麵粉製成的條狀食品。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -471,7 +483,7 @@
     {
       "id": "word:115AG4K07:08",
       "word": "濃郁",
-      "zhuyin": "ㄋㄨㄥˊㄩˋ",
+      "zhuyin": "ㄋㄨㄥˊ ㄩˋ",
       "meaning": "香氣濃烈。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -483,19 +495,22 @@
     {
       "id": "word:115AG4K07:09",
       "word": "壽司",
-      "zhuyin": "ㄕㄡˋ˙ㄙ",
-      "meaning": "一種日本料理。在剛蒸熟的飯中，放入醋、糖、鹽等調味料，攪拌均勻，使飯冷卻。然後在細竹簾上先鋪一層海苔皮或豆皮，鋪上一層飯後，再鋪上生魚片、漬菜、炒蛋等食品，最後再壓緊成筒狀，切成小塊食用。",
+      "zhuyin": "ㄕㄡˋ ˙ㄙ",
+      "meaning": "一種日本料理。把拌了醋的飯和生魚片、炒蛋等食品，用海苔捲緊後切成小塊食用。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson07/vocabulary/l07-09.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "一種日本料理。在剛蒸熟的飯中，放入醋、糖、鹽等調味料，攪拌均勻，使飯冷卻。然後在細竹簾上先鋪一層海苔皮或豆皮，鋪上一層飯後，再鋪上生魚片、漬菜、炒蛋等食品，最後再壓緊成筒狀，切成小塊食用。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-14"
     },
     {
       "id": "word:115AG4K07:10",
       "word": "未知",
-      "zhuyin": "ㄨㄟˋㄓ",
+      "zhuyin": "ㄨㄟˋ ㄓ",
       "meaning": "不知道。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -507,7 +522,7 @@
     {
       "id": "word:115AG4K07:11",
       "word": "見聞",
-      "zhuyin": "ㄐㄧㄢˋㄨㄣˊ",
+      "zhuyin": "ㄐㄧㄢˋ ㄨㄣˊ",
       "meaning": "眼睛所看見、耳朵所聽見的事物。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -519,7 +534,7 @@
     {
       "id": "word:115AG4K07:12",
       "word": "享用",
-      "zhuyin": "ㄒㄧㄤˇㄩㄥˋ",
+      "zhuyin": "ㄒㄧㄤˇ ㄩㄥˋ",
       "meaning": "享受使用。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -531,7 +546,7 @@
     {
       "id": "word:115AG4K07:13",
       "word": "各式各樣",
-      "zhuyin": "ㄍㄜˋㄕˋㄍㄜˋㄧㄤˋ",
+      "zhuyin": "ㄍㄜˋ ㄕˋ ㄍㄜˋ ㄧㄤˋ",
       "meaning": "許多不同的樣式和種類。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -543,7 +558,7 @@
     {
       "id": "word:115AG4K07:14",
       "word": "大開眼界",
-      "zhuyin": "ㄉㄚˋㄎㄞㄧㄢˇㄐㄧㄝˋ",
+      "zhuyin": "ㄉㄚˋ ㄎㄞ ㄧㄢˇ ㄐㄧㄝˋ",
       "meaning": "明顯的使視野開展，見聞增加。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -555,7 +570,7 @@
     {
       "id": "word:115AG4K07:15",
       "word": "念念不忘",
-      "zhuyin": "ㄋㄧㄢˋㄋㄧㄢˋㄅㄨˋㄨㄤˋ",
+      "zhuyin": "ㄋㄧㄢˋ ㄋㄧㄢˋ ㄅㄨˋ ㄨㄤˋ",
       "meaning": "心中常常惦記著，不曾忘記。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -567,7 +582,7 @@
     {
       "id": "word:115AG4K07:16",
       "word": "料理",
-      "zhuyin": "ㄌㄧㄠˋㄌㄧˇ",
+      "zhuyin": "ㄌㄧㄠˋ ㄌㄧˇ",
       "meaning": "菜肴。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -579,7 +594,7 @@
     {
       "id": "word:115AG4K07:17",
       "word": "成就感",
-      "zhuyin": "ㄔㄥˊㄐㄧㄡˋㄍㄢˇ",
+      "zhuyin": "ㄔㄥˊ ㄐㄧㄡˋ ㄍㄢˇ",
       "meaning": "付出心力獲得成就後，滿足或自豪的感覺。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -591,7 +606,7 @@
     {
       "id": "word:115AG4K07:18",
       "word": "雀躍",
-      "zhuyin": "ㄑㄩㄝˋㄩㄝˋ",
+      "zhuyin": "ㄑㄩㄝˋ ㄩㄝˋ",
       "meaning": "形容高興得像雀鳥般跳躍。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -603,7 +618,7 @@
     {
       "id": "word:115AG4K07:19",
       "word": "國度",
-      "zhuyin": "ㄍㄨㄛˊㄉㄨˋ",
+      "zhuyin": "ㄍㄨㄛˊ ㄉㄨˋ",
       "meaning": "國家。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -615,7 +630,7 @@
     {
       "id": "word:115AG4K07:20",
       "word": "探索",
-      "zhuyin": "ㄊㄢˋㄙㄨㄛˇ",
+      "zhuyin": "ㄊㄢˋ ㄙㄨㄛˇ",
       "meaning": "探索尋求。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -627,7 +642,7 @@
     {
       "id": "word:115AG4K07:21",
       "word": "此起彼落",
-      "zhuyin": "ㄘˇㄑㄧˇㄅㄧˇㄌㄨㄛˋ",
+      "zhuyin": "ㄘˇ ㄑㄧˇ ㄅㄧˇ ㄌㄨㄛˋ",
       "meaning": "這裡起來，那裡落下。形容連續不斷。",
       "example_sentence": null,
       "example_status": "todo_rewrite",

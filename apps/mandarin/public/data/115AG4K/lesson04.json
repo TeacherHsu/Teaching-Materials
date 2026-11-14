@@ -387,19 +387,22 @@
     {
       "id": "word:115AG4K04:01",
       "word": "馬偕",
-      "zhuyin": "ㄇㄚˇㄐㄧㄝ",
-      "meaning": "馬偕博士（西元一八四四—一九○一年）是蘇格蘭裔的加拿大人。",
+      "zhuyin": "ㄇㄚˇ ㄐㄧㄝ",
+      "meaning": "馬偕博士是蘇格蘭裔的加拿大人。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson04/vocabulary/l04-01.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "馬偕博士（西元一八四四—一九○一年）是蘇格蘭裔的加拿大人。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-14"
     },
     {
       "id": "word:115AG4K04:02",
       "word": "醫院",
-      "zhuyin": "ㄧㄩㄢˋ",
+      "zhuyin": "ㄧ ㄩㄢˋ",
       "meaning": "診治或看護病人的機構。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -411,19 +414,22 @@
     {
       "id": "word:115AG4K04:03",
       "word": "生命",
-      "zhuyin": "ㄕㄥㄇㄧㄥˋ",
-      "meaning": "⑴生物生存的壽命。⑵某種活動延續的期間。⑶形容藝術作品十分靈活生動，非常有生氣。",
+      "zhuyin": "ㄕㄥ ㄇㄧㄥˋ",
+      "meaning": "生物生存的壽命。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
       "level": "basic",
       "image": "/assets/115AG4K/lesson04/vocabulary/l04-03.webp",
       "status": "ready",
-      "source": "康軒官方教材來源整理（05 詞語解釋及例句）"
+      "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
+      "meaning_original": "⑴生物生存的壽命。⑵某種活動延續的期間。⑶形容藝術作品十分靈活生動，非常有生氣。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-14"
     },
     {
       "id": "word:115AG4K04:04",
       "word": "奉獻",
-      "zhuyin": "ㄈㄥˋㄒㄧㄢˋ",
+      "zhuyin": "ㄈㄥˋ ㄒㄧㄢˋ",
       "meaning": "恭敬的交付、貢獻。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -435,7 +441,7 @@
     {
       "id": "word:115AG4K04:05",
       "word": "醫療",
-      "zhuyin": "ㄧㄌㄧㄠˊ",
+      "zhuyin": "ㄧ ㄌㄧㄠˊ",
       "meaning": "醫治療養。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -447,7 +453,7 @@
     {
       "id": "word:115AG4K04:06",
       "word": "衛生",
-      "zhuyin": "ㄨㄟˋㄕㄥ",
+      "zhuyin": "ㄨㄟˋ ㄕㄥ",
       "meaning": "⑴預防疾病，追求健康的觀念和措施。⑵清潔。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -459,7 +465,7 @@
     {
       "id": "word:115AG4K04:07",
       "word": "藥品",
-      "zhuyin": "ㄧㄠˋㄆㄧㄣˇ",
+      "zhuyin": "ㄧㄠˋ ㄆㄧㄣˇ",
       "meaning": "可以用來防治疾病的物質。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -471,7 +477,7 @@
     {
       "id": "word:115AG4K04:08",
       "word": "治病",
-      "zhuyin": "ㄓˋㄅㄧㄥˋ",
+      "zhuyin": "ㄓˋ ㄅㄧㄥˋ",
       "meaning": "治療疾病，使恢復健康。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -483,7 +489,7 @@
     {
       "id": "word:115AG4K04:09",
       "word": "翻山越嶺",
-      "zhuyin": "ㄈㄢㄕㄢㄩㄝˋㄌㄧㄥˇ",
+      "zhuyin": "ㄈㄢ ㄕㄢ ㄩㄝˋ ㄌㄧㄥˇ",
       "meaning": "形容長途跋涉、旅途辛苦。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -495,7 +501,7 @@
     {
       "id": "word:115AG4K04:10",
       "word": "捐錢",
-      "zhuyin": "ㄐㄩㄢㄑㄧㄢˊ",
+      "zhuyin": "ㄐㄩㄢ ㄑㄧㄢˊ",
       "meaning": "捐獻金錢。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -507,7 +513,7 @@
     {
       "id": "word:115AG4K04:11",
       "word": "食宿",
-      "zhuyin": "ㄕˊㄙㄨˋ",
+      "zhuyin": "ㄕˊ ㄙㄨˋ",
       "meaning": "飲食和住宿。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -519,7 +525,7 @@
     {
       "id": "word:115AG4K04:12",
       "word": "學堂",
-      "zhuyin": "ㄒㄩㄝˊㄊㄤˊ",
+      "zhuyin": "ㄒㄩㄝˊ ㄊㄤˊ",
       "meaning": "古代學生受教育的場所，相當於現今的學校。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -531,7 +537,7 @@
     {
       "id": "word:115AG4K04:13",
       "word": "濃濃",
-      "zhuyin": "ㄋㄨㄥˊㄋㄨㄥˊ",
+      "zhuyin": "ㄋㄨㄥˊ ㄋㄨㄥˊ",
       "meaning": "濃厚、盛多的樣子。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -543,7 +549,7 @@
     {
       "id": "word:115AG4K04:14",
       "word": "傳教士",
-      "zhuyin": "ㄔㄨㄢˊㄐㄧㄠˋㄕˋ",
+      "zhuyin": "ㄔㄨㄢˊ ㄐㄧㄠˋ ㄕˋ",
       "meaning": "傳布宗教教義的人。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -555,7 +561,7 @@
     {
       "id": "word:115AG4K04:15",
       "word": "福音",
-      "zhuyin": "ㄈㄨˊㄧㄣ",
+      "zhuyin": "ㄈㄨˊ ㄧㄣ",
       "meaning": "基督徒稱耶穌所說的話及其門徒所傳布的教義。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -567,7 +573,7 @@
     {
       "id": "word:115AG4K04:16",
       "word": "良方",
-      "zhuyin": "ㄌㄧㄤˊㄈㄤ",
+      "zhuyin": "ㄌㄧㄤˊ ㄈㄤ",
       "meaning": "有效的藥方。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -579,7 +585,7 @@
     {
       "id": "word:115AG4K04:17",
       "word": "善行",
-      "zhuyin": "ㄕㄢˋㄒㄧㄥˊ",
+      "zhuyin": "ㄕㄢˋ ㄒㄧㄥˊ",
       "meaning": "良好的行為或慈善捐助救濟等行為。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -591,7 +597,7 @@
     {
       "id": "word:115AG4K04:18",
       "word": "創辦",
-      "zhuyin": "ㄔㄨㄤˋㄅㄢˋ",
+      "zhuyin": "ㄔㄨㄤˋ ㄅㄢˋ",
       "meaning": "開創舉辦。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
@@ -603,7 +609,7 @@
     {
       "id": "word:115AG4K04:19",
       "word": "披星戴月",
-      "zhuyin": "ㄆㄧㄒㄧㄥㄉㄞˋㄩㄝˋ",
+      "zhuyin": "ㄆㄧ ㄒㄧㄥ ㄉㄞˋ ㄩㄝˋ",
       "meaning": "形容早出晚歸或連夜趕路。有辛苦勞頓之意。",
       "example_sentence": null,
       "example_status": "todo_rewrite",
