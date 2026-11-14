@@ -67,7 +67,7 @@ def load_tables():
     return table, lex
 
 
-def build(code, cfg, table, lex, supplement):
+def build(code, cfg, table, lex, supplement, say):
     lex_words, lex_amb = lex['words'], lex['ambiguous']
     common = {ch for w in lex_words for ch in w if HAN.match(ch)}
     lessons, problems = [], []
@@ -113,6 +113,15 @@ def build(code, cfg, table, lex, supplement):
                     break
             chars.append(item)
         lessons.append({'no': no, 'title': L['title'], 'chars': chars, 'words': words})
+    for L in lessons:
+        for it in L['chars'] + L['words']:
+            alt = say.get(it['t'])
+            own = alt['say'] if isinstance(alt, dict) and alt['zhuyin'].split() == it['z'] else None
+            ex_alt = say.get(it.get('ex', ''))
+            if isinstance(ex_alt, dict) and ex_alt['zhuyin'].split() == it['exz']:
+                it['s'] = f"{ex_alt['say']}的{own or it['t']}"   # 造詞裡有要代念的字
+            elif own:
+                it['s'] = own
     if problems:
         die('\n  '.join(['資料有缺：'] + problems))
 
@@ -139,10 +148,11 @@ def build(code, cfg, table, lex, supplement):
 def main():
     check = '--check' in sys.argv
     table, lex = load_tables()
-    supplement = json.loads((HERE / 'zhuyin-supplement.json').read_text(encoding='utf-8'))['words']
+    sup = json.loads((HERE / 'zhuyin-supplement.json').read_text(encoding='utf-8'))
+    supplement, say = sup['words'], sup.get('say', {})
     bad = False
     for code, cfg in SETS.items():
-        data = build(code, cfg, table, lex, supplement)
+        data = build(code, cfg, table, lex, supplement, say)
         text = ('// 產物：由 tools/build_data.py 產生，不要手改。\n'
                 'window.READ_ALOUD_DATA = window.READ_ALOUD_DATA || {};\n'
                 f'window.READ_ALOUD_DATA[{json.dumps(code)}] = '
