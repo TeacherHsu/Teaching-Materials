@@ -70,3 +70,20 @@ test('一上題庫：7 課、讀音與字數相符、造詞只用教過的字', 
   }
   assert.strictEqual(makeGrader(g1)(g1.lessons[0].words[0], ['一起']), 3);
 });
+
+test('四上題庫：6 課、每課 15 個生字、讀音與字數相符、語詞不含符號', () => {
+  const w = {}; new Function('window', fs.readFileSync(path.join(__dirname, '../data/G4A2.js'), 'utf8'))(w);
+  const g4 = w.READ_ALOUD_DATA.G4A2;
+  assert.strictEqual(g4.lessons.length, 6);
+  for (const L of g4.lessons) {
+    assert.strictEqual(L.chars.length, 15, `第${L.no}課生字`);
+    for (const it of [...L.chars, ...L.words]) {
+      assert.match(it.t, /^[\u3400-\u9fff]+$/, it.t);
+      assert.strictEqual(it.z.length, [...it.t].length, it.t);
+      for (const s of it.z) assert.match(s, /^˙?[ㄅ-ㄩ]{1,3}[ˊˇˋ]?$/, `${it.t} ${s}`);
+      if (it.ex) assert.strictEqual(it.exz[it.ex.indexOf(it.t)], it.z[0], `${it.t}／${it.ex}`);
+    }
+  }
+  const tower = g4.lessons.flatMap((L) => L.words).find((x) => x.t === '東京晴空塔');
+  assert.strictEqual(makeGrader(g4)(tower, ['東京晴空塔']), 3);
+});

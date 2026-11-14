@@ -247,3 +247,6 @@ body.no-zhuyin .zy { display: none; }
   .panel .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; }
   .panel .opts .picks { grid-template-columns: 1fr 1fr; }
 }
+/* 五個字以上的語詞（例：東京晴空塔）：縮小到一行放得下 */
+.word-big[data-len="5"] { font-size: 60px; }
+@media (max-width: 520px) { .word-big[data-len="5"] { font-size: 32px; } }
