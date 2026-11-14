@@ -1,6 +1,6 @@
 # 交接紀錄（最新的寫在最上面）
 
-## 2026-11-14｜家中 Mac｜Claude｜四上語詞：注音補空格、29 則解釋改短版（已改、未 commit）
+## 2026-11-14｜家中 Mac｜Claude｜四上語詞：注音補空格、29 則解釋改短版（2026-11-15 已合併 main 並上線）
 - 分支 `fix/g4a-word-zhuyin-spacing`（未提交）。康軒四上 183 個語詞注音原本連寫（ㄊㄞˋㄍㄨㄛˊ），已補成一個音節一個空格，只補空格、不改讀音；「東京晴空塔®」注音尾端的 ® 拿掉，「海倫‧凱勒」間隔號保留成獨立一段。
 - 可重跑：`node scripts/normalize-word-zhuyin-spacing.mjs [--write]`（共用函式 `spaceWordZhuyin` 在 `src/utils/zhuyin.js`）；`prepare_g4a.mjs` 匯入時就會補空格；`validate-data.mjs` 新增檢查，連寫會 FAIL。
 - 下游：`Review-Games/data/G4A.js`、`G4A2.js` 重產（注音題選項現在音節數相同，不再用長短猜答案），`p0-baseline.json` 已同步；朗讀遊戲題庫 `--check` 通過、內容不變。
