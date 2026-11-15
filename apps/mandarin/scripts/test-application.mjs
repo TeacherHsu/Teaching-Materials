@@ -93,4 +93,33 @@ for (const volume of readdirSync(dataRoot).filter((v) => /^115A/.test(v))) {
 }
 assert.ok(tasks >= 3, `應至少有 3 課樣張，現在 ${tasks} 課`);
 assert.match(readFileSync(new URL('./filter-build-data.mjs', import.meta.url), 'utf8'), /l\.application && !isPublic\(l\.application\.status\)/, '正式建置要濾掉未核准的生活任務');
+// 手機寬度：題目頁的短文卡預設收合，按鈕可打開；答錯一次會自動打開並畫出線索。桌機預設展開。
+{
+  const sample = JSON.parse(readFileSync(`${dataRoot}115AG3H/lesson02.json`, 'utf8'));
+  const originalMatchMedia = globalThis.window.matchMedia;
+  const play = (narrow) => {
+    globalThis.window.matchMedia = (query) => ({ matches: narrow && /max-width/.test(query) });
+    setScaffoldLevel('standard');
+    const root = buildApplicationActivity(sample, () => {});
+    root.findAll((n) => n.tagName === 'button').find((b) => b.textContent === '我讀完了').dispatch('click');
+    return root;
+  };
+  const collapsed = (root) => root.find((n) => n.hasClass?.('application-passage--compact')).hasClass('application-passage--collapsed');
+  const desktop = play(false);
+  assert.equal(collapsed(desktop), false, '桌機：題目頁短文卡預設展開');
+  const phone = play(true);
+  assert.equal(collapsed(phone), true, '手機：題目頁短文卡預設收合');
+  const toggle = phone.find((n) => n.hasClass?.('application-passage__toggle'));
+  assert.equal(toggle.textContent, '再看一次便利貼');
+  toggle.dispatch('click');
+  assert.equal(collapsed(phone), false, '按一下要打開');
+  toggle.dispatch('click');
+  assert.equal(collapsed(phone), true, '再按一下收起來');
+  const first = sample.application.questions[0];
+  phone.findAll((n) => n.hasClass?.('quiz-option')).find((o) => !o.textContent.includes(first.answer)).dispatch('click');
+  phone.findAll((n) => n.tagName === 'button').find((b) => b.textContent.trim() === '確認答案')?.dispatch('click');
+  assert.equal(collapsed(phone), false, '答錯一次要自動打開短文卡');
+  assert.ok(phone.find((n) => n.hasClass?.('application-passage__key')), '打開後要看得到畫了顏色的線索');
+  globalThis.window.matchMedia = originalMatchMedia;
+}
 console.log(`PASS: 我會應用 ${tasks} 課任務格式正確，草稿只在預覽模式可玩。`);
