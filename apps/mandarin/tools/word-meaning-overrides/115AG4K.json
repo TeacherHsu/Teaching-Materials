@@ -178,5 +178,39 @@
       "meaning": "北歐神話中的人物，有親切可愛的，也有凶惡調皮的。",
       "note": "取第 1 義（課文：做鞋的小精靈）"
     }
-  ]
+  ],
+  "idioms": [
+    {
+      "lesson": 2,
+      "idiom": "拋磚引玉",
+      "definition": "比喻自己先發表不成熟的意見，以引出別人的高論，多用作自謙之詞。",
+      "note": "刪減"
+    },
+    {
+      "lesson": 9,
+      "idiom": "門可羅雀",
+      "definition": "門前冷清，空曠得可以張網捕雀。形容來客稀少、門庭冷清。",
+      "note": "刪減"
+    },
+    {
+      "lesson": 10,
+      "idiom": "掩耳盜鈴",
+      "definition": "比喻妄想瞞騙他人，結果只是欺騙自己。",
+      "note": "只留比喻義"
+    },
+    {
+      "lesson": 11,
+      "idiom": "汗流浹背",
+      "definition": "汗流很多，溼透了背部。形容工作辛勞。",
+      "note": "只留後起義"
+    },
+    {
+      "lesson": 11,
+      "idiom": "背水一戰",
+      "definition": "比喻抱著必死的決心，奮戰取勝。",
+      "note": "刪減"
+    }
+  ],
+  "idioms_approved_on": "2026-11-15",
+  "idioms_review": "docs/review/2026-11-15-long-meanings-draft.md"
 }

@@ -1,5 +1,18 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-11-15｜家中 Mac｜Claude｜過長解釋短版、稱職讀音、新編內容草稿、例句拆積木（2026-11-15 已合併 main 並上線）
+<!-- AUTO-RESUME: none -->
+- 分支 `fix/long-meanings-short-version`（未提交）。
+- 過長解釋短版：CF 核准，14 則已套用（三上 5、六上 4 則語詞；四上 5 則成語）。正本 `tools/word-meaning-overrides/115AG3H.json|115AG6H.json`（`items`）與 `115AG4K.json`（`idioms`）；`apply-word-meaning-overrides.mjs` 已支援成語（原文留 `definition_original`）。
+- 稱職：CF 裁定讀 ㄔㄥˋ，四上第 6 課多音字「稱」第二讀音已改（`dabutie_zhuyin` 保留來源原標）。
+- 三上第 1 課聽力：3 題依本課段落大意重編，`status: review_required`，模組仍關著，待 CF 審。
+- 語詞例句：五冊 731 則全部草擬完，正本 `tools/word-example-drafts/<冊別>.json`，已用 `apply-word-example-drafts.mjs --write` 以 `example_status: draft` 寫入（預覽模式才看得到；`npm run build` 的成品確認不含草稿）。審閱表 `docs/review/2026-11-15-word-examples-draft.md`。CF 核准後把該冊清單 `status` 改 `approved` 再跑一次。
+- 已驗：`npm run validate` 0 FAIL、`scripts/test-*.mjs` 全過、build＋check-dist 通過、Review-Games 133 支全過。
+- 練習句子第一步改成「例句拆積木」（CF 2026-11-15「照方案改」）：新元件 `src/components/StructureBlocks.js`、對位邏輯 `src/utils/structureBlocks.js`、產生腳本 `scripts/materialize-structure-blocks.mjs`、排除清單 `tools/structure-blocks-review.json`、測試 `scripts/test-structure-blocks.mjs`。126 題、41／55 課有題目；其餘 14 課（一上 1、6、7；二上 6、10、11；三上 5；四上 4、7；六上 1、5、10、11、12）句型多為「詞語造句」或兩格相鄰切不出界線，仍用舊的短語搭配。支持層會先放好第一格當示範（沿用 `prefill`）。對照表 `docs/review/2026-11-15-structure-blocks.md`。桌機 1024 與手機 390 截圖看過，四上第 9 課實際點過一題（答錯提示、放完顯示整句與句型）。
+- 接下來：
+  1. 「我會應用」43 課關閉——需要先和 CF 定任務型態，**等 CF**。
+  2. 等 CF 審：例句 731 則、三上第 1 課聽力 3 題、「艾粄 ㄞˋ ㄅㄢˇ」、拆積木對照表（抽查）。
+
 ## 2026-11-15｜家中 Mac｜Claude｜語詞：多義解釋只留第 ⑴ 義、「一」依語流變調、讀音依簡編本更正（2026-11-15 已合併 main 並上線）
 - 分支 `fix/word-meaning-first-sense-yi-sandhi`（未提交）。CF 2026-11-15 裁定兩條通則：
   - 語詞解釋分 ⑴⑵ 多義者一律只留第 ⑴ 義。寫進 `apps/mandarin/scripts/apply-word-meaning-overrides.mjs`（全冊通則，核准清單有列的以清單為準），原文留在 `meaning_original`。這次改四上 6 則：衛生、蓓蕾、開朗、母親、谷底、防潮。

@@ -287,13 +287,16 @@
       "id": "word:115AG3H06:01",
       "word": "石墨",
       "zhuyin": "ㄕˊ ㄇㄛˋ",
-      "meaning": "一種由碳組成的礦物。色暗黑，半金屬光澤，易汙手，具滑感。多用來製造電刷、滑潤劑、鉛筆芯和塗料等。",
+      "meaning": "一種由碳組成的礦物，顏色暗黑，可用來做鉛筆芯。",
       "example_sentence": "鉛筆芯裡的石墨能在紙上留下深色的痕跡。",
       "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG3H/lesson06/vocabulary/l06-01.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "meaning_original": "一種由碳組成的礦物。色暗黑，半金屬光澤，易汙手，具滑感。多用來製造電刷、滑潤劑、鉛筆芯和塗料等。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG3H06:02",
@@ -347,13 +350,16 @@
       "id": "word:115AG3H06:06",
       "word": "機器",
       "zhuyin": "ㄐㄧ ㄑㄧˋ",
-      "meaning": "機械器具。由各種零件組成，可供運轉操控以節省人力，並使工作更為便利、生產量提高的裝置。",
+      "meaning": "由各種零件組成，可以節省人力、讓工作更便利的裝置。",
       "example_sentence": "工廠裡的機器正在把木板切成小段。",
       "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG3H/lesson06/vocabulary/l06-06.webp",
       "status": "ready",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "meaning_original": "機械器具。由各種零件組成，可供運轉操控以節省人力，並使工作更為便利、生產量提高的裝置。",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG3H06:07",
@@ -569,7 +575,47 @@
       "analysis": "",
       "examples_status": "approved",
       "status": "ready",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（08各課短語句型練習）"
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（08各課短語句型練習）",
+      "structure_blocks": [
+        {
+          "example_index": 0,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "怎麼樣",
+              "text": "閃亮亮"
+            },
+            {
+              "type": "lit",
+              "text": "的"
+            },
+            {
+              "type": "slot",
+              "label": "東西",
+              "text": "鉛筆"
+            }
+          ]
+        },
+        {
+          "example_index": 1,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "怎麼樣",
+              "text": "圓滾滾"
+            },
+            {
+              "type": "lit",
+              "text": "的"
+            },
+            {
+              "type": "slot",
+              "label": "東西",
+              "text": "石頭"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "sentence_pattern:115AG3H06:02",
@@ -596,7 +642,37 @@
       "analysis": "",
       "examples_status": "approved",
       "status": "ready",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（08各課短語句型練習）"
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（08各課短語句型練習）",
+      "structure_blocks": [
+        {
+          "example_index": 0,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "物品",
+              "text": "老舊的繩子"
+            },
+            {
+              "type": "lit",
+              "text": "因為"
+            },
+            {
+              "type": "slot",
+              "label": "原因",
+              "text": "拉扯"
+            },
+            {
+              "type": "lit",
+              "text": "而斷裂"
+            },
+            {
+              "type": "slot",
+              "label": "造成什麼結果",
+              "text": "東西掉了下來"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "sentence_pattern:115AG3H06:03",
@@ -678,7 +754,37 @@
       "analysis": "",
       "examples_status": "approved",
       "status": "ready",
-      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（08各課短語句型練習）"
+      "source": "115G3A／翰林三上第6課官方教材與教師確認資料（08各課短語句型練習）",
+      "structure_blocks": [
+        {
+          "example_index": 1,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "誰",
+              "text": "你"
+            },
+            {
+              "type": "lit",
+              "text": "只要"
+            },
+            {
+              "type": "slot",
+              "label": "怎麼樣",
+              "text": "準備好材料"
+            },
+            {
+              "type": "lit",
+              "text": "就"
+            },
+            {
+              "type": "slot",
+              "label": "有什麼樣的結果發生",
+              "text": "能開始做小實驗"
+            }
+          ]
+        }
+      ]
     }
   ],
   "rhetoric": [

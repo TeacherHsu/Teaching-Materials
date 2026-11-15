@@ -341,12 +341,13 @@
       "word": "漣漪",
       "zhuyin": "ㄌㄧㄢˊ ㄧ",
       "meaning": "水面上細微的波紋。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "小石頭落入水中，激起一圈圈漣漪。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG6H/lesson01/vocabulary/l01-01.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG6H01:02",
@@ -365,24 +366,26 @@
       "word": "搖晃",
       "zhuyin": "ㄧㄠˊ ㄏㄨㄤˋ",
       "meaning": "搖擺晃動。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "地震時，吊燈不停的搖晃。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG6H/lesson01/vocabulary/l01-03.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG6H01:04",
       "word": "捉弄",
       "zhuyin": "ㄓㄨㄛ ㄋㄨㄥˋ",
       "meaning": "戲弄，對人開玩笑。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "哥哥喜歡捉弄弟弟，常惹他生氣。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG6H/lesson01/vocabulary/l01-04.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG6H01:05",
@@ -401,24 +404,26 @@
       "word": "蛹",
       "zhuyin": "ㄩㄥˇ",
       "meaning": "昆蟲成長過程中，由幼蟲變為成蟲之前，所經歷一段不動不食，看起來好像死掉的狀態。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "毛毛蟲結成蛹，準備變成蝴蝶。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG6H/lesson01/vocabulary/l01-06.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG6H01:07",
       "word": "翼",
       "zhuyin": "ㄧˋ",
       "meaning": "翅膀。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "老鷹展開雙翼在空中盤旋。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG6H/lesson01/vocabulary/l01-07.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG6H01:08",
@@ -437,96 +442,104 @@
       "word": "噴泉",
       "zhuyin": "ㄆㄣ ㄑㄩㄢˊ",
       "meaning": "由地下往上噴出的泉水。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "廣場中央有一座噴泉。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG6H/lesson01/vocabulary/l01-09.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG6H01:10",
       "word": "儲存",
       "zhuyin": "ㄔㄨˊ ㄘㄨㄣˊ",
       "meaning": "積聚存放。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "松鼠忙著儲存過冬的食物。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG6H/lesson01/vocabulary/l01-10.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG6H01:11",
       "word": "勉勵",
       "zhuyin": "ㄇㄧㄢˇ ㄌㄧˋ",
       "meaning": "勸勉鼓勵。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "老師勉勵我們要努力不懈。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG6H/lesson01/vocabulary/l01-11.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG6H01:12",
       "word": "邁入",
       "zhuyin": "ㄇㄞˋ ㄖㄨˋ",
       "meaning": "跨入、進入。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "升上六年級，我們邁入小學的最後一年。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG6H/lesson01/vocabulary/l01-12.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG6H01:13",
       "word": "詢問",
       "zhuyin": "ㄒㄩㄣˊ ㄨㄣˋ",
       "meaning": "查問。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "我到服務臺詢問集合的地點。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG6H/lesson01/vocabulary/l01-13.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG6H01:14",
       "word": "迷惘",
       "zhuyin": "ㄇㄧˊ ㄨㄤˇ",
       "meaning": "困惑而不知所措。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "面對未來，他感到有些迷惘。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG6H/lesson01/vocabulary/l01-14.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG6H01:15",
       "word": "奔赴",
       "zhuyin": "ㄅㄣ ㄈㄨˋ",
       "meaning": "驅奔某一目的地。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "救難人員連夜奔赴災區。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG6H/lesson01/vocabulary/l01-15.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG6H01:16",
       "word": "永恆",
       "zhuyin": "ㄩㄥˇ ㄏㄥˊ",
       "meaning": "恆久不變。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "父母對孩子的愛是永恆的。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG6H/lesson01/vocabulary/l01-16.webp",
       "status": "ready",
-      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）"
+      "source": "115G6A／翰林六上官方教材與教師確認資料（05形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     }
   ],
   "word_meanings": [],

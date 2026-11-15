@@ -1,0 +1,504 @@
+{
+  "volume": "115AG3H",
+  "status": "draft",
+  "drafted_on": "2026-11-15",
+  "drafted_by": "Claude（待 CF 審核）",
+  "principle": "三上（第 7～12 課；第 1～6 課已有核准例句）：一句 20 字內為主、生活情境、句子一定含該語詞、依該課語詞解釋的詞義造句、不引用課文原句。",
+  "items": [
+    {
+      "lesson": 7,
+      "word": "鹹味",
+      "example": "海風吹來，帶著淡淡的鹹味。"
+    },
+    {
+      "lesson": 7,
+      "word": "蔚藍",
+      "example": "蔚藍的天空飄著幾朵白雲。"
+    },
+    {
+      "lesson": 7,
+      "word": "回航",
+      "example": "天黑以前，漁船紛紛回航。"
+    },
+    {
+      "lesson": 7,
+      "word": "雪橇",
+      "example": "小狗拉著雪橇在雪地上跑。"
+    },
+    {
+      "lesson": 7,
+      "word": "山坡",
+      "example": "山坡上開滿了野花。"
+    },
+    {
+      "lesson": 7,
+      "word": "原野",
+      "example": "馬兒在原野上奔跑。"
+    },
+    {
+      "lesson": 7,
+      "word": "閉上",
+      "example": "我閉上眼睛，聽海浪的聲音。"
+    },
+    {
+      "lesson": 7,
+      "word": "深呼吸",
+      "example": "上臺前，我先做一次深呼吸。"
+    },
+    {
+      "lesson": 7,
+      "word": "欣賞",
+      "example": "我們坐在草地上欣賞夕陽。"
+    },
+    {
+      "lesson": 7,
+      "word": "瞞",
+      "example": "這件事瞞不過媽媽。"
+    },
+    {
+      "lesson": 8,
+      "word": "寄居蟹",
+      "example": "寄居蟹背著殼在沙灘上走。"
+    },
+    {
+      "lesson": 8,
+      "word": "幕",
+      "example": "這齣戲的第一幕發生在海邊。"
+    },
+    {
+      "lesson": 8,
+      "word": "紙杯",
+      "example": "我用紙杯做了一個筆筒。"
+    },
+    {
+      "lesson": 8,
+      "word": "殼",
+      "example": "蝸牛的殼圓圓的。"
+    },
+    {
+      "lesson": 8,
+      "word": "人類",
+      "example": "保護海洋是人類的責任。"
+    },
+    {
+      "lesson": 8,
+      "word": "瓶蓋",
+      "example": "喝完水，記得把瓶蓋轉緊。"
+    },
+    {
+      "lesson": 8,
+      "word": "淨灘",
+      "example": "我們全班一起去淨灘。"
+    },
+    {
+      "lesson": 8,
+      "word": "志工",
+      "example": "媽媽在圖書館當志工。"
+    },
+    {
+      "lesson": 8,
+      "word": "垃圾",
+      "example": "垃圾要丟進垃圾桶。"
+    },
+    {
+      "lesson": 8,
+      "word": "位",
+      "example": "今天有三位客人來我家。"
+    },
+    {
+      "lesson": 8,
+      "word": "愛護",
+      "example": "我們要愛護小動物。"
+    },
+    {
+      "lesson": 8,
+      "word": "應該",
+      "example": "天這麼黑，應該快下雨了。"
+    },
+    {
+      "lesson": 8,
+      "word": "貝殼",
+      "example": "我在海邊撿到漂亮的貝殼。"
+    },
+    {
+      "lesson": 8,
+      "word": "環境",
+      "example": "大家一起維護環境整潔。"
+    },
+    {
+      "lesson": 8,
+      "word": "保護",
+      "example": "戴安全帽可以保護頭部。"
+    },
+    {
+      "lesson": 9,
+      "word": "挑戰",
+      "example": "爬山對我來說是一個挑戰。"
+    },
+    {
+      "lesson": 9,
+      "word": "交通",
+      "example": "這裡的交通很方便。"
+    },
+    {
+      "lesson": 9,
+      "word": "隨",
+      "example": "小狗隨著主人去散步。"
+    },
+    {
+      "lesson": 9,
+      "word": "導遊",
+      "example": "導遊帶我們參觀古城。"
+    },
+    {
+      "lesson": 9,
+      "word": "鳳梨",
+      "example": "鳳梨吃起來酸酸甜甜。"
+    },
+    {
+      "lesson": 9,
+      "word": "林投樹",
+      "example": "海邊長了一排林投樹。"
+    },
+    {
+      "lesson": 9,
+      "word": "繼續",
+      "example": "休息一下，我們再繼續走。"
+    },
+    {
+      "lesson": 9,
+      "word": "木棧道",
+      "example": "我們沿著木棧道走到湖邊。"
+    },
+    {
+      "lesson": 9,
+      "word": "岸邊",
+      "example": "岸邊停了幾艘小船。"
+    },
+    {
+      "lesson": 9,
+      "word": "淺",
+      "example": "妹妹穿著淺藍色的衣服。"
+    },
+    {
+      "lesson": 9,
+      "word": "沿",
+      "example": "我們沿著河邊散步。"
+    },
+    {
+      "lesson": 9,
+      "word": "踩",
+      "example": "走路要小心，別踩到水坑。"
+    },
+    {
+      "lesson": 9,
+      "word": "疊",
+      "example": "我把書一本一本疊起來。"
+    },
+    {
+      "lesson": 9,
+      "word": "一般",
+      "example": "我一般都在九點睡覺。"
+    },
+    {
+      "lesson": 9,
+      "word": "古道",
+      "example": "這條古道已經有一百多年了。"
+    },
+    {
+      "lesson": 9,
+      "word": "海岸",
+      "example": "海岸邊有許多大石頭。"
+    },
+    {
+      "lesson": 9,
+      "word": "林投",
+      "example": "林投的果實長得像鳳梨。"
+    },
+    {
+      "lesson": 9,
+      "word": "山路",
+      "example": "這條山路彎彎曲曲。"
+    },
+    {
+      "lesson": 9,
+      "word": "南田",
+      "example": "我們從南田出發去走古道。"
+    },
+    {
+      "lesson": 10,
+      "word": "婚禮",
+      "example": "阿姨的婚禮很熱鬧。"
+    },
+    {
+      "lesson": 10,
+      "word": "服飾",
+      "example": "他們穿著傳統服飾跳舞。"
+    },
+    {
+      "lesson": 10,
+      "word": "新郎",
+      "example": "新郎穿著帥氣的西裝。"
+    },
+    {
+      "lesson": 10,
+      "word": "參加",
+      "example": "我要參加學校的運動會。"
+    },
+    {
+      "lesson": 10,
+      "word": "響",
+      "example": "上課鐘聲響了。"
+    },
+    {
+      "lesson": 10,
+      "word": "代表",
+      "example": "紅色代表喜氣。"
+    },
+    {
+      "lesson": 10,
+      "word": "祝福",
+      "example": "大家一起祝福新人。"
+    },
+    {
+      "lesson": 10,
+      "word": "連杯酒",
+      "example": "新郎和新娘一起喝連杯酒。"
+    },
+    {
+      "lesson": 10,
+      "word": "敬酒",
+      "example": "爸爸向客人敬酒。"
+    },
+    {
+      "lesson": 10,
+      "word": "藏新娘",
+      "example": "藏新娘是魯凱族婚禮的習俗。"
+    },
+    {
+      "lesson": 10,
+      "word": "習俗",
+      "example": "過年貼春聯是我們的習俗。"
+    },
+    {
+      "lesson": 10,
+      "word": "珍惜",
+      "example": "我們要珍惜每一滴水。"
+    },
+    {
+      "lesson": 10,
+      "word": "互助",
+      "example": "同學之間要互助合作。"
+    },
+    {
+      "lesson": 10,
+      "word": "精神",
+      "example": "我們要學習他不怕困難的精神。"
+    },
+    {
+      "lesson": 10,
+      "word": "秋千",
+      "example": "公園裡有兩座秋千。"
+    },
+    {
+      "lesson": 10,
+      "word": "親友",
+      "example": "親友都來參加哥哥的婚禮。"
+    },
+    {
+      "lesson": 10,
+      "word": "新娘",
+      "example": "新娘穿著白色的禮服。"
+    },
+    {
+      "lesson": 10,
+      "word": "熱鬧",
+      "example": "夜市裡人來人往，非常熱鬧。"
+    },
+    {
+      "lesson": 11,
+      "word": "除夕",
+      "example": "除夕晚上，全家人一起吃年夜飯。"
+    },
+    {
+      "lesson": 11,
+      "word": "嬸嬸",
+      "example": "嬸嬸煮的菜很好吃。"
+    },
+    {
+      "lesson": 11,
+      "word": "煙火",
+      "example": "跨年夜的煙火真美麗。"
+    },
+    {
+      "lesson": 11,
+      "word": "陣陣",
+      "example": "廚房傳來陣陣香味。"
+    },
+    {
+      "lesson": 11,
+      "word": "附近",
+      "example": "我家附近有一座公園。"
+    },
+    {
+      "lesson": 11,
+      "word": "店家",
+      "example": "這條街上有很多店家。"
+    },
+    {
+      "lesson": 11,
+      "word": "休息",
+      "example": "走累了，我們坐下來休息。"
+    },
+    {
+      "lesson": 11,
+      "word": "修車廠",
+      "example": "爸爸把車子開到修車廠。"
+    },
+    {
+      "lesson": 11,
+      "word": "關",
+      "example": "出門前要把窗戶關好。"
+    },
+    {
+      "lesson": 11,
+      "word": "檢查",
+      "example": "寫完作業要再檢查一次。"
+    },
+    {
+      "lesson": 11,
+      "word": "拖",
+      "example": "哥哥拖著行李箱走進車站。"
+    },
+    {
+      "lesson": 11,
+      "word": "擺",
+      "example": "桌上擺著一盤水果。"
+    },
+    {
+      "lesson": 11,
+      "word": "打擾",
+      "example": "爸爸在工作，不要打擾他。"
+    },
+    {
+      "lesson": 11,
+      "word": "幸好",
+      "example": "幸好我帶了雨傘。"
+    },
+    {
+      "lesson": 11,
+      "word": "零件",
+      "example": "這臺機器少了一個零件。"
+    },
+    {
+      "lesson": 11,
+      "word": "修車",
+      "example": "叔叔在路邊修車。"
+    },
+    {
+      "lesson": 11,
+      "word": "師傅",
+      "example": "師傅很快就把水管修好了。"
+    },
+    {
+      "lesson": 11,
+      "word": "感謝",
+      "example": "感謝老師的教導。"
+    },
+    {
+      "lesson": 11,
+      "word": "一路平安",
+      "example": "出發前，奶奶祝我們一路平安。"
+    },
+    {
+      "lesson": 11,
+      "word": "新年",
+      "example": "新年到了，大家互相拜年。"
+    },
+    {
+      "lesson": 11,
+      "word": "祝福",
+      "example": "卡片上寫滿了祝福的話。"
+    },
+    {
+      "lesson": 12,
+      "word": "團圓",
+      "example": "過年是全家團圓的日子。"
+    },
+    {
+      "lesson": 12,
+      "word": "剩下",
+      "example": "盤子裡只剩下一塊蛋糕。"
+    },
+    {
+      "lesson": 12,
+      "word": "默默",
+      "example": "他默默的把教室掃乾淨。"
+    },
+    {
+      "lesson": 12,
+      "word": "樓",
+      "example": "我家住在三樓。"
+    },
+    {
+      "lesson": 12,
+      "word": "視訊",
+      "example": "我和外婆用手機視訊。"
+    },
+    {
+      "lesson": 12,
+      "word": "叔叔",
+      "example": "叔叔帶我去動物園。"
+    },
+    {
+      "lesson": 12,
+      "word": "鏡頭",
+      "example": "弟弟對著鏡頭揮手。"
+    },
+    {
+      "lesson": 12,
+      "word": "逗",
+      "example": "哥哥做鬼臉逗妹妹笑。"
+    },
+    {
+      "lesson": 12,
+      "word": "娃",
+      "example": "這個小娃娃才剛學會走路。"
+    },
+    {
+      "lesson": 12,
+      "word": "壓歲錢",
+      "example": "我把壓歲錢存進撲滿。"
+    },
+    {
+      "lesson": 12,
+      "word": "透過",
+      "example": "透過窗戶可以看到遠山。"
+    },
+    {
+      "lesson": 12,
+      "word": "握",
+      "example": "過馬路時，我握著媽媽的手。"
+    },
+    {
+      "lesson": 12,
+      "word": "親戚",
+      "example": "過年時，親戚都會來我家。"
+    },
+    {
+      "lesson": 12,
+      "word": "想念",
+      "example": "我很想念住在鄉下的外公。"
+    },
+    {
+      "lesson": 12,
+      "word": "爺爺奶奶",
+      "example": "爺爺奶奶住在鄉下。"
+    },
+    {
+      "lesson": 12,
+      "word": "幸福",
+      "example": "和家人在一起讓我覺得很幸福。"
+    }
+  ]
+}

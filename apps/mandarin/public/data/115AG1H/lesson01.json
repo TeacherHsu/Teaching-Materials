@@ -239,84 +239,91 @@
       "word": "一起",
       "zhuyin": "ㄧˋ ㄑㄧˇ",
       "meaning": "一塊。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "我們一起去上學。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG1H/lesson01/vocabulary/l01-01.webp",
       "status": "ready",
-      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG1H01:02",
       "word": "走",
       "zhuyin": "ㄗㄡˇ",
       "meaning": "用腳步行。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "我走路去學校。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG1H/lesson01/vocabulary/l01-02.webp",
       "status": "ready",
-      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG1H01:03",
       "word": "你",
       "zhuyin": "ㄋㄧˇ",
       "meaning": "第二人稱，也指對方。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "你好嗎？",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG1H/lesson01/vocabulary/l01-03.webp",
       "status": "ready",
-      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG1H01:04",
       "word": "在",
       "zhuyin": "ㄗㄞˋ",
       "meaning": "介詞，放在地點前面。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "小狗在門口。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG1H/lesson01/vocabulary/l01-04.webp",
       "status": "ready",
-      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG1H01:05",
       "word": "左",
       "zhuyin": "ㄗㄨㄛˇ",
       "meaning": "表示位置、方向。與「右」相對。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "我用左手拿書。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG1H/lesson01/vocabulary/l01-05.webp",
       "status": "ready",
-      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG1H01:06",
       "word": "我",
       "zhuyin": "ㄨㄛˇ",
       "meaning": "指自己。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "我是一年級的學生。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG1H/lesson01/vocabulary/l01-06.webp",
       "status": "ready",
-      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG1H01:07",
       "word": "右",
       "zhuyin": "ㄧㄡˋ",
       "meaning": "表示位置、方向。與「左」相對。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "我用右手寫字。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG1H/lesson01/vocabulary/l01-07.webp",
       "status": "ready",
-      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG1H01:08",
@@ -324,36 +331,39 @@
       "zhuyin": "ㄋㄧˇ ㄏㄢˋ ㄨㄛˇ",
       "zhuyin_source": "教師裁定（CF 2026-11-14）：本課「和」讀ㄏㄢˋ，與生字讀音一致",
       "meaning": "你與我、你跟我。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "你和我是好朋友。",
+      "example_status": "draft",
       "level": "challenge",
       "image": "/assets/115AG1H/lesson01/vocabulary/l01-08.webp",
       "status": "ready",
-      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG1H01:09",
       "word": "向",
       "zhuyin": "ㄒㄧㄤˋ",
       "meaning": "對著、朝著。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "小鳥向天空飛去。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG1H/lesson01/vocabulary/l01-09.webp",
       "status": "ready",
-      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG1H01:10",
       "word": "前",
       "zhuyin": "ㄑㄧㄢˊ",
       "meaning": "位置在正面的。與「後」相對。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "我站在門的前面。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG1H/lesson01/vocabulary/l01-10.webp",
       "status": "ready",
-      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     }
   ],
   "word_meanings": [],

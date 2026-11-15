@@ -720,7 +720,47 @@
       "analysis": "",
       "examples_status": "approved",
       "status": "ready",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（短語句型造句資料）"
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（短語句型造句資料）",
+      "structure_blocks": [
+        {
+          "example_index": 0,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "事情",
+              "text": "穿著"
+            },
+            {
+              "type": "lit",
+              "text": "變得有"
+            },
+            {
+              "type": "slot",
+              "label": "不同的改變",
+              "text": "品味"
+            }
+          ]
+        },
+        {
+          "example_index": 1,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "事情",
+              "text": "走路"
+            },
+            {
+              "type": "lit",
+              "text": "變得有"
+            },
+            {
+              "type": "slot",
+              "label": "不同的改變",
+              "text": "自信"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "sentence_pattern:115AG3H02:bbcd1707",
@@ -737,7 +777,65 @@
       "analysis": "",
       "examples_status": "approved",
       "status": "ready",
-      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（短語句型造句資料）"
+      "source": "115G3A／翰林三上第2課官方教材與教師確認資料（短語句型造句資料）",
+      "structure_blocks": [
+        {
+          "example_index": 0,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "做什麼",
+              "text": "種"
+            },
+            {
+              "type": "lit",
+              "text": "在"
+            },
+            {
+              "type": "slot",
+              "label": "怎麼樣",
+              "text": "肥沃"
+            },
+            {
+              "type": "lit",
+              "text": "的"
+            },
+            {
+              "type": "slot",
+              "label": "在哪裡",
+              "text": "土地上"
+            }
+          ]
+        },
+        {
+          "example_index": 1,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "做什麼",
+              "text": "躺"
+            },
+            {
+              "type": "lit",
+              "text": "在"
+            },
+            {
+              "type": "slot",
+              "label": "怎麼樣",
+              "text": "舒服"
+            },
+            {
+              "type": "lit",
+              "text": "的"
+            },
+            {
+              "type": "slot",
+              "label": "在哪裡",
+              "text": "床上"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "sentence_pattern:115AG3H02:03bbd753",

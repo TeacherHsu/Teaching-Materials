@@ -1,0 +1,934 @@
+{
+  "volume": "115AG4K",
+  "status": "draft",
+  "drafted_on": "2026-11-15",
+  "drafted_by": "Claude（待 CF 審核）",
+  "principle": "四上：一句 25 字內為主、生活情境、句子一定含該語詞、依該課語詞解釋的詞義造句、不引用課文原句。",
+  "items": [
+    {
+      "lesson": 1,
+      "word": "游泳",
+      "example": "夏天我最喜歡去游泳。"
+    },
+    {
+      "lesson": 1,
+      "word": "一般",
+      "example": "一般來說，貓不喜歡碰水。"
+    },
+    {
+      "lesson": 1,
+      "word": "多采多姿",
+      "example": "暑假的生活多采多姿。"
+    },
+    {
+      "lesson": 1,
+      "word": "滑行",
+      "example": "企鵝用肚子在冰上滑行。"
+    },
+    {
+      "lesson": 1,
+      "word": "遨遊",
+      "example": "魚兒在大海裡自在的遨遊。"
+    },
+    {
+      "lesson": 1,
+      "word": "緩緩",
+      "example": "太陽緩緩的從山邊升起。"
+    },
+    {
+      "lesson": 1,
+      "word": "陀螺",
+      "example": "哥哥很會打陀螺。"
+    },
+    {
+      "lesson": 1,
+      "word": "轉身",
+      "example": "聽到有人叫我，我立刻轉身。"
+    },
+    {
+      "lesson": 1,
+      "word": "煩惱",
+      "example": "姐姐正在煩惱明天的考試。"
+    },
+    {
+      "lesson": 2,
+      "word": "招招手",
+      "example": "老師向我們招招手。"
+    },
+    {
+      "lesson": 2,
+      "word": "食糧",
+      "example": "螞蟻忙著搬運過冬的食糧。"
+    },
+    {
+      "lesson": 2,
+      "word": "姐姐",
+      "example": "姐姐教我寫功課。"
+    },
+    {
+      "lesson": 2,
+      "word": "爭吵",
+      "example": "兄弟倆為了玩具爭吵。"
+    },
+    {
+      "lesson": 2,
+      "word": "警察",
+      "example": "警察在路口指揮交通。"
+    },
+    {
+      "lesson": 2,
+      "word": "小偷",
+      "example": "警察抓到了小偷。"
+    },
+    {
+      "lesson": 2,
+      "word": "跳繩",
+      "example": "下課時，我們在操場跳繩。"
+    },
+    {
+      "lesson": 2,
+      "word": "依依不捨",
+      "example": "畢業那天，大家依依不捨的道別。"
+    },
+    {
+      "lesson": 2,
+      "word": "結束",
+      "example": "比賽結束了，我們贏了。"
+    },
+    {
+      "lesson": 2,
+      "word": "暫停",
+      "example": "下雨了，比賽只好暫停。"
+    },
+    {
+      "lesson": 2,
+      "word": "幸福",
+      "example": "全家一起吃晚餐是很幸福的事。"
+    },
+    {
+      "lesson": 2,
+      "word": "飛也似的",
+      "example": "下課鐘一響，他飛也似的跑出教室。"
+    },
+    {
+      "lesson": 2,
+      "word": "一掃而空",
+      "example": "桌上的點心被大家一掃而空。"
+    },
+    {
+      "lesson": 2,
+      "word": "奮勇",
+      "example": "消防員奮勇救出受困的人。"
+    },
+    {
+      "lesson": 2,
+      "word": "紛紛",
+      "example": "下課了，同學紛紛走出教室。"
+    },
+    {
+      "lesson": 3,
+      "word": "邀約",
+      "example": "我接受同學的邀約，一起去打球。"
+    },
+    {
+      "lesson": 3,
+      "word": "遙不可及",
+      "example": "只要肯努力，夢想就不再遙不可及。"
+    },
+    {
+      "lesson": 3,
+      "word": "熟能生巧",
+      "example": "每天練習寫字，就能熟能生巧。"
+    },
+    {
+      "lesson": 3,
+      "word": "反彈",
+      "example": "球碰到牆壁後反彈回來。"
+    },
+    {
+      "lesson": 3,
+      "word": "不曾",
+      "example": "我不曾去過外國。"
+    },
+    {
+      "lesson": 3,
+      "word": "指揮",
+      "example": "老師指揮大家排好隊伍。"
+    },
+    {
+      "lesson": 3,
+      "word": "此起彼落",
+      "example": "球場上的加油聲此起彼落。"
+    },
+    {
+      "lesson": 3,
+      "word": "喧鬧",
+      "example": "下課時，走廊上非常喧鬧。"
+    },
+    {
+      "lesson": 3,
+      "word": "優美",
+      "example": "她跳舞的姿勢很優美。"
+    },
+    {
+      "lesson": 3,
+      "word": "弧線",
+      "example": "球在空中畫出一道弧線。"
+    },
+    {
+      "lesson": 3,
+      "word": "喝采",
+      "example": "觀眾為精采的表演大聲喝采。"
+    },
+    {
+      "lesson": 3,
+      "word": "有朝一日",
+      "example": "我希望有朝一日能當上醫生。"
+    },
+    {
+      "lesson": 3,
+      "word": "風雲人物",
+      "example": "他是學校裡的風雲人物。"
+    },
+    {
+      "lesson": 3,
+      "word": "打氣",
+      "example": "我們在場邊為選手打氣。"
+    },
+    {
+      "lesson": 3,
+      "word": "平分秋色",
+      "example": "兩隊的實力平分秋色。"
+    },
+    {
+      "lesson": 4,
+      "word": "馬偕",
+      "example": "馬偕博士在淡水替人看病。"
+    },
+    {
+      "lesson": 4,
+      "word": "醫院",
+      "example": "媽媽帶我去醫院看醫生。"
+    },
+    {
+      "lesson": 4,
+      "word": "生命",
+      "example": "每個人的生命都很寶貴。"
+    },
+    {
+      "lesson": 4,
+      "word": "奉獻",
+      "example": "他把一生奉獻給教育。"
+    },
+    {
+      "lesson": 4,
+      "word": "醫療",
+      "example": "這個小島很需要醫療服務。"
+    },
+    {
+      "lesson": 4,
+      "word": "衛生",
+      "example": "飯前洗手是良好的衛生習慣。"
+    },
+    {
+      "lesson": 4,
+      "word": "藥品",
+      "example": "藥品要放在小孩拿不到的地方。"
+    },
+    {
+      "lesson": 4,
+      "word": "治病",
+      "example": "醫生的工作是替人治病。"
+    },
+    {
+      "lesson": 4,
+      "word": "翻山越嶺",
+      "example": "郵差翻山越嶺把信送到山上。"
+    },
+    {
+      "lesson": 4,
+      "word": "捐錢",
+      "example": "大家捐錢幫助受災的人。"
+    },
+    {
+      "lesson": 4,
+      "word": "食宿",
+      "example": "這次旅行的食宿都安排好了。"
+    },
+    {
+      "lesson": 4,
+      "word": "學堂",
+      "example": "古時候的孩子到學堂讀書。"
+    },
+    {
+      "lesson": 4,
+      "word": "濃濃",
+      "example": "廚房飄來濃濃的咖啡香。"
+    },
+    {
+      "lesson": 4,
+      "word": "傳教士",
+      "example": "這位傳教士來自加拿大。"
+    },
+    {
+      "lesson": 4,
+      "word": "福音",
+      "example": "這種新藥是病人的福音。"
+    },
+    {
+      "lesson": 4,
+      "word": "良方",
+      "example": "多運動是保持健康的良方。"
+    },
+    {
+      "lesson": 4,
+      "word": "善行",
+      "example": "他幫助老人的善行受到大家稱讚。"
+    },
+    {
+      "lesson": 4,
+      "word": "創辦",
+      "example": "這所學校是一位老師創辦的。"
+    },
+    {
+      "lesson": 4,
+      "word": "披星戴月",
+      "example": "爸爸每天披星戴月的工作。"
+    },
+    {
+      "lesson": 5,
+      "word": "海倫‧凱勒",
+      "example": "海倫‧凱勒的故事感動了許多人。"
+    },
+    {
+      "lesson": 5,
+      "word": "學業",
+      "example": "哥哥的學業成績很好。"
+    },
+    {
+      "lesson": 5,
+      "word": "勵志",
+      "example": "我喜歡看勵志的故事。"
+    },
+    {
+      "lesson": 5,
+      "word": "寧靜",
+      "example": "夜晚的鄉下十分寧靜。"
+    },
+    {
+      "lesson": 5,
+      "word": "視力",
+      "example": "常看遠方可以保護視力。"
+    },
+    {
+      "lesson": 5,
+      "word": "注意",
+      "example": "上課要注意聽老師說話。"
+    },
+    {
+      "lesson": 5,
+      "word": "單憑",
+      "example": "單憑一個人的力量搬不動這張桌子。"
+    },
+    {
+      "lesson": 5,
+      "word": "蓓蕾",
+      "example": "枝頭上長出粉紅色的蓓蕾。"
+    },
+    {
+      "lesson": 5,
+      "word": "任何",
+      "example": "有任何問題都可以問老師。"
+    },
+    {
+      "lesson": 5,
+      "word": "地毯",
+      "example": "客廳鋪了一塊新地毯。"
+    },
+    {
+      "lesson": 5,
+      "word": "舒適",
+      "example": "這張沙發坐起來很舒適。"
+    },
+    {
+      "lesson": 5,
+      "word": "五彩繽紛",
+      "example": "花園裡開滿五彩繽紛的花。"
+    },
+    {
+      "lesson": 5,
+      "word": "盡力",
+      "example": "不管結果如何，我都會盡力去做。"
+    },
+    {
+      "lesson": 5,
+      "word": "教導",
+      "example": "感謝老師耐心的教導。"
+    },
+    {
+      "lesson": 5,
+      "word": "失明",
+      "example": "這位失明的音樂家很會彈琴。"
+    },
+    {
+      "lesson": 5,
+      "word": "失聰",
+      "example": "爺爺年紀大了，漸漸失聰。"
+    },
+    {
+      "lesson": 5,
+      "word": "觸摸",
+      "example": "展覽品請不要用手觸摸。"
+    },
+    {
+      "lesson": 5,
+      "word": "綻放",
+      "example": "春天到了，櫻花紛紛綻放。"
+    },
+    {
+      "lesson": 6,
+      "word": "江秀真",
+      "example": "江秀真是臺灣有名的登山家。"
+    },
+    {
+      "lesson": 6,
+      "word": "開朗",
+      "example": "他的個性開朗，朋友很多。"
+    },
+    {
+      "lesson": 6,
+      "word": "珠穆朗瑪峰",
+      "example": "珠穆朗瑪峰是世界第一高峰。"
+    },
+    {
+      "lesson": 6,
+      "word": "母親",
+      "example": "母親每天早起為我準備早餐。"
+    },
+    {
+      "lesson": 6,
+      "word": "冷酷",
+      "example": "故事裡的國王冷酷無情。"
+    },
+    {
+      "lesson": 6,
+      "word": "磨練",
+      "example": "經過多年的磨練，他成為優秀的選手。"
+    },
+    {
+      "lesson": 6,
+      "word": "攀登",
+      "example": "我們計畫明年攀登玉山。"
+    },
+    {
+      "lesson": 6,
+      "word": "訓練",
+      "example": "選手每天接受嚴格的訓練。"
+    },
+    {
+      "lesson": 6,
+      "word": "谷底",
+      "example": "石頭一路滾到谷底。"
+    },
+    {
+      "lesson": 6,
+      "word": "擁有",
+      "example": "我擁有一群好朋友。"
+    },
+    {
+      "lesson": 6,
+      "word": "千變萬化",
+      "example": "山上的天氣千變萬化。"
+    },
+    {
+      "lesson": 6,
+      "word": "不知不覺",
+      "example": "不知不覺，天已經黑了。"
+    },
+    {
+      "lesson": 6,
+      "word": "難關",
+      "example": "大家同心協力度過難關。"
+    },
+    {
+      "lesson": 6,
+      "word": "不知所措",
+      "example": "第一次上臺，我緊張得不知所措。"
+    },
+    {
+      "lesson": 7,
+      "word": "咖哩",
+      "example": "今天的午餐是咖哩飯。"
+    },
+    {
+      "lesson": 7,
+      "word": "印度",
+      "example": "印度是一個歷史悠久的國家。"
+    },
+    {
+      "lesson": 7,
+      "word": "甩餅",
+      "example": "師傅甩餅的動作又快又漂亮。"
+    },
+    {
+      "lesson": 7,
+      "word": "食材",
+      "example": "這道菜用了很多新鮮的食材。"
+    },
+    {
+      "lesson": 7,
+      "word": "醬料",
+      "example": "水餃沾上醬料更好吃。"
+    },
+    {
+      "lesson": 7,
+      "word": "義大利",
+      "example": "披薩是義大利有名的食物。"
+    },
+    {
+      "lesson": 7,
+      "word": "麵條",
+      "example": "這碗麵條又細又長。"
+    },
+    {
+      "lesson": 7,
+      "word": "濃郁",
+      "example": "這杯巧克力牛奶的香味很濃郁。"
+    },
+    {
+      "lesson": 7,
+      "word": "壽司",
+      "example": "姐姐最愛吃鮭魚壽司。"
+    },
+    {
+      "lesson": 7,
+      "word": "未知",
+      "example": "探險家勇敢的走向未知的世界。"
+    },
+    {
+      "lesson": 7,
+      "word": "見聞",
+      "example": "旅行可以增加我們的見聞。"
+    },
+    {
+      "lesson": 7,
+      "word": "享用",
+      "example": "全家人一起享用豐盛的晚餐。"
+    },
+    {
+      "lesson": 7,
+      "word": "各式各樣",
+      "example": "文具店裡有各式各樣的筆。"
+    },
+    {
+      "lesson": 7,
+      "word": "大開眼界",
+      "example": "這場魔術表演讓我大開眼界。"
+    },
+    {
+      "lesson": 7,
+      "word": "念念不忘",
+      "example": "外婆做的紅燒肉讓我念念不忘。"
+    },
+    {
+      "lesson": 7,
+      "word": "料理",
+      "example": "這家餐廳的料理很美味。"
+    },
+    {
+      "lesson": 7,
+      "word": "成就感",
+      "example": "自己完成一幅畫，讓我很有成就感。"
+    },
+    {
+      "lesson": 7,
+      "word": "雀躍",
+      "example": "聽到要去郊遊，大家都很雀躍。"
+    },
+    {
+      "lesson": 7,
+      "word": "國度",
+      "example": "故事發生在一個遙遠的國度。"
+    },
+    {
+      "lesson": 7,
+      "word": "探索",
+      "example": "我們到森林裡探索大自然。"
+    },
+    {
+      "lesson": 7,
+      "word": "此起彼落",
+      "example": "夜晚的田邊，蛙鳴聲此起彼落。"
+    },
+    {
+      "lesson": 8,
+      "word": "居高臨下",
+      "example": "站在山頂居高臨下，風景看得一清二楚。"
+    },
+    {
+      "lesson": 8,
+      "word": "大樓",
+      "example": "市區有許多高聳的大樓。"
+    },
+    {
+      "lesson": 8,
+      "word": "長頸鹿",
+      "example": "長頸鹿伸長脖子吃樹葉。"
+    },
+    {
+      "lesson": 8,
+      "word": "代表",
+      "example": "鴿子代表和平。"
+    },
+    {
+      "lesson": 8,
+      "word": "經濟",
+      "example": "這個城市的經濟很繁榮。"
+    },
+    {
+      "lesson": 8,
+      "word": "阻尼器",
+      "example": "這棟高樓裡裝了阻尼器來減少搖晃。"
+    },
+    {
+      "lesson": 8,
+      "word": "地震",
+      "example": "地震時要保護頭部。"
+    },
+    {
+      "lesson": 8,
+      "word": "東京晴空塔®",
+      "example": "東京晴空塔®是日本有名的景點。"
+    },
+    {
+      "lesson": 8,
+      "word": "通訊",
+      "example": "手機讓通訊變得很方便。"
+    },
+    {
+      "lesson": 8,
+      "word": "吉隆坡",
+      "example": "吉隆坡是馬來西亞的首都。"
+    },
+    {
+      "lesson": 8,
+      "word": "連通橋",
+      "example": "兩棟大樓之間有一座連通橋。"
+    },
+    {
+      "lesson": 8,
+      "word": "可觀",
+      "example": "他存了一筆可觀的零用錢。"
+    },
+    {
+      "lesson": 8,
+      "word": "剪影",
+      "example": "夕陽下，樹木只剩黑色的剪影。"
+    },
+    {
+      "lesson": 8,
+      "word": "四面八方",
+      "example": "遊客從四面八方來到這裡。"
+    },
+    {
+      "lesson": 9,
+      "word": "泰國",
+      "example": "泰國的天氣很炎熱。"
+    },
+    {
+      "lesson": 9,
+      "word": "華麗",
+      "example": "公主穿著華麗的禮服。"
+    },
+    {
+      "lesson": 9,
+      "word": "和尚",
+      "example": "和尚在寺廟裡念經。"
+    },
+    {
+      "lesson": 9,
+      "word": "逛逛",
+      "example": "假日我們到夜市逛逛。"
+    },
+    {
+      "lesson": 9,
+      "word": "埃及",
+      "example": "埃及有古老的金字塔。"
+    },
+    {
+      "lesson": 9,
+      "word": "尼羅河",
+      "example": "尼羅河是世界上很長的河流。"
+    },
+    {
+      "lesson": 9,
+      "word": "地勢",
+      "example": "這一帶地勢平坦，適合種田。"
+    },
+    {
+      "lesson": 9,
+      "word": "低窪",
+      "example": "低窪的地方下大雨容易積水。"
+    },
+    {
+      "lesson": 9,
+      "word": "築堤",
+      "example": "居民在河邊築堤，防止河水淹進村子。"
+    },
+    {
+      "lesson": 9,
+      "word": "防潮",
+      "example": "海邊的居民蓋了堤防來防潮。"
+    },
+    {
+      "lesson": 9,
+      "word": "鬱金香",
+      "example": "花園裡開滿了鬱金香。"
+    },
+    {
+      "lesson": 9,
+      "word": "划船",
+      "example": "我們在湖上划船。"
+    },
+    {
+      "lesson": 9,
+      "word": "往來",
+      "example": "這兩家人常常往來。"
+    },
+    {
+      "lesson": 9,
+      "word": "氣息",
+      "example": "公園裡充滿春天的氣息。"
+    },
+    {
+      "lesson": 10,
+      "word": "奇幻",
+      "example": "我喜歡看奇幻故事。"
+    },
+    {
+      "lesson": 10,
+      "word": "旋律",
+      "example": "這首歌的旋律很好聽。"
+    },
+    {
+      "lesson": 10,
+      "word": "一瞬間",
+      "example": "流星一瞬間就消失了。"
+    },
+    {
+      "lesson": 10,
+      "word": "體驗",
+      "example": "我們到農場體驗擠牛奶。"
+    },
+    {
+      "lesson": 10,
+      "word": "芝麻",
+      "example": "燒餅上撒了許多芝麻。"
+    },
+    {
+      "lesson": 10,
+      "word": "大盜",
+      "example": "故事裡的大盜偷走了寶物。"
+    },
+    {
+      "lesson": 10,
+      "word": "邁開",
+      "example": "選手邁開大步向前跑。"
+    },
+    {
+      "lesson": 10,
+      "word": "臉龐",
+      "example": "微風輕輕吹過我的臉龐。"
+    },
+    {
+      "lesson": 10,
+      "word": "榮華富貴",
+      "example": "他不追求榮華富貴，只想過平靜的日子。"
+    },
+    {
+      "lesson": 10,
+      "word": "天馬行空",
+      "example": "弟弟的想法總是天馬行空。"
+    },
+    {
+      "lesson": 10,
+      "word": "一轉眼",
+      "example": "一轉眼，暑假就過完了。"
+    },
+    {
+      "lesson": 10,
+      "word": "千山萬水",
+      "example": "候鳥飛過千山萬水來到臺灣。"
+    },
+    {
+      "lesson": 10,
+      "word": "暗語",
+      "example": "我們約定了一句暗語。"
+    },
+    {
+      "lesson": 10,
+      "word": "山珍海味",
+      "example": "桌上擺滿了山珍海味。"
+    },
+    {
+      "lesson": 11,
+      "word": "背心",
+      "example": "天氣涼了，爺爺加了一件背心。"
+    },
+    {
+      "lesson": 11,
+      "word": "懷錶",
+      "example": "爺爺有一只古老的懷錶。"
+    },
+    {
+      "lesson": 11,
+      "word": "上鎖",
+      "example": "出門前記得把門上鎖。"
+    },
+    {
+      "lesson": 11,
+      "word": "鑰匙",
+      "example": "我找不到家裡的鑰匙。"
+    },
+    {
+      "lesson": 11,
+      "word": "果汁",
+      "example": "我喝了一杯柳橙果汁。"
+    },
+    {
+      "lesson": 11,
+      "word": "標示",
+      "example": "瓶子上標示著保存期限。"
+    },
+    {
+      "lesson": 11,
+      "word": "迫不及待",
+      "example": "我迫不及待的打開禮物。"
+    },
+    {
+      "lesson": 11,
+      "word": "口袋",
+      "example": "我把手帕放進口袋。"
+    },
+    {
+      "lesson": 11,
+      "word": "盒子",
+      "example": "盒子裡裝著巧克力。"
+    },
+    {
+      "lesson": 11,
+      "word": "扇子",
+      "example": "奶奶搖著扇子乘涼。"
+    },
+    {
+      "lesson": 11,
+      "word": "遲到",
+      "example": "早點出門才不會遲到。"
+    },
+    {
+      "lesson": 11,
+      "word": "東張西望",
+      "example": "過馬路時不要東張西望。"
+    },
+    {
+      "lesson": 11,
+      "word": "半信半疑",
+      "example": "聽了他的話，我半信半疑。"
+    },
+    {
+      "lesson": 11,
+      "word": "不由自主",
+      "example": "聽到音樂，我不由自主的跟著唱。"
+    },
+    {
+      "lesson": 11,
+      "word": "後果",
+      "example": "做事前要先想想後果。"
+    },
+    {
+      "lesson": 12,
+      "word": "妻子",
+      "example": "老鞋匠和妻子一起生活。"
+    },
+    {
+      "lesson": 12,
+      "word": "耐心",
+      "example": "老師很有耐心的教我們。"
+    },
+    {
+      "lesson": 12,
+      "word": "皮革",
+      "example": "這個包包是用皮革做的。"
+    },
+    {
+      "lesson": 12,
+      "word": "雙倍",
+      "example": "今天的作業是昨天的雙倍。"
+    },
+    {
+      "lesson": 12,
+      "word": "謎團",
+      "example": "偵探終於解開了謎團。"
+    },
+    {
+      "lesson": 12,
+      "word": "鐘聲",
+      "example": "遠處傳來廟裡的鐘聲。"
+    },
+    {
+      "lesson": 12,
+      "word": "小精靈",
+      "example": "故事裡的小精靈很善良。"
+    },
+    {
+      "lesson": 12,
+      "word": "鐵鎚",
+      "example": "爸爸用鐵鎚釘釘子。"
+    },
+    {
+      "lesson": 12,
+      "word": "嘖嘖稱奇",
+      "example": "魔術師的表演讓觀眾嘖嘖稱奇。"
+    },
+    {
+      "lesson": 12,
+      "word": "手舞足蹈",
+      "example": "聽到好消息，弟弟高興得手舞足蹈。"
+    },
+    {
+      "lesson": 12,
+      "word": "遠近知名",
+      "example": "這家麵包店遠近知名。"
+    },
+    {
+      "lesson": 12,
+      "word": "喜出望外",
+      "example": "收到朋友寄來的禮物，我喜出望外。"
+    },
+    {
+      "lesson": 12,
+      "word": "百思不解",
+      "example": "這道題目讓我百思不解。"
+    },
+    {
+      "lesson": 12,
+      "word": "不明就裡",
+      "example": "他不明就裡，就跟著大家一起笑。"
+    },
+    {
+      "lesson": 12,
+      "word": "一溜煙",
+      "example": "小貓一溜煙就跑走了。"
+    },
+    {
+      "lesson": 12,
+      "word": "蹦蹦跳跳",
+      "example": "小兔子在草地上蹦蹦跳跳。"
+    },
+    {
+      "lesson": 12,
+      "word": "內心",
+      "example": "我的內心充滿了感謝。"
+    }
+  ]
+}
