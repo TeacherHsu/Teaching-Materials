@@ -1,5 +1,7 @@
 // 「句型練習」模組：三步依序呈現（一畫面一任務）
-// 1. 短語搭配（MatchingGame：短語/語詞 ↔ 解釋，3–5 題一組；排除整句例句與句型總表）
+// 1. 例句拆積木（StructureBlocks：把核准例句的語塊放進句型的格子；題目由
+//    scripts/materialize-structure-blocks.mjs 寫進 sentence_patterns[].structure_blocks）。
+//    這一課沒有可拆的句型時，才退回舊的短語搭配（MatchingGame：短語/語詞 ↔ 解釋）。
 // 2. 句子重組（SentenceOrdering，用 approved 例句）
 // 3. 仿寫選填（SentenceBuilder，用另一句 approved 例句，避免和步驟 2 重複）
 //
@@ -9,6 +11,7 @@
 import { h, clear } from '../utils/dom.js';
 import { StepJump } from '../components/StepJump.js';
 import { MatchingGame } from '../components/MatchingGame.js';
+import { StructureBlocks } from '../components/StructureBlocks.js';
 import { SentenceOrdering } from '../components/SentenceOrdering.js';
 import { SentenceBuilder } from '../components/SentenceBuilder.js';
 import { TaskBanner } from '../components/TaskBanner.js';
@@ -425,6 +428,7 @@ export function buildConnectiveItems(lesson, optionCount = 3, shuffleImpl = shuf
 
 const NEXT_STEP_LABEL = {
   patterns: '繼續：認識句型',
+  blocks: '繼續：例句拆積木',
   matching: '繼續：短語搭配',
   ordering: '繼續：句子重組',
   connectives: '繼續：句子合併',
@@ -540,8 +544,27 @@ function appendPatternContext(round, container) {
  * @param {object} lesson
  * @param {() => void} onBack
  */
+/**
+ * 例句拆積木的題目：每個句型先出第 1 句，全部句型輪過一遍再出第 2 句
+ * （同一個框架換內容，放在後面當加練），照支持程度的每輪題數分組。
+ */
+export function readyStructureItems(lesson) {
+  const patterns = filterByStatus(lesson.sentence_patterns || []).filter((p) => p.structure_blocks?.length);
+  const items = [];
+  for (const pass of [0, 1]) {
+    for (const pattern of patterns) {
+      const block = pattern.structure_blocks[pass];
+      const sentence = block && pattern.examples?.[block.example_index];
+      if (sentence) items.push({ id: `${pattern.id}:${block.example_index}`, sentence, frame: block.frame });
+    }
+  }
+  return items;
+}
+
 export function buildSentencePracticeActivity(lesson, onBack) {
-  const matchingPairs = readyMatchingPairs(lesson);
+  const blockRounds = chunkRounds(readyStructureItems(lesson), { min: 1, max: Math.max(2, getScaffoldLevel().roundSize || 3) });
+  // 有拆積木就不出短語搭配：兩個都是「認識句型」的第一步，拆積木直接碰得到句子的結構
+  const matchingPairs = blockRounds.length > 0 ? [] : readyMatchingPairs(lesson);
   const matchingRounds = chunkRounds(matchingPairs);
 
   const allExamples = flattenExamples(lesson);
@@ -565,6 +588,7 @@ export function buildSentencePracticeActivity(lesson, onBack) {
   const steps = [];
   let jump = null;
   if (patternCards.length > 0) steps.push('patterns');
+  if (blockRounds.length > 0) steps.push('blocks');
   if (matchingRounds.length > 0) steps.push('matching');
   if (orderingRounds.length > 0) steps.push('ordering');
   const connectiveItems = buildConnectiveItems(lesson, Math.max(2, getScaffoldLevel().optionCount), shuffle, { withRelation: true });
@@ -632,6 +656,27 @@ export function buildSentencePracticeActivity(lesson, onBack) {
       container.appendChild(walkthrough.status);
       container.appendChild(walkthrough.grid);
       container.appendChild(h('div', { class: 'quiz-option-row' }, [advance]));
+    } else if (step === 'blocks') {
+      const isLastRound = roundIndex === blockRounds.length - 1;
+      const canContinue = !isLastRound || !isLastStep;
+      container.appendChild(TaskBanner({ label: '例句拆積木：把語塊放進對的格子', step: taskLabel }));
+      container.appendChild(StructureBlocks({
+        items: blockRounds[roundIndex],
+        backLabel: canContinue ? '本課先完成' : '回課程首頁',
+        onBack,
+        onContinue: canContinue ? () => {
+          coreComplete = true;
+          if (!isLastRound) {
+            roundIndex += 1;
+          } else {
+            stepIndex += 1;
+            roundIndex = 0;
+            itemIndex = 0;
+          }
+          renderStep();
+        } : null,
+        continueLabel: isLastRound ? (NEXT_STEP_LABEL[steps[stepIndex + 1]] || '繼續') : '加練下一組',
+      }));
     } else if (step === 'matching') {
       const isLastRound = roundIndex === matchingRounds.length - 1;
       const canContinue = !isLastRound || !isLastStep;
