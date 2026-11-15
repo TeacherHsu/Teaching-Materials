@@ -4002,3 +4002,18 @@ html.present-mode .image-frame img { max-height: 42vh; }
 .application-passage__audio {
   margin-top: var(--space-3);
 }
+
+.application-picture {
+  max-width: 360px;
+  margin: 0 auto var(--space-3);
+}
+
+/* 答錯一次後畫上顏色的關鍵字詞（暖黃底＋底線，不用紅色） */
+.application-passage__key {
+  padding: 1px 4px;
+  border-radius: var(--radius-sm);
+  background: var(--color-highlight-surface);
+  box-shadow: inset 0 -3px 0 var(--color-highlight-line);
+  color: var(--text-on-light-status);
+  font-weight: 700;
+}

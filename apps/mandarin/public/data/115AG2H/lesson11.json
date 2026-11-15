@@ -2913,5 +2913,66 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG2H11",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "門口告示",
+    "situation": "你到圖書館，門口貼著一張告示。",
+    "title": "圖書館小叮嚀",
+    "passage": "這扇門很重，請用力推，不要用腳踢。\n進門後請小聲說話，不要問東問西吵到別人。\n人多的時候不要擠，請排隊。\n書看完要立刻放回原來的地方。",
+    "signature": "圖書館阿姨",
+    "lesson_words": [
+      "扇",
+      "門",
+      "用力",
+      "問東問西",
+      "擠",
+      "立刻"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG2H11:q1",
+        "question": "這扇門要怎麼開？",
+        "options": [
+          "用力推",
+          "用腳踢",
+          "用力拉"
+        ],
+        "answer": "用力推",
+        "explanation": "告示上寫：「這扇門很重，請用力推，不要用腳踢。」",
+        "evidence": [
+          "用力推"
+        ]
+      },
+      {
+        "id": "application:115AG2H11:q2",
+        "question": "書看完以後要怎麼做？",
+        "options": [
+          "立刻放回原來的地方",
+          "放在桌上就好",
+          "帶回教室"
+        ],
+        "answer": "立刻放回原來的地方",
+        "explanation": "告示上寫：「書看完要立刻放回原來的地方。」",
+        "evidence": [
+          "立刻放回原來的地方"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG2H11:response",
+      "question": "你找不到想看的書。可以怎麼問圖書館阿姨？",
+      "options": [
+        "阿姨，請問恐龍的書放在哪裡？",
+        "書在哪裡啦？",
+        "這裡都沒有好看的書。"
+      ],
+      "answer": "阿姨，請問恐龍的書放在哪裡？",
+      "explanation": "小聲、有禮貌的問，還說出要找什麼書，阿姨才能幫你。"
+    }
+  }
 }

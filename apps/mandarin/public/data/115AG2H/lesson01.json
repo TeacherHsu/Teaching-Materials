@@ -2726,5 +2726,67 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG2H01",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "天氣提醒",
+    "situation": "早上出門前，你看到門上貼著一張媽媽寫的提醒。",
+    "title": "小安：",
+    "passage": "今天下午會有傾盆大雨，還會有閃電。\n放學的時候如果下雨，請在走廊等我，不要自己跑回家。\n雨傘放在你的書包裡。",
+    "signature": "媽媽",
+    "lesson_words": [
+      "傾盆大雨",
+      "閃電",
+      "時候"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG2H01:q1",
+        "question": "今天下午的天氣會怎麼樣？",
+        "options": [
+          "會下大雨，還有閃電",
+          "會出大太陽",
+          "會下雪"
+        ],
+        "answer": "會下大雨，還有閃電",
+        "explanation": "提醒上寫：「今天下午會有傾盆大雨，還會有閃電。」",
+        "evidence": [
+          "傾盆大雨",
+          "閃電"
+        ]
+      },
+      {
+        "id": "application:115AG2H01:q2",
+        "question": "放學下雨的時候，小安要怎麼做？",
+        "options": [
+          "在走廊等媽媽",
+          "自己跑回家",
+          "去同學家"
+        ],
+        "answer": "在走廊等媽媽",
+        "explanation": "提醒上寫：「請在走廊等我，不要自己跑回家。」",
+        "evidence": [
+          "在走廊等"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG2H01:response",
+      "question": "放學時真的下大雨，同學說：「我們一起跑回家吧！」你可以說哪一句？",
+      "options": [
+        "不行，媽媽要我在走廊等她。",
+        "好啊，我們快跑。",
+        "我不知道。"
+      ],
+      "answer": "不行，媽媽要我在走廊等她。",
+      "explanation": "媽媽的提醒說要在走廊等。把原因告訴同學，他就知道你為什麼不走。",
+      "evidence": [
+        "在走廊等"
+      ]
+    }
+  }
 }

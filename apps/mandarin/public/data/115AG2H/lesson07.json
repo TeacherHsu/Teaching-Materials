@@ -2770,5 +2770,67 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG2H07",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "通知單",
+    "situation": "老師發下一張通知單，要帶回家給爸爸媽媽看。",
+    "title": "美食分享活動",
+    "passage": "下星期三，我們班要舉辦美食分享活動。\n請每位小朋友帶一樣家裡常吃的食物，裝在便當盒裡。\n每個人家裡的美食都不一樣，歡迎大家帶來介紹。\n請記得帶自己的湯匙。",
+    "signature": "王老師",
+    "lesson_words": [
+      "美食",
+      "活動",
+      "便當盒",
+      "不一樣"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG2H07:q1",
+        "question": "美食分享活動是哪一天？",
+        "options": [
+          "下星期三",
+          "明天",
+          "下星期五"
+        ],
+        "answer": "下星期三",
+        "explanation": "通知單上寫：「下星期三，我們班要舉辦美食分享活動。」",
+        "evidence": [
+          "下星期三"
+        ]
+      },
+      {
+        "id": "application:115AG2H07:q2",
+        "question": "食物要裝在哪裡？",
+        "options": [
+          "便當盒裡",
+          "塑膠袋裡",
+          "書包裡"
+        ],
+        "answer": "便當盒裡",
+        "explanation": "通知單上寫：「裝在便當盒裡。」",
+        "evidence": [
+          "便當盒裡"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG2H07:response",
+      "question": "回家後你要告訴媽媽這件事。哪一句說得最清楚？",
+      "options": [
+        "媽媽，下星期三要帶一樣食物到學校，還要帶湯匙。",
+        "媽媽，老師說要帶東西。",
+        "媽媽，你看通知單，我不知道。"
+      ],
+      "answer": "媽媽，下星期三要帶一樣食物到學校，還要帶湯匙。",
+      "explanation": "這一句說了哪一天、要帶什麼，媽媽一聽就懂。",
+      "evidence": [
+        "下星期三"
+      ]
+    }
+  }
 }

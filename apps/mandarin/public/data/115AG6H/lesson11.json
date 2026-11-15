@@ -2397,9 +2397,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補：應用任務設計中"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2490,5 +2489,72 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG6H11",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "食譜卡",
+    "situation": "家政課要煮湯，老師發下一張食譜卡。",
+    "title": "蔬菜羹湯的做法",
+    "passage": "一、把蔬菜洗淨切絲，放進鍋裡煮滾。\n二、太白粉加水調勻，慢慢倒入湯裡勾芡。\n三、一邊倒一邊攪拌，湯變濃稠就可以關火。\n小叮嚀：勾芡後的湯很燙，請等一下再喝。",
+    "signature": "家政老師",
+    "lesson_words": [
+      "鍋",
+      "勾芡",
+      "攪拌",
+      "濃稠"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG6H11:q1",
+        "question": "太白粉水要怎麼倒進湯裡？",
+        "options": [
+          "慢慢倒，一邊倒一邊攪拌",
+          "一次全部倒進去",
+          "等湯涼了再倒"
+        ],
+        "answer": "慢慢倒，一邊倒一邊攪拌",
+        "explanation": "食譜上寫：「慢慢倒入湯裡勾芡」「一邊倒一邊攪拌」。",
+        "evidence": [
+          "一邊倒一邊攪拌"
+        ]
+      },
+      {
+        "id": "application:115AG6H11:q2",
+        "question": "什麼時候可以關火？",
+        "options": [
+          "湯變濃稠的時候",
+          "蔬菜剛放進去的時候",
+          "水一滾就關"
+        ],
+        "answer": "湯變濃稠的時候",
+        "explanation": "食譜上寫：「湯變濃稠就可以關火。」",
+        "evidence": [
+          "湯變濃稠"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG6H11:response",
+      "question": "同學剛煮好就要喝。哪一句提醒最合適？",
+      "options": [
+        "等一下再喝，勾芡的湯很燙。",
+        "你喝喝看就知道了。",
+        "快喝，等一下就沒了。"
+      ],
+      "answer": "等一下再喝，勾芡的湯很燙。",
+      "explanation": "食譜的小叮嚀說勾芡後的湯很燙。提醒同學可以避免燙傷。",
+      "evidence": [
+        "等一下再喝"
+      ]
+    },
+    "write": {
+      "prompt": "你會做哪一樣簡單的食物？用「先……，再……，最後……」寫一句。",
+      "model": "我先把蛋打散，再倒進鍋裡，最後撒一點鹽。",
+      "pattern_id": "sentence_pattern:115AG6H11:word:1"
+    }
+  }
 }

@@ -269,3 +269,10 @@ python3 Chinese/Review-Games/tools/check_data.py   # 全部 ✅ 才算過
   node Chinese/Review-Games/tools/qa/cdp.mjs "http://localhost:5191/Chinese/Review-Games/detective.html?g=G3A" out.png Chinese/Review-Games/tools/qa/play-detective.js   # 3D 截圖
   ```
 - 改過 detective*.js／css 後把 `detective.html` 的 `?v=` 加 1，避免瀏覽器快取舊檔。
+
+## 我會應用（生活任務）
+
+- 2026-11-15 新增的大項：每課一則自編的生活文本（便條、通知、邀請卡……），讀懂後回應，再用本課句型寫一句。一年級改成「看圖選一句話」。設計理由與格式見 `src/activities/application.js` 開頭。
+- 正本是 `tools/application-tasks/<冊別>.json`，不要直接手改課次 JSON 的 `application`；改完跑 `node scripts/apply-application-tasks.mjs --write`。重新匯入課次後也要重跑。
+- 新編內容要 CF 核准才上線：清單或個別任務 `status: approved` 才會進正式站；草稿由 `scripts/filter-build-data.mjs` 濾掉。`scripts/test-application.mjs` 會檢查格式、語詞、字數與圖檔。
+- 沒有可玩任務的課，課次首頁不顯示這張卡。

@@ -2438,9 +2438,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補：應用任務設計中"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2552,5 +2551,74 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG6H07",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "參觀須知",
+    "situation": "美勞課要到公園看公共藝術，老師發下一張參觀須知。",
+    "title": "公共藝術戶外課",
+    "passage": "這次要看三件作品：青銅雕塑、不鏽鋼裝置和樹葉拓印牆。\n請帶素描本和鉛筆，蒐集自己喜歡的線條和圖案。\n可以摸的作品旁邊會有標示，沒有標示的請用眼睛欣賞。\n回來後每人要介紹一件作品的意涵。",
+    "signature": "美勞老師",
+    "lesson_words": [
+      "青銅",
+      "雕塑",
+      "不鏽鋼",
+      "拓印",
+      "蒐集",
+      "意涵"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG6H07:q1",
+        "question": "怎麼知道哪一件作品可以摸？",
+        "options": [
+          "看旁邊有沒有標示",
+          "每一件都可以摸",
+          "問路過的人"
+        ],
+        "answer": "看旁邊有沒有標示",
+        "explanation": "須知上寫：「可以摸的作品旁邊會有標示，沒有標示的請用眼睛欣賞。」",
+        "evidence": [
+          "旁邊會有標示"
+        ]
+      },
+      {
+        "id": "application:115AG6H07:q2",
+        "question": "回到教室後，每個人要做什麼？",
+        "options": [
+          "介紹一件作品的意涵",
+          "交一張拓印作品",
+          "寫一篇遊記"
+        ],
+        "answer": "介紹一件作品的意涵",
+        "explanation": "須知上寫：「回來後每人要介紹一件作品的意涵。」",
+        "evidence": [
+          "介紹一件作品的意涵"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG6H07:response",
+      "question": "輪到你介紹作品。哪一句開頭最清楚？",
+      "options": [
+        "我介紹的是公園入口的青銅雕塑，它想表達的是親情。",
+        "我隨便選了一個。",
+        "那個作品我看不懂。"
+      ],
+      "answer": "我介紹的是公園入口的青銅雕塑，它想表達的是親情。",
+      "explanation": "這一句說了是哪一件作品、在哪裡，還有它的意涵。",
+      "evidence": [
+        "青銅雕塑"
+      ]
+    },
+    "write": {
+      "prompt": "參觀的時候你會怎麼記錄？用「一邊……，一邊……」寫一句。",
+      "model": "我一邊看作品，一邊把喜歡的圖案畫下來。",
+      "pattern_id": "sentence_pattern:115AG6H07:word:1"
+    }
+  }
 }

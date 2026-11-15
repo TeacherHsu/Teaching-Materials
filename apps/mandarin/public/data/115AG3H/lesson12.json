@@ -2065,9 +2065,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2111,5 +2110,75 @@
       "activity": "review"
     }
   },
-  "genre": "narrative"
+  "genre": "narrative",
+  "application": {
+    "id": "application:115AG3H12",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "手機訊息",
+    "situation": "除夕晚上，媽媽把手機拿給你看，是叔叔傳來的訊息。",
+    "title": "給小安",
+    "passage": "叔叔今年在外地工作，不能回家團圓，很想念大家。\n晚上八點我會用視訊打回去，你要對著鏡頭跟我揮揮手喔。\n壓歲錢我請爺爺奶奶先交給你了。",
+    "signature": "叔叔",
+    "lesson_words": [
+      "叔叔",
+      "團圓",
+      "想念",
+      "視訊",
+      "鏡頭",
+      "壓歲錢",
+      "爺爺奶奶"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG3H12:q1",
+        "question": "叔叔今年為什麼不能回家？",
+        "options": [
+          "因為在外地工作",
+          "因為生病了",
+          "因為沒有買到車票"
+        ],
+        "answer": "因為在外地工作",
+        "explanation": "訊息上寫：「叔叔今年在外地工作，不能回家團圓。」",
+        "evidence": [
+          "在外地工作"
+        ]
+      },
+      {
+        "id": "application:115AG3H12:q2",
+        "question": "叔叔幾點會打視訊回來？",
+        "options": [
+          "晚上八點",
+          "早上八點",
+          "晚上十二點"
+        ],
+        "answer": "晚上八點",
+        "explanation": "訊息上寫：「晚上八點我會用視訊打回去。」",
+        "evidence": [
+          "晚上八點"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG3H12:response",
+      "question": "你想請媽媽幫你回訊息給叔叔。哪一句最合適？",
+      "options": [
+        "叔叔，謝謝你的壓歲錢，我們也很想念你，晚上八點見！",
+        "叔叔，壓歲錢有多少？",
+        "叔叔，你為什麼不回來？"
+      ],
+      "answer": "叔叔，謝謝你的壓歲錢，我們也很想念你，晚上八點見！",
+      "explanation": "這一句有道謝、有說出想念，也回答了視訊的時間。",
+      "evidence": [
+        "晚上八點"
+      ]
+    },
+    "write": {
+      "prompt": "想念不在身邊的家人時，你可以怎麼做？用「……，就……」寫一句。",
+      "model": "我想念外婆的時候，就打電話給她。",
+      "pattern_id": "sentence_pattern:115AG3H12:bec8c05b"
+    }
+  }
 }

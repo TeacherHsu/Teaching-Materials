@@ -2512,5 +2512,68 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG2H10",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "遊戲規則",
+    "situation": "下課時，表哥拿出一張猜謎遊戲的規則。",
+    "title": "猜字謎比賽",
+    "passage": "一次出一題字謎，想到答案請趕緊舉手。\n被點到的人才可以回答。\n答對一題得一分，答錯不扣分。\n最後分數最多的人就是字謎王。",
+    "signature": "表哥",
+    "lesson_words": [
+      "題",
+      "字謎",
+      "趕緊",
+      "回答",
+      "對"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG2H10:q1",
+        "question": "想到答案的時候要怎麼做？",
+        "options": [
+          "趕緊舉手",
+          "直接大聲說",
+          "告訴旁邊的人"
+        ],
+        "answer": "趕緊舉手",
+        "explanation": "規則上寫：「想到答案請趕緊舉手。」",
+        "evidence": [
+          "趕緊舉手"
+        ]
+      },
+      {
+        "id": "application:115AG2H10:q2",
+        "question": "答錯了會怎麼樣？",
+        "options": [
+          "不扣分",
+          "扣一分",
+          "不能再玩"
+        ],
+        "answer": "不扣分",
+        "explanation": "規則上寫：「答對一題得一分，答錯不扣分。」",
+        "evidence": [
+          "不扣分"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG2H10:response",
+      "question": "表弟沒有舉手就大聲說出答案。哪一句提醒最合適？",
+      "options": [
+        "表弟，要先舉手，被點到才可以回答喔。",
+        "你犯規，不准玩了！",
+        "算了，隨便他。"
+      ],
+      "answer": "表弟，要先舉手，被點到才可以回答喔。",
+      "explanation": "這一句把規則說清楚，語氣也很友善。",
+      "evidence": [
+        "被點到的人才可以回答"
+      ]
+    }
+  }
 }

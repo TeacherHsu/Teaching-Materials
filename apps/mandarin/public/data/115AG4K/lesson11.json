@@ -3086,7 +3086,9 @@
   "application": {
     "id": "application:115AG4K11",
     "status": "approved",
-    "source": "original（Claude 草擬生活任務，CF 2026-11-15 核准；短文為自編，非課文）",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
     "kind": "通知單",
     "situation": "老師發下一張校外教學的通知單。",
     "title": "校外教學通知",
@@ -3108,7 +3110,10 @@
           "下午兩點"
         ],
         "answer": "早上八點",
-        "explanation": "通知單上寫：「星期五早上八點在校門口集合。」"
+        "explanation": "通知單上寫：「星期五早上八點在校門口集合。」",
+        "evidence": [
+          "早上八點"
+        ]
       },
       {
         "id": "application:115AG4K11:q2",
@@ -3119,10 +3124,14 @@
           "老師會在校門口等"
         ],
         "answer": "要請家長自己送到動物園",
-        "explanation": "通知單上寫：「如果遲到，就要請家長自己送到動物園。」"
+        "explanation": "通知單上寫：「如果遲到，就要請家長自己送到動物園。」",
+        "evidence": [
+          "要請家長自己送到動物園"
+        ]
       }
     ],
     "response": {
+      "id": "application:115AG4K11:response",
       "question": "出發前一天晚上，你應該先做哪一件事？",
       "options": [
         "在背包上寫好班級和姓名",
@@ -3130,14 +3139,15 @@
         "晚一點再睡覺"
       ],
       "answer": "在背包上寫好班級和姓名",
-      "explanation": "通知單上寫：「背包上請標示班級和姓名。」前一天先準備好，隔天才不會手忙腳亂。"
+      "explanation": "通知單上寫：「背包上請標示班級和姓名。」前一天先準備好，隔天才不會手忙腳亂。",
+      "evidence": [
+        "班級和姓名"
+      ]
     },
     "write": {
       "prompt": "校外教學要注意什麼？用「如果……就……」寫一句提醒自己。",
       "model": "如果找不到老師，就留在原地等。",
       "pattern_id": "sentence:11:04"
-    },
-    "approved_by": "CF",
-    "approved_on": "2026-11-15"
+    }
   }
 }

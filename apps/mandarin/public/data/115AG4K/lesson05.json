@@ -2670,9 +2670,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "應用任務來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -3842,5 +3841,73 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG4K05",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "導覽說明",
+    "situation": "你們班去參觀美術館，入口有一張參觀說明。",
+    "title": "參觀須知",
+    "passage": "展場需要寧靜，說話請放低音量。\n任何展品都不可以用手觸摸，拍照請關閃光燈。\n二樓有一區「用手看世界」，可以摸一摸作品，體會失明的人怎麼欣賞藝術。\n走累了，可以到一樓的舒適休息區坐一坐。",
+    "signature": "市立美術館",
+    "lesson_words": [
+      "寧靜",
+      "任何",
+      "觸摸",
+      "失明",
+      "舒適"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG4K05:q1",
+        "question": "在展場裡，哪一件事不可以做？",
+        "options": [
+          "用手觸摸展品",
+          "小聲說話",
+          "到休息區坐一坐"
+        ],
+        "answer": "用手觸摸展品",
+        "explanation": "說明上寫：「任何展品都不可以用手觸摸。」",
+        "evidence": [
+          "用手觸摸"
+        ]
+      },
+      {
+        "id": "application:115AG4K05:q2",
+        "question": "哪裡的作品可以摸一摸？",
+        "options": [
+          "二樓的「用手看世界」",
+          "一樓的休息區",
+          "所有的展場"
+        ],
+        "answer": "二樓的「用手看世界」",
+        "explanation": "說明上寫：「二樓有一區『用手看世界』，可以摸一摸作品。」",
+        "evidence": [
+          "「用手看世界」"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG4K05:response",
+      "question": "同學伸手想摸一幅畫。哪一句提醒最合適？",
+      "options": [
+        "這裡不能摸，二樓有可以摸的作品，我們等一下去那裡。",
+        "你完蛋了，我要跟老師說。",
+        "摸一下沒關係啦。"
+      ],
+      "answer": "這裡不能摸，二樓有可以摸的作品，我們等一下去那裡。",
+      "explanation": "這一句說出規定，還告訴同學哪裡可以摸。",
+      "evidence": [
+        "二樓有一區「用手看世界」"
+      ]
+    },
+    "write": {
+      "prompt": "去參觀的時候要注意什麼？用「如果……」寫一句。",
+      "model": "如果想拍照，要先看看可不可以拍。",
+      "pattern_id": "sentence:05:04"
+    }
+  }
 }

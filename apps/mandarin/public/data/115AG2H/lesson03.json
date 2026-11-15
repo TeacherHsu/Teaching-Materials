@@ -2963,5 +2963,67 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG2H03",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "標籤",
+    "situation": "媽媽買了一件新衣服給你，衣服上掛著一張標籤。",
+    "title": "衣服的洗法",
+    "passage": "這件衣服請用冷水洗。\n洗的時候，袖子和領口要多搓一點。\n不可以用熱水，衣服會變小。\n洗好請掛起來，讓它慢慢乾。",
+    "signature": "小熊服飾",
+    "lesson_words": [
+      "件",
+      "袖子",
+      "領",
+      "一點"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG2H03:q1",
+        "question": "這件衣服要用什麼水洗？",
+        "options": [
+          "冷水",
+          "熱水",
+          "溫水"
+        ],
+        "answer": "冷水",
+        "explanation": "標籤上寫：「這件衣服請用冷水洗。」",
+        "evidence": [
+          "冷水"
+        ]
+      },
+      {
+        "id": "application:115AG2H03:q2",
+        "question": "為什麼不可以用熱水洗？",
+        "options": [
+          "因為衣服會變小",
+          "因為衣服會變大",
+          "因為衣服會變色"
+        ],
+        "answer": "因為衣服會變小",
+        "explanation": "標籤上寫：「不可以用熱水，衣服會變小。」",
+        "evidence": [
+          "衣服會變小"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG2H03:response",
+      "question": "姐姐要幫你洗這件衣服。你可以提醒她哪一句？",
+      "options": [
+        "姐姐，這件要用冷水洗，謝謝你。",
+        "你隨便洗就好。",
+        "洗壞了你要賠我。"
+      ],
+      "answer": "姐姐，這件要用冷水洗，謝謝你。",
+      "explanation": "把標籤上最重要的事告訴姐姐，還要記得說謝謝。",
+      "evidence": [
+        "用冷水洗"
+      ]
+    }
+  }
 }

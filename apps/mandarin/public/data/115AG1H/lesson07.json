@@ -1302,9 +1302,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2366,5 +2365,49 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG1H07",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "看圖選一句話",
+    "variant": "picture",
+    "items": [
+      {
+        "id": "application:115AG1H07:p1",
+        "word": "山谷",
+        "image": "/assets/115AG1H/lesson07/vocabulary/l07-06.webp",
+        "options": [
+          "山谷裡有一條小河。",
+          "山谷裡有一座高樓。",
+          "山上下雪了。"
+        ],
+        "answer": "山谷裡有一條小河。"
+      },
+      {
+        "id": "application:115AG1H07:p2",
+        "word": "大叫",
+        "image": "/assets/115AG1H/lesson07/vocabulary/l07-05.webp",
+        "options": [
+          "弟弟張開嘴巴大叫。",
+          "弟弟閉著嘴巴不說話。",
+          "弟弟小聲的說話。"
+        ],
+        "answer": "弟弟張開嘴巴大叫。"
+      },
+      {
+        "id": "application:115AG1H07:p3",
+        "word": "哈哈大笑",
+        "image": "/assets/115AG1H/lesson07/vocabulary/l07-08.webp",
+        "options": [
+          "大家看著小狗哈哈大笑。",
+          "大家看著小狗哭了。",
+          "大家安靜的看書。"
+        ],
+        "answer": "大家看著小狗哈哈大笑。"
+      }
+    ]
+  }
 }

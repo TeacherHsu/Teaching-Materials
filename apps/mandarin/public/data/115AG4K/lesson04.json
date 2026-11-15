@@ -3007,9 +3007,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "應用任務來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -3417,5 +3416,68 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG4K04",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "就診須知",
+    "situation": "媽媽帶你去醫院看病，櫃臺前貼著一張須知。",
+    "title": "看診流程",
+    "passage": "請先到櫃臺掛號，再到候診區等候叫號。\n醫院人多，為了大家的衛生，請戴好口罩。\n看完病後，拿藥單到一樓領藥品。\n藥要照醫生說的時間吃，才能把病治好。",
+    "signature": "仁愛醫院",
+    "lesson_words": [
+      "醫院",
+      "衛生",
+      "藥品"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG4K04:q1",
+        "question": "到醫院後，第一件事要做什麼？",
+        "options": [
+          "到櫃臺掛號",
+          "到一樓領藥",
+          "直接進診間"
+        ],
+        "answer": "到櫃臺掛號",
+        "explanation": "須知上寫：「請先到櫃臺掛號，再到候診區等候叫號。」",
+        "evidence": [
+          "到櫃臺掛號"
+        ]
+      },
+      {
+        "id": "application:115AG4K04:q2",
+        "question": "看完病後要去哪裡領藥？",
+        "options": [
+          "一樓",
+          "候診區",
+          "櫃臺旁邊"
+        ],
+        "answer": "一樓",
+        "explanation": "須知上寫：「拿藥單到一樓領藥品。」",
+        "evidence": [
+          "一樓"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG4K04:response",
+      "question": "醫生問你：「哪裡不舒服？」哪一句回答最清楚？",
+      "options": [
+        "我從昨天晚上開始喉嚨痛，還會咳嗽。",
+        "我不知道。",
+        "就是不舒服。"
+      ],
+      "answer": "我從昨天晚上開始喉嚨痛，還會咳嗽。",
+      "explanation": "把什麼時候開始、哪裡不舒服說清楚，醫生才能幫你。"
+    },
+    "write": {
+      "prompt": "身體不舒服的時候，你會怎麼做？用「當……就……」寫一句。",
+      "model": "當我覺得頭痛，就馬上告訴老師。",
+      "pattern_id": "sentence:04:04"
+    }
+  }
 }

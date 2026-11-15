@@ -2768,5 +2768,68 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG2H08",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "做法卡",
+    "situation": "美食分享日，同學的媽媽貼出一張春捲的做法。",
+    "title": "春捲怎麼包",
+    "passage": "一、把米紙放進水裡，等它變軟。\n二、放上青菜和蝦子。\n三、接著把兩邊折進來，再捲起來。\n想吃的小朋友請先舉手，不要搶。",
+    "signature": "明光媽媽",
+    "lesson_words": [
+      "米紙",
+      "變",
+      "軟",
+      "青菜",
+      "蝦子",
+      "接著",
+      "舉手",
+      "搶"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG2H08:q1",
+        "question": "包春捲的第一步是什麼？",
+        "options": [
+          "把米紙放進水裡，等它變軟",
+          "放上青菜和蝦子",
+          "把春捲捲起來"
+        ],
+        "answer": "把米紙放進水裡，等它變軟",
+        "explanation": "做法卡上寫：「一、把米紙放進水裡，等它變軟。」",
+        "evidence": [
+          "把米紙放進水裡，等它變軟"
+        ]
+      },
+      {
+        "id": "application:115AG2H08:q2",
+        "question": "想吃春捲的小朋友要怎麼做？",
+        "options": [
+          "先舉手",
+          "趕快搶",
+          "大聲叫"
+        ],
+        "answer": "先舉手",
+        "explanation": "做法卡上寫：「想吃的小朋友請先舉手，不要搶。」",
+        "evidence": [
+          "先舉手"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG2H08:response",
+      "question": "你吃完春捲了。哪一句話最合適？",
+      "options": [
+        "阿姨，春捲很好吃，謝謝您。",
+        "阿姨，我還要十個。",
+        "阿姨，這個不好吃。"
+      ],
+      "answer": "阿姨，春捲很好吃，謝謝您。",
+      "explanation": "別人請你吃東西，吃完要說謝謝。"
+    }
+  }
 }

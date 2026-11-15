@@ -2238,9 +2238,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補：應用任務設計中"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2364,5 +2363,69 @@
     ],
     "approved_by": "CF",
     "approved_on": "2026-10-03"
+  },
+  "application": {
+    "id": "application:115AG6H01",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "給自己的信",
+    "situation": "升上六年級的第一天，老師請大家讀一封「給六年級的你」的信。",
+    "title": "給邁入六年級的你：",
+    "passage": "這一年你會遇到很多新的選擇，有時也會感到迷惘。\n不知道怎麼辦的時候，可以主動詢問老師或同學。\n請把今天的心情寫下來，儲存在時光信箱，畢業那天再打開。\n老師勉勵你：勇敢向前，做最好的自己。",
+    "signature": "導師",
+    "lesson_words": [
+      "迷惘",
+      "詢問",
+      "儲存",
+      "勉勵"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG6H01:q1",
+        "question": "信裡說，不知道怎麼辦的時候可以怎麼做？",
+        "options": [
+          "主動詢問老師或同學",
+          "自己一個人想辦法",
+          "先不要管它"
+        ],
+        "answer": "主動詢問老師或同學",
+        "explanation": "信上寫：「不知道怎麼辦的時候，可以主動詢問老師或同學。」",
+        "evidence": [
+          "主動詢問老師或同學"
+        ]
+      },
+      {
+        "id": "application:115AG6H01:q2",
+        "question": "老師請大家把今天的心情怎麼處理？",
+        "options": [
+          "寫下來，放進時光信箱",
+          "說給隔壁同學聽",
+          "畫成一張圖帶回家"
+        ],
+        "answer": "寫下來，放進時光信箱",
+        "explanation": "信上寫：「請把今天的心情寫下來，儲存在時光信箱，畢業那天再打開。」",
+        "evidence": [
+          "寫下來，儲存在時光信箱"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG6H01:response",
+      "question": "你想在回條上寫一句話給老師。哪一句最合適？",
+      "options": [
+        "謝謝老師的勉勵，遇到問題我會主動問。",
+        "我沒有什麼想寫的。",
+        "六年級好麻煩。"
+      ],
+      "answer": "謝謝老師的勉勵，遇到問題我會主動問。",
+      "explanation": "這一句有道謝，也回應了信裡的提醒。"
+    },
+    "write": {
+      "prompt": "你想怎麼面對不喜歡的事？用「把……變成……」這樣的句子寫一句。",
+      "model": "我想把緊張變成努力的動力。",
+      "pattern_id": "sentence_pattern:115AG6H01:word:2"
+    }
   }
 }

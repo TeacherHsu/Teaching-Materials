@@ -2602,5 +2602,71 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG2H09",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "菜單",
+    "situation": "學校的走廊貼著今天的午餐菜單。",
+    "title": "今天的午餐",
+    "passage": "今天有白飯、蒸蛋、炒蔬菜和海苔湯。\n蔬菜裡有紅蘿蔔和小黃瓜，吃了身體好。\n飯和菜請通通吃完，不要挑食。\n湯很熱，請小心端。",
+    "signature": "學校廚房",
+    "lesson_words": [
+      "蒸",
+      "蛋",
+      "蔬菜",
+      "海苔",
+      "紅蘿蔔",
+      "小黃瓜",
+      "通通",
+      "熱"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG2H09:q1",
+        "question": "今天的湯是什麼湯？",
+        "options": [
+          "海苔湯",
+          "紅蘿蔔湯",
+          "蛋花湯"
+        ],
+        "answer": "海苔湯",
+        "explanation": "菜單上寫：「今天有白飯、蒸蛋、炒蔬菜和海苔湯。」",
+        "evidence": [
+          "海苔湯"
+        ]
+      },
+      {
+        "id": "application:115AG2H09:q2",
+        "question": "為什麼要小心端湯？",
+        "options": [
+          "因為湯很熱",
+          "因為湯很少",
+          "因為碗很大"
+        ],
+        "answer": "因為湯很熱",
+        "explanation": "菜單上寫：「湯很熱，請小心端。」",
+        "evidence": [
+          "湯很熱"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG2H09:response",
+      "question": "你不敢吃紅蘿蔔。可以對老師說哪一句？",
+      "options": [
+        "老師，我不太敢吃紅蘿蔔，可以先吃一口試試看嗎？",
+        "我不要吃，好噁心。",
+        "我偷偷倒掉就好。"
+      ],
+      "answer": "老師，我不太敢吃紅蘿蔔，可以先吃一口試試看嗎？",
+      "explanation": "說出自己的困難，也願意試一點點，老師會幫你。",
+      "evidence": [
+        "紅蘿蔔"
+      ]
+    }
+  }
 }

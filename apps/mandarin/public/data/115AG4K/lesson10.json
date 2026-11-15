@@ -2765,9 +2765,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "應用任務來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -3223,5 +3222,63 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG4K10",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "活動單",
+    "situation": "班上要辦尋寶遊戲，老師發下一張活動單。",
+    "title": "教室尋寶遊戲",
+    "passage": "寶物藏在教室的五個地方，每一組要先猜出暗語，才能拿到下一張線索卡。\n遊戲時間只有二十分鐘，一轉眼就過去了，請把握時間。\n找到寶物的小組可以體驗當一天的小老師。\n請用走的，不可以奔跑。",
+    "signature": "四年一班",
+    "lesson_words": [
+      "暗語",
+      "一轉眼",
+      "體驗"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG4K10:q1",
+        "question": "要怎麼樣才能拿到下一張線索卡？",
+        "options": [
+          "先猜出暗語",
+          "跑得比別組快",
+          "先找到寶物"
+        ],
+        "answer": "先猜出暗語",
+        "explanation": "活動單上寫：「每一組要先猜出暗語，才能拿到下一張線索卡。」",
+        "evidence": [
+          "先猜出暗語"
+        ]
+      },
+      {
+        "id": "application:115AG4K10:q2",
+        "question": "遊戲時間有多久？",
+        "options": [
+          "二十分鐘",
+          "五分鐘",
+          "一整節課"
+        ],
+        "answer": "二十分鐘",
+        "explanation": "活動單上寫：「遊戲時間只有二十分鐘。」",
+        "evidence": [
+          "二十分鐘"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG4K10:response",
+      "question": "你們這一組猜不出暗語。哪一句話最能幫上忙？",
+      "options": [
+        "我們把線索再念一次，一起想想看。",
+        "都是你太笨了。",
+        "算了，不要玩了。"
+      ],
+      "answer": "我們把線索再念一次，一起想想看。",
+      "explanation": "遇到困難時，邀請大家一起再試一次，才有機會解決。"
+    }
+  }
 }

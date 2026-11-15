@@ -3304,9 +3304,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補：應用任務設計中"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -3374,5 +3373,68 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG6H12",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "失物招領",
+    "situation": "你在走廊撿到一個錢包，交到學務處後，老師貼出一張失物招領。",
+    "title": "失物招領",
+    "passage": "十一月三日有同學在二樓走廊拾獲藍色錢包一個。\n為了避免冒領，領取時請憑學生證，並說出錢包裡有什麼東西。\n說得絲毫不差才可以領回。\n幸虧有熱心的同學送來，也請失主記得向他道謝。",
+    "signature": "學務處",
+    "lesson_words": [
+      "憑",
+      "絲毫不差",
+      "幸虧"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG6H12:q1",
+        "question": "要領回錢包，需要做到哪兩件事？",
+        "options": [
+          "帶學生證，並說出錢包裡有什麼",
+          "帶家長來，並付保管費",
+          "寫一張悔過書，並打掃走廊"
+        ],
+        "answer": "帶學生證，並說出錢包裡有什麼",
+        "explanation": "公告上寫：「領取時請憑學生證，並說出錢包裡有什麼東西。」",
+        "evidence": [
+          "憑學生證，並說出錢包裡有什麼東西"
+        ]
+      },
+      {
+        "id": "application:115AG6H12:q2",
+        "question": "為什麼要說出錢包裡有什麼？",
+        "options": [
+          "為了避免別人冒領",
+          "為了讓老師記下來",
+          "為了知道值多少錢"
+        ],
+        "answer": "為了避免別人冒領",
+        "explanation": "公告上寫：「為了避免冒領。」",
+        "evidence": [
+          "為了避免冒領"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG6H12:response",
+      "question": "錢包的主人來向你道謝。哪一句回答最合適？",
+      "options": [
+        "不客氣，東西找回來就好。",
+        "你要請我吃東西。",
+        "下次再掉我就不撿了。"
+      ],
+      "answer": "不客氣，東西找回來就好。",
+      "explanation": "幫助別人後謙虛回應，對方會記得這份好意。"
+    },
+    "write": {
+      "prompt": "你有沒有撿到東西或找回東西的經驗？用「一……，就……」寫一句。",
+      "model": "我一發現鉛筆盒不見，就回教室去找。",
+      "pattern_id": "sentence_pattern:115AG6H12:word:2"
+    }
+  }
 }

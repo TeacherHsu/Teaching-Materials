@@ -2926,9 +2926,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補：應用任務設計中"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -3019,5 +3018,69 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG6H02",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "慰問卡",
+    "situation": "同學小安在學校暈倒後請假三天，班長寫了一張卡片，要大家看過再簽名。",
+    "title": "親愛的小安：",
+    "passage": "聽說你那天在操場暈倒，大家都很擔憂。\n這幾天的功課我們會幫你整理好，請放寬心休息。\n星期五放學後，老師會帶三位同學去慰問你。\n希望你早日康復，回來和我們一起上課。",
+    "signature": "六年二班全體同學",
+    "lesson_words": [
+      "暈倒",
+      "擔憂",
+      "寬",
+      "慰問"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG6H02:q1",
+        "question": "小安為什麼請假？",
+        "options": [
+          "因為他在操場暈倒了",
+          "因為他要去比賽",
+          "因為他不想上課"
+        ],
+        "answer": "因為他在操場暈倒了",
+        "explanation": "卡片上寫：「聽說你那天在操場暈倒，大家都很擔憂。」",
+        "evidence": [
+          "在操場暈倒"
+        ]
+      },
+      {
+        "id": "application:115AG6H02:q2",
+        "question": "同學會幫小安做什麼？",
+        "options": [
+          "幫他整理這幾天的功課",
+          "幫他寫完所有作業",
+          "幫他請更多天假"
+        ],
+        "answer": "幫他整理這幾天的功課",
+        "explanation": "卡片上寫：「這幾天的功課我們會幫你整理好。」",
+        "evidence": [
+          "功課我們會幫你整理好"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG6H02:response",
+      "question": "你也想在卡片上寫一句話。哪一句最合適？",
+      "options": [
+        "好好休息，我們等你回來一起打球。",
+        "你怎麼這麼不小心？",
+        "你不在，班上比較安靜。"
+      ],
+      "answer": "好好休息，我們等你回來一起打球。",
+      "explanation": "慰問卡要讓對方覺得溫暖、被關心。"
+    },
+    "write": {
+      "prompt": "同學生病或難過的時候，怎麼做能讓他好一點？用「只要……就……」寫一句。",
+      "model": "只要有人陪他說說話，他就不會覺得寂寞。",
+      "pattern_id": "sentence_pattern:115AG6H02:word:2"
+    }
+  }
 }

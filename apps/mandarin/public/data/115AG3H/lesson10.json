@@ -2155,9 +2155,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2225,5 +2224,71 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG3H10",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "喜帖",
+    "situation": "你們家收到一張阿姨寄來的喜帖。",
+    "title": "誠心邀請您",
+    "passage": "我們的婚禮在十二月六日中午十二點舉行，地點在山上部落的活動中心。\n當天有傳統的秋千儀式，歡迎親友穿著族服來參加。\n有您的祝福，婚禮會更熱鬧。",
+    "signature": "新郎 阿明、新娘 小美",
+    "lesson_words": [
+      "婚禮",
+      "秋千",
+      "親友",
+      "參加",
+      "祝福",
+      "熱鬧"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG3H10:q1",
+        "question": "婚禮在什麼時候舉行？",
+        "options": [
+          "十二月六日中午十二點",
+          "十二月六日晚上六點",
+          "十二月十六日中午"
+        ],
+        "answer": "十二月六日中午十二點",
+        "explanation": "喜帖上寫：「我們的婚禮在十二月六日中午十二點舉行。」",
+        "evidence": [
+          "十二月六日中午十二點"
+        ]
+      },
+      {
+        "id": "application:115AG3H10:q2",
+        "question": "婚禮當天有什麼特別的活動？",
+        "options": [
+          "傳統的秋千儀式",
+          "放煙火",
+          "划船比賽"
+        ],
+        "answer": "傳統的秋千儀式",
+        "explanation": "喜帖上寫：「當天有傳統的秋千儀式。」",
+        "evidence": [
+          "傳統的秋千儀式"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG3H10:response",
+      "question": "到了婚禮現場，你想對新娘說一句話。哪一句最合適？",
+      "options": [
+        "阿姨，祝福你們永遠幸福！",
+        "阿姨，什麼時候可以吃飯？",
+        "我不想來，是媽媽叫我來的。"
+      ],
+      "answer": "阿姨，祝福你們永遠幸福！",
+      "explanation": "婚禮上要說祝福的話，這一句最有禮貌。"
+    },
+    "write": {
+      "prompt": "參加喜宴或慶生會，你會怎麼做？用「先……，再……」寫一句。",
+      "model": "我先向主人說恭喜，再找位子坐下。",
+      "pattern_id": "sentence_pattern:115AG3H10:bee231c6"
+    }
+  }
 }
