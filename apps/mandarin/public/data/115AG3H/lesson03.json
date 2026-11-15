@@ -708,7 +708,41 @@
       "analysis": "",
       "examples_status": "approved",
       "status": "ready",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（08各課短語句型練習）"
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（08各課短語句型練習）",
+      "structure_blocks": [
+        {
+          "example_index": 0,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "人物",
+              "text": "我們"
+            },
+            {
+              "type": "lit",
+              "text": "有"
+            },
+            {
+              "type": "lit",
+              "text": "足夠的"
+            },
+            {
+              "type": "slot",
+              "label": "事物",
+              "text": "時間"
+            },
+            {
+              "type": "lit",
+              "text": "可以"
+            },
+            {
+              "type": "slot",
+              "label": "行動",
+              "text": "檢查書包"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "sentence_pattern:115AG3H03:02",
@@ -725,7 +759,55 @@
       "analysis": "",
       "examples_status": "approved",
       "status": "ready",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（08各課短語句型練習）"
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（08各課短語句型練習）",
+      "structure_blocks": [
+        {
+          "example_index": 0,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "人物",
+              "text": "媽媽"
+            },
+            {
+              "type": "lit",
+              "text": "是不"
+            },
+            {
+              "type": "slot",
+              "label": "動作",
+              "text": "遲到"
+            },
+            {
+              "type": "lit",
+              "text": "的"
+            }
+          ]
+        },
+        {
+          "example_index": 1,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "人物",
+              "text": "哥哥"
+            },
+            {
+              "type": "lit",
+              "text": "是不"
+            },
+            {
+              "type": "slot",
+              "label": "動作",
+              "text": "賴床"
+            },
+            {
+              "type": "lit",
+              "text": "的"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "sentence_pattern:115AG3H03:03",
@@ -742,7 +824,47 @@
       "analysis": "",
       "examples_status": "approved",
       "status": "ready",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（08各課短語句型練習）"
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（08各課短語句型練習）",
+      "structure_blocks": [
+        {
+          "example_index": 0,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "什麼前提",
+              "text": "春天的到來"
+            },
+            {
+              "type": "lit",
+              "text": "讓"
+            },
+            {
+              "type": "slot",
+              "label": "接續什麼情形",
+              "text": "花朵綻放"
+            }
+          ]
+        },
+        {
+          "example_index": 1,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "什麼前提",
+              "text": "老師的提醒"
+            },
+            {
+              "type": "lit",
+              "text": "讓"
+            },
+            {
+              "type": "slot",
+              "label": "接續什麼情形",
+              "text": "我準時完成作業"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "sentence_pattern:115AG3H03:04",
@@ -776,7 +898,55 @@
       "analysis": "",
       "examples_status": "approved",
       "status": "ready",
-      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（08各課短語句型練習）"
+      "source": "115G3A／翰林三上第3課官方教材與教師確認資料（08各課短語句型練習）",
+      "structure_blocks": [
+        {
+          "example_index": 0,
+          "frame": [
+            {
+              "type": "lit",
+              "text": "因為"
+            },
+            {
+              "type": "slot",
+              "label": "原因",
+              "text": "天空下起大雨"
+            },
+            {
+              "type": "lit",
+              "text": "所以"
+            },
+            {
+              "type": "slot",
+              "label": "結果",
+              "text": "運動會延期了"
+            }
+          ]
+        },
+        {
+          "example_index": 1,
+          "frame": [
+            {
+              "type": "lit",
+              "text": "因為"
+            },
+            {
+              "type": "slot",
+              "label": "原因",
+              "text": "我提早準備"
+            },
+            {
+              "type": "lit",
+              "text": "所以"
+            },
+            {
+              "type": "slot",
+              "label": "結果",
+              "text": "今天沒有遲到"
+            }
+          ]
+        }
+      ]
     }
   ],
   "rhetoric": [

@@ -256,84 +256,91 @@
       "word": "大風吹",
       "zhuyin": "ㄉㄚˋ ㄈㄥ ㄔㄨㄟ",
       "meaning": "一種遊戲。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "我們來玩大風吹。",
+      "example_status": "draft",
       "level": "challenge",
       "image": "/assets/115AG1H/lesson02/vocabulary/l02-01.webp",
       "status": "ready",
-      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG1H02:02",
       "word": "我們",
       "zhuyin": "ㄨㄛˇ ˙ㄇㄣ",
       "meaning": "包括自己在內的一些人。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "我們是好朋友。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG1H/lesson02/vocabulary/l02-02.webp",
       "status": "ready",
-      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG1H02:03",
       "word": "來",
       "zhuyin": "ㄌㄞˊ",
       "meaning": "用於動詞之前，表示意願。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "弟弟來找我玩。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG1H/lesson02/vocabulary/l02-03.webp",
       "status": "ready",
-      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG1H02:04",
       "word": "玩",
       "zhuyin": "ㄨㄢˊ",
       "meaning": "遊戲、嬉戲。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "我喜歡玩球。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG1H/lesson02/vocabulary/l02-04.webp",
       "status": "ready",
-      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG1H02:05",
       "word": "不停",
       "zhuyin": "ㄅㄨˋ ㄊㄧㄥˊ",
       "meaning": "持續、繼續。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "雨不停的下。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG1H/lesson02/vocabulary/l02-05.webp",
       "status": "ready",
-      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG1H02:06",
       "word": "的",
       "zhuyin": "˙ㄉㄜ",
       "meaning": "置於副詞後面。同「地」。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "這是我的書包。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG1H/lesson02/vocabulary/l02-06.webp",
       "status": "ready",
-      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     },
     {
       "id": "word:115AG1H02:07",
       "word": "跑",
       "zhuyin": "ㄆㄠˇ",
       "meaning": "快步走。",
-      "example_sentence": null,
-      "example_status": "todo_rewrite",
+      "example_sentence": "小狗跑得很快。",
+      "example_status": "draft",
       "level": "basic",
       "image": "/assets/115AG1H/lesson02/vocabulary/l02-07.webp",
       "status": "ready",
-      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）"
+      "source": "115G1A／翰林官方教材（形音輕鬆學：語詞解釋）",
+      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
     }
   ],
   "word_meanings": [],
@@ -479,7 +486,47 @@
       "examples_status": "approved",
       "id": "sentence-pattern:115AG1H02:03",
       "status": "ready",
-      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "structure_blocks": [
+        {
+          "example_index": 0,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "人或物",
+              "text": "姐姐"
+            },
+            {
+              "type": "lit",
+              "text": "來"
+            },
+            {
+              "type": "slot",
+              "label": "做什麼事",
+              "text": "看書"
+            }
+          ]
+        },
+        {
+          "example_index": 1,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "人或物",
+              "text": "爸爸"
+            },
+            {
+              "type": "lit",
+              "text": "來"
+            },
+            {
+              "type": "slot",
+              "label": "做什麼事",
+              "text": "開門"
+            }
+          ]
+        }
+      ]
     },
     {
       "category": "短語句型練習",
@@ -495,7 +542,47 @@
       "examples_status": "approved",
       "id": "sentence-pattern:115AG1H02:04",
       "status": "ready",
-      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）"
+      "source": "115G1A／翰林一年上官方教材（06各課短語句型練習；使用者貼上之 L01-L07 教材內容；公開衍生資料）",
+      "structure_blocks": [
+        {
+          "example_index": 0,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "人或物",
+              "text": "哥哥"
+            },
+            {
+              "type": "lit",
+              "text": "不停的"
+            },
+            {
+              "type": "slot",
+              "label": "做什麼事",
+              "text": "拍球"
+            }
+          ]
+        },
+        {
+          "example_index": 1,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "人或物",
+              "text": "姐姐"
+            },
+            {
+              "type": "lit",
+              "text": "不停的"
+            },
+            {
+              "type": "slot",
+              "label": "做什麼事",
+              "text": "打嗝"
+            }
+          ]
+        }
+      ]
     }
   ],
   "rhetoric": [],

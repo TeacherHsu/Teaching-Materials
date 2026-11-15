@@ -466,14 +466,17 @@
       "id": "word:115AG3H01:cfea14b9",
       "word": "彈簧",
       "zhuyin": "ㄊㄢˊ ㄏㄨㄤˊ",
-      "meaning": "利用具有彈性的材料所製成的零件。能在外力作用下發生伸長、縮短、彎曲、扭轉等形變，除去外力後又可恢復原狀",
+      "meaning": "用有彈性的材料做成的零件，受力會變形，放開後又恢復原狀。",
       "example_sentence": "這張舊床墊裡的彈簧已經壓壞了，睡起來不太舒服。",
       "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG3H/lesson01/vocabulary/l01-08.webp",
       "status": "ready",
       "source": "dabutie:05形音輕鬆學（L01-形音輕鬆學.docx，語詞解釋）",
-      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%BD%88%E7%B0%A7"
+      "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%BD%88%E7%B0%A7",
+      "meaning_original": "利用具有彈性的材料所製成的零件。能在外力作用下發生伸長、縮短、彎曲、扭轉等形變，除去外力後又可恢復原狀",
+      "meaning_approved_by": "CF",
+      "meaning_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG3H01:d57a0870",
@@ -1039,7 +1042,55 @@
       ],
       "examples_status": "approved",
       "status": "ready",
-      "source": "dabutie:08各課短語句型練習（3上L01短語句型造句-時間是什麼.pdf）"
+      "source": "dabutie:08各課短語句型練習（3上L01短語句型造句-時間是什麼.pdf）",
+      "structure_blocks": [
+        {
+          "example_index": 0,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "動作",
+              "text": "跳"
+            },
+            {
+              "type": "lit",
+              "text": "得"
+            },
+            {
+              "type": "lit",
+              "text": "實在"
+            },
+            {
+              "type": "slot",
+              "label": "怎麼樣",
+              "text": "太高了"
+            }
+          ]
+        },
+        {
+          "example_index": 1,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "動作",
+              "text": "畫"
+            },
+            {
+              "type": "lit",
+              "text": "得"
+            },
+            {
+              "type": "lit",
+              "text": "實在"
+            },
+            {
+              "type": "slot",
+              "label": "怎麼樣",
+              "text": "太美了"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "sentence_pattern:115AG3H01:a49ce48c",
@@ -1093,7 +1144,65 @@
       ],
       "examples_status": "approved",
       "status": "ready",
-      "source": "dabutie:08各課短語句型練習（3上L01短語句型造句-時間是什麼.pdf）"
+      "source": "dabutie:08各課短語句型練習（3上L01短語句型造句-時間是什麼.pdf）",
+      "structure_blocks": [
+        {
+          "example_index": 0,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "什麼情況",
+              "text": "妹妹的心情"
+            },
+            {
+              "type": "lit",
+              "text": "一會兒"
+            },
+            {
+              "type": "slot",
+              "label": "第 1 個怎麼樣",
+              "text": "開心"
+            },
+            {
+              "type": "lit",
+              "text": "一會兒"
+            },
+            {
+              "type": "slot",
+              "label": "第 2 個怎麼樣",
+              "text": "難過"
+            }
+          ]
+        },
+        {
+          "example_index": 1,
+          "frame": [
+            {
+              "type": "slot",
+              "label": "什麼情況",
+              "text": "天空"
+            },
+            {
+              "type": "lit",
+              "text": "一會兒"
+            },
+            {
+              "type": "slot",
+              "label": "第 1 個怎麼樣",
+              "text": "出太陽"
+            },
+            {
+              "type": "lit",
+              "text": "一會兒"
+            },
+            {
+              "type": "slot",
+              "label": "第 2 個怎麼樣",
+              "text": "下雨"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "sentence_pattern:115AG3H01:f28ab3f2",
@@ -2322,42 +2431,42 @@
   "listening": [
     {
       "id": "listening:115AG3H01:0001",
-      "stem": "小明今天早上七點起床，先刷牙洗臉，再吃早餐。",
-      "question": "小明是先做什麼？",
+      "stem": "小安等媽媽下班，等了好久，他覺得時間像蝸牛一樣，爬得好慢。",
+      "question": "小安覺得時間過得怎麼樣？",
       "options": [
-        "先刷牙洗臉",
-        "先吃早餐",
-        "先寫功課"
+        "過得很慢",
+        "過得很快",
+        "有時快有時慢"
       ],
-      "answer": "先刷牙洗臉",
+      "answer": "過得很慢",
       "status": "review_required",
-      "source": "original:draft（教師自撰，無對應大補帖來源）"
+      "source": "original:draft（2026-11-15 Claude 依本課段落大意草擬，待 CF 審核；取代與課文不符的舊題）"
     },
     {
       "id": "listening:115AG3H01:0002",
-      "stem": "甲：你今天要去圖書館嗎？乙：不去了，我想在家看書。",
-      "question": "乙今天打算做什麼？",
+      "stem": "姐姐每天要上課、練琴、寫作業，她說時間像斑馬，一下子就跑走了。",
+      "question": "姐姐為什麼覺得時間像斑馬？",
       "options": [
-        "去圖書館",
-        "在家看書",
-        "去公園"
+        "因為她很忙，時間過得很快",
+        "因為她最喜歡斑馬",
+        "因為她等了很久"
       ],
-      "answer": "在家看書",
+      "answer": "因為她很忙，時間過得很快",
       "status": "review_required",
-      "source": "original:draft（教師自撰，無對應大補帖來源）"
+      "source": "original:draft（2026-11-15 Claude 依本課段落大意草擬，待 CF 審核；取代與課文不符的舊題）"
     },
     {
       "id": "listening:115AG3H01:0003",
-      "stem": "下課鐘聲響起，同學們趕快排隊到操場做體操。",
-      "question": "下課鐘聲響起後，同學們要做什麼？",
+      "stem": "老師說：時間像流水，流走了就不會再回來，所以要好好珍惜。",
+      "question": "老師把時間比喻成什麼？",
       "options": [
-        "排隊做體操",
-        "回教室午睡",
-        "去福利社買東西"
+        "流水",
+        "彈簧",
+        "蝸牛"
       ],
-      "answer": "排隊做體操",
+      "answer": "流水",
       "status": "review_required",
-      "source": "original:draft（教師自撰，無對應大補帖來源）"
+      "source": "original:draft（2026-11-15 Claude 依本課段落大意草擬，待 CF 審核；取代與課文不符的舊題）"
     }
   ],
   "review_words": {
@@ -2805,7 +2914,7 @@
       "label": "聽聽看",
       "status": "missing",
       "activity": "listening-quiz",
-      "note": "官方課文核對後，現有題目內容與本課課文不相符，待重新編題。"
+      "note": "新題已依課文內容重編（2026-11-15），待 CF 審核後開放。"
     },
     "rhetoric": {
       "label": "修辭小偵探",

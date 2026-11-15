@@ -1,0 +1,38 @@
+{
+  "volume": "115AG3H",
+  "approved_by": "CF",
+  "approved_on": "2026-11-15",
+  "review": "docs/review/2026-11-15-long-meanings-draft.md",
+  "items": [
+    {
+      "lesson": 1,
+      "word": "彈簧",
+      "meaning": "用有彈性的材料做成的零件，受力會變形，放開後又恢復原狀。",
+      "note": "改寫：形變方式併成「變形」"
+    },
+    {
+      "lesson": 6,
+      "word": "石墨",
+      "meaning": "一種由碳組成的礦物，顏色暗黑，可用來做鉛筆芯。",
+      "note": "刪減"
+    },
+    {
+      "lesson": 6,
+      "word": "機器",
+      "meaning": "由各種零件組成，可以節省人力、讓工作更便利的裝置。",
+      "note": "刪減"
+    },
+    {
+      "lesson": 10,
+      "word": "藏新娘",
+      "meaning": "魯凱族婚禮中，女方親屬把新娘藏起來，再由新郎帶人尋找。",
+      "note": "刪減"
+    },
+    {
+      "lesson": 11,
+      "word": "煙火",
+      "meaning": "燃燒時會噴出各種燦爛形狀的物品，供人觀賞。",
+      "note": "刪減"
+    }
+  ]
+}

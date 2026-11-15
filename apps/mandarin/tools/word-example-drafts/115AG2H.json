@@ -1,0 +1,979 @@
+{
+  "volume": "115AG2H",
+  "status": "draft",
+  "drafted_on": "2026-11-15",
+  "drafted_by": "Claude（待 CF 審核）",
+  "principle": "二上：短句（15 字內為主）、生活情境、句子一定含該語詞、依該課語詞解釋的詞義造句、不引用課文原句。",
+  "items": [
+    {
+      "lesson": 1,
+      "word": "難過",
+      "example": "小狗生病了，我好難過。"
+    },
+    {
+      "lesson": 1,
+      "word": "閃電",
+      "example": "天空出現一道閃電。"
+    },
+    {
+      "lesson": 1,
+      "word": "躲",
+      "example": "小貓躲在桌子下面。"
+    },
+    {
+      "lesson": 1,
+      "word": "冷冷",
+      "example": "冬天的風冷冷的。"
+    },
+    {
+      "lesson": 1,
+      "word": "颳",
+      "example": "外面颳起大風。"
+    },
+    {
+      "lesson": 1,
+      "word": "時候",
+      "example": "下雨的時候要撐傘。"
+    },
+    {
+      "lesson": 1,
+      "word": "彩虹",
+      "example": "雨停了，天邊出現彩虹。"
+    },
+    {
+      "lesson": 1,
+      "word": "美麗",
+      "example": "花園裡的花很美麗。"
+    },
+    {
+      "lesson": 1,
+      "word": "出現",
+      "example": "太陽從雲後面出現了。"
+    },
+    {
+      "lesson": 1,
+      "word": "烏雲密布",
+      "example": "天空烏雲密布，快要下雨了。"
+    },
+    {
+      "lesson": 1,
+      "word": "傾盆大雨",
+      "example": "下午下了一場傾盆大雨。"
+    },
+    {
+      "lesson": 1,
+      "word": "充滿",
+      "example": "教室裡充滿了笑聲。"
+    },
+    {
+      "lesson": 1,
+      "word": "放晴",
+      "example": "下了三天雨，今天終於放晴了。"
+    },
+    {
+      "lesson": 2,
+      "word": "開始",
+      "example": "比賽開始了。"
+    },
+    {
+      "lesson": 2,
+      "word": "卻",
+      "example": "我想出去玩，卻下雨了。"
+    },
+    {
+      "lesson": 2,
+      "word": "希望",
+      "example": "我希望明天是晴天。"
+    },
+    {
+      "lesson": 2,
+      "word": "新",
+      "example": "媽媽買了新鞋子給我。"
+    },
+    {
+      "lesson": 2,
+      "word": "老師",
+      "example": "老師教我們唱歌。"
+    },
+    {
+      "lesson": 2,
+      "word": "怎麼辦",
+      "example": "雨傘不見了，怎麼辦？"
+    },
+    {
+      "lesson": 2,
+      "word": "知道",
+      "example": "我知道這一題的答案。"
+    },
+    {
+      "lesson": 2,
+      "word": "不熟",
+      "example": "我和新同學還不熟。"
+    },
+    {
+      "lesson": 2,
+      "word": "轉學生",
+      "example": "班上來了一位轉學生。"
+    },
+    {
+      "lesson": 2,
+      "word": "因為",
+      "example": "因為下雨，所以我們不能出去玩。"
+    },
+    {
+      "lesson": 2,
+      "word": "緊張",
+      "example": "上臺說話讓我很緊張。"
+    },
+    {
+      "lesson": 2,
+      "word": "消失",
+      "example": "彩虹慢慢消失了。"
+    },
+    {
+      "lesson": 2,
+      "word": "學習",
+      "example": "我在學習怎麼游泳。"
+    },
+    {
+      "lesson": 2,
+      "word": "最後",
+      "example": "最後，大家都笑了。"
+    },
+    {
+      "lesson": 2,
+      "word": "跳舞",
+      "example": "姐姐喜歡跳舞。"
+    },
+    {
+      "lesson": 3,
+      "word": "大臣",
+      "example": "大臣向國王報告事情。"
+    },
+    {
+      "lesson": 3,
+      "word": "只",
+      "example": "盤子裡只剩一塊餅乾。"
+    },
+    {
+      "lesson": 3,
+      "word": "穿",
+      "example": "天氣冷，要穿外套。"
+    },
+    {
+      "lesson": 3,
+      "word": "喜歡",
+      "example": "我喜歡吃西瓜。"
+    },
+    {
+      "lesson": 3,
+      "word": "國王",
+      "example": "國王住在城堡裡。"
+    },
+    {
+      "lesson": 3,
+      "word": "分享",
+      "example": "我把餅乾分享給同學。"
+    },
+    {
+      "lesson": 3,
+      "word": "讓",
+      "example": "這個故事讓我很感動。"
+    },
+    {
+      "lesson": 3,
+      "word": "方法",
+      "example": "老師教我們洗手的方法。"
+    },
+    {
+      "lesson": 3,
+      "word": "發現",
+      "example": "我發現樹上有鳥巢。"
+    },
+    {
+      "lesson": 3,
+      "word": "設計",
+      "example": "這件衣服是阿姨設計的。"
+    },
+    {
+      "lesson": 3,
+      "word": "越",
+      "example": "雨越下越大。"
+    },
+    {
+      "lesson": 3,
+      "word": "驚喜",
+      "example": "生日禮物讓我很驚喜。"
+    },
+    {
+      "lesson": 3,
+      "word": "領",
+      "example": "這件衣服的領口太小了。"
+    },
+    {
+      "lesson": 3,
+      "word": "袖子",
+      "example": "天氣熱，我把袖子捲起來。"
+    },
+    {
+      "lesson": 3,
+      "word": "改",
+      "example": "我把寫錯的字改過來。"
+    },
+    {
+      "lesson": 3,
+      "word": "一點",
+      "example": "湯裡再加一點鹽。"
+    },
+    {
+      "lesson": 3,
+      "word": "件",
+      "example": "我有一件藍色的外套。"
+    },
+    {
+      "lesson": 4,
+      "word": "聲",
+      "example": "門外傳來敲門聲。"
+    },
+    {
+      "lesson": 4,
+      "word": "聞",
+      "example": "大家聽聞好消息都很開心。"
+    },
+    {
+      "lesson": 4,
+      "word": "呱呱",
+      "example": "青蛙在池塘邊呱呱叫。"
+    },
+    {
+      "lesson": 4,
+      "word": "青蛙",
+      "example": "青蛙跳進水裡。"
+    },
+    {
+      "lesson": 4,
+      "word": "蝦蟆",
+      "example": "田邊有一隻蝦蟆。"
+    },
+    {
+      "lesson": 4,
+      "word": "猜",
+      "example": "你猜盒子裡有什麼？"
+    },
+    {
+      "lesson": 4,
+      "word": "影",
+      "example": "水面上有小樹的倒影。"
+    },
+    {
+      "lesson": 4,
+      "word": "乖",
+      "example": "妹妹很乖，會自己收玩具。"
+    },
+    {
+      "lesson": 4,
+      "word": "如果",
+      "example": "如果下雨，我們就在家看書。"
+    },
+    {
+      "lesson": 4,
+      "word": "抓",
+      "example": "弟弟抓著媽媽的手。"
+    },
+    {
+      "lesson": 4,
+      "word": "擔心",
+      "example": "媽媽擔心我會感冒。"
+    },
+    {
+      "lesson": 4,
+      "word": "靠近",
+      "example": "請不要靠近水邊。"
+    },
+    {
+      "lesson": 4,
+      "word": "別",
+      "example": "上課時別說話。"
+    },
+    {
+      "lesson": 4,
+      "word": "頂呱呱",
+      "example": "哥哥的歌聲頂呱呱。"
+    },
+    {
+      "lesson": 4,
+      "word": "證明",
+      "example": "我要證明我可以自己做到。"
+    },
+    {
+      "lesson": 4,
+      "word": "腦袋瓜",
+      "example": "弟弟的腦袋瓜裡有好多問題。"
+    },
+    {
+      "lesson": 5,
+      "word": "海邊",
+      "example": "我們到海邊玩水。"
+    },
+    {
+      "lesson": 5,
+      "word": "沙灘",
+      "example": "沙灘上有很多貝殼。"
+    },
+    {
+      "lesson": 5,
+      "word": "美麗",
+      "example": "傍晚的天空很美麗。"
+    },
+    {
+      "lesson": 5,
+      "word": "挖",
+      "example": "小狗在院子裡挖洞。"
+    },
+    {
+      "lesson": 5,
+      "word": "注意",
+      "example": "過馬路要注意車子。"
+    },
+    {
+      "lesson": 5,
+      "word": "可愛",
+      "example": "這隻小貓很可愛。"
+    },
+    {
+      "lesson": 5,
+      "word": "螃蟹",
+      "example": "螃蟹在沙灘上走路。"
+    },
+    {
+      "lesson": 5,
+      "word": "遠",
+      "example": "學校離我家不遠。"
+    },
+    {
+      "lesson": 5,
+      "word": "退",
+      "example": "海水慢慢往後退。"
+    },
+    {
+      "lesson": 5,
+      "word": "腳印",
+      "example": "雪地上有小狗的腳印。"
+    },
+    {
+      "lesson": 5,
+      "word": "留",
+      "example": "我留了一塊蛋糕給妹妹。"
+    },
+    {
+      "lesson": 5,
+      "word": "橫",
+      "example": "螃蟹橫著走路。"
+    },
+    {
+      "lesson": 5,
+      "word": "腳丫",
+      "example": "我的腳丫踩在沙子上。"
+    },
+    {
+      "lesson": 5,
+      "word": "夕陽",
+      "example": "夕陽把天空染紅了。"
+    },
+    {
+      "lesson": 6,
+      "word": "月",
+      "example": "一年有十二個月。"
+    },
+    {
+      "lesson": 6,
+      "word": "草叢",
+      "example": "草叢裡有一隻蚱蜢。"
+    },
+    {
+      "lesson": 6,
+      "word": "盡頭",
+      "example": "這條路的盡頭是公園。"
+    },
+    {
+      "lesson": 6,
+      "word": "竹林",
+      "example": "風吹過竹林，沙沙作響。"
+    },
+    {
+      "lesson": 6,
+      "word": "屋",
+      "example": "山上有一間小木屋。"
+    },
+    {
+      "lesson": 6,
+      "word": "散步",
+      "example": "晚飯後，我們去公園散步。"
+    },
+    {
+      "lesson": 6,
+      "word": "晚飯",
+      "example": "媽媽正在煮晚飯。"
+    },
+    {
+      "lesson": 6,
+      "word": "奶奶",
+      "example": "奶奶常說故事給我聽。"
+    },
+    {
+      "lesson": 6,
+      "word": "聚",
+      "example": "大家聚在一起吃飯。"
+    },
+    {
+      "lesson": 6,
+      "word": "那邊",
+      "example": "我的書包放在那邊。"
+    },
+    {
+      "lesson": 6,
+      "word": "眼睛",
+      "example": "小貓的眼睛圓圓的。"
+    },
+    {
+      "lesson": 6,
+      "word": "暗",
+      "example": "天色慢慢暗下來了。"
+    },
+    {
+      "lesson": 6,
+      "word": "旁",
+      "example": "路旁開了許多小花。"
+    },
+    {
+      "lesson": 6,
+      "word": "溪",
+      "example": "小溪裡有小魚。"
+    },
+    {
+      "lesson": 6,
+      "word": "顆",
+      "example": "我吃了一顆蘋果。"
+    },
+    {
+      "lesson": 6,
+      "word": "成",
+      "example": "毛毛蟲變成了蝴蝶。"
+    },
+    {
+      "lesson": 7,
+      "word": "便當盒",
+      "example": "我把便當盒洗乾淨。"
+    },
+    {
+      "lesson": 7,
+      "word": "祖先",
+      "example": "清明節我們去祭拜祖先。"
+    },
+    {
+      "lesson": 7,
+      "word": "香味",
+      "example": "廚房傳來飯菜的香味。"
+    },
+    {
+      "lesson": 7,
+      "word": "竹筒",
+      "example": "阿姨用竹筒煮飯。"
+    },
+    {
+      "lesson": 7,
+      "word": "好奇",
+      "example": "弟弟好奇的看著小蟲。"
+    },
+    {
+      "lesson": 7,
+      "word": "活動",
+      "example": "下課時要起來活動一下身體。"
+    },
+    {
+      "lesson": 7,
+      "word": "郊外",
+      "example": "假日我們到郊外走走。"
+    },
+    {
+      "lesson": 7,
+      "word": "美食",
+      "example": "夜市有很多美食。"
+    },
+    {
+      "lesson": 7,
+      "word": "不一樣",
+      "example": "我和哥哥喜歡的顏色不一樣。"
+    },
+    {
+      "lesson": 7,
+      "word": "越南春捲",
+      "example": "媽媽今天做越南春捲。"
+    },
+    {
+      "lesson": 7,
+      "word": "保平安",
+      "example": "奶奶到廟裡拜拜保平安。"
+    },
+    {
+      "lesson": 7,
+      "word": "清明節",
+      "example": "清明節我們全家去掃墓。"
+    },
+    {
+      "lesson": 7,
+      "word": "客家人",
+      "example": "我的同學是客家人。"
+    },
+    {
+      "lesson": 7,
+      "word": "艾粄",
+      "example": "奶奶做的艾粄很好吃。"
+    },
+    {
+      "lesson": 8,
+      "word": "搶",
+      "example": "大家搶著回答問題。"
+    },
+    {
+      "lesson": 8,
+      "word": "軟",
+      "example": "這個枕頭很軟。"
+    },
+    {
+      "lesson": 8,
+      "word": "變",
+      "example": "天氣變冷了。"
+    },
+    {
+      "lesson": 8,
+      "word": "米紙",
+      "example": "米紙沾水以後會變軟。"
+    },
+    {
+      "lesson": 8,
+      "word": "白紙",
+      "example": "我在白紙上畫畫。"
+    },
+    {
+      "lesson": 8,
+      "word": "圓形",
+      "example": "月餅是圓形的。"
+    },
+    {
+      "lesson": 8,
+      "word": "介紹",
+      "example": "老師請我介紹自己。"
+    },
+    {
+      "lesson": 8,
+      "word": "更",
+      "example": "今天比昨天更冷。"
+    },
+    {
+      "lesson": 8,
+      "word": "聽",
+      "example": "我喜歡聽故事。"
+    },
+    {
+      "lesson": 8,
+      "word": "接著",
+      "example": "我先洗手，接著吃點心。"
+    },
+    {
+      "lesson": 8,
+      "word": "青菜",
+      "example": "多吃青菜身體好。"
+    },
+    {
+      "lesson": 8,
+      "word": "各種",
+      "example": "花園裡有各種顏色的花。"
+    },
+    {
+      "lesson": 8,
+      "word": "米線",
+      "example": "我中午吃了一碗米線。"
+    },
+    {
+      "lesson": 8,
+      "word": "蝦子",
+      "example": "蝦子煮熟會變紅。"
+    },
+    {
+      "lesson": 8,
+      "word": "食材",
+      "example": "媽媽去市場買食材。"
+    },
+    {
+      "lesson": 8,
+      "word": "舉手",
+      "example": "想說話要先舉手。"
+    },
+    {
+      "lesson": 9,
+      "word": "沖澡",
+      "example": "運動後我先去沖澡。"
+    },
+    {
+      "lesson": 9,
+      "word": "小黃瓜",
+      "example": "小黃瓜吃起來脆脆的。"
+    },
+    {
+      "lesson": 9,
+      "word": "蒸",
+      "example": "媽媽在廚房蒸包子。"
+    },
+    {
+      "lesson": 9,
+      "word": "浴室",
+      "example": "浴室的地板很滑。"
+    },
+    {
+      "lesson": 9,
+      "word": "熱",
+      "example": "今天的天氣好熱。"
+    },
+    {
+      "lesson": 9,
+      "word": "米粒",
+      "example": "碗裡還有幾顆米粒。"
+    },
+    {
+      "lesson": 9,
+      "word": "哪",
+      "example": "這麼多玩具，我哪玩得完？"
+    },
+    {
+      "lesson": 9,
+      "word": "紅蘿蔔",
+      "example": "小兔子愛吃紅蘿蔔。"
+    },
+    {
+      "lesson": 9,
+      "word": "通通",
+      "example": "我把玩具通通收好了。"
+    },
+    {
+      "lesson": 9,
+      "word": "蔬菜",
+      "example": "多吃蔬菜才會健康。"
+    },
+    {
+      "lesson": 9,
+      "word": "蛋",
+      "example": "母雞生了一顆蛋。"
+    },
+    {
+      "lesson": 9,
+      "word": "海苔",
+      "example": "我喜歡吃海苔飯捲。"
+    },
+    {
+      "lesson": 9,
+      "word": "點名",
+      "example": "老師每天早上都會點名。"
+    },
+    {
+      "lesson": 9,
+      "word": "胖",
+      "example": "小豬長得胖胖的。"
+    },
+    {
+      "lesson": 9,
+      "word": "飄",
+      "example": "樹葉從樹上飄下來。"
+    },
+    {
+      "lesson": 9,
+      "word": "淡淡",
+      "example": "花園裡有淡淡的花香。"
+    },
+    {
+      "lesson": 9,
+      "word": "黏",
+      "example": "糖果黏在我的手上。"
+    },
+    {
+      "lesson": 9,
+      "word": "細心",
+      "example": "姐姐做事很細心。"
+    },
+    {
+      "lesson": 10,
+      "word": "讀書",
+      "example": "我每天晚上都會讀書。"
+    },
+    {
+      "lesson": 10,
+      "word": "表弟",
+      "example": "表弟今年上幼兒園。"
+    },
+    {
+      "lesson": 10,
+      "word": "減",
+      "example": "五減二等於三。"
+    },
+    {
+      "lesson": 10,
+      "word": "嘟著嘴",
+      "example": "弟弟嘟著嘴不說話。"
+    },
+    {
+      "lesson": 10,
+      "word": "百",
+      "example": "這本書有一百頁。"
+    },
+    {
+      "lesson": 10,
+      "word": "搖搖頭",
+      "example": "妹妹搖搖頭說不要。"
+    },
+    {
+      "lesson": 10,
+      "word": "回答",
+      "example": "我舉手回答老師的問題。"
+    },
+    {
+      "lesson": 10,
+      "word": "字謎",
+      "example": "我猜對了這個字謎。"
+    },
+    {
+      "lesson": 10,
+      "word": "認識",
+      "example": "我認識很多新朋友。"
+    },
+    {
+      "lesson": 10,
+      "word": "突然",
+      "example": "天空突然下起雨來。"
+    },
+    {
+      "lesson": 10,
+      "word": "趕緊",
+      "example": "快遲到了，我趕緊出門。"
+    },
+    {
+      "lesson": 10,
+      "word": "題",
+      "example": "這一題我會算。"
+    },
+    {
+      "lesson": 10,
+      "word": "數學",
+      "example": "我最喜歡上數學課。"
+    },
+    {
+      "lesson": 10,
+      "word": "表哥",
+      "example": "表哥帶我去打球。"
+    },
+    {
+      "lesson": 10,
+      "word": "對",
+      "example": "這一題你答對了。"
+    },
+    {
+      "lesson": 10,
+      "word": "異口同聲",
+      "example": "同學們異口同聲的說「好」。"
+    },
+    {
+      "lesson": 11,
+      "word": "閒",
+      "example": "爸爸今天很閒，陪我下棋。"
+    },
+    {
+      "lesson": 11,
+      "word": "立刻",
+      "example": "聽到鐘聲，我立刻回教室。"
+    },
+    {
+      "lesson": 11,
+      "word": "扇",
+      "example": "教室有兩扇窗戶。"
+    },
+    {
+      "lesson": 11,
+      "word": "門",
+      "example": "請把門關好。"
+    },
+    {
+      "lesson": 11,
+      "word": "奇怪",
+      "example": "這個聲音好奇怪。"
+    },
+    {
+      "lesson": 11,
+      "word": "仔細",
+      "example": "我仔細的看著這張圖。"
+    },
+    {
+      "lesson": 11,
+      "word": "闖",
+      "example": "過馬路不可以闖紅燈。"
+    },
+    {
+      "lesson": 11,
+      "word": "馬",
+      "example": "馬跑得很快。"
+    },
+    {
+      "lesson": 11,
+      "word": "發慌",
+      "example": "找不到媽媽，我心裡發慌。"
+    },
+    {
+      "lesson": 11,
+      "word": "擠",
+      "example": "公車上擠滿了人。"
+    },
+    {
+      "lesson": 11,
+      "word": "用力",
+      "example": "我用力推開大門。"
+    },
+    {
+      "lesson": 11,
+      "word": "播報",
+      "example": "姐姐在學校播報新聞。"
+    },
+    {
+      "lesson": 11,
+      "word": "主播",
+      "example": "電視上的主播正在報新聞。"
+    },
+    {
+      "lesson": 11,
+      "word": "耳朵",
+      "example": "兔子的耳朵長長的。"
+    },
+    {
+      "lesson": 11,
+      "word": "妖怪",
+      "example": "故事裡的妖怪很可怕。"
+    },
+    {
+      "lesson": 11,
+      "word": "到底",
+      "example": "你到底要去哪裡？"
+    },
+    {
+      "lesson": 11,
+      "word": "問東問西",
+      "example": "弟弟一路上問東問西。"
+    },
+    {
+      "lesson": 11,
+      "word": "嘴巴",
+      "example": "吃東西時嘴巴要閉起來。"
+    },
+    {
+      "lesson": 11,
+      "word": "竟然",
+      "example": "他竟然一個人把飯吃光了。"
+    },
+    {
+      "lesson": 12,
+      "word": "念",
+      "example": "我念了一首詩給媽媽聽。"
+    },
+    {
+      "lesson": 12,
+      "word": "詠鵝",
+      "example": "今天老師教我們念詠鵝。"
+    },
+    {
+      "lesson": 12,
+      "word": "詩人",
+      "example": "李白是有名的詩人。"
+    },
+    {
+      "lesson": 12,
+      "word": "波",
+      "example": "微風吹來，水面起了波紋。"
+    },
+    {
+      "lesson": 12,
+      "word": "撥",
+      "example": "姐姐用手撥開頭髮。"
+    },
+    {
+      "lesson": 12,
+      "word": "掌",
+      "example": "鴨子的腳掌扁扁的。"
+    },
+    {
+      "lesson": 12,
+      "word": "浮",
+      "example": "樹葉浮在水面上。"
+    },
+    {
+      "lesson": 12,
+      "word": "項",
+      "example": "媽媽戴著一條項鍊。"
+    },
+    {
+      "lesson": 12,
+      "word": "曲",
+      "example": "小貓曲著身體睡覺。"
+    },
+    {
+      "lesson": 12,
+      "word": "肚皮",
+      "example": "小狗翻過身露出肚皮。"
+    },
+    {
+      "lesson": 12,
+      "word": "倒立",
+      "example": "哥哥會靠著牆倒立。"
+    },
+    {
+      "lesson": 12,
+      "word": "翻跟頭",
+      "example": "小猴子在草地上翻跟頭。"
+    },
+    {
+      "lesson": 12,
+      "word": "隻",
+      "example": "池塘裡有三隻鴨子。"
+    },
+    {
+      "lesson": 12,
+      "word": "身體",
+      "example": "多運動身體才會健康。"
+    },
+    {
+      "lesson": 12,
+      "word": "脖子",
+      "example": "長頸鹿的脖子很長。"
+    },
+    {
+      "lesson": 12,
+      "word": "伸長",
+      "example": "我伸長手去拿書。"
+    },
+    {
+      "lesson": 12,
+      "word": "指",
+      "example": "老師指著黑板上的字。"
+    },
+    {
+      "lesson": 12,
+      "word": "歲",
+      "example": "我今年八歲。"
+    },
+    {
+      "lesson": 12,
+      "word": "首",
+      "example": "我會唱這首歌。"
+    },
+    {
+      "lesson": 12,
+      "word": "作",
+      "example": "這首詩是駱賓王作的。"
+    }
+  ]
+}

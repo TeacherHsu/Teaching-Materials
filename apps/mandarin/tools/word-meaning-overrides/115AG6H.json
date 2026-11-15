@@ -1,0 +1,32 @@
+{
+  "volume": "115AG6H",
+  "approved_by": "CF",
+  "approved_on": "2026-11-15",
+  "review": "docs/review/2026-11-15-long-meanings-draft.md",
+  "items": [
+    {
+      "lesson": 4,
+      "word": "仿生學",
+      "meaning": "模仿生物的原理，用來創造新科技的學問。",
+      "note": "刪減"
+    },
+    {
+      "lesson": 7,
+      "word": "拓印",
+      "meaning": "課文中指把植物的紋理轉印在藝術作品上。",
+      "note": "只留課文義"
+    },
+    {
+      "lesson": 7,
+      "word": "青銅",
+      "meaning": "以銅和錫為主要成分的合金，硬度大，可製成飾品、銅像等。",
+      "note": "刪減"
+    },
+    {
+      "lesson": 9,
+      "word": "獅子王",
+      "meaning": "明華園的公演作品，講文殊菩薩度化青獅的故事。",
+      "note": "刪減"
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 # 過長解釋短版草稿（三上、四上成語、六上）
 
-- 日期：2026-11-15｜狀態：**草稿，尚未套用**，等 CF 核准
+- 日期：2026-11-15｜狀態：**CF 2026-11-15 核准（「過長解釋改短版」），已套用**
 - 範圍：解釋超過 40 字的語詞 9 則（三上 5、六上 4）與四上成語 5 則
 - 原則同 2026-11-14 四上草稿：只刪減、不新增原文沒有的資訊；⚠ 表示有改寫語序或取捨，請特別看
-- 核准後：語詞寫進 `tools/word-meaning-overrides/<冊別>.json` 再跑 `apply-word-meaning-overrides.mjs --write`；成語目前沒有覆寫機制，核准後一併補
+- 正本：`tools/word-meaning-overrides/115AG3H.json`、`115AG6H.json`（語詞 `items`）與 `115AG4K.json`（成語 `idioms`），由 `apply-word-meaning-overrides.mjs --write` 套用；原文留在 `meaning_original`／`definition_original`
 
 ## 語詞
 
