@@ -10,7 +10,7 @@
 - 已驗：`npm run validate` 0 FAIL、`scripts/test-*.mjs` 全過、build＋check-dist 通過、Review-Games 133 支全過。
 - 練習句子第一步改成「例句拆積木」（CF 2026-11-15「照方案改」）：新元件 `src/components/StructureBlocks.js`、對位邏輯 `src/utils/structureBlocks.js`、產生腳本 `scripts/materialize-structure-blocks.mjs`、排除清單 `tools/structure-blocks-review.json`、測試 `scripts/test-structure-blocks.mjs`。126 題、41／55 課有題目；其餘 14 課（一上 1、6、7；二上 6、10、11；三上 5；四上 4、7；六上 1、5、10、11、12）句型多為「詞語造句」或兩格相鄰切不出界線，仍用舊的短語搭配。支持層會先放好第一格當示範（沿用 `prefill`）。對照表 `docs/review/2026-11-15-structure-blocks.md`。桌機 1024 與手機 390 截圖看過，四上第 9 課實際點過一題（答錯提示、放完顯示整句與句型）。
 - 接下來：
-  1. 「我會應用」43 課關閉——需要先和 CF 定任務型態，**等 CF**。
+  1. 「我會應用」——**更正（2026-11-15）：這不是待辦。** 課次資料的 `modules.application` 是早期規格留下的欄位，`src/activities/moduleRegistry.js` 沒有這個大項，網站上從來沒有顯示過（二上標 available 也一樣不會出現）。先前稽核把資料欄位的 `missing` 誤報成「43 課關閉」。要不要新做這個大項，由 CF 決定。
   2. 等 CF：拆積木對照表（抽查）。
 
 ## 2026-11-15｜家中 Mac｜Claude｜語詞：多義解釋只留第 ⑴ 義、「一」依語流變調、讀音依簡編本更正（2026-11-15 已合併 main 並上線）
