@@ -4017,3 +4017,36 @@ html.present-mode .image-frame img { max-height: 42vh; }
   color: var(--text-on-light-status);
   font-weight: 700;
 }
+
+/* 短文卡的標題列：文本類型＋（題目頁才有的）收合鈕 */
+.application-passage__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.application-passage__head .application-passage__kind {
+  margin: 0;
+}
+
+.application-passage__toggle {
+  min-height: var(--tap-target-min);
+  font-size: var(--font-size-meta);
+}
+
+/* 桌機、平板放得下整張卡，不需要收合鈕 */
+@media (min-width: 601px) {
+  .application-passage__toggle {
+    display: none;
+  }
+}
+
+.application-passage--collapsed .application-passage__body {
+  display: none;
+}
+
+.application-passage--collapsed .application-passage__head {
+  margin-bottom: 0;
+}

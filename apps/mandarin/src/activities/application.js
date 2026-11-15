@@ -71,12 +71,30 @@ function PassageCard(task, { compact = false } = {}) {
     lines.push({ el, text });
     return el;
   };
-  const card = h('div', { class: `application-passage${compact ? ' application-passage--compact' : ''}` }, [
-    h('p', { class: 'application-passage__kind' }, task.kind),
+  const body = h('div', { class: 'application-passage__body' }, [
     add('application-passage__title', task.title),
     ...String(task.passage).split('\n').map((line) => add('application-passage__text', line)),
     add('application-passage__signature', task.signature),
   ].filter(Boolean));
+  const head = h('div', { class: 'application-passage__head' }, [h('p', { class: 'application-passage__kind' }, task.kind)]);
+  const card = h('div', { class: `application-passage${compact ? ' application-passage--compact' : ''}` }, [head, body]);
+  // 手機上短文卡會把題目擠到畫面外（要往下捲才看得到題目）。題目頁的短文卡在窄螢幕
+  // 預設收合成一列——學生上一步才讀過；要再看就按一下，答錯時也會自動打開並畫出線索。
+  card.setOpen = () => {};
+  if (compact) {
+    const narrow = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(max-width: 600px)').matches;
+    const toggle = h('button', { class: 'btn btn--ghost application-passage__toggle', type: 'button' });
+    let open = !narrow;
+    card.setOpen = (next) => {
+      open = next;
+      card.classList.toggle('application-passage--collapsed', !open);
+      toggle.textContent = open ? '收起來' : `再看一次${task.kind}`;
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    toggle.addEventListener('click', () => card.setOpen(!open));
+    head.appendChild(toggle);
+    card.setOpen(open);
+  }
   // 答錯時呼叫：把這一題的關鍵字詞畫上顏色
   card.highlight = (phrases) => {
     // 每個關鍵字詞只畫一處：整行就是它（標題「給小安」、署名「媽媽」）就畫那一行，
@@ -92,6 +110,7 @@ function PassageCard(task, { compact = false } = {}) {
       for (const part of markedText(text, perLine[i])) el.appendChild(typeof part === 'string' ? document.createTextNode(part) : part);
     });
     card.classList.add('application-passage--marked');
+    card.setOpen(true); // 線索畫好了就要看得到
   };
   if (speechSupported()) {
     const spoken = [task.title, task.passage.replace(/\n/g, ''), task.signature].filter(Boolean).join('。');
@@ -109,7 +128,7 @@ function PassageCard(task, { compact = false } = {}) {
           variant: 'speak-button--option speak-button--audio-label',
         }))));
     }
-    card.appendChild(row);
+    body.appendChild(row);
   }
   return card;
 }
