@@ -1,6 +1,6 @@
 # 語詞例句草稿（五冊，共 731 則）
 
-- 日期：2026-11-15｜狀態：**草稿，待 CF 審核**（已以 `example_status: draft` 寫進課次資料，只有預覽模式看得到，正式站不顯示）
+- 日期：2026-11-15｜狀態：**CF 2026-11-15 全部核准（「例句全部核准上線」），已以 `example_status: approved` 上線**
 - 原則：句子一定含該語詞、依該課語詞解釋的詞義造句、生活情境、不引用課文原句；一上 10 字內為主，二上 15 字，三上 20 字，四上、六上 25 字
 - 修改方式：直接改 `tools/word-example-drafts/<冊別>.json` 的 `example`；整冊看完後把該檔 `status` 改成 `approved`、補 `approved_by`／`approved_on`，跑 `node scripts/apply-word-example-drafts.mjs --write` 就會正式顯示
 - 請特別看：六上第 3 課文言虛字（曰、矣、焉、亦）與第 10 課古詩單字（莊、郭、斜、軒、桑），例句用的是常見成語或白話短句，詞義未必和課文完全相同

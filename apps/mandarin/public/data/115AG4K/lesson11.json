@@ -412,7 +412,7 @@
       "zhuyin": "ㄅㄟˋ ㄒㄧㄣ",
       "meaning": "一種沒有袖子的上衣。",
       "example_sentence": "天氣涼了，爺爺加了一件背心。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson11/vocabulary/l11-01.webp",
       "status": "ready",
@@ -420,7 +420,9 @@
       "meaning_original": "一種蔽護胸背的無袖上衣，可分兩種：一種是貼身的汗衫，一種是配合其他衣物，套穿於外面。",
       "meaning_approved_by": "CF",
       "meaning_approved_on": "2026-11-14",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K11:02",
@@ -428,12 +430,14 @@
       "zhuyin": "ㄏㄨㄞˊ ㄅㄧㄠˇ",
       "meaning": "裝在衣袋裡可隨身懷帶的錶。比一般手錶大，錶外加蓋。",
       "example_sentence": "爺爺有一只古老的懷錶。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson11/vocabulary/l11-02.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K11:03",
@@ -441,12 +445,14 @@
       "zhuyin": "ㄕㄤˋ ㄙㄨㄛˇ",
       "meaning": "把門或開關用鎖鎖上。",
       "example_sentence": "出門前記得把門上鎖。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson11/vocabulary/l11-03.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K11:04",
@@ -454,12 +460,14 @@
       "zhuyin": "ㄧㄠˋ ˙ㄕ",
       "meaning": "開鎖的器物。",
       "example_sentence": "我找不到家裡的鑰匙。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson11/vocabulary/l11-04.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K11:05",
@@ -467,7 +475,7 @@
       "zhuyin": "ㄍㄨㄛˇ ㄓ",
       "meaning": "用水果擠榨出來的汁液，或用它做成的飲料。",
       "example_sentence": "我喝了一杯柳橙果汁。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson11/vocabulary/l11-05.webp",
       "status": "ready",
@@ -475,7 +483,9 @@
       "meaning_original": "用水果擠榨出來的汁液，或以水果汁液做成的飲料。如檸檬汁、葡萄汁等。",
       "meaning_approved_by": "CF",
       "meaning_approved_on": "2026-11-14",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K11:06",
@@ -483,12 +493,14 @@
       "zhuyin": "ㄅㄧㄠ ㄕˋ",
       "meaning": "標明、揭示。",
       "example_sentence": "瓶子上標示著保存期限。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson11/vocabulary/l11-06.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K11:07",
@@ -496,12 +508,14 @@
       "zhuyin": "ㄆㄛˋ ㄅㄨˋ ㄐㄧˊ ㄉㄞˋ",
       "meaning": "比喻情況或時間急切，不能再等。",
       "example_sentence": "我迫不及待的打開禮物。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson11/vocabulary/l11-07.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K11:08",
@@ -509,12 +523,14 @@
       "zhuyin": "ㄎㄡˇ ㄉㄞˋ",
       "meaning": "縫在衣物上的袋子。",
       "example_sentence": "我把手帕放進口袋。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson11/vocabulary/l11-08.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K11:09",
@@ -522,12 +538,14 @@
       "zhuyin": "ㄏㄜˊ ˙ㄗ",
       "meaning": "有底、蓋可相合的盛物器皿。",
       "example_sentence": "盒子裡裝著巧克力。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson11/vocabulary/l11-09.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K11:10",
@@ -535,12 +553,14 @@
       "zhuyin": "ㄕㄢˋ ˙ㄗ",
       "meaning": "一種搖動生風以驅除熱氣的用具。",
       "example_sentence": "奶奶搖著扇子乘涼。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson11/vocabulary/l11-10.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K11:11",
@@ -548,12 +568,14 @@
       "zhuyin": "ㄔˊ ㄉㄠˋ",
       "meaning": "到達的時間超過了既定的時限。",
       "example_sentence": "早點出門才不會遲到。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson11/vocabulary/l11-11.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K11:12",
@@ -561,12 +583,14 @@
       "zhuyin": "ㄉㄨㄥ ㄓㄤ ㄒㄧ ㄨㄤˋ",
       "meaning": "四處探看、張望。",
       "example_sentence": "過馬路時不要東張西望。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson11/vocabulary/l11-12.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K11:13",
@@ -574,12 +598,14 @@
       "zhuyin": "ㄅㄢˋ ㄒㄧㄣˋ ㄅㄢˋ ㄧˊ",
       "meaning": "有點兒相信，也有點兒懷疑。表示對於是非真假無法判定。",
       "example_sentence": "聽了他的話，我半信半疑。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson11/vocabulary/l11-13.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K11:14",
@@ -587,12 +613,14 @@
       "zhuyin": "ㄅㄨˋ ㄧㄡˊ ㄗˋ ㄓㄨˇ",
       "meaning": "不能自制、由不得自己。",
       "example_sentence": "聽到音樂，我不由自主的跟著唱。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson11/vocabulary/l11-14.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K11:15",
@@ -600,12 +628,14 @@
       "zhuyin": "ㄏㄡˋ ㄍㄨㄛˇ",
       "meaning": "由於某種原因或行為而產生的結果、影響。",
       "example_sentence": "做事前要先想想後果。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson11/vocabulary/l11-15.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     }
   ],
   "word_meanings": [],

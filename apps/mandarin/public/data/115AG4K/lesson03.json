@@ -390,12 +390,14 @@
       "zhuyin": "ㄧㄠ ㄩㄝ",
       "meaning": "邀請、約請。",
       "example_sentence": "我接受同學的邀約，一起去打球。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson03/vocabulary/l03-01.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K03:02",
@@ -403,12 +405,14 @@
       "zhuyin": "ㄧㄠˊ ㄅㄨˋ ㄎㄜˇ ㄐㄧˊ",
       "meaning": "距離遙遠無法到達或形容沒有希望。",
       "example_sentence": "只要肯努力，夢想就不再遙不可及。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson03/vocabulary/l03-02.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K03:03",
@@ -416,12 +420,14 @@
       "zhuyin": "ㄕㄡˊ ㄋㄥˊ ㄕㄥ ㄑㄧㄠˇ",
       "meaning": "熟練了自然能領悟出竅門。",
       "example_sentence": "每天練習寫字，就能熟能生巧。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson03/vocabulary/l03-03.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K03:04",
@@ -429,7 +435,7 @@
       "zhuyin": "ㄈㄢˇ ㄊㄢˊ",
       "meaning": "物體碰到東西後彈回來。",
       "example_sentence": "球碰到牆壁後反彈回來。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson03/vocabulary/l03-04.webp",
       "status": "ready",
@@ -437,7 +443,9 @@
       "meaning_original": "⑴物理學上指作用力施於物體的同一時間，必產生相等而相反的動量，稱為「反彈」。⑵在極度壓迫的情況下突然反撲或突破困境。",
       "meaning_approved_by": "CF",
       "meaning_approved_on": "2026-11-14",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K03:05",
@@ -445,12 +453,14 @@
       "zhuyin": "ㄅㄨˋ ㄘㄥˊ",
       "meaning": "從不。",
       "example_sentence": "我不曾去過外國。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson03/vocabulary/l03-05.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K03:06",
@@ -458,7 +468,7 @@
       "zhuyin": "ㄓˇ ㄏㄨㄟ",
       "meaning": "發號施令，指示別人行動。",
       "example_sentence": "老師指揮大家排好隊伍。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson03/vocabulary/l03-06.webp",
       "status": "ready",
@@ -466,7 +476,9 @@
       "meaning_original": "⑴發號施令，指示別人行動。⑵樂隊、合唱團等表演時，以手或指揮棒指示節拍、表情的人。",
       "meaning_approved_by": "CF",
       "meaning_approved_on": "2026-11-14",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K03:07",
@@ -474,12 +486,14 @@
       "zhuyin": "ㄘˇ ㄑㄧˇ ㄅㄧˇ ㄌㄨㄛˋ",
       "meaning": "這裡起來，那裡落下。形容連續不斷。",
       "example_sentence": "球場上的加油聲此起彼落。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson03/vocabulary/l03-07.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K03:08",
@@ -487,12 +501,14 @@
       "zhuyin": "ㄒㄩㄢ ㄋㄠˋ",
       "meaning": "喧譁吵鬧。",
       "example_sentence": "下課時，走廊上非常喧鬧。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson03/vocabulary/l03-08.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K03:09",
@@ -500,12 +516,14 @@
       "zhuyin": "ㄧㄡ ㄇㄟˇ",
       "meaning": "良好、美妙。",
       "example_sentence": "她跳舞的姿勢很優美。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson03/vocabulary/l03-09.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K03:10",
@@ -513,12 +531,14 @@
       "zhuyin": "ㄏㄨˊ ㄒㄧㄢˋ",
       "meaning": "彎曲如弓的線條。",
       "example_sentence": "球在空中畫出一道弧線。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson03/vocabulary/l03-10.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K03:11",
@@ -526,12 +546,14 @@
       "zhuyin": "ㄏㄜˋ ㄘㄞˇ",
       "meaning": "大聲叫好。",
       "example_sentence": "觀眾為精采的表演大聲喝采。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson03/vocabulary/l03-11.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K03:12",
@@ -539,12 +561,14 @@
       "zhuyin": "ㄧㄡˇ ㄓㄠ ㄧˊ ㄖˋ",
       "meaning": "將來有一天。",
       "example_sentence": "我希望有朝一日能當上醫生。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson03/vocabulary/l03-12.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K03:13",
@@ -552,12 +576,14 @@
       "zhuyin": "ㄈㄥ ㄩㄣˊ ㄖㄣˊ ㄨˋ",
       "meaning": "表現特出，深具知名度及影響力的人。",
       "example_sentence": "他是學校裡的風雲人物。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson03/vocabulary/l03-13.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K03:14",
@@ -565,12 +591,14 @@
       "zhuyin": "ㄉㄚˇ ㄑㄧˋ",
       "meaning": "激勵他人使增加信心和勇氣。",
       "example_sentence": "我們在場邊為選手打氣。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson03/vocabulary/l03-14.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K03:15",
@@ -578,12 +606,14 @@
       "zhuyin": "ㄆㄧㄥˊ ㄈㄣ ㄑㄧㄡ ㄙㄜˋ",
       "meaning": "形容兩者一樣出色，不分高下。",
       "example_sentence": "兩隊的實力平分秋色。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson03/vocabulary/l03-15.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     }
   ],
   "word_meanings": [],
