@@ -181,8 +181,8 @@ export function LessonDashboard(lesson) {
       card.appendChild(h('button', { class: 'btn module-card__cta', type: 'button', disabled: 'disabled' }, status.text));
     }
     card.setAttribute('data-module-key', entry.key);
-    // 照樣造短語還沒有這課的資料時不顯示（不佔核心一格）
-    if (entry.key === 'phrase_builder' && !playable && !isPreview()) continue;
+    // 照樣造短語、我會應用還沒有這課的資料時不顯示（不佔一格、也不讓學生看到一張點不開的卡）
+    if ((entry.key === 'phrase_builder' || entry.key === 'application') && !playable && !isPreview()) continue;
     (CORE_MODULES.has(entry.key) ? coreGrid : challengeGrid).appendChild(card);
     if (entry.key === 'review') reviewCard = card;
   }

@@ -1,5 +1,14 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-11-15｜家中 Mac｜Claude｜新大項「我會應用」＋四上 3 課樣張（2026-11-15 CF 核准，已合併 main 並上線）
+<!-- AUTO-RESUME: none -->
+- 分支 `feat/application-module-g4a-samples`（未提交）。CF 選了方案：每課一則生活情境任務（便條、邀請卡、通知單…），練「遷移」而不是再練一次句中選詞。
+- 程式：`src/activities/application.js`（三步：讀一讀 → 看懂與回應 → 自己寫；支持層不寫），登記在 `moduleRegistry.js`、`ModulePage.js`、`LessonDashboard.js`（沒有可玩任務的課不顯示這張卡，做法同照樣造短語）、`icons.js`、`StepJump.js`、`records.js`；學方法 `functional-reading`（找出誰、什麼時候、要做什麼）加在 `strategyLibrary.js`／`strategyCards.js`。
+- 資料：`lesson.application`（單一物件）。樣張在四上第 2 課（便條）、第 9 課（邀請卡）、第 11 課（通知單），`status: draft`。審閱文件 `apps/mandarin/docs/review/2026-11-15-application-samples-g4a.md`。
+- `scripts/filter-build-data.mjs` 加了規則：未核准的 `application` 整份不帶進成品（一開始漏了，build 後檢查 dist 才發現草稿被帶出去）。
+- 測試 `scripts/test-application.mjs`；全部 `test-*.mjs`、`npm run validate`、build＋check-dist 都過。預覽模式實際走完第 11 課三步（答對 3／3、進到寫句子）；桌機 1024 與手機 390 截圖看過。手機上短文卡較高，題目要往下捲才看得到。
+- CF 已核准 3 課樣張與方向。下一步：量產其餘課次（草稿→CF 審）；一上是否改成「看圖選一句話」未定，等 CF。
+
 ## 2026-11-15｜家中 Mac｜Claude｜過長解釋短版、稱職讀音、新編內容草稿、例句拆積木（2026-11-15 已合併 main 並上線）
 <!-- AUTO-RESUME: none -->
 - 分支 `fix/long-meanings-short-version`（未提交）。
