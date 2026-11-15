@@ -2707,5 +2707,71 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG2H06",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "邀請卡",
+    "situation": "住在鄉下的奶奶寄了一張卡片給你。",
+    "title": "親愛的小安：",
+    "passage": "這個星期六晚上，請你來奶奶家吃晚飯。\n吃完飯，我們到屋後的竹林旁散步。\n草叢裡有螢火蟲，像一顆顆小星星。\n記得穿長褲，才不會被蚊子咬。",
+    "signature": "奶奶",
+    "lesson_words": [
+      "晚飯",
+      "屋",
+      "竹林",
+      "旁",
+      "散步",
+      "草叢",
+      "顆",
+      "奶奶"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG2H06:q1",
+        "question": "奶奶請小安什麼時候去？",
+        "options": [
+          "星期六晚上",
+          "星期六早上",
+          "星期天晚上"
+        ],
+        "answer": "星期六晚上",
+        "explanation": "卡片上寫：「這個星期六晚上，請你來奶奶家吃晚飯。」",
+        "evidence": [
+          "星期六晚上"
+        ]
+      },
+      {
+        "id": "application:115AG2H06:q2",
+        "question": "為什麼要穿長褲？",
+        "options": [
+          "才不會被蚊子咬",
+          "因為晚上很冷",
+          "因為要去爬山"
+        ],
+        "answer": "才不會被蚊子咬",
+        "explanation": "卡片上寫：「記得穿長褲，才不會被蚊子咬。」",
+        "evidence": [
+          "才不會被蚊子咬"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG2H06:response",
+      "question": "你打電話給奶奶。哪一句最合適？",
+      "options": [
+        "奶奶，謝謝您，星期六晚上我會去，我會穿長褲。",
+        "奶奶，有沒有禮物？",
+        "我不知道要不要去。"
+      ],
+      "answer": "奶奶，謝謝您，星期六晚上我會去，我會穿長褲。",
+      "explanation": "這一句有道謝、說了會去，也記得奶奶的提醒。",
+      "evidence": [
+        "星期六晚上"
+      ]
+    }
+  }
 }

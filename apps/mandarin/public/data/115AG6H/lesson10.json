@@ -2381,9 +2381,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補：應用任務設計中"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2540,5 +2539,75 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG6H10",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "邀請訊息",
+    "situation": "住在鄉下的外公用手機傳來一則訊息。",
+    "title": "給小安：",
+    "passage": "農曆九月九日是重陽節，外公訂了一桌菜，請你們全家回鄉村來。\n後院的菊花開了，晒穀場也剛晒完稻子，景色很美。\n這裡的生活樸實又恬靜，你可以好好休息兩天。\n記得帶外套，山上早晚比較涼。",
+    "signature": "外公",
+    "lesson_words": [
+      "農曆",
+      "訂",
+      "鄉村",
+      "菊花",
+      "晒穀場",
+      "樸實",
+      "恬靜"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG6H10:q1",
+        "question": "外公為什麼請大家回去？",
+        "options": [
+          "因為重陽節要一起吃飯",
+          "因為稻子要收割",
+          "因為外公生病了"
+        ],
+        "answer": "因為重陽節要一起吃飯",
+        "explanation": "訊息上寫：「農曆九月九日是重陽節，外公訂了一桌菜，請你們全家回鄉村來。」",
+        "evidence": [
+          "重陽節"
+        ]
+      },
+      {
+        "id": "application:115AG6H10:q2",
+        "question": "外公提醒要帶什麼？",
+        "options": [
+          "外套",
+          "雨傘",
+          "菊花"
+        ],
+        "answer": "外套",
+        "explanation": "訊息上寫：「記得帶外套，山上早晚比較涼。」",
+        "evidence": [
+          "外套"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG6H10:response",
+      "question": "你想回訊息給外公。哪一句最合適？",
+      "options": [
+        "外公，謝謝您，我們會回去，我也會記得帶外套。",
+        "好。",
+        "鄉下很無聊，可以不要去嗎？"
+      ],
+      "answer": "外公，謝謝您，我們會回去，我也會記得帶外套。",
+      "explanation": "這一句有道謝、回答了會不會去，也回應了外公的提醒。",
+      "evidence": [
+        "記得帶外套"
+      ]
+    },
+    "write": {
+      "prompt": "回外公外婆或爺爺奶奶家，你會做哪些事？用「除了……，也……」寫一句。",
+      "model": "回外公家，我除了幫忙澆花，也會陪他聊天。",
+      "pattern_id": "sentence_pattern:115AG6H10:pattern:2"
+    }
+  }
 }

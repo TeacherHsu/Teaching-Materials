@@ -1,5 +1,16 @@
 # 交接紀錄（最新的寫在最上面）
 
+## 2026-11-15｜家中 Mac｜Claude｜「我會應用」五冊 55 課生活任務（2026-11-15 CF 全部核准，已合併 main 並上線）
+<!-- AUTO-RESUME: none -->
+- 分支 `feat/application-tasks-all-grades`（未提交）。CF 指定：一年級改成「看圖選一句話」；各年級做完，順序三→一→四→六→二。全部完成。
+- 內容正本改放 `apps/mandarin/tools/application-tasks/<冊別>.json`，由 `scripts/apply-application-tasks.mjs` 寫進 `lesson.application`（可重跑；已上線的四上第 2、9、11 課也轉進清單，標 approved）。
+- 草稿 52 課：三上 12、一上 7（每課 3 張語詞圖，句子依圖寫）、四上其餘 9、六上 12、二上 12。二上與三上 1、4、7、四上 1、10 沒有「自己寫一句」（沒有合適句型或考量書寫負荷）。
+- `application.js` 新增 `variant: 'picture'`（一上）；`test-application.mjs` 涵蓋兩種型態、圖檔存在、短文 30～110 字、語詞出現在短文。
+- 已驗：全部 `test-*.mjs`、`npm run validate`、build＋check-dist 通過；成品只含已核准的 3 課。預覽模式實際做完一上第 3 課（3／3），開過二上第 6 課、六上第 11 課；正式模式下三上第 2 課首頁沒有這張卡。
+- 審閱文件：`apps/mandarin/docs/review/2026-11-15-application-tasks-all.md`。
+- 答錯一次的視覺提示（CF 2026-11-15）：短文卡上把這一題的關鍵字詞畫成暖黃底（`application-passage__key`），用 ChoiceQuiz 既有的分層提示 `hints: [{ text, on }]` 觸發；按「看提示」或揭曉答案時也會畫。關鍵字詞由 `apply-application-tasks.mjs` 自動找（正確答案與短文重疊的那一段，找不到用說明裡引用的原句），寫進每題的 `evidence`；切不好的在清單用 `keys` 手動指定（目前 17 題）。每個詞只畫一處。回應題有 17 題沒有關鍵字詞（靠社交判斷，不在短文裡），仍是文字提示。一上看圖題沒有短文，不畫。
+- CF 2026-11-15「全部核准上線」。還沒處理：手機上短文卡偏高、題目要往下捲。
+
 ## 2026-11-15｜家中 Mac｜Claude｜新大項「我會應用」＋四上 3 課樣張（2026-11-15 CF 核准，已合併 main 並上線）
 <!-- AUTO-RESUME: none -->
 - 分支 `feat/application-module-g4a-samples`（未提交）。CF 選了方案：每課一則生活情境任務（便條、邀請卡、通知單…），練「遷移」而不是再練一次句中選詞。

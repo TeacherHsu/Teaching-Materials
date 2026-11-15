@@ -1491,9 +1491,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2446,5 +2445,49 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG1H03",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "看圖選一句話",
+    "variant": "picture",
+    "items": [
+      {
+        "id": "application:115AG1H03:p1",
+        "word": "火車",
+        "image": "/assets/115AG1H/lesson03/vocabulary/l03-01.webp",
+        "options": [
+          "火車開過來了。",
+          "飛機飛上天了。",
+          "小船在水上走。"
+        ],
+        "answer": "火車開過來了。"
+      },
+      {
+        "id": "application:115AG1H03:p2",
+        "word": "山洞",
+        "image": "/assets/115AG1H/lesson03/vocabulary/l03-03.webp",
+        "options": [
+          "小熊在山洞裡睡覺。",
+          "小熊在樹上吃果子。",
+          "小熊在河裡抓魚。"
+        ],
+        "answer": "小熊在山洞裡睡覺。"
+      },
+      {
+        "id": "application:115AG1H03:p3",
+        "word": "堆",
+        "image": "/assets/115AG1H/lesson03/vocabulary/l03-09.webp",
+        "options": [
+          "弟弟在沙灘上堆沙堡。",
+          "弟弟在海裡游泳。",
+          "弟弟在沙灘上放風箏。"
+        ],
+        "answer": "弟弟在沙灘上堆沙堡。"
+      }
+    ]
+  }
 }

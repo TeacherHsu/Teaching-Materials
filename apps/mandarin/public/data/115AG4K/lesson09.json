@@ -3156,7 +3156,9 @@
   "application": {
     "id": "application:115AG4K09",
     "status": "approved",
-    "source": "original（Claude 草擬生活任務，CF 2026-11-15 核准；短文為自編，非課文）",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
     "kind": "邀請卡",
     "situation": "你的好朋友小安寄了一張邀請卡給你。",
     "title": "親愛的小恩：",
@@ -3177,7 +3179,10 @@
           "市區的遊樂園"
         ],
         "answer": "小安的家鄉",
-        "explanation": "邀請卡上寫：「我想請你到我的家鄉來玩。」"
+        "explanation": "邀請卡上寫：「我想請你到我的家鄉來玩。」",
+        "evidence": [
+          "到我的家鄉來玩"
+        ]
       },
       {
         "id": "application:115AG4K09:q2",
@@ -3188,10 +3193,14 @@
           "因為要去划船"
         ],
         "answer": "因為河邊風很大",
-        "explanation": "邀請卡上寫：「河邊風很大，所以請你帶一件外套。」"
+        "explanation": "邀請卡上寫：「河邊風很大，所以請你帶一件外套。」",
+        "evidence": [
+          "河邊風很大"
+        ]
       }
     ],
     "response": {
+      "id": "application:115AG4K09:response",
       "question": "小恩想去。哪一句回覆最合適？",
       "options": [
         "謝謝你邀請我，星期六早上九點火車站見！",
@@ -3199,14 +3208,15 @@
         "我沒有去過河邊。"
       ],
       "answer": "謝謝你邀請我，星期六早上九點火車站見！",
-      "explanation": "這一句先道謝，再把時間和地點說一次，小安就知道你會準時到。"
+      "explanation": "這一句先道謝，再把時間和地點說一次，小安就知道你會準時到。",
+      "evidence": [
+        "星期六早上九點"
+      ]
     },
     "write": {
       "prompt": "邀請朋友到你住的地方玩，要提醒他帶什麼？用「……所以……」寫一句。",
       "model": "我家附近有游泳池，所以請你帶泳衣。",
       "pattern_id": "sentence_pattern:115AG4K09:pasted:03"
-    },
-    "approved_by": "CF",
-    "approved_on": "2026-11-15"
+    }
   }
 }

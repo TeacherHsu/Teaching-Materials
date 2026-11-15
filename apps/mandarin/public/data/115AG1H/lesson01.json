@@ -1072,9 +1072,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -1523,5 +1522,49 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG1H01",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "看圖選一句話",
+    "variant": "picture",
+    "items": [
+      {
+        "id": "application:115AG1H01:p1",
+        "word": "走",
+        "image": "/assets/115AG1H/lesson01/vocabulary/l01-02.webp",
+        "options": [
+          "弟弟走路去上學。",
+          "弟弟坐在車子裡。",
+          "弟弟在床上睡覺。"
+        ],
+        "answer": "弟弟走路去上學。"
+      },
+      {
+        "id": "application:115AG1H01:p2",
+        "word": "你和我",
+        "image": "/assets/115AG1H/lesson01/vocabulary/l01-08.webp",
+        "options": [
+          "你和我是好朋友。",
+          "我一個人在家。",
+          "小狗在睡覺。"
+        ],
+        "answer": "你和我是好朋友。"
+      },
+      {
+        "id": "application:115AG1H01:p3",
+        "word": "左",
+        "image": "/assets/115AG1H/lesson01/vocabulary/l01-05.webp",
+        "options": [
+          "他向左邊走。",
+          "他向右邊走。",
+          "他坐下來休息。"
+        ],
+        "answer": "他向左邊走。"
+      }
+    ]
+  }
 }

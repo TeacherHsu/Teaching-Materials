@@ -2388,9 +2388,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2433,5 +2432,75 @@
       "activity": "review"
     }
   },
-  "genre": "script"
+  "genre": "script",
+  "application": {
+    "id": "application:115AG3H08",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "活動通知",
+    "situation": "老師發下一張淨灘活動的通知單。",
+    "title": "一起來淨灘",
+    "passage": "星期六早上八點，在海邊停車場集合。\n請戴帽子和手套，志工會發垃圾袋給每一位同學。\n撿到瓶蓋和紙杯請分開裝。貝殼是寄居蟹的家，請留在沙灘上。",
+    "signature": "愛護環境小隊",
+    "lesson_words": [
+      "志工",
+      "垃圾",
+      "位",
+      "瓶蓋",
+      "紙杯",
+      "貝殼",
+      "寄居蟹"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG3H08:q1",
+        "question": "淨灘活動在哪裡集合？",
+        "options": [
+          "海邊停車場",
+          "學校操場",
+          "沙灘上"
+        ],
+        "answer": "海邊停車場",
+        "explanation": "通知上寫：「星期六早上八點，在海邊停車場集合。」",
+        "evidence": [
+          "海邊停車場"
+        ]
+      },
+      {
+        "id": "application:115AG3H08:q2",
+        "question": "為什麼貝殼要留在沙灘上？",
+        "options": [
+          "因為貝殼是寄居蟹的家",
+          "因為貝殼太重了",
+          "因為貝殼是垃圾"
+        ],
+        "answer": "因為貝殼是寄居蟹的家",
+        "explanation": "通知上寫：「貝殼是寄居蟹的家，請留在沙灘上。」",
+        "evidence": [
+          "貝殼是寄居蟹的家"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG3H08:response",
+      "question": "同學撿了很多貝殼想帶回家。哪一句提醒最合適？",
+      "options": [
+        "貝殼是寄居蟹的家，我們把它留在沙灘上吧。",
+        "你這樣不對，我要告訴老師。",
+        "那我也要撿。"
+      ],
+      "answer": "貝殼是寄居蟹的家，我們把它留在沙灘上吧。",
+      "explanation": "這一句說出原因，也邀請同學一起做對的事。",
+      "evidence": [
+        "貝殼是寄居蟹的家"
+      ]
+    },
+    "write": {
+      "prompt": "海邊的小動物遇到什麼麻煩？用「因為……只能……」寫一句。",
+      "model": "因為找不到貝殼，寄居蟹只能住在瓶蓋裡。",
+      "pattern_id": "sentence_pattern:115AG3H08:8b01185a"
+    }
+  }
 }

@@ -2061,8 +2061,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "note": "教材待補：應用任務設計中"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2105,5 +2105,70 @@
       "activity": "review"
     }
   },
-  "genre": "narrative"
+  "genre": "narrative",
+  "application": {
+    "id": "application:115AG3H02",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "便利貼",
+    "situation": "早上起床，你看到冰箱上貼著一張便利貼。",
+    "title": "小安：",
+    "passage": "隔天要戶外教學，請你今晚先把水壺和帽子放進書包。\n晚上九點要準時睡覺，鬧鐘我幫你調到六點半。\n早餐在冰箱裡，記得吃完再出門。",
+    "signature": "媽媽",
+    "lesson_words": [
+      "隔天",
+      "準時",
+      "睡覺",
+      "鬧鐘",
+      "冰箱"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG3H02:q1",
+        "question": "今天晚上要先把什麼放進書包？",
+        "options": [
+          "水壺和帽子",
+          "鬧鐘和早餐",
+          "便利貼和鉛筆"
+        ],
+        "answer": "水壺和帽子",
+        "explanation": "便利貼上寫：「請你今晚先把水壺和帽子放進書包。」",
+        "evidence": [
+          "水壺和帽子"
+        ]
+      },
+      {
+        "id": "application:115AG3H02:q2",
+        "question": "媽媽希望小安幾點睡覺？",
+        "options": [
+          "晚上九點",
+          "早上六點半",
+          "晚上十一點"
+        ],
+        "answer": "晚上九點",
+        "explanation": "便利貼上寫：「晚上九點要準時睡覺。」六點半是鬧鐘響的時間。",
+        "evidence": [
+          "晚上九點"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG3H02:response",
+      "question": "你想讓媽媽知道你看到了。在便利貼上回哪一句最合適？",
+      "options": [
+        "我看到了，書包整理好了，謝謝媽媽。",
+        "我不想那麼早睡。",
+        "早餐是什麼？"
+      ],
+      "answer": "我看到了，書包整理好了，謝謝媽媽。",
+      "explanation": "這一句告訴媽媽你看到了，也做好了，還有道謝。"
+    },
+    "write": {
+      "prompt": "明天有重要的事，你今晚會先做什麼準備？用「為了……」寫一句。",
+      "model": "為了準時出門，我今晚先把書包整理好。",
+      "pattern_id": "sentence_pattern:115AG3H02:03bbd753"
+    }
+  }
 }

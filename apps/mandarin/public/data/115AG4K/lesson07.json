@@ -2729,9 +2729,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "應用任務來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -3463,5 +3462,77 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG4K07",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "菜單",
+    "situation": "學校園遊會，你們班的攤位貼出一張菜單。",
+    "title": "世界美食攤",
+    "passage": "今天提供三種料理：日本壽司、印度咖哩飯、義大利麵條。\n醬料有辣和不辣兩種，點餐時請先說清楚。\n每一份三十元，一個人最多買兩份，讓更多人可以享用。\n食材賣完就收攤囉！",
+    "signature": "四年二班",
+    "lesson_words": [
+      "料理",
+      "壽司",
+      "印度",
+      "咖哩",
+      "義大利",
+      "麵條",
+      "醬料",
+      "享用",
+      "食材"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG4K07:q1",
+        "question": "點餐的時候要先說清楚什麼？",
+        "options": [
+          "醬料要辣還是不辣",
+          "要坐在哪裡",
+          "是幾年級的學生"
+        ],
+        "answer": "醬料要辣還是不辣",
+        "explanation": "菜單上寫：「醬料有辣和不辣兩種，點餐時請先說清楚。」",
+        "evidence": [
+          "醬料有辣和不辣兩種，點餐時請先說清楚"
+        ]
+      },
+      {
+        "id": "application:115AG4K07:q2",
+        "question": "一個人最多可以買幾份？",
+        "options": [
+          "兩份",
+          "三份",
+          "想買幾份都可以"
+        ],
+        "answer": "兩份",
+        "explanation": "菜單上寫：「一個人最多買兩份，讓更多人可以享用。」",
+        "evidence": [
+          "兩份"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG4K07:response",
+      "question": "輪到你點餐了。哪一句說得最清楚？",
+      "options": [
+        "我要一份咖哩飯，不辣的，謝謝。",
+        "隨便，都可以。",
+        "我要那個。"
+      ],
+      "answer": "我要一份咖哩飯，不辣的，謝謝。",
+      "explanation": "這一句說了要什麼、幾份、辣不辣，還有道謝。",
+      "evidence": [
+        "點餐時請先說清楚"
+      ]
+    },
+    "write": {
+      "prompt": "你吃過什麼讓你很意外的食物？用「沒想到……竟然……」寫一句。",
+      "model": "沒想到苦瓜炒蛋竟然這麼好吃。",
+      "pattern_id": "sentence:07:04"
+    }
+  }
 }

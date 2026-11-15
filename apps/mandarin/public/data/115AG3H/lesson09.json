@@ -2217,9 +2217,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2287,5 +2286,75 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG3H09",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "行前通知",
+    "situation": "全家要去走古道，導遊先傳來一張行前通知。",
+    "title": "古道健行注意事項",
+    "passage": "早上七點在南田入口集合，全程由導遊帶路。\n請穿好走的鞋子，沿著海岸走的時候，石頭很滑，要踩穩。\n古道上沒有商店，請自己帶水，垃圾也要帶下山。",
+    "signature": "古道導遊",
+    "lesson_words": [
+      "南田",
+      "導遊",
+      "沿",
+      "海岸",
+      "踩",
+      "古道"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG3H09:q1",
+        "question": "大家要在哪裡集合？",
+        "options": [
+          "南田入口",
+          "海岸邊的石頭上",
+          "山上的商店"
+        ],
+        "answer": "南田入口",
+        "explanation": "通知上寫：「早上七點在南田入口集合。」",
+        "evidence": [
+          "南田入口"
+        ]
+      },
+      {
+        "id": "application:115AG3H09:q2",
+        "question": "為什麼要自己帶水？",
+        "options": [
+          "因為古道上沒有商店",
+          "因為導遊不喝水",
+          "因為海水不能喝"
+        ],
+        "answer": "因為古道上沒有商店",
+        "explanation": "通知上寫：「古道上沒有商店，請自己帶水。」",
+        "evidence": [
+          "古道上沒有商店"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG3H09:response",
+      "question": "出發前，媽媽問：「要準備什麼？」哪一句回答最完整？",
+      "options": [
+        "要穿好走的鞋子，還要自己帶水。",
+        "導遊會準備。",
+        "我不知道，到了再說。"
+      ],
+      "answer": "要穿好走的鞋子，還要自己帶水。",
+      "explanation": "這一句把通知上要準備的兩件事都說出來了。",
+      "evidence": [
+        "穿好走的鞋子",
+        "自己帶水"
+      ]
+    },
+    "write": {
+      "prompt": "去爬山或健行要注意什麼？用「……，才……」寫一句。",
+      "model": "走山路要穿好走的鞋子，才不容易滑倒。",
+      "pattern_id": "sentence_pattern:115AG3H09:e83d78a2"
+    }
+  }
 }

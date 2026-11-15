@@ -1572,8 +1572,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "note": "教材待補：應用任務設計中"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -1641,5 +1641,73 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG3H05",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "說明卡",
+    "situation": "果園的入口有一張給遊客看的說明卡。",
+    "title": "梨子採果須知",
+    "passage": "梨子甜美多汁，但是碰傷了很快就會腐爛，請輕輕摘。\n每棵樹上綁了紅色膠帶的梨子才可以採。\n採下來的梨子請放進籃子，不要疊太高。",
+    "signature": "山上果園",
+    "lesson_words": [
+      "甜美",
+      "多汁",
+      "腐爛",
+      "綁",
+      "膠帶"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG3H05:q1",
+        "question": "哪一種梨子才可以採？",
+        "options": [
+          "綁了紅色膠帶的梨子",
+          "長得最大的梨子",
+          "掉在地上的梨子"
+        ],
+        "answer": "綁了紅色膠帶的梨子",
+        "explanation": "說明卡上寫：「每棵樹上綁了紅色膠帶的梨子才可以採。」",
+        "evidence": [
+          "綁了紅色膠帶的梨子"
+        ]
+      },
+      {
+        "id": "application:115AG3H05:q2",
+        "question": "為什麼要輕輕摘？",
+        "options": [
+          "因為梨子碰傷了很快就會腐爛",
+          "因為梨子很重",
+          "因為樹枝很高"
+        ],
+        "answer": "因為梨子碰傷了很快就會腐爛",
+        "explanation": "說明卡上寫：「碰傷了很快就會腐爛，請輕輕摘。」",
+        "evidence": [
+          "碰傷了很快就會腐爛"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG3H05:response",
+      "question": "你看到弟弟要摘沒有綁膠帶的梨子。哪一句提醒最合適？",
+      "options": [
+        "弟弟，要摘綁紅色膠帶的才可以喔。",
+        "你怎麼那麼笨！",
+        "隨便你，反正不是我摘的。"
+      ],
+      "answer": "弟弟，要摘綁紅色膠帶的才可以喔。",
+      "explanation": "這一句把規定說清楚，語氣也很友善。",
+      "evidence": [
+        "綁了紅色膠帶的梨子才可以採"
+      ]
+    },
+    "write": {
+      "prompt": "你喜歡哪一種水果？用「不只……還……」寫一句介紹它。",
+      "model": "西瓜不只多汁，還很消暑。",
+      "pattern_id": "sentence_pattern:115AG3H05:01"
+    }
+  }
 }

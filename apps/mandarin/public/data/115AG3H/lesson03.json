@@ -1944,8 +1944,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "note": "教材待補：應用任務設計中"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2013,5 +2013,73 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG3H03",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "聯絡簿",
+    "situation": "放學前，老師請大家把這段話抄在聯絡簿上。",
+    "title": "明天美勞課要帶的文具",
+    "passage": "明天美勞課要用三角板、剪刀和膠水。\n請今晚就整理書包，把文具準備好，不要等到早上才匆忙找東西。\n忘了帶的同學，上課時只能先看別人做。",
+    "signature": "王老師",
+    "lesson_words": [
+      "三角板",
+      "整理",
+      "文具",
+      "準備",
+      "匆忙"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG3H03:q1",
+        "question": "明天美勞課要帶哪些東西？",
+        "options": [
+          "三角板、剪刀和膠水",
+          "作業本和公車票",
+          "彩色筆和水彩"
+        ],
+        "answer": "三角板、剪刀和膠水",
+        "explanation": "聯絡簿上寫：「明天美勞課要用三角板、剪刀和膠水。」",
+        "evidence": [
+          "三角板、剪刀和膠水"
+        ]
+      },
+      {
+        "id": "application:115AG3H03:q2",
+        "question": "老師希望大家什麼時候把文具準備好？",
+        "options": [
+          "今天晚上",
+          "明天早上",
+          "上美勞課的時候"
+        ],
+        "answer": "今天晚上",
+        "explanation": "聯絡簿上寫：「請今晚就整理書包，把文具準備好。」",
+        "evidence": [
+          "請今晚就整理書包，把文具準備好"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG3H03:response",
+      "question": "回家後，媽媽問：「明天要帶什麼？」哪一句回答最清楚？",
+      "options": [
+        "要帶三角板、剪刀和膠水，我現在就去準備。",
+        "老師有說，可是我忘了。",
+        "明天再說。"
+      ],
+      "answer": "要帶三角板、剪刀和膠水，我現在就去準備。",
+      "explanation": "這一句把要帶的東西說清楚，還說了你會馬上準備。",
+      "evidence": [
+        "三角板、剪刀和膠水"
+      ]
+    },
+    "write": {
+      "prompt": "你有沒有忘記帶東西的經驗？用「因為……所以……」寫一句。",
+      "model": "因為我前一晚先整理書包，所以今天沒有忘記帶東西。",
+      "pattern_id": "sentence_pattern:115AG3H03:05"
+    }
+  }
 }

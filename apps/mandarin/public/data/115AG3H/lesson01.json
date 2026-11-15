@@ -2891,8 +2891,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "note": "教材待補：應用任務設計中"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -3162,5 +3162,66 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG3H01",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "便條",
+    "situation": "你在門口等爸爸，看到鞋櫃上有一張他留的便條。",
+    "title": "給小安",
+    "passage": "爸爸今天工作很忙碌，會晚半小時到家。\n等待的時候，你可以先把聯絡簿拿出來。\n我一下班就飛奔回家，不會讓你等太久。",
+    "signature": "爸爸",
+    "lesson_words": [
+      "忙碌",
+      "等待",
+      "飛奔"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG3H01:q1",
+        "question": "爸爸今天為什麼會晚回家？",
+        "options": [
+          "因為工作很忙碌",
+          "因為去買東西",
+          "因為車子壞了"
+        ],
+        "answer": "因為工作很忙碌",
+        "explanation": "便條上寫：「爸爸今天工作很忙碌，會晚半小時到家。」",
+        "evidence": [
+          "工作很忙碌"
+        ]
+      },
+      {
+        "id": "application:115AG3H01:q2",
+        "question": "等爸爸的時候，小安可以先做什麼？",
+        "options": [
+          "把聯絡簿拿出來",
+          "出門去找爸爸",
+          "先去睡覺"
+        ],
+        "answer": "把聯絡簿拿出來",
+        "explanation": "便條上寫：「等待的時候，你可以先把聯絡簿拿出來。」",
+        "evidence": [
+          "把聯絡簿拿出來"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG3H01:response",
+      "question": "爸爸回到家說：「讓你等很久了。」哪一句回答最合適？",
+      "options": [
+        "沒關係，我已經把聯絡簿拿出來了。",
+        "你為什麼那麼慢？",
+        "我不知道你去哪裡。"
+      ],
+      "answer": "沒關係，我已經把聯絡簿拿出來了。",
+      "explanation": "這一句讓爸爸放心，也說出你照便條做了什麼。",
+      "evidence": [
+        "把聯絡簿拿出來"
+      ]
+    }
+  }
 }

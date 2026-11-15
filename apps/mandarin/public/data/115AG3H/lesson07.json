@@ -1785,9 +1785,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -1831,5 +1830,66 @@
       "activity": "review"
     }
   },
-  "genre": "poetry"
+  "genre": "poetry",
+  "application": {
+    "id": "application:115AG3H07",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "明信片",
+    "situation": "你收到表姐從海邊寄來的明信片。",
+    "title": "親愛的小安：",
+    "passage": "我現在在海邊，天空和大海都是蔚藍的。\n海風吹來有一點鹹味，我閉上眼睛做了一個深呼吸，好舒服。\n傍晚漁船回航，我們一起欣賞夕陽。下次帶你來！",
+    "signature": "表姐",
+    "lesson_words": [
+      "蔚藍",
+      "鹹味",
+      "閉上",
+      "深呼吸",
+      "回航",
+      "欣賞"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG3H07:q1",
+        "question": "表姐寫明信片的時候，人在哪裡？",
+        "options": [
+          "在海邊",
+          "在山上",
+          "在學校"
+        ],
+        "answer": "在海邊",
+        "explanation": "明信片上寫：「我現在在海邊。」",
+        "evidence": [
+          "在海邊"
+        ]
+      },
+      {
+        "id": "application:115AG3H07:q2",
+        "question": "傍晚的時候，表姐他們做了什麼？",
+        "options": [
+          "一起欣賞夕陽",
+          "一起去游泳",
+          "搭船出海"
+        ],
+        "answer": "一起欣賞夕陽",
+        "explanation": "明信片上寫：「傍晚漁船回航，我們一起欣賞夕陽。」",
+        "evidence": [
+          "一起欣賞夕陽"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG3H07:response",
+      "question": "你想回一張卡片給表姐。開頭寫哪一句最合適？",
+      "options": [
+        "謝謝你的明信片，海邊看起來好美，我也想去！",
+        "你怎麼沒有帶我去？",
+        "海邊有什麼好玩的？"
+      ],
+      "answer": "謝謝你的明信片，海邊看起來好美，我也想去！",
+      "explanation": "這一句先道謝，再說出你看了明信片的感覺。"
+    }
+  }
 }

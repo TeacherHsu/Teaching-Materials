@@ -2304,9 +2304,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2398,5 +2397,73 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG3H11",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "店家公告",
+    "situation": "車子有怪聲，爸爸把車開到修車廠，門口貼著一張公告。",
+    "title": "春節營業公告",
+    "passage": "本修車廠除夕到初三休息，初四早上九點開始營業。\n休息期間如果車子在附近壞了，請打門上的電話，師傅會過去檢查。\n祝大家新年快樂，一路平安。",
+    "signature": "平安修車廠",
+    "lesson_words": [
+      "修車廠",
+      "除夕",
+      "休息",
+      "附近",
+      "師傅",
+      "檢查",
+      "新年",
+      "一路平安"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG3H11:q1",
+        "question": "修車廠哪一天開始營業？",
+        "options": [
+          "初四",
+          "除夕",
+          "初三"
+        ],
+        "answer": "初四",
+        "explanation": "公告上寫：「除夕到初三休息，初四早上九點開始營業。」",
+        "evidence": [
+          "初四"
+        ]
+      },
+      {
+        "id": "application:115AG3H11:q2",
+        "question": "休息期間車子壞了，可以怎麼做？",
+        "options": [
+          "打門上的電話，請師傅過去檢查",
+          "自己把門打開",
+          "等到初四再說"
+        ],
+        "answer": "打門上的電話，請師傅過去檢查",
+        "explanation": "公告上寫：「請打門上的電話，師傅會過去檢查。」",
+        "evidence": [
+          "打門上的電話"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG3H11:response",
+      "question": "師傅在過年時趕來把車修好了。哪一句話最合適？",
+      "options": [
+        "師傅，過年還麻煩您，真的很感謝！",
+        "怎麼修這麼久？",
+        "下次不要休息這麼多天。"
+      ],
+      "answer": "師傅，過年還麻煩您，真的很感謝！",
+      "explanation": "別人在休息時間幫忙，要先表達感謝。"
+    },
+    "write": {
+      "prompt": "過年時你們家會做哪些事？用「除了……，還……」寫一句。",
+      "model": "過年時，我們除了吃年夜飯，還會放煙火。",
+      "pattern_id": "sentence_pattern:115AG3H11:c709cefa"
+    }
+  }
 }

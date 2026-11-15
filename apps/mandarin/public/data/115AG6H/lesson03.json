@@ -2570,9 +2570,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補：應用任務設計中"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2640,5 +2639,71 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG6H03",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "班級公約",
+    "situation": "開學第一週，全班一起訂了班級公約，貼在教室前面。",
+    "title": "六年一班班級公約",
+    "passage": "一、別人說話時專心聽，不插嘴。\n二、做錯事先反省自己，把它當作警惕。\n三、分辨什麼話該說、什麼話不該說，不取笑別人。\n四、舊的好習慣要保持，新的好習慣要學習。",
+    "signature": "全班同學",
+    "lesson_words": [
+      "警惕",
+      "分辨",
+      "舊"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG6H03:q1",
+        "question": "公約第二條說，做錯事的時候要先做什麼？",
+        "options": [
+          "先反省自己",
+          "先找別人的錯",
+          "先告訴老師"
+        ],
+        "answer": "先反省自己",
+        "explanation": "公約上寫：「做錯事先反省自己，把它當作警惕。」",
+        "evidence": [
+          "先反省自己"
+        ]
+      },
+      {
+        "id": "application:115AG6H03:q2",
+        "question": "哪一件事不符合班級公約？",
+        "options": [
+          "取笑同學說錯話",
+          "專心聽別人說話",
+          "保持好習慣"
+        ],
+        "answer": "取笑同學說錯話",
+        "explanation": "公約第三條寫：「不取笑別人。」",
+        "evidence": [
+          "不取笑別人"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG6H03:response",
+      "question": "同學發表時說錯了，有人在笑。你可以說哪一句？",
+      "options": [
+        "我們先聽他說完，公約說不取笑別人。",
+        "他真的說得很好笑。",
+        "不關我的事。"
+      ],
+      "answer": "我們先聽他說完，公約說不取笑別人。",
+      "explanation": "這一句用公約提醒大家，語氣平和，也保護了同學。",
+      "evidence": [
+        "不取笑別人"
+      ]
+    },
+    "write": {
+      "prompt": "你想遵守哪一個好習慣？用「不論……都……」寫一句。",
+      "model": "不論功課多不多，我都會先寫完再玩。",
+      "pattern_id": "sentence_pattern:115AG6H03:pattern:3"
+    }
+  }
 }

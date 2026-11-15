@@ -2528,9 +2528,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "應用任務來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2866,5 +2865,63 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG4K01",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "公告",
+    "situation": "游泳池的入口貼著一張公告。",
+    "title": "游泳池使用須知",
+    "passage": "下水前請先沖水、做暖身操。\n池邊地板很滑，請緩緩走，不要奔跑。\n一般泳道給大家練習游泳，最旁邊的慢速道留給初學的人。\n身體不舒服請馬上上岸，告訴救生員。",
+    "signature": "社區游泳池",
+    "lesson_words": [
+      "緩緩",
+      "一般",
+      "游泳"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG4K01:q1",
+        "question": "在池邊走路要注意什麼？",
+        "options": [
+          "要緩緩走，不要奔跑",
+          "要走得越快越好",
+          "要閉著眼睛走"
+        ],
+        "answer": "要緩緩走，不要奔跑",
+        "explanation": "公告上寫：「池邊地板很滑，請緩緩走，不要奔跑。」",
+        "evidence": [
+          "緩緩走，不要奔跑"
+        ]
+      },
+      {
+        "id": "application:115AG4K01:q2",
+        "question": "剛開始學游泳的人，應該用哪一條水道？",
+        "options": [
+          "最旁邊的慢速道",
+          "中間的一般泳道",
+          "哪一條都可以"
+        ],
+        "answer": "最旁邊的慢速道",
+        "explanation": "公告上寫：「最旁邊的慢速道留給初學的人。」",
+        "evidence": [
+          "最旁邊的慢速道"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG4K01:response",
+      "question": "你游到一半覺得頭暈。上岸後應該對救生員說哪一句？",
+      "options": [
+        "叔叔，我覺得頭暈，想休息一下。",
+        "沒事，我等一下再游。",
+        "水太冷了，都是你們的錯。"
+      ],
+      "answer": "叔叔，我覺得頭暈，想休息一下。",
+      "explanation": "公告上說身體不舒服要馬上上岸、告訴救生員。把感覺說清楚，別人才能幫忙。"
+    }
+  }
 }

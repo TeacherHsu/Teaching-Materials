@@ -2732,9 +2732,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補：應用任務設計中"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2802,5 +2801,71 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG6H05",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "認養公告",
+    "situation": "學校要在校園種樹，總務處貼出一張公告。",
+    "title": "班級樹木認養活動",
+    "passage": "學校將在操場邊栽種十二棵小樹，每班認養一棵。\n小樹長大後能為大家遮陽，也讓校園呈現不同的風景。\n認養的班級每週要澆水兩次，並記錄樹的高度。\n請各班在星期三前把認養單交到總務處。",
+    "signature": "總務處",
+    "lesson_words": [
+      "栽種",
+      "遮陽",
+      "呈現"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG6H05:q1",
+        "question": "認養小樹的班級要做哪些事？",
+        "options": [
+          "每週澆水兩次，並記錄高度",
+          "每天幫小樹修剪",
+          "把小樹搬回教室"
+        ],
+        "answer": "每週澆水兩次，並記錄高度",
+        "explanation": "公告上寫：「認養的班級每週要澆水兩次，並記錄樹的高度。」",
+        "evidence": [
+          "每週要澆水兩次，並記錄樹的高度"
+        ]
+      },
+      {
+        "id": "application:115AG6H05:q2",
+        "question": "認養單要在什麼時候以前交？",
+        "options": [
+          "星期三前",
+          "星期五前",
+          "下個月"
+        ],
+        "answer": "星期三前",
+        "explanation": "公告上寫：「請各班在星期三前把認養單交到總務處。」",
+        "evidence": [
+          "星期三前"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG6H05:response",
+      "question": "班會上討論要不要認養。哪一句發言最有說服力？",
+      "options": [
+        "我贊成認養，因為小樹長大能遮陽，我們也可以輪流澆水。",
+        "隨便，我沒意見。",
+        "澆水很麻煩，不要啦。"
+      ],
+      "answer": "我贊成認養，因為小樹長大能遮陽，我們也可以輪流澆水。",
+      "explanation": "這一句有表明立場、說出理由，還提出做法。",
+      "evidence": [
+        "能為大家遮陽"
+      ]
+    },
+    "write": {
+      "prompt": "照顧植物或小動物有什麼辛苦和收穫？用「雖然……可是……」寫一句。",
+      "model": "雖然每天澆水有點累，可是看到小樹長高會很開心。",
+      "pattern_id": "sentence_pattern:115AG6H05:word:1"
+    }
+  }
 }

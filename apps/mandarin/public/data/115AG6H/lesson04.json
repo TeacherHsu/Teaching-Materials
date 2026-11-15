@@ -2548,9 +2548,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補：應用任務設計中"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2662,5 +2661,68 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG6H04",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "展覽說明",
+    "situation": "校外教學到科學館，展區入口有一張說明牌。",
+    "title": "向大自然學習特展",
+    "passage": "本展區介紹仿生學：人類藉著觀察動植物，設計出新的東西。\n例如魔鬼氈的靈感來自會黏在衣服上的植物種子。\n展品結構精細，請勿觸碰。\n體驗區在出口旁，每次開放十人，請排隊等候。",
+    "signature": "市立科學館",
+    "lesson_words": [
+      "仿生學",
+      "藉",
+      "結構"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG6H04:q1",
+        "question": "魔鬼氈的靈感是從哪裡來的？",
+        "options": [
+          "會黏在衣服上的植物種子",
+          "鯊魚的皮膚",
+          "蚊子的嘴巴"
+        ],
+        "answer": "會黏在衣服上的植物種子",
+        "explanation": "說明牌上寫：「魔鬼氈的靈感來自會黏在衣服上的植物種子。」",
+        "evidence": [
+          "會黏在衣服上的植物種子"
+        ]
+      },
+      {
+        "id": "application:115AG6H04:q2",
+        "question": "想動手玩，要去哪裡？",
+        "options": [
+          "出口旁的體驗區",
+          "入口的展品區",
+          "任何一個展區"
+        ],
+        "answer": "出口旁的體驗區",
+        "explanation": "說明牌上寫：「體驗區在出口旁，每次開放十人，請排隊等候。」",
+        "evidence": [
+          "出口旁"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG6H04:response",
+      "question": "體驗區已經有十個人了。你應該怎麼說、怎麼做？",
+      "options": [
+        "「我排在這裡等下一批。」然後安靜排隊。",
+        "「讓我先進去一下就好。」然後擠進去。",
+        "「不玩了，真無聊。」然後離開。"
+      ],
+      "answer": "「我排在這裡等下一批。」然後安靜排隊。",
+      "explanation": "說明牌上說每次開放十人、要排隊。照規定等候，大家都玩得到。"
+    },
+    "write": {
+      "prompt": "你知道哪一樣東西是學動植物做出來的？用「因為……所以……」寫一句。",
+      "model": "因為鳥的翅膀能飛，所以人類設計出飛機。",
+      "pattern_id": "sentence_pattern:115AG6H04:word:1"
+    }
+  }
 }

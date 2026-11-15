@@ -1672,8 +1672,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "note": "教材待補：應用任務設計中"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -1716,5 +1716,64 @@
       "activity": "review"
     }
   },
-  "genre": "narrative"
+  "genre": "narrative",
+  "application": {
+    "id": "application:115AG3H04",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "告示",
+    "situation": "學校食堂的牆上貼著一張告示。",
+    "title": "食堂安全提醒",
+    "passage": "鍋子裡的湯剛沸騰，非常燙，請不要靠近。\n盛湯請排隊，由師傅幫大家裝。\n打翻東西時不要自己解決，請馬上告訴老師。",
+    "signature": "學校食堂",
+    "lesson_words": [
+      "鍋子",
+      "沸騰",
+      "師傅",
+      "解決"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG3H04:q1",
+        "question": "為什麼不要靠近鍋子？",
+        "options": [
+          "因為湯剛沸騰，非常燙",
+          "因為鍋子很重",
+          "因為湯還沒煮好"
+        ],
+        "answer": "因為湯剛沸騰，非常燙",
+        "explanation": "告示上寫：「鍋子裡的湯剛沸騰，非常燙，請不要靠近。」",
+        "evidence": [
+          "湯剛沸騰，非常燙"
+        ]
+      },
+      {
+        "id": "application:115AG3H04:q2",
+        "question": "想喝湯的時候，應該怎麼做？",
+        "options": [
+          "排隊，請師傅幫忙裝",
+          "自己拿湯匙去舀",
+          "請同學幫忙端"
+        ],
+        "answer": "排隊，請師傅幫忙裝",
+        "explanation": "告示上寫：「盛湯請排隊，由師傅幫大家裝。」",
+        "evidence": [
+          "盛湯請排隊，由師傅幫大家裝"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG3H04:response",
+      "question": "你不小心把湯打翻了。應該對老師說哪一句？",
+      "options": [
+        "老師，我把湯打翻了，請您幫忙。",
+        "不是我弄的。",
+        "沒關係，等一下就乾了。"
+      ],
+      "answer": "老師，我把湯打翻了，請您幫忙。",
+      "explanation": "告示上說打翻東西要馬上告訴老師。把事情說清楚，老師才能幫忙。"
+    }
+  }
 }

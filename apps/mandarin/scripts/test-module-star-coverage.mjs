@@ -7,6 +7,7 @@
 //   - SentenceOrdering（讀懂課文的段落排序）：用課次資料算出的正解直接排。
 // 用法：node scripts/test-module-star-coverage.mjs
 import { buildPhraseBuilderActivity } from '../src/activities/phraseBuilder.js';
+import { buildApplicationActivity } from '../src/activities/application.js';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { installFakeDom, FakeElement } from './fake-dom.mjs';
@@ -57,6 +58,7 @@ const BUILDERS = {
   zhuyin_typing: buildZhuyinTypingActivity,
   word_reading: buildWordReadingActivity,
   phrase_builder: buildPhraseBuilderActivity,
+  application: buildApplicationActivity,
   polysemy: buildPolysemyActivity,
   polyphones: buildPolyphonesActivity,
   lookalikes: buildLookalikesActivity,
@@ -65,7 +67,7 @@ const BUILDERS = {
 };
 
 // ---- 通用互動驅動器：純看 DOM 狀態決定下一步，不需要事先知道任何一題的正解 ----
-const ADVANCE_RE = /^(開始練習|念對了|下一個|再念一組|下一步|換我試試看|用這個方法|下一題|下一組|加練下一組|看結果|回課程首頁|繼續|再來一組|完成|我看懂了|看完地圖|我知道了)|^我記住了$/;
+const ADVANCE_RE = /^(我讀完了|開始練習|念對了|下一個|再念一組|下一步|換我試試看|用這個方法|下一題|下一組|加練下一組|看結果|回課程首頁|繼續|再來一組|完成|我看懂了|看完地圖|我知道了)|^我記住了$/;
 
 /** fake-dom 的 h() 對 `disabled: 'disabled'` 這種初始屬性只會寫進 attrs，不會同步
  * FakeElement.disabled 這個屬性（那個屬性只有元件之後手動 `el.disabled = true` 才會更新）。

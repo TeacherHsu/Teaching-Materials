@@ -2686,5 +2686,68 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG2H04",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "告示牌",
+    "situation": "公園的池塘邊立著一塊告示牌。",
+    "title": "池塘邊請注意",
+    "passage": "池塘裡住著青蛙和小魚。\n水很深，請別靠近水邊。\n請不要抓青蛙，也不要丟東西到水裡。\n如果想看青蛙，可以站在木橋上看。",
+    "signature": "公園管理處",
+    "lesson_words": [
+      "青蛙",
+      "別",
+      "靠近",
+      "抓",
+      "如果"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG2H04:q1",
+        "question": "為什麼不要靠近水邊？",
+        "options": [
+          "因為水很深",
+          "因為水很臭",
+          "因為水裡有妖怪"
+        ],
+        "answer": "因為水很深",
+        "explanation": "告示牌上寫：「水很深，請別靠近水邊。」",
+        "evidence": [
+          "水很深"
+        ]
+      },
+      {
+        "id": "application:115AG2H04:q2",
+        "question": "想看青蛙的人可以站在哪裡？",
+        "options": [
+          "木橋上",
+          "水邊的石頭上",
+          "池塘裡"
+        ],
+        "answer": "木橋上",
+        "explanation": "告示牌上寫：「如果想看青蛙，可以站在木橋上看。」",
+        "evidence": [
+          "木橋上"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG2H04:response",
+      "question": "弟弟想到水邊抓青蛙。哪一句提醒最合適？",
+      "options": [
+        "弟弟，那裡水很深，我們去木橋上看青蛙。",
+        "你去啊，我不管你。",
+        "青蛙很可怕，不要看。"
+      ],
+      "answer": "弟弟，那裡水很深，我們去木橋上看青蛙。",
+      "explanation": "這一句說出危險的原因，還告訴弟弟可以去哪裡看。",
+      "evidence": [
+        "水很深"
+      ]
+    }
+  }
 }

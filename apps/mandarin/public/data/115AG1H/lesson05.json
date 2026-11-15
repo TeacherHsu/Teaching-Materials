@@ -1497,9 +1497,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2217,5 +2216,49 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG1H05",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "看圖選一句話",
+    "variant": "picture",
+    "items": [
+      {
+        "id": "application:115AG1H05:p1",
+        "word": "滑梯",
+        "image": "/assets/115AG1H/lesson05/vocabulary/l05-02.webp",
+        "options": [
+          "弟弟開心的溜滑梯。",
+          "弟弟開心的盪秋千。",
+          "弟弟開心的騎車。"
+        ],
+        "answer": "弟弟開心的溜滑梯。"
+      },
+      {
+        "id": "application:115AG1H05:p2",
+        "word": "泡泡池",
+        "image": "/assets/115AG1H/lesson05/vocabulary/l05-04.webp",
+        "options": [
+          "弟弟在泡泡池裡玩。",
+          "弟弟在沙坑裡玩。",
+          "弟弟在草地上玩。"
+        ],
+        "answer": "弟弟在泡泡池裡玩。"
+      },
+      {
+        "id": "application:115AG1H05:p3",
+        "word": "爬",
+        "image": "/assets/115AG1H/lesson05/vocabulary/l05-09.webp",
+        "options": [
+          "小猴子爬到樹上。",
+          "小猴子在地上睡覺。",
+          "小猴子在河邊喝水。"
+        ],
+        "answer": "小猴子爬到樹上。"
+      }
+    ]
+  }
 }

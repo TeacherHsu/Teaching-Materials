@@ -3208,7 +3208,9 @@
   "application": {
     "id": "application:115AG4K02",
     "status": "approved",
-    "source": "original（Claude 草擬生活任務，CF 2026-11-15 核准；短文為自編，非課文）",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
     "kind": "便條",
     "situation": "放學回到家，你看到餐桌上有一張媽媽留的便條。",
     "title": "給小安",
@@ -3229,7 +3231,11 @@
           "姐姐寫給小安"
         ],
         "answer": "媽媽寫給小安",
-        "explanation": "便條開頭寫「給小安」，最後署名是「媽媽」。"
+        "explanation": "便條開頭寫「給小安」，最後署名是「媽媽」。",
+        "evidence": [
+          "給小安",
+          "媽媽"
+        ]
       },
       {
         "id": "application:115AG4K02:q2",
@@ -3240,10 +3246,14 @@
           "先去市場買菜"
         ],
         "answer": "先寫功課",
-        "explanation": "便條上寫：「吃完先寫功課，寫完才可以去公園跳繩。」"
+        "explanation": "便條上寫：「吃完先寫功課，寫完才可以去公園跳繩。」",
+        "evidence": [
+          "先寫功課"
+        ]
       }
     ],
     "response": {
+      "id": "application:115AG4K02:response",
       "question": "媽媽回來後問：「紅豆湯好喝嗎？」哪一句回答最合適？",
       "options": [
         "很好喝，我有留一碗給姐姐。",
@@ -3251,14 +3261,15 @@
         "紅豆湯在桌上。"
       ],
       "answer": "很好喝，我有留一碗給姐姐。",
-      "explanation": "這一句回答了媽媽的問題，也讓媽媽知道你有照便條上說的做。"
+      "explanation": "這一句回答了媽媽的問題，也讓媽媽知道你有照便條上說的做。",
+      "evidence": [
+        "留一碗給姐姐"
+      ]
     },
     "write": {
       "prompt": "放學回家後，你會做哪些事？用「有時……有時……有時……」寫一句。",
       "model": "放學後，我有時寫功課，有時看書，有時去公園玩。",
       "pattern_id": "sentence:02:04"
-    },
-    "approved_by": "CF",
-    "approved_on": "2026-11-15"
+    }
   }
 }

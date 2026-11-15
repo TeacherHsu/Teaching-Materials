@@ -2576,9 +2576,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補：應用任務設計中"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -3256,5 +3255,69 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG6H06",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "競選公告",
+    "situation": "學校要選自治市長，學務處貼出一張公告。",
+    "title": "自治市長選舉公告",
+    "passage": "想競選的同學，請在十月五日前交報名表。\n政見發表每人三分鐘，可以用幽默的口吻介紹自己。\n請說明自己能為同學做什麼，不可以嘲諷或貶低其他候選人。\n投票日是十月二十日早自修。",
+    "signature": "學務處",
+    "lesson_words": [
+      "競選",
+      "口吻",
+      "嘲諷",
+      "貶低"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG6H06:q1",
+        "question": "政見發表的時候，哪一件事不可以做？",
+        "options": [
+          "嘲諷或貶低其他候選人",
+          "用幽默的方式介紹自己",
+          "說明能為同學做什麼"
+        ],
+        "answer": "嘲諷或貶低其他候選人",
+        "explanation": "公告上寫：「不可以嘲諷或貶低其他候選人。」",
+        "evidence": [
+          "嘲諷或貶低其他候選人"
+        ]
+      },
+      {
+        "id": "application:115AG6H06:q2",
+        "question": "投票是哪一天？",
+        "options": [
+          "十月二十日",
+          "十月五日",
+          "十月三日"
+        ],
+        "answer": "十月二十日",
+        "explanation": "公告上寫：「投票日是十月二十日早自修。」十月五日是報名截止日。",
+        "evidence": [
+          "十月二十日"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG6H06:response",
+      "question": "你要上臺發表政見。哪一句開場最合適？",
+      "options": [
+        "大家好，我跑得不快，但是幫大家服務的腳步絕對不慢。",
+        "其他候選人都沒有我厲害。",
+        "我也不知道我為什麼要選。"
+      ],
+      "answer": "大家好，我跑得不快，但是幫大家服務的腳步絕對不慢。",
+      "explanation": "這一句用幽默介紹自己，沒有貶低別人，也說出想為大家服務。"
+    },
+    "write": {
+      "prompt": "你覺得幽默是什麼？用「是……，更是……」寫一句。",
+      "model": "幽默是一種說話的方式，更是一種體貼別人的心意。",
+      "pattern_id": "sentence_pattern:115AG6H06:pasted:05"
+    }
+  }
 }

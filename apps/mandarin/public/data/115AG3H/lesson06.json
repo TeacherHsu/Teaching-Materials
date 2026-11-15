@@ -1839,8 +1839,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "note": "教材待補：應用任務設計中"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2122,5 +2122,73 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG3H06",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "使用說明",
+    "situation": "教室後面的削鉛筆機旁邊貼著一張使用說明。",
+    "title": "削鉛筆機怎麼用",
+    "passage": "把鉛筆放入洞口，握住筆桿，再轉動把手。\n筆芯削尖就可以停，削太久容易斷裂。\n這臺機器只能削鉛筆，蠟筆和彩色筆請不要放進去。",
+    "signature": "三年二班",
+    "lesson_words": [
+      "放入",
+      "筆桿",
+      "筆芯",
+      "斷裂",
+      "機器"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG3H06:q1",
+        "question": "用削鉛筆機的第一步是什麼？",
+        "options": [
+          "把鉛筆放入洞口",
+          "轉動把手",
+          "把筆芯拔出來"
+        ],
+        "answer": "把鉛筆放入洞口",
+        "explanation": "說明上寫：「把鉛筆放入洞口，握住筆桿，再轉動把手。」",
+        "evidence": [
+          "把鉛筆放入洞口"
+        ]
+      },
+      {
+        "id": "application:115AG3H06:q2",
+        "question": "哪一種筆可以放進這臺機器？",
+        "options": [
+          "鉛筆",
+          "蠟筆",
+          "彩色筆"
+        ],
+        "answer": "鉛筆",
+        "explanation": "說明上寫：「這臺機器只能削鉛筆，蠟筆和彩色筆請不要放進去。」",
+        "evidence": [
+          "鉛筆"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG3H06:response",
+      "question": "同學正要把蠟筆放進削鉛筆機。哪一句提醒最合適？",
+      "options": [
+        "等一下，這臺只能削鉛筆，蠟筆不能放。",
+        "你看不懂字嗎？",
+        "壞掉你要賠喔！"
+      ],
+      "answer": "等一下，這臺只能削鉛筆，蠟筆不能放。",
+      "explanation": "這一句說出規定和原因，不會讓同學難過。",
+      "evidence": [
+        "只能削鉛筆"
+      ]
+    },
+    "write": {
+      "prompt": "教同學用一樣東西。用「只要……就……」寫一句。",
+      "model": "只要按下開關，電風扇就會轉動。",
+      "pattern_id": "sentence_pattern:115AG3H06:05"
+    }
+  }
 }

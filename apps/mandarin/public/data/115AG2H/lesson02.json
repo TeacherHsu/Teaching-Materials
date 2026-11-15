@@ -2458,5 +2458,64 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG2H02",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "歡迎卡",
+    "situation": "班上來了一位新同學，老師請大家讀這張歡迎卡。",
+    "title": "歡迎新同學",
+    "passage": "今天有一位轉學生來到我們班，他叫小宇。\n小宇和大家還不熟，可能會有一點緊張。\n下課的時候，請帶他去看看廁所和操場在哪裡。\n希望大家很快變成好朋友。",
+    "signature": "王老師",
+    "lesson_words": [
+      "轉學生",
+      "不熟",
+      "緊張",
+      "希望"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG2H02:q1",
+        "question": "小宇是誰？",
+        "options": [
+          "新來的轉學生",
+          "新來的老師",
+          "隔壁班的同學"
+        ],
+        "answer": "新來的轉學生",
+        "explanation": "卡片上寫：「今天有一位轉學生來到我們班，他叫小宇。」",
+        "evidence": [
+          "轉學生"
+        ]
+      },
+      {
+        "id": "application:115AG2H02:q2",
+        "question": "老師請大家下課時做什麼？",
+        "options": [
+          "帶小宇去看廁所和操場",
+          "幫小宇寫功課",
+          "和小宇比賽跑步"
+        ],
+        "answer": "帶小宇去看廁所和操場",
+        "explanation": "卡片上寫：「請帶他去看看廁所和操場在哪裡。」",
+        "evidence": [
+          "看廁所和操場"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG2H02:response",
+      "question": "下課了，你想和小宇說話。哪一句最合適？",
+      "options": [
+        "你好，我叫小安，我帶你去操場看看。",
+        "你為什麼要轉來我們班？",
+        "你坐到我的位子了。"
+      ],
+      "answer": "你好，我叫小安，我帶你去操場看看。",
+      "explanation": "先說自己的名字，再邀請他，新同學就不會那麼緊張。"
+    }
+  }
 }

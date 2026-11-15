@@ -2929,9 +2929,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補：應用任務設計中"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -3058,5 +3057,68 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG6H08",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "活動報名表說明",
+    "situation": "學校要辦才藝表演，音樂老師發下一張報名說明。",
+    "title": "午間街頭藝人秀",
+    "passage": "每週三中午在穿堂演出，歡迎會吹喇叭、拉弦樂或唱歌的同學報名。\n每組表演五分鐘，觀眾請靠攏坐好，不要擋住走道。\n即使表演時出了錯，也請把它完成，臺下會給你掌聲。\n報名表請交給音樂老師。",
+    "signature": "音樂老師",
+    "lesson_words": [
+      "喇叭",
+      "弦樂",
+      "靠攏"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG6H08:q1",
+        "question": "表演在什麼時候、什麼地方？",
+        "options": [
+          "每週三中午在穿堂",
+          "每週五下午在禮堂",
+          "每天早上在操場"
+        ],
+        "answer": "每週三中午在穿堂",
+        "explanation": "說明上寫：「每週三中午在穿堂演出。」",
+        "evidence": [
+          "每週三中午在穿堂"
+        ]
+      },
+      {
+        "id": "application:115AG6H08:q2",
+        "question": "表演時出錯了應該怎麼辦？",
+        "options": [
+          "還是把它完成",
+          "馬上下臺",
+          "重新開始，直到完美"
+        ],
+        "answer": "還是把它完成",
+        "explanation": "說明上寫：「即使表演時出了錯，也請把它完成，臺下會給你掌聲。」",
+        "evidence": [
+          "把它完成"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG6H08:response",
+      "question": "同學表演時忘詞，下臺後很難過。哪一句話最合適？",
+      "options": [
+        "你把整首歌唱完了，真的很有勇氣！",
+        "你怎麼會忘詞？",
+        "還好不是我上臺。"
+      ],
+      "answer": "你把整首歌唱完了，真的很有勇氣！",
+      "explanation": "這一句肯定他做到的事，讓他知道努力有被看見。"
+    },
+    "write": {
+      "prompt": "上臺表演或報告時，你怎麼鼓勵自己？用「即使……，也……」寫一句。",
+      "model": "即使心裡很緊張，我也要把話說完。",
+      "pattern_id": "sentence_pattern:115AG6H08:word:1"
+    }
+  }
 }

@@ -2932,9 +2932,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "應用任務來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -3362,5 +3361,71 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG4K03",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "海報",
+    "situation": "走廊的布告欄上貼著一張籃球隊的海報。",
+    "title": "籃球隊招生",
+    "passage": "你喜歡打籃球嗎？籃球隊誠心邀約四年級同學加入。\n每週二、四放學後在體育館練習，由陳教練指揮。\n不用怕自己不會，熟能生巧，只要肯練習就會進步。\n報名請在星期五前找體育老師。",
+    "signature": "學校籃球隊",
+    "lesson_words": [
+      "邀約",
+      "指揮",
+      "熟能生巧"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG4K03:q1",
+        "question": "籃球隊什麼時候練習？",
+        "options": [
+          "每週二、四放學後",
+          "每天早上",
+          "星期五下午"
+        ],
+        "answer": "每週二、四放學後",
+        "explanation": "海報上寫：「每週二、四放學後在體育館練習。」",
+        "evidence": [
+          "每週二、四放學後"
+        ]
+      },
+      {
+        "id": "application:115AG4K03:q2",
+        "question": "想報名的人要怎麼做？",
+        "options": [
+          "星期五前找體育老師",
+          "直接去體育館",
+          "打電話給陳教練"
+        ],
+        "answer": "星期五前找體育老師",
+        "explanation": "海報上寫：「報名請在星期五前找體育老師。」",
+        "evidence": [
+          "星期五前找體育老師"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG4K03:response",
+      "question": "你想報名，去找體育老師。哪一句最合適？",
+      "options": [
+        "老師好，我想報名籃球隊，請問要填什麼資料？",
+        "老師，我要打球。",
+        "聽說籃球隊很好玩。"
+      ],
+      "answer": "老師好，我想報名籃球隊，請問要填什麼資料？",
+      "explanation": "這一句有問好、說出目的，也問清楚下一步要做什麼。",
+      "evidence": [
+        "報名請在星期五前找體育老師"
+      ]
+    },
+    "write": {
+      "prompt": "你想學會什麼？用「只要……就……」寫一句鼓勵自己。",
+      "model": "只要每天練習運球，就能越打越好。",
+      "pattern_id": "sentence:03:04"
+    }
+  }
 }

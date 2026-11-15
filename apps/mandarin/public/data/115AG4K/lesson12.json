@@ -3031,9 +3031,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "應用任務來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -3681,5 +3680,73 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG4K12",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "取件單",
+    "situation": "你幫爸爸把皮鞋送去修理，老闆給你一張取件單。",
+    "title": "修鞋取件單",
+    "passage": "黑色皮鞋一雙，更換皮革鞋底，費用三百元。\n師傅會耐心修理，星期四下午三點以後可以來拿。\n取件時請帶這張單子。\n如果想當天取件，費用是雙倍。",
+    "signature": "老街修鞋店",
+    "lesson_words": [
+      "皮革",
+      "耐心",
+      "雙倍"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG4K12:q1",
+        "question": "什麼時候可以去拿鞋子？",
+        "options": [
+          "星期四下午三點以後",
+          "星期四早上",
+          "今天晚上"
+        ],
+        "answer": "星期四下午三點以後",
+        "explanation": "取件單上寫：「星期四下午三點以後可以來拿。」",
+        "evidence": [
+          "星期四下午三點以後"
+        ]
+      },
+      {
+        "id": "application:115AG4K12:q2",
+        "question": "去拿鞋子的時候要帶什麼？",
+        "options": [
+          "這張取件單",
+          "另一雙鞋子",
+          "爸爸的名片"
+        ],
+        "answer": "這張取件單",
+        "explanation": "取件單上寫：「取件時請帶這張單子。」",
+        "evidence": [
+          "取件單"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG4K12:response",
+      "question": "回到家，爸爸問：「鞋子什麼時候好？」哪一句回答最完整？",
+      "options": [
+        "星期四下午三點以後可以拿，要帶這張單子，費用是三百元。",
+        "老闆說過幾天。",
+        "我忘了，你自己去問。"
+      ],
+      "answer": "星期四下午三點以後可以拿，要帶這張單子，費用是三百元。",
+      "explanation": "這一句把時間、要帶的東西和費用都說清楚了。",
+      "evidence": [
+        "星期四下午三點以後",
+        "帶這張單子",
+        "三百元"
+      ]
+    },
+    "write": {
+      "prompt": "東西壞了，你們家會怎麼處理？用「由於……因此……」寫一句。",
+      "model": "由於雨傘的骨架斷了，因此爸爸拿去修理。",
+      "pattern_id": "sentence:12:04"
+    }
+  }
 }

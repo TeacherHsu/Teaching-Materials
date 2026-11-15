@@ -2801,9 +2801,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "應用任務來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -3166,5 +3165,72 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG4K06",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "活動通知",
+    "situation": "老師發下一張登山活動的通知單。",
+    "title": "親子登山活動",
+    "passage": "下個月第一個星期日，我們要去攀登學校後面的小山。\n山上的天氣千變萬化，請帶外套和雨衣。\n平常少運動的同學，這個月請先多走路當作訓練。\n走不動的時候不要不知所措，告訴老師，我們會陪你慢慢走。",
+    "signature": "四年三班導師",
+    "lesson_words": [
+      "攀登",
+      "千變萬化",
+      "訓練",
+      "不知所措"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG4K06:q1",
+        "question": "為什麼要帶外套和雨衣？",
+        "options": [
+          "因為山上的天氣千變萬化",
+          "因為山上很熱",
+          "因為要在山上過夜"
+        ],
+        "answer": "因為山上的天氣千變萬化",
+        "explanation": "通知上寫：「山上的天氣千變萬化，請帶外套和雨衣。」",
+        "evidence": [
+          "山上的天氣千變萬化"
+        ]
+      },
+      {
+        "id": "application:115AG4K06:q2",
+        "question": "平常少運動的同學，這個月要先做什麼？",
+        "options": [
+          "多走路當作訓練",
+          "先買新鞋子",
+          "先去爬一次高山"
+        ],
+        "answer": "多走路當作訓練",
+        "explanation": "通知上寫：「這個月請先多走路當作訓練。」",
+        "evidence": [
+          "多走路當作訓練"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG4K06:response",
+      "question": "爬到一半你走不動了。應該對老師說哪一句？",
+      "options": [
+        "老師，我走不動了，可以休息一下再走嗎？",
+        "我不要爬了，我要回家。",
+        "都是同學走太快。"
+      ],
+      "answer": "老師，我走不動了，可以休息一下再走嗎？",
+      "explanation": "通知上說走不動要告訴老師。說出自己的狀況和需要，老師才知道怎麼幫你。",
+      "evidence": [
+        "告訴老師"
+      ]
+    },
+    "write": {
+      "prompt": "介紹一位你很佩服的人。用「是……也是……」寫一句。",
+      "model": "媽媽是我的家人，也是我最好的朋友。",
+      "pattern_id": "sentence:06:03"
+    }
+  }
 }

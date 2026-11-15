@@ -2864,9 +2864,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "應用任務來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -3289,5 +3288,68 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG4K08",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "防災須知",
+    "situation": "教室的門邊貼著一張地震時該怎麼做的須知。",
+    "title": "地震來了怎麼辦",
+    "passage": "地震時不要急著往外跑，先躲到桌子下面，保護頭部。\n搖晃停了以後，聽老師的指揮，從樓梯走到操場。\n住在大樓的人不可以搭電梯。\n平時把通訊錄和手電筒放在容易拿到的地方。",
+    "signature": "學校防災小組",
+    "lesson_words": [
+      "地震",
+      "大樓",
+      "通訊"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG4K08:q1",
+        "question": "地震正在搖的時候，第一件事要做什麼？",
+        "options": [
+          "躲到桌子下面，保護頭部",
+          "馬上跑到操場",
+          "去搭電梯"
+        ],
+        "answer": "躲到桌子下面，保護頭部",
+        "explanation": "須知上寫：「先躲到桌子下面，保護頭部。」",
+        "evidence": [
+          "躲到桌子下面，保護頭部"
+        ]
+      },
+      {
+        "id": "application:115AG4K08:q2",
+        "question": "搖晃停了以後，要怎麼到操場？",
+        "options": [
+          "聽老師的指揮，從樓梯走",
+          "自己先跑下去",
+          "搭電梯下樓"
+        ],
+        "answer": "聽老師的指揮，從樓梯走",
+        "explanation": "須知上寫：「聽老師的指揮，從樓梯走到操場。」",
+        "evidence": [
+          "聽老師的指揮，從樓梯走"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG4K08:response",
+      "question": "地震後，同學嚇得一直哭。哪一句話最合適？",
+      "options": [
+        "不要怕，我們一起跟著老師走。",
+        "有什麼好哭的？",
+        "你再哭我就不理你了。"
+      ],
+      "answer": "不要怕，我們一起跟著老師走。",
+      "explanation": "這一句安慰同學，也告訴他接下來該怎麼做。"
+    },
+    "write": {
+      "prompt": "遇到危險的時候該怎麼做？用「假如……」寫一句。",
+      "model": "假如聞到燒焦的味道，要趕快告訴大人。",
+      "pattern_id": "sentence:08:04"
+    }
+  }
 }

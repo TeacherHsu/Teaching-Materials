@@ -2716,5 +2716,65 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG2H05",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "安全須知",
+    "situation": "全家到海邊玩，沙灘的入口有一張安全須知。",
+    "title": "海邊安全須知",
+    "passage": "到海邊玩要注意安全。\n玩水時不要走太遠，要讓大人看得到你。\n沙灘上有小螃蟹，請不要把牠們帶回家。\n離開前，請把自己的垃圾帶走。",
+    "signature": "海邊服務站",
+    "lesson_words": [
+      "海邊",
+      "注意",
+      "遠",
+      "沙灘",
+      "螃蟹"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG2H05:q1",
+        "question": "玩水的時候要注意什麼？",
+        "options": [
+          "不要走太遠，要讓大人看得到",
+          "要走到最遠的地方",
+          "要自己一個人去"
+        ],
+        "answer": "不要走太遠，要讓大人看得到",
+        "explanation": "須知上寫：「玩水時不要走太遠，要讓大人看得到你。」",
+        "evidence": [
+          "不要走太遠，要讓大人看得到"
+        ]
+      },
+      {
+        "id": "application:115AG2H05:q2",
+        "question": "看到小螃蟹應該怎麼做？",
+        "options": [
+          "不要把牠們帶回家",
+          "抓回家養",
+          "把牠們埋起來"
+        ],
+        "answer": "不要把牠們帶回家",
+        "explanation": "須知上寫：「沙灘上有小螃蟹，請不要把牠們帶回家。」",
+        "evidence": [
+          "不要把牠們帶回家"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG2H05:response",
+      "question": "你想去遠一點的地方玩水。應該先對爸爸說哪一句？",
+      "options": [
+        "爸爸，我可以去那邊玩嗎？你可以陪我嗎？",
+        "我自己去就好，不用管我。",
+        "我要去了，再見。"
+      ],
+      "answer": "爸爸，我可以去那邊玩嗎？你可以陪我嗎？",
+      "explanation": "去之前先問大人，請大人陪，才安全。"
+    }
+  }
 }

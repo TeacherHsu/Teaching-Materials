@@ -1465,9 +1465,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -2189,5 +2188,49 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG1H06",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "看圖選一句話",
+    "variant": "picture",
+    "items": [
+      {
+        "id": "application:115AG1H06:p1",
+        "word": "秋千",
+        "image": "/assets/115AG1H/lesson06/vocabulary/l06-01.webp",
+        "options": [
+          "妹妹在盪秋千。",
+          "妹妹在溜滑梯。",
+          "妹妹在跳繩。"
+        ],
+        "answer": "妹妹在盪秋千。"
+      },
+      {
+        "id": "application:115AG1H06:p2",
+        "word": "花田",
+        "image": "/assets/115AG1H/lesson06/vocabulary/l06-09.webp",
+        "options": [
+          "花田裡開滿了花。",
+          "田裡種滿了稻子。",
+          "樹上結滿了果子。"
+        ],
+        "answer": "花田裡開滿了花。"
+      },
+      {
+        "id": "application:115AG1H06:p3",
+        "word": "陪",
+        "image": "/assets/115AG1H/lesson06/vocabulary/l06-05.webp",
+        "options": [
+          "媽媽陪著生病的弟弟。",
+          "媽媽在廚房煮飯。",
+          "媽媽帶弟弟去公園。"
+        ],
+        "answer": "媽媽陪著生病的弟弟。"
+      }
+    ]
+  }
 }

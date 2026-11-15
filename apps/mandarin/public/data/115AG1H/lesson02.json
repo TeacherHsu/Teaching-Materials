@@ -1155,9 +1155,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -1594,5 +1593,49 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG1H02",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "看圖選一句話",
+    "variant": "picture",
+    "items": [
+      {
+        "id": "application:115AG1H02:p1",
+        "word": "大風吹",
+        "image": "/assets/115AG1H/lesson02/vocabulary/l02-01.webp",
+        "options": [
+          "大家在玩大風吹。",
+          "大家在吃午餐。",
+          "大家在看書。"
+        ],
+        "answer": "大家在玩大風吹。"
+      },
+      {
+        "id": "application:115AG1H02:p2",
+        "word": "玩",
+        "image": "/assets/115AG1H/lesson02/vocabulary/l02-04.webp",
+        "options": [
+          "我們在公園玩球。",
+          "我們在教室寫字。",
+          "我們在家裡睡覺。"
+        ],
+        "answer": "我們在公園玩球。"
+      },
+      {
+        "id": "application:115AG1H02:p3",
+        "word": "跑",
+        "image": "/assets/115AG1H/lesson02/vocabulary/l02-07.webp",
+        "options": [
+          "他在操場上跑步。",
+          "他在水裡游泳。",
+          "他坐著看書。"
+        ],
+        "answer": "他在操場上跑步。"
+      }
+    ]
+  }
 }

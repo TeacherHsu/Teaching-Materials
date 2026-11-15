@@ -2950,5 +2950,66 @@
       "approved_by": "CF",
       "approved_at": "2026-10-05"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG2H12",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "活動單",
+    "situation": "老師發下一張念詩比賽的活動單。",
+    "title": "念詩小達人",
+    "passage": "下星期一，每個人要上臺念一首詩。\n可以念課本的詠鵝，也可以念自己喜歡的詩。\n念的時候身體站直，眼睛看著大家。\n念完以後，要說出這首詩是哪一位詩人作的。",
+    "signature": "王老師",
+    "lesson_words": [
+      "念",
+      "首",
+      "詠鵝",
+      "身體",
+      "詩人",
+      "作"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG2H12:q1",
+        "question": "什麼時候要上臺念詩？",
+        "options": [
+          "下星期一",
+          "明天",
+          "下星期五"
+        ],
+        "answer": "下星期一",
+        "explanation": "活動單上寫：「下星期一，每個人要上臺念一首詩。」",
+        "evidence": [
+          "下星期一"
+        ]
+      },
+      {
+        "id": "application:115AG2H12:q2",
+        "question": "念完詩以後還要做什麼？",
+        "options": [
+          "說出這首詩是哪一位詩人作的",
+          "再念一次",
+          "畫一張圖"
+        ],
+        "answer": "說出這首詩是哪一位詩人作的",
+        "explanation": "活動單上寫：「念完以後，要說出這首詩是哪一位詩人作的。」",
+        "evidence": [
+          "說出這首詩是哪一位詩人作的"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG2H12:response",
+      "question": "輪到你上臺了。一開始說哪一句最合適？",
+      "options": [
+        "大家好，我要念的詩是詠鵝。",
+        "我不想念。",
+        "這首詩很短，很簡單。"
+      ],
+      "answer": "大家好，我要念的詩是詠鵝。",
+      "explanation": "上臺先向大家問好，再說出要念哪一首詩。"
+    }
+  }
 }

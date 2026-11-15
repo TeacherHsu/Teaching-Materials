@@ -2807,9 +2807,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "教材待補：應用任務設計中"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -3495,5 +3494,74 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG6H09",
+    "status": "approved",
+    "source": "original（Claude 草擬，CF 2026-11-15 核准；自編內容，非課文）",
+    "approved_by": "CF",
+    "approved_on": "2026-11-15",
+    "kind": "演出節目單",
+    "situation": "歌仔戲團到學校演出，進場時每人拿到一張節目單。",
+    "title": "歌仔戲校園巡演",
+    "passage": "今天演出經典戲碼，全長五十分鐘。\n戲裡的丑角是甘草人物，負責逗大家笑。\n演員練功很辛苦，演出時請不要走動或大聲說話。\n演完後有十分鐘可以和演員學蘭花指，尤其歡迎沒看過歌仔戲的同學。",
+    "signature": "歌仔戲團",
+    "lesson_words": [
+      "經典",
+      "丑角",
+      "甘草人物",
+      "辛苦",
+      "蘭花指",
+      "尤其"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG6H09:q1",
+        "question": "節目單上說，丑角在戲裡負責做什麼？",
+        "options": [
+          "逗大家笑",
+          "演最厲害的英雄",
+          "幫忙搬道具"
+        ],
+        "answer": "逗大家笑",
+        "explanation": "節目單上寫：「戲裡的丑角是甘草人物，負責逗大家笑。」",
+        "evidence": [
+          "逗大家笑"
+        ]
+      },
+      {
+        "id": "application:115AG6H09:q2",
+        "question": "演出的時候，觀眾應該怎麼做？",
+        "options": [
+          "不要走動或大聲說話",
+          "可以隨時上臺",
+          "要跟著一起唱"
+        ],
+        "answer": "不要走動或大聲說話",
+        "explanation": "節目單上寫：「演出時請不要走動或大聲說話。」",
+        "evidence": [
+          "不要走動或大聲說話"
+        ]
+      }
+    ],
+    "response": {
+      "id": "application:115AG6H09:response",
+      "question": "演完後你想請演員教你。哪一句最有禮貌？",
+      "options": [
+        "老師好，您演得真精采，可以教我蘭花指嗎？",
+        "喂，教我那個手勢。",
+        "這個很簡單吧？"
+      ],
+      "answer": "老師好，您演得真精采，可以教我蘭花指嗎？",
+      "explanation": "先稱呼對方、說出欣賞，再提出請求，別人會更願意教你。",
+      "evidence": [
+        "蘭花指"
+      ]
+    },
+    "write": {
+      "prompt": "你看過哪一場很棒的表演？用「不但……，更……」寫一句。",
+      "model": "這場表演不但服裝華麗，更有精采的武打動作。",
+      "pattern_id": "sentence_pattern:115AG6H09:pasted:05"
+    }
+  }
 }
