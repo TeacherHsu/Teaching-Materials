@@ -3013,9 +3013,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "應用任務來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -3083,5 +3082,62 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG4K11",
+    "status": "approved",
+    "source": "original（Claude 草擬生活任務，CF 2026-11-15 核准；短文為自編，非課文）",
+    "kind": "通知單",
+    "situation": "老師發下一張校外教學的通知單。",
+    "title": "校外教學通知",
+    "passage": "星期五早上八點在校門口集合，請不要遲到。\n如果遲到，就要請家長自己送到動物園。\n背包上請標示班級和姓名，水壺放在背包裡，零錢放在口袋。\n參觀時跟著老師走，不要東張西望。",
+    "signature": "四年一班導師",
+    "lesson_words": [
+      "遲到",
+      "標示",
+      "口袋",
+      "東張西望"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG4K11:q1",
+        "question": "星期五要在幾點集合？",
+        "options": [
+          "早上八點",
+          "早上九點",
+          "下午兩點"
+        ],
+        "answer": "早上八點",
+        "explanation": "通知單上寫：「星期五早上八點在校門口集合。」"
+      },
+      {
+        "id": "application:115AG4K11:q2",
+        "question": "如果遲到了，會怎麼樣？",
+        "options": [
+          "要請家長自己送到動物園",
+          "就不能去校外教學了",
+          "老師會在校門口等"
+        ],
+        "answer": "要請家長自己送到動物園",
+        "explanation": "通知單上寫：「如果遲到，就要請家長自己送到動物園。」"
+      }
+    ],
+    "response": {
+      "question": "出發前一天晚上，你應該先做哪一件事？",
+      "options": [
+        "在背包上寫好班級和姓名",
+        "把零錢放進水壺裡",
+        "晚一點再睡覺"
+      ],
+      "answer": "在背包上寫好班級和姓名",
+      "explanation": "通知單上寫：「背包上請標示班級和姓名。」前一天先準備好，隔天才不會手忙腳亂。"
+    },
+    "write": {
+      "prompt": "校外教學要注意什麼？用「如果……就……」寫一句提醒自己。",
+      "model": "如果找不到老師，就留在原地等。",
+      "pattern_id": "sentence:11:04"
+    },
+    "approved_by": "CF",
+    "approved_on": "2026-11-15"
+  }
 }

@@ -2949,9 +2949,8 @@
     },
     "application": {
       "label": "我會應用",
-      "status": "missing",
-      "activity": "application",
-      "note": "應用任務來源尚未完成來源核對。"
+      "status": "available",
+      "activity": "application"
     },
     "idiom_builder": {
       "label": "生字變成語",
@@ -3205,5 +3204,61 @@
       "approved_at": "2026-10-06",
       "authored_note": "情境、提示詞與例句為本站編寫（非官方教材）；CF 2026-10-06 授權直接上線。"
     }
-  ]
+  ],
+  "application": {
+    "id": "application:115AG4K02",
+    "status": "approved",
+    "source": "original（Claude 草擬生活任務，CF 2026-11-15 核准；短文為自編，非課文）",
+    "kind": "便條",
+    "situation": "放學回到家，你看到餐桌上有一張媽媽留的便條。",
+    "title": "給小安",
+    "passage": "媽媽去市場買菜，五點半回來。\n桌上的紅豆湯是給你和姐姐的點心，不要一下子就一掃而空，記得留一碗給姐姐。\n吃完先寫功課，寫完才可以去公園跳繩。",
+    "signature": "媽媽",
+    "lesson_words": [
+      "姐姐",
+      "一掃而空",
+      "跳繩"
+    ],
+    "questions": [
+      {
+        "id": "application:115AG4K02:q1",
+        "question": "這張便條是誰寫給誰的？",
+        "options": [
+          "媽媽寫給小安",
+          "小安寫給媽媽",
+          "姐姐寫給小安"
+        ],
+        "answer": "媽媽寫給小安",
+        "explanation": "便條開頭寫「給小安」，最後署名是「媽媽」。"
+      },
+      {
+        "id": "application:115AG4K02:q2",
+        "question": "小安吃完點心以後，要先做什麼？",
+        "options": [
+          "先寫功課",
+          "先去公園跳繩",
+          "先去市場買菜"
+        ],
+        "answer": "先寫功課",
+        "explanation": "便條上寫：「吃完先寫功課，寫完才可以去公園跳繩。」"
+      }
+    ],
+    "response": {
+      "question": "媽媽回來後問：「紅豆湯好喝嗎？」哪一句回答最合適？",
+      "options": [
+        "很好喝，我有留一碗給姐姐。",
+        "我要去跳繩了。",
+        "紅豆湯在桌上。"
+      ],
+      "answer": "很好喝，我有留一碗給姐姐。",
+      "explanation": "這一句回答了媽媽的問題，也讓媽媽知道你有照便條上說的做。"
+    },
+    "write": {
+      "prompt": "放學回家後，你會做哪些事？用「有時……有時……有時……」寫一句。",
+      "model": "放學後，我有時寫功課，有時看書，有時去公園玩。",
+      "pattern_id": "sentence:02:04"
+    },
+    "approved_by": "CF",
+    "approved_on": "2026-11-15"
+  }
 }

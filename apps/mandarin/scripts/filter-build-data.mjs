@@ -95,6 +95,8 @@ function filterLesson(lesson) {
   l.rhetoric = (l.rhetoric || []).filter((r) => isPublic(r.status));
   // 照樣造短語：詞塊拆分與語意判定是本站編寫，教師核准前不進正式站（2026-10-05）
   l.phrase_builders = (l.phrase_builders || []).filter((p) => isPublic(p.status));
+  // 我會應用的生活任務是新編內容：沒核准就整份不帶出去（預覽模式用 dev server 看）
+  if (l.application && !isPublic(l.application.status)) delete l.application;
   l.listening = (l.listening || []).filter((item) => isPublic(item.status));
   l.polysemy = (l.polysemy || []).filter((p) => isPublic(p.status));
   l.extensions = (l.extensions || []).filter((e) => isPublic(e.status));

@@ -180,6 +180,22 @@ export const STRATEGY_LIBRARY = {
       done: '對！「在哪裡」要注意地方。',
     },
   },
+  'functional-reading': {
+    title: '學方法：找出「誰、什麼時候、要做什麼」',
+    goal: '便條、通知、邀請卡都是寫給人看了要去做事的。先找出誰寫的、什麼時候、要我做什麼，就看懂了。',
+    frames: [
+      { lines: ['小美：', '明天早上八點，請帶彩色筆來學校。', '王老師'], mark: '王老師', say: '先看最後面：是誰寫的？是王老師。' },
+      { lines: ['小美：', '明天早上八點，請帶彩色筆來學校。', '王老師'], mark: '明天早上八點', say: '再找時間：什麼時候？明天早上八點。' },
+      { lines: ['小美：', '明天早上八點，請帶彩色筆來學校。', '王老師'], mark: '請帶彩色筆', say: '最後找要做的事：「請」後面常常就是要我做的事——帶彩色筆。' },
+    ],
+    guided: {
+      ask: '便條寫著：「晚上六點回家吃飯。爸爸」。這張便條要你做什麼？',
+      choices: ['六點回家吃飯', '去找爸爸', '煮晚餐'],
+      answer: 0,
+      why: ['', '便條沒有叫你去找爸爸，「爸爸」是寫便條的人。', '便條沒有說要煮晚餐，是說回家吃飯。'],
+      done: '對！要做的事是「六點回家吃飯」。',
+    },
+  },
   rhetoric: {
     title: '學方法：和「直接說」比一比',
     goal: '把句子改成直接說，比一比少了什麼，就知道用了什麼寫法。',
@@ -242,4 +258,5 @@ export const MODULE_STRATEGY = {
   rhetoric: 'rhetoric',
   visual_search: 'visual-search',
   word_reading: 'word-read',
+  application: 'functional-reading',
 };

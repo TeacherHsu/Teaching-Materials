@@ -3949,3 +3949,56 @@ html.present-mode .image-frame img { max-height: 42vh; }
 .structure-blocks__footer {
   margin-top: var(--space-3);
 }
+
+/* 我會應用：生活短文卡（便條、邀請卡、通知單） */
+.application-situation {
+  margin: var(--space-2) 0;
+  color: var(--text-secondary);
+}
+
+.application-passage {
+  margin-top: var(--space-2);
+  padding: var(--space-4);
+  border: 2px solid var(--color-warning-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-warning-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.application-passage--compact {
+  margin-bottom: var(--space-3);
+  padding: var(--space-3);
+}
+
+.application-passage__kind {
+  display: inline-block;
+  margin: 0 0 var(--space-2);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--color-highlight-surface);
+  color: var(--text-on-light-status);
+  font-size: var(--font-size-meta);
+  font-weight: 700;
+}
+
+.application-passage__title {
+  margin: 0 0 var(--space-1);
+  font-size: var(--font-size-body);
+  font-weight: 700;
+}
+
+.application-passage__text {
+  margin: 0;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-loose);
+}
+
+.application-passage__signature {
+  margin: var(--space-2) 0 0;
+  text-align: right;
+  font-size: var(--font-size-body);
+}
+
+.application-passage__audio {
+  margin-top: var(--space-3);
+}

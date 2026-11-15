@@ -42,6 +42,10 @@ export const MODULE_ICONS = {
   main_idea: wrap(
     '<path d="M6 3h9l4 4v14H6Z"/><path d="M14 3v5h5"/><path d="m12 11 1.2 2.5 2.8.4-2 2 .5 2.7-2.5-1.3-2.5 1.3.5-2.7-2-2 2.8-.4Z"/>',
   ),
+  // 我會應用：一張便條＋筆（把學到的用在生活裡）
+  application: wrap(
+    '<path d="M5 4h10l4 4v12H5z"/><path d="M15 4v4h4"/><path d="M8 12h7M8 16h4"/>',
+  ),
   // 聽聽看：耳朵＋聲波
   listening: wrap(
     '<path d="M8 5a5 5 0 0 1 8 4c0 3-2 3.5-2 6a3 3 0 0 1-6 0"/><path d="M17 9c1.2.5 2 1.7 2 3.2c0 2.4-1.4 3-1.4 5.3"/>',

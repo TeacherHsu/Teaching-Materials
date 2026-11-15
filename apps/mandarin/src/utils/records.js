@@ -259,6 +259,7 @@ export const SKILL_LABELS = {
   'polyphone': '一字多音',
   'lookalike': '形似字',
   'listening': '聽力理解',
+  'application:functional-reading': '生活應用（功能性閱讀）',
   'rhetoric': '修辭',
   'visual-search': '字形辨識（字感）',
   'review': '舊字新詞',

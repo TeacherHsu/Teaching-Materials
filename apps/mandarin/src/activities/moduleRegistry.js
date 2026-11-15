@@ -10,6 +10,7 @@ import { canStartZhuyinTyping } from './zhuyinTyping.js';
 import { canStartWordReading } from './wordReading.js';
 import { canStartPhraseBuilder } from './phraseBuilder.js';
 import { canStartVisualSearch } from './visualSearch.js';
+import { canStartApplication } from './application.js';
 
 const ROUND_MIN = 3;
 
@@ -292,6 +293,21 @@ export const MODULE_REGISTRY = [
     implemented: true,
     ready(lesson) {
       return canStartVisualSearch(lesson);
+    },
+  },
+  {
+    key: 'application',
+    label: '我會應用',
+    icon: 'application',
+    color: 'rose',
+    description: '把學到的語詞和句型用在生活裡',
+    implemented: true,
+    // 這一課還沒有（核准的）生活任務：顯示「本課尚未建立」，不算進進度
+    missing(lesson) {
+      return !canStartApplication(lesson);
+    },
+    ready(lesson) {
+      return canStartApplication(lesson);
     },
   },
 ];
