@@ -2439,8 +2439,11 @@
         "有時快有時慢"
       ],
       "answer": "過得很慢",
-      "status": "review_required",
-      "source": "original:draft（2026-11-15 Claude 依本課段落大意草擬，待 CF 審核；取代與課文不符的舊題）"
+      "status": "approved",
+      "source": "115G3A／翰林三上第1課（教師核准聆聽題；2026-11-15 Claude 依本課段落大意草擬，CF 核准）",
+      "approved_by": "CF",
+      "approved_on": "2026-11-15",
+      "passage": "小安等媽媽下班，等了好久，他覺得時間像蝸牛一樣，爬得好慢。"
     },
     {
       "id": "listening:115AG3H01:0002",
@@ -2452,8 +2455,11 @@
         "因為她等了很久"
       ],
       "answer": "因為她很忙，時間過得很快",
-      "status": "review_required",
-      "source": "original:draft（2026-11-15 Claude 依本課段落大意草擬，待 CF 審核；取代與課文不符的舊題）"
+      "status": "approved",
+      "source": "115G3A／翰林三上第1課（教師核准聆聽題；2026-11-15 Claude 依本課段落大意草擬，CF 核准）",
+      "approved_by": "CF",
+      "approved_on": "2026-11-15",
+      "passage": "姐姐每天要上課、練琴、寫作業，她說時間像斑馬，一下子就跑走了。"
     },
     {
       "id": "listening:115AG3H01:0003",
@@ -2465,8 +2471,11 @@
         "蝸牛"
       ],
       "answer": "流水",
-      "status": "review_required",
-      "source": "original:draft（2026-11-15 Claude 依本課段落大意草擬，待 CF 審核；取代與課文不符的舊題）"
+      "status": "approved",
+      "source": "115G3A／翰林三上第1課（教師核准聆聽題；2026-11-15 Claude 依本課段落大意草擬，CF 核准）",
+      "approved_by": "CF",
+      "approved_on": "2026-11-15",
+      "passage": "老師說：時間像流水，流走了就不會再回來，所以要好好珍惜。"
     }
   ],
   "review_words": {
@@ -2912,9 +2921,8 @@
     },
     "listening": {
       "label": "聽聽看",
-      "status": "missing",
-      "activity": "listening-quiz",
-      "note": "新題已依課文內容重編（2026-11-15），待 CF 審核後開放。"
+      "status": "available",
+      "activity": "listening-quiz"
     },
     "rhetoric": {
       "label": "修辭小偵探",

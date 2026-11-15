@@ -1,6 +1,7 @@
 // 驗證規格 2026-09-25-mandarin-dabutie-importer.md §1／§4：
 // 1. 課次首頁 hero 進度分母只算「可開始的大項」（code==='available'|'done'；鎖住的
-//    舊字新詞與待重新編題的聽聽看都不計入），第 1 課應為 13（含抓重點、注音高手、字感訓練、念讀語詞）。
+//    舊字新詞不計入），第 1 課應為 15（含抓重點、注音高手、字感訓練、念讀語詞；
+//    聽聽看 2026-11-15 重編並經 CF 核准後開放）。
 // 4. 活動頁／課次首頁麵包屑補上課本層（翰林三上），且與 LessonDashboard 共用同一份 volumeLabel。
 // 用法：node scripts/test-lesson-dashboard-progress.mjs
 import assert from 'node:assert/strict';
@@ -16,14 +17,14 @@ const { volumeLabel } = await import('../src/utils/volumeLabel.js');
 
 const lesson = JSON.parse(readFileSync(new URL('../public/data/115AG3H/lesson01.json', import.meta.url)));
 
-// ---- 靜態確認：第 1 課「舊字新詞」鎖住；聽聽看題目與課文不符，需重新編題 ----
+// ---- 靜態確認：第 1 課「舊字新詞」鎖住；聽聽看已重編核准（2026-11-15），沒有待審大項 ----
 const statuses = MODULE_REGISTRY.map((entry) => ({ key: entry.key, code: getModuleStatus(lesson, entry).code }));
 const lockedKeys = statuses.filter((s) => s.code === 'locked').map((s) => s.key);
 assert.deepEqual(lockedKeys, ['review'], `第 1 課應該只有「舊字新詞」鎖住，實際鎖住：${lockedKeys.join('、') || '無'}`);
 const pendingKeys = statuses.filter((s) => s.code === 'pending_review').map((s) => s.key);
-assert.deepEqual(pendingKeys, ['listening'], `第 1 課聽聽看應待重新編題，實際待審：${pendingKeys.join('、') || '無'}`);
+assert.deepEqual(pendingKeys, [], `第 1 課不應再有待審大項（聽聽看已核准），實際待審：${pendingKeys.join('、') || '無'}`);
 const availableCount = statuses.filter((s) => s.code === 'available' || s.code === 'done').length;
-assert.equal(availableCount, 14, `第 1 課可開始的大項應為 14 項（含 2026-10-05 照樣造短語），實際 ${availableCount}`);
+assert.equal(availableCount, 15, `第 1 課可開始的大項應為 15 項（含 2026-10-05 照樣造短語、2026-11-15 聽聽看），實際 ${availableCount}`);
 
 // ---- LessonDashboard：hero 分母排除鎖住與待審項目 ----
 const dashboard = LessonDashboard(lesson);
@@ -35,7 +36,7 @@ assert.match(
   `hero 進度只算核心 6 項（2026-10-06 含念讀語詞、照樣造短語；加練另列），實際：「${progressLabel.textContent}」`,
 );
 const extraLabel = dashboard.find((n) => n.hasClass('lesson-hero__extra-label'));
-assert.ok(extraLabel && /加練挑戰（選做）0 ／ 8 項/.test(extraLabel.textContent), `加練另列，分母排除鎖住與待審（14－6＝8），實際：「${extraLabel?.textContent}」`);
+assert.ok(extraLabel && /加練挑戰（選做）0 ／ 9 項/.test(extraLabel.textContent), `加練另列，分母排除鎖住與待審（15－6＝9），實際：「${extraLabel?.textContent}」`);
 
 // 進度環（progress-ring）文字也要用同一個分母換算百分比，0／10 = 0%
 const ringSvgHtml = dashboard.find((n) => n.hasClass('progress-ring')).innerHTML;
