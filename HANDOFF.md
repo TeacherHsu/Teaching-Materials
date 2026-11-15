@@ -11,7 +11,7 @@
 - 練習句子第一步改成「例句拆積木」（CF 2026-11-15「照方案改」）：新元件 `src/components/StructureBlocks.js`、對位邏輯 `src/utils/structureBlocks.js`、產生腳本 `scripts/materialize-structure-blocks.mjs`、排除清單 `tools/structure-blocks-review.json`、測試 `scripts/test-structure-blocks.mjs`。126 題、41／55 課有題目；其餘 14 課（一上 1、6、7；二上 6、10、11；三上 5；四上 4、7；六上 1、5、10、11、12）句型多為「詞語造句」或兩格相鄰切不出界線，仍用舊的短語搭配。支持層會先放好第一格當示範（沿用 `prefill`）。對照表 `docs/review/2026-11-15-structure-blocks.md`。桌機 1024 與手機 390 截圖看過，四上第 9 課實際點過一題（答錯提示、放完顯示整句與句型）。
 - 接下來：
   1. 「我會應用」43 課關閉——需要先和 CF 定任務型態，**等 CF**。
-  2. 等 CF 審：「艾粄 ㄞˋ ㄅㄢˇ」、拆積木對照表（抽查）。
+  2. 等 CF：拆積木對照表（抽查）。
 
 ## 2026-11-15｜家中 Mac｜Claude｜語詞：多義解釋只留第 ⑴ 義、「一」依語流變調、讀音依簡編本更正（2026-11-15 已合併 main 並上線）
 - 分支 `fix/word-meaning-first-sense-yi-sandhi`（未提交）。CF 2026-11-15 裁定兩條通則：
@@ -20,7 +20,7 @@
 - `validate-data.mjs` 新增兩條檢查（解釋仍有 ⑵、「一」未變調都會 FAIL）。
 - 下游：`Review-Games/data/G1A.js|G4A.js|G4A2.js`、`Read-Aloud/data/G1A.js|G4A2.js` 重產，`p0-baseline.json` 已同步。
 - 已驗（讀音更正後重跑）：`npm run validate` 0 FAIL、`scripts/test-*.mjs` 全過、build＋check-dist 通過、Review-Games 133 支、Read-Aloud 48 支全過；dev server 回讀資料正確、頁面可載入，沒有逐張看卡片畫面。
-- 補缺：二上 20 則、三上 11 則原本留空的語詞注音，依簡編本詞條／子詞與本課生字補齊（同一份 `zhuyin-corrections.json`，from 為 null；只有「艾粄 ㄞˋ ㄅㄢˇ」待 CF 確認）。一上「一個」改 ㄧˊ ˙ㄍㄜ（量詞「個」輕聲，與生字一致）。五冊語詞現在都有注音。
+- 補缺：二上 20 則、三上 11 則原本留空的語詞注音，依簡編本詞條／子詞與本課生字補齊（同一份 `zhuyin-corrections.json`，from 為 null；「艾粄 ㄞˋ ㄅㄢˇ」CF 2026-11-15 已確認）。一上「一個」改 ㄧˊ ˙ㄍㄜ（量詞「個」輕聲，與生字一致）。五冊語詞現在都有注音。
 - 排序：課文樂園年級頁各複習區與複習遊戲大廳，一律「寵物餵食 → 朗讀打怪 → 形似字跑酷 → 其他」（CF 指定）。大廳新增兩張朗讀遊戲卡，縮圖 `Review-Games/img/hub/pet.webp|monster.webp` 用朗讀遊戲既有美術合成。
 - 朗讀遊戲補齊：`Read-Aloud/tools/build_data.py` SETS 新增 `G2A、G3A、G3A2、G4A、G6A、G6A2`，九組都有；`course-index.json` 六個複習區補上兩款連結。實開 G6A、G3A2、G4A（手機寬）、G2A 按開始都能出題。
 - 開啟兩個已有資料卻關著的模組：四上第 9 課「練習句子」（教師 2026-09-27 提供的 3 組句型已核准，舊註記「不足 3 組」過期）；三上第 1 課補上「一字多音」「形似字」入口（資料 3 題、8 組早就在）。兩處都開頁面確認能出題。
