@@ -1,8 +1,8 @@
 {
   "volume": "115AG4K",
-  "status": "draft",
+  "status": "approved",
   "drafted_on": "2026-11-15",
-  "drafted_by": "Claude（待 CF 審核）",
+  "drafted_by": "Claude 草擬",
   "principle": "四上：一句 25 字內為主、生活情境、句子一定含該語詞、依該課語詞解釋的詞義造句、不引用課文原句。",
   "items": [
     {
@@ -930,5 +930,7 @@
       "word": "內心",
       "example": "我的內心充滿了感謝。"
     }
-  ]
+  ],
+  "approved_by": "CF",
+  "approved_on": "2026-11-15"
 }

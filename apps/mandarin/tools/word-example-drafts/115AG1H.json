@@ -1,8 +1,8 @@
 {
   "volume": "115AG1H",
-  "status": "draft",
+  "status": "approved",
   "drafted_on": "2026-11-15",
-  "drafted_by": "Claude（待 CF 審核）",
+  "drafted_by": "Claude 草擬",
   "principle": "一上：短句（10 字內為主）、生活情境、句子一定含該語詞、不引用課文原句。",
   "items": [
     {
@@ -360,5 +360,7 @@
       "word": "笑",
       "example": "妹妹笑得好開心。"
     }
-  ]
+  ],
+  "approved_by": "CF",
+  "approved_on": "2026-11-15"
 }

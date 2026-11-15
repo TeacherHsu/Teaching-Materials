@@ -438,12 +438,14 @@
       "zhuyin": "ㄑㄧ ㄗˇ",
       "meaning": "稱男子的配偶。",
       "example_sentence": "老鞋匠和妻子一起生活。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-01.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K12:02",
@@ -451,12 +453,14 @@
       "zhuyin": "ㄋㄞˋ ㄒㄧㄣ",
       "meaning": "心情平和而不厭煩、急躁。",
       "example_sentence": "老師很有耐心的教我們。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-02.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K12:03",
@@ -464,12 +468,14 @@
       "zhuyin": "ㄆㄧˊ ㄍㄜˊ",
       "meaning": "獸皮經過去毛、去脂等處理而製成的熟皮。",
       "example_sentence": "這個包包是用皮革做的。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-03.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K12:04",
@@ -477,12 +483,14 @@
       "zhuyin": "ㄕㄨㄤ ㄅㄟˋ",
       "meaning": "兩倍。",
       "example_sentence": "今天的作業是昨天的雙倍。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-04.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K12:05",
@@ -490,12 +498,14 @@
       "zhuyin": "ㄇㄧˊ ㄊㄨㄢˊ",
       "meaning": "比喻事物隱晦不清，讓人難以明白、理解。",
       "example_sentence": "偵探終於解開了謎團。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-05.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K12:06",
@@ -503,12 +513,14 @@
       "zhuyin": "ㄓㄨㄥ ㄕㄥ",
       "meaning": "敲鐘所發出的聲音。",
       "example_sentence": "遠處傳來廟裡的鐘聲。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-06.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K12:07",
@@ -516,7 +528,7 @@
       "zhuyin": "ㄒㄧㄠˇ ㄐㄧㄥ ㄌㄧㄥˊ",
       "meaning": "北歐神話中的人物，有親切可愛的，也有凶惡調皮的。",
       "example_sentence": "故事裡的小精靈很善良。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-07.webp",
       "status": "ready",
@@ -524,7 +536,9 @@
       "meaning_original": "⑴北歐神話中的人物。有親切可愛的白精靈和凶惡調皮的黑精靈。⑵年紀輕而聰明調皮的人。",
       "meaning_approved_by": "CF",
       "meaning_approved_on": "2026-11-14",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K12:08",
@@ -532,12 +546,14 @@
       "zhuyin": "ㄊㄧㄝˇ ㄔㄨㄟˊ",
       "meaning": "鐵製的鎚子。",
       "example_sentence": "爸爸用鐵鎚釘釘子。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-08.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K12:09",
@@ -545,12 +561,14 @@
       "zhuyin": "ㄗㄜˊ ㄗㄜˊ ㄔㄥ ㄑㄧˊ",
       "meaning": "對事物的奇妙讚嘆不已。",
       "example_sentence": "魔術師的表演讓觀眾嘖嘖稱奇。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-09.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K12:10",
@@ -558,12 +576,14 @@
       "zhuyin": "ㄕㄡˇ ㄨˇ ㄗㄨˊ ㄉㄠˋ",
       "meaning": "手、腳舞動跳躍。形容非常高興喜悅的樣子。",
       "example_sentence": "聽到好消息，弟弟高興得手舞足蹈。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-10.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K12:11",
@@ -571,12 +591,14 @@
       "zhuyin": "ㄩㄢˇ ㄐㄧㄣˋ ㄓ ㄇㄧㄥˊ",
       "meaning": "形容名聲響亮，眾人皆知。",
       "example_sentence": "這家麵包店遠近知名。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-11.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K12:12",
@@ -584,12 +606,14 @@
       "zhuyin": "ㄒㄧˇ ㄔㄨ ㄨㄤˋ ㄨㄞˋ",
       "meaning": "因意想不到的喜事而特別高興。",
       "example_sentence": "收到朋友寄來的禮物，我喜出望外。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-12.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K12:13",
@@ -597,12 +621,14 @@
       "zhuyin": "ㄅㄞˇ ㄙ ㄅㄨˋ ㄐㄧㄝˇ",
       "meaning": "經過反覆思考，仍然無法了解。",
       "example_sentence": "這道題目讓我百思不解。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-13.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K12:14",
@@ -610,12 +636,14 @@
       "zhuyin": "ㄅㄨˋ ㄇㄧㄥˊ ㄐㄧㄡˋ ㄌㄧˇ",
       "meaning": "不清楚、不了解事件的內情。",
       "example_sentence": "他不明就裡，就跟著大家一起笑。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-14.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K12:15",
@@ -623,12 +651,14 @@
       "zhuyin": "ㄧˊ ㄌㄧㄡˋ ㄧㄢ",
       "meaning": "一道煙。形容飛快的樣子。",
       "example_sentence": "小貓一溜煙就跑走了。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "basic",
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-15.webp",
       "status": "ready",
       "source": "康軒官方教材來源整理（05 詞語解釋及例句）",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K12:16",
@@ -636,14 +666,16 @@
       "zhuyin": "ㄅㄥˋ ㄅㄥˋ ㄊㄧㄠˋ ㄊㄧㄠˋ",
       "meaning": "形容活潑地連續跳躍。",
       "example_sentence": "小兔子在草地上蹦蹦跳跳。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "challenge",
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-16.webp",
       "status": "ready",
       "source": "教育百科 115 學年度上學期・康軒版四年級第 12 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0103041150112",
       "image_origin": "generated:imagegen-vocabulary-meaning",
       "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E8%B9%A6%E8%B9%A6%E8%B7%B3%E8%B7%B3",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     },
     {
       "id": "word:115AG4K12:17",
@@ -651,14 +683,16 @@
       "zhuyin": "ㄋㄟˋ ㄒㄧㄣ",
       "meaning": "一個人心裡的想法和感受。",
       "example_sentence": "我的內心充滿了感謝。",
-      "example_status": "draft",
+      "example_status": "approved",
       "level": "challenge",
       "image": "/assets/115AG4K/lesson12/vocabulary/l12-17.webp",
       "status": "ready",
       "source": "教育百科 115 學年度上學期・康軒版四年級第 12 課語詞詞條：https://pedia.cloud.edu.tw/Bookmark/TCollection?TextNameId=0103041150112",
       "image_origin": "generated:imagegen-vocabulary-meaning",
       "zhuyin_source": "https://pedia.cloud.edu.tw/Entry/Detail?title=%E5%85%A7%E5%BF%83",
-      "example_source": "original:draft（Claude（待 CF 審核），2026-11-15）"
+      "example_source": "original:approved（Claude 草擬，2026-11-15）",
+      "example_approved_by": "CF",
+      "example_approved_on": "2026-11-15"
     }
   ],
   "word_meanings": [],

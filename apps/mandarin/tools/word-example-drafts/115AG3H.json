@@ -1,8 +1,8 @@
 {
   "volume": "115AG3H",
-  "status": "draft",
+  "status": "approved",
   "drafted_on": "2026-11-15",
-  "drafted_by": "Claude（待 CF 審核）",
+  "drafted_by": "Claude 草擬",
   "principle": "三上（第 7～12 課；第 1～6 課已有核准例句）：一句 20 字內為主、生活情境、句子一定含該語詞、依該課語詞解釋的詞義造句、不引用課文原句。",
   "items": [
     {
@@ -500,5 +500,7 @@
       "word": "幸福",
       "example": "和家人在一起讓我覺得很幸福。"
     }
-  ]
+  ],
+  "approved_by": "CF",
+  "approved_on": "2026-11-15"
 }

@@ -1,8 +1,8 @@
 {
   "volume": "115AG6H",
-  "status": "draft",
+  "status": "approved",
   "drafted_on": "2026-11-15",
-  "drafted_by": "Claude（待 CF 審核）",
+  "drafted_by": "Claude 草擬",
   "principle": "六上（已有核准例句的 13 則不動）：一句 25 字內為主、生活情境、句子一定含該語詞、依該課語詞解釋的詞義造句、不引用課文原句；文言虛字用常見成語或短句示範。",
   "items": [
     {
@@ -915,5 +915,7 @@
       "word": "幸虧",
       "example": "幸虧你提醒我，我才沒有忘記帶作業。"
     }
-  ]
+  ],
+  "approved_by": "CF",
+  "approved_on": "2026-11-15"
 }
